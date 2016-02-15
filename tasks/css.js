@@ -7,12 +7,12 @@ module.exports = function(grunt) {
     var _ = require('lodash');
 
     if ( grunt.config('tasks.css') ) {
-        
+
         var sassTargets = {};
         var concatTargets = {};
         var autoprefixTargets = [];
         var tempCounter = 0;
-        
+
         _.each(grunt.config('tasks.css.files'), function(obj){
             var concatTarget = {};
             concatTargets[obj.dest] = [];
@@ -38,14 +38,15 @@ module.exports = function(grunt) {
         grunt.config('sass', {
             dist: {
                 options: {
-                    // outputStyle: 'compressed', 
+                    // outputStyle: 'compressed',
                     sourceMap: false
                 },
                 files: sassTargets
             },
             dev: {
                 options: {
-                    sourceMap: false
+                    outputStyle: 'expanded',
+                    sourceMap: true
                 },
                 files: sassTargets
             }
@@ -54,7 +55,7 @@ module.exports = function(grunt) {
         grunt.config('concat.css', {
             files: concatTargets
         });
-        
+
         grunt.config('postcss', {
             options: {
                 map: false,
@@ -66,6 +67,20 @@ module.exports = function(grunt) {
             },
             dist: {
                 src: autoprefixTargets
+            },
+            dev: {
+                options: {
+                    map: false,
+                    processors: [
+                        require('stylelint')(),
+                        require('postcss-reporter')({
+                          clearMessages: true,
+                          throwError: true
+                        }),
+                    ],
+                    syntax: require('postcss-scss')
+                },
+                src: grunt.config('tasks.css.watch')
             }
         });
 
@@ -75,16 +90,16 @@ module.exports = function(grunt) {
             }
         });
 
-        grunt.config('clean.csstmp', ['.tmpcss']);    
-        
+        grunt.config('clean.csstmp', ['.tmpcss']);
+
         if ( grunt.config('tasks.css.clean') ) {
-            grunt.config('clean.css', grunt.config('tasks.css.clean'));    
+            grunt.config('clean.css', grunt.config('tasks.css.clean'));
         } else {
             grunt.config('clean.css', []);
         }
-        
-        grunt.registerTask('css:dist', ['clean:css', 'sass:dist', 'concat:css', 'clean:csstmp', 'postcss', 'cssmetrics']);
-        grunt.registerTask('css:dev', ['clean:css', 'sass:dev', 'concat:css', 'clean:csstmp']);
+
+        grunt.registerTask('css:dist', ['clean:css', 'sass:dist', 'concat:css', 'clean:csstmp', 'postcss:dist', 'cssmetrics']);
+        grunt.registerTask('css:dev', ['clean:css', 'sass:dev', 'concat:css', 'clean:csstmp', 'postcss:dev']);
         grunt.registerTask('css:release', ['css:dist']);
 
     } else {
@@ -101,7 +116,7 @@ module.exports = function(grunt) {
         grunt.config('watch.css', {
             files: grunt.config('tasks.css.watch'),
             tasks: ['css']
-        });    
+        });
     }
 
 };
