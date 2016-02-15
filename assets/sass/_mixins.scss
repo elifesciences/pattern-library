@@ -8,3 +8,10 @@
   font-size: get-px-from-rem($size_in_rem)px;
   font-size: #{$size_in_rem}rem;
 }
+
+@mixin padding-dimension($size_in_rem, $dimension) {
+  @if $dimension {
+    padding-#{$dimension}: get-px-from-rem($size_in_rem)px;
+    padding-#{$dimension}: #{$size_in_rem}rem;
+  }
+}
