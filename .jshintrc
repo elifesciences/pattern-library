@@ -1,0 +1,21 @@
+{
+    "browser": true,
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "eqnull": true,
+    "forin": true,
+    "freeze": true,
+    "latedef": "nofunc",
+    "noarg": true,
+    "noempty": true,
+    "nonbsp": true,
+    "nonew": true,
+    "plusplus": true,
+    "shadow": true,
+    "strict": true,
+    "trailing": true,
+    "undef": true,
+    "unused": true
+}
+
