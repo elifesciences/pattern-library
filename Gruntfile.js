@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
     /*
      * Task configuration
-     *  
+     *
      * These are the settings for the tasks defined in the /tasks directory.
      * Reasonable defaults have been set but edit as required for your project.
      *
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
              */
             files: [{
                 src: ['assets/sass/build.scss'],
-                dest: 'public/assets/css/all.css'
+                dest: 'source/assets/css/all.css'
             }],
             /*
              * Target browsers for autoprefixing.
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
             autoprefix: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
             /*
              * Which files to watch for changes.
-             * Changes to any files specified here will result in the css task being 
+             * Changes to any files specified here will result in the css task being
              * re-run (when using grunt watch). Delete to disable watch for this task.
              */
             watch: ['assets/sass/**/*.scss'],
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
              * Any files and folders to delete prior to the build task running.
              * Delete this if you don't want to run the clean step before generating the fresh files.
              */
-            clean: ['public/assets/css']
+            clean: ['source/assets/css']
         },
 
         /******************************************************************************
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
             /*
              * Target destination directory.
              */
-            dest: 'public/assets/img',
+            dest: 'source/assets/img',
             /*
              * Image files optimise and output into 'dest'.
              * Default matches any files with png/jpg/gif extensions in the source dir.
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
             copy: ['**/*.svg'],
             /*
              * Which files to watch for changes.
-             * Changes to any files specified here will result in the css task being 
+             * Changes to any files specified here will result in the css task being
              * re-run (when using grunt watch). Delete to disable watch for this task.
              */
             watch: ['assets/img/**/*.{png,jpg,jpeg,gif,svg}'],
@@ -97,11 +97,11 @@ module.exports = function(grunt) {
              */
             files: [{
                 src: ['assets/js/main.js'],
-                dest: 'public/assets/js/main.js'
+                dest: 'source/assets/js/main.js'
             }],
             /*
              * Which files to watch for changes.
-             * Changes to any files specified here will result in the js task being 
+             * Changes to any files specified here will result in the js task being
              * re-run (when using grunt watch). Delete to disable watch for this task.
              */
             watch: ['assets/js/**/*.js'],
@@ -109,10 +109,10 @@ module.exports = function(grunt) {
              * Any files and folders to delete prior to the build task running.
              * Delete this if you don't want to run the clean step before generating the fresh files.
              */
-            clean: ['public/assets/js'],
+            clean: ['source/assets/js'],
             /*
              * JSHint settings
-             * Using this is recommended - a sensible set of defaults have been 
+             * Using this is recommended - a sensible set of defaults have been
              * picked to help avoid common issues. Delete or set to false to disable.
              * To override defaults set them in the 'options' object. Available options
              * can be found here: http://www.jshint.com/docs/options
@@ -141,14 +141,14 @@ module.exports = function(grunt) {
             /*
              * Target destination directory.
              */
-            dest: 'public/assets/fonts',
+            dest: 'source/assets/fonts',
             /*
              * Font files to copy to 'dest'
              */
             copy: ['**/*.{eot,ttf,woff,woff2}'],
             /*
              * Which files to watch for changes.
-             * Changes to any files specified here will result in the css task being 
+             * Changes to any files specified here will result in the css task being
              * re-run (when using grunt watch). Delete to disable watch for this task.
              */
             watch: ['assets/fonts/**/*.{eot,ttf,woff,woff2}']
@@ -157,7 +157,7 @@ module.exports = function(grunt) {
     };
 
     /************************** NO NEED TO EDIT BELOW THIS LINE **************************/
-        
+
     require('jit-grunt')(grunt, {
         'cssmetrics': 'grunt-css-metrics',
         'sass': 'grunt-sass'
@@ -188,7 +188,7 @@ module.exports = function(grunt) {
     });
 
     grunt.loadTasks('tasks');
-    
+
     grunt.registerTask('default', ['concurrent:first']);
 
 };
