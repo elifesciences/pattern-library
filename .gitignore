@@ -1,5 +1,11 @@
 .DS_Store
-public/*
-latest-change.txt
+
+/node_modules
+npm-debug.log
+
 *-ck.js
 *.sass-cache/
+
+latest-change.txt
+
+public/*
