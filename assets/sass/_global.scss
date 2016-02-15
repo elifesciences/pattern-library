@@ -1,3 +1,6 @@
+@import "variables";
+@import "mixins";
+
 *,
 *:before,
 *:after {
@@ -6,4 +9,74 @@
 
 body {
   text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-family: $font-secondary;
+  @include font-size(1.5);
+  font-weight: bold;
+  line-height: $line-height-primary;
+}
+
+h2 {
+  font-family: $font-secondary;
+  @include font-size(1.3125);
+  font-weight: bold;
+  line-height: $line-height-primary;
+  padding-bottom: 5px;
+}
+
+h3 {
+  font-family: $font-secondary;
+  @include font-size(1.1875);
+  font-weight: bold;
+  line-height: $line-height-primary;
+  padding-bottom: 3px;
+}
+
+h4 {
+  font-family: $font-secondary;
+  @include font-size(1.0625);
+  font-weight: bold;
+  line-height: $line-height-primary;
+}
+
+h5 {
+  font-family: $font-primary;
+  @include font-size(1);
+  font-weight: bold;
+  line-height: $line-height-primary;
+}
+
+h6 {
+  font-family: $font-primary;
+  @include font-size(0.8125);
+  font-weight: bold;
+  line-height: $line-height-primary;
+  text-transform: uppercase;
+}
+
+p,
+div {
+  font-family: $font-primary;
+  @include font-size(1);
+  line-height: 1.5;
+  @include padding-dimension(1.5, "bottom");
+}
+
+li,
+dt,
+dd {
+  font-family: $font-primary;
+  @include font-size(1);
+  line-height: 1.5;
+  @include padding-dimension(1.5, "bottom");
+  @include padding-dimension(1.25, "left");
+}
+
+small {
+  font-family: $font-primary;
+  @include font-size(0.75);
+  line-height: 1.35;
+  @include padding-dimension(0.9375, "bottom");
 }
