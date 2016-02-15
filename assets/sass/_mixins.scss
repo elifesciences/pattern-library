@@ -1,0 +1,10 @@
+@import "variables";
+
+@function get-px-from-rem($size_in_rem) {
+  @return $size_in_rem * $font-size-base-in-px;
+}
+
+@mixin font-size($size_in_rem) {
+  font-size: get-px-from-rem($size_in_rem)px;
+  font-size: #{$size_in_rem}rem;
+}
