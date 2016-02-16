@@ -2,6 +2,10 @@
 // This file is where you should import all your project files
 // -----------------------------------------------------------------------------
 
+// helpers
+@import "variables";
+@import "mixins";
+
 // resets
 @import "normalize";
 
