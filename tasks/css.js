@@ -57,15 +57,15 @@ module.exports = function(grunt) {
         });
 
         grunt.config('postcss', {
-            options: {
-                map: false,
-                processors: [
-                    require('autoprefixer')({
-                        browsers: grunt.config('tasks.css.autoprefix')
-                    })
-                ]
-            },
             dist: {
+                options: {
+                    map: false,
+                    processors: [
+                        require('autoprefixer')({
+                            browsers: grunt.config('tasks.css.autoprefix')
+                        })
+                    ]
+                },
                 src: autoprefixTargets
             },
             dev: {
@@ -80,6 +80,7 @@ module.exports = function(grunt) {
                     ],
                     syntax: require('postcss-scss')
                 },
+                writeDest: false,
                 src: grunt.config('tasks.css.watch')
             }
         });
