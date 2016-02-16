@@ -3,14 +3,18 @@
   @return $size_in_rem * $font-size-base-in-px;
 }
 
-@mixin font-size($size_in_rem) {
-  font-size: get-px-from-rem($size_in_rem)px;
-  font-size: #{$size_in_rem}rem;
+@function get-rem-from-px($size_in_px) {
+  @return $size_in_px / $font-size-base-in-px;
 }
 
-@mixin padding-dimension($size_in_rem, $dimension) {
+@mixin font-size($size_in_px) {
+  font-size: #{$size_in_px}px;
+  font-size: get-rem-from-px($size_in_px)rem;
+}
+
+@mixin padding-dimension($size_in_px, $dimension) {
   @if $dimension {
-    padding-#{$dimension}: get-px-from-rem($size_in_rem)px;
-    padding-#{$dimension}: #{$size_in_rem}rem;
+    padding-#{$dimension}: #{$size_in_px}px;
+    padding-#{$dimension}: get-rem-from-px($size_in_px)rem;
   }
 }
