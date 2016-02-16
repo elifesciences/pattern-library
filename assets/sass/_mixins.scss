@@ -12,9 +12,48 @@
   font-size: #{get-rem-from-px($size_in_px)}rem;
 }
 
-@mixin padding-dimension($size_in_px, $dimension) {
-  @if $dimension {
+@mixin padding($size_in_px, $dimension: "") {
+  @if $dimension == top or $dimension == right or $dimension == bottom or $dimension == left {
     padding-#{$dimension}: #{$size_in_px}px;
     padding-#{$dimension}: #{get-rem-from-px($size_in_px)}rem;
+  }
+  @else if $dimension == "" and type_of($size_in_px) == list {
+    $parts-px: ();
+    $parts-rem: ();
+    @each $size in $size_in_px {
+      $parts-px: append($parts-px, #{$size}px, "space")
+    }
+    @each $size in $size_in_px {
+      $parts-rem: append($parts-rem, #{get-rem-from-px($size)}rem, "space")
+    }
+    padding: $parts-px;
+    padding: $parts-rem;
+  }
+  @else {
+    padding: #{$size_in_px}px;
+    padding: #{get-rem-from-px($size_in_px)}rem;
+  }
+}
+
+@mixin margin($size_in_px, $dimension: "") {
+  @if $dimension == top or $dimension == right or $dimension == bottom or $dimension == left {
+    margin-#{$dimension}: #{$size_in_px}px;
+    margin-#{$dimension}: #{get-rem-from-px($size_in_px)}rem;
+  }
+  @else if $dimension == "" and type_of($size_in_px) == list {
+    $parts-px: ();
+    $parts-rem: ();
+    @each $size in $size_in_px {
+      $parts-px: append($parts-px, #{$size}px, "space")
+    }
+    @each $size in $size_in_px {
+      $parts-rem: append($parts-rem, #{get-rem-from-px($size)}rem, "space")
+    }
+    margin: $parts-px;
+    margin: $parts-rem;
+  }
+  @else {
+    margin: #{$size_in_px}px;
+    margin: #{get-rem-from-px($size_in_px)}rem;
   }
 }
