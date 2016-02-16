@@ -1,19 +1,16 @@
 <section class="sitefooter">
 
   <div class="mainmenu">
-    <h3>Subjects</h3>
+    {{#mainmenulinks}}
+    <h3>{{title}}</h3>
     <ul>
+      {{#items}}
       <li>
-        <a href="#">Biochemistry</a>
+        <a href="{{url}}">{{name}}</a>
       </li>
+      {{/items}}
     </ul>
-
-    <h3>eLife</h3>
-    <ul>
-      <li>
-        <a href="#">How to publish</a>
-      </li>
-    </ul>
+    {{/mainmenulinks}}
   </div>
 
   <div class="investorlogos">

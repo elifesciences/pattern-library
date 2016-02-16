@@ -1,0 +1,33 @@
+{
+  "mainmenulinks": [
+    {
+      "title": "Subjects",
+      "items": [
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biochemistry", "url": "#" }
+      ]
+    },
+    {
+      "title": "eLife",
+      "items": [
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biochemistry", "url": "#" }
+      ]
+    },
+    {
+      "title": "Resources",
+      "items": [
+        { "name": "How to Publish", "url": "#" },
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biochemistry", "url": "#" }
+      ]
+    }
+  ]
+}
