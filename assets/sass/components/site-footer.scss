@@ -11,12 +11,13 @@
 .main-menu__title {
   text-transform: uppercase;
   margin: 0;
-  padding-bottom: 15px;
+  padding: 0 0 2px 0;
+  padding: 0 0 0.1rem 0;
 }
 
 .main-menu__list {
   list-style: none;
-  margin: 0 0 15px 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -37,13 +38,16 @@
 
 .footer-navigation__list {
   list-style: none;
-  margin: 0 0 15px 0;
-  padding: 0;
+  margin: 0;
+  padding: 0 0 15px 0;
+  padding: 0 0 1rem 0;
+  text-align: center;
 }
 
 .footer-navigation__list-item {
   font-family: $font-secondary;
-  @include font-size(0.8125);
+  @include font-size(13);
+  font-weight: 600;
   margin: 0;
   padding: 0;
 }
@@ -57,6 +61,7 @@
 .social-links__list {
   margin: 0;
   padding: 0 0 15px 0;
+  padding: 0 0 1rem 0;
 }
 
 .social-links__list-item {
@@ -69,6 +74,5 @@
     display: block;
     line-height: 1.3;
     text-align: center;
-
   }
 }
