@@ -1,0 +1,92 @@
+.nav-primary {
+  border-top: 1px solid $color-text-dividers;
+  @include padding(0 5);
+}
+
+.nav-primary ul {
+  align-items: center;
+  display: table-cell;
+  display: flex;
+  @include height(58);
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.nav-primary__item {
+  float: left;
+  font-family: $font-secondary;
+  @include font-size(14);
+  font-weight: bold;
+  @include height(24);
+  list-style-type: none;
+  @include padding(0 16 0 0);
+  text-transform: uppercase;
+}
+
+.nav-primary__item--first {
+  padding: 0;
+}
+
+.nav-primary a:link,
+.nav-primary a:hover,
+.nav-primary a:active,
+.nav-primary a:visited {
+  color: #212121;
+  text-decoration: none;
+}
+
+.nav-primary a:hover,
+.nav-primary a:active {
+  color: $color-primary;
+}
+
+.visuallyhiddennarrowest {
+  // direct implementation of rules from .visuallyhidden, so they can be
+  // removed with a media query (see later in this file) without needing JavaScript
+  // to remove the class.
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.nav-primary__item--last {
+  float: right;
+  margin-left: auto;
+}
+
+.nav-primary__menu_icon {
+  border: 1px solid $color-text-dividers;
+  border-radius: 5px;
+  @include margin(0 8 0 0);
+  margin-top: -3px;
+}
+
+@media only all and (min-width: 21.25rem) {
+
+  .visuallyhiddennarrowest {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: auto;
+    @include padding(10, "bottom");
+    position: static;
+    width: auto;
+    vertical-align: top;
+  }
+
+  .nav-primary__item--first {
+    @include padding(0 16 0 0);
+  }
+
+  .nav-primary__menu_icon {
+    border: none;
+    margin-top: -2px;
+  }
+
+}
