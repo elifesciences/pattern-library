@@ -1,18 +1,24 @@
 
-.site-footer {
-  background-color: #fff;
-}
-
 .main-menu {
   background-color: $color-text-ui-background--reverse;
   color: $color-text-ui-background;
 }
 
+.main-menu__container {
+  padding: 15px;
+}
+
+.main-menu__section {
+  padding-bottom: 15px;
+}
+
 .main-menu__title {
-  text-transform: uppercase;
+  @include font-size(14);
+  font-weight: 600;
   margin: 0;
   padding: 0 0 2px 0;
   padding: 0 0 0.1rem 0;
+  text-transform: uppercase;
 }
 
 .main-menu__list {
@@ -23,8 +29,10 @@
 
 .main-menu__list-item {
   font-family: $font-secondary;
+  @include font-size(14);
+  font-weight: 500;
   margin: 0;
-  padding: 0;
+  padding: 4px 0;
 }
 
 .main-menu__list-link {
@@ -32,8 +40,31 @@
   text-decoration: none;
 }
 
+@media only screen and (min-width: #{(680/16)}em) {
+  .main-menu__container {
+    display: flex;
+    max-width: #{(720/16)}rem;
+    margin: auto;
+  }
+
+  .main-menu__section {
+    flex-grow: 1;
+  }
+}
+
 .investor-logos__img {
+  display: block;
   max-width: 100%;
+  margin: auto;
+}
+
+@media only screen and (min-width: #{(540/16)}em) {
+  .investor-logos {
+    display: flex;
+  }
+  .investor-logos__section {
+    flex: 1 33.33%;
+  }
 }
 
 .footer-navigation__list {
