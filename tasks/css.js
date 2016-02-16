@@ -70,6 +70,7 @@ module.exports = function(grunt) {
             },
             dev: {
                 options: {
+                    writeDest: false,
                     map: false,
                     processors: [
                         require('stylelint')(),
@@ -80,7 +81,6 @@ module.exports = function(grunt) {
                     ],
                     syntax: require('postcss-scss')
                 },
-                writeDest: false,
                 src: grunt.config('tasks.css.watch')
             }
         });
