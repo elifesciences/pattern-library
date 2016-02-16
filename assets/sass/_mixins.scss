@@ -1,4 +1,3 @@
-@import "variables";
 
 @function get-px-from-rem($size_in_rem) {
   @return $size_in_rem * $font-size-base-in-px;
