@@ -9,12 +9,12 @@
 
 @mixin font-size($size_in_px) {
   font-size: #{$size_in_px}px;
-  font-size: get-rem-from-px($size_in_px)rem;
+  font-size: #{get-rem-from-px($size_in_px)}rem;
 }
 
 @mixin padding-dimension($size_in_px, $dimension) {
   @if $dimension {
     padding-#{$dimension}: #{$size_in_px}px;
-    padding-#{$dimension}: get-rem-from-px($size_in_px)rem;
+    padding-#{$dimension}: #{get-rem-from-px($size_in_px)}rem;
   }
 }
