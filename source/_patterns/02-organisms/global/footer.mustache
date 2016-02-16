@@ -1,0 +1,72 @@
+<section class="site-footer">
+
+  <div class="main-menu">
+    {{#mainmenulinks}}
+    <div class="main-menu__section">
+      <h4 class="main-menu__title">{{title}}</h4>
+      <ul class="main-menu__list">
+        {{#items}}
+        <li class="main-menu__list-item">
+          <a href="{{url}}" class="main-menu__list-link">{{name}}</a>
+        </li>
+        {{/items}}
+      </ul>
+    </div>
+    {{/mainmenulinks}}
+  </div>
+
+  <div class="investor-logos">
+    <img src="http://www.fillmurray.com/300/200" alt="" class="investor-logos__img" />
+    <img src="http://www.fillmurray.com/300/200" alt="" class="investor-logos__img" />
+    <img src="http://www.fillmurray.com/300/200" alt="" class="investor-logos__img" />
+  </div>
+
+  <footer class="site-footer__body">
+
+    <nav class="footer-navigation">
+      <ul class="footer-navigation__list">
+        {{#footermenulinks}}
+        <li class="footer-navigation__list-item">
+          <a href="{{url}}" class="footer-navigation__list-link">{{name}}</a>
+        </li>
+        {{/footermenulinks}}
+      </ul>
+    </nav>
+
+    <div class="social-links">
+      <ul class="social-links__list">
+        <li class="social-links__list-item">
+          <a href="#" class="social-links__list-link social-links__list-link--facebook"><span>Facebook</span></a>
+        </li>
+        <li class="social-links__list-item">
+          <a href="#" class="social-links__list-link social-links__list-link--googleplus"><span>Google+</span></a>
+        </li>
+        <li class="social-links__list-item">
+          <a href="#" class="social-links__list-link social-links__list-link--instagram"><span>Instagram</span></a>
+        </li>
+        <li class="social-links__list-item">
+          <a href="#" class="social-links__list-link social-links__list-link--linkedin"><span>LinkedIn</span></a>
+        </li>
+        <li class="social-links__list-item">
+          <a href="#" class="social-links__list-link social-links__list-link--twitter"><span>Twitter</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="site-smallprint">
+      <small>eLife Sciences is a unique, non-profit collaboration between the funders and practitioners of research to improve the way important results are presented and shared. The open-access eLife journal is the first step in this initiative to make science publishing more effectively benefit science and scientists.</small>
+      <small>eLife Sciences Publications, Ltd is a limited liability non-profit non-stock corporation incorporated in the State of Delaware, USA, with company number 5030732, and is registered in the UK with company number FC030576 and branch number BR015634 at the address:</small>
+
+      <small>
+        eLife Sciences Publications, Ltd<br>
+        1st Floor, 24 Hills Road<br>
+        Cambridge CB2 1JP<br>
+        UK
+      </small>
+
+      <small>© 2015 eLife Sciences Publications Ltd. Subject to a Creative Commons Attribution license, except where otherwise noted. ISSN: 2050-084X</small>
+    </div>
+
+  </footer>
+
+</section>
