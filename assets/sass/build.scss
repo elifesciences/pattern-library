@@ -12,5 +12,9 @@
 // globals
 @import "global";
 
-// components
-@import "components/site-footer";
+// patterns
+@import "patterns/molecules/main-menu";
+@import "patterns/molecules/investor-logos";
+@import "patterns/molecules/social-links";
+
+@import "patterns/organisms/site-footer";
