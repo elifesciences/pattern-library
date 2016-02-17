@@ -57,3 +57,8 @@
     margin: #{get-rem-from-px($size_in_px)}rem;
   }
 }
+
+@mixin height($size_in_px) {
+  height: #{$size_in_px}px;
+  height: #{get-rem-from-px($size_in_px)}rem;
+}
