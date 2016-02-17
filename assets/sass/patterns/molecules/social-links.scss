@@ -1,0 +1,46 @@
+
+.social-links {
+  @include padding(0 0 24 0);
+  text-align: center;
+}
+
+.social-links__list {
+  margin: 0;
+  padding: 0;
+}
+
+.social-links__list_item {
+  display: inline-block;
+  margin: 0;
+  @include padding(0 5);
+}
+
+.social-links__list_link {
+  display: block;
+  @include width(20);
+  @include height(20);
+}
+
+$sitelist: facebook gplus linkedin twitter medium flickr;
+
+@each $site in $sitelist {
+  .social-links__list_link--#{$site} {
+    background-image: url("/assets/img/icons/post-#{$site}.png");
+    background-image: url("/assets/img/icons/post-#{$site}.svg"), linear-gradient(transparent, transparent);
+
+    &:hover {
+      background-image: url("/assets/img/icons/post-#{$site}-hover.png");
+      background-image: url("/assets/img/icons/post-#{$site}-hover.svg"), linear-gradient(transparent, transparent);
+    }
+  }
+}
+
+@media only screen and (min-width: #{(540/16)}em) {
+  .social-links {
+    text-align: left;
+  }
+
+  .social-links__list_item {
+    @include padding(0 10 0 0);
+  }
+}
