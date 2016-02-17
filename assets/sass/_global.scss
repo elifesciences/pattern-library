@@ -57,7 +57,7 @@ p {
   font-family: $font-primary;
   @include font-size(16);
   line-height: 1.5;
-  @include padding-dimension(24, "bottom");
+  @include padding(24, "bottom");
 }
 
 li,
@@ -66,15 +66,15 @@ dd {
   font-family: $font-primary;
   @include font-size(16);
   line-height: 1.5;
-  @include padding-dimension(24, "bottom");
-  @include padding-dimension(20, "left");
+  @include padding(24, "bottom");
+  @include padding(20, "left");
 }
 
 small {
   font-family: $font-primary;
   @include font-size(12);
   line-height: 1.35;
-  @include padding-dimension(15, "bottom");
+  @include padding(15, "bottom");
 }
 
 /*
