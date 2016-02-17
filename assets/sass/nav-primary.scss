@@ -41,10 +41,8 @@
   color: $color-primary;
 }
 
-.visuallyhiddennarrowest {
-  // direct implementation of rules from .visuallyhidden, so they can be
-  // removed with a media query (see later in this file) without needing JavaScript
-  // to remove the class.
+.nav-primary__menu_text {
+  //  visuallyhidden, but overridden in media query below.
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -69,7 +67,7 @@
 
 @media only all and (min-width: 21.25rem) {
 
-  .visuallyhiddennarrowest {
+  .nav-primary__menu_text {
     clip: auto;
     height: auto;
     margin: 0;
