@@ -1,0 +1,26 @@
+
+.compact-form {
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.compact-form__input {
+  border-bottom: 2px solid $color-text-dividers;
+  border-left: 2px solid $color-text-dividers;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+  border-top: 2px solid $color-text-dividers;
+  font-family: $font-secondary;
+  @include padding(8 5);
+}
+
+.compact-form__submit {
+  background-color: $color-primary-dark;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  color: $color-text-ui-background;
+  @include padding(12);
+}
