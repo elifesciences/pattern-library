@@ -11,7 +11,7 @@ $max-width: 1114;
   margin: auto;
 }
 
-@media only screen and (min-width: #{(540/16)}em) {
+@media only screen and (min-width: #{get-rem-from-px(520)}rem) {
   .investor-logos {
     border-bottom: 2px solid $color-text-dividers;
   }
