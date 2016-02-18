@@ -1,0 +1,37 @@
+
+$max-width: 1114;
+
+.investor-logos__img_container {
+  border-bottom: 2px solid $color-text-dividers;
+}
+
+.investor-logos__img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+@media only screen and (min-width: #{get-rem-from-px(520)}rem) {
+  .investor-logos {
+    border-bottom: 2px solid $color-text-dividers;
+  }
+
+  .invester-logos__container {
+    display: flex;
+    margin: auto;
+    max-width: #{($max-width/16)}rem;
+  }
+
+  .investor-logos__img_container {
+    border: none;
+    flex: 1 33.33%;
+  }
+
+  .investor-logos__img_container {
+    border-left: 2px solid $color-text-dividers;
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+}

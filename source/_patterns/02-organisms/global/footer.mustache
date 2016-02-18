@@ -1,0 +1,50 @@
+
+{{> molecules-main-menu }}
+
+{{> molecules-investor-logos }}
+
+<footer class="site-footer">
+
+  <div class="site-footer__container grid">
+
+    <div class="grid-cell">
+
+      <nav class="footer-navigation">
+        <ul class="footer-navigation__list">
+          {{#footermenulinks}}
+          <li class="footer-navigation__list_item">
+            <a href="{{url}}" class="footer-navigation__list_link">{{name}}</a>
+          </li>
+          {{/footermenulinks}}
+        </ul>
+      </nav>
+
+      {{> molecules-social-links }}
+
+    </div>
+
+    <div class="grid-cell">
+
+      <div class="site-smallprint">
+        <small>eLife Sciences is a unique, non-profit collaboration between the funders and practitioners of research to improve the way important results are presented and shared. The open-access eLife journal is the first step in this initiative to make science publishing more effectively benefit science and scientists.</small>
+        <small>eLife Sciences Publications, Ltd is a limited liability non-profit non-stock corporation incorporated in the State of Delaware, USA, with company number 5030732, and is registered in the UK with company number FC030576 and branch number BR015634 at the address:</small>
+
+        <address>
+          eLife Sciences Publications, Ltd<br>
+          1st Floor, 24 Hills Road<br>
+          Cambridge CB2 1JP<br>
+          UK
+        </address>
+      </div>
+
+    </div>
+
+    <div class="grid-cell">
+      <div class="site-smallprint site-smallprint__copyright">
+        <small>© 2015 eLife Sciences Publications Ltd. Subject to a Creative Commons Attribution license, except where otherwise noted. ISSN: 2050-084X</small>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
