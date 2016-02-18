@@ -1,0 +1,72 @@
+.nav-secondary__list {
+  align-items: center;
+  display: table-cell;
+  display: flex;
+  float: right;
+  @include height(40);
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.nav-secondary__item {
+  float: left;
+  font-family: $font-secondary;
+  @include font-size(11);
+  font-weight: bold;
+  @include height(24);
+  line-height: 1;
+  list-style-type: none;
+  @include padding(7 16 7 0);
+  text-transform: uppercase;
+}
+
+.nav-secondary__item--submit {
+  border-radius: 5px;
+  color: #fff;
+  display: none;
+}
+
+.nav-secondary__item--notification,
+.nav-secondary__item--profile {
+  @include padding(5, "top");
+}
+
+.nav-secondary a:link,
+.nav-secondary a:hover,
+.nav-secondary a:active,
+.nav-secondary a:visited {
+  color: #212121;
+  text-decoration: none;
+}
+
+.nav-secondary a:hover,
+.nav-secondary a:active {
+  color: $color-primary;
+}
+
+.nav-secondary__item--submit a {
+  background-color: $color-primary;
+  border-radius: 5px;
+  height: 100%;
+  @include padding(3 5);
+  text-align: center;
+  width: 100%;
+
+  &:link,
+  &:visited {
+    color: #fff;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $color-primary-dark;
+  }
+}
+
+@media only all and (min-width: #{get-rem-from-px(385)}rem) {
+  li.nav-secondary__item--submit {
+    display: list-item;
+  }
+}
