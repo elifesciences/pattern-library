@@ -21,9 +21,9 @@
 }
 
 .compact-form__submit {
+  background: url("/assets/img/icons/arrow-forward.png");
+  background: url("/assets/img/icons/arrow-forward.svg"), linear-gradient(transparent, transparent);
   background-color: $color-primary-dark;
-  background-image: url("/assets/img/icons/arrow-forward.png");
-  background-image: url("/assets/img/icons/arrow-forward.svg"), linear-gradient(transparent, transparent);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   border: none;
