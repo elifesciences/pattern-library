@@ -15,11 +15,13 @@
 // patterns
 
 // molecules
-@import "patterns/molecules/main-menu";
-@import "patterns/molecules/investor-logos";
-@import "patterns/molecules/social-links";
-@import "patterns/molecules/nav-primary";
 @import "patterns/molecules/compact-form";
+@import "patterns/molecules/investor-logos";
+@import "patterns/molecules/main-menu";
+@import "patterns/molecules/nav-primary";
+@import "patterns/molecules/nav-secondary";
+@import "patterns/molecules/social-links";
+
 
 // organisms
 @import "patterns/organisms/email-cta";
