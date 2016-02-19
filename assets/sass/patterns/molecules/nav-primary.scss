@@ -1,5 +1,6 @@
 .nav-primary {
   border-top: 1px solid $color-text-dividers;
+  clear: right;
   @include padding(0 5);
 }
 
@@ -79,7 +80,7 @@
   }
 
   .nav-primary__item--first {
-    @include padding(0 16 0 0);
+    @include padding(0 16 0 1);
   }
 
   .nav-primary__menu_icon {
