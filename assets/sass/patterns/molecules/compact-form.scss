@@ -1,0 +1,37 @@
+
+.compact-form__container {
+  border: none;
+  margin: 0 auto;
+  max-width: 440px;
+  max-width: #{get-rem-from-px(440)}rem;
+  padding: 0;
+  position: relative;
+}
+
+.compact-form__input {
+  border-bottom: 2px solid $color-text-dividers;
+  border-left: 2px solid $color-text-dividers;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+  border-top: 2px solid $color-text-dividers;
+  display: block;
+  font-family: $font-secondary;
+  @include padding(12 55 12 12);
+  width: 100%;
+}
+
+.compact-form__submit {
+  background-color: $color-primary-dark;
+  background-image: url("/assets/img/icons/arrow-forward.png");
+  background-image: url("/assets/img/icons/arrow-forward.svg"), linear-gradient(transparent, transparent);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  color: $color-text-ui-background;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  @include width(50);
+}
