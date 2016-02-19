@@ -6,3 +6,12 @@
   font-weight: 600;
   line-height: 1.3;
 }
+
+.doi__link {
+  color: $color-text-placeholder;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
