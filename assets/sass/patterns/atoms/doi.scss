@@ -1,0 +1,8 @@
+
+.doi {
+  color: $color-text-placeholder;
+  font-family: $font-secondary;
+  @include font-size(12);
+  font-weight: 600;
+  line-height: 1.3;
+}
