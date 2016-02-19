@@ -1,0 +1,59 @@
+.site-header {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  min-width: #{get-rem-from-px(275)}rem;
+}
+
+.site-header__title {
+  float: left;
+  margin: 0;
+}
+
+.site-header__logo_link {
+  background: url(/assets/img/patterns/organisms/elife-logo-symbol-1x.png);
+  background: url(/assets/img/patterns/organisms/elife-logo-symbol.svg), linear-gradient(transparent, transparent);
+  background-origin: content-box;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  // Dimensions sized in px explicitly, to accommodate a specific image.
+  height: 27px;
+  margin: 6px 6px 0 6px;
+  width: 27px;
+}
+
+@media only all and (min-width: #{get-rem-from-px(545)}rem) {
+
+  .site-header__title {
+    border-right: 1px solid $color-text-dividers;
+    float: left;
+    margin-right: 10px;
+    padding: 30px;
+    position: relative;
+    width: 155px;
+  }
+
+  // Stops the top border of .nav-primary from bleeding into .site-header__title.
+  .site-header__title:after {
+    background-color: #fff;
+    content: "";
+    display: block;
+    height: 99px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 154px;
+  }
+
+  .site-header__logo_link {
+    background: url(/assets/img/patterns/organisms/elife-logo-full.svg), linear-gradient(#fff, #fff);
+    background-color: #fff;
+    display: block;
+    height: 39px;
+    margin: 0;
+    position: relative;
+    width: 92px;
+    z-index: 10;
+  }
+
+}
