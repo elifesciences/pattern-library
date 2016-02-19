@@ -1,8 +1,8 @@
 
 .email-cta {
-  text-align: center;
   border-bottom: 2px solid $color-text-dividers;
   @include padding(40 0);
+  text-align: center;
 }
 
 .email-cta__container {
