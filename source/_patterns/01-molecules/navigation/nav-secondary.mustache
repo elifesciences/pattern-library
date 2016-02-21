@@ -1,37 +1,17 @@
 <div class="nav-secondary">
  <nav>
   <ul class="nav-secondary__list clearfix">
-    <li class="nav-secondary__item"><a href="#">Careers</a></li>
-    <li class="nav-secondary__item"><a href="#">About</a></li>
-    <li class="nav-secondary__item"><a href="#">Labs</a></li>
-    <li class="nav-secondary__item nav-secondary__item--submit"><a href="#">Submit my research</a></li>
-    <li class="nav-secondary__item nav-secondary__item--notification">
-      <a href="#">
-        <picture>
-          <source srcset="/assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
-                  type="image/svg+xml"/>
-          <img src="/assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png"
-               srcset="/assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, 
-                       /assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w"
-               alt="Notification icon">
-        </picture>
-        <span class="visuallyhidden">Alerts</span>
+   {{#navsecondarylinks}}
+    <li class="nav-secondary__item{{#variant?}} nav-secondary__item--{{variant?}}{{/variant?}}">
+      <a href="{{path}}">
+        {{#imgs?}}
+          {{> atoms-picture-svg-with-fallback}}
+        {{/imgs?}}
+        {{#textClasses?}}<span class="{{textClasses?}}">{{text}}</span>{{/textClasses?}}
+        {{^textClasses?}}{{text}}{{/textClasses?}}
       </a>
-    </li>
-    <li class="nav-secondary__item nav-secondary__item--profile">
-      <a href="#">
-        <picture>
-          <source srcset="/assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
-                  type="image/svg+xml"/>
-          <img src="/assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png"
-               srcset="/assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, 
-                       /assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png 14w"
-               alt="Notification icon">
-        </picture>
-        <span class="visuallyhidden">Profile</span>
-      </a>
-    </li>
+      </li>
+   {{/navsecondarylinks}}
   </ul>
   </nav>
-  
 </div>
