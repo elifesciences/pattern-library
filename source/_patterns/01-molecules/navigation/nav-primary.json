@@ -1,0 +1,56 @@
+{
+  "navprimarylinks": [
+    {
+      "text": "Menu",
+      "variant?": "first",
+      "textClasses?": "nav-primary__menu_text",
+      "path": "#main-menu",
+      "alt": "Menu icon",
+      "imgs?": [
+        {
+        "svg": "/assets/img/patterns/molecules/nav-primary-menu-ic.svg",
+        "classes?": "nav-primary__menu_icon",
+        "hires": {
+          "path": "/assets/img/patterns/molecules/nav-primary-menu-ic_2x.png",
+          "width": "48w"
+        },
+        "lores": {
+          "path": "/assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+          "width": "24w"
+          }
+        }
+      ]
+    },
+
+    {
+      "text": "Home",
+      "url": "#"
+    },
+
+    {
+      "text": "Magazine",
+      "url": "#"
+    },
+    
+    {
+      "text": "Search",
+      "variant?": "last",
+      "textClasses?": "visuallyhidden",
+      "path": "#",
+      "alt": "Search icon",
+      "imgs?": [
+        {
+          "svg": "/assets/img/patterns/molecules/nav-primary-search-ic.svg",
+          "hires": {
+            "path": "/assets/img/patterns/molecules/nav-primary-search-ic_2x.png",
+            "width": "48w"
+          },
+          "lores": {
+            "path": "/assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+            "width": "24w"
+          }
+        }
+      ]
+    }
+  ]
+}

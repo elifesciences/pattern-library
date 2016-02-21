@@ -1,31 +1,24 @@
-<div class="nav-primary">
+ <div class="nav-primary">
   <nav>
     <ul class="clearfix">
-      <li class="nav-primary__item nav-primary__item--first">
-        <a href="#main-menu">
-          <picture>
-            <source srcset="/assets/img/patterns/molecules/nav-primary-menu-ic.svg" type="image/svg+xml" />
-            <img src="/assets/img/patterns/molecules/nav-primary-menu-ic_1x.png"
-                 srcset="/assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, /assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w"
-                 alt="Menu icon"
-                 class="nav-primary__menu_icon" />
-          </picture>
-          <span class="nav-primary__menu_text">Menu</span>
+      {{#navprimarylinks}}
+        <li class="nav-primary__item{{#variant?}} nav-primary__item--{{variant?}}{{/variant?}}">
+        <a href="{{path}}">
+          {{#imgs?}}
+            <picture>
+              <source srcset="{{svg}}" type="image/svg+xml" />
+              <img srcset="{{hires.path}} {{hires.width}},
+                           {{lores.path}} {{lores.width}}"
+                   src="{{lores.path}}"
+                   {{#classes?}}class="{{classes?}}"{{/classes?}}
+                   alt="{{alt}}"/>
+            </picture>
+          {{/imgs?}}
+          {{#textClasses?}}<span class="{{textClasses?}}">{{text}}</span>{{/textClasses?}}
+          {{^textClasses?}}<span>{{text}}</span>{{/textClasses?}}
         </a>
       </li>
-      <li class="nav-primary__item"><a href="/">Home</a></li>
-      <li class="nav-primary__item"><a href="/magazine">Magazine</a></li>
-      <li class="nav-primary__item nav-primary__item--last">
-        <a href="/search">
-          <picture>
-            <source srcset="/assets/img/patterns/molecules/nav-primary-search-ic.svg" type="image/svg+xml" />
-            <img src="/assets/img/patterns/molecules/nav-primary-search-ic_1x.png" 
-                 srcset="/assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, /assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w"
-                 alt="Search icon" />
-          </picture>
-          <span class="visuallyhidden">Search</span>
-        </a>
-      </li>
+      {{/navprimarylinks}}
     </ul>
   </nav>
 </div>
