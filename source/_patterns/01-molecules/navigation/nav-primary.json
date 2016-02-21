@@ -4,7 +4,7 @@
       "text": "Menu",
       "variant?": "first",
       "textClasses?": "nav-primary__menu_text",
-      "path": "#main-menu",
+      "path": "#",
       "alt": "Menu icon",
       "imgs?": [
         {
@@ -24,12 +24,12 @@
 
     {
       "text": "Home",
-      "url": "#"
+      "path": "#"
     },
 
     {
       "text": "Magazine",
-      "url": "#"
+      "path": "#"
     },
     
     {
