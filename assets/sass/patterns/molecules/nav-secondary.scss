@@ -22,7 +22,7 @@
   text-transform: uppercase;
 }
 
-.nav-secondary__item--submit {
+.nav-secondary__item--submit-list-item {
   border-radius: 5px;
   color: #fff;
   display: none;
@@ -46,7 +46,7 @@
   color: $color-primary;
 }
 
-.nav-secondary__item--submit a {
+.nav-secondary__item--submit-list-item a {
   background-color: $color-primary;
   border-radius: 5px;
   height: 100%;
