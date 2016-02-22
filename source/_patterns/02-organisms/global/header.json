@@ -41,6 +41,7 @@
       "imgs?": [
         {
           "svg": "/assets/img/patterns/molecules/nav-primary-search-ic.svg",
+          "classes?": "nav-primary__search_icon",
           "hires": {
             "path": "/assets/img/patterns/molecules/nav-primary-search-ic_2x.png",
             "width": "48w"
@@ -53,8 +54,8 @@
       ]
     }
   ],
-  
-    "navsecondarylinks": [
+    
+  "navsecondarylinks": [
     {
       "text": "Careers",
       "path": "#"
@@ -85,6 +86,7 @@
       "imgs?": [
         {
           "svg": "/assets/img/patterns/molecules/nav-secondary-notifications-ic.svg",
+          "classes?": "nav-secondary__notification-icon",
           "hires": {
             "path": "/assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png",
             "width": "28w"
@@ -107,6 +109,7 @@
       "imgs?": [
         {
         "svg": "/assets/img/patterns/molecules/nav-secondary-profile-ic.svg",
+          "classes?": "nav-secondary__profile-icon",
           "hires": {
           "path": "/assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png",
             "width": "28w"
@@ -119,5 +122,4 @@
       ]
     }
   ]
-
 }
