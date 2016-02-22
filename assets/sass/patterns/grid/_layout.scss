@@ -1,0 +1,67 @@
+/**
+ * START: layout from ported grid system.
+ * Use for reference.
+ */
+
+/*
+figure:not(.modal) {
+  margin: 0 auto;
+  max-width: 500px;
+  clear: right;
+}
+
+@media only all and (min-width: $bkpt-float-figure) {
+  figure:not(.modal) {
+    float: right;
+    margin: 2.4% 0 2.4% 2.4%;
+    @include calc-width-for-cols(7, 'scaled');
+  }
+}
+
+@media only all and (min-width: $bkpt-float-related) {
+  .article-body {
+    position: relative;
+    @include calc-width-for-cols(8, 'scaled');
+  }
+  
+  figure:not(.modal) {
+    @include calc-width-for-cols(6, 'scaled');
+    @include pull-right-by-cols(4, 'scaled');
+
+  }
+}
+
+@media only all and (min-width: $bkpt-show-intra-nav) {
+  .article-body {
+    @include calc-width-for-cols(6, 'scaled');
+  }
+
+  figure:not(.modal) {
+    @include calc-width-for-cols(4, 'scaled');
+    @include pull-right-by-cols(4, 'scaled');
+  }
+}
+
+@media only all and (min-width: $max-page-width) {
+  
+  .article-body {
+    @include calc-width-for-cols(6, 'max');
+  }
+
+  figure:not(.modal) {
+    @include calc-width-for-cols(4, 'max');
+    @include pull-right-by-cols(4, 'max');
+
+  }
+
+//  .gs-container--main {
+  .gs-container {
+    margin: 0 auto;
+  }  
+}
+*/
+
+/**
+ * END: layout from ported grid system.
+ *
+ */
