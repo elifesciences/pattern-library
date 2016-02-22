@@ -74,7 +74,7 @@
     {
       "text": "Submit my research",
       "path": "#",
-      "variant?": "submit"
+      "variant?": "submit-list-item"
     },
     
     {
