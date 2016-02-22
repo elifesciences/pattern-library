@@ -1,0 +1,72 @@
+
+.contextual-data {
+  border-bottom: 1px solid $color-text-dividers;
+  color: $color-text-placeholder;
+  font-family: $font-secondary;
+  @include font-size(12);
+  font-weight: 600;
+  @include padding(15 0);
+}
+
+.contextual-data__list {
+  margin: 0;
+}
+
+.contextual-data__list_title {
+  display: inline-block;
+  font-family: $font-secondary;
+  @include font-size(12);
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.contextual-data__list_desc {
+  display: inline;
+  font-family: $font-secondary;
+  @include font-size(12);
+  margin: 0;
+  padding: 0;
+
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+.contextual-data__cite {
+  display: block;
+}
+
+@media only screen and (min-width: #{get-rem-from-px(500)}rem) {
+  .contextual-data__list {
+    display: inline-block;
+  }
+
+  .contextual-data__list_desc {
+    @include padding(0 10 0 0);
+
+    &:after {
+      content: none;
+    }
+  }
+}
+
+@media only screen and (min-width: #{get-rem-from-px(715)}rem) {
+  .contextual-data {
+    display: flex;
+  }
+
+  .contextual-data__cite {
+    align-self: flex-end;
+    flex: 1;
+    text-align: right;
+    @include padding(0 5 0 0);
+  }
+
+  .contextual-data__doi {
+    align-self: flex-end;
+    display: block;
+    text-align: right;
+  }
+}
