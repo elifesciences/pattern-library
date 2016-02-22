@@ -1,0 +1,223 @@
+// The grid comprises $gs-num-cols columns.
+// Regardless of the # columns, the page left/right gutters are each 5% of page width.
+// This 5% includes the 1.2% contributed from the outermost columns' outside padding (thus $col-gutter-as-proportion is 0.012).
+// So the whitespace outside the respective outermost columns' padding is:
+//  5% - 1.2% = 3.8% (thus $page-gutter-as-proportion is 0.038)
+// The total grid width within the page gutters occupies either the remaining 90% of
+// the page width, or the maximum content width ($max-content-width-quantity-in-px), whichever is the lesser.
+// With box-sizing set to border-box, each column's width is:
+//  total grid width / $gs-num-cols
+// This is to include a left and right padding of 1.2% page width, respectively.
+//
+// So when the viewport width is >= $max-page-width:
+// col-width = ($max-page-width - 10%) / $gs-num-cols
+//
+// When the viewport width is < $max-page-width:
+// col-width = (current-viewport-width - 10%) / $gs-num-cols
+//
+// 
+//
+// Each grid column has padding that contributes to half the width separating 
+// adjecent columns (half-gutter). This is usually fine, but problems have been previously 
+// encountered when trying to override this to pull figures a certain number of
+// columns to the right.
+//
+// At different widths, some elements contained within the grid are required to
+// occupy different numbers of columns. There's a decision to make about how
+// these changes are applied. If the different columns are specified by changing 
+// the class, this requires js, whereas if the layout from the grid is applied
+// directly to the relavent elements (or a wrapper, if that makes sense), 
+// it's simpler.
+
+// ******************************
+// ** BASIC WIDTH CALCULATIONS **
+// ******************************
+
+$gs-num-cols: 12;
+// Measures
+// Any 'quantity' is unitless.
+// Base measures, everything else is derived from these.
+$base-font-quantity: 16;
+// Actual page gutter is the sum of $col-gutter-as-proportion and $page-gutter-as-proportion,
+// because the page gutter sits outside the outside co§l gutter of the outer-most
+// left and right columns.
+// As such, another way to put this would be:
+// $total-page-gutter-as-proportion = 0.05 // 5%
+// and then under the derived measures section, work out what proportion of this
+// 0.05 is contributed for free by the outside gutters of the two outermost columns
+// and therefore how much remains to be explicitly set.
+$page-gutter-as-proportion: 0.038;
+$col-gutter-as-proportion: 0.012;
+// Includes outer col gutter on both left-most and right-most columns.
+$max-content-width-quantity-in-px: 1200;
+
+// Derived measures.
+$base-font-size: $base-font-quantity + px;
+// Used to set left and right margins of the grid wrapper (.gs-wrapper, see _grid.scss)
+$page-gutter-quantity-as-percent: $page-gutter-as-proportion * 100;
+// Used to set $content-width-as-vw:
+$content-width-as-proportion: 1 - 2 * $page-gutter-as-proportion;
+// Used in mixin single-col-width(), fundamental to this system:
+$content-width-as-vw: $content-width-as-proportion * 100 + vw;
+// Used in mixin half-gutter():
+$max-col-gutter-in-px: ($max-content-width-quantity-in-px * $col-gutter-as-proportion) + px;
+// Used to set $max-page-width-quantity-in-px and $max-page-gutter-in-px
+$max-page-gutter-quantity-in-px: $max-content-width-quantity-in-px * $page-gutter-as-proportion;
+// Used to set $max-page-width-quantity-in-rem
+$max-page-width-quantity-in-px: $max-content-width-quantity-in-px + 2 * $max-page-gutter-quantity-in-px;
+// Used to set $max-page-width:
+$max-page-width-quantity-in-rem: $max-page-width-quantity-in-px / $base-font-quantity;
+
+// Used in mixin half-gutter():
+$max-page-gutter-in-px: $max-page-gutter-quantity-in-px + px;
+// Used in media queries and various width and positioning calculations:
+$max-page-width: $max-page-width-quantity-in-rem + rem;
+// Used in _nav.scss
+$max-content-width-in-px: $max-content-width-quantity-in-px + px;
+
+// Used to calculate $max-content-width:
+$max-content-width-quantity-in-rem: $max-content-width-quantity-in-px / $base-font-quantity;
+// Used to set width of the grid container (.gc-container, see _grid.scss), also used in _nav.scss
+$max-content-width: $max-content-width-quantity-in-rem + rem;
+
+// Breakpoints
+$bkpt-float-figure: 31.25rem; // 500px
+$bkpt-float-related: 39.375rem; //630px
+$bkpt-show-intra-nav: 62.5rem; // 1000px
+
+// ** NOTE:
+// Underneath the following mixins are definitions of some grid classes that use them.
+// More useage is found in _layout.scss.
+// At the moment, these grid calculations are sometimes applied directly to items on a page
+// not just the grid classes
+// in _layout.scss via the mixins. We could look at abstracting mixin use into
+// a set of classes that belong to the grid, and using those classes to alter
+// various measures: e.g. .1col-scaled, .1col-max.
+// Should investigate pros and cons of this with respect to fallbacks (for
+// calc() and media queries).
+
+// ******************************
+// ** BASIC WIDTH CALCULATIONS **
+// ******************************
+
+// Returns a calculation for the width of a single grid column.
+@function single-col-width($isMax) {
+  @if $isMax {
+    @return #{$max-content-width} / #{$gs-num-cols};
+  }
+@return $content-width-as-vw / $gs-num-cols;
+}
+
+// Returns a calculation for the cumulative width of a specified # grid columns.
+@function multiple-col-width($num-cols, $col-type) {
+  @if $col-type == 'max' {
+    @return unquote(single-col-width(true) * #{$num-cols});
+  }
+  @return unquote(single-col-width(false) * #{$num-cols});
+}
+
+// Sets CSS width property to the cumulative width of a specified # grid columns.
+@mixin calc-width-for-cols($num-cols, $col-type) {
+  width: unquote("calc(" + multiple-col-width($num-cols, $col-type) + ")");
+}
+
+// Specifies CSS max-width property to the cumulative width of a specified # grid columns.
+@mixin set-max-width($num-cols, $col-type) {
+  max-width: unquote("calc(" + multiple-col-width($num-cols, $col-type) + ")");
+}
+
+// Specifies CSS max-width property to the cumulative width of a specified # grid columns.
+@mixin set-left-margin($num-cols, $col-type) {
+  margin-left: unquote("calc(" + multiple-col-width($num-cols, $col-type) + ")");
+}
+
+// ******************************
+// ** GUTTER WIDTH CALCULATIONS **
+// ******************************
+
+// Returns a value or a calculation for either the page gutter or a col gutter.
+// For type max, returns value of max gutter in px for that gutter
+// When type scaled, returns a calculation for that gutter based on viewport.
+@function half-gutter($type:'scaled', $object:'col') {
+  @if $object == 'col' {
+    @if $type == 'max' {
+      @return #{$max-col-gutter-in-px};
+    } @else {
+      @return 100vw * $col-gutter-as-proportion;
+    }
+  } @else if $object == 'page' {
+    @if $type == 'max' {
+      @return #{$max-page-gutter-in-px};
+    } @else {
+      @return 100vw * $page-gutter-as-proportion;
+    }
+  }
+}
+
+// Sets padding left and right to be the current size of half-gutter.
+@mixin gutter-padding($type:'scaled', $object:'col') {
+  $padding: half-gutter($type, $object);
+  // Uses calc because $padding may be (but isn't always), a calculation.
+  // When it's not, you get e.g. 'calc(123vw)' as the output, which is acceptable.
+  padding-left: calc(#{$padding});
+  padding-right: calc(#{$padding});
+}
+
+// ********************************
+// ** RHS EXCEPTIONS FOR FIGURES **
+// ********************************
+
+// Tries to eliminate all right-hand side whitespace on the element.
+// Makes some assumptions about current right margin though, so not great.
+@mixin flush-right($type:'scaled') {
+  padding-right: 0;
+  margin-right: unquote("calc(" + half-gutter($type, 'col') + " * -1)");
+}
+
+@mixin pull-right-by-cols($num-cols, $col-type, $nuance:'') {
+  @if $nuance == 'use-positioning' {
+    right: unquote("calc(" + multiple-col-width($num-cols, $col-type) + "  * -1)");
+  } @else {
+    margin-right: unquote("calc((" + multiple-col-width($num-cols, $col-type) + " + " + 
+      half-gutter($col-type, 'col') + ")  * -1)");
+  }
+}
+
+//Flexible layout.
+.gs-wrapper {
+  margin: 0 #{$page-gutter-quantity-as-percent}vw;
+}
+
+//.article {
+.gs-container {
+  max-width: $max-content-width;
+}
+
+.gs-col {
+  @include gutter-padding('scaled');
+}
+
+// FIX: this nukes the pull-right-by cols.
+.gs-col--flush-right {
+//  @include flush-right('scaled');
+  padding-right: 0;
+}
+
+@media only all and (min-width: $bkpt-float-figure) {
+  figure.gs-col {
+    padding-right: 0;
+  }
+}
+
+@media only all and (min-width: $bkpt-float-related) {
+  figure.gs-col {
+    @include gutter-padding('scaled');
+  }
+}
+
+@media only all and (min-width: $max-page-width) {
+  .gs-col {
+    @include gutter-padding('max');
+  }
+}
+
