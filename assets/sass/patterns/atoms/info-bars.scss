@@ -1,0 +1,48 @@
+
+.info-bar {
+  font-family: $font-secondary;
+  font-weight: 600;
+  @include padding(18 8);
+  text-align: center;
+}
+
+.info-bar__text {
+  display: inline-block;
+  @include padding(0 0 0 30);
+}
+
+.info-bar--info {
+  background-color: $color-information;
+  color: $color-text--reverse;
+}
+
+.info-bar__text--info {
+  background: url('/assets/img/icons/info.png');
+  background: url('/assets/img/icons/info.svg'), linear-gradient(transparent, transparent);
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+.info-bar--success {
+  background-color: $color-success;
+  color: $color-text--reverse;
+}
+
+.info-bar__text--success {
+  background: url('/assets/img/icons/confirmed.png');
+  background: url('/assets/img/icons/confirmed.svg'), linear-gradient(transparent, transparent);
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+.info-bar--attention {
+  background-color: $color-attention;
+  color: $color-text--reverse;
+}
+
+.info-bar__text--attention {
+  background: url('/assets/img/icons/attention.png');
+  background: url('/assets/img/icons/attention.svg'), linear-gradient(transparent, transparent);
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
