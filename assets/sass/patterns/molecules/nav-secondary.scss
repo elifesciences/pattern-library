@@ -65,8 +65,18 @@
   }
 }
 
+.nav-secondary__notification-icon {
+  height: 17px;
+  width: 14px;
+}
+
+.nav-secondary__profile-icon {
+  height: 14px;
+  width: 21px;
+}
+
 @media only all and (min-width: #{get-rem-from-px(425)}rem) {
-  li.nav-secondary__item--submit {
+  .nav-secondary__item--submit-list-item {
     display: list-item;
   }
 }
