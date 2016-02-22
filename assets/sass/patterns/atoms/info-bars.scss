@@ -1,0 +1,22 @@
+
+.info-bar {
+  font-family: $font-secondary;
+  font-weight: 600;
+  @include padding(15 4);
+  text-align: center;
+}
+
+.info-bar--info {
+  background-color: $color-information;
+  color: $color-text--reverse;
+}
+
+.info-bar--success {
+  background-color: $color-success;
+  color: $color-text--reverse;
+}
+
+.info-bar--attention {
+  background-color: $color-attention;
+  color: $color-text--reverse;
+}
