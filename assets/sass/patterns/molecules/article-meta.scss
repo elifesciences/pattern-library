@@ -1,0 +1,53 @@
+
+.article-meta {
+  font-family: $font-secondary;
+  padding: 0 6%;
+  text-align: center;
+}
+
+.article-meta__container {
+  @include padding(15, "top");
+}
+
+.article-meta__group {
+  @include padding(0 0 15 0);
+}
+
+.article-meta__group_title {
+  color: $color-text-placeholder;
+  @include font-size(11);
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.article-meta__link_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-meta__link_list_item {
+  display: inline;
+  font-family: $font-secondary;
+  @include font-size(11);
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.article-meta__link {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+@media only screen and (min-width: #{get-rem-from-px(640)}rem) {
+  .article-meta {
+    text-align: left;
+  }
+}
