@@ -10,3 +10,6 @@ latest-change.txt
 
 /source/assets
 public/*
+
+# Ignore files used for sass globbing
+assets/sass/_patterns.scss
