@@ -38,7 +38,7 @@ module.exports = function(grunt) {
              * Changes to any files specified here will result in the css task being
              * re-run (when using grunt watch). Delete to disable watch for this task.
              */
-            watch: ['assets/sass/**/*.scss'],
+            watch: [],
             /*
              * Any files and folders to delete prior to the build task running.
              * Delete this if you don't want to run the clean step before generating the fresh files.
@@ -179,6 +179,18 @@ module.exports = function(grunt) {
         watch: {
             options: {
                 livereload: false
+            },
+            allcss: {
+                files: ['assets/sass/**/*.scss', 'assets/sass/patterns/**/*.scss'],
+                tasks: ['sass_globbing', 'css'],
+                options: {},
+            },
+        },
+        sass_globbing: {
+            build: {
+                files: {
+                   'assets/sass/_patterns.scss': 'assets/sass/patterns/**/*.scss',
+                }
             }
         },
         tasks: config,
@@ -189,6 +201,6 @@ module.exports = function(grunt) {
 
     grunt.loadTasks('tasks');
 
-    grunt.registerTask('default', ['concurrent:first']);
+    grunt.registerTask('default', ['sass_globbing', 'concurrent:first']);
 
 };

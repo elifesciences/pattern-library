@@ -13,19 +13,4 @@
 @import "global";
 
 // patterns
-
-//atoms
-@import "patterns/atoms/doi";
-
-// molecules
-@import "patterns/molecules/compact-form";
-@import "patterns/molecules/investor-logos";
-@import "patterns/molecules/main-menu";
-@import "patterns/molecules/nav-primary";
-@import "patterns/molecules/nav-secondary";
-@import "patterns/molecules/social-links";
-
-// organisms
-@import "patterns/organisms/email-cta";
-@import "patterns/organisms/site-footer";
-@import "patterns/organisms/site-header";
+@import "patterns";
