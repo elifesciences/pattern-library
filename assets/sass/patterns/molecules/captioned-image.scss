@@ -1,0 +1,27 @@
+
+.captioned-image {
+  margin: 0;
+  /* max-width is a bonus here. Unlikely to be used. Not worried about support. */
+  max-width: #{get-rem-from-px(715)}rem;
+}
+
+.captioned-image__picture {
+  display: block;
+  @include margin(10, "bottom");
+}
+
+.captioned-image__image {
+  display: block;
+  width: 100%;
+}
+
+.captioned-image__caption {
+  padding: 0 6%;
+
+  p {
+    font-family: $font-secondary;
+    @include font-size(12);
+    margin: 0;
+    @include padding(0 0 5 0);
+  }
+}
