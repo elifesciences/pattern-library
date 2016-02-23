@@ -9,8 +9,8 @@
 }
 
 .site-header__logo_link {
-  background: url(/assets/img/patterns/organisms/elife-logo-symbol-1x.png);
-  background: url(/assets/img/patterns/organisms/elife-logo-symbol.svg), linear-gradient(transparent, transparent);
+  background: url("../img/patterns/organisms/elife-logo-symbol-1x.png");
+  background: url("../img/patterns/organisms/elife-logo-symbol.svg), linear-gradient(transparent, transparent");
   background-origin: content-box;
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@
   }
 
   .site-header__logo_link {
-    background: url(/assets/img/patterns/organisms/elife-logo-full.svg), linear-gradient(#fff, #fff);
+    background: url("../img/patterns/organisms/elife-logo-full.svg"), linear-gradient(#fff, #fff);
     background-color: #fff;
     display: block;
     height: 39px;

@@ -17,8 +17,8 @@
 }
 
 .info-bar__text--info {
-  background: url('/assets/img/icons/info.png');
-  background: url('/assets/img/icons/info.svg'), linear-gradient(transparent, transparent);
+  background: url("../img/icons/info.png");
+  background: url("../img/icons/info.svg"), linear-gradient(transparent, transparent);
   background-position: 0 50%;
   background-repeat: no-repeat;
 }
@@ -29,8 +29,8 @@
 }
 
 .info-bar__text--success {
-  background: url('/assets/img/icons/confirmed.png');
-  background: url('/assets/img/icons/confirmed.svg'), linear-gradient(transparent, transparent);
+  background: url("../img/icons/confirmed.png");
+  background: url("../img/icons/confirmed.svg"), linear-gradient(transparent, transparent);
   background-position: 0 50%;
   background-repeat: no-repeat;
 }
@@ -41,8 +41,8 @@
 }
 
 .info-bar__text--attention {
-  background: url('/assets/img/icons/attention.png');
-  background: url('/assets/img/icons/attention.svg'), linear-gradient(transparent, transparent);
+  background: url("../img/icons/attention.png");
+  background: url("../img/icons/attention.svg"), linear-gradient(transparent, transparent);
   background-position: 0 50%;
   background-repeat: no-repeat;
 }
