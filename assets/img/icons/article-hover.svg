@@ -1,6 +1,6 @@
-<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+<svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
   <title>
-    article-1x
+    article-hover
   </title>
-  <path d="M10.667 0H1.333C.6 0 0 .6 0 1.333v9.334C0 11.4.6 12 1.333 12h9.334C11.4 12 12 11.4 12 10.667V1.333C12 .6 11.4 0 10.667 0zM9.333 4H2.667V2.667h6.666V4zm0 2.667H2.667V5.333h6.666v1.334zm-2 2.666H2.667V8h4.666v1.333z" fill="#0288D1" fill-rule="evenodd"/>
+  <path d="M11.667 1H2.333C1.6 1 1 1.6 1 2.333v9.334C1 12.4 1.6 13 2.333 13h9.334C12.4 13 13 12.4 13 11.667V2.333C13 1.6 12.4 1 11.667 1zM11 5H3V3h8v2zm0 3H3V6h8v2zm-3 3H3V9h5v2z" fill="#0288D1" fill-rule="evenodd"/>
 </svg>
