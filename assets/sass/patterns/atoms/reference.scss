@@ -13,8 +13,16 @@
   }
 }
 
-.reference__authors {
-  @include padding(5, "bottom");
+.reference__authors_list {
+  list-style: none;
+  margin: 0;
+  @include padding(0 0 5 0);
+}
+
+.reference__authors_list_item {
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 .reference__authors_link {
