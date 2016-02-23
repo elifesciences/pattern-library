@@ -25,12 +25,12 @@ $sitelist: facebook gplus linkedin twitter medium flickr;
 
 @each $site in $sitelist {
   .social-links__list_link--#{$site} {
-    background-image: url("/assets/img/icons/post-#{$site}.png");
-    background-image: url("/assets/img/icons/post-#{$site}.svg"), linear-gradient(transparent, transparent);
+    background: url("../img/icons/post-#{$site}.png");
+    background: url("../img/icons/post-#{$site}.svg"), linear-gradient(transparent, transparent);
 
     &:hover {
-      background-image: url("/assets/img/icons/post-#{$site}-hover.png");
-      background-image: url("/assets/img/icons/post-#{$site}-hover.svg"), linear-gradient(transparent, transparent);
+      background: url("../img/icons/post-#{$site}-hover.png");
+      background: url("../img/icons/post-#{$site}-hover.svg"), linear-gradient(transparent, transparent);
     }
   }
 }
