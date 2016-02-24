@@ -3,62 +3,69 @@
   border-bottom: 1px solid $color-text-dividers;
   color: $color-text-placeholder;
   font-family: $font-secondary;
-  @include font-size(12);
+  @include font-size(11);
   font-weight: 600;
-  @include padding(15 0);
+  line-height: 1;
+  @include padding(15 , "top");
 }
 
 .contextual-data__list {
+  border-bottom: 1px solid $color-text-dividers;
   margin: 0;
+  @include padding(15 , "bottom");
+  text-align: center;
 }
 
 .contextual-data__list_title {
   display: inline-block;
   font-family: $font-secondary;
-  @include font-size(12);
+  @include font-size(11);
+  line-height: 1;
   margin: 0;
   padding: 0;
   text-transform: uppercase;
 }
 
 .contextual-data__list_desc {
-  display: inline;
+  display: inline-block;
   font-family: $font-secondary;
-  @include font-size(12);
+  @include font-size(11);
+  line-height: 1;
   margin: 0;
-  padding: 0;
-
-  &:after {
-    content: "";
-    display: block;
-  }
+  @include padding(0 5 0 0);
 }
 
 .contextual-data__cite {
-  display: block;
+  display: none;
 }
 
-@media only screen and (min-width: #{get-rem-from-px(500)}rem) {
+.contextual-data__doi {
+  display: block;
+  @include padding(15 0);
+  text-align: center;
+}
+
+@media only screen and (min-width: #{get-rem-from-px(640)}rem) {
+  .contextual-data {
+    display: flex;
+    @include padding(15 0);
+  }
+
   .contextual-data__list {
+    align-self: center;
+    border-bottom: none;
     display: inline-block;
+    padding: 0;
+    text-align: left;
   }
 
   .contextual-data__list_desc {
     @include padding(0 10 0 0);
-
-    &:after {
-      content: none;
-    }
-  }
-}
-
-@media only screen and (min-width: #{get-rem-from-px(715)}rem) {
-  .contextual-data {
-    display: flex;
   }
 
   .contextual-data__cite {
-    align-self: flex-end;
+    align-self: center;
+    display: block;
     flex: 1;
     text-align: right;
     @include padding(0 5 0 0);
@@ -67,6 +74,7 @@
   .contextual-data__doi {
     align-self: flex-end;
     display: block;
+    padding: 0;
     text-align: right;
   }
 }
