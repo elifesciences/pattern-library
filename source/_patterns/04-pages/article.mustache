@@ -1,0 +1,50 @@
+
+  {{> organisms-header }}
+
+  <main role="main">
+
+    <article class="article">
+
+      <!-- replace with pattern -->
+      <div style="text-align: center; height: 220px; position: relative">
+        <span style="position: absolute; top: 50%; width: 100%; left: 0;">[article header here]</span>
+      </div>
+      <!-- /replace -->
+
+      <div class="gs-wrapper">
+
+        <div class="gs-container">
+
+          <div class="gs-col">
+            {{> molecules-view-selector }}
+          </div>
+
+          <div class="gs-col">
+            <div>[abstract here]</div>
+
+            <div>[digest here]</div>
+
+            <div>[related content]</div>
+          </div>
+
+        </div>  <!-- /.gs-container -->
+      </div>  <!-- /.gs-wrapper -->
+
+      <div class="gs-wrapper">
+
+        <div class="gs-container">
+
+          <div class="gs-col">
+            <div class="article-section article-section--introduction">introduction</div>
+
+            <div class="article-section article-section--and-the-rest">the rest...</div>
+          </div>
+
+        </div>  <!-- /.gs-container -->
+
+      </div>  <!-- /.gs-wrapper -->
+    </article>
+
+  </main>
+
+  {{> organisms-footer }}

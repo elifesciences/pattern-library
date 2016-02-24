@@ -155,13 +155,16 @@
     }
   ],
 
-  "jumplinks": [
-    { "name": "Abstract", "url": "#" },
-    { "name": "eLife digest", "url": "#" },
-    { "name": "Introduction", "url": "#" },
-    { "name": "Results", "url": "#" },
-    { "name": "Discussion", "url": "#" },
-    { "name": "Materials & methods", "url": "#" },
-    { "name": "References", "url": "#" }
+  "footermenulinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" },
+    { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
   ]
 }
