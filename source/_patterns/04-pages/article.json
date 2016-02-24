@@ -122,7 +122,8 @@
       ]
     }
   ],
-    "mainmenulinks": [
+
+  "mainmenulinks": [
     {
       "title": "Subjects",
       "items": [
@@ -152,5 +153,18 @@
         { "name": "Biochemistry", "url": "#" }
       ]
     }
+  ],
+
+  "footermenulinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" },
+    { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
   ]
 }
