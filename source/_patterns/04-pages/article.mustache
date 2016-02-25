@@ -22,22 +22,18 @@
           <div class="gs-col">
             <div>[abstract here]</div>
 
-            <div>[digest here]</div>
+            {{#articlesections}}
+              {{> molecules-article-section }}
+            {{/articlesections}}
 
-            <div>[related content]</div>
-          </div>
+            <!-- May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? -->
+            <section class="article-section">
 
-        </div>  <!-- /.gs-container -->
-      </div>  <!-- /.gs-wrapper -->
+              <div class="article-section__body">
+                {{> molecules-article-meta }}
+              </div>
 
-      <div class="gs-wrapper">
-
-        <div class="gs-container">
-
-          <div class="gs-col">
-            <div class="article-section article-section--introduction">introduction</div>
-
-            <div class="article-section article-section--and-the-rest">the rest...</div>
+            </section>
           </div>
 
         </div>  <!-- /.gs-container -->
