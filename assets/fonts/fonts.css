@@ -1,0 +1,21 @@
+
+/* Demi */
+@font-face {
+  font-family: "Avenir Next Webfont";
+  src: url("249228f0-61ac-40cc-a5a5-5609c9816e3f.woff2") format("woff2"),
+    url("efba18ed-80cc-49c4-997a-fbb140739d19.woff") format("woff");
+  font-weight: 700;
+}
+/* Medium */
+@font-face {
+  font-family: "Avenir Next Webfont";
+  src: url("627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2") format("woff2"),
+    url("f26faddb-86cc-4477-a253-1e1287684336.woff") format("woff");
+  font-weight: 600;
+}
+/* Regular */
+@font-face {
+  font-family: "PT Serif Webfont";
+  src: url("daff771d-ed12-4f77-b628-5ce88849ccf3.woff2") format("woff2"),
+    url("7b473b97-65f7-4000-b120-dd06b5fdad35.woff") format("woff");
+}

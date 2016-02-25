@@ -145,13 +145,13 @@ module.exports = function(grunt) {
             /*
              * Font files to copy to 'dest'
              */
-            copy: ['**/*.{eot,ttf,woff,woff2}'],
+            copy: ['**/*.{eot,ttf,woff,woff2,css}'],
             /*
              * Which files to watch for changes.
              * Changes to any files specified here will result in the css task being
              * re-run (when using grunt watch). Delete to disable watch for this task.
              */
-            watch: ['assets/fonts/**/*.{eot,ttf,woff,woff2}']
+            watch: ['assets/fonts/**/*.{eot,ttf,woff,woff2,css}']
         }
 
     };
