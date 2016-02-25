@@ -1,4 +1,9 @@
 
+.viewer-inline {
+  /* max-width is a bonus here. Unlikely to be used. Not worried about support. */
+  max-width: #{get-rem-from-px(715)}rem;
+}
+
 .viewer-inline__header_panel {
   display: flex;
 }
@@ -12,9 +17,10 @@
 }
 
 .viewer-inline__figure_access {
-  flex: 1;
+  flex: 1 0 auto;
   float: right;
   text-align: right;
+  @include margin(10, "left");
 }
 
 .viewer-inline__figure_access_download {
