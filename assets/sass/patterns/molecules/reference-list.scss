@@ -1,0 +1,22 @@
+
+.reference-list {
+  list-style: none;
+  @include margin(0 0 15 0);
+  @include padding(0 0 0 10);
+}
+
+.reference-list__item {
+  position: relative;
+  @include padding(0 0 0 44);
+  @include margin(10, "bottom");
+}
+
+.reference-list__ordinal_number {
+  @include font-size(18);
+  font-weight: 600;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  @include width(40);
+}
