@@ -26,7 +26,7 @@
 }
 
 .nav-primary__item--first {
-  padding: 0;
+  @include padding(0 16 0 1);
 }
 
 .nav-primary a:link,
@@ -42,29 +42,15 @@
   color: $color-primary;
 }
 
-.nav-primary__menu_text {
-  //  visuallyhidden, but overridden in media query below.
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
 .nav-primary__item--last {
   float: right;
   margin-left: auto;
 }
 
 .nav-primary__menu_icon {
-  border: 1px solid $color-text-dividers;
-  border-radius: 5px;
+  border: none;
   height: 24px;
-  @include margin(0 8 0 0);
-  margin-top: -3px;
+  margin-top: -2px;
   width: 24px;
 }
 
@@ -73,26 +59,25 @@
   width: 24px;
 }
 
-@media only all and (min-width: 21.25rem) {
+.nav-primary__menu_text {
+  @include padding(10, "bottom");
+  vertical-align: top;
+}
 
+@media only all and (max-width: 21.25rem) {
   .nav-primary__menu_text {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: auto;
-    @include padding(10, "bottom");
-    position: static;
-    width: auto;
-    vertical-align: top;
+    padding-bottom: 0;
+    @include visuallyhidden();
   }
 
   .nav-primary__item--first {
-    @include padding(0 16 0 1);
+    padding: 0;
   }
 
   .nav-primary__menu_icon {
-    border: none;
-    margin-top: -2px;
+    border: 1px solid $color-text-dividers;
+    border-radius: 5px;
+    @include margin(0 8 0 0);
+    margin-top: -3px;
   }
-
 }

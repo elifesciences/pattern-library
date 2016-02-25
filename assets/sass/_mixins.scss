@@ -1,4 +1,3 @@
-
 @function get-px-from-rem($size_in_rem) {
   @return $size_in_rem * $font-size-base-in-px;
 }
@@ -66,4 +65,24 @@
 @mixin width($size_in_px) {
   width: #{$size_in_px}px;
   width: #{get-rem-from-px($size_in_px)}rem;
+}
+
+@mixin visuallyhidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin unhidden() {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: auto;
+  position: static;
+  width: auto;
 }
