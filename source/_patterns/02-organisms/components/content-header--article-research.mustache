@@ -1,0 +1,51 @@
+<header class="content-header content-header--article">
+ 
+  {{#contentheaderArticle}}
+
+    
+    <a href="#" class="content-header__download_link">
+
+       <picture>
+        <source srcset="../../assets/img/icons/download-full.svg"
+                media="(min-width: 35rem)"
+                type="image/svg+xml" />
+        <source srcset="../../assets/img/icons/download.svg" type="image/svg+xml" />
+        <img srcset="../../assets/img/icons/download-2x.png 40w,
+                       ../../assets/img/icons/download-1x.png 20w"
+               src="../../../../assets/img/icons/download-1x.png" class="content-header__download_icon" alt="Download icon">
+      </picture>
+      <span class="visuallyhidden">Download</span>
+    </a>
+
+    <div class="content-header__subject">{{subject}}</div>
+
+        <h2 class="content-header__title {{titleClass}}">{{title}}</h2>
+
+    <ol class="content-header__author_list">
+      <!--  When js available, max 16 authors visible, excess behind 'see more'  -->
+      {{#authors}}
+        <li class="content-header__author_list_item">
+          <span class="content-header__author">{{name}}</span>
+        </li>
+      {{/authors}}  
+      <li class="content-header__author_list_item">
+        <span class="content-header__author--last">{{lastAuthor}}</span>
+      </li>
+    </ol>
+    
+    <!-- Institution list is not on the designs of the narrow view. This is visually hidden until the first min-width breakpoint. -->
+    <ol class="content-header__institution_list">
+      {{#institutions}}
+        <li class="content-header__institution_list_item">
+          <span class="content-header__institution">{{name}}</span>
+        </li>
+      {{/institutions}}  
+      <li class="content-header__institution_list_item">
+        <span class="content-header__institution--last">{{lastInstitution}}</span>
+      </li>
+    </ol>
+    
+    <div class="content-header__ancillary">{{articleType}} <time datetime="{{dateValue}}" class="content-header__date">{{dateText}}</time></div>
+    
+  {{/contentheaderArticle}}
+</header>
