@@ -33,6 +33,7 @@ $max-width: 1114;
   }
   .footer-navigation__list_item {
     flex: 1 50%;
+    padding-right: 0.5rem;
   }
 }
 @media only screen and (min-width: #{get-rem-from-px(540)}rem) {
@@ -61,6 +62,7 @@ $max-width: 1114;
 
 @media only screen and (min-width: #{get-rem-from-px(540)}rem) {
   .site-footer__container {
+    display: table;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
@@ -68,16 +70,22 @@ $max-width: 1114;
     padding: 0 6%;
 
     .grid-cell:nth-child(1) {
+      float: left;
       flex: 1 50%;
+      width: 50%;
     }
 
     .grid-cell:nth-child(2) {
+      float: right;
       flex: 1 50%;
+      width: 50%;
     }
 
     .grid-cell:nth-child(3) {
+      clear: both;
       flex: 1 100%;
       padding-top: 1rem;
+      width: 100%;
     }
   }
 

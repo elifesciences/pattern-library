@@ -43,12 +43,15 @@ $max-width: 1114;
 
 @media only screen and (min-width: #{get-rem-from-px(680)}rem) {
   .main-menu__container {
+    display: table;
     display: flex;
+    width: 100%;
     max-width: #{($max-width/16)}rem;
     margin: auto;
   }
 
   .main-menu__section {
-    flex-grow: 1;
+    display: table-cell;
+    flex: 1 33.33%;
   }
 }
