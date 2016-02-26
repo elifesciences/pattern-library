@@ -1,11 +1,23 @@
 .site-header {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
   min-width: #{get-rem-from-px(275)}rem;
+  border-bottom: 1px solid $color-text-dividers;
 }
 
 .site-header__title {
   float: left;
   margin: 0;
+}
+
+.site-header__logo_link {
+  background-image: url("../img/patterns/organisms/elife-logo-full-1x.png");
+}
+
+// Turn off border for more advanced clients.
+@media only all {
+  .site-header {
+    border-bottom-width: 0;
+  }
 }
 
 .site-header__logo_link {
@@ -22,7 +34,7 @@
   width: 27px;
 }
 
-@media only all and (min-width: #{get-rem-from-px(545)}rem) {
+@media only all and (min-width: #{get-rem-from-px(550)}em) {
 
   .site-header__title {
     border-right: 1px solid $color-text-dividers;
@@ -46,6 +58,7 @@
   }
 
   .site-header__logo_link {
+  background: url("../img/patterns/organisms/elife-logo-full-1x.png");
     background: url("../img/patterns/organisms/elife-logo-full.svg"), linear-gradient(#fff, #fff);
     background-color: #fff;
     display: block;

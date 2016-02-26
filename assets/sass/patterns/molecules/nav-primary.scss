@@ -27,6 +27,13 @@
 
 .nav-primary__item--first {
   @include padding(0 16 0 1);
+  @include padding(3, "top");
+}
+
+@media only all {
+  .nav-primary__item--first {
+    padding-top: 0;
+  }
 }
 
 .nav-primary a:link,
