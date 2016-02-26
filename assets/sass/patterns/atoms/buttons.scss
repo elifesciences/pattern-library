@@ -10,7 +10,7 @@
   @include font-size(14);
   font-weight: 500;
   line-height: 1;
-  @include padding(20 50);
+  @include padding(16 28);
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -25,11 +25,10 @@
 }
 
 .button--inactive {
-  background-color: $color-primary;
-  opacity: 0.5;
+  background-color: lighten($color-primary, 40%);
 
   &:hover {
-    background-color: $color-primary;
+    background-color: lighten($color-primary, 30%);
   }
 }
 
@@ -42,13 +41,14 @@
 .button--small {
   background-color: $color-primary;
   @include font-size(11);
-  @include padding(10 28);
+  @include padding(11 28 10);
 }
 
 .button--extra-small {
   background-color: $color-primary;
+  border-radius: 3px;
   @include font-size(11);
-  @include padding(5 10);
+  @include padding(4 8 5);
 }
 
 .button--outline {
@@ -64,9 +64,8 @@
 
 .button--outline-inactive {
   background-color: $color-text--reverse;
-  border: 2px solid $color-text;
-  color: $color-text;
-  opacity: 0.5;
+  border: 2px solid lighten($color-text, 50%);
+  color: lighten($color-text, 50%);
 
   &:hover {
     background-color: $color-text--reverse;
