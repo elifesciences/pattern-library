@@ -24,6 +24,10 @@ $max-width: 1114;
   color: $color-text-ui-background--reverse;
   text-transform: uppercase;
   text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+  }
 }
 
 @media only screen and (min-width: #{get-rem-from-px(340)}rem) {
