@@ -1,8 +1,11 @@
+.nav-secondary {
+  float: right;
+}
+
 .nav-secondary__list {
   align-items: center;
   display: table-cell;
   display: flex;
-  float: right;
   @include height(40);
   justify-content: flex-end;
   margin: 0;
@@ -75,7 +78,7 @@
   width: 21px;
 }
 
-@media only all and (min-width: #{get-rem-from-px(425)}rem) {
+@media only all and (min-width: #{get-rem-from-px(425)}em) {
   .nav-secondary__item--submit-list-item {
     display: list-item;
   }
