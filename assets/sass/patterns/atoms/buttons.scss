@@ -25,15 +25,10 @@
 }
 
 .button--inactive {
-  background-color: $color-primary;
-  /* IE 5-7 */
-  filter: alpha(opacity=50);
-  /* IE 8 */
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  opacity: 0.5;
+  background-color: lighten($color-primary, 40%);
 
   &:hover {
-    background-color: $color-primary;
+    background-color: lighten($color-primary, 30%);
   }
 }
 
@@ -69,9 +64,8 @@
 
 .button--outline-inactive {
   background-color: $color-text--reverse;
-  border: 2px solid $color-text;
-  color: $color-text;
-  opacity: 0.5;
+  border: 2px solid lighten($color-text, 50%);
+  color: lighten($color-text, 50%);
 
   &:hover {
     background-color: $color-text--reverse;
