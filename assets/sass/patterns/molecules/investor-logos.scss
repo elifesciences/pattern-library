@@ -17,6 +17,7 @@ $max-width: 1114;
   }
 
   .invester-logos__container {
+    display: table;
     display: flex;
     margin: auto;
     max-width: #{($max-width/16)}rem;
@@ -24,6 +25,7 @@ $max-width: 1114;
 
   .investor-logos__img_container {
     border: none;
+    display: table-cell;
     flex: 1 33.33%;
   }
 
