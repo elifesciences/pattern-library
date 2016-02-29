@@ -63,17 +63,22 @@
     @include padding(0 10 0 0);
   }
 
+  .contextual-data__cite_wrapper {
+    float: right;
+    margin-left: auto;
+  }
+
   .contextual-data__cite {
     align-self: center;
-    display: block;
+    display: inline-block;
     flex: 1;
     text-align: right;
     @include padding(0 5 0 0);
   }
 
   .contextual-data__doi {
+    display: inline-block;
     align-self: flex-end;
-    display: block;
     padding: 0;
     text-align: right;
   }
