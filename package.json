@@ -19,6 +19,7 @@
     "grunt-sass": "^1.0.0",
     "grunt-sass-globbing": "^1.4.0",
     "grunt-stylelint-reporter": "latest",
+    "grunt-svgmin": "^3.1.2",
     "jit-grunt": "^0.9.1",
     "jshint-stylish": "^2.0.0",
     "lodash": "^3.9.3",

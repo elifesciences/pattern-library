@@ -70,7 +70,7 @@ module.exports = function(grunt) {
              * Image files to copy to 'dest' without optimisation.
              * Default matches any files with svg extensions in the source dir.
              */
-            copy: ['**/*.svg'],
+            copy: [],
             /*
              * Which files to watch for changes.
              * Changes to any files specified here will result in the css task being

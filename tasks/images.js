@@ -5,7 +5,7 @@
 module.exports = function(grunt) {
 
     if ( grunt.config('tasks.images') ) {
-        
+
         grunt.config('imagemin', {
             dist: {
                 options: {
@@ -20,6 +20,23 @@ module.exports = function(grunt) {
             }
         });
 
+        grunt.config('svgmin', {
+            options: {
+                plugins: [
+                    { removeViewBox: false },
+                    { removeUselessStrokeAndFill: false }
+                ]
+            },
+            dist: {
+              files: [{
+                expand: true,
+                cwd: grunt.config('tasks.images.src'),
+                src: ['**/*.svg'],
+                dest: grunt.config('tasks.images.dest')
+              }]
+            }
+        });
+
         grunt.config('copy.images', {
             files: [{
                 expand: true,
@@ -28,11 +45,11 @@ module.exports = function(grunt) {
                 dest: grunt.config('tasks.images.dest')
             }]
         });
-        
-        grunt.config('clean.images', grunt.config('tasks.images.dest'));    
-        
-        grunt.registerTask('images:dist', ['newer:imagemin:dist', 'newer:copy:images']);
-        grunt.registerTask('images:dev', ['newer:imagemin:dist', 'newer:copy:images']);
+
+        grunt.config('clean.images', grunt.config('tasks.images.dest'));
+
+        grunt.registerTask('images:dist', ['newer:imagemin:dist', 'newer:svgmin:dist', 'newer:copy:images']);
+        grunt.registerTask('images:dev', ['newer:imagemin:dist', 'newer:svgmin:dist', 'newer:copy:images']);
         grunt.registerTask('images:release', ['clean:images', 'images:dist']);
 
     } else {
