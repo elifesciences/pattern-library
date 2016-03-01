@@ -1,0 +1,84 @@
+<header class="content-header content-header--article-magazine content-header--background-image">
+ 
+  {{#contentheaderMagazine}}
+  
+    <!-- Buckle up.
+          The following style block only appears when variant is content-header--background-image.
+           (It may have to move to the <head> of the html document when composing a page using this pattern.)
+           It's needed to parametise the image path used for the background image.
+           Also, we need separate media queries different syntaxes as combining them
+           breaks in Chrome (at least).
+           There's some redundancy which could be reduced, but have left it in to try communicate
+           more easily what's going on here.
+           Also, isn't using Sass, nor currently targetted by autoprefixer afaik.
+           And it's ugly :-\ -->
+    <style type="text/css">
+      @media only all and (-webkit-min-device-pixel-ratio: 2) {
+        .content-header--background-image {
+          background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+          background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+          background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+        }
+      }
+
+      @media only all and (min-resolution: 196dpi) {
+        .content-header--background-image {
+          background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+          background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+          background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+        }
+      }
+
+      @media only all and (-webkit-max-device-pixel-ratio: 1.99) {
+        .content-header--background-image {
+          background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+          background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+          background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+        }
+      }
+
+      @media only all and (min-resolution: 195.99dpi) {
+        .content-header--background-image {
+          background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+          background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+          background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+        }
+      }
+
+    </style>
+    
+    <a href="#" class="content-header__download_link">
+      <picture>
+        <source srcset="../../assets/img/icons/download-full-reverse.svg"
+                media="(min-width: 35rem)"
+                type="image/svg+xml" />
+        <source srcset="../../assets/img/icons/download-reverse.svg" type="image/svg+xml" />
+        <img srcset="../../assets/img/icons/download-reverse-2x.png 40w,
+                       ../../assets/img/icons/download-reverse-1x.png 20w"
+               src="../../../../assets/img/icons/download-reverse-1x.png" class="content-header__download_icon" alt="Download icon">
+      </picture>
+      <span class="visuallyhidden">Download</span>
+    </a>
+
+    <div class="content-header__subject">{{subject}}</div>
+
+    <h2 class="content-header__title {{titleClass}}">{{title}}</h2>
+
+    <div class="content-header__strapline">{{strapline}}</div>
+   
+    <ol class="content-header__author_list">
+      <!--  When js available, max 16 authors visible, excess behind 'see more'  -->
+      {{#authors}}
+        <li class="content-header__author_list_item">
+          <span class="content-header__author">{{name}}</span>
+        </li>
+      {{/authors}}  
+      <li class="content-header__author_list_item">
+        <span class="content-header__author--last">{{lastAuthor}}</span>
+      </li>
+    </ol>
+    
+  <div class="content-header__ancillary">{{articleType}} <time datetime="{{dateValue}}" class="content-header__date">{{dateText}}</time></div>
+    
+  {{/contentheaderMagazine}}
+</header>
