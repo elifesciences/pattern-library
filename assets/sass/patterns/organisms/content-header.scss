@@ -1,16 +1,10 @@
 .content-header {
+  @include padding(12, "bottom");
   @include padding(14, "top");
   padding-left: 6%;
   padding-right: 6%;
   text-align: center;
   width: 100%;
-}
-
-.content-header:after {
-  border-bottom: 1px solid $color-text-dividers;
-  content: "";
-  display: block;
-  @include padding(12, "top");
 }
 
 .content-header__title {
@@ -99,17 +93,95 @@
   text-transform: uppercase;
 }
 
+.content-header__ancillary:after {
+  border-bottom: 1px solid $color-text-dividers;
+  content: "";
+  display: block;
+  @include padding(12, "top");
+}
+
 .content-header__date {
   text-transform: capitalize;
 }
 
-@media only all and (max-width: #{get-rem-from-px(560)}em) {
-  .content-header__institution_list {
-    @include visuallyhidden();
+// Code specific to variants
+.content-header--article-magazine {
+
+  .content-header__author_list {
+    @include margin(10, "bottom");
+  }
+
+  .content-header__strapline {
+    color: $color-text-secondary;
+    font-family: $font-primary;
+    @include margin(30, "bottom");
+  }
+
+  .content-header__title--small {
+    @include margin(28 0 13);
+  }
+
+}
+
+.content-header--background-flat {
+  background-color: $color-primary;
+  color: $color-text--reverse;
+
+  .content-header__subject {
+    color: $color-text--reverse;
+  }
+
+  .content-header__strapline {
+    color: $color-text--reverse;
+  }
+
+  .content-header__ancillary {
+    color: $color-text--reverse;
+  }
+
+  .content-header__ancillary:after {
+    border-bottom-width: 0;
   }
 }
 
+.content-header--background-image {
+  color: $color-text--reverse;
+  // Being defensive in case background image fails.
+  background-color: $color-primary;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .content-header__subject {
+    color: $color-text--reverse;
+  }
+
+  .content-header__strapline {
+    color: $color-text--reverse;
+  }
+
+  .content-header__ancillary {
+    color: $color-text--reverse;
+  }
+
+  .content-header__ancillary:after {
+    border-bottom-width: 0;
+  }
+
+  // See content-header--article-magazine-background-image for the styles to
+  // load in the background images. Ugh.
+}
+
+@media only all and (max-width: #{get-rem-from-px(560)}em) {
+
+  .content-header__institution_list {
+    @include visuallyhidden();
+  }
+
+}
+
 @media only all and (min-width: #{get-rem-from-px(560)}em) {
+
   .content-header__title--large {
     @include font-size(72);
   }
@@ -122,9 +194,17 @@
     @include font-size(44);
   }
 
+  .content-header--article-magazine {
+
+    .content-header__title--small {
+      @include margin(65, "top");
+    }
+
+  }
+
   .content-header__title--extra-small {
     @include font-size(36);
-    @include margin(15 0 8);
+    @include margin(35 0 20);
   }
 
   .content-header__author_list {
@@ -134,4 +214,5 @@
   .content-header__institution_list {
     @include margin(30, "bottom");
   }
+
 }
