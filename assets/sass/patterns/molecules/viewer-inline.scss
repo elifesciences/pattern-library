@@ -11,6 +11,7 @@
 .viewer-inline__header_text {
   align-self: center;
   display: inline-block;
+  flex: 1 auto;
   font-family: $font-secondary;
   @include font-size(13);
   line-height: 1.3;
