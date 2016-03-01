@@ -32,7 +32,7 @@ module.exports = function(grunt) {
              * available brower string values you can use.
              * The default shown below is the autoprefixer default selection.
              */
-            autoprefix: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
+            autoprefix: ['> 0.5%', 'Firefox ESR', 'Opera 12.1'],
             /*
              * Which files to watch for changes.
              * Changes to any files specified here will result in the css task being
