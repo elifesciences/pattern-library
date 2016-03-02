@@ -27,13 +27,13 @@
   }
 }
 
-@media only screen and (min-width: #{get-rem-from-px(520)}rem) {
+@media only screen and (min-width: #{get-rem-from-px(520)}em) {
   .image-grid__cell {
     width: 33.33%;
   }
 }
 
-@media only screen and (min-width: #{get-rem-from-px(720)}rem) {
+@media only screen and (min-width: #{get-rem-from-px(720)}em) {
   .image-grid__cell {
     // safari fix. It has problems just at this width when combining flexbox and clearfixes. NO IDEA.
     width: 24.98%;
