@@ -29,7 +29,7 @@
   }
 
   .content-header__author_list {
-    @include margin(0 0 23);
+    margin: 0;
     padding: 0;
   }
 
@@ -52,6 +52,7 @@
     @include font-size(11);
     font-weight: bold;
     line-height: 1;
+    @include margin(30, "top");
     text-transform: uppercase;
   }
 
@@ -60,6 +61,7 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px(560)}em) {
+
     .content-header__title--large {
       @include font-size(72);
     }

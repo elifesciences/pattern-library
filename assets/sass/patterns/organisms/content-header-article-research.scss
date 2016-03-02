@@ -1,6 +1,6 @@
 @import "content-header-article";
 
-// Contains styles unique to research article header.
+// Contains styles unique to research article header & variants.
 .content-header-article-research {
 
   .content-header__institution_list {
@@ -22,6 +22,15 @@
     content: ', ';
   }
 
+  &.content-header-article-research--readmore {
+    border-top: 1px solid $color-text-dividers;
+
+    &.content-header:after {
+      border-bottom-width: 0;
+    }
+
+  }
+
   @media only all and (max-width: #{get-rem-from-px(560)}em) {
 
     .content-header__institution_list {
@@ -33,9 +42,8 @@
   @media only all and (min-width: #{get-rem-from-px(560)}em) {
 
     .content-header__institution_list {
-      @include margin(30, "bottom");
+      @include margin(23, "top");
     }
-
   }
 
 }
