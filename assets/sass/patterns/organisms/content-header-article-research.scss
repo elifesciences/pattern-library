@@ -22,6 +22,10 @@
     content: ', ';
   }
 
+  .content-header__ancillary {
+    @include margin(30, "top");
+  }
+
   &.content-header-article-research--readmore {
     border-top: 1px solid $color-text-dividers;
 
@@ -31,7 +35,7 @@
 
   }
 
-  @media only all and (max-width: #{get-rem-from-px(560)}em) {
+  @media only all and (max-width: #{get-rem-from-px($bkpt-content-header)}em) {
 
     .content-header__institution_list {
       @include visuallyhidden();
@@ -39,7 +43,7 @@
 
   }
 
-  @media only all and (min-width: #{get-rem-from-px(560)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header)}em) {
 
     .content-header__institution_list {
       @include margin(23, "top");
