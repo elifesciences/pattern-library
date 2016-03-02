@@ -16,10 +16,10 @@
 }
 
 .site-links-list__list_link {
-  display: block;
   color: $color-text-ui-background--reverse;
-  text-transform: uppercase;
+  display: block;
   text-decoration: none;
+  text-transform: uppercase;
 
   &:hover {
     color: $color-primary;
@@ -32,8 +32,8 @@
   }
 
   .site-links-list__list {
-    float: left;
     flex: 1 0 33.3%;
+    float: left;
     text-align: left;
     width: 33.3%;
   }
