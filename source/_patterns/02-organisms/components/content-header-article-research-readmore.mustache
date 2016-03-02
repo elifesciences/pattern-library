@@ -1,0 +1,25 @@
+<!-- think of content-header content-header-article as the type/sub-type of pattern, and content-header-article-research is the actual pattern. This abstraction is an experiment, we'll see how it plays. -->
+<header class="content-header content-header-article content-header-article-research content-header-article-research--readmore">
+ 
+  {{#contentheaderArticle}}
+
+    <div class="content-header__subject">{{subject}}</div>
+
+        <h2 class="content-header__title {{titleClass}}">{{{title}}}</h2>
+
+    <ol class="content-header__author_list">
+      <!--  When js available, max 16 authors visible, excess behind 'see more'  -->
+      {{#authors}}
+        <li class="content-header__author_list_item">
+          <span class="content-header__author">{{name}}</span>
+        </li>
+      {{/authors}}  
+      <li class="content-header__author_list_item">
+        <span class="content-header__author--last">{{lastAuthor}}</span>
+      </li>
+    </ol>
+    
+    <div class="content-header__ancillary">{{articleType}} <time datetime="{{dateValue}}" class="content-header__date">{{dateText}}</time></div>
+    
+  {{/contentheaderArticle}}
+</header>

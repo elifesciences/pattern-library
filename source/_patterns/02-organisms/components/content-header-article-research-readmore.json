@@ -1,7 +1,7 @@
 {
   "contentheaderArticle": {
 
-    "title": "Homo naledi, a new species of the genus Homo from the Dinaledi Chamber, South Africa",
+    "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
     
     "subject": "Epidemiology and global health",
 
@@ -102,7 +102,16 @@
     ],
     "lastInstitution": "Institute of Vertebrate Paleontology and Paleoanthropology, China",
 
-    "titleClass": "content-header__title--extra-small"
+    "titleClass": "content-header__title--extra-small",
+
+    "images": {
+      "download": {
+        "svg": "../../assets/img/icons/download.svg",
+        "svgFull": "../../assets/img/icons/download-full.svg",
+        "bitmap": "../../assets/img/icons/download-1x.png",
+        "bitmapFull": "../../assets/img/icons/download-full-1x.png"
+      }
+    }
 
   }
 }

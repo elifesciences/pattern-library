@@ -1,0 +1,88 @@
+@import "content-header";
+
+// Includes styles common to both research article and magazine article style headers.
+.content-header-article {
+
+  &.content-header {
+    @include padding(14, "top");
+  }
+
+  &.content-header:after {
+    border-bottom: 1px solid $color-text-dividers;
+    content: "";
+    display: block;
+    @include padding(12, "top");
+  }
+
+  .content-header__subject {
+    color: $color-primary;
+    font-family: $font-secondary;
+    @include font-size(11);
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .content-header__download_link {
+    float: right;
+    @include margin(-7, "top");
+  }
+
+  .content-header__author_list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .content-header__author_list_item {
+    display:inline;
+    font-family: $font-secondary;
+    @include font-size(16);
+    font-weight: bold;
+    line-height: 1.4;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .content-header__author:after {
+    content: ', ';
+  }
+
+  .content-header__ancillary {
+    color: #888;
+    @include font-size(11);
+    font-weight: bold;
+    line-height: 1;
+    @include margin(30, "top");
+    text-transform: uppercase;
+  }
+
+  .content-header__date {
+    text-transform: capitalize;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px(560)}em) {
+
+    .content-header__title--large {
+      @include font-size(72);
+    }
+
+    .content-header__title--medium {
+      @include font-size(54);
+    }
+
+    .content-header__title--small {
+      @include font-size(44);
+    }
+
+    .content-header__title--extra-small {
+      @include font-size(36);
+      @include margin(15 0 8);
+    }
+
+    .content-header__author_list {
+      @include margin(8, "bottom");
+    }
+
+  }
+
+}

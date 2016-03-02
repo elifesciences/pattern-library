@@ -1,0 +1,34 @@
+// Includes styles common to all content-headers
+
+.content-header {
+  padding-left: 6%;
+  padding-right: 6%;
+  text-align: center;
+  width: 100%;
+}
+
+.content-header__title {
+  font-family: $font-secondary;
+  line-height: 1.3;
+}
+
+// Alternative styles for the title. The class to apply for any particular
+// instance of this pattern depends on the number of characters in the title,
+// and should be set by the server accordingly.
+// Exact content-length triggeers tbc.
+.content-header__title--large {
+  @include font-size(60);
+}
+
+.content-header__title--medium {
+  @include font-size(42);
+}
+
+.content-header__title--small {
+  @include font-size(30);
+}
+
+.content-header__title--extra-small {
+  @include font-size(24);
+  @include margin(15 0 8);
+}
