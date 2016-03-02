@@ -1,28 +1,41 @@
 @import "content-header-article";
 
-// Contains styles uniques to research article header.
-.content-header__institution_list {
-  margin: 0;
-  padding: 0;
-}
-
-.content-header__institution_list_item {
-  display:inline;
-  font-family: $font-secondary;
-  @include font-size(12);
-  font-weight: bold;
-  line-height: 1.3;
-  list-style-type: none;
-  padding: 0;
-}
-
-.content-header__institution:after {
-  content: ', ';
-}
-
-@media only all and (min-width: #{get-rem-from-px(560)}em) {
+// Contains styles unique to research article header.
+.content-header-article-research {
 
   .content-header__institution_list {
-    @include margin(30, "bottom");
+    margin: 0;
+    padding: 0;
   }
+
+  .content-header__institution_list_item {
+    display:inline;
+    font-family: $font-secondary;
+    @include font-size(12);
+    font-weight: bold;
+    line-height: 1.3;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .content-header__institution:after {
+    content: ', ';
+  }
+
+  @media only all and (max-width: #{get-rem-from-px(560)}em) {
+
+    .content-header__institution_list {
+      @include visuallyhidden();
+    }
+
+  }
+
+  @media only all and (min-width: #{get-rem-from-px(560)}em) {
+
+    .content-header__institution_list {
+      @include margin(30, "bottom");
+    }
+
+  }
+
 }
