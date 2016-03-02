@@ -1,0 +1,17 @@
+
+<div class="image-grid">
+
+  <div class="image-grid__container clearfix">
+
+    {{#images}}
+    <div class="image-grid__cell">
+      <picture>
+        <source srcset="{{url}}" type="{{mimetype}}">
+        <img src="{{url}}" alt="{{alt}}" class="image-grid__image" />
+      </picture>
+    </div>
+    {{/images}}
+
+  </div>
+
+</div>
