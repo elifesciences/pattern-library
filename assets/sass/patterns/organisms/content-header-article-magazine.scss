@@ -21,6 +21,28 @@
     @include margin(10, "top");
   }
 
+  &.content-header-article-magazine-background-flat {
+    background-color: $color-primary;
+    color: $color-text--reverse;
+
+    .content-header__ancillary {
+      color: $color-text--reverse;
+    }
+
+    .content-header__article_type_link {
+      color: $color-text--reverse;
+    }
+
+    .content-header__subject_link {
+      color: $color-text--reverse;
+    }
+
+    .content-header__strapline {
+      color: $color-text--reverse;
+    }
+
+  }
+
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header)}em) {
     
     .content-header__title {
