@@ -1,0 +1,35 @@
+@import "content-header-article";
+
+// Contains styles unique to research article header & variants.
+.content-header-article-magazine {
+
+  .content-header__title {
+    @include margin(13, "bottom");
+    @include margin(28, "top");
+    padding-bottom: 0;
+  }
+  
+  .content-header__strapline {
+    color: $color-text-secondary;
+    font-family: $font-primary;
+    @include font-size(14);
+    line-height: 1.43;
+    @include margin(32, "bottom");
+  }
+
+  .content-header__ancillary {
+    @include margin(10, "top");
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header)}em) {
+    
+    .content-header__title {
+      @include margin(65, "top");
+    }
+    
+    .content-header__strapline {
+      @include font-size(16);
+    }
+  }
+
+}
