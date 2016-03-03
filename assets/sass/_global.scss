@@ -57,7 +57,20 @@ p {
   font-family: $font-primary;
   @include font-size(16);
   line-height: 1.5;
+  margin: 0;
   @include padding(24, "bottom");
+}
+
+ul,
+ol {
+  @include margin(24, "bottom");
+  margin-top: 0;
+  @include padding(20, "left");
+}
+
+dl {
+  @include margin(24, "bottom");
+  margin-top: 0;
 }
 
 li,
@@ -66,8 +79,6 @@ dd {
   font-family: $font-primary;
   @include font-size(16);
   line-height: 1.5;
-  @include padding(24, "bottom");
-  @include padding(20, "left");
 }
 
 small {
