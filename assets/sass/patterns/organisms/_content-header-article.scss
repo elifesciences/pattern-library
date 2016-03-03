@@ -52,7 +52,6 @@
     @include font-size(11);
     font-weight: bold;
     line-height: 1;
-    @include margin(30, "top");
     text-transform: uppercase;
   }
 
@@ -60,7 +59,7 @@
     text-transform: capitalize;
   }
 
-  @media only all and (min-width: #{get-rem-from-px(560)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header)}em) {
 
     .content-header__title--large {
       @include font-size(72);
