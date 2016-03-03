@@ -14,8 +14,11 @@
     @include padding(12, "top");
   }
 
-  .content-header__subject_link {
+  .content-header_top {
+    text-align: center;
+  }
 
+  .content-header__subject_link {
     color: $color-primary;
     display: block;
     font-family: $font-secondary;
@@ -31,19 +34,10 @@
 
   }
 
-  .content-header__article_type_link {
-    color: $color-text-secondary;
-    text-decoration: none;
-
-    &:hover {
-      color: $color-primary-dark;
-    }
-
-  }
-
   .content-header__download_link {
     float: right;
-    @include margin(-7, "top");
+    @include margin(-18, "top");
+
   }
 
   .content-header__author_list {
@@ -72,6 +66,18 @@
     line-height: 1;
     text-transform: uppercase;
   }
+
+  .content-header__article_type_link {
+    color: $color-text-secondary;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+
+  }
+
+
 
   .content-header__date {
     text-transform: capitalize;
