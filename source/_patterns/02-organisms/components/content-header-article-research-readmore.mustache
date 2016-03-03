@@ -3,7 +3,7 @@
  
   {{#contentheaderArticle}}
 
-    <div class="content-header__subject">{{subject}}</div>
+    <a href="#" class="content-header__subject_link">{{subject}}</a>
 
         <h2 class="content-header__title {{titleClass}}">{{{title}}}</h2>
 
@@ -19,7 +19,7 @@
       </li>
     </ol>
     
-    <div class="content-header__ancillary">{{articleType}} <time datetime="{{dateValue}}" class="content-header__date">{{dateText}}</time></div>
+    <div class="content-header__ancillary"><a href="#" class="content-header__article_type_link">{{articleType}}</a> <time datetime="{{dateValue}}" class="content-header__date">{{dateText}}</time></div>
     
   {{/contentheaderArticle}}
 </header>
