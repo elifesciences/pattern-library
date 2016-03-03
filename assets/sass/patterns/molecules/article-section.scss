@@ -42,35 +42,9 @@
     @include margin(0 0 15 0);
   }
 
-  p {
-    margin: 0;
-  }
-
-  dl {
-    padding: 0;
-    @include margin(0 0 24 0);
-  }
-
-  dt {
-    padding: 0;
-  }
-
-  dd {
-    padding: 0;
-  }
-
-  ul,
-  ol {
-    @include margin(0 0 24 0);
-  }
-
   ul ul,
   ol ol {
     margin: 0;
-  }
-
-  li {
-    padding: 0;
   }
 
   a {
