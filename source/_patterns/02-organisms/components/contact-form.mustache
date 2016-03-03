@@ -3,43 +3,49 @@
 
   <div class="contact-form__container">
 
-    <h3 class="contact-form__header">Contact Us</h3>
+    <h2 class="contact-form__header">Contact Us</h2>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     <p>ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, velit esse cillum dolore eu fugiat nulla pariatur.</p>
 
-    <fieldset>
+    <div class="contact-form__body">
 
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" value="">
+      <fieldset class="contact-form__fields">
 
-      <label for="name">Email</label>
-      <input type="text" id="email" name="email" value="">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" name="name" value="" class="text-field text-field--text" required>
 
-      <label for="question">Question</label>
-      <textarea id="question" name="question" rows="8" cols="40"></textarea>
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" value="" class="text-field text-field--email" required>
 
-      <input type="submit" class="button button--default" name="submit" value="Submit">
+        <label for="question" class="form-label">Question</label>
+        <textarea id="question" name="question" rows="8" cols="40" class="text-field text-field--textarea"></textarea>
 
-    </fieldset>
+        <input type="submit" class="button button--default" name="submit" value="Submit">
 
-    <div class="contact-form__meta">
+      </fieldset>
 
-      <div class="contact-form__meta_title">Email</div>
-      <p>
-        <a href="mailto:staff@elifesciences.org">staff@elifesciences.org</a>
-      </p>
+      <div class="contact-form__meta">
 
-      <div class="contact-form__meta_title">Telephone</div>
-      <p>+44 1223 855340</p>
+        <div class="contact-form__meta_title">Email</div>
+        <p>
+          <a href="mailto:staff@elifesciences.org" class="contact-form__meta_link">staff@elifesciences.org</a>
+        </p>
 
-      <div class="contact-form__meta_title">Address</div>
-      <address>
-        eLife<br>
-        1st Floor<br>
-        24 Hills Road Cambridge CB2 1JP<br>
-        UK
-      </address>
+        <div class="contact-form__meta_title">Telephone</div>
+        <p>+44 1223 855340</p>
+
+        <div class="contact-form__meta_title">Address</div>
+        <address class="contact-form__meta_address">
+          eLife<br>
+          1st Floor<br>
+          24 Hills Road<br>
+          Cambridge<br>
+          CB2 1JP<br>
+          UK
+        </address>
+
+      </div>
 
     </div>
 

@@ -1,0 +1,39 @@
+
+.text-field,
+.text-field[type="text"],
+.text-field[type="email"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.text-field {
+  background-color: $color-text-ui-background-hue;
+  border: 2px solid $color-text-ui-background-hue;
+  border-radius: 5px;
+  color: $color-text;
+  display: block;
+  font-family: $font-secondary;
+  @include font-size(16);
+  @include padding(12 18);
+  @include margin(24, "bottom");
+  width: 100%;
+
+  &:focus {
+    border: 2px solid $color-information;
+    outline: 0;
+  }
+}
+
+.text-field--focus {
+  border: 2px solid $color-information;
+  outline: 0;
+}
+
+.text-field--valid {
+  border: 2px solid $color-success;
+}
+
+.text-field--error {
+  border: 2px solid $color-attention;
+}
