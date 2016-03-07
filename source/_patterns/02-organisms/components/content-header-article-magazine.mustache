@@ -1,0 +1,42 @@
+<header class="content-header content-header-article content-header-article-magazine">
+
+  {{#contentheaderMagazine}}
+   <div class="content-header_top">
+      <a href="#" class="content-header__subject_link">{{subject}}</a>
+      <a href="#" class="content-header__download_link">
+         <picture>
+           <source srcset="{{images.download.svgFull}}"
+                   media="(min-width: 35em)"
+                   type="image/svg+xml" />
+
+           <source srcset="{{images.download.bitmapFull}}"
+                   media="(min-width: 35em)" />
+
+           <source srcset="{{images.download.svg}}" type="image/svg+xml" />
+
+           <img src="{{{images.download.bitmapFull}}}" class="content-header__download_icon" alt="Download icon" />
+        </picture>
+        <span class="visuallyhidden">Download</span>
+      </a>
+   </div>
+
+    <h2 class="content-header__title {{titleClass}}">{{title}}</h2>
+
+    <div class="content-header__strapline">{{strapline}}</div>
+   
+    <ol class="content-header__author_list">
+      <!--  When js available, max 16 authors visible, excess behind 'see more'  -->
+      {{#authors}}
+        <li class="content-header__author_list_item">
+          <span class="content-header__author">{{name}}</span>
+        </li>
+      {{/authors}}  
+      <li class="content-header__author_list_item">
+        <span class="content-header__author--last">{{lastAuthor}}</span>
+      </li>
+    </ol>
+    
+  <div class="content-header__ancillary"><a href="#" class="content-header__article_type_link">{{articleType}}</a> <time datetime="{{dateValue}}" class="content-header__date">{{dateText}}</time></div>
+    
+  {{/contentheaderMagazine}}
+</header>
