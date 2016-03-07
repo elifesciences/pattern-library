@@ -1,0 +1,17 @@
+
+<div class="filter-group">
+
+  {{#filtergroup}}
+  <h4 id="filter-group__title" class="filter-group__title">{{title}}</h4>
+
+  <ul class="filter-group__filters" aria-labelledby="filter-group__title">
+    {{#filters}}
+    <li class="filter-group__filter_item">
+      <label class="filter-group__item_label"><input type="checkbox" name="{{label}}" value="1" {{#isChecked}}checked{{/isChecked}}> {{label}}</label>
+      <span class="filter-group__results">({{results}})</span>
+    </li>
+    {{/filters}}
+  </ul>
+  {{/filtergroup}}
+
+</div>

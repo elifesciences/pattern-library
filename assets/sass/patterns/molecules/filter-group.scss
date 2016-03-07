@@ -1,0 +1,26 @@
+
+.filter-group__title {
+  @include margin(0 0 8 0);
+}
+
+.filter-group__filters {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.filter-group__item_label {
+  color: $color-text;
+  font-family: $font-secondary;
+  @include font-size(14);
+  font-weight: 700;
+  line-height: 1.3;
+  @include padding(1, "bottom");
+}
+
+.filter-group__results {
+  color: $color-text-secondary;
+  display: inline-block;
+  font-family: $font-secondary;
+  @include font-size(14);
+  @include margin(3, "left");
+}
