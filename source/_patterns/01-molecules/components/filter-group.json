@@ -1,0 +1,15 @@
+{
+  "filtergroup": {
+    "title": "Subject",
+    "filters": [
+      { "checked?": true, "label": "Cell Biology", "results": 71 },
+      { "checked?": false, "label": "Neuroscience", "results": 2 },
+      { "checked?": false, "label": "Biophysics and Structural Biology", "results": 24 },
+      { "checked?": true, "label": "Biochemistry", "results": 71 },
+      { "checked?": false, "label": "Developmental Biology and Stem Cells", "results": 13 },
+      { "checked?": false, "label": "Immunology", "results": 144 },
+      { "checked?": false, "label": "Ecology", "results": 71 },
+      { "checked?": false, "label": "Epidemiology and Global Health", "results": 57 }
+    ]
+  }
+}
