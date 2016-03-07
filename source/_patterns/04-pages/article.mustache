@@ -5,11 +5,11 @@
 
     <article class="article">
 
-      <!-- replace with pattern -->
-      <div style="text-align: center; height: 220px; position: relative">
-        <span style="position: absolute; top: 50%; width: 100%; left: 0;">[article header here]</span>
+      {{> organisms-content-header-article-research }}
+
+      <div class="gs-wrapper">
+      {{> molecules-contextual-data }}
       </div>
-      <!-- /replace -->
 
       <div class="gs-wrapper">
 
@@ -42,5 +42,7 @@
     </article>
 
   </main>
+
+  {{> organisms-email-cta }}
 
   {{> organisms-footer }}
