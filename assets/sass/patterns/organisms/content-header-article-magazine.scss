@@ -33,29 +33,9 @@
 }
 
 .content-header-article-magazine-background-flat {
-  background-color: $color-primary;
-  color: $color-text--reverse;
-  @include padding(12, "bottom");
+  @include article-with-background;
+}
 
-  .content-header__ancillary {
-    color: $color-text--reverse;
-  }
-
-  .content-header__ancillary:after {
-    border-bottom-width: 0;
-    padding-top: 0;
-  }
-
-  .content-header__article_type_link {
-    color: $color-text--reverse;
-  }
-
-  .content-header__subject_link {
-    color: $color-text--reverse;
-  }
-
-  .content-header__strapline {
-    color: $color-text--reverse;
-  }
-
+.content-header-article-magazine-background-image {
+  @include article-with-background;
 }
