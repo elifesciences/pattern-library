@@ -1,0 +1,86 @@
+<header class="content-header content-header-article content-header-article-magazine content-header-article-magazine-background-image">
+ 
+  {{#contentheaderMagazine}}
+  
+    <!-- Buckle up.
+          This style block is needed to parametise the image path used for the background image.
+          Also, we need separate media queries different syntaxes as combining them using the comma operator to create an OR compound media expression breaks in Chrome (at least).
+          It's not using Sass, nor currently targetted by autoprefixer (hence manual application of vendor prefixes).
+          And it's ugly. So ugly :-(
+          
+          NOTE FOR @thewilkybarkid: this needs to go into the <head> of the containing page.
+     -->
+    <style type="text/css">
+      @media only all and (-webkit-min-device-pixel-ratio: 2) {
+        .content-header-article-magazine-background-image {
+          background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+          background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+          background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+        }
+      }
+
+      @media only all and (min-resolution: 196dpi) {
+        .content-header-article-magazine-background-image {
+          background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+          background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+          background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.hires}});
+        }
+      }
+
+      @media only all and (-webkit-max-device-pixel-ratio: 1.99) {
+        .content-header-article-magazine-background-image {
+          background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+          background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+          background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+        }
+      }
+
+      @media only all and (min-resolution: 195.99dpi) {
+        .content-header-magazine-background-image {
+          background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+          background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+          background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{images.lores}});
+        }
+      }
+
+    </style>
+    
+   <div class="content-header_top">
+      <a href="#" class="content-header__subject_link">{{subject}}</a>
+      <a href="#" class="content-header__download_link">
+         <picture>
+           <source srcset="{{images.download.svgFull}}"
+                   media="(min-width: 35em)"
+                   type="image/svg+xml" />
+
+           <source srcset="{{images.download.bitmapFull}}"
+                   media="(min-width: 35em)" />
+
+           <source srcset="{{images.download.svg}}" type="image/svg+xml" />
+
+           <img src="{{{images.download.bitmapFull}}}" class="content-header__download_icon" alt="Download icon" />
+        </picture>
+        <span class="visuallyhidden">Download</span>
+      </a>
+   </div>
+
+    <h2 class="content-header__title {{titleClass}}">{{title}}</h2>
+
+    <div class="content-header__strapline">{{strapline}}</div>
+   
+    <ol class="content-header__author_list">
+      <!--  When js available, max 16 authors visible, excess behind 'see more'  -->
+      {{#authors}}
+        <li class="content-header__author_list_item">
+          <span class="content-header__author">{{name}}</span>
+        </li>
+      {{/authors}}  
+      <li class="content-header__author_list_item">
+        <span class="content-header__author--last">{{lastAuthor}}</span>
+      </li>
+    </ol>
+    
+  <div class="content-header__ancillary">{{articleType}} <time datetime="{{dateValue}}" class="content-header__date">{{dateText}}</time></div>
+    
+  {{/contentheaderMagazine}}
+</header>

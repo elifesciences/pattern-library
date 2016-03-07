@@ -86,3 +86,30 @@
   position: static;
   width: auto;
 }
+
+@mixin article-with-background() {
+  background-color: $color-primary;
+  color: $color-text--reverse;
+  @include padding(12, "bottom");
+
+  .content-header__ancillary {
+    color: $color-text--reverse;
+  }
+
+  .content-header__ancillary:after {
+    border-bottom-width: 0;
+    padding-top: 0;
+  }
+
+  .content-header__article_type_link {
+    color: $color-text--reverse;
+  }
+
+  .content-header__subject_link {
+    color: $color-text--reverse;
+  }
+
+  .content-header__strapline {
+    color: $color-text--reverse;
+  }
+}
