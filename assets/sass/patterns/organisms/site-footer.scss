@@ -30,6 +30,15 @@ $max-width: 1114;
   }
 }
 
+.site-smallprint__copyright_link {
+  color: $color-text;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
 @media only screen and (min-width: #{get-rem-from-px(340)}rem) {
   .footer-navigation__list {
     display: flex;
