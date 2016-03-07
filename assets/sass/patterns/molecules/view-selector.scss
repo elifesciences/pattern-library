@@ -15,7 +15,7 @@
 .view-selector__link {
   color: $color-text;
   @include font-size(14);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   @include padding(20, "left");
 
@@ -25,32 +25,32 @@
 }
 
 .view-selector__link--article {
-  background: url("../img/icons/article.png") 0 50% no-repeat;
-  background: url("../img/icons/article.svg") 0 50% no-repeat, linear-gradient(transparent, transparent);
+  background: url("../img/icons/article.png") 1px 49% no-repeat;
+  background: url("../img/icons/article.svg") 0 49% no-repeat, linear-gradient(transparent, transparent);
 
   &:hover {
-    background: url("../img/icons/article-hover.png") 0 50% no-repeat;
-    background: url("../img/icons/article-hover.svg") 0 50% no-repeat, linear-gradient(transparent, transparent);
+    background: url("../img/icons/article-hover.png") 1px 49% no-repeat;
+    background: url("../img/icons/article-hover.svg") 0 49% no-repeat, linear-gradient(transparent, transparent);
   }
 }
 
 .view-selector__link--figures {
-  background: url("../img/icons/figures.png") 1px 50% no-repeat;
-  background: url("../img/icons/figures.svg") 1px 50% no-repeat, linear-gradient(transparent, transparent);
+  background: url("../img/icons/figures.png") 1px 49% no-repeat;
+  background: url("../img/icons/figures.svg") 1px 49% no-repeat, linear-gradient(transparent, transparent);
 
   &:hover {
-    background: url("../img/icons/figures-hover.png") 1px 50% no-repeat;
-    background: url("../img/icons/figures-hover.svg") 1px 50% no-repeat, linear-gradient(transparent, transparent);
+    background: url("../img/icons/figures-hover.png") 1px 49% no-repeat;
+    background: url("../img/icons/figures-hover.svg") 1px 49% no-repeat, linear-gradient(transparent, transparent);
   }
 }
 
 .view-selector__link--sidebyside {
-  background: url("../img/icons/sidebyside.png") 0 50% no-repeat;
-  background: url("../img/icons/sidebyside.svg") 0 50% no-repeat, linear-gradient(transparent, transparent);
+  background: url("../img/icons/sidebyside.png") 0 49% no-repeat;
+  background: url("../img/icons/sidebyside.svg") 0 49% no-repeat, linear-gradient(transparent, transparent);
 
   &:hover {
-    background: url("../img/icons/sidebyside-hover.png") 0 50% no-repeat;
-    background: url("../img/icons/sidebyside-hover.svg") 0 50% no-repeat, linear-gradient(transparent, transparent);
+    background: url("../img/icons/sidebyside-hover.png") 0 49% no-repeat;
+    background: url("../img/icons/sidebyside-hover.svg") 0 49% no-repeat, linear-gradient(transparent, transparent);
   }
 }
 
@@ -60,7 +60,7 @@
   // background: url("../img/icons/arrow-down.svg") 2px 50% no-repeat, linear-gradient(transparent, transparent);
   display: block;
   @include font-size(14);
-  font-weight: 600;
+  font-weight: 700;
   @include margin(10, "bottom");
   @include padding(20, "left");
 }
@@ -68,6 +68,7 @@
 .view-selector__jump_links {
   list-style: none;
   margin: 0;
+  @include padding(34, "left");
 }
 
 .view-selector__jump_link_item {
