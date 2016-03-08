@@ -1,0 +1,59 @@
+
+.sort-control__title {
+    color: $color-text;
+    display: inline-block;
+    float: left;
+    font-family: $font-secondary;
+    @include font-size(14);
+    font-weight: 700;
+    line-height: 1.3;
+    @include margin(8, "right");
+}
+
+.sort-control__options {
+    display: table;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sort-control__option {
+    display: table-cell;
+    float: left;
+    @include padding(10, "right");
+}
+
+.sort-control__link {
+    color: $color-text;
+    display: block;
+    font-family: $font-secondary;
+    @include font-size(14);
+    font-weight: 700;
+    line-height: 1.3;
+    @include padding(12, "right");
+    text-decoration: none;
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+.sort-control__link--ascending {
+    background: url("../img/icons/chevron-up.png") 100% 50% no-repeat;
+    background: url("../img/icons/chevron-up.svg") 100% 50% no-repeat, linear-gradient(transparent, transparent);
+
+    &:hover {
+        background: url("../img/icons/chevron-up-hover.png") 100% 50% no-repeat;
+        background: url("../img/icons/chevron-up-hover.svg") 100% 50% no-repeat, linear-gradient(transparent, transparent);
+    }
+}
+
+.sort-control__link--descending {
+    background: url("../img/icons/chevron-down.png") 100% 50% no-repeat;
+    background: url("../img/icons/chevron-down.svg") 100% 50% no-repeat, linear-gradient(transparent, transparent);
+
+    &:hover {
+        background: url("../img/icons/chevron-down-hover.png") 100% 50% no-repeat;
+        background: url("../img/icons/chevron-down-hover.svg") 100% 50% no-repeat, linear-gradient(transparent, transparent);
+    }
+}
