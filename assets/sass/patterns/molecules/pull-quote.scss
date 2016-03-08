@@ -1,0 +1,59 @@
+
+.pull-quote {
+  background: url("../img/icons/quote-start.png") 0 0 no-repeat;
+  background: url("../img/icons/quote-start.svg") 0 0 no-repeat, linear-gradient(transparent, transparent);
+  font-family: $font-secondary;
+  @include font-size(24);
+  font-weight: 700;
+  line-height: 1.3;
+  @include margin(0 48 0 0);
+  @include padding(43 5 0 5);
+
+  p {
+    font-family: $font-secondary;
+    @include font-size(24);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+  }
+
+  p + p {
+    @include padding(15, "top");
+  }
+
+  p:last-of-type {
+    display: inline;
+    position: relative;
+
+    &:after {
+      background: url("../img/icons/quote-end.png") 0 0 no-repeat;
+      background: url("../img/icons/quote-end.svg") 0 0 no-repeat, linear-gradient(transparent, transparent);
+      // bottom: -#{get-rem-from-px(16)}rem;
+      content: '';
+      display: block;
+      height: #{get-rem-from-px(33)}rem;
+      @include margin(-16, "top");
+      position: absolute;
+      right: -#{get-rem-from-px(55)}rem;
+      width: #{get-rem-from-px(44)}rem;
+    }
+  }
+
+  cite {
+    color: $color-text-placeholder;
+    display: block;
+    font-family: $font-primary;
+    @include font-size(14);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.3;
+    @include padding(18, "top");
+
+    a {
+      color: $color-text-placeholder;
+      font-weight: 400;
+      text-decoration: none;
+    }
+  }
+}
