@@ -5,11 +5,11 @@
   // plus vertical centering.
   .content-header__inner {
     display: table;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     // TODO: Adjust this length as desired, this is just a first stab
+    // Was going to use flexbox, but the following IE bug means it's not flexible enough (hah!), as need height to adjust to fit. Might modify later for the more complex patterns, but this works for now.
+    //Bug:  https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview
     min-height: #{get-rem-from-px(200)}rem;
+    @include padding(40, 0);
   }
   
   .content-header__title {
@@ -23,7 +23,7 @@
     line-height: 1.4;
   }
 
-  // They may take our <hgroup>, buy they'll never take our .hgroup!
+  // They may take our <hgroup>, but they'll never take our .hgroup!
   .content-header__hgroup {
     display: table-cell;
     vertical-align: middle;
