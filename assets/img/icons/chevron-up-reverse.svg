@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="7px" viewBox="0 0 10 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>sort-chevron-up-reverse-2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="individual-icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sort-chevron-up-reverse" fill="#FFFFFF">
+            <path d="M2,1 L5,4 L8,1 L8.99902344,2 L5,6 L1,2.00201416 L2,1 Z" id="shape" transform="translate(4.999512, 3.500000) rotate(-180.000000) translate(-4.999512, -3.500000) "></path>
+        </g>
+    </g>
+</svg>
