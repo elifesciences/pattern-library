@@ -1,0 +1,50 @@
+// 'nonarticle' is a rubbish name. Rename if inspiration strikes!
+.content-header-nonarticle {
+  
+  // Need this to allow correct combination of bottom border
+  // plus vertical centering.
+  .content-header__inner {
+    display: table;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // TODO: Adjust this length as desired, this is just a first stab
+    min-height: #{get-rem-from-px(200)}rem;
+  }
+  
+  .content-header__title {
+    margin: 0;
+  }
+
+  .content-header__strapline {
+    font-family: $font-secondary;
+    @include font-size(16);
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  // They may take our <hgroup>, buy they'll never take our .hgroup!
+  .content-header__hgroup {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .content-header__bottom_line {
+    border-bottom: 1px solid $color-text-dividers;
+  }
+
+}
+
+.content-header-nonarticle--background-flat {
+  
+  background-color: $color-primary;
+  
+  .content-header__inner {
+    color: $color-text--reverse;
+  }
+
+  .content-header__bottom_line {
+    border: none;
+  }
+
+}
