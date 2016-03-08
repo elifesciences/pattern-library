@@ -38,4 +38,6 @@
 
 .content-header-article-magazine-background-image {
   @include article-with-background;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
