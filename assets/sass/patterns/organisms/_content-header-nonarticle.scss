@@ -48,3 +48,17 @@
   }
 
 }
+
+.content-header-nonarticle-background-image {
+
+  background-color: $color-primary;
+
+  .content-header__inner {
+    color: $color-text--reverse;
+  }
+
+  .content-header__bottom_line {
+    border: none;
+  }
+
+}
