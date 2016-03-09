@@ -1,0 +1,33 @@
+
+.profile-snippet__name {
+  font-family: $font-secondary;
+  @include font-size(17);
+  font-weight: bold;
+  line-height: $line-height-primary;
+  @include margin(0 0 4 0);
+}
+
+.profile-snippet__title {
+  font-family: $font-primary;
+  font-style: italic;
+  font-weight: 400;
+  line-height: $line-height-primary;
+  @include margin(0 0 10 0);
+}
+
+.profile-snippet__contact_details {
+  font-family: $font-primary;
+  @include font-size(14);
+  font-weight: 400;
+  line-height: $line-height-primary;
+}
+
+.profile-snippet__picture {
+  display: block;
+  float: right;
+}
+
+.profile-snippet__image {
+  display: block;
+  width: 100%;
+}
