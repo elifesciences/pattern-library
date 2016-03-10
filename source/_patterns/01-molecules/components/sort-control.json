@@ -1,5 +1,5 @@
 {
-  "sortcontrol": {
+  "sortControl": {
     "options": [
       { "option": "Date", "sorting": "ascending", "url": "?sortby=date&amp;sort=desc" },
       { "option": "Relevance", "sorting": "descending", "url": "?sortby=relevance&amp;sort=asc" },
