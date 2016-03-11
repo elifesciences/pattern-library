@@ -1,15 +1,16 @@
 <div class="profile-snippet">
   {{#profilesnippet}}
-  <div class="profile-snippet__container">
-    <div class="profile-snippet__name">{{name}}</div>
-    <div class="profile-snippet__title">{{title}}</div>
-    <div class="profile-snippet__contact_details">
-      {{{contactdetails}}}
-    </div>
+  <div class="profile-snippet__container" style="border-bottom: 1px solid #111">
     <picture class="profile-snippet__picture">
       <source src="{{imghigh}}">
       <img src="{{imglow}}" alt="" class="profile-snippet__image" />
     </picture>
+
+    <div class="profile-snippet__name">{{name}}</div>
+    <div class="profile-snippet__title">{{title}}</div>
+    <!-- <div class="profile-snippet__contact_details">
+      {{{contactdetails}}}
+    </div> -->
   </div>
   {{/profilesnippet}}
 </div>
