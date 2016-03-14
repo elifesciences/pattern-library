@@ -82,6 +82,14 @@ dd {
   line-height: 1.5;
 }
 
+dt {
+  font-weight: 700;
+}
+
+dd {
+  @include margin(24, "bottom");
+}
+
 small {
   font-family: $font-primary;
   @include font-size(12);
