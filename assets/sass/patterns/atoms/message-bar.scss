@@ -6,6 +6,6 @@
   font-family: $font-secondary;
   @include font-size(11);
   font-weight: 700;
-  @include padding(8 7 9 7);
+  @include padding(8 7);
   text-transform: uppercase;
 }
