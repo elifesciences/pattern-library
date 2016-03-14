@@ -1,5 +1,6 @@
 
 .filter-group__title {
+  @include font-size(16);
   @include margin(0 0 8 0);
 }
 
@@ -7,6 +8,10 @@
   list-style-type: none;
   padding-left: 0;
   margin-left: 0;
+}
+
+.filter-group__filter_item {
+  line-height: 1.7;
 }
 
 .filter-group__item_label {
@@ -23,5 +28,4 @@
   display: inline-block;
   font-family: $font-secondary;
   @include font-size(14);
-  @include margin(3, "left");
 }
