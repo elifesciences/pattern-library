@@ -1,4 +1,8 @@
 
+.site-links-list {
+  display: none;
+}
+
 .site-links-list__list {
   list-style: none;
   margin: 0;
@@ -16,7 +20,7 @@
 }
 
 .site-links-list__list_link {
-  color: $color-text-ui-background--reverse;
+  color: $color-text;
   display: block;
   text-decoration: none;
   text-transform: uppercase;
