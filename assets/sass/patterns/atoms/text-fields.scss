@@ -15,7 +15,7 @@
   display: block;
   font-family: $font-secondary;
   @include font-size(16);
-  @include padding(12 18);
+  @include padding(12);
   @include margin(24, "bottom");
   width: 100%;
 
@@ -23,6 +23,10 @@
     border: 2px solid $color-information;
     outline: 0;
   }
+}
+
+.text-field--textarea {
+  resize: vertical;
 }
 
 .text-field--focus {
