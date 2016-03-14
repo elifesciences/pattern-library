@@ -31,3 +31,9 @@
   margin: 0;
   @include padding(0 0 5 0);
 }
+
+@media only screen and (min-width: #{get-rem-from-px(430)}em) {
+  .captioned-image__caption {
+    padding: 0;
+  }
+}
