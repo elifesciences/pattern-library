@@ -1,4 +1,6 @@
-module.exports = function(grunt) {
+
+module.exports = function (grunt) {
+    "use strict";
 
     /*
      * Task configuration
@@ -9,7 +11,7 @@ module.exports = function(grunt) {
      * To prevent a task from running completely, you can
      * delete (or comment out) the appropriate configuration block for that task.
      */
-    var config = {
+    let config = {
 
         /******************************************************************************
          * CSS pre-processing task
@@ -96,7 +98,10 @@ module.exports = function(grunt) {
              * and dest (destination) keys.
              */
             files: [{
-                src: ['assets/js/main.js'],
+                src: [
+                  'assets/js/main.js',
+                  'assets/js/components/*.js'
+                ],
                 dest: 'source/assets/js/main.js'
             }],
             /*
@@ -104,7 +109,7 @@ module.exports = function(grunt) {
              * Changes to any files specified here will result in the js task being
              * re-run (when using grunt watch). Delete to disable watch for this task.
              */
-            watch: ['assets/js/**/*.js'],
+            watch: ['assets/js/**/*.js', 'test/**/*.spec.js'],
             /*
              * Any files and folders to delete prior to the build task running.
              * Delete this if you don't want to run the clean step before generating the fresh files.
@@ -118,12 +123,32 @@ module.exports = function(grunt) {
              * can be found here: http://www.jshint.com/docs/options
              */
             hint: {
-                files: [],
+                files: ['assets/js/main.js'],
                 options: {
+                    jshintrc: true,
                     globals: {
                         jQuery: true
                     }
                 }
+            },
+            /*
+             * JS code style checker.
+             * Currently set to load in an external config file, .jscsrc
+             */
+            jscs: {
+                files: ['assets/js/**/*.js', 'test/**/*.spec.js'],
+                options: {
+                    config: true
+                }
+            },
+            /*
+             * Jasmine settings
+             * Default settings are to check all JS files in the assets folder and test against
+             * all specs in the test folder. Spec for example file, testfilejs, is named testfile.spec.js
+             */
+            test: {
+                src: ['assets/js/**/*.js'],
+                specs: ['test/**/*.spec.js']
             }
         },
 
@@ -152,8 +177,16 @@ module.exports = function(grunt) {
              * re-run (when using grunt watch). Delete to disable watch for this task.
              */
             watch: ['assets/fonts/**/*.{eot,ttf,woff,woff2,css}']
-        }
+        },
 
+        /******************************************************************************
+         * Testing
+         * Not sure what config needs setting here just yet.
+         ******************************************************************************/
+
+        test: {
+
+        }
     };
 
     /************************** NO NEED TO EDIT BELOW THIS LINE **************************/
@@ -163,7 +196,7 @@ module.exports = function(grunt) {
         'sass': 'grunt-sass'
     });
 
-    var env = (function(){
+    let env = (function(){
         if ( grunt.option('dev') ) {
             return 'dev';
         } else if ( grunt.option('release') ) {

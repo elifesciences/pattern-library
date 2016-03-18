@@ -1,7 +1,11 @@
 {
   "devDependencies": {
     "autoprefixer": "^6.0.3",
+    "babel-preset-es2015": "^6.6.0",
+    "babelify": "^7.2.0",
+    "chai": "^3.5.0",
     "grunt": "^0.4.5",
+    "grunt-browserify": "^5.0.0",
     "grunt-concurrent": "^2.1.0",
     "grunt-contrib-clean": "^0.7.0",
     "grunt-contrib-concat": "^0.5.1",
@@ -20,11 +24,17 @@
     "grunt-sass-globbing": "^1.4.0",
     "grunt-stylelint-reporter": "latest",
     "grunt-svgmin": "^3.1.2",
+    "jasmine": "^2.4.1",
     "jit-grunt": "^0.9.1",
     "jshint-stylish": "^2.0.0",
     "lodash": "^3.9.3",
+    "mocha": "^2.4.5",
     "postcss-reporter": "^1.3.1",
     "postcss-scss": "^0.1.5",
+    "sinon": "^1.17.3",
     "stylelint": "^4.3.3"
+  },
+  "scripts": {
+    "test": "mocha spec --require spec/helpers/chai.js --reporter spec"
   }
 }

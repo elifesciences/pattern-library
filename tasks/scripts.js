@@ -1,16 +1,17 @@
+"use strict";
 /*
  *  JS concatenation and compression task
  */
 module.exports = function(grunt) {
 
-    var _ = require('lodash');
+    const _ = require('lodash');
 
     if ( grunt.config('tasks.scripts') ) {
 
         var uglifyTargets = {};
 
-        _.each(grunt.config('tasks.scripts.files'), function(obj){
-            uglifyTargets[obj.dest] = obj.src;           
+        grunt.config('tasks.scripts.files').forEach(function(obj) {
+            uglifyTargets[obj.dest] = obj.src;
         });
 
         if ( grunt.config('tasks.scripts.hint') ) {
@@ -48,6 +49,28 @@ module.exports = function(grunt) {
             grunt.registerTask('jshint:dev', []);
         }
 
+        if( grunt.config('tasks.scripts.jscs') ) {
+            grunt.config('jscs', {
+                options: grunt.config('tasks.scripts.jscs.options'),
+                dev: {
+                    src: grunt.config('tasks.scripts.jscs.files')
+                }
+            });
+        }
+
+        grunt.config('browserify', {
+            dist: {
+                options: {
+                    transform: [
+                      ["babelify", {
+                          presets: ["es2015"]
+                      }]
+                    ]
+                },
+                files: uglifyTargets
+            }
+        });
+
         grunt.config('uglify', {
             dist: {
                 options: {
@@ -66,15 +89,15 @@ module.exports = function(grunt) {
                 files: uglifyTargets
             }
         });
-        
+
         if ( grunt.config('tasks.scripts.clean') ) {
-            grunt.config('clean.scripts', grunt.config('tasks.scripts.clean'));    
+            grunt.config('clean.scripts', grunt.config('tasks.scripts.clean'));
         } else {
             grunt.config('clean.scripts', []);
         }
-        
-        grunt.registerTask('scripts:dist', ['jshint:dist', 'clean:scripts', 'uglify:dist']);
-        grunt.registerTask('scripts:dev', ['jshint:dev', 'clean:scripts', 'uglify:dev']);
+
+        grunt.registerTask('scripts:dist', ['clean:scripts', 'browserify:dist']);
+        grunt.registerTask('scripts:dev', ['jshint:dev', 'jscs:dev', 'clean:scripts', 'browserify:dist']);
         grunt.registerTask('scripts:release', ['scripts:dist']);
 
     } else {
