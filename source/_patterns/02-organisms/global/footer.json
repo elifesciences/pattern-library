@@ -31,15 +31,14 @@
     }
   ],
 
-  "footerMenuLinks": [
+  "footerMenuLinks1": [
     { "name": "About", "url": "#" },
-    { "name": "Who we work with", "url": "#" },
     { "name": "Alerts", "url": "#" },
-    { "name": "Contact", "url": "#" },
-    { "name": "Terms & Policy", "url": "#" },
-    { "name": "About", "url": "#" },
+    { "name": "Contact", "url": "#" }
+  ],
+
+  "footerMenuLinks2": [
     { "name": "Who we work with", "url": "#" },
-    { "name": "Alerts", "url": "#" },
     { "name": "Contact", "url": "#" },
     { "name": "Terms & Policy", "url": "#" }
   ]
