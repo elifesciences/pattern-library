@@ -14,58 +14,64 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-
-  &:hover {
-    background-color: $color-primary-dark;
-  }
 }
 
 .button--default {
   background-color: $color-primary;
-}
-
-.button--inactive {
-  background-color: lighten($color-primary, 40%);
+  border: 2px solid $color-primary;
+  @include padding(15 36 14);
 
   &:hover {
-    background-color: lighten($color-primary, 30%);
+    background-color: $color-primary-dark;
+    border-color: $color-primary-dark;
   }
-}
-
-.button--full {
-  background-color: $color-primary;
-  display: block;
-  width: 100%;
-}
-
-.button--small {
-  background-color: $color-primary;
-  @include font-size(11);
-  @include padding(11 28 10);
-}
-
-.button--extra-small {
-  background-color: $color-primary;
-  border-radius: 3px;
-  @include font-size(11);
-  @include padding(5 8 4);
 }
 
 .button--outline {
   background-color: $color-text--reverse;
   border: 2px solid $color-text;
   color: $color-text;
+  @include padding(15 36 14);
 
   &:hover {
+    background-color: $color-primary-dark;
     border: 2px solid $color-primary-dark;
     color: $color-text--reverse;
   }
 }
 
+.button--full {
+  display: block;
+  width: 100%;
+}
+
+.button--small {
+  @include font-size(11);
+  @include padding(9 24 8);
+}
+
+.button--extra-small {
+  border-radius: 3px;
+  @include font-size(11);
+  @include padding(3 4 2);
+}
+
+.button--inactive {
+  background-color: #81c4e8;
+  border-color: #81c4e8;
+  cursor: not-allowed;
+
+  &:hover {
+    background-color: lighten($color-primary, 40%);
+    border-color: lighten($color-primary, 40%);
+  }
+}
+
 .button--outline-inactive {
   background-color: $color-text--reverse;
-  border: 2px solid lighten($color-text, 50%);
-  color: lighten($color-text, 50%);
+  border: 2px solid #909090;
+  color: #909090;
+  cursor: not-allowed;
 
   &:hover {
     background-color: $color-text--reverse;

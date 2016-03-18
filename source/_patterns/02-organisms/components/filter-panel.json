@@ -1,7 +1,7 @@
 {
-  "filtergroups": [
+  "filterGroups": [
     {
-      "filtergroup": {
+      "filterGroup": {
         "title": "Subject",
         "filters": [
           { "isChecked": true, "label": "Cell Biology", "results": 71 },
@@ -17,7 +17,7 @@
     },
 
     {
-      "filtergroup": {
+      "filterGroup": {
         "title": "Content type",
         "filters": [
           { "isChecked": true, "label": "Editorial", "results": 14 },

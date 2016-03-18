@@ -9,15 +9,21 @@
 }
 
 .compact-form__input {
-  border-bottom: 2px solid $color-text-dividers;
-  border-left: 2px solid $color-text-dividers;
-  border-radius: 5px 0 0 5px;
+  background-color: $color-text-ui-background-hue;
+  border-bottom: 2px solid $color-text-ui-background-hue;
+  border-left: 2px solid $color-text-ui-background-hue;
+  border-radius: 5px;
   border-right: none;
-  border-top: 2px solid $color-text-dividers;
+  border-top: 2px solid $color-text-ui-background-hue;
   display: block;
   font-family: $font-secondary;
   @include padding(12 55 12 12);
   width: 100%;
+
+  &:focus {
+    border: 2px solid $color-information;
+    outline: 0;
+  }
 }
 
 .compact-form__submit {
@@ -33,5 +39,5 @@
   position: absolute;
   right: 0;
   top: 0;
-  @include width(50);
+  @include width(47);
 }

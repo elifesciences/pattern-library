@@ -1,5 +1,5 @@
 {
-  "filtergroup": {
+  "filterGroup": {
     "title": "Subject",
     "filters": [
       { "isChecked": true, "label": "Cell Biology", "results": 71 },

@@ -1,5 +1,5 @@
 {
-  "navsecondarylinks": [
+  "navSecondaryLinks": [
     {
       "text": "Careers",
       "path": "#"
@@ -18,19 +18,19 @@
     {
       "text": "Submit my research",
       "path": "#",
-      "variant?": "submit-list-item"
+      "variant": "submit-list-item"
     },
     
     {
       "text": "Alerts",
-      "variant?": "notification",
-      "textClasses?": "visuallyhidden",
+      "variant": "notification",
+      "textClasses": "visuallyhidden",
       "path": "#",
       "alt": "Notification icon",
-      "imgs?": [
+      "imgs": [
         {
           "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg",
-          "classes?": "nav-secondary__notification-icon",
+          "classes": "nav-secondary__notification-icon",
           "hires": {
             "path": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png",
             "width": "28w"
@@ -46,14 +46,14 @@
     
     {
       "text": "Profile",
-      "variant?": "profile",
-      "textClasses?": "visuallyhidden",
+      "variant": "profile",
+      "textClasses": "visuallyhidden",
       "path": "#",
       "alt": "Profile icon",
-      "imgs?": [
+      "imgs": [
         {
         "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg",
-          "classes?": "nav-secondary__profile-icon",
+          "classes": "nav-secondary__profile-icon",
           "hires": {
           "path": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png",
             "width": "28w"

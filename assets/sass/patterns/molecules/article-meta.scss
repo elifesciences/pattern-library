@@ -13,16 +13,16 @@
 }
 
 .article-meta__group_title {
-  color: $color-text-placeholder;
+  color: $color-text-secondary;
   @include font-size(11);
   font-weight: 600;
-  margin: 0;
+  @include margin(0 0 2 0);
   text-transform: uppercase;
 }
 
 .article-meta__link_list {
   list-style: none;
-  margin: 0;
+  @include margin(0 0 12 0);
   padding: 0;
 }
 
@@ -31,6 +31,7 @@
   font-family: $font-secondary;
   @include font-size(11);
   font-weight: 600;
+  line-height: 1.8;
   margin: 0;
   padding: 0;
   text-transform: uppercase;

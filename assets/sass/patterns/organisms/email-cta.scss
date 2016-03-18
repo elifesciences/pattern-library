@@ -1,6 +1,6 @@
 
 .email-cta {
-  border-bottom: 2px solid $color-text-dividers;
+  border-top: 2px solid $color-text-dividers;
   @include padding(40 0);
   text-align: center;
 }
@@ -12,12 +12,13 @@
 .email-cta__header_text {
   color: $color-text;
   margin: 0;
-  @include padding(0 0 10 0);
+  @include padding(0 0 7 0);
 }
 
 .email-cta__sub_header {
-  color: $color-text-secondary;
+  color: $color-text;
   font-family: $font-primary;
+  @include font-size(16);
   font-weight: 500;
   margin: 0;
   @include padding(0 0 24 0);

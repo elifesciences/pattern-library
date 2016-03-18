@@ -1,14 +1,15 @@
 
 .info-bar {
   font-family: $font-secondary;
+  @include font-size(14);
   font-weight: 600;
-  @include padding(18 8);
+  @include padding(14 8);
   text-align: center;
 }
 
 .info-bar__text {
   display: inline-block;
-  @include padding(0 0 0 30);
+  @include padding(3 0 0 28);
   line-height: 1.3;
 }
 

@@ -1,15 +1,15 @@
   <nav class="nav-primary">
     <ul class="nav-primary__list clearfix">
-      {{#navprimarylinks}}
-        <li class="nav-primary__item{{#variant?}} nav-primary__item--{{variant?}}{{/variant?}}">
+      {{#navPrimaryLinks}}
+        <li class="nav-primary__item{{#variant}} nav-primary__item--{{variant}}{{/variant}}">
         <a href="{{path}}">
-          {{#imgs?}}
+          {{#imgs}}
             {{> atoms-picture-svg-with-fallback}}
-          {{/imgs?}}
-          {{#textClasses?}}<span class="{{textClasses?}}">{{text}}</span>{{/textClasses?}}
-          {{^textClasses?}}{{text}}{{/textClasses?}}
+          {{/imgs}}
+          {{#textClasses}}<span class="{{textClasses}}">{{text}}</span>{{/textClasses}}
+          {{^textClasses}}{{text}}{{/textClasses}}
         </a>
       </li>
-      {{/navprimarylinks}}
+      {{/navPrimaryLinks}}
     </ul>
   </nav>

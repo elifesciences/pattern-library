@@ -5,6 +5,7 @@
 }
 
 body {
+  color: $color-text;
   text-rendering: optimizeLegibility;
 }
 
@@ -20,7 +21,7 @@ h2 {
   @include font-size(21);
   font-weight: bold;
   line-height: $line-height-primary;
-  padding-bottom: 5px;
+  @include padding(7, "bottom");
 }
 
 h3 {
@@ -28,7 +29,7 @@ h3 {
   @include font-size(19);
   font-weight: bold;
   line-height: $line-height-primary;
-  padding-bottom: 3px;
+  @include padding(3, "bottom");
 }
 
 h4 {
@@ -79,6 +80,14 @@ dd {
   font-family: $font-primary;
   @include font-size(16);
   line-height: 1.5;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  @include margin(24, "bottom");
 }
 
 small {

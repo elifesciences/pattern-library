@@ -2,7 +2,7 @@
 $max-width: 1114;
 
 .investor-logos__img_container {
-  border-bottom: 2px solid $color-text-dividers;
+  border-bottom: 1px solid $color-text-dividers;
 }
 
 .investor-logos__img {
@@ -11,9 +11,9 @@ $max-width: 1114;
   margin: auto;
 }
 
-@media only screen and (min-width: #{get-rem-from-px(520)}rem) {
+@media only screen and (min-width: #{get-rem-from-px(520)}em) {
   .investor-logos {
-    border-bottom: 2px solid $color-text-dividers;
+    border-bottom: 1px solid $color-text-dividers;
   }
 
   .invester-logos__container {
@@ -30,7 +30,7 @@ $max-width: 1114;
   }
 
   .investor-logos__img_container {
-    border-left: 2px solid $color-text-dividers;
+    border-left: 1px solid $color-text-dividers;
 
     &:first-child {
       border-left: none;

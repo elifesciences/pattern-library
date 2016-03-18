@@ -21,7 +21,7 @@
   @include height(24);
   line-height: 1;
   list-style-type: none;
-  @include padding(7 16 7 0);
+  @include padding(7 10 7 0);
   text-transform: uppercase;
 }
 
@@ -51,9 +51,9 @@
 
 .nav-secondary__item--submit-list-item a {
   background-color: $color-primary;
-  border-radius: 5px;
+  border-radius: 3px;
   height: 100%;
-  @include padding(3 5);
+  @include padding(3 4 2);
   text-align: center;
   width: 100%;
 
