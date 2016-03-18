@@ -1,10 +1,10 @@
 
 {
-  "profilesnippet": {
+  "profileSnippet": {
     "name": "Name McNamerson",
     "title": "Title McTitleson",
-    "contactdetails": "E: test.email@testemail.com",
-    "imglow": "http://placehold.it/90x90",
-    "imghigh": "http://placehold.it/120x120"
+    "contactDetails": "E: test.email@testemail.com",
+    "imgLow": "http://placehold.it/90x90",
+    "imgHigh": "http://placehold.it/120x120"
   }
 }
