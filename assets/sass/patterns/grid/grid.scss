@@ -1,223 +1,484 @@
-// The grid comprises $gs-num-cols columns.
-// Regardless of the # columns, the page left/right gutters are each 5% of page width.
-// This 5% includes the 1.2% contributed from the outermost columns' outside padding (thus $col-gutter-as-proportion is 0.012).
-// So the whitespace outside the respective outermost columns' padding is:
-//  5% - 1.2% = 3.8% (thus $page-gutter-as-proportion is 0.038)
-// The total grid width within the page gutters occupies either the remaining 90% of
-// the page width, or the maximum content width ($max-content-width-quantity-in-px), whichever is the lesser.
-// With box-sizing set to border-box, each column's width is:
-//  total grid width / $gs-num-cols
-// This is to include a left and right padding of 1.2% page width, respectively.
-//
-// So when the viewport width is >= $max-page-width:
-// col-width = ($max-page-width - 10%) / $gs-num-cols
-//
-// When the viewport width is < $max-page-width:
-// col-width = (current-viewport-width - 10%) / $gs-num-cols
-//
-// 
-//
-// Each grid column has padding that contributes to half the width separating 
-// adjecent columns (half-gutter). This is usually fine, but problems have been previously 
-// encountered when trying to override this to pull figures a certain number of
-// columns to the right.
-//
-// At different widths, some elements contained within the grid are required to
-// occupy different numbers of columns. There's a decision to make about how
-// these changes are applied. If the different columns are specified by changing 
-// the class, this requires js, whereas if the layout from the grid is applied
-// directly to the relavent elements (or a wrapper, if that makes sense), 
-// it's simpler.
+/**
+ * Grid
+ *
+ * Based heavily on Harry Roberts’ csswizardry responsive grid system:
+ *
+ * http://csswizardry.com/2013/02/responsive-grid-systems-a-solution/
+ * http://csswizardry.com/csswizardry-grids/
+ * https://github.com/csswizardry/csswizardry-grids
+ *
+ * NOTE - I was not prepared to face the hacks around using display-inline block for columns. So it uses floats now.
+ * I have removed all references to the inline-block 'markup fixes'. And removed all inline-block only features.
+ */
 
-// ******************************
-// ** BASIC WIDTH CALCULATIONS **
-// ******************************
+/*------------------------------------*\
+    $CSSWIZARDRY-GRIDS
+\*------------------------------------*/
+/**
+ * CONTENTS
+ * INTRODUCTION.........How the grid system works.
+ * VARIABLES............Your settings.
+ * MIXINS...............Library mixins.
+ * GRID SETUP...........Build the grid structure.
+ * WIDTHS...............Build our responsive widths around our breakpoints.
+ * PUSH.................Push classes.
+ * PULL.................Pull classes.
+ */
 
-$gs-num-cols: 12;
-// Measures
-// Any 'quantity' is unitless.
-// Base measures, everything else is derived from these.
-$base-font-quantity: 16;
-// Actual page gutter is the sum of $col-gutter-as-proportion and $page-gutter-as-proportion,
-// because the page gutter sits outside the outside co§l gutter of the outer-most
-// left and right columns.
-// As such, another way to put this would be:
-// $total-page-gutter-as-proportion = 0.05 // 5%
-// and then under the derived measures section, work out what proportion of this
-// 0.05 is contributed for free by the outside gutters of the two outermost columns
-// and therefore how much remains to be explicitly set.
-$page-gutter-as-proportion: 0.038;
-$col-gutter-as-proportion: 0.012;
-// Includes outer col gutter on both left-most and right-most columns.
-$max-content-width-quantity-in-px: 1200;
 
-// Derived measures.
-$base-font-size: $base-font-quantity + px;
-// Used to set left and right margins of the grid wrapper (.gs-wrapper, see _grid.scss)
-$page-gutter-quantity-as-percent: $page-gutter-as-proportion * 100;
-// Used to set $content-width-as-vw:
-$content-width-as-proportion: 1 - 2 * $page-gutter-as-proportion;
-// Used in mixin single-col-width(), fundamental to this system:
-$content-width-as-vw: $content-width-as-proportion * 100 + vw;
-// Used in mixin half-gutter():
-$max-col-gutter-in-px: ($max-content-width-quantity-in-px * $col-gutter-as-proportion) + px;
-// Used to set $max-page-width-quantity-in-px and $max-page-gutter-in-px
-$max-page-gutter-quantity-in-px: $max-content-width-quantity-in-px * $page-gutter-as-proportion;
-// Used to set $max-page-width-quantity-in-rem
-$max-page-width-quantity-in-px: $max-content-width-quantity-in-px + 2 * $max-page-gutter-quantity-in-px;
-// Used to set $max-page-width:
-$max-page-width-quantity-in-rem: $max-page-width-quantity-in-px / $base-font-quantity;
+/*------------------------------------*\
+    $INTRODUCTION
+\*------------------------------------*/
+/**
+ * csswizardry grids provides you with widths to suit a number of breakpoints
+ * designed around devices of a size you specify. Out of the box, csswizardry
+ * grids caters to the following types of device:
+ *
+ * palm     --  palm-based devices, like phones and small tablets
+ * lap      --  lap-based devices, like iPads or laptops
+ * portable --  all of the above
+ * desk     --  stationary devices, like desktop computers
+ * regular  --  any/all types of device
+ *
+ * These namespaces are then used in the library to give you the ability to
+ * manipulate your layouts based around them, for example:
+ *
+   <div class="grid__item  one-whole  lap--one-half  desk--one-third">
+ *
+ * This would give you a grid item which is 100% width unless it is on a lap
+ * device, at which point it become 50% wide, or it is on a desktop device, at
+ * which point it becomes 33.333% width.
+ *
+ * csswizardry grids also has push and pull classes which allow you to nudge
+ * grid items left and right by a defined amount. These follow the same naming
+ * convention as above, but are prepended by either `push--` or `pull--`, for
+ * example:
+ *
+   `class="grid__item  one-half  push--one-half"`
+ *
+ * This would give you a grid item which is 50% width and pushed over to the
+ * right by 50%.
+ *
+ * All classes in csswizardry grids follow this patten, so you should fairly
+ * quickly be able to piece together any combinations you can imagine, for
+ * example:
+ *
+   `class="grid__item  one-whole  lap--one-half  desk--one-third  push--desk--one-third"`
+ *
+   `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
+ *
+   `class="grid__item  palm--one-third  desk--five-twelfths"`
+ */
 
-// Used in mixin half-gutter():
-$max-page-gutter-in-px: $max-page-gutter-quantity-in-px + px;
-// Used in media queries and various width and positioning calculations:
-$max-page-width: $max-page-width-quantity-in-rem + rem;
-// Used in _nav.scss
-$max-content-width-in-px: $max-content-width-quantity-in-px + px;
+ /*
+  * Extras
+  *
+  * Two utility classes which provide padding for tops and bottoms of cells. Ultimately, we want
+  * margins/padding not to be a part of the patterns, but rather their containing elements. Abstract layout from pattern.
+  */
 
-// Used to calculate $max-content-width:
-$max-content-width-quantity-in-rem: $max-content-width-quantity-in-px / $base-font-quantity;
-// Used to set width of the grid container (.gc-container, see _grid.scss), also used in _nav.scss
-$max-content-width: $max-content-width-quantity-in-rem + rem;
-
-// Breakpoints
-$bkpt-float-figure: 31.25rem; // 500px
-$bkpt-float-related: 39.375rem; //630px
-$bkpt-show-intra-nav: 62.5rem; // 1000px
-
-// ** NOTE:
-// Underneath the following mixins are definitions of some grid classes that use them.
-// More useage is found in _layout.scss.
-// At the moment, these grid calculations are sometimes applied directly to items on a page
-// not just the grid classes
-// in _layout.scss via the mixins. We could look at abstracting mixin use into
-// a set of classes that belong to the grid, and using those classes to alter
-// various measures: e.g. .1col-scaled, .1col-max.
-// Should investigate pros and cons of this with respect to fallbacks (for
-// calc() and media queries).
-
-// ******************************
-// ** BASIC WIDTH CALCULATIONS **
-// ******************************
-
-// Returns a calculation for the width of a single grid column.
-@function single-col-width($isMax) {
-  @if $isMax {
-    @return #{$max-content-width} / #{$gs-num-cols};
-  }
-@return $content-width-as-vw / $gs-num-cols;
+.u-pad-top {
+    @include padding(16, "top");
+}
+.u-pad-bottom {
+    @include padding(16, "bottom");
 }
 
-// Returns a calculation for the cumulative width of a specified # grid columns.
-@function multiple-col-width($num-cols, $col-type) {
-  @if $col-type == 'max' {
-    @return unquote(single-col-width(true) * #{$num-cols});
-  }
-  @return unquote(single-col-width(false) * #{$num-cols});
-}
 
-// Sets CSS width property to the cumulative width of a specified # grid columns.
-@mixin calc-width-for-cols($num-cols, $col-type) {
-  width: unquote("calc(" + multiple-col-width($num-cols, $col-type) + ")");
-}
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+/**
+ * Set the spacing between your grid items.
+ */
+$gutter:                1.6% !default;
 
-// Specifies CSS max-width property to the cumulative width of a specified # grid columns.
-@mixin set-max-width($num-cols, $col-type) {
-  max-width: unquote("calc(" + multiple-col-width($num-cols, $col-type) + ")");
-}
 
-// Specifies CSS max-width property to the cumulative width of a specified # grid columns.
-@mixin set-left-margin($num-cols, $col-type) {
-  margin-left: unquote("calc(" + multiple-col-width($num-cols, $col-type) + ")");
-}
+/**
+ * Would you like Sass’ silent classes, or regular CSS classes?
+ */
+$use-silent-classes:    false !default;
 
-// ******************************
-// ** GUTTER WIDTH CALCULATIONS **
-// ******************************
 
-// Returns a value or a calculation for either the page gutter or a col gutter.
-// For type max, returns value of max gutter in px for that gutter
-// When type scaled, returns a calculation for that gutter based on viewport.
-@function half-gutter($type:'scaled', $object:'col') {
-  @if $object == 'col' {
-    @if $type == 'max' {
-      @return #{$max-col-gutter-in-px};
-    } @else {
-      @return 100vw * $col-gutter-as-proportion;
+/**
+ * Would you like push and pull classes enabled?
+ */
+$push:                  true !default;
+$pull:                  false !default;
+
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+$breakpoints: (
+    'palm' '(max-width: 480px)',
+    'tablet' '(min-width: 719px)',
+    'lap' '(min-width: 481px) and (max-width: 1023px)',
+    'portable' '(max-width: 1023px)',
+    'desk' '(min-width: 1024px)'
+) !default;
+
+
+/**
+ * Define which namespaced breakpoints you would like to generate for each of
+ * widths, push and pull. This is handy if you only need pull on, say, desk, or
+ * you only need a new width breakpoint at mobile sizes. It allows you to only
+ * compile as much CSS as you need. All are turned on by default, but you can
+ * add and remove breakpoints at will.
+ *
+ * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+ * have been set to ‘true’.
+ */
+$breakpoint-has-widths: ('palm', 'tablet', 'lap', 'portable', 'desk') !default;
+$breakpoint-has-push:   ('palm', 'tablet', 'lap', 'portable', 'desk') !default;
+$breakpoint-has-pull:   ('palm', 'lap', 'portable', 'desk') !default;
+
+
+/**
+ * You do not need to edit anything from this line onward; csswizardry-grids is
+ * good to go. Happy griddin’!
+ */
+$class-type: if($use-silent-classes, unquote("%"), unquote("."));
+
+
+
+
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * These mixins are for the library to use only, you should not need to modify
+ * them at all.
+ *
+ * Enclose a block of code with a media query as named in `$breakpoints`.
+ */
+@mixin grid-media-query($media-query) {
+    $breakpoint-found: false;
+
+    @each $breakpoint in $breakpoints {
+        $name: nth($breakpoint, 1);
+        $declaration: nth($breakpoint, 2);
+
+        @if $media-query == $name and $declaration {
+            $breakpoint-found: true;
+
+            @media only screen and #{$declaration} {
+                @content;
+            }
+        }
     }
-  } @else if $object == 'page' {
-    @if $type == 'max' {
-      @return #{$max-page-gutter-in-px};
-    } @else {
-      @return 100vw * $page-gutter-as-proportion;
+
+    @if not $breakpoint-found {
+        @warn "Breakpoint ‘#{$media-query}’ does not exist";
     }
-  }
 }
 
-// Sets padding left and right to be the current size of half-gutter.
-@mixin gutter-padding($type:'scaled', $object:'col') {
-  $padding: half-gutter($type, $object);
-  // Uses calc because $padding may be (but isn't always), a calculation.
-  // When it's not, you get e.g. 'calc(123vw)' as the output, which is acceptable.
-  padding-left: calc(#{$padding});
-  padding-right: calc(#{$padding});
+
+/**
+ * Drop relative positioning into silent classes which can’t take advantage of
+ * the `[class*="push--"]` and `[class*="pull--"]` selectors.
+ */
+@mixin silent-relative {
+    @if $use-silent-classes {
+        position: relative;
+    }
 }
 
-// ********************************
-// ** RHS EXCEPTIONS FOR FIGURES **
-// ********************************
 
-// Tries to eliminate all right-hand side whitespace on the element.
-// Makes some assumptions about current right margin though, so not great.
-@mixin flush-right($type:'scaled') {
-  padding-right: 0;
-  margin-right: unquote("calc(" + half-gutter($type, 'col') + " * -1)");
+
+
+
+/*------------------------------------*\
+    $GRID SETUP
+\*------------------------------------*/
+/**
+ * 1. Allow the grid system to be used on lists.
+ * 2. Remove any margins and paddings that might affect the grid system.
+ * 3. Apply a negative `margin` to negate the columns’ gutters.
+ */
+#{$class-type}grid {
+    list-style: none;                /* [1] */
+    margin: 0;                       /* [2] */
+    padding: 0;                      /* [2] */
+    margin-left: -$gutter;           /* [3] */
+    margin-right: -$gutter;
+    zoom: 1;                         /* ie 6/7 */
+
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+    }
 }
 
-@mixin pull-right-by-cols($num-cols, $col-type, $nuance:'') {
-  @if $nuance == 'use-positioning' {
-    right: unquote("calc(" + multiple-col-width($num-cols, $col-type) + "  * -1)");
-  } @else {
-    margin-right: unquote("calc((" + multiple-col-width($num-cols, $col-type) + " + " + 
-      half-gutter($col-type, 'col') + ")  * -1)");
-  }
+
+    /**
+     * 1. Space columns apart.
+     * 2. Required to combine fluid widths and fixed gutters.
+     */
+    #{$class-type}grid__item {
+        float: left;
+        padding-left: $gutter;          /* [1] */
+        padding-right: $gutter;
+        width: 100%;
+
+        -webkit-box-sizing: border-box;  /* [2] */
+           -moz-box-sizing: border-box;  /* [2] */
+                box-sizing: border-box;  /* [2] */
+    }
+
+
+/**
+ * Gutterless grids have all the properties of regular grids, minus any spacing.
+ * Extends `.grid`.
+ */
+#{$class-type}grid--full {
+    margin-left: 0;
+
+    > #{$class-type}grid__item {
+        padding-left: 0;
+    }
 }
 
-//Flexible layout.
-.gs-wrapper {
-  margin: 0 #{$page-gutter-quantity-as-percent}vw;
+
+/**
+ * Create grids with narrower gutters. Extends `.grid`.
+ */
+#{$class-type}grid--narrow {
+    margin-left: -($gutter / 2);
+
+    > #{$class-type}grid__item {
+        padding-left: $gutter / 2;
+    }
 }
 
-//.article {
-.gs-container {
-  max-width: $max-content-width;
+
+/**
+ * Create grids with wider gutters. Extends `.grid`.
+ */
+#{$class-type}grid--wide {
+    margin-left: -($gutter * 2);
+
+    > #{$class-type}grid__item {
+        padding-left: $gutter * 2;
+    }
 }
 
-.gs-col {
-  @include gutter-padding('scaled');
+
+
+
+
+/*------------------------------------*\
+    $WIDTHS
+\*------------------------------------*/
+/**
+ * Create our width classes, prefixed by the specified namespace.
+ */
+@mixin device-type($namespace:"") {
+    $prefix: $class-type + $namespace;
+
+    /**
+     * Whole
+     */
+    #{$prefix}one-whole         { width:100%; }
+
+
+    /**
+     * Halves
+     */
+    #{$prefix}one-half          { width:50%; }
+
+
+    /**
+     * Thirds
+     */
+    #{$prefix}one-third         { width:33.333%; }
+    #{$prefix}two-thirds        { width:66.666%; }
+
+
+    /**
+     * Quarters
+     */
+    #{$prefix}one-quarter       { width:25%; }
+    #{$prefix}two-quarters      { @extend #{$prefix}one-half; }
+    #{$prefix}three-quarters    { width:75%; }
+
+
+    /**
+     * Twelfths
+     */
+    #{$prefix}one-twelfth       { width:8.333%; }
+    #{$prefix}two-twelfths      { @extend #{$prefix}one-sixth; }
+    #{$prefix}three-twelfths    { @extend #{$prefix}one-quarter; }
+    #{$prefix}four-twelfths     { @extend #{$prefix}one-third; }
+    #{$prefix}five-twelfths     { width:41.666% }
+    #{$prefix}six-twelfths      { @extend #{$prefix}one-half; }
+    #{$prefix}seven-twelfths    { width:58.333%; }
+    #{$prefix}eight-twelfths    { @extend #{$prefix}two-thirds; }
+    #{$prefix}nine-twelfths     { @extend #{$prefix}three-quarters; }
+    #{$prefix}ten-twelfths      { @extend #{$prefix}five-sixths; }
+    #{$prefix}eleven-twelfths   { width:91.666%; }
 }
 
-// FIX: this nukes the pull-right-by cols.
-.gs-col--flush-right {
-//  @include flush-right('scaled');
-  padding-right: 0;
+
+/**
+ * Our regular, non-responsive width classes.
+ */
+@include device-type;
+
+
+@each $name in $breakpoint-has-widths {
+    @include grid-media-query($name) {
+       @include device-type('#{$name}--');
+    }
 }
 
-@media only all and (min-width: $bkpt-float-figure) {
-  figure.gs-col {
-    padding-right: 0;
-  }
+
+
+
+/*------------------------------------*\
+    $PUSH
+\*------------------------------------*/
+/**
+ * Push classes, to move grid items over to the right by certain amounts.
+ */
+@mixin push-setup($namespace: "") {
+    $prefix: $class-type + "push--" + $namespace;
+
+    /**
+     * Whole
+     */
+    #{$prefix}one-whole           { left:100%; @include silent-relative; }
+
+
+    /**
+     * Halves
+     */
+    #{$prefix}one-half            { left:50%; @include silent-relative; }
+
+
+    /**
+     * Thirds
+     */
+    #{$prefix}one-third           { left:33.333%; @include silent-relative; }
+    #{$prefix}two-thirds          { left:66.666%; @include silent-relative; }
+
+
+    /**
+     * Quarters
+     */
+    #{$prefix}one-quarter         { left:25%; @include silent-relative; }
+    #{$prefix}two-quarters        { @extend #{$prefix}one-half; }
+    #{$prefix}three-quarters      { left:75%; @include silent-relative; }
+
+
+    /**
+     * Twelfths
+     */
+    #{$prefix}one-twelfth         { left:8.333%; @include silent-relative; }
+    #{$prefix}two-twelfths        { @extend #{$prefix}one-sixth; }
+    #{$prefix}three-twelfths      { @extend #{$prefix}one-quarter; }
+    #{$prefix}four-twelfths       { @extend #{$prefix}one-third; }
+    #{$prefix}five-twelfths       { left:41.666%; @include silent-relative; }
+    #{$prefix}six-twelfths        { @extend #{$prefix}one-half; }
+    #{$prefix}seven-twelfths      { left:58.333%; @include silent-relative; }
+    #{$prefix}eight-twelfths      { @extend #{$prefix}two-thirds; }
+    #{$prefix}nine-twelfths       { @extend #{$prefix}three-quarters; }
+    #{$prefix}ten-twelfths        { @extend #{$prefix}five-sixths; }
+    #{$prefix}eleven-twelfths     { left:91.666%; @include silent-relative; }
 }
 
-@media only all and (min-width: $bkpt-float-related) {
-  figure.gs-col {
-    @include gutter-padding('scaled');
-  }
+@if $push {
+
+    /**
+     * Not a particularly great selector, but the DRYest way to do things.
+     */
+    [class*="push--"] { position:relative; }
+
+    @include push-setup;
+
+    @each $name in $breakpoint-has-push {
+        @include grid-media-query($name) {
+            @include push-setup('#{$name}--');
+        }
+    }
+
 }
 
-@media only all and (min-width: $max-page-width) {
-  .gs-col {
-    @include gutter-padding('max');
-  }
+
+
+
+
+/*------------------------------------*\
+    $PULL
+\*------------------------------------*/
+/**
+ * Pull classes, to move grid items back to the left by certain amounts.
+ */
+@mixin pull-setup($namespace: "") {
+    $prefix: $class-type + "pull--" + $namespace;
+
+    /**
+     * Whole
+     */
+    #{$prefix}one-whole           { right:100%; @include silent-relative; }
+
+
+    /**
+     * Halves
+     */
+    #{$prefix}one-half            { right:50%; @include silent-relative; }
+
+
+    /**
+     * Thirds
+     */
+    #{$prefix}one-third           { right:33.333%; @include silent-relative; }
+    #{$prefix}two-thirds          { right:66.666%; @include silent-relative; }
+
+
+    /**
+     * Quarters
+     */
+    #{$prefix}one-quarter         { right:25%; @include silent-relative; }
+    #{$prefix}two-quarters        { @extend #{$prefix}one-half; }
+    #{$prefix}three-quarters      { right:75%; @include silent-relative; }
+
+
+    /**
+     * Twelfths
+     */
+    #{$prefix}one-twelfth         { right:8.333%; @include silent-relative; }
+    #{$prefix}two-twelfths        { @extend #{$prefix}one-sixth; }
+    #{$prefix}three-twelfths      { @extend #{$prefix}one-quarter; }
+    #{$prefix}four-twelfths       { @extend #{$prefix}one-third; }
+    #{$prefix}five-twelfths       { right:41.666%; @include silent-relative; }
+    #{$prefix}six-twelfths        { @extend #{$prefix}one-half; }
+    #{$prefix}seven-twelfths      { right:58.333%; @include silent-relative; }
+    #{$prefix}eight-twelfths      { @extend #{$prefix}two-thirds; }
+    #{$prefix}nine-twelfths       { @extend #{$prefix}three-quarters; }
+    #{$prefix}ten-twelfths        { @extend #{$prefix}five-sixths; }
+    #{$prefix}eleven-twelfths     { right:91.666%; @include silent-relative; }
 }
 
+@if $pull {
+
+    /**
+     * Not a particularly great selector, but the DRYest way to do things.
+     */
+    [class*="pull--"] { position:relative; }
+
+    @include pull-setup;
+
+    @each $name in $breakpoint-has-pull {
+        @include grid-media-query($name) {
+            @include pull-setup('#{$name}--');
+        }
+    }
+
+}
