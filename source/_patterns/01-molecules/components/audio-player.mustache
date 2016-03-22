@@ -1,0 +1,15 @@
+<div class="audio-player">
+  {{#audioPlayer}}
+  <div class="audio-player__header">
+    {{title}}
+  </div>
+  <audio controls class="audio-player__player">
+    {{#sources}}
+    <source src="{{src}}" type="{{mimeType}}">
+    {{/sources}}
+    {{#sources}}
+    <div><a href="{{src}}" class="audio-player__link" rel="external" target="_blank">Download the podcast ({{type}})</a></div>
+    {{/sources}}
+  </audio>
+  {{/audioPlayer}}
+</div>

@@ -1,0 +1,22 @@
+
+.audio-player {
+  background-color: $color-text;
+  @include padding(15);
+}
+
+.audio-player__header {
+  color: $color-text--reverse;
+  font-family: $font-primary;
+  @include margin(5, "bottom");
+}
+
+.audio-player__player {
+  display: block;
+  width: 100%;
+}
+
+.audio-player__link {
+  color: $color-text--reverse;
+  font-family: $font-secondary;
+  @include font-size(14);
+}
