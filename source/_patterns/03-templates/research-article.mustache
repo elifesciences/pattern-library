@@ -1,0 +1,51 @@
+
+  {{> organisms-header }}
+
+  <main role="main">
+
+    <article class="article">
+
+      <!-- content header -->
+      <div style="background-color: #efefef; height: 400px"></div>
+      <!-- /content header -->
+
+      <div class="wrapper" style="padding: 0 6%">
+      {{> molecules-contextual-data }}
+      </div>
+
+      <div class="wrapper" style="padding: 0 6%">
+
+        <div class="grid">
+
+          <div class="grid__item desk--three-twelfths">
+            {{> molecules-view-selector }}
+          </div>
+
+          <div class="grid__item desk--six-twelfths">
+            <div>[abstract here]</div>
+            <div style="background-color: #ddd; height: 500px"></div>
+
+            {{#articlesections}}
+              {{> molecules-article-section }}
+            {{/articlesections}}
+
+            <!-- May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? -->
+            <section class="article-section">
+
+              <div class="article-section__body">
+                {{> molecules-article-meta }}
+              </div>
+
+            </section>
+          </div>
+
+        </div>
+
+      </div>
+    </article>
+
+  </main>
+
+  {{> organisms-email-cta }}
+
+  {{> organisms-footer }}
