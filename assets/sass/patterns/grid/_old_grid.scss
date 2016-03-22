@@ -15,18 +15,18 @@
 // When the viewport width is < $max-page-width:
 // col-width = (current-viewport-width - 10%) / $gs-num-cols
 //
-// 
 //
-// Each grid column has padding that contributes to half the width separating 
-// adjecent columns (half-gutter). This is usually fine, but problems have been previously 
+//
+// Each grid column has padding that contributes to half the width separating
+// adjecent columns (half-gutter). This is usually fine, but problems have been previously
 // encountered when trying to override this to pull figures a certain number of
 // columns to the right.
 //
 // At different widths, some elements contained within the grid are required to
 // occupy different numbers of columns. There's a decision to make about how
-// these changes are applied. If the different columns are specified by changing 
+// these changes are applied. If the different columns are specified by changing
 // the class, this requires js, whereas if the layout from the grid is applied
-// directly to the relavent elements (or a wrapper, if that makes sense), 
+// directly to the relavent elements (or a wrapper, if that makes sense),
 // it's simpler.
 
 // ******************************
@@ -105,12 +105,12 @@ $bkpt-show-intra-nav: 62.5rem; // 1000px
   @if $isMax {
     @return #{$max-content-width} / #{$gs-num-cols};
   }
-@return $content-width-as-vw / $gs-num-cols;
+  @return $content-width-as-vw / $gs-num-cols;
 }
 
 // Returns a calculation for the cumulative width of a specified # grid columns.
 @function multiple-col-width($num-cols, $col-type) {
-  @if $col-type == 'max' {
+  @if $col-type == "max" {
     @return unquote(single-col-width(true) * #{$num-cols});
   }
   @return unquote(single-col-width(false) * #{$num-cols});
@@ -138,24 +138,27 @@ $bkpt-show-intra-nav: 62.5rem; // 1000px
 // Returns a value or a calculation for either the page gutter or a col gutter.
 // For type max, returns value of max gutter in px for that gutter
 // When type scaled, returns a calculation for that gutter based on viewport.
-@function half-gutter($type:'scaled', $object:'col') {
-  @if $object == 'col' {
-    @if $type == 'max' {
+@function half-gutter($type:"scaled", $object:"col") {
+  @if $object == "col" {
+    @if $type == "max" {
       @return #{$max-col-gutter-in-px};
-    } @else {
+    }
+    @else {
       @return 100vw * $col-gutter-as-proportion;
     }
-  } @else if $object == 'page' {
-    @if $type == 'max' {
+  }
+  @else if $object == "page" {
+    @if $type == "max" {
       @return #{$max-page-gutter-in-px};
-    } @else {
+    }
+    @else {
       @return 100vw * $page-gutter-as-proportion;
     }
   }
 }
 
 // Sets padding left and right to be the current size of half-gutter.
-@mixin gutter-padding($type:'scaled', $object:'col') {
+@mixin gutter-padding($type:"scaled", $object:"col") {
   $padding: half-gutter($type, $object);
   // Uses calc because $padding may be (but isn't always), a calculation.
   // When it's not, you get e.g. 'calc(123vw)' as the output, which is acceptable.
@@ -169,17 +172,18 @@ $bkpt-show-intra-nav: 62.5rem; // 1000px
 
 // Tries to eliminate all right-hand side whitespace on the element.
 // Makes some assumptions about current right margin though, so not great.
-@mixin flush-right($type:'scaled') {
+@mixin flush-right($type:"scaled") {
   padding-right: 0;
-  margin-right: unquote("calc(" + half-gutter($type, 'col') + " * -1)");
+  margin-right: unquote("calc(" + half-gutter($type, "col") + " * -1)");
 }
 
-@mixin pull-right-by-cols($num-cols, $col-type, $nuance:'') {
-  @if $nuance == 'use-positioning' {
+@mixin pull-right-by-cols($num-cols, $col-type, $nuance:"") {
+  @if $nuance == "use-positioning" {
     right: unquote("calc(" + multiple-col-width($num-cols, $col-type) + "  * -1)");
-  } @else {
-    margin-right: unquote("calc((" + multiple-col-width($num-cols, $col-type) + " + " + 
-      half-gutter($col-type, 'col') + ")  * -1)");
+  }
+  @else {
+    margin-right: unquote("calc((" + multiple-col-width($num-cols, $col-type) + " + " +
+      half-gutter($col-type, "col") + ")  * -1)");
   }
 }
 
@@ -194,12 +198,12 @@ $bkpt-show-intra-nav: 62.5rem; // 1000px
 }
 
 .gs-col {
-  @include gutter-padding('scaled');
+  @include gutter-padding("scaled");
 }
 
 // FIX: this nukes the pull-right-by cols.
 .gs-col--flush-right {
-//  @include flush-right('scaled');
+  //  @include flush-right('scaled');
   padding-right: 0;
 }
 
@@ -211,13 +215,12 @@ $bkpt-show-intra-nav: 62.5rem; // 1000px
 
 @media only all and (min-width: $bkpt-float-related) {
   figure.gs-col {
-    @include gutter-padding('scaled');
+    @include gutter-padding("scaled");
   }
 }
 
 @media only all and (min-width: $max-page-width) {
   .gs-col {
-    @include gutter-padding('max');
+    @include gutter-padding("max");
   }
 }
-
