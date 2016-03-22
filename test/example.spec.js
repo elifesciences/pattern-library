@@ -1,5 +1,7 @@
 "use strict";
 
+var expect = require('chai').expect;
+
 let Example = require('../assets/js/components/example');
 
 describe('Example Component', function () {

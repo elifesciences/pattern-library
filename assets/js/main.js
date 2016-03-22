@@ -1,10 +1,10 @@
 "use strict";
 
 // import components
-const DropDown = require('./components/example');
+const Example = require('./components/example');
 
 let Components = {};
-Components.DropDown = DropDown;
+Components.Example = Example;
 
 // App
 function Elife() {
