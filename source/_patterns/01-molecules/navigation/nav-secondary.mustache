@@ -2,13 +2,18 @@
   <ul class="nav-secondary__list clearfix">
    {{#navSecondaryLinks}}
     <li class="nav-secondary__item{{#variant}} nav-secondary__item--{{variant}}{{/variant}}">
-      <a href="{{path}}">
-        {{#imgs}}
-          {{> atoms-picture-svg-with-fallback}}
-        {{/imgs}}
-        {{#textClasses}}<span class="{{textClasses}}">{{{text}}}</span>{{/textClasses}}
-        {{^textClasses}}{{{text}}}{{/textClasses}}
-      </a>
+      {{#isButtonLike}}
+        {{> atoms-button-extra-small}}
+      {{/isButtonLike}}
+      {{^isButtonLike}}
+        <a href="{{path}}">
+          {{#imgs}}
+            {{> atoms-picture-svg-with-fallback}}
+          {{/imgs}}
+          {{#textClasses}}<span class="{{textClasses}}">{{{text}}}</span>{{/textClasses}}
+          {{^textClasses}}{{{text}}}{{/textClasses}}
+        </a>
+      {{/isButtonLike}}
       </li>
    {{/navSecondaryLinks}}
   </ul>
