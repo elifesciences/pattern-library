@@ -30,7 +30,7 @@
       background: url("../img/icons/quote-end.png") 0 0 no-repeat;
       background: url("../img/icons/quote-end.svg") 0 0 no-repeat, linear-gradient(transparent, transparent);
       // bottom: -#{get-rem-from-px(16)}rem;
-      content: '';
+      content: "";
       display: block;
       height: #{get-rem-from-px(33)}rem;
       @include margin(-16, "top");
