@@ -17,6 +17,10 @@
   padding: 0;
 }
 
+.text-field:focus:invalid {
+  border: 2px solid $color-attention;
+}
+
 .contact-form__meta_title {
   color: $color-text-secondary;
   font-family: $font-secondary;
