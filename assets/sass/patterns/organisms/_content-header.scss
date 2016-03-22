@@ -44,7 +44,7 @@
 }
 
 .content-header__author_list_item {
-  display:inline;
+  display: inline;
   font-family: $font-secondary;
   @include font-size(16);
   font-weight: bold;
@@ -54,7 +54,7 @@
 }
 
 .content-header__author:after {
-  content: ', ';
+  content: ", ";
 }
 
 .content-header__institution_list {
@@ -63,7 +63,7 @@
 }
 
 .content-header__institution_list_item {
-  display:inline;
+  display: inline;
   font-family: $font-secondary;
   @include font-size(12);
   font-weight: bold;
@@ -73,7 +73,7 @@
 }
 
 .content-header__institution:after {
-  content: ', ';
+  content: ", ";
 }
 
 @media only all and (max-width: #{get-rem-from-px($bkpt-content-header)}em) {

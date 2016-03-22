@@ -6,7 +6,7 @@
     @include margin(28, "top");
     padding-bottom: 0;
   }
-  
+
   .content-header__strapline {
     color: $color-text-secondary;
     font-family: $font-primary;
@@ -20,11 +20,11 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header)}em) {
-    
+
     .content-header__title {
       @include margin(65, "top");
     }
-    
+
     .content-header__strapline {
       @include font-size(16);
     }

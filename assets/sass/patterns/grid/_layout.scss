@@ -23,7 +23,7 @@ figure:not(.modal) {
     position: relative;
     @include calc-width-for-cols(8, 'scaled');
   }
-  
+
   figure:not(.modal) {
     @include calc-width-for-cols(6, 'scaled');
     @include pull-right-by-cols(4, 'scaled');
@@ -43,7 +43,7 @@ figure:not(.modal) {
 }
 
 @media only all and (min-width: $max-page-width) {
-  
+
   .article-body {
     @include calc-width-for-cols(6, 'max');
   }
@@ -54,10 +54,10 @@ figure:not(.modal) {
 
   }
 
-//  .gs-container--main {
+.gs-container--main {
   .gs-container {
     margin: 0 auto;
-  }  
+  }
 }
 */
 

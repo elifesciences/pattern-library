@@ -1,5 +1,6 @@
 
 .viewer-inline {
+
   /* max-width is a bonus here. Unlikely to be used. Not worried about support. */
   max-width: #{get-rem-from-px(715)}rem;
 }

@@ -1,6 +1,6 @@
 // 'nonarticle' is a rubbish name. Rename if inspiration strikes!
 .content-header-nonarticle {
-  
+
   // Need this to allow correct combination of bottom border
   // plus vertical centering.
   .content-header__inner {
@@ -11,7 +11,7 @@
     min-height: #{get-rem-from-px(200)}rem;
     @include padding(40, 0);
   }
-  
+
   .content-header__title {
     margin: 0;
   }
@@ -36,9 +36,9 @@
 }
 
 .content-header-nonarticle--background-flat {
-  
+
   background-color: $color-primary;
-  
+
   .content-header__inner {
     color: $color-text--reverse;
   }
