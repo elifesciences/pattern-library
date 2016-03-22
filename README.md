@@ -3,10 +3,10 @@ This pattern library uses as its starting point  `https://github.com/pattern-lab
 
 # Quickstart
 
-This sets up PatternLab to generate the html from mustache templates, and Grunt to handle transformation
-of scss to css, & other various build-related tasks. Note that artefacts generated from running Grunt are
-inputs for the generation of PatternLab files, so Grunt needs to run before PatternLab. When developing,
-it's recommended to run watch tasks for both, which will take care of this.
+This sets up PatternLab to generate the html from mustache templates, and Gulp to handle transformation
+of scss to css, & other various build-related tasks. Note that artefacts generated from running Gulp are
+inputs for the generation of PatternLab files, so Gulp needs to run before PatternLab. When developing,
+it’s recommended to run watch tasks for both, which will take care of this.
 
 ## 1. Set up PatternLab
 
@@ -16,6 +16,7 @@ it's recommended to run watch tasks for both, which will take care of this.
 
 ## 2. Set up and run Gulp
 
+- if you have not used gulp before, then install the gulp cli globally with `npm install --global gulp-cli`
 - install required npm packages with `npm install`
 - run `gulp` to build the css & js files.
 - then run `gulp watch` to watch for changes to files or do both in one fell swoop with `gulp && gulp watch` (the watch task on its own will not compile your assets until a file is changed).
