@@ -7,7 +7,9 @@
     {{#sources}}
     <source src="{{src}}" type="{{mimeType}}">
     {{/sources}}
-    <a href="{{audiosrc}}" class="audio-player__link" rel="external" target="_blank">Download the podcast</a>
+    {{#sources}}
+    <div><a href="{{src}}" class="audio-player__link" rel="external" target="_blank">Download the podcast ({{type}})</a></div>
+    {{/sources}}
   </audio>
   {{/audioPlayer}}
 </div>
