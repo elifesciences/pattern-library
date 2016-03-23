@@ -74,7 +74,9 @@
     {
       "text": "Submit my research",
       "path": "#",
-      "variant": "submit-list-item"
+      "isButtonLike": true,
+      "variant": "button",
+      "buttonText": "Submit my research"
     },
     
     {

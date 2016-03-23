@@ -8,7 +8,7 @@
   align-items: center;
   display: table-cell;
   display: flex;
-  @include height(58);
+  @include height(56);
   margin: 0;
   padding: 0;
   vertical-align: middle;
@@ -56,8 +56,10 @@
 
 .nav-primary__menu_icon {
   border: none;
+  box-sizing: content-box;
   height: 24px;
   margin-top: -2px;
+  padding: 0 3px;
   width: 24px;
 }
 

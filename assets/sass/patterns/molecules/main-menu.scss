@@ -7,7 +7,7 @@ $max-width: 1114;
 }
 
 .main-menu__container {
-  @include padding(15);
+  @include padding(27 20 0);
 }
 
 .main-menu__section {
@@ -18,7 +18,7 @@ $max-width: 1114;
   @include font-size(14);
   font-weight: 600;
   margin: 0;
-  @include padding(0 0 2 0);
+  @include padding(0 0 5 0);
   text-transform: uppercase;
 }
 
@@ -33,7 +33,7 @@ $max-width: 1114;
   @include font-size(14);
   font-weight: 500;
   margin: 0;
-  @include padding(4 0);
+  @include padding(5 0);
 }
 
 .main-menu__list_link {

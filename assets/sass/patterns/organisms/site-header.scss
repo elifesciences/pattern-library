@@ -30,7 +30,7 @@
   display: inline-block;
   // Dimensions sized in px explicitly, to accommodate a specific image.
   height: 27px;
-  margin: 6px 6px 0 6px;
+  margin: 7px 6px 0 6px;
   width: 27px;
 }
 
@@ -40,7 +40,7 @@
     border-right: 1px solid $color-text-dividers;
     float: left;
     margin-right: 10px;
-    padding: 30px;
+    padding: 29px 30px;
     position: relative;
     width: 155px;
   }
@@ -50,7 +50,7 @@
     background-color: #fff;
     content: "";
     display: block;
-    height: 99px;
+    height: 97px;
     left: 0;
     position: absolute;
     top: 0;

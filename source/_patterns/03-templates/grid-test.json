@@ -1,5 +1,5 @@
 {
-  "navprimarylinks": [
+  "navPrimaryLinks": [
     {
       "text": "Menu",
       "variant": "first",
@@ -55,14 +55,14 @@
     }
   ],
 
-  "navsecondarylinks": [
+  "navSecondaryLinks": [
     {
       "text": "Careers",
       "path": "#"
     },
 
     {
-      "text": "About",
+      "text": "About<span class=\"visuallyhidden\"> eLife</span>",
       "path": "#"
     },
 
@@ -74,7 +74,9 @@
     {
       "text": "Submit my research",
       "path": "#",
-      "variant": "submit-list-item"
+      "isButtonLike": true,
+      "variant": "button",
+      "buttonText": "Submit my research"
     },
 
     {
