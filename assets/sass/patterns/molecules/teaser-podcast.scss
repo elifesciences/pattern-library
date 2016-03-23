@@ -3,18 +3,22 @@
   @include margin(5, "bottom");
 }
 
+.teaser__header_picture {
+  display: block;
+  @include margin(10, "bottom");
+}
+
 .teaser__header_img {
   display: block;
-  @include margin(5, "bottom");
   width: 100%;
 }
 
 .teaser__header_text {
   font-family: $font-secondary;
-  @include font-size(17);
+  @include font-size(19);
   line-height: 1.3;
   margin: 0;
-  @include padding(0 0 5 0);
+  @include padding(0 0 3 0);
 }
 
 .teaser__subheading {
@@ -31,18 +35,26 @@
 }
 
 .teaser__footer {
+  align-items: center;
   color: $color-text-secondary;
+  display: flex;
   font-family: $font-secondary;
   @include font-size(11);
+  justify-content: space-between;
   line-height: 1;
+}
+
+.teaser__footer_text {
+  display: inline-block;
 }
 
 .teaser__download {
   background: url("../../assets/img/icons/download.png") 50% 50% no-repeat;
   background: url("../../assets/img/icons/download.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
   display: inline-block;
-  @include width(20);
+  float: right;
   @include height(20);
+  @include width(20);
 
   &:hover {
     background: url("../../assets/img/icons/download-hover.png") 50% 50% no-repeat;
