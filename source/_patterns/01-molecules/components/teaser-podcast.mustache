@@ -1,0 +1,19 @@
+
+<div class="teaser teaser--podcast">
+  {{#teaser}}
+  <header class="teaser__header">
+    <picture class="teaser__header_picture">
+      <img src="{{headerImage}}" class="teaser__header_img" alt="" />
+    </picture>
+    <h4 class="teaser__header_text">{{{headerText}}}</h4>
+    <div class="teaser__subheading">{{subHeader}}</div>
+  </header>
+  <div class="teaser__body">
+    {{content}}
+  </div>
+  <footer class="teaser__footer">
+    <div class="teaser__footer_text">{{footerText}}</div>
+    <a href="{{src}}" class="teaser__download"><span class="visuallyhidden">Download</span></a>
+  </footer>
+  {{/teaser}}
+</div>
