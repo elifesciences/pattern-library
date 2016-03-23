@@ -96,6 +96,10 @@
     @include padding(8 5);
   }
 
+  tr > th:first-of-type {
+    text-align: left;
+  }
+
   td {
     border-bottom: 1px solid $color-text;
     font-family: $font-secondary;
