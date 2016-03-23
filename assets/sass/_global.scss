@@ -88,6 +88,7 @@ dt {
 
 dd {
   @include margin(24, "bottom");
+  margin-left: 0;
 }
 
 small {
