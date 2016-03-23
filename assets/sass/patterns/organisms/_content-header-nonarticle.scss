@@ -52,6 +52,7 @@
 .content-header-nonarticle-background-image {
 
   background-color: $color-primary;
+  background-size: cover;
 
   .content-header__inner {
     color: $color-text--reverse;
