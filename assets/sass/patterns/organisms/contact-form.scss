@@ -17,8 +17,16 @@
   padding: 0;
 }
 
+.text-field:focus:valid {
+  border: 2px solid $color-success;
+}
+
 .text-field:focus:invalid {
   border: 2px solid $color-attention;
+}
+
+.text-field:not([required]):focus {
+  border: 2px solid $color-information;
 }
 
 .contact-form__meta_title {
