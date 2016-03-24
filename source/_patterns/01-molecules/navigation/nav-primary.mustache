@@ -2,7 +2,7 @@
     <ul class="nav-primary__list clearfix">
       {{#navPrimaryLinks}}
         <li class="nav-primary__item{{#variant}} nav-primary__item--{{variant}}{{/variant}}">
-        <a href="{{path}}">
+        <a href="{{path}}" {{#rel}}rel="{{rel}}"{{/rel}}>
           {{#imgs}}
             {{> atoms-picture-svg-with-fallback}}
           {{/imgs}}
