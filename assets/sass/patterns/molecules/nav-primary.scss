@@ -52,6 +52,8 @@
 .nav-primary__item--last {
   float: right;
   margin-left: auto;
+  margin-top: -2px;
+  @include padding(20, "right");
 }
 
 .nav-primary__menu_icon {
