@@ -1,0 +1,17 @@
+
+.teaser--podcast-item {
+  
+  .teaser__header {
+    margin: 0;
+  }
+
+  .teaser__body {
+    @include margin(15, "bottom");
+  }
+
+  // this needs a better name
+  .teaser__content_extra {
+    font-family: $font-primary;
+    @include font-size(14);
+  }
+}
