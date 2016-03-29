@@ -4,6 +4,12 @@
   @include padding(12 0);
 }
 
+.teaser__link {
+  color: $color-text;
+  display: block;
+  text-decoration: none;
+}
+
 .teaser__meta {
   color: $color-primary;
   font-family: $font-secondary;
@@ -18,13 +24,9 @@
   @include margin(5, "bottom");
 }
 
-.teaser__header_picture {
-  display: block;
-  @include margin(10, "bottom");
-}
-
 .teaser__header_img {
   display: block;
+  @include margin(10, "bottom");
   width: 100%;
 }
 

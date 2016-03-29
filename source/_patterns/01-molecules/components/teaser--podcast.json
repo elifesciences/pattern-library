@@ -1,6 +1,9 @@
 {
   "teaser": {
-    "headerImage": "http://placehold.it/320x240",
+    "headerImage": {
+      "srcLow": "http://placehold.it/320x240",
+      "srcHigh": "http://placehold.it/640x480"
+    },
     "headerText": "Multicellular life, potato blight and Hepatitis&nbsp;B",
     "subHeader": "Episode 24",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",

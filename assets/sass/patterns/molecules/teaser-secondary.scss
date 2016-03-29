@@ -4,6 +4,12 @@
   @include padding(12 0);
 }
 
+.teaser-secondary__link {
+  color: $color-text;
+  display: block;
+  text-decoration: none;
+}
+
 .teaser-secondary__meta {
   color: $color-primary;
   font-family: $font-secondary;
@@ -14,13 +20,10 @@
   text-transform: uppercase;
 }
 
-.teaser-secondary__picture {
-  float: right;
-  @include margin(0 0 10 10);
-}
-
 .teaser-secondary__img {
   display: block;
+  float: right;
+  @include margin(0 0 10 10);
 }
 
 .teaser-secondary__header_text {
