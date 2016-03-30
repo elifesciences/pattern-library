@@ -5,26 +5,27 @@
 
     <article class="article">
 
-      {{> organisms-content-header-article-research }}
+      <div class="wrapper">
+        {{> organisms-content-header-article-research }}
+      </div>
 
-      <div class="gs-wrapper">
+      <div class="wrapper">
       {{> molecules-contextual-data }}
       </div>
 
-      <div class="gs-wrapper">
+      <div class="wrapper">
 
-        <div class="gs-container">
+        <div class="grid">
 
-          <div class="gs-col">
+          <div class="grid__item desk--two-twelfths u-pad-top-lg">
             {{> molecules-view-selector }}
           </div>
 
-          <div class="gs-col">
-            <div>[abstract here]</div>
+          <div class="grid__item desk--six-twelfths u-pad-top-lg">
 
-            {{#articlesections}}
+            {{#articleSections}}
               {{> molecules-article-section }}
-            {{/articlesections}}
+            {{/articleSections}}
 
             <!-- May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? -->
             <section class="article-section">
@@ -36,9 +37,10 @@
             </section>
           </div>
 
-        </div>  <!-- /.gs-container -->
+        </div>
 
-      </div>  <!-- /.gs-wrapper -->
+      </div>
+
     </article>
 
   </main>

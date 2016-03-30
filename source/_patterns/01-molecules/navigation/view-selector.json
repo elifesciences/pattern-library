@@ -1,11 +1,11 @@
 {
   "jumpLinks": [
-    { "name": "Abstract", "url": "#" },
-    { "name": "eLife digest", "url": "#" },
-    { "name": "Introduction", "url": "#" },
-    { "name": "Results", "url": "#" },
-    { "name": "Discussion", "url": "#" },
-    { "name": "Materials & methods", "url": "#" },
-    { "name": "References", "url": "#" }
+    { "name": "Abstract", "url": "#abstract" },
+    { "name": "eLife digest", "url": "#digest" },
+    { "name": "Introduction", "url": "#introduction" },
+    { "name": "Results", "url": "#results" },
+    { "name": "Discussion", "url": "#discussion" },
+    { "name": "Materials & methods", "url": "#materials-and-methods" },
+    { "name": "References", "url": "#references" }
   ]
 }

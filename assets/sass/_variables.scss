@@ -2,7 +2,7 @@
     $VARIABLES
 \*------------------------------------*/
 
-//Colors
+// Colors
 $color-primary: #0288d1;
 $color-primary-dark: #0277bd;
 $color-primary-light: #b3e5fc;
@@ -25,12 +25,15 @@ $color-information: #0288d1;
 $color-success: #629f43;
 $color-attention: #cf0c4e;
 
-//Typography
+// Typography
 $font-primary: "PT Serif Webfont", Georgia, serif;
 $font-secondary: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
 
 $font-size-base-in-px: 16;
 $line-height-primary: 1.3;
+
+// Widths
+$max-site-width: 1114;
 
 // Breakpoints
 $bkpt-content-header: 560;

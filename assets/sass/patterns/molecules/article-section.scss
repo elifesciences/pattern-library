@@ -2,6 +2,12 @@
 .article-section {
   border-top: 1px solid $color-text-dividers;
   @include padding(15, "top");
+  @include padding(15, "bottom");
+}
+
+.article-section--first {
+  border: none;
+  padding-top: 0;
 }
 
 .article-section__header_text {

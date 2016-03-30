@@ -7,15 +7,9 @@
  * http://csswizardry.com/csswizardry-grids/
  * https://github.com/csswizardry/csswizardry-grids
  *
- * NOTE - I was not prepared to face the hacks around using display-inline block for columns. So it uses floats now.
+ * NOTE - I was not prepared to face the hacks around using display-inline block for columns, nor the limited backwards compatibility. So it uses floats now.
  * I have removed all references to the inline-block 'markup fixes'. And removed all inline-block only features.
- */
-
-/*------------------------------------*\
-    $CSSWIZARDRY-GRIDS
-\*------------------------------------*/
-
-/**
+ *
  * CONTENTS
  * INTRODUCTION.........How the grid system works.
  * VARIABLES............Your settings.
@@ -69,7 +63,26 @@
  * `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
  *
  * `class="grid__item  palm--one-third  desk--five-twelfths"`
- *
+ */
+
+/*
+ *  Wrapper class. A class for constraining the content to the max-site-width and also applies the side padding.
+ */
+
+.wrapper {
+  max-width: #{$max-site-width}px;
+  max-width: #{get-rem-from-px($max-site-width)}rem;
+  margin: auto;
+  padding: 0 6%;
+}
+
+@media only screen and (min-width: #{get-rem-from-px($max-site-width)}em) {
+  .wrapper {
+    padding: 0 4.125rem;
+  }
+}
+
+/*
  * Extras
  *
  * Two utility classes which provide padding for tops and bottoms of cells. Ultimately, we want
@@ -80,8 +93,16 @@
   @include padding(16, "top");
 }
 
+.u-pad-top-lg {
+  @include padding(32, "top");
+}
+
 .u-pad-bottom {
   @include padding(16, "bottom");
+}
+
+.u-pad-bottom-lg {
+  @include padding(32, "bottom");
 }
 
 /*------------------------------------*\
@@ -114,11 +135,11 @@ $pull: false !default;
  */
 
 $breakpoints: (
-  "palm" "(max-width: 480px)",
-  "tablet" "(min-width: 719px)",
-  "lap" "(min-width: 481px) and (max-width: 1023px)",
-  "portable" "(max-width: 1023px)",
-  "desk" "(min-width: 1024px)"
+  "x-small" "(max-width: 479px)",
+  "small" "(min-width: 480px)",
+  "medium" "(min-width: 640px)",
+  "large" "(min-width: 800px)",
+  "x-large" "(min-width: 1024px)"
 ) !default;
 
 /**
@@ -132,9 +153,9 @@ $breakpoints: (
  * have been set to ‘true’.
  */
 
-$breakpoint-has-widths: ("palm", "tablet", "lap", "portable", "desk") !default;
-$breakpoint-has-push: ("palm", "tablet", "lap", "portable", "desk") !default;
-$breakpoint-has-pull: ("palm", "lap", "portable", "desk") !default;
+$breakpoint-has-widths: ("x-small", "small", "medium", "large", "x-large") !default;
+$breakpoint-has-push: ("x-small", "small", "medium", "large", "x-large") !default;
+$breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !default;
 
 /**
  * You do not need to edit anything from this line onward; csswizardry-grids is
@@ -323,31 +344,31 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     width: 8.333%;
   }
   #{$prefix}two-twelfths {
-    @extend #{$prefix}one-sixth;
+    width: 16.666%;
   }
   #{$prefix}three-twelfths {
-    @extend #{$prefix}one-quarter;
+    width: 25%;
   }
   #{$prefix}four-twelfths {
-    @extend #{$prefix}one-third;
+    width: 33.333%;
   }
   #{$prefix}five-twelfths {
     width: 41.666%;
   }
   #{$prefix}six-twelfths {
-    @extend #{$prefix}one-half;
+    width: 50%;
   }
   #{$prefix}seven-twelfths {
     width: 58.333%;
   }
   #{$prefix}eight-twelfths {
-    @extend #{$prefix}two-thirds;
+    width: 66.666%;
   }
   #{$prefix}nine-twelfths {
-    @extend #{$prefix}three-quarters;
+    width: 75%;
   }
   #{$prefix}ten-twelfths {
-    @extend #{$prefix}five-sixths;
+    width: 83.333%;
   }
   #{$prefix}eleven-twelfths {
     width: 91.666%;
@@ -428,13 +449,13 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     @include silent-relative;
   }
   #{$prefix}two-twelfths {
-    @extend #{$prefix}one-sixth;
+    left: 16.666%;
   }
   #{$prefix}three-twelfths {
-    @extend #{$prefix}one-quarter;
+    left: 25%;
   }
   #{$prefix}four-twelfths {
-    @extend #{$prefix}one-third;
+    left: 33.333%;
   }
   #{$prefix}five-twelfths {
     left: 41.666%;
@@ -454,7 +475,7 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     @extend #{$prefix}three-quarters;
   }
   #{$prefix}ten-twelfths {
-    @extend #{$prefix}five-sixths;
+    left: 83.333%;
   }
   #{$prefix}eleven-twelfths {
     left: 91.666%;
@@ -542,7 +563,7 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     @include silent-relative;
   }
   #{$prefix}two-twelfths {
-    @extend #{$prefix}one-sixth;
+    right: 16.666%;
   }
   #{$prefix}three-twelfths {
     @extend #{$prefix}one-quarter;
@@ -568,7 +589,7 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     @extend #{$prefix}three-quarters;
   }
   #{$prefix}ten-twelfths {
-    @extend #{$prefix}five-sixths;
+    right: 83.333%;
   }
   #{$prefix}eleven-twelfths {
     right: 91.666%;
@@ -593,4 +614,14 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     }
   }
 
+}
+
+/**
+  TESTING
+
+  A class which if added to the body or html element allows you to view the grids on any given page.
+**/
+
+.show-grid .grid__item {
+  box-shadow: 0 0 0 2px #f00;
 }

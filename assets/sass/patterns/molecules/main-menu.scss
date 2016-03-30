@@ -46,7 +46,7 @@ $max-width: 1114;
     display: table;
     display: flex;
     width: 100%;
-    max-width: #{($max-width/16)}rem;
+    max-width: #{get-rem-from-px($max-site-width)}rem;
     margin: auto;
   }
 
