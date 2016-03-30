@@ -6,22 +6,24 @@
     <article class="article">
 
       <!-- content header -->
-      <div style="background-color: #efefef; height: 400px"></div>
+      <div class="wrapper">
+        <div style="background-color: #efefef; height: 400px">content header</div>
+      </div>
       <!-- /content header -->
 
-      <div class="wrapper" style="padding: 0 6%">
+      <div class="wrapper">
       {{> molecules-contextual-data }}
       </div>
 
-      <div class="wrapper" style="padding: 0 6%">
+      <div class="wrapper">
 
         <div class="grid">
 
-          <div class="grid__item desk--three-twelfths">
+          <div class="grid__item desk--three-twelfths u-pad-top">
             {{> molecules-view-selector }}
           </div>
 
-          <div class="grid__item desk--six-twelfths">
+          <div class="grid__item desk--six-twelfths u-pad-top">
             <div>[abstract here]</div>
             <div style="background-color: #ddd; height: 500px"></div>
 

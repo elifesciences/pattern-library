@@ -1,8 +1,6 @@
 
 .contact-form {
   margin: 0 auto;
-  max-width: #{get-rem-from-px(920)}rem;
-  padding: 0 6%;
   @include padding(24, "top");
   @include padding(24, "bottom");
 }

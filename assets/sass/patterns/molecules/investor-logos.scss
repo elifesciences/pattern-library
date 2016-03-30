@@ -1,8 +1,10 @@
 
-$max-width: 1114;
-
 .investor-logos__img_container {
   border-bottom: 1px solid $color-text-dividers;
+}
+
+.investor-logos__picture {
+  display: block;
 }
 
 .investor-logos__img {
@@ -20,7 +22,7 @@ $max-width: 1114;
     display: table;
     display: flex;
     margin: auto;
-    max-width: #{($max-width/16)}rem;
+    max-width: #{get-rem-from-px($max-site-width)}rem;
   }
 
   .investor-logos__img_container {
