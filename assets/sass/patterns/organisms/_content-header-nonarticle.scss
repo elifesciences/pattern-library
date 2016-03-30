@@ -1,6 +1,12 @@
 // 'nonarticle' is a rubbish name. Rename if inspiration strikes!
 .content-header-nonarticle {
 
+  .content-header__download_link {
+    margin-top: 5px;
+    margin-top: #{get-rem-from-px(5)};
+    position: absolute;
+    right: 0;
+  }
   // Need this to allow correct combination of bottom border
   // plus vertical centering.
   .content-header__inner {
@@ -11,6 +17,12 @@
     min-height: #{get-rem-from-px(200)}rem;
     @include padding(40, 0);
     width: 100%;
+  }
+
+  @supports (display: flex) {
+    .content-header__inner {
+//      display: flex;
+    }
   }
 
   .content-header__title {
