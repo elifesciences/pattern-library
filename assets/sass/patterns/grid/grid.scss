@@ -7,9 +7,6 @@
  * http://csswizardry.com/csswizardry-grids/
  * https://github.com/csswizardry/csswizardry-grids
  *
- * NOTE - I was not prepared to face the hacks around using display-inline block for columns, nor the limited backwards compatibility. So it uses floats now.
- * I have removed all references to the inline-block 'markup fixes'. And removed all inline-block only features.
- *
  * CONTENTS
  * INTRODUCTION.........How the grid system works.
  * VARIABLES............Your settings.
@@ -25,44 +22,41 @@
 \*------------------------------------*/
 
 /**
- * csswizardry grids provides you with widths to suit a number of breakpoints
- * designed around devices of a size you specify. Out of the box, csswizardry
- * grids caters to the following types of device:
+ * The grid caters to the following sizes:
  *
- * palm     --  palm-based devices, like phones and small tablets
- * lap      --  lap-based devices, like iPads or laptops
- * portable --  all of the above
- * desk     --  stationary devices, like desktop computers
- * regular  --  any/all types of device
+ * x-small --  palm-based devices, up to phone landscape
+ * small   --  from phone to tablet
+ * medium  --  from tablet to small desktop
+ * large   --  small desktop to large desktop
+ * x-large --  large desktop and up
  *
  * These namespaces are then used in the library to give you the ability to
  * manipulate your layouts based around them, for example:
  *
- * <div class="grid__item  one-whole  lap--one-half  desk--one-third">
+ * <div class="grid__item one-whole medium--one-half large--one-third">
  *
- * This would give you a grid item which is 100% width unless it is on a lap
- * device, at which point it become 50% wide, or it is on a desktop device, at
+ * This would give you a grid item which is 100% width unless it is on a medium sized
+ * device, at which point it become 50% wide, or it is on a large device, at
  * which point it becomes 33.333% width.
  *
- * csswizardry grids also has push and pull classes which allow you to nudge
+ * There are also push and pull classes which allow you to nudge
  * grid items left and right by a defined amount. These follow the same naming
  * convention as above, but are prepended by either `push--` or `pull--`, for
  * example:
  *
- * `class="grid__item  one-half  push--one-half"`
+ * `class="grid__item one-half push--one-half"`
  *
  * This would give you a grid item which is 50% width and pushed over to the
  * right by 50%.
  *
- * All classes in csswizardry grids follow this patten, so you should fairly
- * quickly be able to piece together any combinations you can imagine, for
- * example:
+ * All classes in follow this pattern, so you should quickly be able to piece
+ * together any combinations, for example:
  *
- * `class="grid__item  one-whole  lap--one-half  desk--one-third  push--desk--one-third"`
+ * `class="grid__item one-whole medium--one-half  large--one-third  push--large--one-third"`
  *
- * `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
+ * `class="grid__item one-quarter small--one-half push--small--one-half"`
  *
- * `class="grid__item  palm--one-third  desk--five-twelfths"`
+ * `class="grid__item small--one-third large--five-twelfths"`
  */
 
 /*
@@ -124,7 +118,7 @@ $pull: false !default;
 
 /**
  * Define your breakpoints. The first value is the prefix that shall be used for
- * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * your classes (e.g. `.small--one-half`), the second value is the media query
  * that the breakpoint fires at.
  */
 
@@ -138,12 +132,12 @@ $breakpoints: (
 
 /**
  * Define which namespaced breakpoints you would like to generate for each of
- * widths, push and pull. This is handy if you only need pull on, say, desk, or
+ * widths, push and pull. This is handy if you only need pull on, say, large, or
  * you only need a new width breakpoint at mobile sizes. It allows you to only
  * compile as much CSS as you need. All are turned on by default, but you can
  * add and remove breakpoints at will.
  *
- * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+ * Push and pull shall only be used if `$push` and/or `$pull`
  * have been set to ‘true’.
  */
 
