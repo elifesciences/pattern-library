@@ -10,10 +10,12 @@
     //Bug:  https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview
     min-height: #{get-rem-from-px(200)}rem;
     @include padding(40, 0);
+    width: 100%;
   }
 
   .content-header__title {
     margin: 0;
+    width: 100%;
   }
 
   .content-header__strapline {
@@ -27,6 +29,7 @@
   .content-header__hgroup {
     display: table-cell;
     vertical-align: middle;
+    width: 100%;
   }
 
   .content-header__bottom_line {
