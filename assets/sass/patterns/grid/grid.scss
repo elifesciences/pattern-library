@@ -116,12 +116,6 @@
 $gutter: 1.6% !default;
 
 /**
- * Would you like Sass’ silent classes, or regular CSS classes?
- */
-
-$use-silent-classes: false !default;
-
-/**
  * Would you like push and pull classes enabled?
  */
 
@@ -157,13 +151,6 @@ $breakpoint-has-widths: ("x-small", "small", "medium", "large", "x-large") !defa
 $breakpoint-has-push: ("x-small", "small", "medium", "large", "x-large") !default;
 $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !default;
 
-/**
- * You do not need to edit anything from this line onward; csswizardry-grids is
- * good to go. Happy griddin’!
- */
-
-$class-type: if($use-silent-classes, unquote("%"), unquote("."));
-
 /*------------------------------------*\
     $MIXINS
 \*------------------------------------*/
@@ -196,17 +183,6 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
   }
 }
 
-/**
- * Drop relative positioning into silent classes which can’t take advantage of
- * the `[class*="push--"]` and `[class*="pull--"]` selectors.
- */
-
-@mixin silent-relative {
-  @if $use-silent-classes {
-    position: relative;
-  }
-}
-
 /*------------------------------------*\
     $GRID SETUP
 \*------------------------------------*/
@@ -217,7 +193,7 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
  * 3. Apply a negative `margin` to negate the columns’ gutters.
  */
 
-#{$class-type}grid {
+.grid {
   list-style: none;                /* [1] */
   margin: 0;                       /* [2] */
   padding: 0;                      /* [2] */
@@ -240,7 +216,7 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
  * 1. Space columns apart.
  * 2. Required to combine fluid widths and fixed gutters.
  */
-#{$class-type}grid__item {
+.grid__item {
   float: left;
   padding-left: $gutter;           /* [1] */
   padding-right: $gutter;
@@ -256,10 +232,10 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
  * Extends `.grid`.
  */
 
-#{$class-type}grid--full {
+.grid--full {
   margin-left: 0;
 
-  > #{$class-type}grid__item {
+  > .grid__item {
     padding-left: 0;
   }
 }
@@ -268,10 +244,10 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
  * Create grids with narrower gutters. Extends `.grid`.
  */
 
-#{$class-type}grid--narrow {
+.grid--narrow {
   margin-left: -($gutter / 2);
 
-  > #{$class-type}grid__item {
+  > .grid__item {
     padding-left: $gutter / 2;
   }
 }
@@ -280,10 +256,10 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
  * Create grids with wider gutters. Extends `.grid`.
  */
 
-#{$class-type}grid--wide {
+.grid--wide {
   margin-left: -($gutter * 2);
 
-  > #{$class-type}grid__item {
+  > .grid__item {
     padding-left: $gutter * 2;
   }
 }
@@ -297,7 +273,7 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
  */
 
 @mixin device-type($namespace:"") {
-  $prefix: $class-type + $namespace;
+  $prefix: "." + $namespace;
 
   /**
    * Whole
@@ -396,14 +372,13 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
  */
 
 @mixin push-setup($namespace: "") {
-  $prefix: $class-type + "push--" + $namespace;
+  $prefix: "." + "push--" + $namespace;
 
   /**
    * Whole
    */
   #{$prefix}one-whole {
     left: 100%;
-    @include silent-relative;
   }
 
   /**
@@ -411,7 +386,6 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
    */
   #{$prefix}one-half {
     left: 50%;
-    @include silent-relative;
   }
 
   /**
@@ -419,11 +393,9 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
    */
   #{$prefix}one-third {
     left: 33.333%;
-    @include silent-relative;
   }
   #{$prefix}two-thirds {
     left: 66.666%;
-    @include silent-relative;
   }
 
   /**
@@ -431,14 +403,12 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
    */
   #{$prefix}one-quarter {
     left: 25%;
-    @include silent-relative;
   }
   #{$prefix}two-quarters {
     @extend #{$prefix}one-half;
   }
   #{$prefix}three-quarters {
     left: 75%;
-    @include silent-relative;
   }
 
   /**
@@ -446,7 +416,6 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
    */
   #{$prefix}one-twelfth {
     left: 8.333%;
-    @include silent-relative;
   }
   #{$prefix}two-twelfths {
     left: 16.666%;
@@ -459,14 +428,12 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
   }
   #{$prefix}five-twelfths {
     left: 41.666%;
-    @include silent-relative;
   }
   #{$prefix}six-twelfths {
     @extend #{$prefix}one-half;
   }
   #{$prefix}seven-twelfths {
     left: 58.333%;
-    @include silent-relative;
   }
   #{$prefix}eight-twelfths {
     @extend #{$prefix}two-thirds;
@@ -479,7 +446,6 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
   }
   #{$prefix}eleven-twelfths {
     left: 91.666%;
-    @include silent-relative;
   }
 }
 
@@ -510,14 +476,13 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
  * Pull classes, to move grid items back to the left by certain amounts.
  */
 @mixin pull-setup($namespace: "") {
-  $prefix: $class-type + "pull--" + $namespace;
+  $prefix: "." + "pull--" + $namespace;
 
   /**
    * Whole
    */
   #{$prefix}one-whole {
     right: 100%;
-    @include silent-relative;
   }
 
   /**
@@ -525,7 +490,6 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
    */
   #{$prefix}one-half {
     right: 50%;
-    @include silent-relative;
   }
 
   /**
@@ -533,11 +497,9 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
    */
   #{$prefix}one-third {
     right: 33.333%;
-    @include silent-relative;
   }
   #{$prefix}two-thirds {
     right: 66.666%;
-    @include silent-relative;
   }
 
   /**
@@ -545,14 +507,12 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
    */
   #{$prefix}one-quarter {
     right: 25%;
-    @include silent-relative;
   }
   #{$prefix}two-quarters {
     @extend #{$prefix}one-half;
   }
   #{$prefix}three-quarters {
     right: 75%;
-    @include silent-relative;
   }
 
   /**
@@ -560,7 +520,6 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
    */
   #{$prefix}one-twelfth {
     right: 8.333%;
-    @include silent-relative;
   }
   #{$prefix}two-twelfths {
     right: 16.666%;
@@ -573,14 +532,12 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
   }
   #{$prefix}five-twelfths {
     right: 41.666%;
-    @include silent-relative;
   }
   #{$prefix}six-twelfths {
     @extend #{$prefix}one-half;
   }
   #{$prefix}seven-twelfths {
     right: 58.333%;
-    @include silent-relative;
   }
   #{$prefix}eight-twelfths {
     @extend #{$prefix}two-thirds;
@@ -593,7 +550,6 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
   }
   #{$prefix}eleven-twelfths {
     right: 91.666%;
-    @include silent-relative;
   }
 }
 
