@@ -1,6 +1,9 @@
 // 'nonarticle' is a rubbish name. Rename if inspiration strikes!
 .content-header-nonarticle {
 
+  min-height: #{$content-header-min-height}px;
+  min-height: #{get-rem-from-px($content-header-min-height)}rem;
+
   .content-header__download_link {
     margin-top: 5px;
     margin-top: #{get-rem-from-px(5)};
@@ -11,17 +14,16 @@
   // plus vertical centering.
   .content-header__inner {
     display: table;
-    // TODO: Adjust this length as desired, this is just a first stab
-    // Was going to use flexbox, but the following IE bug means it's not flexible enough (hah!), as need height to adjust to fit. Might modify later for the more complex patterns, but this works for now.
-    //Bug:  https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview
-    min-height: #{get-rem-from-px(200)}rem;
+    min-height: #{$content-header-min-height}px;
+    min-height: #{get-rem-from-px($content-header-min-height)}rem;
     @include padding(40, 0);
     width: 100%;
   }
 
   @supports (display: flex) {
     .content-header__inner {
-//      display: flex;
+      align-items: center;
+      display: flex;
     }
   }
 
@@ -46,6 +48,33 @@
 
   .content-header__bottom_line {
     border-bottom: 1px solid $color-text-dividers;
+  }
+
+  .content-header__bottom {
+    color: $color-text-ui-background;
+    font-size: 11px;
+    font-size: #{get-rem-from-px(11)}rem;
+    font-weight: 600;
+    line-height: 1;
+    padding-top: 20px;
+    padding-top: #{get-rem-from-px(20)}rem;
+    width: 100%;
+    // demibold
+  }
+
+  @supports (display: flex) {
+    .content-header__bottom {
+      display: flex;
+    }
+  }
+
+  .content-header__bottom > * {
+    margin: -43px auto 0;
+    margin-top: -#{get-rem-from-px(43)}rem;
+  }
+
+  .content-header__type {
+    text-transform: uppercase;
   }
 
 }

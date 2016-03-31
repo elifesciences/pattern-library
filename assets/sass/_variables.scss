@@ -35,5 +35,9 @@ $line-height-primary: 1.3;
 // Widths
 $max-site-width: 1114;
 
+// Heights
+$content-header-min-height: 300;
+
 // Breakpoints
+// TODO: Adjust $bkpt-content-header as desired, this is just a first stab.
 $bkpt-content-header: 560;

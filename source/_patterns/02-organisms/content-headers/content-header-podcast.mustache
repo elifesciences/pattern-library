@@ -1,7 +1,5 @@
 <header class="content-header content-header-nonarticle content-header-nonarticle-background-image">
 
-  {{#contentHeader}}
-
   <style type="text/css">
     @media only all and (-webkit-min-device-pixel-ratio: 2) {
       .content-header-nonarticle-background-image {
@@ -41,22 +39,21 @@
 
   </style>
 
-      <a href="#" class="content-header__download_link">
-         <picture>
-           <source srcset="{{images.download.svgFull}}"
-                   media="(min-width: 35em)"
-                   type="image/svg+xml" />
+  <a href="#" class="content-header__download_link">
+    <picture>
+      <source srcset="{{images.download.svgFull}}"
+              media="(min-width: 35em)"
+              type="image/svg+xml" />
 
-           <source srcset="{{images.download.bitmapFull}}"
-                   media="(min-width: 35em)" />
+      <source srcset="{{images.download.bitmapFull}}"
+              media="(min-width: 35em)" />
 
-           <source srcset="{{images.download.svg}}" type="image/svg+xml" />
+      <source srcset="{{images.download.svg}}" type="image/svg+xml" />
 
-           <img src="{{{images.download.bitmapFull}}}" class="content-header__download_icon" alt="Download icon" />
-        </picture>
-        <span class="visuallyhidden">Download</span>
-      </a>
-
+      <img src="{{{images.download.bitmapFull}}}" class="content-header__download_icon" alt="Download icon" />
+    </picture>
+    <span class="visuallyhidden">Download</span>
+  </a>
 
   <div class="content-header__inner">
     <div class="content-header__hgroup">
@@ -65,6 +62,14 @@
     </div>
   </div> <!--  /.content-header__inner -->
     
-  {{/contentHeader}}
+  <div class="content-header__bottom">
+    <div>
+      <span>
+        <span class="content-header__type">{{meta.type}}</span> <time datetime="{{meta.dateTime}}">{{meta.dateString}}</time>
+      </span>
+    </div>
+  </div>
+
   <div class="content-header__bottom_line"></div>
+
 </header>
