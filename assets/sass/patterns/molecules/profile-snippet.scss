@@ -12,10 +12,10 @@
 
 .profile-snippet__name {
   font-family: $font-secondary;
-  @include font-size(17);
+  @include font-size(16);
   font-weight: bold;
   line-height: $line-height-primary;
-  @include margin(0 0 4 0);
+  @include margin(0 0 2 0);
 }
 
 .profile-snippet__title {
@@ -24,7 +24,7 @@
   font-style: italic;
   font-weight: 400;
   line-height: $line-height-primary;
-  @include margin(0 0 10 0);
+  @include margin(0 0 6 0);
 }
 
 .profile-snippet__contact_details {
