@@ -33,7 +33,7 @@
       content: "";
       display: block;
       height: #{get-rem-from-px(33)}rem;
-      @include margin(-16, "top");
+      @include margin(-19, "top");
       position: absolute;
       right: -#{get-rem-from-px(55)}rem;
       width: #{get-rem-from-px(44)}rem;
@@ -51,7 +51,7 @@
     @include padding(18, "top");
 
     a {
-      color: $color-text-placeholder;
+      color: $color-text-secondary;
       font-weight: 400;
       text-decoration: none;
     }
