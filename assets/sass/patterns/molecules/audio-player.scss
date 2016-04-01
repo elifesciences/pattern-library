@@ -1,6 +1,24 @@
 
 .audio-player {
   background-color: $color-text;
+  position: relative;
+}
+
+.audio-player__play {
+  background: #222;
+  border: none;
+  border-right: 1px solid #444;
+  color: $color-text--reverse;
+  display: none;
+  height: 100%;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  @include width(90);
+}
+
+.audio-player__container {
   @include padding(15);
 }
 
@@ -19,4 +37,51 @@
   color: $color-text--reverse;
   font-family: $font-secondary;
   @include font-size(14);
+}
+
+.audio-player__progress {
+  background-color: #444;
+  display: none;
+  height: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.audio-player__progress_bar {
+  background-color: #666;
+  height: 10px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+.audio-player__duration {
+  color: #666;
+  display: none;
+  float: right;
+  font-family: $font-secondary;
+  @include font-size(12);
+}
+
+.audio-player--js {
+  .audio-player__play {
+    display: block;
+  }
+
+  .audio-player__container {
+    @include padding(105, "left");
+  }
+
+  .audio-player__player {
+    display: none;
+  }
+
+  .audio-player__progress {
+    display: block;
+  }
+
+  .audio-player__duration {
+    display: block;
+  }
 }

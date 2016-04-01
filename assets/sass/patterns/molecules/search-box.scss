@@ -1,0 +1,38 @@
+
+.search-box .compact-form__container {
+  position: relative;
+  max-width: inherit;
+  @include margin(10, "bottom");
+}
+
+.search-box__output {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  ul {
+    border-left: 2px solid $color-text-secondary;
+    border-right: 2px solid $color-text-secondary;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    background-color: $color-text--reverse;
+    border-bottom: 2px solid $color-text-secondary;
+    font-family: $font-secondary;
+    margin: 0;
+    @include padding(12);
+
+    &:first-child {
+      border-top: 2px solid $color-text-secondary;
+    }
+  }
+}
+
+.search-box__search_option {
+  font-family: $font-secondary;
+  @include font-size(14);
+}
