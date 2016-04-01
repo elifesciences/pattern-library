@@ -3,6 +3,7 @@
 
   min-height: #{$content-header-min-height}px;
   min-height: #{get-rem-from-px($content-header-min-height)}rem;
+  position: relative;
 
   .content-header__download_link {
     margin-top: 5px;
@@ -10,21 +11,25 @@
     position: absolute;
     right: 0;
   }
-  // Need this to allow correct combination of bottom border
-  // plus vertical centering.
+
+  /*
+   * Vertically centre title & strapline in a block. There is enough space above
+   * and below the text so that within the block various ancillary data can be
+   * displayed in such a way that does not change the position of the title and
+   * strapline.
+   */
   .content-header__inner {
     display: table;
     min-height: #{$content-header-min-height}px;
     min-height: #{get-rem-from-px($content-header-min-height)}rem;
-    @include padding(40, 0);
+    // Takes account of space required for bottom button & meta info, and
+    // top curators etc in some versions.
+    // each separation (43px) * # separated els (2) + combined height of els (11px + 2rem) +
+    // gap between bottom of inner & first bottom element (86px).
+    @include padding(131 0);
+    padding-bottom: calc((22px * 2) + 11px + 2rem + 44px);
+    padding-top: calc((22px * 2) + 11px + 2rem + 44px);
     width: 100%;
-  }
-
-  @supports (display: flex) {
-    .content-header__inner {
-      align-items: center;
-      display: flex;
-    }
   }
 
   .content-header__title {
@@ -56,25 +61,29 @@
     font-size: #{get-rem-from-px(11)}rem;
     font-weight: 600;
     line-height: 1;
-    padding-top: 20px;
-    padding-top: #{get-rem-from-px(20)}rem;
     width: 100%;
     // demibold
+
+    position: absolute;
+    bottom: 44px;
+
   }
 
-  @supports (display: flex) {
-    .content-header__bottom {
-      display: flex;
-    }
-  }
-
-  .content-header__bottom > * {
-    margin: -43px auto 0;
-    margin-top: -#{get-rem-from-px(43)}rem;
+  .content-header__ancillary {
+    color: $color-text--reverse;
+    margin-bottom: -22px;
+    margin-top: 22px;
   }
 
   .content-header__type {
+    color: $color-text--reverse;
+    text-decoration: none;
     text-transform: uppercase;
+  }
+
+  .content-header__type:hover,
+  .content-header__type:active {
+    color: $color-primary-dark
   }
 
 }

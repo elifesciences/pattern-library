@@ -39,22 +39,6 @@
 
   </style>
 
-  <a href="#" class="content-header__download_link">
-    <picture>
-      <source srcset="{{images.download.svgFull}}"
-              media="(min-width: 35em)"
-              type="image/svg+xml" />
-
-      <source srcset="{{images.download.bitmapFull}}"
-              media="(min-width: 35em)" />
-
-      <source srcset="{{images.download.svg}}" type="image/svg+xml" />
-
-      <img src="{{{images.download.bitmapFull}}}" class="content-header__download_icon" alt="Download icon" />
-    </picture>
-    <span class="visuallyhidden">Download</span>
-  </a>
-
   <div class="content-header__inner">
     <div class="content-header__hgroup">
       <h2 class="content-header__title {{titleClass}}">{{{title}}}</h2>
@@ -63,11 +47,18 @@
   </div> <!--  /.content-header__inner -->
     
   <div class="content-header__bottom">
+    {{#buttonText}}
+    <div class="content-header__cta">
+      {{>atoms-button-outline-small}}
+    </div>
+    {{/buttonText}}
+    {{#meta}}
     <div class="content-header__ancillary">
       <span>
         <a class="content-header__type" href="{{meta.typeLink}}">{{meta.type}}</a> <time datetime="{{meta.dateTime}}">{{meta.dateString}}</time>
       </span>
     </div>
+    {{/meta}}
   </div>
 
   <div class="content-header__bottom_line"></div>

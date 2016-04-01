@@ -28,9 +28,9 @@
 }
 
 .button--outline {
-  background-color: $color-text--reverse;
-  border: 2px solid $color-text;
-  color: $color-text;
+  background-color: transparent;
+  border: 2px solid $color-text--reverse;
+  color: $color-text--reverse;
   @include padding(15 36 14);
 
   &:hover {
