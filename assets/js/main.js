@@ -1,4 +1,3 @@
-"use strict";
 
 let Components = {};
 
@@ -13,7 +12,7 @@ function Elife() {
   // get all the components on the current page
   let components = document.querySelectorAll('[data-behaviour]');
 
-  if( components.length ) {
+  if (components.length) {
 
     for (let i = 0; i < components.length; i++) {
       let $elm = components[i];

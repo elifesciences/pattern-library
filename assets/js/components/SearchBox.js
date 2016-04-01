@@ -8,9 +8,8 @@ module.exports = class SearchBox {
     if (!$elm) {
       console.warn('No element provided');
       return;
-    }
-    else {
-      console.log("initialising SearchBox...");
+    } else {
+      console.log('Initialising SearchBox...');
     }
 
     this.$container = $elm.querySelector('fieldset');
@@ -18,7 +17,8 @@ module.exports = class SearchBox {
     this.$input = $elm.querySelector('input[type="search"]');
     this.$limit = $elm.querySelector('input[type="checkbox"]');
 
-    // check there's even a search input field for us to use, otherwise everything else is pointless.
+    // check there's even a search input field for us to use,
+    // otherwise everything else is pointless.
     // console warn outta here so that errors don't prevent other scripts from running.
     if (!this.$input) {
       console.warn('Could not find an input for the SearchBox');
@@ -37,7 +37,7 @@ module.exports = class SearchBox {
     this.$container.appendChild(this.$output);
 
     // events
-    this.$input.addEventListener("keyup", this.filter.bind(this));
+    this.$input.addEventListener('keyup', this.filter.bind(this));
   }
 
   /**
@@ -46,16 +46,16 @@ module.exports = class SearchBox {
   filter(e) {
     e.preventDefault();
 
-    console.log("filtering keywords...");
+    console.log('filtering keywords...');
 
     let entry = this.$input.value;
 
     this.matchesFound = [];
 
-    if (entry != "") {
+    if (entry != '') {
 
       // filter the list
-      this.matchesFound = keywords.filter(keyword => keyword.indexOf(entry) != -1 );
+      this.matchesFound = keywords.filter(keyword => keyword.indexOf(entry) != -1);
 
       // sort the final list alphabetically
       this.matchesFound.sort();
@@ -91,8 +91,7 @@ module.exports = class SearchBox {
 
       outputString = `<ul>${outputString}</ul>`;
       this.$output.innerHTML = outputString;
-    }
-    else {
+    } else {
       this.$output.innerHTML = '';
     }
   }

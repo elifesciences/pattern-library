@@ -187,7 +187,8 @@ gulp.task('js:hint', () => {
 
 gulp.task('js:cs', () => {
   return gulp.src('./assets/js/**/*.js')
-    .pipe(jscs());
+    .pipe(jscs())
+    .pipe(jscs.reporter());
 });
 
 gulp.task('browserify-tests', (done) => {
