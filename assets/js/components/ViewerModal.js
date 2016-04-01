@@ -29,4 +29,5 @@ module.exports = class ViewerModal {
   close() {
     //
   }
-}
+
+};

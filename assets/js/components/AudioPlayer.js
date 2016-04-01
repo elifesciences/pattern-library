@@ -5,9 +5,8 @@ module.exports = class AudioPlayer {
     if (!$elm) {
       console.warn('No element provided');
       return;
-    }
-    else {
-      console.log("Initialising Audio Player... ");
+    } else {
+      console.log('Initialising Audio Player...');
     }
 
     this.$elm = $elm;
@@ -61,8 +60,7 @@ module.exports = class AudioPlayer {
 
       // set the state
       this.isPlaying = false;
-    }
-    else {
+    } else {
       // play
       this.$audioElement.play();
 
@@ -79,6 +77,6 @@ module.exports = class AudioPlayer {
    */
   update() {
     let pc = (this.$audioElement.currentTime / this.duration) * 100;
-    this.$progressBar.style.width = pc+'%';
+    this.$progressBar.style.width = `${pc}%`;
   }
-}
+};

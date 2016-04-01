@@ -16,5 +16,7 @@
     "strict": true,
     "trailing": true,
     "undef": true,
-    "unused": true
+    "unused": true,
+    "node": true,
+    "esnext": true
 }
