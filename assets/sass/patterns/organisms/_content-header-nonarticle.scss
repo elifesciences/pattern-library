@@ -26,9 +26,9 @@
     // top curators etc in some versions.
     // each separation (43px) * # separated els (2) + combined height of els (11px + 2rem) +
     // gap between bottom of inner & first bottom element (86px).
-    @include padding(215 0);
-    padding-bottom: calc((43px * 2) + 11px + 2rem + 86px);
-    padding-top: calc((43px * 2) + 11px + 2rem + 86px);
+    @include padding(131 0);
+    padding-bottom: calc((22px * 2) + 11px + 2rem + 44px);
+    padding-top: calc((22px * 2) + 11px + 2rem + 44px);
     width: 100%;
   }
 
@@ -65,27 +65,27 @@
     // demibold
 
     position: absolute;
-    bottom: 86px;
+    bottom: 44px;
 
   }
 
-  .content-header__meta {
-    margin-top: 43px;
-    margin-bottom: -43px;
+  .content-header__ancillary {
+    color: $color-text--reverse;
+    margin-top: 22px;
+    margin-bottom: -22px;
   }
 
   .content-header__type {
+    color: $color-text--reverse;
+    text-decoration: none;
     text-transform: uppercase;
   }
 
-  @supports (display: flex) {
-
-    .content-header__inner {
-      align-items: center;
-//      display: flex;
-    }
-
+  .content-header__type:hover,
+  .content-header__type:active {
+    color: $color-primary-dark
   }
+
 }
 
 .content-header-nonarticle--background-flat {
