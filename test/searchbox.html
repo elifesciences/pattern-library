@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+    <!--
+      Test output
+    -->
+    <div id="mocha"></div>
+
+    <!--
+      Fixture
+    -->
+    <div class="search-box" data-behaviour="SearchBox">
+
+      <form class="compact-form" action="#" method="post">
+
+        <fieldset class="compact-form__container">
+          <label for="compact-form__input" class="visuallyhidden">Search by keyword or author</label>
+
+          <input type="search" name="email" value="" id="compact-form__input" class="compact-form__input" placeholder="Search by keyword or author">
+
+          <button type="submit" name="submit" class="compact-form__submit"><span class="visuallyhidden">Go</span></button>
+
+        </fieldset>
+
+        <div class="search-box__search_option">
+          <label class="search-box__search_option_label">
+            <input type="checkbox" name="limit" value="1"> Limit my search to <strong>Cell Biology</strong>
+          </label>
+        </div>
+
+      </form>
+
+    </div>
+
+    <!--
+      Load test code
+    -->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
+
+    <!--
+      Test spec
+    -->
+    <script src="build/searchbox.spec.js"></script>
+
+    <!--
+      Begin!
+    -->
+    <script>
+      mocha.run();
+    </script>
+
+</body>
+</html>

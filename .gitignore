@@ -13,3 +13,6 @@ public/*
 
 # Ignore files used for sass globbing
 assets/sass/_patterns.scss
+
+# Ignore built test files
+test/build

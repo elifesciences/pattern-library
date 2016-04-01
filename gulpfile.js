@@ -21,9 +21,12 @@ const jshint            = require('gulp-jshint');
 const jscs              = require('gulp-jscs');
 const source            = require('vinyl-source-stream');
 const buffer            = require('vinyl-buffer');
+const glob              = require('glob');
+const es                = require('event-stream');
 const browserify        = require('browserify');
 const babel             = require('babelify');
 const uglify            = require('gulp-uglify');
+const mochaPhantomjs    = require('gulp-mocha-phantomjs');
 // const watchify          = require('watchify');
 
 /*************************************
@@ -42,7 +45,7 @@ const uglify            = require('gulp-uglify');
   * Auto-prefixes properties as required.
   ******************************************************************************/
 
-gulp.task('sass', ['sass:lint'], function () {
+gulp.task('sass', ['sass:lint'], () => {
 
   // delete all source files + folders
   del(['./source/assets/css/*']);
@@ -69,7 +72,7 @@ gulp.task('sass', ['sass:lint'], function () {
       .pipe(gulp.dest('./source/assets/css'));
 });
 
-gulp.task('sass:lint', function() {
+gulp.task('sass:lint', () => {
 
   let processors = [
     stylelint(),
@@ -96,7 +99,7 @@ gulp.task('sass:lint', function() {
  * Optimises images for production and copies them into the public assets dir.
  ******************************************************************************/
 
-gulp.task('img', function() {
+gulp.task('img', () => {
 
   // delete all source files + folders
   /***
@@ -126,7 +129,7 @@ gulp.task('img', function() {
  * Currently just copies over specified font files (and custom css files) into the public directory
  ******************************************************************************/
 
-gulp.task('fonts', function() {
+gulp.task('fonts', () => {
   del(['./source/assets/fonts/*']);
 
   return gulp.src('./assets/fonts/**/*')
@@ -146,7 +149,7 @@ gulp.task('fonts', function() {
  * Creates a sourcemap.
  ******************************************************************************/
 
-gulp.task('js', ['js:hint', 'js:cs'], function () {
+gulp.task('js', ['js:hint', 'js:cs'], () => {
 
     // delete all previously compiled files + folders
     del(['./source/assets/js/*']);
@@ -158,7 +161,7 @@ gulp.task('js', ['js:hint', 'js:cs'], function () {
             presets: ["es2015"]
           })
           .bundle()
-          .on('error', function (err) {
+          .on('error', (err) => {
             console.error(err.message);
           })
           // Pass desired output filename to vinyl-source-stream
@@ -176,34 +179,62 @@ gulp.task('js', ['js:hint', 'js:cs'], function () {
           .pipe(gulp.dest('./source/assets/js'));
 });
 
-gulp.task('js:hint', function() {
+gulp.task('js:hint', () => {
   return gulp.src('./assets/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('js:cs', function() {
+gulp.task('js:cs', () => {
   return gulp.src('./assets/js/**/*.js')
     .pipe(jscs());
+});
+
+gulp.task('browserify-tests', (done) => {
+
+  del(['./test/build/*']);
+
+  glob('./test/*.spec.js', (err, files) => {
+
+    let tasks = files.map(entry => {
+      return browserify({ entries: [entry] })
+      .transform(babel, {
+        presets: ["es2015"]
+      })
+      .bundle()
+      .pipe(source(entry))
+      .pipe(rename({ dirname: '' }))
+      .pipe(gulp.dest('./test/build'));
+    });
+
+    es.merge(tasks).on('end', done);
+  });
+
+});
+
+
+gulp.task('test', ['browserify-tests'], () => {
+  return gulp.src('./test/*.html')
+    .pipe(mochaPhantomjs({reporter: 'spec'}));
 });
 
 
 // Watchers
 
-gulp.task('sass:watch', function() {
-  gulp.watch('./assets/sass/**/*', ['sass']);
+gulp.task('sass:watch', () => {
+  gulp.watch('assets/sass/**/*', ['sass']);
 });
 
-gulp.task('img:watch', function () {
-  gulp.watch('./assets/img/**/*', ['img']);
+gulp.task('img:watch', () => {
+  gulp.watch('assets/img/**/*', ['img']);
 });
 
-gulp.task('fonts:watch', function () {
-  gulp.watch('./assets/fonts/**/*', ['fonts']);
+gulp.task('fonts:watch', () => {
+  gulp.watch('assets/fonts/**/*', ['fonts']);
 });
 
-gulp.task('js:watch', function() {
-  gulp.watch('./assets/js/**/*', ['js']);
+gulp.task('js:watch', () => {
+  gulp.watch('assets/js/**/*', ['js']);
 });
 
 

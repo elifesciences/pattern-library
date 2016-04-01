@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+    <!--
+      Test output
+    -->
+    <div id="mocha"></div>
+
+    <!--
+      Fixture
+    -->
+    <div class="audio-player" data-behaviour="AudioPlayer">
+      <button class="audio-player__play">play</button>
+      <div class="audio-player__container">
+        <div class="audio-player__header">
+          Meet Homo naledi
+          <div class="audio-player__duration">0:00</div>
+        </div>
+        <audio class="audio-player__player" controls preload="metadata">
+          <source src="http://elife-static-web-host-test.s3.amazonaws.com/elife2/64_Sundays.mp3" type="audio/mp3">
+          <div><a href="http://elife-static-web-host-test.s3.amazonaws.com/elife2/64_Sundays.mp3" class="audio-player__link" rel="external" target="_blank">Download the podcast (mp3)</a></div>
+        </audio>
+        <div class="audio-player__progress">
+          <div class="audio-player__progress_bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      Load test code
+    -->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
+
+    <!--
+      Test spec
+    -->
+    <script src="build/audioplayer.spec.js"></script>
+
+    <!--
+      Begin!
+    -->
+    <script>
+      mocha.run();
+    </script>
+
+</body>
+</html>
