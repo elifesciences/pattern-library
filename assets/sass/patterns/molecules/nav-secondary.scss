@@ -15,11 +15,8 @@
 
 .nav-secondary__item {
   float: left;
-  font-family: $font-secondary;
-  @include font-size(11);
-  font-weight: bold;
+  @include nav-small-typeg();
   @include height(24);
-  line-height: 1;
   list-style-type: none;
   @include padding(8 16 6 0);
   text-transform: uppercase;
