@@ -1,0 +1,305 @@
+// The rules:
+//   font-family: $font-secondary;
+//   font-weight: 700;
+// taken togther should result in setting Avenir Next Demi Bold. Verify.
+
+// HELPERS
+
+@function get-title-font-size($title-size, $is-wide) {
+  // default sized x-small is the same size as standard h1 size.
+  $default-title-sizes: ("large": 60, "medium": 42, "small": 30, "x-small":24);
+  $wide-title-sizes: ("large": 72, "medium": 54, "small": 44, "x-small": 36);
+  @if $is-wide != false {
+    @return map-get($wide-title-sizes, $title-size);
+  }
+    @return map-get($default-title-sizes, $title-size);
+}
+
+@mixin _set-typeg-width-variant($smallerSize, $largerSize, $is-wide: false) {
+  $typeg-size: if($is-wide, $largerSize, $smallerSize);
+  @include font-size($typeg-size);
+}
+
+@mixin _heading-base-typeg() {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+@mixin _label-typeg() {
+  font-family: $font-secondary;
+  @include font-size(11);
+  font-weight: 700;
+  line-height: 1;
+}
+
+// HEADINGS
+
+@mixin h1-typeg($is-wide:false) {
+  @include _heading-base-typeg();
+  font-family: $font-secondary;
+  @include _set-typeg-width-variant(24, 26, $is-wide);
+
+}
+
+@mixin h2-typeg() {
+  @include _heading-base-typeg();
+  font-family: $font-secondary;
+  @include font-size(21);
+  @include padding(5, "bottom");
+}
+
+@mixin h3-typeg() {
+  @include _heading-base-typeg();
+  font-family: $font-secondary;
+  @include font-size(19);
+  @include padding(3, "bottom");
+}
+
+@mixin h4-typeg() {
+  @include _heading-base-typeg();
+  font-family: $font-secondary;
+  @include font-size(17);
+}
+
+@mixin h5-typeg() {
+  @include _heading-base-typeg();
+  font-family: $font-primary;
+  @include font-size(16);
+}
+
+@mixin h6-typeg() {
+  @include _heading-base-typeg();
+  font-family: $font-primary;
+  @include font-size(13);
+}
+
+// Call this directly from sass with appropriate args.
+@mixin title-size($title-size, $is-wide:false) {
+  $title-font-size: get-title-font-size($title-size, $is-wide);
+  @include font-size(#{$title-font-size});
+}
+
+// CONTENT
+
+@mixin body-typeg() {
+  font-family: $font-primary;
+  @include font-size(16);
+  line-height: 1.5;
+  @include padding(24, "bottom");
+}
+
+@mixin small-typeg() {
+  font-family: $font-primary;
+  @include font-size(12);
+  line-height: 1.35;
+  @include padding(15, "bottom");
+}
+
+// TODO: incorporate list base style, sensitively.
+
+@mixin author-typeg() {
+  font-family: $font-secondary;
+  @include font-size(16);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@mixin subtitle-typeg() {
+  font-family: $font-secondary;
+  @include font-size(16);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@mixin impact-statement-typeg($is-wide:false) {
+  font-family: $font-primary;
+  @include _set-typeg-width-variant(14, 16, $is-wide);
+  line-height: 1.43;
+}
+
+@mixin institute-typeg() {
+  font-family: $font-secondary;
+  @include font-size(12);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+@mixin pullquote-typeg($is-wide:false) {
+  font-family: $font-secondary;
+  @include _set-typeg-width-variant(24, 28, $is-wide);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+@mixin pullquote-attrib-typeg() {
+  font-family: $font-primary;
+  @include font-size(14);
+  font-style: italic;
+  line-height: 1.3;
+}
+
+@mixin fig-viewer-heading-typeg($is-wide: false) {
+  font-family: $font-secondary;
+  @include _set-typeg-width-variant(16, 20, $is-wide);
+  line-height: 1;
+}
+
+@mixin fig-heading-typeg() {
+  // bold, not demibold
+  font-family: $font-secondary;
+  @include font-size(13);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+@mixin fig-caption-typeg() {
+  font-family: $font-secondary;
+  @include font-size(13);
+  font-weight: 700;
+  line-height: 1.3;
+  @include padding(3, "bottom");
+}
+
+@mixin table-head-typeg() {
+  font-family: $font-secondary;
+  @include font-size(13);
+  font-weight: 700;
+  line-height: 1.3;
+  @include padding(3, "bottom");
+}
+
+@mixin table-cell-typeg() {
+  font-family: $font-secondary;
+  @include font-size(13);
+  line-height: 1.3;
+  @include padding(19, "bottom");
+}
+
+@mixin lead-para-typeg($is-wide: false) {
+  font-family: $font-primary;
+  @include _set-typeg-width-variant(16, 17, $is-wide);
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+
+@mixin contact-typeg() {
+  @include body-typeg();
+  line-height: 1.3;
+}
+
+// NAVIGATION AND LABELS
+
+@mixin nav-typeg() {
+  font-family: $font-secondary;
+  @include font-size(14);
+  font-weight: 700;
+  line-height: 1;
+}
+
+@mixin nav-small-typeg() {
+  @include nav-typeg();
+  @include font-size(11);
+}
+
+@mixin nav-page-typeg() {
+  @include nav-typeg();
+  line-height: 1.3;
+}
+
+@mixin section-title-typeg() {
+  font-family: $font-secondary;
+  @include font-size(14);
+  font-weight: 700;
+  line-height: 1;
+}
+
+@mixin footer-links-typeg($is-wide: false) {
+  font-family: $font-secondary;
+  @include font-size(14);
+  font-weight: 700;
+  @if $is-wide == false {
+    line-height: 1.85;
+  } @else {
+    line-height: 2.35;
+  }
+}
+
+@mixin msa-link($is-wide: false) {
+  font-family: $font-secondary;
+  @include font-size(12);
+  font-weight: 700;
+  @if $is-wide == false {
+    line-height: 1.85;
+  } @else {
+    line-height: 2.35;
+  }
+}
+
+@mixin see-more-link-typeg() {
+  font-family: $font-secondary;
+  @include font-size(14);
+  line-height: 1.3;
+}
+
+@mixin label-content-typeg() {
+  @include _label-typeg();
+  color: $color-primary;
+}
+
+@mixin label-subject-typeg() {
+  @include _label-typeg();
+  color: $color-text-secondary;
+}
+
+// FOR ITEMS IN LISTS
+
+@mixin listing-main-art-title-typeg() {
+  @include h2-typeg();
+}
+
+@mixin listing-side-art-title-typeg() {
+  font-family: $font-primary;
+  @include font-size(16);
+  font-weight: 700;
+}
+
+@mixin listing-main-author-typeg() {
+  font-family: $font-secondary;
+  @include font-size(16);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@mixin listing-main-subtitle-typeg() {
+  font-family: $font-secondary;
+  @include font-size(16);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+@mixin listing-side-author-typeg() {
+  @include listing-main-author-typeg();
+  @include font-size(14);
+}
+
+@mixin listing-side-subtitle-typeg() {
+  @include listing-main-author-typeg();
+  @include font-size(14);
+}
+
+@mixin listing-institute-typeg() {
+  font-family: $font-primary;
+  @include font-size(14);
+  font-style: italic;
+  line-height: 1.3;
+}
+
+@mixin listing-impact-statement-typeg() {
+  @include body-typeg();
+}
+
+@mixin listing-detail() {
+  @include small-typeg();
+  line-height: 1.5;
+}
