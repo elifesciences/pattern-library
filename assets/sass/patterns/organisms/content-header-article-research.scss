@@ -2,7 +2,7 @@
 
 .content-header-article-research {
 
-  .content-header__ancillary {
+  .meta {
     @include margin(30, "top");
   }
 
@@ -11,7 +11,7 @@
 .content-header-article-research--readmore {
   border-top: 1px solid $color-text-dividers;
 
-  .content-header__ancillary:after {
+  .meta:after {
     border-bottom-width: 0;
     padding-top: 0;
   }

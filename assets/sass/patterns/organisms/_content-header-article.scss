@@ -5,7 +5,7 @@
     @include padding(14, "top");
   }
 
-  .content-header__ancillary:after {
+  .meta:after {
     border-bottom: 1px solid $color-text-dividers;
     content: "";
     display: block;

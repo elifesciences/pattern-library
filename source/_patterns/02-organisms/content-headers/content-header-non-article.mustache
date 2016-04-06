@@ -7,21 +7,16 @@
     {{> atoms-content-header-background-style-markup}}
   {{/backgroundImage}}
 
-  <a href="{{downloadLink}}" class="content-header__download_link">
-    <picture>
-      <source srcset="{{images.download.svgFull}}"
-              media="(min-width: 35em)"
-              type="image/svg+xml" />
-
-      <source srcset="{{images.download.bitmapFull}}"
-              media="(min-width: 35em)" />
-
-      <source srcset="{{images.download.svg}}" type="image/svg+xml" />
-
-      <img src="{{{images.download.bitmapFull}}}" class="content-header__download_icon" alt="Download icon" />
-    </picture>
-    <span class="visuallyhidden">Download</span>
-  </a>
+  {{#hasCurator}}
+    <div class="content-header__top">
+      <a class="content-header__top_info" href="{{curator.profileLink}}">
+        <dl>
+          <dt class="content-header__top_label">Curated by</dt>
+          <dd class="content-header__top_data">{{curator.name}}</dd>
+        </dl>
+      </a>
+    </div>
+  {{/hasCurator}}
 
   <div class="content-header__inner">
     <div class="content-header__hgroup">
@@ -44,5 +39,4 @@
   {{/hasCtaOrMeta}}
 
   <div class="content-header__bottom_line"></div>
-
 </header>

@@ -24,11 +24,12 @@
     min-height: #{get-rem-from-px($content-header-min-height)}rem;
     // Takes account of space required for bottom button & meta info, and
     // top curators etc in some versions.
-    // each separation (43px) * # separated els (2) + combined height of els (11px + 2rem) +
-    // gap between bottom of inner & first bottom element (86px).
+    // each separation (22) * # separated els (2) + combined height of els (11px + 2rem) +
+    // gap between bottom of inner & first bottom element (44px).
     @include padding(131 0);
     padding-bottom: calc((22px * 2) + 11px + 2rem + 44px);
     padding-top: calc((22px * 2) + 11px + 2rem + 44px);
+    text-align: center;
     width: 100%;
   }
 
@@ -38,10 +39,7 @@
   }
 
   .content-header__strapline {
-    font-family: $font-secondary;
-    @include font-size(16);
-    font-weight: bold;
-    line-height: 1.4;
+    @include subtitle-typeg();
   }
 
   // They may take our <hgroup>, but they'll never take our .hgroup!
@@ -56,53 +54,109 @@
   }
 
   .content-header__bottom {
-    color: $color-text-ui-background;
-    font-size: 11px;
-    font-size: #{get-rem-from-px(11)}rem;
-    font-weight: 600;
-    line-height: 1;
-    width: 100%;
-    // demibold
-
-    position: absolute;
     bottom: 44px;
-
+    @include label-content-typeg($color-text--reverse);
+    position: absolute;
+    text-align: center;
+    width: 100%;
   }
 
-  .content-header__ancillary {
+  .meta {
     color: $color-text--reverse;
     margin-bottom: -22px;
     margin-top: 22px;
   }
 
-  .content-header__type {
+  .meta__type {
     color: $color-text--reverse;
-    text-decoration: none;
-    text-transform: uppercase;
   }
 
-  .content-header__type:hover,
-  .content-header__type:active {
+  .meta__type:hover,
+  .meta__type:active {
     color: $color-primary-dark
   }
 
-}
+  .content-header__top {
+    display: table;
+    // Used to remove its height from the centering calculation
+    position: absolute;
+    text-align: center;
+    // Approximates centring for non-flexbox, not great.
+    margin-left: 43%;
+  }
 
-.content-header-nonarticle--background-flat {
+  // 37px is the size of the avatar background image.
+  .content-header__top_info {
+    background: url("../img/avatars/pjha1x.png") 0 17px transparent no-repeat;
+    background-size: 37px;
+    box-sizing: content-box;
+    display: table-cell;
+    min-height: 37px;
+    padding-bottom: 10px;
+    padding-top: 22px;
+    padding-left: 42px;
+    text-align: center;
+    text-decoration: none;
+  }
 
-  background-color: $color-primary;
+  .content-header__top_info:hover *,
+  .content-header__top_info:active * {
+    color: $color-primary-dark;
+  }
 
-  .content-header__inner {
+  // Reset
+  .content-header__top_info dl,
+  .content-header__top_info dt,
+  .content-header__top_info dd {
+    margin-bottom: 0;
+  }
+
+  .content-header__top_label {
+    @include label-content-typeg($color-text--reverse);
+    @include font-size(9);
+  }
+
+  .content-header__top_data {
     color: $color-text--reverse;
+    font-family: $font-secondary;
+    @include font-size(14);
+    line-height: 1.2;
   }
 
-  .content-header__bottom_line {
-    border: none;
+  @media only screen and (min-resolution: 196dpi) {
+    .content-header__top_info {
+      background-image: url("../img/avatars/pjha2x.png");
+    }
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .content-header__top_info {
+      background-image: url("../img/avatars/pjha2x.png");
+    }
+  }
+
+  @supports (display: flex) {
+
+    .content-header__top {
+      display: flex;
+      justify-content: center;
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .content-header__top_label {
+      text-align: left;
+    }
+
+    .content-header__top_info {
+      padding-bottom: 0;
+    }
+
   }
 
 }
 
-.content-header-nonarticle-background-image {
+.content-header-nonarticle--background {
 
   background-color: $color-primary;
   background-size: cover;

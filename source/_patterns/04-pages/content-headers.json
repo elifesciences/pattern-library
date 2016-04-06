@@ -1,14 +1,14 @@
 {
-  "contentHeaderArticle": {
 
+  "researchArticle": {
     "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
-    
+
     "subject": "Epidemiology and global health",
 
     "articleType": "Research article",
 
     "dateText": "Sept 10, 2015",
-    "dateValue": "20150910",
+    "dateValue": "2015-09-10",
 
     "authors": [
       {"name": "Lee R Berger"},
@@ -58,7 +58,7 @@
       {"name": "Pianpian Wei"}
     ],
     "lastAuthor": "Bernhard Zipfel",
-    
+
     "institutions" : [
       {"name": "University of the Witwatersrand, South Africa"},
       {"name": "University of Wisconsin-Madison, United States"},
@@ -111,7 +111,168 @@
         "bitmap": "../../assets/img/icons/download-1x.png",
         "bitmapFull": "../../assets/img/icons/download-full-1x.png"
       }
+    },
+
+    "meta": {
+      "typeLink": "#",
+      "type": "Research article",
+      "dateTime": "2016-02-29",
+      "dateString": "Feb 29, 2016"
     }
 
+  },
+
+  "magazineArticle": {
+    "title": "Planarian 'kidneys' go with the flow",
+    "strapline": "Flatworms have organs called protonephridia that could be used as a model system for the study of kidney disease.",
+    "subject": "Developmental Biology and Stem Cells",
+    "subjectLink": "#",
+    "downloadLink": "#",
+    "articleType": "Insight",
+    "dateText": "Dec 12, 2015",
+    "dateValue": "2015-12-12",
+    "authors": [
+      {
+        "name": "Melanie Issigonis"
+      }
+    ],
+    "lastAuthor": " Phillip A Newmark",
+    "titleClass": "content-header__title--small",
+    "images": {
+      "download": {
+        "svgFull": "../../assets/img/icons/download-full.svg",
+        "bitmap": "../../assets/img/icons/download-1x.png",
+        "bitmapFull": "../../assets/img/icons/download-full-1x.png"
+      }
+    },
+    "svg": "../../assets/img/icons/download.svg",
+
+    "meta": {
+      "typeLink": "#",
+      "type": "Insight",
+      "dateTime": "2015-12-15",
+      "dateString": "Dec 15, 2015"
+    }
+
+  },
+
+  "magazineArticleWithBackground": {
+
+    "title": "Planarian 'kidneys' go with the flow",
+    "strapline": "Flatworms have organs called protonephridia that could be used as a model system for the study of kidney disease.",
+    "subject": "Developmental Biology and Stem Cells",
+    "subjectLink": "#",
+    "downloadLink": "#",
+    "articleType": "Insight",
+    "dateText": "Dec 12, 2015",
+    "dateValue": "2015-12-12",
+    "authors": [
+      {
+        "name": "Melanie Issigonis"
+      }
+    ],
+    "lastAuthor": " Phillip A Newmark",
+    "titleClass": "content-header__title--small",
+    "images": {
+      "lores": "http://unsplash.it/950/400/",
+      "hires": "http://unsplash.it/1800/900/",
+      "download": {
+        "svgFull": "../../assets/img/icons/download-full-reverse.svg",
+        "bitmap": "../../assets/img/icons/download-reverse-1x.png",
+        "bitmapFull": "../../assets/img/icons/download-full-reverse-1x.png"
+      }
+    },
+    "svg": "../../assets/img/icons/download.svg",
+
+    "meta": {
+      "typeLink": "#",
+      "type": "Insight",
+      "dateTime": "2015-12-15",
+      "dateString": "Dec 15, 2015"
+    }
+  },
+
+  "nonArticle": {
+    "title": "About <i>eLife</i>",
+
+    "strapline": "<i>eLife</i> publishes outstanding research in the life sciences and biomedicine, from the most fundamental and theoretical work, through to translational, applied, and clinical research.",
+
+    "titleClass": "content-header__title--medium",
+
+    "meta": {
+      "type": "Collection",
+      "typeLink": "#",
+      "dateTime": "2016-02-29",
+      "dateString": "Feb 29, 2016"
+    },
+
+    "buttonText": "Subscribe",
+
+    "images": {
+      "lores": "http://unsplash.it/950/400/",
+      "hires": "http://unsplash.it/1800/900/"
+    },
+
+    "curator": {
+      "name": "Prabhat Jha",
+      "profileLink": "#",
+      "avatar": {
+        "x1": "./assets/img/avatars/pjha1.png",
+        "x2": "./assets/img/avatars/pjha2.png"
+      }
+    }
+  },
+
+  "nonArticleNoMeta": {
+    "title": "About <i>eLife</i>",
+
+    "strapline": "<i>eLife</i> publishes outstanding research in the life sciences and biomedicine, from the most fundamental and theoretical work, through to translational, applied, and clinical research.",
+
+    "titleClass": "content-header__title--medium",
+
+    "buttonText": "Subscribe",
+
+    "images": {
+      "lores": "http://unsplash.it/950/400/",
+      "hires": "http://unsplash.it/1800/900/"
+    },
+
+    "curator": {
+      "name": "Prabhat Jha",
+      "profileLink": "#",
+      "avatar": {
+        "x1": "./assets/img/avatars/pjha1.png",
+        "x2": "./assets/img/avatars/pjha2.png"
+      }
+    }
+  },
+
+  "podcast": {
+    "title": "Multicellular life, potato blight and Hepatitis B",
+
+    "strapline": "Episode 21",
+
+    "titleClass": "content-header__title--small",
+
+    "downloadLink": "#",
+
+    "images": {
+      "lores": "http://unsplash.it/950/400/",
+      "hires": "http://unsplash.it/1800/900/",
+      "download": {
+        "svg": "../../assets/img/icons/download-reverse.svg",
+        "svgFull": "../../assets/img/icons/download-full-reverse.svg",
+        "bitmap": "../../assets/img/icons/download-reverse-1x.png",
+        "bitmapFull": "../../assets/img/icons/download-full-reverse-1x.png"
+      }
+    },
+
+    "hasCtaOrMeta": "true",
+    "meta": {
+      "type": "Podcast",
+      "dateTime": "2015-12-12",
+      "dateString": "Dec 12, 2015"
+    }
   }
 }
+
