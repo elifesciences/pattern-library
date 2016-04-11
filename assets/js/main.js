@@ -1,4 +1,4 @@
-
+'use strict';
 let Components = {};
 
 // import modules into the list of Components.
@@ -14,7 +14,7 @@ function Elife() {
 
   if (components.length) {
 
-    for (let i = 0; i < components.length; i++) {
+    for (let i = 0; i < components.length; i += 1) {
       let $elm = components[i];
       let handler = $elm.getAttribute('data-behaviour');
 
@@ -24,9 +24,9 @@ function Elife() {
         new Components[handler]($elm);
       }
 
-    };
+    }
   }
-};
+}
 
 // run!
 new Elife();

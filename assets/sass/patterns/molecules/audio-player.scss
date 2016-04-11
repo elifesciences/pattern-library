@@ -1,4 +1,3 @@
-
 .audio-player {
   background-color: $color-text;
   position: relative;
@@ -9,7 +8,6 @@
   border: none;
   border-right: 1px solid #444;
   color: $color-text--reverse;
-  display: none;
   height: 100%;
   left: 0;
   padding: 0;
@@ -41,7 +39,6 @@
 
 .audio-player__progress {
   background-color: #444;
-  display: none;
   height: 10px;
   position: relative;
   width: 100%;
@@ -56,12 +53,15 @@
   width: 0;
 }
 
-.audio-player__duration {
+.audio-player__times {
   color: #666;
-  display: none;
   float: right;
   font-family: $font-secondary;
   @include font-size(12);
+}
+
+.audio-player__current_time:after {
+  content: '\00a0/\00a0';
 }
 
 .audio-player--js {
@@ -77,11 +77,4 @@
     display: none;
   }
 
-  .audio-player__progress {
-    display: block;
-  }
-
-  .audio-player__duration {
-    display: block;
-  }
 }

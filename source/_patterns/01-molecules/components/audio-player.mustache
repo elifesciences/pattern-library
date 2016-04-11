@@ -1,24 +1,12 @@
 
 <div class="audio-player" data-behaviour="AudioPlayer">
-  {{#audioPlayer}}
-  <button class="audio-player__play">play</button>
   <div class="audio-player__container">
-    <div class="audio-player__header">
-      {{title}}
-
-      <div class="audio-player__duration">0:00</div>
-    </div>
+    <div class="audio-player__header">{{title}}</div>
     <audio class="audio-player__player" controls preload="metadata">
       {{#sources}}
       <source src="{{src}}" type="{{mimeType}}">
-      {{/sources}}
-      {{#sources}}
       <div><a href="{{src}}" class="audio-player__link" rel="external" target="_blank">Download the podcast ({{type}})</a></div>
       {{/sources}}
     </audio>
-    <div class="audio-player__progress">
-      <div class="audio-player__progress_bar"></div>
-    </div>
   </div>
-  {{/audioPlayer}}
 </div>

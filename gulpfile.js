@@ -28,6 +28,11 @@ const babel             = require('babelify');
 const uglify            = require('gulp-uglify');
 const mochaPhantomjs    = require('gulp-mocha-phantomjs');
 // const watchify          = require('watchify');
+const browserSync       = require('browser-sync');
+const express           = require('express');
+const gutil             = require('gulp-util');
+
+var server;
 
 /*************************************
  *  Tasks
@@ -176,7 +181,8 @@ gulp.task('js', ['js:hint', 'js:cs'], () => {
           .pipe(sourcemaps.write('./'))
 
           // output
-          .pipe(gulp.dest('./source/assets/js'));
+          .pipe(gulp.dest('./source/assets/js'))
+          .pipe(reload());
 });
 
 gulp.task('js:hint', () => {
@@ -205,12 +211,12 @@ gulp.task('browserify-tests', (done) => {
       .bundle()
       .pipe(source(entry))
       .pipe(rename({ dirname: '' }))
-      .pipe(gulp.dest('./test/build'));
+      .pipe(gulp.dest('./test/build'))
+      .pipe(reload());
     });
 
     es.merge(tasks).on('end', done);
   });
-
 });
 
 
@@ -238,8 +244,33 @@ gulp.task('js:watch', () => {
   gulp.watch('assets/js/**/*', ['js']);
 });
 
-
 // Task sets
 gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch']);
-
 gulp.task('default', ['sass', 'img', 'fonts', 'js']);
+
+/******************************************************************************
+ * Used for local testing
+ *  Update startPath in `server` task to the test file to be checked.
+ ******************************************************************************/
+gulp.task('tests:watch', ['server', 'js:watch'], () => {
+  gulp.watch('test/*.spec.js', ['browserify-tests']);
+});
+
+gulp.task('server', () => {
+  if (!server) {
+    server = express();
+    server.use(express.static('./'));
+    server.listen('8080');
+    browserSync({proxy: 'localhost:8080', startPath: 'test/audioplayer.html'});
+  } else {
+    return gutil.noop;
+  }
+});
+
+function reload() {
+  if (server) {
+    return browserSync.reload({stream: true});
+  } else {
+    return gutil.noop();
+  }
+}
