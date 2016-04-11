@@ -1,0 +1,4 @@
+.list-heading {
+  @include section-title-typeg();
+  text-transform: uppercase;
+}
