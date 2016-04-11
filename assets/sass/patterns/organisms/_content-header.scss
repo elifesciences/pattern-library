@@ -12,19 +12,13 @@
 }
 
 .content-header__title {
-  font-family: $font-secondary;
-  line-height: 1.3;
+  @include h1-typeg();
 }
 
 .content-header__subject_link {
-  color: $color-primary;
   display: block;
-  font-family: $font-secondary;
-  @include font-size(11);
-  font-weight: bold;
-  line-height: 1;
+  @include label-subject-typeg();
   text-decoration: none;
-  text-transform: uppercase;
 
   &:hover {
     color: $color-primary-dark;
@@ -44,10 +38,7 @@
 
 .content-header__author_list_item {
   display: inline;
-  font-family: $font-secondary;
-  @include font-size(16);
-  font-weight: bold;
-  line-height: 1.4;
+  @include author-typeg();
   list-style-type: none;
   padding: 0;
 }
@@ -63,10 +54,7 @@
 
 .content-header__institution_list_item {
   display: inline;
-  font-family: $font-secondary;
-  @include font-size(12);
-  font-weight: bold;
-  line-height: 1.3;
+  @include institute-typeg();
   list-style-type: none;
   padding: 0;
 }
@@ -90,18 +78,14 @@
   }
 }
 
-.content-header__ancillary {
-  color: #888;
-  font-family: $font-secondary;
-  @include font-size(11);
-  font-weight: bold;
-  line-height: 1;
-  text-transform: uppercase;
+.meta {
+  @include label-content-typeg();
 }
 
-.content-header__article_type_link {
+.meta__type {
   color: $color-text-secondary;
   text-decoration: none;
+  text-transform: uppercase;
 
   &:hover {
     color: $color-primary-dark;
@@ -109,7 +93,7 @@
 
 }
 
-.content-header__date {
+.meta__date {
   text-transform: capitalize;
 }
 
@@ -118,38 +102,38 @@
 // and should be set by the server accordingly.
 // Exact content-length triggeers tbc.
 .content-header__title--large {
-  @include font-size(60);
+  @include title-size("large");
 }
 
 .content-header__title--medium {
-  @include font-size(42);
+  @include title-size("medium");
 }
 
 .content-header__title--small {
-  @include font-size(30);
+  @include title-size("small");
 }
 
 .content-header__title--extra-small {
-  @include font-size(24);
+  @include title-size("x-small");
   @include margin(15 0 8);
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-content-header)}em) {
 
   .content-header__title--large {
-    @include font-size(72);
+    @include title-size("large", "wide");
   }
 
   .content-header__title--medium {
-    @include font-size(54);
+    @include title-size("medium", "wide");
   }
 
   .content-header__title--small {
-    @include font-size(44);
+    @include title-size("small", "wide");
   }
 
   .content-header__title--extra-small {
-    @include font-size(36);
+    @include title-size("x-small", "wide");
     @include margin(15 0 8);
   }
 

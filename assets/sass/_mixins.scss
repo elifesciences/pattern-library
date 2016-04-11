@@ -92,17 +92,22 @@
   color: $color-text--reverse;
   @include padding(12, "bottom");
 
-  .content-header__ancillary {
+  .meta {
     color: $color-text--reverse;
   }
 
-  .content-header__ancillary:after {
+  .meta:after {
     border-bottom-width: 0;
     padding-top: 0;
   }
 
-  .content-header__article_type_link {
+  .meta__type {
     color: $color-text--reverse;
+  }
+
+  .meta__type:hover,
+  .meta__type:active {
+    color: $color-primary-dark;
   }
 
   .content-header__subject_link {

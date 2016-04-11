@@ -30,6 +30,7 @@
   @include font-size(11);
   font-weight: 700;
   line-height: 1;
+  text-transform: uppercase;
 }
 
 // HEADINGS
@@ -242,14 +243,14 @@
   line-height: 1.3;
 }
 
-@mixin label-content-typeg() {
+@mixin label-content-typeg($color:$color-text-secondary) {
   @include _label-typeg();
-  color: $color-primary;
+  color: $color;
 }
 
 @mixin label-subject-typeg() {
   @include _label-typeg();
-  color: $color-text-secondary;
+  color: $color-primary;
 }
 
 // FOR ITEMS IN LISTS

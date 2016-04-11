@@ -4,13 +4,7 @@
   "strapline": "Episode 21",
 
   "titleClass": "content-header__title--small",
-
-  "meta": {
-    "type": "Podcast",
-    "dateTime": "2015-12-12",
-    "dateString": "Dec 12, 2015"
-  },
-
+  "downloadLink": "#",
   "images": {
     "lores": "http://unsplash.it/950/400/",
     "hires": "http://unsplash.it/1800/900/",
@@ -20,5 +14,13 @@
       "bitmap": "../../assets/img/icons/download-reverse-1x.png",
       "bitmapFull": "../../assets/img/icons/download-full-reverse-1x.png"
     }
+  },
+
+  "hasCtaOrMeta": "true",
+  "meta": {
+    "type": "Podcast",
+    "dateTime": "2015-12-12",
+    "dateString": "Dec 12, 2015"
   }
+
 }

@@ -9,13 +9,11 @@
 
   .content-header__strapline {
     color: $color-text-secondary;
-    font-family: $font-primary;
-    @include font-size(14);
-    line-height: 1.43;
+    @include impact-statement-typeg();
     @include margin(32, "bottom");
   }
 
-  .content-header__ancillary {
+  .meta {
     @include margin(10, "top");
   }
 
@@ -26,17 +24,13 @@
     }
 
     .content-header__strapline {
-      @include font-size(16);
+      @include impact-statement-typeg("wide");
     }
   }
 
 }
 
-.content-header-article-magazine-background-flat {
-  @include article-with-background;
-}
-
-.content-header-article-magazine-background-image {
+.content-header-article-magazine--background {
   @include article-with-background;
   background-repeat: no-repeat;
   background-size: cover;
