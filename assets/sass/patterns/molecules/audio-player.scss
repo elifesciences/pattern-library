@@ -75,6 +75,10 @@
   }
 
   .audio-player__player {
+    // Testing shows iOS7 doesn't honour display: none on audio elements
+    // so using visuallyhidden too. (We want display: none so controls aren't
+    // duplicated.)
+    @include visuallyhidden();
     display: none;
   }
 
