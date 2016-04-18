@@ -33,6 +33,7 @@ describe('An AudioPlayer Component', function () {
   afterEach(function () {
     player = null;
     $mediaMock = null;
+    times = null;
   });
 
   it('exists', function () {
@@ -52,11 +53,27 @@ describe('An AudioPlayer Component', function () {
     expect(typeof player.togglePlay).to.equal('function');
   });
 
-  describe('the togglePlay() method', function() {
+  describe('the togglePlay() method', function () {
+
+    let $togglePlayButtonMock;
+
+    beforeEach(function () {
+      $togglePlayButtonMock = {
+        classList: {
+          add: spy(),
+          remove: spy()
+        }
+      };
+    });
+
+    afterEach(function (){
+      $togglePlayButtonMock = null;
+    });
+
     it('plays audio if invoked when paused', function () {
       player.isPlaying = false;
       expect(player.isPlaying).to.be.false;
-      player.togglePlay($mediaMock);
+      player.togglePlay($mediaMock, $togglePlayButtonMock);
       expect(player.isPlaying).to.be.true;
       expect($mediaMock.play.calledOnce).to.be.true;
       expect($mediaMock.pause.called).to.be.false;
@@ -65,17 +82,32 @@ describe('An AudioPlayer Component', function () {
     it('pauses audio if invoked whilst playing', function () {
       player.isPlaying = true;
       expect(player.isPlaying).to.be.true;
-      player.togglePlay($mediaMock);
+      player.togglePlay($mediaMock, $togglePlayButtonMock);
       expect(player.isPlaying).to.be.false;
       expect($mediaMock.pause.calledOnce).to.be.true;
       expect($mediaMock.play.called).to.be.false;
     });
+
+    it('removes button\'s play css class and adds pause css class when playback started', function () {
+      player.isPlaying = false;
+      player.togglePlay($mediaMock, $togglePlayButtonMock);
+      expect($togglePlayButtonMock.classList.add.calledWith('audio-player__toggle_play--pauseable')).to.be.true;
+      expect($togglePlayButtonMock.classList.remove.calledWith('audio-player__toggle_play--playable')).to.be.true;
+    });
+
+    it('removes button\'s pause css class and adds play css class when playback paused', function () {
+      player.isPlaying = true;
+      player.togglePlay($mediaMock, $togglePlayButtonMock);
+      expect($togglePlayButtonMock.classList.remove.calledWith('audio-player__toggle_play--pauseable')).to.be.true;
+      expect($togglePlayButtonMock.classList.add.calledWith('audio-player__toggle_play--playable')).to.be.true;
+    });
+
   });
 
   it('possesses a secondsToMinutes() static method', function () {
     expect(typeof AudioPlayer.secondsToMinutes).to.equal('function');
   });
-  
+
   describe('the secondsToMinutes() static method', function () {
     it('returns correctly formatted [m]m:ss string when given a time in seconds', function () {
       times.forEach(time => {
@@ -98,5 +130,46 @@ describe('An AudioPlayer Component', function () {
     });
   });
 
-});
+  it('possesses an updateIconState() static method', function () {
+    expect(AudioPlayer.updateIconState).to.be.a('function');
+  });
 
+  describe('the updateIconState() static method', function () {
+
+    var $iconMock;
+
+    beforeEach(function () {
+      $iconMock = {
+        src: '',
+        alt: ''
+      };
+    });
+
+    afterEach(function () {
+      $iconMock = null;
+    });
+
+    it('sets the correct attributes for the play icon when invoked with "play" ', function () {
+      AudioPlayer.updateIconState($iconMock, 'play');
+      expect($iconMock.src).to.equal('../../assets/img/icons/audio-play.svg');
+      expect($iconMock.alt).to.equal('play');
+    });
+
+    it('sets the correct attributes for the pause icon when invoked with "pause" ', function () {
+      AudioPlayer.updateIconState($iconMock, 'pause');
+      expect($iconMock.src).to.equal('../../assets/img/icons/audio-pause.svg');
+      expect($iconMock.alt).to.equal('pause');
+    });
+
+    it('sets no attributes if passed neither "play" nor "pause" ', function () {
+      var invalidValues = ['invalid', 1234, ['play'], {play: 'play'}, ['pause'], {pause: 'pause'}];
+      invalidValues.forEach(invalidValue => {
+        AudioPlayer.updateIconState($iconMock, invalidValue);
+        expect($iconMock.src).to.equal('');
+        expect($iconMock.alt).to.equal('');
+      });
+
+    });
+
+  });
+});
