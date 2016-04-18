@@ -1,5 +1,15 @@
 
 <ol class="reference-list">
+  {{#references}}
+    <li class="reference-list__item">
+      <span class="reference-list__ordinal_number">{{ordinal}}</span>
+      {{> atoms-reference }}
+    </li>
+  {{/references}}
+</ol>
+<!--
+
+<ol class="reference-list">
   <li class="reference-list__item">
     <span class="reference-list__ordinal_number">2.</span>
     {{> atoms-reference }}
@@ -13,3 +23,4 @@
     {{> atoms-reference }}
   </li>
 </ol>
+-->
