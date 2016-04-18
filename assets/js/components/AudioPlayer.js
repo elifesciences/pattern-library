@@ -7,9 +7,14 @@ module.exports = class AudioPlayer {
     if (!$elm) {
       console.warn('No element provided');
       return;
-    } else {
-      console.log('Initialising Audio Player...');
     }
+
+    if (!window.HTMLAudioElement) {
+      console.warn('Audio element not supported');
+      return;
+    }
+
+    console.log('Initialising Audio Player...');
 
     this.uniqueId = utils.uniqueIds.get('audio', document);
     this.$elm = $elm;
