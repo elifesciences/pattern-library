@@ -1,8 +1,6 @@
 {
-  "audioPlayer": {
-    "title": "Meet Homo naledi",
-    "sources":[
-      { "src": "http://elife-static-web-host-test.s3.amazonaws.com/elife2/64_Sundays.mp3", "mimeType": "audio/mp3", "type": "mp3" }
-    ]
-  }
+  "title": "Meet Homo naledi",
+  "sources":[
+    { "src": "http://elife-static-web-host-test.s3.amazonaws.com/elife2/64_Sundays.mp3", "mimeType": "audio/mp3", "type": "mp3" }
+  ]
 }
