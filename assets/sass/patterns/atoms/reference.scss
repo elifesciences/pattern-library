@@ -7,10 +7,10 @@
   font-weight: 600;
   @include padding(5, "bottom");
   text-decoration: none;
+}
 
-  &:hover {
-    color: $color-primary;
-  }
+a.reference__title:hover {
+  color: $color-primary;
 }
 
 .reference__authors_list {
@@ -31,9 +31,10 @@
   font-weight: 600;
   text-decoration: none;
 
-  &:hover {
-    color: $color-primary;
-  }
+}
+
+a.reference__authors_link:hover {
+  color: $color-primary;
 }
 
 .reference__origin {

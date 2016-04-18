@@ -1,12 +1,42 @@
 
 <div class="reference">
-  <a href="#" class="reference__title">Is male song quality important in maintaining pair bonds?</a>
-  <ul class="reference__authors_list">
-    <li class="reference__authors_list_item"><a href="#" class="reference__authors_link">V Andreasen J Lin</a>,</li>
-    <li class="reference__authors_list_item"><a href="#" class="reference__authors_link">SA Levin</a></li>
-  </ul>
-  <div class="reference__origin">Journal of Mathematical Biology, 35, 825-842, 1997</div>
-  <div class="reference__abstracts">
-    <a href="#" class="reference__abstracts_link">CrossRef</a>, <a href="#" class="reference__abstracts_link">PubMed</a>
-  </div>
+  {{#titleLink}}
+    <a href="{{titleLink}}" class="reference__title">{{title}}</a>
+  {{/titleLink}}
+  {{^titleLink}}
+    <div class="reference__title">{{title}}</div>
+  {{/titleLink}}
+
+  {{#hasAuthors}}
+    <ul class="reference__authors_list">
+  {{/hasAuthors}}
+    {{#authors}}
+      <li class="reference__authors_list_item">
+        {{#authorLink}}
+          <a href="{{authorLink}}" class="reference__authors_link">{{authorName}}</a>
+        {{/authorLink}}
+        {{^authorLink}}
+          <span class="reference__authors_link">{{authorName}}</span>
+        {{/authorLink}}
+      </li>
+    {{/authors}}
+
+  {{#hasAuthors}}
+    </ul>
+  {{/hasAuthors}}
+
+  {{#origin}}
+    <div class="reference__origin">{{origin}}</div>
+  {{/origin}}
+
+  {{#hasAbstracts}}
+    <div class="reference__abstracts">
+  {{/hasAbstracts}}
+  {{#abstracts}}
+    <a href="{{link}}" class="reference__abstracts_link">{{name}}</a>
+  {{/abstracts}}
+
+  {{#hasAbstracts}}
+    </div>
+  {{/hasAbstracts}}
 </div>
