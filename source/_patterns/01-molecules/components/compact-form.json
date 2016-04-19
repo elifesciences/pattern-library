@@ -1,0 +1,10 @@
+{
+  "formAction" : "#",
+  "formId": "myCompactForm",
+  "label": "Email",
+  "inputType": "email",
+  "inputName": "email",
+  "inputValue": "",
+  "inputPlaceholder": "you@email.com",
+  "ctaText": "Go"
+}
