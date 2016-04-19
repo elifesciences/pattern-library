@@ -9,9 +9,8 @@
 
     "dateText": "Sept 10, 2015",
     "dateValue": "2015-09-10",
-
+    "firstAuthor": "Lee R Berger",
     "authors": [
-      {"name": "Lee R Berger"},
       {"name": "John Hawks"},
       {"name": "Darryl J de Ruiter"},
       {"name": "Steven E Churchill"},
@@ -58,7 +57,7 @@
       {"name": "Pianpian Wei"}
     ],
     "lastAuthor": "Bernhard Zipfel",
-
+    "etal": true,
     "institutions" : [
       {"name": "University of the Witwatersrand, South Africa"},
       {"name": "University of Wisconsin-Madison, United States"},
@@ -140,12 +139,12 @@
     "titleClass": "content-header__title--small",
     "images": {
       "download": {
+        "svg": "../../assets/img/icons/download.svg",
         "svgFull": "../../assets/img/icons/download-full.svg",
         "bitmap": "../../assets/img/icons/download-1x.png",
         "bitmapFull": "../../assets/img/icons/download-full-1x.png"
       }
     },
-    "svg": "../../assets/img/icons/download.svg",
 
     "meta": {
       "typeLink": "#",
@@ -177,12 +176,12 @@
       "lores": "http://unsplash.it/950/400/",
       "hires": "http://unsplash.it/1800/900/",
       "download": {
+        "svg": "../../assets/img/icons/download.svg",
         "svgFull": "../../assets/img/icons/download-full-reverse.svg",
         "bitmap": "../../assets/img/icons/download-reverse-1x.png",
         "bitmapFull": "../../assets/img/icons/download-full-reverse-1x.png"
       }
     },
-    "svg": "../../assets/img/icons/download.svg",
 
     "meta": {
       "typeLink": "#",

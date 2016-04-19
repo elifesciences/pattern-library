@@ -7,7 +7,7 @@
 
   "dateText": "Sept 10, 2015",
   "dateValue": "2015-09-10",
-
+  "firstAuthor": "Lee R Berger",
   "authors": [
     {"name": "Lee R Berger"},
     {"name": "John Hawks"},
@@ -56,6 +56,7 @@
     {"name": "Pianpian Wei"}
   ],
   "lastAuthor": "Bernhard Zipfel",
+  "etal": true,
   "hasInstitutions": "true",
   "institutions" : [
     {"name": "University of the Witwatersrand, South Africa"},

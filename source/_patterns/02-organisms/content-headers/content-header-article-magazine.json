@@ -18,12 +18,12 @@
     "lores": "http://unsplash.it/950/400/",
     "hires": "http://unsplash.it/1800/900/",
     "download": {
+      "svg": "../../assets/img/icons/download.svg",
       "svgFull": "../../assets/img/icons/download-full-reverse.svg",
       "bitmap": "../../assets/img/icons/download-reverse-1x.png",
       "bitmapFull": "../../assets/img/icons/download-full-reverse-1x.png"
     }
   },
-  "svg": "../../assets/img/icons/download.svg",
 
   "meta": {
     "typeLink": "#",
