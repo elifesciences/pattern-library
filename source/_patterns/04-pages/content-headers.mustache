@@ -66,6 +66,15 @@
 {{/nonArticleNoMeta}}
 
 <br><br>
+<h2 class="_elife-pl-highlight">content-header archive</h2>
+{{#archive}}
+  {{> organisms-content-header-non-article(
+  "background": "true",
+  "backgroundImage": "true",
+  "hasCtaOrMeta": "true")}}
+{{/archive}}
+
+<br><br>
 <h2 class="_elife-pl-highlight">content-header non-article image background with cta and meta info</h2>
 {{#nonArticle}}
   {{> organisms-content-header-non-article(
@@ -93,3 +102,4 @@
   "hasCtaOrMeta": "true",
   "hasCurator": "true")}}
 {{/podcast}}
+
