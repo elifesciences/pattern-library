@@ -85,13 +85,13 @@
     margin-left: 43%;
   }
 
-  // 37px is the size of the avatar background image.
+  // 40px is the size of the avatar background image.
   .content-header__top_info {
     background: url("../img/avatars/pjha1x.png") 0 17px transparent no-repeat;
-    background-size: 37px;
+    background-size: 40px;
     box-sizing: content-box;
     display: table-cell;
-    min-height: 37px;
+    min-height: 40px;
     padding-bottom: 10px;
     padding-top: 22px;
     padding-left: 42px;
@@ -114,6 +114,7 @@
   .content-header__top_label {
     @include label-content-typeg($color-text--reverse);
     @include font-size(9);
+    @include padding(5, "bottom");
   }
 
   .content-header__top_data {

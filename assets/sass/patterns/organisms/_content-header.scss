@@ -47,6 +47,10 @@
   content: ", ";
 }
 
+.content-header__author--etal {
+  @include author-typeg();
+}
+
 .content-header__institution_list {
   margin: 0;
   padding: 0;
