@@ -10,7 +10,7 @@
     "noarg": true,
     "noempty": true,
     "nonbsp": true,
-    "nonew": true,
+    "nonew": false,
     "plusplus": true,
     "shadow": true,
     "strict": true,

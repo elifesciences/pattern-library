@@ -19,26 +19,32 @@
     <!--
       Fixture
     -->
+    <!-- This is used without js on the main search page, but js is required for
+          its presence on other pages. -->
     <div class="search-box" data-behaviour="SearchBox">
 
-      <form class="compact-form" action="#" method="post">
 
+      <form class="compact-form" id="searchBox" action="#" method="GET">
         <fieldset class="compact-form__container">
           <label for="compact-form__input" class="visuallyhidden">Search by keyword or author</label>
-
-          <input type="search" name="email" value="" id="compact-form__input" class="compact-form__input" placeholder="Search by keyword or author">
-
-          <button type="submit" name="submit" class="compact-form__submit"><span class="visuallyhidden">Go</span></button>
-
+          <input type="search" name="search" value="" placeholder="Search by keyword or author" id="compact-form__input" class="compact-form__input">
+          <label for="reset" class="visuallyhidden">Reset form</label>
+          <button type="reset" name="reset" id="reset" class="compact-form__reset"></button>
+          <button type="submit" name="submit" class="compact-form__submit"><span class="visuallyhidden">Search</span></button>
         </fieldset>
-
-        <div class="search-box__search_option">
-          <label class="search-box__search_option_label">
-            <input type="checkbox" name="limit" value="1"> Limit my search to <strong>Cell Biology</strong>
-          </label>
-        </div>
-
       </form>
+
+      <!-- Only applies when on an article belonging to a subject: -->
+      <!-- Note that this could be moved to the behaviour layer as it looks like it's only needed when
+           JavaScript is available. However, the value for subjectFilter needs to come from the server,
+           so keeping it here for now until it's understood how the server -> js communication will
+           work. -->
+      <div class="search-box__search_option">
+        <label class="search-box__search_option_label" for="limit">
+          <input id="limit" type="checkbox" name="limit" value="1" form="searchBox"> Limit my search to <strong>Cell biology</strong>
+        </label>
+      </div>
+
 
     </div>
 
@@ -47,6 +53,7 @@
     -->
     <script src="../node_modules/mocha/mocha.js"></script>
     <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
 
     <!-- Initialise test suite -->
     <script>mocha.setup('bdd')</script>

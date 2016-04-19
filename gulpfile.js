@@ -220,7 +220,7 @@ gulp.task('browserify-tests', (done) => {
 });
 
 
-gulp.task('test', ['browserify-tests'], () => {
+gulp.task('test', ['browserify-tests', 'js'], () => {
   return gulp.src('./test/*.html')
     .pipe(mochaPhantomjs({reporter: 'spec'}))
     .pipe(reload());
@@ -253,7 +253,7 @@ gulp.task('default', ['sass', 'img', 'fonts', 'js']);
  * Used for local testing
  *  Update startPath in `server` task to the test file to be checked.
  ******************************************************************************/
-gulp.task('tests:watch', ['server', 'js:watch'], () => {
+gulp.task('tests:watch', ['server', 'js:watch', 'browserify-tests'], () => {
   gulp.watch('test/*.spec.js', ['browserify-tests']);
 });
 
@@ -262,7 +262,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/audioplayer.html'});
+    browserSync({proxy: 'localhost:8080', startPath: 'test/searchbox.html'});
   } else {
     return gutil.noop;
   }

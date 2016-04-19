@@ -1,6 +1,7 @@
 {
   "formAction" : "#",
   "formId": "myCompactForm",
+  "formMethod": "GET",
   "label": "Email",
   "inputType": "email",
   "inputName": "email",
