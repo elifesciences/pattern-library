@@ -1,0 +1,17 @@
+{
+  "id": "mySelect",
+  "options": [
+    {
+      "value": "2016",
+      "displayValue": "2016"
+    },
+    {
+      "value": "2015",
+      "displayValue": "2015"
+    },
+    {
+      "value": "2014",
+      "displayValue": "2014"
+    }
+  ]
+}
