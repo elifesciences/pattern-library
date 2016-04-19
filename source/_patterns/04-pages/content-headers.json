@@ -246,6 +246,45 @@
     }
   },
 
+  "archive": {
+    "title": "Archive",
+
+    "titleClass": "content-header__title--medium",
+
+    "select": {
+      "id": "myArchiveSelectElement",
+      "route": "/path/to/archive",
+      "options": [
+        {
+          "value": 2016,
+          "displayValue": "2016"
+        },
+        {
+          "value": 2015,
+          "displayValue": "2015"
+        },
+        {
+          "value": 2014,
+          "displayValue": "2014"
+        }
+      ]
+    },
+
+    "images": {
+      "lores": "http://unsplash.it/950/400/",
+      "hires": "http://unsplash.it/1800/900/"
+    },
+
+    "curator": {
+      "name": "Prabhat Jha",
+      "profileLink": "#",
+      "avatar": {
+        "x1": "./assets/img/avatars/pjha1.png",
+        "x2": "./assets/img/avatars/pjha2.png"
+      }
+    }
+  },
+
   "podcast": {
     "title": "Multicellular life, potato blight and Hepatitis B",
 
