@@ -16,6 +16,10 @@
   @include width(90);
 }
 
+.audio-player__toggle_play_icon {
+  margin-top: 2px;
+}
+
 .audio-player__container {
   @include padding(15);
 }
@@ -40,14 +44,15 @@
 .audio-player__progress {
   background-color: #444;
   cursor: pointer;
-  height: 10px;
+  height: 6px;
   position: relative;
+  top: 3px;
   width: 100%;
 }
 
 .audio-player__progress_bar {
   background-color: #666;
-  height: 10px;
+  height: 6px;
   left: 0;
   position: absolute;
   top: 0;
