@@ -2,8 +2,9 @@
 var utils = require('../libs/elife-utils')();
 module.exports = class AudioPlayer {
 
-  constructor($elm) {
-
+  // Passing window and document separately allows for independent mocking of window in order
+  // to test feature support fallbacks etc.
+  constructor($elm, window, doc = document) {
     if (!$elm) {
       console.warn('No element provided');
       return;
@@ -16,7 +17,7 @@ module.exports = class AudioPlayer {
 
     console.log('Initialising Audio Player...');
 
-    this.uniqueId = utils.uniqueIds.get('audio', document);
+    this.uniqueId = utils.uniqueIds.get('audio', doc);
     this.$elm = $elm;
     this.$elm.id = this.uniqueId;
     this.$audioElement = this.$elm.querySelector('audio');

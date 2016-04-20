@@ -21,7 +21,7 @@ function Elife() {
       // Is there a handler?
       // Is it a function?
       if (Components[handler] && typeof Components[handler] === 'function') {
-        new Components[handler]($elm);
+        new Components[handler]($elm, window, window.document);
       }
 
     }
