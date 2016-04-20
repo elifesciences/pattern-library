@@ -1,11 +1,8 @@
 
 .reference__title {
+  @include listing-side-art-title-typeg();
   color: $color-text;
   display: block;
-  font-family: $font-primary;
-  @include font-size(18);
-  font-weight: 600;
-  @include padding(5, "bottom");
   text-decoration: none;
 }
 
@@ -16,10 +13,11 @@ a.reference__title:hover {
 .reference__authors_list {
   list-style: none;
   margin: 0;
-  @include padding(0 0 5 0);
+  @include padding(0 0 3 0);
 }
 
-.reference__authors_list_item {
+.reference__author {
+  @include listing-side-author-typeg();
   display: inline;
   margin: 0;
   padding: 0;
@@ -28,7 +26,6 @@ a.reference__title:hover {
 .reference__authors_link {
   color: $color-text;
   font-family: $font-secondary;
-  font-weight: 600;
   text-decoration: none;
 
 }
@@ -38,19 +35,45 @@ a.reference__authors_link:hover {
 }
 
 .reference__origin {
-  font-family: $font-primary;
-  @include font-size(14);
-  font-weight: 500;
-  @include padding(5, "bottom");
+  @include listing-detail();
+  @include padding(3, "bottom");
 }
 
-.reference__abstracts_link {
-  color: $color-primary;
-  font-family: $font-primary;
-  @include font-size(14);
+.reference__secondaryLink {
+  color: inherit;
+  @include listing-detail();
+  @include padding(5, "bottom");
   text-decoration: none;
 
   &:hover {
-    color: $color-primary-dark;
+    color: $color-primary;
   }
+}
+
+.reference__abstracts {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.reference__abstract {
+  display: inline;
+  @include listing-detail();
+}
+
+.reference__abstract_link {
+
+  color: $color-primary;
+  text-decoration: none;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+}
+
+.reference__abstract:after {
+  content: "\00a0|";
+}
+
+.reference__abstract:last-child:after {
+  content: "";
 }
