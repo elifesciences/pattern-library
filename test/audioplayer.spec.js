@@ -10,9 +10,13 @@ describe('An AudioPlayer Component', function () {
   let player;
   let $mediaMock;
   let times;
+  let windowMock;
 
   beforeEach(function () {
-    player = new AudioPlayer($elm);
+    windowMock = {
+      HTMLAudioElement: true
+    };
+    player = new AudioPlayer($elm, windowMock);
     $mediaMock = {
       play: spy(),
       pause: spy(),
