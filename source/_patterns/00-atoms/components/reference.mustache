@@ -11,7 +11,7 @@
     <ul class="reference__authors_list">
   {{/hasAuthors}}
     {{#authors}}
-      <li class="reference__authors_list_item">
+      <li class="reference__author">
         {{#authorLink}}
           <a href="{{authorLink}}" class="reference__authors_link">{{authorName}}</a>
         {{/authorLink}}
@@ -29,14 +29,18 @@
     <div class="reference__origin">{{origin}}</div>
   {{/origin}}
 
+  {{#secondaryLinkText}}
+    <a href="{{titleLink}}" class="reference__secondaryLink">{{secondaryLinkText}}</a>
+  {{/secondaryLinkText}}
+
   {{#hasAbstracts}}
-    <div class="reference__abstracts">
+    <ul class="reference__abstracts">
   {{/hasAbstracts}}
   {{#abstracts}}
-    <a href="{{link}}" class="reference__abstracts_link">{{name}}</a>
+    <li class="reference__abstract"><a href="{{link}}" class="reference__abstract_link">{{name}}</a></li>
   {{/abstracts}}
 
   {{#hasAbstracts}}
-    </div>
+    </ul>
   {{/hasAbstracts}}
 </div>

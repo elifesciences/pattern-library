@@ -4,6 +4,7 @@
       "ordinal": 2,
       "titleLink": "#",
       "title": "Is male song quality important in maintaining pair bonds?",
+      "secondaryLinkText": "http://dx.doi.org/10.7554/eLife.12264",
       "origin": "Journal of Mathematical Biology, 35, 825-842, 1997",
 
       "hasAuthors": true,
@@ -37,14 +38,18 @@
         {
           "name": "PubMed",
           "link": "#"
+        },
+        {
+          "name": "Google Scholar",
+          "link": "#"
         }
       ]
     },
-
     {
       "ordinal": 87,
       "titleLink": "#",
       "title": "Is male song quality important in maintaining pair bonds?",
+      "secondaryLinkText": "http://dx.doi.org/10.7554/eLife.12264",
       "origin": "Journal of Mathematical Biology, 35, 825-842, 1997",
 
       "hasAuthors": true,
@@ -63,6 +68,9 @@
         },
         {
           "authorName": "METABRIC Group"
+        },
+        {
+          "authorName": "et al"
         }
       ],
 
@@ -74,15 +82,19 @@
         },
         {
           "name": "PubMed",
+          "link": "#"
+        },
+        {
+          "name": "Google Scholar",
           "link": "#"
         }
       ]
     },
-
     {
       "ordinal": 32,
       "titleLink": "#",
       "title": "Is male song quality important in maintaining pair bonds?",
+      "secondaryLinkText": "http://dx.doi.org/10.7554/eLife.12264",
       "origin": "Journal of Mathematical Biology, 35, 825-842, 1997",
 
       "hasAuthors": true,
@@ -101,6 +113,9 @@
         },
         {
           "authorName": "METABRIC Group"
+        },
+        {
+          "authorName": "et al"
         }
       ],
 
@@ -112,6 +127,10 @@
         },
         {
           "name": "PubMed",
+          "link": "#"
+        },
+        {
+          "name": "Google Scholar",
           "link": "#"
         }
       ]
