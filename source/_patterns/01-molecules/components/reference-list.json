@@ -1,7 +1,10 @@
 {
   "references": [
     {
-      "ordinal": 2,
+      "bibId": {
+        "full": "bib2",
+        "ordinal": 2
+      },
       "titleLink": "#",
       "title": "Is male song quality important in maintaining pair bonds?",
       "secondaryLinkText": "http://dx.doi.org/10.7554/eLife.12264",
@@ -46,7 +49,11 @@
       ]
     },
     {
-      "ordinal": 87,
+      "bibId": {
+        "full": "bib87",
+        "ordinal": 87
+      },
+
       "titleLink": "#",
       "title": "Is male song quality important in maintaining pair bonds?",
       "secondaryLinkText": "http://dx.doi.org/10.7554/eLife.12264",
@@ -91,7 +98,10 @@
       ]
     },
     {
-      "ordinal": 32,
+      "bibId": {
+        "full": "bib32",
+        "ordinal": 32
+      },
       "titleLink": "#",
       "title": "Is male song quality important in maintaining pair bonds?",
       "secondaryLinkText": "http://dx.doi.org/10.7554/eLife.12264",
