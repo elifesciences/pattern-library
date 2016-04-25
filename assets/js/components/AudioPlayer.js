@@ -4,13 +4,13 @@ module.exports = class AudioPlayer {
 
   // Passing window and document separately allows for independent mocking of window in order
   // to test feature support fallbacks etc.
-  constructor($elm, window, doc = document) {
+  constructor($elm, _window = window, doc = document) {
     if (!$elm) {
       console.warn('No element provided');
       return;
     }
 
-    if (!window.HTMLAudioElement) {
+    if (!_window.HTMLAudioElement) {
       console.warn('Audio element not supported');
       return;
     }
