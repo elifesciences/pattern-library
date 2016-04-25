@@ -1,26 +1,9 @@
 
 <ol class="reference-list">
   {{#references}}
-    <li class="reference-list__item">
-      <span class="reference-list__ordinal_number">{{ordinal}}</span>
+    <li class="reference-list__item" id="{{bibId.full}}">
+      <span class="reference-list__ordinal_number">{{bibId.ordinal}}</span>
       {{> atoms-reference }}
     </li>
   {{/references}}
 </ol>
-<!--
-
-<ol class="reference-list">
-  <li class="reference-list__item">
-    <span class="reference-list__ordinal_number">2.</span>
-    {{> atoms-reference }}
-  </li>
-  <li class="reference-list__item">
-    <span class="reference-list__ordinal_number">88.</span>
-    {{> atoms-reference }}
-  </li>
-  <li class="reference-list__item">
-    <span class="reference-list__ordinal_number">144.</span>
-    {{> atoms-reference }}
-  </li>
-</ol>
--->

@@ -1,10 +1,10 @@
 
 <div class="reference">
   {{#titleLink}}
-    <a href="{{titleLink}}" class="reference__title">{{title}}</a>
+    <a href="{{titleLink}}" class="reference__title">{{{title}}}</a>
   {{/titleLink}}
   {{^titleLink}}
-    <div class="reference__title">{{title}}</div>
+    <div class="reference__title">{{{title}}}</div>
   {{/titleLink}}
 
   {{#hasAuthors}}
@@ -13,10 +13,10 @@
     {{#authors}}
       <li class="reference__author">
         {{#authorLink}}
-          <a href="{{authorLink}}" class="reference__authors_link">{{authorName}}</a>
+          <a href="{{authorLink}}" class="reference__authors_link">{{{authorName}}}</a>
         {{/authorLink}}
         {{^authorLink}}
-          <span class="reference__authors_link">{{authorName}}</span>
+          <span class="reference__authors_link">{{{authorName}}}</span>
         {{/authorLink}}
       </li>
     {{/authors}}
@@ -26,11 +26,11 @@
   {{/hasAuthors}}
 
   {{#origin}}
-    <div class="reference__origin">{{origin}}</div>
+    <div class="reference__origin">{{{origin}}}</div>
   {{/origin}}
 
   {{#secondaryLinkText}}
-    <a href="{{titleLink}}" class="reference__secondaryLink">{{secondaryLinkText}}</a>
+    <a href="{{titleLink}}" class="reference__secondaryLink">{{{secondaryLinkText}}}</a>
   {{/secondaryLinkText}}
 
   {{#hasAbstracts}}
