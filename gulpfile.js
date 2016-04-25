@@ -154,7 +154,7 @@ gulp.task('fonts', () => {
  * Creates a sourcemap.
  ******************************************************************************/
 
-gulp.task('js', ['js:hint', 'js:cs'], () => {
+gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests'], () => {
 
     // delete all previously compiled files + folders
     del(['./source/assets/js/*']);
@@ -222,7 +222,8 @@ gulp.task('browserify-tests', (done) => {
 
 gulp.task('test', ['browserify-tests'], () => {
   return gulp.src('./test/*.html')
-    .pipe(mochaPhantomjs({reporter: 'spec'}));
+    .pipe(mochaPhantomjs({reporter: 'spec'}))
+    .pipe(reload());
 });
 
 
@@ -245,7 +246,7 @@ gulp.task('js:watch', () => {
 });
 
 // Task sets
-gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch']);
+gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch', 'tests:watch']);
 gulp.task('default', ['sass', 'img', 'fonts', 'js']);
 
 /******************************************************************************
