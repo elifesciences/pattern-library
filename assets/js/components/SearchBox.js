@@ -30,10 +30,19 @@ module.exports = class SearchBox {
     // setup
     this.$form.setAttribute('autocomplete', 'off');
 
-    this.$output = doc.createElement('div');
-    this.$output.classList.add('search-box__output');
-    this.$output.style.top = _window.getComputedStyle(this.$container).height;
-    this.$elm.appendChild(this.$output);
+    if (!doc.querySelector('.search-box__output')) {
+      this.$output = doc.createElement('div');
+      this.$output.innerHTML = '';
+      this.$output.classList.add('search-box__output');
+      this.$output.addEventListener('keyup', e => {
+        SearchBox.handleKeyEntry(e, this);
+      });
+      this.$output.addEventListener('click', e => {
+        this.useSuggestion(e.target);
+      });
+      this.$elm.appendChild(this.$output);
+    }
+
     this.keywords = [];
 
     // events
@@ -42,12 +51,6 @@ module.exports = class SearchBox {
       SearchBox.handleKeyEntry(e, this);
     });
     this.$input.addEventListener('paste', this.showResetButton.bind(this));
-    this.$output.addEventListener('keyup', e => {
-      SearchBox.handleKeyEntry(e, this);
-    });
-    this.$output.addEventListener('click', e => {
-      this.useSuggestion(e.target);
-    });
 
     // TODO: Remove this test data when decided how to populate this list of keywords with real data
     SearchBox.setKeywords(['biochemistry', 'biophysics', 'bioluminescence', 'biography'], this);
@@ -58,7 +61,11 @@ module.exports = class SearchBox {
    */
   reset() {
     this.hideResetButton();
-    this.$output.innerHTML = '';
+    if (this.$output) {
+      this.$output.innerHTML = '';
+    }
+
+    this.$input.focus();
   }
 
   /**
@@ -102,7 +109,7 @@ module.exports = class SearchBox {
         break;
       default:
         searchBox.display(searchBox.filterKeywordsBySearchTerm(SearchBox.getKeywords(searchBox),
-                                                               searchBox.$input.value), searchBox);
+                                                       searchBox.$input.value), searchBox.$output);
         if (searchBox.$input.value.length > 0) {
           searchBox.showResetButton();
         } else {
@@ -122,6 +129,10 @@ module.exports = class SearchBox {
    * @param {HTMLElement} current The search suggestion or input field currently with focus
    */
   nextSuggestion(current) {
+    if (!this.$output) {
+      return;
+    }
+
     if (current === this.$input) {
       this.$output.querySelector('ul li:first-child').focus();
     } else if (!!current.nextElementSibling) {
@@ -139,6 +150,10 @@ module.exports = class SearchBox {
    * @param {HTMLElement} current The search suggestion or input field currently with focus
    */
   prevSuggestion(current) {
+    if (!this.$output) {
+      return;
+    }
+
     if (current === this.$input) {
       this.$output.querySelector('ul li:last-child').focus();
     } else if (!!current.previousElementSibling) {
@@ -155,8 +170,12 @@ module.exports = class SearchBox {
    */
   useSuggestion(target) {
     this.$input.value = target.innerHTML.replace(/<\/?strong>/g, '');
-    this.$output.innerHTML = '';
-    this.$searchButton.focus();
+    if (this.$output) {
+      this.$output.innerHTML = '';
+      if (this.$input.value.length) {
+        this.$searchButton.focus();
+      }
+    }
   }
 
   /**
@@ -187,7 +206,10 @@ module.exports = class SearchBox {
   filterKeywordsBySearchTerm(keywords, searchTerm) {
     let matches;
     if (searchTerm) {
-      matches = (keywords.filter(keyword => keyword.indexOf(searchTerm) !== -1)).sort();
+      matches = keywords.filter(keyword => keyword.toLowerCase().indexOf(
+                                                                  searchTerm.toLowerCase()) !== -1);
+
+      matches.sort();
       for (let i = 0; i < matches.length; i += 1) {
         matches[i] = SearchBox.embolden(matches[i], searchTerm);
       }
@@ -197,40 +219,57 @@ module.exports = class SearchBox {
   }
 
   /**
-   * Returns phrase with specified snipped emboldened.
+   * Returns phrase with specified (case insensitive) snippet emboldened.
    *
    * @param {string} phrase The phrase containing the text to embolden
-   * @param {string} snippet The exact text to embolden
+   * @param {string} snippet The substring of phrase to embolden
    * @returns {string} The phrase with the snippet emboldened
    */
   static embolden(phrase, snippet) {
-
     // Don't nest emboldening elements.
     if (snippet.indexOf('<strong>') > -1) {
       return phrase;
     }
 
-    return phrase.replace(snippet, `<strong>${snippet}</strong>`);
+    let snippetRx = new RegExp(snippet, 'i');
+    let toEmbolden = phrase.match(snippetRx) ? phrase.match(snippetRx)[0] : null;
+    if (!toEmbolden) {
+      return phrase;
+    }
+
+    return phrase.replace(toEmbolden, `<strong>${toEmbolden}</strong>`);
   }
 
   /**
    * Update the search suggestions based on matches found.
    *
    * @param {Array} matches The matches found
-   * @param {SearchBox} searchBox The injected search box
+   * @param {HTMLElement} $output Element to contain the display
    */
-  display(matches, searchBox) {
+  display(matches, $output) {
     let outputString = '';
-    searchBox.$output.innerHTML = '';
 
-    if (matches && matches.length) {
-      matches.forEach(match => {
-        outputString += `<li tabindex="0">${match}</li>`;
-      });
+    if ($output) {
+      $output.innerHTML = '';
 
-      outputString = `<ul>${outputString}</ul>`;
-      searchBox.$output.innerHTML = outputString;
+      if (matches && matches.length) {
+        matches.forEach(match => {
+          outputString += `<li tabindex="0">${match}</li>`;
+        });
+
+        outputString = `<ul>${outputString}</ul>`;
+        $output.innerHTML = outputString;
+      }
     }
+  }
+
+  /**
+   * Sets the top position of the output block
+   *
+   * @param posnInPx The top position expressed in pixels
+   */
+  setOutputTopPosn(posnInPx) {
+    this.$output.style.top = posnInPx;
   }
 
   /**

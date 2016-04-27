@@ -1,32 +1,39 @@
 'use strict';
-let Components = {};
 
-// import modules into the list of Components.
-Components.AudioPlayer = require('./components/AudioPlayer');
-Components.SearchBox = require('./components/SearchBox');
-Components.ViewerModal = require('./components/ViewerModal');
+// Base level of feature support needed for the js loaded in this file.
+// Consider AJAXing in the rest if the test passes.
+if (window.localStorage && document.querySelector &&
+       window.addEventListener && !!(document.createElement('div')).classList) {
 
-// App
-function Elife() {
+  let Components = {};
 
-  // get all the components on the current page
-  let components = document.querySelectorAll('[data-behaviour]');
+  // import modules into the list of Components.
+  Components.AudioPlayer = require('./components/AudioPlayer');
+  Components.SiteHeader = require('./components/SiteHeader');
+  Components.SearchBox = require('./components/SearchBox');
+  Components.ViewerModal = require('./components/ViewerModal');
 
-  if (components.length) {
+  // App
+  let Elife = function Elife() {
 
-    for (let i = 0; i < components.length; i += 1) {
-      let $elm = components[i];
-      let handler = $elm.getAttribute('data-behaviour');
+    // get all the components on the current page
+    let components = document.querySelectorAll('[data-behaviour]');
 
-      // Is there a handler?
-      // Is it a function?
-      if (Components[handler] && typeof Components[handler] === 'function') {
-        new Components[handler]($elm, window, window.document);
+    if (components.length) {
+
+      for (let i = 0; i < components.length; i += 1) {
+        let $elm = components[i];
+        let handler = $elm.getAttribute('data-behaviour');
+
+        // Is there a handler?
+        // Is it a function?
+        if (Components[handler] && typeof Components[handler] === 'function') {
+          new Components[handler]($elm, window, window.document);
+        }
+
       }
-
     }
-  }
-}
+  };
 
-// run!
-new Elife();
+  new Elife();
+}

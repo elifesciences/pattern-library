@@ -80,6 +80,10 @@ describe('A SearchBox Component', function () {
     expect(searchBox.display).to.be.a('function')
   });
 
+  it('possesses a setOutputTopPosn() method', function() {
+    expect(searchBox.setOutputTopPosn).to.be.a('function')
+  });
+
   describe('its optional search limiter', function() {
 
     let limiter;
@@ -114,8 +118,16 @@ describe('A SearchBox Component', function () {
 
     it('emboldens the expected text', function () {
       let phrase = 'Just the next three words I am bold should be bold.';
+      let snippetToEmbolden = 'I am bold';
       let correctResponse = 'Just the next three words <strong>I am bold</strong> should be bold.';
-      expect(SearchBox.embolden(phrase, 'I am bold')).to.equal(correctResponse);
+      expect(SearchBox.embolden(phrase, snippetToEmbolden)).to.equal(correctResponse);
+    });
+
+    it('ignores the case of the text specfified to be emboldened', function () {
+      let phrase = 'Just the next three words I am bold should be bold.';
+      let snippetToEmbolden = 'I AM BOLD';
+      let correctResponse = 'Just the next three words <strong>I am bold</strong> should be bold.';
+      expect(SearchBox.embolden(phrase, snippetToEmbolden)).to.equal(correctResponse);
     });
 
   });
@@ -246,7 +258,7 @@ describe('A SearchBox Component', function () {
   describe('the display() method', function () {
 
     it('doesn\'t do anything if there are no matches to display', function () {
-      searchBox.display([], searchBoxMock);
+      searchBox.display([], searchBoxMock.$output);
       expect(searchBoxMock.$output.innerHTML).to.equal('');
     });
 
@@ -260,7 +272,7 @@ describe('A SearchBox Component', function () {
       };
 
       let matches = Object.keys(inOut);
-      searchBox.display(matches, searchBoxMock);
+      searchBox.display(matches, searchBoxMock.$output);
       let output = searchBoxMock.$output.innerHTML;
       matches.forEach(match => {
         expect(output.indexOf(inOut[match])).to.be.above(-1);

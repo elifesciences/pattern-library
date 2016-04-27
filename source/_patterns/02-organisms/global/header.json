@@ -124,5 +124,20 @@
         }
       ]
     }
-  ]
+  ],
+
+  "compactForm": {
+    "formAction" : "#",
+    "formId": "searchBox",
+    "formMethod": "GET",
+    "label": "Search by keyword or author",
+    "inputType": "search",
+    "inputName": "search",
+    "inputValue": "",
+    "inputPlaceholder": "Search by keyword or author",
+    "ctaText": "Search"
+  },
+
+  "subjectFilter": "Cell biology"
+
 }

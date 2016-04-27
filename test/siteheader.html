@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+<!--
+  Test output
+-->
+<div id="mocha"></div>
+
+
+
+<!--
+  Fixture
+-->
+<header class="site-header clearfix" data-behaviour="SiteHeader">
+  <h1 class="site-header__title clearfix" role="banner"><a href="#" class="site-header__logo_link"><span class="visuallyhidden" >eLife home page</span></a></h1>
+  <div role="navigation" aria-label="Main navigation">
+    <nav class="nav-secondary">
+      <ul class="nav-secondary__list clearfix">
+        <li class="nav-secondary__item">
+          <a href="#">
+
+            Careers
+          </a>
+        </li>
+        <li class="nav-secondary__item">
+          <a href="#">
+
+            About<span class="visuallyhidden"> eLife</span>
+          </a>
+        </li>
+        <li class="nav-secondary__item">
+          <a href="#">
+
+            Labs
+          </a>
+        </li>
+        <li class="nav-secondary__item nav-secondary__item--button">
+          <!-- Use most appropriate element here: <a> or <button> -->
+          <a href="#" class="button button--default button--extra-small">Submit my research</a>
+        </li>
+        <li class="nav-secondary__item nav-secondary__item--notification">
+          <a href="#">
+            <picture>
+              <source srcset="../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg" type="image/svg+xml" />
+              <img srcset="../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w,
+                           ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w"
+                   src="../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png"
+                   class="nav-secondary__notification-icon"
+                   alt="Notification icon"/>
+            </picture>
+            <span class="visuallyhidden">Alerts</span>
+
+          </a>
+        </li>
+        <li class="nav-secondary__item nav-secondary__item--profile">
+          <a href="#">
+            <picture>
+              <source srcset="../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg" type="image/svg+xml" />
+              <img srcset="../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w,
+                           ../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png 14w"
+                   src="../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png"
+                   class="nav-secondary__profile-icon"
+                   alt="Profile icon"/>
+            </picture>
+            <span class="visuallyhidden">Profile</span>
+
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="nav-primary">
+      <ul class="nav-primary__list clearfix">
+        <li class="nav-primary__item nav-primary__item--first">
+          <a href="#" >
+            <picture>
+              <source srcset="../../assets/img/patterns/molecules/nav-primary-menu-ic.svg" type="image/svg+xml" />
+              <img srcset="../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w,
+                           ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w"
+                   src="../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png"
+                   class="nav-primary__menu_icon"
+                   alt="Menu icon"/>
+            </picture>
+            <span class="nav-primary__menu_text">Menu</span>
+
+          </a>
+        </li>
+        <li class="nav-primary__item">
+          <a href="#" >
+
+            Home
+          </a>
+        </li>
+        <li class="nav-primary__item">
+          <a href="#" >
+
+            Magazine
+          </a>
+        </li>
+        <li class="nav-primary__item nav-primary__item--last">
+          <a href="#" rel="search">
+            <picture>
+              <source srcset="../../assets/img/patterns/molecules/nav-primary-search-ic.svg" type="image/svg+xml" />
+              <img srcset="../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w,
+                           ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w"
+                   src="../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png"
+                   class="nav-primary__search_icon"
+                   alt="Search icon"/>
+            </picture>
+            <span class="visuallyhidden">Search</span>
+
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- This is used without js on the main search page, but js is required for
+        its presence on other pages. -->
+  <div class="search-box" data-behaviour="SearchBox">
+
+
+    <form class="compact-form" id="searchBox" action="#" method="GET">
+      <fieldset class="compact-form__container">
+        <label for="compact-form__input" class="visuallyhidden">Search by keyword or author</label>
+        <input type="search" name="search" value="" placeholder="Search by keyword or author" id="compact-form__input" class="compact-form__input">
+        <label for="reset" class="visuallyhidden">Reset form</label>
+        <button type="reset" name="reset" id="reset" class="compact-form__reset"></button>
+        <button type="submit" name="submit" class="compact-form__submit"><span class="visuallyhidden">Search</span></button>
+      </fieldset>
+    </form>
+
+    <!-- Only applies when on an article belonging to a subject: -->
+    <!-- Note that this could be moved to the behaviour layer as it looks like it's only needed when
+         JavaScript is available. However, the value for subjectFilter needs to come from the server,
+         so keeping it here for now until it's understood how the server -> js communication will
+         work. -->
+    <div class="search-box__search_option">
+      <label class="search-box__search_option_label" for="searchBoxLimit">
+        <input id="searchBoxLimit" type="checkbox" name="limit" value="1" form="searchBox"> Limit my search to <strong>Cell biology</strong>
+      </label>
+    </div>
+
+
+  </div>
+</header>
+
+
+<!--
+  Load test code
+-->
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+<!-- Initialise test suite -->
+<script>mocha.setup('bdd')</script>
+
+<!--
+  Test spec
+-->
+<script src="build/siteheader.spec.js"></script>
+
+<!--
+  Begin!
+-->
+<script>
+  mocha.run();
+</script>
+
+</body>
+</html>
