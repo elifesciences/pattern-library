@@ -1,23 +1,25 @@
 
+<!-- This is used without js on the main search page, but js is required for
+      its presence on other pages. -->
 <div class="search-box" data-behaviour="SearchBox">
 
-  <form class="compact-form" action="#" method="post">
+  {{#compactForm}}
 
-    <fieldset class="compact-form__container">
-      <label for="compact-form__input" class="visuallyhidden">Search by keyword or author</label>
+    {{>molecules-compact-form}}
 
-      <input type="search" name="email" value="" id="compact-form__input" class="compact-form__input" placeholder="Search by keyword or author">
+    <!-- Only applies when on an article belonging to a subject: -->
+    <!-- Note that this could be moved to the behaviour layer as it looks like it's only needed when
+         JavaScript is available. However, the value for subjectFilter needs to come from the server,
+         so keeping it here for now until it's understood how the server -> js communication will
+         work. -->
+    {{#subjectFilter}}
+      <div class="search-box__search_option">
+        <label class="search-box__search_option_label" for="limit">
+          <input id="limit" type="checkbox" name="limit" value="1" form="{{formId}}"> Limit my search to <strong>{{subjectFilter}}</strong>
+        </label>
+      </div>
+    {{/subjectFilter}}
 
-      <button type="submit" name="submit" class="compact-form__submit"><span class="visuallyhidden">Go</span></button>
-
-    </fieldset>
-
-    <div class="search-box__search_option">
-      <label class="search-box__search_option_label">
-        <input type="checkbox" name="limit" value="1"> Limit my search to <strong>Cell Biology</strong>
-      </label>
-    </div>
-
-  </form>
+  {{/compactForm}}
 
 </div>

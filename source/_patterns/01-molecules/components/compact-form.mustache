@@ -1,8 +1,9 @@
-
-<form class="compact-form" id="{{formId}}" action="{{formAction}}" method="post">
+<form class="compact-form" id="{{formId}}" action="{{formAction}}" method="{{formMethod}}">
   <fieldset class="compact-form__container">
     <label for="compact-form__input" class="visuallyhidden">{{label}}</label>
     <input type="{{inputType}}" name="{{inputName}}" value="{{inputValue}}" placeholder="{{inputPlaceholder}}" id="compact-form__input" class="compact-form__input">
+    <label for="reset" class="visuallyhidden">Reset form</label>
+    <button type="reset" name="reset" id="reset" class="compact-form__reset"></button>
     <button type="submit" name="submit" class="compact-form__submit"><span class="visuallyhidden">{{ctaText}}</span></button>
   </fieldset>
 </form>

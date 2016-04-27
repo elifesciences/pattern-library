@@ -1,99 +1,243 @@
-
-// temp array for keywords and authors
-let keywords = ['keywords', 'authors'];
+'use strict';
 
 module.exports = class SearchBox {
 
-  constructor($elm) {
+  // Passing window and document separately allows for independent mocking of window in order
+  // to test feature support fallbacks etc.
+  constructor($elm, _window = window, doc = document) {
     if (!$elm) {
-      console.warn('No element provided');
       return;
-    } else {
-      console.log('Initialising SearchBox...');
     }
 
     this.$container = $elm.querySelector('fieldset');
     this.$form = $elm.querySelector('form');
     this.$input = $elm.querySelector('input[type="search"]');
     this.$limit = $elm.querySelector('input[type="checkbox"]');
+    this.$elm = $elm;
+    this.$searchButton = $elm.querySelector('button[type="submit"]');
+    this.$resetButton = $elm.querySelector('button[type="reset"]');
 
-    // check there's even a search input field for us to use,
-    // otherwise everything else is pointless.
-    // console warn outta here so that errors don't prevent other scripts from running.
+    // Check there's a search input field, if not everything else is pointless.
     if (!this.$input) {
-      console.warn('Could not find an input for the SearchBox');
       return;
     }
 
-    this.matchesFound = [];
-    this.searchLimited = this.$limit && this.$limit.checked;
+    // TODO: Remove if not ultimately useful.
+    this.isSearchLimited = this.$limit && this.$limit.checked;
+
+    this.$elm.classList.add('search-box--js');
 
     // setup
     this.$form.setAttribute('autocomplete', 'off');
 
-    this.$output = document.createElement('div');
+    this.$output = doc.createElement('div');
     this.$output.classList.add('search-box__output');
-    this.$output.style.top = window.getComputedStyle(this.$input).height;
-    this.$container.appendChild(this.$output);
+    this.$output.style.top = _window.getComputedStyle(this.$container).height;
+    this.$elm.appendChild(this.$output);
+    this.keywords = [];
 
     // events
-    this.$input.addEventListener('keyup', this.filter.bind(this));
+    this.$resetButton.addEventListener('click', this.reset.bind(this));
+    this.$input.addEventListener('keyup', e => {
+      SearchBox.handleKeyEntry(e, this);
+    });
+    this.$input.addEventListener('paste', this.showResetButton.bind(this));
+    this.$output.addEventListener('keyup', e => {
+      SearchBox.handleKeyEntry(e, this);
+    });
+    this.$output.addEventListener('click', e => {
+      this.useSuggestion(e.target);
+    });
+
+    // TODO: Remove this test data when decided how to populate this list of keywords with real data
+    SearchBox.setKeywords(['biochemistry', 'biophysics', 'bioluminescence', 'biography'], this);
   }
 
   /**
-    filter()
-  */
-  filter(e) {
-    e.preventDefault();
+   * Handles the reset button being pressed.
+   */
+  reset() {
+    this.hideResetButton();
+    this.$output.innerHTML = '';
+  }
 
-    console.log('filtering keywords...');
+  /**
+   * Hides the reset button.
+   */
+  hideResetButton() {
+    this.$elm.classList.remove('search-box--populated');
+  }
 
-    let entry = this.$input.value;
+  /**
+   * Shows the reset button.
+   */
+  showResetButton() {
+    this.$elm.classList.add('search-box--populated');
+  }
 
-    this.matchesFound = [];
+  /**
+   * Responds to the keyCode of a KeyboardEvent (used on the input field and suggestions).
+   *
+   * Takes care not to trap the tab character. Accessibility!
+   * Down arrow (keyCode 40): go to the next suggestion.
+   * Up arrow (keyCode 38): go to the previous suggestion.
+   * Return (keyCode 13): put the text of the current suggestion into the search box
+   * Any other key: use it to filter keywords; also show/hide reset button.
+   *
+   * @param {KeyboardEvent} e The event to respond to
+   * @param {SearchBox} searchBox Calling object (injected to make method more testable)
+   */
+  static handleKeyEntry(e, searchBox) {
+    let current = e.target;
+    if (e.keyCode && e.keyCode !== 9) {
+      switch (e.keyCode) {
+      case 40:
+        searchBox.nextSuggestion(current);
+        break;
+      case 38:
+        searchBox.prevSuggestion(current);
+        break;
+      case 13:
+        searchBox.useSuggestion(current);
+        break;
+      default:
+        searchBox.display(searchBox.filterKeywordsBySearchTerm(SearchBox.getKeywords(searchBox),
+                                                               searchBox.$input.value), searchBox);
+        if (searchBox.$input.value.length > 0) {
+          searchBox.showResetButton();
+        } else {
+          searchBox.hideResetButton();
+        }
 
-    if (entry != '') {
-
-      // filter the list
-      this.matchesFound = keywords.filter(keyword => keyword.indexOf(entry) != -1);
-
-      // sort the final list alphabetically
-      this.matchesFound.sort();
-
-      // bold the relevant characters of the word
-      for (var i = 0; i < this.matchesFound.length; i++) {
-        this.matchesFound[i] = this.bolden(this.matchesFound[i], entry);
+        break;
       }
+    }
+  }
 
-      // can we do all the above in one fell swoop? (probably)
+  /**
+   * Selects the search suggestion element after the current one.
+   *
+   * If already on the last one, loop to the beginning and select the input field.
+   *
+   * @param {HTMLElement} current The search suggestion or input field currently with focus
+   */
+  nextSuggestion(current) {
+    if (current === this.$input) {
+      this.$output.querySelector('ul li:first-child').focus();
+    } else if (!!current.nextElementSibling) {
+      current.nextElementSibling.focus();
+    } else {
+      this.$input.focus();
+    }
+  }
+
+  /**
+   * Selects the search suggestion element before the current one.
+   *
+   * If already on the input field, loop to the end and select the last one.
+   *
+   * @param {HTMLElement} current The search suggestion or input field currently with focus
+   */
+  prevSuggestion(current) {
+    if (current === this.$input) {
+      this.$output.querySelector('ul li:last-child').focus();
+    } else if (!!current.previousElementSibling) {
+      current.previousElementSibling.focus();
+    } else {
+      this.$input.focus();
+    }
+  }
+
+  /**
+   * Copy the display text of the current suggestion into the search field.
+   *
+   * @param {HTMLElement} target The element containing the text to use
+   */
+  useSuggestion(target) {
+    this.$input.value = target.innerHTML.replace(/<\/?strong>/g, '');
+    this.$output.innerHTML = '';
+    this.$searchButton.focus();
+  }
+
+  /**
+   * Gets the keywords for the supplied searchBox.
+   *
+   * @param {SearchBox} searchBox The injected search box
+   */
+  static getKeywords(searchBox) {
+    return searchBox.keywords;
+  }
+
+  /**
+   * Sets the keywords for the supplied searchBox.
+   *
+   * @param {Array} keywords The keywords for the searchBox
+   * @param {SearchBox} searchBox The injected search box
+   */
+  static setKeywords(keywords, searchBox) {
+    searchBox.keywords = keywords;
+  }
+
+  /**
+   * Filter keywords by the contents of the search field.
+   *
+   * @param {string} searchTerm The search term to filter the keywords by
+   * @param {Array} keywords The keywords to filter
+   */
+  filterKeywordsBySearchTerm(keywords, searchTerm) {
+    let matches;
+    if (searchTerm) {
+      matches = (keywords.filter(keyword => keyword.indexOf(searchTerm) !== -1)).sort();
+      for (let i = 0; i < matches.length; i += 1) {
+        matches[i] = SearchBox.embolden(matches[i], searchTerm);
+      }
     }
 
-    this.display();
+    return matches;
   }
 
   /**
-    bolden()
-  */
-  bolden(word, snippet) {
-    return word.replace(snippet, `<strong>${snippet}</strong>`);
+   * Returns phrase with specified snipped emboldened.
+   *
+   * @param {string} phrase The phrase containing the text to embolden
+   * @param {string} snippet The exact text to embolden
+   * @returns {string} The phrase with the snippet emboldened
+   */
+  static embolden(phrase, snippet) {
+
+    // Don't nest emboldening elements.
+    if (snippet.indexOf('<strong>') > -1) {
+      return phrase;
+    }
+
+    return phrase.replace(snippet, `<strong>${snippet}</strong>`);
   }
 
   /**
-    display()
-  */
-  display() {
+   * Update the search suggestions based on matches found.
+   *
+   * @param {Array} matches The matches found
+   * @param {SearchBox} searchBox The injected search box
+   */
+  display(matches, searchBox) {
     let outputString = '';
+    searchBox.$output.innerHTML = '';
 
-    if (this.matchesFound.length) {
-      this.matchesFound.forEach(v => {
-        outputString += `<li>${v}</li>`;
+    if (matches && matches.length) {
+      matches.forEach(match => {
+        outputString += `<li tabindex="0">${match}</li>`;
       });
 
       outputString = `<ul>${outputString}</ul>`;
-      this.$output.innerHTML = outputString;
-    } else {
-      this.$output.innerHTML = '';
+      searchBox.$output.innerHTML = outputString;
     }
+  }
+
+  /**
+   * Toggle the flag that limits the search.
+   */
+  toggleSearchLimiting() {
+    this.isSearchLimited = !this.isSearchLimited;
   }
 
 };
