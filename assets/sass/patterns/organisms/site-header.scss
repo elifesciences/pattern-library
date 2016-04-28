@@ -1,7 +1,23 @@
 .site-header {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
-  min-width: #{get-rem-from-px(275)}rem;
   border-bottom: 1px solid $color-text-dividers;
+  min-width: #{get-rem-from-px(275)}rem;
+  position: relative;
+
+  .search-box {
+    display: none;
+  }
+
+  .search-box.search-box--js {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    display: block;
+    position: absolute;
+    top: 0;
+    transition: transform 150ms;
+    width: 100%;
+    z-index: -1;
+  }
+
 }
 
 .site-header__title {
@@ -30,6 +46,10 @@
   height: 27px;
   margin: 7px 6px 0 6px;
   width: 27px;
+}
+
+.site-header__navigation {
+  background-color: #fff;
 }
 
 @media only all and (min-width: #{get-rem-from-px(550)}em) {
@@ -68,5 +88,4 @@
     width: 92px;
     z-index: 10;
   }
-
 }

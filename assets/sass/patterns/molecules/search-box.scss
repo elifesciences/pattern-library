@@ -66,4 +66,5 @@
 .search-box__search_option {
   font-family: $font-secondary;
   @include font-size(14);
+  @include padding(10, "bottom");
 }

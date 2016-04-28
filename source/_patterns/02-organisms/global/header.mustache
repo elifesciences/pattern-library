@@ -1,7 +1,8 @@
-<header class="site-header clearfix">
+<header class="site-header clearfix" data-behaviour="SiteHeader">
   <h1 class="site-header__title clearfix" role="banner"><a href="#" class="site-header__logo_link"><span class="visuallyhidden" >eLife home page</span></a></h1>
-  <div role="navigation" aria-label="Main navigation">
+  <div class="site-header__navigation" role="navigation" aria-label="Main navigation">
     {{> molecules-nav-secondary }}
     {{> molecules-nav-primary }}
   </div>
+  {{> molecules-search-box}}
 </header>
