@@ -101,9 +101,33 @@ module.exports = () => {
     return new UniqueIdentifiers();
   }());
 
+  /**
+   * Updates the CSS transform's translate function on the element in a vendor-prefix-aware fashion.
+   *
+   * Because of the way CSS transformations are combined into a matrix, this may not work
+   * as expected if other CSS transformations are also applied to the same element.
+   *
+   * @param {HTMLElement} $el The element to apply the transformation to.
+   * @param {Array} offset The offset for both axes, expressed as [x, y]
+   */
+  function updateElementTranslate($el, offset) {
+    if (!($el instanceof HTMLElement && Array.isArray(offset))) {
+      return;
+    }
+
+    let props = ['webkitTransform', 'mozTransform', 'msTransform', 'oTransform', 'transform'];
+    let offsetX = offset[0];
+    let offsetY = offset[1] || 0;
+
+    props.forEach((prop) => {
+      $el.style[prop] = 'translate(' + offsetX + ', ' + offsetY + ')';
+    });
+  }
+
   return {
     buildElement: buildElement,
     uniqueIds: uniqueIds,
+    updateElementTranslate: updateElementTranslate,
   };
 
 };
