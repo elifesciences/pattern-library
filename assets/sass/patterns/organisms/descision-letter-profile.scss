@@ -1,0 +1,9 @@
+.decision-letter-profile__main_text a {
+  color: $color-primary;
+  text-decoration: none;
+}
+
+.decision-letter-profile__main_text a:hover,
+.decision-letter-profile__main_text a:active {
+  color: $color-primary-dark;
+}
