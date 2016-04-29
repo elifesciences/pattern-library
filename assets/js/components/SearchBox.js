@@ -53,7 +53,7 @@ module.exports = class SearchBox {
     this.$input.addEventListener('paste', this.showResetButton.bind(this));
 
     // TODO: Remove this test data when decided how to populate this list of keywords with real data
-    SearchBox.setKeywords(['biochemistry', 'biophysics', 'bioluminescence', 'biography'], this);
+    SearchBox.setKeywords(['Xiao-Dong Li', 'Zhijian J Chen', 'Cell biology', 'Immunology', 'bacteria'], this);
   }
 
   /**
@@ -173,7 +173,7 @@ module.exports = class SearchBox {
     if (this.$output) {
       this.$output.innerHTML = '';
       if (this.$input.value.length) {
-        this.$searchButton.focus();
+        this.$form.submit();
       }
     }
   }
