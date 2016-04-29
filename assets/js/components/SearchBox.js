@@ -53,7 +53,10 @@ module.exports = class SearchBox {
     this.$input.addEventListener('paste', this.showResetButton.bind(this));
 
     // TODO: Remove this test data when decided how to populate this list of keywords with real data
-    SearchBox.setKeywords(['Xiao-Dong Li', 'Zhijian J Chen', 'Cell biology', 'Immunology', 'bacteria'], this);
+    SearchBox.setKeywords([
+                            'Xiao-Dong Li', 'Zhijian J Chen', 'Cell biology',
+                           'Immunology', 'bacteria',
+                          ], this);
   }
 
   /**
