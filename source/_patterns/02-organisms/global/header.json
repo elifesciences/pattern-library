@@ -127,7 +127,7 @@
   ],
 
   "compactForm": {
-    "formAction" : "#",
+    "formAction" : "/search",
     "formId": "searchBox",
     "formMethod": "GET",
     "label": "Search by keyword or author",
