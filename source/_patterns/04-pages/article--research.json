@@ -1,130 +1,147 @@
 {
-  "navPrimaryLinks": [
-    {
-      "text": "Menu",
-      "variant": "first",
-      "textClasses": "nav-primary__menu_text",
-      "path": "#",
-      "alt": "Menu icon",
-      "imgs": [
-        {
-        "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg",
-        "classes": "nav-primary__menu_icon",
-        "hires": {
-          "path": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png",
-          "width": "48w"
-        },
-        "lores": {
-          "path": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-          "width": "24w"
+  "siteHeader": {
+    "navPrimaryLinks": [
+      {
+        "text": "Menu",
+        "variant": "first",
+        "textClasses": "nav-primary__menu_text",
+        "path": "#",
+        "alt": "Menu icon",
+        "imgs": [
+          {
+            "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg",
+            "classes": "nav-primary__menu_icon",
+            "hires": {
+              "path": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png",
+              "width": "48w"
+            },
+            "lores": {
+              "path": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "width": "24w"
+            }
           }
-        }
-      ]
-    },
+        ]
+      },
 
-    {
-      "text": "Home",
-      "path": "#"
-    },
+      {
+        "text": "Home",
+        "path": "#"
+      },
 
-    {
-      "text": "Magazine",
-      "path": "#"
-    },
+      {
+        "text": "Magazine",
+        "path": "#"
+      },
 
-    {
-      "text": "Search",
-      "rel": "search",
-      "variant": "last",
-      "textClasses": "visuallyhidden",
-      "path": "#",
-      "alt": "Search icon",
-      "imgs": [
-        {
-          "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg",
-          "classes": "nav-primary__search_icon",
-          "hires": {
-            "path": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png",
-            "width": "48w"
-          },
-          "lores": {
-            "path": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-            "width": "24w"
+      {
+        "text": "Search",
+        "rel": "search",
+        "variant": "last",
+        "textClasses": "visuallyhidden",
+        "path": "#",
+        "alt": "Search icon",
+        "imgs": [
+          {
+            "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg",
+            "classes": "nav-primary__search_icon",
+            "hires": {
+              "path": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png",
+              "width": "48w"
+            },
+            "lores": {
+              "path": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "width": "24w"
+            }
           }
-        }
-      ]
-    }
-  ],
+        ]
+      }
+    ],
 
-  "navSecondaryLinks": [
-    {
-      "text": "Careers",
-      "path": "#"
-    },
+    "navSecondaryLinks": [
+      {
+        "text": "Careers",
+        "path": "#"
+      },
 
-    {
-      "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-      "path": "#"
-    },
+      {
+        "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+        "path": "#"
+      },
 
-    {
-      "text": "Labs",
-      "path": "#"
-    },
+      {
+        "text": "Labs",
+        "path": "#"
+      },
 
-    {
-      "text": "Submit my research",
-      "path": "#",
-      "isButtonLike": true,
-      "variant": "button",
-      "buttonText": "Submit my research"
-    },
+      {
+        "text": "Submit my research",
+        "path": "#",
+        "isButtonLike": true,
+        "variant": "button",
+        "buttonText": "Submit my research"
+      },
 
-    {
-      "text": "Alerts",
-      "variant": "notification",
-      "textClasses": "visuallyhidden",
-      "path": "#",
-      "alt": "Notification icon",
-      "imgs": [
-        {
-          "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg",
-          "classes": "nav-secondary__notification-icon",
-          "hires": {
-            "path": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png",
-            "width": "28w"
-          },
-          "lores": {
-            "path": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-            "width": "14w"
+      {
+        "text": "Alerts",
+        "variant": "notification",
+        "textClasses": "visuallyhidden",
+        "path": "#",
+        "alt": "Notification icon",
+        "imgs": [
+          {
+            "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg",
+            "classes": "nav-secondary__notification-icon",
+            "hires": {
+              "path": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png",
+              "width": "28w"
+            },
+            "lores": {
+              "path": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+              "width": "14w"
+            }
+
           }
+        ]
+      },
 
-        }
-      ]
+      {
+        "text": "Profile",
+        "variant": "profile",
+        "textClasses": "visuallyhidden",
+        "path": "#",
+        "alt": "Profile icon",
+        "imgs": [
+          {
+            "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg",
+            "classes": "nav-secondary__profile-icon",
+            "hires": {
+              "path": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png",
+              "width": "28w"
+            },
+            "lores": {
+              "path": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
+              "width": "14w"
+            }
+          }
+        ]
+      }
+    ],
+
+    "compactForm": {
+      "formAction" : "/search",
+      "formId": "searchBox",
+      "formMethod": "GET",
+      "label": "Search by keyword or author",
+      "inputType": "search",
+      "inputName": "search",
+      "inputValue": "",
+      "inputPlaceholder": "Search by keyword or author",
+      "ctaText": "Search"
     },
 
-    {
-      "text": "Profile",
-      "variant": "profile",
-      "textClasses": "visuallyhidden",
-      "path": "#",
-      "alt": "Profile icon",
-      "imgs": [
-        {
-        "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg",
-          "classes": "nav-secondary__profile-icon",
-          "hires": {
-          "path": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png",
-            "width": "28w"
-          },
-          "lores": {
-          "path": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
-            "width": "14w"
-          }
-        }
-      ]
-    }
-  ],
+    "subjectFilter": "Cell biology"
+
+  },
 
   "contentHeaderArticle": {
 
@@ -136,9 +153,8 @@
 
     "dateText": "Sept 10, 2015",
     "dateValue": "2015-09-10",
-
+    "firstAuthor": "Lee R Berger",
     "authors": [
-      {"name": "Lee R Berger"},
       {"name": "John Hawks"},
       {"name": "Darryl J de Ruiter"},
       {"name": "Steven E Churchill"},
@@ -185,7 +201,7 @@
       {"name": "Pianpian Wei"}
     ],
     "lastAuthor": "Bernhard Zipfel",
-
+    "etal": true,
     "institutions" : [
       {"name": "University of the Witwatersrand, South Africa"},
       {"name": "University of Wisconsin-Madison, United States"},
@@ -238,6 +254,13 @@
         "bitmap": "../../assets/img/icons/download-1x.png",
         "bitmapFull": "../../assets/img/icons/download-full-1x.png"
       }
+    },
+
+    "meta": {
+      "typeLink": "#",
+      "type": "Research article",
+      "dateTime": "2016-02-29",
+      "dateString": "Feb 29, 2016"
     }
 
   },

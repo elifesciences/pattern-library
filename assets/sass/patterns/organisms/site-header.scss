@@ -5,19 +5,34 @@
   position: relative;
 
   .search-box {
+    background-color: #fff;
     display: none;
+
+    &.search-box--js {
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+      display: block;
+      position: absolute;
+      top: 0;
+      transition: transform 150ms;
+      width: 100%;
+      z-index: -1;
+
+      &.search-box--shown {
+        z-index: 5;
+      }
+    }
   }
 
-  .search-box.search-box--js {
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
-    display: block;
-    position: absolute;
-    top: 0;
-    transition: transform 150ms;
-    width: 100%;
-    z-index: -1;
-  }
+}
 
+.search-box__output {
+  background-color: #fff;
+  z-index: 10;
+}
+
+.search-box__search_option {
+  position: relative;
+  z-index: 5;
 }
 
 .site-header__title {

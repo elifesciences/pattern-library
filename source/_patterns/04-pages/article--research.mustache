@@ -1,12 +1,15 @@
-
-  {{> organisms-header }}
+  {{#siteHeader}}
+    {{> organisms-header }}
+  {{/siteHeader}}
 
   <main role="main">
 
     <article class="article">
 
       <div class="wrapper">
-        {{> organisms-content-header-article-research }}
+        {{#contentHeaderArticle}}
+          {{> organisms-content-header-article-research("hasInstitutions": "true")}}
+        {{/contentHeaderArticle}}
       </div>
 
       <div class="wrapper">
