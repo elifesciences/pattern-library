@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+    <!--
+      Test output
+    -->
+    <div id="mocha"></div>
+
+    <!--
+      Fixture
+    -->
+
+
+    <div class="main-menu" id="mainMenu" data-behaviour="MainMenu">
+      <nav class="main-menu__container" role="navigation">
+        <div class="main-menu__section">
+          <h4 class="main-menu__title" id="mainMenuSubjects">Subjects</h4>
+          <ul class="main-menu__list" aria-labelledby="mainMenuSubjects">
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Biochemistry</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Biophysics and Structural Biology</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Cancer Biology</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Cell Biology</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Computational and Systems Biology</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Developmental Biology and Stem Cells</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Ecology</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Epidemiology and Global Health</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Genes and Chromosomes</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Genomics and Evolutionary Biology</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Human Biology and Medicine</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Immunology</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Microbiology and Infectious Disease</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Neuroscience</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Plant Biology</a>
+            </li>
+          </ul>
+        </div>
+        <div class="main-menu__section">
+          <h4 class="main-menu__title" id="mainMenuElife">eLife</h4>
+          <ul class="main-menu__list" aria-labelledby="mainMenuElife">
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">How to publish</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">About</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Who we work with</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Alerts</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Contact</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Terms and policy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="main-menu__section">
+          <h4 class="main-menu__title" id="mainMenuResources">Resources</h4>
+          <ul class="main-menu__list" aria-labelledby="mainMenuResources">
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Inside eLife</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Monthly archive</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Labs</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">For the press</a>
+            </li>
+            <li class="main-menu__list_item">
+              <a href="#" class="main-menu__list_link">Brand</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <a href="#siteHeader" class="main_menu__quit">Back to top</a>
+    </div>
+
+
+    <!--
+      Load test code
+    -->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
+
+    <!--
+      Test spec
+    -->
+    <script src="build/mainmenu.spec.js"></script>
+
+    <!--
+      Begin!
+    -->
+    <script>
+      mocha.run();
+    </script>
+
+</body>
+</html>

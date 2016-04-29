@@ -1,5 +1,6 @@
+// TODO: review typography and what is this variable below doing here?
 
-$max-width: 1114;
+//$max-width: 1114;
 
 .main-menu {
   background-color: $color-text-ui-background--reverse;
@@ -7,7 +8,7 @@ $max-width: 1114;
 }
 
 .main-menu__container {
-  @include padding(27 20 0);
+  @include padding(28 24 0);
 }
 
 .main-menu__section {
@@ -15,8 +16,7 @@ $max-width: 1114;
 }
 
 .main-menu__title {
-  @include font-size(14);
-  font-weight: 600;
+  @include section-title-typeg();
   margin: 0;
   @include padding(0 0 5 0);
   text-transform: uppercase;
@@ -29,9 +29,7 @@ $max-width: 1114;
 }
 
 .main-menu__list_item {
-  font-family: $font-secondary;
-  @include font-size(14);
-  font-weight: 500;
+  @include nav-page-typeg();
   margin: 0;
   @include padding(5 0);
 }
@@ -41,13 +39,68 @@ $max-width: 1114;
   text-decoration: none;
 }
 
+.main_menu__quit {
+  background-color: $color-text-ui-background--reverse;
+  color: $color-text-ui-background;
+  @include nav-page-typeg();
+  display: block;
+  //float: right;
+  @include padding(15, "bottom");
+  @include padding(24, "right");
+  text-align: right;
+  text-decoration: none;
+  width: 100%;
+}
+
+.main-menu--js {
+  display: none;
+
+  .main-menu__section {
+    display: block;
+  }
+
+  .main-menu__container {
+    display: block;
+  }
+
+  .main-menu__title {
+    @include padding(32 0 16 0);
+  }
+
+  .main-menu__section:first-child .main-menu__title {
+    padding-top: 0;
+  }
+
+  &.main-menu--shown {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    display: block;
+    float: left;
+    left: -330px;
+    max-height: 100vh;
+    max-width: #{get-rem-from-px(330)}rem;
+    overflow: auto;
+    position: fixed;
+    transform: translate3d(330px, 0, 0);
+
+    & + .global-inner {
+      float: left;
+      transform: translate3d(302px, 0, 0);
+      width: calc(100% - 330px);
+    }
+  }
+
+  .main_menu__quit {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: #{get-rem-from-px(680)}rem) {
   .main-menu__container {
     display: table;
     display: flex;
-    width: 100%;
-    max-width: #{get-rem-from-px($max-site-width)}rem;
     margin: auto;
+    max-width: #{get-rem-from-px($max-site-width)}rem;
+    width: 100%;
   }
 
   .main-menu__section {

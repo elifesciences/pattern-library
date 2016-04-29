@@ -66,7 +66,7 @@ gulp.task('sass', ['sass:lint'], () => {
 
       // autoprefix
       .pipe(autoprefixer({
-        browsers: ['ie >= 9', 'Firefox ESR', 'Opera 12.1']
+        browsers: ['ie >= 9', 'Firefox ESR', 'Opera 12.1', 'last 3 Safari versions']
       }))
 
       // create sourcemap
