@@ -48,7 +48,7 @@ module.exports = class SiteHeader {
    */
   closeSearchBox() {
     this.searchBox.$elm.classList.remove('search-box--shown');
-    this.searchBox.$elm.style.transform = '';
+    utils.updateElementTranslate(this.searchBox.$elm, [0, 0]);
     if (this.searchBox.$output) {
       this.searchBox.$output.innerHTML = '';
     }
