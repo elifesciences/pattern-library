@@ -1,7 +1,10 @@
 .nav-primary {
+  background-color: #fff;
   border-top: 1px solid $color-text-dividers;
   clear: right;
   @include padding(0 5);
+  position: relative;
+  z-index: 10;
 }
 
 .nav-primary__list {
