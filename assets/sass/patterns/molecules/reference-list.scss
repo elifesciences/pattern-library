@@ -8,6 +8,7 @@
 .reference-list__item {
   @include margin(10, "bottom");
   @include padding(0 0 0 44);
+  line-height: 1;
   position: relative;
 }
 
