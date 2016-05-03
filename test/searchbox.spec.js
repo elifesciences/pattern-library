@@ -80,8 +80,8 @@ describe('A SearchBox Component', function () {
     expect(searchBox.display).to.be.a('function')
   });
 
-  it('possesses a setOutputTopPosn() method', function() {
-    expect(searchBox.setOutputTopPosn).to.be.a('function')
+  it('possesses a nudgeOutputVertically() method', function() {
+    expect(searchBox.nudgeOutputVertically).to.be.a('function')
   });
 
   describe('its optional search limiter', function() {
@@ -265,10 +265,10 @@ describe('A SearchBox Component', function () {
     it('holds any matches as in an unordered list', function() {
 
       let inOut = {
-        'cell biology': '<li tabindex="0">cell biology</li>',
-        'cell signalling': '<li tabindex="0">cell signalling</li>',
-        'cellular differentiation': '<li tabindex="0">cellular differentiation</li>',
-        'cellular growth': '<li tabindex="0">cellular growth</li>'
+        'cell biology': '<li tabindex="0" class="search-box__suggestion">cell biology</li>',
+        'cell signalling': '<li tabindex="0" class="search-box__suggestion">cell signalling</li>',
+        'cellular differentiation': '<li tabindex="0" class="search-box__suggestion">cellular differentiation</li>',
+        'cellular growth': '<li tabindex="0" class="search-box__suggestion">cellular growth</li>'
       };
 
       let matches = Object.keys(inOut);

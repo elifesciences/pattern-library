@@ -23,7 +23,7 @@
 -->
 <header class="site-header clearfix" data-behaviour="SiteHeader">
   <h1 class="site-header__title clearfix" role="banner"><a href="#" class="site-header__logo_link"><span class="visuallyhidden" >eLife home page</span></a></h1>
-  <div role="navigation" aria-label="Main navigation">
+  <div class="site-header__navigation" role="navigation" aria-label="Main navigation">
     <nav class="nav-secondary">
       <ul class="nav-secondary__list clearfix">
         <li class="nav-secondary__item">
@@ -51,10 +51,10 @@
         <li class="nav-secondary__item nav-secondary__item--notification">
           <a href="#">
             <picture>
-              <source srcset="../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg" type="image/svg+xml" />
-              <img srcset="../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w,
-                           ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w"
-                   src="../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png"
+              <source srcset="../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg" type="image/svg+xml" />
+              <img srcset="../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w,
+                           ../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w"
+                   src="../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png"
                    class="nav-secondary__notification-icon"
                    alt="Notification icon"/>
             </picture>
@@ -65,10 +65,10 @@
         <li class="nav-secondary__item nav-secondary__item--profile">
           <a href="#">
             <picture>
-              <source srcset="../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg" type="image/svg+xml" />
-              <img srcset="../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w,
-                           ../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png 14w"
-                   src="../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png"
+              <source srcset="../assets/img/patterns/molecules/nav-secondary-profile-ic.svg" type="image/svg+xml" />
+              <img srcset="../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w,
+                           ../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png 14w"
+                   src="../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png"
                    class="nav-secondary__profile-icon"
                    alt="Profile icon"/>
             </picture>
@@ -83,10 +83,10 @@
         <li class="nav-primary__item nav-primary__item--first">
           <a href="#" >
             <picture>
-              <source srcset="../../assets/img/patterns/molecules/nav-primary-menu-ic.svg" type="image/svg+xml" />
-              <img srcset="../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w,
-                           ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w"
-                   src="../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png"
+              <source srcset="../assets/img/patterns/molecules/nav-primary-menu-ic.svg" type="image/svg+xml" />
+              <img srcset="../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w,
+                           ../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w"
+                   src="../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png"
                    class="nav-primary__menu_icon"
                    alt="Menu icon"/>
             </picture>
@@ -109,10 +109,10 @@
         <li class="nav-primary__item nav-primary__item--last">
           <a href="#" rel="search">
             <picture>
-              <source srcset="../../assets/img/patterns/molecules/nav-primary-search-ic.svg" type="image/svg+xml" />
-              <img srcset="../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w,
-                           ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w"
-                   src="../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png"
+              <source srcset="../assets/img/patterns/molecules/nav-primary-search-ic.svg" type="image/svg+xml" />
+              <img srcset="../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w,
+                           ../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w"
+                   src="../assets/img/patterns/molecules/nav-primary-search-ic_1x.png"
                    class="nav-primary__search_icon"
                    alt="Search icon"/>
             </picture>
@@ -127,30 +127,30 @@
   <!-- This is used without js on the main search page, but js is required for
         its presence on other pages. -->
   <div class="search-box" data-behaviour="SearchBox">
+    <div class="search-box__inner">
 
+      <form class="compact-form" id="searchBox" action="/search" method="GET">
+        <fieldset class="compact-form__container">
+          <label for="compact-form__input" class="visuallyhidden">Search by keyword or author</label>
+          <input type="search" name="search" value="" placeholder="Search by keyword or author" id="compact-form__input" class="compact-form__input">
+          <label for="reset" class="visuallyhidden">Reset form</label>
+          <button type="reset" name="reset" id="reset" class="compact-form__reset"></button>
+          <button type="submit" class="compact-form__submit"><span class="visuallyhidden">Search</span></button>
+        </fieldset>
+      </form>
 
-    <form class="compact-form" id="searchBox" action="#" method="GET">
-      <fieldset class="compact-form__container">
-        <label for="compact-form__input" class="visuallyhidden">Search by keyword or author</label>
-        <input type="search" name="search" value="" placeholder="Search by keyword or author" id="compact-form__input" class="compact-form__input">
-        <label for="reset" class="visuallyhidden">Reset form</label>
-        <button type="reset" name="reset" id="reset" class="compact-form__reset"></button>
-        <button type="submit" name="submit" class="compact-form__submit"><span class="visuallyhidden">Search</span></button>
-      </fieldset>
-    </form>
+      <!-- Only applies when on an article belonging to a subject: -->
+      <!-- Note that this could be moved to the behaviour layer as it looks like it's only needed when
+           JavaScript is available. However, the value for subjectFilter needs to come from the server,
+           so keeping it here for now until it's understood how the server -> js communication will
+           work. -->
+      <div class="search-box__search_option">
+        <label class="search-box__search_option_label" for="searchBoxLimit">
+          <input id="searchBoxLimit" type="checkbox" name="limit" value="Cell biology" form="searchBox"> Limit my search to <strong>Cell biology</strong>
+        </label>
+      </div>
 
-    <!-- Only applies when on an article belonging to a subject: -->
-    <!-- Note that this could be moved to the behaviour layer as it looks like it's only needed when
-         JavaScript is available. However, the value for subjectFilter needs to come from the server,
-         so keeping it here for now until it's understood how the server -> js communication will
-         work. -->
-    <div class="search-box__search_option">
-      <label class="search-box__search_option_label" for="searchBoxLimit">
-        <input id="searchBoxLimit" type="checkbox" name="limit" value="1" form="searchBox"> Limit my search to <strong>Cell biology</strong>
-      </label>
     </div>
-
-
   </div>
 </header>
 

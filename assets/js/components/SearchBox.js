@@ -1,4 +1,5 @@
 'use strict';
+var utils = require('../libs/elife-utils')();
 
 module.exports = class SearchBox {
 
@@ -16,6 +17,7 @@ module.exports = class SearchBox {
     this.$elm = $elm;
     this.$searchButton = $elm.querySelector('button[type="submit"]');
     this.$resetButton = $elm.querySelector('button[type="reset"]');
+    this.$inner = $elm.querySelector('.search-box__inner');
 
     // Check there's a search input field, if not everything else is pointless.
     if (!this.$input) {
@@ -40,7 +42,7 @@ module.exports = class SearchBox {
       this.$output.addEventListener('click', e => {
         this.useSuggestion(e.target);
       });
-      this.$elm.appendChild(this.$output);
+      this.$inner.appendChild(this.$output);
     }
 
     this.keywords = [];
@@ -254,25 +256,34 @@ module.exports = class SearchBox {
 
     if ($output) {
       $output.innerHTML = '';
+      this.nudgeOutputVertically('-47px');
 
       if (matches && matches.length) {
         matches.forEach(match => {
-          outputString += `<li tabindex="0">${match}</li>`;
+          outputString += `<li tabindex="0" class="search-box__suggestion">${match}</li>`;
         });
 
         outputString = `<ul>${outputString}</ul>`;
         $output.innerHTML = outputString;
       }
     }
+
   }
 
   /**
-   * Sets the top position of the output block
+   * Uses css transform to translate $output in the vertical axis.
    *
-   * @param posnInPx The top position expressed in pixels
+   * @param posnInPx The vertical offset to apply
    */
-  setOutputTopPosn(posnInPx) {
-    this.$output.style.top = posnInPx;
+  nudgeOutputVertically(posnInPx) {
+    let posn;
+    if (typeof posnInPx === 'string' && posnInPx.indexOf('px') === posnInPx.length - 2) {
+      posn = posnInPx;
+    } else if (!isNaN(posnInPx)) {
+      posn = posnInPx + 'px';
+    }
+
+    utils.updateElementTranslate(this.$output, [0, posn]);
   }
 
   /**
