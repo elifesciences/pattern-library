@@ -7,7 +7,7 @@
 
   .content-header__download_link {
     margin-top: 5px;
-    margin-top: #{get-rem-from-px(5)};
+    margin-top: #{get-rem-from-px(5)}rem;
     position: absolute;
     right: 0;
   }

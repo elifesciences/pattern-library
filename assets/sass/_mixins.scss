@@ -3,12 +3,12 @@
 }
 
 @function get-rem-from-px($size_in_px) {
-  @return $size_in_px / $font-size-base-in-px;
+  @return $size_in_px/$font-size-base-in-px;
 }
 
 @mixin font-size($size_in_px) {
   font-size: #{$size_in_px}px;
-  font-size: #{get-rem-from-px($size_in_px)}rem;
+  font-size: get-rem-from-px($size_in_px) * 1rem;
 }
 
 @mixin padding($size_in_px, $dimension: "") {
