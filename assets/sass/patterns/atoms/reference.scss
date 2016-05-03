@@ -36,7 +36,7 @@ a.reference__authors_link:hover {
 
 .reference__origin {
   @include listing-detail();
-  @include padding(3, "bottom");
+  padding-bottom: 0;
 }
 
 .reference__secondaryLink {
