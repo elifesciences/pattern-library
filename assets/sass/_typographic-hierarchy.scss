@@ -77,7 +77,7 @@
 // Call this directly from sass with appropriate args.
 @mixin title-size($title-size, $is-wide:false) {
   $title-font-size: get-title-font-size($title-size, $is-wide);
-  @include font-size(#{$title-font-size});
+  @include font-size($title-font-size);
 }
 
 // CONTENT
