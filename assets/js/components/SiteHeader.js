@@ -48,7 +48,7 @@ module.exports = class SiteHeader {
    */
   closeSearchBox() {
     this.searchBox.$elm.classList.remove('search-box--shown');
-    utils.updateElementTranslate(this.searchBox.$elm, [0, 0]);
+    utils.updateElementTranslate(this.searchBox.$elm, [0, '-40px']);
     if (this.searchBox.$output) {
       this.searchBox.$output.innerHTML = '';
     }
@@ -72,17 +72,20 @@ module.exports = class SiteHeader {
    * Opens the search box.
    */
   openSearchBox() {
-    let offsetY = this.window.getComputedStyle(this.$elm).height;
+    let myHeight = this.window.getComputedStyle(this.$elm).height;
+    let adjustment = 20;
+    let offsetY = utils.adjustPxString(myHeight, adjustment);
 
     // This is set in the site-header.scss.
     let transitionDurationInMs = 150;
     utils.updateElementTranslate(this.searchBox.$elm, [0, offsetY]);
-
-    // blur before focus forces the focus, a simple focus doesn't always behave as expected.
-    this.searchBox.setOutputTopPosn(this.window.getComputedStyle(this.searchBox.$container).height);
+    utils.invertPxString(this.window.getComputedStyle(this.searchBox.$container).height);
     this.searchBox.$elm.classList.add('search-box--shown');
     this.window.addEventListener('keyup', this.checkForClose.bind(this));
+
     this.window.setTimeout(() => {
+
+      // blur before focus forces the focus, a simple focus doesn't always behave as expected.
       this.searchBox.$input.blur();
       this.searchBox.$input.focus();
     }, transitionDurationInMs);

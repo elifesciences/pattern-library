@@ -1,18 +1,25 @@
 
 .search-box {
+  border-top: 1px solid $color-text-dividers;
+  position: relative;
+
+  .compact-form__container {
+    @include margin(10, "bottom");
+    @include margin(20, "top");
+    max-width: inherit;
+  }
+}
+
+.search-box__inner {
+  max-width: #{$max-site-width}px;
+  padding: 0 6%;
   position: relative;
 }
 
-.search-box .compact-form__container {
-  max-width: inherit;
-  @include margin(10, "bottom");
-}
-
 .search-box__output {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
   width: 100%;
+  z-index: 7;
 
   ul {
     border-left: 1px solid $color-text-dividers;
@@ -23,7 +30,6 @@
   }
 
   li {
-    background-color: $color-text--reverse;
     border-bottom: 1px solid $color-text-dividers;
     font-family: $font-secondary;
     margin: 0;
@@ -34,9 +40,16 @@
     }
 
     &:focus {
-      outline: 2px solid $color-primary;
+      background-color: $color-primary;
+      color: $color-text-ui-background;
+
     }
   }
+}
+
+.search-box__suggestion {
+  background-color: $color-text-ui-background;
+  color: $color-text;
 }
 
 .search-box--js.search-box--populated {
@@ -66,5 +79,19 @@
 .search-box__search_option {
   font-family: $font-secondary;
   @include font-size(14);
-  @include padding(10, "bottom");
+  @include padding(20, "bottom");
+}
+
+@media only all and (min-width: #{$max-site-width}px) {
+
+  .search-box__inner {
+    margin: 0 auto;
+    @include padding(0 66);
+  }
+
+  .search-box__inner {
+    margin: 0 auto;
+    @include padding(0 66);
+  }
+
 }

@@ -108,7 +108,7 @@ module.exports = () => {
    * as expected if other CSS transformations are also applied to the same element.
    *
    * @param {HTMLElement} $el The element to apply the transformation to.
-   * @param {Array} offset The offset for both axes, expressed as [x, y]
+   * @param {Array} offset The offset for both axes, expressed as [x, y], e.g. [0, '20px']
    */
   function updateElementTranslate($el, offset) {
     if (!($el instanceof HTMLElement && Array.isArray(offset))) {
@@ -124,8 +124,39 @@ module.exports = () => {
     });
   }
 
+  /**
+   * Add a quantity to a px amount expressed as a string, and return new string with updated value.
+   *
+   * For example: adjustPxString('97px', 8) returns '105px'
+   *
+   * @param {String} pxString The string representing the original quantity, e.g. '97px'
+   * @param adjustment The numeric adjustment to make, e.g. 8
+   * @returns {string} The modified value, as a string, e.g.: '105px'
+   */
+  function adjustPxString(pxString, adjustment) {
+    let originalSize = parseInt(pxString.match(/([-0-9.]+)px/)[1], 10);
+    let newSize = originalSize + adjustment;
+    return newSize + 'px';
+  }
+
+  /**
+   * Invert the px amount expressed as a string, and return new string with inverted value.
+   *
+   * For example: invertPxString('97px') returns '-97px'
+   *
+   * @param {String} pxString The string representing the original quantity, e.g. '97px'
+   * @returns {string} The modified value, as a string, e.g.: '-97px'
+   */
+  function invertPxString(pxString) {
+    let originalSize = parseInt(pxString.match(/([-0-9.]+)px/)[1], 10);
+    let newSize = originalSize * -1;
+    return newSize + 'px';
+  }
+
   return {
+    adjustPxString: adjustPxString,
     buildElement: buildElement,
+    invertPxString: invertPxString,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
   };
