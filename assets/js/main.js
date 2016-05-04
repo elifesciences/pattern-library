@@ -5,10 +5,13 @@
 if (window.localStorage && document.querySelector &&
        window.addEventListener && !!(document.createElement('div')).classList) {
 
+  document.querySelector('html').classList.add('js');
+
   let Components = {};
 
   // import modules into the list of Components.
   Components.AudioPlayer = require('./components/AudioPlayer');
+  Components.MainMenu = require('./components/MainMenu');
   Components.SiteHeader = require('./components/SiteHeader');
   Components.SearchBox = require('./components/SearchBox');
   Components.ViewerModal = require('./components/ViewerModal');

@@ -4,7 +4,7 @@
       "text": "Menu",
       "variant": "first",
       "textClasses": "nav-primary__menu_text",
-      "path": "#",
+      "path": "#mainMenu",
       "alt": "Menu icon",
       "imgs": [
         {

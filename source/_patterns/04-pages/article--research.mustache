@@ -1,53 +1,57 @@
-  {{#siteHeader}}
-    {{> organisms-header }}
-  {{/siteHeader}}
+<div class="global-wrapper">
+  <div class="global-inner">
+    {{#siteHeader}}
+      {{> organisms-header }}
+    {{/siteHeader}}
 
-  <main role="main">
+    <main role="main">
 
-    <article class="article">
+      <article class="article">
 
-      <div class="wrapper">
-        {{#contentHeaderArticle}}
-          {{> organisms-content-header-article-research("hasInstitutions": "true")}}
-        {{/contentHeaderArticle}}
-      </div>
+        <div class="wrapper">
+          {{#contentHeaderArticle}}
+            {{> organisms-content-header-article-research("hasInstitutions": "true")}}
+          {{/contentHeaderArticle}}
+        </div>
 
-      <div class="wrapper">
-      {{> molecules-contextual-data }}
-      </div>
+        <div class="wrapper">
+        {{> molecules-contextual-data }}
+        </div>
 
-      <div class="wrapper">
+        <div class="wrapper">
 
-        <div class="grid">
+          <div class="grid">
 
-          <div class="grid__item large--two-twelfths u-pad-top-lg">
-            {{> molecules-view-selector }}
-          </div>
+            <div class="grid__item large--two-twelfths u-pad-top-lg">
+              {{> molecules-view-selector }}
+            </div>
 
-          <div class="grid__item large--six-twelfths u-pad-top-lg">
+            <div class="grid__item large--six-twelfths u-pad-top-lg">
 
-            {{#articleSections}}
-              {{> molecules-article-section }}
-            {{/articleSections}}
+              {{#articleSections}}
+                {{> molecules-article-section }}
+              {{/articleSections}}
 
-            <!-- May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? -->
-            <section class="article-section">
+              <!-- May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? -->
+              <section class="article-section">
 
-              <div class="article-section__body">
-                {{> molecules-article-meta }}
-              </div>
+                <div class="article-section__body">
+                  {{> molecules-article-meta }}
+                </div>
 
-            </section>
+              </section>
+            </div>
+
           </div>
 
         </div>
 
-      </div>
+      </article>
 
-    </article>
+    </main>
 
-  </main>
+    {{> organisms-email-cta }}
 
-  {{> organisms-email-cta }}
-
-  {{> organisms-footer }}
+    {{> organisms-footer }}
+  </div> <!-- /.global-inner -->
+</div> <!-- /.global-wrapper -->

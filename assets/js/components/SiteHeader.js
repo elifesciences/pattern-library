@@ -10,13 +10,40 @@ module.exports = class SiteHeader {
       return;
     }
 
+    this.$elm = $elm;
+    this.window = _window;
+
     let SearchBox = require('./SearchBox');
     let $searchBoxEl = $elm.querySelector('[data-behaviour="SearchBox"]');
     this.searchBox = new SearchBox($searchBoxEl, this.window, doc);
     this.searchToggle = $elm.querySelector('[rel="search"]').parentNode;
     this.searchToggle.addEventListener('click', this.toggleSearchBox.bind(this));
-    this.$elm = $elm;
-    this.window = _window;
+
+    // N.B. $mainMenu is not part of this component's HTML hierarchy.
+    let MainMenu = require('./MainMenu');
+    this.mainMenu = new MainMenu(doc.querySelector('#mainMenu'));
+
+    this.$mainMenuToggle = this.$elm.querySelector('a[href="#mainMenu"]');
+    this.$mainMenuToggle.addEventListener('click', this.toggleMainMenu.bind(this));
+  }
+
+  /**
+   * Toggles display of the main menu.
+   */
+  toggleMainMenu() {
+    if (this.mainMenu.isOpen()) {
+      this.mainMenu.close();
+      this.window.removeEventListener('keyup', this.handleMenuEsc.bind(this));
+    } else {
+      this.mainMenu.open();
+      this.window.addEventListener('keyup', this.handleMenuEsc.bind(this));
+    }
+  }
+
+  handleMenuEsc(e) {
+    if (e.keyCode === 27) {
+      this.mainMenu.close();
+    }
   }
 
   /**
