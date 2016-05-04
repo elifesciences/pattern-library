@@ -22,7 +22,9 @@ module.exports = class MainMenu {
    */
   moveWithinDom() {
     let $globalWrapper = this.doc.querySelector('.global-wrapper');
-    $globalWrapper.insertBefore(this.$elm, $globalWrapper.firstElementChild);
+    if (!!$globalWrapper) {
+      $globalWrapper.insertBefore(this.$elm, $globalWrapper.firstElementChild);
+    }
   }
 
   /**
