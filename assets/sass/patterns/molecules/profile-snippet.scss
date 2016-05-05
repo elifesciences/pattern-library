@@ -24,14 +24,16 @@
   font-style: italic;
   font-weight: 400;
   line-height: $line-height-primary;
-  @include margin(0 0 6 0);
+  margin: 0;
 }
 
 .profile-snippet__contact_details {
   font-family: $font-primary;
   @include font-size(14);
+  font-style: italic;
   font-weight: 400;
   line-height: $line-height-primary;
+  @include padding(40, "bottom");
 }
 
 @media only screen {
