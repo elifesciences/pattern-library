@@ -11,6 +11,7 @@ if (window.localStorage && document.querySelector &&
 
   // import modules into the list of Components.
   Components.AudioPlayer = require('./components/AudioPlayer');
+  Components.ContentHeaderArticle = require('./components/ContentHeaderArticle');
   Components.MainMenu = require('./components/MainMenu');
   Components.SiteHeader = require('./components/SiteHeader');
   Components.SearchBox = require('./components/SearchBox');

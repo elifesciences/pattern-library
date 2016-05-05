@@ -47,8 +47,20 @@
   content: ", ";
 }
 
+li.content-header__author_list_item:last-of-type .content-header__author:after {
+  content: "";
+}
+
+.content-header__author--last-non-excess:after {
+  content: " et al.";
+}
+
 .content-header__author--etal {
   @include author-typeg();
+}
+
+.content-header__author_toggle {
+  display: none;
 }
 
 .content-header__institution_list {
@@ -67,6 +79,10 @@
   content: ", ";
 }
 
+li.content-header__institution_list_item:last-of-type .content-header__institution:after {
+  content: "";
+}
+
 @media only all and (max-width: #{get-rem-from-px($bkpt-content-header)}em) {
 
   .content-header__institution_list {
@@ -80,6 +96,28 @@
   .content-header__institution_list {
     @include margin(23, "top");
   }
+
+  .content-header__author--last-non-excess:after {
+    content: "";
+  }
+
+  .content-header__author_toggle {
+    color: $color-text-secondary;
+    display: inline;
+    @include author-typeg();
+    font-weight: normal;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .content-header__author_toggle:hover {
+    cursor: pointer;
+  }
+
+  .content-header__institution--last-non-excess:after {
+    content: "\2026";
+  }
+
 }
 
 .meta {

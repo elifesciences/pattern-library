@@ -167,10 +167,20 @@ module.exports = () => {
     );
   }
 
+  /**
+   * Return the current viewport width.
+   *
+   * @returns {number} The current viewport width
+   */
+  function getViewportWidth() {
+    return document.documentElement.clientWidth;
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     buildElement: buildElement,
+    getViewportWidth: getViewportWidth,
     invertPxString: invertPxString,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,

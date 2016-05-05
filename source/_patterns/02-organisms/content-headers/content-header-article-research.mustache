@@ -1,5 +1,9 @@
 <!-- think of content-header content-header-article as the type/sub-type of pattern, and content-header-article-research is the actual pattern. This abstraction is an experiment, we'll see how it plays. -->
-<header class="content-header content-header-article content-header-article-research {{#isReadMore}} content-header-article-research--readmore{{/isReadMore}}">
+<header class="content-header
+               content-header-article
+               content-header-article-research
+               {{#isReadMore}} content-header-article-research--readmore{{/isReadMore}}"
+      {{^isReadMore}} data-behaviour="ContentHeaderArticle"{{/isReadMore}}>
 
    <div class="content-header_top">
       <a href="#" class="content-header__subject_link">{{subject}}</a>
