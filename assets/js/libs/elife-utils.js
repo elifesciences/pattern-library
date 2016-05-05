@@ -153,8 +153,23 @@ module.exports = () => {
     return newSize + 'px';
   }
 
+  /**
+   * Returns true if $prospectiveDescendant is, or is a descendant of $prospectiveParent.
+   *
+   * @param {HTMLElement} $prospectiveParent el to test as a parent of the $prospectiveDescendant
+   * @param {HTMLElement} $prospectiveDescendant el to test as descendant of the $prospectiveParent
+   * @returns {boolean} Whether the s$prospectiveDescendant is, or descends from $prospectiveParent
+   */
+  function areElementsNested($prospectiveParent, $prospectiveDescendant) {
+    let relationship = $prospectiveParent.compareDocumentPosition($prospectiveDescendant);
+    return !!(
+      relationship & $prospectiveParent.DOCUMENT_POSITION_CONTAINED_BY || relationship === 0
+    );
+  }
+
   return {
     adjustPxString: adjustPxString,
+    areElementsNested: areElementsNested,
     buildElement: buildElement,
     invertPxString: invertPxString,
     uniqueIds: uniqueIds,

@@ -12,12 +12,15 @@ module.exports = class SiteHeader {
 
     this.$elm = $elm;
     this.window = _window;
+    this.doc = doc;
 
     let SearchBox = require('./SearchBox');
     let $searchBoxEl = $elm.querySelector('[data-behaviour="SearchBox"]');
     this.searchBox = new SearchBox($searchBoxEl, this.window, doc);
     this.searchToggle = $elm.querySelector('[rel="search"]').parentNode;
     this.searchToggle.addEventListener('click', this.toggleSearchBox.bind(this));
+
+    this.$pageOverlay = null;
 
     // N.B. $mainMenu is not part of this component's HTML hierarchy.
     let MainMenu = require('./MainMenu');
@@ -30,18 +33,23 @@ module.exports = class SiteHeader {
   /**
    * Toggles display of the main menu.
    */
-  toggleMainMenu() {
+  toggleMainMenu(e) {
     if (this.mainMenu.isOpen()) {
       this.mainMenu.close();
-      this.window.removeEventListener('keyup', this.handleMenuEsc.bind(this));
+      this.window.removeEventListener('keyup', this.checkForMenuClose.bind(this));
+      this.window.removeEventListener('click', this.checkForMenuClose.bind(this));
     } else {
       this.mainMenu.open();
-      this.window.addEventListener('keyup', this.handleMenuEsc.bind(this));
+      this.window.addEventListener('keyup', this.checkForMenuClose.bind(this));
+      this.window.addEventListener('click', this.checkForMenuClose.bind(this));
     }
+
+    e.stopPropagation();
   }
 
-  handleMenuEsc(e) {
-    if (e.keyCode === 27) {
+  checkForMenuClose(e) {
+    if (e.keyCode === 27 ||
+        (e.type === 'click' && !utils.areElementsNested(this.mainMenu.$elm, e.target))) {
       this.mainMenu.close();
     }
   }
@@ -82,15 +90,18 @@ module.exports = class SiteHeader {
 
     this.searchBox.$input.blur();
     this.window.removeEventListener('keyup', this.checkForClose.bind(this));
+    this.window.removeEventListener('click', this.checkForClose.bind(this));
+    this.hidePageOverlay();
   }
 
   /**
-   * Checks whether the search box should be closed.
+   * Decides whether to close the search box, based on the supplied event.
    *
    * @param e The KeyboardEvent provoking the check.
    */
   checkForClose(e) {
-    if (e.keyCode && e.keyCode === 27) {
+    if (e.keyCode && e.keyCode === 27 ||
+        (e.type === 'click' && !utils.areElementsNested(this.searchBox.$elm, e.target))) {
       this.closeSearchBox();
     }
   }
@@ -109,6 +120,7 @@ module.exports = class SiteHeader {
     utils.invertPxString(this.window.getComputedStyle(this.searchBox.$container).height);
     this.searchBox.$elm.classList.add('search-box--shown');
     this.window.addEventListener('keyup', this.checkForClose.bind(this));
+    this.window.addEventListener('click', this.checkForClose.bind(this));
 
     this.window.setTimeout(() => {
 
@@ -116,5 +128,44 @@ module.exports = class SiteHeader {
       this.searchBox.$input.blur();
       this.searchBox.$input.focus();
     }, transitionDurationInMs);
+    this.showPageOverlay();
   }
+
+  /**
+   * Creates the page overlay.
+   *
+   */
+  createPageOverlay() {
+    let className = 'overlay--semi-white';
+
+    if (!this.$pageOverlay) {
+      this.$pageOverlay = this.doc.createElement('div');
+      this.$pageOverlay.classList.add(className);
+    }
+
+    let $target = this.doc.querySelector('.global-inner');
+    $target.insertBefore(this.$pageOverlay,
+                         this.doc.querySelector('.site-header').nextElementSibling);
+  }
+
+  /**
+   * Shows the page overlay.
+   */
+  showPageOverlay() {
+    if (!this.$pageOverlay) {
+      this.createPageOverlay();
+    }
+
+    this.$pageOverlay.style.display = 'block';
+    this.$pageOverlay.style.height = this.doc.querySelector('.global-inner')
+                                         .getBoundingClientRect().height + 'px';
+  }
+
+  /**
+   * Hides the page overlay.
+   */
+  hidePageOverlay() {
+    this.$pageOverlay.style.display = 'none';
+  }
+
 };
