@@ -3,6 +3,7 @@
   @include listing-side-art-title-typeg();
   color: $color-text;
   display: block;
+  @include padding(3, "bottom");
   text-decoration: none;
 }
 
