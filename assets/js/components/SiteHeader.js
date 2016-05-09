@@ -27,7 +27,9 @@ module.exports = class SiteHeader {
     this.mainMenu = new MainMenu(doc.querySelector('#mainMenu'));
 
     this.$mainMenuToggle = this.$elm.querySelector('a[href="#mainMenu"]');
-    this.$mainMenuToggle.addEventListener('click', this.toggleMainMenu.bind(this));
+    if (!!this.$mainMenuToggle) {
+      this.$mainMenuToggle.addEventListener('click', this.toggleMainMenu.bind(this));
+    }
   }
 
   /**
