@@ -21,6 +21,8 @@ module.exports = class ContentHeaderArticle {
     this.authors = $elm.querySelectorAll('.content-header__author_list_item');
     this.institutions = $elm.querySelectorAll('.content-header__institution_list_item');
 
+    this.hasToggleAuthor = false;
+    this.hasToggleInstitution = false;
     this.hideAllExcessItems('author', this.authors);
     this.hideAllExcessItems('institution', this.institutions);
 
@@ -37,7 +39,7 @@ module.exports = class ContentHeaderArticle {
   }
 
   handleAnyExcessItems(itemType, items) {
-    let toggle = this.$elm.querySelector('.content-header__author_toggle');
+    let toggle = this.$elm.querySelector('.content-header__item_toggle');
     if (toggle && toggle.innerHTML.indexOf('less') > -1 && this.currentView === 'wide') {
       this.clearExcessMark(items);
       this.toggleExcessItems(items);
@@ -200,7 +202,19 @@ module.exports = class ContentHeaderArticle {
    */
   addTrailingText(itemType, items) {
     if (itemType === 'author' && items.length > this.getDefaultMaxItems('author')) {
-      this.buildSeeMoreLessToggle();
+      if (!this.hasToggleAuthor) {
+        this.buildSeeMoreLessToggle('author');
+        this.hasToggleAuthor = true;
+      }
+
+    }
+
+    if (itemType === 'institution' && items.length > this.getDefaultMaxItems('institution')) {
+      if (!this.hasToggleinstitution) {
+        this.buildSeeMoreLessToggle('institution');
+        this.hasToggleinstitution = true;
+      }
+
     }
 
     this.markLastNonExcessItem(itemType, items);
@@ -209,11 +223,7 @@ module.exports = class ContentHeaderArticle {
   /**
    * Builds the show/hide toggle for excess authors & institutions.
    */
-  buildSeeMoreLessToggle() {
-    if (this.$elm.querySelector('.content-header__author_toggle')) {
-      return;
-    }
-
+  buildSeeMoreLessToggle(itemType) {
     // This toggle only required due to screen width constraints. All content already accessible as
     // it's not being hidden in the first place. Hence an aria-hidden li, rather than an anchor.
     // Should conform to https://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden
@@ -221,23 +231,27 @@ module.exports = class ContentHeaderArticle {
     let toggleOnText = 'see&nbsp;all';
     let toggleOffText = 'see&nbsp;less';
     toggle.setAttribute('aria-hidden', 'true');
-    toggle.classList.add('content-header__author_toggle');
+    toggle.classList.add('content-header__item_toggle', 'content-header__item_toggle--' + itemType);
     toggle.innerHTML = '&nbsp;&hellip;&nbsp;' + toggleOnText;
     toggle.addEventListener('click', e => {
       let target = e.target;
       if (target.innerHTML.indexOf(toggleOnText) > -1) {
-        target.innerHTML = '&nbsp;&hellip;&nbsp;' + toggleOffText;
+        [].forEach.call(this.doc.querySelectorAll('.content-header__item_toggle'), item => {
+          item.innerHTML = '&nbsp;' + toggleOffText;
+        });
         this.clearExcessMark(this.authors);
         this.clearExcessMark(this.institutions);
         this.toggleExcessItems(this.authors);
         this.toggleExcessItems(this.institutions);
       } else {
-        target.innerHTML = '&nbsp;&hellip;&nbsp;' + toggleOnText;
+        [].forEach.call(this.doc.querySelectorAll('.content-header__item_toggle'), item => {
+          item.innerHTML = '&nbsp;&hellip;&nbsp;' + toggleOnText;
+        });
         this.hideAllExcessItems('author', this.authors);
         this.hideAllExcessItems('institution', this.institutions);
       }
     });
-    this.$elm.querySelector('.content-header__author_list').appendChild(toggle);
+    this.$elm.querySelector('.content-header__' + itemType + '_list').appendChild(toggle);
   }
 
 };
