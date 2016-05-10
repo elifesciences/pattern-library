@@ -59,7 +59,7 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
   @include author-typeg();
 }
 
-.content-header__author_toggle {
+.content-header__item_toggle {
   display: none;
 }
 
@@ -101,21 +101,28 @@ li.content-header__institution_list_item:last-of-type .content-header__instituti
     content: "";
   }
 
-  .content-header__author_toggle {
+  .content-header__item_toggle {
     color: $color-text-secondary;
     display: inline;
-    @include author-typeg();
     font-weight: normal;
     list-style-type: none;
     padding: 0;
   }
 
-  .content-header__author_toggle:hover {
+  .content-header__item_toggle--author {
+    @include author-typeg();
+  }
+
+  .content-header__item_toggle--institution {
+    @include institute-typeg();
+  }
+
+  .content-header__item_toggle:hover {
     cursor: pointer;
   }
 
   .content-header__institution--last-non-excess:after {
-    content: "\2026";
+    content: "";
   }
 
 }
