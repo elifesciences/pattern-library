@@ -104,17 +104,18 @@ li.content-header__institution_list_item:last-of-type .content-header__instituti
   .content-header__item_toggle {
     color: $color-text-secondary;
     display: inline;
-    font-weight: normal;
     list-style-type: none;
     padding: 0;
   }
 
   .content-header__item_toggle--author {
     @include author-typeg();
+    font-weight: normal;
   }
 
   .content-header__item_toggle--institution {
     @include institute-typeg();
+    font-weight: normal;
   }
 
   .content-header__item_toggle:hover {

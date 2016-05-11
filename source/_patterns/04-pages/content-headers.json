@@ -246,13 +246,38 @@
     }
   },
 
+  "nonArticleTitleCtaOnly": {
+    "title": "About <i>eLife</i>",
+
+    "titleClass": "content-header__title--medium",
+
+    "buttonText": "Subscribe",
+
+    "images": {
+      "lores": "http://unsplash.it/950/400/",
+      "hires": "http://unsplash.it/1800/900/"
+    }
+  },
+
+  "basic": {
+    "title": "About <i>eLife</i>",
+
+    "titleClass": "content-header__title--medium",
+
+    "images": {
+      "lores": "http://unsplash.it/950/400/",
+      "hires": "http://unsplash.it/1800/900/"
+    }
+
+  },
+
   "archive": {
     "title": "Archive",
 
     "titleClass": "content-header__title--medium",
 
     "select": {
-      "id": "myArchiveSelectElement",
+      "id": "archiveYear",
       "route": "/path/to/archive",
       "options": [
         {
@@ -269,6 +294,8 @@
         }
       ]
     },
+
+    "buttonType"  : "submit",
 
     "images": {
       "lores": "http://unsplash.it/950/400/",

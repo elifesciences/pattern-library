@@ -1,2 +1,5 @@
 <!-- Use most appropriate element here: <a> or <button> -->
-<a href="#" class="button button--outline button--extra-small">{{buttonText}}</a>
+<button class="button button--outline button--extra-small"
+        {{#buttonType}}type="{{buttonType}}"{{/buttonType}}>
+  {{buttonText}}
+</button>
