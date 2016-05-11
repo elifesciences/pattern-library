@@ -278,6 +278,10 @@
 
     "select": {
       "id": "archiveYear",
+      "label": {
+        "labelText": "Archive year",
+        "isVisuallyHidden": true
+      },
       "route": "/path/to/archive",
       "options": [
         {
