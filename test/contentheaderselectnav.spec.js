@@ -18,4 +18,3 @@ describe('A ContentHeaderSelectNav Component', function () {
   });
 
 });
-

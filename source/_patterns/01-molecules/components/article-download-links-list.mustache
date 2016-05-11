@@ -1,0 +1,27 @@
+<div data-behaviour="ArticleDownloadLinksList" id="articleDownloadLinksList" aria-labelledby="articleDownloadLinksListLabel">
+  <div class="visuallyhidden"><span id="articleDownloadLinksListLabel">A three part list of links to download the article, or parts of the article, in various formats.</span> <a href="">Skip this list</a></div>
+  <h3 class="article-download-links-list__heading">Downloads<span class="visuallyhidden"> (links to download the article or parts of the article as PDF)</span></h3>
+  <ul class="article-download-list">
+    <li><a href="{{dlLinkArticle}}" class="article-download-links-list__link">Article</a></li>
+    {{#dlLinkFigure}}<li><a href="{{dlLinkFigure}}" class="article-download-links-list__link">Figures</a></li>{{/dlLinkFigure}}
+  </ul>
+
+  <h3 class="article-download-links-list__heading">Download citations<span class="visuallyhidden"> (links to download the citations from this article in formats compatible with various reference manager tools)</span></h3>
+  <ul class="article-download-citations-list">
+    <li><a href="{{dlLinkCitsBibtex}}" class="article-download-links-list__link">BibTex</a></li>
+    <li><a href="{{dlLinkCitsEndnote}}" class="article-download-links-list__link">EndNote</a></li>
+    <li><a href="{{dlLinkCitsEndnote8}}" class="article-download-links-list__link">EndNote 8</a></li>
+    <li><a href="{{dlLinkCitsRefworks}}" class="article-download-links-list__link">Refworks Tagged</a></li>
+    <li><a href="{{dlLinkCitsRIS}}" class="article-download-links-list__link">RIS</a></li>
+    <li><a href="{{dlLinkCitsMedlars}}" class="article-download-links-list__link">Medlars</a></li>
+  </ul>
+
+  <h3 class="article-download-links-list__heading">Open citations<span class="visuallyhidden"> (links to open the citations from this article in various online reference manager services)</span></h3>
+  <ul class="article-open-citations-list">
+    <li><a href="{{linkCitsMendeley}}" class="article-download-links-list__link">Mendeley</a></li>
+    <li><a href="{{linkCitsReadCube}}" class="article-download-links-list__link">ReadCube</a></li>
+    <li><a href="{{linkCitsPapers}}" class="article-download-links-list__link">Papers App</a></li>
+    <li><a href="{{linkCitsCiteULike}}" class="article-download-links-list__link">CiteUlike</a></li>
+  </ul>
+
+</div>
