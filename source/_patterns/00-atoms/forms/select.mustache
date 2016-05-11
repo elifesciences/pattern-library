@@ -1,3 +1,9 @@
+{{#label}}
+  <label for="{{id}}"
+         {{#isVisuallyHidden}}class="visuallyhidden"{{/isVisuallyHidden}}>
+    {{labelText}}
+  </label>
+{{/label}}
 <select{{#id}} name="{{id}}" id="{{id}}"{{/id}}>
   {{#options}}
     <option value="{{value}}">{{displayValue}}</option>
