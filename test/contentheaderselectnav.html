@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+    <!--
+      Test output
+    -->
+    <div id="mocha"></div>
+
+    <!--
+      Fixture
+    -->
+
+
+    <header class="content-header
+                 content-header-nonarticle
+                 content-header-nonarticle--background
+                 content-header--background-image"
+            data-behaviour="ContentHeaderSelectNav">
+
+
+      <!-- Buckle up.
+            This style block is needed to parametise the image path used for the background image.
+            Also, we need separate media queries different syntaxes as combining them using the comma operator to create an OR compound media expression breaks in Chrome (at least).
+            It's not using Sass, nor currently targetted by autoprefixer (hence manual application of vendor prefixes).
+            And it's ugly. So ugly :-(
+
+            NOTE FOR @thewilkybarkid: this needs to go into the <head> of the containing page.
+       -->
+      <style type="text/css">
+        @media only all and (-webkit-min-device-pixel-ratio: 2) {
+          .content-header--background-image {
+            background-image: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/1800/900/);
+            background-image: -o-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/1800/900/);
+            background-image: -moz-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/1800/900/);
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/1800/900/);
+          }
+        }
+
+        @media only all and (min-resolution: 196dpi) {
+          .content-header--background-image {
+            background-image: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/1800/900/);
+            background-image: -o-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/1800/900/);
+            background-image: -moz-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/1800/900/);
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/1800/900/);
+          }
+        }
+
+        @media only all and (-webkit-max-device-pixel-ratio: 1.99) {
+          .content-header--background-image {
+            background-image: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/950/400/);
+            background-image: -o-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/950/400/);
+            background-image: -moz-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/950/400/);
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/950/400/);
+          }
+        }
+
+        @media only all and (max-resolution: 195.99dpi) {
+          .content-header--background-image {
+            background-image: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/950/400/);
+            background-image: -o-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/950/400/);
+            background-image: -moz-linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/950/400/);
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://unsplash.it/950/400/);
+          }
+        }
+
+      </style>
+
+
+
+      <div class="content-header__inner">
+        <div class="content-header__hgroup">
+          <h2 class="content-header__title content-header__title--medium">Archive</h2>
+          <div class="content-header__strapline"></div>
+        </div>
+      </div> <!--  /.content-header__inner -->
+
+
+      <div class="content-header__bottom">
+        <div class="content-header__cta">
+          <!-- Expect atoms-button-outline-small and the form element to be mutually exclusive. -->
+          <form method="GET" action="/path/to/archive">
+            <select name="arhiveYear" id="arhiveYear">
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+              <option value="2014">2014</option>
+            </select>
+            <!-- Use most appropriate element here: <a> or <button> -->
+            <button class="button button--outline button--extra-small"
+                    type="submit">
+              Go
+            </button>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="content-header__bottom_line"></div>
+    </header>
+
+    <!--
+      Load test code
+    -->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
+
+    <!--
+      Test spec
+    -->
+    <script src="build/contentheaderselectnav.spec.js"></script>
+
+    <!--
+      Begin!
+    -->
+    <script>
+      mocha.run();
+    </script>
+
+</body>
+</html>

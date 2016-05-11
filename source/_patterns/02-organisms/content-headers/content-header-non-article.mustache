@@ -1,7 +1,8 @@
 <header class="content-header
                content-header-nonarticle
                {{#background}}content-header-nonarticle--background{{/background}}
-               {{#backgroundImage}}content-header--background-image{{/backgroundImage}}">
+               {{#backgroundImage}}content-header--background-image{{/backgroundImage}}"
+      {{#select}}data-behaviour="ContentHeaderSelectNav"{{/select}}>
 
   {{#backgroundImage}}
     {{> atoms-content-header-background-style-markup}}
@@ -33,9 +34,9 @@
         {{>atoms-button-outline-small}}
       {{/buttonText}}
       {{#select}}
-        <form method="GET" action="{{route}}"></form>
+        <form method="GET" action="{{route}}">
         {{>atoms-select}}
-        {{>atoms-button-outline-extra-small(buttonText: "Go")}}
+        {{>atoms-button-outline-extra-small(buttonText: "Go", type="submit")}}
         </form>
       {{/select}}
       </div>

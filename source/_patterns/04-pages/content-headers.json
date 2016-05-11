@@ -277,7 +277,7 @@
     "titleClass": "content-header__title--medium",
 
     "select": {
-      "id": "myArchiveSelectElement",
+      "id": "archiveYear",
       "route": "/path/to/archive",
       "options": [
         {
@@ -294,6 +294,8 @@
         }
       ]
     },
+
+    "buttonType"  : "submit",
 
     "images": {
       "lores": "http://unsplash.it/950/400/",
