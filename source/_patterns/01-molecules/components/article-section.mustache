@@ -8,8 +8,12 @@
 
   <div class="article-section__body">
     {{#body}}
-    {{{para}}}
+      {{{para}}}
     {{/body}}
+    {{#downloadLinks}}
+      {{> molecules-article-download-links-list}}
+    {{/downloadLinks}}
+
   </div>
 
 </section>

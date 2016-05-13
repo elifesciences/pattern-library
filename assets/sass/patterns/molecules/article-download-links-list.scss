@@ -1,0 +1,56 @@
+.article-download-links-list--js {
+  @include tooltip-box();
+  position: absolute;
+  right: -6vw;
+  text-align: left;
+  top: 40px;
+  width: 100vw;
+  z-index: 20;
+
+  &:before {
+    /*
+    border-bottom: 7px solid $color-text-ui-background--reverse;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    content: "";
+    */
+    @include arrow("up", 7, $color-text-ui-background--reverse);
+    position: absolute;
+    right: calc(6vw + 3.5px);
+    top: -6px;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  ul:last-child {
+    margin-bottom: 0;
+  }
+
+  .article-download-links-list__heading {
+    @include section-title-typeg();
+    margin: 0;
+  }
+
+  .article-download-links-list__link {
+    color: $color-text--reverse;
+    @include nav-page-typeg();
+    text-decoration: none;
+  }
+
+}
+
+@media only all and (min-width: #{$bkpt-content-header}px) {
+
+  .article-download-links-list--js {
+    border-radius: 3px;
+    max-width: 320px;
+    top: 60px;
+  }
+
+  .article-download-links-list--js:before {
+    right: calc(6vw + 15px);
+  }
+}
