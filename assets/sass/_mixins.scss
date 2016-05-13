@@ -118,3 +118,36 @@
     color: $color-text--reverse;
   }
 }
+
+@mixin tooltip-box() {
+  background-color: $color-text-ui-background--reverse;
+  color: $color-text-ui-background;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  @include padding(16);
+}
+
+@mixin arrow($direction: "up", $size: 7, $color: $color-text-ui-background--reverse) {
+  border-style: solid;
+  border-width: #{$size}px;
+  border-color: transparent;
+
+  @if $direction == "right" {
+    border-left-color: $color;
+    border-right-width: 0;
+
+  } @else if $direction == "down" {
+    border-bottom-width: 0;
+    border-top-color: $color;
+
+  } @else if $direction == "left" {
+    border-left-width: 0;
+    border-right-color: $color;
+
+  } @else if $direction == "up" {
+    border-bottom-color: $color;
+    border-top-width: 0;
+  }
+  content: "";
+  height: 0;
+  width: 0;
+}

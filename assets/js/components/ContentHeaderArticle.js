@@ -210,9 +210,9 @@ module.exports = class ContentHeaderArticle {
     }
 
     if (itemType === 'institution' && items.length > this.getDefaultMaxItems('institution')) {
-      if (!this.hasToggleinstitution) {
+      if (!this.hasToggleInstitution) {
         this.buildSeeMoreLessToggle('institution');
-        this.hasToggleinstitution = true;
+        this.hasToggleInstitution = true;
       }
 
     }
