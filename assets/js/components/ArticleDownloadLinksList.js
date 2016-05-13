@@ -13,7 +13,10 @@ module.exports = class ArticleDownloadLinksList {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.$elm.classList.add('article-download-links-list--js', 'visuallyhidden');
+
+    // One statement per class name because IE doesn't support multiple strings, comma separated.
+    this.$elm.classList.add('article-download-links-list--js');
+    this.$elm.classList.add('visuallyhidden');
     this.moveList();
     this.$toggler = this.doc.querySelector('.content-header__download_link');
     this.$toggler.addEventListener('click', this.toggle.bind(this));
