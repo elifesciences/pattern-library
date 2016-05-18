@@ -1,6 +1,6 @@
 
 .investor-logos__img_container {
-  border-bottom: 1px solid $color-text-dividers;
+  border-top: 1px solid $color-text-dividers;
 }
 
 .investor-logos__picture {
@@ -14,20 +14,15 @@
 }
 
 @media only screen and (min-width: #{get-rem-from-px(520)}em) {
-  .investor-logos {
-    border-bottom: 1px solid $color-text-dividers;
-  }
 
   .invester-logos__container {
     display: table;
     display: flex;
-    margin: auto;
-    max-width: #{get-rem-from-px($max-site-width)}rem;
   }
 
   .investor-logos__img_container {
-    border: none;
     display: table-cell;
+    text-align: center;
     flex: 1 33.33%;
   }
 

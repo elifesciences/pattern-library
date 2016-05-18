@@ -151,3 +151,22 @@
   height: 0;
   width: 0;
 }
+
+@mixin nospace($direction: "all") {
+  @if $direction == "all" {
+    margin: 0;
+    padding: 0;
+  } @else if $direction == "top" {
+    margin-top: 0;
+    padding-top: 0;
+  } @else if $direction == "right" {
+    margin-right: 0;
+    padding-right: 0;
+  } @else if $direction == "bottom" {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  } @else if $direction == "left" {
+    margin-left: 0;
+    padding-left: 0;
+  }
+}

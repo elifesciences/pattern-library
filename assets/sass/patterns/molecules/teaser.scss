@@ -1,6 +1,6 @@
 .teaser {
   border-top: 1px solid $color-text-dividers;
-  @include padding($teaser-spacing 0);
+  @include padding($teaser-spacing-top 0 $teaser-spacing-bottom);
 }
 
 .teaser:after {
@@ -33,7 +33,6 @@
   display: block;
   text-decoration: none;
 }
-
 
 .teaser__meta {
   @include label-content-typeg();
@@ -77,12 +76,12 @@
 .teaser__img {
   display: block;
   float: right;
-  @include margin(5 0 $teaser-spacing $teaser-spacing);
+  @include margin(5 0 $teaser-spacing-bottom $teaser-spacing-left);
 }
 
 .teaser__img:after {
   clear: both;
-  content: "";;
+  content: "";
   float: none;
 }
 
@@ -114,24 +113,6 @@
   color: $color-primary-dark;
 }
 
-.teaser--secondary {
-
-  .teaser__header_text {
-    @include listing-side-art-title-typeg();
-    @include padding(0 0 3 0);
-  }
-
-  .teaser__subheading {
-    @include listing-side-author-typeg();
-    @include margin(10, "bottom");
-  }
-
-  .teaser__img {
-    @include margin(2, "top");
-  }
-
-}
-
 .teaser--big-image {
 
   .teaser__img {
@@ -146,6 +127,33 @@
       float: right;
     }
 
+  }
+
+}
+
+.teaser--secondary {
+
+  &.teaser--big-image {
+
+    .teaser__img {
+      max-width: 100%;
+      width: 100%;
+    }
+
+  }
+
+  .teaser__header_text {
+    @include listing-side-art-title-typeg();
+    @include padding(0 0 3 0);
+  }
+
+  .teaser__subheading {
+    @include listing-side-author-typeg();
+    @include margin(10, "bottom");
+  }
+
+  .teaser__img {
+    @include margin(2, "top");
   }
 
 }
@@ -194,7 +202,7 @@
     float: right;
     height: 70px;
     justify-content: space-around;
-    @include margin($teaser-spacing, "left");
+    @include margin($teaser-spacing-left, "left");
     text-align: center;
     width: 70px;
   }

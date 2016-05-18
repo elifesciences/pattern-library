@@ -1,0 +1,93 @@
+<div class="global-wrapper">
+
+  <div class="global-inner">
+
+    {{#siteHeader}}
+      {{> organisms-header }}
+    {{/siteHeader}}
+
+    <main role="main">
+
+      {{#contentHeader}}
+        {{> organisms-content-header-non-article}}
+      {{/contentHeader}}
+
+
+      <div class="wrapper">
+
+        {{> atoms-lead-para}}
+
+        <div class="grid">
+
+          <div class="listing-column-container">
+
+            <div class="grid__item large--eight-twelfths listing-column-main">
+
+              {{#mainTeasers}}
+
+                <h3 class="listing-list-heading">{{> atoms-mini-section}}</h3>
+                <ol class="listing-list">
+                  {{#items}}
+                    <li class="listing-list__item">
+                      {{> molecules-teaser-main}}
+                    </li>
+                  {{/items}}
+                </ol>
+
+              {{/mainTeasers}}
+
+              {{> atoms-button-full }}
+
+            </div>
+
+            <div class="grid__item large--four-twelfths listing-column-secondary">
+
+              {{#secondaryTeasers}}
+
+                <h3 class="listing-list-heading">{{> atoms-mini-section}}</h3>
+                <ol class="listing-list">
+                  {{#items}}
+                    <li class="listing-list__item">
+                      {{> molecules-teaser--secondary }}
+                    </li>
+                  {{/items}}
+                </ol>
+
+              {{/secondaryTeasers}}
+
+              {{#profileLinks}}
+
+                <h3 class="listing-list-heading">{{> atoms-mini-section}}</h3>
+                <ol class="listing-list">
+                  {{#items}}
+                    <li class="listing-list__item">
+                      {{> molecules-profile-snippet }}
+                    </li>
+                  {{/items}}
+                  {{#editorsMoreLink}}
+                    <li class="listing-list__item">
+                      {{> atoms-see-more-link}}
+                    </li>
+                  {{/editorsMoreLink}}
+                </ol>
+
+              {{/profileLinks}}
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    {{> organisms-email-cta }}
+
+    {{> organisms-footer }}
+
+  </div>
+
+</div>
