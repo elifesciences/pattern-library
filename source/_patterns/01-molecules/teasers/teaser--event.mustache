@@ -1,0 +1,12 @@
+<div class="teaser teaser--event{{#isSecondary}} teaser--secondary{{/isSecondary}}">
+  <a href="{{{link}}}">
+    <time class="teaser__date" datetime="{{date.forMachine}}">
+      <span class="teaser__date__big">{{date.forHuman.date}}</span>
+      <span class="teaser__date__normal">{{date.forHuman.month}} {{date.forHuman.year}}</span>
+    </time>
+  </a>
+  <header class="teaser__header">
+    <h4 class="teaser__header_text"><a href="{{{link}}}" class="teaser__header_text_link">{{{title}}}</a></h4>
+    <div class="teaser__subheading">{{subheading}}</div>
+  </header>
+</div>

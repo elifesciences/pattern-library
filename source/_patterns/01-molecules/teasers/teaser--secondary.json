@@ -1,0 +1,24 @@
+{
+  "subjects": [
+    {
+      "name": "Biochemistry",
+      "path": "#"
+    },
+    {
+      "name": "Neuroscience",
+      "path": "#"
+    }
+  ],
+  "title": "Mapping Ebola in wild animals for better disease control",
+  "link": "#",
+  "firstAuthor": "Bloggs, J.",
+  "multipleAuthors": true,
+  "category": {
+    "name": "Insight",
+    "path": "#"
+  },
+  "date": {
+    "forHuman": "Dec 16, 2015",
+    "forMachine": "20151216"
+  }
+}

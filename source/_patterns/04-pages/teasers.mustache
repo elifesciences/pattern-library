@@ -1,0 +1,53 @@
+<div class="_elife-pl-highlight">
+  <h1>teaser patterns</h1>
+  <p>This page shows an example of each teaser. A <code>teaser-main</code> exists in the main column, a
+    <code>teaser-secondary</code> exists in the side bar. A main or secondary teaser may have a large or a small image,
+    or no image at all. An event may be in the main column or side bar.</p>
+  <p>The podcast-related teasers have been done separately and are currently found only within molecules > teasers. They
+  will be consolidated on this page later.</p>
+</div>
+
+<h2 class="_elife-pl-highlight">teaser main big image</h2>
+{{#mainBigImage}}
+  {{> molecules-teaser-main}}
+{{/mainBigImage}}
+
+<h2 class="_elife-pl-highlight">teaser main small image</h2>
+{{#mainSmallImage}}
+  {{> molecules-teaser-main}}
+{{/mainSmallImage}}
+
+<h2 class="_elife-pl-highlight">teaser main no image</h2>
+{{#mainNoImage}}
+  {{> molecules-teaser-main}}
+{{/mainNoImage}}
+
+<h2 class="_elife-pl-highlight">teaser secondary big image</h2>
+{{#secondaryBigImage}}
+  {{> molecules-teaser--secondary}}
+{{/secondaryBigImage}}
+
+<h2 class="_elife-pl-highlight">teaser secondary small image</h2>
+{{#secondarySmallImage}}
+  {{> molecules-teaser--secondary}}
+{{/secondarySmallImage}}
+
+<h2 class="_elife-pl-highlight">teaser secondary no image</h2>
+{{#secondaryNoImage}}
+  {{> molecules-teaser--secondary}}
+{{/secondaryNoImage}}
+
+<h2 class="_elife-pl-highlight">teaser event main</h2>
+{{#event}}
+  {{> molecules-teaser--event}}
+{{/event}}
+
+<h2 class="_elife-pl-highlight">teaser event secondary</h2>
+{{#event}}
+  {{> molecules-teaser--event("isSecondary": "true")}}
+{{/event}}
+
+<h2 class="_elife-pl-highlight">teaser article</h2>
+{{#article}}
+  {{> molecules-teaser-article}}
+{{/article}}

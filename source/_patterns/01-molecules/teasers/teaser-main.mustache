@@ -1,0 +1,34 @@
+<div class="teaser
+            {{#hasBigImage}} teaser--big-image{{/hasBigImage}}
+            {{#hasSmallImage}} teaser--small-image{{/hasSmallImage}}
+            ">
+
+  <div class="teaser__meta">
+    {{#subjects}}<a href="{{{path}}}" class="teaser__subject_link">{{name}}</a>{{/subjects}}
+  </div>
+
+  {{#image}}
+  <a href="{{{link}}}" class="teaser__header_text_link"><img src="{{{defaultPath}}}" srcset="{{{srcset}}}" class="teaser__img" alt="{{alt}}" /></a>
+  {{/image}}
+
+  <header class="teaser__header">
+    <h4 class="teaser__header_text"><a href="{{{link}}}" class="teaser__header_text_link">{{{title}}}</a></h4>
+    <div class="teaser__subheading">{{firstAuthor}} {{#multipleAuthors}}et al.{{/multipleAuthors}}</div>
+  </header>
+
+  <div class="teaser__body">
+    {{content}}
+  </div>
+
+  <footer class="teaser__footer">
+    <div class="teaser__category_date">
+      <a href="{{{category.path}}}" class="teaser__category_link">{{category.name}}</a>
+      <time datetime="{{date.forMachine}}">{{date.forHuman}}</time>
+    </div>
+    <div class="teaser__publish state">
+      <!--<img src="poa" alt="Available as authors' accepted manuscript">-->
+      <!--<img src="vor" alt="Full, typeset article available">-->
+    </div>
+  </footer>
+
+</div>
