@@ -1,3 +1,8 @@
 .lead-para {
+  @include margin(16, "bottom");
+  padding-bottom: 0;
+}
+
+.lead-para:last-child {
   @include nospace("bottom");
 }

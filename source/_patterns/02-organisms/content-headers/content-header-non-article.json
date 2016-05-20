@@ -19,9 +19,9 @@
         "hires": "http://unsplash.it/1800/900/"
     },
 
-    "curator": {
+    "profile": {
         "name": "Prabhat Jha",
-        "profileLink": "#",
+        "link": "#",
         "avatar": {
             "x1": "./assets/img/avatars/pjha1.png",
             "x2": "./assets/img/avatars/pjha2.png"

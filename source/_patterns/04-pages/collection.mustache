@@ -38,14 +38,11 @@
 
             {{/mainTeasers}}
 
-            {{#loadMore}}
-              {{> molecules-load-more}}
-            {{/loadMore}}
           </div>
 
           <div class="grid__item large--four-twelfths listing-column-secondary">
 
-            {{#secondaryTeasers}}
+            {{#multimediaTeasers}}
 
               <h3 class="listing-list-heading">{{> atoms-mini-section}}</h3>
               <ol class="listing-list">
@@ -56,7 +53,20 @@
                 {{/items}}
               </ol>
 
-            {{/secondaryTeasers}}
+            {{/multimediaTeasers}}
+
+            {{#relatedTeasers}}
+
+              <h3 class="listing-list-heading">{{> atoms-mini-section}}</h3>
+              <ol class="listing-list">
+                {{#items}}
+                  <li class="listing-list__item">
+                    {{> molecules-teaser--secondary }}
+                  </li>
+                {{/items}}
+              </ol>
+
+            {{/relatedTeasers}}
 
             {{#profileLinks}}
 
@@ -67,11 +77,6 @@
                     {{> molecules-profile-snippet }}
                   </li>
                 {{/items}}
-                {{#editorsMoreLink}}
-                  <li class="listing-list__item">
-                    {{> atoms-see-more-link}}
-                  </li>
-                {{/editorsMoreLink}}
               </ol>
 
             {{/profileLinks}}
