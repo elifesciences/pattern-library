@@ -160,7 +160,11 @@
     }
   },
 
-  "leadParaText": "eLife publishes research covering virology and bacterial and fungal pathogens. Decisions are made by journal editors who are active researchers in the field.",
+  "leadParas": {
+    "paras": [
+      {"text": "eLife publishes research covering virology, bacteriology and mycology. Decisions are made by journal editors who are active researchers in the fields of microbiology and infectious disease."}
+    ]
+  },
 
   "mainTeasers": [
     {
