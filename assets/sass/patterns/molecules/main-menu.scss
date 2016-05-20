@@ -44,7 +44,6 @@
   color: $color-text-ui-background;
   @include nav-page-typeg();
   display: block;
-  //float: right;
   @include padding(15, "bottom");
   @include padding(24, "right");
   text-align: right;
@@ -72,7 +71,6 @@
   }
 
   &.main-menu--shown {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
     display: block;
     float: left;
     left: -330px;
@@ -85,7 +83,7 @@
 
     & + .global-inner {
       float: left;
-      transform: translate3d(302px, 0, 0);
+      transform: translate3d(300px, 0, 0);
       width: calc(100% - 330px);
     }
   }

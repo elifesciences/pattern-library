@@ -1,0 +1,6 @@
+.lead-para {
+  @include lead-para-typeg();
+  @include padding(48, "bottom");
+  @include padding(48, "top");
+  border-bottom: 1px solid $color-text-dividers;
+}

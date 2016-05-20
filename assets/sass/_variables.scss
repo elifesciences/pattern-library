@@ -39,7 +39,10 @@ $max-site-width: 1114;
 $content-header-min-height: 300;
 
 // Spacing
-$teaser-spacing: 16;
+$teaser-spacing-top: 12;
+$teaser-spacing-bottom: 12;
+$teaser-spacing-left: 16;
+$listing-list-spacing: 32;
 
 // Breakpoints
 // TODO: Adjust $bkpt-content-header as desired, this is just a first stab.

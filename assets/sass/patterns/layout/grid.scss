@@ -64,6 +64,7 @@
  */
 
 .wrapper {
+  box-sizing: content-box;
   max-width: #{$max-site-width}px;
   max-width: #{get-rem-from-px($max-site-width)}rem;
   margin: auto;
@@ -205,6 +206,7 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
     clear: both;
   }
 }
+
 
 /**
  * 1. Space columns apart.

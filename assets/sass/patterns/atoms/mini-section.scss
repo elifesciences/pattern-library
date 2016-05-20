@@ -1,11 +1,4 @@
-
 .mini-section__header {
-  border-bottom: 1px solid $color-text-placeholder;
-  font-family: $font-secondary;
-  @include font-size(14);
-  font-weight: 700;
-  line-height: 1;
-  @include margin(12, "bottom");
-  @include padding(8, "bottom");
-  text-transform: uppercase;
+  @include section-title-typeg();
+  @include padding(12, "bottom");
 }

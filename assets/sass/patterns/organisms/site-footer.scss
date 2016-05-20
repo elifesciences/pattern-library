@@ -1,5 +1,6 @@
 
 .site-footer {
+  border-top: 1px solid $color-text-dividers;
   @include padding(24, "top");
   @include padding(16, "bottom");
 }
