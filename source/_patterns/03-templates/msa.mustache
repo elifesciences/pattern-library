@@ -15,7 +15,9 @@
 
       <div class="wrapper">
 
-        {{> atoms-lead-para}}
+        {{#leadParas}}
+          {{> molecules-lead-paras}}
+        {{/leadParas}}
 
         <div class="grid">
 
@@ -25,7 +27,7 @@
 
               {{#mainTeasers}}
 
-                <h3 class="listing-list-heading">{{> atoms-mini-section}}</h3>
+                {{> atoms-list-heading}}
                 <ol class="listing-list">
                   {{#items}}
                     <li class="listing-list__item">
@@ -36,15 +38,16 @@
 
               {{/mainTeasers}}
 
-              {{> atoms-button-full }}
-
+              {{#loadMore}}
+                {{> molecules-load-more}}
+              {{/loadMore}}
             </div>
 
             <div class="grid__item large--four-twelfths listing-column-secondary">
 
               {{#secondaryTeasers}}
 
-                <h3 class="listing-list-heading">{{> atoms-mini-section}}</h3>
+                {{> atoms-list-heading}}
                 <ol class="listing-list">
                   {{#items}}
                     <li class="listing-list__item">
@@ -57,7 +60,7 @@
 
               {{#profileLinks}}
 
-                <h3 class="listing-list-heading">{{> atoms-mini-section}}</h3>
+                {{> atoms-list-heading}}
                 <ol class="listing-list">
                   {{#items}}
                     <li class="listing-list__item">

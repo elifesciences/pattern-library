@@ -144,195 +144,101 @@
   },
 
   "contentHeader": {
-    "title": "Microbiology and Infectious Disease",
+    "title": "Multicellular life, potato blight and Hepatitis B",
 
-    "titleClass": "content-header__title--medium",
+    "strapline": "Episode 1",
 
-    "buttonText": "Subscribe",
-
-    "background": "true",
-    "backgroundImage": "true",
-    "hasCtaOrMeta": "true",
+    "titleClass": "content-header__title--small",
 
     "images": {
       "lores": "http://unsplash.it/950/400/",
-      "hires": "http://unsplash.it/1800/900/"
+      "hires": "http://unsplash.it/1800/900/",
+      "download": {
+        "svg": "../../assets/img/icons/download-reverse.svg",
+        "svgFull": "../../assets/img/icons/download-full-reverse.svg",
+        "bitmap": "../../assets/img/icons/download-reverse-1x.png",
+        "bitmapFull": "../../assets/img/icons/download-full-reverse-1x.png"
+      }
+    },
+
+    "hasCtaOrMeta": "true",
+    "background": "true",
+    "backgroundImage": "true",
+    "meta": {
+      "type": "Podcast",
+      "dateString": "Jun 16, 2013",
+      "dateTime": "20130616"
     }
   },
 
+  "audioPlayer": {
+    "title": "Multicellular life, potato blight and Hepatitis B",
+    "sources":[
+      { "src": "http://nakeddiscovery.com/scripts/mp3s/audio/eLife_Podcast_13.06.mp3", "mimeType": "audio/mp3", "type": "mp3" }
+    ]
+  },
+
+  "downloadLink": "http://nakeddiscovery.com/scripts/mp3s/audio/eLife_Podcast_13.06.mp3",
+
   "leadParas": {
     "paras": [
-      {"text": "eLife publishes research covering virology, bacteriology and mycology. Decisions are made by journal editors who are active researchers in the fields of microbiology and infectious disease."}
+      {"text": "How multicellular life began, museum specimens surrender the identity of the bug behind the Irish potato famine, the Hepatitis B and D virus receptor discovered, why fog clouds driver judgement and where nucleosomes came from."}
     ]
   },
 
   "mainTeasers": [
     {
-      "heading": "Latest articles",
+      "heading": "Chapters",
       "items": [
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
-          "title": "Quorum sensing control of Type VI secretion factors restricts the proliferation of quorum-sensing mutants",
-          "link": "#",
-          "firstAuthor": "Charlotte Majerczyk",
-          "multipleAuthors": true,
-          "content": "Quorum-sensing control of <i>Burkholderia thailandensis</i> toxin and immunity pairs serves to police quorum-sensing mutants and may represent a general strategy whereby cooperators can police mutants.",
-          "category": {
-            "name": "Research article",
-            "path": "#"
-          },
-          "date": {
-            "forHuman": "May 16, 2016",
-            "forMachine": "20160516"
-          },
-          "hasBigImage": "true",
-          "image": {
-            "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/250/140/ 250w,  http://unsplash.it/500/280/ 500w"
-          }
+          "meta": "01:02",
+          "headerText": "Origins of Multicellular Life",
+          "content": "How did multicellular life evolve? Ancient ancestors of ours, the choanoflagellates, might give us a clue..."
         },
-
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Epidemiology and Global Health",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
-          "title": "Mapping global environmental suitability for Zika virus",
-          "link": "#",
-          "firstAuthor": "Jane P Messina",
-          "multipleAuthors": true,
-          "category": {
-            "name": "Research article",
-            "path": "#"
-          },
-          "date": {
-            "forHuman": "April 19, 2016",
-            "forMachine": "20160419"
-          }
+          "meta": "07:40",
+          "headerText": "Potato Blight",
+          "content": "Scientists have identified the bug that caused the Irish potato famine..."
         },
-
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Genomics and evolutionary biology",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
-          "title": "Evolutionary diversification of the trypanosome haptoglobin-haemoglobin receptor from an ancestral haemoglobin receptor",
-          "link": "#",
-          "firstAuthor": "Harriet Lane-Serff",
-          "multipleAuthors": true,
-          "category": {
-            "name": "Research article",
-            "path": "#"
-          },
-          "date": {
-            "forHuman": "May 15, 2016",
-            "forMachine": "20160516"
-          }
+          "meta": "15:01",
+          "headerText": "eLife, a revolution in publishing",
+          "content": "Chris speaks to scientist and eLife Deputy Editor, Fiona Watt,about the free journal."
         },
-
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Epidemiology and Global Health",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
-          "title": "The global antigenic diversity of swine influenza A viruses",
-          "link": "#",
-          "firstAuthor": "Nicola S Lewis",
-          "multipleAuthors": true,
-          "content": "Swine populations worldwide are sporadically infected by influenza viruses from humans and birds leading to geographically heterogeneous swine influenza virus populations that pose epizootic and pandemic threats.",
-          "category": {
-            "name": "Research article",
-            "path": "#"
-          },
-          "date": {
-            "forHuman": "April 15, 2016",
-            "forMachine": "20160415"
-          },
-          "hasSmallImage": "true",
-          "image": {
-            "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/70/70/ 70w,  http://unsplash.it/140/140/ 140w"
-          }
+          "meta": "22:03",
+          "headerText": "The receptor for Hepatitis B and D",
+          "content": "Scientists are working out how Hep B and Hep D are entering liver cells, research that could help up to a third of the world's population."
         },
-
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Ecology",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
-          "title": "Recurring patterns in bacterioplankton dynamics during coastal spring algae blooms",
-          "link": "#",
-          "firstAuthor": "Hanno Teeling",
-          "multipleAuthors": true,
-          "content": "Dynamic successive blooms of clades of planktonic marine bacteria that can be observed during blooms of marine algae follow discernible patterns, part of which might be explained by substrate-induced forcing.",
-          "category": {
-            "name": "Research article",
-            "path": "#"
-          },
-          "date": {
-            "forHuman": "April 7, 2016",
-            "forMachine": "2016047"
-          }
+          "meta": "29:03",
+          "headerText": "Why does fog cloud driver judgement?",
+          "content": "What happens when you drive in fog? Often low visibility is blamed for accidents in these conditions, but how fast are we really driving?"
+        },
+        {
+          "meta": "35:26",
+          "headerText": "How did nucleosomes evolve?",
+          "content": "How did our cells come by their nucleosomes? They help pack DNA tightly inside our cell nuclei and control when genes get turned on/off."
         }
-
       ]
     }
+
   ],
 
-  "loadMore": {
-    "text": "Load more",
-    "path": "#"
+  "boilerplate": {
+    "body": "<p>The eLife Podcast is produced for eLife by The Naked Scientists</p><p>Contact us at podcast@elifesciences.org</p>"
   },
 
-  "secondaryTeasers": [
+  "relatedTeasers": [
     {
-      "heading": "Highlighted content",
+      "heading": "Related",
       "items": [
         {
           "hasSubjects": "true",
 
           "subjects": [
             {
-              "name": "Developmental Biology and Stem Cells",
+              "name": "Epidemiology and Global Health",
               "path": "#"
             },
             {
@@ -340,23 +246,24 @@
               "path": "#"
             }
           ],
-          "title": "The parasite’s new clothes",
+          "title": "Epidemiology: Mapping Ebola in wild animals for better disease control",
           "link": "#",
-          "firstAuthor": "Mark S Pearson",
+          "firstAuthor": "Sebastian Funk",
           "multipleAuthors": true,
           "category": {
             "name": "Insight",
             "path": "#"
           },
           "date": {
-            "forHuman": "April 15, 2016",
-            "forMachine": "20160415"
+            "forHuman": "Sep 19, 2014",
+            "forMachine": "20140919"
           },
           "hasSmallImage": "true",
           "image": {
             "defaultPath": "http://unsplash.it/250/140/",
             "srcset": "http://unsplash.it/70/70/ 70w,  http://unsplash.it/140/140/ 140w"
           }
+
         },
 
         {
@@ -364,113 +271,63 @@
 
           "subjects": [
             {
-              "name": "Immunology",
+              "name": "Cell Biology",
               "path": "#"
             },
             {
-              "name": "Microbiology and Infectious Disease",
+              "name": "Genes and Chromosomes",
               "path": "#"
             }
           ],
-          "title": "Catch me if you can",
+          "title": "Parasites: Do trypanosome turncoats wait before they commit?",
           "link": "#",
-          "firstAuthor": "Emilie Bourdonnay",
+          "firstAuthor": "Cher-Pheng Ooi",
           "multipleAuthors": true,
           "category": {
             "name": "Insight",
             "path": "#"
           },
           "date": {
-            "forHuman": "Feb 26, 2016",
-            "forMachine": "20160216"
-          }
-        },
-
-        {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            },
-            {
-              "name": "Plant Biology",
-              "path": "#"
-            }
-          ],
-          "title": "Autophagy under attack",
-          "link": "#",
-          "firstAuthor": "Paul de Figueiredo",
-          "multipleAuthors": true,
-          "category": {
-            "name": "Insight",
-            "path": "#"
+            "forHuman": "Jun 3, 2014",
+            "forMachine": "20140603"
           },
-          "date": {
-            "forHuman": "Feb 23, 2016",
-            "forMachine": "20160223"
-          }
-        },
-
-        {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Biophysics and Structural Biology",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
-          "title": "Intracellular pathogens under attack",
-          "link": "#",
-          "firstAuthor": "Petr Broz",
-          "category": {
-            "name": "Insight",
-            "path": "#"
-          },
-          "date": {
-            "forHuman": "Feb 19, 2016",
-            "forMachine": "20160219"
-          },
-          "hasBigImage": "true",
+          "hasSmallImage": "true",
           "image": {
             "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/250/140/ 250w,  http://unsplash.it/500/280/ 500w"
+            "srcset": "http://unsplash.it/70/70/ 70w,  http://unsplash.it/140/140/ 140w"
           }
 
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Genomics and Evolutionary Biology",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "Science Forum: Improving pandemic influenza risk assessment",
+          "link": "#",
+          "firstAuthor": "Colin A Russell",
+          "multipleAuthors": true,
+          "category": {
+            "name": "Feature article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Oct 16, 2014",
+            "forMachine": "20141016"
+          }
         }
 
       ]
-    }
-  ],
-
-  "profileLinks": {
-    "heading": "Senior editors",
-    "items": [
-      {
-        "name": "Prabhat Jha",
-        "title": "University of Toronto",
-        "imgLow": "http://lorempixel.com/90/90/people/1",
-        "imgHigh": "http://lorempixel.com/180/180/people/1"
-      },
-      {
-        "name": "Richard Losick",
-        "title": "Harvard University",
-        "imgLow": "http://lorempixel.com/90/90/people/2",
-        "imgHigh": "http://lorempixel.com/180/180/people/2"
-      }
-    ]
-  },
-
-  "editorsMoreLink": {
-    "link": "#",
-    "text": "editors for Microbiology and Infectious Disease"
-  },
+    }],
 
   "mainMenuLinks": [
     {
