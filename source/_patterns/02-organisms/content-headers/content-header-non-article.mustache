@@ -8,16 +8,16 @@
     {{> atoms-content-header-background-style-markup}}
   {{/backgroundImage}}
 
-  {{#hasCurator}}
+  {{#hasProfile}}
     <div class="content-header__top">
-      <a class="content-header__top_info" href="{{curator.profileLink}}">
+      <a class="content-header__top_info" href="{{{profile.link}}}">
         <dl>
           <dt class="content-header__top_label">Curated by</dt>
-          <dd class="content-header__top_data">{{curator.name}}</dd>
+          <dd class="content-header__top_data">{{profile.name}}</dd>
         </dl>
       </a>
     </div>
-  {{/hasCurator}}
+  {{/hasProfile}}
 
   <div class="content-header__inner">
     <div class="content-header__hgroup">

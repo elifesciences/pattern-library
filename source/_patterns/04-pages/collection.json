@@ -1,0 +1,925 @@
+{
+  "siteHeader": {
+    "navPrimaryLinks": [
+      {
+        "text": "Menu",
+        "variant": "first",
+        "textClasses": "nav-primary__menu_text",
+        "path": "#mainMenu",
+        "alt": "Menu icon",
+        "imgs": [
+          {
+            "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg",
+            "classes": "nav-primary__menu_icon",
+            "hires": {
+              "path": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png",
+              "width": "48w"
+            },
+            "lores": {
+              "path": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "width": "24w"
+            }
+          }
+        ]
+      },
+
+      {
+        "text": "Home",
+        "path": "#"
+      },
+
+      {
+        "text": "Magazine",
+        "path": "#"
+      },
+
+      {
+        "text": "Search",
+        "rel": "search",
+        "variant": "last",
+        "textClasses": "visuallyhidden",
+        "path": "#",
+        "alt": "Search icon",
+        "imgs": [
+          {
+            "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg",
+            "classes": "nav-primary__search_icon",
+            "hires": {
+              "path": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png",
+              "width": "48w"
+            },
+            "lores": {
+              "path": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "width": "24w"
+            }
+          }
+        ]
+      }
+    ],
+
+    "navSecondaryLinks": [
+      {
+        "text": "Careers",
+        "path": "#"
+      },
+
+      {
+        "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+        "path": "#"
+      },
+
+      {
+        "text": "Labs",
+        "path": "#"
+      },
+
+      {
+        "text": "Submit my research",
+        "path": "#",
+        "isButtonLike": true,
+        "variant": "button",
+        "buttonText": "Submit my research"
+      },
+
+      {
+        "text": "Alerts",
+        "variant": "notification",
+        "textClasses": "visuallyhidden",
+        "path": "#",
+        "alt": "Notification icon",
+        "imgs": [
+          {
+            "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg",
+            "classes": "nav-secondary__notification-icon",
+            "hires": {
+              "path": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png",
+              "width": "28w"
+            },
+            "lores": {
+              "path": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+              "width": "14w"
+            }
+
+          }
+        ]
+      },
+
+      {
+        "text": "Profile",
+        "variant": "profile",
+        "textClasses": "visuallyhidden",
+        "path": "#",
+        "alt": "Profile icon",
+        "imgs": [
+          {
+            "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg",
+            "classes": "nav-secondary__profile-icon",
+            "hires": {
+              "path": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png",
+              "width": "28w"
+            },
+            "lores": {
+              "path": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
+              "width": "14w"
+            }
+          }
+        ]
+      }
+    ],
+
+    "compactForm": {
+      "formAction" : "/search",
+      "formId": "searchBox",
+      "formMethod": "GET",
+      "label": "Search by keyword or author",
+      "inputType": "search",
+      "inputName": "search",
+      "inputValue": "",
+      "inputPlaceholder": "Search by keyword or author",
+      "ctaText": "Search"
+    },
+
+    "subjectFilter": "Cell biology"
+
+  },
+
+  "contentHeader": {
+    "title": "Tropical disease",
+
+    "titleClass": "content-header__title--medium",
+
+    "strapline": "A selection of papers",
+
+    "buttonText": "Subscribe",
+
+    "background": "true",
+    "backgroundImage": "true",
+    "hasCtaOrMeta": "true",
+    "hasProfile": "true",
+    "profile": {
+      "name": "Prabhat Jha",
+      "link": "#"
+    },
+    "images": {
+      "lores": "http://unsplash.it/950/400/",
+      "hires": "http://unsplash.it/1800/900/"
+    }
+  },
+
+  "leadParas": {
+    "paras": [
+      {"text": "eLife has published papers on many tropical diseases, including malaria, Ebola, leishmaniases, Dengue and African sleeping sickness. The articles below have been selected by eLife editors to give a flavour of the breadth of research on tropical diseases published by the journal."},
+      {"text": "More articles can be found on our subject pages for Epidemiology and Global Health and Microbiology and Infectious Disease."}
+    ]
+  },
+
+  "mainTeasers": [
+    {
+      "contentLabel": "Collection",
+      "items": [
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "Mapping global environmental suitability for Zika virus",
+          "link": "#",
+          "firstAuthor": "Jane P Messina",
+          "multipleAuthors": true,
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Apr 19, 2016",
+            "forMachine": "20160416"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+          "subjects": [
+            {
+              "name": "Genomics and Evolutionary Biology",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "Genomic epidemiology of artemisinin resistant malaria",
+          "link": "#",
+          "firstAuthor": "MalariaGEN Plasmodium falciparum Community Project",
+          "multipleAuthors": false,
+          "content": "<i>Plasmodium falciparum kelch13</i> mutations that cause artemisinin resistant malaria in Southeast Asia show markedly different patterns of evolutionary selection in Africa.",
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Mar 8, 2016",
+            "forMachine": "20160308"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            }
+          ],
+          "title": "Coverage and system efficiencies of insecticide-treated nets in Africa from 2000 to 2017",
+          "link": "#",
+          "firstAuthor": "Samir Bhatt",
+          "multipleAuthors": true,
+          "content": "Insecticide-treated net requirements for Africa have been underestimated, but mitigating for inefficiencies in net distributions can produce a cost effective path to universal coverage.",
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Feb 08, 2016",
+            "forMachine": "20160208"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Ecology",
+              "path": "#"
+            },
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            }
+          ],
+          "title": "Mapping residual transmission for malaria elimination",
+          "link": "#",
+          "firstAuthor": "Robert C Reiner",
+          "multipleAuthors": true,
+          "content": "A fine-grain map of residual transmission and importation in Swaziland shows where to target malaria elimination efforts.",
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Jan 27, 2016",
+            "forMachine": "20160127"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "Longitudinal analysis of <i>Plasmodium sporozoite</i> motility in the dermis reveals component of blood vessel recognition",
+          "link": "#",
+          "firstAuthor": "Christine S Hopp",
+          "multipleAuthors": true,
+          "content": "Malaria parasites enter the host via the skin, where they are inoculated by an infected mosquito as it probes for blood: the inoculation site is a bottleneck for the parasite and the only time when the parasite is extracellular for more than a few minutes, thus possibly presenting the best opportunity for antibody-mediated inhibition of infection.",
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Oct 6, 2015 7, 2015",
+            "forMachine": "20151006"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Biochemistry",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "Insights into the basic metabolic architecture and adaptations of malaria parasites for growth within human erythrocytes exemplify how incisive knowledge of biochemical pathways and mechanisms may be leveraged to develop new therapies.",
+          "link": "#",
+          "firstAuthor": "Paul A Sigala",
+          "multipleAuthors": true,
+          "content": "Insights into the basic metabolic architecture and adaptations of malaria parasites for growth within human erythrocytes exemplify how incisive knowledge of biochemical pathways and mechanisms may be leveraged to develop new therapies.",
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Jul 14, 2015",
+            "forMachine": "20150714"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Immunology",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "Malaria-associated atypical memory B cells exhibit markedly reduced B cell receptor signaling and effector function",
+          "link": "#",
+          "firstAuthor": "Silvia Portugal",
+          "multipleAuthors": true,
+          "content": "Atypical memory B cells (MBCs) appear to differentiate from classical MBCs during chronic exposure to the malaria parasite <i>Plasmodium falciparum</i>, and may interfere with the acquisition of immunity to the disease.",
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "May 8, 2015",
+            "forMachine": "20150508"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            }
+          ],
+          "title": "Large-scale whole genome sequencing of <i>M. tuberculosis</i> provides insights into transmission in a high prevalence area",
+          "link": "#",
+          "firstAuthor": "JA Guerra-Assunção",
+          "multipleAuthors": true,
+          "content": "A study of tuberculosis cases in the Karonga district of Malawi reveals that the main lineages of <i>M. tuberculosis</i> differ in their transmission patterns and virulence.",
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Mar 3, 2015",
+            "forMachine": "20150303"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Immunology",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "Blood-stage immunity to <i>Plasmodium chabaudi</i> malaria following chemoprophylaxis and sporozoite immunization",
+          "link": "#",
+          "firstAuthor": "Wiebke Nahrendorf",
+          "multipleAuthors": true,
+          "content": "A novel mouse model of immunization against Plasmodium chabaudi involving infectious mosquito bites and drug-treatment elicits protection against blood-stage malaria parasites, and shows that protection is not necessarily life cycle stage-specific.",
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Feb 25, 2015",
+            "forMachine": "20150225"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Ecology",
+              "path": "#"
+            },
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            }
+          ],
+          "title": "Effectiveness of traveller screening for emerging pathogens is shaped by epidemiology and natural history of infection",
+          "link": "#",
+          "firstAuthor": "Katelyn M Gostic",
+          "multipleAuthors": true,
+          "content": "Pathogen natural history, epidemiological knowledge, human behavior and epidemic progression determine whether symptom screening and questionnaires are effective barriers to geographic spread of infection by travelers.",
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Feb 19, 2015",
+            "forMachine": "20150219"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            }
+
+          ],
+          "title": "Vitamin A supplements, routine immunization, and the subsequent risk of <i>Plasmodium</i> infection among children under 5 years in sub-Saharan Africa",
+          "link": "#",
+          "firstAuthor": "Maria-Graciela Hollm-Delgado",
+          "multipleAuthors": true,
+          "content": "An analysis of national survey data shows that vitamin A might protect against malaria infection, an effect potentially modified by seasonality, and that no routine vaccinations were linked to parasitemia, though BCG vaccination was associated with <i>Pf</i>HRP-2 antigenemia.",
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Feb 3, 2015",
+            "forMachine": "20150203"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            }
+
+          ],
+          "title": "Modelling the contribution of the hypnozoite reservoir to <i>Plasmodium vivax</i> transmission",
+          "link": "#",
+          "firstAuthor": "Michael T White",
+          "multipleAuthors": true,
+          "content": "Mathematical models of the build-up and depletion of the hypnozoite reservoir in the liver can inform the design of treatment strategies for preventing <i>Plasmodium vivax</i> relapse infections.",
+          "category": {
+            "name": "Research article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Nov 18, 2014",
+            "forMachine": "20141118"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Biophysics and Structural Biology",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+
+
+          ],
+          "title": "Crystal structure of PfRh5, an essential <i>P. falciparum</i> ligand for invasion of human erythrocytes",
+          "link": "#",
+          "firstAuthor": "Lin Chen",
+          "multipleAuthors": true,
+          "content": "The crystal structure of a PfRh family protein from a malaria parasite has been solved and shows that PfRh5-which the parasite uses to invade human red blood cells-has a novel protein fold.",
+          "category": {
+            "name": "Short Report",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Oct 8, 2014",
+            "forMachine": "20141008"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "Mapping the zoonotic niche of Ebola virus disease in Africa",
+          "link": "#",
+          "firstAuthor": "David M Pigott",
+          "multipleAuthors": true,
+          "content": "Understanding where future Ebola virus outbreaks may start and the changing nature of the populations living in these places is of critical importance in helping to prepare for future outbreaks.",
+          "category": {
+            "name": "Research Article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Oct 8, 2014",
+            "forMachine": "20141008"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+
+
+          ],
+          "title": "Global distribution maps of the leishmaniases",
+          "link": "#",
+          "firstAuthor": "David M Pigott",
+          "multipleAuthors": true,
+          "content": "Maps defining environmental risk of the leishmaniases provide insights into the ecology of these diseases and identify regions to target public health measures and inform future burden estimates.",
+          "category": {
+            "name": "Research Article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Jun 27, 2014",
+            "forMachine": "20140627"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "<i>Salmonella</i> Typhi and <i>Salmonella</i> Paratyphi A elaborate distinct systemic metabolite signatures during enteric fever",
+          "link": "#",
+          "firstAuthor": "Elin Näsström",
+          "multipleAuthors": true,
+          "content": "Metabolite analysis of plasma from enteric fever patients define signals of organism specific host–pathogen interactions and provides opportunities for new diagnostics.",
+          "category": {
+            "name": "Research Article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Jun 5, 2014",
+            "forMachine": "20140605"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "A micro-epidemiological analysis of febrile malaria in Coastal Kenya showing hotspots within hotspots",
+          "link": "#",
+          "firstAuthor": "Philip Bejon",
+          "multipleAuthors": true,
+          "content": "Malaria 'hotspots' can be identified that range in size from a few homesteads to a village, and it will be necessary to eliminate hotspots at varying scales as we progress towards eliminating malaria.",
+          "category": {
+            "name": "Research Article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Apr 24, 2014",
+            "forMachine": "20140424"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Genomics and Evolutionary Biology",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "Integrating influenza antigenic dynamics with molecular evolution",
+          "link": "#",
+          "firstAuthor": "Trevor Bedford",
+          "multipleAuthors": true,
+          "content": "Combined antigenic and genetic analysis shows that different strains of the human influenza virus display dramatically different rates of antigenic drift, and that these differences have a significant impact on the number of new infections in each flu season.",
+          "category": {
+            "name": "Research Article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Feb 4, 2014",
+            "forMachine": "20140204"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Genomics and Evolutionary Biology",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "The antigenic switching network of <i>Plasmodium falciparum</i> and its implications for the immuno-epidemiology of malaria",
+          "link": "#",
+          "firstAuthor": "Robert Noble",
+          "multipleAuthors": true,
+          "content": "The first comprehensive analysis of antigenic switching in the malaria-causing parasite <i>Plasmodium falciparum</i> provides new insights into the process that prevents individuals from acquiring immunity to the disease.",
+          "category": {
+            "name": "Research Article",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Sep 17, 2013",
+            "forMachine": "20130917"
+          }
+        }
+
+      ]
+    }
+
+  ],
+
+  "multimediaTeasers": [
+    {
+      "contentLabel": "Multimedia",
+      "items": [
+        {
+          "title": "Taking a close look at TB",
+          "link": "#",
+          "firstAuthor": "Judith Glynn",
+          "multipleAuthors": false,
+          "category": {
+            "name": "Podcast",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Feb, 2015",
+            "forMachine": "2015-02"
+          },
+          "hasBigImage": "true",
+          "image": {
+            "defaultPath": "http://unsplash.it/250/140/",
+            "srcset": "http://unsplash.it/250/140/ 250w,  http://unsplash.it/500/280/ 500w"
+          }
+        }
+      ]
+    }
+  ],
+
+  "relatedTeasers": [
+    {
+      "contentLabel": "Related",
+      "items": [
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            }
+          ],
+          "title": "What makes an eLife paper in epidemiology and global health?",
+          "link": "#",
+          "firstAuthor": "M Jit",
+          "multipleAuthors": true,
+          "category": {
+            "name": "Editorial",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Oct 7, 2015",
+            "forMachine": "20151007"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "Mapping Ebola in wild animals for better disease control",
+          "link": "#",
+          "firstAuthor": "S Funk",
+          "multipleAuthors": true,
+          "category": {
+            "name": "Insight",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Sept 19, 2014",
+            "forMachine": "20140919"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": [
+            {
+              "name": "Epidemiology and Global Health",
+              "path": "#"
+            },
+            {
+              "name": "Microbiology and Infectious Disease",
+              "path": "#"
+            }
+          ],
+          "title": "Honing in on enteric fever",
+          "link": "#",
+          "firstAuthor": "LR McKinnon",
+          "multipleAuthors": true,
+          "category": {
+            "name": "Insight",
+            "path": "#"
+          },
+          "date": {
+            "forHuman": "Jul 1, 2014",
+            "forMachine": "20140701"
+          }
+        }
+
+      ]
+    }],
+
+  "profileLinks": {
+    "contentLabel": "Contributors",
+    "items": [
+      {
+        "name": "Ben Cooper",
+        "title": "Mahidol Oxford Tropical Medicine Research Unit (Thailand)",
+        "imgLow": "http://lorempixel.com/90/90/people/2",
+        "imgHigh": "http://lorempixel.com/180/180/people/2"
+      },
+      {
+        "name": "Eduardo Franco",
+        "title": "McGill University (Canada)",
+        "imgLow": "http://lorempixel.com/90/90/people/3",
+        "imgHigh": "http://lorempixel.com/180/180/people/3"
+      },
+      {
+        "name": "Simon I Hay",
+        "title": "University of Washington (United States)",
+        "imgLow": "http://lorempixel.com/90/90/people/4",
+        "imgHigh": "http://lorempixel.com/180/180/people/4"
+      },
+      {
+        "name": "Mark Jit",
+        "title": "London School of Hygiene & Tropical Medicine, and Public Health England (United Kingdom)",
+        "imgLow": "http://lorempixel.com/90/90/people/5",
+        "imgHigh": "http://lorempixel.com/180/180/people/5"
+      },
+      {
+        "name": "Quarraisha Abdool Karim",
+        "title": "CAPRISA (South Africa)",
+        "imgLow": "http://lorempixel.com/90/90/people/6",
+        "imgHigh": "http://lorempixel.com/180/180/people/6"
+      },
+      {
+        "name": "Urszula Krzych",
+        "title": "Walter Reed Army Institute of Research (United States)",
+        "imgLow": "http://lorempixel.com/90/90/people/10",
+        "imgHigh": "http://lorempixel.com/180/180/people/10"
+      },
+      {
+        "name": "Catherine Kyobutungi",
+        "title": "Africa Population Health Research Center (Kenya)",
+        "imgLow": "http://lorempixel.com/90/90/people/8",
+        "imgHigh": "http://lorempixel.com/180/180/people/8"
+      },
+      {
+        "name": "Dominique Soldati-Favre",
+        "title": "University of Geneva (Switzerland)",
+        "imgLow": "http://lorempixel.com/90/90/people/9",
+        "imgHigh": "http://lorempixel.com/180/180/people/9"
+      }
+    ]
+  },
+
+  "mainMenuLinks": [
+    {
+      "title": "Subjects",
+      "titleId": "mainMenuSubjects",
+      "items": [
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biophysics and Structural Biology", "url": "#" },
+        { "name": "Cancer Biology", "url": "#" },
+        { "name": "Cell Biology", "url": "#" },
+        { "name": "Computational and Systems Biology", "url": "#" },
+        { "name": "Developmental Biology and Stem Cells", "url": "#" },
+        { "name": "Ecology", "url": "#" },
+        { "name": "Epidemiology and Global Health", "url": "#" },
+        { "name": "Genes and Chromosomes", "url": "#" },
+        { "name": "Genomics and Evolutionary Biology", "url": "#" },
+        { "name": "Human Biology and Medicine", "url": "#" },
+        { "name": "Immunology", "url": "#" },
+        { "name": "Microbiology and Infectious Disease", "url": "#" },
+        { "name": "Neuroscience", "url": "#" },
+        { "name": "Plant Biology", "url": "#" }
+      ]
+    },
+    {
+      "title": "eLife",
+      "titleId": "mainMenuElife",
+      "items": [
+        { "name": "How to publish", "url": "#" },
+        { "name": "About", "url": "#" },
+        { "name": "Who we work with", "url": "#" },
+        { "name": "Alerts", "url": "#" },
+        { "name": "Contact", "url": "#" },
+        { "name": "Terms and policy", "url": "#" }
+      ]
+    },
+    {
+      "title": "Resources",
+      "titleId": "mainMenuResources",
+      "items": [
+        { "name": "Inside eLife", "url": "#" },
+        { "name": "Monthly archive", "url": "#" },
+        { "name": "Labs", "url": "#" },
+        { "name": "For the press", "url": "#" },
+        { "name": "Brand", "url": "#" }
+      ]
+    }
+  ],
+
+  "footerMenuLinks1": [
+    { "name": "About", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" }
+  ],
+
+  "footerMenuLinks2": [
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
+  ]
+
+
+}

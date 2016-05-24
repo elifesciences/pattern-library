@@ -19,7 +19,6 @@
 
 .profile-snippet__image {
   display: block;
-  // width: 100%;
 }
 
 .profile-snippet__name {
@@ -51,6 +50,8 @@
 @media only screen {
   .profile-snippet__picture {
     width: auto;
+    @include margin($teaser-spacing-left, "left");
+    @include margin($teaser-spacing-bottom, "bottom");
     max-width: #{get_rem_from_px(75)}rem;
   }
 

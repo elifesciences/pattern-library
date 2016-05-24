@@ -171,6 +171,7 @@
       "contentLabel": "Latest articles",
       "items": [
         {
+          "hasSubjects": "true",
 
           "subjects": [
             {
@@ -199,6 +200,7 @@
         },
 
         {
+          "hasSubjects": "true",
 
           "subjects": [
             {
@@ -225,6 +227,7 @@
         },
 
         {
+          "hasSubjects": "true",
 
           "subjects": [
             {
@@ -251,6 +254,7 @@
         },
 
         {
+          "hasSubjects": "true",
 
           "subjects": [
             {
@@ -283,6 +287,7 @@
         },
 
         {
+          "hasSubjects": "true",
 
           "subjects": [
             {
@@ -313,11 +318,17 @@
     }
   ],
 
+  "loadMore": {
+    "text": "Load more",
+    "path": "#"
+  },
+
   "secondaryTeasers": [
     {
       "contentLabel": "Highlighted content",
       "items": [
         {
+          "hasSubjects": "true",
 
           "subjects": [
             {
@@ -349,6 +360,7 @@
         },
 
         {
+          "hasSubjects": "true",
 
           "subjects": [
             {
@@ -375,6 +387,7 @@
         },
 
         {
+          "hasSubjects": "true",
 
           "subjects": [
             {
@@ -401,6 +414,7 @@
         },
 
         {
+          "hasSubjects": "true",
 
           "subjects": [
             {

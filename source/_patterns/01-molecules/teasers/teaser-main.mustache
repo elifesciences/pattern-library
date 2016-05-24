@@ -3,9 +3,11 @@
             {{#hasSmallImage}} teaser--small-image{{/hasSmallImage}}
             ">
 
-  <div class="teaser__meta">
+{{#hasSubjects}}
+    <div class="teaser__meta">
     {{#subjects}}<a href="{{{path}}}" class="teaser__subject_link">{{name}}</a>{{/subjects}}
   </div>
+{{/hasSubjects}}
 
   {{#image}}
   <a href="{{{link}}}" class="teaser__header_text_link"><img src="{{{defaultPath}}}" srcset="{{{srcset}}}" class="teaser__img" alt="{{alt}}" /></a>

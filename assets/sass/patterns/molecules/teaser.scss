@@ -153,7 +153,7 @@
   }
 
   .teaser__img {
-    @include margin(2, "top");
+    margin-top: 0;
   }
 
 }
