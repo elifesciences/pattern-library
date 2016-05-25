@@ -9,8 +9,12 @@
     <main role="main">
 
     {{#contentHeader}}
-      {{> organisms-content-header-non-article}}
+      {{> organisms-content-header-podcast}}
     {{/contentHeader}}
+
+    {{#audioPlayer}}
+      {{> molecules-audio-player}}
+    {{/audioPlayer}}
 
 
     <div class="wrapper">
@@ -31,7 +35,7 @@
               <ol class="listing-list">
                 {{#items}}
                   <li class="listing-list__item">
-                    {{> molecules-teaser-main}}
+                    {{> molecules-teaser--podcast-item}}
                   </li>
                 {{/items}}
               </ol>
@@ -68,19 +72,9 @@
 
             {{/relatedTeasers}}
 
-            {{#profileLinks}}
-
-              {{> atoms-list-heading}}
-              <ol class="listing-list">
-                {{#items}}
-                  <li class="listing-list__item">
-                    {{> molecules-profile-snippet }}
-                  </li>
-                {{/items}}
-              </ol>
-
-            {{/profileLinks}}
-
+            {{#boilerplate}}
+              {{> molecules-mini-section}}
+            {{/boilerplate}}
 
           </div>
 

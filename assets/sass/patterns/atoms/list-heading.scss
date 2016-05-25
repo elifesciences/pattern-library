@@ -1,4 +1,7 @@
 .list-heading {
   @include section-title-typeg();
+  @include nospace("top");
+  @include padding(12, "bottom");
+  margin-bottom: 0;
   text-transform: uppercase;
 }

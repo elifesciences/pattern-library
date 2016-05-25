@@ -35,11 +35,6 @@
   @include margin(15, "top");
 }
 
-.listing-list-heading {
-  @include nospace("bottom");
-  @include nospace("top");
-}
-
 .listing-list {
   @include nospace("left");
   list-style-type: none;
