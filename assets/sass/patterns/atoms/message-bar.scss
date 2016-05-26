@@ -2,10 +2,6 @@
 .message-bar {
   background-color: $color-text-ui-background-hue;
   border-radius: 4px;
-  color: $color-text-secondary;
-  font-family: $font-secondary;
-  @include font-size(11);
-  font-weight: 700;
+  @include label-content-typeg($color-text-secondary);
   @include padding(8 7);
-  text-transform: uppercase;
 }

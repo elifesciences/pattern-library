@@ -1,15 +1,12 @@
 
 .doi {
-  color: $color-text-secondary;
-  font-family: $font-secondary;
-  @include font-size(11);
-  font-weight: 700;
-  line-height: 1;
+  @include label-content-typeg($color-text-secondary);
 }
 
 .doi__link {
   color: $color-text-secondary;
   text-decoration: none;
+  text-transform: none;
 
   &:hover {
     color: $color-primary;

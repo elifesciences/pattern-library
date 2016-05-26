@@ -376,6 +376,18 @@
     }
   ],
 
+  "emailCta": {
+    "formAction" : "#",
+    "formId": "myCompactForm",
+    "formMethod": "GET",
+    "label": "Email",
+    "inputType": "email",
+    "inputName": "email",
+    "inputValue": "",
+    "inputPlaceholder": "you@email.com",
+    "ctaText": "Go"
+  },
+
   "footerMenuLinks1": [
     { "name": "About", "url": "#" },
     { "name": "Alerts", "url": "#" },

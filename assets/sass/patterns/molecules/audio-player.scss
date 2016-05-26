@@ -26,7 +26,7 @@
 
 .audio-player__header {
   color: $color-text--reverse;
-  font-family: $font-primary;
+  @include listing-side-art-title-typeg();
   @include margin(5, "bottom");
 }
 
@@ -51,7 +51,7 @@
 }
 
 .audio-player__progress_bar {
-  background-color: #666;
+  background-color: $color-text-secondary;
   height: 6px;
   left: 0;
   position: absolute;
@@ -60,10 +60,8 @@
 }
 
 .audio-player__times {
-  color: #666;
   float: right;
-  font-family: $font-secondary;
-  @include font-size(12);
+  @include label-content-typeg($color-text-secondary);
 }
 
 .audio-player__current_time:after {
