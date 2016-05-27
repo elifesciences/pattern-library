@@ -13,11 +13,9 @@
 }
 
 .article-meta__group_title {
-  color: $color-text-secondary;
-  @include font-size(11);
-  font-weight: 600;
+  @include label-content-typeg($color-text-secondary);
+  //font-weight: 600;
   @include margin(0 0 2 0);
-  text-transform: uppercase;
 }
 
 .article-meta__link_list {
@@ -28,13 +26,9 @@
 
 .article-meta__link_list_item {
   display: inline;
-  font-family: $font-secondary;
-  @include font-size(11);
-  font-weight: 600;
-  line-height: 1.8;
+  @include label-subject-typeg();
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
 }
 
 .article-meta__link {

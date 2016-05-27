@@ -6,8 +6,7 @@
   position: relative;
 
   .content-header__download_link {
-    margin-top: 5px;
-    margin-top: #{get-rem-from-px(5)}rem;
+    @include margin(5, "top");
     position: absolute;
     right: 0;
   }

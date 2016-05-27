@@ -10,6 +10,7 @@
 }
 
 .email-cta__header_text {
+  @include h2-typeg();
   color: $color-text;
   margin: 0;
   @include padding(0 0 7 0);
@@ -17,9 +18,6 @@
 
 .email-cta__sub_header {
   color: $color-text;
-  font-family: $font-primary;
-  @include font-size(16);
-  font-weight: 500;
+  @include body-typeg();
   margin: 0;
-  @include padding(0 0 24 0);
 }

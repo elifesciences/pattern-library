@@ -11,10 +11,7 @@
 }
 
 .site-links-list__list_item {
-  font-family: $font-secondary;
-  @include font-size(12);
-  font-weight: 700;
-  line-height: 1.85;
+  @include typeg-portal-quick-nav();
   margin: 0;
   padding: 0;
 }
@@ -43,13 +40,13 @@
   }
 
   .site-links-list__list:nth-child(1) {
-    padding-right: #{get-rem-from-px(8)}rem;
+    @include padding(8, "right");
   }
   .site-links-list__list:nth-child(2) {
-    padding-left: #{get-rem-from-px(8)}rem;
-    padding-right: #{get-rem-from-px(8)}rem;
+    @include padding(8, "left");
+    @include padding(8, "right");
   }
   .site-links-list__list:nth-child(3) {
-    padding-left: #{get-rem-from-px(8)}rem;
+    @include padding(8, "left");
   }
 }

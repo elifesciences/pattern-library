@@ -18,18 +18,11 @@
 }
 
 .captioned-image__caption_heading {
-  font-family: $font-secondary;
-  @include font-size(13);
-  font-weight: 700;
-  margin: 0;
-  padding-bottom: 0;
+  @include fig-caption-heading-typeg();
 }
 
 .captioned-image__caption_text {
-  font-family: $font-secondary;
-  @include font-size(13);
-  margin: 0;
-  @include padding(0 0 5 0);
+  @include fig-caption-text-typeg();
 }
 
 @media only screen and (min-width: #{get-rem-from-px(430)}em) {
