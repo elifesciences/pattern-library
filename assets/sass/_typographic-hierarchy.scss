@@ -85,6 +85,7 @@
 @mixin body-typeg() {
   font-family: $font-primary;
   @include font-size(16);
+  font-weight: normal;
   line-height: 1.5;
   @include padding(24, "bottom");
 }
@@ -165,7 +166,6 @@
 @mixin fig-caption-text-typeg($space-underneath: 19) {
   font-family: $font-secondary;
   @include font-size(13);
-  font-weight: 600;
   line-height: 1.3;
   @include padding($space-underneath, "bottom");
   text-decoration: none;
@@ -182,7 +182,6 @@
 @mixin table-cell-typeg() {
   font-family: $font-secondary;
   @include font-size(13);
-  font-weight: 600;
   line-height: 1.3;
   @include padding(19, "bottom");
 }
@@ -275,13 +274,12 @@
 
 // FORMS
 
-@mixin typeg-form-label {
+@mixin typeg-form-label() {
   color: $color-text;
   font-family: $font-secondary;
   @include font-size(14);
   font-weight: 700;
   line-height: 1.3;
-  @include margin(6, "bottom");
 }
 
 // No definition in developer docs, this is inferred from styles already applied to filter-group.
