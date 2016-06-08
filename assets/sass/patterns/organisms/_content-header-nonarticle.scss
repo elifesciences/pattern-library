@@ -86,7 +86,7 @@
 
   // 40px is the size of the avatar background image.
   .content-header__top_info {
-    background: url("../img/avatars/pjha1x.png") 0 17px transparent no-repeat;
+    background: url("../img/fixtures/pjha1x.png") 0 17px transparent no-repeat;
     background-size: 40px;
     box-sizing: content-box;
     display: table-cell;
@@ -125,13 +125,13 @@
 
   @media only screen and (min-resolution: 196dpi) {
     .content-header__top_info {
-      background-image: url("../img/avatars/pjha2x.png");
+      background-image: url("../img/fixtures/pjha2x.png");
     }
   }
 
   @media only screen and (-webkit-min-device-pixel-ratio: 2) {
     .content-header__top_info {
-      background-image: url("../img/avatars/pjha2x.png");
+      background-image: url("../img/fixtures/pjha2x.png");
     }
   }
 
