@@ -1,3 +1,5 @@
+@import "../../definitions";
+
 .form-label {
   display: block;
   @include typeg-form-label();

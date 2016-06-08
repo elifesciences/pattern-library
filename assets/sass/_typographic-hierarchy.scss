@@ -1,8 +1,3 @@
-// The rules:
-//   font-family: $font-secondary;
-//   font-weight: 700;
-// taken togther should result in setting Avenir Next Demi Bold. Verify.
-
 // HELPERS
 
 @function get-title-font-size($title-size, $is-wide) {
@@ -12,7 +7,7 @@
   @if $is-wide != false {
     @return map-get($wide-title-sizes, $title-size);
   }
-    @return map-get($default-title-sizes, $title-size);
+  @return map-get($default-title-sizes, $title-size);
 }
 
 @mixin _set-typeg-width-variant($smallerSize, $largerSize, $is-wide: false) {

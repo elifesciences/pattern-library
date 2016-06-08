@@ -1,3 +1,5 @@
+@import "../../definitions";
+
 /**
  * Grid
  *
@@ -206,7 +208,6 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
     clear: both;
   }
 }
-
 
 /**
  * 1. Space columns apart.
