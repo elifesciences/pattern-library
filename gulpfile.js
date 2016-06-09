@@ -86,13 +86,14 @@ gulp.task('generateAllStyles', ['sass:lint'], () => {
   var options = environment === 'production' ? {outputStyle: 'compressed'} : null;
 
   return gulp.src('assets/sass/build.scss')
+      .pipe(sourcemaps.init())
       .pipe(sassGlob())
       .pipe(sass(options).on('error', sass.logError))
       .pipe(autoprefixer({
         browsers: ['ie >= 9', 'Firefox ESR', 'Opera 12.1', 'last 3 Safari versions']
       }))
-      .pipe(sourcemaps.write('.'))
       .pipe(rename('all.css'))
+      .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('source/assets/css'));
 });
 
