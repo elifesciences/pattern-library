@@ -1,0 +1,58 @@
+assets:
+  css:
+    - teaser--non-article-content.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    srcLow:
+      type: string
+      minLength: 1
+    altText:
+      type: string
+      minLength: 1
+    srcset:
+      type: string
+      minLength: 1
+    link:
+      type: string
+      minLength: 1
+    headerText:
+      type: string
+      minLength: 1
+    subHeader:
+      type: string
+      minLength: 1
+    content:
+      type: string
+      minLength: 1
+    footerText:
+      type: string
+      minLength: 1
+    date:
+      type: object
+      properties:
+        forHuman:
+          type: string
+          minLength: 1
+        forMachine:
+          type: string
+          minLength: 1
+      required:
+        - forHuman
+        - forMachine
+    downloadSrc:
+      type: string
+      minLength: 1
+
+  dependencies:
+    srcLow:
+      - srcset
+      - altText
+
+  required:
+    - link
+    - headerText
+    - content
+    - date
