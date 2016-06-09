@@ -4,9 +4,18 @@ This pattern library uses as its starting point  `https://github.com/pattern-lab
 # Quickstart
 
 This sets up PatternLab to generate the html from mustache templates, and Gulp to handle transformation
-of scss to css, & other various build-related tasks. Note that artefacts generated from running Gulp are
+of scss to css, and other various build-related tasks. Note that artefacts generated from running Gulp are
 inputs for the generation of PatternLab files, so Gulp needs to run before PatternLab. When developing,
 it’s recommended to run watch tasks for both, which will take care of this.
+
+## 1. Dependencies
+You'll need:
+
+ - PHP (for Patternlab)
+ - nodejs (for gulp)
+ - ruby (to handle the `compass` gem that underpins `gulp-compass` (see https://www.npmjs.com/package/gulp-compass).
+
+Then install compass: `gem install compass`
 
 ## 1. Set up PatternLab
 
