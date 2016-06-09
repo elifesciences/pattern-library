@@ -6,6 +6,8 @@
  *************************************/
 
 const gulp              = require('gulp');
+const compass           = require('gulp-compass');
+const minimist          = require('minimist');
 const del               = require('del');
 const rename            = require('gulp-rename');
 const sass              = require('gulp-sass');
@@ -32,12 +34,41 @@ const browserSync       = require('browser-sync');
 const express           = require('express');
 const gutil             = require('gulp-util');
 
+var options = minimist(process.argv);
+var environment = options.environment || 'development';
+
 var server;
 
 /*************************************
  *  Tasks
  *************************************/
 
+gulp.task('generateStyles', ['generateAllStyles', 'generateIndividualStyles'], () => {
+  del(['source/assets/css/tmp']);
+});
+
+gulp.task('generateIndividualStyles', ['buildStyleFiles'], () => {
+  return gulp.src(['source/assets/css/tmp/**/*.css', 'source/assets/css/tmp/**/*.map'])
+      .pipe(rename({ dirname: '' }))
+      .pipe(gulp.dest('source/assets/css'));
+
+});
+
+gulp.task('buildStyleFiles', ['sass:lint'], () => {
+
+  return gulp.src(['assets/sass/**/*.scss', '!assets/sass/[^_]*.scss'])
+    .pipe(compass(
+      {
+        css: 'source/assets/css/tmp',
+        sass: 'assets/sass',
+        sourcemap: true,
+        style: environment === 'production' ? 'compressed' : 'expanded'
+      }
+    ))
+    .pipe(gulp.dest('source/assets/css/tmp'));
+
+  }
+);
 
 
  /******************************************************************************
@@ -50,34 +81,22 @@ var server;
   * Auto-prefixes properties as required.
   ******************************************************************************/
 
-gulp.task('sass', ['sass:lint'], () => {
+gulp.task('generateAllStyles', ['sass:lint'], () => {
 
-  // delete all source files + folders
-  del(['./source/assets/css/*']);
+  var options = environment === 'production' ? {outputStyle: 'compressed'} : null;
 
-  return gulp.src('./assets/sass/build.scss')
-      // glob
+  return gulp.src('assets/sass/build.scss')
       .pipe(sassGlob())
-
-      // compile SASS
-      .pipe(
-        sass().on('error', sass.logError)
-      )
-
-      // autoprefix
+      .pipe(sass(options).on('error', sass.logError))
       .pipe(autoprefixer({
         browsers: ['ie >= 9', 'Firefox ESR', 'Opera 12.1', 'last 3 Safari versions']
       }))
-
-      // create sourcemap
       .pipe(sourcemaps.write('.'))
-
-      // output
       .pipe(rename('all.css'))
-      .pipe(gulp.dest('./source/assets/css'));
+      .pipe(gulp.dest('source/assets/css'));
 });
 
-gulp.task('sass:lint', () => {
+gulp.task('sass:lint', ['sass:clean'], () => {
 
   let processors = [
     stylelint(),
@@ -97,6 +116,10 @@ gulp.task('sass:lint', () => {
           ]
       )
       .pipe(postcss(processors, {syntax: syntax_scss}));
+});
+
+gulp.task('sass:clean', () => {
+  del(['./source/assets/css/*']);
 });
 
 /******************************************************************************
@@ -247,7 +270,7 @@ gulp.task('js:watch', () => {
 
 // Task sets
 gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'/*, 'tests:watch'*/]);
-gulp.task('default', ['sass', 'img', 'fonts', 'js']);
+gulp.task('default', ['generateStyles', 'img', 'fonts', 'js']);
 
 /******************************************************************************
  * Used for local testing

@@ -20,6 +20,7 @@ it’s recommended to run watch tasks for both, which will take care of this.
 - install required npm packages with `npm install`
 - run `gulp` to build the css & js files.
 - then run `gulp watch` to watch for changes to files or do both in one fell swoop with `gulp && gulp watch` (the watch task on its own will not compile your assets until a file is changed).
+- if generating files intended for website production, invoke with the production flag, like this: `gulp --environment production`. The only difference at the moment is to minify css files, it may be used for more later.
 
 ## 3. Generate PatternLab
 
