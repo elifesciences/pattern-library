@@ -2,23 +2,23 @@
 
 <div class="teaser teaser--non-article-content">
     <header class="teaser__header">
-      {{#srcLow}}
+      {{#image}}
       <a href="{{link}}" class="teaser__link">
-         <img src="{{srcLow}}" srcset="{{srcset}}" class="teaser__header_img" alt="{{altText}}" />
+         <img src="{{defaultPath}}" srcset="{{srcset}}" class="teaser__header_img" alt="{{altText}}" />
       </a>
-      {{/srcLow}}
+      {{/image}}
       <h4 class="teaser__header_text"><a href="{{link}}" class="teaser__link">{{{headerText}}}</a></h4>
       {{#subHeader}}
       <div class="teaser__subheading">{{subHeader}}</div>
       {{/subHeader}}
     </header>
     <div class="teaser__body">
-      {{content}}
+      {{{content}}}
     </div>
 
   <footer class="teaser__footer">
     <div class="teaser__footer_text">
-      {{#footerText}}{{footerText}}{{/footerText}}
+      {{#footerText}}{{{footerText}}}{{/footerText}}
       {{#date}}
         <time datetime="{{date.forMachine}}">{{date.forHuman}}</time>
       {{/date}}
