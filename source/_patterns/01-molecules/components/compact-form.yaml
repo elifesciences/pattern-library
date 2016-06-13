@@ -1,0 +1,50 @@
+assets:
+  css:
+    - compact-form.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    formAction:
+      type: string
+      minLength: 1
+    formId:
+      type: string
+      minLength: 1
+    formMethod:
+      type: string
+      enum:
+        - GET
+        - POST
+    label:
+      type: string
+      minLength: 1
+    inputType:
+      type: string
+      enum:
+        - email
+        - password
+        - search
+        - tel
+        - text
+        - url
+    inputName:
+      type: string
+      minLength: 1
+    inputValue:
+      type: string
+    inputPlaceholder:
+      type: string
+      minLength: 1
+    ctaText:
+      type: string
+      minLength: 1
+  required:
+    - formId
+    - formAction
+    - formMethod
+    - label
+    - inputName
+    - inputPlaceholder
+    - ctaText
