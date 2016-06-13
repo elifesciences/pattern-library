@@ -138,6 +138,10 @@
     "ctaText": "Search"
   },
 
-  "subjectFilter": "Cell biology"
+  "subjectFilter": {
+    "name": "subject_filter",
+    "value": "cell_biology",
+    "text": "Cell biology"
+  }
 
 }
