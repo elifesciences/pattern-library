@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+echo "Setting up local working copy..."
+mkdir -p public
+cp -r ./core/styleguide ./public/
 echo "Installing dependencies..."
 npm install
 composer install --no-interaction
