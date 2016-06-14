@@ -1,0 +1,12 @@
+{
+    "name": "elife/pattern-library",
+    "description": "eLife pattern library",
+    "type": "project",
+    "license": "GPL-3.0+",
+    "require-dev": {
+        "justinrainbow/json-schema": "^2.0",
+        "php-jsonpointer/php-jsonpointer": "^1.1",
+        "symfony/finder": "^3.1",
+        "symfony/yaml": "^3.1"
+    }
+}

@@ -1,0 +1,79 @@
+#!/usr/bin/env php
+<?php
+
+use JsonSchema\Validator;
+use Rs\Json\Pointer;
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\Yaml\Yaml;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$patternDir = __DIR__ . '/../source/_patterns';
+
+$finder = (new Finder())->files()->in($patternDir)->name('*.yaml');
+
+$validator = new Validator();
+
+$exit = 0;
+
+foreach ($finder as $file) {
+    $yaml = Yaml::parse($file->getContents());
+    $yaml = resolveJsonReferences($yaml, $file);
+    $yaml = Yaml::dump($yaml, 100);
+    $yaml = str_replace(' {  }', ' []', $yaml);
+    $yaml = Yaml::parse($yaml, true, false, true);
+
+    $jsonFinder = (new Finder())->files()->in($file->getPath())->name('/^' . $file->getBasename('.yaml') . '(~.+)?.json$/');
+
+    if (0 === count($jsonFinder)) {
+        echo 'Warning: No JSON file for ' . $file->getFilename() . PHP_EOL . PHP_EOL;
+
+        continue;
+    }
+
+    foreach ($jsonFinder as $json) {
+        $validator->check(json_decode(file_get_contents($json)), $yaml->schema);
+        if (!$validator->isValid()) {
+            $exit = 1;
+            $message = 'Error: ' . $json->getFilename() . PHP_EOL;
+            foreach ($validator->getErrors() as $error) {
+                $message .= sprintf("[%s] %s\n", $error['property'], $error['message']);
+            }
+            echo $message . PHP_EOL;
+        }
+    }
+}
+
+exit($exit);
+
+/**
+ * Naive JSON reference resolver than can handle YAML.
+ *
+ * @internal
+ */
+function resolveJsonReferences(array $json, SplFileInfo $file)
+{
+    foreach ($json as $key => $value) {
+        if (is_array($value)) {
+            $json[$key] = resolveJsonReferences($value, $file);
+        } elseif ('$ref' === $key) {
+            $parts = explode('#', $value, 2);
+
+            if (empty($parts[0])) {
+                $referenced = $file;
+            } else {
+                $referenced = new SplFileInfo(dirname($file->getRealPath()) . '/' . $parts[0]);
+            }
+
+            if (null === $json = json_decode(file_get_contents($referenced->getRealPath()), true)) {
+                $json = Yaml::parse(file_get_contents($referenced->getRealPath()));
+            }
+
+            $pointer = new Pointer(json_encode($json));
+
+            return resolveJsonReferences($pointer->get($parts[1]), $referenced);
+        }
+    }
+
+    return $json;
+}
