@@ -545,7 +545,9 @@
     { "name": "Who we work with", "url": "#" },
     { "name": "Contact", "url": "#" },
     { "name": "Terms & Policy", "url": "#" }
-  ]
+  ],
 
+  "year": 2016,
+  "assetsPath": "../../assets"
 
 }

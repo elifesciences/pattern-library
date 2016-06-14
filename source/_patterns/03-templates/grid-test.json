@@ -165,5 +165,9 @@
     { "name": "Discussion", "url": "#" },
     { "name": "Materials & methods", "url": "#" },
     { "name": "References", "url": "#" }
-  ]
+  ],
+
+  "year": 2016,
+  "assetsPath": "../../assets"
+
 }
