@@ -1,4 +1,6 @@
 {
+  "year": 2016,
+  "assetsPath": "../../assets",
   "mainMenuLinks": [
     {
       "title": "Subjects",
@@ -44,5 +46,15 @@
         { "name": "Brand", "url": "#" }
       ]
     }
+  ],
+  "footerMenuLinks1": [
+    { "name": "About", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" }
+  ],
+  "footerMenuLinks2": [
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
   ]
 }

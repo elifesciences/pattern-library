@@ -342,6 +342,10 @@
       "dateTime": "2015-12-12",
       "dateString": "Dec 12, 2015"
     }
-  }
+  },
+
+  "year": 2016,
+  "assetsPath": "../../assets"
+
 }
 

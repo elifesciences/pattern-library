@@ -205,6 +205,9 @@
       "forHuman": "Dec 16, 2015",
       "forMachine": "20150512"
     }
-  }
+  },
+
+  "year": 2016,
+  "assetsPath": "../../assets"
 
 }
