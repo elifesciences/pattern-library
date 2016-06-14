@@ -2,7 +2,8 @@ assets:
   css:
     - search-box.css
     - $ref: compact-form.yaml#/assets/css
-  js: []
+  js:
+    - $ref: compact-form.yaml#/assets/js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
