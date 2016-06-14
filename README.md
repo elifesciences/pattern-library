@@ -45,3 +45,9 @@ Verify the generated static site by serving the `public` folder locally. One qui
   2. `cd` into the `public` directory
   3. run the webserver `php -S localhost:8889`
   4. in a browser go to `http://localhost:8889` and verify you can see the generated patterns.
+
+# Using patterns
+
+For patterns that are being exposed as resources (ie the Mustache template can be used in an application), there is a YAML file located alongside the template. This contains details of any CSS/JS files that it requires, and a JSON Schema that documents what input is expected.
+
+You can run `bin/validate`, which checks all data files for a pattern against the schema.

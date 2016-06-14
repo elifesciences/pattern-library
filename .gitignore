@@ -16,3 +16,5 @@ assets/sass/_patterns.scss
 
 # Ignore built test files
 test/build
+
+/vendor/
