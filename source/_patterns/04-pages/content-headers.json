@@ -205,7 +205,11 @@
       "dateString": "Feb 29, 2016"
     },
 
-    "buttonText": "Subscribe",
+    "button": {
+      "text": "Subscribe",
+      "path": "#",
+      "classes": "button--outline button--small"
+    },
 
     "images": {
       "lores": "http://unsplash.it/950/400/",
@@ -229,7 +233,11 @@
 
     "titleClass": "content-header__title--medium",
 
-    "buttonText": "Subscribe",
+    "button": {
+      "text": "Subscribe",
+      "path": "#",
+      "classes": "button--outline button--small"
+    },
 
     "images": {
       "lores": "http://unsplash.it/950/400/",
@@ -251,7 +259,11 @@
 
     "titleClass": "content-header__title--medium",
 
-    "buttonText": "Subscribe",
+    "button": {
+      "text": "Subscribe",
+      "path": "#",
+      "classes": "button--outline button--small"
+    },
 
     "images": {
       "lores": "http://unsplash.it/950/400/",
@@ -299,7 +311,8 @@
       ]
     },
 
-    "buttonType"  : "submit",
+    "type": "submit",
+    "classes": "button--outline button--extra-small",
 
     "images": {
       "lores": "http://unsplash.it/950/400/",

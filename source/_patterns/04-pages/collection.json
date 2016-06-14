@@ -77,8 +77,7 @@
         "text": "Submit my research",
         "path": "#",
         "isButtonLike": true,
-        "variant": "button",
-        "buttonText": "Submit my research"
+        "classes": "button--default button--extra-small"
       },
 
       {
@@ -150,7 +149,11 @@
 
     "strapline": "A selection of papers",
 
-    "buttonText": "Subscribe",
+    "button": {
+      "text": "Subscribe",
+      "path": "#",
+      "classes": "button--outline button--small"
+    },
 
     "background": "true",
     "backgroundImage": "true",
