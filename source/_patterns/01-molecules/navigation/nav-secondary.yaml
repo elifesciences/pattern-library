@@ -1,0 +1,34 @@
+assets:
+  css:
+    - nav-secondary.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    navSecondaryLinks:
+      type: array
+      items:
+        type: object
+        properties:
+          variant:
+            type: string
+            enum:
+              - button
+              - notification
+              - profile
+          text:
+            type: string
+            minLength: 1
+          textClasses:
+            type: string
+          path:
+            type: string
+            minLength: 1
+        required:
+          - text
+          - path
+      minItems: 1
+
+  required:
+    - navSecondaryLinks

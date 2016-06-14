@@ -1,0 +1,35 @@
+assets:
+  css: []
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    svg:
+      type: string
+      minLength: 1
+    hires:
+      $ref: '#/schema/definitions/res'
+    lores:
+      $ref: '#/schema/definitions/res'
+    classes:
+      type: string
+
+  required:
+    - svg
+    - hires
+    - lores
+
+  definitions:
+    res:
+      type: object
+      properties:
+        path:
+          type: string
+          minLength: 1
+        width:
+          type: string
+          pattern: ^[1-9][0-9]*w$
+      required:
+        - path
+        - width

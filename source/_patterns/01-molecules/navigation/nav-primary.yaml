@@ -1,0 +1,37 @@
+assets:
+  css:
+    - nav-primary.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    navPrimaryLinks:
+      type: array
+      items:
+        type: object
+        properties:
+          variant:
+            type: string
+            enum:
+              - first
+              - last
+          text:
+            type: string
+            minLength: 1
+          textClasses:
+            type: string
+          path:
+            type: string
+            minLength: 1
+          rel:
+            type: string
+            enum:
+              - search
+        required:
+          - text
+          - path
+      minItems: 1
+
+  required:
+    - navPrimaryLinks

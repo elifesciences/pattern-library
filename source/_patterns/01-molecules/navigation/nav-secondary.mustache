@@ -7,9 +7,11 @@
       {{/isButtonLike}}
       {{^isButtonLike}}
         <a href="{{path}}">
-          {{#imgs}}
-            {{> atoms-picture-svg-with-fallback}}
-          {{/imgs}}
+          {{#img.svg}}
+            {{#img}}
+              {{> atoms-picture-svg-with-fallback}}
+            {{/img}}
+          {{/img.svg}}
           {{#textClasses}}<span class="{{textClasses}}">{{{text}}}</span>{{/textClasses}}
           {{^textClasses}}{{{text}}}{{/textClasses}}
         </a>
