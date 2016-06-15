@@ -1,5 +1,5 @@
 {
-  "text": "Submit my research",
-  "classes": "button--default button--extra-small",
+  "text": "Link button",
+  "classes": "button--default",
   "path": "#"
 }
