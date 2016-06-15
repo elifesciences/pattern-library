@@ -44,18 +44,14 @@
 }
 
 @media only screen and (min-width: #{get-rem-from-px(540)}em) {
-  .footer-navigation {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
   .footer-navigation__list {
-    flex: 1 50%;
+    column-count: 2;
+    column-gap: 0.5rem;
     text-align: left;
   }
 
-  .footer-navigation__list:first-child {
-    padding-right: 0.5rem;
+  .footer-navigation__list_item {
+    break-inside: avoid-column;
   }
 }
 
