@@ -29,14 +29,20 @@
   {{#hasCtaOrMeta}}
     <div class="content-header__bottom">
       <div class="content-header__cta">
-        <!-- Expect atoms-button-outline-small and the form element to be mutually exclusive. -->
-      {{#buttonText}}
-        {{>atoms-button-outline-small}}
-      {{/buttonText}}
+        <!-- Expect atoms-button and the form element to be mutually exclusive. -->
+      {{#button.text}}
+        {{#button}}
+          {{>atoms-button}}
+        {{/button}}
+      {{/button.text}}
       {{#select}}
         <form method="GET" action="{{route}}">
         {{>atoms-select}}
-        {{>atoms-button-outline-extra-small(buttonText: "Go", type="submit")}}
+        {{#button.text}}
+            {{#button}}
+                {{>atoms-button}}
+            {{/button}}
+        {{/button.text}}
         </form>
       {{/select}}
       </div>

@@ -32,11 +32,13 @@
 
   {{#hasCtaOrMeta}}
     <div class="content-header__bottom">
-      {{#buttonText}}
+      {{#button.text}}
         <div class="content-header__cta">
-          {{>atoms-button-outline-small}}
+          {{#button}}
+            {{>atoms-button}}
+          {{/button}}
         </div>
-      {{/buttonText}}
+      {{/button.text}}
       {{#meta}}
         {{> atoms-meta}}
       {{/meta}}
