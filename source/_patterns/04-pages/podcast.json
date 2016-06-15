@@ -170,8 +170,10 @@
     "backgroundImage": "true",
     "meta": {
       "type": "Podcast",
-      "dateString": "Jun 16, 2013",
-      "dateTime": "20130616"
+      "date": {
+        "forHuman": "Jun 16, 2013",
+        "forMachine": "20130616"
+      }
     }
   },
 

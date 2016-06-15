@@ -7,8 +7,6 @@
 
     "articleType": "Research article",
 
-    "dateText": "Sept 10, 2015",
-    "dateValue": "2015-09-10",
     "firstAuthor": "Lee R Berger",
     "authors": [
       {"name": "John Hawks"},
@@ -115,8 +113,10 @@
     "meta": {
       "typeLink": "#",
       "type": "Research article",
-      "dateTime": "2016-02-29",
-      "dateString": "Feb 29, 2016"
+      "date": {
+        "forHuman": "Sept 10, 2015",
+        "forMachine": "2015-09-10"
+      }
     }
 
   },
@@ -128,8 +128,6 @@
     "subjectLink": "#",
     "downloadLink": "#",
     "articleType": "Insight",
-    "dateText": "Dec 12, 2015",
-    "dateValue": "2015-12-12",
     "authors": [
       {
         "name": "Melanie Issigonis"
@@ -149,8 +147,10 @@
     "meta": {
       "typeLink": "#",
       "type": "Insight",
-      "dateTime": "2015-12-15",
-      "dateString": "Dec 15, 2015"
+      "date": {
+        "forHuman": "Dec 15, 2015",
+        "forMachine": "2015-12-15"
+      }
     }
 
   },
@@ -163,8 +163,6 @@
     "subjectLink": "#",
     "downloadLink": "#",
     "articleType": "Insight",
-    "dateText": "Dec 12, 2015",
-    "dateValue": "2015-12-12",
     "authors": [
       {
         "name": "Melanie Issigonis"
@@ -186,8 +184,10 @@
     "meta": {
       "typeLink": "#",
       "type": "Insight",
-      "dateTime": "2015-12-15",
-      "dateString": "Dec 15, 2015"
+      "date": {
+        "forHuman": "Dec 15, 2015",
+        "forMachine": "2015-12-15"
+      }
     }
   },
 
@@ -200,9 +200,7 @@
 
     "meta": {
       "type": "Collection",
-      "typeLink": "#",
-      "dateTime": "2016-02-29",
-      "dateString": "Feb 29, 2016"
+      "typeLink": "#"
     },
 
     "buttonText": "Subscribe",
@@ -339,8 +337,10 @@
     "hasCtaOrMeta": "true",
     "meta": {
       "type": "Podcast",
-      "dateTime": "2015-12-12",
-      "dateString": "Dec 12, 2015"
+      "date": {
+        "forHuman": "Dec 12, 2015",
+        "forMachine": "2015-12-12"
+      }
     }
   },
 

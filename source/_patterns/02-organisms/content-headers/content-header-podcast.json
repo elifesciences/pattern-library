@@ -18,8 +18,10 @@
   "hasCtaOrMeta": "true",
   "meta": {
     "type": "Podcast",
-    "dateTime": "2015-12-12",
-    "dateString": "Dec 12, 2015"
+    "date": {
+      "forHuman": "Feb 29, 2016",
+      "forMachine": "2016-02-29"
+    }
   }
 
 }
