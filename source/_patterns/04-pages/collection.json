@@ -724,7 +724,7 @@
           "hasBigImage": "true",
           "image": {
             "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/250/140/ 250w,  http://unsplash.it/500/280/ 500w"
+            "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w"
           }
         }
       ]

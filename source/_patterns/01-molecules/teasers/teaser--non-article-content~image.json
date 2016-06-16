@@ -1,8 +1,8 @@
 {
   "image": {
-    "defaultPath": "http://placehold.it/320x240",
+    "defaultPath": "http://unsplash.it/250/140/",
     "altText": "An image.",
-    "srcset": "http://placehold.it/640x480 640w, http://placehold.it/320x240 320w"
+    "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w"
   },
   "link": "#",
   "headerText": "Multicellular life, potato blight and Hepatitis&nbsp;B",
