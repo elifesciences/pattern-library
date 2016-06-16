@@ -67,10 +67,6 @@
     margin-top: 22px;
   }
 
-  .meta__type {
-    color: $color-text--reverse;
-  }
-
   .meta__type:hover,
   .meta__type:active {
     color: $color-primary-dark;
@@ -163,6 +159,14 @@
   background-size: cover;
 
   .content-header__inner {
+    color: $color-text--reverse;
+  }
+
+  .meta__type {
+    color: $color-text--reverse;
+  }
+
+  .date {
     color: $color-text--reverse;
   }
 

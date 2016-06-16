@@ -1,0 +1,35 @@
+@import "../../definitions";
+
+.date {
+  color: $color-text-secondary;
+  @include label-content-typeg();
+  text-transform: capitalize;
+}
+
+.date--expanded {
+  background-color: $color-primary;
+  border-radius: 3px;
+  @include label-content-typeg();
+  color: $color-text-ui-background;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  height: 70px;
+  justify-content: space-around;
+  @include margin($teaser-spacing-left, "left");
+  text-align: center;
+  width: 70px;
+
+  .date__prominant {
+    @include font-size(36);
+    text-align: center;
+    @include padding(10, "top");
+  }
+
+  .date__normal {
+    margin-top: 0;
+    @include margin(5, "bottom");
+  }
+
+}

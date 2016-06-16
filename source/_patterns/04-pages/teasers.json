@@ -112,7 +112,7 @@
     },
     "date": {
       "forHuman": "Dec 16, 2015",
-      "forMachine": "20151216"
+      "forMachine": "2015-12-16"
     },
     "hasBigImage": "true",
     "image": {
@@ -142,7 +142,7 @@
     },
     "date": {
       "forHuman": "Dec 16, 2015",
-      "forMachine": "20151216"
+      "forMachine": "2015-12-16"
     },
     "hasSmallImage": "true",
     "image": {
@@ -172,7 +172,7 @@
     },
     "date": {
       "forHuman": "Dec 16, 2015",
-      "forMachine": "20151216"
+      "forMachine": "2015-12-16"
     }
   },
 
@@ -180,14 +180,13 @@
     "link": "#",
     "title": "HSFP Postdoctoral Fellowships from the Human Frontier Science Program",
     "subheading": "eLife",
-    "link": "#",
     "date": {
-      "forHuman": {
-        "date": "18",
+      "forHumanExpanded": {
+        "dayOfMonth": "18",
         "month": "Dec",
         "year": "2015"
       },
-      "forMachine": "20151216"
+      "forMachine": "2015-12-16"
     }
   },
 
@@ -203,7 +202,7 @@
     },
     "date": {
       "forHuman": "Dec 16, 2015",
-      "forMachine": "20150512"
+      "forMachine": "2015-05-12"
     }
   },
 

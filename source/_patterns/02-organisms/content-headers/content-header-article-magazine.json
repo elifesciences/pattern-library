@@ -4,8 +4,6 @@
   "subject": "Developmental Biology and Stem Cells",
   "subjectLink": "#",
   "articleType": "Insight",
-  "dateText": "Dec 12, 2015",
-  "dateValue": "2015-12-12",
   "authors": [
     {
       "name": "Melanie Issigonis"
@@ -27,7 +25,9 @@
   "meta": {
     "typeLink": "#",
     "type": "Insight",
-    "dateTime": "2015-12-15",
-    "dateString": "Dec 15, 2015"
+    "date": {
+      "forHuman": "Dec 15, 2015",
+      "forMachine": "2015-12-15"
+    }
   }
 }

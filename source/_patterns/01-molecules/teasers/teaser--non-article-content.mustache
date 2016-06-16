@@ -20,7 +20,7 @@
     <div class="teaser__footer_text">
       {{#footerText}}{{{footerText}}}{{/footerText}}
       {{#date}}
-        <time datetime="{{date.forMachine}}">{{date.forHuman}}</time>
+        {{atoms-date}}
       {{/date}}
     </div>
     {{#downloadSrc}}

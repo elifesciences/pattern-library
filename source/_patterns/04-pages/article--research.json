@@ -154,8 +154,6 @@
 
     "articleType": "Research article",
 
-    "dateText": "Sept 10, 2015",
-    "dateValue": "2015-09-10",
     "firstAuthor": "Lee R Berger",
     "authors": [
       {"name": "John Hawks"},
@@ -262,8 +260,10 @@
     "meta": {
       "typeLink": "#",
       "type": "Research article",
-      "dateTime": "2016-02-29",
-      "dateString": "Feb 29, 2016"
+      "date": {
+        "forHuman": "Sept 10, 2015",
+        "forMachine": "2015-09-10"
+      }
     }
 
   },

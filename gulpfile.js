@@ -254,7 +254,7 @@ gulp.task('test', ['browserify-tests', 'js'], () => {
 // Watchers
 
 gulp.task('sass:watch', () => {
-  gulp.watch('assets/sass/**/*', ['sass']);
+  gulp.watch('assets/sass/**/*', ['generateStyles']);
 });
 
 gulp.task('img:watch', () => {
