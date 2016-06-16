@@ -538,13 +538,10 @@
     "ctaText": "Go"
   },
 
-  "footerMenuLinks1": [
+  "footerMenuLinks": [
     { "name": "About", "url": "#" },
     { "name": "Alerts", "url": "#" },
-    { "name": "Contact", "url": "#" }
-  ],
-
-  "footerMenuLinks2": [
+    { "name": "Contact", "url": "#" },
     { "name": "Who we work with", "url": "#" },
     { "name": "Contact", "url": "#" },
     { "name": "Terms & Policy", "url": "#" }
