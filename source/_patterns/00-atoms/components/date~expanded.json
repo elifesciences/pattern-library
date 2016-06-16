@@ -1,6 +1,7 @@
 {
   "date": {
-    "forHumanExpanded": {
+    "isExpanded": true,
+    "forHuman": {
       "dayOfMonth": "18",
       "month": "Dec",
       "year": "2015"
