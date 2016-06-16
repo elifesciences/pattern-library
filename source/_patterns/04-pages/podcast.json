@@ -266,7 +266,7 @@
           "hasSmallImage": "true",
           "image": {
             "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/70/70/ 70w,  http://unsplash.it/140/140/ 140w"
+            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w"
           }
 
         },
@@ -299,7 +299,7 @@
           "hasSmallImage": "true",
           "image": {
             "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/70/70/ 70w,  http://unsplash.it/140/140/ 140w"
+            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w"
           }
 
         },

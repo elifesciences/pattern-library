@@ -3,7 +3,7 @@
   "link": "https://medium.com/@elife/one-hundred-elife-digests-on-medium-5a99aa5e80a1#.mne4282yx",
   "image": {
     "defaultPath": "../../assets/img/patterns/molecules/teaser-medium-icon-1x.png",
-    "srcset": "../../assets/img/patterns/molecules/teaser-medium-icon-1x.png 70w,  ../../assets/img/patterns/molecules/teaser-medium-icon-2x.png 140w"
+    "srcset": "../../assets/img/patterns/molecules/teaser-medium-icon-2x.png 140w, ../../assets/img/patterns/molecules/teaser-medium-icon-1x.png 70w"
   },
   "date": {
     "forHuman": "Dec 16, 2015",
