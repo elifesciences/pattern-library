@@ -19,7 +19,7 @@ schema:
                 - false
             forHuman:
               type: string
-              pattern: ^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ([1-9][0-9]?), ([12][0-9]{3})$
+              pattern: ^([A-Z][a-z]{2}) ([1-9][0-9]?), ([12][0-9]{3})$
           -
             isExpanded:
               enum:
@@ -27,32 +27,14 @@ schema:
               forHuman:
                 type: object
                 properties:
-                  oneOf:
-                    -
-                      month:
-                        type: integer
-                        enum: [1, 3, 5, 7, 8, 10, 12]
-                      dayOfMonth:
-                        type: integer
-                        minimum: 1
-                        maximum: 31
-                    -
-                      month:
-                        type: integer
-                        enum: [4, 6, 9, 11]
-                      dayOfMonth:
-                        type: integer
-                        minimum: 1
-                        maximum: 30
-#                  Not worrying about what is/isn't a leap year.
-                    -
-                      month:
-                        type: integer
-                        enum: [2]
-                      dayOfmonth:
-                        type: integer
-                        minimum: 1
-                        maximum: 29
+                  dayOfMonth:
+                    type: integer
+                      minimum: 1
+                      maximum: 31
+                  month:
+                    type: integer
+                    minimum: 1
+                    maximum: 12
                   year:
                     type: integer
                 required:
