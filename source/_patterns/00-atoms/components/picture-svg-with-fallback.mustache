@@ -1,8 +1,16 @@
 <picture>
-  <source srcset="{{svg}}" type="image/svg+xml" />
-  <img srcset="{{hires.path}} {{hires.width}},
-               {{lores.path}} {{lores.width}}"
-       src="{{lores.path}}"
+
+  {{#variants}}
+
+    <source srcset="{{svg}}"
+            type="image/svg+xml"
+            {{#media}}media="{{media}}"{{/media}} />
+
+    <img srcset="{{srcset}}"
+       src="{{defaultImage}}"
        {{#classes}}class="{{classes}}"{{/classes}}
-       alt="{{alt}}"/>
+       alt="{{alt}}" />
+
+  {{/variants}}
+
 </picture>
