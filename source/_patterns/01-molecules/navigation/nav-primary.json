@@ -5,18 +5,16 @@
       "variant": "first",
       "textClasses": "nav-primary__menu_text",
       "path": "#mainMenu",
-      "alt": "Menu icon",
       "img": {
-        "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg",
-        "classes": "nav-primary__menu_icon",
-        "hires": {
-          "path": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png",
-          "width": "48w"
-        },
-        "lores": {
-          "path": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-          "width": "24w"
-        }
+        "variants": [
+          {
+            "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg",
+            "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+            "defaultImage": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+            "classes": "nav-primary__menu_icon",
+            "alt": "Menu icon"
+          }
+        ]
       }
     },
 
