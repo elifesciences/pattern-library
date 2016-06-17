@@ -5,31 +5,31 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    svg:
-      type: string
-      minLength: 1
-    hires:
-      $ref: '#/schema/definitions/res'
-    lores:
-      $ref: '#/schema/definitions/res'
-    classes:
-      type: string
-
-  required:
-    - svg
-    - hires
-    - lores
-
-  definitions:
-    res:
-      type: object
-      properties:
-        path:
-          type: string
-          minLength: 1
-        width:
-          type: string
-          pattern: ^[1-9][0-9]*w$
-      required:
-        - path
-        - width
+    variants:
+      type: array
+      minItems: 1
+      uniqueItems: true
+      items:
+        type: object
+        properties:
+          svg:
+            type: string
+            minLength: 1
+          media:
+            type: string
+            minLength: 1
+          srcset:
+            type: string
+            pattern: ^((https)?[^ ]+ [1-9][0-9]*w)(, (https?)?[^ ]+ [1-9][0-9]*w)*$
+          defaultImage:
+            type: string
+            minLength: 1
+          classes:
+            type: string
+          alt:
+            type: string
+        required:
+          - svg
+          - srcset
+          - defaultImage
+          - alt
