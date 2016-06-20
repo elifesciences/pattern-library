@@ -2,13 +2,13 @@
 
   {{! include more than one variant if image load to be controlled by the optional media statement. }}
 
-  {{#variants}}
+  {{#sources}}
 
     <source srcset="{{svg}}"
             type="image/svg+xml"
             {{#media}}media="{{media}}"{{/media}} />
 
-  {{/variants}}
+  {{/sources}}
 
     <img srcset="{{fallbackSrcset}}"
        src="{{defaultImage}}"
