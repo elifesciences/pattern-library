@@ -6,19 +6,16 @@
         "variant": "first",
         "textClasses": "nav-primary__menu_text",
         "path": "#mainMenu",
-        "alt": "Menu icon",
-        "hasImg": true,
         "img": {
-          "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg",
+          "fallbackSrcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+          "defaultImage": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
           "classes": "nav-primary__menu_icon",
-          "hires": {
-            "path": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png",
-            "width": "48w"
-          },
-          "lores": {
-            "path": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-            "width": "24w"
-          }
+          "alt": "Menu icon",
+          "variants": [
+            {
+              "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+            }
+          ]
         }
       },
 
@@ -38,18 +35,16 @@
         "variant": "last",
         "textClasses": "visuallyhidden",
         "path": "#",
-        "alt": "Search icon",
         "img": {
-          "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg",
+          "fallbackSrcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+          "defaultImage": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
           "classes": "nav-primary__search_icon",
-          "hires": {
-            "path": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png",
-            "width": "48w"
-          },
-          "lores": {
-            "path": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-            "width": "24w"
-          }
+          "alt": "Search icon",
+          "variants": [
+            {
+              "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+            }
+          ]
         }
       }
     ],
@@ -76,44 +71,38 @@
         "isButtonLike": true,
         "classes": "button--default button--extra-small"
       },
-
       {
         "text": "Alerts",
         "variant": "notification",
         "textClasses": "visuallyhidden",
         "path": "#",
-        "alt": "Notification icon",
         "img": {
-          "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg",
+          "fallbackSrcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+          "defaultImage": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
           "classes": "nav-secondary__notification-icon",
-          "hires": {
-            "path": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png",
-            "width": "28w"
-          },
-          "lores": {
-            "path": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-            "width": "14w"
-          }
+          "alt": "Notification icon",
+          "variants": [
+            {
+              "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
+            }
+          ]
         }
       },
-
       {
         "text": "Profile",
         "variant": "profile",
         "textClasses": "visuallyhidden",
         "path": "#",
-        "alt": "Profile icon",
         "img": {
-          "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg",
+          "fallbackSrcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+          "defaultImage": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
           "classes": "nav-secondary__profile-icon",
-          "hires": {
-            "path": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png",
-            "width": "28w"
-          },
-          "lores": {
-            "path": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
-            "width": "14w"
-          }
+          "alt": "Profile icon",
+          "variants": [
+            {
+              "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
+            }
+          ]
         }
       }
     ],

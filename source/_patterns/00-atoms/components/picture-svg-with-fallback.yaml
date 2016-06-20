@@ -18,18 +18,19 @@ schema:
           media:
             type: string
             minLength: 1
-          srcset:
-            type: string
-            pattern: ^((https)?[^ ]+ [1-9][0-9]*w)(, (https?)?[^ ]+ [1-9][0-9]*w)*$
-          defaultImage:
-            type: string
-            minLength: 1
-          classes:
-            type: string
-          alt:
-            type: string
         required:
           - svg
-          - srcset
-          - defaultImage
-          - alt
+    fallbackSrcset:
+      type: string
+      pattern: ^((https)?[^ ]+ [1-9][0-9]*w)(, (https?)?[^ ]+ [1-9][0-9]*w)*$
+    defaultImage:
+      type: string
+      minLength: 1
+    alt:
+      type: string
+    classes:
+      type: string
+  required:
+    - fallbackSrcset
+    - defaultImage
+    - alt

@@ -6,13 +6,13 @@
       "textClasses": "nav-primary__menu_text",
       "path": "#mainMenu",
       "img": {
+        "fallbackSrcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+        "defaultImage": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+        "classes": "nav-primary__menu_icon",
+        "alt": "Menu icon",
         "variants": [
           {
-            "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg",
-            "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
-            "defaultImage": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-            "classes": "nav-primary__menu_icon",
-            "alt": "Menu icon"
+            "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
           }
         ]
       }
@@ -34,18 +34,16 @@
       "variant": "last",
       "textClasses": "visuallyhidden",
       "path": "#",
-      "alt": "Search icon",
       "img": {
-        "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg",
+        "fallbackSrcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+        "defaultImage": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
         "classes": "nav-primary__search_icon",
-        "hires": {
-          "path": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png",
-          "width": "48w"
-        },
-        "lores": {
-          "path": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-          "width": "24w"
-        }
+        "alt": "Search icon",
+        "variants": [
+          {
+            "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+          }
+        ]
       }
     }
   ]

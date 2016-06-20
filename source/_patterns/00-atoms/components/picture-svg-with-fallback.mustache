@@ -8,11 +8,11 @@
             type="image/svg+xml"
             {{#media}}media="{{media}}"{{/media}} />
 
-    <img srcset="{{srcset}}"
+  {{/variants}}
+
+    <img srcset="{{fallbackSrcset}}"
        src="{{defaultImage}}"
        {{#classes}}class="{{classes}}"{{/classes}}
        alt="{{alt}}" />
-
-  {{/variants}}
 
 </picture>

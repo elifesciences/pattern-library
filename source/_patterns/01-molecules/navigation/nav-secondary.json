@@ -27,13 +27,13 @@
       "textClasses": "visuallyhidden",
       "path": "#",
       "img": {
+        "fallbackSrcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+        "defaultImage": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+        "classes": "nav-secondary__notification-icon",
+        "alt": "Notification icon",
         "variants": [
           {
-            "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg",
-            "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-            "defaultImage": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-            "classes": "nav-secondary__notification-icon",
-            "alt": "Notification icon"
+            "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
           }
         ]
       }
@@ -44,13 +44,13 @@
       "textClasses": "visuallyhidden",
       "path": "#",
       "img": {
+        "fallbackSrcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+        "defaultImage": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
+        "classes": "nav-secondary__profile-icon",
+        "alt": "Profile icon",
         "variants": [
           {
-            "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg",
-            "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-            "defaultImage": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
-            "classes": "nav-secondary__profile-icon",
-            "alt": "Profile icon"
+            "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
           }
         ]
       }
