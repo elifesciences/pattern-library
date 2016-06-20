@@ -10,7 +10,7 @@
         "defaultImage": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
         "classes": "nav-primary__menu_icon",
         "alt": "Menu icon",
-        "variants": [
+        "sources": [
           {
             "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
           }
@@ -39,7 +39,7 @@
         "defaultImage": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
         "classes": "nav-primary__search_icon",
         "alt": "Search icon",
-        "variants": [
+        "sources": [
           {
             "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
           }
@@ -80,7 +80,7 @@
         "defaultImage": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
         "classes": "nav-secondary__notification-icon",
         "alt": "Notification icon",
-        "variants": [
+        "sources": [
           {
             "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
           }
@@ -97,7 +97,7 @@
         "defaultImage": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
         "classes": "nav-secondary__profile-icon",
         "alt": "Profile icon",
-        "variants": [
+        "sources": [
           {
             "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
           }

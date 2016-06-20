@@ -5,7 +5,7 @@
 
   "alt": "Meaningful alt text here please.",
 
-  "variants": [
+  "sources": [
 
     {
       "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
