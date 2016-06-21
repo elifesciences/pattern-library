@@ -1,6 +1,6 @@
 <picture>
 
-  {{! include more than one variant if image load to be controlled by the optional media statement. }}
+  {{! include more than one item in sources if image load to be controlled by the optional media statement. }}
 
   {{#sources}}
 
@@ -10,9 +10,14 @@
 
   {{/sources}}
 
-    <img srcset="{{fallbackSrcset}}"
-       src="{{defaultImage}}"
+  {{#fallback}}
+
+    <img srcset="{{srcset}}"
+       src="{{defaultPath}}"
        {{#classes}}class="{{classes}}"{{/classes}}
-       alt="{{alt}}" />
+       alt="{{altText}}" />
+
+  {{/fallback}}
 
 </picture>
+
