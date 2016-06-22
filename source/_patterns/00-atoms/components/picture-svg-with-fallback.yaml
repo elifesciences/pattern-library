@@ -20,18 +20,23 @@ schema:
             minLength: 1
         required:
           - svg
-    fallbackSrcset:
-      type: string
-      pattern: ^((https)?[^ ]+ [1-9][0-9]*w)(, (https?)?[^ ]+ [1-9][0-9]*w)*$
-    defaultImage:
-      type: string
-      minLength: 1
-    alt:
-      type: string
-    classes:
-      type: string
+    fallback:
+      type: object
+      properties:
+        srcset:
+          type: string
+          pattern: ^((https)?[^ ]+ [1-9][0-9]*w)(, (https?)?[^ ]+ [1-9][0-9]*w)*$
+        defaultPath:
+          type: string
+          minLength: 1
+        altText:
+          type: string
+        classes:
+          type: string
+      required:
+        - srcset
+        - defaultPath
+        - altText
   required:
-    - fallbackSrcset
-    - defaultImage
-    - alt
     - sources
+    - fallback
