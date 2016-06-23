@@ -23,13 +23,16 @@ module.exports = class SiteHeader {
     this.$pageOverlay = null;
 
     // N.B. $mainMenu is not part of this component's HTML hierarchy.
-    let MainMenu = require('./MainMenu');
-    this.mainMenu = new MainMenu(doc.querySelector('#mainMenu'));
+    var mainMenu = doc.querySelector('#mainMenu');
+    if (!!mainMenu) {
+      let MainMenu = require('./MainMenu');
+      this.mainMenu = new MainMenu(mainMenu);
 
-    this.$mainMenuToggle = this.$elm.querySelector('a[href="#mainMenu"]');
-    if (!!this.$mainMenuToggle) {
-      this.mainMenu.moveWithinDom();
-      this.$mainMenuToggle.addEventListener('click', this.toggleMainMenu.bind(this));
+      this.$mainMenuToggle = this.$elm.querySelector('a[href="#mainMenu"]');
+      if (!!this.$mainMenuToggle) {
+        this.mainMenu.moveWithinDom();
+        this.$mainMenuToggle.addEventListener('click', this.toggleMainMenu.bind(this));
+      }
     }
   }
 
