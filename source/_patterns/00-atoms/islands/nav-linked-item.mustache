@@ -1,0 +1,18 @@
+<li class="{{classes}}">
+
+{{#isButtonLike}}
+  <li class="nav-secondary__item nav-secondary__item--button {{#variant}} nav-secondary__item--{{variant}}{{/variant}}">
+  {{> atoms-button }}
+{{/isButtonLike}}
+
+{{^isButtonLike}}
+  <a href="{{path}}" {{#rel}}rel="{{rel}}"{{/rel}}>
+    {{#img}}
+      {{> atoms-picture-svg-with-fallback}}
+    {{/img}}
+    {{#textClasses}}<span class="{{textClasses}}">{{text}}</span>{{/textClasses}}
+    {{^textClasses}}{{text}}{{/textClasses}}
+  </a>
+{{/isButtonLike}}
+
+</li>

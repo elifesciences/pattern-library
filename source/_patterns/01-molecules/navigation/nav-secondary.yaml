@@ -9,26 +9,7 @@ schema:
     navSecondaryLinks:
       type: array
       items:
-        type: object
-        properties:
-          variant:
-            type: string
-            enum:
-              - button
-              - notification
-              - profile
-          text:
-            type: string
-            minLength: 1
-          textClasses:
-            type: string
-          path:
-            type: string
-            minLength: 1
-        required:
-          - text
-          - path
+        $ref: nav-linked-item.yaml#/schema
       minItems: 1
-
   required:
     - navSecondaryLinks
