@@ -1,0 +1,29 @@
+assets:
+  css: []
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    type: object
+      classes:
+        type: string
+        minLength: 1
+      text:
+        type: string
+        minLength: 1
+      textClasses:
+        type: string
+        minLength: 1
+      path:
+        type: string
+        minLength: 1
+      rel:
+        type: string
+        enum:
+          - search
+      img:
+        $ref: picture-svg-with-fallback.yaml#/schema
+    required:
+      - text
+      - path
