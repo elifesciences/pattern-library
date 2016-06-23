@@ -2,7 +2,7 @@
   "navPrimaryLinks": [
     {
       "text": "Menu",
-      "variant": "first",
+      "classes": "nav-primary__item nav-primary__item--first",
       "textClasses": "nav-primary__menu_text",
       "path": "#mainMenu",
       "img": {
@@ -22,25 +22,29 @@
 
     {
       "text": "Home",
-      "path": "#"
+      "path": "#",
+      "classes": "nav-primary__item"
     },
 
     {
       "text": "Magazine",
-      "path": "#"
+      "path": "#",
+      "classes": "nav-primary__item"
     },
     
     {
       "text": "Search",
       "rel": "search",
-      "variant": "last",
+      "classes": "nav-primary__item nav-primary__item--last",
       "textClasses": "visuallyhidden",
       "path": "#",
       "img": {
-        "fallbackSrcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+        "fallback": {
+        "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
         "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
         "classes": "nav-primary__search_icon",
-        "altText": "Search icon",
+        "altText": "Search icon"
+      },
         "sources": [
           {
             "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"

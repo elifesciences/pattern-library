@@ -1,12 +1,17 @@
  <nav class="nav-secondary">
-  <ul class="nav-secondary__list clearfix">
+
+   <ul class="nav-secondary__list clearfix">
+
    {{#navSecondaryLinks}}
-     {{#isButtonLike}}
-       <li class="nav-secondary__item nav-secondary__item--button {{#variant}} nav-secondary__item--{{variant}}{{/variant}}">
-         {{> atoms-button }}
-     {{/isButtonLike}}
-     {{^isButtonLike}}
-       <li class="nav-secondary__item{{#variant}} nav-secondary__item--{{variant}}{{/variant}}">
+     <li class="{{classes}}">
+
+     {{#button.classes}}
+        {{#button}}
+          {{> atoms-button }}
+        {{/button}}
+     {{/button.classes}}
+
+     {{^button.classes}}
         <a href="{{path}}">
           {{#img}}
             {{> atoms-picture-svg-with-fallback}}
@@ -14,8 +19,11 @@
           {{#textClasses}}<span class="{{textClasses}}">{{{text}}}</span>{{/textClasses}}
           {{^textClasses}}{{{text}}}{{/textClasses}}
         </a>
-      {{/isButtonLike}}
+      {{/button.classes}}
+
       </li>
+
    {{/navSecondaryLinks}}
+
   </ul>
   </nav>
