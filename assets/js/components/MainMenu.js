@@ -12,15 +12,13 @@ module.exports = class MainMenu {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.$elm.classList.add('main-menu--js');
-
-    this.moveWithinDom();
   }
 
   /**
    * Moves main menu from default non-js DOM position into position required by js implementation.
    */
   moveWithinDom() {
+    this.$elm.classList.add('main-menu--js');
     let $globalWrapper = this.doc.querySelector('.global-wrapper');
     if (!!$globalWrapper) {
       $globalWrapper.insertBefore(this.$elm, $globalWrapper.firstElementChild);

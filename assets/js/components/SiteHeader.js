@@ -28,6 +28,7 @@ module.exports = class SiteHeader {
 
     this.$mainMenuToggle = this.$elm.querySelector('a[href="#mainMenu"]');
     if (!!this.$mainMenuToggle) {
+      this.mainMenu.moveWithinDom();
       this.$mainMenuToggle.addEventListener('click', this.toggleMainMenu.bind(this));
     }
   }
