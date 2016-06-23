@@ -246,7 +246,7 @@ gulp.task('browserify-tests', (done) => {
 
 gulp.task('test', ['browserify-tests', 'js'], () => {
   return gulp.src('./test/*.html')
-    .pipe(mochaPhantomjs({reporter: 'spec'}))
+    .pipe(mochaPhantomjs({reporter: 'spec', 'ignore-resource-errors': true}))
     .pipe(reload());
 });
 
