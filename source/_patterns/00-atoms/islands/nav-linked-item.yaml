@@ -9,7 +9,6 @@ schema:
       properties:
         classes:
           type: string
-          minLength: 1
     -
       oneOf:
         -
@@ -19,7 +18,6 @@ schema:
               minLength: 1
             textClasses:
               type: string
-              minLength: 1
             path:
               type: string
               minLength: 1
