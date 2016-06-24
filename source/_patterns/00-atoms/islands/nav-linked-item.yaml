@@ -4,31 +4,37 @@ assets:
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
-  properties:
-    classes:
-      type: string
-      minLength: 1
-    oneOf:
-      -
-        properties:
-          text:
-            type: string
-            minLength: 1
-          textClasses:
-            type: string
-            minLength: 1
-          path:
-            type: string
-            minLength: 1
-          rel:
-            type: string
-            enum:
-              - search
-          img:
-            $ref: ../components/picture-svg-with-fallback.yaml#/schema
-        required:
-          - text
-          - path
-      -
-          button:
-            $ref: ../components/button.yaml#/schema
+  allOf:
+    -
+      properties:
+        classes:
+          type: string
+          minLength: 1
+    -
+      oneOf:
+        -
+          properties:
+            text:
+              type: string
+              minLength: 1
+            textClasses:
+              type: string
+              minLength: 1
+            path:
+              type: string
+              minLength: 1
+            rel:
+              type: string
+              enum:
+                - search
+            img:
+              $ref: ../components/picture-svg-with-fallback.yaml#/schema
+          required:
+            - text
+            - path
+        -
+          properties:
+            button:
+              $ref: ../components/button.yaml#/schema
+          required:
+            - button
