@@ -19,11 +19,11 @@
     },
 
     {
-      "classes": "button--default button--extra-small",
+      "classes": "nav-secondary__item nav-secondary__item--button",
       "button": {
         "text": "Submit my research",
         "path": "#",
-        "classes": "nav-secondary__item nav-secondary__item--button"
+        "classes": "button--default button--extra-small"
 
       }
     },
