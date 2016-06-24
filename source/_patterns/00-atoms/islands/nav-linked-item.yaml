@@ -21,6 +21,8 @@ schema:
       type: string
       enum:
         - search
+    button:
+      $ref ../components/button.yaml#/schema
     img:
       $ref: ../components/picture-svg-with-fallback.yaml#/schema
   required:
