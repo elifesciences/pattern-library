@@ -2,28 +2,33 @@
   "navSecondaryLinks": [
     {
       "text": "Careers",
-      "path": "#"
+      "path": "#",
+      "classes": "nav-secondary__item"
     },
 
     {
       "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-      "path": "#"
+      "path": "#",
+      "classes": "nav-secondary__item"
     },
 
     {
       "text": "Labs",
-      "path": "#"
+      "path": "#",
+      "classes": "nav-secondary__item"
     },
 
     {
       "text": "Submit my research",
       "path": "#",
-      "isButtonLike": true,
-      "classes": "button--default button--extra-small"
+      "classes": "nav-secondary__item nav-secondary__item--button",
+      "button": {
+        "classes": "button--default button--extra-small"
+      }
     },
     {
       "text": "Alerts",
-      "variant": "notification",
+      "classes": "nav-secondary__item nav-secondary__item--notification",
       "textClasses": "visuallyhidden",
       "path": "#",
       "img": {
@@ -42,7 +47,7 @@
     },
     {
       "text": "Profile",
-      "variant": "profile",
+      "classes": "nav-secondary__item nav-secondary__item--profile",
       "textClasses": "visuallyhidden",
       "path": "#",
       "img": {

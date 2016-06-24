@@ -3,7 +3,7 @@
     "navPrimaryLinks": [
       {
         "text": "Menu",
-        "variant": "first",
+        "classes": "nav-primary__item nav-primary__item--first",
         "textClasses": "nav-primary__menu_text",
         "path": "#mainMenu",
         "img": {
@@ -23,25 +23,29 @@
 
       {
         "text": "Home",
-        "path": "#"
+        "path": "#",
+        "classes": "nav-primary__item"
       },
 
       {
         "text": "Magazine",
-        "path": "#"
+        "path": "#",
+        "classes": "nav-primary__item"
       },
 
       {
         "text": "Search",
         "rel": "search",
-        "variant": "last",
+        "classes": "nav-primary__item nav-primary__item--last",
         "textClasses": "visuallyhidden",
         "path": "#",
         "img": {
-          "fallbackSrcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-          "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-          "classes": "nav-primary__search_icon",
-          "altText": "Search icon",
+          "fallback": {
+            "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+            "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+            "classes": "nav-primary__search_icon",
+            "altText": "Search icon"
+          },
           "sources": [
             {
               "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
@@ -54,28 +58,33 @@
     "navSecondaryLinks": [
       {
         "text": "Careers",
-        "path": "#"
+        "path": "#",
+        "classes": "nav-secondary__item"
       },
 
       {
         "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-        "path": "#"
+        "path": "#",
+        "classes": "nav-secondary__item"
       },
 
       {
         "text": "Labs",
-        "path": "#"
+        "path": "#",
+        "classes": "nav-secondary__item"
       },
 
       {
         "text": "Submit my research",
         "path": "#",
-        "isButtonLike": true,
-        "classes": "button--default button--extra-small"
+        "classes": "nav-secondary__item nav-secondary__item--button",
+        "button": {
+          "classes": "button--default button--extra-small"
+        }
       },
       {
         "text": "Alerts",
-        "variant": "notification",
+        "classes": "nav-secondary__item nav-secondary__item--notification",
         "textClasses": "visuallyhidden",
         "path": "#",
         "img": {
@@ -94,7 +103,7 @@
       },
       {
         "text": "Profile",
-        "variant": "profile",
+        "classes": "nav-secondary__item nav-secondary__item--profile",
         "textClasses": "visuallyhidden",
         "path": "#",
         "img": {
