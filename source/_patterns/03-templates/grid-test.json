@@ -1,125 +1,136 @@
 {
-  "navPrimaryLinks": [
-    {
-      "text": "Menu",
-      "classes": "nav-primary__item nav-primary__item--first",
-      "textClasses": "nav-primary__menu_text",
-      "path": "#mainMenu",
-      "img": {
-        "fallback": {
-          "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
-          "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-          "classes": "nav-primary__menu_icon",
-          "altText": "Menu icon"
-        },
-        "sources": [
-          {
-            "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-          }
-        ]
+  "primaryLinks":
+  {
+    "classesOuter": "nav-primary",
+    "classesInner": "nav-primary__list clearfix",
+    "linkedItems": [
+      {
+        "text": "Menu",
+        "classes": "nav-primary__item nav-primary__item--first",
+        "textClasses": "nav-primary__menu_text",
+        "path": "#mainMenu",
+        "img": {
+          "fallback": {
+            "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+            "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+            "classes": "nav-primary__menu_icon",
+            "altText": "Menu icon"
+          },
+          "sources": [
+            {
+              "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+            }
+          ]
+        }
+      },
+
+      {
+        "text": "Home",
+        "path": "#",
+        "classes": "nav-primary__item"
+      },
+
+      {
+        "text": "Magazine",
+        "path": "#",
+        "classes": "nav-primary__item"
+      },
+
+      {
+        "text": "Search",
+        "rel": "search",
+        "classes": "nav-primary__item nav-primary__item--last",
+        "textClasses": "visuallyhidden",
+        "path": "#",
+        "img": {
+          "fallback": {
+            "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+            "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+            "classes": "nav-primary__search_icon",
+            "altText": "Search icon"
+          },
+          "sources": [
+            {
+              "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+            }
+          ]
+        }
       }
-    },
+    ]
+  },
 
-    {
-      "text": "Home",
-      "path": "#",
-      "classes": "nav-primary__item"
-    },
 
-    {
-      "text": "Magazine",
-      "path": "#",
-      "classes": "nav-primary__item"
-    },
+  "secondaryLinks":
+  {
+    "classesOuter": "nav-secondary",
+    "classesInner": "nav-secondary__list clearfix",
+    "linkedItems": [
+      {
+        "text": "Careers",
+        "path": "#",
+        "classes": "nav-secondary__item"
+      },
 
-    {
-      "text": "Search",
-      "rel": "search",
-      "classes": "nav-primary__item nav-primary__item--last",
-      "textClasses": "visuallyhidden",
-      "path": "#",
-      "img": {
-        "fallback": {
-          "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-          "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-          "classes": "nav-primary__search_icon",
-          "altText": "Search icon"
-        },
-        "sources": [
-          {
-            "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-          }
-        ]
+      {
+        "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+        "path": "#",
+        "classes": "nav-secondary__item"
+      },
+
+      {
+        "text": "Labs",
+        "path": "#",
+        "classes": "nav-secondary__item"
+      },
+
+      {
+        "text": "Submit my research",
+        "path": "#",
+        "classes": "nav-secondary__item nav-secondary__item--button",
+        "button": {
+          "classes": "button--default button--extra-small"
+        }
+      },
+      {
+        "text": "Alerts",
+        "classes": "nav-secondary__item nav-secondary__item--notification",
+        "textClasses": "visuallyhidden",
+        "path": "#",
+        "img": {
+          "fallback": {
+            "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+            "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+            "classes": "nav-secondary__notification-icon",
+            "altText": "Notification icon"
+          },
+          "sources": [
+            {
+              "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
+            }
+          ]
+        }
+      },
+      {
+        "text": "Profile",
+        "classes": "nav-secondary__item nav-secondary__item--profile",
+        "textClasses": "visuallyhidden",
+        "path": "#",
+        "img": {
+          "fallback": {
+            "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+            "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
+            "classes": "nav-secondary__profile-icon",
+            "altText": "Profile icon"
+          },
+          "sources": [
+            {
+              "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
+            }
+          ]
+        }
       }
-    }
-  ],
-
-  "navSecondaryLinks": [
-    {
-      "text": "Careers",
-      "path": "#",
-      "classes": "nav-secondary__item"
-    },
-
-    {
-      "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-      "path": "#",
-      "classes": "nav-secondary__item"
-    },
-
-    {
-      "text": "Labs",
-      "path": "#",
-      "classes": "nav-secondary__item"
-    },
-
-    {
-      "text": "Submit my research",
-      "path": "#",
-      "classes": "nav-secondary__item nav-secondary__item--button",
-      "button": {
-        "classes": "button--default button--extra-small"
-      }
-    },
-    {
-      "text": "Alerts",
-      "classes": "nav-secondary__item nav-secondary__item--notification",
-      "textClasses": "visuallyhidden",
-      "path": "#",
-      "img": {
-        "fallback": {
-          "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-          "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-          "classes": "nav-secondary__notification-icon",
-          "altText": "Notification icon"
-        },
-        "sources": [
-          {
-            "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
-          }
-        ]
-      }
-    },
-    {
-      "text": "Profile",
-      "classes": "nav-secondary__item nav-secondary__item--profile",
-      "textClasses": "visuallyhidden",
-      "path": "#",
-      "img": {
-        "fallback": {
-          "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-          "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
-          "classes": "nav-secondary__profile-icon",
-          "altText": "Profile icon"
-        },
-        "sources": [
-          {
-            "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
-          }
-        ]
-      }
-    }
-  ],
+    ]
+  },
 
   "mainmenulinks": [
     {
