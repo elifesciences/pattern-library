@@ -1,0 +1,24 @@
+assets:
+  css:
+    - site-header-nav-bar-primary.css
+    - site-header-nav-bar-secondary.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    classesOuter:
+      type: string
+      minLength: 1
+    classesInner:
+      type: string
+      minLength: 1
+    linkedItems:
+      type: array
+      items:
+        $ref: ../../00-atoms/components/nav-linked-item.yaml#/schema
+      minItems: 1
+  required:
+    - classesOuter
+    - classesInner
+    - linkedItems
