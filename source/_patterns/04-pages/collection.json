@@ -1,5 +1,6 @@
 {
   "siteHeader": {
+    "homePagePath": "#",
     "primaryLinks":
     {
       "classesOuter": "nav-primary",
