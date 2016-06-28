@@ -1,5 +1,8 @@
 {
-  "navSecondaryLinks": [
+  "classesOuter": "nav-secondary",
+  "classesInner": "nav-secondary__list clearfix",
+
+  "linkedItems": [
     {
       "text": "Careers",
       "path": "#",
