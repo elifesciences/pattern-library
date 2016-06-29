@@ -17,8 +17,11 @@ module.exports = class SiteHeader {
     let SearchBox = require('./SearchBox');
     let $searchBoxEl = $elm.querySelector('[data-behaviour="SearchBox"]');
     this.searchBox = new SearchBox($searchBoxEl, this.window, doc);
-    this.searchToggle = $elm.querySelector('[rel="search"]').parentNode;
-    this.searchToggle.addEventListener('click', this.toggleSearchBox.bind(this));
+    var searchToggle = $elm.querySelector('[rel="search"]');
+    if (!!searchToggle) {
+      this.searchToggle = searchToggle.parentNode;
+      this.searchToggle.addEventListener('click', this.toggleSearchBox.bind(this));
+    }
 
     this.$pageOverlay = null;
 
