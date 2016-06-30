@@ -1,6 +1,7 @@
 assets:
   css:
     - lead-paras.css
+    - $ref: ../../00-atoms/components/lead-para.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -10,11 +11,6 @@ schema:
       type: array
       minItems: 1
       items:
-        $schema: http://json-schema.org/draft-04/schema#
-        type: object
-        properties:
-          text:
-            type: string
-            minLength: 1
-      required:
-        - paras
+        $ref: ../../00-atoms/components/lead-para.yaml#/schema
+    required:
+      - paras
