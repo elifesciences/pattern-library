@@ -12,5 +12,5 @@ schema:
       minItems: 1
       items:
         $ref: ../../00-atoms/components/lead-para.yaml#/schema
-    required:
-      - paras
+  required:
+    - paras
