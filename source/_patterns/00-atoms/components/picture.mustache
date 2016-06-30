@@ -1,13 +1,13 @@
-
-  <picture>
+{{#sources}}
+  <picture{{#pictureClasses}} class="{{pictureClasses}}"{{/pictureClasses}}>
 
   {{! include more than one item in sources if image load to be controlled by the optional media statement. }}
 
 
   {{#sources}}
-    <source srcset="{{svg}}"
-            type="image/svg+xml"
-            {{#media}}media="{{media}}"{{/media}} />
+    <source srcset="{{srcset}}"
+            {{#type}}type="{{type}}" {{/type}}
+            {{#media}}media="{{media}}" {{/media}}>
   {{/sources}}
 
 
@@ -20,6 +20,7 @@
 
   {{/fallback}}
 
-</picture>
+  </picture>
+{{/sources}}
 
 

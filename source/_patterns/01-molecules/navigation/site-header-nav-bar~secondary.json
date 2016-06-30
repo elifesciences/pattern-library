@@ -44,7 +44,7 @@
         },
         "sources": [
           {
-            "svg": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
+            "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
           }
         ]
       }
@@ -63,7 +63,7 @@
         },
         "sources": [
           {
-            "svg": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
+            "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
           }
         ]
       }

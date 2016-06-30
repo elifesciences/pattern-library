@@ -26,13 +26,13 @@ schema:
               enum:
                 - search
             img:
-              $ref: ../components/picture-svg-with-fallback.yaml#/schema
+              $ref: picture.yaml#/schema
           required:
             - text
             - path
         -
           properties:
             button:
-              $ref: ../components/button.yaml#/schema
+              $ref: button.yaml#/schema
           required:
             - button
