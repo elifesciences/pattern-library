@@ -1,0 +1,17 @@
+assets:
+  css:
+    - see-more-link.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    link:
+      type: string
+      minLength: 1
+    text:
+      type: string
+      minLength: 1
+  required:
+    - link
+    - text
