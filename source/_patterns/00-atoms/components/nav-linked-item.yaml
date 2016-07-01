@@ -26,7 +26,7 @@ schema:
               enum:
                 - search
             img:
-              $ref: ../components/picture-svg-with-fallback.yaml#/schema
+              $ref: ../components/picture.yaml#/schema
           required:
             - text
             - path
