@@ -1,0 +1,28 @@
+assets:
+  css:
+    - audio-player.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    title:
+      type: string
+      minLength: 1
+    sources:
+      type: array
+      minItems: 1
+      items:
+        type: object
+        src:
+          type: string
+          minLenght: 1
+        mimeType:
+          type: string
+          minLenght: 1
+        type:
+          type: string
+          minLength: 1
+  required:
+    - title
+    - sources
