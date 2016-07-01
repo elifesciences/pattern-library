@@ -1,0 +1,70 @@
+assets:
+  css:
+    - reference.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  allOf:
+    -
+      properties:
+        titleLink:
+          type: string
+          minLength: 1
+        title:
+          type: string
+          minLength: 1
+        secondaryLinkText:
+          type: string
+          minLength: 1
+        origin:
+          type: string
+          minLength: 1
+    -
+      oneOf:
+        -
+          properties:
+            hasAbstracts: true
+            abstracts:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    minLength: 1
+                  url:
+                    type: string
+                    minLength: 1
+                required:
+                  - name
+                  - url
+        -
+          properties:
+            hasAbstracts: false
+    -
+      oneOf:
+        -
+          properties:
+            hasAuthors: true
+            authors:
+              type: array
+              items:
+                type: object
+                properties:
+                  authorName:
+                    type: string
+                    minLength: 1
+                  authorLink:
+                    type: string
+                    minLength: 1
+                required:
+                  - authorName
+        -
+          properties:
+            hasAuthors: false
+  required:
+    - title
+    - origin
+    - hasAuthors
+    - hasAbstracts
