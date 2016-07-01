@@ -51,7 +51,6 @@ schema:
          - url
  required:
    - title
-   - secondaryLinkText
    - origin
    - hasAuthors
    - hasAbstracts
