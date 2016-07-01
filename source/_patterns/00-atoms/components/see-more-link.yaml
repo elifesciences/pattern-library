@@ -6,12 +6,12 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    link:
+    url:
       type: string
       minLength: 1
-    text:
+    name:
       type: string
       minLength: 1
   required:
-    - link
-    - text
+    - url
+    - name
