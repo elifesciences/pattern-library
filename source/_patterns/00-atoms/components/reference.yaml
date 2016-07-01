@@ -42,12 +42,12 @@ schema:
          name:
            type: string
            minLength: 1
-         link:
+         url:
            type: string
            minLength: 1
        required:
          - name
-         - link
+         - url
  required:
    - title
    - secondaryLinkText
