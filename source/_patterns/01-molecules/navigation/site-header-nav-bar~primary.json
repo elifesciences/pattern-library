@@ -17,7 +17,7 @@
         },
         "sources": [
           {
-            "svg": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+            "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
           }
         ]
       }
@@ -50,7 +50,7 @@
       },
         "sources": [
           {
-            "svg": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+            "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
           }
         ]
       }
