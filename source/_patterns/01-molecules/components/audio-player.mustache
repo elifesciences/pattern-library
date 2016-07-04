@@ -4,8 +4,8 @@
     <div class="audio-player__header">{{title}}</div>
     <audio class="audio-player__player" controls preload="metadata">
       {{#sources}}
-      <source src="{{src}}" type="{{mimeType}}">
-      <div><a href="{{src}}" class="audio-player__link" rel="external" target="_blank">Download the podcast ({{type}})</a></div>
+      <source src="{{src}}" type="{{mimeType.forMachine}}">
+      <div><a href="{{src}}" class="audio-player__link" rel="external" target="_blank">Download the podcast ({{mimeType.forMachine}})</a></div>
       {{/sources}}
     </audio>
   </div>

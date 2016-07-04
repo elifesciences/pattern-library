@@ -20,15 +20,18 @@ schema:
             type: string
             minLength: 1
           mimeType:
-            type: string
-            enum:
-              - audio/mp3
-              - audio/mpeg
-              - audio/webm
-              - audio/ogg
-          type:
-            type: string
-            minLength: 1
+            type: object
+            properties:
+              forMachine:
+                type: string
+                enum:
+                  - audio/mp3
+                  - audio/mpeg
+                  - audio/webm
+                  - audio/ogg
+              forHuman:
+                type: string
+                minLength: 1
   required:
     - title
     - sources

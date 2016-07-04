@@ -186,7 +186,7 @@
   "audioPlayer": {
     "title": "Multicellular life, potato blight and Hepatitis B",
     "sources":[
-      { "src": "http://nakeddiscovery.com/scripts/mp3s/audio/eLife_Podcast_13.06.mp3", "mimeType": "audio/mp3", "type": "mp3" }
+      { "src": "http://nakeddiscovery.com/scripts/mp3s/audio/eLife_Podcast_13.06.mp3", "mimeType": { "forMachine": "audio/mp3", "forHuman": "mp3" } }
     ]
   },
 
