@@ -19,7 +19,11 @@ schema:
           minLenght: 1
         mimeType:
           type: string
-          minLenght: 1
+          enum:
+            - audio/mp3
+            - audio/mpeg
+            - audio/webm
+            - audio/ogg
         type:
           type: string
           minLength: 1
