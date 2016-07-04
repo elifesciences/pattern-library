@@ -1,6 +1,8 @@
 {
-  "emailCta": {
-    "formAction" : "#",
+  "headerText": "Be the first to read new articles from eLife",
+  "subHeader": "Sign up for alerts",
+  "compactForm": {
+    "formAction": "#",
     "formId": "myCompactForm",
     "formMethod": "GET",
     "label": "Email",
