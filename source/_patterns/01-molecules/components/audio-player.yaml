@@ -1,0 +1,37 @@
+assets:
+  css:
+    - audio-player.css
+  js:
+    - AudioPlayer.js
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    title:
+      type: string
+      minLength: 1
+    sources:
+      type: array
+      minItems: 1
+      items:
+        type: object
+        properties:
+          src:
+            type: string
+            minLength: 1
+          mimeType:
+            type: object
+            properties:
+              forMachine:
+                type: string
+                enum:
+                  - audio/mp3
+                  - audio/mpeg
+                  - audio/webm
+                  - audio/ogg
+              forHuman:
+                type: string
+                minLength: 1
+  required:
+    - title
+    - sources
