@@ -1,17 +1,15 @@
 {
-  "emailCta": {
-    "headerText": "Be the first to read new articles from eLife",
-    "subHeader": "Sign up for alerts",
-    "compactForm": {
-      "formAction": "#",
-      "formId": "myCompactForm",
-      "formMethod": "GET",
-      "label": "Email",
-      "inputType": "email",
-      "inputName": "email",
-      "inputValue": "",
-      "inputPlaceholder": "you@email.com",
-      "ctaText": "Go"
-    }
+  "headerText": "Be the first to read new articles from eLife",
+  "subHeader": "Sign up for alerts",
+  "compactForm": {
+    "formAction": "#",
+    "formId": "myCompactForm",
+    "formMethod": "GET",
+    "label": "Email",
+    "inputType": "email",
+    "inputName": "email",
+    "inputValue": "",
+    "inputPlaceholder": "you@email.com",
+    "ctaText": "Go"
   }
 }
