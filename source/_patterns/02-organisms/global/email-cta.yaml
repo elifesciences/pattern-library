@@ -18,4 +18,5 @@ schema:
         $ref: ../../01-molecules/components/compact-form.yaml#/schema
       required:
         - headerText
+        - subHeader
         - compactForm
