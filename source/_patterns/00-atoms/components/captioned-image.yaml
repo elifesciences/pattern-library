@@ -4,6 +4,7 @@ assets:
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
+  type: object
   properties:
     heading:
       type: string
@@ -11,17 +12,17 @@ schema:
     captions:
       type: array
       items:
+        type: object
         properties:
           caption:
             type: string
             minLength: 1
-          required:
-            - caption
+        required:
+          - caption
         minItems: 1
     customContent:
       type: string
     picture:
-      type: object
       $ref: picture.yaml#/schema/properties
-    required:
-      - picture
+  required:
+    - picture
