@@ -1,0 +1,15 @@
+assets:
+  css: []
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    mainText:
+      type: string
+      minLength: 1
+    profileSnippet:
+      $ref: ../../01-molecules/components/profile-snippet.yaml#/schema
+  required:
+    - mainText
+    - profileSnippet

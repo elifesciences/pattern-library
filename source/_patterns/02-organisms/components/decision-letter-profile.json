@@ -1,11 +1,23 @@
-
 {
   "profileSnippet": {
     "name": "Oliver Hobert",
     "title": "Reviewing Editor",
     "contactDetails": "Colombia University, USA",
-    "imgLow": "http://placehold.it/90x90",
-    "imgHigh": "http://placehold.it/120x120"
+    "picture": {
+      "sources": [
+        {
+          "srcset": "http://placehold.it/120x120",
+          "type": "image/png"
+        }
+      ],
+      "pictureClasses": "profile-snippet__picture",
+      "fallback": {
+        "srcset": "http://placehold.it/90x90 24w",
+        "defaultPath": "http://placehold.it/90x90",
+        "altText": "Meaningful alt text here please.",
+        "classes": "profile-snippet__image"
+      }
+    }
   },
   "mainText": "eLife posts the editorial decision letter and author response on a selection of the published articles (subject to the approval of the authors). An edited version of the letter sent to the authors after peer review is shown, indicating the substantive concerns or comments; minor concerns are not usually shown. Reviewers have the opportunity to discuss the decision before the letter is sent (see <a href=\"#\">review process</a>). Similarly, the author response typically shows only responses to the major concerns raised by the reviewers."
 }
