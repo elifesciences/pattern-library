@@ -1,0 +1,27 @@
+assets:
+  css:
+    - captioned-image.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  properties:
+    heading:
+      type: string
+      minLength: 1
+    captions:
+      type: array
+      items:
+        properties:
+          caption:
+            type: string
+            minLength: 1
+          required:
+            - caption
+        minItems: 1
+    customContent:
+      type: string
+    picture:
+      type: object
+      $ref: picture.yaml#/schema/properties
+    required:
+      - picture
