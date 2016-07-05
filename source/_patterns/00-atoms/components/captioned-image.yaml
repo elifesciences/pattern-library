@@ -8,13 +8,19 @@ schema:
     heading:
       type: string
       minLength: 1
-    caption:
+    captions:
+      type: array
+      items:
+        properties:
+          caption:
+            type: string
+            minLength: 1
+          required:
+            - caption
+    customContent:
       type: string
-      minLength: 1
     picture:
       type: object
       $ref: picture.yaml#/schema/properties
     required:
-      - heading
-      - caption
       - picture
