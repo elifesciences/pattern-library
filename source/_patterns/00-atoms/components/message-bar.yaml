@@ -1,19 +1,13 @@
 assets:
   css:
-    - pull-quote.css
+    - message-bar.css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    quote:
+    message:
       type: string
       minLength: 1
-    cite:
-      type: string
-      minLength: 1
-    asParagraph:
-      type: boolean
   required:
-    - quote
-    - cite
+    - message
