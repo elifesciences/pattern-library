@@ -1,7 +1,7 @@
 {
   "id": "some-image",
-  "prominentText": "",
-  "normalText": "",
+  "prominentText": "REF-123",
+  "normalText": "Planarian protonephridia",
   "seeAllLink": "#",
   "downloadLink": "#",
   "newWindowLink": "#",
