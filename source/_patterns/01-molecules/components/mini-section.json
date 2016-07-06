@@ -1,4 +1,6 @@
 {
-  "heading": "[heading]",
+  "listHeading": {
+    "heading": "[heading]"
+  },
   "body": "[body]"
 }

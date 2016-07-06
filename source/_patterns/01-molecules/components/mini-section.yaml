@@ -7,9 +7,9 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    heading:
-      type: string
-      $ref: ../../00-atoms/components/list-heading.yaml#/schema/properties/heading
+    listHeading:
+      type: object
+      $ref: ../../00-atoms/components/list-heading.yaml#/schema
     body:
       type: string
       minLength: 1
