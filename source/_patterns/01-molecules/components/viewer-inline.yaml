@@ -1,0 +1,37 @@
+assets:
+  css:
+    - viewer-inline.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    id:
+      type: string
+      minLength: 1
+    prominentText:
+      type: string
+      minLength: 1
+    normalText:
+      type: string
+      minLength: 1
+    seeAllLink:
+      type: string
+      minLength: 1
+    downloadLink:
+      type: string
+      minLength: 1
+    newWindowLink:
+      type: string
+      minLength: 1
+    captionedImage:
+      $ref: ../../00-atoms/components/picture.yaml#/schema/properties
+      type: object
+  required:
+    - id
+    - prominentText
+    - normalText
+    - seeAllLink
+    - downloadLink
+    - newWindowLink
+    - captionedImage
