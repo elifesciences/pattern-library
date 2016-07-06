@@ -14,5 +14,4 @@ schema:
       type: string
       minLength: 1
   required:
-    - heading
     - body
