@@ -1,0 +1,18 @@
+assets:
+  css:
+    - mini-section.css
+    - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    heading:
+      type: string
+      $ref: ../../00-atoms/components/list-heading.yaml#/schema/properties/heading
+    body:
+      type: string
+      minLength: 1
+  required:
+    - heading
+    - body
