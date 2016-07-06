@@ -1,0 +1,57 @@
+assets:
+  css:
+    - article-download-links-list.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    dlLinkArticle:
+      type: string
+      minLength: 1
+    dlLinkFigure:
+      type: string
+      minLength: 1
+    dlLinkCitsBibtex:
+      type: string
+      minLength: 1
+    dlLinkCitsEndnote:
+      type: string
+      minLength: 1
+    dlLinkCitsEndnote8:
+      type: string
+      minLength: 1
+    dlLinkCitsRefworks:
+      type: string
+      minLength: 1
+    dlLinkCitsRIS:
+      type: string
+      minLength: 1
+    dlLinkCitsMedlars:
+      type: string
+      minLength: 1
+    linkCitsMendeley:
+      type: string
+      minLength: 1
+    linkCitsReadCube:
+      type: string
+      minLength: 1
+    linkCitsPapers:
+      type: string
+      minLength: 1
+    linkCitsCiteULike:
+      type: string
+      minLength: 1
+  required:
+    - dlLinkArticle
+    - dlLinkFigure
+    - dlLinkCitsBibtex
+    - dlLinkCitsEndnote
+    - dlLinkCitsEndnote8
+    - dlLinkCitsRefworks
+    - dlLinkCitsRIS
+    - dlLinkCitsMedlars
+    - linkCitsMendeley
+    - linkCitsReadCube
+    - linkCitsPapers
+    - linkCitsCiteULike
