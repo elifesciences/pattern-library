@@ -1,6 +1,6 @@
 assets:
   css:
-    - meta.css
+    - $ref: ../../00-atoms/components/date.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
