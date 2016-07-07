@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+use JsonSchema\Validator;
+use Rs\Json\Pointer;
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\Yaml\Yaml;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$patternDir = __DIR__ . '/../source/_patterns';
+
+$finder = (new Finder())->files()->in($patternDir)->name('*.yaml');
+$json_count = count( (new Finder())->files()->in($patternDir)->name('*.mustache') );
+$orig = 0 + $json_count;
+
+foreach ($finder as $file) {
+    $json_count = $json_count - 1;
+}
+
+$percent = round($json_count / $orig * 100, 1);
+
+print "Completed $json_count out of $orig ($percent%)\n";
