@@ -18,11 +18,11 @@ schema:
       items:
         type: object
         properties:
-          para:
+          content:
             type: string
             minLength: 1
         required:
-          - para
+          - content
     downloadLinks:
       type: object
       $ref: ../../01-molecules/components/article-download-links-list.yaml#/schema
