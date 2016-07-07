@@ -1,0 +1,37 @@
+{
+  "text": {
+    "id": "name",
+    "inputType": "text",
+    "label": {
+      "labelText": "Normal text field"
+    },
+    "name": "name"
+  },
+  "focus": {
+    "id": "name",
+    "inputType": "text",
+    "label": {
+      "labelText": "Focus text field"
+    },
+    "name": "name",
+    "classNames": "text-field--focus"
+  },
+  "valid": {
+    "id": "name",
+    "inputType": "text",
+    "label": {
+      "labelText": "Valid text field"
+    },
+    "name": "name",
+    "classNames": "text-field--valid"
+  },
+  "error": {
+    "id": "name",
+    "inputType": "text",
+    "label": {
+      "labelText": "Error text field"
+    },
+    "name": "name",
+    "classNames": "text-field--error"
+  }
+}

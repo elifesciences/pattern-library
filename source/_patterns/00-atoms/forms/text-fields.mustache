@@ -1,20 +1,20 @@
-
-<p>
-  <label for="text" class="form-label">Text</label>
-  <input type="text" id="name" name="name" value="" class="text-field text-field--text">
-</p>
-
-<p>
-  <label for="text" class="form-label">Focus</label>
-  <input type="text" id="name" name="name" value="" class="text-field text-field--text text-field--focus">
-</p>
-
-<p>
-  <label for="text" class="form-label">Valid</label>
-  <input type="text" id="name" name="name" value="" class="text-field text-field--text text-field--valid">
-</p>
-
-<p>
-  <label for="text" class="form-label">Error</label>
-  <input type="text" id="name" name="name" value="" class="text-field text-field--text text-field--error">
-</p>
+{{#text}}
+    <p>
+        {{> atoms-text-field }}
+    </p>
+{{/text}}
+{{#focus}}
+    <p>
+        {{> atoms-text-field }}
+    </p>
+{{/focus}}
+{{#valid}}
+    <p>
+        {{> atoms-text-field }}
+    </p>
+{{/valid}}
+{{#error}}
+    <p>
+        {{> atoms-text-field }}
+    </p>
+{{/error}}
