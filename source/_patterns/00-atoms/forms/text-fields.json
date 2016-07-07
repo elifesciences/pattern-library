@@ -1,6 +1,6 @@
 {
   "text": {
-    "id": "name",
+    "id": "name1",
     "inputType": "text",
     "label": {
       "labelText": "Normal text field"
@@ -8,7 +8,7 @@
     "name": "name"
   },
   "focus": {
-    "id": "name",
+    "id": "name2",
     "inputType": "text",
     "label": {
       "labelText": "Focus text field"
@@ -17,7 +17,7 @@
     "classNames": "text-field--focus"
   },
   "valid": {
-    "id": "name",
+    "id": "name3",
     "inputType": "text",
     "label": {
       "labelText": "Valid text field"
@@ -26,7 +26,7 @@
     "classNames": "text-field--valid"
   },
   "error": {
-    "id": "name",
+    "id": "name4",
     "inputType": "text",
     "label": {
       "labelText": "Error text field"
