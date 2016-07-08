@@ -1,38 +1,12 @@
 {
   "rootClasses": "content-header-article content-header-article-research",
   "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
-  "hasBehaviour": true,
+  "behaviour": "ContentHeaderArticle",
   "subject": {
     "name": "Epidemiology and global health",
     "href": "#"
   },
-
-  "download": {
-    "sources": [
-      {
-        "srcset": "../../assets/img/icons/download-full.svg",
-        "media": "(min-width: 35em)",
-        "type": "image/svg+xml"
-      },
-      {
-        "srcset": "../../assets/img/icons/download-full-1x.png",
-        "media": "(min-width: 35em)"
-      },
-      {
-        "srcset": "../../assets/img/icons/download.svg",
-        "type": "image/svg+xml"
-      }
-    ],
-    "fallback": {
-      "defaultPath": "../../assets/img/icons/download-full-1x.png",
-      "classes": "content-header__download_icon",
-      "altText": "Download icon"
-    }
-  },
-
   "articleType": "Research article",
-
-  "hasEtAl": true,
   "authors": {
     "list": [
       {"name": "Lee R Berger"},
@@ -83,7 +57,6 @@
       {"name": "Bernhard Zipfel"}
     ]
   },
-  "hasInstitutions": "true",
   "institutions" : {
     "list": [
       {"name": "University of the Witwatersrand, South Africa"},
@@ -131,12 +104,26 @@
 
   "titleClass": "content-header__title--extra-small",
 
-  "images": {
-    "download": {
-      "svg": "../../assets/img/icons/download.svg",
-      "svgFull": "../../assets/img/icons/download-full.svg",
-      "bitmap": "../../assets/img/icons/download-1x.png",
-      "bitmapFull": "../../assets/img/icons/download-full-1x.png"
+  "download": {
+    "sources": [
+      {
+        "srcset": "../../assets/img/icons/download-full.svg",
+        "media": "(min-width: 35em)",
+        "type": "image/svg+xml"
+      },
+      {
+        "srcset": "../../assets/img/icons/download-full-1x.png",
+        "media": "(min-width: 35em)"
+      },
+      {
+        "srcset": "../../assets/img/icons/download.svg",
+        "type": "image/svg+xml"
+      }
+    ],
+    "fallback": {
+      "defaultPath": "../../assets/img/icons/download-full-1x.png",
+      "classes": "content-header__download_icon",
+      "altText": "Download icon"
     }
   },
 

@@ -1,6 +1,6 @@
 <header class="content-header
                {{#rootClasses}}{{rootClasses}}{{/rootClasses}}"
-        {{#hasBehaviour}}data-behaviour="ContentHeaderArticle"{{/hasBehaviour}}>
+        {{#behaviour}}data-behaviour="{{behaviour}}"{{/behaviour}}>
 
   {{! TODO: Work out a better implementation}}
   {{#backgroundImage}}
@@ -28,10 +28,8 @@
 
   {{#authors}}
   <ol class="content-header__author_list">
-    <!--  Research & magazine header: when js available, max 16 authors visible,
-            excess behind 'see more'.
-          Reasearch article read more header: only first author (firstAuthorOnly), followed by et al if
-            there are more (hasEtAl). -->
+    <!--  All article headers: when js available, max 16 authors visible,
+            excess behind 'see more'. Except: Reasearch article read more header: only first author (firstAuthorOnly), followed by et al if there are more (hasEtAl). -->
     {{#firstAuthorOnly}}
     <li class="content-header__author_list_item">
       <span class="content-header__author">{{firstAuthorOnly}}</span>
