@@ -1,0 +1,61 @@
+<!-- think of content-header content-header-article as the type/sub-type of pattern, and content-header-article-research is the actual pattern. This abstraction is an experiment, we'll see how it plays. -->
+<header class="content-header
+               {{#rootClasses}}{{rootClasses}}{{/rootClasses}}"
+        {{#hasBehaviour}}data-behaviour="ContentHeaderArticle"{{/hasBehaviour}}>
+
+  <div class="content-header_top">
+
+    {{#subject.name}}
+    <a href="{{subject.href}}" class="content-header__subject_link">{{subject.name}}</a>
+    {{/subject.name}}
+
+    {{#download}}
+      {{> atoms-picture}}
+    {{/download}}
+  </div>
+
+  <h2 class="content-header__title {{titleClass}}">{{{title}}}</h2>
+
+  {{#authors}}
+  <ol class="content-header__author_list">
+    <!--  Research article header: when js available, max 16 authors visible,
+            excess behind 'see more'.
+          Reasearch article read more header: only first author, followed by et al if
+            there are more. -->
+    {{#firstAuthorOnly}}
+    <li class="content-header__author_list_item">
+      <span class="content-header__author">{{firstAuthorOnly}}</span>
+    </li>
+    <li class="content-header__author_list_item"><span class="content-header__author--etal">et al.</span></li>
+    {{/firstAuthorOnly}}
+
+    {{^firstAuthorOnly}}
+    {{#authors.list}}
+      <li class="content-header__author_list_item">
+        <span class="content-header__author">{{name}}</span>
+      </li>
+    {{/authors.list}}
+    {{/firstAuthorOnly}}
+
+  </ol>
+  {{/authors}}
+  <!-- Institution list is not on the designs of the narrow view. This is visually hidden until the first min-width breakpoint. -->
+
+  {{#hasInstitutions}}
+    <ol class="content-header__institution_list">
+      {{#institutions}}
+        <li class="content-header__institution_list_item">
+          <span class="content-header__institution">{{name}}</span>
+        </li>
+      {{/institutions}}
+      <li class="content-header__institution_list_item">
+        <span class="content-header__institution--last">{{lastInstitution}}</span>
+      </li>
+    </ol>
+  {{/hasInstitutions}}
+
+  {{#meta}}
+    {{> molecules-meta}}
+  {{/meta}}
+
+</header>
