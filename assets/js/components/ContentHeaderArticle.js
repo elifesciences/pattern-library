@@ -12,7 +12,7 @@ module.exports = class ContentHeaderArticle {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.$elm.classList.add('content-header--js');
+    this.$elm.classList.add('content-header-article--js');
 
     // Should track SASS variable $bkpt-content-header.
     this.breakpointInPx = 560;

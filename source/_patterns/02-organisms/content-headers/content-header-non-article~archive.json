@@ -1,8 +1,8 @@
 {
   "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
+  "behaviour": "ContentHeaderSelectNav",
   "title": "Archive",
   "titleClass": "content-header__title--medium",
-  "behaviour": "ContentHeaderSelectNav",
   "hasCtaOrMeta": true,
   "select": {
     "id": "archiveYear",

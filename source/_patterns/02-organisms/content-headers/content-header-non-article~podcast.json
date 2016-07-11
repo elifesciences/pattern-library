@@ -1,5 +1,6 @@
 {
   "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
+  "behaviour": "ContentHeaderSelectNav",
 
   "title": "Multicellular life, potato blight and Hepatitis B",
 
