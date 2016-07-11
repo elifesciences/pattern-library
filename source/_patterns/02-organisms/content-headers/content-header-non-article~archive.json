@@ -1,0 +1,29 @@
+{
+  "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
+  "title": "Archive",
+  "titleClass": "content-header__title--medium",
+
+  "hasCtaOrMeta": true,
+  "select": {
+    "id": "archiveYear",
+    "label": {
+      "labelText": "Archive year",
+      "isVisuallyHidden": true
+    },
+    "route": "/path/to/archive",
+    "options": [
+      {
+        "value": 2016,
+        "displayValue": "2016"
+      },
+      {
+        "value": 2015,
+        "displayValue": "2015"
+      },
+      {
+        "value": 2014,
+        "displayValue": "2014"
+      }
+    ]
+  }
+}

@@ -1,7 +1,6 @@
 <header class="content-header
-               content-header-nonarticle
-               {{#background}}content-header-nonarticle--background{{/background}}
-               {{#backgroundImage}}content-header--background-image{{/backgroundImage}}"
+      {{#rootClasses}}{{rootClasses}}{{/rootClasses}}"
+        {{#behaviour}}data-behaviour="{{behaviour}}"{{/behaviour}}
       {{#select}}data-behaviour="ContentHeaderSelectNav"{{/select}}>
 
   {{#backgroundImage}}
@@ -19,10 +18,18 @@
     </div>
   {{/hasProfile}}
 
+  {{#download}}
+    <a href="#articleDownloadLinksList" class="content-header__download_link">
+      {{> atoms-picture}}
+    </a>
+  {{/download}}
+
   <div class="content-header__inner">
     <div class="content-header__hgroup">
       <h2 class="content-header__title {{titleClass}}">{{{title}}}</h2>
-      <div class="content-header__strapline">{{{strapline}}}</div>
+      {{#strapline}}
+        <div class="content-header__strapline">{{{strapline}}}</div>
+      {{/strapline}}
     </div>
   </div> <!--  /.content-header__inner -->
 

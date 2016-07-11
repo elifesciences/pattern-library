@@ -1,5 +1,5 @@
 {
-  "rootClasses": "content-header-article content-header-article-magazine",
+  "rootClasses": "content-header-article content-header-article-magazine content-header-article-magazine--background",
   "title": "Planarian 'kidneys' go with the flow",
   "titleClass": "content-header__title--small",
   "strapline": "Flatworms have organs called protonephridia that could be used as a model system for the study of kidney disease.",
@@ -18,21 +18,21 @@
   "download": {
     "sources": [
       {
-        "srcset": "../../assets/img/icons/download-full.svg",
+        "srcset": "../../assets/img/icons/download-full-reverse.svg",
         "media": "(min-width: 35em)",
         "type": "image/svg+xml"
       },
       {
-        "srcset": "../../assets/img/icons/download-full-1x.png",
+        "srcset": "../../assets/img/icons/download-full-reverse-1x.png",
         "media": "(min-width: 35em)"
       },
       {
-        "srcset": "../../assets/img/icons/download.svg",
+        "srcset": "../../assets/img/icons/download-reverse.svg",
         "type": "image/svg+xml"
       }
     ],
     "fallback": {
-      "defaultPath": "../../assets/img/icons/download-full-1x.png",
+      "defaultPath": "../../assets/img/icons/download-full-reverse-1x.png",
       "classes": "content-header__download_icon",
       "altText": "Download icon"
     }
