@@ -176,7 +176,7 @@
 
 }
 
-// Built to apply to the archive select list navigation, but would apply more generally.
-.content-header--js button[type="submit"] {
+// Built to apply to the archive select list navigation.
+.content-header-archive--js button[type="submit"] {
   @include visuallyhidden();
 }
