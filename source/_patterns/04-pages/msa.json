@@ -155,23 +155,22 @@
   },
 
   "contentHeader": {
-    "title": "Microbiology and Infectious Disease",
-
+    "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
+    "behaviour": "ContentHeaderSelectNav",
+    "title": "Microbiology and infectious disease",
     "titleClass": "content-header__title--medium",
-
+    "hasCtaOrMeta": true,
     "button": {
       "text": "Subscribe",
       "path": "#",
       "classes": "button--outline button--small"
     },
 
-    "background": "true",
-    "backgroundImage": "true",
-    "hasCtaOrMeta": "true",
-
-    "images": {
-      "lores": "http://unsplash.it/950/400/",
-      "hires": "http://unsplash.it/1800/900/"
+    "backgroundImage": {
+      "images": {
+        "lores": "http://unsplash.it/950/400/",
+        "hires": "http://unsplash.it/1800/900/"
+      }
     }
   },
 
