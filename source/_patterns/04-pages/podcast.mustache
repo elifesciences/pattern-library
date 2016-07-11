@@ -9,52 +9,7 @@
     <main role="main">
 
     {{#contentHeader}}
-      {{> organisms-content-header-non-article("rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image","title": "Multicellular life, potato blight and Hepatitis B",
-      "strapline": "Episode 21",
-      "titleClass": "content-header__title--small",
-      "images": {
-      "lores": "http://unsplash.it/950/400/",
-      "hires": "http://unsplash.it/1800/900/",
-      "download": {
-      "svg": "../../assets/img/icons/download-reverse.svg",
-      "svgFull": "../../assets/img/icons/download-full-reverse.svg",
-      "bitmap": "../../assets/img/icons/download-reverse-1x.png",
-      "bitmapFull": "../../assets/img/icons/download-full-reverse-1x.png"
-      }
-      },
-      "hasCtaOrMeta": "true",
-      "meta": {
-      "type": "Podcast",
-      "date": {
-      "forHuman": "Feb 29, 2016",
-      "forMachine": "2016-02-29"
-      }
-      },
-
-      "download": {
-      "sources": [
-      {
-        "srcset": "../../assets/img/icons/download-full-reverse.svg",
-        "media": "(min-width: 35em)",
-        "type": "image/svg+xml"
-      },
-      {
-        "srcset": "../../assets/img/icons/download-full-reverse-1x.png",
-        "media": "(min-width: 35em)"
-      },
-      {
-        "srcset": "../../assets/img/icons/download-reverse.svg",
-        "type": "image/svg+xml"
-      }
-    ],
-      "fallback": {
-      "defaultPath": "../../assets/img/icons/download-full-reverse-1x.png",
-      "classes": "content-header__download_icon",
-      "altText": "Download icon"
-      }
-      }
-
-      )}}
+      {{> organisms-pl-only-content-header-podcast}}
     {{/contentHeader}}
 
     {{#audioPlayer}}
