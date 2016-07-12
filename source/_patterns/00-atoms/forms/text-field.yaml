@@ -32,5 +32,8 @@ schema:
           minLength: 1
         isVisuallyHidden:
           type: boolean
+      required:
+        - labelText
+        - for
   required:
     - inputType
