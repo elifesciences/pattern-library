@@ -12,7 +12,7 @@ module.exports = class ContentHeaderSelectNav {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.$elm.classList.add('content-header--js');
+    this.$elm.classList.add('content-header-archive--js');
     this.$form = $elm.querySelector('form');
     this.$form.querySelector('select').addEventListener('change', this.triggerSubmit.bind(this));
   }
