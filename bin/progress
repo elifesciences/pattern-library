@@ -7,14 +7,31 @@ use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 
 require_once __DIR__ . '/../vendor/autoload.php';
-
 $patternDir = __DIR__ . '/../source/_patterns';
 
-$finder = (new Finder())->files()->in($patternDir)->name('*.yaml');
-$json_count = count( (new Finder())->files()->in($patternDir)->name('*.mustache') );
-$orig = 0 + $json_count;
+$atoms_finder = (new Finder())->files()->in($patternDir . '/00-atoms')->name('*.yaml');
+$molecules_finder = (new Finder())->files()->in($patternDir . '/01-molecules')->name('*.yaml');
+$organisms_finder = (new Finder())->files()->in($patternDir . '/02-organisms')->name('*.yaml');
 
-foreach ($finder as $file) {
+$atoms = count( (new Finder())->files()->in($patternDir . '/00-atoms')->name('*.mustache') );
+$molecules = count( (new Finder())->files()->in($patternDir . '/01-molecules')->name('*.mustache') );
+$organisms = count( (new Finder())->files()->in($patternDir . '/02-organisms')->name('*.mustache') );
+
+$excluded = array_reduce([
+    '00-atoms/00-meta' => 2,
+    '02-organisms/content-headers/pattern-lab-only' => 6,
+], function($a, $b) { return $a + $b; });
+
+$json_count = $atoms + $molecules + $organisms;
+$orig = 0 + $json_count - $excluded;
+
+foreach ($atoms_finder as $file) {
+    $json_count = $json_count - 1;
+}
+foreach ($molecules_finder as $file) {
+    $json_count = $json_count - 1;
+}
+foreach ($organisms_finder as $file) {
     $json_count = $json_count - 1;
 }
 
