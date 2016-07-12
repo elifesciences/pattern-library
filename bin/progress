@@ -19,7 +19,7 @@ $organisms = count( (new Finder())->files()->in($patternDir . '/02-organisms')->
 
 $excluded = array_reduce([
     '00-atoms/00-meta' => 2,
-    '02-organisms/content-headers/pattern-lab-only' => 6,
+    '02-organisms/content-headers/pattern-lab-only' => 4,
 ], function($a, $b) { return $a + $b; });
 
 $json_count = $atoms + $molecules + $organisms;
