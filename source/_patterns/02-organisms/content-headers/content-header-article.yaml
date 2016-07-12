@@ -56,9 +56,6 @@ schema:
               minLength: 1
             hasEtAl:
               type: boolean
-    lastInstitution: ## Note: found in JSON, but not in template.
-      type: string
-      minLength: 1
     institutions:
       type: object
       properties:
