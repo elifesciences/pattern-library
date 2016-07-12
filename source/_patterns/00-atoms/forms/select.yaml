@@ -14,12 +14,17 @@ schema:
         labelText:
           type: string
           minLength: 1
+        for:
+          type: string
+          minLength: 1
         isVisuallyHidden:
           type: boolean
       required:
+        - for
         - labelText
     options:
       array: string
+      minItems: 1
       items:
         type: object
         properties:
@@ -34,4 +39,5 @@ schema:
           - displayValue
   required:
     - id
+    - label
     - options
