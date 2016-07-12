@@ -4,7 +4,7 @@
   "title": "Archive",
   "titleClass": "content-header__title--medium",
   "hasCtaOrMeta": true,
-  "select": {
+  "selectNav": {
     "id": "archiveYear",
     "label": {
       "labelText": "Archive year",
