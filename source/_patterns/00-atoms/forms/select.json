@@ -1,5 +1,9 @@
 {
   "id": "mySelect",
+  "label": {
+    "labelText": "label",
+      "for": "mySelect"
+  },
   "options": [
     {
       "value": "2016",
