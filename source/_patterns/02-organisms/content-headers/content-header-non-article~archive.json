@@ -24,6 +24,11 @@
         "value": 2014,
         "displayValue": "2014"
       }
-    ]
+    ],
+    "button": {
+      "text": "Go",
+      "type": "submit",
+      "classes": "button--outline button--extra-small"
+    }
   }
 }
