@@ -1,0 +1,9 @@
+{
+  "id": "name2",
+  "inputType": "text",
+  "label": {
+    "labelText": "Focus text field"
+  },
+  "name": "name",
+  "classNames": "text-field--focus"
+}

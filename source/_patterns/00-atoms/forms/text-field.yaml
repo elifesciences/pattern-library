@@ -27,6 +27,9 @@ schema:
         labelText:
           type: string
           minLength: 1
+        for:
+          type: string
+          minLength: 1
         isVisuallyHidden:
           type: boolean
   required:
