@@ -8,20 +8,21 @@ schema:
   properties:
     title:
       type: string
-      minLegnth: 1
+      minLength: 1
     filters:
       type: array
+      minItems: 1
       items:
         type: object
         properties:
           label:
             type: string
-            minLegnth: 1
+            minLength: 1
           isChecked:
             type: boolean
           results:
             type: integer
-            minLegnth: 1
+            minLength: 1
         required:
           - label
           - isChecked
