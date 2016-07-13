@@ -43,14 +43,7 @@
         {{/button}}
       {{/button.text}}
       {{#selectNav}}
-        <form method="GET" action="{{route}}">
-        {{>atoms-select}}
-        {{#button.text}}
-            {{#button}}
-                {{>atoms-button}}
-            {{/button}}
-        {{/button.text}}
-        </form>
+        {{> molecules-select-nav}}
       {{/selectNav}}
       </div>
       {{#meta}}
