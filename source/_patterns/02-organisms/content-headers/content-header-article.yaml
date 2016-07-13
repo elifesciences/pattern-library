@@ -1,0 +1,92 @@
+assets:
+  css:
+    - content-header-article-magazine.css
+    - content-header-article-research.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    rootClasses:
+      type: string
+      minLength: 1
+    behaviour:
+      type: string
+      minLength: 1
+    title:
+      type: string
+      minLength: 1
+    titleClass:
+      type: string
+      minLength: 1
+    strapline:
+      type: string
+      minLength: 1
+    subject:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        href:
+          type: string
+          minLength: 1
+    authors:
+      type: object
+      properties:
+        oneOf:
+          -
+            list:
+              type: array
+              minItems: 1
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    minLength: 1
+                required:
+                  - name
+          -
+            firstAuthorOnly:
+              type: string
+              minLength: 1
+            hasEtAl:
+              type: boolean
+    institutions:
+      type: object
+      properties:
+        list:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                minLength: 1
+            required:
+              - name
+      required:
+        - list
+    backgroundImage:
+      type: object
+      properties:
+        images:
+          type: object
+          properties:
+            hires:
+              type: string
+              minLength: 1
+            lores:
+              type: string
+              minLength: 1
+          required:
+            - hires
+            - lores
+      required:
+        - images
+    download:
+      $ref: ../../01-molecules/components/site-links-list.yaml#/schema
+    meta:
+      $ref: ../../01-molecules/components/meta.yaml#/schema
