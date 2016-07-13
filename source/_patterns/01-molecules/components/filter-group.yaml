@@ -6,31 +6,26 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    filterGroup:
-      type: object
-      properties:
-        title:
-          type: string
-          minLegnth: 1
-        filters:
-          type: array
-          items:
-            type: object
-            properties:
-              label:
-                type: string
-                minLegnth: 1
-              isChecked:
-                type: boolean
-              results:
-                type: integer
-                minLegnth: 1
-            required:
-              - label
-              - isChecked
-              - results
-      required:
-        - title
-        - filters
+    title:
+      type: string
+      minLegnth: 1
+    filters:
+      type: array
+      items:
+        type: object
+        properties:
+          label:
+            type: string
+            minLegnth: 1
+          isChecked:
+            type: boolean
+          results:
+            type: integer
+            minLegnth: 1
+        required:
+          - label
+          - isChecked
+          - results
   required:
-    - filterGroup
+    - title
+    - filters
