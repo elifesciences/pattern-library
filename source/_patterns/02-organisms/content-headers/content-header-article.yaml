@@ -22,9 +22,6 @@ schema:
     strapline:
       type: string
       minLength: 1
-    articleType:
-      type: string
-      minLength: 1
     subject:
       type: object
       properties:
