@@ -1,4 +1,5 @@
 @import "../../definitions";
+@import "content-header-article";
 
 // Contains research article-specific overrides.
 
@@ -6,6 +7,14 @@
 
   .meta {
     @include margin(30, "top");
+  }
+
+  .meta:after {
+    border-bottom: 1px solid $color-text-dividers;
+    content: "";
+    display: block;
+    @include padding(12, "top");
+
   }
 
 }

@@ -4,4 +4,4 @@
 
 @import "definitions";
 @import "reset";
-@import "patterns/**/*.scss";
+@import "patterns/**/[^_]*.scss";
