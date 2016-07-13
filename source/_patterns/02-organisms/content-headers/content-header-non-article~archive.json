@@ -12,20 +12,22 @@
       "isVisuallyHidden": true
     },
     "route": "/path/to/archive",
-    "options": [
-      {
-        "value": "2016",
-        "displayValue": "2016"
-      },
-      {
-        "value": "2015",
-        "displayValue": "2015"
-      },
-      {
-        "value": "2014",
-        "displayValue": "2014"
-      }
-    ],
+    "select": {
+      "options": [
+        {
+          "value": "2016",
+          "displayValue": "2016"
+        },
+        {
+          "value": "2015",
+          "displayValue": "2015"
+        },
+        {
+          "value": "2014",
+          "displayValue": "2014"
+        }
+      ]
+    },
     "button": {
       "text": "Go",
       "type": "submit",
