@@ -1,7 +1,6 @@
 assets:
   css:
-    - content-header-article-magazine.css
-    - content-header-article-research.css
+    - content-header-non-article.css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -27,17 +26,7 @@ schema:
     hasProfile:
       type: boolean
     selectNav:
-      type: object
-      properties:
-      allOf:
-        -
-          $ref: ../../00-atoms/forms/select.yaml#/schema/properties
-        -
-          route:
-            type: string
-            minLength: 1
-          button:
-            $ref: ../../00-atoms/components/button.yaml#/schema
+      $ref: ../../01-molecules/navigation/select-nav.yaml#/schema
     button:
       $ref: ../../00-atoms/components/button.yaml#/schema
     meta:
