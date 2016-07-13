@@ -22,7 +22,6 @@ schema:
             type: boolean
           results:
             type: integer
-            minLength: 1
         required:
           - label
           - isChecked
