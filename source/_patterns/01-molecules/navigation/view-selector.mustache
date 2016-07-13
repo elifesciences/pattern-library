@@ -1,19 +1,16 @@
 
-<div class="view-selector">
+<div class="view-selector" data-behaviour="ViewSelector">
   <ul class="view-selector__list">
     <li class="view-selector__list-item view-selector__list-item--article view-selector__list-item--active">
-      <a href="#" class="view-selector__link view-selector__link--article"><i class="icon"></i><span>Article</span></a>
+      <a href="{{articleUrl}}" class="view-selector__link view-selector__link--article"><i class="icon"></i><span>Article</span></a>
     </li>
-    <li class="view-selector__list-item view-selector__list-item--figures">
-      <a href="#" class="view-selector__link view-selector__link--figures"><i class="icon"></i><span>Figures</span></a>
-    </li>
-    <li class="view-selector__list-item view-selector__list-item--sidebyside">
-      <a href="#" class="view-selector__link view-selector__link--sidebyside"><i class="icon"></i><span>Side by side</span></a>
-    </li>
+    {{#figureUrl}}
+      <li class="view-selector__list-item view-selector__list-item--figures">
+        <a href="{{figureUrl}}" class="view-selector__link view-selector__link--figures"><i class="icon"></i><span>Figures</span></a>
+      </li>
+    {{/figureUrl}}
     <li class="view-selector__list-item view-selector__list-item--jump">
-
       <span class="view-selector__jump_links_header">Jump to</span>
-
       <ul class="view-selector__jump_links" data-behaviour="DropDown">
         {{#jumpLinks}}
           <li class="view-selector__jump_link_item">
@@ -21,7 +18,6 @@
           </li>
         {{/jumpLinks}}
       </ul>
-
     </li>
   </ul>
 </div>
