@@ -4,7 +4,7 @@
   "title": "Archive",
   "titleClass": "content-header__title--medium",
   "hasCtaOrMeta": true,
-  "select": {
+  "selectNav": {
     "id": "archiveYear",
     "label": {
       "labelText": "Archive year",
@@ -24,6 +24,11 @@
         "value": 2014,
         "displayValue": "2014"
       }
-    ]
+    ],
+    "button": {
+      "text": "Go",
+      "type": "submit",
+      "classes": "button--outline button--extra-small"
+    }
   }
 }
