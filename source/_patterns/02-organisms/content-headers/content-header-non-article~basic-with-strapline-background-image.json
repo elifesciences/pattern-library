@@ -3,5 +3,9 @@
   "behaviour": "ContentHeaderBackgroundImage",
   "title": "About <i>eLife</i>",
   "titleClass": "content-header__title--medium",
-  "strapline": "<i>eLife</i> publishes outstanding research in the life sciences and biomedicine, from the most fundamental and theoretical work, through to translational, applied, and clinical research."
+  "strapline": "<i>eLife</i> publishes outstanding research in the life sciences and biomedicine, from the most fundamental and theoretical work, through to translational, applied, and clinical research.",
+  "backgroundImages": {
+    "lowResImageSource": "http://unsplash.it/950/400",
+    "highResImageSource": "http://unsplash.it/1900/800"
+  }
 }

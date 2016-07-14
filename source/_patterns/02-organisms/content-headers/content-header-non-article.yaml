@@ -11,6 +11,18 @@ schema:
       minLength: 1
     behaviour:
       type: string
+    backgroundImages:
+      type: object
+      properties:
+        lowResImageSource:
+          type: string
+          minLength: 1
+        highResImageSource:
+          type: string
+          minLength: 1
+      required:
+        - lowResImageSource
+        - highResImageSource
     title:
       type: string
       minLength: 1

@@ -10,10 +10,8 @@
     "path": "#",
     "classes": "button--outline button--small"
   },
-  "backgroundImage": {
-    "images": {
-      "lores": "http://unsplash.it/950/400/",
-      "hires": "http://unsplash.it/1800/900/"
-    }
+  "backgroundImages": {
+    "lowResImageSource": "http://unsplash.it/950/400",
+    "highResImageSource": "http://unsplash.it/1900/800"
   }
 }

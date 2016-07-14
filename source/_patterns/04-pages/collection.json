@@ -156,7 +156,7 @@
 
   "contentHeader": {
     "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
-    "behaviour": "ContentHeaderSelectNav",
+    "behaviour": "ContentHeaderBackgroundImage",
     "title": "Tropical disease",
     "titleClass": "content-header__title--medium",
     "strapline": "A selection of papers",
@@ -175,11 +175,9 @@
       "path": "#",
       "classes": "button--outline button--small"
     },
-    "backgroundImage": {
-      "images": {
-        "hires": "http://unsplash.it/1800/900/",
-        "lores": "http://unsplash.it/950/400"
-      }
+    "backgroundImages": {
+      "lowResImageSource": "http://unsplash.it/950/400",
+      "highResImageSource": "http://unsplash.it/1900/800"
     }
   },
 

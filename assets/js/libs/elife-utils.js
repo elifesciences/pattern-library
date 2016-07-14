@@ -183,7 +183,7 @@ module.exports = () => {
     getViewportWidth: getViewportWidth,
     invertPxString: invertPxString,
     uniqueIds: uniqueIds,
-    updateElementTranslate: updateElementTranslate,
+    updateElementTranslate: updateElementTranslate
   };
 
 };

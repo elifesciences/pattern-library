@@ -155,7 +155,7 @@
   },
    "contentHeader": {
      "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
-
+     "behaviour": "ContentHeaderBackgroundImage",
      "title": "Multicellular life, potato blight and Hepatitis B",
 
      "strapline": "Episode 21",
@@ -194,11 +194,9 @@
        }
      },
 
-     "backgroundImage": {
-       "images": {
-         "hires": "http://unsplash.it/1800/900/",
-         "lores": "http://unsplash.it/950/400"
-       }
+     "backgroundImages": {
+       "lowResImageSource": "http://unsplash.it/950/400",
+       "highResImageSource": "http://unsplash.it/1900/800"
      }
   },
 

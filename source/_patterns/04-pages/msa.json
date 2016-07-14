@@ -156,7 +156,7 @@
 
   "contentHeader": {
     "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
-    "behaviour": "ContentHeaderSelectNav",
+    "behaviour": "ContentHeaderBackgroundImage",
     "title": "Microbiology and infectious disease",
     "titleClass": "content-header__title--medium",
     "hasCtaOrMeta": true,
@@ -166,11 +166,9 @@
       "classes": "button--outline button--small"
     },
 
-    "backgroundImage": {
-      "images": {
-        "lores": "http://unsplash.it/950/400/",
-        "hires": "http://unsplash.it/1800/900/"
-      }
+    "backgroundImages": {
+      "lowResImageSource": "http://unsplash.it/950/400",
+      "highResImageSource": "http://unsplash.it/1900/800"
     }
   },
 

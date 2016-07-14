@@ -23,11 +23,8 @@
     }
   },
 
-  "backgroundImage": {
-    "images": {
-      "hires": "http://unsplash.it/1800/900/",
-      "lores": "http://unsplash.it/950/400"
-    }
+  "backgroundImages": {
+    "lowResImageSource": "http://unsplash.it/950/400",
+    "highResImageSource": "http://unsplash.it/1900/800"
   }
-
 }
