@@ -1,5 +1,7 @@
 <form method="GET" action="{{route}}" data-behaviour="SelectNav">
-  {{>atoms-select}}
+  {{#select}}
+    {{>atoms-select}}
+  {{/select}}
   {{#button.text}}
     {{#button}}
       {{>atoms-button}}
