@@ -2,7 +2,11 @@
   "typeLink": "#",
   "type": "Research article",
   "date": {
-    "forHuman": "Feb 29, 2016",
+    "forHuman": {
+      "dayOfMonth": 29,
+      "month": "Feb",
+      "year": 2016
+    },
     "forMachine": "2016-02-29"
   }
 }
