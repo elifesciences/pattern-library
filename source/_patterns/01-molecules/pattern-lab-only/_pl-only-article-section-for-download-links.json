@@ -11,5 +11,20 @@
     {"content": "<p>Recently, it was suggested that the RING domain of TRAF2 requires S1P as a co-factor for its E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib3\" rel=\"#bib3\">Alvarez et al., 2010</a>). Alvarez and colleagues proposed that SPHK1 but not SPHK2 is activated by TNF and phosphorylates sphingosine to S1P which in turn&nbsp;binds&nbsp;to the RING domain of TRAF2 and serves as an essential co-factor that was missing in the experiments of Yin <em>et al.</em> Alvarez and colleagues, observed that in the absence of SPHK1, TNF-induced NF-κB activation was completely abolished.</p>"},
     {"content": "<p>Although we know a lot about TRAF2, there are still important gaps particularly with regard to cell type specificity and in vivo function of TRAF2. Moreover, despite the claims that SPHK1 and its product, S1P, are required for TRAF2 to function as a ubiquitin ligase, the responses of <em>Traf2<sup>-/-&nbsp;</sup></em>and <em>Sphk1<sup>-/-</sup></em> cells to TNF were not compared. Therefore, we undertook an analysis of TRAF2 and SPHK1 function in TNF signalling in a number of different tissues.</p>"},
     {"content": "<p>Surprisingly, we found that neither TRAF2 nor SPHK1 are required for TNF mediated canonical NF-κB and MAPK signalling in macrophages. However, MEFs, murine dermal fibroblasts (MDFs) and keratinocytes required TRAF2 but not SPHK1 for full strength TNF signalling. In these cell types, absence of TRAF2 caused a delay in TNF-induced activation of NF-κB and MAPK, and sensitivity to killing by TNF was increased. Absence of TRAF2 in keratinocytes in vivo resulted in psoriasis-like epidermal hyperplasia and skin inflammation. Unlike TNF-dependent genetic inflammatory skin conditions, such as IKK2 epidermal knock-out (<a class=\"xref-bibr\" href=\"#bib40\" rel=\"#bib40\" title=\"\">Pasparakis et al., 2002</a>) and the <em>cpdm</em> mutant (<a class=\"xref-bibr\" href=\"#bib16\" rel=\"#bib16\">Gerlach et al., 2011</a>), the onset of inflammation was only delayed, and not prevented by deletion of TNF. This early TNF-dependent inflammation is caused by excessive apoptotic but not necroptotic cell death and could be prevented by deletion of <em>Casp8</em>. We observed constitutive activation of NIK and non-canonical NF-κB in <em>Traf2<sup>-/-&nbsp;</sup></em>keratinocytes which caused production of inflammatory cytokines and chemokines. We were able to reverse this inflammatory phenotype by simultaneously deleting both <em>Tnf</em> and <em>Nfkb2</em> genes. Our results highlight the important role TRAF2 plays to protect keratinocytes from cell death and to down-regulate inflammatory responses and support the idea that intrinsic defects in keratinocytes can initiate psoriasis-like skin inflammation.</p>"}
-  ]
+  ],
+
+  "downloadLinks": {
+    "dlLinkArticle": "#",
+    "dlLinkFigure": "#",
+    "dlLinkCitsBibtex": "#",
+    "dlLinkCitsEndnote": "#",
+    "dlLinkCitsEndnote8": "#",
+    "dlLinkCitsRefworks": "#",
+    "dlLinkCitsRIS": "#",
+    "dlLinkCitsMedlars": "#",
+    "linkCitsMendeley": "#",
+    "linkCitsReadCube": "#",
+    "linkCitsPapers": "#",
+    "linkCitsCiteULike": "#"
+  }
 }
