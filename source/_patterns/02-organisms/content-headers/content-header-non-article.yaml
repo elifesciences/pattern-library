@@ -1,0 +1,58 @@
+assets:
+  css:
+    - content-header-non-article.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    rootClasses:
+      type: string
+      minLength: 1
+    behaviour:
+      type: string
+      minLength: 1
+    title:
+      type: string
+      minLength: 1
+    titleClass:
+      type: string
+      minLength: 1
+    strapline:
+      type: string
+      minLength: 1
+    hasCtaOrMeta:
+      type: boolean
+    hasProfile:
+      type: boolean
+    selectNav:
+      $ref: ../../01-molecules/navigation/select-nav.yaml#/schema
+    button:
+      $ref: ../../00-atoms/components/button.yaml#/schema
+    meta:
+      $ref: ../../01-molecules/components/meta.yaml#/schema
+    profile:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        link:
+          type: string
+          minLength: 1
+        avatar:
+          type: object
+          properties:
+            x1:
+              type: string
+              minLength: 1
+            x2:
+              type: string
+              minLength: 1
+          required:
+            - x1
+            - x2
+      required:
+        - name
+        - link
+        - avatar

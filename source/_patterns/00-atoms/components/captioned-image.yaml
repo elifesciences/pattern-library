@@ -5,24 +5,61 @@ assets:
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
-  properties:
-    heading:
-      type: string
-      minLength: 1
-    captions:
-      type: array
-      items:
-        type: object
-        properties:
-          caption:
-            type: string
-            minLength: 1
-        required:
-          - caption
-        minItems: 1
-    customContent:
-      type: string
-    picture:
-      $ref: picture.yaml#/schema/properties
-  required:
-    - picture
+  allOf:
+    -
+      oneOf:
+        -
+          anyOf:
+            -
+              properties:
+                heading:
+                  type: string
+                  minLength: 1
+              required:
+                - heading
+            -
+              properties:
+                captions:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      caption:
+                        type: string
+                        minLength: 1
+                    required:
+                      - caption
+                    minItems: 1
+              required:
+                - captions
+        -
+          properties:
+            customContent:
+              type: string
+              minLength: 1
+          required:
+            - customContent
+    -
+      oneOf:
+        -
+          properties:
+            picture:
+              $ref: picture.yaml#/schema
+          required:
+            - picture
+        -
+          properties:
+            srcset:
+              type: string
+              pattern: ^((https)?[^ ]+ [1-9][0-9]*w)(, (https?)?[^ ]+ [1-9][0-9]*w)*$
+            defaultPath:
+              type: string
+              minLength: 1
+            altText:
+              type: string
+            classes:
+              type: string
+          required:
+            - srcset
+            - defaultPath
+            - altText

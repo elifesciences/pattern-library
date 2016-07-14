@@ -1,19 +1,12 @@
 @import "../../definitions";
+@import "content-header";
 
-// Includes some styles common to both research article and magazine article headers.
+// Includes styles common to both research article and magazine article headers.
 
 .content-header-article {
 
   &.content-header {
     @include padding(14, "top");
-  }
-
-  .meta:after {
-    border-bottom: 1px solid $color-text-dividers;
-    content: "";
-    display: block;
-    @include padding(12, "top");
-
   }
 
 }

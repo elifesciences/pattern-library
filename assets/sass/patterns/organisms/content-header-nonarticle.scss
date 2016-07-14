@@ -1,4 +1,5 @@
 @import "../../definitions";
+@import "content-header";
 
 .content-header-nonarticle {
 
@@ -174,9 +175,4 @@
     border: none;
   }
 
-}
-
-// Built to apply to the archive select list navigation, but would apply more generally.
-.content-header--js button[type="submit"] {
-  @include visuallyhidden();
 }

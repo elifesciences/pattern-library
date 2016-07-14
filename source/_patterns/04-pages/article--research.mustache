@@ -9,9 +9,9 @@
       <article class="article">
 
         <div class="wrapper">
-          {{#contentHeaderArticle}}
-            {{> organisms-content-header-article-research("hasInstitutions": "true")}}
-          {{/contentHeaderArticle}}
+        {{#contentHeader}}
+          {{> organisms-pl-only-content-header-research-article}}
+        {{/contentHeader}}
         </div>
 
         <div class="wrapper">
@@ -31,6 +31,10 @@
               {{#articleSections}}
                 {{> molecules-article-section }}
               {{/articleSections}}
+
+              {{#iframe}}
+                {{> atoms-iframe }}
+              {{/iframe}}
 
               <!-- May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? -->
               <section class="article-section">

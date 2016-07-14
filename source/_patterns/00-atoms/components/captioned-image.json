@@ -1,19 +1,11 @@
 {
   "heading": "Many features are conserved between the mammalian nephron and planarian protonephridia.",
   "captions": [
-    {"caption": "(A) Image of a young adult C. elegans and schematic depicting the twelve pairs of sensory neurons in the anterior amphid individuals carrying a virus with k deleterious mutations at its endemic equilibrium. class carrying the fewest number of deleterious mutations is defined as mutation class k = 0. Inset: variation in the basic reproductive rate of infected individuals (gray histogram) and variation in the net reproductive rate R of infected individuals (brown histogram) resulting from variation in the number of deleterious mutations carried by circulating viruses."}
-  ],
-  "picture": {
-    "sources": [
-      {
-        "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg",
-        "type": "image/svg+xml"
-      }
-    ],
-    "fallback": {
-      "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
-      "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-      "altText": "Meaningful alt text here please."
+    {
+      "caption": "(A) Image of a young adult C. elegans and schematic depicting the twelve pairs of sensory neurons in the anterior amphid individuals carrying a virus with k deleterious mutations at its endemic equilibrium. class carrying the fewest number of deleterious mutations is defined as mutation class k = 0. Inset: variation in the basic reproductive rate of infected individuals (gray histogram) and variation in the net reproductive rate R of infected individuals (brown histogram) resulting from variation in the number of deleterious mutations carried by circulating viruses."
     }
-  }
+  ],
+  "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+  "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+  "altText": "Meaningful alt text here please."
 }

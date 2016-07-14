@@ -1,0 +1,10 @@
+{
+  "id": "name3",
+  "inputType": "text",
+  "label": {
+    "for": "name3",
+    "labelText": "Valid text field"
+  },
+  "name": "name",
+  "classNames": "text-field--valid"
+}
