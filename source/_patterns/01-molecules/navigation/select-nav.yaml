@@ -7,7 +7,7 @@ schema:
   type: object
   properties:
     select:
-      $ref: ../../00-atoms/forms/select.yaml#/schema/properties
+      $ref: ../../00-atoms/forms/select.yaml#/schema
     route:
       type: string
       minLength: 1

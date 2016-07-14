@@ -1,6 +1,9 @@
 #!/usr/bin/env php
 <?php
 
+use JsonSchema\RefResolver;
+use JsonSchema\Uri\UriResolver;
+use JsonSchema\Uri\UriRetriever;
 use JsonSchema\Validator;
 use Rs\Json\Pointer;
 use Symfony\Component\Finder\Finder;
@@ -14,6 +17,9 @@ $finder = (new Finder())->files()->in($patternDir)->name('*.yaml');
 
 $validator = new Validator();
 
+$refResolver = new RefResolver(new UriRetriever(), new UriResolver());
+$jsonSchema = $refResolver->resolve('file://' . __DIR__ . '/../extras/json-schema-draft-04.json');
+
 $exit = 0;
 
 foreach ($finder as $file) {
@@ -22,6 +28,18 @@ foreach ($finder as $file) {
     $yaml = Yaml::dump($yaml, 100);
     $yaml = str_replace(' {  }', ' []', $yaml);
     $yaml = Yaml::parse($yaml, true, false, true);
+
+    $validator->reset();
+    $validator->check($yaml->schema, $jsonSchema);
+    if (!$validator->isValid()) {
+        $exit = 1;
+        $message = 'Error in schema: ' . $file->getFilename() . PHP_EOL;
+        foreach ($validator->getErrors() as $error) {
+            $message .= sprintf("[%s] %s\n", $error['property'], $error['message']);
+        }
+        echo $message . PHP_EOL;
+        continue;
+    }
 
     $jsonFinder = (new Finder())->files()->in($file->getPath())->name('/^' . $file->getBasename('.yaml') . '(~.+)?.json$/');
 
