@@ -5,14 +5,13 @@
   "titleClass": "content-header__title--medium",
   "hasCtaOrMeta": true,
   "selectNav": {
-    "id": "archiveYear",
-    "label": {
-      "labelText": "Archive year",
-      "for": "archiveYear",
-      "isVisuallyHidden": true
-    },
-    "route": "/path/to/archive",
     "select": {
+      "id": "archiveYear",
+      "label": {
+        "labelText": "Archive year",
+        "for": "archiveYear",
+        "isVisuallyHidden": true
+      },
       "options": [
         {
           "value": "2016",
@@ -28,6 +27,7 @@
         }
       ]
     },
+    "route": "/path/to/archive",
     "button": {
       "text": "Go",
       "type": "submit",

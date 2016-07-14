@@ -5,10 +5,12 @@
   {{/picture}}
 
   {{^picture}}
-    <img src="{{defaultPath}}"
-         alt="{{altText}}"{{#srcset}}
-         srcset="{{srcset}}"{{/srcset}}
-      {{#classes}} class="{{classes}}"{{/classes}} />
+    {{#image}}
+        <img src="{{defaultPath}}"
+             alt="{{altText}}"{{#srcset}}
+             srcset="{{srcset}}"{{/srcset}}
+          {{#classes}} class="{{classes}}"{{/classes}} />
+    {{/image}}
   {{/picture}}
 
   <figcaption class="captioned-image__caption">
