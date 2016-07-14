@@ -5,7 +5,11 @@
   "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
   "footerText": "Experiment: 001",
   "date": {
-    "forHuman": "Dec 13, 2015",
+    "forHuman": {
+      "dayOfMonth": 13,
+      "month": "Dec",
+      "year": 2015
+    },
     "forMachine": "2015-12-13"
   },
   "downloadSrc": "https://nakeddiscovery.com/scripts/mp3s/audio/eLife_Podcast_03.14.mp3"
