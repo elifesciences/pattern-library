@@ -23,11 +23,7 @@ schema:
             minLength: 1
         required:
           - content
-    downloadLinks:
-      type: object
-      $ref: ../../01-molecules/components/article-download-links-list.yaml#/schema
   required:
     - id
     - title
     - body
-    - downloadLinks

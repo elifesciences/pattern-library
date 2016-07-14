@@ -1,4 +1,6 @@
-
+{{! This is a pattern lab only version of article section for the download links.
+Required because the production article-section pattern does not include the partial
+for article-download-links-list. }}
 <section class="article-section {{#first}}article-section--first{{/first}}" id="{{id}}">
 
   <header class="article-section__header">
@@ -9,6 +11,10 @@
     {{#body}}
       {{{content}}}
     {{/body}}
+    {{#downloadLinks}}
+      {{> molecules-article-download-links-list}}
+    {{/downloadLinks}}
+
   </div>
 
 </section>
