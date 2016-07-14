@@ -6,5 +6,6 @@
 {{/date.isExpanded}}
 
 {{^date.isExpanded}}
-  <time class="date{{#variant}}{{/variant}}" datetime="{{date.forMachine}}">{{date.forHuman}}</time>
+  <time class="date{{#variant}}{{/variant}}" datetime="{{date.forMachine}}">{{date.forHuman.month}} {{date.forHuman.dayOfMonth}}
+      , {{date.forHuman.year}}</time>
 {{/date.isExpanded}}
