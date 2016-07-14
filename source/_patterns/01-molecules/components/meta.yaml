@@ -13,8 +13,7 @@ schema:
       type: string
       minLength: 1
     date:
-      type: object
-      $ref: ../../00-atoms/components/date.yaml#/schema
+      $ref: ../../00-atoms/components/date.yaml#/schema/properties/date
   required:
     - type
     - date

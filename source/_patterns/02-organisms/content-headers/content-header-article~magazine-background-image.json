@@ -51,7 +51,11 @@
     "typeLink": "#",
     "type": "Insight",
     "date": {
-      "forHuman": "Dec 15, 2015",
+      "forHuman": {
+        "dayOfMonth": 15,
+        "month": "Dec",
+        "year": 2015
+      },
       "forMachine": "2015-12-15"
     }
   }
