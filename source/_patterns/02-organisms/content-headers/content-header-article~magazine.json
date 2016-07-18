@@ -4,9 +4,17 @@
   "title": "Planarian 'kidneys' go with the flow",
   "titleClass": "content-header__title--small",
   "strapline": "Flatworms have organs called protonephridia that could be used as a model system for the study of kidney disease.",
-  "subject": {
-    "name": "Developmental Biology and Stem Cells",
-    "href": "#"
+  "subjects": {
+    "list": [
+      {
+        "name": "Cell Biology",
+        "url": "#"
+      },
+      {
+        "name": "Epidemiology and global health",
+        "url": "#"
+      }
+    ]
   },
   "articleType": "Insight",
   "authors": {

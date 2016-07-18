@@ -17,8 +17,32 @@
   @include h1-typeg();
 }
 
+.content-header__subject_list {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 100;
+}
+
+.content-header__subject_list_item {
+  display: inline;
+  list-style-type: none;
+  padding: 0;
+
+  & .content-header__subject:after {
+    content: ", ";
+  }
+}
+
+.content-header__subject_list_item:last-child {
+
+  & .content-header__subject:after {
+    content: "";
+  }
+
+}
+
 .content-header__subject_link {
-  display: block;
   @include label-subject-typeg();
   text-decoration: none;
 
