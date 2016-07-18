@@ -48,8 +48,8 @@
   },
 
   "meta": {
-    "typeLink": "#",
-    "type": "Insight",
+    "url": "#",
+    "text": "Insight",
     "date": {
       "forHuman": {
         "dayOfMonth": 15,
