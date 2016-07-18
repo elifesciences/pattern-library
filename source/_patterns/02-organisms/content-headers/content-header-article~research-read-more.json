@@ -20,15 +20,6 @@
     "hasEtAl": true
   },
 
-  "images": {
-    "download": {
-      "svg": "../../assets/img/icons/download.svg",
-      "svgFull": "../../assets/img/icons/download-full.svg",
-      "bitmap": "../../assets/img/icons/download-1x.png",
-      "bitmapFull": "../../assets/img/icons/download-full-1x.png"
-    }
-  },
-
   "meta": {
     "typeLink": "#",
     "type": "Research article",

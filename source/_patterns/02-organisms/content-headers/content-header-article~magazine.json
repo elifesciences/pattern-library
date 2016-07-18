@@ -41,6 +41,7 @@
     ],
     "fallback": {
       "defaultPath": "../../assets/img/icons/download-full-1x.png",
+      "srcset": "../../assets/img/icons/download-full-2x.png 88w, ../../assets/img/icons/download-full-1x.png 44w",
       "classes": "content-header__download_icon",
       "altText": "Download icon"
     }
