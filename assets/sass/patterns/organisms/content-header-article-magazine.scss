@@ -15,7 +15,7 @@
       color: $color-text--reverse;
     }
   }
-    .content-header__title {
+  .content-header__title {
     @include margin(13, "bottom");
     @include margin(28, "top");
     padding-bottom: 0;

@@ -9,9 +9,15 @@
 
   <div class="content-header_top">
 
-    {{#subject.name}}
-    <a href="{{subject.href}}" class="content-header__subject_link">{{subject.name}}</a>
-    {{/subject.name}}
+    {{#subjects}}
+    <ol class="content-header__subject_list">
+      {{#subjects.list}}
+        <li class="content-header__subject_list_item">
+          <a href="{{url}}" class="content-header__subject_link"><span class="content-header__subject">{{name}}</span></a>
+        </li>
+      {{/subjects.list}}
+    </ol>
+    {{/subjects}}
 
     {{#download}}
     <a href="#articleDownloadLinksList" class="content-header__download_link">
