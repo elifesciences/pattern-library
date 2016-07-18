@@ -6,9 +6,16 @@
     margin: 0;
   }
 
-  // this needs a better name
-  .teaser__content_extra {
+  // TODO: move meta pattern from content header to own scss file.
+  .meta__type {
+    color: $color-text;
+    text-transform: none;
     font-family: $font-primary;
     @include font-size(12);
+    font-weight: normal;
+
+    &:hover {
+      color: $color-text;
+    }
   }
 }
