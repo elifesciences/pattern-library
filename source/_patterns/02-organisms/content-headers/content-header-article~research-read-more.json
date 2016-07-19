@@ -21,8 +21,8 @@
   },
 
   "meta": {
-    "typeLink": "#",
-    "type": "Research article",
+    "url": "#",
+    "text": "Research article",
     "date": {
       "forHuman": {
         "dayOfMonth": 10,

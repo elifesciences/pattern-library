@@ -6,7 +6,7 @@
   "titleClass": "content-header__title--small",
   "hasCtaOrMeta": true,
   "meta": {
-    "type": "Podcast",
+    "text": "Podcast",
     "date": {
       "forHuman": {
         "dayOfMonth": 29,

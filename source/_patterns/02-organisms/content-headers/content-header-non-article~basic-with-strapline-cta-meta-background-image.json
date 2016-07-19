@@ -11,8 +11,8 @@
     "classes": "button--outline button--small"
   },
   "meta": {
-    "typeLink": "#",
-    "type": "Collection",
+    "url": "#",
+    "text": "Collection",
     "date": {
       "forHuman": {
         "dayOfMonth": 29,
