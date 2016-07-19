@@ -1,5 +1,11 @@
 @import "../../definitions";
 
+.filter-group {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
 .filter-group__title {
   @include listing-main-subtitle-typeg();
   @include margin(0 0 8 0);
