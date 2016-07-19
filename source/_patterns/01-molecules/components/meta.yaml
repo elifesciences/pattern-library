@@ -14,3 +14,6 @@ schema:
       minLength: 1
     date:
       $ref: ../../00-atoms/components/date.yaml#/schema/properties/date
+  dependencies:
+    url:
+      - text
