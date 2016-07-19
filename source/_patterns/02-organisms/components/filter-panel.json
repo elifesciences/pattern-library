@@ -1,7 +1,7 @@
 {
+  "title": "Refine your results by:",
   "filterGroups": [
     {
-      "filterGroup": {
         "title": "Subject",
         "filters": [
           { "isChecked": true, "label": "Cell Biology", "results": 71 },
@@ -13,11 +13,9 @@
           { "isChecked": false, "label": "Ecology", "results": 71 },
           { "isChecked": false, "label": "Epidemiology and Global Health", "results": 57 }
         ]
-      }
     },
 
     {
-      "filterGroup": {
         "title": "Content type",
         "filters": [
           { "isChecked": true, "label": "Editorial", "results": 14 },
@@ -28,7 +26,11 @@
           { "isChecked": false, "label": "Tools and resources", "results": 26 },
           { "isChecked": false, "label": "Research advance", "results": 144 }
         ]
-      }
     }
-  ]
+  ],
+  "button": {
+    "text": "Search",
+    "classes": "button--default",
+    "type": "submit"
+  }
 }
