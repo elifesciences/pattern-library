@@ -11,7 +11,6 @@ schema:
       minLength: 1
     behaviour:
       type: string
-      minLength: 1
     title:
       type: string
       minLength: 1
@@ -56,3 +55,7 @@ schema:
         - name
         - link
         - avatar
+  required:
+    - rootClasses
+    - title
+    - titleClass

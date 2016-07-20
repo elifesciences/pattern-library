@@ -16,6 +16,9 @@ schema:
     title:
       type: string
       minLength: 1
+    articleType:
+      type: string
+      minLength: 1
     titleClass:
       type: string
       minLength: 1
@@ -107,3 +110,8 @@ schema:
       $ref: ../../01-molecules/components/site-links-list.yaml#/schema
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
+  required:
+    - rootClasses
+    - title
+    - titleClass
+    - articleType
