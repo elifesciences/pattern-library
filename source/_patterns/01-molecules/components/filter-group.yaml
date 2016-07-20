@@ -21,7 +21,7 @@ schema:
           isChecked:
             type: boolean
           results:
-            type: integer
+            type: string
         required:
           - label
           - isChecked
