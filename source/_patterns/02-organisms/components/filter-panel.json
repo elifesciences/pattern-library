@@ -21,7 +21,7 @@
           { "isChecked": true, "label": "Editorial", "results": "14" },
           { "isChecked": false, "label": "Feature article", "results": "2" },
           { "isChecked": false, "label": "Insight", "results": "24" },
-          { "isChecked": false, "label": "Research article", "results": "1498" },
+          { "isChecked": false, "label": "Research article", "results": "1,498" },
           { "isChecked": true, "label": "Short Report", "results": "71" },
           { "isChecked": false, "label": "Tools and resources", "results": "26" },
           { "isChecked": false, "label": "Research advance", "results": "144" }
