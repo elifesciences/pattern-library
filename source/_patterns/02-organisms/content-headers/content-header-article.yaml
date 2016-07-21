@@ -16,9 +16,6 @@ schema:
     title:
       type: string
       minLength: 1
-    articleType:
-      type: string
-      minLength: 1
     titleClass:
       type: string
       minLength: 1
@@ -114,4 +111,3 @@ schema:
     - rootClasses
     - title
     - titleClass
-    - articleType
