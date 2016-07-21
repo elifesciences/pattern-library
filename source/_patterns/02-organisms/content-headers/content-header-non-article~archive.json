@@ -1,5 +1,5 @@
 {
-  "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
+  "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
   "behaviour": "ContentHeaderSelectNav",
   "title": "Archive",
   "titleClass": "content-header__title--medium",

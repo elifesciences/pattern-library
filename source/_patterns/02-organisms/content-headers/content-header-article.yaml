@@ -107,3 +107,7 @@ schema:
       $ref: ../../01-molecules/components/site-links-list.yaml#/schema
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
+  required:
+    - rootClasses
+    - title
+    - titleClass
