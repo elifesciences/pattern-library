@@ -1,5 +1,5 @@
 {
-  "rootClasses": "teaser--podcast-item",
+  "rootClasses": "teaser--chapter-listing-item",
   "contextLabel": {
     "list": [
       {

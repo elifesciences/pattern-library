@@ -1,0 +1,25 @@
+{
+  "rootClasses": "teaser--grid-style",
+  "url": "#",
+  "title": "eLife Lens search",
+  "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
+  "image": {
+    "defaultPath": "http://unsplash.it/250/140/",
+    "altText": "An image.",
+    "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w",
+    "classes": "teaser__img--prominent"
+  },
+  "footer": {
+    "meta": {
+      "text": "Experiment: 001",
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 31,
+          "month": "March",
+          "year": 2015
+        },
+        "forMachine": "2015-03-31"
+      }
+    }
+  }
+}
