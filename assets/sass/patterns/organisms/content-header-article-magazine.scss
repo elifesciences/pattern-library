@@ -1,9 +1,20 @@
 @import "../../definitions";
+@import "content-header-article";
 
 // Contains styles unique to research article header & variants.
 
 .content-header-article-magazine {
 
+  &.content-header-article-magazine--background {
+
+    @include article-with-background;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .date {
+      color: $color-text--reverse;
+    }
+  }
   .content-header__title {
     @include margin(13, "bottom");
     @include margin(28, "top");
@@ -29,18 +40,6 @@
     .content-header__strapline {
       @include impact-statement-typeg("wide");
     }
-  }
-
-}
-
-.content-header-article-magazine--background {
-
-  @include article-with-background;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  .date {
-    color: $color-text--reverse;
   }
 
 }

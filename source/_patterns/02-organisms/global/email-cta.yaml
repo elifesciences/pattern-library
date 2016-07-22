@@ -1,0 +1,22 @@
+assets:
+  css:
+    - email-cta.css
+    - $ref: ../../01-molecules/components/compact-form.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    emailCta:
+      headerText:
+        type: string
+        minLength: 1
+      subHeader:
+        type: string
+        minLength: 1
+      compactForm:
+        $ref: ../../01-molecules/components/compact-form.yaml#/schema
+      required:
+        - headerText
+        - subHeader
+        - compactForm

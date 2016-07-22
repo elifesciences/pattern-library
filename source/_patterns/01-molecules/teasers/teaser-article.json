@@ -9,7 +9,11 @@
     "path": "#"
   },
   "date": {
-    "forHuman": "Dec 16, 2015",
+    "forHuman": {
+      "dayOfMonth": 16,
+      "month": "Dec",
+      "year": 2015
+    },
     "forMachine": "2015-05-12"
   }
 }

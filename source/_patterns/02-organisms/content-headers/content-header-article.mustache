@@ -1,0 +1,74 @@
+<header class="content-header
+               {{#rootClasses}}{{rootClasses}}{{/rootClasses}}"
+        {{#behaviour}}data-behaviour="{{behaviour}}"{{/behaviour}}>
+
+  {{! TODO: Work out a better implementation}}
+  {{#backgroundImage}}
+    {{>atoms-content-header-background-style-markup}}
+  {{/backgroundImage}}
+
+  <div class="content-header_top">
+
+    {{#subjects}}
+    <ol class="content-header__subject_list">
+      {{#subjects.list}}
+        <li class="content-header__subject_list_item">
+          <a href="{{url}}" class="content-header__subject_link"><span class="content-header__subject">{{name}}</span></a>
+        </li>
+      {{/subjects.list}}
+    </ol>
+    {{/subjects}}
+
+    {{#download}}
+    <a href="#articleDownloadLinksList" class="content-header__download_link">
+      {{> atoms-picture}}
+      </a>
+    {{/download}}
+  </div>
+
+  <h2 class="content-header__title {{titleClass}}">{{{title}}}</h2>
+
+  {{#strapline}}
+  <div class="content-header__strapline">{{strapline}}</div>
+  {{/strapline}}
+
+  {{#authors}}
+  <ol class="content-header__author_list">
+    <!--  All article headers: when js available, max 16 authors visible,
+            excess behind 'see more'. Except: Reasearch article read more header: only first author (firstAuthorOnly), followed by et al if there are more (hasEtAl). -->
+    {{#firstAuthorOnly}}
+    <li class="content-header__author_list_item">
+      <span class="content-header__author">{{firstAuthorOnly}}</span>
+    </li>
+    {{#hasEtAl}}
+    <li class="content-header__author_list_item"><span class="content-header__author--etal">et al.</span></li>
+    {{/hasEtAl}}
+    {{/firstAuthorOnly}}
+
+    {{^firstAuthorOnly}}
+    {{#authors.list}}
+      <li class="content-header__author_list_item">
+        <span class="content-header__author">{{name}}</span>
+      </li>
+    {{/authors.list}}
+    {{/firstAuthorOnly}}
+
+  </ol>
+  {{/authors}}
+  <!-- Institution list is not on the designs of the narrow view. This is visually hidden until the first min-width breakpoint. -->
+
+  {{#institutions}}
+    <ol class="content-header__institution_list">
+      {{#institutions.list}}
+        <li class="content-header__institution_list_item">
+          <span class="content-header__institution">{{name}}</span>
+        </li>
+      {{/institutions.list}}
+    </ol>
+  {{/institutions}}
+
+  {{#meta}}
+    {{> molecules-meta}}
+  {{/meta}}
+
+</header>

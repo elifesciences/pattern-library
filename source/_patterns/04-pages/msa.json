@@ -155,23 +155,22 @@
   },
 
   "contentHeader": {
-    "title": "Microbiology and Infectious Disease",
-
+    "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
+    "behaviour": "ContentHeaderSelectNav",
+    "title": "Microbiology and infectious disease",
     "titleClass": "content-header__title--medium",
-
+    "hasCtaOrMeta": true,
     "button": {
       "text": "Subscribe",
       "path": "#",
       "classes": "button--outline button--small"
     },
 
-    "background": "true",
-    "backgroundImage": "true",
-    "hasCtaOrMeta": "true",
-
-    "images": {
-      "lores": "http://unsplash.it/950/400/",
-      "hires": "http://unsplash.it/1800/900/"
+    "backgroundImage": {
+      "images": {
+        "lores": "http://unsplash.it/950/400/",
+        "hires": "http://unsplash.it/1800/900/"
+      }
     }
   },
 
@@ -484,7 +483,7 @@
 
   "editorsMoreLink": {
     "link": "#",
-    "text": "editors for Microbiology and Infectious Disease"
+    "name": "editors for Microbiology and Infectious Disease"
   },
 
   "mainMenuLinks": [
@@ -535,15 +534,19 @@
   ],
 
   "emailCta": {
-    "formAction" : "#",
-    "formId": "myCompactForm",
-    "formMethod": "GET",
-    "label": "Email",
-    "inputType": "email",
-    "inputName": "email",
-    "inputValue": "",
-    "inputPlaceholder": "you@email.com",
-    "ctaText": "Go"
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
   },
 
   "footerMenuLinks": [

@@ -1,10 +1,14 @@
 
 <section class="filter-panel">
 
-  <h3 class="filter-panel__title">Refine your results by</h3>
+  <h3 class="filter-panel__title">{{{title}}}</h3>
 
   {{#filterGroups}}
   {{> molecules-filter-group }}
   {{/filterGroups}}
+
+  {{#button}}
+  {{> atoms-button}}
+  {{/button}}
 
 </section>

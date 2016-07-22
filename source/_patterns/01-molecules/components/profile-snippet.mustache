@@ -1,10 +1,9 @@
 <div class="profile-snippet">
   <div class="profile-snippet__container clearfix">
-    <picture class="profile-snippet__picture">
-      <source srcset="{{imgHigh}}">
-      <img src="{{imgLow}}" alt="" class="profile-snippet__image" />
-    </picture>
-
+    {{# picture}}
+        {{> atoms-picture }}
+    {{/picture}}
+      
     <div class="profile-snippet__name">{{name}}</div>
     <div class="profile-snippet__title">{{title}}</div>
     {{#contactDetails}}

@@ -1,16 +1,15 @@
-
 <section class="email-cta">
 
   <div class="email-cta__container">
 
       <header class="email-cta__header">
-        <h2 class="email-cta__header_text">Be the first to read new articles from eLife</h2>
+        <h2 class="email-cta__header_text">{{{ headerText }}}</h2>
       </header>
 
-      <h3 class="email-cta__sub_header">Sign up for alerts</h3>
-      {{#emailCta}}
+      <h3 class="email-cta__sub_header">{{{ subHeader }}}</h3>
+      {{#compactForm}}
         {{> molecules-compact-form }}
-      {{/emailCta}}
+      {{/compactForm}}
   </div>
 
 </section>

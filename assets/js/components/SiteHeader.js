@@ -53,6 +53,7 @@ module.exports = class SiteHeader {
       this.window.addEventListener('click', this.checkForMenuClose.bind(this));
     }
 
+    e.preventDefault();
     e.stopPropagation();
   }
 

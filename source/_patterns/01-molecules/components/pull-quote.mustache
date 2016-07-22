@@ -1,9 +1,10 @@
-<!-- Blockquotes may or may not have <p> tags surround their content. -->
+{{!-- Block quotes may or may not have <p> tags surround their content. --}}
 <blockquote class="pull-quote">
-  {{#pullQuote}}
-  <p>
+  {{#asParagraph}}
+    <p>{{quote}}</p>
+  {{/asParagraph}}
+  {{^asParagraph}}
     {{quote}}
-  </p>
+  {{/asParagraph}}
   <cite>{{{cite}}}</cite>
-  {{/pullQuote}}
 </blockquote>

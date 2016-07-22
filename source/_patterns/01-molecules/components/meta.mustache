@@ -1,12 +1,16 @@
 <div class="meta">
 
-  {{#typeLink}}
-    <a class="meta__type" href="{{meta.typeLink}}">{{meta.type}}</a>
-  {{/typeLink}}
+  {{#url}}
+    <a class="meta__type" href="{{url}}">{{text}}</a>
+  {{/url}}
 
-  {{^typeLink}}
-    <span class="meta__type" href="{{meta.typeLink}}">{{meta.type}}</span>
-  {{/typeLink}}
+  {{^url}}
+    {{#text}}
+    <span class="meta__type">{{text}}</span>
+    {{/text}}
+  {{/url}}
 
-  {{>atoms-date}}
+  {{#date}}
+    {{>atoms-date}}
+  {{/date}}
 </div>

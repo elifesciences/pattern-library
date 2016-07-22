@@ -1,5 +1,4 @@
 
-{{#articleSection}}
 <section class="article-section {{#first}}article-section--first{{/first}}" id="{{id}}">
 
   <header class="article-section__header">
@@ -8,13 +7,8 @@
 
   <div class="article-section__body">
     {{#body}}
-      {{{para}}}
+      {{{content}}}
     {{/body}}
-    {{#downloadLinks}}
-      {{> molecules-article-download-links-list}}
-    {{/downloadLinks}}
-
   </div>
 
 </section>
-{{/articleSection}}

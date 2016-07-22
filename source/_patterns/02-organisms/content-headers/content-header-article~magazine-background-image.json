@@ -1,0 +1,71 @@
+{
+  "rootClasses": "content-header-article content-header-article-magazine content-header-article-magazine--background content-header--background-image",
+  "behaviour": "ContentHeaderArticle ContentHeaderBackgroundImage",
+  "title": "Planarian 'kidneys' go with the flow",
+  "titleClass": "content-header__title--small",
+  "strapline": "Flatworms have organs called protonephridia that could be used as a model system for the study of kidney disease.",
+  "subjects": {
+    "list": [
+      {
+        "name": "Cell Biology",
+        "url": "#"
+      },
+      {
+        "name": "Epidemiology and global health",
+        "url": "#"
+      }
+    ]
+  },
+  "articleType": "Insight",
+  "authors": {
+    "list": [
+      {
+        "name": "Melanie Issigonis"
+      },
+      {
+        "name": "Phillip A Newmark"
+      }
+    ]
+  },
+  "download": {
+    "sources": [
+      {
+        "srcset": "../../assets/img/icons/download-full-reverse.svg",
+        "media": "(min-width: 35em)",
+        "type": "image/svg+xml"
+      },
+      {
+        "srcset": "../../assets/img/icons/download-full-reverse-1x.png",
+        "media": "(min-width: 35em)"
+      },
+      {
+        "srcset": "../../assets/img/icons/download-reverse.svg",
+        "type": "image/svg+xml"
+      }
+    ],
+    "fallback": {
+      "defaultPath": "../../assets/img/icons/download-full-reverse-1x.png",
+      "srcset": "../../assets/img/icons/download-full-reverse-2x.png 88w, ../../assets/img/icons/download-full-reverse-1x.png 44w",
+      "classes": "content-header__download_icon",
+      "altText": "Download icon"
+    }
+  },
+  "backgroundImage": {
+    "images": {
+      "hires": "http://unsplash.it/1800/900/",
+      "lores": "http://unsplash.it/950/400"
+    }
+  },
+  "meta": {
+    "url": "#",
+    "text": "Insight",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 15,
+        "month": "Dec",
+        "year": 2015
+      },
+      "forMachine": "2015-12-15"
+    }
+  }
+}

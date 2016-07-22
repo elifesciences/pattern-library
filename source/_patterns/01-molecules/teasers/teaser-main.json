@@ -21,8 +21,12 @@
     "path": "#"
   },
   "date": {
-    "forHuman": "May 16, 2016",
-    "forMachine": "20160516"
+    "forHuman": {
+      "dayOfMonth": 16,
+      "month": "Dec",
+      "year": 2015
+    },
+    "forMachine": "2016-05-16"
   },
   "xhasBigImage": "true",
   "ximage": {

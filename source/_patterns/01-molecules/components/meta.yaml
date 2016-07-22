@@ -1,0 +1,26 @@
+assets:
+  css:
+    - $ref: ../../00-atoms/components/date.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    url:
+      type: string
+      minLength: 1
+    text:
+      type: string
+      minLength: 1
+    date:
+      $ref: ../../00-atoms/components/date.yaml#/schema/properties/date
+  dependencies:
+    url:
+      - text
+  anyOf:
+    -
+      required:
+        - date
+    -
+      required:
+        - text

@@ -2,9 +2,9 @@
   "date": {
     "isExpanded": true,
     "forHuman": {
-      "dayOfMonth": "18",
+      "dayOfMonth": 18,
       "month": "Dec",
-      "year": "2015"
+      "year": 2015
     },
     "forMachine": "2015-12-16"
   }

@@ -1,8 +1,7 @@
 <header class="content-header
-               content-header-nonarticle
-               {{#background}}content-header-nonarticle--background{{/background}}
-               {{#backgroundImage}}content-header--background-image{{/backgroundImage}}"
-      {{#select}}data-behaviour="ContentHeaderSelectNav"{{/select}}>
+      {{#rootClasses}}{{rootClasses}}{{/rootClasses}}"
+        {{#behaviour}}data-behaviour="{{behaviour}}"{{/behaviour}}
+  {{#behaviour}}data-behaviour="{{behaviour}}"{{/behaviour}}>
 
   {{#backgroundImage}}
     {{> atoms-content-header-background-style-markup}}
@@ -19,32 +18,33 @@
     </div>
   {{/hasProfile}}
 
+  {{#download}}
+    <a href="#articleDownloadLinksList" class="content-header__download_link">
+      {{> atoms-picture}}
+    </a>
+  {{/download}}
+
   <div class="content-header__inner">
     <div class="content-header__hgroup">
       <h2 class="content-header__title {{titleClass}}">{{{title}}}</h2>
-      <div class="content-header__strapline">{{{strapline}}}</div>
+      {{#strapline}}
+        <div class="content-header__strapline">{{{strapline}}}</div>
+      {{/strapline}}
     </div>
   </div> <!--  /.content-header__inner -->
 
   {{#hasCtaOrMeta}}
     <div class="content-header__bottom">
       <div class="content-header__cta">
-        <!-- Expect atoms-button and the form element to be mutually exclusive. -->
+        {{! Expect atoms-button and the form element to be mutually exclusive. }}
       {{#button.text}}
         {{#button}}
           {{>atoms-button}}
         {{/button}}
       {{/button.text}}
-      {{#select}}
-        <form method="GET" action="{{route}}">
-        {{>atoms-select}}
-        {{#button.text}}
-            {{#button}}
-                {{>atoms-button}}
-            {{/button}}
-        {{/button.text}}
-        </form>
-      {{/select}}
+      {{#selectNav}}
+        {{> molecules-select-nav}}
+      {{/selectNav}}
       </div>
       {{#meta}}
         {{> molecules-meta}}

@@ -1,6 +1,5 @@
 {
-  "pullQuote": {
-    "quote": "Quote Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint est laborum.",
-    "cite": "<a href=\"#\">May or may not be a link</a>"
-  }
+  "quote": "Quote Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint est laborum.",
+  "cite": "<a href=\"#\">May or may not be a link</a>",
+  "asParagraph": true
 }

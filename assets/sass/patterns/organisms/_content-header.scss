@@ -17,8 +17,32 @@
   @include h1-typeg();
 }
 
+.content-header__subject_list {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 100;
+}
+
+.content-header__subject_list_item {
+  display: inline;
+  list-style-type: none;
+  padding: 0;
+
+  & .content-header__subject:after {
+    content: ", ";
+  }
+}
+
+.content-header__subject_list_item:last-child {
+
+  & .content-header__subject:after {
+    content: "";
+  }
+
+}
+
 .content-header__subject_link {
-  display: block;
   @include label-subject-typeg();
   text-decoration: none;
 
@@ -53,6 +77,12 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
   content: "";
 }
 
+// FIX: This must only apply when authors are collapsed & so there's a read more.
+// Recommend determining by js & swapping a class based on that to give this behaviour.
+.content-header-article--js li.content-header__author_list_item:nth-last-of-type(2) .content-header__author:after {
+  content: "";
+}
+
 .content-header__author--last-non-excess:after {
   content: " et al.";
 }
@@ -81,7 +111,7 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
   content: ", ";
 }
 
-li.content-header__institution_list_item:last-of-type .content-header__institution:after {
+.content-header-article--js li.content-header__institution_list_item:nth-last-of-type(2) .content-header__institution:after {
   content: "";
 }
 

@@ -1,0 +1,11 @@
+{
+  "id": "emailAddress1",
+  "inputType": "email",
+  "label": {
+    "for": "emailAddress1",
+    "isVisuallyHidden": false,
+    "labelText": "Email Address"
+  },
+  "name": "emailAddress"
+
+}
