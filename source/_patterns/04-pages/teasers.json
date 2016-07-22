@@ -1,4 +1,4 @@
-{
+  {
   "mainBigImage": {
 
     "subjects": [
@@ -21,7 +21,11 @@
       "path": "#"
     },
     "date": {
-      "forHuman": "May 16, 2016",
+      "forHuman": {
+        "dayOfMonth": 16,
+        "month": "May",
+        "year": 2016
+      },
       "forMachine": "20160516"
     },
     "hasBigImage": "true",
@@ -53,7 +57,11 @@
       "path": "#"
     },
     "date": {
-      "forHuman": "May 16, 2016",
+      "forHuman": {
+        "dayOfMonth": 16,
+        "month": "May",
+        "year": 2016
+      },
       "forMachine": "20160516"
     },
     "hasSmallImage": "true",
@@ -85,7 +93,11 @@
       "path": "#"
     },
     "date": {
-      "forHuman": "May 16, 2016",
+      "forHuman": {
+        "dayOfMonth": 16,
+        "month": "May",
+        "year": 2016
+      },
       "forMachine": "20160516"
     }
 
@@ -111,7 +123,11 @@
       "path": "#"
     },
     "date": {
-      "forHuman": "Dec 16, 2015",
+      "forHuman": {
+        "dayOfMonth": 16,
+        "month": "Dec",
+        "year": 2015
+      },
       "forMachine": "2015-12-16"
     },
     "hasBigImage": "true",
@@ -141,7 +157,11 @@
       "path": "#"
     },
     "date": {
-      "forHuman": "Dec 16, 2015",
+      "forHuman": {
+        "dayOfMonth": 16,
+        "month": "Dec",
+        "year": 2015
+      },
       "forMachine": "2015-12-16"
     },
     "hasSmallImage": "true",
@@ -171,7 +191,11 @@
       "path": "#"
     },
     "date": {
-      "forHuman": "Dec 16, 2015",
+      "forHuman": {
+        "dayOfMonth": 16,
+        "month": "Dec",
+        "year": 2015
+      },
       "forMachine": "2015-12-16"
     }
   },
@@ -202,7 +226,11 @@
       "path": "#"
     },
     "date": {
-      "forHuman": "Dec 16, 2015",
+      "forHuman": {
+        "dayOfMonth": 16,
+        "month": "Dec",
+        "year": 2015
+      },
       "forMachine": "2015-05-12"
     }
   },
