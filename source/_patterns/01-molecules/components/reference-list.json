@@ -13,22 +13,22 @@
       "hasAuthors": true,
       "authors": [
         {
-          "authorName": "V Andreasen",
-          "authorLink": "#"
+          "name": "V Andreasen",
+          "url": "#"
         },
         {
-          "authorName": "J Lin",
-          "authorLink": "#"
+          "name": "J Lin",
+          "url": "#"
         },
         {
-          "authorName": "SA Levin",
-          "authorLink": "#"
+          "name": "SA Levin",
+          "url": "#"
         },
         {
-          "authorName": "METABRIC Group"
+          "name": "METABRIC Group"
         },
         {
-          "authorName": "et al"
+          "name": "et al"
         }
       ],
 
@@ -62,22 +62,22 @@
       "hasAuthors": true,
       "authors": [
         {
-          "authorName": "V Andreasen",
-          "authorLink": "#"
+          "name": "V Andreasen",
+          "url": "#"
         },
         {
-          "authorName": "J Lin",
-          "authorLink": "#"
+          "name": "J Lin",
+          "url": "#"
         },
         {
-          "authorName": "SA Levin",
-          "authorLink": "#"
+          "name": "SA Levin",
+          "url": "#"
         },
         {
-          "authorName": "METABRIC Group"
+          "name": "METABRIC Group"
         },
         {
-          "authorName": "et al"
+          "name": "et al"
         }
       ],
 
@@ -110,22 +110,22 @@
       "hasAuthors": true,
       "authors": [
         {
-          "authorName": "V Andreasen",
-          "authorLink": "#"
+          "name": "V Andreasen",
+          "url": "#"
         },
         {
-          "authorName": "J Lin",
-          "authorLink": "#"
+          "name": "J Lin",
+          "url": "#"
         },
         {
-          "authorName": "SA Levin",
-          "authorLink": "#"
+          "name": "SA Levin",
+          "url": "#"
         },
         {
-          "authorName": "METABRIC Group"
+          "name": "METABRIC Group"
         },
         {
-          "authorName": "et al"
+          "name": "et al"
         }
       ],
 
