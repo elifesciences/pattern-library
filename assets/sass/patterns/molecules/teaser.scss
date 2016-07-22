@@ -171,7 +171,7 @@
 }
 
 .teaser__img--big {
-  max-width: 100%;
+  max-width: 250px;
 }
 
 .teaser__img--small {
@@ -183,7 +183,6 @@
 @media only all and (min-width: 428px) {
 
   .teaser__img--big {
-    max-width: 100%;
     float: right;
   }
 }
