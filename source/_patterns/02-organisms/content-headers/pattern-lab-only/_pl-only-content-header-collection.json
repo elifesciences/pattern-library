@@ -4,9 +4,7 @@
   "title": "About <i>eLife</i>",
   "titleClass": "content-header__title--medium",
   "strapline": "<i>eLife</i> publishes outstanding research in the life sciences and biomedicine, from the most fundamental and theoretical work, through to translational, applied, and clinical research.",
-
   "hasProfile": true,
-
   "profile": {
     "name": "Prabhat Jha",
     "link": "#",
@@ -15,7 +13,6 @@
       "x2": "./assets/img/avatars/pjha2.png"
     }
   },
-
   "hasCtaOrMeta": true,
   "button": {
     "text": "Subscribe",
@@ -23,19 +20,21 @@
     "classes": "button--outline button--small"
   },
   "meta": {
-    "typeLink": "#",
-    "type": "Collection",
+    "url": "#",
+    "text": "Collection",
     "date": {
-      "forHuman": "Feb 29, 2016",
+      "forHuman": {
+        "dayOfMonth": 29,
+        "month": "Feb",
+        "year": 2016
+      },
       "forMachine": "2016-02-29"
     }
   },
-
   "backgroundImage": {
     "images": {
       "hires": "http://unsplash.it/1800/900/",
       "lores": "http://unsplash.it/950/400"
     }
   }
-
 }

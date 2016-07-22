@@ -157,12 +157,10 @@
   "contentHeader": {
     "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
     "behaviour": "ContentHeaderSelectNav",
-    "title": "About <i>eLife</i>",
+    "title": "Tropical disease",
     "titleClass": "content-header__title--medium",
-    "strapline": "<i>eLife</i> publishes outstanding research in the life sciences and biomedicine, from the most fundamental and theoretical work, through to translational, applied, and clinical research.",
-
-    "hasProfile": "true",
-
+    "strapline": "A selection of papers",
+    "hasProfile": true,
     "profile": {
       "name": "Prabhat Jha",
       "link": "#",
@@ -171,29 +169,18 @@
         "x2": "./assets/img/avatars/pjha2.png"
       }
     },
-
     "hasCtaOrMeta": true,
     "button": {
       "text": "Subscribe",
       "path": "#",
       "classes": "button--outline button--small"
     },
-    "meta": {
-      "typeLink": "#",
-      "type": "Collection",
-      "date": {
-        "forHuman": "Feb 29, 2016",
-        "forMachine": "2016-02-29"
-      }
-    },
-
     "backgroundImage": {
       "images": {
         "hires": "http://unsplash.it/1800/900/",
         "lores": "http://unsplash.it/950/400"
       }
     }
-
   },
 
   "leadParas": {
