@@ -183,7 +183,7 @@
 @media only all and (min-width: 428px) {
 
   .teaser__img--big {
-    max-width: 250px;
+    max-width: 100%;
     float: right;
   }
 }
@@ -195,9 +195,10 @@
   }
 
   .teaser__img--big {
-    //max-width: 100%;
-    //width: 100%;
-    max-width: 250px;
+    float: none;
+    margin-left: 0;
+    max-width: 100%;
+    width: 100%;
   }
 
 }
