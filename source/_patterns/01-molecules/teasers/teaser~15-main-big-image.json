@@ -2,14 +2,21 @@
   "contextLabel": {
     "list": [
       {
-        "name": "Built upon by",
-        "url": false
+        "name": "Cell biology",
+        "url": "#"
       },
       {
         "name": "Epidemiology and global health",
-        "url": "over-the-rainbow"
+        "url": "#"
       }
     ]
+  },
+
+  "image": {
+    "defaultPath": "http://unsplash.it/250/140/",
+    "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w",
+    "altText": "Meaningful alt text here please.",
+    "classes": "teaser__img--big"
   },
 
   "url": "#",

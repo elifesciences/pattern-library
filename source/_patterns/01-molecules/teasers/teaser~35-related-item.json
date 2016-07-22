@@ -1,5 +1,5 @@
 {
-  "rootClasses": "teaser--secondary",
+  "rootClasses": "teaser--secondary teaser--related",
 
   "contextLabel": {
     "list": [

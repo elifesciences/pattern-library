@@ -5,6 +5,10 @@
   @include padding($teaser-spacing-top 0 $teaser-spacing-bottom);
 }
 
+.teaser--related {
+  border-top-width: 0;
+}
+
 .teaser:after {
   content: "";
   clear: both;
@@ -217,7 +221,6 @@
     }
   }
 }
-
 
 .teaser--grid-style {
   .teaser__footer {
