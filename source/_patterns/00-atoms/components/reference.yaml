@@ -26,14 +26,14 @@ schema:
       items:
         type: object
         properties:
-          authorName:
+          name:
             type: string
             minLength: 1
-          authorLink:
+          url:
             type: string
             minLength: 1
         required:
-          - authorName
+          - name
     hasAbstracts:
       type: boolean
     abstracts:

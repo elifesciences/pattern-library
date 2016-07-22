@@ -12,12 +12,12 @@
   {{/hasAuthors}}
     {{#authors}}
       <li class="reference__author">
-        {{#authorLink}}
-          <a href="{{authorLink}}" class="reference__authors_link">{{{authorName}}}</a>
-        {{/authorLink}}
-        {{^authorLink}}
-          <span class="reference__authors_link">{{{authorName}}}</span>
-        {{/authorLink}}
+        {{#url}}
+          <a href="{{url}}" class="reference__authors_link">{{{name}}}</a>
+        {{/url}}
+        {{^url}}
+          <span class="reference__authors_link">{{{name}}}</span>
+        {{/url}}
       </li>
     {{/authors}}
 
