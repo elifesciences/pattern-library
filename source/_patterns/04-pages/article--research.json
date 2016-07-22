@@ -169,7 +169,7 @@
           "url": "#"
         }
       ]
-    },    "articleType": "Research article",
+    },
     "authors": {
       "list": [
         {"name": "Lee R Berger"},
@@ -291,10 +291,14 @@
     },
 
     "meta": {
-      "typeLink": "#",
-      "type": "Research article",
+      "url": "#",
+      "text": "Research article",
       "date": {
-        "forHuman": "Sept 10, 2015",
+        "forHuman": {
+          "dayOfMonth": 10,
+          "month": "Sep",
+          "year": 2015
+        },
         "forMachine": "2015-09-10"
       }
     }
