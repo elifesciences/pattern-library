@@ -30,15 +30,15 @@
   "abstracts": [
     {
       "name": "CrossRef",
-      "link": "#"
+      "url": "#"
     },
     {
       "name": "PubMed",
-      "link": "#"
+      "url": "#"
     },
     {
       "name": "Google Scholar",
-      "link": "#"
+      "url": "#"
     }
   ]
 }
