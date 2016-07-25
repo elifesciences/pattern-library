@@ -222,33 +222,83 @@
       "heading": "Chapters",
       "items": [
         {
-          "meta": "01:02",
-          "headerText": "Origins of Multicellular Life",
+          "rootClasses": "teaser--chapter-listing-item",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "1:02",
+                "url": false
+              }
+            ]
+          },
+
+          "title": "Origins of Multicellular Life",
           "content": "How did multicellular life evolve? Ancient ancestors of ours, the choanoflagellates, might give us a clue..."
         },
         {
-          "meta": "07:40",
-          "headerText": "Potato Blight",
+          "rootClasses": "teaser--chapter-listing-item",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "7:40",
+                "url": false
+              }
+            ]
+          },
+          "title": "Potato Blight",
           "content": "Scientists have identified the bug that caused the Irish potato famine..."
         },
         {
-          "meta": "15:01",
-          "headerText": "eLife, a revolution in publishing",
+          "rootClasses": "teaser--chapter-listing-item",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "15:01",
+                "url": false
+              }
+            ]
+          },
+          "title": "eLife, a revolution in publishing",
           "content": "Chris speaks to scientist and eLife Deputy Editor, Fiona Watt,about the free journal."
         },
         {
-          "meta": "22:03",
-          "headerText": "The receptor for Hepatitis B and D",
+          "rootClasses": "teaser--chapter-listing-item",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "22:03",
+                "url": false
+              }
+            ]
+          },
+
+          "title": "The receptor for Hepatitis B and D",
           "content": "Scientists are working out how Hep B and Hep D are entering liver cells, research that could help up to a third of the world's population."
         },
         {
-          "meta": "29:03",
-          "headerText": "Why does fog cloud driver judgement?",
+          "rootClasses": "teaser--chapter-listing-item",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "29:03",
+                "url": false
+              }
+            ]
+          },
+          "title": "Why does fog cloud driver judgement?",
           "content": "What happens when you drive in fog? Often low visibility is blamed for accidents in these conditions, but how fast are we really driving?"
         },
         {
-          "meta": "35:26",
-          "headerText": "How did nucleosomes evolve?",
+          "rootClasses": "teaser--chapter-listing-item",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "35:26",
+                "url": false
+              }
+            ]
+          },
+          "title": "How did nucleosomes evolve?",
           "content": "How did our cells come by their nucleosomes? They help pack DNA tightly inside our cell nuclei and control when genes get turned on/off."
         }
       ]
@@ -265,98 +315,115 @@
       "heading": "Related",
       "items": [
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Epidemiology and Global Health",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
+          "rootClasses": "teaser--secondary",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Epidemiology and Global Health",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
           "title": "Epidemiology: Mapping Ebola in wild animals for better disease control",
-          "link": "#",
-          "firstAuthor": "Sebastian Funk",
-          "multipleAuthors": true,
-          "category": {
-            "name": "Insight",
-            "path": "#"
+          "url": "#",
+          "secondaryInfo": "Sebastian Funk et al.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 16,
+                  "month": "May",
+                  "year": 2016
+                },
+                "forMachine": "20140919"
+              }
+            }
           },
-          "date": {
-            "forHuman": "Sep 19, 2014",
-            "forMachine": "20140919"
-          },
-          "hasSmallImage": "true",
           "image": {
-            "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w"
+            "defaultPath": "http://unsplash.it/70/70/",
+            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
           }
-
         },
 
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Cell Biology",
-              "path": "#"
-            },
-            {
-              "name": "Genes and Chromosomes",
-              "path": "#"
-            }
-          ],
+          "rootClasses": "teaser--secondary",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Cell Biology",
+                "url": "#"
+              },
+              {
+                "name": "Genes and Chromosomes",
+                "url": "#"
+              }
+            ]
+          },
           "title": "Parasites: Do trypanosome turncoats wait before they commit?",
-          "link": "#",
-          "firstAuthor": "Cher-Pheng Ooi",
-          "multipleAuthors": true,
-          "category": {
-            "name": "Insight",
-            "path": "#"
+          "url": "#",
+          "secondaryInfo": "Cher-Pheng Ooi et al.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 3,
+                  "month": "Jun",
+                  "year": 2014
+                },
+                "forMachine": "20140603"
+              }
+            }
           },
-          "date": {
-            "forHuman": "Jun 3, 2014",
-            "forMachine": "20140603"
-          },
-          "hasSmallImage": "true",
           "image": {
-            "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w"
+            "defaultPath": "http://unsplash.it/70/70/",
+            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
           }
-
         },
 
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Genomics and Evolutionary Biology",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
-          "title": "Science Forum: Improving pandemic influenza risk assessment",
-          "link": "#",
-          "firstAuthor": "Colin A Russell",
-          "multipleAuthors": true,
-          "category": {
-            "name": "Feature article",
-            "path": "#"
+          "rootClasses": "teaser--secondary",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Genomics and Evolutionary Biology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
           },
-          "date": {
-            "forHuman": "Oct 16, 2014",
-            "forMachine": "20141016"
+          "title": "Science Forum: Improving pandemic influenza risk assessment",
+          "url": "#",
+          "secondaryInfo": "Colin A Russell et al.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 3,
+                  "month": "Jun",
+                  "year": 2014
+                },
+                "forMachine": "20140603"
+              }
+            }
           }
         }
-
       ]
     }],
 
