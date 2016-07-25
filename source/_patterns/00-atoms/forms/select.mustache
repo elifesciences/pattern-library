@@ -6,6 +6,6 @@
 {{/label}}
 <select{{#id}} name="{{id}}" id="{{id}}"{{/id}}>
   {{#options}}
-    <option value="{{value}}">{{displayValue}}</option>
+    <option value="{{value}}" {{#selected}}selected{{/selected}}>{{displayValue}}</option>
   {{/options}}
 </select>
