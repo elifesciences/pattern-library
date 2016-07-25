@@ -11,7 +11,8 @@
     },
     {
       "value": "2015",
-      "displayValue": "2015"
+      "displayValue": "2015",
+      "selected": true
     },
     {
       "value": "2014",

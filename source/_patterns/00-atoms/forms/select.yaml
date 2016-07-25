@@ -34,6 +34,8 @@ schema:
           displayValue:
             type: string
             minLength: 1
+          selected:
+            type: boolean
         required:
           - value
           - displayValue
