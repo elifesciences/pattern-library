@@ -10,7 +10,7 @@
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
           "textClasses": "nav-primary__menu_text",
-          "path": "#mainMenu",
+          "url": "#mainMenu",
           "img": {
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
@@ -28,13 +28,13 @@
 
         {
           "text": "Home",
-          "path": "#",
+          "url": "#",
           "classes": "nav-primary__item"
         },
 
         {
           "text": "Magazine",
-          "path": "#",
+          "url": "#",
           "classes": "nav-primary__item"
         },
 
@@ -43,7 +43,7 @@
           "rel": "search",
           "classes": "nav-primary__item nav-primary__item--last",
           "textClasses": "visuallyhidden",
-          "path": "#",
+          "url": "#",
           "img": {
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
@@ -69,25 +69,25 @@
       "linkedItems": [
         {
           "text": "Careers",
-          "path": "#",
+          "url": "#",
           "classes": "nav-secondary__item"
         },
 
         {
           "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-          "path": "#",
+          "url": "#",
           "classes": "nav-secondary__item"
         },
 
         {
           "text": "Labs",
-          "path": "#",
+          "url": "#",
           "classes": "nav-secondary__item"
         },
 
         {
           "text": "Submit my research",
-          "path": "#",
+          "url": "#",
           "classes": "nav-secondary__item nav-secondary__item--button",
           "button": {
             "classes": "button--default button--extra-small"
@@ -97,7 +97,7 @@
           "text": "Alerts",
           "classes": "nav-secondary__item nav-secondary__item--notification",
           "textClasses": "visuallyhidden",
-          "path": "#",
+          "url": "#",
           "img": {
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
@@ -116,7 +116,7 @@
           "text": "Profile",
           "classes": "nav-secondary__item nav-secondary__item--profile",
           "textClasses": "visuallyhidden",
-          "path": "#",
+          "url": "#",
           "img": {
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
@@ -162,7 +162,7 @@
     "hasCtaOrMeta": true,
     "button": {
       "text": "Subscribe",
-      "path": "#",
+      "url": "#",
       "classes": "button--outline button--small"
     },
 
@@ -185,146 +185,192 @@
       "heading": "Latest articles",
       "items": [
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
           "title": "Quorum sensing control of Type VI secretion factors restricts the proliferation of quorum-sensing mutants",
-          "link": "#",
-          "firstAuthor": "Charlotte Majerczyk",
-          "multipleAuthors": true,
+          "url": "#",
+          "secondaryInfo": "Charlotte Majerczyk et al.",
           "content": "Quorum-sensing control of <i>Burkholderia thailandensis</i> toxin and immunity pairs serves to police quorum-sensing mutants and may represent a general strategy whereby cooperators can police mutants.",
-          "category": {
-            "name": "Research article",
-            "path": "#"
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 16,
+                  "month": "May",
+                  "year": 2016
+                },
+                "forMachine": "20160516"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
           },
-          "date": {
-            "forHuman": "May 16, 2016",
-            "forMachine": "20160516"
-          },
-          "hasBigImage": "true",
+
           "image": {
             "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w"
+            "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--big"
           }
         },
 
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Epidemiology and Global Health",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
+          "subjects": {
+            "list": [
+              {
+                "name": "Epidemiology and Global Health",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
           "title": "Mapping global environmental suitability for Zika virus",
-          "link": "#",
-          "firstAuthor": "Jane P Messina",
-          "multipleAuthors": true,
-          "category": {
-            "name": "Research article",
-            "path": "#"
-          },
-          "date": {
-            "forHuman": "April 19, 2016",
-            "forMachine": "20160419"
+          "url": "#",
+          "secondaryInfo": "Jane P Messina et al",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 19,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160419"
+              }
+            },
+            "publishState": {
+              "vor": false
+            }
           }
         },
 
         {
-          "hasSubjects": "true",
 
-          "subjects": [
-            {
-              "name": "Genomics and evolutionary biology",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
+          "subjects": {
+            "list": [
+              {
+                "name": "Genomics and evolutionary biology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
           "title": "Evolutionary diversification of the trypanosome haptoglobin-haemoglobin receptor from an ancestral haemoglobin receptor",
-          "link": "#",
-          "firstAuthor": "Harriet Lane-Serff",
-          "multipleAuthors": true,
-          "category": {
-            "name": "Research article",
-            "path": "#"
-          },
-          "date": {
-            "forHuman": "May 15, 2016",
-            "forMachine": "20160516"
+          "url": "#",
+          "secondaryInfo": "Harriet Lane-Serff et al.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 16,
+                  "month": "May",
+                  "year": 2016
+                },
+                "forMachine": "20160516"
+              }
+            },
+            "publishState": {
+              "vor": false
+            }
           }
         },
 
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Epidemiology and Global Health",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
+          "subjects": {
+            "links": [
+              {
+                "name": "Epidemiology and Global Health",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
           "title": "The global antigenic diversity of swine influenza A viruses",
-          "link": "#",
-          "firstAuthor": "Nicola S Lewis",
-          "multipleAuthors": true,
+          "url": "#",
+          "secondaryInfo": "Nicola S Lewis et al.",
           "content": "Swine populations worldwide are sporadically infected by influenza viruses from humans and birds leading to geographically heterogeneous swine influenza virus populations that pose epizootic and pandemic threats.",
-          "category": {
-            "name": "Research article",
-            "path": "#"
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 15,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160415"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
           },
-          "date": {
-            "forHuman": "April 15, 2016",
-            "forMachine": "20160415"
-          },
-          "hasSmallImage": "true",
           "image": {
             "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w"
+            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
           }
         },
 
         {
           "hasSubjects": "true",
 
-          "subjects": [
-            {
-              "name": "Ecology",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
-          "title": "Recurring patterns in bacterioplankton dynamics during coastal spring algae blooms",
-          "link": "#",
-          "firstAuthor": "Hanno Teeling",
-          "multipleAuthors": true,
-          "content": "Dynamic successive blooms of clades of planktonic marine bacteria that can be observed during blooms of marine algae follow discernible patterns, part of which might be explained by substrate-induced forcing.",
-          "category": {
-            "name": "Research article",
-            "path": "#"
+          "subjects": {
+            "list": [
+              {
+                "name": "Ecology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
           },
-          "date": {
-            "forHuman": "April 7, 2016",
-            "forMachine": "2016047"
+          "title": "Recurring patterns in bacterioplankton dynamics during coastal spring algae blooms",
+          "url": "#",
+          "secondaryInfo": "Hanno Teeling et al.",
+          "content": "Dynamic successive blooms of clades of planktonic marine bacteria that can be observed during blooms of marine algae follow discernible patterns, part of which might be explained by substrate-induced forcing.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 17,
+                  "month": "Jun",
+                  "year": 2016
+                },
+                "forMachine": "2016047"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
           }
         }
 
@@ -333,6 +379,8 @@
   ],
 
   "loadMore": {
+    "type": "button",
+    "classes": "button--default button--full",
     "text": "Load more",
     "path": "#"
   },
@@ -342,119 +390,148 @@
       "heading": "Highlighted content",
       "items": [
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Developmental Biology and Stem Cells",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
+          "rootClasses": "teaser--secondary",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Developmental Biology and Stem Cells",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
           "title": "The parasite’s new clothes",
-          "link": "#",
-          "firstAuthor": "Mark S Pearson",
-          "multipleAuthors": true,
-          "category": {
-            "name": "Insight",
-            "path": "#"
+          "url": "#",
+          "secondaryInfo": "Mark S Pearson et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 15,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160415"
+              }
+            }
           },
-          "date": {
-            "forHuman": "April 15, 2016",
-            "forMachine": "20160415"
-          },
-          "hasSmallImage": "true",
           "image": {
             "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w"
+            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
           }
         },
 
         {
-          "hasSubjects": "true",
+          "rootClasses": "teaser--secondary",
 
-          "subjects": [
-            {
-              "name": "Immunology",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Immunology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
           "title": "Catch me if you can",
-          "link": "#",
-          "firstAuthor": "Emilie Bourdonnay",
-          "multipleAuthors": true,
-          "category": {
-            "name": "Insight",
-            "path": "#"
-          },
-          "date": {
-            "forHuman": "Feb 26, 2016",
-            "forMachine": "20160216"
+          "url": "#",
+          "secondaryInfo": "Emilie Bourdonnay et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 16,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160216"
+              }
+            }
           }
         },
 
         {
-          "hasSubjects": "true",
+          "rootClasses": "teaser--secondary",
 
-          "subjects": [
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            },
-            {
-              "name": "Plant Biology",
-              "path": "#"
-            }
-          ],
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              },
+              {
+                "name": "Plant Biology",
+                "url": "#"
+              }
+            ]
+          },
           "title": "Autophagy under attack",
-          "link": "#",
-          "firstAuthor": "Paul de Figueiredo",
-          "multipleAuthors": true,
-          "category": {
-            "name": "Insight",
-            "path": "#"
-          },
-          "date": {
-            "forHuman": "Feb 23, 2016",
-            "forMachine": "20160223"
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
           }
         },
 
         {
-          "hasSubjects": "true",
-
-          "subjects": [
-            {
-              "name": "Biophysics and Structural Biology",
-              "path": "#"
-            },
-            {
-              "name": "Microbiology and Infectious Disease",
-              "path": "#"
-            }
-          ],
+          "rootClasses": "teaser--secondary",
+          "subjects": {
+            "list": [
+              {
+                "name": "Biophysics and Structural Biology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
           "title": "Intracellular pathogens under attack",
-          "link": "#",
-          "firstAuthor": "Petr Broz",
-          "category": {
-            "name": "Insight",
-            "path": "#"
+          "url": "#",
+          "secondaryInfo": "Petr Broz et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 19,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160219"
+              }
+            }
           },
-          "date": {
-            "forHuman": "Feb 19, 2016",
-            "forMachine": "20160219"
-          },
-          "hasBigImage": "true",
           "image": {
             "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w"
+            "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w",
+            "altText": "Make it meaningful please",
+            "classes": "teaser__img--big"
           }
 
         }
@@ -469,20 +546,46 @@
       {
         "name": "Prabhat Jha",
         "title": "University of Toronto",
-        "imgLow": "http://lorempixel.com/90/90/people/1",
-        "imgHigh": "http://lorempixel.com/180/180/people/1"
+        "picture": {
+          "sources": [
+            {
+              "srcset": "http://lorempixel.com/180/180/people/1 180w",
+              "type": "image/png"
+            }
+          ],
+          "pictureClasses": "profile-snippet__picture",
+          "fallback": {
+            "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/1 90w",
+            "defaultPath": "http://lorempixel.com/90/90/people/1",
+            "altText": "Meaningful alt text here please.",
+            "classes": "profile-snippet__image"
+          }
+        }
       },
       {
         "name": "Richard Losick",
         "title": "Harvard University",
-        "imgLow": "http://lorempixel.com/90/90/people/2",
-        "imgHigh": "http://lorempixel.com/180/180/people/2"
+        "picture": {
+          "sources": [
+            {
+              "srcset": "http://lorempixel.com/180/180/people/5 180w",
+              "type": "image/png"
+            }
+          ],
+          "pictureClasses": "profile-snippet__picture",
+          "fallback": {
+            "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/2 90w",
+            "defaultPath": "http://lorempixel.com/90/90/people/5",
+            "altText": "Meaningful alt text here please.",
+            "classes": "profile-snippet__image"
+          }
+        }
       }
     ]
   },
 
   "editorsMoreLink": {
-    "link": "#",
+    "url": "#",
     "name": "editors for Microbiology and Infectious Disease"
   },
 

@@ -5,6 +5,10 @@
   @include padding($teaser-spacing-top 0 $teaser-spacing-bottom);
 }
 
+.teaser--related {
+  border-top-width: 0;
+}
+
 .teaser:after {
   content: "";
   clear: both;
@@ -12,21 +16,62 @@
   float: none;
 }
 
-.teaser__subject_link {
-  @include label-subject-typeg();
-  color: $color-primary;
-  text-decoration: none;
+.teaser__context_label_list {
+  @include label-content-typeg();
+  margin: 0;
+  @include margin(5, "bottom");
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  z-index: 100;
 }
 
-.teaser__subject_link:after {
+.teaser__context_label_list_item {
+  display: inline;
+  list-style-type: none;
+  padding: 0;
+
+  & .teaser__context_label:after {
+    content: ", ";
+  }
+}
+
+.teaser__context_label_list_item:last-child {
+
+  & .teaser__context_label:after {
+    content: "";
+  }
+
+}
+
+.teaser__context_label {
+  @include label-subject-typeg();
+  color: $color-text-secondary;
+}
+
+.teaser__context_label_link {
+  text-decoration: none;
+
+  .teaser__context_label {
+    @include label-subject-typeg();
+    color: $color-primary;
+    text-decoration: none;
+  }
+
+}
+
+.teaser__context_label_link:after {
   content: ", ";
 }
 
-.teaser__subject_link:last-child:after {
+.teaser__context_label_link:last-child:after {
   content: "";
 }
 
-.teaser__subject_link:hover {
+.teaser__context_label_link:hover {
   color: $color-primary-dark;
 }
 
@@ -36,23 +81,8 @@
   text-decoration: none;
 }
 
-.teaser__meta {
-  @include label-content-typeg();
-  @include margin(5, "bottom");
-  overflow: hidden;
-  text-transform: uppercase;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .teaser__header {
   @include margin(5, "bottom");
-}
-
-.teaser__header_img {
-  display: block;
-  @include margin(10, "bottom");
-  width: 100%;
 }
 
 .teaser__header_text {
@@ -70,21 +100,9 @@
   color: $color-primary-dark;
 }
 
-.teaser__subheading {
+.teaser__secondary_info {
   @include listing-main-author-typeg();
   @include padding(5, "bottom");
-}
-
-.teaser__img {
-  display: block;
-  float: right;
-  @include margin(5 0 $teaser-spacing-bottom $teaser-spacing-left);
-}
-
-.teaser__img:after {
-  clear: both;
-  content: "";
-  float: none;
 }
 
 .teaser__body {
@@ -99,6 +117,15 @@
   @include label-content-typeg();
   justify-content: space-between;
   text-transform: none;
+
+  .teaser__publish_state--poa {
+    width: 20px;
+  }
+
+  .teaser__publish_state--vor {
+    width: 66px;
+  }
+
 }
 
 .teaser__footer_text {
@@ -115,78 +142,105 @@
   color: $color-primary-dark;
 }
 
-.teaser--big-image {
-
-  .teaser__img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  @media only all and (min-width: 428px) {
-
-    .teaser__img {
-      max-width: 250px;
-      float: right;
-    }
-
-  }
-
-}
-
 .teaser--secondary {
-
-  &.teaser--big-image {
-
-    .teaser__img {
-      max-width: 100%;
-      width: 100%;
-    }
-
-  }
 
   .teaser__header_text {
     @include listing-side-art-title-typeg();
     @include padding(0 0 3 0);
   }
 
-  .teaser__subheading {
+  .teaser__secondary_info {
     @include listing-side-author-typeg();
     @include margin(10, "bottom");
   }
+
+}
+
+.teaser__img {
+  display: block;
+  float: right;
+  height: auto;
+  @include margin(5 0 $teaser-spacing-bottom $teaser-spacing-left);
+}
+
+.teaser__img--prominent {
+  float: none;
+  margin: 0;
+  @include margin(10, "bottom");
+  width: 100%;
+}
+
+.teaser__img--big {
+  max-width: 250px;
+}
+
+.teaser__img--small {
+  width: 70px;
+  height: 70px;
+  float: right;
+}
+
+@media only all and (min-width: 428px) {
+
+  .teaser__img--big {
+    float: right;
+  }
+}
+
+.teaser--secondary {
 
   .teaser__img {
     margin-top: 0;
   }
 
-}
-
-.teaser--small-image {
-
-  .teaser__img {
-    max-width: 70px;
-    height: 70px;
+  .teaser__img--big {
+    float: none;
+    margin-left: 0;
+    max-width: 100%;
+    width: 100%;
   }
 
 }
 
-.teaser--medium {
+.teaser--chapter-listing-item {
 
-  .teaser__img {
-    max-width: 70px;
-    height: 70px;
+  .teaser__header {
+    margin: 0;
   }
 
+  // TODO: move meta pattern from content header to own scss file.
+  .meta__type {
+    color: $color-text;
+    text-transform: none;
+    font-family: $font-primary;
+    @include font-size(12);
+    font-weight: normal;
+
+    &:hover {
+      color: $color-text;
+    }
+  }
 }
 
-.teaser--article {
-
-  .teaser__header_text {
-    @include listing-side-art-title-typeg();
+.teaser--grid-style {
+  .teaser__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
   }
 
-  .teaser__subheading {
-    @include listing-side-author-typeg();
-    @include margin(10, "bottom");
-  }
+  .teaser__download {
+    background: url("../../assets/img/icons/download.png") 50% 50% no-repeat;
+    background: url("../../assets/img/icons/download.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+    display: inline-block;
+    float: right;
+    @include height(20);
+    @include width(20);
 
+    &:hover {
+      background: url("../../assets/img/icons/download-hover.png") 50% 50% no-repeat;
+      background: url("../../assets/img/icons/download-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+    }
+  }
 }
+
