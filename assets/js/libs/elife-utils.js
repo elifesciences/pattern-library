@@ -176,14 +176,29 @@ module.exports = () => {
     return document.documentElement.clientWidth;
   }
 
+  /**
+   * Returns whether the display is considered to have a high pixel density ratio.
+   *
+   * @param window
+   * @returns {boolean} true if dpr >= 2, false if lower, or unknown.
+   */
+  function isHighDpr(window) {
+    if (!!window.devicePixelRatio) {
+      return window.devicePixelRatio >= 2;
+    }
+
+    return false;
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     buildElement: buildElement,
     getViewportWidth: getViewportWidth,
     invertPxString: invertPxString,
+    isHighDpr: isHighDpr,
     uniqueIds: uniqueIds,
-    updateElementTranslate: updateElementTranslate
+    updateElementTranslate: updateElementTranslate,
   };
 
 };

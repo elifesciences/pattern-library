@@ -1,4 +1,5 @@
 'use strict';
+var utils = require('../libs/elife-utils')();
 
 module.exports = class ContentHeaderBackgroundImage {
 
@@ -7,24 +8,25 @@ module.exports = class ContentHeaderBackgroundImage {
       return;
     }
 
+    let semiTransparentBlack = 'linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))';
+
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
     this.$elm.classList.add('content-header-background-image--js');
-    this.sourceToUse = ContentHeaderBackgroundImage.calcSourceToUse(this.$elm, this.isHighDpr());
-    this.setBackground(this.sourceToUse);
+    this.sourceToUse = this.calcSourceToUse(this.$elm, utils.isHighDpr(this.window));
+    this.$elm.style.backgroundImage = this.setBackground(this.sourceToUse, semiTransparentBlack);
   }
 
-  setBackground(path) {
+  setBackground(path, semiTransparentBlack) {
     if (!path || !path.length || path.length === 0) {
-      return;
+      return '';
     }
 
-    let semiTransparentBlack = 'linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))';
-    this.$elm.style.backgroundImage = semiTransparentBlack + ', url(' + path + ')';
+    return semiTransparentBlack + ', url(' + path + ')';
   }
 
-  static calcSourceToUse(sourceDefiner, isHighDpr) {
+  calcSourceToUse(sourceDefiner, isHighDpr) {
     var lowResSource = '';
     var highResSource = '';
     if (!sourceDefiner) {
@@ -48,14 +50,6 @@ module.exports = class ContentHeaderBackgroundImage {
     }
 
     return lowResSource;
-  }
-
-  isHighDpr() {
-    if (!!this.window.devicePixelRatio) {
-      return this.window.devicePixelRatio >= 2;
-    }
-
-    return false;
   }
 
 };
