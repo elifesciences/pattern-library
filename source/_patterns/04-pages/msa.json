@@ -329,7 +329,7 @@
             }
           },
           "image": {
-            "defaultPath": "http://unsplash.it/250/140/",
+            "defaultPath": "http://unsplash.it/70/70/",
             "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w",
             "altText": "Meaningful alt text please.",
             "classes": "teaser__img--small"
