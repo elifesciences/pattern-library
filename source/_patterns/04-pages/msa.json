@@ -180,6 +180,7 @@
 
   "mainTeasers": [
     {
+      "isTeaserType": true,
       "heading": "Latest articles",
       "items": [
         {
@@ -222,7 +223,7 @@
         },
 
         {
-          "subjects": {
+          "contextLabel": {
             "list": [
               {
                 "name": "Epidemiology and Global Health",
@@ -258,7 +259,7 @@
 
         {
 
-          "subjects": {
+          "contextLabel": {
             "list": [
               {
                 "name": "Genomics and evolutionary biology",
@@ -293,7 +294,7 @@
         },
 
         {
-          "subjects": {
+          "contextLabel": {
             "links": [
               {
                 "name": "Epidemiology and Global Health",
@@ -335,9 +336,8 @@
         },
 
         {
-          "hasSubjects": "true",
 
-          "subjects": {
+          "contextLabel": {
             "list": [
               {
                 "name": "Ecology",
@@ -372,19 +372,19 @@
           }
         }
 
-      ]
+      ],
+      "loadMore": {
+        "type": "button",
+        "classes": "button--default button--full",
+        "text": "Load more",
+        "path": "#"
+      }
     }
   ],
 
-  "loadMore": {
-    "type": "button",
-    "classes": "button--default button--full",
-    "text": "Load more",
-    "path": "#"
-  },
-
   "secondaryTeasers": [
     {
+      "isTeaserType": true,
       "heading": "Highlighted content",
       "items": [
         {
@@ -496,7 +496,7 @@
 
         {
           "rootClasses": "teaser--secondary",
-          "subjects": {
+          "contextLabel": {
             "list": [
               {
                 "name": "Biophysics and Structural Biology",
@@ -539,6 +539,7 @@
   ],
 
   "profileLinks": {
+    "isProfileSnippetType": true,
     "heading": "Senior editors",
     "items": [
       {
@@ -579,12 +580,11 @@
           }
         }
       }
-    ]
-  },
-
-  "editorsMoreLink": {
-    "url": "#",
-    "name": "editors for Microbiology and Infectious Disease"
+    ],
+    "seeMoreLink": {
+      "url": "#",
+      "name": "See more editors for Microbiology and Infectious Disease"
+    }
   },
 
   "mainMenuLinks": [

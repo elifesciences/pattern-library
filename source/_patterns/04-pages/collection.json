@@ -190,6 +190,7 @@
 
   "mainTeasers": [
     {
+      "isTeaserType": true,
       "heading": "Collection",
       "items": [
         {
@@ -879,6 +880,7 @@
 
   "multimediaTeasers": [
     {
+      "isTeaserType": true,
       "heading": "Multimedia",
       "items": [
         {
@@ -913,6 +915,7 @@
 
   "relatedTeasers": [
     {
+      "isTeaserType": true,
       "heading": "Related",
       "items": [
         {
@@ -1014,6 +1017,7 @@
     }],
 
   "profileLinks": {
+    "isProfileSnippetType": true,
     "heading": "Contributors",
     "items": [
       {

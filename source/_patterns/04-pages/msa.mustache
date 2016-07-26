@@ -26,56 +26,20 @@
           <div class="grid__item large--eight-twelfths listing-column-main">
 
             {{#mainTeasers}}
-
-              {{> atoms-list-heading}}
-              <ol class="listing-list">
-                {{#items}}
-                  <li class="listing-list__item">
-                    {{> molecules-pl-only-teaser-main}}
-                  </li>
-                {{/items}}
-              </ol>
-
+              {{> organisms-listing}}
             {{/mainTeasers}}
 
-            {{#loadMore}}
-              {{> molecules-load-more}}
-            {{/loadMore}}
           </div>
 
           <div class="grid__item large--four-twelfths listing-column-secondary">
 
             {{#secondaryTeasers}}
-
-              {{> atoms-list-heading}}
-              <ol class="listing-list">
-                {{#items}}
-                  <li class="listing-list__item">
-                    {{> molecules-pl-only-teaser-secondary }}
-                  </li>
-                {{/items}}
-              </ol>
-
+              {{> organisms-listing}}
             {{/secondaryTeasers}}
 
             {{#profileLinks}}
-
-              {{> atoms-list-heading}}
-              <ol class="listing-list">
-                {{#items}}
-                  <li class="listing-list__item">
-                    {{> molecules-profile-snippet }}
-                  </li>
-                {{/items}}
-                {{#editorsMoreLink}}
-                  <li class="listing-list__item">
-                    {{> atoms-see-more-link}}
-                  </li>
-                {{/editorsMoreLink}}
-              </ol>
-
+              {{> organisms-listing}}
             {{/profileLinks}}
-
 
           </div>
 
