@@ -1,11 +1,10 @@
 <header class="content-header
                {{#rootClasses}}{{rootClasses}}{{/rootClasses}}"
-        {{#behaviour}}data-behaviour="{{behaviour}}"{{/behaviour}}>
-
-  {{! TODO: Work out a better implementation}}
-  {{#backgroundImage}}
-    {{>atoms-content-header-background-style-markup}}
-  {{/backgroundImage}}
+        {{#behaviour}}data-behaviour="{{behaviour}}"{{/behaviour}}
+        {{#backgroundImage}}
+          data-low-res-image-source="{{lowResImageSource}}"
+          data-high-res-image-source="{{highResImageSource}}"
+        {{/backgroundImage}}>
 
   <div class="content-header_top">
 

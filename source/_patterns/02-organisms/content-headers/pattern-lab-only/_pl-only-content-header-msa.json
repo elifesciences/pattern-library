@@ -1,6 +1,6 @@
 {
-  "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
-  "behaviour": "ContentHeaderSelectNav",
+  "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
+  "behaviour": "ContentHeaderBackgroundImage",
   "title": "About <i>eLife</i>",
   "titleClass": "content-header__title--medium",
   "hasCtaOrMeta": true,
@@ -13,7 +13,7 @@
   "backgroundImage": {
     "images": {
       "lores": "http://unsplash.it/950/400/",
-      "hires": "http://unsplash.it/1800/900/"
+      "hires": "http://unsplash.it/1900/800"
     }
   }
 }

@@ -1,11 +1,11 @@
 <header class="content-header
       {{#rootClasses}}{{rootClasses}}{{/rootClasses}}"
-        {{#behaviour}}data-behaviour="{{behaviour}}"{{/behaviour}}
-  {{#behaviour}}data-behaviour="{{behaviour}}"{{/behaviour}}>
+    {{#behaviour}} data-behaviour="{{behaviour}}"{{/behaviour}}
+    {{#backgroundImage}}
+          data-low-res-image-source="{{lowResImageSource}}"
+          data-high-res-image-source="{{highResImageSource}}"
+    {{/backgroundImage}}>
 
-  {{#backgroundImage}}
-    {{> atoms-content-header-background-style-markup}}
-  {{/backgroundImage}}
 
   {{#hasProfile}}
     <div class="content-header__top">

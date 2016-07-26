@@ -1,6 +1,6 @@
 {
   "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
-  "behaviour": "ContentHeaderSelectNav",
+  "behaviour": "ContentHeaderSelectNav ContentHeaderBackgroundImage",
   "title": "Archive",
   "titleClass": "content-header__title--medium",
   "hasCtaOrMeta": true,
@@ -33,5 +33,9 @@
       "type": "submit",
       "classes": "button--outline button--extra-small"
     }
+  },
+  "backgroundImage": {
+    "lowResImageSource": "http://unsplash.it/950/400",
+    "highResImageSource": "http://unsplash.it/1900/800"
   }
 }

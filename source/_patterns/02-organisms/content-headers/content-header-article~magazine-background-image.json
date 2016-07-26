@@ -1,5 +1,5 @@
 {
-  "rootClasses": "content-header-article content-header-article-magazine content-header-article-magazine--background content-header--background-image",
+  "rootClasses": "content-header-article content-header-article-magazine content-header-article-magazine--background",
   "behaviour": "ContentHeaderArticle ContentHeaderBackgroundImage",
   "title": "Planarian 'kidneys' go with the flow",
   "titleClass": "content-header__title--small",
@@ -51,11 +51,10 @@
     }
   },
   "backgroundImage": {
-    "images": {
-      "hires": "http://unsplash.it/1800/900/",
-      "lores": "http://unsplash.it/950/400"
-    }
+    "lowResImageSource": "http://unsplash.it/950/400",
+    "highResImageSource": "http://unsplash.it/1900/800"
   },
+
   "meta": {
     "url": "#",
     "text": "Insight",

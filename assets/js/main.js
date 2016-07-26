@@ -13,6 +13,7 @@ if (window.localStorage && document.querySelector &&
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.AudioPlayer = require('./components/AudioPlayer');
   Components.ContentHeaderArticle = require('./components/ContentHeaderArticle');
+  Components.ContentHeaderBackgroundImage = require('./components/ContentHeaderBackgroundImage');
   Components.SelectNav = require('./components/SelectNav');
   Components.MainMenu = require('./components/MainMenu');
   Components.SiteHeader = require('./components/SiteHeader');
@@ -22,21 +23,25 @@ if (window.localStorage && document.querySelector &&
   // App
   let Elife = function Elife() {
 
-    // get all the components on the current page
+    function initialiseComponent(handler, $elm) {
+      if (Components[handler] && typeof Components[handler] === 'function') {
+        new Components[handler]($elm, window, window.document);
+      }
+    }
+
     let components = document.querySelectorAll('[data-behaviour]');
-
     if (components.length) {
-
       for (let i = 0; i < components.length; i += 1) {
         let $elm = components[i];
-        let handler = $elm.getAttribute('data-behaviour');
-
-        // Is there a handler?
-        // Is it a function?
-        if (Components[handler] && typeof Components[handler] === 'function') {
-          new Components[handler]($elm, window, window.document);
+        let handler = $elm.getAttribute('data-behaviour').trim();
+        if (handler.indexOf(' ') > 0) {
+          let handlers = handler.split(' ');
+          handlers.forEach(function (handler) {
+            initialiseComponent(handler, $elm);
+          });
+        } else {
+          initialiseComponent(handler, $elm);
         }
-
       }
     }
   };
