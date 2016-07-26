@@ -11,7 +11,7 @@ schema:
       minLength: 1
     behaviour:
       type: string
-    backgroundImages:
+    backgroundImage:
       type: object
       properties:
         lowResImageSource:

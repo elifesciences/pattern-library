@@ -31,7 +31,7 @@
       "forMachine": "2016-02-29"
     }
   },
-  "backgroundImages": {
+  "backgroundImage": {
     "lowResImageSource": "http://unsplash.it/950/400",
     "highResImageSource": "http://unsplash.it/1900/800"
   }
