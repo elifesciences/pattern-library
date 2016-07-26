@@ -15,7 +15,7 @@
       "date": {
         "forHuman": {
           "dayOfMonth": 31,
-          "month": "March",
+          "month": "Mar",
           "year": 2015
         },
         "forMachine": "2015-03-31"
