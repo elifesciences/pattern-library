@@ -155,7 +155,7 @@
   },
 
   "contentHeader": {
-    "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
+    "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
     "behaviour": "ContentHeaderBackgroundImage",
     "title": "Microbiology and infectious disease",
     "titleClass": "content-header__title--medium",

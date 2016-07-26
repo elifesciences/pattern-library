@@ -1,5 +1,5 @@
 {
-  "rootClasses": "content-header-article content-header-article-magazine content-header-article-magazine--background content-header--background-image",
+  "rootClasses": "content-header-article content-header-article-magazine content-header-article-magazine--background",
   "behaviour": "ContentHeaderArticle ContentHeaderBackgroundImage",
   "title": "Planarian 'kidneys' go with the flow",
   "titleClass": "content-header__title--small",

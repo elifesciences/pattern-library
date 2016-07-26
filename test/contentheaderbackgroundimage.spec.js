@@ -17,6 +17,10 @@ describe('A ContentHeaderBackgroundImage Component', function () {
     expect(chbi).to.exist;
   });
 
+  it('injects the correct css class into the markup', function () {
+    expect(chbi.$elm.classList.contains('content-header--background-image')).to.be.true;
+  });
+
   describe('can calculate the image source to use', function () {
 
     it('possesses the method calcSourceToUse', function () {

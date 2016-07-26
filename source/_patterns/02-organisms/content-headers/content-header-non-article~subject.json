@@ -1,5 +1,5 @@
 {
-  "rootClasses": "content-header-nonarticle content-header-nonarticle--background content-header--background-image",
+  "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
   "behaviour": "ContentHeaderBackgroundImage",
   "title": "About <i>eLife</i>",
   "titleClass": "content-header__title--medium",
