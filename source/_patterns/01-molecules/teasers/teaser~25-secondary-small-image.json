@@ -5,11 +5,11 @@
     "list": [
       {
         "name": "Biochemistry",
-        "path": "#"
+        "url": "#"
       },
       {
         "name": "Neuroscience",
-        "path": "#"
+        "url": "#"
       }
     ]
   },
