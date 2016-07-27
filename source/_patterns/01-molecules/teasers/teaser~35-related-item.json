@@ -5,7 +5,7 @@
     "list": [
       {
         "name": "Built upon by",
-        "url": false
+        "url": null
       }
     ]
   },
@@ -14,14 +14,10 @@
 
   "secondaryInfo": "H Thi-Kim Vu et al",
 
-  "category": {
-    "name": "Research advance",
-    "path": "#"
-  },
   "footer": {
     "meta": {
-      "typeLink": "#",
-      "type": "Research advance",
+      "url": "#",
+      "text": "Research advance",
       "date": {
         "forHuman": {
           "dayOfMonth": 16,

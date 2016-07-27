@@ -198,11 +198,11 @@
             "list": [
               {
                 "name": "Epidemiology and Global Health",
-                "path": "#"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "path": "#"
+                "url": "#"
               }
             ]
           },
@@ -233,11 +233,11 @@
             "list": [
               {
                 "name": "Genomics and Evolutionary Biology",
-                "path": "#"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "path": "#"
+                "url": "#"
               }
             ]
           },
@@ -269,7 +269,7 @@
             "list": [
               {
                 "name": "Epidemiology and Global Health",
-                "path": "#"
+                "url": "#"
               }
             ]
           },
@@ -301,11 +301,11 @@
             "list": [
               {
                 "name": "Ecology",
-                "path": "#"
+                "url": "#"
               },
               {
                 "name": "Epidemiology and Global Health",
-                "path": "#"
+                "url": "#"
               }
             ]
           },
@@ -339,7 +339,7 @@
             "list": [
               {
                 "name": "Microbiology and Infectious Disease",
-                "path": "#"
+                "url": "#"
               }
             ]
           },
@@ -350,7 +350,7 @@
           "footer": {
             "meta": {
               "text": "Research article",
-              "path": "#",
+              "url": "#",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 6,
@@ -372,11 +372,11 @@
             "list": [
               {
                 "name": "Biochemistry",
-                "path": "#"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "path": "#"
+                "url": "#"
               }
             ]
           },
@@ -409,11 +409,11 @@
             "list": [
               {
                 "name": "Immunology",
-                "path": "#"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "path": "#"
+                "url": "#"
               }
             ]
           },
@@ -921,7 +921,7 @@
             "list": [
               {
                 "name": "Epidemiology and Global Health",
-                "path": "#"
+                "url": "#"
               }
             ]
           },
@@ -950,11 +950,11 @@
             "list": [
             {
               "name": "Epidemiology and Global Health",
-              "path": "#"
+              "url": "#"
             },
             {
               "name": "Microbiology and Infectious Disease",
-              "path": "#"
+              "url": "#"
             }
           ]
         },
@@ -983,11 +983,11 @@
             "list": [
               {
                 "name": "Epidemiology and Global Health",
-                "path": "#"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "path": "#"
+                "url": "#"
               }
             ]
           },

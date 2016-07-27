@@ -4,19 +4,19 @@
     "list": [
       {
         "name": "5:44",
-        "url": false
+        "url": null
       }
     ]
   },
 
   "title": "Catch me if you can",
-  "url": false,
+  "url": null,
   "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et quis nostrud.",
 
   "footer": {
     "meta": {
       "text": "Research article by Ogunjimi et al.",
-      "url": false
+      "url": null
     }
   }
 }
