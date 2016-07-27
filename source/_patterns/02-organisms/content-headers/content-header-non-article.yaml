@@ -40,6 +40,15 @@ schema:
       $ref: ../../01-molecules/navigation/select-nav.yaml#/schema
     button:
       $ref: ../../00-atoms/components/button.yaml#/schema
+    download:
+      type: object
+      allOf:
+        - $ref: ../../00-atoms/components/picture.yaml#/schema
+        -
+          properties:
+            downloadLink:
+              type: string
+              minLength: 1
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
     profile:
