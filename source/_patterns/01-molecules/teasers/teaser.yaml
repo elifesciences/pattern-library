@@ -28,8 +28,12 @@ schema:
               - name
               - url
     url:
-      type: string
-      minLength: 1
+      oneOf:
+        -
+          minLength: 1
+          type: string
+        -
+          type: "null"
     title:
       type: string
       minLength: 1

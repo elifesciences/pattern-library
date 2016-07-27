@@ -7,8 +7,12 @@ schema:
   type: object
   properties:
     url:
-      type: string
-      minLength: 1
+      oneOf:
+        -
+          minLength: 1
+          type: string
+        -
+          type: "null"
     text:
       type: string
       minLength: 1
