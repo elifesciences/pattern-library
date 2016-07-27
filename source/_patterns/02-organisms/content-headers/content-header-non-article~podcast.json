@@ -3,7 +3,7 @@
   "behaviour": "ContentHeaderBackgroundImage",
   "title": "Multicellular life, potato blight and Hepatitis B",
   "strapline": "Episode 21",
-  "titleClass": "content-header__title--small",
+  "titleClass": "content-header__title--medium",
   "hasCtaOrMeta": true,
   "meta": {
     "text": "Podcast",
