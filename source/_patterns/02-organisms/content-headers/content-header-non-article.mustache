@@ -18,9 +18,13 @@
     </div>
   {{/hasProfile}}
 
+  {{! Used for the Podcast download link }}
   {{#download}}
-    <a href="#articleDownloadLinksList" class="content-header__download_link">
-      {{> atoms-picture}}
+    <a href="{{{downloadLink}}}" class="content-header__download_link">
+      {{#download.picture}}
+        {{> atoms-picture}}
+      {{/download.picture}}
+      <span class="visuallyhidden">Download</span>
     </a>
   {{/download}}
 

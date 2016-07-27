@@ -14,12 +14,10 @@
       }
     ]
   },
-  "articleType": "Research article",
   "authors": {
     "firstAuthorOnly": "Lee R Berger",
     "hasEtAl": true
   },
-
   "meta": {
     "url": "#",
     "text": "Research article",

@@ -3,7 +3,7 @@
   "behaviour": "ContentHeaderBackgroundImage",
   "title": "Multicellular life, potato blight and Hepatitis B",
   "strapline": "Episode 21",
-  "titleClass": "content-header__title--small",
+  "titleClass": "content-header__title--medium",
   "hasCtaOrMeta": true,
   "meta": {
     "text": "Podcast",
@@ -17,27 +17,30 @@
     }
   },
   "download": {
-    "sources": [
-      {
-        "srcset": "../../assets/img/icons/download-full-reverse.svg",
-        "media": "(min-width: 35em)",
-        "type": "image/svg+xml"
-      },
-      {
-        "srcset": "../../assets/img/icons/download-full-reverse-1x.png",
-        "media": "(min-width: 35em)"
-      },
-      {
-        "srcset": "../../assets/img/icons/download-reverse.svg",
-        "type": "image/svg+xml"
+    "picture": {
+      "sources": [
+        {
+          "srcset": "../../assets/img/icons/download-full-reverse.svg",
+          "media": "(min-width: 35em)",
+          "type": "image/svg+xml"
+        },
+        {
+          "srcset": "../../assets/img/icons/download-full-reverse-1x.png",
+          "media": "(min-width: 35em)"
+        },
+        {
+          "srcset": "../../assets/img/icons/download-reverse.svg",
+          "type": "image/svg+xml"
+        }
+      ],
+      "fallback": {
+        "defaultPath": "../../assets/img/icons/download-full-reverse-1x.png",
+        "srcset": "../../assets/img/icons/download-full-reverse-2x.png 88w, ../../assets/img/icons/download-full-reverse-1x.png 44w",
+        "classes": "content-header__download_icon",
+        "altText": "Download icon"
       }
-    ],
-    "fallback": {
-      "defaultPath": "../../assets/img/icons/download-full-reverse-1x.png",
-      "srcset": "../../assets/img/icons/download-full-reverse-2x.png 88w, ../../assets/img/icons/download-full-reverse-1x.png 44w",
-      "classes": "content-header__download_icon",
-      "altText": "Download icon"
-    }
+    },
+    "downloadLink": "#"
   },
   "backgroundImage": {
     "lowResImageSource": "http://unsplash.it/950/400",
