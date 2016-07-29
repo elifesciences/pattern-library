@@ -1,24 +1,20 @@
 let expect = chai.expect;
 
 // load in component(s) to be tested
-let ContentHeaderBackgroundImage = require('../assets/js/components/ContentHeaderBackgroundImage');
+let BackgroundImage = require('../assets/js/components/BackgroundImage');
 
-describe('A ContentHeaderBackgroundImage Component', function () {
+describe('A BackgroundImage Component', function () {
   'use strict';
   let $elm;
   let chbi;
 
   beforeEach(function () {
-    $elm = document.querySelector('[data-behaviour="ContentHeaderBackgroundImage"]');
-    chbi = new ContentHeaderBackgroundImage($elm);
+    $elm = document.querySelector('[data-behaviour="BackgroundImage"]');
+    chbi = new BackgroundImage($elm);
   });
 
   it('exists', function () {
     expect(chbi).to.exist;
-  });
-
-  it('injects the correct css class into the markup', function () {
-    expect(chbi.$elm.classList.contains('content-header--background-image')).to.be.true;
   });
 
   describe('can calculate the image source to use', function () {
