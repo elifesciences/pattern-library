@@ -13,7 +13,7 @@ if (window.localStorage && document.querySelector &&
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.AudioPlayer = require('./components/AudioPlayer');
   Components.ContentHeaderArticle = require('./components/ContentHeaderArticle');
-  Components.ContentHeaderBackgroundImage = require('./components/ContentHeaderBackgroundImage');
+  Components.BackgroundImage = require('./components/BackgroundImage');
   Components.SelectNav = require('./components/SelectNav');
   Components.MainMenu = require('./components/MainMenu');
   Components.SiteHeader = require('./components/SiteHeader');

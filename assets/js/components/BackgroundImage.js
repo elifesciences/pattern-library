@@ -1,7 +1,7 @@
 'use strict';
 var utils = require('../libs/elife-utils')();
 
-module.exports = class ContentHeaderBackgroundImage {
+module.exports = class BackgroundImage {
 
   constructor($elm, _window = window, doc = document) {
     if (!$elm) {
