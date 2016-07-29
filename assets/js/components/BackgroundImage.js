@@ -13,7 +13,6 @@ module.exports = class BackgroundImage {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.$elm.classList.add('content-header--background-image');
     this.sourceToUse = this.calcSourceToUse(this.$elm, utils.isHighDpr(this.window));
     this.$elm.style.backgroundImage = this.setBackground(this.sourceToUse, semiTransparentBlack);
   }
