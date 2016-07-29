@@ -40,7 +40,7 @@ schema:
     secondaryInfo:
       type: string
       minLength: 1
-    eventDate: # This is a datetime, but is nested, maybe this can be changed? (eventDate.date => date)
+    eventDate:
       $ref: ../../00-atoms/components/date.yaml#/schema
     content:
       type: string
@@ -98,6 +98,8 @@ schema:
         downloadSrc:
           type: string
           minLength: 1
+      required:
+        - meta
 
   required:
     - title
