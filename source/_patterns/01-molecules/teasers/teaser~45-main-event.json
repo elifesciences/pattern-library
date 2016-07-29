@@ -4,14 +4,12 @@
   "title": "HSFP Postdoctoral Fellowships from the Human Frontier Science Program",
   "secondaryInfo": "eLife",
   "eventDate": {
-    "date": {
-      "isExpanded": true,
-      "forHuman": {
-        "dayOfMonth": 18,
-        "month": "Dec",
-        "year": 2015
-      },
-      "forMachine": "2015-12-16"
-    }
+    "isExpanded": true,
+    "forHuman": {
+      "dayOfMonth": 18,
+      "month": "Dec",
+      "year": 2015
+    },
+    "forMachine": "2015-12-16"
   }
 }
