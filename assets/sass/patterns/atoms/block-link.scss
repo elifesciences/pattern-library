@@ -1,0 +1,10 @@
+@import "../../definitions";
+
+.block-link {
+  background-color: $color-primary;
+  color: $color-text--reverse;
+  display: block;
+  @include padding(16 8);
+  text-align: center;
+  text-decoration: none;
+}
