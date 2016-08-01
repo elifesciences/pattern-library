@@ -1,0 +1,18 @@
+{
+  "blockLink": {
+    "url": "#",
+    "text": "Developmental Biology and Stem Cells",
+    "behaviour": "BackgroundImage",
+    "backgroundImage": {
+      "lowResImageSource": "http://unsplash.it/950/400",
+      "highResImageSource": "http://unsplash.it/1900/800"
+    }
+  },
+  "label": "Highlights this month:",
+  "text": [
+    "Exploring the ins and outs of breathing",
+    "The ancient origins of lubricated joints",
+    "Modulating protein quality control",
+    "How open science helps researchers succeed"
+  ]
+}

@@ -1,0 +1,20 @@
+<!-- TODO: get answers to linking questions:
+  - is the whole thing linked, or just the block link (with image background)?
+  - are the list items individually linked?
+
+-->
+
+<div class="archive-nav-link">
+
+  {{#blockLink}}
+    {{> atoms-block-link}}
+  {{/blockLink}}
+
+  <dl class="archive-nav-link__list">
+    <dt class="archive-nav-link__list_heading">{{label}}</dt>
+    {{#text}}
+      <dd class="archive-nav-link__list_item">{{.}}</dd>
+    {{/text}}
+  </dl>
+
+</div>

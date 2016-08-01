@@ -1,0 +1,12 @@
+@import "../../definitions";
+
+.archive-nav-link__list_heading {
+  @include label-content-typeg();
+}
+
+.archive-nav-link__list_item {
+  list-style-type: circle;
+  display: list-item;
+  @include padding(50, "left");s
+  s
+}
