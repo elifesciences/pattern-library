@@ -25,6 +25,16 @@
   list-style-type: none;
   @include padding(8 16 6 0);
   text-transform: uppercase;
+
+  .button--extra-small {
+    display: none;
+
+    @media only all and (min-width: 26.5625em) {
+      display: list-item;
+      margin-top: -5px;
+      margin-top: -0.3125rem;
+    }
+  }
 }
 
 .nav-secondary__item--notification,
@@ -55,11 +65,6 @@
 
 }
 
-.nav-secondary__item--button {
-  display: none;
-  @include padding(3 10 2 0);
-}
-
 .nav-secondary__notification-icon {
   height: 17px;
   width: 14px;
@@ -68,10 +73,4 @@
 .nav-secondary__profile-icon {
   height: 14px;
   width: 21px;
-}
-
-@media only all and (min-width: #{get-rem-from-px(425)}em) {
-  .nav-secondary__item--button {
-    display: list-item;
-  }
 }
