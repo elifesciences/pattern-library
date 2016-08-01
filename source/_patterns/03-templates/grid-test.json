@@ -40,7 +40,7 @@
       {
         "text": "Search",
         "rel": "search",
-        "classes": "nav-primary__item nav-primary__item--last",
+        "classes": "nav-primary__item nav-primary__item--search",
         "textClasses": "visuallyhidden",
         "path": "#",
         "img": {
