@@ -1,0 +1,107 @@
+assets:
+  css:
+    - teaser.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    rootClasses:
+      type: string
+      minLength: 1
+    contextLabel:
+      type: object
+      properties:
+        list:
+          type: array
+          minItems: 1
+          item:
+            type: object
+            properties:
+              name:
+                type: string
+                minLength: 1
+              url:
+                type: string
+                minLength: 1
+            required:
+              - name
+              - url
+    url:
+      oneOf:
+        -
+          minLength: 1
+          type: string
+        -
+          type: "null"
+    title:
+      type: string
+      minLength: 1
+    secondaryInfo:
+      type: string
+      minLength: 1
+    eventDate:
+      $ref: ../../00-atoms/components/date.yaml#/schema
+    content:
+      type: string
+      minLength: 1
+    category:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        url:
+          type: string
+          minLength: 1
+      required:
+        - name
+    image:
+      type: object
+      properties:
+        url:
+          type: string
+          minLength: 1
+        defaultPath:
+          type: string
+          minLength: 1
+        altText:
+          type: string
+          minLength: 1
+        srcset:
+          type: string
+          minLength: 1
+        classes:
+          type: string
+          minLength: 1
+          enum:
+            - teaser__img--prominent
+            - teaser__img--big
+            - teaser__img--small
+      required:
+        # Commented out for now since the JSON does not have this.
+        # - url
+        - defaultPath
+        - altText
+    footer:
+      type: object
+      properties:
+        meta:
+          $ref: ../../01-molecules/components/meta.yaml#/schema
+        publishState:
+          type: object
+          properties:
+            vor:
+              type: boolean
+          required:
+            - vor
+        downloadSrc:
+          type: string
+          minLength: 1
+      required:
+        - meta
+
+  required:
+    - title
+    # - footer # Not in teaser~50-secondary-event.json or teaser~45-main-event.json
+    # - contextLabel # Not in teaser~60-grid-style--podcast.json or teaser~55-grid-style--labs.json or teaser~40-basic.json
