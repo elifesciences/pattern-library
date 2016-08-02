@@ -43,7 +43,8 @@
 
     "publishState": {
       "vor": true
-    }
+    },
+    "assetsPath": "../../assets"
   }
 
 }
