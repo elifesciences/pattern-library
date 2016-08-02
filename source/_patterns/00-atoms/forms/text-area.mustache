@@ -1,0 +1,15 @@
+{{#label}}
+    <label
+            for="{{id}}"
+            class="form-label{{#isVisuallyHidden}} visuallyhidden{{/isVisuallyHidden}}">
+        {{labelText}}
+    </label>
+{{/label}}
+<textarea
+        type="{{inputType}}"
+        class="text-field text-field--textarea {{classNames}}"
+    {{#id}} id="{{id}}"{{/id}}
+    {{#name}} name="{{name}}"{{/name}}
+>
+    {{#value}}{{value}}{{/value}}
+</textarea>

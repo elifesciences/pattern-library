@@ -1,0 +1,9 @@
+{
+  "id": "comment1",
+  "label": {
+    "for": "comment1",
+    "isVisuallyHidden": false,
+    "labelText": "Add a comment"
+  },
+  "name": "comment"
+}
