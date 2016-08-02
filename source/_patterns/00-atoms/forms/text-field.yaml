@@ -21,6 +21,13 @@ schema:
     classNames:
       type: string
       minLength: 1
+    placeholder:
+      type: string
+      minLength: 1
+    required:
+      type: boolean
+    disabled:
+      type: boolean
     label:
       type: object
       properties:
