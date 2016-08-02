@@ -18,6 +18,12 @@ schema:
           label:
             type: string
             minLength: 1
+          name:
+            type: string
+            minLength: 1
+          value:
+            type: string
+            minLength: 1
           isChecked:
             type: boolean
           results:
@@ -25,6 +31,7 @@ schema:
             pattern: ^(0|([1-9][0-9]{0,2}(,[0-9]{3})*))$
         required:
           - label
+          - name
           - isChecked
           - results
   required:
