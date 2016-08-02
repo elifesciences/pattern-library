@@ -12,6 +12,9 @@ schema:
     name:
       type: string
       minLength: 1
+    value:
+      type: string
+      minLength: 1
     classNames:
       type: string
       minLength: 1
