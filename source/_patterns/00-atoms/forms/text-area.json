@@ -1,0 +1,16 @@
+{
+  "id": "comment1",
+  "label": {
+    "for": "comment1",
+    "isVisuallyHidden": false,
+    "labelText": "Add a comment"
+  },
+  "name": "comment",
+  "autofocus": true,
+  "cols": 30,
+  "disabled": false,
+  "form": "some_form_id",
+  "placeholder": "Type text to leave a comment",
+  "required": true,
+  "rows": 2
+}
