@@ -1,13 +1,13 @@
 {
   "title": "Subject",
   "filters": [
-    { "isChecked": true, "label": "Cell Biology", "results": "71" },
-    { "isChecked": false, "label": "Neuroscience", "results": "2" },
-    { "isChecked": false, "label": "Biophysics and Structural Biology", "results": "24" },
-    { "isChecked": true, "label": "Biochemistry", "results": "71" },
-    { "isChecked": false, "label": "Developmental Biology and Stem Cells", "results": "13" },
-    { "isChecked": false, "label": "Immunology", "results": "144" },
-    { "isChecked": false, "label": "Ecology", "results": "71" },
-    { "isChecked": false, "label": "Epidemiology and Global Health", "results": "57" }
+    { "isChecked": true, "name": "Cell", "label": "Cell Biology", "results": "71" },
+    { "isChecked": false, "name": "Neuroscience", "label": "Neuroscience", "results": "2" },
+    { "isChecked": false, "name": "Biophysics ", "label": "Biophysics and Structural Biology", "results": "24" },
+    { "isChecked": true, "name": "Biochemistry", "label": "Biochemistry", "results": "71" },
+    { "isChecked": false, "name": "Developmental", "label": "Developmental Biology and Stem Cells", "results": "13" },
+    { "isChecked": false, "name": "Immunology", "label": "Immunology", "results": "144" },
+    { "isChecked": false, "name": "Ecology", "label": "Ecology", "results": "71" },
+    { "isChecked": false, "name": "Epidemiology ", "label": "Epidemiology and Global Health", "results": "57" }
   ]
 }

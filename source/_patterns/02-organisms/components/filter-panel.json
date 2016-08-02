@@ -4,27 +4,27 @@
     {
         "title": "Subject",
         "filters": [
-          { "isChecked": true, "label": "Cell Biology", "results": "71" },
-          { "isChecked": false, "label": "Neuroscience", "results": "2" },
-          { "isChecked": false, "label": "Biophysics and Structural Biology", "results": "24" },
-          { "isChecked": true, "label": "Biochemistry", "results": "71" },
-          { "isChecked": false, "label": "Developmental Biology and Stem Cells", "results": "13" },
-          { "isChecked": false, "label": "Immunology", "results": "144" },
-          { "isChecked": false, "label": "Ecology", "results": "71" },
-          { "isChecked": false, "label": "Epidemiology and Global Health", "results": "57" }
+          { "isChecked": true, "name": "Cell", "label": "Cell Biology", "results": "71" },
+          { "isChecked": false, "name": "Neuroscience", "label": "Neuroscience", "results": "2" },
+          { "isChecked": false, "name": "Biophysics", "label": "Biophysics and Structural Biology", "results": "24" },
+          { "isChecked": true, "name": "Biochemistry", "label": "Biochemistry", "results": "71" },
+          { "isChecked": false, "name": "Developmental ", "label": "Developmental Biology and Stem Cells", "results": "13" },
+          { "isChecked": false, "name": "Immunology", "label": "Immunology", "results": "144" },
+          { "isChecked": false, "name": "Ecology", "label": "Ecology", "results": "71" },
+          { "isChecked": false, "name": "Epidemiology ", "label": "Epidemiology and Global Health", "results": "57" }
         ]
     },
 
     {
         "title": "Content type",
         "filters": [
-          { "isChecked": true, "label": "Editorial", "results": "14" },
-          { "isChecked": false, "label": "Feature article", "results": "2" },
-          { "isChecked": false, "label": "Insight", "results": "24" },
-          { "isChecked": false, "label": "Research article", "results": "1,498" },
-          { "isChecked": true, "label": "Short Report", "results": "71" },
-          { "isChecked": false, "label": "Tools and resources", "results": "26" },
-          { "isChecked": false, "label": "Research advance", "results": "144" }
+          { "isChecked": true, "name": "Editorial", "label": "Editorial", "results": "14" },
+          { "isChecked": false, "name": "Feature", "label": "Feature article", "results": "2" },
+          { "isChecked": false, "name": "Insight", "label": "Insight", "results": "24" },
+          { "isChecked": false, "name": "Research ", "label": "Research article", "results": "1,498" },
+          { "isChecked": true, "name": "Short", "label": "Short Report", "results": "71" },
+          { "isChecked": false, "name": "Tools ", "label": "Tools and resources", "results": "26" },
+          { "isChecked": false, "name": "Research ", "label": "Research advance", "results": "144" }
         ]
     }
   ],
