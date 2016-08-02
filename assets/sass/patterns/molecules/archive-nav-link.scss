@@ -1,12 +1,18 @@
 @import "../../definitions";
 
+.archive-nav-link .block-link {
+  height: calc()
+}
+
 .archive-nav-link__list_heading {
   @include label-content-typeg();
+  @include padding(8 0);
+
 }
 
 .archive-nav-link__list_item {
-  list-style-type: circle;
+  list-style-type: disc;
   display: list-item;
-  @include padding(50, "left");s
-  s
+  @include margin(16, "left");
+  @include margin(0, "bottom");
 }

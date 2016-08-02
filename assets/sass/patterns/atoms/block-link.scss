@@ -3,8 +3,20 @@
 .block-link {
   background-color: $color-primary;
   color: $color-text--reverse;
-  display: block;
-  @include padding(16 8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: $font-secondary;
+  font-weight: 700;
+  @include margin(2, "bottom");
+  @include padding(0 20);
+  @include height(80);
   text-align: center;
   text-decoration: none;
+}
+
+// TODO: DO NOT MERGE!!! Imlpement this in JavaScript.
+.block-link:hover {
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.498039), rgba(255, 255, 255, 0.498039)), url("http://unsplash.it/1900/800?water") !important;
+  color: black;
 }
