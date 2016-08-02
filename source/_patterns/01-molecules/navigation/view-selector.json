@@ -1,4 +1,6 @@
 {
+  "articleUrl": "#",
+  "figureUrl": "#",
   "jumpLinks": [
     { "name": "Abstract", "url": "#abstract" },
     { "name": "eLife digest", "url": "#digest" },
