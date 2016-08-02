@@ -9,7 +9,13 @@
         type="{{inputType}}"
         class="text-field text-field--textarea {{classNames}}"
     {{#id}} id="{{id}}"{{/id}}
-    {{#name}} name="{{name}}"{{/name}}
+    {{#autofocus}} autofocus{{/autofocus}}
+    {{#cols}} cols="{{cols}}"{{/cols}}
+    {{#rows}} rows="{{rows}}"{{/rows}}
+    {{#disabled}} disabled="disabled"{{/disabled}}
+    {{#required}} required="required"{{/required}}
+    {{#form}} form="{{form}}"{{/form}}
+    {{#placeholder}} placeholder="{{placeholder}}"{{/placeholder}}
 >
     {{#value}}{{value}}{{/value}}
 </textarea>

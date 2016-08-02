@@ -12,7 +12,21 @@ schema:
     name:
       type: string
       minLength: 1
+    autofocus:
+      type: boolean
+    required:
+      type: boolean
+    cols:
+      type: integer
+    rows:
+      type: integer
     value:
+      type: string
+      minLength: 1
+    form:
+      type: string
+      minLength: 1
+    placeholder:
       type: string
       minLength: 1
     classNames:
@@ -28,6 +42,7 @@ schema:
           type: string
           minLength: 1
         isVisuallyHidden:
+          default: false
           type: boolean
       required:
         - labelText
