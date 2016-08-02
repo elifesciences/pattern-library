@@ -1,6 +1,6 @@
 {
   "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
-  "behaviour": "ContentHeaderBackgroundImage",
+  "behaviour": "BackgroundImage",
   "title": "About <i>eLife</i>",
   "titleClass": "content-header__title--large",
   "hasCtaOrMeta": true,

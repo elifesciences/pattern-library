@@ -11,7 +11,7 @@
           "classes": "nav-primary__item nav-primary__item--first",
           "textClasses": "nav-primary__menu_text",
           "url": "#mainMenu",
-          "img": {
+          "picture": {
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
@@ -41,10 +41,10 @@
         {
           "text": "Search",
           "rel": "search",
-          "classes": "nav-primary__item nav-primary__item--last",
+          "classes": "nav-primary__item nav-primary__item--search",
           "textClasses": "visuallyhidden",
           "url": "#",
-          "img": {
+          "picture": {
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
@@ -98,7 +98,7 @@
           "classes": "nav-secondary__item nav-secondary__item--notification",
           "textClasses": "visuallyhidden",
           "url": "#",
-          "img": {
+          "picture": {
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
@@ -117,7 +117,7 @@
           "classes": "nav-secondary__item nav-secondary__item--profile",
           "textClasses": "visuallyhidden",
           "url": "#",
-          "img": {
+          "picture": {
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
@@ -156,7 +156,7 @@
 
   "contentHeader": {
     "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
-    "behaviour": "ContentHeaderBackgroundImage",
+    "behaviour": "BackgroundImage",
     "title": "Microbiology and infectious disease",
     "titleClass": "content-header__title--medium",
     "hasCtaOrMeta": true,
