@@ -13,6 +13,12 @@
   @include height(80);
   text-align: center;
   text-decoration: none;
+
+  @media only all and (min-width: #{$bkpt-block-link}px) {
+    column-count: 2;
+    column-gap: #{get-rem-from-px(26)}rem;
+    max-width: 33vw;
+  }
 }
 
 // TODO: DO NOT MERGE!!! Imlpement this in JavaScript.

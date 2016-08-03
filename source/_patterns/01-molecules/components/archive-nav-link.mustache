@@ -10,11 +10,12 @@
     {{> atoms-block-link}}
   {{/blockLink}}
 
+  <a href="{{url}}" class="archive-nav-link__link">
   <dl class="archive-nav-link__list">
     <dt class="archive-nav-link__list_heading">{{label}}</dt>
     {{#text}}
       <dd class="archive-nav-link__list_item">{{.}}</dd>
     {{/text}}
   </dl>
-
+  </a>
 </div>

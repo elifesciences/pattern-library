@@ -1,7 +1,13 @@
 @import "../../definitions";
 
 .archive-nav-link .block-link {
-  height: calc()
+  //height: calc()
+  margin-bottom: 0;
+}
+
+.archive-nav-link__link {
+  text-decoration: none;
+  color: $color-text;
 }
 
 .archive-nav-link__list_heading {
