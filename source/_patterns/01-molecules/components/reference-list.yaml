@@ -20,7 +20,7 @@ schema:
                 minLength: 1
               ordinal:
                 type: integer
-                minLength: 1
+                minimum: 1
             required:
               - full
               - ordinal
