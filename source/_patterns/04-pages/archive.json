@@ -1,0 +1,688 @@
+{
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "url": "#mainMenu",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "nav-primary__menu_icon",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "url": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "url": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "url": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "nav-primary__search_icon",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "url": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "url": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Labs",
+          "url": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Submit my research",
+          "url": "#",
+          "classes": "nav-secondary__item nav-secondary__item--button",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        },
+        {
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--notification",
+          "textClasses": "visuallyhidden",
+          "url": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+              "classes": "nav-secondary__notification-icon",
+              "altText": "Notification icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
+              }
+            ]
+          }
+        },
+        {
+          "text": "Profile",
+          "classes": "nav-secondary__item nav-secondary__item--profile",
+          "textClasses": "visuallyhidden",
+          "url": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
+              "classes": "nav-secondary__profile-icon",
+              "altText": "Profile icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    "compactForm": {
+      "formAction" : "/search",
+      "formId": "searchBox",
+      "formMethod": "GET",
+      "label": "Search by keyword or author",
+      "inputType": "search",
+      "inputName": "search",
+      "inputValue": "",
+      "inputPlaceholder": "Search by keyword or author",
+      "ctaText": "Search"
+    },
+
+    "subjectFilter": {
+      "name": "subject_filter",
+      "value": "cell_biology",
+      "text": "Cell biology"
+    }
+
+  },
+
+  "contentHeader": {
+    "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
+    "behaviour": "ContentHeaderSelectNav BackgroundImage",
+    "title": "Archive",
+    "titleClass": "content-header__title--large",
+    "hasCtaOrMeta": true,
+    "selectNav": {
+      "route": "/path/to/archive",
+      "select": {
+        "id": "archiveYear",
+        "label": {
+          "labelText": "Archive year",
+          "for": "archiveYear",
+          "isVisuallyHidden": true
+        },
+        "options": [
+          {
+            "value": "2016",
+            "displayValue": "2016"
+          },
+          {
+            "value": "2015",
+            "displayValue": "2015"
+          },
+          {
+            "value": "2014",
+            "displayValue": "2014"
+          }
+        ]
+      },
+      "button": {
+        "text": "Go",
+        "type": "submit",
+        "classes": "button--outline button--extra-small"
+      }
+    },
+    "backgroundImage": {
+      "lowResImageSource": "http://unsplash.it/950/400",
+      "highResImageSource": "http://unsplash.it/1900/800"
+    }
+  },
+
+  "leadParas": {
+    "paras": [
+      {"text": "eLife publishes research covering virology, bacteriology and mycology. Decisions are made by journal editors who are active researchers in the fields of microbiology and infectious disease."}
+    ]
+  },
+
+  "archives": [
+    {
+      "items": [
+        {
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Quorum sensing control of Type VI secretion factors restricts the proliferation of quorum-sensing mutants",
+          "url": "#",
+          "secondaryInfo": "Charlotte Majerczyk et al.",
+          "content": "Quorum-sensing control of <i>Burkholderia thailandensis</i> toxin and immunity pairs serves to police quorum-sensing mutants and may represent a general strategy whereby cooperators can police mutants.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 16,
+                  "month": "May",
+                  "year": 2016
+                },
+                "forMachine": "20160516"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
+          },
+
+          "image": {
+            "defaultPath": "http://unsplash.it/250/140/",
+            "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--big"
+          }
+        },
+
+        {
+          "subjects": {
+            "list": [
+              {
+                "name": "Epidemiology and Global Health",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Mapping global environmental suitability for Zika virus",
+          "url": "#",
+          "secondaryInfo": "Jane P Messina et al",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 19,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160419"
+              }
+            },
+            "publishState": {
+              "vor": false
+            }
+          }
+        },
+
+        {
+
+          "subjects": {
+            "list": [
+              {
+                "name": "Genomics and evolutionary biology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Evolutionary diversification of the trypanosome haptoglobin-haemoglobin receptor from an ancestral haemoglobin receptor",
+          "url": "#",
+          "secondaryInfo": "Harriet Lane-Serff et al.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 16,
+                  "month": "May",
+                  "year": 2016
+                },
+                "forMachine": "20160516"
+              }
+            },
+            "publishState": {
+              "vor": false
+            }
+          }
+        },
+
+        {
+          "subjects": {
+            "links": [
+              {
+                "name": "Epidemiology and Global Health",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "The global antigenic diversity of swine influenza A viruses",
+          "url": "#",
+          "secondaryInfo": "Nicola S Lewis et al.",
+          "content": "Swine populations worldwide are sporadically infected by influenza viruses from humans and birds leading to geographically heterogeneous swine influenza virus populations that pose epizootic and pandemic threats.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 15,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160415"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
+          },
+          "image": {
+            "defaultPath": "http://unsplash.it/70/70/",
+            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "hasSubjects": "true",
+
+          "subjects": {
+            "list": [
+              {
+                "name": "Ecology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Recurring patterns in bacterioplankton dynamics during coastal spring algae blooms",
+          "url": "#",
+          "secondaryInfo": "Hanno Teeling et al.",
+          "content": "Dynamic successive blooms of clades of planktonic marine bacteria that can be observed during blooms of marine algae follow discernible patterns, part of which might be explained by substrate-induced forcing.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 17,
+                  "month": "Jun",
+                  "year": 2016
+                },
+                "forMachine": "2016047"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
+          }
+        }
+
+      ]
+    }
+  ],
+
+  "loadMore": {
+    "type": "button",
+    "classes": "button--default button--full",
+    "text": "Load more",
+    "path": "#"
+  },
+
+  "secondaryTeasers": [
+    {
+      "heading": "Highlighted content",
+      "items": [
+        {
+          "rootClasses": "teaser--secondary",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Developmental Biology and Stem Cells",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "The parasite’s new clothes",
+          "url": "#",
+          "secondaryInfo": "Mark S Pearson et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 15,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160415"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "http://unsplash.it/250/140/",
+            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "rootClasses": "teaser--secondary",
+
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Immunology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Catch me if you can",
+          "url": "#",
+          "secondaryInfo": "Emilie Bourdonnay et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 16,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160216"
+              }
+            }
+          }
+        },
+
+        {
+          "rootClasses": "teaser--secondary",
+
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              },
+              {
+                "name": "Plant Biology",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Autophagy under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          }
+        },
+
+        {
+          "rootClasses": "teaser--secondary",
+          "subjects": {
+            "list": [
+              {
+                "name": "Biophysics and Structural Biology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Intracellular pathogens under attack",
+          "url": "#",
+          "secondaryInfo": "Petr Broz et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 19,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160219"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "http://unsplash.it/250/140/",
+            "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w",
+            "altText": "Make it meaningful please",
+            "classes": "teaser__img--big"
+          }
+
+        }
+
+      ]
+    }
+  ],
+
+  "profileLinks": {
+    "heading": "Senior editors",
+    "items": [
+      {
+        "name": "Prabhat Jha",
+        "title": "University of Toronto",
+        "picture": {
+          "sources": [
+            {
+              "srcset": "http://lorempixel.com/180/180/people/1 180w",
+              "type": "image/png"
+            }
+          ],
+          "pictureClasses": "profile-snippet__picture",
+          "fallback": {
+            "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/1 90w",
+            "defaultPath": "http://lorempixel.com/90/90/people/1",
+            "altText": "Meaningful alt text here please.",
+            "classes": "profile-snippet__image"
+          }
+        }
+      },
+      {
+        "name": "Richard Losick",
+        "title": "Harvard University",
+        "picture": {
+          "sources": [
+            {
+              "srcset": "http://lorempixel.com/180/180/people/5 180w",
+              "type": "image/png"
+            }
+          ],
+          "pictureClasses": "profile-snippet__picture",
+          "fallback": {
+            "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/2 90w",
+            "defaultPath": "http://lorempixel.com/90/90/people/5",
+            "altText": "Meaningful alt text here please.",
+            "classes": "profile-snippet__image"
+          }
+        }
+      }
+    ]
+  },
+
+  "editorsMoreLink": {
+    "url": "#",
+    "name": "editors for Microbiology and Infectious Disease"
+  },
+
+  "mainMenuLinks": [
+    {
+      "title": "Subjects",
+      "titleId": "mainMenuSubjects",
+      "items": [
+        { "name": "Biochemistry", "url": "#" },
+        { "name": "Biophysics and Structural Biology", "url": "#" },
+        { "name": "Cancer Biology", "url": "#" },
+        { "name": "Cell Biology", "url": "#" },
+        { "name": "Computational and Systems Biology", "url": "#" },
+        { "name": "Developmental Biology and Stem Cells", "url": "#" },
+        { "name": "Ecology", "url": "#" },
+        { "name": "Epidemiology and Global Health", "url": "#" },
+        { "name": "Genes and Chromosomes", "url": "#" },
+        { "name": "Genomics and Evolutionary Biology", "url": "#" },
+        { "name": "Human Biology and Medicine", "url": "#" },
+        { "name": "Immunology", "url": "#" },
+        { "name": "Microbiology and Infectious Disease", "url": "#" },
+        { "name": "Neuroscience", "url": "#" },
+        { "name": "Plant Biology", "url": "#" }
+      ]
+    },
+    {
+      "title": "eLife",
+      "titleId": "mainMenuElife",
+      "items": [
+        { "name": "How to publish", "url": "#" },
+        { "name": "About", "url": "#" },
+        { "name": "Who we work with", "url": "#" },
+        { "name": "Alerts", "url": "#" },
+        { "name": "Contact", "url": "#" },
+        { "name": "Terms and policy", "url": "#" }
+      ]
+    },
+    {
+      "title": "Resources",
+      "titleId": "mainMenuResources",
+      "items": [
+        { "name": "Inside eLife", "url": "#" },
+        { "name": "Monthly archive", "url": "#" },
+        { "name": "Labs", "url": "#" },
+        { "name": "For the press", "url": "#" },
+        { "name": "Brand", "url": "#" }
+      ]
+    }
+  ],
+
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
+  ],
+
+  "year": 2016,
+  "assetsPath": "../../assets"
+
+}
