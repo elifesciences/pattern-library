@@ -1,0 +1,31 @@
+assets:
+  css:
+    - reference-list.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    references:
+      type: array
+      minItems: 1
+      items:
+        type: object
+        properties:
+          bibId:
+            type: object
+            properties:
+              full:
+                type: string
+                minLength: 1
+              ordinal:
+                type: integer
+                minimum: 1
+            required:
+              - full
+              - ordinal
+          reference:
+            $ref: ../../00-atoms/components/reference.yaml#/schema
+        required:
+          - bibId
+          - reference
