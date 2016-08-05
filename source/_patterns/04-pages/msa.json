@@ -180,7 +180,7 @@
 
   "mainTeasers": [
     {
-      "isTeaserType": true,
+      
       "heading": "Latest articles",
       "items": [
         {
@@ -385,7 +385,7 @@
 
   "secondaryTeasers": [
     {
-      "isTeaserType": true,
+      
       "heading": "Highlighted content",
       "items": [
         {
@@ -540,7 +540,6 @@
   ],
 
   "profileLinks": {
-    "isProfileSnippetType": true,
     "heading": "Senior editors",
     "items": [
       {

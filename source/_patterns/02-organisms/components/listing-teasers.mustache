@@ -1,0 +1,12 @@
+{{> atoms-list-heading}}
+<ol class="listing-list">
+  {{#items}}
+      <li class="listing-list__item">
+        {{> molecules-teaser }}
+    </li>
+  {{/items}}
+</ol>
+
+{{#loadMore}}
+  {{> molecules-load-more}}
+{{/loadMore}}

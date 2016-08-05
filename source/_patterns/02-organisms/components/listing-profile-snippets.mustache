@@ -1,0 +1,16 @@
+{{> atoms-list-heading}}
+<ol class="listing-list">
+
+  {{#items}}
+      <li class="listing-list__item">
+        {{> molecules-profile-snippet }}
+      </li>
+  {{/items}}
+
+  {{#seeMoreLink}}
+    <li class="listing-list__item">
+      {{> atoms-see-more-link}}
+    </li>
+  {{/seeMoreLink}}
+
+</ol>
