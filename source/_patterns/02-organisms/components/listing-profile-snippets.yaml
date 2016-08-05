@@ -18,5 +18,4 @@ schema:
     seeMoreLink:
       $ref: ../../00-atoms/components/see-more-link.yaml#/schema
   required:
-    - heading
     - items
