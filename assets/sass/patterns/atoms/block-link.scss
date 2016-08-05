@@ -5,19 +5,25 @@
   color: $color-text--reverse;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   font-family: $font-secondary;
   font-weight: 700;
+  @include height(80);
+  justify-content: center;
   @include margin(2, "bottom");
   @include padding(0 20);
-  @include height(80);
   text-align: center;
   text-decoration: none;
 
   @media only all and (min-width: #{$bkpt-block-link}px) {
-    column-count: 2;
-    column-gap: #{get-rem-from-px(26)}rem;
-    max-width: 33vw;
+    $max-width-block-link: 400;
+    // 0.5773955774 is aspect ratio of the block link in wider view.
+    $max-height-block-link: $max-width-block-link * 0.5773955774;
+
+    height: calc(100% * 0.5773955774);
+    max-width: 400px;
+    min-height: 80px;
+    min-height: #{get-rem-from-px(80)}rem;
+    width: 30vw;
   }
 }
 

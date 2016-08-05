@@ -1,0 +1,27 @@
+@import "../../definitions";
+
+.grid-listing {
+  list-style-type: none;
+  @include nospace();
+  width: 100%;
+}
+
+@media only all and (min-width: #{$bkpt-block-link}px) {
+
+  .grid-listing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .block-link {
+      flex: 1 0 20vw;
+      float: left;
+      //@include height(180);
+      // TODO: Fine tune this fallback width
+      width: 33vw;
+    }
+
+  }
+
+
+}
