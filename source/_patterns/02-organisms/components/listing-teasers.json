@@ -1,6 +1,5 @@
 {
   "heading": "Listing of teasers",
-  "isTeaserType": true,
   "items": [
     {
       "contextLabel": {
@@ -157,5 +156,6 @@
   "loadMore": {
     "text": "Load more",
     "path": "#"
-  }
+  },
+  "assetsPath": "../../assets"
 }
