@@ -1,5 +1,6 @@
 {
   "text": "Button full",
   "classes": "button--default button--full",
-  "type": "button"
+  "type": "button",
+  "name": "button-name"
 }

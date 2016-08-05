@@ -22,8 +22,15 @@ schema:
                 - button
                 - reset
                 - submit
+            id:
+              type: string
+              minLength: 1
+            name:
+              type: string
+              minLength: 1
           required:
             - type
+            - name
         - properties:
             path:
               type: string
