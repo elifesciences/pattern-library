@@ -1,5 +1,7 @@
 {
   "text": "Button",
   "classes": "button--default",
-  "type": "submit"
+  "type": "submit",
+  "id": "button-id",
+  "name": "button-name"
 }

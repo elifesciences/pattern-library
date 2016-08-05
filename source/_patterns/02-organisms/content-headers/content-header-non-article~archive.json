@@ -31,7 +31,8 @@
     "button": {
       "text": "Go",
       "type": "submit",
-      "classes": "button--outline button--extra-small"
+      "classes": "button--outline button--extra-small",
+      "name": "button"
     }
   },
   "backgroundImage": {

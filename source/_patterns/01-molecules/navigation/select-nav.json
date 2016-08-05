@@ -25,6 +25,7 @@
   "button": {
     "text": "Go",
     "type": "submit",
-    "classes": "button--default button--extra-small"
+    "classes": "button--default button--extra-small",
+    "name": "button-name"
   }
 }
