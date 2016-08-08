@@ -12,7 +12,7 @@ schema:
       type: integer
     comments:
       type: integer
-    cite_as:
+    citeAs:
       type: string
       minLength: 1
     doi:
@@ -21,5 +21,5 @@ schema:
     - cited
     - views
     - comments
-    - cite_as
+    - citeAs
     - doi
