@@ -15,7 +15,9 @@ const NOT_DONE = '🌑';
 const IGNORED_FILES = [
     'content-header-background-style-markup.mustache',
     'investor-logos.mustache',
-    'social-links.mustache'
+    'social-links.mustache',
+    'contact-form.mustache',
+    'image-grid.mustache'
 ];
 
 $atoms = (new Finder())
