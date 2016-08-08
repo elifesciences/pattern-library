@@ -1,3 +1,10 @@
 {
-  "class": "contextual-data__doi"
+  "views": 149,
+  "cited": 5,
+  "comments": 12,
+  "cite_as": "CITE AS: eLife 2015;4:e11760",
+  "doi": {
+    "class": "contextual-data__doi",
+    "uri": "#"
+  }
 }

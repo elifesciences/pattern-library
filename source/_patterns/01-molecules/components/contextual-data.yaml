@@ -1,0 +1,25 @@
+assets:
+  css:
+    - contextual-data.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    cited:
+      type: integer
+    views:
+      type: integer
+    comments:
+      type: integer
+    cite_as:
+      type: string
+      minLength: 1
+    doi:
+      $ref: ../../00-atoms/components/doi.yaml#/schema
+  required:
+    - cited
+    - views
+    - comments
+    - cite_as
+    - doi

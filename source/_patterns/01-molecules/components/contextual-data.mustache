@@ -1,18 +1,19 @@
-
 <div class="contextual-data">
   <dl class="contextual-data__list">
     <dt class="contextual-data__list_title">Cited</dt>
-    <dd class="contextual-data__list_desc">300</dd>
+    <dd class="contextual-data__list_desc">{{cited}}</dd>
 
     <dt class="contextual-data__list_title">Views</dt>
-    <dd class="contextual-data__list_desc">26</dd>
+    <dd class="contextual-data__list_desc">{{views}}</dd>
 
     <dt class="contextual-data__list_title">Comments</dt>
-    <dd class="contextual-data__list_desc">3</dd>
+    <dd class="contextual-data__list_desc">{{comments}}</dd>
   </dl>
 
   <div class="contextual-data__cite_wrapper">
-    <span class="contextual-data__cite">CITE AS: eLife 2015;4:e11760</span>
-    {{> atoms-doi }}
+    <span class="contextual-data__cite">{{cite_as}}</span>
+      {{#doi}}
+        {{> atoms-doi }}
+      {{/doi}}
   </div>
 </div>
