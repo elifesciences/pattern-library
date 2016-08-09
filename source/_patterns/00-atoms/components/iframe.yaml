@@ -6,15 +6,15 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    id:
-      type: string
-      minLength: 1
     src:
       type: string
       minLength: 1
     allowFullScreen:
       type: boolean
       default: false
+    paddingBottom:
+      type: number # (height/width)×100
+      minimum: 1
   required:
-    - id
     - src
+    - paddingBottom
