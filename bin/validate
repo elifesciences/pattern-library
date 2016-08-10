@@ -23,11 +23,17 @@ $jsonSchema = $refResolver->resolve('file://' . __DIR__ . '/../extras/json-schem
 $exit = 0;
 
 foreach ($finder as $file) {
-    $yaml = Yaml::parse($file->getContents());
-    $yaml = resolveJsonReferences($yaml, $file);
-    $yaml = Yaml::dump($yaml, 100);
-    $yaml = str_replace(' {  }', ' []', $yaml);
-    $yaml = Yaml::parse($yaml, true, false, true);
+    try {
+        $yaml = Yaml::parse($file->getContents());
+        $yaml = resolveJsonReferences($yaml, $file);
+        $yaml = Yaml::dump($yaml, 100);
+        $yaml = str_replace(' {  }', ' []', $yaml);
+        $yaml = Yaml::parse($yaml, true, false, true);
+    }
+    catch (\Exception $e) {
+        print $e->getMessage() . PHP_EOL;
+        exit;
+    }
 
     $validator->reset();
     $validator->check($yaml->schema, $jsonSchema);
@@ -82,6 +88,13 @@ function resolveJsonReferences(array $json, SplFileInfo $file)
                 $referenced = $file;
             } else {
                 $referenced = new SplFileInfo(dirname($file->getRealPath()) . '/' . $parts[0]);
+            }
+
+            if (false === $referenced->getRealPath()) {
+                throw new \Exception(
+                    PHP_EOL . "\e[33m \xf0\x9f\x92\xa5  Referenced file not found at: " . $parts[0] . ' with resource ' . $parts[1] . PHP_EOL . PHP_EOL .
+                    "\e[35m \xf0\x9f\x91\x89  Source: " . $file->getRealPath()
+                );
             }
 
             if (null === $json = json_decode(file_get_contents($referenced->getRealPath()), true)) {

@@ -1,7 +1,7 @@
 assets:
   css:
     - lead-paras.css
-    - $ref: ../../00-atoms/components/lead-para.yaml#/assets/css
+    - $ref: ../../00-atoms/components/date.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#

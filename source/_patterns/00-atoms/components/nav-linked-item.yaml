@@ -1,5 +1,6 @@
 assets:
-  css: []
+  css:
+    - $ref: ../../00-atoms/components/button.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#

@@ -1,5 +1,7 @@
 assets:
-  css: decision-letter-profile.css
+  css:
+    - decision-letter-profile.css
+    - $ref: ../../01-molecules/components/profile-snippet.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
