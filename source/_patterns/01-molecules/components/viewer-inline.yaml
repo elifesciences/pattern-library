@@ -2,6 +2,7 @@ assets:
   css:
     - viewer-inline.css
     - $ref: ../../00-atoms/components/button.yaml#/assets/css
+    - $ref: ../../00-atoms/components/captioned-image.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
