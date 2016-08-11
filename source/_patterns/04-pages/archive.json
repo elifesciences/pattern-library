@@ -403,7 +403,7 @@
     "type": "button",
     "classes": "button--default button--full",
     "text": "Load more",
-    "path": "#"
+    "name": "loadMore"
   },
 
   "secondaryTeasers": [
