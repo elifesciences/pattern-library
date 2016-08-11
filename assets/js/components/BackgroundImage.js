@@ -8,21 +8,45 @@ module.exports = class BackgroundImage {
       return;
     }
 
-    let semiTransparentBlack = 'linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))';
-
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
     this.sourceToUse = this.calcSourceToUse(this.$elm, utils.isHighDpr(this.window));
-    this.$elm.style.backgroundImage = this.setBackground(this.sourceToUse, semiTransparentBlack);
+    this.setDarkBackground();
+    this.setupEventHandlers(this.$elm,
+                            this.setLightBackground.bind(this),
+                            this.setDarkBackground.bind(this));
   }
 
-  setBackground(path, semiTransparentBlack) {
+  setupEventHandlers($elm, setLightBackground, setDarkBackground) {
+    if ($elm.getAttribute('data-invert-bgcol-on-hover') !== null) {
+      $elm.addEventListener('mouseenter', setLightBackground);
+      $elm.addEventListener('mouseleave', setDarkBackground);
+    }
+  }
+
+  setDarkBackground() {
+    if (!!this.sourceToUse) {
+      this.$elm.style.backgroundImage = this.getBackgroundImagesString(this.sourceToUse,
+                                 'linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))');
+      this.$elm.style.color = '#fff';
+    }
+  }
+
+  setLightBackground() {
+    if (!!this.sourceToUse) {
+      this.$elm.style.backgroundImage = this.getBackgroundImagesString(this.sourceToUse,
+                     'linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))');
+      this.$elm.style.color = '#212121';
+    }
+  }
+
+  getBackgroundImagesString(path, grandient) {
     if (!path || !path.length || path.length === 0) {
       return '';
     }
 
-    return semiTransparentBlack + ', url(' + path + ')';
+    return grandient + ', url(' + path + ')';
   }
 
   calcSourceToUse(sourceDefiner, isHighDpr) {
