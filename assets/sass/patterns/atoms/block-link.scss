@@ -16,19 +16,22 @@
 
   @media only all and (min-width: #{$bkpt-block-link}px) {
     $max-width-block-link: 400;
-    // 0.5773955774 is aspect ratio of the block link in wider view.
     $max-height-block-link: $max-width-block-link * 0.5773955774;
 
-    height: calc(100% * 0.5773955774);
+    // 0.5773955774 is aspect ratio of the block link in wider view.
+    // Not working. Because of flex?
+    height: calc(#{$max-height-block-link}px * 0.5773955774);
+    height: calc(0.5773955774 * 100%);
+    //max-height: #{$max-height-block-link}px;
     max-width: 400px;
     min-height: 80px;
     min-height: #{get-rem-from-px(80)}rem;
     width: 30vw;
   }
+
+  &:not([data-invert-bgcol-on-hover]):hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: $color-text;
+  }
 }
 
-// TODO: DO NOT MERGE!!! Imlpement this in JavaScript.
-.block-link:hover {
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.498039), rgba(255, 255, 255, 0.498039)), url("http://unsplash.it/1900/800?water") !important;
-  color: black;
-}
