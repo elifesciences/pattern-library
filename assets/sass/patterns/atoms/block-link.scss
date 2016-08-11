@@ -2,6 +2,8 @@
 
 .block-link {
   background-color: $color-primary;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: $color-text--reverse;
   display: flex;
   flex-direction: column;
@@ -15,17 +17,10 @@
   text-decoration: none;
 
   @media only all and (min-width: #{$bkpt-block-link}px) {
-    $max-width-block-link: 400;
-    $max-height-block-link: $max-width-block-link * 0.5773955774;
-
-    // 0.5773955774 is aspect ratio of the block link in wider view.
-    // Not working. Because of flex?
-    height: calc(#{$max-height-block-link}px * 0.5773955774);
-    height: calc(0.5773955774 * 100%);
-    //max-height: #{$max-height-block-link}px;
     max-width: 400px;
-    min-height: 80px;
-    min-height: #{get-rem-from-px(80)}rem;
+    // Each is half the desired height/width aspect ratio of 0.5773955774
+    padding-bottom: 28.86977887%;
+    padding-top: 28.86977887%;
     width: 30vw;
   }
 

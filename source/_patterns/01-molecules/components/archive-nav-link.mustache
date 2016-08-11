@@ -12,10 +12,10 @@
 
   <a href="{{url}}" class="archive-nav-link__link">
   <dl class="archive-nav-link__list">
-    <dt class="archive-nav-link__list_heading">{{label}}</dt>
-    {{#text}}
-      <dd class="archive-nav-link__list_item">{{.}}</dd>
-    {{/text}}
+    <dt class="archive-nav-link__sub_links_list_heading">{{label}}</dt>
+    {{#links}}
+      <dd class="archive-nav-link__sub_links_list_item"><a class="archive-nav-link__sub_link" href="{{url}}">{{{name}}}</a></dd>
+    {{/links}}
   </dl>
   </a>
 </div>

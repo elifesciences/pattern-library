@@ -1,5 +1,6 @@
 <ol class="grid-listing">
 
+  {{! scoping to blockLink.items as grid-listing can take more than one type of item, which will need a different partial. }}
   {{#blockLink.items}}
     <li class="grid-listing__item">
         {{> atoms-block-link}}

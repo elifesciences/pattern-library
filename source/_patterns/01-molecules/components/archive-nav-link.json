@@ -10,10 +10,22 @@
     }
   },
   "label": "Highlights this month:",
-  "text": [
-    "Exploring the ins and outs of breathing",
-    "The ancient origins of lubricated joints",
-    "Modulating protein quality control",
-    "How open science helps researchers succeed"
+  "links": [
+    {
+      "name": "Exploring the ins and outs of breathing",
+      "url": "#Exploring"
+    },
+    {
+      "name": "The ancient origins of lubricated joints",
+      "url": "#The"
+    },
+    {
+      "name": "Modulating protein quality control",
+      "url": "#Modulating"
+    },
+    {
+      "name": "How open science helps researchers succeed",
+      "url": "#How"
+    }
   ]
 }
