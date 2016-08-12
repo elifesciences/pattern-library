@@ -227,5 +227,45 @@
         }
       ]
     }
-  }
+  },
+  "mainMenuLinks": [
+    { "name": "Research categories", "url": "#" },
+    { "name": "Author guide", "url": "#" },
+    { "name": "Reviewer guide", "url": "#" },
+    { "name": "Cell Biology", "url": "#" },
+    { "name": "About", "url": "#" },
+    { "name": "Inside eLife", "url": "#" },
+    { "name": "Careers", "url": "#" },
+    { "name": "Labs", "url": "#" }
+  ],
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
+  ],
+
+  "year": 2016,
+  "assetsPath": "../../assets"
+
+
+
 }
