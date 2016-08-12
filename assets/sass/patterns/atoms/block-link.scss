@@ -5,19 +5,26 @@
   background-size: cover;
   background-repeat: no-repeat;
   color: $color-text--reverse;
-  display: flex;
-  flex-direction: column;
+  display: block;
   font-family: $font-secondary;
   font-weight: 700;
   @include height(80);
-  justify-content: center;
   @include margin(2, "bottom");
   @include padding(0 20);
+  @include padding(27, "top");
   text-align: center;
   text-decoration: none;
 
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+  }
+
   @media only all and (min-width: #{$bkpt-block-link}px) {
-    max-width: 400px;
+    max-width: 350px;
+    max-width: #{get-rem-from-px(350)}rem;
     // Each is half the desired height/width aspect ratio of 0.5773955774
     padding-bottom: 28.86977887%;
     padding-top: 28.86977887%;

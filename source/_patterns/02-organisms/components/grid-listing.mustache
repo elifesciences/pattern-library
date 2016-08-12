@@ -1,10 +1,17 @@
-<ol class="grid-listing">
+<div class="grid-listing">
 
-  {{! scoping to blockLink.items as grid-listing can take more than one type of item, which will need a different partial. }}
-  {{#blockLink.items}}
-    <li class="grid-listing__item">
-        {{> atoms-block-link}}
-    </li>
-  {{/blockLink.items}}
+  {{#heading}}
+    <h2 class="grid-listing__heading{{#heading.classes}} {{heading.classes}}{{/heading.classes}}">{{heading.text}}</h2>
+  {{/heading}}
 
-</ol>
+  <ol class="grid-listing__list">
+    {{! scoping to blockLink.items as grid-listing can take more than one type of item, which will need a different partial. }}
+    {{#blockLink.items}}
+      <li class="grid-listing__list_item">
+          {{> atoms-block-link}}
+      </li>
+    {{/blockLink.items}}
+
+  </ol>
+
+</div>
