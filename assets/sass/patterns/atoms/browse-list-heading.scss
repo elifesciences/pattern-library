@@ -1,0 +1,15 @@
+@import "../../definitions";
+
+.browse-list-heading {
+  text-align: center;
+  @include nospace();
+  @include padding(23, 0);
+}
+
+// TODO: Review this breakpoint now this has been made into its own pattern.
+@media only all and (min-width: #{$bkpt-block-link}px) {
+
+  .browse-list-heading {
+    @include padding(46, 0);
+  }
+}
