@@ -1,11 +1,5 @@
 @import "../../definitions";
 
-.grid-listing__heading--subjects {
-  text-align: center;
-  @include nospace();
-  @include padding(23, 0);
-}
-
 .grid-listing__list {
   list-style-type: none;
   @include nospace();
