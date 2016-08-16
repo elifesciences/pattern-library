@@ -3,19 +3,9 @@
   "title": "Title McTitleson",
   "contactDetails": "E: test.email@testemail.com",
 
-  "picture": {
-    "sources": [
-      {
-        "srcset": "http://placehold.it/120x120",
-        "type": "image/png"
-      }
-    ],
-    "pictureClasses": "profile-snippet__picture",
-    "fallback": {
-      "srcset": "http://placehold.it/90x90 24w",
-      "defaultPath": "http://placehold.it/90x90",
-      "altText": "Meaningful alt text here please.",
-      "classes": "profile-snippet__image"
-    }
+  "image": {
+    "srcset": "http://placehold.it/90x90 24w",
+    "defaultPath": "http://placehold.it/90x90",
+    "altText": "Meaningful alt text here please."
   }
 }
