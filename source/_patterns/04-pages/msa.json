@@ -545,39 +545,19 @@
       {
         "name": "Prabhat Jha",
         "title": "University of Toronto",
-        "picture": {
-          "sources": [
-            {
-              "srcset": "http://lorempixel.com/180/180/people/1 180w",
-              "type": "image/png"
-            }
-          ],
-          "pictureClasses": "profile-snippet__picture",
-          "fallback": {
-            "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/1 90w",
-            "defaultPath": "http://lorempixel.com/90/90/people/1",
-            "altText": "Meaningful alt text here please.",
-            "classes": "profile-snippet__image"
-          }
+        "image": {
+          "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/1 90w",
+          "defaultPath": "http://lorempixel.com/90/90/people/1",
+          "altText": "Meaningful alt text here please."
         }
       },
       {
         "name": "Richard Losick",
         "title": "Harvard University",
-        "picture": {
-          "sources": [
-            {
-              "srcset": "http://lorempixel.com/180/180/people/5 180w",
-              "type": "image/png"
-            }
-          ],
-          "pictureClasses": "profile-snippet__picture",
-          "fallback": {
-            "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/2 90w",
-            "defaultPath": "http://lorempixel.com/90/90/people/5",
-            "altText": "Meaningful alt text here please.",
-            "classes": "profile-snippet__image"
-          }
+        "image": {
+          "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/2 90w",
+          "defaultPath": "http://lorempixel.com/90/90/people/5",
+          "altText": "Meaningful alt text here please."
         }
       }
     ],

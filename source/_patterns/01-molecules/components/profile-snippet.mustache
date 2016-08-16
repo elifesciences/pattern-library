@@ -1,10 +1,12 @@
 <div class="profile-snippet">
   <div class="profile-snippet__container clearfix">
-    {{! TODO: Make this is a basic <img> with srcset, shouldn't be <picture> }}
-    {{# picture}}
-        {{> atoms-picture }}
-    {{/picture}}
-      
+    {{#image}}
+      <img src="{{defaultPath}}"
+           alt="{{altText}}"{{#srcset}}
+           srcset="{{srcset}}"{{/srcset}}
+           class="profile-snippet__image" />
+    {{/image}}
+
     <div class="profile-snippet__name">{{name}}</div>
     <div class="profile-snippet__title">{{title}}</div>
     {{#contactDetails}}

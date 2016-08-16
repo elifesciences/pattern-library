@@ -15,9 +15,21 @@ schema:
     contactDetails:
       type: string
       minLength: 1
-    picture:
-      $ref: ../../00-atoms/components/picture.yaml#/schema
+    image:
+      type: object
+      properties:
+        srcset:
+          type: string
+          pattern: ^((https)?[^ ]+ [1-9][0-9]*w)(, (https?)?[^ ]+ [1-9][0-9]*w)*$
+        defaultPath:
+          type: string
+          minLength: 1
+        altText:
+          type: string
+      required:
+        - srcset
+        - defaultPath
+        - altText
   required:
     - title
     - name
-    - picture

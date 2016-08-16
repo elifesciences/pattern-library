@@ -13,14 +13,10 @@
   float: none;
 }
 
-.profile-snippet__picture {
+.profile-snippet__image {
   display: block;
   float: right;
   width: 75px;
-}
-
-.profile-snippet__image {
-  display: block;
 }
 
 .profile-snippet__name {
@@ -50,14 +46,10 @@
 }
 
 @media only screen {
-  .profile-snippet__picture {
+  .profile-snippet__image {
     width: auto;
     @include margin($teaser-spacing-left, "left");
     @include margin($teaser-spacing-bottom, "bottom");
     max-width: #{get_rem_from_px(75)}rem;
-  }
-
-  .profile-snippet__image {
-    width: 100%;
   }
 }
