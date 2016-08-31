@@ -10,10 +10,16 @@
     @include article-with-background;
     background-repeat: no-repeat;
     background-size: cover;
+    border-bottom-width: 0;
 
     .date {
       color: $color-text--reverse;
     }
+
+    & + .content-header-divider {
+      display: none;
+    }
+
   }
   .content-header__title {
     @include margin(13, "bottom");
@@ -43,3 +49,4 @@
   }
 
 }
+

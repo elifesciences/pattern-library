@@ -7,6 +7,15 @@
   min-height: #{get-rem-from-px($content-header-min-height)}rem;
   position: relative;
 
+  &.content-header-nonarticle--background {
+    border-width: 0;
+
+    & + .content-header-divider {
+      display: none;
+    }
+
+  }
+
   .content-header__download_link {
     @include margin(5, "top");
     position: absolute;
@@ -57,6 +66,7 @@
   .content-header__bottom {
     bottom: 44px;
     @include label-content-typeg($color-text--reverse);
+    margin-left: -#{$content-header-side-padding}vw;
     position: absolute;
     text-align: center;
     width: 100%;
@@ -138,7 +148,7 @@
     .content-header__top {
       display: flex;
       justify-content: center;
-      margin-left: 0;
+      margin-left: -#{$content-header-side-padding}vw;
       width: 100%;
     }
 

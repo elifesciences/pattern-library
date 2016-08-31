@@ -10,3 +10,19 @@
   }
 
 }
+
+.content-header-article {
+
+  & .meta {
+    @include margin(30, "top");
+
+    &:after {
+      content: "";
+      display: block;
+      @include padding(12, "top");
+
+    }
+
+  }
+
+}

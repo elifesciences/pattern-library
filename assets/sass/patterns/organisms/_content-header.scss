@@ -4,11 +4,18 @@
 
 .content-header {
   color: $color-text;
-  max-width: 100%;
+  margin: 0 auto;
+  max-width: #{$max-site-width}px;
+  max-width: get-rem-from-px(#{$max-site-width})px;
+  @include padding(20, "left");
+  @include padding(20, "right");
+  padding-left: #{$content-header-side-padding}vw;
+  padding-right: #{$content-header-side-padding}vw;
   position: relative;
   text-align: center;
 }
 
+.content-header
 .content-header_top {
   text-align: center;
 }
@@ -222,3 +229,35 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
   }
 
 }
+
+.content-header-divider {
+  box-sizing: content-box;
+  max-width: #{$max-site-width}px;
+  max-width: get-rem-from-px(#{$max-site-width})px;
+  margin: 0 auto;
+  padding-left: #{$content-header-side-padding}vw;
+  padding-right: #{$content-header-side-padding}vw;
+
+  &:after {
+    border-bottom: 1px solid $color-text-dividers;
+    content: "";
+    display: block;
+    width: 100%;
+  }
+}
+
+//.content-header::after {
+//  border-bottom: 1px solid red;
+//  content: "";
+//  display: block;
+//  width: 100%;
+//}
+
+//@media only all and (min-width: #{$max-site-width-in-rem}rem) {
+//@media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}rem) {
+//  .content-header::after {
+//    $total-horizontal-padding: $content-header-side-padding * 2;
+//    width: calc(#{$max-site-width-in-rem}rem - #{$total-horizontal-padding}vw);
+//    margin-left: -#{$content-header-side-padding}vw;
+//  }
+//}

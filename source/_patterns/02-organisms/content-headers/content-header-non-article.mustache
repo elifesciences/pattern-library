@@ -1,11 +1,10 @@
 <header class="content-header
-      {{#rootClasses}}{{rootClasses}}{{/rootClasses}}"
-    {{#behaviour}} data-behaviour="{{behaviour}}"{{/behaviour}}
-    {{#backgroundImage}}
-          data-low-res-image-source="{{lowResImageSource}}"
-          data-high-res-image-source="{{highResImageSource}}"
-    {{/backgroundImage}}>
-
+    {{#rootClasses}}{{rootClasses}}{{/rootClasses}}"
+  {{#behaviour}} data-behaviour="{{behaviour}}"{{/behaviour}}
+  {{#backgroundImage}}
+        data-low-res-image-source="{{lowResImageSource}}"
+        data-high-res-image-source="{{highResImageSource}}"
+  {{/backgroundImage}}>
 
   {{#hasProfile}}
     <div class="content-header__top">
@@ -41,14 +40,14 @@
     <div class="content-header__bottom">
       <div class="content-header__cta">
         {{! Expect atoms-button and the form element to be mutually exclusive. }}
-      {{#button.text}}
-        {{#button}}
-          {{>atoms-button}}
-        {{/button}}
-      {{/button.text}}
-      {{#selectNav}}
-        {{> molecules-select-nav}}
-      {{/selectNav}}
+        {{#button.text}}
+          {{#button}}
+            {{>atoms-button}}
+          {{/button}}
+        {{/button.text}}
+        {{#selectNav}}
+          {{> molecules-select-nav}}
+        {{/selectNav}}
       </div>
       {{#meta}}
         {{> molecules-meta}}
@@ -56,5 +55,6 @@
     </div>
   {{/hasCtaOrMeta}}
 
-  <div class="content-header__bottom_line"></div>
 </header>
+
+<div class="content-header-divider"></div> <!-- The shame! -->
