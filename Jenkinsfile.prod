@@ -6,5 +6,5 @@ elifePipeline {
     stage 'Deploy'
     elifeDeploySlackNotification "pattern-library", "prod"
     elifeGitMoveToBranch commit, 'master'
-    elifeSwitchRevision 'pattern-library--prod', commit
+    builderDeployRevision 'pattern-library--prod', commit
 }
