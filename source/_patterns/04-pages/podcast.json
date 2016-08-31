@@ -426,50 +426,14 @@
     }],
 
   "mainMenuLinks": [
-    {
-      "title": "Subjects",
-      "titleId": "mainMenuSubjects",
-      "items": [
-        { "name": "Biochemistry", "url": "#" },
-        { "name": "Biophysics and Structural Biology", "url": "#" },
-        { "name": "Cancer Biology", "url": "#" },
-        { "name": "Cell Biology", "url": "#" },
-        { "name": "Computational and Systems Biology", "url": "#" },
-        { "name": "Developmental Biology and Stem Cells", "url": "#" },
-        { "name": "Ecology", "url": "#" },
-        { "name": "Epidemiology and Global Health", "url": "#" },
-        { "name": "Genes and Chromosomes", "url": "#" },
-        { "name": "Genomics and Evolutionary Biology", "url": "#" },
-        { "name": "Human Biology and Medicine", "url": "#" },
-        { "name": "Immunology", "url": "#" },
-        { "name": "Microbiology and Infectious Disease", "url": "#" },
-        { "name": "Neuroscience", "url": "#" },
-        { "name": "Plant Biology", "url": "#" }
-      ]
-    },
-    {
-      "title": "eLife",
-      "titleId": "mainMenuElife",
-      "items": [
-        { "name": "How to publish", "url": "#" },
-        { "name": "About", "url": "#" },
-        { "name": "Who we work with", "url": "#" },
-        { "name": "Alerts", "url": "#" },
-        { "name": "Contact", "url": "#" },
-        { "name": "Terms and policy", "url": "#" }
-      ]
-    },
-    {
-      "title": "Resources",
-      "titleId": "mainMenuResources",
-      "items": [
-        { "name": "Inside eLife", "url": "#" },
-        { "name": "Monthly archive", "url": "#" },
-        { "name": "Labs", "url": "#" },
-        { "name": "For the press", "url": "#" },
-        { "name": "Brand", "url": "#" }
-      ]
-    }
+    { "name": "Research categories", "url": "#" },
+    { "name": "Author guide", "url": "#" },
+    { "name": "Reviewer guide", "url": "#" },
+    { "name": "Cell Biology", "url": "#" },
+    { "name": "About", "url": "#" },
+    { "name": "Inside eLife", "url": "#" },
+    { "name": "Careers", "url": "#" },
+    { "name": "Labs", "url": "#" }
   ],
 
   "emailCta": {

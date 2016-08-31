@@ -1,0 +1,192 @@
+{
+  "archiveNavLink":{
+    "heading": "Archives",
+    "items": [
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "Developmental Biology and Stem Cells",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "Developmental Biology and Stem Cells",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "Developmental Biology and Stem Cells",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },  {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "Developmental Biology and Stem Cells",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      }
+    ,  {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "Developmental Biology and Stem Cells",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      }
+    ,  {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "Developmental Biology and Stem Cells",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      }
+    ]
+  }
+}

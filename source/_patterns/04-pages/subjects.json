@@ -1,0 +1,271 @@
+{
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "path": "#mainMenu",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "nav-primary__menu_icon",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "nav-primary__search_icon",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Labs",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Submit my research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--button",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        },
+        {
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--notification",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+              "classes": "nav-secondary__notification-icon",
+              "altText": "Notification icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
+              }
+            ]
+          }
+        },
+        {
+          "text": "Profile",
+          "classes": "nav-secondary__item nav-secondary__item--profile",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
+              "classes": "nav-secondary__profile-icon",
+              "altText": "Profile icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    "compactForm": {
+      "formAction" : "/search",
+      "formId": "searchBox",
+      "formMethod": "GET",
+      "label": "Search by keyword or author",
+      "inputType": "search",
+      "inputName": "search",
+      "inputValue": "",
+      "inputPlaceholder": "Search by keyword or author",
+      "ctaText": "Search"
+    },
+
+    "subjectFilter": {
+      "name": "subject_filter",
+      "value": "cell_biology",
+      "text": "Cell biology"
+    }
+
+  },
+  "subjectTeasers": {
+    "heading":{
+      "text": "Browse our research categories",
+      "classes": "grid-listing__heading--subjects"
+    },
+
+    "blockLink": {
+      "classes": "",
+      "items": [
+        {
+          "url": "#",
+          "text": "Biochemistry",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/400/230?random",
+            "highResImageSource": "http://unsplash.it/800/460?random"
+          }
+        },
+        {
+          "url": "#",
+          "text": "Biophysics and Structural Biology",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/400/230?random",
+            "highResImageSource": "http://unsplash.it/800/460?random"
+          }
+        },
+        {
+          "url": "#",
+          "text": "Cancer Biology",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/400/230?random",
+            "highResImageSource": "http://unsplash.it/800/460?random"
+          }
+        },
+        {
+          "url": "#",
+          "text": "Cell Biology",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/400/230?random",
+            "highResImageSource": "http://unsplash.it/800/460?random"
+          }
+        },
+        {
+          "url": "#",
+          "text": "Computational and Systems Biology",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/400/230?random",
+            "highResImageSource": "http://unsplash.it/800/460?random"
+          }
+        },
+        {
+          "url": "#",
+          "text": "Developmental Biology and Stem Cells",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/400/230?random",
+            "highResImageSource": "http://unsplash.it/800/460?random"
+          }
+        },
+        {
+          "url": "#",
+          "text": "Ecology",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/400/230?random",
+            "highResImageSource": "http://unsplash.it/800/460?random"
+          }
+        }
+      ]
+    }
+  },
+  "mainMenuLinks": [
+    { "name": "Research categories", "url": "#" },
+    { "name": "Author guide", "url": "#" },
+    { "name": "Reviewer guide", "url": "#" },
+    { "name": "Cell Biology", "url": "#" },
+    { "name": "About", "url": "#" },
+    { "name": "Inside eLife", "url": "#" },
+    { "name": "Careers", "url": "#" },
+    { "name": "Labs", "url": "#" }
+  ],
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
+  ],
+
+  "year": 2016,
+  "assetsPath": "../../assets"
+
+
+
+}

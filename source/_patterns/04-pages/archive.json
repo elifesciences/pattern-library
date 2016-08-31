@@ -156,16 +156,40 @@
 
   "contentHeader": {
     "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
-    "behaviour": "BackgroundImage",
-    "title": "Microbiology and infectious disease",
-    "titleClass": "content-header__title--medium",
+    "behaviour": "ContentHeaderSelectNav BackgroundImage",
+    "title": "Archive",
+    "titleClass": "content-header__title--large",
     "hasCtaOrMeta": true,
-    "button": {
-      "text": "Subscribe",
-      "url": "#",
-      "classes": "button--outline button--small"
+    "selectNav": {
+      "route": "/path/to/archive",
+      "select": {
+        "id": "archiveYear",
+        "label": {
+          "labelText": "Archive year",
+          "for": "archiveYear",
+          "isVisuallyHidden": true
+        },
+        "options": [
+          {
+            "value": "2016",
+            "displayValue": "2016"
+          },
+          {
+            "value": "2015",
+            "displayValue": "2015"
+          },
+          {
+            "value": "2014",
+            "displayValue": "2014"
+          }
+        ]
+      },
+      "button": {
+        "text": "Go",
+        "type": "submit",
+        "classes": "button--outline button--extra-small"
+      }
     },
-
     "backgroundImage": {
       "lowResImageSource": "http://unsplash.it/950/400",
       "highResImageSource": "http://unsplash.it/1900/800"
@@ -178,10 +202,8 @@
     ]
   },
 
-  "mainTeasers": [
+  "archives": [
     {
-      
-      "heading": "Latest articles",
       "items": [
         {
           "contextLabel": {
@@ -223,7 +245,7 @@
         },
 
         {
-          "contextLabel": {
+          "subjects": {
             "list": [
               {
                 "name": "Epidemiology and Global Health",
@@ -259,7 +281,7 @@
 
         {
 
-          "contextLabel": {
+          "subjects": {
             "list": [
               {
                 "name": "Genomics and evolutionary biology",
@@ -294,7 +316,7 @@
         },
 
         {
-          "contextLabel": {
+          "subjects": {
             "links": [
               {
                 "name": "Epidemiology and Global Health",
@@ -336,8 +358,9 @@
         },
 
         {
+          "hasSubjects": "true",
 
-          "contextLabel": {
+          "subjects": {
             "list": [
               {
                 "name": "Ecology",
@@ -372,20 +395,19 @@
           }
         }
 
-      ],
-      "loadMore": {
-        "type": "button",
-        "classes": "button--default button--full",
-        "text": "Load more",
-        "path": "#",
-        "name": "button"
-      }
+      ]
     }
   ],
 
+  "loadMore": {
+    "type": "button",
+    "classes": "button--default button--full",
+    "text": "Load more",
+    "name": "loadMore"
+  },
+
   "secondaryTeasers": [
     {
-      
       "heading": "Highlighted content",
       "items": [
         {
@@ -497,7 +519,7 @@
 
         {
           "rootClasses": "teaser--secondary",
-          "contextLabel": {
+          "subjects": {
             "list": [
               {
                 "name": "Biophysics and Structural Biology",
@@ -545,26 +567,47 @@
       {
         "name": "Prabhat Jha",
         "title": "University of Toronto",
-        "image": {
-          "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/1 90w",
-          "defaultPath": "http://lorempixel.com/90/90/people/1",
-          "altText": "Meaningful alt text here please."
+        "picture": {
+          "sources": [
+            {
+              "srcset": "http://lorempixel.com/180/180/people/1 180w",
+              "type": "image/png"
+            }
+          ],
+          "pictureClasses": "profile-snippet__picture",
+          "fallback": {
+            "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/1 90w",
+            "defaultPath": "http://lorempixel.com/90/90/people/1",
+            "altText": "Meaningful alt text here please.",
+            "classes": "profile-snippet__image"
+          }
         }
       },
       {
         "name": "Richard Losick",
         "title": "Harvard University",
-        "image": {
-          "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/2 90w",
-          "defaultPath": "http://lorempixel.com/90/90/people/5",
-          "altText": "Meaningful alt text here please."
+        "picture": {
+          "sources": [
+            {
+              "srcset": "http://lorempixel.com/180/180/people/5 180w",
+              "type": "image/png"
+            }
+          ],
+          "pictureClasses": "profile-snippet__picture",
+          "fallback": {
+            "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/2 90w",
+            "defaultPath": "http://lorempixel.com/90/90/people/5",
+            "altText": "Meaningful alt text here please.",
+            "classes": "profile-snippet__image"
+          }
         }
       }
-    ],
-    "seeMoreLink": {
-      "url": "#",
-      "name": "See more editors for Microbiology and Infectious Disease"
-    }
+    ]
+  },
+
+  "editorsMoreLink": {
+    "url": "#",
+    "name": "editors for Microbiology and Infectious Disease"
   },
 
   "mainMenuLinks": [

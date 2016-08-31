@@ -1,0 +1,38 @@
+
+<div class="grid-listing">
+
+  {{#blockLink.heading}}
+    {{> atoms-browse-list-heading}}
+  {{/blockLink.heading}}
+
+  {{#archiveNavLink.heading}}
+    {{> atoms-list-heading}}
+  {{/archiveNavLink.heading}}
+
+  {{#teaser.heading}}
+    {{> atoms-list-heading}}
+  {{/teaser.heading}}
+
+  <ol class="grid-listing__list">
+    {{! scoping to blockLink.items as grid-listing can take more than one type of item, which will need a different partial. }}
+    {{#blockLink.items}}
+      <li class="grid-listing__list_item">
+          {{> atoms-block-link}}
+      </li>
+    {{/blockLink.items}}
+
+    {{#archiveNavLink.items}}
+      <li class="grid-listing__list_item">
+        {{> molecules-archive-nav-link}}
+      </li>
+    {{/archiveNavLink.items}}
+
+    {{#teaser.items}}
+      <li class="grid-listing__list_item">
+        {{> molecules-archive-nav-link}}
+      </li>
+    {{/teaser.items}}
+
+  </ol>
+
+</div>

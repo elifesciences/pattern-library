@@ -1,0 +1,36 @@
+@import "../../definitions";
+
+.grid-listing__list {
+  list-style-type: none;
+  @include nospace();
+  width: 100%;
+}
+
+// Grid listing with block-links.
+@media only all and (min-width: #{$bkpt-block-link}px) {
+
+  .grid-listing__heading--subjects {
+    @include padding(46, 0);
+  }
+
+  .grid-listing__list {
+    max-width: 1114px;
+    max-width: #{get-rem-from-px($max-site-width)}rem;
+
+    .block-link {
+      width: 27vw;
+    }
+
+  }
+
+  .grid-listing__list_item {
+    float: left;
+    @include padding(30, "bottom");
+    @include padding(30, "right");
+  }
+
+  .grid-listing__list_item:nth-child(3n) {
+    padding-right: 0;
+  }
+
+}
