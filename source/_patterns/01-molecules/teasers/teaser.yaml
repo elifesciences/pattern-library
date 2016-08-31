@@ -95,9 +95,6 @@ schema:
               type: boolean
           required:
             - vor
-        downloadSrc:
-          type: string
-          minLength: 1
       required:
         - meta
 
