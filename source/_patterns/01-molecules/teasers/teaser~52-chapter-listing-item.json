@@ -12,7 +12,7 @@
   "title": "Catch me if you can",
   "url": null,
   "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et quis nostrud.",
-
+  "startTime": 33,
   "footer": {
     "meta": {
       "text": "Research article by Ogunjimi et al.",

@@ -4,6 +4,8 @@ module.exports = class AudioPlayer {
 
   // Passing window and document separately allows for independent mocking of window in order
   // to test feature support fallbacks etc.
+  // Sample podcast episode data from the API at
+//https://github.com/elifesciences/api-raml/blob/master/src/samples/podcast-episode/v1/complete.json
   constructor($elm, _window = window, doc = document) {
     if (!$elm) {
       console.warn('No element provided');
@@ -17,22 +19,25 @@ module.exports = class AudioPlayer {
 
     console.log('Initialising Audio Player...');
 
-    this.uniqueId = utils.uniqueIds.get('audio', doc);
     this.$elm = $elm;
-    this.$elm.id = this.uniqueId;
     this.$audioElement = this.$elm.querySelector('audio');
-    this.$playButton = AudioPlayer.buildPlayButton(this);
-    this.$icon = this.$playButton.querySelector('.audio-player__toggle_play_icon');
-    this.$possibleProgressTrack = AudioPlayer.buildProgressIndicator(this);
-    this.$progressBar = this.$possibleProgressTrack.querySelector('[class*="progress_bar"]');
-    this.$timeIndicators = AudioPlayer.buildTimeIndicators(this);
-    this.$currentTime = this.$timeIndicators.querySelector('[class*="current_time"]');
-    this.$duration = this.$timeIndicators.querySelector('[class*="duration"]');
-
     if (!this.$audioElement) {
       console.warn('No audio element found');
       return;
     }
+
+    this.uniqueId = utils.uniqueIds.get('audio', doc);
+    this.$elm.id = this.uniqueId;
+    this.$playButton = AudioPlayer.buildPlayButton(this);
+    this.$icon = this.$playButton.querySelector('.audio-player__toggle_play_icon');
+
+    // $title must be prepared before buildProgressIndicator is called
+    this.$title = this.prepare$title(this.$elm.querySelector('.audio-player__header'), doc);
+    this.$progressTrack = AudioPlayer.buildProgressIndicator(this);
+    this.$progressBar = this.$progressTrack.querySelector('[class*="progress_bar"]');
+    this.$timeIndicators = AudioPlayer.buildTimeIndicators(this);
+    this.$currentTime = this.$timeIndicators.querySelector('[class*="current_time"]');
+    this.$duration = this.$timeIndicators.querySelector('[class*="duration"]');
 
     // state
     this.duration = null;
@@ -40,18 +45,32 @@ module.exports = class AudioPlayer {
 
     // setup
     this.$elm.classList.add('audio-player--js');
+    this.usingMetadata = false;  // set to true if loads
+    this.loadMetadata(this.$elm.dataset.episodeNumber);
 
     // events
     this.$playButton.addEventListener('click', () => {
       this.togglePlay(this.$audioElement, this.$playButton);
     }, false);
-
     this.$audioElement.addEventListener('loadedmetadata', () => {
       this.duration = this.$audioElement.duration;
       this.$duration.innerHTML = AudioPlayer.secondsToMinutes(this.duration);
     });
-
     this.$audioElement.addEventListener('timeupdate', this.update.bind(this));
+  }
+
+  prepare$title(parent, doc) {
+    let span = doc.createElement('span');
+    try {
+      span.innerHTML = parent.innerHTML;
+    } catch (e) {
+      return;
+    }
+
+    span.classList.add('audio-player__title');
+    parent.innerHTML = '';
+    parent.appendChild(span);
+    return span;
   }
 
   /**
@@ -99,10 +118,20 @@ module.exports = class AudioPlayer {
    * Update the progress bar and elapsed time indicator based on track's current time.
    */
   update() {
-    let pc = (this.$audioElement.currentTime / this.duration) * 100;
-    let currentTime2Dis = AudioPlayer.secondsToMinutes(Math.floor(this.$audioElement.currentTime));
+    let currentTime = Math.floor(this.$audioElement.currentTime);
+    let pc = (currentTime / this.duration) * 100;
+    let currentTime2Dis = AudioPlayer.secondsToMinutes(currentTime);
     this.$progressBar.style.width = `${pc}%`;
     this.$currentTime.innerHTML = currentTime2Dis;
+
+    if (this.usingMetadata) {
+      let chapterNumberOnLastUpdate = this.getCurrentChapterMetadata().number || 0;
+      this.setCurrentChapterMetadata(this.getChapterMetadataAtTime(currentTime,
+                                                                   this.chapterMetadata));
+      if (this.getCurrentChapterMetadata().number !== chapterNumberOnLastUpdate) {
+        this.setTitle(this.episodeTitle, this.getCurrentChapterMetadata().title);
+      }
+    }
 
     if (this.$audioElement.ended) {
       AudioPlayer.updateIconState(this.$icon, 'play');
@@ -134,7 +163,7 @@ module.exports = class AudioPlayer {
    */
   handleSeek(e, player) {
     var newSeekPosition = parseInt(e.offsetX, 10);
-    var availableWidth = player.$possibleProgressTrack.clientWidth;
+    var availableWidth = player.$progressTrack.clientWidth;
     var durationProportionToSeek = (newSeekPosition / parseInt(availableWidth, 10));
     this.seek(durationProportionToSeek * player.duration, player.$audioElement);
   }
@@ -219,5 +248,115 @@ module.exports = class AudioPlayer {
     }
 
     return `../../assets/img/icons/audio-${iconName}.svg`;
+  }
+
+  /**
+   * Set the title based on both episode and chapter titles
+   * @param episodeTitle
+   * @param chapterTitle
+   */
+  setTitle(episodeTitle, chapterTitle) {
+    this.title = episodeTitle;
+    if (chapterTitle) {
+      this.title += ': ' + chapterTitle;
+    }
+
+    this.$title.innerHTML = this.title;
+  }
+
+  getCurrentChapterMetadata() {
+    return this.currentChapterMetadata;
+  }
+
+  setCurrentChapterMetadata(metadata) {
+    this.currentChapterMetadata = metadata;
+  }
+
+  /**
+   * Returns a chapter's title and number, based on the playback position
+   * @param time
+   * @param {Array} chapterMetadata
+   * An array of objects that must contain as a minimum
+   * @returns {*}
+   */
+  getChapterMetadataAtTime(time, chapterMetadata) {
+    if (!chapterMetadata) {
+      return '';
+    }
+
+    let chapterTitle = '';
+    let chapterNumber = 0;
+    chapterMetadata.forEach(function (chapter, i, chapters) {
+      let chapterStartTime = parseInt(chapter.time, 10);
+      let nextChapterStartTime = i < chapters.length - 1 ? chapters[i + 1].time : null;
+      if (time >= chapterStartTime) {
+        if (!nextChapterStartTime || time < nextChapterStartTime) {
+          chapterTitle = chapter.title;
+          chapterNumber = chapter.number;
+        }
+      }
+    });
+
+    return {
+      title: chapterTitle,
+      number: chapterNumber
+    };
+  }
+
+  /**
+   * Sets episode title and respective chapter information from metadata
+   * @param metadata
+   */
+  processMetadata(metadata) {
+    this.episodeTitle = 'Episode ' + metadata.number;
+    this.setTitle(this.episodeTitle);
+
+    this.chapterMetadata = this.prepareChapterMetadata(metadata);
+    this.currentChapterMetadata = { number: 0, title: '' };
+  }
+
+  /**
+   * Returns array of objects describing respective chapter information
+   * @param metadata
+   * @returns {Array} of objects containing time, number and title properties
+   */
+  prepareChapterMetadata(metadata) {
+    let chapterMetadata = [];
+    metadata.chapters.forEach((chapter) => {
+      chapterMetadata.push(
+        {
+          time: chapter.time,
+          number: chapter.number,
+          title: chapter.number + '. ' + chapter.title
+        }
+      );
+    });
+
+    return chapterMetadata;
+  }
+
+  /**
+   * Loads the metadata for the requested episode
+   * @param episodeNumber
+   */
+  loadMetadata(episodeNumber) {
+    if (!episodeNumber || isNaN(episodeNumber) || episodeNumber < 0) {
+      return;
+    }
+
+    // TODO: Update url with real url scheme for podcast episodes
+    let url = '../../assets/dummy-data/dummy-data-episode-' + episodeNumber + '.json';
+
+    utils.getUrl(url).then((response) => {
+      try {
+        this.processMetadata(JSON.parse(response));
+        this.usingMetadata = true;
+      } catch (e) {
+        console.log(e);
+        this.usingMetadata = false;
+      }
+    }, () => {
+      this.usingMetadata = false;
+    });
   }
 };

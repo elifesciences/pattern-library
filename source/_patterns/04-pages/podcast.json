@@ -156,20 +156,11 @@
    "contentHeader": {
      "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
      "behaviour": "BackgroundImage",
-     "title": "Multicellular life, potato blight and Hepatitis B",
+     "title": "Tinnitus and Mouse Ultrasound",
 
      "strapline": "Episode 21",
 
      "titleClass": "content-header__title--small",
-
-     "hasCtaOrMeta": "true",
-     "meta": {
-       "type": "Podcast",
-       "date": {
-         "forHuman": "Feb 29, 2016",
-         "forMachine": "2016-02-29"
-       }
-     },
 
      "download": {
        "sources": [
@@ -201,17 +192,18 @@
   },
 
   "audioPlayer": {
-    "title": "Multicellular life, potato blight and Hepatitis B",
+    "title": "Episode 21",
+    "episodeNumber": 21,
     "sources":[
-      { "src": "http://nakeddiscovery.com/scripts/mp3s/audio/eLife_Podcast_13.06.mp3", "mimeType": { "forMachine": "audio/mp3", "forHuman": "mp3" } }
+      { "src": "http://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3", "mimeType": { "forMachine": "audio/mp3", "forHuman": "mp3" } }
     ]
   },
 
-  "downloadLink": "http://nakeddiscovery.com/scripts/mp3s/audio/eLife_Podcast_13.06.mp3",
+  "downloadLink": "http://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
 
   "leadParas": {
     "paras": [
-      {"text": "How multicellular life began, museum specimens surrender the identity of the bug behind the Irish potato famine, the Hepatitis B and D virus receptor discovered, why fog clouds driver judgement and where nucleosomes came from."}
+      {"text": "Tinnitus, hyperacusis, salamanders, chemical harpoons and the role of ultrasound and song in the mating rituals of mice and flies go under the microcope in this edition of the eLife Podcast."}
     ]
   },
 

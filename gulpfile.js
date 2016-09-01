@@ -250,6 +250,13 @@ gulp.task('test', ['browserify-tests', 'js'], () => {
     .pipe(reload());
 });
 
+gulp.task('copyDummyData', () => {
+  if (environment === 'production') {
+    return gutil.noop();
+  }
+  return gulp.src('assets/dummy-data/*.json')
+             .pipe(gulp.dest('source/assets/dummy-data/'));
+});
 
 // Watchers
 
@@ -269,9 +276,13 @@ gulp.task('js:watch', () => {
   gulp.watch('assets/js/**/*', ['js']);
 });
 
+gulp.task('dummyData:watch', () => {
+  gulp.watch('assets/dummy-data/**/*.json', ['copyDummyData']);
+});
+
 // Task sets
-gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'/*, 'tests:watch'*/]);
-gulp.task('default', ['generateStyles', 'img', 'fonts', 'js']);
+gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch', 'dummyData:watch'/*, 'tests:watch'*/]);
+gulp.task('default', ['generateStyles', 'img', 'fonts', 'js', 'copyDummyData']);
 
 /******************************************************************************
  * Used for local testing
@@ -286,7 +297,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/backgroundimage.html'});
+    browserSync({proxy: 'localhost:8080', startPath: 'test/audioplayer.html'});
   } else {
     return gutil.noop;
   }

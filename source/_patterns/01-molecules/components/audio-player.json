@@ -1,6 +1,7 @@
 {
-  "title": "Meet Homo naledi",
+  "episodeNumber": 30,
+  "title": "Episode 30",
   "sources":[
-    { "src": "http://elife-static-web-host-test.s3.amazonaws.com/elife2/64_Sundays.mp3", "mimeType": { "forMachine": "audio/mp3", "forHuman": "mp3" } }
+    { "src": "https://nakeddiscovery.com/scripts/mp3s/audio/eLife_Podcast_16.06.mp3", "mimeType": { "forMachine": "audio/mp3", "forHuman": "mp3" } }
   ]
 }

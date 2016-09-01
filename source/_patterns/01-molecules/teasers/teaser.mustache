@@ -1,4 +1,5 @@
-<div class="teaser{{#rootClasses}} {{rootClasses}}{{/rootClasses}}">
+{{! startTime used for chapter-listing-item }}
+<div class="teaser{{#rootClasses}} {{rootClasses}}{{/rootClasses}}"{{#startTime}} data-start-time="{{startTime}}" data-behaviour="ChapterListingItem"{{/startTime}}>
 
   {{! These are usually links to major subject areas, see teaser-main-article, but could be unlinked
       text expressing a relationship, e.g. 'Built upon by' in teaser-secondary-related-item}}
