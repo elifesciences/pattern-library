@@ -102,9 +102,9 @@ module.exports = class AudioPlayer {
    */
   togglePlay($audioElement, $togglePlayButton) {
     if (this.isPlaying) {
-      this.pause($audioElement, $togglePlayButton)
+      this.pause($audioElement, $togglePlayButton);
     } else {
-      this.play($audioElement, $togglePlayButton)
+      this.play($audioElement, $togglePlayButton);
     }
   }
 
@@ -170,6 +170,7 @@ module.exports = class AudioPlayer {
     var shouldPlay = false;
     try {
       hash = e.newURL.substring(e.newURL.indexOf('#') + 1);
+
       // Should play when chapter changed within the page, but not autoplay on page load :-)
       shouldPlay = true;
     } catch (e) {

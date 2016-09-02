@@ -16,6 +16,7 @@ module.exports = class ChapterListingItem {
     if (!this.startTime || isNaN(this.startTime) || this.startTime < 0) {
       return;
     }
+
     this.createLink(doc, this.$elm, this.startTime);
   }
 
@@ -41,10 +42,6 @@ module.exports = class ChapterListingItem {
     $link.classList.add('teaser__header_text_link');
     $title.innerHTML = '';
     $title.appendChild($link);
-    // $title.parentNode.replaceChild($link, $title);
   }
 
-  createLinkHandler(document, $link) {
-
-  }
 };
