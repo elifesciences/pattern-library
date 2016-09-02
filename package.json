@@ -6,6 +6,7 @@
     "browserify": "^13.0.0",
     "chai": "^3.5.0",
     "del": "^2.2.0",
+    "es6-promise": "^3.2.1",
     "event-stream": "^3.3.2",
     "express": "^4.13.4",
     "glob": "^7.0.3",
