@@ -12,7 +12,8 @@ module.exports = class AudioPlayer {
       return;
     }
 
-    if (!_window.HTMLAudioElement) {
+    this.window = _window;
+    if (!this.window.HTMLAudioElement) {
       console.warn('Audio element not supported');
       return;
     }
@@ -57,6 +58,8 @@ module.exports = class AudioPlayer {
       this.$duration.innerHTML = AudioPlayer.secondsToMinutes(this.duration);
     });
     this.$audioElement.addEventListener('timeupdate', this.update.bind(this));
+    this.window.addEventListener('load', this.seekNewTime.bind(this));
+    this.window.addEventListener('hashchange', this.seekNewTime.bind(this));
   }
 
   prepare$title(parent, doc) {
@@ -153,6 +156,20 @@ module.exports = class AudioPlayer {
 
     $icon.src = AudioPlayer.getIconPath((state));
     $icon.alt = state;
+  }
+
+  seekNewTime(e) {
+    var hash;
+    try {
+      hash = e.newURL.substring(e.newURL.indexOf('#') + 1);
+    } catch (e) {
+      // newURL only available on hashchange event, but load event may also invoke this handler
+      hash = this.window.location.hash.substring(1);
+    }
+
+    if (!isNaN(hash) && hash >= 0) {
+      this.seek(hash, this.$audioElement);
+    }
   }
 
   /**

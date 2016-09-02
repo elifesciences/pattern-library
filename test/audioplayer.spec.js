@@ -17,7 +17,8 @@ describe('An AudioPlayer Component', function () {
 
   beforeEach(function () {
     windowMock = {
-      HTMLAudioElement: true
+      HTMLAudioElement: true,
+      addEventListener: function () {}
     };
     player = new AudioPlayer($elm, windowMock);
     $mediaMock = {
@@ -189,7 +190,38 @@ describe('An AudioPlayer Component', function () {
     let returnValue;
 
     beforeEach(function () {
-      let sampleMetadata = { "number": 30, "title": "July 2016", "impactStatement": "In this episode of the eLife podcast we hear about drug production, early career researchers, honeybees, human migrations and pain.", "published": "2016-07-01T08:30:15+00:00", "image": { "alt": "", "sizes": { "2:1": { "900": "https://placehold.it/900x450", "1800": "https://placehold.it/1800x900"}, "16:9": { "250": "https://placehold.it/250x141", "500": "https://placehold.it/500x281"}, "1:1": { "70": "https://placehold.it/70x70", "140": "https://placehold.it/140x140"} } }, "mp3": "https://nakeddiscovery.com/scripts/mp3s/audio/eLife_Podcast_16.06.mp3", "subjects": [ "biochemistry", "ecology"], "chapters": [ { "number": 1, "title": "Green drug factories", "time": 0, "impactStatement": "A new way to produce a malaria drug using tobacco plants", "content": [ { "type": "research-article", "status": "vor", "id": "13664", "version": 1, "doi": "10.7554/eLife.13664", "title": "A new synthetic biology approach allows transfer of an entire metabolic pathway from a medicinal plant to a biomass crop", "published": "2016-06-14T07:00:15Z", "volume": 5, "elocationId": "e13664", "pdf": "https://elifesciences.org/content/5/e13664.pdf", "subjects": [ "biochemistry", "plant-biology"], "impactStatement": "A combination of chloroplast transformation with nuclear transformation and large-scale metabolic screening of supertransformed plant lines has enabled an entire biochemical pathway to be transferred from a medicinal plant to a high-biomass crop.", "image": { "alt": "", "sizes": { "2:1": { "900": "https://placehold.it/900x450", "1800": "https://placehold.it/1800x900"}, "16:9": { "250": "https://placehold.it/250x141", "500": "https://placehold.it/500x281"}, "1:1": { "70": "https://placehold.it/70x70", "140": "https://placehold.it/140x140"} } } }] }, { "number": 2, "title": "Lost generation", "time": 300, "impactStatement": "Is science at risk of losing talented researchers to other professions?", "content": [ { "type": "feature", "status": "vor", "id": "17393", "version": 1, "doi": "10.7554/eLife.17393", "title": "Point of view: Avoiding a lost generation of scientists", "published": "2016-05-13T14:30:00Z", "volume": 5, "elocationId": "e17393", "pdf": "https://elifesciences.org/content/5/17393.pdf", "impactStatement": "By sharing their experiences, early-career scientists can help to make the case for increased government funding for researchers.", "image": { "alt": "", "sizes": { "2:1": { "900": "https://placehold.it/900x450", "1800": "https://placehold.it/1800x900"}, "16:9": { "250": "https://placehold.it/250x141", "500": "https://placehold.it/500x281"}, "1:1": { "70": "https://placehold.it/70x70", "140": "https://placehold.it/140x140"} } } }, { "type": "collection", "id": "1", "title": "Tropical disease", "updated": "2015-09-16T11:19:26+00:00", "image": { "alt": "", "sizes": { "2:1": { "900": "https://placehold.it/900x450", "1800": "https://placehold.it/1800x900"}, "16:9": { "250": "https://placehold.it/250x141", "500": "https://placehold.it/500x281"}, "1:1": { "70": "https://placehold.it/70x70", "140": "https://placehold.it/140x140"} } }, "selectedCurator": { "id": "pjha", "type": "senior-editor", "name": { "preferred": "Prabhat Jha", "index": "Jha, Prabhat"} } } ] } ] };
+      let sampleMetadata = {
+        "number": 21,
+        "title": "June 2015",
+        "chapters": [
+          {
+            "number": 1,
+            "title": "What causes tinnitus?",
+            "time": 36,
+          },
+          {
+            "number": 2,
+            "title": "How salamanders avoid senescence",
+            "time": 386
+          },
+          {
+            "number": 3,
+            "title": "Mouse ultrasound",
+            "time": 700
+          },
+          {
+            "number": 4,
+            "title": "Drosophila duet: mating flies harmonise",
+            "time": 1010
+          },
+          {
+            "number": 5,
+            "title": "Chemical Harpoons: bacterial anchors",
+            "time": 1307
+          }
+
+        ]
+      };
 
       returnValue = player.prepareChapterMetadata(sampleMetadata);
     });
