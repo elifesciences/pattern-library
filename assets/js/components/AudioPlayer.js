@@ -102,19 +102,26 @@ module.exports = class AudioPlayer {
    */
   togglePlay($audioElement, $togglePlayButton) {
     if (this.isPlaying) {
-      $audioElement.pause();
-      AudioPlayer.updateIconState(this.$icon, 'play');
-      $togglePlayButton.classList.add('audio-player__toggle_play--playable');
-      $togglePlayButton.classList.remove('audio-player__toggle_play--pauseable');
-      this.isPlaying = false;
-
+      this.pause($audioElement, $togglePlayButton)
     } else {
-      $audioElement.play();
-      AudioPlayer.updateIconState(this.$icon, 'pause');
-      $togglePlayButton.classList.add('audio-player__toggle_play--pauseable');
-      $togglePlayButton.classList.remove('audio-player__toggle_play--playable');
-      this.isPlaying = true;
+      this.play($audioElement, $togglePlayButton)
     }
+  }
+
+  play($audioElement, $togglePlayButton) {
+    $audioElement.play();
+    AudioPlayer.updateIconState(this.$icon, 'pause');
+    $togglePlayButton.classList.add('audio-player__toggle_play--pauseable');
+    $togglePlayButton.classList.remove('audio-player__toggle_play--playable');
+    this.isPlaying = true;
+  }
+
+  pause ($audioElement, $togglePlayButton) {
+    $audioElement.pause();
+    AudioPlayer.updateIconState(this.$icon, 'play');
+    $togglePlayButton.classList.add('audio-player__toggle_play--playable');
+    $togglePlayButton.classList.remove('audio-player__toggle_play--pauseable');
+    this.isPlaying = false;
   }
 
   /**
@@ -160,8 +167,11 @@ module.exports = class AudioPlayer {
 
   seekNewTime(e) {
     var hash;
+    var shouldPlay = false;
     try {
       hash = e.newURL.substring(e.newURL.indexOf('#') + 1);
+      // Should play when chapter changed within the page, but not autoplay on page load :-)
+      shouldPlay = true;
     } catch (e) {
       // newURL only available on hashchange event, but load event may also invoke this handler
       hash = this.window.location.hash.substring(1);
@@ -169,6 +179,9 @@ module.exports = class AudioPlayer {
 
     if (!isNaN(hash) && hash >= 0) {
       this.seek(hash, this.$audioElement);
+      if (!this.isPlaying && shouldPlay) {
+        this.play(this.$audioElement, this.$playButton);
+      }
     }
   }
 
