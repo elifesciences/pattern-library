@@ -39,7 +39,9 @@ $viewport-width-when-site-hits-max-width-in-px: 1245;
 $viewport-width-when-site-hits-max-width-in-rem: get-rem-from-px(1245);
 
 // Heights
-$content-header-min-height: 300;
+//$content-header-min-height: 300;
+$content-header-height--narrow-screen: 210;
+$content-header-height--medium-screen: 270;
 
 // Spacing
 $teaser-spacing-top: 12;
@@ -50,5 +52,8 @@ $listing-list-spacing: 32;
 $content-header-side-padding: 6;//vw
 
 // Breakpoints
-// TODO: Adjust $bkpt-content-header as desired, this is just a first stab.
-$bkpt-content-header: 560;
+$bkpt-content-header: 768;
+$bkpt-content-header--medium-width: 768;
+// TODO: Review these breakpoints
+$bkpt-content-header--wide: 1100;
+$bkpt-content-header--extra-wide: 1500;

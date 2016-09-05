@@ -3,8 +3,8 @@
 
 .content-header-nonarticle {
 
-  min-height: #{$content-header-min-height}px;
-  min-height: #{get-rem-from-px($content-header-min-height)}rem;
+  height: #{$content-header-height--narrow-screen}px;
+  height: #{get-rem-from-px($content-header-height--narrow-screen)}rem;
   position: relative;
 
   &.content-header-nonarticle--background {
@@ -30,26 +30,89 @@
    */
   .content-header__inner {
     display: table;
-    min-height: #{$content-header-min-height}px;
-    min-height: #{get-rem-from-px($content-header-min-height)}rem;
+    min-height: #{$content-header-height--narrow-screen}px;
+    min-height: #{get-rem-from-px($content-header-height--narrow-screen)}rem;
     // Takes account of space required for bottom button & meta info, and
     // top curators etc in some versions.
     // each separation (22) * # separated els (2) + combined height of els (11px + 2rem) +
     // gap between bottom of inner & first bottom element (44px).
-    @include padding(131 0);
-    padding-bottom: calc((22px * 2) + 11px + 2rem + 44px);
-    padding-top: calc((22px * 2) + 11px + 2rem + 44px);
+    // ORIGINAL:
+    //@include padding(131 0);
+    //padding-bottom: calc((22px * 2) + 11px + 2rem + 44px);
+    //padding-top: calc((22px * 2) + 11px + 2rem + 44px);
+
+    @include padding(55 0 75);
+    //padding-bottom: calc((22px * 2) + 11px + 2rem + 44px);
+    //padding-top: calc((22px * 2) + 11px + 2rem + 44px);
     text-align: center;
     width: 100%;
   }
 
   .content-header__title {
     margin: 0;
+    padding-bottom: 0;
     width: 100%;
+  }
+
+  // Alternative styles for the title. The class to apply for any particular
+  // instance of this pattern depends on the number of characters in the title,
+  // and should be set by the server accordingly.
+  .content-header__title--large {
+    @include title-size("large", "narrow");
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include title-size("large", "medium-width");
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      @include title-size("large", "wide");
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      @include title-size("large", "wide");
+    }
+  }
+
+  .content-header__title--medium {
+    @include title-size("medium", "narrow");
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include title-size("medium", "medium-width");
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      @include title-size("medium", "wide");
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      @include title-size("medium", "wide");
+    }
+  }
+
+  .content-header__title--small {
+    @include title-size("small", "narrow");
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include title-size("small", "medium-width");
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      @include title-size("small", "wide");
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      @include title-size("small", "wide");
+    }
+  }
+
+  .content-header__title--extra-small {
+    @include title-size("x-small", "narrow");
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include title-size("x-small", "medium-width");
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      @include title-size("x-small", "wide");
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      @include title-size("x-small", "wide");
+    }
+    @include margin(15 0 8);
   }
 
   .content-header__strapline {
     @include subtitle-typeg();
+    @include visuallyhidden();
   }
 
   // They may take our <hgroup>, but they'll never take our .hgroup!
@@ -72,9 +135,14 @@
     width: 100%;
   }
 
+  .content-header__cta {
+    @include margin(-10, "bottom");
+  }
+
   .meta {
     color: $color-text--reverse;
-    margin-bottom: -22px;
+    // -46px is baseline text on the bottom edge of the content header
+    margin-bottom: -31px;
     margin-top: 22px;
   }
 
@@ -160,6 +228,11 @@
       padding-bottom: 0;
     }
 
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    height: #{$content-header-height--medium-screen}px;
+    height: #{get-rem-from-px($content-header-height--medium-screen)}rem;
   }
 
 }

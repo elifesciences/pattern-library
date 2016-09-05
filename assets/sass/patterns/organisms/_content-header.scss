@@ -124,51 +124,6 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
   content: "";
 }
 
-@media only all and (max-width: #{get-rem-from-px($bkpt-content-header)}em) {
-
-  .content-header__institution_list {
-    @include visuallyhidden();
-  }
-
-}
-
-@media only all and (min-width: #{get-rem-from-px($bkpt-content-header)}em) {
-
-  .content-header__institution_list {
-    @include margin(23, "top");
-  }
-
-  .content-header__author--last-non-excess:after {
-    content: "";
-  }
-
-  .content-header__item_toggle {
-    color: $color-text-secondary;
-    display: inline;
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .content-header__item_toggle--author {
-    @include author-typeg();
-    font-weight: normal;
-  }
-
-  .content-header__item_toggle--institution {
-    @include institute-typeg();
-    font-weight: normal;
-  }
-
-  .content-header__item_toggle:hover {
-    cursor: pointer;
-  }
-
-  .content-header__institution--last-non-excess:after {
-    content: "";
-  }
-
-}
-
 .meta {
   @include label-content-typeg();
 }
@@ -184,51 +139,6 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
 
 }
 
-// Alternative styles for the title. The class to apply for any particular
-// instance of this pattern depends on the number of characters in the title,
-// and should be set by the server accordingly.
-// Exact content-length triggeers tbc.
-.content-header__title--large {
-  @include title-size("large");
-}
-
-.content-header__title--medium {
-  @include title-size("medium");
-}
-
-.content-header__title--small {
-  @include title-size("small");
-}
-
-.content-header__title--extra-small {
-  @include title-size("x-small");
-  @include margin(15 0 8);
-}
-
-@media only all and (min-width: #{get-rem-from-px($bkpt-content-header)}em) {
-
-  .content-header__title--large {
-    @include title-size("large", "wide");
-  }
-
-  .content-header__title--medium {
-    @include title-size("medium", "wide");
-  }
-
-  .content-header__title--small {
-    @include title-size("small", "wide");
-  }
-
-  .content-header__title--extra-small {
-    @include title-size("x-small", "wide");
-    @include margin(15 0 8);
-  }
-
-  .content-header__author_list {
-    @include margin(8, "bottom");
-  }
-
-}
 
 .content-header-divider {
   box-sizing: content-box;

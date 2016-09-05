@@ -13,6 +13,63 @@
 
 .content-header-article {
 
+  // Alternative styles for the title. The class to apply for any particular
+  // instance of this pattern depends on the number of characters in the title,
+  // and should be set by the server accordingly.
+  .content-header__title--large {
+    @include title-size("large", "narrow", true);
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include title-size("large", "medium-width", true);
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      @include title-size("large", "wide", true);
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      @include title-size("large", "wide", true);
+    }
+  }
+
+  .content-header__title--medium {
+    @include title-size("medium", "narrow", true);
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include title-size("medium", "medium-width", true);
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      @include title-size("medium", "wide", true);
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      @include title-size("medium", "wide", true);
+    }
+  }
+
+  .content-header__title--small {
+    @include title-size("small", "narrow", true);
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include title-size("small", "medium-width", true);
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      @include title-size("small", "wide", true);
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      @include title-size("small", "wide", true);
+    }
+  }
+
+  .content-header__title--extra-small {
+    @include title-size("x-small", "narrow", true);
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include title-size("x-small", "medium-width", true);
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      @include title-size("x-small", "wide", true);
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      @include title-size("x-small", "wide", true);
+    }
+    @include margin(15 0 8);
+  }
+
+
   & .meta {
     @include margin(30, "top");
 
@@ -21,6 +78,49 @@
       display: block;
       @include padding(12, "top");
 
+    }
+
+  }
+
+  // TODO: Review this breakpoint
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header)}em) {
+
+    .content-header__institution_list {
+      @include margin(23, "top");
+      @include visuallyhidden();
+    }
+
+    .content-header__author_list {
+      @include margin(8, "bottom");
+    }
+
+    .content-header__author--last-non-excess:after {
+      content: "";
+    }
+
+    .content-header__item_toggle {
+      color: $color-text-secondary;
+      display: inline;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .content-header__item_toggle--author {
+      @include author-typeg();
+      font-weight: normal;
+    }
+
+    .content-header__item_toggle--institution {
+      @include institute-typeg();
+      font-weight: normal;
+    }
+
+    .content-header__item_toggle:hover {
+      cursor: pointer;
+    }
+
+    .content-header__institution--last-non-excess:after {
+      content: "";
     }
 
   }
