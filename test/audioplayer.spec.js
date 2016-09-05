@@ -331,4 +331,50 @@ describe('An AudioPlayer Component', function () {
     });
   });
 
+  it('possesses a changeChapter method', function () {
+    expect(typeof player.changeChapter).to.equal('function');
+  });
+
+  describe('the changeChapter() method', function () {
+    var testData;
+
+    beforeEach(function () {
+      testData = {
+        number: 3,
+        title: 'I am chapter 3',
+        $elmMock: {
+          dispatchEvent: spy()
+        }
+      };
+      spy(player, "setTitle");
+      player.changeChapter(testData.number, testData.title, testData.$elmMock);
+
+    });
+
+    afterEach(function () {
+      player.setTitle.restore();
+    });
+
+    it('updates the title with the new chapter title', function () {
+      expect(player.setTitle.calledOnce).to.be.true;
+      expect(player.setTitle.args[0][1]).to.equal(testData.title);
+    });
+
+    it('dispatches a chapterChanged event on the supplied element',
+       function () {
+         expect(testData.$elmMock.dispatchEvent.calledOnce).to.be.true;
+         let args = testData.$elmMock.dispatchEvent.args[0];
+         expect(args.length).to.equal(1);
+         expect(args[0].type).to.equal('chapterChanged');
+       });
+
+    it('the chapterChanged event details the new chapter number',
+       function () {
+         expect(testData.$elmMock.dispatchEvent.calledOnce).to.be.true;
+         // let args = testData.$elmMock.dispatchEvent.args[0];
+         expect(testData.$elmMock.dispatchEvent.args[0][0].detail).to.equal(testData.number);
+       });
+
+    });
+
 });

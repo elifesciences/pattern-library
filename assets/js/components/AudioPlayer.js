@@ -135,11 +135,11 @@ module.exports = class AudioPlayer {
     this.$currentTime.innerHTML = currentTime2Dis;
 
     if (this.usingMetadata) {
-      let chapterNumberOnLastUpdate = this.getCurrentChapterMetadata().number || 0;
+      let chapterNumberOnLastUpdate = this.getCurrentChapterNumber();
       this.setCurrentChapterMetadata(this.getChapterMetadataAtTime(currentTime,
                                                                    this.chapterMetadata));
       if (this.getCurrentChapterMetadata().number !== chapterNumberOnLastUpdate) {
-        this.setTitle(this.episodeTitle, this.getCurrentChapterMetadata().title);
+        this.changeChapter(this.getCurrentChapterNumber(), this.getCurrentChapterMetadata().title, this.$elm);
       }
     }
 
@@ -147,6 +147,27 @@ module.exports = class AudioPlayer {
       AudioPlayer.updateIconState(this.$icon, 'play');
       this.isPlaying = false;
     }
+  }
+
+  /**
+   * Updates player title with chapter number & name, and dispatches chapterChanged event.
+   *
+   * @param {int} number New chapter number Used as value of detail property of
+   * @param {String} title new chapter title
+   * @param {HTMLElement} $elm Element from which to dispatch the event
+   */
+  changeChapter(number, title, $elm) {
+    this.setTitle(this.episodeTitle, title);
+    let chapterChanged;
+    try {
+      chapterChanged = new CustomEvent('chapterChanged', { 'detail': number });
+    } catch (e) {
+      // CustomEvent not supported, do it the old fashioned way
+      chapterChanged = document.createEvent('chapterChanged');
+      chapterChanged.initCustomEvent('chapterChanged', true, true, { 'detail': number });
+    }
+
+    $elm.dispatchEvent(chapterChanged);
   }
 
   /**
@@ -301,6 +322,10 @@ module.exports = class AudioPlayer {
 
   setCurrentChapterMetadata(metadata) {
     this.currentChapterMetadata = metadata;
+  }
+
+  getCurrentChapterNumber() {
+    return this.getCurrentChapterMetadata().number || 0;
   }
 
   /**
