@@ -25,7 +25,7 @@
       @include title-size("large", "wide", true);
     }
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-      @include title-size("large", "wide", true);
+      @include title-size("large", "extra-wide", true);
     }
   }
 
@@ -38,7 +38,7 @@
       @include title-size("medium", "wide", true);
     }
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-      @include title-size("medium", "wide", true);
+      @include title-size("medium", "extra-wide", true);
     }
   }
 
@@ -51,7 +51,7 @@
       @include title-size("small", "wide", true);
     }
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-      @include title-size("small", "wide", true);
+      @include title-size("small", "extra-wide", true);
     }
   }
 
@@ -64,7 +64,7 @@
       @include title-size("x-small", "wide", true);
     }
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-      @include title-size("x-small", "wide", true);
+      @include title-size("x-small", "extra-wide", true);
     }
     @include margin(15 0 8);
   }
@@ -83,7 +83,7 @@
   }
 
   // TODO: Review this breakpoint
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
 
     .content-header__institution_list {
       @include margin(23, "top");

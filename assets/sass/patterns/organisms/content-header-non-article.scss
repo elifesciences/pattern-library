@@ -3,8 +3,7 @@
 
 .content-header-nonarticle {
 
-  height: #{$content-header-height--narrow-screen}px;
-  height: #{get-rem-from-px($content-header-height--narrow-screen)}rem;
+  @include height($content-header-height--narrow-screen);
   position: relative;
 
   &.content-header-nonarticle--background {
@@ -46,12 +45,28 @@
     //padding-top: calc((22px * 2) + 11px + 2rem + 44px);
     text-align: center;
     width: 100%;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include padding(82, "top");
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      @include padding(100, "top");
+    }
   }
 
   .content-header__title {
     margin: 0;
     padding-bottom: 0;
     width: 100%;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include padding(5, "bottom");
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      @include padding(7, "bottom");
+    }
   }
 
   // Alternative styles for the title. The class to apply for any particular
@@ -66,7 +81,7 @@
       @include title-size("large", "wide");
     }
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-      @include title-size("large", "wide");
+      @include title-size("large", "extra-wide");
     }
   }
 
@@ -79,7 +94,7 @@
       @include title-size("medium", "wide");
     }
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-      @include title-size("medium", "wide");
+      @include title-size("medium", "extra-wide");
     }
   }
 
@@ -92,7 +107,7 @@
       @include title-size("small", "wide");
     }
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-      @include title-size("small", "wide");
+      @include title-size("small", "extra-wide");
     }
   }
 
@@ -105,7 +120,7 @@
       @include title-size("x-small", "wide");
     }
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-      @include title-size("x-small", "wide");
+      @include title-size("x-small", "extra-wide");
     }
     @include margin(15 0 8);
   }
@@ -113,6 +128,10 @@
   .content-header__strapline {
     @include subtitle-typeg();
     @include visuallyhidden();
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include unhidden();
+    }
   }
 
   // They may take our <hgroup>, but they'll never take our .hgroup!
@@ -133,6 +152,11 @@
     position: absolute;
     text-align: center;
     width: 100%;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      @include margin($content-header-side-padding--extra-wide * -1, "left");
+      //margin-left: -#{$content-header-side-padding}vw;
+    }
   }
 
   .content-header__cta {
@@ -231,10 +255,16 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    height: #{$content-header-height--medium-screen}px;
-    height: #{get-rem-from-px($content-header-height--medium-screen)}rem;
+    @include height($content-header-height--medium-screen);
   }
 
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+    @include height($content-header-height--wide-screen);
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+    @include height($content-header-height--extra-wide-screen);
+  }
 }
 
 .content-header-nonarticle--background {

@@ -1,20 +1,17 @@
 // HELPERS
 
 @function get-title-font-size($title-size, $screen-width, $is-article:false) {
-  // ORIGINAL:
-  // default sized x-small is the same size as standard h1 size.
-  //$default-title-sizes: ("large": 60, "medium": 42, "small": 30, "x-small":24);
-  //$wide-title-sizes: ("large": 72, "medium": 54, "small": 44, "x-small": 36);
-  // TODO: add actual sizes
+  // TODO: large, medium, small and x-small
   $title-sizes-article--narrow-screen: ("large": 37, "medium": 29, "small": 30, "x-small":24);
   $title-sizes-article--medium-width-screen: ("large": 37, "medium": 37, "small": 30, "x-small":24);
   $title-sizes-article--wide-screen: ("large": 37, "medium": 29, "small": 30, "x-small":24);
   $title-sizes-article--extra-wide-screen: ("large": 37, "medium": 29, "small": 30, "x-small":24);
 
+  // TODO: small and x-small
   $title-sizes-non-article--narrow-screen: ("large": 37, "medium": 29, "small": 30, "x-small":24);
   $title-sizes-non-article--medium-width-screen: ("large": 37, "medium": 37, "small": 30, "x-small":24);
-  $title-sizes-non-article--wide-screen: ("large": 37, "medium": 29, "small": 30, "x-small":24);
-  $title-sizes-non-article--extra-wide-screen: ("large": 37, "medium": 29, "small": 30, "x-small":24);
+  $title-sizes-non-article--wide-screen: ("large": 41, "medium": 41, "small": 30, "x-small":24);
+  $title-sizes-non-article--extra-wide-screen: ("large": 52, "medium": 52, "small": 30, "x-small":24);
 
   @if $is-article != false {
     @if $screen-width == "narrow" {
@@ -26,7 +23,10 @@
     @if $screen-width == "wide" {
       @return map-get($title-sizes-article--wide-screen, $title-size);
     }
-    @return map-get($title-sizes-article--extra-wide-screen, $title-size);
+    @if $screen-width == "extra-wide" {
+      @return map-get($title-sizes-article--extra-wide-screen, $title-size);
+    }
+    @return 16;
 
   } @else {
     @if $screen-width == "narrow" {
@@ -38,7 +38,10 @@
     @if $screen-width == "wide" {
       @return map-get($title-sizes-non-article--wide-screen, $title-size);
     }
-    @return map-get($title-sizes-non-article--extra-wide-screen, $title-size);
+    @if $screen-width == "extra-wide" {
+      @return map-get($title-sizes-non-article--extra-wide-screen, $title-size);
+    }
+    @return 16;
   }
 }
 

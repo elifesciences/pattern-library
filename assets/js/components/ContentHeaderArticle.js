@@ -14,8 +14,8 @@ module.exports = class ContentHeaderArticle {
     this.$elm = $elm;
     this.$elm.classList.add('content-header-article--js');
 
-    // Should track SASS variable $bkpt-content-header.
-    this.breakpointInPx = 560;
+    // Should track SASS variable $bkpt-content-header--medium-width.
+    this.breakpointInPx = 768;
     this.currentView = this.calcCurrentView(this.breakpointInPx);
 
     this.authors = $elm.querySelectorAll('.content-header__author_list_item');

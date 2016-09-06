@@ -13,6 +13,11 @@
   padding-right: #{$content-header-side-padding}vw;
   position: relative;
   text-align: center;
+
+ @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+   @include padding(30, "left");
+   @include padding(30, "right");
+ }
 }
 
 .content-header
@@ -155,19 +160,3 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
     width: 100%;
   }
 }
-
-//.content-header::after {
-//  border-bottom: 1px solid red;
-//  content: "";
-//  display: block;
-//  width: 100%;
-//}
-
-//@media only all and (min-width: #{$max-site-width-in-rem}rem) {
-//@media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}rem) {
-//  .content-header::after {
-//    $total-horizontal-padding: $content-header-side-padding * 2;
-//    width: calc(#{$max-site-width-in-rem}rem - #{$total-horizontal-padding}vw);
-//    margin-left: -#{$content-header-side-padding}vw;
-//  }
-//}
