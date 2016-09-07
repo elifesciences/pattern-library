@@ -69,7 +69,6 @@
     @include margin(15 0 8);
   }
 
-
   & .meta {
     @include margin(30, "top");
 
@@ -82,12 +81,17 @@
 
   }
 
+  @media only all and (max-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    .content-header__institution_list {
+      @include visuallyhidden();
+    }
+  }
+
   // TODO: Review this breakpoint
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
 
     .content-header__institution_list {
       @include margin(23, "top");
-      @include visuallyhidden();
     }
 
     .content-header__author_list {

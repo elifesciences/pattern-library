@@ -14,10 +14,10 @@
   position: relative;
   text-align: center;
 
- @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-   @include padding(30, "left");
-   @include padding(30, "right");
- }
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+    @include padding(30, "left");
+    @include padding(30, "right");
+  }
 }
 
 .content-header
@@ -143,7 +143,6 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
   }
 
 }
-
 
 .content-header-divider {
   box-sizing: content-box;

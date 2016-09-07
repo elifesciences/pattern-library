@@ -31,18 +31,8 @@
     display: table;
     min-height: #{$content-header-height--narrow-screen}px;
     min-height: #{get-rem-from-px($content-header-height--narrow-screen)}rem;
-    // Takes account of space required for bottom button & meta info, and
-    // top curators etc in some versions.
-    // each separation (22) * # separated els (2) + combined height of els (11px + 2rem) +
-    // gap between bottom of inner & first bottom element (44px).
-    // ORIGINAL:
-    //@include padding(131 0);
-    //padding-bottom: calc((22px * 2) + 11px + 2rem + 44px);
-    //padding-top: calc((22px * 2) + 11px + 2rem + 44px);
-
+    // TODO: Now height is set explicitly, consider whether padding-bottom is still necessary
     @include padding(55 0 75);
-    //padding-bottom: calc((22px * 2) + 11px + 2rem + 44px);
-    //padding-top: calc((22px * 2) + 11px + 2rem + 44px);
     text-align: center;
     width: 100%;
 
@@ -165,7 +155,6 @@
 
   .meta {
     color: $color-text--reverse;
-    // -46px is baseline text on the bottom edge of the content header
     margin-bottom: -31px;
     margin-top: 22px;
   }
@@ -177,6 +166,7 @@
 
   .content-header__top {
     display: table;
+    // TODO: Consider if this is still necessary:
     // Used to remove its height from the centering calculation
     position: absolute;
     text-align: center;
@@ -242,6 +232,10 @@
       justify-content: center;
       margin-left: -#{$content-header-side-padding}vw;
       width: 100%;
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+        margin-left: -#{$content-header-side-padding--extra-wide}px;
+      }
     }
 
     .content-header__top_label {
@@ -255,7 +249,7 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    @include height($content-header-height--medium-screen);
+    @include height($content-header-height--medium-width-screen);
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {

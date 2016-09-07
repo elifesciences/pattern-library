@@ -40,7 +40,7 @@ $viewport-width-when-site-hits-max-width-in-rem: get-rem-from-px(1245);
 
 // Heights
 $content-header-height--narrow-screen: 210;
-$content-header-height--medium-screen: 270;
+$content-header-height--medium-width-screen: 270;
 $content-header-height--wide-screen: 270;
 $content-header-height--extra-wide-screen: 325;
 
@@ -50,7 +50,7 @@ $teaser-spacing-bottom: 12;
 $teaser-spacing-left: 16;
 $listing-list-spacing: 32;
 
-$content-header-side-padding: 6;//vw
+$content-header-side-padding: 6; //vw
 $content-header-side-padding--extra-wide: 30; //px
 
 // Breakpoints
