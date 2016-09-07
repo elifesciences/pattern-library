@@ -156,12 +156,26 @@
    "contentHeader": {
      "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
      "behaviour": "BackgroundImage",
-     "title": "June 2015",
-
-     "strapline": "Episode 21",
-
+     "title": "Episode 21",
+     "strapline": "In this episode of the eLife podcast we hear about tinnitus and hyperacusis, salamanders, chemical harpoons, and the role of ultrasound and song in the mating rituals of mice and flies.",
      "titleClass": "content-header__title--small",
-
+     "hasCtaOrMeta": true,
+     "button": {
+       "text": "Subscribe",
+       "path": "#subscribe",
+       "classes": "button--outline button--small"
+     },
+     "meta": {
+       "url": "#",
+       "text": "Podcast",
+       "date": {
+         "forHuman": {
+           "month": "Jun",
+           "year": 2016
+         },
+         "forMachine": "2016-06"
+       }
+     },
      "download": {
        "sources": [
          {
@@ -200,12 +214,6 @@
   },
 
   "downloadLink": "http://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
-
-  "leadParas": {
-    "paras": [
-      {"text": "Tinnitus, hyperacusis, salamanders, chemical harpoons and the role of ultrasound and song in the mating rituals of mice and flies go under the microscope in this edition of the eLife Podcast."}
-    ]
-  },
 
   "mainTeasers": [
     {
@@ -287,7 +295,7 @@
   ],
 
   "boilerplate": {
-    "body": "<p>The eLife Podcast is produced for eLife by The Naked Scientists</p><p>Contact us at podcast@elifesciences.org</p>"
+    "body": "<p>The eLife Podcast is produced for eLife by The Naked Scientists</p><p>Contact us at podcast@elifesciences.org</p><div id=\"subscribe\">Subscribe info here.</div>"
   },
 
   "relatedTeasers": [
@@ -433,6 +441,7 @@
       "title": "eLife",
       "titleId": "mainMenuElife",
       "items": [
+        { "name": "How to publish", "url": "#" },
         { "name": "How to publish", "url": "#" },
         { "name": "About", "url": "#" },
         { "name": "Who we work with", "url": "#" },
