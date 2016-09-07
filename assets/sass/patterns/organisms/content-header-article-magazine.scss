@@ -10,10 +10,16 @@
     @include article-with-background;
     background-repeat: no-repeat;
     background-size: cover;
+    border-bottom-width: 0;
 
     .date {
       color: $color-text--reverse;
     }
+
+    & + .content-header-divider {
+      display: none;
+    }
+
   }
   .content-header__title {
     @include margin(13, "bottom");
@@ -31,7 +37,8 @@
     @include margin(10, "top");
   }
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header)}em) {
+  // TODO: Review this breakpoint
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
 
     .content-header__title {
       @include margin(65, "top");
@@ -43,3 +50,4 @@
   }
 
 }
+

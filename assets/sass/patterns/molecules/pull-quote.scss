@@ -11,7 +11,7 @@
     margin: 0;
     padding: 0;
 
-    @media only all and (min-width: #{$bkpt-content-header}px) {
+    @media only all and (min-width: #{$bkpt-pull-quote}px) {
       @include pullquote-typeg(true);
     }
 

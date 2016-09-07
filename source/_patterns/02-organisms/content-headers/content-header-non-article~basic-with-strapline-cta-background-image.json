@@ -1,9 +1,9 @@
 {
   "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
   "behaviour": "BackgroundImage",
-  "title": "About <i>eLife</i>",
+  "title": "Ecology",
   "titleClass": "content-header__title--large",
-  "strapline": "<i>eLife</i> publishes outstanding research in the life sciences and biomedicine, from the most fundamental and theoretical work, through to translational, applied, and clinical research.",
+  "strapline": "eLife publishes research spanning chemical biology and enzymology to metabolism and membrane proteins.",
   "hasCtaOrMeta": true,
   "button": {
     "text": "Subscribe",
@@ -11,7 +11,7 @@
     "classes": "button--outline button--small"
   },
   "backgroundImage": {
-    "lowResImageSource": "http://unsplash.it/950/400",
-    "highResImageSource": "http://unsplash.it/1900/800"
+    "lowResImageSource": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg",
+    "highResImageSource": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg"
   }
 }

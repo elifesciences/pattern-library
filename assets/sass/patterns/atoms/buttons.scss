@@ -49,7 +49,7 @@
 
 .button--small {
   @include font-size(11);
-  @include padding(9 24 8);
+  @include padding(9 8 8);
 }
 
 .button--extra-small {

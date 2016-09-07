@@ -3,22 +3,6 @@
 
 // Contains research article-specific overrides.
 
-.content-header-article-research {
-
-  .meta {
-    @include margin(30, "top");
-  }
-
-  .meta:after {
-    border-bottom: 1px solid $color-text-dividers;
-    content: "";
-    display: block;
-    @include padding(12, "top");
-
-  }
-
-}
-
 .content-header-article-research--readmore {
   border-top: 1px solid $color-text-dividers;
 
@@ -31,4 +15,13 @@
     content: "";
   }
 
+  & + .content-header-divider {
+    display: none;
+  }
+
+}
+
+/* needs greater specificity than content-header-article-research--readmore */
+.content-header.content-header-article-research--readmore {
+  border-bottom-width: 0;
 }

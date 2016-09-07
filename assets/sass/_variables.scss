@@ -34,9 +34,15 @@ $line-height-primary: 1.3;
 
 // Widths
 $max-site-width: 1114;
+$max-site-width-in-rem: get-rem-from-px(1114);
+$viewport-width-when-site-hits-max-width-in-px: 1245;
+$viewport-width-when-site-hits-max-width-in-rem: get-rem-from-px(1245);
 
 // Heights
-$content-header-min-height: 300;
+$content-header-height--narrow-screen: 210;
+$content-header-height--medium-width-screen: 270;
+$content-header-height--wide-screen: 270;
+$content-header-height--extra-wide-screen: 325;
 
 // Spacing
 $teaser-spacing-top: 12;
@@ -44,6 +50,14 @@ $teaser-spacing-bottom: 12;
 $teaser-spacing-left: 16;
 $listing-list-spacing: 32;
 
+$content-header-side-padding: 6; //vw
+$content-header-side-padding--extra-wide: 30; //px
+
 // Breakpoints
-// TODO: Adjust $bkpt-content-header as desired, this is just a first stab.
-$bkpt-content-header: 560;
+$bkpt-content-header--medium-width: 768;
+$bkpt-content-header--wide: 1024;
+$bkpt-content-header--extra-wide: 1440;
+
+// TODO: review these breakpoints:
+$bkpt-article-download-links-list: 560;
+$bkpt-pull-quote: 560;
