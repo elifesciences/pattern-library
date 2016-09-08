@@ -12,11 +12,11 @@ if (window.localStorage && document.querySelector &&
   // import modules into the list of Components.
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.AudioPlayer = require('./components/AudioPlayer');
-  Components.ChapterListingItem = require('./components/ChapterListingItem');
   Components.ContentHeaderArticle = require('./components/ContentHeaderArticle');
   Components.BackgroundImage = require('./components/BackgroundImage');
   Components.SelectNav = require('./components/SelectNav');
   Components.MainMenu = require('./components/MainMenu');
+  Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
   Components.SiteHeader = require('./components/SiteHeader');
   Components.SearchBox = require('./components/SearchBox');
   Components.ViewerModal = require('./components/ViewerModal');
