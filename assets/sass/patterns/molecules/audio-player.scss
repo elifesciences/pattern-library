@@ -2,6 +2,9 @@
 
 .audio-player {
   background-color: $color-text;
+  margin: 0 auto;
+  max-width: #{$max-site-width}px;
+  max-width: #{$max-site-width-in-rem}rem;
   position: relative;
 }
 
