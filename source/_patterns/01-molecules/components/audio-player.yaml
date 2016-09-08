@@ -36,5 +36,4 @@ schema:
                 minLength: 1
   required:
     - title
-    - episodeNumber
     - sources

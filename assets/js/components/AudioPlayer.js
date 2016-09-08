@@ -63,7 +63,6 @@ module.exports = class AudioPlayer {
     player.window.addEventListener('load', player.seekNewTime.bind(player));
     this.$playButton.classList.remove('loading');
 
-
     let playerReady;
     try {
       playerReady = new CustomEvent('playerReady', { detail: this.uniqueId });

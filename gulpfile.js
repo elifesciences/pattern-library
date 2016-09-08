@@ -269,7 +269,7 @@ gulp.task('js:watch', () => {
 });
 
 // Task sets
-gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch' /*, 'tests:watch'*/]);
+gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'/*, 'tests:watch'*/]);
 gulp.task('default', ['generateStyles', 'img', 'fonts', 'js']);
 
 /******************************************************************************

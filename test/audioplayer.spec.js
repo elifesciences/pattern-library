@@ -1,6 +1,3 @@
-// Needed until Phantom supports Promise:
-require('es6-promise').polyfill();
-
 let expect = chai.expect;
 let spy = sinon.spy;
 

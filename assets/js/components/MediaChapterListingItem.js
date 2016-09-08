@@ -17,7 +17,9 @@ module.exports = class MediaChapterListingItem {
 
     this.window = _window;
     this.document = doc;
-    // When ready, AudioPlayer dispatches a custom event 'playerReady' on window, that supplies that player's html element id.
+
+    // When ready, AudioPlayer dispatches a custom event 'playerReady' on window, that supplies that
+    // player's html element id.
     _window.addEventListener('playerReady', this.listenForChapterChange.bind(this));
     this.$link = this.createLink(doc, this.$elm, this.startTime);
     this.setupEventHandlers(this.$link);
