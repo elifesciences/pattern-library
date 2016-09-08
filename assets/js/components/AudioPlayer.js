@@ -40,22 +40,41 @@ module.exports = class AudioPlayer {
     this.duration = null;
     this.isPlaying = false;
 
-    // setup
     this.$elm.classList.add('audio-player--js');
+
+    this.$playButton.classList.add('loading');
+    this.$audioElement.addEventListener('loadedmetadata', () => {
+      this.playerReady(this);
+    });
+
     this.usingMetadata = false;  // set to true in loadMetadata if no errors thrown
     this.loadMetadata(this.$elm.dataset.episodeNumber);
 
-    // events
-    this.$playButton.addEventListener('click', () => {
-      this.togglePlay(this.$audioElement, this.$playButton);
+  }
+
+  playerReady(player) {
+    player.duration = player.$audioElement.duration;
+    player.$duration.innerHTML = AudioPlayer.secondsToMinutes(player.duration);
+    player.$playButton.addEventListener('click', () => {
+      player.togglePlay(player.$audioElement, player.$playButton);
     }, false);
-    this.$audioElement.addEventListener('loadedmetadata', () => {
-      this.duration = this.$audioElement.duration;
-      this.$duration.innerHTML = AudioPlayer.secondsToMinutes(this.duration);
-    });
-    this.$audioElement.addEventListener('timeupdate', this.update.bind(this));
-    this.window.addEventListener('load', this.seekNewTime.bind(this));
-    this.window.addEventListener('hashchange', this.seekNewTime.bind(this));
+    player.$audioElement.addEventListener('timeupdate', player.update.bind(player));
+    player.window.addEventListener('hashchange', player.seekNewTime.bind(player));
+    player.window.addEventListener('load', player.seekNewTime.bind(player));
+    this.$playButton.classList.remove('loading');
+
+
+    let playerReady;
+    try {
+      playerReady = new CustomEvent('playerReady', { detail: this.uniqueId });
+    } catch (e) {
+      // CustomEvent not supported, do it the old fashioned way
+      playerReady = document.createEvent('playerReady');
+      playerReady.initCustomEvent('playerReady', true, true, { detail: this.uniqueId });
+    }
+
+    player.window.dispatchEvent(playerReady);
+
   }
 
   prepare$title(parent, doc) {
