@@ -11,9 +11,6 @@ schema:
     - properties:
         year:
           type: integer
-        assetsPath:
-          type: string
-          minLength: 1
         footerMenuLinks:
           type: array
           items:
@@ -31,6 +28,5 @@ schema:
           minItems: 1
       required:
         - year
-        - assetsPath
         - footerMenuLinks
     - $ref: ../../01-molecules/navigation/main-menu.yaml#/schema
