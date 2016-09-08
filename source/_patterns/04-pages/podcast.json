@@ -221,73 +221,48 @@
       "heading": "Chapters",
       "items": [
         {
-          "rootClasses": "teaser--chapter-listing-item",
-          "contextLabel": {
-            "list": [
-              {
-                "name": "0:36",
-                "url": null
-              }
-            ]
+          "startTime": {
+            "forHuman": "0:36",
+            "forMachine": 36
           },
-          "startTime": 36,
           "title": "What causes tinnitus?",
+          "chapterNumber": 1,
           "content": "What causes tinnitus and hyperacusis?"
         },
         {
-          "rootClasses": "teaser--chapter-listing-item",
-          "contextLabel": {
-            "list": [
-              {
-                "name": "6.26",
-                "url": null
-              }
-            ]
+          "startTime": {
+            "forHuman": "6:26",
+            "forMachine": 386
           },
-          "startTime": 386,
           "title": "How salamanders avoid senescence",
+          "chapterNumber": 2,
           "content": "How do salamanders survive repeated amputation of their limbs?"
         },
         {
-          "rootClasses": "teaser--chapter-listing-item",
-          "contextLabel": {
-            "list": [
-              {
-                "name": "11:40",
-                "url": null
-              }
-            ]
+          "startTime": {
+            "forHuman": "11:40",
+            "forMachine": 700
           },
-          "startTime": 700,
           "title": "Mouse ultrasound",
+          "chapterNumber": 3,
           "content": "Mice use ultrasound to communicate during courtship."
         },
         {
-          "rootClasses": "teaser--chapter-listing-item",
-          "contextLabel": {
-            "list": [
-              {
-                "name": "16:50",
-                "url": null
-              }
-            ]
+          "startTime": {
+            "forHuman": "16:50",
+            "forMachine": 1010
           },
-          "startTime": 1010,
           "title": "Drosophila duet: mating flies harmonise",
+          "chapterNumber": 4,
           "content": "Flies get to grips with acoustic duetting."
         },
         {
-          "rootClasses": "teaser--chapter-listing-item",
-          "contextLabel": {
-            "list": [
-              {
-                "name": "21:47",
-                "url": null
-              }
-            ]
+          "startTime": {
+            "forHuman": "21:47",
+            "forMachine": 1307
           },
-          "startTime": 1307,
           "title": "Chemical Harpoons: bacterial anchors",
+          "chapterNumber": 5,
           "content": "Covalent bonds help bacteria stick to tissue."
         }
       ]

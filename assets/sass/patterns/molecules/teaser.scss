@@ -202,26 +202,6 @@
 
 }
 
-.teaser--chapter-listing-item {
-
-  .teaser__header {
-    margin: 0;
-  }
-
-  // TODO: move meta pattern from content header to own scss file.
-  .meta__type {
-    color: $color-text;
-    text-transform: none;
-    font-family: $font-primary;
-    @include font-size(12);
-    font-weight: normal;
-
-    &:hover {
-      color: $color-text;
-    }
-  }
-}
-
 .teaser--grid-style {
   .teaser__footer {
     align-items: center;

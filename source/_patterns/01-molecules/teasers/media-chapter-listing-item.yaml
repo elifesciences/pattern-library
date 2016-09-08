@@ -1,0 +1,30 @@
+assets:
+  css:
+    - media-chapter-listing-item.css
+    - teaser.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    startTime:
+      type: object
+      properties:
+        forMachine:
+          type: integer
+          minValue: 0
+        forHuman:
+          type: string
+          minLength: 1
+    chapterNumber:
+      type: integer
+      minValue: 1
+    title:
+      type: string
+      minLength: 1
+    content:
+      type: string
+      minLength: 1
+    meta:
+      $ref: ../../01-molecules/components/meta.yaml#/schema
+

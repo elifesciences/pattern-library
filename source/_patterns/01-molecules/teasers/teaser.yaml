@@ -28,12 +28,8 @@ schema:
               - name
               - url
     url:
-      oneOf:
-        -
-          minLength: 1
-          type: string
-        -
-          type: "null"
+      minLength: 1
+      type: string
     title:
       type: string
       minLength: 1
@@ -79,8 +75,7 @@ schema:
             - teaser__img--big
             - teaser__img--small
       required:
-        # Commented out for now since the JSON does not have this.
-        # - url
+        - url
         - defaultPath
         - altText
     footer:

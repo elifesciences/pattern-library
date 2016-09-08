@@ -1,0 +1,21 @@
+@import "../../definitions";
+
+.media-chapter-listing-item {
+
+  .teaser__header {
+    margin: 0;
+  }
+
+  .meta__type {
+    color: $color-text;
+    text-transform: none;
+    font-family: $font-primary;
+    @include font-size(12);
+    font-weight: normal;
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+}
+
