@@ -156,6 +156,5 @@
   "loadMore": {
     "text": "Load more",
     "path": "#"
-  },
-  "assetsPath": "../../assets"
+  }
 }
