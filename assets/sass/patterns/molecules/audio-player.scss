@@ -16,6 +16,36 @@
   position: absolute;
   top: 0;
   @include width(90);
+
+  // Quick & dirty loading spinner, happy to swap this out for something better.
+  &.loading {
+    top: 25px;
+    left: 30px;
+    text-indent: -9999em;
+    border-top: 5px solid rgba(255, 255, 255, 0.2);
+    border-right: 5px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 5px solid rgba(255, 255, 255, 0.2);
+    border-left: 5px solid #ffffff;
+    transform: translateZ(0);
+    animation: load8 1.1s infinite linear;
+  }
+
+  &.loading,
+  &.loading:after {
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+  }
+
+  @keyframes load8 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
 }
 
 .audio-player__toggle_play_icon {
@@ -73,6 +103,7 @@
 .audio-player--js {
   .audio-player__toggle_play {
     display: block;
+    transform: rotate(0);
   }
 
   .audio-player__container {
