@@ -3,5 +3,6 @@
   "title": "Episode 21",
   "sources":[
     { "src": "http://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3", "mimeType": { "forMachine": "audio/mp3", "forHuman": "mp3" } }
-  ]
+  ],
+  "metadata": "{'number': 21, 'chapters': [{'number': 1, 'title': 'What causes tinnitus?', 'time': 36},{'number': 2, 'title': 'How salamanders avoid senescence', 'time': 386}, {'number': 3, 'title': 'Mouse ultrasound', 'time': 700}, {'number': 4, 'title': 'Drosophila duet: mating flies harmonise', 'time': 1010 }, { 'number': 5, 'title': 'Chemical Harpoons: bacterial anchors', 'time': 1307 } ] }"
 }

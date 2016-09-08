@@ -2,10 +2,6 @@
 var utils = require('../libs/elife-utils')();
 module.exports = class AudioPlayer {
 
-  // Passing window and document separately allows for independent mocking of window in order
-  // to test feature support fallbacks etc.
-  // Sample podcast episode data from the API at
-//https://github.com/elifesciences/api-raml/blob/master/src/samples/podcast-episode/v1/complete.json
   constructor($elm, _window = window, doc = document) {
     if (!$elm) {
       console.warn('No element provided');
@@ -46,7 +42,7 @@ module.exports = class AudioPlayer {
 
     // setup
     this.$elm.classList.add('audio-player--js');
-    this.usingMetadata = false;  // set to true if loads
+    this.usingMetadata = false;  // set to true in loadMetadata if no errors thrown
     this.loadMetadata(this.$elm.dataset.episodeNumber);
 
     // events
@@ -139,7 +135,9 @@ module.exports = class AudioPlayer {
       this.setCurrentChapterMetadata(this.getChapterMetadataAtTime(currentTime,
                                                                    this.chapterMetadata));
       if (this.getCurrentChapterMetadata().number !== chapterNumberOnLastUpdate) {
-        this.changeChapter(this.getCurrentChapterNumber(), this.getCurrentChapterMetadata().title, this.$elm);
+        this.changeChapter(this.getCurrentChapterNumber(),
+                           this.getCurrentChapterMetadata().title,
+                           this.$elm);
       }
     }
 
@@ -160,11 +158,11 @@ module.exports = class AudioPlayer {
     this.setTitle(this.episodeTitle, title);
     let chapterChanged;
     try {
-      chapterChanged = new CustomEvent('chapterChanged', { 'detail': number });
+      chapterChanged = new CustomEvent('chapterChanged', { detail: number });
     } catch (e) {
       // CustomEvent not supported, do it the old fashioned way
       chapterChanged = document.createEvent('chapterChanged');
-      chapterChanged.initCustomEvent('chapterChanged', true, true, { 'detail': number });
+      chapterChanged.initCustomEvent('chapterChanged', true, true, { detail: number });
     }
 
     $elm.dispatchEvent(chapterChanged);
@@ -197,6 +195,7 @@ module.exports = class AudioPlayer {
     } catch (e) {
       // newURL only available on hashchange event, but load event may also invoke this handler
       hash = this.window.location.hash.substring(1);
+      shouldPlay = false;
     }
 
     if (!isNaN(hash) && hash >= 0) {
@@ -309,7 +308,7 @@ module.exports = class AudioPlayer {
    */
   setTitle(episodeTitle, chapterTitle) {
     this.title = episodeTitle;
-    if (chapterTitle) {
+    if (!!chapterTitle) {
       this.title += ': ' + chapterTitle;
     }
 
@@ -392,27 +391,16 @@ module.exports = class AudioPlayer {
   }
 
   /**
-   * Loads the metadata for the requested episode
-   * @param episodeNumber
+   * Metadata is expected in the data-metadata attribute of $elm as a JSON-like string with single-
+   * quoted instead of double-quoted values.
    */
-  loadMetadata(episodeNumber) {
-    if (!episodeNumber || isNaN(episodeNumber) || episodeNumber < 0) {
-      return;
-    }
-
-    // TODO: Update url with real url scheme for podcast episodes
-    let url = '../../assets/dummy-data/dummy-data-episode-' + episodeNumber + '.json';
-
-    utils.getUrl(url).then((response) => {
-      try {
-        this.processMetadata(JSON.parse(response));
-        this.usingMetadata = true;
-      } catch (e) {
-        console.log(e);
-        this.usingMetadata = false;
-      }
-    }, () => {
+  loadMetadata() {
+    try {
+      this.processMetadata(JSON.parse(this.$elm.dataset.metadata.replace(/'/g, '"')));
+      this.usingMetadata = true;
+    } catch (e) {
+      console.error(e);
       this.usingMetadata = false;
-    });
+    }
   }
 };
