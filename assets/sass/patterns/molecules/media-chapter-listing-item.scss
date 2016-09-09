@@ -3,7 +3,12 @@
 .media-chapter-listing-item {
 
   &.current-chapter {
-    outline: 1px solid $color-primary-dark;
+
+    .teaser__context_label,
+    .teaser__header_text_link {
+      color: $color-primary;
+    }
+
   }
 
   .teaser__header {
