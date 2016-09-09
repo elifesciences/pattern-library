@@ -24,27 +24,22 @@ if (window.localStorage && document.querySelector &&
   // App
   let Elife = function Elife() {
 
-    function initialiseComponent(handler, $elm) {
-      if (Components[handler] && typeof Components[handler] === 'function') {
-        new Components[handler]($elm, window, window.document);
+    function initialiseComponent($component) {
+      // When present, data-behaviour contains a space-separated list of handlers for that component
+      let handlers = $component.getAttribute('data-behaviour').trim().split(' ');
+      for (let i = 0; i < handlers.length; i += 1) {
+        let handler = handlers[i];
+        if (Components[handler] && typeof Components[handler] === 'function') {
+          new Components[handler]($component, window, window.document);
+        }
       }
     }
 
     let components = document.querySelectorAll('[data-behaviour]');
-    if (components.length) {
-      for (let i = 0; i < components.length; i += 1) {
-        let $elm = components[i];
-        let handler = $elm.getAttribute('data-behaviour').trim();
-        if (handler.indexOf(' ') > 0) {
-          let handlers = handler.split(' ');
-          handlers.forEach(function (handler) {
-            initialiseComponent(handler, $elm);
-          });
-        } else {
-          initialiseComponent(handler, $elm);
-        }
-      }
+    if (components) {
+      [].forEach.call(components, initialiseComponent);
     }
+
   };
 
   new Elife();
