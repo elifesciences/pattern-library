@@ -75,7 +75,6 @@ schema:
             - teaser__img--big
             - teaser__img--small
       required:
-        - url
         - defaultPath
         - altText
     footer:
