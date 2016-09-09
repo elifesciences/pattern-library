@@ -9,7 +9,7 @@
     <main role="main">
 
     {{#contentHeader}}
-      {{> organisms-pl-only-content-header-podcast}}
+      {{> organisms-pl-only-content-header-non-article-basic-with-strapline-cta-meta-background-image}}
     {{/contentHeader}}
 
     {{#audioPlayer}}
@@ -18,10 +18,6 @@
 
 
     <div class="wrapper">
-
-      {{#leadParas}}
-        {{> molecules-lead-paras}}
-      {{/leadParas}}
 
       <div class="grid">
 
@@ -35,7 +31,7 @@
               <ol class="listing-list">
                 {{#items}}
                   <li class="listing-list__item">
-                    {{> molecules-pl-only-teaser-chapter-listing-item}}
+                    {{> molecules-media-chapter-listing-item}}
                   </li>
                 {{/items}}
               </ol>

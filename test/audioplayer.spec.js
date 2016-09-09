@@ -14,7 +14,8 @@ describe('An AudioPlayer Component', function () {
 
   beforeEach(function () {
     windowMock = {
-      HTMLAudioElement: true
+      HTMLAudioElement: true,
+      addEventListener: function () {}
     };
     player = new AudioPlayer($elm, windowMock);
     $mediaMock = {
@@ -176,4 +177,201 @@ describe('An AudioPlayer Component', function () {
     });
 
   });
+
+  it('possesses a prepareChapterMetadata() method', function () {
+    expect(typeof player.prepareChapterMetadata).to.equal('function');
+  });
+
+  describe('the prepareChapterMetadata() method', function () {
+
+    let returnValue;
+
+    beforeEach(function () {
+      let sampleMetadata = {
+        "number": 21,
+        "title": "June 2015",
+        "chapters": [
+          {
+            "number": 1,
+            "title": "What causes tinnitus?",
+            "time": 36,
+          },
+          {
+            "number": 2,
+            "title": "How salamanders avoid senescence",
+            "time": 386
+          },
+          {
+            "number": 3,
+            "title": "Mouse ultrasound",
+            "time": 700
+          },
+          {
+            "number": 4,
+            "title": "Drosophila duet: mating flies harmonise",
+            "time": 1010
+          },
+          {
+            "number": 5,
+            "title": "Chemical Harpoons: bacterial anchors",
+            "time": 1307
+          }
+
+        ]
+      };
+
+      returnValue = player.prepareChapterMetadata(sampleMetadata);
+    });
+
+    it('returns an array', function () {
+      expect(returnValue).is.an.array;
+    });
+
+    it('returns an array of objects, each with 3 properties', function () {
+      returnValue.forEach(function (value) {
+        expect(Object.keys(value).length).to.equal(3);
+      });
+
+    });
+
+    it('returns array element objects containing a time property that is a number', function () {
+      returnValue.forEach(function (element) {
+        expect(!isNaN(element.time)).to.be.true;
+      });
+    });
+
+    it('returns array element objects containing a number property that is a number', function () {
+      returnValue.forEach(function (element) {
+        expect(!isNaN(element.number)).to.be.true;
+      });
+    });
+
+    it('returns array element objects containing a title property that is a string', function () {
+      returnValue.forEach(function (element) {
+        expect(typeof element.title).to.be.equal('string');
+      });
+    });
+
+    it('returns array element objects containing a title property begins with a numeral', function () {
+      returnValue.forEach(function (element) {
+        expect(!isNaN(element.title.substring(0, 1))).to.be.true;
+      });
+    });
+
+  });
+
+  it('possesses a getChapterMetadataAtTime() method', function () {
+    expect(typeof player.getChapterMetadataAtTime).to.equal('function');
+  });
+
+  describe('the getChapterMetadataAtTime() method', function () {
+    var testData;
+
+    beforeEach(function () {
+      testData = [
+        {
+          number: 1,
+          time: 0,
+          title: '1. Chapter the first'
+        },
+        {
+          number: 2,
+          time: 33,
+          title: '2. Chapter the second'
+        },
+        {
+          number: 3,
+          time: 128,
+          title: '3. Chapter the third'
+        },
+      ];
+    });
+
+    it('returns empty string if < 2 args supplied', function () {
+      expect(player.getChapterMetadataAtTime()).to.equal('');
+      expect(player.getChapterMetadataAtTime(1)).to.equal('');
+      expect(player.getChapterMetadataAtTime({time: 20, title: 'a title', number: 1})).to.equal('');
+    });
+
+    it('returns empty string if < 2 args supplied', function () {
+      expect(player.getChapterMetadataAtTime()).to.equal('');
+      expect(player.getChapterMetadataAtTime(1)).to.equal('');
+      expect(player.getChapterMetadataAtTime({time: 20, title: 'a title', number: 1})).to.equal('');
+    });
+
+    it('returns an object with only title and number properties', function () {
+      expect(player.getChapterMetadataAtTime(0, testData).title).exists;
+      expect(player.getChapterMetadataAtTime(0, testData).number).exists;
+      expect(Object.keys(player.getChapterMetadataAtTime(0, testData)).length).to.equal(2);
+    });
+
+    it('returns an object with the title property containing the name of the chapter within which the current time sits', function () {
+      let expectChapter1Title = player.getChapterMetadataAtTime(0, testData).title;
+      expect(expectChapter1Title).to.equal('1. Chapter the first');
+
+      let expectChapter2Title = player.getChapterMetadataAtTime(33, testData).title;
+      expect(expectChapter2Title).to.equal('2. Chapter the second');
+
+      let expectChapter3Title = player.getChapterMetadataAtTime(145, testData).title;
+      expect(expectChapter3Title).to.equal('3. Chapter the third');
+    });
+
+    it('returns an object with the number property containing the number of the chapter within which the current time sits', function () {
+      let expectChapter1Number = player.getChapterMetadataAtTime(0, testData).number;
+      expect(expectChapter1Number).to.equal(1);
+
+      let expectChapter2Number = player.getChapterMetadataAtTime(33, testData).number;
+      expect(expectChapter2Number).to.equal(2);
+
+      let expectChapter3Number = player.getChapterMetadataAtTime(145, testData).number;
+      expect(expectChapter3Number).to.equal(3);
+    });
+  });
+
+  it('possesses a changeChapter method', function () {
+    expect(typeof player.changeChapter).to.equal('function');
+  });
+
+  describe('the changeChapter() method', function () {
+    var testData;
+
+    beforeEach(function () {
+      testData = {
+        number: 3,
+        title: 'I am chapter 3',
+        $elmMock: {
+          dispatchEvent: spy()
+        }
+      };
+      spy(player, "setTitle");
+      player.changeChapter(testData.number, testData.title, testData.$elmMock);
+
+    });
+
+    afterEach(function () {
+      player.setTitle.restore();
+    });
+
+    it('updates the title with the new chapter title', function () {
+      expect(player.setTitle.calledOnce).to.be.true;
+      expect(player.setTitle.args[0][1]).to.equal(testData.title);
+    });
+
+    it('dispatches a chapterChanged event on the supplied element',
+       function () {
+         expect(testData.$elmMock.dispatchEvent.calledOnce).to.be.true;
+         let args = testData.$elmMock.dispatchEvent.args[0];
+         expect(args.length).to.equal(1);
+         expect(args[0].type).to.equal('chapterChanged');
+       });
+
+    it('the chapterChanged event details the new chapter number',
+       function () {
+         expect(testData.$elmMock.dispatchEvent.calledOnce).to.be.true;
+         // let args = testData.$elmMock.dispatchEvent.args[0];
+         expect(testData.$elmMock.dispatchEvent.args[0][0].detail).to.equal(testData.number);
+       });
+
+    });
+
 });

@@ -1,0 +1,25 @@
+@import "../../definitions";
+
+.media-chapter-listing-item {
+
+  &.current-chapter {
+    outline: 1px solid $color-primary-dark;
+  }
+
+  .teaser__header {
+    margin: 0;
+  }
+
+  .meta__type {
+    color: $color-text;
+    text-transform: none;
+    font-family: $font-primary;
+    @include font-size(12);
+    font-weight: normal;
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+}
+
