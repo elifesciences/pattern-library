@@ -197,8 +197,8 @@ gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests'], () => {
           .pipe(source('main.js'))
           .pipe(buffer())
 
-          // (optional) uglify final file
-          // .pipe(uglify())
+          //uglify output for production
+          .pipe(environment === 'production' ? uglify() : gutil.noop())
 
           // sourcemaps
           .pipe(sourcemaps.init({loadMaps: true}))
