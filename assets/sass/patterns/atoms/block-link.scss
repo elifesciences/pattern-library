@@ -1,0 +1,50 @@
+@import "../../definitions";
+
+.block-link {
+  background-color: $color-primary;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.block-link__link {
+  color: $color-text--reverse;
+  display: block;
+  font-family: $font-secondary;
+  font-weight: 700;
+  @include height(80);
+  @include margin(2, "bottom");
+  @include padding(0 20);
+  @include padding(27, "top");
+  text-align: center;
+  text-decoration: none;
+
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  &:not([data-invert-bgcol-on-hover]):hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: $color-text;
+  }
+}
+
+@media only all and (min-width: #{$bkpt-block-link}px) {
+
+  .block-link {
+    max-width: 350px;
+    max-width: #{get-rem-from-px(350)}rem;
+    width: 30vw;
+  }
+
+  .block-link__link {
+    max-width: 350px;
+    max-width: #{get-rem-from-px(350)}rem;
+    // Each is half the desired height/width aspect ratio of 0.5773955774
+    padding-bottom: 28.86977887%;
+    padding-top: 28.86977887%;
+    width: 30vw;
+  }
+}

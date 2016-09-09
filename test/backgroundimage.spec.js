@@ -6,21 +6,21 @@ let BackgroundImage = require('../assets/js/components/BackgroundImage');
 describe('A BackgroundImage Component', function () {
   'use strict';
   let $elm;
-  let chbi;
+  let bi;
 
   beforeEach(function () {
     $elm = document.querySelector('[data-behaviour="BackgroundImage"]');
-    chbi = new BackgroundImage($elm);
+    bi = new BackgroundImage($elm);
   });
 
   it('exists', function () {
-    expect(chbi).to.exist;
+    expect(bi).to.exist;
   });
 
   describe('can calculate the image source to use', function () {
 
     it('possesses the method calcSourceToUse', function () {
-      expect(typeof chbi.calcSourceToUse).to.equal('function');
+      expect(typeof bi.calcSourceToUse).to.equal('function');
     });
 
     describe('calcSourceToUse', function () {
@@ -49,22 +49,22 @@ describe('A BackgroundImage Component', function () {
       });
 
       it('returns empty string if the argument specifying where the sources are defined is not defined', function () {
-        expect(chbi.calcSourceToUse()).to.equal('');
-        expect(chbi.calcSourceToUse(false)).to.equal('');
-        expect(chbi.calcSourceToUse(undefined)).to.equal('');
-        expect(chbi.calcSourceToUse(null)).to.equal('');
-        expect(chbi.calcSourceToUse(undefined)).to.equal('');
-        expect(chbi.calcSourceToUse('')).to.equal('');
+        expect(bi.calcSourceToUse()).to.equal('');
+        expect(bi.calcSourceToUse(false)).to.equal('');
+        expect(bi.calcSourceToUse(undefined)).to.equal('');
+        expect(bi.calcSourceToUse(null)).to.equal('');
+        expect(bi.calcSourceToUse(undefined)).to.equal('');
+        expect(bi.calcSourceToUse('')).to.equal('');
       });
 
       it('returns the high res source if the display has high dpr', function () {
-        expect(chbi.calcSourceToUse(sourceDefinerWithDatasetMock, true)).to.equal('path/to/high/res/image');
-        expect(chbi.calcSourceToUse(sourceDefinerNoDatasetMock, true)).to.equal('path/to/high/res/image');
+        expect(bi.calcSourceToUse(sourceDefinerWithDatasetMock, true)).to.equal('path/to/high/res/image');
+        expect(bi.calcSourceToUse(sourceDefinerNoDatasetMock, true)).to.equal('path/to/high/res/image');
       });
 
       it('returns the low res source if the display has low dpr', function () {
-        expect(chbi.calcSourceToUse(sourceDefinerWithDatasetMock, false)).to.equal('path/to/low/res/image');
-        expect(chbi.calcSourceToUse(sourceDefinerNoDatasetMock, false)).to.equal('path/to/low/res/image');
+        expect(bi.calcSourceToUse(sourceDefinerWithDatasetMock, false)).to.equal('path/to/low/res/image');
+        expect(bi.calcSourceToUse(sourceDefinerNoDatasetMock, false)).to.equal('path/to/low/res/image');
       });
 
     });
@@ -73,20 +73,20 @@ describe('A BackgroundImage Component', function () {
 
   describe('derives the css enabling use of the image source for a background image', function () {
 
-    it('possesses the method setBackground', function () {
-      expect(typeof chbi.setBackground).to.equal('function');
+    it('possesses the method getBackgroundImagesString', function () {
+      expect(typeof bi.getBackgroundImagesString).to.equal('function');
     });
 
-    describe('setBackground', function () {
+    describe('getBackgroundImagesString', function () {
 
       it('returns an empty string only if first argument doesn\'t have length > 0', function () {
-        expect(chbi.setBackground('')).to.equal('');
-        expect(chbi.setBackground(null)).to.equal('');
-        expect(chbi.setBackground('a non-empty string')).not.to.equal('');
+        expect(bi.getBackgroundImagesString('')).to.equal('');
+        expect(bi.getBackgroundImagesString(null)).to.equal('');
+        expect(bi.getBackgroundImagesString('a non-empty string')).not.to.equal('');
       });
 
       it('when first argument is valid, returns: first argument, url(second arg)', function () {
-        var observed = chbi.setBackground('path', 'test string');
+        var observed = bi.getBackgroundImagesString('path', 'test string');
         expect(!!observed.match(/^test string, url\(path\).*/)).to.be.true;
       });
 

@@ -1,0 +1,9 @@
+{
+  "url": "#",
+  "text": "Developmental Biology and Stem Cells",
+  "behaviour": "BackgroundImage",
+  "backgroundImage": {
+    "lowResImageSource": "http://unsplash.it/950/400",
+    "highResImageSource": "http://unsplash.it/1900/800"
+  }
+}
