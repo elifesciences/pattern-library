@@ -1,0 +1,27 @@
+assets:
+  css:
+    - block-link.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    behaviour:
+      type: string
+      enum:
+        - BackgroundImage
+    lowResImageSource:
+      type: string
+      minLength: 1
+    highResImageSource:
+      type: string
+      minLength: 1
+    text:
+      type: string
+      minLength: 1
+    url:
+      type: string
+      minLength: 1
+  required:
+    - text
+    - url

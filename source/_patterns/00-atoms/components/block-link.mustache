@@ -1,0 +1,19 @@
+<div class="block-link"{{#behaviour}} data-behaviour="{{behaviour}}"{{/behaviour}}
+  {{#backgroundImage}}
+  {{! data-invert-bgcol-on-hover moves the handling of the hover state from the css to the js, so it can cater for multiple background images with specifoc images. }}
+     data-invert-bgcol-on-hover
+     data-low-res-image-source="{{lowResImageSource}}"
+     data-high-res-image-source="{{highResImageSource}}"
+  {{/backgroundImage}}>
+
+  <a href="{{url}}"
+     class="block-link__link">
+
+    <div class="block-link__inner">
+      {{{text}}}
+    </div>
+
+
+  </a>
+
+</div>
