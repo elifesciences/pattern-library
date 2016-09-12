@@ -133,37 +133,17 @@
     ]
   },
 
-  "mainmenulinks": [
-    {
-      "title": "Subjects",
-      "items": [
-        { "name": "Biochemistry", "url": "#" },
-        { "name": "Developmental Biology and Stem Cells", "url": "#" },
-        { "name": "Biochemistry", "url": "#" },
-        { "name": "Genes and Chromosomes", "url": "#" },
-        { "name": "Biochemistry", "url": "#" },
-        { "name": "Microbiology and Infectious Disease", "url": "#" }
-      ]
-    },
-    {
-      "title": "eLife",
-      "items": [
-        { "name": "Who we work with", "url": "#" },
-        { "name": "Biochemistry", "url": "#" },
-        { "name": "Biochemistry", "url": "#" },
-        { "name": "Biochemistry", "url": "#" }
-      ]
-    },
-    {
-      "title": "Resources",
-      "items": [
-        { "name": "How to Publish", "url": "#" },
-        { "name": "Biochemistry", "url": "#" },
-        { "name": "Biochemistry", "url": "#" },
-        { "name": "Biochemistry", "url": "#" }
-      ]
-    }
-  ],
+  "mainMenuLinks": {
+    "items": [
+      {"name": "Research categories", "url": "#res"},
+      {"name": "Author guide", "url": "#aut"},
+      {"name": "Reviewer guide", "url": "#rev"},
+      {"name": "About", "url": "#abo"},
+      {"name": "Inside eLife", "url": "#ins"},
+      {"name": "Careers", "url": "#car"},
+      {"name": "Labs", "url": "#lab"}
+    ]
+  },
 
   "jumplinks": [
     { "name": "Abstract", "url": "#" },

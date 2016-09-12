@@ -7,35 +7,22 @@ schema:
   type: object
   properties:
     mainMenuLinks:
-      type: array
-      items:
-        type: object
-        properties:
-          title:
-            type: string
-            minLength: 1
-          titleId:
-            type: string
-            minLength: 1
-          items:
-            type: array
-            items:
-              type: object
-              properties:
-                name:
-                  type: string
-                  minLength: 1
-                url:
-                  type: string
-                  minLength: 1
-              required:
-                - name
-                - url
-            minItems: 1
-        required:
-          - title
-          - titleId
-          - items
-      minItems: 1
+      type: object
+      properties:
+        items:
+          type: array
+          properties:
+            name:
+              type: string
+              minLength: 1
+            url:
+              type: string
+              minLength: 1
+          required:
+            - name
+            - url
+          minItems: 1
+      required:
+        - items
   required:
     - mainMenuLinks

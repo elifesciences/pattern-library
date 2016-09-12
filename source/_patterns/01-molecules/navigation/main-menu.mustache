@@ -2,16 +2,13 @@
 <div class="main-menu" id="mainMenu" data-behaviour="MainMenu">
   <nav class="main-menu__container" role="navigation">
     {{#mainMenuLinks}}
-    <div class="main-menu__section">
-      <h4 class="main-menu__title" id="{{titleId}}">{{title}}</h4>
-      <ul class="main-menu__list" aria-labelledby="{{titleId}}">
+      <ul class="main-menu__list">
         {{#items}}
         <li class="main-menu__list_item">
           <a href="{{url}}" class="main-menu__list_link">{{name}}</a>
         </li>
         {{/items}}
       </ul>
-    </div>
     {{/mainMenuLinks}}
   </nav>
   <a href="#siteHeader" class="main_menu__quit">Back to top</a>

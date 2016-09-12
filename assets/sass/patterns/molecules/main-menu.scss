@@ -7,6 +7,7 @@
 
 .main-menu__container {
   @include padding(28 24 0);
+
 }
 
 .main-menu__section {
@@ -22,7 +23,7 @@
 
 .main-menu__list {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -97,7 +98,7 @@
     display: flex;
     margin: auto;
     max-width: #{get-rem-from-px($max-site-width)}rem;
-    width: 100%;
+    //width: 100%;
   }
 
   .main-menu__section {
