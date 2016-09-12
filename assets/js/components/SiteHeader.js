@@ -46,11 +46,13 @@ module.exports = class SiteHeader {
     if (this.mainMenu.isOpen()) {
       this.mainMenu.close();
       this.window.removeEventListener('keyup', this.checkForMenuClose.bind(this));
-      this.window.removeEventListener('click', this.checkForMenuClose.bind(this));
+      this.doc.querySelector('.global-inner').
+               removeEventListener('click', this.checkForMenuClose.bind(this));
     } else {
       this.mainMenu.open();
       this.window.addEventListener('keyup', this.checkForMenuClose.bind(this));
-      this.window.addEventListener('click', this.checkForMenuClose.bind(this));
+      this.doc.querySelector('.global-inner').
+               addEventListener('click', this.checkForMenuClose.bind(this));
     }
 
     e.preventDefault();
@@ -58,8 +60,7 @@ module.exports = class SiteHeader {
   }
 
   checkForMenuClose(e) {
-    if (e.keyCode === 27 ||
-        (e.type === 'click' && !utils.areElementsNested(this.mainMenu.$elm, e.target))) {
+    if (e.keyCode === 27 || e.type === 'click') {
       this.mainMenu.close();
     }
   }
