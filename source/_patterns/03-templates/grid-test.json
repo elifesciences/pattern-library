@@ -133,7 +133,7 @@
     ]
   },
 
-  "mainMenuLinks": {
+  "links": {
     "items": [
       {"name": "Research categories", "url": "#res"},
       {"name": "Author guide", "url": "#aut"},
@@ -143,6 +143,11 @@
       {"name": "Careers", "url": "#car"},
       {"name": "Labs", "url": "#lab"}
     ]
+  },
+  "button": {
+    "text": "Back to top",
+    "path": "#siteHeader",
+    "classes": "button--default button--full button--small main_menu__quit"
   },
 
   "jumplinks": [

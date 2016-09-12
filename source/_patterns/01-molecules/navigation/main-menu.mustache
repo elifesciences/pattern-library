@@ -1,7 +1,7 @@
 
 <div class="main-menu" id="mainMenu" data-behaviour="MainMenu">
   <nav class="main-menu__container" role="navigation">
-    {{#mainMenuLinks}}
+    {{#links}}
       <ul class="main-menu__list">
         {{#items}}
         <li class="main-menu__list_item">
@@ -9,7 +9,9 @@
         </li>
         {{/items}}
       </ul>
-    {{/mainMenuLinks}}
+    {{/links}}
   </nav>
-  <a href="#siteHeader" class="main_menu__quit">Back to top</a>
+  {{#button}}
+    {{> atoms-button}}
+  {{/button}}
 </div>

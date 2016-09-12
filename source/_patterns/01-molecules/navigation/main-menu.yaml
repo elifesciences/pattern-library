@@ -6,7 +6,7 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    mainMenuLinks:
+    links:
       type: object
       properties:
         items:
@@ -24,5 +24,8 @@ schema:
           minItems: 1
       required:
         - items
+    button:
+      $ref: ../../00-atoms/components/button.yaml#/schema
   required:
-    - mainMenuLinks
+    - links
+    - button
