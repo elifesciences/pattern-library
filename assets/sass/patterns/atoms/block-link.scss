@@ -42,11 +42,17 @@
   }
 
   .block-link__link {
+    margin: 0 auto;
     max-width: #{$max-width-block-link}px;
     max-width: #{$max-width-block-link-in-rem}rem;
     // Each is half the desired height/width aspect ratio of 0.5773955774
-    padding-bottom: 28.86977887%;
-    padding-top: 28.86977887%;
+    padding-bottom: 33.86977887%;
+    padding-top: 23.86977887%;
     width: 30vw;
+
+    @supports (display: flex) {
+      padding-bottom: 30.86977887%;
+      padding-top: 26.86977887%;
+    }
   }
 }
