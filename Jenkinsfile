@@ -4,7 +4,7 @@ elifePipeline {
     def commit = elifeGitRevision()
 
     stage 'Project tests'
-    lock('journal--ci') {
+    lock('pattern-library--ci') {
         builderDeployRevision 'pattern-library--ci', commit
         builderProjectTests 'pattern-library--ci', '/srv/pattern-library'
         // it is not yet possible to retrieve a JUnit XML log to archive as a test artifact:
