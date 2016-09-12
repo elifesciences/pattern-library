@@ -34,14 +34,16 @@
 @media only all and (min-width: #{$bkpt-block-link}px) {
 
   .block-link {
-    max-width: 350px;
-    max-width: #{get-rem-from-px(350)}rem;
+    max-width: #{$max-width-block-link}px;
+    max-width: #{$max-width-block-link-in-rem}rem;
+    min-width: #{$min-width-block-link}px;
+    min-width: #{$min-width-block-link-in-rem}rem;
     width: 30vw;
   }
 
   .block-link__link {
-    max-width: 350px;
-    max-width: #{get-rem-from-px(350)}rem;
+    max-width: #{$max-width-block-link}px;
+    max-width: #{$max-width-block-link-in-rem}rem;
     // Each is half the desired height/width aspect ratio of 0.5773955774
     padding-bottom: 28.86977887%;
     padding-top: 28.86977887%;
