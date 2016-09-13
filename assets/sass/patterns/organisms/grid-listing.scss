@@ -1,0 +1,97 @@
+@import "../../definitions";
+
+.grid-listing {
+  list-style: none;
+  margin: 0 auto;
+  padding-left: 0;
+  width: 100%;
+}
+
+.grid-listing-item {
+  border: 1px solid $color-text-dividers;
+  border-bottom-width: 0;
+  @include margin(2, "bottom");
+}
+
+.grid-listing-item:last-child {
+  border-bottom-width: 1px;
+  margin-bottom: 0;
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-block-link)}em) {
+
+  .grid-listing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .grid-listing-item {
+    border: none;
+    flex: 1 0 #{$min-width-block-link-in-rem}rem;
+    float: left;
+    @include margin(0 20 20 0);
+    // TODO: consider renaming this variable if kept in this context
+    max-width: #{$max-width-block-link}px;
+    max-width: #{$max-width-block-link-in-rem}rem;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-block-link-listing--medium-width)}em) {
+
+  .grid-listing-item {
+    max-width: 28vw;
+  }
+
+  .grid-listing-item:nth-child(2n) {
+    @include margin(20, "right");
+  }
+
+  .grid-listing-item:nth-child(3n) {
+    margin-right: 0;
+  }
+
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-block-link-listing--wide-screen)}em) {
+
+  .grid-listing {
+    display: block;
+    max-width: #{$max-site-width-in-rem}rem;
+  }
+
+  .grid-listing-item {
+    max-width: 262px;
+    width: #{$min-width-block-link}px;
+  }
+
+  .grid-listing-item:nth-child(3n) {
+    @include margin(20, "right");
+  }
+
+  .grid-listing-item:nth-child(4n) {
+    margin-right: 0;
+  }
+
+}
+@media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}em) {
+
+  .grid-listing {
+    display: block;
+    @include width($max-site-width);
+  }
+
+  .grid-listing-item {
+    @include width($med-width-block-link);
+  }
+
+}

@@ -1,0 +1,345 @@
+{
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "path": "#mainMenu",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "nav-primary__menu_icon",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "nav-primary__search_icon",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Labs",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Submit my research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--button",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        },
+        {
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--notification",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+              "classes": "nav-secondary__notification-icon",
+              "altText": "Notification icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
+              }
+            ]
+          }
+        },
+        {
+          "text": "Profile",
+          "classes": "nav-secondary__item nav-secondary__item--profile",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
+              "classes": "nav-secondary__profile-icon",
+              "altText": "Profile icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    "compactForm": {
+      "formAction" : "/search",
+      "formId": "searchBox",
+      "formMethod": "GET",
+      "label": "Search by keyword or author",
+      "inputType": "search",
+      "inputName": "search",
+      "inputValue": "",
+      "inputPlaceholder": "Search by keyword or author",
+      "ctaText": "Search"
+    },
+
+    "subjectFilter": {
+      "name": "subject_filter",
+      "value": "cell_biology",
+      "text": "Cell biology"
+    }
+
+  },
+
+  "blockLinkListing": {
+    "blockLinks": [
+      {
+        "text": "Biochemistry",
+        "url": "#Biochemistry",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },
+      {
+        "text": "Biophysics and structural biology",
+        "url": "#Biophysics",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },    {
+        "text": "Cell Biology",
+        "url": "#Cell",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },    {
+        "text": "Computational and systems biology",
+        "url": "#Computational",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },    {
+        "text": "Developmental Biology and Stem Cells",
+        "url": "#Developmental",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },
+      {
+        "text": "Ecology",
+        "url": "#Ecology",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },
+      {
+        "text": "Epidemiology and Global Health",
+        "url": "#Epidemiology",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },
+      {
+        "text": "Genes and Chromosomes",
+        "url": "#Genes",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },
+      {
+        "text": "Genomics and Evolutionary Biology",
+        "url": "#Genomics",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },
+      {
+        "text": "Human Biology and Medicine",
+        "url": "#Human",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },
+      {
+        "text": "Immunology",
+        "url": "#Immunology",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },
+      {
+        "text": "Microbiology and Infectious Disease",
+        "url": "#Microbiology",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },
+      {
+        "text": "Neuroscience",
+        "url": "#Neuroscience",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      },
+      {
+        "text": "Plant Biology",
+        "url": "#Plant",
+        "behaviour": "BackgroundImage",
+        "backgroundImage": {
+          "thresholdWidth": 600,
+          "lowResImageSource": "http://unsplash.it/950/400",
+          "highResImageSource": "http://unsplash.it/1900/800"
+        }
+      }
+    ]
+  },
+
+  "mainMenu":{
+    "links": {
+      "items": [
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Author guide", "url": "#aut"},
+        {"name": "Reviewer guide", "url": "#rev"},
+        {"name": "About", "url": "#abo"},
+        {"name": "Inside eLife", "url": "#ins"},
+        {"name": "Careers", "url": "#car"},
+        {"name": "Labs", "url": "#lab"}
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
+  ],
+
+  "year": 2016
+
+}

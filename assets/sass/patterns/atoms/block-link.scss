@@ -1,58 +1,85 @@
 @import "../../definitions";
 
 .block-link {
-  background-color: $color-primary;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .block-link__link {
-  color: $color-text--reverse;
+  color: $color-text;
   display: block;
+  display: flex;
+  flex-direction: column;
   font-family: $font-secondary;
   font-weight: 700;
   @include height(80);
-  @include margin(2, "bottom");
+  justify-content: center;
   @include padding(0 20);
   @include padding(27, "top");
   text-align: center;
   text-decoration: none;
 
+  &:hover {
+    color: $color-primary;
+  }
+
   @supports (display: flex) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     padding-top: 0;
   }
 
-  &:not([data-invert-bgcol-on-hover]):hover {
-    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.block-link[style] .block-link__link {
+
+  color: $color-text--reverse;
+
+  &:hover {
     color: $color-text;
   }
+
 }
 
 @media only all and (min-width: #{$bkpt-block-link}px) {
 
   .block-link {
+    background-color: $color-primary;
     max-width: #{$max-width-block-link}px;
     max-width: #{$max-width-block-link-in-rem}rem;
-    min-width: #{$min-width-block-link}px;
-    min-width: #{$min-width-block-link-in-rem}rem;
-    width: 30vw;
+    @include width($min-width-block-link);
+    @supports (display: flex) {
+      width: auto;
+    }
+
   }
 
   .block-link__link {
+    color: $color-text--reverse;
     margin: 0 auto;
     max-width: #{$max-width-block-link}px;
     max-width: #{$max-width-block-link-in-rem}rem;
-    // Each is half the desired height/width aspect ratio of 0.5773955774
     padding-bottom: 33.86977887%;
     padding-top: 23.86977887%;
-    width: 30vw;
+
+    &:hover {
+      color: $color-text;
+    }
 
     @supports (display: flex) {
       padding-bottom: 30.86977887%;
       padding-top: 26.86977887%;
     }
   }
+
+  @media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}em) {
+
+    .block-link {
+      @include width($med-width-block-link);
+    }
+
+    .block-link__link {
+      @include width($med-width-block-link);
+    }
+
+  }
+
 }
