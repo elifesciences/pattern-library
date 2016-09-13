@@ -6,36 +6,26 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    mainMenuLinks:
-      type: array
-      items:
-        type: object
-        properties:
-          title:
-            type: string
-            minLength: 1
-          titleId:
-            type: string
-            minLength: 1
-          items:
-            type: array
-            items:
-              type: object
-              properties:
-                name:
-                  type: string
-                  minLength: 1
-                url:
-                  type: string
-                  minLength: 1
-              required:
-                - name
-                - url
-            minItems: 1
-        required:
-          - title
-          - titleId
-          - items
-      minItems: 1
+    links:
+      type: object
+      properties:
+        items:
+          type: array
+          properties:
+            name:
+              type: string
+              minLength: 1
+            url:
+              type: string
+              minLength: 1
+          required:
+            - name
+            - url
+          minItems: 1
+      required:
+        - items
+    button:
+      $ref: ../../00-atoms/components/button.yaml#/schema
   required:
-    - mainMenuLinks
+    - links
+    - button
