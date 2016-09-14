@@ -75,7 +75,7 @@ describe('A BackgroundImage Component', function () {
   describe('derives the css enabling use of the image source for a background image', function () {
 
     it('possesses the method getBackgroundImagesString', function () {
-      expect(typeof bi.getBackgroundImagesString).to.equal('function');
+      expect(bi.getBackgroundImagesString).to.be.a('function');
     });
 
     describe('getBackgroundImagesString', function () {
