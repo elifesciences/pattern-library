@@ -24,6 +24,13 @@ schema:
         highResImageSource:
           type: string
           minLength: 1
+        thresholdWidth:
+          type: number
+          minimum: 0
+      dependencies:
+        thresholdWidth:
+          - lowResImageSource
+          - highResImageSource
       required:
         - lowResImageSource
         - highResImageSource

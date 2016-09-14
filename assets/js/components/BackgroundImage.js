@@ -11,11 +11,46 @@ module.exports = class BackgroundImage {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
+
+    this.sourceToUse = null;
+    this.thresholdWidth = parseInt(this.$elm.dataset.thresholdWidth, 10);
+    if (this.isValidThreshold(this.thresholdWidth) &&
+        !this.isThresholdMet(this.thresholdWidth, this.window.innerWidth)) {
+      this.window.addEventListener('resize', this.resizeHandler.bind(this));
+    } else {
+      this.init();
+    }
+
+  }
+
+  init() {
     this.sourceToUse = this.calcSourceToUse(this.$elm, utils.isHighDpr(this.window));
     this.setDarkBackground();
     this.setupEventHandlers(this.$elm,
                             this.setLightBackground.bind(this),
                             this.setDarkBackground.bind(this));
+  }
+
+  isValidThreshold(candidate) {
+    return !(
+      typeof candidate === 'boolean' ||
+      candidate === null ||
+      Array.isArray(candidate) ||
+      isNaN(candidate) ||
+      candidate < 0
+    );
+
+  }
+
+  isThresholdMet(threshold, viewportWidth) {
+    return viewportWidth >= threshold;
+  }
+
+  resizeHandler() {
+    if (this.isThresholdMet(this.thresholdWidth, this.window.innerWidth)) {
+      this.window.removeEventListener('resize', this.resizeHandler.bind(this));
+      this.init();
+    }
   }
 
   setupEventHandlers($elm, setLightBackground, setDarkBackground) {
