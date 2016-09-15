@@ -5,18 +5,26 @@ assets:
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
-  properties:
-    cited:
-      type: string
-      minLength: 1
-    views:
-      type: string
-      minLength:1
-    comments:
-      type: string
-      minLength 1
-    citeAs:
-      type: string
-      minLength: 1
-    doi:
-      $ref: ../../00-atoms/components/doi.yaml#/schema
+  anyOf:
+    -
+      anyOf:
+        -
+          properties:
+            views:
+              type: string
+              minLength: 1
+            comments:
+              type: string
+              minLength: 1
+            cited:
+              type: string
+              minLength: 1
+    -
+      allOf:
+        -
+          properties:
+            citeAs:
+              type: string
+              minLength: 1
+            doi:
+              $ref: ../../00-atoms/components/doi.yaml#/schema
