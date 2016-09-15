@@ -7,18 +7,28 @@ schema:
   type: object
   anyOf:
     -
-      anyOf:
-        -
+      properties:
+        metricsData:
+          type: object
           properties:
-            views:
-              type: string
-              minLength: 1
-            comments:
-              type: string
-              minLength: 1
-            cited:
-              type: string
-              minLength: 1
+            data:
+              type: array
+              minItems: 1
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    minLength: 1
+                  value:
+                    type: string
+                    minLength: 1
+                  elementId:
+                    type: string
+                    minLength: 1
+                required:
+                  - name
+                  - value
     -
       allOf:
         -
