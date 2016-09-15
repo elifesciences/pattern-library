@@ -7,19 +7,16 @@ schema:
   type: object
   properties:
     cited:
-      type: integer
+      type: string
+      minLength: 1
     views:
-      type: integer
+      type: string
+      minLength:1
     comments:
-      type: integer
+      type: string
+      minLength 1
     citeAs:
       type: string
       minLength: 1
     doi:
       $ref: ../../00-atoms/components/doi.yaml#/schema
-  required:
-    - cited
-    - views
-    - comments
-    - citeAs
-    - doi
