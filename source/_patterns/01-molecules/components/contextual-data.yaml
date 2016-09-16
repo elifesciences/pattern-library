@@ -31,11 +31,17 @@ schema:
                   - value
       minProperties: 1
     -
-      allOf:
-        -
+      properties:
+        citation:
+          type: object
           properties:
             citeAs:
               type: string
               minLength: 1
             doi:
               $ref: ../../00-atoms/components/doi.yaml#/schema
+          required:
+            - citeAs
+            - doi
+      required:
+        - citation
