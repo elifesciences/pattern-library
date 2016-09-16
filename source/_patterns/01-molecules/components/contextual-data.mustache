@@ -4,14 +4,14 @@
   <dl class="contextual-data__list">
     {{#data}}
     <dt class="contextual-data__list_title">{{name}}</dt>
-    <dd class="contextual-data__list_desc">{{value}}</dd>
+    <dd class="contextual-data__list_desc" {{#elementId}} id="{{elementId}}"{{/elementId}}>{{value}}</dd>
     {{/data}}
   </dl>
   {{/metricsData}}
 
   {{#citation}}
   <div class="contextual-data__cite_wrapper">
-    <span class="contextual-data__cite">{{citation.citeAs}}</span>
+    <span class="contextual-data__cite"><span class="contextual-data__cite_label">Cite as:</span> {{citation.citeAs}}</span>
     {{#citation.doi}}
       {{> atoms-doi }}
     {{/citation.doi}}

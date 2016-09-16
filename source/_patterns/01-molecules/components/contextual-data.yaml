@@ -29,6 +29,7 @@ schema:
                 required:
                   - name
                   - value
+      minProperties: 1
     -
       allOf:
         -

@@ -68,6 +68,10 @@
     @include padding(0 5 0 0);
   }
 
+  .contextual-data__cite_label {
+    text-transform: uppercase;
+  }
+
   .contextual-data__doi {
     display: inline-block;
     align-self: flex-end;
