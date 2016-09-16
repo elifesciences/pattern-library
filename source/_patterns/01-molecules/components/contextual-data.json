@@ -1,10 +1,29 @@
 {
-  "views": 149,
-  "cited": 5,
-  "comments": 12,
-  "citeAs": "CITE AS: eLife 2015;4:e11760",
-  "doi": {
-    "class": "contextual-data__doi",
-    "uri": "#"
+
+  "metricsData": {
+    "data": [
+      {
+        "name": "views",
+        "value": 149
+      },
+      {
+        "name": "cited",
+        "value": 5
+      },
+      {
+        "name": "comments",
+        "value": 12,
+        "elementId": "someDocumentLevelUniqueId"
+      }
+    ]
+  },
+
+  "citation": {
+    "citeAs": "eLife 2015;4:e11760",
+    "doi": {
+      "class": "contextual-data__doi",
+      "uri": "the.doi"
+    }
   }
+
 }

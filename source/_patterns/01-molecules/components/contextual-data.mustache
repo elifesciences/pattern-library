@@ -1,19 +1,21 @@
 <div class="contextual-data">
+
+  {{#metricsData}}
   <dl class="contextual-data__list">
-    <dt class="contextual-data__list_title">Cited</dt>
-    <dd class="contextual-data__list_desc">{{cited}}</dd>
-
-    <dt class="contextual-data__list_title">Views</dt>
-    <dd class="contextual-data__list_desc">{{views}}</dd>
-
-    <dt class="contextual-data__list_title">Comments</dt>
-    <dd class="contextual-data__list_desc">{{comments}}</dd>
+    {{#data}}
+    <dt class="contextual-data__list_title">{{name}}</dt>
+    <dd class="contextual-data__list_desc" {{#elementId}} id="{{elementId}}"{{/elementId}}>{{value}}</dd>
+    {{/data}}
   </dl>
+  {{/metricsData}}
 
+  {{#citation}}
   <div class="contextual-data__cite_wrapper">
-    <span class="contextual-data__cite">{{citeAs}}</span>
-      {{#doi}}
-        {{> atoms-doi }}
-      {{/doi}}
+    <span class="contextual-data__cite"><span class="contextual-data__cite_label">Cite as:</span> {{citeAs}}</span>
+    {{#doi}}
+      {{> atoms-doi }}
+    {{/doi}}
   </div>
+  {{/citation}}
+
 </div>
