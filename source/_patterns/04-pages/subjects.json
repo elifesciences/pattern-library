@@ -155,6 +155,7 @@
   },
 
   "blockLinkListing": {
+    "classes": "grid-listing--block-link",
     "blockLinks": [
       {
         "text": "Biochemistry",

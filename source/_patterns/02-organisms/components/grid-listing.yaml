@@ -2,15 +2,36 @@ assets:
   css:
     - grid-listing.scss
     - $ref: ../../00-atoms/components/block-link.yaml#/assets/css
+    - $ref: ../../01-molecules/components/archive-nav-link.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
-  properties:
-    blockLinks:
-      type: array
-      minItems: 1
-      items:
-        $ref: ../../00-atoms/components/block-link.yaml#/schema
-  required:
-    - blockLinks
+  allOf:
+    -
+      properties:
+        classes:
+          type: string
+          minLength: 1
+      required:
+        - classes
+    -
+      oneOf:
+        -
+          properties:
+            blockLinks:
+              type: array
+              minItems: 1
+              items:
+                $ref: ../../00-atoms/components/block-link.yaml#/schema
+          required:
+            - blockLinks
+        -
+          properties:
+            archiveNavLinks:
+              type: array
+              minItems: 1
+              items:
+                $ref: ../../01-molecules/components/archive-nav-link.yaml#/schema
+          required:
+            - archiveNavLinks

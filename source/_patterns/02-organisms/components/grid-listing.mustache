@@ -1,4 +1,5 @@
-<ol class="grid-listing">
+<ol class="grid-listing{{#classes}} {{classes}}{{/classes}}">
+
   {{#blockLinks}}
     <li class="grid-listing-item">
       {{> atoms-block-link}}
@@ -10,4 +11,5 @@
       {{> molecules-archive-nav-link}}
     </li>
   {{/archiveNavLinks}}
+
 </ol>

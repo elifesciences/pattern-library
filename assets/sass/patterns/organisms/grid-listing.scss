@@ -7,15 +7,18 @@
   width: 100%;
 }
 
-.grid-listing-item {
-  border: 1px solid $color-text-dividers;
-  border-bottom-width: 0;
-  @include margin(2, "bottom");
-}
+.grid-listing--block-link {
 
-.grid-listing-item:last-child {
-  border-bottom-width: 1px;
-  margin-bottom: 0;
+  .grid-listing-item {
+    border: 1px solid $color-text-dividers;
+    border-bottom-width: 0;
+    @include margin(2, "bottom");
+  }
+
+  .grid-listing-item:last-child {
+    border-bottom-width: 1px;
+    margin-bottom: 0;
+  }
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-block-link)}em) {
