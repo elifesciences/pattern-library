@@ -5,7 +5,9 @@
   max-width: #{$max-width-block-link-in-rem}rem;
   min-width: #{$min-width-block-link}px;
   min-width: #{$min-width-block-link-in-rem}rem;
-  //width: calc(30vw - 28.86977887%);
+  // TODO: Consider increasing $min-width-block-link by this increment.
+  width: #{$min-width-block-link}px;
+  width: #{$min-width-block-link-in-rem}rem;
 
   @supports (display: flex) {
     width: auto;
@@ -22,7 +24,7 @@
   max-width: #{$max-width-block-link-in-rem}rem;
   min-width: #{$min-width-block-link}px;
   min-width: #{$min-width-block-link-in-rem}rem;
-  //width: calc(30vw - 28.86977887%);
+  @include width($min-width-block-link);
 
   @supports (display: flex) {
     width: auto;

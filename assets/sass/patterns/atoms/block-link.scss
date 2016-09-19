@@ -75,6 +75,7 @@
 
 // .block-link--archive-nav-link is used on an archive year page
 .block-link--archive-nav-link {
+  background-color: $color-primary;
   @include width-constrained();
 }
 

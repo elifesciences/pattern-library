@@ -4,7 +4,6 @@
   list-style: none;
   margin: 0 auto;
   padding-left: 0;
-  //width: 100%;
 }
 
 .grid-listing--block-link {
@@ -24,10 +23,16 @@
 .grid-listing--archive-nav-link {
 
   .grid-listing-item {
-    margin: 0 auto;
+    display: table-row;
+    margin-right: 20px;
     // TODO: consider renaming as now used out of original context
     max-width: #{$max-width-block-link}px;
     max-width: #{$max-width-block-link-in-rem}rem;
+
+    @supports (display: flex) {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
 }
@@ -130,4 +135,46 @@
     @include width($med-width-block-link);
   }
 
+}
+
+// ***
+// *** Media queries for non-flexbox fallback
+// ***
+
+@media only all and (min-width: 620px) {
+
+  .grid-listing--archive-nav-link {
+
+    .grid-listing-item:nth-child(3) {
+      clear: left;
+    }
+
+  }
+}
+
+@media only all and (min-width: 900px) {
+
+  .grid-listing--archive-nav-link {
+
+    .grid-listing-item:nth-child(3) {
+      clear: none;
+    }
+    .grid-listing-item:nth-child(4) {
+      clear: left;
+
+      @supports (display: flex) {
+        clear: none;
+      }
+    }
+
+  }
+
+}
+
+@media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}em) {
+  .grid-listing--archive-nav-link {
+    .grid-listing-item:nth-child(4) {
+      clear: none;
+    }
+  }
 }
