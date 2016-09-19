@@ -1,45 +1,14 @@
 @import "../../definitions";
 
-.block-link {
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+@mixin height-constrained() {
 
-.block-link__link {
-  color: $color-text;
-  display: block;
-  display: flex;
-  flex-direction: column;
-  font-family: $font-secondary;
-  font-weight: 700;
-  @include height(80);
-  justify-content: center;
-  @include padding(0 20);
-  @include padding(27, "top");
-  text-align: center;
-  text-decoration: none;
-
-  &:hover {
-    color: $color-primary;
-  }
-
-  @supports (display: flex) {
-    padding-top: 0;
+  .block-link__link {
+    @include height(80);
   }
 
 }
 
-.block-link[style] .block-link__link {
-
-  color: $color-text--reverse;
-
-  &:hover {
-    color: $color-text;
-  }
-
-}
-
-@media only all and (min-width: #{$bkpt-block-link}px) {
+@mixin width-constrained() {
 
   .block-link {
     background-color: $color-primary;
@@ -69,6 +38,60 @@
       padding-top: 26.86977887%;
     }
   }
+
+}
+
+.block-link {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.block-link__link {
+  color: $color-text;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-secondary;
+  font-weight: 700;
+  justify-content: center;
+  @include padding(27 20 0 20);
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  @supports (display: flex) {
+    padding-top: 0;
+  }
+
+}
+
+// .block-link--grid-listing is used on the main subject listing page
+.block-link--grid-listing {
+  @include height-constrained();
+}
+
+// .block-link--archive-nav-link is used on an archive year page
+.block-link--archive-nav-link {
+  @include width-constrained();
+}
+
+// .block-link[style] indicates it's being handled by BackgroundImage.js
+.block-link[style] .block-link__link {
+
+  color: $color-text--reverse;
+
+  &:hover {
+    color: $color-text;
+  }
+
+}
+
+@media only all and (min-width: #{$bkpt-block-link}px) {
+
+  @include width-constrained();
 
   @media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}em) {
 

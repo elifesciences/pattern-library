@@ -1,9 +1,11 @@
 {
+  "classes": "grid-litsing--block-links",
   "blockLinks": [
     {
       "text": "Biochemistry",
       "url": "#Biochemistry",
       "behaviour": "BackgroundImage",
+      "classes": "block-link--grid-listing",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
         "highResImageSource": "http://unsplash.it/1900/800"
@@ -13,6 +15,7 @@
       "text": "Biophysics and structural biology",
       "url": "#Biophysics",
       "behaviour": "BackgroundImage",
+      "classes": "block-link--grid-listing",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
         "highResImageSource": "http://unsplash.it/1900/800"
@@ -21,6 +24,7 @@
       "text": "Cell Biology",
       "url": "#Cell",
       "behaviour": "BackgroundImage",
+      "classes": "block-link--grid-listing",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
         "highResImageSource": "http://unsplash.it/1900/800"
@@ -29,6 +33,7 @@
       "text": "Computational and systems biology",
       "url": "#Computational",
       "behaviour": "BackgroundImage",
+      "classes": "block-link--grid-listing",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
         "highResImageSource": "http://unsplash.it/1900/800"
@@ -37,6 +42,7 @@
       "text": "Developmental Biology and Stem Cells",
       "url": "#Developmental",
       "behaviour": "BackgroundImage",
+      "classes": "block-link--grid-listing",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
         "highResImageSource": "http://unsplash.it/1900/800"
@@ -46,6 +52,7 @@
       "text": "Ecology",
       "url": "#Ecology",
       "behaviour": "BackgroundImage",
+      "classes": "block-link--grid-listing",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
         "highResImageSource": "http://unsplash.it/1900/800"
@@ -55,6 +62,7 @@
       "text": "Epidemiology and Global Health",
       "url": "#Epidemiology",
       "behaviour": "BackgroundImage",
+      "classes": "block-link--grid-listing",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
         "highResImageSource": "http://unsplash.it/1900/800"
@@ -63,6 +71,7 @@
     {
       "text": "Genes and Chromosomes",
       "url": "#Genes",
+      "classes": "block-link--grid-listing",
       "behaviour": "BackgroundImage",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
@@ -72,6 +81,7 @@
     {
       "text": "Genomics and Evolutionary Biology",
       "url": "#Genomics",
+      "classes": "block-link--grid-listing",
       "behaviour": "BackgroundImage",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
@@ -81,6 +91,7 @@
     {
       "text": "Human Biology and Medicine",
       "url": "#Human",
+      "classes": "block-link--grid-listing",
       "behaviour": "BackgroundImage",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
@@ -90,6 +101,7 @@
     {
       "text": "Immunology",
       "url": "#Immunology",
+      "classes": "block-link--grid-listing",
       "behaviour": "BackgroundImage",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
@@ -99,6 +111,7 @@
     {
       "text": "Microbiology and Infectious Disease",
       "url": "#Microbiology",
+      "classes": "block-link--grid-listing",
       "behaviour": "BackgroundImage",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
@@ -108,6 +121,7 @@
     {
       "text": "Neuroscience",
       "url": "#Neuroscience",
+      "classes": "block-link--grid-listing",
       "behaviour": "BackgroundImage",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",
@@ -117,6 +131,7 @@
     {
       "text": "Plant Biology",
       "url": "#Plant",
+      "classes": "block-link--grid-listing",
       "behaviour": "BackgroundImage",
       "backgroundImage": {
         "lowResImageSource": "http://unsplash.it/950/400",

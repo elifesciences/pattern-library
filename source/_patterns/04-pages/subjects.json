@@ -160,6 +160,7 @@
         "text": "Biochemistry",
         "url": "#Biochemistry",
         "behaviour": "BackgroundImage",
+        "classes": "block-link--grid-listing",
         "backgroundImage": {
           "thresholdWidth": 600,
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -170,6 +171,7 @@
         "text": "Biophysics and structural biology",
         "url": "#Biophysics",
         "behaviour": "BackgroundImage",
+        "classes": "block-link--grid-listing",
         "backgroundImage": {
           "thresholdWidth": 600,
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -178,6 +180,7 @@
       },    {
         "text": "Cell Biology",
         "url": "#Cell",
+        "classes": "block-link--grid-listing",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "thresholdWidth": 600,
@@ -187,6 +190,7 @@
       },    {
         "text": "Computational and systems biology",
         "url": "#Computational",
+        "classes": "block-link--grid-listing",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "thresholdWidth": 600,
@@ -196,6 +200,7 @@
       },    {
         "text": "Developmental Biology and Stem Cells",
         "url": "#Developmental",
+        "classes": "block-link--grid-listing",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "thresholdWidth": 600,
@@ -206,6 +211,7 @@
       {
         "text": "Ecology",
         "url": "#Ecology",
+        "classes": "block-link--grid-listing",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "thresholdWidth": 600,
@@ -216,6 +222,7 @@
       {
         "text": "Epidemiology and Global Health",
         "url": "#Epidemiology",
+        "classes": "block-link--grid-listing",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "thresholdWidth": 600,
@@ -227,6 +234,7 @@
         "text": "Genes and Chromosomes",
         "url": "#Genes",
         "behaviour": "BackgroundImage",
+        "classes": "block-link--grid-listing",
         "backgroundImage": {
           "thresholdWidth": 600,
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -236,6 +244,7 @@
       {
         "text": "Genomics and Evolutionary Biology",
         "url": "#Genomics",
+        "classes": "block-link--grid-listing",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "thresholdWidth": 600,
@@ -246,6 +255,7 @@
       {
         "text": "Human Biology and Medicine",
         "url": "#Human",
+        "classes": "block-link--grid-listing",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "thresholdWidth": 600,
@@ -256,6 +266,7 @@
       {
         "text": "Immunology",
         "url": "#Immunology",
+        "classes": "block-link--grid-listing",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "thresholdWidth": 600,
@@ -266,6 +277,7 @@
       {
         "text": "Microbiology and Infectious Disease",
         "url": "#Microbiology",
+        "classes": "block-link--grid-listing",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "thresholdWidth": 600,
@@ -276,6 +288,7 @@
       {
         "text": "Neuroscience",
         "url": "#Neuroscience",
+        "classes": "block-link--grid-listing",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "thresholdWidth": 600,
@@ -286,6 +299,7 @@
       {
         "text": "Plant Biology",
         "url": "#Plant",
+        "classes": "block-link--grid-listing",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "thresholdWidth": 600,

@@ -1,6 +1,7 @@
-<div class="block-link"{{#behaviour}} data-behaviour="{{behaviour}}"{{/behaviour}}
+{{! block-link pattern only ever used within a listing (directly: subjects list, or indirectly archive-nav-link GM 19/9/16)}}
+<div class="block-link{{#classes}} {{classes}}{{/classes}}"{{#behaviour}} data-behaviour="{{behaviour}}"{{/behaviour}}
   {{#backgroundImage}}
-  {{! data-invert-bgcol-on-hover moves the handling of the hover state from the css to the js, so it can cater for multiple background images with specifoc images. }}
+  {{! data-invert-bgcol-on-hover moves the handling of the hover state from the css to the js, so it can cater for multiple background images with specific images. }}
      data-invert-bgcol-on-hover
      {{#thresholdWidth}}data-threshold-width="{{thresholdWidth}}"{{/thresholdWidth}}
      data-low-res-image-source="{{lowResImageSource}}"

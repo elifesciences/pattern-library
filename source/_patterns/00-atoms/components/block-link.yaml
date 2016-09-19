@@ -6,6 +6,10 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
+#  TODO: should classes be required?
+    classes:
+      type: string
+      minLength: 1
     behaviour:
       type: string
       enum:
