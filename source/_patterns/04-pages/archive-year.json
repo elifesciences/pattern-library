@@ -200,6 +200,7 @@
 
   "archiveNavListing":
   {
+    "classes": "grid-listing--archive-nav-link",
     "archiveNavLinks": [
       {
         "url": "#",
@@ -222,14 +223,6 @@
           {
             "name": "The ancient origins of lubricated joints",
             "url": "#The"
-          },
-          {
-            "name": "Modulating protein quality control",
-            "url": "#Modulating"
-          },
-          {
-            "name": "How open science helps researchers succeed",
-            "url": "#How"
           }
         ]
       },

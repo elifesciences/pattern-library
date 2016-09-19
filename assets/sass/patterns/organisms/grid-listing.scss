@@ -4,7 +4,7 @@
   list-style: none;
   margin: 0 auto;
   padding-left: 0;
-  width: 100%;
+  //width: 100%;
 }
 
 .grid-listing--block-link {
@@ -19,6 +19,17 @@
     border-bottom-width: 1px;
     margin-bottom: 0;
   }
+}
+
+.grid-listing--archive-nav-link {
+
+  .grid-listing-item {
+    margin: 0 auto;
+    // TODO: consider renaming as now used out of original context
+    max-width: #{$max-width-block-link}px;
+    max-width: #{$max-width-block-link-in-rem}rem;
+  }
+
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-block-link)}em) {
@@ -46,6 +57,28 @@
       margin-right: 0;
     }
   }
+
+  .grid-listing--block-link {
+
+    // Needs 2 levels of specificity to apply the margin in this MQ, as it overrides rule specified
+    // with 2 (justified) levels of specificity outside of the MQ.
+    .grid-listing-item {
+      @include margin(20, "bottom");
+    }
+
+  }
+
+  .grid-listing--archive-nav-link {
+
+    .grid-listing-item {
+      @include margin(20, "right");
+      // TODO: consider renaming as now used out of original context
+      max-width: #{$max-width-block-link}px;
+      max-width: #{$max-width-block-link-in-rem}rem;;
+    }
+
+  }
+
 
 }
 

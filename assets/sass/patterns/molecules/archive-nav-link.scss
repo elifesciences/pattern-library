@@ -5,7 +5,12 @@
   max-width: #{$max-width-block-link-in-rem}rem;
   min-width: #{$min-width-block-link}px;
   min-width: #{$min-width-block-link-in-rem}rem;
-  width: calc(30vw - 28.86977887%);
+  //width: calc(30vw - 28.86977887%);
+
+  @supports (display: flex) {
+    width: auto;
+  }
+
 }
 
 .archive-nav-link .block-link {
@@ -17,7 +22,11 @@
   max-width: #{$max-width-block-link-in-rem}rem;
   min-width: #{$min-width-block-link}px;
   min-width: #{$min-width-block-link-in-rem}rem;
-  width: calc(30vw - 28.86977887%);
+  //width: calc(30vw - 28.86977887%);
+
+  @supports (display: flex) {
+    width: auto;
+  }
 }
 
 .archive-nav-link__link {
