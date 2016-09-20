@@ -15,9 +15,9 @@
     max-width: #{$max-width-block-link}px;
     max-width: #{$max-width-block-link-in-rem}rem;
     @include width($min-width-block-link);
-    @supports (display: flex) {
-      width: auto;
-    }
+    //@supports (display: flex) {
+    //  width: auto;
+    //}
 
   }
 
@@ -33,10 +33,10 @@
       color: $color-text;
     }
 
-    @supports (display: flex) {
-      padding-bottom: 30.86977887%;
-      padding-top: 26.86977887%;
-    }
+    //@supports (display: flex) {
+    //  padding-bottom: 30.86977887%;
+    //  padding-top: 26.86977887%;
+    //}
   }
 
 }
@@ -49,7 +49,7 @@
 .block-link__link {
   color: $color-text;
   display: block;
-  display: flex;
+  //display: flex;
   flex-direction: column;
   font-family: $font-secondary;
   font-weight: 700;
@@ -62,9 +62,9 @@
     color: $color-primary;
   }
 
-  @supports (display: flex) {
-    padding-top: 0;
-  }
+  //@supports (display: flex) {
+  //  padding-top: 0;
+  //}
 
 }
 

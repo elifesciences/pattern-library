@@ -29,10 +29,10 @@
     max-width: #{$max-width-block-link}px;
     max-width: #{$max-width-block-link-in-rem}rem;
 
-    @supports (display: flex) {
-      display: block;
-      margin: 0 auto;
-    }
+    //@supports (display: flex) {
+    //  display: block;
+    //  margin: 0 auto;
+    //}
   }
 
 }
@@ -40,7 +40,7 @@
 @media only all and (min-width: #{get-rem-from-px($bkpt-block-link)}em) {
 
   .grid-listing {
-    display: flex;
+    //display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
   }
@@ -162,9 +162,9 @@
     .grid-listing-item:nth-child(4) {
       clear: left;
 
-      @supports (display: flex) {
-        clear: none;
-      }
+      //@supports (display: flex) {
+      //  clear: none;
+      //}
     }
 
   }
