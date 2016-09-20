@@ -22,9 +22,14 @@
 
 .grid-listing--archive-nav-link {
 
+  @include width($min-width-block-link);
+  //@supports (display: flex) {
+  //  width: auto;
+  //}
+
   .grid-listing-item {
     display: table-row;
-    margin-right: 20px;
+    margin: 0 auto;
     // TODO: consider renaming as now used out of original context
     max-width: #{$max-width-block-link}px;
     max-width: #{$max-width-block-link-in-rem}rem;
