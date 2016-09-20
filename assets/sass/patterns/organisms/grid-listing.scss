@@ -24,7 +24,8 @@
 .grid-listing--archive-nav-link {
 
   @include width($min-width-block-link);
-  //@supports (display: flex) {
+
+  //  @supports (display: flex) {
   //  width: auto;
   //}
 
@@ -51,6 +52,7 @@
     justify-content: flex-start;
 
     @include width($min-width-block-link * 2 + 20);
+
     //@supports (display: flex) {
     //  width: auto;
     //}
@@ -115,8 +117,10 @@
   .grid-listing {
 
     @include width($min-width-block-link * 3 + 40);
+
     //@supports (display: flex) {
     //  width: auto;
+    //
     //}
 
     .grid-listing-item {
@@ -136,40 +140,64 @@
 
   .grid-listing--archive-nav-link {
 
-    .grid-listing-item:nth-child(2n+1) {
-      clear: none;
-    }
-    .grid-listing-item:nth-child(3n+1) {
-      clear: left;
+    .grid-listing-item {
 
-      // TODO: Is this necessary? Don't think so as flex trumps float.
-      //@supports (display: flex) {
-      //  clear: none;
-      //}
+      &:nth-child(2n+1) {
+        clear: none;
+      }
+
+      &:nth-child(3n+1) {
+        clear: none;
+      }
+
+      &:nth-child(4n) {
+        clear: left;
+      }
+
     }
 
   }
 
 }
 
+// TODO: Solve clearing issue at this width and greater.
+
 @media only all and (min-width: #{get-rem-from-px($bkpt-block-link-listing--wide-screen)}em) {
 
   .grid-listing {
-    display: block;
-    max-width: #{$max-site-width-in-rem}rem;
+      //max-width: #{$max-site-width-in-rem}rem;
+    @include width($min-width-block-link * 4 + 60);
+
+    .grid-listing-item {
+      max-width: 262px; // TODO: Where does this number come from?
+      width: #{$min-width-block-link}px;
+
+      &:nth-child(3n) {
+        @include margin(20, "right");
+        clear: none;
+      }
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+
+    }
+
   }
 
-  .grid-listing-item {
-    max-width: 262px;
-    width: #{$min-width-block-link}px;
-  }
+  .grid-listing--archive-nav-link {
 
-  .grid-listing-item:nth-child(3n) {
-    @include margin(20, "right");
-  }
+    .grid-listing-item {
 
-  .grid-listing-item:nth-child(4n) {
-    margin-right: 0;
+      &:nth-child(2n+1) {
+        clear: none;
+      }
+
+      &:nth-child(5n) {
+        clear: left;
+      }
+
+    }
   }
 
 }
@@ -178,13 +206,13 @@
 
   .grid-listing {
 
-    display: block;
     @include width($max-site-width);
 
     .grid-listing-item {
       @include width($med-width-block-link);
 
-      &:nth-child(3n) {
+      // Needed for specificity reasons. FML.
+      &:nth-child(1n) {
         @include margin(20, "right");
       }
 

@@ -29,6 +29,7 @@
   //@supports (display: flex) {
   //  width: auto;
   //}
+
 }
 
 .archive-nav-link__link {
@@ -51,6 +52,7 @@
 .archive-nav-link__sub_link {
   color: $color-text;
   @include body-typeg;
+  padding-bottom: 0;
   text-decoration: none;
 
   &:hover {
