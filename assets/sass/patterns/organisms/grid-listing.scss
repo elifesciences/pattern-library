@@ -48,10 +48,15 @@
     //display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+
+    @include width($min-width-block-link * 2 + 20);
+    //@supports (display: flex) {
+    //  width: auto;
+    //}
+
   }
 
   .grid-listing-item {
-    border: none;
     flex: 1 0 #{$min-width-block-link-in-rem}rem;
     float: left;
     @include margin(0 20 20 0);
@@ -73,6 +78,8 @@
     // Needs 2 levels of specificity to apply the margin in this MQ, as it overrides rule specified
     // with 2 (justified) levels of specificity outside of the MQ.
     .grid-listing-item {
+
+      border: none;
       @include margin(20, "bottom");
     }
 
@@ -81,14 +88,19 @@
   .grid-listing--archive-nav-link {
 
     .grid-listing-item {
+
       @include margin(20, "right");
       // TODO: consider renaming as now used out of original context
       max-width: #{$max-width-block-link}px;
-      max-width: #{$max-width-block-link-in-rem}rem;;
+      max-width: #{$max-width-block-link-in-rem}rem;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
     }
 
   }
-
 
 }
 
