@@ -98,6 +98,10 @@
         margin-right: 0;
       }
 
+      .grid-listing-item:nth-child(3) {
+        clear: left;
+      }
+
     }
 
   }
@@ -106,16 +110,46 @@
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-block-link-listing--medium-width)}em) {
 
+  .grid-listing {
+
+    @include width($min-width-block-link * 3 + 40);
+    //@supports (display: flex) {
+    //  width: auto;
+    //}
+
+  }
+
   .grid-listing-item {
     max-width: 28vw;
   }
 
-  .grid-listing-item:nth-child(2n) {
-    @include margin(20, "right");
-  }
+  //@supports (display: flex) {
+  //
+  //  .grid-listing-item:nth-child(2n) {
+  //      @include margin(20, "right");
+  //    }
+  //
+  //  .grid-listing-item:nth-child(3n) {
+  //    margin-right: 0;
+  //  }
+  //
+  //}
 
-  .grid-listing-item:nth-child(3n) {
-    margin-right: 0;
+
+  .grid-listing--archive-nav-link {
+
+    .grid-listing-item:nth-child(3) {
+      clear: none;
+    }
+    .grid-listing-item:nth-child(4) {
+      clear: left;
+
+      // TODO: Is this necessary? Don't think so as flex trumps float.
+      //@supports (display: flex) {
+      //  clear: none;
+      //}
+    }
+
   }
 
 }
@@ -141,6 +175,7 @@
   }
 
 }
+
 @media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}em) {
 
   .grid-listing {
@@ -152,46 +187,12 @@
     @include width($med-width-block-link);
   }
 
-}
-
-// ***
-// *** Media queries for non-flexbox fallback
-// ***
-
-@media only all and (min-width: 620px) {
-
   .grid-listing--archive-nav-link {
 
-    .grid-listing-item:nth-child(3) {
-      clear: left;
-    }
-
-  }
-}
-
-@media only all and (min-width: 900px) {
-
-  .grid-listing--archive-nav-link {
-
-    .grid-listing-item:nth-child(3) {
-      clear: none;
-    }
-    .grid-listing-item:nth-child(4) {
-      clear: left;
-
-      //@supports (display: flex) {
-      //  clear: none;
-      //}
-    }
-
-  }
-
-}
-
-@media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}em) {
-  .grid-listing--archive-nav-link {
     .grid-listing-item:nth-child(4) {
       clear: none;
     }
+
   }
+
 }
