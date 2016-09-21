@@ -9,9 +9,9 @@
   width: #{$min-width-block-link}px;
   width: #{$min-width-block-link-in-rem}rem;
 
-  //@supports (display: flex) {
-  //  width: auto;
-  //}
+  @supports (display: flex) {
+    width: auto;
+  }
 
 }
 
@@ -26,9 +26,9 @@
   min-width: #{$min-width-block-link-in-rem}rem;
   @include width($min-width-block-link);
 
-  //@supports (display: flex) {
-  //  width: auto;
-  //}
+  @supports (display: flex) {
+    width: auto;
+  }
 
 }
 
