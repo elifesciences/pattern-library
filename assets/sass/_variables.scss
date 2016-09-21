@@ -33,7 +33,10 @@ $font-size-base-in-px: 16;
 $line-height-primary: 1.3;
 
 // Widths
+// TODO: Applies to more than just block links now, rename family.
 $max-width-block-link: 400;
+$max-width-block-link--actual-block-link: 600;
+$max-width-block-link--actual-block-link-in-rem: get-rem-from-px($max-width-block-link--actual-block-link);
 $max-width-block-link-in-rem: get-rem-from-px($max-width-block-link);
 $med-width-block-link: 263;
 $med-width-block-link-in-rem: get-rem-from-px($med-width-block-link);

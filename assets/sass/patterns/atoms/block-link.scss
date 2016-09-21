@@ -51,7 +51,6 @@
 .block-link__link {
   color: $color-text;
   display: block;
-  //display: flex;
   flex-direction: column;
   font-family: $font-secondary;
   font-weight: 700;
@@ -65,6 +64,7 @@
   }
 
   //@supports (display: flex) {
+  //  display: flex;
   //  padding-top: 0;
   //}
 

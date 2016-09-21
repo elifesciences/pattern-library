@@ -4,15 +4,39 @@
   list-style: none;
   margin: 0 auto;
   padding-left: 0;
+
+  @include width($min-width-block-link);
+
+  //  @supports (display: flex) {
+  //  width: auto;
+  //}
 }
 
-// Has different presentation from .grid-listing--archive-nav-link in single column view
+.grid-listing-item {
+  margin: 0 auto;
+  // TODO: consider renaming as now used out of original context
+  max-width: #{$max-width-block-link}px;
+  max-width: #{$max-width-block-link-in-rem}rem;
+
+  //@supports (display: flex) {
+  //  display: block;
+  //  // margin: 0 auto;
+  //}
+}
+
+// Has unique presentation in single column view.
 .grid-listing--block-link {
 
+  width: 100%;
+
+  // Unfortunately the nesting of grid-listing-item here requires nesting later each time these properties are overridden.
   .grid-listing-item {
     border: 1px solid $color-text-dividers;
     border-bottom-width: 0;
-    @include margin(2, "bottom");
+    @include margin(0 0 2);
+    max-width: #{$max-width-block-link--actual-block-link}px;
+    max-width: #{$max-width-block-link--actual-block-link-in-rem}rem;
+    width: 100%;
   }
 
   .grid-listing-item:last-child {
@@ -21,54 +45,39 @@
   }
 }
 
-.grid-listing--archive-nav-link {
-
-  @include width($min-width-block-link);
-
-  //  @supports (display: flex) {
-  //  width: auto;
-  //}
-
-  .grid-listing-item {
-    display: table-row;
-    margin: 0 auto;
-    // TODO: consider renaming as now used out of original context
-    max-width: #{$max-width-block-link}px;
-    max-width: #{$max-width-block-link-in-rem}rem;
-
-    //@supports (display: flex) {
-    //  display: block;
-    //  margin: 0 auto;
-    //}
-  }
-
-}
-
 @media only all and (min-width: #{get-rem-from-px($bkpt-block-link)}em) {
-
+  //  2 column view.
   .grid-listing {
-    //display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 
     @include width($min-width-block-link * 2 + 20);
 
     //@supports (display: flex) {
+    //  display: flex;
     //  width: auto;
     //}
 
+    .grid-listing-item {
+      border: none;
+      @include margin(0 20 20 0);
+      // TODO: consider renaming this variable if kept in this context
+      max-width: #{$max-width-block-link}px;
+      max-width: #{$max-width-block-link-in-rem}rem;
+      width: auto;
+    }
   }
 
   .grid-listing-item {
     flex: 1 0 #{$min-width-block-link-in-rem}rem;
     float: left;
-    @include margin(0 20 20 0);
-    // TODO: consider renaming this variable if kept in this context
-    max-width: #{$max-width-block-link}px;
-    max-width: #{$max-width-block-link-in-rem}rem;
 
     &:nth-child(2n) {
       margin-right: 0;
+    }
+
+    &:nth-child(2n+1) {
+      clear: left;
     }
 
     &:last-of-type {
@@ -76,44 +85,10 @@
     }
   }
 
-  .grid-listing--block-link {
-
-    // Needs 2 levels of specificity to apply the margin in this MQ, as it overrides rule specified
-    // with 2 (justified) levels of specificity outside of the MQ.
-    .grid-listing-item {
-
-      border: none;
-      @include margin(20, "bottom");
-    }
-
-  }
-
-  .grid-listing--archive-nav-link {
-
-    .grid-listing-item {
-
-      @include margin(20, "right");
-      // TODO: consider renaming as now used out of original context
-      max-width: #{$max-width-block-link}px;
-      max-width: #{$max-width-block-link-in-rem}rem;
-
-      &:nth-child(2n) {
-        margin-right: 0;
-      }
-
-      // It's a 2 column view
-      &:nth-child(2n+1) {
-        clear: left;
-      }
-
-    }
-
-  }
-
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-block-link-listing--medium-width)}em) {
-
+  // 3 column view
   .grid-listing {
 
     @include width($min-width-block-link * 3 + 40);
@@ -130,20 +105,12 @@
         @include margin(20, "right");
       }
 
-      &:nth-child(3n) {
-        margin-right: 0;
-      }
-
-    }
-
-  }
-
-  .grid-listing--archive-nav-link {
-
-    .grid-listing-item {
-
       &:nth-child(2n+1) {
         clear: none;
+      }
+
+      &:nth-child(3n) {
+        margin-right: 0;
       }
 
       &:nth-child(3n+1) {
@@ -157,7 +124,7 @@
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-block-link-listing--wide-screen)}em) {
-
+  // 4 column view
   .grid-listing {
 
     @include width($min-width-block-link * 4 + 60);
@@ -169,6 +136,10 @@
 
       &:nth-child(3n) {
         @include margin(20, "right");
+        //clear: none;
+      }
+
+      &:nth-child(3n+1) {
         clear: none;
       }
 
@@ -176,23 +147,11 @@
         margin-right: 0;
       }
 
-    }
-
-  }
-
-  .grid-listing--archive-nav-link {
-
-    .grid-listing-item {
-
-      &:nth-child(3n+1) {
-        clear: none;
-      }
-
       &:nth-child(4n+1) {
         clear: left;
       }
-
     }
+
   }
 
 }
@@ -206,7 +165,7 @@
     .grid-listing-item {
       @include width($med-width-block-link);
 
-      // Needed for specificity reasons. FML.
+      // Needed for specificity (another unicorn dies).
       &:nth-child(1n) {
         @include margin(20, "right");
       }
