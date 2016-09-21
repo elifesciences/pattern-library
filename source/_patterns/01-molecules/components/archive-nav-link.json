@@ -3,7 +3,7 @@
   "blockLink": {
     "url": "#",
     "text": "Developmental Biology and Stem Cells",
-    "classes": "block-link--archive-nav-link",
+    "variant": "archive-nav-link",
     "behaviour": "BackgroundImage",
     "backgroundImage": {
       "lowResImageSource": "https://unsplash.it/950/400",

@@ -6,23 +6,25 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-#  TODO: should classes be required?
-    classes:
+    variant:
       type: string
       minLength: 1
     behaviour:
       type: string
       enum:
         - BackgroundImage
-    lowResImageSource:
-      type: string
-      minLength: 1
-    highResImageSource:
-      type: string
-      minLength: 1
-    thresholdWidth:
-      type: number
-      minimum: 0
+    backgroundImage:
+      type: object
+      properties:
+        lowResImageSource:
+          type: string
+          minLength: 1
+        highResImageSource:
+          type: string
+          minLength: 1
+        thresholdWidth:
+          type: number
+          minimum: 0
     text:
       type: string
       minLength: 1
