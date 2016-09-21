@@ -167,8 +167,8 @@
     },
 
     "backgroundImage": {
-      "lowResImageSource": "http://unsplash.it/950/400",
-      "highResImageSource": "http://unsplash.it/1900/800"
+      "lowResImageSource": "https://unsplash.it/950/400",
+      "highResImageSource": "https://unsplash.it/1900/800"
     }
   },
 
@@ -215,8 +215,8 @@
           },
 
           "image": {
-            "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w",
+            "defaultPath": "https://unsplash.it/250/140/",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
             "altText": "Meaningful alt text please.",
             "classes": "teaser__img--big"
           }
@@ -328,8 +328,8 @@
             }
           },
           "image": {
-            "defaultPath": "http://unsplash.it/70/70/",
-            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w",
+            "defaultPath": "https://unsplash.it/70/70/",
+            "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
             "altText": "Meaningful alt text please.",
             "classes": "teaser__img--small"
           }
@@ -420,8 +420,8 @@
             }
           },
           "image": {
-            "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w",
+            "defaultPath": "https://unsplash.it/250/140/",
+            "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
             "altText": "Meaningful alt text please.",
             "classes": "teaser__img--small"
           }
@@ -527,8 +527,8 @@
             }
           },
           "image": {
-            "defaultPath": "http://unsplash.it/250/140/",
-            "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w",
+            "defaultPath": "https://unsplash.it/250/140/",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
             "altText": "Make it meaningful please",
             "classes": "teaser__img--big"
           }
@@ -546,8 +546,8 @@
         "name": "Prabhat Jha",
         "title": "University of Toronto",
         "image": {
-          "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/1 90w",
-          "defaultPath": "http://lorempixel.com/90/90/people/1",
+          "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
+          "defaultPath": "https://unsplash.it/90/90",
           "altText": "Meaningful alt text here please."
         }
       },
@@ -555,8 +555,8 @@
         "name": "Richard Losick",
         "title": "Harvard University",
         "image": {
-          "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/2 90w",
-          "defaultPath": "http://lorempixel.com/90/90/people/5",
+          "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
+          "defaultPath": "https://unsplash.it/90/90",
           "altText": "Meaningful alt text here please."
         }
       }

@@ -200,8 +200,8 @@
      },
 
      "backgroundImage": {
-       "lowResImageSource": "http://unsplash.it/950/400",
-       "highResImageSource": "http://unsplash.it/1900/800"
+       "lowResImageSource": "https://unsplash.it/950/400",
+       "highResImageSource": "https://unsplash.it/1900/800"
      }
   },
 
@@ -310,8 +310,8 @@
             }
           },
           "image": {
-            "defaultPath": "http://unsplash.it/70/70/",
-            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w",
+            "defaultPath": "https://unsplash.it/70/70/",
+            "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
             "altText": "Meaningful alt text please.",
             "classes": "teaser__img--small"
           }
@@ -349,8 +349,8 @@
             }
           },
           "image": {
-            "defaultPath": "http://unsplash.it/70/70/",
-            "srcset": "http://unsplash.it/140/140/ 140w, http://unsplash.it/70/70/ 70w",
+            "defaultPath": "https://unsplash.it/70/70/",
+            "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
             "altText": "Meaningful alt text please.",
             "classes": "teaser__img--small"
           }

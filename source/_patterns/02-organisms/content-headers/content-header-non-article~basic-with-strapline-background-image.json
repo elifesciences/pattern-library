@@ -5,7 +5,7 @@
   "titleClass": "content-header__title--large",
   "strapline": "<i>eLife</i> publishes outstanding research in the life sciences and biomedicine, from the most fundamental and theoretical work, through to translational, applied, and clinical research.",
   "backgroundImage": {
-    "lowResImageSource": "http://unsplash.it/950/400",
-    "highResImageSource": "http://unsplash.it/1900/800"
+    "lowResImageSource": "https://unsplash.it/950/400",
+    "highResImageSource": "https://unsplash.it/1900/800"
   }
 }

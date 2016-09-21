@@ -41,8 +41,8 @@
 
   "backgroundImage": {
     "images": {
-      "hires": "http://unsplash.it/1900/800",
-      "lores": "http://unsplash.it/950/400"
+      "hires": "https://unsplash.it/1900/800",
+      "lores": "https://unsplash.it/950/400"
     }
   }
 }
