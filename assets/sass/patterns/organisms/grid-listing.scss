@@ -147,10 +147,6 @@
       }
 
       &:nth-child(3n+1) {
-        clear: none;
-      }
-
-      &:nth-child(4n) {
         clear: left;
       }
 
@@ -160,16 +156,15 @@
 
 }
 
-// TODO: Solve clearing issue at this width and greater.
-
 @media only all and (min-width: #{get-rem-from-px($bkpt-block-link-listing--wide-screen)}em) {
 
   .grid-listing {
-      //max-width: #{$max-site-width-in-rem}rem;
+
     @include width($min-width-block-link * 4 + 60);
 
     .grid-listing-item {
-      max-width: 262px; // TODO: Where does this number come from?
+      // TODO: Where does this number come from?
+      max-width: 262px;
       width: #{$min-width-block-link}px;
 
       &:nth-child(3n) {
@@ -189,11 +184,11 @@
 
     .grid-listing-item {
 
-      &:nth-child(2n+1) {
+      &:nth-child(3n+1) {
         clear: none;
       }
 
-      &:nth-child(5n) {
+      &:nth-child(4n+1) {
         clear: left;
       }
 
@@ -219,14 +214,6 @@
       &:nth-child(4n) {
         margin-right: 0;
       }
-    }
-
-  }
-  // TODO: Is this really needed?
-  .grid-listing--archive-nav-link {
-
-    .grid-listing-item:nth-child(3n+1) {
-      clear: none;
     }
 
   }
