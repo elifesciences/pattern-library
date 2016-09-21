@@ -5,5 +5,8 @@
   },
   "title": "Drosophila duet: mating flies harmonise",
   "chapterNumber": 4,
-  "content": "Flies get to grips with acoustic duetting."
+  "content": "Flies get to grips with acoustic duetting.",
+  "meta": {
+    "text": "Some unlinked text"
+  }
 }

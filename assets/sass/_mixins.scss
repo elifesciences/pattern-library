@@ -1,3 +1,6 @@
+// Put all general mixins, and any helper functions, in this file.
+// Mixins for a single pattern may be put in that pattern's scss file instead if that makes sense, use judgement.
+
 @function get-px-from-rem($size_in_rem) {
   @return $size_in_rem * $font-size-base-in-px;
 }
