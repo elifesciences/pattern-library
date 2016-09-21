@@ -22,9 +22,11 @@
     @include font-size(12);
     font-weight: normal;
 
-    &:hover {
-      color: $color-text;
-    }
   }
+
+  a.meta__type:hover {
+    color: $color-text;
+  }
+
 }
 

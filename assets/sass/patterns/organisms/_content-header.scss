@@ -129,21 +129,6 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
   content: "";
 }
 
-.meta {
-  @include label-content-typeg();
-}
-
-.meta__type {
-  color: $color-text-secondary;
-  text-decoration: none;
-  text-transform: uppercase;
-
-  &:hover {
-    color: $color-primary-dark;
-  }
-
-}
-
 .content-header-divider {
   box-sizing: content-box;
   max-width: #{$max-site-width}px;
