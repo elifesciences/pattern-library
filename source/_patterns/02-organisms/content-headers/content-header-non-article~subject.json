@@ -10,7 +10,7 @@
     "classes": "button--outline button--small"
   },
   "backgroundImage": {
-    "lowResImageSource": "http://unsplash.it/950/400",
-    "highResImageSource": "http://unsplash.it/1900/800"
+    "lowResImageSource": "https://unsplash.it/950/400",
+    "highResImageSource": "https://unsplash.it/1900/800"
   }
 }

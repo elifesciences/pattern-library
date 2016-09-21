@@ -5,9 +5,9 @@
   "secondaryInfo": "Episode 24",
   "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
   "image": {
-    "defaultPath": "http://unsplash.it/250/140/",
+    "defaultPath": "https://unsplash.it/250/140/",
     "altText": "An image.",
-    "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w",
+    "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
     "classes": "teaser__img--prominent"
   },
   "footer": {

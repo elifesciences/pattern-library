@@ -4,9 +4,9 @@
   "title": "eLife Lens search",
   "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
   "image": {
-    "defaultPath": "http://unsplash.it/250/140/",
+    "defaultPath": "https://unsplash.it/250/140/",
     "altText": "An image.",
-    "srcset": "http://unsplash.it/500/280/ 500w, http://unsplash.it/250/140/ 250w",
+    "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
     "classes": "teaser__img--prominent"
   },
   "footer": {
