@@ -546,8 +546,8 @@
         "name": "Prabhat Jha",
         "title": "University of Toronto",
         "image": {
-          "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/1 90w",
-          "defaultPath": "http://lorempixel.com/90/90/people/1",
+          "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
+          "defaultPath": "https://unsplash.it/90/90",
           "altText": "Meaningful alt text here please."
         }
       },
@@ -555,8 +555,8 @@
         "name": "Richard Losick",
         "title": "Harvard University",
         "image": {
-          "srcset": "http://lorempixel.com/180/180/people/5 180w, http://lorempixel.com/90/90/people/2 90w",
-          "defaultPath": "http://lorempixel.com/90/90/people/5",
+          "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
+          "defaultPath": "https://unsplash.it/90/90",
           "altText": "Meaningful alt text here please."
         }
       }
