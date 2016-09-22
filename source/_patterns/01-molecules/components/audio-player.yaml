@@ -26,11 +26,7 @@ schema:
             properties:
               forMachine:
                 type: string
-                enum:
-                  - audio/mp3
-                  - audio/mpeg
-                  - audio/webm
-                  - audio/ogg
+                pattern: ^(audio\/[a-zA-Z0-9!#$%^&\*_\-\+{}\|'.`~]+)(; *[a-zA-Z0-9!#$%^&\*_\-\+{}\|'.`~]+=(([a-zA-Z0-9\.\-]+)|(".+")))*$
               forHuman:
                 type: string
                 minLength: 1
