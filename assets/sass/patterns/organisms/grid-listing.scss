@@ -125,9 +125,8 @@
     @include width($min-width-grid-listing-item * 4 + 60);
 
     .grid-listing-item {
-      // TODO: Where does this number come from?
-      max-width: 262px;
-      width: #{$min-width-grid-listing-item}px;
+      flex: 0 0 #{get-rem-from-px($min-width-grid-listing-item)}rem;
+      @include width($min-width-grid-listing-item);
 
       &:nth-child(3n) {
         @include margin(20, "right");
