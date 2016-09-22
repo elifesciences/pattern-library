@@ -12,6 +12,7 @@
 
   .block-link {
     background-color: $color-primary;
+    margin-bottom: 0;
 
     // Block links are only ever found as a descendant of a grid-listing.
     @include constrain-width($max-width-grid-listing-item, "max");
@@ -74,8 +75,8 @@
   @include height-constrained();
 }
 
-// .block-link--archive-nav-link is used on an archive year page
-.block-link--archive-nav-link {
+// other .block-link useage is within .archive-nav-link
+.block-link:not(.block-link--grid-listing) {
   background-color: $color-primary;
   @include width-constrained();
 }

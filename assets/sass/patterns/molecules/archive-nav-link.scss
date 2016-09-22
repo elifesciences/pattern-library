@@ -4,10 +4,6 @@
   @include widths-for-generic-grid-listing-items();
 }
 
-.archive-nav-link .block-link {
-  margin-bottom: 0;
-}
-
 .archive-nav-link__list {
   @include widths-for-generic-grid-listing-items();
 }
