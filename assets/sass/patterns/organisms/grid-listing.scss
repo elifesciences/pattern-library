@@ -12,9 +12,12 @@
   }
 }
 
+.grid-listing--block-link {
+  width: auto;
+}
+
 .grid-listing-item {
   margin: 0 auto;
-  // TODO: consider renaming as now used out of original context
   @include constrain-width($max-width-grid-listing-item, "max");
 
   @supports (display: flex) {
@@ -22,27 +25,21 @@
   }
 }
 
-// Has unique presentation in single column view.
-.grid-listing--block-link {
-
+.grid-listing-item--block-link {
+  border: 1px solid $color-text-dividers;
+  border-bottom-width: 0;
+  @include margin(0 0 2);
+  @include constrain-width($max-width-block-link, "max");
   width: 100%;
+}
 
-  // Unfortunately the nesting of grid-listing-item here requires nesting later each time these properties are overridden.
-  .grid-listing-item {
-    border: 1px solid $color-text-dividers;
-    border-bottom-width: 0;
-    @include margin(0 0 2);
-    @include constrain-width($max-width-block-link, "max");
-    width: 100%;
-  }
-
-  .grid-listing-item:last-child {
-    border-bottom-width: 1px;
-    margin-bottom: 0;
-  }
+.grid-listing-item--block-link:last-child {
+  border-bottom-width: 1px;
+  margin-bottom: 0;
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--narrow-screen)}em) {
+
   //  2 column view.
   .grid-listing {
     flex-wrap: wrap;
@@ -58,7 +55,6 @@
     .grid-listing-item {
       border: none;
       @include margin(0 20 20 0);
-      // TODO: consider renaming this variable if kept in this context
       @include constrain-width($max-width-grid-listing-item, "max");
       width: auto;
     }
@@ -84,6 +80,7 @@
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--medium-width)}em) {
+
   // 3 column view
   .grid-listing {
 
