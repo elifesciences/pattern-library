@@ -14,6 +14,9 @@ schema:
         classes:
           type: string
           minLength: 1
+        heading:
+          type: string
+          minLength: 1
       required:
         - classes
     -
