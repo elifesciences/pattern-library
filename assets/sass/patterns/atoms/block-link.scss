@@ -12,9 +12,7 @@
 
   .block-link {
     background-color: $color-primary;
-    max-width: #{$max-width-block-link}px;
-    max-width: #{$max-width-block-link-in-rem}rem;
-
+    @include constrain-width($max-width-block-link, "max");
     @include width($min-width-block-link);
 
     //@supports (display: flex) {
@@ -26,8 +24,7 @@
   .block-link__link {
     color: $color-text--reverse;
     margin: 0 auto;
-    max-width: #{$max-width-block-link}px;
-    max-width: #{$max-width-block-link-in-rem}rem;
+    @include constrain-width($max-width-block-link, "max");
     padding-bottom: 33.86977887%;
     padding-top: 23.86977887%;
 

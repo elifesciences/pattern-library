@@ -9,16 +9,7 @@
 }
 
 .archive-nav-link__list {
-  max-width: #{$max-width-block-link}px;
-  max-width: #{$max-width-block-link-in-rem}rem;
-  min-width: #{$min-width-block-link}px;
-  min-width: #{$min-width-block-link-in-rem}rem;
-  @include width($min-width-block-link);
-
-  //@supports (display: flex) {
-  //  width: auto;
-  //}
-
+  @include widths-for-generic-grid-listing-items();
 }
 
 .archive-nav-link__link {

@@ -70,6 +70,13 @@
   width: #{get-rem-from-px($size_in_px)}rem;
 }
 
+@mixin constrain-width($size_in_px, $extreme) {
+  @if $extreme == min or $extreme == max {
+    #{$extreme}-width: #{$size_in_px}px;
+    #{$extreme}-width: #{get-rem-from-px($size_in_px)}rem;
+  }
+}
+
 @mixin visuallyhidden() {
   border: 0;
   clip: rect(0 0 0 0);
@@ -177,12 +184,9 @@
 // Doesn't apply to block-link
 @mixin widths-for-generic-grid-listing-items() {
 
-  max-width: #{$max-width-block-link}px;
-  max-width: #{$max-width-block-link-in-rem}rem;
-  min-width: #{$min-width-block-link}px;
-  min-width: #{$min-width-block-link-in-rem}rem;
-  width: #{$min-width-block-link}px;
-  width: #{$min-width-block-link-in-rem}rem;
+  @include constrain-width($max-width-block-link, "max");
+  @include constrain-width($min-width-block-link, "min");
+  @include width($min-width-block-link);
 
   //@supports (display: flex) {
   //  width: auto;
