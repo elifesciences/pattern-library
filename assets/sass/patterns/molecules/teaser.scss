@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .teaser {
-  border-top: 1px solid $color-text-dividers;
+  //border-top: 1px solid $color-text-dividers;
   @include padding($teaser-spacing-top 0 $teaser-spacing-bottom);
 }
 

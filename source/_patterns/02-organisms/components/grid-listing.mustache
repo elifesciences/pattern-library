@@ -1,5 +1,7 @@
 <ol class="grid-listing clearfix{{#classes}} {{classes}}{{/classes}}">
 
+  {{! TODO: add variant classes onto <li> to avoid nesting root variant -> generic listing item }}
+
   {{#blockLinks}}
     <li class="grid-listing-item">
       {{> atoms-block-link}}
@@ -11,5 +13,12 @@
       {{> molecules-archive-nav-link}}
     </li>
   {{/archiveNavLinks}}
+
+  {{#teasers}}
+    <li class="grid-listing-item">
+      {{! grid style teasers only: labs or podcast }}
+      {{> molecules-teaser}}
+    </li>
+  {{/teasers}}
 
 </ol>

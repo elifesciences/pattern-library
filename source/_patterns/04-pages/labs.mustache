@@ -1,0 +1,51 @@
+<div class="global-wrapper">
+
+  <div class="global-inner">
+
+    {{#siteHeader}}
+      {{> organisms-site-header }}
+    {{/siteHeader}}
+
+    <main role="main">
+
+      {{#contentHeader}}
+        {{> organisms-pl-only-content-header-non-article-basic-with-strapline-cta-background-image}}
+      {{/contentHeader}}
+
+      <div class="wrapper">
+
+        {{#leadParas}}
+          {{> molecules-lead-paras}}
+        {{/leadParas}}
+
+        {{#listHeading}}
+          {{> atoms-list-heading}}
+        {{/listHeading}}
+
+        <div class="grid">
+
+          <div class="listing-column-container">
+
+            <div class="grid__item large--one-whole listing-column-main">
+
+              {{#labsListing}}
+                {{> organisms-grid-listing}}
+              {{/labsListing}}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    {{> organisms-email-cta }}
+
+    {{> organisms-footer }}
+
+  </div>
+
+</div>

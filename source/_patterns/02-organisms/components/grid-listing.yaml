@@ -3,6 +3,7 @@ assets:
     - grid-listing.scss
     - $ref: ../../00-atoms/components/block-link.yaml#/assets/css
     - $ref: ../../01-molecules/components/archive-nav-link.yaml#/assets/css
+    - $ref: ../../01-molecules/teasers/teaser.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -35,3 +36,12 @@ schema:
                 $ref: ../../01-molecules/components/archive-nav-link.yaml#/schema
           required:
             - archiveNavLinks
+        -
+          properties:
+            teasers:
+              type: array
+              minItems: 1
+              items:
+                $ref: ../../01-molecules/teasers/teaser.yaml#/schema
+          required:
+            - teasers

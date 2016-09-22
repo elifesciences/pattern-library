@@ -1,0 +1,295 @@
+{
+  "classes": "grid-listing--archive-nav-link",
+  "teasers": [
+    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },
+    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+      "secondaryInfo": "Episode 24",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    }
+  ]
+}
