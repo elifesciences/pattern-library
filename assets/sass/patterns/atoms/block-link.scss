@@ -12,19 +12,21 @@
 
   .block-link {
     background-color: $color-primary;
-    @include constrain-width($max-width-block-link, "max");
-    @include width($min-width-block-link);
 
-    //@supports (display: flex) {
-    //  width: auto;
-    //}
+    // Block links are only ever found as a descendant of a grid-listing.
+    @include constrain-width($max-width-grid-listing-item, "max");
+    @include width($min-width-grid-listing-item);
+
+    @supports (display: flex) {
+      width: auto;
+    }
 
   }
 
   .block-link__link {
     color: $color-text--reverse;
     margin: 0 auto;
-    @include constrain-width($max-width-block-link, "max");
+    @include constrain-width($max-width-grid-listing-item, "max");
     padding-bottom: 33.86977887%;
     padding-top: 23.86977887%;
 
@@ -32,10 +34,10 @@
       color: $color-text;
     }
 
-  //  @supports (display: flex) {
-  //    padding-bottom: 30.86977887%;
-  //    padding-top: 26.86977887%;
-  //  }
+    @supports (display: flex) {
+      padding-bottom: 30.86977887%;
+      padding-top: 26.86977887%;
+    }
   }
 
 }
@@ -60,10 +62,10 @@
     color: $color-primary;
   }
 
-  //@supports (display: flex) {
-  //  display: flex;
-  //  padding-top: 0;
-  //}
+  @supports (display: flex) {
+    display: flex;
+    padding-top: 0;
+  }
 
 }
 
@@ -96,11 +98,11 @@
   @media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}em) {
 
     .block-link {
-      @include width($med-width-block-link);
+      @include width($med-width-grid-listing-item);
     }
 
     .block-link__link {
-      @include width($med-width-block-link);
+      @include width($med-width-grid-listing-item);
     }
 
   }

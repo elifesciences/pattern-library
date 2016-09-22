@@ -5,21 +5,21 @@
   margin: 0 auto;
   padding-left: 0;
 
-  @include width($min-width-block-link);
+  @include width($min-width-grid-listing-item);
 
-  //@supports (display: flex) {
-  //  width: auto;
-  //}
+  @supports (display: flex) {
+    width: auto;
+  }
 }
 
 .grid-listing-item {
   margin: 0 auto;
   // TODO: consider renaming as now used out of original context
-  @include constrain-width($max-width-block-link, "max");
+  @include constrain-width($max-width-grid-listing-item, "max");
 
-  //@supports (display: flex) {
-  //  display: block;
-  //}
+  @supports (display: flex) {
+    display: block;
+  }
 }
 
 // Has unique presentation in single column view.
@@ -32,7 +32,7 @@
     border: 1px solid $color-text-dividers;
     border-bottom-width: 0;
     @include margin(0 0 2);
-    @include constrain-width($max-width-block-link--actual-block-link, "max");
+    @include constrain-width($max-width-block-link, "max");
     width: 100%;
   }
 
@@ -42,30 +42,30 @@
   }
 }
 
-@media only all and (min-width: #{get-rem-from-px($bkpt-block-link)}em) {
+@media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--narrow-screen)}em) {
   //  2 column view.
   .grid-listing {
     flex-wrap: wrap;
     justify-content: flex-start;
 
-    @include width($min-width-block-link * 2 + 20);
+    @include width($min-width-grid-listing-item * 2 + 20);
 
-    //@supports (display: flex) {
-    //  display: flex;
-    //  width: auto;
-    //}
+    @supports (display: flex) {
+      display: flex;
+      width: auto;
+    }
 
     .grid-listing-item {
       border: none;
       @include margin(0 20 20 0);
       // TODO: consider renaming this variable if kept in this context
-      @include constrain-width($max-width-block-link, "max");
+      @include constrain-width($max-width-grid-listing-item, "max");
       width: auto;
     }
   }
 
   .grid-listing-item {
-    flex: 1 0 #{$min-width-block-link-in-rem}rem;
+    flex: 1 0 #{get-rem-from-px($min-width-grid-listing-item)}rem;
     float: left;
 
     &:nth-child(2n) {
@@ -83,15 +83,15 @@
 
 }
 
-@media only all and (min-width: #{get-rem-from-px($bkpt-block-link-listing--medium-width)}em) {
+@media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--medium-width)}em) {
   // 3 column view
   .grid-listing {
 
-    @include width($min-width-block-link * 3 + 40);
+    @include width($min-width-grid-listing-item * 3 + 40);
 
-    //@supports (display: flex) {
-    //  width: auto;
-    //}
+    @supports (display: flex) {
+      width: auto;
+    }
 
     .grid-listing-item {
       max-width: 28vw;
@@ -118,16 +118,16 @@
 
 }
 
-@media only all and (min-width: #{get-rem-from-px($bkpt-block-link-listing--wide-screen)}em) {
+@media only all and (min-width: #{get-rem-from-px($bkpt-grid-link-listing--wide-screen)}em) {
   // 4 column view
   .grid-listing {
 
-    @include width($min-width-block-link * 4 + 60);
+    @include width($min-width-grid-listing-item * 4 + 60);
 
     .grid-listing-item {
       // TODO: Where does this number come from?
       max-width: 262px;
-      width: #{$min-width-block-link}px;
+      width: #{$min-width-grid-listing-item}px;
 
       &:nth-child(3n) {
         @include margin(20, "right");
@@ -157,7 +157,7 @@
     @include width($max-site-width);
 
     .grid-listing-item {
-      @include width($med-width-block-link);
+      @include width($med-width-grid-listing-item);
 
       // Needed for specificity (another unicorn dies).
       &:nth-child(1n) {

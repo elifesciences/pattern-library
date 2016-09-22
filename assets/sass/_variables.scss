@@ -33,15 +33,10 @@ $font-size-base-in-px: 16;
 $line-height-primary: 1.3;
 
 // Widths
-// TODO: Applies to more than just block links now, rename family.
-$max-width-block-link: 400;
-$max-width-block-link--actual-block-link: 600;
-$max-width-block-link--actual-block-link-in-rem: get-rem-from-px($max-width-block-link--actual-block-link);
-$max-width-block-link-in-rem: get-rem-from-px($max-width-block-link);
-$med-width-block-link: 263;
-$med-width-block-link-in-rem: get-rem-from-px($med-width-block-link);
-$min-width-block-link: 245;
-$min-width-block-link-in-rem: get-rem-from-px($min-width-block-link);
+$max-width-grid-listing-item: 400;
+$max-width-block-link: 600;
+$med-width-grid-listing-item: 263;
+$min-width-grid-listing-item: 245;
 
 $max-site-width: 1114;
 $max-site-width-in-rem: get-rem-from-px($max-site-width);
@@ -69,8 +64,9 @@ $bkpt-content-header--wide: 1024;
 $bkpt-content-header--extra-wide: 1440;
 
 $bkpt-block-link: 600;
-$bkpt-block-link-listing--medium-width: 882;
-$bkpt-block-link-listing--wide-screen: 1174;
+$bkpt-grid-listing--narrow-screen: $bkpt-block-link;
+$bkpt-grid-listing--medium-width: 882;
+$bkpt-grid-link-listing--wide-screen: 1174;
 
 // TODO: review these breakpoints:
 $bkpt-article-download-links-list: 560;

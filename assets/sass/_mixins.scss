@@ -181,15 +181,15 @@
   }
 }
 
-// Doesn't apply to block-link
+// Doesn't apply to a grid listing containing only block-links
 @mixin widths-for-generic-grid-listing-items() {
 
-  @include constrain-width($max-width-block-link, "max");
-  @include constrain-width($min-width-block-link, "min");
-  @include width($min-width-block-link);
+  @include constrain-width($max-width-grid-listing-item, "max");
+  @include constrain-width($min-width-grid-listing-item, "min");
+  @include width($min-width-grid-listing-item);
 
-  //@supports (display: flex) {
-  //  width: auto;
-  //}
+  @supports (display: flex) {
+    width: auto;
+  }
 
 }
