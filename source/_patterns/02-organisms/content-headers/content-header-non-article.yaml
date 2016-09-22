@@ -1,6 +1,7 @@
 assets:
   css:
     - content-header-non-article.css
+    - $ref: ../../01-molecules/components/meta.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
