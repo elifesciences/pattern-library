@@ -2,7 +2,6 @@
   "url": "#",
   "text": "Developmental Biology and Stem Cells",
   "behaviour": "BackgroundImage",
-  "variant": "archive-nav-link",
   "backgroundImage": {
     "lowResImageSource": "https://unsplash.it/950/400",
     "highResImageSource": "https://unsplash.it/1900/800"

@@ -9,8 +9,8 @@
 }
 
 .archive-nav-link__link {
-  text-decoration: none;
   color: $color-text;
+  text-decoration: none;
 }
 
 .archive-nav-link__sub_links_list_heading {
@@ -19,8 +19,8 @@
 }
 
 .archive-nav-link__sub_links_list_item {
-  list-style-type: disc;
   display: list-item;
+  list-style-type: disc;
   @include margin(16, "left");
   @include margin(0, "bottom");
 }

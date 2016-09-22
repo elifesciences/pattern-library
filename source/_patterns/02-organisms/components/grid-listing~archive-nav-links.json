@@ -1,12 +1,10 @@
 {
-  "classes": "grid-listing--archive-nav-link",
   "archiveNavLinks": [
     {
       "url": "#",
       "blockLink": {
         "url": "#",
         "text": "December",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -38,7 +36,6 @@
       "blockLink": {
         "url": "#",
         "text": "November",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -70,7 +67,6 @@
       "blockLink": {
         "url": "#",
         "text": "October",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -102,7 +98,6 @@
       "blockLink": {
         "url": "#",
         "text": "September",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -134,7 +129,6 @@
       "blockLink": {
         "url": "#",
         "text": "August",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -166,7 +160,6 @@
       "blockLink": {
         "url": "#",
         "text": "July",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -197,7 +190,6 @@
       "blockLink": {
         "url": "#",
         "text": "June",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -229,7 +221,6 @@
       "blockLink": {
         "url": "#",
         "text": "May",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -261,7 +252,6 @@
       "blockLink": {
         "url": "#",
         "text": "April",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -293,7 +283,6 @@
       "blockLink": {
         "url": "#",
         "text": "March",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -325,7 +314,6 @@
       "blockLink": {
         "url": "#",
         "text": "February",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",
@@ -357,7 +345,6 @@
       "blockLink": {
         "url": "#",
         "text": "January",
-        "variant": "archive-nav-link",
         "behaviour": "BackgroundImage",
         "backgroundImage": {
           "lowResImageSource": "http://unsplash.it/950/400",

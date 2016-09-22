@@ -44,8 +44,8 @@
 }
 
 .block-link {
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .block-link__link {
@@ -70,6 +70,7 @@
 
 }
 
+// NOTE for next 2 rules: preferring use of variant over nesting, to keep specificity low.
 // .block-link--grid-listing is used on the main subject listing page
 .block-link--grid-listing {
   @include height-constrained();
