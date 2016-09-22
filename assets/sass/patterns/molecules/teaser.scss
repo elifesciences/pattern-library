@@ -203,6 +203,9 @@
 }
 
 .teaser--grid-style {
+
+  @include widths-for-generic-grid-listing-items();
+
   .teaser__footer {
     align-items: center;
     display: flex;

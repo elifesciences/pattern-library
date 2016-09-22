@@ -7,9 +7,9 @@
 
   @include width($min-width-block-link);
 
-  @supports (display: flex) {
-    width: auto;
-  }
+  //@supports (display: flex) {
+  //  width: auto;
+  //}
 }
 
 .grid-listing-item {
@@ -18,9 +18,9 @@
   max-width: #{$max-width-block-link}px;
   max-width: #{$max-width-block-link-in-rem}rem;
 
-  @supports (display: flex) {
-    display: block;
-  }
+  //@supports (display: flex) {
+  //  display: block;
+  //}
 }
 
 // Has unique presentation in single column view.
@@ -52,10 +52,10 @@
 
     @include width($min-width-block-link * 2 + 20);
 
-    @supports (display: flex) {
-      display: flex;
-      width: auto;
-    }
+    //@supports (display: flex) {
+    //  display: flex;
+    //  width: auto;
+    //}
 
     .grid-listing-item {
       border: none;
@@ -92,10 +92,9 @@
 
     @include width($min-width-block-link * 3 + 40);
 
-    @supports (display: flex) {
-      width: auto;
-
-    }
+    //@supports (display: flex) {
+    //  width: auto;
+    //}
 
     .grid-listing-item {
       max-width: 28vw;

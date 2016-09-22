@@ -1,18 +1,7 @@
 @import "../../definitions";
 
 .archive-nav-link {
-  max-width: #{$max-width-block-link}px;
-  max-width: #{$max-width-block-link-in-rem}rem;
-  min-width: #{$min-width-block-link}px;
-  min-width: #{$min-width-block-link-in-rem}rem;
-  // TODO: Consider increasing $min-width-block-link by this increment.
-  width: #{$min-width-block-link}px;
-  width: #{$min-width-block-link-in-rem}rem;
-
-  @supports (display: flex) {
-    width: auto;
-  }
-
+  @include widths-for-generic-grid-listing-items();
 }
 
 .archive-nav-link .block-link {
@@ -26,9 +15,9 @@
   min-width: #{$min-width-block-link-in-rem}rem;
   @include width($min-width-block-link);
 
-  @supports (display: flex) {
-    width: auto;
-  }
+  //@supports (display: flex) {
+  //  width: auto;
+  //}
 
 }
 

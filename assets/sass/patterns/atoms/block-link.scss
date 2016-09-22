@@ -17,9 +17,9 @@
 
     @include width($min-width-block-link);
 
-    @supports (display: flex) {
-      width: auto;
-    }
+    //@supports (display: flex) {
+    //  width: auto;
+    //}
 
   }
 
@@ -35,10 +35,10 @@
       color: $color-text;
     }
 
-    @supports (display: flex) {
-      padding-bottom: 30.86977887%;
-      padding-top: 26.86977887%;
-    }
+  //  @supports (display: flex) {
+  //    padding-bottom: 30.86977887%;
+  //    padding-top: 26.86977887%;
+  //  }
   }
 
 }
@@ -63,10 +63,10 @@
     color: $color-primary;
   }
 
-  @supports (display: flex) {
-    display: flex;
-    padding-top: 0;
-  }
+  //@supports (display: flex) {
+  //  display: flex;
+  //  padding-top: 0;
+  //}
 
 }
 

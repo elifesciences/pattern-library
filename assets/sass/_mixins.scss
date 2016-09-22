@@ -173,3 +173,19 @@
     padding-left: 0;
   }
 }
+
+// Doesn't apply to block-link
+@mixin widths-for-generic-grid-listing-items() {
+
+  max-width: #{$max-width-block-link}px;
+  max-width: #{$max-width-block-link-in-rem}rem;
+  min-width: #{$min-width-block-link}px;
+  min-width: #{$min-width-block-link-in-rem}rem;
+  width: #{$min-width-block-link}px;
+  width: #{$min-width-block-link-in-rem}rem;
+
+  //@supports (display: flex) {
+  //  width: auto;
+  //}
+
+}
