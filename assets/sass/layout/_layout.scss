@@ -42,7 +42,7 @@
 
   .listing-column-main {
     @include nospace("bottom");
-    border-right: 1px solid $color-text-dividers;
+    //border-right: 1px solid $color-text-dividers;
   }
 
   .listing-column-secondary {

@@ -70,6 +70,13 @@
   width: #{get-rem-from-px($size_in_px)}rem;
 }
 
+@mixin constrain-width($size_in_px, $extreme) {
+  @if $extreme == min or $extreme == max {
+    #{$extreme}-width: #{$size_in_px}px;
+    #{$extreme}-width: #{get-rem-from-px($size_in_px)}rem;
+  }
+}
+
 @mixin visuallyhidden() {
   border: 0;
   clip: rect(0 0 0 0);
@@ -172,4 +179,17 @@
     margin-left: 0;
     padding-left: 0;
   }
+}
+
+// Doesn't apply to a grid listing containing only block-links
+@mixin widths-for-generic-grid-listing-items() {
+
+  @include constrain-width($max-width-grid-listing-item, "max");
+  @include constrain-width($min-width-grid-listing-item, "min");
+  @include width($min-width-grid-listing-item);
+
+  @supports (display: flex) {
+    width: auto;
+  }
+
 }

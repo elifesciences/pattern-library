@@ -57,13 +57,13 @@
   &.main-menu--shown {
     display: block;
     float: left;
-    left: -2000px;
+    left: -3000px;
     height: 100vh;
     width: #{get-rem-from-px(200)}rem;
     max-width: 90vw;
     overflow: auto;
     position: fixed;
-    transform: translate3d(2000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
     z-index: 10;
 
     & + .global-inner {

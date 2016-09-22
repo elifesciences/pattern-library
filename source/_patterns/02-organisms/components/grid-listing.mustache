@@ -1,0 +1,22 @@
+{{#heading}}<h3 class="grid-listing-heading">{{{heading}}}</h3>{{/heading}}
+<ol class="grid-listing clearfix{{#classes}} {{classes}}{{/classes}}">
+  {{#blockLinks}}
+    <li class="grid-listing-item grid-listing-item--block-link">
+      {{> atoms-block-link}}
+    </li>
+  {{/blockLinks}}
+
+  {{#archiveNavLinks}}
+    <li class="grid-listing-item">
+      {{> molecules-archive-nav-link}}
+    </li>
+  {{/archiveNavLinks}}
+
+  {{#teasers}}
+    <li class="grid-listing-item">
+      {{! grid style teasers only: labs or podcast }}
+      {{> molecules-teaser}}
+    </li>
+  {{/teasers}}
+
+</ol>

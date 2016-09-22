@@ -1,6 +1,6 @@
-<div class="block-link"{{#behaviour}} data-behaviour="{{behaviour}}"{{/behaviour}}
+<div class="block-link{{#variant}} block-link--{{variant}}{{/variant}}"{{#behaviour}} data-behaviour="{{behaviour}}"{{/behaviour}}
   {{#backgroundImage}}
-  {{! data-invert-bgcol-on-hover moves the handling of the hover state from the css to the js, so it can cater for multiple background images with specifoc images. }}
+  {{! data-invert-bgcol-on-hover moves the handling of the hover state from the css to the js, so it can cater for multiple background images with specific images. }}
      data-invert-bgcol-on-hover
      {{#thresholdWidth}}data-threshold-width="{{thresholdWidth}}"{{/thresholdWidth}}
      data-low-res-image-source="{{lowResImageSource}}"
@@ -13,7 +13,6 @@
     <div class="block-link__inner">
       {{{text}}}
     </div>
-
 
   </a>
 

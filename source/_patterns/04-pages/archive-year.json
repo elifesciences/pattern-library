@@ -1,0 +1,601 @@
+{
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "path": "#mainMenu",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "nav-primary__menu_icon",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "nav-primary__search_icon",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Labs",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Submit my research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--button",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        },
+        {
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--notification",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+              "classes": "nav-secondary__notification-icon",
+              "altText": "Notification icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
+              }
+            ]
+          }
+        },
+        {
+          "text": "Profile",
+          "classes": "nav-secondary__item nav-secondary__item--profile",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
+              "classes": "nav-secondary__profile-icon",
+              "altText": "Profile icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    "compactForm": {
+      "formAction" : "/search",
+      "formId": "searchBox",
+      "formMethod": "GET",
+      "label": "Search by keyword or author",
+      "inputType": "search",
+      "inputName": "search",
+      "inputValue": "",
+      "inputPlaceholder": "Search by keyword or author",
+      "ctaText": "Search"
+    },
+
+    "subjectFilter": {
+      "name": "subject_filter",
+      "value": "cell_biology",
+      "text": "Cell biology"
+    }
+
+  },
+
+  "contentHeader": {
+    "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
+    "behaviour": "ContentHeaderSelectNav BackgroundImage",
+    "title": "Archive",
+    "titleClass": "content-header__title--large",
+    "hasCtaOrMeta": true,
+    "selectNav": {
+      "route": "/path/to/archive",
+      "select": {
+        "id": "archiveYear",
+        "label": {
+          "labelText": "Archive year",
+          "for": "archiveYear",
+          "isVisuallyHidden": true
+        },
+        "options": [
+          {
+            "value": "2016",
+            "displayValue": "2016"
+          },
+          {
+            "value": "2015",
+            "displayValue": "2015"
+          },
+          {
+            "value": "2014",
+            "displayValue": "2014"
+          }
+        ]
+      },
+      "button": {
+        "text": "Go",
+        "type": "submit",
+        "classes": "button--outline button--extra-small",
+        "name": "button"
+      }
+    },
+    "backgroundImage": {
+      "lowResImageSource": "http://unsplash.it/950/400",
+      "highResImageSource": "http://unsplash.it/1900/800"
+    }
+  },
+
+
+  "archiveNavListing":
+  {
+    "archiveNavLinks": [
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "December",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "November",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Short",
+            "url": "#Short"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "October",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "September",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "August",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "July",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },    {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "June",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "May",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "April",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "March",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "February",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      },
+      {
+        "url": "#",
+        "blockLink": {
+          "url": "#",
+          "text": "January",
+          "behaviour": "BackgroundImage",
+          "backgroundImage": {
+            "lowResImageSource": "http://unsplash.it/950/400",
+            "highResImageSource": "http://unsplash.it/1900/800"
+          }
+        },
+        "label": "Highlights this month:",
+        "links": [
+          {
+            "name": "Exploring the ins and outs of breathing",
+            "url": "#Exploring"
+          },
+          {
+            "name": "The ancient origins of lubricated joints",
+            "url": "#The"
+          },
+          {
+            "name": "Modulating protein quality control",
+            "url": "#Modulating"
+          },
+          {
+            "name": "How open science helps researchers succeed",
+            "url": "#How"
+          }
+        ]
+      }
+
+    ]
+  },
+
+  "mainMenu":{
+    "links": {
+      "items": [
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Author guide", "url": "#aut"},
+        {"name": "Reviewer guide", "url": "#rev"},
+        {"name": "About", "url": "#abo"},
+        {"name": "Inside eLife", "url": "#ins"},
+        {"name": "Careers", "url": "#car"},
+        {"name": "Labs", "url": "#lab"}
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
+  ],
+
+  "year": 2016
+
+}

@@ -1,58 +1,112 @@
 @import "../../definitions";
 
-.block-link {
-  background-color: $color-primary;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+@mixin height-constrained() {
 
-.block-link__link {
-  color: $color-text--reverse;
-  display: block;
-  font-family: $font-secondary;
-  font-weight: 700;
-  @include height(80);
-  @include margin(2, "bottom");
-  @include padding(0 20);
-  @include padding(27, "top");
-  text-align: center;
-  text-decoration: none;
-
-  @supports (display: flex) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 0;
+  .block-link__link {
+    @include height(80);
   }
 
-  &:not([data-invert-bgcol-on-hover]):hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: $color-text;
-  }
 }
 
-@media only all and (min-width: #{$bkpt-block-link}px) {
+@mixin width-constrained() {
 
   .block-link {
-    max-width: #{$max-width-block-link}px;
-    max-width: #{$max-width-block-link-in-rem}rem;
-    min-width: #{$min-width-block-link}px;
-    min-width: #{$min-width-block-link-in-rem}rem;
-    width: 30vw;
+    background-color: $color-primary;
+    margin-bottom: 0;
+
+    // Block links are only ever found as a descendant of a grid-listing.
+    @include constrain-width($max-width-grid-listing-item, "max");
+    @include width($min-width-grid-listing-item);
+
+    @supports (display: flex) {
+      width: auto;
+    }
+
   }
 
   .block-link__link {
+    color: $color-text--reverse;
     margin: 0 auto;
-    max-width: #{$max-width-block-link}px;
-    max-width: #{$max-width-block-link-in-rem}rem;
-    // Each is half the desired height/width aspect ratio of 0.5773955774
+    @include constrain-width($max-width-grid-listing-item, "max");
     padding-bottom: 33.86977887%;
     padding-top: 23.86977887%;
-    width: 30vw;
+
+    &:hover {
+      color: $color-text;
+    }
 
     @supports (display: flex) {
       padding-bottom: 30.86977887%;
       padding-top: 26.86977887%;
     }
   }
+
+}
+
+.block-link {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.block-link__link {
+  color: $color-text;
+  display: block;
+  flex-direction: column;
+  font-family: $font-secondary;
+  font-weight: 700;
+  justify-content: center;
+  @include padding(27 20 0 20);
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  @supports (display: flex) {
+    display: flex;
+    padding-top: 0;
+  }
+
+}
+
+// NOTE for next 2 rules: preferring use of variant over nesting, to keep specificity low.
+// .block-link--grid-listing is used on the main subject listing page
+.block-link--grid-listing {
+  @include height-constrained();
+}
+
+// other .block-link useage is within .archive-nav-link
+.block-link:not(.block-link--grid-listing) {
+  background-color: $color-primary;
+  @include width-constrained();
+}
+
+// .block-link[style] indicates it's being handled by BackgroundImage.js
+.block-link[style] .block-link__link {
+
+  color: $color-text--reverse;
+
+  &:hover {
+    color: $color-text;
+  }
+
+}
+
+@media only all and (min-width: #{$bkpt-block-link}px) {
+
+  @include width-constrained();
+
+  @media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}em) {
+
+    .block-link {
+      @include width($med-width-grid-listing-item);
+    }
+
+    .block-link__link {
+      @include width($med-width-grid-listing-item);
+    }
+
+  }
+
 }

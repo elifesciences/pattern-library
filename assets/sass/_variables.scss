@@ -33,15 +33,15 @@ $font-size-base-in-px: 16;
 $line-height-primary: 1.3;
 
 // Widths
-$max-width-block-link: 350;
-$max-width-block-link-in-rem: get-rem-from-px($max-width-block-link);
-$min-width-block-link: 300;
-$min-width-block-link-in-rem: get-rem-from-px($min-width-block-link);
+$max-width-grid-listing-item: 400;
+$max-width-block-link: 600;
+$med-width-grid-listing-item: 263;
+$min-width-grid-listing-item: 245;
 
 $max-site-width: 1114;
 $max-site-width-in-rem: get-rem-from-px($max-site-width);
 $viewport-width-when-site-hits-max-width-in-px: 1245;
-$viewport-width-when-site-hits-max-width-in-rem: get-rem-from-px(1245);
+$viewport-width-when-site-hits-max-width-in-rem: get-rem-from-px($viewport-width-when-site-hits-max-width-in-px);
 
 // Heights
 $content-header-height--narrow-screen: 210;
@@ -63,7 +63,10 @@ $bkpt-content-header--medium-width: 768;
 $bkpt-content-header--wide: 1024;
 $bkpt-content-header--extra-wide: 1440;
 
-$bkpt-block-link: 870;
+$bkpt-block-link: 600;
+$bkpt-grid-listing--narrow-screen: $bkpt-block-link;
+$bkpt-grid-listing--medium-width: 882;
+$bkpt-grid-link-listing--wide-screen: 1174;
 
 // TODO: review these breakpoints:
 $bkpt-article-download-links-list: 560;

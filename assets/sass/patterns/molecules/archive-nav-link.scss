@@ -1,28 +1,16 @@
 @import "../../definitions";
 
 .archive-nav-link {
-  max-width: #{$max-width-block-link}px;
-  max-width: #{$max-width-block-link-in-rem}rem;
-  min-width: #{$min-width-block-link}px;
-  min-width: #{$min-width-block-link-in-rem}rem;
-  width: calc(30vw - 28.86977887%);
-}
-
-.archive-nav-link .block-link {
-  margin-bottom: 0;
+  @include widths-for-generic-grid-listing-items();
 }
 
 .archive-nav-link__list {
-  max-width: #{$max-width-block-link}px;
-  max-width: #{$max-width-block-link-in-rem}rem;
-  min-width: #{$min-width-block-link}px;
-  min-width: #{$min-width-block-link-in-rem}rem;
-  width: calc(30vw - 28.86977887%);
+  @include widths-for-generic-grid-listing-items();
 }
 
 .archive-nav-link__link {
-  text-decoration: none;
   color: $color-text;
+  text-decoration: none;
 }
 
 .archive-nav-link__sub_links_list_heading {
@@ -31,8 +19,8 @@
 }
 
 .archive-nav-link__sub_links_list_item {
-  list-style-type: disc;
   display: list-item;
+  list-style-type: disc;
   @include margin(16, "left");
   @include margin(0, "bottom");
 }
@@ -40,6 +28,7 @@
 .archive-nav-link__sub_link {
   color: $color-text;
   @include body-typeg;
+  padding-bottom: 0;
   text-decoration: none;
 
   &:hover {
