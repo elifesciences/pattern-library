@@ -1,14 +1,11 @@
-
-<section class="article-section {{#first}}article-section--first{{/first}}" id="{{id}}">
+<section class="article-section {{#isFirst}}article-section--first{{/isFirst}}"{{#id}} id="{{id}}{{/id}}">
 
   <header class="article-section__header">
-    <h2 class="article-section__header_text">{{title}}</h2>
+    <h{{headingLevel}} class="article-section__header_text">{{title}}</h{{headingLevel}}>
   </header>
 
   <div class="article-section__body">
-    {{#body}}
-      {{{content}}}
-    {{/body}}
+    {{{body}}}
   </div>
 
 </section>
