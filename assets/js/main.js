@@ -10,6 +10,7 @@ if (window.localStorage && document.querySelector &&
   let Components = {};
 
   // import modules into the list of Components.
+  Components.ArticleSection = require('./components/ArticleSection');
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.AudioPlayer = require('./components/AudioPlayer');
   Components.ContentHeaderArticle = require('./components/ContentHeaderArticle');

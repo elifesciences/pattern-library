@@ -223,6 +223,7 @@
     },
     {
       "id": "articleInfo",
+      "isInitiallyClosed": true,
       "headingLevel": 2,
       "title": "Article & author information",
       "body": "<h3>Author contributions</h3><ul><li>BRK, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</li><li>HK, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</li><li>KS, Conception and design, Drafting or revising the article</li></ul><h3>For correspondence</h3><a href=\"mailto:kscott@berkeley.edu\">kscott@berkeley.edu (KS)</a><h3>Competing interests</h3><p>The authors declare that no competing interests exist.</p><h3>Funding</h3><dl><dt>National Institute on Deafness and Other Communication Disorders</dt><dd>R01 DC013280</dd></dl><h3>Kristin Scott</h3><p>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</p><h3>Other versions</h3><p>You are viewing the most recent version of this article.</p><ul><li>Previous version (November 17, 2015)</li><li>Previous version (November 14, 2015)</li></ul><h3>Identification</h3><div>DOI: 10.7554/eLife.11188</div><div>Cite this as: eLife 2015;4:e11188</div><h3>Publication history</h3><ul><li>Received August 27, 2015.</li><li>Accepted November 12, 2015.</li><li>Published November 14, 2015.</li></ul><h3>Reviewing editor</h3><p>Mani Ramaswami, Reviewing editor, Trinity College Dublin, Ireland</p>"

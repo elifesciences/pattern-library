@@ -16,6 +16,10 @@ schema:
       type: integer
       minimum: 2
       maximum: 6
+    isInitiallyClosed:
+      type: boolean
+      enum:
+        - true
     body:
       type: string
       minLength: 1
