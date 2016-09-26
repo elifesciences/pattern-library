@@ -16,9 +16,10 @@ schema:
       type: integer
       minimum: 2
       maximum: 6
-    startsOpen:
+    isInitiallyClosed:
       type: boolean
-      default: true
+      enum:
+        - true
     body:
       type: string
       minLength: 1
@@ -28,5 +29,4 @@ schema:
   required:
     - title
     - headingLevel
-    - startsOpen
     - body

@@ -1,6 +1,8 @@
-<section class="article-section {{#isFirst}}article-section--first{{/isFirst}}" {{#id}} id="{{id}}{{/id}}" data-behaviour="ArticleSection"
-   {{#initialState}}data-initial-state="{{initialState}}"{{/initialState}}
-   {{^initialState}}data-initial-state="open"{{/initialState}}
+<section
+    class="article-section {{#isFirst}}article-section--first{{/isFirst}}"
+    {{#id}} id="{{id}}{{/id}}"
+    data-behaviour="ArticleSection"
+    {{#isInitiallyClosed}}data-initial-state="closed"{{/isInitiallyClosed}}
 >
 
   <header class="article-section__header">
