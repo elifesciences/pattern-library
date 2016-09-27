@@ -16,16 +16,20 @@ schema:
       type: integer
       minimum: 2
       maximum: 6
+    hasBehaviour:
+      type: boolean
+      default: false
     isInitiallyClosed:
       type: boolean
-      enum:
-        - true
     body:
       type: string
       minLength: 1
     isFirst:
       type: boolean
       default: false
+  dependencies:
+    isInitiallyClosed:
+      - hasBehaviour
   required:
     - title
     - headingLevel
