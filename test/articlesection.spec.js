@@ -32,22 +32,47 @@ describe('An Article Section (collapsible)', function () {
     expect(articleSection.$headerLink).to.be.instanceof(HTMLElement);
   });
 
-  it('is initially closed if is initially closed is true', function () {
-    $elm.dataset.isInitiallyClosed = 'true';
+  it('is initially closed if initial state is closed', function () {
+    $elm.dataset.initialState = 'closed';
     let articleSection = new ArticleSection($elm);
     expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
     expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
     expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
   });
 
-  it('is initially open if is initially closed not set to true', function () {
+  it('is initially open if initial state is not set to closed and viewport is wide enough', function () {
     let initialStateCandidateValues = ['open', 'shut', 'unavailable', 'null', '', 'false'];
+    let windowMock = {
+      matchMedia: function () {
+        return {
+          matches: false
+        };
+      }
+    };
     initialStateCandidateValues.forEach((value) => {
-      $elm.dataset.isInitiallyClosed = value;
-      let articleSection = new ArticleSection($elm);
+      $elm.dataset.initialState = value;
+      let articleSection = new ArticleSection($elm, windowMock);
       expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
       expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
       expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.false;
+    });
+  });
+
+  it('is initially closed if viewport is not wide enough, regardless of initial state', function () {
+    let initialStateCandidateValues = ['open', 'shut', 'unavailable', 'null', '', 'false', 'closed'];
+    let windowMock = {
+      matchMedia: function () {
+        return {
+          matches: true
+        };
+      }
+    };
+    initialStateCandidateValues.forEach((value) => {
+      $elm.dataset.initialState = value;
+      let articleSection = new ArticleSection($elm, windowMock);
+      expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
+      expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
+      expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
     });
   });
 

@@ -12,6 +12,7 @@ module.exports = class ArticleSection {
     this.window = _window;
     this.doc = doc;
 
+    this.thresholdWidth = 600;
     this.initialise(this.$elm, doc);
 
   }
@@ -36,7 +37,7 @@ module.exports = class ArticleSection {
   }
 
   setInitialState($elm, $headerLink, $body) {
-    if ($elm.dataset.isInitiallyClosed === 'true') {
+    if ($elm.dataset.initialState === 'closed' || this.viewportNoWiderThan(this.thresholdWidth)) {
       $headerLink.classList.add('article-section__header_link--closed');
       $body.classList.add('visuallyhidden');
     } else {
@@ -45,6 +46,10 @@ module.exports = class ArticleSection {
       $body.classList.remove('visuallyhidden');
     }
 
+  }
+
+  viewportNoWiderThan(thresholdInPx) {
+    return this.window.matchMedia('(max-width: ' + thresholdInPx + 'px)').matches;
   }
 
   toggleState(e) {
