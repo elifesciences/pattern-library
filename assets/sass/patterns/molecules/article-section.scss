@@ -1,11 +1,14 @@
 @import "../../definitions";
 
-$arrow-size: 7;
+$arrow-size: 5;
 
 .article-section {
-  border-top: 1px solid $color-text-dividers;
   @include padding(15, "top");
   @include padding(15, "bottom");
+}
+
+.article-section--js {
+  border-top: 1px solid $color-text-dividers;
 }
 
 .article-section--first {
@@ -15,7 +18,6 @@ $arrow-size: 7;
 
 .article-section__header {
   position: relative;
-  z-index: 10;
 }
 
 // Introduced by ArticleSection.js
@@ -33,24 +35,22 @@ $arrow-size: 7;
 .article-section__header_text {
   color: $color-text;
   margin: 0;
-  @include padding(0 0 7 0);
   flex: 1 0 80%;
   text-decoration: none;
+}
 
-  &:after {
-    content: "";
-    flex: 0 0 #{$arrow-size}px;
-  }
-
+.article-section__header_link--closed .article-section__header_text {
+  padding-bottom: 0;
 }
 
 .article-section__header_link:after {
   display: block;
   @include arrow("up", $arrow-size);
   @include height($arrow-size);
+  @include margin(-35 1 0 0);
   position: absolute;
   right: 0;
-  top: 10px;
+  top: 35px;
   transform-origin: 50% 50%;
   @include width($arrow-size);
 
@@ -61,6 +61,8 @@ $arrow-size: 7;
 
 .article-section__header_link--closed:after {
   transform: rotate(180deg);
+  @include margin(0 1 0 0);
+  top: 0;
 }
 
 .article-section__body {

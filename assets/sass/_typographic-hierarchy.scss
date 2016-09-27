@@ -52,7 +52,7 @@
 
 @mixin _heading-base-typeg() {
   font-weight: 700;
-  line-height: 1.3;
+  line-height: $line-height-primary;
 }
 
 @mixin _label-typeg() {
@@ -76,7 +76,7 @@
   @include _heading-base-typeg();
   font-family: $font-secondary;
   @include font-size(21);
-  @include padding(5, "bottom");
+  @include padding(30, "bottom");
 }
 
 @mixin h3-typeg() {
