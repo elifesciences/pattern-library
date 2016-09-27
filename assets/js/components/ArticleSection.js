@@ -17,6 +17,7 @@ module.exports = class ArticleSection {
   }
 
   initialise($elm, doc) {
+    this.$elm.classList.add('article-section--js');
     this.$headerLink = this.createHeaderLink($elm, doc);
     this.$body = $elm.querySelector('.article-section__body');
     this.setInitialState($elm, this.$headerLink, this.$body);

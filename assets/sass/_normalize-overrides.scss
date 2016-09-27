@@ -18,11 +18,7 @@ h1 {
 }
 
 h2 {
-  font-family: $font-secondary;
-  @include font-size(21);
-  font-weight: bold;
-  line-height: $line-height-primary;
-  @include padding(7, "bottom");
+  @include h2-typeg();
 }
 
 h3 {
