@@ -16,6 +16,9 @@ schema:
       type: integer
       minimum: 2
       maximum: 6
+    hasBehaviour:
+      type: boolean
+      default: false
     isInitiallyClosed:
       type: boolean
       enum:
@@ -26,6 +29,9 @@ schema:
     isFirst:
       type: boolean
       default: false
+  dependencies:
+    isInitiallyClosed:
+      - hasBehaviour
   required:
     - title
     - headingLevel
