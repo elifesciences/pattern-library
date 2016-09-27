@@ -21,8 +21,6 @@ schema:
       default: false
     isInitiallyClosed:
       type: boolean
-      enum:
-        - true
     body:
       type: string
       minLength: 1
