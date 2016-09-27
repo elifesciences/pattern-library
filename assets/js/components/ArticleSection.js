@@ -36,7 +36,7 @@ module.exports = class ArticleSection {
   }
 
   setInitialState($elm, $headerLink, $body) {
-    if ($elm.dataset.isInitiallyClosed === 'true') {
+    if ($elm.dataset.initialState === 'closed') {
       $headerLink.classList.add('article-section__header_link--closed');
       $body.classList.add('visuallyhidden');
     } else {
