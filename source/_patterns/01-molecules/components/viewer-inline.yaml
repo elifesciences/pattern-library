@@ -11,7 +11,7 @@ schema:
     id:
       type: string
       minLength: 1
-    prominentText:
+    label:
       type: string
       minLength: 1
     normalText:
@@ -41,7 +41,7 @@ schema:
       type: object
   required:
     - id
-    - prominentText
+    - label
     - normalText
     - download
     - captionedImage
