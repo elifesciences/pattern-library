@@ -33,7 +33,6 @@ schema:
     - id
     - prominentText
     - normalText
-    - seeAllLink
     - downloadLink
     - newWindowLink
     - captionedImage
