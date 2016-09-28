@@ -43,5 +43,4 @@ schema:
     - id
     - label
     - normalText
-    - download
     - captionedImage
