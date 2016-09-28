@@ -44,5 +44,4 @@ schema:
   required:
     - id
     - label
-    - normalText
     - captionedImage

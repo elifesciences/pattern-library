@@ -1,7 +1,6 @@
 {
   "id": "some-image",
   "label": "REF-123",
-  "normalText": "Planarian protonephridia",
   "seeAllLink": "#seeall",
   "download": {
     "linkId": "downloadLinkId",
