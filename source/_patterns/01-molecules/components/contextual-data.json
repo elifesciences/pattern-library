@@ -19,10 +19,10 @@
   },
 
   "citation": {
-    "citeAs": "eLife 2015;4:e11760",
+    "citeAs": "eLife 2016;5:e16370",
     "doi": {
       "class": "contextual-data__doi",
-      "uri": "the.doi"
+      "doi": "10.7554/eLife.16370"
     }
   }
 

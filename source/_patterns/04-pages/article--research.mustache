@@ -12,9 +12,11 @@
           {{> organisms-pl-only-content-header-article}}
         {{/contentHeader}}
 
-        <div class="wrapper">
-        {{> molecules-contextual-data }}
-        </div>
+        {{#contextualData}}
+          <div class="wrapper">
+          {{> molecules-contextual-data }}
+          </div>
+        {{/contextualData}}
 
         <div class="wrapper">
 
