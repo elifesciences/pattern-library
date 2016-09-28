@@ -27,14 +27,13 @@
   @include padding(0 5 0 0);
 }
 
-.contextual-data__cite {
-  display: none;
-}
-
-.contextual-data__doi {
-  display: block;
+.contextual-data__cite_wrapper {
   @include padding(15 0);
   text-align: center;
+}
+
+.contextual-data__cite {
+  display: none;
 }
 
 @media only screen and (min-width: #{get-rem-from-px(640)}rem) {
@@ -58,6 +57,8 @@
   .contextual-data__cite_wrapper {
     float: right;
     margin-left: auto;
+    padding: 0;
+    text-align: start;
   }
 
   .contextual-data__cite {
@@ -72,10 +73,4 @@
     text-transform: uppercase;
   }
 
-  .contextual-data__doi {
-    display: inline-block;
-    align-self: flex-end;
-    padding: 0;
-    text-align: right;
-  }
 }
