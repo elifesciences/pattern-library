@@ -37,8 +37,10 @@ schema:
         - fileLink
         - viewLink
     captionedImage:
-      $ref: ../../00-atoms/components/picture.yaml#/schema/properties
+      $ref: ../../00-atoms/components/picture.yaml#/schema/
       type: object
+    doi:
+      $ref: ../../00-atoms/components/doi.yaml#/schema/
   required:
     - id
     - label

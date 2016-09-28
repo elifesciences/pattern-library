@@ -73,6 +73,7 @@
 
 .viewer-inline__footer {
   padding: 0 6%;
+  @include padding(12, "bottom");
   @include padding(12, "top");
 }
 
@@ -93,8 +94,9 @@
 }
 
 @media only screen and (min-width: #{get-rem-from-px(430)}em) {
+
   .viewer-inline__footer {
-    padding: 0;
-    @include padding(12, "top");
+    @include padding(12 0);
   }
+
 }
