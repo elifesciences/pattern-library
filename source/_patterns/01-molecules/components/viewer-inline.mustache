@@ -1,28 +1,34 @@
-<div class="viewer-inline">
+<div class="viewer-inline" id="{{id}}">
 
     <div class="viewer-inline__header_panel">
         <!-- For the JS -->
         <div class="viewer-inline__viewer_controls"></div>
 
         <div class="viewer-inline__header_text">
-            <span class="viewer-inline__header_text__prominent">{{prominentText}}</span>{{normalText}}
+            <span class="viewer-inline__header_text__prominent">{{prominentTextg}}</span> {{normalText}}
+          <!--  Remove seeAllLink with js -->
             <a href="{{seeAllLink}}" class="viewer-inline__header_link">see all</a>
         </div>
 
+        {{#download}}
         <div class="viewer-inline__figure_access">
-            <a href="#{{id}}" class="viewer-inline__figure_access_download">
+            <a href="#{{linkId}}" class="viewer-inline__figure_access_download">
                 <span class="visuallyhidden">Download</span>
             </a>
             <!-- <a href="#viewer-inline__footer" class="viewer-inline__figure_access_open" target="_blank"><span class="visuallyhidden">Open in a new tab</span></a> -->
         </div>
+        {{/download}}
     </div>
+
     {{#captionedImage}}
         {{> atoms-captioned-image }}
     {{/captionedImage}}
 
-    <div id="{{id}}" class="viewer-inline__footer">
-        <a href="{{downloadLink}}" class="viewer-inline__footer_link">Download figure</a>
-        <a href="{{newWindowLink}}" class="viewer-inline__footer_link" target="_blank">Open in new tab</a>
+    {{#download}}
+    <div id="{{linkId}}" class="viewer-inline__footer">
+        <a href="{{fileLink}}" class="viewer-inline__footer_link">Download figure</a>
+        <a href="{{viewLink}}" class="viewer-inline__footer_link" target="_blank">Open in new tab</a>
     </div>
+    {{/download}}
 
 </div>

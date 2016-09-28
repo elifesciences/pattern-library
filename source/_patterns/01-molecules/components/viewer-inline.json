@@ -1,10 +1,13 @@
 {
   "id": "some-image",
-  "prominentText": "REF-123",
+  "label": "REF-123",
   "normalText": "Planarian protonephridia",
-  "seeAllLink": "#",
-  "downloadLink": "#",
-  "newWindowLink": "#",
+  "seeAllLink": "#seeall",
+  "download": {
+    "linkId": "downloadLinkId",
+    "fileLink": "#fileLink",
+    "viewLink": "#viewLink"
+  },
   "captionedImage": {
     "heading": "Many features are conserved between the mammalian nephron and planarian protonephridia.",
     "captions": [

@@ -20,12 +20,22 @@ schema:
     seeAllLink:
       type: string
       minLength: 1
-    downloadLink:
-      type: string
-      minLength: 1
-    newWindowLink:
-      type: string
-      minLength: 1
+    download:
+      type: object
+      properties:
+        linkId:
+          type: string
+          minLength: 1
+        fileLink:
+          type: string
+          minLength: 1
+        viewLink:
+          type: string
+          minLength: 1
+      required:
+        - linkId
+        - fileLink
+        - viewLink
     captionedImage:
       $ref: ../../00-atoms/components/picture.yaml#/schema/properties
       type: object
@@ -33,6 +43,5 @@ schema:
     - id
     - prominentText
     - normalText
-    - downloadLink
-    - newWindowLink
+    - download
     - captionedImage
