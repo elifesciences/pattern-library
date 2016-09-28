@@ -2,14 +2,20 @@
 
 .doi {
   @include label-content-typeg($color-text-secondary);
-}
 
-.doi__link {
-  color: $color-text-secondary;
-  text-decoration: none;
-  text-transform: none;
+  // Extra specificity needed to override: .article-section a
+  a.doi__link {
+    color: $color-text-secondary;
+    text-decoration: none;
+    text-transform: none;
 
-  &:hover {
-    color: $color-primary;
+    &:hover {
+      color: $color-primary;
+    }
   }
 }
+
+.doi--article-section {
+  display: block;
+}
+

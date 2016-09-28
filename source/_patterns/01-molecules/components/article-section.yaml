@@ -1,6 +1,7 @@
 assets:
   css:
     - article-section.css
+    - $ref: ../../00-atoms/components/doi.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -24,12 +25,16 @@ schema:
     body:
       type: string
       minLength: 1
+    doi:
+      $ref: ../../00-atoms/components/doi.yaml#/schema
     isFirst:
       type: boolean
       default: false
   dependencies:
     isInitiallyClosed:
       - hasBehaviour
+    doi:
+      - id
   required:
     - title
     - headingLevel

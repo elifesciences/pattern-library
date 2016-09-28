@@ -9,8 +9,9 @@ schema:
     doi:
       type: string
       minLength: 1
-    classNames:
+    variant:
       type: string
-      minLength: 1
+      enum:
+        - article-section
   required:
     - doi
