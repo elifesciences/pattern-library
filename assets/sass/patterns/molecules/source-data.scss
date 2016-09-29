@@ -1,0 +1,20 @@
+@import "../../definitions";
+
+.source-data {
+  @include fig-caption-heading-typeg();
+}
+
+.source-data__text {
+  @include margin(12, "bottom")
+}
+
+  a.source-data__link {
+  display: block;
+  @include label-content-typeg($color-text-secondary);
+  text-decoration: none;
+  text-transform: none;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
