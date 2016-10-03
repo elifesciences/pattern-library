@@ -1,0 +1,10 @@
+{
+  "src": "#uri-of-a-media-source",
+  "mimeType": {
+    "forMachine": "video/mp4",
+    "forHuman": "mp3"
+  },
+  "fallback": {
+    "content": "download <b>amazing</b> artefact "
+  }
+}

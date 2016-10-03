@@ -1,0 +1,35 @@
+assets:
+  css:
+    - medi
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  properties:
+    src:
+      type: string
+      minLength: 1
+    fallback:
+      type: object
+      properties:
+        classes:
+          type: string
+          min-length: 1
+        isExternal:
+          type: boolean
+          default: false
+        # Content might not be just text, could be an html chunk: if so it must be pre-prepared as a string, it it will
+        # be included within an <a> element so must not include a link (is that regex possible?).
+        content:
+          type: string
+          minLength: 1
+    mimeType:
+      type: object
+      properties:
+        forMachine:
+          type: string
+          pattern: ^(audio)|(video)\/.+$
+        forHuman:
+          type: string
+          minLength: 1
+  required:
+    - src
