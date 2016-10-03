@@ -1,10 +1,7 @@
 @import "../../definitions";
 
-.source-data {
-  @include fig-caption-heading-typeg();
-}
-
 .source-data__text {
+  @include fig-caption-heading-typeg();
   @include margin(12, "bottom")
 }
 
