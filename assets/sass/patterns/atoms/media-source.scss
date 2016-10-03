@@ -1,0 +1,16 @@
+@import "../../definitions";
+
+.media-source__fallback_link {
+  font-family: $font-secondary;
+  @include font-size(14);
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.media-source__fallback_link--audio-player {
+  background-color: $color-text;
+  color: $color-text--reverse;
+}
