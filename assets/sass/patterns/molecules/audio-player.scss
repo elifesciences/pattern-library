@@ -69,12 +69,6 @@
   width: 100%;
 }
 
-.audio-player__link {
-  color: $color-text--reverse;
-  font-family: $font-secondary;
-  @include font-size(14);
-}
-
 .audio-player__progress {
   background-color: #444;
   cursor: pointer;
