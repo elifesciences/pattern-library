@@ -1,33 +1,33 @@
 @import "../../definitions";
 
-.captioned-image {
+.captioned-figure {
   margin: 0;
 }
 
-.captioned-image__picture {
+.captioned-figure__picture {
   display: block;
   @include margin(12, "bottom");
 }
 
-.captioned-image__image {
+.captioned-figure__image {
   display: block;
   width: 100%;
 }
 
-.captioned-image__caption {
+.captioned-figure__caption {
   padding: 0 6%;
 }
 
-.captioned-image__caption_heading {
+.captioned-figure__caption_heading {
   @include fig-caption-heading-typeg();
 }
 
-.captioned-image__caption_text {
+.captioned-figure__caption_text {
   @include fig-caption-text-typeg();
 }
 
 @media only screen and (min-width: #{get-rem-from-px(430)}em) {
-  .captioned-image__caption {
+  .captioned-figure__caption {
     padding: 0;
   }
 }
