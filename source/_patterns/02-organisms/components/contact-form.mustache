@@ -1,12 +1,11 @@
-
+{{! TODO: improve html semantics }}
 <form class="contact-form">
 
   <div class="contact-form__container">
 
-    <h2 class="contact-form__header">Contact Us</h2>
+    <h2 class="contact-form__header">{{heading}}</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    <p>ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    {{{introduction}}}
 
     <div class="contact-form__body">
 
@@ -29,11 +28,20 @@
 
         <div class="contact-form__meta_title">Email</div>
         <p>
-          <a href="mailto:staff@elifesciences.org" class="contact-form__meta_link">staff@elifesciences.org</a>
+          {{#email.link}}
+          <a href="{{email.link}}" class="contact-form__meta_link">{{email.displayText}}</a>
+          {{/email.link}}
+
+          {{^email.link}}
+            {{email.displayText}}
+          {{/email.link}}
+
         </p>
 
         <div class="contact-form__meta_title">Telephone</div>
-        <p>+44 1223 855340</p>
+        <p>
+          <a href="tel:+441223855340" class="contact-form__meta_link">+44 1223 855340</a>
+        </p>
 
         <div class="contact-form__meta_title">Address</div>
         <address class="contact-form__meta_address">
