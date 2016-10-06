@@ -4,12 +4,16 @@
   {{> atoms-picture }}
   {{/picture}}
 
-  {{^picture}}
+  {{#image}}
     <img src="{{defaultPath}}"
          alt="{{altText}}"{{#srcset}}
          srcset="{{srcset}}"{{/srcset}}
       {{#classes}} class="{{classes}}"{{/classes}} />
-  {{/picture}}
+  {{/image}}
+
+  {{#video}}
+    {{video}}
+  {{/video}}
 
   <figcaption class="captioned-figure__caption">
     {{#customContent}}
@@ -24,4 +28,9 @@
       {{/captions}}
     {{/customContent}}
   </figcaption>
+
+  {{#table}}
+    {{{table}}}
+  {{/table}}
+
 </figure>
