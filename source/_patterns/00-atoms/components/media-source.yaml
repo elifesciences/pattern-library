@@ -27,6 +27,10 @@ schema:
       properties:
         forMachine:
           type: string
+          # Note that any codec subattribute of forMachine must be specified with double quotes, not single quotes. The
+          # mustache file has the type attribute set within single quotes to accommodate this, so the final HTML result
+          # should end up looking like this (but with differing values as appropriate):
+          #   type='video/webm; codecs="vp8.0, vorbis"'
           pattern: ^(audio)|(video)\/.+$
         forHuman:
           type: string
