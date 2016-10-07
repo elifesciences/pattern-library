@@ -1,0 +1,30 @@
+{
+  "customContent": "<h3>A list</h3><ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>",
+  "video": {
+    "posterFrame": "https://static-movie-usa.glencoesoftware.com/jpg/10.7554/62/9b08932354341de3a06de7e1c58d37138418aa8a/elife-14864-media2.jpg",
+    "sources": [
+      {
+        "src": "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/62/9b08932354341de3a06de7e1c58d37138418aa8a/elife-14864-media2.mp4",
+        "mimeType": {
+          "forMachine": "video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"",
+          "forHuman": "mp4"
+        }
+      },
+      {
+        "src": "https://static-movie-usa.glencoesoftware.com/webm/10.7554/62/9b08932354341de3a06de7e1c58d37138418aa8a/elife-14864-media2.webm",
+        "mimeType": {
+          "forMachine": "video/webm; codecs=\"vp8.0, vorbis\"",
+          "forHuman": "webm"
+        }
+      },
+      {
+        "src": "https://static-movie-usa.glencoesoftware.com/ogv/10.7554/62/9b08932354341de3a06de7e1c58d37138418aa8a/elife-14864-media2.ogv",
+        "mimeType": {
+          "forMachine": "video/ogg; codecs=\"theora, vorbis\"",
+          "forHuman": "ogg"
+        }
+      }
+    ]
+  }
+
+}
