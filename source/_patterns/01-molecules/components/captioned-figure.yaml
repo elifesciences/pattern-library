@@ -44,7 +44,7 @@ schema:
         -
           properties:
             picture:
-              $ref: picture.yaml#/schema
+              $ref: ../../00-atoms/components/picture.yaml#/schema
           required:
             - picture
         -
