@@ -1,5 +1,5 @@
 {
-  "customContent": "<ul><li>List</li></ul>",
+  "customContent": "<h3>This is custom content</h3><ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>",
   "picture": {
     "sources": [
       {

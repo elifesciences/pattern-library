@@ -1,27 +1,36 @@
-<figure class="captioned-image">
+<figure class="captioned-figure">
 
   {{#picture}}
   {{> atoms-picture }}
   {{/picture}}
 
-  {{^picture}}
+  {{#image}}
     <img src="{{defaultPath}}"
          alt="{{altText}}"{{#srcset}}
          srcset="{{srcset}}"{{/srcset}}
       {{#classes}} class="{{classes}}"{{/classes}} />
-  {{/picture}}
+  {{/image}}
 
-  <figcaption class="captioned-image__caption">
+  {{#video}}
+    {{> atoms-video}}
+  {{/video}}
+
+  <figcaption class="captioned-figure__caption">
     {{#customContent}}
         {{{ customContent }}}
     {{/customContent}}
     {{^customContent}}
       {{#heading}}
-        <p class="captioned-image__caption_heading">{{{ heading }}}</p>
+        <p class="captioned-figure__caption_heading">{{{ heading }}}</p>
       {{/heading}}
       {{#captions}}
-        <p class="captioned-image__caption_text">{{ caption }}</p>
+        <p class="captioned-figure__caption_text">{{ caption }}</p>
       {{/captions}}
     {{/customContent}}
   </figcaption>
+
+  {{#table}}
+    {{{table}}}
+  {{/table}}
+
 </figure>
