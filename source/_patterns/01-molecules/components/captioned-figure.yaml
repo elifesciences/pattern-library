@@ -9,36 +9,40 @@ schema:
     -
       oneOf:
         -
-          anyOf:
-            -
-              properties:
-                heading:
-                  type: string
-                  minLength: 1
-              required:
-                - heading
-            -
-              properties:
-                captions:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      caption:
-                        type: string
-                        minLength: 1
-                    required:
-                      - caption
-                    minItems: 1
-              required:
-                - captions
-        -
           properties:
             customContent:
               type: string
               minLength: 1
           required:
             - customContent
+        -
+          anyOf:
+            -
+              oneOf:
+                -
+                  properties:
+                    heading:
+                      type: string
+                      minLength: 1
+                  required:
+                    - heading
+            -
+              oneOf:
+                -
+                  properties:
+                    captions:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          caption:
+                            type: string
+                            minLength: 1
+                        required:
+                          - caption
+                        minItems: 1
+                  required:
+                    - captions
     -
       oneOf:
         -
@@ -49,16 +53,35 @@ schema:
             - picture
         -
           properties:
-            srcset:
-              type: string
-              pattern: ^((https)?[^ ]+ [1-9][0-9]*w)(, (https?)?[^ ]+ [1-9][0-9]*w)*$
-            defaultPath:
-              type: string
-              minLength: 1
-            altText:
-              type: string
-            classes:
-              type: string
+            video:
+              $ref: ../../00-atoms/components/video.yaml#/schema
           required:
-            - defaultPath
-            - altText
+            - video
+        -
+          properties:
+            table:
+              type: string
+              pattern: ^<table>.*<\/table>$
+          required:
+            - table
+        -
+          properties:
+            image:
+              type: object
+              properties:
+                defaultPath:
+                  type: string
+                  minLength: 1
+                altText:
+                  type: string
+                classes:
+                  type: string
+                  minLength: 1
+                srcset:
+                  type: string
+                  pattern: ^((https)?[^ ]+ [1-9][0-9]*w)(, (https?)?[^ ]+ [1-9][0-9]*w)*$
+              required:
+                - defaultPath
+                - altText
+          required:
+            - image
