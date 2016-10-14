@@ -6,6 +6,9 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
+    sideBySideUrl:
+      type: string
+      minLength: 1
     articleUrl:
       type: string
       minLength: 1
@@ -13,20 +16,24 @@ schema:
       type: string
       minLength: 1
     jumpLinks:
-      type: array
-      minItems: 1
-      items:
-        type: object
-        properties:
-          name:
-            type: string
-            minLength: 1
-          url:
-            type: string
-            minLength: 1
-        required:
-          - name
-          - url
+      type: object
+      properties:
+        links:
+          type: array
+          minItems: 2
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                minLength: 1
+              url:
+                type: string
+                minLength: 1
+            required:
+              - name
+              - url
+      required:
+        - links
   required:
     - articleUrl
-    - jumpLinks
