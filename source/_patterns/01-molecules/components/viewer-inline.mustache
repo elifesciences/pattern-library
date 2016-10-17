@@ -1,28 +1,36 @@
-<div class="viewer-inline">
+<div class="viewer-inline{{#variant}} viewer-inline--{{variant}}{{/variant}}" id="{{id}}">
 
-    <div class="viewer-inline__header_panel">
+
+  <div class="viewer-inline__header_panel">
         <!-- For the JS -->
-        <div class="viewer-inline__viewer_controls"></div>
+      <div class="viewer-inline__controls"></div>
 
-        <div class="viewer-inline__header_text">
-            <span class="viewer-inline__header_text__prominent">{{prominentText}}</span>{{normalText}}
-            <a href="{{seeAllLink}}" class="viewer-inline__header_link">see all</a>
-        </div>
+      <div class="viewer-inline__header_text" data-replacement-text="{{replacementText}}">
+        <span class="viewer-inline__header_text__prominent">{{label}}</span>{{! add replacementText here with js}}
+        {{! remove seeAllLink with js}}
+        <a href="{{seeAllLink}}" class="viewer-inline__header_link">see all</a>
+      </div>
 
-        <div class="viewer-inline__figure_access">
-            <a href="#{{id}}" class="viewer-inline__figure_access_download">
-                <span class="visuallyhidden">Download</span>
-            </a>
-            <!-- <a href="#viewer-inline__footer" class="viewer-inline__figure_access_open" target="_blank"><span class="visuallyhidden">Open in a new tab</span></a> -->
-        </div>
+    {{#downloadAllLink}}
+      <div class="viewer-inline__figure_access">
+        <a href="{{downloadAllLink}}" class="viewer-inline__download_all_link">
+          <span class="visuallyhidden">Download everything associated with this artefact</span>
+        </a>
+      </div>
+    {{/downloadAllLink}}
     </div>
+
     {{#captionedFigure}}
         {{> molecules-captioned-asset }}
     {{/captionedFigure}}
 
-    <div id="{{id}}" class="viewer-inline__footer">
-        <a href="{{downloadLink}}" class="viewer-inline__footer_link">Download figure</a>
+    <div class="viewer-inline__footer">
+        <a href="{{individualDownloadLink}}" class="viewer-inline__footer_link">Download figure</a>
         <a href="{{newWindowLink}}" class="viewer-inline__footer_link" target="_blank">Open in new tab</a>
     </div>
+
+  {{#doi}}
+    {{> atoms-doi}}
+  {{/doi}}
 
 </div>
