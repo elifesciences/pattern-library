@@ -21,6 +21,7 @@ if (window.localStorage && document.querySelector &&
   Components.SiteHeader = require('./components/SiteHeader');
   Components.SearchBox = require('./components/SearchBox');
   Components.ViewerModal = require('./components/ViewerModal');
+  Components.ViewSelector = require('./components/ViewSelector');
 
   // App
   let Elife = function Elife() {
