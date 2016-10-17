@@ -210,7 +210,7 @@
     "episodeNumber": 21,
     "sources":[
       { "src": "https://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
-        "mimeType": {
+        "mediaType": {
           "forMachine": "audio/mp3",
           "forHuman": "mp3"
         },

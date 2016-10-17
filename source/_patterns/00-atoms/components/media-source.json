@@ -1,6 +1,6 @@
 {
   "src": "#uri-of-a-media-source",
-  "mimeType": {
+  "mediaType": {
     "forMachine": "video/mp4",
     "forHuman": "mp3"
   },

@@ -3,21 +3,21 @@
   "sources": [
     {
       "src": "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/872/946920eb226e045af1781fe292f2cd5206b30a75/elife-14093-app2-media1.mp4",
-      "mimeType": {
+      "mediaType": {
         "forMachine": "video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"",
         "forHuman": "mp4"
       }
     },
     {
       "src": "https://static-movie-usa.glencoesoftware.com/webm/10.7554/872/946920eb226e045af1781fe292f2cd5206b30a75/elife-14093-app2-media1.webm",
-      "mimeType": {
+      "mediaType": {
         "forMachine": "video/webm; codecs=\"vp8.0, vorbis\"",
         "forHuman": "webm"
       }
     },
     {
       "src": "https://static-movie-usa.glencoesoftware.com/ogv/10.7554/872/946920eb226e045af1781fe292f2cd5206b30a75/elife-14093-app2-media1.ogv",
-      "mimeType": {
+      "mediaType": {
         "forMachine": "video/ogg; codecs=\"theora, vorbis\"",
         "forHuman": "ogg"
       }
