@@ -15,11 +15,14 @@ schema:
         allOf:
           -
             properties:
-              text:
+              headingPart:
+                type: string
+                minLength: 1
+              textPart:
                 type: string
                 minLength: 1
             required:
-              - text
+              - headingPart
           -
             oneOf:
               -

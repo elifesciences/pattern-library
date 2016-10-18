@@ -1,14 +1,16 @@
 {
+  "heading": "How should this optional heading be styled?",
   "data": [
     {
-      "text": "Table 1 - source data 1. Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
+      "headingPart": "Table 1 - source data 1. Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
+      "textPart": "some more details here",
       "doi": {
         "doi": "10.7554/eLife.10181.001",
         "variant": "article-section"
       }
     },
     {
-      "text": "Table 1 - source data 2. SOMETHING ELSE",
+      "headingPart": "Table 1 - source data 2. there is no additional text <i>in this case</i>",
 
       "doi": {
         "doi": "10.7554/eLife.10181.002",

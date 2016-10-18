@@ -1,17 +1,50 @@
 @import "../../definitions";
 
 .source-data__text {
-  @include fig-caption-heading-typeg();
+  font-weight: normal;
   @include margin(12, "bottom")
 }
 
-  a.source-data__link {
+.source-data__heading_text {
   display: block;
-  @include label-content-typeg($color-text-secondary);
+  @include fig-caption-heading-typeg();
+}
+
+.source-data__main_text {
+  display: block;
+  @include fig-caption-text-typeg(0);
+}
+
+a.source-data__link {
+  color: $color-text;
+  @include fig-caption-text-typeg(0);
   text-decoration: none;
   text-transform: none;
 
   &:hover {
     color: $color-primary;
+  }
+}
+
+.source-data__link--download {
+  color: $color-text;
+  padding-left: 30px;
+  background: transparent url("../../assets/img/icons/download-2x.png") 0 50% no-repeat;
+  background-size: 20px;
+
+  &:hover {
+    background-image: url("../../assets/img/icons/download-hover.png");
+  }
+}
+
+.source-data__asset_access .doi {
+  @include label-content-typeg($color-text);
+
+  a.doi__link {
+    color: $color-text;
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 }
