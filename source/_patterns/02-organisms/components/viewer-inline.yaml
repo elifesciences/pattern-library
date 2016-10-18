@@ -11,29 +11,44 @@ schema:
     id:
       type: string
       minLength: 1
-    prominentText:
+    variant:
+      type: string
+      enum:
+        - figure
+        - table
+        - video
+        - supplement
+    ordinal:
+      type: integer
+      minimum: 1
+    parentId:
       type: string
       minLength: 1
-    normalText:
+    label:
       type: string
       minLength: 1
-    seeAllLink:
+    figuresPageFragLink:
       type: string
       minLength: 1
-    downloadLink:
+    downloadAllLink:
+      type: string
+      minLength: 1
+    captionedFigure:
+      $ref: ../../01-molecules/components/captioned-asset.yaml#/schema
+    individualDownloadLink:
       type: string
       minLength: 1
     newWindowLink:
       type: string
       minLength: 1
-    captionedFigure:
-      $ref: ../../01-molecules/components/captioned-asset.yaml#/schema
-      type: object
+    doi:
+      $ref: ../../00-atoms/components/doi.yaml#/schema
   required:
     - id
-    - prominentText
-    - normalText
-    - seeAllLink
-    - downloadLink
+    - variant
+    - ordinal
+    - label
+    - figuresPageFragLink
+    - individualDownloadLink
     - newWindowLink
     - captionedFigure

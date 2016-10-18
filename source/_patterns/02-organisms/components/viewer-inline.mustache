@@ -1,14 +1,18 @@
-<div class="viewer-inline{{#variant}} viewer-inline--{{variant}}{{/variant}}" id="{{id}}">
-
+<div
+    id="{{id}}"
+    class="viewer-inline viewer-inline--{{variant}}"
+    data-variant="{{variant}}"
+    data-ordinal="{{ordinal}}" {{! e.g. '1' for main fig 1; '2' for fig 1, supplement 2}}
+    {{#parentId}}data-parent-asset-id="{{parentId}}"{{/parentId}}>
 
   <div class="viewer-inline__header_panel">
         <!-- For the JS -->
       <div class="viewer-inline__controls"></div>
 
-      <div class="viewer-inline__header_text" data-replacement-text="{{replacementText}}">
-        <span class="viewer-inline__header_text__prominent">{{label}}</span>{{! add replacementText here with js}}
+      <div class="viewer-inline__header_text">
+        <span class="viewer-inline__header_text__prominent">{{label}}</span>{{! add e.g. 'with n supplements' text here with js}}
         {{! remove seeAllLink with js}}
-        <a href="{{seeAllLink}}" class="viewer-inline__header_link">see all</a>
+        <a href="{{figuresPageFragLink}}" class="viewer-inline__header_link">see all</a>
       </div>
 
     {{#downloadAllLink}}
