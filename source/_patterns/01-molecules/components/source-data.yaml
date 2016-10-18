@@ -6,26 +6,34 @@ assets:
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
-  allOf:
-    -
-      properties:
-        text:
-          type: string
-          minLength: 1
-      required:
-        - text
-    -
-      oneOf:
-        -
-          properties:
-            nonDoiLink:
-              type: string
-              minLength: 1
-          required:
-            - nonDoiLink
-        -
-          properties:
-            doi:
-              $ref: ../../00-atoms/components/doi.yaml#/schema
-          reqiured:
-            - doi
+  properties:
+    data:
+      type: array
+      minItems: 1
+      items:
+        type: object
+        allOf:
+          -
+            properties:
+              text:
+                type: string
+                minLength: 1
+            required:
+              - text
+          -
+            oneOf:
+              -
+                properties:
+                  nonDoiLink:
+                    type: string
+                    minLength: 1
+                required:
+                  - nonDoiLink
+              -
+                properties:
+                  doi:
+                    $ref: ../../00-atoms/components/doi.yaml#/schema
+                reqiured:
+                  - doi
+  required:
+    - data

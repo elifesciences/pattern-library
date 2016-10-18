@@ -1,15 +1,18 @@
 <dl class="source-data">
-  <dt class="source-data__text">{{{text}}}</dt>
-  <dd>
 
-    {{#doi}}
-      {{> atoms-doi}}
-    {{/doi}}
+  {{#data}}
+    <dt class="source-data__text">{{{text}}}</dt>
+    <dd>
 
-    {{^doi}}
-      <a class="source-data__link" href="{{nonDoiLink}}">{{{nonDoiLink}}}</a>
-    {{/doi}}
+      {{#doi}}
+        {{> atoms-doi}}
+      {{/doi}}
 
-  </dd>
+      {{^doi}}
+        <a class="source-data__link" href="{{nonDoiLink}}">{{{nonDoiLink}}}</a>
+      {{/doi}}
+
+    </dd>
+  {{/data}}
 
 </dl>
