@@ -1,21 +1,21 @@
 @import "../../definitions";
 
-.source-data__text {
+.additional-assets__text {
   font-weight: normal;
   @include margin(12, "bottom")
 }
 
-.source-data__heading_text {
+.additional-assets__heading_text {
   display: block;
   @include fig-caption-heading-typeg();
 }
 
-.source-data__main_text {
+.additional-assets__main_text {
   display: block;
   @include fig-caption-text-typeg(0);
 }
 
-a.source-data__link {
+a.additional-assets__link {
   color: $color-text;
   @include fig-caption-text-typeg(0);
   text-decoration: none;
@@ -24,9 +24,10 @@ a.source-data__link {
   &:hover {
     color: $color-primary;
   }
+
 }
 
-.source-data__link--download {
+.additional-assets__link--download {
   color: $color-text;
   padding-left: 30px;
   background: transparent url("../../assets/img/icons/download-2x.png") 0 50% no-repeat;
@@ -35,9 +36,10 @@ a.source-data__link {
   &:hover {
     background-image: url("../../assets/img/icons/download-hover.png");
   }
+
 }
 
-.source-data__asset_access .doi {
+.additional-assets__access .doi {
   @include label-content-typeg($color-text);
 
   a.doi__link {
@@ -46,5 +48,7 @@ a.source-data__link {
     &:hover {
       color: $color-primary;
     }
+
   }
+
 }

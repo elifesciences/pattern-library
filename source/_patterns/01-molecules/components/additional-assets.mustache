@@ -1,0 +1,36 @@
+<div class="additional-assets">
+  {{! We can't know what heading level this should be at (on the article page, at least), so picking the lowest in the hope that it has fewest side effects. }}
+  {{#heading}}<h6 class="additional-assets__heading">{{{heading}}}</h6>{{/heading}}
+
+  <dl class="additional-assets__list">
+
+    {{#data}}
+
+      <dt class="additional-assets__text">
+        {{#headingPart}}<span class="additional-assets__heading_text">{{{headingPart}}} </span>{{/headingPart}}
+        {{#textPart}}<span class="additional-assets__main_text">{{{textPart}}}</span>{{/textPart}}
+      </dt>
+
+      <dd class="additional-assets__access">
+
+        {{#doi}}
+          {{> atoms-doi}}
+        {{/doi}}
+
+        {{^doi}}
+          <a class="additional-assets__link" href="{{nonDoiLink}}">{{{nonDoiLink}}}</a>
+        {{/doi}}
+
+        {{#downloadLink}}
+          <div>
+            <a class="additional-assets__link additional-assets__link--download" href="{{downloadLink.url}}"{{#fileName}} download="{{fileName}}"{{/fileName}}>{{{downloadLink.name}}}</a>
+          </div>
+        {{/downloadLink}}
+
+      </dd>
+
+    {{/data}}
+
+  </dl>
+
+</div>

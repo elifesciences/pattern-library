@@ -1,12 +1,15 @@
 assets:
   css:
-    - source-data.css
+    - additional-assets.css
     - $ref: ../../00-atoms/components/doi.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
+    heading:
+      type: string
+      minLength: 1
     data:
       type: array
       minItems: 1
@@ -21,6 +24,21 @@ schema:
               textPart:
                 type: string
                 minLength: 1
+              downloadLink:
+                type: object
+                properties:
+                  url:
+                    type: string
+                    minLength: 1
+                  name:
+                    type: string
+                    minLength: 1
+                  fileName:
+                    type: string
+                    minLength: 1
+                required:
+                  - url
+                  - name
             required:
               - headingPart
           -
