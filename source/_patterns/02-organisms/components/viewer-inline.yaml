@@ -3,6 +3,7 @@ assets:
     - viewer-inline.css
     - $ref: ../../00-atoms/components/button.yaml#/assets/css
     - $ref: ../../01-molecules/components/captioned-asset.yaml#/assets/css
+    - $ref: ../../01-molecules/components/source-data.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -18,7 +19,7 @@ schema:
         - table
         - video
         - supplement
-    ordinal:
+    supplementOrdinal:
       type: integer
       minimum: 1
     parentId:
@@ -38,15 +39,27 @@ schema:
     individualDownloadLink:
       type: string
       minLength: 1
+    individualDownloadFileName:
+      type: string
+      minLength: 1
     newWindowLink:
       type: string
       minLength: 1
     doi:
       $ref: ../../00-atoms/components/doi.yaml#/schema
+    sourceData:
+      type: array
+      minItems: 1
+      items:
+        $ref: ../../01-molecules/components/source-data.yaml#/schema
+  dependencies:
+    parentId:
+      - supplementOrdinal
+    supplementOrdinal:
+      - parentId
   required:
     - id
     - variant
-    - ordinal
     - label
     - figuresPageFragLink
     - individualDownloadLink

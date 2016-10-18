@@ -2,8 +2,13 @@
     id="{{id}}"
     class="viewer-inline viewer-inline--{{variant}}"
     data-variant="{{variant}}"
-    data-ordinal="{{ordinal}}" {{! e.g. '1' for main fig 1; '2' for fig 1, supplement 2}}
-    {{#parentId}}data-parent-asset-id="{{parentId}}"{{/parentId}}>
+  {{#supplementOrdinal}}
+    data-supplement-ordinal="{{supplementOrdinal}}"
+  {{/supplementOrdinal}}
+  {{#parentId}}
+    data-parent-asset-id="{{parentId}}"
+  {{/parentId}}
+>
 
   <div class="viewer-inline__header_panel">
         <!-- For the JS -->
@@ -29,12 +34,16 @@
     {{/captionedFigure}}
 
     <div class="viewer-inline__footer">
-        <a href="{{individualDownloadLink}}" class="viewer-inline__footer_link">Download figure</a>
+        <a href="{{individualDownloadLink}}" class="viewer-inline__footer_link" download="{{individualDownloadFileName}}">Download figure</a>
         <a href="{{newWindowLink}}" class="viewer-inline__footer_link" target="_blank">Open in new tab</a>
     </div>
 
   {{#doi}}
     {{> atoms-doi}}
   {{/doi}}
+
+  {{#sourceData}}
+    {{> molecules-source-data}}
+  {{/sourceData}}
 
 </div>

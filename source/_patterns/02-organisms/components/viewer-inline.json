@@ -1,7 +1,8 @@
 {
-  "id": "someAsset",
-  "variant": "figure",
-  "ordinal": "1",
+  "id": "someSupplementaryAsset",
+  "variant": "supplement",
+  "supplementOrdinal": 1,
+  "parentId": "idOfMainAsset",
   "label": "RAF-123 ",
   "figuresPageFragLink": "#figuresPageFragLink",
   "downloadAllLink": "#downloadAllLink",
