@@ -2,7 +2,7 @@ assets:
   css:
     - viewer-inline.css
     - $ref: ../../00-atoms/components/button.yaml#/assets/css
-    - $ref: ../../01-molecules/components/captioned-figure.yaml#/assets/css
+    - $ref: ../../01-molecules/components/captioned-asset.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -27,7 +27,7 @@ schema:
       type: string
       minLength: 1
     captionedFigure:
-      $ref: ../../01-molecules/components/captioned-figure.yaml#/schema
+      $ref: ../../01-molecules/components/captioned-asset.yaml#/schema
       type: object
   required:
     - id
