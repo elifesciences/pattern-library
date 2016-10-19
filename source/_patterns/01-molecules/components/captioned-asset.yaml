@@ -59,11 +59,14 @@ schema:
             - video
         -
           properties:
-            table:
-              type: string
-              pattern: ^<table>.*<\/table>$
+            tables:
+              type: array
+              minItems: 1
+              items:
+                type: string
+                pattern: ^<table>.*<\/table>$
           required:
-            - table
+            - tables
         -
           properties:
             image:
