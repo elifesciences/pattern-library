@@ -1,4 +1,4 @@
-<figure class="captioned-figure">
+<figure class="captioned-asset">
 
   {{#picture}}
   {{> atoms-picture }}
@@ -15,16 +15,16 @@
     {{> atoms-video}}
   {{/video}}
 
-  <figcaption class="captioned-figure__caption">
+  <figcaption class="captioned-asset__caption">
     {{#customContent}}
         {{{ customContent }}}
     {{/customContent}}
     {{^customContent}}
       {{#heading}}
-        <p class="captioned-figure__caption_heading">{{{ heading }}}</p>
+        <p class="captioned-asset__caption_heading">{{{ heading }}}</p>
       {{/heading}}
       {{#captions}}
-        <p class="captioned-figure__caption_text">{{ caption }}</p>
+        <p class="captioned-asset__caption_text">{{ caption }}</p>
       {{/captions}}
     {{/customContent}}
   </figcaption>
