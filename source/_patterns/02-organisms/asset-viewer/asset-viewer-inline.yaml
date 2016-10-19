@@ -34,7 +34,7 @@ schema:
     downloadAllLink:
       type: string
       minLength: 1
-    captionedFigure:
+    captionedAsset:
       $ref: ../../01-molecules/components/captioned-asset.yaml#/schema
     individualDownloadLink:
       type: string
@@ -47,7 +47,7 @@ schema:
       minLength: 1
     doi:
       $ref: ../../00-atoms/components/doi.yaml#/schema
-    sourceData:
+    additionalAssets:
       type: array
       minItems: 1
       items:
@@ -64,4 +64,4 @@ schema:
     - figuresPageFragLink
     - individualDownloadLink
     - newWindowLink
-    - captionedFigure
+    - captionedAsset

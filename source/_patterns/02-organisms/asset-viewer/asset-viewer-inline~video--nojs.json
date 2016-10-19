@@ -1,0 +1,51 @@
+{
+  "id": "video1",
+  "variant": "video",
+  "classes": "nojs",
+  "label": "Video 1 ",
+  "figuresPageFragLink": "#figuresPageFragLink",
+  "downloadAllLink": "#downloadAllLink",
+  "captionedAsset": {
+    "heading": "A representative polymer simulation of compaction of 30 Mb chromosome by loop extruding condensins in presence of strand-passing topo II.",
+    "captions": [
+      {
+        "caption": "Top left, fiber color corresponds to the position of each monomer along the genome. Top right, fiber shown in semitransparent gray, condensins are shown as red spheres. Bottom, the diagram of the crosslinks (red arcs) formed by condensins. The numbers above the arcs show the number of condensins stacked at the bases of reinforced loops. We sped up the second half of the video 20 times to illustrate the slow phase of loop maturation and the long-term stability of the compacted state."
+      }
+    ],
+    "video": {
+      "posterFrame": "https://static-movie-usa.glencoesoftware.com/jpg/10.7554/62/9b08932354341de3a06de7e1c58d37138418aa8a/elife-14864-media2.jpg",
+      "sources": [
+        {
+          "src": "https://static-movie-usa.glencoesoftware.com/mp4/10.7554/62/9b08932354341de3a06de7e1c58d37138418aa8a/elife-14864-media2.mp4",
+          "mediaType": {
+            "forMachine": "video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"",
+            "forHuman": "mp4"
+          }
+        },
+        {
+          "src": "https://static-movie-usa.glencoesoftware.com/webm/10.7554/62/9b08932354341de3a06de7e1c58d37138418aa8a/elife-14864-media2.webm",
+          "mediaType": {
+            "forMachine": "video/webm; codecs=\"vp8.0, vorbis\"",
+            "forHuman": "webm"
+          }
+        },
+        {
+          "src": "https://static-movie-usa.glencoesoftware.com/ogv/10.7554/62/9b08932354341de3a06de7e1c58d37138418aa8a/elife-14864-media2.ogv",
+          "mediaType": {
+            "forMachine": "video/ogg; codecs=\"theora, vorbis\"",
+            "forHuman": "ogg"
+          }
+        }
+      ]
+    }
+
+  },
+  "individualDownloadLink": "#individualDownloadLink",
+  "newWindowLink": "#newWindowLink",
+
+  "doi": {
+    "doi": "10.7554/eLife.14734",
+    "variant": "article-section"
+  }
+
+}
