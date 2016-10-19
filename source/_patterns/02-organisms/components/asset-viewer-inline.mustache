@@ -1,7 +1,7 @@
 <div
     id="{{id}}"
     class="asset-viewer-inline asset-viewer-inline--{{variant}}"
-    data-variant="{{variant}}"
+    data-variant="{{variant}} {{#classes}}{{classes}}{{/classes}}"
   {{#supplementOrdinal}}
     data-supplement-ordinal="{{supplementOrdinal}}"
   {{/supplementOrdinal}}
@@ -29,9 +29,9 @@
     {{/downloadAllLink}}
     </div>
 
-    {{#captionedFigure}}
+    {{#captionedAsset}}
         {{> molecules-captioned-asset }}
-    {{/captionedFigure}}
+    {{/captionedAsset}}
 
     <div class="asset-viewer-inline__footer">
         <a href="{{individualDownloadLink}}" class="asset-viewer-inline__footer_link" download="{{individualDownloadFileName}}">Download figure</a>
