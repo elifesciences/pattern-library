@@ -1,0 +1,49 @@
+<div
+    id="{{id}}"
+    class="asset-viewer-inline asset-viewer-inline--{{variant}}"
+    data-variant="{{variant}}"
+  {{#supplementOrdinal}}
+    data-supplement-ordinal="{{supplementOrdinal}}"
+  {{/supplementOrdinal}}
+  {{#parentId}}
+    data-parent-asset-id="{{parentId}}"
+  {{/parentId}}
+>
+
+  <div class="asset-viewer-inline__header_panel">
+        <!-- For the JS -->
+      <div class="asset-viewer-inline__controls"></div>
+
+      <div class="asset-viewer-inline__header_text">
+        <span class="asset-viewer-inline__header_text__prominent">{{label}}</span>{{! add e.g. 'with n supplements' text here with js}}
+        {{! remove seeAllLink with js}}
+        <a href="{{figuresPageFragLink}}" class="asset-viewer-inline__header_link">see all</a>
+      </div>
+
+    {{#downloadAllLink}}
+      <div class="asset-viewer-inline__figure_access">
+        <a href="{{downloadAllLink}}" class="asset-viewer-inline__download_all_link">
+          <span class="visuallyhidden">Download everything associated with this artefact</span>
+        </a>
+      </div>
+    {{/downloadAllLink}}
+    </div>
+
+    {{#captionedFigure}}
+        {{> molecules-captioned-asset }}
+    {{/captionedFigure}}
+
+    <div class="asset-viewer-inline__footer">
+        <a href="{{individualDownloadLink}}" class="asset-viewer-inline__footer_link" download="{{individualDownloadFileName}}">Download figure</a>
+        <a href="{{newWindowLink}}" class="asset-viewer-inline__footer_link" target="_blank">Open in new tab</a>
+    </div>
+
+  {{#doi}}
+    {{> atoms-doi}}
+  {{/doi}}
+
+  {{#additionalAssets}}
+    {{> molecules-additional-assets}}
+  {{/additionalAssets}}
+
+</div>
