@@ -37,11 +37,14 @@
           }
         }
       ]
+    },
+
+    "alternativeViews": {
+      "individualDownloadLink": "#individualDownloadLink",
+      "newWindowLink": "#newWindowLink"
     }
 
   },
-  "individualDownloadLink": "#individualDownloadLink",
-  "newWindowLink": "#newWindowLink",
 
   "doi": {
     "doi": "10.7554/eLife.14734",

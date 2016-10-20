@@ -70,31 +70,3 @@
 //     background: url("../img/icons/launch-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
 //   }
 // }
-
-.asset-viewer-inline__footer {
-  padding: 0 6%;
-  @include padding(12, "top");
-}
-
-.asset-viewer-inline__footer_link {
-  color: $color-text;
-  display: inline-block;
-  @include fig-caption-text-typeg(0);
-
-  &:hover {
-    color: $color-primary;
-  }
-}
-
-.asset-viewer-inline__footer_link + .asset-viewer-inline__footer_link {
-  border-left: 1px solid $color-text;
-  @include padding(5, "left");
-  @include margin(2, "left");
-}
-
-@media only screen and (min-width: #{get-rem-from-px(430)}em) {
-  .asset-viewer-inline__footer {
-    padding: 0;
-    @include padding(12, "top");
-  }
-}
