@@ -111,7 +111,7 @@
   }
 }
 
-@media only screen and (max-width: #{get-rem-from-px($bkpt-view-selector)}em) {
+@media only screen and (max-width: #{get-rem-from-px($bkpt-view-selector - 1)}em) {
 
   .view-selector__list {
     display: flex;
@@ -189,8 +189,12 @@
 
   // Applied with js to stop the selector scolling off the top of the screen.
   .view-selector--fixed {
+    // Supply what was being provided by the grid now this element has been taken out the flow.
+    margin-left: -1.6%;
+    padding: 0 1.6%;
     position: fixed;
     top: 0;
+    width: 16.666%;
   }
 
 }

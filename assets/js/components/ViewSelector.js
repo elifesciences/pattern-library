@@ -13,24 +13,25 @@ module.exports = class ViewSelector {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
+    this.$elmYOffset = this.$elm.offsetTop;
     this.cssFixedClassName = 'view-selector--fixed';
+
     this.$elm.classList.add('view-selector--js');
-    this.scrollPosnWhenInitiallyFixed;
     this.window.addEventListener('scroll', this.handleScroll.bind(this));
 
   }
 
   handleScroll() {
-    this.window.console.log('this.$elm.offsetTop', this.$elm.offsetTop);
-    // if we're not already fixed
     if (!this.$elm.classList.contains(this.cssFixedClassName)) {
-      // check if we're at (or off) the top of the screen and if so:
-
-      //   1. if scrollPosnWhenInitiallyFixed no set, record current Y position in scrollPosnWhenInitiallyFixed
-      //   2. fix
+      if (this.window.pageYOffset >= this.$elmYOffset) {
+        this.$elm.classList.add(this.cssFixedClassName);
+      }
+    } else if (this.window.pageYOffset < this.$elmYOffset) {
+      this.$elm.classList.remove(this.cssFixedClassName);
     }
     // if we're currently fixed
       // check current Y posn against scrollPosnWhenInitiallyFixed to see if neeed to unfix
   }
+
 
 };
