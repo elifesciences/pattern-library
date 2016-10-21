@@ -19,14 +19,16 @@
       "altText": "Meaningful alt text here please."
     },
 
-    "alternativeViews": {
-      "individualDownloadLink": "#individualDownloadLink",
-      "newWindowLink": "#newWindowLink"
-    }
-  },
+    "download": {
+      "link": "#downloadLink",
+      "filename": "#downloadfilename"
+    },
 
-  "doi": {
-    "doi": "10.7554/eLife.14734",
-    "variant": "article-section"
+    "doi": {
+      "doi": "10.7554/eLife.14734",
+      "variant": "article-section"
+    }
+
   }
+
 }

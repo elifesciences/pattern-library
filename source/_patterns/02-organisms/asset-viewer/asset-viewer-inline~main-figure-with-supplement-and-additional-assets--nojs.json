@@ -18,9 +18,9 @@
       "altText": "Meaningful alt text here please."
     },
 
-    "alternativeViews": {
-      "individualDownloadLink": "#individualDownloadLink",
-      "newWindowLink": "#newWindowLink"
+    "download": {
+      "link": "#downloadLink",
+      "filename": "#downloadfilename"
     }
   },
 
@@ -34,7 +34,8 @@
       "heading": "How should this optional heading be styled?",
       "data": [
         {
-          "headingPart": "Table 1 - source data 1. Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
+          "headingPart1": "Table 1 - source data 1.",
+          "headingPart2": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
           "textPart": "some more details here",
           "doi": {
             "doi": "10.7554/eLife.10181.001",
@@ -42,7 +43,8 @@
           }
         },
         {
-          "headingPart": "Table 1 - source data 2. there is no additional text <i>in this case</i>",
+          "headingPart1": "Table 1 - source data 2.",
+          "headingPart2": "there is no additional text <i>in this case</i>",
 
           "doi": {
             "doi": "10.7554/eLife.10181.002",

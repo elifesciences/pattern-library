@@ -13,25 +13,22 @@
         <span class="asset-viewer-inline__header_text__prominent">{{label}}</span>{{#supplementCount}} with {{supplementCount}} supplement{{#hasMultipleSupplements}}s{{/hasMultipleSupplements}} <a href="{{figuresPageFragLink}}" class="asset-viewer-inline__header_link">see all</a>{{/supplementCount}}
       </div>
 
-    {{#downloadAllLink}}
-      <div class="asset-viewer-inline__figure_access">
-        <a href="{{downloadAllLink}}" class="asset-viewer-inline__download_all_link">
-          <span class="visuallyhidden">Download everything associated with this artefact</span>
-        </a>
-      </div>
-    {{/downloadAllLink}}
-    </div>
+
+        <div class="asset-viewer-inline__figure_access">
+        {{#captionedAsset.download}}
+          <a href="{{captionedAsset.download.link}}" class="asset-viewer-inline__download_all_link" download="{{captionedAsset.download.filename}}"><span class="visuallyhidden">Download asset</span></a>
+        {{/captionedAsset.download}}
+        </div>
+
+  </div>
 
     {{#captionedAsset}}
         {{> molecules-captioned-asset }}
     {{/captionedAsset}}
 
-  {{#doi}}
-    {{> atoms-doi}}
-  {{/doi}}
+    {{#additionalAssets}}
+      {{> molecules-additional-assets}}
+    {{/additionalAssets}}
 
-  {{#additionalAssets}}
-    {{> molecules-additional-assets}}
-  {{/additionalAssets}}
 
 </div>

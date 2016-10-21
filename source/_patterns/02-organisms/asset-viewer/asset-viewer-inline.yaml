@@ -31,22 +31,8 @@ schema:
     figuresPageFragLink:
       type: string
       minLength: 1
-    downloadAllLink:
-      type: string
-      minLength: 1
     captionedAsset:
       $ref: ../../01-molecules/components/captioned-asset.yaml#/schema
-    individualDownloadLink:
-      type: string
-      minLength: 1
-    individualDownloadFileName:
-      type: string
-      minLength: 1
-    newWindowLink:
-      type: string
-      minLength: 1
-    doi:
-      $ref: ../../00-atoms/components/doi.yaml#/schema
     additionalAssets:
       type: array
       minItems: 1
@@ -62,6 +48,4 @@ schema:
     - variant
     - label
     - figuresPageFragLink
-    - individualDownloadLink
-    - newWindowLink
     - captionedAsset
