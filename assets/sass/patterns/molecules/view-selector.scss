@@ -192,6 +192,7 @@
     // Supply what was being provided by the grid now this element has been taken out the flow.
     margin-left: -1.6%;
     padding: 0 1.6%;
+    @include padding(30, "top");
     position: fixed;
     top: 0;
     width: 16.666%;

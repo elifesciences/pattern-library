@@ -11,8 +11,11 @@ module.exports = class ViewSelector {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.$elmYOffset = this.$elm.offsetTop;
     this.cssFixedClassName = 'view-selector--fixed';
+    // matches top padding in scss
+    let topSpaceWhenFixed = 30;
+
+    this.$elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
     this.window.addEventListener('scroll', this.handleScroll.bind(this));
 
   }
