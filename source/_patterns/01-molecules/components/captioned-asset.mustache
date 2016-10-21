@@ -27,6 +27,17 @@
         <p class="captioned-asset__caption_text">{{ caption }}</p>
       {{/captions}}
     {{/customContent}}
+
+    {{#doi}}
+      {{> atoms-doi}}
+    {{/doi}}
+
+    {{#download}}
+      <div class="captioned-asset__caption___footer">
+        <a href="{{link}}" class="captioned-asset__caption___footer_link" target="_blank">Open in new tab</a>
+      </div>
+    {{/download}}
+
   </figcaption>
 
   {{#tables}}

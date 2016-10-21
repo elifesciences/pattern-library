@@ -12,5 +12,15 @@
       "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
       "altText": "Meaningful alt text here please."
     }
+  },
+
+  "doi": {
+    "doi": "10.7554/eLife.16370",
+    "variant": "article-section"
+  },
+
+  "download": {
+    "link": "#downloadLink",
+    "filename": "#downloadfilename"
   }
 }

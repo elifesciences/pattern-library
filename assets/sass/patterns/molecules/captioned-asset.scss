@@ -26,7 +26,23 @@
   @include fig-caption-text-typeg();
 }
 
-@media only screen and (min-width: #{get-rem-from-px(430)}em) {
+.captioned-asset__caption___footer {
+  //padding: 0 6%;
+  @include padding(12, "top");
+}
+
+.captioned-asset__caption___footer_link {
+  color: $color-text;
+  display: inline-block;
+  @include fig-caption-text-typeg(0);
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+@media only screen and (min-width: #{get-rem-from-px($bkpt-captioned-asset-caption)}em) {
+
   .captioned-asset__caption {
     padding: 0;
   }
