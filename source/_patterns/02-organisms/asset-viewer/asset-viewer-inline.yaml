@@ -1,0 +1,51 @@
+assets:
+  css:
+    - asset-viewer-inline.css
+    - $ref: ../../00-atoms/components/button.yaml#/assets/css
+    - $ref: ../../01-molecules/components/captioned-asset.yaml#/assets/css
+    - $ref: ../../01-molecules/components/additional-assets.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    id:
+      type: string
+      minLength: 1
+    variant:
+      type: string
+      enum:
+        - figure
+        - table
+        - video
+        - supplement
+    supplementOrdinal:
+      type: integer
+      minimum: 1
+    parentId:
+      type: string
+      minLength: 1
+    label:
+      type: string
+      minLength: 1
+    figuresPageFragLink:
+      type: string
+      minLength: 1
+    captionedAsset:
+      $ref: ../../01-molecules/components/captioned-asset.yaml#/schema
+    additionalAssets:
+      type: array
+      minItems: 1
+      items:
+        $ref: ../../01-molecules/components/additional-assets.yaml#/schema
+  dependencies:
+    parentId:
+      - supplementOrdinal
+    supplementOrdinal:
+      - parentId
+  required:
+    - id
+    - variant
+    - label
+    - figuresPageFragLink
+    - captionedAsset

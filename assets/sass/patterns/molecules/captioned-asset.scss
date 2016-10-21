@@ -27,7 +27,6 @@
 }
 
 .captioned-asset__caption___footer {
-  //padding: 0 6%;
   @include padding(12, "top");
 }
 
@@ -46,4 +45,10 @@
   .captioned-asset__caption {
     padding: 0;
   }
+
+  .captioned-asset__caption___footer {
+    padding: 0;
+    @include padding(12, "top");
+  }
+
 }

@@ -1,0 +1,34 @@
+<div
+    id="{{id}}"
+    class="asset-viewer-inline asset-viewer-inline--{{variant}} {{#classes}}{{classes}}{{/classes}}"
+    data-variant="{{variant}}"
+  {{#isSupplement}}
+    data-parent-asset-id="{{parentId}}"
+    data-supplement-ordinal="{{supplementOrdinal}}"
+  {{/isSupplement}}
+>
+
+  <div class="asset-viewer-inline__header_panel">
+      <div class="asset-viewer-inline__header_text">
+        <span class="asset-viewer-inline__header_text__prominent">{{label}}</span>{{#supplementCount}} with {{supplementCount}} supplement{{#hasMultipleSupplements}}s{{/hasMultipleSupplements}} <a href="{{figuresPageFragLink}}" class="asset-viewer-inline__header_link">see all</a>{{/supplementCount}}
+      </div>
+
+
+        <div class="asset-viewer-inline__figure_access">
+        {{#captionedAsset.download}}
+          <a href="{{captionedAsset.download.link}}" class="asset-viewer-inline__download_all_link" download="{{captionedAsset.download.filename}}"><span class="visuallyhidden">Download asset</span></a>
+        {{/captionedAsset.download}}
+        </div>
+
+  </div>
+
+    {{#captionedAsset}}
+        {{> molecules-captioned-asset }}
+    {{/captionedAsset}}
+
+    {{#additionalAssets}}
+      {{> molecules-additional-assets}}
+    {{/additionalAssets}}
+
+
+</div>
