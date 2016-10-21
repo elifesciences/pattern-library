@@ -1,23 +1,16 @@
 <div
     id="{{id}}"
-    class="asset-viewer-inline asset-viewer-inline--{{variant}}"
-    data-variant="{{variant}} {{#classes}}{{classes}}{{/classes}}"
-  {{#supplementOrdinal}}
-    data-supplement-ordinal="{{supplementOrdinal}}"
-  {{/supplementOrdinal}}
-  {{#parentId}}
+    class="asset-viewer-inline asset-viewer-inline--{{variant}} {{#classes}}{{classes}}{{/classes}}"
+    data-variant="{{variant}}"
+  {{#isSupplement}}
     data-parent-asset-id="{{parentId}}"
-  {{/parentId}}
+    data-supplement-ordinal="{{supplementOrdinal}}"
+  {{/isSupplement}}
 >
 
   <div class="asset-viewer-inline__header_panel">
-        <!-- For the JS -->
-      <div class="asset-viewer-inline__controls"></div>
-
       <div class="asset-viewer-inline__header_text">
-        <span class="asset-viewer-inline__header_text__prominent">{{label}}</span>{{! add e.g. 'with n supplements' text here with js}}
-        {{! remove seeAllLink with js}}
-        <a href="{{figuresPageFragLink}}" class="asset-viewer-inline__header_link">see all</a>
+        <span class="asset-viewer-inline__header_text__prominent">{{label}}</span>{{#supplementCount}} with {{supplementCount}} supplement{{#hasMultipleSupplements}}s{{/hasMultipleSupplements}} <a href="{{figuresPageFragLink}}" class="asset-viewer-inline__header_link">see all</a>{{/supplementCount}}
       </div>
 
     {{#downloadAllLink}}

@@ -3,6 +3,8 @@
   "variant": "figure",
   "classes": "nojs",
   "label": "Figure 1 ",
+  "supplementCount": 1,
+  "hasMultipleSupplements": false,
   "figuresPageFragLink": "#figuresPageFragLink",
   "downloadAllLink": "#downloadAllLink",
   "captionedAsset": {

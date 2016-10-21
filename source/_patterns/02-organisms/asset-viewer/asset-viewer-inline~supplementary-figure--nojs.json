@@ -4,8 +4,9 @@
   "classes": "nojs",
   "label": "Figure 1 supplement 1",
   "figuresPageFragLink": "#figuresPageFragLink",
-  "supplementOrdinal": 1,
+  "isSupplement": true,
   "parentId": "fig11",
+  "supplementOrdinal": 1,
   "downloadAllLink": "#downloadAllLink",
   "captionedAsset": {
     "heading": "Many features are conserved between the mammalian nephron and planarian protonephridia.",
