@@ -334,15 +334,17 @@
 
   },
 
-  "jumpLinks": [
-    { "name": "Abstract", "url": "#abstract" },
-    { "name": "eLife digest", "url": "#digest" },
-    { "name": "Introduction", "url": "#introduction" },
-    { "name": "Results", "url": "#results" },
-    { "name": "Discussion", "url": "#discussion" },
-    { "name": "Materials & methods", "url": "#materials-and-methods" },
-    { "name": "References", "url": "#references" }
-  ],
+  "jumpLinks": {
+    "links": [
+      { "name": "Abstract", "url": "#abstract" },
+      { "name": "eLife digest", "url": "#digest" },
+      { "name": "Introduction", "url": "#introduction" },
+      { "name": "Results", "url": "#results" },
+      { "name": "Discussion", "url": "#discussion" },
+      { "name": "Materials & methods", "url": "#materials-and-methods" },
+      { "name": "References", "url": "#references" }
+    ]
+  },
 
   "articleSections": [
     {
