@@ -1,0 +1,15 @@
+@import "../../definitions";
+
+.list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+$prefixes: ("alpha-lower": "lower-latin", "alpha-upper": "upper-latin", "bullet": "disc", "number": "decimal", "roman-lower": "lower-roman", "roman-upper": "upper-roman");
+
+@each $prefix, $list-style-type in $prefixes {
+  .list--#{$prefix} {
+    list-style-type: #{$list-style-type};
+    @include padding (20, "left");
+  }
+}
