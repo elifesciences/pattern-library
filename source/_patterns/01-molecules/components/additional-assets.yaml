@@ -44,6 +44,7 @@ schema:
                   - name
             required:
               - headingPart1
+              - downloadLink
           -
             oneOf:
               -
