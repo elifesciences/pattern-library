@@ -43,6 +43,12 @@
           "doi": {
             "doi": "10.7554/eLife.10181.001",
             "variant": "article-section"
+          },
+
+          "downloadLink": {
+            "url": "#downloadLink",
+            "name": "Download me",
+            "fileName": "#download-me.png"
           }
         },
         {
@@ -52,6 +58,12 @@
           "doi": {
             "doi": "10.7554/eLife.10181.002",
             "variant": "article-section"
+          },
+
+          "downloadLink": {
+            "url": "#downloadLink",
+            "name": "Download me",
+            "fileName": "#download-me.png"
           }
 
         }
@@ -67,6 +79,12 @@
           "doi": {
             "doi": "10.7554/eLife.10181.001",
             "variant": "article-section"
+          },
+
+          "downloadLink": {
+            "url": "#downloadLink",
+            "name": "Download me",
+            "fileName": "#download-me.png"
           }
         },
         {
@@ -76,6 +94,12 @@
           "doi": {
             "doi": "10.7554/eLife.10181.002",
             "variant": "article-section"
+          },
+
+          "downloadLink": {
+            "url": "#downloadLink",
+            "name": "Download me",
+            "fileName": "#download-me.png"
           }
 
         }
