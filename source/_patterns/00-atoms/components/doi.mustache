@@ -1,1 +1,2 @@
-<span class="doi{{#variant}} doi--{{variant}}{{/variant}}">doi: <a href="https://doi.org/{{doi}}" class="doi__link">{{^hidePrefix}}https://doi.org/{{/hidePrefix}}{{doi}}</a></span>
+{{! isTruncated should only be true when doi is included as a partial within the contextual-data pattern }}
+<span class="doi{{#variant}} doi--{{variant}}{{/variant}}">{{#isTruncated}}doi: {{/isTruncated}}<a href="https://doi.org/{{doi}}" class="doi__link">{{^isTruncated}}https://doi.org/{{/isTruncated}}{{doi}}</a></span>

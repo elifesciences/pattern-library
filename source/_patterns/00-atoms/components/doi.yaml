@@ -13,7 +13,8 @@ schema:
       type: string
       enum:
         - article-section
-    hidePrefix:
+        - asset
+    isTruncated:
       type: boolean
       default:
         - false

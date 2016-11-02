@@ -26,7 +26,7 @@
 
   "doi": {
     "doi": "10.7554/eLife.14734",
-    "variant": "article-section"
+    "variant": "asset"
   },
 
   "additionalAssets": [
@@ -39,7 +39,7 @@
           "textPart": "some more details here",
           "doi": {
             "doi": "10.7554/eLife.10181.001",
-            "variant": "article-section"
+            "variant": "asset"
           },
 
           "downloadLink": {
@@ -54,7 +54,7 @@
 
           "doi": {
             "doi": "10.7554/eLife.10181.002",
-            "variant": "article-section"
+            "variant": "asset"
           },
 
           "downloadLink": {
