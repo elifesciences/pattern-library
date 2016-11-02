@@ -13,9 +13,22 @@
       color: $color-primary;
     }
   }
+
+  &--article-section {
+    display: block;
+  }
+
+  &--asset {
+    @include label-content-typeg($color-text);
+    font-weight: normal;
+
+    a.doi__link {
+      @include fig-caption-text-typeg(0);
+      color: $color-text;
+      display: block;
+      }
+  }
+
 }
 
-.doi--article-section {
-  display: block;
-}
 

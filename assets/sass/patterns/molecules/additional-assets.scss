@@ -17,6 +17,7 @@
 
 a.additional-assets__link {
   color: $color-text;
+  display: block;
   @include fig-caption-text-typeg(0);
   text-decoration: none;
   text-transform: none;
@@ -39,16 +40,3 @@ a.additional-assets__link {
 
 }
 
-.additional-assets__access .doi {
-  @include label-content-typeg($color-text);
-
-  a.doi__link {
-    color: $color-text;
-
-    &:hover {
-      color: $color-primary;
-    }
-
-  }
-
-}
