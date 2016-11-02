@@ -329,7 +329,7 @@
       "doi": {
         "class": "contextual-data__doi",
         "doi": "10.7554/eLife.16370",
-        "hidePrefix": true
+        "isTruncated": true
       }
     }
 
