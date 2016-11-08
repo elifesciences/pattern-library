@@ -1,0 +1,39 @@
+@import "../../definitions";
+
+.author-details__name {
+  @include nospace("bottom");
+}
+
+.author-details__section {
+  @include padding(24, "bottom");
+}
+
+.author-details__affiliations {
+  @include body-para();
+  @include nospace("left");
+  list-style: none;
+}
+
+.author-details__affiliation {
+  @include body-para();
+  @include nospace("bottom");
+}
+
+.author-details__heading {
+  display: inline;
+}
+
+.author-details__text {
+  @include body-para();
+  @include nospace("bottom");
+}
+
+a.author-details__link {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:active,
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
