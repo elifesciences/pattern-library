@@ -36,6 +36,7 @@
       "heading": "How should this optional heading be styled?",
       "data": [
         {
+          "assetId": "pageLevelUniqueFragmentId7",
           "headingPart1": "Table 1 - source data 1.",
           "headingPart2": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
           "textPart": "some more details here",
@@ -51,6 +52,7 @@
           }
         },
         {
+          "assetId": "pageLevelUniqueFragmentId8",
           "headingPart1": "Table 1 - source data 2.",
           "headingPart2": "there is no additional text <i>in this case</i>",
 
@@ -72,6 +74,7 @@
       "heading": "How should this optional heading be styled?",
       "data": [
         {
+          "assetId": "pageLevelUniqueFragmentId9",
           "headingPart1": "Table 1 - source data 1.",
           "headingPart2": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
           "textPart": "some more details here",
@@ -87,6 +90,7 @@
           }
         },
         {
+          "assetId": "pageLevelUniqueFragmentId10",
           "headingPart1": "Table 1 - source data 2.",
           "headingPart2": "there is no additional text <i>in this case</i>",
 

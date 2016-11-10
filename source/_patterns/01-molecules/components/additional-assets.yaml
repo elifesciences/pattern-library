@@ -18,6 +18,9 @@ schema:
         allOf:
           -
             properties:
+              assetId:
+                type: string
+                minLength: 1
               headingPart1:
                 type: string
                 minLength: 1
@@ -43,6 +46,7 @@ schema:
                   - url
                   - name
             required:
+              - assetId
               - headingPart1
               - downloadLink
           -
