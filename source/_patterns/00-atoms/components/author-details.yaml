@@ -51,7 +51,7 @@ schema:
       properties:
         id:
           type: string
-          pattern: ^([0-9]{4}-){3}[0-9]{4}$
+          pattern: ^([0-9]{4}-){3}[0-9]{3}[0-9X]$
         icon:
           type: object
           properties:
