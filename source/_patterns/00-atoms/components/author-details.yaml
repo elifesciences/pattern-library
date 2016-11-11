@@ -1,0 +1,75 @@
+assets:
+  css:
+    - author-details.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    name:
+      type: string
+    hasAffiliations:
+      type: boolean
+    affiliations:
+#     not required because authors don't always have affiliations (e.g. some authors of editorials).
+      type: array
+      minItems: 1
+    presentAddress:
+      type: string
+      minLength: 1
+    contributionStatement:
+      type: string
+      minLength: 1
+    equalContributionStatement:
+      type: string
+      minLength: 1
+    otherStatements:
+#    catch-all for occasional additonal statements for e.g. co-seniority & others that may occur later
+      type: string
+      mineLength: 1
+    hasMeansOfCorrespondence:
+      type: boolean
+    meansOfCorrespondence:
+      type: array
+      minItems: 1
+      items:
+        type: object
+        properties:
+          isEmail:
+            type: boolean
+          value:
+            type: string
+            minLength: 1
+        required:
+          - isEmail
+          - value
+    competingInterest:
+      type: string
+      minLength: 1
+    orcid:
+      type: object
+      properties:
+        id:
+          type: string
+          pattern: ^([0-9]{4}-){3}[0-9]{4}$
+        icon:
+          type: object
+          properties:
+            src:
+              type: string
+              minLength: 1
+            srcset:
+              type: string
+              minLength: 1
+          required:
+            - src
+  dependencies:
+    affiliations:
+      - hasAffiliations
+    meansOfCorrespondence:
+      - hasMeansOfCorrespondence
+  required:
+    - name
+    - hasAffiliations
+    - hasMeansOfCorrespondence
+    - competingInterest

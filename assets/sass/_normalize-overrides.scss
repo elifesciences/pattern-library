@@ -1,3 +1,5 @@
+@import "definitions";
+
 *,
 *:before,
 *:after {
@@ -52,11 +54,7 @@ h6 {
 }
 
 p {
-  font-family: $font-primary;
-  @include font-size(16);
-  line-height: 1.5;
-  margin: 0;
-  @include padding(24, "bottom");
+  @include body-para();
 }
 
 ul,

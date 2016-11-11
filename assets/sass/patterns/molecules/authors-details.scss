@@ -1,0 +1,6 @@
+@import "../../definitions";
+
+.authors-details__authors {
+  @include nospace();
+  list-style: none;
+}

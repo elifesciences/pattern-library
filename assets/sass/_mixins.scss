@@ -193,3 +193,7 @@
   }
 
 }
+
+@mixin body-para {
+  @include body-typeg();
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Jenny Bloggs",
+  "authorID": "pageUniqueIdForThisAuthor1",
+  "hasAffiliations": true,
+
+  "affiliations": [
+    "Evolutionary Studies Institute and Centre of Excellence in PalaeoSciences, University of the Witwatersrand, Johannesburg, South Africa",
+    "School of Geosciences, University of the Witwatersrand, Johannesburg, South Africa"
+  ],
+
+  "presentAddress": "Department of Inventive Inventions, Univertity of Wessex, Windowchester, Wessex",
+
+  "contributionStatement": "Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article, Contributed unpublished essential data or reagents",
+
+  "equalContributionStatement": "Francesca Smith, Wendel Jakes III",
+
+  "hasMeansOfCorrespondence": true,
+
+  "meansOfCorrespondence": [
+    {
+      "isEmail": true,
+      "value": "jenny@bloggs.com"
+    },
+    {
+      "isEmail": false,
+      "value": "+1 555-4321-09876"
+    }
+  ],
+
+  "competingInterest": "No competing interests declared",
+
+  "orcid": {
+    "id": "0000-0002-3400-7927",
+    "icon": {
+      "src": "../../assets/img/icons/orcid/orcid_16x16.png",
+      "srcset": "../../assets/img/icons/orcid/orcid_16x16.png 16, ../../assets/img/icons/orcid/orcid_32x32.png 32, ../../assets/img/icons/orcid/orcid_64x64.png 64, ../../assets/img/icons/orcid/orcid_128x128.png 128"
+    }
+  }
+}
