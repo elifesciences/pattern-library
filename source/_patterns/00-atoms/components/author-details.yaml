@@ -47,22 +47,8 @@ schema:
       type: string
       minLength: 1
     orcid:
-      type: object
-      properties:
-        id:
-          type: string
-          pattern: ^([0-9]{4}-){3}[0-9]{3}[0-9X]$
-        icon:
-          type: object
-          properties:
-            src:
-              type: string
-              minLength: 1
-            srcset:
-              type: string
-              minLength: 1
-          required:
-            - src
+      type: string
+      pattern: ^([0-9]{4}-){3}[0-9]{3}[0-9X]$
   dependencies:
     affiliations:
       - hasAffiliations
