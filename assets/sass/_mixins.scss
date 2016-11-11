@@ -100,7 +100,6 @@
 @mixin article-with-background() {
   background-color: $color-primary;
   color: $color-text--reverse;
-  @include padding(12, "bottom");
 
   .meta {
     color: $color-text--reverse;
