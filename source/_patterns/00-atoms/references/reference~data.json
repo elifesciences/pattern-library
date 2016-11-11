@@ -1,0 +1,67 @@
+{
+  "title": "NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets",
+  "origin": "NCBI Gene Expression Omnibus. Series accession number <a href=\"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44902\">GSE44902</a>",
+  "hasAuthors": true,
+  "authorLists": [
+    {
+      "authors": [
+        {
+          "name": "R Bouveret"
+        },
+        {
+          "name": "R Bouveret"
+        },
+        {
+          "name": "N Schonrock"
+        },
+        {
+          "name": "M Ramialison"
+        },
+        {
+          "name": "T Doan"
+        },
+        {
+          "name": "D de Jong"
+        },
+        {
+          "name": "A Bondue"
+        },
+        {
+          "name": "G Kaur"
+        },
+        {
+          "name": "S Mohamed"
+        },
+        {
+          "name": "H Fonoudi"
+        },
+        {
+          "name": "C Chen"
+        },
+        {
+          "name": "M Wouters"
+        },
+        {
+          "name": "S Bhattacharya"
+        },
+        {
+          "name": "N Plachta"
+        },
+        {
+          "name": "SL Dunwoodie"
+        },
+        {
+          "name": "G Chapman"
+        },
+        {
+          "name": "C Blanpain"
+        },
+        {
+          "name": "RP Harvey"
+        }
+      ],
+      "suffix": "(2015)"
+    }
+  ],
+  "hasAbstracts": false
+}

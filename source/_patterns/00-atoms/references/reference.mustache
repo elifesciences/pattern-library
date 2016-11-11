@@ -1,0 +1,54 @@
+<div class="reference">
+
+  {{#doi}}
+
+    <a href="https://doi.org/{{{doi}}}" class="reference__title">{{{title}}}</a>
+
+  {{/doi}}
+
+  {{^doi}}
+
+    {{#titleLink}}
+      <a href="{{titleLink}}" class="reference__title">{{{title}}}</a>
+    {{/titleLink}}
+
+    {{^titleLink}}
+      <div class="reference__title">{{{title}}}</div>
+    {{/titleLink}}
+
+  {{/doi}}
+
+
+  {{#hasAuthors}}
+    {{#authorLists}}
+    <ol class="reference__authors_list">
+      {{#authors}}
+        <li class="reference__author">
+            {{! Allowing for arbitrary link, with fallback link to Google Scholar if missing. (Anticipating eLife profile links, but TBC. }}
+            <a href="{{#url}}{{{url}}}{{/url}}{{^url}}http://scholar.google.com/scholar?q=&quot;author:{{{name}}}&quot;{{/url}}" class="reference__authors_link" target="_blank">{{{name}}}</a>
+        </li>
+      {{/authors}}
+    </ol>
+    <span class="reference__authors_list__suffix">{{suffix}}</span>
+    {{/authorLists}}
+  {{/hasAuthors}}
+
+  {{#origin}}
+    <div class="reference__origin">{{{origin}}}</div>
+  {{/origin}}
+
+  {{#doi}}
+    {{> atoms-doi}}
+  {{/doi}}
+
+  {{#hasAbstracts}}
+    <ul class="reference__abstracts">
+  {{/hasAbstracts}}
+  {{#abstracts}}
+    <li class="reference__abstract"><a href="{{url}}" class="reference__abstract_link">{{{name}}}</a></li>
+  {{/abstracts}}
+
+  {{#hasAbstracts}}
+    </ul>
+  {{/hasAbstracts}}
+</div>

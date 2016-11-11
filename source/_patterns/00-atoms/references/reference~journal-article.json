@@ -1,0 +1,31 @@
+{
+  "title": "Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift",
+  "origin": "Nature 365:833–836. PMID 8413666",
+  "hasAuthors": true,
+  "authorLists": [
+    {
+      "authors": [
+        {
+          "name": "Schrenk F"
+        },
+        {
+          "name": "Bromage TG"
+        },
+        {
+          "name": "Betzler CG"
+        },
+        {
+          "name": "Ring U"
+        },
+        {
+          "name": "Juwayeyi YM"
+        }
+      ],
+      "suffix": "(1993)"
+    }
+  ],
+  "doi": {
+    "doi": "10.1038/365833a0"
+  },
+  "hasAbstracts": false
+}

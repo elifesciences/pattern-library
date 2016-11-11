@@ -1,0 +1,17 @@
+{
+  "title": "Educational Excellence Everywhere",
+  "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
+  "origin": "London: HMSO",
+  "hasAuthors": true,
+  "authorLists": [
+    {
+      "authors": [
+        {
+          "name": "Department of Education, UK."
+        }
+      ],
+      "suffix": "(2016)"
+    }
+  ],
+  "hasAbstracts": false
+}
