@@ -11,12 +11,16 @@
   </ol>
   {{/hasAffiliations}}
 
-  {{#presentAddress}}
+  {{#hasPresentAddresses}}
     <section class="author-details__section author-details__section--present-address">
     <h5 class="author-details__heading">Present address: </h5>
-    <span class="author-details__text">{{presentAddress}}</span>
+    <ol class="author-details__list">
+      {{#presentAddresses}}
+        <li class="author-details__text">{{.}}</li>
+      {{/presentAddresses}}
+    </ol>
     </section>
-  {{/presentAddress}}
+  {{/hasPresentAddresses}}
 
   {{#contributionStatement}}
     <section class="author-details__section author-details__section--contribution-statement">

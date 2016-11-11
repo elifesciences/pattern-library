@@ -23,6 +23,12 @@
   display: inline;
 }
 
+.author-details__list {
+  @include nospace("bottom");
+  @include nospace("left");
+  list-style-type: none;
+}
+
 .author-details__text {
   @include body-para();
   @include nospace("bottom");
