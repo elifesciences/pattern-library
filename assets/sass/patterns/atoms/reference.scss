@@ -13,6 +13,7 @@ a.reference__title:hover {
 }
 
 .reference__authors_list {
+  display: inline;
   list-style: none;
   margin: 0;
   @include padding(0 0 3 0);
@@ -36,9 +37,24 @@ a.reference__authors_link:hover {
   color: $color-primary;
 }
 
+.reference__authors_list_suffix {
+  @include listing-side-author-typeg();
+}
+
 .reference__origin {
   @include listing-detail();
   padding-bottom: 0;
+
+  & a {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: $color-primary-dark;
+    }
+
+  }
 }
 
 .reference__secondaryLink {
