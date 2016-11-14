@@ -27,12 +27,13 @@
 
 .content-header__title {
   @include h1-typeg();
+  margin-top: 0;
 }
 
 .content-header__subject_list {
   @include label-subject-typeg();
   margin: 0;
-  padding: 0;
+  @include padding(24 0);
   position: relative;
   z-index: 100;
 }
@@ -40,6 +41,7 @@
 .content-header__subject_list_item {
   @include label-subject-typeg();
   display: inline;
+  line-height: 2.18181818181818;
   list-style-type: none;
   padding: 0;
 

@@ -3,13 +3,13 @@
 .contextual-data {
   border-bottom: 1px solid $color-text-dividers;
   @include label-content-typeg($color-text-secondary);
-  @include padding(15 , "top");
 }
 
 .contextual-data__list {
   border-bottom: 1px solid $color-text-dividers;
   margin: 0;
-  @include padding(15 , "bottom");
+  @include padding(18 , "bottom");
+  @include padding(18 , "top");
   text-align: center;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .contextual-data__cite_wrapper {
-  @include padding(15 0);
+  @include padding(18 0);
   text-align: center;
 }
 
@@ -39,7 +39,6 @@
 @media only screen and (min-width: #{get-rem-from-px(640)}rem) {
   .contextual-data {
     display: flex;
-    @include padding(15 0);
   }
 
   .contextual-data__list {
@@ -57,7 +56,7 @@
   .contextual-data__cite_wrapper {
     float: right;
     margin-left: auto;
-    padding: 0;
+    //padding: 0;
     text-align: start;
   }
 

@@ -22,8 +22,7 @@
 
   }
   .content-header__title {
-    @include margin(13, "bottom");
-    @include margin(28, "top");
+    @include margin(24, "bottom");
     padding-bottom: 0;
   }
 
@@ -39,10 +38,6 @@
 
   // TODO: Review this breakpoint
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-
-    .content-header__title {
-      @include margin(65, "top");
-    }
 
     .content-header__strapline {
       @include impact-statement-typeg("wide");
