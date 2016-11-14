@@ -2,147 +2,459 @@
   "references": [
     {
       "bibId": {
+        "full": "bib1",
+        "ordinal": 1
+      },
+      "reference": {
+        "title": "Philosophie Anatomique",
+        "origin": "Paris: Méquignon-Marvis",
+
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Geoffroy Saint-Hilaire E."
+              }
+            ],
+            "suffix": "(1818)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+    },
+    {
+      "bibId": {
         "full": "bib2",
         "ordinal": 2
       },
       "reference": {
-        "titleLink": "#",
-        "title": "Is male song quality important in maintaining pair bonds?",
-        "secondaryLinkText": "http://dx.doi.org/10.7554/eLife.12264",
-        "origin": "Journal of Mathematical Biology, 35, 825-842, 1997",
+        "title": "Understanding the rhythm of breathing: so near, yet so far",
+        "origin": "In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452.",
+
+        "doi": {
+          "doi": "10.1146/annurev-physiol-040510-130049"
+        },
+
         "hasAuthors": true,
-        "authors": [
+        "authorLists": [
           {
-            "name": "V Andreasen",
-            "url": "#"
-          },
-          {
-            "name": "J Lin",
-            "url": "#"
-          },
-          {
-            "name": "SA Levin",
-            "url": "#"
-          },
-          {
-            "name": "METABRIC Group"
-          },
-          {
-            "name": "et al"
+            "authors": [
+              {
+                "name": "JL Feldman"
+              },
+              {
+                "name": "C Del Negro"
+              },
+              {
+                "name": "PA Gray"
+              }
+            ],
+            "suffix": "(2013)"
           }
         ],
-        "hasAbstracts": true,
-        "abstracts": [
-          {
-            "name": "CrossRef",
-            "url": "#"
-          },
-          {
-            "name": "PubMed",
-            "url": "#"
-          },
-          {
-            "name": "Google Scholar",
-            "url": "#"
-          }
-        ]
+        "hasAbstracts": false
       }
+
     },
     {
       "bibId": {
-        "full": "bib87",
-        "ordinal": 87
+        "full": "bib3",
+        "ordinal": 3
       },
       "reference": {
-        "titleLink": "#",
-        "title": "Is male song quality important in maintaining pair bonds?",
-        "secondaryLinkText": "http://dx.doi.org/10.7554/eLife.12264",
-        "origin": "Journal of Mathematical Biology, 35, 825-842, 1997",
-        "hasAuthors": true,
-        "authors": [
-          {
-            "name": "V Andreasen",
-            "url": "#"
-          },
-          {
-            "name": "J Lin",
-            "url": "#"
-          },
-          {
-            "name": "SA Levin",
-            "url": "#"
-          },
-          {
-            "name": "METABRIC Group"
-          },
-          {
-            "name": "et al"
-          }
-        ],
-        "hasAbstracts": true,
-        "abstracts": [
-          {
-            "name": "CrossRef",
-            "url": "#"
-          },
-          {
-            "name": "PubMed",
-            "url": "#"
-          },
-          {
-            "name": "Google Scholar",
-            "url": "#"
-          }
-        ]
+        "title": "Scripps Wired for Health Study (Registration: 000000)",
+        "origin": "Scripps Translational Science Institute (sponsor) (2015)",
+        "hasAuthors": false,
+        "hasAbstracts": false
       }
+
     },
     {
       "bibId": {
-        "full": "bib32",
-        "ordinal": 32
+        "full": "bib4",
+        "ordinal": 4
       },
       "reference": {
-        "titleLink": "#",
-        "title": "Is male song quality important in maintaining pair bonds?",
-        "secondaryLinkText": "http://dx.doi.org/10.7554/eLife.12264",
-        "origin": "Journal of Mathematical Biology, 35, 825-842, 1997",
+        "title": "Boundary learning by optimization with topological constraints",
+        "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
         "hasAuthors": true,
-        "authors": [
+        "authorLists": [
           {
-            "name": "V Andreasen",
-            "url": "#"
-          },
-          {
-            "name": "J Lin",
-            "url": "#"
-          },
-          {
-            "name": "SA Levin",
-            "url": "#"
-          },
-          {
-            "name": "METABRIC Group"
-          },
-          {
-            "name": "et al"
+            "authors": [
+              {
+                "name": "BV Jain"
+              },
+              {
+                "name": "B Bollman"
+              },
+              {
+                "name": "M Richardson"
+              },
+              {
+                "name": "DR Berger"
+              },
+              {
+                "name": "MN Helmstaedter"
+              },
+              {
+                "name": "KL Briggman"
+              },
+              {
+                "name": "W Denk"
+              },
+              {
+                "name": "JB Bowden"
+              },
+              {
+                "name": "JM Mendenhall"
+              },
+              {
+                "name": "WC Abraham"
+              },
+              {
+                "name": "KM Harris"
+              },
+              {
+                "name": "N Kasthuri"
+              },
+              {
+                "name": "KJ Hayworth"
+              },
+              {
+                "name": "R Schalek"
+              },
+              {
+                "name": "JC Tapia"
+              },
+              {
+                "name": "JW Lichtman"
+              },
+              {
+                "name": "HS Seung"
+              }
+            ],
+            "suffix": "(2010)"
           }
         ],
-        "hasAbstracts": true,
-        "abstracts": [
-          {
-            "name": "CrossRef",
-            "url": "#"
-          },
-          {
-            "name": "PubMed",
-            "url": "#"
-          },
-          {
-            "name": "Google Scholar",
-            "url": "#"
-          }
-        ]
+        "hasAbstracts": false
       }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib5",
+        "ordinal": 5
+      },
+      "reference": {
+        "title": "NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets",
+        "origin": "NCBI Gene Expression Omnibus. Series accession number <a href=\"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44902\">GSE44902</a>",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "R Bouveret"
+              },
+              {
+                "name": "R Bouveret"
+              },
+              {
+                "name": "N Schonrock"
+              },
+              {
+                "name": "M Ramialison"
+              },
+              {
+                "name": "T Doan"
+              },
+              {
+                "name": "D de Jong"
+              },
+              {
+                "name": "A Bondue"
+              },
+              {
+                "name": "G Kaur"
+              },
+              {
+                "name": "S Mohamed"
+              },
+              {
+                "name": "H Fonoudi"
+              },
+              {
+                "name": "C Chen"
+              },
+              {
+                "name": "M Wouters"
+              },
+              {
+                "name": "S Bhattacharya"
+              },
+              {
+                "name": "N Plachta"
+              },
+              {
+                "name": "SL Dunwoodie"
+              },
+              {
+                "name": "G Chapman"
+              },
+              {
+                "name": "C Blanpain"
+              },
+              {
+                "name": "RP Harvey"
+              }
+            ],
+            "suffix": "(2015)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib6",
+        "ordinal": 6
+      },
+      "reference": {
+        "title": "Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift",
+        "origin": "Nature 365:833–836. PMID 8413666",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Schrenk F"
+              },
+              {
+                "name": "Bromage TG"
+              },
+              {
+                "name": "Betzler CG"
+              },
+              {
+                "name": "Ring U"
+              },
+              {
+                "name": "Juwayeyi YM"
+              }
+            ],
+            "suffix": "(1993)"
+          }
+        ],
+        "doi": {
+          "doi": "10.1038/365833a0"
+        },
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib7",
+        "ordinal": 7
+      },
+      "reference": {
+        "title": "IRE-1alpha inhibitors (US20100941530)",
+        "origin": "Mankind Corp, United States patent, United States",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "JB Patterson"
+              },
+              {
+                "name": "DG Lonergan"
+              },
+              {
+                "name": "GA Flynn"
+              },
+              {
+                "name": "Z Qingpeng"
+              },
+              {
+                "name": "PV Pallai"
+              }
+            ],
+            "suffix": "(2011)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib8",
+        "ordinal": 8
+      },
+      "reference": {
+        "title": "Unreliable research: Trouble at the lab",
+        "titleLink": "https://www.economist.com/news/briefing/21588057-scientists-think-science-self-correcting-alarming-degree-it-not-trouble",
+        "origin": "<i>The Economist</i>, p26–30.",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "The Economist"
+              }
+            ],
+            "suffix": "(October 19, 2013)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib9",
+        "ordinal": 9
+      },
+      "reference": {
+        "title": "Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression",
+        "titleLink": "https://arxiv.org/abs/1303.0216",
+        "origin": "arXiv",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Paris M"
+              },
+              {
+                "name": "Kaplan M"
+              },
+              {
+                "name": "Li XY"
+              },
+              {
+                "name": "Villalta JE"
+              },
+              {
+                "name": "Lott SE"
+              },
+              {
+                "name": "Eisen MB"
+              }
+            ],
+            "suffix": "(2013)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib10",
+        "ordinal": 10
+      },
+      "reference": {
+        "title": "Educational Excellence Everywhere",
+        "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
+        "origin": "London: HMSO",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Department of Education, UK."
+              }
+            ],
+            "suffix": "(2016)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib11",
+        "ordinal": 11
+      },
+      "reference": {
+        "title": "The Pymol Molecular Graphics System",
+        "origin": "DeLano Scientific, Palo Alto, CA",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "W. L. DeLano"
+              }
+            ],
+            "suffix": "(2002)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib12",
+        "ordinal": 12
+      },
+      "reference": {
+        "title": "Theory of large fluctuations in stochastic populations",
+        "titleLink": "https://doi.org/10.1371/journal.pgen.0030218",
+        "origin": "Hebrew University of Jerusalem",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Assaf M."
+              }
+            ],
+            "suffix": "(2010)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib13",
+        "ordinal": 13
+      },
+      "reference": {
+        "title": "The Problem of Perception",
+        "titleLink": "http://plato.stanford.edu/entries/perception-problem/",
+        "origin": "The Stanford Encyclopedia of Philosophy",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Crane T"
+              }
+            ],
+            "suffix": "(2005)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
     }
   ]
 }

@@ -1,7 +1,7 @@
 assets:
   css:
     - reference-list.css
-    - $ref: ../../00-atoms/components/reference.yaml#/assets/css
+    - $ref: ../../00-atoms/references/reference.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -26,7 +26,7 @@ schema:
               - full
               - ordinal
           reference:
-            $ref: ../../00-atoms/components/reference.yaml#/schema
+            $ref: ../../00-atoms/references/reference.yaml#/schema
         required:
           - bibId
           - reference

@@ -1,0 +1,64 @@
+{
+  "title": "Boundary learning by optimization with topological constraints",
+  "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+  "hasAuthors": true,
+  "authorLists": [
+    {
+      "authors": [
+        {
+          "name": "BV Jain"
+        },
+        {
+          "name": "B Bollman"
+        },
+        {
+          "name": "M Richardson"
+        },
+        {
+          "name": "DR Berger"
+        },
+        {
+          "name": "MN Helmstaedter"
+        },
+        {
+          "name": "KL Briggman"
+        },
+        {
+          "name": "W Denk"
+        },
+        {
+          "name": "JB Bowden"
+        },
+        {
+          "name": "JM Mendenhall"
+        },
+        {
+          "name": "WC Abraham"
+        },
+        {
+          "name": "KM Harris"
+        },
+        {
+          "name": "N Kasthuri"
+        },
+        {
+          "name": "KJ Hayworth"
+        },
+        {
+          "name": "R Schalek"
+        },
+        {
+          "name": "JC Tapia"
+        },
+        {
+          "name": "JW Lichtman"
+        },
+        {
+          "name": "HS Seung"
+        }
+      ],
+      "suffix": "(2010)"
+    }
+  ],
+  "hasAbstracts": false
+}
