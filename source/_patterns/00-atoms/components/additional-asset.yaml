@@ -1,0 +1,55 @@
+assets:
+  css:
+    - additional-asset.css
+    - $ref: ../../00-atoms/components/doi.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    assetId:
+      type: string
+      minLength: 1
+    headingPart1:
+      type: string
+      minLength: 1
+    headingPart2:
+      type: string
+      minLength: 1
+    textPart:
+      type: string
+      minLength: 1
+    doi:
+      $ref: doi.yaml#/schema
+    nonDoiLink:
+      type: string
+      minLength: 1
+    downloadLink:
+      type: object
+      properties:
+        url:
+          type: string
+          minLength: 1
+        name:
+          type: string
+          minLength: 1
+        fileName:
+          type: string
+          minLength: 1
+      required:
+        - url
+        - name
+  allOf:
+    -
+      required:
+        - assetId
+        - headingPart1
+        - downloadLink
+    -
+      oneOf:
+        -
+          required:
+            - doi
+        -
+          required:
+            - nonDoiLink

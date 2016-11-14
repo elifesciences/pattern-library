@@ -32,7 +32,7 @@
   "additionalAssets": [
     {
       "heading": "How should this optional heading be styled?",
-      "data": [
+      "assets": [
         {
           "assetId": "pageLevelUniqueFragmentId5",
           "headingPart1": "Table 1 - source data 1.",
