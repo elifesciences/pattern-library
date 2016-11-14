@@ -34,7 +34,7 @@
   "additionalAssets": [
     {
       "heading": "How should this optional heading be styled?",
-      "data": [
+      "assets": [
         {
           "assetId": "pageLevelUniqueFragmentId7",
           "headingPart1": "Table 1 - source data 1.",
@@ -72,7 +72,7 @@
     },
     {
       "heading": "How should this optional heading be styled?",
-      "data": [
+      "assets": [
         {
           "assetId": "pageLevelUniqueFragmentId9",
           "headingPart1": "Table 1 - source data 1.",
