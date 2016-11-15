@@ -20,10 +20,22 @@
 
 .captioned-asset__caption_heading {
   @include fig-caption-heading-typeg();
+  @include nospace();
 }
 
-.captioned-asset__caption_text {
+/* Wildcard descendant selector because may contain unknown blob of html */
+.captioned-asset__caption_text,
+.captioned-asset__caption_text * {
   @include fig-caption-text-typeg();
+}
+
+.captioned-asset__caption_text * {
+  @include nospace("bottom");
+}
+
+// Adds required whitespace when there's no optional intervening .captioned-asset__caption_text to supply it
+.captioned-asset__caption_heading + .doi {
+  @include padding(19 0);
 }
 
 .captioned-asset__caption___footer {
