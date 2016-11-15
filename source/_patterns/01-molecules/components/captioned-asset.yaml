@@ -22,43 +22,15 @@ schema:
             - filename
         doi:
           $ref: ../../00-atoms/components/doi.yaml#/schema
-
-      oneOf:
-        -
-          properties:
-            customContent:
-              type: string
-              minLength: 1
-          required:
-            - customContent
-        -
-          anyOf:
-            -
-              oneOf:
-                -
-                  properties:
-                    heading:
-                      type: string
-                      minLength: 1
-                  required:
-                    - heading
-            -
-              oneOf:
-                -
-                  properties:
-                    captions:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          caption:
-                            type: string
-                            minLength: 1
-                        required:
-                          - caption
-                        minItems: 1
-                  required:
-                    - captions
+        heading:
+          type: string
+          minLength: 1
+        captionText:
+          type: string
+          minLength: 1
+      dependencies:
+        captiontext:
+          - heading
     -
       oneOf:
         -
