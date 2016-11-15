@@ -39,7 +39,6 @@ schema:
                 - name
     origin:
       type: string
-      minLength: 1
     hasAbstracts:
       type: boolean
     abstracts:
@@ -61,7 +60,6 @@ schema:
     -
       required:
         - title
-        - origin
         - hasAuthors
         - hasAbstracts
     #  titleLink and DOI should be mutually exclusive
