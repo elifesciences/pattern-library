@@ -39,6 +39,7 @@ schema:
                 - name
     origin:
       type: string
+      minLength: 1
     hasAbstracts:
       type: boolean
     abstracts:
