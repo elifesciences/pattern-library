@@ -1,6 +1,5 @@
 assets:
   css:
-    - additional-assets.css
     - $ref: ../../00-atoms/components/additional-asset.yaml#/assets/css
   js: []
 schema:
