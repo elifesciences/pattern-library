@@ -3,7 +3,7 @@ assets:
     - asset-viewer-inline.css
     - $ref: ../../00-atoms/components/button.yaml#/assets/css
     - $ref: ../../01-molecules/components/captioned-asset.yaml#/assets/css
-    - $ref: ../../01-molecules/components/additional-assets.yaml#/assets/css
+    - $ref: ../../02-organisms/components/additional-assets.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -42,7 +42,7 @@ schema:
       type: array
       minItems: 1
       items:
-        $ref: ../../01-molecules/components/additional-assets.yaml#/schema
+        $ref: ../../02-organisms/components/additional-assets.yaml#/schema
   dependencies:
     parentId:
       - supplementOrdinal
