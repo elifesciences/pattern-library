@@ -1,6 +1,7 @@
 assets:
   css:
     - additional-asset.css
+    - $ref: ../../00-atoms/components/caption-text.yaml#/assets/css
     - $ref: ../../00-atoms/components/doi.yaml#/assets/css
   js: []
 schema:
@@ -10,17 +11,10 @@ schema:
     assetId:
       type: string
       minLength: 1
-    headingPart1:
-      type: string
-      minLength: 1
-    headingPart2:
-      type: string
-      minLength: 1
-    textPart:
-      type: string
-      minLength: 1
+    captionText:
+      $ref: ../../00-atoms/components/caption-text.yaml#/schema
     doi:
-      $ref: doi.yaml#/schema
+      $ref: ../../00-atoms/components/doi.yaml#/schema
     nonDoiLink:
       type: string
       minLength: 1
@@ -43,7 +37,6 @@ schema:
     -
       required:
         - assetId
-        - headingPart1
         - downloadLink
     -
       oneOf:
