@@ -112,6 +112,14 @@ $arrow-size: 5;
     }
   }
 
+  .reference a {
+    color: $color-text;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+
   abbr,
   acronym {
     cursor: help;
