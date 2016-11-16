@@ -1,0 +1,22 @@
+assets:
+  css:
+    - caption-text.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    heading:
+      type: string
+      minLength: 1
+    standfirst:
+      type: string
+      minLength: 1
+    text:
+      type: string
+      minLength: 1
+  dependencies:
+    standFirst:
+      - heading
+    text:
+      - heading
