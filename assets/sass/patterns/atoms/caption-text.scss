@@ -1,18 +1,16 @@
 @import "../../definitions";
 
-.caption-text__text {
-  font-weight: normal;
-  @include margin(12, "bottom");
-}
-
-.caption-text__heading_text {
+.caption-text__heading {
   @include fig-caption-heading-typeg();
   @include nospace();
   @include padding(3, "bottom");
 }
 
 // May contain arbitrary html. Might need to refine if too blunt an instrument.
-.caption-text__main_text,
-.caption-text__main_text * {
+.caption-text__body,
+.caption-text__body * {
   @include fig-caption-text-typeg(0);
+  @include margin(12, "bottom");
+  font-weight: normal;
+
 }
