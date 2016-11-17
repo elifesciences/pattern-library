@@ -1,6 +1,10 @@
 assets:
   css:
     - captioned-asset.css
+    - $ref: ../../00-atoms/components/caption-text.yaml#/assets/css
+    - $ref: ../../00-atoms/components/doi.yaml#/assets/css
+    - $ref: ../../00-atoms/components/picture.yaml#/assets/css
+    - $ref: ../../00-atoms/components/video.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -20,45 +24,12 @@ schema:
           required:
             - link
             - filename
+        captionText:
+          $ref: ../../00-atoms/components/caption-text.yaml#/schema
         doi:
           $ref: ../../00-atoms/components/doi.yaml#/schema
-
-      oneOf:
-        -
-          properties:
-            customContent:
-              type: string
-              minLength: 1
-          required:
-            - customContent
-        -
-          anyOf:
-            -
-              oneOf:
-                -
-                  properties:
-                    heading:
-                      type: string
-                      minLength: 1
-                  required:
-                    - heading
-            -
-              oneOf:
-                -
-                  properties:
-                    captions:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          caption:
-                            type: string
-                            minLength: 1
-                        required:
-                          - caption
-                        minItems: 1
-                  required:
-                    - captions
+      required:
+        - captionText
     -
       oneOf:
         -

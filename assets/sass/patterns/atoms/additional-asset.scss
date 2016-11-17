@@ -1,20 +1,5 @@
 @import "../../definitions";
 
-.additional-asset__text {
-  font-weight: normal;
-  @include margin(12, "bottom");
-}
-
-.additional-asset__heading_text {
-  display: block;
-  @include fig-caption-heading-typeg();
-}
-
-.additional-asset__main_text {
-  display: block;
-  @include fig-caption-text-typeg(0);
-}
-
 a.additional-asset__link {
   color: $color-text;
   display: block;

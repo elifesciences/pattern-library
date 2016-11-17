@@ -3,9 +3,11 @@
   "assets": [
     {
       "assetId": "pageLevelUniqueFragmentId3",
-      "headingPart1": "Table 1 - source data 1.",
-      "headingPart2": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
-      "textPart": "some more details here",
+      "captionText": {
+        "heading": "Table 1 - source data 1.",
+        "standfirst": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
+        "text": "some more details here"
+      },
       "nonDoiLink": "https://example.com/a-non-doi-link",
 
       "downloadLink": {
@@ -17,9 +19,11 @@
 
     {
       "assetId": "pageLevelUniqueFragmentId1",
-      "headingPart1": "Table 1 - source data 1.",
-      "headingPart2": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
-      "textPart": "some more details here",
+      "captionText": {
+        "heading": "Table 1 - source data 1.",
+        "standfirst": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
+        "text": "some more details here"
+      },
       "doi": {
         "doi": "10.7554/eLife.10181.001",
         "variant": "asset"
