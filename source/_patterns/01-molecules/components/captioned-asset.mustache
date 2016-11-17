@@ -16,17 +16,10 @@
   {{/video}}
 
   <figcaption class="captioned-asset__caption">
-    {{#customContent}}
-        {{{ customContent }}}
-    {{/customContent}}
-    {{^customContent}}
-      {{#heading}}
-        <p class="captioned-asset__caption_heading">{{{ heading }}}</p>
-      {{/heading}}
-      {{#captions}}
-        <p class="captioned-asset__caption_text">{{{ caption }}}</p>
-      {{/captions}}
-    {{/customContent}}
+
+    {{#captionText}}
+      {{> atoms-caption-text}}
+    {{/captionText}}
 
     {{#doi}}
       {{> atoms-doi}}

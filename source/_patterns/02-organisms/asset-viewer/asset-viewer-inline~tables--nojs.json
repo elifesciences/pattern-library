@@ -5,12 +5,11 @@
   "label": "Table 1 ",
   "figuresPageFragLink": "#figuresPageFragLink",
   "captionedAsset": {
-    "heading": "A representative polymer simulation of compaction of 30 Mb chromosome by loop extruding condensins in presence of strand-passing topo II.",
-    "captions": [
-      {
-        "caption": "Top left, fiber color corresponds to the position of each monomer along the genome. Top right, fiber shown in semitransparent gray, condensins are shown as red spheres. Bottom, the diagram of the crosslinks (red arcs) formed by condensins. The numbers above the arcs show the number of condensins stacked at the bases of reinforced loops. We sped up the second half of the video 20 times to illustrate the slow phase of loop maturation and the long-term stability of the compacted state."
-      }
-    ],
+    "captionText": {
+      "heading": "Many features are conserved between the mammalian nephron and planarian protonephridia.",
+      "text": "<p>(A) Image of a young adult C. elegans and schematic depicting the twelve pairs of sensory neurons in the anterior amphid individuals carrying a virus with k deleterious mutations at its endemic equilibrium. class carrying the fewest number of deleterious mutations is defined as mutation class k = 0. Inset: variation in the basic reproductive rate of infected individuals (gray histogram) and variation in the net reproductive rate R of infected individuals (brown histogram) resulting from variation in the number of deleterious mutations carried by circulating viruses.</p>"
+    },
+
     "tables": [
       "<table><thead><tr><th>F(Dfn, Dfd)</th><th>Partial η<sup>2</sup></th><th>Original effect size <em>f</em></th><th>Replication total sample size</th><th>Detectable effect size <em>f</em></th></tr></thead><tbody><tr><td>F(24,39) = 0.8678 (interaction)</td><td>0.348120</td><td>0.7307699</td><td>169<a class=\"xref-table-fn\" href=\"#tblfn2\">*</a></td><td>0.3895070<a class=\"xref-table-fn\" href=\"#tblfn3\">†</a></td></tr><tr><td>F(2,39) = 0.8075 (treatments)</td><td>0.039766</td><td>0.2035014</td><td>169<a class=\"xref-table-fn\" href=\"#tblfn2\">*</a></td><td>0.2415459<a class=\"xref-table-fn\" href=\"#tblfn3\">†</a></td></tr><tr><td>F(12,39) = 187.6811 (hematology parameters)</td><td>0.982978</td><td>7.599178</td><td>169<a class=\"xref-table-fn\" href=\"#tblfn2\">*</a></td><td>0.3331365<a class=\"xref-table-fn\" href=\"#tblfn4\">‡</a></td></tr></tbody></table>",
 
