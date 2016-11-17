@@ -15,8 +15,9 @@
     <a class="additional-asset__link" href="{{nonDoiLink}}">{{{nonDoiLink}}}</a>
   {{/doi}}
 
+  {{#downloadLink}}
     <div>
-      <a class="additional-asset__link additional-asset__link--download" href="{{downloadLink.url}}"{{#downloadLink.fileName}} download="{{downloadLink.fileName}}"{{/downloadLink.fileName}}>{{{downloadLink.name}}}</a>
+      <a class="additional-asset__link additional-asset__link--download" href="{{url}}"{{#fileName}} download="{{fileName}}"{{/fileName}}>{{{downloadLink.name}}}</a>
     </div>
-
+  {{/downloadLink}}
 </dd>
