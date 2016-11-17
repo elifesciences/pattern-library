@@ -6,4 +6,9 @@
 @import "reset";
 @import "layout/layout";
 @import "layout/grid";
+
+// non-pattern, non-layout
+@import "tables.scss";
+
+// all patterns
 @import "patterns/**/[^_]*.scss";
