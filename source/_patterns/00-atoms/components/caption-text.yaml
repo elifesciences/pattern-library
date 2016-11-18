@@ -15,8 +15,5 @@ schema:
     text:
       type: string
       minLength: 1
-  dependencies:
-    standFirst:
-      - heading
-    text:
-      - heading
+  required:
+    - heading
