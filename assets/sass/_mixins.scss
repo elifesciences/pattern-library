@@ -195,4 +195,5 @@
 
 @mixin body-para {
   @include body-typeg();
+  @include body-spacing();
 }
