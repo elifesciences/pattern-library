@@ -565,6 +565,47 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
 
 }
 
+/*
+ * Baseline grid
+ */
+$blg-space-small-in-px: 24;
+$blg-space-medium-in-px: $blg-space-small-in-px * 2;
+$blg-space-large-in-px: $blg-space-small-in-px * 3;
+
+@mixin blg-pad($direction, $level) {
+  @if $level == "small" {
+    @include padding($blg-space-small-in-px, $direction);
+  } @else if $level == "medium" {
+    @include padding($blg-space-medium-in-px, $direction);
+  } @else if $level == "large" {
+    @include padding($blg-space-large-in-px, $direction);
+  }
+}
+
+.blg-pad-top-small {
+  @include blg-pad("top", "small");
+}
+
+.blg-pad-top-medium {
+  @include blg-pad("top", "medium");
+}
+
+.blg-pad-top-large {
+  @include blg-pad("top", "large");
+}
+
+.blg-pad-bottom-small {
+  @include blg-pad("bottom", "small");
+}
+
+.blg-pad-bottom-medium {
+  @include blg-pad("bottom", "medium");
+}
+
+.blg-pad-bottom-large {
+  @include blg-pad("bottom", "large");
+}
+
 /**
   TESTING
 
