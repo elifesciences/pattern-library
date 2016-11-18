@@ -37,6 +37,7 @@ schema:
     -
       required:
         - assetId
+        - captionText
     -
       oneOf:
         -
