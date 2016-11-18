@@ -1,0 +1,30 @@
+{
+  "groups": [
+    {
+      "title": "Categories and tags",
+      "items": [
+        {
+          "url": "#",
+          "name": "Insight"
+        },
+        {
+          "url": "#",
+          "name": "Developmental Biology and Stem Cells"
+        },
+        {
+          "url": "#",
+          "name": "Planarian"
+        }
+      ]
+    },
+    {
+      "title": "Research organism",
+      "items": [
+        {
+          "url": "#",
+          "name": "Caenorhabditis elegans"
+        }
+      ]
+    }
+  ]
+}
