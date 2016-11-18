@@ -55,6 +55,7 @@ module.exports = class ArticleSection {
   toggleState(e) {
     e.preventDefault();
     this.$headerLink.classList.toggle('article-section__header_link--closed');
+    this.$elm.classList.toggle('article-section--collapsed');
     this.$body.classList.toggle('visuallyhidden');
   }
 

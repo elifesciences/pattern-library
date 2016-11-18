@@ -197,3 +197,15 @@
   @include body-typeg();
   @include body-spacing();
 }
+
+// Baseline grid
+@mixin blg-pad($direction, $level) {
+  @if $level == "small" {
+    @include padding($blg-space-small-in-px, $direction);
+  } @else if $level == "medium" {
+    @include padding($blg-space-medium-in-px, $direction);
+  } @else if $level == "large" {
+    @include padding($blg-space-large-in-px, $direction);
+  }
+}
+
