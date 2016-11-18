@@ -44,7 +44,7 @@ ul,
 ol {
   @include margin(24, "bottom");
   margin-top: 0;
-  @include padding(20, "left");
+  @include padding(24, "left");
 }
 
 dl {
