@@ -16,6 +16,7 @@
 
   &--article-section {
     display: block;
+    @include margin(24, "bottom");
   }
 
   &--asset {

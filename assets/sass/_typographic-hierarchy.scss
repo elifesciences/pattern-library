@@ -77,6 +77,9 @@
   @include _heading-base-typeg();
   @include font-size($font-size-h2-in-px);
   line-height: 0.92307692307692; /* (TODO: get actual value) 24px when font size is 26px */
+}
+
+@mixin h2-spacing() {
   @include padding(24, "top");
   @include padding(24, "bottom");
 }
@@ -85,7 +88,11 @@
   @include _heading-base-typeg();
   @include font-size($font-size-h3-in-px); /* 24px when font size is 22px */
   line-height: 1.09090909090909;
-  @include padding(3, "bottom");
+}
+
+@mixin h3-spacing() {
+  @include padding(12, "top");
+  @include padding(12, "bottom");
 }
 
 @mixin h4-typeg() {
@@ -124,7 +131,7 @@
 // TODO: consider where this should sit, and should other spacing be refactored out from typeg defs?
 @mixin body-spacing() {
   margin: 0;
-  @include padding(24, "bottom");
+  @include margin(24, "bottom");
 }
 
 @mixin small-typeg() {
@@ -335,6 +342,7 @@
 
 @mixin listing-main-art-title-typeg() {
   @include h2-typeg();
+  @include h2-spacing();
 }
 
 @mixin listing-side-art-title-typeg() {

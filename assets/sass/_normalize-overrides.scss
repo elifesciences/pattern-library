@@ -18,10 +18,12 @@ h1 {
 
 h2 {
   @include h2-typeg();
+  @include h2-spacing();
 }
 
 h3 {
   @include h3-typeg();
+  @include h3-spacing();
 }
 
 h4 {

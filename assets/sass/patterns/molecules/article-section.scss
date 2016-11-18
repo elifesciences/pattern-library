@@ -3,7 +3,6 @@
 $arrow-size: 5;
 
 .article-section {
-  @include blg-spacing("bottom", "medium");
 
   &--collapsed {
     padding-bottom: 0;
@@ -11,6 +10,8 @@ $arrow-size: 5;
 }
 
 .article-section--js {
+  @include blg-spacing("bottom", "medium", "margin");
+
   border-top: 1px solid $color-text-dividers;
 
   .article-section__body {
