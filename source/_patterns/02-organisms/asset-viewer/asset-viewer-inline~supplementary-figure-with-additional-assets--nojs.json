@@ -38,9 +38,11 @@
       "assets": [
         {
           "assetId": "pageLevelUniqueFragmentId7",
-          "headingPart1": "Table 1 - source data 1.",
-          "headingPart2": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
-          "textPart": "some more details here",
+          "captionText": {
+            "heading": "Table 1 - source data 1.",
+            "standfirst": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers",
+            "text": "some more details here"
+          },
           "doi": {
             "doi": "10.7554/eLife.10181.001",
             "variant": "asset"
@@ -54,8 +56,11 @@
         },
         {
           "assetId": "pageLevelUniqueFragmentId8",
-          "headingPart1": "Table 1 - source data 2.",
-          "headingPart2": "there is no additional text <i>in this case</i>",
+          "captionText": {
+            "heading": "Table 1 - source data 1.",
+            "standfirst": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers",
+            "text": "some more details here"
+          },
 
           "doi": {
             "doi": "10.7554/eLife.10181.002",
@@ -76,9 +81,11 @@
       "assets": [
         {
           "assetId": "pageLevelUniqueFragmentId9",
-          "headingPart1": "Table 1 - source data 1.",
-          "headingPart2": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
-          "textPart": "some more details here",
+          "captionText": {
+            "heading": "Table 1 - source data 1.",
+            "standfirst": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers",
+            "text": "some more details here"
+          },
           "doi": {
             "doi": "10.7554/eLife.10181.001",
             "variant": "asset"
@@ -92,8 +99,11 @@
         },
         {
           "assetId": "pageLevelUniqueFragmentId10",
-          "headingPart1": "Table 1 - source data 2.",
-          "headingPart2": "there is no additional text <i>in this case</i>",
+          "captionText": {
+            "heading": "Table 1 - source data 1.",
+            "standfirst": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers",
+            "text": "some more details here"
+          },
 
           "doi": {
             "doi": "10.7554/eLife.10181.002",
