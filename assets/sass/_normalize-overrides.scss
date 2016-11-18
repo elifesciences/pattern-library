@@ -70,10 +70,7 @@ dd {
 }
 
 small {
-  font-family: $font-primary;
-  @include font-size(12);
-  line-height: 1.35;
-  @include padding(15, "bottom");
+  @include small-typeg();
 }
 
 /*
