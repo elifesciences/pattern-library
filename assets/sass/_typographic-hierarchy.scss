@@ -67,7 +67,7 @@
 
 @mixin h1-typeg($is-wide:false) {
   @include _heading-base-typeg();
-  @include font-size(36);
+  @include font-size($font-size-h1-in-px);
   line-height: 1.333333333; /* 48px when font size is 36px */
   // Arbitrary values for now:
   @include _set-typeg-width-variant(36, 36, $is-wide);
@@ -75,33 +75,33 @@
 
 @mixin h2-typeg() {
   @include _heading-base-typeg();
-  @include font-size(26);
+  @include font-size($font-size-h2-in-px);
   line-height: 0.92307692307692; /* (TODO: get actual value) 24px when font size is 26px */
   @include padding(30, "bottom");
 }
 
 @mixin h3-typeg() {
   @include _heading-base-typeg();
-  @include font-size(22); /* 24px when font size is 22px */
+  @include font-size($font-size-h3-in-px); /* 24px when font size is 22px */
   line-height: 1.09090909090909;
   @include padding(3, "bottom");
 }
 
 @mixin h4-typeg() {
   @include _heading-base-typeg();
-  @include font-size(20);
+  @include font-size($font-size-h4-in-px);
   line-height: 1.2; /* 24px when font size is 20px */
 }
 
 @mixin h5-typeg() {
   @include _heading-base-typeg();
-  @include font-size(18);
+  @include font-size($font-size-h5-in-px);
   line-height: 1.33333333333333; /* 24px when font size is 18px */
 }
 
 @mixin h6-typeg() {
   @include _heading-base-typeg();
-  @include font-size(16);
+  @include font-size($font-size-h6-in-px);
   line-height: 1.5; /* 24px when font size is 16px */
 }
 
@@ -115,7 +115,7 @@
 
 @mixin body-typeg() {
   font-family: $font-primary;
-  @include font-size(16);
+  @include font-size($font-size-base-in-px);
   font-weight: normal;
   line-height: 1.5;
   margin: 0;
@@ -189,7 +189,7 @@
 
 @mixin fig-caption-heading-typeg() {
   font-family: $font-secondary;
-  @include font-size(13);
+  @include font-size($font-size-caption-in-px);
   font-weight: 700;
   line-height: 1.3;
   @include padding(3, "bottom");
@@ -197,7 +197,7 @@
 
 @mixin fig-caption-text-typeg($space-underneath: 19) {
   font-family: $font-secondary;
-  @include font-size(13);
+  @include font-size($font-size-caption-in-px);
   line-height: 1.3;
   @include padding($space-underneath, "bottom");
   text-decoration: none;
