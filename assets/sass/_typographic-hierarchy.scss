@@ -77,7 +77,8 @@
   @include _heading-base-typeg();
   @include font-size($font-size-h2-in-px);
   line-height: 0.92307692307692; /* (TODO: get actual value) 24px when font size is 26px */
-  @include padding(30, "bottom");
+  @include padding(24, "top");
+  @include padding(24, "bottom");
 }
 
 @mixin h3-typeg() {
