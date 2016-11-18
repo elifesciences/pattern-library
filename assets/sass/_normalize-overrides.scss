@@ -55,9 +55,7 @@ dl {
 li,
 dt,
 dd {
-  font-family: $font-primary;
-  @include font-size(16);
-  line-height: 1.5;
+  @include body-typeg();
 }
 
 dt {
