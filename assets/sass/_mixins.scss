@@ -199,13 +199,23 @@
 }
 
 // Baseline grid
-@mixin blg-pad($direction, $level) {
-  @if $level == "small" {
-    @include padding($blg-space-small-in-px, $direction);
-  } @else if $level == "medium" {
-    @include padding($blg-space-medium-in-px, $direction);
-  } @else if $level == "large" {
-    @include padding($blg-space-large-in-px, $direction);
+@mixin blg-spacing($direction, $level, $type: "padding") {
+  @if $type == "padding" {
+    @if $level == "small" {
+      @include padding($blg-space-small-in-px, $direction);
+    } @else if $level == "medium" {
+      @include padding($blg-space-medium-in-px, $direction);
+    } @else if $level == "large" {
+      @include padding($blg-space-large-in-px, $direction);
+    }
+  } @else if $type == "margin" {
+    @if $level == "small" {
+      @include margin($blg-space-small-in-px, $direction);
+    } @else if $level == "medium" {
+      @include margin($blg-space-medium-in-px, $direction);
+    } @else if $level == "large" {
+      @include margin($blg-space-large-in-px, $direction);
+    }
   }
 }
 

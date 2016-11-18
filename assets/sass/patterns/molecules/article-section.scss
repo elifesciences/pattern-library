@@ -3,7 +3,7 @@
 $arrow-size: 5;
 
 .article-section {
-  @include blg-pad("bottom", "medium");
+  @include blg-spacing("bottom", "medium");
 
   &--collapsed {
     padding-bottom: 0;
@@ -12,6 +12,10 @@ $arrow-size: 5;
 
 .article-section--js {
   border-top: 1px solid $color-text-dividers;
+
+  .article-section__body {
+    @include padding(24, "top");
+  }
 }
 
 .article-section--first {
@@ -65,9 +69,8 @@ $arrow-size: 5;
 }
 
 .article-section__body {
-  @include body-typeg();
 
-  @include padding(24, "top");
+  @include body-typeg();
 
   h1 {
     margin: 0;
