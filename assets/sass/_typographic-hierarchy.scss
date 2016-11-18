@@ -59,7 +59,7 @@
   font-family: $font-secondary;
   @include font-size(11);
   font-weight: 700;
-  line-height: 1;
+  line-height: 2.1818181818; /* 24px with a font size of 11px */
   text-transform: uppercase;
 }
 
