@@ -1,6 +1,7 @@
 @import "../../definitions";
 
-.decision-letter-header__main_text {
+.decision-letter-header__main_text,
+.decision-letter-header__main_text * {
   @include small-typeg();
 }
 
