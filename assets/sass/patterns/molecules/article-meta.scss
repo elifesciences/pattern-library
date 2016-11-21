@@ -29,6 +29,15 @@
   @include label-subject-typeg();
   margin: 0;
   padding: 0;
+  &:after {
+    content: ", ";
+  }
+}
+
+.article-meta__link_list_item:last-child {
+  &:after {
+    content: "";
+  }
 }
 
 .article-meta__link {
