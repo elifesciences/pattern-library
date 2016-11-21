@@ -12,6 +12,7 @@ module.exports = class ViewSelector {
     this.doc = doc;
     this.$elm = $elm;
     this.cssFixedClassName = 'view-selector--fixed';
+
     // matches top padding in scss
     let topSpaceWhenFixed = 30;
 
