@@ -22,10 +22,14 @@
 
           <div class="grid">
 
+<<<<<<< e410238511b9216c8f5f85146318ddeb99f63d6c
             <div class="grid__item large--two-twelfths blg-pad-top-large">
-              {{#viewSelector}}
-                {{> molecules-view-selector }}
-              {{/viewSelector}}
+=======
+            <div class="grid__item large--two-twelfths u-pad-top-lg">
+            {{#viewSelector}}
+>>>>>>> Progress
+              {{> molecules-view-selector }}
+            {{/viewSelector}}
             </div>
 
             <div class="grid__item large--six-twelfths blg-pad-top-large">
