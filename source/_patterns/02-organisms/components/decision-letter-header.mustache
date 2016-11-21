@@ -1,0 +1,12 @@
+<div class="decision-letter-header">
+  {{#hasProfiles}}
+    <ol class="listing-list">
+      {{#profiles}}
+        <li class="listing-list__item">
+          {{> molecules-profile-snippet }}
+        </li>
+      {{/profiles}}
+    </ol>
+  {{/hasProfiles}}
+  <p class="decision-letter-header__main_text">{{{mainText}}}</p>
+</div>
