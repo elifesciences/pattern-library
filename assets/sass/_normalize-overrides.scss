@@ -18,10 +18,12 @@ h1 {
 
 h2 {
   @include h2-typeg();
+  @include h2-spacing();
 }
 
 h3 {
   @include h3-typeg();
+  @include h3-spacing();
 }
 
 h4 {
@@ -44,7 +46,7 @@ ul,
 ol {
   @include margin(24, "bottom");
   margin-top: 0;
-  @include padding(20, "left");
+  @include padding(48, "left");
 }
 
 dl {
@@ -55,9 +57,7 @@ dl {
 li,
 dt,
 dd {
-  font-family: $font-primary;
-  @include font-size(16);
-  line-height: 1.5;
+  @include body-typeg();
 }
 
 dt {
@@ -70,10 +70,7 @@ dd {
 }
 
 small {
-  font-family: $font-primary;
-  @include font-size(12);
-  line-height: 1.35;
-  @include padding(15, "bottom");
+  @include small-typeg();
 }
 
 /*

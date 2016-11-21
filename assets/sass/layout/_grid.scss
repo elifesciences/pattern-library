@@ -565,6 +565,55 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
 
 }
 
+// Baseline grid
+.blg-pad-top-small {
+  @include blg-spacing("top", "small");
+}
+
+.blg-pad-top-medium {
+  @include blg-spacing("top", "medium");
+}
+
+.blg-pad-top-large {
+  @include blg-spacing("top", "large");
+}
+
+.blg-pad-bottom-small {
+  @include blg-spacing("bottom", "small");
+}
+
+.blg-pad-bottom-medium {
+  @include blg-spacing("bottom", "medium");
+}
+
+.blg-pad-bottom-large {
+  @include blg-spacing("bottom", "large");
+}
+
+.blg-margin-top-small {
+  @include blg-spacing("top", "small", "margin");
+}
+
+.blg-margin-top-medium {
+  @include blg-spacing("top", "medium", "margin");
+}
+
+.blg-margin-top-large {
+  @include blg-spacing("top", "large", "margin");
+}
+
+.blg-margin-bottom-small {
+  @include blg-spacing("bottom", "small", "margin");
+}
+
+.blg-margin-bottom-medium {
+  @include blg-spacing("bottom", "medium", "margin");
+}
+
+.blg-margin-bottom-large {
+  @include blg-spacing("bottom", "large", "margin");
+}
+
 /**
   TESTING
 

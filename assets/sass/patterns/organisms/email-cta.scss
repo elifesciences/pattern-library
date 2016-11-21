@@ -20,5 +20,5 @@
 .email-cta__sub_header {
   color: $color-text;
   @include body-typeg();
-  margin: 0;
+  @include body-spacing();
 }

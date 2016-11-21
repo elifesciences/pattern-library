@@ -3,12 +3,20 @@
 $arrow-size: 5;
 
 .article-section {
-  @include padding(15, "top");
-  @include padding(15, "bottom");
+
+  &--collapsed {
+    padding-bottom: 0;
+  }
 }
 
 .article-section--js {
+  @include blg-spacing("bottom", "medium", "margin");
+
   border-top: 1px solid $color-text-dividers;
+
+  .article-section__body {
+    @include padding(24, "top");
+  }
 }
 
 .article-section--first {
@@ -39,10 +47,6 @@ $arrow-size: 5;
   text-decoration: none;
 }
 
-.article-section__header_link--closed .article-section__header_text {
-  padding-bottom: 0;
-}
-
 .article-section__header_link:after {
   display: block;
   @include arrow("up", $arrow-size);
@@ -66,9 +70,8 @@ $arrow-size: 5;
 }
 
 .article-section__body {
-  font-family: $font-primary;
-  @include font-size(16);
-  line-height: 1.5;
+
+  @include body-typeg();
 
   h1 {
     margin: 0;

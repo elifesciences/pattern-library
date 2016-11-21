@@ -1,16 +1,10 @@
 @import "../../definitions";
 
 .article-meta {
+  border-top: 1px solid $color-text-dividers;
+  @include blg-spacing("top", "medium", "padding");
   font-family: $font-secondary;
   text-align: center;
-}
-
-.article-meta__container {
-  @include padding(15, "top");
-}
-
-.article-meta__group {
-  @include padding(0 0 15 0);
 }
 
 .article-meta__group_title {
@@ -20,13 +14,14 @@
 
 .article-meta__link_list {
   list-style: none;
-  @include margin(0 0 12 0);
+  @include margin(0 0 24 0);
   padding: 0;
 }
 
 .article-meta__link_list_item {
   display: inline;
   @include label-subject-typeg();
+  line-height: inherit;
   margin: 0;
   padding: 0;
   &:after {
