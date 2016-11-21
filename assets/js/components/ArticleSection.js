@@ -59,10 +59,10 @@ module.exports = class ArticleSection {
     this.$body.classList.toggle('visuallyhidden');
   }
 
-  openSection() {
-    this.$headerLink.classList.remove('article-section__header_link--closed');
-    this.$elm.classList.remove('article-section--collapsed');
-    this.$body.classList.remove('visuallyhidden');
+  static openSection(section) {
+    section.$headerLink.classList.remove('article-section__header_link--closed');
+    section.$elm.classList.remove('article-section--collapsed');
+    section.$body.classList.remove('visuallyhidden');
   }
 
   handleSectionOpeningViaHash(e) {
@@ -81,12 +81,12 @@ module.exports = class ArticleSection {
       return false;
     }
 
-    if (ArticleSection.isFragmentForCollapsibleSection(hash)) {
-      this.openSection();
+    if (ArticleSection.isFragmentForCollapsibleSection(hash, this.doc)) {
+      ArticleSection.openSection(this);
     }
   }
 
-  static isFragmentForCollapsibleSection(fragment) {
+  static isFragmentForCollapsibleSection(fragment, document) {
     var $elFromFragmentId = document.querySelector('#' + fragment);
     if (!$elFromFragmentId) {
       return false;
