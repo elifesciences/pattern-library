@@ -47,7 +47,8 @@ describe('An Article Section (collapsible)', function () {
         return {
           matches: false
         };
-      }
+      },
+      addEventListener: function () {}
     };
     initialStateCandidateValues.forEach((value) => {
       $elm.dataset.initialState = value;
@@ -65,7 +66,8 @@ describe('An Article Section (collapsible)', function () {
         return {
           matches: true
         };
-      }
+      },
+      addEventListener: function () {}
     };
     initialStateCandidateValues.forEach((value) => {
       $elm.dataset.initialState = value;
@@ -74,6 +76,34 @@ describe('An Article Section (collapsible)', function () {
       expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
       expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
     });
+  });
+
+  it('can explicitly open a section', function () {
+
+    let sectionMock = {
+      $headerLink: {
+        classList: {
+          remove: spy()
+        }
+      },
+
+      $elm: {
+        classList: {
+          remove: spy()
+        }
+      },
+
+      $body: {
+        classList: {
+          remove: spy()
+        }
+      }
+    };
+
+    ArticleSection.openSection(sectionMock);
+    expect(sectionMock.$headerLink.classList.remove.calledOnce).to.be.true;
+    expect(sectionMock.$elm.classList.remove.calledOnce).to.be.true;
+    expect(sectionMock.$body.classList.remove.calledOnce).to.be.true;
   });
 
   it('can toggle open state to closed state', function () {
@@ -97,5 +127,76 @@ describe('An Article Section (collapsible)', function () {
     expect(section.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
     expect(section.$body.classList.contains('visuallyhidden')).to.be.false;
   });
+
+  describe('obtaining the hash', function () {
+
+    let hashBody = 'iAmTheHash';
+    let eventMock = {
+      newURL: '#' + hashBody
+    };
+
+    it('can get the hash from the location', function () {
+      let windowMock = {
+        matchMedia: function () {
+          return {
+            matches: false
+          };
+        },
+        addEventListener: function () {},
+        location: {
+          hash: '#' + hashBody
+        }
+      };
+
+      let _section = new ArticleSection($elm, windowMock);
+      spy(ArticleSection, "isFragmentForCollapsibleSection");
+      section.handleSectionOpeningViaHash(eventMock);
+      expect(ArticleSection.isFragmentForCollapsibleSection.calledWith(hashBody)).to.be.true;
+      ArticleSection.isFragmentForCollapsibleSection.restore();
+    });
+
+    it('can get the hash from a hashChanged event', function () {
+      spy(ArticleSection, "isFragmentForCollapsibleSection");
+      section.handleSectionOpeningViaHash(eventMock);
+      expect(ArticleSection.isFragmentForCollapsibleSection.calledWith(hashBody)).to.be.true;
+      ArticleSection.isFragmentForCollapsibleSection.restore();
+    });
+
+  });
+
+
+  it('can determine whether a string is a fragment identifier for a collapsible section', function () {
+
+    let docMock = {
+      querySelector: function (val) {
+        if (val === '#notfound') {
+          return false;
+        }
+
+        if (val === '#foundNonCollapsible') {
+          return {
+            dataset: {
+              behaviour: '[non-collapsible]'
+            }
+          };
+        }
+
+        if (val === '#foundCollapsible') {
+          return {
+            dataset: {
+              behaviour: 'ArticleSection'
+            }
+          };
+        }
+
+      }
+
+    };
+
+    expect(ArticleSection.isFragmentForCollapsibleSection('notfound', docMock)).to.be.false;
+    expect(ArticleSection.isFragmentForCollapsibleSection('foundNonCollapsible', docMock)).to.be.false;
+    expect(ArticleSection.isFragmentForCollapsibleSection('foundCollapsible', docMock)).to.be.true;
+  });
+
 
 });
