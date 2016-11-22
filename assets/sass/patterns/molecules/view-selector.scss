@@ -9,15 +9,15 @@
 
 .view-selector__list-item {
   font-family: $font-secondary;
-  line-height: 1.1;
+  @include font-size(14);
+  line-height: 24px;
   margin: 0;
-  @include margin(0 0 13 0);
+  @include margin(0 0 12 0);
 }
 
 .view-selector__link {
   color: $color-text;
   display: block;
-  @include font-size(14);
   font-weight: 700;
   text-decoration: none;
 
@@ -31,8 +31,6 @@
 
   span {
     display: inline-block;
-    vertical-align: middle;
-    @include padding(1, "top");
   }
 
   &:hover {
@@ -84,7 +82,7 @@
   display: block;
   @include font-size(14);
   font-weight: 700;
-  @include margin(13, "bottom");
+  @include margin(12, "bottom");
   @include padding(20, "left");
 }
 
@@ -96,14 +94,14 @@
 
 .view-selector__jump_link_item {
   font-family: $font-secondary;
-  line-height: 1.1;
+  @include font-size(14);
+  line-height: 24px;
   margin: 0;
-  @include padding(0 0 13 0);
+  @include padding(0 0 12 0);
 }
 
 .view-selector__jump_link {
   color: $color-text;
-  @include font-size(14);
   font-weight: 500;
   text-decoration: none;
 

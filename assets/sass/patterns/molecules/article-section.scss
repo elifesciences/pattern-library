@@ -13,15 +13,30 @@ $arrow-size: 5;
   @include blg-spacing("bottom", "medium", "margin");
 
   border-top: 1px solid $color-text-dividers;
+  margin-top: -1px;
 
-  .article-section__body {
+  > .article-section__body {
     @include padding(24, "top");
   }
+}
+
+.article-section--collapsed {
+  @include nospace("bottom");
 }
 
 .article-section--first {
   border: none;
   padding-top: 0;
+
+  // Edge case: prevent space above the h2s of the first header  in the first article section
+  & .article-section__header:first-child h2 {
+    @include nospace("top");
+  }
+
+}
+
+.js .article-section--first {
+  @include blg-spacing("bottom", "medium", "margin");
 }
 
 .article-section__header {
