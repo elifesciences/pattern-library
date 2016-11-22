@@ -135,7 +135,7 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
   box-sizing: content-box;
   max-width: #{$max-site-width}px;
   max-width: get-rem-from-px(#{$max-site-width})px;
-  margin: 0 auto;
+  margin: -1px auto 0 auto;
   padding-left: #{$content-header-side-padding}vw;
   padding-right: #{$content-header-side-padding}vw;
 
