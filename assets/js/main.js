@@ -46,3 +46,32 @@ if (window.localStorage && document.querySelector &&
 
   new Elife();
 }
+
+window.MathJax = {
+  "HTML-CSS": {
+    linebreaks: { automatic: true, width: "container" }
+  },
+  "SVG": {
+    linebreaks: { automatic: true, width: "container" }
+  }
+};
+
+(function () {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src  = "https://cdn.mathjax.org/mathjax/2.7-latest/MathJax.js?config=MML_HTMLorMML";
+  document.getElementsByTagName("head")[0].appendChild(script);
+})();
+
+(function() {
+  window.addEventListener("resize", resizeThrottler, false);
+  var resizeTimeout;
+  function resizeThrottler() {
+    if ( !resizeTimeout ) {
+      resizeTimeout = setTimeout(function() {
+        resizeTimeout = null;
+        MathJax.Hub.Queue(["Rerender",MathJax.Hub]);
+      }, 300);
+    }
+  }
+}());
