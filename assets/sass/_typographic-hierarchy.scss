@@ -101,16 +101,31 @@
   line-height: 1.2; /* 24px when font size is 20px */
 }
 
+@mixin h4-spacing() {
+  @include padding(12, "top");
+  @include padding(12, "bottom");
+}
+
 @mixin h5-typeg() {
   @include _heading-base-typeg();
   @include font-size($font-size-h5-in-px);
   line-height: 1.33333333333333; /* 24px when font size is 18px */
 }
 
+@mixin h5-spacing() {
+  @include padding(12, "top");
+  @include padding(12, "bottom");
+}
+
 @mixin h6-typeg() {
   @include _heading-base-typeg();
   @include font-size($font-size-h6-in-px);
   line-height: 1.5; /* 24px when font size is 16px */
+}
+
+@mixin h6-spacing() {
+  @include padding(10, "top");
+  @include padding(14, "bottom");
 }
 
 // Call this directly from sass with appropriate args.

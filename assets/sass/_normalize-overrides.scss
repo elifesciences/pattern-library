@@ -28,14 +28,17 @@ h3 {
 
 h4 {
   @include h4-typeg();
+  @include h4-spacing();
 }
 
 h5 {
   @include h5-typeg();
+  @include h5-spacing();
 }
 
 h6 {
   @include h6-typeg();
+  @include h6-spacing();
 }
 
 p {
