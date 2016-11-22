@@ -33,6 +33,12 @@ const mochaPhantomjs    = require('gulp-mocha-phantomjs');
 const browserSync       = require('browser-sync');
 const express           = require('express');
 const gutil             = require('gulp-util');
+const concat            = require('gulp-concat');
+
+const js3rdPartySource = './assets/js/libs/third-party/**/*.js';
+const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource];
+// TODO: Refactor dir structure to be less confusing: 'source' in the dest path?!
+const jsDest = './source/assets/js';
 
 var options = minimist(process.argv);
 var environment = options.environment || 'development';
@@ -178,10 +184,7 @@ gulp.task('fonts', () => {
  * Creates a sourcemap.
  ******************************************************************************/
 
-gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests'], () => {
-
-    // delete all previously compiled files + folders
-    del(['./source/assets/js/*']);
+gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests','js:extLibs'], () => {
 
     return browserify('./assets/js/main.js', {
             debug: true
@@ -205,18 +208,31 @@ gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests'], () => {
           .pipe(sourcemaps.write('./'))
 
           // output
-          .pipe(gulp.dest('./source/assets/js'))
+          .pipe(gulp.dest(jsDest))
           .pipe(reload());
 });
 
+gulp.task('js:clean', () => {
+  del([jsDest + '/*']);
+});
+
+gulp.task('js:extLibs', ['js:clean'], () => {
+  return gulp.src(js3rdPartySource)
+    .pipe(concat('extlibs.js'))
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(jsDest));
+
+});
+
 gulp.task('js:hint', () => {
-  return gulp.src('./assets/js/**/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+  return gulp.src(jsSource)
+     .pipe(jshint())
+     .pipe(jshint.reporter('default'));
 });
 
 gulp.task('js:cs', () => {
-  return gulp.src('./assets/js/**/*.js')
+  return gulp.src(jsSource)
     .pipe(jscs())
     .pipe(jscs.reporter());
 });
