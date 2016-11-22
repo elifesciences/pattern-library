@@ -20,6 +20,10 @@ $arrow-size: 5;
   }
 }
 
+.article-section--collapsed {
+  @include nospace("bottom");
+}
+
 .article-section--first {
   border: none;
   padding-top: 0;
