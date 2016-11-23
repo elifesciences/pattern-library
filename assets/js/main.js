@@ -49,10 +49,10 @@ if (window.localStorage && document.querySelector &&
 
 window.MathJax = {
   "HTML-CSS": {
-    linebreaks: { automatic: true, width: "container" }
+    linebreaks: { automatic: true, width: "75% container" }
   },
   "SVG": {
-    linebreaks: { automatic: true, width: "container" }
+    linebreaks: { automatic: true, width: "75% container" }
   }
 };
 
