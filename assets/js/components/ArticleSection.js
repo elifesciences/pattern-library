@@ -66,7 +66,11 @@ module.exports = class ArticleSection {
   static openSection(section) {
     section.$headerLink.classList.remove('article-section__header_link--closed');
     section.$elm.classList.remove('article-section--collapsed');
+    var isHidden = section.$body.classList.contains('visuallyhidden');
     section.$body.classList.remove('visuallyhidden');
+    if(isHidden && MathJax.Hub) {
+      MathJax.Hub.Queue(["Rerender", MathJax.Hub, section.$elm.id]);
+    }
   }
 
   handleSectionOpeningViaHash(e) {
