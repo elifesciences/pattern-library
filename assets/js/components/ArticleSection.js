@@ -75,7 +75,7 @@ module.exports = class ArticleSection {
 
   handleSectionOpeningViaHash(e) {
 
-    // TODO: Code similar to that in Audipplayer.seekNewTime(), consider refactoring out into common
+    // TODO: Code similar to that in Audioplayer.seekNewTime(), consider refactoring out into common
     let hash = '';
 
     // event was hashChange
