@@ -38,6 +38,7 @@ module.exports = class ArticleSection {
 
   setInitialState($elm, $headerLink, $body) {
     if ($elm.dataset.initialState === 'closed' || this.viewportNoWiderThan(this.thresholdWidth)) {
+      $elm.classList.add('article-section--collapsed');
       $headerLink.classList.add('article-section__header_link--closed');
       $body.classList.add('visuallyhidden');
     } else {
