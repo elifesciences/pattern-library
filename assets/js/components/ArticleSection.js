@@ -1,4 +1,5 @@
 'use strict';
+var utils = require('../libs/elife-utils')();
 
 module.exports = class ArticleSection {
 
@@ -21,7 +22,14 @@ module.exports = class ArticleSection {
     this.$headerLink = this.createHeaderLink($elm, doc);
     this.$body = $elm.querySelector('.article-section__body');
     this.setInitialState($elm, this.$headerLink, this.$body);
-    this.window.addEventListener('DOMContentLoaded', this.handleSectionOpeningViaHash.bind(this));
+    // this.window.addEventListener('DOMContentLoaded', this.handleSectionOpeningViaHash.bind(this));
+    // this.window.addEventListener('hashchange', this.handleSectionOpeningViaHash.bind(this));
+    this.window.addEventListener('DOMContentLoaded', this.handleDomLoad.bind(this));
+  }
+
+  handleDomLoad(e) {
+    this.handleSectionOpeningViaHash(e);
+    this.window.removeEventListener('DOMContentLoaded', this.handleDomLoad.bind(this));
     this.window.addEventListener('hashchange', this.handleSectionOpeningViaHash.bind(this));
   }
 
@@ -63,13 +71,24 @@ module.exports = class ArticleSection {
     }
   }
 
+  /**
+   *
+   * @param section {HTMLElement | ArticleSection}
+   */
   static openSection(section) {
-    section.$headerLink.classList.remove('article-section__header_link--closed');
-    section.$elm.classList.remove('article-section--collapsed');
-    let isHidden = section.$body.classList.contains('visuallyhidden');
-    section.$body.classList.remove('visuallyhidden');
-    if (isHidden && !!section.window.MathJax && !!section.window.MathJax.Hub) {
-      section.window.MathJax.Hub.Queue(['Rerender', section.window.MathJax.Hub, section.$elm.id]);
+    if (section instanceof HTMLElement) {
+      section.classList.remove('article-section--collapsed');
+      section.querySelector('.article-section__header_link').classList
+             .remove('article-section__header_link--closed');
+      section.querySelector('.article-section__body').classList.remove('visuallyhidden');
+    } else if (section instanceof ArticleSection) {
+      section.$headerLink.classList.remove('article-section__header_link--closed');
+      section.$elm.classList.remove('article-section--collapsed');
+      let isHidden = section.$body.classList.contains('visuallyhidden');
+      section.$body.classList.remove('visuallyhidden');
+      if (isHidden && !!section.window.MathJax && !!section.window.MathJax.Hub) {
+        section.window.MathJax.Hub.Queue(['Rerender', section.window.MathJax.Hub, section.$elm.id]);
+      }
     }
   }
 
@@ -89,8 +108,10 @@ module.exports = class ArticleSection {
       return false;
     }
 
-    if (ArticleSection.isFragmentForCollapsibleSection(hash, this.doc)) {
-      ArticleSection.openSection(this);
+    let section = ArticleSection.isFragmentForCollapsibleSection(hash, this.doc) ? this :
+                                 ArticleSection.determineAncestorCollapsibleSection(hash, this.doc);
+    if (section) {
+      ArticleSection.openSection(section);
     }
   }
 
@@ -102,6 +123,25 @@ module.exports = class ArticleSection {
 
     let behaviour = $elFromFragmentId.dataset.behaviour;
     return behaviour && behaviour.indexOf('ArticleSection') > -1;
+  }
+
+  static determineAncestorCollapsibleSection(fragment, document) {
+    let $fragIdEl = document.querySelector('#' + fragment);
+    if (!$fragIdEl) {
+      return null;
+    }
+
+    let $ancestorSection = null;
+    let collapsibleSections = document.querySelectorAll('[data-behaviour="ArticleSection"]');
+    [].forEach.call(collapsibleSections, ($section) => {
+      if (!$ancestorSection) {
+        if (utils.areElementsNested($section, $fragIdEl)) {
+          $ancestorSection = $section;
+        }
+      }
+    });
+
+    return $ancestorSection;
   }
 
 };
