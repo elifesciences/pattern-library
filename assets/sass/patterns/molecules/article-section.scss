@@ -66,7 +66,6 @@ $arrow-size: 5;
   display: block;
   @include arrow("up", $arrow-size);
   @include height($arrow-size);
-  @include margin(-35 1 0 0);
   position: absolute;
   right: 0;
   top: 35px;
