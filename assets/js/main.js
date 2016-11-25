@@ -17,6 +17,7 @@ if (window.localStorage && document.querySelector &&
   Components.BackgroundImage = require('./components/BackgroundImage');
   Components.SelectNav = require('./components/SelectNav');
   Components.MainMenu = require('./components/MainMenu');
+  Components.Math = require('./components/Math');
   Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
   Components.SiteHeader = require('./components/SiteHeader');
   Components.SearchBox = require('./components/SearchBox');
@@ -47,31 +48,3 @@ if (window.localStorage && document.querySelector &&
   new Elife();
 }
 
-window.MathJax = {
-  "HTML-CSS": {
-    linebreaks: { automatic: true, width: "75% container" }
-  },
-  "SVG": {
-    linebreaks: { automatic: true, width: "75% container" }
-  }
-};
-
-(function () {
-  var script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src  = "https://cdn.mathjax.org/mathjax/2.7-latest/MathJax.js?config=MML_HTMLorMML";
-  document.getElementsByTagName("head")[0].appendChild(script);
-})();
-
-(function() {
-  window.addEventListener("resize", resizeThrottler, false);
-  var resizeTimeout;
-  function resizeThrottler() {
-    if ( !resizeTimeout ) {
-      resizeTimeout = setTimeout(function() {
-        resizeTimeout = null;
-        MathJax.Hub.Queue(["Rerender",MathJax.Hub]);
-      }, 300);
-    }
-  }
-}());
