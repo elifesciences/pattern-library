@@ -191,6 +191,7 @@
         "name": "button"
       }
     },
+    "hasBackground": true,
     "backgroundImage": {
       "lowResImageSource": "http://unsplash.it/950/400",
       "highResImageSource": "http://unsplash.it/1900/800"

@@ -23,6 +23,7 @@
     ]
   },
   "download": "#download",
+  "hasBackground": true,
   "meta": {
     "url": "#",
     "text": "Insight",

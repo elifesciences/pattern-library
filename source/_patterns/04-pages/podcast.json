@@ -177,7 +177,7 @@
        }
      },
      "download": "https://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
-
+     "hasBackground": true,
      "backgroundImage": {
        "lowResImageSource": "https://unsplash.it/950/400",
        "highResImageSource": "https://unsplash.it/1900/800"

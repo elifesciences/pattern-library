@@ -27,6 +27,7 @@
     ]
   },
   "downloads": true,
+  "hasBackground": true,
   "backgroundImage": {
     "lowResImageSource": "https://unsplash.it/950/400",
     "highResImageSource": "https://unsplash.it/1900/800"

@@ -10,6 +10,7 @@
     "path": "#",
     "classes": "button--outline button--small"
   },
+  "hasBackground": true,
   "backgroundImage": {
     "lowResImageSource": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg",
     "highResImageSource": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg"
