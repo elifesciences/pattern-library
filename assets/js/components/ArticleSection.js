@@ -59,7 +59,7 @@ module.exports = class ArticleSection {
     this.$elm.classList.toggle('article-section--collapsed');
     this.$body.classList.toggle('visuallyhidden');
     if (!this.$body.classList.contains('visuallyhidden')) {
-      MathJax.Hub.Queue(['Rerender', MathJax.Hub, this.$elm.id]);
+      this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub, this.$elm.id]);
     }
   }
 
@@ -68,8 +68,8 @@ module.exports = class ArticleSection {
     section.$elm.classList.remove('article-section--collapsed');
     let isHidden = section.$body.classList.contains('visuallyhidden');
     section.$body.classList.remove('visuallyhidden');
-    if (isHidden && MathJax.Hub) {
-      MathJax.Hub.Queue(['Rerender', MathJax.Hub, section.$elm.id]);
+    if (isHidden && this.window.MathJax.Hub) {
+      this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub, section.$elm.id]);
     }
   }
 
