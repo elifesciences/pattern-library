@@ -58,18 +58,18 @@ module.exports = class ArticleSection {
     this.$headerLink.classList.toggle('article-section__header_link--closed');
     this.$elm.classList.toggle('article-section--collapsed');
     this.$body.classList.toggle('visuallyhidden');
-    if(!this.$body.classList.contains('visuallyhidden')) {
-      MathJax.Hub.Queue(["Rerender", MathJax.Hub, this.$elm.id]);
+    if (!this.$body.classList.contains('visuallyhidden')) {
+      MathJax.Hub.Queue(['Rerender', MathJax.Hub, this.$elm.id]);
     }
   }
 
   static openSection(section) {
     section.$headerLink.classList.remove('article-section__header_link--closed');
     section.$elm.classList.remove('article-section--collapsed');
-    var isHidden = section.$body.classList.contains('visuallyhidden');
+    let isHidden = section.$body.classList.contains('visuallyhidden');
     section.$body.classList.remove('visuallyhidden');
-    if(isHidden && MathJax.Hub) {
-      MathJax.Hub.Queue(["Rerender", MathJax.Hub, section.$elm.id]);
+    if (isHidden && MathJax.Hub) {
+      MathJax.Hub.Queue(['Rerender', MathJax.Hub, section.$elm.id]);
     }
   }
 
