@@ -267,7 +267,7 @@
 
     "titleClass": "content-header__title--extra-small",
 
-    "download": "articleDownloadLinksList",
+    "download": "#articleDownloadLinksList",
 
     "meta": {
       "url": "#",
