@@ -17,6 +17,7 @@ if (window.localStorage && document.querySelector &&
   Components.BackgroundImage = require('./components/BackgroundImage');
   Components.SelectNav = require('./components/SelectNav');
   Components.MainMenu = require('./components/MainMenu');
+  Components.Math = require('./components/Math');
   Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
   Components.SiteHeader = require('./components/SiteHeader');
   Components.SearchBox = require('./components/SearchBox');
@@ -46,3 +47,4 @@ if (window.localStorage && document.querySelector &&
 
   new Elife();
 }
+

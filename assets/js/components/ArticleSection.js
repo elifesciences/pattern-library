@@ -58,12 +58,19 @@ module.exports = class ArticleSection {
     this.$headerLink.classList.toggle('article-section__header_link--closed');
     this.$elm.classList.toggle('article-section--collapsed');
     this.$body.classList.toggle('visuallyhidden');
+    if (!this.$body.classList.contains('visuallyhidden') && !!this.window.MathJax) {
+      this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub, this.$elm.id]);
+    }
   }
 
   static openSection(section) {
     section.$headerLink.classList.remove('article-section__header_link--closed');
     section.$elm.classList.remove('article-section--collapsed');
+    let isHidden = section.$body.classList.contains('visuallyhidden');
     section.$body.classList.remove('visuallyhidden');
+    if (isHidden && !!section.window.MathJax && !!section.window.MathJax.Hub) {
+      section.window.MathJax.Hub.Queue(['Rerender', section.window.MathJax.Hub, section.$elm.id]);
+    }
   }
 
   handleSectionOpeningViaHash(e) {

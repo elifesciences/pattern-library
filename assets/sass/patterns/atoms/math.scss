@@ -1,0 +1,18 @@
+@import "../../definitions";
+
+.math {
+  @include body-typeg();
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.math__label {
+  @include padding(6, "left");
+}
+
+.math__math {
+  display: block;
+  @include body-spacing;
+  flex-grow: 1;
+  text-align: center;
+}

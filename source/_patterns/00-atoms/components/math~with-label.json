@@ -1,0 +1,5 @@
+{
+  "id": "equ10",
+  "label": "(10)",
+  "math": "<math><mstyle displaystyle=\"true\" scriptlevel=\"0\"><mrow><mi>S</mi><mi>V</mi><mi>s</mi><mi>a</mi><mi>v</mi><msub><mi>e</mi><mrow><mi>n</mi></mrow></msub><mo>=</mo><mtext> </mtext><mfrac><mn>1</mn><mrow><mi>m</mi><mo>−</mo><mi>n</mi></mrow></mfrac><munderover><mo movablelimits=\"false\">∑</mo><mrow><mi>i</mi><mo>=</mo><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>m</mi></mrow></munderover><mi>S</mi><mi>V</mi><mi>s</mi><mi>p</mi><mi>e</mi><mi>n</mi><msub><mi>d</mi><mrow><mi>i</mi></mrow></msub><mo>,</mo></mrow></mstyle></math>"
+}
