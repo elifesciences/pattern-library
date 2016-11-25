@@ -3,18 +3,18 @@
 .article-download-links-list--js {
   @include tooltip-box();
   position: absolute;
-  right: -6vw;
   text-align: left;
-  top: 40px;
+  top: 80px;
   width: 100vw;
   z-index: 20;
 
-  &:before {
-    @include arrow("up", 7, $color-text-ui-background--reverse);
-    position: absolute;
-    right: calc(6vw + 3.5px);
-    top: -6px;
-  }
+  // Turned off until the position right can be fixed so arrow always appears under download link icon.
+  //&:before {
+  //  @include arrow("up", 7, $color-text-ui-background--reverse);
+  //  position: absolute;
+  //  right: calc(6vw + 3.5px);
+  //  top: -6px;
+  //}
 
   ul {
     list-style: none;
@@ -43,10 +43,8 @@
   .article-download-links-list--js {
     border-radius: 3px;
     max-width: 320px;
-    top: 60px;
+    right: 0;
+    top: 110px;
   }
 
-  .article-download-links-list--js:before {
-    right: calc(6vw + 15px);
-  }
 }

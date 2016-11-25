@@ -29,6 +29,7 @@ module.exports = class ArticleDownloadLinksList {
     let $newParent = this.doc.querySelector('.content-header_top');
     let $followingSibling =
       $newParent.querySelector('.content-header__download_link').nextElementSibling;
+    this.$elm.parentNode.parentNode.classList.add('visuallyhidden');
     $newParent.insertBefore(this.$elm, $followingSibling);
   }
 

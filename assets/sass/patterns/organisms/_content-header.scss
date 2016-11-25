@@ -71,6 +71,9 @@
 .content-header__download_link {
   float: right;
   @include margin(-18, "top");
+  position: relative;
+  right: 0;
+  z-index: 200;
 }
 
 .content-header__author_list {
