@@ -3,6 +3,7 @@
 module.exports = class Math {
 
   constructor($elm, _window = window, doc = document) {
+    this.window = _window;
     Math.loadDependencies(doc);
   }
 
@@ -34,9 +35,12 @@ module.exports = class Math {
       if (!resizeTimeout) {
         resizeTimeout = setTimeout(function () {
           resizeTimeout = null;
+
           // TODO: change so exactly one rerender regardless of number of Math instances.
           // Consider tacking at the same time as fragment handler.
-          this.window.MathJax.Hub.Queue(['Rerender', MathJax.Hub]);
+          if (!!this.window.MathJax) {
+            this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub]);
+          }
         }, 300);
       }
     };

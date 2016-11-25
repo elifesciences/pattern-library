@@ -95,7 +95,8 @@ describe('An Article Section (collapsible)', function () {
 
       $body: {
         classList: {
-          remove: spy()
+          remove: spy(),
+          contains: function () {}
         }
       }
     };
