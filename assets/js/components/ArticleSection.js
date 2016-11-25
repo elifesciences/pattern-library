@@ -68,8 +68,8 @@ module.exports = class ArticleSection {
     section.$elm.classList.remove('article-section--collapsed');
     let isHidden = section.$body.classList.contains('visuallyhidden');
     section.$body.classList.remove('visuallyhidden');
-    if (isHidden && !!this.window.MathJax && !!this.window.MathJax.Hub) {
-      this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub, section.$elm.id]);
+    if (isHidden && !!section.window.MathJax && !!section.window.MathJax.Hub) {
+      section.window.MathJax.Hub.Queue(['Rerender', section.window.MathJax.Hub, section.$elm.id]);
     }
   }
 
