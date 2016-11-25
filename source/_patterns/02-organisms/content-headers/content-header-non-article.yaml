@@ -49,16 +49,8 @@ schema:
     button:
       $ref: ../../00-atoms/components/button.yaml#/schema
     download:
-      type: object
-      properties:
-        picture:
-          $ref: ../../00-atoms/components/picture.yaml#/schema
-        downloadLink:
-          type: string
-          minLength: 1
-      required:
-        - picture
-        - downloadLink
+      type: string
+      minLength: 1
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
     profile:

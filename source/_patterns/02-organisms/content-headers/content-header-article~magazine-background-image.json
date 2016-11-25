@@ -26,29 +26,7 @@
       }
     ]
   },
-  "download": {
-    "sources": [
-      {
-        "srcset": "../../assets/img/icons/download-full-reverse.svg",
-        "media": "(min-width: 35em)",
-        "type": "image/svg+xml"
-      },
-      {
-        "srcset": "../../assets/img/icons/download-full-reverse-1x.png",
-        "media": "(min-width: 35em)"
-      },
-      {
-        "srcset": "../../assets/img/icons/download-reverse.svg",
-        "type": "image/svg+xml"
-      }
-    ],
-    "fallback": {
-      "defaultPath": "../../assets/img/icons/download-full-reverse-1x.png",
-      "srcset": "../../assets/img/icons/download-full-reverse-2x.png 88w, ../../assets/img/icons/download-full-reverse-1x.png 44w",
-      "classes": "content-header__download_icon",
-      "altText": "Download icon"
-    }
-  },
+  "downloads": true,
   "backgroundImage": {
     "lowResImageSource": "https://unsplash.it/950/400",
     "highResImageSource": "https://unsplash.it/1900/800"

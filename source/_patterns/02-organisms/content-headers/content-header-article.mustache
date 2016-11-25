@@ -20,8 +20,13 @@
         {{/subjects}}
 
         {{#download}}
-          <a href="#articleDownloadLinksList" class="content-header__download_link">
-            {{> atoms-picture}}
+          <a href="{{download}}" class="content-header__download_link">
+            <picture>
+              <source srcset="{{assetsPath}}/img/icons/download-full.svg" type="image/svg+xml" media="(min-width: 35em)">
+              <source srcset="{{assetsPath}}/img/icons/download-full-1x.png" type="image/png" media="(min-width: 35em)">
+              <source srcset="{{assetsPath}}/img/icons/download.svg" type="image/svg+xml">
+              <img src="{{assetsPath}}/img/icons/download-full-1x.png" class="content-header__download_icon" alt="Download icon">
+            </picture>
           </a>
         {{/download}}
       </div>

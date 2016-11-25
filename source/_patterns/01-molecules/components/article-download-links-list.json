@@ -1,4 +1,5 @@
 {
+  "id": "download",
   "description": "A three part list of links to download the article, or parts of the article, in various formats.",
   "groups": [
     {
