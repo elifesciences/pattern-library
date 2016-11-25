@@ -6,52 +6,36 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    dlLinkArticle:
+    description:
       type: string
       minLength: 1
-    dlLinkFigure:
-      type: string
-      minLength: 1
-    dlLinkCitsBibtex:
-      type: string
-      minLength: 1
-    dlLinkCitsEndnote:
-      type: string
-      minLength: 1
-    dlLinkCitsEndnote8:
-      type: string
-      minLength: 1
-    dlLinkCitsRefworks:
-      type: string
-      minLength: 1
-    dlLinkCitsRIS:
-      type: string
-      minLength: 1
-    dlLinkCitsMedlars:
-      type: string
-      minLength: 1
-    linkCitsMendeley:
-      type: string
-      minLength: 1
-    linkCitsReadCube:
-      type: string
-      minLength: 1
-    linkCitsPapers:
-      type: string
-      minLength: 1
-    linkCitsCiteULike:
-      type: string
-      minLength: 1
+    groups:
+      type: array
+      minItems: 1
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            minLength: 1
+          items:
+            type: array
+            minItems: 1
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                url:
+                  type: string
+                  minLength: 1
+              required:
+                - name
+                - url
+        required:
+          - title
+          - items
   required:
-    - dlLinkArticle
-    - dlLinkFigure
-    - dlLinkCitsBibtex
-    - dlLinkCitsEndnote
-    - dlLinkCitsEndnote8
-    - dlLinkCitsRefworks
-    - dlLinkCitsRIS
-    - dlLinkCitsMedlars
-    - linkCitsMendeley
-    - linkCitsReadCube
-    - linkCitsPapers
-    - linkCitsCiteULike
+    - description
+    - groups

@@ -1,14 +1,68 @@
 {
-  "dlLinkArticle": "#",
-  "dlLinkFigure": "#",
-  "dlLinkCitsBibtex": "#",
-  "dlLinkCitsEndnote": "#",
-  "dlLinkCitsEndnote8": "#",
-  "dlLinkCitsRefworks": "#",
-  "dlLinkCitsRIS": "#",
-  "dlLinkCitsMedlars": "#",
-  "linkCitsMendeley": "#",
-  "linkCitsReadCube": "#",
-  "linkCitsPapers": "#",
-  "linkCitsCiteULike": "#"
+  "description": "A three part list of links to download the article, or parts of the article, in various formats.",
+  "groups": [
+    {
+      "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF)</span>",
+      "items": [
+        {
+          "name": "Article",
+          "url": "#"
+        },
+        {
+          "name": "Figures",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "title": "Download citations<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
+      "items": [
+        {
+          "name": "BibTex",
+          "url": "#"
+        },
+        {
+          "name": "EndNote",
+          "url": "#"
+        },
+        {
+          "name": "EndNote 8",
+          "url": "#"
+        },
+        {
+          "name": "Refworks Tagged",
+          "url": "#"
+        },
+        {
+          "name": "RIS",
+          "url": "#"
+        },
+        {
+          "name": "Medlars",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
+      "items": [
+        {
+          "name": "Mendeley",
+          "url": "#"
+        },
+        {
+          "name": "ReadCube",
+          "url": "#"
+        },
+        {
+          "name": "Papers App",
+          "url": "#"
+        },
+        {
+          "name": "CiteUlike",
+          "url": "#"
+        }
+      ]
+    }
+  ]
 }
