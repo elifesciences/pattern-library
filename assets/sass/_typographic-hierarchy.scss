@@ -55,12 +55,14 @@
   font-weight: 700;
 }
 
-@mixin _label-typeg() {
+@mixin _label-typeg($uppercase: true) {
   font-family: $font-secondary;
   @include font-size(11);
   font-weight: 700;
   line-height: 2.1818181818; /* 24px with a font size of 11px */
-  text-transform: uppercase;
+  @if $uppercase {
+    text-transform: uppercase;
+  }
 }
 
 // HEADINGS
@@ -322,8 +324,8 @@
   line-height: 1.3;
 }
 
-@mixin label-content-typeg($color:$color-text-secondary) {
-  @include _label-typeg();
+@mixin label-content-typeg($color:$color-text-secondary, $uppercase: true) {
+  @include _label-typeg($uppercase);
   color: $color;
 }
 

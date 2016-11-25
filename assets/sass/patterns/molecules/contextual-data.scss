@@ -2,7 +2,7 @@
 
 .contextual-data {
   border-bottom: 1px solid $color-text-dividers;
-  @include label-content-typeg($color-text-secondary);
+  @include label-content-typeg($color-text-secondary, false);
 }
 
 .contextual-data__list {
@@ -22,7 +22,7 @@
 
 .contextual-data__list_desc {
   display: inline-block;
-  @include label-content-typeg($color-text-secondary);
+  @include label-content-typeg($color-text-secondary, false);
   margin: 0;
   @include padding(0 5 0 0);
 }
