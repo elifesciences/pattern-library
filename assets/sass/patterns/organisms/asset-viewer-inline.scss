@@ -6,14 +6,9 @@
   max-width: #{get-rem-from-px(715)}rem;
 }
 
-.asset-viewer-inline__header_panel {
-  display: flex;
-}
-
 .asset-viewer-inline__header_text {
   align-self: center;
   display: inline-block;
-  flex: 1 auto;
   @include fig-caption-text-typeg(0);
   @include nospace("bottom");
 }
@@ -33,10 +28,9 @@
 }
 
 .asset-viewer-inline__figure_access {
-  flex: 1 0 auto;
+  // TODO: add spacing of $blg-space-extra-small-in-px between icons
   float: right;
   @include margin(10, "left");
-  @include padding(3, "top");
   text-align: right;
 }
 
@@ -47,6 +41,7 @@
   border-radius: 3px;
   display: inline-block;
   @include height(28);
+  @include margin(-2);
   @include width(28);
 
   &:hover {

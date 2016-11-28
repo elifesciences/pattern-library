@@ -12,14 +12,11 @@
 .captioned-asset__image {
   display: block;
   width: 100%;
+  @include padding($blg-space-extra-small-in-px 0);
 }
 
 .captioned-asset__caption {
   padding: 0 6%;
-}
-
-.captioned-asset__caption___footer {
-  @include padding(12, "top");
 }
 
 .captioned-asset__caption___footer_link {
@@ -35,12 +32,8 @@
 @media only screen and (min-width: #{get-rem-from-px($bkpt-captioned-asset-caption)}em) {
 
   .captioned-asset__caption {
-    padding: 0;
-  }
-
-  .captioned-asset__caption___footer {
-    padding: 0;
-    @include padding(12, "top");
+    padding-left: 0;
+    padding-right: 0;
   }
 
 }

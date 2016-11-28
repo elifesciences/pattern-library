@@ -126,6 +126,7 @@
 }
 
 @mixin h6-spacing() {
+  margin: 0;
   @include padding(10, "top");
   @include padding(14, "bottom");
 }
@@ -220,14 +221,13 @@
   font-family: $font-secondary;
   @include font-size($font-size-caption-in-px);
   font-weight: 700;
-  line-height: 1.3;
-  @include padding(3, "bottom");
+  line-height: 1.8461538462; /* 24px when font size is 13px  */
 }
 
 @mixin fig-caption-text-typeg($space-underneath: 19) {
   font-family: $font-secondary;
   @include font-size($font-size-caption-in-px);
-  line-height: 1.3;
+  line-height: 1.8461538462; /* 24px when font size is 13px  */
   @include padding($space-underneath, "bottom");
   text-decoration: none;
 }

@@ -1,9 +1,5 @@
 @import "../../definitions";
 
-.author-details__name {
-  @include nospace("bottom");
-}
-
 .author-details__section {
   @include padding(24, "bottom");
 }
@@ -20,7 +16,10 @@
 }
 
 .author-details__heading {
+  @include body-typeg();
+  font-weight: bold;
   display: inline;
+  padding: 0;
 }
 
 .author-details__list {
@@ -42,4 +41,8 @@ a.author-details__link {
   &:hover {
     color: $color-primary-dark;
   }
+}
+
+.author-details__linked-image--orcid {
+  margin-bottom: -3px;
 }

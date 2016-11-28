@@ -21,6 +21,7 @@
 
   &--asset {
     @include label-content-typeg($color-text);
+    display: block;
     font-weight: normal;
 
     a.doi__link {
