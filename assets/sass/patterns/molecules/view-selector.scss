@@ -21,56 +21,12 @@
   font-weight: 700;
   text-decoration: none;
 
-  .icon {
-    display: inline-block;
-    @include height(14);
-    @include margin(5, "right");
-    @include width(15);
-    vertical-align: middle;
-  }
-
   span {
     display: inline-block;
   }
 
   &:hover {
     color: $color-primary;
-  }
-}
-
-.view-selector__link--article {
-  .icon {
-    background: url("../img/icons/article.png") 1px 50% no-repeat;
-    background: url("../img/icons/article.svg") 1px 50% no-repeat, linear-gradient(transparent, transparent);
-  }
-
-  &:hover .icon {
-    background: url("../img/icons/article-hover.png") 1px 50% no-repeat;
-    background: url("../img/icons/article-hover.svg") 1px 50% no-repeat, linear-gradient(transparent, transparent);
-  }
-}
-
-.view-selector__link--figures {
-  .icon {
-    background: url("../img/icons/figures.png") 1px 50% no-repeat;
-    background: url("../img/icons/figures.svg") 1px 50% no-repeat, linear-gradient(transparent, transparent);
-  }
-
-  &:hover .icon {
-    background: url("../img/icons/figures-hover.png") 1px 50% no-repeat;
-    background: url("../img/icons/figures-hover.svg") 1px 50% no-repeat, linear-gradient(transparent, transparent);
-  }
-}
-
-.view-selector__link--sidebyside {
-  .icon {
-    background: url("../img/icons/sidebyside.png") 0 50% no-repeat;
-    background: url("../img/icons/sidebyside.svg") 0 50% no-repeat, linear-gradient(transparent, transparent);
-  }
-
-  &:hover .icon {
-    background: url("../img/icons/sidebyside-hover.png") 0 50% no-repeat;
-    background: url("../img/icons/sidebyside-hover.svg") 0 50% no-repeat, linear-gradient(transparent, transparent);
   }
 }
 
@@ -130,13 +86,6 @@
     border-radius: 4px 0 0 4px;
     flex: 1 50%;
     text-align: center;
-
-    &.view-selector__list-item--active {
-      .view-selector__link .icon {
-        background: url("../img/icons/article-reverse.png") 0 50% no-repeat;
-        background: url("../img/icons/article-reverse.svg") 0 50% no-repeat, linear-gradient(transparent, transparent);
-      }
-    }
   }
 
   .view-selector__list-item--figures {
@@ -146,13 +95,6 @@
     border-radius: 0 4px 4px 0;
     flex: 1 50%;
     text-align: center;
-
-    &.view-selector__list-item--active {
-      .view-selector__link .icon {
-        background: url("../img/icons/figures-reverse.png") 0 50% no-repeat;
-        background: url("../img/icons/figures-reverse.svg") 0 50% no-repeat, linear-gradient(transparent, transparent);
-      }
-    }
   }
 
   .view-selector__list-item--active {
