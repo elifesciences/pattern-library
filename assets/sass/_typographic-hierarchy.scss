@@ -126,6 +126,7 @@
 }
 
 @mixin h6-spacing() {
+  margin: 0;
   @include padding(10, "top");
   @include padding(14, "bottom");
 }
