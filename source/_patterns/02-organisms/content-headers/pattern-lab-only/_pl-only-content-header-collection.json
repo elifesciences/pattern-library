@@ -31,6 +31,7 @@
       "forMachine": "2016-02-29"
     }
   },
+  "hasBackground": true,
   "backgroundImage": {
     "images": {
       "hires": "https://unsplash.it/1900/800",

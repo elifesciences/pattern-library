@@ -16,28 +16,9 @@
     }
   },
 
-  "download": {
-    "sources": [
-      {
-        "srcset": "../../assets/img/icons/download-full-reverse.svg",
-        "media": "(min-width: 35em)",
-        "type": "image/svg+xml"
-      },
-      {
-        "srcset": "../../assets/img/icons/download-full-reverse-1x.png",
-        "media": "(min-width: 35em)"
-      },
-      {
-        "srcset": "../../assets/img/icons/download-reverse.svg",
-        "type": "image/svg+xml"
-      }
-    ],
-    "fallback": {
-      "defaultPath": "../../assets/img/icons/download-full-reverse-1x.png",
-      "classes": "content-header__download_icon",
-      "altText": "Download icon"
-    }
-  },
+  "download": "#download",
+
+  "hasBackground": true,
 
   "backgroundImage": {
     "images": {

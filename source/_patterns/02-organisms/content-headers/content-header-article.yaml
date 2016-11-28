@@ -34,6 +34,8 @@ schema:
       required:
         - lowResImageSource
         - highResImageSource
+    hasBackground:
+      type: boolean
     title:
       type: string
       minLength: 1
@@ -125,7 +127,8 @@ schema:
       required:
         - images
     download:
-      $ref: ../../01-molecules/components/site-links-list.yaml#/schema
+      type: string
+      minLength: 1
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
   required:

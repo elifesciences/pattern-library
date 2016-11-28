@@ -9,7 +9,7 @@
     "path": "#",
     "classes": "button--outline button--small"
   },
-
+  "hasBackground": true,
   "backgroundImage": {
     "images": {
       "lores": "https://unsplash.it/950/400/",

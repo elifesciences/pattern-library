@@ -9,6 +9,7 @@
     "path": "#",
     "classes": "button--outline button--small"
   },
+  "hasBackground": true,
   "backgroundImage": {
     "lowResImageSource": "https://unsplash.it/950/400",
     "highResImageSource": "https://unsplash.it/1900/800"
