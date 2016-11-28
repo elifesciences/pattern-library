@@ -12,13 +12,7 @@
 .captioned-asset__image {
   display: block;
   width: 100%;
-  //@include padding($blg-space-extra-small-in-px 0);
-
-  // DEBUG:
-  @include margin($blg-space-extra-small-in-px 0);
-  outline: 1px solid green;
-  height: 684px !important;
-
+  @include padding($blg-space-extra-small-in-px 0);
 }
 
 .captioned-asset__caption {
