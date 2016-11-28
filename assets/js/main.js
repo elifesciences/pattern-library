@@ -18,6 +18,7 @@ if (window.localStorage && document.querySelector &&
   Components.SelectNav = require('./components/SelectNav');
   Components.MainMenu = require('./components/MainMenu');
   Components.Math = require('./components/Math');
+  Components.FragmentHandler = require('./components/FragmentHandler');
   Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
   Components.SiteHeader = require('./components/SiteHeader');
   Components.SearchBox = require('./components/SearchBox');
@@ -27,20 +28,41 @@ if (window.localStorage && document.querySelector &&
   // App
   let Elife = function Elife() {
 
-    function initialiseComponent($component) {
+    function initialiseComponent($component, singletons) {
       // When present, data-behaviour contains a space-separated list of handlers for that component
       let handlers = $component.getAttribute('data-behaviour').trim().split(' ');
       for (let i = 0; i < handlers.length; i += 1) {
         let handler = handlers[i];
-        if (Components[handler] && typeof Components[handler] === 'function') {
-          new Components[handler]($component, window, window.document);
+        if (!singletons[handler]) {
+          if (Components[handler] && typeof Components[handler] === 'function') {
+            new Components[handler]($component, window, window.document);
+          }
+
+          if (singletons[handler] === false) {
+            singletons[handler] = true;
+          }
+        } else {
+          console.log('Singleton already created, skipping additional instansiation');
         }
       }
     }
 
+    let singletons = (function () {
+
+      let registered = [];
+      let isRegistered = function isRegistered(componentName) {
+        return registered.includes(componentName);
+      };
+      let register = function register(componentName) {
+        registered.push(componentName);
+      };
+
+
+    }());
+
     let components = document.querySelectorAll('[data-behaviour]');
     if (components) {
-      [].forEach.call(components, initialiseComponent);
+      [].forEach.call(components, initialiseComponent, singletons);
     }
 
   };

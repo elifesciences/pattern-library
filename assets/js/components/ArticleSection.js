@@ -22,7 +22,8 @@ module.exports = class ArticleSection {
     this.$headerLink = this.createHeaderLink($elm, doc);
     this.$body = $elm.querySelector('.article-section__body');
     this.setInitialState($elm, this.$headerLink, this.$body);
-    // this.window.addEventListener('DOMContentLoaded', this.handleSectionOpeningViaHash.bind(this));
+
+    //this.window.addEventListener('DOMContentLoaded', this.handleSectionOpeningViaHash.bind(this));
     // this.window.addEventListener('hashchange', this.handleSectionOpeningViaHash.bind(this));
     this.window.addEventListener('DOMContentLoaded', this.handleDomLoad.bind(this));
   }

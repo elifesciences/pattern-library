@@ -161,9 +161,10 @@ module.exports = () => {
    * @returns {boolean} Whether the $prospectiveDescendant is, or descends from $prospectiveParent
    */
   function areElementsNested($prospectiveParent, $prospectiveDescendant) {
-    if (!$prospectiveParent instanceof Node || !$prospectiveDescendant instanceof Node) {
+    if (!($prospectiveParent instanceof Node && $prospectiveDescendant instanceof Node)) {
       return false;
     }
+
     let relationship = $prospectiveParent.compareDocumentPosition($prospectiveDescendant);
     return !!(
       relationship & $prospectiveParent.DOCUMENT_POSITION_CONTAINED_BY || relationship === 0

@@ -1,9 +1,12 @@
 'use strict';
-var utils = require('../libs/elife-utils')();
 
-module.exports = class ArticleSection {
+// var utils = require('../libs/elife-utils')();
 
-  constructor($elm, _window = window, doc = document) {
+module.exports = class FragmentHandler {
+
+  // constructor($elm, _window = window, doc = document) {
+  constructor() {
+    console.log('Instansiated FragmentHandler');
   }
 
-}
+};
