@@ -21,7 +21,9 @@
 
   &--asset {
     @include label-content-typeg($color-text);
+    display: block;
     font-weight: normal;
+    @include padding($blg-space-small-in-px, "bottom");
 
     a.doi__link {
       @include fig-caption-text-typeg(0);
