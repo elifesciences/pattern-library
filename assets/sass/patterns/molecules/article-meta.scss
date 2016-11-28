@@ -9,7 +9,8 @@
 
 .article-meta__group_title {
   @include label-content-typeg($color-text-secondary);
-  @include margin(0 0 2 0);
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 .article-meta__link_list {
@@ -21,7 +22,6 @@
 .article-meta__link_list_item {
   display: inline;
   @include label-subject-typeg();
-  line-height: inherit;
   margin: 0;
   padding: 0;
   &:after {
