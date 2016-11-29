@@ -301,7 +301,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/articlesection.html'});
+    browserSync({proxy: 'localhost:8080', startPath: 'test/fragmenthandler.html'});
   } else {
     return gutil.noop;
   }
