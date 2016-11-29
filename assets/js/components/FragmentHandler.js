@@ -9,4 +9,8 @@ module.exports = class FragmentHandler {
     console.log('Instansiated FragmentHandler');
   }
 
+  static isSingleton()  {
+    return true;
+  }
+
 };

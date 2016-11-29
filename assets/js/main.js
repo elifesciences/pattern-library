@@ -28,8 +28,7 @@ if (window.localStorage && document.querySelector &&
   // App
   let Elife = function Elife() {
 
-    var singletons = (function () {
-      let allowed = ['FragmentHandler'];
+    let singletons = (function () {
       let registered = [];
 
       function isRegistered(componentName) {
@@ -37,21 +36,12 @@ if (window.localStorage && document.querySelector &&
       }
 
       function register(componentName) {
-        if (allowed.indexOf(componentName) > -1) {
-          registered.push(componentName);
-        }
-      }
-
-      function isAllowed(componentName) {
-        return allowed.indexOf(componentName) > -1;
+        registered.push(componentName);
       }
 
       return {
         isRegistered: isRegistered,
         register: register,
-        isAllowed: isAllowed,
-
-        registered: registered
       };
 
     }());
@@ -62,16 +52,14 @@ if (window.localStorage && document.querySelector &&
       for (let i = 0; i < handlers.length; i += 1) {
         let handler = handlers[i];
         if (!singletons.isRegistered(handler)) {
-          if (Components[handler] && typeof Components[handler] === 'function') {
+          if (!!Components[handler] && typeof Components[handler] === 'function') {
             new Components[handler]($component, window, window.document);
           }
 
-          if (singletons.isAllowed(handler)) {
+          if (typeof Components[handler].isSingleton === 'function' &&
+              Components[handler].isSingleton()) {
             singletons.register(handler);
-            console.log('registered singletons: ', singletons.registered);
           }
-        } else {
-          console.log('Singleton already created, skipping additional instansiation');
         }
       }
     }
