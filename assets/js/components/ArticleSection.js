@@ -1,5 +1,4 @@
 'use strict';
-var utils = require('../libs/elife-utils')();
 
 module.exports = class ArticleSection {
 
@@ -22,16 +21,7 @@ module.exports = class ArticleSection {
     this.$headerLink = this.createHeaderLink($elm, doc);
     this.$body = $elm.querySelector('.article-section__body');
     this.setInitialState($elm, this.$headerLink, this.$body);
-
-    //this.window.addEventListener('DOMContentLoaded', this.handleSectionOpeningViaHash.bind(this));
-    // this.window.addEventListener('hashchange', this.handleSectionOpeningViaHash.bind(this));
-    this.window.addEventListener('DOMContentLoaded', this.handleDomLoad.bind(this));
-  }
-
-  handleDomLoad(e) {
-    this.handleSectionOpeningViaHash(e);
-    this.window.removeEventListener('DOMContentLoaded', this.handleDomLoad.bind(this));
-    this.window.addEventListener('hashchange', this.handleSectionOpeningViaHash.bind(this));
+    this.$elm.addEventListener('expandsection', this.expand.bind(this));
   }
 
   createHeaderLink($elm, doc) {
@@ -72,77 +62,18 @@ module.exports = class ArticleSection {
     }
   }
 
-  /**
-   *
-   * @param section {HTMLElement | ArticleSection}
-   */
-  static openSection(section) {
-    if (section instanceof HTMLElement) {
-      section.classList.remove('article-section--collapsed');
-      section.querySelector('.article-section__header_link').classList
-             .remove('article-section__header_link--closed');
-      section.querySelector('.article-section__body').classList.remove('visuallyhidden');
-    } else if (section instanceof ArticleSection) {
-      section.$headerLink.classList.remove('article-section__header_link--closed');
-      section.$elm.classList.remove('article-section--collapsed');
-      let isHidden = section.$body.classList.contains('visuallyhidden');
-      section.$body.classList.remove('visuallyhidden');
-      if (isHidden && !!section.window.MathJax && !!section.window.MathJax.Hub) {
-        section.window.MathJax.Hub.Queue(['Rerender', section.window.MathJax.Hub, section.$elm.id]);
-      }
-    }
-  }
-
-  handleSectionOpeningViaHash(e) {
-
-    // TODO: Code similar to that in Audioplayer.seekNewTime(), consider refactoring out into common
-    let hash = '';
-
-    // event was hashChange
-    if (!!e.newURL) {
-      hash = e.newURL.substring(e.newURL.indexOf('#') + 1);
-    } else {
-      hash = this.window.location.hash.substring(1);
+  expand(e) {
+    this.$headerLink.classList.remove('article-section__header_link--closed');
+    this.$elm.classList.remove('article-section--collapsed');
+    this.$body.classList.remove('visuallyhidden');
+    if (!!this.window.MathJax) {
+      this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub, this.$elm.id]);
     }
 
-    if (!hash) {
-      return false;
+    let $descendentEl = this.doc.querySelector('#' + e.detail);
+    if (!!$descendentEl) {
+      $descendentEl.scrollIntoView();
     }
-
-    let section = ArticleSection.isFragmentForCollapsibleSection(hash, this.doc) ? this :
-                                 ArticleSection.determineAncestorCollapsibleSection(hash, this.doc);
-    if (section) {
-      ArticleSection.openSection(section);
-    }
-  }
-
-  static isFragmentForCollapsibleSection(fragment, document) {
-    var $elFromFragmentId = document.querySelector('#' + fragment);
-    if (!$elFromFragmentId) {
-      return false;
-    }
-
-    let behaviour = $elFromFragmentId.dataset.behaviour;
-    return behaviour && behaviour.indexOf('ArticleSection') > -1;
-  }
-
-  static determineAncestorCollapsibleSection(fragment, document) {
-    let $fragIdEl = document.querySelector('#' + fragment);
-    if (!$fragIdEl) {
-      return null;
-    }
-
-    let $ancestorSection = null;
-    let collapsibleSections = document.querySelectorAll('[data-behaviour="ArticleSection"]');
-    [].forEach.call(collapsibleSections, ($section) => {
-      if (!$ancestorSection) {
-        if (utils.areElementsNested($section, $fragIdEl)) {
-          $ancestorSection = $section;
-        }
-      }
-    });
-
-    return $ancestorSection;
   }
 
 };

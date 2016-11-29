@@ -39,7 +39,10 @@ describe('A FragmentHandler Component', function () {
       let docMock;
 
       beforeEach(function () {
-        docMock = { querySelector: function () {} };
+        docMock = {
+          querySelector: function () {},
+          querySelectorAll: function () {}
+        };
       });
 
       it('returns true if the id tested matches the section id', function () {
@@ -72,11 +75,12 @@ describe('A FragmentHandler Component', function () {
       it('returns null if there are no collapsed article sections in the document', function () {
 
         let docMock = {
-          querySelector: function (selector) {
+          querySelectorAll: function (selector) {
             if (selector === '.article-section--collapsed') {
               return null;
             }
-
+          },
+          querySelector: function (selector) {
             if (selector.indexOf('#') > -1) {
               return true;
             }
@@ -99,11 +103,12 @@ describe('A FragmentHandler Component', function () {
         let collapsedSectionIds = [ 'collapsedA', 'collapsedB', 'collapsedC' ];
         let hash = 'outsideAnyCollapsedSection';
         let docMock = {
-          querySelector: function (selector) {
+          querySelectorAll: function (selector) {
             if (selector === '.article-section--collapsed') {
               return collapsedSectionIds
             }
-          }
+          },
+          querySelector: function () {}
         };
 
         expect(fragmentHandler.getIdOfCollapsedSection(hash,
@@ -111,16 +116,17 @@ describe('A FragmentHandler Component', function () {
                                                        areElementsNestedMock)).to.be.null;
 
       });
-      
+
       it('returns the id of the section if it matches the hash', function () {
 
         let matchingId = 'iAmACollapsedSection';
         let docMock = {
-          querySelector: function (selector) {
+          querySelectorAll: function (selector) {
             if (selector === '.article-section--collapsed')  {
               return [ { id: matchingId } ];
             }
-          }
+          },
+          querySelector: function () {}
         };
 
         let areElementsNestedMock = function () { return false; };
@@ -133,11 +139,12 @@ describe('A FragmentHandler Component', function () {
         let sectionId = 'iAmACollapsedSection';
         let descendantId = 'iAmADescendantOfACollapsedSection';
         let docMock = {
-          querySelector: function (selector) {
+          querySelectorAll: function (selector) {
             if (selector === '.article-section--collapsed')  {
               return [ { id: sectionId } ];
             }
-          }
+          },
+          querySelector: function () {}
         };
 
         let areElementsNestedMock = function () { return true; };

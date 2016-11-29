@@ -2,6 +2,12 @@
 
 const utils = require('../libs/elife-utils')();
 
+/**
+ * FragmentHandler mediates how the hash controls the opening/closing of article sections.
+ * It has no dedicated pattern template and its data-behaviour may live on any element, but note
+ * that because it's a singleton only one will be instansiated.
+ * @type {FragmentHandler}
+ */
 module.exports = class FragmentHandler {
 
   static isSingleton()  {
@@ -9,19 +15,11 @@ module.exports = class FragmentHandler {
   }
 
   constructor($elm, _window = window, doc = document) {
-
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
-
     this.window.addEventListener('DOMContentLoaded', this.handleDomLoad.bind(this));
-
   }
-
-  // detect fragment on page load or hash change
-  // determine whether the fragment belongs to (incl. within) a collapsed section
-  // if so, emit a section open event with the id of the section to open
-  // this can be listened for by the article section component
 
   handleDomLoad(e) {
     this.handleSectionOpeningViaHash(e);
@@ -29,6 +27,14 @@ module.exports = class FragmentHandler {
     this.window.addEventListener('hashchange', this.handleSectionOpeningViaHash.bind(this));
   }
 
+  /**
+   *
+   * @param id
+   * @param $section
+   * @param doc
+   * @param areElementsNested
+   * @returns {*}
+   */
   isIdOfOrWithinSection(id, $section, doc, areElementsNested) {
     if (id === $section.id) {
       return true;
@@ -39,7 +45,7 @@ module.exports = class FragmentHandler {
   }
 
   getIdOfCollapsedSection(hash, doc, areElementsNested) {
-    let collapsedSections = doc.querySelector('.article-section--collapsed');
+    let collapsedSections = doc.querySelectorAll('.article-section--collapsed');
     if (!collapsedSections) {
       return null;
     }
@@ -62,11 +68,6 @@ module.exports = class FragmentHandler {
 
   handleSectionOpeningViaHash(e) {
 
-    // DEBUG
-    this.window.addEventListener('expandSection', function (e) {
-      console.log('caught expandSection event: ', e);
-    });
-
     // TODO: Code similar to that in Audioplayer.seekNewTime(), consider refactoring out into common
     let hash = '';
 
@@ -87,14 +88,14 @@ module.exports = class FragmentHandler {
       // emit a section open event with the id of the section to open
       let expandSection;
       try {
-        expandSection = new CustomEvent('expandSection', { detail: this.idOfCollapsedSection });
+        expandSection = new CustomEvent('expandsection', { detail: hash });
       } catch (e) {
         // CustomEvent not supported, do it the old fashioned way
-        expandSection = document.createEvent('expandSection');
-        expandSection.initCustomEvent('expandSection', true, true, { detail: this.idOfCollapsedSection });
+        expandSection = document.createEvent('expandsection');
+        expandSection.initCustomEvent('expandsection', true, true, { detail: hash });
       }
 
-      this.$elm.dispatchEvent(expandSection);
+      this.doc.querySelector('#' + idOfCollapsedSection).dispatchEvent(expandSection);
 
     }
   }
