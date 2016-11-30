@@ -3,7 +3,7 @@
 const utils = require('../libs/elife-utils')();
 
 /**
- * FragmentHandler mediates how the hash controls the opening/closing of article sections.
+ * FragmentHandler mediates how the hash controls the opening of article sections.
  * It has no dedicated pattern template and its data-behaviour may live on any element, but note
  * that because it's a singleton only one will be instansiated.
  * @type {FragmentHandler}
@@ -23,17 +23,17 @@ module.exports = class FragmentHandler {
 
   handleDomLoad(e) {
     this.handleSectionOpeningViaHash(e);
-    this.window.removeEventListener('DOMContentLoaded', this.handleDomLoad.bind(this));
     this.window.addEventListener('hashchange', this.handleSectionOpeningViaHash.bind(this));
   }
 
   /**
+   * Indicates whether an HTML element with a given id is found as/within a specific chunk of html
    *
-   * @param id
-   * @param $section
-   * @param doc
-   * @param areElementsNested
-   * @returns {*}
+   * @param {String} id The id  of the HTML element to search for
+   * @param {HTMLElement} $section The element to search/search within
+   * @param {HTMLDocument} doc
+   * @param {Function} areElementsNested Handles determination of nesting
+   * @returns {boolean} true if element with id is $section, or is contained within $section
    */
   isIdOfOrWithinSection(id, $section, doc, areElementsNested) {
     if (id === $section.id) {
@@ -44,7 +44,15 @@ module.exports = class FragmentHandler {
     return areElementsNested($section, $fragWithId);
   }
 
-  getIdOfCollapsedSection(hash, doc, areElementsNested) {
+  /**
+   * Returns the id of the collapsed section containing the html element with idToFind, or null.
+   *
+   * @param {String} idToFind The id to search for
+   * @param {HTMLDocument} doc
+   * @param {Function} areElementsNested Handles determination of nesting
+   * @returns {String} The id of the collapsed section containing idToFind, or null
+   */
+  getIdOfCollapsedSection(idToFind, doc, areElementsNested) {
     let collapsedSections = doc.querySelectorAll('.article-section--collapsed');
     if (!collapsedSections) {
       return null;
@@ -53,7 +61,7 @@ module.exports = class FragmentHandler {
     let $collapsedSectionContainingFrag;
     [].forEach.call(collapsedSections, ($collapsedSection) => {
       if (!$collapsedSectionContainingFrag) {
-        if (this.isIdOfOrWithinSection(hash, $collapsedSection, doc, areElementsNested)) {
+        if (this.isIdOfOrWithinSection(idToFind, $collapsedSection, doc, areElementsNested)) {
           $collapsedSectionContainingFrag = $collapsedSection;
         }
       }
@@ -66,9 +74,15 @@ module.exports = class FragmentHandler {
     return null;
   }
 
+  /**
+   * Fires a custom expandsection event on the collapsed article section containing id from hash.
+   *
+   * @param e
+   * @returns {boolean} False if no hash found
+   */
   handleSectionOpeningViaHash(e) {
 
-    // TODO: Code similar to that in Audioplayer.seekNewTime(), consider refactoring out into common
+    // TODO: Code similar to that in Audioplayer.seekNewTime(), refactor out into common
     let hash = '';
 
     // event was hashChange
@@ -86,6 +100,7 @@ module.exports = class FragmentHandler {
                                                             utils.areElementsNested);
     if (!!idOfCollapsedSection) {
       // emit a section open event with the id of the section to open
+      // TODO: Used in several places, refactor out into common
       let expandSection;
       try {
         expandSection = new CustomEvent('expandsection', { detail: hash });
