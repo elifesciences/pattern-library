@@ -188,15 +188,6 @@ module.exports = () => {
   }
 
   /**
-   * Return the current viewport width.
-   *
-   * @returns {number} The current viewport width
-   */
-  function getViewportWidth() {
-    return document.documentElement.clientWidth;
-  }
-
-  /**
    * Returns whether the display is considered to have a high pixel density ratio.
    *
    * @param window
@@ -214,7 +205,6 @@ module.exports = () => {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     buildElement: buildElement,
-    getViewportWidth: getViewportWidth,
     invertPxString: invertPxString,
     isHighDpr: isHighDpr,
     uniqueIds: uniqueIds,
