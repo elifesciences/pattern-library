@@ -90,7 +90,8 @@ module.exports = () => {
         var _prefix = '' + prefix || 'default_';
         var random = ('' + Math.random()).replace(/\./, '');
         var candidate = _prefix + random;
-        if (this.isValid(candidate)) {
+        if (this.isValid(candidate, document)) {
+          this.used.push(candidate);
           return candidate;
         }
 
