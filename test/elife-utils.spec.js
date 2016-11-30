@@ -51,4 +51,20 @@ describe('The eLife utils library', function () {
 
   });
 
+  describe('its invertPxString method', function () {
+
+    it('can mathematically invert a positive px value', function () {
+      expect(elifeUtils.invertPxString('100px')).to.equal('-100px');
+    });
+
+    it('can mathematically invert a negative px value', function () {
+      expect(elifeUtils.invertPxString('-100px')).to.equal('100px');
+    });
+
+    it('doesn\'t change a "0" string', function () {
+      expect(elifeUtils.invertPxString('0')).to.equal('0');
+    });
+
+  });
+
 });

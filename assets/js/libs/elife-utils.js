@@ -124,6 +124,22 @@ module.exports = () => {
     });
   }
 
+  function _getValueFromPxString(pxString) {
+    if (pxString === '0') {
+      return 0;
+    }
+
+    return parseInt(pxString.match(/([-0-9.]+)px/)[1], 10);
+  }
+
+  function _getZeroAwarePxStringFromValue(value) {
+    if (value === 0) {
+      return '' + value;
+    }
+
+    return value + 'px';
+  }
+
   /**
    * Add a quantity to a px amount expressed as a string, and return new string with updated value.
    *
@@ -134,19 +150,9 @@ module.exports = () => {
    * @returns {string} The modified value, as a string, e.g.: '105px'
    */
   function adjustPxString(pxString, adjustment) {
-    let originalSize;
-    if (pxString === '0') {
-      originalSize = 0;
-    } else {
-      originalSize = parseInt(pxString.match(/([-0-9.]+)px/)[1], 10);
-    }
-
-    let newSize = originalSize + adjustment;
-    if (newSize === 0) {
-      return '' + newSize;
-    }
-
-    return newSize + 'px';
+    let originalSize = _getValueFromPxString(pxString);
+    let adjustedSize = originalSize + adjustment;
+    return _getZeroAwarePxStringFromValue(adjustedSize);
   }
 
   /**
@@ -158,9 +164,9 @@ module.exports = () => {
    * @returns {string} The modified value, as a string, e.g.: '-97px'
    */
   function invertPxString(pxString) {
-    let originalSize = parseInt(pxString.match(/([-0-9.]+)px/)[1], 10);
-    let newSize = originalSize * -1;
-    return newSize + 'px';
+    let originalSize = _getValueFromPxString(pxString);
+    let adjustedSize = originalSize * -1;
+    return _getZeroAwarePxStringFromValue(adjustedSize);
   }
 
   /**

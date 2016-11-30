@@ -281,7 +281,8 @@ gulp.task('fonts:watch', () => {
 });
 
 gulp.task('js:watch', () => {
-  gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['test']);
+  // gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['test']);
+  gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['js']);
 });
 
 // Task sets
