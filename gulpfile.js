@@ -5,45 +5,45 @@
  *  Packages
  *************************************/
 
-const gulp              = require('gulp');
-const compass           = require('gulp-compass');
-const minimist          = require('minimist');
-const del               = require('del');
-const rename            = require('gulp-rename');
-const sass              = require('gulp-sass');
 const autoprefixer      = require('gulp-autoprefixer');
-const sassGlob          = require('gulp-sass-glob');
-const postcss           = require('gulp-postcss');
-const syntax_scss       = require('postcss-scss');
-const reporter          = require('postcss-reporter');
-const stylelint         = require('stylelint');
-const sourcemaps        = require('gulp-sourcemaps');
-const imagemin          = require('gulp-imagemin');
-const jshint            = require('gulp-jshint');
-const jscs              = require('gulp-jscs');
-const source            = require('vinyl-source-stream');
-const buffer            = require('vinyl-buffer');
-const glob              = require('glob');
-const es                = require('event-stream');
-const browserify        = require('browserify');
 const babel             = require('babelify');
-const uglify            = require('gulp-uglify');
-const mochaPhantomjs    = require('gulp-mocha-phantomjs');
-// const watchify          = require('watchify');
+const browserify        = require('browserify');
 const browserSync       = require('browser-sync');
-const express           = require('express');
-const gutil             = require('gulp-util');
+const buffer            = require('vinyl-buffer');
+const compass           = require('gulp-compass');
 const concat            = require('gulp-concat');
+const del               = require('del');
+const es                = require('event-stream');
+const express           = require('express');
+const glob              = require('glob');
+const gulp              = require('gulp');
+const gutil             = require('gulp-util');
+const imagemin          = require('gulp-imagemin');
+const jscs              = require('gulp-jscs');
+const jshint            = require('gulp-jshint');
+const minimist          = require('minimist');
+const mochaPhantomjs    = require('gulp-mocha-phantomjs');
+const postcss           = require('gulp-postcss');
+const rename            = require('gulp-rename');
+const reporter          = require('postcss-reporter');
+const sass              = require('gulp-sass');
+const sassGlob          = require('gulp-sass-glob');
+const source            = require('vinyl-source-stream');
+const sourcemaps        = require('gulp-sourcemaps');
+const stylelint         = require('stylelint');
+const syntax_scss       = require('postcss-scss');
+const uglify            = require('gulp-uglify');
+// const watchify          = require('watchify');
 
 const js3rdPartySource = './assets/js/libs/third-party/**/*.js';
 const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource];
 // TODO: Refactor dir structure to be less confusing: 'source' in the dest path?!
 const jsDest = './source/assets/js';
 
-var options = minimist(process.argv);
-var environment = options.environment || 'development';
+let options = minimist(process.argv);
+let environment = options.environment || 'development';
 
-var server;
+let server;
 
 /*************************************
  *  Tasks
@@ -89,7 +89,7 @@ gulp.task('buildStyleFiles', ['sass:lint'], () => {
 
 gulp.task('generateAllStyles', ['sass:lint'], () => {
 
-  var options = environment === 'production' ? {outputStyle: 'compressed'} : null;
+  let options = environment === 'production' ? {outputStyle: 'compressed'} : null;
 
   return gulp.src('assets/sass/build.scss')
       .pipe(sourcemaps.init())
@@ -281,7 +281,7 @@ gulp.task('fonts:watch', () => {
 });
 
 gulp.task('js:watch', () => {
-  gulp.watch('assets/js/**/*', ['js']);
+  gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['test']);
 });
 
 // Task sets
@@ -301,7 +301,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/articlesection.html'});
+    browserSync({proxy: 'localhost:8080', startPath: 'test/fragmenthandler.html'});
   } else {
     return gutil.noop;
   }

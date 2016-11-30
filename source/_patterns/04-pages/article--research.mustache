@@ -1,4 +1,4 @@
-<div class="global-wrapper">
+<div class="global-wrapper" data-behaviour="FragmentHandler">
   <div class="global-inner">
     {{#siteHeader}}
       {{> organisms-site-header }}
@@ -28,7 +28,7 @@
               {{/viewSelector}}
             </div>
 
-            <div class="grid__item large--six-twelfths blg-pad-top-medium">
+            <div class="grid__item large--six-twelfths blg-pad-top-medium" data-behaviour="FragmentHandler">
 
               {{#articleSections}}
                 {{> molecules-article-section }}
