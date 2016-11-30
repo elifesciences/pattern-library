@@ -83,4 +83,43 @@ describe('The eLife utils library', function () {
 
   });
 
+  describe('its uniqueIds object', function () {
+    let uIds;
+
+    beforeEach(function () {
+      uIds = elifeUtils.uniqueIds;
+    });
+
+    it('keeps track of assigned unique ids', function () {
+      expect(uIds.used).to.have.length(0);
+      let newId = uIds.get();
+      expect(uIds.used.indexOf(newId)).to.equal(0);
+      expect(uIds.used).to.have.length(1);
+    });
+
+    describe('its get method', function () {
+
+      it('always returns a string with the specified prefix', function () {
+        let expectedPrefix = 'iAmThePrefix';
+        for (let i = 0; i < 10; i +=1) {
+          expect(uIds.get(expectedPrefix).indexOf(expectedPrefix)).to.equal(0);
+        }
+      });
+
+    });
+
+    describe('its isValid method', function () {
+
+      xit('it returns false if a pre-existing value is attempted to be duplicated');
+
+      xit('it returns false if a component-unique value already exists in the document');
+
+      xit('returns true for a component-unique value when no document is supplied');
+
+      xit('returns true for a value that is unique in both the component and the supplied document');
+
+    });
+
+  });
+
 });
