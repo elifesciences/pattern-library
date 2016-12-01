@@ -108,15 +108,40 @@ describe('The eLife utils library', function () {
 
     });
 
-    describe('its isValid method', function () {
+    describe('isValid method', function () {
 
-      xit('it returns false if a pre-existing value is attempted to be duplicated');
+      it('returns false if a pre-existing value is attempted to be duplicated', function () {
+        uIds.used = ['usedValue'];
+        expect(uIds.isValid('usedValue')).to.be.false;
+      });
 
-      xit('it returns false if a component-unique value already exists in the document');
+      it('returns false if a component-unique value already exists in the document', function () {
+        let idInDoc = 'alreadyInTheDoc';
+        let docMock = {
+          querySelector: function (selector) {
+            return selector === '#' + idInDoc;
+          }
+        };
+        uIds.used = [];
+        expect(uIds.isValid(idInDoc, docMock)).to.be.false;
 
-      xit('returns true for a component-unique value when no document is supplied');
+      });
 
-      xit('returns true for a value that is unique in both the component and the supplied document');
+      it('returns true for a component-unique value when no document is supplied', function () {
+        uIds.used = [];
+        expect(uIds.isValid('uniqueId')).to.be.true;
+      });
+
+      it('returns true for a value that is unique in both the component and the supplied document',
+      function () {
+        let docMock = {
+          querySelector: function () {
+            return null;
+          }
+        };
+        uIds.used = [];
+        expect(uIds.isValid('uniqueId', docMock)).to.be.true;
+      });
 
     });
 
