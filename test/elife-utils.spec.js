@@ -12,7 +12,7 @@ describe('The eLife utils library', function () {
     expect(elifeUtils).to.exist;
   });
 
-  describe('its adjustPxString method', function () {
+  describe('adjustPxString method', function () {
 
     it('can add a numerical value to a px string, returning adjusted value as a px string',
     function () {
@@ -51,7 +51,7 @@ describe('The eLife utils library', function () {
 
   });
 
-  describe('its invertPxString method', function () {
+  describe('invertPxString method', function () {
 
     it('can mathematically invert a positive px value', function () {
       expect(elifeUtils.invertPxString('100px')).to.equal('-100px');
@@ -67,7 +67,7 @@ describe('The eLife utils library', function () {
 
   });
 
-  describe('its isHighDpr method', function () {
+  describe('isHighDpr method', function () {
 
     it('returns true if device pixel ratio is at least 2', function () {
       expect(elifeUtils.isHighDpr({ devicePixelRatio: 2 })).to.be.true;
@@ -83,7 +83,7 @@ describe('The eLife utils library', function () {
 
   });
 
-  describe('its uniqueIds object', function () {
+  describe('uniqueIds object', function () {
     let uIds;
 
     beforeEach(function () {
@@ -97,7 +97,7 @@ describe('The eLife utils library', function () {
       expect(uIds.used).to.have.length(1);
     });
 
-    describe('its get method', function () {
+    describe('get method', function () {
 
       it('always returns a string with the specified prefix', function () {
         let expectedPrefix = 'iAmThePrefix';
