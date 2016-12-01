@@ -113,15 +113,20 @@ module.exports = () => {
    */
   function updateElementTranslate($el, offset) {
     if (!($el instanceof HTMLElement && Array.isArray(offset))) {
-      return;
+      return false;
     }
 
     let props = ['webkitTransform', 'mozTransform', 'msTransform', 'oTransform', 'transform'];
-    let offsetX = offset[0];
-    let offsetY = offset[1] || 0;
+
+    // Okay to have 0px not 0 here as a 0 value is represented as 0px within the transform property.
+    let offsetX = offset[0] + 'px';
+    let offsetY = offset[1] === undefined ? '0px' : offset[1] + 'px';
 
     props.forEach((prop) => {
-      $el.style[prop] = 'translate(' + offsetX + ', ' + offsetY + ')';
+      // Only set the vendor prefixed properties where they are supported
+      if ($el.style[prop] !== undefined) {
+        $el.style[prop] = 'translate(' + offsetX + ', ' + offsetY + ')';
+      }
     });
   }
 

@@ -147,4 +147,63 @@ describe('The eLife utils library', function () {
 
   });
 
+  describe('updateElementTranslate method', function () {
+
+    let updtElTrans;
+
+    beforeEach(function () {
+      updtElTrans = elifeUtils.updateElementTranslate;
+    });
+
+    it('returns false if not passed an HTMLElement', function () {
+      expect(updtElTrans({}, [0, 0])).to.be.false;
+    });
+
+    it('returns false if not passed an array', function () {
+      expect(updtElTrans(document.createElement('div'), '')).to.be.false;
+    });
+
+    it('does not return false if passed an HTMLElement and an array', function () {
+      expect(updtElTrans(document.createElement('div'), [0, 0])).not.to.be.false;
+    });
+
+    it('when it does not return false, the expected property values are set on the HTMLElement',
+       function () {
+      let deltas = [
+        [15, 15],
+        [15, -15],
+        [-15, 15],
+        [15, 0],
+        [0, 15],
+        [-15, 0],
+        [0, -15],
+        [0],
+        [15],
+        [-15]
+      ];
+
+      // Test will probably run under headless webkit, but allow for other user agents
+      let properties = [
+        'webkitTransform',
+        'mozTransform',
+        'msTransform',
+        'oTransform',
+        'transform'
+      ];
+
+      deltas.forEach(function (delta) {
+        let deltaX = delta[0] + 'px';
+        let deltaY = delta[1] === undefined ? '0px' : delta[1] + 'px';
+        let $el = document.createElement('div');
+        updtElTrans($el, delta);
+        properties.forEach(function (property) {
+          if ($el.style[property] !== undefined) {
+            expect($el.style[property]).to.equal('translate(' + deltaX + ', ' + deltaY + ')');
+          }
+        });
+      });
+    });
+
+  });
+
 });
