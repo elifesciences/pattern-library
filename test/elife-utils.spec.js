@@ -339,4 +339,57 @@ describe('The eLife utils library', function () {
 
   });
 
+  describe('areElementsNested method', function () {
+
+    let areNested = elifeUtils.areElementsNested;
+    let $siblingA;
+    let $siblingB;
+    let $parent;
+    let $grandParent;
+
+    beforeEach(function () {
+      $siblingA = document.createElement('div');
+      $siblingB = document.createElement('div');
+
+      $parent = document.createElement('div');
+      $parent.appendChild($siblingA);
+      $parent.appendChild($siblingB);
+
+      $grandParent = document.createElement('div');
+      $grandParent.appendChild($parent);
+      document.querySelector('body').appendChild($grandParent);
+    });
+
+    afterEach(function () {
+      $parent.parentNode.removeChild($parent);
+    });
+
+    it('returns false if both arguments are not a Node', function () {
+      expect(areNested({}, {})).to.be.false;
+      expect(areNested(document.createElement('div'), {})).to.be.false;
+      expect(areNested({}, document.createElement('div'))).to.be.false;
+    });
+
+    it('returns false if the first argument is a sibling of the second', function () {
+      expect(areNested($siblingA, $siblingB)).to.be.false;
+    });
+
+    it('returns false if the first argument is a child of the second', function () {
+      expect(areNested($siblingA, $parent)).to.be.false;
+    });
+
+    it('returns false if the first argument is a non-child descendent of the second', function () {
+      expect(areNested($siblingA, $grandParent)).to.be.false;
+    });
+
+    it('returns true if the first argument is the parent of the second', function () {
+      expect(areNested($parent, $siblingA)).to.be.true;
+    });
+
+    it('returns true if the first argument is a non-parent ancestor of the second', function () {
+      expect(areNested($grandParent, $siblingA)).to.be.true;
+    });
+
+  });
+
 });
