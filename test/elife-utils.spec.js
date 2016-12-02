@@ -159,41 +159,81 @@ describe('The eLife utils library', function () {
       expect(updtElTrans(document.createElement('div'), [0, 0])).not.to.be.false;
     });
 
-    it('when it does not return false, the expected property values are set on the HTMLElement',
-    function () {
-      let deltas = [
-        [15, 15],
-        [15, -15],
-        [-15, 15],
-        [15, 0],
-        [0, 15],
-        [-15, 0],
-        [0, -15],
-        [0],
-        [15],
-        [-15]
-      ];
+    describe('when it does not return false', function () {
 
-      // Test will probably run under headless webkit, but allow for other user agents
-      let properties = [
-        'webkitTransform',
-        'mozTransform',
-        'msTransform',
-        'oTransform',
-        'transform'
-      ];
+      let properties;
 
-      deltas.forEach(function (delta) {
-        let deltaX = delta[0] + 'px';
-        let deltaY = delta[1] === undefined ? '0px' : delta[1] + 'px';
-        let $el = document.createElement('div');
-        updtElTrans($el, delta);
-        properties.forEach(function (property) {
-          if ($el.style[property] !== undefined) {
-            expect($el.style[property]).to.equal('translate(' + deltaX + ', ' + deltaY + ')');
-          }
-        });
+      beforeEach(function () {
+        // Test will probably run under headless webkit, but allow for other user agents
+        properties = [
+          'webkitTransform',
+          'mozTransform',
+          'msTransform',
+          'oTransform',
+          'transform'
+        ];
+
+
       });
+
+      it('the expected property values are set on the HTMLElement when supplied as numbers',
+      function() {
+        let deltas = [
+          [15, 15], [15, -15], [-15, 15], [15, 0], [0, 15], [-15, 0], [0, -15], [0], [15], [-15]
+        ];
+
+        deltas.forEach(function (delta) {
+          let deltaX = delta[0] + 'px';
+          let deltaY = delta[1] ? delta[1] + 'px' : '0px';
+
+          let $el = document.createElement('div');
+          updtElTrans($el, delta);
+          properties.forEach(function (property) {
+            if ($el.style[property] !== undefined) {
+              expect($el.style[property]).to.equal('translate(' + deltaX + ', ' + deltaY + ')');
+            }
+          });
+
+        });
+
+      });
+
+      it('the expected property values are set on the HTMLElement when supplied as strings',
+         function () {
+           let deltas = [
+
+             ['15px', '15px'], ['15px', '-15px'], ['-15px', '15px'], ['15px', '0px'], ['15px', '0'],
+
+             ['0px', '15px'], ['0', '15px'], ['-15px', '0px'], ['-15px', '0'], ['0px', '-15px'],
+
+             ['0', '-15px'], ['0px'], ['0'], ['15px'], ['-15px'],
+           ];
+
+           let _getDeltaY = function _getDeltaY(value) {
+             if (!!value) {
+               if (value.indexOf('px') === -1) {
+                 return value + 'px';
+               }
+
+               return value;
+             }
+
+             return '0px';
+           };
+
+           deltas.forEach(function (delta) {
+             let deltaX = delta[0].indexOf('px') > -1 ? delta[0] : delta[0] + 'px';
+             let deltaY = _getDeltaY(delta[1]);
+             let $el = document.createElement('div');
+             updtElTrans($el, delta);
+             properties.forEach(function (property) {
+               if ($el.style[property] !== undefined) {
+                 expect($el.style[property]).to.equal('translate(' + deltaX + ', ' + deltaY + ')');
+               }
+             });
+           });
+         });
+
     });
 
   });

@@ -121,12 +121,25 @@ module.exports = () => {
       return false;
     }
 
+    function calcOffset(value) {
+      if (!value) {
+        return '0px';
+      }
+
+      if (typeof value === 'number') {
+        return value + 'px';
+      }
+
+      if (typeof value === 'string') {
+        value += 'px';
+        return value.replace(/((px)+)$/, 'px');
+      }
+    }
+
+    let offsetX = calcOffset(offset[0]);
+    let offsetY = calcOffset(offset[1]);
+
     let props = ['webkitTransform', 'mozTransform', 'msTransform', 'oTransform', 'transform'];
-
-    // Okay to have 0px not 0 here as a 0 value is represented as 0px within the transform property.
-    let offsetX = offset[0] + 'px';
-    let offsetY = offset[1] === undefined ? '0px' : offset[1] + 'px';
-
     props.forEach((prop) => {
       // Only set the vendor prefixed properties where they are supported
       if ($el.style[prop] !== undefined) {
