@@ -2,8 +2,6 @@
 
 let expect = chai.expect;
 let spy = sinon.spy;
-
-// load in component(s) to be tested
 let elifeUtils = require('../assets/js/libs/elife-utils')();
 
 describe('The eLife utils library', function () {
@@ -23,31 +21,30 @@ describe('The eLife utils library', function () {
 
     it('can subtract a numerical value from a px string, returning adjusted value as a px string',
     function () {
-       expect(elifeUtils.adjustPxString('203px', -3)).to.equal('200px');
-       expect(elifeUtils.adjustPxString('1px', -500)).to.equal('-499px');
-       expect(elifeUtils.adjustPxString('-1000px', -200)).to.equal('-1200px');
+      expect(elifeUtils.adjustPxString('203px', -3)).to.equal('200px');
+      expect(elifeUtils.adjustPxString('1px', -500)).to.equal('-499px');
+      expect(elifeUtils.adjustPxString('-1000px', -200)).to.equal('-1200px');
      });
 
     it('can add a numerical value to a "0" string, returning adjusted value as a px string',
-     function () {
-       expect(elifeUtils.adjustPxString('0', 25)).to.equal('25px');
-     });
+    function () {
+      expect(elifeUtils.adjustPxString('0', 25)).to.equal('25px');
+    });
 
     it('can subtract a numerical numerical value from a "0" string, returning adjusted value as a px string',
-     function () {
-       expect(elifeUtils.adjustPxString('0', -25)).to.equal('-25px');
-     });
-
+    function () {
+      expect(elifeUtils.adjustPxString('0', -25)).to.equal('-25px');
+    });
 
     it('can add a numerical value to a px string, returning a "0" string correctly',
-     function () {
-       expect(elifeUtils.adjustPxString('-100px', 100)).to.equal('0');
-     });
+    function () {
+      expect(elifeUtils.adjustPxString('-100px', 100)).to.equal('0');
+    });
 
     it('can subtract a numerical value from a px string, returning a "0" string correctly',
-       function () {
-         expect(elifeUtils.adjustPxString('100px', -100)).to.equal('0');
-       });
+    function () {
+      expect(elifeUtils.adjustPxString('100px', -100)).to.equal('0');
+    });
 
   });
 
@@ -92,15 +89,14 @@ describe('The eLife utils library', function () {
 
     it('keeps track of assigned unique ids', function () {
       expect(uIds.used).to.have.length(0);
-      let newId = uIds.get();
-      expect(uIds.used.indexOf(newId)).to.equal(0);
+      expect(uIds.used.indexOf(uIds.get())).to.equal(0);
       expect(uIds.used).to.have.length(1);
     });
 
     describe('get method', function () {
 
       it('always returns a string with the specified prefix', function () {
-        let expectedPrefix = 'iAmThePrefix';
+        let expectedPrefix = 'prefix';
         for (let i = 0; i < 10; i +=1) {
           expect(uIds.get(expectedPrefix).indexOf(expectedPrefix)).to.equal(0);
         }
@@ -149,18 +145,14 @@ describe('The eLife utils library', function () {
 
   describe('updateElementTranslate method', function () {
 
-    let updtElTrans;
-
-    beforeEach(function () {
-      updtElTrans = elifeUtils.updateElementTranslate;
-    });
+    let updtElTrans = elifeUtils.updateElementTranslate;
 
     it('returns false if not passed an HTMLElement', function () {
       expect(updtElTrans({}, [0, 0])).to.be.false;
     });
 
     it('returns false if not passed an array', function () {
-      expect(updtElTrans(document.createElement('div'), '')).to.be.false;
+      expect(updtElTrans(document.createElement('div'), 'not-an-array')).to.be.false;
     });
 
     it('does not return false if passed an HTMLElement and an array', function () {
@@ -168,7 +160,7 @@ describe('The eLife utils library', function () {
     });
 
     it('when it does not return false, the expected property values are set on the HTMLElement',
-       function () {
+    function () {
       let deltas = [
         [15, 15],
         [15, -15],
@@ -202,6 +194,107 @@ describe('The eLife utils library', function () {
           }
         });
       });
+    });
+
+  });
+
+  describe('buildElement method', function () {
+
+    let buildEl = elifeUtils.buildElement;
+
+    it('creates & returns an instance of the named HTML element', function () {
+      let $el = buildEl('div');
+      expect($el instanceof HTMLElement).to.be.true;
+      expect($el.tagName).to.equal('DIV');
+    });
+
+    it('applies the specified CSS classes to the returned HTML element', function () {
+      let classes = ['expected-css-class-1', 'expected-css-class-2'];
+      let $el = buildEl('div', classes);
+      expect($el.classList.contains('expected-css-class-1')).to.be.true;
+      expect($el.classList.contains('expected-css-class-2')).to.be.true;
+      expect($el.classList).to.have.length(2);
+    });
+
+    it('puts specified text inside the element, if supplied', function () {
+      let $el = buildEl('div', [], 'Expected text');
+      expect($el.innerHTML).equals('Expected text');
+    });
+
+    describe('may specify a parent', function () {
+
+      let $parent;
+      let parentId;
+
+      beforeEach(function () {
+        $parent = document.createElement('div');
+        parentId = 'theParent';
+        $parent.id = parentId;
+        document.querySelector('body').appendChild($parent);
+      });
+
+      afterEach(function () {
+        document.querySelector('#' + parentId).parentNode
+                .removeChild(document.querySelector('#' + parentId));
+      });
+
+      it('attaches the new element to a supplied parent element', function () {
+        let $el = buildEl('div', [], '', $parent);
+        expect($el.parentNode.id).equals(parentId);
+      });
+
+      it('attaches the new element to a parent element whose selector is supplied', function () {
+        let $el = buildEl('div', [], '', '#' + parentId);
+        expect($el.parentNode.id).equals(parentId);
+      });
+
+      describe('may specify a following sibling', function () {
+
+        let $followingSibling;
+        let followingSiblingId;
+
+        beforeEach(function () {
+          $followingSibling = document.createElement('div');
+          followingSiblingId = 'theFollowingSibling';
+          $followingSibling.id = followingSiblingId;
+          $parent.appendChild($followingSibling);
+        });
+
+        it('attaches the new element before a supplied following sibling element', function () {
+          let $el = buildEl('div', [], '', $parent, $followingSibling);
+          expect($el.nextElementSibling.id).equals(followingSiblingId);
+        });
+
+        it('attaches the new element before a following sibling element whose selector is supplied',
+        function () {
+          let $el = buildEl('div', [], '', $parent, '#' + followingSiblingId);
+          expect($el.nextElementSibling.id).equals(followingSiblingId);
+        });
+
+      });
+
+      describe('may specify the new element to be the first child of a parent', function () {
+
+        it('when the parent has no children', function () {
+          buildEl('div', ['new-el'], '', $parent, true);
+          expect($parent.firstElementChild.classList.contains('new-el')).to.be.true;
+        });
+
+        it('when the parent has one pre-existing child', function () {
+          $parent.appendChild(document.createElement('div'));
+          buildEl('div', ['new-el'], '', $parent, true);
+          expect($parent.firstElementChild.classList.contains('new-el')).to.be.true;
+        });
+
+        it('when the parent has multiple pre-existing children', function () {
+          $parent.appendChild(document.createElement('div'));
+          $parent.appendChild(document.createElement('div'));
+          buildEl('div', ['new-el'], '', $parent, true);
+          expect($parent.firstElementChild.classList.contains('new-el')).to.be.true;
+        });
+
+      });
+
     });
 
   });

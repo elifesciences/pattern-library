@@ -36,18 +36,23 @@ module.exports = () => {
       }
     }());
 
-    cssClasses.forEach(cssClass => {
-      $el.classList.add(cssClass);
-    });
+    if (Array.isArray(cssClasses)) {
+      cssClasses.forEach(cssClass => {
+        $el.classList.add(cssClass);
+      });
+    }
 
     if (textContent) {
       $el.innerHTML = textContent;
     }
 
-    if (!!$parent && !!$followingSibling) {
-      $parent.insertBefore($el, $followingSibling);
-    } else {
-      $parent.appendChild($el);
+    if (!!$parent) {
+      // TODO: Handle what happens if following sibling is not a child of parent
+      if (!!$followingSibling) {
+        $parent.insertBefore($el, $followingSibling);
+      } else {
+        $parent.appendChild($el);
+      }
     }
 
     return $el;
