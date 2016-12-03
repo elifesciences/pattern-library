@@ -281,7 +281,8 @@ gulp.task('fonts:watch', () => {
 });
 
 gulp.task('js:watch', () => {
-  gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['test']);
+  // gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['test']);
+  gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['js']);
 });
 
 // Task sets
@@ -301,7 +302,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/fragmenthandler.html'});
+    browserSync({proxy: 'localhost:8080', startPath: 'test/elife-utils.html'});
   } else {
     return gutil.noop;
   }

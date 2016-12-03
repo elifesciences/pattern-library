@@ -36,18 +36,23 @@ module.exports = () => {
       }
     }());
 
-    cssClasses.forEach(cssClass => {
-      $el.classList.add(cssClass);
-    });
+    if (Array.isArray(cssClasses)) {
+      cssClasses.forEach(cssClass => {
+        $el.classList.add(cssClass);
+      });
+    }
 
     if (textContent) {
       $el.innerHTML = textContent;
     }
 
-    if (!!$parent && !!$followingSibling) {
-      $parent.insertBefore($el, $followingSibling);
-    } else {
-      $parent.appendChild($el);
+    if (!!$parent) {
+      // TODO: Handle what happens if following sibling is not a child of parent
+      if (!!$followingSibling) {
+        $parent.insertBefore($el, $followingSibling);
+      } else {
+        $parent.appendChild($el);
+      }
     }
 
     return $el;
@@ -90,7 +95,8 @@ module.exports = () => {
         var _prefix = '' + prefix || 'default_';
         var random = ('' + Math.random()).replace(/\./, '');
         var candidate = _prefix + random;
-        if (this.isValid(candidate)) {
+        if (this.isValid(candidate, document)) {
+          this.used.push(candidate);
           return candidate;
         }
 
@@ -112,16 +118,50 @@ module.exports = () => {
    */
   function updateElementTranslate($el, offset) {
     if (!($el instanceof HTMLElement && Array.isArray(offset))) {
-      return;
+      return false;
     }
 
-    let props = ['webkitTransform', 'mozTransform', 'msTransform', 'oTransform', 'transform'];
-    let offsetX = offset[0];
-    let offsetY = offset[1] || 0;
+    function calcOffset(value) {
+      if (!value) {
+        return '0px';
+      }
 
+      if (typeof value === 'number') {
+        return value + 'px';
+      }
+
+      if (typeof value === 'string') {
+        value += 'px';
+        return value.replace(/((px)+)$/, 'px');
+      }
+    }
+
+    let offsetX = calcOffset(offset[0]);
+    let offsetY = calcOffset(offset[1]);
+
+    let props = ['webkitTransform', 'mozTransform', 'msTransform', 'oTransform', 'transform'];
     props.forEach((prop) => {
-      $el.style[prop] = 'translate(' + offsetX + ', ' + offsetY + ')';
+      // Only set the vendor prefixed properties where they are supported
+      if ($el.style[prop] !== undefined) {
+        $el.style[prop] = 'translate(' + offsetX + ', ' + offsetY + ')';
+      }
     });
+  }
+
+  function _getValueFromPxString(pxString) {
+    if (pxString === '0') {
+      return 0;
+    }
+
+    return parseInt(pxString.match(/([-0-9.]+)px/)[1], 10);
+  }
+
+  function _getZeroAwarePxStringFromValue(value) {
+    if (value === 0) {
+      return '' + value;
+    }
+
+    return value + 'px';
   }
 
   /**
@@ -134,9 +174,9 @@ module.exports = () => {
    * @returns {string} The modified value, as a string, e.g.: '105px'
    */
   function adjustPxString(pxString, adjustment) {
-    let originalSize = parseInt(pxString.match(/([-0-9.]+)px/)[1], 10);
-    let newSize = originalSize + adjustment;
-    return newSize + 'px';
+    let originalSize = _getValueFromPxString(pxString);
+    let adjustedSize = originalSize + adjustment;
+    return _getZeroAwarePxStringFromValue(adjustedSize);
   }
 
   /**
@@ -148,9 +188,9 @@ module.exports = () => {
    * @returns {string} The modified value, as a string, e.g.: '-97px'
    */
   function invertPxString(pxString) {
-    let originalSize = parseInt(pxString.match(/([-0-9.]+)px/)[1], 10);
-    let newSize = originalSize * -1;
-    return newSize + 'px';
+    let originalSize = _getValueFromPxString(pxString);
+    let adjustedSize = originalSize * -1;
+    return _getZeroAwarePxStringFromValue(adjustedSize);
   }
 
   /**
@@ -172,15 +212,6 @@ module.exports = () => {
   }
 
   /**
-   * Return the current viewport width.
-   *
-   * @returns {number} The current viewport width
-   */
-  function getViewportWidth() {
-    return document.documentElement.clientWidth;
-  }
-
-  /**
    * Returns whether the display is considered to have a high pixel density ratio.
    *
    * @param window
@@ -198,7 +229,6 @@ module.exports = () => {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     buildElement: buildElement,
-    getViewportWidth: getViewportWidth,
     invertPxString: invertPxString,
     isHighDpr: isHighDpr,
     uniqueIds: uniqueIds,
