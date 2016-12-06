@@ -155,9 +155,10 @@
 
 @mixin small-typeg() {
   font-family: $font-primary;
+  font-style: normal;
   @include font-size(11);
-  line-height: 1.6363636364; /* 18px when font size is 11px  */
-  @include padding(15, "bottom");
+  line-height: 2.18181818181818; /* 24px when font size is 11px  */
+  @include padding(24, "bottom");
 }
 
 // TODO: incorporate list base style, sensitively.

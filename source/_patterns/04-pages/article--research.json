@@ -500,11 +500,15 @@
 
   "footerMenuLinks": [
     { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
     { "name": "Alerts", "url": "#" },
     { "name": "Contact", "url": "#" },
-    { "name": "Who we work with", "url": "#" },
-    { "name": "Contact", "url": "#" },
-    { "name": "Terms & Policy", "url": "#" }
+    { "name": "Terms and policy", "url": "#" },
+    { "name": "Inside eLife", "url": "#" },
+    { "name": "Monthly archive", "url": "#" },
+    { "name": "Labs", "url": "#" },
+    { "name": "For the press", "url": "#" },
+    { "name": "Resources", "url": "#" }
   ],
 
   "year": 2016

@@ -7,7 +7,8 @@
 
 .social-links__list {
   margin: 0;
-  padding: 0;
+  // px not rem as adjustment for images, not text.
+  padding: 1px 0 0;
 }
 
 .social-links__list_item {
@@ -42,6 +43,8 @@ $sitelist: facebook gplus linkedin twitter medium flickr;
   }
 
   .social-links__list_item {
-    @include padding(0 10 0 0);
+    padding: 0;
+    @include blg-spacing("right", "small", "padding");
+
   }
 }

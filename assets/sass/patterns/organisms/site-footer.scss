@@ -2,12 +2,13 @@
 
 .site-footer {
   border-top: 1px solid $color-text-dividers;
-  @include padding(24, "top");
+  @include blg-spacing("top", "medium", "padding");
   @include padding(16, "bottom");
 }
 
 .footer-navigation {
-  @include padding(0 0 30 0);
+  padding: 0;
+  @include blg-spacing("bottom", "medium", "padding");
 }
 
 .footer-navigation__list {
@@ -18,10 +19,7 @@
 }
 
 .footer-navigation__list_item {
-  font-family: $font-secondary;
-  @include font-size(12);
-  margin: 0;
-  @include padding(0 0 10 0);
+  @include label-content-typeg($color-text);
 }
 
 .footer-navigation__list_link {
@@ -61,16 +59,8 @@
 
   small {
     display: block;
-    line-height: 1.3;
   }
 
-  address {
-    font-family: $font-primary;
-    @include font-size(12);
-    font-style: normal;
-    line-height: 1.35;
-    @include padding(15, "bottom");
-  }
 }
 
 @media only screen and (min-width: #{get-rem-from-px(540)}em) {
@@ -85,19 +75,20 @@
     .grid-cell:nth-child(1) {
       float: left;
       flex: 1 50%;
+      @include padding(24, "bottom");
       width: 50%;
     }
 
     .grid-cell:nth-child(2) {
       float: right;
       flex: 1 50%;
+      @include padding(24, "bottom");
       width: 50%;
     }
 
     .grid-cell:nth-child(3) {
       clear: both;
       flex: 1 100%;
-      padding-top: 1rem;
       width: 100%;
     }
   }
