@@ -1,8 +1,10 @@
 @import "../../definitions";
 
 .email-cta {
+
   border-top: 1px solid $color-text-dividers;
-  @include padding(40 0);
+  @include blg-spacing("top", "medium");
+  @include blg-spacing("bottom", "large");
   text-align: center;
 }
 
@@ -13,12 +15,14 @@
 .email-cta__header_text {
   @include h2-typeg();
   color: $color-text;
-  margin: 0;
-  @include padding(0 0 7 0);
+  @include font-size(20);
+  line-height: 1.2; /* 24px with font-size 20px */
+  @include nospace();
 }
 
 .email-cta__sub_header {
   color: $color-text;
   @include body-typeg();
-  @include body-spacing();
+  @include nospace();
+  @include blg-spacing("bottom", "small");
 }

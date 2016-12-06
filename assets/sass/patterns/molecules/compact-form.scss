@@ -10,19 +10,19 @@
 }
 
 .compact-form__input {
-  background-color: $color-text-ui-background-hue;
-  border-bottom: 2px solid $color-text-ui-background-hue;
-  border-left: 2px solid $color-text-ui-background-hue;
-  border-radius: 5px;
+  background-color: #fff;
+  border: #{$border-width}px solid $color-text-dividers;
   border-right: none;
-  border-top: 2px solid $color-text-ui-background-hue;
+  border-radius: #{$border-radius}px;
   display: block;
   font-family: $font-secondary;
-  @include padding(12 55 12 12);
+  font-size: 1rem;
+  line-height: 1.5; /* 24px with font size of 16px */
+  @include padding(11 55 11 12);
   width: 100%;
 
   &:focus {
-    border: 2px solid $color-information;
+    border: #{$border-width}px solid $color-information;
     outline: 0;
   }
 }
@@ -34,9 +34,9 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   border: none;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 #{$border-radius}px #{$border-radius}px 0;
   color: $color-text-ui-background;
-  height: 100%;
+  @include height($button-height-regular);
   position: absolute;
   right: 0;
   top: 0;

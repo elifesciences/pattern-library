@@ -64,6 +64,10 @@ $content-header-height--medium-width-screen: 270;
 $content-header-height--wide-screen: 270;
 $content-header-height--extra-wide-screen: 325;
 
+$button-height-extra-small: 24;
+$button-height-small: 36;
+$button-height-regular: 48;
+
 // Spacing
 $teaser-spacing-top: 12;
 $teaser-spacing-bottom: 12;
@@ -89,3 +93,7 @@ $bkpt-view-selector: 800;
 // TODO: review these breakpoints:
 $bkpt-article-download-links-list: 560;
 $bkpt-pull-quote: 560;
+
+// Borders
+$border-radius: 3;
+$border-width: 1;
