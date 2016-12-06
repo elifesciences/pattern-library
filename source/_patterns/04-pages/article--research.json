@@ -388,6 +388,37 @@
     "paddingBottom": 56.25
   },
 
+  "articleMeta": {
+    "groups": [
+      {
+        "title": "Categories and tags",
+        "items": [
+          {
+            "url": "#",
+            "name": "Insight"
+          },
+          {
+            "url": "#",
+            "name": "Developmental Biology and Stem Cells"
+          },
+          {
+            "url": "#",
+            "name": "Planarian"
+          }
+        ]
+      },
+      {
+        "title": "Research organism",
+        "items": [
+          {
+            "name": "Caenorhabditis elegans"
+          }
+        ]
+      }
+    ]
+  },
+
+
 
   "pl-only-article-section-for-download-links": {
 
@@ -500,11 +531,15 @@
 
   "footerMenuLinks": [
     { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
     { "name": "Alerts", "url": "#" },
     { "name": "Contact", "url": "#" },
-    { "name": "Who we work with", "url": "#" },
-    { "name": "Contact", "url": "#" },
-    { "name": "Terms & Policy", "url": "#" }
+    { "name": "Terms and policy", "url": "#" },
+    { "name": "Inside eLife", "url": "#" },
+    { "name": "Monthly archive", "url": "#" },
+    { "name": "Labs", "url": "#" },
+    { "name": "For the press", "url": "#" },
+    { "name": "Resources", "url": "#" }
   ],
 
   "year": 2016

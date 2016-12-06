@@ -44,6 +44,10 @@
   }
 }
 
+.article-meta__group:last-child .article-meta__link_list {
+  margin-bottom: 0;
+}
+
 @media only screen and (min-width: #{get-rem-from-px(640)}rem) {
   .article-meta {
     text-align: left;

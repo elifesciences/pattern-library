@@ -76,6 +76,10 @@ small {
   @include small-typeg();
 }
 
+address {
+  @include small-typeg();
+}
+
 /*
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
