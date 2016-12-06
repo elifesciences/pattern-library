@@ -104,6 +104,7 @@
 }
 
 @mixin h4-spacing() {
+  margin: 0;
   @include padding(12, "top");
   @include padding(12, "bottom");
 }
