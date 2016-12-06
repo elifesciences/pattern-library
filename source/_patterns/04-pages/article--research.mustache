@@ -44,13 +44,15 @@
               {{/pl-only-article-section-for-download-links}}
 
               <!-- May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? -->
-              <section class="article-section">
+              {{#articleMeta}}
+                <section class="article-section">
 
-                <div class="article-section__body">
-                  {{> molecules-article-meta }}
-                </div>
+                  <div class="article-section__body">
+                    {{> molecules-article-meta }}
+                  </div>
 
-              </section>
+                </section>
+              {{/articleMeta}}
             </div>
 
           </div>
