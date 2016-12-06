@@ -16,17 +16,17 @@ module.exports = class ViewSelector {
     // matches top padding in scss
     let topSpaceWhenFixed = 30;
 
-    this.$elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
+    this.elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
     this.window.addEventListener('scroll', this.handleScroll.bind(this));
 
   }
 
   handleScroll() {
     if (this.$elm.classList.contains(this.cssFixedClassName)) {
-      if (this.window.pageYOffset < this.$elmYOffset) {
+      if (this.window.pageYOffset < this.elmYOffset) {
         this.$elm.classList.remove(this.cssFixedClassName);
       }
-    } else if (this.window.pageYOffset >= this.$elmYOffset) {
+    } else if (this.window.pageYOffset >= this.elmYOffset) {
       this.$elm.classList.add(this.cssFixedClassName);
     }
   }

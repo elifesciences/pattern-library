@@ -23,14 +23,14 @@ describe('A ViewSelector Component', function () {
       pageYOffset: 20
     };
     let _viewSelector1 = new ViewSelector($elm, windowMock);
-    _viewSelector1.$elmYOffset = 20;
+    _viewSelector1.elmYOffset = 20;
     _viewSelector1.handleScroll();
 
     let classes1 = _viewSelector1.$elm.classList;
     expect(classes1.contains('view-selector--fixed')).to.be.true;
 
     let _viewSelector2 = new ViewSelector($elm, windowMock);
-    _viewSelector2.$elmYOffset = 20;
+    _viewSelector2.elmYOffset = 20;
     _viewSelector2.handleScroll();
 
     let classes2 = _viewSelector2.$elm.classList;
@@ -44,7 +44,7 @@ describe('A ViewSelector Component', function () {
       pageYOffset: 10
     };
     let _viewSelector = new ViewSelector($elm, windowMock);
-    _viewSelector.$elmYOffset = 20;
+    _viewSelector.elmYOffset = 20;
     _viewSelector.handleScroll();
 
     let classes = _viewSelector.$elm.classList;
