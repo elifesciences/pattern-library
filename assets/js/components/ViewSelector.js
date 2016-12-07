@@ -16,19 +16,33 @@ module.exports = class ViewSelector {
     // matches top padding in scss
     let topSpaceWhenFixed = 30;
 
-    this.$elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
+    this.elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
     this.window.addEventListener('scroll', this.handleScroll.bind(this));
 
   }
 
   handleScroll() {
+
+    // If it's position is fixed
     if (this.$elm.classList.contains(this.cssFixedClassName)) {
-      if (this.window.pageYOffset < this.$elmYOffset) {
+
+      let bottomOfMain = this.doc.querySelector('[role="main"]').getBoundingClientRect().bottom;
+
+      // Allow it to scroll again if it could keep its position & not scroll off top of screen
+      if (this.window.pageYOffset < this.elmYOffset) {
         this.$elm.classList.remove(this.cssFixedClassName);
+
+      // Allow it to scroll again if it would otherwise over-/under-lay following element
+      } else if (bottomOfMain < this.$elm.offsetHeight) {
+        let amountToNudgeUp = bottomOfMain - this.$elm.offsetHeight;
+        this.$elm.style.top = amountToNudgeUp + 'px';
       }
-    } else if (this.window.pageYOffset >= this.$elmYOffset) {
+
+    // Otherwise fix its position if it would otherwise scroll off the top of the screen
+    } else if (this.window.pageYOffset >= this.elmYOffset) {
       this.$elm.classList.add(this.cssFixedClassName);
     }
+
   }
 
 };
