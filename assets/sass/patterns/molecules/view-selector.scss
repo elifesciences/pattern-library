@@ -1,5 +1,12 @@
 @import "../../definitions";
 
+@mixin local-item-style {
+  font-family: $font-secondary;
+  @include font-size(14);
+  line-height: 1.7142857143; /* 24px with font size of 14px */
+  @include margin(0 0 12 0);
+}
+
 .view-selector__list {
   background-color: #fff;
   list-style: none;
@@ -8,11 +15,7 @@
 }
 
 .view-selector__list-item {
-  font-family: $font-secondary;
-  @include font-size(14);
-  line-height: 24px;
-  margin: 0;
-  @include margin(0 0 12 0);
+  @include local-item-style();
 }
 
 .view-selector__link {
@@ -31,7 +34,6 @@
 }
 
 .view-selector__jump_links_header {
-
   display: block;
   @include font-size(14);
   font-weight: 700;
@@ -47,16 +49,16 @@
     @include arrow("down", $arrow-size);
     @include margin($arrow-size, "right");
     @include margin($arrow-size * -4, "left");
-    @include margin(9, "top");
+    @include margin($arrow-size * 1.5, "top");
     display: block;
     float: left;
   }
 
   &--closed:before {
     @include arrow("right", $arrow-size);
-    @include margin(5, "top");
+    @include margin($arrow-size, "top");
     @include margin($arrow-size * -3, "left");
-    @include margin(5, "top");
+    @include margin($arrow-size, "top");
   }
 
 }
@@ -68,11 +70,7 @@
 }
 
 .view-selector__jump_link_item {
-  font-family: $font-secondary;
-  @include font-size(14);
-  line-height: 24px;
-  margin: 0;
-  @include padding(0 0 12 0);
+  @include local-item-style();
 }
 
 .view-selector__jump_link {
@@ -94,26 +92,21 @@
   }
 
   .view-selector__list-item {
+    border: 1px solid $color-text-dividers;
+    flex: 1 50%;
     margin: 0;
+    text-align: center;
   }
 
   /** Selector nesting here because otherwise this all gets horrible quickly **/
   .view-selector__list-item--article {
-    border-bottom: 1px solid $color-text-dividers;
-    border-left: 1px solid $color-text-dividers;
-    border-top: 1px solid $color-text-dividers;
-    border-radius: 4px 0 0 4px;
-    flex: 1 50%;
-    text-align: center;
+    border-right: none;
+    @include border-radius-simple(4, 0, 0, 4);
   }
 
   .view-selector__list-item--figures {
-    border-bottom: 1px solid $color-text-dividers;
-    border-right: 1px solid $color-text-dividers;
-    border-top: 1px solid $color-text-dividers;
-    border-radius: 0 4px 4px 0;
-    flex: 1 50%;
-    text-align: center;
+    border-left: none;
+    @include border-radius-simple(0, 4, 4, 0);
   }
 
   .view-selector__list-item--active {
@@ -148,16 +141,20 @@
 @media only screen and (min-width: #{get-rem-from-px($bkpt-view-selector)}em) {
 
   // Applied with js to stop the selector scrolling off the top of the screen.
-  .view-selector--fixed {
+  //.view-selector--fixed {
+  .view-selector {
     // Supply what was being provided by the grid now this element has been taken out the flow.
-    margin-left: -1.6%;
-    max-width: 216px;
-    max-width: #{get-rem-from-px(216)}rem;
-    padding-left: 1.6%;
+    margin-left: -1.6vw;
+    max-width: 210px;
+    max-width: #{get-rem-from-px(210)}rem;
+    padding-left: 1.6vw ;
+    width: 16.666vw;
+  }
+
+  .view-selector--fixed {
     @include padding(30, "top");
     position: fixed;
     top: 0;
-    width: 16.666%;
   }
 
   .js .view-selector__jump_links_header:hover {

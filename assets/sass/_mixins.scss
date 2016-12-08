@@ -135,6 +135,10 @@
   @include padding(16);
 }
 
+@mixin border-radius-simple($top-left, $top-right: 0, $bottom-left: 0, $bottom-right: 0) {
+  border-radius: #{$border-radius}px;
+}
+
 @mixin arrow($direction: "up", $size: 7, $color: $color-text-ui-background--reverse) {
   border-style: solid;
   border-width: #{$size}px;
