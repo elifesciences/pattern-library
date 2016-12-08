@@ -4,7 +4,7 @@
   font-family: $font-secondary;
   @include font-size(14);
   line-height: 1.7142857143; /* 24px with font size of 14px */
-  @include padding(0 0 12 0);
+  @include margin(0 0 12 0);
 }
 
 .view-selector__list {
@@ -34,7 +34,6 @@
 }
 
 .view-selector__jump_links_header {
-
   display: block;
   @include font-size(14);
   font-weight: 700;
@@ -50,16 +49,16 @@
     @include arrow("down", $arrow-size);
     @include margin($arrow-size, "right");
     @include margin($arrow-size * -4, "left");
-    @include margin(9, "top");
+    @include margin($arrow-size * 1.5, "top");
     display: block;
     float: left;
   }
 
   &--closed:before {
     @include arrow("right", $arrow-size);
-    @include margin(5, "top");
+    @include margin($arrow-size, "top");
     @include margin($arrow-size * -3, "left");
-    @include margin(5, "top");
+    @include margin($arrow-size, "top");
   }
 
 }
@@ -94,22 +93,20 @@
 
   .view-selector__list-item {
     border: 1px solid $color-text-dividers;
+    flex: 1 50%;
     margin: 0;
+    text-align: center;
   }
 
   /** Selector nesting here because otherwise this all gets horrible quickly **/
   .view-selector__list-item--article {
     border-right: none;
-    border-radius: 4px 0 0 4px;
-    flex: 1 50%;
-    text-align: center;
+    @include border-radius-simple(4, 0, 0, 4);
   }
 
   .view-selector__list-item--figures {
     border-left: none;
-    border-radius: 0 4px 4px 0;
-    flex: 1 50%;
-    text-align: center;
+    @include border-radius-simple(0, 4, 4, 0);
   }
 
   .view-selector__list-item--active {
