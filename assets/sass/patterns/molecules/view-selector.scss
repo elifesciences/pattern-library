@@ -1,5 +1,12 @@
 @import "../../definitions";
 
+@mixin local-item-style {
+  font-family: $font-secondary;
+  @include font-size(14);
+  line-height: 1.7142857143; /* 24px with font size of 14px */
+  @include padding(0 0 12 0);
+}
+
 .view-selector__list {
   background-color: #fff;
   list-style: none;
@@ -8,11 +15,7 @@
 }
 
 .view-selector__list-item {
-  font-family: $font-secondary;
-  @include font-size(14);
-  line-height: 24px;
-  margin: 0;
-  @include margin(0 0 12 0);
+  @include local-item-style();
 }
 
 .view-selector__link {
@@ -68,11 +71,7 @@
 }
 
 .view-selector__jump_link_item {
-  font-family: $font-secondary;
-  @include font-size(14);
-  line-height: 24px;
-  margin: 0;
-  @include padding(0 0 12 0);
+  @include local-item-style();
 }
 
 .view-selector__jump_link {
@@ -145,16 +144,20 @@
 @media only screen and (min-width: #{get-rem-from-px($bkpt-view-selector)}em) {
 
   // Applied with js to stop the selector scrolling off the top of the screen.
-  .view-selector--fixed {
+  //.view-selector--fixed {
+  .view-selector {
     // Supply what was being provided by the grid now this element has been taken out the flow.
-    margin-left: -1.6%;
-    max-width: 216px;
-    max-width: #{get-rem-from-px(216)}rem;
-    padding-left: 1.6%;
+    margin-left: -1.6vw;
+    max-width: 210px;
+    max-width: #{get-rem-from-px(210)}rem;
+    padding-left: 1.6vw ;
+    width: 16.666vw;
+  }
+
+  .view-selector--fixed {
     @include padding(30, "top");
     position: fixed;
     top: 0;
-    width: 16.666%;
   }
 
   .js .view-selector__jump_links_header:hover {
