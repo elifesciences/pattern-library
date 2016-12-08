@@ -11,6 +11,9 @@ module.exports = class ViewSelector {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
+    this.$jumpLinks = this.$elm.querySelector('.view-selector__jump_links');
+    this.$jumpLinksToggle = this.$elm.querySelector('.view-selector__jump_links_header');
+
     this.cssFixedClassName = 'view-selector--fixed';
 
     // matches top padding in scss
@@ -18,7 +21,8 @@ module.exports = class ViewSelector {
 
     this.elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
     this.window.addEventListener('scroll', this.handleScroll.bind(this));
-
+    this.$jumpLinksToggle.addEventListener('click', this.toggleJumpLinks.bind(this));
+    this.toggleJumpLinks();
   }
 
   handleScroll() {
@@ -42,6 +46,13 @@ module.exports = class ViewSelector {
     } else if (this.window.pageYOffset >= this.elmYOffset) {
       this.$elm.classList.add(this.cssFixedClassName);
     }
+
+  }
+
+  toggleJumpLinks() {
+    this.$jumpLinks.classList.toggle('visuallyhidden');
+    this.$jumpLinksToggle.classList.toggle('view-selector__jump_links_header--closed');
+    this.handleScroll();
 
   }
 

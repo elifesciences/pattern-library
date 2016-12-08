@@ -32,9 +32,6 @@
 
 .view-selector__jump_links_header {
 
-  /* Making a comeback when JS is implemented */
-  // background: url("../img/icons/arrow-down.png") 2px 50% no-repeat;
-  // background: url("../img/icons/arrow-down.svg") 2px 50% no-repeat, linear-gradient(transparent, transparent);
   display: block;
   @include font-size(14);
   font-weight: 700;
@@ -42,10 +39,32 @@
   @include padding(20, "left");
 }
 
+.js .view-selector__jump_links_header {
+
+  $arrow-size: 5;
+
+  &:before {
+    @include arrow("down", $arrow-size);
+    @include margin($arrow-size, "right");
+    @include margin($arrow-size * -4, "left");
+    @include margin(9, "top");
+    display: block;
+    float: left;
+  }
+
+  &--closed:before {
+    @include arrow("right", $arrow-size);
+    @include margin(5, "top");
+    @include margin($arrow-size * -3, "left");
+    @include margin(5, "top");
+  }
+
+}
+
 .view-selector__jump_links {
   list-style: none;
   margin: 0;
-  @include padding(34, "left");
+  @include padding(20, "left");
 }
 
 .view-selector__jump_link_item {
@@ -128,7 +147,7 @@
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-view-selector)}em) {
 
-  // Applied with js to stop the selector scolling off the top of the screen.
+  // Applied with js to stop the selector scrolling off the top of the screen.
   .view-selector--fixed {
     // Supply what was being provided by the grid now this element has been taken out the flow.
     margin-left: -1.6%;
@@ -139,6 +158,10 @@
     position: fixed;
     top: 0;
     width: 16.666%;
+  }
+
+  .js .view-selector__jump_links_header:hover {
+    cursor: pointer;
   }
 
 }
