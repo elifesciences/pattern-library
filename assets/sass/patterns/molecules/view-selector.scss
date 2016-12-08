@@ -45,7 +45,7 @@
 .view-selector__jump_links {
   list-style: none;
   margin: 0;
-  @include padding(34, "left");
+  @include padding(20, "left");
 }
 
 .view-selector__jump_link_item {
