@@ -94,23 +94,20 @@
   }
 
   .view-selector__list-item {
+    border: 1px solid $color-text-dividers;
     margin: 0;
   }
 
   /** Selector nesting here because otherwise this all gets horrible quickly **/
   .view-selector__list-item--article {
-    border-bottom: 1px solid $color-text-dividers;
-    border-left: 1px solid $color-text-dividers;
-    border-top: 1px solid $color-text-dividers;
+    border-right: none;
     border-radius: 4px 0 0 4px;
     flex: 1 50%;
     text-align: center;
   }
 
   .view-selector__list-item--figures {
-    border-bottom: 1px solid $color-text-dividers;
-    border-right: 1px solid $color-text-dividers;
-    border-top: 1px solid $color-text-dividers;
+    border-left: none;
     border-radius: 0 4px 4px 0;
     flex: 1 50%;
     text-align: center;
