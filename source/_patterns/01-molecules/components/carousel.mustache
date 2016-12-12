@@ -1,4 +1,4 @@
-<div class="carousel" data-behavour="Carousel">
+<div class="carousel" data-behaviour="Carousel">
 
   <ol class="carousel__items">
 
@@ -26,8 +26,6 @@
       {{/button.text}}
       </div>
 
-      <!-- item indicator: js-only -->
-
       {{#meta}}
         {{> molecules-meta}}
       {{/meta}}
@@ -37,5 +35,14 @@
     {{/items}}
 
   </ol>
+
+  <div class="carousel__control_panel">
+    <button class="carousel__control carousel__control--previous"><span class="visuallyhidden">Previous item</span></button>
+    <ol class="carousel__control_indicators">
+      <li class="carousel__control--indicator">O O O</li>
+    </ol>
+    <button class="carousel__control carousel__control--next"><span class="visuallyhidden">Next item</span></button>
+  </div>
+
 
 </div>

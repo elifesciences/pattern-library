@@ -2,10 +2,13 @@
 
 .carousel__items {
   list-style: none;
+  @include nospace();
 }
 
 .carousel__item {
   text-align: center;
+  @include padding(0 50);
+  width: 100vw;
 }
 
 .carousel__item:nth-child(n+2) {
@@ -14,6 +17,7 @@
 
 .js .carousel__item {
   @include unhidden();
+  width: 100vw;
 }
 
 .carousel__subject_list {
@@ -68,5 +72,65 @@
 }
 
 .carousel .meta {
-  @include padding(24, "top");
+  @include blg-spacing("top", "small");
+}
+
+.js {
+
+  .carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+
+    .meta {
+      @include blg-spacing("top", "large");
+    }
+
+  }
+
+  .carousel__items {
+    position: relative;
+    transition: all 0.5s 50ms ease-in-out;
+  }
+
+  .carousel__item {
+    float: left;
+  }
+}
+
+.carousel__control_panel {
+  bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  position: absolute;
+  width: 100vw;
+}
+
+.carousel__control_indicators {
+  list-style: none;
+  @include nospace();
+}
+
+.carousel__control {
+
+  background-color: rgba(0, 0, 0, 0.5);
+  border-width: 0;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+
+  &--previous:before {
+    @include chevron("left");
+  }
+
+  &--next:before {
+    @include chevron("right");
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 1);
+  }
+
 }
