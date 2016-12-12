@@ -1,0 +1,9 @@
+@import "../../definitions";
+
+.pager {
+  @include margin(12, "bottom");
+}
+
+.pager__button--next {
+  float: right;
+}

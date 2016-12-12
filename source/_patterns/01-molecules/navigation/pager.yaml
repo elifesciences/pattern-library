@@ -1,0 +1,34 @@
+assets:
+  css:
+    - pager.css
+    - $ref: ../../00-atoms/components/button.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    previousPage:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        url:
+          type: string
+          minLength: 1
+      required:
+        - name
+    nextPage:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        url:
+          type: string
+          minLength: 1
+      required:
+        - name
+  required:
+    - previousPage
+    - nextPage

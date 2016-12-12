@@ -154,7 +154,13 @@
     }
   ],
   "pagination": {
-    "name": "Load more",
-    "uri": "#"
+    "previousPage": {
+      "url": "#",
+      "name": "Previous"
+    },
+    "nextPage": {
+      "url": "#",
+      "name": "Next"
+    }
   }
 }

@@ -15,8 +15,10 @@ schema:
       minItems: 1
       items:
         $ref: ../../01-molecules/teasers/teaser.yaml#/schema
-    loadMore:
-      $ref: ../../01-molecules/components/load-more.yaml#/schema
+    pagination:
+      oneOf:
+        - $ref: ../../01-molecules/navigation/load-more.yaml#/schema
+        - $ref: ../../01-molecules/navigation/pager.yaml#/schema
     seeMoreLink:
       $ref: ../../00-atoms/components/see-more-link.yaml#/schema
   required:

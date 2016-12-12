@@ -1,0 +1,35 @@
+<div class="pager">
+
+    {{#previousPage}}
+
+        {{#url}}
+
+            <a href="{{url}}" class="button button--default pager__button pager__button--previous">{{{name}}}</a>
+
+        {{/url}}
+
+        {{^url}}
+
+            <span class="button button--default button--inactive pager__button pager__button--previous">{{{name}}}</span>
+
+        {{/url}}
+
+    {{/previousPage}}
+
+    {{#nextPage}}
+
+        {{#url}}
+
+            <a href="{{url}}" class="button button--default pager__button pager__button--next">{{{name}}}</a>
+
+        {{/url}}
+
+        {{^url}}
+
+            <span class="button button--default button--inactive pager__button pager__button--next">{{{name}}}</span>
+
+        {{/url}}
+
+    {{/nextPage}}
+
+</div>
