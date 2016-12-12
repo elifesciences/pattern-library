@@ -1,0 +1,67 @@
+{
+  "items": [
+    {
+      "subjects": {
+        "list": [
+          {
+            "name": "Neuroscience",
+            "url": "#"
+          },
+          {
+            "name": "Cell biology",
+            "url": "#"
+          }
+        ]
+      },
+      "name": "Sensitivity vs stability in neurones",
+      "url": "#link-to-article",
+      "button": {
+        "text": "Read article",
+        "path": "#link-to-article",
+        "classes": "button--default"
+      },
+      "meta": {
+        "url": "#",
+        "text": "Research article",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 10,
+            "month": "Sep",
+            "year": 2015
+          },
+          "forMachine": "2015-09-10"
+        }
+      }
+    },
+    {
+      "subjects": {
+        "list": [
+          {
+            "name": "Genomics and evolutionary biology",
+            "url": "#"
+          }
+        ]
+      },
+      "name": "Cancer cells follow the leader",
+      "url": "#link-to-article",
+      "button": {
+        "text": "Read article",
+        "path": "#link-to-article",
+        "classes": "button--default"
+      },
+      "meta": {
+        "url": "#",
+        "text": "Research article",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 10,
+            "month": "Sep",
+            "year": 2015
+          },
+          "forMachine": "2015-09-10"
+        }
+      }
+    }
+
+  ]
+}

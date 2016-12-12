@@ -1,0 +1,72 @@
+@import "../../definitions";
+
+.carousel__items {
+  list-style: none;
+}
+
+.carousel__item {
+  text-align: center;
+}
+
+.carousel__item:nth-child(n+2) {
+  @include visuallyhidden();
+}
+
+.js .carousel__item {
+  @include unhidden();
+}
+
+.carousel__subject_list {
+  @include label-subject-typeg();
+  margin: 0;
+  @include padding(24 0);
+}
+
+.carousel__subject_list_item {
+  @include label-subject-typeg();
+  display: inline;
+  line-height: 2.18181818181818;
+  list-style-type: none;
+  padding: 0;
+
+  & .carousel__subject:after {
+    content: ", ";
+  }
+}
+
+.carousel__subject_list_item:last-child {
+
+  & .carousel__subject:after {
+    content: "";
+  }
+
+}
+
+.carousel__subject_link {
+  @include label-subject-typeg();
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+
+}
+
+.carousel__title {
+  @include h1-typeg();
+  @include padding(24 0);
+  margin-top: 0;
+}
+
+.carousel__title_link {
+  color: $color-text;
+  text-decoration: none;
+}
+
+.carousel__title_link:hover {
+  color: $color-primary;
+}
+
+.carousel .meta {
+  @include padding(24, "top");
+}

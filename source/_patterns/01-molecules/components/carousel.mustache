@@ -1,0 +1,41 @@
+<div class="carousel" data-behavour="Carousel">
+
+  <ol class="carousel__items">
+
+    {{#items}}
+
+      <li class="carousel__item">
+
+      {{#subjects}}
+        <ol class="carousel__subject_list">
+          {{#subjects.list}}
+            <li class="carousel__subject_list_item">
+              <a href="{{url}}" class="carousel__subject_link"><span class="carousel__subject">{{name}}</span></a>
+            </li>
+          {{/subjects.list}}
+        </ol>
+      {{/subjects}}
+
+      <h4 class="carousel__title"><a href="{{url}}" class="carousel__title_link">{{{name}}}</a></h4>
+
+      <div class="content-header__cta">
+      {{#button.text}}
+        {{#button}}
+          {{>atoms-button}}
+        {{/button}}
+      {{/button.text}}
+      </div>
+
+      <!-- item indicator: js-only -->
+
+      {{#meta}}
+        {{> molecules-meta}}
+      {{/meta}}
+
+    </li>
+
+    {{/items}}
+
+  </ol>
+
+</div>
