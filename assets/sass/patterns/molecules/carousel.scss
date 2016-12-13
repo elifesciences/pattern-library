@@ -2,6 +2,8 @@
 
 .carousel {
   @include height($carousel-height);
+  overflow: hidden;
+  position: relative;
 }
 
 .carousel__items {
@@ -9,25 +11,27 @@
   list-style: none;
   @include nospace();
   @include height($carousel-height);
+  width: 300vw;
+}
 
-  .li:nth-child(n+2) {
-    @include visuallyhidden();
-  }
+.carousel__item_wrapper {
+  float: left;
+  width: 100vw;
+}
 
+.carousel__item_wrapper:nth-child(n+2) {
+  @include hidden();
 }
 
 .js {
 
-  .carousel {
-    overflow: hidden;
-    position: relative;
-    width: 100vw;
-
+  .carousel__item_wrapper:nth-child(n+2) {
+    @include unhidden();
   }
 
   .carousel__items {
     position: relative;
-    transition: all 0.5s 50ms ease-in-out;
+    transition: all $transitiion-duration $transition-delay $transition-timing-function;
   }
 
 }

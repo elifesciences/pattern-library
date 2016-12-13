@@ -6,7 +6,6 @@
     display: flex;
   }
 
-  float: left;
   flex-direction: column;
   @include height($carousel-height);
   @include padding(0 50);
@@ -16,7 +15,6 @@
 }
 
 .js .carousel-item {
-  @include unhidden();
   @include height($carousel-height);
   width: 100vw;
 }
@@ -41,7 +39,7 @@
 
 .carousel-item__subject_list_item:last-child {
 
-  & .carousel__subject:after {
+  & .carousel-item__subject:after {
     content: "";
   }
 

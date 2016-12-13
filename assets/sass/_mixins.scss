@@ -77,6 +77,14 @@
   }
 }
 
+@mixin hidden() {
+  display: none;
+}
+
+@mixin unhidden($display-as: block) {
+  display: $display-as;
+}
+
 @mixin visuallyhidden() {
   border: 0;
   clip: rect(0 0 0 0);
@@ -88,7 +96,7 @@
   width: 1px;
 }
 
-@mixin unhidden() {
+@mixin visuallyunhidden() {
   clip: auto;
   height: auto;
   margin: 0;
