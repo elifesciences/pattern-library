@@ -155,6 +155,6 @@
   ],
   "pagination": {
     "name": "Load more",
-    "uri": "#"
+    "url": "#"
   }
 }
