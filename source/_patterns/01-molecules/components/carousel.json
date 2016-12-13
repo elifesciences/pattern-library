@@ -61,6 +61,39 @@
           "forMachine": "2015-09-10"
         }
       }
+    },
+    {
+      "subjects": {
+        "list": [
+          {
+            "name": "Biochemistry",
+            "url": "#linkToBiochemistry"
+          },
+          {
+            "name": "Cell biology",
+            "url": "#LinkToCellBiology"
+          }
+        ]
+      },
+      "name": "Rethinking the origins of mitochondrial architecture",
+      "url": "#link-to-article",
+      "button": {
+        "text": "Read article",
+        "path": "#link-to-article",
+        "classes": "button--default"
+      },
+      "meta": {
+        "url": "#LinkToResearchArticles",
+        "text": "Research article",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 10,
+            "month": "Sep",
+            "year": 2015
+          },
+          "forMachine": "2015-09-10"
+        }
+      }
     }
 
   ]

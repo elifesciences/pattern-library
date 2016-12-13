@@ -1,14 +1,30 @@
 @import "../../definitions";
 
+// TODO: fine tune height
+$item-height: 400;
+
+.carousel {
+  @include height($item-height);
+  border: 1px solid darkgreen;
+}
+
 .carousel__items {
   list-style: none;
   @include nospace();
 }
 
 .carousel__item {
+
+  border: 1px solid red;
+
   text-align: center;
   @include padding(0 50);
+  @include height($item-height);
   width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+
 }
 
 .carousel__item:nth-child(n+2) {
@@ -17,6 +33,7 @@
 
 .js .carousel__item {
   @include unhidden();
+  @include height($item-height);
   width: 100vw;
 }
 
@@ -72,7 +89,7 @@
 }
 
 .carousel .meta {
-  @include blg-spacing("top", "small");
+  margin-top: auto;
 }
 
 .js {
@@ -81,10 +98,6 @@
     overflow: hidden;
     position: relative;
     width: 100vw;
-
-    .meta {
-      @include blg-spacing("top", "large");
-    }
 
   }
 
@@ -96,6 +109,7 @@
   .carousel__item {
     float: left;
   }
+
 }
 
 .carousel__control_panel {
@@ -108,18 +122,29 @@
   width: 100vw;
 }
 
-.carousel__control_indicators {
+.carousel__control_switches {
   list-style: none;
   @include nospace();
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
 }
 
 .carousel__control {
 
-  background-color: rgba(0, 0, 0, 0.5);
-  border-width: 0;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  &--traverse {
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border-width: 0;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 1);
+    }
+
+  }
 
   &--previous:before {
     @include chevron("left");
@@ -129,8 +154,17 @@
     @include chevron("right");
   }
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 1);
+  &--switch {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+
+    &.active {
+      background-color: rgba(0, 0, 0, 1);
+    }
+
   }
 
 }
