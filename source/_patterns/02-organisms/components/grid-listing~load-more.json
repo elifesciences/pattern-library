@@ -1,0 +1,234 @@
+{
+  "teasers": [
+    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "eLife Lens search",
+      "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "text": "Experiment: 001",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },
+    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "eLife Lens search",
+      "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "text": "Experiment: 001",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },
+    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "eLife Lens search",
+      "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "text": "Experiment: 001",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },
+    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "eLife Lens search",
+      "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "text": "Experiment: 001",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },
+    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "eLife Lens search",
+      "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "text": "Experiment: 001",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },
+    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "eLife Lens search",
+      "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "text": "Experiment: 001",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },
+    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "eLife Lens search",
+      "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "text": "Experiment: 001",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },
+    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "eLife Lens search",
+      "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "text": "Experiment: 001",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    },
+    {
+      "rootClasses": "teaser--grid-style",
+      "url": "#",
+      "title": "eLife Lens search",
+      "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
+      "image": {
+        "defaultPath": "https://unsplash.it/250/140/",
+        "altText": "An image.",
+        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "classes": "teaser__img--prominent"
+      },
+      "footer": {
+        "meta": {
+          "text": "Experiment: 001",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 31,
+              "month": "Mar",
+              "year": 2015
+            },
+            "forMachine": "2015-03-31"
+          }
+        }
+      }
+    }
+  ],
+  "pagination": {
+    "text": "Load more",
+    "classes": "button--default button--full",
+    "path": "#"
+  }
+}
