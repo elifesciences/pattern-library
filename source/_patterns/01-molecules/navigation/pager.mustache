@@ -1,35 +1,29 @@
 <div class="pager">
 
-    {{#previousPage}}
+    {{#previousPage.url}}
 
-        {{#url}}
+        <a href="{{previousPage.url}}"
+           class="button button--default pager__button pager__button--previous">{{{previousPage.name}}}</a>
 
-            <a href="{{url}}" class="button button--default pager__button pager__button--previous">{{{name}}}</a>
+    {{/previousPage.url}}
 
-        {{/url}}
+    {{^previousPage.url}}
 
-        {{^url}}
+        <span class="button button--default button--inactive pager__button pager__button--previous">{{{previousPage.name}}}</span>
 
-            <span class="button button--default button--inactive pager__button pager__button--previous">{{{name}}}</span>
+    {{/previousPage.url}}
 
-        {{/url}}
+    {{#nextPage.url}}
 
-    {{/previousPage}}
+        <a href="{{nextPage.url}}"
+           class="button button--default pager__button pager__button--next">{{{nextPage.name}}}</a>
 
-    {{#nextPage}}
+    {{/nextPage.url}}
 
-        {{#url}}
+    {{^nextPage.url}}
 
-            <a href="{{url}}" class="button button--default pager__button pager__button--next">{{{name}}}</a>
+        <span class="button button--default button--inactive pager__button pager__button--next">{{{nextPage.name}}}</span>
 
-        {{/url}}
-
-        {{^url}}
-
-            <span class="button button--default button--inactive pager__button pager__button--next">{{{name}}}</span>
-
-        {{/url}}
-
-    {{/nextPage}}
+    {{/nextPage.url}}
 
 </div>
