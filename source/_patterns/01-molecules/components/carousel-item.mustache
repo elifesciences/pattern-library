@@ -1,0 +1,32 @@
+<div class="carousel-item" data-behaviour="BackgroundImage" {{#backgroundImage}}
+  {{#thresholdWidth}}data-threshold-width="{{thresholdWidth}}"{{/thresholdWidth}}
+     data-low-res-image-source="{{lowResImageSource}}"
+     data-high-res-image-source="{{highResImageSource}}"
+{{/backgroundImage}}>
+
+
+{{#subjects}}
+    <ol class="carousel-item__subject_list">
+      {{#subjects.list}}
+        <li class="carousel-item__subject_list_item">
+          <a href="{{url}}" class="carousel-item__subject_link"><span class="carousel-item__subject">{{name}}</span></a>
+        </li>
+      {{/subjects.list}}
+    </ol>
+  {{/subjects}}
+
+  <h4 class="carousel-item__title"><a href="{{url}}" class="carousel-item__title_link">{{{name}}}</a></h4>
+
+  <div class="carousel-item__cta">
+    {{#button.text}}
+      {{#button}}
+        {{>atoms-button}}
+      {{/button}}
+    {{/button.text}}
+  </div>
+
+  {{#meta}}
+    {{> molecules-meta}}
+  {{/meta}}
+
+</div>

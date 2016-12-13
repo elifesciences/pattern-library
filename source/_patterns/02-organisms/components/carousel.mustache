@@ -1,0 +1,47 @@
+<div class="carousel" data-behaviour="Carousel">
+
+  <ol class="carousel__items">
+
+    {{#items}}
+
+      <li>
+        {{> molecules-carousel-item}}
+      </li>
+
+    {{/items}}
+
+  </ol>
+
+  <div class="carousel__control_panel">
+
+    <div class="carousel__control_wrapper">
+      <button class="carousel__control--traverse carousel__control--previous">
+        <span class="visuallyhidden">Previous item</span>
+      </button>
+    </div>
+
+    <ol class="carousel__control_switches">
+
+      <li class="carousel__control--switch-item">
+        <button class="carousel__control--switch active"><span class="visuallyhidden">1</span></button>
+      </li>
+
+      <li class="carousel__control--switch-item">
+        <button class="carousel__control--switch"><span class="visuallyhidden">2</span></button>
+      </li>
+
+      <li class="carousel__control--switch-item">
+        <button class="carousel__control--switch"><span class="visuallyhidden">3</span></button>
+      </li>
+
+    </ol>
+
+    <div class="carousel__control_wrapper">
+      <button class="carousel__control carousel__control--traverse carousel__control--next">
+        <span class="visuallyhidden">Next item</span>
+      </button>
+    </div>
+
+  </div>
+
+</div>

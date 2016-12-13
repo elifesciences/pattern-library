@@ -1,0 +1,44 @@
+assets:
+  css:
+    - carousel-item.css
+    - $ref: ../../00-atoms/components/button.yaml#/assets/css
+    - $ref: ../../01-molecules/components/meta.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    subjects:
+      type: object
+      properties:
+        list:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                minLength: 1
+              url:
+                type: string
+                minLength: 1
+            required:
+              - name
+              - url
+      required:
+        - list
+    name:
+      type: string
+      minLength: 1
+    url:
+      type: string
+      minLength: 1
+    button:
+      $ref: ../../00-atoms/components/button.yaml#/schema
+    meta:
+      $ref: ../../01-molecules/components/meta.yaml#/schema
+  required:
+    - name
+    - url
+    - meta

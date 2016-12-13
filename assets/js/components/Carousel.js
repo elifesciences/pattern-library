@@ -13,8 +13,8 @@ module.exports = class Carousel {
 
     // 1-indexed not 0-indexed as will be used as a multiplier
     this.currentSlide = 1;
-    this.slideCount = this.$elm.querySelectorAll('.carousel__item').length;
-    if (this.slideCount === 1) {
+    this.slideCount = this.$elm.querySelectorAll('.carousel-item').length;
+    if (this.slideCount < 2) {
       return;
     }
 
@@ -31,6 +31,7 @@ module.exports = class Carousel {
     this.buttons.next.addEventListener('click', this.next.bind(this));
     this.$elm.querySelector('.carousel__control_switches').addEventListener('click',
                                                                    this.activateSwitch.bind(this));
+    this.updateControlPanel(this.currentSlide);
 
     // TODO: move controls from mustache to js.
   }
@@ -76,15 +77,23 @@ module.exports = class Carousel {
   }
 
   hideInvalidButtonChoice(currentSlide) {
-    if (currentSlide === this.slideCount) {
-      this.buttons.next.classList.add('hidden');
-      this.buttons.previous.classList.remove('hidden');
-    }
 
     if (currentSlide === 1) {
       this.buttons.previous.classList.add('hidden');
       this.buttons.next.classList.remove('hidden');
     }
+
+    if (currentSlide === this.slideCount) {
+      this.buttons.previous.classList.remove('hidden');
+      this.buttons.next.classList.add('hidden');
+    }
+
+    if (currentSlide > 1 && currentSlide < this.slideCount) {
+      this.buttons.previous.classList.remove('hidden');
+      this.buttons.next.classList.remove('hidden');
+
+    }
+
   }
 
   updateActiveSwitch(currentSlide) {
@@ -98,7 +107,7 @@ module.exports = class Carousel {
   }
 
   updateControlPanel(currentSlide) {
-    // this.hideInvalidButtonChoice(currentSlide);
+    this.hideInvalidButtonChoice(currentSlide);
     this.updateActiveSwitch(currentSlide);
   }
 

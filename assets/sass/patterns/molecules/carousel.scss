@@ -1,95 +1,19 @@
 @import "../../definitions";
 
-// TODO: fine tune height
-$item-height: 400;
-
 .carousel {
-  @include height($item-height);
-  border: 1px solid darkgreen;
+  @include height($carousel-height);
 }
 
 .carousel__items {
+  background-color: rgba(0, 0, 0, 0.5);
   list-style: none;
   @include nospace();
-}
+  @include height($carousel-height);
 
-.carousel__item {
-
-  border: 1px solid red;
-
-  text-align: center;
-  @include padding(0 50);
-  @include height($item-height);
-  width: 100vw;
-
-  display: flex;
-  flex-direction: column;
-
-}
-
-.carousel__item:nth-child(n+2) {
-  @include visuallyhidden();
-}
-
-.js .carousel__item {
-  @include unhidden();
-  @include height($item-height);
-  width: 100vw;
-}
-
-.carousel__subject_list {
-  @include label-subject-typeg();
-  margin: 0;
-  @include padding(24 0);
-}
-
-.carousel__subject_list_item {
-  @include label-subject-typeg();
-  display: inline;
-  line-height: 2.18181818181818;
-  list-style-type: none;
-  padding: 0;
-
-  & .carousel__subject:after {
-    content: ", ";
-  }
-}
-
-.carousel__subject_list_item:last-child {
-
-  & .carousel__subject:after {
-    content: "";
+  .li:nth-child(n+2) {
+    @include visuallyhidden();
   }
 
-}
-
-.carousel__subject_link {
-  @include label-subject-typeg();
-  text-decoration: none;
-
-  &:hover {
-    color: $color-primary-dark;
-  }
-
-}
-
-.carousel__title {
-  @include h1-typeg();
-  @include padding(24 0);
-  margin-top: 0;
-}
-
-.carousel__title_link {
-  color: $color-text;
-  text-decoration: none;
-}
-
-.carousel__title_link:hover {
-  color: $color-primary;
-}
-
-.carousel .meta {
-  margin-top: auto;
 }
 
 .js {
@@ -106,15 +30,15 @@ $item-height: 400;
     transition: all 0.5s 50ms ease-in-out;
   }
 
-  .carousel__item {
-    float: left;
-  }
-
 }
 
 .carousel__control_panel {
+
+  @supports (display: flex) {
+    display: flex;
+  }
+
   bottom: 20px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
@@ -125,25 +49,33 @@ $item-height: 400;
 .carousel__control_switches {
   list-style: none;
   @include nospace();
-  display: flex;
+
+  @supports (display: flex) {
+    display: flex;
+  }
+
   justify-content: space-between;
-  width: 80px;
+  margin: 0 auto;
+  width: 90px;
+}
+
+.carousel__control_wrapper {
+  min-height: 50px;
+  min-width: 50px;
+  height: 50px;
+  width: 50px;
 }
 
 .carousel__control {
 
   &--traverse {
-
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     border-width: 0;
     border-radius: 50%;
+    min-height: 50px;
+    min-width: 50px;
     height: 50px;
     width: 50px;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 1);
-    }
-
   }
 
   &--previous:before {
@@ -154,15 +86,20 @@ $item-height: 400;
     @include chevron("right");
   }
 
+  &--switch-item {
+    float: left;
+    @include padding(10, "right");
+  }
+
   &--switch {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.4);
     border: none;
     border-radius: 50%;
     height: 20px;
     width: 20px;
 
     &.active {
-      background-color: rgba(0, 0, 0, 1);
+      background-color: rgba(255, 255, 255, 0.8);
     }
 
   }

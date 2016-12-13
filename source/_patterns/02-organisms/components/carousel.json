@@ -18,7 +18,7 @@
       "button": {
         "text": "Read article",
         "path": "#link-to-article",
-        "classes": "button--default"
+        "classes": "button--default button--outline"
       },
       "meta": {
         "url": "#",
@@ -47,7 +47,7 @@
       "button": {
         "text": "Read article",
         "path": "#link-to-article",
-        "classes": "button--default"
+        "classes": "button--default  button--outline"
       },
       "meta": {
         "url": "#",
@@ -61,6 +61,7 @@
           "forMachine": "2015-09-10"
         }
       }
+
     },
     {
       "subjects": {
@@ -80,7 +81,7 @@
       "button": {
         "text": "Read article",
         "path": "#link-to-article",
-        "classes": "button--default"
+        "classes": "button--default  button--outline"
       },
       "meta": {
         "url": "#LinkToResearchArticles",
@@ -94,6 +95,7 @@
           "forMachine": "2015-09-10"
         }
       }
+
     }
 
   ]
