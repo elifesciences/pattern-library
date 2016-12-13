@@ -2,11 +2,15 @@
 
 .pager {
   @include margin(12, "bottom");
-  display: flex;
+  @supports (display: flex) {
+    display: flex;
+  }
 }
 
 .pager__button {
-  flex-grow: 1;
+  @supports (display: flex) {
+    flex-grow: 1;
+  }
 }
 
 .pager__button--next {
