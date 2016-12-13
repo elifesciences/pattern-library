@@ -11,32 +11,52 @@ module.exports = class Carousel {
     this.doc = doc;
     this.$elm = $elm;
 
+    this.establishTargets();
+
     // 1-indexed not 0-indexed as will be used as a multiplier
     this.currentSlide = 1;
-    this.slideCount = this.$elm.querySelectorAll('.carousel-item').length;
+    this.slideCount = this.moveableStage.querySelectorAll('.carousel-item').length;
     if (this.slideCount < 2) {
       return;
     }
 
-    this.moveableStage = this.$elm.querySelector('.carousel__items');
-
     // Set width based on number of items available.
     this.moveableStage.style.width = (this.slideCount * 100) + 'vw';
-    this.switches = this.$elm.querySelectorAll('.carousel__control--switch');
-    this.buttons = {
-      previous: this.$elm.querySelector('.carousel__control--previous'),
-      next: this.$elm.querySelector('.carousel__control--next')
-    };
-    this.buttons.previous.addEventListener('click', this.previous.bind(this));
-    this.buttons.next.addEventListener('click', this.next.bind(this));
-    this.$elm.querySelector('.carousel__control_switches').addEventListener('click',
-                                                                   this.activateSwitch.bind(this));
+
+    this.setupEventHandlers();
     this.updateControlPanel(this.currentSlide);
 
     // TODO: move controls from mustache to js.
   }
 
+  establishTargets() {
+    this.moveableStage = this.$elm.querySelector('.carousel__items');
+    this.switches = this.$elm.querySelectorAll('.carousel__control--switch');
+    this.buttons = {
+      previous: this.$elm.querySelector('.carousel__control--previous'),
+      next: this.$elm.querySelector('.carousel__control--next')
+    };
+  }
+
+  setupEventHandlers() {
+    this.window.addEventListener('keydown', this.handleKey.bind(this));
+    this.buttons.previous.addEventListener('click', this.previous.bind(this));
+    this.buttons.next.addEventListener('click', this.next.bind(this));
+    this.$elm.querySelector('.carousel__control_switches').addEventListener('click',
+                                                                    this.activateSwitch.bind(this));
+  }
+
+  handleKey(e) {
+    let code = e.keyCode || e.charCode;
+    if (code === 37) {
+      this.previous();
+    } else if (code === 39) {
+      this.next();
+    }
+  }
+
   next() {
+    this.window.addEventListener('keyDown', this.previous.bind(this));
     if (this.currentSlide < this.slideCount) {
       this.updateSlide();
       this.updateControlPanel(this.currentSlide);
