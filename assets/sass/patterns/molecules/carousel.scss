@@ -50,6 +50,11 @@
   width: 100vw;
 }
 
+.carousel__control_toggle {
+  background-color: #000;
+  color: $color-text--reverse;
+}
+
 .carousel__control_switches {
   list-style: none;
   @include nospace();

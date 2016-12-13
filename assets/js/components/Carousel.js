@@ -11,7 +11,7 @@ module.exports = class Carousel {
     this.doc = doc;
     this.$elm = $elm;
 
-    this.establishTargets();
+    this.establishElementTargets();
 
     // 1-indexed not 0-indexed as will be used as a multiplier
     this.currentSlide = 1;
@@ -26,37 +26,96 @@ module.exports = class Carousel {
     this.setupEventHandlers();
     this.updateControlPanel(this.currentSlide);
 
+    // this.setupTimer();
+    this.togglePlay();
+
     // TODO: move controls from mustache to js.
   }
 
-  establishTargets() {
+  togglePlay() {
+    let currentButtonState = this.buttons.playToggle.innerHTML;
+    let isPlaying = (currentButtonState === 'Pause');
+    if (isPlaying) {
+      this.buttons.playToggle.innerHTML = 'Play';
+      this.allTimersStopped = true;
+      this.window.clearInterval(this.timer);
+    } else {
+      this.buttons.playToggle.innerHTML = 'Pause';
+      this.setupTimer();
+    }
+  }
+
+  establishElementTargets() {
     this.moveableStage = this.$elm.querySelector('.carousel__items');
     this.switches = this.$elm.querySelectorAll('.carousel__control--switch');
     this.buttons = {
       previous: this.$elm.querySelector('.carousel__control--previous'),
-      next: this.$elm.querySelector('.carousel__control--next')
+      next: this.$elm.querySelector('.carousel__control--next'),
+      playToggle: this.$elm.querySelector('.carousel__control--toggler')
     };
   }
 
+  setupTimer() {
+    this.allTimersStopped = false;
+    let timerInterval = 3000;
+    this.timer = this.startNewAdvancementTimer(timerInterval);
+
+    // mousing over the carousel cancels the timer
+    this.$elm.addEventListener('mouseenter', () => {
+      if (!this.allTimersStopped) {
+        this.window.clearInterval(this.timer);
+      }
+    });
+
+    // mouse out from the carousel resets the timer
+    this.$elm.addEventListener('mouseleave', () => {
+      if (!this.allTimersStopped) {
+        this.timer = this.startNewAdvancementTimer(timerInterval);
+      }
+    });
+  }
+
+  startNewAdvancementTimer(intervalInMs) {
+    return this.window.setInterval(() => {
+      this.next();
+    }, intervalInMs);
+  }
+
   setupEventHandlers() {
+
     this.window.addEventListener('keydown', this.handleKey.bind(this));
-    this.buttons.previous.addEventListener('click', this.previous.bind(this));
-    this.buttons.next.addEventListener('click', this.next.bind(this));
-    this.$elm.querySelector('.carousel__control_switches').addEventListener('click',
-                                                                    this.activateSwitch.bind(this));
+
+    this.buttons.previous.addEventListener('click', () => {
+      this.allTimersStopped = true;
+      this.previous();
+    });
+
+    this.buttons.next.addEventListener('click', () => {
+      this.allTimersStopped = true;
+      this.next();
+    });
+
+    this.buttons.playToggle.addEventListener('click', this.togglePlay.bind(this));
+
+    this.$elm.querySelector('.carousel__control_switches').addEventListener('click', (e) => {
+      this.allTimersStopped = true;
+      this.activateSwitch(e);
+    });
   }
 
   handleKey(e) {
     let code = e.keyCode || e.charCode;
-    if (code === 37) {
-      this.previous();
-    } else if (code === 39) {
-      this.next();
+    if (code === 37 || code === 39) {
+      this.allTimersStopped = true;
+      if (code === 37) {
+        this.previous();
+      } else {
+        this.next();
+      }
     }
   }
 
   next() {
-    this.window.addEventListener('keyDown', this.previous.bind(this));
     if (this.currentSlide < this.slideCount) {
       this.updateSlide();
       this.updateControlPanel(this.currentSlide);
@@ -97,7 +156,6 @@ module.exports = class Carousel {
   }
 
   hideInvalidButtonChoice(currentSlide) {
-
     if (currentSlide === 1) {
       this.buttons.previous.classList.add('hidden');
       this.buttons.next.classList.remove('hidden');
@@ -111,9 +169,7 @@ module.exports = class Carousel {
     if (currentSlide > 1 && currentSlide < this.slideCount) {
       this.buttons.previous.classList.remove('hidden');
       this.buttons.next.classList.remove('hidden');
-
     }
-
   }
 
   updateActiveSwitch(currentSlide) {
