@@ -2,8 +2,13 @@
 
 .pager {
   @include margin(12, "bottom");
+  display: flex;
+}
+
+.pager__button {
+  flex-grow: 1;
 }
 
 .pager__button--next {
-  float: right;
+  text-align: right;
 }

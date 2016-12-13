@@ -1,29 +1,15 @@
 <div class="pager">
 
-    {{#previousPage.url}}
+    <div class="pager__button pager__button--previous">
+        {{#previousPage}}
+            {{> atoms-button }}
+        {{/previousPage}}
+    </div>
 
-        <a href="{{previousPage.url}}"
-           class="button button--default pager__button pager__button--previous">{{{previousPage.name}}}</a>
-
-    {{/previousPage.url}}
-
-    {{^previousPage.url}}
-
-        <span class="button button--default button--inactive pager__button pager__button--previous">{{{previousPage.name}}}</span>
-
-    {{/previousPage.url}}
-
-    {{#nextPage.url}}
-
-        <a href="{{nextPage.url}}"
-           class="button button--default pager__button pager__button--next">{{{nextPage.name}}}</a>
-
-    {{/nextPage.url}}
-
-    {{^nextPage.url}}
-
-        <span class="button button--default button--inactive pager__button pager__button--next">{{{nextPage.name}}}</span>
-
-    {{/nextPage.url}}
+    <div class="pager__button pager__button--next">
+        {{#nextPage}}
+            {{> atoms-button }}
+        {{/nextPage}}
+    </div>
 
 </div>

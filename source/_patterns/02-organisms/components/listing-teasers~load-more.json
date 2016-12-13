@@ -152,5 +152,10 @@
         "classes": "teaser__img--small"
       }
     }
-  ]
+  ],
+  "pagination": {
+    "text": "Load more",
+    "classes": "button--default button--full",
+    "path": "#"
+  }
 }

@@ -8,27 +8,11 @@ schema:
   type: object
   properties:
     previousPage:
-      type: object
-      properties:
-        name:
-          type: string
-          minLength: 1
-        url:
-          type: string
-          minLength: 1
-      required:
-        - name
+      $ref: ../../00-atoms/components/button.yaml#/schema
     nextPage:
-      type: object
-      properties:
-        name:
-          type: string
-          minLength: 1
-        url:
-          type: string
-          minLength: 1
-      required:
-        - name
-  required:
-    - previousPage
-    - nextPage
+      $ref: ../../00-atoms/components/button.yaml#/schema
+  anyOf:
+    - required:
+        - previousPage
+    - required:
+        - nextPage

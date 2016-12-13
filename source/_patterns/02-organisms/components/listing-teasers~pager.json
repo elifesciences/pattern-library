@@ -155,12 +155,14 @@
   ],
   "pagination": {
     "previousPage": {
-      "url": "#",
-      "name": "Previous"
+      "text": "Previous",
+      "classes": "button--default",
+      "path": "#"
     },
     "nextPage": {
-      "url": "#",
-      "name": "Next"
+      "text": "Next",
+      "classes": "button--default",
+      "path": "#"
     }
   }
 }
