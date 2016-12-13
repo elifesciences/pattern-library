@@ -1,0 +1,16 @@
+assets:
+  css:
+    - content-header-simple.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    title:
+      type: string
+      minLength: 1
+    strapline:
+      type: string
+      minLength: 1
+  required:
+    - title
