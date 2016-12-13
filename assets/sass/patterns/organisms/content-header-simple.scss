@@ -1,0 +1,24 @@
+@import "../../definitions";
+
+.content-header-simple {
+  @include blg-spacing("top", "small");
+  @include blg-spacing("bottom", "small");
+  padding-left: 6%;
+  padding-right: 6%;
+  text-align: center;
+}
+
+.content-header-simple__title {
+  @include h2-typeg();
+  color: $color-text;
+  @include font-size(20);
+  line-height: 1.2; /* 24px with font-size 20px */
+  @include nospace();
+}
+
+.content-header-simple__strapline {
+  color: $color-text;
+  @include body-typeg();
+  @include nospace();
+  @include blg-spacing("bottom", "small");
+}
