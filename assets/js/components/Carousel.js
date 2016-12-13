@@ -11,25 +11,57 @@ module.exports = class Carousel {
     this.doc = doc;
     this.$elm = $elm;
 
-    this.establishElementTargets();
+    this.setupProperties();
+    if (this.slideCount < 2) {
+      return;
+    }
+    this.moveableStage.style.width = (this.slideCount * 100) + 'vw';
+    this.setupEventHandlers();
+    this.updateControlPanel(this.currentSlide);
+    this.togglePlay();
+
+    // TODO: move controls from mustache to js.
+  }
+
+  setupProperties() {
+    this.moveableStage = this.$elm.querySelector('.carousel__items');
+    this.switches = this.$elm.querySelectorAll('.carousel__control--switch');
+    this.buttons = {
+      previous: this.$elm.querySelector('.carousel__control--previous'),
+      next: this.$elm.querySelector('.carousel__control--next'),
+      playToggle: this.$elm.querySelector('.carousel__control--toggler')
+    };
 
     // 1-indexed not 0-indexed as will be used as a multiplier
     this.currentSlide = 1;
     this.slideCount = this.moveableStage.querySelectorAll('.carousel-item').length;
-    if (this.slideCount < 2) {
-      return;
-    }
+  }
 
-    // Set width based on number of items available.
-    this.moveableStage.style.width = (this.slideCount * 100) + 'vw';
+  setupEventHandlers() {
 
-    this.setupEventHandlers();
-    this.updateControlPanel(this.currentSlide);
+    this.window.addEventListener('keydown', this.handleKey.bind(this));
 
-    // this.setupTimer();
-    this.togglePlay();
+    this.buttons.previous.addEventListener('click', () => {
+      this.allTimersStopped = true;
+      this.previous();
+    });
 
-    // TODO: move controls from mustache to js.
+    this.buttons.next.addEventListener('click', () => {
+      this.allTimersStopped = true;
+      this.next();
+    });
+
+    this.buttons.playToggle.addEventListener('click', this.togglePlay.bind(this));
+
+    this.$elm.querySelector('.carousel__control_switches').addEventListener('click', (e) => {
+      this.allTimersStopped = true;
+      this.activateSwitch(e);
+    });
+  }
+
+  updateControlPanel(currentSlide) {
+    this.hideInvalidButtonChoice(currentSlide);
+    this.updateActiveSwitch(currentSlide);
   }
 
   togglePlay() {
@@ -43,16 +75,6 @@ module.exports = class Carousel {
       this.buttons.playToggle.innerHTML = 'Pause';
       this.setupTimer();
     }
-  }
-
-  establishElementTargets() {
-    this.moveableStage = this.$elm.querySelector('.carousel__items');
-    this.switches = this.$elm.querySelectorAll('.carousel__control--switch');
-    this.buttons = {
-      previous: this.$elm.querySelector('.carousel__control--previous'),
-      next: this.$elm.querySelector('.carousel__control--next'),
-      playToggle: this.$elm.querySelector('.carousel__control--toggler')
-    };
   }
 
   setupTimer() {
@@ -79,28 +101,6 @@ module.exports = class Carousel {
     return this.window.setInterval(() => {
       this.next();
     }, intervalInMs);
-  }
-
-  setupEventHandlers() {
-
-    this.window.addEventListener('keydown', this.handleKey.bind(this));
-
-    this.buttons.previous.addEventListener('click', () => {
-      this.allTimersStopped = true;
-      this.previous();
-    });
-
-    this.buttons.next.addEventListener('click', () => {
-      this.allTimersStopped = true;
-      this.next();
-    });
-
-    this.buttons.playToggle.addEventListener('click', this.togglePlay.bind(this));
-
-    this.$elm.querySelector('.carousel__control_switches').addEventListener('click', (e) => {
-      this.allTimersStopped = true;
-      this.activateSwitch(e);
-    });
   }
 
   handleKey(e) {
@@ -182,11 +182,6 @@ module.exports = class Carousel {
     });
   }
 
-  updateControlPanel(currentSlide) {
-    this.hideInvalidButtonChoice(currentSlide);
-    this.updateActiveSwitch(currentSlide);
-  }
-
   activateSwitch(e) {
     let activatedSwitch = e.target;
     let activatedSlide = this.window.parseInt(activatedSwitch.querySelector('span').innerHTML, 10);
@@ -199,7 +194,6 @@ module.exports = class Carousel {
     let callback = slideOffSet < 0 ? this.previous : this.next;
 
     for (let i = 0; i < slideOffSetAbs; i += 1) {
-      // this[callback].bind(this);
       callback.call(this);
     }
 
