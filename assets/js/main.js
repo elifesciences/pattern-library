@@ -14,6 +14,7 @@ if (window.localStorage && document.querySelector &&
   Components.ArticleSection = require('./components/ArticleSection');
   Components.AudioPlayer = require('./components/AudioPlayer');
   Components.BackgroundImage = require('./components/BackgroundImage');
+  Components.Carousel = require('./components/Carousel');
   Components.ContentHeaderArticle = require('./components/ContentHeaderArticle');
   Components.FragmentHandler = require('./components/FragmentHandler');
   Components.MainMenu = require('./components/MainMenu');

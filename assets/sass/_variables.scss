@@ -63,6 +63,7 @@ $content-header-height--narrow-screen: 210;
 $content-header-height--medium-width-screen: 270;
 $content-header-height--wide-screen: 270;
 $content-header-height--extra-wide-screen: 325;
+$carousel-height: 400;
 
 $button-height-extra-small: 24;
 $button-height-small: 36;
@@ -97,3 +98,8 @@ $bkpt-pull-quote: 560;
 // Borders
 $border-radius: 3;
 $border-width: 1;
+
+// Animations
+$transition-duration: 0.5s;
+$transition-delay: 50ms;
+$transition-timing-function: ease-in-out;

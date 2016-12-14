@@ -120,7 +120,7 @@
     @include visuallyhidden();
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-      @include unhidden();
+      @include visuallyunhidden();
     }
   }
 

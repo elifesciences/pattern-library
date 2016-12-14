@@ -60,7 +60,7 @@
   }
 
   .compact-form__reset {
-    @include unhidden();
+    @include visuallyunhidden();
     background: url("../img/icons/search-clear.png");
     background: url("../img/icons/search-clear.svg"), linear-gradient(transparent, transparent);
     background-position: -1px -1px;

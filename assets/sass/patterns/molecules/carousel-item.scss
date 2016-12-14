@@ -1,0 +1,73 @@
+@import "../../definitions";
+
+.carousel-item {
+
+  @supports (display: flex) {
+    display: flex;
+  }
+
+  background-size: cover;
+  flex-direction: column;
+  @include height($carousel-height);
+  @include padding(0 50);
+  text-align: center;
+  width: 100vw;
+
+}
+
+.js .carousel-item {
+  @include height($carousel-height);
+  width: 100vw;
+}
+
+.carousel-item__subject_list {
+  @include label-subject-typeg();
+  margin: 0;
+  @include padding(24 0);
+}
+
+.carousel-item__subject_list_item {
+  @include label-subject-typeg();
+  display: inline;
+  line-height: 2.18181818181818;
+  list-style-type: none;
+  padding: 0;
+
+  & .carousel-item__subject:after {
+    content: ", ";
+  }
+}
+
+.carousel-item__subject_list_item:last-child {
+
+  & .carousel-item__subject:after {
+    content: "";
+  }
+
+}
+
+.carousel-item__subject_link {
+  @include label-subject-typeg();
+  color: $color-text--reverse;
+  text-decoration: none;
+}
+
+.carousel-item__title {
+  @include h1-typeg();
+  @include padding(24 0);
+  margin-top: 0;
+}
+
+.carousel-item__title_link {
+  color: $color-text--reverse;
+  text-decoration: none;
+}
+
+.carousel-item .meta {
+  margin-top: auto;
+
+  *,
+  *:hover {
+    color: $color-text--reverse;
+  }
+}

@@ -1,0 +1,116 @@
+@import "../../definitions";
+
+.carousel {
+  @include height($carousel-height);
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel__items {
+  background-color: rgba(0, 0, 0, 0.5);
+  list-style: none;
+  @include nospace();
+  @include height($carousel-height);
+  width: 300vw;
+}
+
+.carousel__item_wrapper {
+  float: left;
+  width: 100vw;
+}
+
+.carousel__item_wrapper:nth-child(n+2) {
+  @include hidden();
+}
+
+.js {
+
+  .carousel__item_wrapper:nth-child(n+2) {
+    @include unhidden();
+  }
+
+  .carousel__items {
+    position: relative;
+    transition: all $transition-duration $transition-delay $transition-timing-function;
+  }
+
+}
+
+.carousel__control_panel {
+
+  @supports (display: flex) {
+    display: flex;
+  }
+
+  bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  position: absolute;
+  width: 100vw;
+}
+
+.carousel__control_toggle {
+  background-color: #000;
+  color: $color-text--reverse;
+}
+
+.carousel__control_switches {
+  list-style: none;
+  @include nospace();
+
+  @supports (display: flex) {
+    display: flex;
+  }
+
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 90px;
+}
+
+.carousel__control_wrapper {
+  min-height: 50px;
+  min-width: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+.carousel__control {
+
+  &--traverse {
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 50%;
+    min-height: 50px;
+    min-width: 50px;
+    height: 50px;
+    width: 50px;
+  }
+
+  &--previous:before {
+    @include chevron("left");
+  }
+
+  &--next:before {
+    @include chevron("right");
+  }
+
+  &--switch-item {
+    float: left;
+    @include padding(10, "right");
+  }
+
+  &--switch {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+  }
+
+}
