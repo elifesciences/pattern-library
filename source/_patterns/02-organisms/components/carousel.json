@@ -31,6 +31,11 @@
           },
           "forMachine": "2015-09-10"
         }
+      },
+      "backgroundImage": {
+        "thresholdWidth": 600,
+        "lowResImageSource": "http://lorempixel.com/950/400/nature/1",
+        "highResImageSource": "http://lorempixel.com/1900/800/nature/1"
       }
     },
     {
@@ -60,6 +65,12 @@
           },
           "forMachine": "2015-09-10"
         }
+      },
+
+      "backgroundImage": {
+        "thresholdWidth": 600,
+        "lowResImageSource": "http://lorempixel.com/950/400/animals/1",
+        "highResImageSource": "http://lorempixel.com/1900/800/animals/1"
       }
 
     },
@@ -94,6 +105,11 @@
           },
           "forMachine": "2015-09-10"
         }
+      },
+      "backgroundImage": {
+        "thresholdWidth": 600,
+        "lowResImageSource": "http://lorempixel.com/950/400/abstract/1",
+        "highResImageSource": "http://lorempixel.com/1900/800/abstract/1"
       }
 
     }
