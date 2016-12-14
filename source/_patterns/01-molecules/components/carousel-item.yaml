@@ -56,7 +56,7 @@ schema:
           - highResImageSource
       required:
         - lowResImageSource
-        - highResImageSourceq
+        - highResImageSource
   required:
     - name
     - url
