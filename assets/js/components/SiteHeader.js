@@ -123,7 +123,7 @@ module.exports = class SiteHeader {
   openSearchBox() {
     let myHeight = this.window.getComputedStyle(this.$elm).height;
     let adjustment = 20;
-    let offsetY = utils.adjustPxString(myHeight, adjustment);
+    let offsetY = utils.adjustPxString(myHeight, adjustment, 'add');
 
     // This is set in the site-header.scss.
     let transitionDurationInMs = 150;
