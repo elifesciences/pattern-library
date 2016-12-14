@@ -12,6 +12,5 @@ schema:
       items:
         - $ref: ../../01-molecules/components/carousel-item.yaml#/schema
       minItems: 1
-      maxItems: 3
   required:
     - items
