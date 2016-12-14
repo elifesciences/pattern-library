@@ -14,36 +14,58 @@ describe('The eLife utils library', function () {
 
     it('can add a numerical value to a px string, returning adjusted value as a px string',
     function () {
-      expect(elifeUtils.adjustPxString('200px', 3)).to.equal('203px');
-      expect(elifeUtils.adjustPxString('-1px', 500)).to.equal('499px');
-      expect(elifeUtils.adjustPxString('-1000px', 200)).to.equal('-800px');
+      let operation = 'add';
+      expect(elifeUtils.adjustPxString('200px', 3, operation)).to.equal('203px');
+      expect(elifeUtils.adjustPxString('200px', -3, operation)).to.equal('197px');
+      expect(elifeUtils.adjustPxString('-1px', 500, operation)).to.equal('499px');
+      expect(elifeUtils.adjustPxString('-1000px', 200, operation)).to.equal('-800px');
     });
 
     it('can subtract a numerical value from a px string, returning adjusted value as a px string',
     function () {
-      expect(elifeUtils.adjustPxString('203px', -3)).to.equal('200px');
-      expect(elifeUtils.adjustPxString('1px', -500)).to.equal('-499px');
-      expect(elifeUtils.adjustPxString('-1000px', -200)).to.equal('-1200px');
+      let operation = 'subtract';
+      expect(elifeUtils.adjustPxString('203px', 3, operation)).to.equal('200px');
+      expect(elifeUtils.adjustPxString('500px', -1, operation)).to.equal('501px');
+      expect(elifeUtils.adjustPxString('-500px', -20, operation)).to.equal('-480px');
+      expect(elifeUtils.adjustPxString('-1000px', -200, operation)).to.equal('-800px');
+     });
+
+    it('can multiply a numerical value from a px string, returning adjusted value as a px string',
+    function () {
+      let operation = 'multiply';
+      expect(elifeUtils.adjustPxString('203px', -3, operation)).to.equal('-609px');
+      expect(elifeUtils.adjustPxString('-100px', 3, operation)).to.equal('-300px');
+      expect(elifeUtils.adjustPxString('-100px', -2, operation)).to.equal('200px');
+      expect(elifeUtils.adjustPxString('300px', 4, operation)).to.equal('1200px');
+     });
+
+    it('can divdie a numerical value from a px string, returning adjusted value as a px string',
+    function () {
+      let operation = 'divide';
+      expect(elifeUtils.adjustPxString('300px', -3, operation)).to.equal('-100px');
+      expect(elifeUtils.adjustPxString('-100px', 4, operation)).to.equal('-25px');
+      expect(elifeUtils.adjustPxString('-100px', -2, operation)).to.equal('50px');
+      expect(elifeUtils.adjustPxString('300px', 3, operation)).to.equal('100px');
      });
 
     it('can add a numerical value to a "0" string, returning adjusted value as a px string',
     function () {
-      expect(elifeUtils.adjustPxString('0', 25)).to.equal('25px');
+      expect(elifeUtils.adjustPxString('0', 25, 'add')).to.equal('25px');
     });
 
     it('can subtract a numerical numerical value from a "0" string, returning adjusted value as a px string',
     function () {
-      expect(elifeUtils.adjustPxString('0', -25)).to.equal('-25px');
+      expect(elifeUtils.adjustPxString('0', 25, 'subtract')).to.equal('-25px');
     });
 
     it('can add a numerical value to a px string, returning a "0" string correctly',
     function () {
-      expect(elifeUtils.adjustPxString('-100px', 100)).to.equal('0');
+      expect(elifeUtils.adjustPxString('-100px', 100, 'add')).to.equal('0');
     });
 
     it('can subtract a numerical value from a px string, returning a "0" string correctly',
     function () {
-      expect(elifeUtils.adjustPxString('100px', -100)).to.equal('0');
+      expect(elifeUtils.adjustPxString('100px', -100, 'add')).to.equal('0');
     });
 
   });

@@ -171,11 +171,32 @@ module.exports = () => {
    *
    * @param {String} pxString The string representing the original quantity, e.g. '97px'
    * @param adjustment The numeric adjustment to make, e.g. 8
+   * @param operation
    * @returns {string} The modified value, as a string, e.g.: '105px'
    */
-  function adjustPxString(pxString, adjustment) {
+  function adjustPxString(pxString, adjustment, requestedOperation) {
     let originalSize = _getValueFromPxString(pxString);
-    let adjustedSize = originalSize + adjustment;
+    let adjustedSize = originalSize;
+    let operation = 'add';
+    if (['subtract', 'multiply', 'divide'].indexOf(requestedOperation) > -1) {
+      operation = requestedOperation;
+    }
+    switch (operation) {
+    case 'add':
+      adjustedSize = originalSize + adjustment;
+      break;
+    case 'subtract':
+      adjustedSize = originalSize - adjustment;
+      break;
+    case 'multiply':
+      adjustedSize = originalSize * adjustment;
+      break;
+    case 'divide':
+      adjustedSize = originalSize / adjustment;
+      break;
+    default:
+      break;
+    }
     return _getZeroAwarePxStringFromValue(adjustedSize);
   }
 
