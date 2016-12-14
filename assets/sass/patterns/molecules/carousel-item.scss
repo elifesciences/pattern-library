@@ -2,6 +2,8 @@
 
 .carousel-item {
 
+  @include constrain-width($max-site-width, "max");
+
   @supports (display: flex) {
     display: flex;
   }
@@ -9,7 +11,7 @@
   background-size: cover;
   flex-direction: column;
   @include height($carousel-height);
-  @include padding(0 50);
+  padding: 0;
   text-align: center;
   width: 100vw;
 
