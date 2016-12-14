@@ -1,5 +1,7 @@
 'use strict';
 
+const utils = require('../libs/elife-utils')();
+
 module.exports = class Carousel {
 
   constructor($elm, _window = window, doc = document) {
@@ -15,48 +17,21 @@ module.exports = class Carousel {
     if (this.slideCount < 2) {
       return;
     }
+
+    this.$elm.appendChild(this.buildControls());
     this.moveableStage.style.width = (this.slideCount * 100) + 'vw';
-    this.setupEventHandlers();
     this.updateControlPanel(this.currentSlide);
     this.togglePlay();
-
-    // TODO: move controls from mustache to js.
   }
 
   setupProperties() {
     this.moveableStage = this.$elm.querySelector('.carousel__items');
-    this.switches = this.$elm.querySelectorAll('.carousel__control--switch');
-    this.buttons = {
-      previous: this.$elm.querySelector('.carousel__control--previous'),
-      next: this.$elm.querySelector('.carousel__control--next'),
-      playToggle: this.$elm.querySelector('.carousel__control--toggler')
-    };
 
     // 1-indexed not 0-indexed as will be used as a multiplier
     this.currentSlide = 1;
     this.slideCount = this.moveableStage.querySelectorAll('.carousel-item').length;
-  }
-
-  setupEventHandlers() {
 
     this.window.addEventListener('keydown', this.handleKey.bind(this));
-
-    this.buttons.previous.addEventListener('click', () => {
-      this.allTimersStopped = true;
-      this.previous();
-    });
-
-    this.buttons.next.addEventListener('click', () => {
-      this.allTimersStopped = true;
-      this.next();
-    });
-
-    this.buttons.playToggle.addEventListener('click', this.togglePlay.bind(this));
-
-    this.$elm.querySelector('.carousel__control_switches').addEventListener('click', (e) => {
-      this.allTimersStopped = true;
-      this.activateSwitch(e);
-    });
   }
 
   updateControlPanel(currentSlide) {
@@ -79,7 +54,7 @@ module.exports = class Carousel {
 
   setupTimer() {
     this.allTimersStopped = false;
-    let timerInterval = 3000;
+    let timerInterval = 10000;
     this.timer = this.startNewAdvancementTimer(timerInterval);
 
     // mousing over the carousel cancels the timer
@@ -173,7 +148,7 @@ module.exports = class Carousel {
   }
 
   updateActiveSwitch(currentSlide) {
-    [].forEach.call(this.switches, (aSwitch, i) => {
+    [].forEach.call(this.switches.querySelectorAll('.carousel__control--switch'), (aSwitch, i) => {
       if (i === currentSlide - 1) {
         aSwitch.classList.add('active');
       } else {
@@ -196,7 +171,102 @@ module.exports = class Carousel {
     for (let i = 0; i < slideOffSetAbs; i += 1) {
       callback.call(this);
     }
-
   }
 
+  buildControl$toggle() {
+
+    let buttonId = 'carouselToggle';
+    let $button = utils.buildElement('button', ['carousel__control--toggler'], 'Play');
+    $button.id = buttonId;
+
+    let labelText = 'Toggles the auto refresh of the carousel on and off. The carousel is set to ';
+    labelText += 'refresh every 10 seconds while it is playing.';
+    let $label = utils.buildElement('label', [], labelText);
+    $label.setAttribute('for', buttonId);
+
+    let $toggle = utils.buildElement('div', ['carousel__control_toggle', 'visuallyhidden']);
+    $toggle.appendChild($label);
+    $toggle.appendChild($button);
+    return $toggle;
+  }
+
+  buildControl$traverser(direction) {
+    if (direction !== 'previous' && direction !== 'next') {
+      return;
+    }
+
+    let _direction = direction === 'previous' ? 'previous' : 'next';
+    let text = direction + ' item';
+
+    let $div = utils.buildElement('div', ['carousel__control_wrapper']);
+
+    let $button = utils.buildElement('button',
+                                     [
+                                       'carousel__control--traverse',
+                                       'carousel__control--' + _direction
+                                     ],
+                                     '',
+                                     $div);
+
+    utils.buildElement('span', ['visuallyhidden'], text, $button);
+    return $div;
+  }
+
+  buildControl$switch(text) {
+    let $li = utils.buildElement('li', ['carousel__control--switch-item']);
+    let $button =  utils.buildElement('button', ['carousel__control--switch'], '', $li);
+    utils.buildElement('span', ['visuallyhidden'], '' + text, $button);
+    return $li;
+  }
+
+  buildControl$switches(count) {
+    let $ol = utils.buildElement('ol', ['carousel__control_switches']);
+    for (let i = 1; i <= count; i += 1) {
+      $ol.appendChild(this.buildControl$switch(i));
+    }
+
+    return $ol;
+  }
+
+  buildControls() {
+    let $controlPanel = utils.buildElement('div', ['carousel__control_panel']);
+    let $previousWrapper = this.buildControl$traverser('previous');
+    let $nextWrapper = this.buildControl$traverser('next');
+
+    this.buttons = {
+      playToggle: this.buildControl$toggle(),
+      previous: $previousWrapper.querySelector('button'),
+      next: $nextWrapper.querySelector('button')
+    };
+    this.switches = this.buildControl$switches(this.slideCount);
+
+    let controls = [this.buttons.playToggle, $previousWrapper, this.switches, $nextWrapper];
+    controls.forEach(function (control) {
+      $controlPanel.appendChild(control);
+    });
+
+    this.setupEventListeners();
+    return $controlPanel;
+  }
+
+  setupEventListeners() {
+    this.buttons.playToggle.addEventListener('click', this.togglePlay.bind(this));
+
+    this.buttons.previous.addEventListener('click', () => {
+      this.allTimersStopped = true;
+      this.previous();
+    });
+
+    this.switches.addEventListener('click', (e) => {
+      this.allTimersStopped = true;
+      this.activateSwitch(e);
+    });
+
+    this.buttons.next.addEventListener('click', () => {
+      this.allTimersStopped = true;
+      this.next();
+    });
+
+    this.window.addEventListener('keydown', this.handleKey.bind(this));
+  }
 };
