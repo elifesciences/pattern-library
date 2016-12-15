@@ -41,17 +41,20 @@
 
 .carousel__control_panel {
 
-  @supports (display: flex) {
-    display: flex;
-  }
-
-  align-items: center;
   @include constrain-width($max-site-width, "max");
   bottom: 20px;
-  justify-content: space-between;
   height: 50px;
   position: absolute;
   width: 100vw;
+}
+
+.carousel__control_panel__visible {
+
+  @supports (display: flex) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .carousel__control_toggle {

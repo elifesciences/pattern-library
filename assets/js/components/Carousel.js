@@ -31,12 +31,13 @@ module.exports = class Carousel {
     // 1-indexed not 0-indexed as will be used as a multiplier
     this.currentSlide = 1;
     this.slideCount = this.moveableStage.querySelectorAll('.carousel-item').length;
+    this.timerInterval = 10000;
   }
 
   buildControls() {
-    let $controlPanel = utils.buildElement('div', ['carousel__control_panel']);
     let $previousWrapper = this.buildControl$traverser('previous');
     let $nextWrapper = this.buildControl$traverser('next');
+    let $visibleControlsWrapper = utils.buildElement('div', ['carousel__control_panel__visible']);
 
     this.buttons = {
       playToggle: this.buildControl$toggle(),
@@ -45,10 +46,14 @@ module.exports = class Carousel {
     };
     this.switches = this.buildControl$switches(this.slideCount);
 
-    let controls = [this.buttons.playToggle, $previousWrapper, this.switches, $nextWrapper];
-    controls.forEach(function (control) {
-      $controlPanel.appendChild(control);
+    let visibleControls = [$previousWrapper, this.switches, $nextWrapper];
+    visibleControls.forEach(function (control) {
+      $visibleControlsWrapper.appendChild(control);
     });
+
+    let $controlPanel = utils.buildElement('div', ['carousel__control_panel']);
+    $controlPanel.appendChild(this.buttons.playToggle);
+    $controlPanel.appendChild($visibleControlsWrapper);
 
     this.setupEventListeners();
     return $controlPanel;
@@ -82,8 +87,8 @@ module.exports = class Carousel {
     let $button = utils.buildElement('button', ['carousel__control--toggler'], 'Play');
     $button.id = buttonId;
 
-    let labelText = 'Toggles the auto refresh of the carousel on and off. The carousel is set to ';
-    labelText += 'refresh every 10 seconds while it is playing.';
+    let labelText = 'Toggle the auto refresh of the carousel on and off (the carousel is set to ';
+    labelText += 'refresh every ' + (this.timerInterval/1000) + ' seconds while it is playing).';
     let $label = utils.buildElement('label', [], labelText);
     $label.setAttribute('for', buttonId);
 
@@ -110,7 +115,7 @@ module.exports = class Carousel {
   }
 
   userInitiatedProgression(callback) {
-    this.allTimersStopped = true;
+    this.timerStopped = true;
     if (!!callback && typeof callback === 'function') {
       callback.call(this);
     }
@@ -169,14 +174,15 @@ module.exports = class Carousel {
   }
 
   togglePlay() {
-    let currentButtonState = this.buttons.playToggle.innerHTML;
+    let toggleButton = this.buttons.playToggle.querySelector('button');
+    let currentButtonState = toggleButton.innerHTML;
     if (currentButtonState === 'Pause') {
-      this.buttons.playToggle.innerHTML = 'Play';
-      this.allTimersStopped = true;
+      toggleButton.innerHTML = 'Play';
+      this.timerStopped = true;
       this.window.clearInterval(this.timer);
     } else {
-      this.buttons.playToggle.innerHTML = 'Pause';
-      this.allTimersStopped = false;
+      toggleButton.innerHTML = 'Pause';
+      this.timerStopped = false;
       this.setupTimer();
     }
   }
@@ -222,28 +228,27 @@ module.exports = class Carousel {
   }
 
   setupTimer() {
-    this.allTimersStopped = false;
-    let timerInterval = 10000;
-    this.timer = this.startNewAdvancementTimer(timerInterval);
+    this.timerStopped = false;
+    this.timer = this.startNewAdvancementTimer(this.timerInterval);
 
     // mousing over the carousel cancels the timer
     this.$elm.addEventListener('mouseenter', () => {
-      if (!this.allTimersStopped) {
+      if (!this.timerStopped) {
         this.window.clearInterval(this.timer);
       }
     });
 
     // mouse out from the carousel resets the timer
     this.$elm.addEventListener('mouseleave', () => {
-      if (!this.allTimersStopped) {
-        this.timer = this.startNewAdvancementTimer(timerInterval);
+      if (!this.timerStopped) {
+        this.timer = this.startNewAdvancementTimer(this.timerInterval);
       }
     });
   }
 
   startNewAdvancementTimer(intervalInMs) {
     return this.window.setInterval(() => {
-      if (!this.allTimersStopped) {
+      if (!this.timerStopped) {
         this.next();
       }
     }, intervalInMs);
@@ -252,7 +257,7 @@ module.exports = class Carousel {
   handleKey(e) {
     let code = e.keyCode || e.charCode;
     if (code === 37 || code === 39) {
-      this.allTimersStopped = true;
+      this.timerStopped = true;
       if (code === 37) {
         this.userInitiatedProgression(this.previous);
       } else {
