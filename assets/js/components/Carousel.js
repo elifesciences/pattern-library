@@ -30,7 +30,8 @@ module.exports = class Carousel {
 
     // 1-indexed not 0-indexed as will be used as a multiplier
     this.currentSlide = 1;
-    this.slideCount = this.moveableStage.querySelectorAll('.carousel-item').length;
+    this.originalSlideWrappers = this.moveableStage.querySelectorAll('.carousel__item_wrapper');
+    this.slideCount = this.originalSlideWrappers.length;
     this.timerInterval = 10000;
   }
 
@@ -117,7 +118,7 @@ module.exports = class Carousel {
   userInitiatedProgression(callback) {
     this.timerStopped = true;
     if (!!callback && typeof callback === 'function') {
-      callback.call(this);
+      callback.call(this, true);
     }
   }
 
@@ -137,8 +138,17 @@ module.exports = class Carousel {
     this.window.addEventListener('keydown', this.handleKey.bind(this));
   }
 
-  updateWidth() {
-    this.moveableStage.style.width = (this.$elm.width * this.slideCount) + 'px';
+  updateWidth(stageExtended) {
+    if (!stageExtended) {
+      this.moveableStage.style.width = (this.$elm.width * this.slideCount) + 'px';
+      return;
+    }
+
+    // increment width to accommodate more slides
+    let currentWidthString = this.window.getComputedStyle(this.$elm).width;
+    let currentWidth = currentWidthString.match(/([0-9]+)px/)[1];
+    let increment = currentWidth * this.slideCount;
+    this.moveableStage.style.width = currentWidth + increment + 'px';
   }
 
   updateControlPanel(currentSlide) {
@@ -149,9 +159,12 @@ module.exports = class Carousel {
   hideInvalidButtonChoice(currentSlide) {
     if (currentSlide === 1) {
       this.buttons.previous.classList.add('hidden');
-      this.buttons.next.classList.remove('hidden');
+      // this.buttons.next.classList.remove('hidden');
+    } else {
+      this.buttons.previous.classList.remove('hidden');
     }
 
+/*
     if (currentSlide === this.slideCount) {
       this.buttons.previous.classList.remove('hidden');
       this.buttons.next.classList.add('hidden');
@@ -161,6 +174,7 @@ module.exports = class Carousel {
       this.buttons.previous.classList.remove('hidden');
       this.buttons.next.classList.remove('hidden');
     }
+*/
   }
 
   updateActiveSwitch(currentSlide) {
@@ -187,11 +201,14 @@ module.exports = class Carousel {
     }
   }
 
-  next() {
-    if (this.currentSlide < this.slideCount) {
-      this.updateSlide();
-      this.updateControlPanel(this.currentSlide);
+  next(userInitiated) {
+    if (this.currentSlide % this.slideCount === 0/* && !userInitiated*/) {
+      this.extendStage();
     }
+    // if (this.currentSlide < this.slideCount || !userInitiated) {
+    this.updateSlide();
+    this.updateControlPanel(this.currentSlide);
+    // }
   }
 
   previous() {
@@ -281,4 +298,12 @@ module.exports = class Carousel {
       this.userInitiatedProgression(callback);
     }
   }
+
+  extendStage () {
+    this.updateWidth(true);
+    [].forEach.call(this.originalSlideWrappers, (slide) => {
+      this.moveableStage.appendChild(slide.cloneNode(true));
+    })
+  }
+
 };
