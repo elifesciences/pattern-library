@@ -109,22 +109,24 @@ module.exports = class Carousel {
     return $ol;
   }
 
+  userInitiatedProgression(callback) {
+    this.allTimersStopped = true;
+    if (!!callback && typeof callback === 'function') {
+      callback.call(this);
+    }
+  }
+
   setupEventListeners() {
     this.buttons.playToggle.addEventListener('click', this.togglePlay.bind(this));
 
     this.buttons.previous.addEventListener('click', () => {
-      this.allTimersStopped = true;
-      this.previous();
+      this.userInitiatedProgression(this.previous);
     });
 
-    this.switches.addEventListener('click', (e) => {
-      this.allTimersStopped = true;
-      this.activateSwitch(e);
-    });
+    this.switches.addEventListener('click', this.activateSwitch.bind(this));
 
     this.buttons.next.addEventListener('click', () => {
-      this.allTimersStopped = true;
-      this.next();
+      this.userInitiatedProgression(this.next);
     });
 
     this.window.addEventListener('keydown', this.handleKey.bind(this));
@@ -174,6 +176,7 @@ module.exports = class Carousel {
       this.window.clearInterval(this.timer);
     } else {
       this.buttons.playToggle.innerHTML = 'Pause';
+      this.allTimersStopped = false;
       this.setupTimer();
     }
   }
@@ -240,7 +243,9 @@ module.exports = class Carousel {
 
   startNewAdvancementTimer(intervalInMs) {
     return this.window.setInterval(() => {
-      this.next();
+      if (!this.allTimersStopped) {
+        this.next();
+      }
     }, intervalInMs);
   }
 
@@ -249,9 +254,9 @@ module.exports = class Carousel {
     if (code === 37 || code === 39) {
       this.allTimersStopped = true;
       if (code === 37) {
-        this.previous();
+        this.userInitiatedProgression(this.previous);
       } else {
-        this.next();
+        this.userInitiatedProgression(this.next);
       }
     }
   }
@@ -268,7 +273,7 @@ module.exports = class Carousel {
     let callback = slideOffSet < 0 ? this.previous : this.next;
 
     for (let i = 0; i < slideOffSetAbs; i += 1) {
-      callback.call(this);
+      this.userInitiatedProgression(callback);
     }
   }
 };
