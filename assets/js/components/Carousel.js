@@ -23,6 +23,10 @@ module.exports = class Carousel {
     this.updateControlPanel(this.currentSlide);
     this.togglePlay();
     this.window.addEventListener('resize', this.updateWidth.bind(this));
+
+    this.window.addEventListener('blur', this.cancelTimer.bind(this));
+    this.window.addEventListener('focus', this.setupTimer.bind(this));
+
   }
 
   setupProperties() {
@@ -32,7 +36,10 @@ module.exports = class Carousel {
     this.currentSlide = 1;
     this.originalSlideWrappers = this.moveableStage.querySelectorAll('.carousel__item_wrapper');
     this.slideCount = this.originalSlideWrappers.length;
-    this.timerInterval = 10000;
+    this.timerInterval = 3000;
+
+    // Indicates that timers should not run at all on this carousel (hard stop, not pause).
+    this.timerStopped = false;
   }
 
   buildControls() {
@@ -181,7 +188,7 @@ module.exports = class Carousel {
     if (currentButtonState === 'Pause') {
       toggleButton.innerHTML = 'Play';
       this.timerStopped = true;
-      this.window.clearInterval(this.timer);
+      this.cancelTimer();
     } else {
       toggleButton.innerHTML = 'Pause';
       this.timerStopped = false;
@@ -231,19 +238,23 @@ module.exports = class Carousel {
     utils.updateElementTranslate(this.moveableStage, [newOffset + 'px', 0]);
   }
 
+  cancelTimer() {
+      this.window.clearInterval(this.timer);
+  }
+
   setupTimer() {
+    // make sure old timer stopped before starting a new one
+    this.cancelTimer();
+
     this.timerStopped = false;
     this.timer = this.startNewAdvancementTimer(this.timerInterval);
 
     // mousing over the carousel cancels the timer
-    this.$elm.addEventListener('mouseenter', () => {
-      if (!this.timerStopped) {
-        this.window.clearInterval(this.timer);
-      }
-    });
+    this.$elm.addEventListener('mouseenter', this.cancelTimer.bind(this));
 
     // mouse out from the carousel resets the timer
     this.$elm.addEventListener('mouseleave', () => {
+      this.cancelTimer();
       if (!this.timerStopped) {
         this.timer = this.startNewAdvancementTimer(this.timerInterval);
       }
