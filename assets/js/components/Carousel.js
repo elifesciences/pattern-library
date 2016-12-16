@@ -13,39 +13,37 @@ module.exports = class Carousel {
     this.doc = doc;
     this.$elm = $elm;
 
-    this.setupProperties();
+    this.moveableStage = this.$elm.querySelector('.carousel__items');
+    this.originalSlideWrappers = this.moveableStage.querySelectorAll('.carousel__item_wrapper');
+    this.slideCount = this.originalSlideWrappers.length;
+
     if (this.slideCount < 2) {
       return;
     }
+
+    this.init();
+
+  }
+
+  init() {
+    // 1-indexed not 0-indexed as will be used as a multiplier
+    this.currentSlide = 1;
+    this.timerInterval = 3000;
 
     this.$elm.appendChild(this.buildControls());
     this.updateWidth();
     this.updateControlPanel(this.currentSlide);
     this.togglePlay();
-    this.window.addEventListener('resize', this.updateWidth.bind(this));
 
     this.window.addEventListener('blur', this.cancelTimer.bind(this));
     this.window.addEventListener('focus', this.setupTimer.bind(this));
-
-  }
-
-  setupProperties() {
-    this.moveableStage = this.$elm.querySelector('.carousel__items');
-
-    // 1-indexed not 0-indexed as will be used as a multiplier
-    this.currentSlide = 1;
-    this.originalSlideWrappers = this.moveableStage.querySelectorAll('.carousel__item_wrapper');
-    this.slideCount = this.originalSlideWrappers.length;
-    this.timerInterval = 3000;
-
-    // Indicates that timers should not run at all on this carousel (hard stop, not pause).
-    this.timerStopped = false;
+    this.window.addEventListener('resize', this.updateWidth.bind(this));
   }
 
   buildControls() {
+    // Btn wrappers needed to reserve space in case buttons are removed, to stop things moving about
     let $previousWrapper = this.buildControl$traverser('previous');
     let $nextWrapper = this.buildControl$traverser('next');
-    let $visibleControlsWrapper = utils.buildElement('div', ['carousel__control_panel__visible']);
 
     this.buttons = {
       playToggle: this.buildControl$toggle(),
@@ -54,6 +52,7 @@ module.exports = class Carousel {
     };
     this.switches = this.buildControl$switches(this.slideCount);
 
+    let $visibleControlsWrapper = utils.buildElement('div', ['carousel__control_panel__visible']);
     let visibleControls = [$previousWrapper, this.switches, $nextWrapper];
     visibleControls.forEach(function (control) {
       $visibleControlsWrapper.appendChild(control);
@@ -68,29 +67,22 @@ module.exports = class Carousel {
   }
 
   buildControl$traverser(direction) {
-    if (direction !== 'previous' && direction !== 'next') {
-      return;
-    }
-
     let _direction = direction === 'previous' ? 'previous' : 'next';
     let text = direction + ' item';
-
-    let $div = utils.buildElement('div', ['carousel__control_wrapper']);
-
+    let $wrapper = utils.buildElement('div', ['carousel__control_wrapper']);
     let $button = utils.buildElement('button',
                                      [
                                        'carousel__control--traverse',
                                        'carousel__control--' + _direction
                                      ],
                                      '',
-                                     $div);
+                                     $wrapper);
 
     utils.buildElement('span', ['visuallyhidden'], text, $button);
-    return $div;
+    return $wrapper;
   }
 
   buildControl$toggle() {
-
     let buttonId = 'carouselToggle';
     let $button = utils.buildElement('button', ['carousel__control--toggler'], 'Play');
     $button.id = buttonId;
@@ -106,31 +98,26 @@ module.exports = class Carousel {
     return $toggle;
   }
 
+  buildControl$switches(quantity) {
+    let $list = utils.buildElement('ol', ['carousel__control_switches']);
+    for (let i = 1; i <= quantity; i += 1) {
+      $list.appendChild(this.buildControl$switch(i));
+    }
+
+    return $list;
+  }
+
   buildControl$switch(text) {
-    let $li = utils.buildElement('li', ['carousel__control--switch-item']);
-    let $button =  utils.buildElement('button', ['carousel__control--switch'], '', $li);
+    let $item = utils.buildElement('li', ['carousel__control--switch-item']);
+    let $button =  utils.buildElement('button', ['carousel__control--switch'], '', $item);
     utils.buildElement('span', ['visuallyhidden'], '' + text, $button);
-    return $li;
-  }
-
-  buildControl$switches(count) {
-    let $ol = utils.buildElement('ol', ['carousel__control_switches']);
-    for (let i = 1; i <= count; i += 1) {
-      $ol.appendChild(this.buildControl$switch(i));
-    }
-
-    return $ol;
-  }
-
-  userInitiatedProgression(callback) {
-    this.timerStopped = true;
-    if (!!callback && typeof callback === 'function') {
-      callback.call(this, true);
-    }
+    return $item;
   }
 
   setupEventListeners() {
     this.buttons.playToggle.addEventListener('click', this.togglePlay.bind(this));
+
+    this.window.addEventListener('keydown', this.handleKey.bind(this));
 
     this.buttons.previous.addEventListener('click', () => {
       this.userInitiatedProgression(this.previous);
@@ -142,44 +129,6 @@ module.exports = class Carousel {
       this.userInitiatedProgression(this.next);
     });
 
-    this.window.addEventListener('keydown', this.handleKey.bind(this));
-  }
-
-  updateWidth(stageExtended) {
-    if (!stageExtended) {
-      this.moveableStage.style.width = (this.$elm.width * this.slideCount) + 'px';
-      return;
-    }
-
-    // increment width to accommodate more slides
-    let currentWidthString = this.window.getComputedStyle(this.$elm).width;
-    let currentWidth = currentWidthString.match(/([0-9]+)px/)[1];
-    let increment = currentWidth * this.slideCount;
-    this.moveableStage.style.width = currentWidth + increment + 'px';
-  }
-
-  updateControlPanel(currentSlide) {
-    this.hideInvalidButtonChoice(currentSlide);
-    this.updateActiveSwitch(currentSlide);
-  }
-
-  hideInvalidButtonChoice(currentSlide) {
-    if (currentSlide === 1) {
-      this.buttons.previous.classList.add('hidden');
-    } else {
-      this.buttons.previous.classList.remove('hidden');
-    }
-  }
-
-  updateActiveSwitch(currentSlide) {
-    let currentLogicalSlide = this.getLogicalSlideNumber(currentSlide);
-    [].forEach.call(this.switches.querySelectorAll('.carousel__control--switch'), (aSwitch, i) => {
-      if (i === currentLogicalSlide - 1) {
-        aSwitch.classList.add('active');
-      } else {
-        aSwitch.classList.remove('active');
-      }
-    });
   }
 
   togglePlay() {
@@ -196,48 +145,6 @@ module.exports = class Carousel {
     }
   }
 
-  next() {
-    if (this.currentSlide % this.slideCount === 0) {
-      this.extendStage();
-    }
-
-    this.updateSlide();
-    this.updateControlPanel(this.currentSlide);
-  }
-
-  previous() {
-    if (this.currentSlide > 1) {
-      this.updateSlide('previous');
-      this.updateControlPanel(this.currentSlide);
-    }
-  }
-
-  getCurrentOffset() {
-    let offsetStringMatch = this.moveableStage.style.transform.match(/translate\((.*)px,[^)]+\)/);
-    if (!offsetStringMatch) {
-      return 0;
-    }
-
-    return this.window.parseInt(offsetStringMatch[1], 10);
-  }
-
-  updateSlide(direction) {
-    let currentOffset = this.getCurrentOffset();
-    let newOffset;
-    let currentWidthStringMatch = this.window.getComputedStyle(this.$elm).width
-                                                                         .match(/^([0-9]+)px/);
-    let currentCarouselWidth = this.window.parseInt(currentWidthStringMatch[1], 10);
-    if (direction === 'previous') {
-      this.currentSlide -= 1;
-      newOffset = currentOffset + currentCarouselWidth;
-    } else {
-      this.currentSlide += 1;
-      newOffset = currentOffset - currentCarouselWidth;
-    }
-
-    utils.updateElementTranslate(this.moveableStage, [newOffset + 'px', 0]);
-  }
-
   cancelTimer() {
     this.window.clearInterval(this.timer);
   }
@@ -246,6 +153,7 @@ module.exports = class Carousel {
     // make sure old timer stopped before starting a new one
     this.cancelTimer();
 
+    // Indicates whether timer should run at all on this carousel (hard stop, not pause).
     this.timerStopped = false;
     this.timer = this.startNewAdvancementTimer(this.timerInterval);
 
@@ -281,6 +189,86 @@ module.exports = class Carousel {
     }
   }
 
+  userInitiatedProgression(callback) {
+    this.timerStopped = true;
+    if (!!callback && typeof callback === 'function') {
+      callback.call(this, true);
+    }
+  }
+
+  next() {
+    if (this.currentSlide % this.slideCount === 0) {
+      this.extendStage();
+    }
+
+    this.updateSlide();
+    this.updateControlPanel(this.currentSlide);
+  }
+
+  previous() {
+    if (this.currentSlide > 1) {
+      this.updateSlide('previous');
+      this.updateControlPanel(this.currentSlide);
+    }
+  }
+
+  extendStage () {
+    this.updateWidth(true);
+    [].forEach.call(this.originalSlideWrappers, (slide) => {
+      this.moveableStage.appendChild(slide.cloneNode(true));
+    });
+  }
+
+  updateSlide(direction) {
+    let currentOffset = this.getCurrentOffset();
+    let newOffset;
+    let currentWidthStringMatch = this.window.getComputedStyle(this.$elm).width
+                                      .match(/^([0-9]+)px/);
+    let currentCarouselWidth = this.window.parseInt(currentWidthStringMatch[1], 10);
+    if (direction === 'previous') {
+      this.currentSlide -= 1;
+      newOffset = currentOffset + currentCarouselWidth;
+    } else {
+      this.currentSlide += 1;
+      newOffset = currentOffset - currentCarouselWidth;
+    }
+
+    utils.updateElementTranslate(this.moveableStage, [newOffset + 'px', 0]);
+  }
+
+  getCurrentOffset() {
+    let offsetStringMatch = this.moveableStage.style.transform.match(/translate\((.*)px,[^)]+\)/);
+    if (!offsetStringMatch) {
+      return 0;
+    }
+
+    return this.window.parseInt(offsetStringMatch[1], 10);
+  }
+
+  updateControlPanel(currentSlide) {
+    this.hideInvalidButtonChoice(currentSlide);
+    this.updateActiveSwitch(currentSlide);
+  }
+
+  hideInvalidButtonChoice(currentSlide) {
+    if (currentSlide === 1) {
+      this.buttons.previous.classList.add('hidden');
+    } else {
+      this.buttons.previous.classList.remove('hidden');
+    }
+  }
+
+  updateActiveSwitch(currentSlide) {
+    let currentLogicalSlide = this.getLogicalSlideNumber(currentSlide);
+    [].forEach.call(this.switches.querySelectorAll('.carousel__control--switch'), (aSwitch, i) => {
+      if (i === currentLogicalSlide - 1) {
+        aSwitch.classList.add('active');
+      } else {
+        aSwitch.classList.remove('active');
+      }
+    });
+  }
+
   getLogicalSlideNumber(actualSlideNumber) {
     let setSize = this.originalSlideWrappers.length;
     let slideSetOfSlide = Math.ceil(actualSlideNumber / setSize);
@@ -304,11 +292,17 @@ module.exports = class Carousel {
     }
   }
 
-  extendStage () {
-    this.updateWidth(true);
-    [].forEach.call(this.originalSlideWrappers, (slide) => {
-      this.moveableStage.appendChild(slide.cloneNode(true));
-    });
+  updateWidth(stageExtended) {
+    if (!stageExtended) {
+      this.moveableStage.style.width = (this.$elm.width * this.slideCount) + 'px';
+      return;
+    }
+
+    // increment width to accommodate more slides
+    let currentWidthString = this.window.getComputedStyle(this.$elm).width;
+    let currentWidth = currentWidthString.match(/([0-9]+)px/)[1];
+    let increment = currentWidth * this.slideCount;
+    this.moveableStage.style.width = currentWidth + increment + 'px';
   }
 
 };
