@@ -239,7 +239,7 @@ module.exports = class Carousel {
   }
 
   cancelTimer() {
-      this.window.clearInterval(this.timer);
+    this.window.clearInterval(this.timer);
   }
 
   setupTimer() {
@@ -282,7 +282,6 @@ module.exports = class Carousel {
   }
 
   getLogicalSlideNumber(actualSlideNumber) {
-    let totalSize = this.$elm.querySelectorAll('.carousel__item_wrapper').length;
     let setSize = this.originalSlideWrappers.length;
     let slideSetOfSlide = Math.ceil(actualSlideNumber / setSize);
     let firstSlideOfSet = setSize *  slideSetOfSlide - (setSize - 1);
