@@ -89,7 +89,7 @@ module.exports = class Carousel {
     $button.id = buttonId;
 
     let labelText = 'Toggle the auto refresh of the carousel on and off (the carousel is set to ';
-    labelText += 'refresh every ' + (this.timerInterval/1000) + ' seconds while it is playing).';
+    labelText += 'refresh every ' + (this.timerInterval / 1000) + ' seconds while it is playing).';
     let $label = utils.buildElement('label', [], labelText);
     $label.setAttribute('for', buttonId);
 
@@ -159,27 +159,15 @@ module.exports = class Carousel {
   hideInvalidButtonChoice(currentSlide) {
     if (currentSlide === 1) {
       this.buttons.previous.classList.add('hidden');
-      // this.buttons.next.classList.remove('hidden');
     } else {
       this.buttons.previous.classList.remove('hidden');
     }
-
-/*
-    if (currentSlide === this.slideCount) {
-      this.buttons.previous.classList.remove('hidden');
-      this.buttons.next.classList.add('hidden');
-    }
-
-    if (currentSlide > 1 && currentSlide < this.slideCount) {
-      this.buttons.previous.classList.remove('hidden');
-      this.buttons.next.classList.remove('hidden');
-    }
-*/
   }
 
   updateActiveSwitch(currentSlide) {
+    let currentLogicalSlide = this.getLogicalSlideNumber(currentSlide);
     [].forEach.call(this.switches.querySelectorAll('.carousel__control--switch'), (aSwitch, i) => {
-      if (i === currentSlide - 1) {
+      if (i === currentLogicalSlide - 1) {
         aSwitch.classList.add('active');
       } else {
         aSwitch.classList.remove('active');
@@ -201,14 +189,13 @@ module.exports = class Carousel {
     }
   }
 
-  next(userInitiated) {
-    if (this.currentSlide % this.slideCount === 0/* && !userInitiated*/) {
+  next() {
+    if (this.currentSlide % this.slideCount === 0) {
       this.extendStage();
     }
-    // if (this.currentSlide < this.slideCount || !userInitiated) {
+
     this.updateSlide();
     this.updateControlPanel(this.currentSlide);
-    // }
   }
 
   previous() {
@@ -283,18 +270,26 @@ module.exports = class Carousel {
     }
   }
 
+  getLogicalSlideNumber(actualSlideNumber) {
+    let totalSize = this.$elm.querySelectorAll('.carousel__item_wrapper').length;
+    let setSize = this.originalSlideWrappers.length;
+    let slideSetOfSlide = Math.ceil(actualSlideNumber / setSize);
+    let firstSlideOfSet = setSize *  slideSetOfSlide - (setSize - 1);
+    return actualSlideNumber - firstSlideOfSet + 1;
+  }
+
   activateSwitch(e) {
-    let activatedSwitch = e.target;
-    let activatedSlide = this.window.parseInt(activatedSwitch.querySelector('span').innerHTML, 10);
-    if (activatedSlide === this.currentSlide) {
+    let logicalSlideRequested = this.window.parseInt(e.target.querySelector('span').innerHTML, 10);
+    let logicalSlideCurrent = this.getLogicalSlideNumber(this.currentSlide);
+    let slideOffset = logicalSlideRequested - logicalSlideCurrent;
+
+    if (logicalSlideRequested === logicalSlideCurrent) {
       return;
     }
 
-    let slideOffSet = activatedSlide - this.currentSlide;
-    let slideOffSetAbs = Math.abs(slideOffSet);
-    let callback = slideOffSet < 0 ? this.previous : this.next;
+    let callback = slideOffset < 0 ? this.previous : this.next;
 
-    for (let i = 0; i < slideOffSetAbs; i += 1) {
+    for (let i = 0; i < Math.abs(slideOffset); i += 1) {
       this.userInitiatedProgression(callback);
     }
   }
@@ -303,7 +298,7 @@ module.exports = class Carousel {
     this.updateWidth(true);
     [].forEach.call(this.originalSlideWrappers, (slide) => {
       this.moveableStage.appendChild(slide.cloneNode(true));
-    })
+    });
   }
 
 };
