@@ -8,9 +8,9 @@
     display: flex;
   }
 
+  background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   flex-direction: column;
-  @include height($carousel-height);
   padding: 0;
   text-align: center;
   width: 100vw;

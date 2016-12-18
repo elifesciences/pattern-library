@@ -90,7 +90,7 @@ module.exports = class Carousel {
     let text = direction + ' item';
     let $wrapper = utils.buildElement('div', ['carousel__control_wrapper']);
     let $button = utils.buildElement('button',
-                                     [
+                                     [ 'carousel__control',
                                        'carousel__control--traverse',
                                        'carousel__control--' + _direction
                                      ],
@@ -152,7 +152,13 @@ module.exports = class Carousel {
    */
   buildControl$switch(text) {
     let $item = utils.buildElement('li', ['carousel__control--switch-item']);
-    let $button =  utils.buildElement('button', ['carousel__control--switch'], '', $item);
+    let $button =  utils.buildElement('button',
+                                      [
+                                        'carousel__control',
+                                        'carousel__control--switch'
+                                      ],
+                                      '',
+                                      $item);
     utils.buildElement('span', ['visuallyhidden'], '' + text, $button);
     return $item;
   }
