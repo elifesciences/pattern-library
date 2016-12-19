@@ -136,6 +136,10 @@
   }
 }
 
+@mixin box-shadow() {
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+}
+
 @mixin tooltip-box() {
   background-color: $color-text-ui-background--reverse;
   color: $color-text-ui-background;
@@ -143,8 +147,8 @@
   @include padding(16);
 }
 
-@mixin border-radius-simple($top-left, $top-right: 0, $bottom-left: 0, $bottom-right: 0) {
-  border-radius: #{$border-radius}px;
+@mixin border-radius-simple($top-left: $border-radius, $top-right: 0, $bottom-left: 0, $bottom-right: 0) {
+  border-radius: #{$top-left}px #{$top-right}px #{$bottom-left}px #{$bottom-right}px;
 }
 
 @mixin arrow($direction: "up", $size: 7, $color: $color-text-ui-background--reverse) {

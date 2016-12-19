@@ -283,6 +283,15 @@
   line-height: 1.3;
 }
 
+@mixin menu-typeg() {
+  background-color: #fff;
+  color: $color-text;
+  font-family: $font-secondary;
+  @include font-size(16);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
 @mixin section-title-typeg() {
   font-family: $font-secondary;
   @include font-size(14);
