@@ -2,6 +2,7 @@
 
 .captioned-asset {
   margin: 0;
+  @include padding($blg-space-small-in-px, "bottom");
 }
 
 .captioned-asset__picture {
@@ -11,8 +12,10 @@
 
 .captioned-asset__image {
   display: block;
+  @include margin($blg-space-extra-small-in-px, "bottom");
+  outline: 1px solid $color-text-dividers;
+  @include padding($blg-space-extra-small-in-px);
   width: 100%;
-  @include padding($blg-space-extra-small-in-px 0);
 }
 
 .captioned-asset__caption {

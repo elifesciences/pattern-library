@@ -6,6 +6,10 @@
   max-width: #{get-rem-from-px(715)}rem;
 }
 
+.asset-viewer-inline__header_panel {
+  @include padding(12, "bottom");
+}
+
 .asset-viewer-inline__header_text {
   align-self: center;
   display: inline-block;
