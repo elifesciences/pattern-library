@@ -30,6 +30,7 @@ module.exports = class Carousel {
     this.currentSlide = 1;
     this.timerInterval = 10000;
 
+    this.$elm.querySelector('.carousel__heading').classList.add('visuallyhidden');
     this.$elm.appendChild(this.buildControls());
     this.updateWidth();
     this.updateControlPanel(this.currentSlide);
