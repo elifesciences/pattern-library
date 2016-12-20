@@ -31,10 +31,13 @@ module.exports = class Carousel {
     this.timerInterval = 10000;
 
     this.$elm.querySelector('.carousel__heading').classList.add('visuallyhidden');
-    this.$elm.appendChild(this.buildControls());
+    this.$elm.appendChild(this.buildVisibleControls());
+    this.$toggler = this.buildControl$toggle();
+    this.$elm.insertBefore(this.$toggler, this.$elm.querySelector('.carousel__items'));
     this.updateWidth();
     this.updateControlPanel(this.currentSlide);
-    this.togglePlay(this.toggler.querySelector('button'));
+    this.togglePlay(this.$toggler);
+    this.$toggler.focus();
 
     this.window.addEventListener('keydown', this.handleKey.bind(this));
     this.window.addEventListener('blur', this.cancelTimer.bind(this));
@@ -43,6 +46,55 @@ module.exports = class Carousel {
       this.updateWidth();
       this.adjustTranslateForResize();
     });
+    this.makeSingleSlideATVisible(this.currentSlide);
+  }
+
+  // TODO: To fix the focus problem:
+  // - assign all slides and all elements within every slide a tab index of -1
+  // DONE
+  // TODO: Does this need aria-hidden too?
+
+  // TODO: THESE BITS
+  // - for the newly active slide, remove the tab index -1 on the child elements & focus to that slide
+  // - for the newly inactive slide, restore the negative tabindex value again
+
+  atHide($node) {
+    $node.setAttribute('tabindex', -1);
+    $node.setAttribute('aria-hidden', true);
+  }
+
+  atShow($node) {
+    $node.removeAttribute('tabindex', -1);
+    $node.removeAttribute('aria-hidden', true);
+  }
+
+  setATVisibility($root, show) {
+    let action;
+    if (show) {
+      action = this.atShow;
+    } else {
+      action = this.atHide;
+    }
+
+    action.call(this, $root);
+    [].forEach.call($root.childNodes, ($descendant) => {
+      if ($descendant.nodeType === $descendant.ELEMENT_NODE) {
+        action.call(this, $descendant);
+        if ($descendant.hasChildNodes())  {
+          this.setATVisibility($descendant, show);
+        }
+      }
+    });
+  }
+
+  makeSingleSlideATVisible(slideNumber) {
+    [].forEach.call(this.moveableStage.querySelectorAll('.carousel__item_wrapper'), ($el) => {
+      this.setATVisibility($el, false);
+    });
+    let _slideNumber = slideNumber || 1;
+    let slide = this.$elm.querySelectorAll('.carousel-item')[_slideNumber -1];
+    this.setATVisibility(slide, true);
+    slide.focus();
   }
 
   /**
@@ -50,7 +102,7 @@ module.exports = class Carousel {
    *
    * @returns {Element} The control panel
    */
-  buildControls() {
+  buildVisibleControls() {
     // Btn wrappers needed to reserve space in case buttons are removed, to stop things moving about
     let $previousWrapper = this.buildControl$traverser('previous');
     let $nextWrapper = this.buildControl$traverser('next');
@@ -63,12 +115,7 @@ module.exports = class Carousel {
     // switches are the circular buttons for depicting/going to a slide
     this.switches = this.buildControl$switches(this.originalSlideCount);
 
-    this.toggler = this.buildControl$toggle();
-
     let $controlPanel = utils.buildElement('div', ['carousel__control_panel']);
-    $controlPanel.appendChild(this.toggler);
-
-    // Separate from the toggler, as that's visually hidden
     let $visibleControlsWrapper = utils.buildElement('div', ['carousel__control_panel__visible']);
     let visibleControls = [$previousWrapper, this.switches, $nextWrapper];
     visibleControls.forEach(function (control) {
@@ -111,23 +158,13 @@ module.exports = class Carousel {
    * @returns {Element} The toggler
    */
   buildControl$toggle() {
-    let buttonId = 'carouselToggle';
-    let $button = utils.buildElement('button', ['carousel__control--toggler'], 'Play');
-    $button.id = buttonId;
-
-    let labelText = 'Toggle the auto refresh of the carousel on and off (the carousel is set to ';
-    labelText += 'refresh every ' + (this.timerInterval / 1000) + ' seconds while it is playing).';
-    let $label = utils.buildElement('label', [], labelText);
-    $label.setAttribute('for', buttonId);
-
-    let $toggle = utils.buildElement('div', ['carousel__control_toggle', 'visuallyhidden']);
-    $toggle.appendChild($label);
-    $toggle.appendChild($button);
-    $toggle.addEventListener('click', () => {
+    let $button = utils.buildElement('button', ['carousel__control--toggler', 'visuallyhidden'],
+                                     'Play carousel');
+    $button.setAttribute('aria-label', 'The carousel is now paused. Play carousel');
+    $button.addEventListener('click', () => {
       this.togglePlay($button);
     });
-
-    return $toggle;
+    return $button;
   }
 
   /**
@@ -139,7 +176,8 @@ module.exports = class Carousel {
   buildControl$switches(quantity) {
     let $switches = utils.buildElement('ol', ['carousel__control_switches']);
     for (let i = 1; i <= quantity; i += 1) {
-      $switches.appendChild(this.buildControl$switch(i));
+      $switches.appendChild(this.buildControl$switch('Go to item ' + i + ' of ' +
+                                                     this.originalSlideCount));
     }
 
     $switches.addEventListener('click', this.activateSwitch.bind(this));
@@ -160,23 +198,26 @@ module.exports = class Carousel {
                                       ],
                                       '',
                                       $item);
-    utils.buildElement('span', ['visuallyhidden'], '' + text, $button);
+    let $switch = utils.buildElement('span', ['visuallyhidden'], '' + text, $button);
+    $switch.setAttribute('aria-label', text);
     return $item;
   }
 
   /**
    * Toggles the play/pause state of the carousel based on the current value of the toggle button.
    *
-   * @param $button The button to use as the toggle
+   * @param $button The toggler
    */
   togglePlay($button) {
     let currentButtonState = $button.innerHTML;
-    if (currentButtonState === 'Pause') {
-      $button.innerHTML = 'Play';
+    if (currentButtonState === 'Pause carousel') {
+      $button.innerHTML = 'Play carousel';
+      $button.setAttribute('aria-label', 'The carousel is now paused. Play carousel');
       this.timerStopped = true;
       this.cancelTimer();
     } else {
-      $button.innerHTML = 'Pause';
+      $button.innerHTML = 'Pause carousel';
+      $button.setAttribute('aria-label', 'The carousel is now playing. Pause carousel');
       this.timerStopped = false;
       this.setupTimer();
     }
@@ -307,10 +348,13 @@ module.exports = class Carousel {
    * @param {number} currentSlide The number of the current slide
    */
   hideInvalidButtonChoice(currentSlide) {
-    if (currentSlide === 1) {
+    this.buttons.previous.classList.remove('hidden');
+    this.buttons.next.classList.remove('hidden');
+    let logicalSlideNumber = this.getLogicalSlideNumber(currentSlide);
+    if (logicalSlideNumber === 1) {
       this.buttons.previous.classList.add('hidden');
-    } else {
-      this.buttons.previous.classList.remove('hidden');
+    } else if (logicalSlideNumber === this.originalSlideCount) {
+      this.buttons.next.classList.add('hidden');
     }
   }
 
