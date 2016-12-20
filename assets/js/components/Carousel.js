@@ -168,7 +168,7 @@ module.exports = class Carousel {
     let $switches = utils.buildElement('ol', ['carousel__control_switches']);
     for (let i = 1; i <= quantity; i += 1) {
       $switches.appendChild(this.buildControl$switch('Go to item ' + i + ' of ' +
-                                                     this.originalSlideCount));
+                                                     this.originalSlideCount, i));
     }
 
     $switches.addEventListener('click', this.activateSwitch.bind(this));
@@ -180,7 +180,7 @@ module.exports = class Carousel {
    * @param text The next for the switch (visually hidden)
    * @returns {Element} The switch
    */
-  buildControl$switch(text) {
+  buildControl$switch(text, index) {
     let $item = utils.buildElement('li', ['carousel__control--switch-item']);
     let $button =  utils.buildElement('button',
                                       [
@@ -189,7 +189,7 @@ module.exports = class Carousel {
                                       ],
                                       '',
                                       $item);
-    let $switch = utils.buildElement('span', ['visuallyhidden'], '' + text, $button);
+    let $switch = utils.buildElement('span', ['visuallyhidden'], '' + index, $button);
     $switch.setAttribute('aria-label', text);
     return $item;
   }
