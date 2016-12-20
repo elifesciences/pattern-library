@@ -32,7 +32,6 @@
   },
 
   "backgroundImage": {
-    "thresholdWidth": 600,
     "lowResImageSource": "http://lorempixel.com/950/400",
     "highResImageSource": "http://lorempixel.com/1900/800/"
   }

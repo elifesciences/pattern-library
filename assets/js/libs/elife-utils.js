@@ -181,6 +181,7 @@ module.exports = () => {
     if (['subtract', 'multiply', 'divide'].indexOf(requestedOperation) > -1) {
       operation = requestedOperation;
     }
+
     switch (operation) {
     case 'add':
       adjustedSize = originalSize + adjustment;
