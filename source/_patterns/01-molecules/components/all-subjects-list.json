@@ -1,0 +1,65 @@
+{
+  "subjects": [
+    {
+      "url": "#",
+      "name": "Biochemistry"
+    },
+    {
+      "url": "#",
+      "name": "Biophysics and structural biology"
+    },
+    {
+      "url": "#",
+      "name": "Cancer biology"
+    },
+    {
+      "url": "#",
+      "name": "Cell biology"
+    },
+    {
+      "url": "#",
+      "name": "Computational and systems biology"
+    },
+    {
+      "url": "#",
+      "name": "Developmental biology and stem cells"
+    },
+    {
+      "url": "#",
+      "name": "Ecology"
+    },
+    {
+      "url": "#",
+      "name": "Epidemiology and global health"
+    },
+    {
+      "url": "#",
+      "name": "Genes and chromosomes"
+    },
+    {
+      "url": "#",
+      "name": "Genomics and evolutionary biology"
+    },
+    {
+      "url": "#",
+      "name": "Human biology and medicine"
+    },
+    {
+      "url": "#",
+      "name": "Immunology"
+    },
+    {
+      "url": "#",
+      "name": "Microbiology and infectious disease"
+    },
+    {
+      "url": "#",
+      "name": "Neuroscience"
+    },
+    {
+      "url": "#",
+      "name": "Plant biology"
+    }
+  ]
+}
+
