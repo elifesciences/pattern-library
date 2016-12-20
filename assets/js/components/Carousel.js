@@ -49,15 +49,6 @@ module.exports = class Carousel {
     this.makeSingleSlideATVisible(this.currentSlide);
   }
 
-  // TODO: To fix the focus problem:
-  // - assign all slides and all elements within every slide a tab index of -1
-  // DONE
-  // TODO: Does this need aria-hidden too?
-
-  // TODO: THESE BITS
-  // - for the newly active slide, remove the tab index -1 on the child elements & focus to that slide
-  // - for the newly inactive slide, restore the negative tabindex value again
-
   atHide($node) {
     $node.setAttribute('tabindex', -1);
     $node.setAttribute('aria-hidden', true);
@@ -92,7 +83,7 @@ module.exports = class Carousel {
       this.setATVisibility($el, false);
     });
     let _slideNumber = slideNumber || 1;
-    let slide = this.$elm.querySelectorAll('.carousel-item')[_slideNumber -1];
+    let slide = this.$elm.querySelectorAll('.carousel-item')[_slideNumber - 1];
     this.setATVisibility(slide, true);
     slide.focus();
   }
@@ -138,9 +129,9 @@ module.exports = class Carousel {
     let text = direction + ' item';
     let $wrapper = utils.buildElement('div', ['carousel__control_wrapper']);
     let $button = utils.buildElement('button',
-                                     [ 'carousel__control',
-                                       'carousel__control--traverse',
-                                       'carousel__control--' + _direction
+                                     ['carousel__control',
+                                      'carousel__control--traverse',
+                                      'carousel__control--' + _direction
                                      ],
                                      '',
                                      $wrapper);
