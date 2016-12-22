@@ -1,0 +1,35 @@
+<div class="global-wrapper">
+  <div class="global-inner">
+    {{#siteHeader}}
+      {{> organisms-site-header }}
+    {{/siteHeader}}
+
+    <main role="main" class="blg-margin-bottom-large">
+
+      {{#carousel}}
+        {{> organisms-carousel}}
+      {{/carousel}}
+
+      {{#leadPara}}
+        {{> atoms-lead-para}}
+      {{/leadPara}}
+
+      {{#subjectListLink}}
+        {{> atoms-all-subjects-list-link}}
+      {{/subjectListLink}}
+
+      <div style="height: 800px; background-color: rgba(2, 136, 209, 0.2);">Main article list.</div>
+
+      {{#subjectsList}}
+        {{> molecules-all-subjects-list}}
+      {{/subjectsList}}
+
+    </main>
+
+    {{#emailCta}}
+    {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+  </div> <!-- /.global-inner -->
+</div> <!-- /.global-wrapper -->
