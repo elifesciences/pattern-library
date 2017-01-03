@@ -12,6 +12,9 @@ schema:
   properties:
     heading:
       type: string
+    id:
+      type: string
+      pattern: ^[a-zA-Z0-9_$]+$
     items:
       type: array
       minItems: 1
