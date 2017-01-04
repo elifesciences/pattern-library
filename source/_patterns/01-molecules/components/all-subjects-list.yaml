@@ -8,7 +8,7 @@ schema:
   properties:
     id:
       type: string
-      pattern: ^allSubjectsList$
+      minLength: 1
     labelledBy:
       type: string
       minLength: 1
