@@ -227,8 +227,10 @@
     }
   ],
   "pagination": {
-    "text": "Load more",
-    "classes": "button--default button--full",
-    "path": "#"
+    "nextPage": {
+      "text": "Load more",
+      "classes": "button--default button--full",
+      "path": "#"
+    }
   }
 }

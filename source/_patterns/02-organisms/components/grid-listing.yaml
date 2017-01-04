@@ -3,7 +3,6 @@ assets:
     - grid-listing.css
     - $ref: ../../00-atoms/components/block-link.yaml#/assets/css
     - $ref: ../../01-molecules/components/archive-nav-link.yaml#/assets/css
-    - $ref: ../../01-molecules/navigation/load-more.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/pager.yaml#/assets/css
     - $ref: ../../01-molecules/teasers/teaser.yaml#/assets/css
   js: []
@@ -47,8 +46,6 @@ schema:
               items:
                 $ref: ../../01-molecules/teasers/teaser.yaml#/schema
             pagination:
-              oneOf:
-                - $ref: ../../01-molecules/navigation/load-more.yaml#/schema
-                - $ref: ../../01-molecules/navigation/pager.yaml#/schema
+              $ref: ../../01-molecules/navigation/pager.yaml#/schema
           required:
             - teasers
