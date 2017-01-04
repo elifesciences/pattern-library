@@ -35,7 +35,7 @@
   }
 
   .caption-text__body,
-  .caption-text__body * {
+  .caption-text__body > * {
     @include font-size($font-size-caption-in-px * $box-font-scaling-factor);
   }
 

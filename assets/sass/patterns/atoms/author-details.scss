@@ -44,6 +44,5 @@ a.author-details__link {
 }
 
 .author-details__linked-image--orcid {
-  margin-bottom: -3px;
-  @include height($font-size-base-in-px);
+  @include inline-image();
 }

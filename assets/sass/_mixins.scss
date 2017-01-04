@@ -264,3 +264,7 @@
   }
 }
 
+@mixin inline-image {
+  margin-bottom: -3px;
+  height: 1em;
+}
