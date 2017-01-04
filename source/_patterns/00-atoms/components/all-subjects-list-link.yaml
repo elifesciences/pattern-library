@@ -7,6 +7,6 @@ schema:
   properties:
     targetFragmentId:
       type: string
-      pattern: ^allSubjectsList$
+      minLength: 1
   required:
     - targetFragmentId
