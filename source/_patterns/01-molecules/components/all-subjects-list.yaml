@@ -6,6 +6,9 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
+    id:
+      type: string
+      pattern: ^allSubjectsList$
     labelledBy:
       type: string
       minLength: 1
@@ -25,4 +28,5 @@ schema:
           - url
           - name
   required:
+    - id
     - subjects
