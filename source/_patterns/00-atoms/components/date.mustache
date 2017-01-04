@@ -6,5 +6,8 @@
 {{/isExpanded}}
 
 {{^isExpanded}}
-  <time class="date{{#variant}}{{/variant}}" datetime="{{forMachine}}">{{forHuman.month}} {{forHuman.dayOfMonth}}, {{forHuman.year}}</time>
+  <span class="date{{#variant}}{{/variant}}">
+    {{#isUpdated}}Updated{{/isUpdated}}
+    <time datetime="{{forMachine}}">{{forHuman.month}} {{forHuman.dayOfMonth}}, {{forHuman.year}}</time>
+  </span>
 {{/isExpanded}}
