@@ -1,5 +1,5 @@
 {{> atoms-list-heading}}
-<ol class="listing-list">
+<ol class="listing-list"{{#id}} id="{{id}}"{{/id}}>
   {{#items}}
       <li class="listing-list__item">
         {{> molecules-teaser }}
@@ -15,10 +15,5 @@
 </ol>
 
 {{#pagination}}
-  {{^previousPage}}
-    {{> molecules-load-more}}
-  {{/previousPage}}
-  {{#previousPage}}
     {{> molecules-pager}}
-  {{/previousPage}}
 {{/pagination}}

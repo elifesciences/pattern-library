@@ -1,5 +1,6 @@
 {
   "heading": "Listing of teasers",
+  "id": "extendableList1",
   "items": [
     {
       "contextLabel": {
@@ -154,8 +155,10 @@
     }
   ],
   "pagination": {
-    "text": "Load more",
-    "classes": "button--default button--full",
-    "path": "#"
+    "nextPage": {
+      "text": "Load more",
+      "classes": "button--default button--full",
+      "path": "#"
+    }
   }
 }
