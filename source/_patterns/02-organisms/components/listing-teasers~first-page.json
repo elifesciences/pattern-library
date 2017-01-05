@@ -1,6 +1,6 @@
 {
+  "id": "idOfListElementToLoadContentInTo",
   "heading": "Listing of teasers",
-  "id": "extendableList1",
   "items": [
     {
       "contextLabel": {
@@ -155,6 +155,7 @@
     }
   ],
   "pagination": {
+    "targetId": "idOfListElementToLoadContentInTo",
     "nextPage": {
       "text": "Load more",
       "classes": "button--default button--full",
