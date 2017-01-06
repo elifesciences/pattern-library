@@ -40,8 +40,11 @@ module.exports = class Pager {
     this.$targetEl.appendChild(frag);
   }
 
-  handleRejection (reason) {
-    this.window.console.log(reason);
+  handleError (e) {
+    let loaderLink = this.getValidLoaderLink();
+    if (loaderLink) {
+      this.window.location.search = loaderLink;
+    }
   }
 
 
@@ -50,8 +53,6 @@ module.exports = class Pager {
     if (match) {
       return match[0];
     }
-
-    return null;
   }
 
   getPageNumberFromLoaderLink() {
@@ -89,7 +90,7 @@ module.exports = class Pager {
     try {
       this.injectNewData(data);
     } catch (e) {
-      console.log(e);
+      this.handleError(e);
       return;
     }
     this.updateUrl(data);
@@ -99,10 +100,6 @@ module.exports = class Pager {
   handleLoadRequest(e) {
     e.preventDefault();
 
-    let pageToRetrieve = this.getValidLoaderLink();
-    if (pageToRetrieve) {
-
-    }
     // TODO: Fix up this URL.
     // At the moment, this placeholder URL requires a local PHP server running in /test/fixtures.
     // this.loadNextPageData('//localhost:9090/pagerData.php', this.window.XMLHttpRequest)
@@ -112,7 +109,7 @@ module.exports = class Pager {
     // let pageNum = this.getPageNumberFromLoaderLink() - 1;
     // this.loadNextPageData('//localhost:9090/pagerData_' + pageNum + '.php', this.window.XMLHttpRequest)
     this.loadNextPageData('?page=' + pageNum, this.window.XMLHttpRequest)
-        .then(this.handleLoad.bind(this), this.handleRejection.bind(this));
+        .then(this.handleLoad.bind(this), this.handleError.bind(this));
   }
 
   loadNextPageData(url, XMLHttpRequest) {
