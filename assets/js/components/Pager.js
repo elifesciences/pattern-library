@@ -20,10 +20,16 @@ module.exports = class Pager {
     this.$loader.addEventListener('click', this.handleLoadRequest.bind(this));
   }
 
-  injectNewData(newData) {
+  normaliseData(data) {
+    let dataNoLeadingWhitespace = data.replace(/^\s+([^\s])/gm, '$1');
+    return dataNoLeadingWhitespace.replace(/\n/g, '');
+  }
 
-    let regex = /.*<ol class="[^"]*listing-list[^"]*">(<li>?.*<\/li>)<\/ol>.*/;
-    let match = newData.match(regex);
+  injectNewData(newData) {
+    let normalisedData = this.normaliseData(newData);
+    let regex = /.*<ol[^>]*class="[^"]*listing-list[^"]*"[^>]*>(<li>?.*<\/li>)<\/ol>.*/;
+    let match = normalisedData.match(regex);
+
     if (!(match && match[1])) {
       throw new SyntaxError('Loaded data doesn\'t match required format');
     }
@@ -43,10 +49,10 @@ module.exports = class Pager {
   handleError (e) {
     let loaderLink = this.getValidLoaderLink();
     if (loaderLink) {
-      this.window.location.search = loaderLink;
+      console.log(e);
+      // this.window.location.search = loaderLink;
     }
   }
-
 
   getValidLoaderLink() {
     let match = this.$loader.href.match(/\?page=([0-9]+)/);
@@ -64,7 +70,8 @@ module.exports = class Pager {
   }
 
   static isLastPage(data) {
-    return !data.match(/.*class="[^"]*pager__button--next[^"]*"/);
+    // TODO: Adjust if final implementation of pager next button changes
+    return !data.match(/class="pager".*button--default.*button--default/g);
   }
 
   updatePager(data) {
@@ -87,14 +94,16 @@ module.exports = class Pager {
   }
 
   handleLoad(data) {
+    let normalisedData;
     try {
-      this.injectNewData(data);
+      normalisedData = this.normaliseData(data);
+      this.injectNewData(normalisedData);
     } catch (e) {
       this.handleError(e);
       return;
     }
-    this.updateUrl(data);
-    this.updatePager(data);
+    this.updateUrl();
+    this.updatePager(normalisedData);
   }
 
   handleLoadRequest(e) {
@@ -104,11 +113,11 @@ module.exports = class Pager {
     // At the moment, this placeholder URL requires a local PHP server running in /test/fixtures.
     // this.loadNextPageData('//localhost:9090/pagerData.php', this.window.XMLHttpRequest)
 
-    let pageNum = this.getPageNumberFromLoaderLink();
+    // let pageNum = this.getPageNumberFromLoaderLink();
     // DEBUG:
-    // let pageNum = this.getPageNumberFromLoaderLink() - 1;
-    // this.loadNextPageData('//localhost:9090/pagerData_' + pageNum + '.php', this.window.XMLHttpRequest)
-    this.loadNextPageData('?page=' + pageNum, this.window.XMLHttpRequest)
+    let pageNum = this.getPageNumberFromLoaderLink() - 1;
+    this.loadNextPageData('//localhost:9090/pagerData_' + pageNum + '.php', this.window.XMLHttpRequest)
+    // this.loadNextPageData('?page=' + pageNum, this.window.XMLHttpRequest)
         .then(this.handleLoad.bind(this), this.handleError.bind(this));
   }
 
@@ -122,7 +131,7 @@ module.exports = class Pager {
         });
         xhr.addEventListener('error', reject);
         xhr.open('GET', url);
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        // xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send();
       }
     );
