@@ -16,7 +16,7 @@ module.exports = class SearchBox {
     if (!(this.$loader && this.$targetEl)) {
       return;
     }
-    this.currentPage = 1;
+
     this.$loader.addEventListener('click', this.handleLoadRequest.bind(this));
   }
 
@@ -30,33 +30,31 @@ module.exports = class SearchBox {
       frag.appendChild(child);
     }
 
-    // Is this fragment identifier necessary? Decide when worked out URL handling.
-    frag.firstElementChild.id = 'page' + this.currentPage;
     this.$targetEl.appendChild(frag);
-  }
-
-  success (data) {
-    this.currentPage += 1;
-    this.injectNewData(data);
-    // TODO: Update the URL
-    // TODO: Decide on url handling
   }
 
   error (e) {
     this.window.console.log(e);
   }
 
-  // send a request to get the data [tick]
-  // insert the data [tick]
-  // add a fragment id [tick]
-  // update the URL
+  handleUrlChange () {
+    let newQueryString = this.$loader.href.match(/\?page=([0-9]+)/);
+    if (Array.isArray(newQueryString)) {
+      this.window.history.pushState(null, null, newQueryString[0]);
+      let pageNumber = this.window.parseInt(newQueryString[1], 10) + 1;
+      this.$loader.href = '?page=' + pageNumber;
+    }
+  }
 
   handleLoadRequest(e) {
     e.preventDefault();
+
     // TODO: Fix up this URL.
     // At the moment, this placeholder URL requires a local PHP server running in /test/fixtures.
-    this.loadNextPageData('//localhost:9090/pagerData.php', this.window.XMLHttpRequest)
-        .then(this.success.bind(this), this.error.bind(this));
+    let loadData = this.loadNextPageData('//localhost:9090/pagerData.php',
+                                         this.window.XMLHttpRequest);
+    loadData.then(this.injectNewData.bind(this), this.error.bind(this));
+    loadData.then(this.handleUrlChange.bind(this), this.error.bind(this));
   }
 
   loadNextPageData(url, XMLHttpRequest) {

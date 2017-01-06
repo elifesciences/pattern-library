@@ -159,7 +159,7 @@
     "nextPage": {
       "text": "Load more",
       "classes": "button--default button--full",
-      "path": "#"
+      "path": "?page=2"
     }
   }
 }
