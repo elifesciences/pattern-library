@@ -20,13 +20,13 @@ module.exports = class Pager {
     this.$loader.addEventListener('click', this.handleLoadRequest.bind(this));
   }
 
-  normaliseData(data) {
+  static normaliseData(data) {
     let dataNoLeadingWhitespace = data.replace(/^\s+([^\s])/gm, '$1');
     return dataNoLeadingWhitespace.replace(/\n/g, '');
   }
 
   injectNewData(newData) {
-    let normalisedData = this.normaliseData(newData);
+    let normalisedData = Pager.normaliseData(newData);
     let regex = /.*<ol[^>]*class="[^"]*listing-list[^"]*"[^>]*>(<li>?.*<\/li>)<\/ol>.*/;
     let match = normalisedData.match(regex);
 
@@ -38,6 +38,7 @@ module.exports = class Pager {
     let frag = this.doc.createDocumentFragment();
     let $temp = this.doc.createElement('div');
     $temp.innerHTML = data;
+    // TODO: Consider intercepting here to determine if last page
     while ($temp.firstElementChild) {
       let child = $temp.firstElementChild;
       frag.appendChild(child);
@@ -49,8 +50,7 @@ module.exports = class Pager {
   handleError (e) {
     let loaderLink = this.getValidLoaderLink();
     if (loaderLink) {
-      console.log(e);
-      // this.window.location.search = loaderLink;
+      this.window.location.search = loaderLink;
     }
   }
 
@@ -96,7 +96,7 @@ module.exports = class Pager {
   handleLoad(data) {
     let normalisedData;
     try {
-      normalisedData = this.normaliseData(data);
+      normalisedData = Pager.normaliseData(data);
       this.injectNewData(normalisedData);
     } catch (e) {
       this.handleError(e);
@@ -113,11 +113,13 @@ module.exports = class Pager {
     // At the moment, this placeholder URL requires a local PHP server running in /test/fixtures.
     // this.loadNextPageData('//localhost:9090/pagerData.php', this.window.XMLHttpRequest)
 
-    // let pageNum = this.getPageNumberFromLoaderLink();
+    let pageNum = this.getPageNumberFromLoaderLink();
+
     // DEBUG:
-    let pageNum = this.getPageNumberFromLoaderLink() - 1;
-    this.loadNextPageData('//localhost:9090/pagerData_' + pageNum + '.php', this.window.XMLHttpRequest)
-    // this.loadNextPageData('?page=' + pageNum, this.window.XMLHttpRequest)
+    // let pageNum = this.getPageNumberFromLoaderLink() - 1;
+    // this.loadNextPageData('//localhost:9090/pagerData_' + pageNum + '.php', this.window.XMLHttpRequest)
+
+    this.loadNextPageData('?page=' + pageNum, this.window.XMLHttpRequest)
         .then(this.handleLoad.bind(this), this.handleError.bind(this));
   }
 
@@ -131,7 +133,7 @@ module.exports = class Pager {
         });
         xhr.addEventListener('error', reject);
         xhr.open('GET', url);
-        // xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send();
       }
     );
