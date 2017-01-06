@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = class SearchBox {
+module.exports = class Pager {
 
   constructor($elm, _window = window, doc = document) {
     if (!$elm) {
