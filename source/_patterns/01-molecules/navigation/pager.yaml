@@ -11,17 +11,8 @@ schema:
       $ref: ../../00-atoms/components/button.yaml#/schema
     nextPage:
       $ref: ../../00-atoms/components/button.yaml#/schema
-  oneOf:
-    - required:
-      - nextPage
-      not:
-        required:
-          - previousPage
+  anyOf:
     - required:
       - previousPage
-      not:
-        required:
-          - nextPage
     - required:
       - nextPage
-      - previousPage
