@@ -1,4 +1,9 @@
-@import "definitions";
+@import "../../definitions";
+
+.table-wrap {
+  position: relative;
+  overflow: scroll;
+}
 
 // Tables are usually delivered as a blob of HTML from an upstream application, not via the pattern system.
 table {

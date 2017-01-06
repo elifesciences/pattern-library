@@ -1,0 +1,19 @@
+{{#tables}}
+
+  <div class="table-wrap">
+
+    {{{.}}}
+
+  </div>
+
+{{/tables}}
+
+{{#hasFootnotes}}
+
+  <ol class="list">
+    {{#footnotes}}
+      <li{{#id}} id="{{id}}"{{/id}}>{{{text}}}</li>
+    {{/footnotes}}
+  </ol>
+
+{{/hasFootnotes}}
