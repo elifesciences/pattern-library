@@ -125,6 +125,7 @@ module.exports = class Pager {
         });
         xhr.addEventListener('error', reject);
         xhr.open('GET', url);
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send();
       }
     );
