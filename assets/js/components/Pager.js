@@ -22,7 +22,7 @@ module.exports = class Pager {
 
   injectNewData(newData) {
 
-    let regex = /<ol class="[^"]*listing-list[^"]*">(<li>?.*<\/li>)<\/ol>.*/;
+    let regex = /.*<ol class="[^"]*listing-list[^"]*">(<li>?.*<\/li>)<\/ol>.*/;
     let match = newData.match(regex);
     if (!(match && match[1])) {
       throw new SyntaxError('Loaded data doesn\'t match required format');
