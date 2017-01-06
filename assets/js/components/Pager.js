@@ -21,10 +21,17 @@ module.exports = class Pager {
   }
 
   injectNewData(newData) {
-    let $data = newData.match(/<li>?.*<\/li>/)[0];
+
+    let regex = /<ol class="[^"]*listing-list[^"]*">(<li>?.*<\/li>)<\/ol>.*/;
+    let match = newData.match(regex);
+    if (!(match && match[1])) {
+      throw new SyntaxError('Loaded data doesn\'t match required format');
+    }
+
+    let data = match[1];
     let frag = this.doc.createDocumentFragment();
     let $temp = this.doc.createElement('div');
-    $temp.innerHTML = $data;
+    $temp.innerHTML = data;
     while ($temp.firstElementChild) {
       let child = $temp.firstElementChild;
       frag.appendChild(child);
@@ -33,28 +40,79 @@ module.exports = class Pager {
     this.$targetEl.appendChild(frag);
   }
 
-  error (e) {
-    this.window.console.log(e);
+  handleRejection (reason) {
+    this.window.console.log(reason);
   }
 
-  handleUrlChange () {
-    let newQueryString = this.$loader.href.match(/\?page=([0-9]+)/);
-    if (Array.isArray(newQueryString)) {
-      this.window.history.pushState(null, null, newQueryString[0]);
-      let pageNumber = this.window.parseInt(newQueryString[1], 10) + 1;
-      this.$loader.href = '?page=' + pageNumber;
+
+  getValidLoaderLink() {
+    let match = this.$loader.href.match(/\?page=([0-9]+)/);
+    if (match) {
+      return match[0];
     }
+
+    return null;
+  }
+
+  getPageNumberFromLoaderLink() {
+    let loaderLink = this.getValidLoaderLink();
+    if (loaderLink) {
+      let pageNumber = loaderLink.match(/\?page=([0-9]+)/)[1];
+      return this.window.parseInt(pageNumber, 10);
+    }
+  }
+
+  static isLastPage(data) {
+    return !data.match(/.*class="[^"]*pager__button--next[^"]*"/);
+  }
+
+  updatePager(data) {
+    if (Pager.isLastPage(data)) {
+      this.$loader.parentNode.removeChild(this.$loader);
+    } else {
+      let pageNumber = this.getPageNumberFromLoaderLink();
+      if (!isNaN(pageNumber)) {
+        pageNumber += 1;
+        this.$loader.href = '?page=' + pageNumber;
+      }
+    }
+  }
+
+  updateUrl () {
+    let validLoaderLink = this.getValidLoaderLink();
+    if (validLoaderLink) {
+      this.window.history.pushState(null, null, validLoaderLink);
+    }
+  }
+
+  handleLoad(data) {
+    try {
+      this.injectNewData(data);
+    } catch (e) {
+      console.log(e);
+      return;
+    }
+    this.updateUrl(data);
+    this.updatePager(data);
   }
 
   handleLoadRequest(e) {
     e.preventDefault();
 
+    let pageToRetrieve = this.getValidLoaderLink();
+    if (pageToRetrieve) {
+
+    }
     // TODO: Fix up this URL.
     // At the moment, this placeholder URL requires a local PHP server running in /test/fixtures.
-    let loadData = this.loadNextPageData('//localhost:9090/pagerData.php',
-                                         this.window.XMLHttpRequest);
-    loadData.then(this.injectNewData.bind(this), this.error.bind(this));
-    loadData.then(this.handleUrlChange.bind(this), this.error.bind(this));
+    // this.loadNextPageData('//localhost:9090/pagerData.php', this.window.XMLHttpRequest)
+
+    let pageNum = this.getPageNumberFromLoaderLink();
+    // DEBUG:
+    // let pageNum = this.getPageNumberFromLoaderLink() - 1;
+    // this.loadNextPageData('//localhost:9090/pagerData_' + pageNum + '.php', this.window.XMLHttpRequest)
+    this.loadNextPageData('?page=' + pageNum, this.window.XMLHttpRequest)
+        .then(this.handleLoad.bind(this), this.handleRejection.bind(this));
   }
 
   loadNextPageData(url, XMLHttpRequest) {
