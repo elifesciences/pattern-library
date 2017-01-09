@@ -21,6 +21,7 @@ if (window.localStorage && document.querySelector &&
   Components.MainMenu = require('./components/MainMenu');
   Components.Math = require('./components/Math');
   Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
+  Components.Pager = require('./components/Pager');
   Components.SearchBox = require('./components/SearchBox');
   Components.SelectNav = require('./components/SelectNav');
   Components.SiteHeader = require('./components/SiteHeader');
