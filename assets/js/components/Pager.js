@@ -27,14 +27,14 @@ module.exports = class Pager {
 
   injectNewData(newData) {
     let normalisedData = Pager.normaliseData(newData);
-    let regex = /.*<ol[^>]*class="[^"]*listing-list[^"]*"[^>]*>(<li>?.*<\/li>)<\/ol>.*/;
+    let regex = /.*<ol[^>]*class="[^"]*(grid-listing|listing-list)[^"]*"[^>]*>(<li>?.*<\/li>)<\/ol>.*/;
     let match = normalisedData.match(regex);
 
-    if (!(match && match[1])) {
+    if (!(match && match[2])) {
       throw new SyntaxError('Loaded data doesn\'t match required format');
     }
 
-    let data = match[1];
+    let data = match[2];
     let frag = this.doc.createDocumentFragment();
     let $temp = this.doc.createElement('div');
     $temp.innerHTML = data;
