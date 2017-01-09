@@ -41,10 +41,7 @@
 
 
 
-      <span class="date">
-
-        <time datetime="2016-05-16">May 16, 2016</time>
-      </span>
+      <span class="date"> Updated <time datetime="2016-02-29">Feb 29, 2016</time></span>
       </div>
 
             <div class="teaser__publish_state">
@@ -87,10 +84,7 @@
 
 
 
-      <span class="date">
-
-        <time datetime="2016-04-19">Apr 19, 2016</time>
-      </span>
+      <span class="date"> Updated <time datetime="2016-02-29">Feb 29, 2016</time></span>
       </div>
 
             <div class="teaser__publish_state">
@@ -133,10 +127,7 @@
 
 
 
-      <span class="date">
-
-        <time datetime="2016-05-16">May 16, 2016</time>
-      </span>
+      <span class="date"> Updated <time datetime="2016-02-29">Feb 29, 2016</time></span>
       </div>
 
             <div class="teaser__publish_state">
@@ -188,10 +179,7 @@
 
 
 
-      <span class="date">
-
-        <time datetime="2016-04-15">Apr 15, 2016</time>
-      </span>
+      <span class="date"> Updated <time datetime="2016-02-29">Feb 29, 2016</time></span>
       </div>
 
             <div class="teaser__publish_state">
@@ -250,10 +238,7 @@
 
 
 
-      <span class="date">
-
-        <time datetime="2016-05-16">May 16, 2016</time>
-      </span>
+      <span class="date"> Updated <time datetime="2016-02-29">Feb 29, 2016</time></span>
       </div>
 
             <div class="teaser__publish_state">
@@ -296,10 +281,7 @@
 
 
 
-      <span class="date">
-
-        <time datetime="2016-04-19">Apr 19, 2016</time>
-      </span>
+      <span class="date"> Updated <time datetime="2016-02-29">Feb 29, 2016</time></span>
       </div>
 
             <div class="teaser__publish_state">
