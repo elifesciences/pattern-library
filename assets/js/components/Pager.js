@@ -27,7 +27,8 @@ module.exports = class Pager {
 
   injectNewData(newData) {
     let normalisedData = Pager.normaliseData(newData);
-    let regex = /.*<ol[^>]*class="[^"]*(grid-listing|listing-list)[^"]*"[^>]*>(<li>?.*<\/li>)<\/ol>.*/;
+    let regex =
+      /.*<ol[^>]*class="[^"]*(grid-listing|listing-list)[^"]*"[^>]*>(<li>?.*<\/li>)<\/ol>.*/;
     let match = normalisedData.match(regex);
 
     if (!(match && match[2])) {
@@ -38,7 +39,6 @@ module.exports = class Pager {
     let frag = this.doc.createDocumentFragment();
     let $temp = this.doc.createElement('div');
     $temp.innerHTML = data;
-    // TODO: Consider intercepting here to determine if last page
     while ($temp.firstElementChild) {
       let child = $temp.firstElementChild;
       frag.appendChild(child);
@@ -47,7 +47,7 @@ module.exports = class Pager {
     this.$targetEl.appendChild(frag);
   }
 
-  handleError (e) {
+  handleError () {
     let loaderLink = this.getValidLoaderLink();
     if (loaderLink) {
       this.window.location.search = loaderLink;
@@ -70,7 +70,6 @@ module.exports = class Pager {
   }
 
   static isLastPage(data) {
-    // TODO: Adjust if final implementation of pager next button changes
     return !data.match(/class="pager".*button--default.*button--default/g);
   }
 
@@ -89,7 +88,7 @@ module.exports = class Pager {
   updateUrl () {
     let validLoaderLink = this.getValidLoaderLink();
     if (validLoaderLink) {
-      this.window.history.pushState(null, null, validLoaderLink);
+      this.window.history.pushState(null, '', validLoaderLink);
     }
   }
 
@@ -102,23 +101,14 @@ module.exports = class Pager {
       this.handleError(e);
       return;
     }
+
     this.updateUrl();
     this.updatePager(normalisedData);
   }
 
   handleLoadRequest(e) {
     e.preventDefault();
-
-    // TODO: Fix up this URL.
-    // At the moment, this placeholder URL requires a local PHP server running in /test/fixtures.
-    // this.loadNextPageData('//localhost:9090/pagerData.php', this.window.XMLHttpRequest)
-
     let pageNum = this.getPageNumberFromLoaderLink();
-
-    // DEBUG:
-    // let pageNum = this.getPageNumberFromLoaderLink() - 1;
-    // this.loadNextPageData('//localhost:9090/pagerData_' + pageNum + '.php', this.window.XMLHttpRequest)
-
     this.loadNextPageData('?page=' + pageNum, this.window.XMLHttpRequest)
         .then(this.handleLoad.bind(this), this.handleError.bind(this));
   }
@@ -141,8 +131,12 @@ module.exports = class Pager {
   }
 
   find$Loader() {
-    let $loader = this.$elm.querySelector('.button--full:first-child.button--full:last-child');
     let rand = Math.round(Math.random() * 10e7);
+    let $loader = this.$elm.querySelector('.button--full:first-child.button--full:last-child');
+    if (!$loader) {
+      return;
+    }
+
     $loader.id = 'loader' + rand;
     return $loader;
   }
