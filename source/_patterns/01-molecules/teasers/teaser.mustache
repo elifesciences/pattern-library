@@ -26,12 +26,7 @@
           - teaser__img--small: 70px square image, floating right.
         }}
     {{#image}}
-      <a href="{{{url}}}">
-        <img src="{{defaultPath}}"
-             alt="{{altText}}"
-             {{#srcset}}srcset="{{srcset}}"{{/srcset}}
-             class="teaser__img{{#classes}} {{classes}}{{/classes}}" />
-      </a>
+      <a href="{{{url}}}"><img src="{{defaultPath}}" alt="{{altText}}" {{#srcset}}srcset="{{srcset}}"{{/srcset}} class="teaser__img{{#classes}} {{classes}}{{/classes}}" /></a>
     {{/image}}
 
     {{! Used for the date in an event teaser only. Treatment very like teaser__img--small.
@@ -90,19 +85,11 @@
     <div class="teaser__publish_state">
 
       {{^vor}}
-        <img
-            class="teaser__publish_state--poa"
-            src="{{assetsPath}}/img/icons/poa-1x.png"
-            srcset="{{assetsPath}}/img/icons/poa-2x.png 40w, {{assetsPath}}/img/icons/poa-1x.png 20w"
-            alt="Available as authors' accepted manuscript" />
+        <img class="teaser__publish_state--poa" src="{{assetsPath}}/img/icons/poa-1x.png" srcset="{{assetsPath}}/img/icons/poa-2x.png 40w,{{assetsPath}}/img/icons/poa-1x.png 20w" alt="Available as authors' accepted manuscript" />
       {{/vor}}
 
       {{#vor}}
-        <img
-            class="teaser__publish_state--vor"
-            src="{{assetsPath}}/img/icons/vor-1x.png"
-            srcset="{{assetsPath}}/img/icons/vor-2x.png 40w, {{assetsPath}}/img/icons/vor-1x.png 20w"
-            alt="Available as full, typeset article" />
+        <img class="teaser__publish_state--vor" src="{{assetsPath}}/img/icons/vor-1x.png" srcset="{{assetsPath}}/img/icons/vor-2x.png 40w, {{assetsPath}}/img/icons/vor-1x.png 20w" alt="Available as full, typeset article" />
       {{/vor}}
 
     </div>
