@@ -7,3 +7,18 @@
 .button:nth-child(2) {
   float: right;
 }
+
+.js .pager__text_wrapper.loading {
+
+  position: relative;
+
+  &:after {
+    @include loading-spinner($highlight-color: $color-text--reverse, $base-color: #81c4e8);
+    content: "";
+    display: inline-block;
+    position: relative;
+    left: 6px;
+    top: 4px;
+  }
+
+}
