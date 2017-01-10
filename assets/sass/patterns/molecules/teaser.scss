@@ -17,16 +17,7 @@
 }
 
 .teaser__context_label_list {
-  @include label-content-typeg();
-  margin: 0;
-  @include margin(5, "bottom");
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-  text-transform: uppercase;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  z-index: 100;
+  @include teaser-context-label-list-style();
 }
 
 .teaser__context_label_list_item {

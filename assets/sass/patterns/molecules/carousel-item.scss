@@ -17,23 +17,12 @@
 
 }
 
-.carousel-item * {
-  background-color: transparent;
-  color: $color-text;
-}
-
 .js .carousel-item {
   @include height($carousel-height);
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   color: $color-text--reverse;
   width: 100vw;
-}
-
-.carousel-item__subject_list {
-  @include label-subject-typeg();
-  margin: 0;
-  @include padding(24 0);
 }
 
 .carousel-item__subject_list_item {
@@ -75,7 +64,19 @@
   margin-top: auto;
 }
 
+:not(.js) {
+  .carousel-item__subject_list {
+    @include teaser-context-label-list-style();
+  }
+}
+
 .js {
+
+  .carousel-item__subject_list {
+    @include label-subject-typeg();
+    margin: 0;
+    @include padding(24 0);
+  }
 
   .carousel-item__subject_link {
     color: $color-text--reverse;

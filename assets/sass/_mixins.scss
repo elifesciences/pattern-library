@@ -288,3 +288,16 @@
   }
 }
 
+// Cross-pattern common style expressions
+@mixin teaser-context-label-list-style {
+  @include label-content-typeg();
+  margin: 0;
+  @include margin(5, "bottom");
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  z-index: 100;
+}
+
