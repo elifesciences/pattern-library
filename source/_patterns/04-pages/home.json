@@ -275,9 +275,12 @@
     "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
   },
 
-  "subjectListLink": true,
+  "subjectListLink": {
+    "targetFragmentId": "subjectsListing"
+  },
 
   "subjectsList": {
+    "id": "subjectsListing",
     "labelledBy": "theIdOfTheLeadParaAssumingThisIsTheHomePage",
     "subjects": [
       {
