@@ -3,18 +3,28 @@
 module.exports = class AllSubjectsListLink {
 
   constructor($elm, _window = window, doc = document) {
-    if (!$elm) {
+
+    if (!($elm instanceof HTMLElement)) {
       return;
     }
 
     this.doc = doc;
     this.$elm = $elm;
+    this.replaceSelfWithTargetFragment();
+  }
 
-    this.targetFragmentId = this.$elm.href.substring(this.$elm.href.indexOf('#'));
-    let $target = this.doc.querySelector(this.targetFragmentId);
-    let $parent = this.$elm.parentNode;
-    $parent.insertBefore($target, this.$elm);
-    $parent.removeChild(this.$elm);
+  // Replace this.$elm with the same-page HTML fragment targeted by this.$elm.href
+  replaceSelfWithTargetFragment() {
+    let $targetFrag = this.doc.querySelector(AllSubjectsListLink.findIdSelector(this.$elm.href));
+    if ($targetFrag) {
+      this.$elm.parentNode.replaceChild($targetFrag, this.$elm);
+    }
+  }
+
+  static findIdSelector(href) {
+    if (href) {
+      return href.substring(href.indexOf('#'));
+    }
   }
 
 };
