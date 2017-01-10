@@ -275,6 +275,15 @@
     "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
   },
 
+  "leadParas": {
+    "paras": [
+      {
+        "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
+        "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
+      }
+    ]
+  },
+
   "subjectListLink": {
     "targetFragmentId": "subjectsListing"
   },
