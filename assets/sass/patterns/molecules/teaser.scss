@@ -21,9 +21,8 @@
 }
 
 .teaser__context_label_list_item {
-  display: inline;
-  list-style-type: none;
-  padding: 0;
+
+  @include teaser-context-label-list-item-style();
 
   & .teaser__context_label:after {
     content: ", ";
