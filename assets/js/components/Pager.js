@@ -17,6 +17,8 @@ module.exports = class Pager {
       return;
     }
 
+    this.isCurrentlyLoading = false;
+    this.timeoutThresholdInMs = 10000;
     this.$loader.addEventListener('click', this.handleLoadRequest.bind(this));
   }
 
@@ -47,11 +49,15 @@ module.exports = class Pager {
     this.$targetEl.appendChild(frag);
   }
 
-  handleError () {
+  redirectToFullResultsPage() {
     let loaderLink = this.getValidLoaderLink();
     if (loaderLink) {
       this.window.location.search = loaderLink;
     }
+  }
+
+  handleError () {
+    this.redirectToFullResultsPage();
   }
 
   getValidLoaderLink() {
@@ -71,6 +77,33 @@ module.exports = class Pager {
 
   static isLastPage(data) {
     return !data.match(/class="pager".*button--default.*button--default/g);
+  }
+
+  setLoadingState () {
+    this.isCurrentlyLoading = true;
+    this.$loader.classList.add('button--inactive');
+    let $pagerTextWrapper = this.$loader.querySelector('.pager__text_wrapper');
+    if ($pagerTextWrapper) {
+      $pagerTextWrapper.innerHTML = 'Loading...';
+      $pagerTextWrapper.classList.add('loading');
+    }
+
+    // If the loading takes longer than timeoutThresholdInMs, try to go to the full results page.
+    this.loadingTimer = this.window.setTimeout(() => {
+      this.redirectToFullResultsPage();
+    }, this.timeoutThresholdInMs);
+  }
+
+  clearLoadingState () {
+    this.window.clearTimeout(this.loadingTimer);
+    this.isCurrentlyLoading = false;
+    let $pagerTextWrapper = this.$loader.querySelector('.pager__text_wrapper');
+    if ($pagerTextWrapper) {
+      $pagerTextWrapper.innerHTML = 'Load more';
+      $pagerTextWrapper.classList.remove('loading');
+    }
+
+    this.$loader.classList.remove('button--inactive');
   }
 
   updatePager(data) {
@@ -102,15 +135,22 @@ module.exports = class Pager {
       return;
     }
 
+    this.clearLoadingState();
     this.updateUrl();
     this.updatePager(normalisedData);
   }
 
   handleLoadRequest(e) {
     e.preventDefault();
+
+    if (this.isCurrentlyLoading) {
+      return;
+    }
+
     let pageNum = this.getPageNumberFromLoaderLink();
     this.loadNextPageData('?page=' + pageNum, this.window.XMLHttpRequest)
         .then(this.handleLoad.bind(this), this.handleError.bind(this));
+    this.setLoadingState();
   }
 
   loadNextPageData(url, XMLHttpRequest) {
@@ -138,6 +178,11 @@ module.exports = class Pager {
     }
 
     $loader.id = 'loader' + rand;
+
+    let $loaderTextWrapper = this.doc.createElement('span');
+    $loaderTextWrapper.classList.add('pager__text_wrapper');
+    $loaderTextWrapper.innerHTML = $loader.innerHTML;
+    $loader.replaceChild($loaderTextWrapper, $loader.firstChild);
     return $loader;
   }
 
