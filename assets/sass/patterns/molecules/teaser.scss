@@ -46,9 +46,7 @@
   text-decoration: none;
 
   .teaser__context_label {
-    @include label-subject-typeg();
     color: $color-primary;
-    text-decoration: none;
   }
 
 }
