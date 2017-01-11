@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="157px" height="156px" viewBox="0 0 157 156" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>elife-error-maintenance-illustration</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="143" cy="80" r="2"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-5" y="-5" width="14" height="14">
+            <rect x="136" y="73" width="14" height="14" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+        <circle id="path-3" cx="69" cy="82" r="2"></circle>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-5" y="-5" width="14" height="14">
+            <rect x="62" y="75" width="14" height="14" fill="white"></rect>
+            <use xlink:href="#path-3" fill="black"></use>
+        </mask>
+        <circle id="path-5" cx="32" cy="146" r="2"></circle>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-5" y="-5" width="14" height="14">
+            <rect x="25" y="139" width="14" height="14" fill="white"></rect>
+            <use xlink:href="#path-5" fill="black"></use>
+        </mask>
+        <circle id="path-7" cx="87" cy="113" r="2"></circle>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-5" y="-5" width="14" height="14">
+            <rect x="80" y="106" width="14" height="14" fill="white"></rect>
+            <use xlink:href="#path-7" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD---error-screens-Copy" transform="translate(-642.000000, -280.000000)">
+            <g id="illo-4" transform="translate(594.000000, 269.000000)">
+                <g id="elife-error-maintenance-illustration" transform="translate(39.000000, 0.000000)">
+                    <rect id="Rectangle-4" x="0" y="0" width="176" height="176"></rect>
+                    <path d="M72.5,87.5 L84,109" id="Line" stroke="#212121" stroke-width="4" stroke-linecap="round"></path>
+                    <path d="M26,74 L30,81" id="Line" stroke="#212121" stroke-width="4" stroke-linecap="square"></path>
+                    <path d="M68,146 L72,153" id="Line" stroke="#212121" stroke-width="4" stroke-linecap="square"></path>
+                    <path d="M52,77.5 L80.4759526,93.25 M77.4759526,133.75 L48,149.5 L15.5240474,130.75 L15.5240474,97.25" id="Polygon" stroke="#212121" stroke-width="4" transform="translate(48.000000, 113.500000) rotate(90.000000) translate(-48.000000, -113.500000) "></path>
+                    <path d="M68.5,146 L37.4355509,146" id="Line" stroke="#212121" stroke-width="4" stroke-linecap="square"></path>
+                    <path d="M109.5,46 L137.975953,61.75 L137.975953,93.25 M102.5,115 L73.0240474,99.25 L73.0240474,63.75" id="Polygon" stroke="#212121" stroke-width="4" stroke-linecap="round" transform="translate(105.500000, 80.500000) rotate(90.000000) translate(-105.500000, -80.500000) "></path>
+                    <use id="Oval-2" stroke="#212121" mask="url(#mask-2)" stroke-width="10" xlink:href="#path-1"></use>
+                    <use id="Oval-2" stroke="#212121" mask="url(#mask-4)" stroke-width="10" xlink:href="#path-3"></use>
+                    <g id="Oval-2">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                        <use stroke="#212121" mask="url(#mask-6)" stroke-width="10" xlink:href="#path-5"></use>
+                    </g>
+                    <use id="Oval-2" stroke="#B92B5B" mask="url(#mask-8)" stroke-width="10" xlink:href="#path-7"></use>
+                    <circle id="Oval-6" stroke="#B92B5B" stroke-width="4" cx="22" cy="69" r="6"></circle>
+                    <circle id="Oval-6" stroke="#B92B5B" stroke-width="4" fill="#FFFFFF" cx="113.5" cy="18.5" r="5.5"></circle>
+                    <circle id="Oval-6" stroke="#B92B5B" stroke-width="4" cx="76" cy="159" r="6"></circle>
+                    <path d="M145.5,18.5 L163.5,50.5" id="Line" stroke="#212121" stroke-width="4" stroke-linecap="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
