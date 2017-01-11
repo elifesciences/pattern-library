@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="133px" height="167px" viewBox="0 0 133 167" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>elife-error-4xx-illustration</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="4.61522369 29.2426407 38.6152237 29.2426407 38.6152237 91.2426407 42.6152237 95.2426407 42.6152237 102.242641 0.615223689 102.242641 0.615223689 95.2426407 4.61522369 91.2426407"></polygon>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="42" height="73" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="8.61522369" y="10.2426407" width="26" height="23"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="26" height="23" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="11.6152237" y="0.242640687" width="21" height="14"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="21" height="14" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <path d="M37,160 L119,160 C133.289063,160 133,176 133,176 L23,176 C23,176 23,160 37,160 Z" id="path-7"></path>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="110.000437" height="16" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+    </defs>
+    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD---error-screens" transform="translate(-657.000000, -266.000000)">
+            <g id="illo-2" transform="translate(508.000000, 257.000000)">
+                <g id="elife-error-4xx-illustration" transform="translate(139.000000, 0.000000)">
+                    <rect id="Rectangle-5" x="0" y="0" width="153" height="186"></rect>
+                    <g id="scope" transform="translate(23.828427, 0.656854)" stroke="#212121">
+                        <g id="Group-2" transform="translate(64.000000, 119.500000) rotate(45.000000) translate(-64.000000, -119.500000) translate(27.000000, 67.000000)" stroke-width="4">
+                            <path d="M0.917273648,100.811696 C7.23757359,103.50785 14.1945316,105 21.5,105 C50.4949494,105 74,81.4949494 74,52.5 C74,23.5050506 50.4949494,-3.41060513e-13 21.5,-3.41060513e-13 C18.4241335,-3.41060513e-13 15.410048,0.264515687 12.4792502,0.772040384" id="Oval-4"></path>
+                            <path d="M17.248933,84.7244828 C18.6402103,84.906238 20.0591555,85 21.5,85 C39.4492544,85 54,70.4492544 54,52.5 C54,34.5507456 39.4492544,20 21.5,20 C18.4589812,20 15.5155139,20.4176674 12.7238331,21.1987673" id="Oval-4"></path>
+                        </g>
+                        <circle id="Oval-3" stroke-width="4" fill="#FFFFFF" cx="94.8786797" cy="132.150758" r="16"></circle>
+                        <circle id="Oval-3" stroke-width="4" fill="#FFFFFF" cx="94.8786797" cy="132.150758" r="6"></circle>
+                        <g id="Group" transform="translate(74.500000, 52.500000) rotate(45.000000) translate(-74.500000, -52.500000) translate(53.000000, 1.000000)" stroke-width="8">
+                            <use id="Rectangle-3" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                            <use id="Rectangle-3" mask="url(#mask-4)" xlink:href="#path-3"></use>
+                            <use id="Rectangle-3" mask="url(#mask-6)" xlink:href="#path-5"></use>
+                        </g>
+                    </g>
+                    <path d="M12,129 L73,129" id="Line" stroke="#212121" stroke-width="4" stroke-linecap="round"></path>
+                    <use id="Rectangle-12" stroke="#212121" mask="url(#mask-8)" stroke-width="8" xlink:href="#path-7"></use>
+                    <circle id="Oval-5" fill="#B92B5B" cx="44" cy="110" r="5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

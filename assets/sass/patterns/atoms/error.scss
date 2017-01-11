@@ -1,0 +1,14 @@
+@import "../../definitions";
+
+.error {
+  text-align: center;
+}
+
+.error__icon {
+  max-width: 100%;
+  @include padding(24, "bottom");
+}
+
+.error__title {
+  @include h2-typeg();
+}
