@@ -1,5 +1,6 @@
 assets:
-  css: []
+  css:
+    - all-subjects-list-link.css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
