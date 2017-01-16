@@ -11,18 +11,11 @@
   background-color: transparent;
   color: $color-text;
   flex-direction: column;
+  max-width: 100%;
   padding: 0;
   text-align: center;
   width: 100vw;
 
-}
-
-.js .carousel-item {
-  @include height($carousel-height);
-  background-color: rgba(0, 0, 0, 0.5);
-  background-size: cover;
-  color: $color-text--reverse;
-  width: 100vw;
 }
 
 .carousel-item__subject_list_item {
@@ -56,7 +49,12 @@
   margin-top: auto;
 }
 
-:not(.js) {
+html:not(.js) {
+
+  .carousel-item {
+    display: block;
+    text-align: left;
+  }
 
   .carousel-item__subject_list {
     @include teaser-context-label-list-style();
@@ -66,9 +64,53 @@
     @include teaser-context-label-list-item-style();
   }
 
+  .carousel-item__title_link {
+
+    color: $color-text;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+
+  }
+
+  // TODO: Fix leaky abstraction (carousel__item_wrapper is defined in carousel.scss, but needed at this level to control distinct appearances of 1st vs 2nd & 3rd items). Consider renaming carousel__item_wrapper -> carousel__item, and carousel__item -> carousel__item_inner.
+  .carousel__item_wrapper:first-child {
+
+    .carousel-item {
+      display: flex;
+      text-align: center;
+    }
+
+    .carousel-item__subject_link {
+      color: $color-text-secondary;
+    }
+
+  }
+
+  .carousel__item_wrapper:nth-child(n + 2) {
+
+    .carousel-item__title {
+      @include teaser-header-text-style();
+    }
+
+    .carousel-item__cta {
+      display: none;
+    }
+
+  }
+
 }
 
 .js {
+
+  .carousel-item {
+    @include height($carousel-height);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    color: $color-text--reverse;
+    width: 100vw;
+  }
 
   .carousel-item__subject_list {
     @include label-subject-typeg();

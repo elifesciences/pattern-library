@@ -306,7 +306,10 @@
   display: inline;
   list-style-type: none;
   padding: 0;
-
 }
 
-
+@mixin teaser-header-text-style() {
+  @include listing-main-art-title-typeg();
+  margin: 0;
+  @include padding(0 0 5 0);
+}

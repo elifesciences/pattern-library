@@ -18,7 +18,7 @@
       "button": {
         "text": "Read article",
         "path": "#link-to-article",
-        "classes": "button--default button--outline"
+        "classes": "button--default"
       },
       "meta": {
         "url": "#",
@@ -51,7 +51,7 @@
       "button": {
         "text": "Read article",
         "path": "#link-to-article",
-        "classes": "button--default  button--outline"
+        "classes": "button--default"
       },
       "meta": {
         "url": "#",
@@ -90,7 +90,7 @@
       "button": {
         "text": "Read article",
         "path": "#link-to-article",
-        "classes": "button--default  button--outline"
+        "classes": "button--default"
       },
       "meta": {
         "url": "#LinkToResearchArticles",

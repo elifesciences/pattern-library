@@ -31,6 +31,7 @@ module.exports = class Carousel {
     this.timerInterval = 10000;
 
     this.$elm.querySelector('.carousel__heading').classList.add('visuallyhidden');
+    this.updateButtonAppearance();
     this.$elm.appendChild(this.buildVisibleControls());
     this.$toggler = this.buildControl$toggle();
     this.$elm.insertBefore(this.$toggler, this.$elm.querySelector('.carousel__items'));
@@ -47,6 +48,14 @@ module.exports = class Carousel {
       this.adjustTranslateForResize();
     });
     this.makeSingleSlideATVisible(this.currentSlide);
+  }
+
+  updateButtonAppearance () {
+    let buttons = this.$elm.querySelectorAll('.carousel-item__cta .button');
+    buttons.forEach((button) => {
+      button.classList.add('button--outline');
+    });
+
   }
 
   atHide($node) {
