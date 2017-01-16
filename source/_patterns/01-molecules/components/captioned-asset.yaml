@@ -5,6 +5,7 @@ assets:
     - $ref: ../../00-atoms/components/doi.yaml#/assets/css
     - $ref: ../../00-atoms/components/picture.yaml#/assets/css
     - $ref: ../../00-atoms/components/video.yaml#/assets/css
+    - $ref: ../../00-atoms/components/table.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -46,14 +47,10 @@ schema:
             - video
         -
           properties:
-            tables:
-              type: array
-              minItems: 1
-              items:
-                type: string
-                pattern: ^<table>.*<\/table>$
+            table:
+              $ref: ../../00-atoms/components/table.yaml#/schema
           required:
-            - tables
+            - table
         -
           properties:
             image:
