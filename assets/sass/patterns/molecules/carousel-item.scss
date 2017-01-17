@@ -1,6 +1,6 @@
 @import "../../definitions";
 
-.carousel-item {
+.carousel-item__inner {
 
   @include constrain-width($max-site-width, "max");
 
@@ -8,41 +8,23 @@
     display: flex;
   }
 
-  background-color: rgba(0, 0, 0, 0.5);
-  background-size: cover;
+  background-color: transparent;
+  color: $color-text;
   flex-direction: column;
+  max-width: 100%;
   padding: 0;
   text-align: center;
   width: 100vw;
 
 }
 
-.js .carousel-item {
-  @include height($carousel-height);
-  width: 100vw;
-}
-
-.carousel-item__subject_list {
-  @include label-subject-typeg();
-  margin: 0;
-  @include padding(24 0);
-}
-
 .carousel-item__subject_list_item {
-  @include label-subject-typeg();
-  display: inline;
-  line-height: 2.18181818181818;
-  list-style-type: none;
-  padding: 0;
 
   & .carousel-item__subject:after {
     content: ", ";
   }
-}
 
-.carousel-item__subject_list_item:last-child {
-
-  & .carousel-item__subject:after {
+  &:last-child .carousel-item__subject:after {
     content: "";
   }
 
@@ -50,7 +32,6 @@
 
 .carousel-item__subject_link {
   @include label-subject-typeg();
-  color: $color-text--reverse;
   text-decoration: none;
 }
 
@@ -61,15 +42,105 @@
 }
 
 .carousel-item__title_link {
-  color: $color-text--reverse;
   text-decoration: none;
 }
 
-.carousel-item .meta {
+.carousel-item__inner .meta {
   margin-top: auto;
+}
 
-  *,
-  *:hover {
+html:not(.js) {
+
+  .carousel-item__inner {
+    display: block;
+    text-align: left;
+  }
+
+  .carousel-item__subject_list {
+    @include teaser-context-label-list-style();
+  }
+
+  .carousel-item__subject_list_item {
+    @include teaser-context-label-list-item-style();
+  }
+
+  .carousel-item__title_link {
+
+    color: $color-text;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+
+  }
+
+  // TODO: Fix leaky abstraction (carousel__item_wrapper is defined in carousel.scss, but needed at this level to control distinct appearances of 1st vs 2nd & 3rd items). Consider renaming carousel__item_wrapper -> carousel__item, and carousel__item -> carousel__item_inner.
+  .carousel-item:first-child {
+
+    .carousel-item__inner {
+      display: flex;
+      text-align: center;
+    }
+
+    .carousel-item__subject_link {
+      color: $color-text-secondary;
+    }
+
+  }
+
+  .carousel-item:nth-child(n + 2) {
+
+    .carousel-item__title {
+      @include teaser-header-text-style();
+    }
+
+    .carousel-item__cta {
+      display: none;
+    }
+
+  }
+
+}
+
+.js {
+
+  .carousel-item__inner {
+    @include height($carousel-height);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    color: $color-text--reverse;
+    width: 100vw;
+  }
+
+  .carousel-item__subject_list {
+    @include label-subject-typeg();
+    margin: 0;
+    @include padding(24 0);
+  }
+
+  .carousel-item__subject_list_item {
+    @include label-subject-typeg();
+    display: inline;
+    line-height: 2.18181818181818;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .carousel-item__subject_link {
     color: $color-text--reverse;
   }
+
+  .carousel-item__title_link {
+    color: $color-text--reverse;
+  }
+
+  .carousel-item__inner .meta {
+
+    *,
+    *:hover {
+      color: $color-text--reverse;
+    }
+
+  }
+
 }

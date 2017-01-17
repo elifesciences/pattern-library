@@ -4,36 +4,43 @@
   @include constrain-width($max-site-width, "max");
   margin: 0 auto;
   overflow: hidden;
+  padding-left: #{$content-header-side-padding}vw;
+  padding-right: #{$content-header-side-padding}vw;
   position: relative;
 }
 
 .carousel__items {
   list-style: none;
   @include nospace();
-  width: 300vw;
 }
 
-.carousel__item_wrapper {
+.carousel-item {
   @include margin(12, "bottom");
   @include constrain-width($max-site-width, "max");
-  width: 100vw;
+  width: 100%;
 }
 
 .js {
 
   .carousel {
     @include height($carousel-height);
+    padding: 0;
   }
 
   .carousel__heading {
     @include visuallyhidden();
   }
 
-  .carousel__item_wrapper {
-    float: left;
+  .carousel__items {
+    width: 300vw;
   }
 
-  .carousel__item_wrapper:nth-child(n+2) {
+  .carousel-item {
+    float: left;
+    width: 100vw;
+  }
+
+  .carousel-item:nth-child(n+2) {
     @include unhidden();
   }
 

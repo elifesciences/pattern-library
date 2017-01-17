@@ -17,22 +17,12 @@
 }
 
 .teaser__context_label_list {
-  @include label-content-typeg();
-  margin: 0;
-  @include margin(5, "bottom");
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-  text-transform: uppercase;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  z-index: 100;
+  @include teaser-context-label-list-style();
 }
 
 .teaser__context_label_list_item {
-  display: inline;
-  list-style-type: none;
-  padding: 0;
+
+  @include teaser-context-label-list-item-style();
 
   & .teaser__context_label:after {
     content: ", ";
@@ -56,9 +46,7 @@
   text-decoration: none;
 
   .teaser__context_label {
-    @include label-subject-typeg();
     color: $color-primary;
-    text-decoration: none;
   }
 
 }
@@ -86,9 +74,7 @@
 }
 
 .teaser__header_text {
-  @include listing-main-art-title-typeg();
-  margin: 0;
-  @include padding(0 0 5 0);
+  @include teaser-header-text-style();
 }
 
 .teaser__header_text_link {

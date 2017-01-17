@@ -14,7 +14,7 @@ module.exports = class Carousel {
     this.$elm = $elm;
 
     this.moveableStage = this.$elm.querySelector('.carousel__items');
-    this.originalSlideWrappers = this.moveableStage.querySelectorAll('.carousel__item_wrapper');
+    this.originalSlideWrappers = this.moveableStage.querySelectorAll('.carousel-item');
     this.originalSlideCount = this.originalSlideWrappers.length;
     this.currentSlideCount = this.originalSlideCount;
 
@@ -31,6 +31,7 @@ module.exports = class Carousel {
     this.timerInterval = 10000;
 
     this.$elm.querySelector('.carousel__heading').classList.add('visuallyhidden');
+    this.updateButtonAppearance();
     this.$elm.appendChild(this.buildVisibleControls());
     this.$toggler = this.buildControl$toggle();
     this.$elm.insertBefore(this.$toggler, this.$elm.querySelector('.carousel__items'));
@@ -47,6 +48,14 @@ module.exports = class Carousel {
       this.adjustTranslateForResize();
     });
     this.makeSingleSlideATVisible(this.currentSlide);
+  }
+
+  updateButtonAppearance () {
+    let buttons = this.$elm.querySelectorAll('.carousel-item__cta .button');
+    buttons.forEach((button) => {
+      button.classList.add('button--outline');
+    });
+
   }
 
   atHide($node) {
@@ -79,11 +88,11 @@ module.exports = class Carousel {
   }
 
   makeSingleSlideATVisible(slideNumber) {
-    [].forEach.call(this.moveableStage.querySelectorAll('.carousel__item_wrapper'), ($el) => {
+    [].forEach.call(this.moveableStage.querySelectorAll('.carousel-item'), ($el) => {
       this.setATVisibility($el, false);
     });
     let _slideNumber = slideNumber || 1;
-    let slide = this.$elm.querySelectorAll('.carousel-item')[_slideNumber - 1];
+    let slide = this.$elm.querySelectorAll('.carousel-item__inner')[_slideNumber - 1];
     this.setATVisibility(slide, true);
     slide.focus();
   }

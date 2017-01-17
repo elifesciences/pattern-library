@@ -1,7 +1,8 @@
-<div class="carousel-item" data-behaviour="BackgroundImage" {{#backgroundImage}}
+<li class="carousel-item">
+  <div class="carousel-item__inner" data-behaviour="BackgroundImage" {{#backgroundImage}}
   {{#thresholdWidth}}data-threshold-width="{{thresholdWidth}}"{{/thresholdWidth}}
      data-low-res-image-source="{{lowResImageSource}}"
-     data-high-res-image-source="{{highResImageSource}}"
+       data-high-res-image-source="{{highResImageSource}}"
 {{/backgroundImage}}>
 
 
@@ -29,4 +30,5 @@
     {{> molecules-meta}}
   {{/meta}}
 
-</div>
+  </div>
+</li>
