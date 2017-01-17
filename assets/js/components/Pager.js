@@ -103,7 +103,7 @@ module.exports = class Pager {
     if ($pagerTextWrapper) {
       $pagerTextWrapper.classList.remove('loading');
       $pagerTextWrapper.innerHTML = !!this.$loader.originalText ? this.$loader.originalText
-                                                              : 'More articles';
+                                                              : 'Load more';
     }
 
     this.$loader.classList.remove('button--inactive');
