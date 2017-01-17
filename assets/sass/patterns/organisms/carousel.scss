@@ -14,7 +14,7 @@
   @include nospace();
 }
 
-.carousel__item_wrapper {
+.carousel-item {
   @include margin(12, "bottom");
   @include constrain-width($max-site-width, "max");
   width: 100%;
@@ -35,12 +35,12 @@
     width: 300vw;
   }
 
-  .carousel__item_wrapper {
+  .carousel-item {
     float: left;
     width: 100vw;
   }
 
-  .carousel__item_wrapper:nth-child(n+2) {
+  .carousel-item:nth-child(n+2) {
     @include unhidden();
   }
 

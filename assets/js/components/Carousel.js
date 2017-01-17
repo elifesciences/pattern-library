@@ -14,7 +14,7 @@ module.exports = class Carousel {
     this.$elm = $elm;
 
     this.moveableStage = this.$elm.querySelector('.carousel__items');
-    this.originalSlideWrappers = this.moveableStage.querySelectorAll('.carousel__item_wrapper');
+    this.originalSlideWrappers = this.moveableStage.querySelectorAll('.carousel-item');
     this.originalSlideCount = this.originalSlideWrappers.length;
     this.currentSlideCount = this.originalSlideCount;
 
@@ -88,11 +88,11 @@ module.exports = class Carousel {
   }
 
   makeSingleSlideATVisible(slideNumber) {
-    [].forEach.call(this.moveableStage.querySelectorAll('.carousel__item_wrapper'), ($el) => {
+    [].forEach.call(this.moveableStage.querySelectorAll('.carousel-item'), ($el) => {
       this.setATVisibility($el, false);
     });
     let _slideNumber = slideNumber || 1;
-    let slide = this.$elm.querySelectorAll('.carousel-item')[_slideNumber - 1];
+    let slide = this.$elm.querySelectorAll('.carousel-item__inner')[_slideNumber - 1];
     this.setATVisibility(slide, true);
     slide.focus();
   }

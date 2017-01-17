@@ -1,6 +1,6 @@
 @import "../../definitions";
 
-.carousel-item {
+.carousel-item__inner {
 
   @include constrain-width($max-site-width, "max");
 
@@ -45,13 +45,13 @@
   text-decoration: none;
 }
 
-.carousel-item .meta {
+.carousel-item__inner .meta {
   margin-top: auto;
 }
 
 html:not(.js) {
 
-  .carousel-item {
+  .carousel-item__inner {
     display: block;
     text-align: left;
   }
@@ -75,9 +75,9 @@ html:not(.js) {
   }
 
   // TODO: Fix leaky abstraction (carousel__item_wrapper is defined in carousel.scss, but needed at this level to control distinct appearances of 1st vs 2nd & 3rd items). Consider renaming carousel__item_wrapper -> carousel__item, and carousel__item -> carousel__item_inner.
-  .carousel__item_wrapper:first-child {
+  .carousel-item:first-child {
 
-    .carousel-item {
+    .carousel-item__inner {
       display: flex;
       text-align: center;
     }
@@ -88,7 +88,7 @@ html:not(.js) {
 
   }
 
-  .carousel__item_wrapper:nth-child(n + 2) {
+  .carousel-item:nth-child(n + 2) {
 
     .carousel-item__title {
       @include teaser-header-text-style();
@@ -104,7 +104,7 @@ html:not(.js) {
 
 .js {
 
-  .carousel-item {
+  .carousel-item__inner {
     @include height($carousel-height);
     background-color: rgba(0, 0, 0, 0.5);
     background-size: cover;
@@ -134,7 +134,7 @@ html:not(.js) {
     color: $color-text--reverse;
   }
 
-  .carousel-item .meta {
+  .carousel-item__inner .meta {
 
     *,
     *:hover {
