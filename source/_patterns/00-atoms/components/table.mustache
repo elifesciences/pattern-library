@@ -12,8 +12,8 @@
 
   <ol class="list">
     {{#footnotes}}
-      <li class="table-footnote" {{#id}} id="{{id}}"{{/id}}>
-        {{#label}}<div class="table-footnote__label">{{label}}</div>{{/label}}
+      <li class="table-footnote" {{#footnoteId}} id="{{footnoteId}}"{{/footnoteId}}>
+        {{#footnoteLabel}}<div class="table-footnote__label">{{footnoteLabel}}</div>{{/footnoteLabel}}
         <div class="table-footnote__text">{{{text}}}</div>
       </li>
     {{/footnotes}}

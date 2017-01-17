@@ -6,8 +6,8 @@
   "hasFootnotes": true,
   "footnotes": [
     {
-      "id": "tblfn1",
-      "label": "*",
+      "footnoteId": "tblfn1",
+      "footnoteLabel": "*",
       "text": "<p>Footnote 1.</p>"
     },
     {

@@ -25,17 +25,17 @@ schema:
           text:
             type: string
             minLength: 1
-          id:
+          footnoteId:
             type: string
             minLength: 1
-          label:
+          footnoteLabel:
             type: string
             minLength: 1
         required:
           - text
         dependencies:
-          id: [label]
-          label: [id]
+          footnoteId: [footnoteLabel]
+          footnoteLabel: [footnoteId]
   required:
     - tables
   dependencies:
