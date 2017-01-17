@@ -1,5 +1,7 @@
 'use strict';
 
+const utils = require('../libs/elife-utils')();
+
 module.exports = class Pager {
 
   constructor($elm, _window = window, doc = document) {
@@ -99,8 +101,9 @@ module.exports = class Pager {
     this.isCurrentlyLoading = false;
     let $pagerTextWrapper = this.$loader.querySelector('.pager__text_wrapper');
     if ($pagerTextWrapper) {
-      $pagerTextWrapper.innerHTML = 'Load more';
       $pagerTextWrapper.classList.remove('loading');
+      $pagerTextWrapper.innerHTML = !!this.$loader.originalText ? this.$loader.originalText
+                                                              : 'More articles';
     }
 
     this.$loader.classList.remove('button--inactive');
@@ -171,18 +174,18 @@ module.exports = class Pager {
   }
 
   find$Loader() {
-    let rand = Math.round(Math.random() * 10e7);
     let $loader = this.$elm.querySelector('.button--full:first-child.button--full:last-child');
     if (!$loader) {
       return;
     }
 
-    $loader.id = 'loader' + rand;
-
+    $loader.id = utils.uniqueIds.get('pager', this.doc);
+    $loader.originalText = $loader.innerHTML;
     let $loaderTextWrapper = this.doc.createElement('span');
     $loaderTextWrapper.classList.add('pager__text_wrapper');
-    $loaderTextWrapper.innerHTML = $loader.innerHTML;
+    $loaderTextWrapper.innerHTML = $loader.originalText;
     $loader.replaceChild($loaderTextWrapper, $loader.firstChild);
+
     return $loader;
   }
 
