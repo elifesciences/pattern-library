@@ -41,3 +41,16 @@ td + td {
 td:nth-child(odd) {
   background-color: $color-text-ui-background-hue;
 }
+
+.table-footnote {
+  display: flex;
+  flex-direction: row;
+}
+
+.table-footnote__label {
+  @include margin(4, "right");
+}
+
+.table-footnote__text {
+  flex: 1;
+}

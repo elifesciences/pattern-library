@@ -12,7 +12,10 @@
 
   <ol class="list">
     {{#footnotes}}
-      <li{{#id}} id="{{id}}"{{/id}}>{{{text}}}</li>
+      <li class="table-footnote" {{#id}} id="{{id}}"{{/id}}>
+        {{#label}}<div class="table-footnote__label">{{label}}</div>{{/label}}
+        <div class="table-footnote__text">{{{text}}}</div>
+      </li>
     {{/footnotes}}
   </ol>
 
