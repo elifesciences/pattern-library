@@ -16,9 +16,9 @@
     @include loading-spinner($highlight-color: $color-text--reverse, $base-color: #81c4e8);
     content: "";
     display: inline-block;
-    position: relative;
-    left: 6px;
-    top: 4px;
+    position: absolute;
+    left: 110%;
+    top: -3px;
   }
 
 }
