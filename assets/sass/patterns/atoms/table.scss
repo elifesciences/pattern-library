@@ -43,14 +43,25 @@ td:nth-child(odd) {
 }
 
 .table-footnote {
-  display: flex;
-  flex-direction: row;
+  display: table;
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .table-footnote__label {
-  @include margin(4, "right");
+  display: table-cell;
+  @supports (display: flex) {
+    display: block;
+  }
+  @include padding(4, "right");
 }
 
 .table-footnote__text {
-  flex: 1;
+  display: table-cell;
+  @supports (display: flex) {
+    display: block;
+    flex: 1;
+  }
 }
