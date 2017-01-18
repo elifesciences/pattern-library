@@ -133,22 +133,24 @@
     ]
   },
 
-  "compactForm": {
-    "formAction" : "/search",
-    "formId": "searchBox",
-    "formMethod": "GET",
-    "label": "Search by keyword or author",
-    "inputType": "search",
-    "inputName": "search",
-    "inputValue": "",
-    "inputPlaceholder": "Search by keyword or author",
-    "ctaText": "Search"
-  },
+  "searchBox": {
+    "compactForm": {
+      "formAction": "/search",
+      "formId": "searchBox",
+      "formMethod": "GET",
+      "label": "Search by keyword or author",
+      "inputType": "search",
+      "inputName": "search",
+      "inputValue": "",
+      "inputPlaceholder": "Search by keyword or author",
+      "ctaText": "Search"
+    },
 
-  "subjectFilter": {
-    "name": "subject_filter",
-    "value": "cell_biology",
-    "text": "Cell biology"
+    "subjectFilter": {
+      "name": "subject_filter",
+      "value": "cell_biology",
+      "text": "Cell biology"
+    }
   }
 
 }
