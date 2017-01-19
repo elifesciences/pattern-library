@@ -21,6 +21,7 @@ module.exports = class Pager {
 
     this.isCurrentlyLoading = false;
     this.timeoutThresholdInMs = 10000;
+    this.loaderLink = this.$loader.getAttribute('href');
     this.$loader.addEventListener('click', this.handleLoadRequest.bind(this));
   }
 
@@ -29,8 +30,25 @@ module.exports = class Pager {
     return dataNoLeadingWhitespace.replace(/\n/g, '');
   }
 
+  createDocFragFromString(str) {
+    if (typeof str !== 'string') {
+      return;
+    }
+
+    let frag = this.doc.createDocumentFragment();
+    let $temp = this.doc.createElement('div');
+    $temp.innerHTML = str;
+    while ($temp.firstElementChild) {
+      let child = $temp.firstElementChild;
+      frag.appendChild(child);
+    }
+
+    return frag;
+  }
+
   injectNewData(newData) {
     let normalisedData = Pager.normaliseData(newData);
+    this.setLoaderLinkFromData(normalisedData);
     let regex =
       /.*<ol[^>]*class="[^"]*(grid-listing|listing-list)[^"]*"[^>]*>(<li>?.*<\/li>)<\/ol>.*/;
     let match = normalisedData.match(regex);
@@ -39,20 +57,11 @@ module.exports = class Pager {
       throw new SyntaxError('Loaded data doesn\'t match required format');
     }
 
-    let data = match[2];
-    let frag = this.doc.createDocumentFragment();
-    let $temp = this.doc.createElement('div');
-    $temp.innerHTML = data;
-    while ($temp.firstElementChild) {
-      let child = $temp.firstElementChild;
-      frag.appendChild(child);
-    }
-
-    this.$targetEl.appendChild(frag);
+    this.$targetEl.appendChild(this.createDocFragFromString(match[2]));
   }
 
   redirectToFullResultsPage() {
-    let loaderLink = this.getValidLoaderLink();
+    let loaderLink = this.getLoaderLink();
     if (loaderLink) {
       this.window.location.search = loaderLink;
     }
@@ -62,19 +71,33 @@ module.exports = class Pager {
     this.redirectToFullResultsPage();
   }
 
-  getValidLoaderLink() {
-    let match = this.$loader.href.match(/\?page=([0-9]+)/);
-    if (match) {
-      return match[0];
-    }
+  getLoaderLink() {
+    return this.loaderLink;
   }
 
-  getPageNumberFromLoaderLink() {
-    let loaderLink = this.getValidLoaderLink();
-    if (loaderLink) {
-      let pageNumber = loaderLink.match(/\?page=([0-9]+)/)[1];
-      return this.window.parseInt(pageNumber, 10);
+  /**
+   * Sets the link for the next page onto the $loader, if it can find it in the supplied data
+   *
+   * @param normalisedData HTML as string with leading space and line breaks removed
+   *
+   */
+  setLoaderLinkFromData(normalisedData) {
+    let regex = /.*(<div[^>]*class="[^"]*pager[^"]*"[^>]*>.*<\/div>).*/;
+    let $docFragOfPagerFoundInData = this.createDocFragFromString(normalisedData.match(regex)[1]);
+    if (!$docFragOfPagerFoundInData) {
+      this.loaderLink = '#';
+      return;
     }
+
+    let nextPageButton = $docFragOfPagerFoundInData.querySelector('.button:nth-child(2)');
+    if (!nextPageButton) {
+      this.loaderLink = '#';
+      return;
+    }
+
+    let nextPageButtonLink = nextPageButton.href;
+    let location = this.window.location;
+    this.loaderLink = nextPageButtonLink.replace(location.protocol + '//' + location.host, '');
   }
 
   static isLastPage(data) {
@@ -109,22 +132,18 @@ module.exports = class Pager {
     this.$loader.classList.remove('button--inactive');
   }
 
-  updatePager(data) {
-    if (Pager.isLastPage(data)) {
+  updatePager(normalisedData) {
+    if (Pager.isLastPage(normalisedData)) {
       this.$loader.parentNode.removeChild(this.$loader);
     } else {
-      let pageNumber = this.getPageNumberFromLoaderLink();
-      if (!isNaN(pageNumber)) {
-        pageNumber += 1;
-        this.$loader.href = '?page=' + pageNumber;
-      }
+      this.setLoaderLinkFromData(normalisedData);
     }
   }
 
   updateUrl () {
-    let validLoaderLink = this.getValidLoaderLink();
-    if (validLoaderLink) {
-      this.window.history.pushState(null, '', validLoaderLink);
+    let loaderLink = this.getLoaderLink();
+    if (loaderLink) {
+      this.window.history.pushState(null, '', loaderLink);
     }
   }
 
@@ -147,16 +166,15 @@ module.exports = class Pager {
     e.preventDefault();
 
     if (this.isCurrentlyLoading) {
-      return;
+      return null;
     }
 
-    let pageNum = this.getPageNumberFromLoaderLink();
-    this.loadNextPageData('?page=' + pageNum, this.window.XMLHttpRequest)
+    this.loadData(this.getLoaderLink(), this.window.XMLHttpRequest)
         .then(this.handleLoad.bind(this), this.handleError.bind(this));
     this.setLoadingState();
   }
 
-  loadNextPageData(url, XMLHttpRequest) {
+  loadData(url, XMLHttpRequest) {
 
     return new Promise(
       function resolver(resolve, reject) {
