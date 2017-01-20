@@ -257,12 +257,6 @@
   text-align: center;
 }
 
-@mixin contact-typeg() {
-  @include body-typeg();
-  line-height: 1.3;
-  @include body-spacing();
-}
-
 // NAVIGATION AND LABELS
 
 @mixin nav-typeg() {
