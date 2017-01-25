@@ -65,6 +65,7 @@ gulp.task('buildStyleFiles', ['sass:lint'], () => {
   return gulp.src(['assets/sass/base.scss', 'assets/sass/patterns/**/*.scss'])
     .pipe(compass(
       {
+        config_file: 'config.rb',
         css: 'source/assets/css/tmp',
         sass: 'assets/sass',
         sourcemap: true,
