@@ -2,10 +2,7 @@
 // This file is where you should import all your project files
 // -----------------------------------------------------------------------------
 
-@import "definitions";
-@import "reset";
-@import "layout/layout";
-@import "layout/grid";
+@import "base.scss";
 
 // all patterns
 @import "patterns/**/[^_]*.scss";
