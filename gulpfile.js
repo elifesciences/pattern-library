@@ -62,7 +62,7 @@ gulp.task('generateIndividualStyles', ['buildStyleFiles'], () => {
 
 gulp.task('buildStyleFiles', ['sass:lint'], () => {
 
-  return gulp.src(['assets/sass/**/*.scss', '!assets/sass/[^_]*.scss'])
+  return gulp.src(['assets/sass/base.scss', 'assets/sass/patterns/**/*.scss'])
     .pipe(compass(
       {
         css: 'source/assets/css/tmp',
