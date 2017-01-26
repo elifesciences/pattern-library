@@ -2,6 +2,5 @@
   "text": "Button",
   "classes": "button--default",
   "type": "submit",
-  "id": "button-id",
-  "name": "button-name"
+  "id": "button-id"
 }
