@@ -1,0 +1,17 @@
+<div class="error">
+
+    <picture>
+        <source srcset="{{assetsPath}}/img/errors/4xx.svg" type="image/svg+xml">
+        <img srcset="{{assetsPath}}/img/errors/4xx-2x.png 266w" src="{{assetsPath}}/img/errors/4xx.png" sizes="133px"
+             alt="" class="error__icon">
+    </picture>
+
+    <h1 class="error__title">Say what?</h1>
+
+    <p>Your browser sent us something unexpected.<br>We’ve logged the problem and will look into it.</p>
+
+    {{#button}}
+        {{> atoms-button }}
+    {{/button}}
+
+</div>

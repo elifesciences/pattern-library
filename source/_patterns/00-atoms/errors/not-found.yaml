@@ -1,0 +1,11 @@
+assets:
+  css:
+    - errors.css
+    - $ref: ../components/button.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    button:
+      $ref: ../components/button.yaml#/schema
