@@ -1,29 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="43px" height="135px" viewBox="0 0 43 135" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-    <title>elife-error-404-illustration@2x</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M48,125 L48,128 L47.9925689,128 C47.9975113,128.166062 48,128.33274 48,128.5 C48,137.612698 40.6126984,145 31.5,145 C22.3873016,145 15,137.612698 15,128.5 C15,128.33274 15.0024887,128.166062 15.0074311,128 L15,128 L15,125 L48,125 Z" id="path-1"></path>
-        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="33" height="20" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-        <path d="M47.9925689,128 L48,128 L48,23 L53,19 L53,10 L10,10 L10,19 L15,23 L15,128 L15.0074311,128 C15.0024887,128.166062 15,128.33274 15,128.5 C15,137.612698 22.3873016,145 31.5,145 C40.6126984,145 48,137.612698 48,128.5 C48,128.33274 47.9975113,128.166062 47.9925689,128 Z" id="path-3"></path>
-        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="43" height="135" fill="white">
-            <use xlink:href="#path-3"></use>
-        </mask>
-    </defs>
-    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-HD---error-screens" transform="translate(-233.000000, -294.000000)">
-            <g id="illo-1" transform="translate(43.000000, 284.000000)">
-                <g id="elife-error-404-illustration" transform="translate(180.000000, 0.000000)">
-                    <rect id="crop" x="0" y="0" width="63" height="155"></rect>
-                    <use id="Combined-Shape" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="14" fill="#B92B5B" xlink:href="#path-1"></use>
-                    <use id="Combined-Shape" stroke-opacity="0.87" stroke="#000000" mask="url(#mask-4)" stroke-width="8" xlink:href="#path-3"></use>
-                    <path d="M24,40 L24,100" id="Line" stroke-opacity="0.87" stroke="#000000" stroke-width="4" stroke-linecap="round"></path>
-                    <path d="M24,107 L24,112" id="Line" stroke-opacity="0.87" stroke="#000000" stroke-width="4" stroke-linecap="round"></path>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 157" style="enable-background:new 0 0 64 157;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#212121;stroke-width:4;stroke-miterlimit:10;}
+	.st1{fill:#CF0C4E;}
+	.st2{fill:none;stroke:#212121;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<g id="Layer_2">
+	<path class="st0" d="M12,12v5l5,6l0,106.6c0,7.7,5.6,14.5,13.3,15.3c9,1,16.7-6.1,16.7-14.9V23l5-6v-5H12z"/>
+	<path class="st1" d="M23.8,132c0.9,3.4,4,6,7.7,6s6.8-2.6,7.7-6H23.8z"/>
+	<line class="st2" x1="25" y1="39" x2="25" y2="102"/>
+	<line class="st2" x1="25" y1="110" x2="25" y2="115"/>
+</g>
+<g id="Layer_3">
+</g>
+<g id="Layer_4">
+</g>
+<g id="Layer_5">
+</g>
 </svg>

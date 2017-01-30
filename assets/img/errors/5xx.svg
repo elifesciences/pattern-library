@@ -1,57 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="157px" height="179px" viewBox="0 0 157 179" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-    <title>elife-error-5xx-illustration</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <circle id="path-1" cx="50" cy="148" r="2"></circle>
-        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-4" y="-4" width="12" height="12">
-            <rect x="44" y="142" width="12" height="12" fill="white"></rect>
-            <use xlink:href="#path-1" fill="black"></use>
-        </mask>
-        <circle id="path-3" cx="161" cy="110" r="2"></circle>
-        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-4" y="-4" width="12" height="12">
-            <rect x="155" y="104" width="12" height="12" fill="white"></rect>
-            <use xlink:href="#path-3" fill="black"></use>
-        </mask>
-        <circle id="path-5" cx="89" cy="16" r="2"></circle>
-        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-4" y="-4" width="12" height="12">
-            <rect x="83" y="10" width="12" height="12" fill="white"></rect>
-            <use xlink:href="#path-5" fill="black"></use>
-        </mask>
-        <rect id="path-7" x="42" y="64" width="12" height="12" rx="2"></rect>
-        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
-            <use xlink:href="#path-7"></use>
-        </mask>
-        <rect id="path-9" x="83" y="177" width="12" height="12" rx="2"></rect>
-        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
-            <use xlink:href="#path-9"></use>
-        </mask>
-    </defs>
-    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-HD---error-screens" transform="translate(-1108.000000, -259.000000)">
-            <g id="illo-3" transform="translate(972.000000, 249.000000)">
-                <g id="elife-error-5xx-illustration" transform="translate(126.000000, 0.000000)">
-                    <rect id="Rectangle-4" x="0" y="0" width="177" height="199"></rect>
-                    <rect id="Rectangle-13" fill="#212121" transform="translate(66.000000, 88.000000) rotate(45.000000) translate(-66.000000, -88.000000) " x="53" y="86" width="26" height="4" rx="2"></rect>
-                    <rect id="Rectangle-13" fill="#212121" transform="translate(117.000000, 138.000000) rotate(45.000000) translate(-117.000000, -138.000000) " x="96" y="136" width="42" height="4" rx="2"></rect>
-                    <rect id="Rectangle-13" fill="#212121" x="28" y="108" width="42" height="4" rx="2"></rect>
-                    <rect id="Rectangle-13" fill="#212121" x="108" y="108" width="42" height="4" rx="2"></rect>
-                    <rect id="Rectangle-13" fill="#212121" transform="translate(89.000000, 59.000000) rotate(90.000000) translate(-89.000000, -59.000000) " x="57" y="57" width="64" height="4" rx="2"></rect>
-                    <rect id="Rectangle-13" fill="#212121" transform="translate(89.000000, 150.000000) rotate(90.000000) translate(-89.000000, -150.000000) " x="68" y="148" width="42" height="4" rx="2"></rect>
-                    <rect id="Rectangle-13" fill="#212121" transform="translate(67.000000, 132.000000) rotate(-45.000000) translate(-67.000000, -132.000000) " x="54" y="130" width="26" height="4" rx="2"></rect>
-                    <rect id="Rectangle-13" fill="#212121" transform="translate(118.000000, 81.000000) rotate(-45.000000) translate(-118.000000, -81.000000) " x="95" y="79" width="46" height="4" rx="2"></rect>
-                    <path d="M140,56 L137.005859,56 C135.89706,56 135,56.8954305 135,58 C135,59.1122704 135.898054,60 137.005859,60 L140,60 L140,62.9941413 C140,64.1029399 140.895431,65 142,65 C143.11227,65 144,64.1019465 144,62.9941413 L144,60 L146.994141,60 C148.10294,60 149,59.1045695 149,58 C149,56.8877296 148.101946,56 146.994141,56 L144,56 L144,53.0058587 C144,51.8970601 143.104569,51 142,51 C140.88773,51 140,51.8980535 140,53.0058587 L140,56 Z" id="Combined-Shape" fill="#B92B5B"></path>
-                    <path d="M137,158 L134.005859,158 C132.89706,158 132,158.895431 132,160 C132,161.11227 132.898054,162 134.005859,162 L137,162 L137,164.994141 C137,166.10294 137.895431,167 139,167 C140.11227,167 141,166.101946 141,164.994141 L141,162 L143.994141,162 C145.10294,162 146,161.104569 146,160 C146,158.88773 145.101946,158 143.994141,158 L141,158 L141,155.005859 C141,153.89706 140.104569,153 139,153 C137.88773,153 137,153.898054 137,155.005859 L137,158 Z" id="Combined-Shape" fill="#B92B5B"></path>
-                    <path d="M15,108 L12.0058587,108 C10.8970601,108 10,108.895431 10,110 C10,111.11227 10.8980535,112 12.0058587,112 L15,112 L15,114.994141 C15,116.10294 15.8954305,117 17,117 C18.1122704,117 19,116.101946 19,114.994141 L19,112 L21.9941413,112 C23.1029399,112 24,111.104569 24,110 C24,108.88773 23.1019465,108 21.9941413,108 L19,108 L19,105.005859 C19,103.89706 18.1045695,103 17,103 C15.8877296,103 15,103.898054 15,105.005859 L15,108 Z" id="Combined-Shape" fill="#B92B5B"></path>
-                    <use id="Oval-2" stroke="#212121" mask="url(#mask-2)" stroke-width="8" xlink:href="#path-1"></use>
-                    <use id="Oval-2" stroke="#212121" mask="url(#mask-4)" stroke-width="8" xlink:href="#path-3"></use>
-                    <use id="Oval-2" stroke="#212121" mask="url(#mask-6)" stroke-width="8" xlink:href="#path-5"></use>
-                    <use id="Rectangle-2" stroke="#212121" mask="url(#mask-8)" stroke-width="8" xlink:href="#path-7"></use>
-                    <use id="Rectangle-2" stroke="#212121" mask="url(#mask-10)" stroke-width="8" xlink:href="#path-9"></use>
-                    <circle id="Oval-2" fill="#B92B5B" cx="89" cy="110" r="5"></circle>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 181 198" style="enable-background:new 0 0 181 198;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#CF0C4E;}
+	.st1{fill:none;stroke:#212121;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#212121;stroke-width:4;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#CF0C4E;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<circle class="st0" cx="92" cy="110" r="5"/>
+<line class="st1" x1="92" y1="130" x2="92" y2="169"/>
+<line class="st1" x1="92" y1="29" x2="92" y2="90"/>
+<line class="st1" x1="112" y1="110" x2="151" y2="110"/>
+<line class="st1" x1="32" y1="110" x2="72" y2="110"/>
+<line class="st1" x1="105.9" y1="95.6" x2="135.8" y2="65.8"/>
+<line class="st1" x1="62.2" y1="139.2" x2="77.6" y2="123.9"/>
+<line class="st1" x1="77.6" y1="96.1" x2="61.2" y2="79.8"/>
+<line class="st1" x1="133.6" y1="152.1" x2="105.9" y2="124.4"/>
+<circle class="st2" cx="92" cy="16.5" r="4.5"/>
+<circle class="st2" cx="53" cy="148" r="5"/>
+<circle class="st2" cx="164" cy="110" r="5"/>
+<rect x="46" y="65" class="st2" width="10" height="10"/>
+<rect x="87" y="176" class="st2" width="10" height="10"/>
+<line class="st3" x1="18" y1="104" x2="18" y2="116"/>
+<line class="st3" x1="12" y1="110" x2="24" y2="110"/>
+<line class="st3" x1="142" y1="154" x2="142" y2="166"/>
+<line class="st3" x1="136" y1="160" x2="148" y2="160"/>
+<line class="st3" x1="144" y1="51" x2="144" y2="63"/>
+<line class="st3" x1="138" y1="57" x2="150" y2="57"/>
 </svg>
