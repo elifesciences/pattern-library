@@ -6,6 +6,6 @@
     "isVisuallyHidden": false,
     "labelText": "Email Address"
   },
-  "name": "emailAddress"
-
+  "name": "emailAddress",
+  "autofocus": true
 }
