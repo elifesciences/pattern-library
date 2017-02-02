@@ -1,0 +1,409 @@
+{
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "path": "#mainMenu",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "nav-primary__menu_icon",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "nav-primary__search_icon",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Labs",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Submit my research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--button",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        },
+        {
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--notification",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+              "classes": "nav-secondary__notification-icon",
+              "altText": "Notification icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
+              }
+            ]
+          }
+        },
+        {
+          "text": "Profile",
+          "classes": "nav-secondary__item nav-secondary__item--profile",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
+              "classes": "nav-secondary__profile-icon",
+              "altText": "Profile icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    "searchBox": {
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
+
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
+    }
+
+  },
+
+  "carousel": {
+    "items": [
+      {
+        "subjects": {
+          "list": [
+            {
+              "name": "Neuroscience",
+              "url": "#"
+            },
+            {
+              "name": "Cell biology",
+              "url": "#"
+            }
+          ]
+        },
+        "name": "Sensitivity vs stability in neurones",
+        "url": "#link-to-article",
+        "button": {
+          "text": "Read article",
+          "path": "#link-to-article",
+          "classes": "button--default"
+        },
+        "meta": {
+          "url": "#",
+          "text": "Research article",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 10,
+              "month": "Sep",
+              "year": 2015
+            },
+            "forMachine": "2015-09-10"
+          }
+        },
+        "backgroundImage": {
+          "lowResImageSource": "http://lorempixel.com/950/400/nature/1",
+          "highResImageSource": "http://lorempixel.com/1900/800/nature/1"
+        }
+      },
+      {
+        "subjects": {
+          "list": [
+            {
+              "name": "Genomics and evolutionary biology",
+              "url": "#"
+            }
+          ]
+        },
+        "name": "Cancer cells follow the leader",
+        "url": "#link-to-article",
+        "button": {
+          "text": "Read article",
+          "path": "#link-to-article",
+          "classes": "button--default "
+        },
+        "meta": {
+          "url": "#",
+          "text": "Research article",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 10,
+              "month": "Sep",
+              "year": 2015
+            },
+            "forMachine": "2015-09-10"
+          }
+        },
+
+        "backgroundImage": {
+          "lowResImageSource": "http://lorempixel.com/950/400/animals/1",
+          "highResImageSource": "http://lorempixel.com/1900/800/animals/1"
+        }
+
+      },
+      {
+        "subjects": {
+          "list": [
+            {
+              "name": "Biochemistry",
+              "url": "#linkToBiochemistry"
+            },
+            {
+              "name": "Cell biology",
+              "url": "#LinkToCellBiology"
+            }
+          ]
+        },
+        "name": "Rethinking the origins of mitochondrial architecture",
+        "url": "#link-to-article",
+        "button": {
+          "text": "Read article",
+          "path": "#link-to-article",
+          "classes": "button--default "
+        },
+        "meta": {
+          "url": "#LinkToResearchArticles",
+          "text": "Research article",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 10,
+              "month": "Sep",
+              "year": 2015
+            },
+            "forMachine": "2015-09-10"
+          }
+        },
+        "backgroundImage": {
+          "lowResImageSource": "http://lorempixel.com/950/400/abstract/1",
+          "highResImageSource": "http://lorempixel.com/1900/800/abstract/1"
+        }
+
+      }
+
+    ]
+  },
+
+  "leadPara": {
+    "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
+    "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
+  },
+
+  "leadParas": {
+    "paras": [
+      {
+        "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
+        "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
+      }
+    ]
+  },
+
+  "subjectListLink": {
+    "targetFragmentId": "subjectsListing"
+  },
+
+  "subjectsList": {
+    "id": "subjectsListing",
+    "labelledBy": "theIdOfTheLeadParaAssumingThisIsTheHomePage",
+    "subjects": [
+      {
+        "url": "#",
+        "name": "Biochemistry"
+      },
+      {
+        "url": "#",
+        "name": "Biophysics and structural biology"
+      },
+      {
+        "url": "#",
+        "name": "Cancer biology"
+      },
+      {
+        "url": "#",
+        "name": "Cell biology"
+      },
+      {
+        "url": "#",
+        "name": "Computational and systems biology"
+      },
+      {
+        "url": "#",
+        "name": "Developmental biology and stem cells"
+      },
+      {
+        "url": "#",
+        "name": "Ecology"
+      },
+      {
+        "url": "#",
+        "name": "Epidemiology and global health"
+      },
+      {
+        "url": "#",
+        "name": "Genes and chromosomes"
+      },
+      {
+        "url": "#",
+        "name": "Genomics and evolutionary biology"
+      },
+      {
+        "url": "#",
+        "name": "Human biology and medicine"
+      },
+      {
+        "url": "#",
+        "name": "Immunology"
+      },
+      {
+        "url": "#",
+        "name": "Microbiology and infectious disease"
+      },
+      {
+        "url": "#",
+        "name": "Neuroscience"
+      },
+      {
+        "url": "#",
+        "name": "Plant biology"
+      }
+    ]
+  },
+
+
+  "mainMenu":{
+    "links": {
+      "items": [
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Author guide", "url": "#aut"},
+        {"name": "Reviewer guide", "url": "#rev"},
+        {"name": "About", "url": "#abo"},
+        {"name": "Inside eLife", "url": "#ins"},
+        {"name": "Careers", "url": "#car"},
+        {"name": "Labs", "url": "#lab"}
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms and policy", "url": "#" },
+    { "name": "Inside eLife", "url": "#" },
+    { "name": "Monthly archive", "url": "#" },
+    { "name": "Labs", "url": "#" },
+    { "name": "For the press", "url": "#" },
+    { "name": "Resources", "url": "#" }
+  ]
+
+}

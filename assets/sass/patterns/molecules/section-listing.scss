@@ -1,16 +1,16 @@
 @import "../../definitions";
 
-.all-subjects-list {
+.section-listing {
   @include nospace();
   list-style: none;
 }
 
-.all-subjects-list__list_item {
+.section-listing__list_item {
   @include typeg-portal-quick-nav();
   @include nospace();
 }
 
-.all-subjects-list__list_link {
+.section-listing__list_link {
   color: $color-text;
   text-decoration: none;
   text-transform: uppercase;
@@ -20,9 +20,9 @@
   }
 }
 
-@media only screen and (min-width: #{get-rem-from-px($bkpt-all-subjects-list)}rem) {
+@media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
 
-  .all-subjects-list {
+  .section-listing {
     column-count: 3;
   }
 

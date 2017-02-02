@@ -1,12 +1,14 @@
 @import "../../definitions";
 
-.all-subjects-list-link {
+.section-listing-link {
   color: $color-primary;
   @include font-size($font-size-base-in-px);
   line-height: 2;
 }
 
-.all-subjects-list-link:hover,
-.all-subjects-list-link:active {
+.section-listing-link:hover,
+.section-listing-link:active {
   color: $color-primary-light;
 }
+
+
