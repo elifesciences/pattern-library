@@ -33,7 +33,9 @@ Then install compass: `gem install compass`
 
 ## 3. Generate PatternLab
 
-- Run `php ./core/builder.php -g`, and check no errors in the output.
+To run a **one-off** generation of the patterns, it's `php ./core/builder.php -g`
+
+Alternatively to set up a **watch task** for pattern generation, run `php ./core/builder.php -w` 
 
 ## 4. Verify the setup
 
