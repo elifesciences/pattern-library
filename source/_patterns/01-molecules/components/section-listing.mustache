@@ -1,7 +1,8 @@
-<ol id="{{id}}" class="section-listing" {{#labelledBy}}aria-labelledby="{{labelledBy}}"{{/labelledBy}}>
+<ol id="{{id}}" class="section-listing {{#single-line}}section-listing--single-line{{/single-line}}" {{#labelledBy}}aria-labelledby="{{labelledBy}}"{{/labelledBy}}>
   {{#subjects}}
-    <li class="section-listing__list_item">
+    <li class="section-listing__list_item {{#is-current}}section-listing__list_item--current{{/is-current}}">
       <a href="{{{url}}}" class="section-listing__list_link">{{{name}}}</a>
     </li>
   {{/subjects}}
 </ol>
+

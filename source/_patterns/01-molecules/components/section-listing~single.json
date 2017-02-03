@@ -1,0 +1,33 @@
+{
+  "id": "sectionListing",
+  "labelledBy": "theIdOfSectionListing",
+  "single-line": true,
+  "subjects": [
+    {
+      "url": "#",
+      "name": "What we publish",
+      "is-current": true
+    },
+    {
+      "url": "#",
+      "name": "Editors & people"
+    },
+    {
+      "url": "#",
+      "name": "Peer review"
+    },
+    {
+      "url": "#",
+      "name": "Openness"
+    },
+    {
+      "url": "#",
+      "name": "Reproducibility"
+    },
+    {
+      "url": "#",
+      "name": "Incentives"
+    }
+  ]
+}
+

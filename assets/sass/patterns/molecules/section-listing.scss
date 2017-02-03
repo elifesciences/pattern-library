@@ -20,10 +20,42 @@
   }
 }
 
+.section-listing--single-line {
+  border-top: 1px solid $color-text-dividers;
+  border-bottom: 1px solid $color-text-dividers;
+  padding: 10px;
+
+  .section-listing__list_item {
+    margin: 0 20px;
+    text-align: center;
+    line-height: 1.25;
+    @include font-size(16);
+  }
+
+  .section-listing__list_item--current {
+    .section-listing__list_link {
+      color: $color-primary;
+    }
+
+  }
+
+  .section-listing__list_link {
+    text-transform: none;
+  }
+
+}
+
 @media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
 
   .section-listing {
     column-count: 3;
+  }
+
+  .section-listing--single-line {
+    column-count: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 }

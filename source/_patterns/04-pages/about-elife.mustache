@@ -6,27 +6,74 @@
 
     <main role="main" class="blg-margin-bottom-large">
 
-      {{#carousel}}
-        {{> organisms-carousel}}
-      {{/carousel}}
+      {{#pageAboutElife}}
 
-      {{#leadParas}}
-        {{> molecules-lead-paras}}
-      {{/leadParas}}
+        {{> organisms-content-header-non-article }}
+
+      {{/pageAboutElife}}
+
+
 
       {{#subjectListLink}}
-        <div class="wrapper u-pad-top">
-          {{> atoms-section-listing-link}}
-        </div>
-      {{/subjectListLink}}
 
-      <div class="wrapper u-pad-top">
-        <div style="height: 800px; background-color: rgba(2, 136, 209, 0.2);">Main article list.</div>
-      </div>
+          {{> atoms-section-listing-link}}
+
+      {{/subjectListLink}}
 
       {{#subjectsList}}
         {{> molecules-section-listing}}
       {{/subjectsList}}
+
+
+      <div class="wrapper">
+
+        <div class="grid">
+
+          <div class="grid__item medium--six-twelfths push--large--three-twelfths u-pad-top">
+
+            <h2>
+              Publishing important research
+            </h2>
+            <p>
+
+
+              eLife is a non-profit organisation inspired by research funders and led by scientists. Our mission is to help scientists accelerate discovery by operating a platform for research communication that encourages and recognises the most responsible behaviours in science.
+
+            <p>eLife publishes important research in all areas of the life and biomedical sciences. The research is selected and evaluated by working scientists and is made freely available to all readers without delay.
+            </p>
+            <p>We aim to improve all aspects of research communication in support of excellence in science. Our current priorities are:
+            </p>
+            <ul>
+              <li>
+                <strong>Peer review</strong> &mdash; engaging leading scientists in an editorial process that is collaborative, constructive, and efficient
+
+              </li>
+              <li><strong>Openness</strong> &mdash;  facilitating sharing and collaboration through unfettered access to research results and experimenting with ways to make achievements more visible, accessible, and usable
+              </li>
+              <li><strong>Reproducibility</strong> &mdash;  encouraging greater transparency in research in order that findings may be built upon more effectively
+              </li>
+              <li><strong>Incentives</strong> &mdash;  advocating for reform of research assessment so that scientists at every stage of their careers are recognized for the quality of their work and for sharing ideas, data and resources
+              </li>
+            </ul>
+            <p>
+              eLife was founded in 2011 by the Howard Hughes Medical Institute, the Max Planck Society, and the Wellcome Trust and receives financial support from these organizations. Annual reports and financial statements are openly available [<a href="">link</a>].
+            </p>
+            <p>
+              Related links:
+            </p>
+            <ul>
+              <li>About eLife [<a href="">slides</a>]</li>
+              <li>Ed process [<a href="">pdf</a>]</li>
+              <li>Poster</li>
+              <li>Resources to <a href="">download</a></li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
 
     </main>
 
