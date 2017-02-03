@@ -10,14 +10,11 @@ const utils = require('../libs/elife-utils')();
  */
 module.exports = class FragmentHandler {
 
-  static isSingleton()  {
-    return true;
-  }
-
   constructor($elm, _window = window, doc = document) {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+    this.isSingleton = true;
     this.window.addEventListener('DOMContentLoaded', this.handleDomLoad.bind(this));
   }
 
