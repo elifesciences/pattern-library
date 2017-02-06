@@ -1,8 +1,7 @@
 {
   "siteHeader": {
     "homePagePath": "#",
-    "primaryLinks":
-    {
+    "primaryLinks": {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
@@ -25,19 +24,16 @@
             ]
           }
         },
-
         {
           "text": "Home",
           "path": "#",
           "classes": "nav-primary__item"
         },
-
         {
           "text": "Magazine",
           "path": "#",
           "classes": "nav-primary__item"
         },
-
         {
           "text": "Search",
           "rel": "search",
@@ -60,10 +56,7 @@
         }
       ]
     },
-
-
-    "secondaryLinks":
-    {
+    "secondaryLinks": {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
@@ -72,19 +65,16 @@
           "path": "#",
           "classes": "nav-secondary__item"
         },
-
         {
           "text": "About<span class=\"visuallyhidden\"> eLife</span>",
           "path": "#",
           "classes": "nav-secondary__item"
         },
-
         {
           "text": "Labs",
           "path": "#",
           "classes": "nav-secondary__item"
         },
-
         {
           "text": "Submit my research",
           "path": "#",
@@ -133,7 +123,6 @@
         }
       ]
     },
-
     "searchBox": {
       "compactForm": {
         "formAction": "/search",
@@ -146,16 +135,13 @@
         "inputPlaceholder": "Search by keyword or author",
         "ctaText": "Search"
       },
-
       "subjectFilter": {
         "name": "subject_filter",
         "value": "cell_biology",
         "text": "Cell biology"
       }
     }
-
   },
-
   "contentHeader": {
     "rootClasses": "content-header-article content-header-article-research",
     "behaviour": "ContentHeaderArticle",
@@ -174,103 +160,270 @@
     },
     "authors": {
       "list": [
-        {"name": "Lee R Berger"},
-        {"name": "John Hawks"},
-        {"name": "Darryl J de Ruiter"},
-        {"name": "Steven E Churchill"},
-        {"name": "Peter Schmid"},
-        {"name": "Lucas K Delezene"},
-        {"name": "Tracy L Kivell"},
-        {"name": "Heather M Garvin"},
-        {"name": "Scott A Williams"},
-        {"name": "Jeremy M DeSilva"},
-        {"name": "Matthew M Skinner"},
-        {"name": "Charles M Musiba"},
-        {"name": "Noel Cameron"},
-        {"name": "Trenton W Holliday"},
-        {"name": "William Harcourt-Smith"},
-        {"name": "Rebecca R Ackermann"},
-        {"name": "Markus Bastir"},
-        {"name": "Barry Bogin"},
-        {"name": "Debra Bolter"},
-        {"name": "Juliet Brophy"},
-        {"name": "Zachary D Cofran"},
-        {"name": "Kimberly A Congdon"},
-        {"name": "Andrew S Deane"},
-        {"name": "Mana Dembo"},
-        {"name": "Michelle Drapeau"},
-        {"name": "Marina C Elliott"},
-        {"name": "Elen M Feuerriegel"},
-        {"name": "Daniel Garcia-Martinez"},
-        {"name": "David J Green"},
-        {"name": "Alia Gurtov"},
-        {"name": "Joel D Irish"},
-        {"name": "Ashley Kruger"},
-        {"name": "Myra F Laird"},
-        {"name": "Damiano Marchi"},
-        {"name": "Marc R Meyer"},
-        {"name": "Shahed Nalla"},
-        {"name": "Enquye W Negash"},
-        {"name": "Caley M Orr"},
-        {"name": "Davorka Radovcic"},
-        {"name": "Lauren Schroeder"},
-        {"name": "Jill E Scott"},
-        {"name": "Zachary Throckmorton"},
-        {"name": "Caroline VanSickle"},
-        {"name": "Christopher S Walker"},
-        {"name": "Pianpian Wei"},
-        {"name": "Bernhard Zipfel"}
+        {
+          "name": "Lee R Berger"
+        },
+        {
+          "name": "John Hawks"
+        },
+        {
+          "name": "Darryl J de Ruiter"
+        },
+        {
+          "name": "Steven E Churchill"
+        },
+        {
+          "name": "Peter Schmid"
+        },
+        {
+          "name": "Lucas K Delezene"
+        },
+        {
+          "name": "Tracy L Kivell"
+        },
+        {
+          "name": "Heather M Garvin"
+        },
+        {
+          "name": "Scott A Williams"
+        },
+        {
+          "name": "Jeremy M DeSilva"
+        },
+        {
+          "name": "Matthew M Skinner"
+        },
+        {
+          "name": "Charles M Musiba"
+        },
+        {
+          "name": "Noel Cameron"
+        },
+        {
+          "name": "Trenton W Holliday"
+        },
+        {
+          "name": "William Harcourt-Smith"
+        },
+        {
+          "name": "Rebecca R Ackermann"
+        },
+        {
+          "name": "Markus Bastir"
+        },
+        {
+          "name": "Barry Bogin"
+        },
+        {
+          "name": "Debra Bolter"
+        },
+        {
+          "name": "Juliet Brophy"
+        },
+        {
+          "name": "Zachary D Cofran"
+        },
+        {
+          "name": "Kimberly A Congdon"
+        },
+        {
+          "name": "Andrew S Deane"
+        },
+        {
+          "name": "Mana Dembo"
+        },
+        {
+          "name": "Michelle Drapeau"
+        },
+        {
+          "name": "Marina C Elliott"
+        },
+        {
+          "name": "Elen M Feuerriegel"
+        },
+        {
+          "name": "Daniel Garcia-Martinez"
+        },
+        {
+          "name": "David J Green"
+        },
+        {
+          "name": "Alia Gurtov"
+        },
+        {
+          "name": "Joel D Irish"
+        },
+        {
+          "name": "Ashley Kruger"
+        },
+        {
+          "name": "Myra F Laird"
+        },
+        {
+          "name": "Damiano Marchi"
+        },
+        {
+          "name": "Marc R Meyer"
+        },
+        {
+          "name": "Shahed Nalla"
+        },
+        {
+          "name": "Enquye W Negash"
+        },
+        {
+          "name": "Caley M Orr"
+        },
+        {
+          "name": "Davorka Radovcic"
+        },
+        {
+          "name": "Lauren Schroeder"
+        },
+        {
+          "name": "Jill E Scott"
+        },
+        {
+          "name": "Zachary Throckmorton"
+        },
+        {
+          "name": "Caroline VanSickle"
+        },
+        {
+          "name": "Christopher S Walker"
+        },
+        {
+          "name": "Pianpian Wei"
+        },
+        {
+          "name": "Bernhard Zipfel"
+        }
       ]
     },
-    "institutions" : {
+    "institutions": {
       "list": [
-        {"name": "University of the Witwatersrand, South Africa"},
-        {"name": "University of Wisconsin-Madison, United States"},
-        {"name": "Texas A&M University, United States"},
-        {"name": "Duke University, United States"},
-        {"name": "University of Zurich, Switzerland"},
-        {"name": "University of Arkansas, United States"},
-        {"name": "University of Kent, United Kingdom"},
-        {"name": "Max Planck Institute for Evolutionary Anthropology, Germany"},
-        {"name": "Mercyhurst University, United States"},
-        {"name": "New York University, United States"},
-        {"name": "New York Consortium in Evolutionary Primatology, United States"},
-        {"name": "Dartmouth College, United States"},
-        {"name": "University of Colorado Denver, United States"},
-        {"name": "Loughborough University, United Kingdom"},
-        {"name": "Tulane University, United States"},
-        {"name": "Lehman College, United States"},
-        {"name": "American Museum of Natural History, United States"},
-        {"name": "University of Cape Town, South Africa"},
-        {"name": "Museo Nacional de Ciencias Naturales, Spain"},
-        {"name": "Modesto Junior College, United States"},
-        {"name": "Louisiana State University, United States"},
-        {"name": "Nazarbayev University, Kazakhstan"},
-        {"name": "University of Missouri, United States"},
-        {"name": "University of Kentucky College of Medicine, United States"},
-        {"name": "Simon Fraser University, Canada"},
-        {"name": "Universit&eacute; de Montr&eacute;al, Canada"},
-        {"name": "Australian National University, Australia"},
-        {"name": "Biology Department, Universidad Autònoma de Madrid, Spain"},
-        {"name": "Midwestern University, United States"},
-        {"name": "Liverpool John Moores University, United Kingdom"},
-        {"name": "University of Pisa, Italy"},
-        {"name": "Chaffey College, United States"},
-        {"name": "University of Johannesburg, South Africa"},
-        {"name": "George Washington University, United States"},
-        {"name": "University of Colorado School of Medicine, United States"},
-        {"name": "Croatian Natural History Museum, Croatia"},
-        {"name": "University of Iowa, United States"},
-        {"name": "Lincoln Memorial University, United States"},
-        {"name": "Smithsonian Institution, United States"}
+        {
+          "name": "University of the Witwatersrand, South Africa"
+        },
+        {
+          "name": "University of Wisconsin-Madison, United States"
+        },
+        {
+          "name": "Texas A&M University, United States"
+        },
+        {
+          "name": "Duke University, United States"
+        },
+        {
+          "name": "University of Zurich, Switzerland"
+        },
+        {
+          "name": "University of Arkansas, United States"
+        },
+        {
+          "name": "University of Kent, United Kingdom"
+        },
+        {
+          "name": "Max Planck Institute for Evolutionary Anthropology, Germany"
+        },
+        {
+          "name": "Mercyhurst University, United States"
+        },
+        {
+          "name": "New York University, United States"
+        },
+        {
+          "name": "New York Consortium in Evolutionary Primatology, United States"
+        },
+        {
+          "name": "Dartmouth College, United States"
+        },
+        {
+          "name": "University of Colorado Denver, United States"
+        },
+        {
+          "name": "Loughborough University, United Kingdom"
+        },
+        {
+          "name": "Tulane University, United States"
+        },
+        {
+          "name": "Lehman College, United States"
+        },
+        {
+          "name": "American Museum of Natural History, United States"
+        },
+        {
+          "name": "University of Cape Town, South Africa"
+        },
+        {
+          "name": "Museo Nacional de Ciencias Naturales, Spain"
+        },
+        {
+          "name": "Modesto Junior College, United States"
+        },
+        {
+          "name": "Louisiana State University, United States"
+        },
+        {
+          "name": "Nazarbayev University, Kazakhstan"
+        },
+        {
+          "name": "University of Missouri, United States"
+        },
+        {
+          "name": "University of Kentucky College of Medicine, United States"
+        },
+        {
+          "name": "Simon Fraser University, Canada"
+        },
+        {
+          "name": "Universit&eacute; de Montr&eacute;al, Canada"
+        },
+        {
+          "name": "Australian National University, Australia"
+        },
+        {
+          "name": "Biology Department, Universidad Autònoma de Madrid, Spain"
+        },
+        {
+          "name": "Midwestern University, United States"
+        },
+        {
+          "name": "Liverpool John Moores University, United Kingdom"
+        },
+        {
+          "name": "University of Pisa, Italy"
+        },
+        {
+          "name": "Chaffey College, United States"
+        },
+        {
+          "name": "University of Johannesburg, South Africa"
+        },
+        {
+          "name": "George Washington University, United States"
+        },
+        {
+          "name": "University of Colorado School of Medicine, United States"
+        },
+        {
+          "name": "Croatian Natural History Museum, Croatia"
+        },
+        {
+          "name": "University of Iowa, United States"
+        },
+        {
+          "name": "Lincoln Memorial University, United States"
+        },
+        {
+          "name": "Smithsonian Institution, United States"
+        }
       ]
     },
     "lastInstitution": "Institute of Vertebrate Paleontology and Paleoanthropology, China",
-
     "titleClass": "content-header__title--extra-small",
-
     "download": "#articleDownloadLinksList",
-
     "meta": {
       "url": "#",
       "text": "Research article",
@@ -284,9 +437,7 @@
       }
     }
   },
-
   "contextualData": {
-
     "metricsData": {
       "data": [
         {
@@ -304,7 +455,6 @@
         }
       ]
     },
-
     "citation": {
       "citeAs": "eLife 2016;5:e16370",
       "doi": {
@@ -313,25 +463,43 @@
         "isTruncated": true
       }
     }
-
   },
-
   "viewSelector": {
     "articleUrl": "#articleUrl",
     "figureUrl": "#figureUrl",
     "jumpLinks": {
       "links": [
-        { "name": "Abstract", "url": "#abstract" },
-        { "name": "eLife digest", "url": "#digest" },
-        { "name": "Introduction", "url": "#introduction" },
-        { "name": "Results", "url": "#results" },
-        { "name": "Discussion", "url": "#discussion" },
-        { "name": "Materials & methods", "url": "#materials-and-methods" },
-        { "name": "References", "url": "#references" }
+        {
+          "name": "Abstract",
+          "url": "#abstract"
+        },
+        {
+          "name": "eLife digest",
+          "url": "#digest"
+        },
+        {
+          "name": "Introduction",
+          "url": "#introduction"
+        },
+        {
+          "name": "Results",
+          "url": "#results"
+        },
+        {
+          "name": "Discussion",
+          "url": "#discussion"
+        },
+        {
+          "name": "Materials & methods",
+          "url": "#materials-and-methods"
+        },
+        {
+          "name": "References",
+          "url": "#references"
+        }
       ]
     }
   },
-
   "articleSections": [
     {
       "isFirst": true,
@@ -347,10 +515,10 @@
       "headingLevel": 2,
       "hasBehaviour": true,
       "body": "<p>Each year, up to 15% of the world's population experience symptoms of an influenza infection, also commonly known as flu. The most common culprit is a strain of the virus called influenza type A subtype H3N2. One reason that so many people become infected each year is that this virus evolves rapidly. Within a few years, proteins on the surface of the virus known as antigens become less recognizable to the immune system of a person who has been previously infected. This means that the person can become ill with the virus again because their immune system cannot mount an effective response to the evolved virus strain.</p><p>Influenza virus strains evolve rapidly because their genetic material accumulates mutations quickly. Although some of these mutations are beneficial to the virus, other mutations are harmful and reduce the ability of the virus to spread. Sometimes beneficial mutations may occur alongside harmful ones, but it is not known how the harmful mutations affect the evolution of the virus.</p><p>Here, Koelle and Rasmussen used computer models of H3N2 influenza to examine the effect of harmful mutations on the evolution of this virus population. The models show that harmful mutations limit how quickly the antigens can evolve. Also, the presence of these harmful mutations effectively acts as a sieve: they allow only large changes in the antigens to establish in the virus population.</p><p>The models suggest that there are three routes by which large changes in the antigens on H3N2 viruses may occur. The first is by a single mutation that has a big effect on the antigens in viruses that only carry a few harmful mutations, but these large mutations would not happen very often. Another route may be through more common mutations that have only a small or moderate benefit, which would allow the virus to become more common in the population before it acquires a beneficial mutation with a much greater effect. The third possibility is that a large beneficial mutation may arise in viruses that have many harmful mutations. These harmful mutations may initially limit the ability of the virus to spread, but over time, some of these harmful mutations may then be lost.</p><p>Koelle and Rasmussen found that the computer models could recreate the patterns of virus evolution that have been observed in real strains of H3N2. Researchers use predictions of influenza evolution to help them decide which virus strains should be included in flu vaccines each year. Koelle and Rasmussen findings indicate that harmful mutations should be considered when making these predictions.</p>",
-        "doi": {
-          "doi": "10.7554/eLife.16370",
-          "variant": "article-section"
-        }
+      "doi": {
+        "doi": "10.7554/eLife.16370",
+        "variant": "article-section"
+      }
     },
     {
       "id": "introduction",
@@ -363,9 +531,7 @@
         "doi": "10.7554/eLife.16370",
         "variant": "article-section"
       }
-
     },
-
     {
       "id": "materials-and-methods",
       "title": "Materials and methods",
@@ -374,7 +540,6 @@
       "isInitiallyClosed": true,
       "body": "<p>Embryos were isolated from a wild <i>B. schlosseri</i> colony from Monterey Bay. Metaphase chromosomes were isolated as previously described (<a href=\"#bib73\">Shoguchi et al., 2004</a>). <i>B. schlosseri</i> metaphase chromosome suspension was partitioned into wells in the microfluidic device as previously described (<a href=\"#bib24\">Fan et al., 2011</a>; <a href=\"#bib92\">Xu et al., 2011</a>). The contents of each microfluidic well were amplified individually and prepared for sequencing. Each well contained between 1–4 metaphase chromosomes (<a href=\"#fig3\">Figure 3</a>, <a href=\"#fig3s1\">Figure 3—figure supplement 1</a>, <a href=\"#fig3s2\">Figure 3—figure Supplement 2</a>). 21 wells were made into libraries and sequenced using Illumina Hiseq (2 x 100).</p><section class=\"article-section \" id=\"s3-3-1\">  <header class=\"article-section__header\">    <h4 class=\"article-section__header_text\">Chromosome assignment</h4>  </header>  <div class=\"article-section__body\">    <p>Since a particular chromosome has an equal chance of occupying any of the 21 wells, we can denote the presence of a particular chromosome for example chromosome A across the 21 wells in the form of a vector (1,0,1,0,1,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,1) where 1 denotes presence in a well and 0 as absent. To deduce this configuration and perform the assignment of contigs, we aligned the reads from each well onto the contigs of the assembly. Contigs that share the same configuration across 21 wells can be considered to be from the same chromosome. To determine which contigs belong together and share the same configuration, we cluster the contigs using the Pearson correlation with each other using the vector across 21 wells. The number of clusters that result from k-means clustering using the Pearson correlation as the distance is then inferred to be the number of chromosomes. To determine this optimal number of clusters K for K-means clustering, we perform the clustering procedure iteratively for each K and record the within sum of squares error for each iteration as shown in <a href=\"#fig3\">Figure 3</a>. Additionally, using the clustered data, we were able to deduce the configuration and deduce the number of chromosomes in each well.</p><p>Reads from each of the chromosome preparation were aligned to the 356a draft genome assembly using the BWA (<a href=\"#bib47\">Li and Durbin, 2009</a>) package. Subsequently, SAMtools (<a href=\"#bib48\">Li et al., 2009</a>) were used to filter for high quality mapping of reads with MAPQ score of greater than 30. The filtering was performing by using AWK to filter the fifth column of the SAM file for alignments &gt;25. In addition to filter for a reasonable insert size, AWK is used to filter the corresponding columns in SAM files. Filtered SAM files were then parsed using BEDtools (<a href=\"#bib62\">Quinlan and Hall, 2010</a>) to obtain the number of reads that are associated with each of the scaffolds. Specifically, the coverageBED command is used to calculate the number of reads and coverage associated with each of the scaffolds in the assembled genome. Utilizing the number of reads associated with each scaffold from a particular chromosome preparation were arranged in the following data format:</p><p>In each cell the number of reads associated with the scaffold and preparation was normalized by the total number of reads across each chromosome preparation. This is done by dividing the number of reads associated with the particular scaffold and preparation by dividing each entry by the total number of reads from a chromosome preparation. This value is then scaled by the fractional coverage of reads for a particular scaffold. These normalization steps ensure that a valid comparison can be made across each preparation. These normalized reads are then used to perform the K-means clustering. The optimal number of clusters is determined by iteratively performing the clustering process with each value of K. Within sum of square errors for each cluster is calculated and plotted in <a href=\"#fig3\">Figure 3A</a>. A knee exists in the curve near K = 13, after which increasing the number of clusters only creates marginal improvement in the error (<a href=\"#fig3\">Figure 3A</a>). To estimate the configuration after the clustering step, 17 out of the 21 wells were deduced to contain information that is used in the clustering process. The average number of normalized reads counts from each well that align to each scaffold in a cluster group is calculated and plotted in <a href=\"#fig3\">Figure 3B</a>, <a href=\"#fig3s1\">Figure 3—figure supplements 1 and 2</a>. Each peak represented can be inferred to denote the presence of a specific chromosome in the well. This approach yielded 13 well resolved chromosomes (<a href=\"#fig3\">Figure 3</a>, <a href=\"#fig3s1\">Figure 3—figure supplement 1</a>), close to the ∼16 chromosomes that were predicted by a previous study using metaphase spreads (<a href=\"#bib14\">Colombera, 1963</a>).</p>  </div></section><section class=\"article-section \" id=\"s3-3-2\">  <header class=\"article-section__header\">    <h4 class=\"article-section__header_text\">356a-chromosomes hybrid assembly</h4>  </header>  <div class=\"article-section__body\">    <p>Reads from each of the individual chromosome sample preparation were subsequently assembled using Velvet (<a href=\"#bib96\">Zerbino, 2010</a>; <a href=\"#fig3s2\">Figure 3—figure supplement 2</a>). Velvet was compiled for our assembly to have a max hash length of 75. This is to allow for the use of larger hash length for the assembly of the reads from the individual well. Since the paired reads from each preparation is ∼86 after filtering for low quality bases, an optimal hash length is selected from the range of 51–75 to obtain the optimal assembly for each preparation. The assembled chromosome level contigs were then merged with 356a draft assembly using Minimus2 <a href=\"http://sourceforge.net/apps/mediawiki/amos/index.php?title=Minimus2\">http://sourceforge.net/apps/mediawiki/amos/index.php?title=Minimus2</a> (<a href=\"#fig3s3\">Figure 3—figure supplement 3</a>). During this stage, minimus2 used a nucmer based overlap detector to detect overlap between sequences and subsequently merging the two sequence sets to generate the final merge assembly of chromosome with the draft. An overall improvement in N50 was achieved, yielding a final 580 Mbp draft 356a-chromosomes hybrid assembly (<a href=\"#SD3-data\">Supplementary file 2D</a>).</p>  </div> <h4>I am an h4</h4><h5>I am an h5</h5><h6>I am an h6</h6><p>A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve </p> </section>"
     },
-
     {
       "id": "articleInfo",
       "title": "Article & author information",
@@ -384,12 +549,10 @@
       "body": "  <h3 class=\"authors-details__heading\">Authors details</h3>  <ol class=\"authors-details__authors\">    <li class=\"authors-details__author\" style=\"margin-top: 0px;\"><div class=\"author-details\" id=\"author-3c233bb0\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Stefan Schaffelhofer</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Laboratory of Neural Systems, The Rockefeller University, New York, United States</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Developed the experimental setup, Trained the animals, Recorded and analysed the data, Wrote the manuscript, Acquisition of data</span>      </section>      <section class=\"author-details__section author-details__section--competing-interest\" style=\"    height: 48px;\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>      <section class=\"author-details__section author-details__section--orcid\">        <a href=\"https://orcid.org/\" target=\"_blank\" class=\"author-details__link author-details__link--orcid\">          <img class=\"author-details__linked-image--orcid\" src=\"/assets/img/icons/orcid/orcid_16x16.png\" srcset=\"/assets/img/icons/orcid/orcid_16x16.png 16w, /assets/img/icons/orcid/orcid_32x32.png 32w, /assets/img/icons/orcid/orcid_64x64.png 64w, /assets/img/icons/orcid/orcid_128x128.png 128w\" alt=\"ORCID icon\" sizes=\"16px\"></a> <a href=\"https://orcid.org/0000-0002-1006-971X\" target=\"_blank\" class=\"author-details__text author-details__link author-details__link--orcid\">0000-0002-1006-971X</a>      </section>    </div>    </li>    <li class=\"authors-details__author\"><div class=\"author-details\" id=\"author-76fd97c3\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Hansjörg Scherberger</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Department of Biology, University of Göttingen, Göttingen, Germany</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Performed the surgeries, Edited the manuscript, Provided supervision at all stages of the project, Analysis and interpretation of data</span>      </section>      <section class=\"author-details__section author-details__section--means-of-correspondence\">        <h5 class=\"author-details__heading\">For correspondence: </h5>        <a href=\"mailto:hscherb@gwdg.de\" class=\"author-details__text author-details__link\">hscherb@gwdg.de</a>      </section>      <section class=\"author-details__section author-details__section--competing-interest\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>    </div>    </li>  </ol>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Funding</h3>    </header>    <div class=\"article-section__body\">      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Alexander von Humboldt-Stiftung (Postdoctoral Fellowship)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Stefan Schaffelhofer</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Deutsche Forschungsgemeinschaft (SCHE 1575/3-1)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Bundesministerium für Bildung und Forschung (BCCN-II, 01GQ1005C)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">European Commission (FP7-611687 (NEBIAS))</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <p>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Acknowledgements</h3>    </header>    <div class=\"article-section__body\">      <p>The authors thank M Sartori, M Dörge, K Menz, R Ahlert, N Nazarenus, and L Burchardt for assistance and MM Fabiszak, M Hepp-Reymond, and W Freiwald for helpful comments on an earlier version of the manuscript. This work was supported by the Federal Ministry of Education and Research (Bernstein Center for Computational Neuroscience II Grant DPZ-01GQ1005C, the German Research Foundation (SCHE 1575/3-1), the European Union Grant FP7– 611687 (NEBIAS), and the Humboldt Foundation.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Ethics</h3>    </header>    <div class=\"article-section__body\">      <p>Animal experimentation: All procedures and animal were conducted in accordance with the guidelines for the care and use of mammals in neuroscience and behavioral research (National Research Council, 2003), and were in agreement with German and European laws governing animal care. Authorization for conducting this study has been granted by the regional government office, the Animal Welfare Division of the Office for Consumer Protection and Food Safety of the State of Lower Saxony, Germany (permit no. 032/09). Monkey handling also followed the recommendations of the Weatherall Report of good animal practice. Animals were pairhoused in a spacious cage (well exceeding legal requirements) and were maintained on a 12-hour on/off lighting schedule. Housing procedures included an environmental enrichment program with access to toys, swings, and hidden treats (e.g., seeds in sawdust). Monkeys had visual and auditory contact to other monkeys. They were fed on a diet of enriched biscuits and fruits. Daily access to fluids was controlled during training and experimental periods to promote behavioral motivation. All surgical procedures were performed under anesthesia, and all efforts were made to minimize post-surgical pain or suffering. Institutional veterinarians continually monitored animal health and well-being.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Reviewers</h3>    </header>    <div class=\"article-section__body\">      <ol class=\"list\">        <li>Sabine Kastner, Reviewing editor, Princeton University, United States</li>      </ol>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Copyright</h3>    </header>    <div class=\"article-section__body\">      <p>© 2016, Schaffelhofer et al.</p><p>This article is distributed under the terms of the <a href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution License</a>, which permits unrestricted use and redistribution provided that the original author and source are credited.</p>    </div>  </section>"
     }
   ],
-
   "iframe": {
     "src": "https://www.youtube.com/embed/6j0jRXPvpCE",
     "paddingBottom": 56.25
   },
-
   "articleMeta": {
     "groups": [
       {
@@ -419,13 +582,8 @@
       }
     ]
   },
-
-
-
   "pl-only-article-section-for-download-links": {
-
     "title": "Article download links",
-
     "downloadLinks": {
       "description": "A three part list of links to download the article, or parts of the article, in various formats.",
       "groups": [
@@ -479,17 +637,37 @@
       ]
     }
   },
-
-  "mainMenu":{
+  "mainMenu": {
     "links": {
       "items": [
-        {"name": "Research categories", "url": "#res"},
-        {"name": "Author guide", "url": "#aut"},
-        {"name": "Reviewer guide", "url": "#rev"},
-        {"name": "About", "url": "#abo"},
-        {"name": "Inside eLife", "url": "#ins"},
-        {"name": "Careers", "url": "#car"},
-        {"name": "Labs", "url": "#lab"}
+        {
+          "name": "Research categories",
+          "url": "#res"
+        },
+        {
+          "name": "Author guide",
+          "url": "#aut"
+        },
+        {
+          "name": "Reviewer guide",
+          "url": "#rev"
+        },
+        {
+          "name": "About",
+          "url": "#abo"
+        },
+        {
+          "name": "Inside eLife",
+          "url": "#ins"
+        },
+        {
+          "name": "Careers",
+          "url": "#car"
+        },
+        {
+          "name": "Labs",
+          "url": "#lab"
+        }
       ]
     },
     "button": {
@@ -498,7 +676,6 @@
       "classes": "button--default button--full button--small main_menu__quit"
     }
   },
-
   "emailCta": {
     "headerText": "Be the first to read new articles from eLife",
     "subHeader": "Sign up for alerts",
@@ -514,20 +691,132 @@
       "ctaText": "Go"
     }
   },
-
   "footerMenuLinks": [
-    { "name": "About", "url": "#" },
-    { "name": "Who we work with", "url": "#" },
-    { "name": "Alerts", "url": "#" },
-    { "name": "Contact", "url": "#" },
-    { "name": "Terms and policy", "url": "#" },
-    { "name": "Inside eLife", "url": "#" },
-    { "name": "Monthly archive", "url": "#" },
-    { "name": "Labs", "url": "#" },
-    { "name": "For the press", "url": "#" },
-    { "name": "Resources", "url": "#" }
+    {
+      "name": "About",
+      "url": "#"
+    },
+    {
+      "name": "Who we work with",
+      "url": "#"
+    },
+    {
+      "name": "Alerts",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Terms and policy",
+      "url": "#"
+    },
+    {
+      "name": "Inside eLife",
+      "url": "#"
+    },
+    {
+      "name": "Monthly archive",
+      "url": "#"
+    },
+    {
+      "name": "Labs",
+      "url": "#"
+    },
+    {
+      "name": "For the press",
+      "url": "#"
+    },
+    {
+      "name": "Resources",
+      "url": "#"
+    }
   ],
-
+  "furtherReading": {
+    "heading": "Further reading",
+    "items": [
+      {
+        "article": {
+          "rootClasses": "content-header-article content-header-article-research content-header-article-research--readmore",
+          "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
+          "titleClass": "content-header__title--extra-small",
+          "subjects": {
+            "list": [
+              {
+                "name": "Cell Biology",
+                "url": "#"
+              },
+              {
+                "name": "Epidemiology and global health",
+                "url": "#"
+              }
+            ]
+          },
+          "authors": {
+            "firstAuthorOnly": "Lee R Berger",
+            "hasEtAl": true
+          },
+          "meta": {
+            "url": "#",
+            "text": "Research article",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 10,
+                "month": "Sep",
+                "year": 2015
+              },
+              "forMachine": "2015-09-10"
+            }
+          }
+        },
+        "content": "Optimal decision-making requires balancing fast but error-prone and more accurate but slower decisions through adjustments of decision thresholds. Here, we demonstrate two distinct correlates of such speed-accuracy adjustments by recording subthalamic nucleus (STN) activity and electroencephalography in 11 Parkinson’s disease patients during a perceptual decision-making task; STN low-frequency oscillatory (LFO) activity (2–8 Hz), coupled to activity at prefrontal electrode Fz, and STN beta activity (13–30 Hz) coupled to electrodes C3/C4 close to motor cortex. These two correlates differed not only in their cortical topography and spectral characteristics but also in the relative timing of recruitment and in their precise relationship with decision thresholds. Increases of STN LFO power preceding the response predicted increased thresholds only after accuracy instructions, while cue-induced reductions of STN beta power decreased thresholds irrespective of instructions. These findings indicate that distinct neural mechanisms determine whether a decision will be made in haste or with caution."
+      },
+      {
+        "article": {
+          "rootClasses": "content-header-article content-header-article-research content-header-article-research--readmore",
+          "title": "Physical determinants of vesicle mobility and supply at a central synapse",
+          "titleClass": "content-header__title--extra-small",
+          "subjects": {
+            "list": [
+              {
+                "name": "Cell Biology",
+                "url": "#"
+              },
+              {
+                "name": "Epidemiology and global health",
+                "url": "#"
+              }
+            ]
+          },
+          "authors": {
+            "firstAuthorOnly": "Lee R Berger",
+            "hasEtAl": true
+          },
+          "meta": {
+            "url": "#",
+            "text": "Research article",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 10,
+                "month": "Sep",
+                "year": 2015
+              },
+              "forMachine": "2015-09-10"
+            }
+          }
+        },
+        "content": "Optimal decision-making requires balancing fast but error-prone and more accurate but slower decisions through adjustments of decision thresholds."
+      }
+    ],
+    "pagination": {
+      "targetId": "idOfListElementToLoadContentInTo",
+      "nextPage": {
+        "text": "Load more",
+        "classes": "button--default button--full",
+        "path": "?page=2"
+      }
+    }
+  },
   "year": 2016
-
 }
