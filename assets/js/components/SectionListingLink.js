@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = class AllSubjectsListLink {
+module.exports = class SectionListingLink {
 
   constructor($elm, _window = window, doc = document) {
 
@@ -15,7 +15,7 @@ module.exports = class AllSubjectsListLink {
 
   // Replace this.$elm with the same-page HTML fragment targeted by this.$elm.href
   replaceSelfWithTargetFragment() {
-    let $targetFrag = this.doc.querySelector(AllSubjectsListLink.findIdSelector(this.$elm.href));
+    let $targetFrag = this.doc.querySelector(SectionListingLink.findIdSelector(this.$elm.href));
     if ($targetFrag) {
       this.$elm.parentNode.replaceChild($targetFrag, this.$elm);
     }
