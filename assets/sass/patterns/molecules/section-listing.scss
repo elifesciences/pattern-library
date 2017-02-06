@@ -21,8 +21,6 @@
 }
 
 .section-listing--single-line {
-  border-top: 1px solid $color-text-dividers;
-  border-bottom: 1px solid $color-text-dividers;
   padding: 10px;
 
   .section-listing__list_item {
@@ -45,6 +43,10 @@
 
 }
 
+@media only screen and (max-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
+
+}
+
 @media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
 
   .section-listing {
@@ -52,6 +54,7 @@
   }
 
   .section-listing--single-line {
+    border-bottom: 1px solid $color-text-dividers;
     column-count: auto;
     display: flex;
     align-items: center;
