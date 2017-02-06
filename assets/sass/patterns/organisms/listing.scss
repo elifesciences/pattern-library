@@ -1,4 +1,5 @@
 @import "../../definitions";
+@import "../../variables";
 
 /* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
  *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
@@ -20,6 +21,41 @@
 
 .listing-list__item {
   line-height: 1;
+}
+.listing-list--read-more .content-header-divider,
+.listing-list--read-more .content-header-article-research--readmore {
+  border: none;
+}
+
+.listing-list--read-more {
+  text-align: center;
+}
+
+.listing-list__content {
+  @include margin($listing-list-spacing, "top");
+  @include margin($listing-list-spacing, "bottom");
+  @include padding($content-header-side-padding--extra-wide, "left");
+  @include padding($content-header-side-padding--extra-wide, "right");
+}
+
+// Only on items that come after other items (to show line between but not before or after)
+.listing-list__item ~ .listing-list__item .listing-list__divider {
+  box-sizing: content-box;
+  max-width: 140px;
+  max-width: get-rem-from-px(140)px;
+  margin: -1px auto 0 auto;
+  padding: 5vh 0;
+
+  &:after {
+    border-bottom: 1px solid $color-text-dividers;
+    content: "";
+    display: block;
+    width: 100%;
+  }
+}
+
+.listing-list-heading {
+  text-align: center;
 }
 
 // Sets up the column layout at medium width for the secondary content lists.

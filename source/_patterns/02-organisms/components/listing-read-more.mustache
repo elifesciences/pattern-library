@@ -1,0 +1,30 @@
+<div class="listing-list-heading">
+  {{> atoms-list-heading}}
+</div>
+<ol class="listing-list listing-list--read-more"{{#id}} id="{{id}}"{{/id}}>
+  {{#items}}
+    <li class="listing-list__item">
+      <div class="listing-list__divider"></div>
+      {{#article}}
+        {{> organisms-content-header-article }}
+      {{/article}}
+      {{#nonArticle}}
+        {{> organisms-content-header-non-article }}
+      {{/nonArticle}}
+      <p class="listing-list__content">
+        {{ content }}
+      </p>
+    </li>
+  {{/items}}
+
+  {{#seeMoreLink}}
+    <li class="listing-list__item">
+      {{> atoms-see-more-link}}
+    </li>
+  {{/seeMoreLink}}
+
+</ol>
+
+{{#pagination}}
+  {{> molecules-pager}}
+{{/pagination}}
