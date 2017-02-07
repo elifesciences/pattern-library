@@ -22,9 +22,15 @@
   line-height: 1;
 }
 
-.listing-list--read-more .content-header-divider,
-.listing-list--read-more .content-header-article-research--readmore {
-  border: none;
+.listing-list--read-more {
+
+  .content-header-divider {
+    border: none;
+  }
+
+  .content-header-article-research--readmore {
+    border: none;
+  }
 }
 
 .listing-list--read-more {
@@ -39,10 +45,9 @@
 }
 
 // Only on items that come after other items (to show line between but not before or after)
-.listing-list__item ~ .listing-list__item .listing-list__divider {
+.listing-list__item:not(:first-child) .listing-list__divider {
   box-sizing: content-box;
-  max-width: 140px;
-  max-width: get-rem-from-px(140)px;
+  @include constrain-width(140, "max");
   margin: -1px auto 0 auto;
   padding: 5vh 0;
 
