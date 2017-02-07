@@ -1,7 +1,5 @@
 'use strict';
 
-console.log("main.js");
-
 // Base level of feature support needed for the js loaded in this file.
 // Consider AJAXing in the rest if the test passes.
 if (window.localStorage && document.querySelector &&
@@ -13,6 +11,7 @@ if (window.localStorage && document.querySelector &&
 
   // import modules into the list of Components.
   Components.SectionListingLink = require('./components/SectionListingLink');
+  //Components.StateManager = require('./components/StateManager');
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.ArticleSection = require('./components/ArticleSection');
   Components.AudioPlayer = require('./components/AudioPlayer');

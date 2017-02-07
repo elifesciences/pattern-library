@@ -1,39 +1,101 @@
 'use strict';
 
-console.log("a");
-
 module.exports = class SectionListingLink {
 
-  constructor($elm, _window = window, doc = document) {
+  insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
 
-    if (!($elm instanceof HTMLElement)) {
+  constructor($trigger, _window = window, doc = document) {
+
+    if (!($trigger instanceof HTMLElement)) {
       return;
     }
 
 
     this.window = _window;
-    this.thresholdWidth = 600;
+    this.thresholdWidth = 740;
 
     this.doc = doc;
-    this.$elm = $elm;
-    this.replaceSelfWithTargetFragment();
+
+    this.$trigger = $trigger;
+    this.$triggerParent = this.$trigger.parentNode;
+    this.$triggerParent.setAttribute("id", "section-listing-trigger-parent");
+
+    this.$list = this.doc.querySelector(SectionListingLink.findIdSelector(this.$trigger.href));
+    this.$listParent = this.$list.parentNode;
+    this.$listParent.setAttribute("id", "section-listing-list-parent");
+
+    this.displayBreakpoint();
+    this.addEvent(window, "resize", () => this.displayBreakpoint());
+
+
   }
 
+  //
+  addEvent(object, type, callback) {
 
+    if (object == null || typeof(object) == 'undefined') return;
 
-  // Replace this.$elm with the same-page HTML fragment targeted by this.$elm.href
-  replaceSelfWithTargetFragment() {
-    console.log("b");
+    if (object.addEventListener) {
+      object.addEventListener(type, callback, false);
+    } else if (object.attachEvent) {
+      object.attachEvent("on" + type, callback);
+    } else {
+      object["on"+type] = callback;
+    }
 
-    let $targetFrag = this.doc.querySelector(SectionListingLink.findIdSelector(this.$elm.href));
-    if ($targetFrag && !this.viewportNoWiderThan(this.thresholdWidth)) {
-      console.log("c");
-      this.$elm.parentNode.replaceChild($targetFrag, this.$elm);
+  }
+
+  hideTrigger() {
+
+    let elem = document.querySelector("a.section-listing-link");
+    elem.className = "section-listing-link visuallyhidden";
+
+  }
+  showTrigger() {
+
+    let elem = document.querySelector("a.section-listing-link");
+    elem.className = "section-listing-link";
+
+  }
+
+  //
+  displayBreakpoint() {
+
+    if(this.$list && this.viewportNoWiderThan(this.thresholdWidth)){
+
+      this.isMobile();
+      this.showTrigger();
+
+    } else {
+
+      this.isDesktop();
+      this.hideTrigger();
     }
   }
 
+  //
+  isMobile(){
+
+    let theListParent = document.getElementById("section-listing-list-parent");
+    let theLast = document.getElementById("subjectsListing");
+
+    theListParent.appendChild(theLast);
+
+  }
+
+  //
+  isDesktop(){
+
+    let theTriggerParent = document.getElementById("section-listing-trigger-parent");
+    let theFirst = document.getElementById("subjectsListing");
+
+    theTriggerParent.appendChild(theFirst);
+
+  }
+
   viewportNoWiderThan(thresholdInPx) {
-    console.log("d");
     return this.window.matchMedia('(max-width: ' + thresholdInPx + 'px)').matches;
   }
 
