@@ -11,7 +11,6 @@ if (window.localStorage && document.querySelector &&
 
   // import modules into the list of Components.
   Components.SectionListingLink = require('./components/SectionListingLink');
-  //Components.StateManager = require('./components/StateManager');
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.ArticleSection = require('./components/ArticleSection');
   Components.AudioPlayer = require('./components/AudioPlayer');

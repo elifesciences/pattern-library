@@ -12,58 +12,57 @@ module.exports = class SectionListingLink {
       return;
     }
 
-
     this.window = _window;
     this.thresholdWidth = 740;
 
     this.doc = doc;
 
-    this.$trigger = $trigger;
-    this.$triggerParent = this.$trigger.parentNode;
-    this.$triggerParent.setAttribute("id", "section-listing-trigger-parent");
+    const $triggerParent = $trigger.parentNode;
+    $triggerParent.setAttribute('id', 'section-listing-trigger-parent');
 
-    this.$list = this.doc.querySelector(SectionListingLink.findIdSelector(this.$trigger.href));
-    this.$listParent = this.$list.parentNode;
-    this.$listParent.setAttribute("id", "section-listing-list-parent");
+    this.$list = this.doc.querySelector(SectionListingLink.findIdSelector($trigger.href));
+
+    const $listParent = this.$list.parentNode;
+    $listParent.setAttribute('id', 'section-listing-list-parent');
 
     this.displayBreakpoint();
-    this.addEvent(window, "resize", () => this.displayBreakpoint());
-
+    this.addEvent(window, 'resize', () => this.displayBreakpoint());
 
   }
 
-  //
   addEvent(object, type, callback) {
 
-    if (object == null || typeof(object) == 'undefined') return;
+    if (object == null || typeof (object) === 'undefined') {
+      return;
+    }
 
     if (object.addEventListener) {
       object.addEventListener(type, callback, false);
     } else if (object.attachEvent) {
-      object.attachEvent("on" + type, callback);
+      object.attachEvent('on' + type, callback);
     } else {
-      object["on"+type] = callback;
+      object['on' + type] = callback;
     }
 
   }
 
   hideTrigger() {
 
-    let elem = document.querySelector("a.section-listing-link");
-    elem.className = "section-listing-link visuallyhidden";
+    const elem = document.querySelector('a.section-listing-link');
+    elem.className = 'section-listing-link visuallyhidden';
 
   }
+
   showTrigger() {
 
-    let elem = document.querySelector("a.section-listing-link");
-    elem.className = "section-listing-link";
+    const elem = document.querySelector('a.section-listing-link');
+    elem.className = 'section-listing-link';
 
   }
 
-  //
   displayBreakpoint() {
 
-    if(this.$list && this.viewportNoWiderThan(this.thresholdWidth)){
+    if (this.$list && this.viewportNoWiderThan(this.thresholdWidth)) {
 
       this.isMobile();
       this.showTrigger();
@@ -75,21 +74,19 @@ module.exports = class SectionListingLink {
     }
   }
 
-  //
-  isMobile(){
+  isMobile() {
 
-    let theListParent = document.getElementById("section-listing-list-parent");
-    let theLast = document.getElementById("subjectsListing");
+    const theListParent = document.getElementById('section-listing-list-parent');
+    const theLast = document.getElementById('subjectsListing');
 
     theListParent.appendChild(theLast);
 
   }
 
-  //
-  isDesktop(){
+  isDesktop() {
 
-    let theTriggerParent = document.getElementById("section-listing-trigger-parent");
-    let theFirst = document.getElementById("subjectsListing");
+    const theTriggerParent = document.getElementById('section-listing-trigger-parent');
+    const theFirst = document.getElementById('subjectsListing');
 
     theTriggerParent.appendChild(theFirst);
 
