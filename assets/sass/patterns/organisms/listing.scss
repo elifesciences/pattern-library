@@ -42,6 +42,10 @@
   @include margin($listing-list-spacing, "bottom");
   @include padding($content-header-side-padding--extra-wide, "left");
   @include padding($content-header-side-padding--extra-wide, "right");
+  display: none;
+  @media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--narrow-screen)}em) {
+    display: block;
+  }
 }
 
 // Only on items that come after other items (to show line between but not before or after)
