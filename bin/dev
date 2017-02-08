@@ -18,6 +18,7 @@ done) & pid=$!
 PID_LIST+=" $pid";
 
 php ./core/builder.php --watch -r > /dev/null 2>&1 & pid=$!
+
 PID_LIST+=" $pid";
 
 php -S 0.0.0.0:${PORT} -t ./public > /dev/null 2>&1 & pid=$!
