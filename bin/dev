@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# First time...
+if [ ! -d ./public ]; then
+  echo -e "Setting up for the first time...";
+  npm install
+  mkdir ./public
+  cp -r ./core/styleguide ./public/
+fi
+
+
+echo "Building patterns..."
+gulp
+
+gulp watch > /dev/null 2>&1 & pid=$!
+PID_LIST+=" $pid";
+
+php ./core/builder.php --watch > /dev/null 2>&1 & pid=$!
+PID_LIST+=" $pid";
+
+php -S 0.0.0.0:8889 -t ./public > /dev/null 2>&1 & pid=$!
+PID_LIST+=" $pid";
+
+trap "kill ${PID_LIST}" SIGINT
+
+echo "Running Pattern Library at http://localhost:8889/";
+wait ${PID_LIST}
+echo
+echo "Stopping pattern library, gulp and server.";
