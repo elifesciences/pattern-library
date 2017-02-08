@@ -49,3 +49,14 @@
   background-position: 0 50%;
   background-repeat: no-repeat;
 }
+
+.info-bar--correction {
+  @extend .info-bar--attention;
+}
+
+.info-bar__text--correction {
+  background: url("../img/icons/co.png");
+  background: url("../img/icons/attention.svg"), linear-gradient(transparent, transparent);
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
