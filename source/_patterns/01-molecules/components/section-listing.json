@@ -1,7 +1,7 @@
 {
-  "id": "subjectListing",
+  "id": "sectionsListing",
   "labelledBy": "theIdOfTheLeadParaAssumingThisIsTheHomePage",
-  "subjects": [
+  "sections": [
     {
       "url": "#",
       "name": "Biochemistry"

@@ -286,14 +286,14 @@
     ]
   },
 
-  "subjectListLink": {
-    "targetFragmentId": "subjectsListing"
+  "sectionsListingLink": {
+    "targetFragmentId": "sectionsListing"
   },
 
-  "subjectsList": {
-    "id": "subjectsListing",
+  "sectionsListing": {
+    "id": "sectionsListing",
     "labelledBy": "theIdOfTheLeadParaAssumingThisIsTheHomePage",
-    "subjects": [
+    "sections": [
       {
         "url": "#",
         "name": "Biochemistry"

@@ -176,14 +176,14 @@
     ]
   },
 
-  "subjectListLink": {
-    "targetFragmentId": "subjectsListing"
+  "sectionsListingLink": {
+    "targetFragmentId": "sectionsListing"
   },
 
-  "subjectsList": {
-    "id": "subjectsListing",
+  "sectionsListing": {
+    "id": "sectionsListing",
     "single-line": true,
-    "subjects": [
+    "sections": [
       {
         "url": "#",
         "name": "What we publish",

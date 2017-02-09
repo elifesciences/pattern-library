@@ -73,7 +73,7 @@ module.exports = class SectionListingLink {
   isMobile() {
 
     const theListParent = document.getElementById('section-listing-list-parent');
-    const theLast = document.getElementById('subjectsListing');
+    const theLast = document.getElementById('sectionsListing');
 
     theListParent.appendChild(theLast);
 
@@ -82,7 +82,7 @@ module.exports = class SectionListingLink {
   isDesktop() {
 
     const theTriggerParent = document.getElementById('section-listing-trigger-parent');
-    const theFirst = document.getElementById('subjectsListing');
+    const theFirst = document.getElementById('sectionsListing');
 
     theTriggerParent.appendChild(theFirst);
 
