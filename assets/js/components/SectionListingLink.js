@@ -2,9 +2,9 @@
 
 module.exports = class SectionListingLink {
 
-  constructor($trigger, _window = window, doc = document) {
+  constructor($elm, _window = window, doc = document) {
 
-    if (!($trigger instanceof HTMLElement)) {
+    if (!($elm instanceof HTMLElement)) {
       return;
     }
 
@@ -13,10 +13,10 @@ module.exports = class SectionListingLink {
 
     this.doc = doc;
 
-    const $triggerParent = $trigger.parentNode;
-    $triggerParent.setAttribute('id', 'section-listing-trigger-parent');
+    const $elmParent = $elm.parentNode;
+    $elmParent.setAttribute('id', 'section-listing-trigger-parent');
 
-    this.$list = this.doc.querySelector(SectionListingLink.findIdSelector($trigger.href));
+    this.$list = this.doc.querySelector(SectionListingLink.findIdSelector($elm.href));
 
     const $listParent = this.$list.parentNode;
     $listParent.setAttribute('id', 'section-listing-list-parent');
