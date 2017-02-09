@@ -17,6 +17,21 @@ You'll need:
 
 Then install compass: `gem install compass`
 
+## 2. Automatic setup
+From the root directory run
+```
+$ ./bin/dev
+```
+This will install and run the commands needed to get started, starting a web server on port 8889. If you need a custom port pass this as the first argument:
+```
+$ ./bin/dev 1234
+```
+This will run on localhost:1234 
+
+You should be good to go, open your browser and you will see the pattern lab.
+
+# Manual setup
+
 ## 1. Set up PatternLab
 
 - Clone pattern library: `git clone git@github.com:elifesciences/pattern-library.git`
@@ -33,7 +48,9 @@ Then install compass: `gem install compass`
 
 ## 3. Generate PatternLab
 
-- Run `php ./core/builder.php -g`, and check no errors in the output.
+To run a **one-off** generation of the patterns, it's `php ./core/builder.php -g`
+
+Alternatively to set up a **watch task** for pattern generation, run `php ./core/builder.php -w` 
 
 ## 4. Verify the setup
 
