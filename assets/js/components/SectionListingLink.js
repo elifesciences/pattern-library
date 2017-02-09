@@ -19,7 +19,7 @@ module.exports = class SectionListingLink {
 
 
     this.theListParent = this.$list.parentNode;
-    this.theTriggerParent = $elm.parentNode;
+    this.theElmParent = $elm.parentNode;
     this.theListing = document.getElementById('sectionsListing');
 
     this.displayBreakpoint();
@@ -64,7 +64,7 @@ module.exports = class SectionListingLink {
 
   isDesktop() {
 
-    this.theTriggerParent.appendChild(this.theListing);
+    this.theElmParent.appendChild(this.theListing);
 
   }
 
