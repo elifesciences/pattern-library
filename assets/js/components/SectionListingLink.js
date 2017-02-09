@@ -2,10 +2,6 @@
 
 module.exports = class SectionListingLink {
 
-  insertAfter(newNode, referenceNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-  }
-
   constructor($trigger, _window = window, doc = document) {
 
     if (!($trigger instanceof HTMLElement)) {
