@@ -43,10 +43,6 @@
 
 }
 
-@media only screen and (max-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
-
-}
-
 @media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
 
   .section-listing {
