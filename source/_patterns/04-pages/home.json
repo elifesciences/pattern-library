@@ -287,7 +287,8 @@
   },
 
   "sectionsListingLink": {
-    "targetFragmentId": "sectionsListing"
+    "targetFragmentId": "sectionsListing",
+    "text": "All sections"
   },
 
   "sectionsListing": {

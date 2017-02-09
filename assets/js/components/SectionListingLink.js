@@ -11,6 +11,7 @@ module.exports = class SectionListingLink {
 
     this.window = _window;
     this.thresholdWidth = 740;
+    this.$elm = $elm;
 
     this.doc = doc;
 
@@ -31,15 +32,13 @@ module.exports = class SectionListingLink {
 
   hideTrigger() {
 
-    const elem = document.querySelector('a.section-listing-link');
-    elem.classList.add('visuallyhidden');
+    this.$elm.classList.add('visuallyhidden');
 
   }
 
   showTrigger() {
 
-    const elem = document.querySelector('a.section-listing-link');
-    elem.classList.remove('visuallyhidden');
+    this.$elm.classList.remove('visuallyhidden');
 
   }
 
