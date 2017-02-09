@@ -256,13 +256,13 @@ module.exports = () => {
     let timeout = null;
     let callbackArgs = null;
 
-    const later = () => callback.apply(context, callbackArgs)
+    const later = () => callback.apply(context, callbackArgs);
 
-    return function() {
+    return function () {
       callbackArgs = arguments;
       clearTimeout(timeout);
       timeout = setTimeout(later, wait);
-    }
+    };
   }
 
   return {

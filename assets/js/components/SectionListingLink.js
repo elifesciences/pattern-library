@@ -12,23 +12,18 @@ module.exports = class SectionListingLink {
     this.window = _window;
     this.thresholdWidth = 740;
     this.$elm = $elm;
-
     this.doc = doc;
-
     this.$list = this.doc.querySelector(SectionListingLink.findIdSelector($elm.href));
-
-
     this.theListParent = this.$list.parentNode;
     this.theElmParent = $elm.parentNode;
-    this.theListing = document.getElementById('sectionsListing');
-
+    this.theListing = this.doc.getElementById('sectionsListing');
     this.displayBreakpoint();
+
     this.window.addEventListener('resize',
       utils.debounce(() => this.displayBreakpoint(), 100)
     );
 
   }
-
 
   hideTrigger() {
 
