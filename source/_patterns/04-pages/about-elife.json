@@ -182,7 +182,6 @@
 
   "subjectsList": {
     "id": "subjectsListing",
-    "labelledBy": "theIdOfTheLeadParaAssumingThisIsTheHomePage",
     "single-line": true,
     "subjects": [
       {
