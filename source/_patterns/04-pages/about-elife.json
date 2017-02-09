@@ -156,120 +156,10 @@
 
   },
 
-  "carousel": {
-    "items": [
-      {
-        "subjects": {
-          "list": [
-            {
-              "name": "Neuroscience",
-              "url": "#"
-            },
-            {
-              "name": "Cell biology",
-              "url": "#"
-            }
-          ]
-        },
-        "name": "Sensitivity vs stability in neurones",
-        "url": "#link-to-article",
-        "button": {
-          "text": "Read article",
-          "path": "#link-to-article",
-          "classes": "button--default"
-        },
-        "meta": {
-          "url": "#",
-          "text": "Research article",
-          "date": {
-            "forHuman": {
-              "dayOfMonth": 10,
-              "month": "Sep",
-              "year": 2015
-            },
-            "forMachine": "2015-09-10"
-          }
-        },
-        "backgroundImage": {
-          "lowResImageSource": "http://lorempixel.com/950/400/nature/1",
-          "highResImageSource": "http://lorempixel.com/1900/800/nature/1"
-        }
-      },
-      {
-        "subjects": {
-          "list": [
-            {
-              "name": "Genomics and evolutionary biology",
-              "url": "#"
-            }
-          ]
-        },
-        "name": "Cancer cells follow the leader",
-        "url": "#link-to-article",
-        "button": {
-          "text": "Read article",
-          "path": "#link-to-article",
-          "classes": "button--default "
-        },
-        "meta": {
-          "url": "#",
-          "text": "Research article",
-          "date": {
-            "forHuman": {
-              "dayOfMonth": 10,
-              "month": "Sep",
-              "year": 2015
-            },
-            "forMachine": "2015-09-10"
-          }
-        },
-
-        "backgroundImage": {
-          "lowResImageSource": "http://lorempixel.com/950/400/animals/1",
-          "highResImageSource": "http://lorempixel.com/1900/800/animals/1"
-        }
-
-      },
-      {
-        "subjects": {
-          "list": [
-            {
-              "name": "Biochemistry",
-              "url": "#linkToBiochemistry"
-            },
-            {
-              "name": "Cell biology",
-              "url": "#LinkToCellBiology"
-            }
-          ]
-        },
-        "name": "Rethinking the origins of mitochondrial architecture",
-        "url": "#link-to-article",
-        "button": {
-          "text": "Read article",
-          "path": "#link-to-article",
-          "classes": "button--default "
-        },
-        "meta": {
-          "url": "#LinkToResearchArticles",
-          "text": "Research article",
-          "date": {
-            "forHuman": {
-              "dayOfMonth": 10,
-              "month": "Sep",
-              "year": 2015
-            },
-            "forMachine": "2015-09-10"
-          }
-        },
-        "backgroundImage": {
-          "lowResImageSource": "http://lorempixel.com/950/400/abstract/1",
-          "highResImageSource": "http://lorempixel.com/1900/800/abstract/1"
-        }
-
-      }
-
-    ]
+  "pageAboutElife": {
+    "rootClasses": "content-header-nonarticle",
+    "title": "About eLife",
+    "strapline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris."
   },
 
   "leadPara": {
@@ -280,7 +170,7 @@
   "leadParas": {
     "paras": [
       {
-        "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris.",
         "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
       }
     ]
@@ -293,67 +183,32 @@
 
   "sectionsListing": {
     "id": "sectionsListing",
-    "labelledBy": "theIdOfTheLeadParaAssumingThisIsTheHomePage",
+    "single-line": true,
     "sections": [
       {
         "url": "#",
-        "name": "Biochemistry"
+        "name": "What we publish",
+        "is-current": true
       },
       {
         "url": "#",
-        "name": "Biophysics and structural biology"
+        "name": "Editors & people"
       },
       {
         "url": "#",
-        "name": "Cancer biology"
+        "name": "Peer review"
       },
       {
         "url": "#",
-        "name": "Cell biology"
+        "name": "Openness"
       },
       {
         "url": "#",
-        "name": "Computational and systems biology"
+        "name": "Reproducibility"
       },
       {
         "url": "#",
-        "name": "Developmental biology and stem cells"
-      },
-      {
-        "url": "#",
-        "name": "Ecology"
-      },
-      {
-        "url": "#",
-        "name": "Epidemiology and global health"
-      },
-      {
-        "url": "#",
-        "name": "Genes and chromosomes"
-      },
-      {
-        "url": "#",
-        "name": "Genomics and evolutionary biology"
-      },
-      {
-        "url": "#",
-        "name": "Human biology and medicine"
-      },
-      {
-        "url": "#",
-        "name": "Immunology"
-      },
-      {
-        "url": "#",
-        "name": "Microbiology and infectious disease"
-      },
-      {
-        "url": "#",
-        "name": "Neuroscience"
-      },
-      {
-        "url": "#",
-        "name": "Plant biology"
+        "name": "Incentives"
       }
     ]
   },
