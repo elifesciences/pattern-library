@@ -22,37 +22,25 @@ module.exports = class SectionListingLink {
     $listParent.setAttribute('id', 'section-listing-list-parent');
 
     this.displayBreakpoint();
-    this.addEvent(window, 'resize', () => this.displayBreakpoint());
-
-  }
-
-  addEvent(object, type, callback) {
-
-    if (object == null || typeof (object) === 'undefined') {
-      return;
-    }
-
-    if (object.addEventListener) {
-      object.addEventListener(type, callback, false);
-    } else if (object.attachEvent) {
-      object.attachEvent('on' + type, callback);
-    } else {
-      object['on' + type] = callback;
-    }
+    window.addEventListener('resize', () => this.displayBreakpoint());
 
   }
 
   hideTrigger() {
 
+    //console.log("hidethis", $elm);
+
     const elem = document.querySelector('a.section-listing-link');
-    elem.className = 'section-listing-link visuallyhidden';
+    elem.classList.add('visuallyhidden');
 
   }
 
   showTrigger() {
 
+    //console.log("showthis", $elm);
+
     const elem = document.querySelector('a.section-listing-link');
-    elem.className = 'section-listing-link';
+    elem.classList.remove('visuallyhidden');
 
   }
 
