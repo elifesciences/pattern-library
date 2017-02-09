@@ -2,7 +2,7 @@
   "id": "sectionListing",
   "labelledBy": "theIdOfSectionListing",
   "single-line": true,
-  "subjects": [
+  "sections": [
     {
       "url": "#",
       "name": "What we publish",
