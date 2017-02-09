@@ -1,4 +1,5 @@
 'use strict';
+var utils = require('../libs/elife-utils')();
 
 module.exports = class SectionListingLink {
 
@@ -13,22 +14,22 @@ module.exports = class SectionListingLink {
 
     this.doc = doc;
 
-    const $elmParent = $elm.parentNode;
-    $elmParent.setAttribute('id', 'section-listing-trigger-parent');
-
     this.$list = this.doc.querySelector(SectionListingLink.findIdSelector($elm.href));
 
-    const $listParent = this.$list.parentNode;
-    $listParent.setAttribute('id', 'section-listing-list-parent');
+
+    this.theListParent = this.$list.parentNode;
+    this.theTriggerParent = $elm.parentNode;
+    this.theListing = document.getElementById('sectionsListing');
 
     this.displayBreakpoint();
-    window.addEventListener('resize', () => this.displayBreakpoint());
+    this.window.addEventListener('resize',
+      utils.debounce(() => this.displayBreakpoint(), 100)
+    );
 
   }
 
-  hideTrigger() {
 
-    //console.log("hidethis", $elm);
+  hideTrigger() {
 
     const elem = document.querySelector('a.section-listing-link');
     elem.classList.add('visuallyhidden');
@@ -36,8 +37,6 @@ module.exports = class SectionListingLink {
   }
 
   showTrigger() {
-
-    //console.log("showthis", $elm);
 
     const elem = document.querySelector('a.section-listing-link');
     elem.classList.remove('visuallyhidden');
@@ -60,19 +59,13 @@ module.exports = class SectionListingLink {
 
   isMobile() {
 
-    const theListParent = document.getElementById('section-listing-list-parent');
-    const theLast = document.getElementById('sectionsListing');
-
-    theListParent.appendChild(theLast);
+    this.theListParent.appendChild(this.theListing);
 
   }
 
   isDesktop() {
 
-    const theTriggerParent = document.getElementById('section-listing-trigger-parent');
-    const theFirst = document.getElementById('sectionsListing');
-
-    theTriggerParent.appendChild(theFirst);
+    this.theTriggerParent.appendChild(this.theListing);
 
   }
 
