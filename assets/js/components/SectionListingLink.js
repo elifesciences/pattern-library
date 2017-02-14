@@ -25,13 +25,13 @@ module.exports = class SectionListingLink {
 
   }
 
-  hideTrigger() {
+  hideElm() {
 
     this.$elm.classList.add('visuallyhidden');
 
   }
 
-  showTrigger() {
+  showElm() {
 
     this.$elm.classList.remove('visuallyhidden');
 
@@ -41,23 +41,23 @@ module.exports = class SectionListingLink {
 
     if (this.$list && this.viewportNoWiderThan(this.thresholdWidth)) {
 
-      this.isMobile();
-      this.showTrigger();
+      this.switchToMobilePosition();
+      this.showElm();
 
     } else {
 
-      this.isDesktop();
-      this.hideTrigger();
+      this.switchToDesktopPosition();
+      this.hideElm();
     }
   }
 
-  isMobile() {
+  switchToMobilePosition() {
 
     this.$theListParent.appendChild(this.$theListing);
 
   }
 
-  isDesktop() {
+  switchToDesktopPosition() {
 
     this.$theElmParent.appendChild(this.$theListing);
 

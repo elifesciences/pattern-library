@@ -269,9 +269,9 @@ module.exports = () => {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     buildElement: buildElement,
+    debounce: debounce,
     invertPxString: invertPxString,
     isHighDpr: isHighDpr,
-    debounce: debounce,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
   };
