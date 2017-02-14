@@ -1,0 +1,80 @@
+@import "../../definitions";
+
+.statistic {
+  display: inline-flex;
+  flex-direction: column;
+
+  @include margin(10 0);
+  max-width: auto;
+
+  + .statistic {
+    @include margin(0 0 0 15);
+  }
+}
+
+.statistic:first-child {
+  @include margin(0, "top");
+}
+
+.statistic:last-child {
+  @include margin(0, "bottom");
+}
+
+.statistic-collection {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  @include margin(10 -15 -20);
+
+  > .statistic {
+    display: inline-flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    @include margin(0 15 20);
+    max-width: auto;
+  }
+}
+
+.statistic-collection:after {
+  clear: both;
+  display: block;
+  content: ' ';
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.statistic-collection:first-child {
+  @include margin(0, "top");
+}
+
+.statistic-collection:last-child {
+  @include margin(0, "bottom");
+}
+
+.statistic > .statistic__value,
+.statistic-collection .statistic > .statistic__value {
+  line-height: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.statistic > .statistic__label,
+.statistic-collection .statistic > .statistic__label {
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.statistic > .statistic__label ~ .statistic__value,
+.statistic > .statistic__value ~ .statistic__label,
+.statistic-collection .statistic > .statistic__label ~ .statistic__value,
+.statistic-collection .statistic > .statistic__value ~ .statistic__label {
+  margin-top: 0
+}
+
+.statistic > .statistic__value,
+.statistic-collection .statistic > .statistic__value {
+  font-size: 4rem;
+}
