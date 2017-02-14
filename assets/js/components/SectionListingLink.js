@@ -1,6 +1,8 @@
 'use strict';
 var utils = require('../libs/elife-utils')();
 
+console.log("CCC");
+
 module.exports = class SectionListingLink {
 
   constructor($elm, _window = window, doc = document) {
@@ -53,13 +55,19 @@ module.exports = class SectionListingLink {
 
   switchToMobilePosition() {
 
-    this.$theListParent.appendChild(this.$theListing);
+    //if (!this.$theListParent.querySelector('#sectionsListing')) {
+    // console.log("switchToMobilePosition");
+      this.$theListParent.appendChild(this.$theListing);
+    //}
 
   }
 
   switchToDesktopPosition() {
 
-    this.$theElmParent.appendChild(this.$theListing);
+    //if (!this.$theElmParent.querySelector('#sectionsListing')) {
+      console.log("switchToDesktopPosition");
+      this.$theElmParent.appendChild(this.$theListing);
+    //}
 
   }
 
