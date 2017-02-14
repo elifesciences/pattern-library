@@ -14,9 +14,9 @@ module.exports = class SectionListingLink {
     this.$elm = $elm;
     this.doc = doc;
     this.$list = this.doc.querySelector(SectionListingLink.findIdSelector($elm.href));
-    this.theListParent = this.$list.parentNode;
-    this.theElmParent = $elm.parentNode;
-    this.theListing = this.doc.getElementById('sectionsListing');
+    this.$theListParent = this.$list.parentNode;
+    this.$theElmParent = $elm.parentNode;
+    this.$theListing = this.doc.getElementById('sectionsListing');
     this.displayBreakpoint();
 
     this.window.addEventListener('resize',
@@ -53,13 +53,13 @@ module.exports = class SectionListingLink {
 
   isMobile() {
 
-    this.theListParent.appendChild(this.theListing);
+    this.$theListParent.appendChild(this.$theListing);
 
   }
 
   isDesktop() {
 
-    this.theElmParent.appendChild(this.theListing);
+    this.$theElmParent.appendChild(this.$theListing);
 
   }
 
