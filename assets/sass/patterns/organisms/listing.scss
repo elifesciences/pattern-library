@@ -37,7 +37,7 @@
   text-align: center;
 }
 
-.listing-list__content {
+div.listing-list__content {
   @include margin($listing-list-spacing, "top");
   @include margin($listing-list-spacing, "bottom");
   @include padding($content-header-side-padding--extra-wide, "left");
@@ -45,6 +45,11 @@
   display: none;
   @media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--narrow-screen)}em) {
     display: block;
+  }
+
+  > * {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
