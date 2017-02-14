@@ -1,7 +1,7 @@
 'use strict';
 var utils = require('../libs/elife-utils')();
 
-console.log("CCC");
+//console.log("SectionListingLink.js");
 
 module.exports = class SectionListingLink {
 
@@ -65,7 +65,7 @@ module.exports = class SectionListingLink {
   switchToDesktopPosition() {
 
     //if (!this.$theElmParent.querySelector('#sectionsListing')) {
-      console.log("switchToDesktopPosition");
+      //console.log("switchToDesktopPosition");
       this.$theElmParent.appendChild(this.$theListing);
     //}
 
