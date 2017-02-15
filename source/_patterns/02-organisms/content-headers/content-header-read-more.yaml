@@ -1,0 +1,76 @@
+assets:
+  css:
+    - content-header-article-magazine.css
+    - content-header-article-research.css
+    - $ref: ../../00-atoms/components/lead-para.yaml#/assets/css
+    - $ref: ../../01-molecules/components/meta.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    behaviour:
+      type: string
+      minLength: 1
+    title:
+      type: string
+      minLength: 1
+    titleClass:
+      type: string
+      minLength: 1
+    strapline:
+      type: string
+      minLength: 1
+    subjects:
+      type: object
+      properties:
+        list:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                minLength: 1
+              url:
+                type: string
+                minLength: 1
+            required:
+              - name
+              - url
+      required:
+        - list
+    authors:
+      type: object
+      oneOf:
+        -
+          properties:
+            list:
+              type: array
+              minItems: 1
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    minLength: 1
+                required:
+                  - name
+          required:
+            - list
+        -
+          properties:
+            firstAuthorOnly:
+              type: string
+              minLength: 1
+            hasEtAl:
+              type: boolean
+              default: false
+          required:
+            - firstAuthorOnly
+    meta:
+      $ref: ../../01-molecules/components/meta.yaml#/schema
+  required:
+    - title
+    - titleClass

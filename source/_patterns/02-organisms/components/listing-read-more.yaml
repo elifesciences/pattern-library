@@ -1,7 +1,7 @@
 assets:
   css:
     - listing.css
-    - $ref: ../../02-organisms/content-headers/content-header-article.yaml#/assets/css
+    - $ref: ../../02-organisms/content-headers/content-header-read-more.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/pager.yaml#/assets/css
     - $ref: ../../00-atoms/components/see-more-link.yaml#/assets/css
   js: []
@@ -24,7 +24,7 @@ schema:
           body:
             type: string
           article:
-            $ref: ../../02-organisms/content-headers/content-header-article.yaml#/schema
+            $ref: ../../02-organisms/content-headers/content-header-read-more.yaml#/schema
         required:
           - article
     pagination:
