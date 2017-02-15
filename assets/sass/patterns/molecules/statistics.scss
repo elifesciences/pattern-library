@@ -3,6 +3,7 @@
 .statistic {
   display: inline-flex;
   flex-direction: column;
+  flex-grow: 1;
 
   @include margin(10 0);
   max-width: auto;
@@ -24,13 +25,15 @@
   align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
-  @include margin(10 -15 -20);
+  justify-content: space-between;
+  margin: 0;
 
   > .statistic {
     display: inline-flex;
     flex: 0 1 auto;
     flex-direction: column;
-    @include margin(0 15 20);
+    flex-grow: 1;
+    margin: 0;
     max-width: auto;
   }
 }
@@ -61,8 +64,7 @@
 
 .statistic > .statistic__label,
 .statistic-collection .statistic > .statistic__label {
-  font-size: 1em;
-  font-weight: 700;
+  @include nav-typeg();
   text-align: center;
   text-transform: uppercase;
 }
@@ -76,5 +78,6 @@
 
 .statistic > .statistic__value,
 .statistic-collection .statistic > .statistic__value {
-  font-size: 4rem;
+  @include h1-typeg();
+  line-height: 1;
 }
