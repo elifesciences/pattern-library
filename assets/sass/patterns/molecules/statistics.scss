@@ -40,8 +40,8 @@
 
 .statistic-collection:after {
   clear: both;
-  display: block;
   content: ' ';
+  display: block;
   height: 0;
   overflow: hidden;
   visibility: hidden;
@@ -57,7 +57,7 @@
 
 .statistic > .statistic__value,
 .statistic-collection .statistic > .statistic__value {
-  line-height: 1em;
+  line-height: 1;
   text-align: center;
   text-transform: uppercase;
 }
@@ -67,13 +67,6 @@
   @include nav-typeg();
   text-align: center;
   text-transform: uppercase;
-}
-
-.statistic > .statistic__label ~ .statistic__value,
-.statistic > .statistic__value ~ .statistic__label,
-.statistic-collection .statistic > .statistic__label ~ .statistic__value,
-.statistic-collection .statistic > .statistic__value ~ .statistic__label {
-  margin-top: 0
 }
 
 .statistic > .statistic__value,
