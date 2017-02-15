@@ -247,10 +247,29 @@ module.exports = () => {
     return false;
   }
 
+  /**
+   * Debounce
+   *
+   */
+
+  function debounce(callback, wait, context = this) {
+    let timeout = null;
+    let callbackArgs = null;
+
+    const later = () => callback.apply(context, callbackArgs);
+
+    return function () {
+      callbackArgs = arguments;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     buildElement: buildElement,
+    debounce: debounce,
     invertPxString: invertPxString,
     isHighDpr: isHighDpr,
     uniqueIds: uniqueIds,
