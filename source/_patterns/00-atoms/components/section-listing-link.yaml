@@ -1,6 +1,6 @@
 assets:
   css:
-    - all-subjects-list-link.css
+    - section-listing-link.css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -9,5 +9,9 @@ schema:
     targetFragmentId:
       type: string
       minLength: 1
+    text:
+      type: string
+      minLength: 1
   required:
     - targetFragmentId
+    - text
