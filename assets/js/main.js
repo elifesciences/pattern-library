@@ -10,7 +10,6 @@ if (window.localStorage && document.querySelector &&
   let Components = {};
 
   // import modules into the list of Components.
-  Components.AllSubjectsListLink = require('./components/AllSubjectsListLink');
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.ArticleSection = require('./components/ArticleSection');
   Components.AudioPlayer = require('./components/AudioPlayer');
@@ -23,6 +22,7 @@ if (window.localStorage && document.querySelector &&
   Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
   Components.Pager = require('./components/Pager');
   Components.SearchBox = require('./components/SearchBox');
+  Components.SectionListingLink = require('./components/SectionListingLink');
   Components.SelectNav = require('./components/SelectNav');
   Components.SiteHeader = require('./components/SiteHeader');
   Components.ViewerModal = require('./components/ViewerModal');
