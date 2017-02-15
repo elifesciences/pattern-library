@@ -10,7 +10,14 @@
   </header>
 
   <div class="article-section__body">
-    {{{body}}}
+    {{^showCharts}}
+      {{{body}}}
+    {{/showCharts}}
+
+    {{#showCharts}}
+      {{>molecules-statistic-collection}}
+    {{/showCharts}}
+
     {{#doi}}
       {{> atoms-doi}}
     {{/doi}}

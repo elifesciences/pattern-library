@@ -1,0 +1,71 @@
+<div class="global-wrapper" data-behaviour="FragmentHandler">
+  <div class="global-inner">
+    {{#siteHeader}}
+      {{> organisms-site-header }}
+    {{/siteHeader}}
+
+    <main role="main" class="blg-margin-bottom-large">
+
+      <article class="article">
+
+        {{#contentHeader}}
+          {{> organisms-pl-only-content-header-article}}
+        {{/contentHeader}}
+
+        {{#contextualData}}
+          <div class="wrapper">
+            {{> molecules-contextual-data }}
+          </div>
+        {{/contextualData}}
+
+        <div class="wrapper">
+
+          <div class="grid">
+
+            <div class="grid__item large--two-twelfths blg-pad-top-medium">
+              {{#viewSelector}}
+                {{> molecules-view-selector }}
+              {{/viewSelector}}
+            </div>
+
+            <div class="grid__item large--six-twelfths blg-pad-top-medium" data-behaviour="FragmentHandler">
+
+              {{#articleSections}}
+                {{> molecules-article-section }}
+              {{/articleSections}}
+
+              {{>molecules-bar-chart}}
+
+
+              <!-- Decided this will be content, serverside -->
+              {{#pl-only-article-section-for-download-links}}
+                {{> molecules-pl-only-article-section-for-download-links}}
+              {{/pl-only-article-section-for-download-links}}
+
+              <!-- May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? -->
+              {{#articleMeta}}
+                <section class="article-section">
+
+                  <div class="article-section__body">
+                    {{> molecules-article-meta }}
+                  </div>
+
+                </section>
+              {{/articleMeta}}
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </main>
+
+    {{#emailCta}}
+      {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+  </div> <!-- /.global-inner -->
+</div> <!-- /.global-wrapper -->
