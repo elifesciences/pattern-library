@@ -4,6 +4,7 @@
   display: inline-flex;
   flex-direction: column;
   flex-grow: 1;
+  float: left;
 
   @include margin(10 0);
   max-width: auto;
