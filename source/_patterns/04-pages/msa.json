@@ -545,10 +545,10 @@
     {
 
       "heading": "Highlights",
-      "modifiers": "list-heading--highlights",
+      "highlighted": true,
       "items": [
         {
-          "rootClasses": "teaser--secondary teaser--highlights",
+          "rootClasses": "teaser--secondary teaser--highlighted",
           "title": "The parasite’s new clothes",
           "url": "#",
           "secondaryInfo": "Mark S Pearson et al.",
@@ -575,7 +575,7 @@
         },
 
         {
-          "rootClasses": "teaser--secondary teaser--highlights",
+          "rootClasses": "teaser--secondary teaser--highlighted",
           "title": "Catch me if you can",
           "url": "#",
           "secondaryInfo": "Emilie Bourdonnay et al.",
@@ -602,7 +602,7 @@
         },
 
         {
-          "rootClasses": "teaser--secondary teaser--highlights",
+          "rootClasses": "teaser--secondary teaser--highlighted",
           "title": "Autophagy under attack",
           "url": "#",
           "secondaryInfo": "Paul de Figueiredo et al.",
@@ -632,27 +632,27 @@
       "prev": {
         "sources": [
           {
-            "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg",
+            "srcset": "../../assets/img/patterns/molecules/chevron-left-ic.svg",
             "type": "image/svg+xml"
           }
         ],
 
         "fallback": {
-          "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
-          "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+          "srcset": "../../assets/img/patterns/molecules/chevron-left-ic_2x.png 48w, ../../assets/img/patterns/molecules/chevron-left-ic_1x.png 24w",
+          "defaultPath": "../../assets/img/patterns/molecules/chevron-left-ic_1x.png",
           "altText": "Meaningful alt text here please."
         }
       },
       "next": {
         "sources": [
           {
-            "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg",
+            "srcset": "../../assets/img/patterns/molecules/chevron-right-ic.svg",
             "type": "image/svg+xml"
           }
         ],
 
         "fallback": {
-          "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+          "srcset": "../../assets/img/patterns/molecules/chevron-right-ic_2x.png 48w, ../../assets/img/patterns/molecules/chevron-right-ic_1x.png 24w",
           "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
           "altText": "Meaningful alt text here please."
         }

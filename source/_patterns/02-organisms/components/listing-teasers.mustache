@@ -1,23 +1,32 @@
 {{> atoms-list-heading}}
-<ol class="listing-list {{#modifiers}}{{modifiers}}{{/modifiers}}"{{#id}} id="{{id}}"{{/id}}>
-  {{#items}}
+
+
+{{#highlighted}}
+  <div class="listing-list-container--highlighted">
+{{/highlighted}}
+
+  <ol class="listing-list {{#highlighted}}listing-list--highlighted{{/highlighted}}"{{#id}} id="{{id}}"{{/id}}>
+
+    {{#items}}
+        <li class="listing-list__item">
+          {{> molecules-teaser }}
+      </li>
+    {{/items}}
+
+    {{#seeMoreLink}}
       <li class="listing-list__item">
-        {{> molecules-teaser }}
-    </li>
-  {{/items}}
+        {{> atoms-see-more-link}}
+      </li>
+    {{/seeMoreLink}}
+  </ol>
 
-  {{#seeMoreLink}}
-    <li class="listing-list__item">
-      {{> atoms-see-more-link}}
-    </li>
-  {{/seeMoreLink}}
+  <p class="trigger-collection">
+    <span class="visuallyhidden">Highlights controls: </span> <a id="trigger-prev" class="trigger trigger--prev" href="#">{{#prev}}{{>atoms-picture}}{{/prev}}</a> <a id="trigger-next" class="trigger trigger--next" href="#">{{#next}}{{>atoms-picture}}{{/next}}</a>
+  </p>
 
-</ol>
-
-<p>
-  <span class="visuallyhidden">Toggle highlights</span> <a id="trigger-prev" class="trigger trigger--prev" href="#">{{#prev}}{{>atoms-picture}}{{/prev}}</a> <a id="trigger-next" class="trigger trigger--next" href="#">{{#next}}{{>atoms-picture}}{{/next}}</a>
-</p>
-
+{{#highlighted}}
+  </div>
+{{/highlighted}}
 
 {{#pagination}}
     {{> molecules-pager}}

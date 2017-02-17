@@ -7,26 +7,63 @@
 // all patterns
 @import "patterns/**/[^_]*.scss";
 
-.list-heading--highlights {
-  display: flex;
+// To be updated.
+
+.listing-list--highlighted {
   align-items: center;
-  justify-content: space-between;
+  display: flex;
   flex-grow: 1;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
 
   .listing-list__item {
-    display: block;
-    margin: 0;
-    padding: 2px;
     list-style-type: none;
+    padding: 2px;
     width: 100%;
-
-
   }
 }
 
-.teaser--highlights {
+.listing-list-container--highlighted {
+  position: relative;
+
+  .trigger {
+    position: absolute;
+    top: 48px;
+  }
+
+  .trigger--prev {
+    left: -40px;
+  }
+
+  .trigger--next {
+    right: -40px;
+  }
+}
+
+.teaser--highlighted {
   border: 1px solid #cccccc;
   padding: 10px;
+}
+
+.trigger-collection {
+  margin: 0;
+}
+
+.trigger {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 40px;
+
+}
+
+.trigger--prev {
+  left: 0;
+}
+.trigger--next {
+  right: 0;
 }
