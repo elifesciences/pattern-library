@@ -68,5 +68,12 @@
     <a href="https://orcid.org/{{orcid}}" target="_blank" class="author-details__text author-details__link author-details__link--orcid">{{orcid}}</a>
   </section>
   {{/orcid}}
+
+  {{#additionalInformation}}
+    <section class="author-details__section author-details__section--additional-information">
+      <span class="author-details__text">{{{additionalInformation}}}</span>
+    </section>
+  {{/additionalInformation}}
+
 </div>
 
