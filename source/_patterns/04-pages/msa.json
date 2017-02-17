@@ -626,6 +626,60 @@
             "altText": "Meaningful alt text please.",
             "classes": "teaser__img--small"
           }
+        },
+
+        {
+          "rootClasses": "teaser--secondary teaser--highlighted",
+          "title": "Autophagy under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "rootClasses": "teaser--secondary teaser--highlighted",
+          "title": "Autophagy under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
         }
 
       ],
