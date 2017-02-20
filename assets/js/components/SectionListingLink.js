@@ -54,21 +54,11 @@ module.exports = class SectionListingLink {
   }
 
   switchToMobilePosition() {
-
-    //if (!this.$theListParent.querySelector('#sectionsListing')) {
-    // console.log("switchToMobilePosition");
-      this.$theListParent.appendChild(this.$theListing);
-    //}
-
+    this.$theListParent.appendChild(this.$theListing);
   }
 
   switchToDesktopPosition() {
-
-    //if (!this.$theElmParent.querySelector('#sectionsListing')) {
-      //console.log("switchToDesktopPosition");
-      this.$theElmParent.appendChild(this.$theListing);
-    //}
-
+    this.$theElmParent.appendChild(this.$theListing);
   }
 
   viewportNoWiderThan(thresholdInPx) {

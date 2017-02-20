@@ -549,7 +549,7 @@
       "items": [
         {
           "rootClasses": "teaser--secondary teaser--highlighted",
-          "title": "The parasite’s new clothes",
+          "title": "The [1] parasite’s new clothes",
           "url": "#",
           "secondaryInfo": "Mark S Pearson et al.",
           "footer": {
@@ -576,7 +576,8 @@
 
         {
           "rootClasses": "teaser--secondary teaser--highlighted",
-          "title": "Catch me if you can",
+          "carouselItem": true,
+          "title": "Catch [2] me if you can",
           "url": "#",
           "secondaryInfo": "Emilie Bourdonnay et al.",
           "footer": {
@@ -603,7 +604,8 @@
 
         {
           "rootClasses": "teaser--secondary teaser--highlighted",
-          "title": "Autophagy under attack",
+          "carouselItem": true,
+          "title": "Autophagy [3] under attack",
           "url": "#",
           "secondaryInfo": "Paul de Figueiredo et al.",
           "footer": {
@@ -630,7 +632,8 @@
 
         {
           "rootClasses": "teaser--secondary teaser--highlighted",
-          "title": "Autophagy under attack",
+          "carouselItem": true,
+          "title": "Autophagy [4] under attack",
           "url": "#",
           "secondaryInfo": "Paul de Figueiredo et al.",
           "footer": {
@@ -657,7 +660,8 @@
 
         {
           "rootClasses": "teaser--secondary teaser--highlighted",
-          "title": "Autophagy under attack",
+          "carouselItem": true,
+          "title": "Autophagy [5] under attack",
           "url": "#",
           "secondaryInfo": "Paul de Figueiredo et al.",
           "footer": {
