@@ -577,7 +577,7 @@
         {
           "rootClasses": "teaser--secondary teaser--highlighted",
           "carouselItem": true,
-          "title": "Catch [2] me if you can",
+          "title": "Catch [2] me",
           "url": "#",
           "secondaryInfo": "Emilie Bourdonnay et al.",
           "footer": {
@@ -604,7 +604,6 @@
 
         {
           "rootClasses": "teaser--secondary teaser--highlighted",
-          "carouselItem": true,
           "title": "Autophagy [3] under attack",
           "url": "#",
           "secondaryInfo": "Paul de Figueiredo et al.",
@@ -632,7 +631,6 @@
 
         {
           "rootClasses": "teaser--secondary teaser--highlighted",
-          "carouselItem": true,
           "title": "Autophagy [4] under attack",
           "url": "#",
           "secondaryInfo": "Paul de Figueiredo et al.",
@@ -660,7 +658,6 @@
 
         {
           "rootClasses": "teaser--secondary teaser--highlighted",
-          "carouselItem": true,
           "title": "Autophagy [5] under attack",
           "url": "#",
           "secondaryInfo": "Paul de Figueiredo et al.",
