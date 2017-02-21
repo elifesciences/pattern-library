@@ -18,6 +18,8 @@ module.exports = class Highlighted {
     this.doc = doc;
     this.tabletWidth = 640;
     this.desktopWidth = 980;
+    this.currentSlide = 1;
+    this.timerInterval = 10000;
 
     const prevBtn = doc.querySelector('#trigger-prev');
     const nextBtn = doc.querySelector('#trigger-next');
@@ -49,8 +51,7 @@ module.exports = class Highlighted {
       utils.debounce(() => this.switchBreakpoint(), 100)
     );
 
-
-    var total = this.totalSlides;
+    let total = this.totalSlides;
 
 
     prevBtn.addEventListener('click', () => {
@@ -75,12 +76,6 @@ module.exports = class Highlighted {
       this.adjustTranslateForResize();
 
     });
-
-
-
-    this.init();
-
-
 
   }
 
@@ -122,9 +117,7 @@ module.exports = class Highlighted {
       this.switchToDesktopPosition();
     }
 
-    console.log("viewport: ", this.viewport);
-    console.log("inView: ", this.inView);
-    console.log("totalSlides: ", this.totalSlides);
+    console.log("viewport: " + this.viewport + ", inView: " + this.inView + ", totalSlides: " + this.totalSlides);
   }
 
   switchToMobilePosition() {
@@ -147,18 +140,7 @@ module.exports = class Highlighted {
     console.log("slidePrev");
   }
 
-  init() {
-    this.currentSlide = 1;
-    this.timerInterval = 10000;
-
-    console.log("Highlighted.js - init()");
-    console.log("currentSlide", this.currentSlide);
-
-  }
-
   adjustTranslateForResize() {
-
-
 
     console.log("Highlighted.js - adjustTranslateForResize()");
 
