@@ -19,36 +19,21 @@
       </ol>
     {{/subjects}}
   </div>
-
-  <h1 class="content-header__title {{titleClass}}">{{{title}}}</h1>
+  {{#url}}<a class="content-header__title-link" href="{{url}}">{{/url}}
+    <h1 class="content-header__title {{titleClass}}">{{{title}}}</h1>
+  {{#url}}</a>{{/url}}
 
   {{#strapline}}
     <div class="content-header__strapline">{{{strapline}}}</div>
   {{/strapline}}
 
-  {{#authors}}
+  {{#author}}
     <ol class="content-header__author_list">
-      {{!  All article headers: when js available, max 16 authors visible,
-              excess behind 'see more'. Except: Reasearch article read more header: only first author (firstAuthorOnly), followed by et al if there are more (hasEtAl). }}
-      {{#firstAuthorOnly}}
-        <li class="content-header__author_list_item">
-          <span class="content-header__author">{{firstAuthorOnly}}</span>
-        </li>
-        {{#hasEtAl}}
-          <li class="content-header__author_list_item"><span class="content-header__author--etal">et al.</span></li>
-        {{/hasEtAl}}
-      {{/firstAuthorOnly}}
-
-      {{^firstAuthorOnly}}
-        {{#authors.list}}
-          <li class="content-header__author_list_item">
-            <span class="content-header__author">{{name}}</span>
-          </li>
-        {{/authors.list}}
-      {{/firstAuthorOnly}}
-
+      <li class="content-header__author_list_item">
+        <span class="content-header__author">{{author}}</span>
+      </li>
     </ol>
-  {{/authors}}
+  {{/author}}
 
   {{#meta}}
     {{> molecules-meta}}

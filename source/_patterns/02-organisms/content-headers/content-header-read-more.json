@@ -13,10 +13,7 @@
       }
     ]
   },
-  "authors": {
-    "firstAuthorOnly": "Lee R Berger",
-    "hasEtAl": true
-  },
+  "author": "Lee R Berger",
   "meta": {
     "url": "#",
     "text": "Research article",
@@ -29,5 +26,5 @@
       "forMachine": "2015-09-10"
     }
   },
-  "content": "<p>Optimal decision-making requires balancing fast but error-prone and more accurate but slower decisions through adjustments of decision thresholds.</p>"
+  "url": "#"
 }

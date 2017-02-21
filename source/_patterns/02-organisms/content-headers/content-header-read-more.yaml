@@ -41,34 +41,12 @@ schema:
               - url
       required:
         - list
-    authors:
-      type: object
-      oneOf:
-        -
-          properties:
-            list:
-              type: array
-              minItems: 1
-              items:
-                type: object
-                properties:
-                  name:
-                    type: string
-                    minLength: 1
-                required:
-                  - name
-          required:
-            - list
-        -
-          properties:
-            firstAuthorOnly:
-              type: string
-              minLength: 1
-            hasEtAl:
-              type: boolean
-              default: false
-          required:
-            - firstAuthorOnly
+    author:
+      type: string
+      minLength: 1
+    url:
+      type: string
+      minLength: 1
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
   required:

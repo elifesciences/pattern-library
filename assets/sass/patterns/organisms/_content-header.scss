@@ -25,6 +25,11 @@
   text-align: center;
 }
 
+.content-header__title-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .content-header__title {
   @include h1-typeg();
   margin-top: 0;
