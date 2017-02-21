@@ -8,24 +8,5 @@
       "lowResImageSource": "https://unsplash.it/950/400",
       "highResImageSource": "https://unsplash.it/1900/800"
     }
-  },
-  "label": "Highlights this month:",
-  "links": [
-    {
-      "name": "Exploring the ins and outs of breathing",
-      "url": "#Exploring"
-    },
-    {
-      "name": "The ancient origins of lubricated joints",
-      "url": "#The"
-    },
-    {
-      "name": "Modulating protein quality control",
-      "url": "#Modulating"
-    },
-    {
-      "name": "How open science helps researchers succeed",
-      "url": "#How"
-    }
-  ]
+  }
 }

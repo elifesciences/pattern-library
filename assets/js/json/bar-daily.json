@@ -1,0 +1,172 @@
+{
+  "totalPeriods": 13,
+  "totalValue": 1678,
+  "periods": [
+    {
+      "day": 1,
+      "month": 7,
+      "year": 1977,
+      "value": 2
+    },
+    {
+      "day": 2,
+      "month": 7,
+      "year": 1977,
+      "value": 6
+    },
+    {
+      "day": 3,
+      "month": 7,
+      "year": 1977,
+      "value": 10
+    },
+    {
+      "day": 4,
+      "month": 7,
+      "year": 1977,
+      "value": 14
+    },
+    {
+      "day": 5,
+      "month": 7,
+      "year": 1977,
+      "value": 18
+    },
+    {
+      "day": 6,
+      "month": 7,
+      "year": 1977,
+      "value": 22
+    },
+    {
+      "day": 7,
+      "month": 7,
+      "year": 1977,
+      "value": 26
+    },
+    {
+      "day": 8,
+      "month": 7,
+      "year": 1977,
+      "value": 30
+    },
+    {
+      "day": 9,
+      "month": 7,
+      "year": 1977,
+      "value": 34
+    },
+    {
+      "day": 10,
+      "month": 7,
+      "year": 1977,
+      "value": 38
+    },
+    {
+      "day": 11,
+      "month": 7,
+      "year": 1977,
+      "value": 42
+    },
+    {
+      "day": 12,
+      "month": 7,
+      "year": 1977,
+      "value": 46
+    },{
+      "day": 13,
+      "month": 7,
+      "year": 1977,
+      "value": 50
+    },
+    {
+      "day": 14,
+      "month": 7,
+      "year": 1977,
+      "value": 54
+    },
+    {
+      "day": 15,
+      "month": 7,
+      "year": 1977,
+      "value": 58
+    },
+    {
+      "day": 16,
+      "month": 7,
+      "year": 1977,
+      "value": 50
+    },
+    {
+      "day": 17,
+      "month": 7,
+      "year": 1977,
+      "value": 42
+    },
+    {
+      "day": 18,
+      "month": 7,
+      "year": 1977,
+      "value": 34
+    },{
+      "day": 19,
+      "month": 7,
+      "year": 1977,
+      "value": 26
+    },
+    {
+      "day": 20,
+      "month": 7,
+      "year": 1977,
+      "value": 27
+    },
+    {
+      "day": 21,
+      "month": 7,
+      "year": 1977,
+      "value": 28
+    },
+    {
+      "day": 22,
+      "month": 7,
+      "year": 1977,
+      "value": 29
+    },
+    {
+      "day": 23,
+      "month": 7,
+      "year": 1977,
+      "value": 30
+    },
+    {
+      "day": 24,
+      "month": 7,
+      "year": 1977,
+      "value": 7
+    },
+    {
+      "day": 25,
+      "month": 7,
+      "year": 1977,
+      "value": 31
+    },
+    {
+      "day": 26,
+      "month": 7,
+      "year": 1977,
+      "value": 32
+    },
+    {
+      "day": 27,
+      "month": 7,
+      "year": 1977,
+      "value": 33
+    },
+    {
+      "day": 28,
+      "month": 7,
+      "year": 1977,
+      "value": 34
+    }
+  ]
+}

@@ -11,22 +11,29 @@
       {{/carousel}}
 
       {{#leadParas}}
-        {{> molecules-lead-paras}}
+        <div class="wrapper">
+          {{> molecules-lead-paras}}
+        </div>
       {{/leadParas}}
 
-      {{#subjectListLink}}
+      {{#sectionsListingLink}}
       <div class="wrapper u-pad-top">
         {{> atoms-section-listing-link}}
       </div>
-      {{/subjectListLink}}
+      {{/sectionsListingLink}}
 
       <div class="wrapper u-pad-top">
-        <div style="height: 800px; background-color: rgba(2, 136, 209, 0.2);">Main article list.</div>
+        <div class="listing-column-container">
+          <div style="height: 800px; background-color: rgba(2, 136, 209, 0.2);">Main article list.</div>
+        </div>
       </div>
 
-      {{#subjectsList}}
-        {{> molecules-section-listing}}
-      {{/subjectsList}}
+
+      {{#sectionsListing}}
+        <div class="wrapper">
+          {{> molecules-section-listing}}
+        </div>
+      {{/sectionsListing}}
 
     </main>
 

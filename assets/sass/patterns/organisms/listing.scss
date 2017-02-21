@@ -22,6 +22,56 @@
   line-height: 1;
 }
 
+.listing-list--read-more {
+
+  .content-header-divider {
+    border: none;
+  }
+
+  .content-header-article-research--readmore {
+    border: none;
+  }
+}
+
+.listing-list--read-more {
+  text-align: center;
+}
+
+div.listing-list__content {
+  @include margin($listing-list-spacing, "top");
+  @include margin($listing-list-spacing, "bottom");
+  @include padding($content-header-side-padding--extra-wide, "left");
+  @include padding($content-header-side-padding--extra-wide, "right");
+  display: none;
+  @media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--narrow-screen)}em) {
+    display: block;
+  }
+
+  > * {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+// Only on items that come after other items (to show line between but not before or after)
+.listing-list__item:not(:first-child) .listing-list__divider {
+  box-sizing: content-box;
+  @include constrain-width(140, "max");
+  margin: -1px auto 0 auto;
+  padding: 5vh 0;
+
+  &:after {
+    border-bottom: 1px solid $color-text-dividers;
+    content: "";
+    display: block;
+    width: 100%;
+  }
+}
+
+.listing-list-heading {
+  text-align: center;
+}
+
 // Sets up the column layout at medium width for the secondary content lists.
 @media only all and (min-width: 550px) and (max-width: 799px) {
 
