@@ -47,14 +47,14 @@
           "path": "#",
           "picture": {
             "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-disabled-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-disabled-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-disabled-ic_1x.png",
               "classes": "nav-primary__search_icon",
               "altText": "Search icon"
             },
             "sources": [
               {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-disabled-ic.svg"
               }
             ]
           }
