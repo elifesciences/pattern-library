@@ -9,6 +9,8 @@ schema:
     id:
       type: string
       minLength: 1
+    singleLine:
+      type: boolean
     labelledBy:
       type: string
       minLength: 1
@@ -24,6 +26,8 @@ schema:
           name:
             type: string
             minLength: 1
+          isCurrent:
+            type: boolean
         required:
           - url
           - name
