@@ -7,7 +7,7 @@
 {{/button.classes}}
 
 {{^button.classes}}
-  <a href="{{path}}"{{#rel}} rel="{{rel}}"{{/rel}}>
+  <a href="{{path}}"{{#rel}} rel="{{rel}}"{{/rel}} {{#inactive}}disabled tabindex="-1"{{/inactive}}>
     {{#picture}}
       {{> atoms-picture}}
     {{/picture}}

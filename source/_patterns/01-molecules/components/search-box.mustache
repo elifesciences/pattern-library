@@ -1,7 +1,7 @@
 {{! This is used without js on the main search page, but js is required for
       its presence on other pages. !}}
 
-<div class="search-box" data-behaviour="SearchBox">
+<div class="search-box" {{^searchPage}}data-behaviour="SearchBox"{{/searchPage}}>
   <div class="search-box__inner">
     {{#compactForm}}
       {{>molecules-compact-form}}
