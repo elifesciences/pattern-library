@@ -40,7 +40,6 @@
 
         {
           "text": "Search",
-          "rel": "search",
           "inactive": true,
           "classes": "nav-primary__item nav-primary__item--search nav-primary__item--inactive",
           "textClasses": "visuallyhidden",
