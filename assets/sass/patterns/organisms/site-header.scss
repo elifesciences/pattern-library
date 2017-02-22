@@ -1,7 +1,6 @@
 @import "../../definitions";
 
 .site-header {
-  border-bottom: 1px solid $color-text-dividers;
   max-height: 96px;
   min-width: #{get-rem-from-px(275)}rem;
   position: relative;
@@ -43,13 +42,6 @@
 .site-header__logo_link {
   background-image: url("../img/patterns/organisms/elife-logo-full-1x.png");
 }
-
-// Turn off border for more advanced clients.
-//@media only all {
-//  .site-header {
-//    border-bottom-width: 0;
-//  }
-//}
 
 .site-header__logo_link {
   background: url("../img/patterns/organisms/elife-logo-symbol-1x.png") 0 0 no-repeat;
