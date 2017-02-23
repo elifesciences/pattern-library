@@ -1,8 +1,6 @@
 'use strict';
 var utils = require('../libs/elife-utils')();
 
-//console.log("SectionListingLink.js");
-
 module.exports = class SectionListingLink {
 
   constructor($elm, _window = window, doc = document) {
@@ -20,6 +18,8 @@ module.exports = class SectionListingLink {
     this.$theElmParent = $elm.parentNode;
     this.$theListing = this.doc.getElementById('sectionsListing');
     this.displayBreakpoint();
+
+    this.isMobile = null;
 
     this.window.addEventListener('resize',
       utils.debounce(() => this.displayBreakpoint(), 100)
@@ -55,19 +55,23 @@ module.exports = class SectionListingLink {
 
   switchToMobilePosition() {
 
-    //if (!this.$theListParent.querySelector('#sectionsListing')) {
-    // console.log("switchToMobilePosition");
-      this.$theListParent.appendChild(this.$theListing);
-    //}
+    if (this.isMobile === true) {
+      return;
+    }
+
+    this.isMobile = true;
+    this.$theListParent.appendChild(this.$theListing);
 
   }
 
   switchToDesktopPosition() {
 
-    //if (!this.$theElmParent.querySelector('#sectionsListing')) {
-      //console.log("switchToDesktopPosition");
-      this.$theElmParent.appendChild(this.$theListing);
-    //}
+    if (this.isMobile === false) {
+      return;
+    }
+
+    this.isMobile = false;
+    this.$theElmParent.appendChild(this.$theListing);
 
   }
 
