@@ -1,0 +1,40 @@
+@import "../../definitions";
+
+.statistic {
+  display: inline-flex;
+  flex-direction: column;
+  flex-grow: 1;
+  float: left;
+
+  @include margin(10 0);
+
+  + .statistic {
+    @include margin(0 0 0 15);
+  }
+
+  &:first-child {
+    margin-top: 0;  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  > .statistic__value {
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  > .statistic__label {
+    @include nav-typeg();
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  > .statistic__value {
+    @include h1-typeg();
+    line-height: 1;
+  }
+}
+
+

@@ -18,8 +18,6 @@ module.exports = class SectionListingLink {
     this.$theElmParent = $elm.parentNode;
     this.displayBreakpoint();
 
-    this.isMobile = null;
-
     this.window.addEventListener('resize',
       utils.debounce(() => this.displayBreakpoint(), 100)
     );
@@ -53,6 +51,7 @@ module.exports = class SectionListingLink {
   }
 
   switchToMobilePosition() {
+
 
     if (this.isMobile === true) {
       return;
