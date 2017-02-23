@@ -12,7 +12,6 @@
 
 .listing-list--highlighted {
   margin: 0;
-  padding: 0;
   white-space: nowrap;
 
   .listing-list__item {
@@ -42,9 +41,11 @@
   .listing-list--highlighted {
     //display: flex;
     //flex-wrap: nowrap;
-    //margin: 0 -20px;
+    margin: 0 -20px;
     .listing-list__item {
-      width: 50%;
+      width: calc(50% - 40px);
+      margin-left: 20px;
+      margin-right: 20px;
 
     }
     //.listing-list__item:nth-of-type(odd) {
@@ -61,7 +62,7 @@
 @media (min-width: #{get-rem-from-px(980)}rem) {
   .listing-list--highlighted {
     .listing-list__item {
-      width: 33.333%;
+      width: calc(33.333% - 40px);
     }
     //.listing-list__item:nth-of-type(odd) {
     //  margin-left: 1%;
@@ -94,6 +95,7 @@
   .listing-list-container--highlighted {
     border-top: 4px solid yellow;
     overflow: hidden;
+    padding: 0 1px;
     position: relative;
 
     @media only screen and (min-width: 640px) {

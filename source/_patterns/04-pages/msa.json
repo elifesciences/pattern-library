@@ -545,6 +545,7 @@
     {
 
       "heading": "Highlights",
+      "id": "carousel-highlights",
       "highlighted": true,
       "items": [
         {
@@ -576,7 +577,7 @@
 
         {
           "rootClasses": "teaser--secondary teaser--highlighted",
-          "carouselItem": true,
+
           "title": "Catch [2] me",
           "url": "#",
           "secondaryInfo": "Emilie Bourdonnay et al.",
