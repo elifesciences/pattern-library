@@ -29,18 +29,13 @@ module.exports = class BarCharts {
 
     this.triggerDaily.addEventListener('click', () => this.triggeredDaily());
     this.triggerMonthly.addEventListener('click', () => this.triggeredMonthly());
-
-
-
   }
 
   getChartData(timeframe, chart) {
-
     // Parse JSON.
     var el = JSON.parse(document.getElementById(timeframe + chart + 'data').innerText);
 
-
-    const chartData = el.periods.map( (entry) => {
+    const chartData = el.periods.map((entry) => {
 
       const period = Date.UTC(entry.year, entry.month, entry.day);
       const value = entry.value;
@@ -49,9 +44,9 @@ module.exports = class BarCharts {
         period,
         value
       ];
-   });
+    });
 
-  return chartData;
+    return chartData;
 
   }
 
@@ -114,13 +109,19 @@ module.exports = class BarCharts {
         borderColor: '#000000',
         borderRadius: 5,
         useHTML: true,
-
-        formatter: function() {
-          return  '<div class="chart-tooltip"><div class="chart-tooltip__header">' + this.y + ' Page views</div><div class="chart-tooltip__content">' +
-            Highcharts.dateFormat('%b %d, %Y', new Date(this.x)) + '</div></div>';
+        formatter: function () {
+          return `
+            <div class="chart-tooltip">
+              <div class="chart-tooltip__header">
+                ${this.y} Page views
+              </div>
+              <div class="chart-tooltip__content">
+                ${Highcharts.dateFormat('%b %d, %Y', new Date(this.x))}
+              </div>
+            </div>
+          `;
         }
       },
-
       plotOptions: {
         column: {
           states: {
@@ -128,32 +129,21 @@ module.exports = class BarCharts {
               color: '#0088cd'
             }
           }
-
         }
-
       },
-
       series: [{
         name: null,
-        data:
-          this.getChartData('monthly', 'bar')
-        ,
+        data: this.getChartData('monthly', 'bar'),
         color: '#000000',
         lineColor: '#cccccc'
-
       }]
-
-
     });
 
     return this.barchart;
-
   }
-
 
   update(data, dateTimeLabelFormats, tickInterval, text, isPageViews) {
     const config = {
-
       subtitle: {
         text
       },
@@ -164,101 +154,80 @@ module.exports = class BarCharts {
       series: [{
         data
       }]
-
     };
 
     if (isPageViews) {
-
       config.title = {
         text: 'Page views'
-      }
-
+      };
     } else {
-
       config.title = {
         text: 'Downloads'
-      }
-
+      };
     }
 
     this.barchart.update(config);
   }
 
-  updateFromJson(json) {
-
-    const {
-      data, type, range, title
-    } = json;
-
-    let dateRange, tick;
-
+  static getDateRange(range) {
     if (range === 'monthly') {
       // Monthly view.
-      dateRange = {
-        week: '%d/%m/%y',
+      return {
+        dateRange: { week: '%d/%m/%y' },
+        tick: 3600 * 1000 * 24 * 30
       };
-
-      tick = 3600 * 1000 * 24 * 30;
-
-    } else {
-      // Daily view.
-      dateRange = {
-        day: '%d/%m/%y',
-      };
-
-      tick = 3600 * 1000 * 24 * 7;
     }
 
+    // Daily view.
+    return {
+      dateRange: { day: '%d/%m/%y' },
+      tick: 3600 * 1000 * 24 * 7
+    };
+  }
+
+  updateFromJson({ data, type, range, title }) {
+    const { dateRange, tick } = this.getDateRange(range);
+
     this.update(
-      data,
-      dateRange,
-      tick,
-      title,
-      type == 'Page views'
+        data,
+        dateRange,
+        tick,
+        title,
+        type === 'Page views'
     );
   }
 
-
-  triggeredDaily(){
-
+  triggeredDaily() {
     this.triggerDaily.classList.add('button-collection__button--active');
     this.triggerMonthly.classList.remove('button-collection__button--active');
 
-    if(this.section == 'downloads'){
+    if (this.section === 'downloads') {
       this.renderDownloadsDaily(); // 1
     } else {
       this.renderPageViewsDaily();
     }
-
   }
 
-  triggeredMonthly(){
-
+  triggeredMonthly() {
     this.triggerMonthly.classList.add('button-collection__button--active');
     this.triggerDaily.classList.remove('button-collection__button--active');
 
-    if(this.section == 'downloads'){
+    if (this.section === 'downloads') {
       this.renderDownloadsMonthly(); // 1
     } else {
       this.renderPageViewsMonthly();
     }
-
   }
 
   triggeredPrev() {
-
     this.renderPageViewsMonthly();
-
   }
 
   triggeredNext() {
-
     this.renderDownloadsMonthly();
-
   }
 
-  renderDownloadsMonthly(){
-
+  renderDownloadsMonthly() {
     this.updateFromJson({
       data: this.getChartData('monthly', 'bar'),
       range: 'monthly',
@@ -268,11 +237,9 @@ module.exports = class BarCharts {
 
     this.position = 'monthly';
     this.section = 'downloads';
-
   }
 
-  renderDownloadsDaily(){
-
+  renderDownloadsDaily() {
     this.updateFromJson({
       data: this.getChartData('daily', 'bar'),
       range: 'daily',
@@ -282,11 +249,9 @@ module.exports = class BarCharts {
 
     this.position = 'daily';
     this.section = 'downloads';
-
   }
 
-  renderPageViewsMonthly(){
-
+  renderPageViewsMonthly() {
     this.updateFromJson({
       data: this.getChartData('monthly', 'line'),
       range: 'monthly',
@@ -299,7 +264,7 @@ module.exports = class BarCharts {
     this.section = 'pageviews';
   }
 
-  renderPageViewsDaily(){
+  renderPageViewsDaily() {
 
     this.updateFromJson({
       data: this.getChartData('daily', 'line'),
@@ -310,7 +275,6 @@ module.exports = class BarCharts {
 
     this.position = 'daily';
     this.section = 'pageviews';
-
   }
 
 };

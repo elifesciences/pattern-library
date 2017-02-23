@@ -16,7 +16,7 @@ module.exports = () => {
 
     var $el = document.createElement(elName);
     var $parent = typeof parent === 'string' ? document.querySelector(parent)
-      : parent;
+        : parent;
 
     // Work out what the new element's following sibling will be, based on value of attachBefore.
     var $followingSibling = (function () {
@@ -62,7 +62,7 @@ module.exports = () => {
 
     class UniqueIdentifiers {
 
-      constructor () {
+      constructor() {
         this.used = [];
       }
 
@@ -106,6 +106,41 @@ module.exports = () => {
 
     return new UniqueIdentifiers();
   }());
+
+  /**
+   * Simple XHR implementation for getting JSON data.
+   *
+   * @param url
+   * @returns {Promise}
+   */
+  function getJson(url) {
+    return new Promise(
+        function resolver(resolve, reject) {
+          let xhr = new XMLHttpRequest();
+          xhr.addEventListener('load', () => {
+            resolve(xhr.responseText);
+          });
+          xhr.addEventListener('error', reject);
+          xhr.open('GET', url);
+          xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+          xhr.send();
+        }
+    );
+  }
+
+  /**
+   * Takes n from iterable (generator)
+   *
+   * @param n
+   * @param iterable
+   */
+  function* take(n, iterable) {
+    for (let x of iterable) {
+      if (n <= 0) return;
+      n--;
+      yield x;
+    }
+  }
 
   /**
    * Updates the CSS transform's translate function on the element in a vendor-prefix-aware fashion.
@@ -183,20 +218,20 @@ module.exports = () => {
     }
 
     switch (operation) {
-    case 'add':
-      adjustedSize = originalSize + adjustment;
-      break;
-    case 'subtract':
-      adjustedSize = originalSize - adjustment;
-      break;
-    case 'multiply':
-      adjustedSize = originalSize * adjustment;
-      break;
-    case 'divide':
-      adjustedSize = originalSize / adjustment;
-      break;
-    default:
-      break;
+      case 'add':
+        adjustedSize = originalSize + adjustment;
+        break;
+      case 'subtract':
+        adjustedSize = originalSize - adjustment;
+        break;
+      case 'multiply':
+        adjustedSize = originalSize * adjustment;
+        break;
+      case 'divide':
+        adjustedSize = originalSize / adjustment;
+        break;
+      default:
+        break;
     }
     return _getZeroAwarePxStringFromValue(adjustedSize);
   }
@@ -229,7 +264,7 @@ module.exports = () => {
 
     let relationship = $prospectiveParent.compareDocumentPosition($prospectiveDescendant);
     return !!(
-      relationship & $prospectiveParent.DOCUMENT_POSITION_CONTAINED_BY || relationship === 0
+        relationship & $prospectiveParent.DOCUMENT_POSITION_CONTAINED_BY || relationship === 0
     );
   }
 
@@ -270,9 +305,9 @@ module.exports = () => {
     areElementsNested: areElementsNested,
     buildElement: buildElement,
     debounce: debounce,
+    getJson: getJson,
     invertPxString: invertPxString,
     isHighDpr: isHighDpr,
-    debounce: debounce,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
   };
