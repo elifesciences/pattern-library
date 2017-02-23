@@ -1,23 +1,19 @@
 {
   "item": {
-    "rootClasses": "content-header-article content-header-article-research content-header-article-research--readmore",
     "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
     "titleClass": "content-header__title--extra-small",
     "subjects": {
       "list": [
         {
-          "name": "Cell Biology",
-          "url": "#"
+          "name": "Cell Biology"
         },
         {
-          "name": "Epidemiology and global health",
-          "url": "#"
+          "name": "Epidemiology and global health"
         }
       ]
     },
-    "author": "Lee R Berger",
+    "authorLine": "Lee R Berger",
     "meta": {
-      "url": "#",
       "text": "Research article",
       "date": {
         "forHuman": {

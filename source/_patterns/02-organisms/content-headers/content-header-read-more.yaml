@@ -32,12 +32,8 @@ schema:
               name:
                 type: string
                 minLength: 1
-              url:
-                type: string
-                minLength: 1
             required:
               - name
-              - url
       required:
         - list
     author:

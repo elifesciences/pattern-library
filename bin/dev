@@ -17,7 +17,7 @@ gulp
 done) & pid=$!
 PID_LIST+=" $pid";
 
-php ./core/builder.php > /dev/null 2>&1 & pid=$!
+php ./core/builder.php --watch > /dev/null 2>&1 & pid=$!
 
 PID_LIST+=" $pid";
 

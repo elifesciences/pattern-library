@@ -13,25 +13,25 @@
       <ol class="content-header__subject_list">
         {{#subjects.list}}
           <li class="content-header__subject_list_item">
-            <a href="{{url}}" class="content-header__subject_link"><span class="content-header__subject">{{name}}</span></a>
+            <span class="content-header__subject">{{name}}</span>
           </li>
         {{/subjects.list}}
       </ol>
     {{/subjects}}
   </div>
-  <a class="content-header__title-link" href="{{url}}">
-    <h1 class="content-header__title {{titleClass}}">{{{title}}}</h1>
-  </a>
+    <h1 class="content-header__title {{titleClass}}">
+      <a class="content-header__title_link" href="{{url}}">{{{title}}}</a>
+    </h1>
 
   {{#strapline}}
     <div class="content-header__strapline">{{{strapline}}}</div>
   {{/strapline}}
 
-  {{#author}}
-    <div class="content-header__author_list">
-      <span class="content-header__author content-header__author--single">{{author}}</span>
+  {{#authorLine}}
+    <div>
+      <span class="content-header__author content-header__author--single">{{authorLine}}</span>
     </div>
-  {{/author}}
+  {{/authorLine}}
 
   {{#meta}}
     {{> molecules-meta}}

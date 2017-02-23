@@ -25,7 +25,7 @@
   text-align: center;
 }
 
-.content-header__title-link {
+.content-header__title_link {
   color: inherit;
   text-decoration: inherit;
 }
@@ -102,12 +102,7 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
 }
 
 .content-header__author--single {
-  display: inline;
   @include author-typeg();
-
-  &:after {
-    content: "";
-  }
 }
 
 // FIX: This must only apply when authors are collapsed & so there's a read more.
