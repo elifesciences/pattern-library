@@ -19,21 +19,18 @@
     margin-bottom: 0;
   }
 
-  > .statistic__value {
+  .statistic__value {
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
+    @include h1-typeg();
+    line-height: 1;
   }
 
-  > .statistic__label {
+  .statistic__label {
     @include nav-typeg();
     text-align: center;
     text-transform: uppercase;
-  }
-
-  > .statistic__value {
-    @include h1-typeg();
-    line-height: 1;
   }
 }
 
