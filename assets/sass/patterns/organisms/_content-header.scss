@@ -101,6 +101,15 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
   content: "";
 }
 
+.content-header__author--single {
+  display: inline;
+  @include author-typeg();
+
+  &:after {
+    content: "";
+  }
+}
+
 // FIX: This must only apply when authors are collapsed & so there's a read more.
 // Recommend determining by js & swapping a class based on that to give this behaviour.
 .content-header-article--js li.content-header__author_list_item:nth-last-of-type(2) .content-header__author:after {
