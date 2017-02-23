@@ -10,18 +10,11 @@
   + .statistic {
     @include margin(0 0 0 15);
   }
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 }
 
 .statistic__value {
   line-height: 1;
+  margin: 0;
   text-align: center;
   text-transform: uppercase;
   @include h1-typeg();
@@ -29,6 +22,7 @@
 
 .statistic__label {
   @include nav-typeg();
+  margin: 0;
   text-align: center;
   text-transform: uppercase;
 }

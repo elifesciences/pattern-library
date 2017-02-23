@@ -16,14 +16,6 @@
     overflow: hidden;
     visibility: hidden;
   }
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 }
 
 .statistic-collection__item {
