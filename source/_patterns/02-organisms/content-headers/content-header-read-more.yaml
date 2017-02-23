@@ -2,7 +2,6 @@ assets:
   css:
     - content-header-article-magazine.css
     - content-header-article-research.css
-    - $ref: ../../00-atoms/components/lead-para.yaml#/assets/css
     - $ref: ../../01-molecules/components/meta.yaml#/assets/css
   js: []
 schema:

@@ -15,10 +15,7 @@
         }
       ]
     },
-    "authors": {
-      "firstAuthorOnly": "Lee R Berger",
-      "hasEtAl": true
-    },
+    "author": "Lee R Berger",
     "meta": {
       "url": "#",
       "text": "Research article",
