@@ -129,20 +129,6 @@ module.exports = () => {
   }
 
   /**
-   * Takes n from iterable (generator)
-   *
-   * @param n
-   * @param iterable
-   */
-  function* take(n, iterable) {
-    for (let x of iterable) {
-      if (n <= 0) return;
-      n--;
-      yield x;
-    }
-  }
-
-  /**
    * Updates the CSS transform's translate function on the element in a vendor-prefix-aware fashion.
    *
    * Because of the way CSS transformations are combined into a matrix, this may not work
@@ -284,9 +270,7 @@ module.exports = () => {
 
   /**
    * Debounce
-   *
    */
-
   function debounce(callback, wait, context = this) {
     let timeout = null;
     let callbackArgs = null;
@@ -300,11 +284,41 @@ module.exports = () => {
     };
   }
 
+  /**
+   * Deferred promise
+   */
+  function defer() {
+    const result = {};
+    result.promise = new Promise(function (resolve, reject) {
+      result.resolve = function (value) {
+        resolve(value);
+      };
+
+      result.reject = function (value) {
+        reject(value);
+      };
+
+    });
+
+    return result;
+  }
+
+  /**
+   * Flattens nested array
+   * @param input
+   * @returns {Array.<*>}
+   */
+  function flatten(input) {
+    return [].concat(...input);
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     buildElement: buildElement,
     debounce: debounce,
+    defer: defer,
+    flatten: flatten,
     getJson: getJson,
     invertPxString: invertPxString,
     isHighDpr: isHighDpr,

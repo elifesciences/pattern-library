@@ -1,8 +1,51 @@
-<script type="application/json" data-behaviour="Metrics">
-  {"totalValue":208936,"totalPeriods":18,"periods":[{"period":"2015-09","value":145733},{"period":"2015-10","value":15515},{"period":"2015-11","value":8910},{"period":"2015-12","value":6138},{"period":"2016-01","value":5017},{"period":"2016-02","value":2323},{"period":"2016-03","value":4876},{"period":"2016-04","value":4245},{"period":"2016-05","value":3224},{"period":"2016-06","value":1567},{"period":"2016-07","value":1203},{"period":"2016-08","value":1218},{"period":"2016-09","value":1855},{"period":"2016-10","value":1922},{"period":"2016-11","value":2500},{"period":"2016-12","value":1432},{"period":"2017-01","value":1519},{"period":"2017-02","value":1021}]}
-</script>
+<div
+  id="highcharts-container"
+  data-behaviour="Metrics"
+  data-id="09560"
+  data-type="article"
+  data-per-view="30"
+  data-container-id="chart-1"
+  data-daily-id="{{daily.id}}"
+  data-monthly-id="{{monthly.id}}"
+  data-api-endpoint="http://prod--gateway.elifesciences.org"
+>
+  <div class="charts">
+    <div id="chart-1">Loading...</div>
+    <p>
+      <span class="visuallyhidden">Toggle charts</span>
+      <a class="trigger trigger--prev" href="#">
+        {{#prev}}{{>atoms-picture}}{{/prev}}
+      </a>
+      <a class="trigger trigger--next" href="#">
+        {{#next}}{{>atoms-picture}}{{/next}}
+      </a>
+    </p>
+  </div>
+  <div class="button-collection clearfix">
+    {{#daily.text}}
+      {{#daily}}{{>atoms-button}}{{/daily}}
+    {{/daily.text}}
 
+    {{#monthly.text}}
+      {{#monthly}}{{>atoms-button}}{{/monthly}}
+    {{/monthly.text}}
+  </div>
+</div>
+<!--
+<div
+    data-behaviour="Metrics"
+    data-id="09560"
+    data-type="article"
+    data-per-view="35"
+    data-api-endpoint="http://prod--gateway.elifesciences.org"
+>
+  <button class="botn">Moar</button>
+  <button class="botn2">Switch</button>
+  <button class="botn3">day/mnth</button>
+  <div class="view" style="font-size: 10px"></div>
 
+</div>
+-->
 
 <!--
 
@@ -21,8 +64,8 @@
 
 <div class="button-collection clearfix">
   {{#daily.text}}
-    {{#daily}}{{>atoms-button}}{{/daily}}
-  {{/daily.text}}
+  {{#daily}}{{>atoms-button}}{{/daily}}
+{{/daily.text}}
 
   {{#monthly.text}}
     {{#monthly}}{{>atoms-button}}{{/monthly}}

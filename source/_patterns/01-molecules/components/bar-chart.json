@@ -4,14 +4,14 @@
     "id": "trigger-daily",
     "text": "Daily",
     "path": "#",
-    "classes": "button--outline button--small button-collection__button"
+    "classes": "button--outline button--small button-collection__button button-collection__button--active"
   },
 
   "monthly": {
     "id" : "trigger-monthly",
     "text": "Monthly",
     "path": "#",
-    "classes": "button--outline button--small button-collection__button button-collection__button--active"
+    "classes": "button--outline button--small button-collection__button"
   },
 
 
