@@ -1,14 +1,16 @@
 {
-  "stats": [{
-      "label" : "Views",
-      "value": 547
+  "stats": [
+    {
+      "label": "Views",
+      "value": "54,741"
     },
     {
-      "label" : "Downloads",
-      "value": 320
+      "label": "Downloads",
+      "value": "320"
     },
     {
-      "label" : "Citations",
-      "value": 89
-    }]
+      "label": "Citations",
+      "value": "89"
+    }
+  ]
 }
