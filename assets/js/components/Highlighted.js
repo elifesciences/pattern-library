@@ -1,7 +1,7 @@
 'use strict';
 var utils = require('../libs/elife-utils')();
 
-console.log("Highlighted.js - a");
+console.log("Highlighted.js - b");
 
 module.exports = class Highlighted {
 
@@ -30,12 +30,10 @@ module.exports = class Highlighted {
       utils.debounce(() => this.switchBreakpoint(), 100)
     );
 
-
     prevBtn.addEventListener('click', () => {
       this.currentSlide === 1 ? this.currentSlide = 1 : this.currentSlide -= 1;
       this.adjustTranslateForResize();
     });
-
 
     nextBtn.addEventListener('click', () => {
       this.currentSlide === this.maxSlide ? this.currentSlide = this.maxSlide : this.currentSlide += 1;
@@ -55,23 +53,25 @@ module.exports = class Highlighted {
 
   switchBreakpoint() {
 
+    utils.equalizeHeightOfItems('listing-list--highlighted', 'teaser__header');
+
     this.resetStage();
 
     if (this.viewportNoWiderThan(this.tabletWidth)) {
 
-      this.viewport = "MOBILE";
+      this.viewport = 'MOBILE';
       this.inView = 1;
       this.maxSlide = 5;
 
     } else if (this.viewportNoWiderThan(this.desktopWidth)) {
 
-      this.viewport = "TABLET";
+      this.viewport = 'TABLET';
       this.inView = 2;
       this.maxSlide = 4;
 
     } else {
 
-      this.viewport = "DESKTOP";
+      this.viewport = 'DESKTOP';
       this.inView = 3;
       this.maxSlide = 3;
     }

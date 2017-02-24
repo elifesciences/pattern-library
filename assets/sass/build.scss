@@ -29,6 +29,20 @@
   }
 }
 
+.listing-column-highlights {
+
+  .teaser a:focus,
+  .trigger-collection a:focus {
+      color: orange !important;
+      outline: none;
+    }
+
+    .teaser a:focus .teaser__img {
+      border: 3px solid orange !important;
+    }
+
+}
+
 .teaser--highlighted {
   border-top: none;
 }
