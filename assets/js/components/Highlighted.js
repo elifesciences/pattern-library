@@ -1,7 +1,7 @@
 'use strict';
 var utils = require('../libs/elife-utils')();
 
-console.log("Highlighted.js - A");
+console.log("Highlighted.js - a");
 
 module.exports = class Highlighted {
 
@@ -81,26 +81,15 @@ module.exports = class Highlighted {
 
   adjustTranslateForResize() {
 
-    console.log("currentSlide: ", this.currentSlide);
-
-    console.log("Highlighted.js - adjustTranslateForResize()");
-
-    // ORIGINAL: width.match(/([0-9]+)px/)[1];
-
     let carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9\.]+)px/)[1];
     let currentSlide = this.currentSlide;
     let expectedOffset = (currentSlide - 1) * carouselWidth * -1;
 
-    //console.log("carouselWidth: " + carouselWidth + ", currentSlide: " + currentSlide + ", expectedOffset: " + expectedOffset + ", this.inView: " + this.inView);
+    // working MOBILE, TABLET and DESKTOP:
+    let nudge = (expectedOffset - (currentSlide -1) * 40) / this.inView;
+    // console.log("nudge: ", nudge);
 
-    // working MOBILE: let increment = expectedOffset / this.inView;
-    // working TABLET: let increment = (expectedOffset / this.inView) - ((currentSlide - 1) * 20);
-    // DESKTOP:
-    let increment = (-1 * (currentSlide-1)) * ((carouselWidth - ((this.inView - 1) * 40)) / this.inView);
-    console.log("increment: ", increment);
-
-    this.moveableStage.style.transform = 'translate(' + increment + 'px, 0)';
-
+    this.moveableStage.style.transform = 'translate(' + nudge + 'px, 0)';
 
   }
 
