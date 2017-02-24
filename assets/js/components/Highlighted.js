@@ -1,7 +1,7 @@
 'use strict';
 var utils = require('../libs/elife-utils')();
 
-console.log("Highlighted.js - b");
+console.log("Highlighted.js - e");
 
 module.exports = class Highlighted {
 
@@ -26,16 +26,16 @@ module.exports = class Highlighted {
     this.originalSlideWrappers = this.moveableStage.querySelectorAll('.listing-list__item');
 
     this.switchBreakpoint();
-    this.window.addEventListener('resize',
-      utils.debounce(() => this.switchBreakpoint(), 100)
-    );
+    this.window.addEventListener('resize', utils.debounce(() => this.switchBreakpoint(), 100));
 
     prevBtn.addEventListener('click', () => {
+      console.log(' prevBtn click');
       this.currentSlide === 1 ? this.currentSlide = 1 : this.currentSlide -= 1;
       this.adjustTranslateForResize();
     });
 
     nextBtn.addEventListener('click', () => {
+      console.log(' nextBtn click');
       this.currentSlide === this.maxSlide ? this.currentSlide = this.maxSlide : this.currentSlide += 1;
       this.adjustTranslateForResize();
     });

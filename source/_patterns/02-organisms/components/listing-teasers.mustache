@@ -5,8 +5,7 @@
 {{/highlighted}}
 
   <ol class="listing-list {{#highlighted}}listing-list--highlighted{{/highlighted}}"{{#id}} id="{{id}}"{{/id}}>
-    {{#items}}<li class="listing-list__item">{{> molecules-teaser }}</li>{{/items}}
-    {{#seeMoreLink}}<li class="listing-list__item">{{> atoms-see-more-link}}</li>{{/seeMoreLink}}
+    {{#items}}<li class="listing-list__item">{{> molecules-teaser }}</li>{{/items}}{{#seeMoreLink}}<li class="listing-list__item">{{> atoms-see-more-link}}</li>{{/seeMoreLink}}
   </ol>
 
 {{#highlighted}}
@@ -17,7 +16,6 @@
   <p class="trigger-collection">
     <span class="visuallyhidden">Highlights controls: </span> <a id="trigger-prev" class="trigger trigger--prev" href="#">{{#prev}}{{>atoms-picture}}{{/prev}}</a> <a id="trigger-next" class="trigger trigger--next" href="#">{{#next}}{{>atoms-picture}}{{/next}}</a>
   </p>
-  </div>
 {{/highlighted}}
 
 {{#pagination}}
