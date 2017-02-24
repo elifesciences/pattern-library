@@ -1,11 +1,15 @@
 <div
-  data-behaviour="Metrics"
-  data-id="{{id}}"
-  data-type="{{type}}"
-  data-container-id="{{containerId}}"
-  data-daily-id="{{daily.id}}"
-  data-monthly-id="{{monthly.id}}"
-  data-api-endpoint="{{endpoint}}"
+    data-behaviour="Metrics"
+    data-id="{{id}}"
+    data-type="{{type}}"
+    data-container-id="{{containerId}}"
+  {{#daily.id}}
+    data-daily-id="{{daily.id}}"
+  {{/daily.id}}
+  {{#monthly.id}}
+    data-monthly-id="{{monthly.id}}"
+  {{/monthly.id}}
+    data-api-endpoint="{{apiEndpoint}}"
 >
   <div class="charts">
     <div id="{{containerId}}">Loading...</div>
@@ -20,12 +24,12 @@
     </p>
   </div>
   <div class="button-collection clearfix">
-    {{#daily.text}}
+    {{#daily.id}}
       {{#daily}}{{>atoms-button}}{{/daily}}
-    {{/daily.text}}
+    {{/daily.id}}
 
-    {{#monthly.text}}
+    {{#monthly.id}}
       {{#monthly}}{{>atoms-button}}{{/monthly}}
-    {{/monthly.text}}
+    {{/monthly.id}}
   </div>
 </div>

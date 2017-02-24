@@ -1,0 +1,40 @@
+assets:
+  css:
+    - captioned-asset.css
+    - $ref: ../../00-atoms/components/button.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    id:
+      type: string
+      minLength: 1
+    type:
+      type: string
+      minLength: 1
+    containerId:
+      type: string
+      minLength: 1
+    apiEndpoint:
+      type: string
+      minLength: 1
+    monthlyId:
+      type: string
+      minLength: 1
+    dailyId:
+      type: string
+      minLength: 1
+    daily:
+      $ref: ../../00-atoms/components/button.yaml#/schema
+    monthly:
+      $ref: ../../00-atoms/components/button.yaml#/schema
+    next:
+      $ref: ../../00-atoms/components/picture.yaml#/schema
+    prev:
+      $ref: ../../00-atoms/components/picture.yaml#/schema
+  required:
+    - id
+    - type
+    - containerId
+    - apiEndpoint
