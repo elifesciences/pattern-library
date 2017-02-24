@@ -26,7 +26,7 @@
           - teaser__img--small: 70px square image, floating right.
         }}
     {{#image}}
-      <a href="{{{url}}}" {{#carouselItem}}tabindex="-1"{{/carouselItem}}><img src="{{defaultPath}}" alt="{{altText}}" {{#srcset}}srcset="{{srcset}}"{{/srcset}} class="teaser__img{{#classes}} {{classes}}{{/classes}}" /></a>
+      <a href="{{{url}}}" tabindex="-1"><img src="{{defaultPath}}" alt="{{altText}}" {{#srcset}}srcset="{{srcset}}"{{/srcset}} class="teaser__img{{#classes}} {{classes}}{{/classes}}" /></a>
     {{/image}}
 
     {{! Used for the date in an event teaser only. Treatment very like teaser__img--small.

@@ -31,15 +31,19 @@
 
 .listing-column-highlights {
 
-  .teaser a:focus,
-  .trigger-collection a:focus {
-      color: orange !important;
-      outline: none;
-    }
+  .teaser a:focus {
+    color: orange !important;
+    outline: none;
+  }
 
-    .teaser a:focus .teaser__img {
-      border: 3px solid orange !important;
-    }
+  .trigger-collection a:focus {
+    background-color: orange !important;
+    outline: none;
+  }
+
+  .teaser a:focus .teaser__img {
+    border: 3px solid orange !important;
+  }
 
 }
 
@@ -90,17 +94,8 @@
 
 .js {
   .listing-list-container--highlighted {
-    border-top: 4px solid yellow;
     overflow: hidden;
     position: relative;
-
-    @media only screen and (min-width: 640px) {
-      border-top: 4px solid #ffa500;
-    }
-
-    @media only screen and (min-width: 980px) {
-      border-top: 4px solid #cc0000;
-    }
 
     .trigger--prev {
       left: -24px;
