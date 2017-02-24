@@ -1,4 +1,8 @@
 {
+  "id": "09560",
+  "type": "article",
+  "containerId": "chart-1",
+  "apiEndpoint": "http://prod--gateway.elifesciences.org",
 
   "daily": {
     "id": "trigger-daily",
@@ -13,7 +17,6 @@
     "path": "#",
     "classes": "button--outline button--small button-collection__button"
   },
-
 
   "prev": {
     "sources": [
