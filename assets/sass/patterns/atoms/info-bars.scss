@@ -6,6 +6,10 @@
   font-weight: 600;
   @include padding(14 8);
   text-align: center;
+
+  a {
+    color: inherit;
+  }
 }
 
 .info-bar__text {
@@ -55,8 +59,21 @@
 }
 
 .info-bar__text--correction {
-  background: url("../img/icons/co.png");
-  background: url("../img/icons/attention.svg"), linear-gradient(transparent, transparent);
+  background: url("../img/icons/corrected-article.png");
+  background: url("../img/icons/corrected-article.svg"), linear-gradient(transparent, transparent);
   background-position: 0 50%;
+  background-size: 17px;
+  background-repeat: no-repeat;
+}
+
+.info-bar--multiple-versions {
+  @extend .info-bar--info;
+}
+
+.info-bar__text--multiple-versions {
+  background: url("../img/icons/multiple-versions-article.png");
+  background: url("../img/icons/multiple-versions-article.svg"), linear-gradient(transparent, transparent);
+  background-position: 0 50%;
+  background-size: 17px;
   background-repeat: no-repeat;
 }
