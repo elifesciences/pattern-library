@@ -75,7 +75,7 @@ class Metrics {
       this.log(`changed period to ${period}`);
 
       // Change metric and reload.
-      this.changeMetric(
+      return this.changeMetric(
           this.selected,
           period
       ).then(() => {
@@ -201,7 +201,7 @@ class Metrics {
   }
 
   log(...args) {
-    // console.info('—>', ...args);
+     console.info('—>', ...args);
   }
 
   renderView($el, data) {
@@ -257,17 +257,7 @@ class Metrics {
     const perView = this.period === 'day' ? 30 : 12;
 
     // The next XHR
-    this.currentRrequest = utils.getJson(
-        this.getEndpoint(
-            this.endpoint,
-            this.type,
-            this.id,
-            this.selected,
-            this.period,
-            perView,
-            page
-        )
-    );
+    this.currentRrequest = this.getJsonPage(page, perView);
 
     return this.currentRrequest
         .then(j => JSON.parse(j))
@@ -282,6 +272,20 @@ class Metrics {
           this.log('resolved,', 'total', this.total, 'remaining requests:', remainingPages);
           return json;
         });
+  }
+
+  getJsonPage(page, perView) {
+    return utils.getJson(
+        this.getEndpoint(
+            this.endpoint,
+            this.type,
+            this.id,
+            this.selected,
+            this.period,
+            perView,
+            page
+        )
+    );
   }
 }
 
