@@ -12,9 +12,6 @@ schema:
     value:
       type: string
       minLength: 1
-    modifiers:
-      type: string
-      minLength: 1
   required:
     - label
     - value
