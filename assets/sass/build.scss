@@ -8,8 +8,6 @@
 @import "patterns/**/[^_]*.scss";
 
 // To be updated.
-
-
 .listing-list--highlighted {
   margin: 0 -20px;
   white-space: nowrap;
@@ -29,7 +27,23 @@
   }
 }
 
+.listing-column-highlights {
 
+  .teaser a:focus {
+    color: orange !important;
+    outline: none;
+  }
+
+  .trigger-collection a:focus {
+    background-color: orange !important;
+    outline: none;
+  }
+
+  .teaser a:focus .teaser__img {
+    border: 3px solid orange !important;
+  }
+
+}
 
 .teaser--highlighted {
   border-top: none;
@@ -41,21 +55,11 @@
 
 @media (min-width: #{get-rem-from-px(640)}rem) {
   .listing-list--highlighted {
-    //display: flex;
-    //flex-wrap: nowrap;
 
     .listing-list__item {
       width: calc(50% - 40px);
 
     }
-    //.listing-list__item:nth-of-type(odd) {
-    //  margin-left: 0;
-    //  margin-right: 2%;
-    //}
-    //.listing-list__item:nth-of-type(even) {
-    //  margin-left: 0;
-    //  margin-right: 0;
-    //}
   }
 }
 
@@ -79,15 +83,8 @@
 .js {
   .listing-list-container--highlighted {
     overflow: hidden;
-    position: relative;
 
-    .trigger--prev {
-      left: -24px;
-    }
 
-    .trigger--next {
-      right: -24px;
-    }
   }
 
   .teaser--highlighted {
@@ -95,8 +92,8 @@
   }
 
   .trigger-collection {
-    margin: 0;
     display: block;
+    margin: 0;
   }
 
   .trigger {
@@ -109,10 +106,28 @@
 
   }
 
+  //.trigger--prev {
+  //  left: 0;
+  //}
+  //.trigger--next {
+  //  right: 0;
+  //}
+  
+  .trigger {
+    // background-color: #f0f0f0;
+    position: absolute;
+    top: calc(50% - 13px); // height of .list-heading divided by 2
+  }
+
   .trigger--prev {
-    left: 0;
+    left: -24px;
   }
+
   .trigger--next {
-    right: 0;
+    right: -24px;
   }
+}
+
+.listing-column-highlights {
+  position: relative;
 }

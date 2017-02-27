@@ -28,15 +28,31 @@ module.exports = class Highlighted {
     this.switchBreakpoint();
     this.window.addEventListener('resize', utils.debounce(() => this.switchBreakpoint(), 100));
 
+    this.adjustTranslateForResize();
+
     prevBtn.addEventListener('click', () => {
       console.log(' prevBtn click');
+
       this.currentSlide === 1 ? this.currentSlide = 1 : this.currentSlide -= 1;
+
+      if(this.currentSlide == 1) {
+        console.log("MIN");
+        //this.hideElm();
+      }
+
       this.adjustTranslateForResize();
     });
 
     nextBtn.addEventListener('click', () => {
       console.log(' nextBtn click');
+
       this.currentSlide === this.maxSlide ? this.currentSlide = this.maxSlide : this.currentSlide += 1;
+
+      if(this.currentSlide == this.maxSlide) {
+        console.log("MAX");
+        //this.hideElm();
+      }
+
       this.adjustTranslateForResize();
     });
 
@@ -76,10 +92,12 @@ module.exports = class Highlighted {
       this.maxSlide = 3;
     }
 
-    console.log("viewport: " + this.viewport + ", inView: " + this.inView + ", totalSlides: " + this.totalSlides);
+    //console.log("viewport: " + this.viewport + ", inView: " + this.inView + ", totalSlides: " + this.totalSlides);
   }
 
   adjustTranslateForResize() {
+
+
 
     let carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9\.]+)px/)[1];
     let currentSlide = this.currentSlide;
@@ -92,5 +110,19 @@ module.exports = class Highlighted {
     this.moveableStage.style.transform = 'translate(' + nudge + 'px, 0)';
 
   }
+
+  hideElm() {
+
+    this.$elm.classList.add('visuallyhidden');
+
+  }
+
+  showElm() {
+
+    this.$elm.classList.remove('visuallyhidden');
+
+  }
+
+
 
 };
