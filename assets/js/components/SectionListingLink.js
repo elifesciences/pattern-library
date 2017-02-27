@@ -1,8 +1,6 @@
 'use strict';
 var utils = require('../libs/elife-utils')();
 
-//console.log("SectionListingLink.js");
-
 module.exports = class SectionListingLink {
 
   constructor($elm, _window = window, doc = document) {

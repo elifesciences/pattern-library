@@ -6,23 +6,3 @@
 
 // all patterns
 @import "patterns/**/[^_]*.scss";
-
-/// DEBUGGING:
-//
-// .listing-column-highlights {
-//
-//  .teaser a:focus {
-//    color: orange !important;
-//    outline: none;
-//  }
-//
-//  .trigger-collection a:focus {
-//    background-color: orange !important;
-//    outline: none;
-//  }
-//
-//  .teaser a:focus .teaser__img {
-//    border: 3px solid orange !important;
-//  }
-//
-//}
