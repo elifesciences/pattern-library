@@ -1,12 +1,14 @@
+@import "../../definitions";
+
 .js {
   .trigger {
     display: inline-block;
-    height: 24px;
+    @include height(24);
     line-height: 24px;
     position: absolute;
     text-align: center;
     top: calc(50% - 13px); // height of .list-heading divided by 2
-    width: 24px;
+    @include width(24);
   }
 
   .trigger--prev {
