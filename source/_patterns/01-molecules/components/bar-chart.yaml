@@ -29,10 +29,6 @@ schema:
       $ref: ../../00-atoms/components/button.yaml#/schema
     monthly:
       $ref: ../../00-atoms/components/button.yaml#/schema
-    next:
-      $ref: ../../00-atoms/components/picture.yaml#/schema
-    prev:
-      $ref: ../../00-atoms/components/picture.yaml#/schema
   required:
     - id
     - type

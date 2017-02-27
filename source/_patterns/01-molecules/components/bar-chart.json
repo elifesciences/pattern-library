@@ -16,35 +16,6 @@
     "text": "Monthly",
     "path": "#",
     "classes": "button--outline button--small button-collection__button"
-  },
-
-  "prev": {
-    "sources": [
-      {
-        "srcset": "../../assets/img/patterns/molecules/chevron-left-ic.svg",
-        "type": "image/svg+xml"
-      }
-    ],
-
-    "fallback": {
-      "srcset": "../../assets/img/patterns/molecules/chevron-left-ic_2x.png 48w, ../../assets/img/patterns/molecules/chevron-left-ic_1x.png 24w",
-      "defaultPath": "../../assets/img/patterns/molecules/chevron-left-ic_1x.png",
-      "altText": "Meaningful alt text here please."
-    }
-  },
-  "next": {
-    "sources": [
-      {
-        "srcset": "../../assets/img/patterns/molecules/chevron-right-ic.svg",
-        "type": "image/svg+xml"
-      }
-    ],
-
-    "fallback": {
-      "srcset": "../../assets/img/patterns/molecules/chevron-right-ic_2x.png 48w, ../../assets/img/patterns/molecules/chevron-right-ic_1x.png 24w",
-      "defaultPath": "../../assets/img/patterns/molecules/chevron-right-ic_1x.png",
-      "altText": "Meaningful alt text here please."
-    }
   }
 
 }
