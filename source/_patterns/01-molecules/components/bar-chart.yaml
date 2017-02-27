@@ -19,10 +19,10 @@ schema:
     apiEndpoint:
       type: string
       minLength: 1
-    monthlyId:
+    metric:
       type: string
       minLength: 1
-    dailyId:
+    period:
       type: string
       minLength: 1
     daily:

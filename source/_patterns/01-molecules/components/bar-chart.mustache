@@ -3,8 +3,14 @@
     data-id="{{id}}"
     data-type="{{type}}"
     data-container-id="{{containerId}}"
+  {{#metric}}
+    data-metric="{{metric}}"
+  {{/metric}}
+  {{#period}}
+    data-period="{{period}}"
+  {{/period}}
   {{#daily.id}}
-    data-daily-id="{{daily.id}}"
+    data-metric="{{daily.id}}"
   {{/daily.id}}
   {{#monthly.id}}
     data-monthly-id="{{monthly.id}}"
