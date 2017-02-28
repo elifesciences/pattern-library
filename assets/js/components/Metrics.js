@@ -55,7 +55,7 @@ class Metrics {
 
     // Select the current metric.
     this.updateSelectedMetric(function (m) {
-      return Object.assign(m, { selected: true });
+      return utils.extend(m, { selected: true });
     });
 
     // Register event to call this method.
@@ -132,7 +132,7 @@ class Metrics {
 
     // Select the current metric.
     this.updateSelectedMetric(function (m) {
-      return Object.assign(m, { selected: false });
+      return utils.extend(m, { selected: false });
     });
 
     this.selected = metric;
@@ -142,7 +142,7 @@ class Metrics {
     // Select the current metric.
     this.updateSelectedMetric(function (m) {
       isLoaded = m.loaded;
-      return Object.assign(m, { selected: true });
+      return utils.extend(m, { selected: true });
     });
 
     this.log('Changed metric to ', metric, period, ', loaded: ', isLoaded);
@@ -201,7 +201,8 @@ class Metrics {
   }
 
   log(...args) {
-     console.info('—>', ...args);
+
+    // console.info('—>', ...args);
   }
 
   renderView($el, data) {

@@ -312,12 +312,42 @@ module.exports = () => {
     return [].concat(...input);
   }
 
+  const extend = (function () {
+    if (typeof Object.assign === 'function') {
+      return Object.assign;
+    }
+
+    return function (target) {
+      if (target === undefined || target === null) {
+        throw new TypeError('Cannot convert undefined or null to object');
+      }
+
+      const output = Object(target);
+      for (let i = 1; i < arguments.length; i) {
+        const src = arguments[i];
+        if (src === undefined || src === null) {
+          continue;
+        }
+
+        for (let nextKey in src) {
+          if (src.hasOwnProperty(nextKey)) {
+            output[nextKey] = src[nextKey];
+          }
+        }
+
+      }
+
+      return output;
+    };
+  })();
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     buildElement: buildElement,
     debounce: debounce,
     defer: defer,
+    extend: extend,
     flatten: flatten,
     getJson: getJson,
     invertPxString: invertPxString,
