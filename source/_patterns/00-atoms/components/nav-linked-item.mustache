@@ -7,12 +7,12 @@
 {{/button.classes}}
 
 {{^button.classes}}
-  <a href="{{path}}"{{#rel}} rel="{{rel}}"{{/rel}}>
+  {{#path}}<a href="{{path}}"{{#rel}} rel="{{rel}}"{{/rel}}>{{/path}}
     {{#picture}}
       {{> atoms-picture}}
     {{/picture}}
     {{#textClasses}}<span class="{{textClasses}}"> {{{text}}} </span>{{/textClasses}}
     {{^textClasses}} {{{text}}} {{/textClasses}}
-  </a>
+  {{#path}}</a>{{/path}}
 {{/button.classes}}
 </li>

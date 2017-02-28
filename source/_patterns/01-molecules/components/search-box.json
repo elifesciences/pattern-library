@@ -10,7 +10,7 @@
     "inputPlaceholder": "Search by keyword or author",
     "ctaText": "Search"
   },
-
+  "inContentHeader": true,
   "subjectFilter": {
     "name": "subject_filter",
     "value": "cell_biology",

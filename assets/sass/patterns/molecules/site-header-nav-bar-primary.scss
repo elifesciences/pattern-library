@@ -26,6 +26,14 @@
   list-style-type: none;
   @include padding(4 16 0 0);
   text-transform: uppercase;
+
+  &.nav-primary__item--inactive {
+    color: $color-text-dividers;
+
+    a {
+      pointer-events: none;
+    }
+  }
 }
 
 .nav-primary__item--first {
@@ -50,6 +58,8 @@
   margin-left: auto;
   margin-top: -10px;
   @include padding(8, "right");
+
+
 }
 
 .nav-primary__menu_icon {
