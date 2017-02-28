@@ -45,7 +45,7 @@
 
   .listing-list__item {
     border: 1px solid #ccc;
-    @include margin(0 20 10);
+    @include margin(0 20);
     @include padding(2);
 
     .teaser--highlights {

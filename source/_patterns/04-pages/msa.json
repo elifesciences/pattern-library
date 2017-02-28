@@ -549,7 +549,8 @@
       "highlights": true,
       "items": [
         {
-          "rootClasses": "teaser--secondary teaser--highlights",
+          "num": 1,
+          "rootClasses": "teaser--secondary teaser--highlights teaser--highlights--active",
           "title": "The [1] parasite’s new clothes",
           "url": "#",
           "secondaryInfo": "Mark S Pearson et al.",
@@ -576,8 +577,8 @@
         },
 
         {
+          "num": 2,
           "rootClasses": "teaser--secondary teaser--highlights",
-
           "title": "Catch [2] me",
           "url": "#",
           "secondaryInfo": "Emilie Bourdonnay et al.",
@@ -604,6 +605,7 @@
         },
 
         {
+          "num": 3,
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Autophagy [3] under attack",
           "url": "#",
@@ -631,6 +633,7 @@
         },
 
         {
+          "num": 4,
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Autophagy [4] under attack",
           "url": "#",
@@ -658,6 +661,7 @@
         },
 
         {
+          "num": 5,
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Autophagy [5] under attack",
           "url": "#",
