@@ -51,42 +51,39 @@ module.exports = class Highlights {
   //   }
   // }
 
-  // event listener for keyup
   checkTabPress(e) {
     "use strict";
-    // pick passed event of global event object
+
     e = e || event;
     let activeElement;
     if (e.keyCode == 9) {
-      // Here read the active selected link.
+
       activeElement = document.activeElement;
 
       let slide = this.currentSlide;
       let maxOffset = this.maxOffset;
       console.log("checkTabPress: ", activeElement);
-      console.log("slide: " + this.currentSlide + ", maxOffset: " + this.maxOffset);
 
-
-
-
-
-      // If HTML element is and anchor
       if ( activeElement.tagName.toLowerCase() == 'a' && activeElement.classList.contains('teaser__header_text_link') ) {
 
+        console.log("h4");
 
-
-
-
-        if (e.shiftKey) {
-          console.log('SHIFT + TAB:', this.currentSlide);
-          this.currentSlide = this.currentSlide - 1;
-        } else {
-          console.log('TAB:', this.currentSlide);
-          this.currentSlide = this.currentSlide + 1;
+        if(this.currentSlide == 1){
+          this.resetStage();
         }
 
         if(slide >= 1 && slide <= maxOffset) {
-          this.goToSlide(slide);
+
+          if (e.shiftKey) {
+            console.log('SHIFT + TAB:' + this.currentSlide + ", slide: " + this.currentSlide + ", maxOffset: " + this.maxOffset);
+            this.currentSlide = this.currentSlide - 1;
+            this.goToSlide(slide);
+          } else {
+            console.log('TAB:', this.currentSlide + ", slide: " + this.currentSlide + ", maxOffset: " + this.maxOffset);
+            this.currentSlide = this.currentSlide + 1;
+            this.goToSlide(slide);
+          }
+
         }
 
 
@@ -120,25 +117,25 @@ module.exports = class Highlights {
     // }
   }
 
-  deactivateCurrentSlide() {
-    console.info('currentSlide', this.originalSlideWrappers[this.currentSlide - 1]);
-    //return this.currentSlide <= 1;
-
-    var prevCurr = this.originalSlideWrappers[this.currentSlide - 1].classList.remove('is-active');
-
-    return prevCurr;
-
-  }
-
-  activateCurrentSlide() {
-    console.info('currentSlide', this.originalSlideWrappers[this.currentSlide - 1]);
-    //return this.currentSlide <= 1;
-
-    var newCurr = this.originalSlideWrappers[this.currentSlide - 1].classList.add('is-active');
-
-    return newCurr;
-
-  }
+  // deactivateCurrentSlide() {
+  //   console.info('currentSlide', this.originalSlideWrappers[this.currentSlide - 1], this);
+  //   //return this.currentSlide <= 1;
+  //
+  //   var prevCurr = this.originalSlideWrappers[this.currentSlide - 1].classList.remove('is-active');
+  //
+  //   return prevCurr;
+  //
+  // }
+  //
+  // activateCurrentSlide() {
+  //   console.info('currentSlide', this.originalSlideWrappers[this.currentSlide - 1], this);
+  //   //return this.currentSlide <= 1;
+  //
+  //   var newCurr = this.originalSlideWrappers[this.currentSlide - 1].classList.add('is-active');
+  //
+  //   return newCurr;
+  //
+  // }
 
   isFirstSlide() {
     return this.currentSlide <= 1;
@@ -150,7 +147,7 @@ module.exports = class Highlights {
 
   previousButton() {
 
-    this.deactivateCurrentSlide();
+    //this.deactivateCurrentSlide();
 
     if (this.isFirstSlide()) {
       return null;
@@ -164,7 +161,7 @@ module.exports = class Highlights {
 
   nextButton() {
 
-    this.deactivateCurrentSlide();
+    //this.deactivateCurrentSlide();
 
     if (this.isLastSlide()) {
       return null;
@@ -228,7 +225,7 @@ module.exports = class Highlights {
   adjustTranslateForResize() {
 
     //this.deactivatePreviousSlide();
-    this.activateCurrentSlide();
+    //this.activateCurrentSlide();
 
     if (this.isFirstSlide()) {
       this.$prevBtn.style.display = 'none';
@@ -249,7 +246,7 @@ module.exports = class Highlights {
   }
 
   goToSlide(thisSlide) {
-    console.log("goToSlide()");
+    console.log("goToSlide()", thisSlide);
 
     let carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9\.]+)px/)[1];
     let expectedOffset = (thisSlide - 1) * carouselWidth * -1;
