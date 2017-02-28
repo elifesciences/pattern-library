@@ -135,7 +135,7 @@
   },
 
   "pageSearchBox": {
-    "behaviour": true,
+    "inContentHeader": false,
     "compactForm": {
       "formAction": "/search",
       "formId": "searchBox",
