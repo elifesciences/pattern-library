@@ -1,7 +1,7 @@
 'use strict';
 var utils = require('../libs/elife-utils')();
 
-console.log('Highlights.js - F');
+console.log('Highlights.js - ');
 
 module.exports = class Highlights {
 
@@ -28,114 +28,37 @@ module.exports = class Highlights {
     this.switchBreakpoint();
     this.window.addEventListener('resize', utils.debounce(() => this.switchBreakpoint(), 100));
     this.adjustTranslateForResize();
-    this.maxOffset;
 
     var body = document.querySelector('body');
     body.addEventListener('keyup', this.checkTabPress.bind(this));
-
-    // this.activeElement = doc.activeElement;
-    // this.focused = doc.hasFocus();
   }
-
-  // checkPageFocus() {
-  //   let slide1 = this.doc.getElementById("slide1");
-  //   let slide2 = this.doc.getElementById("slide2");
-  //   let slide3 = this.doc.getElementById("slide3");
-  //   let slide4 = this.doc.getElementById("slide4");
-  //   let slide5 = this.doc.getElementById("slide5");
-  //
-  //   if ( slide2.focus() ) {
-  //     slide2.innerHTML = "The document has the focus.";
-  //   } else {
-  //     slide2.innerHTML = "The document doesn't have the focus.";
-  //   }
-  // }
 
   checkTabPress(e) {
     "use strict";
 
     e = e || event;
     let activeElement;
+
+    //console.log('start of checkTabPress', e, e.keyCode, e.shiftKey);
     if (e.keyCode == 9) {
 
       activeElement = document.activeElement;
 
-      let slide = this.currentSlide;
-      let maxOffset = this.maxOffset;
-      console.log("checkTabPress: ", activeElement);
+      if (activeElement.tagName.toLowerCase() == 'a' && activeElement.classList.contains('teaser__header_text_link')) {
 
-      if ( activeElement.tagName.toLowerCase() == 'a' && activeElement.classList.contains('teaser__header_text_link') ) {
-
-        console.log("h4");
-
-        if(this.currentSlide == 1){
+        if (this.currentSlide === 1) {
           this.resetStage();
         }
 
-        if(slide >= 1 && slide <= maxOffset) {
+        if (this.currentSlide < this.maxOffset) {
 
-          if (e.shiftKey) {
-            console.log('SHIFT + TAB:' + this.currentSlide + ", slide: " + this.currentSlide + ", maxOffset: " + this.maxOffset);
-            this.currentSlide = this.currentSlide - 1;
-            this.goToSlide(slide);
-          } else {
-            console.log('TAB:', this.currentSlide + ", slide: " + this.currentSlide + ", maxOffset: " + this.maxOffset);
-            this.currentSlide = this.currentSlide + 1;
-            this.goToSlide(slide);
-          }
-
+          this.currentSlide = parseInt(activeElement.getAttribute('data-slide'), 10);
+          this.adjustTranslateForResize();
         }
 
-
       }
-
-
     }
-
-    // if (e.shiftKey && e.keyCode == 9) {
-    //   // Here read the active selected link.
-    //   activeElement = document.activeElement;
-    //   // If HTML element is and anchor
-    //   if ( activeElement.tagName.toLowerCase() == 'a' && activeElement.classList.contains('teaser__header_text_link') ) {
-    //
-    //     // get it's hyperlink
-    //     // alert(activeElement.href);
-    //     console.log("checkTabPress: ", activeElement);
-    //
-    //     let slide = this.currentSlide;
-    //     let maxOffset = this.maxOffset;
-    //     console.log("slide: ", this.currentSlide);
-    //     console.log("maxOffset: ", this.maxOffset);
-    //
-    //
-    //     if(slide >= 1 && slide <= maxOffset) {
-    //       this.goToSlide(slide);
-    //       this.currentSlide = this.currentSlide - 1;
-    //     }
-    //
-    //   }
-    // }
   }
-
-  // deactivateCurrentSlide() {
-  //   console.info('currentSlide', this.originalSlideWrappers[this.currentSlide - 1], this);
-  //   //return this.currentSlide <= 1;
-  //
-  //   var prevCurr = this.originalSlideWrappers[this.currentSlide - 1].classList.remove('is-active');
-  //
-  //   return prevCurr;
-  //
-  // }
-  //
-  // activateCurrentSlide() {
-  //   console.info('currentSlide', this.originalSlideWrappers[this.currentSlide - 1], this);
-  //   //return this.currentSlide <= 1;
-  //
-  //   var newCurr = this.originalSlideWrappers[this.currentSlide - 1].classList.add('is-active');
-  //
-  //   return newCurr;
-  //
-  // }
 
   isFirstSlide() {
     return this.currentSlide <= 1;
@@ -146,22 +69,15 @@ module.exports = class Highlights {
   }
 
   previousButton() {
-
-    //this.deactivateCurrentSlide();
-
     if (this.isFirstSlide()) {
       return null;
     }
 
     this.currentSlide = this.currentSlide - 1;
     this.adjustTranslateForResize();
-
-    console.log('previousButton() currentSlide:', this.currentSlide);
   }
 
   nextButton() {
-
-    //this.deactivateCurrentSlide();
 
     if (this.isLastSlide()) {
       return null;
@@ -170,7 +86,6 @@ module.exports = class Highlights {
     this.currentSlide = this.currentSlide + 1;
     this.adjustTranslateForResize();
 
-    console.log('nextButton() currentSlide:', this.currentSlide);
   }
 
   viewportNoWiderThan(thresholdInPx) {
@@ -184,8 +99,6 @@ module.exports = class Highlights {
     this.$prevBtn.style.display = 'none';
     this.$nextBtn.style.display = 'block';
 
-
-    console.log('resetStage() currentSlide:', this.currentSlide);
   }
 
   switchBreakpoint() {
@@ -193,8 +106,6 @@ module.exports = class Highlights {
     utils.equalizeHeightOfItems('listing-list--highlights', 'teaser__header');
 
     this.resetStage();
-
-    //console.log('currentSlide', this.currentSlide);
 
     if (this.viewportNoWiderThan(this.tabletWidth)) {
 
@@ -217,16 +128,9 @@ module.exports = class Highlights {
       this.maxSlide = 3;
       this.maxOffset = 3;
     }
-
-
-
   }
 
   adjustTranslateForResize() {
-
-    //this.deactivatePreviousSlide();
-    //this.activateCurrentSlide();
-
     if (this.isFirstSlide()) {
       this.$prevBtn.style.display = 'none';
     } else {
@@ -239,7 +143,6 @@ module.exports = class Highlights {
       this.$nextBtn.style.display = 'block';
     }
 
-    console.log("this.currentSlide");
     let slide = this.currentSlide;
     this.goToSlide(slide);
 
@@ -247,12 +150,27 @@ module.exports = class Highlights {
 
   goToSlide(thisSlide) {
     console.log("goToSlide()", thisSlide);
+    const margin = 40;
+    const numOfMargins = this.inView - 1;
+    const totalMargins = numOfMargins * margin;
 
+    // Width of carousel container
     let carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9\.]+)px/)[1];
-    let expectedOffset = (thisSlide - 1) * carouselWidth * -1;
-    let nudge = (expectedOffset - (thisSlide - 1) * 40) / this.inView;
 
+    // Slide width = Carousel width - margins / number in view
+    const slideWidth = (carouselWidth - totalMargins) / this.inView;
+
+    // Slide offset = Slide width plus margin
+    const slideOffset = slideWidth + margin;
+
+    // Negative offset of 'x' slide offsets
+    let nudge = slideOffset * (thisSlide - 1) * -1;
+
+    // Transform
     this.moveableStage.style.transform = 'translate(' + nudge + 'px, 0)';
+
+    // Reset any scroll lefts
+    this.$elm.scrollLeft = 0;
   }
 
   hideElm() {

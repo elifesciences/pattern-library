@@ -7,7 +7,7 @@
       {{#list}}
         <li class="teaser__context_label_list_item">
           {{#url}}
-            <a href="{{url}}" {{#carouselItem}}tabindex="-1"{{/carouselItem}} class="teaser__context_label_link"><span class="teaser__context_label">{{{name}}}</span></a>
+            <a href="{{url}}"  {{#carouselItem}}tabindex="-1"{{/carouselItem}} class="teaser__context_label_link"><span class="teaser__context_label">{{{name}}}</span></a>
           {{/url}}
 
           {{^url}}
@@ -45,7 +45,7 @@
       {{! Occasionally the title isn't linked, for example in the chapter listing item teaser. }}
       {{! For schema: url is dependent on title }}
       {{#url}}
-        <a href="{{{url}}}" {{#carouselItem}}tabindex="-1"{{/carouselItem}} class="teaser__header_text_link">{{{title}}}</a>
+        <a href="{{{url}}}" {{#num}}data-slide="{{num}}"{{/num}} {{#carouselItem}}tabindex="-1"{{/carouselItem}} class="teaser__header_text_link">{{{title}}}</a>
       {{/url}}
       {{^url}}
         {{{title}}}
