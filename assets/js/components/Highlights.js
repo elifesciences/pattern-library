@@ -74,14 +74,12 @@ module.exports = class Highlights {
   }
 
   nextButton() {
-
     if (this.isLastSlide()) {
       return null;
     }
 
     this.currentSlide = this.currentSlide + 1;
     this.adjustTranslateForResize();
-
   }
 
   viewportNoWiderThan(thresholdInPx) {
@@ -100,7 +98,6 @@ module.exports = class Highlights {
   }
 
   switchBreakpoint() {
-
     utils.equalizeHeightOfItems('listing-list--highlights', 'teaser__header');
 
     this.resetStage();
@@ -125,7 +122,6 @@ module.exports = class Highlights {
   }
 
   adjustTranslateForResize() {
-
     if (this.isFirstSlide()) {
       this.$prevBtn.style.display = 'none';
     } else {
@@ -138,9 +134,7 @@ module.exports = class Highlights {
       this.$nextBtn.style.display = 'block';
     }
 
-    let slide = this.currentSlide;
-    this.goToSlide(slide);
-
+    this.goToSlide(this.currentSlide);
   }
 
   goToSlide(thisSlide) {
