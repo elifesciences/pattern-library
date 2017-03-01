@@ -1,8 +1,6 @@
 'use strict';
 var utils = require('../libs/elife-utils')();
 
-console.log('Highlights.js - ');
-
 module.exports = class Highlights {
 
   constructor($elm, _window = window, doc = document) {
@@ -14,7 +12,6 @@ module.exports = class Highlights {
     this.window = _window;
     this.$elm = $elm;
     this.doc = doc;
-
     this.tabletWidth = 640;
     this.desktopWidth = 980;
     this.currentSlide = 1;
@@ -29,7 +26,7 @@ module.exports = class Highlights {
     this.switchBreakpoint();
     this.window.addEventListener('resize', utils.debounce(() => this.switchBreakpoint(), 1000));
 
-    var body = document.querySelector('body');
+    let body = document.querySelector('body');
     body.addEventListener('keyup', this.checkTabPress.bind(this));
   }
 
@@ -39,7 +36,6 @@ module.exports = class Highlights {
     e = e || event;
     let activeElement;
 
-    //console.log('start of checkTabPress', e, e.keyCode, e.shiftKey);
     if (e.keyCode == 9) {
 
       activeElement = document.activeElement;
@@ -111,19 +107,16 @@ module.exports = class Highlights {
 
     if (this.viewportNoWiderThan(this.tabletWidth)) {
 
-      this.viewport = 'MOBILE';
       this.inView = 1;
       this.maxOffset = this.numSlides;
 
     } else if (this.viewportNoWiderThan(this.desktopWidth)) {
 
-      this.viewport = 'TABLET';
       this.inView = 2;
       this.maxOffset = this.numSlides - 1;
 
     } else {
 
-      this.viewport = 'DESKTOP';
       this.inView = 3;
       this.maxOffset = this.numSlides - 2;
     }
@@ -132,21 +125,16 @@ module.exports = class Highlights {
   }
 
   adjustTranslateForResize() {
-    console.log("adjustTranslateForResize()", this);
 
     if (this.isFirstSlide()) {
-      console.log("isFirstSlide() if");
       this.$prevBtn.style.display = 'none';
     } else {
-      console.log("isFirstSlide() else");
       this.$prevBtn.style.display = 'block';
     }
 
     if (this.isLastSlide()) {
-      console.log("isLastSlide() if");
       this.$nextBtn.style.display = 'none';
     } else {
-      console.log("isLastSlide() else");
       this.$nextBtn.style.display = 'block';
     }
 
@@ -156,7 +144,6 @@ module.exports = class Highlights {
   }
 
   goToSlide(thisSlide) {
-    console.log("goToSlide()", thisSlide);
     const margin = 40;
     const numOfMargins = this.inView - 1;
     const totalMargins = numOfMargins * margin;
