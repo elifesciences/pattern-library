@@ -96,8 +96,10 @@ module.exports = class Highlights {
     this.moveableStage.style.transform = 'translate(0px, 0)';
     this.currentSlide = 1;
 
-    this.$prevBtn.style.display = 'none';
-    this.$nextBtn.style.display = 'block';
+    if(this.inView && this.numSlides > 3) {
+      this.$prevBtn.style.display = 'none';
+      this.$nextBtn.style.display = 'block';
+    }
 
   }
 
@@ -133,14 +135,18 @@ module.exports = class Highlights {
     console.log("adjustTranslateForResize()", this);
 
     if (this.isFirstSlide()) {
+      console.log("isFirstSlide() if");
       this.$prevBtn.style.display = 'none';
     } else {
+      console.log("isFirstSlide() else");
       this.$prevBtn.style.display = 'block';
     }
 
     if (this.isLastSlide()) {
+      console.log("isLastSlide() if");
       this.$nextBtn.style.display = 'none';
     } else {
+      console.log("isLastSlide() else");
       this.$nextBtn.style.display = 'block';
     }
 
@@ -172,18 +178,6 @@ module.exports = class Highlights {
 
     // Reset any scroll lefts
     this.$elm.scrollLeft = 0;
-  }
-
-  hideElm() {
-
-    this.$elm.classList.add('visuallyhidden');
-
-  }
-
-  showElm() {
-
-    this.$elm.classList.remove('visuallyhidden');
-
   }
 
 };
