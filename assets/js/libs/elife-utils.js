@@ -310,7 +310,6 @@ module.exports = () => {
     isHighDpr: isHighDpr,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
-
   };
 
 };
