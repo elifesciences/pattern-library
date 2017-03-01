@@ -31,16 +31,17 @@ module.exports = class Highlights {
   }
 
   checkTabPress(e) {
-    "use strict";
 
     e = e || event;
     let activeElement;
 
-    if (e.keyCode == 9) {
+    if (e.keyCode === 9) {
 
       activeElement = document.activeElement;
 
-      if (activeElement.tagName.toLowerCase() == 'a' && activeElement.classList.contains('teaser__header_text_link')) {
+      if (activeElement.tagName.toLowerCase() === 'a'
+          && activeElement.classList.contains('teaser__header_text_link')
+      ) {
 
         if (this.currentSlide === 1) {
           this.resetStage();
@@ -61,7 +62,7 @@ module.exports = class Highlights {
   }
 
   isLastSlide() {
-    return this.currentSlide == (this.maxOffset);
+    return this.currentSlide === this.maxOffset;
   }
 
   previousButton() {
@@ -90,7 +91,7 @@ module.exports = class Highlights {
     this.moveableStage.style.transform = 'translate(0px, 0)';
     this.currentSlide = 1;
 
-    if(this.inView && this.numSlides > 3) {
+    if (this.inView && this.numSlides > 3) {
       this.$prevBtn.style.display = 'none';
       this.$nextBtn.style.display = 'block';
     }
