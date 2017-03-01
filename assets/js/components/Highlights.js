@@ -25,9 +25,9 @@ module.exports = class Highlights {
     this.$nextBtn.addEventListener('click', this.nextButton.bind(this));
     this.moveableStage = this.$elm.querySelector('.listing-list--highlights');
     this.originalSlideWrappers = this.moveableStage.querySelectorAll('.listing-list__item');
+    this.numSlides = this.moveableStage.querySelectorAll('.listing-list__item').length;
     this.switchBreakpoint();
-    this.window.addEventListener('resize', utils.debounce(() => this.switchBreakpoint(), 100));
-    this.adjustTranslateForResize();
+    this.window.addEventListener('resize', utils.debounce(() => this.switchBreakpoint(), 1000));
 
     var body = document.querySelector('body');
     body.addEventListener('keyup', this.checkTabPress.bind(this));
@@ -65,7 +65,7 @@ module.exports = class Highlights {
   }
 
   isLastSlide() {
-    return this.currentSlide >= (this.maxOffset);
+    return this.currentSlide == (this.maxOffset);
   }
 
   previousButton() {
@@ -111,26 +111,27 @@ module.exports = class Highlights {
 
       this.viewport = 'MOBILE';
       this.inView = 1;
-      this.maxSlide = 5;
-      this.maxOffset = 5;
+      this.maxOffset = this.numSlides;
 
     } else if (this.viewportNoWiderThan(this.desktopWidth)) {
 
       this.viewport = 'TABLET';
       this.inView = 2;
-      this.maxSlide = 4;
-      this.maxOffset = 4;
+      this.maxOffset = this.numSlides - 1;
 
     } else {
 
       this.viewport = 'DESKTOP';
       this.inView = 3;
-      this.maxSlide = 3;
-      this.maxOffset = 3;
+      this.maxOffset = this.numSlides - 2;
     }
+
+    this.adjustTranslateForResize();
   }
 
   adjustTranslateForResize() {
+    console.log("adjustTranslateForResize()", this);
+
     if (this.isFirstSlide()) {
       this.$prevBtn.style.display = 'none';
     } else {
