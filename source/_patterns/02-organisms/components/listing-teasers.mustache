@@ -2,6 +2,7 @@
 
 {{#highlights}}
   <div class="highlights__content" data-behaviour="Highlights" role="region" aria-labelledby="{{id}}">
+  <div class="highlights__list">
 {{/highlights}}
 
   <ol class="listing-list {{#highlights}}listing-list--highlights{{/highlights}}"{{#id}} id="{{id}}"{{/id}}>
@@ -10,9 +11,10 @@
 
 {{#highlights}}
   </div>
-  <p class="trigger-collection">
-    <span class="visuallyhidden">Highlights controls:</span> <a id="trigger-prev" class="trigger trigger--prev" href="#">{{#prev}}{{>atoms-picture}}{{/prev}}</a> <a id="trigger-next" class="trigger trigger--next" href="#">{{#next}}{{>atoms-picture}}{{/next}}</a>
-  </p>
+    <p class="highlights__controls trigger-collection">
+      <span class="visuallyhidden">Highlights controls:</span> <a id="trigger-prev" class="trigger trigger--prev" href="#">{{#prev}}{{>atoms-picture}}{{/prev}}</a> <a id="trigger-next" class="trigger trigger--next" href="#">{{#next}}{{>atoms-picture}}{{/next}}</a>
+    </p>
+  </div>
 {{/highlights}}
 
 {{#pagination}}
