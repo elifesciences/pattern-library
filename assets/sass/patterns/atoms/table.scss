@@ -38,7 +38,7 @@ td + td {
   text-align: center;
 }
 
-td:nth-child(odd) {
+td:nth-child(odd):not([class*="author-callout-style-b"]) {
   background-color: $color-text-ui-background-hue;
 }
 
