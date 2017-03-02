@@ -30,7 +30,6 @@ schema:
               $ref: picture.yaml#/schema
           required:
             - text
-            - path
         -
           properties:
             button:
