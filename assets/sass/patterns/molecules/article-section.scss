@@ -163,7 +163,7 @@ $arrow-size: 5;
   }
 
   pre {
-    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-family: $font-monospace;
     @include margin(0 0 15 0);
   }
 }
