@@ -16,8 +16,8 @@ module.exports = class Highlights {
     this.desktopWidth = 980;
     this.currentSlide = 1;
     this.timerInterval = 10000;
-    this.$prevBtn = doc.querySelector('.trigger--prev');
-    this.$nextBtn = doc.querySelector('.trigger--next');
+    this.$prevBtn = $elm.querySelector('.trigger--prev');
+    this.$nextBtn = $elm.querySelector('.trigger--next');
     this.$prevBtn.addEventListener('click', this.previousButton.bind(this));
     this.$nextBtn.addEventListener('click', this.nextButton.bind(this));
     this.moveableStage = this.$elm.querySelector('.listing-list--highlights');
@@ -32,7 +32,7 @@ module.exports = class Highlights {
 
   checkTabPress(e) {
 
-    e = e || event;
+    e = e || {};
     let activeElement;
 
     if (e.keyCode === 9) {
@@ -144,7 +144,7 @@ module.exports = class Highlights {
     const totalMargins = numOfMargins * margin;
 
     // Width of carousel container
-    let carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9\.]+)px/)[1];
+    const carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9\.]+)px/)[1];
 
     // Slide width = Carousel width - margins / number in view
     const slideWidth = (carouselWidth - totalMargins) / this.inView;
@@ -153,7 +153,7 @@ module.exports = class Highlights {
     const slideOffset = slideWidth + margin;
 
     // Negative offset of 'x' slide offsets
-    let nudge = slideOffset * (thisSlide - 1) * -1;
+    const nudge = slideOffset * (thisSlide - 1) * -1;
 
     // Transform
     this.moveableStage.style.transform = 'translate(' + nudge + 'px, 0)';

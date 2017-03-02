@@ -1,9 +1,7 @@
-.js {
-  .highlights {
-    position: relative;
+.js .highlights {
+  position: relative;
+}
 
-    .highlights__content {
-      overflow: hidden;
-    }
-  }
+.js .highlights .highlights__content {
+  overflow: hidden;
 }
