@@ -89,3 +89,43 @@ div.listing-list__content {
   }
 
 }
+
+.listing-list--highlights {
+  @include margin(0 -20);
+
+  .listing-list__item {
+    border: 1px solid #ccc;
+    @include margin(0 20);
+    @include padding(2);
+
+    .teaser--highlights {
+      border-top: none;
+      @include padding(10);
+      white-space: normal;
+    }
+  }
+}
+
+.js {
+
+  .listing-list--highlights {
+    transition: transform 0.2s;
+    white-space: nowrap;
+
+    .listing-list__item {
+      display: inline-block;
+      list-style-type: none;
+      @include margin(0 20 10);
+      vertical-align: top;
+      width: calc(100% - 40px);
+
+      @media (min-width: #{get-rem-from-px(640)}rem) {
+        width: calc(50% - 40px);
+      }
+
+      @media (min-width: #{get-rem-from-px(980)}rem) {
+        width: calc(33.333% - 40px);
+      }
+    }
+  }
+}
