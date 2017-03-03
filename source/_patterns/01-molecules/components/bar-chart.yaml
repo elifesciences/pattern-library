@@ -34,3 +34,5 @@ schema:
     - type
     - containerId
     - apiEndpoint
+    - daily
+    - monthly
