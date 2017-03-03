@@ -2,5 +2,7 @@
   "id": "09560",
   "type": "article",
   "containerId": "chart-1",
-  "apiEndpoint": "http://prod--gateway.elifesciences.org"
+  "apiEndpoint": "http://prod--gateway.elifesciences.org",
+  "metric": "downloads",
+  "period": "daily"
 }

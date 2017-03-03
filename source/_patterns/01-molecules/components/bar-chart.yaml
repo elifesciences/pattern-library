@@ -22,13 +22,11 @@ schema:
     metric:
       type: string
       minLength: 1
-      default: downloads
       enum:
        - downloads
        - page-views
     period:
       type: string
-      default: monthly
       minLength: 1
       enum:
         - daily
@@ -36,5 +34,7 @@ schema:
   required:
     - id
     - type
+    - metric
+    - period
     - containerId
     - apiEndpoint
