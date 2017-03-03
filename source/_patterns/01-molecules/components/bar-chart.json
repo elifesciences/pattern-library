@@ -2,20 +2,5 @@
   "id": "09560",
   "type": "article",
   "containerId": "chart-1",
-  "apiEndpoint": "http://prod--gateway.elifesciences.org",
-
-  "daily": {
-    "id": "trigger-daily",
-    "text": "Daily",
-    "path": "#",
-    "classes": "button--outline button--small button-collection__button button-collection__button--active"
-  },
-
-  "monthly": {
-    "id" : "trigger-monthly",
-    "text": "Monthly",
-    "path": "#",
-    "classes": "button--outline button--small button-collection__button"
-  }
-
+  "apiEndpoint": "http://prod--gateway.elifesciences.org"
 }

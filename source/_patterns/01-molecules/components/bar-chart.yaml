@@ -25,14 +25,8 @@ schema:
     period:
       type: string
       minLength: 1
-    daily:
-      $ref: ../../00-atoms/components/button.yaml#/schema
-    monthly:
-      $ref: ../../00-atoms/components/button.yaml#/schema
   required:
     - id
     - type
     - containerId
     - apiEndpoint
-    - daily
-    - monthly
