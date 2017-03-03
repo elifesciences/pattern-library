@@ -45,9 +45,9 @@ describe('Metrics integration', function () {
 
   it('should create a list of available metrics', function () {
     const available = root.metrics.availableCharts;
-    expect(available).to.contains('page-views');
-    expect(available).to.contains('downloads');
-    expect(available.length).to.equal(2);
+    expect(available).to.contain('page-views');
+    expect(available).to.contain('downloads');
+    expect(available).to.have.length(2);
   });
 
   it('should create a list of objects for each metric', function () {
@@ -55,11 +55,11 @@ describe('Metrics integration', function () {
     availableViews.forEach(function (view) {
       expect(view.name).to.be.a('string');
       if (view.loaded === true) {
-        expect(view.loaded).to.equal(true);
+        expect(view.loaded).to.be.true;
         expect(view.page).to.equal(1);
         expect(view.periods.length).to.equal(30);
       } else {
-        expect(view.loaded).to.equal(false);
+        expect(view.loaded).to.be.false;
         expect(view.page).to.equal(0);
         expect(view.periods.length).to.equal(0);
       }
@@ -72,7 +72,7 @@ describe('Metrics integration', function () {
     expect(currentMetric.page).to.equal(1);
     expect(currentMetric.periods.length).to.equal(30);
     expect(currentMetric.remaining).to.equal(18);
-    expect(currentMetric.selected).to.equal(true);
+    expect(currentMetric.selected).to.be.true;
     expect(currentMetric.periods[0].value).to.equal(1);
     expect(currentMetric.periods[10].value).to.equal(480);
   });
@@ -93,7 +93,7 @@ describe('Metrics integration', function () {
         expect(currentMetric.page).to.equal(1);
         expect(currentMetric.periods.length).to.equal(30);
         expect(currentMetric.remaining).to.equal(18);
-        expect(currentMetric.selected).to.equal(true);
+        expect(currentMetric.selected).to.be.true;
         expect(currentMetric.periods[0].value).to.equal(14);
         expect(currentMetric.periods[10].value).to.equal(6014);
       }).then(done).catch(done);

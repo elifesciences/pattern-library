@@ -224,15 +224,15 @@ class Metrics {
     });
 
     if (this.isLastPage()) {
-      this.$next.style.display = 'none';
+      this.$next.classList.add('hidden');
     } else {
-      this.$next.style.display = 'block';
+      this.$next.classList.remove('hidden');
     }
 
     if (this.isFirstPage()) {
-      this.$prev.style.display = 'none';
+      this.$prev.classList.add('hidden');
     } else {
-      this.$prev.style.display = 'block';
+      this.$prev.classList.remove('hidden');
     }
 
     this.log('Rendering view', $el, data);
