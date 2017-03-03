@@ -9,12 +9,6 @@
   {{#period}}
     data-period="{{period}}"
   {{/period}}
-  {{#daily.id}}
-    data-daily-id="{{daily.id}}"
-  {{/daily.id}}
-  {{#monthly.id}}
-    data-monthly-id="{{monthly.id}}"
-  {{/monthly.id}}
     data-api-endpoint="{{apiEndpoint}}"
 >
   <div class="charts">
@@ -36,12 +30,11 @@
     </p>
   </div>
   <div class="button-collection clearfix">
-    {{#daily.id}}
-      {{#daily}}{{>atoms-button}}{{/daily}}
-    {{/daily.id}}
-
-    {{#monthly.id}}
-      {{#monthly}}{{>atoms-button}}{{/monthly}}
-    {{/monthly.id}}
+    <a href="#" class="button button--outline button--small button-collection__button button-collection__button--active" data-target="daily">
+      Daily
+    </a>
+    <a href="#" class="button button--outline button--small button-collection__button" data-target="monthly">
+      Monthly
+    </a>
   </div>
 </div>

@@ -14,8 +14,8 @@ class Metrics {
     this.type = $el.getAttribute('data-type') || 'article';
     this.selected = $el.getAttribute('data-metric') || 'downloads';
     this.period = $el.getAttribute('data-period') || 'day';
-    this.$dailyButton = $el.querySelector(`#${$el.getAttribute('data-daily-id')}`);
-    this.$monthlyButton = $el.querySelector(`#${$el.getAttribute('data-monthly-id')}`);
+    this.$dailyButton = $el.querySelector('[data-target="daily"]');
+    this.$monthlyButton = $el.querySelector('[data-target="monthly"]');
     this.$prev = $el.querySelector('.trigger--prev');
     this.$next = $el.querySelector('.trigger--next');
     this.availableCharts = ['page-views', 'downloads'];
@@ -125,6 +125,7 @@ class Metrics {
   }
 
   changeMetric(metric, period) {
+    this.$el.classList.add('charts--loading');
     if (this.isLocked) {
       this.log('Finishing in progress requests first');
       return this.lock.then(() => this.changeMetric(metric, period));
@@ -206,6 +207,7 @@ class Metrics {
   }
 
   renderView($el, data) {
+    this.$el.classList.remove('charts--loading');
     this.barChart.updateFromJson({
       data: {
         totalPeriods: data.totalPeriods,
