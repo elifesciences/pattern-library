@@ -6,27 +6,3 @@
 
 // all patterns
 @import "patterns/**/[^_]*.scss";
-
-.list-heading--highlights {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-grow: 1;
-  margin: 0;
-  padding: 0;
-
-  .listing-list__item {
-    display: block;
-    margin: 0;
-    padding: 2px;
-    list-style-type: none;
-    width: 100%;
-
-
-  }
-}
-
-.teaser--highlights {
-  border: 1px solid #cccccc;
-  padding: 10px;
-}
