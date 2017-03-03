@@ -278,7 +278,7 @@ class Metrics {
   }
 
   getJsonPage(page, perView) {
-    return utils.getJson(
+    return utils.loadData(
         this.getEndpoint(
             this.endpoint,
             this.type,

@@ -29,8 +29,8 @@ schema:
       type: string
       minLength: 1
       enum:
-        - daily
-        - monthly
+        - day
+        - month
   required:
     - id
     - type

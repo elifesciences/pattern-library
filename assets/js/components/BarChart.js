@@ -3,7 +3,7 @@
 const Highcharts = require('highcharts');
 
 const MONTHLY_TICK = 3600 * 1000 * 24 * 30;
-const DAILY_TICK = 3600 * 1000 * 24 * 7;
+const WEEKLY_TICK = 3600 * 1000 * 24 * 7;
 
 const defaultOptions = {
   chart: { type: 'column' },
@@ -97,7 +97,7 @@ class BarChart {
       dateRange: {
         [range === 'monthly' ? 'week' : 'day']: '%d/%m/%y'
       },
-      tick: range === 'monthly' ? MONTHLY_TICK : DAILY_TICK
+      tick: range === 'monthly' ? MONTHLY_TICK : WEEKLY_TICK
     };
   }
 

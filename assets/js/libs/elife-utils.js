@@ -113,7 +113,7 @@ module.exports = () => {
    * @param url
    * @returns {Promise}
    */
-  function getJson(url) {
+  function loadData(url) {
     return new Promise(
         function resolver(resolve, reject) {
           let xhr = new XMLHttpRequest();
@@ -349,9 +349,9 @@ module.exports = () => {
     defer: defer,
     extend: extend,
     flatten: flatten,
-    getJson: getJson,
     invertPxString: invertPxString,
     isHighDpr: isHighDpr,
+    loadData: loadData,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
   };
