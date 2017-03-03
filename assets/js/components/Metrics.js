@@ -246,7 +246,7 @@ class Metrics {
     }
 
     if (this.isLocked) {
-      console.warn('Request already in progress');
+      this.log('Request already in progress');
       this.lock = this.lock.then(function () {
         this.loadMore();
       }.bind(this));
