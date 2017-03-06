@@ -1,5 +1,8 @@
 'use strict';
 
+// Babel polyfill
+require('babel-polyfill');
+
 // Base level of feature support needed for the js loaded in this file.
 // Consider AJAXing in the rest if the test passes.
 if (window.localStorage && document.querySelector &&

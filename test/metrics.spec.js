@@ -1,5 +1,9 @@
 const expect = chai.expect;
 
+// Babel polyfill
+require('../node_modules/babel-polyfill');
+
+// Metrics module
 const Metrics = require('../assets/js/components/Metrics');
 
 function assertSvgContainerText(svg, text) {
@@ -110,7 +114,6 @@ describe('Metrics integration', function () {
       assertSvgContainerText(svg, 'Page Views');
       assertSvgDoesNotContainText(svg, 'Downloads');
     });
-
   });
 
 });
