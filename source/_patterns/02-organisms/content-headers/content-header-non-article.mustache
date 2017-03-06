@@ -10,6 +10,13 @@
   {{#hasProfile}}
     <div class="content-header__top">
       <a class="content-header__top_info" href="{{{profile.link}}}">
+        {{#profile.image}}
+          {{! ALT null as it is unnecessary }}
+          <img src="{{defaultPath}}"
+               alt="" {{#srcset}}
+               srcset="{{srcset}}"{{/srcset}}
+               class="content-header__top_image" />
+        {{/profile.image}}
         <dl>
           <dt class="content-header__top_label">Curated by</dt>
           <dd class="content-header__top_data">{{profile.name}}</dd>

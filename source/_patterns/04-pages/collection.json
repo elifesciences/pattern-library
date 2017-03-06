@@ -166,9 +166,10 @@
     "profile": {
       "name": "Prabhat Jha",
       "url": "#",
-      "avatar": {
-        "x1": "./assets/img/avatars/pjha1.png",
-        "x2": "./assets/img/avatars/pjha2.png"
+      "image": {
+        "srcset": "../../assets/img/fixtures/pjha2x.png",
+        "defaultPath": "../../assets/img/fixtures/pjha1x.png",
+        "altText": false
       }
     },
     "hasCtaOrMeta": true,
