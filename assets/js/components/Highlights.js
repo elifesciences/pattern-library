@@ -30,8 +30,6 @@ module.exports = class Highlights {
     body.addEventListener('keyup', this.checkTabPress.bind(this));
   }
 
-
-
   checkTabPress(e) {
 
     e = e || {};
