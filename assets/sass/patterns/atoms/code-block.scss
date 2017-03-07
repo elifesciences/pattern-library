@@ -1,0 +1,19 @@
+.code {
+  @include mono-typeg;
+  background-color: $color-text-ui-code;
+  border: 1px solid $color-text-dividers;
+  border-radius: 3px;
+  color: $color-text;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.code kbd,
+.code samp,
+.code pre {
+  white-space: pre-wrap;
+}
+
+.code--block {
+  padding: 12px;
+}

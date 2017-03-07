@@ -414,3 +414,9 @@
   @include small-typeg();
   line-height: 1.5;
 }
+
+@mixin mono-typeg() {
+  font-family: $font-mono;
+  @include font-size(14);
+  line-height: 1.5;
+}

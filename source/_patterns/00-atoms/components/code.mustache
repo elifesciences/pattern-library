@@ -1,0 +1,9 @@
+{{#isInline}}
+  <span class="code">{{#inlineTag}}<{{inlineTag}}>{{/inlineTag}}{{{code}}}{{#inlineTag}}</{{inlineTag}}>{{/inlineTag}}</span>
+{{/isInline}}
+
+{{^isInline}}
+  <div class="code code--block">
+    <code>{{{code}}}</code>
+  </div>
+{{/isInline}}
