@@ -167,7 +167,7 @@
       "name": "Prabhat Jha",
       "url": "#",
       "image": {
-        "srcset": "../../assets/img/fixtures/pjha2x.png",
+        "srcset": "../../assets/img/fixtures/pjha2x.png 40w",
         "defaultPath": "../../assets/img/fixtures/pjha1x.png",
         "altText": false
       }
