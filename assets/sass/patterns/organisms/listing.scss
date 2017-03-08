@@ -117,14 +117,18 @@ div.listing-list__content {
       list-style-type: none;
       @include margin(0 20 10);
       vertical-align: top;
-      width: calc(100% - 40px);
+
+      /* Width of each element is 100% divided by the amount of elements shown in
+         a single view, minus 40px for the margins.
+      */
+      width: calc(100% - 40px); // 1 in view (1/1)
 
       @media (min-width: #{get-rem-from-px(640)}rem) {
-        width: calc(50% - 40px);
+        width: calc(50% - 40px); // 2 in view (1/2)
       }
 
       @media (min-width: #{get-rem-from-px(980)}rem) {
-        width: calc(33.333% - 40px);
+        width: calc(33.33333% - 40px); // 3 in view (1/3)
       }
     }
   }
