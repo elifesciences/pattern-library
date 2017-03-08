@@ -1,5 +1,8 @@
 'use strict';
 
+// Babel polyfill
+require('babel-polyfill');
+
 // Base level of feature support needed for the js loaded in this file.
 // Consider AJAXing in the rest if the test passes.
 if (window.localStorage && document.querySelector &&
@@ -21,6 +24,7 @@ if (window.localStorage && document.querySelector &&
   Components.MainMenu = require('./components/MainMenu');
   Components.Math = require('./components/Math');
   Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
+  Components.Metrics = require('./components/Metrics');
   Components.Pager = require('./components/Pager');
   Components.SearchBox = require('./components/SearchBox');
   Components.SectionListingLink = require('./components/SectionListingLink');
