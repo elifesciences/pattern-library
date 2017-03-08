@@ -6,14 +6,8 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    isInline:
-      type: boolean
-    tag:
-      type: string
-        minLength: 1
       code:
         type: string
         minLength: 1
   required:
-    - tag
     - code

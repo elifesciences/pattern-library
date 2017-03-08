@@ -416,7 +416,7 @@
 }
 
 @mixin mono-typeg() {
-  font-family: $font-mono;
+  font-family: $font-monospace;
   @include font-size(14);
   line-height: 1.5;
 }

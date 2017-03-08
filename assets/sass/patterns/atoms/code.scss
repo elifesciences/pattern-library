@@ -2,6 +2,8 @@
 
 .code {
   @include mono-typeg;
+  @include margin(24, "bottom");
+  @include padding(12);
   background-color: $color-text-ui-code;
   border: 1px solid $color-text-dividers;
   border-radius: 3px;
@@ -10,14 +12,6 @@
   overflow-wrap: break-word;
 }
 
-.code code,
-.code kbd,
-.code samp,
-.code pre {
+.code code {
   white-space: pre-wrap;
-}
-
-.code--block {
-  @include margin(24, "bottom");
-  @include padding(12);
 }
