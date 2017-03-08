@@ -1,6 +1,7 @@
 @import "../../definitions";
 
 $highlightsSpacing: $blg-space-small-in-px !default;
+$controlMagicSpacing: 6; // Magic number for vertical spacing of the icon, roughly (icon height - container / 2)
 
 .highlights__controls {
   display: none;
@@ -27,7 +28,7 @@ $highlightsSpacing: $blg-space-small-in-px !default;
     line-height: 1;
     position: absolute;
     text-align: center;
-    top: calc(50% - 13px); // height of .list-heading divided by 2
+    top: calc(50% - #{$controlMagicSpacing}px);
     @include width($highlightsSpacing);
   }
 

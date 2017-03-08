@@ -16,15 +16,15 @@ module.exports = class Highlights {
     this.desktopWidth = 980;
     this.currentSlide = 1;
     this.timerInterval = 10000;
-    this.$prevBtn = $elm.querySelector('.trigger--prev');
-    this.$nextBtn = $elm.querySelector('.trigger--next');
+    this.$prevBtn = $elm.querySelector('.highlights__control--prev');
+    this.$nextBtn = $elm.querySelector('.highlights__control--next');
     this.$prevBtn.addEventListener('click', this.previousButton.bind(this));
     this.$nextBtn.addEventListener('click', this.nextButton.bind(this));
     this.moveableStage = this.$elm.querySelector('.listing-list--highlights');
     this.originalSlideWrappers = this.moveableStage.querySelectorAll('.listing-list__item');
-    this.numSlides = this.moveableStage.querySelectorAll('.listing-list__item').length;
+    this.numSlides = this.originalSlideWrappers.length;
     this.switchBreakpoint();
-    this.window.addEventListener('resize', utils.debounce(() => this.switchBreakpoint(), 1000));
+    this.window.addEventListener('resize', utils.debounce(() => this.switchBreakpoint(), 150));
 
     let body = document.querySelector('body');
     body.addEventListener('keyup', this.checkTabPress.bind(this));
@@ -101,8 +101,6 @@ module.exports = class Highlights {
   switchBreakpoint() {
     utils.equalizeHeightOfItems('listing-list--highlights', 'teaser__header');
 
-    this.resetStage();
-
     if (this.viewportNoWiderThan(this.tabletWidth)) {
 
       this.inView = 1;
@@ -119,6 +117,7 @@ module.exports = class Highlights {
       this.maxOffset = this.numSlides - 2;
     }
 
+    this.resetStage();
     this.adjustTranslateForResize();
   }
 
