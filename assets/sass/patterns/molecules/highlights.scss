@@ -1,7 +1,42 @@
-.js .highlights {
-  position: relative;
+@import "../../definitions";
+
+$highlightsSpacing: $blg-space-small-in-px !default;
+
+.highlights__controls {
+  display: none;
 }
 
-.js .highlights .highlights__content {
-  overflow: hidden;
+.js {
+
+  .highlights {
+    position: relative;
+  }
+
+  .highlights__content {
+    overflow: hidden;
+  }
+
+  .highlights__controls {
+    display: block;
+    margin: 0;
+  }
+
+  .highlights__control {
+    display: inline-block;
+    @include height($highlightsSpacing);
+    line-height: 1;
+    position: absolute;
+    text-align: center;
+    top: calc(50% - 13px); // height of .list-heading divided by 2
+    @include width($highlightsSpacing);
+  }
+
+  .highlights__control--prev {
+    left: #{-$highlightsSpacing}px;
+  }
+
+  .highlights__control--next {
+    position: absolute;
+    right: #{-$highlightsSpacing}px;
+  }
 }

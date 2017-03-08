@@ -7,16 +7,26 @@
   {{/highlights}}
 
   <ol class="listing-list {{#highlights}}listing-list--highlights{{/highlights}}"{{#id}} id="{{id}}"{{/id}}>
-    {{#items}}<li class="listing-list__item">{{> molecules-teaser }}</li>{{/items}}{{#seeMoreLink}}
+    {{#items}}
+      <li class="listing-list__item">{{> molecules-teaser }}</li>{{/items}}{{#seeMoreLink}}
     <li class="listing-list__item">{{> atoms-see-more-link}}</li>{{/seeMoreLink}}
   </ol>
 
   {{#highlights}}
   </div>
-    <p class="highlights__controls trigger-collection">
-      <span class="visuallyhidden">Highlights controls:</span> <a id="trigger-prev" class="trigger trigger--prev"
-                                                                  href="#">{{#prev}}{{>atoms-picture}}{{/prev}}</a> <a
-        id="trigger-next" class="trigger trigger--next" href="#">{{#next}}{{>atoms-picture}}{{/next}}</a>
+    <p class="highlights__controls">
+      <span class="visuallyhidden">Highlights controls:</span>
+      <a id="trigger-prev"
+         class="highlights__control highlights__control--prev"
+         href="#">
+        {{#prev}}{{>atoms-picture}}{{/prev}}
+      </a>
+      <a
+          id="trigger-next"
+          class="highlights__control highlights__control--next"
+          href="#">
+        {{#next}}{{>atoms-picture}}{{/next}}
+      </a>
     </p>
   </div>
   {{/highlights}}
