@@ -45,13 +45,13 @@ a.reference__authors_link:hover {
   @include listing-detail();
   padding-bottom: 0;
 
-  & a {
-    color: $color-primary;
+  a {
+    color: $color-text;
     text-decoration: none;
 
     &:hover,
     &:active {
-      color: $color-primary-dark;
+      color: $color-primary;
     }
 
   }

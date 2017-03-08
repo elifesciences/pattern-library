@@ -40,16 +40,16 @@
   @include padding(1, "left");
 }
 
-.nav-primary a:link,
-.nav-primary a:hover,
-.nav-primary a:active,
-.nav-primary a:visited {
+.nav-primary__item a:link,
+.nav-primary__item a:hover,
+.nav-primary__item a:active,
+.nav-primary__item a:visited {
   color: #212121;
   text-decoration: none;
 }
 
-.nav-primary a:hover,
-.nav-primary a:active {
+.nav-primary__item a:hover,
+.nav-primary__item a:active {
   color: $color-primary;
 }
 

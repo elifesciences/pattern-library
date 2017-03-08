@@ -41,12 +41,56 @@ h6 {
   @include h6-spacing();
 }
 
+hr {
+  @include margin(0 0 15 0);
+}
+
 p {
   @include body-para();
 }
 
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+abbr,
+acronym {
+  cursor: help;
+}
+
 .underline {
   text-decoration: underline;
+}
+
+blockquote,
+blockquote p {
+  font-family: $font-secondary;
+  @include font-size(24);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+blockquote {
+  margin-top: 0;
+}
+
+blockquote cite {
+  color: $color-text-placeholder;
+  font-family: $font-primary;
+  @include font-size(14);
+  font-style: italic;
+  line-height: 1.3;
+}
+
+pre {
+  font-family: $font-monospace;
+  line-height: 1.5;
+  @include margin(0 0 15 0);
 }
 
 .monospace {
@@ -107,6 +151,9 @@ ol {
   @include margin(24, "bottom");
   margin-top: 0;
   @include padding(48, "left");
+  ul, ol {
+    margin: 0;
+  }
 }
 
 dl {
