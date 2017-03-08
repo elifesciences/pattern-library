@@ -1,51 +1,69 @@
 @import "../../definitions";
 
 .info-bar {
+  background-color: $color-information;
+  color: $color-text--reverse;
   font-family: $font-secondary;
   @include font-size(14);
   font-weight: 600;
   @include padding(14 8);
   text-align: center;
+
+  a {
+    color: inherit;
+  }
 }
 
 .info-bar__text {
+  background-position: 0 50%;
+  background-repeat: no-repeat;
   display: inline-block;
   @include padding(2 0 0 28);
   line-height: 1.3;
 }
 
 .info-bar--info {
-  background-color: $color-information;
-  color: $color-text--reverse;
+
+  .info-bar__text {
+    background-image: url("../img/icons/info.png");
+    background-image: url("../img/icons/info.svg"), linear-gradient(transparent, transparent);
+  }
 }
 
-.info-bar__text--info {
-  background: url("../img/icons/info.png");
-  background: url("../img/icons/info.svg"), linear-gradient(transparent, transparent);
-  background-position: 0 50%;
-  background-repeat: no-repeat;
+.info-bar--multiple-versions {
+  background-color: $color-information;
+
+  .info-bar__text {
+    background-image: url("../img/icons/multiple-versions-article.png");
+    background-image: url("../img/icons/multiple-versions-article.svg"), linear-gradient(transparent, transparent);
+    background-size: 17px;
+  }
 }
 
 .info-bar--success {
   background-color: $color-success;
-  color: $color-text--reverse;
-}
 
-.info-bar__text--success {
-  background: url("../img/icons/confirmed.png");
-  background: url("../img/icons/confirmed.svg"), linear-gradient(transparent, transparent);
-  background-position: 0 50%;
-  background-repeat: no-repeat;
+  .info-bar__text {
+    background-image: url("../img/icons/confirmed.png");
+    background-image: url("../img/icons/confirmed.svg"), linear-gradient(transparent, transparent);
+  }
 }
 
 .info-bar--attention {
   background-color: $color-attention;
-  color: $color-text--reverse;
+
+  .info-bar__text {
+    background-image: url("../img/icons/attention.png");
+    background-image: url("../img/icons/attention.svg"), linear-gradient(transparent, transparent);
+  }
 }
 
-.info-bar__text--attention {
-  background: url("../img/icons/attention.png");
-  background: url("../img/icons/attention.svg"), linear-gradient(transparent, transparent);
-  background-position: 0 50%;
-  background-repeat: no-repeat;
+.info-bar--correction {
+  background-color: $color-attention;
+
+  .info-bar__text {
+    background-image: url("../img/icons/corrected-article.png");
+    background-image: url("../img/icons/corrected-article.svg"), linear-gradient(transparent, transparent);
+    background-size: 17px;
+  }
 }

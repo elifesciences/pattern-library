@@ -25,6 +25,11 @@
   text-align: center;
 }
 
+.content-header__title_link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .content-header__title {
   @include h1-typeg();
   margin-top: 0;
@@ -94,6 +99,10 @@
 
 li.content-header__author_list_item:last-of-type .content-header__author:after {
   content: "";
+}
+
+.content-header__author--single {
+  @include author-typeg();
 }
 
 // FIX: This must only apply when authors are collapsed & so there's a read more.

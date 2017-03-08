@@ -13,10 +13,9 @@ module.exports = class SectionListingLink {
     this.thresholdWidth = 740;
     this.$elm = $elm;
     this.doc = doc;
-    this.$list = this.doc.querySelector(SectionListingLink.findIdSelector($elm.href));
+    this.$list = this.doc.querySelector(SectionListingLink.findIdSelector(this.$elm.href));
     this.$theListParent = this.$list.parentNode;
     this.$theElmParent = $elm.parentNode;
-    this.$theListing = this.doc.getElementById('sectionsListing');
     this.displayBreakpoint();
 
     this.isMobile = null;
@@ -60,7 +59,7 @@ module.exports = class SectionListingLink {
     }
 
     this.isMobile = true;
-    this.$theListParent.appendChild(this.$theListing);
+    this.$theListParent.appendChild(this.$list);
 
   }
 
@@ -71,7 +70,7 @@ module.exports = class SectionListingLink {
     }
 
     this.isMobile = false;
-    this.$theElmParent.appendChild(this.$theListing);
+    this.$theElmParent.appendChild(this.$list);
 
   }
 
