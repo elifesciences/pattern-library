@@ -300,14 +300,53 @@ module.exports = () => {
     }
   }
 
+  /**
+   * Closest parent
+   * Source: https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+   * @param el
+   * @param s
+   * @returns {*}
+   */
+  function closest(el, s) {
+    const matches = (el.document || el.ownerDocument).querySelectorAll(s);
+    let i;
+    do {
+      i = matches.length;
+      while (--i >= 0 && matches.item(i) !== el) {}
+
+    } while ((i < 0) && (el = el.parentElement));
+
+    return el;
+  }
+
+  /**
+   * Given an element it will return the sibling number it is.
+   * @param $child
+   * @returns {number}
+   */
+  function nthChild($child) {
+    let siblings = 0;
+    while ($child !== null) {
+      if ($child.nodeType !== 8) {
+        siblings++;
+      }
+
+      $child = $child.previousSibling;
+    }
+
+    return siblings;
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     buildElement: buildElement,
+    closest: closest,
     debounce: debounce,
     equalizeHeightOfItems: equalizeHeightOfItems,
     invertPxString: invertPxString,
     isHighDpr: isHighDpr,
+    nthChild: nthChild,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
   };

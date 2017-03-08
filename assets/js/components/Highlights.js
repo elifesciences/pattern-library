@@ -14,7 +14,7 @@ module.exports = class Highlights {
     this.doc = doc;
     this.tabletWidth = 640;
     this.desktopWidth = 980;
-    this.currentSlide = 1;
+    this.setCurrentSlide(1);
     this.timerInterval = 10000;
     this.$prevBtn = $elm.querySelector('.highlights__control--prev');
     this.$nextBtn = $elm.querySelector('.highlights__control--next');
@@ -27,38 +27,41 @@ module.exports = class Highlights {
     this.window.addEventListener('resize', utils.debounce(() => this.switchBreakpoint(), 150));
 
     let body = document.querySelector('body');
-    body.addEventListener('keyup', this.checkTabPress.bind(this));
+    this.$elm.addEventListener('keyup', this.checkTabPress.bind(this));
+  }
+
+  setCurrentSlide(num) {
+    this.currentSlide = num > this.maxOffset ? this.maxOffset : num;
   }
 
   checkTabPress(e) {
 
-    e = e || {};
-    let activeElement;
+    // Key code 9 is tab key.
+    if (e && e.keyCode === 9) {
 
-    if (e.keyCode === 9) {
+      // Closest list item.
+      const parentNode = utils.closest(document.activeElement, '.listing-list__item');
 
-      activeElement = document.activeElement;
+      // If we found that list item
+      if (parentNode) {
 
-      if (activeElement.tagName.toLowerCase() === 'a'
-          && activeElement.classList.contains('teaser__header_text_link')
-      ) {
+        // The current slide is the nth list item (-1) taking into account the a tag at the top.
+        this.setCurrentSlide(
+            utils.nthChild(
+                parentNode
+            ) - 1
+        );
 
-        if (this.currentSlide === 1) {
-          this.resetStage();
-        }
-
-        if (this.currentSlide < this.maxOffset) {
-
-          this.currentSlide = parseInt(activeElement.getAttribute('data-slide'), 10);
-          this.adjustTranslateForResize();
-        }
-
+        // Render the view again.
+        this.renderCurrent();
       }
+
     }
+
   }
 
   isFirstSlide() {
-    return this.currentSlide <= 1;
+    return this.currentSlide === 1;
   }
 
   isLastSlide() {
@@ -70,8 +73,8 @@ module.exports = class Highlights {
       return null;
     }
 
-    this.currentSlide = this.currentSlide - 1;
-    this.adjustTranslateForResize();
+    this.setCurrentSlide(this.currentSlide - 1);
+    this.renderCurrent();
   }
 
   nextButton() {
@@ -79,74 +82,75 @@ module.exports = class Highlights {
       return null;
     }
 
-    this.currentSlide = this.currentSlide + 1;
-    this.adjustTranslateForResize();
+    this.setCurrentSlide(this.currentSlide + 1);
+    this.renderCurrent();
   }
 
   viewportNoWiderThan(thresholdInPx) {
     return this.window.matchMedia('(max-width: ' + thresholdInPx + 'px)').matches;
   }
 
-  resetStage() {
-    this.moveableStage.style.transform = 'translate(0px, 0)';
-    this.currentSlide = 1;
+  onMobile() {
+    return this.viewportNoWiderThan(this.tabletWidth);
+  }
 
-    if (this.inView && this.numSlides > 3) {
-      this.$prevBtn.style.display = 'none';
-      this.$nextBtn.style.display = 'block';
-    }
-
+  onTabletOrMobile() {
+    return this.viewportNoWiderThan(this.desktopWidth);
   }
 
   switchBreakpoint() {
-    utils.equalizeHeightOfItems('listing-list--highlights', 'teaser__header');
-
-    if (this.viewportNoWiderThan(this.tabletWidth)) {
-
+    if (this.onMobile()) {
       this.inView = 1;
-      this.maxOffset = this.numSlides;
-
-    } else if (this.viewportNoWiderThan(this.desktopWidth)) {
-
+    } else if (this.onTabletOrMobile()) {
       this.inView = 2;
-      this.maxOffset = this.numSlides - 1;
-
     } else {
-
       this.inView = 3;
-      this.maxOffset = this.numSlides - 2;
     }
 
-    this.resetStage();
-    this.adjustTranslateForResize();
+    // Which page is the last page?
+    this.maxOffset = this.numSlides - (this.inView - 1);
+
+    // Update some things.
+    this.carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9\.]+)px/)[1];
+    this.setCurrentSlide(this.currentSlide);
+
+    // Render view.
+    this.renderCurrent();
+
+    // Equalise heights.
+    utils.equalizeHeightOfItems('listing-list--highlights', 'teaser__header');
   }
 
-  adjustTranslateForResize() {
+  renderCurrent() {
+    this.render(
+        this.$elm,
+        this.$nextBtn,
+        this.$prevBtn,
+        this.currentSlide,
+        this.carouselWidth,
+        this.inView
+    );
+  }
+
+  render($el, $nextButton, $prevButton, thisSlide, carouselWidth, inView) {
     if (this.isFirstSlide()) {
-      this.$prevBtn.style.display = 'none';
+      $prevButton.classList.add('hidden');
     } else {
-      this.$prevBtn.style.display = 'block';
+      $prevButton.classList.remove('hidden');
     }
 
     if (this.isLastSlide()) {
-      this.$nextBtn.style.display = 'none';
+      $nextButton.classList.add('hidden');
     } else {
-      this.$nextBtn.style.display = 'block';
+      $nextButton.classList.remove('hidden');
     }
 
-    this.goToSlide(this.currentSlide);
-  }
-
-  goToSlide(thisSlide) {
     const margin = 40;
-    const numOfMargins = this.inView - 1;
+    const numOfMargins = inView - 1;
     const totalMargins = numOfMargins * margin;
 
-    // Width of carousel container
-    const carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9\.]+)px/)[1];
-
     // Slide width = Carousel width - margins / number in view
-    const slideWidth = (carouselWidth - totalMargins) / this.inView;
+    const slideWidth = (carouselWidth - totalMargins) / inView;
 
     // Slide offset = Slide width plus margin
     const slideOffset = slideWidth + margin;
@@ -158,7 +162,7 @@ module.exports = class Highlights {
     this.moveableStage.style.transform = 'translate(' + nudge + 'px, 0)';
 
     // Reset any scroll lefts
-    this.$elm.scrollLeft = 0;
+    $el.scrollLeft = 0;
   }
 
 };

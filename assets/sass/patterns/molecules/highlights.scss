@@ -23,7 +23,6 @@ $controlMagicSpacing: 6; // Magic number for vertical spacing of the icon, rough
   }
 
   .highlights__control {
-    display: inline-block;
     @include height($highlightsSpacing);
     line-height: 1;
     position: absolute;
