@@ -1,5 +1,5 @@
 {
   "isInline": true,
-  "inlineTag": "kbd",
+  "tag": "kbd",
   "code": "<t>T</t>"
 }
