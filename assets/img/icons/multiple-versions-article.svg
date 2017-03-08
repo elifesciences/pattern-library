@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>multiple-versions-article</title>
+    <desc>Icon indicating this article has multiple versions.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-155.000000, -107.000000)">
+            <g id="multiple-versions-article" transform="translate(155.000000, 106.000000)">
+                <polygon id="Shape" points="3 0 27 0 27 24 3 24"></polygon>
+                <path d="M6,5 L4,5 L4,21 C4,22.1 4.9,23 6,23 L22,23 L22,21 L6,21 L6,5 Z M2,9 L0,9 L0,25 C0,26.1 0.9,27 2,27 L18,27 L18,25 L2,25 L2,9 Z M24,1 L10,1 C8.9,1 8,1.9 8,3 L8,17 C8,18.1 8.9,19 10,19 L24,19 C25.1,19 26,18.1 26,17 L26,3 C26,1.9 25.1,1 24,1 Z M24,17 L10,17 L10,3 L24,3 L24,17 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+assets:
+  css:
+    - listing.css
+    - $ref: ../../02-organisms/content-headers/content-header-read-more.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    item:
+      $ref: ../../02-organisms/content-headers/content-header-read-more.yaml#/schema
+    content:
+      type: string
+  required:
+    - item

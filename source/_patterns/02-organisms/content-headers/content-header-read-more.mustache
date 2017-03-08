@@ -1,0 +1,38 @@
+<header class="content-header
+               content-header-article content-header-article-research content-header-article-research--readmore"
+        {{#behaviour}}data-behaviour="{{behaviour}}"{{/behaviour}}
+  {{#backgroundImage}}
+    {{#thresholdWidth}}data-threshold-width="{{thresholdWidth}}"{{/thresholdWidth}}
+        data-low-res-image-source="{{lowResImageSource}}"
+        data-high-res-image-source="{{highResImageSource}}"
+  {{/backgroundImage}}>
+
+  <div class="content-header_top">
+
+    {{#subjects}}
+      <ol class="content-header__subject_list">
+        {{#subjects.list}}
+          <li class="content-header__subject_list_item">
+            <span class="content-header__subject">{{name}}</span>
+          </li>
+        {{/subjects.list}}
+      </ol>
+    {{/subjects}}
+  </div>
+    <h1 class="content-header__title {{titleClass}}">
+      <a class="content-header__title_link" href="{{url}}">{{{title}}}</a>
+    </h1>
+
+  {{#strapline}}
+    <div class="content-header__strapline">{{{strapline}}}</div>
+  {{/strapline}}
+
+  {{#authorLine}}
+      <div class="content-header__author content-header__author--single">{{authorLine}}</div>
+  {{/authorLine}}
+
+  {{#meta}}
+    {{> molecules-meta}}
+  {{/meta}}
+</header>
+<div class="content-header-divider"></div>

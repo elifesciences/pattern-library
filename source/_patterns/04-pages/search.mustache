@@ -1,0 +1,65 @@
+<div class="global-wrapper">
+
+  <div class="global-inner">
+
+    {{#siteHeader}}
+      {{> organisms-site-header }}
+    {{/siteHeader}}
+
+    <main role="main">
+
+      {{#pageSearchBox}}
+        {{> molecules-search-box}}
+      {{/pageSearchBox}}
+
+      <div class="wrapper u-pad-top-lg">
+
+        <div class="grid">
+
+          <div class="listing-column-container">
+
+            <div class="grid__item large--eight-twelfths">
+
+              {{#sortControl}}
+                {{> molecules-sort-control}}
+              {{/sortControl}}
+              {{#messageBar}}
+                {{> atoms-message-bar}}
+              {{/messageBar}}
+
+              {{#mainTeasers}}
+                {{> organisms-listing-teasers}}
+              {{/mainTeasers}}
+
+              {{#pager}}
+                {{> molecules-pager}}
+              {{/pager}}
+
+            </div>
+
+            <div class="grid__item large--four-twelfths listing-column-secondary">
+
+              {{#filterPanel}}
+                {{> organisms-filter-panel}}
+              {{/filterPanel}}
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    {{#emailCta}}
+      {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+
+  </div>
+
+</div>

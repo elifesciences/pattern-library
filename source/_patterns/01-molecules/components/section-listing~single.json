@@ -1,12 +1,12 @@
 {
   "id": "sectionListing",
   "labelledBy": "theIdOfSectionListing",
-  "single-line": true,
+  "singleLine": true,
   "sections": [
     {
       "url": "#",
       "name": "What we publish",
-      "is-current": true
+      "isCurrent": true
     },
     {
       "url": "#",
