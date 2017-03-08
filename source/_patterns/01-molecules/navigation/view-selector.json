@@ -1,7 +1,7 @@
 {
   "pages": [
     { "title": "article", "url": "#article", "isActive": true },
-    { "title" : "figures", "url": "#figures" }
+    { "title" : "figures", "url": "#figures", "isActive": false }
   ],
   "sideBySideUrl": "#sideBySide",
   "jumpLinks": {
