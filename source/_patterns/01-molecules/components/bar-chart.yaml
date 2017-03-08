@@ -1,6 +1,9 @@
 assets:
   css:
-    - captioned-asset.css
+    - button-collection.css
+    - chart.css
+    - tooltip.css
+    - triggers.css
     - $ref: ../../00-atoms/components/button.yaml#/assets/css
   js: []
 schema:
