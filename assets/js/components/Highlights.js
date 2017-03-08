@@ -68,7 +68,10 @@ module.exports = class Highlights {
     return this.currentSlide === this.maxOffset;
   }
 
-  previousButton() {
+  previousButton(e) {
+    e.preventDefault();
+
+    // Nope out early.
     if (this.isFirstSlide()) {
       return null;
     }
@@ -77,7 +80,10 @@ module.exports = class Highlights {
     this.renderCurrent();
   }
 
-  nextButton() {
+  nextButton(e) {
+    e.preventDefault();
+
+    // Nope out early.
     if (this.isLastSlide()) {
       return null;
     }
@@ -159,7 +165,7 @@ module.exports = class Highlights {
     const nudge = slideOffset * (thisSlide - 1) * -1;
 
     // Transform
-    this.moveableStage.style.transform = 'translate(' + nudge + 'px, 0)';
+    utils.updateElementTranslate(this.moveableStage, [nudge, 0]);
 
     // Reset any scroll lefts
     $el.scrollLeft = 0;

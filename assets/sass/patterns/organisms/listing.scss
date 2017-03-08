@@ -1,5 +1,8 @@
 @import "../../definitions";
 
+$showTwoAtWidth: #{get-rem-from-px(640)}rem;
+$showThreeAtWidth: #{get-rem-from-px(980)}rem;
+
 /* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
  *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
  */
@@ -119,15 +122,15 @@ div.listing-list__content {
       vertical-align: top;
 
       /* Width of each element is 100% divided by the amount of elements shown in
-         a single view, minus 40px for the margins.
-      */
+       * a single view, minus 40px for the margins.
+       */
       width: calc(100% - 40px); // 1 in view (1/1)
 
-      @media (min-width: #{get-rem-from-px(640)}rem) {
+      @media only all and (min-width: $showTwoAtWidth) {
         width: calc(50% - 40px); // 2 in view (1/2)
       }
 
-      @media (min-width: #{get-rem-from-px(980)}rem) {
+      @media only all and (min-width: $showThreeAtWidth) {
         width: calc(33.33333% - 40px); // 3 in view (1/3)
       }
     }

@@ -285,35 +285,32 @@ module.exports = () => {
   }
 
   /**
-   * equalizeHighlightedItems
-   *
+   * Makes all elements in container the same height.
    */
-
   function equalizeHeightOfItems(containerClass, targetClass) {
 
     let containerElements = document.getElementsByClassName(containerClass);
 
     for (let i = 0; i < containerElements.length; i += 1) {
 
-      let highestElement = 0;
-
+      let tallestElement = 0;
       let targetElements = containerElements[i].getElementsByClassName(targetClass);
 
       for (let j = 0; j < targetElements.length; j += 1) {
 
         let currentTargetElement = targetElements[j];
 
-        currentTargetElement.style.height = 'auto';
+        currentTargetElement.style.height = 'auto'; // paint
 
         let currentElementHeight = currentTargetElement.offsetHeight;
 
-        if (currentElementHeight > highestElement) {
-          highestElement = currentElementHeight;
+        if (currentElementHeight > tallestElement) {
+          tallestElement = currentElementHeight;
         }
       }
 
       for (let j = 0; j < targetElements.length; j += 1) {
-        targetElements[j].style.height = highestElement + 'px';
+        targetElements[j].style.height = tallestElement + 'px'; // paint
       }
 
     }
