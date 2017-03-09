@@ -6,10 +6,9 @@
   @include padding(12);
   background-color: $color-text-ui-code;
   border: 1px solid $color-text-dividers;
-  border-radius: 3px;
+  border-radius: #{$border-radius}px;
   color: $color-text;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  overflow-x: scroll;
 }
 
 .code code {
