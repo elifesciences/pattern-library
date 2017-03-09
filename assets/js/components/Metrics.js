@@ -66,9 +66,7 @@ class Metrics {
     }
 
     // Select the current metric.
-    this.updateSelectedMetric(function (m) {
-      return utils.extend(m, { selected: true });
-    });
+    this.updateSelectedMetric(m => utils.extend(m, { selected: true }));
 
     // Register event to call this method.
     this.loadMore().then(function () {
@@ -108,17 +106,13 @@ class Metrics {
     this.$el.classList.add('charts--loading');
     this.loadMore().then(() => {
       this.$el.classList.remove('charts--loading');
-      this.updateSelectedMetric(m => {
-        return utils.extend(m, { viewPage: m.viewPage + 1 });
-      });
+      this.updateSelectedMetric(m => utils.extend(m, { viewPage: m.viewPage + 1 }));
       this.renderView(this.$el, this.getSelectedMetric());
     });
   }
 
   prevButton() {
-    this.updateSelectedMetric(m => {
-      return utils.extend(m, { viewPage: m.viewPage - 1 });
-    });
+    this.updateSelectedMetric(m => utils.extend(m, { viewPage: m.viewPage - 1 }));
     this.renderView(this.$el, this.getSelectedMetric());
   }
 
@@ -204,7 +198,8 @@ class Metrics {
       month = month - 12;
       year++;
     }
-    return { month: parseInt(month), year: parseInt(year) }
+
+    return { month: parseInt(month), year: parseInt(year) };
   }
 
   getJsonPage(page, perView) {
@@ -237,9 +232,11 @@ class Metrics {
       if (page === 1) {
         m.firstMonth = [parseInt(m.periods[0].month), parseInt(m.periods[0].year)];
       }
+
       if (this.periodToTimestamp(m.periods[0]) < this.periodToTimestamp(m.periods[1])) {
         m.reverse = 1;
       }
+
       return m;
     }.bind(this));
   }
@@ -292,11 +289,12 @@ class Metrics {
       ) {
         return true;
       }
+
       return (
           parseInt(d.month) <= firstMonth &&
           parseInt(d.year) === firstMonthYear + viewPage
       );
-    }
+    };
   }
 
   renderView($el, data) {
@@ -337,15 +335,10 @@ class Metrics {
       data: {
         totalPeriods: data.totalPeriods,
         totalValue: data.totalValue,
-        periods: periods.map((entry) => {
-          const period = Date.UTC(
-              parseInt(entry.year),
-              parseInt(entry.month - 1),
-              parseInt(entry.day ? entry.day : 1)
-          );
-          const value = entry.value;
-          return [period, value];
-        })
+        periods: periods.map((entry) => [
+          this.periodToTimestamp(entry),
+          entry.value
+        ])
       },
       range: this.period === 'month' ? 'monthly' : 'daily',
       title: this.period === 'month' ? '(Monthly)' : '(Daily)',
