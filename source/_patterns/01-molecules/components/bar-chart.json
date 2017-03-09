@@ -2,7 +2,8 @@
   "id": "09560",
   "type": "article",
   "containerId": "chart-1",
+  "// apiEndpoint": "http://localhost:1234",
   "apiEndpoint": "http://prod--gateway.elifesciences.org",
   "metric": "downloads",
-  "period": "day"
+  "period": "month"
 }

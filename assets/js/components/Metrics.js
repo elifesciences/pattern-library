@@ -13,14 +13,23 @@ class Metrics {
     this.id = $el.getAttribute('data-id');
     this.type = $el.getAttribute('data-type') || 'article';
     this.selected = $el.getAttribute('data-metric') || 'downloads';
-    this.period = $el.getAttribute('data-period') || 'day';
+    this.period = $el.getAttribute('data-period') || 'month';
     this.$dailyButton = $el.querySelector('[data-target="daily"]');
     this.$monthlyButton = $el.querySelector('[data-target="monthly"]');
-    this.$prev = $el.querySelector('.trigger--prev');
-    this.$next = $el.querySelector('.trigger--next');
+    this.$prev = $el.querySelector('.trigger--next'); // "->" arrow
+    this.$next = $el.querySelector('.trigger--prev'); // "<-" arrow
     this.availableCharts = ['page-views', 'downloads'];
     this.availablePeriods = ['day', 'month'];
     this.currentChart = this.availableCharts.indexOf(this.selected);
+
+    // Set the correct button initially.
+    if (this.period === 'month') {
+      this.$monthlyButton.classList.add('button-collection__button--active');
+      this.$dailyButton.classList.remove('button-collection__button--active');
+    } else {
+      this.$monthlyButton.classList.remove('button-collection__button--active');
+      this.$dailyButton.classList.add('button-collection__button--active');
+    }
 
     // Name each chart in format like "downloads-by-day"
     const availableMetrics = utils.flatten(
@@ -41,7 +50,8 @@ class Metrics {
       remaining: 1,
       periods: [],
       selected: false,
-      loaded: false
+      loaded: false,
+      reverse: -1
     }));
 
     // data-daily-id
@@ -112,20 +122,6 @@ class Metrics {
     this.renderView(this.$el, this.getSelectedMetric());
   }
 
-  previousChart() {
-    if (this.isFirstPage()) {
-      return null;
-    }
-
-    this.currentChart = this.currentChart - 1;
-    this.changeMetric(
-        this.availableCharts[this.currentChart],
-        this.period
-    ).then(() => {
-      this.renderView(this.$el, this.getSelectedMetric());
-    });
-  }
-
   nextChart() {
     if (this.isLastPage()) {
       return null;
@@ -140,8 +136,18 @@ class Metrics {
     });
   }
 
-  getEndpoint(url, type, id, metric, by, perPage, page) {
-    return `${url}/metrics/${type}/${id}/${metric}?by=${by}&per-page=${perPage}&page=${page}`;
+  previousChart() {
+    if (this.isFirstPage()) {
+      return null;
+    }
+
+    this.currentChart = this.currentChart - 1;
+    this.changeMetric(
+        this.availableCharts[this.currentChart],
+        this.period
+    ).then(() => {
+      this.renderView(this.$el, this.getSelectedMetric());
+    });
   }
 
   changeMetric(metric, period) {
@@ -175,8 +181,8 @@ class Metrics {
     return `${this.selected}-by-${this.period}`;
   }
 
-  updateSelectedMetric(fn) {
-    this.metrics = this.metrics.map(m => m.name === this.getSelectedName() ? fn(m) : m);
+  getEndpoint(url, type, id, metric, by, perPage, page) {
+    return `${url}/metrics/${type}/${id}/${metric}?by=${by}&per-page=${perPage}&page=${page}`;
   }
 
   getSelectedMetric() {
@@ -187,6 +193,36 @@ class Metrics {
 
     }
 
+  }
+
+  getNthPage(n, firstMonth, firstMonthYear, direction) {
+    let month = firstMonth;
+    let year = firstMonthYear;
+
+    month = month + ((n - 1) * direction);
+    while (month > 12) {
+      month = month - 12;
+      year++;
+    }
+    return { month: parseInt(month), year: parseInt(year) }
+  }
+
+  getJsonPage(page, perView) {
+    return utils.loadData(
+        this.getEndpoint(
+            this.endpoint,
+            this.type,
+            this.id,
+            this.selected,
+            this.period,
+            perView,
+            page
+        )
+    );
+  }
+
+  updateSelectedMetric(fn) {
+    this.metrics = this.metrics.map(m => m.name === this.getSelectedName() ? fn(m) : m);
   }
 
   saveResults(data, page, remaining) {
@@ -201,8 +237,19 @@ class Metrics {
       if (page === 1) {
         m.firstMonth = [parseInt(m.periods[0].month), parseInt(m.periods[0].year)];
       }
+      if (this.periodToTimestamp(m.periods[0]) < this.periodToTimestamp(m.periods[1])) {
+        m.reverse = 1;
+      }
       return m;
     }.bind(this));
+  }
+
+  periodToTimestamp(entry) {
+    return Date.UTC(
+        parseInt(entry.year),
+        parseInt(entry.month - 1),
+        parseInt(entry.day ? entry.day : 1)
+    );
   }
 
   transformPeriods(periods) {
@@ -229,6 +276,14 @@ class Metrics {
     // console.info('—>', ...args);
   }
 
+  filterPeriod(month, year) {
+    return (d) => parseInt(d.month) === month && parseInt(d.year) === year;
+  }
+
+  filterYearPeriod(year) {
+    return (d) => parseInt(d.year) === year;
+  }
+
   filterMonthPeriod(firstMonth, firstMonthYear, viewPage) {
     return (d) => {
       if (
@@ -247,57 +302,47 @@ class Metrics {
   renderView($el, data) {
     let periods;
     let hasNextPage;
-    if (this.period === 'month') {
 
-      // year worth of months
-      const [firstMonth, firstMonthYear] = data.firstMonth;
-      periods = data.periods.filter(
-          this.filterMonthPeriod(firstMonth, firstMonthYear, data.viewPage)
-      );
-      hasNextPage = (
-          data.periods.filter(
-              this.filterMonthPeriod(firstMonth, firstMonthYear, data.viewPage + 1)
-          ).length > 0
-      );
-    } else {
+    const [firstMonth, firstMonthYear] = data.firstMonth;
 
-      // Month worth of days
-      const [firstMonth, firstMonthYear] = data.firstMonth;
-      periods = data.periods.filter(d => {
-        this.log(
-            firstMonth,
-            firstMonthYear,
-            firstMonth + (data.viewPage - 1),
-            firstMonthYear + Math.floor((data.viewPage - 1) / 12),
-            d.month,
-            d.year,
-            parseInt(d.month) === firstMonth + (data.viewPage - 1),
-            parseInt(d.year) === firstMonthYear + Math.floor((data.viewPage - 1) / 12)
-        );
-        return (
-            parseInt(d.month) === firstMonth + (data.viewPage - 1) &&
-            parseInt(d.year) === firstMonthYear + Math.floor((data.viewPage - 1) / 12)
-        );
-      });
+    const current = this.getNthPage(data.viewPage, firstMonth, firstMonthYear, data.reverse);
+    const next = this.getNthPage(data.viewPage + 1, firstMonth, firstMonthYear, data.reverse);
 
-      hasNextPage = (
-          data.periods.filter(d => {
-            return (
-                parseInt(d.month) === firstMonth + (data.viewPage) &&
-                parseInt(d.year) === firstMonthYear + Math.floor((data.viewPage) / 12)
-            );
-          }).length > 0
-      );
+    // Current page of results.
+    const currentFilter = (
+        this.period === 'day' ?
+            this.filterPeriod(current.month, current.year) :
+            this.filterYearPeriod(firstMonthYear + ((data.viewPage - 1) * data.reverse))
+    );
 
+    // Next page of results.
+    const nextFilter = (
+        this.period === 'day' ?
+            this.filterPeriod(next.month, next.year) :
+            this.filterYearPeriod(firstMonthYear + (data.viewPage * data.reverse))
+    );
+
+    // Filter by each.
+    periods = data.periods.filter(currentFilter);
+    hasNextPage = data.periods.filter(nextFilter).length > 0;
+
+    // Reverse if needed.
+    if (data.reverse === -1) {
+      periods = periods.reverse();
     }
 
+    // Start working on UI.
     this.$el.classList.remove('charts--loading');
     this.barChart.updateFromJson({
       data: {
         totalPeriods: data.totalPeriods,
         totalValue: data.totalValue,
         periods: periods.map((entry) => {
-          const period = Date.UTC(entry.year, entry.month, entry.day ? entry.day : 1);
+          const period = Date.UTC(
+              parseInt(entry.year),
+              parseInt(entry.month - 1),
+              parseInt(entry.day ? entry.day : 1)
+          );
           const value = entry.value;
           return [period, value];
         })
@@ -361,19 +406,6 @@ class Metrics {
         });
   }
 
-  getJsonPage(page, perView) {
-    return utils.loadData(
-        this.getEndpoint(
-            this.endpoint,
-            this.type,
-            this.id,
-            this.selected,
-            this.period,
-            perView,
-            page
-        )
-    );
-  }
 }
 
 module.exports = Metrics;
