@@ -2,10 +2,10 @@
 
 .pager {
   @include margin(12, "bottom");
-}
 
-.button:nth-child(2) {
-  float: right;
+  .button:nth-child(2) {
+    float: right;
+  }
 }
 
 .js .pager__text_wrapper.loading {
