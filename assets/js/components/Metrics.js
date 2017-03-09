@@ -36,6 +36,8 @@ class Metrics {
     this.metrics = availableMetrics.map(metric => ({
       name: metric,
       page: 0,
+      viewPage: 1,
+      firstMonth: null,
       remaining: 1,
       periods: [],
       selected: false,
@@ -43,7 +45,7 @@ class Metrics {
     }));
 
     // data-daily-id
-    this.$prev.addEventListener('click', this.previousButton.bind(this));
+    this.$prev.addEventListener('click', this.prevButton.bind(this));
     this.$next.addEventListener('click', this.nextButton.bind(this));
     if (this.$dailyButton) {
       this.$dailyButton.addEventListener('click', this.changePeriod('day').bind(this));
@@ -92,7 +94,25 @@ class Metrics {
     return this.currentChart >= (this.availableCharts.length - 1);
   }
 
-  previousButton() {
+  nextButton() {
+    this.$el.classList.add('charts--loading');
+    this.loadMore().then(() => {
+      this.$el.classList.remove('charts--loading');
+      this.updateSelectedMetric(m => {
+        return utils.extend(m, { viewPage: m.viewPage + 1 });
+      });
+      this.renderView(this.$el, this.getSelectedMetric());
+    });
+  }
+
+  prevButton() {
+    this.updateSelectedMetric(m => {
+      return utils.extend(m, { viewPage: m.viewPage - 1 });
+    });
+    this.renderView(this.$el, this.getSelectedMetric());
+  }
+
+  previousChart() {
     if (this.isFirstPage()) {
       return null;
     }
@@ -106,7 +126,7 @@ class Metrics {
     });
   }
 
-  nextButton() {
+  nextChart() {
     if (this.isLastPage()) {
       return null;
     }
@@ -178,6 +198,9 @@ class Metrics {
       m.page = page;
       m.loaded = true;
       m.remaining = remaining;
+      if (page === 1) {
+        m.firstMonth = [parseInt(m.periods[0].month), parseInt(m.periods[0].year)];
+      }
       return m;
     }.bind(this));
   }
@@ -206,13 +229,74 @@ class Metrics {
     // console.info('—>', ...args);
   }
 
+  filterMonthPeriod(firstMonth, firstMonthYear, viewPage) {
+    return (d) => {
+      if (
+          parseInt(d.month) >= firstMonth &&
+          parseInt(d.year) === firstMonthYear + (viewPage - 1)
+      ) {
+        return true;
+      }
+      return (
+          parseInt(d.month) <= firstMonth &&
+          parseInt(d.year) === firstMonthYear + viewPage
+      );
+    }
+  }
+
   renderView($el, data) {
+    let periods;
+    let hasNextPage;
+    if (this.period === 'month') {
+
+      // year worth of months
+      const [firstMonth, firstMonthYear] = data.firstMonth;
+      periods = data.periods.filter(
+          this.filterMonthPeriod(firstMonth, firstMonthYear, data.viewPage)
+      );
+      hasNextPage = (
+          data.periods.filter(
+              this.filterMonthPeriod(firstMonth, firstMonthYear, data.viewPage + 1)
+          ).length > 0
+      );
+    } else {
+
+      // Month worth of days
+      const [firstMonth, firstMonthYear] = data.firstMonth;
+      periods = data.periods.filter(d => {
+        this.log(
+            firstMonth,
+            firstMonthYear,
+            firstMonth + (data.viewPage - 1),
+            firstMonthYear + Math.floor((data.viewPage - 1) / 12),
+            d.month,
+            d.year,
+            parseInt(d.month) === firstMonth + (data.viewPage - 1),
+            parseInt(d.year) === firstMonthYear + Math.floor((data.viewPage - 1) / 12)
+        );
+        return (
+            parseInt(d.month) === firstMonth + (data.viewPage - 1) &&
+            parseInt(d.year) === firstMonthYear + Math.floor((data.viewPage - 1) / 12)
+        );
+      });
+
+      hasNextPage = (
+          data.periods.filter(d => {
+            return (
+                parseInt(d.month) === firstMonth + (data.viewPage) &&
+                parseInt(d.year) === firstMonthYear + Math.floor((data.viewPage) / 12)
+            );
+          }).length > 0
+      );
+
+    }
+
     this.$el.classList.remove('charts--loading');
     this.barChart.updateFromJson({
       data: {
         totalPeriods: data.totalPeriods,
         totalValue: data.totalValue,
-        periods: data.periods.map((entry) => {
+        periods: periods.map((entry) => {
           const period = Date.UTC(entry.year, entry.month, entry.day ? entry.day : 1);
           const value = entry.value;
           return [period, value];
@@ -223,13 +307,13 @@ class Metrics {
       label: this.selected === 'downloads' ? 'Downloads' : 'Page Views',
     });
 
-    if (this.isLastPage()) {
+    if (hasNextPage === false) {
       this.$next.classList.add('hidden');
     } else {
       this.$next.classList.remove('hidden');
     }
 
-    if (this.isFirstPage()) {
+    if (data.viewPage === 1) {
       this.$prev.classList.add('hidden');
     } else {
       this.$prev.classList.remove('hidden');
@@ -242,7 +326,7 @@ class Metrics {
     const currentMetric = this.getSelectedMetric();
     if (currentMetric.remaining < 1) {
       this.log('No more pages, skipping');
-      return null;
+      return Promise.resolve(null);
     }
 
     if (this.isLocked) {
@@ -257,7 +341,7 @@ class Metrics {
     this.isLocked = true;
     this.lock = deferred.promise;
     const page = currentMetric.page + 1;
-    const perView = this.period === 'day' ? 30 : 12;
+    const perView = this.period === 'day' ? 32 : 13;
 
     // The next XHR
     this.currentRrequest = this.getJsonPage(page, perView);
