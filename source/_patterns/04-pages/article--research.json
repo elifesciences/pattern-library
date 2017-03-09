@@ -465,8 +465,10 @@
     }
   },
   "viewSelector": {
-    "articleUrl": "#articleUrl",
-    "figureUrl": "#figureUrl",
+    "pages": [
+      { "title": "article", "url": "#article", "isActive": true },
+      { "title" : "figures", "url": "#figures", "isActive": false }
+    ],
     "jumpLinks": {
       "links": [
         {

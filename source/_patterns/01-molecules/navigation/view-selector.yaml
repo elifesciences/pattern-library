@@ -9,12 +9,23 @@ schema:
     sideBySideUrl:
       type: string
       minLength: 1
-    articleUrl:
-      type: string
-      minLength: 1
-    figureUrl:
-      type: string
-      minLength: 1
+    pages:
+      type: array
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+            minLength: 1
+          url:
+            type: string
+            minLength: 1
+          isActive:
+            type: boolean
+        required:
+          - title
+          - url
+          - isActive
     jumpLinks:
       type: object
       properties:
@@ -36,4 +47,4 @@ schema:
       required:
         - links
   required:
-    - articleUrl
+    - pages
