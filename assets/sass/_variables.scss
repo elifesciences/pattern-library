@@ -52,6 +52,7 @@ $blg-space-large-in-px: $blg-space-small-in-px * 3;
 // Widths
 $max-width-grid-listing-item: 400;
 $max-width-block-link: 600;
+$max-width-image-link: $max-width-block-link;
 $med-width-grid-listing-item: 263;
 $min-width-grid-listing-item: 245;
 
@@ -86,6 +87,7 @@ $bkpt-content-header--wide: 1024;
 $bkpt-content-header--extra-wide: 1440;
 
 $bkpt-block-link: 600;
+$bkpt-image-link: $bkpt-block-link;
 $bkpt-grid-listing--narrow-screen: $bkpt-block-link;
 $bkpt-grid-listing--medium-width: 882;
 $bkpt-grid-link-listing--wide-screen: 1174;

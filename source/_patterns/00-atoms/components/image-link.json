@@ -1,0 +1,12 @@
+{
+  "url": "#",
+  "image": {
+    "pictureClasses":"image-link__picture",
+    "fallback": {
+      "defaultPath": "https://unsplash.it/250/140/",
+      "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+      "altText": "Meaningful alt text here please.",
+      "classes": "image-link__img"
+    }
+  }
+}

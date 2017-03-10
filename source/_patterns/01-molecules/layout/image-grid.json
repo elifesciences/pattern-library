@@ -1,9 +1,0 @@
-{
-  "images": [
-    { "url": "https://placehold.it/320x240", "mediaType": "image/png", "alt": "" },
-    { "url": "https://placehold.it/320x240", "mediaType": "image/png", "alt": "" },
-    { "url": "https://placehold.it/240x320", "mediaType": "image/png", "alt": "" },
-    { "url": "https://placehold.it/320x240", "mediaType": "image/png", "alt": "" },
-    { "url": "https://placehold.it/320x240", "mediaType": "image/png", "alt": "" }
-  ]
-}

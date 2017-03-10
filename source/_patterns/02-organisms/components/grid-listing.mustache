@@ -12,6 +12,12 @@
     </li>
   {{/archiveNavLinks}}
 
+  {{#imageLinks}}
+    <li class="grid-listing-item grid-listing-item--image-link">
+      {{> atoms-image-link}}
+    </li>
+  {{/imageLinks}}
+
   {{#teasers}}
     <li class="grid-listing-item">
       {{! grid style teasers only: labs or podcast }}
