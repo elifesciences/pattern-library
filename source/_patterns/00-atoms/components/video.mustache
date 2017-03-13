@@ -1,4 +1,4 @@
-<video controls="controls" poster="{{posterFrame}}" preload="metadata">
+<video controls="controls" poster="{{posterFrame}}" preload="metadata"{{#autoplay}} autoplay muted{{/autoplay}}{{#loop}} loop{{/loop}}>
 
   {{#posterFrame}}
     {{! Simple fallback image: if client doesn't support <video>, it's unlikely to support responsive images. }}
