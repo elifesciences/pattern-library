@@ -47,6 +47,11 @@
   margin-bottom: 0;
 }
 
+.grid-listing-item--image-link {
+  @include constrain-width($max-width-image-link, "max");
+  width: 100%;
+}
+
 // 2 column view.
 @media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--narrow-screen)}em) {
 
