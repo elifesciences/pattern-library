@@ -1,8 +1,6 @@
 {
   "articleUrl": "#articleUrl",
-  "articleIsActive": true,
   "figureUrl": "#figureUrl",
-  "figureIsActive": false,
   "sideBySideUrl": "#sideBySide",
   "jumpLinks": {
     "links": [
