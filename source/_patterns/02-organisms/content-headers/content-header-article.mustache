@@ -23,16 +23,16 @@
           <a href="{{download}}" class="content-header__download_link">
             <picture>
               {{#hasBackground}}
-                <source srcset="{{assetsPath}}/img/icons/download-full-reverse.svg 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
-                <source srcset="{{assetsPath}}/img/icons/download-full-reverse-2x.png 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
-                <source srcset="{{assetsPath}}/img/icons/download-reverse.svg 20w" sizes="20px" type="image/svg+xml">
-                <img src="{{assetsPath}}/img/icons/download-full-reverse-1x.png" class="content-header__download_icon" alt="Download icon">
+                <source srcset="{{#asset}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/asset}} 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
+                <source srcset="{{#asset}}{{assetsPath}}/img/icons/download-full-reverse-2x.png{{/asset}} 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
+                <source srcset="{{#asset}}{{assetsPath}}/img/icons/download-reverse.svg{{/asset}} 20w" sizes="20px" type="image/svg+xml">
+                <img src="{{#asset}}{{assetsPath}}/img/icons/download-full-reverse-1x.png{{/asset}}" class="content-header__download_icon" alt="Download icon">
               {{/hasBackground}}
               {{^hasBackground}}
-                <source srcset="{{assetsPath}}/img/icons/download-full.svg 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
-                <source srcset="{{assetsPath}}/img/icons/download-full-2x.png 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
-                <source srcset="{{assetsPath}}/img/icons/download.svg 20w" sizes="20px" type="image/svg+xml">
-                <img src="{{assetsPath}}/img/icons/download-full-1x.png" class="content-header__download_icon" alt="Download icon">
+                <source srcset="{{#asset}}{{assetsPath}}/img/icons/download-full.svg{{/asset}} 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
+                <source srcset="{{#asset}}{{assetsPath}}/img/icons/download-full-2x.png{{/asset}} 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
+                <source srcset="{{#asset}}{{assetsPath}}/img/icons/download.svg{{/asset}} 20w" sizes="20px" type="image/svg+xml">
+                <img src="{{#asset}}{{assetsPath}}/img/icons/download-full-1x.png{{/asset}}" class="content-header__download_icon" alt="Download icon">
               {{/hasBackground}}
             </picture>
           </a>

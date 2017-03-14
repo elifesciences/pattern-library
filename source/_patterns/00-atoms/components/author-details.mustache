@@ -61,8 +61,8 @@
   <section class="author-details__section author-details__section--orcid">
     <a href="https://orcid.org/" target="_blank" class="author-details__link author-details__link--orcid">
       <picture>
-        <source srcset="{{assetsPath}}/img/icons/orcid.svg" type="image/svg+xml">
-        <img src="{{assetsPath}}/img/icons/orcid.png" alt="ORCID icon" class="author-details__linked-image--orcid"/>
+        <source srcset="{{#asset}}{{assetsPath}}/img/icons/orcid.svg{{/asset}}" type="image/svg+xml">
+        <img src="{{#asset}}{{assetsPath}}/img/icons/orcid.png{{/asset}}" alt="ORCID icon" class="author-details__linked-image--orcid"/>
       </picture>
     </a>
     <a href="https://orcid.org/{{orcid}}" target="_blank" class="author-details__text author-details__link author-details__link--orcid">{{orcid}}</a>
