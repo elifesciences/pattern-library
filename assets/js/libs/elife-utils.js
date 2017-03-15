@@ -344,7 +344,7 @@ module.exports = () => {
     let siblings = 0;
     while ($child !== null) {
       if ($child.nodeType !== 8) {
-        siblings++;
+        siblings += 1;
       }
 
       $child = $child.previousSibling;

@@ -25,9 +25,17 @@ module.exports = class Highlights {
     this.numSlides = this.originalSlideWrappers.length;
     this.switchBreakpoint();
     this.window.addEventListener('resize', utils.debounce(() => this.switchBreakpoint(), 150));
+    this.margin = this.calculateMargin() * 2;
 
     let body = document.querySelector('body');
     this.$elm.addEventListener('keyup', this.checkTabPress.bind(this));
+  }
+
+  calculateMargin() {
+    const element = this.originalSlideWrappers[0];
+    const style = element.currentStyle || window.getComputedStyle(element);
+
+    return parseInt(style.marginLeft, 10);
   }
 
   setCurrentSlide(num) {
@@ -116,6 +124,9 @@ module.exports = class Highlights {
     // Which page is the last page?
     this.maxOffset = this.numSlides - (this.inView - 1);
 
+    // Recalculate margin.
+    this.margin = this.calculateMargin() * 2;
+
     // Update some things.
     this.carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9\.]+)px/)[1];
     this.setCurrentSlide(this.currentSlide);
@@ -151,15 +162,14 @@ module.exports = class Highlights {
       $nextButton.classList.remove('hidden');
     }
 
-    const margin = 40;
     const numOfMargins = inView - 1;
-    const totalMargins = numOfMargins * margin;
+    const totalMargins = numOfMargins * this.margin;
 
     // Slide width = Carousel width - margins / number in view
     const slideWidth = (carouselWidth - totalMargins) / inView;
 
     // Slide offset = Slide width plus margin
-    const slideOffset = slideWidth + margin;
+    const slideOffset = slideWidth + this.margin;
 
     // Negative offset of 'x' slide offsets
     const nudge = slideOffset * (thisSlide - 1) * -1;
