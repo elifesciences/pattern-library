@@ -182,7 +182,7 @@
 
   "mainTeasers": [
     {
-      
+
       "heading": "Latest articles",
       "items": [
         {
@@ -387,7 +387,7 @@
 
   "secondaryTeasers": [
     {
-      
+
       "heading": "Highlighted content",
       "items": [
         {
@@ -422,8 +422,8 @@
             }
           },
           "image": {
-            "defaultPath": "https://unsplash.it/250/140/",
-            "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
+            "defaultPath": "https://placehold.it/250/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
             "altText": "Meaningful alt text please.",
             "classes": "teaser__img--small"
           }
@@ -538,6 +538,212 @@
         }
 
       ]
+    }
+  ],
+
+  "highlightsTeasers": [
+    {
+
+      "heading": "Highlights",
+      "id": "carousel-highlights",
+      "highlights": true,
+      "items": [
+        {
+          "num": 1,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "The [1] parasite’s new clothes",
+          "url": "#",
+          "secondaryInfo": "Mark S Pearson et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 15,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160415"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "num": 2,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "Catch [2] me",
+          "url": "#",
+          "secondaryInfo": "Emilie Bourdonnay et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 1,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160216"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "num": 3,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "Autophagy [3] under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "num": 4,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "Autophagy [4] under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "num": 5,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "Autophagy [5] under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+        {
+          "num": 6,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "Autophagy [6] under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        }
+
+      ],
+      "prev": {
+        "sources": [
+          {
+            "srcset": "../../assets/img/patterns/molecules/chevron-left-ic.svg",
+            "type": "image/svg+xml"
+          }
+        ],
+
+        "fallback": {
+          "srcset": "../../assets/img/patterns/molecules/chevron-left-ic_2x.png 48w, ../../assets/img/patterns/molecules/chevron-left-ic_1x.png 24w",
+          "defaultPath": "../../assets/img/patterns/molecules/chevron-left-ic_1x.png",
+          "altText": "Meaningful alt text here please."
+        }
+      },
+      "next": {
+        "sources": [
+          {
+            "srcset": "../../assets/img/patterns/molecules/chevron-right-ic.svg",
+            "type": "image/svg+xml"
+          }
+        ],
+
+        "fallback": {
+          "srcset": "../../assets/img/patterns/molecules/chevron-right-ic_2x.png 48w, ../../assets/img/patterns/molecules/chevron-right-ic_1x.png 24w",
+          "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+          "altText": "Meaningful alt text here please."
+        }
+      }
     }
   ],
 

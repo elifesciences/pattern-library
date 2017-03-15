@@ -1,19 +1,32 @@
-{{> atoms-list-heading}}
-<ol class="listing-list"{{#id}} id="{{id}}"{{/id}}>
-  {{#items}}
-      <li class="listing-list__item">
-        {{> molecules-teaser }}
-    </li>
-  {{/items}}
+<div class="listing-column-container listing-column-main highlights">
+  {{>atoms-list-heading}}
 
-  {{#seeMoreLink}}
-    <li class="listing-list__item">
-      {{> atoms-see-more-link}}
-    </li>
-  {{/seeMoreLink}}
+  {{#highlights}}
+  <div class="highlights__content" data-behaviour="Highlights" role="region" aria-labelledby="{{id}}">
+  <div class="highlights__list">
+  {{/highlights}}
 
-</ol>
+  <ol class="listing-list {{#highlights}}listing-list--highlights{{/highlights}}"{{#id}} id="{{id}}"{{/id}}>
+    {{#items}}<!--
+      --><li class="listing-list__item">{{> molecules-teaser }}</li>{{/items}}{{#seeMoreLink}}<!--
+   --><li class="listing-list__item">{{> atoms-see-more-link}}</li>{{/seeMoreLink}}<!--
+  --></ol>
 
-{{#pagination}}
+  {{#highlights}}
+  </div>
+    <p class="highlights__controls">
+      <span class="visuallyhidden">Highlights controls:</span>
+      <button class="highlights__control highlights__control--prev">
+        {{#prev}}{{>atoms-picture}}{{/prev}}
+      </button><!--
+      --><button class="highlights__control highlights__control--next">
+        {{#next}}{{>atoms-picture}}{{/next}}
+      </button>
+    </p>
+  </div>
+  {{/highlights}}
+
+  {{#pagination}}
     {{> molecules-pager}}
-{{/pagination}}
+  {{/pagination}}
+</div>
