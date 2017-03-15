@@ -196,10 +196,10 @@ class Metrics {
     month = month + ((n - 1) * direction);
     while (month > 12) {
       month = month - 12;
-      year++;
+      year += 1;
     }
 
-    return { month: parseInt(month), year: parseInt(year) };
+    return { month: parseInt(month, 10), year: parseInt(year, 10) };
   }
 
   getJsonPage(page, perView) {
@@ -243,9 +243,9 @@ class Metrics {
 
   periodToTimestamp(entry) {
     return Date.UTC(
-        parseInt(entry.year),
-        parseInt(entry.month - 1),
-        parseInt(entry.day ? entry.day : 1)
+        parseInt(entry.year, 10),
+        parseInt(entry.month - 1, 10),
+        parseInt(entry.day ? entry.day : 1, 10)
     );
   }
 
@@ -274,25 +274,25 @@ class Metrics {
   }
 
   filterPeriod(month, year) {
-    return (d) => parseInt(d.month) === month && parseInt(d.year) === year;
+    return (d) => parseInt(d.month, 10) === month && parseInt(d.year, 10) === year;
   }
 
   filterYearPeriod(year) {
-    return (d) => parseInt(d.year) === year;
+    return (d) => parseInt(d.year, 10) === year;
   }
 
   filterMonthPeriod(firstMonth, firstMonthYear, viewPage) {
     return (d) => {
       if (
-          parseInt(d.month) >= firstMonth &&
-          parseInt(d.year) === firstMonthYear + (viewPage - 1)
+          parseInt(d.month, 10) >= firstMonth &&
+          parseInt(d.year, 10) === firstMonthYear + (viewPage - 1)
       ) {
         return true;
       }
 
       return (
-          parseInt(d.month) <= firstMonth &&
-          parseInt(d.year) === firstMonthYear + viewPage
+          parseInt(d.month, 10) <= firstMonth &&
+          parseInt(d.year, 10) === firstMonthYear + viewPage
       );
     };
   }
@@ -345,7 +345,7 @@ class Metrics {
       label: this.selected === 'downloads' ? 'Downloads' : 'Page Views',
     });
 
-    if (hasNextPage === false) {
+    if (!hasNextPage) {
       this.$next.classList.add('hidden');
     } else {
       this.$next.classList.remove('hidden');
