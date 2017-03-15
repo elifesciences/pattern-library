@@ -72,10 +72,10 @@ describe('Metrics integration', function () {
 
   it('should accurately return selected metric', function () {
     const currentMetric = root.metrics.getSelectedMetric();
-    expect(currentMetric.name).to.equal('downloads-by-day');
+    expect(currentMetric.name).to.equal('downloads-by-month');
     expect(currentMetric.page).to.equal(1);
     expect(currentMetric.periods.length).to.equal(30);
-    expect(currentMetric.remaining).to.equal(18);
+    expect(currentMetric.remaining).to.equal(41);
     expect(currentMetric.selected).to.be.true;
     expect(currentMetric.periods[0].value).to.equal(1);
     expect(currentMetric.periods[10].value).to.equal(480);
