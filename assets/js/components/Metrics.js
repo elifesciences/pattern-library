@@ -16,6 +16,10 @@ class Metrics {
     this.period = $el.getAttribute('data-period') || 'month';
     this.$dailyButton = $el.querySelector('[data-target="daily"]');
     this.$monthlyButton = $el.querySelector('[data-target="monthly"]');
+
+    // The data flows from left to right, but clicking the left arrow takes
+    // you to the next page, which is the previous month, the comments below
+    // provide the best description of the UI.
     this.$prev = $el.querySelector('.trigger--next'); // "->" arrow
     this.$next = $el.querySelector('.trigger--prev'); // "<-" arrow
     this.availableCharts = ['page-views', 'downloads'];
@@ -379,6 +383,8 @@ class Metrics {
     this.isLocked = true;
     this.lock = deferred.promise;
     const page = currentMetric.page + 1;
+
+    // Over fetch so we know that there is a next month to load.
     const perView = this.period === 'day' ? 32 : 13;
 
     // The next XHR
