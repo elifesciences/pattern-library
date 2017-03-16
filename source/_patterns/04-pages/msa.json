@@ -558,6 +558,7 @@
             "meta": {
               "url": "#",
               "text": "Research article",
+              "carouselItem": true,
               "date": {
                 "forHuman": {
                   "dayOfMonth": 15,
@@ -586,6 +587,7 @@
             "meta": {
               "url": "#",
               "text": "Research article",
+              "carouselItem": true,
               "date": {
                 "forHuman": {
                   "dayOfMonth": 1,
@@ -614,6 +616,7 @@
             "meta": {
               "url": "#",
               "text": "Research article",
+              "carouselItem": true,
               "date": {
                 "forHuman": {
                   "dayOfMonth": 23,
@@ -642,6 +645,7 @@
             "meta": {
               "url": "#",
               "text": "Research article",
+              "carouselItem": true,
               "date": {
                 "forHuman": {
                   "dayOfMonth": 23,
@@ -670,6 +674,7 @@
             "meta": {
               "url": "#",
               "text": "Research article",
+              "carouselItem": true,
               "date": {
                 "forHuman": {
                   "dayOfMonth": 23,
@@ -697,6 +702,7 @@
             "meta": {
               "url": "#",
               "text": "Research article",
+              "carouselItem": true,
               "date": {
                 "forHuman": {
                   "dayOfMonth": 23,
@@ -715,35 +721,7 @@
           }
         }
 
-      ],
-      "prev": {
-        "sources": [
-          {
-            "srcset": "../../assets/img/patterns/molecules/chevron-left-ic.svg",
-            "type": "image/svg+xml"
-          }
-        ],
-
-        "fallback": {
-          "srcset": "../../assets/img/patterns/molecules/chevron-left-ic_2x.png 48w, ../../assets/img/patterns/molecules/chevron-left-ic_1x.png 24w",
-          "defaultPath": "../../assets/img/patterns/molecules/chevron-left-ic_1x.png",
-          "altText": "Meaningful alt text here please."
-        }
-      },
-      "next": {
-        "sources": [
-          {
-            "srcset": "../../assets/img/patterns/molecules/chevron-right-ic.svg",
-            "type": "image/svg+xml"
-          }
-        ],
-
-        "fallback": {
-          "srcset": "../../assets/img/patterns/molecules/chevron-right-ic_2x.png 48w, ../../assets/img/patterns/molecules/chevron-right-ic_1x.png 24w",
-          "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-          "altText": "Meaningful alt text here please."
-        }
-      }
+      ]
     }
   ],
 

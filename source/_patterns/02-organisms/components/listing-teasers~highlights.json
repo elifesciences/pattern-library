@@ -8,6 +8,8 @@
       "title":"The [1] parasite’s new clothes",
       "url":"#",
       "secondaryInfo":"Mark S Pearson et al.",
+      "carouselItem": true,
+      "num": 1,
       "footer":{
         "meta":{
           "url":"#",
@@ -34,6 +36,8 @@
       "title":"Catch [2] me",
       "url":"#",
       "secondaryInfo":"Emilie Bourdonnay et al.",
+      "carouselItem": true,
+      "num": 2,
       "footer":{
         "meta":{
           "url":"#",
@@ -60,6 +64,8 @@
       "title":"Autophagy [3] under attack",
       "url":"#",
       "secondaryInfo":"Paul de Figueiredo et al.",
+      "carouselItem": true,
+      "num": 3,
       "footer":{
         "meta":{
           "url":"#",
@@ -86,6 +92,8 @@
       "title":"Autophagy [4] under attack",
       "url":"#",
       "secondaryInfo":"Paul de Figueiredo et al.",
+      "carouselItem": true,
+      "num": 4,
       "footer":{
         "meta":{
           "url":"#",
@@ -112,6 +120,8 @@
       "title":"Autophagy [5] under attack",
       "url":"#",
       "secondaryInfo":"Paul de Figueiredo et al.",
+      "carouselItem": true,
+      "num": 5,
       "footer":{
         "meta":{
           "url":"#",
@@ -133,31 +143,5 @@
         "classes":"teaser__img--small"
       }
     }
-  ],
-  "prev":{
-    "sources":[
-      {
-        "srcset":"../../assets/img/patterns/molecules/chevron-left-ic.svg",
-        "type":"image/svg+xml"
-      }
-    ],
-    "fallback":{
-      "srcset":"../../assets/img/patterns/molecules/chevron-left-ic_2x.png 48w, ../../assets/img/patterns/molecules/chevron-left-ic_1x.png 24w",
-      "defaultPath":"../../assets/img/patterns/molecules/chevron-left-ic_1x.png",
-      "altText":"Meaningful alt text here please."
-    }
-  },
-  "next":{
-    "sources":[
-      {
-        "srcset":"../../assets/img/patterns/molecules/chevron-right-ic.svg",
-        "type":"image/svg+xml"
-      }
-    ],
-    "fallback":{
-      "srcset":"../../assets/img/patterns/molecules/chevron-right-ic_2x.png 48w, ../../assets/img/patterns/molecules/chevron-right-ic_1x.png 24w",
-      "defaultPath":"../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-      "altText":"Meaningful alt text here please."
-    }
-  }
+  ]
 }
