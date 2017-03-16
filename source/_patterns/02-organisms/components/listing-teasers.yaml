@@ -15,6 +15,9 @@ schema:
     id:
       type: string
       pattern: ^[a-zA-Z0-9_$]+$
+    highlights:
+      type: boolean
+      default: false
     items:
       type: array
       minItems: 1

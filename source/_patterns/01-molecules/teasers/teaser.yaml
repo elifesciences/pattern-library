@@ -34,6 +34,12 @@ schema:
     title:
       type: string
       minLength: 1
+    num:
+      type: integer
+      minimum: 0
+    carouselItem:
+      type: boolean
+      default: false
     secondaryInfo:
       type: string
       minLength: 1
@@ -92,6 +98,12 @@ schema:
             - vor
       required:
         - meta
+
+  dependencies:
+    num:
+      - carouselItem
+    carouselItem:
+      - num
 
   required:
     - title
