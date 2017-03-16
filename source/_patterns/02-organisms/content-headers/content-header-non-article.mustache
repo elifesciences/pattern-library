@@ -11,9 +11,8 @@
     <div class="content-header__top">
       <a class="content-header__top_info" href="{{{profile.link}}}">
         {{#profile.image}}
-          {{! ALT null as it is unnecessary }}
           <img src="{{defaultPath}}"
-               alt="" {{#srcset}}
+               alt="Avatar for profile of {{profile.name}}" {{#srcset}}
                srcset="{{srcset}}"{{/srcset}}
                class="content-header__top_image" />
         {{/profile.image}}
