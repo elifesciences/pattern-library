@@ -36,7 +36,7 @@ schema:
       minLength: 1
     num:
       type: integer
-      minimum: 0
+      minimum: 1
     carouselItem:
       type: boolean
       default: false
