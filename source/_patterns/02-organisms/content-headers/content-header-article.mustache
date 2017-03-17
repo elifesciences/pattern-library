@@ -47,8 +47,8 @@
 
       {{#authors}}
         <ol class="content-header__author_list">
-          <!--  All article headers: when js available, max 16 authors visible,
-                  excess behind 'see more'. Except: Reasearch article read more header: only first author (firstAuthorOnly), followed by et al if there are more (hasEtAl). -->
+          {{!  All article headers: when js available, max 16 authors visible,
+                  excess behind 'see more'. Except: Reasearch article read more header: only first author (firstAuthorOnly), followed by et al if there are more (hasEtAl). }}
           {{#firstAuthorOnly}}
             <li class="content-header__author_list_item">
               <span class="content-header__author">{{firstAuthorOnly}}</span>
@@ -68,7 +68,7 @@
 
         </ol>
       {{/authors}}
-      <!-- Institution list is not on the designs of the narrow view. This is visually hidden until the first min-width breakpoint. -->
+      {{! Institution list is not on the designs of the narrow view. This is visually hidden until the first min-width breakpoint. }}
 
       {{#institutions}}
         <ol class="content-header__institution_list">
@@ -86,4 +86,4 @@
 
   </header>
 
-  <div class="content-header-divider"></div> <!-- The shame! -->
+  <div class="content-header-divider"></div> {{! The shame! }}

@@ -35,12 +35,12 @@
               {{/articleSections}}
 
 
-              <!-- Decided this will be content, serverside -->
+              {{! Decided this will be content, serverside }}
               {{#pl-only-article-section-for-download-links}}
                 {{> molecules-pl-only-article-section-for-download-links}}
               {{/pl-only-article-section-for-download-links}}
 
-              <!-- May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? -->
+              {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
               {{#articleMeta}}
                 <section class="article-section">
 
@@ -65,5 +65,5 @@
     {{/emailCta}}
 
     {{> organisms-footer }}
-  </div> <!-- /.global-inner -->
-</div> <!-- /.global-wrapper -->
+  </div> {{! /.global-inner }}
+</div> {{! /.global-wrapper }}
