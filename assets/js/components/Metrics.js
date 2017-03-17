@@ -19,9 +19,8 @@ class Metrics {
     const parent = utils.closest(this.$el, '.article-section');
     if (parent) {
       parent.addEventListener('expandsection', () => {
-        if (this.getSelectedMetric().page === 0) {
-          console.info('not yet!');
-        } else {
+        // This catches cases where the data may be loading, which breaks.
+        if (this.getSelectedMetric().page !== 0) {
           this.renderView($el, this.getSelectedMetric());
         }
       });
