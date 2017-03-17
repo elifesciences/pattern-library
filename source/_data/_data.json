@@ -1,4 +1,4 @@
 {
 	"assetsPath" : "../../assets",
-	"asset": "."
+	"assetRewrite": "."
 }
