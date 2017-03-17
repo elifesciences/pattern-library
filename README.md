@@ -68,3 +68,7 @@ Verify the generated static site by serving the `public` folder locally. One qui
 For patterns that are being exposed as resources (ie the Mustache template can be used in an application), there is a YAML file located alongside the template. This contains details of any CSS/JS files that it requires, and a JSON Schema that documents what input is expected.
 
 You can run `bin/validate`, which checks all data files for a pattern against the schema.
+
+# Notes
+
+All assets paths in Mustache templates must be wrapped in `{{#assetRewrite}}`, which allows implementations to rewrite the path for cache-busting purposes. The path must also be prepended by `{{assetsPath}}`. 

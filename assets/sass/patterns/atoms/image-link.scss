@@ -1,0 +1,52 @@
+@import "../../definitions";
+
+@mixin height-constrained() {
+
+  .image-link__link {
+    @include height(150);
+  }
+
+  .image-link__img {
+    max-height: 130px; // height - padding
+  }
+
+}
+
+.image-link--grid-listing {
+  @include height-constrained();
+}
+
+.image-link__link {
+  border: 1px solid $color-text-dividers;
+  display: table;
+  padding: 10px;
+  width: 100%;
+}
+
+.image-link__picture {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.image-link__img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+@media only all and (min-width: #{$bkpt-image-link}px) {
+
+  @media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}em) {
+
+    .image-link {
+      @include width($med-width-grid-listing-item);
+    }
+
+    .image-link__link {
+      @include width($med-width-grid-listing-item);
+    }
+
+  }
+
+}

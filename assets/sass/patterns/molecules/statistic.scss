@@ -1,0 +1,28 @@
+@import "../../definitions";
+
+.statistic {
+  @include margin(10 0);
+  display: inline-flex;
+  flex-direction: column;
+  flex-grow: 1;
+  float: left;
+
+  + .statistic {
+    @include margin(0 0 0 15);
+  }
+}
+
+.statistic__value {
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  @include h1-typeg();
+}
+
+.statistic__label {
+  @include nav-typeg();
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}

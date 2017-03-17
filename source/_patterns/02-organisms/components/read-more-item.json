@@ -1,0 +1,30 @@
+{
+  "item": {
+    "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
+    "titleClass": "content-header__title--extra-small",
+    "subjects": {
+      "list": [
+        {
+          "name": "Cell Biology"
+        },
+        {
+          "name": "Epidemiology and global health"
+        }
+      ]
+    },
+    "authorLine": "Lee R Berger",
+    "meta": {
+      "text": "Research article",
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 10,
+          "month": "Sep",
+          "year": 2015
+        },
+        "forMachine": "2015-09-10"
+      }
+    },
+    "url": "#"
+  },
+  "content": "<p>Optimal decision-making requires balancing fast but error-prone and more accurate but slower decisions through adjustments of decision thresholds. Here, we demonstrate two distinct correlates of such speed-accuracy adjustments by recording subthalamic nucleus (STN) activity and electroencephalography in 11 Parkinson’s disease patients during a perceptual decision-making task; STN low-frequency oscillatory (LFO) activity (2–8 Hz), coupled to activity at prefrontal electrode Fz, and STN beta activity (13–30 Hz) coupled to electrodes C3/C4 close to motor cortex. These two correlates differed not only in their cortical topography and spectral characteristics but also in the relative timing of recruitment and in their precise relationship with decision thresholds. Increases of STN LFO power preceding the response predicted increased thresholds only after accuracy instructions, while cue-induced reductions of STN beta power decreased thresholds irrespective of instructions. These findings indicate that distinct neural mechanisms determine whether a decision will be made in haste or with caution.</p>"
+}

@@ -14,3 +14,9 @@ schema:
       minItems: 1
       items:
         $ref: media-source.yaml#/schema
+    autoplay:
+      type: boolean
+      default: false
+    loop:
+      type: boolean
+      default: false

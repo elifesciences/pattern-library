@@ -1,0 +1,44 @@
+@import "../../definitions";
+
+$highlightsSpacing: $blg-space-small-in-px !default;
+$controlMagicSpacing: 6; // Magic number for vertical spacing of the icon, roughly (icon height - container / 2)
+
+.highlights__controls {
+  display: none;
+}
+
+.js {
+
+  .highlights {
+    position: relative;
+  }
+
+  .highlights__content {
+    overflow: hidden;
+  }
+
+  .highlights__controls {
+    display: block;
+    margin: 0;
+  }
+
+  .highlights__control {
+    @include height($highlightsSpacing);
+    background-color: transparent;
+    border: none;
+    line-height: 1.4;
+    position: absolute;
+    text-align: center;
+    top: calc(50% - #{$controlMagicSpacing}px);
+    @include width($highlightsSpacing);
+  }
+
+  .highlights__control--prev {
+    left: #{-$highlightsSpacing}px;
+  }
+
+  .highlights__control--next {
+    position: absolute;
+    right: #{-$highlightsSpacing}px;
+  }
+}

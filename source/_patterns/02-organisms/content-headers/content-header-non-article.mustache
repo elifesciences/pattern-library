@@ -29,16 +29,16 @@
     <a href="{{download}}" class="content-header__download_link">
       <picture>
         {{#hasBackground}}
-          <source srcset="{{assetsPath}}/img/icons/download-full-reverse.svg 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
-          <source srcset="{{assetsPath}}/img/icons/download-full-reverse-2x.png 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
-          <source srcset="{{assetsPath}}/img/icons/download-reverse.svg 20w" sizes="20px" type="image/svg+xml">
-          <img src="{{assetsPath}}/img/icons/download-full-reverse-1x.png" class="content-header__download_icon" alt="Download icon">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/assetRewrite}} 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-2x.png{{/assetRewrite}} 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-reverse.svg{{/assetRewrite}} 20w" sizes="20px" type="image/svg+xml">
+          <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
         {{/hasBackground}}
         {{^hasBackground}}
-          <source srcset="{{assetsPath}}/img/icons/download-full.svg 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
-          <source srcset="{{assetsPath}}/img/icons/download-full-2x.png 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
-          <source srcset="{{assetsPath}}/img/icons/download.svg 20w" sizes="20px" type="image/svg+xml">
-          <img src="{{assetsPath}}/img/icons/download-full-1x.png" class="content-header__download_icon" alt="Download icon">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full.svg{{/assetRewrite}} 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-2x.png{{/assetRewrite}} 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download.svg{{/assetRewrite}} 20w" sizes="20px" type="image/svg+xml">
+          <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
         {{/hasBackground}}
       </picture>
       <span class="visuallyhidden">Download</span>
@@ -52,7 +52,7 @@
         <div class="content-header__strapline">{{{strapline}}}</div>
       {{/strapline}}
     </div>
-  </div> <!--  /.content-header__inner -->
+  </div> {{!  /.content-header__inner }}
 
   {{#hasCtaOrMeta}}
     <div class="content-header__bottom">
@@ -75,4 +75,4 @@
 
 </header>
 
-<div class="content-header-divider"></div> <!-- The shame! -->
+<div class="content-header-divider"></div> {{! The shame! }}

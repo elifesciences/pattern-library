@@ -1,7 +1,7 @@
 assets:
   css:
     - listing.css
-    - $ref: ../../02-organisms/content-headers/content-header-article.yaml#/assets/css
+    - $ref: ../../02-organisms/components/read-more-item.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/pager.yaml#/assets/css
     - $ref: ../../00-atoms/components/see-more-link.yaml#/assets/css
   js: []
@@ -19,14 +19,7 @@ schema:
       type: array
       minItems: 1
       items:
-        type: object
-        properties:
-          body:
-            type: string
-          article:
-            $ref: ../../02-organisms/content-headers/content-header-article.yaml#/schema
-        required:
-          - article
+        $ref: ../../02-organisms/components/read-more-item.yaml#/schema
     pagination:
       $ref: ../../01-molecules/navigation/pager.yaml#/schema
     seeMoreLink:
