@@ -204,6 +204,7 @@
 
 
   .content-header__top_image {
+    border-radius: 20px;
     height: 40px;
     width: 40px;
     @include margin(10, "right");

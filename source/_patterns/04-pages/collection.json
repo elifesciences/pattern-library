@@ -167,8 +167,8 @@
       "name": "Prabhat Jha",
       "link": "#",
       "image": {
-        "srcset": "../../assets/img/fixtures/pjha2x.png 40w",
-        "defaultPath": "../../assets/img/fixtures/pjha1x.png",
+        "srcset": "https://unsplash.it/40/40",
+        "defaultPath": "https://unsplash.it/40/40",
         "altText": false
       }
     },
