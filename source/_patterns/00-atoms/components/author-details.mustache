@@ -52,10 +52,12 @@
   </section>
   {{/hasMeansOfCorrespondence}}
 
+  {{#competingInterest}}
   <section class="author-details__section author-details__section--competing-interest">
     <h5 class="author-details__heading">Competing interests: </h5>
     <span class="author-details__text">{{{competingInterest}}}</span>
   </section>
+  {{/competingInterest}}
 
   {{#orcid}}
   <section class="author-details__section author-details__section--orcid">
@@ -68,5 +70,12 @@
     <a href="https://orcid.org/{{orcid}}" target="_blank" class="author-details__text author-details__link author-details__link--orcid">{{orcid}}</a>
   </section>
   {{/orcid}}
+
+  {{#additionalInformation}}
+    <section class="author-details__section author-details__section--additional-information">
+      <span class="author-details__text">{{{additionalInformation}}}</span>
+    </section>
+  {{/additionalInformation}}
+
 </div>
 

@@ -46,6 +46,9 @@ schema:
     competingInterest:
       type: string
       minLength: 1
+    additionalInformation:
+      type: string
+      minLength: 1
     orcid:
       type: string
       pattern: ^([0-9]{4}-){3}[0-9]{3}[0-9X]$
@@ -58,4 +61,3 @@ schema:
     - name
     - hasAffiliations
     - hasMeansOfCorrespondence
-    - competingInterest
