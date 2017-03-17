@@ -176,12 +176,10 @@
 
   // 40px is the size of the avatar background image.
   .content-header__top_info {
-    display: flex;
     padding-bottom: 10px;
     padding-top: 10px;
     text-align: center;
     text-decoration: none;
-
   }
 
   .content-header__top_info:hover *,
@@ -203,11 +201,7 @@
     @include padding(5, "bottom");
   }
 
-  /* When Profile has an Image left align associated text */
-  .content-header__top_image + dl .content-header__top_label,
-  .content-header__top_image + dl .content-header__top_data {
-    text-align: left;
-  }
+
 
   .content-header__top_image {
     height: 40px;
@@ -234,6 +228,17 @@
         margin-left: -#{$content-header-side-padding--extra-wide}px;
       }
     }
+
+    .content-header__top_info {
+      display: flex;
+    }
+
+    /* When Profile has an Image left align associated text */
+    .content-header__top_image + dl .content-header__top_label,
+    .content-header__top_image + dl .content-header__top_data {
+      text-align: left;
+    }
+
 
     .content-header__top_label {
       text-align: left;
