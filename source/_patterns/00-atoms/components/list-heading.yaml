@@ -9,7 +9,7 @@ schema:
     heading:
       type: string
       minLength: 1
-    id:
+    headingId:
       type: string
   required:
     - heading
