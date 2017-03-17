@@ -545,6 +545,7 @@
     {
 
       "heading": "Highlights",
+      "headingId":"carousel-highlights-heading",
       "id": "carousel-highlights",
       "highlights": true,
       "items": [
