@@ -233,12 +233,15 @@
       display: flex;
     }
 
-    /* When Profile has an Image left align associated text */
-    .content-header__top_image + dl .content-header__top_label,
-    .content-header__top_image + dl .content-header__top_data {
-      text-align: left;
-    }
+    /* When Profile has an Image,left align associated text */
+    .content-header__top_info--has-image {
 
+      .content-header__top_label,
+      .content-header__top_data {
+        text-align: left;
+      }
+
+    }
 
     .content-header__top_label {
       text-align: left;
