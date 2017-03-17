@@ -199,16 +199,16 @@
   }
 
   .teaser__download {
-    background: url("../../assets/img/icons/download.png") 50% 50% no-repeat;
-    background: url("../../assets/img/icons/download.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+    background: url("../img/icons/download.png") 50% 50% no-repeat;
+    background: url("../img/icons/download.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
     display: inline-block;
     float: right;
     @include height(20);
     @include width(20);
 
     &:hover {
-      background: url("../../assets/img/icons/download-hover.png") 50% 50% no-repeat;
-      background: url("../../assets/img/icons/download-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+      background: url("../img/icons/download-hover.png") 50% 50% no-repeat;
+      background: url("../img/icons/download-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
     }
   }
 }
