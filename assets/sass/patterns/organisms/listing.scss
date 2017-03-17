@@ -1,5 +1,9 @@
 @import "../../definitions";
 
+$showTwoAtWidth: #{get-rem-from-px(640)}rem;
+$showThreeAtWidth: #{get-rem-from-px(980)}rem;
+$totalHighlightsSpacing: 40;
+
 /* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
  *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
  */
@@ -88,4 +92,48 @@ div.listing-list__content {
     column-span: all;
   }
 
+}
+
+.listing-list--highlights {
+  @include margin(0 -#{$totalHighlightsSpacing / 2});
+
+  .listing-list__item {
+    border: 1px solid #ccc;
+    @include margin(0 #{$totalHighlightsSpacing / 2});
+    @include padding(2);
+
+    .teaser--highlights {
+      border-top: none;
+      @include padding(10);
+      white-space: normal;
+    }
+  }
+}
+
+.js {
+
+  .listing-list--highlights {
+    transition: transform 0.2s;
+    white-space: nowrap;
+
+    .listing-list__item {
+      display: inline-block;
+      list-style-type: none;
+      @include margin(0 #{$totalHighlightsSpacing / 2}px 10);
+      vertical-align: top;
+
+      /* Width of each element is 100% divided by the amount of elements shown in
+       * a single view, minus (40px default) for the margins.
+       */
+      width: calc(100% - #{$totalHighlightsSpacing}px); // 1 in view (1/1)
+
+      @media only all and (min-width: $showTwoAtWidth) {
+        width: calc(50% - #{$totalHighlightsSpacing}px); // 2 in view (1/2)
+      }
+
+      @media only all and (min-width: $showThreeAtWidth) {
+        width: calc(33.33333% - #{$totalHighlightsSpacing}px); // 3 in view (1/3)
+      }
+    }
+  }
 }

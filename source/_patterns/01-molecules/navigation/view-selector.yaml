@@ -15,6 +15,9 @@ schema:
     figureUrl:
       type: string
       minLength: 1
+    figureIsActive:
+      type: boolean
+      default: false
     jumpLinks:
       type: object
       properties:

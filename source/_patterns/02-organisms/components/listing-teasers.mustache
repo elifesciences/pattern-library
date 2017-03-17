@@ -1,19 +1,38 @@
-{{> atoms-list-heading}}
-<ol class="listing-list"{{#id}} id="{{id}}"{{/id}}>
-  {{#items}}
-      <li class="listing-list__item">
-        {{> molecules-teaser }}
-    </li>
-  {{/items}}
+<div class="listing-column-container listing-column-main highlights">
+  {{>atoms-list-heading}}
 
-  {{#seeMoreLink}}
-    <li class="listing-list__item">
-      {{> atoms-see-more-link}}
-    </li>
-  {{/seeMoreLink}}
+  {{#highlights}}
+  <div class="highlights__content" data-behaviour="Highlights" role="region" aria-labelledby="{{headingId}}">
+  <div class="highlights__list">
+  {{/highlights}}
 
-</ol>
+  <ol class="listing-list {{#highlights}}listing-list--highlights{{/highlights}}"{{#id}} id="{{id}}"{{/id}}>
+    {{#items}}{{!
+      }}<li class="listing-list__item">{{> molecules-teaser }}</li>{{/items}}{{#seeMoreLink}}{{!
+   }}<li class="listing-list__item">{{> atoms-see-more-link}}</li>{{/seeMoreLink}}{{!
+  }}</ol>
 
-{{#pagination}}
+  {{#highlights}}
+  </div>
+    <p class="highlights__controls">
+      <span class="visuallyhidden">Highlights controls:</span>
+      <button class="highlights__control highlights__control--prev">
+        <picture>
+          <source srcset="{{assetsPath}}/img/patterns/molecules/chevron-left-ic.svg" type="image/svg+xml">
+          <img src="{{assetsPath}}/img/patterns/molecules/chevron-left-ic_1x.png" srcset="{{assetsPath}}/img/patterns/molecules/chevron-left-ic_2x.png 48w, {{assetsPath}}/img/patterns/molecules/chevron-left-ic_1x.png 24w" alt="Previous">
+        </picture>
+      </button>
+      <button class="highlights__control highlights__control--next">
+        <picture>
+          <source srcset="{{assetsPath}}/img/patterns/molecules/chevron-right-ic.svg" type="image/svg+xml">
+          <img src="{{assetsPath}}/img/patterns/molecules/chevron-right-ic_1x.png" srcset="{{assetsPath}}/img/patterns/molecules/chevron-right-ic_2x.png 48w, {{assetsPath}}/img/patterns/molecules/chevron-right-ic_1x.png 24w" alt="Next">
+        </picture>
+      </button>
+    </p>
+  </div>
+  {{/highlights}}
+
+  {{#pagination}}
     {{> molecules-pager}}
-{{/pagination}}
+  {{/pagination}}
+</div>

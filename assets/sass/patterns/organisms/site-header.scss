@@ -1,8 +1,6 @@
 @import "../../definitions";
 
 .site-header {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
-  border-bottom: 1px solid $color-text-dividers;
   max-height: 96px;
   min-width: #{get-rem-from-px(275)}rem;
   position: relative;
@@ -13,7 +11,6 @@
     display: none;
 
     &.search-box--js {
-      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
       display: block;
       position: absolute;
       top: -20px;
@@ -46,13 +43,6 @@
   background-image: url("../img/patterns/organisms/elife-logo-full-1x.png");
 }
 
-// Turn off border for more advanced clients.
-@media only all {
-  .site-header {
-    border-bottom-width: 0;
-  }
-}
-
 .site-header__logo_link {
   background: url("../img/patterns/organisms/elife-logo-symbol-1x.png") 0 0 no-repeat;
   background: url("../img/patterns/organisms/elife-logo-symbol.svg") 0 0 no-repeat, linear-gradient(transparent, transparent);
@@ -69,6 +59,7 @@
   background-color: #fff;
   position: relative;
   z-index: 20;
+  border-bottom: 1px solid $color-text-dividers;
 }
 
 @media only all and (min-width: #{get-rem-from-px(550)}em) {

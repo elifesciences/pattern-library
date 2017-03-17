@@ -9,5 +9,5 @@ elifePipeline {
     builderDeployRevision 'pattern-library--prod', commit
 
     stage 'Downstream'
-    build job: 'dependencies-patterns-php-update-pattern-library', wait: false
+    build job: 'dependencies-patterns-php-update-pattern-library', wait: false, parameters: [string(name: 'commit', value: commit)]
 }

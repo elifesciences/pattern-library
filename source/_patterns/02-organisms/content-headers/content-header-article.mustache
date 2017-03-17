@@ -23,16 +23,16 @@
           <a href="{{download}}" class="content-header__download_link">
             <picture>
               {{#hasBackground}}
-                <source srcset="{{assetsPath}}/img/icons/download-full-reverse.svg 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
-                <source srcset="{{assetsPath}}/img/icons/download-full-reverse-2x.png 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
-                <source srcset="{{assetsPath}}/img/icons/download-reverse.svg 20w" sizes="20px" type="image/svg+xml">
-                <img src="{{assetsPath}}/img/icons/download-full-reverse-1x.png" class="content-header__download_icon" alt="Download icon">
+                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/assetRewrite}} 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
+                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-2x.png{{/assetRewrite}} 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
+                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-reverse.svg{{/assetRewrite}} 20w" sizes="20px" type="image/svg+xml">
+                <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
               {{/hasBackground}}
               {{^hasBackground}}
-                <source srcset="{{assetsPath}}/img/icons/download-full.svg 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
-                <source srcset="{{assetsPath}}/img/icons/download-full-2x.png 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
-                <source srcset="{{assetsPath}}/img/icons/download.svg 20w" sizes="20px" type="image/svg+xml">
-                <img src="{{assetsPath}}/img/icons/download-full-1x.png" class="content-header__download_icon" alt="Download icon">
+                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full.svg{{/assetRewrite}} 88w" sizes="(min-width: 35em) 88px" type="image/svg+xml" media="(min-width: 35em)">
+                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-2x.png{{/assetRewrite}} 88w" sizes="(min-width: 35em) 88px" type="image/png" media="(min-width: 35em)">
+                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download.svg{{/assetRewrite}} 20w" sizes="20px" type="image/svg+xml">
+                <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
               {{/hasBackground}}
             </picture>
           </a>
@@ -47,8 +47,8 @@
 
       {{#authors}}
         <ol class="content-header__author_list">
-          <!--  All article headers: when js available, max 16 authors visible,
-                  excess behind 'see more'. Except: Reasearch article read more header: only first author (firstAuthorOnly), followed by et al if there are more (hasEtAl). -->
+          {{!  All article headers: when js available, max 16 authors visible,
+                  excess behind 'see more'. Except: Reasearch article read more header: only first author (firstAuthorOnly), followed by et al if there are more (hasEtAl). }}
           {{#firstAuthorOnly}}
             <li class="content-header__author_list_item">
               <span class="content-header__author">{{firstAuthorOnly}}</span>
@@ -68,7 +68,7 @@
 
         </ol>
       {{/authors}}
-      <!-- Institution list is not on the designs of the narrow view. This is visually hidden until the first min-width breakpoint. -->
+      {{! Institution list is not on the designs of the narrow view. This is visually hidden until the first min-width breakpoint. }}
 
       {{#institutions}}
         <ol class="content-header__institution_list">
@@ -86,4 +86,4 @@
 
   </header>
 
-  <div class="content-header-divider"></div> <!-- The shame! -->
+  <div class="content-header-divider"></div> {{! The shame! }}
