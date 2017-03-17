@@ -9,7 +9,7 @@
 
   {{#hasProfile}}
     <div class="content-header__top">
-      <a class="content-header__top_info{{#profile.image}} content-header__top_info--has-image{{/profile.image}}" href="{{{profile.link}}}">
+      <a class="content-header__top_info{{#profile.image}} content-header__top_info--has-image{{/profile.image}}" href="{{#profile.url}}{{{profile.url}}}{{/profile.url}}">
         {{#profile.image}}
           <img src="{{defaultPath}}"
                alt="Avatar for profile of {{profile.name}}" {{#srcset}}

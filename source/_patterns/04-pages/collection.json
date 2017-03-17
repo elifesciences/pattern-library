@@ -165,7 +165,7 @@
     "hasProfile": true,
     "profile": {
       "name": "Prabhat Jha",
-      "url": "#",
+      "link": "#",
       "image": {
         "srcset": "../../assets/img/fixtures/pjha2x.png 40w",
         "defaultPath": "../../assets/img/fixtures/pjha1x.png",
