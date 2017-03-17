@@ -1,3 +1,4 @@
 {
-	"assetsPath" : "../../assets"
+	"assetsPath" : "../../assets",
+	"asset": "."
 }

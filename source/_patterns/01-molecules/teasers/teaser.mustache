@@ -85,11 +85,11 @@
     <div class="teaser__publish_state">
 
       {{^vor}}
-        <img class="teaser__publish_state--poa" src="{{#asset}}{{assetsPath}}/img/icons/poa-1x.png{{/asset}}" srcset="{{#asset}}{{assetsPath}}/img/icons/poa-2x.png{{/asset}} 40w,{{#asset}}{{assetsPath}}//img/icons/poa-1x.png{{/asset}} 20w" alt="Available as authors' accepted manuscript" />
+        <img class="teaser__publish_state--poa" src="{{#assetRewrite}}{{assetsPath}}/img/icons/poa-1x.png{{/assetRewrite}}" srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/poa-2x.png{{/assetRewrite}} 40w,{{#assetRewrite}}{{assetsPath}}//img/icons/poa-1x.png{{/assetRewrite}} 20w" alt="Available as authors' accepted manuscript" />
       {{/vor}}
 
       {{#vor}}
-        <img class="teaser__publish_state--vor" src="{{#asset}}{{assetsPath}}/img/icons/vor-1x.png{{/asset}}" srcset="{{#asset}}{{assetsPath}}/img/icons/vor-2x.png{{/asset}} 40w, {{#asset}}{{assetsPath}}/img/icons/vor-1x.png{{/asset}} 20w" alt="Available as full, typeset article" />
+        <img class="teaser__publish_state--vor" src="{{#assetRewrite}}{{assetsPath}}/img/icons/vor-1x.png{{/assetRewrite}}" srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/vor-2x.png{{/assetRewrite}} 40w, {{#assetRewrite}}{{assetsPath}}/img/icons/vor-1x.png{{/assetRewrite}} 20w" alt="Available as full, typeset article" />
       {{/vor}}
 
     </div>
