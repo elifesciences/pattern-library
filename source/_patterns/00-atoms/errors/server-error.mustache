@@ -1,8 +1,8 @@
 <div class="error">
 
     <picture>
-        <source srcset="{{assetsPath}}/img/errors/5xx.svg" type="image/svg+xml">
-        <img srcset="{{assetsPath}}/img/errors/5xx-2x.png 266w" src="{{assetsPath}}/img/errors/5xx.png" sizes="133px"
+        <source srcset="{{#assetRewrite}}{{assetsPath}}/img/errors/5xx.svg{{/assetRewrite}}" type="image/svg+xml">
+        <img srcset="{{#assetRewrite}}{{assetsPath}}/img/errors/5xx-2x.png{{/assetRewrite}} 266w" src="{{#assetRewrite}}{{assetsPath}}/img/errors/5xx.png{{/assetRewrite}}" sizes="133px"
              alt="" class="error__icon">
     </picture>
 
