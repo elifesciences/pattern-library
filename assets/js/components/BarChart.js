@@ -89,6 +89,8 @@ class BarChart {
       }]
     };
 
+    this.chart.redraw();
+    this.chart.reflow();
     this.chart.update(config);
   }
 

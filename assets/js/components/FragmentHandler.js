@@ -96,19 +96,7 @@ module.exports = class FragmentHandler {
     let idOfCollapsedSection = this.getIdOfCollapsedSection(hash, this.doc,
                                                             utils.areElementsNested);
     if (!!idOfCollapsedSection) {
-      // emit a section open event with the id of the section to open
-      // TODO: Used in several places, refactor out into common
-      let expandSection;
-      try {
-        expandSection = new CustomEvent('expandsection', { detail: hash });
-      } catch (e) {
-        // CustomEvent not supported, do it the old fashioned way
-        expandSection = document.createEvent('expandsection');
-        expandSection.initCustomEvent('expandsection', true, true, { detail: hash });
-      }
-
-      this.doc.querySelector('#' + idOfCollapsedSection).dispatchEvent(expandSection);
-
+      this.doc.querySelector('#' + idOfCollapsedSection).dispatchEvent(utils.eventCreator('expandsection', hash));
     }
   }
 };
