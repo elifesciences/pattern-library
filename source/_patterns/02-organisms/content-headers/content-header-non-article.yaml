@@ -62,22 +62,25 @@ schema:
         link:
           type: string
           minLength: 1
-        avatar:
+        image:
           type: object
           properties:
-            x1:
+            defaultPath:
               type: string
               minLength: 1
-            x2:
-              type: string
-              minLength: 1
+              fallback:
+                type: object
+                properties:
+                  srcset:
+                    type: string
+                    minLength: 1
           required:
-            - x1
-            - x2
+            - fallback
+            - srcset
       required:
         - name
         - link
-        - avatar
+        - image
   required:
     - rootClasses
     - title
