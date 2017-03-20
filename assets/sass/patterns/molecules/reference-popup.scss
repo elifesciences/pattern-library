@@ -1,0 +1,29 @@
+@import "../../definitions";
+
+.reference-popup {
+  position: relative;
+}
+
+.reference-popup__hit-box {
+  padding: 15px;
+  left: 0;
+  bottom: 15px;
+  position: absolute;
+  width: 360px;
+  z-index: 100;
+}
+.reference-popup__window {
+  font-family: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
+  @include box-shadow();
+  background: #181818;
+  border-radius: 3px;
+  color: #fff;
+  overflow-y: auto;
+  padding: 10px;
+  max-height: 300px;
+
+  > * {
+    font-size: 0.5em !important;
+    color: #fff;
+  }
+}

@@ -30,6 +30,12 @@
 
             <div class="grid__item large--six-twelfths blg-pad-top-medium" data-behaviour="FragmentHandler">
 
+              <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="ReferencePopup" data-selector="a">
+                <a href="http://localhost:8889/patterns/04-pages-article--magazine/04-pages-article--magazine.html#digest">Digest remote</a>
+                <a href="http://localhost:8889/patterns/04-pages-article--charts/04-pages-article--charts.html#abstract">Abstract this page</a>
+                <a href="#charts">Charts this page</a>
+              </div>
+
               {{#articleSections}}
                 {{> molecules-article-section }}
               {{/articleSections}}
