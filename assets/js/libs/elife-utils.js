@@ -16,7 +16,7 @@ module.exports = () => {
 
     var $el = document.createElement(elName);
     var $parent = typeof parent === 'string' ? document.querySelector(parent)
-      : parent;
+        : parent;
 
     // Work out what the new element's following sibling will be, based on value of attachBefore.
     var $followingSibling = (function () {
@@ -75,8 +75,8 @@ module.exports = () => {
         // Optional check to see if id is unique in the DOM.
         if (!!document) {
           if (!!document.querySelector &&
-            typeof document.querySelector === 'function' &&
-            document.querySelector('#' + candidate)) {
+              typeof document.querySelector === 'function' &&
+              document.querySelector('#' + candidate)) {
             return false;
           }
         }
@@ -115,16 +115,16 @@ module.exports = () => {
    */
   function loadData(url) {
     return new Promise(
-      function resolver(resolve, reject) {
-        let xhr = new XMLHttpRequest();
-        xhr.addEventListener('load', () => {
-          resolve(xhr.responseText);
-        });
-        xhr.addEventListener('error', reject);
-        xhr.open('GET', url);
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.send();
-      }
+        function resolver(resolve, reject) {
+          let xhr = new XMLHttpRequest();
+          xhr.addEventListener('load', () => {
+            resolve(xhr.responseText);
+          });
+          xhr.addEventListener('error', reject);
+          xhr.open('GET', url);
+          xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+          xhr.send();
+        }
     );
   }
 
@@ -250,7 +250,7 @@ module.exports = () => {
 
     let relationship = $prospectiveParent.compareDocumentPosition($prospectiveDescendant);
     return !!(
-      relationship & $prospectiveParent.DOCUMENT_POSITION_CONTAINED_BY || relationship === 0
+        relationship & $prospectiveParent.DOCUMENT_POSITION_CONTAINED_BY || relationship === 0
     );
   }
 
