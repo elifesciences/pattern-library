@@ -430,7 +430,7 @@ module.exports = () => {
    * @returns {Promise.<function(string):Node>}
    */
   function remoteQuerySelector(url, doc = document) {
-    return loadData(url).then(data => (selector) => {
+    return loadData(url).then(data => selector => {
 
       // Create a unique ID for this query.
       const id = uniqueIds.get('querySelectorXHR', doc);
