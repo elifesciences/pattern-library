@@ -16,7 +16,7 @@ module.exports = () => {
 
     var $el = document.createElement(elName);
     var $parent = typeof parent === 'string' ? document.querySelector(parent)
-        : parent;
+      : parent;
 
     // Work out what the new element's following sibling will be, based on value of attachBefore.
     var $followingSibling = (function () {
@@ -75,8 +75,8 @@ module.exports = () => {
         // Optional check to see if id is unique in the DOM.
         if (!!document) {
           if (!!document.querySelector &&
-              typeof document.querySelector === 'function' &&
-              document.querySelector('#' + candidate)) {
+            typeof document.querySelector === 'function' &&
+            document.querySelector('#' + candidate)) {
             return false;
           }
         }
@@ -115,16 +115,16 @@ module.exports = () => {
    */
   function loadData(url) {
     return new Promise(
-        function resolver(resolve, reject) {
-          let xhr = new XMLHttpRequest();
-          xhr.addEventListener('load', () => {
-            resolve(xhr.responseText);
-          });
-          xhr.addEventListener('error', reject);
-          xhr.open('GET', url);
-          xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-          xhr.send();
-        }
+      function resolver(resolve, reject) {
+        let xhr = new XMLHttpRequest();
+        xhr.addEventListener('load', () => {
+          resolve(xhr.responseText);
+        });
+        xhr.addEventListener('error', reject);
+        xhr.open('GET', url);
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send();
+      }
     );
   }
 
@@ -250,7 +250,7 @@ module.exports = () => {
 
     let relationship = $prospectiveParent.compareDocumentPosition($prospectiveDescendant);
     return !!(
-        relationship & $prospectiveParent.DOCUMENT_POSITION_CONTAINED_BY || relationship === 0
+      relationship & $prospectiveParent.DOCUMENT_POSITION_CONTAINED_BY || relationship === 0
     );
   }
 
@@ -328,7 +328,8 @@ module.exports = () => {
     let i;
     do {
       i = matches.length;
-      while (--i >= 0 && matches.item(i) !== el) {}
+      while (--i >= 0 && matches.item(i) !== el) {
+      }
 
     } while ((i < 0) && (el = el.parentElement));
 
@@ -410,6 +411,52 @@ module.exports = () => {
     };
   })();
 
+  /**
+   * Query selector to a different page.
+   *
+   * Usage example:
+   * const xhr = remoteQuerySelector('/?my-static-page');
+   *
+   * xhr.then((querySelector) => console.log(querySelector('h1')));
+   * xhr.then((querySelector) => console.log(querySelector('h2')));
+   * xhr.then((querySelector) => console.log(querySelector('h3')));
+   *
+   * This will log the H1, H2 and H3s on that remote page while only making a single XHR.
+   *
+   * Performance note: result of XHR is NOT garbage collected until promise is.
+   *
+   * @param url
+   * @param doc
+   * @returns {Promise.<function(string):Node>}
+   */
+  function remoteQuerySelector(url, doc = document) {
+    return loadData(url).then(data => (selector) => {
+
+      // Create a unique ID for this query.
+      const id = uniqueIds.get('querySelectorXHR', doc);
+
+      // First container to get the whole XHR
+      const wholeXHRDocument = doc.createElement('div');
+      wholeXHRDocument.id = id;
+      wholeXHRDocument.classList.add('visually-hidden');
+      wholeXHRDocument.classList.add('hidden');
+      wholeXHRDocument.innerHTML = data;
+      document.body.appendChild(wholeXHRDocument);
+
+      // Second container to hold the query result.
+      const queryResult = wholeXHRDocument.querySelector(selector);
+      const queryContainer = doc.createElement('div');
+      queryContainer.id = id;
+      queryContainer.appendChild(queryResult);
+      queryContainer.classList.add('visually-hidden');
+      queryContainer.classList.add('hidden');
+      document.body.replaceChild(queryContainer, wholeXHRDocument);
+
+      // Return the query result in the container
+      return queryResult;
+    });
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -424,6 +471,7 @@ module.exports = () => {
     isHighDpr: isHighDpr,
     loadData: loadData,
     nthChild: nthChild,
+    remoteQuerySelector: remoteQuerySelector,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
   };
