@@ -2,6 +2,7 @@
   "authorDetails": [
     {
       "name": "Jenny Bloggs",
+      "authorId": "author1",
 
       "hasAffiliations": true,
 
@@ -38,6 +39,8 @@
 
     {
       "name": "Jenny Bloggs",
+
+      "authorId": "author2",
 
       "hasAffiliations": true,
 

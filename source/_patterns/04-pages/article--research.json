@@ -507,14 +507,14 @@
       "title": "Abstract",
       "headingLevel": 2,
       "hasBehaviour": true,
-      "body": "<p>It is well established that learning can occur without external feedback, yet normative reinforcement learning theories have difficulties explaining such instances of learning. Here, we propose that human observers are capable of generating their own feedback signals by monitoring internal decision variables. We investigated this hypothesis in a visual perceptual learning task using fMRI and confidence reports as a measure for this monitoring process. Employing a novel computational model in which learning is guided by confidence-based reinforcement signals, we found that mesolimbic brain areas encoded both anticipation and prediction error of confidence—in remarkable similarity to previous findings for external reward-based feedback. We demonstrate that the model accounts for choice and confidence reports and show that the mesolimbic confidence prediction error modulation derived through the model predicts individual learning success. These results provide a mechanistic neurobiological explanation for learning without external feedback by augmenting reinforcement models with confidence-based feedback.</p>"
+      "body": "<p>It is well established that learning can occur without external feedback, yet normative reinforcement learning theories have difficulties explaining such instances of learning. Here, we propose that human observers are capable of generating their own feedback signals by monitoring internal decision variables. We investigated this hypothesis in a visual perceptual learning task using fMRI and confidence reports as a measure for this monitoring process. Employing a novel computational model in which learning is guided by confidence-based reinforcement signals, we found that mesolimbic brain areas encoded both anticipation and prediction error of confidence—in remarkable similarity to previous findings for external reward-based feedback. We demonstrate that the model accounts for choice and confidence reports and show that the mesolimbic confidence prediction error modulation derived through the model predicts individual learning success. These results provide a mechanistic neurobiological explanation for learning without external feedback by augmenting reinforcement models with confidence-based feedback. <a href=\"#author-3c233bb0\">See author popup</a></p>"
     },
     {
       "id": "digest",
       "title": "eLife Digest",
       "headingLevel": 2,
       "hasBehaviour": true,
-      "body": "<p>Each year, up to 15% of the world's population experience symptoms of an influenza infection, also commonly known as flu. The most common culprit is a strain of the virus called influenza type A subtype H3N2. One reason that so many people become infected each year is that this virus evolves rapidly. Within a few years, proteins on the surface of the virus known as antigens become less recognizable to the immune system of a person who has been previously infected. This means that the person can become ill with the virus again because their immune system cannot mount an effective response to the evolved virus strain.</p><pre class=\"code\"><code>&lt;dock_design&gt;\n&nbsp;&nbsp;&lt;SCOREFXNS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;fullatom weights=beta symmetric = 0&gt; &lt;/fullatom&gt; \n&nbsp;&nbsp;&lt;/SCOREFXNS&gt; \n&nbsp;&nbsp;&lt;FILTERS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Ddg name=ddg scorefxn=fullatom threshold = 0 jump = 1 repeats = 1 repack = 1 confidence = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Sasa name=sasa confidence = 0/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;ShapeComplementarity name=shape verbose = 1 confidence = 0 jump = 1/&gt; \n&nbsp;&nbsp;&lt;/FILTERS&gt;\n&nbsp;&nbsp;&lt;MOVERS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;AtomTree name=docking_tree docking_ft = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockSetupMover name=setup_dock/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockingProtocol name=dock docking_score_high=fullatom low_res_protocol_only = 0 docking_local_refine = 0 dock_min = 1 /&gt;\n&nbsp;&nbsp;&lt;/MOVERS&gt;\n&nbsp;&nbsp;&lt;APPLY_TO_POSE&gt;\n&nbsp;&nbsp;&lt;/APPLY_TO_POSE&gt; \n&nbsp;&nbsp;&lt;PROTOCOLS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=docking_tree/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=setup_dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=ddg/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=sasa/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=shape/&gt; \n&nbsp;&nbsp;&lt;/PROTOCOLS&gt; \n&lt;/dock_design&gt;</code></pre><p>Influenza virus strains evolve rapidly because their genetic material accumulates mutations quickly. Although some of these mutations are beneficial to the virus, other mutations are harmful and reduce the ability of the virus to spread. Sometimes beneficial mutations may occur alongside harmful ones, but it is not known how the harmful mutations affect the evolution of the virus.</p><p>Here, Koelle and Rasmussen used computer models of H3N2 influenza to examine the effect of harmful mutations on the evolution of this virus population. The models show that harmful mutations limit how quickly the antigens can evolve. Also, the presence of these harmful mutations effectively acts as a sieve: they allow only large changes in the antigens to establish in the virus population.</p><p>The models suggest that there are three routes by which large changes in the antigens on H3N2 viruses may occur. The first is by a single mutation that has a big effect on the antigens in viruses that only carry a few harmful mutations, but these large mutations would not happen very often. Another route may be through more common mutations that have only a small or moderate benefit, which would allow the virus to become more common in the population before it acquires a beneficial mutation with a much greater effect. The third possibility is that a large beneficial mutation may arise in viruses that have many harmful mutations. These harmful mutations may initially limit the ability of the virus to spread, but over time, some of these harmful mutations may then be lost.</p><p>Koelle and Rasmussen found that the computer models could recreate the patterns of virus evolution that have been observed in real strains of H3N2. Researchers use predictions of influenza evolution to help them decide which virus strains should be included in flu vaccines each year. Koelle and Rasmussen findings indicate that harmful mutations should be considered when making these predictions.</p>",
+      "body": "<p>Each year, up to 15% of the world's population experience symptoms of an influenza infection, also commonly known as flu. The most common culprit is a strain of the virus called influenza type A subtype H3N2. One reason that so many people become infected each year is that this virus evolves rapidly. Within a few years, proteins on the surface of the virus known as antigens become less recognizable to the <a href=\"#bib8\">immune system</a> of a person who has been previously infected. This means that the person can become ill with the virus again because their immune system cannot mount an effective response to the evolved virus strain.</p><pre class=\"code\"><code>&lt;dock_design&gt;\n&nbsp;&nbsp;&lt;SCOREFXNS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;fullatom weights=beta symmetric = 0&gt; &lt;/fullatom&gt; \n&nbsp;&nbsp;&lt;/SCOREFXNS&gt; \n&nbsp;&nbsp;&lt;FILTERS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Ddg name=ddg scorefxn=fullatom threshold = 0 jump = 1 repeats = 1 repack = 1 confidence = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Sasa name=sasa confidence = 0/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;ShapeComplementarity name=shape verbose = 1 confidence = 0 jump = 1/&gt; \n&nbsp;&nbsp;&lt;/FILTERS&gt;\n&nbsp;&nbsp;&lt;MOVERS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;AtomTree name=docking_tree docking_ft = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockSetupMover name=setup_dock/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockingProtocol name=dock docking_score_high=fullatom low_res_protocol_only = 0 docking_local_refine = 0 dock_min = 1 /&gt;\n&nbsp;&nbsp;&lt;/MOVERS&gt;\n&nbsp;&nbsp;&lt;APPLY_TO_POSE&gt;\n&nbsp;&nbsp;&lt;/APPLY_TO_POSE&gt; \n&nbsp;&nbsp;&lt;PROTOCOLS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=docking_tree/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=setup_dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=ddg/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=sasa/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=shape/&gt; \n&nbsp;&nbsp;&lt;/PROTOCOLS&gt; \n&lt;/dock_design&gt;</code></pre><p>Influenza virus strains evolve rapidly because their genetic material accumulates mutations quickly. Although some of these mutations are beneficial to the virus, other mutations are harmful and reduce the ability of the virus to spread. Sometimes beneficial mutations may occur alongside harmful ones, but it is not known how the harmful mutations affect the evolution of the virus.</p><p>Here, Koelle and Rasmussen used <a href=\"#bib9\">computer models</a> of H3N2 influenza to examine the effect of harmful mutations on the evolution of this virus population. The models show that harmful mutations limit how quickly the antigens can evolve. Also, the presence of these harmful mutations effectively acts as a sieve: they allow only large changes in the antigens to establish in the virus population.</p><p>The models suggest that there are three routes by which large changes in the antigens on H3N2 viruses may occur. The first is by a single mutation that has a big effect on the antigens in viruses that only carry a few harmful mutations, but these large mutations would not happen very often. Another route may be through more common mutations that have only a small or moderate benefit, which would allow the virus to become more common in the population before it acquires a beneficial mutation with a much greater effect. The third possibility is that a large beneficial mutation may arise in viruses that have many harmful mutations. These harmful mutations may initially limit the ability of the virus to spread, but over time, some of these harmful mutations may then be lost.</p><p>Koelle and Rasmussen found that the computer models could recreate the patterns of virus evolution that have been observed in real strains of H3N2. <a href=\"#bib1\">Researchers</a> use predictions of influenza evolution to help them decide which virus strains should be included in flu vaccines each year. Koelle and Rasmussen findings indicate that harmful mutations should be considered when making these predictions.</p>",
       "doi": {
         "doi": "10.7554/eLife.16370",
         "variant": "article-section"
@@ -817,5 +817,464 @@
       }
     }
   },
-  "year": 2016
+  "year": 2016,
+
+  "references": [
+    {
+      "bibId": {
+        "full": "bib1",
+        "ordinal": 1
+      },
+      "reference": {
+        "title": "Philosophie Anatomique",
+        "origin": "Paris: Méquignon-Marvis",
+
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Geoffroy Saint-Hilaire E."
+              }
+            ],
+            "suffix": "(1818)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+    },
+    {
+      "bibId": {
+        "full": "bib2",
+        "ordinal": 2
+      },
+      "reference": {
+        "title": "Understanding the rhythm of breathing: so near, yet so far",
+        "origin": "In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452.",
+
+        "doi": {
+          "doi": "10.1146/annurev-physiol-040510-130049"
+        },
+
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "JL Feldman"
+              },
+              {
+                "name": "C Del Negro"
+              },
+              {
+                "name": "PA Gray"
+              }
+            ],
+            "suffix": "(2013)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+    },
+    {
+      "bibId": {
+        "full": "bib3",
+        "ordinal": 3
+      },
+      "reference": {
+        "title": "Scripps Wired for Health Study (Registration: 000000)",
+        "origin": "Scripps Translational Science Institute (sponsor) (2015)",
+        "hasAuthors": false,
+        "hasAbstracts": false
+      }
+
+    },
+    {
+      "bibId": {
+        "full": "bib4",
+        "ordinal": 4
+      },
+      "reference": {
+        "title": "Boundary learning by optimization with topological constraints",
+        "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "BV Jain"
+              },
+              {
+                "name": "B Bollman"
+              },
+              {
+                "name": "M Richardson"
+              },
+              {
+                "name": "DR Berger"
+              },
+              {
+                "name": "MN Helmstaedter"
+              },
+              {
+                "name": "KL Briggman"
+              },
+              {
+                "name": "W Denk"
+              },
+              {
+                "name": "JB Bowden"
+              },
+              {
+                "name": "JM Mendenhall"
+              },
+              {
+                "name": "WC Abraham"
+              },
+              {
+                "name": "KM Harris"
+              },
+              {
+                "name": "N Kasthuri"
+              },
+              {
+                "name": "KJ Hayworth"
+              },
+              {
+                "name": "R Schalek"
+              },
+              {
+                "name": "JC Tapia"
+              },
+              {
+                "name": "JW Lichtman"
+              },
+              {
+                "name": "HS Seung"
+              }
+            ],
+            "suffix": "(2010)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib5",
+        "ordinal": 5
+      },
+      "reference": {
+        "title": "NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets",
+        "origin": "NCBI Gene Expression Omnibus. Series accession number <a href=\"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44902\">GSE44902</a>",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "R Bouveret"
+              },
+              {
+                "name": "R Bouveret"
+              },
+              {
+                "name": "N Schonrock"
+              },
+              {
+                "name": "M Ramialison"
+              },
+              {
+                "name": "T Doan"
+              },
+              {
+                "name": "D de Jong"
+              },
+              {
+                "name": "A Bondue"
+              },
+              {
+                "name": "G Kaur"
+              },
+              {
+                "name": "S Mohamed"
+              },
+              {
+                "name": "H Fonoudi"
+              },
+              {
+                "name": "C Chen"
+              },
+              {
+                "name": "M Wouters"
+              },
+              {
+                "name": "S Bhattacharya"
+              },
+              {
+                "name": "N Plachta"
+              },
+              {
+                "name": "SL Dunwoodie"
+              },
+              {
+                "name": "G Chapman"
+              },
+              {
+                "name": "C Blanpain"
+              },
+              {
+                "name": "RP Harvey"
+              }
+            ],
+            "suffix": "(2015)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib6",
+        "ordinal": 6
+      },
+      "reference": {
+        "title": "Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift",
+        "origin": "Nature 365:833–836. PMID 8413666",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Schrenk F"
+              },
+              {
+                "name": "Bromage TG"
+              },
+              {
+                "name": "Betzler CG"
+              },
+              {
+                "name": "Ring U"
+              },
+              {
+                "name": "Juwayeyi YM"
+              }
+            ],
+            "suffix": "(1993)"
+          }
+        ],
+        "doi": {
+          "doi": "10.1038/365833a0"
+        },
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib7",
+        "ordinal": 7
+      },
+      "reference": {
+        "title": "IRE-1alpha inhibitors (US20100941530)",
+        "origin": "Mankind Corp, United States patent, United States",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "JB Patterson"
+              },
+              {
+                "name": "DG Lonergan"
+              },
+              {
+                "name": "GA Flynn"
+              },
+              {
+                "name": "Z Qingpeng"
+              },
+              {
+                "name": "PV Pallai"
+              }
+            ],
+            "suffix": "(2011)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib8",
+        "ordinal": 8
+      },
+      "reference": {
+        "title": "Unreliable research: Trouble at the lab",
+        "titleLink": "https://www.economist.com/news/briefing/21588057-scientists-think-science-self-correcting-alarming-degree-it-not-trouble",
+        "origin": "<i>The Economist</i>, p26–30.",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "The Economist"
+              }
+            ],
+            "suffix": "(October 19, 2013)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib9",
+        "ordinal": 9
+      },
+      "reference": {
+        "title": "Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression",
+        "titleLink": "https://arxiv.org/abs/1303.0216",
+        "origin": "arXiv",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Paris M"
+              },
+              {
+                "name": "Kaplan M"
+              },
+              {
+                "name": "Li XY"
+              },
+              {
+                "name": "Villalta JE"
+              },
+              {
+                "name": "Lott SE"
+              },
+              {
+                "name": "Eisen MB"
+              }
+            ],
+            "suffix": "(2013)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib10",
+        "ordinal": 10
+      },
+      "reference": {
+        "title": "Educational Excellence Everywhere",
+        "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
+        "origin": "London: HMSO",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Department of Education, UK."
+              }
+            ],
+            "suffix": "(2016)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib11",
+        "ordinal": 11
+      },
+      "reference": {
+        "title": "The Pymol Molecular Graphics System",
+        "origin": "DeLano Scientific, Palo Alto, CA",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "W. L. DeLano"
+              }
+            ],
+            "suffix": "(2002)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib12",
+        "ordinal": 12
+      },
+      "reference": {
+        "title": "Theory of large fluctuations in stochastic populations",
+        "titleLink": "https://doi.org/10.1371/journal.pgen.0030218",
+        "origin": "Hebrew University of Jerusalem",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Assaf M."
+              }
+            ],
+            "suffix": "(2010)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib13",
+        "ordinal": 13
+      },
+      "reference": {
+        "title": "The Problem of Perception",
+        "titleLink": "http://plato.stanford.edu/entries/perception-problem/",
+        "origin": "The Stanford Encyclopedia of Philosophy",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Crane T"
+              }
+            ],
+            "suffix": "(2005)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    }
+  ]
 }

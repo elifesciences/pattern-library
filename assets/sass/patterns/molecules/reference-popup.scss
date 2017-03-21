@@ -4,16 +4,30 @@
   position: relative;
 }
 
+.reference-popup--hidden {
+  transition: opacity .3s;
+  pointer-events: none;
+  opacity: 0;
+}
+
 .reference-popup__hit-box {
   padding: 15px;
-  left: 0;
+  left: -180px;
   bottom: 15px;
   position: absolute;
   width: 360px;
   z-index: 100;
 }
+
+.reference-popup__arrow {
+  @include arrow("down", 7, #181818);
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  margin-left: -5px;
+}
+
 .reference-popup__window {
-  font-family: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
   @include box-shadow();
   background: #181818;
   border-radius: 3px;
@@ -23,7 +37,27 @@
   max-height: 300px;
 
   > * {
-    font-size: 0.5em !important;
     color: #fff;
+  }
+
+  .article-section__body & .reference a,
+  .reference__title,
+  .reference__title a {
+    font-family: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #fff;
+  }
+
+  .reference__authors_link {
+    font-size: 11px;
+    color: #fff;
+  }
+
+  .reference-list__item {
+    padding-left: 0;
+  }
+
+  .reference-list__ordinal_number {
+    display: none;
   }
 }

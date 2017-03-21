@@ -9,6 +9,7 @@ class ReferencePopup {
     $elm.parentNode.replaceChild(container, $elm);
     this.$elm = container;
     this.link = container.querySelector('a');
+    this.linkWidth = this.link.offsetWidth;
     this.window = _window;
     this.doc = doc;
     this.bodyContents = null;
@@ -63,6 +64,27 @@ class ReferencePopup {
     });
   }
 
+  createPopupBox(body) {
+    const popup = document.createElement('div');
+    popup.appendChild(body);
+    popup.classList.add('reference-popup__window');
+    return popup;
+  }
+
+  createPopupHitBox(...children) {
+    const popupHitBox = document.createElement('div');
+    popupHitBox.classList.add('reference-popup__hit-box');
+    popupHitBox.style.marginLeft = `${(this.linkWidth /2)}px`;
+    children.forEach(child => popupHitBox.appendChild(child));
+    return popupHitBox;
+  }
+
+  createArrow() {
+    const arrow = document.createElement('div');
+    arrow.classList.add('reference-popup__arrow');
+    return arrow;
+  }
+
   render() {
     // If there's nothing to render.. we don't.
     if (this.emptyBody) {
@@ -76,22 +98,24 @@ class ReferencePopup {
     }
 
     // If there's no popup element yet, we create it.
-    if (!this.popup) {
+    if (!this.popupHitBox) {
       this.bodyContents.id = utils.uniqueIds.get('popupFragment', this.doc);
-      this.popup = document.createElement('div');
-      this.popup.appendChild(this.bodyContents);
-      this.popup.classList.add('reference-popup__window');
-      this.popupHitBox = document.createElement('div');
-      this.popupHitBox.classList.add('reference-popup__hit-box');
-      this.popupHitBox.appendChild(this.popup);
+
+      // Create elements.
+      this.popupHitBox = this.createPopupHitBox(
+          this.createArrow(),
+          this.createPopupBox(this.bodyContents)
+      );
+
+      // Add to DOM.
       this.$elm.appendChild(this.popupHitBox);
     }
 
     // Changing the state depending on the other properties of the object.
     if (this.hoverLink) {
-      this.popupHitBox.classList.remove('hidden');
+      this.popupHitBox.classList.remove('reference-popup--hidden');
     } else {
-      this.popupHitBox.classList.add('hidden');
+      this.popupHitBox.classList.add('reference-popup--hidden');
     }
 
   }

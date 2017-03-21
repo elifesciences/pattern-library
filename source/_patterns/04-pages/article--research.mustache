@@ -29,10 +29,11 @@
             </div>
 
             <div class="grid__item large--six-twelfths blg-pad-top-medium" data-behaviour="FragmentHandler">
-
+              <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="ReferencePopup" data-selector="a">
               {{#articleSections}}
                 {{> molecules-article-section }}
               {{/articleSections}}
+              </div>
 
               {{#iframe}}
                 {{!> atoms-iframe }}
@@ -42,6 +43,15 @@
               {{#pl-only-article-section-for-download-links}}
                 {{> molecules-pl-only-article-section-for-download-links}}
               {{/pl-only-article-section-for-download-links}}
+
+              <section class="article-section" data-behaviour="ArticleSection">
+                <header class="article-section__header">
+                  <h2 class="article-section__header_text">References</h2>
+                </header>
+                <div class="article-section__body">
+                  {{> molecules-reference-list }}
+                </div>
+              </section>
 
               {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
               {{#articleMeta}}
@@ -53,6 +63,7 @@
 
                 </section>
               {{/articleMeta}}
+
             </div>
 
           </div>
