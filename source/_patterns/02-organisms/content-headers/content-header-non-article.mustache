@@ -9,12 +9,37 @@
 
   {{#hasProfile}}
     <div class="content-header__top">
-      <a class="content-header__top_info" href="{{{profile.link}}}">
+      {{#profile.url}}
+      <a class="content-header__top_info{{#profile.image}} content-header__top_info--has-image{{/profile.image}}" href="{{profile.url}}">
+      {{/profile.url}}
+      {{^profile.url}}
+      <span class="content-header__top_info{{#profile.image}} content-header__top_info--has-image{{/profile.image}}">
+      {{/profile.url}}
+        {{#profile.image}}
+          <picture>
+            {{#sources}}
+              <source srcset="{{srcset}}"
+                {{#type}}type="{{type}}"{{/type}}
+                {{#media}}media="{{media}}"{{/media}}>
+            {{/sources}}
+            {{#fallback}}
+              <img src="{{defaultPath}}"
+                {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+                alt="Avatar for profile of {{profile.name}}"
+                class="content-header__top_image">
+            {{/fallback}}
+          </picture>
+        {{/profile.image}}
         <dl>
           <dt class="content-header__top_label">Curated by</dt>
           <dd class="content-header__top_data">{{profile.name}}</dd>
         </dl>
+      {{#profile.url}}
       </a>
+      {{/profile.url}}
+      {{^profile.url}}
+      </span>
+      {{/profile.url}}
     </div>
   {{/hasProfile}}
 

@@ -59,25 +59,48 @@ schema:
         name:
           type: string
           minLength: 1
-        link:
+        url:
           type: string
           minLength: 1
-        avatar:
+        image:
           type: object
           properties:
-            x1:
-              type: string
-              minLength: 1
-            x2:
-              type: string
-              minLength: 1
+            sources:
+              type: array
+              uniqueItems: true
+              items:
+                type: object
+                properties:
+                  srcset:
+                    type: string
+                    minLength: 1
+                  media:
+                    type: string
+                    minLength: 1
+                  type:
+                    type: string
+                    enum:
+                      - image/svg+xml
+                      - image/webp
+                      - image/png
+                      - image/jpeg
+                required:
+                  - srcset
+            fallback:
+              type: object
+              properties:
+                srcset:
+                  type: string
+                  pattern: ^((https)?[^ ]+ [1-9][0-9]*w)(, (https?)?[^ ]+ [1-9][0-9]*w)*$
+                defaultPath:
+                  type: string
+                  minLength: 1
+              required:
+                - defaultPath
           required:
-            - x1
-            - x2
+            - fallback
       required:
         - name
-        - link
-        - avatar
   required:
     - rootClasses
     - title
