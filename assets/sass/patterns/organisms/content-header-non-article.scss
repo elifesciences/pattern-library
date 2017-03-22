@@ -182,8 +182,8 @@
     text-decoration: none;
   }
 
-  .content-header__top_info:hover *,
-  .content-header__top_info:active * {
+  a.content-header__top_info:hover *,
+  a.content-header__top_info:active * {
     color: $color-primary-dark;
   }
 

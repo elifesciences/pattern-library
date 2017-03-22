@@ -165,10 +165,9 @@
     "hasProfile": true,
     "profile": {
       "name": "Prabhat Jha",
-      "link": "#",
       "image": {
-        "srcset": "https://unsplash.it/40/40",
         "fallback": {
+          "srcset": "https://unsplash.it/80/80 80w",
           "defaultPath": "https://unsplash.it/40/40"
         }
       }
