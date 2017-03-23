@@ -18,6 +18,10 @@
   text-transform: uppercase;
 }
 
+.button:hover {
+  color: #fff;
+}
+
 .button--default {
   background-color: $color-primary;
   border: 2px solid $color-primary;
