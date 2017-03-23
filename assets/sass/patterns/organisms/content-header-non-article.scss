@@ -176,20 +176,14 @@
 
   // 40px is the size of the avatar background image.
   .content-header__top_info {
-    background: url("../img/fixtures/pjha1x.png") 0 17px transparent no-repeat;
-    background-size: 40px;
-    box-sizing: content-box;
-    display: table-cell;
-    min-height: 40px;
     padding-bottom: 10px;
-    padding-top: 22px;
-    padding-left: 42px;
+    padding-top: 10px;
     text-align: center;
     text-decoration: none;
   }
 
-  .content-header__top_info:hover *,
-  .content-header__top_info:active * {
+  a.content-header__top_info:hover *,
+  a.content-header__top_info:active * {
     color: $color-primary-dark;
   }
 
@@ -198,6 +192,7 @@
   .content-header__top_info dt,
   .content-header__top_info dd {
     margin-bottom: 0;
+    text-align: center;
   }
 
   .content-header__top_label {
@@ -206,23 +201,20 @@
     @include padding(5, "bottom");
   }
 
+
+
+  .content-header__top_image {
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    @include margin(10, "right");
+  }
+
   .content-header__top_data {
     color: $color-text--reverse;
     font-family: $font-secondary;
     @include font-size(14);
     line-height: 1.2;
-  }
-
-  @media only screen and (min-resolution: 196dpi) {
-    .content-header__top_info {
-      background-image: url("../img/fixtures/pjha2x.png");
-    }
-  }
-
-  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-    .content-header__top_info {
-      background-image: url("../img/fixtures/pjha2x.png");
-    }
   }
 
   @supports (display: flex) {
@@ -236,6 +228,20 @@
       @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
         margin-left: -#{$content-header-side-padding--extra-wide}px;
       }
+    }
+
+    .content-header__top_info {
+      display: flex;
+    }
+
+    /* When Profile has an Image,left align associated text */
+    .content-header__top_info--has-image {
+
+      .content-header__top_label,
+      .content-header__top_data {
+        text-align: left;
+      }
+
     }
 
     .content-header__top_label {
