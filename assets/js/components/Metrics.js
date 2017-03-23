@@ -16,6 +16,15 @@ class Metrics {
     this.period = $el.getAttribute('data-period') || 'month';
     this.$dailyButton = $el.querySelector('[data-target="daily"]');
     this.$monthlyButton = $el.querySelector('[data-target="monthly"]');
+    const parent = utils.closest(this.$el, '.article-section');
+    if (parent) {
+      parent.addEventListener('expandsection', () => {
+        // This catches cases where the data may be loading, which breaks.
+        if (this.getSelectedMetric().page !== 0) {
+          this.renderView($el, this.getSelectedMetric());
+        }
+      });
+    }
 
     // The data flows from left to right, but clicking the left arrow takes
     // you to the next page, which is the previous month, the comments below
