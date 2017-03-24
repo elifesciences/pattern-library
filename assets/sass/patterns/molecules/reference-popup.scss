@@ -4,27 +4,59 @@
   position: relative;
 }
 
-.reference-popup--hidden {
-  transition: opacity .3s;
-  pointer-events: none;
-  opacity: 0;
-}
-
 .reference-popup__hit-box {
-  padding: 15px;
   left: -180px;
-  bottom: 15px;
+  padding: 15px;
   position: absolute;
+  transition: all 0.3s;
+  transform: translateY(0px);
   width: 360px;
   z-index: 100;
+
+  .reference-popup--hidden & {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .reference-popup--below & {
+    top: 15px;
+  }
+
+  .reference-popup--above & {
+    bottom: 15px;
+  }
+
+  .reference-popup--hidden.reference-popup--below & {
+    transform: translateY(-15px);
+  }
+
+  .reference-popup--hidden.reference-popup--above & {
+    transform: translateY(15px);
+  }
+
 }
 
-.reference-popup__arrow {
-  @include arrow("down", 7, #181818);
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  margin-left: -5px;
+a.reference-popup__button {
+  color: #fff;
+  font-family: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  padding: 8px 14px;
+  &:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+.reference-popup__button--right {
+  float: right;
+  text-transform: uppercase;
+}
+
+.reference-popup__content {
+  margin-bottom: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
 }
 
 .reference-popup__window {
@@ -32,9 +64,6 @@
   background: #181818;
   border-radius: 3px;
   color: #fff;
-  overflow-y: auto;
-  padding: 10px;
-  max-height: 300px;
 
   > * {
     color: #fff;
@@ -42,19 +71,33 @@
 
   .article-section__body & .reference a,
   .reference__title,
-  .reference__title a {
+  .reference__title a,
+  .author-details__name,
+  .author-details__affiliations,
+  .author-details__affiliation,
+  .author-details__heading,
+  .author-details__text,
+  .author-details__section--orcid {
+    color: #fff;
     font-family: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
     font-size: 13px;
-    color: #fff;
+  }
+
+  .author-details {
+    margin-top: 20px;
+  }
+
+  .author-details__name {
+    font-size: 15px;
+  }
+
+  .reference__origin {
+    margin-top: 4px;
   }
 
   .reference__authors_link {
-    font-size: 11px;
     color: #fff;
-  }
-
-  .reference-list__item {
-    padding-left: 0;
+    font-size: 11px;
   }
 
   .reference-list__ordinal_number {
