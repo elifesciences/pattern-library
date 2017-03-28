@@ -21,6 +21,13 @@ module.exports = class ContentHeaderArticle {
     this.authors = $elm.querySelectorAll('.content-header__author_list_item');
     this.institutions = $elm.querySelectorAll('.content-header__institution_list_item');
 
+    if (this.authors.length > 0) {
+      this.authors[this.authors.length - 1].classList.add('content-header__author_list_item--last');
+    }
+    if (this.institutions.length > 0) {
+      this.institutions[this.institutions.length - 1].classList.add('content-header__institution_list_item--last');
+    }
+
     this.hasToggleAuthor = false;
     this.hasToggleInstitution = false;
     this.hideAllExcessItems('author', this.authors);

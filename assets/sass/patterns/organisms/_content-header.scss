@@ -97,7 +97,7 @@
   content: ", ";
 }
 
-li.content-header__author_list_item:last-of-type .content-header__author:after {
+li.content-header__author_list_item--last .content-header__author:after {
   content: "";
 }
 
@@ -131,6 +131,10 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
 
 .content-header__institution:after {
   content: "; ";
+}
+
+li.content-header__institution_list_item--last .content-header__institution:after {
+  content: "";
 }
 
 .content-header-divider {
