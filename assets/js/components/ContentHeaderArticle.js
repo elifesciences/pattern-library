@@ -178,7 +178,7 @@ module.exports = class ContentHeaderArticle {
     [].forEach.call(items, function (item, i) {
 
       // Clear old any obsolete determination of what's the last non-excess item.
-      items[i].classList.remove('content-header__' + itemType + '--last-non-excess');
+      items[i].querySelector('.content-header__' + itemType).classList.remove('content-header__' + itemType + '--last-non-excess');
       if (item.classList.contains('excess-item') && !foundLastShown) {
         lastShownIndex = i - 1;
         foundLastShown = true;
@@ -243,6 +243,8 @@ module.exports = class ContentHeaderArticle {
         this.clearExcessMark(this.institutions);
         this.toggleExcessItems(this.authors);
         this.toggleExcessItems(this.institutions);
+        this.markLastNonExcessItem('author', this.authors);
+        this.markLastNonExcessItem('institution', this.institutions);
       } else {
         [].forEach.call(this.doc.querySelectorAll('.content-header__item_toggle'), item => {
           item.innerHTML = '&nbsp;&hellip;&nbsp;' + toggleOnText;
