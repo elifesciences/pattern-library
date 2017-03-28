@@ -27,7 +27,7 @@ if (window.localStorage && document.querySelector &&
   Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
   Components.Metrics = require('./components/Metrics');
   Components.Pager = require('./components/Pager');
-  Components.ReferencePopup = require('./components/ReferencePopup');
+  Components.Popup = require('./components/Popup');
   Components.SearchBox = require('./components/SearchBox');
   Components.SectionListingLink = require('./components/SectionListingLink');
   Components.SelectNav = require('./components/SelectNav');

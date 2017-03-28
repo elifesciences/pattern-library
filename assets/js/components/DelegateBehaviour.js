@@ -1,4 +1,4 @@
-class DelegateBehaviour {
+module.exports = class DelegateBehaviour {
 
   static setInitialiseComponent(initialiseComponent) {
     DelegateBehaviour.initialiseComponent = initialiseComponent;
@@ -13,5 +13,3 @@ class DelegateBehaviour {
   }
 
 }
-
-module.exports = DelegateBehaviour;
