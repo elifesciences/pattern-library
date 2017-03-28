@@ -21,6 +21,13 @@ module.exports = class ContentHeaderArticle {
     this.authors = $elm.querySelectorAll('.content-header__author_list_item');
     this.institutions = $elm.querySelectorAll('.content-header__institution_list_item');
 
+    if (this.authors.length > 0) {
+      this.authors[this.authors.length - 1].classList.add('content-header__author_list_item--last');
+    }
+    if (this.institutions.length > 0) {
+      this.institutions[this.institutions.length - 1].classList.add('content-header__institution_list_item--last');
+    }
+
     this.hasToggleAuthor = false;
     this.hasToggleInstitution = false;
     this.hideAllExcessItems('author', this.authors);
@@ -178,7 +185,7 @@ module.exports = class ContentHeaderArticle {
     [].forEach.call(items, function (item, i) {
 
       // Clear old any obsolete determination of what's the last non-excess item.
-      items[i].classList.remove('content-header__' + itemType + '--last-non-excess');
+      items[i].querySelector('.content-header__' + itemType).classList.remove('content-header__' + itemType + '--last-non-excess');
       if (item.classList.contains('excess-item') && !foundLastShown) {
         lastShownIndex = i - 1;
         foundLastShown = true;
@@ -243,6 +250,8 @@ module.exports = class ContentHeaderArticle {
         this.clearExcessMark(this.institutions);
         this.toggleExcessItems(this.authors);
         this.toggleExcessItems(this.institutions);
+        this.markLastNonExcessItem('author', this.authors);
+        this.markLastNonExcessItem('institution', this.institutions);
       } else {
         [].forEach.call(this.doc.querySelectorAll('.content-header__item_toggle'), item => {
           item.innerHTML = '&nbsp;&hellip;&nbsp;' + toggleOnText;

@@ -97,18 +97,12 @@
   content: ", ";
 }
 
-li.content-header__author_list_item:last-of-type .content-header__author:after {
+li.content-header__author_list_item--last .content-header__author:after {
   content: "";
 }
 
 .content-header__author--single {
   @include author-typeg();
-}
-
-// FIX: This must only apply when authors are collapsed & so there's a read more.
-// Recommend determining by js & swapping a class based on that to give this behaviour.
-.content-header-article--js li.content-header__author_list_item:nth-last-of-type(2) .content-header__author:after {
-  content: "";
 }
 
 .content-header__author--last-non-excess:after {
@@ -136,10 +130,10 @@ li.content-header__author_list_item:last-of-type .content-header__author:after {
 }
 
 .content-header__institution:after {
-  content: ", ";
+  content: "; ";
 }
 
-.content-header-article--js li.content-header__institution_list_item:nth-last-of-type(2) .content-header__institution:after {
+li.content-header__institution_list_item--last .content-header__institution:after {
   content: "";
 }
 
