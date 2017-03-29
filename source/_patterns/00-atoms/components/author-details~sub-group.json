@@ -1,0 +1,32 @@
+{
+  "name": "ICGC Chronic Myeloid Disorders Group",
+  "authorId": "pageUniqueIdForThisAuthor1",
+
+  "details": [
+    {
+      "values": [
+        "Cancer Genome Project, Wellcome Trust Sanger Institute, Hinxton, United Kingdom"
+      ]
+    },
+    {
+      "heading": "Competing interests",
+      "value": "No competing interests declared"
+    }
+  ],
+
+  "groups": [
+    {
+      "groupName": "Sub-group 1",
+      "items": [
+        "Luca Malcovati, Fondazione IRCCS Policlinico San Matteo, University of Pavia, Pavia, Italy",
+        "Sudhir Tauro, Division of Medial Sciences, University of Dundee, Dundee, UK"
+      ]
+    },
+    {
+      "groupName": "Sub-group 2",
+      "items": [
+        "Jacqueline Boultwood, Nuffield Department of Clinical Laboratory Sciences, University of Oxford, UK"
+      ]
+    }
+  ]
+}
