@@ -345,6 +345,14 @@
       "hasBehaviour": true,
       "isInitiallyClosed": true,
       "showCharts": true,
+      "chart": {
+        "id": "09560",
+        "type": "article",
+        "containerId": "chart-1",
+        "apiEndpoint": "http://prod--gateway.elifesciences.org",
+        "metric": "downloads",
+        "period": "month"
+      },
       "body": null,
       "stats": [{
         "label" : "Views",

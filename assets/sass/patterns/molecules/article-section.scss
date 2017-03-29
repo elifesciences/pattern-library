@@ -137,6 +137,14 @@ $arrow-size: 5;
     }
   }
 
+  .button-collection__button--active {
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+
   abbr,
   acronym {
     cursor: help;

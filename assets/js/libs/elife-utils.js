@@ -411,6 +411,7 @@ module.exports = () => {
     };
   })();
 
+
   /**
    * Query selector to a different page.
    *
@@ -455,6 +456,17 @@ module.exports = () => {
       // Return the query result in the container
       return queryResult;
     });
+
+  function eventCreator(name, detail) {
+    let event;
+    try {
+      event = new CustomEvent(name, { detail });
+    } catch (e) {
+      // CustomEvent not supported, do it the old fashioned way
+      event = document.createEvent(name);
+      event.initCustomEvent(name, true, true, { detail });
+    }
+    return event;
   }
 
   return {
@@ -464,6 +476,7 @@ module.exports = () => {
     closest: closest,
     debounce: debounce,
     equalizeHeightOfItems: equalizeHeightOfItems,
+    eventCreator: eventCreator,
     defer: defer,
     extend: extend,
     flatten: flatten,

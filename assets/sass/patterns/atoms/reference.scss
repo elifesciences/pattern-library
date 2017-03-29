@@ -26,6 +26,14 @@ a.reference__title:hover {
   padding: 0;
 }
 
+.reference__author:after {
+  content: ", ";
+}
+
+.reference__author:last-of-type:after {
+  content: "";
+}
+
 .reference__authors_link {
   color: $color-text;
   font-family: $font-secondary;
