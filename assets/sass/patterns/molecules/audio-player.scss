@@ -9,7 +9,7 @@
 }
 
 .audio-player__toggle_play {
-  background: #222;
+  background: #222 url("../img/icons/audio-play.svg") center center no-repeat;
   border: none;
   border-right: 1px solid #444;
   color: $color-text--reverse;
@@ -19,8 +19,8 @@
   position: absolute;
   top: 0;
   @include width(90);
-
   &.loading {
+    background-image: none;
     @include loading-spinner();
     left: 30px;
     top: 22px;
@@ -29,8 +29,8 @@
 
 }
 
-.audio-player__toggle_play_icon {
-  padding-top: 4px;
+.audio-player__toggle_play--pauseable {
+  background-image: url("../img/icons/audio-pause.svg");
 }
 
 .audio-player__container {
