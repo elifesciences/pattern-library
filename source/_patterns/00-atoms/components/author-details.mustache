@@ -3,59 +3,23 @@
 
   <h4 class="author-details__name">{{{name}}}</h4>
 
-  {{#hasAffiliations}}
-  <ol class="author-details__affiliations author-details__section author-details__section--affiliations">
-    {{#affiliations}}
-      <li class="author-details__affiliation">{{{.}}}</li>
-    {{/affiliations}}
-  </ol>
-  {{/hasAffiliations}}
-
-  {{#hasPresentAddresses}}
-    <section class="author-details__section author-details__section--present-address">
-    <h5 class="author-details__heading">Present address: </h5>
-    <ol class="author-details__list">
-      {{#presentAddresses}}
-        <li class="author-details__text">{{.}}</li>
-      {{/presentAddresses}}
-    </ol>
+  {{#details}}
+    <section class="author-details__section">
+      {{#heading}}
+        <h5 class="author-details__heading">{{heading}}</h5>
+      {{/heading}}
+      {{#value}}
+        <span class="author-details__text">{{{value}}}</span>
+      {{/value}}
+      {{^value}}
+        <ol class="author-details__list">
+          {{#values}}
+            <li class="author-details__text">{{{.}}}</li>
+          {{/values}}
+        </ol>
+      {{/value}}
     </section>
-  {{/hasPresentAddresses}}
-
-  {{#contributionStatement}}
-    <section class="author-details__section author-details__section--contribution-statement">
-    <h5 class="author-details__heading">Contribution: </h5>
-    <span class="author-details__text">{{{contributionStatement}}}</span>
-    </section>
-  {{/contributionStatement}}
-
-  {{#equalContributionStatement}}
-    <section class="author-details__section author-details__section--equal-contribution-statement">
-      <h5 class="author-details__heading">Contributed equally with: </h5>
-      <span class="author-details__text">{{{equalContributionStatement}}}</span>
-    </section>
-
-  {{/equalContributionStatement}}
-
-  {{#hasMeansOfCorrespondence}}
-  <section class="author-details__section author-details__section--means-of-correspondence">
-    <h5 class="author-details__heading">For correspondence: </h5>
-
-    {{#meansOfCorrespondence}}
-      {{#isEmail}}
-        <a href="mailto:{{value}}" class="author-details__text author-details__link">{{value}}</a>
-      {{/isEmail}}
-      {{^isEmail}}
-        <span class="author-details__text">{{value}}</span>
-      {{/isEmail}}
-    {{/meansOfCorrespondence}}
-  </section>
-  {{/hasMeansOfCorrespondence}}
-
-  <section class="author-details__section author-details__section--competing-interest">
-    <h5 class="author-details__heading">Competing interests: </h5>
-    <span class="author-details__text">{{{competingInterest}}}</span>
-  </section>
+  {{/details}}
 
   {{#orcid}}
   <section class="author-details__section author-details__section--orcid">
@@ -68,5 +32,16 @@
     <a href="https://orcid.org/{{orcid}}" target="_blank" class="author-details__text author-details__link author-details__link--orcid">{{orcid}}</a>
   </section>
   {{/orcid}}
+
+  {{#groups}}
+    {{#groupName}}<h5 class="author-details__secondary-name">{{{groupName}}}</h5>{{/groupName}}
+
+    <ol class="list list--bullet">
+      {{#items}}
+        <li>{{{.}}}</li>
+      {{/items}}
+    </ol>
+  {{/groups}}
+
 </div>
 
