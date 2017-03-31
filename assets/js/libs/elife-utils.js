@@ -439,8 +439,7 @@ module.exports = () => {
       // First container to get the whole XHR
       const wholeXHRDocument = doc.createElement('div');
       wholeXHRDocument.id = id;
-      wholeXHRDocument.classList.add('visually-hidden');
-      wholeXHRDocument.classList.add('hidden');
+      wholeXHRDocument.classList.add('visually-hidden', 'hidden');
       wholeXHRDocument.innerHTML = data;
       document.body.appendChild(wholeXHRDocument);
 
@@ -449,13 +448,13 @@ module.exports = () => {
       const queryContainer = doc.createElement('div');
       queryContainer.id = id;
       queryContainer.appendChild(queryResult);
-      queryContainer.classList.add('visually-hidden');
-      queryContainer.classList.add('hidden');
+      queryContainer.classList.add('visually-hidden', 'hidden');
       document.body.replaceChild(queryContainer, wholeXHRDocument);
 
       // Return the query result in the container
       return queryResult;
     });
+  }
 
   function eventCreator(name, detail) {
     let event;
@@ -488,5 +487,4 @@ module.exports = () => {
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
   };
-
 };
