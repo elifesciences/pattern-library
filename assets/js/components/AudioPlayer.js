@@ -157,8 +157,8 @@ module.exports = class AudioPlayer {
     }
 
     if (this.$audioElement.ended) {
-      $togglePlayButton.classList.add('audio-player__toggle_play--playable');
-      $togglePlayButton.classList.remove('audio-player__toggle_play--pauseable');
+      this.$playButton.classList.add('audio-player__toggle_play--playable');
+      this.$playButton.classList.remove('audio-player__toggle_play--pauseable');
       this.isPlaying = false;
     }
   }
