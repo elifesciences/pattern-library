@@ -20,3 +20,5 @@ schema:
     loop:
       type: boolean
       default: false
+  required:
+    - sources
