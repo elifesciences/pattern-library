@@ -23,8 +23,6 @@
 
 .teaser__context_label_list {
   @include teaser-context-label-list-style();
-  // TODO: REMOVE!
-  max-height: 24px !important;
 }
 
 .teaser__context_label_list_item {
