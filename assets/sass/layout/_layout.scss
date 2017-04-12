@@ -29,16 +29,3 @@
   display: block;
   float: none;
 }
-
-.listing-column-main {
-  @include margin($blg-space-large-in-px, "bottom");
-}
-
-@media only all and (min-width: 800px) {
-
-  .listing-column-main {
-    @include nospace("bottom");
-    //border-right: 1px solid $color-text-dividers;
-  }
-
-}
