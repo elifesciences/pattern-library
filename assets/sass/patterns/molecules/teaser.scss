@@ -9,10 +9,6 @@
   border-top-style: none;
 }
 
-.listing-list__item:last-child .teaser {
-  border-top-style: none;
-}
-
 .teaser--related {
   border-top-width: 0;
 }
@@ -26,6 +22,8 @@
 
 .teaser__context_label_list {
   @include teaser-context-label-list-style();
+  // TODO: REMOVE!
+  max-height: 24px !important;
 }
 
 .teaser__context_label_list_item {
@@ -149,7 +147,7 @@
   display: block;
   float: right;
   height: auto;
-  @include margin(5 0 $teaser-spacing-bottom $teaser-spacing-left);
+  @include margin(12 0 12 24);
 }
 
 .teaser__img--prominent {
@@ -160,12 +158,13 @@
 }
 
 .teaser__img--big {
-  max-width: 250px;
+  height: 144px;
+  width: auto;
 }
 
 .teaser__img--small {
-  width: 70px;
-  height: 70px;
+  width: 72px;
+  height: 72px;
   float: right;
 }
 
