@@ -31,7 +31,7 @@
 }
 
 .listing-column-main {
-  @include margin(32, "bottom");
+  @include margin($blg-space-large-in-px, "bottom");
 }
 
 @media only all and (min-width: 800px) {

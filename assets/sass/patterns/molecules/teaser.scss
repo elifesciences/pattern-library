@@ -3,10 +3,11 @@
 .teaser {
   border-top: 1px solid $color-text-dividers;
   @include padding($teaser-spacing-top 0 $teaser-spacing-bottom);
-}
 
-.listing-list__item:first-child .teaser {
-  border-top-style: none;
+  .listing-list__item:first-child & {
+    border-top-style: none;
+  }
+
 }
 
 .teaser--related {
@@ -133,12 +134,6 @@
 
   .teaser__header_text {
     @include listing-side-art-title-typeg();
-    @include padding(0 0 3 0);
-  }
-
-  .teaser__secondary_info {
-    @include listing-side-author-typeg();
-    @include margin(10, "bottom");
   }
 
 }
@@ -176,10 +171,6 @@
 }
 
 .teaser--secondary {
-
-  .teaser__img {
-    margin-top: 0;
-  }
 
   .teaser__img--big {
     float: none;
