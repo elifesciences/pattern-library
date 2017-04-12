@@ -143,29 +143,19 @@
   @include margin(12 0 12 24);
 }
 
-.teaser__img--prominent {
+// NOTE: .teaser__img--prominent is no longer used
+.teaser__img--big {
   float: none;
   margin: 0;
-  @include margin(10, "bottom");
+  @include margin(12, "top");
+  @include margin(12, "bottom");
   width: 100%;
-}
-
-.teaser__img--big {
-  height: 144px;
-  width: auto;
 }
 
 .teaser__img--small {
   width: 72px;
   height: 72px;
   float: right;
-}
-
-@media only all and (min-width: 428px) {
-
-  .teaser__img--big {
-    float: right;
-  }
 }
 
 .teaser--secondary {
@@ -175,6 +165,17 @@
     margin-left: 0;
     max-width: 100%;
     width: 100%;
+  }
+
+}
+
+@media only all and (min-width: 700px) {
+
+  .teaser__img--big {
+    float: right;
+    height: 144px;
+    width: auto;
+    @include margin(24, "left");
   }
 
 }
