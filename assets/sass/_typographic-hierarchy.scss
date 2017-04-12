@@ -363,8 +363,10 @@
 // FOR ITEMS IN LISTS
 
 @mixin listing-main-art-title-typeg() {
-  @include h2-typeg();
-  @include h2-spacing();
+  @include font-size(20);
+  line-height: 1.2;  // 24px with 20px text size
+  @include padding(12, "top");
+  @include nospace("bottom");
 }
 
 @mixin listing-side-art-title-typeg() {
@@ -378,7 +380,7 @@
   font-family: $font-secondary;
   @include font-size(16);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.5;
 }
 
 @mixin listing-main-subtitle-typeg() {

@@ -5,6 +5,14 @@
   @include padding($teaser-spacing-top 0 $teaser-spacing-bottom);
 }
 
+.listing-list__item:first-child .teaser {
+  border-top-style: none;
+}
+
+.listing-list__item:last-child .teaser {
+  border-top-style: none;
+}
+
 .teaser--related {
   border-top-width: 0;
 }
@@ -69,10 +77,6 @@
   text-decoration: none;
 }
 
-.teaser__header {
-  @include margin(5, "bottom");
-}
-
 .teaser__header_text {
   @include teaser-header-text-style();
 }
@@ -88,13 +92,12 @@
 
 .teaser__secondary_info {
   @include listing-main-author-typeg();
-  @include padding(5, "bottom");
+  @include padding(12, "bottom");
 }
 
 .teaser__body {
   @include listing-impact-statement-typeg();
-  @include margin(16, "bottom");
-  padding-bottom: 0;
+  @include nospace("bottom");
 }
 
 .teaser__footer {

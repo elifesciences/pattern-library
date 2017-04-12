@@ -17,9 +17,6 @@
  * .listing-column-secondary contains related content. On a linearised layout it falls beneath .listing-column-main;
  *    on a wider layout it occupies 2 adjacent columns below the single column .listing-column-main, and at the widest
  *    layout, it sits to the right hand side of .listing-column-main.
- *
- *  The 15px top margin on the listing-columns is needed to introduce the correct space between the list heading and
- *    the horizontal lines above and below it (only applies when the list heading is at the head of the column).
  */
 
 .listing-column-container {
@@ -35,7 +32,6 @@
 
 .listing-column-main {
   @include margin(32, "bottom");
-  @include margin(15, "top");
 }
 
 @media only all and (min-width: 800px) {
@@ -43,10 +39,6 @@
   .listing-column-main {
     @include nospace("bottom");
     //border-right: 1px solid $color-text-dividers;
-  }
-
-  .listing-column-secondary {
-    @include margin(15, "top");
   }
 
 }
