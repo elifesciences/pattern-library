@@ -74,7 +74,8 @@ $button-height-regular: 48;
 
 // Spacing
 $teaser-spacing-top: 24;
-$teaser-spacing-bottom: 24;
+// 23 not 24 to account for a 1px border. Unexpected behaviour of border-box not accounting for border automatically
+$teaser-spacing-bottom: 23;
 $teaser-spacing-left: 16;
 $listing-list-spacing: 72;
 
