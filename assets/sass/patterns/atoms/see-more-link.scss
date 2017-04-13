@@ -1,11 +1,9 @@
 @import "../../definitions";
 
 .see-more-link {
-  border-top: 1px solid $color-text-dividers;
   display: block;
   color: $color-primary;
   @include see-more-link-typeg();
-  @include padding(12, "top");
   text-decoration: none;
 }
 

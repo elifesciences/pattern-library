@@ -1,10 +1,13 @@
 @import "../../definitions";
 
 .pager {
-  @include margin(12, "bottom");
 
   .button:nth-child(2) {
     float: right;
+  }
+
+  .listing-column-container & {
+    @include padding(24, "top");
   }
 }
 
