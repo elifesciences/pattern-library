@@ -371,7 +371,7 @@
 }
 
 @mixin listing-side-art-title-typeg() {
-  font-family: $font-primary;
+  font-family: $font-secondary;
   @include font-size(18);
   font-weight: 700;
   line-height: 1.33333333333;
