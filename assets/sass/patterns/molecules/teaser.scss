@@ -2,8 +2,7 @@
 
 .teaser {
   border-top: 1px solid $color-text-dividers;
-  @include padding($teaser-spacing-top 0 0 0);
-  @include padding($teaser-spacing-bottom, "bottom");
+  @include padding($teaser-spacing-top 0 $teaser-spacing-bottom 0);
 
   .listing-list__item:first-child & {
     border-top-style: none;

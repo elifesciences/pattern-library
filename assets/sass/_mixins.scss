@@ -309,6 +309,5 @@
 
 @mixin teaser-header-text-style() {
   @include listing-main-art-title-typeg();
-  //@include nospace();
   @include padding(12, "top");
 }
