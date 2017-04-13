@@ -2,7 +2,10 @@
 
 .teaser {
   border-top: 1px solid $color-text-dividers;
-  @include padding($teaser-spacing-top 0 $teaser-spacing-bottom 0);
+  @include padding($teaser-spacing-top 0 0 0);
+  // margin not padding here as we want the margin to collapse for the last item in the list within a listing container
+  // that also has a margin on the bottom.
+  @include margin($teaser-spacing-bottom, "bottom");
 
   .listing-list__item:first-child & {
     border-top-style: none;
@@ -28,7 +31,8 @@
 .teaser__context_label_list_item {
 
   @include teaser-context-label-list-item-style();
-
+  @include font-size(11);
+  line-height: 2.1818181818;
   & .teaser__context_label:after {
     content: ", ";
   }
@@ -47,7 +51,10 @@
   color: $color-text-secondary;
 }
 
-.teaser__context_label_link {
+// Extra specificity to override normalised style
+.teaser .teaser__context_label_link {
+  @include font-size(11);
+  line-height: 2.1818181818;  // 24px at 11px font size
   text-decoration: none;
 
   .teaser__context_label {
