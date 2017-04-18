@@ -1,5 +1,5 @@
 <header
-    class="new-content-header {{#image}}new-content-header--image{{/image}} {{#subjects.possible}}new-content-header--subjects{{/subjects.possible}} clearfix"
+    class="new-content-header {{#image}}new-content-header--image{{/image}} {{#header.possible}}new-content-header--header{{/header.possible}} clearfix"
     data-behaviour="NewContentHeader">
 
   {{#image}}
@@ -20,17 +20,57 @@
     </picture>
   {{/image}}
 
-  {{#subjects.hasList}}
-    <ol class="new-content-header__subject_list">
-      {{#subjects.list}}
-        <li class="new-content-header__subject_list_item">
-          <a href="{{url}}" class="new-content-header__subject_link">
-            <span class="new-content-header__subject">{{{name}}}</span>
-          </a>
-        </li>
-      {{/subjects.list}}
-    </ol>
-  {{/subjects.hasList}}
+  {{#header}}
+    {{#hasProfile}}
+      <div class="new-content-header__profile_wrapper">
+        {{#profile.url}}
+        <a class="new-content-header__profile{{#profile.image}} new-content-header__profile--has-image{{/profile.image}}"
+           href="{{profile.url}}">
+        {{/profile.url}}
+        {{^profile.url}}
+        <span class="new-content-header__profile{{#profile.image}} new-content-header__profile--has-image{{/profile.image}}">
+        {{/profile.url}}
+        {{#profile.image}}
+          <picture>
+            {{#sources}}
+              <source srcset="{{srcset}}"
+                      {{#type}}type="{{type}}"{{/type}}
+                {{#media}}media="{{media}}"{{/media}}>
+            {{/sources}}
+            {{#fallback}}
+              <img src="{{defaultPath}}"
+                   {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+                   alt="Avatar for profile of {{profile.name}}"
+                   class="new-content-header__profile_image"
+                   sizes="40px">
+            {{/fallback}}
+          </picture>
+        {{/profile.image}}
+        <dl>
+          <dt class="new-content-header__profile_label">Curated by</dt>
+          <dd class="new-content-header__profile_data">{{profile.name}}</dd>
+        </dl>
+        {{#profile.url}}
+        </a>
+        {{/profile.url}}
+        {{^profile.url}}
+          </span>
+        {{/profile.url}}
+      </div>
+    {{/hasProfile}}
+
+    {{#hasSubjects}}
+      <ol class="new-content-header__subject_list">
+        {{#subjects}}
+          <li class="new-content-header__subject_list_item">
+            <a href="{{url}}" class="new-content-header__subject_link">
+              <span class="new-content-header__subject">{{{name}}}</span>
+            </a>
+          </li>
+        {{/subjects}}
+      </ol>
+    {{/hasSubjects}}
+  {{/header}}
 
   <div class="new-content-header__body">
     <h1 class="new-content-header__title">{{{title}}}</h1>

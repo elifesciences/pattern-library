@@ -1,0 +1,40 @@
+{
+  "image": {
+    "fallback": {
+      "defaultPath": "https://iiif.elifesciences.org/journal-cms:subjects/2017-04/elife-sciences-cancer-biology-illustration.jpg/1426,0,4164,2082/1800,900/0/default.jpg"
+    }
+  },
+  "title": "Cancer Biology",
+  "header": {
+    "possible": true,
+    "hasProfile": true,
+    "profile": {
+      "name": "Prabhat Jha",
+      "url": "#",
+      "image": {
+        "fallback": {
+          "srcset": "https://unsplash.it/80/80 80w",
+          "defaultPath": "https://unsplash.it/40/40"
+        }
+      }
+    }
+  },
+  "impactStatement": "From its earliest days, eLife has been publishing important advances in our understanding of Cancer Biology. Here, eLife Senior Editors present a collection of great papers spanning from oncogenes and tumor suppressors to metastasis and anticancer treatments. For the most recent research articles <a href=\"https://elifesciences.org/category/cancer-biology\">visit our Cancer Biology page</a>.",
+  "button": {
+    "text": "Subscribe",
+    "path": "#",
+    "classes": "button--outline button--small"
+  },
+  "meta": {
+    "url": "#",
+    "text": "Collection",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 12,
+        "month": "Aug",
+        "year": 2016
+      },
+      "forMachine": "2016-08-12"
+    }
+  }
+}
