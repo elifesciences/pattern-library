@@ -1,0 +1,327 @@
+@import "../../definitions";
+
+.new-content-header {
+  color: $color-text;
+  margin: 0 auto;
+  max-width: #{$max-site-width}px;
+  max-width: get-rem-from-px(#{$max-site-width}) px;
+  @include padding(20, "left");
+  @include padding(20, "right");
+  @include padding(24, "bottom");
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid $color-text-dividers;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+    @include padding(30, "left");
+    @include padding(30, "right");
+  }
+}
+
+.new-content-header--image {
+  border-bottom: none;
+  color: $color-text--reverse;
+  height: 264px;
+  overflow: hidden;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    height: 288px;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+    height: 336px;
+  }
+
+  .new-content-header__body {
+    height: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      height: 168px;
+    }
+  }
+}
+
+.new-content-header__body {
+  @include margin(24 * 2, "top");
+  @include margin(24, "bottom");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    .new-content-header--subjects & {
+      @include margin(24 * 3, "top");
+    }
+  }
+}
+
+.new-content-header__title {
+  @include font-size(36);
+  line-height: 1.2;
+  @include margin(0, "top");
+  @include margin(0, "bottom");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    @include font-size(41);
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+    @include font-size(46);
+    line-height: 1.6;
+  }
+
+  .new-content-header--subjects & {
+    @include font-size(29);
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include font-size(36);
+      line-height: 1.3;
+    }
+  }
+}
+
+.new-content-header__picture {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039));
+  }
+}
+
+.new-content-header__image {
+  z-index: -2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  min-width: 100%;
+  max-width: none;
+  transform: translate(-50%, -50%);
+}
+
+.new-content-header__subject_list {
+  @include label-subject-typeg();
+  @include teaser-context-label-list-style();
+  margin: 0;
+  @include padding(24 0);
+  position: absolute;
+  width: calc(100% - 40px);
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+    width: calc(100% - 60px);
+  }
+
+  .new-content-header--image & {
+    color: inherit;
+  }
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.new-content-header__subject_list_item {
+  @include label-subject-typeg();
+  display: inline;
+  line-height: 2.18181818181818;
+  list-style-type: none;
+  padding: 0;
+
+  & .new-content-header__subject:after {
+    content: ", ";
+  }
+
+  .new-content-header--image & {
+    color: inherit;
+  }
+}
+
+.new-content-header__subject_list_item:last-child {
+
+  & .new-content-header__subject:after {
+    content: "";
+  }
+
+}
+
+.new-content-header__subject_link {
+  @include label-subject-typeg();
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+
+  .new-content-header--image & {
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+.new-content-header__impact-statement {
+  @include subtitle-typeg();
+  @include margin(12, "top");
+  @include margin(24, "bottom");
+
+  .new-content-header--image & {
+    @include margin(0, "bottom");
+    display: none;
+    @media only all and (min-width: #{get-rem-from-px($bkpt-grid-link-listing--wide-screen)}em) {
+      display: block;
+    }
+  }
+}
+
+.new-content-header__authors {
+  @include margin(24, "bottom");
+  @media only all and (max-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    &:before {
+      content: attr(data-author-line);
+      @include author-typeg();
+    }
+    .new-content-header__author_list {
+      @include visuallyhidden();
+    }
+    .new-content-header__institution_list {
+      @include visuallyhidden();
+    }
+  }
+}
+
+.new-content-header__author_list {
+  margin: 0;
+  padding: 0;
+}
+
+.new-content-header__author_list_item {
+  display: inline;
+  @include author-typeg();
+  list-style-type: none;
+  padding: 0;
+}
+
+.new-content-header__author:after {
+  content: ", ";
+}
+
+li.new-content-header__author_list_item--last .new-content-header__author:after {
+  content: "";
+}
+
+.new-content-header__author--single {
+  @include author-typeg();
+}
+
+.new-content-header__author--last-non-excess:after {
+  content: " et al.";
+}
+
+.new-content-header__author--etal {
+  @include author-typeg();
+}
+
+.new-content-header__item_toggle {
+  display: none;
+}
+
+.new-content-header__institution_list {
+  margin: 0;
+  padding: 0;
+}
+
+.new-content-header__institution_list_item {
+  display: inline;
+  @include institute-typeg();
+  list-style-type: none;
+  padding: 0;
+}
+
+.new-content-header__institution:after {
+  content: "; ";
+}
+
+li.new-content-header__institution_list_item--last .new-content-header__institution:after {
+  content: "";
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+
+  .new-content-header__author--last-non-excess:after {
+    content: "";
+  }
+
+  .new-content-header__item_toggle {
+    color: $color-text-secondary;
+    display: inline;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .new-content-header__item_toggle--author {
+    @include author-typeg();
+    font-weight: normal;
+  }
+
+  .new-content-header__item_toggle--institution {
+    @include institute-typeg();
+    font-weight: normal;
+  }
+
+  .new-content-header__item_toggle:hover {
+    cursor: pointer;
+  }
+
+  .new-content-header__institution--last-non-excess:after {
+    content: "";
+  }
+
+}
+
+.new-content-header__cta {
+  @include margin(24, "bottom");
+
+  .new-content-header--image & {
+    @include margin(0, "bottom");
+    position: absolute;
+    bottom: 46px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.new-content-header__meta {
+  .new-content-header--image & {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.meta {
+  .new-content-header--image & {
+    color: inherit;
+  }
+}
+
+.meta__type {
+  .new-content-header--image & {
+    &:hover {
+      color: inherit;
+    }
+  }
+}

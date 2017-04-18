@@ -1,0 +1,85 @@
+<header
+    class="new-content-header {{#image}}new-content-header--image{{/image}} {{#subjects.possible}}new-content-header--subjects{{/subjects.possible}} clearfix"
+    data-behaviour="NewContentHeader">
+
+  {{#image}}
+    <picture class="new-content-header__picture">
+      {{#sources}}
+        <source srcset="{{srcset}}"
+                {{#type}}type="{{type}}"{{/type}}
+          {{#media}}media="{{media}}"{{/media}}>
+      {{/sources}}
+      {{#fallback}}
+        <img src="{{defaultPath}}"
+             {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+             alt=""
+             class="new-content-header__image"
+             sizes="(min-width: 1114px) 1114px, 100vw"
+        >
+      {{/fallback}}
+    </picture>
+  {{/image}}
+
+  {{#subjects.hasList}}
+    <ol class="new-content-header__subject_list">
+      {{#subjects.list}}
+        <li class="new-content-header__subject_list_item">
+          <a href="{{url}}" class="new-content-header__subject_link">
+            <span class="new-content-header__subject">{{{name}}}</span>
+          </a>
+        </li>
+      {{/subjects.list}}
+    </ol>
+  {{/subjects.hasList}}
+
+  <div class="new-content-header__body">
+    <h1 class="new-content-header__title">{{{title}}}</h1>
+
+    {{#impactStatement}}
+      <div class="new-content-header__impact-statement">{{{impactStatement}}}</div>
+    {{/impactStatement}}
+  </div>
+
+  {{#authors}}
+    <div class="new-content-header__authors" data-author-line="{{authorLine}}">
+      <ol class="new-content-header__author_list">
+        {{#authors.list}}
+          <li class="new-content-header__author_list_item">
+            <span class="new-content-header__author">{{name}}</span>
+          </li>
+        {{/authors.list}}
+      </ol>
+
+      {{#institutions}}
+        <ol class="new-content-header__institution_list">
+          {{#institutions.list}}
+            <li class="new-content-header__institution_list_item">
+              <span class="new-content-header__institution">{{{name}}}</span>
+            </li>
+          {{/institutions.list}}
+        </ol>
+      {{/institutions}}
+    </div>
+  {{/authors}}
+
+  {{#button}}
+    <div class="new-content-header__cta">
+      {{! Expect atoms-button and the form element to be mutually exclusive. }}
+      {{#button.text}}
+        {{#button}}
+          {{>atoms-button}}
+        {{/button}}
+      {{/button.text}}
+      {{#selectNav}}
+        {{> molecules-select-nav}}
+      {{/selectNav}}
+    </div>
+  {{/button}}
+
+  {{#meta}}
+    <div class="new-content-header__meta">
+      {{> molecules-meta}}
+    </div>
+  {{/meta}}
+
+</header>

@@ -1,0 +1,9 @@
+{
+  "title": "eLife podcast",
+  "impactStatement": "Flatworms have organs called protonephridia that could be used as a model system for the study of kidney disease.",
+  "button": {
+    "text": "Subscribe",
+    "path": "#",
+    "classes": "button--default button--small"
+  }
+}
