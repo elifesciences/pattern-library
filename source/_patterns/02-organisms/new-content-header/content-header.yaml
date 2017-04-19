@@ -1,0 +1,117 @@
+assets:
+  css:
+    - new-content-header.css
+    - $ref: ../../00-atoms/components/button.yaml#/assets/css
+    - $ref: ../../01-molecules/components/meta.yaml#/assets/css
+    - $ref: ../../01-molecules/navigation/select-nav.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    title:
+      type: string
+      minLength: 1
+    longTitle:
+      type: boolean
+    image:
+      $ref: ../../00-atoms/components/picture.yaml#/schema
+    impactStatement:
+      type: string
+      minLength: 1
+    header:
+      type: object
+      properties:
+        possible:
+          type: boolean
+          enum:
+            - true
+        hasSubjects:
+          type: boolean
+          enum:
+            - true
+        subjects:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                minLength: 1
+              url:
+                type: string
+                minLength: 1
+            required:
+              - name
+              - url
+        hasProfile:
+          type: boolean
+          enum:
+            - true
+        profile:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+            url:
+              type: string
+              minLength: 1
+            image:
+              $ref: ../../00-atoms/components/picture.yaml#/schema
+          required:
+            - name
+      required:
+        - possible
+      dependencies:
+        hasSubjects: [subjects]
+        subjects: [hasSubjects]
+        hasProfile: [profile]
+        profile: [hasProfile]
+    authorLine:
+      type: string
+      minLength: 1
+    authors:
+      type: object
+      properties:
+        list:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                minLength: 1
+            required:
+              - name
+      required:
+        - list
+    institutions:
+      type: object
+      properties:
+        list:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                minLength: 1
+            required:
+              - name
+      required:
+        - list
+    download:
+      type: string
+      minLength: 1
+    meta:
+      $ref: ../../01-molecules/components/meta.yaml#/schema
+  required:
+    - title
+  dependencies:
+    authorLine: [authors]
+    authors: [authorLine]
+    institutions: [authors]

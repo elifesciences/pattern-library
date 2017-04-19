@@ -1,7 +1,8 @@
 {
   "image": {
     "fallback": {
-      "defaultPath": "https://iiif.elifesciences.org/journal-cms:podcast_episode/2017-04/episode-2-elife-podcast.png/full/1800,/0/default.png"
+      "defaultPath": "https://iiif.elifesciences.org/journal-cms:podcast_episode/2017-04/episode-2-elife-podcast.png/full/1800,/0/default.png",
+      "altText": ""
     }
   },
   "title": "Episode 2: July 2013",

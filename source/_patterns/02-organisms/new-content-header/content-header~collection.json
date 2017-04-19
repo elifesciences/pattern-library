@@ -1,7 +1,8 @@
 {
   "image": {
     "fallback": {
-      "defaultPath": "https://iiif.elifesciences.org/journal-cms:subjects/2017-04/elife-sciences-cancer-biology-illustration.jpg/1426,0,4164,2082/1800,900/0/default.jpg"
+      "defaultPath": "https://iiif.elifesciences.org/journal-cms:subjects/2017-04/elife-sciences-cancer-biology-illustration.jpg/1426,0,4164,2082/1800,900/0/default.jpg",
+      "altText": ""
     }
   },
   "title": "Cancer Biology",
@@ -14,7 +15,8 @@
       "image": {
         "fallback": {
           "srcset": "https://unsplash.it/80/80 80w",
-          "defaultPath": "https://unsplash.it/40/40"
+          "defaultPath": "https://unsplash.it/40/40",
+          "altText": ""
         }
       }
     }

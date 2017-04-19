@@ -12,7 +12,7 @@
       {{#fallback}}
         <img src="{{defaultPath}}"
              {{#srcset}}srcset="{{srcset}}"{{/srcset}}
-             alt=""
+             alt="{{altText}}"
              class="new-content-header__image"
              sizes="(min-width: 1114px) 1114px, 100vw"
         >
@@ -40,7 +40,7 @@
             {{#fallback}}
               <img src="{{defaultPath}}"
                    {{#srcset}}srcset="{{srcset}}"{{/srcset}}
-                   alt="Avatar for profile of {{profile.name}}"
+                   alt="{{altText}}"
                    class="new-content-header__profile_image"
                    sizes="40px">
             {{/fallback}}
