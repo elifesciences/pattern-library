@@ -211,19 +211,23 @@
   @include padding(24 0);
   position: absolute;
   width: calc(100% - 48px);
-  padding-right: 26px;
 
   .new-content-header--image & {
     color: inherit;
   }
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    padding-right: 56px;
-  }
 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.new-content-header__subject_list--pad-right {
+  padding-right: 26px;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    padding-right: 56px;
+  }
 }
 
 .new-content-header__subject_list_item {

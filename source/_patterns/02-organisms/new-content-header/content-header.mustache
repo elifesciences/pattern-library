@@ -60,7 +60,7 @@
     {{/hasProfile}}
 
     {{#hasSubjects}}
-      <ol class="new-content-header__subject_list">
+      <ol class="new-content-header__subject_list {{#download}}new-content-header__subject_list--pad-right{{/download}}">
         {{#subjects}}
           <li class="new-content-header__subject_list_item">
             <a href="{{url}}" class="new-content-header__subject_link">
