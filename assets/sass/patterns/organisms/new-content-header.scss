@@ -109,6 +109,16 @@
   min-width: 100%;
   max-width: none;
   transform: translate(-50%, -50%);
+  &:after {
+    // Hide broken images
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .new-content-header__profile_wrapper {
