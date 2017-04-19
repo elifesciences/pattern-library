@@ -5,17 +5,12 @@
   margin: 0 auto;
   max-width: #{$max-site-width}px;
   max-width: get-rem-from-px(#{$max-site-width}) px;
-  @include padding(20, "left");
-  @include padding(20, "right");
+  @include padding(24, "left");
+  @include padding(24, "right");
   @include padding(24, "bottom");
   position: relative;
   text-align: center;
   border-bottom: 1px solid $color-text-dividers;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-    @include padding(30, "left");
-    @include padding(30, "right");
-  }
 }
 
 .new-content-header--image {
@@ -188,14 +183,15 @@
   margin: 0;
   @include padding(24 0);
   position: absolute;
-  width: calc(100% - 40px);
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-    width: calc(100% - 60px);
-  }
+  width: calc(100% - 48px);
+  padding-right: 26px;
 
   .new-content-header--image & {
     color: inherit;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    padding-right: 56px;
   }
 
   overflow: hidden;
@@ -240,6 +236,18 @@
     &:hover {
       color: inherit;
     }
+  }
+}
+
+.new-content-header__download_link {
+  float: right;
+  @include margin(25, "top");
+  position: relative;
+  right: 0;
+  z-index: 200;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    @include margin(14, "top");
   }
 }
 
