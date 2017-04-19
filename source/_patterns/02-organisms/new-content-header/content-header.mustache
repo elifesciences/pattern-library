@@ -123,17 +123,15 @@
 
   {{#button}}
     <div class="new-content-header__cta">
-      {{! Expect atoms-button and the form element to be mutually exclusive. }}
-      {{#button.text}}
-        {{#button}}
-          {{>atoms-button}}
-        {{/button}}
-      {{/button.text}}
-      {{#selectNav}}
-        {{> molecules-select-nav}}
-      {{/selectNav}}
+      {{>atoms-button}}
     </div>
   {{/button}}
+
+  {{#selectNav}}
+    <div class="new-content-header__cta">
+      {{> molecules-select-nav}}
+    </div>
+  {{/selectNav}}
 
   {{#meta}}
     <div class="new-content-header__meta">

@@ -157,21 +157,18 @@
   },
 
   "contentHeader": {
-    "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
-    "behaviour": "BackgroundImage",
     "title": "eLife podcasts",
-    "strapline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "titleClass": "content-header__title--large",
+    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "hasCtaOrMeta": true,
     "button": {
       "text": "Subscribe",
       "path": "#",
       "classes": "button--outline button--small"
     },
-    "hasBackground": true,
-    "backgroundImage": {
-      "lowResImageSource": "http://unsplash.it/950/400",
-      "highResImageSource": "http://unsplash.it/1900/800"
+    "image": {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/1114/336"
+      }
     }
 
   },
@@ -179,10 +176,7 @@
   "leadParas": {
     "paras": [
       {
-        "text": "eLife Labs showcases experiments in new functionality and technologies. Some experiments may be developed further to become features on the eLife platform."
-      },
-      {
-        "text": "Feedback welcome!"
+        "text": ""
       }
     ]
   },

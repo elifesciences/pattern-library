@@ -156,12 +156,8 @@
 
   },
    "contentHeader": {
-     "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
-     "behaviour": "BackgroundImage",
      "title": "Episode 21",
-     "strapline": "In this episode of the eLife podcast we hear about tinnitus and hyperacusis, salamanders, chemical harpoons, and the role of ultrasound and song in the mating rituals of mice and flies.",
-     "titleClass": "content-header__title--small",
-     "hasCtaOrMeta": true,
+     "impactStatement": "In this episode of the eLife podcast we hear about tinnitus and hyperacusis, salamanders, chemical harpoons, and the role of ultrasound and song in the mating rituals of mice and flies.",
      "button": {
        "text": "Subscribe",
        "path": "#subscribe",
@@ -169,20 +165,13 @@
      },
      "meta": {
        "url": "#",
-       "text": "Podcast",
-       "date": {
-         "forHuman": {
-           "month": "Jun",
-           "year": 2016
-         },
-         "forMachine": "2016-06"
-       }
+       "text": "Podcast"
      },
      "download": "https://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
-     "hasBackground": true,
-     "backgroundImage": {
-       "lowResImageSource": "https://unsplash.it/950/400",
-       "highResImageSource": "https://unsplash.it/1900/800"
+     "image": {
+       "fallback": {
+         "defaultPath": "https://unsplash.it/1114/336"
+       }
      }
   },
 

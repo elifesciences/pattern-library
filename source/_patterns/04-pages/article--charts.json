@@ -157,11 +157,12 @@
   },
 
   "contentHeader": {
-    "rootClasses": "content-header-article content-header-article-research",
-    "behaviour": "ContentHeaderArticle",
     "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
-    "subjects": {
-      "list": [
+    "titleLong": true,
+    "header": {
+      "possible": true,
+      "hasSubjects": true,
+      "subjects": [
         {
           "name": "Cell Biology",
           "url": "#"
@@ -172,6 +173,7 @@
         }
       ]
     },
+    "authorLine": "Lee R Berger et al",
     "authors": {
       "list": [
         {"name": "Lee R Berger"},
@@ -262,12 +264,10 @@
         {"name": "Croatian Natural History Museum, Croatia"},
         {"name": "University of Iowa, United States"},
         {"name": "Lincoln Memorial University, United States"},
-        {"name": "Smithsonian Institution, United States"}
+        {"name": "Smithsonian Institution, United States"},
+        {"name": "Institute of Vertebrate Paleontology and Paleoanthropology, China"}
       ]
     },
-    "lastInstitution": "Institute of Vertebrate Paleontology and Paleoanthropology, China",
-
-    "titleClass": "content-header__title--extra-small",
 
     "download": "#articleDownloadLinksList",
 

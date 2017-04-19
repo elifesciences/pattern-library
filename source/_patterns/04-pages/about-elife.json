@@ -157,9 +157,8 @@
   },
 
   "pageAboutElife": {
-    "rootClasses": "content-header-nonarticle",
     "title": "About eLife",
-    "strapline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris."
+    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris."
   },
 
   "leadPara": {

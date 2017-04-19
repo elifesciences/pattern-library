@@ -18,7 +18,7 @@ module.exports = class ArticleDownloadLinksList {
     this.$elm.classList.add('article-download-links-list--js');
     this.$elm.classList.add('visuallyhidden');
     this.moveList();
-    this.$toggler = this.doc.querySelector('.content-header__download_link');
+    this.$toggler = this.doc.querySelector('.new-content-header__download_link');
     this.$toggler.addEventListener('click', this.toggle.bind(this));
   }
 
@@ -26,9 +26,9 @@ module.exports = class ArticleDownloadLinksList {
    * Moves the download links list to be by the icon this.$toggler
    */
   moveList() {
-    let $newParent = this.doc.querySelector('.content-header_top');
+    let $newParent = this.doc.querySelector('.new-content-header');
     let $followingSibling =
-      $newParent.querySelector('.content-header__download_link').nextElementSibling;
+      $newParent.querySelector('.new-content-header__download_link').nextElementSibling;
     this.$elm.parentNode.parentNode.classList.add('visuallyhidden');
     $newParent.insertBefore(this.$elm, $followingSibling);
   }
