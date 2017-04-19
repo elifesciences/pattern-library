@@ -207,7 +207,6 @@
 
 .new-content-header__subject_list {
   @include label-subject-typeg();
-  @include teaser-context-label-list-style();
   margin: 0;
   @include padding(24 0);
   position: absolute;
@@ -221,6 +220,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  &:before {
+    color: $color-text-secondary;
+  }
 }
 
 .new-content-header__subject_list--pad-right {
