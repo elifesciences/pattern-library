@@ -1,5 +1,5 @@
 <header
-    class="new-content-header {{#image}}new-content-header--image{{/image}} {{#header.possible}}new-content-header--header{{/header.possible}} clearfix"
+    class="new-content-header {{#image}}new-content-header--image new-content-header--header{{/image}} {{^image}}{{#header.possible}}new-content-header--header{{/header.possible}}{{/image}} clearfix"
     data-behaviour="NewContentHeader">
 
   {{#image}}
