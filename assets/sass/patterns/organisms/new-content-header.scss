@@ -46,8 +46,9 @@
   @include margin(24 * 2, "top");
   @include margin(24, "bottom");
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    .new-content-header--header & {
+  .new-content-header--header & {
+    @include margin(24 * 2 + 12, "top");
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
       @include margin(24 * 3, "top");
     }
   }
