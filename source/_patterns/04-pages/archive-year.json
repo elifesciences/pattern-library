@@ -157,7 +157,8 @@
   },
 
   "contentHeader": {
-    "title": "Archive",
+    "title": "Monthly archive",
+    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci.",
     "selectNav": {
       "route": "/path/to/archive",
       "select": {
@@ -187,11 +188,6 @@
         "type": "submit",
         "classes": "button--outline button--extra-small",
         "name": "button"
-      }
-    },
-    "image": {
-      "fallback": {
-        "defaultPath": "https://unsplash.it/1114/336"
       }
     }
   },

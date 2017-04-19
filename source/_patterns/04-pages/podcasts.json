@@ -157,20 +157,13 @@
   },
 
   "contentHeader": {
-    "title": "eLife podcasts",
-    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "hasCtaOrMeta": true,
+    "title": "Podcasts",
+    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris.",
     "button": {
       "text": "Subscribe",
       "path": "#",
-      "classes": "button--outline button--small"
-    },
-    "image": {
-      "fallback": {
-        "defaultPath": "https://unsplash.it/1114/336"
-      }
+      "classes": "button--default button--small"
     }
-
   },
 
   "leadParas": {

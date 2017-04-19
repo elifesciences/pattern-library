@@ -156,13 +156,9 @@
 
   },
    "contentHeader": {
-     "title": "Episode 21",
+     "title": "Episode 21: June 2015",
+     "longTitle": true,
      "impactStatement": "In this episode of the eLife podcast we hear about tinnitus and hyperacusis, salamanders, chemical harpoons, and the role of ultrasound and song in the mating rituals of mice and flies.",
-     "button": {
-       "text": "Subscribe",
-       "path": "#subscribe",
-       "classes": "button--outline button--small"
-     },
      "meta": {
        "url": "#",
        "text": "Podcast"
