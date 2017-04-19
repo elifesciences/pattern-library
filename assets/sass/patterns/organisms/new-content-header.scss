@@ -92,10 +92,10 @@
   }
 
   .new-content-header__title--long {
-    @include font-size(41);
+    @include font-size(36);
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-      @include font-size(36);
+      @include font-size(41);
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
