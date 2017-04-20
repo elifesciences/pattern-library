@@ -297,6 +297,7 @@
   @include subtitle-typeg();
   @include margin(12, "top");
   @include margin(24, "bottom");
+  max-width: 100%;
 
   .new-content-header--image & {
     @include margin(0, "bottom");
