@@ -286,6 +286,13 @@
   }
 }
 
+.new-content-header__download_icon {
+  width: 20px;
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    width: 44px;
+  }
+}
+
 .new-content-header__impact-statement {
   @include subtitle-typeg();
   @include margin(12, "top");
