@@ -743,23 +743,19 @@
       {
         "item": {
           "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
-          "titleClass": "content-header__title--extra-small",
-          "subjects": {
-            "list": [
-              {
-                "name": "Cell Biology",
-                "url": "#"
-              },
-              {
-                "name": "Epidemiology and global health",
-                "url": "#"
-              }
-            ]
-          },
-          "authors": {
-            "firstAuthorOnly": "Lee R Berger",
-            "hasEtAl": true
-          },
+          "longTitle": true,
+          "hasSubjects": true,
+          "subjects": [
+            {
+              "name": "Cell Biology",
+              "url": "#"
+            },
+            {
+              "name": "Epidemiology and global health",
+              "url": "#"
+            }
+          ],
+          "authorLine": "Lee R Berger et al",
           "meta": {
             "url": "#",
             "text": "Research article",
@@ -778,9 +774,9 @@
       {
         "item": {
           "title": "Physical determinants of vesicle mobility and supply at a central synapse",
-          "titleClass": "content-header__title--extra-small",
-          "subjects": {
-            "list": [
+          "longTitle": true,
+          "hasSubjects": true,
+          "subjects": [
               {
                 "name": "Cell Biology",
                 "url": "#"
@@ -789,12 +785,8 @@
                 "name": "Epidemiology and global health",
                 "url": "#"
               }
-            ]
-          },
-          "authors": {
-            "firstAuthorOnly": "Lee R Berger",
-            "hasEtAl": true
-          },
+            ],
+          "authorLine": "Lee R Berger et al",
           "meta": {
             "url": "#",
             "text": "Research article",

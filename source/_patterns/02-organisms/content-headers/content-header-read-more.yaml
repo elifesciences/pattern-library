@@ -1,50 +1,39 @@
 assets:
   css:
-    - content-header-article-magazine.css
-    - content-header-article-research.css
+    - content-header.css
     - $ref: ../../01-molecules/components/meta.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    behaviour:
-      type: string
-      minLength: 1
     title:
       type: string
       minLength: 1
-    titleClass:
-      type: string
-      minLength: 1
-    strapline:
-      type: string
-      minLength: 1
+    longTitle:
+      type: boolean
+    hasSubjects:
+      type: boolean
+      enum:
+        - true
     subjects:
-      type: object
-      properties:
-        list:
-          type: array
-          minItems: 1
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-                minLength: 1
-            required:
-              - name
-      required:
-        - list
-    author:
-      type: string
-      minLength: 1
-    url:
+      type: array
+      minItems: 1
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            minLength: 1
+        required:
+          - name
+    authorLine:
       type: string
       minLength: 1
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
   required:
     - title
-    - url
-    - titleClass
+  dependencies:
+    hasSubjects: [subjects]
+    subjects: [hasSubjects]

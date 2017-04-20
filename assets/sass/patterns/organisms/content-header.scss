@@ -78,6 +78,11 @@
   }
 }
 
+.content-header__title_link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .content-header--image {
   .content-header__title {
     @include font-size(41);
@@ -326,6 +331,10 @@
       @include visuallyhidden();
     }
   }
+}
+
+.content-header__authors--line {
+  @include author-typeg();
 }
 
 .content-header__author_list {
