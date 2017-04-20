@@ -4,10 +4,8 @@
   color: $color-text;
   margin: 0 auto;
   max-width: #{$max-site-width}px;
-  max-width: get-rem-from-px(#{$max-site-width}) px;
-  @include padding(24, "left");
-  @include padding(24, "right");
-  @include padding(24, "bottom");
+  max-width: #{get-rem-from-px($max-site-width)}rem;
+  @include padding(0 $content-header-padding $content-header-padding);
   position: relative;
   text-align: center;
   border-bottom: 1px solid $color-text-dividers;
@@ -16,19 +14,19 @@
 .content-header--image {
   border-bottom: none;
   color: $color-text--reverse;
-  height: 264px;
+  height: #{$content-header-image-height--narrow-screen}px;
   overflow: hidden;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    height: 288px;
+    height: #{$content-header-image-height--medium-width-screen}px;
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
-    height: 336px;
+    height: #{$content-header-image-height--wide-screen}px;
   }
 
   .content-header__body {
-    height: 120px;
+    height: #{$content-header-padding * 5}px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -37,19 +35,19 @@
     justify-content: center;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
-      height: 168px;
+      height: #{$content-header-padding * 7}px;
     }
   }
 }
 
 .content-header__body {
-  @include margin(24 * 2, "top");
-  @include margin(24, "bottom");
+  @include margin($content-header-padding * 2, "top");
+  @include margin($content-header-padding, "bottom");
 
   .content-header--header & {
-    @include margin(24 * 2 + 12, "top");
+    @include margin($content-header-padding * 1.5 + 11 * 2.1818181818, "top");
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-      @include margin(24 * 3, "top");
+      @include margin($content-header-padding * 2 + 11 * 2.1818181818, "top");
     }
   }
 }
@@ -150,7 +148,7 @@
 }
 
 .content-header__profile_wrapper {
-  @include padding(24 0);
+  @include padding($content-header-padding 0);
   position: absolute;
   left: 0;
   right: 0;
@@ -188,9 +186,9 @@
 
       .content-header__profile_image {
         display: block;
-        border-radius: 20px;
-        height: 40px;
-        width: 40px;
+        border-radius: #{$content-header-profile-width / 2}px;
+        height: #{$content-header-profile-width}px;
+        width: #{$content-header-profile-width}px;
         @include margin(10, "right");
       }
 
@@ -213,14 +211,13 @@
 .content-header__subject_list {
   @include label-subject-typeg();
   margin: 0;
-  @include padding(24 0);
+  @include padding($content-header-padding 0);
   position: absolute;
-  width: calc(100% - 48px);
+  width: calc(100% - #{$content-header-padding * 2}px);
 
   .content-header--image & {
     color: inherit;
   }
-
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -232,10 +229,10 @@
 }
 
 .content-header__subject_list--pad-right {
-  padding-right: 26px;
+  padding-right: #{$content-header-download-width * 1.5}px;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    padding-right: 56px;
+    padding-right: #{$content-header-download-width-medium * 1.5}px;
   }
 }
 
@@ -281,27 +278,26 @@
 
 .content-header__download_link {
   float: right;
-  @include margin(25, "top");
+  @include margin(($content-header-padding * 2 + 11 * 2.1818181818) / 2 - $content-header-download-width / 2, "top");
   position: relative;
   right: 0;
-  z-index: 200;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    @include margin(14, "top");
+    @include margin(($content-header-padding * 2 + 11 * 2.1818181818) / 2 - $content-header-download-width-medium / 2, "top");
   }
 }
 
 .content-header__download_icon {
-  width: 20px;
+  width: #{$content-header-download-width}px;
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    width: 44px;
+    width: #{$content-header-download-width-medium}px;
   }
 }
 
 .content-header__impact-statement {
   @include subtitle-typeg();
-  @include margin(12, "top");
-  @include margin(24, "bottom");
+  @include margin($content-header-padding / 2, "top");
+  @include margin($content-header-padding, "bottom");
   max-width: 100%;
 
   .content-header--image & {
@@ -318,7 +314,7 @@
 }
 
 .content-header__authors {
-  @include margin(24, "bottom");
+  @include margin($content-header-padding, "bottom");
   @media only all and (max-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
     &:before {
       content: attr(data-author-line);
@@ -427,12 +423,12 @@ li.content-header__institution_list_item--last .content-header__institution:afte
 }
 
 .content-header__cta {
-  @include margin(24, "bottom");
+  @include margin($content-header-padding, "bottom");
 
   .content-header--image & {
     @include margin(0, "bottom");
     position: absolute;
-    bottom: 46px;
+    bottom: #{$content-header-padding * 2}px;
     left: 0;
     right: 0;
   }
@@ -441,7 +437,7 @@ li.content-header__institution_list_item--last .content-header__institution:afte
 .content-header__meta {
   .content-header--image & {
     position: absolute;
-    bottom: 12px;
+    bottom: #{$content-header-padding / 2}px;
     left: 0;
     right: 0;
   }
