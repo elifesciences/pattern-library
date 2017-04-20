@@ -178,12 +178,6 @@
   line-height: 1.4;
 }
 
-@mixin impact-statement-typeg($is-wide:false) {
-  font-family: $font-primary;
-  @include _set-typeg-width-variant(14, 16, $is-wide);
-  line-height: 1.43;
-}
-
 @mixin institute-typeg() {
   font-family: $font-secondary;
   @include font-size(14);

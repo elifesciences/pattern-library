@@ -105,37 +105,6 @@
   width: auto;
 }
 
-@mixin article-with-background() {
-  background-color: $color-primary;
-  color: $color-text--reverse;
-
-  .meta {
-    color: $color-text--reverse;
-  }
-
-  .meta:after {
-    border-bottom-width: 0;
-    padding-top: 0;
-  }
-
-  .meta__type {
-    color: $color-text--reverse;
-  }
-
-  .meta__type:hover,
-  .meta__type:active {
-    color: $color-primary-dark;
-  }
-
-  .content-header__subject_link {
-    color: $color-text--reverse;
-  }
-
-  .content-header__strapline {
-    color: $color-text--reverse;
-  }
-}
-
 @mixin box-shadow() {
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
 }

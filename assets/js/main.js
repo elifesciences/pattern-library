@@ -18,14 +18,13 @@ if (window.localStorage && document.querySelector &&
   Components.AudioPlayer = require('./components/AudioPlayer');
   Components.BackgroundImage = require('./components/BackgroundImage');
   Components.Carousel = require('./components/Carousel');
-  Components.ContentHeaderArticle = require('./components/ContentHeaderArticle');
+  Components.ContentHeader = require('./components/ContentHeader');
   Components.FragmentHandler = require('./components/FragmentHandler');
   Components.Highlights = require('./components/Highlights');
   Components.MainMenu = require('./components/MainMenu');
   Components.Math = require('./components/Math');
   Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
   Components.Metrics = require('./components/Metrics');
-  Components.NewContentHeader = require('./components/NewContentHeader');
   Components.Pager = require('./components/Pager');
   Components.SearchBox = require('./components/SearchBox');
   Components.SectionListingLink = require('./components/SectionListingLink');
