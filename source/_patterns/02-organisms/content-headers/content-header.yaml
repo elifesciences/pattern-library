@@ -107,6 +107,10 @@ schema:
     download:
       type: string
       minLength: 1
+    button:
+      $ref: ../../00-atoms/components/button.yaml#/schema
+    selectNav:
+      $ref: ../../01-molecules/navigation/select-nav.yaml#/schema
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
   required:

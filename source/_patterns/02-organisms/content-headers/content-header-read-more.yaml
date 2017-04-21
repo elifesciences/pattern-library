@@ -12,6 +12,9 @@ schema:
       minLength: 1
     longTitle:
       type: boolean
+    url:
+      type: string
+      minLength: 1
     hasSubjects:
       type: boolean
       enum:
@@ -34,6 +37,7 @@ schema:
       $ref: ../../01-molecules/components/meta.yaml#/schema
   required:
     - title
+    - url
   dependencies:
     hasSubjects: [subjects]
     subjects: [hasSubjects]
