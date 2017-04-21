@@ -185,7 +185,7 @@ gulp.task('fonts', () => {
  * Creates a sourcemap.
  ******************************************************************************/
 
-gulp.task('js', [/*'js:hint', 'js:cs', 'browserify-tests',*/'js:extLibs'], () => {
+gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests', 'js:extLibs'], () => {
 
     return browserify('./assets/js/main.js', {
             debug: true
