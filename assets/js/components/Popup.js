@@ -3,7 +3,10 @@ const utils = require('../libs/elife-utils')();
 module.exports = class Popup {
 
   constructor($elm, _window = window, doc = document) {
-    if (!$elm.hash) return;
+    if (!$elm.hash) {
+      return;
+    }
+
     this.$elm = this.wrapInContainerWithClass($elm, 'span', 'popup');
     this.$link = this.$elm.querySelector('a');
     this.label = $elm.getAttribute('data-label') || 'See in references';
@@ -14,27 +17,35 @@ module.exports = class Popup {
     this.bodyContents = null;
     this.hitBoxTranslation = 0;
 
-    this.$link.addEventListener('click', e => {
-      e.preventDefault();
+    this.$link.addEventListener('click', e => this.handleLinkClick(e));
 
-      this.isOpen = !this.isOpen;
-      this.render();
-    });
-
-    doc.addEventListener('click', e => {
-      if (utils.closest(e.target, '.popup__hit-box') === this.popupHitBox) {
-        return;
-      }
-      const closestPopup = utils.closest(e.target, '.popup');
-      if (closestPopup && closestPopup === this.$elm) {
-        return;
-      }
-      if (this.isOpen) {
-        this.isOpen = false;
-        this.render();
-      }
-    })
+    doc.addEventListener('click', e => this.handleDocumentClick(e));
   }
+
+  handleLinkClick(e) {
+    e.preventDefault();
+
+    this.isOpen = !this.isOpen;
+    this.render();
+  }
+
+  handleDocumentClick(e) {
+
+    if (utils.closest(e.target, '.popup__hit-box') === this.popupHitBox) {
+      return;
+    }
+
+    const closestPopup = utils.closest(e.target, '.popup');
+    if (closestPopup && closestPopup === this.$elm) {
+      return;
+    }
+
+    if (this.isOpen) {
+      this.isOpen = false;
+      this.render();
+    }
+  }
+
 
   getResolver(link) {
     if (this.resolver) {
@@ -49,7 +60,7 @@ module.exports = class Popup {
     // This case will catch '#hashes' and '{currentUrl}#hashes'
     const current = this.window.location;
     if (
-        link.href.indexOf('#') === 0 || (
+      link.href.indexOf('#') === 0 || (
         link.hostname === current.hostname &&
         link.port === current.port &&
         link.protocol === current.protocol &&
@@ -65,17 +76,18 @@ module.exports = class Popup {
 
   requestContents() {
     // We await on the contents, which might be XHR.
-    this.getResolver(this.$link).then(r => {
+    return this.getResolver(this.$link).then(r => {
 
       // If there is contents the come back we add it to our object.
       if (r) {
         this.bodyContents = r(this.$link.hash).cloneNode(true);
-        this.render();
+        return this.render();
 
         // If not, we set this and ignore.
       } else {
         this.isEmpty = true;
       }
+      return Promise.resolve(this.$elm);
     });
   }
 
@@ -96,28 +108,24 @@ module.exports = class Popup {
   }
 
   createPopupBox(...children) {
-    const popup = utils.buildElement('div', ['popup__window']);
-    children.forEach(child => popup.appendChild(child));
-    return popup;
+    return utils.wrapElements(children, 'div', 'popup__window');
   }
 
   createPopupHitBox(...children) {
-    const popupHitBox = utils.buildElement('div', ['popup__hit-box']);
-    popupHitBox.style.marginLeft = `${(this.$link.offsetWidth / 2)}px`;
-    children.forEach(child => popupHitBox.appendChild(child));
-    return popupHitBox;
+    return utils.wrapElements(children, 'div', 'popup__hit-box', {
+      marginLeft: `${(this.$link.offsetWidth / 2)}px`,
+    });
   }
 
   render() {
     // If there's nothing to render.. we don't.
     if (this.isEmpty) {
-      return null;
+      return Promise.resolve(this.$elm);
     }
 
     // If there's no body to show, we request it.
     if (!this.bodyContents) {
-      this.requestContents();
-      return null;
+      return this.requestContents();
     }
 
     // If there's no popup element yet, we create it.
@@ -178,5 +186,6 @@ module.exports = class Popup {
     } else {
       this.$elm.classList.add('popup--hidden');
     }
+    return Promise.resolve(this.$elm);
   }
 };

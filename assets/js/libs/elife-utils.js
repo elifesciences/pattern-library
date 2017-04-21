@@ -456,6 +456,43 @@ module.exports = () => {
     });
   }
 
+  /**
+   * Add CSS styling to DOM element.
+   *
+   * @param $el
+   * @param styles
+   * @returns {*}
+   */
+  function addStylesToElement($el, styles) {
+    for (let style in styles) {
+      if (styles.hasOwnProperty(style)) {
+        $el.style[style] = styles[style];
+      }
+    }
+    return $el;
+  }
+
+  /**
+   * Wrap elements in with various options.
+   *
+   * @param $el
+   * @param tag
+   * @param className
+   * @param styles
+   * @param fn
+   * @returns {Element}
+   */
+  function wrapElements($el, tag, className, styles, fn) {
+    const $children = Array.isArray($el) ? $el : [$el];
+    const classNames = Array.isArray(className) ? className : [className];
+    const $container = buildElement(tag, classNames);
+    if (styles) {
+      addStylesToElement($container, styles);
+    }
+    $children.forEach(child => $container.appendChild(child));
+    return fn ? fn($container) : $container;
+  }
+
   function eventCreator(name, detail) {
     let event;
     try {
@@ -486,5 +523,6 @@ module.exports = () => {
     remoteQuerySelector: remoteQuerySelector,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
+    wrapElements: wrapElements,
   };
 };

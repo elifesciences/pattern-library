@@ -10,7 +10,7 @@
   position: absolute;
   transition: transform #{$transition-duration}, opacity #{$transition-duration};
   transform: translateY(0px);
-  @include constrain-width(340, "max");
+  width: 340px;
   z-index: 100;
 
   .popup--hidden & {
