@@ -183,7 +183,7 @@
   "mainTeasers": [
     {
 
-      "heading": "Latest articles",
+      "heading": "Latest",
       "items": [
         {
           "contextLabel": {
@@ -297,7 +297,7 @@
 
         {
           "contextLabel": {
-            "links": [
+            "list": [
               {
                 "name": "Epidemiology and Global Health",
                 "url": "#"

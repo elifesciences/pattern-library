@@ -4,6 +4,11 @@
   @include padding(24, "bottom");
 }
 
+.author-details__secondary-name {
+  @include nospace("top");
+  margin: 0;
+}
+
 .author-details__affiliations {
   @include body-para();
   @include nospace("left");
@@ -20,6 +25,10 @@
   font-weight: bold;
   display: inline;
   padding: 0;
+}
+
+.author-details__heading:after {
+  content: ":"
 }
 
 .author-details__list {

@@ -2,8 +2,8 @@
 
 .list-heading {
   @include section-title-typeg();
-  @include nospace("top");
-  @include padding(12, "bottom");
+  @include nospace();
+  line-height: 1.7142857143; // 24px with a 14px font size
   margin-bottom: 0;
   text-transform: uppercase;
 }

@@ -89,6 +89,7 @@ class Metrics {
 
   changePeriod(period) {
     return (e) => {
+      e.preventDefault();
 
       // Change button style.
       this.$el
@@ -115,7 +116,8 @@ class Metrics {
     return this.currentChart >= (this.availableCharts.length - 1);
   }
 
-  nextButton() {
+  nextButton(e) {
+    e.preventDefault();
     this.$el.classList.add('charts--loading');
     this.loadMore().then(() => {
       this.$el.classList.remove('charts--loading');
@@ -124,7 +126,8 @@ class Metrics {
     });
   }
 
-  prevButton() {
+  prevButton(e) {
+    e.preventDefault();
     this.updateSelectedMetric(m => utils.extend(m, { viewPage: m.viewPage - 1 }));
     this.renderView(this.$el, this.getSelectedMetric());
   }

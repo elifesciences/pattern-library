@@ -1,46 +1,47 @@
 {
   "authorDetails": [
     {
+      "authorId": "author1",
       "name": "Jenny Bloggs",
       "authorId": "author1",
 
-      "hasAffiliations": true,
-
-      "affiliations": [
-        "Evolutionary Studies Institute and Centre of Excellence in PalaeoSciences, University of the Witwatersrand, Johannesburg, South Africa",
-        "School of Geosciences, University of the Witwatersrand, Johannesburg, South Africa"
-      ],
-
-      "hasPresentAddresses": true,
-
-      "presentAddresses": [
-        "Department of Inventive Inventions, Univertity of Wessex, Windowchester, Wessex"
-      ],
-
-      "contributionStatement": "Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article, Contributed unpublished essential data or reagents",
-
-      "hasMeansOfCorrespondence": true,
-
-      "meansOfCorrespondence": [
+      "details": [
         {
-          "isEmail": true,
-          "value": "jenny@bloggs.com"
+          "values": [
+            "Evolutionary Studies Institute and Centre of Excellence in PalaeoSciences, University of the Witwatersrand, Johannesburg, South Africa",
+            "School of Geosciences, University of the Witwatersrand, Johannesburg, South Africa"
+          ]
         },
         {
-          "isEmail": false,
-          "value": "+1 555-4321-09876"
+          "heading": "Present addresses",
+          "values": [
+            "Department of Inventive Inventions, Univertity of Wessex, Windowchester, Wessex"
+          ]
+        },
+        {
+          "heading": "Contribution",
+          "value": "Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article, Contributed unpublished essential data or reagents"
+        },
+        {
+          "heading": "For correspondence",
+          "values": [
+            "<a href=\"mailto:jenny@bloggs.com\">jenny@bloggs.com</a>",
+            "<a href=\"tel:+1555432109876\">+1 555-4321-09876</a>"
+          ]
+        },
+        {
+          "heading": "Competing interests",
+          "value": "No competing interests declared"
         }
       ],
-
-      "competingInterest": "No competing interests declared",
 
       "orcid": "0000-0002-3400-7927"
     },
 
     {
-      "name": "Jenny Bloggs",
 
       "authorId": "author2",
+      "name": "ICGC Chronic Myeloid Disorders Group",
 
       "hasAffiliations": true,
 
@@ -56,23 +57,30 @@
       ],
 
       "contributionStatement": "Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article, Contributed unpublished essential data or reagents",
+      "authorId": "author2",
+      "name": "ICGC Chronic Myeloid Disorders Group",
 
-      "hasMeansOfCorrespondence": true,
-
-      "meansOfCorrespondence": [
+      "details": [
         {
-          "isEmail": true,
-          "value": "jenny@bloggs.com"
+          "values": [
+            "Cancer Genome Project, Wellcome Trust Sanger Institute, Hinxton, United Kingdom"
+          ]
         },
         {
-          "isEmail": false,
-          "value": "+1 555-4321-09876"
+          "heading": "Competing interests",
+          "value": "No competing interests declared"
         }
       ],
 
-      "competingInterest": "No competing interests declared",
-
-      "orcid": "0000-0002-3400-7927"
+      "groups": [
+        {
+          "items": [
+            "Luca Malcovati, Fondazione IRCCS Policlinico San Matteo, University of Pavia, Pavia, Italy",
+            "Sudhir Tauro, Division of Medial Sciences, University of Dundee, Dundee, UK",
+            "Jacqueline Boultwood, Nuffield Department of Clinical Laboratory Sciences, University of Oxford, UK"
+          ]
+        }
+      ]
     }
   ]
 }
