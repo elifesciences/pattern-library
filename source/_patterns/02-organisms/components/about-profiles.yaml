@@ -1,0 +1,19 @@
+assets:
+  css:
+    - about-profiles.css
+    - $ref: ../../01-molecules/components/about-profile.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    compact:
+      type: boolean
+      default: false
+    items:
+      type: array
+      minItems: 1
+      items:
+        $ref: ../../01-molecules/components/about-profile.yaml#/schema
+  required:
+    - items

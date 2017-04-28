@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "name": "Randy Scheckman",
+      "role": "Editor-in-Chief",
+      "image": {
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "altText": ""
+        }
+      },
+      "profile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor euismod mi. Morbi facilisis eros in mi consequat cursus. Nulla malesuada pretium mauris, vitae gravida diam laoreet ac. Curabitur ornare libero sed porta molestie. Ut ut sem in libero tincidunt lobortis. Nullam eros nisi, malesuada vitae leo sit amet, bibendum congue justo. Morbi iaculis lectus erat, vel dapibus metus posuere sit amet. Phasellus eget scelerisque massa. Mauris hendrerit ex in nisl ultricies elementum. Donec tellus risus, rhoncus molestie rutrum et, cursus eget mi. Praesent et elit tellus. Curabitur id sodales turpis. Fusce pulvinar aliquam commodo. Cras vitae dolor vitae metus dignissim auctor.Cras nulla purus, rhoncus et mollis in, imperdiet sed metus. In non porttitor nibh. In sit amet ipsum eget nisl laoreet tincidunt. Donec iaculis nibh quis lacus viverra sagittis. Phasellus imperdiet congue imperdiet.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc nisi tortor, rhoncus.</p><dl><dt>Expertise</dt><dd>Cell Biology</dd><dt>Competing interests statement</dt><dd>Donec tellus</dl>"
+    },
+    {
+      "name": "Eve Marder",
+      "role": "Deputy Editor",
+      "image": {
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "altText": ""
+        }
+      },
+      "profile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor euismod mi. Morbi facilisis eros in mi consequat cursus. Nulla malesuada pretium mauris, vitae gravida diam laoreet ac. Curabitur ornare libero sed porta molestie. Ut ut sem in libero tincidunt lobortis. Nullam eros nisi, malesuada vitae leo sit amet, bibendum congue justo. Morbi iaculis lectus erat, vel dapibus metus posuere sit amet. Phasellus eget scelerisque massa. Mauris hendrerit ex in nisl ultricies elementum. Donec tellus risus, rhoncus molestie rutrum et, cursus eget mi. Praesent et elit tellus. Curabitur id sodales turpis. Fusce pulvinar aliquam commodo. Cras vitae dolor vitae metus dignissim auctor.Cras nulla purus, rhoncus et mollis in, imperdiet sed metus. In non porttitor nibh. In sit amet ipsum eget nisl laoreet tincidunt. Donec iaculis nibh quis lacus viverra sagittis. Phasellus imperdiet congue imperdiet.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc nisi tortor, rhoncus.</p><dl><dt>Expertise</dt><dd>Cell Biology</dd><dt>Competing interests statement</dt><dd>Donec tellus</dl>"
+    }
+  ]
+}

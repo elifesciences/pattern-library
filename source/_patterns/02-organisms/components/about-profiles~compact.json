@@ -1,0 +1,25 @@
+{
+  "compact": true,
+  "items": [
+    {
+      "name": "Editor name",
+      "role": "University of California, Los Angeles (United States)",
+      "profile": "<dl><dt>Research focus</dt><dd>Pre-mRNA splicingpost-transcriptional gene regulation</dd><dt>Experimental organism</dt><dd>Human; Mouse</dd></dl>"
+    },
+    {
+      "name": "Editor name",
+      "role": "University of California, Los Angeles (United States)",
+      "profile": "<dl><dt>Research focus</dt><dd>Pre-mRNA splicingpost-transcriptional gene regulation</dd><dt>Experimental organism</dt><dd>Human; Mouse</dd></dl>"
+    },
+    {
+      "name": "Editor name",
+      "role": "University of California, Los Angeles (United States)",
+      "profile": "<dl><dt>Research focus</dt><dd>Pre-mRNA splicingpost-transcriptional gene regulation</dd><dt>Experimental organism</dt><dd>Human; Mouse</dd></dl>"
+    },
+    {
+      "name": "Editor name",
+      "role": "University of California, Los Angeles (United States)",
+      "profile": "<dl><dt>Research focus</dt><dd>Pre-mRNA splicingpost-transcriptional gene regulation</dd><dt>Experimental organism</dt><dd>Human; Mouse</dd></dl>"
+    }
+  ]
+}
