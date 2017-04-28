@@ -1,12 +1,16 @@
 assets:
   css:
     - about-profiles.css
+    - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
     - $ref: ../../01-molecules/components/about-profile.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
+    heading:
+      type: string
+      minLength: 1
     compact:
       type: boolean
       default: false
