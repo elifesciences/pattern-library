@@ -48,10 +48,9 @@
   background: url("../img/patterns/organisms/elife-logo-symbol.svg") 0 0 no-repeat, linear-gradient(transparent, transparent);
   background-origin: content-box;
   background-size: contain;
-  display: inline-block;
-  // Dimensions sized in px explicitly, to accommodate a specific image.
+  display: block;
   height: 27px;
-  margin: 7px 6px 0 6px;
+  @include margin(6 10);
   width: 27px;
 }
 
