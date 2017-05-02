@@ -1,6 +1,7 @@
 @import "../../definitions";
 
 .site-header {
+  border-bottom: 1px solid $color-text-dividers;
   max-height: 96px;
   min-width: #{get-rem-from-px(275)}rem;
   position: relative;
@@ -58,7 +59,6 @@
   background-color: #fff;
   position: relative;
   z-index: 20;
-  border-bottom: 1px solid $color-text-dividers;
 }
 
 @media only all and (min-width: #{get-rem-from-px(550)}em) {
@@ -67,9 +67,10 @@
     border-right: 1px solid $color-text-dividers;
     float: left;
     margin-right: 10px;
-    padding: 29px 30px;
+    @include margin(10, "right");
+    @include padding(29 30);
     position: relative;
-    width: 155px;
+    @include width(155);
   }
 
   // Stops the top border of .nav-primary from bleeding into .site-header__title.
@@ -77,7 +78,7 @@
     background-color: #fff;
     content: "";
     display: block;
-    height: 96px;
+    height: 95px;
     left: 0;
     position: absolute;
     top: 0;
