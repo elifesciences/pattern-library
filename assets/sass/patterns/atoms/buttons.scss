@@ -54,8 +54,10 @@
 
 .button--extra-small {
   border-radius: 3px;
+  border-style: none;
   @include font-size(11);
-  @include padding(3 4 2);
+  line-height: 2.1818181818; /* 24px with 11px font size */
+  @include padding(0 6);
 }
 
 .button--inactive {
