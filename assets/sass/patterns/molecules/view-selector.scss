@@ -19,7 +19,7 @@
 }
 
 .view-selector__link {
-  color: $color-text;
+  color: $color-text-secondary;
   display: block;
   font-weight: 700;
   text-decoration: none;
@@ -29,7 +29,7 @@
   }
 
   &:hover {
-    color: $color-primary;
+    color: $color-text;
   }
 }
 
@@ -79,22 +79,25 @@
   text-decoration: none;
 
   &:hover {
-    color: $color-primary;
+    color: $color-text;
   }
 }
 
 @media only screen and (max-width: #{get-rem-from-px($bkpt-view-selector - 1)}em) {
 
-  .view-selector__list {
+  .view-selector {
     display: flex;
+  }
+
+  .view-selector__list {
     margin: auto;
-    max-width: #{get-rem-from-px(250)}rem;
   }
 
   .view-selector__list-item {
-    border: 1px solid $color-text-dividers;
-    flex: 1 50%;
+    border: 1px solid $color-text;
+    float: left;
     margin: 0;
+    @include padding(0 18);
     text-align: center;
   }
 
@@ -110,11 +113,15 @@
   }
 
   .view-selector__list-item--active {
-    background-color: $color-primary;
-    border: 1px solid $color-primary;
+    background-color: $color-text;
 
     .view-selector__link {
       color: $color-text--reverse;
+
+      &:hover {
+        cursor: default;
+      }
+
     }
   }
 
@@ -127,8 +134,9 @@
   }
 
   .view-selector__link {
-    @include font-size(11);
-    @include padding(8 4);
+    line-height: 2.5714285714; /* 36px at 14px font size */
+    @include height(34);
+    @include nospace();
     text-align: center;
     text-transform: uppercase;
 
@@ -144,8 +152,7 @@
   .view-selector {
     // Supply what was being provided by the grid now this element has been taken out the flow.
     margin-left: -1.6vw;
-    max-width: 210px;
-    max-width: #{get-rem-from-px(210)}rem;
+    @include constrain-width(210, "max");
     padding-left: 1.6vw;
     width: 16.666vw;
   }
