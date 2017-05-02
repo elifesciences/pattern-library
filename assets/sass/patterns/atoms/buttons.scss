@@ -20,7 +20,7 @@
 
 .button--default {
   background-color: $color-primary;
-  border: 2px solid $color-primary;
+  border: 1px solid $color-primary;
   @include padding(15 36 14);
 
   &:hover {
@@ -31,13 +31,13 @@
 
 .button--outline {
   background-color: transparent;
-  border: 2px solid $color-text--reverse;
+  border: 1px solid $color-text--reverse;
   color: $color-text--reverse;
   @include padding(15 36 14);
 
   &:hover {
     background-color: $color-primary-dark;
-    border: 2px solid $color-primary-dark;
+    border: 1px solid $color-primary-dark;
     color: $color-text--reverse;
   }
 }
@@ -54,10 +54,10 @@
 
 .button--extra-small {
   border-radius: 3px;
-  border-style: none;
   @include font-size(11);
   line-height: 2.1818181818; /* 24px with 11px font size */
   @include padding(0 6);
+  @include height(24);
 }
 
 .button--inactive {
