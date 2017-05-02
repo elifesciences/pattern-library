@@ -408,11 +408,6 @@
   @include body-spacing();
 }
 
-@mixin listing-detail() {
-  @include small-typeg();
-  line-height: 1.5;
-}
-
 @mixin mono-typeg() {
   font-family: $font-monospace;
   @include font-size(14);
