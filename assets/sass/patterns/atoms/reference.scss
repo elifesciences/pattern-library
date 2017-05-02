@@ -4,7 +4,9 @@
   @include listing-side-art-title-typeg();
   color: $color-text;
   display: block;
-  @include padding(3, "bottom");
+  @include font-size(16);
+  line-height: 1.5;
+  @include nospace();
   text-decoration: none;
 }
 
@@ -15,12 +17,13 @@ a.reference__title:hover {
 .reference__authors_list {
   display: inline;
   list-style: none;
-  margin: 0;
-  @include padding(0 0 3 0);
+  @include nospace();
 }
 
 .reference__author {
   @include listing-side-author-typeg();
+  @include font-size(14);
+  line-height:  1.714285714; /* 24px with 14px font size */
   display: inline;
   margin: 0;
   padding: 0;
@@ -50,7 +53,7 @@ a.reference__authors_link:hover {
 }
 
 .reference__origin {
-  @include listing-detail();
+  @include small-typeg();
   padding-bottom: 0;
 
   & a {
@@ -72,7 +75,7 @@ a.reference__authors_link:hover {
 
 .reference__abstract {
   display: inline;
-  @include listing-detail();
+  @include small-typeg();
 }
 
 .reference__abstract_link {
