@@ -264,6 +264,7 @@
 @mixin nav-small-typeg() {
   @include nav-typeg();
   @include font-size(11);
+  line-height: 2.1818181818;
 }
 
 @mixin nav-page-typeg() {

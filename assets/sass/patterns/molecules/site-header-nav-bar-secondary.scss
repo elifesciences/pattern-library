@@ -10,7 +10,9 @@
 .nav-secondary__list {
   align-items: center;
   display: table-cell;
-  display: flex;
+  @supports (display: flex) {
+    display: flex;
+  }
   @include height(40);
   justify-content: flex-end;
   margin: 0;
@@ -23,17 +25,16 @@
   @include nav-small-typeg();
   @include height(24);
   list-style-type: none;
-  @include padding(8 16 6 0);
+  @include padding(0 12 0 0);
   text-transform: uppercase;
+}
 
-  .button--extra-small {
-    display: none;
+.nav-secondary__item--button {
+  @include visuallyhidden();
 
-    @media only all and (min-width: 26.5625em) {
-      display: list-item;
-      margin-top: -5px;
-      margin-top: -0.3125rem;
-    }
+  @media only all and (min-width: 26.5625em) {
+    @include visuallyunhidden();
+    @include margin(12, "right");
   }
 }
 
