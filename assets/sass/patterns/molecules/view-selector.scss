@@ -127,7 +127,6 @@
   }
 
   .view-selector__link {
-    @include font-size(11);
     @include padding(8 4);
     text-align: center;
     text-transform: uppercase;
