@@ -157,11 +157,12 @@
   },
 
   "contentHeader": {
-    "rootClasses": "content-header content-header-article content-header-article-magazine content-header-article-magazine--background",
-    "behaviour": "BackgroundImage ContentHeaderArticle",
     "title": "Planarian 'kidneys' go with the flow",
-    "subjects": {
-      "list": [
+    "longTitle": true,
+    "header": {
+      "possible": true,
+      "hasSubjects": true,
+      "subjects": [
         {
           "name": "Cell Biology",
           "url": "#"
@@ -172,14 +173,13 @@
         }
       ]
     },
+    "authorLine": "Melanie Issigonis and Phillip A Newmark",
     "authors": {
       "list": [
         {"name": "Melanie Issigonis"},
         {"name": "Phillip A Newmark"}
       ]
     },
-
-    "titleClass": "content-header__title--medium",
 
     "meta": {
       "url": "#",
@@ -192,13 +192,6 @@
         },
         "forMachine": "2015-09-10"
       }
-    },
-
-    "hasBackground": true,
-
-    "backgroundImage": {
-      "lowResImageSource": "https://unsplash.it/950/400",
-      "highResImageSource": "https://unsplash.it/1900/800"
     }
 
   },

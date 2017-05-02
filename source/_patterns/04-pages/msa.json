@@ -157,27 +157,19 @@
   },
 
   "contentHeader": {
-    "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
-    "behaviour": "BackgroundImage",
     "title": "Microbiology and infectious disease",
-    "titleClass": "content-header__title--medium",
-    "hasCtaOrMeta": true,
+    "longTitle": true,
+    "impactStatement": "eLife publishes research covering virology, bacteriology and mycology. Decisions are made by journal editors who are active researchers in the fields of microbiology and infectious disease.",
     "button": {
       "text": "Subscribe",
       "url": "#",
       "classes": "button--outline button--small"
     },
-    "hasBackground": true,
-    "backgroundImage": {
-      "lowResImageSource": "https://unsplash.it/950/400",
-      "highResImageSource": "https://unsplash.it/1900/800"
+    "image": {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/1114/336"
+      }
     }
-  },
-
-  "leadParas": {
-    "paras": [
-      {"text": "eLife publishes research covering virology, bacteriology and mycology. Decisions are made by journal editors who are active researchers in the fields of microbiology and infectious disease."}
-    ]
   },
 
   "mainTeasers": [

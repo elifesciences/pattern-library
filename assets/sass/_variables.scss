@@ -62,15 +62,19 @@ $viewport-width-when-site-hits-max-width-in-px: 1245;
 $viewport-width-when-site-hits-max-width-in-rem: get-rem-from-px($viewport-width-when-site-hits-max-width-in-px);
 
 // Heights
-$content-header-height--narrow-screen: 210;
-$content-header-height--medium-width-screen: 270;
-$content-header-height--wide-screen: 270;
-$content-header-height--extra-wide-screen: 325;
+$content-header-image-height--narrow-screen: 264;
+$content-header-image-height--medium-width-screen: 288;
+$content-header-image-height--wide-screen: 336;
 $carousel-height: 400;
 
 $button-height-extra-small: 24;
 $button-height-small: 36;
 $button-height-regular: 48;
+
+// Widths
+$content-header-download-width: 20;
+$content-header-download-width-medium: 44;
+$content-header-profile-width: 40;
 
 // Spacing
 $teaser-spacing-top: 24;
@@ -79,6 +83,9 @@ $teaser-spacing-bottom: 23;
 $teaser-spacing-left: 16;
 $listing-list-spacing: 72;
 
+$content-header-padding: 24;
+
+// TODO: rename these
 $content-header-side-padding: 6; //vw
 $content-header-side-padding--extra-wide: 30; //px
 
