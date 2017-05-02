@@ -2,25 +2,17 @@
 
 .article-download-links-list--js {
   background-color: #fff;
-  @include border-radius-simple();
+  border-radius: #{$border-radius}px;
   @include box-shadow();
   font-family: $font-secondary;
-  @include constrain-width(240, "min");
-  @include width(240px);
+  @include padding(12, "bottom");
+  @include width(217);
   overflow: scroll;
   position: absolute;
   right: 24px;
   text-align: left;
   top: 80px;
   z-index: 20;
-
-  // Turned off until the position right can be fixed so arrow always appears under download link icon.
-  //&:before {
-  //  @include arrow("up", 7, $color-text-ui-background--reverse);
-  //  position: absolute;
-  //  right: calc(6vw + 3.5px);
-  //  top: -6px;
-  //}
 
   .article-download-list {
     padding-left: 0;
@@ -37,11 +29,9 @@
   }
 
   .article-download-links-list__link {
-    border-top: 1px solid $color-text-dividers;
     display: block;
-    @include padding(24);
+    @include padding(12 24);
     @include menu-typeg();
-    text-align: center;
     text-decoration: none;
 
     &:hover {
@@ -51,27 +41,15 @@
   }
 
   .article-download-links-list__heading {
-    border-top: 1px solid $color-text-dividers;
-    @include font-size(14);
-    font-weight: 600;
-    line-height: 1.7142857143; /* 24px with a font size of 14px */
+    @include label-content-typeg();
     margin: 0;
-    @include padding(24);
+    @include padding(24 24 0);
     text-transform: uppercase;
-    text-align: center;
 
     &:first-of-type {
       border-top-style: none;
     }
 
-  }
-
-}
-
-@media only all and (min-width: #{$bkpt-article-download-links-list}px) {
-
-  .article-download-links-list--js {
-    border-radius: 3px;
   }
 
 }
