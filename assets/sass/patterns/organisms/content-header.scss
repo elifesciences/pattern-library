@@ -3,8 +3,7 @@
 .content-header {
   color: $color-text;
   margin: 0 auto;
-  max-width: #{$max-site-width}px;
-  max-width: #{get-rem-from-px($max-site-width)}rem;
+  @include constrain-width($max-site-width, "max");
   @include padding(0 $content-header-padding $content-header-padding);
   position: relative;
   text-align: center;
