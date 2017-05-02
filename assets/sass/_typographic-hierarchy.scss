@@ -258,12 +258,13 @@
   font-family: $font-secondary;
   @include font-size(14);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.7142857143; /* 24px with 14px font size */
 }
 
 @mixin nav-small-typeg() {
   @include nav-typeg();
   @include font-size(11);
+  line-height: 2.1818181818;
 }
 
 @mixin nav-page-typeg() {
