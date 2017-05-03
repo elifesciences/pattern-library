@@ -45,18 +45,18 @@ module.exports = class ViewSelector {
     function createSideBySideView(src) {
       var iFrame = self.doc.createElement('iframe');
       iFrame.src = src;
-      iFrame.classList.add('lens');
+      iFrame.classList.add('side-by-side-view');
       return iFrame;
     }
 
     function createSideBySideCloseButton() {
       var btn = self.doc.createElement('button');
       btn.innerHTML = 'Close side-by-side view';
-      btn.classList.add('close-lens-btn');
+      btn.classList.add('close-side-by-side-view');
       return btn;
     }
 
-    this.$sideBySideView = self.doc.querySelector('.lens');
+    this.$sideBySideView = self.doc.querySelector('.side-by-side-view');
     //currentYScrollPos = window.pageYOffset;
 
     if (!this.$sideBySideView) {
@@ -66,7 +66,7 @@ module.exports = class ViewSelector {
       this.$sideBySideView.classList.remove('hidden');
     }
 
-    this.$sideBySideCloseButton = self.doc.querySelector('.close-lens-btn');
+    this.$sideBySideCloseButton = self.doc.querySelector('.close-side-by-side-view');
     if (!this.$sideBySideCloseButton) {
       this.$sideBySideCloseButton = createSideBySideCloseButton();
       this.$sideBySideCloseButton.addEventListener('click', function (e) {
