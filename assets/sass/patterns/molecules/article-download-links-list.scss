@@ -7,7 +7,6 @@
   font-family: $font-secondary;
   @include padding(12, "bottom");
   @include width(217);
-  overflow: scroll;
   position: absolute;
   right: 24px;
   text-align: left;
