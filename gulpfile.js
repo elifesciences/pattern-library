@@ -42,6 +42,7 @@ const jsDest = './source/assets/js';
 
 let options = minimist(process.argv);
 let environment = options.environment || 'development';
+let mocha_grep = options['mocha-grep'] || null;
 
 let server;
 
@@ -263,7 +264,13 @@ gulp.task('browserify-tests', (done) => {
 
 gulp.task('test', ['browserify-tests', 'js'], () => {
   return gulp.src('./test/*.html')
-    .pipe(mochaPhantomjs({reporter: 'spec', 'ignore-resource-errors': true}))
+    .pipe(mochaPhantomjs({
+      reporter: 'spec', 
+      mocha: {
+        grep: mocha_grep
+      },
+      'ignore-resource-errors': true
+    }))
     .pipe(reload());
 });
 
