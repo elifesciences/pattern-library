@@ -49,7 +49,8 @@
 
 .button--small {
   @include font-size(11);
-  @include padding(9 8 8);
+  line-height: 2.1818181818; /* 24px at 11px font size */
+  @include padding(3 12);
 }
 
 .button--extra-small {
