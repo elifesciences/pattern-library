@@ -295,20 +295,23 @@
 
 .content-header__download_link {
   float: right;
-  @include margin(($content-header-padding * 2 + 11 * 2.1818181818) / 2 - $content-header-download-width / 2, "top");
-  position: relative;
-  right: 0;
+  position: absolute;
+  right: 24px;
+  top: 26px;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    @include margin(($content-header-padding * 2 + 11 * 2.1818181818) / 2 - $content-header-download-width-medium / 2, "top");
+    right: 14px;
+    top: 14px;
   }
 }
 
 .content-header__download_icon {
   width: #{$content-header-download-width}px;
+
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
     width: #{$content-header-download-width-medium}px;
   }
+
 }
 
 .content-header__impact-statement {
