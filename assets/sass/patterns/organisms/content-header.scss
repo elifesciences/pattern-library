@@ -302,7 +302,7 @@
   .content-header--image & {
     @include margin(0, "bottom");
     display: none;
-    @media only all and (min-width: #{get-rem-from-px($bkpt-grid-link-listing--wide-screen)}em) {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
       display: block;
     }
   }
