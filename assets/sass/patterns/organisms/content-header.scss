@@ -85,6 +85,11 @@
 
   .content-header__body {
     @include margin($content-header-padding * 2, "top");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include margin($content-header-padding * 3, "top");
+    }
+
   }
 
   .content-header__title {
@@ -195,7 +200,7 @@
         border-radius: #{$content-header-profile-width / 2}px;
         height: #{$content-header-profile-width}px;
         width: #{$content-header-profile-width}px;
-        @include margin(10, "right");
+        @include margin(12, "right");
       }
 
       dl,
@@ -208,10 +213,15 @@
         color: $color-text--reverse;
         font-family: $font-secondary;
         @include font-size(14);
-        line-height: 1.2;
+        line-height: 1.7142857143; /* 24px with 14px font size */
       }
     }
   }
+
+  .content-header__profile_wrapper {
+    @include padding($content-header-padding 0 0);
+  }
+
 }
 
 .content-header__subject_list {
