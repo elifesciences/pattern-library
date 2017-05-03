@@ -15,6 +15,7 @@ if (window.localStorage && document.querySelector &&
   // import modules into the list of Components.
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.ArticleSection = require('./components/ArticleSection');
+  Components.AssetViewer = require('./components/AssetViewer');
   Components.AudioPlayer = require('./components/AudioPlayer');
   Components.BackgroundImage = require('./components/BackgroundImage');
   Components.Carousel = require('./components/Carousel');
