@@ -53,7 +53,7 @@
 
 .content-header__title {
   @include font-size(36);
-  line-height: 1.2;
+  line-height: 1.3333333333;;
   @include margin(0, "top");
   @include margin(0, "bottom");
 
@@ -296,7 +296,6 @@
 
 .content-header__impact-statement {
   @include subtitle-typeg();
-  @include margin($content-header-padding / 2, "top");
   @include margin($content-header-padding, "bottom");
   max-width: 100%;
 
@@ -423,7 +422,8 @@ li.content-header__institution_list_item--last .content-header__institution:afte
 }
 
 .content-header__cta {
-  @include margin($content-header-padding, "bottom");
+  // $content-header-padding minus 6px because child button is 30px not 24px high
+  @include margin(18, "bottom");
 
   .content-header--image & {
     @include margin(0, "bottom");
