@@ -4,7 +4,8 @@
   color: $color-text;
   margin: 0 auto;
   @include constrain-width($max-site-width, "max");
-  @include padding(0 $content-header-padding $content-header-padding);
+  // $content-header-padding - 1 to account for the 1px border
+  @include padding(0 $content-header-padding $content-header-padding - 1);
   position: relative;
   text-align: center;
   border-bottom: 1px solid $color-text-dividers;
@@ -59,11 +60,12 @@
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
     @include font-size(41);
+    line-height: 1.1707317073; /* 48px with 41px font size */
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
     @include font-size(46);
-    line-height: 1.6;
+    line-height: 1.5652173913;
   }
 
   .content-header--header & {
