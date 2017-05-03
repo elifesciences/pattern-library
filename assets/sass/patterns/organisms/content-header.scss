@@ -302,9 +302,22 @@
   top: 26px;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    right: 14px;
+    right: 16px;
     top: 14px;
   }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+    right: 0;
+  }
+
+  .content-header--image & {
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      right: 16px;
+    }
+
+  }
+
 }
 
 .content-header__download_icon {
