@@ -11,11 +11,23 @@ module.exports = class ViewSelector {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
+    this.$sideBySideListItem = this.$elm.querySelector('.view-selector__list-item--side_by_side');
+    this.$sideBySideLink = this.$elm.querySelector('.view-selector__link--side_by_side');
+    this.sideBySideSrc = this.$elm.dataset.sideBySideLink;
     this.$jumpLinks = this.$elm.querySelector('.view-selector__jump_links');
     this.$jumpLinksToggle = this.$elm.querySelector('.view-selector__jump_links_header');
     this.cssFixedClassName = 'view-selector--fixed';
 
     this.mainTarget = this.doc.querySelector('[role="main"]');
+
+    this.$sideBySideListItem.classList.remove('hidden');
+
+    var self = this;
+    this.$sideBySideLink.addEventListener('click', function (e) {
+      self.openSideBySideView();
+      e.preventDefault();
+    });
+
 
     // matches top padding in scss
     let topSpaceWhenFixed = 30;
@@ -24,6 +36,66 @@ module.exports = class ViewSelector {
     this.window.addEventListener('scroll', this.handleScroll.bind(this));
     this.$jumpLinksToggle.addEventListener('click', this.toggleJumpLinks.bind(this));
     this.toggleJumpLinks();
+
+  }
+
+  openSideBySideView() {
+
+    var self = this;
+    function createSideBySideView(src) {
+      var iFrame = self.doc.createElement('iframe');
+      iFrame.src = src;
+      iFrame.classList.add('lens');
+      return iFrame;
+    }
+
+    function createSideBySideCloseButton() {
+      var btn = self.doc.createElement('button');
+      btn.innerHTML = 'Close side-by-side view';
+      btn.classList.add('close-lens-btn');
+      return btn;
+    }
+
+    this.$sideBySideView = self.doc.querySelector('.lens');
+    //currentYScrollPos = window.pageYOffset;
+
+    if (!this.$sideBySideView) {
+      this.$sideBySideView = createSideBySideView(this.sideBySideSrc);
+      self.doc.querySelector('body').appendChild(this.$sideBySideView);
+    } else {
+      this.$sideBySideView.classList.remove('hidden');
+    }
+
+    this.$sideBySideCloseButton = self.doc.querySelector('.close-lens-btn');
+    if (!this.$sideBySideCloseButton) {
+      this.$sideBySideCloseButton = createSideBySideCloseButton();
+      this.$sideBySideCloseButton.addEventListener('click', function (e) {
+        self.closeSideBySideView();
+      });
+      self.doc.querySelector('header').appendChild(this.$sideBySideCloseButton);
+    } else {
+      this.$sideBySideCloseButton.classList.remove('hidden');
+    }
+    //document.querySelector('main').classList.add('hidden');
+    //document.querySelector('.info-bar').classList.add('hidden');
+    //  var sections = document.querySelectorAll('.global-inner > section').forEach(function(s) {
+    //    s.classList.add('hidden');
+    //  });
+    //document.querySelector('.site-footer').classList.add('hidden');
+    //window.scroll(0, 0);
+    //var currentYScrollPos;
+  }
+
+  closeSideBySideView() {
+    this.$sideBySideCloseButton.classList.add('hidden');
+    this.$sideBySideView.classList.add('hidden');
+    //document.querySelector('main').classList.remove('hidden');
+    //document.querySelector('.info-bar').classList.remove('hidden');
+    //var sections = document.querySelectorAll('.global-inner > section').forEach(function(s) {
+    //  s.classList.remove('hidden');
+    //});
+    //document.querySelector('.site-footer').classList.remove('hidden');
+    //window.scroll(0, currentYScrollPos);
   }
 
   handleScroll() {

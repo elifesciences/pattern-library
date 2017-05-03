@@ -119,6 +119,36 @@ describe('A ViewSelector Component', function () {
                          .contains('view-selector__jump_links_header--closed')).to.be.true;
     });
 
+
+  });
+
+  describe('its side-by-side link', function () {
+
+    let viewSelector;
+
+    beforeEach(function () {
+      viewSelector = new ViewSelector($elm);
+    });
+
+    it('is displayed on load', function() {
+      expect(viewSelector.$sideBySideListItem.classList.contains('hidden')).to.be.false;
+    });
+
+    it('opens an iframe', function() {
+      viewSelector.openSideBySideView();
+      expect(viewSelector.$sideBySideView.classList.contains('hidden')).to.be.false;
+      expect(viewSelector.$sideBySideView.getAttribute('src')).to.equal('http://lens.elifesciences.org/19749/index.html');
+      expect(viewSelector.$sideBySideCloseButton.classList.contains('hidden')).to.be.false;
+
+    });
+
+    it('closes the iframe', function() {
+      viewSelector.openSideBySideView();
+      viewSelector.closeSideBySideView();
+      expect(viewSelector.$sideBySideView.classList.contains('hidden')).to.be.true;
+      expect(viewSelector.$sideBySideCloseButton.classList.contains('hidden')).to.be.true;
+    });
+
   });
 
 });
