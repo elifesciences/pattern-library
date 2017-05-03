@@ -82,8 +82,14 @@
 }
 
 .content-header--image {
+
+  .content-header__body {
+    @include margin($content-header-padding * 2, "top");
+  }
+
   .content-header__title {
     @include font-size(41);
+    line-height: 1.1707317073;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
       @include font-size(52);
@@ -148,7 +154,7 @@
 }
 
 .content-header__profile_wrapper {
-  @include padding($content-header-padding 0);
+  @include padding($content-header-padding/2 0);
   position: absolute;
   left: 0;
   right: 0;
@@ -428,7 +434,7 @@ li.content-header__institution_list_item--last .content-header__institution:afte
   .content-header--image & {
     @include margin(0, "bottom");
     position: absolute;
-    bottom: #{$content-header-padding * 2}px;
+    bottom: 44px;
     left: 0;
     right: 0;
   }
