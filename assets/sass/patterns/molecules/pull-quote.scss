@@ -4,7 +4,7 @@
   background: url("../img/icons/quote-start.png") 0 0 no-repeat;
   background: url("../img/icons/quote-start.svg") 0 0 no-repeat, linear-gradient(transparent, transparent);
   @include margin(0 48 0 0);
-  @include padding(43 5 0 5);
+  @include padding(43 5);
 
   p {
     @include pullquote-typeg();
