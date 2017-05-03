@@ -102,6 +102,7 @@
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
       @include font-size(58);
+      line-height: 1.2413793103; /* 72px with 58px font size */
     }
   }
 
