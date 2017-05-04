@@ -99,18 +99,14 @@ module.exports = class ViewSelector {
     } else {
       this.$sideBySideCloseButton.classList.remove('hidden');
     }
-    this.eachButHeader((node) => {
-      node.classList.add('hidden');
-    });
+
+    this._hideEverythingButHeader();
   }
 
   closeSideBySideView() {
     this.$sideBySideCloseButton.classList.add('hidden');
     this.$sideBySideView.classList.add('hidden');
-    this.eachButHeader((node) => {
-      node.classList.remove('hidden');
-    });
-
+    this._showEverything();
     this._restoreScrollingPosition();
   }
 
@@ -165,5 +161,17 @@ module.exports = class ViewSelector {
   _restoreScrollingPosition() {
     window.scroll(0, this.currentYScrollPos);
     this.currentYScrollPos = null;
+  }
+
+  _hideEverythingButHeader() {
+    this.eachButHeader((node) => {
+      node.classList.add('hidden');
+    });
+  }
+
+  _showEverything() {
+    this.eachButHeader((node) => {
+      node.classList.remove('hidden');
+    });
   }
 };
