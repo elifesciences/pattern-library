@@ -58,23 +58,19 @@ describe('A ViewSelector Component', function () {
        function () {
          // This must be smaller than $elm.offsetHeight of the object under test
          let fakeBottomOfMainEl = 20;
-         let docMock = {
-           querySelector: function () {
-             return {
-               getBoundingClientRect: function () {
-                 return {
-                   bottom: fakeBottomOfMainEl
-                 };
-               }
-             };
-           }
-         };
          let windowMock = {
            addEventListener: function (){},
            pageYOffset: 30
          };
 
-         let _viewSelector = new ViewSelector($elm, windowMock, docMock);
+         let _viewSelector = new ViewSelector($elm, windowMock, document);
+         _viewSelector.mainTarget = {
+           getBoundingClientRect: function () {
+             return {
+               bottom: fakeBottomOfMainEl
+             };
+           }
+         };
          _viewSelector.elmYOffset = 20;
          // Prerequisite for the test to be valid
          expect (fakeBottomOfMainEl).to.be.below(_viewSelector.$elm.offsetHeight);
