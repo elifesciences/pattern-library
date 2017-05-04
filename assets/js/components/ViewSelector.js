@@ -35,23 +35,7 @@ module.exports = class ViewSelector {
 
 
     this.sideBySideSrc = this.$elm.dataset.sideBySideLink;
-    this.$sideBySideListItem = this.doc.createElement('li');
-    this.$sideBySideListItem.classList.add("view-selector__list-item");
-    this.$sideBySideListItem.classList.add("view-selector__list-item--side-by-side");
-    var $sideBySideLink = this.doc.createElement('a');
-    $sideBySideLink.setAttribute("href", "#");
-    $sideBySideLink.classList.add("view-selector__link");
-    $sideBySideLink.classList.add("view-selector__link--side-by-side");
-    $sideBySideLink.innerHTML = '<span>Side by side view</span>';
-    $sideBySideLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.openSideBySideView();
-    });
-    this.$sideBySideListItem.appendChild($sideBySideLink);
-    var $list = this.doc.querySelector('.view-selector__list');
-    var $jumpList = this.doc.querySelector('.view-selector__list-item--jump');
-    $list.insertBefore(this.$sideBySideListItem, $jumpList);
-
+    this.$sideBySideListItem = this._insertSideBySideListItem();
 
     // matches top padding in scss
     let topSpaceWhenFixed = 30;
@@ -65,25 +49,11 @@ module.exports = class ViewSelector {
 
   openSideBySideView() {
 
-    var createSideBySideView = (src) => {
-      var iFrame = this.doc.createElement('iframe');
-      iFrame.src = src;
-      iFrame.classList.add('side-by-side-view');
-      return iFrame;
-    };
-
-    var createSideBySideCloseButton = () => {
-      var btn = this.doc.createElement('button');
-      btn.innerHTML = 'Close side-by-side view';
-      btn.classList.add('close-side-by-side-view');
-      return btn;
-    };
-
     this._saveScrollingPosition();
 
     this.$sideBySideView = this.doc.querySelector('.side-by-side-view');
     if (!this.$sideBySideView) {
-      this.$sideBySideView = createSideBySideView(this.sideBySideSrc);
+      this.$sideBySideView = this._createSideBySideView(this.sideBySideSrc);
       this.doc.querySelector('body').appendChild(this.$sideBySideView);
     } else {
       this.$sideBySideView.classList.remove('hidden');
@@ -91,7 +61,7 @@ module.exports = class ViewSelector {
 
     this.$sideBySideCloseButton = this.doc.querySelector('.close-side-by-side-view');
     if (!this.$sideBySideCloseButton) {
-      this.$sideBySideCloseButton = createSideBySideCloseButton();
+      this.$sideBySideCloseButton = this._createSideBySideCloseButton();
       this.$sideBySideCloseButton.addEventListener('click', (e) => {
         this.closeSideBySideView();
       });
@@ -153,6 +123,26 @@ module.exports = class ViewSelector {
 
   }
 
+  _insertSideBySideListItem() {
+    var listItem = this.doc.createElement('li');
+    listItem.classList.add("view-selector__list-item");
+    listItem.classList.add("view-selector__list-item--side-by-side");
+    var $link = this.doc.createElement('a');
+    $link.setAttribute("href", "#");
+    $link.classList.add("view-selector__link");
+    $link.classList.add("view-selector__link--side-by-side");
+    $link.innerHTML = '<span>Side by side view</span>';
+    $link.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.openSideBySideView();
+    });
+    listItem.appendChild($link);
+    var $list = this.doc.querySelector('.view-selector__list');
+    var $jumpList = this.doc.querySelector('.view-selector__list-item--jump');
+    $list.insertBefore(listItem, $jumpList);
+    return listItem;
+  }
+
   _saveScrollingPosition() {
     this.currentYScrollPos = this.window.pageYOffset;
     window.scroll(0, 0);
@@ -174,4 +164,18 @@ module.exports = class ViewSelector {
       node.classList.remove('hidden');
     });
   }
+
+  _createSideBySideView(src) {
+    var iFrame = this.doc.createElement('iframe');
+    iFrame.src = src;
+    iFrame.classList.add('side-by-side-view');
+    return iFrame;
+  }
+
+  _createSideBySideCloseButton() {
+    var btn = this.doc.createElement('button');
+    btn.innerHTML = 'Close side-by-side view';
+    btn.classList.add('close-side-by-side-view');
+    return btn;
+  };
 };
