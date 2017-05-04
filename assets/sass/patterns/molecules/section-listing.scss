@@ -9,6 +9,7 @@
 
 .section-listing__list_item {
   @include typeg-portal-quick-nav();
+  line-height: 3;
   @include nospace();
 }
 
@@ -22,12 +23,9 @@
 }
 
 .section-listing--single-line {
-  padding: 10px;
 
   .section-listing__list_item {
-    margin: 0 20px;
-    text-align: center;
-    line-height: 1.25;
+    @include margin(0 12);
     @include font-size(16);
   }
 
@@ -48,6 +46,10 @@
 
   .section-listing {
     column-count: 3;
+  }
+
+  .section-listing__list_item {
+    line-height: 1.5;
   }
 
   .section-listing--single-line {
