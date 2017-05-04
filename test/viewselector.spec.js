@@ -149,6 +149,13 @@ describe('A ViewSelector Component', function () {
       expect(viewSelector.mainTarget.classList.contains('hidden')).to.be.false;
     });
 
+    it('comes back to the last known scrolling position when closing the side-by-side view', function() {
+      window.scroll(0, 100);
+      viewSelector.openSideBySideView();
+      expect(viewSelector.window.pageYOffset).to.equal(0);
+      viewSelector.closeSideBySideView();
+      expect(viewSelector.window.pageYOffset).to.equal(100);
+    });
   });
 
 });
