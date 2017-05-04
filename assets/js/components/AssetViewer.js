@@ -18,12 +18,19 @@ module.exports = class AssetViewer {
 
       this.$elm.querySelector('.asset-viewer-inline__header_text').appendChild(doc.createTextNode(text));
 
+      const hash = this.window.location.hash.substring(1);
+      let show = 0;
+
       let i;
       for (i = 0; i < this.assetItems.length; i++) {
         const assetItem = this.assetItems[i];
         const x = i;
         const navigation = doc.createElement('span');
         navigation.classList.add('asset-viewer-inline__header_navigation');
+
+        if (assetItem.id === hash) {
+          show = x;
+        }
 
         const previous = doc.createElement('span');
         previous.classList.add('asset-viewer-inline__previous');
@@ -48,7 +55,9 @@ module.exports = class AssetViewer {
         assetItem.querySelector('.asset-viewer-inline__header_panel').insertBefore(navigation, assetItem.querySelector('.asset-viewer-inline__header_text'));
       }
 
-      this.show(0);
+      this.show(show);
+
+      this.window.addEventListener('hashchange', this.hashChange.bind(this));
     }
   }
 
@@ -66,6 +75,28 @@ module.exports = class AssetViewer {
 
   findSupplements() {
     return this.doc.querySelectorAll(`[data-parent-asset-id="${this.$elm.id}"]`);
+  }
+
+  hashChange(e) {
+    let hash = '';
+
+    // event was hashChange
+    if (!!e.newURL) {
+      hash = e.newURL.substring(e.newURL.indexOf('#') + 1);
+    } else {
+      hash = this.window.location.hash.substring(1);
+    }
+
+    if (!hash) {
+      return false;
+    }
+
+    let i;
+    for (i = 0; i < this.assetItems.length; i++) {
+      if (this.assetItems[i].id === hash) {
+        this.show(i);
+      }
+    }
   }
 
 };
