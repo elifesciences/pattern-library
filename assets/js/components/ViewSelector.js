@@ -79,9 +79,9 @@ module.exports = class ViewSelector {
       return btn;
     };
 
-    this.$sideBySideView = this.doc.querySelector('.side-by-side-view');
-    this.currentYScrollPos = this.window.pageYOffset;
+    this._saveScrollingPosition();
 
+    this.$sideBySideView = this.doc.querySelector('.side-by-side-view');
     if (!this.$sideBySideView) {
       this.$sideBySideView = createSideBySideView(this.sideBySideSrc);
       this.doc.querySelector('body').appendChild(this.$sideBySideView);
@@ -102,7 +102,6 @@ module.exports = class ViewSelector {
     this.eachButHeader((node) => {
       node.classList.add('hidden');
     });
-    window.scroll(0, 0);
   }
 
   closeSideBySideView() {
@@ -111,9 +110,8 @@ module.exports = class ViewSelector {
     this.eachButHeader((node) => {
       node.classList.remove('hidden');
     });
-    // TODO: extract some methods
-    window.scroll(0, this.currentYScrollPos);
-    this.currentYScrollPos = null;
+
+    this._restoreScrollingPosition();
   }
 
   handleScroll() {
@@ -159,4 +157,13 @@ module.exports = class ViewSelector {
 
   }
 
+  _saveScrollingPosition() {
+    this.currentYScrollPos = this.window.pageYOffset;
+    window.scroll(0, 0);
+  }
+  
+  _restoreScrollingPosition() {
+    window.scroll(0, this.currentYScrollPos);
+    this.currentYScrollPos = null;
+  }
 };
