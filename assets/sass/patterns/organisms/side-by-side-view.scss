@@ -6,12 +6,15 @@
   overflow: hidden;
   position: absolute;
   left: 0;
-  top: 8rem;
+  top: 8.6rem;
   height: calc(100% - 14rem);
   width: 100%;
 }
 
 .side-by-side-view__button-close {
+  position: absolute;
+  left: 0;
+  top: 6.8rem;
   background: none;
   border: none;
   font-family: $font-secondary;
