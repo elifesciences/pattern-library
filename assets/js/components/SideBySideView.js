@@ -35,7 +35,7 @@ module.exports = class SideBySideView {
 
     this._saveScrollingPosition();
 
-    this.$iframe = this.doc.querySelector('.side-by-side-view');
+    this.$iframe = this.doc.querySelector('.side-by-side-view__iframe');
     if (!this.$iframe) {
       this.$iframe = this._createIframe(this.src);
       this.doc.querySelector('body').appendChild(this.$iframe);
@@ -43,7 +43,7 @@ module.exports = class SideBySideView {
       this.$iframe.classList.remove('hidden');
     }
 
-    this.$closeButton = this.doc.querySelector('.close-side-by-side-view');
+    this.$closeButton = this.doc.querySelector('.side-by-side-view__button--close');
     if (!this.$closeButton) {
       this.$closeButton = this._createCloseButton();
       this.$closeButton.addEventListener('click', (e) => {

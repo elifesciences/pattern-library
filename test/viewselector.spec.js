@@ -11,6 +11,12 @@ describe('A ViewSelector Component', function () {
     $elm = document.querySelector('[data-behaviour="ViewSelector"]');
   });
 
+  afterEach(function () {
+    [].forEach.call($elm.querySelectorAll('.view-selector__list-item--side-by-side'), ($li) => {
+      $li.remove();
+    });
+  });
+
   it('uses the "view-selector--fixed" css class', function () {
     let viewSelector = new ViewSelector($elm);
     expect(viewSelector.cssFixedClassName).to.equal('view-selector--fixed');
@@ -133,28 +139,10 @@ describe('A ViewSelector Component', function () {
     });
 
     it('opens an iframe', function() {
-      viewSelector.openSideBySideView();
-      expect(viewSelector.$sideBySideView.classList.contains('hidden')).to.be.false;
-      expect(viewSelector.$sideBySideView.getAttribute('src')).to.equal('http://lens.elifesciences.org/19749/index.html');
-      expect(viewSelector.$sideBySideCloseButton.classList.contains('hidden')).to.be.false;
-      expect(viewSelector.mainTarget.classList.contains('hidden')).to.be.true;
-
-    });
-
-    it('closes the iframe', function() {
-      viewSelector.openSideBySideView();
-      viewSelector.closeSideBySideView();
-      expect(viewSelector.$sideBySideView.classList.contains('hidden')).to.be.true;
-      expect(viewSelector.$sideBySideCloseButton.classList.contains('hidden')).to.be.true;
-      expect(viewSelector.mainTarget.classList.contains('hidden')).to.be.false;
-    });
-
-    it('comes back to the last known scrolling position when closing the side-by-side view', function() {
-      window.scroll(0, 100);
-      viewSelector.openSideBySideView();
-      expect(viewSelector.window.pageYOffset).to.equal(0);
-      viewSelector.closeSideBySideView();
-      expect(viewSelector.window.pageYOffset).to.equal(100);
+      var link = $elm.querySelector('.view-selector__link--side-by-side');
+      link.click();
+      expect(viewSelector.sideBySideView.$iframe).to.not.be.undefined;
+      expect(viewSelector.sideBySideView.$iframe.classList.contains('hidden')).to.be.false;
     });
   });
 

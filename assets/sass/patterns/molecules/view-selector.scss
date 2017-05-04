@@ -125,8 +125,7 @@
     }
   }
 
-  .view-selector__list-item--sidebyside {
-    display: none;
+  .view-selector__list-item--side-by-side {
   }
 
   .view-selector__list-item--jump {
@@ -143,6 +142,9 @@
     span {
       padding: 0;
     }
+  }
+
+  .view-selector__link--side-by-side {
   }
 }
 

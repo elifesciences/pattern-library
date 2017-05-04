@@ -18,9 +18,16 @@ module.exports = class ViewSelector {
     this.mainTarget = this.doc.querySelector('[role="main"]');
     this.$header = this.doc.querySelector('header');
     this.$global = this.$header.parentNode;
+    let SideBySideView = require('./SideBySideView');
+    this.sideBySideView = new SideBySideView(
+      this.$global, 
+      this.$elm.dataset.sideBySideLink,
+      this.window,
+      this.doc
+    );
     this.eachButHeader = (callback) => {
       // NodeList doesn't have forEach in this testing environment...
-      for (var i = 0; i < this.$global.childNodes.length; i++) {
+      for (var i = 0; i < this.$global.childNodes.length; i += 1) {
         var node = this.$global.childNodes[i];
         // skip text nodes
         if (!node.tagName) {
@@ -33,9 +40,7 @@ module.exports = class ViewSelector {
       }
     };
 
-
-    this.sideBySideSrc = this.$elm.dataset.sideBySideLink;
-    this.$sideBySideListItem = this._insertSideBySideListItem();
+    this._insertSideBySideListItem();
 
     // matches top padding in scss
     let topSpaceWhenFixed = 30;
@@ -45,39 +50,6 @@ module.exports = class ViewSelector {
     this.$jumpLinksToggle.addEventListener('click', this.toggleJumpLinks.bind(this));
     this.toggleJumpLinks();
 
-  }
-
-  openSideBySideView() {
-
-    this._saveScrollingPosition();
-
-    this.$sideBySideView = this.doc.querySelector('.side-by-side-view');
-    if (!this.$sideBySideView) {
-      this.$sideBySideView = this._createSideBySideView(this.sideBySideSrc);
-      this.doc.querySelector('body').appendChild(this.$sideBySideView);
-    } else {
-      this.$sideBySideView.classList.remove('hidden');
-    }
-
-    this.$sideBySideCloseButton = this.doc.querySelector('.close-side-by-side-view');
-    if (!this.$sideBySideCloseButton) {
-      this.$sideBySideCloseButton = this._createSideBySideCloseButton();
-      this.$sideBySideCloseButton.addEventListener('click', (e) => {
-        this.closeSideBySideView();
-      });
-      this.$header.appendChild(this.$sideBySideCloseButton);
-    } else {
-      this.$sideBySideCloseButton.classList.remove('hidden');
-    }
-
-    this._hideEverythingButHeader();
-  }
-
-  closeSideBySideView() {
-    this.$sideBySideCloseButton.classList.add('hidden');
-    this.$sideBySideView.classList.add('hidden');
-    this._showEverything();
-    this._restoreScrollingPosition();
   }
 
   handleScroll() {
@@ -134,7 +106,7 @@ module.exports = class ViewSelector {
     $link.innerHTML = '<span>Side by side view</span>';
     $link.addEventListener('click', (e) => {
       e.preventDefault();
-      this.openSideBySideView();
+      this.sideBySideView.open();
     });
     listItem.appendChild($link);
     var $list = this.doc.querySelector('.view-selector__list');
@@ -142,40 +114,4 @@ module.exports = class ViewSelector {
     $list.insertBefore(listItem, $jumpList);
     return listItem;
   }
-
-  _saveScrollingPosition() {
-    this.currentYScrollPos = this.window.pageYOffset;
-    window.scroll(0, 0);
-  }
-  
-  _restoreScrollingPosition() {
-    window.scroll(0, this.currentYScrollPos);
-    this.currentYScrollPos = null;
-  }
-
-  _hideEverythingButHeader() {
-    this.eachButHeader((node) => {
-      node.classList.add('hidden');
-    });
-  }
-
-  _showEverything() {
-    this.eachButHeader((node) => {
-      node.classList.remove('hidden');
-    });
-  }
-
-  _createSideBySideView(src) {
-    var iFrame = this.doc.createElement('iframe');
-    iFrame.src = src;
-    iFrame.classList.add('side-by-side-view');
-    return iFrame;
-  }
-
-  _createSideBySideCloseButton() {
-    var btn = this.doc.createElement('button');
-    btn.innerHTML = 'Close side-by-side view';
-    btn.classList.add('close-side-by-side-view');
-    return btn;
-  };
 };
