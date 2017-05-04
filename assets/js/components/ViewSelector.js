@@ -20,25 +20,11 @@ module.exports = class ViewSelector {
     this.$global = this.$header.parentNode;
     let SideBySideView = require('./SideBySideView');
     this.sideBySideView = new SideBySideView(
-      this.$global, 
+      this.$global,
       this.$elm.dataset.sideBySideLink,
       this.window,
       this.doc
     );
-    this.eachButHeader = (callback) => {
-      // NodeList doesn't have forEach in this testing environment...
-      for (var i = 0; i < this.$global.childNodes.length; i += 1) {
-        var node = this.$global.childNodes[i];
-        // skip text nodes
-        if (!node.tagName) {
-          continue;
-        }
-        if (node === this.$header) {
-          continue;
-        }
-        callback(node);
-      }
-    };
 
     this._insertSideBySideListItem();
 
@@ -97,12 +83,12 @@ module.exports = class ViewSelector {
 
   _insertSideBySideListItem() {
     var listItem = this.doc.createElement('li');
-    listItem.classList.add("view-selector__list-item");
-    listItem.classList.add("view-selector__list-item--side-by-side");
+    listItem.classList.add('view-selector__list-item');
+    listItem.classList.add('view-selector__list-item--side-by-side');
     var $link = this.doc.createElement('a');
-    $link.setAttribute("href", "#");
-    $link.classList.add("view-selector__link");
-    $link.classList.add("view-selector__link--side-by-side");
+    $link.setAttribute('href', '#');
+    $link.classList.add('view-selector__link');
+    $link.classList.add('view-selector__link--side-by-side');
     $link.innerHTML = '<span>Side by side view</span>';
     $link.addEventListener('click', (e) => {
       e.preventDefault();

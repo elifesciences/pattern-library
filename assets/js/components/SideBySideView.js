@@ -11,19 +11,24 @@ module.exports = class SideBySideView {
     this.window = _window;
     this.doc = doc;
     this.$global = $elm;
+
     // TODO: inject 'header'
     this.$header = this.$global.querySelector('header');
     this.eachButHeader = (callback) => {
+
       // NodeList doesn't have forEach in this testing environment...
-      for (var i = 0; i < this.$global.childNodes.length; i++) {
+      for (var i = 0; i < this.$global.childNodes.length; i += 1) {
         var node = this.$global.childNodes[i];
+
         // skip text nodes
         if (!node.tagName) {
           continue;
         }
+
         if (node === this.$header) {
           continue;
         }
+
         callback(node);
       }
     };
@@ -46,7 +51,7 @@ module.exports = class SideBySideView {
     this.$closeButton = this.doc.querySelector('.side-by-side-view__button--close');
     if (!this.$closeButton) {
       this.$closeButton = this._createCloseButton();
-      this.$closeButton.addEventListener('click', (e) => {
+      this.$closeButton.addEventListener('click', () => {
         this.close();
       });
       this.$header.appendChild(this.$closeButton);
@@ -68,7 +73,7 @@ module.exports = class SideBySideView {
     this.currentYScrollPos = this.window.pageYOffset;
     window.scroll(0, 0);
   }
-  
+
   _restoreScrollingPosition() {
     window.scroll(0, this.currentYScrollPos);
     this.currentYScrollPos = null;
@@ -98,5 +103,5 @@ module.exports = class SideBySideView {
     btn.innerHTML = 'Close side-by-side view';
     btn.classList.add('side-by-side-view__button--close');
     return btn;
-  };
+  }
 };
