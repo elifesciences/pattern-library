@@ -137,6 +137,7 @@ describe('A ViewSelector Component', function () {
       expect(viewSelector.$sideBySideView.classList.contains('hidden')).to.be.false;
       expect(viewSelector.$sideBySideView.getAttribute('src')).to.equal('http://lens.elifesciences.org/19749/index.html');
       expect(viewSelector.$sideBySideCloseButton.classList.contains('hidden')).to.be.false;
+      expect(viewSelector.mainTarget.classList.contains('hidden')).to.be.true;
 
     });
 
@@ -145,6 +146,7 @@ describe('A ViewSelector Component', function () {
       viewSelector.closeSideBySideView();
       expect(viewSelector.$sideBySideView.classList.contains('hidden')).to.be.true;
       expect(viewSelector.$sideBySideCloseButton.classList.contains('hidden')).to.be.true;
+      expect(viewSelector.mainTarget.classList.contains('hidden')).to.be.false;
     });
 
   });

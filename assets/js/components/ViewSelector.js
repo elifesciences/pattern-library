@@ -16,6 +16,22 @@ module.exports = class ViewSelector {
     this.cssFixedClassName = 'view-selector--fixed';
 
     this.mainTarget = this.doc.querySelector('[role="main"]');
+    this.$header = this.doc.querySelector('header');
+    this.$global = this.$header.parentNode;
+    this.eachButHeader = (callback) => {
+      // NodeList doesn't have forEach in this testing environment...
+      for (var i = 0; i < this.$global.childNodes.length; i++) {
+        var node = this.$global.childNodes[i];
+        // skip text nodes
+        if (!node.tagName) {
+          continue;
+        }
+        if (node === this.$header) {
+          continue;
+        }
+        callback(node);
+      }
+    };
 
 
     this.sideBySideSrc = this.$elm.dataset.sideBySideLink;
@@ -79,16 +95,13 @@ module.exports = class ViewSelector {
       this.$sideBySideCloseButton.addEventListener('click', (e) => {
         this.closeSideBySideView();
       });
-      this.doc.querySelector('header').appendChild(this.$sideBySideCloseButton);
+      this.$header.appendChild(this.$sideBySideCloseButton);
     } else {
       this.$sideBySideCloseButton.classList.remove('hidden');
     }
-    //document.querySelector('main').classList.add('hidden');
-    //document.querySelector('.info-bar').classList.add('hidden');
-    //  var sections = document.querySelectorAll('.global-inner > section').forEach(function(s) {
-    //    s.classList.add('hidden');
-    //  });
-    //document.querySelector('.site-footer').classList.add('hidden');
+    this.eachButHeader((node) => {
+      node.classList.add('hidden');
+    });
     //window.scroll(0, 0);
     //var currentYScrollPos;
   }
@@ -96,12 +109,9 @@ module.exports = class ViewSelector {
   closeSideBySideView() {
     this.$sideBySideCloseButton.classList.add('hidden');
     this.$sideBySideView.classList.add('hidden');
-    //document.querySelector('main').classList.remove('hidden');
-    //document.querySelector('.info-bar').classList.remove('hidden');
-    //var sections = document.querySelectorAll('.global-inner > section').forEach(function(s) {
-    //  s.classList.remove('hidden');
-    //});
-    //document.querySelector('.site-footer').classList.remove('hidden');
+    this.eachButHeader((node) => {
+      node.classList.remove('hidden');
+    });
     //window.scroll(0, currentYScrollPos);
   }
 
