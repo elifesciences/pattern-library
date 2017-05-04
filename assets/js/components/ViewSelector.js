@@ -22,9 +22,8 @@ module.exports = class ViewSelector {
 
     this.$sideBySideListItem.classList.remove('hidden');
 
-    var self = this;
-    this.$sideBySideLink.addEventListener('click', function (e) {
-      self.openSideBySideView();
+    this.$sideBySideLink.addEventListener('click', (e) => {
+      this.openSideBySideView();
       e.preventDefault();
     });
 
@@ -41,38 +40,37 @@ module.exports = class ViewSelector {
 
   openSideBySideView() {
 
-    var self = this;
-    function createSideBySideView(src) {
-      var iFrame = self.doc.createElement('iframe');
+    var createSideBySideView = (src) => {
+      var iFrame = this.doc.createElement('iframe');
       iFrame.src = src;
       iFrame.classList.add('side-by-side-view');
       return iFrame;
-    }
+    };
 
-    function createSideBySideCloseButton() {
-      var btn = self.doc.createElement('button');
+    var createSideBySideCloseButton = () => {
+      var btn = this.doc.createElement('button');
       btn.innerHTML = 'Close side-by-side view';
       btn.classList.add('close-side-by-side-view');
       return btn;
-    }
+    };
 
-    this.$sideBySideView = self.doc.querySelector('.side-by-side-view');
+    this.$sideBySideView = this.doc.querySelector('.side-by-side-view');
     //currentYScrollPos = window.pageYOffset;
 
     if (!this.$sideBySideView) {
       this.$sideBySideView = createSideBySideView(this.sideBySideSrc);
-      self.doc.querySelector('body').appendChild(this.$sideBySideView);
+      this.doc.querySelector('body').appendChild(this.$sideBySideView);
     } else {
       this.$sideBySideView.classList.remove('hidden');
     }
 
-    this.$sideBySideCloseButton = self.doc.querySelector('.close-side-by-side-view');
+    this.$sideBySideCloseButton = this.doc.querySelector('.close-side-by-side-view');
     if (!this.$sideBySideCloseButton) {
       this.$sideBySideCloseButton = createSideBySideCloseButton();
-      this.$sideBySideCloseButton.addEventListener('click', function (e) {
-        self.closeSideBySideView();
+      this.$sideBySideCloseButton.addEventListener('click', (e) => {
+        this.closeSideBySideView();
       });
-      self.doc.querySelector('header').appendChild(this.$sideBySideCloseButton);
+      this.doc.querySelector('header').appendChild(this.$sideBySideCloseButton);
     } else {
       this.$sideBySideCloseButton.classList.remove('hidden');
     }
