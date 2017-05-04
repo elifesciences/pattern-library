@@ -28,38 +28,38 @@ module.exports = class SideBySideView {
       }
     };
 
-    this.sideBySideSrc = src;
+    this.src = src;
   }
 
-  openSideBySideView() {
+  open() {
 
     this._saveScrollingPosition();
 
-    this.$sideBySideView = this.doc.querySelector('.side-by-side-view');
-    if (!this.$sideBySideView) {
-      this.$sideBySideView = this._createSideBySideView(this.sideBySideSrc);
-      this.doc.querySelector('body').appendChild(this.$sideBySideView);
+    this.$iframe = this.doc.querySelector('.side-by-side-view');
+    if (!this.$iframe) {
+      this.$iframe = this._createIframe(this.src);
+      this.doc.querySelector('body').appendChild(this.$iframe);
     } else {
-      this.$sideBySideView.classList.remove('hidden');
+      this.$iframe.classList.remove('hidden');
     }
 
-    this.$sideBySideCloseButton = this.doc.querySelector('.close-side-by-side-view');
-    if (!this.$sideBySideCloseButton) {
-      this.$sideBySideCloseButton = this._createSideBySideCloseButton();
-      this.$sideBySideCloseButton.addEventListener('click', (e) => {
-        this.closeSideBySideView();
+    this.$closeButton = this.doc.querySelector('.close-side-by-side-view');
+    if (!this.$closeButton) {
+      this.$closeButton = this._createCloseButton();
+      this.$closeButton.addEventListener('click', (e) => {
+        this.close();
       });
-      this.$header.appendChild(this.$sideBySideCloseButton);
+      this.$header.appendChild(this.$closeButton);
     } else {
-      this.$sideBySideCloseButton.classList.remove('hidden');
+      this.$closeButton.classList.remove('hidden');
     }
 
     this._hideEverythingButHeader();
   }
 
-  closeSideBySideView() {
-    this.$sideBySideCloseButton.classList.add('hidden');
-    this.$sideBySideView.classList.add('hidden');
+  close() {
+    this.$closeButton.classList.add('hidden');
+    this.$iframe.classList.add('hidden');
     this._showEverything();
     this._restoreScrollingPosition();
   }
@@ -86,14 +86,14 @@ module.exports = class SideBySideView {
     });
   }
 
-  _createSideBySideView(src) {
-    var iFrame = this.doc.createElement('iframe');
-    iFrame.src = src;
-    iFrame.classList.add('side-by-side-view');
-    return iFrame;
+  _createIframe(src) {
+    var iframe = this.doc.createElement('iframe');
+    iframe.src = src;
+    iframe.classList.add('side-by-side-view');
+    return iframe;
   }
 
-  _createSideBySideCloseButton() {
+  _createCloseButton() {
     var btn = this.doc.createElement('button');
     btn.innerHTML = 'Close side-by-side view';
     btn.classList.add('close-side-by-side-view');
