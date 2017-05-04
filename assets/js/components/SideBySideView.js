@@ -89,14 +89,14 @@ module.exports = class SideBySideView {
   _createIframe(src) {
     var iframe = this.doc.createElement('iframe');
     iframe.src = src;
-    iframe.classList.add('side-by-side-view');
+    iframe.classList.add('side-by-side-view__iframe');
     return iframe;
   }
 
   _createCloseButton() {
     var btn = this.doc.createElement('button');
     btn.innerHTML = 'Close side-by-side view';
-    btn.classList.add('close-side-by-side-view');
+    btn.classList.add('side-by-side-view__button--close');
     return btn;
   };
 };

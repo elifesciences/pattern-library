@@ -1,0 +1,12 @@
+.side-by-side-view__iframe {
+  border-width: 0;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 14rem;
+  height: calc(100% - 14rem);
+  width: 100%;
+}
+
+.side-by-side-view__button--close {
+}
