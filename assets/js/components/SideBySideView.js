@@ -100,8 +100,8 @@ module.exports = class SideBySideView {
 
   _createCloseButton() {
     var btn = this.doc.createElement('button');
-    btn.innerHTML = 'Close side-by-side view';
-    btn.classList.add('side-by-side-view__button--close');
+    btn.innerHTML = '<span class="side-by-side-view__button-close-cross">&00D7;&2715;&2a09;&2a2f;</span> Close side by side view';
+    btn.classList.add('side-by-side-view__button-close');
     return btn;
   }
 };

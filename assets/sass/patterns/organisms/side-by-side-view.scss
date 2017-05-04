@@ -1,12 +1,25 @@
+@import "../../definitions";
+
 .side-by-side-view__iframe {
   border-width: 0;
+  border-top: 1px solid #e0e0e0;
   overflow: hidden;
   position: absolute;
   left: 0;
-  top: 14rem;
+  top: 8rem;
   height: calc(100% - 14rem);
   width: 100%;
 }
 
-.side-by-side-view__button--close {
+.side-by-side-view__button-close {
+  background: none;
+  border: none;
+  font-family: $font-secondary;
+  font-weight: bold;
+  @include font-size(14);
+  color: $color-primary;
+}
+
+.side-by-side-view__button-close-cross {
+  @include font-size(16);
 }
