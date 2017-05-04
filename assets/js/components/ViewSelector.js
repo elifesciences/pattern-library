@@ -23,8 +23,8 @@ module.exports = class ViewSelector {
     this.$sideBySideListItem.classList.remove('hidden');
 
     this.$sideBySideLink.addEventListener('click', (e) => {
-      this.openSideBySideView();
       e.preventDefault();
+      this.openSideBySideView();
     });
 
 
