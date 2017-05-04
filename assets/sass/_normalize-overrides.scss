@@ -14,6 +14,7 @@ body {
 
 h1 {
   @include h1-typeg();
+  @include h1-spacing();
 }
 
 h2 {
