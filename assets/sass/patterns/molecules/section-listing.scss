@@ -1,7 +1,9 @@
 @import "../../definitions";
 
 .section-listing {
+  border-bottom: 1px solid $color-text-dividers;
   @include nospace();
+  @include padding($blg-space-extra-small-in-px - 1 0 $blg-space-extra-small-in-px);
   list-style: none;
 }
 
@@ -13,7 +15,6 @@
 .section-listing__list_link {
   color: $color-text;
   text-decoration: none;
-  text-transform: uppercase;
 
   &:hover {
     color: $color-primary;
