@@ -1,9 +1,8 @@
 @import "../../definitions";
 
 .section-listing {
-  border-bottom: 1px solid $color-text-dividers;
   @include nospace();
-  @include padding($blg-space-extra-small-in-px - 1 0 $blg-space-extra-small-in-px);
+  @include padding($blg-space-small-in-px * 1.5 0);
   list-style: none;
 }
 
@@ -45,7 +44,10 @@
 @media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
 
   .section-listing {
+    border-bottom: 1px solid $color-text-dividers;
     column-count: 3;
+    @include nospace();
+    @include padding($blg-space-extra-small-in-px - 1 0 $blg-space-extra-small-in-px);
   }
 
   .section-listing__list_item {
