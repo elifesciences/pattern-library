@@ -22,16 +22,16 @@ module.exports = class ViewSelector {
     this.$sideBySideListItem = this.doc.createElement('li');
     this.$sideBySideListItem.classList.add("view-selector__list-item");
     this.$sideBySideListItem.classList.add("view-selector__list-item--side-by-side");
-    this.$sideBySideLink = this.doc.createElement('a');
-    this.$sideBySideLink.setAttribute("href", "#");
-    this.$sideBySideLink.classList.add("view-selector__link");
-    this.$sideBySideLink.classList.add("view-selector__link--side-by-side");
-    this.$sideBySideLink.innerHTML = '<span>Side by side view</span>';
-    this.$sideBySideLink.addEventListener('click', (e) => {
+    var $sideBySideLink = this.doc.createElement('a');
+    $sideBySideLink.setAttribute("href", "#");
+    $sideBySideLink.classList.add("view-selector__link");
+    $sideBySideLink.classList.add("view-selector__link--side-by-side");
+    $sideBySideLink.innerHTML = '<span>Side by side view</span>';
+    $sideBySideLink.addEventListener('click', (e) => {
       e.preventDefault();
       this.openSideBySideView();
     });
-    this.$sideBySideListItem.appendChild(this.$sideBySideLink);
+    this.$sideBySideListItem.appendChild($sideBySideLink);
     var $list = this.doc.querySelector('.view-selector__list');
     var $jumpList = this.doc.querySelector('.view-selector__list-item--jump');
     $list.insertBefore(this.$sideBySideListItem, $jumpList);
