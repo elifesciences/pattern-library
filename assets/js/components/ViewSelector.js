@@ -11,21 +11,30 @@ module.exports = class ViewSelector {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.$sideBySideListItem = this.$elm.querySelector('.view-selector__list-item--side-by-side');
-    this.$sideBySideLink = this.$elm.querySelector('.view-selector__link--side-by-side');
-    this.sideBySideSrc = this.$elm.dataset.sideBySideLink;
     this.$jumpLinks = this.$elm.querySelector('.view-selector__jump_links');
     this.$jumpLinksToggle = this.$elm.querySelector('.view-selector__jump_links_header');
     this.cssFixedClassName = 'view-selector--fixed';
 
     this.mainTarget = this.doc.querySelector('[role="main"]');
 
-    this.$sideBySideListItem.classList.remove('hidden');
 
+    this.sideBySideSrc = this.$elm.dataset.sideBySideLink;
+    this.$sideBySideListItem = this.doc.createElement('li');
+    this.$sideBySideListItem.classList.add("view-selector__list-item");
+    this.$sideBySideListItem.classList.add("view-selector__list-item--side-by-side");
+    this.$sideBySideLink = this.doc.createElement('a');
+    this.$sideBySideLink.setAttribute("href", "#");
+    this.$sideBySideLink.classList.add("view-selector__link");
+    this.$sideBySideLink.classList.add("view-selector__link--side-by-side");
+    this.$sideBySideLink.innerHTML = '<span>Side by side view</span>';
     this.$sideBySideLink.addEventListener('click', (e) => {
       e.preventDefault();
       this.openSideBySideView();
     });
+    this.$sideBySideListItem.appendChild(this.$sideBySideLink);
+    var $list = this.doc.querySelector('.view-selector__list');
+    var $jumpList = this.doc.querySelector('.view-selector__list-item--jump');
+    $list.insertBefore(this.$sideBySideListItem, $jumpList);
 
 
     // matches top padding in scss

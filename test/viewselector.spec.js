@@ -131,7 +131,9 @@ describe('A ViewSelector Component', function () {
     });
 
     it('is displayed on load', function() {
-      expect(viewSelector.$sideBySideListItem.classList.contains('hidden')).to.be.false;
+      var link = $elm.querySelector('.view-selector__link--side-by-side');
+      expect(link).to.not.be.null;
+      expect(link.textContent).to.equal('Side by side view');
     });
 
     it('opens an iframe', function() {
