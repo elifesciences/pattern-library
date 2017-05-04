@@ -76,6 +76,10 @@
   @include _set-typeg-width-variant(36, 36, $is-wide);
 }
 
+@mixin h1-spacing() {
+  margin: 0;
+}
+
 @mixin h2-typeg() {
   @include _heading-base-typeg();
   @include font-size($font-size-h2-in-px);
@@ -83,6 +87,7 @@
 }
 
 @mixin h2-spacing() {
+  margin: 0;
   @include padding(24, "top");
   @include padding(24, "bottom");
 }
@@ -94,6 +99,7 @@
 }
 
 @mixin h3-spacing() {
+  margin: 0;
   @include padding(12, "top");
   @include padding(12, "bottom");
 }
@@ -117,6 +123,7 @@
 }
 
 @mixin h5-spacing() {
+  margin: 0;
   @include padding(12, "top");
   @include padding(12, "bottom");
 }
@@ -210,9 +217,9 @@
 @mixin fig-heading-typeg() {
   // bold, not demibold
   font-family: $font-secondary;
-  @include font-size(13);
+  @include font-size(14);
   font-weight: bold;
-  line-height: 1.3;
+  line-height: 1.7142857143; /* 24px with 14px font size */
 }
 
 @mixin fig-caption-heading-typeg() {
