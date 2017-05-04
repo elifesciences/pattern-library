@@ -175,13 +175,7 @@
   font-family: $font-secondary;
   @include font-size(16);
   font-weight: 700;
-  line-height: 1.4;
-}
-
-@mixin impact-statement-typeg($is-wide:false) {
-  font-family: $font-primary;
-  @include _set-typeg-width-variant(14, 16, $is-wide);
-  line-height: 1.43;
+  line-height: 1.5;
 }
 
 @mixin institute-typeg() {
@@ -264,12 +258,13 @@
   font-family: $font-secondary;
   @include font-size(14);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.7142857143; /* 24px with 14px font size */
 }
 
 @mixin nav-small-typeg() {
   @include nav-typeg();
   @include font-size(11);
+  line-height: 2.1818181818;
 }
 
 @mixin nav-page-typeg() {
@@ -412,11 +407,6 @@
 @mixin listing-impact-statement-typeg() {
   @include body-typeg();
   @include body-spacing();
-}
-
-@mixin listing-detail() {
-  @include small-typeg();
-  line-height: 1.5;
 }
 
 @mixin mono-typeg() {
