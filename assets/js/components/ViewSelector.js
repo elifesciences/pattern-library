@@ -90,7 +90,7 @@ module.exports = class ViewSelector {
     $link.setAttribute('href', '#');
     $link.classList.add('view-selector__link');
     $link.classList.add('view-selector__link--side-by-side');
-    $link.innerHTML = '<span>Side by side view</span>';
+    $link.innerHTML = '<span>Side-by-side view</span>';
     $link.addEventListener('click', (e) => {
       e.preventDefault();
       this.sideBySideView.open();
