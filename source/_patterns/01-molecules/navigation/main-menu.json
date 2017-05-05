@@ -9,10 +9,5 @@
       {"name": "Careers", "url": "#car"},
       {"name": "Labs", "url": "#lab"}
     ]
-  },
-  "button": {
-    "text": "Back to top",
-    "path": "#siteHeader",
-    "classes": "button--default button--full main_menu__quit"
   }
 }

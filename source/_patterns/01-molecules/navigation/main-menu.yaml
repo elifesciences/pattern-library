@@ -24,8 +24,5 @@ schema:
           minItems: 1
       required:
         - items
-    button:
-      $ref: ../../00-atoms/components/button.yaml#/schema
   required:
     - links
-    - button
