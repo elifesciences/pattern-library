@@ -1,0 +1,18 @@
+@import "../../definitions";
+
+.to-top-link {
+  color: $color-text;
+  list-style: none;
+  @include padding($blg-space-extra-small-in-px 0);
+}
+
+.to-top-link:after {
+  background: url('../img/icons/back-to-top-2x.png');
+  background: url('../img/icons/back-to-top.svg') 0 0 no-repeat, linear-gradient(transparent, transparent);
+  content: "";
+  display: inline-block;
+  height: 17px;
+  @include margin(-5, "bottom");
+  @include margin(12, "left");
+  width: 8px
+}
