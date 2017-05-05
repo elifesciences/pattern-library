@@ -42,6 +42,21 @@ schema:
       minItems: 1
       items:
         $ref: ../../02-organisms/components/additional-assets.yaml#/schema
+    download:
+      type: object
+      properties:
+        link:
+          type: string
+          minLength: 1
+        filename:
+          type: string
+          minLength: 1
+      required:
+        - link
+        - filename
+    open:
+      type: string
+      minLength: 1
   dependencies:
     parentId:
       - supplementOrdinal

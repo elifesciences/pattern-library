@@ -13,18 +13,6 @@ schema:
   allOf:
     -
       properties:
-        download:
-          type: object
-          properties:
-            link:
-              type: string
-              minLength: 1
-            filename:
-              type: string
-              minLength: 1
-          required:
-            - link
-            - filename
         captionText:
           $ref: ../../00-atoms/components/caption-text.yaml#/schema
         doi:
