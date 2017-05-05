@@ -8,7 +8,9 @@ module.exports = class AssetViewer {
     this.window = _window;
     this.doc = doc;
 
-    this.setup(doc);
+    if (this.$elm.querySelector('.asset-viewer-inline__open_link')) {
+      this.setup(doc);
+    }
   }
 
   handleClick(e) {
@@ -51,10 +53,8 @@ module.exports = class AssetViewer {
 
   setup(doc) {
     AssetViewer.load(doc).then(() => {
-      this.$access = doc.createElement('span');
-      this.$access.classList = 'asset-viewer-inline__figure_access_open';
-      this.$elm.querySelector('.asset-viewer-inline__figure_access').append(this.$access);
-      this.$access.addEventListener('click', this.handleClick.bind(this));
+      this.$elm.querySelector('.captioned-asset__link').addEventListener('click', this.handleClick.bind(this));
+      this.$elm.querySelector('.asset-viewer-inline__open_link').addEventListener('click', this.handleClick.bind(this));
     });
   }
 

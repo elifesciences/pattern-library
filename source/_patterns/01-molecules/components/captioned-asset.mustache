@@ -1,14 +1,26 @@
 <figure class="captioned-asset">
 
   {{#picture}}
-  {{> atoms-picture }}
+    {{#open}}
+    <a href="{{open}}" class="captioned-asset__link" target="_blank" rel="noopener noreferrer">
+    {{/open}}
+    {{> atoms-picture }}
+    {{#open}}
+    </a>
+    {{/open}}
   {{/picture}}
 
   {{#image}}
+    {{#open}}
+    <a href="{{open}}" class="captioned-asset__link" target="_blank" rel="noopener noreferrer">
+    {{/open}}
     <img src="{{defaultPath}}"
          alt="{{altText}}"{{#srcset}}
          srcset="{{srcset}}"{{/srcset}}
-      class="captioned-asset__image{{#classes}} {{classes}}{{/classes}}" />
+         class="captioned-asset__image{{#classes}} {{classes}}{{/classes}}" />
+    {{#open}}
+    </a>
+    {{/open}}
   {{/image}}
 
   {{#video}}
@@ -24,12 +36,6 @@
     {{#doi}}
       {{> atoms-doi}}
     {{/doi}}
-
-    {{#download}}
-      <div class="captioned-asset__caption___footer">
-        <a href="{{link}}" class="captioned-asset__caption___footer_link" target="_blank">Open in new tab</a>
-      </div>
-    {{/download}}
 
   </figcaption>
 

@@ -18,16 +18,16 @@
       ]
     },
 
-    "download": {
-      "link": "#downloadLink",
-      "filename": "#downloadfilename"
-    },
-
     "doi": {
       "doi": "10.7554/eLife.14734",
       "variant": "asset"
     }
 
+  },
+
+  "download": {
+    "link": "#downloadLink",
+    "filename": "#downloadfilename"
   }
 
 }
