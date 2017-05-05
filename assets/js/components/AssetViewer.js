@@ -32,12 +32,6 @@ module.exports = class AssetViewer {
         item.w = image.naturalWidth;
         item.h = image.naturalHeight;
         break;
-      case 'table':
-        item.html = [...figure.querySelectorAll('.table-wrap')].reduce((acc, tableWrap) => acc += tableWrap.outerHTML, '');
-        break;
-      case 'video':
-        item.html = figure.querySelector('video').outerHTML;
-        break;
       default:
         throw new TypeError(`Unknown type "${type}"`);
     }
