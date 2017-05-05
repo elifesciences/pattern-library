@@ -1,9 +1,18 @@
 @import "../../definitions";
 
 .to-top-link {
+  @include dismissible_navigation();
   color: $color-text;
   list-style: none;
   @include padding($blg-space-extra-small-in-px 0);
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-section-listing)}em) {
+
+  .js .to-top-link {
+    display: none;
+  }
+
 }
 
 .to-top-link:after {
