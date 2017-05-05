@@ -16,12 +16,13 @@ module.exports = class ViewSelector {
     this.cssFixedClassName = 'view-selector--fixed';
 
     this.mainTarget = this.doc.querySelector('[role="main"]');
-    this.$header = this.doc.querySelector('header');
-    this.$global = this.$header.parentNode;
+    var $header = this.doc.querySelector('header');
+    this.$global = $header.parentNode;
     let SideBySideView = require('./SideBySideView');
     this.sideBySideView = new SideBySideView(
       this.$global,
       this.$elm.dataset.sideBySideLink,
+      $header,
       this.window,
       this.doc
     );

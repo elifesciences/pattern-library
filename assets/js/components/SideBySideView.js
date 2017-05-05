@@ -2,7 +2,7 @@
 
 module.exports = class SideBySideView {
 
-  constructor($elm, src, _window = window, doc = document) {
+  constructor($elm, src, $header, _window = window, doc = document) {
 
     if (!$elm) {
       return;
@@ -12,8 +12,7 @@ module.exports = class SideBySideView {
     this.doc = doc;
     this.$global = $elm;
 
-    // TODO: inject 'header'
-    this.$header = this.$global.querySelector('header');
+    this.$header = $header;
     this.eachButHeader = (callback) => {
 
       // NodeList doesn't have forEach in this testing environment...
@@ -100,7 +99,9 @@ module.exports = class SideBySideView {
 
   _createCloseButton() {
     var btn = this.doc.createElement('button');
-    btn.innerHTML = '<span class="side-by-side-view__button-close-cross">&#x00D7;&#x2715;&#x2a09;&#x2a2f;</span> Close side by side view';
+    btn.innerHTML = '<span class="side-by-side-view__button-close-cross">&#x2715;</span> <span class="side-by-side-view__button-close-text">Close side by side view</span>';
+      //&#x00D7;
+      //&#x2a09;&#x2a2f;
     btn.classList.add('side-by-side-view__button-close');
     return btn;
   }

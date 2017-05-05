@@ -15,7 +15,7 @@ describe('A SideBySideView Component', function () {
     let sideBySideView;
 
     beforeEach(function () {
-      sideBySideView = new SideBySideView($elm, 'http://lens.elifesciences.org/19749/index.html');
+      sideBySideView = new SideBySideView($elm, 'http://lens.elifesciences.org/19749/index.html', $elm.querySelector('header'));
     });
 
     it('opens an iframe', function() {
