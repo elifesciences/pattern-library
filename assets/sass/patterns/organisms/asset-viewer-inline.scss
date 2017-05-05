@@ -45,7 +45,8 @@
   border-radius: 3px;
   display: inline-block;
   @include height(28);
-  @include margin(-2);
+  @include margin(-2, "top");
+  @include margin(-2, "bottom");
   @include width(28);
 
   &:hover {
@@ -54,18 +55,19 @@
   }
 }
 
-/** Only used with JS, I think **/
-// .asset-viewer-inline__figure_access_open {
-//   background: url("../img/icons/launch.png") 50% 50% no-repeat;
-//   background: url("../img/icons/launch.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
-//   border: 1px solid $color-text-dividers;
-//   border-radius: 3px;
-//   display: inline-block;
-//   @include height(28);
-//   @include width(28);
-//
-//   &:hover {
-//     background: url("../img/icons/launch-hover.png") 50% 50% no-repeat;
-//     background: url("../img/icons/launch-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
-//   }
-// }
+.asset-viewer-inline__open_link {
+  background: url("../img/icons/launch.png") 50% 50% no-repeat;
+  background: url("../img/icons/launch.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+  border: 1px solid $color-text-dividers;
+  border-radius: 3px;
+  display: inline-block;
+  @include height(28);
+  @include margin(-2, "top");
+  @include margin(-2, "bottom");
+  @include width(28);
+
+  &:hover {
+    background: url("../img/icons/launch-hover.png") 50% 50% no-repeat;
+    background: url("../img/icons/launch-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+  }
+}
