@@ -152,11 +152,6 @@
   width: 100%;
 }
 
-
-.teaser__img--prominent {
-  @include margin(10, "bottom");
-}
-
 .teaser__img--small {
   @include margin(24, "left");
   float: right;
@@ -192,7 +187,17 @@
 
 .teaser--grid-style {
 
+  border-top: none;
   @include widths-for-generic-grid-listing-items();
+  @include margin($blg-space-small-in-px, "bottom");
+
+  .teaser__img--prominent {
+    @include nospace();
+  }
+
+  .teaser__header_text {
+    @include padding($blg-space-extra-small-in-px, "bottom");
+  }
 
   .teaser__footer {
     align-items: center;
