@@ -11,10 +11,13 @@
   width: 100%;
 }
 
-.side-by-side-view__button-close {
+.side-by-side-view__bar {
   position: absolute;
   left: 0;
   top: 6.45rem;
+}
+
+.side-by-side-view__button-close {
   background: none;
   border: none;
   font-family: $font-secondary;
@@ -22,7 +25,6 @@
   @include font-size(14);
   color: $color-primary;
 }
-
 
 .side-by-side-view__button-close-cross {
   @include font-size(26);

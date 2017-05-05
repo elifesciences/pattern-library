@@ -47,22 +47,19 @@ module.exports = class SideBySideView {
       this.$iframe.classList.remove('hidden');
     }
 
-    this.$closeButton = this.doc.querySelector('.side-by-side-view__button--close');
-    if (!this.$closeButton) {
-      this.$closeButton = this._createCloseButton();
-      this.$closeButton.addEventListener('click', () => {
-        this.close();
-      });
-      this.$header.appendChild(this.$closeButton);
+    this.$closeBar = this.doc.querySelector('.side-by-side-view__bar');
+    if (!this.$closeBar) {
+      this.$closeBar = this._createCloseBar();
+      this.$header.appendChild(this.$closeBar);
     } else {
-      this.$closeButton.classList.remove('hidden');
+      this.$closeBar.classList.remove('hidden');
     }
 
     this._hideEverythingButHeader();
   }
 
   close() {
-    this.$closeButton.classList.add('hidden');
+    this.$closeBar.classList.add('hidden');
     this.$iframe.classList.add('hidden');
     this._showEverything();
     this._restoreScrollingPosition();
@@ -97,13 +94,19 @@ module.exports = class SideBySideView {
     return iframe;
   }
 
-  _createCloseButton() {
+  _createCloseBar() {
+    var div = this.doc.createElement('div');
+    div.classList.add('side-by-side-view__bar');
     var btn = this.doc.createElement('button');
 
     // other X options &#x00D7;&#x2a09;&#x2a2f;
     btn.innerHTML = '<span class="side-by-side-view__button-close-cross">&#x2715;</span>' +
       '<span class="side-by-side-view__button-close-text">Close side by side view</span>';
     btn.classList.add('side-by-side-view__button-close');
-    return btn;
+    btn.addEventListener('click', () => {
+      this.close();
+    });
+    div.appendChild(btn);
+    return div;
   }
 };

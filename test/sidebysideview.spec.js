@@ -22,7 +22,7 @@ describe('A SideBySideView Component', function () {
       sideBySideView.open();
       expect(sideBySideView.$iframe.classList.contains('hidden')).to.be.false;
       expect(sideBySideView.$iframe.getAttribute('src')).to.equal('http://lens.elifesciences.org/19749/index.html');
-      expect(sideBySideView.$closeButton.classList.contains('hidden')).to.be.false;
+      expect(sideBySideView.$closeBar.classList.contains('hidden')).to.be.false;
       expect(document.querySelector('[role="main"]').classList.contains('hidden')).to.be.true;
 
     });
@@ -31,7 +31,7 @@ describe('A SideBySideView Component', function () {
       sideBySideView.open();
       sideBySideView.close();
       expect(sideBySideView.$iframe.classList.contains('hidden')).to.be.true;
-      expect(sideBySideView.$closeButton.classList.contains('hidden')).to.be.true;
+      expect(sideBySideView.$closeBar.classList.contains('hidden')).to.be.true;
       // TODO: extract let sampleMainContent
       expect(document.querySelector('[role="main"]').classList.contains('hidden')).to.be.false;
     });
