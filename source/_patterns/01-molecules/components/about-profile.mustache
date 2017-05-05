@@ -1,0 +1,37 @@
+<div class="about-profile">
+
+  {{#image}}
+    <picture class="about-profile__picture">
+      {{#sources}}
+        <source srcset="{{srcset}}"
+                {{#type}}type="{{type}}"{{/type}}
+          {{#media}}media="{{media}}"{{/media}}>
+      {{/sources}}
+      {{#fallback}}
+        <img src="{{defaultPath}}"
+             {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+             alt="{{altText}}"
+             class="about-profile__image"
+             sizes="(min-width: 700px) 250px, 100vw"
+        >
+      {{/fallback}}
+    </picture>
+  {{/image}}
+
+  <h4 class="about-profile__name">{{{name}}}</h4>
+
+  {{#role}}
+    <p class="about-profile__role">{{{.}}}</p>
+  {{/role}}
+
+  {{#profile}}
+
+    <div class="about-profile__profile">
+
+      {{{.}}}
+
+    </div>
+
+  {{/profile}}
+
+</div>
