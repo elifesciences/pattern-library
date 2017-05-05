@@ -2,7 +2,7 @@
 
 .table-wrap {
   position: relative;
-  overflow: scroll;
+  overflow: auto;
 }
 
 // Tables are usually delivered as a blob of HTML from an upstream application, not via the pattern system.

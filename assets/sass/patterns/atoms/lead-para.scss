@@ -1,6 +1,8 @@
 @import "../../definitions";
 
 .lead-para {
+  font-family: $font-secondary;
+  font-weight: 700;
   @include margin(16, "bottom");
   padding-bottom: 0;
 }

@@ -2,16 +2,16 @@
 
 .article-download-links-list--js {
   background-color: #fff;
+  border: 1px solid #e0e0e0;
   border-radius: #{$border-radius}px;
   @include box-shadow();
   font-family: $font-secondary;
   @include padding(12, "bottom");
   @include width(217);
-  overflow: scroll;
   position: absolute;
-  right: 24px;
+  right: 16px;
   text-align: left;
-  top: 80px;
+  top: 60px;
   z-index: 20;
 
   .article-download-list {
@@ -52,4 +52,11 @@
 
   }
 
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    right: 16px;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+    right: 0;
+  }
 }

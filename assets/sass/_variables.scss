@@ -74,7 +74,7 @@ $button-height-regular: 48;
 // Widths
 $content-header-download-width: 20;
 $content-header-download-width-medium: 44;
-$content-header-profile-width: 40;
+$content-header-profile-width: 48;
 
 // Spacing
 $teaser-spacing-top: 24;
@@ -90,9 +90,9 @@ $content-header-side-padding: 6; //vw
 $content-header-side-padding--extra-wide: 30; //px
 
 // Breakpoints
-$bkpt-content-header--medium-width: 768;
-$bkpt-content-header--wide: 1024;
-$bkpt-content-header--extra-wide: 1440;
+$bkpt-content-header--medium-width: 730;
+$bkpt-content-header--wide: 900;
+$bkpt-content-header--extra-wide: 1200;
 
 $bkpt-block-link: 600;
 $bkpt-image-link: $bkpt-block-link;

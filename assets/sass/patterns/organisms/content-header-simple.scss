@@ -1,8 +1,8 @@
 @import "../../definitions";
 
 .content-header-simple {
-  @include blg-spacing("top", "small");
-  @include blg-spacing("bottom", "small");
+  @include blg-spacing("top", "medium");
+  @include blg-spacing("bottom", "medium");
   padding-left: 6%;
   padding-right: 6%;
   text-align: center;
@@ -20,5 +20,4 @@
   color: $color-text;
   @include body-typeg();
   @include nospace();
-  @include blg-spacing("bottom", "small");
 }

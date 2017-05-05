@@ -1,12 +1,21 @@
 @import "../../definitions";
 
 .section-listing-link {
-  color: $color-primary;
+  border-bottom: 1px solid $color-text-dividers;
+  color: $color-text;
+  display: block;
+  font-family: $font-secondary;
   @include font-size($font-size-base-in-px);
-  line-height: 2;
+  font-weight: 700;
+  line-height: 1.5;
+  @include margin($blg-space-small-in-px, "bottom");
+  @include padding($blg-space-extra-small-in-px - 1 0 $blg-space-extra-small-in-px);
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
 }
 
 .section-listing-link:hover,
 .section-listing-link:active {
-  color: $color-primary-light;
+  color: $color-primary;
 }
