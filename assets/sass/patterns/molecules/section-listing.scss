@@ -7,9 +7,7 @@
 }
 
 .section-listing__list_item {
-  @include typeg-portal-quick-nav();
-  line-height: 3;
-  @include nospace();
+  @include dismissible_navigation();
 }
 
 .section-listing__list_link {

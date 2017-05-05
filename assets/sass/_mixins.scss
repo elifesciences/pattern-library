@@ -280,3 +280,9 @@
   @include listing-main-art-title-typeg();
   @include padding(12, "top");
 }
+
+@mixin dismissible_navigation {
+  @include typeg-portal-quick-nav();
+  line-height: 3;
+  @include nospace();
+}
