@@ -14,7 +14,7 @@
 .side-by-side-view__button-close {
   position: absolute;
   left: 0;
-  top: 6.8rem;
+  top: 6.45rem;
   background: none;
   border: none;
   font-family: $font-secondary;
@@ -27,6 +27,7 @@
 .side-by-side-view__button-close-cross {
   @include font-size(26);
   vertical-align: middle;
+  padding-right: 0.3rem;
 }
 
 .side-by-side-view__button-close-text {
