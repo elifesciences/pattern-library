@@ -23,6 +23,13 @@
   color: $color-primary;
 }
 
+
 .side-by-side-view__button-close-cross {
-  @include font-size(16);
+  @include font-size(26);
+  vertical-align: middle;
+}
+
+.side-by-side-view__button-close-text {
+    /* maybe line-height */
+  vertical-align: middle;
 }
