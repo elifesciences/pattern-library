@@ -110,15 +110,16 @@
   @include label-content-typeg();
   justify-content: space-between;
   text-transform: none;
+}
 
-  .teaser__publish_state--poa {
-    width: 20px;
-  }
+.teaser__publish_state {
+  text-transform: uppercase;
+}
 
-  .teaser__publish_state--vor {
-    width: 66px;
-  }
-
+.teaser__publish_state__with_separator {
+  border-right: 2px dotted $color-text-secondary;
+  @include margin(6, "right");
+  @include padding(6, "right");
 }
 
 .teaser__footer_text {
