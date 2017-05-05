@@ -17,7 +17,7 @@ module.exports = class AssetViewer {
     e.preventDefault();
 
     let figure = this.$elm.querySelector('.captioned-asset');
-    let figureCaption = figure.querySelector('figcaption');
+    let figureCaption = figure.querySelector('.caption-text__heading');
     let item = {};
     let type = this.$elm.dataset.variant;
 
