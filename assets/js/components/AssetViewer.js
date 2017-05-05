@@ -11,13 +11,6 @@ module.exports = class AssetViewer {
     this.assetItems.push(...this.findSupplements());
 
     if (this.assetItems.length > 1) {
-      let text = `with ${this.assetItems.length} supplement`;
-      if (this.assetItems.length > 2) {
-        text += 's';
-      }
-
-      this.$elm.querySelector('.asset-viewer-inline__header_text').appendChild(doc.createTextNode(text));
-
       const hash = this.window.location.hash.substring(1);
       let show = 0;
 
