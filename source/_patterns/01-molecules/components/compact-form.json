@@ -7,5 +7,11 @@
   "inputName": "email",
   "inputValue": "",
   "inputPlaceholder": "you@email.com",
-  "ctaText": "Go"
+  "ctaText": "Go",
+  "hiddenFields": [
+    {
+      "name": "hidden",
+      "value": "hello"
+    }
+  ]
 }

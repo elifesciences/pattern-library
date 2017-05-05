@@ -135,49 +135,6 @@ describe('An AudioPlayer Component', function () {
     });
   });
 
-  it('possesses an updateIconState() static method', function () {
-    expect(AudioPlayer.updateIconState).to.be.a('function');
-  });
-
-  describe('the updateIconState() static method', function () {
-
-    var $iconMock;
-
-    beforeEach(function () {
-      $iconMock = {
-        src: '',
-        alt: ''
-      };
-    });
-
-    afterEach(function () {
-      $iconMock = null;
-    });
-
-    it('sets the correct attributes for the play icon when invoked with "play" ', function () {
-      AudioPlayer.updateIconState($iconMock, 'play');
-      expect($iconMock.src).to.equal('../../assets/img/icons/audio-play.svg');
-      expect($iconMock.alt).to.equal('play');
-    });
-
-    it('sets the correct attributes for the pause icon when invoked with "pause" ', function () {
-      AudioPlayer.updateIconState($iconMock, 'pause');
-      expect($iconMock.src).to.equal('../../assets/img/icons/audio-pause.svg');
-      expect($iconMock.alt).to.equal('pause');
-    });
-
-    it('sets no attributes if passed neither "play" nor "pause" ', function () {
-      var invalidValues = ['invalid', 1234, ['play'], {play: 'play'}, ['pause'], {pause: 'pause'}];
-      invalidValues.forEach(invalidValue => {
-        AudioPlayer.updateIconState($iconMock, invalidValue);
-        expect($iconMock.src).to.equal('');
-        expect($iconMock.alt).to.equal('');
-      });
-
-    });
-
-  });
-
   it('possesses a prepareChapterMetadata() method', function () {
     expect(typeof player.prepareChapterMetadata).to.equal('function');
   });

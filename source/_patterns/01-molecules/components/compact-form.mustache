@@ -2,6 +2,9 @@
   <fieldset class="compact-form__container">
     <label for="compact-form__input" class="visuallyhidden">{{label}}</label>
     <input type="{{inputType}}" name="{{inputName}}" value="{{inputValue}}" placeholder="{{inputPlaceholder}}" id="compact-form__input" class="compact-form__input">
+    {{#hiddenFields}}
+      {{> atoms-hidden-field }}
+    {{/hiddenFields}}
     <label for="reset" class="visuallyhidden">Reset form</label>
     <button type="reset" name="reset" id="reset" class="compact-form__reset"></button>
     <button type="submit" class="compact-form__submit"><span class="visuallyhidden">{{ctaText}}</span></button>

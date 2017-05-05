@@ -73,10 +73,11 @@ $button-height-small: 36;
 $button-height-regular: 48;
 
 // Spacing
-$teaser-spacing-top: 12;
-$teaser-spacing-bottom: 12;
+$teaser-spacing-top: 24;
+// 23 not 24 to account for a 1px border (Because of the way the elements are nested, border-box doesn't help us here.)
+$teaser-spacing-bottom: 23;
 $teaser-spacing-left: 16;
-$listing-list-spacing: 32;
+$listing-list-spacing: 72;
 
 $content-header-side-padding: 6; //vw
 $content-header-side-padding--extra-wide: 30; //px
