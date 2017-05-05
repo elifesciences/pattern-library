@@ -38,6 +38,7 @@ module.exports = class AssetViewer {
 
     let items = [item];
     let options = {
+      history: false,
       shareEl: false,
     };
     let gallery = new PhotoSwipe(document.querySelector('.pswp'), PhotoSwipeUI_Default, items, options);
