@@ -1,0 +1,11 @@
+{{>atoms-list-heading}}
+
+<ol class="about-profiles {{#compact}}about-profiles--compact{{/compact}}">
+
+  {{#items}}
+    <li class="about-profiles__item">
+      {{> molecules-about-profile }}
+    </li>
+  {{/items}}
+
+</ol>

@@ -55,14 +55,20 @@ div.listing-list__content {
     margin-left: 0;
     margin-right: 0;
   }
+
+  .listing-list--read-more & {
+    @include margin($blg-space-small-in-px, "top");
+    margin-bottom: 0;
+  }
+
 }
 
 // Only on items that come after other items (to show line between but not before or after)
 .listing-list__item:not(:first-child) .listing-list__divider {
   box-sizing: content-box;
   @include constrain-width(140, "max");
-  margin: -1px auto 0 auto;
-  padding: 5vh 0;
+  margin: 0 auto;
+  @include padding($blg-space-medium-in-px - 1 0 $blg-space-medium-in-px);
 
   &:after {
     border-bottom: 1px solid $color-text-dividers;
@@ -73,6 +79,7 @@ div.listing-list__content {
 }
 
 .listing-list-heading {
+  letter-spacing: 0.5px;
   text-align: center;
 }
 
