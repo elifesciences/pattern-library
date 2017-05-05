@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = class ContentHeaderArticle {
+module.exports = class ContentHeader {
 
   // Passing window and document separately allows for independent mocking of window in order
   // to test feature support fallbacks etc.
@@ -12,11 +12,7 @@ module.exports = class ContentHeaderArticle {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.$elm.classList.add('content-header-article--js');
-
-    // Should track SASS variable $bkpt-content-header--medium-width.
-    this.breakpointInPx = 768;
-    this.currentView = this.calcCurrentView(this.breakpointInPx);
+    this.$elm.classList.add('content-header--js');
 
     this.authors = $elm.querySelectorAll('.content-header__author_list_item');
     this.institutions = $elm.querySelectorAll('.content-header__institution_list_item');
@@ -34,20 +30,11 @@ module.exports = class ContentHeaderArticle {
     this.hideAllExcessItems('institution', this.institutions);
 
     let _this = this;
-    this.window.addEventListener('resize', () => {
-      let newView = _this.calcCurrentView(_this.breakpointInPx);
-      if (newView !== _this.currentView) {
-        _this.currentView = newView;
-        _this.handleAnyExcessItems('author', _this.authors);
-        _this.handleAnyExcessItems('institution', _this.institutions);
-      }
-    });
-
   }
 
   handleAnyExcessItems(itemType, items) {
     let toggle = this.$elm.querySelector('.content-header__item_toggle');
-    if (toggle && toggle.innerHTML.indexOf('less') > -1 && this.currentView === 'wide') {
+    if (toggle && toggle.innerHTML.indexOf('less') > -1) {
       this.clearExcessMark(items);
       this.toggleExcessItems(items);
     } else {
@@ -78,29 +65,14 @@ module.exports = class ContentHeaderArticle {
    * Returns null if itemType is invalid.
    *
    * @param {string} itemType 'author' or 'institution'
-   * @returns {number|null} Number of the type of item to display by default at current screen width
+   * @returns {number} Number of the type of item to display by default at current screen width
    */
   getDefaultMaxItems(itemType) {
-    if (this.currentView === 'wide') {
-      if (itemType === 'author') {
-        return 16;
-      }
-
-      if (itemType === 'institution') {
-        return 10;
-      }
-
-    } else {
-      if (itemType === 'author') {
-        return 1;
-      }
-
-      if (itemType === 'institution') {
-        return 0;
-      }
+    if (itemType === 'author') {
+      return 16;
     }
 
-    return null;
+    return 10;
   }
 
   /**
@@ -160,17 +132,6 @@ module.exports = class ContentHeaderArticle {
         item.classList.remove('visuallyhidden');
       }
     });
-  }
-
-  /**
-   * Returns the name of the current view.
-   *
-   * @param {number} breakpoint The px viewport width that determines the view.
-   *
-   * @returns {string} the view name ('wide' or 'narrow').
-   */
-  calcCurrentView(breakpoint) {
-    return this.window.matchMedia('(min-width: ' + breakpoint + 'px)').matches ? 'wide' : 'narrow';
   }
 
   /**

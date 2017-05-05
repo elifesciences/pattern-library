@@ -1,8 +1,7 @@
 @import "../../definitions";
 
 .date {
-  color: $color-text-secondary;
-  @include label-content-typeg();
+  @include label-content-typeg(inherit);
   text-transform: capitalize;
 }
 

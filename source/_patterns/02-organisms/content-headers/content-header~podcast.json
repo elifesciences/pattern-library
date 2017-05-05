@@ -1,0 +1,15 @@
+{
+  "image": {
+    "fallback": {
+      "defaultPath": "https://iiif.elifesciences.org/journal-cms:podcast_episode/2017-04/episode-2-elife-podcast.png/full/1800,/0/default.png",
+      "altText": ""
+    }
+  },
+  "title": "Episode 2: July 2013",
+  "longTitle": true,
+  "impactStatement": "In this issue of the eLife podcast we discuss plants performing arithmetic division, the evolutionary dynamics of cancer, single-molecule measurements in the immune system, why blood vessels don’t grow in the retina.",
+  "download": "https://nakeddiscovery.com/libsyn/eLife_Podcast_13.07.mp3",
+  "meta": {
+    "text": "Podcast"
+  }
+}

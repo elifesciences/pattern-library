@@ -18,7 +18,7 @@ if (window.localStorage && document.querySelector &&
   Components.AudioPlayer = require('./components/AudioPlayer');
   Components.BackgroundImage = require('./components/BackgroundImage');
   Components.Carousel = require('./components/Carousel');
-  Components.ContentHeaderArticle = require('./components/ContentHeaderArticle');
+  Components.ContentHeader = require('./components/ContentHeader');
   Components.DelegateBehaviour = require('./components/DelegateBehaviour');
   Components.FragmentHandler = require('./components/FragmentHandler');
   Components.Highlights = require('./components/Highlights');

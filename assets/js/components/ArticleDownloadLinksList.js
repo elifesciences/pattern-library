@@ -26,7 +26,7 @@ module.exports = class ArticleDownloadLinksList {
    * Moves the download links list to be by the icon this.$toggler
    */
   moveList() {
-    let $newParent = this.doc.querySelector('.content-header_top');
+    let $newParent = this.doc.querySelector('.content-header');
     let $followingSibling =
       $newParent.querySelector('.content-header__download_link').nextElementSibling;
     this.$elm.parentNode.parentNode.classList.add('visuallyhidden');
