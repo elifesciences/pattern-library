@@ -146,7 +146,8 @@
 .teaser__img {
   display: block;
   height: auto;
-  @include margin(12 0 12 0);
+  @include nospace();
+  @include margin(12, "top");
   max-width: 100%;
   width: 100%;
 }
@@ -168,6 +169,7 @@
   .teaser__img--big {
     float: right;
     height: 144px;
+    @include margin(12, "bottom");
     width: auto;
     @include margin(24, "left");
   }
@@ -177,8 +179,10 @@
 
     .teaser__img--big {
       height: auto;
+      float: none;
       margin-left: 0;
       max-width: 100%;
+      margin-bottom: 0;
       width: 100%;
     }
 
