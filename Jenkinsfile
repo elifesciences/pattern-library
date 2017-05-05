@@ -17,7 +17,10 @@ elifePipeline {
 
     elifePullRequestOnly {
         stage 'Downstream', {
-            build job: 'dependencies-patterns-php-update-pattern-library-pull-request', wait: false, parameters: [string(name: 'pattern_library_branch', value: env.BRANCH_NAME)]
+            build job: 'dependencies-patterns-php-update-pattern-library-pull-request', wait: false, parameters: [
+                string(name: 'pattern_library_branch', value: env.BRANCH_NAME),
+                string(name: 'pattern_library_commit', value: commit)
+            ]
         }
     }
 
