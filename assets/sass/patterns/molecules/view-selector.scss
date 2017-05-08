@@ -19,9 +19,7 @@
 }
 
 .view-selector__link {
-  color: $color-text-secondary;
   display: block;
-  font-weight: 700;
   text-decoration: none;
 
   span {
@@ -33,12 +31,30 @@
   }
 }
 
+.view-selector__list-item--active {
+  color: $color-text;
+
+  .view-selector__link {
+    color: $color-text;
+  }
+
+}
+
+.view-selector__link {
+  color: $color-text-secondary;
+  font-weight: 700;
+}
+
+.view-selector__jump_link {
+  color: $color-text-secondary;
+}
+
 .view-selector__jump_links_header {
+  color: $color-text-secondary;
   display: block;
   @include font-size(14);
   font-weight: 700;
   @include margin(12, "bottom");
-  @include padding(20, "left");
 }
 
 .js .view-selector__jump_links_header {
@@ -46,19 +62,20 @@
   $arrow-size: 5;
 
   &:before {
-    @include arrow("down", $arrow-size);
-    @include margin($arrow-size, "right");
-    @include margin($arrow-size * -4, "left");
-    @include margin($arrow-size * 1.5, "top");
+    @include arrow("down", $arrow-size, $color-text-secondary);
+    @include margin(-15, "left");
+    @include margin(-12, "right");
+    @include margin(10, "top");
     display: block;
     float: left;
   }
 
   &--closed:before {
-    @include arrow("right", $arrow-size);
+    @include arrow("right", $arrow-size, $color-text-secondary);
     @include margin($arrow-size, "top");
-    @include margin($arrow-size * -3, "left");
-    @include margin($arrow-size, "top");
+    @include margin(-12, "left");
+    @include margin(-12, "right");
+    @include margin(7, "top");
   }
 
 }
@@ -66,7 +83,7 @@
 .view-selector__jump_links {
   list-style: none;
   margin: 0;
-  @include padding(20, "left");
+  @include padding(0);
 }
 
 .view-selector__jump_link_item {
@@ -74,8 +91,7 @@
 }
 
 .view-selector__jump_link {
-  color: $color-text;
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
 
   &:hover {
@@ -114,9 +130,11 @@
 
   .view-selector__list-item--active {
     background-color: $color-text;
+    font-weight: 700;
 
     .view-selector__link {
-      color: $color-text--reverse;
+      color: $color-text-ui-background;
+      font-weight: 700;
 
       &:hover {
         cursor: default;
@@ -161,7 +179,8 @@
 
   .view-selector--fixed {
     max-height: 100vh;
-    overflow: scroll;
+    min-height: 9rem;
+    overflow: auto;
     @include padding(30, "top");
     position: fixed;
     top: 0;

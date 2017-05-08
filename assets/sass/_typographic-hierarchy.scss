@@ -76,6 +76,10 @@
   @include _set-typeg-width-variant(36, 36, $is-wide);
 }
 
+@mixin h1-spacing() {
+  margin: 0;
+}
+
 @mixin h2-typeg() {
   @include _heading-base-typeg();
   @include font-size($font-size-h2-in-px);
@@ -83,6 +87,7 @@
 }
 
 @mixin h2-spacing() {
+  margin: 0;
   @include padding(24, "top");
   @include padding(24, "bottom");
 }
@@ -94,6 +99,7 @@
 }
 
 @mixin h3-spacing() {
+  margin: 0;
   @include padding(12, "top");
   @include padding(12, "bottom");
 }
@@ -117,6 +123,7 @@
 }
 
 @mixin h5-spacing() {
+  margin: 0;
   @include padding(12, "top");
   @include padding(12, "bottom");
 }
@@ -175,7 +182,7 @@
   font-family: $font-secondary;
   @include font-size(16);
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 @mixin institute-typeg() {
@@ -187,17 +194,18 @@
 
 @mixin pullquote-typeg($is-wide:false) {
   font-family: $font-secondary;
-  @include _set-typeg-width-variant(24, 28, $is-wide);
+  //@include _set-typeg-width-variant(20, 28, $is-wide);
+  @include font-size(20);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.1;
 }
 
 @mixin pullquote-attrib-typeg() {
   font-family: $font-primary;
-  @include font-size(14);
+  @include font-size(16);
   font-style: italic;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.5;
 }
 
 @mixin fig-viewer-heading-typeg($is-wide: false) {
@@ -209,9 +217,9 @@
 @mixin fig-heading-typeg() {
   // bold, not demibold
   font-family: $font-secondary;
-  @include font-size(13);
+  @include font-size(14);
   font-weight: bold;
-  line-height: 1.3;
+  line-height: 1.7142857143; /* 24px with 14px font size */
 }
 
 @mixin fig-caption-heading-typeg() {
@@ -303,9 +311,9 @@
 
 @mixin typeg-portal-quick-nav() {
   font-family: $font-secondary;
-  @include font-size(12);
+  @include font-size(16);
   font-weight: 700;
-  line-height: 1.85;
+  line-height: 1.5;
 }
 
 @mixin msa-link($is-wide: false) {
