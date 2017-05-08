@@ -1,4 +1,7 @@
 <section class="section-listing-wrapper" id="{{id}}">
+  {{#listHeading}}
+    {{> atoms-list-heading}}
+  {{/listHeading}}
   <ol class="section-listing {{#singleLine}}section-listing--single-line{{/singleLine}}" {{#labelledBy}}aria-labelledby="{{labelledBy}}"{{/labelledBy}}>
     {{#sections}}
       <li class="section-listing__list_item {{#isCurrent}}section-listing__list_item--current{{/isCurrent}}">

@@ -2,6 +2,9 @@
   "id": "sectionListing",
   "labelledBy": "theIdOfSectionListing",
   "singleLine": true,
+  "listHeading": {
+    "heading": "Magazine sections"
+  },
   "sections": [
     {
       "url": "#",
