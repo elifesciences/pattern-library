@@ -44,10 +44,16 @@
   }
 
   .main-menu__list_item {
+    @include padding(0 24);
     text-align: left;
   }
 
+  .main-menu__list_link {
+    color: $color-text--reverse;
+  }
+
   &.main-menu--shown {
+    color: $color-text--reverse;
     display: block;
     float: left;
     left: -3000px;
@@ -59,11 +65,24 @@
     transform: translate3d(3000px, 0, 0);
     z-index: 10;
 
+    /*
     & + .global-inner {
       float: left;
       transform: translate3d(200px, 0, 0);
       width: calc(100% - 200px);
     }
+    */
+
+    & + .global-inner:before {
+      background-color: rgba(0, 0, 0, 0.8);
+      content: "";
+      display: block;
+      height: 100vh;
+      position: relative;
+      width: 100vw;
+      z-index: 5;
+    }
+
   }
 
   .main_menu__quit {

@@ -39,7 +39,6 @@ module.exports = class MainMenu {
    */
   close () {
     this.$elm.classList.remove('main-menu--shown');
-    this.doc.querySelector('.global-wrapper').classList.remove('pull-offscreen-right');
   }
 
   /**
@@ -47,7 +46,6 @@ module.exports = class MainMenu {
    */
   open () {
     this.$elm.classList.add('main-menu--shown');
-    this.doc.querySelector('.global-wrapper').classList.add('pull-offscreen-right');
   }
 
 };
