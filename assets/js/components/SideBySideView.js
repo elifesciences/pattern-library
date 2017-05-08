@@ -95,10 +95,11 @@ module.exports = class SideBySideView {
 
   createCloseBar() {
     const div = utils.buildElement('div', ['side-by-side-view__bar']);
+
     // other X options &#x00D7;&#x2a09;&#x2a2f;
     const btn = utils.buildElement(
       'button',
-      ['side-by-side-view__button-close'], 
+      ['side-by-side-view__button-close'],
       '<span class="side-by-side-view__button-close-cross">&#x2715;</span>' +
       '<span class="side-by-side-view__button-close-text">Close side-by-side view</span>',
       div
