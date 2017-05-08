@@ -1,7 +1,6 @@
 @import "../../definitions";
 
 .main-menu__container {
-  @include padding($blg-space-small-in-px);
 }
 
 .main-menu__section {
@@ -23,7 +22,9 @@
 
 .main-menu__list_item {
   @include dismissible_navigation();
+  border-top: 1px solid $color-text-dividers;
   display: block;
+  @include padding($blg-space-extra-small-in-px - 1 0 $blg-space-extra-small-in-px 0);
 }
 
 .main-menu__list_link {
