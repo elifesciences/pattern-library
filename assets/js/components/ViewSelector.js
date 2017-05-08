@@ -1,5 +1,6 @@
 'use strict';
 
+const SideBySideView = require('./SideBySideView');
 const utils = require('../libs/elife-utils')();
 
 module.exports = class ViewSelector {
@@ -20,7 +21,6 @@ module.exports = class ViewSelector {
     this.mainTarget = this.doc.querySelector('[role="main"]');
     const $header = this.doc.querySelector('#siteHeader');
     this.$global = $header.parentNode;
-    let SideBySideView = require('./SideBySideView');
     this.sideBySideView = new SideBySideView(
       this.$global,
       this.$elm.dataset.sideBySideLink,
