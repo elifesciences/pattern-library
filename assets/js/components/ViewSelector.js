@@ -18,7 +18,7 @@ module.exports = class ViewSelector {
     this.cssFixedClassName = 'view-selector--fixed';
 
     this.mainTarget = this.doc.querySelector('[role="main"]');
-    const $header = this.doc.querySelector('header');
+    const $header = this.doc.querySelector('#siteHeader');
     this.$global = $header.parentNode;
     let SideBySideView = require('./SideBySideView');
     this.sideBySideView = new SideBySideView(
