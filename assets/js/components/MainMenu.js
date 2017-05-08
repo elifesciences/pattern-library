@@ -1,5 +1,8 @@
 'use strict';
 
+const Overlay = require('./Overlay');
+const utils = require('../libs/elife-utils')();
+
 module.exports = class MainMenu {
 
   // Passing window and document separately allows for independent mocking of window in order
@@ -12,6 +15,8 @@ module.exports = class MainMenu {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
+    this.pageOverlay = new Overlay('body', null, 'overlayMainMenu', 30);
+    this.closeFn = this.close.bind(this);
   }
 
   /**
@@ -39,6 +44,8 @@ module.exports = class MainMenu {
    */
   close () {
     this.$elm.classList.remove('main-menu--shown');
+    this.pageOverlay.hide();
+    this.pageOverlay.get$elm().removeEventListener('click', this.closeFn);
   }
 
   /**
@@ -46,6 +53,8 @@ module.exports = class MainMenu {
    */
   open () {
     this.$elm.classList.add('main-menu--shown');
+    this.pageOverlay.get$elm().addEventListener('click', this.closeFn);
+    this.pageOverlay.show();
   }
 
 };

@@ -58,31 +58,12 @@
     float: left;
     left: -3000px;
     height: 100vh;
-    width: #{get-rem-from-px(200)}rem;
+    width: #{get-rem-from-px(280)}rem;
     max-width: 90vw;
     overflow: auto;
     position: fixed;
     transform: translate3d(3000px, 0, 0);
-    z-index: 10;
-
-    /*
-    & + .global-inner {
-      float: left;
-      transform: translate3d(200px, 0, 0);
-      width: calc(100% - 200px);
-    }
-    */
-
-    & + .global-inner:before {
-      background-color: rgba(0, 0, 0, 0.8);
-      content: "";
-      display: block;
-      height: 100vh;
-      position: relative;
-      width: 100vw;
-      z-index: 5;
-    }
-
+    z-index: 40;
   }
 
   .main_menu__quit {
