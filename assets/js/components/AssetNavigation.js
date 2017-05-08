@@ -1,7 +1,7 @@
 'use strict';
 const utils = require('../libs/elife-utils')();
 
-module.exports = class AssetViewer {
+module.exports = class AssetNavigation {
 
   constructor($elm, _window = window, doc = document) {
     this.$elm = $elm;
