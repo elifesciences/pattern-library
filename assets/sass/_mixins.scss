@@ -287,3 +287,13 @@
   @include nospace();
   text-align: center;
 }
+
+@mixin overlay() {
+  background-color: $color-overlay;
+  position: absolute;
+  min-height: 100vh;
+  top: 0;
+  width: 100vw;
+  // z-index should be overridden as necessary
+  z-index: 4;
+}

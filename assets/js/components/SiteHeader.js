@@ -1,4 +1,6 @@
 'use strict';
+
+const Overlay = require('./Overlay');
 var utils = require('../libs/elife-utils')();
 
 module.exports = class SiteHeader {
@@ -23,7 +25,7 @@ module.exports = class SiteHeader {
       this.searchToggle.addEventListener('click', this.toggleSearchBox.bind(this));
     }
 
-    this.$pageOverlay = null;
+    this.pageOverlay = new Overlay('.global-inner', '.site-header', 'mainMenuOverlay', this.window, this.doc);
 
     // N.B. $mainMenu is not part of this component's HTML hierarchy.
     var mainMenu = doc.querySelector('#mainMenu');
@@ -102,7 +104,7 @@ module.exports = class SiteHeader {
     this.searchBox.$input.blur();
     this.window.removeEventListener('keyup', this.checkForClose.bind(this));
     this.window.removeEventListener('click', this.checkForClose.bind(this));
-    this.hidePageOverlay();
+    this.pageOverlay.hide();
   }
 
   /**
@@ -139,44 +141,7 @@ module.exports = class SiteHeader {
       this.searchBox.$input.blur();
       this.searchBox.$input.focus();
     }, transitionDurationInMs);
-    this.showPageOverlay();
-  }
-
-  /**
-   * Creates the page overlay.
-   *
-   */
-  createPageOverlay() {
-    let className = 'overlay--semi-white';
-
-    if (!this.$pageOverlay) {
-      this.$pageOverlay = this.doc.createElement('div');
-      this.$pageOverlay.classList.add(className);
-    }
-
-    let $target = this.doc.querySelector('.global-inner');
-    $target.insertBefore(this.$pageOverlay,
-                         this.doc.querySelector('.site-header').nextElementSibling);
-  }
-
-  /**
-   * Shows the page overlay.
-   */
-  showPageOverlay() {
-    if (!this.$pageOverlay) {
-      this.createPageOverlay();
-    }
-
-    this.$pageOverlay.style.display = 'block';
-    this.$pageOverlay.style.height = this.doc.querySelector('.global-inner')
-                                         .getBoundingClientRect().height + 'px';
-  }
-
-  /**
-   * Hides the page overlay.
-   */
-  hidePageOverlay() {
-    this.$pageOverlay.style.display = 'none';
+    this.pageOverlay.show();
   }
 
 };

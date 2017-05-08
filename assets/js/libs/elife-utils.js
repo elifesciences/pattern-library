@@ -422,11 +422,24 @@ module.exports = () => {
     return event;
   }
 
+  function createPageOverlay($parent, $followingSibling, id) {
+    // element already exists
+    if (document.querySelector(`#${id}`)) {
+      return;
+    }
+    const $overlay = buildElement('div', ['overlay', 'hidden'], '', $parent, $followingSibling);
+    if (id) {
+      $overlay.id = id;
+    }
+    return $overlay;
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     buildElement: buildElement,
     closest: closest,
+    createPageOverlay: createPageOverlay,
     debounce: debounce,
     equalizeHeightOfItems: equalizeHeightOfItems,
     eventCreator: eventCreator,
