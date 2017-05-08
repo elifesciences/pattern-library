@@ -144,6 +144,16 @@ describe('A ViewSelector Component', function () {
       expect(viewSelector.sideBySideView.$iframe).to.not.be.undefined;
       expect(viewSelector.sideBySideView.$iframe.classList.contains('hidden')).to.be.false;
     });
+
+    it('is not displayed if the link is empty', function () {
+      $elm.dataset.sideBySideLink = '';
+      expect(viewSelector.sideBySideViewAvailable()).to.be.false;
+    });
+
+    it('is not displayed if the link is broken', function () {
+      $elm.dataset.sideBySideLink = 'localhost/null';
+      expect(viewSelector.sideBySideViewAvailable()).to.be.false;
+    });
   });
 
 });

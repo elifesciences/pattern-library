@@ -19,17 +19,19 @@ module.exports = class ViewSelector {
     this.cssFixedClassName = 'view-selector--fixed';
 
     this.mainTarget = this.doc.querySelector('[role="main"]');
-    const $header = this.doc.querySelector('#siteHeader');
-    this.$global = $header.parentNode;
-    this.sideBySideView = new SideBySideView(
-      this.$global,
-      this.$elm.dataset.sideBySideLink,
-      $header,
-      this.window,
-      this.doc
-    );
+    if (this.sideBySideViewAvailable()) {
+      const $header = this.doc.querySelector('#siteHeader');
+      this.$global = $header.parentNode;
+      this.sideBySideView = new SideBySideView(
+        this.$global,
+        this.$elm.dataset.sideBySideLink,
+        $header,
+        this.window,
+        this.doc
+      );
 
-    this.insertSideBySideListItem();
+      this.insertSideBySideListItem();
+    }
 
     // matches top padding in scss
     let topSpaceWhenFixed = 30;
@@ -82,6 +84,11 @@ module.exports = class ViewSelector {
     this.$jumpLinksToggle.classList.toggle('view-selector__jump_links_header--closed');
     this.handleScroll();
 
+  }
+
+  sideBySideViewAvailable() {
+    const link = this.$elm.dataset.sideBySideLink;
+    return !!(link != '' && link.match(/^https:\/\/.*$/));
   }
 
   insertSideBySideListItem() {
