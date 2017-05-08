@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .main-menu__container {
-  @include padding(23 24 23);
+  @include padding($blg-space-small-in-px);
 }
 
 .main-menu__section {

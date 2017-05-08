@@ -3,8 +3,10 @@
 .to-top-link {
   @include dismissible_navigation();
   color: $color-text;
+  display: block;
   list-style: none;
-  @include padding($blg-space-extra-small-in-px 0);
+  @include padding($blg-space-small-in-px 0);
+  width: 100%;
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-section-listing)}em) {

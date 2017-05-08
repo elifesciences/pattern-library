@@ -1,6 +1,7 @@
 @import "../../definitions";
 
 .section-listing {
+  border-top: 1px solid $color-text-dividers;
   @include nospace();
   @include padding($blg-space-small-in-px, "top");
   list-style: none;
@@ -21,11 +22,6 @@
 
 .section-listing--single-line {
 
-  .section-listing__list_item {
-    @include margin(0 12);
-    @include font-size(16);
-  }
-
   .section-listing__list_item--current {
     .section-listing__list_link {
       color: $color-primary;
@@ -33,31 +29,25 @@
 
   }
 
-  .section-listing__list_link {
-    text-transform: none;
-  }
-
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
 
-  .section-listing {
-    border-bottom: 1px solid $color-text-dividers;
-    column-count: 3;
-    @include nospace();
-    @include padding($blg-space-extra-small-in-px - 1 0 $blg-space-extra-small-in-px);
-  }
-
-  .section-listing__list_item {
-    line-height: 1.5;
-  }
-
   .section-listing--single-line {
+    column-count: 1;
+  }
+
+  .js .section-listing--single-line {
     border-bottom: 1px solid $color-text-dividers;
     column-count: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .section-listing__list_item {
+      @include margin(0 12);
+    }
+
   }
 
 }
