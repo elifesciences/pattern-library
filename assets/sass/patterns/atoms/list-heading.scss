@@ -18,3 +18,7 @@
   @include padding(24 0 0);
   text-align: center;
 }
+
+.js .section-listing-wrapper .list-heading {
+  @include visuallyhidden();
+}
