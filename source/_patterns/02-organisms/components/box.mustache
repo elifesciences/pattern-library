@@ -1,7 +1,7 @@
-<div class="box"{{#id}} id="{{id}}"{{/id}}>
+<section class="box"{{#id}} id="{{id}}"{{/id}}>
 
   {{#label}}
-    {{{label}}}
+    <header class="box__label">{{{label}}}</header>
   {{/label}}
 
   <h{{headingLevel}}>{{{title}}}</h{{headingLevel}}>
@@ -14,4 +14,4 @@
     {{> atoms-doi}}
   {{/doi}}
 
-</div>
+</section>

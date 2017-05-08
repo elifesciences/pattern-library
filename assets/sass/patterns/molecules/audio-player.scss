@@ -3,27 +3,26 @@
 .audio-player {
   background-color: $color-text;
   margin: 0 auto;
-  max-width: #{$max-site-width}px;
-  max-width: #{$max-site-width-in-rem}rem;
+  @include constrain-width($max-site-width, "max");
+  @include padding(12 24 22);
   position: relative;
 }
 
 .audio-player__toggle_play {
   background: #222 url("../img/icons/audio-play.svg") center center no-repeat;
   border: none;
-  border-right: 1px solid #444;
   color: $color-text--reverse;
   height: 100%;
   left: 0;
   padding: 0;
   position: absolute;
   top: 0;
-  @include width(90);
+  @include width(72);
   &.loading {
     background-image: none;
     @include loading-spinner();
-    left: 30px;
-    top: 22px;
+    left: 24px;
+    top: 26px;
 
   }
 
@@ -33,14 +32,12 @@
   background-image: url("../img/icons/audio-pause.svg");
 }
 
-.audio-player__container {
-  @include padding(15);
-}
-
 .audio-player__header {
   color: $color-text--reverse;
   @include listing-side-art-title-typeg();
-  @include margin(5, "bottom");
+  @include font-size(16);
+  line-height: 1.5;
+  @include nospace();
 }
 
 .audio-player__player {
@@ -51,15 +48,15 @@
 .audio-player__progress {
   background-color: #444;
   cursor: pointer;
-  height: 6px;
+  @include height(4);
   position: relative;
-  top: 3px;
+  top: 9px;
   width: 100%;
 }
 
 .audio-player__progress_bar {
   background-color: $color-primary;
-  height: 6px;
+  height: 4px;
   left: 0;
   position: absolute;
   top: 0;
@@ -69,6 +66,8 @@
 .audio-player__times {
   float: right;
   @include label-content-typeg($color-text-secondary);
+  color: $color-text--reverse;
+  margin-top: 1px;
 }
 
 .audio-player__current_time:after {
@@ -76,12 +75,23 @@
 }
 
 .audio-player--js {
+
+  @include height(72);
+
   .audio-player__toggle_play {
     display: block;
   }
 
   .audio-player__container {
-    @include padding(105, "left");
+    @include padding(48, "left");
+  }
+
+  .audio-player__title {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: calc(100% - 6.4em);
   }
 
   .audio-player__player {

@@ -3,6 +3,7 @@
 .list-heading {
   @include section-title-typeg();
   @include nospace();
+  letter-spacing: 0.5px;
   line-height: 1.7142857143; // 24px with a 14px font size
   margin-bottom: 0;
   text-transform: uppercase;

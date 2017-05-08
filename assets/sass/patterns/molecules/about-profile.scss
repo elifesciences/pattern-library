@@ -1,0 +1,36 @@
+@import "../../definitions";
+
+.about-profile__name {
+  @include teaser-header-text-style();
+}
+
+.about-profile__role {
+  font-style: italic;
+  margin: 0;
+}
+
+.about-profile__profile {
+  @include margin(24, "top");
+}
+
+.about-profile__picture {
+  display: block;
+  height: auto;
+  @include margin(12 0 12 0);
+  max-width: 100%;
+  width: 100%;
+}
+
+.about-profile__image {
+  width: 100%;
+}
+
+@media only all and (min-width: 700px) {
+
+  .about-profile__picture {
+    float: right;
+    width: 250px;
+    @include margin(24, "left");
+  }
+
+}
