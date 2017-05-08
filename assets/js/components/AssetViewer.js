@@ -18,38 +18,16 @@ module.exports = class AssetViewer {
       const hash = this.window.location.hash.substring(1);
       let show = 0;
 
-      let i;
-      for (i = 0; i < this.assetItems.length; i++) {
+      for (let i = 0; i < this.assetItems.length; i++) {
         const assetItem = this.assetItems[i];
-        const x = i;
-        const navigation = doc.createElement('span');
-        navigation.classList.add('asset-viewer-inline__header_navigation');
+        const navigation = utils.buildElement('div', ['asset-viewer-inline__header_navigation'], '', assetItem.querySelector('.asset-viewer-inline__header_panel'), '.asset-viewer-inline__header_text');
 
         if (assetItem.id === hash) {
-          show = x;
+          show = i;
         }
 
-        const previous = doc.createElement('span');
-        previous.classList.add('asset-viewer-inline__previous');
-        if (i > 0) {
-          previous.addEventListener('click', () => {
-            this.show(x - 1);
-          });
-          previous.classList.add('asset-viewer-inline__previous--active');
-        }
-        navigation.appendChild(previous);
-
-        const next = doc.createElement('span');
-        next.classList.add('asset-viewer-inline__next');
-        if (i < (this.assetItems.length - 1)) {
-          next.addEventListener('click', () => {
-            this.show(x + 1);
-          });
-          next.classList.add('asset-viewer-inline__next--active');
-        }
-        navigation.appendChild(next);
-
-        assetItem.querySelector('.asset-viewer-inline__header_panel').insertBefore(navigation, assetItem.querySelector('.asset-viewer-inline__header_text'));
+        this.addPreviousButton(i, navigation);
+        this.addNextButton(i, navigation);
       }
 
       this.show(show);
@@ -58,9 +36,28 @@ module.exports = class AssetViewer {
     }
   }
 
+  addPreviousButton(i, navigation) {
+    const previous = utils.buildElement('span', ['asset-viewer-inline__previous'], '', navigation);
+    if (i > 0) {
+      previous.addEventListener('click', () => {
+        this.show(i - 1);
+      });
+      previous.classList.add('asset-viewer-inline__previous--active');
+    }
+  }
+
+  addNextButton(i, navigation) {
+    const next = utils.buildElement('span', ['asset-viewer-inline__next'], '', navigation);
+    if (i < (this.assetItems.length - 1)) {
+      next.addEventListener('click', () => {
+        this.show(i + 1);
+      });
+      next.classList.add('asset-viewer-inline__next--active');
+    }
+  }
+
   hideAll() {
-    let i;
-    for (i = 0; i < this.assetItems.length; i++) {
+    for (let i = 0; i < this.assetItems.length; i++) {
       this.assetItems[i].classList.add('visuallyhidden');
     }
   }
@@ -88,8 +85,7 @@ module.exports = class AssetViewer {
       return false;
     }
 
-    let i;
-    for (i = 0; i < this.assetItems.length; i++) {
+    for (let i = 0; i < this.assetItems.length; i++) {
       if (this.assetItems[i].id === hash) {
         this.show(i);
       }
