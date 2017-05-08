@@ -91,6 +91,7 @@
       ]
     },
     "searchBox": {
+      "inContentHeader": true,
       "compactForm": {
         "formAction": "/search",
         "formId": "searchBox",
