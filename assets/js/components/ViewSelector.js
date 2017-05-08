@@ -27,7 +27,7 @@ module.exports = class ViewSelector {
       this.doc
     );
 
-    this._insertSideBySideListItem();
+    this.insertSideBySideListItem();
 
     // matches top padding in scss
     let topSpaceWhenFixed = 30;
@@ -82,7 +82,7 @@ module.exports = class ViewSelector {
 
   }
 
-  _insertSideBySideListItem() {
+  insertSideBySideListItem() {
     var listItem = this.doc.createElement('li');
     listItem.classList.add('view-selector__list-item');
     listItem.classList.add('view-selector__list-item--side-by-side');

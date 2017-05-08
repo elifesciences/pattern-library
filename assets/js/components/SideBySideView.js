@@ -35,11 +35,11 @@ module.exports = class SideBySideView {
 
   open() {
 
-    this._saveScrollingPosition();
+    this.saveScrollingPosition();
 
     this.$iframe = this.doc.querySelector('.side-by-side-view__iframe');
     if (!this.$iframe) {
-      this.$iframe = this._createIframe(this.src);
+      this.$iframe = this.createIframe(this.src);
       this.doc.querySelector('body').appendChild(this.$iframe);
     } else {
       this.$iframe.classList.remove('hidden');
@@ -47,52 +47,52 @@ module.exports = class SideBySideView {
 
     this.$closeBar = this.doc.querySelector('.side-by-side-view__bar');
     if (!this.$closeBar) {
-      this.$closeBar = this._createCloseBar();
+      this.$closeBar = this.createCloseBar();
       this.$header.appendChild(this.$closeBar);
     } else {
       this.$closeBar.classList.remove('hidden');
     }
 
-    this._hideEverythingButHeader();
+    this.hideEverythingButHeader();
   }
 
   close() {
     this.$closeBar.classList.add('hidden');
     this.$iframe.classList.add('hidden');
-    this._showEverything();
-    this._restoreScrollingPosition();
+    this.showEverything();
+    this.restoreScrollingPosition();
   }
 
-  _saveScrollingPosition() {
+  saveScrollingPosition() {
     this.currentYScrollPos = this.window.pageYOffset;
     window.scroll(0, 0);
   }
 
-  _restoreScrollingPosition() {
+  restoreScrollingPosition() {
     window.scroll(0, this.currentYScrollPos);
     this.currentYScrollPos = null;
   }
 
-  _hideEverythingButHeader() {
+  hideEverythingButHeader() {
     this.eachButHeader((node) => {
       node.classList.add('hidden');
     });
   }
 
-  _showEverything() {
+  showEverything() {
     this.eachButHeader((node) => {
       node.classList.remove('hidden');
     });
   }
 
-  _createIframe(src) {
+  createIframe(src) {
     var iframe = this.doc.createElement('iframe');
     iframe.src = src;
     iframe.classList.add('side-by-side-view__iframe');
     return iframe;
   }
 
-  _createCloseBar() {
+  createCloseBar() {
     var div = this.doc.createElement('div');
     div.classList.add('side-by-side-view__bar');
     var btn = this.doc.createElement('button');
