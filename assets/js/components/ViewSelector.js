@@ -1,5 +1,7 @@
 'use strict';
 
+const utils = require('../libs/elife-utils')();
+
 module.exports = class ViewSelector {
 
   constructor($elm, _window = window, doc = document) {
@@ -83,22 +85,32 @@ module.exports = class ViewSelector {
   }
 
   insertSideBySideListItem() {
-    const listItem = this.doc.createElement('li');
-    listItem.classList.add('view-selector__list-item');
-    listItem.classList.add('view-selector__list-item--side-by-side');
-    const $link = this.doc.createElement('a');
+    const $list = this.doc.querySelector('.view-selector__list');
+    const $jumpList = this.doc.querySelector('.view-selector__list-item--jump');
+    const $listItem = utils.buildElement(
+      'li',
+      [
+        'view-selector__list-item',
+        'view-selector__list-item--side-by-side',
+      ],
+      '',
+      $list,
+      $jumpList 
+    );
+    const $link = utils.buildElement(
+      'a',
+      [
+        'view-selector__link',
+        'view-selector__link--side-by-side',
+      ],
+      '<span>Side-by-side view</span>',
+      $listItem
+    );
     $link.setAttribute('href', '#');
-    $link.classList.add('view-selector__link');
-    $link.classList.add('view-selector__link--side-by-side');
-    $link.innerHTML = '<span>Side-by-side view</span>';
     $link.addEventListener('click', (e) => {
       e.preventDefault();
       this.sideBySideView.open();
     });
-    listItem.appendChild($link);
-    const $list = this.doc.querySelector('.view-selector__list');
-    const $jumpList = this.doc.querySelector('.view-selector__list-item--jump');
-    $list.insertBefore(listItem, $jumpList);
-    return listItem;
+    return $listItem;
   }
 };

@@ -1,5 +1,7 @@
 'use strict';
 
+const utils = require('../libs/elife-utils')();
+
 module.exports = class SideBySideView {
 
   constructor($elm, src, $header, _window = window, doc = document) {
@@ -86,25 +88,24 @@ module.exports = class SideBySideView {
   }
 
   createIframe(src) {
-    const iframe = this.doc.createElement('iframe');
+    const iframe = utils.buildElement('iframe', ['side-by-side-view__iframe']);
     iframe.src = src;
-    iframe.classList.add('side-by-side-view__iframe');
     return iframe;
   }
 
   createCloseBar() {
-    const div = this.doc.createElement('div');
-    div.classList.add('side-by-side-view__bar');
-    const btn = this.doc.createElement('button');
-
+    const div = utils.buildElement('div', ['side-by-side-view__bar']);
     // other X options &#x00D7;&#x2a09;&#x2a2f;
-    btn.innerHTML = '<span class="side-by-side-view__button-close-cross">&#x2715;</span>' +
-      '<span class="side-by-side-view__button-close-text">Close side-by-side view</span>';
-    btn.classList.add('side-by-side-view__button-close');
+    const btn = utils.buildElement(
+      'button',
+      ['side-by-side-view__button-close'], 
+      '<span class="side-by-side-view__button-close-cross">&#x2715;</span>' +
+      '<span class="side-by-side-view__button-close-text">Close side-by-side view</span>',
+      div
+    );
     btn.addEventListener('click', () => {
       this.close();
     });
-    div.appendChild(btn);
     return div;
   }
 };
