@@ -3,7 +3,7 @@
 .section-listing {
   //border-top: 1px solid $color-text-dividers;
   @include nospace();
-  @include padding($blg-space-small-in-px, "top");
+  @include padding($blg-space-extra-small-in-px, "top");
   list-style: none;
 }
 
