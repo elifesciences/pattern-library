@@ -36,15 +36,29 @@
     column-count: 1;
   }
 
-  .js .section-listing--single-line {
-    border-bottom: 1px solid $color-text-dividers;
-    column-count: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .js {
+
+    .section-listing {
+      column-count: 3;
+    }
 
     .section-listing__list_item {
-      @include margin(0 12);
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .section-listing--single-line {
+      border-bottom: 1px solid $color-text-dividers;
+      column-count: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include padding(11, "bottom");
+
+      .section-listing__list_item {
+        @include margin(0 12);
+      }
+
     }
 
   }

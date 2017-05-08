@@ -19,6 +19,10 @@
   text-align: center;
 }
 
-.js .section-listing-wrapper .list-heading {
-  @include visuallyhidden();
+@media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
+
+  .js .section-listing-wrapper .list-heading {
+    @include visuallyhidden();
+  }
+
 }
