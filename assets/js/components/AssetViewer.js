@@ -8,7 +8,11 @@ module.exports = class AssetViewer {
     this.window = _window;
     this.doc = doc;
     this.assetItems = [this.$elm];
-    this.assetItems.push(...this.findSupplements());
+
+    const supplements = this.findSupplements();
+    for (let i = 0; i < supplements.length; i += 1) {
+      this.assetItems.push(supplements[i]);
+    }
 
     if (this.assetItems.length > 1) {
       const hash = this.window.location.hash.substring(1);
