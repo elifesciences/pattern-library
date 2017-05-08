@@ -133,13 +133,13 @@ describe('A ViewSelector Component', function () {
     });
 
     it('is displayed on load', function() {
-      var link = $elm.querySelector('.view-selector__link--side-by-side');
+      const link = $elm.querySelector('.view-selector__link--side-by-side');
       expect(link).to.not.be.null;
       expect(link.textContent).to.equal('Side-by-side view');
     });
 
     it('opens an iframe', function() {
-      var link = $elm.querySelector('.view-selector__link--side-by-side');
+      const link = $elm.querySelector('.view-selector__link--side-by-side');
       link.click();
       expect(viewSelector.sideBySideView.$iframe).to.not.be.undefined;
       expect(viewSelector.sideBySideView.$iframe.classList.contains('hidden')).to.be.false;

@@ -86,16 +86,16 @@ module.exports = class SideBySideView {
   }
 
   createIframe(src) {
-    var iframe = this.doc.createElement('iframe');
+    const iframe = this.doc.createElement('iframe');
     iframe.src = src;
     iframe.classList.add('side-by-side-view__iframe');
     return iframe;
   }
 
   createCloseBar() {
-    var div = this.doc.createElement('div');
+    const div = this.doc.createElement('div');
     div.classList.add('side-by-side-view__bar');
-    var btn = this.doc.createElement('button');
+    const btn = this.doc.createElement('button');
 
     // other X options &#x00D7;&#x2a09;&#x2a2f;
     btn.innerHTML = '<span class="side-by-side-view__button-close-cross">&#x2715;</span>' +

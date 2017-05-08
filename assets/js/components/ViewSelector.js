@@ -16,7 +16,7 @@ module.exports = class ViewSelector {
     this.cssFixedClassName = 'view-selector--fixed';
 
     this.mainTarget = this.doc.querySelector('[role="main"]');
-    var $header = this.doc.querySelector('header');
+    const $header = this.doc.querySelector('header');
     this.$global = $header.parentNode;
     let SideBySideView = require('./SideBySideView');
     this.sideBySideView = new SideBySideView(
@@ -83,10 +83,10 @@ module.exports = class ViewSelector {
   }
 
   insertSideBySideListItem() {
-    var listItem = this.doc.createElement('li');
+    const listItem = this.doc.createElement('li');
     listItem.classList.add('view-selector__list-item');
     listItem.classList.add('view-selector__list-item--side-by-side');
-    var $link = this.doc.createElement('a');
+    const $link = this.doc.createElement('a');
     $link.setAttribute('href', '#');
     $link.classList.add('view-selector__link');
     $link.classList.add('view-selector__link--side-by-side');
@@ -96,8 +96,8 @@ module.exports = class ViewSelector {
       this.sideBySideView.open();
     });
     listItem.appendChild($link);
-    var $list = this.doc.querySelector('.view-selector__list');
-    var $jumpList = this.doc.querySelector('.view-selector__list-item--jump');
+    const $list = this.doc.querySelector('.view-selector__list');
+    const $jumpList = this.doc.querySelector('.view-selector__list-item--jump');
     $list.insertBefore(listItem, $jumpList);
     return listItem;
   }
