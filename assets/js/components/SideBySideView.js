@@ -15,21 +15,19 @@ module.exports = class SideBySideView {
     this.$header = $header;
     this.eachButHeader = (callback) => {
 
-      // NodeList doesn't have forEach in this testing environment...
-      for (var i = 0; i < this.$global.childNodes.length; i += 1) {
-        var node = this.$global.childNodes[i];
+      [].forEach.call(this.$global.childNodes, (node) => {
 
         // skip text nodes
         if (!node.tagName) {
-          continue;
+          return;
         }
 
         if (node === this.$header) {
-          continue;
+          return;
         }
 
         callback(node);
-      }
+      });
     };
 
     this.src = src;
