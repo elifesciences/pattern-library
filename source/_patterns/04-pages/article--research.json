@@ -608,6 +608,9 @@
     }
   },
   "mainMenu": {
+    "listHeading": {
+      "heading": "Menu"
+    },
     "links": {
       "items": [
         {

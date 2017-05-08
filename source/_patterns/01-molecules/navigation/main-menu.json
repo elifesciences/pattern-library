@@ -1,4 +1,7 @@
 {
+  "listHeading": {
+    "heading": "Menu"
+  },
   "links": {
     "items": [
       {"name": "Research categories", "url": "#res"},

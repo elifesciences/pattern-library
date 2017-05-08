@@ -8,3 +8,8 @@
   margin-bottom: 0;
   text-transform: uppercase;
 }
+
+.main-menu .list-heading {
+  @include padding(24 0);
+  text-align: center;
+}
