@@ -54,6 +54,16 @@ module.exports = class Overlay {
     }
   }
 
+  assignTop(top) {
+    if (!isNaN(top)) {
+      if (!this.$elm.style) {
+        this.$elm.style = { top: `${top}px` };
+      } else {
+        this.$elm.style.top = `${top}px`;
+      }
+    }
+  }
+
   find$parent(parentCandidate) {
     if (parentCandidate instanceof HTMLElement) {
       return parentCandidate;

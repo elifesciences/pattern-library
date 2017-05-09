@@ -53,26 +53,32 @@
   color: $color-text;
 }
 
-.search-box--js.search-box--populated {
+.search-box--js {
 
-  .compact-form__input {
-    @include padding(90, right);
-  }
+  @include border-radius-simple(0, 0, $border-radius, $border-radius);
 
-  .compact-form__reset {
-    @include visuallyunhidden();
-    background: url("../img/icons/search-clear.png");
-    background: url("../img/icons/search-clear.svg"), linear-gradient(transparent, transparent);
-    background-position: -1px -1px;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    height: 20px;
-    position: absolute;
-    right: 63px;
-    right: #{get-rem-from-px(63)}rem;
-    top: 12px;
-    top: #{get-rem-from-px(12)}rem;
-    width: 20px;
+  .search-box--populated {
+
+    .compact-form__input {
+      @include padding(90, right);
+    }
+
+    .compact-form__reset {
+      @include visuallyunhidden();
+      background: url("../img/icons/search-clear.png");
+      background: url("../img/icons/search-clear.svg"), linear-gradient(transparent, transparent);
+      background-position: -1px -1px;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      height: 20px;
+      position: absolute;
+      right: 63px;
+      right: #{get-rem-from-px(63)}rem;
+      top: 12px;
+      top: #{get-rem-from-px(12)}rem;
+      width: 20px;
+    }
+
   }
 
 }
