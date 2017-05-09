@@ -2,6 +2,7 @@
 
 .investor-logos__img_container {
   border-top: 1px solid $color-text-dividers;
+  @include height(120);
 }
 
 .investor-logos__picture {
@@ -13,6 +14,17 @@
   max-width: 100%;
   max-height: 120px;
   margin: auto;
+}
+
+.investor-logos__img_container--wellcome {
+
+  @include padding($blg-space-small-in-px - 1 $blg-space-small-in-px $blg-space-small-in-px);
+
+  .investor-logos__img {
+    height: 72px;
+    width: auto;
+  }
+
 }
 
 @media only screen and (min-width: #{get-rem-from-px(520)}em) {
