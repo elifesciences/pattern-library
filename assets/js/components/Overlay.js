@@ -25,6 +25,9 @@ module.exports = class Overlay {
     this.doc = doc;
 
     this.$parent = this.find$parent($parent);
+    if (!this.$parent) {
+      return;
+    }
     this.$elm = utils.create$pageOverlay(this.$parent, $followingSibling, id);
     if (!this.$elm) {
       return;
