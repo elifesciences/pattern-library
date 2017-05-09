@@ -422,7 +422,7 @@ module.exports = () => {
     return event;
   }
 
-  function createPageOverlay($parent, $followingSibling, id) {
+  function create$pageOverlay($parent, $followingSibling, id) {
     // element already exists
     if (document.querySelector(`#${id}`)) {
       return;
@@ -439,7 +439,7 @@ module.exports = () => {
     areElementsNested: areElementsNested,
     buildElement: buildElement,
     closest: closest,
-    createPageOverlay: createPageOverlay,
+    create$pageOverlay: create$pageOverlay,
     debounce: debounce,
     equalizeHeightOfItems: equalizeHeightOfItems,
     eventCreator: eventCreator,

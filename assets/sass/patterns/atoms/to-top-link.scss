@@ -9,6 +9,10 @@
   width: 100%;
 }
 
+.js .main-menu .to-top-link {
+  display: none;
+}
+
 @media only all and (min-width: #{get-rem-from-px($bkpt-section-listing)}em) {
 
   .js .to-top-link {

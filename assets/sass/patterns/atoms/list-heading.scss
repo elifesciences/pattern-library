@@ -14,6 +14,10 @@
   text-align: center;
 }
 
+.js .main-menu .list-heading {
+  @include visuallyhidden();
+}
+
 .section-listing-wrapper .list-heading {
   @include padding(24 0 0);
   text-align: center;
