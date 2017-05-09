@@ -15,7 +15,7 @@ module.exports = class ViewSelector {
     this.$jumpLinksToggle = this.$elm.querySelector('.view-selector__jump_links_header');
     this.cssFixedClassName = 'view-selector--fixed';
 
-    this.mainTarget = this.doc.querySelector('[role="main"]');
+    this.mainTarget = this.doc.querySelector('.main');
 
     // matches top padding in scss
     let topSpaceWhenFixed = 30;
