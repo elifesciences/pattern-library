@@ -73,10 +73,19 @@
   padding: 0 6%;
 }
 
+.wrapper--site-header {
+  padding: 0;
+}
+
 @media only screen and (min-width: #{get-rem-from-px($max-site-width)}em) {
   .wrapper {
     padding: 0 4.125rem;
   }
+
+  .wrapper--site-header {
+    padding: 0;
+  }
+
 }
 
 /*

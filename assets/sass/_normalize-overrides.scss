@@ -183,6 +183,10 @@ address {
   clear: both;
 }
 
+main {
+  border-top: 1px solid $color-text-dividers;
+}
+
 img {
   max-width: 100%;
 }
