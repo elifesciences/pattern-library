@@ -383,6 +383,11 @@
   content: ", ";
 }
 
+.content-header__author_link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 li.content-header__author_list_item--last .content-header__author:after {
   content: "";
 }
