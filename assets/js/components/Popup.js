@@ -160,6 +160,7 @@ module.exports = class Popup {
   render() {
     // If there's nothing to render.. we don't.
     if (this.isEmpty) {
+      utils.jumpToAnchor(this.$link);
       return Promise.resolve(this.$elm);
     }
 

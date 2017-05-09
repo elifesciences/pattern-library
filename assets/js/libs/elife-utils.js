@@ -509,6 +509,25 @@ module.exports = () => {
     return event;
   }
 
+  /**
+   * Jump to element on page.
+   *
+   * @param link
+   */
+  function jumpToAnchor(link) {
+    if (history.replaceState) {
+      window.location.href = link.href;
+      history.replaceState(null, null, link.href);
+    } else {
+      const $el = document.getElementById(link.hash.slice(1));
+      if ($el) {
+        window.scrollTo(0, document.getElementById(id).offsetTop)
+      }
+
+    }
+
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -522,6 +541,7 @@ module.exports = () => {
     flatten: flatten,
     invertPxString: invertPxString,
     isHighDpr: isHighDpr,
+    jumpToAnchor: jumpToAnchor,
     loadData: loadData,
     nthChild: nthChild,
     remoteQuerySelector: remoteQuerySelector,
