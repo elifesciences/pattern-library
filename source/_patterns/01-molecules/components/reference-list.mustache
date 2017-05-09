@@ -1,7 +1,7 @@
 
 <ol class="reference-list">
   {{#references}}
-    <li class="reference-list__item" id="{{bibId.full}}">
+    <li class="reference-list__item" data-popup-label="See in references" data-popup-contents="{{bibId.full}}" id="{{bibId.full}}">
       <span class="reference-list__ordinal_number">{{bibId.ordinal}}</span>
       {{#reference}}
         {{> atoms-reference }}

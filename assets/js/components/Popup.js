@@ -9,7 +9,7 @@ module.exports = class Popup {
 
     this.$elm = this.wrapInContainerWithClass($elm, 'span', 'popup');
     this.$link = this.$elm.querySelector('a');
-    this.label = $elm.getAttribute('data-label') || 'See in references';
+    this.label = $elm.getAttribute('data-label') || '';
     this.isOpen = false;
     this.resolver = null;
     this.window = _window;
@@ -44,8 +44,8 @@ module.exports = class Popup {
       this.isOpen = false;
       this.render();
     }
-  }
 
+  }
 
   getResolver(link) {
     if (this.resolver) {
@@ -74,19 +74,56 @@ module.exports = class Popup {
     return this.resolver = utils.remoteQuerySelector(link.href);
   }
 
+  getBodyContentsFromNode(node) {
+    if (!node.getAttribute('data-popup-contents')) {
+
+      // Mark empty.
+      return this.emptyResponse();
+    }
+
+    if (node.getAttribute('data-popup-label')) {
+
+      // Set label for jump link.
+      this.label = node.getAttribute('data-popup-label');
+    }
+
+    if (node.getAttribute('data-popup-contents') === node.id) {
+
+      // Return node if it points to itself.
+      return node.cloneNode(true);
+    }
+
+    const target = node.getElementById(node.getAttribute('data-popup-contents'));
+    if (!target) {
+
+      // Also mark empty.
+      return this.emptyResponse();
+    }
+
+    // Return the target.
+    return target.cloneNode(true);
+  }
+
+  emptyResponse() {
+    this.isEmpty = true;
+    return null;
+  }
+
   requestContents() {
+
     // We await on the contents, which might be XHR.
     return this.getResolver(this.$link).then(r => {
 
       // If there is contents the come back we add it to our object.
       if (r) {
-        this.bodyContents = r(this.$link.hash).cloneNode(true);
+        this.bodyContents = this.getBodyContentsFromNode(r(this.$link.hash));
         return this.render();
 
         // If not, we set this and ignore.
       } else {
-        this.isEmpty = true;
+        this.emptyResponse();
       }
+
       return Promise.resolve(this.$elm);
     });
   }
@@ -94,7 +131,10 @@ module.exports = class Popup {
   createBottomBar(referenceLink) {
     const $bottomBar = utils.buildElement('div', ['popup__actions', 'clearfix']);
 
-    const $seeInReferences = utils.buildElement('a', ['popup__button', 'popup__button--right'], this.label, $bottomBar);
+    const $seeInReferences = utils.buildElement('a', [
+      'popup__button',
+      'popup__button--right'
+    ], this.label, $bottomBar);
     $seeInReferences.href = referenceLink;
 
     return $bottomBar;
@@ -139,8 +179,8 @@ module.exports = class Popup {
       this.popupHitBox = this.createPopupHitBox(
         this.createPopupBox(
           this.bodyContents,
-          $bottomBar,
-        ),
+          $bottomBar
+        )
       );
 
       // Add to DOM.
@@ -186,6 +226,7 @@ module.exports = class Popup {
     } else {
       this.$elm.classList.add('popup--hidden');
     }
+
     return Promise.resolve(this.$elm);
   }
 };

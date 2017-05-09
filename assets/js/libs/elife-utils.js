@@ -403,6 +403,7 @@ module.exports = () => {
           if (src.hasOwnProperty(nextKey)) {
             output[nextKey] = src[nextKey];
           }
+
         }
 
       }
@@ -410,7 +411,6 @@ module.exports = () => {
       return output;
     };
   })();
-
 
   /**
    * Query selector to a different page.
@@ -468,7 +468,9 @@ module.exports = () => {
       if (styles.hasOwnProperty(style)) {
         $el.style[style] = styles[style];
       }
+
     }
+
     return $el;
   }
 
@@ -489,6 +491,7 @@ module.exports = () => {
     if (styles) {
       addStylesToElement($container, styles);
     }
+
     $children.forEach(child => $container.appendChild(child));
     return fn ? fn($container) : $container;
   }
@@ -502,6 +505,7 @@ module.exports = () => {
       event = document.createEvent(name);
       event.initCustomEvent(name, true, true, { detail });
     }
+
     return event;
   }
 
