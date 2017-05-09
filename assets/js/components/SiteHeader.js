@@ -25,7 +25,10 @@ module.exports = class SiteHeader {
       this.searchToggle.addEventListener('click', this.toggleSearchBox.bind(this));
     }
 
-    this.pageOverlay = new Overlay('.global-inner', '.site-header', 'mainMenuOverlay', this.window, this.doc);
+    const $overlayParent = this.doc.querySelector('main');
+    const $overlayFollowingSibling = $overlayParent.firstElementChild;
+    this.pageOverlay = new Overlay($overlayParent, $overlayFollowingSibling, 'mainMenuOverlay', this.window, this.doc);
+    this.pageOverlay.assignTop(96);
 
     // N.B. $mainMenu is not part of this component's HTML hierarchy.
     var mainMenu = doc.querySelector('#mainMenu');
