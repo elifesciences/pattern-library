@@ -28,8 +28,6 @@ module.exports = class ContentHeader {
     this.hasToggleInstitution = false;
     this.hideAllExcessItems('author', this.authors);
     this.hideAllExcessItems('institution', this.institutions);
-
-    let _this = this;
   }
 
   handleAnyExcessItems(itemType, items) {
