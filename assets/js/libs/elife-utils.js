@@ -271,7 +271,7 @@ module.exports = () => {
   /**
    * Debounce
    */
-  function debounce(callback, wait, context = this) {
+  function debounce(callback, wait, context = this) { // jshint ignore:line
     let timeout = null;
     let callbackArgs = null;
 
@@ -328,8 +328,7 @@ module.exports = () => {
     let i;
     do {
       i = matches.length;
-      while (--i >= 0 && matches.item(i) !== el) {}
-
+      while (--i >= 0 && matches.item(i) !== el) {} // jshint ignore:line
     } while ((i < 0) && (el = el.parentElement));
 
     return el;
