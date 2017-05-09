@@ -110,15 +110,16 @@
   @include label-content-typeg();
   justify-content: space-between;
   text-transform: none;
+}
 
-  .teaser__publish_state--poa {
-    width: 20px;
-  }
+.teaser__publish_state {
+  text-transform: uppercase;
+}
 
-  .teaser__publish_state--vor {
-    width: 66px;
-  }
-
+.teaser__publish_state__with_separator {
+  border-right: 2px dotted $color-text-secondary;
+  @include margin(6, "right");
+  @include padding(6, "right");
 }
 
 .teaser__footer_text {
@@ -146,14 +147,10 @@
 .teaser__img {
   display: block;
   height: auto;
-  @include margin(12 0 12 0);
+  @include nospace();
+  @include margin(12, "top");
   max-width: 100%;
   width: 100%;
-}
-
-
-.teaser__img--prominent {
-  @include margin(10, "bottom");
 }
 
 .teaser__img--small {
@@ -168,6 +165,7 @@
   .teaser__img--big {
     float: right;
     height: 144px;
+    @include margin(12, "bottom");
     width: auto;
     @include margin(24, "left");
   }
@@ -177,8 +175,10 @@
 
     .teaser__img--big {
       height: auto;
+      float: none;
       margin-left: 0;
       max-width: 100%;
+      margin-bottom: 0;
       width: 100%;
     }
 
@@ -188,7 +188,17 @@
 
 .teaser--grid-style {
 
+  border-top: none;
   @include widths-for-generic-grid-listing-items();
+  @include margin($blg-space-small-in-px, "bottom");
+
+  .teaser__img--prominent {
+    @include nospace();
+  }
+
+  .teaser__header_text {
+    @include padding($blg-space-extra-small-in-px, "bottom");
+  }
 
   .teaser__footer {
     align-items: center;

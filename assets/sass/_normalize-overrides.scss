@@ -46,6 +46,10 @@ p {
   @include body-para();
 }
 
+a {
+  color: $color-primary;
+}
+
 .underline {
   text-decoration: underline;
 }

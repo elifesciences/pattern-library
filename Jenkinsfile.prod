@@ -1,13 +1,17 @@
 elifePipeline {
-    stage 'Checkout approved'
-    checkout scm
-    def commit = elifeGitRevision()
+    def commit
+    stage 'Checkout approved', {
+        checkout scm
+        commit = elifeGitRevision()
+    }
 
-    stage 'Deploy'
-    elifeDeploySlackNotification "pattern-library", "prod"
-    elifeGitMoveToBranch commit, 'master'
-    builderDeployRevision 'pattern-library--prod', commit
+    stage 'Deploy', {
+        elifeDeploySlackNotification "pattern-library", "prod"
+        elifeGitMoveToBranch commit, 'master'
+        builderDeployRevision 'pattern-library--prod', commit
+    }
 
-    stage 'Downstream'
-    build job: 'dependencies-patterns-php-update-pattern-library', wait: false, parameters: [string(name: 'commit', value: commit)]
+    stage 'Downstream', {
+        build job: 'dependencies-patterns-php-update-pattern-library', wait: false, parameters: [string(name: 'commit', value: commit)]
+    }
 }
