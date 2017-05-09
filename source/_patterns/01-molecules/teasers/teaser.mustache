@@ -82,17 +82,7 @@
     {{/meta}}
 
     {{#publishState}}
-    <div class="teaser__publish_state">
-
-      {{^vor}}
-        <img class="teaser__publish_state--poa" src="{{#assetRewrite}}{{assetsPath}}/img/icons/poa-1x.png{{/assetRewrite}}" srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/poa-2x.png{{/assetRewrite}} 40w,{{#assetRewrite}}{{assetsPath}}/img/icons/poa-1x.png{{/assetRewrite}} 20w" alt="Available as authors' accepted manuscript" />
-      {{/vor}}
-
-      {{#vor}}
-        <img class="teaser__publish_state--vor" src="{{#assetRewrite}}{{assetsPath}}/img/icons/vor-1x.png{{/assetRewrite}}" srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/vor-2x.png{{/assetRewrite}} 40w, {{#assetRewrite}}{{assetsPath}}/img/icons/vor-1x.png{{/assetRewrite}} 20w" alt="Available as full, typeset article" />
-      {{/vor}}
-
-    </div>
+    <div class="teaser__publish_state">{{#vor}}<span class="visuallyhidden">Available as full, typeset article </span><span class="teaser__publish_state__with_separator">html</span>{{/vor}}<span class="visuallyhidden">Available as authors' accepted manuscript </span>pdf</div>
     {{/publishState}}
 
   </footer>
