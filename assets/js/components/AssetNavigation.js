@@ -84,8 +84,8 @@ module.exports = class AssetNavigation {
       return false;
     }
 
-    [].forEach.call(supplements, () => function (assetItem, i) {
-      if (this.assetItems[i].id === hash) {
+    [].forEach.call(this.assetItems, (assetItem, i) => {
+      if (assetItem.id === hash) {
         this.show(i);
       }
     });
