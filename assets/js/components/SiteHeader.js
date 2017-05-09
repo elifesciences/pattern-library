@@ -25,7 +25,7 @@ module.exports = class SiteHeader {
       this.searchToggle.addEventListener('click', this.toggleSearchBox.bind(this));
     }
 
-    const $overlayParent = this.doc.querySelector('main');
+    const $overlayParent = this.doc.querySelector('.main');
     const $overlayFollowingSibling = $overlayParent.firstElementChild;
     this.pageOverlay = new Overlay($overlayParent, $overlayFollowingSibling, 'mainMenuOverlay', this.window, this.doc);
     this.pageOverlay.assignTop(96);

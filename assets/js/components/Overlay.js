@@ -29,7 +29,7 @@ module.exports = class Overlay {
       return;
     }
     this.$elm = utils.create$pageOverlay(this.$parent, $followingSibling, id);
-    if (this.$elm && this.$elm.hasOwnProperty('get$elm')) {
+    if (this.$elm) {
       this.assignZIndex(z);
     }
   }
