@@ -1,8 +1,5 @@
 @import "../../definitions";
 
-.main-menu__container {
-}
-
 .main-menu__section {
   @include padding(15, "bottom");
 }
@@ -34,8 +31,7 @@
 
 .main-menu__close_control {
   background: $color-text--reverse url("../img/icons/close-1x.png") no-repeat;
-  background: url("../img/icons/close.svg") center right / 14px 14px no-repeat,
-              linear-gradient(transparent, transparent);
+  background: url("../img/icons/close.svg") center right / 14px 14px no-repeat, linear-gradient(transparent, transparent);
   border: none;
   color: $color-text;
   @include dismissible_navigation();
@@ -60,12 +56,12 @@
   }
 
   .main-menu__list_link {
-    background-color: $color-text--reverse;;
+    background-color: $color-text--reverse;
     color: $color-text;
   }
 
   &.main-menu--shown {
-    background-color: $color-text--reverse;;
+    background-color: $color-text--reverse;
     color: $color-text;
     display: block;
     float: left;

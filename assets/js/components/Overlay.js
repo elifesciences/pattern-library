@@ -2,7 +2,6 @@
 
 const utils = require('../libs/elife-utils')();
 
-
 /**
  * Creates a new visual overlay of 20% transparent black.
  *
@@ -28,6 +27,7 @@ module.exports = class Overlay {
     if (!this.$parent) {
       return;
     }
+
     this.$elm = utils.create$pageOverlay(this.$parent, $followingSibling, id);
     if (this.$elm) {
       this.assignZIndex(z);
@@ -67,6 +67,7 @@ module.exports = class Overlay {
     if (parentCandidate instanceof HTMLElement) {
       return parentCandidate;
     }
+
     return this.doc.querySelector(parentCandidate);
   }
 

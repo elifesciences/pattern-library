@@ -271,7 +271,7 @@ module.exports = () => {
   /**
    * Debounce
    */
-  function debounce(callback, wait, context = this) {
+  function debounce(callback, wait, context = this) { // jshint ignore:line
     let timeout = null;
     let callbackArgs = null;
 
@@ -328,8 +328,11 @@ module.exports = () => {
     let i;
     do {
       i = matches.length;
-      while (--i >= 0 && matches.item(i) !== el) {}
 
+      // jscs:disable disallowEmptyBlocks
+      while (--i >= 0 && matches.item(i) !== el) {} // jshint ignore:line
+
+      // jscs:enable disallowEmptyBlocks
     } while ((i < 0) && (el = el.parentElement));
 
     return el;
@@ -419,6 +422,7 @@ module.exports = () => {
       event = document.createEvent(name);
       event.initCustomEvent(name, true, true, { detail });
     }
+
     return event;
   }
 
@@ -427,10 +431,12 @@ module.exports = () => {
     if (document.querySelector(`#${id}`)) {
       return;
     }
+
     const $overlay = buildElement('div', ['overlay', 'hidden'], '', $parent, $followingSibling);
     if (id) {
       $overlay.id = id;
     }
+
     return $overlay;
   }
 
