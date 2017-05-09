@@ -1,7 +1,7 @@
 assets:
   css:
     - section-listing.css
-    - $ref: ../../00-atoms/components/list-heading.yaml#/schema
+    - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
