@@ -1,0 +1,788 @@
+{
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks": {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "path": "#mainMenu",
+          "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "pictureClasses": "nav-primary__search_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "secondaryLinks": {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+        {
+          "text": "Labs",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+        {
+          "text": "Submit my research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--button",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        }
+      ]
+    },
+    "searchBox": {
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
+    }
+  },
+  "contentHeader": {
+    "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
+    "titleLong": true,
+    "header": {
+      "possible": true,
+      "hasSubjects": true,
+      "subjects": [
+        {
+          "name": "Cell Biology",
+          "url": "#"
+        },
+        {
+          "name": "Epidemiology and global health",
+          "url": "#"
+        }
+      ]
+    },
+    "authorLine": "Lee R Berger et al",
+    "authors": {
+      "list": [
+        {
+          "name": "Lee R Berger"
+        },
+        {
+          "name": "John Hawks"
+        },
+        {
+          "name": "Darryl J de Ruiter"
+        },
+        {
+          "name": "Steven E Churchill"
+        },
+        {
+          "name": "Peter Schmid"
+        },
+        {
+          "name": "Lucas K Delezene"
+        },
+        {
+          "name": "Tracy L Kivell"
+        },
+        {
+          "name": "Heather M Garvin"
+        },
+        {
+          "name": "Scott A Williams"
+        },
+        {
+          "name": "Jeremy M DeSilva"
+        },
+        {
+          "name": "Matthew M Skinner"
+        },
+        {
+          "name": "Charles M Musiba"
+        },
+        {
+          "name": "Noel Cameron"
+        },
+        {
+          "name": "Trenton W Holliday"
+        },
+        {
+          "name": "William Harcourt-Smith"
+        },
+        {
+          "name": "Rebecca R Ackermann"
+        },
+        {
+          "name": "Markus Bastir"
+        },
+        {
+          "name": "Barry Bogin"
+        },
+        {
+          "name": "Debra Bolter"
+        },
+        {
+          "name": "Juliet Brophy"
+        },
+        {
+          "name": "Zachary D Cofran"
+        },
+        {
+          "name": "Kimberly A Congdon"
+        },
+        {
+          "name": "Andrew S Deane"
+        },
+        {
+          "name": "Mana Dembo"
+        },
+        {
+          "name": "Michelle Drapeau"
+        },
+        {
+          "name": "Marina C Elliott"
+        },
+        {
+          "name": "Elen M Feuerriegel"
+        },
+        {
+          "name": "Daniel Garcia-Martinez"
+        },
+        {
+          "name": "David J Green"
+        },
+        {
+          "name": "Alia Gurtov"
+        },
+        {
+          "name": "Joel D Irish"
+        },
+        {
+          "name": "Ashley Kruger"
+        },
+        {
+          "name": "Myra F Laird"
+        },
+        {
+          "name": "Damiano Marchi"
+        },
+        {
+          "name": "Marc R Meyer"
+        },
+        {
+          "name": "Shahed Nalla"
+        },
+        {
+          "name": "Enquye W Negash"
+        },
+        {
+          "name": "Caley M Orr"
+        },
+        {
+          "name": "Davorka Radovcic"
+        },
+        {
+          "name": "Lauren Schroeder"
+        },
+        {
+          "name": "Jill E Scott"
+        },
+        {
+          "name": "Zachary Throckmorton"
+        },
+        {
+          "name": "Caroline VanSickle"
+        },
+        {
+          "name": "Christopher S Walker"
+        },
+        {
+          "name": "Pianpian Wei"
+        },
+        {
+          "name": "Bernhard Zipfel"
+        }
+      ]
+    },
+    "institutions": {
+      "list": [
+        {
+          "name": "University of the Witwatersrand, South Africa"
+        },
+        {
+          "name": "University of Wisconsin-Madison, United States"
+        },
+        {
+          "name": "Texas A&M University, United States"
+        },
+        {
+          "name": "Duke University, United States"
+        },
+        {
+          "name": "University of Zurich, Switzerland"
+        },
+        {
+          "name": "University of Arkansas, United States"
+        },
+        {
+          "name": "University of Kent, United Kingdom"
+        },
+        {
+          "name": "Max Planck Institute for Evolutionary Anthropology, Germany"
+        },
+        {
+          "name": "Mercyhurst University, United States"
+        },
+        {
+          "name": "New York University, United States"
+        },
+        {
+          "name": "New York Consortium in Evolutionary Primatology, United States"
+        },
+        {
+          "name": "Dartmouth College, United States"
+        },
+        {
+          "name": "University of Colorado Denver, United States"
+        },
+        {
+          "name": "Loughborough University, United Kingdom"
+        },
+        {
+          "name": "Tulane University, United States"
+        },
+        {
+          "name": "Lehman College, United States"
+        },
+        {
+          "name": "American Museum of Natural History, United States"
+        },
+        {
+          "name": "University of Cape Town, South Africa"
+        },
+        {
+          "name": "Museo Nacional de Ciencias Naturales, Spain"
+        },
+        {
+          "name": "Modesto Junior College, United States"
+        },
+        {
+          "name": "Louisiana State University, United States"
+        },
+        {
+          "name": "Nazarbayev University, Kazakhstan"
+        },
+        {
+          "name": "University of Missouri, United States"
+        },
+        {
+          "name": "University of Kentucky College of Medicine, United States"
+        },
+        {
+          "name": "Simon Fraser University, Canada"
+        },
+        {
+          "name": "Universit&eacute; de Montr&eacute;al, Canada"
+        },
+        {
+          "name": "Australian National University, Australia"
+        },
+        {
+          "name": "Biology Department, Universidad Autònoma de Madrid, Spain"
+        },
+        {
+          "name": "Midwestern University, United States"
+        },
+        {
+          "name": "Liverpool John Moores University, United Kingdom"
+        },
+        {
+          "name": "University of Pisa, Italy"
+        },
+        {
+          "name": "Chaffey College, United States"
+        },
+        {
+          "name": "University of Johannesburg, South Africa"
+        },
+        {
+          "name": "George Washington University, United States"
+        },
+        {
+          "name": "University of Colorado School of Medicine, United States"
+        },
+        {
+          "name": "Croatian Natural History Museum, Croatia"
+        },
+        {
+          "name": "University of Iowa, United States"
+        },
+        {
+          "name": "Lincoln Memorial University, United States"
+        },
+        {
+          "name": "Smithsonian Institution, United States"
+        },
+        {
+          "name": "Institute of Vertebrate Paleontology and Paleoanthropology, China"
+        }
+      ]
+    },
+    "download": "#articleDownloadLinksList",
+    "meta": {
+      "url": "#",
+      "text": "Research article",
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 10,
+          "month": "Sep",
+          "year": 2015
+        },
+        "forMachine": "2015-09-10"
+      }
+    }
+  },
+  "contextualData": {
+    "metricsData": {
+      "data": [
+        {
+          "name": "views",
+          "value": 149
+        },
+        {
+          "name": "cited",
+          "value": 5
+        },
+        {
+          "name": "comments",
+          "value": 12,
+          "elementId": "someDocumentLevelUniqueId"
+        }
+      ]
+    },
+    "citation": {
+      "citeAs": "eLife 2016;5:e16370",
+      "doi": {
+        "class": "contextual-data__doi",
+        "doi": "10.7554/eLife.16370",
+        "isTruncated": true
+      }
+    }
+  },
+  "viewSelector": {
+    "articleUrl": "#articleUrl",
+    "figureUrl": "#figureUrl",
+    "jumpLinks": {
+      "links": [
+        {
+          "name": "Abstract",
+          "url": "#abstract"
+        },
+        {
+          "name": "eLife digest",
+          "url": "#digest"
+        },
+        {
+          "name": "Introduction",
+          "url": "#introduction"
+        },
+        {
+          "name": "Results",
+          "url": "#results"
+        },
+        {
+          "name": "Discussion",
+          "url": "#discussion"
+        },
+        {
+          "name": "Materials & methods",
+          "url": "#materials-and-methods"
+        },
+        {
+          "name": "References",
+          "url": "#references"
+        }
+      ]
+    }
+  },
+  "assets": [
+    {
+      "id": "fig1",
+      "variant": "figure",
+      "label": "Figure 1",
+      "supplementCount": 2,
+      "hasMultipleSupplements": true,
+      "captionedAsset": {
+        "captionText": {
+          "heading": "Perturbation of Hh signaling affects gene expression in the cephalic ganglia.",
+          "text": "<p>(<b>A</b>–<b>B</b>) Double fluorescent RNA in situ hybridization (FISH) for <i>hh</i> (magenta) and neuronal markers (<b>A</b>) <i>pc2</i> or (<b>B</b>) <i>chat</i> (green) in wild-type animals. Main panels show cephalic ganglia. Lower panels show high magnification images of, from left to right, <i>hh</i> (magenta), <i>pc2</i> or <i>chat</i> (green), DAPI (gray), and merged channels from a representative double-positive neuron. (<b>C</b>) Excision of cephalic ganglia tissue from acid-killed animals for RNA isolation. The&nbsp;left panel shows incision in the&nbsp;dorsal epidermis. Middle panel shows detail of the&nbsp;boxed region in the&nbsp;left panel after removal of dorsal epidermis. The&nbsp;right panel shows the&nbsp;detail of the&nbsp;boxed region in the&nbsp;middle panel after removal of gut tissue overlying the cephalic ganglia and ventral nerve cords. Abbreviations: inc, incision; gut, gut branches; phx, pharynx; CG, cephalic ganglia; VNC, ventral nerve cords. See methods for dissection protocol. (<b>D</b>) Representative image of amputation used to collect tissue for generating the head fragment Illumina libraries. Circle indicates the&nbsp;portion of the&nbsp;animal taken for RNA isolation. (<b>E</b>) Bar graph depicting log<sub>2</sub> fold enrichment of selected markers in cephalic ganglia transcriptome over the&nbsp;head fragment transcriptome. Experimentally-verified neural markers and non-neural markers identified by brackets. Average log<sub>2</sub> fold enrichment of all 7 CNS genes listed in Figure 1—source data 2 in cephalic ganglia transcriptome is 2.57. Average log<sub>2</sub> fold depletion of all 22 non-CNS genes listed in Figure 1—source data 2 in cephalic ganglia transcriptome is 1.22. Statistically significant log<sub>2</sub> fold change indicated by asterisks (*p<sub>adj</sub>≤0.05, **p<sub>adj</sub>≤0.001). For a list of all analyzed genes, see Figure 1—source data 1. (<b>F</b>) Bar graph depicting log<sub>2</sub> fold enrichment of transcript expression level in the&nbsp;cephalic ganglia tissue of <i>hh(RNAi)</i> animals (blue bars) or <i>ptc(RNAi)</i> animals (red bars) over cephalic ganglia tissue from <i>control(RNAi)</i> animals. (<b>G</b>) Intersection of CNS-enriched genes (n = 2237) and Hh-dependent genes (n = 30) reveals 7 CNS genes misregulated following Hh pathway perturbation. Bar graph shows CNS enrichment (green bar) and relative expression following RNAi of <i>hh</i> (blue bar) or <i>ptc</i> (red bar) for <i>if-1</i> and <i>cali</i> (*p<sub>adj</sub>≤0.05, **p<sub>adj</sub>≤ 0.01). (<b>H</b>–<b>I</b>) WISH for (<b>H</b>) <i>if-1</i> and (<b>I</b>) <i>cali</i>. Dorsal surface shown on left, ventral surface shown on the&nbsp;right. Anterior up, maximum intensity projection of the&nbsp;ventral domain shown for <b>A</b>, <b>B</b>. Anterior up for <b>H</b>, <b>I</b>. Scale bars: 50&nbsp;um for overviews, 10&nbsp;um for insets for <b>A</b>, <b>B</b>; 500&nbsp;um for <b>H</b>, <b>I</b>.</p>"
+        },
+
+        "image": {
+          "srcset": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2-480w.jpg 480w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2-742w.jpg 742w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2-972w.jpg 972w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2-1484w.jpg 1484w",
+          "defaultPath": "https://placehold.it/90x90",
+          "altText": "Meaningful alt text here please."
+        },
+
+        "doi": {
+          "doi": "10.7554/eLife.16996.002",
+          "variant": "asset"
+        }
+
+      },
+
+      "open": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2.jpg"
+    },
+
+    {
+      "id": "fig1s1",
+      "variant": "supplement",
+      "label": "Figure 1—figure supplement 1",
+      "isSupplement": true,
+      "parentId": "fig1",
+      "supplementOrdinal": 1,
+      "captionedAsset": {
+        "captionText": {
+          "heading": "Analysis of RNA-seq libraries.",
+          "text": "<p>(<b>A</b>) Volcano plot of differential expression between head fragment transcriptome and cephalic ganglia transcriptome. Dots represent the magnitude of differential expression versus the significance for each gene with an average RPKM over 100. A&nbsp;horizontal dotted line indicates significance cutoff and vertical lines indicate the&nbsp;differential expression magnitude cutoff. Number of genes significantly enriched (purple dots) or depleted (blue dots) in cephalic ganglia tissue listed in the upper right and left corners, respectively. (<b>B</b>) Column scatter plot of differential expression of neural markers between conditions. Each dot represents one neural marker. The&nbsp;solid red line indicates mean log<sub>2</sub> fold change of all analyzed neural markers for each condition.</p>"
+        },
+
+        "image": {
+          "srcset": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp1-v2-480w.jpg 480w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp1-v2-742w.jpg 742w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp1-v2-972w.jpg 972w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp1-v2-1484w.jpg 1484w",
+          "defaultPath": "https://placehold.it/90x90",
+          "altText": "Meaningful alt text here please."
+        },
+
+        "doi": {
+          "doi": "10.7554/eLife.16996.007",
+          "variant": "asset"
+        }
+
+      },
+
+      "open": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp1-v2.jpg"
+    },
+
+    {
+      "id": "fig1s2",
+      "variant": "supplement",
+      "label": "Figure 1—figure supplement 2",
+      "isSupplement": true,
+      "parentId": "fig1",
+      "supplementOrdinal": 2,
+      "captionedAsset": {
+        "captionText": {
+          "heading": "Hh signaling pathway perturbation does not affect regional expression of transcription factors in the central nervous system.",
+          "text": "<p>FISH of orthologs of vertebrate CNS development transcription factors following perturbation of Hh signaling pathway components. Schematic indicates a&nbsp;region of the animal displayed in images. Inhibition of <i>hh</i> (center column) or <i>ptc</i> (right column) shows no change in the&nbsp;expression pattern of <i>nkx2</i> (top row), <i>nkx6</i> (middle row), or <i>pax6b</i> (bottom row) from controls (left column). Anterior up, maximum intensity projection of ventral&nbsp;side&nbsp;shown. Scale bars: 100&nbsp;um for all.</p>"
+        },
+
+        "image": {
+          "srcset": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp2-v2-480w.jpg 480w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp2-v2-742w.jpg 742w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp2-v2-972w.jpg 972w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp2-v2-1484w.jpg 1484w",
+          "defaultPath": "https://placehold.it/90x90",
+          "altText": "Meaningful alt text here please."
+        },
+
+        "doi": {
+          "doi": "10.7554/eLife.16996.008",
+          "variant": "asset"
+        }
+
+      },
+
+      "open": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp2-v2.jpg"
+    }
+  ],
+  "pl-only-article-section-for-download-links": {
+    "title": "Article download links",
+    "downloadLinks": {
+      "description": "A three part list of links to download the article, or parts of the article, in various formats.",
+      "groups": [
+        {
+          "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF)</span>",
+          "items": [
+            {
+              "name": "Article",
+              "url": "#"
+            },
+            {
+              "name": "Figures",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "title": "Download citations<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
+          "items": [
+            {
+              "name": "BibTex",
+              "url": "#"
+            },
+            {
+              "name": "RIS",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
+          "items": [
+            {
+              "name": "Mendeley",
+              "url": "#"
+            },
+            {
+              "name": "ReadCube",
+              "url": "#"
+            },
+            {
+              "name": "Papers App",
+              "url": "#"
+            },
+            {
+              "name": "CiteUlike",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "mainMenu": {
+    "links": {
+      "items": [
+        {
+          "name": "Research categories",
+          "url": "#res"
+        },
+        {
+          "name": "Author guide",
+          "url": "#aut"
+        },
+        {
+          "name": "Reviewer guide",
+          "url": "#rev"
+        },
+        {
+          "name": "About",
+          "url": "#abo"
+        },
+        {
+          "name": "Inside eLife",
+          "url": "#ins"
+        },
+        {
+          "name": "Careers",
+          "url": "#car"
+        },
+        {
+          "name": "Labs",
+          "url": "#lab"
+        }
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+  "footerMenuLinks": [
+    {
+      "name": "About",
+      "url": "#"
+    },
+    {
+      "name": "Who we work with",
+      "url": "#"
+    },
+    {
+      "name": "Alerts",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Terms and policy",
+      "url": "#"
+    },
+    {
+      "name": "Inside eLife",
+      "url": "#"
+    },
+    {
+      "name": "Monthly archive",
+      "url": "#"
+    },
+    {
+      "name": "Labs",
+      "url": "#"
+    },
+    {
+      "name": "For the press",
+      "url": "#"
+    },
+    {
+      "name": "Resources",
+      "url": "#"
+    }
+  ],
+  "furtherReading": {
+    "id": "idOfListElementToLoadContentInTo",
+    "heading": "Further reading",
+    "items": [
+      {
+        "item": {
+          "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
+          "longTitle": true,
+          "hasSubjects": true,
+          "subjects": [
+            {
+              "name": "Cell Biology",
+              "url": "#"
+            },
+            {
+              "name": "Epidemiology and global health",
+              "url": "#"
+            }
+          ],
+          "authorLine": "Lee R Berger et al",
+          "meta": {
+            "url": "#",
+            "text": "Research article",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 10,
+                "month": "Sep",
+                "year": 2015
+              },
+              "forMachine": "2015-09-10"
+            }
+          }
+        },
+        "content": "<p>Optimal decision-making requires balancing fast but error-prone and more accurate but slower decisions through adjustments of decision thresholds. Here, we demonstrate two distinct correlates of such speed-accuracy adjustments by recording subthalamic nucleus (STN) activity and electroencephalography in 11 Parkinson’s disease patients during a perceptual decision-making task; STN low-frequency oscillatory (LFO) activity (2–8 Hz), coupled to activity at prefrontal electrode Fz, and STN beta activity (13–30 Hz) coupled to electrodes C3/C4 close to motor cortex. These two correlates differed not only in their cortical topography and spectral characteristics but also in the relative timing of recruitment and in their precise relationship with decision thresholds. Increases of STN LFO power preceding the response predicted increased thresholds only after accuracy instructions, while cue-induced reductions of STN beta power decreased thresholds irrespective of instructions. These findings indicate that distinct neural mechanisms determine whether a decision will be made in haste or with caution.</p>"
+      },
+      {
+        "item": {
+          "title": "Physical determinants of vesicle mobility and supply at a central synapse",
+          "longTitle": true,
+          "hasSubjects": true,
+          "subjects": [
+            {
+              "name": "Cell Biology",
+              "url": "#"
+            },
+            {
+              "name": "Epidemiology and global health",
+              "url": "#"
+            }
+          ],
+          "authorLine": "Lee R Berger et al",
+          "meta": {
+            "url": "#",
+            "text": "Research article",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 10,
+                "month": "Sep",
+                "year": 2015
+              },
+              "forMachine": "2015-09-10"
+            }
+          }
+        },
+        "content": "<p>Optimal decision-making requires balancing fast but error-prone and more accurate but slower decisions through adjustments of decision thresholds.</p>"
+      }
+    ],
+    "pagination": {
+      "targetId": "idOfListElementToLoadContentInTo",
+      "nextPage": {
+        "text": "Load more",
+        "classes": "button--default button--full",
+        "path": "?page=2"
+      }
+    }
+  },
+  "year": 2016
+}

@@ -27,7 +27,7 @@ module.exports = () => {
           return $parent.firstElementChild;
 
         } else if (typeof attachBefore === 'string') {
-          return document.querySelector(attachBefore);
+          return $parent.querySelector(attachBefore);
 
         } else if (attachBefore instanceof HTMLElement) {
           return attachBefore;
