@@ -17,7 +17,11 @@ module.exports = class AssetNavigation {
       let show = 0;
 
       [].forEach.call(this.assetItems, (assetItem, i) => {
-        const navigation = utils.buildElement('div', ['asset-viewer-inline__header_navigation'], '', assetItem.querySelector('.asset-viewer-inline__header_panel'), '.asset-viewer-inline__header_text');
+        const navigation = utils.buildElement('div',
+                                              ['asset-viewer-inline__header_navigation'],
+                                              '',
+                                              assetItem.querySelector('.asset-viewer-inline__header_panel'),
+                                              '.asset-viewer-inline__header_text');
 
         if (assetItem.id === hash) {
           show = i;

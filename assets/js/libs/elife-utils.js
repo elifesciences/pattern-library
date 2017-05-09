@@ -328,7 +328,11 @@ module.exports = () => {
     let i;
     do {
       i = matches.length;
+
+      // jscs:disable disallowEmptyBlocks
       while (--i >= 0 && matches.item(i) !== el) {} // jshint ignore:line
+
+      // jscs:enable disallowEmptyBlocks
     } while ((i < 0) && (el = el.parentElement));
 
     return el;
@@ -418,6 +422,7 @@ module.exports = () => {
       event = document.createEvent(name);
       event.initCustomEvent(name, true, true, { detail });
     }
+
     return event;
   }
 
@@ -426,10 +431,12 @@ module.exports = () => {
     if (document.querySelector(`#${id}`)) {
       return;
     }
+
     const $overlay = buildElement('div', ['overlay', 'hidden'], '', $parent, $followingSibling);
     if (id) {
       $overlay.id = id;
     }
+
     return $overlay;
   }
 
