@@ -1,5 +1,8 @@
 {
   "year": 2016,
+    "listHeading": {
+      "heading": "Menu"
+   },
   "links": {
     "items": [
       {"name": "Research categories", "url": "#res"},

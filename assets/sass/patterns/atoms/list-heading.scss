@@ -8,3 +8,25 @@
   margin-bottom: 0;
   text-transform: uppercase;
 }
+
+.main-menu .list-heading {
+  @include padding(24 0);
+  text-align: center;
+}
+
+.js .main-menu .list-heading {
+  @include visuallyhidden();
+}
+
+.section-listing-wrapper .list-heading {
+  @include padding(24 0 0);
+  text-align: center;
+}
+
+@media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
+
+  .js .section-listing-wrapper .list-heading {
+    @include visuallyhidden();
+  }
+
+}

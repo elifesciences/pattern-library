@@ -91,6 +91,7 @@
       ]
     },
     "searchBox": {
+      "inContentHeader": true,
       "compactForm": {
         "formAction": "/search",
         "formId": "searchBox",
@@ -608,6 +609,9 @@
     }
   },
   "mainMenu": {
+    "listHeading": {
+      "heading": "Menu"
+    },
     "links": {
       "items": [
         {
