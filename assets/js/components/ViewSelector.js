@@ -31,6 +31,7 @@ module.exports = class ViewSelector {
 
       this.insertSideBySideListItem();
     }
+
     this.mainTarget = this.doc.querySelector('.main');
 
     // matches top padding in scss
