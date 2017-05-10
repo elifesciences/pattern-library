@@ -23,7 +23,7 @@ a.reference__title:hover {
 .reference__author {
   @include listing-side-author-typeg();
   @include font-size(14);
-  line-height:  1.714285714; /* 24px with 14px font size */
+  line-height: 1.714285714; /* 24px with 14px font size */
   display: inline;
   margin: 0;
   padding: 0;

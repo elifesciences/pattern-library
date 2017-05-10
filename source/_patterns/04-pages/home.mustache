@@ -1,10 +1,13 @@
 <div class="global-wrapper">
   <div class="global-inner">
-    {{#siteHeader}}
-      {{> organisms-site-header }}
-    {{/siteHeader}}
 
-    <main role="main" class="blg-margin-bottom-large">
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+
+    <main role="main" class="main blg-margin-bottom-large">
 
       {{#carousel}}
         {{> organisms-carousel}}
@@ -30,7 +33,7 @@
 
 
       {{#sectionsListing}}
-        <div class="wrapper">
+        <div class="wrapper u-pad-top-lg">
           {{> molecules-section-listing}}
         </div>
       {{/sectionsListing}}

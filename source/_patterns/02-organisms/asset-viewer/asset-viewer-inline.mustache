@@ -2,7 +2,7 @@
     id="{{id}}"
     class="asset-viewer-inline asset-viewer-inline--{{variant}} {{#classes}}{{classes}}{{/classes}}"
     data-variant="{{variant}}"
-    data-behaviour="AssetViewer"
+    data-behaviour="{{^isSupplement}}AssetNavigation{{/isSupplement}} AssetViewer"
   {{#isSupplement}}
     data-parent-asset-id="{{parentId}}"
     data-supplement-ordinal="{{supplementOrdinal}}"
@@ -11,7 +11,7 @@
 
   <div class="asset-viewer-inline__header_panel">
       <div class="asset-viewer-inline__header_text">
-        <span class="asset-viewer-inline__header_text__prominent">{{label}}</span>{{#supplementCount}} with {{supplementCount}} supplement{{#hasMultipleSupplements}}s{{/hasMultipleSupplements}} <a href="{{figuresPageFragLink}}" class="asset-viewer-inline__header_link">see all</a>{{/supplementCount}}
+        <span class="asset-viewer-inline__header_text__prominent">{{label}}</span>{{#supplementCount}} with {{supplementCount}} supplement{{#hasMultipleSupplements}}s{{/hasMultipleSupplements}} {{#seeAllLink}}<a href="{{seeAllLink}}" class="asset-viewer-inline__header_link">see all</a>{{/seeAllLink}}{{/supplementCount}}
       </div>
 
 

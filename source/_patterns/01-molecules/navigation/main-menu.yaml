@@ -1,6 +1,7 @@
 assets:
   css:
     - main-menu.css
+    - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -24,8 +25,8 @@ schema:
           minItems: 1
       required:
         - items
-    button:
-      $ref: ../../00-atoms/components/button.yaml#/schema
+    listHeading:
+      $ref: ../../00-atoms/components/list-heading.yaml#/schema
   required:
     - links
-    - button
+    - listHeading

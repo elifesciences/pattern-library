@@ -1,14 +1,5 @@
 @import "../../definitions";
 
-.main-menu {
-  background-color: $color-text-ui-background--reverse;
-  color: $color-text-ui-background;
-}
-
-.main-menu__container {
-  @include padding(23 24 23);
-}
-
 .main-menu__section {
   @include padding(15, "bottom");
 }
@@ -27,20 +18,29 @@
 }
 
 .main-menu__list_item {
-  @include nav-page-typeg();
-  margin: 0;
-  @include padding(5 0);
-  text-align: center;
-  width: 100%;
+  @include dismissible_navigation();
+  border-top: 1px solid $color-text-dividers;
+  display: block;
+  @include padding($blg-space-extra-small-in-px - 1 0 $blg-space-extra-small-in-px 0);
 }
 
 .main-menu__list_link {
-  color: $color-text-ui-background;
+  color: $color-text;
   text-decoration: none;
 }
 
-.main_menu__quit {
-  border-radius: 0;
+.main-menu__close_control {
+  background: $color-text--reverse url("../img/icons/close-1x.png") no-repeat;
+  background: url("../img/icons/close.svg") center right / 14px 14px no-repeat, linear-gradient(transparent, transparent);
+  border: none;
+  color: $color-text;
+  @include dismissible_navigation();
+  display: block;
+  @include padding($blg-space-extra-small-in-px - 1 $blg-space-small-in-px $blg-space-extra-small-in-px 0);
+  position: relative;
+  left: -#{$blg-space-small-in-px}px;
+  text-align: right;
+  width: 100%;
 }
 
 .main-menu--js {
@@ -51,26 +51,34 @@
   }
 
   .main-menu__list_item {
+    @include padding(0 24);
     text-align: left;
   }
 
+  .main-menu__list_link {
+    background-color: $color-text--reverse;
+    color: $color-text;
+  }
+
   &.main-menu--shown {
+    background-color: $color-text--reverse;
+    color: $color-text;
     display: block;
     float: left;
     left: -3000px;
     height: 100vh;
-    width: #{get-rem-from-px(200)}rem;
+    width: #{get-rem-from-px(280)}rem;
     max-width: 90vw;
     overflow: auto;
     position: fixed;
     transform: translate3d(3000px, 0, 0);
-    z-index: 10;
+    z-index: 40;
 
-    & + .global-inner {
-      float: left;
-      transform: translate3d(200px, 0, 0);
-      width: calc(100% - 200px);
+    .main-menu__list_item {
+      @include padding($blg-space-extra-small-in-px - 1, "top");
+      @include padding($blg-space-extra-small-in-px, "bottom");
     }
+
   }
 
   .main_menu__quit {

@@ -64,7 +64,7 @@ $arrow-size: 5;
 
 .article-section__header_link:after {
   display: block;
-  @include arrow("up", $arrow-size);
+  @include arrow("down", $arrow-size);
   @include height($arrow-size);
   position: absolute;
   right: 0;
@@ -78,7 +78,7 @@ $arrow-size: 5;
 }
 
 .article-section__header_link--closed:after {
-  transform: rotate(180deg);
+  transform: rotate(-90deg);
   @include margin(0 1 0 0);
   top: 0;
 }
