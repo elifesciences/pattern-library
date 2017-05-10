@@ -57,14 +57,7 @@ a.reference__authors_link:hover {
   padding-bottom: 0;
 
   & a {
-    color: $color-primary;
-    text-decoration: none;
-
-    &:hover,
-    &:active {
-      color: $color-primary-dark;
-    }
-
+    @include discreet-link();
   }
 }
 
