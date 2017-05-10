@@ -7,6 +7,7 @@
     data-parent-asset-id="{{parentId}}"
     data-supplement-ordinal="{{supplementOrdinal}}"
   {{/isSupplement}}
+    data-asset-viewer-group="{{^isSupplement}}{{id}}{{/isSupplement}}{{#isSupplement}}{{parentId}}{{/isSupplement}}"
 >
 
   <div class="asset-viewer-inline__header_panel">

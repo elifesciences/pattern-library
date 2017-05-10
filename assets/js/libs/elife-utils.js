@@ -369,6 +369,7 @@ module.exports = () => {
       script.addEventListener('load', () => {
         resolve(script);
       }, false);
+
       script.addEventListener('error', () => {
         reject(script);
       }, false);
@@ -391,6 +392,7 @@ module.exports = () => {
       link.addEventListener('load', function () {
         resolve(link);
       }, false);
+
       link.addEventListener('error', function () {
         reject(link);
       }, false);
