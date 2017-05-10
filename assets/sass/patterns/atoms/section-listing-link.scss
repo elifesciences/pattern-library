@@ -13,6 +13,11 @@
   text-align: center;
   text-decoration: none;
   width: 100%;
+
+  // Needs specificity to override display property when unhidden
+  &.hidden {
+    @include hidden();
+  }
 }
 
 .section-listing-link:hover,
