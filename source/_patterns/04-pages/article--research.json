@@ -91,6 +91,7 @@
       ]
     },
     "searchBox": {
+      "inContentHeader": true,
       "compactForm": {
         "formAction": "/search",
         "formId": "searchBox",
@@ -608,6 +609,9 @@
     }
   },
   "mainMenu": {
+    "listHeading": {
+      "heading": "Menu"
+    },
     "links": {
       "items": [
         {
@@ -744,15 +748,15 @@
           "longTitle": true,
           "hasSubjects": true,
           "subjects": [
-              {
-                "name": "Cell Biology",
-                "url": "#"
-              },
-              {
-                "name": "Epidemiology and global health",
-                "url": "#"
-              }
-            ],
+            {
+              "name": "Cell Biology",
+              "url": "#"
+            },
+            {
+              "name": "Epidemiology and global health",
+              "url": "#"
+            }
+          ],
           "authorLine": "Lee R Berger et al",
           "meta": {
             "url": "#",

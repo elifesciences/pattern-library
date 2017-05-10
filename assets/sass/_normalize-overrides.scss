@@ -46,6 +46,11 @@ p {
   @include body-para();
 }
 
+a {
+  color: $color-primary;
+  text-decoration: none;
+}
+
 .underline {
   text-decoration: underline;
 }
@@ -176,6 +181,10 @@ address {
   content: "";
   display: block;
   clear: both;
+}
+
+main {
+  border-top: 1px solid $color-text-dividers;
 }
 
 img {

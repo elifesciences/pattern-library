@@ -111,7 +111,7 @@ gulp.task('sass:lint', ['sass:clean'], () => {
     // Pretty reporting config
     reporter({
       clearMessages: true,
-      // throwError: true
+      throwError: true
     })
   ];
 
@@ -229,13 +229,15 @@ gulp.task('js:extLibs', ['js:clean'], () => {
 gulp.task('js:hint', () => {
   return gulp.src(jsSource)
      .pipe(jshint())
-     .pipe(jshint.reporter('default'));
+     .pipe(jshint.reporter('default'))
+     .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('js:cs', () => {
   return gulp.src(jsSource)
     .pipe(jscs())
-    .pipe(jscs.reporter());
+    .pipe(jscs.reporter())
+    .pipe(jscs.reporter('fail'));
 });
 
 gulp.task('browserify-tests', (done) => {
@@ -303,7 +305,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/pager.html'});
+    browserSync({proxy: 'localhost:8080', startPath: 'test/siteheader.html'});
   } else {
     return gutil.noop;
   }

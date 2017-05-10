@@ -27,7 +27,6 @@ module.exports = class Highlights {
     this.window.addEventListener('resize', utils.debounce(() => this.switchBreakpoint(), 150));
     this.margin = this.calculateMargin() * 2;
 
-    let body = document.querySelector('body');
     this.$elm.addEventListener('keyup', this.checkTabPress.bind(this));
   }
 

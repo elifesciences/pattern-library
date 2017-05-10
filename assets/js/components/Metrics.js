@@ -284,7 +284,7 @@ class Metrics {
     });
   }
 
-  log(...args) {
+  log(/* ...args */) {
 
     // console.info('—>', ...args);
   }
