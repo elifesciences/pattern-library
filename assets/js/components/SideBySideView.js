@@ -41,7 +41,7 @@ module.exports = class SideBySideView {
 
     this.$iframe = this.doc.querySelector('.side-by-side-view__iframe');
     if (!this.$iframe) {
-      this.$iframe = this.createIframe(this.src);
+      this.$iframe = SideBySideView.createIframe(this.src);
       this.doc.querySelector('body').appendChild(this.$iframe);
     } else {
       this.$iframe.classList.remove('hidden');
@@ -67,27 +67,27 @@ module.exports = class SideBySideView {
 
   saveScrollingPosition() {
     this.currentYScrollPos = this.window.pageYOffset;
-    window.scroll(0, 0);
+    this.window.scroll(0, 0);
   }
 
   restoreScrollingPosition() {
-    window.scroll(0, this.currentYScrollPos);
+    this.window.scroll(0, this.currentYScrollPos);
     this.currentYScrollPos = null;
   }
 
   hideEverythingButHeader() {
-    this.eachButHeader((node) => {
-      node.classList.add('hidden');
+    this.eachButHeader((element) => {
+      element.classList.add('hidden');
     });
   }
 
   showEverything() {
-    this.eachButHeader((node) => {
-      node.classList.remove('hidden');
+    this.eachButHeader((element) => {
+      element.classList.remove('hidden');
     });
   }
 
-  createIframe(src) {
+  static createIframe(src) {
     const iframe = utils.buildElement('iframe', ['side-by-side-view__iframe']);
     iframe.src = src;
     return iframe;
