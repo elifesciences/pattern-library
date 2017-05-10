@@ -20,6 +20,7 @@ module.exports = class ContentHeader {
     if (this.authors.length > 0) {
       this.authors[this.authors.length - 1].classList.add('content-header__author_list_item--last');
     }
+
     if (this.institutions.length > 0) {
       this.institutions[this.institutions.length - 1].classList.add('content-header__institution_list_item--last');
     }
@@ -28,8 +29,6 @@ module.exports = class ContentHeader {
     this.hasToggleInstitution = false;
     this.hideAllExcessItems('author', this.authors);
     this.hideAllExcessItems('institution', this.institutions);
-
-    let _this = this;
   }
 
   handleAnyExcessItems(itemType, items) {
@@ -146,7 +145,8 @@ module.exports = class ContentHeader {
     [].forEach.call(items, function (item, i) {
 
       // Clear old any obsolete determination of what's the last non-excess item.
-      items[i].querySelector('.content-header__' + itemType).classList.remove('content-header__' + itemType + '--last-non-excess');
+      items[i].querySelector('.content-header__' + itemType)
+              .classList.remove('content-header__' + itemType + '--last-non-excess');
       if (item.classList.contains('excess-item') && !foundLastShown) {
         lastShownIndex = i - 1;
         foundLastShown = true;

@@ -28,13 +28,13 @@ module.exports = class SectionListingLink {
 
   hideElm() {
 
-    this.$elm.classList.add('visuallyhidden');
+    this.$elm.classList.add('hidden');
 
   }
 
   showElm() {
 
-    this.$elm.classList.remove('visuallyhidden');
+    this.$elm.classList.remove('hidden');
 
   }
 

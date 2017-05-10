@@ -2,6 +2,9 @@
     id="{{id}}"
     class="asset-viewer-inline asset-viewer-inline--{{variant}} {{#classes}}{{classes}}{{/classes}}"
     data-variant="{{variant}}"
+  {{^isSupplement}}
+    data-behaviour="AssetNavigation"
+  {{/isSupplement}}
   {{#isSupplement}}
     data-parent-asset-id="{{parentId}}"
     data-supplement-ordinal="{{supplementOrdinal}}"

@@ -99,6 +99,7 @@
     },
 
     "searchBox": {
+      "inContentHeader": true,
       "compactForm": {
         "formAction": "/search",
         "formId": "searchBox",
@@ -258,6 +259,9 @@
   "sectionsListing": {
     "id": "sectionsListing",
     "labelledBy": "theIdOfTheLeadParaAssumingThisIsTheHomePage",
+    "listHeading": {
+      "heading": "Major subject areas"
+    },
     "sections": [
       {
         "url": "#",
@@ -324,6 +328,9 @@
 
 
   "mainMenu":{
+    "listHeading": {
+      "heading": "Menu"
+    },
     "links": {
       "items": [
         {"name": "Research categories", "url": "#res"},

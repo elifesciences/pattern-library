@@ -27,7 +27,7 @@ module.exports = () => {
           return $parent.firstElementChild;
 
         } else if (typeof attachBefore === 'string') {
-          return document.querySelector(attachBefore);
+          return $parent.querySelector(attachBefore);
 
         } else if (attachBefore instanceof HTMLElement) {
           return attachBefore;
@@ -271,7 +271,7 @@ module.exports = () => {
   /**
    * Debounce
    */
-  function debounce(callback, wait, context = this) {
+  function debounce(callback, wait, context = this) { // jshint ignore:line
     let timeout = null;
     let callbackArgs = null;
 
@@ -328,8 +328,11 @@ module.exports = () => {
     let i;
     do {
       i = matches.length;
-      while (--i >= 0 && matches.item(i) !== el) {}
 
+      // jscs:disable disallowEmptyBlocks
+      while (--i >= 0 && matches.item(i) !== el) {} // jshint ignore:line
+
+      // jscs:enable disallowEmptyBlocks
     } while ((i < 0) && (el = el.parentElement));
 
     return el;
@@ -419,7 +422,22 @@ module.exports = () => {
       event = document.createEvent(name);
       event.initCustomEvent(name, true, true, { detail });
     }
+
     return event;
+  }
+
+  function create$pageOverlay($parent, $followingSibling, id) {
+    // element already exists
+    if (document.querySelector(`#${id}`)) {
+      return;
+    }
+
+    const $overlay = buildElement('div', ['overlay', 'hidden'], '', $parent, $followingSibling);
+    if (id) {
+      $overlay.id = id;
+    }
+
+    return $overlay;
   }
 
   return {
@@ -427,6 +445,7 @@ module.exports = () => {
     areElementsNested: areElementsNested,
     buildElement: buildElement,
     closest: closest,
+    create$pageOverlay: create$pageOverlay,
     debounce: debounce,
     equalizeHeightOfItems: equalizeHeightOfItems,
     eventCreator: eventCreator,
