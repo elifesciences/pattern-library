@@ -2,7 +2,7 @@
 
   {{#picture}}
     {{#open}}
-    <a href="{{open}}" class="captioned-asset__link" target="_blank" rel="noopener noreferrer">
+    <a href="{{uri}}" class="captioned-asset__link" target="_blank" rel="noopener noreferrer">
     {{/open}}
     {{> atoms-picture }}
     {{#open}}
@@ -12,7 +12,7 @@
 
   {{#image}}
     {{#open}}
-    <a href="{{open}}" class="captioned-asset__link" target="_blank" rel="noopener noreferrer">
+    <a href="{{uri}}" class="captioned-asset__link" target="_blank" rel="noopener noreferrer">
     {{/open}}
     <img src="{{defaultPath}}"
          alt="{{altText}}"{{#srcset}}

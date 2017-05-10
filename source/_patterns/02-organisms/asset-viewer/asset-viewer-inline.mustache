@@ -8,6 +8,11 @@
     data-supplement-ordinal="{{supplementOrdinal}}"
   {{/isSupplement}}
     data-asset-viewer-group="{{^isSupplement}}{{id}}{{/isSupplement}}{{#isSupplement}}{{parentId}}{{/isSupplement}}"
+    {{#open}}
+    data-asset-viewer-uri="{{uri}}"
+    data-asset-viewer-width="{{width}}"
+    data-asset-viewer-height="{{height}}"
+    {{/open}}
 >
 
   <div class="asset-viewer-inline__header_panel">

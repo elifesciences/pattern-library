@@ -22,12 +22,11 @@ module.exports = class AssetViewer {
     const assets = this.findAssets();
     [].forEach.call(assets, (asset, i) => {
       const caption = asset.querySelector('.caption-text__heading');
-      const image = asset.querySelector('img');
 
       let item = {
-        src: image.currentSrc,
-        w: image.naturalWidth,
-        h: image.naturalHeight,
+        src: asset.dataset.assetViewerUri,
+        w: asset.dataset.assetViewerWidth,
+        h: asset.dataset.assetViewerHeight,
       };
 
       if (caption) {
