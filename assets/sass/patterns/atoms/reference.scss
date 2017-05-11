@@ -54,6 +54,8 @@ a.reference__authors_link:hover {
 
 .reference__origin {
   @include small-typeg();
+  @include font-size(14);
+  line-height: 1.7142857143;
   padding-bottom: 0;
 
   & a {
@@ -69,6 +71,8 @@ a.reference__authors_link:hover {
 .reference__abstract {
   display: inline;
   @include small-typeg();
+  @include font-size(14);
+  line-height: 1.7142857143;
 }
 
 .reference__abstract_link {
