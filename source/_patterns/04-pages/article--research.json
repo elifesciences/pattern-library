@@ -438,6 +438,7 @@
   "viewSelector": {
     "articleUrl": "#articleUrl",
     "figureUrl": "#figureUrl",
+    "sideBySideUrl": "https://lens.elifesciences.org/09560",
     "jumpLinks": {
       "links": [
         {
