@@ -1,16 +1,18 @@
 @import "../../definitions";
 
-.decision-letter-header__main_text,
+.decision-letter-header__main_text {
+  @include margin(24, "bottom");
+}
+
 .decision-letter-header__main_text * {
-  @include small-typeg();
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.decision-letter-header__main_text  p {
+  padding-bottom: 24px;
 }
 
 .decision-letter-header__main_text a {
-  color: $color-primary;
-  text-decoration: none;
-}
-
-.decision-letter-header__main_text a:hover,
-.decision-letter-header__main_text a:active {
-  color: $color-primary-dark;
+  @include discreet-link();
 }
