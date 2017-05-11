@@ -31,12 +31,10 @@
       "forMachine": "2015-09-10"
     }
   },
-
   "image": {
     "fallback": {
       "defaultPath": "https://unsplash.it/1114/336",
       "altText": ""
     }
   }
-
 }
