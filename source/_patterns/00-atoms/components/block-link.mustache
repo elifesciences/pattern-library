@@ -1,11 +1,24 @@
-<div class="block-link{{#variant}} block-link--{{variant}}{{/variant}}"{{#behaviour}} data-behaviour="{{behaviour}}"{{/behaviour}}
-  {{#backgroundImage}}
-  {{! data-invert-bgcol-on-hover moves the handling of the hover state from the css to the js, so it can cater for multiple background images with specific images. }}
-     data-invert-bgcol-on-hover
-     {{#thresholdWidth}}data-threshold-width="{{thresholdWidth}}"{{/thresholdWidth}}
-     data-low-res-image-source="{{lowResImageSource}}"
-     data-high-res-image-source="{{highResImageSource}}"
-  {{/backgroundImage}}>
+<div class="block-link{{#isGridListing}} block-link--grid-listing{{/isGridListing}}{{#image}} block-link--image{{/image}}">
+
+  {{#image}}
+    <div class="block-link__picture_wrapper">
+      <picture class="block-link__picture">
+        {{#sources}}
+          <source srcset="{{srcset}}"
+                  {{#type}}type="{{type}}"{{/type}}
+            {{#media}}media="{{media}}"{{/media}}>
+        {{/sources}}
+        {{#fallback}}
+          <img src="{{defaultPath}}"
+               {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+               alt="{{altText}}"
+               class="block-link__image"
+               sizes="(min-width: 600px) 263px, 100vw"
+          >
+        {{/fallback}}
+      </picture>
+    </div>
+  {{/image}}
 
   <a href="{{url}}"
      class="block-link__link">
