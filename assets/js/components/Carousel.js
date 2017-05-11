@@ -30,6 +30,10 @@ module.exports = class Carousel {
     this.currentSlide = 1;
     this.timerInterval = 10000;
 
+    [].forEach.call(this.originalSlideWrappers, (slide) => {
+      slide.insertAdjacentHTML('afterbegin', slide.dataset.image);
+    });
+
     this.updateButtonAppearance();
     this.$elm.appendChild(this.buildVisibleControls());
     this.$toggler = this.buildControl$toggle();

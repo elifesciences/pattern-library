@@ -1,22 +1,24 @@
-<li class="carousel-item">
+<li class="carousel-item" data-image="
 
   {{#image}}
-    <picture class="carousel-item__picture">
+    &lt;picture class='carousel-item__picture'&gt;
       {{#sources}}
-        <source srcset="{{srcset}}"
-                {{#type}}type="{{type}}"{{/type}}
-          {{#media}}media="{{media}}"{{/media}}>
+        &lt;source srcset='{{srcset}}'
+                {{#type}}type='{{type}}'{{/type}}
+          {{#media}}media='{{media}}'{{/media}}&gt;
       {{/sources}}
       {{#fallback}}
-        <img src="{{defaultPath}}"
-             {{#srcset}}srcset="{{srcset}}"{{/srcset}}
-             alt="{{altText}}"
-             class="carousel-item__image"
-             sizes="(min-width: 1114px) 1114px, 100vw"
-        >
+        &lt;img src='{{defaultPath}}'
+             {{#srcset}}srcset='{{srcset}}'{{/srcset}}
+             alt='{{altText}}'
+             class='carousel-item__image'
+             sizes='(min-width: 1114px) 1114px, 100vw'
+        &gt;
       {{/fallback}}
-    </picture>
+    &lt;/picture&gt;
   {{/image}}
+
+">
 
   {{#subjects}}
     <ol class="carousel-item__subject_list">
