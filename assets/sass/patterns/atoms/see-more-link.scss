@@ -2,9 +2,13 @@
 
 .see-more-link {
   display: block;
-  color: $color-primary;
+  color: $color-text;
   @include see-more-link-typeg();
   text-decoration: none;
+}
+
+.see-more-link__highlight {
+  color: $color-primary;
 }
 
 .see-more-link:hover {

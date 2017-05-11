@@ -292,3 +292,14 @@
   // z-index should be overridden as necessary
   z-index: 4;
 }
+
+@mixin discreet-link ($color: $color-text) {
+  border-bottom: 1px dotted $color;
+  color: $color;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom-color: $color-primary;
+    color: $color-primary;
+  }
+}

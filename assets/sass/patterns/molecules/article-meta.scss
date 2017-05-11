@@ -5,6 +5,19 @@
   @include blg-spacing("top", "medium", "padding");
   font-family: $font-secondary;
   text-align: center;
+
+  // Need the extra specificity here to override
+  .article-meta__link {
+    border-bottom: none;
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+
+  }
+
 }
 
 .article-meta__group_title {
@@ -32,15 +45,6 @@
 .article-meta__link_list_item:last-child {
   &:after {
     content: "";
-  }
-}
-
-.article-meta__link {
-  color: $color-primary;
-  text-decoration: none;
-
-  &:hover {
-    color: $color-primary-dark;
   }
 }
 

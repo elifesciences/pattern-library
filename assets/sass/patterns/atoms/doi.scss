@@ -5,6 +5,7 @@
 
   // Extra specificity needed to override: .article-section a
   a.doi__link {
+    border-bottom: none;
     color: $color-text-secondary;
     text-decoration: none;
     text-transform: none;
