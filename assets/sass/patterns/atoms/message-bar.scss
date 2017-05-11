@@ -2,7 +2,9 @@
 
 .message-bar {
   background-color: $color-text-ui-background-hue;
-  border-radius: 4px;
-  @include label-content-typeg($color-text-secondary);
-  @include padding(8 7);
+  border-radius: #{$border-radius}px;
+  @include font-size(14);
+  line-height: 1.7142857143; // 24px with 14px line height
+  @include padding($blg-space-extra-small-in-px);
+  @include margin(24, "bottom");
 }
