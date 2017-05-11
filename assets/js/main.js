@@ -16,6 +16,7 @@ if (window.localStorage && document.querySelector &&
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.ArticleSection = require('./components/ArticleSection');
   Components.AssetNavigation = require('./components/AssetNavigation');
+  Components.AssetViewer = require('./components/AssetViewer');
   Components.AudioPlayer = require('./components/AudioPlayer');
   Components.BackgroundImage = require('./components/BackgroundImage');
   Components.Carousel = require('./components/Carousel');

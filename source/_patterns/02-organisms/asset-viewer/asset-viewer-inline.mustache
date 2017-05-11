@@ -2,13 +2,17 @@
     id="{{id}}"
     class="asset-viewer-inline asset-viewer-inline--{{variant}} {{#classes}}{{classes}}{{/classes}}"
     data-variant="{{variant}}"
-  {{^isSupplement}}
-    data-behaviour="AssetNavigation"
-  {{/isSupplement}}
+    data-behaviour="{{^isSupplement}}AssetNavigation{{/isSupplement}} AssetViewer"
   {{#isSupplement}}
     data-parent-asset-id="{{parentId}}"
     data-supplement-ordinal="{{supplementOrdinal}}"
   {{/isSupplement}}
+    data-asset-viewer-group="{{^isSupplement}}{{id}}{{/isSupplement}}{{#isSupplement}}{{parentId}}{{/isSupplement}}"
+    {{#open}}
+    data-asset-viewer-uri="{{uri}}"
+    data-asset-viewer-width="{{width}}"
+    data-asset-viewer-height="{{height}}"
+    {{/open}}
 >
 
   <div class="asset-viewer-inline__header_panel">
