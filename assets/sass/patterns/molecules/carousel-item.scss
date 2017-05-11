@@ -1,30 +1,66 @@
 @import "../../definitions";
 
-.carousel-item__inner {
-
+.carousel-item {
+  list-style-type: none;
+  color: $color-text;
+  @include margin($content-header-padding, "bottom");
   @include constrain-width($max-site-width, "max");
+  @include padding(0 $content-header-padding);
+  position: relative;
+  text-align: center;
+  border: 1px solid $color-text-dividers;
 
   @supports (display: flex) {
-    display: flex;
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      width: calc(1 / 2 * 100% - (1 - 1 / 2) * #{$content-header-padding}px);
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      width: calc(1 / 3 * 100% - (1 - 1 / 3) * #{$content-header-padding}px);
+    }
+  }
+}
+
+.carousel-item__picture {
+  display: none;
+}
+
+.carousel-item__subject_list {
+  @include label-subject-typeg();
+  margin: 0;
+  .carousel-item__meta {
+    .carousel-item--image & {
+      position: absolute;
+      bottom: #{$content-header-padding / 2}px;
+      left: 0;
+      right: 0;
+    }
   }
 
-  background-color: transparent;
-  color: $color-text;
-  flex-direction: column;
-  max-width: 100%;
-  padding: 0;
-  text-align: center;
-  width: 100vw;
+  @include padding($content-header-padding/2 0);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
+  &:before {
+    color: $color-text-secondary;
+  }
 }
 
 .carousel-item__subject_list_item {
+  @include label-subject-typeg();
+  display: inline;
+  line-height: 2.18181818181818;
+  list-style-type: none;
+  padding: 0;
 
   & .carousel-item__subject:after {
     content: ", ";
   }
+}
 
-  &:last-child .carousel-item__subject:after {
+.carousel-item__subject_list_item:last-child {
+
+  & .carousel-item__subject:after {
     content: "";
   }
 
@@ -33,114 +69,176 @@
 .carousel-item__subject_link {
   @include label-subject-typeg();
   text-decoration: none;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
 }
 
 .carousel-item__title {
-  @include h1-typeg();
-  @include padding(24 0);
-  margin-top: 0;
+  @include font-size(24);
+  line-height: 30/24;
+  @include padding(0);
+  @include padding(12, "bottom");
 }
 
 .carousel-item__title_link {
-  text-decoration: none;
+  color: inherit;
+  text-decoration: inherit;
 }
 
-.carousel-item__inner .meta {
-  margin-top: auto;
+.carousel-item__cta {
+  display: none;
 }
 
-html:not(.js) {
-
-  .carousel-item__inner {
-    display: block;
-    text-align: left;
-  }
-
-  .carousel-item__subject_list {
-    @include teaser-context-label-list-style();
-  }
-
-  .carousel-item__subject_list_item {
-    @include teaser-context-label-list-item-style();
-  }
-
-  .carousel-item__title_link {
-
-    color: $color-text;
-
-    &:hover {
-      color: $color-primary-dark;
-    }
-
-  }
-
-  // TODO: Fix leaky abstraction (carousel__item_wrapper is defined in carousel.scss, but needed at this level to control distinct appearances of 1st vs 2nd & 3rd items). Consider renaming carousel__item_wrapper -> carousel__item, and carousel__item -> carousel__item_inner.
-  .carousel-item:first-child {
-
-    .carousel-item__inner {
-      display: flex;
-      text-align: center;
-    }
-
-    .carousel-item__subject_link {
-      color: $color-text-secondary;
-    }
-
-  }
-
-  .carousel-item:nth-child(n + 2) {
-
-    .carousel-item__title {
-      @include teaser-header-text-style();
-    }
-
-    .carousel-item__cta {
-      display: none;
-    }
-
-  }
-
+.carousel-item__meta {
+  @include padding($content-header-padding/2, "bottom");
 }
 
 .js {
 
-  .carousel-item__inner {
-    @include height($carousel-height);
-    background-color: rgba(0, 0, 0, 0.5);
-    background-size: cover;
+  .carousel-item {
+    border: 0;
     color: $color-text--reverse;
-    width: 100vw;
+    overflow: hidden;
+    @include margin(0, "bottom");
+    height: #{$content-header-image-height--narrow-screen}px;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      height: #{$content-header-image-height--medium-width-screen}px;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      height: #{$content-header-image-height--wide-screen}px;
+    }
+  }
+
+  .carousel-item__picture {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039));
+    }
+  }
+
+  .carousel-item__image {
+    z-index: -2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    min-width: 100%;
+    max-width: none;
+    transform: translate(-50%, -50%);
+    &:after {
+      // Hide broken images
+      content: "";
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .carousel-item__subject_list {
-    @include label-subject-typeg();
-    margin: 0;
-    @include padding(24 0);
+    color: inherit;
+    position: absolute;
+    left: 0;
+    right: 0;
   }
 
   .carousel-item__subject_list_item {
-    @include label-subject-typeg();
-    display: inline;
-    line-height: 2.18181818181818;
-    list-style-type: none;
-    padding: 0;
+    color: inherit;
   }
 
   .carousel-item__subject_link {
-    color: $color-text--reverse;
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .carousel-item__body {
+    @include margin($content-header-padding * 2, "top");
+    height: #{$content-header-padding * 5}px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include margin($content-header-padding * 3, "top");
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      height: #{$content-header-padding * 7}px;
+    }
+  }
+
+  .carousel-item__title {
+    @include font-size(36);
+    line-height: 48/36;
+    @include margin(0, "top");
+    @include margin(0, "bottom");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include font-size(41);
+      line-height: 48/41;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      @include font-size(46);
+      line-height: 72/46;
+    }
   }
 
   .carousel-item__title_link {
-    color: $color-text--reverse;
+    color: inherit;
+    text-decoration: inherit;
   }
 
-  .carousel-item__inner .meta {
+  .carousel-item__cta {
+    display: block;
+    @include margin(0, "bottom");
+    position: absolute;
+    bottom: 64px;
+    left: 0;
+    right: 0;
+  }
 
-    *,
-    *:hover {
-      color: $color-text--reverse;
+  .carousel-item__meta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .carousel-item__meta {
+    .meta {
+      color: inherit;
     }
 
+    .meta__type {
+      &:hover {
+        color: inherit;
+      }
+    }
   }
 
 }

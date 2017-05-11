@@ -155,21 +155,17 @@
   display: inline-block;
   height: $size;
   position: relative;
-  top: 0.15em;
-  vertical-align: top;
+  top: -1px;
+  vertical-align: middle;
   width: $size;
 
   @if $direction == "top" {
-    left: 0.15em;
     transform: rotate(-45deg);
   } @else if $direction == "right" {
-    left: 0;
     transform: rotate(45deg);
   } @else if $direction == "bottom" {
-    top: 0;
     transform: rotate(135deg);
   } @else if $direction == "left" {
-    left: 0.25em;
     transform: rotate(-135deg);
   }
 

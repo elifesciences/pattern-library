@@ -11,12 +11,13 @@
       }
     ]
   },
-  "name": "Sensitivity vs stability in neurones",
+  "title": "Sensitivity vs stability in neurones",
+  "longTitle": true,
   "url": "#link-to-article",
   "button": {
     "text": "Read article",
     "path": "#link-to-article",
-    "classes": "button--default button--outline"
+    "classes": "button--outline button--small"
   },
   "meta": {
     "url": "#",
@@ -31,9 +32,11 @@
     }
   },
 
-  "backgroundImage": {
-    "lowResImageSource": "http://lorempixel.com/950/400",
-    "highResImageSource": "http://lorempixel.com/1900/800/"
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/1114/336",
+      "altText": ""
+    }
   }
 
 }
