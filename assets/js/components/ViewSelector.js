@@ -20,7 +20,7 @@ module.exports = class ViewSelector {
 
     if (this.sideBySideViewAvailable()) {
       const $header = this.doc.querySelector('#siteHeader');
-      this.$global = $header.parentNode;
+      this.$global = this.doc.querySelector('.global-inner');
       this.sideBySideView = new SideBySideView(
         this.$global,
         this.$elm.dataset.sideBySideLink,
