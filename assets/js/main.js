@@ -31,6 +31,7 @@ if (window.localStorage && document.querySelector &&
   Components.SearchBox = require('./components/SearchBox');
   Components.SectionListingLink = require('./components/SectionListingLink');
   Components.SelectNav = require('./components/SelectNav');
+  Components.SideBySideView = require('./components/SideBySideView');
   Components.SiteHeader = require('./components/SiteHeader');
   Components.ViewerModal = require('./components/ViewerModal');
   Components.ViewSelector = require('./components/ViewSelector');

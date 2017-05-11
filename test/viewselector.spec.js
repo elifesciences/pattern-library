@@ -11,6 +11,12 @@ describe('A ViewSelector Component', function () {
     $elm = document.querySelector('[data-behaviour="ViewSelector"]');
   });
 
+  afterEach(function () {
+    [].forEach.call($elm.querySelectorAll('.view-selector__list-item--side-by-side'), ($li) => {
+      $li.remove();
+    });
+  });
+
   it('uses the "view-selector--fixed" css class', function () {
     let viewSelector = new ViewSelector($elm);
     expect(viewSelector.cssFixedClassName).to.equal('view-selector--fixed');
@@ -58,23 +64,19 @@ describe('A ViewSelector Component', function () {
        function () {
          // This must be smaller than $elm.offsetHeight of the object under test
          let fakeBottomOfMainEl = 20;
-         let docMock = {
-           querySelector: function () {
-             return {
-               getBoundingClientRect: function () {
-                 return {
-                   bottom: fakeBottomOfMainEl
-                 };
-               }
-             };
-           }
-         };
          let windowMock = {
            addEventListener: function (){},
            pageYOffset: 30
          };
 
-         let _viewSelector = new ViewSelector($elm, windowMock, docMock);
+         let _viewSelector = new ViewSelector($elm, windowMock, document);
+         _viewSelector.mainTarget = {
+           getBoundingClientRect: function () {
+             return {
+               bottom: fakeBottomOfMainEl
+             };
+           }
+         };
          _viewSelector.elmYOffset = 20;
          // Prerequisite for the test to be valid
          expect (fakeBottomOfMainEl).to.be.below(_viewSelector.$elm.offsetHeight);
@@ -119,6 +121,39 @@ describe('A ViewSelector Component', function () {
                          .contains('view-selector__jump_links_header--closed')).to.be.true;
     });
 
+
+  });
+
+  describe('its side-by-side link', function () {
+
+    let viewSelector;
+
+    beforeEach(function () {
+      viewSelector = new ViewSelector($elm);
+    });
+
+    it('is displayed on load', function() {
+      const link = $elm.querySelector('.view-selector__link--side-by-side');
+      expect(link).to.not.be.null;
+      expect(link.textContent).to.equal('Side-by-side view');
+    });
+
+    it('opens an iframe', function() {
+      const link = $elm.querySelector('.view-selector__link--side-by-side');
+      link.click();
+      expect(viewSelector.sideBySideView.$iframe).to.not.be.undefined;
+      expect(viewSelector.sideBySideView.$iframe.classList.contains('hidden')).to.be.false;
+    });
+
+    it('is not displayed if the link is empty', function () {
+      $elm.dataset.sideBySideLink = '';
+      expect(viewSelector.sideBySideViewAvailable()).to.be.false;
+    });
+
+    it('is not displayed if the link is broken', function () {
+      $elm.dataset.sideBySideLink = 'localhost/null';
+      expect(viewSelector.sideBySideViewAvailable()).to.be.false;
+    });
   });
 
 });

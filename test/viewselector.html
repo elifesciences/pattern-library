@@ -8,6 +8,23 @@
   <title>Mocha Test Runner</title>
 
   <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+  <style>
+  header {
+    border: 1px solid black;
+  }
+  .hidden {
+    display: none;
+  }
+  .side-by-side-view {
+    border-width: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 14rem;
+    height: calc(100% - 14rem);
+    width: 100%;
+  }
+  </style>
 </head>
 <body>
 
@@ -16,18 +33,21 @@
 -->
 <div id="mocha"></div>
 
-
+<div class="global-inner">
+<header id="siteHeader">
+  Header of the page
+</header>
 
 <!--
   Fixture
 -->
-<div class="view-selector" data-behaviour="ViewSelector" data-side-by-side-link="http://lens.elifesciences.org/19749/index.html">
+<div class="view-selector" data-behaviour="ViewSelector" data-side-by-side-link="https://lens.elifesciences.org/19749/index.html">
   <ul class="view-selector__list">
     <li class="view-selector__list-item view-selector__list-item--article view-selector__list-item--active">
-      <a href="#article" class="view-selector__link view-selector__link--article"><i class="icon"></i><span>Article</span></a>
+      <a href="#article" class="view-selector__link view-selector__link--article"><span>Article</span></a>
     </li>
     <li class="view-selector__list-item view-selector__list-item--figures">
-      <a href="#figures" class="view-selector__link view-selector__link--figures"><i class="icon"></i><span>Figures</span></a>
+      <a href="#figures" class="view-selector__link view-selector__link--figures"><span>Figures</span></a>
     </li>
 
     <li class="view-selector__list-item view-selector__list-item--jump">
@@ -60,10 +80,31 @@
   </ul>
 </div>
 
-<div role="main">
-
+<div role="main" class="main">
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
 </div>
-
+</div>
 
 <!--
   Load test code

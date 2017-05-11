@@ -8,7 +8,8 @@
 // Tables are usually delivered as a blob of HTML from an upstream application, not via the pattern system.
 table {
   border-collapse: collapse;
-  @include margin(24, "bottom");
+  @include margin($blg-space-small-in-px, "top");
+  @include margin($blg-space-small-in-px, "bottom");
   width: 100%;
 
   & a {
@@ -43,6 +44,10 @@ td {
   }
 }
 
+.table-footnote * {
+  @include fig-caption-text-typeg(0);
+}
+
 .table-footnote__label {
   display: table-cell;
   @supports (display: flex) {
@@ -56,5 +61,9 @@ td {
   @supports (display: flex) {
     display: block;
     flex: 1;
+  }
+
+  & * {
+    @include nospace("bottom");
   }
 }
