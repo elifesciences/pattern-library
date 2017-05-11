@@ -15,10 +15,12 @@
 
   /* max-width is a bonus here. Unlikely to be used. Not worried about support. */
   max-width: #{get-rem-from-px(715)}rem;
+  @include padding($blg-space-small-in-px, "top");
+
 }
 
 .asset-viewer-inline__header_panel {
-  @include padding(12, "bottom");
+  @include padding($blg-space-extra-small-in-px, "bottom");
 }
 
 .asset-viewer-inline__header_text {
@@ -30,6 +32,16 @@
 
 .asset-viewer-inline__header_text__prominent {
   @include fig-heading-typeg();
+}
+
+.asset-viewer-inline--table {
+
+  .asset-viewer-inline__header_panel {
+    border-bottom: 1px solid $color-text-dividers;
+    @include padding($blg-space-extra-small-in-px - 1, "bottom");
+    @include margin($blg-space-extra-small-in-px, "bottom");
+  }
+
 }
 
 .asset-viewer-inline__header_link {

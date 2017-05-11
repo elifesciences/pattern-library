@@ -15,17 +15,13 @@
     margin: 0;
   }
 
-  .meta__type {
-    color: $color-text;
+  a.meta__type {
+    @include discreet-link();
     text-transform: none;
     font-family: $font-primary;
-    @include font-size(12);
+    @include font-size(16);
+    line-height: 1.5;
     font-weight: normal;
-
-  }
-
-  a.meta__type:hover {
-    color: $color-text;
   }
 
 }

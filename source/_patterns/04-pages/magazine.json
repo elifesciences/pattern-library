@@ -64,32 +64,28 @@
     },
 
 
-    "secondaryLinks":
-    {
+    "secondaryLinks": {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
           "text": "Careers",
-          "url": "#",
+          "path": "#",
           "classes": "nav-secondary__item"
         },
-
         {
           "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-          "url": "#",
+          "path": "#",
           "classes": "nav-secondary__item"
         },
-
         {
           "text": "Labs",
-          "url": "#",
+          "path": "#",
           "classes": "nav-secondary__item"
         },
-
         {
           "text": "Submit my research",
-          "url": "#",
+          "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--button",
           "button": {
             "classes": "button--default button--extra-small"
