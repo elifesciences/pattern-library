@@ -14,6 +14,14 @@ $totalHighlightsSpacing: 40;
   @include margin($listing-list-spacing, "bottom");
 }
 
+.decision-letter-header {
+
+  .listing-list {
+    margin-bottom: 0;
+  }
+
+}
+
 .listing-column-main ol.listing-list:last-of-type {
   @include nospace("bottom");
 }
