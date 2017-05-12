@@ -66,15 +66,40 @@
             {{/hasJumpLinks}}
 
             <div class="grid__item
-                        one-whole
-         {{#hasRelated}}large--eight-twelfths
-                        x-large--seven-twelfths{{/hasRelated}}
-         {{^hasRelated}}large--ten-twelfths
-                        push--large--one-twelfth
-                        x-large--eight-twelfths
-                        push--x-large--zero{{/hasRelated}}
-       {{^hasJumpLinks}}push--large--two-twelfths{{/hasJumpLinks}}">
 
+                        one-whole
+
+                      {{! $bkpt-site-wide }}
+                      {{#hasRelated}}
+                        large--eight-twelfths
+                        push--large--one-twelfth
+                      {{/hasRelated}}
+                      {{^hasRelated}}
+                        large--ten-twelfths
+                        push--large--one-twelfth
+                      {{/hasRelated}}
+
+
+                      {{! $bkpt-site-x-wide }}
+
+                      {{#hasRelated}}
+                        x-large--seven-twelfths
+                        {{^hasJumpLinks}}
+                          push--x-large--two-twelfths
+                        {{/hasJumpLinks}}
+                      {{/hasRelated}}
+
+                      {{^hasRelated}}
+                        x-large--eight-twelfths
+                        {{#hasJumpLinks}}
+                          push--x-large--zero
+                        {{/hasJumpLinks}}
+                        {{^hasJumpLinks}}
+                          push--x-large--two-twelfths
+                        {{/hasJumpLinks}}
+
+                      {{/hasRelated}}
+">
               <p>By Elizabeth Robinson</p>
 
               <p>After a decade of growth, the open-access movement in scientific publishing still hasn’t overthrown the traditional model of paid content and subscription-based access, but new initiatives continue to try.</p>
@@ -92,7 +117,11 @@
               <aside class="grid__item
                             one-whole
                             large--four-twelfths
-                            x-large--three-twelfths">
+                            x-large--three-twelfths
+                          {{^hasJumpLinks}}
+                            push--x-large--two-twelfths
+                          {{/hasJumpLinks}}
+">
 
                 [related content]
 
