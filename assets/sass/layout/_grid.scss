@@ -153,7 +153,7 @@ $pull: false !default;
 //) !default;
 
 $breakpoints: (
- "x-small" "(max-width: 320px)", "small" "(min-width: 480px)", "medium" "(min-width: 730px)", "large" "(min-width: 900px)", "x-large" "(min-width: 1200px)"
+ "x-small" "(max-width: 319px)", "small" "(min-width: 480px)", "medium" "(min-width: 730px)", "large" "(min-width: 900px)", "x-large" "(min-width: 1200px)"
 ) !default;
 
 /**
