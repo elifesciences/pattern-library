@@ -28,6 +28,31 @@
           <div style="color: red;">No related content</div>
         {{/hasRelated}}
 
+        <!--
+
+        Principles:
+          - When large:
+              - jumplinks are 12/12 if present, so on their own row & therefore can be ignored for this calculation
+              - if related item: main 8/12; related 4/12
+              - if no related item: main 10/12, push 1/12;
+          - When x-large:
+              - if related item:
+                - main 7/12
+                - related 3/12
+                - if jumplinks:
+                  - jumplinks 2/12
+                - if no jumplinks:
+                  - main push 2/12
+              - if no related item:
+                - main 8/12
+                - if jumplinks:
+                  - jumplinks 2/12
+                  - main push 0
+                - if no jumplinks:
+                  - main push 2/12
+
+        -->
+
         <div class="wrapper u-pad-top-lg clearfix">
 
           <div class="grid">
@@ -40,8 +65,6 @@
               </div>
             {{/hasJumpLinks}}
 
-            <!--<div class="grid__item medium--nine-twelfths large--seven-twelfths push--large--two-twelfths">-->
-
             <div class="grid__item
                         one-whole
          {{#hasRelated}}large--eight-twelfths
@@ -51,12 +74,6 @@
                         x-large--eight-twelfths
                         push--x-large--zero{{/hasRelated}}
        {{^hasJumpLinks}}push--large--two-twelfths{{/hasJumpLinks}}">
-
-              <!--
-              no jl and no related: large: behave same as with jl (pull one)
-                                  : x-large: same as with jl (so pull main col two?)
-              no jl but with related: same behaviour as with jl (so pull main col two?)
-              -->
 
               <p>By Elizabeth Robinson</p>
 
