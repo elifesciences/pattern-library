@@ -3,6 +3,11 @@
 .captioned-asset {
   margin: 0;
   @include padding($blg-space-small-in-px, "bottom");
+  @include padding($blg-space-small-in-px, "top");
+}
+
+.asset-viewer-inline .captioned-asset {
+  padding-top: 0;
 }
 
 .captioned-asset__picture {

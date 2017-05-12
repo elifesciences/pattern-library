@@ -23,7 +23,7 @@ a.reference__title:hover {
 .reference__author {
   @include listing-side-author-typeg();
   @include font-size(14);
-  line-height:  1.714285714; /* 24px with 14px font size */
+  line-height: 1.714285714; /* 24px with 14px font size */
   display: inline;
   margin: 0;
   padding: 0;
@@ -54,17 +54,12 @@ a.reference__authors_link:hover {
 
 .reference__origin {
   @include small-typeg();
+  @include font-size(14);
+  line-height: 1.7142857143;
   padding-bottom: 0;
 
   & a {
-    color: $color-primary;
-    text-decoration: none;
-
-    &:hover,
-    &:active {
-      color: $color-primary-dark;
-    }
-
+    @include discreet-link();
   }
 }
 
@@ -76,6 +71,8 @@ a.reference__authors_link:hover {
 .reference__abstract {
   display: inline;
   @include small-typeg();
+  @include font-size(14);
+  line-height: 1.7142857143;
 }
 
 .reference__abstract_link {

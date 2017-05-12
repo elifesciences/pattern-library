@@ -48,6 +48,7 @@ p {
 
 a {
   color: $color-primary;
+  text-decoration: none;
 }
 
 .underline {
@@ -180,6 +181,10 @@ address {
   content: "";
   display: block;
   clear: both;
+}
+
+main {
+  border-top: 1px solid $color-text-dividers;
 }
 
 img {

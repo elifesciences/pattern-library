@@ -64,7 +64,7 @@ $arrow-size: 5;
 
 .article-section__header_link:after {
   display: block;
-  @include arrow("up", $arrow-size);
+  @include arrow("down", $arrow-size);
   @include height($arrow-size);
   position: absolute;
   right: 0;
@@ -78,7 +78,7 @@ $arrow-size: 5;
 }
 
 .article-section__header_link--closed:after {
-  transform: rotate(180deg);
+  transform: rotate(-90deg);
   @include margin(0 1 0 0);
   top: 0;
 }
@@ -120,13 +120,12 @@ $arrow-size: 5;
     margin: 0;
   }
 
-  a {
-    color: $color-primary;
-    text-decoration: none;
-
-    &:hover {
-      color: $color-primary-dark;
-    }
+  a:not(.additional-asset__link--download),
+  a:not(.asset-viewer-inline__download_all_link),
+  a:not(.asset-viewer-inline__open_link),
+  a:not(.reference__title),
+  a:not(.reference__authors_link) {
+    @include discreet-link();
   }
 
   .reference a {

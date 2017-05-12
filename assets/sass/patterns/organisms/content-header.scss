@@ -54,7 +54,7 @@
 
 .content-header__title {
   @include font-size(36);
-  line-height: 1.3333333333;;
+  line-height: 1.3333333333;
   @include margin(0, "top");
   @include margin(0, "bottom");
 
@@ -383,6 +383,16 @@
   content: ", ";
 }
 
+.content-header__author_link {
+  color: inherit;
+  text-decoration: inherit;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+}
+
 li.content-header__author_list_item--last .content-header__author:after {
   content: "";
 }
@@ -430,7 +440,7 @@ li.content-header__institution_list_item--last .content-header__institution:afte
   }
 
   .content-header__item_toggle {
-    color: $color-text-secondary;
+    @include discreet-link();
     display: inline;
     list-style-type: none;
     padding: 0;

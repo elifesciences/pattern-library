@@ -1,0 +1,88 @@
+<div class="global-wrapper">
+
+  <div class="global-inner">
+
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+
+    <main role="main" class="main">
+
+    {{#contentHeader}}
+      {{> organisms-content-header}}
+    {{/contentHeader}}
+
+    {{#audioPlayer}}
+      {{> molecules-audio-player}}
+    {{/audioPlayer}}
+
+      {{#sectionsListingLink}}
+        <div class="wrapper">
+          {{> atoms-section-listing-link}}
+        </div>
+      {{/sectionsListingLink}}
+
+      <div class="wrapper u-pad-top">
+      </div>
+
+      <div class="wrapper">
+        <div class="listing-column-container listing-column-main">
+          {{#highlightsTeasers}}
+            {{> organisms-listing-teasers}}
+          {{/highlightsTeasers}}
+
+        </div>
+      </div>
+
+
+    <div class="wrapper">
+
+      <div class="grid">
+
+        <div class="listing-column-container">
+
+          <div class="grid__item large--eight-twelfths listing-column-main">
+
+            {{#mainTeasers}}
+              {{> organisms-listing-teasers}}
+            {{/mainTeasers}}
+
+          </div>
+
+          <div class="grid__item large--four-twelfths listing-column-secondary">
+
+            {{#secondaryTeasers}}
+              {{> organisms-listing-teasers}}
+            {{/secondaryTeasers}}
+
+            {{#profileLinks}}
+              {{> organisms-listing-profile-snippets}}
+            {{/profileLinks}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="wrapper">
+      {{#sectionsListing}}
+        {{> molecules-section-listing}}
+      {{/sectionsListing}}
+    </div>
+
+  </main>
+
+    {{#emailCta}}
+      {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+
+  </div>
+
+</div>

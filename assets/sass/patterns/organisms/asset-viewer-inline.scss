@@ -15,10 +15,12 @@
 
   /* max-width is a bonus here. Unlikely to be used. Not worried about support. */
   max-width: #{get-rem-from-px(715)}rem;
+  @include padding($blg-space-small-in-px, "top");
+
 }
 
 .asset-viewer-inline__header_panel {
-  @include padding(12, "bottom");
+  @include padding($blg-space-extra-small-in-px, "bottom");
 }
 
 .asset-viewer-inline__header_text {
@@ -30,6 +32,16 @@
 
 .asset-viewer-inline__header_text__prominent {
   @include fig-heading-typeg();
+}
+
+.asset-viewer-inline--table {
+
+  .asset-viewer-inline__header_panel {
+    border-bottom: 1px solid $color-text-dividers;
+    @include padding($blg-space-extra-small-in-px - 1, "bottom");
+    @include margin($blg-space-extra-small-in-px, "bottom");
+  }
+
 }
 
 .asset-viewer-inline__header_link {
@@ -90,21 +102,25 @@
 
 .asset-viewer-inline__download_all_link {
   @include header_button();
+  border: 1px solid $color-text-dividers;
   background: url("../img/icons/download.png") 50% 50% no-repeat;
   background: url("../img/icons/download.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
   &:hover {
     background: url("../img/icons/download-hover.png") 50% 50% no-repeat;
     background: url("../img/icons/download-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+    border: 1px solid $color-text-dividers;
   }
 }
 
 .asset-viewer-inline__open_link {
   @include header_button();
+  border: 1px solid $color-text-dividers;
   background: url("../img/icons/launch.png") 50% 50% no-repeat;
   background: url("../img/icons/launch.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
   margin-right: -1px;
   &:hover {
     background: url("../img/icons/launch-hover.png") 50% 50% no-repeat;
     background: url("../img/icons/launch-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+    border: 1px solid $color-text-dividers;
   }
 }

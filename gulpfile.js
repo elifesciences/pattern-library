@@ -42,6 +42,7 @@ const jsDest = './source/assets/js';
 
 let options = minimist(process.argv);
 let environment = options.environment || 'development';
+let mocha_grep = options['mocha-grep'] || null;
 
 let server;
 
@@ -111,7 +112,7 @@ gulp.task('sass:lint', ['sass:clean'], () => {
     // Pretty reporting config
     reporter({
       clearMessages: true,
-      // throwError: true
+      throwError: true
     })
   ];
 
@@ -229,13 +230,15 @@ gulp.task('js:extLibs', ['js:clean'], () => {
 gulp.task('js:hint', () => {
   return gulp.src(jsSource)
      .pipe(jshint())
-     .pipe(jshint.reporter('default'));
+     .pipe(jshint.reporter('default'))
+     .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('js:cs', () => {
   return gulp.src(jsSource)
     .pipe(jscs())
-    .pipe(jscs.reporter());
+    .pipe(jscs.reporter())
+    .pipe(jscs.reporter('fail'));
 });
 
 gulp.task('browserify-tests', (done) => {
@@ -263,7 +266,13 @@ gulp.task('browserify-tests', (done) => {
 
 gulp.task('test', ['browserify-tests', 'js'], () => {
   return gulp.src('./test/*.html')
-    .pipe(mochaPhantomjs({reporter: 'spec', 'ignore-resource-errors': true}))
+    .pipe(mochaPhantomjs({
+      reporter: 'spec', 
+      mocha: {
+        grep: mocha_grep
+      },
+      'ignore-resource-errors': true
+    }))
     .pipe(reload());
 });
 
@@ -303,7 +312,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/pager.html'});
+    browserSync({proxy: 'localhost:8080', startPath: 'test/siteheader.html'});
   } else {
     return gutil.noop;
   }

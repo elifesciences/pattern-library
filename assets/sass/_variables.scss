@@ -26,6 +26,8 @@ $color-information: #0288d1;
 $color-success: #629f43;
 $color-attention: #cf0c4e;
 
+$color-overlay: rgba(0, 0, 0, 0.8);
+
 // Typography
 $font-primary: Georgia, serif;
 $font-secondary: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
@@ -90,9 +92,17 @@ $content-header-side-padding: 6; //vw
 $content-header-side-padding--extra-wide: 30; //px
 
 // Breakpoints
-$bkpt-content-header--medium-width: 730;
-$bkpt-content-header--wide: 900;
-$bkpt-content-header--extra-wide: 1200;
+
+$bkpt-site--x-small: 320;
+$bkpt-site--small: 480;
+$bkpt-site--medium: 730;
+$bkpt-site--wide: 900;
+$bkpt-site--x-wide: 1200;
+
+// TODO: Replace the use of these with site breakpoints above
+$bkpt-content-header--medium-width: $bkpt-site--medium;
+$bkpt-content-header--wide: $bkpt-site--wide;
+$bkpt-content-header--extra-wide: $bkpt-site--x-wide;
 
 $bkpt-block-link: 600;
 $bkpt-image-link: $bkpt-block-link;

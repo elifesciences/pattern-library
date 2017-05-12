@@ -1,5 +1,8 @@
 'use strict';
 
+const Overlay = require('./Overlay');
+const utils = require('../libs/elife-utils')();
+
 module.exports = class MainMenu {
 
   // Passing window and document separately allows for independent mocking of window in order
@@ -12,6 +15,9 @@ module.exports = class MainMenu {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
+    this.pageOverlay = new Overlay('body', null, 'overlayMainMenu', 30);
+    this.closeFn = this.close.bind(this);
+    this.buildCloseControl();
   }
 
   /**
@@ -39,7 +45,8 @@ module.exports = class MainMenu {
    */
   close () {
     this.$elm.classList.remove('main-menu--shown');
-    this.doc.querySelector('.global-wrapper').classList.remove('pull-offscreen-right');
+    this.pageOverlay.hide();
+    this.pageOverlay.get$elm().removeEventListener('click', this.closeFn);
   }
 
   /**
@@ -47,7 +54,19 @@ module.exports = class MainMenu {
    */
   open () {
     this.$elm.classList.add('main-menu--shown');
-    this.doc.querySelector('.global-wrapper').classList.add('pull-offscreen-right');
+    this.pageOverlay.get$elm().addEventListener('click', this.closeFn);
+    this.pageOverlay.show();
+  }
+
+  buildCloseControl() {
+    let $close;
+    if (!this.$elm.querySelector('#mainMenuCloseControl')) {
+      const $parent = this.$elm.querySelector('.main-menu__container');
+      $close = utils.buildElement('button', ['main-menu__close_control'], 'Close', $parent,
+                                  $parent.firstElementChild);
+      $close.id = 'mainMenuCloseControl';
+      $close.addEventListener('click', this.close.bind(this));
+    }
   }
 
 };

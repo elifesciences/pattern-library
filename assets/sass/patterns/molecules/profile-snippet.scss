@@ -2,11 +2,24 @@
 
 .profile-snippet {
   border-top: 1px solid $color-text-dividers;
-  @include padding(24, "bottom");
-  @include padding(24, "top");
+  @include padding($blg-space-small-in-px, "bottom");
+  @include padding($blg-space-small-in-px, "top");
 
   .listing-list__item:first-child & {
     border-top-style: none;
+  }
+
+}
+
+.decision-letter-header {
+
+  .profile-snippet {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .profile-snippet__contact_details {
+    padding-bottom: 0;
   }
 
 }

@@ -24,13 +24,16 @@
   "authors": {
     "list": [
       {
-        "name": "Lee R Berger"
+        "name": "Lee R Berger",
+        "url": "#"
       },
       {
-        "name": "John Hawks"
+        "name": "John Hawks",
+        "url": "#"
       },
       {
-        "name": "Darryl J de Ruiter"
+        "name": "Darryl J de Ruiter",
+        "url": "#"
       },
       {
         "name": "Steven E Churchill"

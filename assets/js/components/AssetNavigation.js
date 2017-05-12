@@ -17,7 +17,11 @@ module.exports = class AssetNavigation {
       let show = 0;
 
       [].forEach.call(this.assetItems, (assetItem, i) => {
-        const navigation = utils.buildElement('div', ['asset-viewer-inline__header_navigation'], '', assetItem.querySelector('.asset-viewer-inline__header_panel'), '.asset-viewer-inline__header_text');
+        const navigation = utils.buildElement('div',
+                                              ['asset-viewer-inline__header_navigation'],
+                                              '',
+                                              assetItem.querySelector('.asset-viewer-inline__header_panel'),
+                                              '.asset-viewer-inline__header_text');
 
         if (assetItem.id === hash) {
           show = i;
@@ -25,6 +29,8 @@ module.exports = class AssetNavigation {
 
         this.addPreviousButton(i, navigation);
         this.addNextButton(i, navigation);
+
+        assetItem.addEventListener('assetViewerFocus', () => this.show(i));
       });
 
       this.show(show);
@@ -80,8 +86,8 @@ module.exports = class AssetNavigation {
       return false;
     }
 
-    [].forEach.call(supplements, () => function (assetItem, i) {
-      if (this.assetItems[i].id === hash) {
+    [].forEach.call(this.assetItems, (assetItem, i) => {
+      if (assetItem.id === hash) {
         this.show(i);
       }
     });

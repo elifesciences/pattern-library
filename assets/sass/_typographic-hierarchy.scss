@@ -83,12 +83,12 @@
 @mixin h2-typeg() {
   @include _heading-base-typeg();
   @include font-size($font-size-h2-in-px);
-  line-height: 0.92307692307692; /* (TODO: get actual value) 24px when font size is 26px */
+  line-height: 1.1538461538; /* 30px line height with font size of 26px */
 }
 
 @mixin h2-spacing() {
   margin: 0;
-  @include padding(24, "top");
+  @include padding(18, "top");
   @include padding(24, "bottom");
 }
 

@@ -14,6 +14,14 @@ $totalHighlightsSpacing: 40;
   @include margin($listing-list-spacing, "bottom");
 }
 
+.decision-letter-header {
+
+  .listing-list {
+    margin-bottom: 0;
+  }
+
+}
+
 .listing-column-main ol.listing-list:last-of-type {
   @include nospace("bottom");
 }
@@ -102,11 +110,11 @@ div.listing-list__content {
 }
 
 .listing-list--highlights {
-  @include margin(0 -#{$totalHighlightsSpacing / 2});
+  @include margin(unquote("0 -#{$totalHighlightsSpacing / 2}"));
 
   .listing-list__item {
     border: 1px solid #ccc;
-    @include margin(0 #{$totalHighlightsSpacing / 2});
+    @include margin(unquote("0 #{$totalHighlightsSpacing / 2}"));
     @include padding(2);
 
     .teaser--highlights {
@@ -126,7 +134,7 @@ div.listing-list__content {
     .listing-list__item {
       display: inline-block;
       list-style-type: none;
-      @include margin(0 #{$totalHighlightsSpacing / 2}px 10);
+      @include margin(unquote("0 #{$totalHighlightsSpacing / 2}#{px 10}"));
       vertical-align: top;
 
       /* Width of each element is 100% divided by the amount of elements shown in

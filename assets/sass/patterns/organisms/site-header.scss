@@ -1,7 +1,6 @@
 @import "../../definitions";
 
 .site-header {
-  border-bottom: 1px solid $color-text-dividers;
   max-height: 96px;
   min-width: #{get-rem-from-px(275)}rem;
   position: relative;
@@ -100,11 +99,7 @@
   }
 }
 
-.overlay--semi-white {
-  display: none;
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 100vh;
-  position: absolute;
-  width: 100%;
-  z-index: 4;
+.overlay {
+  @include overlay();
 }
+

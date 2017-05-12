@@ -16,6 +16,7 @@ if (window.localStorage && document.querySelector &&
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.ArticleSection = require('./components/ArticleSection');
   Components.AssetNavigation = require('./components/AssetNavigation');
+  Components.AssetViewer = require('./components/AssetViewer');
   Components.AudioPlayer = require('./components/AudioPlayer');
   Components.BackgroundImage = require('./components/BackgroundImage');
   Components.Carousel = require('./components/Carousel');
@@ -32,6 +33,7 @@ if (window.localStorage && document.querySelector &&
   Components.SearchBox = require('./components/SearchBox');
   Components.SectionListingLink = require('./components/SectionListingLink');
   Components.SelectNav = require('./components/SelectNav');
+  Components.SideBySideView = require('./components/SideBySideView');
   Components.SiteHeader = require('./components/SiteHeader');
   Components.ViewerModal = require('./components/ViewerModal');
   Components.ViewSelector = require('./components/ViewSelector');
@@ -59,6 +61,7 @@ if (window.localStorage && document.querySelector &&
 
     function initialiseComponent($component, inputBehaviour=null) {
       let behaviour = inputBehaviour ? inputBehaviour : $component.getAttribute('data-behaviour');
+
       // When present, data-behaviour contains a space-separated list of handlers for that component
       let handlers = behaviour.trim().split(' ');
       handlers.forEach(function (handler) {
