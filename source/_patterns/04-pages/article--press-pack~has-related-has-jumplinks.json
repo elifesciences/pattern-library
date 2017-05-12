@@ -1,6 +1,6 @@
 {
   "hasRelated": true,
-  "hasJumpLinks": true,
+  "viewSelector": true,
   "siteHeader": {
     "homePagePath": "#",
     "primaryLinks":

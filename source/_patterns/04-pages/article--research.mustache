@@ -23,13 +23,16 @@
 
           <div class="grid">
 
-            <div class="grid__item large--two-twelfths blg-pad-top-medium">
-              {{#viewSelector}}
-                {{> molecules-view-selector }}
-              {{/viewSelector}}
-            </div>
+            {{#viewSelector}}
+              <div class="grid__item
+                          one-whole
+                          x-large--two-twelfths
+                          blg-pad-top-medium">
+                  {{> molecules-view-selector }}
+              </div>
+            {{/viewSelector}}
 
-            <div class="grid__item large--six-twelfths blg-pad-top-medium" data-behaviour="FragmentHandler">
+            <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}} blg-pad-top-medium" data-behaviour="FragmentHandler">
 
               {{#articleSections}}
                 {{> molecules-article-section }}

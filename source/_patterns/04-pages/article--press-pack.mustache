@@ -14,12 +14,12 @@
           {{> organisms-content-header}}
         {{/contentHeader}}
 
-        {{#hasJumpLinks}}
+        {{#viewSelector}}
           <div style="color: blue;">Has jump links</div>
-        {{/hasJumpLinks}}
-        {{^hasJumpLinks}}
+        {{/viewSelector}}
+        {{^viewSelector}}
           <div style="color: red;">No jump links</div>
-        {{/hasJumpLinks}}
+        {{/viewSelector}}
 
         {{#hasRelated}}
           <div style="color: blue;">Has related content</div>
@@ -28,77 +28,20 @@
           <div style="color: red;">No related content</div>
         {{/hasRelated}}
 
-        <!--
-
-        Principles:
-          - When large:
-              - jumplinks are 12/12 if present, so on their own row & therefore can be ignored for this calculation
-              - if related item: main 8/12; related 4/12
-              - if no related item: main 10/12, push 1/12;
-          - When x-large:
-              - if related item:
-                - main 7/12
-                - related 3/12
-                - if jumplinks:
-                  - jumplinks 2/12
-                - if no jumplinks:
-                  - main push 2/12
-              - if no related item:
-                - main 8/12
-                - if jumplinks:
-                  - jumplinks 2/12
-                  - main push 0
-                - if no jumplinks:
-                  - main push 2/12
-
-        -->
-
         <div class="wrapper u-pad-top-lg clearfix">
 
           <div class="grid">
 
-            {{#hasJumpLinks}}
+            {{#viewSelector}}
               <div class="grid__item
                         one-whole
                         x-large--two-twelfths">
                 [jump menu]
               </div>
-            {{/hasJumpLinks}}
+            {{/viewSelector}}
 
-            <div class="grid__item
+            <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}}">
 
-                        one-whole
-
-                      {{! $bkpt-site-wide }}
-                      {{#hasRelated}}
-                        large--eight-twelfths
-                      {{/hasRelated}}
-                      {{^hasRelated}}
-                        large--ten-twelfths
-                        push--large--one-twelfth
-                      {{/hasRelated}}
-
-
-                      {{! $bkpt-site-x-wide }}
-
-                      {{#hasRelated}}
-                        x-large--seven-twelfths
-                        {{^hasJumpLinks}}
-                          push--x-large--two-twelfths
-                        {{/hasJumpLinks}}
-                      {{/hasRelated}}
-
-                      {{^hasRelated}}
-                        x-large--eight-twelfths
-                        {{#hasJumpLinks}}
-                          push--x-large--zero
-                        {{/hasJumpLinks}}
-                        {{^hasJumpLinks}}
-                          push--x-large--two-twelfths
-                        {{/hasJumpLinks}}
-
-                      {{/hasRelated}}
-">
               <p>By Elizabeth Robinson</p>
 
               <p>After a decade of growth, the open-access movement in scientific publishing still hasn’t overthrown the traditional model of paid content and subscription-based access, but new initiatives continue to try.</p>
@@ -117,9 +60,9 @@
                             one-whole
                             large--four-twelfths
                             x-large--three-twelfths
-                          {{^hasJumpLinks}}
+                          {{^viewSelector}}
                             push--x-large--two-twelfths
-                          {{/hasJumpLinks}}
+                          {{/viewSelector}}
 ">
 
                 [related content]
