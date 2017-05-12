@@ -54,7 +54,8 @@ module.exports = class Popup {
 
     // If there's no hash, there's no point in going on.
     if (!link.hash) {
-      return this.resolver = Promise.resolve(null);
+      this.resolver = Promise.resolve(null);
+      return this.resolver;
     }
 
     // This case will catch '#hashes' and '{currentUrl}#hashes'
@@ -67,11 +68,13 @@ module.exports = class Popup {
         link.pathname === current.pathname
       )
     ) {
-      return this.resolver = Promise.resolve((id) => this.doc.querySelector(id));
+      this.resolver = Promise.resolve((id) => this.doc.querySelector(id));
+      return this.resolver;
     }
 
     // This case will catch remote urls.
-    return this.resolver = utils.remoteQuerySelector(link.href);
+    this.resolver = utils.remoteQuerySelector(link.href);
+    return this.resolver;
   }
 
   getBodyContentsFromNode(node) {
