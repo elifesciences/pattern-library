@@ -1,5 +1,5 @@
 {
-  "hasJumpLinks": true,
+  "viewSelector": true,
   "siteHeader": {
     "homePagePath": "#",
     "primaryLinks":
