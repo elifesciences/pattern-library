@@ -356,6 +356,51 @@ module.exports = () => {
     return siblings;
   }
 
+  function loadJavaScript(uri, integrity = null) {
+    return new Promise((resolve, reject) => {
+      let script = document.createElement('script');
+
+      script.src = uri;
+      if (integrity) {
+        script.integrity = integrity;
+        script.crossOrigin = 'anonymous';
+      }
+
+      script.addEventListener('load', () => {
+        resolve(script);
+      }, false);
+
+      script.addEventListener('error', () => {
+        reject(script);
+      }, false);
+
+      document.body.appendChild(script);
+    });
+  }
+
+  function loadStyleSheet(uri, integrity = null) {
+    return new Promise(function (resolve, reject) {
+      let link = document.createElement('link');
+
+      link.setAttribute('rel', 'stylesheet');
+      link.href = uri;
+      if (integrity) {
+        link.integrity = integrity;
+        link.crossOrigin = 'anonymous';
+      }
+
+      link.addEventListener('load', function () {
+        resolve(link);
+      }, false);
+
+      link.addEventListener('error', function () {
+        reject(link);
+      }, false);
+
+      document.head.appendChild(link);
+    });
+  }
+
   /**
    * Deferred promise
    */
@@ -449,6 +494,8 @@ module.exports = () => {
     debounce: debounce,
     equalizeHeightOfItems: equalizeHeightOfItems,
     eventCreator: eventCreator,
+    loadJavaScript: loadJavaScript,
+    loadStyleSheet: loadStyleSheet,
     defer: defer,
     extend: extend,
     flatten: flatten,

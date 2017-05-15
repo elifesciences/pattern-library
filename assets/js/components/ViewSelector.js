@@ -1,5 +1,8 @@
 'use strict';
 
+const SideBySideView = require('./SideBySideView');
+const utils = require('../libs/elife-utils')();
+
 module.exports = class ViewSelector {
 
   constructor($elm, _window = window, doc = document) {
@@ -15,6 +18,20 @@ module.exports = class ViewSelector {
     this.$jumpLinksToggle = this.$elm.querySelector('.view-selector__jump_links_header');
     this.cssFixedClassName = 'view-selector--fixed';
 
+    if (this.sideBySideViewAvailable()) {
+      const $header = this.doc.querySelector('#siteHeader');
+      this.$global = this.doc.querySelector('.global-inner');
+      this.sideBySideView = new SideBySideView(
+        this.$global,
+        this.$elm.dataset.sideBySideLink,
+        $header,
+        this.window,
+        this.doc
+      );
+
+      this.insertSideBySideListItem();
+    }
+
     this.mainTarget = this.doc.querySelector('.main');
 
     // matches top padding in scss
@@ -24,6 +41,7 @@ module.exports = class ViewSelector {
     this.window.addEventListener('scroll', this.handleScroll.bind(this));
     this.$jumpLinksToggle.addEventListener('click', this.toggleJumpLinks.bind(this));
     this.toggleJumpLinks();
+
   }
 
   handleScroll() {
@@ -69,4 +87,38 @@ module.exports = class ViewSelector {
 
   }
 
+  sideBySideViewAvailable() {
+    const link = this.$elm.dataset.sideBySideLink;
+    return !!(link !== '' && link.match(/^https:\/\/.*$/));
+  }
+
+  insertSideBySideListItem() {
+    const $list = this.doc.querySelector('.view-selector__list');
+    const $jumpList = this.doc.querySelector('.view-selector__list-item--jump');
+    const $listItem = utils.buildElement(
+      'li',
+      [
+        'view-selector__list-item',
+        'view-selector__list-item--side-by-side',
+      ],
+      '',
+      $list,
+      $jumpList
+    );
+    const $link = utils.buildElement(
+      'a',
+      [
+        'view-selector__link',
+        'view-selector__link--side-by-side',
+      ],
+      '<span>Side-by-side view</span>',
+      $listItem
+    );
+    $link.setAttribute('href', '#');
+    $link.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.sideBySideView.open();
+    });
+    return $listItem;
+  }
 };

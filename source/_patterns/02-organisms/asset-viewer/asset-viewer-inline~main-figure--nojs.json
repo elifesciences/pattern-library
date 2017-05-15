@@ -27,6 +27,10 @@
     "filename": "#downloadfilename"
   },
 
-  "open": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2.jpg"
+  "open": {
+    "uri": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2.jpg",
+    "width": 1995,
+    "height": 1962
+  }
 
 }

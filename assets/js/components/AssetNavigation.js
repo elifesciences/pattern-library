@@ -29,6 +29,8 @@ module.exports = class AssetNavigation {
 
         this.addPreviousButton(i, navigation);
         this.addNextButton(i, navigation);
+
+        assetItem.addEventListener('assetViewerFocus', () => this.show(i));
       });
 
       this.show(show);
