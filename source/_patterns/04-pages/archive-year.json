@@ -166,10 +166,11 @@
         "blockLink": {
           "url": "#",
           "text": "December",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -189,10 +190,11 @@
         "blockLink": {
           "url": "#",
           "text": "November",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -208,10 +210,11 @@
         "blockLink": {
           "url": "#",
           "text": "October",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -239,10 +242,11 @@
         "blockLink": {
           "url": "#",
           "text": "September",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -266,10 +270,11 @@
         "blockLink": {
           "url": "#",
           "text": "August",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -297,10 +302,11 @@
         "blockLink": {
           "url": "#",
           "text": "July",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -327,10 +333,11 @@
         "blockLink": {
           "url": "#",
           "text": "June",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -358,10 +365,11 @@
         "blockLink": {
           "url": "#",
           "text": "May",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -389,10 +397,11 @@
         "blockLink": {
           "url": "#",
           "text": "April",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -420,10 +429,11 @@
         "blockLink": {
           "url": "#",
           "text": "March",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -451,10 +461,11 @@
         "blockLink": {
           "url": "#",
           "text": "February",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -482,10 +493,11 @@
         "blockLink": {
           "url": "#",
           "text": "January",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
