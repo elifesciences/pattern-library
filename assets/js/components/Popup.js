@@ -26,7 +26,11 @@ module.exports = class Popup {
     e.preventDefault();
 
     this.isOpen = !this.isOpen;
-    this.render();
+    this.render().then(() => {
+      if (this.isEmpty) {
+        window.location = e.target.href;
+      }
+    });
   }
 
   handleDocumentClick(e) {
