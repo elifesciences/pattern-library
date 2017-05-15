@@ -70,17 +70,30 @@
   max-width: #{$max-site-width}px;
   max-width: #{get-rem-from-px($max-site-width)}rem;
   margin: auto;
-  padding: 0 6%;
+  padding: 0 7%;
 }
 
 .wrapper--site-header {
   padding: 0;
 }
 
-@media only screen and (min-width: #{get-rem-from-px($max-site-width)}em) {
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+
   .wrapper {
-    padding: 0 4.125rem;
+    padding: 0 14%;
   }
+
+}
+
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+
+  .wrapper {
+    padding: 0 3%;
+  }
+
+}
+
+@media only screen and (min-width: #{get-rem-from-px($max-site-width)}em) {
 
   .wrapper--site-header {
     padding: 0;
@@ -134,8 +147,13 @@ $pull: false !default;
  * that the breakpoint fires at.
  */
 
+// This interpolation of values from variables.scss (via definitions.scss) doesn't work. Why?
+//$breakpoints: (
+//    "x-small" "(max-width: " + $bkpt-site--x-small + "px)", "small" "(max-width: " + $bkpt-site--small + "px)", "medium" "(max-width: " + $bkpt-site--medium + "px)", "large" "(max-width: " + $bkpt-site--wide + "px)", "x-large" "(max-width: " + $bkpt-site--x-wide + "px)"
+//) !default;
+
 $breakpoints: (
- "x-small" "(max-width: 479px)", "small" "(min-width: 480px)", "medium" "(min-width: 640px)", "large" "(min-width: 800px)", "x-large" "(min-width: 1024px)"
+ "x-small" "(max-width: 319px)", "small" "(min-width: 480px)", "medium" "(min-width: 730px)", "large" "(min-width: 900px)", "x-large" "(min-width: 1200px)"
 ) !default;
 
 /**
@@ -277,6 +295,10 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
 @mixin device-type($namespace:"") {
   $prefix: "." + $namespace;
 
+  #{$prefix}one-whole {
+    width: 100%;
+  }
+
   /**
    * Whole
    */
@@ -318,6 +340,9 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
   /**
    * Twelfths
    */
+  #{$prefix}zero-twelfths {
+    width: 0;
+  }
   #{$prefix}one-twelfth {
     width: 8.333%;
   }
@@ -375,6 +400,13 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
 
 @mixin push-setup($namespace: "") {
   $prefix: "." + "push--" + $namespace;
+
+  /**
+   * Zero
+   */
+  #{$prefix}zero {
+    left: 0;
+  }
 
   /**
    * Whole
@@ -630,5 +662,6 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
 **/
 
 .show-grid .grid__item {
-  box-shadow: 0 0 0 2px #f00;
+  //box-shadow: 0 0 0 2px #f00;
+  outline: 1px solid rebeccapurple;
 }

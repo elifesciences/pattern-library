@@ -120,7 +120,11 @@ $arrow-size: 5;
     margin: 0;
   }
 
-  a {
+  a:not(.additional-asset__link--download),
+  a:not(.asset-viewer-inline__download_all_link),
+  a:not(.asset-viewer-inline__open_link),
+  a:not(.reference__title),
+  a:not(.reference__authors_link) {
     @include discreet-link();
   }
 
