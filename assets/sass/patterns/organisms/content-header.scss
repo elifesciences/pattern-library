@@ -314,11 +314,11 @@
 .content-header__download_link {
   float: right;
   position: absolute;
-  right: 24px;
+  right: 7%;
   top: 26px;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    right: 16px;
+    right: 14%;
     top: 14px;
   }
 
