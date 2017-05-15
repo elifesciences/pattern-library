@@ -246,8 +246,17 @@
   @include label-subject-typeg();
   margin: 0;
   @include padding($content-header-padding 0);
+  padding-left: 0;
   position: absolute;
-  width: calc(100% - #{$content-header-padding * 2}px);
+  width: calc(100% - #{$content-header-padding * 2}px - 36px);
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
+    width: 72% // 100% - 2 * 14% gutter
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}rem) {
+    width: 94% // 100% - 2 * 3% gutter
+  }
 
   .content-header--image & {
     color: inherit;
@@ -259,14 +268,6 @@
 
   &:before {
     color: $color-text-secondary;
-  }
-}
-
-.content-header__subject_list--pad-right {
-  padding-right: #{$content-header-download-width * 1.5}px;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    padding-right: #{$content-header-download-width-medium * 1.5}px;
   }
 }
 
