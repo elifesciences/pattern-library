@@ -245,17 +245,22 @@
 .content-header__subject_list {
   @include label-subject-typeg();
   margin: 0;
-  @include padding($content-header-padding 0);
   padding-left: 0;
+  text-align: center;
+  @include padding(36, "left");
+  @include padding(36, "right");
+  @include padding($blg-space-small-in-px, "top");
   position: absolute;
-  width: calc(100% - #{$content-header-padding * 2}px - 36px);
+  width: calc(100% - 2 * 7%);
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
-    width: 72% // 100% - 2 * 14% gutter
+    @include padding(72, "left");
+    @include padding(72, "right");
+    width: calc(100% - 2 * 14%);
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}rem) {
-    width: 94% // 100% - 2 * 3% gutter
+    width: calc(100% - 2 * 3%);
   }
 
   .content-header--image & {
@@ -315,7 +320,7 @@
   float: right;
   position: absolute;
   right: 7%;
-  top: 26px;
+  top: 24px;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
     right: 14%;
