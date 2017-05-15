@@ -15,7 +15,7 @@
       }
     },
     {
-      "variant": "grid-listing",
+        "variant": "grid-listing",
       "url": "#",
       "image": {
         "pictureClasses": "image-link__picture",
