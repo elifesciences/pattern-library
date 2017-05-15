@@ -24,7 +24,7 @@ module.exports = class SideBySideView {
           return;
         }
 
-        if (node === this.$header) {
+        if (node === this.$header || node.contains(this.$header)) {
           return;
         }
 
