@@ -393,6 +393,11 @@
 
 }
 
+.content-header__author_icon {
+  padding-top: 1px;
+  vertical-align: text-top;
+}
+
 li.content-header__author_list_item--last .content-header__author:after {
   content: "";
 }
