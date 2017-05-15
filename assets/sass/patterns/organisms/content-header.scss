@@ -4,11 +4,26 @@
   color: $color-text;
   margin: 0 auto;
   @include constrain-width($max-site-width, "max");
+  padding-top: 0;
   // $content-header-padding - 1 to account for the 1px border
-  @include padding(0 $content-header-padding $content-header-padding - 1);
+  @include padding($content-header-padding - 1, "bottom");
   position: relative;
   text-align: center;
-  border-bottom: 1px solid $color-text-dividers;
+
+  // Expect .wrapper to only be introduced when not an image header
+  &.wrapper {
+    padding-bottom: 0;
+
+    &:after {
+      border-bottom: 1px solid $color-text-dividers;
+      content: "";
+      display: block;
+      @include padding($content-header-padding - 1, "top");
+      width: 100%;
+    }
+
+  }
+
 }
 
 .content-header--image {
