@@ -78,6 +78,10 @@ module.exports = class Popup {
   }
 
   getBodyContentsFromNode(node) {
+    if (!node) {
+      return this.emptyResponse();
+    }
+
     if (!node.getAttribute('data-popup-contents')) {
 
       // Mark empty.
