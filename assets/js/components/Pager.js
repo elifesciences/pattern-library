@@ -98,6 +98,7 @@ module.exports = class Pager {
     let nextPageButtonLink = nextPageButton.href;
     let location = this.window.location;
     this.loaderLink = nextPageButtonLink.replace(location.protocol + '//' + location.host, '');
+    this.$loader.setAttribute('href', this.loaderLink);
   }
 
   static isLastPage(data) {
