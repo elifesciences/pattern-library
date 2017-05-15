@@ -322,7 +322,7 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-    right: 0;
+    right: 42px;
   }
 
   .content-header--image & {
