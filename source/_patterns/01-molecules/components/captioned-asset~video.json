@@ -34,11 +34,6 @@
   "doi": {
     "doi": "10.7554/eLife.16370",
     "variant": "article-section"
-  },
-
-  "download": {
-    "link": "#downloadLink",
-    "filename": "#downloadfilename"
   }
 
 }

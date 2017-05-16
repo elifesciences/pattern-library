@@ -1,10 +1,11 @@
 <div class="global-wrapper" data-behaviour="FragmentHandler">
   <div class="global-inner">
-    {{#siteHeader}}
-      {{> organisms-site-header }}
-    {{/siteHeader}}
-
-    <main role="main" class="blg-margin-bottom-large">
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+    <main role="main" class="main blg-margin-bottom-large">
 
       <article class="article">
 
@@ -22,13 +23,17 @@
 
           <div class="grid">
 
-            <div class="grid__item large--two-twelfths blg-pad-top-medium">
-              {{#viewSelector}}
-                {{> molecules-view-selector }}
-              {{/viewSelector}}
-            </div>
+            {{#viewSelector}}
+              <div class="grid__item
+                          one-whole
+                          x-large--two-twelfths
+                          blg-pad-top-medium">
+                  {{> molecules-view-selector }}
+              </div>
+            {{/viewSelector}}
 
-            <div class="grid__item large--six-twelfths blg-pad-top-medium" data-behaviour="FragmentHandler">
+            <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}} blg-pad-top-medium" data-behaviour="FragmentHandler">
+
               <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
               {{#articleSections}}
                 {{> molecules-article-section }}

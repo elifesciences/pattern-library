@@ -267,7 +267,6 @@
   position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
-  z-index: 100;
 }
 
 @mixin teaser-context-label-list-item-style {
@@ -279,4 +278,32 @@
 @mixin teaser-header-text-style() {
   @include listing-main-art-title-typeg();
   @include padding(12, "top");
+}
+
+@mixin dismissible_navigation {
+  @include typeg-portal-quick-nav();
+  line-height: 3;
+  @include nospace();
+  text-align: center;
+}
+
+@mixin overlay() {
+  background-color: $color-overlay;
+  position: absolute;
+  min-height: 100vh;
+  top: 0;
+  width: 100vw;
+  // z-index should be overridden as necessary
+  z-index: 4;
+}
+
+@mixin discreet-link ($color: $color-text) {
+  border-bottom: 1px dotted $color;
+  color: $color;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom-color: $color-primary;
+    color: $color-primary;
+  }
 }

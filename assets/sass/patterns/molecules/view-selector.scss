@@ -65,7 +65,7 @@
     @include arrow("down", $arrow-size, $color-text-secondary);
     @include margin(-15, "left");
     @include margin(-12, "right");
-    @include margin(10, "top");
+    @include margin(9, "top");
     display: block;
     float: left;
   }
@@ -75,7 +75,7 @@
     @include margin($arrow-size, "top");
     @include margin(-12, "left");
     @include margin(-12, "right");
-    @include margin(7, "top");
+    @include margin(6, "top");
   }
 
 }
@@ -143,7 +143,7 @@
     }
   }
 
-  .view-selector__list-item--sidebyside {
+  .view-selector__list-item--side-by-side {
     display: none;
   }
 
@@ -177,6 +177,7 @@
 
   .view-selector--fixed {
     max-height: 100vh;
+    min-height: 11rem;
     overflow: auto;
     @include padding(30, "top");
     position: fixed;

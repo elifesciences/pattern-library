@@ -11,6 +11,8 @@ module.exports = class SearchBox {
       return;
     }
 
+    this.window = _window;
+    this.doc = doc;
     this.$container = $elm.querySelector('fieldset');
     this.$resetButton = $elm.querySelector('button[type="reset"]');
 

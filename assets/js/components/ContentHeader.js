@@ -20,6 +20,7 @@ module.exports = class ContentHeader {
     if (this.authors.length > 0) {
       this.authors[this.authors.length - 1].classList.add('content-header__author_list_item--last');
     }
+
     if (this.institutions.length > 0) {
       this.institutions[this.institutions.length - 1].classList.add('content-header__institution_list_item--last');
     }
@@ -28,8 +29,6 @@ module.exports = class ContentHeader {
     this.hasToggleInstitution = false;
     this.hideAllExcessItems('author', this.authors);
     this.hideAllExcessItems('institution', this.institutions);
-
-    let _this = this;
   }
 
   handleAnyExcessItems(itemType, items) {
@@ -146,7 +145,8 @@ module.exports = class ContentHeader {
     [].forEach.call(items, function (item, i) {
 
       // Clear old any obsolete determination of what's the last non-excess item.
-      items[i].querySelector('.content-header__' + itemType).classList.remove('content-header__' + itemType + '--last-non-excess');
+      items[i].querySelector('.content-header__' + itemType)
+              .classList.remove('content-header__' + itemType + '--last-non-excess');
       if (item.classList.contains('excess-item') && !foundLastShown) {
         lastShownIndex = i - 1;
         foundLastShown = true;
@@ -197,15 +197,17 @@ module.exports = class ContentHeader {
     // Should conform to https://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden
     let toggle = this.doc.createElement('li');
     let toggleOnText = 'see&nbsp;all';
+    const toggleOnSuffix = ' &raquo;';
+    const toggleOffSuffix = ' &laquo;';
     let toggleOffText = 'see&nbsp;less';
     toggle.setAttribute('aria-hidden', 'true');
     toggle.classList.add('content-header__item_toggle', 'content-header__item_toggle--' + itemType);
-    toggle.innerHTML = '&nbsp;&hellip;&nbsp;' + toggleOnText;
+    toggle.innerHTML = toggleOnText + toggleOnSuffix;
     toggle.addEventListener('click', e => {
       let target = e.target;
       if (target.innerHTML.indexOf(toggleOnText) > -1) {
         [].forEach.call(this.doc.querySelectorAll('.content-header__item_toggle'), item => {
-          item.innerHTML = '&nbsp;' + toggleOffText;
+          item.innerHTML = toggleOffSuffix + ' ' + toggleOffText;
         });
         this.clearExcessMark(this.authors);
         this.clearExcessMark(this.institutions);
@@ -215,7 +217,7 @@ module.exports = class ContentHeader {
         this.markLastNonExcessItem('institution', this.institutions);
       } else {
         [].forEach.call(this.doc.querySelectorAll('.content-header__item_toggle'), item => {
-          item.innerHTML = '&nbsp;&hellip;&nbsp;' + toggleOnText;
+          item.innerHTML = '&nbsp;' + toggleOnText + toggleOnSuffix;
         });
         this.hideAllExcessItems('author', this.authors);
         this.hideAllExcessItems('institution', this.institutions);

@@ -27,7 +27,7 @@ module.exports = () => {
           return $parent.firstElementChild;
 
         } else if (typeof attachBefore === 'string') {
-          return document.querySelector(attachBefore);
+          return $parent.querySelector(attachBefore);
 
         } else if (attachBefore instanceof HTMLElement) {
           return attachBefore;
@@ -271,7 +271,7 @@ module.exports = () => {
   /**
    * Debounce
    */
-  function debounce(callback, wait, context = this) {
+  function debounce(callback, wait, context = this) { // jshint ignore:line
     let timeout = null;
     let callbackArgs = null;
 
@@ -328,9 +328,11 @@ module.exports = () => {
     let i;
     do {
       i = matches.length;
-      while (--i >= 0 && matches.item(i) !== el) {
-      }
 
+      // jscs:disable disallowEmptyBlocks
+      while (--i >= 0 && matches.item(i) !== el) {} // jshint ignore:line
+
+      // jscs:enable disallowEmptyBlocks
     } while ((i < 0) && (el = el.parentElement));
 
     return el;
@@ -352,6 +354,51 @@ module.exports = () => {
     }
 
     return siblings;
+  }
+
+  function loadJavaScript(uri, integrity = null) {
+    return new Promise((resolve, reject) => {
+      let script = document.createElement('script');
+
+      script.src = uri;
+      if (integrity) {
+        script.integrity = integrity;
+        script.crossOrigin = 'anonymous';
+      }
+
+      script.addEventListener('load', () => {
+        resolve(script);
+      }, false);
+
+      script.addEventListener('error', () => {
+        reject(script);
+      }, false);
+
+      document.body.appendChild(script);
+    });
+  }
+
+  function loadStyleSheet(uri, integrity = null) {
+    return new Promise(function (resolve, reject) {
+      let link = document.createElement('link');
+
+      link.setAttribute('rel', 'stylesheet');
+      link.href = uri;
+      if (integrity) {
+        link.integrity = integrity;
+        link.crossOrigin = 'anonymous';
+      }
+
+      link.addEventListener('load', function () {
+        resolve(link);
+      }, false);
+
+      link.addEventListener('error', function () {
+        reject(link);
+      }, false);
+
+      document.head.appendChild(link);
+    });
   }
 
   /**
@@ -525,7 +572,21 @@ module.exports = () => {
       }
 
     }
+    
+  }
 
+  function create$pageOverlay($parent, $followingSibling, id) {
+    // element already exists
+    if (document.querySelector(`#${id}`)) {
+      return;
+    }
+
+    const $overlay = buildElement('div', ['overlay', 'hidden'], '', $parent, $followingSibling);
+    if (id) {
+      $overlay.id = id;
+    }
+
+    return $overlay;
   }
 
   return {
@@ -533,9 +594,12 @@ module.exports = () => {
     areElementsNested: areElementsNested,
     buildElement: buildElement,
     closest: closest,
+    create$pageOverlay: create$pageOverlay,
     debounce: debounce,
     equalizeHeightOfItems: equalizeHeightOfItems,
     eventCreator: eventCreator,
+    loadJavaScript: loadJavaScript,
+    loadStyleSheet: loadStyleSheet,
     defer: defer,
     extend: extend,
     flatten: flatten,

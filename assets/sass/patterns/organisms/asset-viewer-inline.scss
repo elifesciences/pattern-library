@@ -1,13 +1,26 @@
 @import "../../definitions";
 
+@mixin header_button {
+  border: 1px solid $color-text-dividers;
+  border-radius: #{$border-radius}px;
+  display: inline-block;
+  @include height(28);
+  @include margin(-2, "top");
+  margin-left: -1px;
+  @include margin(-2, "bottom");
+  @include width(28);
+}
+
 .asset-viewer-inline {
 
   /* max-width is a bonus here. Unlikely to be used. Not worried about support. */
   max-width: #{get-rem-from-px(715)}rem;
+  @include padding($blg-space-small-in-px, "top");
+
 }
 
 .asset-viewer-inline__header_panel {
-  @include padding(12, "bottom");
+  @include padding($blg-space-extra-small-in-px, "bottom");
 }
 
 .asset-viewer-inline__header_text {
@@ -21,6 +34,16 @@
   @include fig-heading-typeg();
 }
 
+.asset-viewer-inline--table {
+
+  .asset-viewer-inline__header_panel {
+    border-bottom: 1px solid $color-text-dividers;
+    @include padding($blg-space-extra-small-in-px - 1, "bottom");
+    @include margin($blg-space-extra-small-in-px, "bottom");
+  }
+
+}
+
 .asset-viewer-inline__header_link {
   color: $color-text;
   font-family: $font-secondary;
@@ -28,6 +51,45 @@
 
   &:hover {
     color: $color-primary;
+  }
+}
+
+.asset-viewer-inline__header_navigation {
+  float: left;
+  @include margin(10, "right");
+}
+
+.asset-viewer-inline__previous {
+  @include header_button();
+  background: url("../img/icons/chevron-left.png") 50% 50% no-repeat;
+  background: url("../img/icons/chevron-left.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+  margin-left: -1px;
+  opacity: 0.25;
+}
+
+.asset-viewer-inline__previous--active {
+  opacity: 1;
+  &:hover {
+    cursor: pointer;
+    background: url("../img/icons/chevron-left-hover.png") 50% 50% no-repeat;
+    background: url("../img/icons/chevron-left-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+  }
+}
+
+.asset-viewer-inline__next {
+  @include header_button();
+  background: url("../img/icons/chevron-right.png") 50% 50% no-repeat;
+  background: url("../img/icons/chevron-right.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+  @include margin(3, "left");
+  opacity: 0.25;
+}
+
+.asset-viewer-inline__next--active {
+  opacity: 1;
+  &:hover {
+    cursor: pointer;
+    background: url("../img/icons/chevron-right-hover.png") 50% 50% no-repeat;
+    background: url("../img/icons/chevron-right-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
   }
 }
 
@@ -39,33 +101,26 @@
 }
 
 .asset-viewer-inline__download_all_link {
+  @include header_button();
+  border: 1px solid $color-text-dividers;
   background: url("../img/icons/download.png") 50% 50% no-repeat;
   background: url("../img/icons/download.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
-  border: 1px solid $color-text-dividers;
-  border-radius: 3px;
-  display: inline-block;
-  @include height(28);
-  @include margin(-2);
-  @include width(28);
-
   &:hover {
     background: url("../img/icons/download-hover.png") 50% 50% no-repeat;
     background: url("../img/icons/download-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+    border: 1px solid $color-text-dividers;
   }
 }
 
-/** Only used with JS, I think **/
-// .asset-viewer-inline__figure_access_open {
-//   background: url("../img/icons/launch.png") 50% 50% no-repeat;
-//   background: url("../img/icons/launch.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
-//   border: 1px solid $color-text-dividers;
-//   border-radius: 3px;
-//   display: inline-block;
-//   @include height(28);
-//   @include width(28);
-//
-//   &:hover {
-//     background: url("../img/icons/launch-hover.png") 50% 50% no-repeat;
-//     background: url("../img/icons/launch-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
-//   }
-// }
+.asset-viewer-inline__open_link {
+  @include header_button();
+  border: 1px solid $color-text-dividers;
+  background: url("../img/icons/launch.png") 50% 50% no-repeat;
+  background: url("../img/icons/launch.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+  margin-right: -1px;
+  &:hover {
+    background: url("../img/icons/launch-hover.png") 50% 50% no-repeat;
+    background: url("../img/icons/launch-hover.svg") 50% 50% no-repeat, linear-gradient(transparent, transparent);
+    border: 1px solid $color-text-dividers;
+  }
+}

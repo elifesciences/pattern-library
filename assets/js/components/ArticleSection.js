@@ -64,7 +64,7 @@ module.exports = class ArticleSection {
     }
   }
 
-  collapse(e) {
+  collapse() {
     this.$headerLink.classList.add('article-section__header_link--closed');
     this.$elm.classList.add('article-section--collapsed');
     this.$body.classList.add('visuallyhidden');

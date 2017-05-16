@@ -3,6 +3,11 @@
 .captioned-asset {
   margin: 0;
   @include padding($blg-space-small-in-px, "bottom");
+  @include padding($blg-space-small-in-px, "top");
+}
+
+.asset-viewer-inline .captioned-asset {
+  padding-top: 0;
 }
 
 .captioned-asset__picture {
@@ -20,16 +25,6 @@
 
 .captioned-asset__caption {
   padding: 0 6%;
-}
-
-.captioned-asset__caption___footer_link {
-  color: $color-text;
-  display: inline-block;
-  @include fig-caption-text-typeg(0);
-
-  &:hover {
-    color: $color-primary;
-  }
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-captioned-asset-caption)}em) {
