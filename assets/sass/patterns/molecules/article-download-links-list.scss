@@ -26,6 +26,12 @@
     & li:first-child {
       border-top-style: none;
     }
+
+    &.visuallyhidden {
+      padding: 0;
+      border: 0;
+      margin: 0;
+    }
   }
 
   .article-download-links-list__link {
