@@ -98,6 +98,7 @@ module.exports = class Pager {
     let nextPageButtonLink = nextPageButton.href;
     let location = this.window.location;
     this.loaderLink = nextPageButtonLink.replace(location.protocol + '//' + location.host, '');
+    this.$loader.setAttribute('href', this.loaderLink);
   }
 
   static isLastPage(data) {
@@ -140,14 +141,14 @@ module.exports = class Pager {
     }
   }
 
-  updateUrl () {
-    let loaderLink = this.getLoaderLink();
+  updateUrl (loaderLink) {
     if (loaderLink) {
       this.window.history.pushState(null, '', loaderLink);
     }
   }
 
   handleLoad(data) {
+    let loaderLink = this.loaderLink;
     let normalisedData;
     try {
       normalisedData = Pager.normaliseData(data);
@@ -158,7 +159,7 @@ module.exports = class Pager {
     }
 
     this.clearLoadingState();
-    this.updateUrl();
+    this.updateUrl(loaderLink);
     this.updatePager(normalisedData);
   }
 

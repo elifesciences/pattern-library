@@ -1,5 +1,5 @@
 <header
-    class="content-header {{#image}}content-header--image content-header--header{{/image}} {{^image}}{{#header.possible}}content-header--header{{/header.possible}}{{/image}} clearfix"
+    class="content-header {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} clearfix"
     data-behaviour="ContentHeader">
 
   {{#image}}
@@ -60,7 +60,7 @@
     {{/hasProfile}}
 
     {{#hasSubjects}}
-      <ol class="content-header__subject_list {{#download}}content-header__subject_list--pad-right{{/download}}">
+      <ol class="content-header__subject_list">
         {{#subjects}}
           <li class="content-header__subject_list_item">
             <a href="{{url}}" class="content-header__subject_link">
@@ -107,8 +107,8 @@
             <span class="content-header__author">{{#url}}<a href="{{url}}" class="content-header__author_link">{{/url}}{{name}}{{#url}}</a>{{/url}}{{#isCorresponding}}
               <picture>
                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author.svg{{/assetRewrite}}" type="image/svg+xml">
-               <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author.png{{/assetRewrite}}"
-                    srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@2x.png 20w{{/assetRewrite}}, {{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png 10w{{/assetRewrite}}"
+               <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}}"
+                    srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@2x.png{{/assetRewrite}} 20w, {{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}} 10w"
                     sizes="10px" alt="Is a corresponding author" class="content-header__author_icon">
               </picture>{{/isCorresponding}}</span>
           </li>

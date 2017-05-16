@@ -4,11 +4,26 @@
   color: $color-text;
   margin: 0 auto;
   @include constrain-width($max-site-width, "max");
+  padding-top: 0;
   // $content-header-padding - 1 to account for the 1px border
-  @include padding(0 $content-header-padding $content-header-padding - 1);
+  @include padding($content-header-padding - 1, "bottom");
   position: relative;
   text-align: center;
-  border-bottom: 1px solid $color-text-dividers;
+
+  // Expect .wrapper to only be introduced when not an image header
+  &.wrapper {
+    padding-bottom: 0;
+
+    &:after {
+      border-bottom: 1px solid $color-text-dividers;
+      content: "";
+      display: block;
+      @include padding($content-header-padding - 1, "top");
+      width: 100%;
+    }
+
+  }
+
 }
 
 .content-header--image {
@@ -230,9 +245,23 @@
 .content-header__subject_list {
   @include label-subject-typeg();
   margin: 0;
-  @include padding($content-header-padding 0);
+  padding-left: 0;
+  text-align: center;
+  @include padding(36, "left");
+  @include padding(36, "right");
+  @include padding($blg-space-small-in-px, "top");
   position: absolute;
-  width: calc(100% - #{$content-header-padding * 2}px);
+  width: calc(100% - 2 * 7%);
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
+    @include padding(72, "left");
+    @include padding(72, "right");
+    width: calc(100% - 2 * 14%);
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}rem) {
+    width: calc(100% - 2 * 3%);
+  }
 
   .content-header--image & {
     color: inherit;
@@ -244,14 +273,6 @@
 
   &:before {
     color: $color-text-secondary;
-  }
-}
-
-.content-header__subject_list--pad-right {
-  padding-right: #{$content-header-download-width * 1.5}px;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    padding-right: #{$content-header-download-width-medium * 1.5}px;
   }
 }
 
@@ -298,16 +319,16 @@
 .content-header__download_link {
   float: right;
   position: absolute;
-  right: 24px;
-  top: 26px;
+  right: 7%;
+  top: 24px;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    right: 16px;
+    right: 14%;
     top: 14px;
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-    right: 0;
+    right: 42px;
   }
 
   .content-header--image & {
