@@ -40,8 +40,7 @@
               </div>
             {{/viewSelector}}
 
-            <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}}">
-
+            <div class="{{> pages-pl-only-grid-content-page-main-col-css-classes}}">
               <p>By Elizabeth Robinson</p>
 
               <p>After a decade of growth, the open-access movement in scientific publishing still hasn’t overthrown the traditional model of paid content and subscription-based access, but new initiatives continue to try.</p>
@@ -56,14 +55,7 @@
             </div>
 
             {{#hasRelated}}
-              <aside class="grid__item
-                            one-whole
-                            large--four-twelfths
-                            x-large--three-twelfths
-                          {{^viewSelector}}
-                            push--x-large--two-twelfths
-                          {{/viewSelector}}
-">
+              <aside class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}">
 
                 [related content]
 

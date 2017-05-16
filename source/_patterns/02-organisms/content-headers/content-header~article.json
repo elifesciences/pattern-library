@@ -25,7 +25,8 @@
     "list": [
       {
         "name": "Lee R Berger",
-        "url": "#"
+        "url": "#",
+        "isCorresponding": true
       },
       {
         "name": "John Hawks",
@@ -162,7 +163,8 @@
         "name": "Pianpian Wei"
       },
       {
-        "name": "Bernhard Zipfel"
+        "name": "Bernhard Zipfel",
+        "isCorresponding": true
       }
     ]
   },

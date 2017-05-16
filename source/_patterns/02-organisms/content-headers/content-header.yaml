@@ -87,6 +87,8 @@ schema:
               url:
                 type: string
                 minLength: 1
+              isCorresponding:
+                type: boolean
             required:
               - name
       required:
