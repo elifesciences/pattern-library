@@ -32,7 +32,7 @@
 .nav-secondary__item--button {
   @include visuallyhidden();
 
-  @media only all and (min-width: 26.5625em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include visuallyunhidden();
     @include margin(12, "right");
   }
