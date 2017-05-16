@@ -50,7 +50,7 @@ module.exports = class SideBySideView {
     this.$closeBar = this.doc.querySelector('.side-by-side-view__bar');
     if (!this.$closeBar) {
       this.$closeBar = this.createCloseBar();
-      this.$header.appendChild(this.$closeBar);
+      this.doc.querySelector('body').appendChild(this.$closeBar);
     } else {
       this.$closeBar.classList.remove('hidden');
     }
