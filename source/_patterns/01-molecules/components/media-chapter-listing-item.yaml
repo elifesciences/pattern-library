@@ -1,8 +1,6 @@
 assets:
   css:
     - media-chapter-listing-item.css
-    - teaser.css
-    - $ref: ../../01-molecules/components/meta.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -26,11 +24,32 @@ schema:
     content:
       type: string
       minLength: 1
-    meta:
-      $ref: ../../01-molecules/components/meta.yaml#/schema
+    hasContentSources:
+      type: boolean
+      default: false
+    contentSource:
+      type: array
+      items:
+        type: object
+        properties:
+          contentType:
+            type: object
+            properties:
+              url:
+                type: string
+                minLength: 1
+              name:
+                type: string
+                minLength: 1
+            required:
+              - url
+              - name
+      minItems: 1
+
   dependencies:
     chapterNumber:
       - startTime
   required:
-    -  title
+    - title
+    - hasContentSources
 
