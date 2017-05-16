@@ -42,7 +42,7 @@ module.exports = class SideBySideView {
     this.$iframe = this.doc.querySelector('.side-by-side-view__iframe');
     if (!this.$iframe) {
       this.$iframe = SideBySideView.createIframe(this.src);
-      this.doc.querySelector('body').appendChild(this.$iframe);
+      this.doc.body.appendChild(this.$iframe);
     } else {
       this.$iframe.classList.remove('hidden');
     }
@@ -50,7 +50,7 @@ module.exports = class SideBySideView {
     this.$closeBar = this.doc.querySelector('.side-by-side-view__bar');
     if (!this.$closeBar) {
       this.$closeBar = this.createCloseBar();
-      this.doc.querySelector('body').appendChild(this.$closeBar);
+      this.doc.body.appendChild(this.$closeBar);
     } else {
       this.$closeBar.classList.remove('hidden');
     }
