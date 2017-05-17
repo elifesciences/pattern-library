@@ -26,8 +26,9 @@ schema:
       minLength: 1
     hasContentSources:
       type: boolean
-      default: false
-    contentSource:
+      enum:
+        - true
+    contentSources:
       type: array
       items:
         type: object
@@ -44,12 +45,19 @@ schema:
             required:
               - url
               - name
+          text:
+            type: string
+        required:
+          - contentType
       minItems: 1
 
   dependencies:
     chapterNumber:
       - startTime
+    hasContentSources:
+      - contentSources
+    contentSources:
+      - hasContentSources
   required:
     - title
-    - hasContentSources
 
