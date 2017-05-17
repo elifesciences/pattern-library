@@ -85,6 +85,10 @@
   @include teaser-header-text-style();
 }
 
+.teaser--no-secondary-info .teaser__header_text {
+  @include padding($blg-space-extra-small-in-px, "bottom");
+}
+
 .teaser__header_text_link {
   color: $color-text;
   text-decoration: none;
