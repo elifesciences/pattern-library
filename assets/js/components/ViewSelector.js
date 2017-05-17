@@ -114,7 +114,7 @@ module.exports = class ViewSelector {
       '<span>Side-by-side view</span>',
       $listItem
     );
-    $link.setAttribute('href', '#');
+    $link.setAttribute('href', this.$elm.dataset.sideBySideLink);
     $link.addEventListener('click', (e) => {
       e.preventDefault();
       this.sideBySideView.open();

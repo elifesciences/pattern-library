@@ -1,27 +1,11 @@
 @import "../../definitions";
 
 .teaser {
-  border-top: 1px solid $color-text-dividers;
-  @include padding($teaser-spacing-top 0 0 0);
-  // margin not padding here as we want the margin to collapse for the last item in the list within a listing container
-  // where that listing container also has a margin on the bottom.
-  @include margin($teaser-spacing-bottom, "bottom");
-
-  .listing-list__item:first-child & {
-    border-top-style: none;
-  }
-
+  @include teaser-root-style();
 }
 
 .teaser--related {
   border-top-width: 0;
-}
-
-.teaser:after {
-  content: "";
-  clear: both;
-  display: block;
-  float: none;
 }
 
 .teaser__context_label_list {
@@ -47,8 +31,7 @@
 }
 
 .teaser__context_label {
-  @include label-subject-typeg();
-  color: $color-text-secondary;
+  @include teaser-context-label-style();
 }
 
 // Extra specificity to override normalised style
@@ -90,12 +73,7 @@
 }
 
 .teaser__header_text_link {
-  color: $color-text;
-  text-decoration: none;
-}
-
-.teaser__header_text_link:hover {
-  color: $color-primary-dark;
+  @include teaser-header-text-link-style();
 }
 
 .teaser__secondary_info {
@@ -104,16 +82,11 @@
 }
 
 .teaser__body {
-  @include listing-impact-statement-typeg();
-  @include nospace("bottom");
+  @include teaser-body-style();
 }
 
 .teaser__footer {
-  color: $color-text-secondary;
-  display: flex;
-  @include label-content-typeg();
-  justify-content: space-between;
-  text-transform: none;
+  @include teaser-footer-style();
 }
 
 .teaser__publish_state {
@@ -124,10 +97,6 @@
   border-right: 2px dotted $color-text-secondary;
   @include margin(6, "right");
   @include padding(6, "right");
-}
-
-.teaser__footer_text {
-  display: inline-block;
 }
 
 .teaser__category_link {

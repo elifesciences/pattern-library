@@ -1,3 +1,6 @@
+@import "variables";
+@import "typographic-hierarchy";
+
 // Put all general mixins, and any helper functions, in this file.
 // Mixins for a single pattern may be put in that pattern's scss file instead if that makes sense, use judgement.
 
@@ -255,6 +258,31 @@
 
 // Cross-pattern common style expressions
 
+@mixin teaser-root-style() {
+  border-top: 1px solid $color-text-dividers;
+  @include padding($teaser-spacing-top 0 0 0);
+  // margin not padding here as we want the margin to collapse for the last item in the list within a listing container
+  // where that listing container also has a margin on the bottom.
+  @include margin($teaser-spacing-bottom, "bottom");
+
+  // TODO: Move to listing-list
+  .listing-list__item:first-child & {
+    border-top-style: none;
+  }
+
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+    float: none;
+  }
+}
+
+@mixin teaser-context-label-style() {
+  @include label-subject-typeg();
+  color: $color-text-secondary;
+}
+
 @mixin teaser-context-label-list-style {
   @include label-content-typeg();
   margin: 0;
@@ -274,6 +302,29 @@
 @mixin teaser-header-text-style() {
   @include listing-main-art-title-typeg();
   @include padding(12, "top");
+}
+
+@mixin teaser-header-text-link-style() {
+  color: $color-text;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+
+}
+
+@mixin teaser-footer-style() {
+  color: $color-text-secondary;
+  display: flex;
+  @include label-content-typeg();
+  justify-content: space-between;
+  text-transform: none;
+}
+
+@mixin teaser-body-style() {
+  @include listing-impact-statement-typeg();
+  @include nospace("bottom");
 }
 
 @mixin dismissible_navigation {
