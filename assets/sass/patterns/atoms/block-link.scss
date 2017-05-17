@@ -6,6 +6,10 @@
     @include height(80);
   }
 
+  .block-link__picture {
+    display: none;
+  }
+
 }
 
 @mixin width-constrained() {
@@ -38,6 +42,12 @@
     @supports (display: flex) {
       padding-bottom: 30.86977887%;
       padding-top: 26.86977887%;
+    }
+  }
+
+  .block-link { // Specificity
+    .block-link__picture {
+      display: inline-block;
     }
   }
 
