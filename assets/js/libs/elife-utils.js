@@ -568,11 +568,11 @@ module.exports = () => {
     } else {
       const $el = document.getElementById(link.hash.slice(1));
       if ($el) {
-        window.scrollTo(0, document.getElementById(id).offsetTop)
+        window.scrollTo(0, $el.offsetTop);
       }
 
     }
-    
+
   }
 
   function create$pageOverlay($parent, $followingSibling, id) {
