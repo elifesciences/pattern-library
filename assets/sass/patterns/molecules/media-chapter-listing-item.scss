@@ -1,28 +1,41 @@
 @import "../../definitions";
 
 .media-chapter-listing-item {
+  @include teaser-root-style();
+}
 
-  &.current-chapter {
+.media-chapter-listing-item__time {
+  @include teaser-context-label-style();
+}
 
-    .teaser__context_label,
-    .teaser__header_text_link {
-      color: $color-primary;
-    }
+.media-chapter-listing-item__header_text {
+  @include teaser-header-text-style();
+}
 
-  }
+.media-chapter-listing-item__header_text_link {
+  @include teaser-header-text-link-style();
+}
 
-  .teaser__header {
-    margin: 0;
-  }
+.media-chapter-listing-item.current-chapter {
 
-  a.meta__type {
-    @include discreet-link();
-    text-transform: none;
-    font-family: $font-primary;
-    @include font-size(16);
-    line-height: 1.5;
-    font-weight: normal;
+  .media-chapter-listing-item__time,
+  .media-chapter-listing-item__header_text_link {
+    color: $color-primary;
   }
 
 }
 
+.media-chapter-listing-item__body {
+  @include teaser-body-style();
+  @include nospace();
+  @include padding($blg-space-extra-small-in-px, "top");
+}
+
+.media-chapter-listing-item__source_list {
+  @include nospace();
+  list-style: none;
+}
+
+.media-chapter-listing-item__source_list_item {
+  @include body-typeg();
+}

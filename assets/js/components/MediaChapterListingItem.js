@@ -34,7 +34,7 @@ module.exports = class MediaChapterListingItem {
   }
 
   createLink(document, $rootElm, startTime) {
-    let $title = $rootElm.querySelector('.teaser__header_text');
+    let $title = $rootElm.querySelector('.media-chapter-listing-item__header_text');
     if (!$title) {
       return;
     }
@@ -42,7 +42,7 @@ module.exports = class MediaChapterListingItem {
     let titleText;
     let $existingLink;
     try {
-      $existingLink = $title.querySelector('.teaser__header_text_link');
+      $existingLink = $title.querySelector('.media-chapter-listing-item__header_text_link');
       titleText = $existingLink.innerHTML;
       $existingLink.parentNode.removeChild($existingLink);
     } catch (e) {
@@ -52,7 +52,7 @@ module.exports = class MediaChapterListingItem {
     let $link = document.createElement('a');
     $link.innerHTML = titleText;
     $link.setAttribute('href', '#' + startTime);
-    $link.classList.add('teaser__header_text_link');
+    $link.classList.add('media-chapter-listing-item__header_text_link');
     $title.innerHTML = '';
     $title.appendChild($link);
     return $link;

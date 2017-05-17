@@ -166,10 +166,23 @@
           "title": "What causes tinnitus?",
           "chapterNumber": 1,
           "content": "What causes tinnitus and hyperacusis?",
-          "meta": {
-            "url": "#",
-            "text": "Research Article by Chethan Pandarinath et al"
-          }
+          "hasContentSources": true,
+          "contentSource": [
+            {
+              "contentType": {
+                "name": "Research article",
+                "url": "https://elifesciences.org"
+              },
+              "text": "by someone awesome!"
+            },
+            {
+              "contentType": {
+                "name": "Article",
+                "url": "https://elifesciences.org"
+              },
+              "text": "by someone else just as awesome!"
+            }
+          ]
         },
         {
           "startTime": {

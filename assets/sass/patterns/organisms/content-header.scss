@@ -466,7 +466,7 @@ li.content-header__institution_list_item--last .content-header__institution:afte
   }
 
   .content-header__item_toggle {
-    @include discreet-link();
+    color: $color-primary;
     display: inline;
     list-style-type: none;
     padding: 0;
