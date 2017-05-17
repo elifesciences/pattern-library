@@ -1,0 +1,26 @@
+{
+  "startTime": {
+    "forHuman": "16:50",
+    "forMachine": 1010
+  },
+  "title": "Drosophila duet: mating flies harmonise",
+  "chapterNumber": 4,
+  "content": "Flies get to grips with acoustic duetting.",
+  "hasContentSources": true,
+  "contentSource": [
+    {
+      "contentType": {
+        "name": "Research article",
+        "url": "https://elifesciences.org"
+      },
+      "text": "by someone awesome!"
+    },
+    {
+      "contentType": {
+        "name": "Article",
+        "url": "https://elifesciences.org"
+      },
+      "text": "by someone else just as awesome!"
+    }
+  ]
+}
