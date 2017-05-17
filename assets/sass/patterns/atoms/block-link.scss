@@ -6,6 +6,13 @@
     @include height(80);
   }
 
+  .block-link__picture {
+    display: none;
+    @media only all and (min-width: #{$bkpt-block-link}px) {
+      display: inline-block;
+    }
+  }
+
 }
 
 @mixin width-constrained() {
@@ -103,6 +110,7 @@
 }
 
 .block-link__picture {
+  overflow: hidden;
   position: absolute;
   top: 0;
   right: 0;
