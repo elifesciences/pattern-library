@@ -30,7 +30,10 @@ module.exports = class Carousel {
     this.currentSlide = 1;
     this.timerInterval = 10000;
 
-    this.$elm.querySelector('.carousel__heading').classList.add('visuallyhidden');
+    [].forEach.call(this.originalSlideWrappers, (slide) => {
+      slide.insertAdjacentHTML('afterbegin', slide.dataset.image);
+    });
+
     this.updateButtonAppearance();
     this.$elm.appendChild(this.buildVisibleControls());
     this.$toggler = this.buildControl$toggle();
@@ -52,7 +55,7 @@ module.exports = class Carousel {
 
   updateButtonAppearance () {
     let buttons = this.$elm.querySelectorAll('.carousel-item__cta .button');
-    buttons.forEach((button) => {
+    [].forEach.call(buttons, (button) => {
       button.classList.add('button--outline');
     });
 
@@ -92,7 +95,7 @@ module.exports = class Carousel {
       this.setATVisibility($el, false);
     });
     let _slideNumber = slideNumber || 1;
-    let slide = this.$elm.querySelectorAll('.carousel-item__inner')[_slideNumber - 1];
+    let slide = this.$elm.querySelectorAll('.carousel-item')[_slideNumber - 1];
     this.setATVisibility(slide, true);
     slide.focus();
   }
@@ -103,26 +106,22 @@ module.exports = class Carousel {
    * @returns {Element} The control panel
    */
   buildVisibleControls() {
-    // Btn wrappers needed to reserve space in case buttons are removed, to stop things moving about
-    let $previousWrapper = this.buildControl$traverser('previous');
-    let $nextWrapper = this.buildControl$traverser('next');
+    let $previousButton = this.buildControl$traverser('previous');
+    let $nextButton = this.buildControl$traverser('next');
 
     this.buttons = {
-      previous: $previousWrapper.querySelector('button'),
-      next: $nextWrapper.querySelector('button')
+      previous: $previousButton,
+      next: $nextButton,
     };
 
     // switches are the circular buttons for depicting/going to a slide
     this.switches = this.buildControl$switches(this.originalSlideCount);
 
     let $controlPanel = utils.buildElement('div', ['carousel__control_panel']);
-    let $visibleControlsWrapper = utils.buildElement('div', ['carousel__control_panel__visible']);
-    let visibleControls = [$previousWrapper, this.switches, $nextWrapper];
+    let visibleControls = [$previousButton, this.switches, $nextButton];
     visibleControls.forEach(function (control) {
-      $visibleControlsWrapper.appendChild(control);
+      $controlPanel.appendChild(control);
     });
-
-    $controlPanel.appendChild($visibleControlsWrapper);
 
     return $controlPanel;
   }
@@ -136,20 +135,17 @@ module.exports = class Carousel {
   buildControl$traverser(direction) {
     let _direction = direction === 'previous' ? 'previous' : 'next';
     let text = direction + ' item';
-    let $wrapper = utils.buildElement('div', ['carousel__control_wrapper']);
     let $button = utils.buildElement('button',
                                      ['carousel__control',
                                       'carousel__control--traverse',
                                       'carousel__control--' + _direction
-                                     ],
-                                     '',
-                                     $wrapper);
+                                     ]);
     $button.addEventListener('click', () => {
       this.userInitiatedProgression(this[_direction]);
     });
 
     utils.buildElement('span', ['visuallyhidden'], text, $button);
-    return $wrapper;
+    return $button;
   }
 
   /**
@@ -308,16 +304,14 @@ module.exports = class Carousel {
    */
   updateSlide(direction) {
     let currentOffset = this.getCurrentOffset();
-    let currentWidthStringMatch = this.window.getComputedStyle(this.$elm).width
-                                      .match(/^([0-9]+)px/);
-    let currentCarouselWidth = this.window.parseInt(currentWidthStringMatch[1], 10);
+    let rect = this.$elm.getBoundingClientRect();
     let newOffset;
     if (direction === 'previous') {
       this.currentSlide -= 1;
-      newOffset = currentOffset + currentCarouselWidth;
+      newOffset = currentOffset + rect.width;
     } else {
       this.currentSlide += 1;
-      newOffset = currentOffset - currentCarouselWidth;
+      newOffset = currentOffset - rect.width;
     }
 
     utils.updateElementTranslate(this.moveableStage, [newOffset + 'px', 0]);
