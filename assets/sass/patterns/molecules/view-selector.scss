@@ -42,7 +42,6 @@
 
 .view-selector__link {
   color: $color-text-secondary;
-  font-weight: 700;
 }
 
 .view-selector__jump_link {
@@ -53,8 +52,7 @@
   color: $color-text-secondary;
   display: block;
   @include font-size(14);
-  font-weight: 700;
-  @include margin(12, "bottom");
+  @include margin($blg-space-extra-small-in-px, "bottom");
 }
 
 .js .view-selector__jump_links_header {
@@ -91,7 +89,6 @@
 }
 
 .view-selector__jump_link {
-  font-weight: 700;
   text-decoration: none;
 
   &:hover {
