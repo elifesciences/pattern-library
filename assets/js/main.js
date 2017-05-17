@@ -18,7 +18,6 @@ if (window.localStorage && document.querySelector &&
   Components.AssetNavigation = require('./components/AssetNavigation');
   Components.AssetViewer = require('./components/AssetViewer');
   Components.AudioPlayer = require('./components/AudioPlayer');
-  Components.BackgroundImage = require('./components/BackgroundImage');
   Components.Carousel = require('./components/Carousel');
   Components.ContentHeader = require('./components/ContentHeader');
   Components.FragmentHandler = require('./components/FragmentHandler');
