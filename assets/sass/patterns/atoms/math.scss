@@ -1,16 +1,18 @@
 @import "../../definitions";
 
-.math {
+// .math-block rather than .math to avoid MathJax collision
+
+.math-block {
   @include body-typeg();
   display: flex;
   flex-direction: row-reverse;
 }
 
-.math__label {
+.math-block__label {
   @include padding(6, "left");
 }
 
-.math__math {
+.math-block__math {
   display: block;
   @include body-spacing;
   flex-grow: 1;
