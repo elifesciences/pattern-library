@@ -1,5 +1,7 @@
 {
   "isPrimaryResearch": true,
+  "hasRelated": true,
+  "viewSelector": true,
   "siteHeader": {
     "homePagePath": "#",
     "primaryLinks": {

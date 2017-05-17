@@ -32,6 +32,7 @@
               </div>
             {{/viewSelector}}
 
+
             <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}} blg-pad-top-medium" data-behaviour="FragmentHandler">
 
               <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
@@ -70,6 +71,15 @@
               {{/articleMeta}}
 
             </div>
+
+            {{#hasRelated}}
+              <div class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}
+                  blg-pad-top-medium
+              ">
+                [Related]
+              </div>
+
+            {{/hasRelated}}
 
           </div>
 

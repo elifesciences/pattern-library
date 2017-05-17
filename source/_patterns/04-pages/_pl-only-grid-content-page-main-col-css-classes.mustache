@@ -1,39 +1,20 @@
 grid__item
 one-whole
-
-
-{{! $bkpt-site-wide }}
-
 {{#hasRelated}}
   large--eight-twelfths
-{{/hasRelated}}
-{{^hasRelated}}
-  large--ten-twelfths
-  push--large--one-twelfth
-{{/hasRelated}}
-
-
-{{! $bkpt-site-x-wide }}
-
-{{#hasRelated}}
   x-large--seven-twelfths
   {{^viewSelector}}
     push--x-large--two-twelfths
   {{/viewSelector}}
 {{/hasRelated}}
-
 {{^hasRelated}}
-  {{#isPrimaryResearch}}
-    x-large--seven-twelfths
-  {{/isPrimaryResearch}}
-  {{^isPrimaryResearch}}
-    x-large--eight-twelfths
-  {{/isPrimaryResearch}}
+  large--ten-twelfths
+  push--large--one-twelfth
+  x-large--eight-twelfths
   {{#viewSelector}}
     push--x-large--zero
   {{/viewSelector}}
   {{^viewSelector}}
     push--x-large--two-twelfths
   {{/viewSelector}}
-
 {{/hasRelated}}

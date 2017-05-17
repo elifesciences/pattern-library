@@ -22,6 +22,8 @@ describe('A SideBySideView Component', function () {
       sideBySideView.open();
       expect(sideBySideView.$iframe.classList.contains('hidden')).to.be.false;
       expect(sideBySideView.$iframe.getAttribute('src')).to.equal('http://lens.elifesciences.org/19749/index.html');
+      expect(sideBySideView.$header.classList.contains('hidden')).to.be.false;
+      expect(sideBySideView.$header.parentNode.classList.contains('hidden')).to.be.false;
       expect(sideBySideView.$closeBar.classList.contains('hidden')).to.be.false;
       expect(document.querySelector('[role="main"]').classList.contains('hidden')).to.be.true;
 

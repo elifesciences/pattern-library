@@ -6,35 +6,16 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    variant:
-      type: string
-      minLength: 1
-    behaviour:
-      type: string
-      enum:
-        - BackgroundImage
-    backgroundImage:
-      type: object
-      properties:
-        lowResImageSource:
-          type: string
-          minLength: 1
-        highResImageSource:
-          type: string
-          minLength: 1
-        thresholdWidth:
-          type: number
-          minimum: 0
+    isGridListing:
+      type: boolean
+    image:
+      $ref: picture.yaml#/schema
     text:
       type: string
       minLength: 1
     url:
       type: string
       minLength: 1
-  dependencies:
-    thresholdWidth:
-      - lowResImageSource
-      - highResImageSource
   required:
     - text
     - url
