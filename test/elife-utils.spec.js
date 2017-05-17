@@ -86,22 +86,6 @@ describe('The eLife utils library', function () {
 
   });
 
-  describe('isHighDpr method', function () {
-
-    it('returns true if device pixel ratio is at least 2', function () {
-      expect(elifeUtils.isHighDpr({ devicePixelRatio: 2 })).to.be.true;
-      expect(elifeUtils.isHighDpr({ devicePixelRatio: 2.1 })).to.be.true;
-      expect(elifeUtils.isHighDpr({ devicePixelRatio: 3 })).to.be.true;
-    });
-
-    it('returns false if device pixel ratio is less than 2', function () {
-      expect(elifeUtils.isHighDpr({ devicePixelRatio: 1 })).to.be.false;
-      expect(elifeUtils.isHighDpr({ devicePixelRatio: 1.4 })).to.be.false;
-      expect(elifeUtils.isHighDpr({ devicePixelRatio: 1.9 })).to.be.false;
-    });
-
-  });
-
   describe('uniqueIds object', function () {
     let uIds;
 
