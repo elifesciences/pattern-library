@@ -30,6 +30,7 @@ module.exports = class Math {
   }
 
   static setupResizeHandler() {
+    this.currentClientWidth = document.body.clientWidth;
     let resizeTimeout;
     let resizeThrottler = function resizeThrottler() {
       if (!resizeTimeout) {
@@ -38,7 +39,8 @@ module.exports = class Math {
 
           // TODO: change so exactly one rerender regardless of number of Math instances.
           // Consider tacking at the same time as fragment handler.
-          if (!!this.window.MathJax) {
+          if (!!this.window.MathJax && this.currentClientWidth !== document.body.clientWidth) {
+            this.currentClientWidth = document.body.clientWidth;
             this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub]);
           }
         }, 300);
