@@ -1,10 +1,13 @@
 @import "../../definitions";
 
 .message-bar {
-  background-color: $color-text-ui-background-hue;
+  background-color: $color-text-ui-code;
+  border: 1px solid $color-text-dividers;
   border-radius: #{$border-radius}px;
   @include font-size(14);
   line-height: 1.7142857143; // 24px with 14px line height
   @include padding($blg-space-extra-small-in-px);
-  @include margin(24, "bottom");
+  @include padding($blg-space-extra-small-in-px - 1, "top");
+  @include padding($blg-space-extra-small-in-px - 1, "bottom");
+  @include margin($blg-space-small-in-px, "bottom");
 }

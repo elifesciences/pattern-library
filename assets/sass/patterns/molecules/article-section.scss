@@ -154,7 +154,7 @@ $arrow-size: 5;
   }
 
   blockquote cite {
-    color: $color-text-placeholder;
+    color: $color-text-secondary;
     font-family: $font-primary;
     @include font-size(14);
     font-style: italic;

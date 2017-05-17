@@ -22,7 +22,7 @@
   width: 100%;
 
   &:focus {
-    border: #{$border-width}px solid $color-information;
+    border: #{$border-width}px solid $color-text-placeholder;
     outline: 0;
   }
 }
