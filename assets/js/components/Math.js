@@ -4,11 +4,26 @@ module.exports = class Math {
 
   constructor($elm, _window = window, doc = document) {
     this.window = _window;
+    this.isSingleton = true;
+
+    Math.init(doc);
+  }
+
+  static init(doc) {
     Math.loadDependencies(doc);
+    if (!Math.dependenciesAlreadySetup(doc)) {
+      let observer = new MutationObserver((mutations, observer) => {
+        Math.loadDependencies(doc);
+        if (Math.dependenciesAlreadySetup(doc)) {
+          observer.disconnect();
+        }
+      });
+      observer.observe(doc.body, { childList: true, subtree: true });
+    }
   }
 
   static loadDependencies(doc) {
-    if (!Math.dependenciesAlreadySetup(doc)) {
+    if (doc.querySelector('math')) {
       Math.setupProperties();
       Math.load(doc);
     }
@@ -37,8 +52,6 @@ module.exports = class Math {
         resizeTimeout = setTimeout(function () {
           resizeTimeout = null;
 
-          // TODO: change so exactly one rerender regardless of number of Math instances.
-          // Consider tacking at the same time as fragment handler.
           if (!!this.window.MathJax && this.currentClientWidth !== document.body.clientWidth) {
             this.currentClientWidth = document.body.clientWidth;
             this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub]);

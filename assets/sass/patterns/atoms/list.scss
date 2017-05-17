@@ -11,5 +11,10 @@ $prefixes: ("alpha-lower": "lower-latin", "alpha-upper": "upper-latin", "bullet"
   .list--#{$prefix} {
     list-style-type: #{$list-style-type};
     @include padding (20, "left");
+    @if $prefix == "number" or $prefix == "bullet" {
+      a {
+        @include discreet-link();
+      }
+    }
   }
 }
