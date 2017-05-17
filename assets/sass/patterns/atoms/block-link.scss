@@ -8,6 +8,9 @@
 
   .block-link__picture {
     display: none;
+    @media only all and (min-width: #{$bkpt-block-link}px) {
+      display: inline-block;
+    }
   }
 
 }
@@ -42,12 +45,6 @@
     @supports (display: flex) {
       padding-bottom: 30.86977887%;
       padding-top: 26.86977887%;
-    }
-  }
-
-  .block-link { // Specificity
-    .block-link__picture {
-      display: inline-block;
     }
   }
 
