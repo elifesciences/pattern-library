@@ -2,37 +2,55 @@
 
 .carousel {
   @include constrain-width($max-site-width, "max");
-  margin: 0 auto;
+  @include margin($content-header-padding, "top");
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
   padding-left: #{$content-header-side-padding}vw;
   padding-right: #{$content-header-side-padding}vw;
   position: relative;
+
+  .list-heading {
+    @include margin($content-header-padding, "bottom");
+    text-align: center;
+  }
 }
 
 .carousel__items {
   list-style: none;
   @include nospace();
-}
 
-.carousel-item {
-  @include margin(12, "bottom");
-  @include constrain-width($max-site-width, "max");
-  width: 100%;
+  @supports (display: flex) {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
 }
 
 .js {
 
   .carousel {
-    @include height($carousel-height);
+    margin-top: 0;
     padding: 0;
-  }
+    @include height($content-header-image-height--narrow-screen);
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+      @include height($content-header-image-height--medium-width-screen);
+    }
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      @include height($content-header-image-height--wide-screen);
+    }
 
-  .carousel__heading {
-    @include visuallyhidden();
+    .list-heading {
+      @include visuallyhidden();
+    }
   }
 
   .carousel__items {
     width: 300vw;
+    @include margin(0, "top");
+    display: block;
   }
 
   .carousel-item {
@@ -45,8 +63,7 @@
   }
 
   .carousel__items {
-    background-color: rgba(0, 0, 0, 0.5);
-    @include height($carousel-height);
+    height: 100%;
     position: relative;
     transition: all $transition-duration $transition-delay $transition-timing-function;
   }
@@ -56,19 +73,10 @@
 .carousel__control_panel {
 
   @include constrain-width($max-site-width, "max");
-  bottom: 20px;
-  height: 50px;
+  bottom: 39px;
+  height: 14px;
   position: absolute;
   width: 100vw;
-}
-
-.carousel__control_panel__visible {
-
-  @supports (display: flex) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 }
 
 .carousel__control {
@@ -89,47 +97,54 @@
 
   justify-content: space-between;
   margin: 0 auto;
-  width: 90px;
-}
-
-.carousel__control_wrapper {
-  min-height: 50px;
-  min-width: 50px;
-  height: 50px;
-  width: 50px;
+  width: #{12 * 6}px;
 }
 
 .carousel__control {
+
+  top: -((28px - 14px) / 2);
 
   &--traverse {
     background-color: transparent;
     border-width: 0;
     border-radius: 50%;
-    min-height: 50px;
-    min-width: 50px;
-    height: 50px;
-    width: 50px;
+    min-height: 28px;
+    min-width: 28px;
+    height: 28px;
+    width: 28px;
   }
 
-  &--previous:before {
-    @include chevron("left");
+  &--previous {
+    position: absolute;
+    left: 14px * 2;
+    &:before {
+      @include chevron("left", white, 14px);
+    }
   }
 
-  &--next:before {
-    @include chevron("right");
+  &--next {
+    position: absolute;
+    right: 14px * 2;
+    &:before {
+      @include chevron("right", white, 14px);
+    }
   }
 
   &--switch-item {
     float: left;
-    @include padding(10, "right");
+    @include padding(5, "left");
+    @include padding(5, "right");
+    height: 12px;
   }
 
   &--switch {
     background-color: rgba(255, 255, 255, 0.4);
     border: none;
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
+    font-size: 1px; // iOS Safari width fix
+    height: 12px;
+    width: 12px;
+    vertical-align: top;
 
     &.active {
       background-color: rgba(255, 255, 255, 0.8);

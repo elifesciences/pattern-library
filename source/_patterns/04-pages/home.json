@@ -122,6 +122,7 @@
   },
 
   "carousel": {
+    "heading": "Highlights",
     "items": [
       {
         "subjects": {
@@ -136,12 +137,13 @@
             }
           ]
         },
-        "name": "Sensitivity vs stability in neurones",
+        "title": "Sensitivity vs stability in neurones",
+        "longTitle": true,
         "url": "#link-to-article",
         "button": {
           "text": "Read article",
           "path": "#link-to-article",
-          "classes": "button--default"
+          "classes": "button--outline button--small"
         },
         "meta": {
           "url": "#",
@@ -155,9 +157,11 @@
             "forMachine": "2015-09-10"
           }
         },
-        "backgroundImage": {
-          "lowResImageSource": "http://lorempixel.com/950/400/nature/1",
-          "highResImageSource": "http://lorempixel.com/1900/800/nature/1"
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/1114/336",
+            "altText": ""
+          }
         }
       },
       {
@@ -169,12 +173,13 @@
             }
           ]
         },
-        "name": "Cancer cells follow the leader",
+        "title": "Cancer cells follow the leader",
+        "longTitle": true,
         "url": "#link-to-article",
         "button": {
           "text": "Read article",
           "path": "#link-to-article",
-          "classes": "button--default "
+          "classes": "button--outline button--small"
         },
         "meta": {
           "url": "#",
@@ -188,12 +193,12 @@
             "forMachine": "2015-09-10"
           }
         },
-
-        "backgroundImage": {
-          "lowResImageSource": "http://lorempixel.com/950/400/animals/1",
-          "highResImageSource": "http://lorempixel.com/1900/800/animals/1"
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/1114/337",
+            "altText": ""
+          }
         }
-
       },
       {
         "subjects": {
@@ -208,12 +213,13 @@
             }
           ]
         },
-        "name": "Rethinking the origins of mitochondrial architecture",
+        "title": "Rethinking the origins of mitochondria",
+        "longTitle": true,
         "url": "#link-to-article",
         "button": {
           "text": "Read article",
           "path": "#link-to-article",
-          "classes": "button--default "
+          "classes": "button--outline button--small"
         },
         "meta": {
           "url": "#LinkToResearchArticles",
@@ -227,15 +233,17 @@
             "forMachine": "2015-09-10"
           }
         },
-        "backgroundImage": {
-          "lowResImageSource": "http://lorempixel.com/950/400/abstract/1",
-          "highResImageSource": "http://lorempixel.com/1900/800/abstract/1"
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/1114/338",
+            "altText": ""
+          }
         }
-
       }
 
     ]
-  },
+  }
+,
 
   "leadPara": {
     "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
