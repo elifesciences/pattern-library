@@ -590,7 +590,6 @@ module.exports = () => {
     extend: extend,
     flatten: flatten,
     invertPxString: invertPxString,
-    isHighDpr: isHighDpr,
     jumpToAnchor: jumpToAnchor,
     loadData: loadData,
     nthChild: nthChild,
