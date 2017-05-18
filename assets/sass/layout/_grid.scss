@@ -603,6 +603,10 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
   @include blg-spacing("top", "small");
 }
 
+.blg-pad-top-smallish {
+  @include blg-spacing("top", "smallish");
+}
+
 .blg-pad-top-medium {
   @include blg-spacing("top", "medium");
 }
@@ -623,6 +627,10 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
 
 .blg-pad-bottom-small {
   @include blg-spacing("bottom", "small");
+}
+
+.blg-pad-bottom-smallish {
+  @include blg-spacing("bottom", "smallish");
 }
 
 .blg-pad-bottom-medium {
