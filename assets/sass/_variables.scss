@@ -79,7 +79,7 @@ $content-header-download-width-medium: 44;
 $content-header-profile-width: 48;
 
 // Spacing
-$teaser-spacing-top: 24;
+$teaser-spacing-top: 23;
 // 23 not 24 to account for a 1px border (Because of the way the elements are nested, border-box doesn't help us here.)
 $teaser-spacing-bottom: 23;
 $teaser-spacing-left: 16;
