@@ -59,10 +59,11 @@ module.exports = class Popup {
     // If there's no hash, there's no point in going on.
     if (!link.hash) {
       this.resolver = Promise.resolve(null);
-      return this.resolver;
+    } else {
+      this.resolver = utils.remoteDoc(link.href, this.window);
     }
 
-    return this.resolver = utils.remoteDoc(link.href, this.window);
+    return this.resolver;
   }
 
   getBodyContentsFromNode(node) {
