@@ -136,6 +136,7 @@ describe('A ViewSelector Component', function () {
       const link = $elm.querySelector('.view-selector__link--side-by-side');
       expect(link).to.not.be.null;
       expect(link.textContent).to.equal('Side-by-side view');
+      expect(link.href).to.equal('https://lens.elifesciences.org/19749/index.html');
     });
 
     it('opens an iframe', function() {

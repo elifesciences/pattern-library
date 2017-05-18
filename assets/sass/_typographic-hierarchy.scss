@@ -58,7 +58,6 @@
 @mixin _label-typeg($uppercase: true) {
   font-family: $font-secondary;
   @include font-size(11);
-  font-weight: 700;
   letter-spacing: 0.5px;
   line-height: 2.1818181818; /* 24px with a font size of 11px */
   @if $uppercase {
@@ -174,7 +173,6 @@
 @mixin author-typeg() {
   font-family: $font-secondary;
   @include font-size(16);
-  font-weight: 700;
   line-height: 1.5;
 }
 
@@ -312,7 +310,6 @@
 @mixin typeg-portal-quick-nav() {
   font-family: $font-secondary;
   @include font-size(16);
-  font-weight: 700;
   line-height: 1.5;
 }
 
@@ -384,7 +381,6 @@
 @mixin listing-main-author-typeg() {
   font-family: $font-secondary;
   @include font-size(16);
-  font-weight: 700;
   line-height: 1.5;
 }
 
