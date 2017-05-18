@@ -445,48 +445,27 @@ module.exports = () => {
     };
   })();
 
-  /**
-   * Query selector to a different page.
-   *
-   * Usage example:
-   * const xhr = remoteQuerySelector('/?my-static-page');
-   *
-   * xhr.then((querySelector) => console.log(querySelector('h1')));
-   * xhr.then((querySelector) => console.log(querySelector('h2')));
-   * xhr.then((querySelector) => console.log(querySelector('h3')));
-   *
-   * This will log the H1, H2 and H3s on that remote page while only making a single XHR.
-   *
-   * Performance note: result of XHR is NOT garbage collected until promise is.
-   *
-   * @param url
-   * @param doc
-   * @returns {Promise.<function(string):Node>}
-   */
-  function remoteQuerySelector(url, doc = document) {
-    return loadData(url).then(data => selector => {
+  function remoteDoc(url, window) {
+    const current = window.location.href.split('#')[0];
+    url = url.split('#')[0];
 
-      // Create a unique ID for this query.
-      const id = uniqueIds.get('querySelectorXHR', doc);
+    if (url === current) {
+      return Promise.resolve(window.document);
+    }
 
-      // First container to get the whole XHR
-      const wholeXHRDocument = doc.createElement('div');
-      wholeXHRDocument.id = id;
-      wholeXHRDocument.classList.add('visually-hidden', 'hidden');
-      wholeXHRDocument.innerHTML = data;
-      document.body.appendChild(wholeXHRDocument);
+    if (window.remoteDocuments === undefined) {
+      window.remoteDocuments = {};
+    }
 
-      // Second container to hold the query result.
-      const queryResult = wholeXHRDocument.querySelector(selector);
-      const queryContainer = doc.createElement('div');
-      queryContainer.id = id;
-      queryContainer.appendChild(queryResult);
-      queryContainer.classList.add('visually-hidden', 'hidden');
-      document.body.replaceChild(queryContainer, wholeXHRDocument);
+    if (!(url in window.remoteDocuments)) {
+      window.remoteDocuments[url] = loadData(url).then((data) => {
+        let wrapper = window.document.createElement('div');
+        wrapper.innerHTML = data;
+        return wrapper;
+      });
+    }
 
-      // Return the query result in the container
-      return queryResult;
-    });
+    return window.remoteDocuments[url];
   }
 
   /**
@@ -593,7 +572,7 @@ module.exports = () => {
     jumpToAnchor: jumpToAnchor,
     loadData: loadData,
     nthChild: nthChild,
-    remoteQuerySelector: remoteQuerySelector,
+    remoteDoc: remoteDoc,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
     wrapElements: wrapElements,
