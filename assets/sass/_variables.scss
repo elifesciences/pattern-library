@@ -116,7 +116,7 @@ $bkpt-view-selector: $bkpt-site--x-wide;
 // TODO: review these breakpoints:
 $bkpt-article-download-links-list: 560;
 $bkpt-pull-quote: 560;
-$bkpt-section-listing: 740;
+$bkpt-section-listing: $bkpt-site--x-wide;
 
 // Borders
 $border-radius: 3;
