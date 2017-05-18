@@ -13,6 +13,10 @@
   text-decoration: none;
   width: 100%;
 
+  &:after {
+    content: "\00a\00bb";
+  }
+
   // Needs specificity to override display property when unhidden
   &.hidden {
     @include hidden();
