@@ -19,21 +19,20 @@
           </div>
         {{/contextualData}}
 
-        <div class="wrapper">
+        <div class="wrapper blg-pad-top-medium">
 
           <div class="grid">
 
             {{#viewSelector}}
               <div class="grid__item
                           one-whole
-                          x-large--two-twelfths
-                          blg-pad-top-medium">
+                          x-large--two-twelfths">
                   {{> molecules-view-selector }}
               </div>
             {{/viewSelector}}
 
 
-            <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}} blg-pad-top-medium">
+            <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}}">
 
               {{#articleSections}}
                 {{> molecules-article-section }}
@@ -61,9 +60,7 @@
             </div>
 
             {{#hasRelated}}
-              <div class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}
-                  blg-pad-top-medium
-              ">
+              <div class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}">
                 [Related]
               </div>
 
