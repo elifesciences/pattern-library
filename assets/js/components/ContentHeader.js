@@ -197,17 +197,18 @@ module.exports = class ContentHeader {
     // Should conform to https://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden
     let toggle = this.doc.createElement('li');
     let toggleOnText = 'see&nbsp;all';
-    const toggleOnSuffix = ' &raquo;';
-    const toggleOffSuffix = ' &laquo;';
     let toggleOffText = 'see&nbsp;less';
     toggle.setAttribute('aria-hidden', 'true');
-    toggle.classList.add('content-header__item_toggle', 'content-header__item_toggle--' + itemType);
-    toggle.innerHTML = toggleOnText + toggleOnSuffix;
+    toggle.classList.add('content-header__item_toggle', 'content-header__item_toggle--off',
+                         'content-header__item_toggle--' + itemType);
+    toggle.innerHTML = toggleOnText;
     toggle.addEventListener('click', e => {
       let target = e.target;
       if (target.innerHTML.indexOf(toggleOnText) > -1) {
         [].forEach.call(this.doc.querySelectorAll('.content-header__item_toggle'), item => {
-          item.innerHTML = toggleOffSuffix + ' ' + toggleOffText;
+          item.innerHTML = toggleOffText;
+          item.classList.add('content-header__item_toggle--on');
+          item.classList.remove('content-header__item_toggle--off');
         });
         this.clearExcessMark(this.authors);
         this.clearExcessMark(this.institutions);
@@ -217,7 +218,9 @@ module.exports = class ContentHeader {
         this.markLastNonExcessItem('institution', this.institutions);
       } else {
         [].forEach.call(this.doc.querySelectorAll('.content-header__item_toggle'), item => {
-          item.innerHTML = '&nbsp;' + toggleOnText + toggleOnSuffix;
+          item.innerHTML = '&nbsp;' + toggleOnText;
+          item.classList.add('content-header__item_toggle--off');
+          item.classList.remove('content-header__item_toggle--on');
         });
         this.hideAllExcessItems('author', this.authors);
         this.hideAllExcessItems('institution', this.institutions);

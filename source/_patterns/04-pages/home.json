@@ -261,7 +261,7 @@
 
   "sectionsListingLink": {
     "targetFragmentId": "sectionsListing",
-    "text": "See all major subject areas &raquo;"
+    "text": "See all major subject areas"
   },
 
   "sectionsListing": {
