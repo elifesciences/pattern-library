@@ -607,6 +607,16 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
   @include blg-spacing("top", "medium");
 }
 
+.blg-pad-top--small-to-medium {
+
+  @include blg-spacing("top", "small");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("top", "medium");
+  }
+
+}
+
 .blg-pad-top-large {
   @include blg-spacing("top", "large");
 }
