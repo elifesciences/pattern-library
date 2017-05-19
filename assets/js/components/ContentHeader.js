@@ -59,19 +59,11 @@ module.exports = class ContentHeader {
   }
 
   /**
-   * Returns max number authors or institutions to be displayed by default at current screen width.
    *
-   * Returns null if itemType is invalid.
-   *
-   * @param {string} itemType 'author' or 'institution'
-   * @returns {number} Number of the type of item to display by default at current screen width
+   * @returns {number} Number of item to display by default
    */
-  getDefaultMaxItems(itemType) {
-    if (itemType === 'author') {
-      return 16;
-    }
-
-    return 10;
+  getDefaultMaxItems() {
+    return 9;
   }
 
   /**
@@ -88,7 +80,7 @@ module.exports = class ContentHeader {
       return null;
     }
 
-    let defaultMaxItems = this.getDefaultMaxItems(itemType);
+    let defaultMaxItems = this.getDefaultMaxItems();
     if (items.length > defaultMaxItems) {
       return [].slice.call(items, defaultMaxItems);
     }
@@ -169,7 +161,7 @@ module.exports = class ContentHeader {
    * @param {DOMTokenList} items The items to which to add the trailing text
    */
   addTrailingText(itemType, items) {
-    if (itemType === 'author' && items.length > this.getDefaultMaxItems('author')) {
+    if (itemType === 'author' && items.length > this.getDefaultMaxItems()) {
       if (!this.hasToggleAuthor) {
         this.buildSeeMoreLessToggle('author');
         this.hasToggleAuthor = true;
@@ -177,7 +169,7 @@ module.exports = class ContentHeader {
 
     }
 
-    if (itemType === 'institution' && items.length > this.getDefaultMaxItems('institution')) {
+    if (itemType === 'institution' && items.length > this.getDefaultMaxItems()) {
       if (!this.hasToggleInstitution) {
         this.buildSeeMoreLessToggle('institution');
         this.hasToggleInstitution = true;
