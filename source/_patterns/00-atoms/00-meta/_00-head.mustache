@@ -10,11 +10,18 @@
         border:1px solid #999;
         padding: 1rem;
       }
+
+      *,
+      *:after,
+      *:before {
+        border-color: red !important;
+      }
+
     </style>
     <link rel="stylesheet" href="../../assets/css/all.css?{{ cacheBuster }}" media="all" />
 
     <!-- Uncomment line below to display the baseline grid. -->
-    <!--<link rel="stylesheet" href="http://basehold.it/24">-->
+    <link rel="stylesheet" href="http://basehold.it/24">
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     {% pattern-lab-head %}

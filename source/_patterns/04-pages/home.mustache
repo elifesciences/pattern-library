@@ -7,13 +7,13 @@
       {{/siteHeader}}
     </div>
 
-    <main role="main" class="main blg-margin-bottom-large">
+    <main role="main" class="main">
 
       {{#carousel}}
         {{> organisms-carousel}}
       {{/carousel}}
 
-      {{#leadParas}}
+      {{#leadParas}}                             §
         <div class="wrapper">
           {{> molecules-lead-paras}}
         </div>
@@ -27,23 +27,23 @@
 
       <div class="wrapper blg-pad-top--small-to-medium">
         <div class="grid">
-          <div class="listing-column-container">
-            <div class="grid__item one-whole x-large--eight-twelfths listing-column-main">
+          <div class="grid__item one-whole x-large--eight-twelfths listing-column-main">
 
-              {{#mainTeasers}}
-                {{> organisms-listing-teasers}}
-              {{/mainTeasers}}
+            {{#mainTeasers}}
+              {{> organisms-listing-teasers}}
+            {{/mainTeasers}}
 
-            </div>
-            <div class="grid__item one-whole x-large--four-twelfths listing-column-secondary">
+          </div>
+
+          <div class="grid__item one-whole x-large--four-twelfths listing-column-secondary">
 
               {{#secondaryTeasers}}
                 {{> organisms-listing-teasers}}
               {{/secondaryTeasers}}
 
-            </div>
           </div>
-        </div>
+
+          <div>
       </div>
 
 
