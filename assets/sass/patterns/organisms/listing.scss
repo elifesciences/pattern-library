@@ -3,7 +3,8 @@
 
 $showTwoAtWidth: #{get-rem-from-px(640)}rem;
 $showThreeAtWidth: #{get-rem-from-px(980)}rem;
-$totalHighlightsSpacing: 40;
+//$totalHighlightsSpacing: 12;
+$totalHighlightsSpacing: 6;
 
 /* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
  *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
@@ -110,7 +111,9 @@ div.listing-list__content {
 
   .listing-list__item {
     border: 1px solid #ccc;
-    @include margin(unquote("0 #{$totalHighlightsSpacing / 2}"));
+    //@include margin(unquote("0 #{$totalHighlightsSpacing / 2}"));
+    @include margin(3, "left");
+    @include margin(3, "right");
     //@include padding(2);
 
     .teaser--highlights {
@@ -140,7 +143,9 @@ div.listing-list__content {
     .listing-list__item {
       display: inline-block;
       list-style-type: none;
-      @include margin(unquote("0 #{$totalHighlightsSpacing / 2}#{px 10}"));
+      //@include margin(unquote("0 #{$totalHighlightsSpacing / 2}#{px 10}"));
+      @include margin(3, "left");
+      @include margin(3, "right");
       @include padding(12, "top");
       @include padding(12, "left");
       @include padding(12, "right");
