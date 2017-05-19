@@ -22,23 +22,8 @@ $totalHighlightsSpacing: 40;
 
 }
 
-// TODO: BLG: Rationalise .listing-column-container with .column-container in _grid.scss
-.listing-column-container {
-  @include blg-column-container();
-}
-
 .grid-secondary-column .listing-list {
   @include blg-column-container();
-}
-
-// TODO: BLG: Is this needed?
-.listing-column-main ol.listing-list:last-of-type {
-  @include nospace("bottom");
-}
-
-// TODO: BLG: Is this needed?
-.listing-column-secondary ol.listing-list:last-of-type {
-  @include nospace("bottom");
 }
 
 .listing-list__item {
