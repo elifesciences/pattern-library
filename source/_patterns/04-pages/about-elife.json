@@ -142,7 +142,7 @@
 
   "sectionsListingLink": {
     "targetFragmentId": "sectionsListing",
-    "text": "See all about sections &raquo;"
+    "text": "See all about sections"
   },
 
   "sectionsListing": {

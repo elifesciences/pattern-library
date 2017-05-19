@@ -5,6 +5,11 @@
   color: $color-text;
   @include see-more-link-typeg();
   text-decoration: none;
+
+  &:after {
+    content: "\00a\00bb";
+  }
+
 }
 
 .see-more-link__highlight {
