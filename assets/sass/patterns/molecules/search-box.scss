@@ -14,6 +14,12 @@
   max-width: #{$max-site-width}px;
   padding: 0 6%;
   position: relative;
+
+  .wrapper & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
 }
 
 .search-box__output {
