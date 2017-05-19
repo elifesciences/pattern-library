@@ -1,8 +1,5 @@
 @import "../../definitions";
 
-$highlightsSpacing: $blg-space-small-in-px !default;
-$controlMagicSpacing: 6; // Magic number for vertical spacing of the icon, roughly (icon height - container / 2)
-
 .highlights__controls {
   display: none;
 }
@@ -23,22 +20,25 @@ $controlMagicSpacing: 6; // Magic number for vertical spacing of the icon, rough
   }
 
   .highlights__control {
-    @include height($highlightsSpacing);
+    @include height($blg-space-small-in-px);
     background-color: transparent;
     border: none;
+    box-sizing: content-box;
     line-height: 1.4;
     position: absolute;
     text-align: center;
-    top: calc(50% - #{$controlMagicSpacing}px);
-    @include width($highlightsSpacing);
+    // heading block height + (box height- icon height) / 2
+    top: 48px + ((106px - 24px) / 2);
+    @include width(24);
   }
 
   .highlights__control--prev {
-    left: #{-$highlightsSpacing}px;
+    position: absolute;
+    left: -34px;
   }
 
   .highlights__control--next {
     position: absolute;
-    right: #{-$highlightsSpacing}px;
+    right: -34px;
   }
 }

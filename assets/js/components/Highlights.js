@@ -134,7 +134,11 @@ module.exports = class Highlights {
     this.renderCurrent();
 
     // Equalise heights.
-    utils.equalizeHeightOfItems('listing-list--highlights', 'teaser__header');
+    // utils.equalizeHeightOfItems('listing-list--highlights', 'teaser__header');
+    [].forEach.call(this.originalSlideWrappers, (slideWrapper) => {
+      slideWrapper.style.height = '106px';
+    });
+
   }
 
   renderCurrent() {
