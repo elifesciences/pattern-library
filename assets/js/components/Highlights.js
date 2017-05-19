@@ -12,8 +12,8 @@ module.exports = class Highlights {
     this.window = _window;
     this.$elm = $elm;
     this.doc = doc;
-    this.tabletWidth = 640;
-    this.desktopWidth = 980;
+    this.tabletWidth = 900;
+    this.desktopWidth = 1200;
     this.setCurrentSlide(1);
     this.timerInterval = 10000;
     this.$prevBtn = $elm.querySelector('.highlights__control--prev');
@@ -134,7 +134,6 @@ module.exports = class Highlights {
     this.renderCurrent();
 
     // Equalise heights.
-    // utils.equalizeHeightOfItems('listing-list--highlights', 'teaser__header');
     [].forEach.call(this.originalSlideWrappers, (slideWrapper) => {
       slideWrapper.style.height = '106px';
     });

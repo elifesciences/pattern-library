@@ -1,9 +1,8 @@
 @import "../../definitions";
 @import "../../layout/grid";
 
-$showTwoAtWidth: #{get-rem-from-px(640)}rem;
-$showThreeAtWidth: #{get-rem-from-px(980)}rem;
-//$totalHighlightsSpacing: 12;
+$showTwoAtWidth: #{get-rem-from-px($bkpt-site--wide)}rem;
+$showThreeAtWidth: #{get-rem-from-px($bkpt-site--x-wide)}rem;
 $totalHighlightsSpacing: 6;
 
 /* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
@@ -111,10 +110,8 @@ div.listing-list__content {
 
   .listing-list__item {
     border: 1px solid #ccc;
-    //@include margin(unquote("0 #{$totalHighlightsSpacing / 2}"));
     @include margin(3, "left");
     @include margin(3, "right");
-    //@include padding(2);
 
     .teaser--highlights {
       border-top: none;
@@ -143,7 +140,6 @@ div.listing-list__content {
     .listing-list__item {
       display: inline-block;
       list-style-type: none;
-      //@include margin(unquote("0 #{$totalHighlightsSpacing / 2}#{px 10}"));
       @include margin(3, "left");
       @include margin(3, "right");
       @include padding(12, "top");
