@@ -8,7 +8,7 @@
       {{/siteHeader}}
     </div>
 
-    <main role="main" class="main">
+    <main role="main" class="main blg-margin-bottom-large">
 
     {{#contentHeader}}
       {{> organisms-content-header}}
@@ -19,15 +19,12 @@
     {{/audioPlayer}}
 
       {{#sectionsListingLink}}
-        <div class="wrapper">
+        <div class="wrapper u-pad-top">
           {{> atoms-section-listing-link}}
         </div>
       {{/sectionsListingLink}}
 
       <div class="wrapper u-pad-top">
-      </div>
-
-      <div class="wrapper">
         <div class="listing-column-container listing-column-main">
           {{#highlightsTeasers}}
             {{> organisms-listing-teasers}}
@@ -37,13 +34,13 @@
       </div>
 
 
-    <div class="wrapper">
+    <div class="wrapper u-pad-top-lg">
 
       <div class="grid">
 
         <div class="listing-column-container">
 
-          <div class="grid__item large--eight-twelfths listing-column-main">
+          <div class="grid__item one-whole x-large--eight-twelfths listing-column-main">
 
             {{#mainTeasers}}
               {{> organisms-listing-teasers}}
@@ -51,7 +48,7 @@
 
           </div>
 
-          <div class="grid__item large--four-twelfths listing-column-secondary">
+          <div class="grid__item one-whole x-large--four-twelfths listing-column-secondary">
 
             {{#secondaryTeasers}}
               {{> organisms-listing-teasers}}

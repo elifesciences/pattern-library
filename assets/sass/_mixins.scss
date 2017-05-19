@@ -240,6 +240,8 @@
   @if $type == "padding" {
     @if $level == "small" {
       @include padding($blg-space-small-in-px, $direction);
+    } @else if $level == "smallish" {
+      @include padding($blg-space-smallish-in-px, $direction);
     } @else if $level == "medium" {
       @include padding($blg-space-medium-in-px, $direction);
     } @else if $level == "large" {

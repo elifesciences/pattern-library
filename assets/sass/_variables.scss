@@ -47,7 +47,8 @@ $line-height-primary: 1.3;
  * Baseline grid
  */
 $blg-space-extra-small-in-px: 12;
-$blg-space-small-in-px: 24;
+$blg-space-small-in-px: $blg-space-extra-small-in-px * 2;
+$blg-space-smallish-in-px: $blg-space-small-in-px * 1.5;
 $blg-space-medium-in-px: $blg-space-small-in-px * 2;
 $blg-space-large-in-px: $blg-space-small-in-px * 3;
 
@@ -79,7 +80,7 @@ $content-header-download-width-medium: 44;
 $content-header-profile-width: 48;
 
 // Spacing
-$teaser-spacing-top: 24;
+$teaser-spacing-top: 23;
 // 23 not 24 to account for a 1px border (Because of the way the elements are nested, border-box doesn't help us here.)
 $teaser-spacing-bottom: 23;
 $teaser-spacing-left: 16;
