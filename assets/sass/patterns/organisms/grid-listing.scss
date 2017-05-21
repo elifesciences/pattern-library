@@ -1,37 +1,9 @@
 @import "../../definitions";
-
+//
 .grid-listing {
   list-style: none;
   margin: 0 auto;
   padding-left: 0;
-
-  @include width($min-width-grid-listing-item);
-
-  @supports (display: flex) {
-    width: auto;
-  }
-}
-
-.grid-listing--block-link {
-  width: auto;
-}
-
-.grid-listing__pagination {
-  margin: 0 auto;
-  @include width($min-width-grid-listing-item);
-
-  @supports (display: flex) {
-    width: auto;
-  }
-}
-
-.grid-listing-item {
-  margin: 0 auto;
-  @include constrain-width($max-width-grid-listing-item, "max");
-
-  @supports (display: flex) {
-    display: block;
-  }
 }
 
 .grid-listing-item--block-link {
@@ -40,149 +12,56 @@
   @include margin(0 0 2);
   @include constrain-width($max-width-block-link, "max");
   width: 100%;
-}
 
-.grid-listing-item--block-link:last-child {
-  border-bottom-width: 1px;
-  margin-bottom: 0;
-}
-
-.grid-listing-item--image-link {
-  @include constrain-width($max-width-image-link, "max");
-  width: 100%;
-}
-
-// 2 column view.
-@media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--narrow-screen)}em) {
-
-  .grid-listing {
-
-    @include width($min-width-grid-listing-item * 2 + 20);
-
-    @supports (display: flex) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      width: auto;
-    }
-
+  &:last-child {
+    border-bottom-width: 1px;
+    margin-bottom: 0;
   }
 
-  .grid-listing__pagination {
-    @include width($min-width-grid-listing-item * 2 + 20);
-  }
-
-  .grid-listing-item {
+  // 2 col
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     border: none;
-    flex: 1 0 #{get-rem-from-px($min-width-grid-listing-item)}rem;
     float: left;
-    @include margin(0 20 20 0);
-    @include constrain-width($max-width-grid-listing-item, "max");
-    width: auto;
-
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
-
-    &:nth-child(2n+1) {
-      clear: left;
-    }
-
-  }
-
-}
-
-// 3 column view
-@media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--medium-width)}em) {
-
-  .grid-listing {
-    @include width($min-width-grid-listing-item * 3 + 40);
-
-    @supports (display: flex) {
-      width: auto;
-    }
-
-  }
-
-  .grid-listing__pagination {
-    @include width($min-width-grid-listing-item * 3 + 40);
-  }
-
-  .grid-listing-item {
-
-    &:nth-child(2n) {
-      @include margin(20, "right");
-    }
-
-    &:nth-child(2n+1) {
-      clear: none;
-    }
-
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
-
-    &:nth-child(3n+1) {
-      clear: left;
-    }
-
-  }
-
-}
-
-// 4 column view
-@media only all and (min-width: #{get-rem-from-px($bkpt-grid-link-listing--wide-screen)}em) {
-
-  .grid-listing {
-    @include width($min-width-grid-listing-item * 4 + 60);
-  }
-
-  .grid-listing__pagination {
-    @include width($min-width-grid-listing-item * 4 + 60);
-  }
-
-  .grid-listing-item {
-    flex: 0 0 #{get-rem-from-px($min-width-grid-listing-item)}rem;
     @include width($min-width-grid-listing-item);
+    @include margin(0 20 20 0);
+    width: calc((100% - 20px) / 2);
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+
+  }
+
+  // 3 col
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+
+    @include margin(0 20 20 0);
+    width: calc((100% - 40px) / 3);
+
+    &:nth-child(2n) {
+      @include margin(20, "right")
+    }
 
     &:nth-child(3n) {
-      @include margin(20, "right");
+      margin-right: 0;
     }
 
-    &:nth-child(3n+1) {
-      clear: none;
+  }
+
+  // 4 col
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+
+    @include margin(0 20 20 0);
+    width: calc((100% - 60px) / 4);
+
+    &:nth-child(3n) {
+      @include margin(20, "right")
     }
 
     &:nth-child(4n) {
       margin-right: 0;
     }
 
-    &:nth-child(4n+1) {
-      clear: left;
-    }
-  }
-
-}
-
-@media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}em) {
-
-  .grid-listing {
-
-    @include width($max-site-width);
-  }
-
-  .grid-listing__pagination {
-    @include width($max-site-width);
-  }
-
-  .grid-listing-item {
-    flex: 0 0 #{get-rem-from-px($med-width-grid-listing-item)}rem;
-    @include margin(20, "right");
-    @include width($med-width-grid-listing-item);
-
-    &:nth-child(4n) {
-      margin-right: 0;
-    }
   }
 
 }

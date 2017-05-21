@@ -105,7 +105,8 @@ $bkpt-content-header--medium-width: $bkpt-site--medium;
 $bkpt-content-header--wide: $bkpt-site--wide;
 $bkpt-content-header--extra-wide: $bkpt-site--x-wide;
 
-$bkpt-block-link: 600;
+//$bkpt-block-link: 600;
+$bkpt-block-link: $bkpt-site--medium;
 $bkpt-image-link: $bkpt-block-link;
 $bkpt-grid-listing--narrow-screen: $bkpt-block-link;
 $bkpt-grid-listing--medium-width: 882;
