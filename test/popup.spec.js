@@ -14,25 +14,34 @@ describe('A Popup Component', function () {
     expect(popup).to.exist;
   });
 
-  it('it gets wrapped in span with .popup class', function () {
-    expect($elm.classList.contains('popup')).to.be.true;
-    expect($elm.firstChild.textContent).to.equal($childElm.textContent);
-  });
+  it('handles being clicked by fetching and showing reference', function (done) {
+    let e = {
+      pageX: 0,
+      pageY: 0,
+      preventDefault() {
+      },
+    };
 
-  it('handles being clicked by fetching and showing reference', function(done) {
-    popup.handleLinkClick({  preventDefault() {} });
+    popup.handleLinkClick(e);
     expect(popup.isOpen).to.be.true
-    popup.render().then(($el) => {
-      expect($el.querySelector('.popup__hit-box')).to.exist;
-      expect($el.querySelector('.popup__window')).to.exist;
-      expect($el.querySelector('.popup__content').textContent).to.equal('I\'m body contents');
+    popup.render(e).then(($el) => {
+      expect(document.querySelector('.popup__hit-box')).to.exist;
+      expect(document.querySelector('.popup__window')).to.exist;
+      expect(document.querySelector('.popup__content').textContent).to.equal('I\'m body contents');
     }).then(done).catch(done)
   });
 
-  it('handles being clicked a second time and closing', function(done) {
-    popup.handleLinkClick({  preventDefault() {} });
-    popup.render().then(($el) => {
-      expect($el.classList.contains('popup--hidden')).to.be.true;
+  it('handles being clicked a second time and closing', function (done) {
+    let e = {
+      pageX: 0,
+      pageY: 0,
+      preventDefault() {
+      },
+    };
+
+    popup.handleLinkClick(e);
+    popup.render(e).then(($el) => {
+      expect(document.querySelector('.popup__hit-box').style.display).to.equal('none');
     }).then(done).catch(done);
   });
 });
