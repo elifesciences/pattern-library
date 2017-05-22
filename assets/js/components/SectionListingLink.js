@@ -10,7 +10,7 @@ module.exports = class SectionListingLink {
     }
 
     this.window = _window;
-    this.thresholdWidth = 740;
+    this.thresholdWidth = 1200;
     this.$elm = $elm;
     this.doc = doc;
     this.$list = this.doc.querySelector(SectionListingLink.findIdSelector(this.$elm.href));

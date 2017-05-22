@@ -1,4 +1,5 @@
 @import "../../definitions";
+@import "../../layout/grid";
 
 $showTwoAtWidth: #{get-rem-from-px(640)}rem;
 $showThreeAtWidth: #{get-rem-from-px(980)}rem;
@@ -11,7 +12,6 @@ $totalHighlightsSpacing: 40;
   @include nospace("left");
   list-style-type: none;
   padding-bottom: 0;
-  @include margin($listing-list-spacing, "bottom");
 }
 
 .decision-letter-header {
@@ -22,12 +22,8 @@ $totalHighlightsSpacing: 40;
 
 }
 
-.listing-column-main ol.listing-list:last-of-type {
-  @include nospace("bottom");
-}
-
-.listing-column-secondary ol.listing-list:last-of-type {
-  @include nospace("bottom");
+.grid-secondary-column .listing-list {
+  @include blg-column-container();
 }
 
 .listing-list__item {

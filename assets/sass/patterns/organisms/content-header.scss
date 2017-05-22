@@ -439,6 +439,14 @@ li.content-header__author_list_item--last .content-header__author:after {
   display: none;
 }
 
+.content-header__item_toggle--off:after {
+  content: "\00a\00bb";
+}
+
+.content-header__item_toggle--on:before {
+  content: "\00ab\00a";
+}
+
 .content-header__institution_list {
   margin: 0;
   padding: 0;

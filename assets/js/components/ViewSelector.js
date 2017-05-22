@@ -39,8 +39,11 @@ module.exports = class ViewSelector {
 
     this.elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
     this.window.addEventListener('scroll', this.handleScroll.bind(this));
-    this.$jumpLinksToggle.addEventListener('click', this.toggleJumpLinks.bind(this));
-    this.toggleJumpLinks();
+
+    if (this.$jumpLinksToggle) {
+      this.$jumpLinksToggle.addEventListener('click', this.toggleJumpLinks.bind(this));
+      this.toggleJumpLinks();
+    }
 
   }
 

@@ -19,7 +19,7 @@
           </div>
         {{/contextualData}}
 
-        <div class="wrapper">
+        <div class="wrapper wrapper--content">
 
           <div class="grid">
 
@@ -27,13 +27,14 @@
               <div class="grid__item
                           one-whole
                           x-large--two-twelfths
-                          blg-pad-top-medium">
+                          blg-pad-bottom-smallish">
+
                   {{> molecules-view-selector }}
               </div>
             {{/viewSelector}}
 
 
-            <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}} blg-pad-top-medium">
+            <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}}">
 
               <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
               {{#articleSections}}
@@ -73,10 +74,8 @@
             </div>
 
             {{#hasRelated}}
-              <div class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}
-                  blg-pad-top-medium
-              ">
-                [Related]
+              <div class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}">
+
               </div>
 
             {{/hasRelated}}
@@ -93,7 +92,7 @@
 
       <div class="grid">
 
-        <div class="grid__item large--eight-twelfths push--large--two-twelfths blg-pad-bottom-large blg-pad-top-medium">
+        <div class="grid__item large--eight-twelfths push--large--two-twelfths blg-pad-bottom-large">
           {{#furtherReading}}
             {{> organisms-listing-read-more }}
           {{/furtherReading}}
