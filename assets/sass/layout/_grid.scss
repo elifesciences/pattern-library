@@ -83,6 +83,16 @@
 
 }
 
+@mixin blg-margin-bottom--small-to-medium {
+
+  @include blg-spacing("bottom", "small", "margin");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "medium", "margin");
+  }
+
+}
+
 @mixin blg-column-container() {
   @include blg-margin-bottom--medium-to-large();
 }

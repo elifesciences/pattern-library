@@ -58,6 +58,7 @@ $max-width-block-link: 600;
 $max-width-image-link: $max-width-block-link;
 $med-width-grid-listing-item: 263;
 $min-width-grid-listing-item: 245;
+$grid-listing-spacing-measure: $blg-space-smallish-in-px;
 
 $max-site-width: 1114;
 $max-site-width-in-rem: get-rem-from-px($max-site-width);
