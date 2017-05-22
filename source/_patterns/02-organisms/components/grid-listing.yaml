@@ -3,6 +3,7 @@ assets:
     - grid-listing.css
     - $ref: ../../00-atoms/components/block-link.yaml#/assets/css
     - $ref: ../../00-atoms/components/image-link.yaml#/assets/css
+    - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
     - $ref: ../../01-molecules/components/archive-nav-link.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/pager.yaml#/assets/css
     - $ref: ../../01-molecules/teasers/teaser.yaml#/assets/css
@@ -17,8 +18,7 @@ schema:
           type: string
           minLength: 1
         heading:
-          type: string
-          minLength: 1
+          - $ref: ../../00-atoms/components/list-heading.yaml#/schema
         id:
           type: string
           minLength: 1
