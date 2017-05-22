@@ -163,6 +163,7 @@
   border-top: none;
   @include margin($blg-space-small-in-px, "bottom");
   @include height(450);
+  padding-top: 0;
 
   .teaser__img--prominent {
     @include nospace();

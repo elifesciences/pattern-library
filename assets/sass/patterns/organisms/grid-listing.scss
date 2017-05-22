@@ -11,6 +11,7 @@
 
 .grid-listing-item {
   @include margin(0 0 $blg-space-extra-small-in-px);
+  @include padding($blg-space-small-in-px, "top");
   @include constrain-width($max-width-block-link, "max");
   width: 100%;
 
@@ -23,7 +24,7 @@
     border: none;
     float: left;
     @include width($min-width-grid-listing-item);
-    @include margin(0 $grid-listing-spacing-measure $grid-listing-spacing-measure 0);
+    @include margin(0 $grid-listing-spacing-measure $blg-space-extra-small-in-px 0);
     width: calc((100% - #{$grid-listing-spacing-measure}px) / 2);
 
     &.grid-listing-item--block-link {
@@ -39,7 +40,7 @@
   // 3 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
 
-    @include margin(0 $grid-listing-spacing-measure $grid-listing-spacing-measure 0);
+    @include margin(0 $grid-listing-spacing-measure $blg-space-extra-small-in-px 0);
     width: calc((100% - #{2 * $grid-listing-spacing-measure}px) / 3);
 
     &:nth-child(2n) {
@@ -55,7 +56,7 @@
   // 4 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
 
-    @include margin(0 $grid-listing-spacing-measure $grid-listing-spacing-measure 0);
+    @include margin(0 $grid-listing-spacing-measure $blg-space-extra-small-in-px 0);
     width: calc((100% - #{3 * $grid-listing-spacing-measure}px) / 4);
 
     &:nth-child(3n) {
