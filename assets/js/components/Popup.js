@@ -59,25 +59,10 @@ module.exports = class Popup {
     // If there's no hash, there's no point in going on.
     if (!link.hash) {
       this.resolver = Promise.resolve(null);
-      return this.resolver;
+    } else {
+      this.resolver = utils.remoteDoc(link.href, this.window);
     }
 
-    // This case will catch '#hashes' and '{currentUrl}#hashes'
-    const current = this.window.location;
-    if (
-      link.href.indexOf('#') === 0 || (
-        link.hostname === current.hostname &&
-        link.port === current.port &&
-        link.protocol === current.protocol &&
-        link.pathname === current.pathname
-      )
-    ) {
-      this.resolver = Promise.resolve((id) => this.doc.querySelector(id));
-      return this.resolver;
-    }
-
-    // This case will catch remote urls.
-    this.resolver = utils.remoteQuerySelector(link.href);
     return this.resolver;
   }
 
@@ -127,7 +112,7 @@ module.exports = class Popup {
 
       // If there is contents the come back we add it to our object.
       if (r) {
-        this.bodyContents = this.getBodyContentsFromNode(r(this.$link.hash));
+        this.bodyContents = this.getBodyContentsFromNode(r.querySelector(this.$link.hash));
         return this.render();
 
         // If not, we set this and ignore.
