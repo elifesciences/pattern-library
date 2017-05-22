@@ -1,9 +1,9 @@
 @import "../../definitions";
 @import "../../layout/grid";
 
-$showTwoAtWidth: #{get-rem-from-px(640)}rem;
-$showThreeAtWidth: #{get-rem-from-px(980)}rem;
-$totalHighlightsSpacing: 40;
+$showTwoAtWidth: #{get-rem-from-px($bkpt-site--wide)}rem;
+$showThreeAtWidth: #{get-rem-from-px($bkpt-site--x-wide)}rem;
+$totalHighlightsSpacing: 6;
 
 /* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
  *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
@@ -110,15 +110,25 @@ div.listing-list__content {
 
   .listing-list__item {
     border: 1px solid #ccc;
-    @include margin(unquote("0 #{$totalHighlightsSpacing / 2}"));
-    @include padding(2);
+    @include margin(3, "left");
+    @include margin(3, "right");
 
     .teaser--highlights {
       border-top: none;
-      @include padding(10);
+
+      .js & {
+        margin-bottom: 0;
+      }
+
+      padding: 0;
       white-space: normal;
     }
   }
+
+  .teaser__context_label_list {
+    display: none;
+  }
+
 }
 
 .js {
@@ -130,7 +140,12 @@ div.listing-list__content {
     .listing-list__item {
       display: inline-block;
       list-style-type: none;
-      @include margin(unquote("0 #{$totalHighlightsSpacing / 2}#{px 10}"));
+      @include margin(3, "left");
+      @include margin(3, "right");
+      @include padding(12, "top");
+      @include padding(12, "left");
+      @include padding(12, "right");
+
       vertical-align: top;
 
       /* Width of each element is 100% divided by the amount of elements shown in
@@ -146,5 +161,27 @@ div.listing-list__content {
         width: calc(33.33333% - #{$totalHighlightsSpacing}px); // 3 in view (1/3)
       }
     }
+
+    .teaser__header_text {
+      padding-top: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .teaser__secondary_info {
+      @include padding(11, "bottom");
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .teaser__img {
+      box-sizing: content-box;
+      @include nospace();
+      @include padding(3, "top");
+      @include padding(12, "left");
+    }
+
   }
 }
