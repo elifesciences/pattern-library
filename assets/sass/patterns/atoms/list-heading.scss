@@ -23,7 +23,7 @@
   text-align: center;
 }
 
-.highlights .list-heading {
+.highlights > .list-heading {
   @include padding($blg-space-extra-small-in-px, "top");
   @include padding($blg-space-extra-small-in-px, "bottom");
 }

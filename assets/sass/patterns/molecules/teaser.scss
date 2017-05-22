@@ -161,8 +161,9 @@
 .teaser--grid-style {
 
   border-top: none;
-  @include widths-for-generic-grid-listing-items();
   @include margin($blg-space-small-in-px, "bottom");
+  @include height(450);
+  padding-top: 0;
 
   .teaser__img--prominent {
     @include nospace();
