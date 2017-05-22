@@ -133,13 +133,6 @@ module.exports = class Popup {
     return $bottomBar;
   }
 
-  wrapInContainerWithClass($elm, tag, className) {
-    const $container = utils.buildElement(tag, [className]);
-    $container.innerHTML = $elm.outerHTML;
-    $elm.parentNode.replaceChild($container, $elm);
-    return $container;
-  }
-
   createPopupBox(...children) {
     return utils.wrapElements(children, 'div', 'popup__window');
   }
