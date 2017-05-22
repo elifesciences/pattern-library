@@ -7,16 +7,18 @@
 
 .date--expanded {
   background-color: $color-primary;
-  border-radius: 3px;
   @include label-content-typeg();
   color: $color-text-ui-background;
   display: block;
-  display: flex;
+  @supports (display: flex) {
+    display: flex;
+  }
   flex-direction: column;
   float: right;
   height: 70px;
   justify-content: space-around;
-  @include margin($teaser-spacing-left, "left");
+  @include margin($blg-space-extra-small-in-px, "top");
+  @include margin(24, "left");
   text-align: center;
   width: 70px;
 
