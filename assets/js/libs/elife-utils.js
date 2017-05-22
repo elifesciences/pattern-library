@@ -271,38 +271,6 @@ module.exports = () => {
   }
 
   /**
-   * Makes all elements in container the same height.
-   */
-  function equalizeHeightOfItems(containerClass, targetClass) {
-
-    let containerElements = document.getElementsByClassName(containerClass);
-
-    for (let i = 0; i < containerElements.length; i += 1) {
-
-      let tallestElement = 0;
-      let targetElements = containerElements[i].getElementsByClassName(targetClass);
-
-      for (let j = 0; j < targetElements.length; j += 1) {
-
-        let currentTargetElement = targetElements[j];
-
-        currentTargetElement.style.height = 'auto'; // paint
-
-        let currentElementHeight = currentTargetElement.offsetHeight;
-
-        if (currentElementHeight > tallestElement) {
-          tallestElement = currentElementHeight;
-        }
-      }
-
-      for (let j = 0; j < targetElements.length; j += 1) {
-        targetElements[j].style.height = tallestElement + 'px'; // paint
-      }
-
-    }
-  }
-
-  /**
    * Closest parent
    * Source: https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
    * @param el
@@ -478,7 +446,6 @@ module.exports = () => {
     closest: closest,
     create$pageOverlay: create$pageOverlay,
     debounce: debounce,
-    equalizeHeightOfItems: equalizeHeightOfItems,
     eventCreator: eventCreator,
     loadJavaScript: loadJavaScript,
     loadStyleSheet: loadStyleSheet,
