@@ -149,15 +149,28 @@ module.exports = class Popup {
   }
 
   positionPopupHitBox(e) {
-    let left = e.pageX - 170;
+    this.popupHitBox.style.display = '';
+
+    const width = this.popupHitBox.offsetWidth;
+    const height = this.popupHitBox.offsetHeight;
+
+    let left = e.pageX - (width / 2);
     let top = e.pageY + 20;
 
+    // If off the left.
     if (left < 10) {
       left = 10;
     }
 
-    if ((left + 340 + 10) > this.window.innerWidth) {
-      left = this.window.innerWidth - 340 - 10;
+    // If off the right.
+    if ((left + width + 10) > this.window.innerWidth) {
+      left = this.window.innerWidth - width - 10;
+    }
+
+    // See if can be placed completely above.
+    const topIfAbove = e.pageY - height - 20;
+    if (top + height + 10 > (this.window.pageYOffset + this.window.innerHeight) && topIfAbove >= (this.window.pageYOffset + 10)) {
+      top = topIfAbove;
     }
 
     this.popupHitBox.style.left = `${left}px`;
@@ -200,14 +213,9 @@ module.exports = class Popup {
       }, 150));
     }
 
-    // Change between above and below link.
-    if (this.isOpen) {
-      this.positionPopupHitBox(e);
-    }
-
     // Changing the state depending on the other properties of the object.
     if (this.isOpen) {
-      this.popupHitBox.style.display = '';
+      this.positionPopupHitBox(e);
     } else {
       this.popupHitBox.style.display = 'none';
     }
