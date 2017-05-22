@@ -7,15 +7,12 @@ module.exports = class Popup {
       return;
     }
 
-    this.$elm = this.wrapInContainerWithClass($elm, 'span', 'popup');
-    this.$link = this.$elm.querySelector('a');
-    this.label = $elm.getAttribute('data-label') || '';
+    this.$link = $elm;
     this.isOpen = false;
     this.resolver = null;
     this.window = _window;
     this.doc = doc;
     this.bodyContents = null;
-    this.hitBoxTranslation = 0;
 
     this.$link.addEventListener('click', e => this.handleLinkClick(e));
 
@@ -26,7 +23,7 @@ module.exports = class Popup {
     e.preventDefault();
 
     this.isOpen = !this.isOpen;
-    this.render().then(() => {
+    this.render(e).then(() => {
       if (this.isEmpty) {
         window.location = e.target.href;
       }
@@ -35,18 +32,18 @@ module.exports = class Popup {
 
   handleDocumentClick(e) {
 
-    if (utils.closest(e.target, '.popup__hit-box') === this.popupHitBox) {
+    if (utils.closest(e.target, 'a') === this.$link) {
       return;
     }
 
-    const closestPopup = utils.closest(e.target, '.popup');
-    if (closestPopup && closestPopup === this.$elm) {
+    const closestPopup = utils.closest(e.target, '.popup__hit-box');
+    if (closestPopup && closestPopup === this.popupHitBox) {
       return;
     }
 
     if (this.isOpen) {
       this.isOpen = false;
-      this.render();
+      this.render(e);
     }
 
   }
@@ -105,7 +102,7 @@ module.exports = class Popup {
     return null;
   }
 
-  requestContents() {
+  requestContents(e) {
 
     // We await on the contents, which might be XHR.
     return this.getResolver(this.$link).then(r => {
@@ -113,14 +110,14 @@ module.exports = class Popup {
       // If there is contents the come back we add it to our object.
       if (r) {
         this.bodyContents = this.getBodyContentsFromNode(r.querySelector(this.$link.hash));
-        return this.render();
+        return this.render(e);
 
         // If not, we set this and ignore.
       } else {
         this.emptyResponse();
       }
 
-      return Promise.resolve(this.$elm);
+      return Promise.resolve(this.$link);
     });
   }
 
@@ -148,21 +145,35 @@ module.exports = class Popup {
   }
 
   createPopupHitBox(...children) {
-    return utils.wrapElements(children, 'div', 'popup__hit-box', {
-      marginLeft: `${(this.$link.offsetWidth / 2)}px`,
-    });
+    return utils.wrapElements(children, 'div', 'popup__hit-box');
   }
 
-  render() {
+  positionPopupHitBox(e) {
+    let left = e.pageX - 170;
+    let top = e.pageY + 20;
+
+    if (left < 10) {
+      left = 10;
+    }
+
+    if ((left + 340 + 10) > this.window.innerWidth) {
+      left = this.window.innerWidth - 340 - 10;
+    }
+
+    this.popupHitBox.style.left = `${left}px`;
+    this.popupHitBox.style.top = `${top}px`;
+  }
+
+  render(e) {
     // If there's nothing to render.. we don't.
     if (this.isEmpty) {
       utils.jumpToAnchor(this.$link);
-      return Promise.resolve(this.$elm);
+      return Promise.resolve(this.$link);
     }
 
     // If there's no body to show, we request it.
     if (!this.bodyContents) {
-      return this.requestContents();
+      return this.requestContents(e);
     }
 
     // If there's no popup element yet, we create it.
@@ -181,49 +192,26 @@ module.exports = class Popup {
       );
 
       // Add to DOM.
-      this.$elm.appendChild(this.popupHitBox);
+      this.doc.body.appendChild(this.popupHitBox);
+
+      this.window.addEventListener('resize', utils.debounce(() => {
+        this.isOpen = false;
+        this.render(e);
+      }, 150));
     }
 
     // Change between above and below link.
     if (this.isOpen) {
-      this.$elm.classList.add('popup--above');
-      this.$elm.classList.remove('popup--below');
-      const hitBox = this.popupHitBox.getBoundingClientRect();
-      if (hitBox.top < 0) {
-        this.$elm.classList.remove('popup--above');
-        this.$elm.classList.add('popup--below');
-      }
-
-      // Check some cheap access variables.
-      if (hitBox.right > window.innerWidth || hitBox.left < 0 || hitBox.right > window.innerWidth) {
-
-        // Catches when the popup is wider than the window. (has to re-render.)
-        if (this.popupHitBox.style.width > 0 && this.popupHitBox.style.width < window.innerWidth) {
-          this.popupHitBox.style.width = `${window.innerWidth - 40}px`; // 40px is padding.
-          return this.render(); // After this point, we have enough room to fit the popup.
-        }
-
-        // If we are too far left, translate right by the difference.
-        if (hitBox.left < 0) {
-          this.hitBoxTranslation -= hitBox.left;
-          this.popupHitBox.style.transform = `translateX(${this.hitBoxTranslation}px)`;
-        }
-
-        // If we are too far right, translate left by the difference.
-        if (hitBox.right > window.innerWidth) {
-          this.hitBoxTranslation += hitBox.right - window.innerWidth;
-          this.popupHitBox.style.transform = `translateX(-${this.hitBoxTranslation}px)`;
-        }
-      }
+      this.positionPopupHitBox(e);
     }
 
     // Changing the state depending on the other properties of the object.
     if (this.isOpen) {
-      this.$elm.classList.remove('popup--hidden');
+      this.popupHitBox.style.display = '';
     } else {
-      this.$elm.classList.add('popup--hidden');
+      this.popupHitBox.style.display = 'none';
     }
 
-    return Promise.resolve(this.$elm);
+    return Promise.resolve(this.$link);
   }
 };

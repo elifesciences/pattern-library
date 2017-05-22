@@ -5,34 +5,9 @@
 }
 
 .popup__hit-box {
-  left: -160px;
-  @include padding(15);
   position: absolute;
-  transition: transform #{$transition-duration}, opacity #{$transition-duration};
-  transform: translateY(0px);
   width: 340px;
   z-index: 100;
-
-  .popup--hidden & {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .popup--below & {
-    top: 15px;
-  }
-
-  .popup--above & {
-    bottom: 15px;
-  }
-
-  .popup--hidden.popup--below & {
-    transform: translateY(-15px);
-  }
-
-  .popup--hidden.popup--above & {
-    transform: translateY(15px);
-  }
 
 }
 
@@ -65,47 +40,7 @@ a.popup__button {
   border-radius: 3px;
   color: #fff;
 
-  > * {
-    color: #fff;
-  }
-
-  .article-section__body & .reference a,
-  .reference__title,
-  .reference__title a,
-  .author-details__name,
-  .author-details__affiliations,
-  .author-details__affiliation,
-  .author-details__heading,
-  .author-details__text,
-  .author-details__section--orcid {
-    color: #fff;
-    font-family: $font-secondary;
-    @include font-size(13);
-  }
-
-  .reference-list__item {
-    @include margin(0, "bottom");
-    @include padding(10);
-  }
-
-  .author-details {
-    @include margin(20, "top");
-  }
-
-  .author-details__name {
-    @include font-size(15);
-  }
-
-  .reference__origin {
-    @include margin(4, "top");
-  }
-
-  .reference__authors_link {
-    color: #fff;
-    @include font-size(11);
-  }
-
-  .reference-list__ordinal_number {
-    display: none;
+  a {
+    color: inherit;
   }
 }

@@ -2,7 +2,6 @@
 
 .reference__title {
   @include listing-side-art-title-typeg();
-  color: $color-text;
   display: block;
   @include font-size(16);
   line-height: 1.5;
@@ -38,7 +37,7 @@ a.reference__title:hover {
 }
 
 .reference__authors_link {
-  color: $color-text;
+  color: inherit;
   font-family: $font-secondary;
   text-decoration: none;
 
