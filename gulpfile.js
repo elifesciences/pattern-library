@@ -230,15 +230,15 @@ gulp.task('js:extLibs', ['js:clean'], () => {
 gulp.task('js:hint', () => {
   return gulp.src(jsSource)
      .pipe(jshint())
-     .pipe(jshint.reporter('default'))
-     .pipe(jshint.reporter('fail'));
+     .pipe(jshint.reporter('default'));
+     // .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('js:cs', () => {
   return gulp.src(jsSource)
     .pipe(jscs())
-    .pipe(jscs.reporter())
-    .pipe(jscs.reporter('fail'));
+    .pipe(jscs.reporter());
+    // .pipe(jscs.reporter('fail'));
 });
 
 gulp.task('browserify-tests', (done) => {
@@ -267,7 +267,7 @@ gulp.task('browserify-tests', (done) => {
 gulp.task('test', ['browserify-tests', 'js'], () => {
   return gulp.src('./test/*.html')
     .pipe(mochaPhantomjs({
-      reporter: 'spec', 
+      reporter: 'spec',
       mocha: {
         grep: mocha_grep
       },

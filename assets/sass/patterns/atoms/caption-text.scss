@@ -19,3 +19,13 @@
 .caption-text__body > :last-child {
   @include nospace("bottom");
 }
+
+.caption-text__body__collapsed_part {
+  display: inline;
+  margin: 0;
+}
+
+.caption-text__toggle {
+  margin: 0;
+  border: 0;
+}
