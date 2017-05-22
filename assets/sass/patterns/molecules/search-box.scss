@@ -14,6 +14,16 @@
   max-width: #{$max-site-width}px;
   padding: 0 6%;
   position: relative;
+
+  .wrapper & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .wrapper .search-box--js.search-box--shown & {
+    padding: 0 6%;
+  }
+
 }
 
 .search-box__output {
@@ -89,11 +99,6 @@
 }
 
 @media only all and (min-width: #{$max-site-width}px) {
-
-  .search-box__inner {
-    margin: 0 auto;
-    @include padding(0 66);
-  }
 
   .search-box__inner {
     margin: 0 auto;
