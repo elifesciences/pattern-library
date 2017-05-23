@@ -4,8 +4,8 @@
   position: relative;
 
   .compact-form__container {
-    @include margin(10, "bottom");
-    @include margin(20, "top");
+    @include blg-spacing("top", "small");
+    @include blg-spacing("bottom", "small");
     max-width: inherit;
   }
 }
