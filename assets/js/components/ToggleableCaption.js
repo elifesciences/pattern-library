@@ -62,8 +62,14 @@ module.exports = class ToggleableCaption {
         if (processedNodes) {
           const $parent = childNode.parentNode;
           const firstWrappedNode = processedNodes.childNodes[1];
-          $parent.replaceChild(processedNodes, childNode);
-          this.wrapExcessCaption($parent, firstWrappedNode);
+          try {
+            // Danger: if the text threshold is in middle of inline element within the caption, it
+            // will try to act on the unclosed element and will break the page. Hence this catch.
+            $parent.replaceChild(processedNodes, childNode);
+            this.wrapExcessCaption($parent, firstWrappedNode);
+          } catch (e) {
+            console.log(e);
+          }
         }
       }
     });
@@ -122,9 +128,7 @@ module.exports = class ToggleableCaption {
     $toggle.parentNode.querySelector('.caption-text__body__collapsed_part').classList
            .toggle('visuallyhidden');
     const $toggleText = $toggle.innerHTML;
-    const textWhenClosed = 'see more';
-    const textWhenOpen = 'see less';
-    $toggle.innerHTML =  $toggleText === textWhenClosed ? textWhenOpen : textWhenClosed;
+    $toggle.innerHTML =  $toggleText === 'see more' ? 'see less' : 'see more';
   }
 
   isStopElement($element) {
