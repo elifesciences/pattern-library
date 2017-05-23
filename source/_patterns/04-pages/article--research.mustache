@@ -36,9 +36,11 @@
 
             <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}}">
 
+              <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
               {{#articleSections}}
                 {{> molecules-article-section }}
               {{/articleSections}}
+              </div>
 
               {{#iframe}}
                 {{!> atoms-iframe }}
@@ -48,6 +50,15 @@
               {{#pl-only-article-section-for-download-links}}
                 {{> molecules-pl-only-article-section-for-download-links}}
               {{/pl-only-article-section-for-download-links}}
+
+              <section class="article-section" data-behaviour="ArticleSection">
+                <header class="article-section__header">
+                  <h2 class="article-section__header_text">References</h2>
+                </header>
+                <div class="article-section__body">
+                  {{> molecules-reference-list }}
+                </div>
+              </section>
 
               {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
               {{#articleMeta}}
@@ -59,6 +70,7 @@
 
                 </section>
               {{/articleMeta}}
+
             </div>
 
             {{#hasRelated}}

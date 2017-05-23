@@ -50,11 +50,11 @@
           <dt class="content-header__profile_label">Curated by</dt>
           <dd class="content-header__profile_data">{{profile.name}}</dd>
         </dl>
-        {{#profile.url}}
-        </a>
-        {{/profile.url}}
         {{^profile.url}}
           </span>
+        {{/profile.url}}
+        {{#profile.url}}
+        </a>
         {{/profile.url}}
       </div>
     {{/hasProfile}}
@@ -104,7 +104,7 @@
       <ol class="content-header__author_list">
         {{#authors.list}}
           <li class="content-header__author_list_item">
-            <span class="content-header__author">{{#url}}<a href="{{url}}" class="content-header__author_link">{{/url}}{{name}}{{#url}}</a>{{/url}}{{#isCorresponding}}
+            <span class="content-header__author">{{#url}}<a href="{{url}}" data-behaviour="Popup" class="content-header__author_link">{{/url}}{{name}}{{#url}}</a>{{/url}}{{#isCorresponding}}
               <picture>
                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author.svg{{/assetRewrite}}" type="image/svg+xml">
                <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}}"

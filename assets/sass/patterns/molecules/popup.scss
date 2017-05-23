@@ -1,0 +1,46 @@
+@import "../../definitions";
+
+.popup {
+  position: relative;
+}
+
+.popup__hit-box {
+  position: absolute;
+  width: 340px;
+  z-index: 100;
+
+}
+
+a.popup__button {
+  color: #fff;
+  font-family: $font-secondary;
+  @include font-size(10);
+  @include padding(8 14);
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.popup__button--right {
+  float: right;
+  text-transform: uppercase;
+}
+
+.popup__content {
+  @include margin(0, "bottom");
+  max-height: 300px;
+  overflow-y: auto;
+  @include padding(10);
+}
+
+.popup__window {
+  @include box-shadow();
+  background: #181818;
+  border-radius: 3px;
+  color: #fff;
+
+  a {
+    color: inherit;
+  }
+}

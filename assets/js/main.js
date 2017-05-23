@@ -20,6 +20,7 @@ if (window.localStorage && document.querySelector &&
   Components.AudioPlayer = require('./components/AudioPlayer');
   Components.Carousel = require('./components/Carousel');
   Components.ContentHeader = require('./components/ContentHeader');
+  Components.DelegateBehaviour = require('./components/DelegateBehaviour');
   Components.FragmentHandler = require('./components/FragmentHandler');
   Components.Highlights = require('./components/Highlights');
   Components.MainMenu = require('./components/MainMenu');
@@ -27,6 +28,7 @@ if (window.localStorage && document.querySelector &&
   Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
   Components.Metrics = require('./components/Metrics');
   Components.Pager = require('./components/Pager');
+  Components.Popup = require('./components/Popup');
   Components.SearchBox = require('./components/SearchBox');
   Components.SectionListingLink = require('./components/SectionListingLink');
   Components.SelectNav = require('./components/SelectNav');
@@ -56,9 +58,11 @@ if (window.localStorage && document.querySelector &&
 
     }());
 
-    function initialiseComponent($component) {
+    function initialiseComponent($component, inputBehaviour=null) {
+      let behaviour = inputBehaviour ? inputBehaviour : $component.getAttribute('data-behaviour');
+
       // When present, data-behaviour contains a space-separated list of handlers for that component
-      let handlers = $component.getAttribute('data-behaviour').trim().split(' ');
+      let handlers = behaviour.trim().split(' ');
       handlers.forEach(function (handler) {
         if (!singletons.isRegistered(handler)) {
           if (!!Components[handler] && typeof Components[handler] === 'function') {
@@ -71,9 +75,11 @@ if (window.localStorage && document.querySelector &&
       });
     }
 
+    Components.DelegateBehaviour.setInitialiseComponent(initialiseComponent);
+
     let components = document.querySelectorAll('[data-behaviour]');
     if (components) {
-      [].forEach.call(components, initialiseComponent);
+      [].forEach.call(components, (el) => initialiseComponent(el));
     }
 
   };

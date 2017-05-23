@@ -404,6 +404,7 @@ module.exports = () => {
           if (src.hasOwnProperty(nextKey)) {
             output[nextKey] = src[nextKey];
           }
+
         }
 
       }
@@ -411,6 +412,69 @@ module.exports = () => {
       return output;
     };
   })();
+
+  function remoteDoc(url, window) {
+    const current = window.location.href.split('#')[0];
+    url = url.split('#')[0];
+
+    if (url === current) {
+      return Promise.resolve(window.document);
+    }
+
+    if (window.remoteDocuments === undefined) {
+      window.remoteDocuments = {};
+    }
+
+    if (!(url in window.remoteDocuments)) {
+      window.remoteDocuments[url] = loadData(url).then((data) => {
+        let wrapper = window.document.createElement('div');
+        wrapper.innerHTML = data;
+        return wrapper;
+      });
+    }
+
+    return window.remoteDocuments[url];
+  }
+
+  /**
+   * Add CSS styling to DOM element.
+   *
+   * @param $el
+   * @param styles
+   * @returns {*}
+   */
+  function addStylesToElement($el, styles) {
+    for (let style in styles) {
+      if (styles.hasOwnProperty(style)) {
+        $el.style[style] = styles[style];
+      }
+
+    }
+
+    return $el;
+  }
+
+  /**
+   * Wrap elements in with various options.
+   *
+   * @param $el
+   * @param tag
+   * @param className
+   * @param styles
+   * @param fn
+   * @returns {Element}
+   */
+  function wrapElements($el, tag, className, styles, fn) {
+    const $children = Array.isArray($el) ? $el : [$el];
+    const classNames = Array.isArray(className) ? className : [className];
+    const $container = buildElement(tag, classNames);
+    if (styles) {
+      addStylesToElement($container, styles);
+    }
+
+    $children.forEach(child => $container.appendChild(child));
+    return fn ? fn($container) : $container;
+  }
 
   function eventCreator(name, detail) {
     let event;
@@ -423,6 +487,25 @@ module.exports = () => {
     }
 
     return event;
+  }
+
+  /**
+   * Jump to element on page.
+   *
+   * @param link
+   */
+  function jumpToAnchor(link) {
+    if (history.replaceState) {
+      window.location.href = link.href;
+      history.replaceState(null, null, link.href);
+    } else {
+      const $el = document.getElementById(link.hash.slice(1));
+      if ($el) {
+        window.scrollTo(0, $el.offsetTop);
+      }
+
+    }
+
   }
 
   function create$pageOverlay($parent, $followingSibling, id) {
@@ -453,10 +536,12 @@ module.exports = () => {
     extend: extend,
     flatten: flatten,
     invertPxString: invertPxString,
+    jumpToAnchor: jumpToAnchor,
     loadData: loadData,
     nthChild: nthChild,
+    remoteDoc: remoteDoc,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
+    wrapElements: wrapElements,
   };
-
 };
