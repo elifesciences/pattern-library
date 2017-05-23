@@ -113,14 +113,19 @@ module.exports = class ToggleableCaption {
 
   buildCaptionToggle($parent, $followingSibling) {
     const $toggle = utils.buildElement('button', ['caption-text__toggle'],
-                                       'TOGGLE', $parent, $followingSibling);
+                                       'see more...', $parent, $followingSibling);
     $toggle.addEventListener('click', this.toggleCaption.bind(this));
     return $toggle;
   }
 
   toggleCaption(e) {
-    e.target.parentNode.querySelector('.caption-text__body__collapsed_part')
-     .classList.toggle('visuallyhidden');
+    const $toggle = e.target;
+    $toggle.parentNode.querySelector('.caption-text__body__collapsed_part').classList
+           .toggle('visuallyhidden');
+    const $toggleText = $toggle.innerHTML;
+    const textWhenClosed = 'see more...';
+    const textWhenOpen = 'see less';
+    $toggle.innerHTML =  $toggleText === textWhenClosed ? textWhenOpen : textWhenClosed;
   }
 
   isStopElement($element) {

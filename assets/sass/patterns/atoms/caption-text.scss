@@ -26,6 +26,13 @@
 }
 
 .caption-text__toggle {
-  margin: 0;
+  background-color: transparent;
   border: 0;
+  color: $color-primary;
+  margin: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
+
