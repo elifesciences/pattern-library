@@ -90,8 +90,7 @@ module.exports = class ToggleableCaption {
                                           'caption-text__body__collapsed_part'
                                         ]
     );
-    $wrapper.style.display = 'inline';
-    $wrapper.style.margin = '0';
+
     $parent.insertBefore($wrapper, firstWrappedNode);
     const nodesToWrap = this.doc.createDocumentFragment();
     nodesToWrap.appendChild(firstWrappedNode);
@@ -113,7 +112,7 @@ module.exports = class ToggleableCaption {
 
   buildCaptionToggle($parent, $followingSibling) {
     const $toggle = utils.buildElement('button', ['caption-text__toggle'],
-                                       'see more...', $parent, $followingSibling);
+                                       'see more', $parent, $followingSibling);
     $toggle.addEventListener('click', this.toggleCaption.bind(this));
     return $toggle;
   }
@@ -123,7 +122,7 @@ module.exports = class ToggleableCaption {
     $toggle.parentNode.querySelector('.caption-text__body__collapsed_part').classList
            .toggle('visuallyhidden');
     const $toggleText = $toggle.innerHTML;
-    const textWhenClosed = 'see more...';
+    const textWhenClosed = 'see more';
     const textWhenOpen = 'see less';
     $toggle.innerHTML =  $toggleText === textWhenClosed ? textWhenOpen : textWhenClosed;
   }

@@ -30,9 +30,32 @@
   border: 0;
   color: $color-primary;
   margin: 0;
+  padding-left: 0;
 
   &:hover {
     cursor: pointer;
   }
-}
 
+  .caption-text__body__collapsed_part.visuallyhidden + & {
+
+    &:before {
+      color: $color-text;
+      content: "\002026\2004";
+    }
+
+    &:after {
+      content: "\2004\00bb";
+    }
+
+  }
+
+  .caption-text__body__collapsed_part:not(.visuallyhidden) + & {
+
+    &:before {
+      color: $color-primary;
+      content: "\2004\00ab\2004";
+    }
+
+  }
+
+}
