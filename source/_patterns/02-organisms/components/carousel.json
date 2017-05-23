@@ -1,5 +1,7 @@
 {
-  "heading": "Highlights",
+  "heading": {
+    "heading": "Highlights"
+  },
   "items": [
     {
       "subjects": {

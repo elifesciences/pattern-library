@@ -1,6 +1,8 @@
 {
-  "heading":"Highlights",
-  "headingId":"carousel_highlights_heading",
+  "heading": {
+    "heading": "Highlights",
+    "headingId":"carousel_highlights_heading"
+  },
   "id":"carousel_highlights",
   "highlights":true,
   "items":[
