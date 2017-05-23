@@ -71,8 +71,8 @@
   width: 21px;
 }
 
-@media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+@media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
   .nav-secondary__item:last-child {
-    margin: 0;
+    @include nospace("right");
   }
 }
