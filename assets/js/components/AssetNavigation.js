@@ -23,7 +23,7 @@ module.exports = class AssetNavigation {
         dataset.splice(index, 1);
         $newAsset.dataset.behaviour = dataset.join(' ');
 
-        this.$elm.replaceWith($newAsset);
+        this.$elm.parentNode.replaceChild($newAsset, this.$elm);
         this.$elm = $newAsset;
         let assetItems = [this.$elm];
 
@@ -93,6 +93,8 @@ module.exports = class AssetNavigation {
 
   show(i) {
     this.hideAll();
+    console.log('hello');
+    console.log(this.assetItems);
     this.assetItems[i].classList.remove('visuallyhidden');
   }
 
