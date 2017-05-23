@@ -4,4 +4,9 @@ video {
   height: auto;
   max-height: 100vh;
   width: 100%;
+
+  .captioned-asset & {
+    border: 1px solid $color-text-dividers;
+  }
+
 }
