@@ -29,14 +29,20 @@
   font-weight: bold;
   @include font-size(14);
   color: $color-primary;
+  padding: 0 0 0 8px;
 }
 
 .side-by-side-view__button-close-cross {
-  @include font-size(26);
+  @include font-size(18);
   vertical-align: middle;
   padding-right: 0.3rem;
+  display: inline-block;
+  margin-top: -2px;
+
+  /* font-size: 18px; */
 }
 
 .side-by-side-view__button-close-text {
   vertical-align: middle;
+  font-weight: 500;
 }
