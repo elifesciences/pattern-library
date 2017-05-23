@@ -20,12 +20,18 @@ module.exports = class Popup {
   }
 
   handleLinkClick(e) {
+    if (!this.$link) {
+      return true;
+    }
+
     e.preventDefault();
 
     this.isOpen = !this.isOpen;
     this.render(e).then(() => {
       if (this.isEmpty) {
-        window.location = e.target.href;
+        const link = this.$link;
+        this.$link = null;
+        link.click();
       }
     });
   }
@@ -173,7 +179,6 @@ module.exports = class Popup {
   render(e) {
     // If there's nothing to render.. we don't.
     if (this.isEmpty) {
-      utils.jumpToAnchor(this.$link);
       return Promise.resolve(this.$link);
     }
 
