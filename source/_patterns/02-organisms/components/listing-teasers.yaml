@@ -1,6 +1,7 @@
 assets:
   css:
     - listing.css
+    - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
     - $ref: ../../01-molecules/teasers/teaser.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/pager.yaml#/assets/css
     - $ref: ../../00-atoms/components/see-more-link.yaml#/assets/css
@@ -10,8 +11,7 @@ schema:
   type: object
   properties:
     heading:
-      type: string
-      minLength: 1
+      $ref: ../../00-atoms/components/list-heading.yaml#/schema
     id:
       type: string
       pattern: ^[a-zA-Z0-9_$]+$
