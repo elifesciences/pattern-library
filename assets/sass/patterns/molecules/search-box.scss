@@ -3,7 +3,7 @@
 .search-box {
   position: relative;
 
-  .compact-form__container {
+  &:not(.search-box--js) .compact-form__container {
     @include blg-spacing("top", "small");
     @include blg-spacing("bottom", "small");
     max-width: inherit;
