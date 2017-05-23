@@ -17,8 +17,6 @@ schema:
           $ref: ../../00-atoms/components/caption-text.yaml#/schema
         doi:
           $ref: ../../00-atoms/components/doi.yaml#/schema
-      required:
-        - captionText
     -
       oneOf:
         -
