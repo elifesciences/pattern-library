@@ -238,7 +238,9 @@
 // Baseline grid
 @mixin blg-spacing($direction, $level, $type: "padding") {
   @if $type == "padding" {
-    @if $level == "small" {
+    @if $level == "extra-small" {
+      @include padding($blg-space-extra-small-in-px, $direction);
+    } @else if $level == "small" {
       @include padding($blg-space-small-in-px, $direction);
     } @else if $level == "smallish" {
       @include padding($blg-space-smallish-in-px, $direction);
@@ -248,7 +250,9 @@
       @include padding($blg-space-large-in-px, $direction);
     }
   } @else if $type == "margin" {
-    @if $level == "small" {
+    @if $level == "extra-small" {
+      @include margin($blg-space-extra-small-in-px, $direction);
+    } @else if $level == "small" {
       @include margin($blg-space-small-in-px, $direction);
     } @else if $level == "medium" {
       @include margin($blg-space-medium-in-px, $direction);
