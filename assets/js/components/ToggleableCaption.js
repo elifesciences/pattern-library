@@ -61,7 +61,7 @@ module.exports = class ToggleableCaption {
         const processedNodes = this.processTextNode(childNode, thresholdCharCount);
         if (processedNodes) {
           const $parent = childNode.parentNode;
-          const firstWrappedNode = processedNodes.lastChild;
+          const firstWrappedNode = processedNodes.childNodes[1];
           $parent.replaceChild(processedNodes, childNode);
           this.wrapExcessCaption($parent, firstWrappedNode);
         }
@@ -69,6 +69,7 @@ module.exports = class ToggleableCaption {
     });
   }
 
+  // TODO: Change this so it puts the toggle at the end
   processTextNode(nextTextNode, thresholdCharCount) {
     if (this.accumulatedTextLength + nextTextNode.length < thresholdCharCount) {
       this.accumulatedTextLength += nextTextNode.length;
@@ -78,8 +79,7 @@ module.exports = class ToggleableCaption {
     this.thresholdReached = true;
     const overBy = this.accumulatedTextLength + nextTextNode.length - thresholdCharCount;
     const splitNodes = this.splitTextNode(nextTextNode, nextTextNode.length - overBy);
-    const $toggle = this.buildCaptionToggle();
-    splitNodes.insertBefore($toggle, splitNodes.childNodes[1]);
+    splitNodes.appendChild(this.buildCaptionToggle());
     return splitNodes;
   }
 
@@ -119,7 +119,8 @@ module.exports = class ToggleableCaption {
   }
 
   toggleCaption(e) {
-    e.target.nextElementSibling.classList.toggle('visuallyhidden');
+    e.target.parentNode.querySelector('.caption-text__body__collapsed_part')
+     .classList.toggle('visuallyhidden');
   }
 
   isStopElement($element) {
