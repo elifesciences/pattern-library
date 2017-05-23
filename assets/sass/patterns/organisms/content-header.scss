@@ -366,6 +366,19 @@
   @include margin($content-header-padding, "bottom");
   max-width: 100%;
 
+  a {
+    @include discreet-link($color-text--reverse);
+
+    &:link,
+    &:hover,
+    &:active,
+    &:visited {
+      border-bottom-color: $color-text--reverse;
+      color: $color-text--reverse;
+    }
+
+  }
+
   .content-header--image & {
     @include margin(0, "bottom");
     display: none;
