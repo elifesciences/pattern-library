@@ -9,10 +9,7 @@ schema:
   type: object
   properties:
     heading:
-      type: string
-      minLength: 1
-    headingId:
-      type: string
+      $ref: ../../00-atoms/components/list-heading.yaml#/schema
     items:
       type: array
       items:

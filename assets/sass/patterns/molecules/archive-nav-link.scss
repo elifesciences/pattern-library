@@ -1,13 +1,5 @@
 @import "../../definitions";
 
-.archive-nav-link {
-  @include widths-for-generic-grid-listing-items();
-}
-
-.archive-nav-link__list {
-  @include widths-for-generic-grid-listing-items();
-}
-
 .archive-nav-link__link {
   color: $color-text;
   text-decoration: none;
@@ -27,7 +19,7 @@
 
 .archive-nav-link__sub_link {
   color: $color-text;
-  @include body-typeg;
+  @include body-typeg();
   text-decoration: none;
 
   &:hover {

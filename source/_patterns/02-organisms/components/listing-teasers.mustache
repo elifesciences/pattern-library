@@ -1,5 +1,7 @@
-<div class="highlights">
-  {{>atoms-list-heading}}
+<div{{#highlights}} class="highlights"{{/highlights}}>
+  {{#heading}}
+    {{>atoms-list-heading}}
+  {{/heading}}
 
   {{#highlights}}
   <div class="highlights__content" data-behaviour="Highlights" role="region" aria-labelledby="{{headingId}}">

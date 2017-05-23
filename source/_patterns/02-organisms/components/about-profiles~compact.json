@@ -1,5 +1,7 @@
 {
-  "heading": "Reviewing editors",
+  "heading": {
+    "heading": "Reviewing editors"
+  },
   "compact": true,
   "items": [
     {

@@ -70,12 +70,8 @@ describe('A ContentHeader Component', function () {
 
     describe('the getDefaultMaxItems() method', function () {
 
-      it('returns 16 when invoked with "author"', function () {
-        expect(contentHeader.getDefaultMaxItems('author')).to.equal(16);
-      });
-
-      it('returns 10 when invoked with "institutions"', function () {
-        expect(contentHeader.getDefaultMaxItems('institution')).to.equal(10);
+      it('returns 9', function () {
+        expect(contentHeader.getDefaultMaxItems()).to.equal(9);
       });
 
     });
@@ -92,38 +88,38 @@ describe('A ContentHeader Component', function () {
 
       });
 
-      it('returns empty array if passed an array of < 17 authors', function () {
-        let authorSet = buildItemSet('author', 16);
+      it('returns empty array if passed an array of < 10 authors', function () {
+        let authorSet = buildItemSet('author', 9);
         let observed = contentHeader.getExcessItems('author', authorSet);
         expect(Array.isArray(observed)).to.be.true;
         expect(observed.length).to.equal(0);
       });
 
-      it('returns empty array if passed an array of < 11 institutions', function () {
-        let institutionSet = buildItemSet('institution', 10);
+      it('returns empty array if passed an array of < 10 institutions', function () {
+        let institutionSet = buildItemSet('institution', 9);
         let observed = contentHeader.getExcessItems('institution', institutionSet);
         expect(Array.isArray(observed)).to.be.true;
         expect(observed.length).to.equal(0);
 
       });
 
-      it('returns array of the 17th element onwards if passed array of > 16 authors', function () {
+      it('returns array of the 10th element onwards if passed array of > 9 authors', function () {
         let authorSet = buildItemSet('author', 26);
         let observed = contentHeader.getExcessItems('author', authorSet);
         expect(Array.isArray(observed)).to.be.true;
-        expect(observed.length).to.equal(10);
+        expect(observed.length).to.equal(17);
         observed.forEach(function (author, i) {
-          expect(observed[i]).to.equal(authorSet[i + 16]);
+          expect(observed[i]).to.equal(authorSet[i + 9]);
         });
       });
 
-      it('returns array of the 11th element onwards if passed array of > 10 institutions', function () {
+      it('returns array of the 10th element onwards if passed array of > 9 institutions', function () {
         let institutionSet = buildItemSet('institution', 20);
         let observed = contentHeader.getExcessItems('institution', institutionSet);
         expect(Array.isArray(observed)).to.be.true;
-        expect(observed.length).to.equal(10);
+        expect(observed.length).to.equal(11);
         observed.forEach(function (institution, i) {
-          expect(observed[i]).to.equal(institutionSet[i + 10]);
+          expect(observed[i]).to.equal(institutionSet[i + 9]);
       });
 
       });

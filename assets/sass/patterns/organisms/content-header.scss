@@ -26,6 +26,12 @@
 
 }
 
+.content-header--read-more {
+  .content-header__subject_list {
+    width: 100%;
+  }
+}
+
 .content-header--image {
   border-bottom: none;
   color: $color-text--reverse;

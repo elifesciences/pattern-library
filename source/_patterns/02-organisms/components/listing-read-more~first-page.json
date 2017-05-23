@@ -1,6 +1,8 @@
 {
   "id": "idOfListElementToLoadContentInTo",
-  "heading": "Further reading",
+  "heading": {
+    "heading": "Further reading"
+  },
   "items": [
     {
       "item": {
