@@ -54,6 +54,11 @@
     align-items: center;
     align-content: center;
     justify-content: center;
+    @include padding(0 12);
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include padding(0 48);
+    }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
       height: #{$content-header-padding * 7}px;
