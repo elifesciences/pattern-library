@@ -7,36 +7,64 @@ module.exports = class AssetNavigation {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
-    this.assetItems = [this.$elm];
+    this.assetItems = [];
 
-    const supplements = this.findSupplements();
-    [].forEach.call(supplements, (supplement) => this.assetItems.push(supplement));
+    let promise;
 
-    if (this.assetItems.length > 1) {
-      const hash = this.window.location.hash.substring(1);
-      let show = 0;
+    const $seeAll = this.$elm.querySelector('.asset-viewer-inline__header_link');
+    if ($seeAll) {
+      promise = utils.remoteDoc($seeAll.href, this.window).then((doc) => {
+        const $newAsset = doc.querySelector(`#${this.$elm.id}`);
+        const $newSupplements = doc.querySelectorAll(`[data-parent-asset-id="${this.$elm.id}"]`);
 
-      [].forEach.call(this.assetItems, (assetItem, i) => {
-        const navigation = utils.buildElement('div',
-                                              ['asset-viewer-inline__header_navigation'],
-                                              '',
-                                              assetItem.querySelector('.asset-viewer-inline__header_panel'),
-                                              '.asset-viewer-inline__header_text');
+        // Avoid circular behaviour.
+        let dataset = $newAsset.dataset.behaviour.trim().split(' ');
+        const index = dataset.indexOf('AssetNavigation');
+        dataset.splice(index, 1);
+        $newAsset.dataset.behaviour = dataset.join(' ');
 
-        if (assetItem.id === hash) {
-          show = i;
+        this.$elm.replaceWith($newAsset);
+        this.$elm = $newAsset;
+        let assetItems = [this.$elm];
+
+        for (const supplement of $newSupplements) {
+          assetItems.push(supplement);
+          this.$elm.parentNode.insertBefore(supplement, this.$elm.nextSibling);
         }
 
-        this.addPreviousButton(i, navigation);
-        this.addNextButton(i, navigation);
-
-        assetItem.addEventListener('assetViewerFocus', () => this.show(i));
+        return assetItems;
       });
-
-      this.show(show);
-
-      this.window.addEventListener('hashchange', this.hashChange.bind(this));
+    } else {
+      promise = Promise.resolve().then(() => [this.$elm, ...this.findSupplements()]);
     }
+
+    promise = promise.then((assetItems) => {
+      this.assetItems = assetItems;
+      if (this.assetItems.length > 1) {
+        const hash = this.window.location.hash.substring(1);
+        let show = 0;
+        [].forEach.call(this.assetItems, (assetItem, i) => {
+          const navigation = utils.buildElement('div',
+            ['asset-viewer-inline__header_navigation'],
+            '',
+            assetItem.querySelector('.asset-viewer-inline__header_panel'),
+            '.asset-viewer-inline__header_text');
+
+          if (assetItem.id === hash) {
+            show = i;
+          }
+
+          this.addPreviousButton(i, navigation);
+          this.addNextButton(i, navigation);
+
+          assetItem.addEventListener('assetViewerFocus', () => this.show(i));
+        });
+
+        this.show(show);
+
+        this.window.addEventListener('hashchange', this.hashChange.bind(this));
+      }
+    });
   }
 
   addPreviousButton(i, navigation) {
