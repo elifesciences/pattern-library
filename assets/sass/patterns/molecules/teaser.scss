@@ -2,6 +2,11 @@
 
 .teaser {
   @include teaser-root-style();
+
+  .article-secondary-column & {
+    padding-top: 0;
+  }
+
 }
 
 .teaser--related {
