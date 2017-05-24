@@ -54,6 +54,14 @@ a.popup__button {
 }
 
 .popup__content__ancillary {
+  @include popup-ancillary-text();
   @include padding($blg-space-extra-small-in-px, "top");
   @include padding($blg-space-extra-small-in-px / 2, "bottom");
 }
+
+.author-details {
+  &.popup__content + .popup__actions {
+    display: none;
+  }
+}
+
