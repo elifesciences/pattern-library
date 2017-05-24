@@ -109,7 +109,7 @@
 }
 
 @mixin box-shadow() {
-  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
 @mixin tooltip-box() {
@@ -359,4 +359,11 @@
     border-bottom-color: $color-primary;
     color: $color-primary;
   }
+}
+
+@mixin popup-ancillary-text() {
+  color: $color-text--reverse;
+  font-family: $font-secondary;
+  @include font-size(11);
+  line-height: 1.6363636364; /* 18px on 11px font */
 }
