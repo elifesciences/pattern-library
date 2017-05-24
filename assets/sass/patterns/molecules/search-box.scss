@@ -3,11 +3,15 @@
 .search-box {
   position: relative;
 
-  &:not(.search-box--js) .compact-form__container {
-    @include blg-spacing("top", "small");
+  &.search-box--shown {
+    @include blg-spacing("top", "medium");
     @include blg-spacing("bottom", "small");
-    max-width: inherit;
   }
+
+  &:not(.search-box--js) {
+    @include blg-spacing("top", "medium");
+  }
+
 }
 
 .search-box__inner {
@@ -95,7 +99,9 @@
 .search-box__search_option {
   font-family: $font-secondary;
   @include font-size(14);
-  @include padding(20, "bottom");
+  line-height: 1.7142857143; /* 24px on 14px font */
+  @include blg-spacing("top", "extra-small");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 @media only all and (min-width: #{$max-site-width}px) {
