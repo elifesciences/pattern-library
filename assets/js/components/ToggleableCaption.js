@@ -1,5 +1,5 @@
 'use strict';
-const utils = require('../libs/elife-utils')();
+const clipper = require('text-clipper');
 
 module.exports = class ToggleableCaption {
 
@@ -17,122 +17,63 @@ module.exports = class ToggleableCaption {
       return;
     }
 
-    this.thresholdTextLength = 200;
-    this.accumulatedTextLength = 0;
-    this.processedMoreThanFirstElement = false;
-    this.isToggleBuilt = false;
-    this.thresholdReached = false;
-    this.setupToggle(this.$caption, this.thresholdTextLength);
-
+    this.setupToggle();
   }
 
   static findCaption($elm) {
     return $elm.querySelector('.caption-text__body');
   }
 
-  setupToggle($caption, thresholdCharCount) {
-    this.processElement($caption, thresholdCharCount);
-  }
+  setupToggle() {
+    const seeMoreButton = '<button class="caption-text__toggle caption-text__toggle--see-more">see more</button>';
+    const seeLessButton = '<button class="caption-text__toggle caption-text__toggle--see-less">see less</button>';
 
-  processElement($element, thresholdCharCount) {
-    if (this.thresholdReached) {
-      return;
-    }
+    let fullChildren = [];
+    this.$caption.childNodes.forEach((child) => fullChildren.push(child.outerHTML));
+    fullChildren.push(seeLessButton);
 
-    const childNodes = $element.childNodes;
-    [].forEach.call(childNodes, (childNode) => {
-      if (this.isToggleBuilt) {
+    let truncatedChildren = fullChildren;
+
+    if (truncatedChildren[0].startsWith('<p>')) {
+      const truncatedChild = clipper(truncatedChildren[0], 200, {
+        html: true,
+        maxLines: 1,
+      });
+
+      if (truncatedChild !== truncatedChildren[0] || truncatedChildren.length > 3) {
+        truncatedChildren = [truncatedChild.replace(/<\/p>/, ` ${seeMoreButton}</p>`)];
+      } else {
         return;
       }
+    } else {
+      truncatedChildren = [seeMoreButton];
+    }
 
-      if (childNode.nodeType === Node.ELEMENT_NODE) {
-        if (this.isStopElement(childNode)) {
-          if (this.processedMoreThanFirstElement) {
-            this.buildCaptionToggle(childNode.parentNode, childNode);
-            this.isToggleBuilt = true;
-          } else {
-            this.processedMoreThanFirstElement = true;
-            this.processElement(childNode, thresholdCharCount);
-          }
-        } else {
-          this.processElement(childNode, thresholdCharCount);
-        }
-      } else if (childNode.nodeType === Node.TEXT_NODE) {
-        const processedNodes = this.processTextNode(childNode, thresholdCharCount);
-        if (processedNodes) {
-          const $parent = childNode.parentNode;
-          const firstWrappedNode = processedNodes.childNodes[1];
-          try {
-            // Danger: if the text threshold is in middle of inline element within the caption, it
-            // will try to act on the unclosed element and will break the page. Hence this catch.
-            $parent.replaceChild(processedNodes, childNode);
-            this.wrapExcessCaption($parent, firstWrappedNode);
-          } catch (e) {
-            console.log(e);
-          }
-        }
+    this.fullHtml = fullChildren.join(' ');
+    this.truncatedHtml = truncatedChildren.join(' ');
+
+    this.toggleCaption();
+  }
+
+  toggleCaption() {
+    const $toggle = this.$caption.querySelector('.caption-text__toggle');
+
+    this.$caption.innerHTML = '';
+
+    if (!$toggle || $toggle.classList.contains('caption-text__toggle--see-less')) {
+      this.$caption.innerHTML = this.truncatedHtml;
+      if (this.$caption.getBoundingClientRect().top < 0) {
+        this.$caption.scrollIntoView();
       }
-    });
-  }
-
-  // TODO: Change this so it puts the toggle at the end
-  processTextNode(nextTextNode, thresholdCharCount) {
-    if (this.accumulatedTextLength + nextTextNode.length < thresholdCharCount) {
-      this.accumulatedTextLength += nextTextNode.length;
-      return;
+    } else {
+      this.$caption.innerHTML = this.fullHtml;
     }
 
-    this.thresholdReached = true;
-    const overBy = this.accumulatedTextLength + nextTextNode.length - thresholdCharCount;
-    const splitNodes = this.splitTextNode(nextTextNode, nextTextNode.length - overBy);
-    splitNodes.appendChild(this.buildCaptionToggle());
-    return splitNodes;
-  }
-
-  wrapExcessCaption($parent, firstWrappedNode) {
-    const $wrapper = utils.buildElement('div',
-                                        [
-                                          'visuallyhidden',
-                                          'caption-text__body__collapsed_part'
-                                        ]
-    );
-
-    $parent.insertBefore($wrapper, firstWrappedNode);
-    const nodesToWrap = this.doc.createDocumentFragment();
-    nodesToWrap.appendChild(firstWrappedNode);
-    let nextNodeToWrap = firstWrappedNode.nextSibling;
-    while (nextNodeToWrap && nextNodeToWrap.nextSibling) {
-      nodesToWrap.appendChild(firstWrappedNode.nextSibling);
-      nextNodeToWrap = nextNodeToWrap.nextSibling;
+    if (!!this.window.MathJax.Hub) {
+      this.window.MathJax.Hub.Queue(['Typeset', this.window.MathJax.Hub, this.$caption]);
     }
 
-    $wrapper.appendChild(nodesToWrap);
-  }
-
-  splitTextNode(textNode, splitIndex) {
-    const frag = this.doc.createDocumentFragment();
-    frag.appendChild(this.doc.createTextNode(textNode.nodeValue.substring(0, splitIndex)));
-    frag.appendChild(this.doc.createTextNode(textNode.nodeValue.substring(splitIndex)));
-    return frag;
-  }
-
-  buildCaptionToggle($parent, $followingSibling) {
-    const $toggle = utils.buildElement('button', ['caption-text__toggle'],
-                                       'see more', $parent, $followingSibling);
-    $toggle.addEventListener('click', this.toggleCaption.bind(this));
-    return $toggle;
-  }
-
-  toggleCaption(e) {
-    const $toggle = e.target;
-    $toggle.parentNode.querySelector('.caption-text__body__collapsed_part').classList
-           .toggle('visuallyhidden');
-    const $toggleText = $toggle.innerHTML;
-    $toggle.innerHTML =  $toggleText === 'see more' ? 'see less' : 'see more';
-  }
-
-  isStopElement($element) {
-    return this.window.getComputedStyle($element).display !== 'inline';
+    this.$caption.querySelector('.caption-text__toggle').addEventListener('click', this.toggleCaption.bind(this));
   }
 
 };

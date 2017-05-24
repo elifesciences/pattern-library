@@ -29,6 +29,7 @@
   background-color: transparent;
   border: 0;
   color: $color-primary;
+  line-height: 1;
   margin: 0;
   padding-left: 0;
 
@@ -36,26 +37,10 @@
     cursor: pointer;
   }
 
-  .caption-text__body__collapsed_part.visuallyhidden + & {
+}
 
-    &:before {
-      color: $color-text;
-      content: "\002026\2004";
-    }
-
-    &:after {
-      content: "\2004\00bb";
-    }
-
-  }
-
-  .caption-text__body__collapsed_part:not(.visuallyhidden) + & {
-
-    &:before {
-      color: $color-primary;
-      content: "\2004\00ab\2004";
-    }
-
-  }
-
+.caption-text__toggle--see-less {
+  position: relative;
+  top: -24px;
+  top: get-rem-from-px(24) * -1rem;
 }

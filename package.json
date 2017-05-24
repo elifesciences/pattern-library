@@ -33,6 +33,7 @@
     "postcss-scss": "^0.1.7",
     "sinon": "^1.17.3",
     "stylelint": "^5.1.0",
+    "text-clipper": "^1.2.0",
     "uglify-js": "^2.6.4",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
