@@ -69,7 +69,7 @@ module.exports = class ToggleableCaption {
       this.$caption.innerHTML = this.fullHtml;
     }
 
-    if (!!this.window.MathJax.Hub) {
+    if (!!this.window.MathJax && !!this.window.MathJax.Hub) {
       this.window.MathJax.Hub.Queue(['Typeset', this.window.MathJax.Hub, this.$caption]);
     }
 
