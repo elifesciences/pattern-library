@@ -92,7 +92,7 @@ module.exports = class ViewSelector {
 
   sideBySideViewAvailable() {
     const link = this.$elm.dataset.sideBySideLink;
-    return !!(link !== '' && link.match(/^https:\/\/.*$/));
+    return !!(link && link.match(/^https:\/\/.*$/));
   }
 
   insertSideBySideListItem() {
