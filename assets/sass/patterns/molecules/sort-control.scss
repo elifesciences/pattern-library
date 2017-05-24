@@ -1,5 +1,11 @@
 @import "../../definitions";
 
+.sort-control {
+  @include blg-spacing("top", "extra-small");
+  @include blg-spacing("bottom", "extra-small");
+  line-height: 1.5;
+}
+
 .sort-control__title {
   color: $color-text;
   display: inline-block;
@@ -7,7 +13,7 @@
   font-family: $font-secondary;
   @include font-size(14);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.7142857143; /* 24px on 14px */
   @include margin(8, "right");
 }
 
@@ -30,7 +36,7 @@
   font-family: $font-secondary;
   @include font-size(14);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.7142857143; /* 24px on 14px */
   @include padding(12, "right");
   text-decoration: none;
 

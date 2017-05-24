@@ -27,17 +27,29 @@
     {{> atoms-video}}
   {{/video}}
 
-  <figcaption class="captioned-asset__caption">
 
-    {{#captionText}}
+  {{#captionText}}
+    <figcaption class="captioned-asset__caption">
+
       {{> atoms-caption-text}}
-    {{/captionText}}
+
+      {{#doi}}
+        {{> atoms-doi}}
+      {{/doi}}
+
+    </figcaption>
+
+  {{/captionText}}
+
+  {{^captionText}}
 
     {{#doi}}
-      {{> atoms-doi}}
+      <figcaption class="captioned-asset__caption">
+        {{> atoms-doi}}
+      </figcaption>
     {{/doi}}
 
-  </figcaption>
+  {{/captionText}}
 
   {{#table}}
     {{> atoms-table }}

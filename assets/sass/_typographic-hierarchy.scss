@@ -357,8 +357,7 @@
   font-family: $font-secondary;
   @include font-size(14);
   font-weight: 700;
-  line-height: 1.3;
-  @include padding(1, "bottom");
+  line-height: 1.7142857143; /* 24px at 14px font size */
 }
 
 // FOR ITEMS IN LISTS
@@ -388,7 +387,7 @@
   font-family: $font-secondary;
   @include font-size(16);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.5;
 }
 
 @mixin listing-side-author-typeg() {

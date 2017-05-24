@@ -15,3 +15,7 @@
 .caption-text__body * {
   @include body-spacing();
 }
+
+.caption-text__body > :last-child {
+  @include nospace("bottom");
+}

@@ -3,7 +3,7 @@ const utils = require('../libs/elife-utils')();
 module.exports = class Popup {
 
   constructor($elm, _window = window, doc = document) {
-    if (!$elm.hash || $elm.host !== _window.location.host) {
+    if (!$elm.hash || $elm.host !== _window.location.host || !$elm.hash.match(/^#[a-z]/i)) {
       return;
     }
 
