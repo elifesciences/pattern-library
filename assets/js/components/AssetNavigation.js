@@ -93,8 +93,6 @@ module.exports = class AssetNavigation {
 
   show(i) {
     this.hideAll();
-    console.log('hello');
-    console.log(this.assetItems);
     this.assetItems[i].classList.remove('visuallyhidden');
   }
 
