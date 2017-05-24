@@ -29,8 +29,6 @@ a.popup__button {
 
 .popup__content {
   @include margin(0, "bottom");
-  max-height: 300px;
-  overflow-y: auto;
   @include padding(10);
 }
 
