@@ -3,10 +3,13 @@
 .compact-form__container {
   border: none;
   margin: 0 auto;
-  max-width: 440px;
-  max-width: #{get-rem-from-px(440)}rem;
+  @include constrain-width(440, "max");
   padding: 0;
   position: relative;
+
+  .search-box__inner & {
+    max-width: none;
+  }
 }
 
 .compact-form__input {
