@@ -13,13 +13,18 @@ module.exports = class Popup {
     this.window = _window;
     this.doc = doc;
     this.bodyContents = null;
-
+    this.thresholdWidth = 730;
     this.$link.addEventListener('click', e => this.handleLinkClick(e));
 
     doc.addEventListener('click', e => this.handleDocumentClick(e));
   }
 
   handleLinkClick(e) {
+    // If the viewport is too narrow, we don't.
+    if (!this.window.matchMedia(`(min-width: ${this.thresholdWidth}px)`).matches) {
+      return;
+    }
+
     if (!this.$link) {
       return true;
     }
@@ -37,6 +42,11 @@ module.exports = class Popup {
   }
 
   handleDocumentClick(e) {
+
+    // If the viewport is too narrow, we don't.
+    if (!this.window.matchMedia(`(min-width: ${this.thresholdWidth}px)`).matches) {
+      return;
+    }
 
     if (utils.closest(e.target, 'a') === this.$link) {
       return;
@@ -212,6 +222,7 @@ module.exports = class Popup {
   }
 
   render(e) {
+
     // If there's nothing to render.. we don't.
     if (this.isEmpty) {
       return Promise.resolve(this.$link);
@@ -241,6 +252,11 @@ module.exports = class Popup {
       this.doc.body.appendChild(this.popupHitBox);
 
       this.window.addEventListener('resize', utils.debounce(() => {
+        // If the viewport is too narrow, we don't.
+        if (!this.window.matchMedia(`(min-width: ${this.thresholdWidth}px)`).matches) {
+          return;
+        }
+
         this.isOpen = false;
         this.render(e);
       }, 150));
