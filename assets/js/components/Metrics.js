@@ -85,6 +85,8 @@ class Metrics {
     this.loadMore().then(function () {
       return this.renderView($el, this.getSelectedMetric());
     }.bind(this));
+
+    this.$el.classList.remove('hidden');
   }
 
   changePeriod(period) {
