@@ -140,7 +140,42 @@ module.exports = class Popup {
   }
 
   createPopupBox(...children) {
+    // Get the content
+    let $content;
+    [].forEach.call(children, (child) => {
+      if (child.classList.contains('popup__content')) {
+        $content = child;
+      }
+    });
+
+    // wrap ancillary content in an ancillary block
+    if ($content instanceof HTMLElement) {
+      const $ancillary = utils.buildElement('div', ['popup__content__ancillary']);
+      const exclusions = ['reference__title', 'reference__authors_list',
+                          'reference__authors_list_suffix', 'author-details__name'];
+      const ancillaries = [];
+
+      // If an immediate child of content does not have an excluded class, it's ancillary
+      // Ancillary elements are added to a new ancillary block
+      [].forEach.call($content.children, ($contentChild) => {
+        let isAncillary = false;
+        [].forEach.call($contentChild.classList, (cssClass) => {
+          if (!isAncillary && exclusions.indexOf(cssClass) === -1) {
+            ancillaries.push($contentChild);
+            isAncillary = true;
+          }
+        });
+      });
+
+      ancillaries.forEach(($ancillaryChild) => {
+        $ancillary.appendChild($ancillaryChild);
+      });
+
+      $content.appendChild($ancillary);
+    }
+
     return utils.wrapElements(children, 'div', 'popup__window');
+
   }
 
   createPopupHitBox(...children) {
