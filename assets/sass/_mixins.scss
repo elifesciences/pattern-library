@@ -361,6 +361,11 @@
   }
 }
 
+@mixin popup_title_text {
+  @include font-size(14);
+  line-height: 1.4285714286; /* 20px on 24px font */
+}
+
 @mixin popup-ancillary-text() {
   color: $color-text--reverse;
   font-family: $font-secondary;

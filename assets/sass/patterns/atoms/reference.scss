@@ -9,8 +9,7 @@
   text-decoration: none;
 
   .popup__content & {
-    @include font-size(14);
-    line-height: 1.4285714286; /* 20px on 24px font */
+    @include popup_title_text();
   }
 
 }
@@ -34,7 +33,7 @@ a.reference__title:hover {
   padding: 0;
 
   .popup__content & {
-    line-height: 1.4285714286; /* 20px on 24px font */
+    @include popup_title_text();
   }
 
 }
@@ -62,8 +61,7 @@ a.reference__authors_link:hover {
   @include listing-side-author-typeg();
 
   .popup__content & {
-    @include font-size(14);
-    line-height: 1.4285714286; /* 20px on 24px font */
+    @include popup_title_text();
   }
 
 }
