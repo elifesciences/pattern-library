@@ -31,6 +31,14 @@
       margin-right: 0;
     }
 
+    .archive-nav-link {
+      height: 437px;
+
+      @supports (display:flex) {
+        height: auto;
+      }
+    }
+
   }
 
   // 3 col
