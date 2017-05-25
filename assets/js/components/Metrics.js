@@ -29,11 +29,11 @@ class Metrics {
     this.$monthlyButton = this.groupingButton($grouping, 'Monthly');
 
     // We need get these from the DOM, I would prefer a script with JSON.
-    this.endpoint = $el.getAttribute('data-api-endpoint');
-    this.id = $el.getAttribute('data-id');
-    this.type = $el.getAttribute('data-type') || 'article';
-    this.selected = $el.getAttribute('data-metric') || 'downloads';
-    this.period = $el.getAttribute('data-period') || 'month';
+    this.endpoint = $el.dataset.apiEndpoint;
+    this.id = $el.dataset.id;
+    this.type = $el.dataset.type || 'article';
+    this.selected = $el.dataset.metric || 'downloads';
+    this.period = $el.dataset.period || 'month';
 
     const parent = utils.closest(this.$el, '.article-section');
     if (parent) {
@@ -71,7 +71,7 @@ class Metrics {
     );
 
     this.loadMore = this.loadMore.bind(this);
-    this.barChart = new BarChart($el.getAttribute('data-container-id'));
+    this.barChart = new BarChart($el.dataset.containerId);
     this.metrics = availableMetrics.map(metric => ({
       name: metric,
       page: 0,
