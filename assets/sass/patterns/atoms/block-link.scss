@@ -18,7 +18,6 @@
 @mixin width-constrained() {
 
   .block-link {
-    background-color: $color-primary;
     margin-bottom: 0;
 
     // Block links are only ever found as a descendant of a grid-listing.
@@ -51,6 +50,7 @@
 }
 
 .block-link {
+  background-color: $color-primary;
   position: relative;
 }
 
