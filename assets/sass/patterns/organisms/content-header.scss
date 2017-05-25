@@ -350,6 +350,11 @@
 
   }
 
+  .content-header--image & {
+    right: 12px;
+    top: #{$blg-space-extra-small-in-px}px;
+  }
+
 }
 
 .content-header__download_icon {
