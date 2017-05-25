@@ -48,8 +48,6 @@ class Metrics {
     // The data flows from left to right, but clicking the left arrow takes
     // you to the next page, which is the previous month, the comments below
     // provide the best description of the UI.
-    this.$prev = $el.querySelector('.trigger--next'); // "->" arrow
-    this.$next = $el.querySelector('.trigger--prev'); // "<-" arrow
     this.availableCharts = ['page-views', 'downloads'];
     this.availablePeriods = ['day', 'month'];
     this.currentChart = this.availableCharts.indexOf(this.selected);
