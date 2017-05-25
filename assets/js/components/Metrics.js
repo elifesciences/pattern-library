@@ -10,7 +10,7 @@ class Metrics {
 
     const $charts = utils.buildElement('div', ['charts'], '', this.$el);
 
-    const container = utils.buildElement('div', [], 'Loading...', this.$el);
+    const container = utils.buildElement('div', [], 'Loading...', $charts);
     container.id = this.$el.dataset.containerId;
     const p = utils.buildElement('p', [], '', $charts);
 
@@ -21,40 +21,12 @@ class Metrics {
     // The data flows from left to right, but clicking the left arrow takes
     // you to the next page, which is the previous month, the comments below
     // provide the best description of the UI.
-    this.$next = utils.buildElement('a', ['trigger', 'trigger--prev'], this.chevron('Left'), p); // "->" arrow
-    this.$next.href = '#';
-    this.$prev = utils.buildElement('a', ['trigger', 'trigger--next'], this.chevron('Right'), p); // "<-" arrow
-    this.$prev.href = '#';
+    this.$next = this.trigger('prev', 'Left', p); // "->" arrow
+    this.$prev = this.trigger('next', 'Right', p); // "<-" arrow
 
     const $grouping = utils.buildElement('div', ['button-collection', 'clearfix'], '', this.$el);
-    this.$dailyButton = utils.buildElement(
-      'a',
-      [
-        'button',
-        'button--outline',
-        'button--small',
-        'button-collection__button',
-        'button-collection__button--active'
-      ],
-      'Daily',
-      $grouping
-    );
-    this.$dailyButton.href = '#';
-    this.$dailyButton.dataset.target = 'daily';
-    this.$monthlyButton = utils.buildElement(
-      'a',
-      [
-        'button',
-        'button--outline',
-        'button--small',
-        'button-collection__button',
-        'button-collection__button--active'
-      ],
-      'Monthly',
-      $grouping
-    );
-    this.$monthlyButton.href = '#';
-    this.$monthlyButton.dataset.target = 'monthly';
+    this.$dailyButton = this.groupingButton($grouping, 'Daily');
+    this.$monthlyButton = this.groupingButton($grouping, 'Monthly');
 
     // We need get these from the DOM, I would prefer a script with JSON.
     this.endpoint = $el.getAttribute('data-api-endpoint');
@@ -63,9 +35,6 @@ class Metrics {
     this.selected = $el.getAttribute('data-metric') || 'downloads';
     this.period = $el.getAttribute('data-period') || 'month';
 
-    // TODO: delete
-    this.$dailyButton = $el.querySelector('[data-target="daily"]');
-    this.$monthlyButton = $el.querySelector('[data-target="monthly"]');
     const parent = utils.closest(this.$el, '.article-section');
     if (parent) {
       parent.addEventListener('expandsection', () => {
@@ -137,6 +106,12 @@ class Metrics {
     }.bind(this));
   }
 
+  trigger(temporalDirection, side, p) {
+    const a = utils.buildElement('a', ['trigger', 'trigger--' + temporalDirection], this.chevron(side), p);
+    a.href = '#';
+    return a;
+  }
+
   chevron(side) {
     const svg = 'chevron' + side + 'Svg';
     const srcset = 'chevron' + side + 'Srcset';
@@ -147,6 +122,23 @@ class Metrics {
       '" src="' + this.$el.dataset[src] +
       '" alt="Navigate ' + side.toLowerCase() + ' icon">' +
       '</picture>';
+  }
+
+  groupingButton($grouping, label) {
+    const button = utils.buildElement(
+      'a',
+      [
+        'button',
+        'button--outline',
+        'button--small',
+        'button-collection__button',
+        'button-collection__button--active'
+      ],
+      label,
+      $grouping
+    );
+    button.href = '#';
+    return button;
   }
 
   changePeriod(period) {
