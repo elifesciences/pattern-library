@@ -3,6 +3,10 @@
 .doi {
   @include label-content-typeg($color-text-secondary);
 
+  .popup__content & {
+    @include popup-ancillary-text();
+  }
+
   // Extra specificity needed to override: .article-section a
   a.doi__link {
     border-bottom: none;
@@ -13,6 +17,11 @@
     &:hover {
       color: $color-primary;
     }
+
+    .popup__content & {
+      @include popup-ancillary-text();
+    }
+
   }
 
   &--article-section {

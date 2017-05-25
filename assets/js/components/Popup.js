@@ -13,13 +13,18 @@ module.exports = class Popup {
     this.window = _window;
     this.doc = doc;
     this.bodyContents = null;
-
+    this.thresholdWidth = 730;
     this.$link.addEventListener('click', e => this.handleLinkClick(e));
 
     doc.addEventListener('click', e => this.handleDocumentClick(e));
   }
 
   handleLinkClick(e) {
+    // If the viewport is too narrow, we don't.
+    if (!this.window.matchMedia(`(min-width: ${this.thresholdWidth}px)`).matches) {
+      return;
+    }
+
     if (!this.$link) {
       return true;
     }
@@ -38,11 +43,16 @@ module.exports = class Popup {
 
   handleDocumentClick(e) {
 
+    // If the viewport is too narrow, we don't.
+    if (!this.window.matchMedia(`(min-width: ${this.thresholdWidth}px)`).matches) {
+      return;
+    }
+
     if (utils.closest(e.target, 'a') === this.$link) {
       return;
     }
 
-    const closestPopup = utils.closest(e.target, '.popup__hit-box');
+    const closestPopup = utils.closest(e.target, '.popup');
     if (closestPopup && closestPopup === this.popupHitBox) {
       return;
     }
@@ -140,11 +150,46 @@ module.exports = class Popup {
   }
 
   createPopupBox(...children) {
+    // Get the content
+    let $content;
+    [].forEach.call(children, (child) => {
+      if (child.classList.contains('popup__content')) {
+        $content = child;
+      }
+    });
+
+    // wrap ancillary content in an ancillary block
+    if ($content instanceof HTMLElement) {
+      const $ancillary = utils.buildElement('div', ['popup__content__ancillary']);
+      const exclusions = ['reference__title', 'reference__authors_list',
+                          'reference__authors_list_suffix', 'author-details__name'];
+      const ancillaries = [];
+
+      // If an immediate child of content does not have an excluded class, it's ancillary
+      // Ancillary elements are added to a new ancillary block
+      [].forEach.call($content.children, ($contentChild) => {
+        let isAncillary = false;
+        [].forEach.call($contentChild.classList, (cssClass) => {
+          if (!isAncillary && exclusions.indexOf(cssClass) === -1) {
+            ancillaries.push($contentChild);
+            isAncillary = true;
+          }
+        });
+      });
+
+      ancillaries.forEach(($ancillaryChild) => {
+        $ancillary.appendChild($ancillaryChild);
+      });
+
+      $content.appendChild($ancillary);
+    }
+
     return utils.wrapElements(children, 'div', 'popup__window');
+
   }
 
   createPopupHitBox(...children) {
-    return utils.wrapElements(children, 'div', 'popup__hit-box');
+    return utils.wrapElements(children, 'div', 'popup');
   }
 
   positionPopupHitBox(e) {
@@ -177,6 +222,7 @@ module.exports = class Popup {
   }
 
   render(e) {
+
     // If there's nothing to render.. we don't.
     if (this.isEmpty) {
       return Promise.resolve(this.$link);
@@ -206,6 +252,11 @@ module.exports = class Popup {
       this.doc.body.appendChild(this.popupHitBox);
 
       this.window.addEventListener('resize', utils.debounce(() => {
+        // If the viewport is too narrow, we don't.
+        if (!this.window.matchMedia(`(min-width: ${this.thresholdWidth}px)`).matches) {
+          return;
+        }
+
         this.isOpen = false;
         this.render(e);
       }, 150));
