@@ -7,6 +7,11 @@
   padding-left: 0;
   // Gives the effect of medium-to-large due to 24px already on the bottom of the list items
   @include blg-margin-bottom--small-to-medium();
+
+  @supports (display: flex) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .grid-listing-item {
@@ -15,24 +20,23 @@
   @include constrain-width($max-width-block-link, "max");
   width: 100%;
 
-  &.grid-listing-item--block-link {
-    border: 1px solid $color-text-dividers;
-  }
-
   // 2 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    border: none;
     float: left;
     @include width($min-width-grid-listing-item);
     @include margin(0 $grid-listing-spacing-measure $blg-space-extra-small-in-px 0);
     width: calc((100% - #{$grid-listing-spacing-measure}px) / 2);
 
-    &.grid-listing-item--block-link {
-      border: none;
-    }
-
     &:nth-child(2n) {
       margin-right: 0;
+    }
+
+    .archive-nav-link {
+      height: 437px;
+
+      @supports (display:flex) {
+        height: auto;
+      }
     }
 
   }
