@@ -7,6 +7,14 @@
     @include padding(18, "bottom");
   }
 
+  .popup__content & {
+    @include padding(18, "bottom");
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
 }
 
 .author-details__secondary-name {
@@ -42,9 +50,14 @@
 }
 
 .author-details__list {
+  display: inline;
   @include nospace("bottom");
   @include nospace("left");
   list-style-type: none;
+
+  & > li {
+    display: inline;
+  }
 }
 
 .author-details__text {
