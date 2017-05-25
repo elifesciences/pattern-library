@@ -52,7 +52,7 @@ module.exports = class Popup {
       return;
     }
 
-    const closestPopup = utils.closest(e.target, '.popup__hit-box');
+    const closestPopup = utils.closest(e.target, '.popup');
     if (closestPopup && closestPopup === this.popupHitBox) {
       return;
     }
@@ -189,7 +189,7 @@ module.exports = class Popup {
   }
 
   createPopupHitBox(...children) {
-    return utils.wrapElements(children, 'div', 'popup__hit-box');
+    return utils.wrapElements(children, 'div', 'popup');
   }
 
   positionPopupHitBox(e) {
