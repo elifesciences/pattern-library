@@ -251,8 +251,10 @@ class Metrics {
         m.firstMonth = [parseInt(m.periods[0].month), parseInt(m.periods[0].year)];
       }
 
-      if (this.periodToTimestamp(m.periods[0]) < this.periodToTimestamp(m.periods[1])) {
-        m.reverse = 1;
+      if (m.periods.length >= 2) {
+        if (this.periodToTimestamp(m.periods[0]) < this.periodToTimestamp(m.periods[1])) {
+          m.reverse = 1;
+        }
       }
 
       return m;

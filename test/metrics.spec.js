@@ -81,6 +81,11 @@ describe('Metrics integration', function () {
     expect(currentMetric.periods[10].value).to.equal(480);
   });
 
+  it('should update the data', function() {
+    root.metrics.saveResults({ totalValue: 302, totalPeriods: 1, periods: [{period: '2017-05', value: 302}] }, 1, 0);
+    const currentMetric = root.metrics.getSelectedMetric();
+    expect(currentMetric.periods).to.contain({"year":"2017","month":"05","value":302});
+  });
 
   /**************************************
    *          START MUTATIONS           *
