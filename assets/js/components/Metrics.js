@@ -9,16 +9,52 @@ class Metrics {
     this.$el = $el;
 
     const $charts = utils.buildElement('div', ['charts'], '', this.$el);
+
+    const container = utils.buildElement('div', [], 'Loading...', this.$el);
+    container.id = this.$el.dataset.containerId;
     const p = utils.buildElement('p', [], '', $charts);
 
     // TODO: not sure who uses this?
     utils.buildElement('span', ['visuallyhidden'], 'Toggle charts', p);
 
+    // TODO: extract
     // The data flows from left to right, but clicking the left arrow takes
     // you to the next page, which is the previous month, the comments below
     // provide the best description of the UI.
     this.$next = utils.buildElement('a', ['trigger', 'trigger--prev'], this.chevron('Left'), p); // "->" arrow
+    this.$next.href = '#';
     this.$prev = utils.buildElement('a', ['trigger', 'trigger--next'], this.chevron('Right'), p); // "<-" arrow
+    this.$prev.href = '#';
+
+    const $grouping = utils.buildElement('div', ['button-collection', 'clearfix'], '', this.$el);
+    this.$dailyButton = utils.buildElement(
+      'a',
+      [
+        'button',
+        'button--outline',
+        'button--small',
+        'button-collection__button',
+        'button-collection__button--active'
+      ],
+      'Daily',
+      $grouping
+    );
+    this.$dailyButton.href = '#';
+    this.$dailyButton.dataset.target = 'daily';
+    this.$monthlyButton = utils.buildElement(
+      'a',
+      [
+        'button',
+        'button--outline',
+        'button--small',
+        'button-collection__button',
+        'button-collection__button--active'
+      ],
+      'Monthly',
+      $grouping
+    );
+    this.$monthlyButton.href = '#';
+    this.$monthlyButton.dataset.target = 'monthly';
 
     // We need get these from the DOM, I would prefer a script with JSON.
     this.endpoint = $el.getAttribute('data-api-endpoint');
@@ -26,6 +62,8 @@ class Metrics {
     this.type = $el.getAttribute('data-type') || 'article';
     this.selected = $el.getAttribute('data-metric') || 'downloads';
     this.period = $el.getAttribute('data-period') || 'month';
+
+    // TODO: delete
     this.$dailyButton = $el.querySelector('[data-target="daily"]');
     this.$monthlyButton = $el.querySelector('[data-target="monthly"]');
     const parent = utils.closest(this.$el, '.article-section');
@@ -97,8 +135,6 @@ class Metrics {
     this.loadMore().then(function () {
       return this.renderView($el, this.getSelectedMetric());
     }.bind(this));
-
-    this.$el.classList.remove('hidden');
   }
 
   chevron(side) {
