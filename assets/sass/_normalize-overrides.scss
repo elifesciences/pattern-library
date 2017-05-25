@@ -212,3 +212,11 @@ img {
 :-moz-placeholder { /* Firefox 18- */
   color: $color-text-placeholder;
 }
+
+@media only all and (max-width: #{get-rem-from-px($bkpt-site--wide - 1)}em) {
+
+  .article-secondary-column {
+    display: none;
+  }
+
+}
