@@ -230,15 +230,15 @@ gulp.task('js:extLibs', ['js:clean'], () => {
 gulp.task('js:hint', () => {
   return gulp.src(jsSource)
      .pipe(jshint())
-     .pipe(jshint.reporter('default'));
-     // .pipe(jshint.reporter('fail'));
+     .pipe(jshint.reporter('default'))
+     .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('js:cs', () => {
   return gulp.src(jsSource)
     .pipe(jscs())
-    .pipe(jscs.reporter());
-    // .pipe(jscs.reporter('fail'));
+    .pipe(jscs.reporter())
+    .pipe(jscs.reporter('fail'));
 });
 
 gulp.task('browserify-tests', (done) => {
