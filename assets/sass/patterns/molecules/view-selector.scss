@@ -159,6 +159,11 @@
       padding: 0;
     }
   }
+
+  .view-selector__link--figures {
+    color: $color-text;
+  }
+
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-view-selector)}em) {
