@@ -146,6 +146,11 @@ describe('A ViewSelector Component', function () {
       expect(viewSelector.sideBySideView.$iframe.classList.contains('hidden')).to.be.false;
     });
 
+    it('is not displayed if the link is not present', function () {
+      $elm.dataset.sideBySideLink = undefined;
+      expect(viewSelector.sideBySideViewAvailable()).to.be.false;
+    });
+
     it('is not displayed if the link is empty', function () {
       $elm.dataset.sideBySideLink = '';
       expect(viewSelector.sideBySideViewAvailable()).to.be.false;
