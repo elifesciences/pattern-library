@@ -8,6 +8,18 @@ class Metrics {
   constructor($el) {
     this.$el = $el;
 
+    const $charts = utils.buildElement('div', ['charts'], '', this.$el);
+    const p = utils.buildElement('p', [], '', $charts);
+
+    // TODO: not sure who uses this?
+    utils.buildElement('span', ['visuallyhidden'], 'Toggle charts', p);
+
+    // The data flows from left to right, but clicking the left arrow takes
+    // you to the next page, which is the previous month, the comments below
+    // provide the best description of the UI.
+    this.$next = utils.buildElement('a', ['trigger', 'trigger--prev'], this.chevron('Left'), p); // "->" arrow
+    this.$prev = utils.buildElement('a', ['trigger', 'trigger--next'], this.chevron('Right'), p); // "<-" arrow
+
     // We need get these from the DOM, I would prefer a script with JSON.
     this.endpoint = $el.getAttribute('data-api-endpoint');
     this.id = $el.getAttribute('data-id');
@@ -87,6 +99,18 @@ class Metrics {
     }.bind(this));
 
     this.$el.classList.remove('hidden');
+  }
+
+  chevron(side) {
+    const svg = 'chevron' + side + 'Svg';
+    const srcset = 'chevron' + side + 'Srcset';
+    const src = 'chevron' + side + 'Src';
+    return '<picture>' +
+      '<source srcset="' + this.$el.dataset[svg] + '" type="image/svg+xml">' +
+      '<img srcset="' + this.$el.dataset[srcset] +
+      '" src="' + this.$el.dataset[src] +
+      '" alt="Navigate ' + side.toLowerCase() + ' icon">' +
+      '</picture>';
   }
 
   changePeriod(period) {
