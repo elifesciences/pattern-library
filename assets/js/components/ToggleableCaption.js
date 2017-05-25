@@ -29,7 +29,8 @@ module.exports = class ToggleableCaption {
     const seeLessButton = '<button class="caption-text__toggle caption-text__toggle--see-less">see less</button>';
 
     let fullChildren = [];
-    this.$caption.childNodes.forEach((child) => fullChildren.push(child.outerHTML));
+    [].forEach.call(this.$caption.childNodes, (child) => fullChildren.push(child.outerHTML));
+    fullChildren = fullChildren.filter((child) => child);
     fullChildren.push(seeLessButton);
 
     let truncatedChildren = fullChildren;
