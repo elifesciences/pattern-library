@@ -2,6 +2,8 @@
 
 @mixin height-constrained() {
 
+  border: 1px solid $color-text-dividers;
+
   .block-link__link {
     @include height(80);
   }
@@ -13,6 +15,9 @@
     }
   }
 
+  @media only all and (min-width: #{$bkpt-block-link}px) {
+    border: 0;
+  }
 }
 
 @mixin width-constrained() {

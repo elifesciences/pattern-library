@@ -15,21 +15,12 @@
   @include constrain-width($max-width-block-link, "max");
   width: 100%;
 
-  &.grid-listing-item--block-link {
-    border: 1px solid $color-text-dividers;
-  }
-
   // 2 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    border: none;
     float: left;
     @include width($min-width-grid-listing-item);
     @include margin(0 $grid-listing-spacing-measure $blg-space-extra-small-in-px 0);
     width: calc((100% - #{$grid-listing-spacing-measure}px) / 2);
-
-    &.grid-listing-item--block-link {
-      border: none;
-    }
 
     &:nth-child(2n) {
       margin-right: 0;
