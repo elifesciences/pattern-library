@@ -38,7 +38,6 @@ module.exports = class Carousel {
     this.$elm.appendChild(this.buildVisibleControls());
     this.$toggler = this.buildControl$toggle();
     this.$elm.insertBefore(this.$toggler, this.$elm.querySelector('.carousel__items'));
-    this.updateWidth();
     this.updateControlPanel(this.currentSlide);
     this.togglePlay(this.$toggler);
     this.$toggler.focus();
@@ -47,7 +46,6 @@ module.exports = class Carousel {
     this.window.addEventListener('blur', this.cancelTimer.bind(this));
     this.window.addEventListener('focus', this.setupTimer.bind(this));
     this.window.addEventListener('resize', () => {
-      this.updateWidth();
       this.adjustTranslateForResize();
     });
     this.makeSingleSlideATVisible(this.currentSlide);
@@ -290,7 +288,6 @@ module.exports = class Carousel {
   extendStage () {
     // Make room for another slide set
     this.currentSlideCount += this.originalSlideCount;
-    this.updateWidth();
 
     // Clone in the new slide set
     [].forEach.call(this.originalSlideWrappers, (slide) => {
@@ -308,10 +305,10 @@ module.exports = class Carousel {
     let newOffset;
     if (direction === 'previous') {
       this.currentSlide -= 1;
-      newOffset = currentOffset + rect.width;
+      newOffset = currentOffset + parseInt(rect.width);
     } else {
       this.currentSlide += 1;
-      newOffset = currentOffset - rect.width;
+      newOffset = currentOffset - parseInt(rect.width);
     }
 
     utils.updateElementTranslate(this.moveableStage, [newOffset + 'px', 0]);
@@ -407,17 +404,10 @@ module.exports = class Carousel {
   }
 
   adjustTranslateForResize() {
-    let carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9]+)px/)[1];
+    let carouselWidth = parseInt(window.getComputedStyle(this.$elm).width.match(/([0-9.]+)px/)[1]);
     let currentSlide = this.currentSlide;
     let expectedOffset = (currentSlide - 1) * carouselWidth * -1;
     this.moveableStage.style.transform = 'translate(' + expectedOffset + 'px, 0)';
-  }
-
-  updateWidth() {
-    this.moveableStage.style.width = utils.adjustPxString(
-      this.window.getComputedStyle(this.$elm).width,
-      this.currentSlideCount,
-      'multiply');
   }
 
 };
