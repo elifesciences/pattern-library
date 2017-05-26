@@ -26,7 +26,6 @@ schema:
             minLength: 1
         required:
           - option
-          - sorting
           - url
   required:
     - options
