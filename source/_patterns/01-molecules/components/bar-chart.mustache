@@ -10,31 +10,11 @@
     data-period="{{period}}"
   {{/period}}
     data-api-endpoint="{{apiEndpoint}}"
+    data-chevron-left-svg="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-left-ic.svg{{/assetRewrite}}"
+    data-chevron-left-srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-left-ic_2x.png{{/assetRewrite}} 48w, {{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-left-ic_1x.png{{/assetRewrite}} 24w"
+    data-chevron-left-src="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-left-ic_1x.png{{/assetRewrite}}"
+    data-chevron-right-svg="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-right-ic.svg{{/assetRewrite}}"
+    data-chevron-right-srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-right-ic_2x.png{{/assetRewrite}} 48w, {{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-right-ic_1x.png{{/assetRewrite}} 24w"
+    data-chevron-right-src="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-right-ic_1x.png{{/assetRewrite}}"
 >
-  <div class="charts">
-    <div id="{{containerId}}">Loading...</div>
-    <p>
-      <span class="visuallyhidden">Toggle charts</span>
-      <a class="trigger trigger--prev" href="#">
-        <picture>
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-left-ic.svg{{/assetRewrite}}" type="image/svg+xml">
-          <img srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-left-ic_2x.png{{/assetRewrite}} 48w, {{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-left-ic_1x.png{{/assetRewrite}} 24w" src="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-left-ic_1x.png{{/assetRewrite}}" alt="Navigate left icon">
-        </picture>
-      </a>
-      <a class="trigger trigger--next" href="#">
-        <picture>
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-right-ic.svg{{/assetRewrite}}" type="image/svg+xml">
-          <img srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-right-ic_2x.png{{/assetRewrite}} 48w, {{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-right-ic_1x.png{{/assetRewrite}} 24w" src="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/chevron-right-ic_1x.png{{/assetRewrite}}" alt="Navigate right icon">
-        </picture>
-      </a>
-    </p>
-  </div>
-  <div class="button-collection clearfix">
-    <a href="#" class="button button--outline button--small button-collection__button button-collection__button--active" data-target="daily">
-      Daily
-    </a>
-    <a href="#" class="button button--outline button--small button-collection__button" data-target="monthly">
-      Monthly
-    </a>
-  </div>
 </div>
