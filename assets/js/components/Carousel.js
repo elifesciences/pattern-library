@@ -272,7 +272,7 @@ module.exports = class Carousel {
   }
 
   next() {
-    if (this.currentSlide % this.originalSlideCount === 0) {
+    if ((this.currentSlide + 1) % this.originalSlideCount === 0) {
       this.extendStage();
     }
 
