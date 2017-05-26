@@ -19,3 +19,28 @@
 .caption-text__body > :last-child {
   @include nospace("bottom");
 }
+
+.caption-text__body__collapsed_part {
+  display: inline;
+  margin: 0;
+}
+
+.caption-text__toggle {
+  background-color: transparent;
+  border: 0;
+  color: $color-primary;
+  line-height: 1;
+  margin: 0;
+  padding-left: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+
+.caption-text__toggle--see-less {
+  position: relative;
+  top: -24px;
+  top: get-rem-from-px(24) * -1rem;
+}

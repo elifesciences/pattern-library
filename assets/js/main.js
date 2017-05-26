@@ -34,6 +34,7 @@ if (window.localStorage && document.querySelector &&
   Components.SelectNav = require('./components/SelectNav');
   Components.SideBySideView = require('./components/SideBySideView');
   Components.SiteHeader = require('./components/SiteHeader');
+  Components.ToggleableCaption = require('./components/ToggleableCaption');
   Components.ViewerModal = require('./components/ViewerModal');
   Components.ViewSelector = require('./components/ViewSelector');
 

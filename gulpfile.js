@@ -267,7 +267,7 @@ gulp.task('browserify-tests', (done) => {
 gulp.task('test', ['browserify-tests', 'js'], () => {
   return gulp.src('./test/*.html')
     .pipe(mochaPhantomjs({
-      reporter: 'spec', 
+      reporter: 'spec',
       mocha: {
         grep: mocha_grep
       },
