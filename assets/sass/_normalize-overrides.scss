@@ -52,7 +52,7 @@ a {
   text-decoration: none;
 }
 
-p a:not(.additional-asset__link--download):not(.asset-viewer-inline__download_all_link):not(.asset-viewer-inline__open_link):not(.reference__title):not(.doi):not(.reference__authors_link) {
+p a:not(.additional-asset__link--download):not(.asset-viewer-inline__download_all_link):not(.asset-viewer-inline__open_link):not(.reference__title):not(.doi):not(.reference__authors_link):not(.trigger) {
   @include discreet-link();
 }
 
@@ -211,4 +211,12 @@ img {
 
 :-moz-placeholder { /* Firefox 18- */
   color: $color-text-placeholder;
+}
+
+@media only all and (max-width: #{get-rem-from-px($bkpt-site--wide - 1)}em) {
+
+  .article-secondary-column {
+    display: none;
+  }
+
 }

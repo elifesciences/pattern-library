@@ -74,6 +74,8 @@ if (window.localStorage && document.querySelector &&
           }
         }
       });
+
+      $component.dataset.behaviourInitialised = true;
     }
 
     Components.DelegateBehaviour.setInitialiseComponent(initialiseComponent);
@@ -83,6 +85,13 @@ if (window.localStorage && document.querySelector &&
       [].forEach.call(components, (el) => initialiseComponent(el));
     }
 
+    let observer = new MutationObserver(() => {
+      let components = document.querySelectorAll('[data-behaviour]:not([data-behaviour-initialised])');
+      if (components) {
+        [].forEach.call(components, (el) => initialiseComponent(el));
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
   };
 
   new Elife();

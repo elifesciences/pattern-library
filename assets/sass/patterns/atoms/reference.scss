@@ -7,6 +7,11 @@
   line-height: 1.5;
   @include nospace();
   text-decoration: none;
+
+  .popup__content & {
+    @include popup_title_text();
+  }
+
 }
 
 a.reference__title:hover {
@@ -26,6 +31,11 @@ a.reference__title:hover {
   display: inline;
   margin: 0;
   padding: 0;
+
+  .popup__content & {
+    @include popup_title_text();
+  }
+
 }
 
 .reference__author:after {
@@ -49,6 +59,11 @@ a.reference__authors_link:hover {
 
 .reference__authors_list_suffix {
   @include listing-side-author-typeg();
+
+  .popup__content & {
+    @include popup_title_text();
+  }
+
 }
 
 .reference__origin {
@@ -60,6 +75,11 @@ a.reference__authors_link:hover {
   & a {
     @include discreet-link();
   }
+
+  .popup__content & {
+    @include popup-ancillary-text();
+  }
+
 }
 
 .reference__abstracts {
@@ -72,6 +92,12 @@ a.reference__authors_link:hover {
   @include small-typeg();
   @include font-size(14);
   line-height: 1.7142857143;
+
+  .popup__content & {
+    @include popup-ancillary-text();
+    padding-bottom: 0;
+  }
+
 }
 
 .reference__abstract_link {

@@ -2,6 +2,19 @@
 
 .author-details__section {
   @include padding(24, "bottom");
+
+  .popup__content & {
+    @include padding(18, "bottom");
+  }
+
+  .popup__content & {
+    @include padding(18, "bottom");
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
 }
 
 .author-details__secondary-name {
@@ -25,6 +38,11 @@
   font-weight: bold;
   display: inline;
   padding: 0;
+
+  .popup__content & {
+    @include popup-ancillary-text();
+  }
+
 }
 
 .author-details__heading:after {
@@ -32,14 +50,24 @@
 }
 
 .author-details__list {
+  display: inline;
   @include nospace("bottom");
   @include nospace("left");
   list-style-type: none;
+
+  & > li {
+    display: inline;
+  }
 }
 
 .author-details__text {
   @include body-para();
   @include nospace("bottom");
+
+  .popup__content & {
+    @include popup-ancillary-text();
+  }
+
 }
 
 a.author-details__link {
@@ -55,4 +83,13 @@ a.author-details__link {
 .author-details__linked-image--orcid {
   margin-bottom: -3px;
   @include height($font-size-base-in-px);
+}
+
+.author-details__name {
+
+  .popup__content & {
+    @include nospace();
+    @include popup_title_text();
+  }
+
 }
