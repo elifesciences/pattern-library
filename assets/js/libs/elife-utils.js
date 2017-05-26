@@ -174,7 +174,7 @@ module.exports = () => {
       return 0;
     }
 
-    return parseInt(pxString.match(/([-0-9.]+)px/)[1], 10);
+    return Math.round(pxString.match(/([-0-9.]+)px/)[1]);
   }
 
   function _getZeroAwarePxStringFromValue(value) {
