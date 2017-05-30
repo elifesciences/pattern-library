@@ -94,7 +94,8 @@
     line-height: 1.5652173913;
   }
 
-  .content-header--header & {
+  .content-header--header &,
+  .content-header--read-more & {
     @include font-size(29);
     line-height: 1.2413793103;
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
