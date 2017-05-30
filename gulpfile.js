@@ -36,7 +36,8 @@ const uglify            = require('gulp-uglify');
 // const watchify          = require('watchify');
 
 const js3rdPartySource = './assets/js/libs/third-party/**/*.js';
-const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource];
+const jsPolyfills = './assets/js/libs/polyfills.js';
+const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource, '!' + jsPolyfills];
 // TODO: Refactor dir structure to be less confusing: 'source' in the dest path?!
 const jsDest = './source/assets/js';
 

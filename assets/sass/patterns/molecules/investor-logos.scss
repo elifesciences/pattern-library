@@ -1,5 +1,9 @@
 @import "../../definitions";
 
+.investor-logos {
+  width: 100%;
+}
+
 .investor-logos__img_container {
   border-top: 1px solid $color-text-dividers;
   @include height(120);
@@ -30,8 +34,14 @@
 @media only screen and (min-width: #{get-rem-from-px(520)}em) {
 
   .invester-logos__container {
+
     display: table;
-    display: flex;
+    width: 100%;
+
+    @supports(display: flex) {
+      display: flex;
+    }
+
   }
 
   .investor-logos__img_container {
