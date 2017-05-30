@@ -27,7 +27,8 @@ describe('A ViewSelector Component', function () {
     it('is added when sufficient scrolling has occurred', function () {
       // Fake sufficient scrolling
       let windowMock = {
-        addEventListener: function (){},
+        addEventListener: function () {
+        },
         pageYOffset: 20
       };
       let _viewSelector1 = new ViewSelector($elm, windowMock);
@@ -48,7 +49,8 @@ describe('A ViewSelector Component', function () {
     it('is removed when scrolling is insufficient', function () {
       // Fake sufficient scrolling
       let windowMock = {
-        addEventListener: function (){},
+        addEventListener: function () {
+        },
         pageYOffset: 10
       };
       let _viewSelector = new ViewSelector($elm, windowMock);
@@ -65,7 +67,8 @@ describe('A ViewSelector Component', function () {
          // This must be smaller than $elm.offsetHeight of the object under test
          let fakeBottomOfMainEl = 20;
          let windowMock = {
-           addEventListener: function (){},
+           addEventListener: function () {
+           },
            pageYOffset: 30
          };
 
@@ -79,7 +82,7 @@ describe('A ViewSelector Component', function () {
          };
          _viewSelector.elmYOffset = 20;
          // Prerequisite for the test to be valid
-         expect (fakeBottomOfMainEl).to.be.below(_viewSelector.$elm.offsetHeight);
+         expect(fakeBottomOfMainEl).to.be.below(_viewSelector.$elm.offsetHeight);
 
          _viewSelector.$elm.classList.add('view-selector--fixed');
          _viewSelector.handleScroll();
@@ -128,37 +131,63 @@ describe('A ViewSelector Component', function () {
 
     let viewSelector;
 
-    beforeEach(function () {
+    beforeEach(() => {
+      window.CSS = {
+        supports: () => true
+      };
       viewSelector = new ViewSelector($elm);
     });
 
-    it('is displayed on load', function() {
-      const link = $elm.querySelector('.view-selector__link--side-by-side');
-      expect(link).to.not.be.null;
-      expect(link.textContent).to.equal('Side by side');
-      expect(link.href).to.equal('https://lens.elifesciences.org/19749/index.html');
+    context('when the browser can display the side by side view', () => {
+
+      it('is displayed on load', function () {
+        const link = $elm.querySelector('.view-selector__link--side-by-side');
+        expect(link).to.not.be.null;
+        expect(link.textContent).to.equal('Side by side');
+        expect(link.href).to.equal('https://lens.elifesciences.org/19749/index.html');
+      });
+
+      it('opens an iframe', function () {
+        const link = $elm.querySelector('.view-selector__link--side-by-side');
+        link.click();
+        expect(viewSelector.sideBySideView.$iframe).to.not.be.undefined;
+        expect(viewSelector.sideBySideView.$iframe.classList.contains('hidden')).to.be.false;
+      });
+
     });
 
-    it('opens an iframe', function() {
-      const link = $elm.querySelector('.view-selector__link--side-by-side');
-      link.click();
-      expect(viewSelector.sideBySideView.$iframe).to.not.be.undefined;
-      expect(viewSelector.sideBySideView.$iframe.classList.contains('hidden')).to.be.false;
-    });
+    context('when the browser cannot display the side by side view', () => {
 
-    it('is not displayed if the link is not present', function () {
-      $elm.dataset.sideBySideLink = undefined;
-      expect(viewSelector.sideBySideViewAvailable()).to.be.false;
-    });
+      it('is not displayed if the link is not supplied', function () {
+        $elm.dataset.sideBySideLink = '';
+        expect(viewSelector.sideBySideViewAvailable()).to.be.false;
+      });
 
-    it('is not displayed if the link is empty', function () {
-      $elm.dataset.sideBySideLink = '';
-      expect(viewSelector.sideBySideViewAvailable()).to.be.false;
-    });
+      it('is not displayed if the link looks broken', function () {
+        $elm.dataset.sideBySideLink = 'localhost/null';
+        expect(viewSelector.sideBySideViewAvailable()).to.be.false;
+      });
 
-    it('is not displayed if the link is broken', function () {
-      $elm.dataset.sideBySideLink = 'localhost/null';
-      expect(viewSelector.sideBySideViewAvailable()).to.be.false;
+      it('is not displayed if the browser is probably Edge or IE', function () {
+        // Explicity fail the capability check used to determine whether the link is displayed
+        window.CSS.supports = (property, value) => {
+          if (property === 'text-orientation' || property === '-webkit-text-orientation') {
+            if (value === 'sideways') {
+              return false;
+            }
+          }
+          return true;
+        };
+
+        expect(new ViewSelector($elm, window).sideBySideViewAvailable()).to.be.false;
+
+        window.CSS.supports = null;
+        expect(new ViewSelector($elm, window).sideBySideViewAvailable()).to.be.false;
+
+        window.CSS = null;
+        expect(new ViewSelector($elm, window).sideBySideViewAvailable()).to.be.false;
+      });
+
     });
   });
 

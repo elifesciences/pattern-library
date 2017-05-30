@@ -92,7 +92,22 @@ module.exports = class ViewSelector {
 
   sideBySideViewAvailable() {
     const link = this.$elm.dataset.sideBySideLink;
-    return !!(link && link.match(/^https:\/\/.*$/));
+    const isLinkProvided = () => !!(link && link.match(/^https:\/\/.*$/));
+    const isSideBySideViewLikelySupported = () => {
+      try {
+        if (!(this.window.CSS && this.window.CSS.supports)) {
+          return false;
+        }
+      } catch (e) {
+        return false;
+      }
+
+      // Proxy for IE/Edge, that Lens doesn't support. Dirty :-(
+      return this.window.CSS.supports('text-orientation', 'sideways') ||
+             this.window.CSS.supports('-webkit-text-orientation', 'sideways');
+    };
+
+    return isLinkProvided() && isSideBySideViewLikelySupported();
   }
 
   insertSideBySideListItem() {

@@ -39,10 +39,28 @@
 }
 
 .site-header__logo_link {
+  background: url("../img/patterns/organisms/elife-logo-symbol-1x.png") 0 0 no-repeat;
   display: block;
-  height: 27px;
-  margin: 3px 0 0 3px;
-  width: 27px;
+  height: 28px;
+  margin: 6px 0 0 3px;
+  width: 28px;
+
+  // Lock-out IE 11. Dirty :-(
+  @supports (display: flex) {
+    background: none;
+    height: 27px;
+  }
+
+}
+
+.site-header__logo_link_image {
+  display: none;
+
+  // Lock-out IE 11. Dirty :-(
+  @supports (display: flex) {
+    display: block;
+  }
+
 }
 
 .site-header__navigation {
@@ -78,6 +96,7 @@
   }
 
   .site-header__logo_link {
+    background: none;
     display: block;
     float: right;
     height: 70px;

@@ -97,7 +97,9 @@
 
   justify-content: space-between;
   margin: 0 auto;
-  width: #{12 * 6}px;
+
+  /* 6px IE fudge factor */
+  width: #{12 * 6 + 6}px;
 }
 
 .carousel__control {

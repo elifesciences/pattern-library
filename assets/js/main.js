@@ -2,6 +2,7 @@
 
 // Babel polyfill
 require('babel-polyfill');
+require('./libs/polyfills');
 
 // Base level of feature support needed for the js loaded in this file.
 // Consider AJAXing in the rest if the test passes.
