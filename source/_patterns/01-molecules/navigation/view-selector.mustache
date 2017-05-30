@@ -5,7 +5,7 @@
     </li>
     {{#figureUrl}}
       <li class="view-selector__list-item view-selector__list-item--figures{{#figureIsActive}} view-selector__list-item--active{{/figureIsActive}}">
-        <a href="{{figureUrl}}" class="view-selector__link view-selector__link--figures"><span>Figures</span></a>
+        <a href="{{figureUrl}}" class="view-selector__link view-selector__link--figures"><span>Figures and data</span></a>
       </li>
     {{/figureUrl}}
 
@@ -15,7 +15,7 @@
         <ul class="view-selector__jump_links">
           {{#links}}
             <li class="view-selector__jump_link_item">
-              <a href="{{url}}" class="view-selector__jump_link">{{name}}</a>
+              <a href="{{url}}" class="view-selector__jump_link">{{{name}}}</a>
             </li>
           {{/links}}
         </ul>
