@@ -2,6 +2,11 @@
 
 .pager {
 
+  @supports (display: flex) {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .button:nth-child(2) {
     float: right;
   }
