@@ -172,6 +172,11 @@
   border-top: none;
   @include margin($blg-space-small-in-px, "bottom");
   @include height(450);
+
+  @supports (display: flex) {
+    height: auto;
+  }
+
   padding-top: 0;
 
   .teaser__img--prominent {
