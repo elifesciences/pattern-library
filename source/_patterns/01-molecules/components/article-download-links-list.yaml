@@ -33,6 +33,18 @@ schema:
                 url:
                   type: string
                   minLength: 1
+                attributes:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      key:
+                        type: string
+                        minLength: 1
+                      value:
+                        type: string
+                    required:
+                      - key
               required:
                 - name
                 - url
