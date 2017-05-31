@@ -7,7 +7,16 @@
       "items": [
         {
           "name": "Article",
-          "url": "#"
+          "url": "#",
+          "attributes": [
+            {
+              "key": "data-foo",
+              "value": "bar"
+            },
+            {
+              "key": "data-baz"
+            }
+          ]
         },
         {
           "name": "Figures",
