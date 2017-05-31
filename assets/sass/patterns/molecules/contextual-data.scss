@@ -36,7 +36,7 @@
   display: none;
 }
 
-@media only screen and (min-width: #{get-rem-from-px(640)}rem) {
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}rem) {
   .contextual-data {
     display: flex;
   }
