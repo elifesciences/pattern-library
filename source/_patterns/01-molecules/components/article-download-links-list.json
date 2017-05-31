@@ -10,11 +10,11 @@
           "url": "#",
           "attributes": [
             {
-              "key": "data-foo",
+              "key": "foo",
               "value": "bar"
             },
             {
-              "key": "data-baz"
+              "key": "baz"
             }
           ]
         },
