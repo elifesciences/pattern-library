@@ -33,12 +33,10 @@ const sourcemaps        = require('gulp-sourcemaps');
 const stylelint         = require('stylelint');
 const syntax_scss       = require('postcss-scss');
 const uglify            = require('gulp-uglify');
-// const watchify          = require('watchify');
 
 const js3rdPartySource = './assets/js/libs/third-party/**/*.js';
 const jsPolyfills = './assets/js/libs/polyfills.js';
 const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource, '!' + jsPolyfills];
-// TODO: Refactor dir structure to be less confusing: 'source' in the dest path?!
 const jsDest = './source/assets/js';
 
 let options = minimist(process.argv);
@@ -110,7 +108,6 @@ gulp.task('sass:lint', ['sass:clean'], () => {
 
   let processors = [
     stylelint(),
-    // Pretty reporting config
     reporter({
       clearMessages: true,
       throwError: true
@@ -292,7 +289,6 @@ gulp.task('fonts:watch', () => {
 });
 
 gulp.task('js:watch', () => {
-  // gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['test']);
   gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['js']);
 });
 
