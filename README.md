@@ -45,7 +45,7 @@ You should be good to go, open your browser and you will see the pattern lab.
 - run `gulp` to build the css & js files.
 - then run `gulp watch` to watch for changes to files or do both in one fell swoop with `gulp && gulp watch` (the watch task on its own will not compile your assets until a file is changed).
 - run `gulp test --mocha-grep=something` to pass the `--grep` option to mocha and run a subset of tests.
-- if generating files intended for website production, invoke with the production flag, like this: `gulp --environment production`. The only difference at the moment is to minify css files, it may be used for more later.
+- if generating files intended for website production, invoke with the production flag, like this: `gulp --environment production`. The minifies css & js files.
 
 ## 3. Generate PatternLab
 
@@ -66,9 +66,11 @@ Verify the generated static site by serving the `public` folder locally. One qui
 
 # Using patterns
 
-For patterns that are being exposed as resources (ie the Mustache template can be used in an application), there is a YAML file located alongside the template. This contains details of any CSS/JS files that it requires, and a JSON Schema that documents what input is expected.
+For patterns that are being exposed as resources (ie the Mustache template can be used in an application), there is a YAML file located alongside the template. This contains details of any CSS files that it requires, and a JSON Schema that documents what input is expected.
 
 You can run `bin/validate`, which checks all data files for a pattern against the schema.
+
+There is also a list of js file dependencies for each pattern, but individual js files have not yet been implemented and so these lists are currently all empty.
 
 # Notes
 
