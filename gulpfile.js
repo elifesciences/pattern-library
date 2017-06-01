@@ -177,9 +177,7 @@ gulp.task('fonts', () => {
 
 gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests', 'js:extLibs'], () => {
 
-    return browserify('./assets/js/main.js', {
-            debug: true
-          })
+    return browserify('./assets/js/main.js', { debug: true })
           .transform(babel, {
             presets: ["es2015"]
           })
@@ -187,18 +185,11 @@ gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests', 'js:extLibs'], () => {
           .on('error', (err) => {
             console.error(err.message);
           })
-          // Pass desired output filename to vinyl-source-stream
           .pipe(source('main.js'))
           .pipe(buffer())
-
           .pipe(sourcemaps.init({loadMaps: true}))
-          //uglify output for production
           .pipe(environment === 'production' ? uglify() : gutil.noop())
-
-          // sourcemaps
           .pipe(sourcemaps.write('./'))
-
-          // output
           .pipe(gulp.dest(jsDest))
           .pipe(reload());
 });
