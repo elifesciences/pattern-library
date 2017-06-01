@@ -101,7 +101,7 @@ module.exports = class SideBySideView {
       'button',
       ['side-by-side-view__button-close'],
       '<span class="side-by-side-view__button-close-cross">&#x2715;</span>' +
-      '<span class="side-by-side-view__button-close-text">Close side-by-side view</span>',
+      '<span class="side-by-side-view__button-close-text">Close side by side view</span>',
       div
     );
     btn.addEventListener('click', () => {
