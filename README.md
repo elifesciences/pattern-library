@@ -66,9 +66,11 @@ Verify the generated static site by serving the `public` folder locally. One qui
 
 # Using patterns
 
-For patterns that are being exposed as resources (ie the Mustache template can be used in an application), there is a YAML file located alongside the template. This contains details of any CSS/JS files that it requires, and a JSON Schema that documents what input is expected.
+For patterns that are being exposed as resources (ie the Mustache template can be used in an application), there is a YAML file located alongside the template. This contains details of any CSS files that it requires, and a JSON Schema that documents what input is expected.
 
 You can run `bin/validate`, which checks all data files for a pattern against the schema.
+
+There is also a list of js file dependencies for each pattern, but individual js files have not yet been implemented and so these lists are currently all empty.
 
 # Notes
 
