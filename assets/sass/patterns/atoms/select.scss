@@ -1,5 +1,9 @@
 @import "../../definitions";
 
+.select {
+  @include margin(24, "bottom");
+}
+
 .select:focus,
 .select--focus {
   border-color: $color-text-placeholder;
