@@ -33,11 +33,15 @@ module.exports = class FragmentHandler {
    * @returns {boolean} true if element with id is $section, or is contained within $section
    */
   isIdOfOrWithinSection(id, $section, doc, areElementsNested) {
-    if (id === $section.id || id.indexOf('http://') === 0) {
+    if (id.search(/https?:\/\//) === 0) {
+      return false;
+    }
+
+    if (id === $section.id) {
       return true;
     }
 
-    let $fragWithId = doc.querySelector('#' + id);
+    const $fragWithId = doc.querySelector('#' + id);
     return areElementsNested($section, $fragWithId);
   }
 
