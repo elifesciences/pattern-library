@@ -33,7 +33,7 @@ module.exports = class FragmentHandler {
    * @returns {boolean} true if element with id is $section, or is contained within $section
    */
   isIdOfOrWithinSection(id, $section, doc, areElementsNested) {
-    if (id === $section.id) {
+    if (id === $section.id || id.indexOf('http://') === 0) {
       return true;
     }
 

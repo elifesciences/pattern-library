@@ -78,9 +78,15 @@ module.exports = class ArticleSection {
       this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub, this.$elm.id]);
     }
 
-    let $descendentEl = this.doc.querySelector('#' + e.detail);
-    if (!!$descendentEl) {
-      $descendentEl.scrollIntoView();
+    try {
+      if (e.detail.indexOf('http') !== 0) {
+        let $descendentEl = this.doc.querySelector('#' + e.detail);
+        if (!!$descendentEl) {
+          $descendentEl.scrollIntoView();
+        }
+      }
+    } catch (err) {
+      // The event may not have detail
     }
   }
 
