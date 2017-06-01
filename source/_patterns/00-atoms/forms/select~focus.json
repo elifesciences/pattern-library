@@ -1,9 +1,10 @@
 {
-  "id": "select1",
-  "name": "select1",
+  "id": "select3",
+  "name": "select3",
   "label": {
-    "labelText": "Select"
+    "labelText": "Select focus"
   },
+  "classNames": "select--focus",
   "options": [
     {
       "value": "2016",

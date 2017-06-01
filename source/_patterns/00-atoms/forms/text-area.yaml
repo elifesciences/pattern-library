@@ -38,14 +38,12 @@ schema:
         labelText:
           type: string
           minLength: 1
-        for:
-          type: string
-          minLength: 1
         isVisuallyHidden:
           default: false
           type: boolean
       required:
         - labelText
-        - for
   required:
     - name
+  dependencies:
+    label: [id]

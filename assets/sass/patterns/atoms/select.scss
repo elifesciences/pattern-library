@@ -1,0 +1,14 @@
+@import "../../definitions";
+
+.select:focus,
+.select--focus {
+  border-color: $color-text-placeholder;
+}
+
+.select--valid {
+  border-color: $color-success;
+}
+
+.select--error {
+  border-color: $color-attention;
+}

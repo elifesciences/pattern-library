@@ -2,7 +2,6 @@
   "id": "name4",
   "inputType": "text",
   "label": {
-    "for": "name4",
     "labelText": "Error text field"
   },
   "name": "name",
