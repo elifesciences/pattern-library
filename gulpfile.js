@@ -129,23 +129,17 @@ gulp.task('sass:clean', () => {
   del(['./source/assets/css/*']);
 });
 
+gulp.task('img:clean', () => {
+  del(['./source/assets/img']);
+});
+
 /******************************************************************************
  * Image optimisation/copy task
  * Optimises images for production and copies them into the public assets dir.
  ******************************************************************************/
-
+// Regenerating images is time-consuming. Only call img:clean as a dependency when necessary
 gulp.task('img', () => {
-
-  // delete all source files + folders
-  /***
-    this would add lots of time to the build task. Only really needs doing on 'release'. Revisit later.
-  ***/
-  // del(['./source/assets/img']);
-
   return gulp.src('./assets/img/**/*')
-
-      // image minification
-      // all files are piped through this package. Remove this pipe if you simply want to copy files without being minified.
       .pipe(imagemin({
         progressive: true,
         svgoPlugins: [
@@ -153,11 +147,8 @@ gulp.task('img', () => {
           { removeUselessStrokeAndFill: false }
         ],
       }))
-
-      // output to dest folder
       .pipe(gulp.dest('./source/assets/img'));
 });
-
 
 /******************************************************************************
  * Font handling task
