@@ -1,5 +1,11 @@
 'use strict';
 
+require('core-js/es6/promise');
+require('core-js/es6/set');
+require('core-js/fn/object/assign');
+require('core-js/fn/symbol');
+require('core-js/fn/symbol/iterator');
+
 module.exports = (function polyfills() {
 
   (function () {
