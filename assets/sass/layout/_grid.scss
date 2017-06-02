@@ -101,6 +101,10 @@
   @include blg-column-container();
 }
 
+.grid-secondary-column__item {
+  @include blg-column-container();
+}
+
 /*
  *  Wrapper class. A class for constraining the content to the max-site-width and also applies the side padding.
  */

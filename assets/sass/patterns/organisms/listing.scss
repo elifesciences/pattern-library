@@ -1,5 +1,4 @@
 @import "../../definitions";
-@import "../../layout/grid";
 
 $showTwoAtWidth: #{get-rem-from-px($bkpt-site--wide)}rem;
 $showThreeAtWidth: #{get-rem-from-px($bkpt-site--x-wide)}rem;
@@ -20,10 +19,6 @@ $totalHighlightsSpacing: 6;
     margin-bottom: 0;
   }
 
-}
-
-.grid-secondary-column .listing-list {
-  @include blg-column-container();
 }
 
 .listing-list__item {
