@@ -241,6 +241,8 @@
       @include margin($blg-space-extra-small-in-px, $direction);
     } @else if $level == "small" {
       @include margin($blg-space-small-in-px, $direction);
+    } @else if $level == "smallish" {
+      @include margin($blg-space-smallish-in-px, $direction);
     } @else if $level == "medium" {
       @include margin($blg-space-medium-in-px, $direction);
     } @else if $level == "large" {
