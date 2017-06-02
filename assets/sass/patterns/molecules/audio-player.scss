@@ -40,6 +40,10 @@
   @include nospace();
 }
 
+.audio-player__header-link {
+  color: inherit;
+}
+
 .audio-player__player {
   display: block;
   width: 100%;
