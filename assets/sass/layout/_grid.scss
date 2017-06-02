@@ -406,6 +406,7 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
    * Halves
    */
   #{$prefix}one-half {
+    min-height: 1px;
     width: 50%;
   }
 
@@ -413,10 +414,12 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
    * Thirds
    */
   #{$prefix}one-third {
+    min-height: 1px;
     width: 33.333%;
   }
 
   #{$prefix}two-thirds {
+    min-height: 1px;
     width: 66.666%;
   }
 
@@ -424,12 +427,14 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
    * Quarters
    */
   #{$prefix}one-quarter {
+    min-height: 1px;
     width: 25%;
   }
   #{$prefix}two-quarters {
     @extend #{$prefix}one-half;
   }
   #{$prefix}three-quarters {
+    min-height: 1px;
     width: 75%;
   }
 
@@ -437,39 +442,51 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
    * Twelfths
    */
   #{$prefix}zero-twelfths {
+    min-height: 1px;
     width: 0;
   }
   #{$prefix}one-twelfth {
+    min-height: 1px;
     width: 8.333%;
   }
   #{$prefix}two-twelfths {
+    min-height: 1px;
     width: 16.666%;
   }
   #{$prefix}three-twelfths {
+    min-height: 1px;
     width: 25%;
   }
   #{$prefix}four-twelfths {
+    min-height: 1px;
     width: 33.333%;
   }
   #{$prefix}five-twelfths {
+    min-height: 1px;
     width: 41.666%;
   }
   #{$prefix}six-twelfths {
+    min-height: 1px;
     width: 50%;
   }
   #{$prefix}seven-twelfths {
+    min-height: 1px;
     width: 58.333%;
   }
   #{$prefix}eight-twelfths {
+    min-height: 1px;
     width: 66.666%;
   }
   #{$prefix}nine-twelfths {
+    min-height: 1px;
     width: 75%;
   }
   #{$prefix}ten-twelfths {
+    min-height: 1px;
     width: 83.333%;
   }
   #{$prefix}eleven-twelfths {
+    min-height: 1px;
     width: 91.666%;
   }
 }
