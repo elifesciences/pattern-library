@@ -1,7 +1,5 @@
 'use strict';
 
-// Babel polyfill
-require('babel-polyfill');
 require('./libs/polyfills');
 
 // Base level of feature support needed for the js loaded in this file.
