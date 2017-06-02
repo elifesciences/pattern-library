@@ -9,6 +9,8 @@ schema:
     title:
       type: string
       minLength: 1
+    url:
+      type: string
     metadata:
       type: string
       minLength: 1
