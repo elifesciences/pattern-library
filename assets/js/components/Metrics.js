@@ -96,7 +96,7 @@ class Metrics {
     }
 
     // Select the current metric.
-    this.updateSelectedMetric(m => utils.extend(m, { selected: true }));
+    this.updateSelectedMetric(m => Object.assign(m, { selected: true }));
 
     // Register event to call this method.
     this.loadMore().then(function () {
@@ -173,14 +173,14 @@ class Metrics {
     this.$el.classList.add('charts--loading');
     this.loadMore().then(() => {
       this.$el.classList.remove('charts--loading');
-      this.updateSelectedMetric(m => utils.extend(m, { viewPage: m.viewPage + 1 }));
+      this.updateSelectedMetric(m => Object.assign(m, { viewPage: m.viewPage + 1 }));
       this.renderView(this.$el, this.getSelectedMetric());
     });
   }
 
   prevButton(e) {
     e.preventDefault();
-    this.updateSelectedMetric(m => utils.extend(m, { viewPage: m.viewPage - 1 }));
+    this.updateSelectedMetric(m => Object.assign(m, { viewPage: m.viewPage - 1 }));
     this.renderView(this.$el, this.getSelectedMetric());
   }
 
@@ -221,7 +221,7 @@ class Metrics {
 
     // Select the current metric.
     this.updateSelectedMetric(function (m) {
-      return utils.extend(m, { selected: false });
+      return Object.assign(m, { selected: false });
     });
 
     this.selected = metric;
@@ -231,7 +231,7 @@ class Metrics {
     // Select the current metric.
     this.updateSelectedMetric(function (m) {
       isLoaded = m.loaded;
-      return utils.extend(m, { selected: true });
+      return Object.assign(m, { selected: true });
     });
 
     this.log('Changed metric to ', metric, period, ', loaded: ', isLoaded);
