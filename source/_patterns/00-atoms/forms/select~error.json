@@ -1,9 +1,10 @@
 {
-  "id": "select1",
-  "name": "select1",
+  "id": "select2",
+  "name": "select2",
   "label": {
-    "labelText": "Select"
+    "labelText": "Select error"
   },
+  "classNames": "select--error",
   "options": [
     {
       "value": "2016",

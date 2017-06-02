@@ -1,6 +1,7 @@
 assets:
   css:
     - text-fields.css
+    - form-label.css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -40,13 +41,11 @@ schema:
         labelText:
           type: string
           minLength: 1
-        for:
-          type: string
-          minLength: 1
         isVisuallyHidden:
           type: boolean
       required:
         - labelText
-        - for
   required:
     - inputType
+  dependencies:
+    label: [id]
