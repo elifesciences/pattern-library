@@ -86,6 +86,15 @@ module.exports = class AudioPlayer {
     span.classList.add('audio-player__title');
     parent.innerHTML = '';
     parent.appendChild(span);
+
+    const link = span.querySelector('.audio-player__header-link');
+
+    if (link) {
+      this.$titleLink = link;
+
+      return link;
+    }
+
     return span;
   }
 
@@ -144,6 +153,10 @@ module.exports = class AudioPlayer {
     let currentTime2Dis = AudioPlayer.secondsToMinutes(currentTime);
     this.$progressBar.style.width = `${pc}%`;
     this.$currentTime.innerHTML = currentTime2Dis;
+
+    if (this.$titleLink) {
+      this.$titleLink.hash = currentTime;
+    }
 
     if (this.usingMetadata) {
       let chapterNumberOnLastUpdate = this.getCurrentChapterNumber();

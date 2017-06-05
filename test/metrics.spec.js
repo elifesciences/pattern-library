@@ -1,7 +1,6 @@
 const expect = chai.expect;
 
-// Babel polyfill
-require('../node_modules/babel-polyfill');
+require('../assets/js/libs/polyfills');
 
 // Metrics module
 const Metrics = require('../assets/js/components/Metrics');

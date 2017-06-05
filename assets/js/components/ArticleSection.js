@@ -79,8 +79,8 @@ module.exports = class ArticleSection {
     }
 
     try {
-      if (e.detail.indexOf('http') !== 0) {
-        let $descendentEl = this.doc.querySelector('#' + e.detail);
+      if (e.detail.search(/https?:\/\//) !== 0) {
+        const $descendentEl = this.doc.querySelector('#' + e.detail);
         if (!!$descendentEl) {
           $descendentEl.scrollIntoView();
         }

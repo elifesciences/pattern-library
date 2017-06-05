@@ -1,7 +1,6 @@
 let expect = chai.expect;
 
-// Babel polyfill
-require('../node_modules/babel-polyfill');
+require('../assets/js/libs/polyfills');
 
 // load in component(s) to be tested
 let ToggleableCaption = require('../assets/js/components/ToggleableCaption');

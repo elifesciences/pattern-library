@@ -1,13 +1,11 @@
 'use strict';
 
-// Babel polyfill
-require('babel-polyfill');
 require('./libs/polyfills');
 
 // Base level of feature support needed for the js loaded in this file.
 // Consider AJAXing in the rest if the test passes.
 if (window.localStorage && document.querySelector &&
-       window.addEventListener && !!(document.createElement('div')).classList) {
+       window.addEventListener && !!(document.createElement('div')).dataset) {
 
   document.querySelector('html').classList.add('js');
 
@@ -86,13 +84,15 @@ if (window.localStorage && document.querySelector &&
       [].forEach.call(components, (el) => initialiseComponent(el));
     }
 
-    let observer = new MutationObserver(() => {
-      let components = document.querySelectorAll('[data-behaviour]:not([data-behaviour-initialised])');
-      if (components) {
-        [].forEach.call(components, (el) => initialiseComponent(el));
-      }
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
+    if ('MutationObserver' in window) {
+      let observer = new MutationObserver(() => {
+        let components = document.querySelectorAll('[data-behaviour]:not([data-behaviour-initialised])');
+        if (components) {
+          [].forEach.call(components, (el) => initialiseComponent(el));
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
   };
 
   new Elife();
