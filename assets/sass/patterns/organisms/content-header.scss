@@ -401,10 +401,14 @@
 // Displays First Author et al. when narrow only.
 .content-header__authors--line {
   @include author-typeg();
-  display: none;
 
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    display: block;
+  .content-header:not(.content-header--read-more) & {
+    display: none;
+
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: block;
+    }
+
   }
 
   .content-header__author_link:hover {
