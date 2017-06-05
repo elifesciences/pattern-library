@@ -5,7 +5,7 @@ require('./libs/polyfills');
 // Base level of feature support needed for the js loaded in this file.
 // Consider AJAXing in the rest if the test passes.
 if (window.localStorage && document.querySelector &&
-       window.addEventListener && !!(document.createElement('div')).classList) {
+       window.addEventListener && !!(document.createElement('div')).dataset) {
 
   document.querySelector('html').classList.add('js');
 
