@@ -100,7 +100,7 @@
   </div>
 
   {{#authors}}
-    <div class="content-header__authors" data-author-line="{{authorLine}}">
+    <div class="content-header__authors">
       <ol class="content-header__author_list">
         {{#authors.list}}
           <li class="content-header__author_list_item">
@@ -127,11 +127,18 @@
     </div>
   {{/authors}}
 
-  {{^authors}}
-    {{#authorLine}}
-      <div class="content-header__authors content-header__authors--line">{{{authorLine}}}</div>
-    {{/authorLine}}
-  {{/authors}}
+  {{! authorLine used to link to main article author section when narrow }}
+  {{#authorLine}}
+    <!-- aria-hidden because this is just a short summary for narrow viewports, the full author list should be accessible -->
+    <div class="content-header__authors content-header__authors--line" aria-hidden="true">
+      {{#url}}
+        <a href="{{url}}" class="content-header__author_link">{{{text}}}{{#hasEtAl}}<span class="content-header__author_link_highlight">  et al.</span>{{/hasEtAl}}</a>
+      {{/url}}
+      {{^url}}
+        {{{text}}}
+      {{/url}}
+    </div>
+  {{/authorLine}}
 
   {{#button}}
     <div class="content-header__cta">
