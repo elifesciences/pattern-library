@@ -122,4 +122,5 @@ schema:
     - title
   dependencies:
     authorLine: [authors]
+    authors: [authorLine]
     institutions: [authors]
