@@ -20,7 +20,11 @@
     ]
   },
   "download": "#download",
-  "authorLine": "Lee R Berger et al",
+  "authorLine": {
+    "text": "Lee R Berger",
+    "hasEtAl": true,
+    "url": "#"
+  },
   "authors": {
     "list": [
       {

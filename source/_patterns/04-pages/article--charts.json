@@ -138,7 +138,11 @@
         }
       ]
     },
-    "authorLine": "Lee R Berger et al",
+    "authorLine": {
+      "text": "Lee R Berger",
+      "hasEtAl": true,
+      "url": "#"
+    },
     "authors": {
       "list": [
         {"name": "Lee R Berger"},
