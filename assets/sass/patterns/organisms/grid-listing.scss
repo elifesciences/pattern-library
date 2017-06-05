@@ -22,14 +22,10 @@
 
   // 2 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    flex-basis: 46%;
+
     float: left;
     @include margin(0 $grid-listing-spacing-measure $blg-space-extra-small-in-px 0);
-    @include width($min-width-grid-listing-item);
-
-    @supports (display: flex) {
-      width: auto;
-    }
+    width: calc((100% - #{$grid-listing-spacing-measure}px) / 2);
 
     &:nth-child(2n) {
       margin-right: 0;
@@ -38,7 +34,7 @@
     .archive-nav-link {
       height: 437px;
 
-      @supports (display:flex) {
+      @supports (display: flex) {
         height: auto;
       }
     }
@@ -48,13 +44,8 @@
   // 3 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
 
-    flex-basis: 29%;
     @include margin(0 $grid-listing-spacing-measure $blg-space-extra-small-in-px 0);
     width: calc((100% - #{2 * $grid-listing-spacing-measure}px) / 3);
-
-    @supports (display: flex) {
-      width: auto;
-    }
 
     &:nth-child(2n) {
       @include margin($grid-listing-spacing-measure, "right")
@@ -69,13 +60,8 @@
   // 4 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
 
-    flex-basis: 22%;
     @include margin(0 $grid-listing-spacing-measure $blg-space-extra-small-in-px 0);
     width: calc((100% - #{3 * $grid-listing-spacing-measure}px) / 4);
-
-    @supports (display: flex) {
-      width: auto;
-    }
 
     &:nth-child(3n) {
       @include margin($grid-listing-spacing-measure, "right")
