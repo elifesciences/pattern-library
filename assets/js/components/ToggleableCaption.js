@@ -35,7 +35,7 @@ module.exports = class ToggleableCaption {
 
     let truncatedChildren = fullChildren;
 
-    if (truncatedChildren[0].startsWith('<p>')) {
+    if (truncatedChildren[0].indexOf('<p>') === 0) {
       const truncatedChild = clipper(truncatedChildren[0], 200, {
         html: true,
         maxLines: 1,

@@ -20,7 +20,12 @@
     ]
   },
   "download": "#download",
-  "authorLine": "Lee R Berger et al",
+  "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "authorLine": {
+    "text": "Lee R Berger",
+    "hasEtAl": true,
+    "url": "#"
+  },
   "authors": {
     "list": [
       {

@@ -11,14 +11,16 @@ module.exports = class Math {
 
   static init(doc) {
     Math.loadDependencies(doc);
-    if (!Math.dependenciesAlreadySetup(doc)) {
-      let observer = new MutationObserver((mutations, observer) => {
-        Math.loadDependencies(doc);
-        if (Math.dependenciesAlreadySetup(doc)) {
-          observer.disconnect();
-        }
-      });
-      observer.observe(doc.body, { childList: true, subtree: true });
+    if ('MutationObserver' in window) {
+      if (!Math.dependenciesAlreadySetup(doc)) {
+        let observer = new MutationObserver((mutations, observer) => {
+          Math.loadDependencies(doc);
+          if (Math.dependenciesAlreadySetup(doc)) {
+            observer.disconnect();
+          }
+        });
+        observer.observe(doc.body, { childList: true, subtree: true });
+      }
     }
   }
 

@@ -1,7 +1,6 @@
 let expect = chai.expect;
 
-// Babel polyfill
-require('../node_modules/babel-polyfill');
+require('../assets/js/libs/polyfills');
 
 // load in component(s) to be tested
 let AssetNavigation = require('../assets/js/components/AssetNavigation');
