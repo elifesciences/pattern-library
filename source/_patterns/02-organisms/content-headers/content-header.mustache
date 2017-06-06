@@ -72,6 +72,17 @@
     {{/hasSubjects}}
   {{/header}}
 
+  {{#licence}}
+      <ul class="content-header__icons">
+        <li><a href="https://en.wikipedia.org/wiki/Open_access"
+               class="content-header__icon content-header__icon--oa"><span
+            class="visuallyhidden">Open access</span></a></li>
+        <li><a href="{{licence}}"
+               class="content-header__icon content-header__icon--cc"><span
+            class="visuallyhidden">Copyright information</span></a></li>
+      </ul>
+  {{/licence}}
+
   {{#download}}
     <a href="{{download}}" class="content-header__download_link">
       <picture>

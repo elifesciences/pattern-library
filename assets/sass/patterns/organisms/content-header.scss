@@ -328,6 +328,60 @@
   }
 }
 
+.content-header__icons {
+  float: left;
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  left: 7%;
+  top: 14px;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
+    left: 14%;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+    left: 42px;
+  }
+
+  .content-header--image & {
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      left: 16px;
+    }
+
+  }
+
+  .content-header--image & {
+    left: 12px;
+    top: #{$blg-space-extra-small-in-px}px;
+  }
+
+}
+
+$iconlist: cc oa;
+
+.content-header__icon {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  display: block;
+  width: 17px;
+  height: 22px;
+}
+
+@each $icon in $iconlist {
+  .content-header__icon--#{$icon} {
+    background-image: url("../img/icons/#{$icon}.png");
+    background-image: url("../img/icons/#{$icon}.svg"), linear-gradient(transparent, transparent);
+
+    &:hover {
+      background-image: url("../img/icons/#{$icon}-hover.png");
+      background-image: url("../img/icons/#{$icon}-hover.svg"), linear-gradient(transparent, transparent);
+    }
+  }
+}
+
 .content-header__download_link {
   float: right;
   position: absolute;
