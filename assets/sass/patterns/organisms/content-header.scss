@@ -452,25 +452,6 @@ $iconlist: cc oa;
   }
 }
 
-// Displays First Author et al. when narrow only.
-.content-header__authors--line {
-  @include author-typeg();
-
-  .content-header:not(.content-header--read-more) & {
-    display: none;
-
-    @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      display: block;
-    }
-
-  }
-
-  .content-header__author_link:hover {
-    color: $color-text;
-  }
-
-}
-
 .content-header__author_link_highlight,
 .content-header__author_link_highlight:hover {
   color: $color-primary;
@@ -479,9 +460,6 @@ $iconlist: cc oa;
 .content-header__authors {
   @include margin($content-header-padding, "bottom");
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    .content-header__author_list {
-      @include visuallyhidden();
-    }
     .content-header__institution_list {
       @include visuallyhidden();
     }
