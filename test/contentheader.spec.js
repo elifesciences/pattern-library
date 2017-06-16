@@ -54,6 +54,10 @@ describe('A ContentHeader Component', function () {
     expect(contentHeader.getExcessItems).to.be.a('function');
   });
 
+  it('possesses a getUpdatedToggleText() method', function () {
+    expect(contentHeader.getExcessItems).to.be.a('function');
+  });
+
   it('possesses a markAsExcess() method', function () {
     expect(contentHeader.markAsExcess).to.be.a('function');
   });
@@ -195,7 +199,7 @@ describe('A ContentHeader Component', function () {
 
       describe('the getMaxItems() method', function () {
 
-        context('when there is exactly 2 authors', () => {
+        context('when there are exactly 2 authors', () => {
 
           it('returns 2', function () {
             contentHeaderNarrow.authors = [
@@ -207,12 +211,57 @@ describe('A ContentHeader Component', function () {
 
         });
 
-        context('when there is not exactly 2 authors', () => {
+        context('when there are not exactly 2 authors', () => {
 
           it('returns 1', function () {
             expect(contentHeaderNarrow.getMaxItems()).to.equal(1);
           });
 
+        });
+
+      });
+
+      describe('the getUpdatedToggleText() method', () => {
+
+        it('returns the correct toggle text when expanded', () => {
+          const expected = '<span class="visuallyhidden"> collapse author list</span><span aria-hidden="true">^</span>';
+          expect(contentHeaderNarrow.getUpdatedToggleText('expanded')).to.equal(expected);
+        });
+
+        it('returns the correct toggle text when collapsed', () => {
+          const expected = 'et al.<span class="visuallyhidden"> expand author list</span>';
+          expect(contentHeaderNarrow.getUpdatedToggleText('collapsed')).to.equal(expected);
+        });
+
+      });
+
+      describe('the getExcessItems() method', function () {
+
+        it('returns empty array if passed an array of 1 author', function () {
+          let authorSet = buildItemSet('author', 1);
+          contentHeaderNarrow.authors = authorSet;
+          let observed = contentHeaderNarrow.getExcessItems('author', authorSet);
+          expect(Array.isArray(observed)).to.be.true;
+          expect(observed.length).to.equal(0);
+        });
+
+        it('returns empty array if passed an array of 2 authors', function () {
+          let authorSet = buildItemSet('author', 2);
+          contentHeaderNarrow.authors = authorSet;
+          let observed = contentHeaderNarrow.getExcessItems('author', authorSet);
+          expect(Array.isArray(observed)).to.be.true;
+          expect(observed.length).to.equal(0);
+        });
+
+        it('returns array of the 2nd element onwards if passed array of > 2 authors', function () {
+          let authorSet = buildItemSet('author', 6);
+          contentHeaderNarrow.authors = authorSet;
+          let observed = contentHeaderNarrow.getExcessItems('author', authorSet);
+          expect(Array.isArray(observed)).to.be.true;
+          expect(observed.length).to.equal(5);
+          observed.forEach(function (author, i) {
+            expect(observed[i]).to.equal(authorSet[i + 1]);
+          });
         });
 
       });
@@ -244,6 +293,20 @@ describe('A ContentHeader Component', function () {
 
         it('returns 9', function () {
           expect(contentHeaderNotNarrow.getMaxItems()).to.equal(9);
+        });
+
+      });
+
+      describe('the getUpdatedToggleText() method', () => {
+
+        it('returns the correct toggle text when expanded', () => {
+          const expected = '<span class="visuallyhidden"> collapse author list</span><span aria-hidden="true">see&nbsp;less</span>';
+          expect(contentHeaderNotNarrow.getUpdatedToggleText('expanded')).to.equal(expected);
+        });
+
+        it('returns the correct toggle text when collapsed', () => {
+          const expected = '<span class="visuallyhidden"> expand author list</span><span aria-hidden="true">see&nbsp;all</span>';
+          expect(contentHeaderNotNarrow.getUpdatedToggleText('collapsed')).to.equal(expected);
         });
 
       });
