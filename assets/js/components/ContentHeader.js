@@ -1,4 +1,5 @@
 'use strict';
+const utils = require('../libs/elife-utils')();
 
 module.exports = class ContentHeader {
 
@@ -27,22 +28,20 @@ module.exports = class ContentHeader {
 
     this.hasToggleAuthor = false;
     this.hasToggleInstitution = false;
-    this.hideAllExcessItems('author', this.authors);
-    this.hideAllExcessItems('institution', this.institutions);
+    this.hideAllExcessItems();
+
+    this.window.addEventListener('resize', utils.debounce(() => this.handleResize(), 30));
   }
 
-  handleAnyExcessItems(itemType, items) {
-    let toggle = this.$elm.querySelector('.content-header__item_toggle');
-    if (toggle && toggle.innerHTML.indexOf('less') > -1) {
-      this.clearExcessMark(items);
-      this.toggleExcessItems(items);
-    } else {
-      this.clearExcessMark(items);
-      let excessItems = this.getExcessItems(itemType, items);
-      this.markAsExcess(excessItems);
-      this.toggleExcessItems(items);
-      this.markLastNonExcessItem(itemType, items);
-    }
+  handleResize() {
+    this.hideAllExcessItems();
+    const toggles = this.$elm.querySelectorAll(
+      '.content-header__item_toggle .content-header__author_link_highlight'
+    );
+    const updateToggleText = this.getUpdatedToggleText.bind(this);
+    [].forEach.call(toggles, ($toggle) => {
+      $toggle.innerHTML = updateToggleText();
+    });
   }
 
   /**
@@ -51,9 +50,9 @@ module.exports = class ContentHeader {
    * @param {string} itemType 'author' or 'institution'
    * @param {DOMTokenList} items List of items to identify the excess within, and hide those
    */
-  hideAllExcessItems(itemType, items) {
-    let excessItems = this.getExcessItems(itemType, items);
-    this.markAsExcess(excessItems);
+  hideExcessItems(itemType, items) {
+    this.clearExcessMark(items);
+    this.markAsExcess(this.getExcessItems(itemType, items));
     this.toggleExcessItems(items);
     this.addTrailingText(itemType, items);
   }
@@ -62,8 +61,16 @@ module.exports = class ContentHeader {
    *
    * @returns {number} Number of item to display by default
    */
-  getDefaultMaxItems() {
-    return 9;
+  getMaxItems() {
+    if (this.window.matchMedia('(min-width: 730px)').matches) {
+      return 9;
+    }
+
+    if (this.authors.length === 2) {
+      return 2;
+    }
+
+    return 1;
   }
 
   /**
@@ -80,9 +87,9 @@ module.exports = class ContentHeader {
       return null;
     }
 
-    let defaultMaxItems = this.getDefaultMaxItems();
-    if (items.length > defaultMaxItems) {
-      return [].slice.call(items, defaultMaxItems);
+    const maxItems = this.getMaxItems();
+    if (items.length > maxItems) {
+      return [].slice.call(items, maxItems);
     }
 
     return [];
@@ -137,11 +144,13 @@ module.exports = class ContentHeader {
     [].forEach.call(items, function (item, i) {
 
       // Clear old any obsolete determination of what's the last non-excess item.
-      items[i].querySelector('.content-header__' + itemType)
-              .classList.remove('content-header__' + itemType + '--last-non-excess');
-      if (item.classList.contains('excess-item') && !foundLastShown) {
-        lastShownIndex = i - 1;
-        foundLastShown = true;
+      if (item.querySelector('.content-header__' + itemType)) {
+        item.querySelector('.content-header__' + itemType)
+            .classList.remove('content-header__' + itemType + '--last-non-excess');
+        if (item.classList.contains('excess-item') && !foundLastShown) {
+          lastShownIndex = i - 1;
+          foundLastShown = true;
+        }
       }
     });
 
@@ -161,7 +170,7 @@ module.exports = class ContentHeader {
    * @param {DOMTokenList} items The items to which to add the trailing text
    */
   addTrailingText(itemType, items) {
-    if (itemType === 'author' && items.length > this.getDefaultMaxItems()) {
+    if (itemType === 'author' && items.length > this.getMaxItems()) {
       if (!this.hasToggleAuthor) {
         this.buildSeeMoreLessToggle('author');
         this.hasToggleAuthor = true;
@@ -169,7 +178,7 @@ module.exports = class ContentHeader {
 
     }
 
-    if (itemType === 'institution' && items.length > this.getDefaultMaxItems()) {
+    if (itemType === 'institution' && items.length > this.getMaxItems()) {
       if (!this.hasToggleInstitution) {
         this.buildSeeMoreLessToggle('institution');
         this.hasToggleInstitution = true;
@@ -180,45 +189,113 @@ module.exports = class ContentHeader {
     this.markLastNonExcessItem(itemType, items);
   }
 
+  getToggleCollapsedText() {
+    const baseText = '<span class="visuallyhidden"> expand author list</span>';
+    if (this.window.matchMedia('(min-width: 730px)').matches) {
+      return `${baseText}<span aria-hidden="true">see&nbsp;all</span>`;
+    }
+
+    return `et al.${baseText}`;
+  }
+
+  getToggleExpandedText() {
+    const baseText = '<span class="visuallyhidden"> collapse author list</span>';
+    if (this.window.matchMedia('(min-width: 730px)').matches) {
+      return `${baseText}<span aria-hidden="true">see&nbsp;less</span>`;
+    }
+
+    return `${baseText}<span aria-hidden="true">^</span>`;
+  }
+
+  getUpdatedToggleText(newState) {
+    if (newState === 'expanded') {
+      return this.getToggleExpandedText();
+    }
+
+    if (newState === 'collapsed') {
+      return this.getToggleCollapsedText();
+    }
+
+    // This has been invoked because of a resize, not a state change
+    if (this.$elm.querySelector('.content-header__item_toggle--expanded')) {
+      return this.getToggleExpandedText();
+    }
+
+    if (this.$elm.querySelector('.content-header__item_toggle--collapsed')) {
+      return this.getToggleCollapsedText();
+    }
+
+  }
+
+  updateToggle(newState, toggles) {
+    if (newState !== 'expanded' && newState !== 'collapsed') {
+      return;
+    }
+
+    [].forEach.call(toggles, ($toggle) => {
+      $toggle.innerHTML = this.getUpdatedToggleText(newState);
+      $toggle.parentNode.classList.toggle('content-header__item_toggle--expanded');
+      $toggle.parentNode.classList.toggle('content-header__item_toggle--collapsed');
+    });
+  }
+
   /**
    * Builds the show/hide toggle for excess authors & institutions.
    */
   buildSeeMoreLessToggle(itemType) {
-    // This toggle only required due to screen width constraints. All content already accessible as
-    // it's not being hidden in the first place. Hence an aria-hidden li, rather than an anchor.
-    // Should conform to https://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden
-    let toggle = this.doc.createElement('li');
-    let toggleOnText = 'see&nbsp;all';
-    let toggleOffText = 'see&nbsp;less';
-    toggle.setAttribute('aria-hidden', 'true');
-    toggle.classList.add('content-header__item_toggle', 'content-header__item_toggle--off',
-                         'content-header__item_toggle--' + itemType);
-    toggle.innerHTML = toggleOnText;
-    toggle.addEventListener('click', e => {
-      let target = e.target;
-      if (target.innerHTML.indexOf(toggleOnText) > -1) {
-        [].forEach.call(this.doc.querySelectorAll('.content-header__item_toggle'), item => {
-          item.innerHTML = toggleOffText;
-          item.classList.add('content-header__item_toggle--on');
-          item.classList.remove('content-header__item_toggle--off');
-        });
-        this.clearExcessMark(this.authors);
-        this.clearExcessMark(this.institutions);
-        this.toggleExcessItems(this.authors);
-        this.toggleExcessItems(this.institutions);
-        this.markLastNonExcessItem('author', this.authors);
-        this.markLastNonExcessItem('institution', this.institutions);
+    const $toggleWrapper = utils.buildElement(
+      'li',
+      ['content-header__item_toggle', 'content-header__author_list_item',
+       'content-header__item_toggle--collapsed', 'content-header__item_toggle--' + itemType
+      ],
+      '',
+      this.$elm.querySelector('.content-header__' + itemType + '_list')
+    );
+    $toggleWrapper.setAttribute('aria-hidden', 'true');
+
+    const $toggle = utils.buildElement(
+      'a',
+      ['content-header__author_link_highlight'],
+      this.getUpdatedToggleText('collapsed'),
+      $toggleWrapper
+    );
+    $toggle.setAttribute('href', '#');
+
+    const handleSeeMoreLessPress = (e) => {
+      e.preventDefault();
+      const $toggleWrapper = e.currentTarget.parentNode;
+      let newState;
+      if ($toggleWrapper.classList.contains('content-header__item_toggle--collapsed')) {
+        this.showAllItems();
+        newState = 'expanded';
       } else {
-        [].forEach.call(this.doc.querySelectorAll('.content-header__item_toggle'), item => {
-          item.innerHTML = '&nbsp;' + toggleOnText;
-          item.classList.add('content-header__item_toggle--off');
-          item.classList.remove('content-header__item_toggle--on');
-        });
-        this.hideAllExcessItems('author', this.authors);
-        this.hideAllExcessItems('institution', this.institutions);
+        this.hideAllExcessItems();
+        newState = 'collapsed';
       }
-    });
-    this.$elm.querySelector('.content-header__' + itemType + '_list').appendChild(toggle);
+
+      this.updateToggle(newState,
+                        this.$elm.querySelectorAll(
+                          '.content-header__item_toggle .content-header__author_link_highlight'
+                        ),
+                        itemType);
+
+    };
+
+    $toggle.addEventListener('click', handleSeeMoreLessPress);
+  }
+
+  showAllItems() {
+    this.clearExcessMark(this.authors);
+    this.clearExcessMark(this.institutions);
+    this.toggleExcessItems(this.authors);
+    this.toggleExcessItems(this.institutions);
+  }
+
+  hideAllExcessItems() {
+    this.markLastNonExcessItem('author', this.authors);
+    this.markLastNonExcessItem('institution', this.institutions);
+    this.hideExcessItems('author', this.authors);
+    this.hideExcessItems('institution', this.institutions);
   }
 
 };
