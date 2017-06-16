@@ -254,12 +254,11 @@ module.exports = class ContentHeader {
     $toggleWrapper.setAttribute('aria-hidden', 'true');
 
     const $toggle = utils.buildElement(
-      'a',
+      'button',
       ['content-header__author_link_highlight'],
       this.getUpdatedToggleText('collapsed'),
       $toggleWrapper
     );
-    $toggle.setAttribute('href', '#');
 
     const handleSeeMoreLessPress = (e) => {
       e.preventDefault();
