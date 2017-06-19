@@ -46,7 +46,10 @@ module.exports = class ContentHeader {
     }
 
     this.currentClientWidth = document.body.clientWidth;
-    this.hideAllExcessItems();
+    if (!this.$elm.querySelector('.content-header__author_list--expanded')) {
+      this.hideAllExcessItems();
+    }
+
     const toggles = this.$elm.querySelectorAll(
       '.content-header__item_toggle .content-header__author_link_highlight'
     );
