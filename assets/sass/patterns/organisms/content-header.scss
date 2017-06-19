@@ -452,36 +452,16 @@ $iconlist: cc oa;
   }
 }
 
-// Displays First Author et al. when narrow only.
-.content-header__authors--line {
-  @include author-typeg();
-
-  .content-header:not(.content-header--read-more) & {
-    display: none;
-
-    @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      display: block;
-    }
-
-  }
-
-  .content-header__author_link:hover {
-    color: $color-text;
-  }
-
-}
-
 .content-header__author_link_highlight,
 .content-header__author_link_highlight:hover {
+  background-color: transparent;
+  border-style: none;
   color: $color-primary;
 }
 
 .content-header__authors {
   @include margin($content-header-padding, "bottom");
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    .content-header__author_list {
-      @include visuallyhidden();
-    }
     .content-header__institution_list {
       @include visuallyhidden();
     }
@@ -504,8 +484,21 @@ $iconlist: cc oa;
   padding: 0;
 }
 
+.content-header__item_toggle--expanded {
+  display: block;
+}
+
 .content-header__author:after {
   content: ", ";
+}
+
+.content-header__author--last-non-excess:after {
+  content: "";
+
+  .content-header__author_list--expanded & {
+    content: ", ";
+  }
+
 }
 
 .content-header__author_link {
@@ -531,26 +524,6 @@ li.content-header__author_list_item--last .content-header__author:after {
   @include author-typeg();
 }
 
-.content-header__author--last-non-excess:after {
-  content: " et al.";
-}
-
-.content-header__author--etal {
-  @include author-typeg();
-}
-
-.content-header__item_toggle {
-  display: none;
-}
-
-.content-header__item_toggle--off:after {
-  content: "\00a\00bb";
-}
-
-.content-header__item_toggle--on:before {
-  content: "\00ab\00a";
-}
-
 .content-header__institution_list {
   margin: 0;
   padding: 0;
@@ -571,6 +544,24 @@ li.content-header__institution_list_item--last .content-header__institution:afte
   content: "";
 }
 
+.content-header__item_toggle--author {
+  @include author-typeg();
+  font-weight: normal;
+}
+
+.content-header__item_toggle--expanded {
+
+  .content-header__author_link_highlight {
+    padding: 0;
+  }
+
+  & .content-header__item_toggle_cta {
+    display: block;
+    transform: rotate(90deg);
+  }
+
+}
+
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
 
   .content-header__author--last-non-excess:after {
@@ -584,14 +575,17 @@ li.content-header__institution_list_item--last .content-header__institution:afte
     padding: 0;
   }
 
-  .content-header__item_toggle--author {
-    @include author-typeg();
-    font-weight: normal;
-  }
-
   .content-header__item_toggle--institution {
     @include institute-typeg();
     font-weight: normal;
+  }
+
+  .content-header__item_toggle--collapsed:after {
+    content: "\00a0\00bb";
+  }
+
+  .content-header__item_toggle--expanded:before {
+    content: "\00ab\00a0";
   }
 
   .content-header__item_toggle:hover {
