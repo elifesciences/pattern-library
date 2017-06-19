@@ -127,7 +127,11 @@
         }
       ]
     },
-    "authorLine": "Lee R Berger et al",
+    "authorLine": {
+      "text": "Lee R Berger",
+      "hasEtAl": true,
+      "url": "#"
+    },
     "authors": {
       "list": [
         {
@@ -740,7 +744,11 @@
               "url": "#"
             }
           ],
-          "authorLine": "Lee R Berger et al",
+          "authorLine": {
+            "text": "Lee R Berger",
+            "hasEtAl": true,
+            "url": "#"
+          },
           "meta": {
             "url": "#",
             "text": "Research article",
@@ -771,7 +779,11 @@
               "url": "#"
             }
           ],
-          "authorLine": "Lee R Berger et al",
+          "authorLine": {
+            "text": "Lee R Berger",
+            "hasEtAl": true,
+            "url": "#"
+          },
           "meta": {
             "url": "#",
             "text": "Research article",
