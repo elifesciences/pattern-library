@@ -227,7 +227,7 @@ module.exports = class ContentHeader {
 
   }
 
-  updateToggle(newState, toggles) {
+  updateToggleState(newState, toggles) {
     if (newState !== 'expanded' && newState !== 'collapsed') {
       return;
     }
@@ -237,6 +237,14 @@ module.exports = class ContentHeader {
       $toggle.parentNode.classList.toggle('content-header__item_toggle--expanded');
       $toggle.parentNode.classList.toggle('content-header__item_toggle--collapsed');
     });
+
+    if (newState === 'expanded') {
+      this.$elm.querySelector('.content-header__author_list').classList
+          .add('content-header__author_list--expanded');
+    } else {
+      this.$elm.querySelector('.content-header__author_list').classList
+          .remove('content-header__author_list--expanded');
+    }
   }
 
   /**
@@ -272,11 +280,11 @@ module.exports = class ContentHeader {
         newState = 'collapsed';
       }
 
-      this.updateToggle(newState,
-                        this.$elm.querySelectorAll(
+      this.updateToggleState(newState,
+                             this.$elm.querySelectorAll(
                           '.content-header__item_toggle .content-header__author_link_highlight'
                         ),
-                        itemType);
+                             itemType);
 
     };
 

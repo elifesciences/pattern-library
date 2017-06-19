@@ -494,6 +494,11 @@ $iconlist: cc oa;
 
 .content-header__author--last-non-excess:after {
   content: "";
+
+  .content-header__author_list--expanded & {
+    content: ", ";
+  }
+
 }
 
 .content-header__author_link {
