@@ -204,7 +204,7 @@ module.exports = class ContentHeader {
       return `${baseText}<span aria-hidden="true">see&nbsp;less</span>`;
     }
 
-    return `${baseText}<span aria-hidden="true">^</span>`;
+    return `${baseText}<span aria-hidden="true" class="content-header__item_toggle_cta">&#171;</span>`;
   }
 
   getUpdatedToggleText(newState) {

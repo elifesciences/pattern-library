@@ -549,6 +549,19 @@ li.content-header__institution_list_item--last .content-header__institution:afte
   font-weight: normal;
 }
 
+.content-header__item_toggle--expanded {
+
+  .content-header__author_link_highlight {
+    padding: 0;
+  }
+
+  & .content-header__item_toggle_cta {
+    display: block;
+    transform: rotate(90deg);
+  }
+
+}
+
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
 
   .content-header__author--last-non-excess:after {
