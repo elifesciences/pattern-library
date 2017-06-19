@@ -29,11 +29,23 @@ module.exports = class ContentHeader {
     this.hasToggleAuthor = false;
     this.hasToggleInstitution = false;
     this.hideAllExcessItems();
+    this.setupResizeHandler();
+  }
 
+  setupResizeHandler() {
+    this.currentClientWidth = document.body.clientWidth;
     this.window.addEventListener('resize', utils.debounce(() => this.handleResize(), 30));
   }
 
   handleResize() {
+    // Android (at least), may fire resize on initial scroll as url bar moves off the top of the
+    // screen, and the height of the browser window increases until the top edge is at the top of
+    // the screen.
+    if (this.currentClientWidth === document.body.clientWidth) {
+      return;
+    }
+
+    this.currentClientWidth = document.body.clientWidth;
     this.hideAllExcessItems();
     const toggles = this.$elm.querySelectorAll(
       '.content-header__item_toggle .content-header__author_link_highlight'
