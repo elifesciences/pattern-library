@@ -72,6 +72,17 @@
     {{/hasSubjects}}
   {{/header}}
 
+  {{#licence}}
+      <ul class="content-header__icons">
+        <li><a href="https://en.wikipedia.org/wiki/Open_access"
+               class="content-header__icon content-header__icon--oa"><span
+            class="visuallyhidden">Open access</span></a></li>
+        <li><a href="{{licence}}"
+               class="content-header__icon content-header__icon--cc"><span
+            class="visuallyhidden">Copyright information</span></a></li>
+      </ul>
+  {{/licence}}
+
   {{#download}}
     <a href="{{download}}" class="content-header__download_link">
       <picture>
@@ -126,19 +137,6 @@
       {{/institutions}}
     </div>
   {{/authors}}
-
-  {{! authorLine used to link to main article author section when narrow }}
-  {{#authorLine}}
-    <!-- aria-hidden because this is just a short summary for narrow viewports, the full author list should be accessible -->
-    <div class="content-header__authors content-header__authors--line" aria-hidden="true">
-      {{#url}}
-        <a href="{{url}}" class="content-header__author_link">{{{text}}}{{#hasEtAl}}<span class="content-header__author_link_highlight">  et al.</span>{{/hasEtAl}}</a>
-      {{/url}}
-      {{^url}}
-        {{{text}}}
-      {{/url}}
-    </div>
-  {{/authorLine}}
 
   {{#button}}
     <div class="content-header__cta">

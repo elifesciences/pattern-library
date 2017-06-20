@@ -291,7 +291,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/siteheader.html'});
+    browserSync({proxy: 'localhost:8080', startPath: 'test/contentheader.html'});
   } else {
     return gutil.noop;
   }

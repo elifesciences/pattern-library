@@ -10,6 +10,15 @@
 .caption-text__body * {
   @include fig-caption-text-typeg(0);
   font-weight: normal;
+
+  & sup {
+    font-size: 75%;
+  }
+
+  & sub {
+    font-size: 75%;
+  }
+
 }
 
 .caption-text__body * {
