@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .select-nav--js .select {
-  @include margin(0, "bottom");
+  margin-bottom: 0;
 }
 
 // If js is present, that mediates the page request, so don't need this submit button.

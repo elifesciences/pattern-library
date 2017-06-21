@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .select {
-  @include margin(24, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
 }
 
 .select:focus,
