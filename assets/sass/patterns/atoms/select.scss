@@ -1,0 +1,18 @@
+@import "../../definitions";
+
+.select {
+  @include blg-spacing("bottom", "small", "margin");
+}
+
+.select:focus,
+.select--focus {
+  border-color: $color-text-placeholder;
+}
+
+.select--valid {
+  border-color: $color-success;
+}
+
+.select--error {
+  border-color: $color-attention;
+}

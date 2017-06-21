@@ -2,7 +2,6 @@
   "id": "name2",
   "inputType": "text",
   "label": {
-    "for": "name2",
     "labelText": "Focus text field"
   },
   "name": "name",

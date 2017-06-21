@@ -4,7 +4,6 @@
     "id": "archiveYear",
     "label": {
       "labelText": "Archive year",
-      "for": "archiveYear",
       "isVisuallyHidden": true
     },
     "options": [

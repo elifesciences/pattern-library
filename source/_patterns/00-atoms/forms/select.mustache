@@ -1,10 +1,16 @@
 {{#label}}
   <label for="{{id}}"
-         {{#isVisuallyHidden}}class="visuallyhidden"{{/isVisuallyHidden}}>
+         class="form-label{{#isVisuallyHidden}} visuallyhidden{{/isVisuallyHidden}}">
     {{labelText}}
   </label>
 {{/label}}
-<select{{#id}} name="{{id}}" id="{{id}}"{{/id}}>
+<select class="select {{classNames}}"
+  {{#id}} id="{{id}}"{{/id}}
+  {{#name}} name="{{name}}"{{/name}}
+  {{#autofocus}} autofocus{{/autofocus}}
+  {{#required}} required="required"{{/required}}
+  {{#disabled}} disabled="disabled"{{/disabled}}
+>
   {{#options}}
     <option value="{{value}}" {{#selected}}selected{{/selected}}>{{displayValue}}</option>
   {{/options}}
