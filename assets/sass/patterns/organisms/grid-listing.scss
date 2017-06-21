@@ -25,7 +25,7 @@
 
     float: left;
     @include margin(0 $grid-listing-spacing-measure $blg-space-extra-small-in-px 0);
-    width: calc((100% - #{$grid-listing-spacing-measure}px) / 2 - 0.1px);
+    width: calc((100% - #{$grid-listing-spacing-measure}px) / 2 - 0.1px); // -0.1px avoids rounding problems in IE
 
     &:nth-child(2n) {
       margin-right: 0;
