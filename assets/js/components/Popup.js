@@ -137,14 +137,14 @@ module.exports = class Popup {
     });
   }
 
-  createBottomBar(referenceLink) {
+  createBottomBar(label, link) {
     const $bottomBar = utils.buildElement('div', ['popup__actions', 'clearfix']);
 
     const $seeInReferences = utils.buildElement('a', [
       'popup__button',
       'popup__button--right'
-    ], this.label, $bottomBar);
-    $seeInReferences.href = referenceLink;
+    ], label, $bottomBar);
+    $seeInReferences.href = link;
 
     return $bottomBar;
   }
@@ -238,14 +238,14 @@ module.exports = class Popup {
       this.bodyContents.id = utils.uniqueIds.get('popupFragment', this.doc);
       this.bodyContents.classList.add('popup__content');
 
-      const $bottomBar = this.createBottomBar(this.$link.href);
+      let children = [this.bodyContents];
+      if (this.label) {
+        children.push(this.createBottomBar(this.label, this.$link.href));
+      }
 
       // Create elements.
       this.popupHitBox = this.createPopupHitBox(
-        this.createPopupBox(
-          this.bodyContents,
-          $bottomBar
-        )
+        this.createPopupBox(...children)
       );
 
       // Add to DOM.
