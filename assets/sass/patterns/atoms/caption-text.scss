@@ -7,7 +7,7 @@
 
 // May contain arbitrary html. Might need to refine if too blunt an instrument.
 .caption-text__body,
-.caption-text__body * {
+.caption-text__body > * {
   @include fig-caption-text-typeg(0);
   font-weight: normal;
 
@@ -21,7 +21,7 @@
 
 }
 
-.caption-text__body * {
+.caption-text__body > * {
   @include body-spacing();
 }
 
