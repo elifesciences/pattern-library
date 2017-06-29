@@ -37,12 +37,16 @@ module.exports = class Math {
 
   static setupProperties() {
     window.MathJax = {
+      CommonHTML: {
+        linebreaks: { automatic: true, width: '75% container' }
+      },
+      'fast-preview': { disabled: true },
       'HTML-CSS': {
         linebreaks: { automatic: true, width: '75% container' }
       },
       SVG: {
         linebreaks: { automatic: true, width: '75% container' }
-      }
+      },
     };
   }
 
@@ -69,8 +73,8 @@ module.exports = class Math {
     let script = doc.createElement('script');
     script.type = 'text/javascript';
     script.addEventListener('load', Math.setupResizeHandler);
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML';
-    script.integrity = 'sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW';
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_CHTML';
+    script.integrity = 'sha384-Ra6zh6uYMmH5ydwCqqMoykyf1T/+ZcnOQfFPhDrp2kI4OIxadnhsvvA2vv9A7xYv';
     script.crossOrigin = 'anonymous';
     doc.querySelector('body').appendChild(script);
   }
