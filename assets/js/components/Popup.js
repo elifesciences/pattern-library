@@ -3,8 +3,10 @@ const utils = require('../libs/elife-utils')();
 module.exports = class Popup {
 
   constructor($elm, _window = window, doc = document) {
-    if (!$elm.hash || $elm.host !== _window.location.host || !$elm.hash.match(/^#[a-z]/i)) {
-      return;
+    if (!$elm.dataset.popupSelf) {
+      if (!$elm.hash || $elm.host !== _window.location.host || !$elm.hash.match(/^#[a-z]/i)) {
+        return;
+      }
     }
 
     this.$link = $elm;
@@ -48,7 +50,7 @@ module.exports = class Popup {
       return;
     }
 
-    if (utils.closest(e.target, 'a') === this.$link) {
+    if (utils.closest(e.target, this.$link.nodeName) === this.$link) {
       return;
     }
 
@@ -119,6 +121,10 @@ module.exports = class Popup {
   }
 
   requestContents(e) {
+    if (this.$link.dataset.popupSelf) {
+      this.bodyContents = this.$link.cloneNode(true);
+      return Promise.resolve(this.render(e));
+    }
 
     // We await on the contents, which might be XHR.
     return this.getResolver(this.$link).then(r => {

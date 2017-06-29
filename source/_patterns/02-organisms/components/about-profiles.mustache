@@ -2,7 +2,7 @@
   {{>atoms-list-heading}}
 {{/heading}}
 
-<ol class="about-profiles {{#compact}}about-profiles--compact{{/compact}}">
+<ol class="about-profiles {{#compact}}about-profiles--compact{{/compact}}"{{^compact}} data-behaviour="AboutProfiles"{{/compact}}>
 
   {{#items}}
     <li class="about-profiles__item">
