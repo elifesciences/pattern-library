@@ -87,4 +87,21 @@
 
   </footer>
   {{/footer}}
+
+  {{! These are usually links, e.g. 'View report' in teaser-footer-reference-list-item"}}
+  {{#footerReference}}
+    <ul class="teaser__footer_reference_list">
+      {{#list}}
+        <li class="teaser__footer_reference_list_item">
+          {{#url}}
+            <a href="{{url}}"  {{#carouselItem}}tabindex="-1"{{/carouselItem}} class="teaser__footer_reference_link"><span class="teaser__footer_reference">{{{name}}}</span></a>
+          {{/url}}
+
+          {{^url}}
+            <span class="teaser__footer_reference">{{{name}}}</span>
+          {{/url}}
+        </li>
+      {{/list}}
+    </ol>
+  {{/footerReference}}
 </div>
