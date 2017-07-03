@@ -52,7 +52,7 @@
     .about-profiles__item .about-profile--popup & {
       float: none;
       width: 100%;
-      @include margin(0, "left");
+      margin: 0;
     }
   }
 }
