@@ -4,7 +4,7 @@
 
   {{#fallback}}
     <a href="{{src}}" class="media-source__fallback_link{{#classes}} {{classes}}{{/classes}}"
-    {{#isExternal}} rel="external" target="_blank"{{/isExternal}}>{{#content}}{{{content}}}{{/content}} ({{mediaType.forHuman}})</a>
+    {{#isExternal}} rel="external noopener noreferrer" target="_blank"{{/isExternal}}>{{#content}}{{{content}}}{{/content}} ({{mediaType.forHuman}})</a>
   {{/fallback}}
 
   {{^fallback}}
