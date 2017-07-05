@@ -452,6 +452,10 @@ $iconlist: cc oa;
   }
 }
 
+.content-header__author_link_highlight {
+  padding: 0;
+}
+
 .content-header__author_link_highlight,
 .content-header__author_link_highlight:hover {
   background-color: transparent;
@@ -550,10 +554,6 @@ li.content-header__institution_list_item--last .content-header__institution:afte
 }
 
 .content-header__item_toggle--expanded {
-
-  .content-header__author_link_highlight {
-    padding: 0;
-  }
 
   & .content-header__item_toggle_cta {
     display: block;
