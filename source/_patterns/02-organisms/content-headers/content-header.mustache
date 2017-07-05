@@ -112,14 +112,19 @@
 
   {{#authors}}
     <div class="content-header__authors">
-      <ol class="content-header__author_list">{{#authors.list}}<li class="content-header__author_list_item">
+      <ol class="content-header__author_list">
+        {{#authors.list}}
+          <li class="content-header__author_list_item">
             <span class="content-header__author">{{#url}}<a href="{{url}}" data-behaviour="Popup" class="content-header__author_link">{{/url}}{{name}}{{#url}}</a>{{/url}}{{#isCorresponding}}
               <picture>
                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author.svg{{/assetRewrite}}" type="image/svg+xml">
                <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}}"
                     srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@2x.png{{/assetRewrite}} 20w, {{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}} 10w"
                     sizes="10px" alt="Is a corresponding author" class="content-header__author_icon">
-              </picture>{{/isCorresponding}}</span></li>{{/authors.list}}</ol>
+              </picture>{{/isCorresponding}}</span>
+          </li>
+        {{/authors.list}}
+      </ol>
 
       {{#institutions}}
         <ol class="content-header__institution_list">
