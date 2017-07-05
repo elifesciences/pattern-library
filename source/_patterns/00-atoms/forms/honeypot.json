@@ -1,10 +1,8 @@
 {
-  "id": "emailAddress1",
+  "id": "secret_field",
   "inputType": "email",
   "label": {
-    "isVisuallyHidden": false,
-    "labelText": "Email Address"
+    "labelText": "Please don't complete this field"
   },
-  "name": "emailAddress",
-  "autofocus": true
+  "name": "secret_field"
 }
