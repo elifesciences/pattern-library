@@ -65,6 +65,7 @@ p a:not(.additional-asset__link--download):not(.asset-viewer-inline__download_al
 }
 
 .sequence {
+  word-wrap: break-word; // Fallback for those that don't apply word-break on inline elements.
   word-break: break-all;
 }
 
