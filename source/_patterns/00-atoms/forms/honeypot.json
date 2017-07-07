@@ -1,0 +1,8 @@
+{
+  "id": "secret_field",
+  "inputType": "email",
+  "label": {
+    "labelText": "Please don't complete this field"
+  },
+  "name": "secret_field"
+}

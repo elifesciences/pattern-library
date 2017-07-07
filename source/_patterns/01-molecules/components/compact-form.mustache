@@ -5,6 +5,9 @@
     {{#hiddenFields}}
       {{> atoms-hidden-field }}
     {{/hiddenFields}}
+    {{#honeypot}}
+      {{> atoms-honeypot }}
+    {{/honeypot}}
     <label for="reset" class="visuallyhidden">Reset form</label>
     <button type="reset" name="reset" id="reset" class="compact-form__reset"></button>
     <button type="submit" class="compact-form__submit"><span class="visuallyhidden">{{ctaText}}</span></button>

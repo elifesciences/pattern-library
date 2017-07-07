@@ -1,0 +1,6 @@
+assets:
+  css:
+    - $ref: text-field.yaml#/assets/css
+  js: []
+schema:
+  $ref: text-field.yaml#/schema
