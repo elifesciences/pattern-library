@@ -1,0 +1,9 @@
+{
+  "isOrdered": false,
+  "prefix": "bullet",
+  "classes": "list--teaser",
+  "items": [
+    "item 1",
+    "<a href=\"#\">item 2</a>"
+  ]
+}
