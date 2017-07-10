@@ -492,6 +492,25 @@ module.exports = () => {
     return $overlay;
   }
 
+  /**
+   *
+   * Determines if the top of an element is within the viewport bounds
+   *
+   * @param {HTMLElement} $elm
+   * @param {Document} doc
+   * @returns {boolean} true if the top of the element is within the viewport bounds
+   */
+  function isTopInView($elm, doc) {
+    const rect = $elm.getBoundingClientRect();
+    const html = doc.documentElement;
+    return (
+      rect.top >= 0 &&
+      rect.top <= (window.innerHeight || html.clientHeight) &&
+      rect.left >= 0 &&
+      rect.left <= (window.innerWidth || html.clientWidth)
+    );
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -505,6 +524,7 @@ module.exports = () => {
     defer: defer,
     flatten: flatten,
     invertPxString: invertPxString,
+    isTopInView: isTopInView,
     jumpToAnchor: jumpToAnchor,
     loadData: loadData,
     nthChild: nthChild,
