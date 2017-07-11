@@ -37,7 +37,9 @@
         display: block;
         margin-top: 0;
 
-        & p, dt, dd {
+        & p,
+        dt,
+        dd {
           @include popup-large-ancillary-text();
         }
 
