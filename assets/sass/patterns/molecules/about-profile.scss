@@ -10,13 +10,19 @@
   @include teaser-header-text-style();
 
   .popup & {
-    padding-top: 0;
+    @include nospace();
+    @include popup_title_text();
   }
 }
 
 .about-profile__role {
   font-style: italic;
   margin: 0;
+
+  .popup & {
+    @include popup-large-ancillary-text();
+    font-style: normal;
+  }
 }
 
 .about-profile__profile {
@@ -29,6 +35,15 @@
 
       .popup & {
         display: block;
+        margin-top: 0;
+
+        & p, dt, dd {
+          @include popup-large-ancillary-text();
+        }
+
+        & *:last-child {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -53,6 +68,10 @@
       float: none;
       width: 100%;
       margin: 0;
+    }
+
+    .popup & {
+      display: none;
     }
   }
 }

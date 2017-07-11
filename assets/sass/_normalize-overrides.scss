@@ -140,6 +140,10 @@ dd {
   margin-left: 0;
 }
 
+dd + dd {
+  @include margin(-24, "top");
+}
+
 small {
   @include small-typeg();
 }

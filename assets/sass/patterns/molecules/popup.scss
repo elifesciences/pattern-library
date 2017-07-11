@@ -6,8 +6,7 @@
 
 .popup {
   position: absolute;
-  min-width: 340px;
-  max-width: #{$bkpt-site--medium - 10 - 10}px; // threshold - left - right
+  width: 470px;
   z-index: 100;
 
 }

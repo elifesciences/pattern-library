@@ -168,7 +168,8 @@ module.exports = class Popup {
     if ($content instanceof HTMLElement) {
       const $ancillary = utils.buildElement('div', ['popup__content__ancillary']);
       const exclusions = ['reference__title', 'reference__authors_list',
-                          'reference__authors_list_suffix', 'author-details__name'];
+                          'reference__authors_list_suffix', 'author-details__name',
+                          'about-profile__name', 'about-profile__role'];
       const ancillaries = [];
 
       // If an immediate child of content does not have an excluded class, it's ancillary
