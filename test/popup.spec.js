@@ -8,10 +8,18 @@ describe('A Popup Component', function () {
 
   let $childElm = document.querySelector('[data-behaviour="Popup"]');
   let popup = new Popup($childElm);
-  let $elm = popup.$elm;
 
   it('exists', function () {
     expect(popup).to.exist;
+  });
+
+  it('popups self', function () {
+    let $childElm = document.querySelector('#self-example[data-behaviour="Popup"]');
+    let popup = new Popup($childElm);
+    popup.$link.click();
+    expect(popup.isOpen).to.be.true;
+    document.querySelector('body').click();
+    expect(popup.isOpen).to.be.false;
   });
 
 });
