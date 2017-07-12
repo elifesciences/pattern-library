@@ -7,9 +7,13 @@ module.exports = class DelegateBehaviour {
   constructor($elm) {
     const behaviour = $elm.getAttribute('data-delegate-behaviour');
     const targets = $elm.querySelectorAll($elm.getAttribute('data-selector'));
-    [].forEach.call(targets, (target) =>
-        DelegateBehaviour.initialiseComponent(target, behaviour)
-    );
+    const classToApply = $elm.getAttribute('data-delegate-behaviour-class');
+    [].forEach.call(targets, function (target) {
+      DelegateBehaviour.initialiseComponent(target, behaviour);
+      if (classToApply) {
+        target.classList.add(classToApply);
+      }
+    });
   }
 
 };

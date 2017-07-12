@@ -15,12 +15,6 @@ module.exports = class AboutProfiles {
     [].forEach.call(this.$elm.querySelectorAll('li'), (item) => {
       item.classList.add('grid-listing-item');
     });
-
-    [].forEach.call(this.$elm.querySelectorAll('.about-profile'), (profile) => {
-      profile.classList.add('about-profile--popup');
-      profile.dataset.popupSelf = true;
-      profile.dataset.behaviour = 'Popup';
-    });
   }
 
 };
