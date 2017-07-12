@@ -6,6 +6,7 @@ module.exports = class ToggleableCaption {
   constructor($elm, _window = window, doc = document) {
     this.window = _window;
     this.doc = doc;
+    this.thresholdWidth = $elm.dataset.thresholdWidth;
 
     this.$elm = $elm;
     if (!($elm instanceof HTMLElement)) {
@@ -15,6 +16,13 @@ module.exports = class ToggleableCaption {
     this.$caption = ToggleableCaption.findCaption(this.$elm);
     if (!(this.$caption instanceof HTMLElement)) {
       return;
+    }
+
+    if (this.thresholdWidth != null) {
+      const conditionMediaQuery = `(max-width: ${this.thresholdWidth}px)`;
+      if (!this.window.matchMedia(conditionMediaQuery).matches) {
+        return;
+      }
     }
 
     this.setupToggle();
