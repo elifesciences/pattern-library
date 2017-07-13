@@ -15,8 +15,11 @@ module.exports = class ViewSelector {
     this.doc = doc;
     this.$elm = $elm;
     this.$jumpLinksList = this.$elm.querySelector('.view-selector__jump_links');
+    this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
     this.$jumpLinksToggle = this.$elm.querySelector('.view-selector__jump_links_header');
     this.cssFixedClassName = 'view-selector--fixed';
+    this.collapsibleSectionHeadings = this.doc.querySelectorAll(
+      '[data-behaviour="ArticleSection"] > .article-section__header .article-section__header_text');
 
     if (this.sideBySideViewAvailable()) {
       const $header = this.doc.querySelector('#siteHeader');
@@ -48,7 +51,49 @@ module.exports = class ViewSelector {
   }
 
   handleScroll() {
+    this.handlePositioning();
+    this.handleHighlighting();
+  }
 
+  handleHighlighting() {
+    const $firstViewableSectionHeading = this.findFirstInView(this.collapsibleSectionHeadings);
+    if (!$firstViewableSectionHeading) {
+      return;
+    }
+
+    const $section = utils.closest($firstViewableSectionHeading, '.article-section');
+    if ($section && typeof $section.id === 'string') {
+      const $toHighlight = this.$elm.querySelector(`[href="#${$section.id}"]`);
+      if ($toHighlight) {
+        [].forEach.call(this.jumpLinks, ($jumpLink) => {
+          $jumpLink.classList.remove('view-selector__jump_link--active');
+        });
+        $toHighlight.classList.add('view-selector__jump_link--active');
+      }
+    }
+  }
+
+  /**
+   * Returns the first HTMLElement in the list that is in view
+   * @param elementList{NodeList|Array}
+   * @returns {(HTMLElement|null)}
+   */
+  findFirstInView(elementList) {
+    // Ensure elements is an array
+    const elements = [].slice.call(elementList);
+    let $found = null;
+    elements.forEach(($el) => {
+      if (!$found) {
+        if (utils.isTopInView($el, this.doc)) {
+          $found = $el;
+        }
+      }
+    });
+
+    return $found;
+  }
+
+  handlePositioning() {
     // If it's position is fixed
     if (this.$elm.classList.contains(this.cssFixedClassName)) {
 

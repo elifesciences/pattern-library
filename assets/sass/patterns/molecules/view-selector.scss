@@ -52,6 +52,10 @@
   color: $color-text-secondary;
 }
 
+.view-selector__jump_link--active {
+  color: $color-text;
+}
+
 .view-selector__jump_links_header {
   color: $color-text-secondary;
   display: block;
