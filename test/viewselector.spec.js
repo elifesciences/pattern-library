@@ -94,7 +94,7 @@ describe('A ViewSelector Component', function () {
 
   it('has a toggleable list of jump links', function () {
     let viewSelector = new ViewSelector($elm);
-    expect(viewSelector.$jumpLinks instanceof HTMLElement).to.be.true;
+    expect(viewSelector.$jumpLinksList instanceof HTMLElement).to.be.true;
     expect(viewSelector.toggleJumpLinks).to.be.a('function');
   });
 
@@ -107,19 +107,19 @@ describe('A ViewSelector Component', function () {
     });
 
     it('expands when toggled open', function () {
-      viewSelector.$jumpLinks.classList.add('visuallyhidden');
+      viewSelector.$jumpLinksList.classList.add('visuallyhidden');
       viewSelector.$jumpLinksToggle.classList.add('view-selector__jump_links_header--closed');
       viewSelector.toggleJumpLinks();
-      expect(viewSelector.$jumpLinks.classList.contains('visuallyhidden')).to.be.false;
+      expect(viewSelector.$jumpLinksList.classList.contains('visuallyhidden')).to.be.false;
       expect(viewSelector.$jumpLinksToggle.classList
                          .contains('view-selector__jump_links_header--closed')).to.be.false;
     });
 
     it('collapses when toggled closed', function () {
-      viewSelector.$jumpLinks.classList.remove('visuallyhidden');
+      viewSelector.$jumpLinksList.classList.remove('visuallyhidden');
       viewSelector.$jumpLinksToggle.classList.remove('view-selector__jump_links_header--closed');
       viewSelector.toggleJumpLinks();
-      expect(viewSelector.$jumpLinks.classList.contains('visuallyhidden')).to.be.true;
+      expect(viewSelector.$jumpLinksList.classList.contains('visuallyhidden')).to.be.true;
       expect(viewSelector.$jumpLinksToggle.classList
                          .contains('view-selector__jump_links_header--closed')).to.be.true;
     });

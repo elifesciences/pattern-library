@@ -14,7 +14,7 @@ module.exports = class ViewSelector {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.$jumpLinks = this.$elm.querySelector('.view-selector__jump_links');
+    this.$jumpLinksList = this.$elm.querySelector('.view-selector__jump_links');
     this.$jumpLinksToggle = this.$elm.querySelector('.view-selector__jump_links_header');
     this.cssFixedClassName = 'view-selector--fixed';
 
@@ -80,11 +80,10 @@ module.exports = class ViewSelector {
       this.$elm.classList.add(this.cssFixedClassName);
       this.$elm.style.top = '0px';
     }
-
   }
 
   toggleJumpLinks() {
-    this.$jumpLinks.classList.toggle('visuallyhidden');
+    this.$jumpLinksList.classList.toggle('visuallyhidden');
     this.$jumpLinksToggle.classList.toggle('view-selector__jump_links_header--closed');
     this.handleScroll();
 
