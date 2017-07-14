@@ -9,7 +9,7 @@ module.exports = class Popup {
       $elm.parentNode.insertBefore(wrapper, $elm);
       wrapper.appendChild($elm);
 
-      wrapper.href = '#something'; // TODO: copy from id of $elm
+      wrapper.href = '#some-value'; // can't be removed
       $link = wrapper;
     }
 
