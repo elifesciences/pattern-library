@@ -61,7 +61,7 @@ module.exports = class Popup {
       return;
     }
 
-    if (utils.closest(e.target, this.$link.nodeName) === this.$link) {
+    if (utils.closest(e.target, 'a') === this.$link) {
       return;
     }
 
