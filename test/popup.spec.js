@@ -14,7 +14,6 @@ describe('A Popup Component', function () {
     "matchMedia": function() { return { "matches": true }; },
     "addEventListener": function() {},
   };
-  console.log(window.addEventListener);
 
   it('exists', function () {
     let popup = new Popup($childElm, windowMock);

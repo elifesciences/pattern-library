@@ -3,22 +3,25 @@ const utils = require('../libs/elife-utils')();
 module.exports = class Popup {
 
   constructor($elm, _window = window, doc = document) {
-    //if ($elm.dataset.wrapper) {
-    //  const wrapper = utils.buildElement('a');
-    //  $elm.parentNode.insertBefore(wrapper, $elm);
-    //  wrapper.appendChild($elm);
-    //  wrapper.href = '#something'; // TODO: copy from id of $elm
-    //  wrapper.dataset = $elm.dataset;
-    //  $elm = wrapper;
-    //}
+    if ($elm.dataset.popupWrapper) {
+      const wrapper = utils.buildElement('a');
+      $elm.parentNode.insertBefore(wrapper, $elm);
+      wrapper.appendChild($elm);
 
-    if (!$elm.dataset.popupSelf) {
+      wrapper.href = '#something'; // TODO: copy from id of $elm
+      this.$link = wrapper;
+    } else {
+      this.$link = $elm;
+    }
+
+    this.$elm = $elm;
+
+    if (!this.$elm.dataset.popupSelf) {
       if (!$elm.hash || $elm.host !== _window.location.host || !$elm.hash.match(/^#[a-z]/i)) {
         return;
       }
     }
 
-    this.$link = $elm;
     this.isOpen = false;
     this.resolver = null;
     this.window = _window;
@@ -130,8 +133,8 @@ module.exports = class Popup {
   }
 
   requestContents(e) {
-    if (this.$link.dataset.popupSelf) {
-      this.bodyContents = this.$link.cloneNode(true);
+    if (this.$elm.dataset.popupSelf) {
+      this.bodyContents = this.$elm.cloneNode(true);
       return Promise.resolve(this.render(e));
     }
 
