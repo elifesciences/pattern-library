@@ -192,7 +192,7 @@ module.exports = () => {
    *
    * @param {String} pxString The string representing the original quantity, e.g. '97px'
    * @param adjustment The numeric adjustment to make, e.g. 8
-   * @param operation
+   * @param requestedOperation
    * @returns {string} The modified value, as a string, e.g.: '105px'
    */
   function adjustPxString(pxString, adjustment, requestedOperation) {
@@ -498,16 +498,17 @@ module.exports = () => {
    *
    * @param {HTMLElement} $elm
    * @param {Document} doc
+   * @param win
    * @returns {boolean} true if the top of the element is within the viewport bounds
    */
-  function isTopInView($elm, doc) {
+  function isTopInView($elm, doc, win) {
     const rect = $elm.getBoundingClientRect();
     const html = doc.documentElement;
     return (
       rect.top >= 0 &&
-      rect.top <= (window.innerHeight || html.clientHeight) &&
+      rect.top <= (win.innerHeight || html.clientHeight) &&
       rect.left >= 0 &&
-      rect.left <= (window.innerWidth || html.clientWidth)
+      rect.left <= (win.innerWidth || html.clientWidth)
     );
   }
 

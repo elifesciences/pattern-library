@@ -18,8 +18,6 @@ module.exports = class ViewSelector {
     this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
     this.$jumpLinksToggle = this.$elm.querySelector('.view-selector__jump_links_header');
     this.cssFixedClassName = 'view-selector--fixed';
-    this.collapsibleSectionHeadings = this.doc.querySelectorAll(
-      '[data-behaviour="ArticleSection"] > .article-section__header .article-section__header_text');
 
     if (this.sideBySideViewAvailable()) {
       const $header = this.doc.querySelector('#siteHeader');
@@ -40,9 +38,24 @@ module.exports = class ViewSelector {
     // matches top padding in scss
     let topSpaceWhenFixed = 30;
 
-    this.elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
-    this.window.addEventListener('scroll', this.handleScroll.bind(this));
+    this.collapsibleSectionHeadings = ViewSelector.getAllCollapsibleSectionHeadings(this.doc);
+    this.isScrollingHandled = false;
 
+    // const scrollingHandler = this.handleScrolling.bind(this);
+    const scrollingHandler = utils.debounce(() => {
+      this.handleScrolling();
+    }, 100);
+
+    if (this.isViewportWideEnoughForJumpMenu()) {
+      this.startHandlingScrolling(scrollingHandler);
+    }
+
+    // TODO: This technically works, but what is needed here is throttling, not debouncing.
+    this.window.addEventListener('resize', utils.debounce(() => {
+      this.handleResize(scrollingHandler);
+    }, 200));
+
+    this.elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
     if (this.$jumpLinksToggle) {
       this.$jumpLinksToggle.addEventListener('click', this.toggleJumpLinks.bind(this));
       this.toggleJumpLinks();
@@ -50,18 +63,57 @@ module.exports = class ViewSelector {
 
   }
 
-  handleScroll() {
-    this.handlePositioning();
+  static getAllCollapsibleSectionHeadings (doc) {
+    return doc.querySelectorAll(
+      '[data-behaviour="ArticleSection"] > .article-section__header .article-section__header_text');
+  }
+
+  isViewportWideEnoughForJumpMenu() {
+    return this.window.matchMedia('(min-width: 1200px)').matches;
+  }
+
+  handleResize(scrollingHandler) {
+    const isViewportWideEnoughForJumpMenu = this.isViewportWideEnoughForJumpMenu();
+    if (!this.isScrollingHandled && isViewportWideEnoughForJumpMenu) {
+      this.startHandlingScrolling(scrollingHandler);
+    } else if (this.isScrollingHandled && !isViewportWideEnoughForJumpMenu) {
+      this.stopHandlingScrolling(scrollingHandler);
+    }
+  }
+
+  startHandlingScrolling(scrollHandler) {
+    this.window.addEventListener('scroll', scrollHandler);
+    this.isScrollingHandled = true;
+    this.handleScrolling();
+  }
+
+  stopHandlingScrolling(scrollHandler) {
+    this.window.removeEventListener('scroll', scrollHandler);
+    this.isScrollingHandled = false;
+  }
+
+  handleScrolling() {
     this.handleHighlighting();
+    this.handlePositioning();
   }
 
   handleHighlighting() {
-    const $firstViewableSectionHeading = this.findFirstInView(this.collapsibleSectionHeadings);
+    const $firstViewableSectionHeading = this.findFirstInView(this.collapsibleSectionHeadings,
+                                                              this.doc, this.window);
     if (!$firstViewableSectionHeading) {
       return;
     }
 
-    const $section = utils.closest($firstViewableSectionHeading, '.article-section');
+    let $section;
+
+    if ($firstViewableSectionHeading.innerHTML === this.collapsibleSectionHeadings[0].innerHTML ||
+        $firstViewableSectionHeading.getBoundingClientRect().top < 48) {
+      $section = utils.closest($firstViewableSectionHeading, '.article-section');
+    } else {
+      $section = utils.closest($firstViewableSectionHeading,
+                               '.article-section').previousElementSibling;
+    }
+
     if ($section && typeof $section.id === 'string') {
       const $toHighlight = this.$elm.querySelector(`[href="#${$section.id}"]`);
       if ($toHighlight) {
@@ -75,16 +127,18 @@ module.exports = class ViewSelector {
 
   /**
    * Returns the first HTMLElement in the list that is in view
-   * @param elementList{NodeList|Array}
+   * @param {NodeList|Array} elementList
+   * @param {Document} doc
+   * @param {Window} win
    * @returns {(HTMLElement|null)}
    */
-  findFirstInView(elementList) {
+  findFirstInView(elementList, doc, win) {
     // Ensure elements is an array
     const elements = [].slice.call(elementList);
     let $found = null;
     elements.forEach(($el) => {
       if (!$found) {
-        if (utils.isTopInView($el, this.doc)) {
+        if (utils.isTopInView($el, doc, win)) {
           $found = $el;
         }
       }
@@ -130,8 +184,8 @@ module.exports = class ViewSelector {
   toggleJumpLinks() {
     this.$jumpLinksList.classList.toggle('visuallyhidden');
     this.$jumpLinksToggle.classList.toggle('view-selector__jump_links_header--closed');
-    this.handleScroll();
 
+    // this.handleScroll();
   }
 
   sideBySideViewAvailable() {

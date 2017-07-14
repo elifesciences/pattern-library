@@ -1,4 +1,5 @@
 let expect = chai.expect;
+let spy = sinon.spy;
 
 // load in component(s) to be tested
 let ViewSelector = require('../assets/js/components/ViewSelector');
@@ -33,14 +34,14 @@ describe('A ViewSelector Component', function () {
       };
       let _viewSelector1 = new ViewSelector($elm, windowMock);
       _viewSelector1.elmYOffset = 20;
-      _viewSelector1.handleScroll();
+      _viewSelector1.handleScrolling();
 
       let classes1 = _viewSelector1.$elm.classList;
       expect(classes1.contains('view-selector--fixed')).to.be.true;
 
       let _viewSelector2 = new ViewSelector($elm, windowMock);
       _viewSelector2.elmYOffset = 20;
-      _viewSelector2.handleScroll();
+      _viewSelector2.handleScrolling();
 
       let classes2 = _viewSelector2.$elm.classList;
       expect(classes2.contains('view-selector--fixed')).to.be.true;
@@ -55,7 +56,7 @@ describe('A ViewSelector Component', function () {
       };
       let _viewSelector = new ViewSelector($elm, windowMock);
       _viewSelector.elmYOffset = 20;
-      _viewSelector.handleScroll();
+      _viewSelector.handleScrolling();
 
       let classes = _viewSelector.$elm.classList;
       expect(classes.contains('view-selector--fixed')).to.be.false;
@@ -85,7 +86,7 @@ describe('A ViewSelector Component', function () {
          expect(fakeBottomOfMainEl).to.be.below(_viewSelector.$elm.offsetHeight);
 
          _viewSelector.$elm.classList.add('view-selector--fixed');
-         _viewSelector.handleScroll();
+         _viewSelector.handleScrolling();
          expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.true;
          expect(_viewSelector.$elm.style.top.indexOf('px')).to.be.above(-1);
        });
@@ -124,6 +125,28 @@ describe('A ViewSelector Component', function () {
                          .contains('view-selector__jump_links_header--closed')).to.be.true;
     });
 
+    describe('a jump link', () => {
+
+      let sectionHeadings;
+      beforeEach(() => {
+        sectionHeadings = [
+
+        ];
+      });
+
+      context('when its linked section is the top-most in view', () => {
+
+        xit('is highlighted');
+
+      });
+
+      context('when its linked section is not the top-most in view', () => {
+
+        xit('is not highlighted');
+
+      });
+
+    });
 
   });
 
@@ -189,6 +212,37 @@ describe('A ViewSelector Component', function () {
       });
 
     });
+  });
+
+  it('maintains a list of top level article section headings', () => {
+    const expectedHeadingList = ['headingOne', 'headingTwo'];
+    const doc = {
+      querySelectorAll: () => {
+        return expectedHeadingList;
+      }
+    };
+    spy(doc, 'querySelectorAll');
+    const headingList = ViewSelector.getAllCollapsibleSectionHeadings(doc);
+    expect(doc.querySelectorAll.calledWithExactly('[data-behaviour="ArticleSection"] > .article-section__header .article-section__header_text')).to.be.true;
+    expect(headingList).to.have.length(2);
+    expect(headingList).to.equal(expectedHeadingList);
+    doc.querySelectorAll.restore();
+  });
+
+  describe('its knowledge of the section headings', () => {
+
+    const headingList = [
+      {
+        getBoundingClientRect: () => {
+
+        }
+      }
+    ];
+
+    it('can identify the first section heading in view', () => {
+
+    });
+
   });
 
 });
