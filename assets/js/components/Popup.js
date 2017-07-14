@@ -3,25 +3,24 @@ const utils = require('../libs/elife-utils')();
 module.exports = class Popup {
 
   constructor($elm, _window = window, doc = document) {
+    var $link = $elm;
     if ($elm.dataset.popupWrapper) {
       const wrapper = utils.buildElement('a');
       $elm.parentNode.insertBefore(wrapper, $elm);
       wrapper.appendChild($elm);
 
       wrapper.href = '#something'; // TODO: copy from id of $elm
-      this.$link = wrapper;
-    } else {
-      this.$link = $elm;
+      $link = wrapper;
     }
 
-    this.$elm = $elm;
-
-    if (!this.$elm.dataset.popupSelf) {
-      if (!$elm.hash || $elm.host !== _window.location.host || !$elm.hash.match(/^#[a-z]/i)) {
+    if (!$elm.dataset.popupSelf) {
+      if (!$link.hash || $link.host !== _window.location.host || !$link.hash.match(/^#[a-z]/i)) {
         return;
       }
     }
 
+    this.$link = $link;
+    this.$elm = $elm;
     this.isOpen = false;
     this.resolver = null;
     this.window = _window;
