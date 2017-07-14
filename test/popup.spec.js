@@ -7,27 +7,35 @@ describe('A Popup Component', function () {
   'use strict';
 
   let $childElm = document.querySelector('[data-behaviour="Popup"]');
-  let popup = new Popup($childElm);
+  let windowMock = {
+    "location": {
+      "host": ""
+    },
+    "matchMedia": function() { return { "matches": true }; },
+    "addEventListener": function() {},
+  };
+  console.log(window.addEventListener);
 
   it('exists', function () {
+    let popup = new Popup($childElm, windowMock);
     expect(popup).to.exist;
   });
 
   it('popups self', function () {
     let $childElm = document.querySelector('#self-example[data-behaviour="Popup"]');
-    let popup = new Popup($childElm);
-    popup.$link.click();
+    let popup = new Popup($childElm, windowMock);
+    popup.handleLinkClick({ preventDefault: () => {}});
     expect(popup.isOpen).to.be.true;
-    document.querySelector('body').click();
+    popup.handleDocumentClick({ preventDefault: () => {}, target: document.body});
     expect(popup.isOpen).to.be.false;
   });
 
   it('wraps and popups self', function () {
     let $childElm = document.querySelector('#self-example-wrapped[data-behaviour="Popup"]');
-    let popup = new Popup($childElm);
-    popup.$link.click();
+    let popup = new Popup($childElm, windowMock);
+    popup.handleLinkClick({ preventDefault: () => {}});
     expect(popup.isOpen).to.be.true;
-    document.querySelector('body').click();
+    popup.handleDocumentClick({ preventDefault: () => {}, target: document.body});
     expect(popup.isOpen).to.be.false;
   });
 
