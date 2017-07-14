@@ -17,11 +17,30 @@ describe('A Popup Component', function () {
     "document": document,
   };
 
+  var popups = [];
+  beforeEach(function() {
+    popups = [];
+  });
+
+  let instantiatePopup = function(selector) {
+    let $childElm = document.querySelector(selector);
+    let popup = new Popup($childElm, windowMock);
+    popups.push(popup);
+    return popup;
+  }
+
+  let documentClick = function(target) {
+    if (target === undefined) {
+      target = document.body;
+    }
+    for (let i in popups) {
+      popups[i].handleDocumentClick({ "preventDefault": () => {}, "target": target});
+    }
+  };
   let linkClick = function(popup) {
     popup.handleLinkClick({ preventDefault: () => {}});
-  };
-  let documentClick = function(popup) {
-    popup.handleDocumentClick({ preventDefault: () => {}, target: document.body});
+    // event propagates to the document level
+    documentClick(popup.$link);
   };
 
   it('exists', function () {
@@ -29,30 +48,38 @@ describe('A Popup Component', function () {
     expect(popup).to.exist;
   });
 
-  it('popups a separate element', function () {
-    let $childElm = document.querySelector('#example[data-behaviour="Popup"]');
-    let popup = new Popup($childElm, windowMock);
+  it.only('popups a separate element', function () {
+    let popup = instantiatePopup('#example[data-behaviour="Popup"]');
     linkClick(popup);
     expect(popup.isOpen).to.be.true;
-    documentClick(popup);
+    documentClick();
     expect(popup.isOpen).to.be.false;
   });
 
-  it('popups self', function () {
-    let $childElm = document.querySelector('#self-example[data-behaviour="Popup"]');
-    let popup = new Popup($childElm, windowMock);
+  it('replaces another opened popup', function () {
+    let popup = instantiatePopup('#example[data-behaviour="Popup"]');
+    let anotherPopup = instantiatePopup('#example-another[data-behaviour="Popup"]');
+
     linkClick(popup);
     expect(popup.isOpen).to.be.true;
-    documentClick(popup);
+    linkClick(anotherPopup);
+    expect(anotherPopup.isOpen).to.be.true;
+    //expect(popup.isOpen).to.be.false;
+  });
+
+  it('popups self', function () {
+    let popup = instantiatePopup('#self-example[data-behaviour="Popup"]');
+    linkClick(popup);
+    expect(popup.isOpen).to.be.true;
+    documentClick();
     expect(popup.isOpen).to.be.false;
   });
 
   it('wraps and popups self', function () {
-    let $childElm = document.querySelector('#self-example-wrapped[data-behaviour="Popup"]');
-    let popup = new Popup($childElm, windowMock);
+    let popup = instantiatePopup('#self-example-wrapped[data-behaviour="Popup"]');
     linkClick(popup);
     expect(popup.isOpen).to.be.true;
-    documentClick(popup);
+    documentClick();
     expect(popup.isOpen).to.be.false;
   });
 
