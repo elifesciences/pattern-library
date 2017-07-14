@@ -9,15 +9,29 @@ describe('A Popup Component', function () {
   let $childElm = document.querySelector('[data-behaviour="Popup"]');
   let windowMock = {
     "location": {
-      "host": ""
+      "host": "",
+      "href": "",
     },
     "matchMedia": function() { return { "matches": true }; },
     "addEventListener": function() {},
+    "document": document,
   };
+
+  // let linkClick
+  // let documentClick
 
   it('exists', function () {
     let popup = new Popup($childElm, windowMock);
     expect(popup).to.exist;
+  });
+
+  it('popups a separate element', function () {
+    let $childElm = document.querySelector('#example[data-behaviour="Popup"]');
+    let popup = new Popup($childElm, windowMock);
+    popup.handleLinkClick({ preventDefault: () => {}});
+    expect(popup.isOpen).to.be.true;
+    popup.handleDocumentClick({ preventDefault: () => {}, target: document.body});
+    expect(popup.isOpen).to.be.false;
   });
 
   it('popups self', function () {
