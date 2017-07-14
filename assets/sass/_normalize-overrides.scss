@@ -64,6 +64,11 @@ p a:not(.additional-asset__link--download):not(.asset-viewer-inline__download_al
   font-family: $font-monospace;
 }
 
+.sequence {
+  word-wrap: break-word; // Fallback for those that don't apply word-break on inline elements.
+  word-break: break-all;
+}
+
 .small-caps {
   font-variant-caps: small-caps;
   font-feature-settings: "smcp";
