@@ -125,121 +125,242 @@ describe('A ViewSelector Component', function () {
                          .contains('view-selector__jump_links_header--closed')).to.be.true;
     });
 
-    describe('a jump link', () => {
+    context('with its knowledge of top level article section headings', () => {
 
-      let sectionHeadings;
+      let docFake;
+      let winFake;
+      let viewSelector;
+
       beforeEach(() => {
-        sectionHeadings = [
-
-        ];
+        docFake = buildFakeDocument(700, 700);
+        winFake = buildFakeWindow(700, 700);
+        viewSelector = new ViewSelector($elm);
       });
 
-      context('when its linked section is the top-most in view', () => {
-
-        xit('is highlighted');
-
-      });
-
-      context('when its linked section is not the top-most in view', () => {
-
-        xit('is not highlighted');
-
-      });
-
-    });
-
-  });
-
-  describe('its side-by-side link', function () {
-
-    let viewSelector;
-
-    beforeEach(() => {
-      window.CSS = {
-        supports: () => true
-      };
-      viewSelector = new ViewSelector($elm);
-    });
-
-    context('when the browser can display the side by side view', () => {
-
-      it('is displayed on load', function () {
-        const link = $elm.querySelector('.view-selector__link--side-by-side');
-        expect(link).to.not.be.null;
-        expect(link.textContent).to.equal('Side by side');
-        expect(link.href).to.equal('https://lens.elifesciences.org/19749/index.html');
-      });
-
-      it('opens an iframe', function () {
-        const link = $elm.querySelector('.view-selector__link--side-by-side');
-        link.click();
-        expect(viewSelector.sideBySideView.$iframe).to.not.be.undefined;
-        expect(viewSelector.sideBySideView.$iframe.classList.contains('hidden')).to.be.false;
-      });
-
-    });
-
-    context('when the browser cannot display the side by side view', () => {
-
-      it('is not displayed if the link is not supplied', function () {
-        $elm.dataset.sideBySideLink = '';
-        expect(viewSelector.sideBySideViewAvailable()).to.be.false;
-      });
-
-      it('is not displayed if the link looks broken', function () {
-        $elm.dataset.sideBySideLink = 'localhost/null';
-        expect(viewSelector.sideBySideViewAvailable()).to.be.false;
-      });
-
-      it('is not displayed if the browser is probably Edge or IE', function () {
-        // Explicity fail the capability check used to determine whether the link is displayed
-        window.CSS.supports = (property, value) => {
-          if (property === 'text-orientation' || property === '-webkit-text-orientation') {
-            if (value === 'sideways') {
-              return false;
-            }
-          }
-          return true;
+      const buildFakeElement = function (top, left, innerHTML) {
+        return {
+          getBoundingClientRect: function () {
+            return {
+              top: top,
+              left: left
+            };
+          },
+          innerHTML: innerHTML
         };
+      };
 
-        expect(new ViewSelector($elm, window).sideBySideViewAvailable()).to.be.false;
+      const buildFakeDocument = function (height, width) {
+        return {
+          documentElement: {
+            clientHeight: height,
+            clientWidth: width
+          }
+        };
+      };
 
-        window.CSS.supports = null;
-        expect(new ViewSelector($elm, window).sideBySideViewAvailable()).to.be.false;
+      const buildFakeWindow = function (height, width) {
+        return {
+          innerHeight: height,
+          innerWidth: width
+        };
+      };
 
-        window.CSS = null;
-        expect(new ViewSelector($elm, window).sideBySideViewAvailable()).to.be.false;
+      it('can identify the first section heading in view when it is the first', () => {
+        const fakeEls = [
+          buildFakeElement(0, 0),
+          buildFakeElement(200, 0)
+        ];
+        expect(viewSelector.findFirstInView(fakeEls, docFake, winFake)).to.deep.equal(fakeEls[0]);
+      });
+
+      it('can identify the first section heading in view when it is not the first', () => {
+        const fakeEls = [
+          buildFakeElement(-200, 0),
+          buildFakeElement(600, 0)
+        ];
+        expect(viewSelector.findFirstInView(fakeEls, docFake, winFake)).to.deep.equal(fakeEls[1]);
+      });
+
+      describe('identifying a section to highlight the link to', () => {
+
+        let firstHeadingText;
+
+        beforeEach(() => {
+          firstHeadingText = 'Text of the first heading';
+        });
+
+        context('when the first viewable section heading is the first logical section heading', () => {
+
+          it('identifies the first section heading as the section to highlight the link to, regardless of its top position',
+             () => {
+              const elPositions = [ { top: 0, left: 0 }, { top: 60, left: 0 } ];
+              elPositions.forEach((position) => {
+                const fakeFirstHeading = {
+                  el: buildFakeElement(position.top, position.left, firstHeadingText),
+                  findClosest: function () {
+                    return {
+                      previousElementSibling: 'I am the previousElementSibling'
+                    };
+                  }
+                };
+                spy(fakeFirstHeading, 'findClosest');
+
+                ViewSelector.findSectionForLinkHighlight(fakeFirstHeading.el, firstHeadingText,
+                                                         fakeFirstHeading.findClosest);
+                expect(fakeFirstHeading.findClosest.calledWithExactly(fakeFirstHeading.el,
+                                                                      '.article-section')).to.be.true;
+                expect(fakeFirstHeading.findClosest.returned(
+                  {previousElementSibling: 'I am the previousElementSibling'})).to.be.true;
+                fakeFirstHeading.findClosest.restore();
+              });
+
+           });
+
+        });
+
+        context('when the first viewable section heading is not the first logical section heading',
+                () => {
+
+                  context(
+                    'and it is less than 48px lower than the top of the top of the viewport',
+                    () => {
+
+                      const fakeSecondHeading = {
+                        el: buildFakeElement(47, 0, 'Second heading text'),
+                        findClosest: function () {
+                          return {
+                            previousElementSibling: 'I am the previousElementSibling'
+                          };
+                        }
+                      };
+                      spy(fakeSecondHeading, 'findClosest');
+
+                      it(
+                        'identifies that section heading\'s section as the section to highlight the link to',
+                        () => {
+                          ViewSelector.findSectionForLinkHighlight(fakeSecondHeading.el, firstHeadingText,
+                                                                   fakeSecondHeading.findClosest);
+                          expect(fakeSecondHeading.findClosest.calledWithExactly(fakeSecondHeading.el,
+                                                                                '.article-section')).to.be.true;
+                          expect(fakeSecondHeading.findClosest.returned(
+                            {previousElementSibling: 'I am the previousElementSibling'})).to.be.true;
+                          fakeSecondHeading.findClosest.restore();
+                        });
+
+                    });
+
+                  context(
+                    'and it is 48px or more below the top of the viewport',
+                    () => {
+
+                      const fakeSecondHeading = {
+                        el: buildFakeElement(48, 0, 'Second heading text'),
+                        findClosest: function () {
+                          return {
+                            previousElementSibling: 'I am the previousElementSibling'
+                          };
+                        }
+                      };
+                      spy(fakeSecondHeading, 'findClosest');
+
+                      it(
+                        'identifies the section following the section heading\'s section as the section to highlight the link to',
+                        () => {
+                          ViewSelector.findSectionForLinkHighlight(fakeSecondHeading.el, firstHeadingText,
+                                                                   fakeSecondHeading.findClosest);
+                          expect(fakeSecondHeading.findClosest.calledWithExactly(fakeSecondHeading.el,
+                                                                                 '.article-section')).to.be.true;
+                          expect(fakeSecondHeading.findClosest.returned('I am the previousElementSibling')).to.be.true;
+                          fakeSecondHeading.findClosest.restore();
+
+                        });
+
+                    });
+
+                });
+
       });
 
     });
-  });
 
-  it('maintains a list of top level article section headings', () => {
-    const expectedHeadingList = ['headingOne', 'headingTwo'];
-    const doc = {
-      querySelectorAll: () => {
-        return expectedHeadingList;
-      }
-    };
-    spy(doc, 'querySelectorAll');
-    const headingList = ViewSelector.getAllCollapsibleSectionHeadings(doc);
-    expect(doc.querySelectorAll.calledWithExactly('[data-behaviour="ArticleSection"] > .article-section__header .article-section__header_text')).to.be.true;
-    expect(headingList).to.have.length(2);
-    expect(headingList).to.equal(expectedHeadingList);
-    doc.querySelectorAll.restore();
-  });
+    describe('its side-by-side link', function () {
 
-  describe('its knowledge of the section headings', () => {
+      let viewSelector;
 
-    const headingList = [
-      {
-        getBoundingClientRect: () => {
+      beforeEach(() => {
+        window.CSS = {
+          supports: () => true
+        };
+        viewSelector = new ViewSelector($elm);
+      });
 
+      context('when the browser can display the side by side view', () => {
+
+        it('is displayed on load', function () {
+          const link = $elm.querySelector('.view-selector__link--side-by-side');
+          expect(link).to.not.be.null;
+          expect(link.textContent).to.equal('Side by side');
+          expect(link.href).to.equal('https://lens.elifesciences.org/19749/index.html');
+        });
+
+        it('opens an iframe', function () {
+          const link = $elm.querySelector('.view-selector__link--side-by-side');
+          link.click();
+          expect(viewSelector.sideBySideView.$iframe).to.not.be.undefined;
+          expect(viewSelector.sideBySideView.$iframe.classList.contains('hidden')).to.be.false;
+        });
+
+      });
+
+      context('when the browser cannot display the side by side view', () => {
+
+        it('is not displayed if the link is not supplied', function () {
+          $elm.dataset.sideBySideLink = '';
+          expect(viewSelector.sideBySideViewAvailable()).to.be.false;
+        });
+
+        it('is not displayed if the link looks broken', function () {
+          $elm.dataset.sideBySideLink = 'localhost/null';
+          expect(viewSelector.sideBySideViewAvailable()).to.be.false;
+        });
+
+        it('is not displayed if the browser is probably Edge or IE', function () {
+          // Explicity fail the capability check used to determine whether the link is displayed
+          window.CSS.supports = (property, value) => {
+            if (property === 'text-orientation' || property === '-webkit-text-orientation') {
+              if (value === 'sideways') {
+                return false;
+              }
+            }
+            return true;
+          };
+
+          expect(new ViewSelector($elm, window).sideBySideViewAvailable()).to.be.false;
+
+          window.CSS.supports = null;
+          expect(new ViewSelector($elm, window).sideBySideViewAvailable()).to.be.false;
+
+          window.CSS = null;
+          expect(new ViewSelector($elm, window).sideBySideViewAvailable()).to.be.false;
+        });
+
+      });
+    });
+
+    it('maintains a list of top level article section headings', () => {
+      const expectedHeadingList = ['headingOne', 'headingTwo'];
+      const doc = {
+        querySelectorAll: () => {
+          return expectedHeadingList;
         }
-      }
-    ];
-
-    it('can identify the first section heading in view', () => {
+      };
+      spy(doc, 'querySelectorAll');
+      const headingList = ViewSelector.getAllCollapsibleSectionHeadings(doc);
+      expect(doc.querySelectorAll.calledWithExactly(
+        '[data-behaviour="ArticleSection"] > .article-section__header .article-section__header_text')).to.be.true;
+      expect(headingList).to.have.length(2);
+      expect(headingList).to.equal(expectedHeadingList);
+      doc.querySelectorAll.restore();
 
     });
 

@@ -98,25 +98,28 @@ module.exports = class ViewSelector {
   handleHighlighting(findClosest) {
     const $firstViewableHeading = this.findFirstInView(this.collapsibleSectionHeadings,
                                                        this.doc, this.window);
-    const $section = this.findSectionForHeading($firstViewableHeading,
-                                                this.collapsibleSectionHeadings[0].innerHTML,
-                                                findClosest);
+    const firstLogicalHeadingText = this.collapsibleSectionHeadings[0] ?
+                                                  this.collapsibleSectionHeadings[0].innerHTML : '';
+    const $section = ViewSelector.findSectionForLinkHighlight($firstViewableHeading,
+                                                              firstLogicalHeadingText,
+                                                              findClosest);
 
     if ($section && typeof $section.id === 'string') {
-      const $target = this.findLinkToHighlight(this.$jumpLinksList, `[href="#${$section.id}"]`);
+      const $target = ViewSelector.findLinkToHighlight(this.$jumpLinksList, `[href="#${$section.id}"]`);
       if ($target) {
-        this.clearJumpLinkHighlight(this.jumpLinks);
-        this.highlightJumpLink($target);
+        ViewSelector.clearJumpLinkHighlight(this.jumpLinks);
+        ViewSelector.highlightJumpLink($target);
       }
     }
   }
 
-  findSectionForHeading($heading, firstHeadingText, findClosest) {
+  static findSectionForLinkHighlight($heading, firstHeadingText, findClosest) {
     if (!$heading) {
       return;
     }
 
-    // 48px chosen arbitrarily by designer when reviewing feature
+    // If the heading is near or off the top of the window, use the section for that heading,
+    // otherwise, use the section before the section for that heading
     if ($heading.innerHTML === firstHeadingText || $heading.getBoundingClientRect().top < 48) {
       return findClosest.call(null, $heading, '.article-section');
     }
@@ -124,18 +127,18 @@ module.exports = class ViewSelector {
     return findClosest.call(null, $heading, '.article-section').previousElementSibling;
   }
 
-  clearJumpLinkHighlight($jumpLinksList) {
+  static clearJumpLinkHighlight($jumpLinksList) {
     const linksList = [].slice.call($jumpLinksList);
     linksList.forEach(($link) => {
       $link.classList.remove('view-selector__jump_link--active');
     });
   }
 
-  findLinkToHighlight($linksList, selector) {
+  static findLinkToHighlight($linksList, selector) {
     return $linksList.querySelector(selector);
   }
 
-  highlightJumpLink($jumpLink) {
+  static highlightJumpLink($jumpLink) {
     $jumpLink.classList.add('view-selector__jump_link--active');
   }
 
