@@ -30,6 +30,11 @@ describe('A ViewSelector Component', function () {
       let windowMock = {
         addEventListener: function () {
         },
+        matchMedia: function() {
+          return {
+            matches: true
+          }
+        },
         pageYOffset: 20
       };
       let _viewSelector1 = new ViewSelector($elm, windowMock);
@@ -52,6 +57,11 @@ describe('A ViewSelector Component', function () {
       let windowMock = {
         addEventListener: function () {
         },
+        matchMedia: function() {
+          return {
+            matches: true
+          }
+        },
         pageYOffset: 10
       };
       let _viewSelector = new ViewSelector($elm, windowMock);
@@ -69,6 +79,11 @@ describe('A ViewSelector Component', function () {
          let fakeBottomOfMainEl = 20;
          let windowMock = {
            addEventListener: function () {
+           },
+           matchMedia: function() {
+             return {
+               matches: true
+             }
            },
            pageYOffset: 30
          };
