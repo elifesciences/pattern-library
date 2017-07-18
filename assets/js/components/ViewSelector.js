@@ -91,37 +91,52 @@ module.exports = class ViewSelector {
   }
 
   handleScrolling() {
-    this.handleHighlighting();
+    this.handleHighlighting(utils.closest);
     this.handlePositioning();
   }
 
-  handleHighlighting() {
-    const $firstViewableSectionHeading = this.findFirstInView(this.collapsibleSectionHeadings,
-                                                              this.doc, this.window);
-    if (!$firstViewableSectionHeading) {
+  handleHighlighting(findClosest) {
+    const $firstViewableHeading = this.findFirstInView(this.collapsibleSectionHeadings,
+                                                       this.doc, this.window);
+    const $section = this.findSectionForHeading($firstViewableHeading,
+                                                this.collapsibleSectionHeadings[0].innerHTML,
+                                                findClosest);
+
+    if ($section && typeof $section.id === 'string') {
+      const $target = this.findLinkToHighlight(this.$jumpLinksList, `[href="#${$section.id}"]`);
+      if ($target) {
+        this.clearJumpLinkHighlight(this.jumpLinks);
+        this.highlightJumpLink($target);
+      }
+    }
+  }
+
+  findSectionForHeading($heading, firstHeadingText, findClosest) {
+    if (!$heading) {
       return;
     }
 
-    let $section;
-
-    // 48px chosen by designer when reviewing feature
-    if ($firstViewableSectionHeading.innerHTML === this.collapsibleSectionHeadings[0].innerHTML ||
-        $firstViewableSectionHeading.getBoundingClientRect().top < 48) {
-      $section = utils.closest($firstViewableSectionHeading, '.article-section');
-    } else {
-      $section = utils.closest($firstViewableSectionHeading,
-                               '.article-section').previousElementSibling;
+    // 48px chosen arbitrarily by designer when reviewing feature
+    if ($heading.innerHTML === firstHeadingText || $heading.getBoundingClientRect().top < 48) {
+      return findClosest.call(null, $heading, '.article-section');
     }
 
-    if ($section && typeof $section.id === 'string') {
-      const $toHighlight = this.$elm.querySelector(`[href="#${$section.id}"]`);
-      if ($toHighlight) {
-        [].forEach.call(this.jumpLinks, ($jumpLink) => {
-          $jumpLink.classList.remove('view-selector__jump_link--active');
-        });
-        $toHighlight.classList.add('view-selector__jump_link--active');
-      }
-    }
+    return findClosest.call(null, $heading, '.article-section').previousElementSibling;
+  }
+
+  clearJumpLinkHighlight($jumpLinksList) {
+    const linksList = [].slice.call($jumpLinksList);
+    linksList.forEach(($link) => {
+      $link.classList.remove('view-selector__jump_link--active');
+    });
+  }
+
+  findLinkToHighlight($linksList, selector) {
+    return $linksList.querySelector(selector);
+  }
+
+  highlightJumpLink($jumpLink) {
+    $jumpLink.classList.add('view-selector__jump_link--active');
   }
 
   /**
