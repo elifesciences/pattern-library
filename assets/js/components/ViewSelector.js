@@ -107,10 +107,14 @@ module.exports = class ViewSelector {
     if ($section && typeof $section.id === 'string') {
       const $target = ViewSelector.findLinkToHighlight(this.$jumpLinksList, `[href="#${$section.id}"]`);
       if ($target) {
-        ViewSelector.clearJumpLinkHighlight(this.jumpLinks);
-        ViewSelector.highlightJumpLink($target);
+        ViewSelector.updateHighlighting($target, this.jumpLinks);
       }
     }
+  }
+
+  static updateHighlighting($target, jumpLinksList) {
+    ViewSelector.clearJumpLinkHighlight(jumpLinksList);
+    ViewSelector.highlightJumpLink($target);
   }
 
   static findSectionForLinkHighlight($heading, firstHeadingText, findClosest) {
@@ -127,8 +131,8 @@ module.exports = class ViewSelector {
     return findClosest.call(null, $heading, '.article-section').previousElementSibling;
   }
 
-  static clearJumpLinkHighlight($jumpLinksList) {
-    const linksList = [].slice.call($jumpLinksList);
+  static clearJumpLinkHighlight(jumpLinksList) {
+    const linksList = [].slice.call(jumpLinksList);
     linksList.forEach(($link) => {
       $link.classList.remove('view-selector__jump_link--active');
     });
