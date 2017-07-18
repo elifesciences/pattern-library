@@ -118,17 +118,37 @@
     width: 100%;
     margin: auto;
     border-bottom: 1px solid $color-text-dividers;
-    @supports (display: flex) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
 
   .view-selector__list-item {
+    float: left;
     margin: 0;
     @include padding(0 24);
     text-align: center;
+  }
+
+  .view-selector__list-item {
+    float: left;
+    margin: 0;
+    @include padding(0 24);
+    text-align: center;
+
+    &:hover {
+      border: 1px solid $color-text-dividers;
+      border-bottom: none;
+
+      .view-selector__link {
+        color: $color-text;
+      }
+    }
+  }
+
+  .view-selector__list-item--article {
+    margin-left: 24px;
+  }
+
+  .view-selector__list-item--figures {
+    margin-left: 8px;
   }
 
   /** Selector nesting here because otherwise this all gets horrible quickly **/
@@ -137,6 +157,11 @@
     border: 1px solid $color-text-dividers;
     border-bottom: 1px solid $color-text-ui-background;
     margin-bottom: -1px;
+
+    &:hover {
+      border: 1px solid $color-text-dividers;
+      border-bottom: 1px solid $color-text-ui-background;
+    }
 
     .view-selector__link {
       font-weight: 700;
