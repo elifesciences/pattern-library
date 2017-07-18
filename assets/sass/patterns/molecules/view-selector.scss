@@ -117,6 +117,11 @@
   .view-selector__list {
     margin: auto;
     border-bottom: 1px solid $color-text-dividers;
+    @supports (display: flex) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .view-selector__list-item {
