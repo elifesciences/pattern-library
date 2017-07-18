@@ -130,11 +130,13 @@
   .view-selector__list-item--article {
     border-right: none;
     @include border-radius-simple(4, 0, 0, 4);
+    width: 170px;
   }
 
   .view-selector__list-item--figures {
     border-left: none;
     @include border-radius-simple(0, 4, 4, 0);
+    width: 170px;
   }
 
   .view-selector__list-item--active {
