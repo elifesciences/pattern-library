@@ -115,6 +115,7 @@
   }
 
   .view-selector__list {
+    width: 100%;
     margin: auto;
     border-bottom: 1px solid $color-text-dividers;
     @supports (display: flex) {
@@ -125,9 +126,8 @@
   }
 
   .view-selector__list-item {
-    float: left;
     margin: 0;
-    @include padding(0 18);
+    @include padding(0 24);
     text-align: center;
   }
 
@@ -136,7 +136,6 @@
     font-weight: 700;
     border: 1px solid $color-text-dividers;
     border-bottom: 1px solid $color-text-ui-background;
-    padding-bottom: 1px;
     margin-bottom: -1px;
 
     .view-selector__link {
@@ -157,10 +156,11 @@
   }
 
   .view-selector__link {
-    line-height: 2.5714285714; /* 36px at 14px font size */
+    line-height: 2.875; /* 46px at 16px font size */
     color: $color-text-placeholder;
-    @include height(34);
+    @include height(46);
     @include nospace();
+    @include font-size(16);
     text-align: center;
 
     span {
