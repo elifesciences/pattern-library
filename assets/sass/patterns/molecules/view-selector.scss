@@ -116,10 +116,10 @@
 
   .view-selector__list {
     margin: auto;
+    border-bottom: 1px solid $color-text-dividers;
   }
 
   .view-selector__list-item {
-    border: 1px solid $color-text;
     float: left;
     margin: 0;
     @include padding(0 18);
@@ -127,30 +127,19 @@
   }
 
   /** Selector nesting here because otherwise this all gets horrible quickly **/
-  .view-selector__list-item--article {
-    border-right: none;
-    @include border-radius-simple(4, 0, 0, 4);
-    width: 170px;
-  }
-
-  .view-selector__list-item--figures {
-    border-left: none;
-    @include border-radius-simple(0, 4, 4, 0);
-    width: 170px;
-  }
-
   .view-selector__list-item--active {
-    background-color: $color-text;
     font-weight: 700;
+    border: 1px solid $color-text-dividers;
+    border-bottom: 1px solid $color-text-ui-background;
+    padding-bottom: 1px;
+    margin-bottom: -1px;
 
     .view-selector__link {
-      color: $color-text-ui-background;
       font-weight: 700;
 
       &:hover {
         cursor: default;
       }
-
     }
   }
 
@@ -164,20 +153,15 @@
 
   .view-selector__link {
     line-height: 2.5714285714; /* 36px at 14px font size */
+    color: $color-text-placeholder;
     @include height(34);
     @include nospace();
     text-align: center;
-    text-transform: uppercase;
 
     span {
       padding: 0;
     }
   }
-
-  .view-selector__link--figures {
-    color: $color-text;
-  }
-
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-view-selector)}em) {
