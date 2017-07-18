@@ -123,14 +123,13 @@
   .view-selector__list-item {
     float: left;
     margin: 0;
-    @include padding(0 24);
+    padding: 0;
     text-align: center;
   }
 
   .view-selector__list-item {
     float: left;
     margin: 0;
-    @include padding(0 24);
     text-align: center;
 
     &:hover {
@@ -184,7 +183,10 @@
     line-height: 2.875; /* 46px at 16px font size */
     color: $color-text-placeholder;
     @include height(46);
-    @include nospace();
+    display: block;
+
+    @include padding(0 24);
+    @include margin(0);
     @include font-size(16);
     text-align: center;
 
