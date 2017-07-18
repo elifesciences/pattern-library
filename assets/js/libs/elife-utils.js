@@ -512,6 +512,38 @@ module.exports = () => {
     );
   }
 
+  /**
+   * Throttle a function to run with specified interval
+   *
+   * The function should be an arrow function to ensure scope is correct
+   * @param {Function} fn The function to throttle
+   * @param {Number} thresholdInMs The minimum interval between calls to the thottled function
+   * @returns {Function}
+   */
+  function throttle(fn, thresholdInMs = 250/*, scope*/) {
+    // threshold || (threshold = 250);
+    let last;
+    let deferTimer;
+    return function () {
+      // const context = scope || this;
+      const now = +new Date();
+      const args = arguments;
+      if (last && now < last + thresholdInMs) {
+        // hold on to it
+        window.clearTimeout(deferTimer);
+        deferTimer = window.setTimeout(function () {
+          last = now;
+          // fn.apply(context, args);
+          fn.apply(null, args);
+        }, thresholdInMs);
+      } else {
+        last = now;
+        // fn.apply(context, args);
+        fn.apply(null, args);
+      }
+    };
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -530,6 +562,7 @@ module.exports = () => {
     loadData: loadData,
     nthChild: nthChild,
     remoteDoc: remoteDoc,
+    throttle: throttle,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
     wrapElements: wrapElements,
