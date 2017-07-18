@@ -41,18 +41,16 @@ module.exports = class ViewSelector {
     this.collapsibleSectionHeadings = ViewSelector.getAllCollapsibleSectionHeadings(this.doc);
     this.isScrollingHandled = false;
 
-    // const scrollingHandler = this.handleScrolling.bind(this);
-    const scrollingHandler = utils.debounce(() => {
+    const scrollingHandler = utils.throttle(() => {
       this.handleScrolling();
-    }, 100);
+    }, 50);
 
     if (this.isViewportWideEnoughForJumpMenu()) {
-      this.startHandlingScrolling(scrollingHandler);
+      this.startHandlingScrolling(scrollingHandler, this.handleScrolling);
     }
 
-    // TODO: This technically works, but what is needed here is throttling, not debouncing.
-    this.window.addEventListener('resize', utils.debounce(() => {
-      this.handleResize(scrollingHandler);
+    this.window.addEventListener('resize', utils.throttle(() => {
+      this.handleResize(scrollingHandler, this.handleScrolling);
     }, 200));
 
     this.elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
@@ -72,23 +70,23 @@ module.exports = class ViewSelector {
     return this.window.matchMedia('(min-width: 1200px)').matches;
   }
 
-  handleResize(scrollingHandler) {
+  handleResize(scrollingHandler, scrollingHandlerImmediate) {
     const isViewportWideEnoughForJumpMenu = this.isViewportWideEnoughForJumpMenu();
     if (!this.isScrollingHandled && isViewportWideEnoughForJumpMenu) {
-      this.startHandlingScrolling(scrollingHandler);
+      this.startHandlingScrolling(scrollingHandler, scrollingHandlerImmediate);
     } else if (this.isScrollingHandled && !isViewportWideEnoughForJumpMenu) {
       this.stopHandlingScrolling(scrollingHandler);
     }
   }
 
-  startHandlingScrolling(scrollHandler) {
-    this.window.addEventListener('scroll', scrollHandler);
+  startHandlingScrolling(scrollingHandler, scrollingHandlerImmediate) {
+    this.window.addEventListener('scroll', scrollingHandler);
     this.isScrollingHandled = true;
-    this.handleScrolling();
+    scrollingHandlerImmediate.call(this);
   }
 
-  stopHandlingScrolling(scrollHandler) {
-    this.window.removeEventListener('scroll', scrollHandler);
+  stopHandlingScrolling(scrollingHandler) {
+    this.window.removeEventListener('scroll', scrollingHandler);
     this.isScrollingHandled = false;
   }
 
@@ -106,6 +104,7 @@ module.exports = class ViewSelector {
 
     let $section;
 
+    // 48px chosen by designer when reviewing feature
     if ($firstViewableSectionHeading.innerHTML === this.collapsibleSectionHeadings[0].innerHTML ||
         $firstViewableSectionHeading.getBoundingClientRect().top < 48) {
       $section = utils.closest($firstViewableSectionHeading, '.article-section');
@@ -184,8 +183,6 @@ module.exports = class ViewSelector {
   toggleJumpLinks() {
     this.$jumpLinksList.classList.toggle('visuallyhidden');
     this.$jumpLinksToggle.classList.toggle('view-selector__jump_links_header--closed');
-
-    // this.handleScroll();
   }
 
   sideBySideViewAvailable() {
