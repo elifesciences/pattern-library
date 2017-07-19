@@ -32,6 +32,19 @@
   }
 }
 
+.content-header-image-wrapper {
+  height: #{$content-header-image-height--narrow-screen + $content-header-image-credit-height}px;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    height: #{$content-header-image-height--medium-width-screen + $content-header-image-credit-height}px;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    height: #{$content-header-image-height--wide-screen + $content-header-image-credit-height}px;
+  }
+
+}
+
 .content-header--image {
   border-bottom: none;
   color: $color-text--reverse;
@@ -632,4 +645,19 @@ li.content-header__institution_list_item--last .content-header__institution:afte
       color: inherit;
     }
   }
+}
+
+.content-header__image-credit {
+  font-family: $font-secondary;
+  @include font-size(11);
+  line-height: 2.1818181818; /* 24px at 11px font size */
+  @include blg-spacing("top", "extra-small");
+  @include blg-spacing("bottom", "extra-small");
+
+  & a,
+  & a:hover {
+    color: $color-text;
+    text-decoration: underline;
+  }
+
 }

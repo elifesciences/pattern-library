@@ -1,9 +1,12 @@
-<header
+{{#image}}
+<div class="content-header-image-wrapper">
+{{/image}}
+  <header
     class="content-header {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} clearfix"
     data-behaviour="ContentHeader">
 
   {{#image}}
-    <picture class="content-header__picture">
+    <picture class="content-header__picture"{{#imageCredit}} aria-labelledby="{{imageCredit.elementId}}"{{/imageCredit}}>
       {{#sources}}
         <source srcset="{{srcset}}"
                 {{#type}}type="{{type}}"{{/type}}
@@ -157,3 +160,11 @@
   {{/meta}}
 
 </header>
+
+{{#imageCredit}}
+  <div class="wrapper"><div class="content-header__image-credit" id="{{elementId}}">{{{text}}}</div></div>
+{{/imageCredit}}
+
+{{#image}}
+  </div>
+{{/image}}
