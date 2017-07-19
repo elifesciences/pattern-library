@@ -119,40 +119,61 @@
   }
 
   .view-selector__list {
+    width: 100%;
     margin: auto;
+    border-bottom: 1px solid $color-text-dividers;
   }
 
   .view-selector__list-item {
-    border: 1px solid $color-text;
     float: left;
     margin: 0;
-    @include padding(0 18);
+    padding: 0;
     text-align: center;
   }
 
-  /** Selector nesting here because otherwise this all gets horrible quickly **/
+  .view-selector__list-item {
+    border: 1px solid $color-text--reverse;
+    border-bottom: none;
+    float: left;
+    margin: 0;
+    text-align: center;
+
+    &:hover {
+      border: 1px solid $color-text-dividers;
+      border-bottom: none;
+
+      .view-selector__link {
+        color: $color-text;
+      }
+    }
+  }
+
   .view-selector__list-item--article {
-    border-right: none;
-    @include border-radius-simple(4, 0, 0, 4);
+    margin-left: 12px;
   }
 
   .view-selector__list-item--figures {
-    border-left: none;
-    @include border-radius-simple(0, 4, 4, 0);
+    margin-left: 8px;
   }
 
+  /** Selector nesting here because otherwise this all gets horrible quickly **/
   .view-selector__list-item--active {
-    background-color: $color-text;
+    border: 1px solid $color-text-dividers;
+    border-bottom-color: $color-text-ui-background;
     font-weight: 700;
+    margin-bottom: -1px;
+
+    &:hover {
+      border: 1px solid $color-text-dividers;
+      border-bottom-color: $color-text-ui-background;
+    }
 
     .view-selector__link {
-      color: $color-text-ui-background;
       font-weight: 700;
 
       &:hover {
         cursor: default;
       }
-
     }
   }
 
@@ -165,21 +186,20 @@
   }
 
   .view-selector__link {
-    line-height: 2.5714285714; /* 36px at 14px font size */
-    @include height(34);
-    @include nospace();
+    line-height: 2.875; /* 46px at 16px font size */
+    color: $color-text-secondary;
+    @include height(46);
+    display: block;
+
+    @include padding(0 24);
+    @include margin(0);
+    @include font-size(16);
     text-align: center;
-    text-transform: uppercase;
 
     span {
       padding: 0;
     }
   }
-
-  .view-selector__link--figures {
-    color: $color-text;
-  }
-
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-view-selector)}em) {
