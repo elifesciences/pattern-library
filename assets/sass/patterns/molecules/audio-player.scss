@@ -4,6 +4,7 @@
   background-color: $color-text;
   margin: 0 auto;
   @include constrain-width($max-site-width, "max");
+  @include height($audio-player-height);
   @include padding(12 24 22);
   position: relative;
 }
@@ -80,7 +81,7 @@
 
 .audio-player--js {
 
-  @include height(72);
+  @include height($audio-player-height--js);
 
   .audio-player__toggle_play {
     display: block;

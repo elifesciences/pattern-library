@@ -3,6 +3,7 @@ assets:
     - content-header.css
     - $ref: ../../00-atoms/components/button.yaml#/assets/css
     - $ref: ../../01-molecules/components/meta.yaml#/assets/css
+    - $ref: ../../01-molecules/components/audio-player.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/select-nav.yaml#/assets/css
   js: []
 schema:
@@ -127,6 +128,8 @@ schema:
       $ref: ../../01-molecules/navigation/select-nav.yaml#/schema
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
+    audio:
+      $ref: ../../01-molecules/components/audio-player.yaml#/schema
   required:
     - title
   dependencies:
