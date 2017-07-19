@@ -192,7 +192,7 @@ module.exports = () => {
    *
    * @param {String} pxString The string representing the original quantity, e.g. '97px'
    * @param adjustment The numeric adjustment to make, e.g. 8
-   * @param operation
+   * @param requestedOperation
    * @returns {string} The modified value, as a string, e.g.: '105px'
    */
   function adjustPxString(pxString, adjustment, requestedOperation) {
@@ -492,6 +492,55 @@ module.exports = () => {
     return $overlay;
   }
 
+  /**
+   *
+   * Determines if the top of an element is within the viewport bounds
+   *
+   * @param {HTMLElement} $elm
+   * @param {Document} doc
+   * @param win
+   * @returns {boolean} true if the top of the element is within the viewport bounds
+   */
+  function isTopInView($elm, doc, win) {
+    const rect = $elm.getBoundingClientRect();
+    const html = doc.documentElement;
+    return (
+      rect.top >= 0 &&
+      rect.top <= (win.innerHeight || html.clientHeight) &&
+      rect.left >= 0 &&
+      rect.left <= (win.innerWidth || html.clientWidth)
+    );
+  }
+
+  /**
+   * Throttle a function to run with specified interval
+   *
+   * The function should be an arrow function to ensure scope is correct
+   * @param {Function} fn The arrow function to throttle
+   * @param {Number} thresholdInMs The minimum interval between calls to the thottled function
+   * @returns {Function}
+   */
+  function throttle(fn, thresholdInMs = 250) {
+    let last;
+    let deferTimer;
+    return function () {
+      const now = +new Date();
+      const args = arguments;
+      if (last && now < last + thresholdInMs) {
+
+        // hold on to it
+        window.clearTimeout(deferTimer);
+        deferTimer = window.setTimeout(function () {
+          last = now;
+          fn.apply(null, args);
+        }, thresholdInMs);
+      } else {
+        last = now;
+        fn.apply(null, args);
+      }
+    };
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -505,10 +554,12 @@ module.exports = () => {
     defer: defer,
     flatten: flatten,
     invertPxString: invertPxString,
+    isTopInView: isTopInView,
     jumpToAnchor: jumpToAnchor,
     loadData: loadData,
     nthChild: nthChild,
     remoteDoc: remoteDoc,
+    throttle: throttle,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
     wrapElements: wrapElements,

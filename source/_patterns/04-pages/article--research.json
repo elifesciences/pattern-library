@@ -1,7 +1,6 @@
 {
   "isPrimaryResearch": true,
   "hasRelated": true,
-  "viewSelector": true,
   "siteHeader": {
     "homePagePath": "#",
     "primaryLinks": {
@@ -457,16 +456,12 @@
           "url": "#introduction"
         },
         {
-          "name": "Results",
-          "url": "#results"
-        },
-        {
-          "name": "Discussion",
-          "url": "#discussion"
-        },
-        {
           "name": "Materials & methods",
           "url": "#materials-and-methods"
+        },
+        {
+          "name": "Article and author information",
+          "url": "#articleInfo"
         },
         {
           "name": "References",
