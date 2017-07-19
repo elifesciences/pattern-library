@@ -158,14 +158,14 @@
 
   /** Selector nesting here because otherwise this all gets horrible quickly **/
   .view-selector__list-item--active {
-    font-weight: 700;
     border: 1px solid $color-text-dividers;
-    border-bottom: 1px solid $color-text-ui-background;
+    border-bottom-color: $color-text-ui-background;
+    font-weight: 700;
     margin-bottom: -1px;
 
     &:hover {
       border: 1px solid $color-text-dividers;
-      border-bottom: 1px solid $color-text-ui-background;
+      border-bottom-color: $color-text-ui-background;
     }
 
     .view-selector__link {
