@@ -120,14 +120,17 @@
 
   .view-selector__list {
     margin: auto;
+    @include constrain-width(375, "max");
+    width: 100%;
   }
 
   .view-selector__list-item {
     border: 1px solid $color-text;
     float: left;
     margin: 0;
-    @include padding(0 18);
+    @include padding(0 6);
     text-align: center;
+    width: 50%;
   }
 
   /** Selector nesting here because otherwise this all gets horrible quickly **/
@@ -143,11 +146,9 @@
 
   .view-selector__list-item--active {
     background-color: $color-text;
-    font-weight: 700;
 
     .view-selector__link {
       color: $color-text-ui-background;
-      font-weight: 700;
 
       &:hover {
         cursor: default;
@@ -169,7 +170,6 @@
     @include height(34);
     @include nospace();
     text-align: center;
-    text-transform: uppercase;
 
     span {
       padding: 0;
