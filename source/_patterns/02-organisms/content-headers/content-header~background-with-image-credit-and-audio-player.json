@@ -42,6 +42,10 @@
       "altText": ""
     }
   },
+  "imageCredit": {
+    "text": "I haz image credit <a href=\"#\">with a link</a>.",
+    "elementId": "iAmTheIdOfTheImageCreditElement"
+  },
   "title": "Epidemiology and Global Health",
   "longTitle": true,
   "impactStatement": "Flatworms have organs called protonephridia that could be used as a model system for the study of kidney disease.",
@@ -62,7 +66,7 @@
       "forMachine": "2016-02-29"
     }
   },
-  "audio": {
+  "audioPlayer": {
     "episodeNumber": 21,
     "title": "Episode 21",
     "url": "#",

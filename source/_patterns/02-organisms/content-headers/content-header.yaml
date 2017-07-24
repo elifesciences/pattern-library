@@ -128,7 +128,7 @@ schema:
       $ref: ../../01-molecules/navigation/select-nav.yaml#/schema
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
-    audio:
+    audioPlayer:
       $ref: ../../01-molecules/components/audio-player.yaml#/schema
   required:
     - title

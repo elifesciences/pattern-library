@@ -129,7 +129,7 @@
       "text": "This is an image credit <a href=\"#\">with a link</a>.",
       "elementId": "iAmTheElementIdForTheImegeCreditElement"
     },
-    "audio": {
+    "audioPlayer": {
       "title": "Episode 21",
       "episodeNumber": 21,
       "sources":[

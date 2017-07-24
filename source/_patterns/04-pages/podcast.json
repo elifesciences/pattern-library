@@ -134,7 +134,7 @@
          "defaultPath": "https://unsplash.it/1114/336"
        }
      },
-     "audio": {
+     "audioPlayer": {
        "title": "Episode 21",
        "episodeNumber": 21,
        "sources":[
