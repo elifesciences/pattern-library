@@ -133,26 +133,25 @@
        "fallback": {
          "defaultPath": "https://unsplash.it/1114/336"
        }
+     },
+     "audio": {
+       "title": "Episode 21",
+       "episodeNumber": 21,
+       "sources":[
+         { "src": "https://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
+           "mediaType": {
+             "forMachine": "audio/mp3",
+             "forHuman": "mp3"
+           },
+           "fallback": {
+             "content": "Download the podcast",
+             "classes": "media-source__fallback_link--audio-player"
+           }
+         }
+       ],
+       "metadata": "{'number': 21, 'chapters': [{'number': 1, 'title': 'What causes tinnitus?', 'time': 36},{'number': 2, 'title': 'How salamanders avoid senescence', 'time': 386}, {'number': 3, 'title': 'Mouse ultrasound', 'time': 700}, {'number': 4, 'title': 'Drosophila duet: mating flies harmonise', 'time': 1010 }, { 'number': 5, 'title': 'Chemical Harpoons: bacterial anchors', 'time': 1307 } ] }"
      }
-  },
-
-  "audioPlayer": {
-    "title": "Episode 21",
-    "episodeNumber": 21,
-    "sources":[
-      { "src": "https://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
-        "mediaType": {
-          "forMachine": "audio/mp3",
-          "forHuman": "mp3"
-        },
-        "fallback": {
-          "content": "Download the podcast",
-          "classes": "media-source__fallback_link--audio-player"
-        }
-      }
-    ],
-    "metadata": "{'number': 21, 'chapters': [{'number': 1, 'title': 'What causes tinnitus?', 'time': 36},{'number': 2, 'title': 'How salamanders avoid senescence', 'time': 386}, {'number': 3, 'title': 'Mouse ultrasound', 'time': 700}, {'number': 4, 'title': 'Drosophila duet: mating flies harmonise', 'time': 1010 }, { 'number': 5, 'title': 'Chemical Harpoons: bacterial anchors', 'time': 1307 } ] }"
-  },
+   },
 
   "mainTeasers": [
     {
