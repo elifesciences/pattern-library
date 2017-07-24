@@ -40,11 +40,11 @@
       "defaultPath": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/1114,336/0/default.png",
       "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/1114,336/0/default.png 1114w, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/2228,672/0/default.png 2228w",
       "altText": ""
+    },
+    "credit": {
+      "text": "I haz image credit <a href=\"#\">with a link</a>.",
+      "elementId": "iAmTheIdOfTheImageCreditElement"
     }
-  },
-  "imageCredit": {
-    "text": "I haz image credit <a href=\"#\">with a link</a>.",
-    "elementId": "iAmTheIdOfTheImageCreditElement"
   },
   "title": "Epidemiology and Global Health",
   "longTitle": true,

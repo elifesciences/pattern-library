@@ -6,7 +6,7 @@
     data-behaviour="ContentHeader">
 
   {{#image}}
-    <picture class="content-header__picture"{{#imageCredit}} aria-labelledby="{{imageCredit.elementId}}"{{/imageCredit}}>
+    <picture class="content-header__picture"{{#credit}} aria-labelledby="{{elementId}}"{{/credit}}>
       {{#sources}}
         <source srcset="{{srcset}}"
                 {{#type}}type="{{type}}"{{/type}}
@@ -165,9 +165,9 @@
   {{> molecules-audio-player}}
 {{/audioPlayer}}
 
-{{#imageCredit}}
+{{#image.credit}}
   <div class="wrapper"><div class="content-header__image-credit" id="{{elementId}}">{{{text}}}</div></div>
-{{/imageCredit}}
+{{/image.credit}}
 
 {{#image}}
   </div>

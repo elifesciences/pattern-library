@@ -16,19 +16,21 @@ schema:
     longTitle:
       type: boolean
     image:
-      $ref: ../../00-atoms/components/picture.yaml#/schema
-    imageCredit:
-      type: object
-      properties:
-        text:
-          type: string
-          minLength: 1
-        elementId:
-          type: string
-          minLength: 1
-      required:
-        - text
-        - elementId
+      allOf:
+        - $ref: ../../00-atoms/components/picture.yaml#/schema
+        - properties:
+            credit:
+              type: object
+              properties:
+                text:
+                  type: string
+                  minLength: 1
+                elementId:
+                  type: string
+                  minLength: 1
+              required:
+                - text
+                - elementId
     impactStatement:
       type: string
       minLength: 1
@@ -134,4 +136,3 @@ schema:
     - title
   dependencies:
     institutions: [authors]
-    imageCredit: [image]

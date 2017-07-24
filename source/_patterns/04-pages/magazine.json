@@ -123,11 +123,11 @@
     "image": {
       "fallback": {
         "defaultPath": "https://unsplash.it/1114/336"
+      },
+      "credit": {
+        "text": "This is an image credit <a href=\"#\">with a link</a>.",
+        "elementId": "iAmTheElementIdForTheImegeCreditElement"
       }
-    },
-    "imageCredit": {
-      "text": "This is an image credit <a href=\"#\">with a link</a>.",
-      "elementId": "iAmTheElementIdForTheImegeCreditElement"
     },
     "audioPlayer": {
       "title": "Episode 21",
