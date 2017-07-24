@@ -3,14 +3,14 @@ const utils = require('../libs/elife-utils')();
 module.exports = class Popup {
 
   constructor($elm, _window = window, doc = document) {
-    var $link = $elm;
-    if ($elm.dataset.popupWrapper) {
-      const wrapper = utils.buildElement('a');
-      $elm.parentNode.insertBefore(wrapper, $elm);
-      wrapper.appendChild($elm);
+    let $link;
 
-      wrapper.href = '#some-value'; // can't be removed
-      $link = wrapper;
+    if ($elm.dataset.popupWrapper) {
+      $link = utils.buildElement('a');
+      $elm.parentNode.insertBefore($link, $elm);
+      $link.appendChild($elm);
+    } else {
+      $link = $elm;
     }
 
     if (!$elm.dataset.popupSelf) {
