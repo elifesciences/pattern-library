@@ -1,5 +1,6 @@
 'use strict';
 const clipper = require('text-clipper');
+const utils = require('../libs/elife-utils')();
 
 module.exports = class ToggleableCaption {
 
@@ -18,14 +19,13 @@ module.exports = class ToggleableCaption {
       return;
     }
 
-    if (this.thresholdWidth !== null) {
-      const conditionMediaQuery = `(max-width: ${this.thresholdWidth}px)`;
-      if (!this.window.matchMedia(conditionMediaQuery).matches) {
-        return;
-      }
-    }
-
     this.setupToggle();
+    if (this.thresholdWidth !== null) {
+      this.toggleToggle();
+      this.window.addEventListener('resize', utils.debounce(() => this.toggleToggle(), 150));
+    } else {
+      this.toggleCaption();
+    }
   }
 
   static findCaption($elm) {
@@ -39,6 +39,9 @@ module.exports = class ToggleableCaption {
     let fullChildren = [];
     [].forEach.call(this.$caption.childNodes, (child) => fullChildren.push(child.outerHTML));
     fullChildren = fullChildren.filter((child) => child);
+
+    this.originalHtml = fullChildren.join(' ');
+
     fullChildren.push(seeLessButton);
 
     let truncatedChildren = fullChildren;
@@ -60,8 +63,6 @@ module.exports = class ToggleableCaption {
 
     this.fullHtml = fullChildren.join(' ');
     this.truncatedHtml = truncatedChildren.join(' ');
-
-    this.toggleCaption();
   }
 
   toggleCaption() {
@@ -83,6 +84,30 @@ module.exports = class ToggleableCaption {
     }
 
     this.$caption.querySelector('.caption-text__toggle').addEventListener('click', this.toggleCaption.bind(this));
+  }
+
+  toggleToggle() {
+    if (this.window.matchMedia(`(min-width: ${this.thresholdWidth}px)`).matches) {
+      this.removeToggle();
+    } else {
+      this.restoreToggle();
+    }
+  }
+
+  removeToggle() {
+    const $toggle = this.$caption.querySelector('.caption-text__toggle');
+
+    if ($toggle) {
+      this.$caption.innerHTML = this.originalHtml;
+    }
+  }
+
+  restoreToggle() {
+    const $toggle = this.$caption.querySelector('.caption-text__toggle');
+
+    if (!$toggle) {
+      this.toggleCaption();
+    }
   }
 
 };
