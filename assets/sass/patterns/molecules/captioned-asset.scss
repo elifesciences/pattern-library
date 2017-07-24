@@ -2,7 +2,7 @@
 
 .captioned-asset {
   margin: 0;
-  @include padding($blg-space-small-in-px, "bottom");
+  @include margin($blg-space-small-in-px, "bottom");
   @include padding($blg-space-small-in-px, "top");
 }
 

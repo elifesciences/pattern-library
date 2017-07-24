@@ -12,7 +12,8 @@
 }
 
 .asset-viewer-inline {
-  @include padding($blg-space-small-in-px, "top");
+  @include margin($blg-space-medium-in-px, "top");
+  @include margin($blg-space-medium-in-px, "bottom");
 }
 
 .asset-viewer-inline__header_panel {
