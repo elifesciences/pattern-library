@@ -18,7 +18,7 @@ module.exports = class ToggleableCaption {
       return;
     }
 
-    if (this.thresholdWidth != null) {
+    if (this.thresholdWidth !== null) {
       const conditionMediaQuery = `(max-width: ${this.thresholdWidth}px)`;
       if (!this.window.matchMedia(conditionMediaQuery).matches) {
         return;
