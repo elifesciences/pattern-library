@@ -20,6 +20,11 @@ module.exports = class ToggleableCaption {
     }
 
     this.setupToggle();
+
+    if (!this.truncatedHtml) {
+      return;
+    }
+
     if (this.thresholdWidth !== null) {
       this.toggleToggle();
       this.window.addEventListener('resize', utils.debounce(() => this.toggleToggle(), 150));
