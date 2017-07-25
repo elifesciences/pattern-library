@@ -39,7 +39,6 @@
   &--asset {
     @include label-content-typeg($color-text);
     display: block;
-    font-weight: normal;
 
     a.doi__link {
       @include fig-caption-text-typeg(0);
