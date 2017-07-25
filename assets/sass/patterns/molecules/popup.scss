@@ -13,6 +13,9 @@
 
 a.popup__wrapper {
   color: inherit;
+  @media only all and (min-width: #{$bkpt-site--medium}px) {
+    cursor: pointer;
+  }
 }
 
 a.popup__button {

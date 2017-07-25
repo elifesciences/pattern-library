@@ -1,11 +1,5 @@
 @import "../../definitions";
 
-.about-profile--popup {
-  @media only all and (min-width: #{$bkpt-site--medium}px) {
-    cursor: pointer;
-  }
-}
-
 .about-profile__name {
   @include teaser-header-text-style();
 
