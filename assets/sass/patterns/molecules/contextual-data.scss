@@ -15,7 +15,6 @@
 .contextual-data__list_title {
   display: inline-block;
   @include label-content-typeg($color-text-secondary);
-  font-weight: normal;
   margin: 0;
   padding: 0;
 }
