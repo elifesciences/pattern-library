@@ -688,4 +688,8 @@ li.content-header__institution_list_item--last .content-header__institution:afte
     text-decoration: underline;
   }
 
+  display: none;
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: block;
+  }
 }
