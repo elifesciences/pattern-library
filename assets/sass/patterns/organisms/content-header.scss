@@ -674,15 +674,17 @@ li.content-header__institution_list_item--last .content-header__institution:afte
 }
 
 .content-header__image-credit {
+  color: $color-text-secondary;
   font-family: $font-secondary;
   @include font-size(11);
   line-height: 2.1818181818; /* 24px at 11px font size */
   @include blg-spacing("top", "extra-small");
   @include blg-spacing("bottom", "extra-small");
+  text-align: right;
 
   & a,
   & a:hover {
-    color: $color-text;
+    color: inherit;
     text-decoration: underline;
   }
 
