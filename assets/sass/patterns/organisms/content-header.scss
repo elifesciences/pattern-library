@@ -32,6 +32,10 @@
   }
 }
 
+.content-header-image-wrapper--no-credit {
+  @include padding($content-header-image-credit-height, "bottom");
+}
+
 .content-header--image {
   border-bottom: none;
   color: $color-text--reverse;
@@ -632,4 +636,34 @@ li.content-header__institution_list_item--last .content-header__institution:afte
       color: inherit;
     }
   }
+}
+
+.content-header__image-credit {
+  color: $color-text-secondary;
+  font-family: $font-secondary;
+  @include font-size(11);
+  line-height: 2.1818181818; /* 24px at 11px font size */
+  @include blg-spacing("top", "extra-small");
+  @include blg-spacing("bottom", "extra-small");
+  text-align: right;
+
+  & a,
+  & a:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  visibility: hidden;
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    visibility: visible;
+  }
+}
+
+.content-header__image-credit--overlay {
+  color: inherit;
+  opacity: 0.4;
+  position: absolute;
+  bottom: 0;
+  @include blg-spacing("right", "extra-small");
+  width: 100%;
 }
