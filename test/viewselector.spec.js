@@ -1,4 +1,5 @@
 let expect = chai.expect;
+let spy = sinon.spy;
 
 // load in component(s) to be tested
 let ViewSelector = require('../assets/js/components/ViewSelector');
@@ -29,18 +30,23 @@ describe('A ViewSelector Component', function () {
       let windowMock = {
         addEventListener: function () {
         },
+        matchMedia: function() {
+          return {
+            matches: true
+          }
+        },
         pageYOffset: 20
       };
       let _viewSelector1 = new ViewSelector($elm, windowMock);
       _viewSelector1.elmYOffset = 20;
-      _viewSelector1.handleScroll();
+      _viewSelector1.handleScrolling();
 
       let classes1 = _viewSelector1.$elm.classList;
       expect(classes1.contains('view-selector--fixed')).to.be.true;
 
       let _viewSelector2 = new ViewSelector($elm, windowMock);
       _viewSelector2.elmYOffset = 20;
-      _viewSelector2.handleScroll();
+      _viewSelector2.handleScrolling();
 
       let classes2 = _viewSelector2.$elm.classList;
       expect(classes2.contains('view-selector--fixed')).to.be.true;
@@ -51,11 +57,16 @@ describe('A ViewSelector Component', function () {
       let windowMock = {
         addEventListener: function () {
         },
+        matchMedia: function() {
+          return {
+            matches: true
+          }
+        },
         pageYOffset: 10
       };
       let _viewSelector = new ViewSelector($elm, windowMock);
       _viewSelector.elmYOffset = 20;
-      _viewSelector.handleScroll();
+      _viewSelector.handleScrolling();
 
       let classes = _viewSelector.$elm.classList;
       expect(classes.contains('view-selector--fixed')).to.be.false;
@@ -68,6 +79,11 @@ describe('A ViewSelector Component', function () {
          let fakeBottomOfMainEl = 20;
          let windowMock = {
            addEventListener: function () {
+           },
+           matchMedia: function() {
+             return {
+               matches: true
+             }
            },
            pageYOffset: 30
          };
@@ -85,7 +101,7 @@ describe('A ViewSelector Component', function () {
          expect(fakeBottomOfMainEl).to.be.below(_viewSelector.$elm.offsetHeight);
 
          _viewSelector.$elm.classList.add('view-selector--fixed');
-         _viewSelector.handleScroll();
+         _viewSelector.handleScrolling();
          expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.true;
          expect(_viewSelector.$elm.style.top.indexOf('px')).to.be.above(-1);
        });
@@ -94,7 +110,7 @@ describe('A ViewSelector Component', function () {
 
   it('has a toggleable list of jump links', function () {
     let viewSelector = new ViewSelector($elm);
-    expect(viewSelector.$jumpLinks instanceof HTMLElement).to.be.true;
+    expect(viewSelector.$jumpLinksList instanceof HTMLElement).to.be.true;
     expect(viewSelector.toggleJumpLinks).to.be.a('function');
   });
 
@@ -107,23 +123,228 @@ describe('A ViewSelector Component', function () {
     });
 
     it('expands when toggled open', function () {
-      viewSelector.$jumpLinks.classList.add('visuallyhidden');
+      viewSelector.$jumpLinksList.classList.add('visuallyhidden');
       viewSelector.$jumpLinksToggle.classList.add('view-selector__jump_links_header--closed');
       viewSelector.toggleJumpLinks();
-      expect(viewSelector.$jumpLinks.classList.contains('visuallyhidden')).to.be.false;
+      expect(viewSelector.$jumpLinksList.classList.contains('visuallyhidden')).to.be.false;
       expect(viewSelector.$jumpLinksToggle.classList
                          .contains('view-selector__jump_links_header--closed')).to.be.false;
     });
 
     it('collapses when toggled closed', function () {
-      viewSelector.$jumpLinks.classList.remove('visuallyhidden');
+      viewSelector.$jumpLinksList.classList.remove('visuallyhidden');
       viewSelector.$jumpLinksToggle.classList.remove('view-selector__jump_links_header--closed');
       viewSelector.toggleJumpLinks();
-      expect(viewSelector.$jumpLinks.classList.contains('visuallyhidden')).to.be.true;
+      expect(viewSelector.$jumpLinksList.classList.contains('visuallyhidden')).to.be.true;
       expect(viewSelector.$jumpLinksToggle.classList
                          .contains('view-selector__jump_links_header--closed')).to.be.true;
     });
 
+    context('with knowledge of top level article section headings', () => {
+
+      let docFake;
+      let winFake;
+      let viewSelector;
+
+      beforeEach(() => {
+        docFake = buildFakeDocument(700, 700);
+        winFake = buildFakeWindow(700, 700);
+        viewSelector = new ViewSelector($elm);
+      });
+
+      const buildFakeElement = function (top, left, innerHTML) {
+        return {
+          getBoundingClientRect: function () {
+            return {
+              top: top,
+              left: left
+            };
+          },
+          innerHTML: innerHTML
+        };
+      };
+
+      const buildFakeDocument = function (height, width) {
+        return {
+          documentElement: {
+            clientHeight: height,
+            clientWidth: width
+          }
+        };
+      };
+
+      const buildFakeWindow = function (height, width) {
+        return {
+          innerHeight: height,
+          innerWidth: width
+        };
+      };
+
+      it('can identify the first section heading in view when it is the first logical heading', () => {
+        const fakeEls = [
+          buildFakeElement(0, 0),
+          buildFakeElement(200, 0)
+        ];
+        expect(viewSelector.findFirstInView(fakeEls, docFake, winFake)).to.deep.equal(fakeEls[0]);
+      });
+
+      it('can identify the first section heading in view when it is not the first logical heading', () => {
+        const fakeEls = [
+          buildFakeElement(-200, 0),
+          buildFakeElement(600, 0)
+        ];
+        expect(viewSelector.findFirstInView(fakeEls, docFake, winFake)).to.deep.equal(fakeEls[1]);
+      });
+
+      describe('identifying a section to highlight the link to', () => {
+
+        let firstHeadingText;
+
+        beforeEach(() => {
+          firstHeadingText = 'Text of the first heading';
+        });
+
+        context('when the first viewable section heading is the first logical section heading', () => {
+
+          it('identifies the first section heading as the section to highlight the link to, regardless of the heading\'s top position',
+             () => {
+              const elPositions = [ { top: 0, left: 0 }, { top: 60, left: 0 } ];
+              elPositions.forEach((position) => {
+                const fakeFirstHeading = {
+                  el: buildFakeElement(position.top, position.left, firstHeadingText),
+                  findClosest: function () {
+                    return {
+                      previousElementSibling: 'I am the previousElementSibling'
+                    };
+                  }
+                };
+                spy(fakeFirstHeading, 'findClosest');
+
+                ViewSelector.findSectionForLinkHighlight(fakeFirstHeading.el, firstHeadingText,
+                                                         fakeFirstHeading.findClosest);
+                expect(fakeFirstHeading.findClosest.calledWithExactly(fakeFirstHeading.el,
+                                                                      '.article-section')).to.be.true;
+                expect(fakeFirstHeading.findClosest.returned(
+                  {previousElementSibling: 'I am the previousElementSibling'})).to.be.true;
+                fakeFirstHeading.findClosest.restore();
+              });
+
+           });
+
+        });
+
+        context('when the first viewable section heading is not the first logical section heading', () => {
+
+          context(
+            'and it is less than 48px lower than the top of the top of the viewport',
+            () => {
+
+              const fakeSecondHeading = {
+                el: buildFakeElement(47, 0, 'Second heading text'),
+                findClosest: function () {
+                  return {
+                    previousElementSibling: 'I am the previousElementSibling'
+                  };
+                }
+              };
+              spy(fakeSecondHeading, 'findClosest');
+
+              it(
+                'identifies that section heading\'s section as the section to highlight the link to',
+                () => {
+                  ViewSelector.findSectionForLinkHighlight(fakeSecondHeading.el, firstHeadingText,
+                                                           fakeSecondHeading.findClosest);
+                  expect(fakeSecondHeading.findClosest.calledWithExactly(fakeSecondHeading.el,
+                                                                        '.article-section')).to.be.true;
+                  expect(fakeSecondHeading.findClosest.returned(
+                    {previousElementSibling: 'I am the previousElementSibling'})).to.be.true;
+                  fakeSecondHeading.findClosest.restore();
+                });
+
+            });
+
+          context(
+            'and it is 48px or more below the top of the viewport',
+            () => {
+
+              const fakeSecondHeading = {
+                el: buildFakeElement(48, 0, 'Second heading text'),
+                findClosest: function () {
+                  return {
+                    previousElementSibling: 'I am the previousElementSibling'
+                  };
+                }
+              };
+              spy(fakeSecondHeading, 'findClosest');
+
+              it(
+                'identifies the section following the section heading\'s section as the section to highlight the link to',
+                () => {
+                  const obs = ViewSelector.findSectionForLinkHighlight(fakeSecondHeading.el, firstHeadingText,
+                                                           fakeSecondHeading.findClosest);
+                  expect(fakeSecondHeading.findClosest.calledWithExactly(fakeSecondHeading.el,
+                                                                         '.article-section')).to.be.true;
+                  expect(obs).to.equal('I am the previousElementSibling');
+                  fakeSecondHeading.findClosest.restore();
+                });
+
+            });
+
+        });
+
+      });
+
+      describe('identification of the section link to highlight', () => {
+
+        let $target;
+        let $idOfTarget;
+
+        beforeEach(() => {
+          $idOfTarget = 'introduction';
+          $target = ViewSelector.findLinkToHighlight($elm, `[href="#${$idOfTarget}"]`);
+        });
+
+        it('identifies the jump link to the required section', () => {
+          expect($target.innerHTML).to.equal('Introduction');
+        });
+
+        it('highlights the jump link to the required section', () => {
+          ViewSelector.updateHighlighting($target, viewSelector.jumpLinks);
+          expect($target.classList.contains('view-selector__jump_link--active')).to.be.true;
+        });
+
+        it('clears the jump link highlight on all but the required section', () => {
+          const $notTarget = $elm.querySelector('[href="#results"]');
+          // Set the class that the OUT should remove
+          $notTarget.classList.add('view-selector__jump_link--active');
+          ViewSelector.updateHighlighting($target, viewSelector.jumpLinks);
+          expect($notTarget.classList.contains('view-selector__jump_link--active')).to.be.false;
+          [].forEach.call(viewSelector.jumpLinks, ($link) => {
+            if ($link.href !== $target.href)
+              expect($link.classList.contains('view-selector__jump_link--active')).to.be.false;
+          });
+        });
+
+      });
+
+    });
+
+    it('maintains a list of top level article section headings', () => {
+      const expectedHeadingList = ['headingOne', 'headingTwo'];
+      const doc = {
+        querySelectorAll: () => {
+          return expectedHeadingList;
+        }
+      };
+      spy(doc, 'querySelectorAll');
+      const headingList = ViewSelector.getAllCollapsibleSectionHeadings(doc);
+      expect(doc.querySelectorAll.calledWithExactly(
+        '[data-behaviour="ArticleSection"] > .article-section__header .article-section__header_text')).to.be.true;
+      expect(headingList).to.have.length(2);
+      expect(headingList).to.equal(expectedHeadingList);
+      doc.querySelectorAll.restore();
+
+    });
 
   });
 
@@ -190,5 +411,6 @@ describe('A ViewSelector Component', function () {
 
     });
   });
+
 
 });
