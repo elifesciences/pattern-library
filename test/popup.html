@@ -22,12 +22,25 @@
     -->
 
 
-    <a href="#test" data-behaviour="Popup">
+    <a id="example" href="#test" data-behaviour="Popup">
       I'm a reference
     </a>
 
+    <div data-popup-contents="test" id="test"><p>I'm body contents of #test</p></div>
 
-    <div data-popup-contents="test" id="test"><p>I'm body contents</p></div>
+    <a id="example-another" href="#another" data-behaviour="Popup">
+      I'm another reference
+    </a>
+
+    <div data-popup-contents="another" id="another"><p>I'm body contents of #another</p></div>
+
+    <a id="self-example" href="#self-example" data-behaviour="Popup" data-popup-self="true">
+      I'm self-example contents 
+    </a>
+
+    <div id="self-example-wrapped" data-behaviour="Popup" data-popup-self="true" data-popup-wrapper="true">
+      I'm self-example-wrapped contents 
+    </div>
 
     <!--
       Load test code

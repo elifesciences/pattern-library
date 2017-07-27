@@ -1,9 +1,12 @@
-<header
+{{#image}}
+<div class="content-header-image-wrapper{{^image.credit}} content-header-image-wrapper--no-credit{{/image.credit}}">
+{{/image}}
+  <header
     class="content-header {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} clearfix"
     data-behaviour="ContentHeader">
 
   {{#image}}
-    <picture class="content-header__picture">
+    <picture class="content-header__picture"{{#credit}} aria-labelledby="{{elementId}}"{{/credit}}>
       {{#sources}}
         <source srcset="{{srcset}}"
                 {{#type}}type="{{type}}"{{/type}}
@@ -156,4 +159,24 @@
     </div>
   {{/meta}}
 
+  {{#image.credit}}
+    {{#overlay}}
+      <div class="content-header__image-credit content-header__image-credit--overlay" id="{{elementId}}">{{{text}}}</div>
+    {{/overlay}}
+  {{/image.credit}}
+
 </header>
+
+{{#audioPlayer}}
+  {{> molecules-audio-player}}
+{{/audioPlayer}}
+
+{{#image.credit}}
+  {{^overlay}}
+      <div class="wrapper"><div class="content-header__image-credit" id="{{elementId}}">{{{text}}}</div></div>
+  {{/overlay}}
+{{/image.credit}}
+
+{{#image}}
+  </div>
+{{/image}}

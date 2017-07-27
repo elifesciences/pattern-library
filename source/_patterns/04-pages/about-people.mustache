@@ -1,0 +1,42 @@
+<div class="global-wrapper">
+  <div class="global-inner">
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+
+    <main role="main" class="main blg-margin-bottom-large">
+
+      {{#pageAboutElife}}
+        {{> organisms-content-header }}
+      {{/pageAboutElife}}
+
+
+      {{#sectionsListingLink}}
+        <div class="wrapper">
+          {{> atoms-section-listing-link}}
+        </div>
+      {{/sectionsListingLink}}
+
+      <div class="wrapper u-pad-top-lg">
+
+        {{#profiles}}
+          {{> organisms-about-profiles }}
+        {{/profiles}}
+
+      </div>
+
+      {{#sectionsListing}}
+        {{> molecules-section-listing}}
+      {{/sectionsListing}}
+
+    </main>
+
+    {{#emailCta}}
+      {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+  </div> {{! /.global-inner }}
+</div> {{! /.global-wrapper }}

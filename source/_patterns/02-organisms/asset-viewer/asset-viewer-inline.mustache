@@ -3,6 +3,7 @@
     class="asset-viewer-inline asset-viewer-inline--{{variant}} {{#classes}}{{classes}}{{/classes}}"
     data-variant="{{variant}}"
     data-behaviour="{{^isSupplement}}AssetNavigation{{/isSupplement}} AssetViewer ToggleableCaption"
+    data-selector=".caption-text__body"
   {{#isSupplement}}
     data-parent-asset-id="{{parentId}}"
     data-supplement-ordinal="{{supplementOrdinal}}"

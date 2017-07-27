@@ -136,6 +136,10 @@
     @include blg-pad-top--small-to-medium();
   }
 
+  .content-header-image-wrapper + &.wrapper--listing {
+    padding-top: 0;
+  }
+
 }
 
 /**

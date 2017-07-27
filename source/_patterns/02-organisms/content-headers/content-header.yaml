@@ -3,6 +3,7 @@ assets:
     - content-header.css
     - $ref: ../../00-atoms/components/button.yaml#/assets/css
     - $ref: ../../01-molecules/components/meta.yaml#/assets/css
+    - $ref: ../../01-molecules/components/audio-player.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/select-nav.yaml#/assets/css
   js: []
 schema:
@@ -15,7 +16,24 @@ schema:
     longTitle:
       type: boolean
     image:
-      $ref: ../../00-atoms/components/picture.yaml#/schema
+      allOf:
+        - $ref: ../../00-atoms/components/picture.yaml#/schema
+        - properties:
+            credit:
+              type: object
+              properties:
+                text:
+                  type: string
+                  minLength: 1
+                elementId:
+                  type: string
+                  minLength: 1
+                overlay:
+                  type: boolean
+                  default: false
+              required:
+                - text
+                - elementId
     impactStatement:
       type: string
       minLength: 1
@@ -115,6 +133,8 @@ schema:
       $ref: ../../01-molecules/navigation/select-nav.yaml#/schema
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
+    audioPlayer:
+      $ref: ../../01-molecules/components/audio-player.yaml#/schema
   required:
     - title
   dependencies:

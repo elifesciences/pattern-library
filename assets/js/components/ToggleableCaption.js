@@ -1,27 +1,36 @@
 'use strict';
 const clipper = require('text-clipper');
+const utils = require('../libs/elife-utils')();
 
 module.exports = class ToggleableCaption {
 
   constructor($elm, _window = window, doc = document) {
     this.window = _window;
     this.doc = doc;
+    this.thresholdWidth = $elm.dataset.thresholdWidth;
 
     this.$elm = $elm;
     if (!($elm instanceof HTMLElement)) {
       return;
     }
 
-    this.$caption = ToggleableCaption.findCaption(this.$elm);
+    this.$caption = this.$elm.querySelector(this.$elm.getAttribute('data-selector'));
     if (!(this.$caption instanceof HTMLElement)) {
       return;
     }
 
     this.setupToggle();
-  }
 
-  static findCaption($elm) {
-    return $elm.querySelector('.caption-text__body');
+    if (!this.truncatedHtml) {
+      return;
+    }
+
+    if (this.thresholdWidth !== null) {
+      this.toggleToggle();
+      this.window.addEventListener('resize', utils.debounce(() => this.toggleToggle(), 150));
+    } else {
+      this.toggleCaption();
+    }
   }
 
   setupToggle() {
@@ -31,6 +40,9 @@ module.exports = class ToggleableCaption {
     let fullChildren = [];
     [].forEach.call(this.$caption.childNodes, (child) => fullChildren.push(child.outerHTML));
     fullChildren = fullChildren.filter((child) => child);
+
+    this.originalHtml = fullChildren.join(' ');
+
     fullChildren.push(seeLessButton);
 
     let truncatedChildren = fullChildren;
@@ -52,8 +64,6 @@ module.exports = class ToggleableCaption {
 
     this.fullHtml = fullChildren.join(' ');
     this.truncatedHtml = truncatedChildren.join(' ');
-
-    this.toggleCaption();
   }
 
   toggleCaption() {
@@ -75,6 +85,30 @@ module.exports = class ToggleableCaption {
     }
 
     this.$caption.querySelector('.caption-text__toggle').addEventListener('click', this.toggleCaption.bind(this));
+  }
+
+  toggleToggle() {
+    if (this.window.matchMedia(`(min-width: ${this.thresholdWidth}px)`).matches) {
+      this.removeToggle();
+    } else {
+      this.restoreToggle();
+    }
+  }
+
+  removeToggle() {
+    const $toggle = this.$caption.querySelector('.caption-text__toggle');
+
+    if ($toggle) {
+      this.$caption.innerHTML = this.originalHtml;
+    }
+  }
+
+  restoreToggle() {
+    const $toggle = this.$caption.querySelector('.caption-text__toggle');
+
+    if (!$toggle) {
+      this.toggleCaption();
+    }
   }
 
 };

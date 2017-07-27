@@ -1,0 +1,278 @@
+{
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "path": "#mainMenu",
+          "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "pictureClasses": "nav-primary__search_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Labs",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Submit my research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--button",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        }
+      ]
+    },
+
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
+
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
+    }
+
+  },
+
+  "profiles": {
+    "heading": {
+      "heading": "Senior editors"
+    },
+    "items": [
+      {
+        "name": "Philip Cole",
+        "role": "Senior Editor",
+        "image": {
+          "fallback": {
+            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2017-05/phil_cole1.jpg/0,0,1489,840/250,141/0/default.jpg",
+            "altText": ""
+          }
+        },
+        "profile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor euismod mi. Morbi facilisis eros in mi consequat cursus. Nulla malesuada pretium mauris, vitae gravida diam laoreet ac. Curabitur ornare libero sed porta molestie. Ut ut sem in libero tincidunt lobortis. Nullam eros nisi, malesuada vitae leo sit amet, bibendum congue justo. Morbi iaculis lectus erat, vel dapibus metus posuere sit amet. Phasellus eget scelerisque massa. Mauris hendrerit ex in nisl ultricies elementum. Donec tellus risus, rhoncus molestie rutrum et, cursus eget mi. Praesent et elit tellus. Curabitur id sodales turpis. Fusce pulvinar aliquam commodo. Cras vitae dolor vitae metus dignissim auctor.Cras nulla purus, rhoncus et mollis in, imperdiet sed metus. In non porttitor nibh. In sit amet ipsum eget nisl laoreet tincidunt. Donec iaculis nibh quis lacus viverra sagittis. Phasellus imperdiet congue imperdiet.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc nisi tortor, rhoncus.</p><dl><dt>Expertise</dt><dd>Cell Biology</dd><dt>Competing interests statement</dt><dd>Donec tellus</dl>"
+      },
+      {
+        "name": "Ivan Dikic",
+        "role": "Senior Editor",
+        "image": {
+          "fallback": {
+            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2014-04/id.jpg/0,66,1280,722/250,141/0/default.jpg",
+            "altText": ""
+          }
+        },
+        "profile": "<p>Ivan Dikic is a Professor and Chairman of Institute of Biochemistry II at the Medical School Goethe University and a member of the Buchmann Institute for Molecular Life Sciences in Frankfurt. He was trained as a medical doctor at Zagreb University and obtained his PhD in molecular biology with Joseph Schlessinger. His career is focused on studying intracellular signaling initially via protein tyrosine kinases where he revealed how multiple monoubiquitination controls EGFR endocytosis. His lab has pioneered a concept of Ubiquitin as a multivalent cellular signal that regulates multitude of physiological and pathophysiological processes including DNA repair, inflammation, cancer, infection and proteasomal degradation. Ivan’s group also provided structural and functional evidence for a new type of Ub chains that are Met1-linked (called linear ubiquitination) in promoting the NF-kB signaling. His current interests focus on selective autophagy, which is essential for the clearance of protein aggregates, pathogens, and damaged mitochondria from the cell. He has received many awards for his work including the AACR Award for Outstanding Achievement in Cancer Research, the Award of European Association for Cancer Research, the Hans Krebs Prize, the Leibniz Award and the Ernst Jung Award in Medicine. He is a Member of the German Academy for Sciences Leopoldina, Academia Europaea, Croatian Academy of Medical Sciences and the European Molecular Biology Organization.</p><dl><dt>Expertise</dt><dd>Biochemistry</dd><dd>Cell Biology</dd><dt>Research focus</dt><dd>ubiquitination</dd><dd>autophagy</dd><dd>endocytosis</dd><dd>inflammation</dd><dd>cancer biology</dd></dl>"
+      },
+      {
+        "name": "John Kuriyan",
+        "role": "Senior Editor",
+        "image": {
+          "fallback": {
+            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2012-03/jk_3.jpg/0,189,3893,2196/250,141/0/default.jpg",
+            "altText": ""
+          }
+        },
+        "profile": "<p>John Kuriyan is Professor of Molecular and Cell Biology and also of Chemistry at the University of California, Berkeley. Before this, he was on the faculty at The Rockefeller University, New York, where he began his career in 1987, leaving for Berkeley in 2001. Since 1990, he has been an Investigator of the Howard Hughes Medical Institute. Kuriyan completed undergraduate studies in chemistry at Juniata College, Huntingdon, PA. His doctoral research, on the dynamics of proteins, was carried out at MIT, under the guidance of Greg Petsko and Martin Karplus (Harvard University). Kuriyan’s research is aimed at understanding the structure and mechanism of the enzymes and molecular switches that carry out cellular signal transduction and DNA replication. His laboratory uses x-ray crystallography to determine the three-dimensional structures of proteins involved in signaling and replication, as well as biochemical, biophysical, and computational analyses to elucidate mechanisms. Kuriyan was elected to the US National Academy of Sciences in 2001.</p>"
+      },
+      {
+        "name": "Wenhui Li",
+        "role": "Senior Editor",
+        "image": {
+          "fallback": {
+            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2014-08/wenhui20li.jpg/0,7,866,489/250,141/0/default.jpg",
+            "altText": ""
+          }
+        },
+        "profile": "<p>Wenhui Li is an Investigator of the National Institute of Biological Sciences (NIBS), Beijing, China. He received a bachelor’s degree in medicine from the Medical School of Lanzhou University in 1994 and his PhD from the Peking Union Medical College & Chinese Academy of Medical Sciences in 2001. After completing his postdoctoral studies at Harvard Medical School, Li joined NIBS as an Assistant Investigator in 2007 and rose to the rank of Investigator in 2015. His team at NIBS identified a liver bile acids transporter (sodium taurocholate co-transporting polypeptide, NTCP) as a functional receptor for Hepatitis B and D virus. Li’s research interest has been focusing on the molecular mechanisms of viral infections: currently his laboratory combines virology, biochemistry, immunology, and chemical biology to investigate molecular mechanisms of HBV/HDV infection.</p>"
+      },
+      {
+        "name": "Vivek Malhotra",
+        "role": "Senior Editor",
+        "image": {
+          "fallback": {
+            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2017-06/vivek_malhotra_0.jpg/0,258,500,282/250,141/0/default.jpg",
+            "altText": ""
+          }
+        },
+        "profile": "<p>Vivek Malhotra was a professor in the biology division at UC San Diego from 2007 and is now the ICREA Professor and Chair of the Cell and Developmental Biology at Center for Genomic Regulation (CRG) in Barcelona. His research focuses on a central station of the secretory pathway, the Golgi complex. Specifically, his work has resulted in the identification of the machinery required for the sorting and packaging of secretory cargoes. His recent work has uncovered a novel secretory routing that bypasses the conventional pathway of protein secretion. He has identified new genes required for the export of bulky collagens and the regulated secretion of mucins. He received his BSc from Stirling University and was a Pirie–Reid scholar at Oxford; a Damon Runyon Walter Winchell and an American Cancer Society postdoctoral fellow at Stanford; and Basil O’Conner scholar, established Investigator of the American Heart Association, and Senior Investigator of Sandler’s Foundation for Asthma at UC San Diego. He received the MERCK award from the American Society of Biochemistry and Molecular Biology, is a fellow of the American association of the arts and science, and is an elected EMBO member.</p>"
+      }
+    ]
+  },
+
+  "pageAboutElife": {
+    "title": "About eLife",
+    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris."
+  },
+
+  "sectionsListingLink": {
+    "targetFragmentId": "sectionsListing",
+    "text": "See all about sections"
+  },
+
+  "sectionsListing": {
+    "id": "sectionsListing",
+    "singleLine": true,
+    "sections": [
+      {
+        "url": "#",
+        "name": "What we publish",
+        "isCurrent": true
+      },
+      {
+        "url": "#",
+        "name": "Editors & people"
+      },
+      {
+        "url": "#",
+        "name": "Peer review"
+      },
+      {
+        "url": "#",
+        "name": "Openness"
+      },
+      {
+        "url": "#",
+        "name": "Reproducibility"
+      },
+      {
+        "url": "#",
+        "name": "Incentives"
+      }
+    ]
+  },
+
+
+  "mainMenu":{
+    "links": {
+      "items": [
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Author guide", "url": "#aut"},
+        {"name": "Reviewer guide", "url": "#rev"},
+        {"name": "About", "url": "#abo"},
+        {"name": "Inside eLife", "url": "#ins"},
+        {"name": "Careers", "url": "#car"},
+        {"name": "Labs", "url": "#lab"}
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms and policy", "url": "#" },
+    { "name": "Inside eLife", "url": "#" },
+    { "name": "Monthly archive", "url": "#" },
+    { "name": "Labs", "url": "#" },
+    { "name": "For the press", "url": "#" },
+    { "name": "Resources", "url": "#" }
+  ]
+
+}

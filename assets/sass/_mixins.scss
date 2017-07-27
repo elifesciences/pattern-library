@@ -361,3 +361,10 @@
   @include font-size(11);
   line-height: 1.6363636364; /* 18px on 11px font */
 }
+
+@mixin popup-large-ancillary-text() {
+  color: $color-text--reverse;
+  font-family: $font-secondary;
+  @include font-size(14);
+  line-height: #{(20/14)};
+}
