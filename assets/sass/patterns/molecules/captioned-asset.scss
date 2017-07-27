@@ -2,12 +2,13 @@
 
 .captioned-asset {
   margin: 0;
-  @include margin($blg-space-small-in-px, "bottom");
-  @include padding($blg-space-small-in-px, "top");
-}
+  @include margin($blg-space-medium-in-px, "top");
+  @include margin($blg-space-medium-in-px, "bottom");
 
-.asset-viewer-inline .captioned-asset {
-  padding-top: 0;
+  .asset-viewer-inline & {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .captioned-asset__picture {
