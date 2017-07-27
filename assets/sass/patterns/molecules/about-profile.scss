@@ -53,13 +53,11 @@
   max-width: 100%;
   width: 100%;
 
-  @media only all and (min-width: 700px) {
+  @media only all and (min-width: #{$bkpt-site--medium}px) {
     float: right;
     width: 250px;
     @include margin(24, "left");
-  }
 
-  @media only all and (min-width: #{$bkpt-site--medium}px) {
     .about-profiles__item .about-profile--popup & {
       float: none;
       width: 100%;
