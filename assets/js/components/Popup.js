@@ -3,11 +3,25 @@ const utils = require('../libs/elife-utils')();
 module.exports = class Popup {
 
   constructor($elm, _window = window, doc = document) {
-    if (!$elm.hash || $elm.host !== _window.location.host || !$elm.hash.match(/^#[a-z]/i)) {
-      return;
+    let $link;
+
+    if ($elm.dataset.popupWrapper) {
+      $link = utils.buildElement('a');
+      $link.classList.add('popup__wrapper');
+      $elm.parentNode.insertBefore($link, $elm);
+      $link.appendChild($elm);
+    } else {
+      $link = $elm;
     }
 
-    this.$link = $elm;
+    if (!$elm.dataset.popupSelf) {
+      if (!$link.hash || $link.host !== _window.location.host || !$link.hash.match(/^#[a-z]/i)) {
+        return;
+      }
+    }
+
+    this.$link = $link;
+    this.$elm = $elm;
     this.isOpen = false;
     this.resolver = null;
     this.window = _window;
@@ -119,6 +133,10 @@ module.exports = class Popup {
   }
 
   requestContents(e) {
+    if (this.$elm.dataset.popupSelf) {
+      this.bodyContents = this.$elm.cloneNode(true);
+      return Promise.resolve(this.render(e));
+    }
 
     // We await on the contents, which might be XHR.
     return this.getResolver(this.$link).then(r => {
@@ -162,7 +180,8 @@ module.exports = class Popup {
     if ($content instanceof HTMLElement) {
       const $ancillary = utils.buildElement('div', ['popup__content__ancillary']);
       const exclusions = ['reference__title', 'reference__authors_list',
-                          'reference__authors_list_suffix', 'author-details__name'];
+                          'reference__authors_list_suffix', 'author-details__name',
+                          'about-profile__name', 'about-profile__role'];
       const ancillaries = [];
 
       // If an immediate child of content does not have an excluded class, it's ancillary

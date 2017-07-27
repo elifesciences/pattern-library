@@ -7,9 +7,11 @@
 
 // May contain arbitrary html. Might need to refine if too blunt an instrument.
 .caption-text__body,
-.caption-text__body > * {
+.caption-text__body > *,
+.caption-text__body li,
+.caption-text__body dt,
+.caption-text__body dd {
   @include fig-caption-text-typeg(0);
-  font-weight: normal;
 
   & sup {
     font-size: 75%;
@@ -52,4 +54,14 @@
   position: relative;
   top: -24px;
   top: get-rem-from-px(24) * -1rem;
+
+  &:before {
+    content: "\00ab\00a0";
+  }
+}
+
+.caption-text__toggle--see-more {
+  &:after {
+    content: "\00a0\00bb";
+  }
 }
