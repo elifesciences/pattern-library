@@ -2,7 +2,8 @@
 
 .box {
   border-bottom: 1px solid $color-text-dividers;
-  @include padding($blg-space-small-in-px 0 $blg-space-small-in-px - 1);
+  @include padding($blg-space-small-in-px - 1, "bottom");
+  @include margin($blg-space-medium-in-px, "top");
   @include margin($blg-space-medium-in-px, "bottom");
 }
 
