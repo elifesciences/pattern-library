@@ -1,8 +1,23 @@
 @import "../../definitions";
 
-.table-wrap {
+.table {
+  @include margin($blg-space-medium-in-px, "top");
+  @include margin($blg-space-medium-in-px, "bottom");
+
+  .captioned-asset & {
+    @include margin($blg-space-small-in-px, "top");
+    @include margin($blg-space-small-in-px, "bottom");
+  }
+}
+
+.table__table {
   position: relative;
   overflow: auto;
+
+  .table & {
+    @include margin($blg-space-small-in-px, "top");
+    @include margin($blg-space-small-in-px, "bottom");
+  }
 }
 
 // Tables are usually delivered as a blob of HTML from an upstream application, not via the pattern system.
@@ -11,6 +26,11 @@ table {
   @include margin($blg-space-small-in-px, "top");
   @include margin($blg-space-small-in-px, "bottom");
   width: 100%;
+
+  .table__table & {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   & a {
     color: $color-primary;
