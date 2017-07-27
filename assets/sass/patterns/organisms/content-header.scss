@@ -695,7 +695,8 @@ li.content-header__institution_list_item--last .content-header__institution:afte
 }
 
 .content-header__image-credit--overlay {
-  color: transparentize(white, 0.6);
+  color: inherit;
+  opacity: 0.4;
   position: absolute;
   bottom: 0;
   @include blg-spacing("right", "extra-small");
