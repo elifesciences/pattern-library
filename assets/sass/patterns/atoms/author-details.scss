@@ -50,14 +50,7 @@
 }
 
 .author-details__list {
-  display: inline;
   @include nospace("bottom");
-  @include nospace("left");
-  list-style-type: none;
-
-  & > li {
-    display: inline;
-  }
 }
 
 .author-details__text {
