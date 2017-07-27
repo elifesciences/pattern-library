@@ -14,7 +14,7 @@ module.exports = class ToggleableCaption {
       return;
     }
 
-    this.$caption = ToggleableCaption.findCaption(this.$elm);
+    this.$caption = this.$elm.querySelector(this.$elm.getAttribute('data-selector'));
     if (!(this.$caption instanceof HTMLElement)) {
       return;
     }
@@ -31,10 +31,6 @@ module.exports = class ToggleableCaption {
     } else {
       this.toggleCaption();
     }
-  }
-
-  static findCaption($elm) {
-    return $elm.querySelector('.caption-text__body');
   }
 
   setupToggle() {
