@@ -33,15 +33,15 @@ const sourcemaps        = require('gulp-sourcemaps');
 const stylelint         = require('stylelint');
 const syntax_scss       = require('postcss-scss');
 const uglify            = require('gulp-uglify');
-// const watchify          = require('watchify');
 
 const js3rdPartySource = './assets/js/libs/third-party/**/*.js';
-const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource];
-// TODO: Refactor dir structure to be less confusing: 'source' in the dest path?!
+const jsPolyfills = './assets/js/libs/polyfills.js';
+const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource, '!' + jsPolyfills];
 const jsDest = './source/assets/js';
 
 let options = minimist(process.argv);
 let environment = options.environment || 'development';
+let mocha_grep = options['mocha-grep'] || null;
 
 let server;
 
@@ -62,9 +62,10 @@ gulp.task('generateIndividualStyles', ['buildStyleFiles'], () => {
 
 gulp.task('buildStyleFiles', ['sass:lint'], () => {
 
-  return gulp.src(['assets/sass/**/*.scss', '!assets/sass/[^_]*.scss'])
+  return gulp.src(['assets/sass/base.scss', 'assets/sass/patterns/**/*.scss'])
     .pipe(compass(
       {
+        config_file: 'config.rb',
         css: 'source/assets/css/tmp',
         sass: 'assets/sass',
         sourcemap: true,
@@ -107,10 +108,9 @@ gulp.task('sass:lint', ['sass:clean'], () => {
 
   let processors = [
     stylelint(),
-    // Pretty reporting config
     reporter({
       clearMessages: true,
-      // throwError: true
+      throwError: true
     })
   ];
 
@@ -129,23 +129,17 @@ gulp.task('sass:clean', () => {
   del(['./source/assets/css/*']);
 });
 
+gulp.task('img:clean', () => {
+  del(['./source/assets/img']);
+});
+
 /******************************************************************************
  * Image optimisation/copy task
  * Optimises images for production and copies them into the public assets dir.
  ******************************************************************************/
-
+// Regenerating images is time-consuming. Only call img:clean as a dependency when necessary
 gulp.task('img', () => {
-
-  // delete all source files + folders
-  /***
-    this would add lots of time to the build task. Only really needs doing on 'release'. Revisit later.
-  ***/
-  // del(['./source/assets/img']);
-
   return gulp.src('./assets/img/**/*')
-
-      // image minification
-      // all files are piped through this package. Remove this pipe if you simply want to copy files without being minified.
       .pipe(imagemin({
         progressive: true,
         svgoPlugins: [
@@ -153,11 +147,8 @@ gulp.task('img', () => {
           { removeUselessStrokeAndFill: false }
         ],
       }))
-
-      // output to dest folder
       .pipe(gulp.dest('./source/assets/img'));
 });
-
 
 /******************************************************************************
  * Font handling task
@@ -184,11 +175,9 @@ gulp.task('fonts', () => {
  * Creates a sourcemap.
  ******************************************************************************/
 
-gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests','js:extLibs'], () => {
+gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests', 'js:extLibs'], () => {
 
-    return browserify('./assets/js/main.js', {
-            debug: true
-          })
+    return browserify('./assets/js/main.js', { debug: true })
           .transform(babel, {
             presets: ["es2015"]
           })
@@ -196,18 +185,11 @@ gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests','js:extLibs'], () => {
           .on('error', (err) => {
             console.error(err.message);
           })
-          // Pass desired output filename to vinyl-source-stream
           .pipe(source('main.js'))
           .pipe(buffer())
-
           .pipe(sourcemaps.init({loadMaps: true}))
-          //uglify output for production
           .pipe(environment === 'production' ? uglify() : gutil.noop())
-
-          // sourcemaps
           .pipe(sourcemaps.write('./'))
-
-          // output
           .pipe(gulp.dest(jsDest))
           .pipe(reload());
 });
@@ -228,13 +210,15 @@ gulp.task('js:extLibs', ['js:clean'], () => {
 gulp.task('js:hint', () => {
   return gulp.src(jsSource)
      .pipe(jshint())
-     .pipe(jshint.reporter('default'));
+     .pipe(jshint.reporter('default'))
+     .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('js:cs', () => {
   return gulp.src(jsSource)
     .pipe(jscs())
-    .pipe(jscs.reporter());
+    .pipe(jscs.reporter())
+    .pipe(jscs.reporter('fail'));
 });
 
 gulp.task('browserify-tests', (done) => {
@@ -262,7 +246,13 @@ gulp.task('browserify-tests', (done) => {
 
 gulp.task('test', ['browserify-tests', 'js'], () => {
   return gulp.src('./test/*.html')
-    .pipe(mochaPhantomjs({reporter: 'spec', 'ignore-resource-errors': true}))
+    .pipe(mochaPhantomjs({
+      reporter: 'spec',
+      mocha: {
+        grep: mocha_grep
+      },
+      'ignore-resource-errors': true
+    }))
     .pipe(reload());
 });
 
@@ -281,7 +271,6 @@ gulp.task('fonts:watch', () => {
 });
 
 gulp.task('js:watch', () => {
-  // gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['test']);
   gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['js']);
 });
 
@@ -302,7 +291,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/elife-utils.html'});
+    browserSync({proxy: 'localhost:8080', startPath: 'test/viewselector.html'});
   } else {
     return gutil.noop;
   }

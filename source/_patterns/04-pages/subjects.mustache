@@ -2,11 +2,13 @@
 
   <div class="global-inner">
 
-    {{#siteHeader}}
-      {{> organisms-site-header }}
-    {{/siteHeader}}
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
 
-    <main role="main">
+    <main role="main" class="main">
 
       <div class="wrapper">
 
@@ -32,7 +34,9 @@
 
     </main>
 
-    {{> organisms-email-cta }}
+    {{#emailCta}}
+      {{> organisms-email-cta }}
+    {{/emailCta}}
 
     {{> organisms-footer }}
 

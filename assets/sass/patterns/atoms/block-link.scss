@@ -2,16 +2,27 @@
 
 @mixin height-constrained() {
 
+  border: 1px solid $color-text-dividers;
+
   .block-link__link {
     @include height(80);
   }
 
+  .block-link__picture {
+    display: none;
+    @media only all and (min-width: #{$bkpt-block-link}px) {
+      display: inline-block;
+    }
+  }
+
+  @media only all and (min-width: #{$bkpt-block-link}px) {
+    border: 0;
+  }
 }
 
 @mixin width-constrained() {
 
   .block-link {
-    background-color: $color-primary;
     margin-bottom: 0;
 
     // Block links are only ever found as a descendant of a grid-listing.
@@ -44,8 +55,8 @@
 }
 
 .block-link {
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: $color-primary;
+  position: relative;
 }
 
 .block-link__link {
@@ -78,35 +89,57 @@
 
 // other .block-link useage is within .archive-nav-link
 .block-link:not(.block-link--grid-listing) {
-  background-color: $color-primary;
   @include width-constrained();
-}
-
-// .block-link[style] indicates it's being handled by BackgroundImage.js
-.block-link[style] .block-link__link {
-
-  color: $color-text--reverse;
-
-  &:hover {
-    color: $color-text;
-  }
-
 }
 
 @media only all and (min-width: #{$bkpt-block-link}px) {
-
   @include width-constrained();
+}
 
-  @media only all and (min-width: #{$viewport-width-when-site-hits-max-width-in-rem}em) {
+.block-link--image {
+  background-color: transparent;
+}
 
-    .block-link {
-      @include width($med-width-grid-listing-item);
+.block-link__picture {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    .block-link:hover & {
+      background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
     }
-
-    .block-link__link {
-      @include width($med-width-grid-listing-item);
-    }
-
   }
+}
 
+.block-link__image {
+  z-index: -2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  min-width: 100%;
+  max-width: none;
+  transform: translate(-50%, -50%);
+  &:after {
+    // Hide broken images
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }

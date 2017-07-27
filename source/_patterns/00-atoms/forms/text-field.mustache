@@ -7,9 +7,10 @@
 {{/label}}
     <input
         type="{{inputType}}"
-        class="text-field text-field--text {{classNames}}"
+        class="text-field text-field--{{inputType}} {{classNames}}"
         {{#id}} id="{{id}}"{{/id}}
         {{#name}} name="{{name}}"{{/name}}
+        {{#autofocus}} autofocus{{/autofocus}}
         {{#value}} value="{{value}}"{{/value}}
         {{#required}} required="required"{{/required}}
         {{#disabled}} disabled="disabled"{{/disabled}}

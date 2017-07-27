@@ -1,0 +1,83 @@
+{
+  "classes": "grid-listing--image-link",
+  "imageLinks": [
+    {
+      "variant": "grid-listing",
+      "url": "#",
+      "image": {
+        "pictureClasses": "image-link__picture",
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "altText": "Meaningful alt text here please.",
+          "classes": "image-link__img"
+        }
+      }
+    },
+    {
+        "variant": "grid-listing",
+      "url": "#",
+      "image": {
+        "pictureClasses": "image-link__picture",
+        "fallback": {
+          "defaultPath": "https://unsplash.it/200/140/",
+          "srcset": "https://unsplash.it/400/280/ 400w, https://unsplash.it/200/140/ 200w",
+          "altText": "Meaningful alt text here please.",
+          "classes": "image-link__img"
+        }
+      }
+    },
+    {
+      "variant": "grid-listing",
+      "url": "#",
+      "image": {
+        "pictureClasses": "image-link__picture",
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/100/",
+          "srcset": "https://unsplash.it/500/200/ 500w, https://unsplash.it/250/100/ 250w",
+          "altText": "Meaningful alt text here please.",
+          "classes": "image-link__img"
+        }
+      }
+    },
+    {
+      "variant": "grid-listing",
+      "url": "#",
+      "image": {
+        "pictureClasses": "image-link__picture",
+        "fallback": {
+          "defaultPath": "https://unsplash.it/200/140/",
+          "srcset": "https://unsplash.it/400/280/ 400w, https://unsplash.it/200/140/ 200w",
+          "altText": "Meaningful alt text here please.",
+          "classes": "image-link__img"
+        }
+      }
+    },
+    {
+      "variant": "grid-listing",
+      "url": "#",
+      "image": {
+        "pictureClasses": "image-link__picture",
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "altText": "Meaningful alt text here please.",
+          "classes": "image-link__img"
+        }
+      }
+    },
+    {
+      "variant": "grid-listing",
+      "url": "#",
+      "image": {
+        "pictureClasses": "image-link__picture",
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/100/",
+          "srcset": "https://unsplash.it/500/200/ 500w, https://unsplash.it/250/100/ 250w",
+          "altText": "Meaningful alt text here please.",
+          "classes": "image-link__img"
+        }
+      }
+    }
+  ]
+}

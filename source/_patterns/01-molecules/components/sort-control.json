@@ -2,6 +2,6 @@
   "options": [
     { "option": "Date", "sorting": "ascending", "url": "?sortby=date&amp;sort=desc" },
     { "option": "Relevance", "sorting": "descending", "url": "?sortby=relevance&amp;sort=asc" },
-    { "option": "Cite", "sorting": "ascending", "url": "?sortby=cite&amp;sort=desc" }
+    { "option": "Cite", "url": "?sortby=cite&amp;sort=desc" }
   ]
 }

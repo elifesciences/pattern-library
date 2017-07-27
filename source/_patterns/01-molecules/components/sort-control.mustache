@@ -3,7 +3,7 @@
   <div class="sort-control__title">Sort by:</div>
   <ul class="sort-control__options">
     {{#options}}
-    <li class="sort-control__option"><a href="{{url}}" class="sort-control__link sort-control__link--{{sorting}}">{{option}}</a></li>
+    <li class="sort-control__option"><a href="{{url}}" class="sort-control__link{{#sorting}} sort-control__link--{{sorting}}{{/sorting}}">{{option}}</a></li>
     {{/options}}
   </ul>
 </div>

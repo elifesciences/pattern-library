@@ -1,0 +1,40 @@
+assets:
+  css:
+    - section-listing.css
+    - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    id:
+      type: string
+      minLength: 1
+    singleLine:
+      type: boolean
+    labelledBy:
+      type: string
+      minLength: 1
+    listHeading:
+      $ref: ../../00-atoms/components/list-heading.yaml#/schema
+    sections:
+      type: array
+      minItems: 1
+      items:
+        type: object
+        properties:
+          url:
+            type: string
+            minLength: 1
+          name:
+            type: string
+            minLength: 1
+          isCurrent:
+            type: boolean
+        required:
+          - url
+          - name
+  required:
+    - id
+    - sections
+    - listHeading

@@ -12,10 +12,11 @@
           "textClasses": "nav-primary__menu_text",
           "path": "#mainMenu",
           "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "nav-primary__menu_icon",
+              "classes": "",
               "altText": "Menu icon"
             },
             "sources": [
@@ -45,10 +46,11 @@
           "textClasses": "visuallyhidden",
           "path": "#",
           "picture": {
+            "pictureClasses": "nav-primary__search_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "nav-primary__search_icon",
+              "classes": "",
               "altText": "Search icon"
             },
             "sources": [
@@ -92,69 +94,35 @@
           "button": {
             "classes": "button--default button--extra-small"
           }
-        },
-        {
-          "text": "Alerts",
-          "classes": "nav-secondary__item nav-secondary__item--notification",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-              "classes": "nav-secondary__notification-icon",
-              "altText": "Notification icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
-              }
-            ]
-          }
-        },
-        {
-          "text": "Profile",
-          "classes": "nav-secondary__item nav-secondary__item--profile",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
-              "classes": "nav-secondary__profile-icon",
-              "altText": "Profile icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
-              }
-            ]
-          }
         }
       ]
     },
 
-    "compactForm": {
-      "formAction" : "/search",
-      "formId": "searchBox",
-      "formMethod": "GET",
-      "label": "Search by keyword or author",
-      "inputType": "search",
-      "inputName": "search",
-      "inputValue": "",
-      "inputPlaceholder": "Search by keyword or author",
-      "ctaText": "Search"
-    },
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
 
-    "subjectFilter": {
-      "name": "subject_filter",
-      "value": "cell_biology",
-      "text": "Cell biology"
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
     }
 
   },
 
   "carousel": {
+    "heading": "Highlights",
     "items": [
       {
         "subjects": {
@@ -169,12 +137,13 @@
             }
           ]
         },
-        "name": "Sensitivity vs stability in neurones",
+        "title": "Sensitivity vs stability in neurones",
+        "longTitle": true,
         "url": "#link-to-article",
         "button": {
           "text": "Read article",
           "path": "#link-to-article",
-          "classes": "button--default button--outline"
+          "classes": "button--outline button--small"
         },
         "meta": {
           "url": "#",
@@ -188,9 +157,11 @@
             "forMachine": "2015-09-10"
           }
         },
-        "backgroundImage": {
-          "lowResImageSource": "http://lorempixel.com/950/400/nature/1",
-          "highResImageSource": "http://lorempixel.com/1900/800/nature/1"
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/1114/336",
+            "altText": ""
+          }
         }
       },
       {
@@ -202,12 +173,13 @@
             }
           ]
         },
-        "name": "Cancer cells follow the leader",
+        "title": "Cancer cells follow the leader",
+        "longTitle": true,
         "url": "#link-to-article",
         "button": {
           "text": "Read article",
           "path": "#link-to-article",
-          "classes": "button--default  button--outline"
+          "classes": "button--outline button--small"
         },
         "meta": {
           "url": "#",
@@ -221,12 +193,12 @@
             "forMachine": "2015-09-10"
           }
         },
-
-        "backgroundImage": {
-          "lowResImageSource": "http://lorempixel.com/950/400/animals/1",
-          "highResImageSource": "http://lorempixel.com/1900/800/animals/1"
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/1114/337",
+            "altText": ""
+          }
         }
-
       },
       {
         "subjects": {
@@ -241,12 +213,13 @@
             }
           ]
         },
-        "name": "Rethinking the origins of mitochondrial architecture",
+        "title": "Rethinking the origins of mitochondria",
+        "longTitle": true,
         "url": "#link-to-article",
         "button": {
           "text": "Read article",
           "path": "#link-to-article",
-          "classes": "button--default  button--outline"
+          "classes": "button--outline button--small"
         },
         "meta": {
           "url": "#LinkToResearchArticles",
@@ -260,26 +233,44 @@
             "forMachine": "2015-09-10"
           }
         },
-        "backgroundImage": {
-          "lowResImageSource": "http://lorempixel.com/950/400/abstract/1",
-          "highResImageSource": "http://lorempixel.com/1900/800/abstract/1"
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/1114/338",
+            "altText": ""
+          }
         }
-
       }
 
     ]
-  },
+  }
+,
 
   "leadPara": {
     "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
     "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
   },
 
-  "subjectListLink": true,
+  "leadParas": {
+    "paras": [
+      {
+        "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
+        "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
+      }
+    ]
+  },
 
-  "subjectsList": {
+  "sectionsListingLink": {
+    "targetFragmentId": "sectionsListing",
+    "text": "See all major subject areas"
+  },
+
+  "sectionsListing": {
+    "id": "sectionsListing",
     "labelledBy": "theIdOfTheLeadParaAssumingThisIsTheHomePage",
-    "subjects": [
+    "listHeading": {
+      "heading": "Major subject areas"
+    },
+    "sections": [
       {
         "url": "#",
         "name": "Biochemistry"
@@ -343,8 +334,371 @@
     ]
   },
 
+  "mainTeasers": [
+    {
+
+      "heading": "Latest research",
+      "items": [
+        {
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Quorum sensing control of Type VI secretion factors restricts the proliferation of quorum-sensing mutants",
+          "url": "#",
+          "secondaryInfo": "Charlotte Majerczyk et al.",
+          "content": "Quorum-sensing control of <i>Burkholderia thailandensis</i> toxin and immunity pairs serves to police quorum-sensing mutants and may represent a general strategy whereby cooperators can police mutants.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 16,
+                  "month": "May",
+                  "year": 2016
+                },
+                "forMachine": "20160516"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
+          },
+
+          "image": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--big"
+          }
+        },
+
+        {
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Epidemiology and Global Health",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Mapping global environmental suitability for Zika virus",
+          "url": "#",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 19,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160419"
+              }
+            },
+            "publishState": {
+              "vor": false
+            }
+          }
+        },
+
+        {
+
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Genomics and evolutionary biology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Evolutionary diversification of the trypanosome haptoglobin-haemoglobin receptor from an ancestral haemoglobin receptor",
+          "url": "#",
+          "secondaryInfo": "Harriet Lane-Serff et al.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 16,
+                  "month": "May",
+                  "year": 2016
+                },
+                "forMachine": "20160516"
+              }
+            },
+            "publishState": {
+              "vor": false
+            }
+          }
+        },
+
+        {
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Epidemiology and Global Health",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "The global antigenic diversity of swine influenza A viruses",
+          "url": "#",
+          "secondaryInfo": "Nicola S Lewis et al.",
+          "content": "Swine populations worldwide are sporadically infected by influenza viruses from humans and birds leading to geographically heterogeneous swine influenza virus populations that pose epizootic and pandemic threats.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 15,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160415"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
+          },
+          "image": {
+            "defaultPath": "https://unsplash.it/70/70/",
+            "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Ecology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Recurring patterns in bacterioplankton dynamics during coastal spring algae blooms",
+          "url": "#",
+          "secondaryInfo": "Hanno Teeling et al.",
+          "content": "Dynamic successive blooms of clades of planktonic marine bacteria that can be observed during blooms of marine algae follow discernible patterns, part of which might be explained by substrate-induced forcing.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 17,
+                  "month": "Jun",
+                  "year": 2016
+                },
+                "forMachine": "2016047"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
+          }
+        }
+
+      ],
+      "loadMore": {
+        "type": "button",
+        "classes": "button--default button--full",
+        "text": "Load more",
+        "path": "#",
+        "name": "button"
+      }
+    }
+  ],
+
+  "secondaryTeasers": [
+    {
+
+      "heading": "Magazine",
+      "items": [
+        {
+          "rootClasses": "teaser--secondary",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Developmental Biology and Stem Cells",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "The parasite’s new clothes",
+          "url": "#",
+          "secondaryInfo": "Mark S Pearson et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 15,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160415"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/250/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "rootClasses": "teaser--secondary",
+
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Immunology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Catch me if you can",
+          "url": "#",
+          "secondaryInfo": "Emilie Bourdonnay et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 16,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160216"
+              }
+            }
+          }
+        },
+
+        {
+          "rootClasses": "teaser--secondary",
+
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              },
+              {
+                "name": "Plant Biology",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Autophagy under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          }
+        },
+
+        {
+          "rootClasses": "teaser--secondary",
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Biophysics and Structural Biology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Intracellular pathogens under attack",
+          "url": "#",
+          "secondaryInfo": "Petr Broz et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 19,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160219"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+            "altText": "Make it meaningful please",
+            "classes": "teaser__img--big"
+          }
+
+        }
+
+      ]
+    }
+  ],
+
 
   "mainMenu":{
+    "listHeading": {
+      "heading": "Menu"
+    },
     "links": {
       "items": [
         {"name": "Research categories", "url": "#res"},

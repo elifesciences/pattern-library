@@ -9,9 +9,8 @@
 }
 
 .text-field {
-  background-color: $color-text-ui-background-hue;
-  border: 2px solid $color-text-ui-background-hue;
-  border-radius: 5px;
+  border: 1px solid $color-text-dividers;
+  border-radius: #{$border-radius}px;
   color: $color-text;
   display: block;
   font-family: $font-secondary;
@@ -21,7 +20,7 @@
   width: 100%;
 
   &:focus {
-    border: 2px solid $color-information;
+    border: 1px solid $color-text-placeholder;
     outline: 0;
   }
 }
@@ -31,14 +30,14 @@
 }
 
 .text-field--focus {
-  border: 2px solid $color-information;
+  border: 1px solid $color-text-placeholder;
   outline: 0;
 }
 
 .text-field--valid {
-  border: 2px solid $color-success;
+  border: 1px solid $color-success;
 }
 
 .text-field--error {
-  border: 2px solid $color-attention;
+  border: 1px solid $color-attention;
 }

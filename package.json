@@ -5,6 +5,7 @@
     "browser-sync": "^2.12.3",
     "browserify": "^13.0.0",
     "chai": "^3.5.0",
+    "core-js": "^2.4.1",
     "del": "^2.2.0",
     "event-stream": "^3.3.2",
     "express": "^4.13.4",
@@ -24,6 +25,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
+    "highcharts": "^5.0.7",
     "jshint": "^2.9.2",
     "minimist": "^1.2.0",
     "mocha": "^2.4.5",
@@ -31,8 +33,12 @@
     "postcss-scss": "^0.1.7",
     "sinon": "^1.17.3",
     "stylelint": "^5.1.0",
+    "text-clipper": "^1.2.0",
     "uglify-js": "^2.6.4",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
   }
 }

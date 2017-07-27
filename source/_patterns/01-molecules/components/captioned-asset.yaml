@@ -5,6 +5,7 @@ assets:
     - $ref: ../../00-atoms/components/doi.yaml#/assets/css
     - $ref: ../../00-atoms/components/picture.yaml#/assets/css
     - $ref: ../../00-atoms/components/video.yaml#/assets/css
+    - $ref: ../../00-atoms/components/table.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -12,24 +13,10 @@ schema:
   allOf:
     -
       properties:
-        download:
-          type: object
-          properties:
-            link:
-              type: string
-              minLength: 1
-            filename:
-              type: string
-              minLength: 1
-          required:
-            - link
-            - filename
         captionText:
           $ref: ../../00-atoms/components/caption-text.yaml#/schema
         doi:
           $ref: ../../00-atoms/components/doi.yaml#/schema
-      required:
-        - captionText
     -
       oneOf:
         -
@@ -46,14 +33,10 @@ schema:
             - video
         -
           properties:
-            tables:
-              type: array
-              minItems: 1
-              items:
-                type: string
-                pattern: ^<table>.*<\/table>$
+            table:
+              $ref: ../../00-atoms/components/table.yaml#/schema
           required:
-            - tables
+            - table
         -
           properties:
             image:

@@ -1,5 +1,7 @@
 {
-  "heading": "Listing of profile snippets",
+  "heading": {
+    "heading": "Listing of profile snippets"
+  },
   "items": [
     {
       "name": "Prabhat Jha",

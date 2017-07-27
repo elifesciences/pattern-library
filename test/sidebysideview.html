@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+  <style>
+  header {
+    border: 1px solid black;
+  }
+  .hidden {
+    display: none;
+  }
+  .side-by-side-view--iframe {
+    border-width: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 14rem;
+    height: calc(100% - 14rem);
+    width: 100%;
+  }
+  </style>
+</head>
+<body>
+
+<!--
+  Test output
+-->
+<div id="mocha"></div>
+
+<div class="global-inner">
+<div class="header-wrap">
+  <header>
+    Header of the page
+  </header>
+</div>
+
+<div role="main">
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+  Main text<br />
+</div>
+</div>
+
+<!--
+  Load test code
+-->
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+<!-- Initialise test suite -->
+<script>mocha.setup('bdd')</script>
+
+<!--
+  Test spec
+-->
+<script src="build/sidebysideview.spec.js"></script>
+
+<!--
+  Begin!
+-->
+<script>
+  mocha.run();
+</script>
+
+</body>
+</html>

@@ -10,12 +10,13 @@
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
           "textClasses": "nav-primary__menu_text",
-          "url": "#mainMenu",
+          "path": "#mainMenu",
           "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "nav-primary__menu_icon",
+              "classes": "",
               "altText": "Menu icon"
             },
             "sources": [
@@ -28,13 +29,13 @@
 
         {
           "text": "Home",
-          "url": "#",
+          "path": "#",
           "classes": "nav-primary__item"
         },
 
         {
           "text": "Magazine",
-          "url": "#",
+          "path": "#",
           "classes": "nav-primary__item"
         },
 
@@ -43,12 +44,13 @@
           "rel": "search",
           "classes": "nav-primary__item nav-primary__item--search",
           "textClasses": "visuallyhidden",
-          "url": "#",
+          "path": "#",
           "picture": {
+            "pictureClasses": "nav-primary__search_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "nav-primary__search_icon",
+              "classes": "",
               "altText": "Search icon"
             },
             "sources": [
@@ -92,96 +94,53 @@
           "button": {
             "classes": "button--default button--extra-small"
           }
-        },
-        {
-          "text": "Alerts",
-          "classes": "nav-secondary__item nav-secondary__item--notification",
-          "textClasses": "visuallyhidden",
-          "url": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-              "classes": "nav-secondary__notification-icon",
-              "altText": "Notification icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
-              }
-            ]
-          }
-        },
-        {
-          "text": "Profile",
-          "classes": "nav-secondary__item nav-secondary__item--profile",
-          "textClasses": "visuallyhidden",
-          "url": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
-              "classes": "nav-secondary__profile-icon",
-              "altText": "Profile icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
-              }
-            ]
-          }
         }
       ]
     },
 
-    "compactForm": {
-      "formAction" : "/search",
-      "formId": "searchBox",
-      "formMethod": "GET",
-      "label": "Search by keyword or author",
-      "inputType": "search",
-      "inputName": "search",
-      "inputValue": "",
-      "inputPlaceholder": "Search by keyword or author",
-      "ctaText": "Search"
-    },
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
 
-    "subjectFilter": {
-      "name": "subject_filter",
-      "value": "cell_biology",
-      "text": "Cell biology"
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
     }
 
   },
 
   "contentHeader": {
-    "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
-    "behaviour": "BackgroundImage",
     "title": "Microbiology and infectious disease",
-    "titleClass": "content-header__title--medium",
-    "hasCtaOrMeta": true,
+    "longTitle": true,
+    "impactStatement": "eLife publishes research covering virology, bacteriology and mycology. Decisions are made by journal editors who are active researchers in the fields of microbiology and infectious disease.",
     "button": {
       "text": "Subscribe",
       "url": "#",
       "classes": "button--outline button--small"
     },
-    "hasBackground": true,
-    "backgroundImage": {
-      "lowResImageSource": "https://unsplash.it/950/400",
-      "highResImageSource": "https://unsplash.it/1900/800"
+    "image": {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/1114/336"
+      }
     }
-  },
-
-  "leadParas": {
-    "paras": [
-      {"text": "eLife publishes research covering virology, bacteriology and mycology. Decisions are made by journal editors who are active researchers in the fields of microbiology and infectious disease."}
-    ]
   },
 
   "mainTeasers": [
     {
-      
-      "heading": "Latest articles",
+
+      "heading": "Latest",
       "items": [
         {
           "contextLabel": {
@@ -237,7 +196,6 @@
           },
           "title": "Mapping global environmental suitability for Zika virus",
           "url": "#",
-          "secondaryInfo": "Jane P Messina et al",
           "footer": {
             "meta": {
               "text": "Research article",
@@ -295,7 +253,7 @@
 
         {
           "contextLabel": {
-            "links": [
+            "list": [
               {
                 "name": "Epidemiology and Global Health",
                 "url": "#"
@@ -385,7 +343,7 @@
 
   "secondaryTeasers": [
     {
-      
+
       "heading": "Highlighted content",
       "items": [
         {
@@ -420,8 +378,8 @@
             }
           },
           "image": {
-            "defaultPath": "https://unsplash.it/250/140/",
-            "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
+            "defaultPath": "https://placehold.it/250/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
             "altText": "Meaningful alt text please.",
             "classes": "teaser__img--small"
           }
@@ -533,6 +491,191 @@
             "classes": "teaser__img--big"
           }
 
+        }
+
+      ]
+    }
+  ],
+
+  "highlightsTeasers": [
+    {
+
+      "heading": "Highlights",
+      "headingId":"carousel-highlights-heading",
+      "id": "carousel-highlights",
+      "highlights": true,
+      "items": [
+        {
+          "num": 1,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "The [1] parasite’s new clothes",
+          "url": "#",
+          "secondaryInfo": "Mark S Pearson et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "carouselItem": true,
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 15,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160415"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "num": 2,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "Catch [2] me",
+          "url": "#",
+          "secondaryInfo": "Emilie Bourdonnay et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "carouselItem": true,
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 1,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160216"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "num": 3,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "Autophagy [3] under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "carouselItem": true,
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "num": 4,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "Autophagy [4] under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "carouselItem": true,
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+
+        {
+          "num": 5,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "Autophagy [5] under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "carouselItem": true,
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
+        },
+        {
+          "num": 6,
+          "rootClasses": "teaser--secondary teaser--highlights",
+          "title": "Autophagy [6] under attack",
+          "url": "#",
+          "secondaryInfo": "Paul de Figueiredo et al.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "carouselItem": true,
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160223"
+              }
+            }
+          },
+          "image": {
+            "defaultPath": "https://placehold.it/140/140/",
+            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+            "altText": "Meaningful alt text please.",
+            "classes": "teaser__img--small"
+          }
         }
 
       ]

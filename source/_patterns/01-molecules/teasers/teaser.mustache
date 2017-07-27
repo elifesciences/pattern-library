@@ -1,4 +1,4 @@
-<div class="teaser{{#rootClasses}} {{rootClasses}}{{/rootClasses}}">
+<div class="teaser{{#rootClasses}} {{rootClasses}}{{/rootClasses}} {{^secondaryInfo}}teaser--no-secondary-info{{/secondaryInfo}}">
 
   {{! These are usually links to major subject areas, see teaser-main-article, but could be unlinked
       text expressing a relationship, e.g. 'Built upon by' in teaser-secondary-related-item}}
@@ -7,7 +7,7 @@
       {{#list}}
         <li class="teaser__context_label_list_item">
           {{#url}}
-            <a href="{{url}}" class="teaser__context_label_link"><span class="teaser__context_label">{{{name}}}</span></a>
+            <a href="{{url}}"  {{#carouselItem}}tabindex="-1"{{/carouselItem}} class="teaser__context_label_link"><span class="teaser__context_label">{{{name}}}</span></a>
           {{/url}}
 
           {{^url}}
@@ -26,12 +26,7 @@
           - teaser__img--small: 70px square image, floating right.
         }}
     {{#image}}
-      <a href="{{{url}}}">
-        <img src="{{defaultPath}}"
-             alt="{{altText}}"
-             {{#srcset}}srcset="{{srcset}}"{{/srcset}}
-             class="teaser__img{{#classes}} {{classes}}{{/classes}}" />
-      </a>
+      <a href="{{{url}}}" tabindex="-1"><img src="{{defaultPath}}" alt="{{altText}}" {{#srcset}}srcset="{{srcset}}"{{/srcset}} class="teaser__img{{#classes}} {{classes}}{{/classes}}" /></a>
     {{/image}}
 
     {{! Used for the date in an event teaser only. Treatment very like teaser__img--small.
@@ -39,7 +34,7 @@
     {{#eventDate}}
       {{! For schema: url is dependent on date }}
       {{#url}}
-        <a href="{{eventDate.url}}">{{>atoms-date}}</a>
+        <a href="{{url}}">{{>atoms-date}}</a>
       {{/url}}
       {{^url}}
         <div>{{>atoms-date}}</div>
@@ -50,7 +45,7 @@
       {{! Occasionally the title isn't linked, for example in the chapter listing item teaser. }}
       {{! For schema: url is dependent on title }}
       {{#url}}
-        <a href="{{{url}}}" class="teaser__header_text_link">{{{title}}}</a>
+        <a href="{{{url}}}" {{#num}}data-slide="{{num}}"{{/num}} {{#carouselItem}}tabindex="-1"{{/carouselItem}} class="teaser__header_text_link">{{{title}}}</a>
       {{/url}}
       {{^url}}
         {{{title}}}
@@ -67,7 +62,7 @@
 
   </header>
 
-  {{! content could be the impact statement, for example.}}
+  {{! content could be the impact statement, for example. It could also contain a list.}}
   {{#content}}
   <div class="teaser__body">
     {{{content}}}
@@ -87,25 +82,7 @@
     {{/meta}}
 
     {{#publishState}}
-    <div class="teaser__publish_state">
-
-      {{^vor}}
-        <img
-            class="teaser__publish_state--poa"
-            src="{{assetsPath}}/img/icons/poa-1x.png"
-            srcset="{{assetsPath}}/img/icons/poa-2x.png 40w, {{assetsPath}}/img/icons/poa-1x.png 20w"
-            alt="Available as authors' accepted manuscript" />
-      {{/vor}}
-
-      {{#vor}}
-        <img
-            class="teaser__publish_state--vor"
-            src="{{assetsPath}}/img/icons/vor-1x.png"
-            srcset="{{assetsPath}}/img/icons/vor-2x.png 40w, {{assetsPath}}/img/icons/vor-1x.png 20w"
-            alt="Available as full, typeset article" />
-      {{/vor}}
-
-    </div>
+    <div class="teaser__publish_state">{{#vor}}<span class="visuallyhidden">Available as full, typeset article </span><span class="teaser__publish_state__with_separator">html</span>{{/vor}}<span class="visuallyhidden">Available as authors' accepted manuscript </span>pdf</div>
     {{/publishState}}
 
   </footer>

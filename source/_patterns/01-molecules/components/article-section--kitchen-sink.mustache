@@ -17,8 +17,8 @@
     <hr />
 
     This is not wrapped in a paragraph.<br>
-    <p>This is in a paragraph. Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. <strong>This is strong.</strong> Nullam dignissim convallis est. Quisque aliquam. <em>This is emphasized.</em> Donec faucibus. Nunc iaculis suscipit dui. 5<sup>3</sup> = 125. Water is H<sub>2</sub>O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. <cite>The New York Times</cite> (That&#8217;s a citation). <span style="text-decoration:underline;">Underline.</span> Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
-    <p><abbr title="Hyper Text Markup Language">HTML</abbr> and <abbr title="Cascading Style Sheets">CSS</abbr> are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. To copy a file type <code>COPY <var>filename</var></code>. <del>Dinner&#8217;s at 5:00.</del> <ins>Let&#8217;s make that 7.</ins> This <span style="text-decoration:line-through;">text</span> has been struck.</p>
+    <p>This is in a paragraph. Lorem ipsum dolor sit amet, <a title="test link" href="#">test link</a> adipiscing elit. <strong>This is strong.</strong> Nullam dignissim convallis est. <span class="underline">This is underlined.</span> Quisque aliquam. <em>This is emphasized.</em> Donec faucibus. <span class="monospace">This is monospace.</span> Nunc iaculis suscipit dui. 5<sup>3</sup> = 125. Water is H<sub>2</sub>O. Nam sit amet sem. <span class="small-caps">This is in small caps.</span> Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. <cite>The New York Times</cite> (That&#8217;s a citation). <span class="author-callout-style-a1">This is blue.</span> Maecenas ornare tortor. <span class="author-callout-style-a2">This is purple.</span> Donec sed tellus eget sapien fringilla nonummy. <span class="author-callout-style-a3">This is red.</span> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+    <p><abbr title="Hyper Text Markup Language">HTML</abbr> and <abbr title="Cascading Style Sheets">CSS</abbr> are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, <span class="sequence">TAATAAGGAAGAACTGCTTATTCTTAATTATTTCTACCTACTAAACTAACTAATTATCAACAAATATCATCTATTTAATAGTATATCATCACATGCGGTGTAAGAGGATGACATAAAGATTGAGAAACAGTCATCCAGTCTAATGGAAGCTCAAATGCAAGGGCTGATAATGTAATAGGATAATGAATGACAACGTATAAAAGGAAAGAAGATAAAGCAATATTATTTTGTAGAATTATCGATTCCCTTTTGTGGATCCCTATATCCTCGAGGAGAA</span> feugiat in, nunc. Morbi imperdiet augue quis tellus.  Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. To copy a file type <code>COPY <var>filename</var></code>. <del>Dinner&#8217;s at 5:00.</del> <ins>Let&#8217;s make that 7.</ins> This <span style="text-decoration:line-through;">text</span> has been struck.</p>
 
     <hr />
 
@@ -64,22 +64,38 @@
         <th>Table Header 1</th>
         <th>Table Header 2</th>
         <th>Table Header 3</th>
+        <th>Table Header 4</th>
       </thead>
       <tbody>
         <tr>
           <td>Division 1</td>
           <td>Division 2</td>
           <td>Division 3</td>
+          <td>Division 4</td>
         </tr>
         <tr class="even">
           <td>Division 1</td>
           <td>Division 2</td>
           <td>Division 3</td>
+          <td>Division 4</td>
         </tr>
         <tr>
           <td>Division 1</td>
           <td>Division 2</td>
           <td>Division 3</td>
+          <td>Division 4</td>
+        </tr>
+        <tr>
+          <td class="author-callout-style-b1">This is blue.</td>
+          <td class="author-callout-style-b2">This is green.</td>
+          <td class="author-callout-style-b3">This is orange.</td>
+          <td class="author-callout-style-b4">This is yellow.</td>
+        </tr>
+        <tr>
+          <td class="author-callout-style-b5">This is purple.</td>
+          <td class="author-callout-style-b6">This is red.</td>
+          <td class="author-callout-style-b7">This is pink.</td>
+          <td class="author-callout-style-b8">This is grey.</td>
         </tr>
       </tbody>
     </table>

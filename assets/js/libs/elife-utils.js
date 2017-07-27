@@ -16,7 +16,7 @@ module.exports = () => {
 
     var $el = document.createElement(elName);
     var $parent = typeof parent === 'string' ? document.querySelector(parent)
-      : parent;
+        : parent;
 
     // Work out what the new element's following sibling will be, based on value of attachBefore.
     var $followingSibling = (function () {
@@ -27,7 +27,7 @@ module.exports = () => {
           return $parent.firstElementChild;
 
         } else if (typeof attachBefore === 'string') {
-          return document.querySelector(attachBefore);
+          return $parent.querySelector(attachBefore);
 
         } else if (attachBefore instanceof HTMLElement) {
           return attachBefore;
@@ -62,7 +62,7 @@ module.exports = () => {
 
     class UniqueIdentifiers {
 
-      constructor () {
+      constructor() {
         this.used = [];
       }
 
@@ -106,6 +106,27 @@ module.exports = () => {
 
     return new UniqueIdentifiers();
   }());
+
+  /**
+   * Simple XHR implementation for getting JSON data.
+   *
+   * @param url
+   * @returns {Promise}
+   */
+  function loadData(url) {
+    return new Promise(
+        function resolver(resolve, reject) {
+          let xhr = new XMLHttpRequest();
+          xhr.addEventListener('load', () => {
+            resolve(xhr.responseText);
+          });
+          xhr.addEventListener('error', reject);
+          xhr.open('GET', url);
+          xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+          xhr.send();
+        }
+    );
+  }
 
   /**
    * Updates the CSS transform's translate function on the element in a vendor-prefix-aware fashion.
@@ -153,7 +174,7 @@ module.exports = () => {
       return 0;
     }
 
-    return parseInt(pxString.match(/([-0-9.]+)px/)[1], 10);
+    return Math.round(pxString.match(/([-0-9.]+)px/)[1]);
   }
 
   function _getZeroAwarePxStringFromValue(value) {
@@ -171,7 +192,7 @@ module.exports = () => {
    *
    * @param {String} pxString The string representing the original quantity, e.g. '97px'
    * @param adjustment The numeric adjustment to make, e.g. 8
-   * @param operation
+   * @param requestedOperation
    * @returns {string} The modified value, as a string, e.g.: '105px'
    */
   function adjustPxString(pxString, adjustment, requestedOperation) {
@@ -183,20 +204,20 @@ module.exports = () => {
     }
 
     switch (operation) {
-    case 'add':
-      adjustedSize = originalSize + adjustment;
-      break;
-    case 'subtract':
-      adjustedSize = originalSize - adjustment;
-      break;
-    case 'multiply':
-      adjustedSize = originalSize * adjustment;
-      break;
-    case 'divide':
-      adjustedSize = originalSize / adjustment;
-      break;
-    default:
-      break;
+      case 'add':
+        adjustedSize = originalSize + adjustment;
+        break;
+      case 'subtract':
+        adjustedSize = originalSize - adjustment;
+        break;
+      case 'multiply':
+        adjustedSize = originalSize * adjustment;
+        break;
+      case 'divide':
+        adjustedSize = originalSize / adjustment;
+        break;
+      default:
+        break;
     }
     return _getZeroAwarePxStringFromValue(adjustedSize);
   }
@@ -229,32 +250,318 @@ module.exports = () => {
 
     let relationship = $prospectiveParent.compareDocumentPosition($prospectiveDescendant);
     return !!(
-      relationship & $prospectiveParent.DOCUMENT_POSITION_CONTAINED_BY || relationship === 0
+        relationship & $prospectiveParent.DOCUMENT_POSITION_CONTAINED_BY || relationship === 0
     );
   }
 
   /**
-   * Returns whether the display is considered to have a high pixel density ratio.
-   *
-   * @param window
-   * @returns {boolean} true if dpr >= 2, false if lower, or unknown.
+   * Debounce
    */
-  function isHighDpr(window) {
-    if (!!window.devicePixelRatio) {
-      return window.devicePixelRatio >= 2;
+  function debounce(callback, wait, context = this) { // jshint ignore:line
+    let timeout = null;
+    let callbackArgs = null;
+
+    const later = () => callback.apply(context, callbackArgs);
+
+    return function () {
+      callbackArgs = arguments;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  /**
+   * Closest parent
+   * Source: https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+   * @param el
+   * @param s
+   * @returns {*}
+   */
+  function closest(el, s) {
+    const matches = (el.document || el.ownerDocument).querySelectorAll(s);
+    let i;
+    do {
+      i = matches.length;
+
+      // jscs:disable disallowEmptyBlocks
+      while (--i >= 0 && matches.item(i) !== el) {} // jshint ignore:line
+
+      // jscs:enable disallowEmptyBlocks
+    } while ((i < 0) && (el = el.parentElement));
+
+    return el;
+  }
+
+  /**
+   * Given an element it will return the sibling number it is.
+   * @param $child
+   * @returns {number}
+   */
+  function nthChild($child) {
+    let siblings = 0;
+    while ($child !== null) {
+      if ($child.nodeType !== 8) {
+        siblings += 1;
+      }
+
+      $child = $child.previousSibling;
     }
 
-    return false;
+    return siblings;
+  }
+
+  function loadJavaScript(uri, integrity = null) {
+    return new Promise((resolve, reject) => {
+      let script = document.createElement('script');
+
+      script.src = uri;
+      if (integrity) {
+        script.integrity = integrity;
+        script.crossOrigin = 'anonymous';
+      }
+
+      script.addEventListener('load', () => {
+        resolve(script);
+      }, false);
+
+      script.addEventListener('error', () => {
+        reject(script);
+      }, false);
+
+      document.body.appendChild(script);
+    });
+  }
+
+  function loadStyleSheet(uri, integrity = null) {
+    return new Promise(function (resolve, reject) {
+      let link = document.createElement('link');
+
+      link.setAttribute('rel', 'stylesheet');
+      link.href = uri;
+      if (integrity) {
+        link.integrity = integrity;
+        link.crossOrigin = 'anonymous';
+      }
+
+      link.addEventListener('load', function () {
+        resolve(link);
+      }, false);
+
+      link.addEventListener('error', function () {
+        reject(link);
+      }, false);
+
+      document.head.appendChild(link);
+    });
+  }
+
+  /**
+   * Deferred promise
+   */
+  function defer() {
+    const result = {};
+    result.promise = new Promise(function (resolve, reject) {
+      result.resolve = function (value) {
+        resolve(value);
+      };
+
+      result.reject = function (value) {
+        reject(value);
+      };
+
+    });
+
+    return result;
+  }
+
+  /**
+   * Flattens nested array
+   * @param input
+   * @returns {Array.<*>}
+   */
+  function flatten(input) {
+    return [].concat(...input);
+  }
+
+  function remoteDoc(url, window) {
+    const current = window.location.href.split('#')[0];
+    url = url.split('#')[0];
+
+    if (url === current) {
+      return Promise.resolve(window.document);
+    }
+
+    if (window.remoteDocuments === undefined) {
+      window.remoteDocuments = {};
+    }
+
+    if (!(url in window.remoteDocuments)) {
+      window.remoteDocuments[url] = loadData(url).then((data) => {
+        let wrapper = window.document.createElement('div');
+        wrapper.innerHTML = data;
+        return wrapper;
+      });
+    }
+
+    return window.remoteDocuments[url];
+  }
+
+  /**
+   * Add CSS styling to DOM element.
+   *
+   * @param $el
+   * @param styles
+   * @returns {*}
+   */
+  function addStylesToElement($el, styles) {
+    for (let style in styles) {
+      if (styles.hasOwnProperty(style)) {
+        $el.style[style] = styles[style];
+      }
+
+    }
+
+    return $el;
+  }
+
+  /**
+   * Wrap elements in with various options.
+   *
+   * @param $el
+   * @param tag
+   * @param className
+   * @param styles
+   * @param fn
+   * @returns {Element}
+   */
+  function wrapElements($el, tag, className, styles, fn) {
+    const $children = Array.isArray($el) ? $el : [$el];
+    const classNames = Array.isArray(className) ? className : [className];
+    const $container = buildElement(tag, classNames);
+    if (styles) {
+      addStylesToElement($container, styles);
+    }
+
+    $children.forEach(child => $container.appendChild(child));
+    return fn ? fn($container) : $container;
+  }
+
+  function eventCreator(name, detail) {
+    let event;
+    try {
+      event = new CustomEvent(name, { detail });
+    } catch (e) {
+      // CustomEvent not supported, do it the old fashioned way
+      event = document.createEvent(name);
+      event.initCustomEvent(name, true, true, { detail });
+    }
+
+    return event;
+  }
+
+  /**
+   * Jump to element on page.
+   *
+   * @param link
+   */
+  function jumpToAnchor(link) {
+    if (history.replaceState) {
+      window.location.href = link.href;
+      history.replaceState(null, null, link.href);
+    } else {
+      const $el = document.getElementById(link.hash.slice(1));
+      if ($el) {
+        window.scrollTo(0, $el.offsetTop);
+      }
+
+    }
+
+  }
+
+  function create$pageOverlay($parent, $followingSibling, id) {
+    // element already exists
+    if (document.querySelector(`#${id}`)) {
+      return;
+    }
+
+    const $overlay = buildElement('div', ['overlay', 'hidden'], '', $parent, $followingSibling);
+    if (id) {
+      $overlay.id = id;
+    }
+
+    return $overlay;
+  }
+
+  /**
+   *
+   * Determines if the top of an element is within the viewport bounds
+   *
+   * @param {HTMLElement} $elm
+   * @param {Document} doc
+   * @param win
+   * @returns {boolean} true if the top of the element is within the viewport bounds
+   */
+  function isTopInView($elm, doc, win) {
+    const rect = $elm.getBoundingClientRect();
+    const html = doc.documentElement;
+    return (
+      rect.top >= 0 &&
+      rect.top <= (win.innerHeight || html.clientHeight) &&
+      rect.left >= 0 &&
+      rect.left <= (win.innerWidth || html.clientWidth)
+    );
+  }
+
+  /**
+   * Throttle a function to run with specified interval
+   *
+   * The function should be an arrow function to ensure scope is correct
+   * @param {Function} fn The arrow function to throttle
+   * @param {Number} thresholdInMs The minimum interval between calls to the thottled function
+   * @returns {Function}
+   */
+  function throttle(fn, thresholdInMs = 250) {
+    let last;
+    let deferTimer;
+    return function () {
+      const now = +new Date();
+      const args = arguments;
+      if (last && now < last + thresholdInMs) {
+
+        // hold on to it
+        window.clearTimeout(deferTimer);
+        deferTimer = window.setTimeout(function () {
+          last = now;
+          fn.apply(null, args);
+        }, thresholdInMs);
+      } else {
+        last = now;
+        fn.apply(null, args);
+      }
+    };
   }
 
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     buildElement: buildElement,
+    closest: closest,
+    create$pageOverlay: create$pageOverlay,
+    debounce: debounce,
+    eventCreator: eventCreator,
+    loadJavaScript: loadJavaScript,
+    loadStyleSheet: loadStyleSheet,
+    defer: defer,
+    flatten: flatten,
     invertPxString: invertPxString,
-    isHighDpr: isHighDpr,
+    isTopInView: isTopInView,
+    jumpToAnchor: jumpToAnchor,
+    loadData: loadData,
+    nthChild: nthChild,
+    remoteDoc: remoteDoc,
+    throttle: throttle,
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
+    wrapElements: wrapElements,
   };
-
 };

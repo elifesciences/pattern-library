@@ -1,16 +1,20 @@
 assets:
   css:
     - carousel.css
+    - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
     - $ref: ../../01-molecules/components/carousel-item.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
+    heading:
+      $ref: ../../00-atoms/components/list-heading.yaml#/schema
     items:
       type: array
       items:
         - $ref: ../../01-molecules/components/carousel-item.yaml#/schema
       minItems: 1
   required:
+    - heading
     - items

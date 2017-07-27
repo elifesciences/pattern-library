@@ -1,0 +1,32 @@
+{
+  "url": "#",
+  "blockLink": {
+    "url": "#",
+    "text": "Developmental Biology and Stem Cells",
+    "image": {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/263/190",
+        "altText": ""
+      }
+    }
+  },
+  "label": "Highlights this month:",
+  "links": [
+    {
+      "name": "Exploring the ins and outs of breathing",
+      "url": "#Exploring"
+    },
+    {
+      "name": "The ancient origins of lubricated joints",
+      "url": "#The"
+    },
+    {
+      "name": "Modulating protein quality control",
+      "url": "#Modulating"
+    },
+    {
+      "name": "How open science helps researchers succeed",
+      "url": "#How"
+    }
+  ]
+}

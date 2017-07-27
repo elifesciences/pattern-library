@@ -1,0 +1,79 @@
+@import "../../definitions";
+
+.about-profile__name {
+  @include font-size(18);
+  line-height: (24 / 18);
+  @include nospace();
+  @include padding(12, "top");
+
+  .popup & {
+    padding-top: 0;
+    @include popup_title_text();
+  }
+}
+
+.about-profile__role {
+  margin: 0;
+
+  .popup & {
+    @include popup-large-ancillary-text();
+  }
+}
+
+.about-profile__profile {
+  @include margin(24, "top");
+
+  @media only all and (min-width: #{$bkpt-site--medium}px) {
+
+    .about-profile--popup & {
+      display: none;
+
+      .popup & {
+        display: block;
+        margin-top: 0;
+
+        & p,
+        dt,
+        dd {
+          @include popup-large-ancillary-text();
+        }
+
+        & *:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+  }
+}
+
+.about-profile__picture {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+
+  img {
+    display: block;
+  }
+
+  @media only all and (min-width: #{$bkpt-site--medium}px) {
+    float: right;
+    width: 250px;
+    @include margin(12 0 12 24);
+
+    .about-profiles__item .about-profile--popup & {
+      float: none;
+      width: 100%;
+      margin: 0;
+    }
+
+    .popup & {
+      display: none;
+    }
+  }
+}
+
+.about-profile__image {
+  width: 100%;
+}

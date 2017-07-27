@@ -12,10 +12,11 @@
           "textClasses": "nav-primary__menu_text",
           "path": "#mainMenu",
           "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "nav-primary__menu_icon",
+              "classes": "",
               "altText": "Menu icon"
             },
             "sources": [
@@ -45,10 +46,11 @@
           "textClasses": "visuallyhidden",
           "path": "#",
           "picture": {
+            "pictureClasses": "nav-primary__search_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "nav-primary__search_icon",
+              "classes": "",
               "altText": "Search icon"
             },
             "sources": [
@@ -92,101 +94,77 @@
           "button": {
             "classes": "button--default button--extra-small"
           }
-        },
-        {
-          "text": "Alerts",
-          "classes": "nav-secondary__item nav-secondary__item--notification",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-              "classes": "nav-secondary__notification-icon",
-              "altText": "Notification icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
-              }
-            ]
-          }
-        },
-        {
-          "text": "Profile",
-          "classes": "nav-secondary__item nav-secondary__item--profile",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
-              "classes": "nav-secondary__profile-icon",
-              "altText": "Profile icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
-              }
-            ]
-          }
         }
       ]
     },
 
-    "compactForm": {
-      "formAction" : "/search",
-      "formId": "searchBox",
-      "formMethod": "GET",
-      "label": "Search by keyword or author",
-      "inputType": "search",
-      "inputName": "search",
-      "inputValue": "",
-      "inputPlaceholder": "Search by keyword or author",
-      "ctaText": "Search"
-    },
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
 
-    "subjectFilter": {
-      "name": "subject_filter",
-      "value": "cell_biology",
-      "text": "Cell biology"
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
     }
 
   },
 
   "contentHeader": {
-    "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
-    "behaviour": "BackgroundImage",
-    "title": "Tropical disease",
-    "titleClass": "content-header__title--medium",
-    "strapline": "A selection of papers",
-    "hasProfile": true,
-    "profile": {
-      "name": "Prabhat Jha",
-      "url": "#",
-      "avatar": {
-        "x1": "./assets/img/avatars/pjha1.png",
-        "x2": "./assets/img/avatars/pjha2.png"
+    "title": "Tropical disease: A selection of papers",
+    "longTitle": true,
+    "impactStatement": "eLife has published papers on many tropical diseases, including malaria, Ebola, leishmaniases, Dengue and African sleeping sickness. The articles below have been selected by eLife editors to give a flavour.",
+    "header": {
+      "possible": true,
+      "hasProfile": true,
+      "profile": {
+        "name": "Prabhat Jha",
+        "url": "#",
+        "image": {
+          "fallback": {
+            "srcset": "https://unsplash.it/80/80 80w",
+            "defaultPath": "https://unsplash.it/40/40"
+          }
+        }
       }
     },
-    "hasCtaOrMeta": true,
     "button": {
       "text": "Subscribe",
       "path": "#",
       "classes": "button--outline button--small"
     },
-    "hasBackground": true,
-    "backgroundImage": {
-      "lowResImageSource": "https://unsplash.it/950/400",
-      "highResImageSource": "https://unsplash.it/1900/800"
+    "image": {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/1114/336"
+      },
+      "credit": {
+        "text": "I haz image credit <a href=\"#\">with a link</a>.",
+        "elementId": "iAmTheIdOfTheImageCreditElement"
+      }
+    },
+    "meta": {
+      "url": "#",
+      "text": "Collection",
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 10,
+          "month": "Sep",
+          "year": 2015
+        },
+        "forMachine": "2015-09-10"
+      }
     }
-  },
-
-  "leadParas": {
-    "paras": [
-      {"text": "eLife has published papers on many tropical diseases, including malaria, Ebola, leishmaniases, Dengue and African sleeping sickness. The articles below have been selected by eLife editors to give a flavour of the breadth of research on tropical diseases published by the journal."},
-      {"text": "More articles can be found on our subject pages for Epidemiology and Global Health and Microbiology and Infectious Disease."}
-    ]
   },
 
   "mainTeasers": [

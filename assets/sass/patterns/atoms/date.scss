@@ -1,28 +1,30 @@
 @import "../../definitions";
 
 .date {
-  color: $color-text-secondary;
-  @include label-content-typeg();
+  @include label-content-typeg(inherit);
   text-transform: capitalize;
 }
 
 .date--expanded {
   background-color: $color-primary;
-  border-radius: 3px;
   @include label-content-typeg();
   color: $color-text-ui-background;
   display: block;
-  display: flex;
+  @supports (display: flex) {
+    display: flex;
+  }
   flex-direction: column;
   float: right;
   height: 70px;
   justify-content: space-around;
-  @include margin($teaser-spacing-left, "left");
+  @include margin($blg-space-extra-small-in-px, "top");
+  @include margin(24, "left");
   text-align: center;
   width: 70px;
 
   .date__prominent {
     @include font-size(36);
+    line-height: 1;
     text-align: center;
     @include padding(10, "top");
   }

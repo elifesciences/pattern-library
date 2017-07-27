@@ -1,47 +1,19 @@
 @import "../../definitions";
 
 .box {
+  border-bottom: 1px solid $color-text-dividers;
+  @include padding($blg-space-small-in-px - 1, "bottom");
+  @include margin($blg-space-medium-in-px, "top");
+  @include margin($blg-space-medium-in-px, "bottom");
+}
 
-  h1 {
-    @include font-size($font-size-h1-in-px * $box-font-scaling-factor);
-  }
+.box__label {
+  border-bottom: 1px solid $color-text-dividers;
+  @include fig-heading-typeg();
+  @include padding($blg-space-extra-small-in-px - 1, "bottom");
+  @include margin($blg-space-extra-small-in-px, "bottom");
+}
 
-  h2 {
-    @include font-size($font-size-h2-in-px * $box-font-scaling-factor);
-  }
-
-  h3 {
-    @include font-size($font-size-h3-in-px * $box-font-scaling-factor);
-  }
-
-  h4 {
-    @include font-size($font-size-h4-in-px * $box-font-scaling-factor);
-  }
-
-  h5 {
-    @include font-size($font-size-h5-in-px * $box-font-scaling-factor);
-  }
-
-  h6 {
-    @include font-size($font-size-h6-in-px * $box-font-scaling-factor);
-  }
-
-  p {
-    @include font-size($font-size-base-in-px * $box-font-scaling-factor);
-  }
-
-  .caption-text__heading {
-    @include font-size($font-size-caption-in-px * $box-font-scaling-factor);
-  }
-
-  .caption-text__body,
-  .caption-text__body > * {
-    @include font-size($font-size-caption-in-px * $box-font-scaling-factor);
-  }
-
-  .asset-viewer-inline__header_text,
-  .asset-viewer-inline__header_text * {
-    @include font-size($font-size-caption-in-px * $box-font-scaling-factor);
-  }
-
+.box__label_separator {
+  @include height($blg-space-extra-small-in-px);
 }

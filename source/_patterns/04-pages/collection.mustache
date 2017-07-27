@@ -2,28 +2,26 @@
 
   <div class="global-inner">
 
-    {{#siteHeader}}
-      {{> organisms-site-header }}
-    {{/siteHeader}}
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
 
-    <main role="main">
+    <main role="main" class="main blg-margin-bottom-large">
 
     {{#contentHeader}}
-      {{> organisms-pl-only-content-header-collection}}
+      {{> organisms-content-header}}
     {{/contentHeader}}
 
 
-    <div class="wrapper">
-
-      {{#leadParas}}
-        {{> molecules-lead-paras}}
-      {{/leadParas}}
+    <div class="wrapper blg-pad-top--small-to-medium">
 
       <div class="grid">
 
         <div class="listing-column-container">
 
-          <div class="grid__item large--eight-twelfths listing-column-main">
+          <div class="grid__item one-whole x-large--eight-twelfths listing-column-main">
 
             {{#mainTeasers}}
               {{> organisms-listing-teasers}}
@@ -31,7 +29,7 @@
 
           </div>
 
-          <div class="grid__item large--four-twelfths listing-column-secondary">
+          <div class="grid__item one-whole x-large--four-twelfths listing-column-secondary">
 
             {{#multimediaTeasers}}
               {{> organisms-listing-teasers}}
@@ -55,9 +53,11 @@
 
   </main>
 
-  {{> organisms-email-cta }}
+    {{#emailCta}}
+      {{> organisms-email-cta }}
+    {{/emailCta}}
 
-  {{> organisms-footer }}
+    {{> organisms-footer }}
 
   </div>
 

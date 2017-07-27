@@ -1,0 +1,36 @@
+{
+  "id": "sectionListing",
+  "labelledBy": "theIdOfSectionListing",
+  "singleLine": true,
+  "listHeading": {
+    "heading": "Magazine sections"
+  },
+  "sections": [
+    {
+      "url": "#",
+      "name": "What we publish",
+      "isCurrent": true
+    },
+    {
+      "url": "#",
+      "name": "Editors & people"
+    },
+    {
+      "url": "#",
+      "name": "Peer review"
+    },
+    {
+      "url": "#",
+      "name": "Openness"
+    },
+    {
+      "url": "#",
+      "name": "Reproducibility"
+    },
+    {
+      "url": "#",
+      "name": "Incentives"
+    }
+  ]
+}
+

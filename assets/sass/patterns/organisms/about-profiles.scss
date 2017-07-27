@@ -1,0 +1,29 @@
+@import "../../definitions";
+
+.about-profiles {
+  list-style: none;
+  padding-left: 0;
+
+  .list-heading + & {
+    margin-top: 1em;
+  }
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--medium-width)}em) {
+  .about-profiles--compact {
+    @supports (display: flex) {
+      margin-left: -1em;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .about-profiles__item {
+    .about-profiles--compact & {
+      @supports (display: flex) {
+        padding-left: 1em;
+        width: 50%;
+      }
+    }
+  }
+}

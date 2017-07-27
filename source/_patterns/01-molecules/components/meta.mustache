@@ -1,12 +1,12 @@
 <div class="meta">
 
   {{#url}}
-    <a class="meta__type" href="{{url}}">{{text}}</a>
+    <a class="meta__type" href="{{url}}" {{#carouselItem}}tabindex="-1"{{/carouselItem}}>{{{text}}}</a>
   {{/url}}
 
   {{^url}}
     {{#text}}
-    <span class="meta__type">{{text}}</span>
+    <span class="meta__type">{{{text}}}</span>
     {{/text}}
   {{/url}}
 

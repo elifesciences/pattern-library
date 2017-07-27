@@ -1,5 +1,9 @@
 @import "../../definitions";
 
+$showTwoAtWidth: #{get-rem-from-px($bkpt-site--wide)}rem;
+$showThreeAtWidth: #{get-rem-from-px($bkpt-site--x-wide)}rem;
+$totalHighlightsSpacing: 6;
+
 /* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
  *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
  */
@@ -7,19 +11,75 @@
   @include nospace("left");
   list-style-type: none;
   padding-bottom: 0;
-  @include margin($listing-list-spacing, "bottom");
 }
 
-.listing-column-main ol.listing-list:last-of-type {
-  @include nospace("bottom");
-}
+.decision-letter-header {
 
-.listing-column-secondary ol.listing-list:last-of-type {
-  @include nospace("bottom");
+  .listing-list {
+    margin-bottom: 0;
+  }
+
 }
 
 .listing-list__item {
   line-height: 1;
+}
+
+.listing-list--read-more {
+
+  .content-header-divider {
+    border: none;
+  }
+
+  .content-header--read-more {
+    border: none;
+  }
+}
+
+.listing-list--read-more {
+  text-align: center;
+}
+
+div.listing-list__content {
+  @include margin($listing-list-spacing, "top");
+  @include margin($listing-list-spacing, "bottom");
+  @include padding($content-header-side-padding--extra-wide, "left");
+  @include padding($content-header-side-padding--extra-wide, "right");
+  display: none;
+  @media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--narrow-screen)}em) {
+    display: block;
+  }
+
+  > * {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .listing-list--read-more & {
+    @include margin($blg-space-small-in-px, "top");
+    margin-bottom: 0;
+  }
+
+}
+
+// Only on items that come after other items (to show line between but not before or after)
+.listing-list__item:not(:first-child) .listing-list__divider {
+  box-sizing: content-box;
+  @include constrain-width(140, "max");
+  margin: 0 auto;
+  @include padding($blg-space-medium-in-px - 1 0 $blg-space-medium-in-px);
+
+  &:after {
+    border-bottom: 1px solid $color-text-dividers;
+    content: "";
+    display: block;
+    width: 100%;
+  }
+}
+
+.listing-list-heading {
+  letter-spacing: 0.5px;
+  text-align: center;
 }
 
 // Sets up the column layout at medium width for the secondary content lists.
@@ -38,4 +98,85 @@
     column-span: all;
   }
 
+}
+
+.listing-list--highlights {
+  @include margin(unquote("0 -#{$totalHighlightsSpacing / 2}"));
+
+  .listing-list__item {
+    border: 1px solid #ccc;
+    @include margin(3, "left");
+    @include margin(3, "right");
+
+    .teaser--highlights {
+      border-top: none;
+
+      .js & {
+        margin-bottom: 0;
+      }
+
+      padding: 0;
+      white-space: normal;
+    }
+  }
+
+  .teaser__context_label_list {
+    display: none;
+  }
+
+}
+
+.js {
+
+  .listing-list--highlights {
+    transition: transform 0.2s;
+    white-space: nowrap;
+
+    .listing-list__item {
+      display: inline-block;
+      list-style-type: none;
+      @include margin(3, "left");
+      @include margin(3, "right");
+      @include padding(12, "top");
+      @include padding(12, "left");
+      @include padding(12, "right");
+
+      vertical-align: top;
+
+      /* Width of each element is 100% divided by the amount of elements shown in
+       * a single view, minus (40px default) for the margins.
+       */
+      width: calc(100% - #{$totalHighlightsSpacing}px); // 1 in view (1/1)
+
+      @media only all and (min-width: $showTwoAtWidth) {
+        width: calc(50% - #{$totalHighlightsSpacing}px); // 2 in view (1/2)
+      }
+
+      @media only all and (min-width: $showThreeAtWidth) {
+        width: calc(33.33333% - #{$totalHighlightsSpacing}px); // 3 in view (1/3)
+      }
+    }
+
+    .teaser__header_text {
+      padding-top: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .teaser__secondary_info {
+      @include padding(11, "bottom");
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .teaser__img {
+      box-sizing: content-box;
+      @include nospace();
+      @include padding(3, "top");
+      @include padding(12, "left");
+    }
+
+  }
 }

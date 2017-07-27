@@ -12,10 +12,11 @@
           "textClasses": "nav-primary__menu_text",
           "path": "#mainMenu",
           "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "nav-primary__menu_icon",
+              "classes": "",
               "altText": "Menu icon"
             },
             "sources": [
@@ -45,10 +46,11 @@
           "textClasses": "visuallyhidden",
           "path": "#",
           "picture": {
+            "pictureClasses": "nav-primary__search_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "nav-primary__search_icon",
+              "classes": "",
               "altText": "Search icon"
             },
             "sources": [
@@ -92,81 +94,42 @@
           "button": {
             "classes": "button--default button--extra-small"
           }
-        },
-        {
-          "text": "Alerts",
-          "classes": "nav-secondary__item nav-secondary__item--notification",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-              "classes": "nav-secondary__notification-icon",
-              "altText": "Notification icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
-              }
-            ]
-          }
-        },
-        {
-          "text": "Profile",
-          "classes": "nav-secondary__item nav-secondary__item--profile",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
-              "classes": "nav-secondary__profile-icon",
-              "altText": "Profile icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
-              }
-            ]
-          }
         }
       ]
     },
 
-    "compactForm": {
-      "formAction" : "/search",
-      "formId": "searchBox",
-      "formMethod": "GET",
-      "label": "Search by keyword or author",
-      "inputType": "search",
-      "inputName": "search",
-      "inputValue": "",
-      "inputPlaceholder": "Search by keyword or author",
-      "ctaText": "Search"
-    },
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
 
-    "subjectFilter": {
-      "name": "subject_filter",
-      "value": "cell_biology",
-      "text": "Cell biology"
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
     }
 
   },
 
   "contentHeader": {
-    "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
-    "behaviour": "ContentHeaderSelectNav BackgroundImage",
-    "title": "Archive",
-    "titleClass": "content-header__title--large",
-    "hasCtaOrMeta": true,
+    "title": "Monthly archive",
+    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci.",
     "selectNav": {
       "route": "/path/to/archive",
       "select": {
         "id": "archiveYear",
         "label": {
           "labelText": "Archive year",
-          "for": "archiveYear",
           "isVisuallyHidden": true
         },
         "options": [
@@ -190,11 +153,6 @@
         "classes": "button--outline button--extra-small",
         "name": "button"
       }
-    },
-    "hasBackground": true,
-    "backgroundImage": {
-      "lowResImageSource": "http://unsplash.it/950/400",
-      "highResImageSource": "http://unsplash.it/1900/800"
     }
   },
 
@@ -207,10 +165,11 @@
         "blockLink": {
           "url": "#",
           "text": "December",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -230,10 +189,11 @@
         "blockLink": {
           "url": "#",
           "text": "November",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -249,10 +209,11 @@
         "blockLink": {
           "url": "#",
           "text": "October",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -280,10 +241,11 @@
         "blockLink": {
           "url": "#",
           "text": "September",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -307,10 +269,11 @@
         "blockLink": {
           "url": "#",
           "text": "August",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -338,10 +301,11 @@
         "blockLink": {
           "url": "#",
           "text": "July",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -368,10 +332,11 @@
         "blockLink": {
           "url": "#",
           "text": "June",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -399,10 +364,11 @@
         "blockLink": {
           "url": "#",
           "text": "May",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -430,10 +396,11 @@
         "blockLink": {
           "url": "#",
           "text": "April",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -461,10 +428,11 @@
         "blockLink": {
           "url": "#",
           "text": "March",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -492,10 +460,11 @@
         "blockLink": {
           "url": "#",
           "text": "February",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",
@@ -523,10 +492,11 @@
         "blockLink": {
           "url": "#",
           "text": "January",
-          "behaviour": "BackgroundImage",
-          "backgroundImage": {
-            "lowResImageSource": "http://unsplash.it/950/400",
-            "highResImageSource": "http://unsplash.it/1900/800"
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/263/176",
+              "altText": ""
+            }
           }
         },
         "label": "Highlights this month:",

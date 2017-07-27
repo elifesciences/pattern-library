@@ -1,0 +1,20 @@
+grid__item
+one-whole
+{{#hasRelated}}
+  large--eight-twelfths
+  x-large--seven-twelfths
+  {{^viewSelector}}
+    push--x-large--two-twelfths
+  {{/viewSelector}}
+{{/hasRelated}}
+{{^hasRelated}}
+  large--ten-twelfths
+  push--large--one-twelfth
+  x-large--eight-twelfths
+  {{#viewSelector}}
+    push--x-large--zero
+  {{/viewSelector}}
+  {{^viewSelector}}
+    push--x-large--two-twelfths
+  {{/viewSelector}}
+{{/hasRelated}}

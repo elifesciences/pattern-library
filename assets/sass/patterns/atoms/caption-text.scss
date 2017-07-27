@@ -7,11 +7,61 @@
 
 // May contain arbitrary html. Might need to refine if too blunt an instrument.
 .caption-text__body,
-.caption-text__body > * {
+.caption-text__body > *,
+.caption-text__body li,
+.caption-text__body dt,
+.caption-text__body dd {
   @include fig-caption-text-typeg(0);
-  font-weight: normal;
+
+  & sup {
+    font-size: 75%;
+  }
+
+  & sub {
+    font-size: 75%;
+  }
+
 }
 
 .caption-text__body > * {
   @include body-spacing();
+}
+
+.caption-text__body > :last-child {
+  @include nospace("bottom");
+}
+
+.caption-text__body__collapsed_part {
+  display: inline;
+  margin: 0;
+}
+
+.caption-text__toggle {
+  background-color: transparent;
+  border: 0;
+  color: $color-primary;
+  line-height: 1;
+  margin: 0;
+  padding-left: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+
+.caption-text__toggle--see-less {
+  position: relative;
+  top: -24px;
+  top: get-rem-from-px(24) * -1rem;
+
+  &:before {
+    content: "\00ab\00a0";
+  }
+}
+
+.caption-text__toggle--see-more {
+  &:after {
+    content: "\00a0\00bb";
+  }
 }

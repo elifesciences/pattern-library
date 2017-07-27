@@ -1,0 +1,44 @@
+@import "../../definitions";
+
+.highlights__controls {
+  display: none;
+}
+
+.js {
+
+  .highlights {
+    position: relative;
+  }
+
+  .highlights__content {
+    overflow: hidden;
+  }
+
+  .highlights__controls {
+    display: block;
+    margin: 0;
+  }
+
+  .highlights__control {
+    @include height($blg-space-small-in-px);
+    background-color: transparent;
+    border: none;
+    box-sizing: content-box;
+    line-height: 1.4;
+    position: absolute;
+    text-align: center;
+    // heading block height + (box height- icon height) / 2
+    top: 48px + ((106px - 24px) / 2);
+    @include width(24);
+  }
+
+  .highlights__control--prev {
+    position: absolute;
+    left: -34px;
+  }
+
+  .highlights__control--next {
+    position: absolute;
+    right: -34px;
+  }
+}

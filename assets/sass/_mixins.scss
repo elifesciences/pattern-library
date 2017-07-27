@@ -1,3 +1,6 @@
+@import "variables";
+@import "typographic-hierarchy";
+
 // Put all general mixins, and any helper functions, in this file.
 // Mixins for a single pattern may be put in that pattern's scss file instead if that makes sense, use judgement.
 
@@ -105,39 +108,8 @@
   width: auto;
 }
 
-@mixin article-with-background() {
-  background-color: $color-primary;
-  color: $color-text--reverse;
-
-  .meta {
-    color: $color-text--reverse;
-  }
-
-  .meta:after {
-    border-bottom-width: 0;
-    padding-top: 0;
-  }
-
-  .meta__type {
-    color: $color-text--reverse;
-  }
-
-  .meta__type:hover,
-  .meta__type:active {
-    color: $color-primary-dark;
-  }
-
-  .content-header__subject_link {
-    color: $color-text--reverse;
-  }
-
-  .content-header__strapline {
-    color: $color-text--reverse;
-  }
-}
-
 @mixin box-shadow() {
-  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
 @mixin tooltip-box() {
@@ -186,22 +158,42 @@
   display: inline-block;
   height: $size;
   position: relative;
-  top: 0.15em;
-  vertical-align: top;
+  top: -1px;
+  vertical-align: middle;
   width: $size;
 
   @if $direction == "top" {
-    left: 0.15em;
     transform: rotate(-45deg);
   } @else if $direction == "right" {
-    left: 0;
     transform: rotate(45deg);
   } @else if $direction == "bottom" {
-    top: 0;
     transform: rotate(135deg);
   } @else if $direction == "left" {
-    left: 0.25em;
     transform: rotate(-135deg);
+  }
+
+}
+
+@mixin loading-spinner($torus-width: 5, $size: 22,
+                       $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
+  animation: full-rotation 1.1s infinite linear;
+  border: #{$torus-width}px solid $base-color;
+  border-left: #{$torus-width}px solid $highlight-color;
+  border-radius: 50%;
+  display: block;
+  height: #{$size}px;
+  overflow: hidden;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  width: #{$size}px;
+
+  @keyframes full-rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
 }
@@ -225,19 +217,6 @@
   }
 }
 
-// Doesn't apply to a grid listing containing only block-links
-@mixin widths-for-generic-grid-listing-items() {
-
-  @include constrain-width($max-width-grid-listing-item, "max");
-  @include constrain-width($min-width-grid-listing-item, "min");
-  @include width($min-width-grid-listing-item);
-
-  @supports (display: flex) {
-    width: auto;
-  }
-
-}
-
 @mixin body-para {
   @include body-typeg();
   @include body-spacing();
@@ -246,22 +225,148 @@
 // Baseline grid
 @mixin blg-spacing($direction, $level, $type: "padding") {
   @if $type == "padding" {
-    @if $level == "small" {
+    @if $level == "extra-small" {
+      @include padding($blg-space-extra-small-in-px, $direction);
+    } @else if $level == "small" {
       @include padding($blg-space-small-in-px, $direction);
+    } @else if $level == "smallish" {
+      @include padding($blg-space-smallish-in-px, $direction);
     } @else if $level == "medium" {
       @include padding($blg-space-medium-in-px, $direction);
     } @else if $level == "large" {
       @include padding($blg-space-large-in-px, $direction);
     }
   } @else if $type == "margin" {
-    @if $level == "small" {
+    @if $level == "extra-small" {
+      @include margin($blg-space-extra-small-in-px, $direction);
+    } @else if $level == "small" {
       @include margin($blg-space-small-in-px, $direction);
+    } @else if $level == "smallish" {
+      @include margin($blg-space-smallish-in-px, $direction);
     } @else if $level == "medium" {
       @include margin($blg-space-medium-in-px, $direction);
     } @else if $level == "large" {
       @include margin($blg-space-large-in-px, $direction);
     }
   }
+}
+
+// Cross-pattern common style expressions
+
+@mixin teaser-root-style() {
+  border-top: 1px solid $color-text-dividers;
+  @include padding($teaser-spacing-top 0 0 0);
+  // margin not padding here as we want the margin to collapse for the last item in the list within a listing container
+  // where that listing container also has a margin on the bottom.
+  @include margin($teaser-spacing-bottom, "bottom");
+
+  // TODO: Move to listing-list
+  .listing-list__item:first-child & {
+    border-top-style: none;
+  }
+
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+    float: none;
+  }
+}
+
+@mixin teaser-context-label-style() {
+  @include label-subject-typeg();
+  color: $color-text-secondary;
+}
+
+@mixin teaser-context-label-list-style {
+  @include label-content-typeg();
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin teaser-context-label-list-item-style {
+  display: inline;
+  list-style-type: none;
+  padding: 0;
+}
+
+@mixin teaser-header-text-style() {
+  @include listing-main-art-title-typeg();
+  @include padding(12, "top");
+}
+
+@mixin teaser-header-text-link-style() {
+  color: $color-text;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+
+}
+
+@mixin teaser-footer-style() {
+  color: $color-text-secondary;
+  display: flex;
+  @include label-content-typeg();
+  justify-content: space-between;
+  text-transform: none;
+}
+
+@mixin teaser-body-style() {
+  @include listing-impact-statement-typeg();
+  @include nospace("bottom");
+}
+
+@mixin dismissible_navigation {
+  @include typeg-portal-quick-nav();
+  line-height: 3;
+  @include nospace();
+  text-align: center;
+}
+
+@mixin overlay() {
+  background-color: $color-overlay;
+  position: absolute;
+  min-height: 100vh;
+  top: 0;
+  width: 100vw;
+  // z-index should be overridden as necessary
+  z-index: 4;
+}
+
+@mixin discreet-link ($color: $color-text) {
+  border-bottom: 1px dotted $color;
+  color: $color;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom-color: $color-primary;
+    color: $color-primary;
+  }
+}
+
+@mixin popup_title_text {
+  @include font-size(14);
+  line-height: 1.4285714286; /* 20px on 24px font */
+}
+
+@mixin popup-ancillary-text() {
+  color: $color-text--reverse;
+  font-family: $font-secondary;
+  @include font-size(11);
+  line-height: 1.6363636364; /* 18px on 11px font */
+}
+
+@mixin popup-large-ancillary-text() {
+  color: $color-text--reverse;
+  font-family: $font-secondary;
+  @include font-size(14);
+  line-height: #{(20/14)};
 }
 
 @mixin inline-image {

@@ -10,9 +10,9 @@
       <ul class="article-meta__link_list">
         {{#items}}
           <li class="article-meta__link_list_item">
-            {{#url}}<a href="{{url}}" class="article-meta__link">{{{name}}}</a>{{/url}}
-            {{^url}}{{{name}}}{{/url}}
-          </li>
+            {{#url}}<a href="{{url}}" class="article-meta__link">{{{name}}}</a>{{/url}}{{!
+            }}{{^url}}{{{name}}}{{/url}}{{!
+          }}</li>
         {{/items}}
       </ul>
     </section>

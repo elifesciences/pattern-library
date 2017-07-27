@@ -1,0 +1,7 @@
+{
+  "button": {
+    "text": "Back to home",
+    "classes": "button--default",
+    "path": "#"
+  }
+}

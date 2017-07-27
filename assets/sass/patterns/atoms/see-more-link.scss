@@ -1,12 +1,19 @@
 @import "../../definitions";
 
 .see-more-link {
-  border-top: 1px solid $color-text-dividers;
   display: block;
-  color: $color-primary;
+  color: $color-text;
   @include see-more-link-typeg();
-  @include padding(12, "top");
   text-decoration: none;
+
+  &:after {
+    content: "\00a\00bb";
+  }
+
+}
+
+.see-more-link__highlight {
+  color: $color-primary;
 }
 
 .see-more-link:hover {

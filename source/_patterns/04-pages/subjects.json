@@ -12,10 +12,11 @@
           "textClasses": "nav-primary__menu_text",
           "path": "#mainMenu",
           "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "nav-primary__menu_icon",
+              "classes": "",
               "altText": "Menu icon"
             },
             "sources": [
@@ -45,10 +46,11 @@
           "textClasses": "visuallyhidden",
           "path": "#",
           "picture": {
+            "pictureClasses": "nav-primary__search_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "nav-primary__search_icon",
+              "classes": "",
               "altText": "Search icon"
             },
             "sources": [
@@ -92,64 +94,29 @@
           "button": {
             "classes": "button--default button--extra-small"
           }
-        },
-        {
-          "text": "Alerts",
-          "classes": "nav-secondary__item nav-secondary__item--notification",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-              "classes": "nav-secondary__notification-icon",
-              "altText": "Notification icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
-              }
-            ]
-          }
-        },
-        {
-          "text": "Profile",
-          "classes": "nav-secondary__item nav-secondary__item--profile",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
-              "classes": "nav-secondary__profile-icon",
-              "altText": "Profile icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
-              }
-            ]
-          }
         }
       ]
     },
 
-    "compactForm": {
-      "formAction" : "/search",
-      "formId": "searchBox",
-      "formMethod": "GET",
-      "label": "Search by keyword or author",
-      "inputType": "search",
-      "inputName": "search",
-      "inputValue": "",
-      "inputPlaceholder": "Search by keyword or author",
-      "ctaText": "Search"
-    },
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
 
-    "subjectFilter": {
-      "name": "subject_filter",
-      "value": "cell_biology",
-      "text": "Cell biology"
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
     }
 
   },
@@ -160,152 +127,152 @@
       {
         "text": "Biochemistry",
         "url": "#Biochemistry",
-        "behaviour": "BackgroundImage",
-        "variant": "grid-listing",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },
       {
         "text": "Biophysics and structural biology",
         "url": "#Biophysics",
-        "behaviour": "BackgroundImage",
-        "variant": "grid-listing",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },    {
         "text": "Cell Biology",
         "url": "#Cell",
-        "variant": "grid-listing",
-        "behaviour": "BackgroundImage",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },    {
         "text": "Computational and systems biology",
         "url": "#Computational",
-        "variant": "grid-listing",
-        "behaviour": "BackgroundImage",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },    {
         "text": "Developmental Biology and Stem Cells",
         "url": "#Developmental",
-        "variant": "grid-listing",
-        "behaviour": "BackgroundImage",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },
       {
         "text": "Ecology",
         "url": "#Ecology",
-        "variant": "grid-listing",
-        "behaviour": "BackgroundImage",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },
       {
         "text": "Epidemiology and Global Health",
         "url": "#Epidemiology",
-        "variant": "grid-listing",
-        "behaviour": "BackgroundImage",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },
       {
         "text": "Genes and Chromosomes",
         "url": "#Genes",
-        "behaviour": "BackgroundImage",
-        "variant": "grid-listing",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },
       {
         "text": "Genomics and Evolutionary Biology",
         "url": "#Genomics",
-        "variant": "grid-listing",
-        "behaviour": "BackgroundImage",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },
       {
         "text": "Human Biology and Medicine",
         "url": "#Human",
-        "variant": "grid-listing",
-        "behaviour": "BackgroundImage",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },
       {
         "text": "Immunology",
         "url": "#Immunology",
-        "variant": "grid-listing",
-        "behaviour": "BackgroundImage",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },
       {
         "text": "Microbiology and Infectious Disease",
         "url": "#Microbiology",
-        "variant": "grid-listing",
-        "behaviour": "BackgroundImage",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },
       {
         "text": "Neuroscience",
         "url": "#Neuroscience",
-        "variant": "grid-listing",
-        "behaviour": "BackgroundImage",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       },
       {
         "text": "Plant Biology",
         "url": "#Plant",
-        "variant": "grid-listing",
-        "behaviour": "BackgroundImage",
-        "backgroundImage": {
-          "thresholdWidth": 600,
-          "lowResImageSource": "http://unsplash.it/950/400",
-          "highResImageSource": "http://unsplash.it/1900/800"
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
         }
       }
     ]

@@ -1,0 +1,23 @@
+{
+  "id": "select4",
+  "name": "select4",
+  "label": {
+    "labelText": "Select valid"
+  },
+  "classNames": "select--valid",
+  "options": [
+    {
+      "value": "2016",
+      "displayValue": "2016"
+    },
+    {
+      "value": "2015",
+      "displayValue": "2015",
+      "selected": true
+    },
+    {
+      "value": "2014",
+      "displayValue": "2014"
+    }
+  ]
+}

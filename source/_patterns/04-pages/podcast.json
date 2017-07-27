@@ -12,10 +12,11 @@
           "textClasses": "nav-primary__menu_text",
           "path": "#mainMenu",
           "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "nav-primary__menu_icon",
+              "classes": "",
               "altText": "Menu icon"
             },
             "sources": [
@@ -45,10 +46,11 @@
           "textClasses": "visuallyhidden",
           "path": "#",
           "picture": {
+            "pictureClasses": "nav-primary__search_icon",
             "fallback": {
               "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "nav-primary__search_icon",
+              "classes": "",
               "altText": "Search icon"
             },
             "sources": [
@@ -92,115 +94,64 @@
           "button": {
             "classes": "button--default button--extra-small"
           }
-        },
-        {
-          "text": "Alerts",
-          "classes": "nav-secondary__item nav-secondary__item--notification",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-              "classes": "nav-secondary__notification-icon",
-              "altText": "Notification icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
-              }
-            ]
-          }
-        },
-        {
-          "text": "Profile",
-          "classes": "nav-secondary__item nav-secondary__item--profile",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_2x.png 28w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 14w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-profile-ic_1x.png",
-              "classes": "nav-secondary__profile-icon",
-              "altText": "Profile icon"
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-profile-ic.svg"
-              }
-            ]
-          }
         }
       ]
     },
 
-    "compactForm": {
-      "formAction" : "/search",
-      "formId": "searchBox",
-      "formMethod": "GET",
-      "label": "Search by keyword or author",
-      "inputType": "search",
-      "inputName": "search",
-      "inputValue": "",
-      "inputPlaceholder": "Search by keyword or author",
-      "ctaText": "Search"
-    },
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
 
-    "subjectFilter": {
-      "name": "subject_filter",
-      "value": "cell_biology",
-      "text": "Cell biology"
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
     }
 
   },
    "contentHeader": {
-     "rootClasses": "content-header-nonarticle content-header-nonarticle--background",
-     "behaviour": "BackgroundImage",
-     "title": "Episode 21",
-     "strapline": "In this episode of the eLife podcast we hear about tinnitus and hyperacusis, salamanders, chemical harpoons, and the role of ultrasound and song in the mating rituals of mice and flies.",
-     "titleClass": "content-header__title--small",
-     "hasCtaOrMeta": true,
-     "button": {
-       "text": "Subscribe",
-       "path": "#subscribe",
-       "classes": "button--outline button--small"
-     },
+     "title": "Episode 21: June 2015",
+     "longTitle": true,
+     "impactStatement": "In this episode of the eLife podcast we hear about tinnitus and hyperacusis, salamanders, chemical harpoons, and the role of ultrasound and song in the mating rituals of mice and flies.",
      "meta": {
        "url": "#",
-       "text": "Podcast",
-       "date": {
-         "forHuman": {
-           "month": "Jun",
-           "year": 2016
-         },
-         "forMachine": "2016-06"
-       }
+       "text": "Podcast"
      },
      "download": "https://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
-     "hasBackground": true,
-     "backgroundImage": {
-       "lowResImageSource": "https://unsplash.it/950/400",
-       "highResImageSource": "https://unsplash.it/1900/800"
+     "image": {
+       "fallback": {
+         "defaultPath": "https://unsplash.it/1114/336"
+       }
+     },
+     "audioPlayer": {
+       "title": "Episode 21",
+       "episodeNumber": 21,
+       "sources":[
+         { "src": "https://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
+           "mediaType": {
+             "forMachine": "audio/mp3",
+             "forHuman": "mp3"
+           },
+           "fallback": {
+             "content": "Download the podcast",
+             "classes": "media-source__fallback_link--audio-player"
+           }
+         }
+       ],
+       "metadata": "{'number': 21, 'chapters': [{'number': 1, 'title': 'What causes tinnitus?', 'time': 36},{'number': 2, 'title': 'How salamanders avoid senescence', 'time': 386}, {'number': 3, 'title': 'Mouse ultrasound', 'time': 700}, {'number': 4, 'title': 'Drosophila duet: mating flies harmonise', 'time': 1010 }, { 'number': 5, 'title': 'Chemical Harpoons: bacterial anchors', 'time': 1307 } ] }"
      }
-  },
-
-  "audioPlayer": {
-    "title": "Episode 21",
-    "episodeNumber": 21,
-    "sources":[
-      { "src": "https://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
-        "mediaType": {
-          "forMachine": "audio/mp3",
-          "forHuman": "mp3"
-        },
-        "fallback": {
-          "content": "Download the podcast",
-          "classes": "media-source__fallback_link--audio-player"
-        }
-      }
-    ],
-    "metadata": "{'number': 21, 'chapters': [{'number': 1, 'title': 'What causes tinnitus?', 'time': 36},{'number': 2, 'title': 'How salamanders avoid senescence', 'time': 386}, {'number': 3, 'title': 'Mouse ultrasound', 'time': 700}, {'number': 4, 'title': 'Drosophila duet: mating flies harmonise', 'time': 1010 }, { 'number': 5, 'title': 'Chemical Harpoons: bacterial anchors', 'time': 1307 } ] }"
-  },
+   },
 
   "mainTeasers": [
     {
@@ -213,7 +164,24 @@
           },
           "title": "What causes tinnitus?",
           "chapterNumber": 1,
-          "content": "What causes tinnitus and hyperacusis?"
+          "content": "What causes tinnitus and hyperacusis?",
+          "hasContentSources": true,
+          "contentSource": [
+            {
+              "contentType": {
+                "name": "Research article",
+                "url": "https://elifesciences.org"
+              },
+              "text": "by someone awesome!"
+            },
+            {
+              "contentType": {
+                "name": "Article",
+                "url": "https://elifesciences.org"
+              },
+              "text": "by someone else just as awesome!"
+            }
+          ]
         },
         {
           "startTime": {

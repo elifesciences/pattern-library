@@ -1,5 +1,147 @@
 @import "../definitions";
 
+// IN THIS FILE:
+//  - Baseline grid
+//  - Horizontal grid
+
+// Baseline grid
+// TODO: BLG: Move to using these classes rather than $blg-* variables directly in patterns.
+// TODO: BLG: Move all blg vars & mixins into this file
+.blg-pad-top-small {
+  @include blg-spacing("top", "small");
+}
+
+.blg-pad-top-smallish {
+  @include blg-spacing("top", "smallish");
+}
+
+.blg-pad-top-medium {
+  @include blg-spacing("top", "medium");
+}
+
+.blg-pad-top-large {
+  @include blg-spacing("top", "large");
+}
+
+.blg-pad-bottom-small {
+  @include blg-spacing("bottom", "small");
+}
+
+.blg-pad-bottom-smallish {
+  @include blg-spacing("bottom", "smallish");
+}
+
+.blg-pad-bottom-medium {
+  @include blg-spacing("bottom", "medium");
+}
+
+.blg-pad-bottom-large {
+  @include blg-spacing("bottom", "large");
+}
+
+.blg-margin-top-small {
+  @include blg-spacing("top", "small", "margin");
+}
+
+.blg-margin-top-medium {
+  @include blg-spacing("top", "medium", "margin");
+}
+
+.blg-margin-top-large {
+  @include blg-spacing("top", "large", "margin");
+}
+
+.blg-margin-bottom-small {
+  @include blg-spacing("bottom", "small", "margin");
+}
+
+.blg-margin-bottom-medium {
+  @include blg-spacing("bottom", "medium", "margin");
+}
+
+.blg-margin-bottom-large {
+  @include blg-spacing("bottom", "large", "margin");
+}
+
+@mixin blg-pad-top--small-to-medium {
+
+  @include blg-spacing("top", "small");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("top", "medium");
+  }
+
+}
+
+@mixin blg-margin-bottom--medium-to-large {
+
+  @include blg-spacing("bottom", "medium", "margin");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "large", "margin");
+  }
+
+}
+
+@mixin blg-margin-bottom--small-to-medium {
+
+  @include blg-spacing("bottom", "small", "margin");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "medium", "margin");
+  }
+
+}
+
+@mixin blg-column-container() {
+  @include blg-margin-bottom--medium-to-large();
+}
+
+.grid-column {
+  @include blg-column-container();
+}
+
+.grid-secondary-column__item {
+  @include blg-column-container();
+}
+
+/*
+ *  Wrapper class. A class for constraining the content to the max-site-width and also applies the side padding.
+ */
+
+.wrapper {
+  box-sizing: content-box;
+  @include constrain-width($max-site-width, "max");
+  margin: auto;
+  padding: 0 7%;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    padding: 0 14%;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    padding: 0 3%;
+  }
+
+  &.wrapper--site-header {
+    padding: 0;
+  }
+
+  // --content and --listing discrimination as likely to diverge & can then be handled here rather than in journal
+  &.wrapper--content {
+    @include blg-pad-top--small-to-medium();
+  }
+
+  &.wrapper--listing {
+    @include blg-pad-top--small-to-medium();
+  }
+
+  .content-header-image-wrapper + &.wrapper--listing {
+    padding-top: 0;
+  }
+
+}
+
 /**
  * Grid
  *
@@ -61,23 +203,7 @@
  * `class="grid__item small--one-third large--five-twelfths"`
  */
 
-/*
- *  Wrapper class. A class for constraining the content to the max-site-width and also applies the side padding.
- */
-
-.wrapper {
-  box-sizing: content-box;
-  max-width: #{$max-site-width}px;
-  max-width: #{get-rem-from-px($max-site-width)}rem;
-  margin: auto;
-  padding: 0 6%;
-}
-
-@media only screen and (min-width: #{get-rem-from-px($max-site-width)}em) {
-  .wrapper {
-    padding: 0 4.125rem;
-  }
-}
+// TODO: Find where u-classes are used & remove where practicable
 
 /*
  * Extras
@@ -125,8 +251,13 @@ $pull: false !default;
  * that the breakpoint fires at.
  */
 
+// This interpolation of values from variables.scss (via definitions.scss) doesn't work. Why?
+//$breakpoints: (
+//    "x-small" "(max-width: " + $bkpt-site--x-small + "px)", "small" "(max-width: " + $bkpt-site--small + "px)", "medium" "(max-width: " + $bkpt-site--medium + "px)", "large" "(max-width: " + $bkpt-site--wide + "px)", "x-large" "(max-width: " + $bkpt-site--x-wide + "px)"
+//) !default;
+
 $breakpoints: (
- "x-small" "(max-width: 479px)", "small" "(min-width: 480px)", "medium" "(min-width: 640px)", "large" "(min-width: 800px)", "x-large" "(min-width: 1024px)"
+ "x-small" "(max-width: 319px)", "small" "(min-width: 480px)", "medium" "(min-width: 730px)", "large" "(min-width: 900px)", "x-large" "(min-width: 1200px)"
 ) !default;
 
 /**
@@ -268,6 +399,10 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
 @mixin device-type($namespace:"") {
   $prefix: "." + $namespace;
 
+  #{$prefix}one-whole {
+    width: 100%;
+  }
+
   /**
    * Whole
    */
@@ -279,6 +414,7 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
    * Halves
    */
   #{$prefix}one-half {
+    min-height: 1px;
     width: 50%;
   }
 
@@ -286,10 +422,12 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
    * Thirds
    */
   #{$prefix}one-third {
+    min-height: 1px;
     width: 33.333%;
   }
 
   #{$prefix}two-thirds {
+    min-height: 1px;
     width: 66.666%;
   }
 
@@ -297,49 +435,66 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
    * Quarters
    */
   #{$prefix}one-quarter {
+    min-height: 1px;
     width: 25%;
   }
   #{$prefix}two-quarters {
     @extend #{$prefix}one-half;
   }
   #{$prefix}three-quarters {
+    min-height: 1px;
     width: 75%;
   }
 
   /**
    * Twelfths
    */
+  #{$prefix}zero-twelfths {
+    min-height: 1px;
+    width: 0;
+  }
   #{$prefix}one-twelfth {
+    min-height: 1px;
     width: 8.333%;
   }
   #{$prefix}two-twelfths {
+    min-height: 1px;
     width: 16.666%;
   }
   #{$prefix}three-twelfths {
+    min-height: 1px;
     width: 25%;
   }
   #{$prefix}four-twelfths {
+    min-height: 1px;
     width: 33.333%;
   }
   #{$prefix}five-twelfths {
+    min-height: 1px;
     width: 41.666%;
   }
   #{$prefix}six-twelfths {
+    min-height: 1px;
     width: 50%;
   }
   #{$prefix}seven-twelfths {
+    min-height: 1px;
     width: 58.333%;
   }
   #{$prefix}eight-twelfths {
+    min-height: 1px;
     width: 66.666%;
   }
   #{$prefix}nine-twelfths {
+    min-height: 1px;
     width: 75%;
   }
   #{$prefix}ten-twelfths {
+    min-height: 1px;
     width: 83.333%;
   }
   #{$prefix}eleven-twelfths {
+    min-height: 1px;
     width: 91.666%;
   }
 }
@@ -366,6 +521,13 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
 
 @mixin push-setup($namespace: "") {
   $prefix: "." + "push--" + $namespace;
+
+  /**
+   * Zero
+   */
+  #{$prefix}zero {
+    left: 0;
+  }
 
   /**
    * Whole
@@ -565,55 +727,6 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
 
 }
 
-// Baseline grid
-.blg-pad-top-small {
-  @include blg-spacing("top", "small");
-}
-
-.blg-pad-top-medium {
-  @include blg-spacing("top", "medium");
-}
-
-.blg-pad-top-large {
-  @include blg-spacing("top", "large");
-}
-
-.blg-pad-bottom-small {
-  @include blg-spacing("bottom", "small");
-}
-
-.blg-pad-bottom-medium {
-  @include blg-spacing("bottom", "medium");
-}
-
-.blg-pad-bottom-large {
-  @include blg-spacing("bottom", "large");
-}
-
-.blg-margin-top-small {
-  @include blg-spacing("top", "small", "margin");
-}
-
-.blg-margin-top-medium {
-  @include blg-spacing("top", "medium", "margin");
-}
-
-.blg-margin-top-large {
-  @include blg-spacing("top", "large", "margin");
-}
-
-.blg-margin-bottom-small {
-  @include blg-spacing("bottom", "small", "margin");
-}
-
-.blg-margin-bottom-medium {
-  @include blg-spacing("bottom", "medium", "margin");
-}
-
-.blg-margin-bottom-large {
-  @include blg-spacing("bottom", "large", "margin");
-}
-
 /**
   TESTING
 
@@ -621,5 +734,6 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
 **/
 
 .show-grid .grid__item {
-  box-shadow: 0 0 0 2px #f00;
+  //box-shadow: 0 0 0 2px #f00;
+  outline: 1px solid rebeccapurple;
 }

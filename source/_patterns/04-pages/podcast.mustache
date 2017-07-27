@@ -2,20 +2,17 @@
 
   <div class="global-inner">
 
-    {{#siteHeader}}
-      {{> organisms-site-header }}
-    {{/siteHeader}}
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
 
-    <main role="main">
+    <main role="main" class="main">
 
     {{#contentHeader}}
-      {{> organisms-pl-only-content-header-non-article-basic-with-strapline-cta-meta-background-image}}
+      {{> organisms-content-header}}
     {{/contentHeader}}
-
-    {{#audioPlayer}}
-      {{> molecules-audio-player}}
-    {{/audioPlayer}}
-
 
     <div class="wrapper">
 
@@ -82,7 +79,9 @@
 
   </main>
 
-  {{> organisms-email-cta }}
+  {{#emailCta}}
+    {{> organisms-email-cta }}
+  {{/emailCta}}
 
   {{> organisms-footer }}
 

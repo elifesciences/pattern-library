@@ -1,4 +1,4 @@
-<div class="reference">
+<div class="reference"{{#bibId}} data-popup-label="See in references" data-popup-contents="{{bibId.full}}" id="{{bibId.full}}"{{/bibId}}>
 
   {{#doi}}
 
@@ -24,9 +24,8 @@
     <ol class="reference__authors_list">
       {{#authors}}
         <li class="reference__author">
-            {{! Allowing for arbitrary link, with fallback link to Google Scholar if missing. (Anticipating eLife profile links, but TBC.) }}
-            <a href="{{#url}}{{{url}}}{{/url}}{{^url}}http://scholar.google.com/scholar?q=&quot;author:{{{name}}}&quot;{{/url}}" class="reference__authors_link" target="_blank">{{{name}}}</a>
-        </li>
+          {{#url}}<a href="{{url}}" class="reference__authors_link">{{/url}}{{{name}}}{{#url}}</a>{{/url}}{{!
+        }}</li>
       {{/authors}}
     </ol>
     <span class="reference__authors_list_suffix">{{suffix}}</span>

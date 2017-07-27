@@ -1,0 +1,329 @@
+{
+  "viewSelector": true,
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "path": "#mainMenu",
+          "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "pictureClasses": "nav-primary__search_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Labs",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Submit my research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--button",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        }
+      ]
+    },
+
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
+
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
+    }
+
+  },
+
+  "contentHeader": {
+    "title": "Planarian 'kidneys' go with the flow",
+    "longTitle": true,
+    "header": {
+      "possible": true,
+      "hasSubjects": true,
+      "subjects": [
+        {
+          "name": "Cell Biology",
+          "url": "#"
+        },
+        {
+          "name": "Epidemiology and global health",
+          "url": "#"
+        }
+      ]
+    },
+    "authors": {
+      "list": [
+        {"name": "Melanie Issigonis"},
+        {"name": "Phillip A Newmark"}
+      ]
+    },
+
+    "meta": {
+      "url": "#",
+      "text": "Insight",
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 10,
+          "month": "Sep",
+          "year": 2015
+        },
+        "forMachine": "2015-09-10"
+      }
+    }
+
+  },
+
+  "class": "contextual-data__doi",
+
+  "articleSections": [
+    {
+      "isFirst": true,
+      "id": "abstract",
+      "title": "Abstract",
+      "hasBehaviour": true,
+      "headingLevel": 2,
+      "body": "<p>It is well established that learning can occur without external feedback, yet normative reinforcement learning theories have difficulties explaining such instances of learning. Here, we propose that human observers are capable of generating their own feedback signals by monitoring internal decision variables. We investigated this hypothesis in a visual perceptual learning task using fMRI and confidence reports as a measure for this monitoring process. Employing a novel computational model in which learning is guided by confidence-based reinforcement signals, we found that mesolimbic brain areas encoded both anticipation and prediction error of confidence—in remarkable similarity to previous findings for external reward-based feedback. We demonstrate that the model accounts for choice and confidence reports and show that the mesolimbic confidence prediction error modulation derived through the model predicts individual learning success. These results provide a mechanistic neurobiological explanation for learning without external feedback by augmenting reinforcement models with confidence-based feedback.</p>"
+    },
+    {
+      "id": "digest",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "title": "eLife Digest",
+      "body": "<p>Each year, up to 15% of the world's population experience symptoms of an influenza infection, also commonly known as flu. The most common culprit is a strain of the virus called influenza type A subtype H3N2. One reason that so many people become infected each year is that this virus evolves rapidly. Within a few years, proteins on the surface of the virus known as antigens become less recognizable to the immune system of a person who has been previously infected. This means that the person can become ill with the virus again because their immune system cannot mount an effective response to the evolved virus strain.</p><p>Influenza virus strains evolve rapidly because their genetic material accumulates mutations quickly. Although some of these mutations are beneficial to the virus, other mutations are harmful and reduce the ability of the virus to spread. Sometimes beneficial mutations may occur alongside harmful ones, but it is not known how the harmful mutations affect the evolution of the virus.</p><p>Here, Koelle and Rasmussen used computer models of H3N2 influenza to examine the effect of harmful mutations on the evolution of this virus population. The models show that harmful mutations limit how quickly the antigens can evolve. Also, the presence of these harmful mutations effectively acts as a sieve: they allow only large changes in the antigens to establish in the virus population.</p><p>The models suggest that there are three routes by which large changes in the antigens on H3N2 viruses may occur. The first is by a single mutation that has a big effect on the antigens in viruses that only carry a few harmful mutations, but these large mutations would not happen very often. Another route may be through more common mutations that have only a small or moderate benefit, which would allow the virus to become more common in the population before it acquires a beneficial mutation with a much greater effect. The third possibility is that a large beneficial mutation may arise in viruses that have many harmful mutations. These harmful mutations may initially limit the ability of the virus to spread, but over time, some of these harmful mutations may then be lost.</p><p>Koelle and Rasmussen found that the computer models could recreate the patterns of virus evolution that have been observed in real strains of H3N2. Researchers use predictions of influenza evolution to help them decide which virus strains should be included in flu vaccines each year. Koelle and Rasmussen findings indicate that harmful mutations should be considered when making these predictions.</p>"
+    },
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "body":"<p>TNF Receptor Associated Factor 2 (TRAF2) is an adaptor protein that transduces signals following ligation of certain cytokine receptors including those binding TNF. It was first identified together with TRAF1 as a component of TNF receptor-2 and then TNF receptor-1 (TNFR1) signalling complexes (<a class=\"xref-bibr\" href=\"#bib50\" rel=\"#bib50\" title=\"\">Rothe et al., 1994</a>; <a class=\"xref-bibr\" href=\"#bib54\" rel=\"#bib54\" title=\"\">Shu et al., 1996</a>). TRAF2, like most other TRAFs, contains a RING domain, several zinc fingers, a TRAF-N, and a conserved TRAF-C domain which is responsible for oligomerisation and receptor binding through its MATH region (<a class=\"xref-bibr\" href=\"#bib60\" rel=\"#bib60\">Takeuchi et al., 1996</a>; <a class=\"xref-bibr\" href=\"#bib63\" rel=\"#bib63\">Uren and Vaux, 1996</a>).</p><p>RING domains are nearly always associated with ubiquitin E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib52\" rel=\"#bib52\">Shi and Kehrl, 2003</a>) and TRAF2 can promote ubiquitylation of RIPK1 in TNFR1 signalling complexes (TNFR1-SC) (<a class=\"xref-bibr\" href=\"#bib71\" rel=\"#bib71\">Wertz et al., 2004</a>). However TRAF2 recruits E3 ligases such as cIAPs to TNFR1-SC and these have also been shown to be able to ubiquitylate RIPK1 and regulate TNF signalling (<a class=\"xref-bibr\" href=\"#bib13\" rel=\"#bib13\">Dynek et al., 2010</a>; <a class=\"xref-bibr\" href=\"#bib34\" rel=\"#bib34\">Mahoney et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib66\" rel=\"#bib66\">Varfolomeev et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). This makes it difficult to unambiguously determine the role of the E3 ligase activity of TRAF2.</p><p>Activation of JNK and NF-κB by TNF is reduced in cells from <em>Traf2<sup>-/-&nbsp;</sup></em>mice while only JNK signalling was affected in lymphocytes from transgenic mice that express a dominant negative (DN) form of TRAF2 that lacks the RING domain (<a class=\"xref-bibr\" href=\"#bib31\" rel=\"#bib31\">Lee et al., 1997</a>; <a class=\"xref-bibr\" href=\"#bib74\" rel=\"#bib74\">Yeh et al., 1997</a>). <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> mouse embryonic fibroblasts (MEFs) have a pronounced defect in activation of NF-κB by TNF, suggesting that absence of TRAF2 can be compensated by TRAF5 (<a class=\"xref-bibr\" href=\"#bib59\" rel=\"#bib59\" title=\"\">Tada et al., 2001</a>). Although activation of NF-κB was restored in <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> cells by re-expression of wild type TRAF2, it was not restored when the cells were reconstituted with TRAF2 point mutants that could not bind cIAPs (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). These data, together with a wealth of different lines of evidence showing that cIAPs are critical E3 ligases required for TNF-induced canonical NF-κB (<a class=\"xref-bibr\" href=\"#bib5\" rel=\"#bib5\">Blackwell et al., 2013</a>; <a class=\"xref-bibr\" href=\"#bib21\" rel=\"#bib21\">Haas et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib56\" rel=\"#bib56\">Silke, 2011</a>), support the idea that the main function of TRAF2 in TNF-induced NF-κB is to recruit cIAPs to the TNFR1-SC. However, it remains possible that the RING of TRAF2 plays another function, such as in activating JNK and protecting cells from TNF-induced cell death (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\" title=\"\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). Furthermore it has been shown that TRAF2 can K48-ubiquitylate caspase-8 to set the threshold for TRAIL or Fas induced cell death (<a class=\"xref-bibr\" href=\"#bib17\" rel=\"#bib17\">Gonzalvez et al., 2012</a>). Moreover, TRAF2 inhibits non-canonical NF-κB signalling (<a class=\"xref-bibr\" href=\"#bib18\" rel=\"#bib18\">Grech et al., 2004</a>; <a class=\"xref-bibr\" href=\"#bib78\" rel=\"#bib78\">Zarnegar et al., 2008</a>) and this function requires the RING domain of TRAF2 to induce proteosomal degradation of NIK (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). However, structural and in vitro analyses indicate that, unlike TRAF6, the RING domain of TRAF2 is unable to bind E2 conjugating enzymes (<a class=\"xref-bibr\" href=\"#bib76\" rel=\"#bib76\">Yin et al., 2009</a>), and is therefore unlikely to have intrinsic E3 ligase activity.</p><p>Sphingosine-1-phosphate (S1P) is a pleiotropic sphingolipid mediator that regulates proliferation, differentiation, cell trafficking and vascular development (<a class=\"xref-bibr\" href=\"#bib44\" rel=\"#bib44\">Pitson, 2011</a>). S1P is generated by sphingosine kinase 1 and 2 (SPHK1 and SPHK2) (<a class=\"xref-bibr\" href=\"#bib28\" rel=\"#bib28\">Kohama et al., 1998</a>; <a class=\"xref-bibr\" href=\"#bib33\" rel=\"#bib33\">Liu et al., 2000</a>). Extracellular S1P mainly acts by binding to its five G protein-coupled receptors S1P<sub>1-5</sub> (<a class=\"xref-bibr\" href=\"#bib25\" rel=\"#bib25\">Hla and Dannenberg, 2012</a>). However, some intracellular roles have been suggested for S1P, including the blocking of the histone deacetylases, HDAC1/2 (<a class=\"xref-bibr\" href=\"#bib22\" rel=\"#bib22\">Hait et al., 2009</a>) and the induction of apoptosis through interaction with BAK and BAX (<a class=\"xref-bibr\" href=\"#bib9\" rel=\"#bib9\">Chipuk et al., 2012</a>).</p><p>Recently, it was suggested that the RING domain of TRAF2 requires S1P as a co-factor for its E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib3\" rel=\"#bib3\">Alvarez et al., 2010</a>). Alvarez and colleagues proposed that SPHK1 but not SPHK2 is activated by TNF and phosphorylates sphingosine to S1P which in turn&nbsp;binds&nbsp;to the RING domain of TRAF2 and serves as an essential co-factor that was missing in the experiments of Yin <em>et al.</em> Alvarez and colleagues, observed that in the absence of SPHK1, TNF-induced NF-κB activation was completely abolished.</p><p>Although we know a lot about TRAF2, there are still important gaps particularly with regard to cell type specificity and in vivo function of TRAF2. Moreover, despite the claims that SPHK1 and its product, S1P, are required for TRAF2 to function as a ubiquitin ligase, the responses of <em>Traf2<sup>-/-&nbsp;</sup></em>and <em>Sphk1<sup>-/-</sup></em> cells to TNF were not compared. Therefore, we undertook an analysis of TRAF2 and SPHK1 function in TNF signalling in a number of different tissues.</p><p>Surprisingly, we found that neither TRAF2 nor SPHK1 are required for TNF mediated canonical NF-κB and MAPK signalling in macrophages. However, MEFs, murine dermal fibroblasts (MDFs) and keratinocytes required TRAF2 but not SPHK1 for full strength TNF signalling. In these cell types, absence of TRAF2 caused a delay in TNF-induced activation of NF-κB and MAPK, and sensitivity to killing by TNF was increased. Absence of TRAF2 in keratinocytes in vivo resulted in psoriasis-like epidermal hyperplasia and skin inflammation. Unlike TNF-dependent genetic inflammatory skin conditions, such as IKK2 epidermal knock-out (<a class=\"xref-bibr\" href=\"#bib40\" rel=\"#bib40\" title=\"\">Pasparakis et al., 2002</a>) and the <em>cpdm</em> mutant (<a class=\"xref-bibr\" href=\"#bib16\" rel=\"#bib16\">Gerlach et al., 2011</a>), the onset of inflammation was only delayed, and not prevented by deletion of TNF. This early TNF-dependent inflammation is caused by excessive apoptotic but not necroptotic cell death and could be prevented by deletion of <em>Casp8</em>. We observed constitutive activation of NIK and non-canonical NF-κB in <em>Traf2<sup>-/-&nbsp;</sup></em>keratinocytes which caused production of inflammatory cytokines and chemokines. We were able to reverse this inflammatory phenotype by simultaneously deleting both <em>Tnf</em> and <em>Nfkb2</em> genes. Our results highlight the important role TRAF2 plays to protect keratinocytes from cell death and to down-regulate inflammatory responses and support the idea that intrinsic defects in keratinocytes can initiate psoriasis-like skin inflammation.</p>"
+    },
+    {
+      "id": "articleInfo",
+      "hasBehaviour": true,
+      "isInitiallyClosed": true,
+      "headingLevel": 2,
+      "title": "Article & author information",
+      "body": "<h3>Author contributions</h3><ul><li>BRK, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</li><li>HK, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</li><li>KS, Conception and design, Drafting or revising the article</li></ul><h3>For correspondence</h3><a href=\"mailto:kscott@berkeley.edu\">kscott@berkeley.edu (KS)</a><h3>Competing interests</h3><p>The authors declare that no competing interests exist.</p><h3>Funding</h3><dl><dt>National Institute on Deafness and Other Communication Disorders</dt><dd>R01 DC013280</dd></dl><h3>Kristin Scott</h3><p>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</p><h3>Other versions</h3><p>You are viewing the most recent version of this article.</p><ul><li>Previous version (November 17, 2015)</li><li>Previous version (November 14, 2015)</li></ul><h3>Identification</h3><div>DOI: 10.7554/eLife.11188</div><div>Cite this as: eLife 2015;4:e11188</div><h3>Publication history</h3><ul><li>Received August 27, 2015.</li><li>Accepted November 12, 2015.</li><li>Published November 14, 2015.</li></ul><h3>Reviewing editor</h3><p>Mani Ramaswami, Reviewing editor, Trinity College Dublin, Ireland</p>"
+    }
+  ],
+
+  "iframe": {
+    "src": "https://www.youtube.com/embed/6j0jRXPvpCE",
+    "paddingBottom": 56.25
+  },
+
+
+  "pl-only-article-section-for-download-links": {
+    "id": "articleDownloadLinksList",
+
+    "title": "Article download links",
+
+    "downloadLinks": {
+      "description": "A three part list of links to download the article, or parts of the article, in various formats.",
+      "groups": [
+        {
+          "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF)</span>",
+          "items": [
+            {
+              "name": "Article",
+              "url": "#"
+            },
+            {
+              "name": "Figures",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "title": "Download citations<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
+          "items": [
+            {
+              "name": "BibTex",
+              "url": "#"
+            },
+            {
+              "name": "EndNote",
+              "url": "#"
+            },
+            {
+              "name": "EndNote 8",
+              "url": "#"
+            },
+            {
+              "name": "Refworks Tagged",
+              "url": "#"
+            },
+            {
+              "name": "RIS",
+              "url": "#"
+            },
+            {
+              "name": "Medlars",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
+          "items": [
+            {
+              "name": "Mendeley",
+              "url": "#"
+            },
+            {
+              "name": "ReadCube",
+              "url": "#"
+            },
+            {
+              "name": "Papers App",
+              "url": "#"
+            },
+            {
+              "name": "CiteUlike",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "mainMenu":{
+    "listHeading": {
+      "heading": "Menu"
+    },
+    "links": {
+      "items": [
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Author guide", "url": "#aut"},
+        {"name": "Reviewer guide", "url": "#rev"},
+        {"name": "About", "url": "#abo"},
+        {"name": "Inside eLife", "url": "#ins"},
+        {"name": "Careers", "url": "#car"},
+        {"name": "Labs", "url": "#lab"}
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
+  ],
+
+  "year": 2016
+
+}

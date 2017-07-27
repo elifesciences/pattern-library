@@ -17,6 +17,9 @@ schema:
         - number
         - roman-lower
         - roman-upper
+    classes:
+      type: string
+      minLength: 1
     items:
       type: array
       items:

@@ -3,8 +3,13 @@
 .doi {
   @include label-content-typeg($color-text-secondary);
 
+  .popup__content & {
+    @include popup-ancillary-text();
+  }
+
   // Extra specificity needed to override: .article-section a
   a.doi__link {
+    border-bottom: none;
     color: $color-text-secondary;
     text-decoration: none;
     text-transform: none;
@@ -12,17 +17,28 @@
     &:hover {
       color: $color-primary;
     }
+
+    .popup__content & {
+      @include popup-ancillary-text();
+    }
+
   }
 
   &--article-section {
+    color: $color-text;
     display: block;
+    @include font-size(14);
     @include margin(24, "bottom");
+
+    a.doi__link {
+      color: $color-text;
+    }
+
   }
 
   &--asset {
     @include label-content-typeg($color-text);
     display: block;
-    font-weight: normal;
 
     a.doi__link {
       @include fig-caption-text-typeg(0);

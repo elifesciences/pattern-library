@@ -40,6 +40,12 @@ schema:
     ctaText:
       type: string
       minLength: 1
+    hiddenFields:
+      type: array
+      items:
+        $ref: ../../00-atoms/forms/hidden-field.yaml#/schema
+    honeypot:
+      $ref: ../../00-atoms/forms/honeypot.yaml#/schema
   required:
     - formId
     - formAction

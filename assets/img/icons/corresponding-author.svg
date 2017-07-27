@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="8px" viewBox="0 0 10 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>corresponding-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD---code-block" transform="translate(-708.000000, -292.000000)" fill="#212121">
+            <g id="page" transform="translate(-5.000000, -2.000000)">
+                <g id="header" transform="translate(387.000000, 115.000000)">
+                    <g id="corresponding-icon" transform="translate(326.000000, 179.000000)">
+                        <path d="M9,0 L1,0 C0.45,0 0,0.45 0,1 L0,7 C0,7.55 0.45,8 1,8 L9,8 C9.55,8 10,7.55 10,7 L10,1 C10,0.45 9.55,0 9,0 L9,0 Z M9,2 L5,4.5 L1,2 L1,1 L5,3.5 L9,1 L9,2 L9,2 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

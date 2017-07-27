@@ -1,11 +1,17 @@
 <div data-behaviour="ArticleDownloadLinksList" id="{{id}}" aria-labelledby="{{id}}-label">
-  <div class="visuallyhidden"><span id="{{id}}-label">{{{description}}}</span><!-- Consider skip link here for AT --></div>
+  <div class="visuallyhidden"><span id="{{id}}-label">{{{description}}}</span>{{! Consider skip link here for AT }}</div>
 
   {{#groups}}
     <h3 class="article-download-links-list__heading">{{{title}}}</h3>
     <ul class="article-download-list">
       {{#items}}
-       <li><a href="{{url}}" class="article-download-links-list__link">{{{name}}}</a></li>
+       <li><a href="{{url}}" class="article-download-links-list__link"
+
+       {{#attributes}}
+         data-{{key}}{{#value}}="{{value}}"{{/value}}
+       {{/attributes}}
+
+       >{{{name}}}</a></li>
       {{/items}}
     </ul>
   {{/groups}}

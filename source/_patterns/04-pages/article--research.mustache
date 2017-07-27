@@ -1,15 +1,16 @@
-<div class="global-wrapper" data-behaviour="FragmentHandler">
+<div class="global-wrapper">
   <div class="global-inner">
-    {{#siteHeader}}
-      {{> organisms-site-header }}
-    {{/siteHeader}}
-
-    <main role="main" class="blg-margin-bottom-large">
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+    <main role="main" class="main blg-margin-bottom-large">
 
       <article class="article">
 
         {{#contentHeader}}
-          {{> organisms-pl-only-content-header-article}}
+          {{> organisms-content-header}}
         {{/contentHeader}}
 
         {{#contextualData}}
@@ -18,32 +19,47 @@
           </div>
         {{/contextualData}}
 
-        <div class="wrapper">
+        <div class="wrapper wrapper--content">
 
           <div class="grid">
 
-            <div class="grid__item large--two-twelfths blg-pad-top-medium">
-              {{#viewSelector}}
-                {{> molecules-view-selector }}
-              {{/viewSelector}}
-            </div>
+            {{#viewSelector}}
+              <div class="grid__item
+                          one-whole
+                          x-large--two-twelfths">
 
-            <div class="grid__item large--six-twelfths blg-pad-top-medium" data-behaviour="FragmentHandler">
+                  {{> molecules-view-selector }}
+              </div>
+            {{/viewSelector}}
 
+
+            <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}}">
+
+              <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
               {{#articleSections}}
                 {{> molecules-article-section }}
               {{/articleSections}}
+              </div>
 
               {{#iframe}}
                 {{!> atoms-iframe }}
               {{/iframe}}
 
-              <!-- Decided this will be content, serverside -->
+              {{! Decided this will be content, serverside }}
               {{#pl-only-article-section-for-download-links}}
                 {{> molecules-pl-only-article-section-for-download-links}}
               {{/pl-only-article-section-for-download-links}}
 
-              <!-- May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? -->
+              <section class="article-section" data-behaviour="ArticleSection" id="references">
+                <header class="article-section__header">
+                  <h2 class="article-section__header_text">References</h2>
+                </header>
+                <div class="article-section__body">
+                  {{> molecules-reference-list }}
+                </div>
+              </section>
+
+              {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
               {{#articleMeta}}
                 <section class="article-section">
 
@@ -53,7 +69,15 @@
 
                 </section>
               {{/articleMeta}}
+
             </div>
+
+            {{#hasRelated}}
+              <div class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}">
+
+              </div>
+
+            {{/hasRelated}}
 
           </div>
 
@@ -63,10 +87,22 @@
 
     </main>
 
+    <div class="wrapper">
+
+      <div class="grid">
+
+        <div class="grid__item large--eight-twelfths push--large--two-twelfths blg-pad-bottom-large">
+          {{#furtherReading}}
+            {{> organisms-listing-read-more }}
+          {{/furtherReading}}
+        </div>
+      </div>
+    </div>
+
     {{#emailCta}}
     {{> organisms-email-cta }}
     {{/emailCta}}
 
     {{> organisms-footer }}
-  </div> <!-- /.global-inner -->
-</div> <!-- /.global-wrapper -->
+  </div> {{! /.global-inner }}
+</div> {{! /.global-wrapper }}

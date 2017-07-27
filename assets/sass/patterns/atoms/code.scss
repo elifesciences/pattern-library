@@ -1,0 +1,16 @@
+@import "../../definitions";
+
+.code {
+  @include mono-typeg;
+  @include margin(24, "bottom");
+  @include padding(12);
+  background-color: $color-text-ui-code;
+  border: 1px solid $color-text-dividers;
+  border-radius: #{$border-radius}px;
+  color: $color-text;
+  overflow-x: scroll;
+}
+
+.code code {
+  white-space: pre-wrap;
+}

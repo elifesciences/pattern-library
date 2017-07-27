@@ -1,18 +1,32 @@
 @import "../../definitions";
 
 .pager {
-  @include margin(12, "bottom");
+
   @supports (display: flex) {
     display: flex;
+    justify-content: space-between;
+  }
+
+  .button:nth-child(2) {
+    float: right;
+  }
+
+  .listing-column-container & {
+    @include padding(24, "top");
   }
 }
 
-.pager__button {
-  @supports (display: flex) {
-    flex-grow: 1;
-  }
-}
+.js .pager__text_wrapper.loading {
 
-.pager__button--next {
-  text-align: right;
+  position: relative;
+
+  &:after {
+    @include loading-spinner($highlight-color: $color-text--reverse, $base-color: #81c4e8);
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 110%;
+    top: -3px;
+  }
+
 }

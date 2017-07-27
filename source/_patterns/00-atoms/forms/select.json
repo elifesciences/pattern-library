@@ -1,8 +1,8 @@
 {
-  "id": "mySelect",
+  "id": "select1",
+  "name": "select1",
   "label": {
-    "labelText": "label",
-      "for": "mySelect"
+    "labelText": "Select"
   },
   "options": [
     {

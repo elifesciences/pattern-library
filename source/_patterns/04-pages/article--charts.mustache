@@ -1,0 +1,71 @@
+<div class="global-wrapper">
+  <div class="global-inner">
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+
+    <main role="main" class="main blg-margin-bottom-large">
+
+      <article class="article">
+
+        {{#contentHeader}}
+          {{> organisms-content-header}}
+        {{/contentHeader}}
+
+        {{#contextualData}}
+          <div class="wrapper">
+            {{> molecules-contextual-data }}
+          </div>
+        {{/contextualData}}
+
+        <div class="wrapper">
+
+          <div class="grid">
+
+            <div class="grid__item large--two-twelfths blg-pad-top-medium">
+              {{#viewSelector}}
+                {{> molecules-view-selector }}
+              {{/viewSelector}}
+            </div>
+
+            <div class="{{> pages-pl-only-grid-content-page-main-col-css-classes}} blg-pad-top-medium">
+
+              {{#articleSections}}
+                {{> molecules-article-section }}
+              {{/articleSections}}
+
+
+              {{! Decided this will be content, serverside }}
+              {{#pl-only-article-section-for-download-links}}
+                {{> molecules-pl-only-article-section-for-download-links}}
+              {{/pl-only-article-section-for-download-links}}
+
+              {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
+              {{#articleMeta}}
+                <section class="article-section">
+
+                  <div class="article-section__body">
+                    {{> molecules-article-meta }}
+                  </div>
+
+                </section>
+              {{/articleMeta}}
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </main>
+
+    {{#emailCta}}
+      {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+  </div> {{! /.global-inner }}
+</div> {{! /.global-wrapper }}

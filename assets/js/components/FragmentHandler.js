@@ -10,14 +10,11 @@ const utils = require('../libs/elife-utils')();
  */
 module.exports = class FragmentHandler {
 
-  static isSingleton()  {
-    return true;
-  }
-
   constructor($elm, _window = window, doc = document) {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+    this.isSingleton = true;
     this.window.addEventListener('DOMContentLoaded', this.handleDomLoad.bind(this));
   }
 
@@ -36,11 +33,15 @@ module.exports = class FragmentHandler {
    * @returns {boolean} true if element with id is $section, or is contained within $section
    */
   isIdOfOrWithinSection(id, $section, doc, areElementsNested) {
+    if (id.search(/https?:\/\//) === 0) {
+      return false;
+    }
+
     if (id === $section.id) {
       return true;
     }
 
-    let $fragWithId = doc.querySelector('#' + id);
+    const $fragWithId = doc.querySelector('#' + id);
     return areElementsNested($section, $fragWithId);
   }
 
@@ -99,19 +100,7 @@ module.exports = class FragmentHandler {
     let idOfCollapsedSection = this.getIdOfCollapsedSection(hash, this.doc,
                                                             utils.areElementsNested);
     if (!!idOfCollapsedSection) {
-      // emit a section open event with the id of the section to open
-      // TODO: Used in several places, refactor out into common
-      let expandSection;
-      try {
-        expandSection = new CustomEvent('expandsection', { detail: hash });
-      } catch (e) {
-        // CustomEvent not supported, do it the old fashioned way
-        expandSection = document.createEvent('expandsection');
-        expandSection.initCustomEvent('expandsection', true, true, { detail: hash });
-      }
-
-      this.doc.querySelector('#' + idOfCollapsedSection).dispatchEvent(expandSection);
-
+      this.doc.querySelector('#' + idOfCollapsedSection).dispatchEvent(utils.eventCreator('expandsection', hash));
     }
   }
 };

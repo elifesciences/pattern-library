@@ -1,0 +1,74 @@
+@import "../../definitions";
+
+.section-listing {
+
+  @include nospace();
+  @include padding($blg-space-extra-small-in-px, "top");
+  list-style: none;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    border-bottom: 1px solid $color-text-dividers;
+    @include padding($blg-space-extra-small-in-px - 1, "bottom");
+  }
+
+}
+
+.section-listing__list_item {
+  @include dismissible_navigation();
+}
+
+.section-listing__list_link {
+  color: $color-text;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.section-listing--single-line {
+
+  .section-listing__list_item--current {
+    .section-listing__list_link {
+      color: $color-primary;
+    }
+
+  }
+
+}
+
+@media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
+
+  .section-listing--single-line {
+    column-count: 1;
+  }
+
+  .js {
+
+    .section-listing {
+      column-count: 3;
+      column-gap: 2.25rem;
+    }
+
+    .section-listing__list_item {
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .section-listing--single-line {
+      border-bottom: 1px solid $color-text-dividers;
+      column-count: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include padding(11, "bottom");
+
+      .section-listing__list_item {
+        @include margin(0 12);
+      }
+
+    }
+
+  }
+
+}

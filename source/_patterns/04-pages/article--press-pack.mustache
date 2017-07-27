@@ -1,0 +1,79 @@
+<div class="global-wrapper">
+  <div class="global-inner">
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+
+    <main role="main" class="main show-grid">
+
+      <article class="article">
+
+        {{#contentHeader}}
+          {{> organisms-content-header}}
+        {{/contentHeader}}
+
+        {{#viewSelector}}
+          <div style="color: blue;">Has jump links</div>
+        {{/viewSelector}}
+        {{^viewSelector}}
+          <div style="color: red;">No jump links</div>
+        {{/viewSelector}}
+
+        {{#hasRelated}}
+          <div style="color: blue;">Has related content</div>
+        {{/hasRelated}}
+        {{^hasRelated}}
+          <div style="color: red;">No related content</div>
+        {{/hasRelated}}
+
+        <div class="wrapper u-pad-top-lg clearfix">
+
+          <div class="grid">
+
+            {{#viewSelector}}
+              <div class="grid__item
+                        one-whole
+                        x-large--two-twelfths">
+                [jump menu]
+              </div>
+            {{/viewSelector}}
+
+            <div class="{{> pages-pl-only-grid-content-page-main-col-css-classes}}">
+              <p>By Elizabeth Robinson</p>
+
+              <p>After a decade of growth, the open-access movement in scientific publishing still hasn’t overthrown the traditional model of paid content and subscription-based access, but new initiatives continue to try.</p>
+
+              <p>The latest entrant, which launched December 13, 2012, is a collaboration of the Howard Hughes Medical Institute (HHMI), Wellcome Trust, and the Max Planck Society called <a href="http://elifesciences.org/">eLife</a>. On Thursday, <i>U.S. News and World Report</i> managing editor Simon Owens <a href="http://www.usnews.com/news/articles/2013/02/21/can-some-of-the-largest-backers-of-scientific-research-alter-the-peer-review-process">looked into</a> the prospects of the fledgling open-access journal, whose founders “collectively contribute more than $4.2 billion a year to scientific research.” Unsurprisingly, they’re aiming high, Owens reported:</p>
+
+              <p>To date, eLife has already published more than 60 articles in the short time since its launch, and it still remains to be seen whether it can achieve the quick ascendancy to become one of the most-sought after publications for high impact research. Its founders believe that the prestige of its backers, along with the leading scientists who run it, will catapult it to the status of the <i>Cells</i> and<i>Natures</i> of the world, but the question remains as to whether scientists will abandon these closed-access stalwarts.</p>
+
+              <p><a href="http://www.cjr.org/the_observatory/elife_open_access_scientific_p.php">Read more</a></p>
+
+
+            </div>
+
+            {{#hasRelated}}
+              <aside class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}">
+
+                [related content]
+
+              </aside>
+            {{/hasRelated}}
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </main>
+
+    {{#emailCta}}
+    {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+  </div> {{! /.global-inner }}
+</div> {{! /.global-wrapper }}

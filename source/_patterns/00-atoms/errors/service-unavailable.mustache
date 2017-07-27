@@ -1,0 +1,17 @@
+<div class="error">
+
+    <picture>
+        <source srcset="{{#assetRewrite}}{{assetsPath}}/img/errors/503.svg{{/assetRewrite}}" type="image/svg+xml">
+        <img srcset="{{#assetRewrite}}{{assetsPath}}/img/errors/503-2x.png{{/assetRewrite}} 266w" src="{{#assetRewrite}}{{assetsPath}}/img/errors/503.png{{/assetRewrite}}" sizes="133px"
+             alt="" class="error__icon">
+    </picture>
+
+    <h1 class="error__title">Back soon</h1>
+
+    <p>We’re carrying out planned maintenance on this page.</p>
+
+    {{#button}}
+        {{> atoms-button }}
+    {{/button}}
+
+</div>

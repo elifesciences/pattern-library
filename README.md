@@ -17,6 +17,21 @@ You'll need:
 
 Then install compass: `gem install compass`
 
+## 2. Automatic setup
+From the root directory run
+```
+$ ./bin/dev
+```
+This will install and run the commands needed to get started, starting a web server on port 8889. If you need a custom port pass this as the first argument:
+```
+$ ./bin/dev 1234
+```
+This will run on localhost:1234 
+
+You should be good to go, open your browser and you will see the pattern lab.
+
+# Manual setup
+
 ## 1. Set up PatternLab
 
 - Clone pattern library: `git clone git@github.com:elifesciences/pattern-library.git`
@@ -29,11 +44,14 @@ Then install compass: `gem install compass`
 - install required npm packages with `npm install`
 - run `gulp` to build the css & js files.
 - then run `gulp watch` to watch for changes to files or do both in one fell swoop with `gulp && gulp watch` (the watch task on its own will not compile your assets until a file is changed).
-- if generating files intended for website production, invoke with the production flag, like this: `gulp --environment production`. The only difference at the moment is to minify css files, it may be used for more later.
+- run `gulp test --mocha-grep=something` to pass the `--grep` option to mocha and run a subset of tests.
+- if generating files intended for website production, invoke with the production flag, like this: `gulp --environment production`. The minifies css & js files.
 
 ## 3. Generate PatternLab
 
-- Run `php ./core/builder.php -g`, and check no errors in the output.
+To run a **one-off** generation of the patterns, it's `php ./core/builder.php -g`
+
+Alternatively to set up a **watch task** for pattern generation, run `php ./core/builder.php -w` 
 
 ## 4. Verify the setup
 
@@ -48,6 +66,12 @@ Verify the generated static site by serving the `public` folder locally. One qui
 
 # Using patterns
 
-For patterns that are being exposed as resources (ie the Mustache template can be used in an application), there is a YAML file located alongside the template. This contains details of any CSS/JS files that it requires, and a JSON Schema that documents what input is expected.
+For patterns that are being exposed as resources (ie the Mustache template can be used in an application), there is a YAML file located alongside the template. This contains details of any CSS files that it requires, and a JSON Schema that documents what input is expected.
 
 You can run `bin/validate`, which checks all data files for a pattern against the schema.
+
+There is also a list of js file dependencies for each pattern, but individual js files have not yet been implemented and so these lists are currently all empty.
+
+# Notes
+
+All assets paths in Mustache templates must be wrapped in `{{#assetRewrite}}`, which allows implementations to rewrite the path for cache-busting purposes. The path must also be prepended by `{{assetsPath}}`. 

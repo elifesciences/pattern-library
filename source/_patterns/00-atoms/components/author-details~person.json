@@ -1,0 +1,44 @@
+{
+  "name": "Jenny Bloggs",
+  "authorId": "pageUniqueIdForThisAuthor1",
+
+  "details": [
+    {
+      "values": [
+        "Evolutionary Studies Institute and Centre of Excellence in PalaeoSciences, University of the Witwatersrand, Johannesburg, South Africa",
+        "School of Geosciences, University of the Witwatersrand, Johannesburg, South Africa"
+      ]
+    },
+    {
+      "heading": "Present addresses",
+      "values": [
+        "Department of Inventive Inventions, Univertity of Wessex, Windowchester, Wessex",
+        "Department of Underwater Basket Weaving, University of Somewhere"
+      ]
+    },
+    {
+      "heading": "Contribution",
+      "value": "Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article, Contributed unpublished essential data or reagents"
+    },
+    {
+      "heading": "Contributed equally with",
+      "values": [
+        "Francesca Smith",
+        "Wendel Jakes III"
+      ]
+    },
+    {
+      "heading": "For correspondence",
+      "values": [
+        "<a href=\"mailto:jenny@bloggs.com\">jenny@bloggs.com</a>",
+        "<a href=\"tel:+1555432109876\">+1 555-4321-09876</a>"
+      ]
+    },
+    {
+      "heading": "Competing interests",
+      "value": "No competing interests declared"
+    }
+  ],
+
+  "orcid": "0000-0002-3400-7927"
+}

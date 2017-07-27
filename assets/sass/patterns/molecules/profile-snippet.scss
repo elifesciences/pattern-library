@@ -2,8 +2,26 @@
 
 .profile-snippet {
   border-top: 1px solid $color-text-dividers;
-  @include padding(12, "bottom");
-  @include padding(12, "top");
+  @include padding($blg-space-small-in-px, "bottom");
+  @include padding($blg-space-small-in-px, "top");
+
+  .listing-list__item:first-child & {
+    border-top-style: none;
+  }
+
+}
+
+.decision-letter-header {
+
+  .profile-snippet {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .profile-snippet__contact_details {
+    padding-bottom: 0;
+  }
+
 }
 
 .profile-snippet:after {
@@ -16,23 +34,21 @@
 .profile-snippet__image {
   display: block;
   float: right;
-  width: 75px;
+  width: 72px;
 }
 
 .profile-snippet__name {
   font-family: $font-secondary;
-  @include font-size(16);
+  @include font-size(18);
   font-weight: bold;
-  line-height: $line-height-primary;
-  @include margin(0 0 2 0);
+  line-height: 1.3333333333;  // 24px at 18px font size
 }
 
 .profile-snippet__title {
   font-family: $font-primary;
-  @include font-size(14);
-  font-style: italic;
+  @include font-size(16);
   font-weight: 400;
-  line-height: $line-height-primary;
+  line-height: 1.5; // 24px at 16px font size
   margin: 0;
 }
 
@@ -48,8 +64,7 @@
 @media only screen {
   .profile-snippet__image {
     width: auto;
-    @include margin($teaser-spacing-left, "left");
-    @include margin($teaser-spacing-bottom, "bottom");
-    max-width: #{get_rem_from_px(75)}rem;
+    @include margin(24, "left");
+    max-width: #{get_rem_from_px(72)}rem;
   }
 }

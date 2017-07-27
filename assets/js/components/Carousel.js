@@ -14,9 +14,13 @@ module.exports = class Carousel {
     this.$elm = $elm;
 
     this.moveableStage = this.$elm.querySelector('.carousel__items');
-    this.originalSlideWrappers = this.moveableStage.querySelectorAll('.carousel__item_wrapper');
+    this.originalSlideWrappers = this.moveableStage.querySelectorAll('.carousel-item');
     this.originalSlideCount = this.originalSlideWrappers.length;
     this.currentSlideCount = this.originalSlideCount;
+
+    [].forEach.call(this.originalSlideWrappers, (slide) => {
+      slide.insertAdjacentHTML('afterbegin', slide.dataset.image);
+    });
 
     if (this.originalSlideCount < 2) {
       return;
@@ -30,7 +34,7 @@ module.exports = class Carousel {
     this.currentSlide = 1;
     this.timerInterval = 10000;
 
-    this.$elm.querySelector('.carousel__heading').classList.add('visuallyhidden');
+    this.updateButtonAppearance();
     this.$elm.appendChild(this.buildVisibleControls());
     this.$toggler = this.buildControl$toggle();
     this.$elm.insertBefore(this.$toggler, this.$elm.querySelector('.carousel__items'));
@@ -47,6 +51,14 @@ module.exports = class Carousel {
       this.adjustTranslateForResize();
     });
     this.makeSingleSlideATVisible(this.currentSlide);
+  }
+
+  updateButtonAppearance () {
+    let buttons = this.$elm.querySelectorAll('.carousel-item__cta .button');
+    [].forEach.call(buttons, (button) => {
+      button.classList.add('button--outline');
+    });
+
   }
 
   atHide($node) {
@@ -79,7 +91,7 @@ module.exports = class Carousel {
   }
 
   makeSingleSlideATVisible(slideNumber) {
-    [].forEach.call(this.moveableStage.querySelectorAll('.carousel__item_wrapper'), ($el) => {
+    [].forEach.call(this.moveableStage.querySelectorAll('.carousel-item'), ($el) => {
       this.setATVisibility($el, false);
     });
     let _slideNumber = slideNumber || 1;
@@ -94,26 +106,22 @@ module.exports = class Carousel {
    * @returns {Element} The control panel
    */
   buildVisibleControls() {
-    // Btn wrappers needed to reserve space in case buttons are removed, to stop things moving about
-    let $previousWrapper = this.buildControl$traverser('previous');
-    let $nextWrapper = this.buildControl$traverser('next');
+    let $previousButton = this.buildControl$traverser('previous');
+    let $nextButton = this.buildControl$traverser('next');
 
     this.buttons = {
-      previous: $previousWrapper.querySelector('button'),
-      next: $nextWrapper.querySelector('button')
+      previous: $previousButton,
+      next: $nextButton,
     };
 
     // switches are the circular buttons for depicting/going to a slide
     this.switches = this.buildControl$switches(this.originalSlideCount);
 
     let $controlPanel = utils.buildElement('div', ['carousel__control_panel']);
-    let $visibleControlsWrapper = utils.buildElement('div', ['carousel__control_panel__visible']);
-    let visibleControls = [$previousWrapper, this.switches, $nextWrapper];
+    let visibleControls = [$previousButton, this.switches, $nextButton];
     visibleControls.forEach(function (control) {
-      $visibleControlsWrapper.appendChild(control);
+      $controlPanel.appendChild(control);
     });
-
-    $controlPanel.appendChild($visibleControlsWrapper);
 
     return $controlPanel;
   }
@@ -127,20 +135,17 @@ module.exports = class Carousel {
   buildControl$traverser(direction) {
     let _direction = direction === 'previous' ? 'previous' : 'next';
     let text = direction + ' item';
-    let $wrapper = utils.buildElement('div', ['carousel__control_wrapper']);
     let $button = utils.buildElement('button',
                                      ['carousel__control',
                                       'carousel__control--traverse',
                                       'carousel__control--' + _direction
-                                     ],
-                                     '',
-                                     $wrapper);
+                                     ]);
     $button.addEventListener('click', () => {
       this.userInitiatedProgression(this[_direction]);
     });
 
     utils.buildElement('span', ['visuallyhidden'], text, $button);
-    return $wrapper;
+    return $button;
   }
 
   /**
@@ -267,7 +272,7 @@ module.exports = class Carousel {
   }
 
   next() {
-    if (this.currentSlide % this.originalSlideCount === 0) {
+    if ((this.currentSlide + 1) % this.originalSlideCount === 0) {
       this.extendStage();
     }
 
@@ -299,16 +304,14 @@ module.exports = class Carousel {
    */
   updateSlide(direction) {
     let currentOffset = this.getCurrentOffset();
-    let currentWidthStringMatch = this.window.getComputedStyle(this.$elm).width
-                                      .match(/^([0-9]+)px/);
-    let currentCarouselWidth = this.window.parseInt(currentWidthStringMatch[1], 10);
+    let rect = this.$elm.getBoundingClientRect();
     let newOffset;
     if (direction === 'previous') {
       this.currentSlide -= 1;
-      newOffset = currentOffset + currentCarouselWidth;
+      newOffset = currentOffset + Math.round(rect.width);
     } else {
       this.currentSlide += 1;
-      newOffset = currentOffset - currentCarouselWidth;
+      newOffset = currentOffset - Math.round(rect.width);
     }
 
     utils.updateElementTranslate(this.moveableStage, [newOffset + 'px', 0]);
@@ -404,7 +407,7 @@ module.exports = class Carousel {
   }
 
   adjustTranslateForResize() {
-    let carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9]+)px/)[1];
+    let carouselWidth = Math.round(window.getComputedStyle(this.$elm).width.match(/([0-9.]+)px/)[1]);
     let currentSlide = this.currentSlide;
     let expectedOffset = (currentSlide - 1) * carouselWidth * -1;
     this.moveableStage.style.transform = 'translate(' + expectedOffset + 'px, 0)';

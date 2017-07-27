@@ -26,7 +26,6 @@ module.exports = class AudioPlayer {
     this.uniqueId = utils.uniqueIds.get('audio', doc);
     this.$elm.id = this.uniqueId;
     this.$playButton = AudioPlayer.buildPlayButton(this);
-    this.$icon = this.$playButton.querySelector('.audio-player__toggle_play_icon');
 
     // $title must be prepared before buildProgressIndicator is called
     this.$title = this.prepare$title(this.$elm.querySelector('.audio-player__header'), doc);
@@ -87,6 +86,15 @@ module.exports = class AudioPlayer {
     span.classList.add('audio-player__title');
     parent.innerHTML = '';
     parent.appendChild(span);
+
+    const link = span.querySelector('.audio-player__header-link');
+
+    if (link) {
+      this.$titleLink = link;
+
+      return link;
+    }
+
     return span;
   }
 
@@ -124,7 +132,6 @@ module.exports = class AudioPlayer {
 
   play($audioElement, $togglePlayButton) {
     $audioElement.play();
-    AudioPlayer.updateIconState(this.$icon, 'pause');
     $togglePlayButton.classList.add('audio-player__toggle_play--pauseable');
     $togglePlayButton.classList.remove('audio-player__toggle_play--playable');
     this.isPlaying = true;
@@ -132,7 +139,6 @@ module.exports = class AudioPlayer {
 
   pause ($audioElement, $togglePlayButton) {
     $audioElement.pause();
-    AudioPlayer.updateIconState(this.$icon, 'play');
     $togglePlayButton.classList.add('audio-player__toggle_play--playable');
     $togglePlayButton.classList.remove('audio-player__toggle_play--pauseable');
     this.isPlaying = false;
@@ -148,6 +154,10 @@ module.exports = class AudioPlayer {
     this.$progressBar.style.width = `${pc}%`;
     this.$currentTime.innerHTML = currentTime2Dis;
 
+    if (this.$titleLink) {
+      this.$titleLink.hash = currentTime;
+    }
+
     if (this.usingMetadata) {
       let chapterNumberOnLastUpdate = this.getCurrentChapterNumber();
       this.setCurrentChapterMetadata(this.getChapterMetadataAtTime(currentTime,
@@ -160,7 +170,8 @@ module.exports = class AudioPlayer {
     }
 
     if (this.$audioElement.ended) {
-      AudioPlayer.updateIconState(this.$icon, 'play');
+      this.$playButton.classList.add('audio-player__toggle_play--playable');
+      this.$playButton.classList.remove('audio-player__toggle_play--pauseable');
       this.isPlaying = false;
     }
   }
@@ -184,22 +195,6 @@ module.exports = class AudioPlayer {
     }
 
     $elm.dispatchEvent(chapterChanged);
-  }
-
-  /**
-   * Updates the icon state for the play button.
-   *
-   * @param $icon {HTMLImageElement} The img to update
-   * @param state {string} The state to update to (either 'play' or 'pause')
-   */
-  static updateIconState($icon, state) {
-    if (state !== 'play' && state !== 'pause') {
-
-      return;
-    }
-
-    $icon.src = AudioPlayer.getIconPath((state));
-    $icon.alt = state;
   }
 
   seekNewTime(e) {
@@ -277,18 +272,11 @@ module.exports = class AudioPlayer {
    * @returns {Element} The play/pause button
    */
   static buildPlayButton(player) {
-    var $button = utils.buildElement('button',
+    return utils.buildElement('button',
                               ['audio-player__toggle_play'],
                               '',
                               '#' + player.uniqueId + ' [class*="audio-player"]',
                               true);
-    var $image = utils.buildElement('img',
-                       ['audio-player__toggle_play_icon'],
-                       '',
-                       $button);
-    $image.src = AudioPlayer.getIconPath('play');
-    $image.alt = 'Play';
-    return $button;
   }
 
   /**
@@ -308,15 +296,6 @@ module.exports = class AudioPlayer {
     utils.buildElement('span', ['audio-player__current_time'], '0:00', $container);
     utils.buildElement('span', ['audio-player__duration'], '0:00', $container);
     return $container;
-  }
-
-  static getIconPath(iconName) {
-
-    if (iconName !== 'play' && iconName !== 'pause') {
-      return;
-    }
-
-    return `../../assets/img/icons/audio-${iconName}.svg`;
   }
 
   /**

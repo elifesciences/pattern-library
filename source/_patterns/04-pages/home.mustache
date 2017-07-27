@@ -1,28 +1,57 @@
 <div class="global-wrapper">
   <div class="global-inner">
-    {{#siteHeader}}
-      {{> organisms-site-header }}
-    {{/siteHeader}}
 
-    <main role="main" class="blg-margin-bottom-large">
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+
+    <main role="main" class="main">
 
       {{#carousel}}
         {{> organisms-carousel}}
       {{/carousel}}
 
-      {{#leadPara}}
-        {{> atoms-lead-para}}
-      {{/leadPara}}
+      {{#leadParas}}                             §
+        <div class="wrapper">
+          {{> molecules-lead-paras}}
+        </div>
+      {{/leadParas}}
 
-      {{#subjectListLink}}
-        {{> atoms-all-subjects-list-link}}
-      {{/subjectListLink}}
+      {{#sectionsListingLink}}
+      <div class="wrapper">
+        {{> atoms-section-listing-link}}
+      </div>
+      {{/sectionsListingLink}}
 
-      <div style="height: 800px; background-color: rgba(2, 136, 209, 0.2);">Main article list.</div>
+      <div class="wrapper blg-pad-top--small-to-medium">
+        <div class="grid">
+          <div class="grid__item one-whole x-large--eight-twelfths listing-column-main">
 
-      {{#subjectsList}}
-        {{> molecules-all-subjects-list}}
-      {{/subjectsList}}
+            {{#mainTeasers}}
+              {{> organisms-listing-teasers}}
+            {{/mainTeasers}}
+
+          </div>
+
+          <div class="grid__item one-whole x-large--four-twelfths listing-column-secondary">
+
+              {{#secondaryTeasers}}
+                {{> organisms-listing-teasers}}
+              {{/secondaryTeasers}}
+
+          </div>
+
+          <div>
+      </div>
+
+
+      {{#sectionsListing}}
+        <div class="wrapper u-pad-top-lg">
+          {{> molecules-section-listing}}
+        </div>
+      {{/sectionsListing}}
 
     </main>
 
@@ -31,5 +60,5 @@
     {{/emailCta}}
 
     {{> organisms-footer }}
-  </div> <!-- /.global-inner -->
-</div> <!-- /.global-wrapper -->
+  </div> {{! /.global-inner }}
+</div> {{! /.global-wrapper }}

@@ -1,0 +1,43 @@
+assets:
+  css:
+    - button-collection.css
+    - chart.css
+    - tooltip.css
+    - triggers.css
+    - $ref: ../../00-atoms/components/button.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    id:
+      type: string
+      minLength: 1
+    type:
+      type: string
+      minLength: 1
+    containerId:
+      type: string
+      minLength: 1
+    apiEndpoint:
+      type: string
+      minLength: 1
+    metric:
+      type: string
+      minLength: 1
+      enum:
+       - downloads
+       - page-views
+    period:
+      type: string
+      minLength: 1
+      enum:
+        - day
+        - month
+  required:
+    - id
+    - type
+    - metric
+    - period
+    - containerId
+    - apiEndpoint

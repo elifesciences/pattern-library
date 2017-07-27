@@ -1,5 +1,7 @@
 {
-  "heading": "Listing of teasers",
+  "heading": {
+    "heading": "Listing of teasers"
+  },
   "items": [
     {
       "contextLabel": {

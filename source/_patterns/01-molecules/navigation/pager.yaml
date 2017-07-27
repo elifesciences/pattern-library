@@ -11,8 +11,11 @@ schema:
       $ref: ../../00-atoms/components/button.yaml#/schema
     nextPage:
       $ref: ../../00-atoms/components/button.yaml#/schema
+    targetId:
+      type: string
+      minLength: 1
   anyOf:
     - required:
-        - previousPage
+      - nextPage
     - required:
-        - nextPage
+      - previousPage

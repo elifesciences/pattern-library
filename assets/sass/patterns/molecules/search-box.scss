@@ -1,20 +1,33 @@
 @import "../../definitions";
 
 .search-box {
-  border-top: 1px solid $color-text-dividers;
   position: relative;
 
-  .compact-form__container {
-    @include margin(10, "bottom");
-    @include margin(20, "top");
-    max-width: inherit;
+  &.search-box--shown {
+    @include blg-spacing("top", "medium");
+    @include blg-spacing("bottom", "small");
   }
+
+  &:not(.search-box--js) {
+    @include blg-spacing("top", "medium");
+  }
+
 }
 
 .search-box__inner {
   max-width: #{$max-site-width}px;
   padding: 0 6%;
   position: relative;
+
+  .wrapper & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .wrapper .search-box--js.search-box--shown & {
+    padding: 0 6%;
+  }
+
 }
 
 .search-box__output {
@@ -53,26 +66,32 @@
   color: $color-text;
 }
 
-.search-box--js.search-box--populated {
+.search-box--js {
 
-  .compact-form__input {
-    @include padding(90, right);
-  }
+  @include border-radius-simple(0, 0, $border-radius, $border-radius);
 
-  .compact-form__reset {
-    @include visuallyunhidden();
-    background: url("../img/icons/search-clear.png");
-    background: url("../img/icons/search-clear.svg"), linear-gradient(transparent, transparent);
-    background-position: -1px -1px;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    height: 20px;
-    position: absolute;
-    right: 63px;
-    right: #{get-rem-from-px(63)}rem;
-    top: 12px;
-    top: #{get-rem-from-px(12)}rem;
-    width: 20px;
+  .search-box--populated {
+
+    .compact-form__input {
+      @include padding(90, right);
+    }
+
+    .compact-form__reset {
+      @include visuallyunhidden();
+      background: url("../img/icons/search-clear.png");
+      background: url("../img/icons/search-clear.svg"), linear-gradient(transparent, transparent);
+      background-position: -1px -1px;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      height: 20px;
+      position: absolute;
+      right: 63px;
+      right: #{get-rem-from-px(63)}rem;
+      top: 12px;
+      top: #{get-rem-from-px(12)}rem;
+      width: 20px;
+    }
+
   }
 
 }
@@ -80,15 +99,12 @@
 .search-box__search_option {
   font-family: $font-secondary;
   @include font-size(14);
-  @include padding(20, "bottom");
+  line-height: 1.7142857143; /* 24px on 14px font */
+  @include blg-spacing("top", "extra-small");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 @media only all and (min-width: #{$max-site-width}px) {
-
-  .search-box__inner {
-    margin: 0 auto;
-    @include padding(0 66);
-  }
 
   .search-box__inner {
     margin: 0 auto;

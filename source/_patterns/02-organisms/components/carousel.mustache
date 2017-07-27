@@ -1,13 +1,12 @@
-<div class="carousel" role="region" data-behaviour="Carousel" aria-labelledby="carouselheading">
-  <h3 id="carouselHeading" class="carousel__heading">Highlighted content</h3>
+<div class="carousel" role="region" data-behaviour="Carousel"{{#headingId}} aria-labelledby="{{headingId}}"{{/headingId}}>
+  {{#heading}}
+    {{>atoms-list-heading}}
+  {{/heading}}
+
   <ul class="carousel__items">
 
     {{#items}}
-
-      <li class="carousel__item_wrapper">
-        {{> molecules-carousel-item}}
-      </li>
-
+      {{> molecules-carousel-item}}
     {{/items}}
 
   </ul>

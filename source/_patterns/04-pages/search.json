@@ -1,0 +1,402 @@
+{
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "path": "#mainMenu",
+          "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "pictureClasses": "nav-primary__search_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Labs",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Submit my research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--button",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        }
+      ]
+    }
+
+  },
+
+  "pageSearchBox": {
+    "inContentHeader": false,
+    "compactForm": {
+      "formAction": "/search",
+      "formId": "searchBox",
+      "formMethod": "GET",
+      "label": "Search by keyword or author",
+      "inputType": "search",
+      "inputName": "search",
+      "inputValue": "",
+      "inputPlaceholder": "Search by keyword or author",
+      "ctaText": "Search"
+    }
+  },
+
+  "sortControl": {
+    "options": [
+      { "option": "Relevance", "sorting": "descending", "url": "?sortby=relevance&amp;sort=desc" },
+      { "option": "Date", "sorting": "descending", "url": "?sortby=date&amp;sort=desc" }
+    ]
+  },
+
+  "messageBar": {
+    "message": "2,601 results found"
+  },
+
+
+  "mainTeasers": [
+    {
+      "isTeaserType": true,
+      "items": [
+        {
+
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Epidemiology and Global Health",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Mapping global environmental suitability for Zika virus",
+          "url": "#",
+          "secondaryInfo": "Jane P Messina et al.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 19,
+                  "month": "Apr",
+                  "year": 2016
+                },
+                "forMachine": "20160416"
+              }
+            },
+            "publishState": {
+              "vor": false
+            }
+          }
+        },
+
+        {
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Genomics and Evolutionary Biology",
+                "url": "#"
+              },
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Genomic epidemiology of artemisinin resistant malaria",
+          "url": "#",
+          "secondaryInfo": "MalariaGEN Plasmodium falciparum Community Project",
+          "content": "<i>Plasmodium falciparum kelch13</i> mutations that cause artemisinin resistant malaria in Southeast Asia show markedly different patterns of evolutionary selection in Africa.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 8,
+                  "month": "Mar",
+                  "year": 2016
+                },
+                "forMachine": "20160308"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
+          }
+        },
+
+        {
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Epidemiology and Global Health",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Coverage and system efficiencies of insecticide-treated nets in Africa from 2000 to 2017",
+          "url": "#",
+          "secondaryInfo": "Samir Bhatt et al.",
+          "multipleAuthors": true,
+          "content": "Insecticide-treated net requirements for Africa have been underestimated, but mitigating for inefficiencies in net distributions can produce a cost effective path to universal coverage.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 8,
+                  "month": "Feb",
+                  "year": 2016
+                },
+                "forMachine": "20160208"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
+          }
+        },
+
+        {
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Ecology",
+                "url": "#"
+              },
+              {
+                "name": "Epidemiology and Global Health",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Mapping residual transmission for malaria elimination",
+          "url": "#",
+          "secondaryInfo": "Robert C Reiner et al.",
+          "content": "A fine-grain map of residual transmission and importation in Swaziland shows where to target malaria elimination efforts.",
+          "footer": {
+            "meta": {
+              "url": "#",
+              "text": "Research article",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 27,
+                  "month": "Jan",
+                  "year": 2016
+                },
+
+                "forMachine": "20160127"
+              }
+            }  ,
+            "publishState": {
+              "vor": true
+            }
+          }
+        },
+
+        {
+
+          "contextLabel": {
+            "list": [
+              {
+                "name": "Microbiology and Infectious Disease",
+                "url": "#"
+              }
+            ]
+          },
+          "title": "Longitudinal analysis of <i>Plasmodium sporozoite</i> motility in the dermis reveals component of blood vessel recognition",
+          "url": "#",
+          "secondaryInfo": "Christine S Hopp et al.",
+          "content": "Malaria parasites enter the host via the skin, where they are inoculated by an infected mosquito as it probes for blood: the inoculation site is a bottleneck for the parasite and the only time when the parasite is extracellular for more than a few minutes, thus possibly presenting the best opportunity for antibody-mediated inhibition of infection.",
+          "footer": {
+            "meta": {
+              "text": "Research article",
+              "url": "#",
+              "date": {
+                "forHuman": {
+                  "dayOfMonth": 6,
+                  "month": "Oct",
+                  "year": 2015
+                },
+                "forMachine": "2015-10-06"
+              }
+            },
+            "publishState": {
+              "vor": true
+            }
+          }
+        }
+
+      ]
+    }
+
+  ],
+
+  "pager": {
+    "targetId": "idOfListElementToLoadContentInTo",
+    "nextPage": {
+      "text": "Load more",
+      "classes": "button--default button--full",
+      "path": "#"
+    }
+  },
+
+  "filterPanel":{
+    "title": "Refine your results by:",
+    "filterGroups": [
+      {
+        "title": "Subject",
+        "filters": [
+          { "isChecked": true, "name": "Cell", "label": "Cell Biology", "results": "71" },
+          { "isChecked": false, "name": "Neuroscience", "label": "Neuroscience", "results": "2" },
+          { "isChecked": false, "name": "Biophysics", "label": "Biophysics and Structural Biology", "results": "24" },
+          { "isChecked": false, "name": "Biochemistry", "label": "Biochemistry", "results": "71" },
+          { "isChecked": false, "name": "Developmental ", "label": "Developmental Biology and Stem Cells", "results": "13" },
+          { "isChecked": false, "name": "Immunology", "label": "Immunology", "results": "144" },
+          { "isChecked": false, "name": "Ecology", "label": "Ecology", "results": "71" },
+          { "isChecked": false, "name": "Epidemiology ", "label": "Epidemiology and Global Health", "results": "57" }
+        ]
+      },
+
+      {
+        "title": "Type",
+        "filters": [
+          { "isChecked": false, "name": "Magazine ", "label": "Magazine", "results": "26" },
+          { "isChecked": false, "name": "Research ", "label": "Research", "results": "144" }
+        ]
+      }
+    ],
+    "button": {
+      "text": "Refine results",
+      "classes": "button--default button--small",
+      "type": "submit",
+      "name": "button"
+    }
+  },
+
+
+  "mainMenu":{
+    "links": {
+      "items": [
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Author guide", "url": "#aut"},
+        {"name": "Reviewer guide", "url": "#rev"},
+        {"name": "About", "url": "#abo"},
+        {"name": "Inside eLife", "url": "#ins"},
+        {"name": "Careers", "url": "#car"},
+        {"name": "Labs", "url": "#lab"}
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
+  ],
+
+  "year": 2016
+
+}

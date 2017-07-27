@@ -1,0 +1,89 @@
+@import "../../definitions";
+
+.table {
+  @include margin($blg-space-medium-in-px, "top");
+  @include margin($blg-space-medium-in-px, "bottom");
+
+  .captioned-asset & {
+    @include margin($blg-space-small-in-px, "top");
+    @include margin($blg-space-small-in-px, "bottom");
+  }
+}
+
+.table__table {
+  position: relative;
+  overflow: auto;
+
+  .table & {
+    @include margin($blg-space-small-in-px, "top");
+    @include margin($blg-space-small-in-px, "bottom");
+  }
+}
+
+// Tables are usually delivered as a blob of HTML from an upstream application, not via the pattern system.
+table {
+  border-collapse: collapse;
+  @include margin($blg-space-small-in-px, "top");
+  @include margin($blg-space-small-in-px, "bottom");
+  width: 100%;
+
+  .table__table & {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  & a {
+    color: $color-primary;
+  }
+}
+
+th {
+  background-color: $color-text-ui-code;
+  border: 1px solid $color-text-dividers;
+  font-family: $font-secondary;
+  @include font-size(13);
+  font-weight: 700;
+  line-height: 1.3846153846; /* 18px with 13px font size */
+  @include padding(6);
+}
+
+td {
+  border: 1px solid $color-text-dividers;
+  font-family: $font-secondary;
+  @include font-size(13);
+  font-weight: 500;
+  line-height: 1.3846153846; /* 18px with 13px font size */
+  @include padding(6);
+}
+
+.table-footnote {
+  display: table;
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.table-footnote * {
+  @include fig-caption-text-typeg(0);
+}
+
+.table-footnote__label {
+  display: table-cell;
+  @supports (display: flex) {
+    display: block;
+  }
+  @include padding(4, "right");
+}
+
+.table-footnote__text {
+  display: table-cell;
+  @supports (display: flex) {
+    display: block;
+    flex: 1;
+  }
+
+  & * {
+    @include nospace("bottom");
+  }
+}

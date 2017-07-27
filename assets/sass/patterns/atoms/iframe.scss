@@ -5,6 +5,8 @@
   height: 0;
   overflow: hidden;
   max-width: 100%;
+  @include margin($blg-space-medium-in-px, "top");
+  @include margin($blg-space-medium-in-px, "bottom");
 
   iframe {
     border: 0;

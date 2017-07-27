@@ -1,8 +1,8 @@
 <section
     class="article-section {{#isFirst}}article-section--first{{/isFirst}}"
-    {{#id}} id="{{id}}"{{/id}}
-    {{#hasBehaviour}}data-behaviour="ArticleSection"{{/hasBehaviour}}
-    {{#isInitiallyClosed}}data-initial-state="closed"{{/isInitiallyClosed}}
+  {{#id}} id="{{id}}"{{/id}}
+  {{#hasBehaviour}}data-behaviour="ArticleSection"{{/hasBehaviour}}
+  {{#isInitiallyClosed}}data-initial-state="closed"{{/isInitiallyClosed}}
 >
 
   <header class="article-section__header">
@@ -10,7 +10,18 @@
   </header>
 
   <div class="article-section__body">
-    {{{body}}}
+    {{^showCharts}}
+      {{{body}}}
+    {{/showCharts}}
+
+    {{#chart}}
+      {{>molecules-bar-chart}}
+    {{/chart}}
+
+    {{#showCharts}}
+      {{>organisms-statistic-collection}}
+    {{/showCharts}}
+
     {{#doi}}
       {{> atoms-doi}}
     {{/doi}}

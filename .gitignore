@@ -18,3 +18,4 @@ assets/sass/_patterns.scss
 test/build
 
 /vendor/
+/test/fixtures-local/

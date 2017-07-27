@@ -1,0 +1,33 @@
+@import "../../definitions";
+
+.to-top-link {
+  @include dismissible_navigation();
+  color: $color-text;
+  display: block;
+  list-style: none;
+  @include padding($blg-space-small-in-px 0);
+  width: 100%;
+}
+
+.js .main-menu .to-top-link {
+  display: none;
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-section-listing)}em) {
+
+  .js .to-top-link {
+    display: none;
+  }
+
+}
+
+.to-top-link:after {
+  background: url("../img/icons/back-to-top-2x.png");
+  background: url("../img/icons/back-to-top.svg") 0 0 no-repeat, linear-gradient(transparent, transparent);
+  content: "";
+  display: inline-block;
+  height: 17px;
+  @include margin(-5, "bottom");
+  @include margin(12, "left");
+  width: 8px;
+}

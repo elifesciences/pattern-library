@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+<!--
+  Test output
+-->
+<div id="mocha"></div>
+
+<!--
+  Fixture
+-->
+
+
+<div id="fig" class="asset-viewer-inline asset-viewer-inline--figure" data-variant="figure"
+     data-behaviour="AssetNavigation">
+
+  <div class="asset-viewer-inline__header_panel">
+
+    <div class="asset-viewer-inline__header_text">
+      <span class="asset-viewer-inline__header_text__prominent">Figure</span> with 1 supplement
+    </div>
+
+    <div class="asset-viewer-inline__figure_access">
+      <a href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg"
+         class="asset-viewer-inline__download_all_link" download="fig.png"><span
+          class="visuallyhidden">Download asset</span></a>
+      <a href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg"
+         class="asset-viewer-inline__open_link" target="_blank" rel="noopener noreferrer"><span class="visuallyhidden">Open asset</span></a>
+    </div>
+
+  </div>
+
+  <figure class="captioned-asset">
+
+    <a href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg"
+       target="_blank" rel="noopener noreferrer">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg" alt=""
+           class="captioned-asset__image"/>
+    </a>
+
+    <figcaption class="captioned-asset__caption">
+
+      <h6 class="caption-text__heading">Figure heading.</h6>
+
+    </figcaption>
+
+  </figure>
+
+</div>
+
+<div id="figs1" class="asset-viewer-inline asset-viewer-inline--supplement" data-variant="supplement"
+     data-parent-asset-id="fig" data-supplement-ordinal="1">
+
+  <div class="asset-viewer-inline__header_panel">
+
+    <div class="asset-viewer-inline__header_text">
+      <span class="asset-viewer-inline__header_text__prominent">Figure supplement</span>
+    </div>
+
+    <div class="asset-viewer-inline__figure_access">
+      <a href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg"
+         class="asset-viewer-inline__download_all_link" download="fig-sup.png"><span
+          class="visuallyhidden">Download asset</span></a>
+      <a href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg"
+         class="asset-viewer-inline__open_link" target="_blank" rel="noopener noreferrer"><span class="visuallyhidden">Open asset</span></a>
+    </div>
+
+  </div>
+
+  <figure class="captioned-asset">
+
+    <a href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg"
+       target="_blank" rel="noopener noreferrer">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c867931488457.565327625d615.jpg" alt=""
+           class="captioned-asset__image"/>
+    </a>
+
+    <figcaption class="captioned-asset__caption">
+
+      <h6 class="caption-text__heading">Figure heading.</h6>
+
+    </figcaption>
+
+  </figure>
+
+</div>
+
+<!--
+  Load test code
+-->
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+<!-- Initialise test suite -->
+<script>mocha.setup('bdd')</script>
+
+<!--
+  Test spec
+-->
+<script src="build/assetnavigation.spec.js"></script>
+
+<!--
+  Begin!
+-->
+<script>
+  mocha.run();
+</script>
+
+</body>
+</html>

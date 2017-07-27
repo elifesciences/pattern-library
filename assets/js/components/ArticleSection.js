@@ -1,5 +1,7 @@
 'use strict';
 
+const utils = require('../libs/elife-utils')();
+
 module.exports = class ArticleSection {
 
   constructor($elm, _window = window, doc = document) {
@@ -22,6 +24,7 @@ module.exports = class ArticleSection {
     this.$body = $elm.querySelector('.article-section__body');
     this.setInitialState($elm, this.$headerLink, this.$body);
     this.$elm.addEventListener('expandsection', this.expand.bind(this));
+    this.$elm.addEventListener('collapsesection', this.collapse.bind(this));
   }
 
   createHeaderLink($elm, doc) {
@@ -54,12 +57,17 @@ module.exports = class ArticleSection {
 
   toggleState(e) {
     e.preventDefault();
-    this.$headerLink.classList.toggle('article-section__header_link--closed');
-    this.$elm.classList.toggle('article-section--collapsed');
-    this.$body.classList.toggle('visuallyhidden');
-    if (!this.$body.classList.contains('visuallyhidden') && !!this.window.MathJax) {
-      this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub, this.$elm.id]);
+    if (this.$headerLink.classList.contains('article-section__header_link--closed')) {
+      this.$elm.dispatchEvent(utils.eventCreator('expandsection'));
+    } else {
+      this.$elm.dispatchEvent(utils.eventCreator('collapsesection'));
     }
+  }
+
+  collapse() {
+    this.$headerLink.classList.add('article-section__header_link--closed');
+    this.$elm.classList.add('article-section--collapsed');
+    this.$body.classList.add('visuallyhidden');
   }
 
   expand(e) {
@@ -70,9 +78,15 @@ module.exports = class ArticleSection {
       this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub, this.$elm.id]);
     }
 
-    let $descendentEl = this.doc.querySelector('#' + e.detail);
-    if (!!$descendentEl) {
-      $descendentEl.scrollIntoView();
+    try {
+      if (e.detail.search(/https?:\/\//) !== 0) {
+        const $descendentEl = this.doc.querySelector('#' + e.detail);
+        if (!!$descendentEl) {
+          $descendentEl.scrollIntoView();
+        }
+      }
+    } catch (err) {
+      // The event may not have detail
     }
   }
 
