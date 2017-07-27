@@ -159,6 +159,12 @@
     </div>
   {{/meta}}
 
+  {{#image.credit}}
+    {{#overlay}}
+      <div class="content-header__image-credit content-header__image-credit--overlay" id="{{elementId}}">{{{text}}}</div>
+    {{/overlay}}
+  {{/image.credit}}
+
 </header>
 
 {{#audioPlayer}}
@@ -166,7 +172,9 @@
 {{/audioPlayer}}
 
 {{#image.credit}}
-  <div class="wrapper"><div class="content-header__image-credit" id="{{elementId}}">{{{text}}}</div></div>
+  {{^overlay}}
+      <div class="wrapper"><div class="content-header__image-credit" id="{{elementId}}">{{{text}}}</div></div>
+  {{/overlay}}
 {{/image.credit}}
 
 {{#image}}

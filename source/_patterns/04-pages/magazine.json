@@ -126,7 +126,8 @@
       },
       "credit": {
         "text": "This is an image credit <a href=\"#\">with a link</a>.",
-        "elementId": "iAmTheElementIdForTheImegeCreditElement"
+        "elementId": "iAmTheElementIdForTheImegeCreditElement",
+        "overlay": true
       }
     },
     "audioPlayer": {

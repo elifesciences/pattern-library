@@ -28,6 +28,9 @@ schema:
                 elementId:
                   type: string
                   minLength: 1
+                overlay:
+                  type: boolean
+                  default: false
               required:
                 - text
                 - elementId
