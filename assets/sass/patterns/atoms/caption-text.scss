@@ -54,4 +54,14 @@
   position: relative;
   top: -24px;
   top: get-rem-from-px(24) * -1rem;
+
+  &:before {
+    content: "\00ab\00a0";
+  }
+}
+
+.caption-text__toggle--see-more {
+  &:after {
+    content: "\00a0\00bb";
+  }
 }
