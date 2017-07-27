@@ -1,5 +1,5 @@
 {{#image}}
-<div class="content-header-image-wrapper{{#audioPlayer}} content-header-image-wrapper--with-audio{{/audioPlayer}}">
+<div class="content-header-image-wrapper{{^image.credit}} content-header-image-wrapper--no-credit{{/image.credit}}">
 {{/image}}
   <header
     class="content-header {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} clearfix"

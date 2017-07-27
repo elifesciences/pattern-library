@@ -32,43 +32,8 @@
   }
 }
 
-.content-header-image-wrapper {
-  height: #{$content-header-image-height--narrow-screen + $content-header-image-credit-height}px;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    height: #{$content-header-image-height--medium-width-screen + $content-header-image-credit-height}px;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    height: #{$content-header-image-height--wide-screen + $content-header-image-credit-height}px;
-  }
-
-}
-
-.content-header-image-wrapper--with-audio {
-  height: #{$content-header-image-height--narrow-screen + $content-header-image-credit-height + $audio-player-height}px;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    height: #{$content-header-image-height--medium-width-screen + $content-header-image-credit-height + $audio-player-height}px;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    height: #{$content-header-image-height--wide-screen + $content-header-image-credit-height + $audio-player-height}px;
-  }
-
-}
-
-.js .content-header-image-wrapper--with-audio {
-  height: #{$content-header-image-height--narrow-screen + $content-header-image-credit-height + $audio-player-height--js}px;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    height: #{$content-header-image-height--medium-width-screen + $content-header-image-credit-height + $audio-player-height--js}px;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    height: #{$content-header-image-height--wide-screen + $content-header-image-credit-height + $audio-player-height--js}px;
-  }
-
+.content-header-image-wrapper--no-credit {
+  @include padding($content-header-image-credit-height, "bottom");
 }
 
 .content-header--image {
