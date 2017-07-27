@@ -12,6 +12,7 @@ module.exports = class AboutProfiles {
     this.doc = doc;
 
     this.$elm.classList.add('grid-listing');
+    this.$elm.classList.add('clearfix'); // IE doesn't support multiple arguments
     [].forEach.call(this.$elm.querySelectorAll('li'), (item) => {
       item.classList.add('grid-listing-item');
     });
