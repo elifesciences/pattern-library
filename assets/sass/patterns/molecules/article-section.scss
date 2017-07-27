@@ -16,7 +16,7 @@ $arrow-size: 5;
   margin-top: -1px;
 
   > .article-section__body {
-    @include padding(24, "top");
+    @include blg-spacing("top", "small", "margin");
   }
 }
 
