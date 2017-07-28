@@ -398,4 +398,42 @@ describe('The eLife utils library', function () {
 
   });
 
+  describe('isIdOfOrWithinSection method', function () {
+    const isIdOfOrWithinSection = elifeUtils.isIdOfOrWithinSection;
+    let $doc;
+    let $parent;
+    let $childA;
+    let $childB;
+
+    beforeEach(function () {
+      $doc = document.createElement('div');
+
+      $parent = document.createElement('div');
+      $parent.id = 'foo';
+      $doc.appendChild($parent);
+
+      $childA = document.createElement('div');
+      $childA.id = 'bar';
+      $parent.appendChild($childA);
+
+      $childB = document.createElement('div');
+      $childB.id = 'baz';
+      $parent.appendChild($childB);
+    });
+
+    it('returns true if the id tested matches the section id', function () {
+      expect(isIdOfOrWithinSection($parent.id, $parent, $doc)).to.be.true;
+    });
+
+    it('returns true if the id tested is a descendant of the section', function () {
+      [$childA.id, $childB.id].forEach((childId) => {
+        expect(isIdOfOrWithinSection(childId, $parent, $doc)).to.be.true;
+      });
+    });
+
+    it ('returns false if the id tested is not of or within the section', function () {
+      expect(isIdOfOrWithinSection('qux', $parent, $doc)).to.be.false;
+    });
+  });
+
 });

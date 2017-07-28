@@ -39,7 +39,20 @@ module.exports = class ArticleSection {
   }
 
   setInitialState($elm, $headerLink, $body) {
-    if ($elm.dataset.initialState === 'closed' || this.viewportNoWiderThan(this.thresholdWidth)) {
+    let hash = '';
+    if (this.window.location && this.window.location.hash) {
+      hash = this.window.location.hash.substring(1);
+    }
+
+    if (hash && utils.isIdOfOrWithinSection(hash, $elm, this.doc)) {
+      // Force open if the fragment is here.
+      $elm.dataset.initialState = 'opened';
+    } else if (this.viewportNoWiderThan(this.thresholdWidth)) {
+      // Force closed on small screens.
+      $elm.dataset.initialState = 'closed';
+    }
+
+    if ($elm.dataset.initialState === 'closed') {
       $elm.classList.add('article-section--collapsed');
       $headerLink.classList.add('article-section__header_link--closed');
       $body.classList.add('visuallyhidden');
@@ -74,7 +87,7 @@ module.exports = class ArticleSection {
     this.$headerLink.classList.remove('article-section__header_link--closed');
     this.$elm.classList.remove('article-section--collapsed');
     this.$body.classList.remove('visuallyhidden');
-    if (!!this.window.MathJax) {
+    if (!!this.window.MathJax && !!this.window.MathJax.Hub) {
       this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub, this.$elm.id]);
     }
 

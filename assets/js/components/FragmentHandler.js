@@ -15,34 +15,20 @@ module.exports = class FragmentHandler {
     this.window = _window;
     this.doc = doc;
     this.isSingleton = true;
-    this.window.addEventListener('DOMContentLoaded', this.handleDomLoad.bind(this));
+    this.window.addEventListener('readystatechange', this.onReadyStateChange.bind(this));
+    this.onReadyStateChange({});
   }
 
-  handleDomLoad(e) {
+  onReadyStateChange(e) {
+    if (document.readyState !== 'loading') {
+      this.initialise(e);
+      this.window.removeEventListener('readystatechange', this.onReadyStateChange.bind(this));
+    }
+  }
+
+  initialise(e) {
     this.handleSectionOpeningViaHash(e);
     this.window.addEventListener('hashchange', this.handleSectionOpeningViaHash.bind(this));
-  }
-
-  /**
-   * Indicates whether an HTML element with a given id is found as/within a specific chunk of html
-   *
-   * @param {String} id The id  of the HTML element to search for
-   * @param {HTMLElement} $section The element to search/search within
-   * @param {HTMLDocument} doc
-   * @param {Function} areElementsNested Handles determination of nesting
-   * @returns {boolean} true if element with id is $section, or is contained within $section
-   */
-  isIdOfOrWithinSection(id, $section, doc, areElementsNested) {
-    if (id.search(/https?:\/\//) === 0) {
-      return false;
-    }
-
-    if (id === $section.id) {
-      return true;
-    }
-
-    const $fragWithId = doc.querySelector('#' + id);
-    return areElementsNested($section, $fragWithId);
   }
 
   /**
@@ -50,19 +36,18 @@ module.exports = class FragmentHandler {
    *
    * @param {String} idToFind The id to search for
    * @param {HTMLDocument} doc
-   * @param {Function} areElementsNested Handles determination of nesting
    * @returns {String} The id of the collapsed section containing idToFind, or null
    */
-  getIdOfCollapsedSection(idToFind, doc, areElementsNested) {
+  getIdOfCollapsedSection(idToFind, doc) {
     let collapsedSections = doc.querySelectorAll('.article-section--collapsed');
-    if (!collapsedSections) {
+    if (!collapsedSections.length) {
       return null;
     }
 
     let $collapsedSectionContainingFrag;
     [].forEach.call(collapsedSections, ($collapsedSection) => {
       if (!$collapsedSectionContainingFrag) {
-        if (this.isIdOfOrWithinSection(idToFind, $collapsedSection, doc, areElementsNested)) {
+        if (utils.isIdOfOrWithinSection(idToFind, $collapsedSection, doc)) {
           $collapsedSectionContainingFrag = $collapsedSection;
         }
       }
@@ -97,8 +82,7 @@ module.exports = class FragmentHandler {
       return false;
     }
 
-    let idOfCollapsedSection = this.getIdOfCollapsedSection(hash, this.doc,
-                                                            utils.areElementsNested);
+    let idOfCollapsedSection = this.getIdOfCollapsedSection(hash, this.doc);
     if (!!idOfCollapsedSection) {
       this.doc.querySelector('#' + idOfCollapsedSection).dispatchEvent(utils.eventCreator('expandsection', hash));
     }

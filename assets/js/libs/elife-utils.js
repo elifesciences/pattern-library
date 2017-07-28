@@ -255,6 +255,27 @@ module.exports = () => {
   }
 
   /**
+   * Indicates whether an HTML element with a given id is found as/within a specific chunk of html
+   *
+   * @param {String} id The id  of the HTML element to search for
+   * @param {HTMLElement} $section The element to search/search within
+   * @param {HTMLDocument} doc
+   * @returns {boolean} true if element with id is $section, or is contained within $section
+   */
+  function isIdOfOrWithinSection(id, $section, doc) {
+    if (id.search(/https?:\/\//) === 0) {
+      return false;
+    }
+
+    if (id === $section.id) {
+      return true;
+    }
+
+    const $fragWithId = doc.querySelector('#' + id);
+    return areElementsNested($section, $fragWithId);
+  }
+
+  /**
    * Debounce
    */
   function debounce(callback, wait, context = this) { // jshint ignore:line
@@ -544,6 +565,7 @@ module.exports = () => {
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
+    isIdOfOrWithinSection: isIdOfOrWithinSection,
     buildElement: buildElement,
     closest: closest,
     create$pageOverlay: create$pageOverlay,
