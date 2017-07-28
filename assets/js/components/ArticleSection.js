@@ -39,7 +39,10 @@ module.exports = class ArticleSection {
   }
 
   setInitialState($elm, $headerLink, $body) {
-    const hash = this.window.location.hash.substring(1);
+    let hash = '';
+    if (this.window.location && this.window.location.hash) {
+      hash = this.window.location.hash.substring(1);
+    }
 
     if (hash && utils.isIdOfOrWithinSection(hash, $elm, this.doc)) {
       // Force open if the fragment is here.

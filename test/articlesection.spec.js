@@ -40,6 +40,60 @@ describe('An Article Section (collapsible)', function () {
     expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
   });
 
+  it('is initially opened if initial state is closed but the fragment is the section', function () {
+    $elm.dataset.initialState = 'closed';
+    let windowMock = {
+      matchMedia: function () {
+        return {
+          matches: true
+        };
+      },
+      location: {
+        hash: '#introduction'
+      }
+    };
+    let articleSection = new ArticleSection($elm, windowMock);
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
+    expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.false;
+  });
+
+  it('is initially opened if initial state is closed but the fragment is inside the section', function () {
+    $elm.dataset.initialState = 'closed';
+    let windowMock = {
+      matchMedia: function () {
+        return {
+          matches: true
+        };
+      },
+      location: {
+        hash: '#foo'
+      }
+    };
+    let articleSection = new ArticleSection($elm, windowMock);
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
+    expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.false;
+  });
+
+  it('is initially closed if initial state is closed and the fragment is something else', function () {
+    $elm.dataset.initialState = 'closed';
+    let windowMock = {
+      matchMedia: function () {
+        return {
+          matches: true
+        };
+      },
+      location: {
+        hash: '#bar'
+      }
+    };
+    let articleSection = new ArticleSection($elm, windowMock);
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
+    expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
+  });
+
   it('is initially open if initial state is not set to closed and viewport is wide enough', function () {
     let initialStateCandidateValues = ['open', 'shut', 'unavailable', 'null', '', 'false'];
     let windowMock = {
