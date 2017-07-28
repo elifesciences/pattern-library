@@ -39,7 +39,17 @@ module.exports = class ArticleSection {
   }
 
   setInitialState($elm, $headerLink, $body) {
-    if ($elm.dataset.initialState === 'closed' || this.viewportNoWiderThan(this.thresholdWidth)) {
+    const hash = this.window.location.hash.substring(1);
+
+    if (hash && utils.isIdOfOrWithinSection(hash, $elm, this.doc)) {
+      // Force open if the fragment is here.
+      $elm.dataset.initialState = 'opened';
+    } else if (this.viewportNoWiderThan(this.thresholdWidth)) {
+      // Force closed on small screens.
+      $elm.dataset.initialState = 'closed';
+    }
+
+    if ($elm.dataset.initialState === 'closed') {
       $elm.classList.add('article-section--collapsed');
       $headerLink.classList.add('article-section__header_link--closed');
       $body.classList.add('visuallyhidden');

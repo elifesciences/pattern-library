@@ -32,36 +32,13 @@ module.exports = class FragmentHandler {
   }
 
   /**
-   * Indicates whether an HTML element with a given id is found as/within a specific chunk of html
-   *
-   * @param {String} id The id  of the HTML element to search for
-   * @param {HTMLElement} $section The element to search/search within
-   * @param {HTMLDocument} doc
-   * @param {Function} areElementsNested Handles determination of nesting
-   * @returns {boolean} true if element with id is $section, or is contained within $section
-   */
-  isIdOfOrWithinSection(id, $section, doc, areElementsNested) {
-    if (id.search(/https?:\/\//) === 0) {
-      return false;
-    }
-
-    if (id === $section.id) {
-      return true;
-    }
-
-    const $fragWithId = doc.querySelector('#' + id);
-    return areElementsNested($section, $fragWithId);
-  }
-
-  /**
    * Returns the id of the collapsed section containing the html element with idToFind, or null.
    *
    * @param {String} idToFind The id to search for
    * @param {HTMLDocument} doc
-   * @param {Function} areElementsNested Handles determination of nesting
    * @returns {String} The id of the collapsed section containing idToFind, or null
    */
-  getIdOfCollapsedSection(idToFind, doc, areElementsNested) {
+  getIdOfCollapsedSection(idToFind, doc) {
     let collapsedSections = doc.querySelectorAll('.article-section--collapsed');
     if (!collapsedSections.length) {
       return null;
@@ -70,7 +47,7 @@ module.exports = class FragmentHandler {
     let $collapsedSectionContainingFrag;
     [].forEach.call(collapsedSections, ($collapsedSection) => {
       if (!$collapsedSectionContainingFrag) {
-        if (this.isIdOfOrWithinSection(idToFind, $collapsedSection, doc, areElementsNested)) {
+        if (utils.isIdOfOrWithinSection(idToFind, $collapsedSection, doc)) {
           $collapsedSectionContainingFrag = $collapsedSection;
         }
       }
@@ -105,8 +82,7 @@ module.exports = class FragmentHandler {
       return false;
     }
 
-    let idOfCollapsedSection = this.getIdOfCollapsedSection(hash, this.doc,
-                                                            utils.areElementsNested);
+    let idOfCollapsedSection = this.getIdOfCollapsedSection(hash, this.doc);
     if (!!idOfCollapsedSection) {
       this.doc.querySelector('#' + idOfCollapsedSection).dispatchEvent(utils.eventCreator('expandsection', hash));
     }
