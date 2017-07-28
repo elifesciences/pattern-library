@@ -368,3 +368,9 @@
   @include font-size(14);
   line-height: #{(20/14)};
 }
+
+@mixin inline-image {
+  margin-bottom: 0.1em;
+  max-height: 1em;
+  vertical-align: middle;
+}
