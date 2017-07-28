@@ -91,7 +91,10 @@ module.exports = class ViewSelector {
   }
 
   handleScrolling() {
-    this.handleHighlighting(utils.closest);
+    if (this.$jumpLinksList) {
+      this.handleHighlighting(utils.closest);
+    }
+
     this.handlePositioning();
   }
 
