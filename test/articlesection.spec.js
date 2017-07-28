@@ -9,6 +9,21 @@ describe('An Article Section (collapsible)', function () {
   let $elm = document.querySelector('.article-section');
   let section;
 
+  function createWindowMock(matches, hash) {
+    return {
+      matchMedia: () => {
+        return {
+          matches: matches,
+        };
+      },
+      location: {
+        hash: `#${hash}`,
+      },
+      addEventListener: function () {
+      },
+    };
+  }
+
   beforeEach(function () {
     section = new ArticleSection($elm);
   });
@@ -42,16 +57,7 @@ describe('An Article Section (collapsible)', function () {
 
   it('is initially opened if initial state is closed but the fragment is the section', function () {
     $elm.dataset.initialState = 'closed';
-    let windowMock = {
-      matchMedia: function () {
-        return {
-          matches: true
-        };
-      },
-      location: {
-        hash: '#introduction'
-      }
-    };
+    let windowMock = createWindowMock(true, 'introduction');
     let articleSection = new ArticleSection($elm, windowMock);
     expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
     expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
@@ -60,16 +66,7 @@ describe('An Article Section (collapsible)', function () {
 
   it('is initially opened if initial state is closed but the fragment is inside the section', function () {
     $elm.dataset.initialState = 'closed';
-    let windowMock = {
-      matchMedia: function () {
-        return {
-          matches: true
-        };
-      },
-      location: {
-        hash: '#foo'
-      }
-    };
+    let windowMock = createWindowMock(true, 'foo');
     let articleSection = new ArticleSection($elm, windowMock);
     expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
     expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
@@ -78,16 +75,7 @@ describe('An Article Section (collapsible)', function () {
 
   it('is initially closed if initial state is closed and the fragment is something else', function () {
     $elm.dataset.initialState = 'closed';
-    let windowMock = {
-      matchMedia: function () {
-        return {
-          matches: true
-        };
-      },
-      location: {
-        hash: '#bar'
-      }
-    };
+    let windowMock = createWindowMock(true, 'bar');
     let articleSection = new ArticleSection($elm, windowMock);
     expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
     expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
@@ -96,14 +84,7 @@ describe('An Article Section (collapsible)', function () {
 
   it('is initially open if initial state is not set to closed and viewport is wide enough', function () {
     let initialStateCandidateValues = ['open', 'shut', 'unavailable', 'null', '', 'false'];
-    let windowMock = {
-      matchMedia: function () {
-        return {
-          matches: false
-        };
-      },
-      addEventListener: function () {}
-    };
+    let windowMock = createWindowMock(false);
     initialStateCandidateValues.forEach((value) => {
       $elm.dataset.initialState = value;
       let articleSection = new ArticleSection($elm, windowMock);
@@ -115,14 +96,7 @@ describe('An Article Section (collapsible)', function () {
 
   it('is initially closed if viewport is not wide enough, regardless of initial state', function () {
     let initialStateCandidateValues = ['open', 'shut', 'unavailable', 'null', '', 'false', 'closed'];
-    let windowMock = {
-      matchMedia: function () {
-        return {
-          matches: true
-        };
-      },
-      addEventListener: function () {}
-    };
+    let windowMock = createWindowMock(true);
     initialStateCandidateValues.forEach((value) => {
       $elm.dataset.initialState = value;
       let articleSection = new ArticleSection($elm, windowMock);
