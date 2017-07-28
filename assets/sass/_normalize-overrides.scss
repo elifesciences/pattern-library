@@ -138,9 +138,7 @@ dd {
 
 dt {
   font-weight: 700;
-  dd + & {
-    @include margin(24, "top");
-  }
+  @include margin(24, "top");
 }
 
 dd {
