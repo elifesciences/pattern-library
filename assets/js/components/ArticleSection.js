@@ -84,7 +84,7 @@ module.exports = class ArticleSection {
     this.$headerLink.classList.remove('article-section__header_link--closed');
     this.$elm.classList.remove('article-section--collapsed');
     this.$body.classList.remove('visuallyhidden');
-    if (!!this.window.MathJax) {
+    if (!!this.window.MathJax && !!this.window.MathJax.Hub) {
       this.window.MathJax.Hub.Queue(['Rerender', this.window.MathJax.Hub, this.$elm.id]);
     }
 
