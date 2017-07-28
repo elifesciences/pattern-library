@@ -55,7 +55,7 @@ module.exports = class FragmentHandler {
    */
   getIdOfCollapsedSection(idToFind, doc, areElementsNested) {
     let collapsedSections = doc.querySelectorAll('.article-section--collapsed');
-    if (!collapsedSections) {
+    if (!collapsedSections.length) {
       return null;
     }
 
