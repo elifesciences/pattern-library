@@ -1,0 +1,20 @@
+{
+  "title": "Annual report: 2016 in review",
+  "longTitle": true,
+  "header": {
+    "possible": true
+  },
+  "impactStatement": "A look back at eLife's achievements in 2016, notably in advocating for more open practises in sciences, building an open infrastructure for research communication and supporting early-career researchers.",
+  "meta": {
+    "url": "#",
+    "text": "Inside eLife",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 28,
+        "month": "Jul",
+        "year": 2017
+      },
+      "forMachine": "2017-07-28"
+    }
+  }
+}
