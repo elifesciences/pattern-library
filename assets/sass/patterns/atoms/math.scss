@@ -3,6 +3,7 @@
 // .math-block rather than .math to avoid MathJax collision
 
 .math-block {
+  clear: both;
   @include body-typeg();
   display: flex;
   flex-direction: row-reverse;

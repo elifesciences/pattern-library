@@ -18,10 +18,6 @@
     @include margin($blg-space-small-in-px, "right");
     max-width: 50%;
   }
-
-  & + :not(p) {
-    clear: both;
-  }
 }
 
 .captioned-asset__picture {
