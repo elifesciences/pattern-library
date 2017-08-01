@@ -17,6 +17,9 @@ schema:
           $ref: ../../00-atoms/components/caption-text.yaml#/schema
         doi:
           $ref: ../../00-atoms/components/doi.yaml#/schema
+        inline:
+          type: boolean
+          default: false
     -
       oneOf:
         -

@@ -165,6 +165,10 @@ address {
   @include visuallyhidden();
 }
 
+.clear {
+  clear: both;
+}
+
 /*
  * Backwards compatible clearfix.
  * See http://nicolasgallagher.com/micro-clearfix-hack/

@@ -1,6 +1,7 @@
 @import "../../definitions";
 
 .captioned-asset {
+  clear: both;
   margin: 0;
   @include margin($blg-space-medium-in-px, "top");
   @include margin($blg-space-medium-in-px, "bottom");
@@ -8,6 +9,15 @@
   .asset-viewer-inline & {
     margin-top: 0;
     margin-bottom: 0;
+  }
+}
+
+.captioned-asset--inline {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    float: left;
+    @include margin($blg-space-small-in-px, "top");
+    @include margin($blg-space-small-in-px, "right");
+    max-width: 50%;
   }
 }
 

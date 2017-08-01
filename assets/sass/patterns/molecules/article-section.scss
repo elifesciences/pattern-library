@@ -4,6 +4,8 @@ $arrow-size: 5;
 
 .article-section {
 
+  clear: both;
+
   &--collapsed {
     padding-bottom: 0;
   }
