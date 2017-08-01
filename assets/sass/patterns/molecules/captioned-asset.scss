@@ -1,7 +1,6 @@
 @import "../../definitions";
 
 .captioned-asset {
-  clear: both;
   margin: 0;
   @include margin($blg-space-medium-in-px, "top");
   @include margin($blg-space-medium-in-px, "bottom");
@@ -18,6 +17,10 @@
     @include margin($blg-space-small-in-px, "top");
     @include margin($blg-space-small-in-px, "right");
     max-width: 50%;
+  }
+
+  & + :not(p) {
+    clear: both;
   }
 }
 
