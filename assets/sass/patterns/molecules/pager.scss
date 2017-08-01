@@ -7,6 +7,11 @@
     justify-content: space-between;
   }
 
+  .button {
+    min-height: 45px;
+    position: relative;
+  }
+
   .button:nth-child(2) {
     float: right;
   }
@@ -17,16 +22,11 @@
 }
 
 .js .pager__text_wrapper.loading {
-
-  position: relative;
-
-  &:after {
-    @include loading-spinner($highlight-color: $color-text--reverse, $base-color: #81c4e8);
-    content: "";
-    display: inline-block;
-    position: absolute;
-    left: 110%;
-    top: -3px;
-  }
-
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  @include loading-spinner($highlight-color: $color-text--reverse, $base-color: #81c4e8);
 }
