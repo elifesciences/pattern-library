@@ -1,9 +1,28 @@
-<div class="image-link{{#variant}} image-link--{{variant}}{{/variant}}">
+<div class="image-link">
 
   <a href="{{url}}" class="image-link__link">
 
     {{#image}}
-      {{> atoms-picture}}
+
+      <picture class="image-link__picture">
+
+        {{#sources}}
+          <source srcset="{{srcset}}"
+                  {{#type}}type="{{type}}"{{/type}}
+                  {{#media}}media="{{media}}"{{/media}}
+          >
+        {{/sources}}
+
+        {{#fallback}}
+          <img src="{{defaultPath}}"
+               {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+               class="image-link__img"
+               alt="{{altText}}"
+          >
+        {{/fallback}}
+
+      </picture>
+
     {{/image}}
 
   </a>
