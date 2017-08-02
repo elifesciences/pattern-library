@@ -3,7 +3,6 @@
 .image-link__link {
   border: 1px solid $color-text-dividers;
   display: table;
-  padding: 48px 0;
   height: (60px + (48px * 2) + 2px); // image + padding + border
   width: 100%;
 }
