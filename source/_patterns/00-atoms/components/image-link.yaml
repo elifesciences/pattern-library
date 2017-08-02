@@ -12,10 +12,6 @@ schema:
       minLength: 1
     image:
       $ref: picture.yaml#/schema
-    variant:
-      type: string
-      enum:
-        - logo
   required:
     - url
     - image
