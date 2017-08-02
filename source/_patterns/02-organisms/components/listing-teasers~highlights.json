@@ -29,7 +29,7 @@
       },
       "image":{
         "defaultPath":"https://placehold.it/140/140/",
-        "srcset":"https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+        "srcset":"https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
         "altText":"Meaningful alt text please.",
         "classes":"teaser__img--small"
       }
@@ -57,7 +57,7 @@
       },
       "image":{
         "defaultPath":"https://placehold.it/140/140/",
-        "srcset":"https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+        "srcset":"https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
         "altText":"Meaningful alt text please.",
         "classes":"teaser__img--small"
       }
@@ -85,7 +85,7 @@
       },
       "image":{
         "defaultPath":"https://placehold.it/140/140/",
-        "srcset":"https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+        "srcset":"https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
         "altText":"Meaningful alt text please.",
         "classes":"teaser__img--small"
       }
@@ -113,7 +113,7 @@
       },
       "image":{
         "defaultPath":"https://placehold.it/140/140/",
-        "srcset":"https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+        "srcset":"https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
         "altText":"Meaningful alt text please.",
         "classes":"teaser__img--small"
       }
@@ -141,7 +141,7 @@
       },
       "image":{
         "defaultPath":"https://placehold.it/140/140/",
-        "srcset":"https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+        "srcset":"https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
         "altText":"Meaningful alt text please.",
         "classes":"teaser__img--small"
       }

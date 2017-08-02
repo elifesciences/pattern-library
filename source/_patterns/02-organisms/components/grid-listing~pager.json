@@ -8,7 +8,7 @@
       "image": {
         "defaultPath": "https://unsplash.it/250/140/",
         "altText": "An image.",
-        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
         "classes": "teaser__img--prominent"
       },
       "footer": {
@@ -33,7 +33,7 @@
       "image": {
         "defaultPath": "https://unsplash.it/250/140/",
         "altText": "An image.",
-        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
         "classes": "teaser__img--prominent"
       },
       "footer": {
@@ -58,7 +58,7 @@
       "image": {
         "defaultPath": "https://unsplash.it/250/140/",
         "altText": "An image.",
-        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
         "classes": "teaser__img--prominent"
       },
       "footer": {
@@ -83,7 +83,7 @@
       "image": {
         "defaultPath": "https://unsplash.it/250/140/",
         "altText": "An image.",
-        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
         "classes": "teaser__img--prominent"
       },
       "footer": {
@@ -108,7 +108,7 @@
       "image": {
         "defaultPath": "https://unsplash.it/250/140/",
         "altText": "An image.",
-        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
         "classes": "teaser__img--prominent"
       },
       "footer": {
@@ -133,7 +133,7 @@
       "image": {
         "defaultPath": "https://unsplash.it/250/140/",
         "altText": "An image.",
-        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
         "classes": "teaser__img--prominent"
       },
       "footer": {
@@ -158,7 +158,7 @@
       "image": {
         "defaultPath": "https://unsplash.it/250/140/",
         "altText": "An image.",
-        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
         "classes": "teaser__img--prominent"
       },
       "footer": {
@@ -183,7 +183,7 @@
       "image": {
         "defaultPath": "https://unsplash.it/250/140/",
         "altText": "An image.",
-        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
         "classes": "teaser__img--prominent"
       },
       "footer": {
@@ -208,7 +208,7 @@
       "image": {
         "defaultPath": "https://unsplash.it/250/140/",
         "altText": "An image.",
-        "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+        "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
         "classes": "teaser__img--prominent"
       },
       "footer": {

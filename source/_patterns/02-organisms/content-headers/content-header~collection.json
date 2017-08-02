@@ -14,7 +14,7 @@
       "url": "#",
       "image": {
         "fallback": {
-          "srcset": "https://unsplash.it/80/80 80w",
+          "srcset": "https://unsplash.it/80/80 2x",
           "defaultPath": "https://unsplash.it/40/40",
           "altText": ""
         }
