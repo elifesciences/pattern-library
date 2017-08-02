@@ -3,7 +3,7 @@
   "image": {
     "fallback": {
       "defaultPath": "https://unsplash.it/180/60/",
-      "srcset": "https://unsplash.it/360/120/ 2x, https://unsplash.it/180/60/ 1x",
+      "srcset": "https://unsplash.it/360/120/ 360w, https://unsplash.it/180/60/ 180w",
       "altText": "Meaningful alt text here please."
     }
   }

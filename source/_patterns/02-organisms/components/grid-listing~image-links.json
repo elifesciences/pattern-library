@@ -6,7 +6,7 @@
       "image": {
         "fallback": {
           "defaultPath": "https://unsplash.it/250/140/",
-          "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
           "altText": "Meaningful alt text here please."
         }
       }
@@ -26,7 +26,7 @@
       "image": {
         "fallback": {
           "defaultPath": "https://unsplash.it/250/100/",
-          "srcset": "https://unsplash.it/500/200/ 2x, https://unsplash.it/250/100/ 1x",
+          "srcset": "https://unsplash.it/500/200/ 500w, https://unsplash.it/250/100/ 250w",
           "altText": "Meaningful alt text here please."
         }
       }
@@ -46,7 +46,7 @@
       "image": {
         "fallback": {
           "defaultPath": "https://unsplash.it/250/140/",
-          "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
           "altText": "Meaningful alt text here please."
         }
       }
@@ -56,7 +56,7 @@
       "image": {
         "fallback": {
           "defaultPath": "https://unsplash.it/250/100/",
-          "srcset": "https://unsplash.it/500/200/ 2x, https://unsplash.it/250/100/ 1x",
+          "srcset": "https://unsplash.it/500/200/ 500w, https://unsplash.it/250/100/ 250w",
           "altText": "Meaningful alt text here please."
         }
       }
