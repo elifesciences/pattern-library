@@ -28,12 +28,12 @@ schema:
                 elementId:
                   type: string
                   minLength: 1
-                overlay:
-                  type: boolean
-                  default: false
               required:
                 - text
                 - elementId
+            creditOverlay:
+              type: boolean
+              default: false
     impactStatement:
       type: string
       minLength: 1
