@@ -98,14 +98,24 @@
   @include teaser-footer-style();
 }
 
-.teaser__publish_state {
+.teaser__formats {
+  color: $color-text-placeholder;
   text-transform: uppercase;
 }
 
-.teaser__publish_state__with_separator {
-  border-right: 2px dotted $color-text-secondary;
-  @include margin(6, "right");
-  @include padding(6, "right");
+.teaser__formats-list {
+  @include nospace();
+  & > li {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    display: inline;
+    list-style-type: none;
+    &:not(:last-of-type):after {
+      content: " + ";
+    }
+  }
 }
 
 .teaser__category_link {
