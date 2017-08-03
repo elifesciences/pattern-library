@@ -365,8 +365,9 @@
                 "forMachine": "20160516"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           },
 
@@ -406,8 +407,9 @@
                 "forMachine": "20160419"
               }
             },
-            "publishState": {
-              "vor": false
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -442,8 +444,9 @@
                 "forMachine": "20160516"
               }
             },
-            "publishState": {
-              "vor": false
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -478,8 +481,9 @@
                 "forMachine": "20160415"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           },
           "image": {
@@ -521,8 +525,8 @@
                 "forMachine": "2016047"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "pdf": true
             }
           }
         }
