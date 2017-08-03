@@ -126,9 +126,9 @@
       },
       "credit": {
         "text": "This is an image credit <a href=\"#\">with a link</a>.",
-        "elementId": "iAmTheElementIdForTheImegeCreditElement",
-        "overlay": true
-      }
+        "elementId": "iAmTheElementIdForTheImegeCreditElement"
+      },
+      "creditOverlay": true
     },
     "audioPlayer": {
       "title": "Episode 21",
