@@ -1,0 +1,40 @@
+@import "../../definitions";
+
+.inline-profile {
+  clear: both;
+  @include margin($blg-space-medium-in-px, "top");
+  @include margin($blg-space-small-in-px, "bottom");
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: table;
+    @supports (display: flex) {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.inline-profile__picture-wrapper,
+.inline-profile__text {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: table-cell;
+    vertical-align: middle;
+    @supports (display: flex) {
+      display: block;
+    }
+  }
+}
+
+.inline-profile__picture {
+  @include margin($blg-space-small-in-px, "bottom");
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include margin($blg-space-small-in-px, "right");
+  }
+}
+
+.inline-profile__image {
+  border: 1px solid $color-text-dividers;
+  @include padding($blg-space-extra-small-in-px);
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    max-width: unset;
+  }
+}
