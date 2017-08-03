@@ -55,7 +55,6 @@
 }
 
 .block-link {
-  background-color: $color-primary;
   position: relative;
 }
 
@@ -79,6 +78,13 @@
     padding-top: 0;
   }
 
+}
+
+.block-link:not(.block-link--image) {
+  background-color: #000;
+  background-image: url("../img/patterns/molecules/block-link-ic_1x.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 // NOTE for next 2 rules: preferring use of variant over nesting, to keep specificity low.
