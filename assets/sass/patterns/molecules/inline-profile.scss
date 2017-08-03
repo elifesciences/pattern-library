@@ -3,7 +3,7 @@
 .inline-profile {
   clear: both;
   @include margin($blg-space-medium-in-px, "top");
-  @include margin($blg-space-small-in-px, "bottom");
+  @include margin($blg-space-medium-in-px, "bottom");
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     display: table;
     @supports (display: flex) {
@@ -24,10 +24,15 @@
   }
 }
 
+.inline-profile__picture-wrapper {
+  line-height: 0;
+}
+
 .inline-profile__picture {
   @include margin($blg-space-small-in-px, "bottom");
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include margin($blg-space-small-in-px, "right");
+    margin-bottom: 0;
   }
 }
 
@@ -36,5 +41,11 @@
   @include padding($blg-space-extra-small-in-px);
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     max-width: unset;
+  }
+}
+
+.inline-profile__text {
+  & :last-of-type {
+    margin-bottom: 0;
   }
 }
