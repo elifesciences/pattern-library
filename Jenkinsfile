@@ -19,7 +19,7 @@ elifePipeline {
                     sh 'scp -o StrictHostKeyChecking=no elife@ci--ui-patterns.elifesciences.org:/srv/pattern-library/public.tar.gz .'
                     sh 'tar -xvzf public.tar.gz'
                     sh "aws s3 cp public/ s3://ci-pattern-library/${env.BUILD_TAG}/ --recursive"
-                    echo "You can see this pattern-library version at https://s3.amazonaws.com/ci-pattern-library/${env.BUILD_TAG}/index.html"
+                    sh "/usr/local/jenkins-scripts/colorize.sh You can see this pattern-library version at https://s3.amazonaws.com/ci-pattern-library/${env.BUILD_TAG}/index.html"
                 }
             }
         }
