@@ -87,7 +87,7 @@
 
 .teaser__secondary_info {
   @include listing-main-author-typeg();
-  @include padding(12, "bottom");
+  @include margin(12, "bottom");
 }
 
 .teaser__body {
