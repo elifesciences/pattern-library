@@ -29,6 +29,8 @@
 }
 
 .inline-profile__picture {
+  border: 1px solid $color-text-dividers;
+  @include padding($blg-space-extra-small-in-px);
   @include margin($blg-space-small-in-px, "bottom");
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include margin($blg-space-small-in-px, "right");
@@ -37,10 +39,10 @@
 }
 
 .inline-profile__image {
-  border: 1px solid $color-text-dividers;
-  @include padding($blg-space-extra-small-in-px);
+  display: block;
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     max-width: unset;
+    width: 120px;
   }
 }
 
