@@ -10,6 +10,8 @@ $arrow-size: 5;
 }
 
 .article-section--js {
+  clear: both;
+
   @include blg-spacing("bottom", "medium", "margin");
 
   border-top: 1px solid $color-text-dividers;

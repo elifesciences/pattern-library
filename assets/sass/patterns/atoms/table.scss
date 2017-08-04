@@ -1,6 +1,7 @@
 @import "../../definitions";
 
 .table {
+  clear: both;
   @include margin($blg-space-medium-in-px, "top");
   @include margin($blg-space-medium-in-px, "bottom");
 
