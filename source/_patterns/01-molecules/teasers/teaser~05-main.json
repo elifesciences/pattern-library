@@ -34,8 +34,9 @@
       }
     },
 
-    "publishState": {
-      "vor": true
+    "formats": {
+      "html": true,
+      "pdf": true
     }
   }
 
