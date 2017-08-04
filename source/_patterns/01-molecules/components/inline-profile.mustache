@@ -1,25 +1,23 @@
-<div class="inline-profile clearfix">
+<div class="inline-profile">
 
   {{#image}}
-    <div class="inline-profile__picture-wrapper">
-      <picture class="inline-profile__picture">
+    <picture class="inline-profile__picture">
 
-        {{#sources}}
-          <source srcset="{{srcset}}"
-            {{#type}}type="{{type}}" {{/type}}
-            {{#media}}media="{{media}}" {{/media}}>
-        {{/sources}}
+      {{#sources}}
+        <source srcset="{{srcset}}"
+          {{#type}}type="{{type}}" {{/type}}
+          {{#media}}media="{{media}}" {{/media}}>
+      {{/sources}}
 
-        {{#fallback}}
-          <img {{#srcset}}srcset="{{srcset}}"{{/srcset}}
-               sizes="(min-width: 730px) 120px, 100vw"
-               src="{{defaultPath}}"
-               class="inline-profile__image"
-               alt="{{altText}}">
-        {{/fallback}}
+      {{#fallback}}
+        <img {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+             {{#srcset}}sizes="(min-width: 730px) 120px, 100vw"{{/srcset}}
+             src="{{defaultPath}}"
+             class="inline-profile__image"
+             alt="{{altText}}">
+      {{/fallback}}
 
-      </picture>
-    </div>
+    </picture>
   {{/image}}
 
   <div class="inline-profile__text">

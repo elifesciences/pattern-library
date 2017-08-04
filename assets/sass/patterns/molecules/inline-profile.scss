@@ -5,27 +5,9 @@
   @include margin($blg-space-medium-in-px, "top");
   @include margin($blg-space-medium-in-px, "bottom");
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    display: table;
-    @supports (display: flex) {
-      display: flex;
-      align-items: center;
-    }
+    @include clearfix();
+    margin: 0;
   }
-}
-
-.inline-profile__picture-wrapper,
-.inline-profile__text {
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    display: table-cell;
-    vertical-align: middle;
-    @supports (display: flex) {
-      display: block;
-    }
-  }
-}
-
-.inline-profile__picture-wrapper {
-  line-height: 0;
 }
 
 .inline-profile__picture {
@@ -33,21 +15,14 @@
   @include padding($blg-space-extra-small-in-px);
   @include margin($blg-space-small-in-px, "bottom");
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    float: left;
     @include margin($blg-space-small-in-px, "right");
-    margin-bottom: 0;
   }
 }
 
 .inline-profile__image {
   display: block;
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    max-width: unset;
     width: 120px;
-  }
-}
-
-.inline-profile__text {
-  & :last-of-type {
-    margin-bottom: 0;
   }
 }
