@@ -14,8 +14,9 @@
 .captioned-asset--inline {
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     float: left;
-    @include margin($blg-space-small-in-px, "top");
+    margin-top: 0;
     @include margin($blg-space-small-in-px, "right");
+    @include margin($blg-space-small-in-px, "bottom");
     max-width: 50%;
   }
 }
