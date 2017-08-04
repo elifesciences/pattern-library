@@ -1,11 +1,13 @@
 @import "../../definitions";
 
 .captioned-asset {
+  clear: both;
   margin: 0;
   @include margin($blg-space-medium-in-px, "top");
   @include margin($blg-space-medium-in-px, "bottom");
 
   .asset-viewer-inline & {
+    clear: none;
     margin-top: 0;
     margin-bottom: 0;
   }
