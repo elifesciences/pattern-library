@@ -328,6 +328,7 @@
 }
 
 @mixin teaser-footer-style() {
+  @include margin(12, "top");
   color: $color-text-secondary;
   display: flex;
   @include label-content-typeg();
