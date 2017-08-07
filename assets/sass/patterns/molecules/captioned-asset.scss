@@ -1,24 +1,34 @@
 @import "../../definitions";
 
 .captioned-asset {
+  clear: both;
   margin: 0;
   @include margin($blg-space-medium-in-px, "top");
   @include margin($blg-space-medium-in-px, "bottom");
 
   .asset-viewer-inline & {
+    clear: none;
     margin-top: 0;
     margin-bottom: 0;
   }
 }
 
+.captioned-asset--inline {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    float: left;
+    margin-top: 0;
+    @include margin($blg-space-small-in-px, "right");
+    @include margin($blg-space-small-in-px, "bottom");
+    max-width: 50%;
+  }
+}
+
 .captioned-asset__picture {
   display: block;
-  @include margin(12, "bottom");
 }
 
 .captioned-asset__image {
   display: block;
-  @include margin($blg-space-extra-small-in-px, "bottom");
   outline: 1px solid $color-text-dividers;
   @include padding($blg-space-extra-small-in-px);
   width: 100%;
@@ -26,6 +36,7 @@
 
 .captioned-asset__caption {
   padding: 0 6%;
+  @include margin($blg-space-extra-small-in-px, "top");
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-captioned-asset-caption)}em) {
