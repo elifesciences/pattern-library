@@ -20,6 +20,7 @@ elifePipeline {
                     sh 'tar -xvzf public.tar.gz'
                     sh "aws s3 cp public/ s3://ci-pattern-library/${prNumber}/ --recursive"
                     sh "/usr/local/jenkins-scripts/colorize.sh You can see this pattern-library version at https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
+                    elifeGithubPullRequestComment prNumber, "You can see this pattern-library version at https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
                 }
             }
         }
