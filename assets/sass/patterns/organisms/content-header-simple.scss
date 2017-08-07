@@ -1,9 +1,8 @@
 @import "../../definitions";
+@import "../../layout/grid";
 
 .content-header-simple {
-  border-bottom: 1px solid $color-text-dividers;
-  @include blg-spacing("top", "medium");
-  @include padding($blg-space-medium-in-px - 1, "bottom");
+  @include blg-pad-vertical-small-to-medium();
   padding-left: 6%;
   padding-right: 6%;
   text-align: center;
