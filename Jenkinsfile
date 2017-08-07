@@ -14,7 +14,8 @@ elifePipeline {
             // - the `xunit-file` formatter, which is an external plugin, doesn't seem to work with gulp-mocha-phantomjs
 
             elifePullRequestOnly {
-                stage 'Deploying to a public URL', {
+                stage 'Deploying to a public URL', { prNumber ->
+                    echo "prNumber: ${prNumber}" 
                     builderCmd 'pattern-library--ci', './archive-public.sh', '/srv/pattern-library' 
                     sh 'scp -o StrictHostKeyChecking=no elife@ci--ui-patterns.elifesciences.org:/srv/pattern-library/public.tar.gz .'
                     sh 'tar -xvzf public.tar.gz'
