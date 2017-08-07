@@ -42,10 +42,6 @@
     padding-bottom: 33.86977887%;
     padding-top: 23.86977887%;
 
-    &:hover {
-      color: $color-text;
-    }
-
     @supports (display: flex) {
       padding-bottom: 30.86977887%;
       padding-top: 26.86977887%;
@@ -86,6 +82,10 @@
   background-image: url("../img/patterns/molecules/block-link-ic.svg");
   background-repeat: no-repeat;
   background-position: center;
+
+  &:hover {
+    background-color: lighten(#000, 10%);
+  }
 }
 
 // NOTE for next 2 rules: preferring use of variant over nesting, to keep specificity low.
@@ -123,9 +123,9 @@
     bottom: 0;
     left: 0;
     z-index: -1;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-color: rgba(0, 0, 0, 0.5);
     .block-link:hover & {
-      background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+      background-color: rgba(0, 0, 0, 0.9);
     }
   }
 }
