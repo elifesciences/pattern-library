@@ -19,8 +19,9 @@ elifePipeline {
                     sh 'scp -o StrictHostKeyChecking=no elife@ci--ui-patterns.elifesciences.org:/srv/pattern-library/public.tar.gz .'
                     sh 'tar -xvzf public.tar.gz'
                     sh "aws s3 cp public/ s3://ci-pattern-library/${prNumber}/ --recursive"
-                    sh "/usr/local/jenkins-scripts/colorize.sh You can see this pattern-library version at https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
-                    elifeGithubPullRequestComment prNumber, "You can see this pattern-library version at https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
+                    def url = "https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
+                    sh "/usr/local/jenkins-scripts/colorize.sh You can see this pattern-library version at ${url}"
+                    elifeGithubCommitStatus commit, 'success', 'continuous-integration/jenkins/pr-demo', 'Static website', url
                 }
             }
         }
