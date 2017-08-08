@@ -17,8 +17,10 @@ gulp
 done) & pid=$!
 PID_LIST+=" $pid";
 
-php ./core/builder.php --watch > /dev/null 2>&1 & pid=$!
+# Need to generate before watch to ensure images are in the right place.
+php ./core/builder.php --generate
 
+php ./core/builder.php --watch > /dev/null 2>&1 & pid=$!
 PID_LIST+=" $pid";
 
 php -S 0.0.0.0:${PORT} -t ./public > /dev/null 2>&1 & pid=$!
