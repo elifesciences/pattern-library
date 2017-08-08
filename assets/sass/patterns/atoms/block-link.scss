@@ -50,7 +50,7 @@
 }
 
 .block-link {
-  border-radius: 3px;
+  border-radius: #{$border-radius}px;
   overflow: hidden;
   position: relative;
 }
