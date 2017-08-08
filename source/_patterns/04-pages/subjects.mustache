@@ -10,21 +10,19 @@
 
     <main role="main" class="main">
 
-      <div class="wrapper">
+      {{#header}}
+        {{> organisms-content-header-simple}}
+      {{/header}}
+
+      <div class="wrapper wrapper--listing">
 
         <div class="grid">
 
-          <div class="listing-column-container">
-
-            <div class="grid__item large--one-whole listing-column-main">
-
-              <h2 style="text-align: center;">Browse our research categories</h2>
+          <div class="grid__item one-whole grid-column">
 
               {{#blockLinkListing}}
                 {{> organisms-grid-listing}}
               {{/blockLinkListing}}
-
-            </div>
 
           </div>
 
