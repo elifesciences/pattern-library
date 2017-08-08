@@ -110,18 +110,7 @@
  */
 
 .wrapper {
-  box-sizing: content-box;
-  @include constrain-width($max-site-width, "max");
-  margin: auto;
-  padding: 0 7%;
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    padding: 0 14%;
-  }
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    padding: 0 3%;
-  }
+  @include wrapper();
 
   &.wrapper--site-header {
     padding: 0;
