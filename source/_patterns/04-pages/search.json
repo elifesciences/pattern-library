@@ -161,8 +161,8 @@
                 "forMachine": "20160416"
               }
             },
-            "publishState": {
-              "vor": false
+            "formats": {
+              "pdf": true
             }
           }
         },
@@ -197,8 +197,9 @@
                 "forMachine": "20160308"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -230,8 +231,8 @@
                 "forMachine": "20160208"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true
             }
           }
         },
@@ -267,8 +268,9 @@
                 "forMachine": "20160127"
               }
             }  ,
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -300,8 +302,9 @@
                 "forMachine": "2015-10-06"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         }

@@ -29,8 +29,9 @@
             "forMachine": "2016-05-16"
           }
         },
-        "publishState": {
-          "vor": true
+        "formats": {
+          "html": true,
+          "pdf": true
         }
       },
 
@@ -71,8 +72,9 @@
             "forMachine": "2016-04-19"
           }
         },
-        "publishState": {
-          "vor": false
+        "formats": {
+          "html": true,
+          "pdf": true
         }
       }
     },
@@ -107,8 +109,9 @@
             "forMachine": "2016-05-16"
           }
         },
-        "publishState": {
-          "vor": false
+        "formats": {
+          "html": true,
+          "pdf": true
         }
       }
     },
@@ -143,8 +146,9 @@
             "forMachine": "2016-04-15"
           }
         },
-        "publishState": {
-          "vor": true
+        "formats": {
+          "html": true,
+          "pdf": true
         }
       },
       "image": {

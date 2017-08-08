@@ -1,6 +1,7 @@
 @import "../../definitions";
 
 .iframe {
+  clear: both;
   position: relative;
   height: 0;
   overflow: hidden;
