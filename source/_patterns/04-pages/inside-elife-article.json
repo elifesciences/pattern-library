@@ -1,0 +1,179 @@
+{
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "path": "#mainMenu",
+          "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "pictureClasses": "nav-primary__search_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Labs",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Submit my research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--button",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        }
+      ]
+    },
+
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
+
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
+    }
+
+  },
+
+  "contentHeader": {
+    "title": "Annual report: 2016 in review",
+    "impactStatement": "A look back at eLife's achievements in 2016, notably in advocating for more open practises in sciences, building an open infrastructure for research communication and supporting early-career researchers."
+  },
+
+  "mainMenu":{
+    "links": {
+      "items": [
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Author guide", "url": "#aut"},
+        {"name": "Reviewer guide", "url": "#rev"},
+        {"name": "About", "url": "#abo"},
+        {"name": "Inside eLife", "url": "#ins"},
+        {"name": "Careers", "url": "#car"},
+        {"name": "Labs", "url": "#lab"}
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+
+  "body": "<section class=\"article-section \">    <header class=\"article-section__header\">   <h3 class=\"article-section__header_text\">Letter from the Chairman</h3>   </header>    <div class=\"article-section__body\">   <p>The close of 2016 marks an important landmark for eLife as we transition into our second five-year term. Our first five years focused on building a scientific brand associated with research excellence, transparency and publishing innovation. With the <a href=\"https://elifesciences.org/for-the-press/8ee45992/research-funders-renew-commitment-to-transforming-science-publishing\">announcement in 2016 of the renewed support</a> from eLife’s founders, we now move into a second phase where we begin to capitalise on our achievements to date to have broader influence on research communication and achieve our mission to help scientists accelerate discovery.</p>   <p>When considering the current and future influence of eLife, we can look at a number of dimensions. Our core activity is our journal and in 2016 we published over 1,000 research articles for the first time. As eLife approaches the 5th anniversary of publishing, we have been able to grow rapidly and scale an <a href=\"https://elifesciences.org/about/peer-review\">editorial process</a> that gets important work published constructively and quickly. And the array of work that we publish continues to encompass the full breadth of biomedical science: amongst 2016’s highlights were the ancient history of viruses, drought-resistance in plants, the neuroscience of anxiety and the demographics of human height. Complementing the science, we have also published influential feature articles, covering topics including the benefits of taking a more open approach in the communication of research outputs. With a strong scientific and editorial foundation, we see tremendous prospects for further growth of eLife’s publishing over the coming years.</p>   <p>Our work with early-career researchers has also gathered momentum in 2016, and it remains a high priority for us to support and learn from this segment of the scientific community. The cultural change that eLife is attempting to foster in science will only be achieved in the longer term, which is why our work with early-career researchers is so important. Amongst many other initiatives, in 2016 we recruited several hundred early-career reviewers to participate in eLife’s unique editorial process. This <a href=\"https://elifesciences.org/inside-elife/31a5173b/elife-promotes-early-career-involvement-in-peer-review\">initiative</a> provides an opportunity for early-career researchers to gain experience of peer review, and to share their own valuable insights with other colleagues.</p>   <p>Another dimension of eLife’s impact is progress in technology development. In this area, our goal is to be at the heart of an ecosystem that is driving a more open approach to science. Open infrastructure will be a key part of this and during 2016 we dedicated a little over £1 million of our funding towards the creation of a complete open-source publishing toolset. The first phase of the toolset - named Continuum - was completed in February 2016 and the second phase has just been released. This unique suite of tools will provide eLife with state-of-the-art technology to underpin and explore radical improvements in the design and presentation of content. The tools are also freely available as open-source software for anyone to use. For too long, publishers and suppliers have competed on proprietary solutions to support research communication, with the result that there is much duplication of effort and unnecessary expense. With growing support within the publishing community for open-source software, we hope that Continuum will be adopted as one of the core components of an open and collaborative research communication infrastructure.</p>   <blockquote class=\"pull-quote\">   <p>For too long, publishers and suppliers have competed on proprietary solutions to support research communication, with the result that there is much duplication of effort and unnecessary expense.</p>     </blockquote>   <p>There is much more work to be done in the area of product and technology development, and the eLife Board is delighted to see the collaborations that are developing between eLife and established entities such as <a href=\"https://elifesciences.org/for-the-press/7e7220f6/elife-partners-with-hypothes-is-to-advance-open-scholarly-annotation\">Hypothes.is</a>. In addition, new early-stage projects are also being identified and selected for collaboration with the eLife team. As above, the common theme that connects all these efforts is a commitment both to open science and to open source software.</p>   <p>With respect to longer term financial sustainability of eLife, important progress was also made in 2016 as we laid the groundwork for the introduction of publication fees in January 2017. By transparently explaining the basis for the calculation of the fee, we have seen an overall positive reaction to the introduction of the fee. Submissions dropped slightly in the first three months of 2017, but at the time of writing, we have already seen a recovery to previous levels. <a href=\"https://elifesciences.org/inside-elife/b6365b76/setting-a-fee-for-publication\">The fee will cover the costs of journal growth at eLife</a>, so that more of the eLife’s funding can be used to support other activities, including our efforts to make science more accessible to a broader audience and more useful for others to build on and make discoveries.</p>   <p>eLife is motivated by the potential to make science a more transparent and collaborative enterprise. As a multidisciplinary partnership ourselves, between funders, researchers, publishing teams, developers, designers, and other organisations, eLife is being as transparent and collaborative as possible to help open up science for the World.</p><figure class=\"captioned-asset captioned-asset--inline\">     <img src=\"https://iiif.elifesciences.org/journal-cms:content/2017-06/placeit.jpg/full/full/0/default.jpg\" alt=\"\" class=\"captioned-asset__image\">      <figcaption class=\"captioned-asset__caption\">    <h6 class=\"caption-text__heading\">Transparent reporting forms will be published alongside articles to help improve reproducibility</h6>        </figcaption>       </figure><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec malesuada libero, a fringilla orci. Duis in convallis dui. Duis vitae lacus fermentum, gravida turpis in, porttitor nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam dignissim consectetur dictum. Quisque nec mauris dapibus, consequat diam id, blandit enim. Pellentesque sed pellentesque orci. Donec eu nisl in nibh luctus tempor. Integer a nunc in urna lacinia aliquam varius in nulla. Maecenas sed ligula volutpat, imperdiet massa sed, maximus diam.</p> <p>Pellentesque nec mollis erat, quis ultrices turpis. Nulla venenatis, eros quis gravida maximus, odio quam sodales neque, vitae consectetur metus lacus ac purus. Fusce consectetur, eros non commodo tempus, ex est viverra tortor, sed feugiat magna lacus vel lorem. Sed a libero eget ante aliquet volutpat eu non sem. Phasellus sagittis vestibulum enim. Ut vel lacinia lectus. Proin sollicitudin urna a tincidunt tempus. Quisque eu sapien volutpat sapien tristique volutpat et ut nisl. Ut et sollicitudin nibh, scelerisque molestie mauris. Suspendisse tortor dui, semper non dui a, molestie placerat arcu. Cras eget venenatis nunc. Quisque sollicitudin orci vel tellus feugiat egestas. Praesent porta, nibh vitae aliquam commodo, nisi tortor ornare nunc, sed imperdiet enim nisl pulvinar turpis. Mauris tempor, nulla et molestie fringilla, elit sapien porttitor elit, ac semper orci mauris a ante. Maecenas imperdiet sollicitudin mauris nec fermentum. Donec sodales diam et orci luctus efficitur et condimentum odio.</p><div class=\"inline-profile\"><picture class=\"inline-profile__picture\"><img src=\"https://iiif.elifesciences.org/journal-cms:content/2017-04/douglas_brumley.jpg/full/full/0/default.jpg\" class=\"inline-profile__image\" alt=\"\"></picture>    <div class=\"inline-profile__text\">    <p><b>Douglas Brumley</b> will travel from the University of Melbourne to Szeged, Hungary, for the 37th Dynamics Days Europe International Conference. There he will present his work on using high-speed imaging to watch the flagella of cells ofVolvox carteri –a species of green alga – and how they communicate and synchronize their beating through the movement of the fluid around them.</p></div></div> <div class=\"inline-profile\">    <picture class=\"inline-profile__picture\">     <img src=\"https://iiif.elifesciences.org/journal-cms:content/2017-04/ryo_matsuda.jpg/full/full/0/default.jpg\" class=\"inline-profile__image\" alt=\"\">    </picture>    <div class=\"inline-profile__text\">    <p><b>Ryo Matsuda</b> from the Department of Molecular Biosciences at Stockholm University will present at the 50th Annual Meeting of the Japanese Society of Developmental Biologists in Tokyo, Japan. His project, performing a genetic analysis of fruit fly embryos, identified several proteins and signalling molecules that control whether tracheal precursor cells become D-fate or P-fate cells, helping the airways of the fly to develop in the correct pattern.</p><p>Nullam nisi urna, tristique non mattis id, rhoncus vel massa. Aliquam erat volutpat. Phasellus dapibus nunc vestibulum tellus molestie porta. In ullamcorper ut massa sit amet rhoncus. In vitae ante rutrum, iaculis lacus nec, efficitur odio. Nulla libero ante, luctus sit amet consequat at, mollis ut dui. Donec egestas tincidunt lectus a rhoncus.</p></div></div> <div class=\"inline-profile\">     <picture class=\"inline-profile__picture\"><img src=\"https://iiif.elifesciences.org/journal-cms:content/2017-04/rachel_lowe.jpg/full/full/0/default.jpg\" class=\"inline-profile__image\" alt=\"\"></picture>     <div class=\"inline-profile__text\">    <p><b>Rachel Lowe</b> from the London School of Hygiene and Tropical Medicine will travel to Trieste, Italy, to the Impact of Environmental Changes on Infectious Diseases Conference. There she will present work on a prototype early warning system for Dengue using climate forecast information and how this could support public health decision-making in southern coastal Ecuador.</p><p>Nullam nisi urna, tristique non mattis id, rhoncus vel massa. Aliquam erat volutpat. Phasellus dapibus nunc vestibulum tellus molestie porta. In ullamcorper ut massa sit amet rhoncus. In vitae ante rutrum, iaculis lacus nec, efficitur odio. Nulla libero ante, luctus sit amet consequat at, mollis ut dui. Donec egestas tincidunt lectus a rhoncus.</p></div></div> <p>In sagittis eleifend eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam cursus et ipsum congue volutpat. Vestibulum suscipit, ex ac venenatis posuere, urna urna rhoncus turpis, vel faucibus augue augue in mi. Maecenas sed odio in tortor aliquam vehicula. Ut ac tempus urna. Nulla finibus, felis aliquet commodo fringilla, metus tellus pellentesque augue, id tincidunt mauris massa nec mauris. Quisque ut euismod ante, vel scelerisque lacus. Pellentesque turpis tortor, sagittis vel arcu vitae, dictum viverra tellus.</p><p>Mauris felis nisi, volutpat vitae ornare at, mattis quis ex. Donec sodales tristique ultricies. Etiam sagittis in urna nec luctus. Praesent vestibulum magna sit amet facilisis ultrices. Donec vel ante eu tortor tincidunt condimentum vel ac magna. Aliquam nec neque felis. Proin ac elit finibus, tristique ante sit amet, pretium ex. Mauris consequat diam quis dui aliquam porttitor. In hac habitasse platea dictumst. Aliquam nec bibendum nulla, eu posuere urna. Quisque a molestie tortor. Vestibulum quam odio, viverra nec elementum sed, lacinia id magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper purus pulvinar, porta ante vitae, pellentesque urna. Integer et pellentesque enim. Nullam sem nunc, suscipit ac nunc quis, varius ullamcorper massa.</p> </div>    </section>",
+
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms and policy", "url": "#" },
+    { "name": "Inside eLife", "url": "#" },
+    { "name": "Monthly archive", "url": "#" },
+    { "name": "Labs", "url": "#" },
+    { "name": "For the press", "url": "#" },
+    { "name": "Resources", "url": "#" }
+  ]
+
+}

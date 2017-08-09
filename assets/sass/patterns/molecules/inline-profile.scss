@@ -1,0 +1,28 @@
+@import "../../definitions";
+
+.inline-profile {
+  clear: both;
+  @include margin($blg-space-medium-in-px, "top");
+  @include margin($blg-space-medium-in-px, "bottom");
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include clearfix();
+    margin: 0;
+  }
+}
+
+.inline-profile__picture {
+  border: 1px solid $color-text-dividers;
+  @include padding($blg-space-extra-small-in-px);
+  @include margin($blg-space-small-in-px, "bottom");
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    float: left;
+    @include margin($blg-space-small-in-px, "right");
+  }
+}
+
+.inline-profile__image {
+  display: block;
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    width: 120px;
+  }
+}
