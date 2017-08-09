@@ -73,6 +73,21 @@
 
 }
 
+@mixin blg-pad-bottom--small-to-medium {
+
+  @include blg-spacing("bottom", "small");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "medium");
+  }
+
+}
+
+@mixin blg-pad-vertical-small-to-medium {
+  @include blg-pad-top--small-to-medium();
+  @include blg-pad-bottom--small-to-medium();
+}
+
 @mixin blg-margin-bottom--medium-to-large {
 
   @include blg-spacing("bottom", "medium", "margin");
@@ -110,18 +125,7 @@
  */
 
 .wrapper {
-  box-sizing: content-box;
-  @include constrain-width($max-site-width, "max");
-  margin: auto;
-  padding: 0 7%;
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    padding: 0 14%;
-  }
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    padding: 0 3%;
-  }
+  @include wrapper();
 
   &.wrapper--site-header {
     padding: 0;
@@ -136,6 +140,7 @@
     @include blg-pad-top--small-to-medium();
   }
 
+  .content-header-simple + &.wrapper--listing,
   .content-header-image-wrapper + &.wrapper--listing {
     padding-top: 0;
   }

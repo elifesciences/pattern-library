@@ -121,6 +121,10 @@
 
   },
 
+  "header": {
+    "title": "Browse our research categories"
+  },
+
   "blockLinkListing": {
     "classes": "grid-listing--block-link",
     "blockLinks": [

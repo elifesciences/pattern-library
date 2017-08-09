@@ -118,12 +118,12 @@
   "sortControl": {
     "options": [
       { "option": "Relevance", "sorting": "descending", "url": "?sortby=relevance&amp;sort=desc" },
-      { "option": "Date", "sorting": "descending", "url": "?sortby=date&amp;sort=desc" }
+      { "option": "Date", "url": "?sortby=date&amp;sort=desc" }
     ]
   },
 
   "messageBar": {
-    "message": "2,601 results found"
+    "message": "<b>2,601</b> results found"
   },
 
 
@@ -161,8 +161,8 @@
                 "forMachine": "20160416"
               }
             },
-            "publishState": {
-              "vor": false
+            "formats": {
+              "pdf": true
             }
           }
         },
@@ -197,8 +197,9 @@
                 "forMachine": "20160308"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -230,8 +231,8 @@
                 "forMachine": "20160208"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true
             }
           }
         },
@@ -267,8 +268,9 @@
                 "forMachine": "20160127"
               }
             }  ,
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -300,8 +302,9 @@
                 "forMachine": "2015-10-06"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         }
@@ -324,7 +327,14 @@
     "title": "Refine your results by:",
     "filterGroups": [
       {
-        "title": "Subject",
+        "title": "Type",
+        "filters": [
+          { "isChecked": false, "name": "Magazine ", "label": "Magazine", "results": "26" },
+          { "isChecked": false, "name": "Research ", "label": "Research", "results": "144" }
+        ]
+      },
+      {
+        "title": "Research categories",
         "filters": [
           { "isChecked": true, "name": "Cell", "label": "Cell Biology", "results": "71" },
           { "isChecked": false, "name": "Neuroscience", "label": "Neuroscience", "results": "2" },
@@ -335,19 +345,11 @@
           { "isChecked": false, "name": "Ecology", "label": "Ecology", "results": "71" },
           { "isChecked": false, "name": "Epidemiology ", "label": "Epidemiology and Global Health", "results": "57" }
         ]
-      },
-
-      {
-        "title": "Type",
-        "filters": [
-          { "isChecked": false, "name": "Magazine ", "label": "Magazine", "results": "26" },
-          { "isChecked": false, "name": "Research ", "label": "Research", "results": "144" }
-        ]
       }
     ],
     "button": {
       "text": "Refine results",
-      "classes": "button--default button--small",
+      "classes": "button--default",
       "type": "submit",
       "name": "button"
     }

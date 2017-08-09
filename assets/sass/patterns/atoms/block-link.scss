@@ -36,15 +36,10 @@
   }
 
   .block-link__link {
-    color: $color-text--reverse;
     margin: 0 auto;
     @include constrain-width($max-width-grid-listing-item, "max");
     padding-bottom: 33.86977887%;
     padding-top: 23.86977887%;
-
-    &:hover {
-      color: $color-text;
-    }
 
     @supports (display: flex) {
       padding-bottom: 30.86977887%;
@@ -55,12 +50,22 @@
 }
 
 .block-link {
-  background-color: $color-primary;
+  border-radius: #{$border-radius}px;
+  overflow: hidden;
   position: relative;
 }
 
 .block-link__link {
-  color: $color-text;
+  color: $color-text--reverse;
+  .grid-listing-item--block-link & {
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium - 1)}em) {
+      color: $color-text;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
   display: block;
   flex-direction: column;
   font-family: $font-secondary;
@@ -70,15 +75,23 @@
   text-align: center;
   text-decoration: none;
 
-  &:hover {
-    color: $color-primary;
-  }
-
   @supports (display: flex) {
     display: flex;
     padding-top: 0;
   }
 
+}
+
+.block-link:not(.block-link--image) {
+  background-color: #000;
+  background-image: url("../img/patterns/molecules/block-link-ic_1x.png");
+  background-image: url("../img/patterns/molecules/block-link-ic.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:hover {
+    background-color: lighten(#000, 10%);
+  }
 }
 
 // NOTE for next 2 rules: preferring use of variant over nesting, to keep specificity low.
@@ -116,9 +129,9 @@
     bottom: 0;
     left: 0;
     z-index: -1;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-color: rgba(0, 0, 0, 0.5);
     .block-link:hover & {
-      background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+      background-color: $color-overlay;
     }
   }
 }
@@ -135,7 +148,7 @@
   &:after {
     // Hide broken images
     content: "";
-    background-color: #fff;
+    background-color: #000;
     position: absolute;
     top: 0;
     left: 0;

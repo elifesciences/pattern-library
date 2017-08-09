@@ -202,8 +202,9 @@
                 "forMachine": "20160416"
               }
             },
-            "publishState": {
-              "vor": false
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -238,8 +239,8 @@
                 "forMachine": "20160308"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "pdf": true
             }
           }
         },
@@ -271,8 +272,8 @@
                 "forMachine": "20160208"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true
             }
           }
         },
@@ -307,8 +308,9 @@
                 "forMachine": "20160127"
               }
             }  ,
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -340,8 +342,9 @@
                 "forMachine": "2015-10-06"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -377,8 +380,9 @@
                 "forMachine": "2015-07-14"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -414,8 +418,8 @@
                 "forMachine": "2015-05-08"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "pdf": true
             }
           }
         },
@@ -447,8 +451,8 @@
                 "forMachine": "2015-03-03"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true
             }
           }
         },
@@ -484,8 +488,9 @@
                 "forMachine": "2015-02-25"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -521,8 +526,9 @@
                 "forMachine": "2015-02-19"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -554,8 +560,9 @@
                 "forMachine": "2015-02-03"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -587,8 +594,9 @@
                 "forMachine": "2014-11-18"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -624,8 +632,9 @@
                 "forMachine": "2014-10-08"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -661,8 +670,9 @@
                 "forMachine": "2014-10-08"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -698,8 +708,9 @@
                 "forMachine": "2014-06-27"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -735,8 +746,9 @@
                 "forMachine": "2014-06-05"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -772,8 +784,9 @@
                 "forMachine": "2014-04-24"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -809,8 +822,9 @@
                 "forMachine": "2014-02-04"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         },
@@ -846,8 +860,9 @@
                 "forMachine": "2013-09-17"
               }
             },
-            "publishState": {
-              "vor": true
+            "formats": {
+              "html": true,
+              "pdf": true
             }
           }
         }

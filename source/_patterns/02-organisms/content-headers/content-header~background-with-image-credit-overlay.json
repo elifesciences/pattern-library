@@ -43,9 +43,9 @@
     },
     "credit": {
       "text": "I haz image credit <a href=\"#\">with a link</a>.",
-      "elementId": "iAmTheIdOfTheImageCreditElement",
-      "overlay": true
-    }
+      "elementId": "iAmTheIdOfTheImageCreditElement"
+    },
+    "creditOverlay": true
   },
   "title": "Epidemiology and Global Health",
   "longTitle": true,

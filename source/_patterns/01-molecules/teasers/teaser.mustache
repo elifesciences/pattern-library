@@ -71,7 +71,7 @@
 
   {{! Several things may appear in the footer:
       - meta: standard pattern for article type, or arbitrary text with or without a date
-      - publishState: icons representing poa pdf only, or full html in addition is available. Used for research content
+      - formats: HTML and/or PDF. Used for research content
       - download icon/link: used to download, found in grid style podcast
    }}
   {{#footer}}
@@ -81,9 +81,19 @@
       {{> molecules-meta}}
     {{/meta}}
 
-    {{#publishState}}
-    <div class="teaser__publish_state">{{#vor}}<span class="visuallyhidden">Available as full, typeset article </span><span class="teaser__publish_state__with_separator">html</span>{{/vor}}<span class="visuallyhidden">Available as authors' accepted manuscript </span>pdf</div>
-    {{/publishState}}
+    {{#formats}}
+    <div class="teaser__formats">
+      <span class="visuallyhidden">Available as:</span>
+      <ul class="teaser__formats-list">
+        {{#html}}
+          <li>HTML</li>
+        {{/html}}
+        {{#pdf}}
+          <li>PDF</li>
+        {{/pdf}}
+      </ul>
+    </div>
+    {{/formats}}
 
   </footer>
   {{/footer}}
