@@ -73,6 +73,21 @@
 
 }
 
+@mixin blg-pad-bottom--small-to-medium {
+
+  @include blg-spacing("bottom", "small");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "medium");
+  }
+
+}
+
+@mixin blg-pad-vertical-small-to-medium {
+  @include blg-pad-top--small-to-medium();
+  @include blg-pad-bottom--small-to-medium();
+}
+
 @mixin blg-margin-bottom--medium-to-large {
 
   @include blg-spacing("bottom", "medium", "margin");
@@ -125,6 +140,7 @@
     @include blg-pad-top--small-to-medium();
   }
 
+  .content-header-simple + &.wrapper--listing,
   .content-header-image-wrapper + &.wrapper--listing {
     padding-top: 0;
   }
