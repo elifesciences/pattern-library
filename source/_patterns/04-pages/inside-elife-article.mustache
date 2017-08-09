@@ -1,0 +1,36 @@
+<div class="global-wrapper">
+  <div class="global-inner">
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+
+    <main role="main" class="main">
+
+      {{#contentHeader}}
+        {{> organisms-content-header }}
+      {{/contentHeader}}
+      <div class="wrapper wrapper--content">
+
+        <div class="grid">
+
+          <div class="{{> pages-pl-only-grid-content-page-main-col-css-classes}} u-pad-top">
+
+            {{{body}}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    {{#emailCta}}
+      {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+  </div> {{! /.global-inner }}
+</div> {{! /.global-wrapper }}
