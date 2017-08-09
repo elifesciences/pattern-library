@@ -459,13 +459,7 @@
         "url": "#",
         "blockLink": {
           "url": "#",
-          "text": "February",
-          "image": {
-            "fallback": {
-              "defaultPath": "https://unsplash.it/263/176",
-              "altText": ""
-            }
-          }
+          "text": "February"
         },
         "label": "Highlights this month:",
         "links": [
