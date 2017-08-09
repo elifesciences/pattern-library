@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: #fff;
   color: $color-text;

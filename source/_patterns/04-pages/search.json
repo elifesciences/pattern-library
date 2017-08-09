@@ -118,12 +118,12 @@
   "sortControl": {
     "options": [
       { "option": "Relevance", "sorting": "descending", "url": "?sortby=relevance&amp;sort=desc" },
-      { "option": "Date", "sorting": "descending", "url": "?sortby=date&amp;sort=desc" }
+      { "option": "Date", "url": "?sortby=date&amp;sort=desc" }
     ]
   },
 
   "messageBar": {
-    "message": "2,601 results found"
+    "message": "<b>2,601</b> results found"
   },
 
 
@@ -327,7 +327,14 @@
     "title": "Refine your results by:",
     "filterGroups": [
       {
-        "title": "Subject",
+        "title": "Type",
+        "filters": [
+          { "isChecked": false, "name": "Magazine ", "label": "Magazine", "results": "26" },
+          { "isChecked": false, "name": "Research ", "label": "Research", "results": "144" }
+        ]
+      },
+      {
+        "title": "Research categories",
         "filters": [
           { "isChecked": true, "name": "Cell", "label": "Cell Biology", "results": "71" },
           { "isChecked": false, "name": "Neuroscience", "label": "Neuroscience", "results": "2" },
@@ -338,19 +345,11 @@
           { "isChecked": false, "name": "Ecology", "label": "Ecology", "results": "71" },
           { "isChecked": false, "name": "Epidemiology ", "label": "Epidemiology and Global Health", "results": "57" }
         ]
-      },
-
-      {
-        "title": "Type",
-        "filters": [
-          { "isChecked": false, "name": "Magazine ", "label": "Magazine", "results": "26" },
-          { "isChecked": false, "name": "Research ", "label": "Research", "results": "144" }
-        ]
       }
     ],
     "button": {
       "text": "Refine results",
-      "classes": "button--default button--small",
+      "classes": "button--default",
       "type": "submit",
       "name": "button"
     }
