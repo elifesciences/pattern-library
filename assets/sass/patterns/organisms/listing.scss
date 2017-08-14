@@ -34,6 +34,16 @@ $totalHighlightsSpacing: 6;
   .content-header--read-more {
     border: none;
   }
+
+  // When wide, hide to avoid duplication: then, the contents is also displayed in the right hand article column
+  .listing-list__item--related:first-child {
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      display: none;
+    }
+
+  }
+
 }
 
 .listing-list--read-more {

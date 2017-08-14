@@ -11,5 +11,9 @@ schema:
       $ref: ../../02-organisms/content-headers/content-header-read-more.yaml#/schema
     content:
       type: string
+    isRelated:
+      type: boolean
+      emum:
+        - true
   required:
     - item
