@@ -42,6 +42,11 @@ $totalHighlightsSpacing: 6;
       display: none;
     }
 
+    // Breaks max 3 level selector rule. This is an extreme edge case, so grudingly accepting
+    + .listing-list__item .listing-list__divider {
+      display: none;
+    }
+
   }
 
 }
