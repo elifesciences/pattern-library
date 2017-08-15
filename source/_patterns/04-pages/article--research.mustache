@@ -70,15 +70,23 @@
 
           </div>
 
-          {{#hasRelated}}
-            <div class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}">
+          <div class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}">
+
+            {{#related}}
+
               <div class="grid-secondary-column__item grid-secondary-column__item--wide-only">
-                Related content instance to be displayed when there is a right hand column.
+                <div>
+                  <ol class="listing-list">
+                    <li class="listing-list__item">
+                      {{> molecules-teaser }}
+                    </li>
+                  </ol>
+                </div>
               </div>
 
-            </div>
+            {{/related}}
 
-          {{/hasRelated}}
+          </div>
 
         </div>
 
