@@ -27,10 +27,6 @@
 .main-menu__list_link {
   color: $color-text;
   text-decoration: none;
-
-  &:hover {
-    color: $color-primary;
-  }
 }
 
 .main-menu__close_control {
@@ -45,11 +41,6 @@
   left: -#{$blg-space-small-in-px}px;
   text-align: right;
   width: 100%;
-
-  &:hover {
-    color: $color-primary;
-  }
-
 }
 
 .main-menu--js {
