@@ -40,11 +40,12 @@ $totalHighlightsSpacing: 6;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       display: none;
-    }
 
-    // Breaks max 3 level selector rule. This is an extreme edge case, so grudingly accepting
-    + .listing-list__item .listing-list__divider {
-      display: none;
+      // Breaks max 3 level selector rule. This is an extreme edge case, so grudingly accepting
+      + .listing-list__item .listing-list__divider {
+        display: none;
+      }
+
     }
 
   }
