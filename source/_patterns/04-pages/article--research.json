@@ -711,6 +711,33 @@
     "heading": "Further reading",
     "items": [
       {
+        "isRelated": true,
+        "item": {
+          "title": "Stem cells and fluid flow drive cyst formation in an invertebrate excretory organ",
+          "longTitle": true,
+          "hasSubjects": true,
+          "subjects": [
+            {
+              "name": "Developmental Biology and Stem Cells",
+              "url": "#"
+            }
+          ],
+          "authorLine": "H Thi-Kim Vu et al.",
+          "meta": {
+            "url": "#",
+            "text": "Research advance",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 16,
+                "month": "Dec",
+                "year": 2015
+              },
+              "forMachine": "2015-12-16"
+            }
+          }
+        }
+      },
+      {
         "item": {
           "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
           "longTitle": true,
@@ -1241,5 +1268,39 @@
 
 
     }
-  ]
+  ],
+
+  "related": {
+    "rootClasses": "teaser--secondary teaser--related",
+
+    "contextLabel": {
+      "list": [
+        {
+          "name": "Built upon by",
+          "url": null
+        }
+      ]
+    },
+    "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
+    "url": "#",
+
+    "secondaryInfo": "H Thi-Kim Vu et al",
+
+    "footer": {
+      "meta": {
+        "url": "#",
+        "text": "Research advance",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 16,
+            "month": "Dec",
+            "year": 2015
+          },
+          "forMachine": "2015-12-16"
+        }
+      }
+    }
+  }
+
+
 }

@@ -120,6 +120,14 @@
   @include blg-column-container();
 }
 
+.grid-secondary-column__item--wide-only {
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--wide - 1)}em) {
+    display: none;
+  }
+
+}
+
 /*
  *  Wrapper class. A class for constraining the content to the max-site-width and also applies the side padding.
  */
