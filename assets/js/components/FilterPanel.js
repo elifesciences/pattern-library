@@ -18,11 +18,21 @@ module.exports = class FilterPanel {
     }
 
     this.$button.classList.add('visuallyhidden');
-    this.$filters = $elm.querySelectorAll('input[type="checkbox"]');
+    FilterPanel.setupEventListeners(FilterPanel.findFilters(this.$elm));
+  }
 
-    [].forEach.call(this.$filters, ($filter) => {
+  static setupEventListeners(filters) {
+    [].forEach.call(filters, ($filter) => {
+      if (!$filter.form) {
+        return;
+      }
+
       $filter.addEventListener('change', () => $filter.form.submit());
     });
+  }
+
+  static findFilters($elm) {
+    return $elm.querySelectorAll('input[type="checkbox"]');
   }
 
 };
