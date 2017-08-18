@@ -103,7 +103,7 @@
   "pageSearchBox": {
     "inContentHeader": false,
     "compactForm": {
-      "formAction": "/search",
+      "formAction": "",
       "formId": "searchBox",
       "formMethod": "GET",
       "label": "Search by keyword or author",
