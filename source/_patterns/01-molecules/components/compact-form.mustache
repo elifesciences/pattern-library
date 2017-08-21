@@ -2,7 +2,7 @@
   <fieldset class="compact-form__container">
     <label>
       <span class="visuallyhidden">{{label}}</span>
-      <input type="{{inputType}}" name="{{inputName}}" value="{{inputValue}}" placeholder="{{inputPlaceholder}}" class="compact-form__input">
+      <input type="{{inputType}}" name="{{inputName}}" value="{{inputValue}}" placeholder="{{inputPlaceholder}}"{{#inputAutofocus}} autofocus{{/inputAutofocus}} class="compact-form__input">
     </label>
     {{#message}}
       <div class="compact-form__message">{{{.}}}</div>
