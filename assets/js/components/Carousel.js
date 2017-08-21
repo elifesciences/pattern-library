@@ -41,7 +41,6 @@ module.exports = class Carousel {
     this.updateWidth();
     this.updateControlPanel(this.currentSlide);
     this.togglePlay(this.$toggler);
-    this.$toggler.focus();
 
     this.window.addEventListener('keydown', this.handleKey.bind(this));
     this.window.addEventListener('blur', this.cancelTimer.bind(this));
@@ -97,7 +96,6 @@ module.exports = class Carousel {
     let _slideNumber = slideNumber || 1;
     let slide = this.$elm.querySelectorAll('.carousel-item')[_slideNumber - 1];
     this.setATVisibility(slide, true);
-    slide.focus();
   }
 
   /**
