@@ -24,17 +24,17 @@
   @include padding(11 55 11 12);
   width: 100%;
 
-  &:focus {
-    border: #{$border-width}px solid $color-text-placeholder;
-    outline: 0;
-  }
-
   .compact-form--valid & {
     border: 1px solid $color-success;
   }
 
   .compact-form--error & {
     border: 1px solid $color-attention;
+  }
+
+  &:focus {
+    border: #{$border-width}px solid $color-text-placeholder;
+    outline: 0;
   }
 }
 
