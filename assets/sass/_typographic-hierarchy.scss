@@ -355,6 +355,7 @@
   font-family: $font-secondary;
   @include font-size(14);
   line-height: (19/14);
+  text-align: left;
 }
 
 // No definition in developer docs, this is inferred from styles already applied to filter-group.
