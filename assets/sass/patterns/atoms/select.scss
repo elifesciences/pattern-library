@@ -1,12 +1,11 @@
 @import "../../definitions";
 
 .select {
-  @include blg-spacing("bottom", "small", "margin");
-}
+  @include margin(6, "bottom");
 
-.select:focus,
-.select--focus {
-  border-color: $color-text-placeholder;
+  &:focus {
+    border-color: $color-text-placeholder;
+  }
 }
 
 .select--valid {

@@ -1,0 +1,29 @@
+@import "../../definitions";
+
+.form-item {
+  @include margin(24, "bottom");
+
+  & > :last-child {
+    margin-bottom: 0 // Margins don't collapse on <select>s
+  }
+}
+
+.form-item__label {
+  display: block;
+  @include typeg-form-label();
+  @include margin(6, "bottom");
+}
+
+.form-item__message {
+  display: block;
+  @include typeg-form-message();
+  @include margin(6, "bottom");
+
+  .form-item--valid & {
+    color: $color-success;
+  }
+
+  .form-item--error & {
+    color: $color-attention;
+  }
+}

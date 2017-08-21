@@ -5,5 +5,5 @@
     "labelText": "Valid text field"
   },
   "name": "name",
-  "classNames": "text-field--valid"
+  "state": "valid"
 }

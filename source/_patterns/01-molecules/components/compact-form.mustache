@@ -1,9 +1,12 @@
-<form class="compact-form" id="{{formId}}" action="{{formAction}}" method="{{formMethod}}">
+<form class="compact-form{{#state}} compact-form--{{state}}{{/state}}" id="{{formId}}" action="{{formAction}}" method="{{formMethod}}" novalidate>
   <fieldset class="compact-form__container">
     <label>
       <span class="visuallyhidden">{{label}}</span>
       <input type="{{inputType}}" name="{{inputName}}" value="{{inputValue}}" placeholder="{{inputPlaceholder}}" class="compact-form__input">
     </label>
+    {{#message}}
+      <div class="compact-form__message">{{{.}}}</div>
+    {{/message}}
     {{#hiddenFields}}
       {{> atoms-hidden-field }}
     {{/hiddenFields}}

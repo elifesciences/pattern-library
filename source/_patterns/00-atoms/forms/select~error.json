@@ -4,7 +4,8 @@
   "label": {
     "labelText": "Select error"
   },
-  "classNames": "select--error",
+  "state": "error",
+  "message": "Please provide a valid value",
   "options": [
     {
       "value": "2016",

@@ -28,6 +28,14 @@
     border: #{$border-width}px solid $color-text-placeholder;
     outline: 0;
   }
+
+  .compact-form--valid & {
+    border: 1px solid $color-success;
+  }
+
+  .compact-form--error & {
+    border: 1px solid $color-attention;
+  }
 }
 
 .compact-form__submit {
@@ -44,6 +52,20 @@
   right: 0;
   top: 0;
   @include width(47);
+}
+
+.compact-form__message {
+  display: block;
+  @include typeg-form-message;
+  @include margin(6, "top");
+
+  .compact-form--valid & {
+    color: $color-success;
+  }
+
+  .compact-form--error & {
+    color: $color-attention;
+  }
 }
 
 .compact-form__reset {

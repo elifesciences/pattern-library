@@ -350,6 +350,13 @@
   line-height: 1.3;
 }
 
+@mixin typeg-form-message() {
+  color: $color-text;
+  font-family: $font-secondary;
+  @include font-size(14);
+  line-height: (19/14);
+}
+
 // No definition in developer docs, this is inferred from styles already applied to filter-group.
 //Update as necessary.
 @mixin typeg-checkboxes() {

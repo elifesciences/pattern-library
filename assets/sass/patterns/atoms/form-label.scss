@@ -1,7 +1,0 @@
-@import "../../definitions";
-
-.form-label {
-  display: block;
-  @include typeg-form-label();
-  @include margin(6, "bottom");
-}
