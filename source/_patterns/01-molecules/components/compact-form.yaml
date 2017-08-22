@@ -17,6 +17,13 @@ schema:
       enum:
         - GET
         - POST
+    state:
+      type: string
+      enum:
+        - valid
+        - error
+    message:
+      type: string
     label:
       type: string
       minLength: 1
@@ -37,6 +44,8 @@ schema:
     inputPlaceholder:
       type: string
       minLength: 1
+    inputAutofocus:
+      type: boolean
     ctaText:
       type: string
       minLength: 1

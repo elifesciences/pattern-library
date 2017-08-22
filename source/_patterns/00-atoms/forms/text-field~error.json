@@ -5,5 +5,6 @@
     "labelText": "Error text field"
   },
   "name": "name",
-  "classNames": "text-field--error"
+  "state": "error",
+  "message": "Please provide a valid value"
 }
