@@ -17,10 +17,14 @@
     {{#required}} required="required"{{/required}}
     {{#disabled}} disabled="disabled"{{/disabled}}
     {{#placeholder}} placeholder="{{placeholder}}"{{/placeholder}}
+    {{#isInvalid}}
+      aria-invalid="true"
+      aria-describedby="{{messageId}}"
+    {{/isInvalid}}
   >
 
   {{#message}}
-    <div class="form-item__message">{{{.}}}</div>
+    <div class="form-item__message"{{#messageId}} id="{{messageId}}"{{/messageId}}>{{{.}}}</div>
   {{/message}}
 
 </div>

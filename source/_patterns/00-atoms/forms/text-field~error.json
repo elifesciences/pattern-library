@@ -6,5 +6,8 @@
   },
   "name": "name",
   "state": "error",
-  "message": "Please provide a valid value"
+  "isInvalid": true,
+  "message": "Please provide a valid value",
+  "messageId": "idOfTheMessage"
+
 }
