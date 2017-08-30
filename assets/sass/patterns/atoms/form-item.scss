@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .form-item {
-  @include margin(24, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
 
   & > :last-child {
     margin-bottom: 0 // Margins don't collapse on <select>s
