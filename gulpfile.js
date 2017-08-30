@@ -178,9 +178,7 @@ gulp.task('fonts', () => {
 gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests'], () => {
 
     return browserify('./assets/js/main.js', { debug: true })
-          .transform(babel, {
-            presets: ["es2015"]
-          })
+          .transform(babel)
           .bundle()
           .on('error', (err) => {
             console.error(err.message);
@@ -220,9 +218,7 @@ gulp.task('browserify-tests', (done) => {
 
     let tasks = files.map(entry => {
       return browserify({ entries: [entry] })
-      .transform(babel, {
-        presets: ["es2015"]
-      })
+      .transform(babel)
       .bundle()
       .pipe(source(entry))
       .pipe(rename({ dirname: '' }))
