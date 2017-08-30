@@ -62,4 +62,5 @@ schema:
     - options
   dependencies:
     label: [id]
+    isInvalid: [messageId]
     messageId: [isInvalid]
