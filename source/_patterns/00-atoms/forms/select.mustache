@@ -12,6 +12,10 @@
     {{#autofocus}} autofocus{{/autofocus}}
     {{#required}} required="required"{{/required}}
     {{#disabled}} disabled="disabled"{{/disabled}}
+    {{#isInvalid}}
+          aria-invalid="true"
+          aria-describedby="{{messageId}}"
+    {{/isInvalid}}
   >
     {{#options}}
       <option value="{{value}}" {{#selected}}selected{{/selected}}>{{displayValue}}</option>
@@ -19,7 +23,7 @@
   </select>
 
   {{#message}}
-    <div class="form-item__message">{{{.}}}</div>
+    <div class="form-item__message" id="{{messageId}}">{{{.}}}</div>
   {{/message}}
 
 </div>

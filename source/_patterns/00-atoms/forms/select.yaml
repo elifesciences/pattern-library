@@ -18,8 +18,15 @@ schema:
       enum:
         - valid
         - error
+    isInvalid:
+      type: boolean
+      enum:
+        - true
     message:
       type: string
+    messageId:
+      type: string
+      minLength: 1
     required:
       type: boolean
     disabled:
@@ -55,3 +62,4 @@ schema:
     - options
   dependencies:
     label: [id]
+    messageId: [isInvalid]
