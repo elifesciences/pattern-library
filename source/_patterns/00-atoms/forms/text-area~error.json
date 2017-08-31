@@ -6,7 +6,7 @@
   },
   "name": "comment",
   "state": "error",
-  "isInvalid": true,
+  "userInputInvalid": true,
   "message": "Please provide a valid value",
   "messageId": "idOfTheMessage",
   "autofocus": true,

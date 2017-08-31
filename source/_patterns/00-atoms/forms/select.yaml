@@ -18,7 +18,7 @@ schema:
       enum:
         - valid
         - error
-    isInvalid:
+    userInputInvalid:
       type: boolean
       enum:
         - true
@@ -62,5 +62,5 @@ schema:
     - options
   dependencies:
     label: [id]
-    isInvalid: [messageId]
-    messageId: [isInvalid]
+    userInputInvalid: [messageId]
+    messageId: [userInputInvalid]

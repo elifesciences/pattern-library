@@ -19,10 +19,10 @@
     {{#required}} required="required"{{/required}}
     {{#form}} form="{{form}}"{{/form}}
     {{#placeholder}} placeholder="{{placeholder}}"{{/placeholder}}
-    {{#isInvalid}}
+    {{#userInputInvalid}}
       aria-invalid="true"
       aria-describedby="{{messageId}}"
-    {{/isInvalid}}
+    {{/userInputInvalid}}
   >{{#value}}{{value}}{{/value}}</textarea>
 
   {{#message}}

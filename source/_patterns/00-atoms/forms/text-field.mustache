@@ -17,10 +17,10 @@
     {{#required}} required="required"{{/required}}
     {{#disabled}} disabled="disabled"{{/disabled}}
     {{#placeholder}} placeholder="{{placeholder}}"{{/placeholder}}
-    {{#isInvalid}}
+    {{#userInputInvalid}}
       aria-invalid="true"
       aria-describedby="{{messageId}}"
-    {{/isInvalid}}
+    {{/userInputInvalid}}
   >
 
   {{#message}}
