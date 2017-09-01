@@ -19,10 +19,8 @@
     {{#required}} required="required"{{/required}}
     {{#form}} form="{{form}}"{{/form}}
     {{#placeholder}} placeholder="{{placeholder}}"{{/placeholder}}
-    {{#userInputInvalid}}
-      aria-invalid="true"
-      aria-describedby="{{messageId}}"
-    {{/userInputInvalid}}
+    {{#userInputInvalid}} aria-invalid="true"{{/userInputInvalid}}
+    {{#message}} aria-describedby="{{messageId}}"{{/message}}
   >{{#value}}{{value}}{{/value}}</textarea>
 
   {{#message}}
