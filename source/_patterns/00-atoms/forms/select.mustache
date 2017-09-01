@@ -13,7 +13,7 @@
     {{#required}} required="required"{{/required}}
     {{#disabled}} disabled="disabled"{{/disabled}}
     {{#userInputInvalid}} aria-invalid="true"{{/userInputInvalid}}
-    {{#message}} aria-describedby="{{messageId}}"{{/message}}
+    {{#message}} aria-describedby="{{id}}"{{/message}}
   >
     {{#options}}
       <option value="{{value}}" {{#selected}}selected{{/selected}}>{{displayValue}}</option>
@@ -21,7 +21,7 @@
   </select>
 
   {{#message}}
-    <div class="form-item__message" id="{{messageId}}">{{{.}}}</div>
+    <div class="form-item__message" id="{{id}}">{{{text}}}</div>
   {{/message}}
 
 </div>

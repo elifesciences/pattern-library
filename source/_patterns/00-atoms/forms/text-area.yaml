@@ -24,10 +24,17 @@ schema:
       enum:
         - true
     message:
-      type: string
-    messageId:
-      type: string
-      minLength: 1
+      type: object
+      properties:
+        text:
+          type: string
+          minLength: 1
+        id:
+          type: string
+          minLength: 1
+      required:
+        - text
+        - id
     autofocus:
       type: boolean
     required:
@@ -61,5 +68,3 @@ schema:
   dependencies:
     label: [id]
     userInputInvalid: [message]
-    message: [messageId]
-    messageId: [message]

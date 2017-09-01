@@ -6,8 +6,10 @@
   },
   "name": "comment",
   "variant": "info",
-  "message": "You may wish to consider this",
-  "messageId": "idOfTheMessage",
+  "message": {
+    "text": "You may wish to consider this",
+    "id": "idOfTheMessage"
+  },
   "autofocus": true,
   "cols": 30,
   "disabled": false,

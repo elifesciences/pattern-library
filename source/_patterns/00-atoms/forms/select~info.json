@@ -5,8 +5,10 @@
   "label": {
     "labelText": "Select with some additional information"
   },
-  "message": "You may wish to consider this",
-  "messageId": "idOfTheMessage",
+  "message": {
+    "text": "You may wish to consider this",
+    "id": "idOfTheMessage"
+  },
   "options": [
     {
       "value": "2016",

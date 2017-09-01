@@ -20,11 +20,11 @@
     {{#form}} form="{{form}}"{{/form}}
     {{#placeholder}} placeholder="{{placeholder}}"{{/placeholder}}
     {{#userInputInvalid}} aria-invalid="true"{{/userInputInvalid}}
-    {{#message}} aria-describedby="{{messageId}}"{{/message}}
+    {{#message}} aria-describedby="{{id}}"{{/message}}
   >{{#value}}{{value}}{{/value}}</textarea>
 
   {{#message}}
-    <div class="form-item__message" id="{{messageId}}">{{{.}}}</div>
+    <div class="form-item__message" id="{{id}}">{{{text}}}</div>
   {{/message}}
 
 </div>
