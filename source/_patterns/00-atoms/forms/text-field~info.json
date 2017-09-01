@@ -2,7 +2,7 @@
   "id": "name3",
   "inputType": "text",
   "label": {
-    "labelText": "Valid text field"
+    "labelText": "Text field"
   },
   "name": "name",
   "state": "info",
