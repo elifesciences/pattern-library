@@ -5,7 +5,7 @@
     "labelText": "Add a comment"
   },
   "name": "comment",
-  "state": "info",
+  "variant": "info",
   "message": "You may wish to consider this",
   "messageId": "idOfTheMessage",
   "autofocus": true,

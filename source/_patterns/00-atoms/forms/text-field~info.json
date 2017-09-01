@@ -5,7 +5,7 @@
     "labelText": "Text field"
   },
   "name": "name",
-  "state": "info",
+  "variant": "info",
   "message": "You may wish to consider this",
   "messageId": "idOfTheMessage"
 

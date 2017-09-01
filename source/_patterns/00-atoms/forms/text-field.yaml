@@ -13,7 +13,7 @@ schema:
     name:
       type: string
       minLength: 1
-    state:
+    variant:
       type: string
       enum:
         - valid

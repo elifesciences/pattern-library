@@ -5,7 +5,7 @@
     "labelText": "Error text field"
   },
   "name": "name",
-  "state": "error",
+  "variant": "error",
   "userInputInvalid": true,
   "message": "Please provide a valid value",
   "messageId": "idOfTheMessage"

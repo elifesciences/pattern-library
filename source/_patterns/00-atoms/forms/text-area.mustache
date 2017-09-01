@@ -1,4 +1,4 @@
-<div class="form-item{{#state}} form-item--{{state}}{{/state}}">
+<div class="form-item{{#variant}} form-item--{{variant}}{{/variant}}">
 
   {{#label}}
     <label
@@ -9,7 +9,7 @@
   {{/label}}
   <textarea
       type="{{inputType}}"
-      class="text-field text-field--textarea{{#state}} text-field--{{state}}{{/state}}"
+      class="text-field text-field--textarea{{#variant}} text-field--{{variant}}{{/variant}}"
     {{#id}} id="{{id}}"{{/id}}
       name="{{name}}"
     {{#autofocus}} autofocus{{/autofocus}}
