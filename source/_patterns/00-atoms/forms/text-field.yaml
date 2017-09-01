@@ -60,5 +60,6 @@ schema:
     - inputType
   dependencies:
     label: [id]
-    userInputInvalid: [messageId]
-    messageId: [userInputInvalid]
+    userInputInvalid: [message]
+    message: [messageId]
+    messageId: [message]

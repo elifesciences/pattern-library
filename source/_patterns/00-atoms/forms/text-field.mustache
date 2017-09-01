@@ -17,10 +17,8 @@
     {{#required}} required="required"{{/required}}
     {{#disabled}} disabled="disabled"{{/disabled}}
     {{#placeholder}} placeholder="{{placeholder}}"{{/placeholder}}
-    {{#userInputInvalid}}
-      aria-invalid="true"
-      aria-describedby="{{messageId}}"
-    {{/userInputInvalid}}
+    {{#userInputInvalid}} aria-invalid="true"{{/userInputInvalid}}
+    {{#message}} aria-describedby="{{messageId}}"{{/message}}
   >
 
   {{#message}}
