@@ -26,4 +26,8 @@
   .form-item--error & {
     color: $color-attention;
   }
+
+  .form-item--info & {
+    color: $color-information;
+  }
 }
