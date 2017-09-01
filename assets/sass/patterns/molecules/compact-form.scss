@@ -66,6 +66,11 @@
   .compact-form--error & {
     color: $color-attention;
   }
+
+  .compact-form--info & {
+    color: $color-information;
+  }
+
 }
 
 .compact-form__reset {
