@@ -18,6 +18,7 @@ schema:
       enum:
         - valid
         - error
+        - info
     userInputInvalid:
       type: boolean
       enum:
