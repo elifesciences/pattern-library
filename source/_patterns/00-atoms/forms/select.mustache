@@ -12,10 +12,8 @@
     {{#autofocus}} autofocus{{/autofocus}}
     {{#required}} required="required"{{/required}}
     {{#disabled}} disabled="disabled"{{/disabled}}
-    {{#userInputInvalid}}
-          aria-invalid="true"
-          aria-describedby="{{messageId}}"
-    {{/userInputInvalid}}
+    {{#userInputInvalid}} aria-invalid="true"{{/userInputInvalid}}
+    {{#message}} aria-describedby="{{messageId}}"{{/message}}
   >
     {{#options}}
       <option value="{{value}}" {{#selected}}selected{{/selected}}>{{displayValue}}</option>
