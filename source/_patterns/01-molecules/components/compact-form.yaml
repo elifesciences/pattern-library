@@ -17,7 +17,7 @@ schema:
       enum:
         - GET
         - POST
-    state:
+    variant:
       type: string
       enum:
         - valid

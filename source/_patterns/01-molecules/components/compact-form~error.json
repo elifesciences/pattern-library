@@ -8,7 +8,7 @@
   "inputValue": "",
   "inputPlaceholder": "you@email.com",
   "ctaText": "Go",
-  "state": "error",
+  "variant": "error",
   "message": {
     "text": "Please provide a valid value",
     "id": "idOfTheMessage"
