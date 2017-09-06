@@ -1,0 +1,59 @@
+assets:
+  css:
+    - text-fields.css
+    - form-item.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    id:
+      type: string
+      minLength: 1
+    name:
+      type: string
+      minLength: 1
+    state:
+      type: string
+      enum:
+        - valid
+        - error
+    userInputInvalid:
+      type: boolean
+      enum:
+        - true
+    message:
+      type: object
+      properties:
+        text:
+          type: string
+          minLength: 1
+        id:
+          type: string
+          minLength: 1
+      required:
+        - text
+        - id
+    autofocus:
+      type: boolean
+    required:
+      type: boolean
+    disabled:
+      type: boolean
+    multiple:
+      type: boolean
+      enum:
+        - true
+    label:
+      type: object
+      properties:
+        labelText:
+          type: string
+          minLength: 1
+        isVisuallyHidden:
+          type: boolean
+      required:
+        - labelText
+  dependencies:
+    label: [id]
+    userInputInvalid: [message]

@@ -1,0 +1,28 @@
+<div class="form-item{{#variant}} form-item--{{variant}}{{/variant}}">
+
+  {{#label}}
+    <label
+        for="{{id}}"
+        class="form-item__label{{#isVisuallyHidden}} visuallyhidden{{/isVisuallyHidden}}">
+      {{labelText}}
+    </label>
+  {{/label}}
+  <input
+      type="file"
+      class="text-field{{#variant}} text-field--{{variant}}{{/variant}}"
+    {{#multiple}} multiple{{/multiple}}
+    {{#id}} id="{{id}}"{{/id}}
+    {{#name}} name="{{name}}"{{/name}}
+    {{#autofocus}} autofocus{{/autofocus}}
+    {{#value}} value="{{value}}"{{/value}}
+    {{#required}} required="required"{{/required}}
+    {{#disabled}} disabled="disabled"{{/disabled}}
+    {{#userInputInvalid}} aria-invalid="true"{{/userInputInvalid}}
+    {{#message}} aria-describedby="{{id}}"{{/message}}
+  >
+
+  {{#message}}
+    <div class="form-item__message" id="{{id}}">{{{text}}}</div>
+  {{/message}}
+
+</div>

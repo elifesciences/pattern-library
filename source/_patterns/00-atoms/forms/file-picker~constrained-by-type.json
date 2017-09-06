@@ -1,0 +1,14 @@
+{
+  "id": "singleFilePicker1",
+  "label": {
+    "isVisuallyHidden": false,
+    "labelText": "Pick one PDF file"
+  },
+  "name": "singleFilePicker1",
+  "autofocus": true,
+  "accept": ".pdf, application/pdf",
+  "message": {
+    "text": "PDF files only please",
+    "id": "idOfTheMessage"
+  }
+}

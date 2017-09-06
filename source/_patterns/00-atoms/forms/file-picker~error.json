@@ -1,0 +1,15 @@
+{
+  "id": "singleFilePicker1",
+  "label": {
+    "isVisuallyHidden": false,
+    "labelText": "Pick one file"
+  },
+  "name": "singleFilePicker1",
+  "autofocus": true,
+  "variant": "error",
+  "userInputInvalid": true,
+  "message": {
+    "text": "You need to pick a file",
+    "id": "idOfTheMessage"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "multiFilePicker1",
+  "label": {
+    "isVisuallyHidden": false,
+    "labelText": "Pick several files"
+  },
+  "name": "multiFilePicker1",
+  "multiple": true,
+  "autofocus": true
+}

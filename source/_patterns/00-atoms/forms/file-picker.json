@@ -1,0 +1,9 @@
+{
+  "id": "singleFilePicker1",
+  "label": {
+    "isVisuallyHidden": false,
+    "labelText": "Pick one file"
+  },
+  "name": "singleFilePicker1",
+  "autofocus": true
+}
