@@ -3,7 +3,7 @@
 .quote {
   clear: both;
   font-style: italic;
-  margin: 0;
+  @include body-spacing();
 
   i {
     font-style: normal;
