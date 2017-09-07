@@ -78,4 +78,3 @@ schema:
     - inputType
   dependencies:
     label: [id]
-    isInvalid: [message]

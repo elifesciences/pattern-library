@@ -18,16 +18,16 @@
   display: block;
   @include typeg-form-message();
   @include margin(6, "bottom");
+}
 
-  .form-item--valid & {
-    color: $color-success;
-  }
+.form-item__message--valid {
+  color: $color-success;
+}
 
-  .form-item--error & {
-    color: $color-attention;
-  }
+.form-item__message--invalid {
+  color: $color-attention;
+}
 
-  .form-item--info & {
-    color: $color-information;
-  }
+.form-item__message--info {
+  color: $color-information;
 }
