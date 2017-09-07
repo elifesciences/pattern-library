@@ -2,10 +2,11 @@
   "id": "select2",
   "name": "select2",
   "label": {
-    "labelText": "Select with additional info"
+    "labelText": "Select valid with additional info"
   },
+  "state": "valid",
   "messageGroup": {
-    "infoMessage": "You may wish to consider this",
+    "infoMessage": "Hunky dory, thanks very much",
     "id": "idOfTheMessageGroup"
   },
   "options": [

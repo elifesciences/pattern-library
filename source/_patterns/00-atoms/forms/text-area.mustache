@@ -1,4 +1,4 @@
-<div class="form-item{{#variant}} form-item--{{variant}}{{/variant}}">
+<div class="form-item{{#state}} form-item--{{state}}{{/state}}">
 
   {{#label}}
     <label
@@ -9,7 +9,7 @@
   {{/label}}
   <textarea
       type="{{inputType}}"
-      class="text-field text-field--textarea{{#variant}} text-field--{{variant}}{{/variant}}"
+      class="text-field text-field--textarea{{#state}} text-field--{{state}}{{/state}}"
     {{#id}} id="{{id}}"{{/id}}
       name="{{name}}"
     {{#autofocus}} autofocus{{/autofocus}}
@@ -19,12 +19,22 @@
     {{#required}} required="required"{{/required}}
     {{#form}} form="{{form}}"{{/form}}
     {{#placeholder}} placeholder="{{placeholder}}"{{/placeholder}}
-    {{#userInputInvalid}} aria-invalid="true"{{/userInputInvalid}}
-    {{#message}} aria-describedby="{{id}}"{{/message}}
+    {{#isInvalid}} aria-invalid="true"{{/isInvalid}}
+    {{#messageGroup}} aria-describedby="{{id}}"{{/messageGroup}}
   >{{#value}}{{value}}{{/value}}</textarea>
 
-  {{#message}}
-    <div class="form-item__message" id="{{id}}">{{{text}}}</div>
-  {{/message}}
+  {{#messageGroup}}
+    <div class="form-item__message_group" id="{{id}}">
+
+      {{#infoMessage}}
+        <div class="form-item__message form-item__message--info">{{{.}}}</div>
+      {{/infoMessage}}
+
+      {{#errorMessage}}
+        <div class="form-item__message form-item__message--invalid">{{{.}}}</div>
+      {{/errorMessage}}
+
+    </div>
+  {{/messageGroup}}
 
 </div>

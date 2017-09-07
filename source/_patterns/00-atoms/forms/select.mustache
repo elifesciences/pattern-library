@@ -1,4 +1,4 @@
-<div class="form-item{{#variant}} form-item--{{variant}}{{/variant}}">
+<div class="form-item{{#state}} form-item--{{state}}{{/state}}">
 
   {{#label}}
     <label for="{{id}}"
@@ -6,22 +6,34 @@
       {{labelText}}
     </label>
   {{/label}}
-  <select class="select{{#variant}} select--{{variant}}{{/variant}}"
+  <select class="select{{#state}} select--{{state}}{{/state}}"
     {{#id}} id="{{id}}"{{/id}}
     {{#name}} name="{{name}}"{{/name}}
     {{#autofocus}} autofocus{{/autofocus}}
     {{#required}} required="required"{{/required}}
     {{#disabled}} disabled="disabled"{{/disabled}}
-    {{#userInputInvalid}} aria-invalid="true"{{/userInputInvalid}}
-    {{#message}} aria-describedby="{{id}}"{{/message}}
+    {{#isInvalid}} aria-invalid="true"{{/isInvalid}}
+    {{#messageGroup}} aria-describedby="{{id}}"{{/messageGroup}}
   >
+
     {{#options}}
       <option value="{{value}}" {{#selected}}selected{{/selected}}>{{displayValue}}</option>
     {{/options}}
   </select>
 
-  {{#message}}
-    <div class="form-item__message" id="{{id}}">{{{text}}}</div>
-  {{/message}}
+  {{#messageGroup}}
+    <div class="form-item__message_group" id="{{id}}">
 
+      {{#infoMessage}}
+        <div class="form-item__message form-item__message--info">{{{.}}}</div>
+      {{/infoMessage}}
+
+      {{#isInvalid}}
+        {{#errorMessage}}
+          <div class="form-item__message form-item__message--invalid">{{{.}}}</div>
+        {{/errorMessage}}
+      {{/isInvalid}}
+
+    </div>
+  {{/messageGroup}}
 </div>

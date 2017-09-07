@@ -2,9 +2,12 @@
   "id": "select2",
   "name": "select2",
   "label": {
-    "labelText": "Select with additional info"
+    "labelText": "Select error with additional info"
   },
+  "state": "error",
+  "isInvalid": true,
   "messageGroup": {
+    "errorMessage": "Please provide a valid value",
     "infoMessage": "You may wish to consider this",
     "id": "idOfTheMessageGroup"
   },

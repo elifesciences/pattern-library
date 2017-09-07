@@ -4,11 +4,11 @@
   "label": {
     "labelText": "Select error"
   },
-  "variant": "error",
-  "userInputInvalid": true,
-  "message": {
-    "text": "Please provide a valid value",
-    "id": "idOfTheMessage"
+  "state": "error",
+  "isInvalid": true,
+  "messageGroup": {
+    "errorMessage": "Please provide a valid value",
+    "id": "idOfTheMessageGroup"
   },
   "options": [
     {

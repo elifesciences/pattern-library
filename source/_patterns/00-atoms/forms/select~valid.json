@@ -4,7 +4,7 @@
   "label": {
     "labelText": "Select valid"
   },
-  "variant": "valid",
+  "state": "valid",
   "options": [
     {
       "value": "2016",

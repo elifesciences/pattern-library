@@ -13,28 +13,44 @@ schema:
     name:
       type: string
       minLength: 1
-    variant:
+    state:
       type: string
       enum:
         - valid
-        - error
-        - info
-    userInputInvalid:
+        - invalid
+    isInvalid:
       type: boolean
       enum:
         - true
-    message:
+    messageGroup:
       type: object
       properties:
-        text:
+        errorMessage:
+          type: string
+          minLength: 1
+        infoMessage:
           type: string
           minLength: 1
         id:
           type: string
           minLength: 1
-      required:
-        - text
-        - id
+      oneOf:
+        - required:
+          - id
+          - errorMessage
+          not:
+            required:
+              - infoMessage
+        - required:
+          - id
+          - infoMessage
+          not:
+            required:
+              - errorMessage
+        - required:
+          - id
+          - errorMessage
+          - infoMessage
     autofocus:
       type: boolean
     required:
@@ -67,4 +83,3 @@ schema:
     - name
   dependencies:
     label: [id]
-    userInputInvalid: [message]
