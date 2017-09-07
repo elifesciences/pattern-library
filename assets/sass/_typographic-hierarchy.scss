@@ -191,20 +191,25 @@
   line-height: 1.71428571428571;
 }
 
-@mixin pullquote-typeg($is-wide:false) {
+@mixin pullquote-typeg() {
   font-family: $font-secondary;
-  //@include _set-typeg-width-variant(20, 28, $is-wide);
-  @include font-size(20);
-  font-weight: 700;
-  line-height: 1.1;
+  @include font-size(24);
+  font-weight: 500;
+  line-height: 1.3;
 }
 
-@mixin pullquote-attrib-typeg() {
+@mixin quote-attrib-typeg() {
   font-family: $font-primary;
-  @include font-size(16);
+  @include font-size(14);
   font-style: italic;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.3;
+
+  a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+  }
 }
 
 @mixin fig-viewer-heading-typeg($is-wide: false) {
