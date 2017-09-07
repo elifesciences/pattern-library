@@ -38,9 +38,15 @@ schema:
         - required:
           - id
           - errorMessage
+          not:
+            required:
+              - infoMessage
         - required:
           - id
           - infoMessage
+          not:
+            required:
+              - errorMessage
         - required:
           - id
           - errorMessage
