@@ -1,4 +1,4 @@
-<div class="form-item{{#variant}} form-item--{{variant}}{{/variant}}">
+<div class="form-item{{#state}} form-item--{{state}}{{/state}}">
 
   {{#label}}
     <label
@@ -17,12 +17,22 @@
     {{#required}} required="required"{{/required}}
     {{#disabled}} disabled="disabled"{{/disabled}}
     {{#placeholder}} placeholder="{{placeholder}}"{{/placeholder}}
-    {{#userInputInvalid}} aria-invalid="true"{{/userInputInvalid}}
-    {{#message}} aria-describedby="{{id}}"{{/message}}
+    {{#isInvalid}} aria-invalid="true"{{/isInvalid}}
+    {{#messageGroup}} aria-describedby="{{id}}"{{/messageGroup}}
   >
 
-  {{#message}}
-    <div class="form-item__message" id="{{id}}">{{{text}}}</div>
-  {{/message}}
+  {{#messageGroup}}
+  <div class="form-item__message_group" id="{{id}}">
+
+    {{#helpText}}
+      <div class="form-item__info">{{{infoMessage}}}</div>
+    {{/helpText}}
+
+    {{#message}}
+      <div class="form-item__message">{{{errorMessage}}}</div>
+    {{/message}}
+
+  </div>
+  {{/messageGroup}}
 
 </div>

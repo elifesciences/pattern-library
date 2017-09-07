@@ -5,9 +5,8 @@
     "labelText": "Text field"
   },
   "name": "name",
-  "variant": "info",
-  "message": {
-    "text": "You may wish to consider this",
-    "id": "idOfTheMessage"
+  "messageGroup": {
+    "id": "idOfTheMessageGroup",
+    "infoMessage": "You may wish to consider this"
   }
 }
