@@ -5,9 +5,5 @@
     "labelText": "Valid text field"
   },
   "name": "name",
-  "state": "valid",
-  "messageGroup": {
-    "id": "idOfTheMessageGroup",
-    "infoMessage": "You may wish to consider this"
-  }
+  "state": "valid"
 }

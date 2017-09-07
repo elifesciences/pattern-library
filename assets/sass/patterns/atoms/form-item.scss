@@ -6,6 +6,15 @@
   & > :last-child {
     margin-bottom: 0 // Margins don't collapse on <select>s
   }
+
+  &.form-item--valid {
+
+    .form-item__message--info {
+      color: $color-success;
+    }
+
+  }
+
 }
 
 .form-item__label {

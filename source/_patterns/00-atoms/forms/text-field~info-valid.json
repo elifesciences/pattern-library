@@ -2,11 +2,12 @@
   "id": "name3",
   "inputType": "text",
   "label": {
-    "labelText": "Text field with info"
+    "labelText": "Valid text field with info"
   },
   "name": "name",
+  "state": "valid",
   "messageGroup": {
     "id": "idOfTheMessageGroup",
-    "infoMessage": "You may wish to consider this"
+    "infoMessage": "Hunky dory, thanks very much"
   }
 }
