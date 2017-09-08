@@ -1,18 +1,30 @@
-<form class="compact-form{{#variant}} compact-form--{{variant}}{{/variant}}" id="{{formId}}" action="{{formAction}}" method="{{formMethod}}" novalidate>
+<form class="compact-form{{#state}} compact-form--{{state}}{{/state}}" id="{{formId}}" action="{{formAction}}" method="{{formMethod}}" novalidate>
   <fieldset class="compact-form__container">
     <label>
       <span class="visuallyhidden">{{label}}</span>
       <input type="{{inputType}}" name="{{inputName}}" value="{{inputValue}}" placeholder="{{inputPlaceholder}}"
         {{#inputAutofocus}} autofocus{{/inputAutofocus}}
          class="compact-form__input"
-        {{#userInputInvalid}} aria-invalid="true"{{/userInputInvalid}}
-        {{#message}} aria-describedby="{{id}}"{{/message}}
+        {{#isInvalid}} aria-invalid="true"{{/isInvalid}}
+        {{#messageGroup}} aria-describedby="{{id}}"{{/messageGroup}}
              style="font-style: italic;"
       >
     </label>
-    {{#message}}
-      <div class="compact-form__message" id="{{id}}">{{{text}}}</div>
-    {{/message}}
+
+    {{#messageGroup}}
+      <div id="{{id}}">
+
+        {{#infoMessage}}
+          <div class="compact-form__message compact-form__message--info">{{{.}}}</div>
+        {{/infoMessage}}
+
+        {{#errorMessage}}
+          <div class="compact-form__message compact-form__message--invalid">{{{.}}}</div>
+        {{/errorMessage}}
+
+      </div>
+    {{/messageGroup}}
+
     {{#hiddenFields}}
       {{> atoms-hidden-field }}
     {{/hiddenFields}}

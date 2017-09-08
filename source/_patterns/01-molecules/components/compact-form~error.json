@@ -8,10 +8,11 @@
   "inputValue": "",
   "inputPlaceholder": "you@email.com",
   "ctaText": "Go",
-  "variant": "error",
-  "message": {
-    "text": "Please provide a valid value",
-    "id": "idOfTheMessage"
+  "state": "invalid",
+  "isInvalid": true,
+  "messageGroup": {
+    "id": "idOfTheMessageGroup",
+    "errorMessage": "Please provide a valid value"
   },
   "hiddenFields": [
     {

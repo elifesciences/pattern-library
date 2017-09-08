@@ -17,24 +17,44 @@ schema:
       enum:
         - GET
         - POST
-    variant:
+    state:
       type: string
       enum:
         - valid
-        - error
-        - info
-    message:
+        - invalid
+    isInvalid:
+      type: boolean
+      enum:
+        - true
+    messageGroup:
       type: object
       properties:
-        text:
+        errorMessage:
+          type: string
+          minLength: 1
+        infoMessage:
           type: string
           minLength: 1
         id:
           type: string
           minLength: 1
-      required:
-        - text
-        - id
+      oneOf:
+        - required:
+          - id
+          - errorMessage
+          not:
+            required:
+              - infoMessage
+        - required:
+          - id
+          - infoMessage
+          not:
+            required:
+              - errorMessage
+        - required:
+          - id
+          - errorMessage
+          - infoMessage
     label:
       type: string
       minLength: 1

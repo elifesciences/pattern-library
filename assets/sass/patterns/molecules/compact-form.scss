@@ -28,7 +28,7 @@
     border: 1px solid $color-success;
   }
 
-  .compact-form--error & {
+  .compact-form--invalid & {
     border: 1px solid $color-attention;
   }
 
@@ -59,15 +59,11 @@
   @include typeg-form-message;
   @include margin(6, "top");
 
-  .compact-form--valid & {
-    color: $color-success;
-  }
-
-  .compact-form--error & {
+  &.compact-form__message--invalid {
     color: $color-attention;
   }
 
-  .compact-form--info & {
+  &.compact-form__message--info {
     color: $color-information;
   }
 
