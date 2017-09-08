@@ -12,7 +12,7 @@
   "isInvalid": true,
   "messageGroup": {
     "id": "idOfTheMessageGroup",
-    "errorMessage": "Please provide a valid value"
+    "errorText": "Please provide a valid value"
   },
   "hiddenFields": [
     {

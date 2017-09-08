@@ -7,7 +7,7 @@
   "state": "error",
   "isInvalid": true,
   "messageGroup": {
-    "errorMessage": "Please provide a valid value",
+    "errorText": "Please provide a valid value",
     "id": "idOfTheMessageGroup"
   },
   "options": [

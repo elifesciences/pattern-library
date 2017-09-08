@@ -25,7 +25,7 @@ schema:
     messageGroup:
       type: object
       properties:
-        errorMessage:
+        errorText:
           type: string
           minLength: 1
         infoMessage:
@@ -37,7 +37,7 @@ schema:
       oneOf:
         - required:
           - id
-          - errorMessage
+          - errorText
           not:
             required:
               - infoMessage
@@ -46,10 +46,10 @@ schema:
           - infoMessage
           not:
             required:
-              - errorMessage
+              - errorText
         - required:
           - id
-          - errorMessage
+          - errorText
           - infoMessage
     autofocus:
       type: boolean
