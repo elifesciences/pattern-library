@@ -8,6 +8,6 @@
   "state": "valid",
   "messageGroup": {
     "id": "idOfTheMessageGroup",
-    "infoMessage": "Hunky dory, thanks very much"
+    "infoText": "Hunky dory, thanks very much"
   }
 }

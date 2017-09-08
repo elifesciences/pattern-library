@@ -28,7 +28,7 @@ schema:
         errorText:
           type: string
           minLength: 1
-        infoMessage:
+        infoText:
           type: string
           minLength: 1
         id:
@@ -40,17 +40,17 @@ schema:
           - errorText
           not:
             required:
-              - infoMessage
+              - infoText
         - required:
           - id
-          - infoMessage
+          - infoText
           not:
             required:
               - errorText
         - required:
           - id
           - errorText
-          - infoMessage
+          - infoText
     autofocus:
       type: boolean
     required:

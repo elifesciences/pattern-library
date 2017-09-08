@@ -5,7 +5,7 @@
     "labelText": "Select with additional info"
   },
   "messageGroup": {
-    "infoMessage": "You may wish to consider this",
+    "infoText": "You may wish to consider this",
     "id": "idOfTheMessageGroup"
   },
   "options": [

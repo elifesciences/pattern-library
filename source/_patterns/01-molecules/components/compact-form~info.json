@@ -10,7 +10,7 @@
   "ctaText": "Go",
   "messageGroup": {
     "id": "idOfTheMessageGroup",
-    "infoMessage": "You may wish to consider this"
+    "infoText": "You may wish to consider this"
   },
   "hiddenFields": [
     {

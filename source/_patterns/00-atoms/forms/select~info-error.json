@@ -8,7 +8,7 @@
   "isInvalid": true,
   "messageGroup": {
     "errorText": "Please provide a valid value",
-    "infoMessage": "You may wish to consider this",
+    "infoText": "You may wish to consider this",
     "id": "idOfTheMessageGroup"
   },
   "options": [

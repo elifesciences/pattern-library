@@ -7,7 +7,7 @@
   "name": "comment",
   "messageGroup": {
     "id": "idOfTheMessageGroup",
-    "infoMessage": "You may wish to consider this"
+    "infoText": "You may wish to consider this"
   },
   "autofocus": true,
   "cols": 30,

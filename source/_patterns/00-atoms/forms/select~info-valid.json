@@ -6,7 +6,7 @@
   },
   "state": "valid",
   "messageGroup": {
-    "infoMessage": "Hunky dory, thanks very much",
+    "infoText": "Hunky dory, thanks very much",
     "id": "idOfTheMessageGroup"
   },
   "options": [

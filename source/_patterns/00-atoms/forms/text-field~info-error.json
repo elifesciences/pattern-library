@@ -10,6 +10,6 @@
   "messageGroup": {
     "id": "idOfTheMessageGroup",
     "errorText": "Please provide a valid value",
-    "infoMessage": "You may wish to consider this"
+    "infoText": "You may wish to consider this"
   }
 }
