@@ -1,0 +1,17 @@
+@import "../../definitions";
+
+.quote {
+  clear: both;
+  font-style: italic;
+  @include body-spacing();
+
+  i {
+    font-style: normal;
+  }
+}
+
+.quote__cite {
+  color: $color-text-secondary;
+  display: block;
+  @include quote-attrib-typeg();
+}
