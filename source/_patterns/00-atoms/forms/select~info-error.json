@@ -4,7 +4,7 @@
   "label": {
     "labelText": "Select error with additional info"
   },
-  "state": "error",
+  "state": "invalid",
   "messageGroup": {
     "errorText": "Please provide a valid value",
     "infoText": "You may wish to consider this",
