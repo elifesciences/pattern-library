@@ -9,7 +9,6 @@
   "inputPlaceholder": "you@email.com",
   "ctaText": "Go",
   "state": "invalid",
-  "isInvalid": true,
   "messageGroup": {
     "id": "idOfTheMessageGroup",
     "errorText": "Please provide a valid value"

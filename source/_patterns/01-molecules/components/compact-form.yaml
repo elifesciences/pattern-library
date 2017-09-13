@@ -22,10 +22,6 @@ schema:
       enum:
         - valid
         - invalid
-    isInvalid:
-      type: boolean
-      enum:
-        - true
     messageGroup:
       type: object
       properties:

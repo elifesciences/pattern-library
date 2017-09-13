@@ -12,8 +12,7 @@
     {{#autofocus}} autofocus{{/autofocus}}
     {{#required}} required="required"{{/required}}
     {{#disabled}} disabled="disabled"{{/disabled}}
-    {{#isInvalid}} aria-invalid="true"{{/isInvalid}}
-    {{#messageGroup}} aria-describedby="{{id}}"{{/messageGroup}}
+    {{#messageGroup}} aria-describedby="{{id}}"{{#errorText}} aria-invalid="true"{{/errorText}}{{/messageGroup}}
   >
 
     {{#options}}
@@ -28,11 +27,9 @@
         <div class="form-item__message form-item__message--info">{{{.}}}</div>
       {{/infoText}}
 
-      {{#isInvalid}}
-        {{#errorText}}
-          <div class="form-item__message form-item__message--invalid">{{{.}}}</div>
-        {{/errorText}}
-      {{/isInvalid}}
+      {{#errorText}}
+        <div class="form-item__message form-item__message--invalid">{{{.}}}</div>
+      {{/errorText}}
 
     </div>
   {{/messageGroup}}

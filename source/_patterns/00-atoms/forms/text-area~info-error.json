@@ -6,7 +6,6 @@
   },
   "name": "comment",
   "state": "invalid",
-  "isInvalid": true,
   "messageGroup": {
     "id": "idOfTheMessageGroup",
     "errorText": "Please provide a valid value",

@@ -5,8 +5,7 @@
       <input type="{{inputType}}" name="{{inputName}}" value="{{inputValue}}" placeholder="{{inputPlaceholder}}"
         {{#inputAutofocus}} autofocus{{/inputAutofocus}}
          class="compact-form__input"
-        {{#isInvalid}} aria-invalid="true"{{/isInvalid}}
-        {{#messageGroup}} aria-describedby="{{id}}"{{/messageGroup}}
+        {{#messageGroup}} aria-describedby="{{id}}"{{#errorText}} aria-invalid="true"{{/errorText}}{{/messageGroup}}
              style="font-style: italic;"
       >
     </label>
