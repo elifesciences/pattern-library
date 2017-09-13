@@ -34,23 +34,9 @@ schema:
         id:
           type: string
           minLength: 1
-      oneOf:
-        - required:
-          - id
-          - errorText
-          not:
-            required:
-              - infoText
-        - required:
-          - id
-          - infoText
-          not:
-            required:
-              - errorText
-        - required:
-          - id
-          - errorText
-          - infoText
+      minProperties: 2
+      required:
+        - id
     autofocus:
       type: boolean
     inputType:
