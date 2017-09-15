@@ -19,10 +19,21 @@
     {{#required}} required="required"{{/required}}
     {{#form}} form="{{form}}"{{/form}}
     {{#placeholder}} placeholder="{{placeholder}}"{{/placeholder}}
+    {{#messageGroup}} aria-describedby="{{id}}"{{#errorText}} aria-invalid="true"{{/errorText}}{{/messageGroup}}
   >{{#value}}{{value}}{{/value}}</textarea>
 
-  {{#message}}
-    <div class="form-item__message">{{{.}}}</div>
-  {{/message}}
+  {{#messageGroup}}
+    <div id="{{id}}">
+
+      {{#infoText}}
+        <div class="form-item__message form-item__message--info">{{{.}}}</div>
+      {{/infoText}}
+
+      {{#errorText}}
+        <div class="form-item__message form-item__message--invalid">{{{.}}}</div>
+      {{/errorText}}
+
+    </div>
+  {{/messageGroup}}
 
 </div>

@@ -17,9 +17,22 @@ schema:
       type: string
       enum:
         - valid
-        - error
-    message:
-      type: string
+        - invalid
+    messageGroup:
+      type: object
+      properties:
+        errorText:
+          type: string
+          minLength: 1
+        infoText:
+          type: string
+          minLength: 1
+        id:
+          type: string
+          minLength: 1
+      minProperties: 2
+      required:
+        - id
     autofocus:
       type: boolean
     inputType:

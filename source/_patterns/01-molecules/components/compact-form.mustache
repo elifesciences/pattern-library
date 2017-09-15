@@ -2,11 +2,28 @@
   <fieldset class="compact-form__container">
     <label>
       <span class="visuallyhidden">{{label}}</span>
-      <input type="{{inputType}}" name="{{inputName}}" value="{{inputValue}}" placeholder="{{inputPlaceholder}}"{{#inputAutofocus}} autofocus{{/inputAutofocus}} class="compact-form__input">
+      <input type="{{inputType}}" name="{{inputName}}" value="{{inputValue}}" placeholder="{{inputPlaceholder}}"
+        {{#inputAutofocus}} autofocus{{/inputAutofocus}}
+         class="compact-form__input"
+        {{#messageGroup}} aria-describedby="{{id}}"{{#errorText}} aria-invalid="true"{{/errorText}}{{/messageGroup}}
+             style="font-style: italic;"
+      >
     </label>
-    {{#message}}
-      <div class="compact-form__message">{{{.}}}</div>
-    {{/message}}
+
+    {{#messageGroup}}
+      <div id="{{id}}">
+
+        {{#infoText}}
+          <div class="compact-form__message compact-form__message--info">{{{.}}}</div>
+        {{/infoText}}
+
+        {{#errorText}}
+          <div class="compact-form__message compact-form__message--invalid">{{{.}}}</div>
+        {{/errorText}}
+
+      </div>
+    {{/messageGroup}}
+
     {{#hiddenFields}}
       {{> atoms-hidden-field }}
     {{/hiddenFields}}

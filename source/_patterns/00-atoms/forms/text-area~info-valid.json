@@ -2,13 +2,13 @@
   "id": "comment1",
   "label": {
     "isVisuallyHidden": false,
-    "labelText": "Text area error"
+    "labelText": "Valid text area with additional info"
   },
   "name": "comment",
-  "state": "invalid",
+  "state": "valid",
   "messageGroup": {
     "id": "idOfTheMessageGroup",
-    "errorText": "Please provide a valid value"
+    "infoText": "Hunky dory, thanks very much"
   },
   "autofocus": true,
   "cols": 30,

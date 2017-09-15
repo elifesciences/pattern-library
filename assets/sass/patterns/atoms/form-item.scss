@@ -1,11 +1,20 @@
 @import "../../definitions";
 
 .form-item {
-  @include margin(24, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
 
   & > :last-child {
     margin-bottom: 0 // Margins don't collapse on <select>s
   }
+
+  &.form-item--valid {
+
+    .form-item__message--info {
+      color: $color-success;
+    }
+
+  }
+
 }
 
 .form-item__label {
@@ -18,12 +27,16 @@
   display: block;
   @include typeg-form-message();
   @include margin(6, "bottom");
+}
 
-  .form-item--valid & {
-    color: $color-success;
-  }
+.form-item__message--valid {
+  color: $color-success;
+}
 
-  .form-item--error & {
-    color: $color-attention;
-  }
+.form-item__message--invalid {
+  color: $color-attention;
+}
+
+.form-item__message--info {
+  color: $color-information;
 }
