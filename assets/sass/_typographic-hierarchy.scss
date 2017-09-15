@@ -233,10 +233,12 @@
   line-height: 1.8461538462; /* 24px when font size is 13px  */
 }
 
-@mixin fig-caption-text-typeg($space-underneath: 19) {
+@mixin fig-caption-text-typeg($space-underneath: 19, $set-line-height: true) {
   font-family: $font-secondary;
   @include font-size($font-size-caption-in-px);
-  line-height: 1.8461538462; /* 24px when font size is 13px  */
+  @if $set-line-height == true {
+    line-height: 1.8461538462; /* 24px when font size is 13px  */
+  }
   @include padding($space-underneath, "bottom");
   text-decoration: none;
 }
