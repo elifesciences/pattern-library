@@ -65,8 +65,17 @@ td {
   }
 }
 
-.table-footnote * {
-  @include fig-caption-text-typeg(0);
+.table-footnote {
+
+  // Only set line height when not a MathJax-controlled element
+  *:not([class*="mjx-"]) {
+    @include fig-caption-text-typeg(0);
+  }
+
+  *[class*="mjx-"] {
+    @include fig-caption-text-typeg(0, false);
+  }
+
 }
 
 .table-footnote__label {
