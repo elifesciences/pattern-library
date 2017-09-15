@@ -739,14 +739,3 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
   }
 
 }
-
-/**
-  TESTING
-
-  A class which if added to the body or html element allows you to view the grids on any given page.
-**/
-
-.show-grid .grid__item {
-  //box-shadow: 0 0 0 2px #f00;
-  outline: 1px solid rebeccapurple;
-}
