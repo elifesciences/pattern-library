@@ -40,5 +40,9 @@
   },
   "optionalDependencies": {
     "fsevents": "*"
+  },
+  "devDependencies": {
+    "wdio-mocha-framework": "^0.5.11",
+    "webdriverio": "^4.8.0"
   }
 }
