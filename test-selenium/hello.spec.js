@@ -3,7 +3,7 @@ let expect = chai.expect;
 
 describe('webdriver.io page', function() {
   it('should have the right title', function () {
-    browser.url('http://localhost');
+    browser.url('/');
     var title = browser.getTitle();
     expect(title).to.equal('Pattern Lab');
   });

@@ -3,7 +3,7 @@ let expect = chai.expect;
 
 describe('A Podcast page', function() {
   it('should have the right title', function () {
-    browser.url('http://localhost/patterns/04-pages-podcast/04-pages-podcast.html');
+    browser.url('/patterns/04-pages-podcast/04-pages-podcast.html');
   });
 
   it('should load offset and duration', function () {
