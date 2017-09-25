@@ -249,6 +249,10 @@ gulp.task('test:selenium', function() {
     return gulp.src('wdio.conf.js').pipe(webdriver());
 });
 
+gulp.task('test:selenium:local', function() {
+    return gulp.src('wdio-local.conf.js').pipe(webdriver());
+});
+
 // Watchers
 
 gulp.task('sass:watch', () => {

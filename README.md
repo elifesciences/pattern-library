@@ -72,6 +72,28 @@ You can run `bin/validate`, which checks all data files for a pattern against th
 
 There is also a list of js file dependencies for each pattern, but individual js files have not yet been implemented and so these lists are currently all empty.
 
+# Running tests
+
+## Selenium
+
+```
+node_modules/webdriverio/bin/wdio wdio-local.conf.js --spec ./test-selenium/hello.spec.js
+```
+
+will run a single test file. This set up relies on your locally installed Firefox.
+
+```
+gulp test:selenium:local
+```
+
+will instead run all the Selenium tests.
+
+```
+gulp test:selenium
+```
+
+is used inside the pattern-library VM and should not be used elsewhere.
+
 # Notes
 
 All assets paths in Mustache templates must be wrapped in `{{#assetRewrite}}`, which allows implementations to rewrite the path for cache-busting purposes. The path must also be prepended by `{{assetsPath}}`. 
