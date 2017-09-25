@@ -44,6 +44,7 @@
   "devDependencies": {
     "gulp-webdriver": "^2.0.3",
     "wdio-mocha-framework": "^0.5.11",
+    "wdio-selenium-standalone-service": "0.0.9",
     "webdriverio": "^4.8.0"
   }
 }
