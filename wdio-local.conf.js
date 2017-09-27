@@ -16,6 +16,9 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
+
+    seleniumLogs: 'build/seleniumLogs/',
+
     //
     // ============
     // Capabilities
