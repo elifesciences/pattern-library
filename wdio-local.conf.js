@@ -18,6 +18,12 @@ exports.config = {
     ],
 
     seleniumLogs: 'build/seleniumLogs/',
+    seleniumArgs: {
+        version: '2.53.1'
+    },
+    seleniumInstallArgs: {
+        version: '2.53.1'
+    },
 
     //
     // ============
