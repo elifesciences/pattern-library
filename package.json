@@ -25,6 +25,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
+    "gulp-webdriver": "^2.0.3",
     "highcharts": "^5.0.7",
     "jshint": "^2.9.2",
     "minimist": "^1.2.0",
@@ -36,15 +37,12 @@
     "text-clipper": "^1.2.0",
     "uglify-js": "^2.6.4",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
-  },
-  "optionalDependencies": {
-    "fsevents": "*"
-  },
-  "devDependencies": {
-    "gulp-webdriver": "^2.0.3",
+    "vinyl-source-stream": "^1.1.0",
     "wdio-mocha-framework": "^0.5.11",
     "wdio-selenium-standalone-service": "0.0.9",
     "webdriverio": "^4.8.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
   }
 }
