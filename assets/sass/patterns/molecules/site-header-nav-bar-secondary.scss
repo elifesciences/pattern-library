@@ -38,11 +38,6 @@
   }
 }
 
-.nav-secondary__item--notification,
-.nav-secondary__item--profile {
-  @include padding(5, "top");
-}
-
 .nav-secondary__item a {
 
   text-decoration: none;
@@ -59,16 +54,6 @@
     color: #fff;
   }
 
-}
-
-.nav-secondary__notification-icon {
-  height: 17px;
-  width: 14px;
-}
-
-.nav-secondary__profile-icon {
-  height: 14px;
-  width: 21px;
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
