@@ -42,6 +42,8 @@
 // above .nav-secondary__item:nth-last-child(2) selector when < 5 items
 .nav-secondary__item:nth-child(3) {
   @include visuallyunhidden();
+  @include height(24);
+  overflow: visible;
   @include margin(12, "right");
 }
 
