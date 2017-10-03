@@ -96,6 +96,16 @@
           "button": {
             "classes": "button--default button--extra-small"
           }
+        },
+
+        {
+          "classes": "nav-secondary__item nav-secondary__item--button",
+          "button": {
+            "text": "Login / Register",
+            "path": "#",
+            "classes": "button--confirm button--extra-small"
+
+          }
         }
       ]
     },
