@@ -38,6 +38,13 @@
   }
 }
 
+// Temporary hack until login button launches to keep 3rd item from disappearing due to
+// above .nav-secondary__item:nth-last-child(2) selector when < 5 items
+.nav-secondary__item:nth-child(3) {
+  @include visuallyunhidden();
+  @include margin(12, "right");
+}
+
 .nav-secondary__item a {
 
   text-decoration: none;
