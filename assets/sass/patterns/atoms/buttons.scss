@@ -18,17 +18,12 @@
   text-transform: uppercase;
 }
 
-// Convenience mixin, only used in this file.
-@mixin button-confirm-colors {
+.button--confirm {
   @include colors($color-success);
 
   &:hover {
     @include colors($color-success-dark);
   }
-}
-
-.button--confirm {
-  @include button-confirm-colors();
 }
 
 .button--default {
@@ -38,11 +33,6 @@
   &:hover {
     @include colors($color-primary-dark);
   }
-
-  .button--confirm {
-    @include button-confirm-colors();
-  }
-
 }
 
 .button--outline {
