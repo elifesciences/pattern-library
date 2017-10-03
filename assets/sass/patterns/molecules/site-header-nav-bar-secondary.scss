@@ -29,7 +29,7 @@
   text-transform: uppercase;
 }
 
-.nav-secondary__item--button {
+.nav-secondary__item--button:not(:last-of-type) {
   @include visuallyhidden();
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
