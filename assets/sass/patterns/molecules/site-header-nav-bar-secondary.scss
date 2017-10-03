@@ -29,7 +29,7 @@
   text-transform: uppercase;
 }
 
-.nav-secondary__item--button:not(:last-of-type) {
+.nav-secondary__item:nth-last-child(2) {
   @include visuallyhidden();
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {

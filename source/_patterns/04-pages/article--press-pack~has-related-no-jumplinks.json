@@ -92,14 +92,14 @@
         {
           "text": "Submit my research",
           "path": "#",
-          "classes": "nav-secondary__item nav-secondary__item--button",
+          "classes": "nav-secondary__item",
           "button": {
             "classes": "button--default button--extra-small"
           }
         },
 
         {
-          "classes": "nav-secondary__item nav-secondary__item--button",
+          "classes": "nav-secondary__item",
           "button": {
             "text": "Login / Register",
             "path": "#",
