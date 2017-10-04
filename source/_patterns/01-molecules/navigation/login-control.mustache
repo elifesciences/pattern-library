@@ -1,4 +1,5 @@
-<div class="login-control">
+<div class="login-control" data-profile-home-link="{{profileHomeLink}}"
+     data-profile-manage-link="{{profileManageLink}}">
 
   {{^isLoggedIn}}
     {{#button}}
@@ -7,10 +8,7 @@
   {{/isLoggedIn}}
 
   {{#isLoggedIn}}
-    <div data-profile-home-link="{{profileHomeLink}}"
-         data-profile-manage-link="{{profileManageLink}}" >
       <a href="{{profileHomeLink}}" class="login-control__non_js_control_link">{{displayName}}</a>
-    </div>
   {{/isLoggedIn}}
 
 </div>
