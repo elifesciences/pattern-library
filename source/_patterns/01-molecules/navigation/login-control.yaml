@@ -1,0 +1,21 @@
+assets:
+  css:
+    - login-control.css
+    - $ref: ../../00-atoms/components/button.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    isLoggedIn:
+      type: boolean
+      enum:
+        - true
+    profileHomeLink:
+      type: string
+      minLength: 1
+    profileManageLink:
+      type: string
+      minLength: 1
+    button:
+      $ref: ../../00-atoms/components/button.yaml#/schema
