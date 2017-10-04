@@ -98,12 +98,10 @@
       {
         "classes": "nav-secondary__item",
         "loginControl": {
-          "isLoggedIn": false,
-          "button": {
-            "text": "Login / Register",
-            "path": "#",
-            "classes": "button--confirm button--extra-small"
-          }
+          "isLoggedIn": true,
+          "displayName": "I have a very long name indeed, infeasibly long, seriously, it's crazy!",
+          "profileHomeLink": "#profileHome",
+          "profileManageLink": "#profileManage"
         }
       }
     ]

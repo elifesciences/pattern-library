@@ -1,19 +1,27 @@
 <li class="{{classes}}">
 
-  {{#button.classes}}
-    {{#button}}
-      {{> atoms-button }}
-    {{/button}}
-  {{/button.classes}}
+  {{#loginControl}}
+    {{> molecules-login-control}}
+  {{/loginControl}}
 
-  {{^button.classes}}
-    {{#path}}<a href="{{path}}"{{#rel}} rel="{{rel}}"{{/rel}}>{{/path}}
+  {{^loginControl}}
+
+    {{#button.classes}}
+      {{#button}}
+        {{> atoms-button }}
+      {{/button}}
+    {{/button.classes}}
+
+    {{^button.classes}}
+      {{#path}}<a href="{{path}}"{{#rel}} rel="{{rel}}"{{/rel}}>{{/path}}
       {{#picture}}
         {{> atoms-picture}}
       {{/picture}}
       {{#textClasses}}<span class="{{textClasses}}"> {{{text}}} </span>{{/textClasses}}
       {{^textClasses}} {{{text}}} {{/textClasses}}
-    {{#path}}</a>{{/path}}
-  {{/button.classes}}
+      {{#path}}</a>{{/path}}
+    {{/button.classes}}
+
+  {{/loginControl}}
 
 </li>
