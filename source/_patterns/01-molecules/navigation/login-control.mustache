@@ -1,14 +1,14 @@
 <div class="login-control" {{#isLoggedIn}}data-profile-home-link="{{profileHomeLink}}"
      data-profile-manage-link="{{profileManageLink}}"{{/isLoggedIn}}>
 
+  {{#isLoggedIn}}
+    <a href="{{profileHomeLink}}" class="login-control__non_js_control_link">{{displayName}}</a>
+  {{/isLoggedIn}}
+
   {{^isLoggedIn}}
     {{#button}}
       {{> atoms-button}}
     {{/button}}
-  {{/isLoggedIn}}
-
-  {{#isLoggedIn}}
-      <a href="{{profileHomeLink}}" class="login-control__non_js_control_link">{{displayName}}</a>
   {{/isLoggedIn}}
 
 </div>
