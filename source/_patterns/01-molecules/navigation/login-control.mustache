@@ -7,9 +7,10 @@
   {{/isLoggedIn}}
 
   {{#isLoggedIn}}
-    <div class="login-control__non_js_control_link"
-         data-profile-home-link="{{profileHomeLink}}"
-         data-profile-manage-link="{{profileManageLink}}" ><a href="{{profileHomeLink}}">{{displayName}}</a></div>
+    <div data-profile-home-link="{{profileHomeLink}}"
+         data-profile-manage-link="{{profileManageLink}}" >
+      <a href="{{profileHomeLink}}" class="login-control__non_js_control_link">{{displayName}}</a>
+    </div>
   {{/isLoggedIn}}
 
 </div>
