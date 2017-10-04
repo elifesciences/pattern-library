@@ -98,7 +98,6 @@
       {
         "classes": "nav-secondary__item",
         "loginControl": {
-          "isLoggedIn": false,
           "button": {
             "text": "Login / Register",
             "path": "#",
