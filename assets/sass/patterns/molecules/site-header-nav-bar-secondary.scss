@@ -47,7 +47,7 @@
   @include margin(12, "right");
 }
 
-.nav-secondary__item a {
+.nav-secondary__item a:not(.login-control__non_js_control_link) {
 
   text-decoration: none;
 
@@ -63,10 +63,4 @@
     color: #fff;
   }
 
-}
-
-@media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-  .nav-secondary__item:last-child {
-    @include nospace("right");
-  }
 }

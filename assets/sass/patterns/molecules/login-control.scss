@@ -1,5 +1,11 @@
 @import "../../definitions";
 
 .login-control__non_js_control_link {
+  display: block;
   @include non_js_control_link();
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 29vw;
 }
