@@ -2,5 +2,6 @@
   "isLoggedIn": true,
   "displayName": "John Smith",
   "profileHomeLink": "#profileHome",
-  "profileManageLink": "#profileManage"
+  "profileManageLink": "#profileManage",
+  "logoutUri": "#logout"
 }

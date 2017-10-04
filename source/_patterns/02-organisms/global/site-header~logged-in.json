@@ -101,7 +101,8 @@
           "isLoggedIn": true,
           "displayName": "I have a very long name indeed, infeasibly long, seriously, it's crazy!",
           "profileHomeLink": "#profileHome",
-          "profileManageLink": "#profileManage"
+          "profileManageLink": "#profileManage",
+          "logoutUri": "#logout"
         }
       }
     ]
