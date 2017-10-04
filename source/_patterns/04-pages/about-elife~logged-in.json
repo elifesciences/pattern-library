@@ -98,11 +98,11 @@
 
         {
           "classes": "nav-secondary__item",
-          "button": {
-            "text": "Login / Register",
-            "path": "#",
-            "classes": "button--confirm button--extra-small"
-
+          "loginControl": {
+            "isLoggedIn": true,
+            "displayName": "John Smith",
+            "profileHomeLink": "#profileHome",
+            "profileManageLink": "#profileManage"
           }
         }
       ]
