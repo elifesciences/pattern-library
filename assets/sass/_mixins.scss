@@ -417,3 +417,14 @@
   border: 1px solid $border-color;
   color: $color;
 }
+
+
+@mixin non_js_control_link {
+  font-family: $font-secondary;
+  @include font-size(16);
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

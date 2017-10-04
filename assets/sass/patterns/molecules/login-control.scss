@@ -1,0 +1,5 @@
+@import "../../definitions";
+
+.login-control__non_js_control_link {
+  @include non_js_control_link();
+}
