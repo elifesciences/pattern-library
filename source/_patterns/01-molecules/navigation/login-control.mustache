@@ -1,5 +1,5 @@
-<div class="login-control" data-profile-home-link="{{profileHomeLink}}"
-     data-profile-manage-link="{{profileManageLink}}">
+<div class="login-control" {{#isLoggedIn}}data-profile-home-link="{{profileHomeLink}}"
+     data-profile-manage-link="{{profileManageLink}}"{{/isLoggedIn}}>
 
   {{^isLoggedIn}}
     {{#button}}
