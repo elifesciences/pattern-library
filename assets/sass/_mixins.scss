@@ -418,11 +418,13 @@
   color: $color;
 }
 
-
 @mixin non_js_control_link {
+  color: $color-text;
   font-family: $font-secondary;
   @include font-size(16);
+  font-weight: normal;
   text-decoration: underline;
+  text-transform: none;
 
   &:hover {
     text-decoration: underline;
