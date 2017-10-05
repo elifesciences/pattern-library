@@ -100,7 +100,7 @@
           "classes": "nav-secondary__item",
           "profileLoginControl": {
             "isLoggedIn": true,
-            "displayName": "Extremely long name goes here",
+            "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
             "profileHomeLink": "#profileHome",
             "profileManageLink": "#profileManage",
             "logoutUri": "#logout"

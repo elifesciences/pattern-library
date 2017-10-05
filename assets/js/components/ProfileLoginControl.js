@@ -10,11 +10,11 @@ module.exports = class ProfileLoginControl {
 
     try {
       this.getData($elm);
+      this.setupEventListeners(this.$elm.appendChild(this.buildMenu()));
     } catch (e) {
       return;
     }
 
-    this.setupEventListeners(this.$elm.appendChild(this.buildMenu()));
     this.$elm.removeChild(this.$elm.querySelector('.profile-login-control__non_js_control_link'));
 
   }
@@ -22,84 +22,54 @@ module.exports = class ProfileLoginControl {
   setupEventListeners($menu) {
     const $target = $menu.querySelector('.profile-login-control__controls_toggle');
     if ($target) {
-      $menu.querySelector('.profile-login-control__controls_toggle')
-           .addEventListener('click', this.handleControlsToggle.bind(this));
+      $target.addEventListener('click', this.toggle.bind(this));
     }
   }
 
-  handleControlsToggle() {
-    this.$elm.querySelector('.profile-login-control__controls').classList.toggle('hidden');
-
-  }
-
-  // TODO: pass buildElement as arg and call/apply that, may make for better testing
   buildMenu() {
-    this.window.console.log('building control');
-    const buildElement = utils.buildElement;
-    /*
-    We need to build this:
-      <nav>
-    <!--<a href="{{profileHomeLink}}" class="profile-login-control__non_js_control_link">
-    {{displayName}}</a>-->
-<picture>
-  <source srcset="../../assets/img/icons/profile.svg">
-    <img
-    srcset="../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w"
-    src="../../assets/img/icons/profile.png"
-    alt="Profile icon">
-  </picture>
-    <ul class="profile-login-control__controls">
-      <li class="profile-login-control__control">
-        <a href="{{profileHomeLink}}" class="profile-login-control__link">
-          <div class="profile-login-control__display_name">{{displayName}}</div>
-          <div class="profile-login-control__subsidiary_text">View my profile</div>
-        </a>
-      </li>
-      <li class="profile-login-control__control">
-        <a href="{{profileManageLink}}" class="profile-login-control__link">Manage profile</a>
-        </li>
-      <li class="profile-login-control__control">
-        <a href="{{logoutUri}}" class="profile-login-control__link">Logout</a>
-        </li>
-    </ul>
-  </nav>
-    * */
-    const $nav = buildElement('nav');
-
-    const $toggleLink = buildElement('a', ['profile-login-control__controls_toggle'], '', $nav);
-    $toggleLink.href = '#';
-
-    const $picture = buildElement('picture', [], '', $toggleLink);
-    const $source = buildElement('source', [], '', $picture);
-    $source.setAttribute('srcset', '../../assets/img/icons/profile.svg');
-
-    const $img = buildElement('img', [], '', $picture);
-    $img.setAttribute('srcset',
-        '../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w');
-    $img.setAttribute('src', '../../assets/img/icons/profile.png');
-    $img.setAttribute('alt', 'profile icon');
-
-    const $list = buildElement('ul', ['profile-login-control__controls', 'hidden'], '', $nav);
-
-    const $firstItem = buildElement('li', ['profile-login-control__control'], '', $list);
-    const $firstItemLink = buildElement('a', ['profile-login-control__link'], '', $firstItem);
-    $firstItemLink.setAttribute('href', this.profileHomeLink);
-    buildElement('div', ['profile-login-control__display_name'], this.displayName, $firstItemLink);
-    buildElement('div', ['profile-login-control__subsidiary_text'], 'View my profile', $firstItemLink);
-
-    const $secondItem = buildElement('li', ['profile-login-control__control'], '', $list);
-    const $secondItemLink = buildElement('a', ['profile-login-control__link'], 'Manage profile', $secondItem);
-    $secondItemLink.setAttribute('href', this.profileManageLink);
-
-    const $thirdItem = buildElement('li', ['profile-login-control__control'], '', $list);
-    const $thirdItemLink = buildElement('a', ['profile-login-control__link'], 'Logout', $thirdItem);
-    $thirdItemLink.setAttribute('href', this.logoutLink);
+    const $nav = utils.buildElement('nav');
+    $nav.appendChild(ProfileLoginControl.buildToggle());
+    this.$list = this.buildList();
+    $nav.appendChild(this.$list);
 
     return $nav;
   }
 
-  buildToggle() {
+  static buildToggle() {
+    const $toggle = utils.buildElement('a', ['profile-login-control__controls_toggle']);
+    $toggle.href = '#';
 
+    const $picture = utils.buildElement('picture', [], '', $toggle);
+    const $source = utils.buildElement('source', [], '', $picture);
+    $source.setAttribute('srcset', '../../assets/img/icons/profile.svg');
+
+    const $img = utils.buildElement('img', [], '', $picture);
+    $img.setAttribute('srcset',
+                      '../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w');
+    $img.setAttribute('src', '../../assets/img/icons/profile.png');
+    $img.setAttribute('alt', 'profile icon');
+
+    return $toggle;
+  }
+
+  buildList() {
+    const $list = utils.buildElement('ul', ['profile-login-control__controls', 'hidden']);
+
+    const $firstItem = utils.buildElement('li', ['profile-login-control__control'], '', $list);
+    const $firstItemLink = utils.buildElement('a', ['profile-login-control__link'], '', $firstItem);
+    $firstItemLink.setAttribute('href', this.profileHomeLink);
+    utils.buildElement('div', ['profile-login-control__display_name'], this.displayName, $firstItemLink);
+    utils.buildElement('div', ['profile-login-control__subsidiary_text'], 'View my profile', $firstItemLink);
+
+    const $secondItem = utils.buildElement('li', ['profile-login-control__control'], '', $list);
+    const $secondItemLink = utils.buildElement('a', ['profile-login-control__link'], 'Manage profile', $secondItem);
+    $secondItemLink.setAttribute('href', this.profileManageLink);
+
+    const $thirdItem = utils.buildElement('li', ['profile-login-control__control'], '', $list);
+    const $thirdItemLink = utils.buildElement('a', ['profile-login-control__link'], 'Logout', $thirdItem);
+    $thirdItemLink.setAttribute('href', this.logoutLink);
+
+    return $list;
   }
 
   getData($elm) {
@@ -127,6 +97,58 @@ module.exports = class ProfileLoginControl {
 
   static getLogoutLink($elm) {
     return $elm.dataset.logoutUri;
+  }
+
+  /**
+   * Toggles the download links list display.
+   *
+   * @param e The event triggering the display toggle
+   */
+  toggle(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (this.isOpen()) {
+      this.close();
+    } else {
+      this.open();
+    }
+
+  }
+
+  /**
+   * Returns whether links list is currently viewable.
+   *
+   * @returns {boolean} Whether links list is currently viewable
+   */
+  isOpen() {
+    return !this.$list.classList.contains('hidden');
+  }
+
+  /**
+   * Make viewable.
+   */
+  open() {
+    this.$list.classList.remove('hidden');
+    this.window.addEventListener('click', this.checkForClose.bind(this));
+  }
+
+  /**
+   * Checks whether a click occurred outside this, and close this if it did.
+   *
+   * @param e The click event to evaluate the target of
+   */
+  checkForClose(e) {
+    if (!utils.areElementsNested(this.$list, e.target)) {
+      this.close();
+    }
+  }
+
+  /**
+   * Make unviewable.
+   */
+  close() {
+    this.$list.classList.add('hidden');
+    this.window.removeEventListener('click', this.checkForClose.bind(this));
   }
 
 };
