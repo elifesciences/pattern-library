@@ -1,6 +1,6 @@
 assets:
   css:
-    - login-control.css
+    - profile-login-control.css
     - $ref: ../../00-atoms/components/button.yaml#/assets/css
   js: []
 schema:

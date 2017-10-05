@@ -98,7 +98,7 @@
 
         {
           "classes": "nav-secondary__item",
-          "loginControl": {
+          "profileLoginControl": {
             "isLoggedIn": true,
             "displayName": "John Smith",
             "profileHomeLink": "#profileHome",
