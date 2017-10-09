@@ -1,6 +1,6 @@
 {
   "button": {
-    "text": "Login / Register",
+    "text": "Log in / Register",
     "path": "#",
     "classes": "button--confirm button--extra-small"
   }
