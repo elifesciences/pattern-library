@@ -25,6 +25,5 @@ schema:
       minLength: 1
     button:
       $ref: ../../00-atoms/components/button.yaml#/schema
-#   This dependencies block isn't working as expected: validation passes when isLoggedIn but not logoutUri is present
-    dependencies:
-      isLoggedIn: [profileHomeLink, profileManageLink, logoutUri, displayName]
+  dependencies:
+    isLoggedIn: [profileHomeLink, profileManageLink, logoutUri, displayName]
