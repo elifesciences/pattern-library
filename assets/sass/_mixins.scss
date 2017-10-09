@@ -421,7 +421,7 @@
 @mixin non_js_control_link {
   color: $color-text;
   font-family: $font-secondary;
-  @include font-size(16);
+  @include font-size(14);
   font-weight: normal;
   text-decoration: underline;
   text-transform: none;

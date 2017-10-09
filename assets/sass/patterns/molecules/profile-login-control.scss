@@ -5,7 +5,7 @@ $menu-max-width-in-px: 200;
 .profile-login-control__non_js_control_link {
   display: block;
   @include non_js_control_link();
-  line-height: 1.4;
+  line-height: 1.7142857143; // 24px on 14px font-size
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -13,6 +13,7 @@ $menu-max-width-in-px: 200;
 }
 
 .profile-login-control__controls {
+  border-radius: #{$border-radius}px;
   @include box-shadow();
   @include colors(#fff, $color-text-dividers, $color-text);
   @include constrain-width($menu-max-width-in-px, "max");
@@ -27,13 +28,19 @@ $menu-max-width-in-px: 200;
   @include font-size(14);
   line-height: 2.6; // 36px on 14px base font size
   margin: 0;
-  @include margin(12 0 0);
-  @include padding(0 24);
+  @include padding(12 18 0);
 
   &:first-child {
     border-bottom: 1px solid $color-text-dividers;
-    @include padding(11, "bottom");
+    @include padding(17, "bottom");
+    @include padding(18, "top");
   }
+
+  &:last-child {
+    margin-top: 0;
+    @include padding(12, "bottom");
+  }
+
 }
 
 .profile-login-control__link {
@@ -47,5 +54,9 @@ $menu-max-width-in-px: 200;
   white-space: nowrap;
   @include constrain-width($menu-max-width-in-px, "max");
   @include font-size(16);
-  line-height: 1.4; // 22px on 16px base font size
+  line-height: 1.5;
+
+  & + .profile-login-control__subsidiary_text {
+    line-height: 1.7142857143; // 24 px on 14px font size
+  }
 }
