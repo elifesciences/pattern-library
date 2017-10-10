@@ -33,6 +33,8 @@ const sourcemaps        = require('gulp-sourcemaps');
 const stylelint         = require('stylelint');
 const syntax_scss       = require('postcss-scss');
 const uglify            = require('gulp-uglify');
+const webdriver         = require('gulp-webdriver');
+
 
 const js3rdPartySource = './assets/js/libs/third-party/**/*.js';
 const jsPolyfills = './assets/js/libs/polyfills.js';
@@ -241,6 +243,14 @@ gulp.task('test', ['browserify-tests', 'js'], () => {
       'ignore-resource-errors': true
     }))
     .pipe(reload());
+});
+
+gulp.task('test:selenium', function() {
+    return gulp.src('wdio.conf.js').pipe(webdriver());
+});
+
+gulp.task('test:selenium:local', function() {
+    return gulp.src('wdio-local.conf.js').pipe(webdriver());
 });
 
 // Watchers
