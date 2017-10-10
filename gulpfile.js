@@ -278,7 +278,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/filterpanel.html'});
+    browserSync({proxy: 'localhost:8080', startPath: 'test/profilelogincontrol.html'});
   } else {
     return gutil.noop;
   }
