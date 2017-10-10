@@ -19,3 +19,4 @@ test/build
 /vendor/
 /test/fixtures-local/
 
+/build/
