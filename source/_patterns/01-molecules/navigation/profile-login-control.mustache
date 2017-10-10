@@ -1,6 +1,5 @@
-<div class="profile-login-control" {{#isLoggedIn}}data-profile-home-link="{{profileHomeLink}}"
-     data-profile-manage-link="{{profileManageLink}}" data-logout-uri="{{logoutUri}}" data-display-name="{{displayName}}"{{/isLoggedIn}}
-     data-behaviour="ProfileLoginControl">
+
+<div class="profile-login-control" {{#isLoggedIn}}data-link-fields="{{linkFields}}"{{/isLoggedIn}} data-profile-homelink="{{profileHomeLink}}" data-display-name="{{displayName}}" data-behaviour="ProfileLoginControl">
 
   {{#isLoggedIn}}
     <a href="{{profileHomeLink}}" class="profile-login-control__non_js_control_link">{{{displayName}}}</a>

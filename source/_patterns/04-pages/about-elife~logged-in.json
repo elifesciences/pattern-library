@@ -102,8 +102,8 @@
             "isLoggedIn": true,
             "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
             "profileHomeLink": "#profileHome",
-            "profileManageLink": "#profileManage",
-            "logoutUri": "#logout"
+            "linkFields": "profileManager, logout",
+            "linkFieldData": "data-profile-manager-text=\"Manage your profile\" data-profile-manager-uri=\"#profileManageLink\" data-logout-text=\"Log out\" data-logout-uri=\"/log-out\""
           }
         }
       ]
