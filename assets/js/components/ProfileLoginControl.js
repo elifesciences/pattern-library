@@ -33,8 +33,8 @@ module.exports = class ProfileLoginControl {
    *
    * For example:
    *
-   * If rootsList were to have the value "profileManageLink, logout", this would specify that there
-   * are two links described, and that the the data attributes that define them are:
+   * If rootsList were to have the value "profile-manage-link, logout", this would specify that
+   * there are two links described, and that the the data attributes that define them are:
    *
    *  - data-profile-manage-link-text: defines the display text of the profile manage link
    *  - data-profile-manage-link-uri: defines the uri of the profile manage link
@@ -46,6 +46,7 @@ module.exports = class ProfileLoginControl {
    *
    * @param {String} rootsList comma-delimited list of data attribute root names
    * @returns {Array} list of expected data attribute roots, will be empty if none found
+   * @throws {SyntaxError} if rootsList is invalid
    */
   static deriveDataAttributeRoots(rootsList = '') {
     if (!ProfileLoginControl.validateRootsList(rootsList)) {
