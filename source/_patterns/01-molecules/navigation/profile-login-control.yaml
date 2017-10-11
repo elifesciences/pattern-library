@@ -11,19 +11,20 @@ schema:
       type: boolean
       enum:
         - true
-    profileHomeLink:
-      type: string
-      minLength: 1
-    profileManageLink:
-      type: string
-      minLength: 1
-    logoutUri:
+    profileHomeUri:
       type: string
       minLength: 1
     displayName:
       type: string
       minLength: 1
+    linkFieldRoots:
+      type: string
+      minLength: 1
+    linkFieldData:
+      type: string
+      minLength: 1
     button:
       $ref: ../../00-atoms/components/button.yaml#/schema
   dependencies:
-    isLoggedIn: [profileHomeLink, profileManageLink, logoutUri, displayName]
+    isLoggedIn: [profileHomeUri, displayName]
+    linkFieldRoots: [linkFieldData]

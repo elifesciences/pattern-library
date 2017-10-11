@@ -8,95 +8,245 @@ module.exports = class ProfileLoginControl {
     this.window = _window;
     this.doc = doc;
 
+    let control;
     try {
-      this.getData($elm);
-      this.setupEventListeners(this.$elm.appendChild(this.buildMenu()));
+      this.setPropertiesFromDataAttributes(
+        ProfileLoginControl.deriveDataAttributeRoots(this.$elm.dataset.linkFieldRoots),
+        this.$elm
+      );
+      control = this.buildControl(this.extraLinksToBuild, utils.buildElement);
     } catch (e) {
+      // TODO: Remove next line
+      this.window.console.log(e);
       return;
     }
 
+    this.$elm.appendChild(control);
     this.$elm.removeChild(this.$elm.querySelector('.profile-login-control__non_js_control_link'));
-
   }
 
-  setupEventListeners($menu) {
-    const $target = $menu.querySelector('.profile-login-control__controls_toggle');
-    if ($target) {
-      $target.addEventListener('click', this.toggle.bind(this));
+  /**
+   * Returns an array of expected data attribute roots, based on the supplied comma-delimited string
+   *
+   * Each item in rootsList describes the root name of a set of two data attributes that will
+   * together describe the text and uri of a link that is to be included in the control.
+   *
+   * For example:
+   *
+   * If rootsList were to have the value "profileManageLink, logout", this would specify that there
+   * are two links described, and that the the data attributes that define them are:
+   *
+   *  - data-profile-manage-link-text: defines the display text of the profile manage link
+   *  - data-profile-manage-link-uri: defines the uri of the profile manage link
+   *
+   *  - data-logout-text: defines the display text of the logout link
+   *  - data-logout-uri: defines the uri of the logout link
+   *
+   * If any of the data attributes implied by rootsList are missing or empty, it is an error.
+   *
+   * @param {String} rootsList comma-delimited list of data attribute root names
+   * @returns {Array} list of expected data attribute roots, will be empty if none found
+   */
+  static deriveDataAttributeRoots(rootsList = '') {
+    if (!ProfileLoginControl.validateRootsList(rootsList)) {
+      throw new SyntaxError('invalid roots list supplied');
     }
+
+    // TODO: add in a method of validating the presence of the implied, required data attributes
+    const dataAttributeRoots = rootsList.split(',').map(root => root.trim());
+    if (dataAttributeRoots[0].length) {
+      return dataAttributeRoots;
+    }
+
+    return [];
   }
 
-  buildMenu() {
-    const $nav = utils.buildElement('nav');
-    $nav.appendChild(ProfileLoginControl.buildToggle());
-    this.$list = this.buildList();
-    $nav.appendChild(this.$list);
+  /**
+   * Indicates validity of list of roots supplied
+   *
+   * A roots list string is only valid if any non-terminal spaces are adjacent to commas. An empty
+   * string is probably missing something important, which should generate an error some level, but
+   * it's not invalid here.
+   *
+   * @param {String} rootsListRaw comma-delimited list of data attribute root names
+   * @returns {boolean} whether the roots list string is valid
+   */
+  static validateRootsList(rootsListRaw) {
+    try {
+      if (typeof rootsListRaw !== 'string') {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+
+    const rootsList = rootsListRaw.trim();
+    let spacePosn = rootsList.indexOf(' ');
+    while (spacePosn > -1 && spacePosn < rootsList.length - 1) {
+      const characterBeforeSpace = rootsList.substring(spacePosn - 1, spacePosn);
+      const characterAfterSpace = rootsList.substring(spacePosn + 1, spacePosn + 2);
+      if (characterBeforeSpace !== ',' && characterAfterSpace !== ',') {
+        return false;
+      }
+
+      spacePosn = rootsList.indexOf(' ', spacePosn + 1);
+    }
+
+    return true;
+  }
+
+  /**
+   * Set object properties based on discovered HTML element data attributes, based on supplied roots
+   *
+   * @param {Array.<String>} dataAttributeRoots list of data attribute roots
+   * @param {HTMLElement} $elm element containing the data attributes
+   */
+  setPropertiesFromDataAttributes(dataAttributeRoots, $elm) {
+    this.displayName = $elm.dataset.displayName;
+    this.profileHomeUri = $elm.dataset.profileHomeUri;
+    this.extraLinksToBuild = this.deriveLinksToBuild(dataAttributeRoots, $elm);
+  }
+
+  /**
+   * Returns array of objects describing the text & uris for the links to put into the menu control
+   **
+   * @param {Array.<String>} dataAttributeRoots list of data attribute root names to process
+   * @param {HTMLElement} $elm element containing the data attributes
+   * @return {Array.<{text: String, uri: String}>}
+   */
+  deriveLinksToBuild(dataAttributeRoots, $elm) {
+    const linksToBuild = [];
+    dataAttributeRoots.forEach((dataAttributeRoot) => {
+      const textDataAttribute = `${dataAttributeRoot}-text`;
+      const textProperty = ProfileLoginControl.convertHyphenatedToCamelCased(textDataAttribute);
+      const text = $elm.dataset[textProperty];
+
+      const uriDataAttribute = `${dataAttributeRoot}-uri`;
+      const uriProperty = ProfileLoginControl.convertHyphenatedToCamelCased(uriDataAttribute);
+      const uri = $elm.dataset[uriProperty];
+
+      if (text && uri) {
+        linksToBuild.push({ text, uri });
+      }
+    });
+
+    return linksToBuild;
+  }
+
+  /**
+   * Derive a camelCasedWord from a hyphenated-word
+   *
+   * @param dataAttributeName the hyphenated word (which is a data-attribute-name)
+   * @returns {(String|null)}
+   */
+  static convertHyphenatedToCamelCased(dataAttributeName = '') {
+    if (!dataAttributeName || typeof dataAttributeName !== 'string') {
+      return null;
+    }
+
+    return dataAttributeName.replace(/\-([a-z])/g, (x) => x.substring(1).toUpperCase());
+  }
+
+  /**
+   * Build the control
+   *
+   * This is the top level entry point for building the required DOM elements.
+   *
+   * @param {Array.<{text: String, uri: String}>} extraLinksToBuild data defining the links to build
+   * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
+   * @return {HTMLElement} The resulting control element
+   */
+  buildControl(extraLinksToBuild, buildElement) {
+    const $nav = buildElement.call(null, 'nav');
+    this.insertToggle($nav, buildElement);
+    this.$menu = this.buildMenu(extraLinksToBuild, buildElement);
+    $nav.appendChild(this.$menu);
 
     return $nav;
   }
 
-  static buildToggle() {
-    const $toggle = utils.buildElement('a', ['profile-login-control__controls_toggle']);
+  /**
+   * Build and insert the menu toggle into the supplied container
+   *
+   * @param {HTMLElement} $container The required parent of the toggle
+   * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
+   */
+  insertToggle($container, buildElement) {
+    const $toggle = buildElement.call(null, 'a', ['profile-login-control__controls_toggle'], '', $container);
     $toggle.href = '#';
 
-    const $picture = utils.buildElement('picture', [], '', $toggle);
-    const $source = utils.buildElement('source', [], '', $picture);
+    const $picture = buildElement.call(null, 'picture', [], '', $toggle);
+    const $source = buildElement.call(null, 'source', [], '', $picture);
     $source.setAttribute('srcset', '../../assets/img/icons/profile.svg');
 
-    const $img = utils.buildElement('img', [], '', $picture);
+    const $img = buildElement.call(null, 'img', [], '', $picture);
     $img.setAttribute('srcset',
                       '../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w');
     $img.setAttribute('src', '../../assets/img/icons/profile.png');
     $img.setAttribute('alt', 'profile icon');
 
-    return $toggle;
+    $toggle.addEventListener('click', this.toggle.bind(this));
   }
 
-  buildList() {
-    const $list = utils.buildElement('ul', ['profile-login-control__controls', 'hidden']);
-
-    const $firstItem = utils.buildElement('li', ['profile-login-control__control'], '', $list);
-    const $firstItemLink = utils.buildElement('a', ['profile-login-control__link'], '', $firstItem);
-    $firstItemLink.setAttribute('href', this.profileHomeLink);
-    utils.buildElement('div', ['profile-login-control__display_name'], this.displayName, $firstItemLink);
-    utils.buildElement('div', ['profile-login-control__subsidiary_text'], 'View my profile', $firstItemLink);
-
-    const $secondItem = utils.buildElement('li', ['profile-login-control__control'], '', $list);
-    const $secondItemLink = utils.buildElement('a', ['profile-login-control__link'], 'Manage profile', $secondItem);
-    $secondItemLink.setAttribute('href', this.profileManageLink);
-
-    const $thirdItem = utils.buildElement('li', ['profile-login-control__control'], '', $list);
-    const $thirdItemLink = utils.buildElement('a', ['profile-login-control__link'], 'Logout', $thirdItem);
-    $thirdItemLink.setAttribute('href', this.logoutLink);
-
+  /**
+   * Build the menu
+   *
+   * @param {Array.<{text: String, uri: String}>} extraLinksToBuild data defining the links to build
+   * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
+   * @return {HTMLElement} The menu that has been built
+   */
+  buildMenu(extraLinksToBuild, buildElement) {
+    const $list = buildElement.call(null, 'ul', ['profile-login-control__controls', 'hidden']);
+    this.insertProfileHomeLink($list, buildElement);
+    this.insertExtraLinks(extraLinksToBuild, $list, buildElement);
     return $list;
   }
 
-  getData($elm) {
-    this.displayName = ProfileLoginControl.getDisplayName($elm);
-    this.profileHomeLink = ProfileLoginControl.getProfileHomeLink($elm);
-    this.profileManageLink = ProfileLoginControl.getProfileManageLink($elm);
-    this.logoutLink = ProfileLoginControl.getLogoutLink($elm);
-    if (!this.displayName || !this.profileHomeLink || !this.profileHomeLink || !this.logoutLink) {
-      throw new Error('Mandatory data missing for profile. Can\'t build login control');
+  /**
+   * Build and insert the profile home link into the supplied container
+   *
+   * @param {HTMLElement} $container The required parent of the profile home link
+   * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
+   * @return {*}
+   */
+  insertProfileHomeLink($container, buildElement) {
+    const $li = buildElement.call(null, 'li', ['profile-login-control__control'], '', $container);
+    const $a = buildElement.call(null, 'a', ['profile-login-control__link'], '', $li);
+    $a.setAttribute('href', this.profileHomeUri);
+    buildElement.call(null, 'div', ['profile-login-control__display_name'], this.displayName, $a);
+    buildElement.call(null, 'div', ['profile-login-control__subsidiary_text'], 'View my profile', $a);
+
+    return $li;
+  }
+
+  /**
+   * Build and insert the links defined by the arbitrary data attributes
+   *
+   * @param {Array.<{text: String, uri: String}>} extraLinksData data defining the links to build
+   * @param {HTMLElement} $container The required parent of all the links
+   * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
+   */
+  insertExtraLinks(extraLinksData, $container, buildElement) {
+    if (!Array.isArray(extraLinksData) || !extraLinksData.length) {
+      throw new Error('Unable to build extra links, no data supplied');
     }
 
+    extraLinksData.forEach((extraLinkData) => {
+      ProfileLoginControl.insertLink(extraLinkData, $container, buildElement);
+    });
   }
 
-  static getDisplayName($elm) {
-    return $elm.dataset.displayName;
-  }
-
-  static getProfileHomeLink($elm) {
-    return $elm.dataset.profileHomeLink;
-  }
-
-  static getProfileManageLink($elm) {
-    return $elm.dataset.profileManageLink;
-  }
-
-  static getLogoutLink($elm) {
-    return $elm.dataset.logoutUri;
+  /**
+   * Build and insert a link defined by a pair of arbitrary data attributes
+   *
+   * @param linkData {{text: String, uri: String}} data from which to create the link
+   * @param {HTMLElement} $container The required parent of the link
+   * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
+   */
+  static insertLink(linkData, $container, buildElement) {
+    const $li = buildElement.call(null, 'li', ['profile-login-control__control'], '', $container);
+    const $a = buildElement.call(null, 'a', ['profile-login-control__link'], linkData.text, $li);
+    $a.setAttribute('href', linkData.uri);
   }
 
   /**
@@ -121,14 +271,14 @@ module.exports = class ProfileLoginControl {
    * @returns {boolean} Whether links list is currently viewable
    */
   isOpen() {
-    return !this.$list.classList.contains('hidden');
+    return !this.$menu.classList.contains('hidden');
   }
 
   /**
    * Make viewable.
    */
   open() {
-    this.$list.classList.remove('hidden');
+    this.$menu.classList.remove('hidden');
     this.window.addEventListener('click', this.checkForClose.bind(this));
   }
 
@@ -138,7 +288,7 @@ module.exports = class ProfileLoginControl {
    * @param e The click event to evaluate the target of
    */
   checkForClose(e) {
-    if (!utils.areElementsNested(this.$list, e.target)) {
+    if (!utils.areElementsNested(this.$menu, e.target)) {
       this.close();
     }
   }
@@ -147,7 +297,7 @@ module.exports = class ProfileLoginControl {
    * Make unviewable.
    */
   close() {
-    this.$list.classList.add('hidden');
+    this.$menu.classList.add('hidden');
     this.window.removeEventListener('click', this.checkForClose.bind(this));
   }
 

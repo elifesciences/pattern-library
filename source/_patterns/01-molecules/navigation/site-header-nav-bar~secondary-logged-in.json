@@ -35,10 +35,10 @@
       "classes": "nav-secondary__item",
       "profileLoginControl": {
         "isLoggedIn": true,
-        "displayName": "John Smith",
-        "profileHomeLink": "#profileHome",
-        "profileManageLink": "#profileManage",
-        "logoutUri": "#logout"
+        "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
+        "profileHomeUri": "#profileHome",
+        "linkFieldRoots": "profileManager, logout",
+        "linkFieldData": "data-profile-manager-text=\"Manage your profile\" data-profile-manager-uri=\"#profileManageLink\" data-logout-text=\"Log out\" data-logout-uri=\"/log-out\""
       }
     }
   ]

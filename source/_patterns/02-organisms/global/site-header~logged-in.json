@@ -99,10 +99,10 @@
         "classes": "nav-secondary__item",
         "profileLoginControl": {
           "isLoggedIn": true,
-          "displayName": "I have a very long name indeed, infeasibly long, seriously, it's crazy!",
-          "profileHomeLink": "#profileHome",
-          "profileManageLink": "#profileManage",
-          "logoutUri": "#logout"
+          "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
+          "profileHomeUri": "#profileHome",
+          "linkFieldRoots": "profileManager, logout",
+          "linkFieldData": "data-profile-manager-text=\"Manage your profile\" data-profile-manager-uri=\"#profileManageLink\" data-logout-text=\"Log out\" data-logout-uri=\"/log-out\""
         }
       }
     ]
