@@ -162,6 +162,7 @@ module.exports = class ProfileLoginControl {
     return linksToBuild;
   }
 
+  // TODO: Move to utils
   /**
    * Derive a camelCased word from a kebab-cased word
    *
