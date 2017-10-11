@@ -22,7 +22,11 @@ module.exports = class ProfileLoginControl {
     }
 
     this.$elm.appendChild(control);
-    this.$elm.removeChild(this.$elm.querySelector('.profile-login-control__non_js_control_link'));
+
+    const nonJsLink = this.$elm.querySelector('.profile-login-control__non_js_control_link');
+    if (nonJsLink) {
+      this.$elm.removeChild(nonJsLink);
+    }
   }
 
   /**
@@ -64,7 +68,7 @@ module.exports = class ProfileLoginControl {
     }
 
     if (!ProfileLoginControl.areAllImpliedDataAttributesPresent(dataAttributeRoots, $elm)) {
-      throw new ReferenceError('Required data attribute(s) implied by data-link-field-roots are missing');
+      throw new ReferenceError('One or more required data attributes implied by data-link-field-roots are missing');
     }
 
     return dataAttributeRoots;
