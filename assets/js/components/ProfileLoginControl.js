@@ -118,11 +118,11 @@ module.exports = class ProfileLoginControl {
     const linksToBuild = [];
     dataAttributeRoots.forEach((dataAttributeRoot) => {
       const textDataAttribute = `${dataAttributeRoot}-text`;
-      const textProperty = ProfileLoginControl.convertHyphenatedToCamelCased(textDataAttribute);
+      const textProperty = ProfileLoginControl.convertKebabCaseToCamelCase(textDataAttribute);
       const text = $elm.dataset[textProperty];
 
       const uriDataAttribute = `${dataAttributeRoot}-uri`;
-      const uriProperty = ProfileLoginControl.convertHyphenatedToCamelCased(uriDataAttribute);
+      const uriProperty = ProfileLoginControl.convertKebabCaseToCamelCase(uriDataAttribute);
       const uri = $elm.dataset[uriProperty];
 
       if (text && uri) {
@@ -134,17 +134,17 @@ module.exports = class ProfileLoginControl {
   }
 
   /**
-   * Derive a camelCasedWord from a hyphenated-word
+   * Derive a camelCased word from a kebab-cased word
    *
-   * @param dataAttributeName the hyphenated word (which is a data-attribute-name)
+   * @param kebabCase the kebab-cased word (which is a data-attribute-name)
    * @returns {(String|null)}
    */
-  static convertHyphenatedToCamelCased(dataAttributeName = '') {
-    if (!dataAttributeName || typeof dataAttributeName !== 'string') {
+  static convertKebabCaseToCamelCase(kebabCase = '') {
+    if (!kebabCase || typeof kebabCase !== 'string') {
       return null;
     }
 
-    return dataAttributeName.replace(/\-([a-z])/g, (x) => x.substring(1).toUpperCase());
+    return kebabCase.replace(/\-([a-z])/g, (x) => x.substring(1).toUpperCase());
   }
 
   /**
