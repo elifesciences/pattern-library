@@ -11,12 +11,12 @@ module.exports = class ProfileLoginControl {
     let control;
     try {
       this.setPropertiesFromDataAttributes(
-        ProfileLoginControl.deriveDataAttributeRoots(this.$elm.dataset.linkFieldRoots),
+        ProfileLoginControl.deriveDataAttributeRoots(this.$elm.dataset.linkFieldRoots, this.$elm),
         this.$elm
       );
       control = this.buildControl(this.extraLinksToBuild, utils.buildElement);
     } catch (e) {
-      // TODO: Remove next line
+      // TODO: When removing, Log to NR instead?
       this.window.console.log(e);
       return;
     }
@@ -45,21 +45,49 @@ module.exports = class ProfileLoginControl {
    * If any of the data attributes implied by rootsList are missing or empty, it is an error.
    *
    * @param {String} rootsList comma-delimited list of data attribute root names
-   * @returns {Array} list of expected data attribute roots, will be empty if none found
+   * @param {HTMLElement} $elm HTML element that the data attributes belong to
+   *
    * @throws {SyntaxError} if rootsList is invalid
+   * @throws {ReferenceError} if required data attributes are missing
+   *
+   * @returns {Array} list of expected data attribute roots, will be empty if none found
+   *
    */
-  static deriveDataAttributeRoots(rootsList = '') {
+  static deriveDataAttributeRoots(rootsList, $elm) {
     if (!ProfileLoginControl.validateRootsList(rootsList)) {
       throw new SyntaxError('invalid roots list supplied');
     }
 
-    // TODO: add in a method of validating the presence of the implied, required data attributes
     const dataAttributeRoots = rootsList.split(',').map(root => root.trim());
-    if (dataAttributeRoots[0].length) {
-      return dataAttributeRoots;
+    if (!dataAttributeRoots[0].length) {
+      return [];
     }
 
-    return [];
+    if (!ProfileLoginControl.areAllImpliedDataAttributesPresent(dataAttributeRoots, $elm)) {
+      throw new ReferenceError('Required data attribute(s) implied by data-link-field-roots are missing');
+    }
+
+    return dataAttributeRoots;
+  }
+
+  /**
+   * Returns false if not all data attributes implied by dataAttributeRoots are present
+   *
+   * @param {Array.<String>} dataAttributeRoots list of expected data attribute roots
+   * @param {HTMLElement} $elm HTML element that the data attributes belong to
+   * @return {boolean} false if not all data attributes implied by dataAttributeRoots are present
+   */
+  static areAllImpliedDataAttributesPresent(dataAttributeRoots, $elm) {
+    let areAllPresent = true;
+    dataAttributeRoots.forEach((root) => {
+      if (!$elm.dataset[ProfileLoginControl.convertKebabCaseToCamelCase(`${root}Uri`)] ||
+          !$elm.dataset[ProfileLoginControl.convertKebabCaseToCamelCase(`${root}Text`)]
+      ) {
+        areAllPresent = false;
+      }
+    });
+
+    return areAllPresent;
   }
 
   /**
