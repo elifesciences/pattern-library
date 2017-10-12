@@ -121,6 +121,17 @@ module.exports = class ProfileLoginControl {
     }
 
     const rootsList = rootsListRaw.trim();
+    if (
+      rootsList.search(/[\?!@£%^&*(){}\[\]\."\\';:/]/) > -1 ||
+      rootsList.search(/-$/) > -1 ||
+      rootsList.search(/-,/) > -1 ||
+      rootsList.search(/^-/) > -1 ||
+      rootsList.search(/, ?-/) > -1
+    ) {
+      return false;
+    }
+
+    // A space must be adjacent to a comma
     let spacePosn = rootsList.indexOf(' ');
     while (spacePosn > -1 && spacePosn < rootsList.length - 1) {
       const characterBeforeSpace = rootsList.substring(spacePosn - 1, spacePosn);
