@@ -86,7 +86,7 @@ describe('A ProfileLoginControl Component', function () {
         'ihaveacomma , andnospacesexceptnexttothecomma',
         'ihaveacomma , andnospacesexceptnexttothecomma, morevalues',
         '    terminalspacebothendsihaveacomma , andnospacesexceptnexttothecomma, morevalues ',
-        'shouldOnlyContainCharactersUseableWithinJavaScriptName$_plus-Hyphens, andSpaces'
+        'shouldonlycontaincharactersuseablewithinjavascriptname$_plus-hyphens, andspaces'
       ];
 
     });
