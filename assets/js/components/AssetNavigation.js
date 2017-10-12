@@ -15,6 +15,10 @@ module.exports = class AssetNavigation {
     if ($seeAll) {
       promise = utils.remoteDoc($seeAll.href, this.window).then((doc) => {
         const $newAsset = doc.querySelector(`#${this.$elm.id}`);
+        if (!$newAsset) {
+          return [this.$elm];
+        }
+
         const $newSupplements = doc.querySelectorAll(`[data-parent-asset-id="${this.$elm.id}"]`);
 
         // Avoid circular behaviour.
