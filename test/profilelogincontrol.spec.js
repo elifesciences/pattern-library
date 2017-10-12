@@ -18,11 +18,11 @@ describe('A ProfileLoginControl Component', function () {
     expect(ProfileLoginControl).to.exist;
   });
 
-  it('has validateRootsList static method', () => {
-    expect(ProfileLoginControl.validateRootsList).to.be.a('function');
+  it('has validateDataAttributeRootsList static method', () => {
+    expect(ProfileLoginControl.validateDataAttributeRootsList).to.be.a('function');
   });
 
-  describe('the validateRootsList method', () => {
+  describe('the validateDataAttributeRootsList method', () => {
 
     it('returns false if supplied with an invalid value', () => {
       const invalidValues = [
@@ -43,7 +43,7 @@ describe('A ProfileLoginControl Component', function () {
         'if spaces , they should only be around commas',
       ];
       invalidValues.forEach((invalidValue) => {
-        expect(ProfileLoginControl.validateRootsList(invalidValue)).to.be.false;
+        expect(ProfileLoginControl.validateDataAttributeRootsList(invalidValue)).to.be.false;
       });
     });
 
@@ -60,7 +60,7 @@ describe('A ProfileLoginControl Component', function () {
         '    terminalspacebothendsihaveacomma , andnospacesexceptnexttothecomma, morevalues ',
       ];
       validValues.forEach((validValue) => {
-        expect(ProfileLoginControl.validateRootsList(validValue)).to.be.true;
+        expect(ProfileLoginControl.validateDataAttributeRootsList(validValue)).to.be.true;
       });
 
     });
@@ -83,7 +83,7 @@ describe('A ProfileLoginControl Component', function () {
 
     context('when supplied with a valid string with no spaces or commas', () => {
 
-      const stringWithNoSpacesCommas = 'stringwithnospacesorcommas';
+      const stringWithNoSpacesCommas = 'logout';
 
       it('returns an array with the argument unaltered as its only element', () => {
         const observed = ProfileLoginControl.deriveDataAttributeRoots(stringWithNoSpacesCommas, $elm);
@@ -96,16 +96,15 @@ describe('A ProfileLoginControl Component', function () {
     context('when supplied with a valid string with commas', () => {
 
       it('returns an array containing elements from the string, as split by the commas', () => {
-        const stringWithCommas = '  item0,item1, item2 ,item3 , item4   ';
+        const stringWithCommas = 'profile-manager, logout';
         const observed = ProfileLoginControl.deriveDataAttributeRoots(stringWithCommas, $elm);
-        expect(observed).to.have.lengthOf(5);
-        observed.forEach((item, i) => {
-          expect(item).to.equal(`item${i}`);
-        });
+        expect(observed).to.have.lengthOf(2);
+        expect(observed[0]).to.equal('profile-manager');
+        expect(observed[1]).to.equal('logout');
+
       });
 
     });
-
 
   });
 

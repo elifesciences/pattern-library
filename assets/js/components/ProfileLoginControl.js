@@ -11,7 +11,10 @@ module.exports = class ProfileLoginControl {
     let control;
     try {
       this.setPropertiesFromDataAttributes(
-        ProfileLoginControl.deriveDataAttributeRoots(this.$elm.dataset.linkFieldRoots, this.$elm),
+        ProfileLoginControl.deriveDataAttributeRoots(
+          this.$elm.dataset.linkFieldRoots,
+          this.$elm
+        ),
         this.$elm
       );
       control = this.buildControl(this.extraLinksToBuild, utils.buildElement);
@@ -46,6 +49,10 @@ module.exports = class ProfileLoginControl {
    *  - data-logout-text: defines the display text of the logout link
    *  - data-logout-uri: defines the uri of the logout link
    *
+   *  In this case the return value would be the array:
+   *
+   *    ['profile-manage-link-text', 'profile-manage-link-uri', 'logout-text', 'logout-uri']
+   *
    * If any of the data attributes implied by rootsList are missing or empty, it is an error.
    *
    * @param {String} rootsList comma-delimited list of data attribute root names
@@ -54,11 +61,11 @@ module.exports = class ProfileLoginControl {
    * @throws {SyntaxError} if rootsList is invalid
    * @throws {ReferenceError} if required data attributes are missing
    *
-   * @returns {Array} list of expected data attribute roots, will be empty if none found
+   * @returns {Array.<String>} list of expected data attribute roots, will be empty if none found
    *
    */
   static deriveDataAttributeRoots(rootsList, $elm) {
-    if (!ProfileLoginControl.validateRootsList(rootsList)) {
+    if (!ProfileLoginControl.validateDataAttributeRootsList(rootsList)) {
       throw new SyntaxError('invalid roots list supplied');
     }
 
@@ -84,8 +91,8 @@ module.exports = class ProfileLoginControl {
   static areAllImpliedDataAttributesPresent(dataAttributeRoots, $elm) {
     let areAllPresent = true;
     dataAttributeRoots.forEach((root) => {
-      if (!$elm.dataset[ProfileLoginControl.convertKebabCaseToCamelCase(`${root}Uri`)] ||
-          !$elm.dataset[ProfileLoginControl.convertKebabCaseToCamelCase(`${root}Text`)]
+      if (!$elm.dataset[ProfileLoginControl.convertKebabCaseToCamelCase(`${root}-uri`)] ||
+          !$elm.dataset[ProfileLoginControl.convertKebabCaseToCamelCase(`${root}-text`)]
       ) {
         areAllPresent = false;
       }
@@ -95,7 +102,7 @@ module.exports = class ProfileLoginControl {
   }
 
   /**
-   * Indicates validity of list of roots supplied
+   * Indicates validity of list of data attribute roots supplied
    *
    * A roots list string is only valid if any non-terminal spaces are adjacent to commas. An empty
    * string is probably missing something important, which should generate an error some level, but
@@ -104,7 +111,7 @@ module.exports = class ProfileLoginControl {
    * @param {String} rootsListRaw comma-delimited list of data attribute root names
    * @returns {boolean} whether the roots list string is valid
    */
-  static validateRootsList(rootsListRaw) {
+  static validateDataAttributeRootsList(rootsListRaw) {
     try {
       if (typeof rootsListRaw !== 'string') {
         return false;
