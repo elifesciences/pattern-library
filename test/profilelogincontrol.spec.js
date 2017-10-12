@@ -3,6 +3,15 @@ let expect = chai.expect;
 // load in component(s) to be tested
 let ProfileLoginControl = require('../assets/js/components/ProfileLoginControl');
 
+function checkTextFixturePrerequisites($fixture) {
+  'use strict';
+  // Ensure the expected data attributes are present on the test fixture
+  expect($fixture.dataset.linkFieldRoots).to.equal('profile-manager, logout');
+  expect($fixture.data.profileManagerUri).to.not.be.empty();
+  expect($fixture.data.profileManagerText).to.not.be.empty();
+  expect($fixture.data.logoutUri).to.not.be.empty();
+  expect($fixture.data.logoutText).to.not.be.empty();
+}
 
 describe('A ProfileLoginControl Component', function () {
   'use strict';
@@ -18,7 +27,7 @@ describe('A ProfileLoginControl Component', function () {
     expect(ProfileLoginControl).to.exist;
   });
 
-  describe('for data attribute handling', () => {
+  describe('for handling its data attributes', () => {
 
     let invalidDataAttributeRoots;
     let validDataAttributeRoots;
@@ -142,7 +151,7 @@ describe('A ProfileLoginControl Component', function () {
 
       });
 
-      context('when supplied with a valid string with commas', () => {
+      context('when supplied with a valid string containing commas', () => {
 
         const stringWithCommas = 'profile-manager, logout';
 
@@ -151,23 +160,146 @@ describe('A ProfileLoginControl Component', function () {
           expect(observed).to.have.lengthOf(2);
           expect(observed[0]).to.equal('profile-manager');
           expect(observed[1]).to.equal('logout');
-
         });
 
       });
 
     });
 
-    it('has a setPropertiesFromDataAtributes method', () => {
-      expect(profileLoginControl.setPropertiesFromDataAttributes).to.be.a('function');
+
+    it('has an areAllImpliedDataAttributesPresent static method', () => {
+      expect(ProfileLoginControl.areAllImpliedDataAttributesPresent).to.be.a('function');
     });
 
-    it('has a a displayName property set from the display-name data attribute', () => {
+    describe('the areAllImpliedDataAttributesPresent method', () => {
+
+      context('when both the implied "-uri" and "-text" suffixed data attributes are present for each data attribute root specified in the supplied array ', () => {
+
+        it('returns true', () => {
+          expect(
+            ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager', 'logout'],
+                                                                   $elm)).to.be.true;
+        });
+
+      });
+
+      context('when a "-uri" suffixed data attribute implied by a data attribute root specified in the supplied array is missing', () => {
+
+        let logoutUriBackup;
+
+        before(() => {
+          expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
+          logoutUriBackup = $elm.dataset.logoutUri;
+        });
+
+        after(() => {
+          $elm.dataset.logoutUri = logoutUriBackup;
+          expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
+        });
+
+        it('returns false', () => {
+          delete $elm.dataset.logoutUri;
+          expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.false;
+        });
+
+    });
+
+    context('when a "-text" suffixed data attribute implied by a data attribute root specified in the supplied array is missing', () => {
+
+      let logoutTextBackup;
+
+      before(() => {
+        expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
+        logoutTextBackup = $elm.dataset.logoutText;
+      });
+
+      after(() => {
+        $elm.dataset.logoutText = logoutTextBackup;
+        expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
+      });
+
+      it('returns false', () => {
+        delete $elm.dataset.logoutText;
+        expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.false;
+      });
+
+    });
+
+  });
+
+    it('has a deriveLinksToBuild static method', () => {
+      expect(ProfileLoginControl.deriveLinksToBuild).to.be.a('function');
+    });
+
+    describe('the deriveLinksToBuild method', () => {
+
+      context('when supplied with an array specifying the data attribute roots "profile-manage-link" and "logout"', () => {
+
+        const dataAttributeRoots = ['profile-manager', 'logout'];
+
+        it('returns an object with the properties "text" and "uri" assigned the values of the respective implied data attributes', () => {
+
+          before(() => {
+            checkTextFixturePrerequisites($elm);
+          });
+
+          const observed = ProfileLoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
+          expect(observed[0].uri).to.equal($elm.dataset.profileManagerUri);
+          expect(observed[0].text).to.equal($elm.dataset.profileManagerText);
+          expect(observed[1].uri).to.equal($elm.dataset.logoutUri);
+          expect(observed[1].text).to.equal($elm.dataset.logoutText);
+        });
+
+      });
+
+      context('when supplied with an array containing a data attribute root, where one of its implied data attributes is empty', () => {
+
+        const dataAttributeRoots = ['logout', 'emptyLinkText', 'emptyLinkUri'];
+
+        before(() => {
+          $elm.dataset.emptyLinkUriText = 'Empty link URI text';
+          $elm.dataset.emptyLinkUriUri = '';
+          $elm.dataset.emptyLinkTextText = '';
+          $elm.dataset.emptyLinkTextUri = '#emptyLinkTextUri';
+        });
+
+        after(() => {
+          delete $elm.dataset.emptyLinkUriText;
+          delete $elm.dataset.emptyLinkUriUri;
+          delete $elm.dataset.emptyLinkTextText;
+          delete $elm.dataset.emptyLinkTextUri;
+        });
+
+        it('that data attribute root is not used to derive the return value', () => {
+          const observed = ProfileLoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
+          expect(observed).to.have.a.lengthOf(1);
+          expect(observed[0].uri).to.equal($elm.dataset.logoutUri);
+          expect(observed[0].text).to.equal($elm.dataset.logoutText);
+        });
+
+      });
+
+    });
+
+    it('has an extraLinksToBuild property with a value derived from the link-field-roots data attribute value', () => {
+
+      before(() => {
+        checkTextFixturePrerequisites($elm);
+      });
+
+      const observed = profileLoginControl.extraLinksToBuild;
+      expect(observed[0].uri).to.equal($elm.dataset.profileManagerUri);
+      expect(observed[0].text).to.equal($elm.dataset.profileManagerText);
+      expect(observed[1].uri).to.equal($elm.dataset.logoutUri);
+      expect(observed[1].text).to.equal($elm.dataset.logoutText);
+    });
+
+    it('has a  displayName property set from the display-name data attribute', () => {
       const valueFromDataAttribute = $elm.dataset.displayName;
       expect(profileLoginControl.displayName).to.equal(valueFromDataAttribute);
     });
 
-    it('has a a profileHomeUri property set from the profile-home-uri data attribute', () => {
+    it('has a  profileHomeUri property set from the profile-home-uri data attribute', () => {
       const valueFromDataAttribute = $elm.dataset.profileHomeUri;
       expect(profileLoginControl.profileHomeUri).to.equal(valueFromDataAttribute);
     });
@@ -178,6 +310,48 @@ describe('A ProfileLoginControl Component', function () {
     expect(ProfileLoginControl.convertKebabCaseToCamelCase).to.be.a('function');
   });
 
+  describe('its DOM', () => {
+
+    it('has a $control property that is a <nav> element', () => {
+      expect(profileLoginControl.$control).to.be.an.instanceOf(HTMLElement);
+      expect(profileLoginControl.$control.nodeName).to.equal('NAV');
+    });
+
+    describe('the $control property', () => {
+
+      it('has a toggle', () => {
+        expect($elm.querySelector('.profile-login-control__controls_toggle')).not.to.be.null;
+      });
+
+      it('has a profile home link that has its URI value specified by the profile-home-uri data attribute', () => {
+        const expected = $elm.dataset.profileHomeUri;
+        expect($elm.querySelector(`[href="${expected}"]`)).not.to.be.null;
+      });
+
+      it('has a display name specified by the display-name data attribute', () => {
+        const expected = $elm.dataset.displayName;
+        expect($elm.querySelector('.profile-login-control__display_name').innerHTML).to.equal(expected);
+      });
+
+      describe('the extra links', () => {
+
+        it('are present and correct as implied by the value of the link-field-roots data attribute', () => {
+
+          before(() => {
+            checkTextFixturePrerequisites($elm);
+          });
+
+          const profileManagerLink = $elm.querySelector(`[href="${$elm.dataset.profileManagerUri}"]`);
+          expect(profileManagerLink.innerHTML).to.equal($elm.dataset.profileManagerText);
+          const logoutLink = $elm.querySelector(`[href="${$elm.dataset.logoutUri}"]`);
+          expect(logoutLink.innerHTML).to.equal($elm.dataset.logoutText);
+        })
+
+      })
+
+    });
+
+  });
 
   describe('the convertKebabCaseToCamelCase method', () => {
 
