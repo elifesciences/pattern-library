@@ -14,6 +14,16 @@ module.exports = class ArticleDownloadLinksList {
     this.doc = doc;
     this.$elm = $elm;
 
+    this.$contentHeader = this.doc.querySelector('.content-header');
+    if (!this.$contentHeader) {
+      return;
+    }
+
+    this.$contentHeaderDownloadLink = this.$contentHeader.querySelector('.content-header__download_link');
+    if (!this.$contentHeaderDownloadLink) {
+      return;
+    }
+
     // One statement per class name because IE doesn't support multiple strings, comma separated.
     this.$elm.classList.add('article-download-links-list--js');
     this.$elm.classList.add('visuallyhidden');
@@ -26,11 +36,9 @@ module.exports = class ArticleDownloadLinksList {
    * Moves the download links list to be by the icon this.$toggler
    */
   moveList() {
-    let $newParent = this.doc.querySelector('.content-header');
-    let $followingSibling =
-      $newParent.querySelector('.content-header__download_link').nextElementSibling;
+    let $followingSibling = this.$contentHeaderDownloadLink.nextElementSibling;
     this.$elm.parentNode.parentNode.classList.add('visuallyhidden');
-    $newParent.insertBefore(this.$elm, $followingSibling);
+    this.$contentHeader.insertBefore(this.$elm, $followingSibling);
   }
 
   /**
