@@ -8,7 +8,6 @@ module.exports = class ProfileLoginControl {
     this.window = _window;
     this.doc = doc;
 
-    let control;
     try {
       this.setPropertiesFromDataAttributes(
         ProfileLoginControl.deriveDataAttributeRoots(
@@ -17,14 +16,14 @@ module.exports = class ProfileLoginControl {
         ),
         this.$elm
       );
-      control = this.buildControl(this.extraLinksToBuild, utils.buildElement);
+      this.$control = this.buildControl(this.extraLinksToBuild, utils.buildElement);
     } catch (e) {
       // TODO: When removing, Log to NR instead?
       this.window.console.log(e);
       return;
     }
 
-    this.$elm.appendChild(control);
+    this.$elm.appendChild(this.$control);
 
     const nonJsLink = this.$elm.querySelector('.profile-login-control__non_js_control_link');
     if (nonJsLink) {
@@ -155,7 +154,7 @@ module.exports = class ProfileLoginControl {
   setPropertiesFromDataAttributes(dataAttributeRoots, $elm) {
     this.displayName = $elm.dataset.displayName;
     this.profileHomeUri = $elm.dataset.profileHomeUri;
-    this.extraLinksToBuild = this.deriveLinksToBuild(dataAttributeRoots, $elm);
+    this.extraLinksToBuild = ProfileLoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
   }
 
   /**
@@ -165,7 +164,7 @@ module.exports = class ProfileLoginControl {
    * @param {HTMLElement} $elm element containing the data attributes
    * @return {Array.<{text: String, uri: String}>}
    */
-  deriveLinksToBuild(dataAttributeRoots, $elm) {
+  static deriveLinksToBuild(dataAttributeRoots, $elm) {
     const linksToBuild = [];
     dataAttributeRoots.forEach((dataAttributeRoot) => {
       const textDataAttribute = `${dataAttributeRoot}-text`;
@@ -184,7 +183,6 @@ module.exports = class ProfileLoginControl {
     return linksToBuild;
   }
 
-  // TODO: Move to utils
   /**
    * Derive a camelCased word from a kebab-cased word
    *
