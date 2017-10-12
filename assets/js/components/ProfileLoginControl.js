@@ -125,7 +125,9 @@ module.exports = class ProfileLoginControl {
       rootsList.search(/-$/) > -1 ||
       rootsList.search(/-,/) > -1 ||
       rootsList.search(/^-/) > -1 ||
-      rootsList.search(/, ?-/) > -1
+      rootsList.search(/, ?-/) > -1 ||
+      rootsList.search(/^,/) > -1 ||
+      rootsList.search(/,$/) > -1
     ) {
       return false;
     }

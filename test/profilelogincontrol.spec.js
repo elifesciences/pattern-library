@@ -71,7 +71,9 @@ describe('A ProfileLoginControl Component', function () {
         'hyphens-should-not-be-at-the-end-of-the-string-',
         'hyphens-should-not-be-at-the-end-of-a-word-, in-the-string',
         '-hyphens-should-not-be-at-the-start-of-the-string',
-        'hyphens-should-not-be-at-the-start-of-a, -word-in-the-string'
+        'hyphens-should-not-be-at-the-start-of-a, -word-in-the-string',
+        ',shouldnothavealeadingcomma',
+        'shouldnothaveareainingcomma,',
       ];
 
       validDataAttributeRoots = [
@@ -84,8 +86,6 @@ describe('A ProfileLoginControl Component', function () {
         'ihaveacomma , andnospacesexceptnexttothecomma',
         'ihaveacomma , andnospacesexceptnexttothecomma, morevalues',
         '    terminalspacebothendsihaveacomma , andnospacesexceptnexttothecomma, morevalues ',
-        ',leadingCommasShouldJustBeIgnored',
-        'trailingCommasShouldJustBeIgnored,',
         'shouldOnlyContainCharactersUseableWithinJavaScriptName$_plus-Hyphens, andSpaces'
       ];
 
