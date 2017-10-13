@@ -25,7 +25,7 @@ schema:
 #       - allows other space only when adjacent to a comma
 #       - disallows leading/trailing commas and hyphens on the string
 #       - disallows leading or trailing hyphens on a word
-      pattern: /^[ \t]*[a-z][a-z-$_]*[^-,][ \t]*(,[ \t]*[a-z][a-z-$_]*[^-,][ \t]*)*$/
+      pattern: ^[ \t]*[a-z][a-z-$_]*[^-,][ \t]*(,[ \t]*[a-z][a-z-$_]*[^-,][ \t]*)*$
     linkFieldData:
       type: string
       minLength: 1
