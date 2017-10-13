@@ -103,49 +103,19 @@ module.exports = class ProfileLoginControl {
   /**
    * Indicates validity of list of data attribute roots supplied
    *
-   * A roots list string is only valid if any non-terminal spaces are adjacent to commas. An empty
-   * string is probably missing something important, which should generate an error some level, but
-   * it's not invalid here.
+   * The regex determining validity:
+   *  - allows lower case js name characters, plus space, hyphen and commma
+   *  - allows leading/trailing space
+   *  - allows other space only when adjacent to a comma
+   *  - disallows leading/trailing commas and hyphens on the string
+   *  - disallows leading or trailing hyphens on a word
    *
-   * @param {String} rootsListRaw comma-delimited list of data attribute root names
+   * @param {String} rootsList comma-delimited list of data attribute root names
    * @returns {boolean} whether the roots list string is valid
    */
-  static validateDataAttributeRootsList(rootsListRaw) {
-    try {
-      if (typeof rootsListRaw !== 'string') {
-        return false;
-      }
-    } catch (e) {
-      return false;
-    }
-
-    const rootsList = rootsListRaw.trim();
-    if (
-      rootsList.search(/[\?!@£%^&*(){}\[\]\."\\';:/]/) > -1 ||
-      rootsList.search(/-$/) > -1 ||
-      rootsList.search(/-,/) > -1 ||
-      rootsList.search(/^-/) > -1 ||
-      rootsList.search(/, ?-/) > -1 ||
-      rootsList.search(/^,/) > -1 ||
-      rootsList.search(/,$/) > -1 ||
-      rootsList.search(/[A-Z]/) > -1
-    ) {
-      return false;
-    }
-
-    // A space must be adjacent to a comma
-    let spacePosn = rootsList.indexOf(' ');
-    while (spacePosn > -1 && spacePosn < rootsList.length - 1) {
-      const characterBeforeSpace = rootsList.substring(spacePosn - 1, spacePosn);
-      const characterAfterSpace = rootsList.substring(spacePosn + 1, spacePosn + 2);
-      if (characterBeforeSpace !== ',' && characterAfterSpace !== ',') {
-        return false;
-      }
-
-      spacePosn = rootsList.indexOf(' ', spacePosn + 1);
-    }
-
-    return true;
+  static validateDataAttributeRootsList(rootsList) {
+    return typeof rootsList === 'string' &&
+           rootsList.search(/^[ \t]*[a-z][a-z-$_]*[^-,][ \t]*(,[ \t]*[a-z][a-z-$_]*[^-,][ \t]*)*$/) > -1;
   }
 
   /**

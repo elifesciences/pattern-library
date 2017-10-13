@@ -37,6 +37,7 @@ describe('A ProfileLoginControl Component', function () {
         undefined,
         null,
         {},
+        '',
         {'fish': 'chips'},
         [],
         ['fish', 'chips'],
@@ -77,8 +78,6 @@ describe('A ProfileLoginControl Component', function () {
       ];
 
       validDataAttributeRoots = [
-        // An empty string is probably missing something, but is not technically invalid
-        '',
         'justalphabeticalchars',
         'ihaveacomma,butnospaces',
         'ihaveacomma, andnospacesexceptnexttothecomma',

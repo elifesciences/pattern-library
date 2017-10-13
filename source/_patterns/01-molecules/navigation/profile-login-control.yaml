@@ -19,7 +19,13 @@ schema:
       minLength: 1
     linkFieldRoots:
       type: string
-      minLength: 1
+#      linkFieldRoots is a list of one or more words that are comma-separated. The regex:
+#       - allows lower case js name characters, plus space, hyphen and commma
+#       - allows leading/trailing space
+#       - allows other space only when adjacent to a comma
+#       - disallows leading/trailing commas and hyphens on the string
+#       - disallows leading or trailing hyphens on a word
+      pattern: /^([ \t]*[a-z][a-z-$_]*[^-,][ \t]*(,[ \t]*[a-z][a-z-$_]*[^-,][ \t]*)*)?$$/
     linkFieldData:
       type: string
       minLength: 1
