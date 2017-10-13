@@ -368,7 +368,7 @@
 
 @mixin overlay() {
   background-color: $color-overlay;
-  position: absolute;
+  position: fixed;
   min-height: 100vh;
   top: 0;
   width: 100vw;

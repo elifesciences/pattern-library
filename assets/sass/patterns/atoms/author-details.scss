@@ -1,17 +1,17 @@
 @import "../../definitions";
 
 .author-details__section {
-  @include padding(24, "bottom");
+  @include margin(24, "bottom");
 
   .popup__content & {
-    @include padding(18, "bottom");
-  }
+    @include margin(18, "bottom");
 
-  .popup__content & {
-    @include padding(18, "bottom");
+    p {
+      @include margin(18, "bottom");
+    }
 
     &:last-child {
-      padding-bottom: 0;
+      margin-bottom: 0;
     }
   }
 
@@ -57,8 +57,16 @@
   @include body-para();
   @include nospace("bottom");
 
+  p {
+    @include body-typeg();
+  }
+
   .popup__content & {
     @include popup-ancillary-text();
+
+    p {
+      @include popup-ancillary-text();
+    }
   }
 
 }
