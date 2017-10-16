@@ -1,8 +1,8 @@
 
-<div class="login-control" {{#isLoggedIn}}data-link-field-roots="{{linkFieldRoots}}" {{{linkFieldData}}} data-profile-home-uri="{{profileHomeUri}}" data-display-name="{{displayName}}"{{/isLoggedIn}} data-behaviour="LoginControl">
+<div class="login-control" {{#isLoggedIn}}data-link-field-roots="{{linkFieldRoots}}" {{{linkFieldData}}} data-default-uri="{{defaultUri}}" data-display-name="{{displayName}}"{{/isLoggedIn}} data-behaviour="LoginControl">
 
   {{#isLoggedIn}}
-    <a href="{{profileHomeUri}}" class="login-control__non_js_control_link">{{{displayName}}}</a>
+    <a href="{{defaultUri}}" class="login-control__non_js_control_link">{{{displayName}}}</a>
   {{/isLoggedIn}}
 
   {{^isLoggedIn}}

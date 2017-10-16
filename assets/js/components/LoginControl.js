@@ -126,7 +126,7 @@ module.exports = class LoginControl {
    */
   setPropertiesFromDataAttributes(dataAttributeRoots, $elm) {
     this.displayName = $elm.dataset.displayName;
-    this.profileHomeUri = $elm.dataset.profileHomeUri;
+    this.defaultUri = $elm.dataset.defaultUri;
     this.extraLinksToBuild = LoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
   }
 
@@ -220,22 +220,22 @@ module.exports = class LoginControl {
    */
   buildMenu(extraLinksToBuild, buildElement) {
     const $list = buildElement.call(null, 'ul', ['login-control__controls', 'hidden']);
-    this.insertProfileHomeLink($list, buildElement);
+    this.insertDefaultLink($list, buildElement);
     this.insertExtraLinks(extraLinksToBuild, $list, buildElement);
     return $list;
   }
 
   /**
-   * Build and insert the profile home link into the supplied container
+   * Build and insert the default link into the supplied container
    *
-   * @param {HTMLElement} $container The required parent of the profile home link
+   * @param {HTMLElement} $container The required parent of the default link
    * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
    * @return {*}
    */
-  insertProfileHomeLink($container, buildElement) {
+  insertDefaultLink($container, buildElement) {
     const $li = buildElement.call(null, 'li', ['login-control__control'], '', $container);
     const $a = buildElement.call(null, 'a', ['login-control__link'], '', $li);
-    $a.setAttribute('href', this.profileHomeUri);
+    $a.setAttribute('href', this.defaultUri);
     buildElement.call(null, 'div', ['login-control__display_name'], this.displayName, $a);
     buildElement.call(null, 'div', ['login-control__subsidiary_text'], 'View my profile', $a);
 

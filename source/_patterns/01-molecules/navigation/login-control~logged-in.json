@@ -1,7 +1,7 @@
 {
   "isLoggedIn": true,
   "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
-  "profileHomeUri": "#profileHome",
+  "defaultUri": "#profileHome",
   "linkFieldRoots": "profile-manager, logout",
   "linkFieldData": "data-profile-manager-text=\"Manage your profile\" data-profile-manager-uri=\"#profileManageLink\" data-logout-text=\"Log out\" data-logout-uri=\"/log-out\""
 }

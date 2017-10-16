@@ -298,9 +298,9 @@ describe('A LoginControl Component', function () {
       expect(loginControl.displayName).to.equal(valueFromDataAttribute);
     });
 
-    it('has a  profileHomeUri property set from the profile-home-uri data attribute', () => {
-      const valueFromDataAttribute = $elm.dataset.profileHomeUri;
-      expect(loginControl.profileHomeUri).to.equal(valueFromDataAttribute);
+    it('has a  defaultUri property set from the default-uri data attribute', () => {
+      const valueFromDataAttribute = $elm.dataset.defaultUri;
+      expect(loginControl.defaultUri).to.equal(valueFromDataAttribute);
     });
 
   });
@@ -319,17 +319,17 @@ describe('A LoginControl Component', function () {
     describe('the $control property', () => {
 
       it('has a toggle', () => {
-        expect($elm.querySelector('.profile-login-control__controls_toggle')).not.to.be.null;
+        expect($elm.querySelector('.login-control__controls_toggle')).not.to.be.null;
       });
 
-      it('has a profile home link that has its URI value specified by the profile-home-uri data attribute', () => {
-        const expected = $elm.dataset.profileHomeUri;
+      it('has a default link that has its URI value specified by the default-uri data attribute', () => {
+        const expected = $elm.dataset.defaultUri;
         expect($elm.querySelector(`[href="${expected}"]`)).not.to.be.null;
       });
 
       it('has a display name specified by the display-name data attribute', () => {
         const expected = $elm.dataset.displayName;
-        expect($elm.querySelector('.profile-login-control__display_name').innerHTML).to.equal(expected);
+        expect($elm.querySelector('.login-control__display_name').innerHTML).to.equal(expected);
       });
 
       describe('the extra links', () => {

@@ -11,7 +11,7 @@ schema:
       type: boolean
       enum:
         - true
-    profileHomeUri:
+    defaultUri:
       type: string
       minLength: 1
     displayName:
@@ -32,5 +32,5 @@ schema:
     button:
       $ref: ../../00-atoms/components/button.yaml#/schema
   dependencies:
-    isLoggedIn: [profileHomeUri, displayName]
+    isLoggedIn: [defaultUri, displayName]
     linkFieldRoots: [linkFieldData]
