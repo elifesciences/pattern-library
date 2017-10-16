@@ -33,7 +33,7 @@
 
     {
       "classes": "nav-secondary__item",
-      "profileLoginControl": {
+      "loginControl": {
         "button": {
           "text": "Log in / Register",
           "path": "#",

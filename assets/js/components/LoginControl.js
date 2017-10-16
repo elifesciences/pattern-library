@@ -1,7 +1,7 @@
 'use strict';
 const utils = require('../libs/elife-utils')();
 
-module.exports = class ProfileLoginControl {
+module.exports = class LoginControl {
 
   constructor($elm, _window = window, doc = document) {
     this.$elm = $elm;
@@ -10,7 +10,7 @@ module.exports = class ProfileLoginControl {
 
     try {
       this.setPropertiesFromDataAttributes(
-        ProfileLoginControl.deriveDataAttributeRoots(
+        LoginControl.deriveDataAttributeRoots(
           this.$elm.dataset.linkFieldRoots,
           this.$elm
         ),
@@ -25,7 +25,7 @@ module.exports = class ProfileLoginControl {
 
     this.$elm.appendChild(this.$control);
 
-    const nonJsLink = this.$elm.querySelector('.profile-login-control__non_js_control_link');
+    const nonJsLink = this.$elm.querySelector('.login-control__non_js_control_link');
     if (nonJsLink) {
       this.$elm.removeChild(nonJsLink);
     }
@@ -64,7 +64,7 @@ module.exports = class ProfileLoginControl {
    *
    */
   static deriveDataAttributeRoots(rootsList, $elm) {
-    if (!ProfileLoginControl.validateDataAttributeRootsList(rootsList)) {
+    if (!LoginControl.validateDataAttributeRootsList(rootsList)) {
       throw new SyntaxError('invalid roots list supplied');
     }
 
@@ -73,7 +73,7 @@ module.exports = class ProfileLoginControl {
       return [];
     }
 
-    if (!ProfileLoginControl.areAllImpliedDataAttributesPresent(dataAttributeRoots, $elm)) {
+    if (!LoginControl.areAllImpliedDataAttributesPresent(dataAttributeRoots, $elm)) {
       throw new ReferenceError('One or more required data attributes implied by data-link-field-roots are missing');
     }
 
@@ -90,8 +90,8 @@ module.exports = class ProfileLoginControl {
   static areAllImpliedDataAttributesPresent(dataAttributeRoots, $elm) {
     let areAllPresent = true;
     dataAttributeRoots.forEach((root) => {
-      if (!$elm.dataset[ProfileLoginControl.convertKebabCaseToCamelCase(`${root}-uri`)] ||
-          !$elm.dataset[ProfileLoginControl.convertKebabCaseToCamelCase(`${root}-text`)]
+      if (!$elm.dataset[LoginControl.convertKebabCaseToCamelCase(`${root}-uri`)] ||
+          !$elm.dataset[LoginControl.convertKebabCaseToCamelCase(`${root}-text`)]
       ) {
         areAllPresent = false;
       }
@@ -127,7 +127,7 @@ module.exports = class ProfileLoginControl {
   setPropertiesFromDataAttributes(dataAttributeRoots, $elm) {
     this.displayName = $elm.dataset.displayName;
     this.profileHomeUri = $elm.dataset.profileHomeUri;
-    this.extraLinksToBuild = ProfileLoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
+    this.extraLinksToBuild = LoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
   }
 
   /**
@@ -141,11 +141,11 @@ module.exports = class ProfileLoginControl {
     const linksToBuild = [];
     dataAttributeRoots.forEach((dataAttributeRoot) => {
       const textDataAttribute = `${dataAttributeRoot}-text`;
-      const textProperty = ProfileLoginControl.convertKebabCaseToCamelCase(textDataAttribute);
+      const textProperty = LoginControl.convertKebabCaseToCamelCase(textDataAttribute);
       const text = $elm.dataset[textProperty];
 
       const uriDataAttribute = `${dataAttributeRoot}-uri`;
-      const uriProperty = ProfileLoginControl.convertKebabCaseToCamelCase(uriDataAttribute);
+      const uriProperty = LoginControl.convertKebabCaseToCamelCase(uriDataAttribute);
       const uri = $elm.dataset[uriProperty];
 
       if (text && uri) {
@@ -195,7 +195,7 @@ module.exports = class ProfileLoginControl {
    * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
    */
   insertToggle($container, buildElement) {
-    const $toggle = buildElement.call(null, 'a', ['profile-login-control__controls_toggle'], '', $container);
+    const $toggle = buildElement.call(null, 'a', ['login-control__controls_toggle'], '', $container);
     $toggle.href = '#';
 
     const $picture = buildElement.call(null, 'picture', [], '', $toggle);
@@ -219,7 +219,7 @@ module.exports = class ProfileLoginControl {
    * @return {HTMLElement} The menu that has been built
    */
   buildMenu(extraLinksToBuild, buildElement) {
-    const $list = buildElement.call(null, 'ul', ['profile-login-control__controls', 'hidden']);
+    const $list = buildElement.call(null, 'ul', ['login-control__controls', 'hidden']);
     this.insertProfileHomeLink($list, buildElement);
     this.insertExtraLinks(extraLinksToBuild, $list, buildElement);
     return $list;
@@ -233,11 +233,11 @@ module.exports = class ProfileLoginControl {
    * @return {*}
    */
   insertProfileHomeLink($container, buildElement) {
-    const $li = buildElement.call(null, 'li', ['profile-login-control__control'], '', $container);
-    const $a = buildElement.call(null, 'a', ['profile-login-control__link'], '', $li);
+    const $li = buildElement.call(null, 'li', ['login-control__control'], '', $container);
+    const $a = buildElement.call(null, 'a', ['login-control__link'], '', $li);
     $a.setAttribute('href', this.profileHomeUri);
-    buildElement.call(null, 'div', ['profile-login-control__display_name'], this.displayName, $a);
-    buildElement.call(null, 'div', ['profile-login-control__subsidiary_text'], 'View my profile', $a);
+    buildElement.call(null, 'div', ['login-control__display_name'], this.displayName, $a);
+    buildElement.call(null, 'div', ['login-control__subsidiary_text'], 'View my profile', $a);
 
     return $li;
   }
@@ -255,7 +255,7 @@ module.exports = class ProfileLoginControl {
     }
 
     extraLinksData.forEach((extraLinkData) => {
-      ProfileLoginControl.insertLink(extraLinkData, $container, buildElement);
+      LoginControl.insertLink(extraLinkData, $container, buildElement);
     });
   }
 
@@ -267,8 +267,8 @@ module.exports = class ProfileLoginControl {
    * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
    */
   static insertLink(linkData, $container, buildElement) {
-    const $li = buildElement.call(null, 'li', ['profile-login-control__control'], '', $container);
-    const $a = buildElement.call(null, 'a', ['profile-login-control__link'], linkData.text, $li);
+    const $li = buildElement.call(null, 'li', ['login-control__control'], '', $container);
+    const $a = buildElement.call(null, 'a', ['login-control__link'], linkData.text, $li);
     $a.setAttribute('href', linkData.uri);
   }
 

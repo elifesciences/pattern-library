@@ -2,7 +2,7 @@
 
 $menu-max-width-in-px: 200;
 
-.profile-login-control__non_js_control_link {
+.login-control__non_js_control_link {
   display: block;
   @include non_js_control_link();
   line-height: 1.7142857143; // 24px on 14px font-size
@@ -12,7 +12,7 @@ $menu-max-width-in-px: 200;
   max-width: 29vw;
 }
 
-.profile-login-control__controls {
+.login-control__controls {
   border-radius: #{$border-radius}px;
   @include box-shadow();
   @include colors(#fff, $color-text-dividers, $color-text);
@@ -23,7 +23,7 @@ $menu-max-width-in-px: 200;
   list-style-type: none;
 }
 
-.profile-login-control__control {
+.login-control__control {
   font-family: $font-secondary;
   @include font-size(14);
   line-height: 2.6; // 36px on 14px base font size
@@ -44,12 +44,12 @@ $menu-max-width-in-px: 200;
 
 }
 
-.profile-login-control__link {
+.login-control__link {
   color: $color-text;
   text-transform: none;
 }
 
-.profile-login-control__display_name {
+.login-control__display_name {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -57,7 +57,7 @@ $menu-max-width-in-px: 200;
   @include font-size(16);
   line-height: 1.5;
 
-  & + .profile-login-control__subsidiary_text {
+  & + .login-control__subsidiary_text {
     line-height: 1.7142857143; // 24 px on 14px font size
   }
 }

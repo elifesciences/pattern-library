@@ -24,13 +24,13 @@ if (window.localStorage && document.querySelector &&
   Components.FilterPanel = require('./components/FilterPanel');
   Components.FragmentHandler = require('./components/FragmentHandler');
   Components.Highlights = require('./components/Highlights');
+  Components.LoginControl = require('./components/LoginControl');
   Components.MainMenu = require('./components/MainMenu');
   Components.Math = require('./components/Math');
   Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
   Components.Metrics = require('./components/Metrics');
   Components.Pager = require('./components/Pager');
   Components.Popup = require('./components/Popup');
-  Components.ProfileLoginControl = require('./components/ProfileLoginControl');
   Components.SearchBox = require('./components/SearchBox');
   Components.SectionListingLink = require('./components/SectionListingLink');
   Components.SelectNav = require('./components/SelectNav');

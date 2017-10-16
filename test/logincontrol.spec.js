@@ -1,7 +1,7 @@
 let expect = chai.expect;
 
 // load in component(s) to be tested
-let ProfileLoginControl = require('../assets/js/components/ProfileLoginControl');
+let LoginControl = require('../assets/js/components/LoginControl');
 
 function checkTextFixturePrerequisites($fixture) {
   'use strict';
@@ -13,18 +13,18 @@ function checkTextFixturePrerequisites($fixture) {
   expect($fixture.data.logoutText).to.not.be.empty();
 }
 
-describe('A ProfileLoginControl Component', function () {
+describe('A LoginControl Component', function () {
   'use strict';
   let $elm;
-  let profileLoginControl;
+  let loginControl;
 
   beforeEach(function () {
-    $elm = document.querySelector('[data-behaviour="ProfileLoginControl"]');
-    profileLoginControl = new ProfileLoginControl($elm);
+    $elm = document.querySelector('[data-behaviour="LoginControl"]');
+    loginControl = new LoginControl($elm);
   });
 
   it('exists', function () {
-    expect(ProfileLoginControl).to.exist;
+    expect(LoginControl).to.exist;
   });
 
   describe('for handling its data attributes', () => {
@@ -91,27 +91,27 @@ describe('A ProfileLoginControl Component', function () {
     });
 
     it('has a validateDataAttributeRootsList static method', () => {
-      expect(ProfileLoginControl.validateDataAttributeRootsList).to.be.a('function');
+      expect(LoginControl.validateDataAttributeRootsList).to.be.a('function');
     });
 
     describe('the validateDataAttributeRootsList method', () => {
 
       it('returns false if supplied with an invalid value', () => {
         invalidDataAttributeRoots.forEach((invalidValue) => {
-          expect(ProfileLoginControl.validateDataAttributeRootsList(invalidValue)).to.be.false;
+          expect(LoginControl.validateDataAttributeRootsList(invalidValue)).to.be.false;
         });
       });
 
       it('returns true if supplied with a valid value', () => {
         validDataAttributeRoots.forEach((validValue) => {
-          expect(ProfileLoginControl.validateDataAttributeRootsList(validValue)).to.be.true;
+          expect(LoginControl.validateDataAttributeRootsList(validValue)).to.be.true;
         });
 
       });
     });
 
     it('has a deriveDataAttributeRoots static method', () => {
-      expect(ProfileLoginControl.deriveDataAttributeRoots).to.be.a('function');
+      expect(LoginControl.deriveDataAttributeRoots).to.be.a('function');
     });
 
     describe('the deriveDataAttributeRoots method', () => {
@@ -120,7 +120,7 @@ describe('A ProfileLoginControl Component', function () {
 
         it('throws a SyntaxError with the message "invalid roots list supplied"', () => {
           invalidDataAttributeRoots.forEach((invalidArgument) => {
-            const shouldThrow = () => ProfileLoginControl.deriveDataAttributeRoots(invalidArgument, $elm);
+            const shouldThrow = () => LoginControl.deriveDataAttributeRoots(invalidArgument, $elm);
             expect(shouldThrow).to.throw(SyntaxError, 'invalid roots list supplied');
           });
         });
@@ -131,7 +131,7 @@ describe('A ProfileLoginControl Component', function () {
         const validStringButInvalidRoot = 'missing-attribute';
 
         it('throws a ReferenceError with the message "One or more required data attributes implied by data-link-field-roots are missing"', () => {
-          const shouldThrow = () => ProfileLoginControl.deriveDataAttributeRoots(validStringButInvalidRoot, $elm);
+          const shouldThrow = () => LoginControl.deriveDataAttributeRoots(validStringButInvalidRoot, $elm);
           expect(shouldThrow).to.throw(ReferenceError, 'One or more required data attributes implied by data-link-field-roots are missing');
         });
 
@@ -142,7 +142,7 @@ describe('A ProfileLoginControl Component', function () {
         const stringWithNoSpacesCommas = 'logout';
 
         it('returns an array with the argument unaltered as its only element', () => {
-          const observed = ProfileLoginControl.deriveDataAttributeRoots(stringWithNoSpacesCommas,
+          const observed = LoginControl.deriveDataAttributeRoots(stringWithNoSpacesCommas,
                                                                         $elm);
           expect(observed).to.have.lengthOf(1);
           expect(observed[0]).to.equal(stringWithNoSpacesCommas);
@@ -155,7 +155,7 @@ describe('A ProfileLoginControl Component', function () {
         const stringWithCommas = 'profile-manager, logout';
 
         it('returns an array containing elements from the string, as split by the commas', () => {
-          const observed = ProfileLoginControl.deriveDataAttributeRoots(stringWithCommas, $elm);
+          const observed = LoginControl.deriveDataAttributeRoots(stringWithCommas, $elm);
           expect(observed).to.have.lengthOf(2);
           expect(observed[0]).to.equal('profile-manager');
           expect(observed[1]).to.equal('logout');
@@ -167,7 +167,7 @@ describe('A ProfileLoginControl Component', function () {
 
 
     it('has an areAllImpliedDataAttributesPresent static method', () => {
-      expect(ProfileLoginControl.areAllImpliedDataAttributesPresent).to.be.a('function');
+      expect(LoginControl.areAllImpliedDataAttributesPresent).to.be.a('function');
     });
 
     describe('the areAllImpliedDataAttributesPresent method', () => {
@@ -176,7 +176,7 @@ describe('A ProfileLoginControl Component', function () {
 
         it('returns true', () => {
           expect(
-            ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager', 'logout'],
+            LoginControl.areAllImpliedDataAttributesPresent(['profile-manager', 'logout'],
                                                                    $elm)).to.be.true;
         });
 
@@ -187,18 +187,18 @@ describe('A ProfileLoginControl Component', function () {
         let logoutUriBackup;
 
         before(() => {
-          expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
+          expect(LoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
           logoutUriBackup = $elm.dataset.logoutUri;
         });
 
         after(() => {
           $elm.dataset.logoutUri = logoutUriBackup;
-          expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
+          expect(LoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
         });
 
         it('returns false', () => {
           delete $elm.dataset.logoutUri;
-          expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.false;
+          expect(LoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.false;
         });
 
     });
@@ -208,18 +208,18 @@ describe('A ProfileLoginControl Component', function () {
       let logoutTextBackup;
 
       before(() => {
-        expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
+        expect(LoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
         logoutTextBackup = $elm.dataset.logoutText;
       });
 
       after(() => {
         $elm.dataset.logoutText = logoutTextBackup;
-        expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
+        expect(LoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.true;
       });
 
       it('returns false', () => {
         delete $elm.dataset.logoutText;
-        expect(ProfileLoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.false;
+        expect(LoginControl.areAllImpliedDataAttributesPresent(['profile-manager','logout'], $elm)).to.be.false;
       });
 
     });
@@ -227,7 +227,7 @@ describe('A ProfileLoginControl Component', function () {
   });
 
     it('has a deriveLinksToBuild static method', () => {
-      expect(ProfileLoginControl.deriveLinksToBuild).to.be.a('function');
+      expect(LoginControl.deriveLinksToBuild).to.be.a('function');
     });
 
     describe('the deriveLinksToBuild method', () => {
@@ -242,7 +242,7 @@ describe('A ProfileLoginControl Component', function () {
             checkTextFixturePrerequisites($elm);
           });
 
-          const observed = ProfileLoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
+          const observed = LoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
           expect(observed[0].uri).to.equal($elm.dataset.profileManagerUri);
           expect(observed[0].text).to.equal($elm.dataset.profileManagerText);
           expect(observed[1].uri).to.equal($elm.dataset.logoutUri);
@@ -270,7 +270,7 @@ describe('A ProfileLoginControl Component', function () {
         });
 
         it('that data attribute root is not used to derive the return value', () => {
-          const observed = ProfileLoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
+          const observed = LoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
           expect(observed).to.have.a.lengthOf(1);
           expect(observed[0].uri).to.equal($elm.dataset.logoutUri);
           expect(observed[0].text).to.equal($elm.dataset.logoutText);
@@ -286,7 +286,7 @@ describe('A ProfileLoginControl Component', function () {
         checkTextFixturePrerequisites($elm);
       });
 
-      const observed = profileLoginControl.extraLinksToBuild;
+      const observed = loginControl.extraLinksToBuild;
       expect(observed[0].uri).to.equal($elm.dataset.profileManagerUri);
       expect(observed[0].text).to.equal($elm.dataset.profileManagerText);
       expect(observed[1].uri).to.equal($elm.dataset.logoutUri);
@@ -295,25 +295,25 @@ describe('A ProfileLoginControl Component', function () {
 
     it('has a  displayName property set from the display-name data attribute', () => {
       const valueFromDataAttribute = $elm.dataset.displayName;
-      expect(profileLoginControl.displayName).to.equal(valueFromDataAttribute);
+      expect(loginControl.displayName).to.equal(valueFromDataAttribute);
     });
 
     it('has a  profileHomeUri property set from the profile-home-uri data attribute', () => {
       const valueFromDataAttribute = $elm.dataset.profileHomeUri;
-      expect(profileLoginControl.profileHomeUri).to.equal(valueFromDataAttribute);
+      expect(loginControl.profileHomeUri).to.equal(valueFromDataAttribute);
     });
 
   });
 
   it('has a convertKebabCaseToCamelCase static method', () => {
-    expect(ProfileLoginControl.convertKebabCaseToCamelCase).to.be.a('function');
+    expect(LoginControl.convertKebabCaseToCamelCase).to.be.a('function');
   });
 
   describe('its DOM', () => {
 
     it('has a $control property that is a <nav> element', () => {
-      expect(profileLoginControl.$control).to.be.an.instanceOf(HTMLElement);
-      expect(profileLoginControl.$control.nodeName).to.equal('NAV');
+      expect(loginControl.$control).to.be.an.instanceOf(HTMLElement);
+      expect(loginControl.$control.nodeName).to.equal('NAV');
     });
 
     describe('the $control property', () => {
@@ -370,7 +370,7 @@ describe('A ProfileLoginControl Component', function () {
         ];
 
         invalidValues.forEach((invalidValue) => {
-          expect(ProfileLoginControl.convertKebabCaseToCamelCase(invalidValue)).to.be.null;
+          expect(LoginControl.convertKebabCaseToCamelCase(invalidValue)).to.be.null;
         });
 
       });
@@ -381,7 +381,7 @@ describe('A ProfileLoginControl Component', function () {
 
         it('strips the hyphens and camel cases the string into a compound word', () => {
           const expected = 'iAmAHyphenContainingString';
-          expect(ProfileLoginControl.convertKebabCaseToCamelCase(hyphenContainingString)).to.equal(
+          expect(LoginControl.convertKebabCaseToCamelCase(hyphenContainingString)).to.equal(
             expected);
         });
 

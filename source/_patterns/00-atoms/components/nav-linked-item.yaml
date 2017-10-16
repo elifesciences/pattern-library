@@ -38,7 +38,7 @@ schema:
             - button
         -
           properties:
-            profileLoginControl:
-              $ref: ../../01-molecules/navigation/profile-login-control.yaml#/schema
+            loginControl:
+              $ref: ../../01-molecules/navigation/login-control.yaml#/schema
           required:
-            - profileLoginControl
+            - loginControl
