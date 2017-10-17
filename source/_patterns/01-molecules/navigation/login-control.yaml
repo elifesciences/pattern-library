@@ -17,6 +17,22 @@ schema:
     displayName:
       type: string
       minLength: 1
+    icon:
+      type: object
+      properties:
+        altText:
+          type: string
+          minLength: 1
+        pathRoot:
+          type: string
+          minLength: 1
+        srcset:
+          type: string
+          minLength: 1
+      required:
+        - altText
+        - pathRoot
+        - srcset
     linkFieldRoots:
       type: string
 #      linkFieldRoots is a list of one or more words that are comma-separated. The regex:
@@ -32,5 +48,5 @@ schema:
     button:
       $ref: ../../00-atoms/components/button.yaml#/schema
   dependencies:
-    isLoggedIn: [defaultUri, displayName]
+    isLoggedIn: [defaultUri, displayName, icon]
     linkFieldRoots: [linkFieldData]

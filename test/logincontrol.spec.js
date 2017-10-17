@@ -322,6 +322,39 @@ describe('A LoginControl Component', function () {
         expect($elm.querySelector('.login-control__controls_toggle')).not.to.be.null;
       });
 
+      describe('the toggle', () => {
+
+        it('has an icon', () => {
+          const $icon = $elm.querySelector('.login-control__controls_toggle > picture');
+          expect($icon).not.to.be.null;
+        });
+
+        describe('the icon', () => {
+
+          it('has a default path derived from the data-icon-path-root attribute', () => {
+            const $observed = $elm.querySelector('.login-control__controls_toggle > picture > img').getAttribute('src');
+            expect($observed).to.equal(`${$elm.dataset.iconPathRoot}.png`);
+          });
+
+          it('has an svg path derived from the data-icon-path-root attribute', () => {
+            const $observed = $elm.querySelector('.login-control__controls_toggle > picture > source').getAttribute('srcset');
+            expect($observed).to.equal(`${$elm.dataset.iconPathRoot}.svg`);
+          });
+
+          it('has a srcset provided by the data-icon-srcset attribute', () => {
+            const $observed = $elm.querySelector('.login-control__controls_toggle > picture > img').getAttribute('srcset');
+            expect($observed).to.equal($elm.dataset.iconSrcset);
+          });
+
+          it('has an alt attribute provided by the data-icon-alt-text attribute', () => {
+            const $observed = $elm.querySelector('.login-control__controls_toggle > picture > img').getAttribute('alt');
+            expect($observed).to.equal($elm.dataset.iconAltText);
+          });
+
+        });
+
+      });
+
       it('has a default link that has its URI value specified by the default-uri data attribute', () => {
         const expected = $elm.dataset.defaultUri;
         expect($elm.querySelector(`[href="${expected}"]`)).not.to.be.null;

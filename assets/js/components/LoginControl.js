@@ -16,7 +16,7 @@ module.exports = class LoginControl {
         ),
         this.$elm
       );
-      this.$control = this.buildControl(this.extraLinksToBuild, utils.buildElement);
+      this.$control = this.buildControl(this.extraLinksToBuild, this.$elm, utils.buildElement);
     } catch (e) {
       // TODO: When removing, Log to NR instead?
       this.window.console.log(e);
@@ -176,12 +176,19 @@ module.exports = class LoginControl {
    * This is the top level entry point for building the required DOM elements.
    *
    * @param {Array.<{text: String, uri: String}>} extraLinksToBuild data defining the links to build
+   * @param {HTMLElement} $elm pattern-root element
    * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
    * @return {HTMLElement} The resulting control element
    */
-  buildControl(extraLinksToBuild, buildElement) {
+  buildControl(extraLinksToBuild, $elm, buildElement) {
+    const iconData = {
+      pathRoot: $elm.dataset.iconPathRoot,
+      srcset: $elm.dataset.iconSrcset,
+      altText: $elm.dataset.iconAltText
+    };
+
     const $nav = buildElement.call(null, 'nav');
-    this.insertToggle($nav, buildElement);
+    this.insertToggle($nav, iconData, buildElement);
     this.$menu = this.buildMenu(extraLinksToBuild, buildElement);
     $nav.appendChild(this.$menu);
 
@@ -192,23 +199,42 @@ module.exports = class LoginControl {
    * Build and insert the menu toggle into the supplied container
    *
    * @param {HTMLElement} $container The required parent of the toggle
+   * @param {Object} iconData data describing the icon
+   * @param {String} iconData.pathRoot a common path component to all versions (so minus the file extension)
+   * @param {String} iconData.srcset the srcset to use on the <img>
+   * @param {String} iconData.atlText the text for the [alt]
    * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
    */
-  insertToggle($container, buildElement) {
+  insertToggle($container, iconData, buildElement) {
     const $toggle = buildElement.call(null, 'a', ['login-control__controls_toggle'], '', $container);
-    $toggle.href = '#';
-
-    const $picture = buildElement.call(null, 'picture', [], '', $toggle);
-    const $source = buildElement.call(null, 'source', [], '', $picture);
-    $source.setAttribute('srcset', '../../assets/img/icons/profile.svg');
-
-    const $img = buildElement.call(null, 'img', [], '', $picture);
-    $img.setAttribute('srcset',
-                      '../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w');
-    $img.setAttribute('src', '../../assets/img/icons/profile.png');
-    $img.setAttribute('alt', 'profile icon');
-
+    $toggle.setAttribute('href', '#');
+    $toggle.appendChild(LoginControl.buildIcon(iconData, buildElement));
     $toggle.addEventListener('click', this.toggle.bind(this));
+  }
+
+  /**
+   * @param {Object} iconData data describing the icon
+   * @param {String} iconData.pathRoot a common path component to all versions (so minus the file extension)
+   * @param {String} iconData.srcset the srcset to use on the <img>
+   * @param {String} iconData.atlText the text for the [alt]
+   * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
+   * @returns {HTMLElement} the <picture> describing the icon
+   */
+  static buildIcon(iconData, buildElement) {
+    if (!(iconData.pathRoot && iconData.srcset && iconData.altText)) {
+      return null;
+    }
+
+    const $icon = buildElement.call(null, 'picture');
+    const $source = buildElement.call(null, 'source', [], '', $icon);
+    $source.setAttribute('srcset', `${iconData.pathRoot}.svg`);
+
+    const $img = buildElement.call(null, 'img', [], '', $icon);
+    $img.setAttribute('srcset', iconData.srcset);
+    $img.setAttribute('src', `${iconData.pathRoot}.png`);
+    $img.setAttribute('alt', iconData.altText);
+
+    return $icon;
   }
 
   /**

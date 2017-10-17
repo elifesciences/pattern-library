@@ -1,5 +1,22 @@
 
-<div class="login-control" {{#isLoggedIn}}data-link-field-roots="{{linkFieldRoots}}" {{{linkFieldData}}} data-default-uri="{{defaultUri}}" data-display-name="{{displayName}}"{{/isLoggedIn}} data-behaviour="LoginControl">
+<div class="login-control"
+
+  {{#isLoggedIn}}
+
+     data-link-field-roots="{{linkFieldRoots}}"
+     {{{linkFieldData}}}
+     data-default-uri="{{defaultUri}}"
+     data-display-name="{{displayName}}"
+
+     {{#icon}}
+       data-icon-path-root="{{pathRoot}}"
+       data-icon-srcset="{{srcset}}"
+       data-icon-alt-text="{{altText}}"
+     {{/icon}}
+
+  {{/isLoggedIn}}
+
+     data-behaviour="LoginControl">
 
   {{#isLoggedIn}}
     <a href="{{defaultUri}}" class="login-control__non_js_control_link">{{{displayName}}}</a>
