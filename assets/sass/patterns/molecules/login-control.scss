@@ -43,6 +43,9 @@ $menu-max-width-in-px: 200;
   &:last-child {
     margin-top: 0;
     @include padding(12, "bottom");
+  }
+
+  &:last-child:not(&:first-child) {
     padding-top: 0;
   }
 
