@@ -9,7 +9,7 @@ schema:
   oneOf:
     - properties:
         button:
-        $ref: ../../00-atoms/components/button.yaml#/schema
+          $ref: ../../00-atoms/components/button.yaml#/schema
       required:
         - button
     - properties:
