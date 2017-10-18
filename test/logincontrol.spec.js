@@ -5,13 +5,12 @@ let LoginControl = require('../assets/js/components/LoginControl');
 
 function checkTextFixturePrerequisites($fixture) {
   'use strict';
-  // TODO: Update these
   // Ensure the expected data attributes are present on the test fixture
   expect($fixture.dataset.linkFieldRoots).to.equal('profile-manager, logout');
-  expect($fixture.data.profileManagerUri).to.not.be.empty();
-  expect($fixture.data.profileManagerText).to.not.be.empty();
-  expect($fixture.data.logoutUri).to.not.be.empty();
-  expect($fixture.data.logoutText).to.not.be.empty();
+  expect($fixture.dataset.profileManagerUri).to.not.be.empty;
+  expect($fixture.dataset.profileManagerText).to.not.be.empty;
+  expect($fixture.dataset.logoutUri).to.not.be.empty;
+  expect($fixture.dataset.logoutText).to.not.be.empty;
 }
 
 describe('A LoginControl Component', function () {
@@ -239,9 +238,7 @@ describe('A LoginControl Component', function () {
 
         it('returns an object with the properties "text" and "uri" assigned the values of the respective implied data attributes', () => {
 
-          before(() => {
-            checkTextFixturePrerequisites($elm);
-          });
+          checkTextFixturePrerequisites($elm);
 
           const observed = LoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
           expect(observed[0].uri).to.equal($elm.dataset.profileManagerUri);
@@ -283,9 +280,7 @@ describe('A LoginControl Component', function () {
 
     it('has an extraLinksToBuild property with a value derived from the link-field-roots data attribute value', () => {
 
-      before(() => {
-        checkTextFixturePrerequisites($elm);
-      });
+      checkTextFixturePrerequisites($elm);
 
       const observed = loginControl.extraLinksToBuild;
       expect(observed[0].uri).to.equal($elm.dataset.profileManagerUri);
@@ -348,9 +343,7 @@ describe('A LoginControl Component', function () {
             'are present and correct as implied by the value of the link-field-roots data attribute',
             () => {
 
-              before(() => {
-                checkTextFixturePrerequisites($elm);
-              });
+              checkTextFixturePrerequisites($elm);
 
               const profileManagerLink = $elm.querySelector(
                 `[href="${$elm.dataset.profileManagerUri}"]`);
