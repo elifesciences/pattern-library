@@ -5,6 +5,7 @@ let LoginControl = require('../assets/js/components/LoginControl');
 
 function checkTextFixturePrerequisites($fixture) {
   'use strict';
+  // TODO: Update these
   // Ensure the expected data attributes are present on the test fixture
   expect($fixture.dataset.linkFieldRoots).to.equal('profile-manager, logout');
   expect($fixture.data.profileManagerUri).to.not.be.empty();
@@ -327,65 +328,44 @@ describe('A LoginControl Component', function () {
         it('has an icon', () => {
           const $icon = $elm.querySelector('.login-control__controls_toggle > picture');
           expect($icon).not.to.be.null;
+          expect($icon.querySelector('img').getAttribute('src')).not.to.be.empty;
         });
 
-        describe('the icon', () => {
+        it('has a default link that has its URI value specified by the default-uri data attribute',
+           () => {
+             const expected = $elm.dataset.defaultUri;
+             expect($elm.querySelector(`[href="${expected}"]`)).not.to.be.null;
+           });
 
-          it('has a default path derived from the data-icon-path-root attribute', () => {
-            const $observed = $elm.querySelector('.login-control__controls_toggle > picture > img').getAttribute('src');
-            expect($observed).to.equal(`${$elm.dataset.iconPathRoot}.png`);
-          });
-
-          it('has an svg path derived from the data-icon-path-root attribute', () => {
-            const $observed = $elm.querySelector('.login-control__controls_toggle > picture > source').getAttribute('srcset');
-            expect($observed).to.equal(`${$elm.dataset.iconPathRoot}.svg`);
-          });
-
-          it('has a srcset provided by the data-icon-srcset attribute', () => {
-            const $observed = $elm.querySelector('.login-control__controls_toggle > picture > img').getAttribute('srcset');
-            expect($observed).to.equal($elm.dataset.iconSrcset);
-          });
-
-          it('has an alt attribute provided by the data-icon-alt-text attribute', () => {
-            const $observed = $elm.querySelector('.login-control__controls_toggle > picture > img').getAttribute('alt');
-            expect($observed).to.equal($elm.dataset.iconAltText);
-          });
-
+        it('has a display name specified by the display-name data attribute', () => {
+          const expected = $elm.dataset.displayName;
+          expect($elm.querySelector('.login-control__display_name').innerHTML).to.equal(expected);
         });
 
-      });
+        describe('the extra links', () => {
 
-      it('has a default link that has its URI value specified by the default-uri data attribute', () => {
-        const expected = $elm.dataset.defaultUri;
-        expect($elm.querySelector(`[href="${expected}"]`)).not.to.be.null;
-      });
+          it(
+            'are present and correct as implied by the value of the link-field-roots data attribute',
+            () => {
 
-      it('has a display name specified by the display-name data attribute', () => {
-        const expected = $elm.dataset.displayName;
-        expect($elm.querySelector('.login-control__display_name').innerHTML).to.equal(expected);
-      });
+              before(() => {
+                checkTextFixturePrerequisites($elm);
+              });
 
-      describe('the extra links', () => {
+              const profileManagerLink = $elm.querySelector(
+                `[href="${$elm.dataset.profileManagerUri}"]`);
+              expect(profileManagerLink.innerHTML).to.equal($elm.dataset.profileManagerText);
+              const logoutLink = $elm.querySelector(`[href="${$elm.dataset.logoutUri}"]`);
+              expect(logoutLink.innerHTML).to.equal($elm.dataset.logoutText);
+            })
 
-        it('are present and correct as implied by the value of the link-field-roots data attribute', () => {
-
-          before(() => {
-            checkTextFixturePrerequisites($elm);
-          });
-
-          const profileManagerLink = $elm.querySelector(`[href="${$elm.dataset.profileManagerUri}"]`);
-          expect(profileManagerLink.innerHTML).to.equal($elm.dataset.profileManagerText);
-          const logoutLink = $elm.querySelector(`[href="${$elm.dataset.logoutUri}"]`);
-          expect(logoutLink.innerHTML).to.equal($elm.dataset.logoutText);
         })
 
-      })
+      });
 
     });
 
-  });
-
-  describe('the convertKebabCaseToCamelCase method', () => {
+    describe('the convertKebabCaseToCamelCase method', () => {
 
       it('returns null if not provided with a string at least one character long', () => {
         const invalidValues = [
@@ -421,6 +401,8 @@ describe('A LoginControl Component', function () {
       });
 
     });
+
+  })
 
 });
 

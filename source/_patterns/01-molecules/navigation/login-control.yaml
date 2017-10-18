@@ -18,21 +18,7 @@ schema:
       type: string
       minLength: 1
     icon:
-      type: object
-      properties:
-        altText:
-          type: string
-          minLength: 1
-        pathRoot:
-          type: string
-          minLength: 1
-        srcset:
-          type: string
-          minLength: 1
-      required:
-        - altText
-        - pathRoot
-        - srcset
+      $ref: ../../00-atoms/components/picture.yaml#/schema
     linkFieldRoots:
       type: string
 #      linkFieldRoots is a list of one or more words that are comma-separated. The regex:

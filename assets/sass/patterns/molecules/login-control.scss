@@ -2,6 +2,10 @@
 
 $menu-max-width-in-px: 200;
 
+.login-control__icon {
+  width: 35px;
+}
+
 .login-control__non_js_control_link {
   display: block;
   @include non_js_control_link();

@@ -28,9 +28,20 @@
          data-default-uri="#profileHome"
          data-display-name="Kananinoheaokuuhomeopuukaimanaalohilo"
 
-         data-icon-path-root="../../assets/img/icons/profile"
-         data-icon-srcset="../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w"
-         data-icon-alt-text="profile icon"
+         data-icon="
+
+         &lt;picture class='login-control__icon'&gt;
+             &lt;source srcset='../../assets/img/icons/profile.svg'
+                        sizes='35px'
+                        type='image/svg+xml'
+                        &gt;
+            &lt;img src='../../assets/img/icons/profile.png'
+                 srcset='../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w'
+                 alt='Profile icon'
+                 sizes='35px'
+            &gt;
+        &lt;/picture&gt;
+"
 
 
          data-behaviour="LoginControl">

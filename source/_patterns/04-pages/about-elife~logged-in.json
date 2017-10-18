@@ -103,9 +103,18 @@
             "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
             "defaultUri": "#profileHome",
             "icon": {
-              "altText": "profile icon",
-              "pathRoot": "../../assets/img/icons/profile",
-              "srcset": "../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w"
+              "sources": [
+                {
+                  "srcset": "../../assets/img/icons/profile.svg",
+                  "sizes": "35px",
+                  "type": "image/svg+xml"
+                }
+              ],
+              "fallback": {
+                "srcset": "../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w",
+                "defaultPath": "../../assets/img/icons/profile.png",
+                "altText": "Profile icon"
+              }
             },
             "linkFieldRoots": "profile-manager, logout",
             "linkFieldData": "data-profile-manager-text=\"Manage your profile\" data-profile-manager-uri=\"#profileManageLink\" data-logout-text=\"Log out\" data-logout-uri=\"/log-out\""

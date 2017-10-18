@@ -181,14 +181,8 @@ module.exports = class LoginControl {
    * @return {HTMLElement} The resulting control element
    */
   buildControl(extraLinksToBuild, $elm, buildElement) {
-    const iconData = {
-      pathRoot: $elm.dataset.iconPathRoot,
-      srcset: $elm.dataset.iconSrcset,
-      altText: $elm.dataset.iconAltText
-    };
-
     const $nav = buildElement.call(null, 'nav');
-    this.insertToggle($nav, iconData, buildElement);
+    this.insertToggle($nav, $elm, buildElement);
     this.$menu = this.buildMenu(extraLinksToBuild, buildElement);
     $nav.appendChild(this.$menu);
 
@@ -199,42 +193,18 @@ module.exports = class LoginControl {
    * Build and insert the menu toggle into the supplied container
    *
    * @param {HTMLElement} $container The required parent of the toggle
-   * @param {Object} iconData data describing the icon
-   * @param {String} iconData.pathRoot a common path component to all versions (so minus the file extension)
-   * @param {String} iconData.srcset the srcset to use on the <img>
-   * @param {String} iconData.atlText the text for the [alt]
+   * @param {HTMLElement} $elm the element containing the data attribute with the icon definition
    * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
    */
-  insertToggle($container, iconData, buildElement) {
+  insertToggle($container, $elm, buildElement) {
     const $toggle = buildElement.call(null, 'a', ['login-control__controls_toggle'], '', $container);
     $toggle.setAttribute('href', '#');
-    $toggle.appendChild(LoginControl.buildIcon(iconData, buildElement));
-    $toggle.addEventListener('click', this.toggle.bind(this));
-  }
-
-  /**
-   * @param {Object} iconData data describing the icon
-   * @param {String} iconData.pathRoot a common path component to all versions (so minus the file extension)
-   * @param {String} iconData.srcset the srcset to use on the <img>
-   * @param {String} iconData.atlText the text for the [alt]
-   * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
-   * @returns {HTMLElement} the <picture> describing the icon
-   */
-  static buildIcon(iconData, buildElement) {
-    if (!(iconData.pathRoot && iconData.srcset && iconData.altText)) {
-      return null;
+    const iconAsString = $elm.dataset.icon;
+    if (typeof iconAsString === 'string' && iconAsString.length) {
+      $toggle.innerHTML = iconAsString;
     }
 
-    const $icon = buildElement.call(null, 'picture');
-    const $source = buildElement.call(null, 'source', [], '', $icon);
-    $source.setAttribute('srcset', `${iconData.pathRoot}.svg`);
-
-    const $img = buildElement.call(null, 'img', [], '', $icon);
-    $img.setAttribute('srcset', iconData.srcset);
-    $img.setAttribute('src', `${iconData.pathRoot}.png`);
-    $img.setAttribute('alt', iconData.altText);
-
-    return $icon;
+    $toggle.addEventListener('click', this.toggle.bind(this));
   }
 
   /**

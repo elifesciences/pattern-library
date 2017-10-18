@@ -8,11 +8,25 @@
      data-default-uri="{{defaultUri}}"
      data-display-name="{{displayName}}"
 
-     {{#icon}}
-       data-icon-path-root="{{pathRoot}}"
-       data-icon-srcset="{{srcset}}"
-       data-icon-alt-text="{{altText}}"
-     {{/icon}}
+     data-icon="
+
+       {{#icon}}
+         &lt;picture class='login-control__icon'&gt;
+           {{#sources}}
+             &lt;source srcset='{{srcset}}'
+                        sizes='35px'
+                        {{#type}}type='{{type}}'{{/type}}
+                        {{#media}}media='{{media}}'{{/media}}&gt;
+           {{/sources}}
+           {{#fallback}}
+            &lt;img src='{{defaultPath}}'
+                 {{#srcset}}srcset='{{srcset}}'{{/srcset}}
+                 alt='{{altText}}'
+                 sizes='35px'
+            &gt;
+          {{/fallback}}
+        &lt;/picture&gt;
+      {{/icon}}"
 
   {{/isLoggedIn}}
 
