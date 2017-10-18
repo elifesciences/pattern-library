@@ -183,7 +183,7 @@ module.exports = class LoginControl {
   buildControl(extraLinksToBuild, $elm, buildElement) {
     const $nav = buildElement.call(null, 'nav');
     this.insertToggle($nav, $elm, buildElement);
-    this.$menu = this.buildMenu(extraLinksToBuild, buildElement);
+    this.$menu = this.buildMenu(extraLinksToBuild, $elm, buildElement);
     $nav.appendChild(this.$menu);
 
     return $nav;
@@ -211,12 +211,13 @@ module.exports = class LoginControl {
    * Build the menu
    *
    * @param {Array.<{text: String, uri: String}>} extraLinksToBuild data defining the links to build
+   * @param {HTMLElement} $elm element contaning any subsidiary text data attribute
    * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
    * @return {HTMLElement} The menu that has been built
    */
-  buildMenu(extraLinksToBuild, buildElement) {
+  buildMenu(extraLinksToBuild, $elm, buildElement) {
     const $list = buildElement.call(null, 'ul', ['login-control__controls', 'hidden']);
-    this.insertDefaultLink($list, buildElement);
+    this.insertDefaultLink($list, $elm, buildElement);
     this.insertExtraLinks(extraLinksToBuild, $list, buildElement);
     return $list;
   }
@@ -225,15 +226,20 @@ module.exports = class LoginControl {
    * Build and insert the default link into the supplied container
    *
    * @param {HTMLElement} $container The required parent of the default link
+   * @param {HTMLElement} $elm element contaning any subsidiary text data attribute
    * @param {Function} buildElement Function used to build an element (elife-utils.buildElement)
    * @return {*}
    */
-  insertDefaultLink($container, buildElement) {
+  insertDefaultLink($container, $elm, buildElement) {
     const $li = buildElement.call(null, 'li', ['login-control__control'], '', $container);
     const $a = buildElement.call(null, 'a', ['login-control__link'], '', $li);
     $a.setAttribute('href', this.defaultUri);
     buildElement.call(null, 'div', ['login-control__display_name'], this.displayName, $a);
-    buildElement.call(null, 'div', ['login-control__subsidiary_text'], 'View my profile', $a);
+
+    const subsidiaryText = $elm.dataset.subsidiaryText;
+    if (subsidiaryText) {
+      buildElement.call(null, 'div', ['login-control__subsidiary_text'], subsidiaryText, $a);
+    }
 
     return $li;
   }

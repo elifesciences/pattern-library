@@ -37,6 +37,7 @@
         "isLoggedIn": true,
         "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
         "defaultUri": "#profileHome",
+        "subsidiaryText": "View my profile",
         "icon": {
           "sources": [
             {
