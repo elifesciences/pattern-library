@@ -8,14 +8,19 @@ module.exports = class LoginControl {
     this.window = _window;
     this.doc = doc;
 
+    this.extraLinksToBuild = null;
+
     try {
-      this.setPropertiesFromDataAttributes(
-        LoginControl.deriveDataAttributeRoots(
+      const linkFieldRoots = this.$elm.dataset.linkFieldRoots;
+      let dataAttributeRoots;
+      if (linkFieldRoots) {
+        dataAttributeRoots = LoginControl.deriveDataAttributeRoots(
           this.$elm.dataset.linkFieldRoots,
           this.$elm
-        ),
-        this.$elm
-      );
+        );
+      }
+
+      this.setPropertiesFromDataAttributes(dataAttributeRoots, this.$elm);
       this.$control = this.buildControl(this.extraLinksToBuild, this.$elm, utils.buildElement);
     } catch (e) {
       // TODO: When removing, Log to NR instead?
@@ -127,7 +132,9 @@ module.exports = class LoginControl {
   setPropertiesFromDataAttributes(dataAttributeRoots, $elm) {
     this.displayName = $elm.dataset.displayName;
     this.defaultUri = $elm.dataset.defaultUri;
-    this.extraLinksToBuild = LoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
+    if (dataAttributeRoots) {
+      this.extraLinksToBuild = LoginControl.deriveLinksToBuild(dataAttributeRoots, $elm);
+    }
   }
 
   /**
@@ -218,7 +225,10 @@ module.exports = class LoginControl {
   buildMenu(extraLinksToBuild, $elm, buildElement) {
     const $list = buildElement.call(null, 'ul', ['login-control__controls', 'hidden']);
     this.insertDefaultLink($list, $elm, buildElement);
-    this.insertExtraLinks(extraLinksToBuild, $list, buildElement);
+    if (extraLinksToBuild) {
+      this.insertExtraLinks(extraLinksToBuild, $list, buildElement);
+    }
+
     return $list;
   }
 
