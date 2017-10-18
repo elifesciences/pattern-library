@@ -10,10 +10,10 @@ fi
 PORT=${1:-8889}
 
 echo "Building patterns..."
-gulp
+node_modules/.bin/gulp
 
 (while true; do
-  gulp watch && sleep 5
+  node_modules/.bin/gulp watch && sleep 5
 done) & pid=$!
 PID_LIST+=" $pid";
 
