@@ -4,7 +4,7 @@
   background-color: #fff;
   float: right;
   position: relative;
-  z-index: 10;
+  z-index: 15;
 }
 
 .nav-secondary__list {
@@ -29,7 +29,8 @@
   text-transform: uppercase;
 }
 
-.nav-secondary__item--button {
+// :not(.nav-secondary__item:nth-child(3)) stops the community misaligning before profiles launches
+.nav-secondary__item:nth-last-child(2):not(.nav-secondary__item:nth-child(3)) {
   @include visuallyhidden();
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -38,12 +39,7 @@
   }
 }
 
-.nav-secondary__item--notification,
-.nav-secondary__item--profile {
-  @include padding(5, "top");
-}
-
-.nav-secondary__item a {
+.nav-secondary__item a:not(.profile-login-control__non_js_control_link) {
 
   text-decoration: none;
 
@@ -59,20 +55,4 @@
     color: #fff;
   }
 
-}
-
-.nav-secondary__notification-icon {
-  height: 17px;
-  width: 14px;
-}
-
-.nav-secondary__profile-icon {
-  height: 14px;
-  width: 21px;
-}
-
-@media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-  .nav-secondary__item:last-child {
-    @include nospace("right");
-  }
 }
