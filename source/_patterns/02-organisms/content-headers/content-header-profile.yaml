@@ -34,13 +34,13 @@ schema:
           - uri
     logoutLink:
       type: object
-        properties:
-          text:
-            type: string
-            minLength: 1
-          uri:
-            type: string
-            minLength: 1
+      properties:
+        text:
+          type: string
+          minLength: 1
+        uri:
+          type: string
+          minLength: 1
   required:
     - displayName
-    - links
+    - logoutLink
