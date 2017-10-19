@@ -4,15 +4,14 @@
     "affiliation": "University of Göttingen",
     "emailAddress": "iamnotarealperson@andthisisnotarealdomain.com"
   },
-  "links": [
+  "miscLinks": [
     {
       "text": "Manage my profile",
       "uri": "/manage-profile"
-    },
-    {
-      "text": "Log out",
-      "uri": "/log-out",
-      "isLogout": true
     }
-  ]
+  ],
+  "logoutLink": {
+    "text": "Log out",
+    "uri": "/log-out"
+  }
 }
