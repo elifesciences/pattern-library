@@ -1,0 +1,47 @@
+@import "../../definitions";
+@import "../../layout/grid";
+
+.content-header-profile {
+  @include blg-pad-vertical-small-to-medium();
+  font-family: $font-secondary;
+  padding-left: 6%;
+  padding-right: 6%;
+  position: relative;
+  text-align: center;
+}
+
+.content-header-profile__displayName {
+  @include font-size(20);
+  font-weight: 700;
+  line-height: 2.4; /* 48px with font-size 20px */
+  @include nospace();
+}
+
+.content-header-profile__details {
+  @include font-size(16);
+  line-height: 1.5;
+}
+
+.content-header-profile__email {
+  word-break: break-all;
+}
+
+.content-header-profile__links {
+  list-style: none;
+  @include nospace();
+}
+
+.content-header-profile__link {
+  color: $color-text;
+  font-family: $font-secondary;
+  @include font-size(14);
+  line-height: 1.7142857143 /* 24px on 14px font size */;
+  text-decoration: underline;
+}
+
+.content-header-profile__link--logout {
+  position: absolute;
+  top: 24px;
+  // TODO: put in proper right value
+  right: 24px;
+}

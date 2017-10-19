@@ -1,0 +1,41 @@
+assets:
+  css:
+    - content-header.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    displayName:
+      type: string
+      minLength: 1
+    details:
+      type: object
+      properties:
+        affiliation:
+          type: string
+          minLength: 1
+        emailAddress:
+          type: string
+          minLength: 1
+    links:
+      type: array
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            minLength: 1
+          uri:
+            type: string
+            minLength: 1
+          isLogout:
+            type: boolean
+            enum:
+              - true
+        required:
+          - text
+          - uri
+  required:
+    - displayName
+    - links
