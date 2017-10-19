@@ -12,12 +12,23 @@ schema:
     details:
       type: object
       properties:
-        affiliation:
-          type: string
-          minLength: 1
-        emailAddress:
-          type: string
-          minLength: 1
+        affiliations:
+          type: array
+          items:
+            type: string
+            minLength: 1
+          minItems: 1
+        emailAddresses:
+          type: array
+          items:
+            type: string
+            minLength: 1
+          minItems: 1
+      anyOf:
+        - required:
+          - affiliations
+        - required:
+          - emailAddresses
     micsLinks:
       type: array
       items:

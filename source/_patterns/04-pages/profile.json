@@ -151,8 +151,12 @@
   "contentHeaderProfile": {
     "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
     "details": {
-      "affiliation": "University of Göttingen",
-      "emailAddress": "madeup@example.com"
+      "affiliations": [
+        "University of Göttingen"
+      ],
+      "emailAddresses": [
+        "madeup@example.com"
+      ]
     },
     "miscLinks": [
       {
@@ -165,7 +169,6 @@
       "uri": "/log-out"
     }
   },
-
 
   "leadParas": {
     "paras": [
