@@ -29,19 +29,19 @@
 .content-header-profile__links {
   list-style: none;
   @include nospace();
+
+  .js & {
+    display: none;
+  }
+
 }
 
 .content-header-profile__link {
-  color: $color-text;
-  font-family: $font-secondary;
-  @include font-size(14);
-  line-height: 1.7142857143 /* 24px on 14px font size */;
-  text-decoration: underline;
+  @include non_js_control_link();
 }
 
 .content-header-profile__link--logout {
   position: absolute;
-  top: 24px;
-  // TODO: put in proper right value
   right: 24px;
+  top: 24px;
 }
