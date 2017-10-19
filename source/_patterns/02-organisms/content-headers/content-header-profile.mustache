@@ -5,12 +5,13 @@
   {{#details}}
   <div class="content-header-profile__details">
 
-    {{#affiliations}}
-    <div>{{{.}}}</div>
-    {{/affiliations}}
-    {{#emailAddresses}}
-    <div class="content-header-profile__email">{{{.}}}</div>
-    {{/emailAddresses}}
+    <div>
+      {{#affiliations}}<span class="content-header-profile__affiliation">{{{.}}}</span>{{/affiliations}}
+    </div>
+
+    {{#emailAddress}}
+    <div class="content-header-profile__email">{{{emailAddress}}}</div>
+    {{/emailAddress}}
 
   </div>
   {{/details}}

@@ -18,12 +18,9 @@ schema:
             type: string
             minLength: 1
           minItems: 1
-        emailAddresses:
-          type: array
-          items:
-            type: string
-            minLength: 1
-          minItems: 1
+        emailAddress:
+          type: string
+          minLength: 1
       anyOf:
         - required:
           - affiliations

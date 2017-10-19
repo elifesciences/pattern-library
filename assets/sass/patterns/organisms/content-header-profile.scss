@@ -22,6 +22,17 @@
   line-height: 1.5;
 }
 
+.content-header-profile__affiliation {
+
+  &:after {
+    content: "; ";
+  }
+
+  &:last-child:after {
+    content: "";
+  }
+}
+
 .content-header-profile__email {
   word-break: break-all;
 }

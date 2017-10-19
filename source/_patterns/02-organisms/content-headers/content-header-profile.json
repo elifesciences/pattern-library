@@ -4,9 +4,7 @@
     "affiliations": [
       "University of Göttingen"
     ],
-    "emailAddresses": [
-      "madeup@example.com"
-    ]
+    "emailAddress": "madeup@example.com"
   },
   "miscLinks": [
     {
