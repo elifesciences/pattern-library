@@ -32,6 +32,7 @@ schema:
         required:
           - text
           - uri
+# is there a way of refactoring out the redundant property declarations between miscLinks and logoutLink?
     logoutLink:
       type: object
       properties:
@@ -41,6 +42,9 @@ schema:
         uri:
           type: string
           minLength: 1
+      required:
+        - text
+        - uri
   required:
     - displayName
     - logoutLink
