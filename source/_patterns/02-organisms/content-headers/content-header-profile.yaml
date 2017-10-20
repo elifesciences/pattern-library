@@ -11,21 +11,35 @@ schema:
       minLength: 1
     details:
       type: object
-      properties:
-        affiliations:
-          type: array
-          items:
-            type: string
-            minLength: 1
-          minItems: 1
-        emailAddress:
-          type: string
-          minLength: 1
       anyOf:
-        - required:
-          - affiliations
-        - required:
-          - emailAddresses
+        - properties:
+            affiliations:
+              type: array
+              items:
+                type: string
+                minLength: 1
+              minItems: 1
+          required:
+            - affiliations
+        - properties:
+            emailAddress:
+              type: string
+              minLength: 1
+          required:
+            - emailAddress
+        - properties:
+            affiliations:
+              type: array
+              items:
+                type: string
+                minLength: 1
+              minItems: 1
+            emailAddress:
+              type: string
+              minLength: 1
+          required:
+            - affiliations
+            - emailAddress
     micsLinks:
       type: array
       items:
