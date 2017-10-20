@@ -36,3 +36,9 @@ schema:
               $ref: button.yaml#/schema
           required:
             - button
+        -
+          properties:
+            loginControl:
+              $ref: ../../01-molecules/navigation/login-control.yaml#/schema
+          required:
+            - loginControl
