@@ -1,0 +1,21 @@
+{
+  "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
+  "details": {
+    "affiliations": [
+      "University of West of Nowhere",
+      "University of Middle of Nowhere",
+      "University of East of Nowhere"
+    ],
+    "emailAddress": "madeup@example.com"
+  },
+  "secondaryLinks": [
+    {
+      "name": "Manage my profile",
+      "url": "/manage-profile"
+    }
+  ],
+  "logoutLink": {
+    "name": "Log out",
+    "url": "/log-out"
+  }
+}
