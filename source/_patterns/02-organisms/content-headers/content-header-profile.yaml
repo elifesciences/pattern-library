@@ -25,30 +25,9 @@ schema:
     micsLinks:
       type: array
       items:
-        type: object
-        properties:
-          text:
-            type: string
-            minLength: 1
-          uri:
-            type: string
-            minLength: 1
-        required:
-          - text
-          - uri
-# is there a way of refactoring out the redundant property declarations between miscLinks and logoutLink?
+        $ref: ../../../non-pattern-schema/link.yaml#/schema
     logoutLink:
-      type: object
-      properties:
-        text:
-          type: string
-          minLength: 1
-        uri:
-          type: string
-          minLength: 1
-      required:
-        - text
-        - uri
+      $ref: ../../../non-pattern-schema/link.yaml#/schema
   required:
     - displayName
     - logoutLink
