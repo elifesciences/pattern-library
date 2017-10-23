@@ -3,6 +3,7 @@
 
 .content-header-profile {
   @include blg-pad-vertical-small-to-medium();
+  @include wrapper(false);
   font-family: $font-secondary;
   padding-left: 6%;
   padding-right: 6%;
