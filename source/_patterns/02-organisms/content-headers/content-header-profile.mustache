@@ -5,9 +5,9 @@
   {{#details}}
   <div class="content-header-profile__details">
 
-    <div>
-      {{#affiliations}}<span class="content-header-profile__affiliation">{{{.}}}</span>{{/affiliations}}
-    </div>
+    <ul class="content-header-profile__affiliations">
+      {{#affiliations}}<li class="content-header-profile__affiliation">{{{.}}}</li>{{/affiliations}}
+    </ul>
 
     {{#emailAddress}}
     <div class="content-header-profile__email">{{{emailAddress}}}</div>

@@ -22,7 +22,17 @@
   line-height: 1.5;
 }
 
+.content-header-profile__affiliations {
+  @include nospace();
+  list-style: none;
+  &:empty {
+    display: none;
+  }
+}
+
 .content-header-profile__affiliation {
+  display: inline;
+  font-family: $font-secondary;
 
   &:after {
     content: "; ";
