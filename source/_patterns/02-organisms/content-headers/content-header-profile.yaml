@@ -30,4 +30,3 @@ schema:
       $ref: ../../../non-pattern-schema/link.yaml#/schema
   required:
     - displayName
-    - logoutLink
