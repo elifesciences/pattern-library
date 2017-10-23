@@ -22,7 +22,7 @@ schema:
           type: string
           format: email
       minProperties: 1
-    micsLinks:
+    secondaryLinks:
       type: array
       items:
         $ref: ../../../non-pattern-schema/link.yaml#/schema

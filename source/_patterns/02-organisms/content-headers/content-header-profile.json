@@ -8,7 +8,7 @@
     ],
     "emailAddress": "madeup@example.com"
   },
-  "miscLinks": [
+  "secondaryLinks": [
     {
       "text": "Manage my profile",
       "uri": "/manage-profile"
