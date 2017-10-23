@@ -20,7 +20,7 @@ schema:
           minItems: 1
         emailAddress:
           type: string
-          minLength: 1
+          format: email
       minProperties: 1
     micsLinks:
       type: array
