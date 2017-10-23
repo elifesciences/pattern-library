@@ -1,4 +1,4 @@
 {
-  "text": "The link text",
-  "uri": "/the-link-uri"
+  "name": "The link name",
+  "url": "/the-link-url"
 }

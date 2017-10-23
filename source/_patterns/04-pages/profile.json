@@ -159,12 +159,12 @@
     "secondaryLinks": [
       {
         "text": "Manage my profile",
-        "uri": "/manage-profile"
+        "url": "/manage-profile"
       }
     ],
     "logoutLink": {
       "text": "Log out",
-      "uri": "/log-out"
+      "url": "/log-out"
     }
   },
 
