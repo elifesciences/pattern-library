@@ -29,8 +29,7 @@
   text-transform: uppercase;
 }
 
-// :not(.nav-secondary__item:nth-child(3)) stops the community misaligning before profiles launches
-.nav-secondary__item:nth-last-child(2):not(.nav-secondary__item:nth-child(3)) {
+.nav-secondary__item:nth-child(4).nav-secondary__item:nth-last-child(2) {
   @include visuallyhidden();
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -39,7 +38,7 @@
   }
 }
 
-.nav-secondary__item a:not(.profile-login-control__non_js_control_link) {
+.nav-secondary__item a:not(.login-control__non_js_control_link) {
 
   text-decoration: none;
 

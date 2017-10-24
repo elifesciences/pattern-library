@@ -9,11 +9,15 @@ $menu-max-width-in-px: 200;
 .login-control__non_js_control_link {
   display: block;
   @include non_js_control_link();
-  line-height: 1.7142857143; // 24px on 14px font-size
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   max-width: 29vw;
+
+  .js & {
+    display: none;
+  }
+
 }
 
 .login-control__controls {
