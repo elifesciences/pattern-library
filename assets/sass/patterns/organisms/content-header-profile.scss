@@ -1,0 +1,69 @@
+@import "../../definitions";
+@import "../../layout/grid";
+
+.content-header-profile {
+  @include blg-pad-vertical-small-to-medium();
+  @include wrapper(false);
+  font-family: $font-secondary;
+  padding-left: 6%;
+  padding-right: 6%;
+  position: relative;
+  text-align: center;
+}
+
+.content-header-profile__display_name {
+  @include font-size(20);
+  font-weight: 700;
+  line-height: 2.4; /* 48px with font-size 20px */
+  @include nospace();
+}
+
+.content-header-profile__details {
+  @include font-size(16);
+  line-height: 1.5;
+}
+
+.content-header-profile__affiliations {
+  @include nospace();
+  list-style: none;
+  &:empty {
+    display: none;
+  }
+}
+
+.content-header-profile__affiliation {
+  display: inline;
+  font-family: $font-secondary;
+
+  &:after {
+    content: "; ";
+  }
+
+  &:last-child:after {
+    content: "";
+  }
+}
+
+.content-header-profile__email {
+  word-break: break-all;
+}
+
+.content-header-profile__links {
+  list-style: none;
+  @include nospace();
+
+  .js & {
+    display: none;
+  }
+
+}
+
+.content-header-profile__link {
+  @include non_js_control_link();
+}
+
+.content-header-profile__link--logout {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}

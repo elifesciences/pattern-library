@@ -29,11 +29,6 @@ module.exports = class LoginControl {
     }
 
     this.$elm.appendChild(this.$control);
-
-    const nonJsLink = this.$elm.querySelector('.login-control__non_js_control_link');
-    if (nonJsLink) {
-      this.$elm.removeChild(nonJsLink);
-    }
   }
 
   /**
