@@ -425,6 +425,7 @@
   font-weight: normal;
   text-decoration: underline;
   text-transform: none;
+  line-height: 1.7142857143; // 24px on 14px font-size
 
   &:hover {
     text-decoration: underline;

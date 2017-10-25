@@ -1,0 +1,525 @@
+{
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "path": "#mainMenu",
+          "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "pictureClasses": "nav-primary__search_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Labs",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+
+        {
+          "text": "Submit my research",
+          "path": "#",
+          "classes": "nav-secondary__item",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        },
+
+        {
+          "classes": "nav-secondary__item",
+          "loginControl": {
+            "isLoggedIn": true,
+            "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
+            "defaultUri": "#profileHome",
+            "subsidiaryText": "View my profile",
+            "icon": {
+              "sources": [
+                {
+                  "srcset": "../../assets/img/icons/profile.svg",
+                  "sizes": "35px",
+                  "type": "image/svg+xml"
+                }
+              ],
+              "fallback": {
+                "srcset": "../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w",
+                "defaultPath": "../../assets/img/icons/profile.png",
+                "altText": "Profile icon"
+              }
+            },
+            "linkFieldRoots": "profile-manager, logout",
+            "linkFieldData": "data-profile-manager-text=\"Manage my profile\" data-profile-manager-uri=\"#profileManageLink\" data-logout-text=\"Log out\" data-logout-uri=\"/log-out\""
+          }
+        }
+
+      ]
+    },
+
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
+
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
+    }
+
+  },
+
+  "contentHeaderProfile": {
+    "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
+    "details": {
+      "affiliations": [
+        "University of Göttingen"
+      ],
+      "emailAddress": "madeup@example.com"
+    },
+    "secondaryLinks": [
+      {
+        "text": "Manage my profile",
+        "url": "/manage-profile"
+      }
+    ],
+    "logoutLink": {
+      "text": "Log out",
+      "url": "/log-out"
+    }
+  },
+
+  "leadParas": {
+    "paras": [
+      {
+        "text": ""
+      }
+    ]
+  },
+
+  "listHeading": {
+    "heading": "Latest podcasts"
+  },
+
+  "podcastsListing":
+  {
+    "teasers": [
+      {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      },
+      {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      },    {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      },    {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      },    {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      },    {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      },    {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      },    {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      },    {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      },    {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      },    {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      },    {
+        "rootClasses": "teaser--grid-style",
+        "url": "#",
+        "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
+        "secondaryInfo": "Episode 24",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
+        "image": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "An image.",
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+          "classes": "teaser__img--prominent"
+        },
+        "footer": {
+          "meta": {
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 31,
+                "month": "Mar",
+                "year": 2015
+              },
+              "forMachine": "2015-03-31"
+            }
+          }
+        }
+      }
+    ]
+  },
+
+  "mainMenu":{
+    "links": {
+      "items": [
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Author guide", "url": "#aut"},
+        {"name": "Reviewer guide", "url": "#rev"},
+        {"name": "About", "url": "#abo"},
+        {"name": "Inside eLife", "url": "#ins"},
+        {"name": "Careers", "url": "#car"},
+        {"name": "Labs", "url": "#lab"}
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms & Policy", "url": "#" }
+  ],
+
+  "year": 2016
+
+}
