@@ -60,30 +60,17 @@ schema:
       required:
         - name
     image:
-      type: object
-      properties:
-        url:
-          type: string
-          minLength: 1
-        defaultPath:
-          type: string
-          minLength: 1
-        altText:
-          type: string
-          minLength: 1
-        srcset:
-          type: string
-          minLength: 1
-        classes:
-          type: string
-          minLength: 1
-          enum:
-            - teaser__img--prominent
-            - teaser__img--big
-            - teaser__img--small
-      required:
-        - defaultPath
-        - altText
+      allOf:
+        - $ref: ../../00-atoms/components/picture.yaml#/schema
+        - properties:
+            type:
+              type: string
+              enum:
+                - prominent
+                - big
+                - small
+          required:
+            - type
     footer:
       type: object
       properties:

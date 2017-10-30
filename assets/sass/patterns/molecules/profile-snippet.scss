@@ -31,7 +31,7 @@
   float: none;
 }
 
-.profile-snippet__image {
+.profile-snippet__picture {
   display: block;
   float: right;
   width: 72px;
@@ -62,7 +62,7 @@
 }
 
 @media only screen {
-  .profile-snippet__image {
+  .profile-snippet__picture {
     width: auto;
     @include margin(24, "left");
     max-width: #{get_rem_from_px(72)}rem;

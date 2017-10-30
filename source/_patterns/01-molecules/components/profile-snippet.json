@@ -4,8 +4,10 @@
   "contactDetails": "E: test.email@testemail.com",
 
   "image": {
-    "srcset": "https://placehold.it/90x90 24w",
-    "defaultPath": "https://placehold.it/90x90",
-    "altText": "Meaningful alt text here please."
+    "fallback": {
+      "srcset": "https://placehold.it/90x90 24w",
+      "defaultPath": "https://placehold.it/90x90",
+      "altText": "Meaningful alt text here please."
+    }
   }
 }

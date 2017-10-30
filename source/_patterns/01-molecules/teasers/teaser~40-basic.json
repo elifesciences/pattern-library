@@ -3,10 +3,12 @@
   "title": "One hundred eLife digests on Medium&hellip; (&hellip; and counting)",
   "url": "https://medium.com/@elife/one-hundred-elife-digests-on-medium-5a99aa5e80a1#.mne4282yx",
   "image": {
-    "defaultPath": "../../assets/img/patterns/molecules/teaser-medium-icon-1x.png",
-    "srcset": "../../assets/img/patterns/molecules/teaser-medium-icon-2x.png 140w, ../../assets/img/patterns/molecules/teaser-medium-icon-1x.png 70w",
-    "altText": "Meaningful alt text please",
-    "classes": "teaser__img--small"
+    "fallback": {
+      "defaultPath": "../../assets/img/patterns/molecules/teaser-medium-icon-1x.png",
+      "srcset": "../../assets/img/patterns/molecules/teaser-medium-icon-2x.png 140w, ../../assets/img/patterns/molecules/teaser-medium-icon-1x.png 70w",
+      "altText": "Meaningful alt text please"
+    },
+    "type": "small"
   },
 
   "footer": {

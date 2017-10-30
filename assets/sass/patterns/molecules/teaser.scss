@@ -136,7 +136,7 @@
 
 }
 
-.teaser__img {
+.teaser__picture {
   display: block;
   height: auto;
   @include nospace();
@@ -145,7 +145,7 @@
   width: 100%;
 }
 
-.teaser__img--small {
+.teaser__picture--small {
   @include margin(24, "left");
   float: right;
   height: 72px;
@@ -154,7 +154,7 @@
 
 @media only all and (min-width: 700px) {
 
-  .teaser__img--big {
+  .teaser__picture--big {
     float: right;
     height: 144px;
     @include margin(12, "bottom");
@@ -164,7 +164,7 @@
 
   .teaser--secondary {
 
-    .teaser__img--big {
+    .teaser__picture--big {
       height: auto;
       float: none;
       margin-left: 0;
@@ -189,7 +189,7 @@
 
   padding-top: 0;
 
-  .teaser__img--prominent {
+  .teaser__picture--prominent {
     @include nospace();
   }
 

@@ -163,10 +163,12 @@
         "title": "eLife Lens search",
         "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
         "image": {
+          "fallback": {
           "defaultPath": "https://unsplash.it/250/140/",
           "altText": "An image.",
-          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
-          "classes": "teaser__img--prominent"
+          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w"
+          },
+          "type": "prominent"
         },
         "footer": {
           "meta": {
@@ -188,10 +190,12 @@
         "title": "eLife Lens search",
         "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
         "image": {
-          "defaultPath": "https://unsplash.it/250/140/",
-          "altText": "An image.",
-          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
-          "classes": "teaser__img--prominent"
+          "fallback": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "altText": "An image.",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w"
+          },
+          "type": "prominent"
         },
         "footer": {
           "meta": {
@@ -213,10 +217,12 @@
         "title": "eLife Lens search",
         "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
         "image": {
-          "defaultPath": "https://unsplash.it/250/140/",
-          "altText": "An image.",
-          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
-          "classes": "teaser__img--prominent"
+          "fallback": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "altText": "An image.",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w"
+          },
+          "type": "prominent"
         },
         "footer": {
           "meta": {
@@ -238,10 +244,12 @@
         "title": "eLife Lens search",
         "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
         "image": {
-          "defaultPath": "https://unsplash.it/250/140/",
-          "altText": "An image.",
-          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
-          "classes": "teaser__img--prominent"
+          "fallback": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "altText": "An image.",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w"
+          },
+          "type": "prominent"
         },
         "footer": {
           "meta": {
@@ -263,10 +271,12 @@
         "title": "eLife Lens search",
         "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
         "image": {
-          "defaultPath": "https://unsplash.it/250/140/",
-          "altText": "An image.",
-          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
-          "classes": "teaser__img--prominent"
+          "fallback": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "altText": "An image.",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w"
+          },
+          "type": "prominent"
         },
         "footer": {
           "meta": {
@@ -288,10 +298,12 @@
         "title": "eLife Lens search",
         "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
         "image": {
-          "defaultPath": "https://unsplash.it/250/140/",
-          "altText": "An image.",
-          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
-          "classes": "teaser__img--prominent"
+          "fallback": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "altText": "An image.",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w"
+          },
+          "type": "prominent"
         },
         "footer": {
           "meta": {
@@ -313,10 +325,12 @@
         "title": "eLife Lens search",
         "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
         "image": {
-          "defaultPath": "https://unsplash.it/250/140/",
-          "altText": "An image.",
-          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
-          "classes": "teaser__img--prominent"
+          "fallback": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "altText": "An image.",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w"
+          },
+          "type": "prominent"
         },
         "footer": {
           "meta": {
@@ -338,10 +352,12 @@
         "title": "eLife Lens search",
         "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
         "image": {
-          "defaultPath": "https://unsplash.it/250/140/",
-          "altText": "An image.",
-          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
-          "classes": "teaser__img--prominent"
+          "fallback": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "altText": "An image.",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w"
+          },
+          "type": "prominent"
         },
         "footer": {
           "meta": {
@@ -363,10 +379,12 @@
         "title": "eLife Lens search",
         "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
         "image": {
-          "defaultPath": "https://unsplash.it/250/140/",
-          "altText": "An image.",
-          "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
-          "classes": "teaser__img--prominent"
+          "fallback": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "altText": "An image.",
+            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w"
+          },
+          "type": "prominent"
         },
         "footer": {
           "meta": {

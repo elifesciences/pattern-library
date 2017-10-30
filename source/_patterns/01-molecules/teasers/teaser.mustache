@@ -21,15 +21,29 @@
   <header class="teaser__header">
     {{! For schema: url is dependent on image }}
     {{! Image is either:
-          - teaser__img--prominent: full width, above non-article teasers
-          - teaser__img--big: full width when viewport narrow, maxing out at 250px wide and floating right as viewport widens
-          - teaser__img--small: 70px square image, floating right.
+          - teaser__picture--prominent: full width, above non-article teasers
+          - teaser__picture--big: full width when viewport narrow, maxing out at 250px wide and floating right as viewport widens
+          - teaser__picture--small: 70px square image, floating right.
         }}
     {{#image}}
-      <a href="{{{url}}}" tabindex="-1"><img src="{{defaultPath}}" alt="{{altText}}" {{#srcset}}srcset="{{srcset}}"{{/srcset}} class="teaser__img{{#classes}} {{classes}}{{/classes}}" /></a>
+      <a href="{{{url}}}" tabindex="-1">
+        <picture class="teaser__picture teaser__picture--{{type}}">
+          {{#sources}}
+            <source srcset="{{srcset}}"
+                    {{#type}}type="{{type}}"{{/type}}
+              {{#media}}media="{{media}}"{{/media}}>
+          {{/sources}}
+          {{#fallback}}
+            <img src="{{defaultPath}}"
+                 {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+                 alt="{{altText}}"
+            >
+          {{/fallback}}
+        </picture>
+      </a>
     {{/image}}
 
-    {{! Used for the date in an event teaser only. Treatment very like teaser__img--small.
+    {{! Used for the date in an event teaser only. Treatment very like teaser__picture--small.
         Different enough from the date in the meta section, that it gets its own block. }}
     {{#eventDate}}
       {{! For schema: url is dependent on date }}

@@ -4,7 +4,20 @@
     {{#open}}
     <a href="{{uri}}" class="captioned-asset__link" target="_blank" rel="noopener noreferrer">
     {{/open}}
-    {{> atoms-picture }}
+    <picture>
+      {{#sources}}
+        <source srcset="{{srcset}}"
+            {{#type}}type="{{type}}"{{/type}}
+            {{#media}}media="{{media}}"{{/media}}>
+      {{/sources}}
+      {{#fallback}}
+        <img src="{{defaultPath}}"
+             {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+             alt="{{altText}}"
+             class="captioned-asset__image"
+        >
+      {{/fallback}}
+    </picture>
     {{#open}}
     </a>
     {{/open}}
