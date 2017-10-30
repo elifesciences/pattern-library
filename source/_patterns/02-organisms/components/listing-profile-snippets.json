@@ -8,7 +8,7 @@
       "title": "University of Toronto",
       "image": {
         "fallback": {
-          "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
+          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
           "defaultPath": "https://unsplash.it/90/90",
           "altText": "Meaningful alt text here please."
         }
@@ -19,7 +19,7 @@
       "title": "Harvard University",
       "image": {
         "fallback": {
-          "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
+          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
           "defaultPath": "https://unsplash.it/90/90",
           "altText": "Meaningful alt text here please."
         }

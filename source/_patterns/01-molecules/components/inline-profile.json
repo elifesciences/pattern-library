@@ -2,7 +2,7 @@
   "image": {
     "fallback": {
       "defaultPath": "https://unsplash.it/120/144/",
-      "srcset": "https://unsplash.it/240/288/ 240w, https://unsplash.it/120/144/ 120w",
+      "srcset": "https://unsplash.it/240/288/ 2x, https://unsplash.it/120/144/ 1x",
       "altText": ""
     }
   },

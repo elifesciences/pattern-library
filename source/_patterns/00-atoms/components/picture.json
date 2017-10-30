@@ -8,7 +8,7 @@
   ],
 
   "fallback": {
-    "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+    "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
     "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
     "altText": "Meaningful alt text here please."
   }
