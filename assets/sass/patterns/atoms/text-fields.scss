@@ -16,7 +16,7 @@
   font-family: $font-secondary;
   @include font-size(16);
   @include padding(12);
-  @include margin(24, "bottom");
+  @include margin(6, "bottom");
   width: 100%;
 
   &:focus {
@@ -29,15 +29,10 @@
   resize: vertical;
 }
 
-.text-field--focus {
-  border: 1px solid $color-text-placeholder;
-  outline: 0;
-}
-
 .text-field--valid {
   border: 1px solid $color-success;
 }
 
-.text-field--error {
+.text-field--invalid {
   border: 1px solid $color-attention;
 }

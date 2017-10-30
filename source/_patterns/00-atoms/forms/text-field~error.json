@@ -5,5 +5,9 @@
     "labelText": "Error text field"
   },
   "name": "name",
-  "classNames": "text-field--error"
+  "state": "invalid",
+  "messageGroup": {
+    "id": "idOfTheMessageGroup",
+    "errorText": "Please provide a valid value"
+  }
 }

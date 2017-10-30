@@ -66,14 +66,14 @@ module.exports = class ToggleableCaption {
     this.truncatedHtml = truncatedChildren.join(' ');
   }
 
-  toggleCaption() {
+  toggleCaption(e) {
     const $toggle = this.$caption.querySelector('.caption-text__toggle');
 
     this.$caption.innerHTML = '';
 
     if (!$toggle || $toggle.classList.contains('caption-text__toggle--see-less')) {
       this.$caption.innerHTML = this.truncatedHtml;
-      if (this.$caption.getBoundingClientRect().top < 0) {
+      if (e && this.$caption.getBoundingClientRect().top < 0) {
         this.$caption.scrollIntoView();
       }
     } else {

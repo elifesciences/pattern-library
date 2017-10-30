@@ -26,6 +26,10 @@ module.exports = class SiteHeader {
     }
 
     const $overlayParent = this.doc.querySelector('.main');
+    if (!$overlayParent) {
+      return;
+    }
+
     const $overlayFollowingSibling = $overlayParent.firstElementChild;
     this.pageOverlay = new Overlay($overlayParent, $overlayFollowingSibling, 'mainMenuOverlay', this.window, this.doc);
     this.pageOverlay.assignTop(96);

@@ -17,6 +17,26 @@ schema:
       enum:
         - GET
         - POST
+    state:
+      type: string
+      enum:
+        - valid
+        - invalid
+    messageGroup:
+      type: object
+      properties:
+        errorText:
+          type: string
+          minLength: 1
+        infoText:
+          type: string
+          minLength: 1
+        id:
+          type: string
+          minLength: 1
+      minProperties: 2
+      required:
+        - id
     label:
       type: string
       minLength: 1
@@ -37,6 +57,8 @@ schema:
     inputPlaceholder:
       type: string
       minLength: 1
+    inputAutofocus:
+      type: boolean
     ctaText:
       type: string
       minLength: 1

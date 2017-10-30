@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+<!--
+  Test output
+-->
+<div id="mocha"></div>
+
+<!--
+  Fixture
+-->
+
+<form action="" method="GET">
+
+
+  <section class="filter-panel" data-behaviour="FilterPanel">
+
+    <h3 class="filter-panel__title visuallyhidden">Refine your results by:</h3>
+
+    <fieldset class="filter-group">
+      <legend class="filter-group__title">Type</legend>
+
+      <ul class="filter-group__filters">
+        <li class="filter-group__filter_item">
+          <label class="filter-group__item_label"><input type="checkbox" name="Magazine " value="1"> Magazine</label>
+          <span class="filter-group__results">(26)</span>
+        </li>
+        <li class="filter-group__filter_item">
+          <label class="filter-group__item_label"><input type="checkbox" name="Research " value="1"> Research</label>
+          <span class="filter-group__results">(144)</span>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset class="filter-group">
+      <legend class="filter-group__title">Research categories</legend>
+
+      <ul class="filter-group__filters">
+        <li class="filter-group__filter_item">
+          <label class="filter-group__item_label"><input type="checkbox" name="Cell" value="1" checked=""> Cell Biology</label>
+          <span class="filter-group__results">(71)</span>
+        </li>
+        <li class="filter-group__filter_item">
+          <label class="filter-group__item_label"><input type="checkbox" name="Neuroscience" value="1"> Neuroscience</label>
+          <span class="filter-group__results">(2)</span>
+        </li>
+        <li class="filter-group__filter_item">
+          <label class="filter-group__item_label"><input type="checkbox" name="Biophysics" value="1"> Biophysics and Structural Biology</label>
+          <span class="filter-group__results">(24)</span>
+        </li>
+        <li class="filter-group__filter_item">
+          <label class="filter-group__item_label"><input type="checkbox" name="Biochemistry" value="1"> Biochemistry</label>
+          <span class="filter-group__results">(71)</span>
+        </li>
+        <li class="filter-group__filter_item">
+          <label class="filter-group__item_label"><input type="checkbox" name="Developmental " value="1"> Developmental Biology and Stem Cells</label>
+          <span class="filter-group__results">(13)</span>
+        </li>
+        <li class="filter-group__filter_item">
+          <label class="filter-group__item_label"><input type="checkbox" name="Immunology" value="1"> Immunology</label>
+          <span class="filter-group__results">(144)</span>
+        </li>
+        <li class="filter-group__filter_item">
+          <label class="filter-group__item_label"><input type="checkbox" name="Ecology" value="1"> Ecology</label>
+          <span class="filter-group__results">(71)</span>
+        </li>
+        <li class="filter-group__filter_item">
+          <label class="filter-group__item_label"><input type="checkbox" name="Epidemiology " value="1"> Epidemiology and Global Health</label>
+          <span class="filter-group__results">(57)</span>
+        </li>
+      </ul>
+    </fieldset>
+
+    <button class="button button--default" type="submit" name="button">Refine results</button>
+
+  </section>
+
+</form>
+
+
+<!--
+  Load test code
+-->
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+<!-- Initialise test suite -->
+<script>mocha.setup('bdd')</script>
+
+<!--
+  Test spec
+-->
+<script src="build/filterpanel.spec.js"></script>
+
+<!--
+  Begin!
+-->
+<script>
+  mocha.run();
+</script>
+
+</body>
+</html>

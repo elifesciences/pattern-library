@@ -90,11 +90,23 @@
         {
           "text": "Submit my research",
           "url": "#",
-          "classes": "nav-secondary__item nav-secondary__item--button",
+          "classes": "nav-secondary__item",
           "button": {
             "classes": "button--default button--extra-small"
           }
+        },
+
+        {
+          "classes": "nav-secondary__item",
+          "loginControl": {
+            "button": {
+              "text": "Log in / Register",
+              "path": "#",
+              "classes": "button--confirm button--extra-small"
+            }
+          }
         }
+
       ]
     },
 
@@ -175,10 +187,12 @@
           },
 
           "image": {
-            "defaultPath": "https://unsplash.it/250/140/",
-            "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--big"
+            "fallback": {
+              "defaultPath": "https://unsplash.it/250/140/",
+              "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "big"
           }
         },
 
@@ -290,10 +304,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://unsplash.it/70/70/",
-            "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://unsplash.it/70/70/",
+              "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -383,10 +399,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/250/140/",
-            "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/250/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -490,10 +508,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://unsplash.it/250/140/",
-            "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
-            "altText": "Make it meaningful please",
-            "classes": "teaser__img--big"
+            "fallback": {
+              "defaultPath": "https://unsplash.it/250/140/",
+              "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
+              "altText": "Make it meaningful please"
+            },
+            "type": "big"
           }
 
         }
@@ -532,10 +552,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -561,10 +583,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -590,10 +614,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -619,10 +645,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -648,10 +676,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 12x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
         {
@@ -676,10 +706,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         }
 
@@ -694,18 +726,22 @@
         "name": "Prabhat Jha",
         "title": "University of Toronto",
         "image": {
-          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
+            "defaultPath": "https://unsplash.it/90/90",
+            "altText": "Meaningful alt text here please."
+          }
         }
       },
       {
         "name": "Richard Losick",
         "title": "Harvard University",
         "image": {
-          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
+            "defaultPath": "https://unsplash.it/90/90",
+            "altText": "Meaningful alt text here please."
+          }
         }
       }
     ],

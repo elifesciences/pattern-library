@@ -83,11 +83,23 @@
         {
           "text": "Submit my research",
           "path": "#",
-          "classes": "nav-secondary__item nav-secondary__item--button",
+          "classes": "nav-secondary__item",
           "button": {
             "classes": "button--default button--extra-small"
           }
+        },
+
+        {
+          "classes": "nav-secondary__item",
+          "loginControl": {
+            "button": {
+              "text": "Log in / Register",
+              "path": "#",
+              "classes": "button--confirm button--extra-small"
+            }
+          }
         }
+
       ]
     },
     "searchBox": {
@@ -470,106 +482,259 @@
       ]
     }
   },
-  "assets": [
-    {
-      "id": "fig1",
-      "variant": "figure",
-      "label": "Figure 1",
-      "supplementCount": 2,
-      "hasMultipleSupplements": true,
-      "captionedAsset": {
-        "captionText": {
-          "heading": "Perturbation of Hh signaling affects gene expression in the cephalic ganglia.",
-          "text": "<p>(<b>A</b>–<b>B</b>) Double fluorescent RNA in situ hybridization (FISH) for <i>hh</i> (magenta) and neuronal markers (<b>A</b>) <i>pc2</i> or (<b>B</b>) <i>chat</i> (green) in wild-type animals. Main panels show cephalic ganglia. Lower panels show high magnification images of, from left to right, <i>hh</i> (magenta), <i>pc2</i> or <i>chat</i> (green), DAPI (gray), and merged channels from a representative double-positive neuron. (<b>C</b>) Excision of cephalic ganglia tissue from acid-killed animals for RNA isolation. The&nbsp;left panel shows incision in the&nbsp;dorsal epidermis. Middle panel shows detail of the&nbsp;boxed region in the&nbsp;left panel after removal of dorsal epidermis. The&nbsp;right panel shows the&nbsp;detail of the&nbsp;boxed region in the&nbsp;middle panel after removal of gut tissue overlying the cephalic ganglia and ventral nerve cords. Abbreviations: inc, incision; gut, gut branches; phx, pharynx; CG, cephalic ganglia; VNC, ventral nerve cords. See methods for dissection protocol. (<b>D</b>) Representative image of amputation used to collect tissue for generating the head fragment Illumina libraries. Circle indicates the&nbsp;portion of the&nbsp;animal taken for RNA isolation. (<b>E</b>) Bar graph depicting log<sub>2</sub> fold enrichment of selected markers in cephalic ganglia transcriptome over the&nbsp;head fragment transcriptome. Experimentally-verified neural markers and non-neural markers identified by brackets. Average log<sub>2</sub> fold enrichment of all 7 CNS genes listed in Figure 1—source data 2 in cephalic ganglia transcriptome is 2.57. Average log<sub>2</sub> fold depletion of all 22 non-CNS genes listed in Figure 1—source data 2 in cephalic ganglia transcriptome is 1.22. Statistically significant log<sub>2</sub> fold change indicated by asterisks (*p<sub>adj</sub>≤0.05, **p<sub>adj</sub>≤0.001). For a list of all analyzed genes, see Figure 1—source data 1. (<b>F</b>) Bar graph depicting log<sub>2</sub> fold enrichment of transcript expression level in the&nbsp;cephalic ganglia tissue of <i>hh(RNAi)</i> animals (blue bars) or <i>ptc(RNAi)</i> animals (red bars) over cephalic ganglia tissue from <i>control(RNAi)</i> animals. (<b>G</b>) Intersection of CNS-enriched genes (n = 2237) and Hh-dependent genes (n = 30) reveals 7 CNS genes misregulated following Hh pathway perturbation. Bar graph shows CNS enrichment (green bar) and relative expression following RNAi of <i>hh</i> (blue bar) or <i>ptc</i> (red bar) for <i>if-1</i> and <i>cali</i> (*p<sub>adj</sub>≤0.05, **p<sub>adj</sub>≤ 0.01). (<b>H</b>–<b>I</b>) WISH for (<b>H</b>) <i>if-1</i> and (<b>I</b>) <i>cali</i>. Dorsal surface shown on left, ventral surface shown on the&nbsp;right. Anterior up, maximum intensity projection of the&nbsp;ventral domain shown for <b>A</b>, <b>B</b>. Anterior up for <b>H</b>, <b>I</b>. Scale bars: 50&nbsp;um for overviews, 10&nbsp;um for insets for <b>A</b>, <b>B</b>; 500&nbsp;um for <b>H</b>, <b>I</b>.</p>"
+  "figures": {
+    "title": "Figures",
+    "id": "figures",
+    "first": true,
+    "hasBehaviour": true,
+    "assets": [
+      {
+        "id": "fig1",
+        "variant": "figure",
+        "label": "Figure 1",
+        "supplementCount": 2,
+        "hasMultipleSupplements": true,
+        "captionedAsset": {
+          "captionText": {
+            "heading": "Perturbation of Hh signaling affects gene expression in the cephalic ganglia.",
+            "text": "<p>(<b>A</b>–<b>B</b>) Double fluorescent RNA in situ hybridization (FISH) for <i>hh</i> (magenta) and neuronal markers (<b>A</b>) <i>pc2</i> or (<b>B</b>) <i>chat</i> (green) in wild-type animals. Main panels show cephalic ganglia. Lower panels show high magnification images of, from left to right, <i>hh</i> (magenta), <i>pc2</i> or <i>chat</i> (green), DAPI (gray), and merged channels from a representative double-positive neuron. (<b>C</b>) Excision of cephalic ganglia tissue from acid-killed animals for RNA isolation. The&nbsp;left panel shows incision in the&nbsp;dorsal epidermis. Middle panel shows detail of the&nbsp;boxed region in the&nbsp;left panel after removal of dorsal epidermis. The&nbsp;right panel shows the&nbsp;detail of the&nbsp;boxed region in the&nbsp;middle panel after removal of gut tissue overlying the cephalic ganglia and ventral nerve cords. Abbreviations: inc, incision; gut, gut branches; phx, pharynx; CG, cephalic ganglia; VNC, ventral nerve cords. See methods for dissection protocol. (<b>D</b>) Representative image of amputation used to collect tissue for generating the head fragment Illumina libraries. Circle indicates the&nbsp;portion of the&nbsp;animal taken for RNA isolation. (<b>E</b>) Bar graph depicting log<sub>2</sub> fold enrichment of selected markers in cephalic ganglia transcriptome over the&nbsp;head fragment transcriptome. Experimentally-verified neural markers and non-neural markers identified by brackets. Average log<sub>2</sub> fold enrichment of all 7 CNS genes listed in Figure 1—source data 2 in cephalic ganglia transcriptome is 2.57. Average log<sub>2</sub> fold depletion of all 22 non-CNS genes listed in Figure 1—source data 2 in cephalic ganglia transcriptome is 1.22. Statistically significant log<sub>2</sub> fold change indicated by asterisks (*p<sub>adj</sub>≤0.05, **p<sub>adj</sub>≤0.001). For a list of all analyzed genes, see Figure 1—source data 1. (<b>F</b>) Bar graph depicting log<sub>2</sub> fold enrichment of transcript expression level in the&nbsp;cephalic ganglia tissue of <i>hh(RNAi)</i> animals (blue bars) or <i>ptc(RNAi)</i> animals (red bars) over cephalic ganglia tissue from <i>control(RNAi)</i> animals. (<b>G</b>) Intersection of CNS-enriched genes (n = 2237) and Hh-dependent genes (n = 30) reveals 7 CNS genes misregulated following Hh pathway perturbation. Bar graph shows CNS enrichment (green bar) and relative expression following RNAi of <i>hh</i> (blue bar) or <i>ptc</i> (red bar) for <i>if-1</i> and <i>cali</i> (*p<sub>adj</sub>≤0.05, **p<sub>adj</sub>≤ 0.01). (<b>H</b>–<b>I</b>) WISH for (<b>H</b>) <i>if-1</i> and (<b>I</b>) <i>cali</i>. Dorsal surface shown on left, ventral surface shown on the&nbsp;right. Anterior up, maximum intensity projection of the&nbsp;ventral domain shown for <b>A</b>, <b>B</b>. Anterior up for <b>H</b>, <b>I</b>. Scale bars: 50&nbsp;um for overviews, 10&nbsp;um for insets for <b>A</b>, <b>B</b>; 500&nbsp;um for <b>H</b>, <b>I</b>.</p>"
+          },
+
+          "image": {
+            "srcset": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2-480w.jpg 480w, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2-742w.jpg 742w, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2-972w.jpg 972w, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2-1484w.jpg 1484w",
+            "defaultPath": "https://placehold.it/90x90",
+            "altText": "Meaningful alt text here please."
+          },
+
+          "doi": {
+            "doi": "10.7554/eLife.16996.002",
+            "variant": "asset"
+          }
+
         },
 
+        "image": {
+          "srcset": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2-480w.jpg 480w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2-742w.jpg 742w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2-972w.jpg 972w, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2-1484w.jpg 1484w",
+          "defaultPath": "https://placehold.it/90x90",
+          "altText": "Meaningful alt text here please."
         "image": {
           "srcset": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2-1484w.jpg 2x, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2-742w.jpg 1x",
           "defaultPath": "https://placehold.it/90x90",
           "altText": "Meaningful alt text here please."
-        },
-
-        "doi": {
-          "doi": "10.7554/eLife.16996.002",
-          "variant": "asset"
+        "open": {
+          "uri": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2.jpg",
+          "width": 1995,
+          "height": 1962
         }
-
       },
 
-      "open": {
-        "uri": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-v2.jpg",
-        "width": 1995,
-        "height": 1962
-      }
-    },
+      {
+        "id": "fig1s1",
+        "variant": "supplement",
+        "label": "Figure 1—figure supplement 1",
+        "isSupplement": true,
+        "parentId": "fig1",
+        "supplementOrdinal": 1,
+        "captionedAsset": {
+          "captionText": {
+            "heading": "Analysis of RNA-seq libraries.",
+            "text": "<p>(<b>A</b>) Volcano plot of differential expression between head fragment transcriptome and cephalic ganglia transcriptome. Dots represent the magnitude of differential expression versus the significance for each gene with an average RPKM over 100. A&nbsp;horizontal dotted line indicates significance cutoff and vertical lines indicate the&nbsp;differential expression magnitude cutoff. Number of genes significantly enriched (purple dots) or depleted (blue dots) in cephalic ganglia tissue listed in the upper right and left corners, respectively. (<b>B</b>) Column scatter plot of differential expression of neural markers between conditions. Each dot represents one neural marker. The&nbsp;solid red line indicates mean log<sub>2</sub> fold change of all analyzed neural markers for each condition.</p>"
+          },
 
-    {
-      "id": "fig1s1",
-      "variant": "supplement",
-      "label": "Figure 1—figure supplement 1",
-      "isSupplement": true,
-      "parentId": "fig1",
-      "supplementOrdinal": 1,
-      "captionedAsset": {
-        "captionText": {
-          "heading": "Analysis of RNA-seq libraries.",
-          "text": "<p>(<b>A</b>) Volcano plot of differential expression between head fragment transcriptome and cephalic ganglia transcriptome. Dots represent the magnitude of differential expression versus the significance for each gene with an average RPKM over 100. A&nbsp;horizontal dotted line indicates significance cutoff and vertical lines indicate the&nbsp;differential expression magnitude cutoff. Number of genes significantly enriched (purple dots) or depleted (blue dots) in cephalic ganglia tissue listed in the upper right and left corners, respectively. (<b>B</b>) Column scatter plot of differential expression of neural markers between conditions. Each dot represents one neural marker. The&nbsp;solid red line indicates mean log<sub>2</sub> fold change of all analyzed neural markers for each condition.</p>"
+          "image": {
+            "srcset": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp1-v2--1484w.jpg 2x, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp1-v2-742w.jpg 1x,",
+            "defaultPath": "https://placehold.it/90x90",
+            "altText": "Meaningful alt text here please."
+          },
+
+          "doi": {
+            "doi": "10.7554/eLife.16996.007",
+            "variant": "asset"
+          }
+
         },
 
-        "image": {
-          "srcset": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp1-v2-1484w.jpg 2x, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp1-v2-742w.jpg 1x",
-          "defaultPath": "https://placehold.it/90x90",
-          "altText": "Meaningful alt text here please."
-        },
-
-        "doi": {
-          "doi": "10.7554/eLife.16996.007",
-          "variant": "asset"
+        "open": {
+          "uri": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp1-v2.jpg",
+          "width": 1937,
+          "height": 922
         }
-
       },
 
-      "open": {
-        "uri": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp1-v2.jpg",
-        "width": 1937,
-        "height": 922
-      }
-    },
+      {
+        "id": "fig1s2",
+        "variant": "supplement",
+        "label": "Figure 1—figure supplement 2",
+        "isSupplement": true,
+        "parentId": "fig1",
+        "supplementOrdinal": 2,
+        "captionedAsset": {
+          "captionText": {
+            "heading": "Hh signaling pathway perturbation does not affect regional expression of transcription factors in the central nervous system.",
+            "text": "<p>FISH of orthologs of vertebrate CNS development transcription factors following perturbation of Hh signaling pathway components. Schematic indicates a&nbsp;region of the animal displayed in images. Inhibition of <i>hh</i> (center column) or <i>ptc</i> (right column) shows no change in the&nbsp;expression pattern of <i>nkx2</i> (top row), <i>nkx6</i> (middle row), or <i>pax6b</i> (bottom row) from controls (left column). Anterior up, maximum intensity projection of ventral&nbsp;side&nbsp;shown. Scale bars: 100&nbsp;um for all.</p>"
+          },
 
-    {
-      "id": "fig1s2",
-      "variant": "supplement",
-      "label": "Figure 1—figure supplement 2",
-      "isSupplement": true,
-      "parentId": "fig1",
-      "supplementOrdinal": 2,
-      "captionedAsset": {
-        "captionText": {
-          "heading": "Hh signaling pathway perturbation does not affect regional expression of transcription factors in the central nervous system.",
-          "text": "<p>FISH of orthologs of vertebrate CNS development transcription factors following perturbation of Hh signaling pathway components. Schematic indicates a&nbsp;region of the animal displayed in images. Inhibition of <i>hh</i> (center column) or <i>ptc</i> (right column) shows no change in the&nbsp;expression pattern of <i>nkx2</i> (top row), <i>nkx6</i> (middle row), or <i>pax6b</i> (bottom row) from controls (left column). Anterior up, maximum intensity projection of ventral&nbsp;side&nbsp;shown. Scale bars: 100&nbsp;um for all.</p>"
+          "image": {
+            "srcset": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp2-v2--1484w.jpg 2x, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp2-v2-742w.jpg 1x",
+            "defaultPath": "https://placehold.it/90x90",
+            "altText": "Meaningful alt text here please."
+          },
+
+          "doi": {
+            "doi": "10.7554/eLife.16996.008",
+            "variant": "asset"
+          }
+
         },
 
-        "image": {
-          "srcset": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp2-v2-1484w.jpg 2x, https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp2-v2-742w.jpg 1x",
-          "defaultPath": "https://placehold.it/90x90",
-          "altText": "Meaningful alt text here please."
-        },
-
-        "doi": {
-          "doi": "10.7554/eLife.16996.008",
-          "variant": "asset"
+        "open": {
+          "uri": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp2-v2.jpg",
+          "width": 1472,
+          "height": 980
         }
+      },
+      {
+        "id": "fig1",
+        "variant": "figure",
+        "label": "Figure 1",
+        "supplementCount": 2,
+        "hasMultipleSupplements": true,
+        "captionedAsset": {
+          "captionText": {
+            "heading": "Perturbation of Hh signaling affects gene expression in the cephalic ganglia.",
+            "text": "<p>(<b>A</b>–<b>B</b>) Double fluorescent RNA in situ hybridization (FISH) for <i>hh</i> (magenta) and neuronal markers (<b>A</b>) <i>pc2</i> or (<b>B</b>) <i>chat</i> (green) in wild-type animals. Main panels show cephalic ganglia. Lower panels show high magnification images of, from left to right, <i>hh</i> (magenta), <i>pc2</i> or <i>chat</i> (green), DAPI (gray), and merged channels from a representative double-positive neuron. (<b>C</b>) Excision of cephalic ganglia tissue from acid-killed animals for RNA isolation. The&nbsp;left panel shows incision in the&nbsp;dorsal epidermis. Middle panel shows detail of the&nbsp;boxed region in the&nbsp;left panel after removal of dorsal epidermis. The&nbsp;right panel shows the&nbsp;detail of the&nbsp;boxed region in the&nbsp;middle panel after removal of gut tissue overlying the cephalic ganglia and ventral nerve cords. Abbreviations: inc, incision; gut, gut branches; phx, pharynx; CG, cephalic ganglia; VNC, ventral nerve cords. See methods for dissection protocol. (<b>D</b>) Representative image of amputation used to collect tissue for generating the head fragment Illumina libraries. Circle indicates the&nbsp;portion of the&nbsp;animal taken for RNA isolation. (<b>E</b>) Bar graph depicting log<sub>2</sub> fold enrichment of selected markers in cephalic ganglia transcriptome over the&nbsp;head fragment transcriptome. Experimentally-verified neural markers and non-neural markers identified by brackets. Average log<sub>2</sub> fold enrichment of all 7 CNS genes listed in Figure 1—source data 2 in cephalic ganglia transcriptome is 2.57. Average log<sub>2</sub> fold depletion of all 22 non-CNS genes listed in Figure 1—source data 2 in cephalic ganglia transcriptome is 1.22. Statistically significant log<sub>2</sub> fold change indicated by asterisks (*p<sub>adj</sub>≤0.05, **p<sub>adj</sub>≤0.001). For a list of all analyzed genes, see Figure 1—source data 1. (<b>F</b>) Bar graph depicting log<sub>2</sub> fold enrichment of transcript expression level in the&nbsp;cephalic ganglia tissue of <i>hh(RNAi)</i> animals (blue bars) or <i>ptc(RNAi)</i> animals (red bars) over cephalic ganglia tissue from <i>control(RNAi)</i> animals. (<b>G</b>) Intersection of CNS-enriched genes (n = 2237) and Hh-dependent genes (n = 30) reveals 7 CNS genes misregulated following Hh pathway perturbation. Bar graph shows CNS enrichment (green bar) and relative expression following RNAi of <i>hh</i> (blue bar) or <i>ptc</i> (red bar) for <i>if-1</i> and <i>cali</i> (*p<sub>adj</sub>≤0.05, **p<sub>adj</sub>≤ 0.01). (<b>H</b>–<b>I</b>) WISH for (<b>H</b>) <i>if-1</i> and (<b>I</b>) <i>cali</i>. Dorsal surface shown on left, ventral surface shown on the&nbsp;right. Anterior up, maximum intensity projection of the&nbsp;ventral domain shown for <b>A</b>, <b>B</b>. Anterior up for <b>H</b>, <b>I</b>. Scale bars: 50&nbsp;um for overviews, 10&nbsp;um for insets for <b>A</b>, <b>B</b>; 500&nbsp;um for <b>H</b>, <b>I</b>.</p>"
+          },
 
+          "image": {
+            "srcset": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2--1484w.jpg 2x, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2-742w.jpg 1x",
+            "defaultPath": "https://placehold.it/90x90",
+            "altText": "Meaningful alt text here please."
+          },
+
+          "doi": {
+            "doi": "10.7554/eLife.16996.002",
+            "variant": "asset"
+          }
+
+        },
+
+        "open": {
+          "uri": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2.jpg",
+          "width": 1995,
+          "height": 1962
+        }
       },
 
-      "open": {
-        "uri": "https://elife-publishing-cdn.s3.amazonaws.com/16996/elife-16996-fig1-figsupp2-v2.jpg",
-        "width": 1472,
-        "height": 980
+      {
+        "id": "fig1s1",
+        "variant": "supplement",
+        "label": "Figure 1—figure supplement 1",
+        "isSupplement": true,
+        "parentId": "fig1",
+        "supplementOrdinal": 1,
+        "captionedAsset": {
+          "captionText": {
+            "heading": "Analysis of RNA-seq libraries.",
+            "text": "<p>(<b>A</b>) Volcano plot of differential expression between head fragment transcriptome and cephalic ganglia transcriptome. Dots represent the magnitude of differential expression versus the significance for each gene with an average RPKM over 100. A&nbsp;horizontal dotted line indicates significance cutoff and vertical lines indicate the&nbsp;differential expression magnitude cutoff. Number of genes significantly enriched (purple dots) or depleted (blue dots) in cephalic ganglia tissue listed in the upper right and left corners, respectively. (<b>B</b>) Column scatter plot of differential expression of neural markers between conditions. Each dot represents one neural marker. The&nbsp;solid red line indicates mean log<sub>2</sub> fold change of all analyzed neural markers for each condition.</p>"
+          },
+
+          "image": {
+            "srcset": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp1-v2-1484w.jpg 2x, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp1-v2-742w.jpg 1x",
+            "defaultPath": "https://placehold.it/90x90",
+            "altText": "Meaningful alt text here please."
+          },
+
+          "doi": {
+            "doi": "10.7554/eLife.16996.007",
+            "variant": "asset"
+          }
+
+        },
+
+        "open": {
+          "uri": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp1-v2.jpg",
+          "width": 1937,
+          "height": 922
+        }
+      },
+
+      {
+        "id": "fig1s2",
+        "variant": "supplement",
+        "label": "Figure 1—figure supplement 2",
+        "isSupplement": true,
+        "parentId": "fig1",
+        "supplementOrdinal": 2,
+        "captionedAsset": {
+          "captionText": {
+            "heading": "Hh signaling pathway perturbation does not affect regional expression of transcription factors in the central nervous system.",
+            "text": "<p>FISH of orthologs of vertebrate CNS development transcription factors following perturbation of Hh signaling pathway components. Schematic indicates a&nbsp;region of the animal displayed in images. Inhibition of <i>hh</i> (center column) or <i>ptc</i> (right column) shows no change in the&nbsp;expression pattern of <i>nkx2</i> (top row), <i>nkx6</i> (middle row), or <i>pax6b</i> (bottom row) from controls (left column). Anterior up, maximum intensity projection of ventral&nbsp;side&nbsp;shown. Scale bars: 100&nbsp;um for all.</p>"
+          },
+
+          "image": {
+            "srcset": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp2-v2-1484w.jpg 2x, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp2-v2-742w.jpg 1x",
+            "defaultPath": "https://placehold.it/90x90",
+            "altText": "Meaningful alt text here please."
+          },
+
+          "doi": {
+            "doi": "10.7554/eLife.16996.008",
+            "variant": "asset"
+          }
+
+        },
+
+        "open": {
+          "uri": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-figsupp2-v2.jpg",
+          "width": 1472,
+          "height": 980
+        }
       }
+    ]
+  },
+  "additional-files": {
+    "title": "Additional files",
+    "id": "files",
+    "hasBehaviour": true,
+    "additionalAssets": {
+      "assets": [
+        {
+          "assetId": "pageLevelUniqueFragmentId3",
+          "captionText": {
+            "heading": "Table 1 - source data 1.",
+            "standfirst": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
+            "text": "some more details here"
+          },
+          "nonDoiLink": "https://example.com/a-non-doi-link",
+
+          "downloadLink": {
+            "url": "#downloadLink",
+            "name": "Download me",
+            "fileName": "#download-me.png"
+          }
+        },
+        {
+          "assetId": "pageLevelUniqueFragmentId1",
+          "captionText": {
+            "heading": "Table 1 - source data 1.",
+            "standfirst": "Is the species name mentioned in the title, impact statement, abstract and digest of eLife papers (July–Sept 2014)?",
+            "text": "some more details here"
+          },
+          "doi": {
+            "doi": "10.7554/eLife.10181.001",
+            "variant": "asset"
+          },
+
+          "downloadLink": {
+            "url": "#downloadLink",
+            "name": "Download me",
+            "fileName": "#download-me.png"
+          }
+        }
+      ]
     }
-  ],
-  "pl-only-article-section-for-download-links": {
+  },
+  "download-links": {
     "title": "Article download links",
     "downloadLinks": {
       "description": "A three part list of links to download the article, or parts of the article, in various formats.",

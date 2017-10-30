@@ -83,9 +83,34 @@
 
 }
 
+@mixin blg-pad-top--large-to-extra-large {
+
+  @include blg-spacing("top", "large");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("top", "extra-large");
+  }
+
+}
+
+@mixin blg-pad-bottom--large-to-extra-large {
+
+  @include blg-spacing("bottom", "large");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "extra-large");
+  }
+
+}
+
 @mixin blg-pad-vertical-small-to-medium {
   @include blg-pad-top--small-to-medium();
   @include blg-pad-bottom--small-to-medium();
+}
+
+@mixin blg-pad-vertical-large-to-extra-large {
+  @include blg-pad-top--large-to-extra-large();
+  @include blg-pad-bottom--large-to-extra-large();
 }
 
 @mixin blg-margin-bottom--medium-to-large {
@@ -118,6 +143,14 @@
 
 .grid-secondary-column__item {
   @include blg-column-container();
+}
+
+.grid-secondary-column__item--wide-only {
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--wide - 1)}em) {
+    display: none;
+  }
+
 }
 
 /*
@@ -730,15 +763,4 @@ $breakpoint-has-pull: ("x-small", "small", "medium", "large", "x-large") !defaul
     }
   }
 
-}
-
-/**
-  TESTING
-
-  A class which if added to the body or html element allows you to view the grids on any given page.
-**/
-
-.show-grid .grid__item {
-  //box-shadow: 0 0 0 2px #f00;
-  outline: 1px solid rebeccapurple;
 }

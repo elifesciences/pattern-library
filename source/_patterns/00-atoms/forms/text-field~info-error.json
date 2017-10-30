@@ -1,0 +1,14 @@
+{
+  "id": "name4",
+  "inputType": "text",
+  "label": {
+    "labelText": "Error text field with additional info"
+  },
+  "name": "name",
+  "state": "invalid",
+  "messageGroup": {
+    "id": "idOfTheMessageGroup",
+    "errorText": "Please provide a valid value",
+    "infoText": "You may wish to consider this"
+  }
+}

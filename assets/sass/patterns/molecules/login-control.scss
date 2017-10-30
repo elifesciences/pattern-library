@@ -1,0 +1,74 @@
+@import "../../definitions";
+
+$menu-max-width-in-px: 200;
+
+.login-control__icon {
+  width: 35px;
+}
+
+.login-control__non_js_control_link {
+  display: block;
+  @include non_js_control_link();
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 29vw;
+
+  .js & {
+    display: none;
+  }
+
+}
+
+.login-control__controls {
+  border-radius: #{$border-radius}px;
+  @include box-shadow();
+  @include colors(#fff, $color-text-dividers, $color-text);
+  @include constrain-width($menu-max-width-in-px, "max");
+  @include nospace();
+  position: absolute;
+  right: 12px;
+  list-style-type: none;
+}
+
+.login-control__control {
+  font-family: $font-secondary;
+  @include font-size(14);
+  line-height: 2.6; // 36px on 14px base font size
+  margin: 0;
+  @include padding(12 18 0);
+
+  &:first-child {
+    border-bottom: 1px solid $color-text-dividers;
+    @include padding(17, "bottom");
+    @include padding(18, "top");
+  }
+
+  &:last-child {
+    margin-top: 0;
+    @include padding(12, "bottom");
+  }
+
+  &:last-child:not(&:first-child) {
+    padding-top: 0;
+  }
+
+}
+
+.login-control__link {
+  color: $color-text;
+  text-transform: none;
+}
+
+.login-control__display_name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  @include constrain-width($menu-max-width-in-px, "max");
+  @include font-size(16);
+  line-height: 1.5;
+
+  & + .login-control__subsidiary_text {
+    line-height: 1.7142857143; // 24 px on 14px font size
+  }
+}

@@ -6,9 +6,11 @@
       "title": "Reviewing Editor",
       "contactDetails": "Colombia University, USA",
       "image": {
-        "srcset": "https://placehold.it/180x180 2x",
-        "defaultPath": "https://placehold.it/90x90",
-        "altText": "Meaningful alt text here please."
+        "fallback": {
+          "srcset": "https://placehold.it/180x180 2x",
+          "defaultPath": "https://placehold.it/90x90",
+          "altText": "Meaningful alt text here please."
+        }
       }
     },
     {
@@ -16,9 +18,11 @@
       "title": "Reviewing Editor",
       "contactDetails": "Colombia University, USA",
       "image": {
-        "srcset": "https://placehold.it/180x180 2x",
-        "defaultPath": "https://placehold.it/90x90",
-        "altText": "Meaningful alt text here please."
+        "fallback": {
+          "srcset": "https://placehold.it/180x180 2x",
+          "defaultPath": "https://placehold.it/90x90",
+          "altText": "Meaningful alt text here please."
+        }
       }
     }
   ],

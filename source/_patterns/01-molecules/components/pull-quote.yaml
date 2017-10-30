@@ -12,7 +12,5 @@ schema:
     cite:
       type: string
       minLength: 1
-    asParagraph:
-      type: boolean
   required:
     - quote

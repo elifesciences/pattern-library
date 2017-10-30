@@ -1,0 +1,28 @@
+{
+  "id": "select2",
+  "name": "select2",
+  "label": {
+    "labelText": "Select error with additional info"
+  },
+  "state": "invalid",
+  "messageGroup": {
+    "errorText": "Please provide a valid value",
+    "infoText": "You may wish to consider this",
+    "id": "idOfTheMessageGroup"
+  },
+  "options": [
+    {
+      "value": "2016",
+      "displayValue": "2016"
+    },
+    {
+      "value": "2015",
+      "displayValue": "2015",
+      "selected": true
+    },
+    {
+      "value": "2014",
+      "displayValue": "2014"
+    }
+  ]
+}

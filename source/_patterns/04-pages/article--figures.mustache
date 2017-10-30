@@ -32,9 +32,13 @@
 
             <div class="grid__item large--ten-twelfths push--large--one-twelfth x-large--eight-twelfths push--x-large--zero blg-pad-top-medium blg-pad-top-medium">
 
-              {{#assets}}
-                {{>organisms-asset-viewer-inline}}
-              {{/assets}}
+              {{#figures}}
+                {{>molecules-pl-only-article-section}}
+              {{/figures}}
+
+              {{#additional-files}}
+                {{>molecules-pl-only-article-section}}
+              {{/additional-files}}
 
             </div>
 

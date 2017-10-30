@@ -1,7 +1,7 @@
 assets:
   css:
     - text-fields.css
-    - form-label.css
+    - form-item.css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -13,6 +13,26 @@ schema:
     name:
       type: string
       minLength: 1
+    state:
+      type: string
+      enum:
+        - valid
+        - invalid
+    messageGroup:
+      type: object
+      properties:
+        errorText:
+          type: string
+          minLength: 1
+        infoText:
+          type: string
+          minLength: 1
+        id:
+          type: string
+          minLength: 1
+      minProperties: 2
+      required:
+        - id
     autofocus:
       type: boolean
     inputType:
@@ -24,9 +44,6 @@ schema:
         - tel
         - text
         - url
-      minLength: 1
-    classNames:
-      type: string
       minLength: 1
     placeholder:
       type: string

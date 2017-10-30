@@ -1,0 +1,20 @@
+{
+  "id": "comment1",
+  "label": {
+    "isVisuallyHidden": false,
+    "labelText": "Text area error"
+  },
+  "name": "comment",
+  "state": "invalid",
+  "messageGroup": {
+    "id": "idOfTheMessageGroup",
+    "errorText": "Please provide a valid value"
+  },
+  "autofocus": true,
+  "cols": 30,
+  "disabled": false,
+  "form": "some_form_id",
+  "placeholder": "Type text to leave a comment",
+  "required": true,
+  "rows": 2
+}

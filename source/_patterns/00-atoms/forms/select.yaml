@@ -1,7 +1,7 @@
 assets:
   css:
     - select.css
-    - form-label.css
+    - form-item.css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -13,9 +13,26 @@ schema:
     name:
       type: string
       minLength: 1
-    classNames:
+    state:
       type: string
-      minLength: 1
+      enum:
+        - valid
+        - invalid
+    messageGroup:
+      type: object
+      properties:
+        errorText:
+          type: string
+          minLength: 1
+        infoText:
+          type: string
+          minLength: 1
+        id:
+          type: string
+          minLength: 1
+      minProperties: 2
+      required:
+        - id
     required:
       type: boolean
     disabled:

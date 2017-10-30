@@ -34,6 +34,9 @@ module.exports = class ViewSelector {
     }
 
     this.mainTarget = this.doc.querySelector('.main');
+    if (!this.mainTarget) {
+      return;
+    }
 
     // matches top padding in scss
     let topSpaceWhenFixed = 30;

@@ -1,0 +1,12 @@
+{
+  "id": "name3",
+  "inputType": "text",
+  "label": {
+    "labelText": "Text field with info"
+  },
+  "name": "name",
+  "messageGroup": {
+    "id": "idOfTheMessageGroup",
+    "infoText": "You may wish to consider this"
+  }
+}

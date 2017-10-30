@@ -1,86 +1,64 @@
 'use strict';
-var utils = require('../libs/elife-utils')();
+const utils = require('../libs/elife-utils')();
 
 module.exports = class SectionListingLink {
 
   constructor($elm, _window = window, doc = document) {
-
-    if (!($elm instanceof HTMLElement)) {
+    try {
+      if (!($elm instanceof HTMLElement && $elm.href.length && $elm.href.indexOf('#') > -1)) {
+        return;
+      }
+    } catch (e) {
       return;
     }
 
     this.window = _window;
-    this.thresholdWidth = 1200;
-    this.$elm = $elm;
     this.doc = doc;
-    this.$list = this.doc.querySelector(SectionListingLink.findIdSelector(this.$elm.href));
-    this.$theListParent = this.$list.parentNode;
-    this.$theElmParent = $elm.parentNode;
-    this.displayBreakpoint();
+    this.$elm = $elm;
+    this.href = this.$elm.href;
+    this.$listing = this.doc.getElementById(this.href.substring(this.href.indexOf('#') + 1));
+    if (this.$listing) {
+      this.init();
+    } else {
+      this.$elm.classList.add('hidden');
+    }
 
-    this.isMobile = null;
+  }
 
-    this.window.addEventListener('resize',
-      utils.debounce(() => this.displayBreakpoint(), 100)
+  init() {
+    this.$defaultListParent = this.$listing.parentNode;
+    this.$wideViewListParent = this.$elm.parentNode;
+    this.breakpoint = 1200;
+
+    this.handleWidth();
+    this.window.addEventListener('resize', utils.debounce(() => this.handleWidth(), 10)
     );
 
   }
 
-  hideElm() {
-
-    this.$elm.classList.add('hidden');
-
+  handleWidth() {
+    this.updateView(this.$listing, this.$defaultListParent, this.$wideViewListParent, this.breakpoint);
   }
 
-  showElm() {
-
-    this.$elm.classList.remove('hidden');
-
-  }
-
-  displayBreakpoint() {
-
-    if (this.$list && this.viewportNoWiderThan(this.thresholdWidth)) {
-
-      this.switchToMobilePosition();
-      this.showElm();
-
+  updateView($list, $defaultListParent, $wideViewListParent, thresholdWidthInPx) {
+    if (this.window.matchMedia(`(min-width: ${thresholdWidthInPx}px)`).matches) {
+      this.showWideView($list, $wideViewListParent);
     } else {
-
-      this.switchToDesktopPosition();
-      this.hideElm();
+      this.restoreDefaultView($list, $defaultListParent);
     }
   }
 
-  switchToMobilePosition() {
-
-    if (this.isMobile === true) {
-      return;
+  showWideView($list, $wideViewListParent) {
+    if ($list.parentNode !== $wideViewListParent) {
+      $wideViewListParent.appendChild($list);
+      this.$elm.classList.add('hidden');
     }
-
-    this.isMobile = true;
-    this.$theListParent.appendChild(this.$list);
-
   }
 
-  switchToDesktopPosition() {
-
-    if (this.isMobile === false) {
-      return;
-    }
-
-    this.isMobile = false;
-    this.$theElmParent.appendChild(this.$list);
-
-  }
-
-  viewportNoWiderThan(thresholdInPx) {
-    return this.window.matchMedia('(max-width: ' + thresholdInPx + 'px)').matches;
-  }
-
-  static findIdSelector(href) {
-    if (href) {
-      return href.substring(href.indexOf('#'));
+  restoreDefaultView($list, $defaultListParent) {
+    if ($list.parentNode !== $defaultListParent) {
+      $defaultListParent.appendChild($list);
+      this.$elm.classList.remove('hidden');
     }
   }
 

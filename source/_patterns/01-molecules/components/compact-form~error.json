@@ -1,0 +1,22 @@
+{
+  "formAction" : "#",
+  "formId": "myCompactForm",
+  "formMethod": "GET",
+  "label": "Email",
+  "inputType": "email",
+  "inputName": "email",
+  "inputValue": "",
+  "inputPlaceholder": "you@email.com",
+  "ctaText": "Go",
+  "state": "invalid",
+  "messageGroup": {
+    "id": "idOfTheMessageGroup",
+    "errorText": "Please provide a valid value"
+  },
+  "hiddenFields": [
+    {
+      "name": "hidden",
+      "value": "hello"
+    }
+  ]
+}

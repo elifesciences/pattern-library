@@ -1,10 +1,14 @@
 {
-  "id": "select3",
-  "name": "select3",
+  "id": "select2",
+  "name": "select2",
   "label": {
-    "labelText": "Select focus"
+    "labelText": "Select valid with additional info"
   },
-  "classNames": "select--focus",
+  "state": "valid",
+  "messageGroup": {
+    "infoText": "Hunky dory, thanks very much",
+    "id": "idOfTheMessageGroup"
+  },
   "options": [
     {
       "value": "2016",

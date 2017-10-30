@@ -34,6 +34,22 @@ $totalHighlightsSpacing: 6;
   .content-header--read-more {
     border: none;
   }
+
+  // When wide, hide to avoid duplication: then, the contents is also displayed in the right hand article column
+  .listing-list__item--related {
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      display: none;
+
+      // Breaks max 3 level selector rule. This is an extreme edge case, so grudingly accepting
+      + .listing-list__item .listing-list__divider {
+        display: none;
+      }
+
+    }
+
+  }
+
 }
 
 .listing-list--read-more {
@@ -171,7 +187,7 @@ div.listing-list__content {
       white-space: nowrap;
     }
 
-    .teaser__img {
+    .teaser__picture {
       box-sizing: content-box;
       @include nospace();
       @include padding(3, "top");

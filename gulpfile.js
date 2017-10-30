@@ -33,6 +33,8 @@ const sourcemaps        = require('gulp-sourcemaps');
 const stylelint         = require('stylelint');
 const syntax_scss       = require('postcss-scss');
 const uglify            = require('gulp-uglify');
+const webdriver         = require('gulp-webdriver');
+
 
 const js3rdPartySource = './assets/js/libs/third-party/**/*.js';
 const jsPolyfills = './assets/js/libs/polyfills.js';
@@ -175,12 +177,10 @@ gulp.task('fonts', () => {
  * Creates a sourcemap.
  ******************************************************************************/
 
-gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests', 'js:extLibs'], () => {
+gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests'], () => {
 
     return browserify('./assets/js/main.js', { debug: true })
-          .transform(babel, {
-            presets: ["es2015"]
-          })
+          .transform(babel)
           .bundle()
           .on('error', (err) => {
             console.error(err.message);
@@ -196,15 +196,6 @@ gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests', 'js:extLibs'], () => {
 
 gulp.task('js:clean', () => {
   del([jsDest + '/*']);
-});
-
-gulp.task('js:extLibs', ['js:clean'], () => {
-  return gulp.src(js3rdPartySource)
-    .pipe(concat('extlibs.js'))
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(jsDest));
-
 });
 
 gulp.task('js:hint', () => {
@@ -229,9 +220,7 @@ gulp.task('browserify-tests', (done) => {
 
     let tasks = files.map(entry => {
       return browserify({ entries: [entry] })
-      .transform(babel, {
-        presets: ["es2015"]
-      })
+      .transform(babel)
       .bundle()
       .pipe(source(entry))
       .pipe(rename({ dirname: '' }))
@@ -254,6 +243,14 @@ gulp.task('test', ['browserify-tests', 'js'], () => {
       'ignore-resource-errors': true
     }))
     .pipe(reload());
+});
+
+gulp.task('test:selenium', function() {
+    return gulp.src('wdio.conf.js').pipe(webdriver());
+});
+
+gulp.task('test:selenium:local', function() {
+    return gulp.src('wdio-local.conf.js').pipe(webdriver());
 });
 
 // Watchers
@@ -291,7 +288,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/viewselector.html'});
+    browserSync({proxy: 'localhost:8080', startPath: 'test/logincontrol.html', browser: 'google chrome'});
   } else {
     return gutil.noop;
   }

@@ -1,0 +1,25 @@
+{{! This is a pattern lab only version of article section.
+Required because the production article-section pattern does not include partials. }}
+<section class="article-section {{#first}}article-section--first{{/first}}" {{#hasBehaviour}}data-behaviour="ArticleSection"{{/hasBehaviour}} id="{{id}}">
+
+  <header class="article-section__header">
+    <h2 class="article-section__header_text">{{title}}</h2>
+  </header>
+
+  <div class="article-section__body">
+
+    {{#assets}}
+      {{>organisms-asset-viewer-inline}}
+    {{/assets}}
+
+    {{#additionalAssets}}
+      {{>organisms-additional-assets}}
+    {{/additionalAssets}}
+
+    {{#downloadLinks}}
+      {{> molecules-article-download-links-list}}
+    {{/downloadLinks}}
+
+  </div>
+
+</section>

@@ -17,10 +17,12 @@
   "url": "#",
   "secondaryInfo": "Bloggs, J. et al",
   "image": {
-    "defaultPath": "https://unsplash.it/70/70/",
-    "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
-    "altText": "Meaningful alt text here please.",
-    "classes": "teaser__img--small"
+    "fallback": {
+      "defaultPath": "https://unsplash.it/70/70/",
+      "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
+      "altText": "Meaningful alt text here please."
+    },
+    "type": "small"
   },
   "footer": {
     "meta": {

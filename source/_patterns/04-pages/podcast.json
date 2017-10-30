@@ -90,11 +90,23 @@
         {
           "text": "Submit my research",
           "path": "#",
-          "classes": "nav-secondary__item nav-secondary__item--button",
+          "classes": "nav-secondary__item",
           "button": {
             "classes": "button--default button--extra-small"
           }
+        },
+
+        {
+          "classes": "nav-secondary__item",
+          "loginControl": {
+            "button": {
+              "text": "Log in / Register",
+              "path": "#",
+              "classes": "button--confirm button--extra-small"
+            }
+          }
         }
+
       ]
     },
 
@@ -264,10 +276,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://unsplash.it/70/70/",
-            "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://unsplash.it/70/70/",
+              "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -303,10 +317,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://unsplash.it/70/70/",
-            "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://unsplash.it/70/70/",
+              "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 

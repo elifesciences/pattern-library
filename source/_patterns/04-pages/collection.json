@@ -90,11 +90,23 @@
         {
           "text": "Submit my research",
           "path": "#",
-          "classes": "nav-secondary__item nav-secondary__item--button",
+          "classes": "nav-secondary__item",
           "button": {
             "classes": "button--default button--extra-small"
           }
+        },
+
+        {
+          "classes": "nav-secondary__item",
+          "loginControl": {
+            "button": {
+              "text": "Log in / Register",
+              "path": "#",
+              "classes": "button--confirm button--extra-small"
+            }
+          }
         }
+
       ]
     },
 
@@ -897,10 +909,12 @@
           },
 
           "image": {
-            "defaultPath": "https://unsplash.it/250/140/",
-            "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--big"
+            "fallback": {
+              "defaultPath": "https://unsplash.it/250/140/",
+              "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "big"
           }
         }
       ]
@@ -1017,63 +1031,76 @@
         "name": "Ben Cooper",
         "title": "Mahidol Oxford Tropical Medicine Research Unit (Thailand)",
         "image": {
-          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
+            "defaultPath": "https://unsplash.it/90/90",
+            "altText": "Meaningful alt text here please."
+          }
         }
       },
       {
         "name": "Eduardo Franco",
         "title": "McGill University (Canada)",
         "image": {
-          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
+            "defaultPath": "https://unsplash.it/90/90",
+            "altText": "Meaningful alt text here please."
+          }
         }
       },
       {
         "name": "Simon I Hay",
         "title": "University of Washington (United States)",
         "image": {
-          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
+            "defaultPath": "https://unsplash.it/90/90",
+            "altText": "Meaningful alt text here please."
+          }
         }
       },
       {
         "name": "Mark Jit",
         "title": "London School of Hygiene & Tropical Medicine, and Public Health England (United Kingdom)",
         "image": {
-          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
+            "defaultPath": "https://unsplash.it/90/90",
+            "altText": "Meaningful alt text here please."
+          }
         }
       },
       {
         "name": "Quarraisha Abdool Karim",
         "title": "CAPRISA (South Africa)",
         "image": {
-          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
+            "defaultPath": "https://unsplash.it/90/90",
+            "altText": "Meaningful alt text here please."
+          }
         }
       },
       {
         "name": "Urszula Krzych",
         "title": "Walter Reed Army Institute of Research (United States)",
         "image": {
-          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
+            "defaultPath": "https://unsplash.it/90/90",
+            "altText": "Meaningful alt text here please."
+          }
         }
       },
       {
         "name": "Catherine Kyobutungi",
         "title": "Africa Population Health Research Center (Kenya)",
         "image": {
-          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
+            "altText": "Meaningful alt text here please."
+          }
         }
 
       },
@@ -1081,9 +1108,11 @@
         "name": "Dominique Soldati-Favre",
         "title": "University of Geneva (Switzerland)",
         "image": {
-          "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
+            "defaultPath": "https://unsplash.it/90/90",
+            "altText": "Meaningful alt text here please."
+          }
         }
       }
     ]

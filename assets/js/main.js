@@ -21,8 +21,10 @@ if (window.localStorage && document.querySelector &&
   Components.Carousel = require('./components/Carousel');
   Components.ContentHeader = require('./components/ContentHeader');
   Components.DelegateBehaviour = require('./components/DelegateBehaviour');
+  Components.FilterPanel = require('./components/FilterPanel');
   Components.FragmentHandler = require('./components/FragmentHandler');
   Components.Highlights = require('./components/Highlights');
+  Components.LoginControl = require('./components/LoginControl');
   Components.MainMenu = require('./components/MainMenu');
   Components.Math = require('./components/Math');
   Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');

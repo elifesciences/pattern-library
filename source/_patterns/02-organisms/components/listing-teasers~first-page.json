@@ -37,10 +37,12 @@
       },
 
       "image": {
-        "defaultPath": "https://unsplash.it/250/140/",
-        "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
-        "altText": "Meaningful alt text please.",
-        "classes": "teaser__img--big"
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
+          "altText": "Meaningful alt text please."
+        },
+        "type": "big"
       }
     },
 
@@ -153,10 +155,12 @@
         }
       },
       "image": {
-        "defaultPath": "https://unsplash.it/70/70/",
-        "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
-        "altText": "Meaningful alt text please.",
-        "classes": "teaser__img--small"
+        "fallback": {
+          "defaultPath": "https://unsplash.it/70/70/",
+          "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
+          "altText": "Meaningful alt text please."
+        },
+        "type": "small"
       }
     }
   ],
