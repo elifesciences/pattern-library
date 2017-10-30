@@ -200,7 +200,7 @@ module.exports = class LoginControl {
    */
   insertToggle($container, $elm, buildElement) {
     const $toggle = buildElement.call(null, 'a', ['login-control__controls_toggle'], '', $container);
-    $toggle.setAttribute('href', '#');
+    $toggle.setAttribute('href', this.defaultUri);
     const iconAsString = $elm.dataset.icon;
     if (typeof iconAsString === 'string' && iconAsString.length) {
       $toggle.innerHTML = iconAsString;
