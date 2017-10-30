@@ -4,7 +4,7 @@
     "text": "<p>(A) Image of a young adult C. elegans and schematic depicting the twelve pairs of sensory neurons in the anterior amphid individuals carrying a virus with k deleterious mutations at its endemic equilibrium. class carrying the fewest number of deleterious mutations is defined as mutation class k = 0. Inset: variation in the basic reproductive rate of infected individuals (gray histogram) and variation in the net reproductive rate R of infected individuals (brown histogram) resulting from variation in the number of deleterious mutations carried by circulating viruses.</p>"
   },
   "image": {
-    "srcset": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2-480w.jpg 480w, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2-742w.jpg 742w, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2-972w.jpg 972w, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2-1484w.jpg 1484w",
+    "srcset": "https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2-1484w.jpg 2x, https://prod-elife-published.s3.amazonaws.com/articles/16996/elife-16996-fig1-v2-742w.jpg 742w 1x",
     "defaultPath": "https://placehold.it/90x90",
     "altText": "Meaningful alt text here please."
   },

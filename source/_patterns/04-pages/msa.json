@@ -14,7 +14,7 @@
           "picture": {
             "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
               "classes": "",
               "altText": "Menu icon"
@@ -48,7 +48,7 @@
           "picture": {
             "pictureClasses": "nav-primary__search_icon",
             "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 1x",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
               "classes": "",
               "altText": "Search icon"
@@ -189,7 +189,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://unsplash.it/250/140/",
-              "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+              "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "big"
@@ -306,7 +306,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://unsplash.it/70/70/",
-              "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
+              "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -401,7 +401,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/250/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -510,7 +510,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://unsplash.it/250/140/",
-              "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+              "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
               "altText": "Make it meaningful please"
             },
             "type": "big"
@@ -554,7 +554,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -585,7 +585,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -616,7 +616,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -647,7 +647,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -678,7 +678,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 12x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -708,7 +708,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -727,7 +727,7 @@
         "title": "University of Toronto",
         "image": {
           "fallback": {
-            "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
             "defaultPath": "https://unsplash.it/90/90",
             "altText": "Meaningful alt text here please."
           }
@@ -738,7 +738,7 @@
         "title": "Harvard University",
         "image": {
           "fallback": {
-            "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
+            "srcset": "https://unsplash.it/180/180 2x, https://unsplash.it/90/90 1x",
             "defaultPath": "https://unsplash.it/90/90",
             "altText": "Meaningful alt text here please."
           }

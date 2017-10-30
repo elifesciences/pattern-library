@@ -5,7 +5,7 @@
   "image": {
     "fallback": {
       "defaultPath": "../../assets/img/patterns/molecules/teaser-medium-icon-1x.png",
-      "srcset": "../../assets/img/patterns/molecules/teaser-medium-icon-2x.png 140w, ../../assets/img/patterns/molecules/teaser-medium-icon-1x.png 70w",
+      "srcset": "../../assets/img/patterns/molecules/teaser-medium-icon-2x.png 2X, ../../assets/img/patterns/molecules/teaser-medium-icon-1x.png 1X",
       "altText": "Meaningful alt text please"
     },
     "type": "small"
