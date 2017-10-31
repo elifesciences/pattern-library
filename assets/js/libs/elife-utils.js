@@ -186,17 +186,21 @@ module.exports = () => {
   }
 
   /**
-   * Add a quantity to a px amount expressed as a string, and return new string with updated value.
+   * Return an '[n]px' string, adjusting a base value by the amount and operation supplied.
    *
-   * For example: adjustPxString('97px', 8) returns '105px'
+   * Examples:
+   *  - adjustPxString('97px', 8) returns '105px'
+   *  - adjustPxString('97px', 8, `subtract') returns '89px'
+   *  - adjustPxString('100px', 20, 'divide') returns '5px'
+   *  - adjustPxString('50px', 3, 'multiply') returns '150px'
    *
    * @param {String} pxString The string representing the original quantity, e.g. '97px'
-   * @param adjustment The numeric adjustment to make, e.g. 8
-   * @param requestedOperation
-   * @returns {string} The modified value, as a string, e.g.: '105px'
+   * @param {Number} adjustment The numeric adjustment to make, e.g. 8
+   * @param {('add'|'subtract'|'multiply'|'divide')} requestedOperation
+   * @returns {string} The modified value, e.g.: '105px'
    */
   function adjustPxString(pxString, adjustment, requestedOperation) {
-    let originalSize = _getValueFromPxString(pxString);
+    const originalSize = _getValueFromPxString(pxString);
     let adjustedSize = originalSize;
     let operation = 'add';
     if (['subtract', 'multiply', 'divide'].indexOf(requestedOperation) > -1) {
