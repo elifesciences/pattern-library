@@ -227,16 +227,17 @@ module.exports = () => {
   }
 
   /**
-   * Invert the px amount expressed as a string, and return new string with inverted value.
+   * Return the supplied value with the sign flipped, or '0' if supplied ` a zero px string
    *
    * For example: invertPxString('97px') returns '-97px'
+   * For example: invertPxString('-97px') returns '97px'
+   * For example: invertPxString('0px') returns '0'
    *
    * @param {String} pxString The string representing the original quantity, e.g. '97px'
    * @returns {string} The modified value, as a string, e.g.: '-97px'
    */
   function invertPxString(pxString) {
-    let originalSize = _getValueFromPxString(pxString);
-    let adjustedSize = originalSize * -1;
+    const adjustedSize = _getValueFromPxString(pxString) * -1;
     return _getZeroAwarePxStringFromValue(adjustedSize);
   }
 
