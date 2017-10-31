@@ -101,7 +101,7 @@ describe('The utils library', function () {
 
   });
 
-  describe('invertPxString', () => {
+  describe('the invertPxString function', () => {
 
     it('makes a positive px string negative, without changing the absolute quantity', () => {
       expect(utils.invertPxString('-99px')).to.equal('99px');
@@ -115,6 +115,15 @@ describe('The utils library', function () {
       expect(utils.invertPxString('0px')).to.equal('0');
     });
 
+  });
+
+  describe('the flatten function', () => {
+
+    it('flattens the upper most nested level of a nested array', () => {
+      expect(utils.flatten( [ 1, 2, [ 3, 4 ] ] )).to.have.members( [ 1, 2, 3, 4 ] );
+      expect(utils.flatten( [ 1, 2, [ 3, 4, [ 5 ] ] ] )).to.have.deep.members( [ 1, 2, 3, 4, [ 5 ] ] );
     });
+
+  });
 
 });
