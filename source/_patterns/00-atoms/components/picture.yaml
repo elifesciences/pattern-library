@@ -34,7 +34,7 @@ schema:
       properties:
         srcset:
           type: string
-          pattern: ^((https)?[^ ]+ [1-9][0-9]*x)(, (https?)?[^ ]+ [1-9][0-9]*x)*$
+          pattern: ^((https)?[^ ]+ [1-9][0-9.]*x, )*((https?)?[^ ]+ 1x)$
         defaultPath:
           type: string
           minLength: 1
