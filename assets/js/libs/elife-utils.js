@@ -401,9 +401,13 @@ module.exports = () => {
   }
 
   /**
-   * Flattens nested array
-   * @param input
-   * @returns {Array.<*>}
+   * Flattens the upper most nested level of a nested array
+   *
+   * Examples:
+   *  - flatten( [1,2,3,[4]] ) -> [1, 2, 3, 4]
+   *  - flatten( [1,2,3,[4, [5]]] ) -> [1, 2, 3, 4, [5]]
+   * @param {Array<*>} input
+   * @returns {Array<*>} with one fewer level of nesting
    */
   function flatten(input) {
     return [].concat(...input);
