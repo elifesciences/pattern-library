@@ -126,4 +126,41 @@ describe('The utils library', function () {
 
   });
 
+  describe('the isIdOfOrWithinSection function', () => {
+
+    let $target;
+
+    before(() => {
+      $target = document.querySelector('.isIdOfOrWithinSection').querySelector('.target');
+    });
+
+    it('returns true if the supplied id matches that of target element', () => {
+      const idOfTargetElement = 'isIdOfOrWithinSection_targetHit';
+      expect(utils.isIdOfOrWithinSection(idOfTargetElement, $target, document)).to.be.true;
+    });
+
+    it('returns true if an element with the supplied id is a descendant of the target element', () => {
+      const idOfChildOfTargetElement = 'isIdOfOrWithinSection_targetHit_child';
+      expect(utils.isIdOfOrWithinSection(idOfChildOfTargetElement, $target, document)).to.be.true;
+
+      const idOfGrandChildOfTargetElement = 'isIdOfOrWithinSection_targetHit_grandChild';
+      expect(utils.isIdOfOrWithinSection(idOfGrandChildOfTargetElement, $target, document)).to.be.true;
+    });
+
+    it('returns false if an element with the supplied id is not a descendant of the target element', () => {
+      const idOfExistingElementNotInTreeOfTargetElement = 'isIdOfOrWithinSection_targetMiss';
+      expect(utils.isIdOfOrWithinSection(idOfExistingElementNotInTreeOfTargetElement, $target, document)).to.be.false;
+
+      const httpPrefixed = 'http://example.com';
+      expect(utils.isIdOfOrWithinSection(httpPrefixed, $target, document)).to.be.false;
+
+      const httpsPrefixed = 'https://example.com';
+      expect(utils.isIdOfOrWithinSection(httpsPrefixed, $target, document)).to.be.false;
+
+      const notOnThePage = 'madeUpId';
+      expect(utils.isIdOfOrWithinSection(notOnThePage, $target, document)).to.be.false;
+    });
+
+  });
+
 });
