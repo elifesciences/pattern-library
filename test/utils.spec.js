@@ -101,4 +101,20 @@ describe('The utils library', function () {
 
   });
 
+  describe('invertPxString', () => {
+
+    it('makes a positive px string negative, without changing the absolute quantity', () => {
+      expect(utils.invertPxString('-99px')).to.equal('99px');
+    });
+
+    it('makes a negative px string positive, without changing the absolute quantity', () => {
+      expect(utils.invertPxString('99px')).to.equal('-99px');
+    });
+
+    it('returns the number 0 as a string if supplied with a zero px string', () => {
+      expect(utils.invertPxString('0px')).to.equal('0');
+    });
+
+    });
+
 });
