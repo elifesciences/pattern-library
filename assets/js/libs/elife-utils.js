@@ -14,12 +14,12 @@ module.exports = () => {
    */
   function buildElement(elName, cssClasses, textContent, parent, attachBefore) {
 
-    var $el = document.createElement(elName);
-    var $parent = typeof parent === 'string' ? document.querySelector(parent)
+    const $el = document.createElement(elName);
+    const $parent = typeof parent === 'string' ? document.querySelector(parent)
         : parent;
 
     // Work out what the new element's following sibling will be, based on value of attachBefore.
-    var $followingSibling = (function () {
+    const $followingSibling = (function () {
 
       if (!!attachBefore) {
 
