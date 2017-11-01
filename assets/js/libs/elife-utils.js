@@ -74,12 +74,20 @@ module.exports = () => {
 
   const uniqueIds = (function uniqueIds() {
 
+    /** @class */
     class UniqueIdentifiers {
 
+      /** @constructor */
       constructor() {
         this.used = [];
       }
 
+      /**
+       * Returns true if candidate is unique to this object, and also to any optional document supplied.
+       * @param {string} candidate Candidate id string under evaluation
+       * @param {HTMLDocument} [document]
+       * @return {boolean}
+       */
       isValid(candidate, document) {
         // Compulsory check that id is unique to this object's knowledge.
         if (this.used.indexOf(candidate) > -1) {
