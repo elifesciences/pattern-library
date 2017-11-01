@@ -228,35 +228,105 @@ describe('The utils library', function () {
 
   describe('the buildElement function', () => {
 
+    let contextClassName = '.buildElement';
+    let $context;
+
+    beforeEach(() => {
+      $context = document.querySelector(contextClassName);
+    });
+
     context('when supplied an element name', () => {
 
-      xit('creates and returns that element');
+      const $el = utils.buildElement('div');
+
+      it('creates and returns that element', () => {
+        expect($el.nodeName).to.equal('DIV');
+      });
 
     });
 
     context('when supplied a list of CSS class names', () => {
 
-      xit('attaches those class names to the element created');
+      const $el = utils.buildElement('div', ['class-1', 'class-2']);
+
+      it('attaches those class names to the element created', () => {
+        const classes = $el.classList;
+        expect(classes.contains('class-1')).to.be.true;
+        expect(classes.contains('class-2')).to.be.true;
+        expect(classes).to.have.a.lengthOf(2);
+      });
 
     });
 
     context('when supplied text content', () => {
 
-      xit('wraps that text content with the element created');
+      const $el = utils.buildElement('div', [], 'some text');
+
+      it('wraps that text content with the element created', () => {
+        expect($el.innerHTML).to.equal('some text');
+      });
+
+    });
+
+    context('when not supplied a parent element', () => {
+
+      before(() => {
+        expect(document.querySelector('.my-new-element')).to.be.null;
+      });
+
+      it('is not inserted into the DOM', () => {
+        utils.buildElement('div', ['my-new-element']);
+        expect(document.querySelector('.my-new-element')).to.be.null;
+      });
 
     });
 
     context('when supplied a parent element', () => {
 
+      let $parent;
+
+      beforeEach(() => {
+        $parent = $context.querySelector('.parent');
+        expect($parent.querySelector('.my-new-element')).to.be.null;
+      });
+
+      afterEach(() => {
+        [].forEach.call(
+          $parent.querySelectorAll('.my-new-element'),
+          ($el) => {
+            $el.parentNode.removeChild($el);
+          });
+      });
+
       context('when the parent element itself is supplied', () => {
 
-        xit('the element is appended as the last child of the parent element');
+        it('the element is appended as the last child of the parent element', () => {
+          utils.buildElement('div', ['my-new-element'], '', $parent);
+          expect($parent.querySelector('.my-new-element')).not.to.be.null;
+        });
 
       });
 
       context('when a CSS selector to a parent element is supplied', () => {
 
-        xit('the element is appended as the last child of the first element matched by that CSS selector');
+        const parentSelector = `${contextClassName} > .parent`;
+
+        it('the element is appended as the last child of the first element matched by that CSS selector', () => {
+          // build and attach the element
+          utils.buildElement('div', ['my-new-element'], '', parentSelector);
+
+          // grab the parent by how it's defined in this test
+          const $parentFromSelector = document.querySelector(parentSelector);
+
+          // the new element should be the last child of it defined parent
+          expect($parentFromSelector.lastElementChild.classList.contains('my-new-element')).not.to.be.null;
+          expect($parentFromSelector.querySelectorAll('.my-new-element')).to.have.lengthOf(1);
+
+          // other elements matching the CSS selector but that occur later in the document do not have the new element as a child
+          const $shouldNotHaveNewElementAsChild = $context.querySelector('.parent.this-second-parent-should-not-match');
+          expect($shouldNotHaveNewElementAsChild.querySelector('.my-new-element')).to.be.null;
+
+        });
 
       });
 
@@ -264,25 +334,65 @@ describe('The utils library', function () {
 
         context('as true', () => {
 
-          xit('the element is inserted as the first child of the parent element');
+          it('the new element is inserted as the first child of the parent element', () => {
+            utils.buildElement('div', ['my-new-element'], '', $parent, true);
+            expect($parent.firstElementChild.classList.contains('my-new-element')).to.be.true;
+            expect($parent.querySelectorAll('.my-new-element')).to.have.a.lengthOf(1);
+          });
 
         });
 
         context('as an element that is a child of the parent element', () => {
 
-          xit('the element is appended before the supplied element');
+          it('the new element is inserted before the supplied element', () => {
+            // build and attach the element
+            const $attachBeforeMe = $context.querySelector('.pre-existing-sibling-2');
+            utils.buildElement('div', ['my-new-element'], '', $parent, $attachBeforeMe);
+
+            // check it's been inserted in the right place
+            expect($attachBeforeMe.previousElementSibling.classList.contains('my-new-element')).to.be.true;
+
+            // check it's only been inserted once
+            expect($parent.querySelectorAll('.my-new-element')).to.have.a.lengthOf(1);
+
+            // check it's not removed any pre-existing elements
+            expect($parent.children).to.have.a.lengthOf(3);
+          });
 
         });
 
         context('as a CSS selector matching a child of the parent element', () => {
 
-          xit('the element is appended before the matched element');
+          const followingSiblingSelector = `${contextClassName} .pre-existing-sibling-2`;
+
+          it('the element is appended before the matched element', () => {
+            // build and attach the element
+            utils.buildElement('div', ['my-new-element'], '', $parent, followingSiblingSelector);
+
+            // grab the following sibling by how it's defined in this test
+            const $followingSiblingFromSelector = document.querySelector(followingSiblingSelector);
+
+            //
+            expect($followingSiblingFromSelector.previousElementSibling.classList.contains('my-new-element')).to.be.true;
+
+            // check it's only been inserted once
+            expect($parent.querySelectorAll('.my-new-element')).to.have.a.lengthOf(1);
+
+            // check it's not removed any pre-existing elements
+            expect($parent.children).to.have.a.lengthOf(3);
+          });
 
         });
 
         context('when the attachBefore element is determined as not being a child of the parent element', () => {
 
-          xit('throws a ReferenceError');
+          it('throws a ReferenceError', () => {
+            const $notAChildOfStatedParent = $context.querySelector('.not-a-child-of-first-parent');
+            expect(() => {
+              utils.buildElement('div', ['my-new-element'], '', $parent, $notAChildOfStatedParent);
+            }).to.throw(ReferenceError, 'Trying to attach an element with respect to an element sibling, but the two elements do not share a common parent.');
+
+          });
 
         });
 
