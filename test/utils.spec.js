@@ -205,4 +205,25 @@ describe('The utils library', function () {
 
   });
 
+  describe('the getOrdinalAmongstSiblingElements function', () => {
+
+    let $context;
+
+    before(() => {
+      $context = document.querySelector('.getOrdinalAmongstSiblingElements');
+    });
+
+    it('correctly identifies an element\'s position within its siblings', () => {
+      expect(utils.getOrdinalAmongstSiblingElements($context.querySelector('.child-1a'))).to.equal(1);
+      expect(utils.getOrdinalAmongstSiblingElements($context.querySelector('.child-1b'))).to.equal(1);
+      expect(utils.getOrdinalAmongstSiblingElements($context.querySelector('.child-2'))).to.equal(2);
+      expect(utils.getOrdinalAmongstSiblingElements($context.querySelector('.child-3'))).to.equal(3);
+    });
+
+    it('throws a TypeError if not supplied with an HTMLElement', () => {
+      expect(() => {utils.getOrdinalAmongstSiblingElements(null)}).to.throw(TypeError, 'Expected HTMLElement');
+    });
+
+  });
+
 });

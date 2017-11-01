@@ -319,21 +319,24 @@ module.exports = () => {
   }
 
   /**
-   * Given an element it will return the sibling number it is.
-   * @param $child
+   * Returns the ordinal of an element's location within any siblings.
+   * @param {HTMLElement} $el The element to assess the position of
+   * @throws TypeError if the argument is not an HTMLElement
    * @returns {number}
    */
-  function nthChild($child) {
-    let siblings = 0;
-    while ($child !== null) {
-      if ($child.nodeType !== 8) {
-        siblings += 1;
+  function getOrdinalAmongstSiblingElements($el) {
+    if ($el instanceof HTMLElement) {
+      let position = 1;
+      let previous = $el.previousElementSibling;
+      while (previous) {
+        position += 1;
+        previous = previous.previousElementSibling;
       }
 
-      $child = $child.previousSibling;
+      return position;
     }
 
-    return siblings;
+    throw new TypeError('Expected HTMLElement');
   }
 
   function loadJavaScript(uri, integrity = null) {
@@ -588,7 +591,7 @@ module.exports = () => {
     isTopInView: isTopInView,
     jumpToAnchor: jumpToAnchor,
     loadData: loadData,
-    nthChild: nthChild,
+    getOrdinalAmongstSiblingElements: getOrdinalAmongstSiblingElements,
     remoteDoc: remoteDoc,
     throttle: throttle,
     uniqueIds: uniqueIds,
