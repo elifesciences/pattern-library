@@ -4,11 +4,16 @@ module.exports = () => {
   /**
    * Builds and returns specified HTML element, optionally adding it to the DOM.
    *
+   *
+   *
    * @param {string} elName Name of the HTML element to build
-   * @param {Array} [cssClasses] CSS class name(s) to set on the element
+   * @param {Array<string>} [cssClasses] CSS class name(s) to set on the element
    * @param {string} [textContent] Textual content of the element
    * @param {string|Element} [parent] Parent element to attach to
-   * @param {string|Element|boolean} [attachBefore] Following sibling (1st if true, last if falsey)
+   * @param {string|Element|boolean} [attachBefore] The sibling before which to attach the element:
+   *  true: following sibling is the parent's first element child
+   *  HTMLElement: explicitly supplied following sibling
+   *  string: CSS selector to use to find the following sibling
    *
    * @returns {Element}
    */
@@ -24,7 +29,11 @@ module.exports = () => {
       if (!!attachBefore) {
 
         if (typeof attachBefore === 'boolean') {
-          return $parent.firstElementChild;
+          if ($parent.firstElementChild instanceof HTMLElement) {
+            return $parent.firstElementChild;
+          } else {
+            return null;
+          }
 
         } else if (typeof attachBefore === 'string') {
           return $parent.querySelector(attachBefore);
@@ -46,8 +55,8 @@ module.exports = () => {
       $el.innerHTML = textContent;
     }
 
-    if (!!$parent) {
-      if (!!$followingSibling) {
+    if ($parent) {
+      if ($followingSibling) {
         if ($followingSibling.parentNode !== $parent) {
           throw new ReferenceError(
             'Trying to attach an element with respect to an element sibling, but the two elements do not share a common parent.'

@@ -402,4 +402,8 @@ describe('The utils library', function () {
 
   });
 
+  describe('the uniqueIds object', () => {
+
+  });
+
 });
