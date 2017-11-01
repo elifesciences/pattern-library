@@ -47,8 +47,13 @@ module.exports = () => {
     }
 
     if (!!$parent) {
-      // TODO: Handle what happens if following sibling is not a child of parent
       if (!!$followingSibling) {
+        if ($followingSibling.parentNode !== $parent) {
+          throw new ReferenceError(
+            'Trying to attach an element with respect to an element sibling, but the two elements do not share a common parent.'
+          );
+        }
+
         $parent.insertBefore($el, $followingSibling);
       } else {
         $parent.appendChild($el);
