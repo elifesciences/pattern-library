@@ -72,7 +72,7 @@ module.exports = () => {
     return $el;
   }
 
-  var uniqueIds = (function uniqueIds() {
+  const uniqueIds = (function uniqueIds() {
 
     class UniqueIdentifiers {
 
@@ -106,9 +106,9 @@ module.exports = () => {
        * @returns {string}
        */
       get(prefix, document) {
-        var _prefix = '' + prefix || 'default_';
-        var random = ('' + Math.random()).replace(/\./, '');
-        var candidate = _prefix + random;
+        const _prefix = '' + prefix || 'default_';
+        const random = ('' + Math.random()).replace(/\./, '');
+        const candidate = _prefix + random;
         if (this.isValid(candidate, document)) {
           this.used.push(candidate);
           return candidate;
