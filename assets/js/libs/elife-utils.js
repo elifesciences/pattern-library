@@ -446,7 +446,7 @@ module.exports = () => {
    * @param styles
    * @returns {*}
    */
-  function addStylesToElement($el, styles) {
+  function _addStylesToElement($el, styles) {
     for (let style in styles) {
       if (styles.hasOwnProperty(style)) {
         $el.style[style] = styles[style];
@@ -472,7 +472,7 @@ module.exports = () => {
     const classNames = Array.isArray(className) ? className : [className];
     const $container = buildElement(tag, classNames);
     if (styles) {
-      addStylesToElement($container, styles);
+      _addStylesToElement($container, styles);
     }
 
     $children.forEach(child => $container.appendChild(child));
