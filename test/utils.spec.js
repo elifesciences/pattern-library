@@ -163,4 +163,46 @@ describe('The utils library', function () {
 
   });
 
+  describe('the areElementsNested function', () => {
+
+    let $scope;
+    let $referenceElement;
+
+    before(() => {
+      $scope = document.querySelector('.areElementsNested');
+      $referenceElement = $scope.querySelector('.target');
+    });
+
+    it('returns true if the candidate is the reference element', () => {
+      expect(utils.areElementsNested($referenceElement, $referenceElement)).to.be.true;
+    });
+
+    it('returns true if the candidate is a descendant of the reference element', () => {
+      const $childDescendant = $scope.querySelector('.target-child');
+      expect(utils.areElementsNested($referenceElement, $childDescendant)).to.be.true;
+
+      const $grandChildDescendant = $scope.querySelector('.target-grand-child');
+      expect(utils.areElementsNested($referenceElement, $grandChildDescendant)).to.be.true;
+    });
+
+    it('returns false if the candidate is neither the reference element or its descendant', () => {
+      const unrelated = [
+        $scope.querySelector('.target-miss'),
+        1,
+        0,
+        'a string',
+        ['an array'],
+        {an: 'object'},
+        null,
+        undefined,
+        true,
+        false,
+      ];
+      unrelated.forEach((item) => {
+        expect(utils.areElementsNested($referenceElement, item)).to.be.false;
+      });
+    });
+
+  });
+
 });
