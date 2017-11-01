@@ -226,4 +226,70 @@ describe('The utils library', function () {
 
   });
 
+  describe('the buildElement function', () => {
+
+    context('when supplied an element name', () => {
+
+      xit('creates and returns that element');
+
+    });
+
+    context('when supplied a list of CSS class names', () => {
+
+      xit('attaches those class names to the element created');
+
+    });
+
+    context('when supplied text content', () => {
+
+      xit('wraps that text content with the element created');
+
+    });
+
+    context('when supplied a parent element', () => {
+
+      context('when the parent element itself is supplied', () => {
+
+        xit('the element is appended as the last child of the parent element');
+
+      });
+
+      context('when a CSS selector to a parent element is supplied', () => {
+
+        xit('the element is appended as the last child of the first element matched by that CSS selector');
+
+      });
+
+      context('when supplied an attachBefore argument', () => {
+
+        context('as true', () => {
+
+          xit('the element is inserted as the first child of the parent element');
+
+        });
+
+        context('as an element that is a child of the parent element', () => {
+
+          xit('the element is appended before the supplied element');
+
+        });
+
+        context('as a CSS selector matching a child of the parent element', () => {
+
+          xit('the element is appended before the matched element');
+
+        });
+
+        context('when the attachBefore element is determined as not being a child of the parent element', () => {
+
+          xit('throws a ReferenceError');
+
+        });
+
+      });
+
+    });
+
+  });
+
 });
