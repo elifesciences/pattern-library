@@ -404,22 +404,19 @@
 }
 
 @mixin popup_title_text {
-  @include font-size(14);
-  line-height: 1.4285714286; /* 20px on 24px font */
+  @include font-size-and-vertical-height(14, 20);
 }
 
 @mixin popup-ancillary-text() {
   color: $color-text--reverse;
   font-family: $font-secondary;
-  @include font-size(11);
-  line-height: 1.6363636364; /* 18px on 11px font */
+  @include font-size-and-vertical-height(11, 18);
 }
 
 @mixin popup-large-ancillary-text() {
   color: $color-text--reverse;
   font-family: $font-secondary;
-  @include font-size(14);
-  line-height: #{(20/14)};
+  @include font-size-and-vertical-height(14, 20);
 }
 
 @mixin inline-image {
@@ -437,11 +434,10 @@
 @mixin non_js_control_link {
   color: $color-text;
   font-family: $font-secondary;
-  @include font-size(14);
+  @include font-size-and-vertical-height(14);
   font-weight: normal;
   text-decoration: underline;
   text-transform: none;
-  line-height: 1.7142857143; // 24px on 14px font-size
 
   &:hover {
     text-decoration: underline;

@@ -15,8 +15,7 @@
 
 .reference-list__ordinal_number {
   @include listing-side-art-title-typeg();
-  @include font-size(16);
-  line-height: 1.5;
+  @include font-size-and-vertical-height(16);
   @include padding(0);
   left: 0;
   position: absolute;

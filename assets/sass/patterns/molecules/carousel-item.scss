@@ -76,8 +76,7 @@
 }
 
 .carousel-item__title {
-  @include font-size(24);
-  line-height: 30/24;
+  @include font-size-and-vertical-height(24, 30);
   @include padding(0);
   @include padding(12, "bottom");
 }
@@ -192,19 +191,16 @@
   }
 
   .carousel-item__title {
-    @include font-size(36);
-    line-height: 48/36;
+    @include font-size-and-vertical-height(36, 48);
     @include margin(0, "top");
     @include margin(0, "bottom");
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-      @include font-size(41);
-      line-height: 48/41;
+      @include font-size-and-vertical-height(41, 48);
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
-      @include font-size(46);
-      line-height: 72/46;
+      @include font-size-and-vertical-height(46, 72);
     }
   }
 

@@ -2,8 +2,7 @@
 
 @mixin local-item-style {
   font-family: $font-secondary;
-  @include font-size(14);
-  line-height: 1.7142857143; /* 24px with font size of 14px */
+  @include font-size-and-vertical-height(14);
   @include margin(0 0 12 0);
 }
 
