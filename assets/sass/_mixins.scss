@@ -263,6 +263,12 @@
   }
 }
 
+// $vertical-height-in-px: desired height of the element as a function of font-size and line-height
+@mixin font-size-and-vertical-height($font-size, $vertical-height-in-px: 24) {
+  @include font-size($font-size);
+  line-height: #{($vertical-height-in-px / $font-size)};
+}
+
 @mixin body-para {
   @include body-typeg();
   @include body-spacing();
@@ -441,4 +447,3 @@
     text-decoration: underline;
   }
 }
-
