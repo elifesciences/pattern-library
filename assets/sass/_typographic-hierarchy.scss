@@ -277,7 +277,7 @@
 
 @mixin section-title-typeg() {
   font-family: $font-secondary;
-  @include font-size(14, 14);
+  @include font-size-and-vertical-height(14, 14);
   font-weight: 700;
   text-transform: uppercase;
 }
