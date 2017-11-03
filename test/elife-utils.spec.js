@@ -3,6 +3,7 @@ const expect = chai.expect;
 
 const chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
+
 // load in component(s) to be tested
 let utils = require('../assets/js/libs/elife-utils')();
 
@@ -677,4 +678,78 @@ describe('The utils library', function () {
 
   });
 
+  describe('the loadStyleSheet function', () => {
+
+    let integrity;
+    let uri;
+    let linkSelector;
+
+    before(() => {
+      integrity = 'the-integrity-value';
+      uri = '/the/uri';
+      linkSelector = 'link[integrity="' + integrity + '"]';
+    });
+
+    after(() => {
+      removeFromDOM(linkSelector);
+    });
+
+    it('should create a link element', () => {
+      utils.loadStyleSheet(uri, integrity).then( () => {
+        const $link = document.querySelector(linkSelector);
+        return expect($link).to.be.an.instanceof(HTMLLinkElement);
+      });
+    });
+
+    describe('the link element', () => {
+
+      afterEach(() => {
+        removeFromDOM(linkSelector);
+      });
+
+      it('uses the supplied uri as the href attribute value', () => {
+        utils.loadStyleSheet(uri, integrity);
+        const $link = document.querySelector(linkSelector);
+        expect($link.getAttribute('href')).to.equal(uri);
+      });
+
+      it('uses the supplied integrity argument as the integrity attribute value', () => {
+        utils.loadStyleSheet(uri, integrity);
+        const $link = document.querySelector(linkSelector);
+        expect($link.getAttribute('integrity')).to.equal(integrity);
+      });
+
+      it('when there is an integrity attribute, the crossOrigin attribute should be have the value \'anonymous\'', () => {
+        utils.loadStyleSheet(uri, integrity);
+        const $link = document.querySelector(linkSelector);
+        expect($link.getAttribute('crossOrigin')).to.equal('anonymous');
+      });
+
+    });
+
+    describe('loading the asset using a Promise', () => {
+
+      context('when a valid uri is supplied', () => {
+
+        after(() => {
+          removeFromDOM(linkSelector);
+        });
+
+        it('the promise should be fulfilled', () => {
+          return expect(utils.loadStyleSheet('/test/fixtures/known-end-point.css', integrity)).to.be.eventually.fulfilled;
+        });
+
+      });
+
+      context('when an invalid uri is supplied', () => {
+
+        it('the promise should be rejected', () => {
+          return expect(utils.loadStyleSheet('/made-up/uri', integrity)).to.be.eventually.rejected;
+        });
+
+      });
+
+    });
+
+  });
 });
