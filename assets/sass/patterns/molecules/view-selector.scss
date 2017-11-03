@@ -165,7 +165,7 @@
   }
 
   .view-selector__link {
-    line-height: 2.5714285714; /* 36px at 14px font size */
+    @include font-size-and-vertical-height(14, 36);
     @include height(34);
     @include nospace();
     text-align: center;

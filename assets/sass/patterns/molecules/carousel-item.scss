@@ -49,7 +49,7 @@
 .carousel-item__subject_list_item {
   @include label-subject-typeg();
   display: inline;
-  line-height: 2.18181818181818;
+  @include font-size-and-vertical-height(11);
   list-style-type: none;
   padding: 0;
 

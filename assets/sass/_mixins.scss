@@ -264,9 +264,9 @@
 }
 
 // $vertical-height-in-px: desired height of the element as a function of font-size and line-height
-@mixin font-size-and-vertical-height($font-size, $vertical-height-in-px: 24) {
-  @include font-size($font-size);
-  line-height: #{($vertical-height-in-px / $font-size)};
+@mixin font-size-and-vertical-height($font-size-in-px, $vertical-height-in-px: 24) {
+  @include font-size($font-size-in-px);
+  line-height: #{($vertical-height-in-px / $font-size-in-px)};
 }
 
 @mixin body-para {
@@ -377,7 +377,7 @@
 
 @mixin dismissible_navigation {
   @include typeg-portal-quick-nav();
-  line-height: 3;
+  @include font-size-and-vertical-height($bkpt-captioned-asset-caption, 48);
   @include nospace();
   text-align: center;
 }

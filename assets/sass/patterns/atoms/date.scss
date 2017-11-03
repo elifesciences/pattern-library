@@ -23,8 +23,7 @@
   width: 70px;
 
   .date__prominent {
-    @include font-size(36);
-    line-height: 1;
+    @include font-size-and-vertical-height(36, 36);
     text-align: center;
     @include padding(10, "top");
   }

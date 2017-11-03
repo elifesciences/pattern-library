@@ -19,7 +19,7 @@
   background-color: #f7f7f7;
   width: 100%;
   height: 40px;
-  line-height: 38px;
+  @include font-size-and-vertical-height($font-size-base-in-px, 38);
 }
 
 .side-by-side-view__button-close {
