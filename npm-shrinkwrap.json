@@ -5079,6 +5079,11 @@
         }
       }
     },
+    "mkpath": {
+      "version": "1.0.0",
+      "from": "mkpath@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/mkpath/-/mkpath-1.0.0.tgz"
+    },
     "mocha": {
       "version": "2.5.3",
       "from": "mocha@>=2.4.5 <3.0.0",
@@ -5204,6 +5209,11 @@
           "resolved": "https://registry.npmjs.org/npmlog/-/npmlog-3.1.2.tgz"
         }
       }
+    },
+    "node-phantom-simple": {
+      "version": "2.2.4",
+      "from": "node-phantom-simple@>=2.2.4 <2.3.0",
+      "resolved": "https://registry.npmjs.org/node-phantom-simple/-/node-phantom-simple-2.2.4.tgz"
     },
     "node-sass": {
       "version": "3.13.1",
@@ -5738,6 +5748,23 @@
       "version": "1.1.8",
       "from": "progress@>=1.1.8 <1.2.0",
       "resolved": "https://registry.npmjs.org/progress/-/progress-1.1.8.tgz"
+    },
+    "promise-phantom": {
+      "version": "3.1.6",
+      "from": "promise-phantom@latest",
+      "resolved": "https://registry.npmjs.org/promise-phantom/-/promise-phantom-3.1.6.tgz",
+      "dependencies": {
+        "co": {
+          "version": "4.6.0",
+          "from": "co@>=4.6.0 <5.0.0",
+          "resolved": "https://registry.npmjs.org/co/-/co-4.6.0.tgz"
+        },
+        "tmp": {
+          "version": "0.0.31",
+          "from": "tmp@0.0.31",
+          "resolved": "https://registry.npmjs.org/tmp/-/tmp-0.0.31.tgz"
+        }
+      }
     },
     "prompt": {
       "version": "0.2.14",
