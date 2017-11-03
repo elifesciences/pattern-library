@@ -24,7 +24,7 @@
     background-color: transparent;
     border: none;
     box-sizing: content-box;
-    @include font-size-and-vertical-height(16, 22.4);
+    @include font-size-and-vertical-height($font-size-base-in-px, 22.4);
     position: absolute;
     text-align: center;
     // heading block height + (box height- icon height) / 2

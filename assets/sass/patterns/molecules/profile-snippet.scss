@@ -45,7 +45,7 @@
 
 .profile-snippet__title {
   font-family: $font-primary;
-  @include font-size-and-vertical-height(16);
+  @include font-size-and-vertical-height($font-size-base-in-px);
   font-weight: 400;
   margin: 0;
 }

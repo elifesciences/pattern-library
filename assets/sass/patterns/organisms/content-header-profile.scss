@@ -18,7 +18,7 @@
 }
 
 .content-header-profile__details {
-  @include font-size-and-vertical-height(16);
+  @include font-size-and-vertical-height($font-size-base-in-px);
 }
 
 .content-header-profile__affiliations {

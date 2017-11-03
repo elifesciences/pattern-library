@@ -3,7 +3,7 @@
 .reference__title {
   @include listing-side-art-title-typeg();
   display: block;
-  @include font-size-and-vertical-height(16);
+  @include font-size-and-vertical-height($font-size-base-in-px);
   @include nospace();
   text-decoration: none;
 

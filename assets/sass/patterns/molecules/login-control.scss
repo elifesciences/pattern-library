@@ -64,7 +64,7 @@ $menu-max-width-in-px: 200;
   overflow: hidden;
   white-space: nowrap;
   @include constrain-width($menu-max-width-in-px, "max");
-  @include font-size-and-vertical-height(16);
+  @include font-size-and-vertical-height($font-size-base-in-px);
 
   & + .login-control__subsidiary_text {
     @include font-size-and-vertical-height(14);

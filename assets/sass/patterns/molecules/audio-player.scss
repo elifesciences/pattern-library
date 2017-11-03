@@ -36,7 +36,7 @@
 .audio-player__header {
   color: $color-text--reverse;
   @include listing-side-art-title-typeg();
-  @include font-size-and-vertical-height(16);
+  @include font-size-and-vertical-height($font-size-base-in-px);
   @include nospace();
 }
 
