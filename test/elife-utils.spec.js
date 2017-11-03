@@ -1,7 +1,19 @@
-let expect = chai.expect;
+const chai = require('chai');
+const expect = chai.expect;
 
+const chaiAsPromised = require('chai-as-promised');
+chai.use(chaiAsPromised);
 // load in component(s) to be tested
 let utils = require('../assets/js/libs/elife-utils')();
+
+function removeFromDOM(selector) {
+  const $elements = document.querySelectorAll(selector);
+  expect(document.querySelector(selector)).not.to.be.null;
+  [].forEach.call($elements, ($element) => {
+    $element.parentNode.removeChild($element);
+  });
+  expect(document.querySelector(selector)).to.be.null;
+}
 
 describe('The utils library', function () {
   "use strict";
@@ -590,5 +602,79 @@ describe('The utils library', function () {
 
   });
 
+  describe('the loadJavaScript function', () => {
+
+    let integrity;
+    let uri;
+    let scriptSelector;
+
+    before(() => {
+      integrity = 'the-integrity-value';
+      uri = '/the/uri';
+      scriptSelector = 'script[integrity="' + integrity + '"]';
+    });
+
+    after(() => {
+      removeFromDOM(scriptSelector);
+    });
+
+    it('should create a script element', () => {
+      utils.loadJavaScript(uri, integrity);
+      const $script = document.querySelector(scriptSelector);
+      expect($script).to.be.an.instanceof(HTMLScriptElement);
+    });
+
+    describe('the script element', () => {
+
+      afterEach(() => {
+        removeFromDOM(scriptSelector);
+      });
+
+      it('uses the supplied uri as the src attribute value', () => {
+        utils.loadJavaScript(uri, integrity);
+        const $script = document.querySelector(scriptSelector);
+        expect($script.getAttribute('src')).to.equal(uri);
+      });
+
+      it('uses the supplied integrity argument as the integrity attribute value', () => {
+        utils.loadJavaScript(uri, integrity);
+        const $script = document.querySelector(scriptSelector);
+        expect($script.getAttribute('integrity')).to.equal(integrity);
+      });
+
+      it('when there is an integrity attribute, the crossOrigin attribute should be have the value \'anonymous\'', () => {
+        utils.loadJavaScript(uri, integrity);
+        const $script = document.querySelector(scriptSelector);
+        expect($script.getAttribute('crossOrigin')).to.equal('anonymous');
+
+      });
+
+    });
+
+    describe('loading the asset using a Promise', () => {
+
+      context('when a valid uri is supplied', () => {
+
+        after(() => {
+          removeFromDOM(scriptSelector);
+        });
+
+        it('the promise should be fulfilled', () => {
+          return expect(utils.loadJavaScript('/test/fixtures/known-end-point.js', integrity)).to.be.eventually.fulfilled;
+        });
+
+      });
+
+      context('when an invalid uri is supplied', () => {
+
+        it('the promise should be rejected', () => {
+          return expect(utils.loadJavaScript('/made-up/uri', integrity)).to.be.eventually.rejected;
+        });
+
+      });
+
+    });
+
+  });
 
 });

@@ -72,6 +72,10 @@ module.exports = () => {
     return $el;
   }
 
+  /**
+   * uniqueIds.get()
+   * uniqueIds.isValid()
+   */
   const uniqueIds = (function uniqueIds() {
 
     /** @class */
