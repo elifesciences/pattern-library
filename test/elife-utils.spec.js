@@ -752,4 +752,75 @@ describe('The utils library', function () {
     });
 
   });
+
+  describe('the createOverlay function', () => {
+
+    let $scope;
+    let $target;
+    let $parent;
+    let $followingSibling;
+
+    beforeEach(() => {
+      $scope = document.querySelector('.createOverlay');
+      $target = $scope.querySelector('.target');
+      $parent = $scope.querySelector('.parent');
+      $followingSibling = $scope.querySelector('.following-sibling');
+    });
+
+    context('when supplied with an id that already exits in the document', () => {
+
+      after(() => {
+        $target.id = '';
+      });
+
+      it('returns without doing anything', () => {
+        $target.id = 'preExistingId';
+        utils.create$pageOverlay($parent, $followingSibling, 'preExistingId');
+        expect($scope.querySelector('.overlay')).to.be.null;
+      });
+
+    });
+
+    context('when supplied with a unique id, a parent element, and a following sibling element', () => {
+
+      let $overlay;
+      let overlayId;
+
+      beforeEach(() => {
+        overlayId = 'overlayId';
+        $overlay = utils.create$pageOverlay($parent, $followingSibling, overlayId);
+      });
+
+      afterEach(() => {
+        const $overlayToCleanUp = $scope.querySelector(`#${overlayId}`);
+        if ($overlayToCleanUp) {
+          $overlayToCleanUp.parentNode.removeChild($overlayToCleanUp);
+        }
+      });
+
+      it('creates a new div element with the supplied id', () => {
+        expect($scope.querySelector(`div#${overlayId}`)).not.to.be.null;
+      });
+
+      it('attaches the new div element to the supplied parent', () => {
+        expect($overlay.parentNode).to.equal($parent);
+      });
+
+      it('attaches the new div element before the supplied following sibling', () => {
+        expect($overlay.nextElementSibling).to.equal($followingSibling);
+      });
+
+      it('gives the new element "overlay" css class', () => {
+        expect($overlay.classList.contains('overlay')).to.be.true;
+      });
+
+      it('hides the new element', () => {
+        expect($overlay.classList.contains('hidden')).to.be.true;
+      });
+
+    });
+
+
+
+  });
 });
