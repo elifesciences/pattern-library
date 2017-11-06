@@ -97,7 +97,7 @@
             "button": {
               "text": "Log in / Register",
               "path": "#",
-              "classes": "button--confirm button--extra-small"
+              "classes": "button--login"
             }
           }
         }
