@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="256px" height="256px" viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#A6CE39;}
-	.st1{fill:#FFFFFF;}
-</style>
-<path class="st0" d="M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z"/>
-<g>
-	<path class="st1" d="M86.3,186.2H70.9V79.1h15.4v48.4V186.2z"/>
-	<path class="st1" d="M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5
-		c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z"/>
-	<path class="st1" d="M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1
-		C84.2,46.7,88.7,51.3,88.7,56.8z"/>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>orcide-logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="orcide-logo" fill-rule="nonzero">
+            <g id="vector_iD_icon">
+                <path d="M16,8 C16,12.41875 12.41875,16 8,16 C3.58125,16 0,12.41875 0,8 C0,3.58125 3.58125,0 8,0 C12.41875,0 16,3.58125 16,8 Z" id="Shape" fill="#A6CE39"></path>
+                <g id="Group" transform="translate(4.250000, 2.875000)" fill="#FFFFFF">
+                    <polygon id="Shape" points="1.14375 8.7625 0.18125 8.7625 0.18125 2.06875 1.14375 2.06875 1.14375 5.09375 1.14375 8.7625"></polygon>
+                    <path d="M2.55625,2.06875 L5.15625,2.06875 C7.63125,2.06875 8.71875,3.8375 8.71875,5.41875 C8.71875,7.1375 7.375,8.76875 5.16875,8.76875 L2.55625,8.76875 L2.55625,2.06875 Z M3.51875,7.9 L5.05,7.9 C7.23125,7.9 7.73125,6.24375 7.73125,5.41875 C7.73125,4.075 6.875,2.9375 5,2.9375 L3.51875,2.9375 L3.51875,7.9 Z" id="Shape"></path>
+                    <path d="M1.29375,0.675 C1.29375,1.01875 1.0125,1.30625 0.6625,1.30625 C0.3125,1.30625 0.03125,1.01875 0.03125,0.675 C0.03125,0.325 0.3125,0.04375 0.6625,0.04375 C1.0125,0.04375 1.29375,0.33125 1.29375,0.675 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

@@ -1,7 +1,7 @@
 {
   "button": {
-    "text": "Log in / Register",
+    "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
     "path": "#",
-    "classes": "button--confirm button--extra-small"
+    "classes": "button--login"
   }
 }
