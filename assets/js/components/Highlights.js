@@ -54,7 +54,7 @@ module.exports = class Highlights {
 
         // The current slide is the nth list item (-1) taking into account the a tag at the top.
         this.setCurrentSlide(
-            utils.nthChild(
+            utils.getOrdinalAmongstSiblingElements(
                 parentNode
             ) - 1
         );
