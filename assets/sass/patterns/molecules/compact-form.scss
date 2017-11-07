@@ -19,8 +19,7 @@
   border-radius: #{$border-radius}px;
   display: block;
   font-family: $font-secondary;
-  font-size: 1rem;
-  line-height: 1.5; /* 24px with font size of 16px */
+  @include font-size-and-vertical-height($font-size-base-in-px);
   @include padding(11 55 11 12);
   width: 100%;
 

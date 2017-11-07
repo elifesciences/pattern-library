@@ -9,7 +9,7 @@
 
   p {
     @include pullquote-typeg();
-    line-height: 1.2;
+    @include font-size-and-vertical-height(24, 28.8);
     margin: 0;
     padding: 0;
   }

@@ -5,8 +5,7 @@
   color: $color-text;
   display: block;
   font-family: $font-secondary;
-  @include font-size($font-size-base-in-px);
-  line-height: 1.5;
+  @include font-size-and-vertical-height($font-size-base-in-px);
   @include padding($blg-space-extra-small-in-px - 1 0 $blg-space-extra-small-in-px);
   text-align: center;
   text-decoration: none;

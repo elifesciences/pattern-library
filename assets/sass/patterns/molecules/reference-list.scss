@@ -9,14 +9,13 @@
 .reference-list__item {
   @include margin(12, "bottom");
   @include padding(0 0 0 48);
-  line-height: 1;
+  @include font-size-and-vertical-height($font-size-base-in-px, $font-size-base-in-px);
   position: relative;
 }
 
 .reference-list__ordinal_number {
   @include listing-side-art-title-typeg();
-  @include font-size(16);
-  line-height: 1.5;
+  @include font-size-and-vertical-height($font-size-base-in-px);
   @include padding(0);
   left: 0;
   position: absolute;
