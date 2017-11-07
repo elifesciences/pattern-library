@@ -18,8 +18,7 @@
 }
 
 .filter-group__filter_item {
-  @include font-size($font-size-base-in-px);
-  line-height: 1.5;
+  @include font-size-and-vertical-height($font-size-base-in-px);
   @include padding($blg-space-extra-small-in-px / 2, "top");
   @include padding($blg-space-extra-small-in-px / 2, "bottom");
 }
@@ -31,6 +30,5 @@
 .filter-group__results {
   color: $color-text-secondary;
   font-family: $font-secondary;
-  @include font-size(14);
-  line-height: 1.7142857143; /* 24px on 14px font size */
+  @include font-size-and-vertical-height(14);
 }

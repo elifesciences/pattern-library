@@ -40,7 +40,7 @@
   background-color: transparent;
   border: 0;
   color: $color-primary;
-  line-height: 1;
+  @include font-size-and-vertical-height(13, 13);
   margin: 0;
   padding-left: 0;
 

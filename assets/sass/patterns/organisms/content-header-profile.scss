@@ -12,15 +12,13 @@
 }
 
 .content-header-profile__display_name {
-  @include font-size(20);
+  @include font-size-and-vertical-height(20, 48);
   font-weight: 700;
-  line-height: 2.4; /* 48px with font-size 20px */
   @include nospace();
 }
 
 .content-header-profile__details {
-  @include font-size(16);
-  line-height: 1.5;
+  @include font-size-and-vertical-height($font-size-base-in-px);
 }
 
 .content-header-profile__affiliations {

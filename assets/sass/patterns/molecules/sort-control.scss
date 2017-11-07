@@ -4,9 +4,8 @@
   @include blg-spacing("top", "extra-small");
   @include blg-spacing("bottom", "extra-small");
   font-family: $font-secondary;
-  @include font-size(16);
+  @include font-size-and-vertical-height($font-size-base-in-px);
   font-weight: 700;
-  line-height: (24 / 16);
 }
 
 .sort-control__title {

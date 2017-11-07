@@ -1,7 +1,9 @@
+@import "../../definitions";
+
 .trigger {
   background-color: white;
+  @include font-size-and-vertical-height($font-size-base-in-px, 48);
   height: 48px;
-  line-height: 48px;
   margin: 10px;
   position: absolute;
   text-align: center;
