@@ -22,7 +22,7 @@ $totalHighlightsSpacing: 6;
 }
 
 .listing-list__item {
-  line-height: 1;
+  @include font-size-and-vertical-height($font-size-base-in-px, $font-size-base-in-px);
 }
 
 .listing-list--read-more {

@@ -1,8 +1,7 @@
 @import "../../definitions";
 
 .about-profile__name {
-  @include font-size(18);
-  line-height: (24 / 18);
+  @include font-size-and-vertical-height(18);
   @include nospace();
   @include padding(12, "top");
 
