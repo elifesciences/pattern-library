@@ -39,25 +39,22 @@
 
 .profile-snippet__name {
   font-family: $font-secondary;
-  @include font-size(18);
+  @include font-size-and-vertical-height(18);
   font-weight: bold;
-  line-height: 1.3333333333;  // 24px at 18px font size
 }
 
 .profile-snippet__title {
   font-family: $font-primary;
-  @include font-size(16);
+  @include font-size-and-vertical-height($font-size-base-in-px);
   font-weight: 400;
-  line-height: 1.5; // 24px at 16px font size
   margin: 0;
 }
 
 .profile-snippet__contact_details {
   font-family: $font-primary;
-  @include font-size(14);
+  @include font-size-and-vertical-height(14, 18.2);
   font-style: italic;
   font-weight: 400;
-  line-height: $line-height-primary;
   @include padding(40, "bottom");
 }
 

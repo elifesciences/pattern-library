@@ -33,8 +33,7 @@ $menu-max-width-in-px: 200;
 
 .login-control__control {
   font-family: $font-secondary;
-  @include font-size(14);
-  line-height: 2.6; // 36px on 14px base font size
+  @include font-size-and-vertical-height(14, 36);
   margin: 0;
   @include padding(12 18 0);
 
@@ -65,10 +64,9 @@ $menu-max-width-in-px: 200;
   overflow: hidden;
   white-space: nowrap;
   @include constrain-width($menu-max-width-in-px, "max");
-  @include font-size(16);
-  line-height: 1.5;
+  @include font-size-and-vertical-height($font-size-base-in-px);
 
   & + .login-control__subsidiary_text {
-    line-height: 1.7142857143; // 24 px on 14px font size
+    @include font-size-and-vertical-height(14);
   }
 }

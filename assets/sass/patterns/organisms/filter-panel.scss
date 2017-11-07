@@ -4,9 +4,8 @@
   color: $color-text;
   display: block;
   font-family: $font-secondary;
-  @include font-size(14);
+  @include font-size-and-vertical-height(14);
   font-weight: bold;
-  line-height: 1.7142857143; /* 24px with 14px font size */
   @include blg-spacing("top", "extra-small");
   @include blg-spacing("bottom", "extra-small");
 }
