@@ -251,14 +251,17 @@
   margin: auto;
 
   @if $padding {
-    padding: 0 7%;
+    padding-left: 7%;
+    padding-right: 7%;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      padding: 0 14%;
+      padding-left: 14%;
+      padding-right: 14%;
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      padding: 0 3%;
+      padding-left: 3%;
+      padding-right: 3%;
     }
   }
 }
