@@ -193,6 +193,15 @@ img {
   max-width: 100%;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+  @include margin(6, "right");
+}
+
+select {
+  height: #{$blg-space-small-in-px}px;
+}
+
 // See https://css-tricks.com/almanac/selectors/p/placeholder/ for discussion of non-std :placeholder pseudoelement
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: $color-text-placeholder;

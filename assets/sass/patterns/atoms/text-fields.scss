@@ -14,8 +14,8 @@
   color: $color-text;
   display: block;
   font-family: $font-secondary;
-  @include font-size($font-size-base-in-px);
-  @include padding(12);
+  @include font-size-and-vertical-height($font-size-base-in-px);
+  @include padding(11 12);
   @include margin(6, "bottom");
   width: 100%;
 

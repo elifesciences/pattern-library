@@ -94,13 +94,11 @@
 
   }
 
-}
+  .search-box__search_option_label {
+    @include checkbox-label();
+    @include blg-spacing("top", "extra-small");
+  }
 
-.search-box__search_option {
-  font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
-  @include blg-spacing("top", "extra-small");
-  @include blg-spacing("bottom", "extra-small");
 }
 
 @media only all and (min-width: #{$max-site-width}px) {

@@ -2,33 +2,23 @@
 
 .filter-group {
   border: 0;
-  margin: 0;
-  padding: 0;
+  @include nospace();
 }
 
 .filter-group__title {
   @include listing-main-subtitle-typeg();
-  @include padding($blg-space-extra-small-in-px / 2, "bottom");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 .filter-group__filters {
   list-style-type: none;
-  padding-left: 0;
-  margin-left: 0;
+  @include nospace("left");
 }
 
 .filter-group__filter_item {
   @include font-size-and-vertical-height($font-size-base-in-px);
-  @include padding($blg-space-extra-small-in-px / 2, "top");
-  @include padding($blg-space-extra-small-in-px / 2, "bottom");
 }
 
 .filter-group__item_label {
-  @include typeg-checkboxes();
-}
-
-.filter-group__results {
-  color: $color-text-secondary;
-  font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
+  @include checkbox-label();
 }

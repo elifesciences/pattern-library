@@ -1,0 +1,39 @@
+{
+  "title": "People",
+  "longTitle": true,
+  "header": {
+    "possible": true
+  },
+  "impactStatement": "The working scientists who serve as eLife editors, our early-career advisors, governing board, and our executive staff all work in concert to realise eLife’s mission to accelerate discovery",
+  "selectNav": {
+    "route": "/path/to/archive",
+    "select": {
+      "id": "archiveYear",
+      "label": {
+        "labelText": "Archive year",
+        "isVisuallyHidden": true
+      },
+      "options": [
+        {
+          "value": "2016",
+          "displayValue": "2016"
+        },
+        {
+          "value": "2015",
+          "displayValue": "2015"
+        },
+        {
+          "value": "2014",
+          "displayValue": "2014"
+        }
+      ]
+    },
+    "button": {
+      "text": "Go",
+      "type": "submit",
+      "classes": "button--default button--extra-small",
+      "name": "button-name"
+    }
+  }
+
+}
