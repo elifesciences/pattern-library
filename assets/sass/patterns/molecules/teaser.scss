@@ -76,7 +76,7 @@
 }
 
 .teaser--no-secondary-info .teaser__header_text {
-  @include padding($blg-space-extra-small-in-px, "bottom");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 .teaser__header_text_link {
@@ -178,7 +178,7 @@
 .teaser--grid-style {
 
   border-top: none;
-  @include margin($blg-space-small-in-px, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
   @include height(450);
 
   @supports (display: flex) {
@@ -192,7 +192,7 @@
   }
 
   .teaser__header_text {
-    @include padding($blg-space-extra-small-in-px, "bottom");
+    @include blg-spacing("bottom", "extra-small");
   }
 
   .teaser__footer {

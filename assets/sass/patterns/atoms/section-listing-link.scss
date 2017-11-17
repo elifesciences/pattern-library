@@ -6,7 +6,10 @@
   display: block;
   font-family: $font-secondary;
   @include font-size-and-vertical-height($font-size-base-in-px);
-  @include padding($blg-space-extra-small-in-px - 1 0 $blg-space-extra-small-in-px);
+  @include padding($blg-space-extra-small-in-px - 1, "top");
+  padding-right: 0;
+  @include blg-spacing("bottom", "extra-small");
+  padding-left: 0;
   text-align: center;
   text-decoration: none;
   width: 100%;

@@ -13,12 +13,12 @@
 
 .asset-viewer-inline {
   clear: both;
-  @include margin($blg-space-medium-in-px, "top");
-  @include margin($blg-space-medium-in-px, "bottom");
+  @include blg-spacing("top", "medium", "margin");
+  @include blg-spacing("bottom", "medium", "margin");
 }
 
 .asset-viewer-inline__header_panel {
-  @include padding($blg-space-extra-small-in-px, "bottom");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 .asset-viewer-inline__header_text {
@@ -37,7 +37,7 @@
   .asset-viewer-inline__header_panel {
     border-bottom: 1px solid $color-text-dividers;
     @include padding($blg-space-extra-small-in-px - 1, "bottom");
-    @include margin($blg-space-extra-small-in-px, "bottom");
+    @include blg-spacing("bottom", "extra-small", "margin");
   }
 
 }

@@ -5,7 +5,6 @@
 //  - Horizontal grid
 
 // Baseline grid
-// TODO: BLG: Move to using these classes rather than $blg-* variables directly in patterns.
 // TODO: BLG: Move all blg vars & mixins into this file
 .blg-pad-top-extra-small {
   @include blg-spacing("top", "extra-small");

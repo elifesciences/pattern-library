@@ -2,8 +2,8 @@
 
 .profile-snippet {
   border-top: 1px solid $color-text-dividers;
-  @include padding($blg-space-small-in-px, "bottom");
-  @include padding($blg-space-small-in-px, "top");
+  @include blg-spacing("top", "small");
+  @include blg-spacing("bottom", "small");
 
   .listing-list__item:first-child & {
     border-top-style: none;
