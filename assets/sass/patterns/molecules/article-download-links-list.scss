@@ -47,7 +47,9 @@
   .article-download-links-list__heading {
     @include label-content-typeg();
     margin: 0;
-    @include padding(24 24 0);
+    @include blg-spacing("top", "small");
+    padding-bottom: 0;
+    @include padding(24, "right");
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {

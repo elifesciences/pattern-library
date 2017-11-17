@@ -10,7 +10,10 @@
 }
 
 .main-menu .list-heading {
-  @include padding(24 0);
+  padding-left: 0;
+  padding-right: 0;
+  @include blg-spacing("top", "small");
+  @include blg-spacing("bottom", "small");
   text-align: center;
 }
 
@@ -19,7 +22,9 @@
 }
 
 .section-listing-wrapper .list-heading {
-  @include padding(24 0 0);
+  @include blg-spacing("top", "small");
+  padding-right: 0;
+  padding-bottom: 0;
   text-align: center;
 }
 

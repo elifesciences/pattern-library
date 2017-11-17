@@ -20,7 +20,7 @@
 }
 
 .about-profile__profile {
-  @include margin(24, "top");
+  @include blg-spacing("top", "small", "margin");
 
   @media only all and (min-width: #{$bkpt-site--medium}px) {
 

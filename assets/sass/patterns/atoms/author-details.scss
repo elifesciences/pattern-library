@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .author-details__section {
-  @include margin(24, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
 
   .popup__content & {
     @include margin(18, "bottom");

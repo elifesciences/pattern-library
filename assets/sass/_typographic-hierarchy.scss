@@ -86,7 +86,7 @@
 @mixin h2-spacing() {
   margin: 0;
   @include padding(18, "top");
-  @include padding(24, "bottom");
+  @include blg-spacing("bottom", "small");
 }
 
 @mixin h3-typeg() {
@@ -150,14 +150,14 @@
 // TODO: consider where this should sit, and should other spacing be refactored out from typeg defs?
 @mixin body-spacing() {
   margin: 0;
-  @include margin(24, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
 }
 
 @mixin small-typeg() {
   font-family: $font-primary;
   font-style: normal;
   @include font-size-and-vertical-height(11);
-  @include padding(24, "bottom");
+  @include blg-spacing("bottom", "small");
 }
 
 // TODO: incorporate list base style, sensitively.
