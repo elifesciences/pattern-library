@@ -327,24 +327,16 @@
 @mixin typeg-form-label() {
   color: $color-text;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 18.2);
+  @include font-size-and-vertical-height(14, 20);
   font-weight: 700;
+  text-align: left;
 }
 
 @mixin typeg-form-message() {
   color: $color-text;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 19);
+  @include font-size-and-vertical-height(14, 20);
   text-align: left;
-}
-
-// No definition in developer docs, this is inferred from styles already applied to filter-group.
-//Update as necessary.
-@mixin typeg-checkboxes() {
-  color: $color-text;
-  font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
-  font-weight: 700;
 }
 
 // FOR ITEMS IN LISTS
