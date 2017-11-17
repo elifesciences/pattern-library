@@ -385,6 +385,12 @@
   text-align: center;
 }
 
+@mixin checkbox-label() {
+  @include typeg-form-label();
+  @include blg-spacing("bottom", "extra-small");
+  display: block;
+}
+
 @mixin overlay() {
   background-color: $color-overlay;
   position: fixed;
