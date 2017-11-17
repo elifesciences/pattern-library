@@ -3,7 +3,7 @@
 .about-profile__name {
   @include font-size-and-vertical-height(18);
   @include nospace();
-  @include padding(12, "top");
+  @include blg-spacing("top", "extra-small");
 
   .popup & {
     padding-top: 0;
@@ -59,7 +59,10 @@
   @media only all and (min-width: #{$bkpt-site--medium}px) {
     float: right;
     width: 250px;
-    @include margin(12 0 12 24);
+    @include blg-spacing("top", "extra-small", "margin");
+    @include blg-spacing("bottom", "extra-small", "margin");
+    @include margin(24, "left");
+    margin-right: 0;
 
     .about-profiles__item .about-profile--popup & {
       float: none;

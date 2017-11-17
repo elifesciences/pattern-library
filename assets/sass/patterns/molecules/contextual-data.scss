@@ -27,8 +27,11 @@
 }
 
 .contextual-data__cite_wrapper {
-  @include padding(12 0 11 0);
-  text-align: center;
+  @include blg-spacing("top", "extra-small");
+  @include padding($blg-space-extra-small-in-px - 1, "bottom");
+  padding-left: 0;
+  padding-right: 0;
+ text-align: center;
 }
 
 .contextual-data__cite {

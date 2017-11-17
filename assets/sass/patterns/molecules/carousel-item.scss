@@ -78,7 +78,7 @@
 .carousel-item__title {
   @include font-size-and-vertical-height(24, 30);
   @include padding(0);
-  @include padding(12, "bottom");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 .carousel-item__title_link {

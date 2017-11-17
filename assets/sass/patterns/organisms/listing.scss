@@ -153,7 +153,7 @@ div.listing-list__content {
       list-style-type: none;
       @include margin(3, "left");
       @include margin(3, "right");
-      @include padding(12, "top");
+      @include blg-spacing("top", "extra-small");
       @include padding(12, "left");
       @include padding(12, "right");
 

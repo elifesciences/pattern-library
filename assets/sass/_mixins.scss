@@ -351,7 +351,7 @@
 
 @mixin teaser-header-text-style() {
   @include listing-main-art-title-typeg();
-  @include padding(12, "top");
+  @include blg-spacing("top", "extra-small");
 }
 
 @mixin teaser-header-text-link-style() {
@@ -365,7 +365,7 @@
 }
 
 @mixin teaser-footer-style() {
-  @include margin(12, "top");
+  @include blg-spacing("top", "extra-small", "margin");
   color: $color-text-secondary;
   display: flex;
   @include label-content-typeg();

@@ -15,7 +15,7 @@
   display: block;
   font-family: $font-secondary;
   @include font-size-and-vertical-height($font-size-base-in-px);
-  @include padding(11 12);
+  @include padding($blg-space-extra-small-in-px - 1 12);
   @include margin(6, "bottom");
   width: 100%;
 

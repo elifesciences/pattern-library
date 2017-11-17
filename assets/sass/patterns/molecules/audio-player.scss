@@ -5,7 +5,10 @@
   margin: 0 auto;
   @include constrain-width($max-site-width, "max");
   @include height($audio-player-height);
-  @include padding(12 24 22);
+  @include blg-spacing("top", "extra-small");
+  @include padding(24, "right");
+  @include padding(24, "left");
+  @include padding($blg-space-small-in-px - 2, "bottom");
   position: relative;
 }
 

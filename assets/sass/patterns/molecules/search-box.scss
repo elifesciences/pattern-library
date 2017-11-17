@@ -47,7 +47,11 @@
     border-bottom: 1px solid $color-text-dividers;
     font-family: $font-secondary;
     margin: 0;
-    @include padding(12);
+    @include padding(12, "left");
+    @include padding(12, "right");
+    @include blg-spacing("top", "extra-small");
+    @include blg-spacing("bottom", "extra-small");
+
 
     &:first-child {
       border-top: 1px solid $color-text-dividers;

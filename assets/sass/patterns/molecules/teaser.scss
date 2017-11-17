@@ -85,7 +85,7 @@
 
 .teaser__secondary_info {
   @include listing-main-author-typeg();
-  @include margin(12, "bottom");
+  @include blg-spacing("bottom", "extra-small", "margin");
 }
 
 .teaser__body {
@@ -138,7 +138,7 @@
   display: block;
   height: auto;
   @include nospace();
-  @include margin(12, "top");
+  @include blg-spacing("top", "extra-small", "margin");
   max-width: 100%;
   width: 100%;
 }
@@ -155,7 +155,7 @@
   .teaser__picture--big {
     float: right;
     height: 144px;
-    @include margin(12, "bottom");
+    @include blg-spacing("bottom", "extra-small", "margin");
     width: auto;
     @include margin(24, "left");
   }

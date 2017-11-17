@@ -96,8 +96,8 @@
 
 @mixin h3-spacing() {
   margin: 0;
-  @include padding(12, "top");
-  @include padding(12, "bottom");
+  @include blg-spacing("top", "extra-small");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 @mixin h4-typeg() {
@@ -107,8 +107,8 @@
 
 @mixin h4-spacing() {
   margin: 0;
-  @include padding(12, "top");
-  @include padding(12, "bottom");
+  @include blg-spacing("top", "extra-small");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 @mixin h5-typeg() {
@@ -118,8 +118,8 @@
 
 @mixin h5-spacing() {
   margin: 0;
-  @include padding(12, "top");
-  @include padding(12, "bottom");
+  @include blg-spacing("top", "extra-small");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 @mixin h6-typeg() {
@@ -129,9 +129,9 @@
 
 @mixin h6-spacing() {
   margin: 0;
+  // TODO: should this use blg vars with offsets?
   @include padding(10, "top");
-  @include padding(14, "bottom");
-}
+  @include padding(14, "bottom");}
 
 // Call this directly from sass with appropriate args.
 @mixin title-size($title-size, $width, $is-article:false) {
@@ -343,7 +343,7 @@
 
 @mixin listing-main-art-title-typeg() {
   @include font-size-and-vertical-height(20);
-  @include padding(12, "top");
+  @include blg-spacing("top", "extra-small");
   @include nospace("bottom");
 }
 
@@ -351,7 +351,7 @@
   font-family: $font-secondary;
   @include font-size-and-vertical-height(18);
   font-weight: 700;
-  @include padding(12, "top");
+  @include blg-spacing("top", "extra-small");
 }
 
 @mixin listing-main-author-typeg() {
