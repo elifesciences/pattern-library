@@ -52,7 +52,6 @@
     @include blg-spacing("top", "extra-small");
     @include blg-spacing("bottom", "extra-small");
 
-
     &:first-child {
       border-top: 1px solid $color-text-dividers;
     }
