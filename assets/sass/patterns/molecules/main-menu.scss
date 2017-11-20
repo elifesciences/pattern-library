@@ -6,22 +6,26 @@
 
 .main-menu__title {
   @include section-title-typeg();
-  margin: 0;
-  @include padding(0 0 5 0);
+  @include nospace();
+  @include padding(5, "bottom");
   text-transform: uppercase;
 }
 
 .main-menu__list {
   list-style: none;
-  margin: 0 auto;
-  padding: 0;
+  @include nospace();
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .main-menu__list_item {
   @include dismissible_navigation();
   border-top: 1px solid $color-text-dividers;
   display: block;
-  @include padding($blg-space-extra-small-in-px - 1 0 $blg-space-extra-small-in-px 0);
+  @include padding($blg-space-extra-small-in-px - 1, "top");
+  padding-right: 0;
+  @include blg-spacing("bottom", "extra-small");
+  padding-left: 0;
 }
 
 .main-menu__list_link {
@@ -36,9 +40,12 @@
   color: $color-text;
   @include dismissible_navigation();
   display: block;
-  @include padding($blg-space-extra-small-in-px - 1 $blg-space-small-in-px $blg-space-extra-small-in-px 0);
+  @include padding($blg-space-extra-small-in-px - 1, "top");
+  @include padding(24, "right");
+  @include blg-spacing("bottom", "extra-small");
+  padding-left: 0;
   position: relative;
-  left: -#{$blg-space-small-in-px}px;
+  left: 24px;
   text-align: right;
   width: 100%;
 }
@@ -71,7 +78,7 @@
 
     .main-menu__list_item {
       @include padding($blg-space-extra-small-in-px - 1, "top");
-      @include padding($blg-space-extra-small-in-px, "bottom");
+      @include blg-spacing("bottom", "extra-small");
     }
 
   }

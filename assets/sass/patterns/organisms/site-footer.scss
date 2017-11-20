@@ -75,14 +75,14 @@
     .grid-cell:nth-child(1) {
       float: left;
       flex: 1 50%;
-      @include padding(24, "bottom");
+      @include blg-spacing("bottom", "small");
       width: 50%;
     }
 
     .grid-cell:nth-child(2) {
       float: right;
       flex: 1 50%;
-      @include padding(24, "bottom");
+      @include blg-spacing("bottom", "small");
       width: 50%;
     }
 

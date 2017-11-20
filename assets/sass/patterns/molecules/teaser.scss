@@ -76,7 +76,7 @@
 }
 
 .teaser--no-secondary-info .teaser__header_text {
-  @include padding($blg-space-extra-small-in-px, "bottom");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 .teaser__header_text_link {
@@ -85,7 +85,7 @@
 
 .teaser__secondary_info {
   @include listing-main-author-typeg();
-  @include margin(12, "bottom");
+  @include blg-spacing("bottom", "extra-small", "margin");
 }
 
 .teaser__body {
@@ -138,7 +138,7 @@
   display: block;
   height: auto;
   @include nospace();
-  @include margin(12, "top");
+  @include blg-spacing("top", "extra-small", "margin");
   max-width: 100%;
   width: 100%;
 }
@@ -155,7 +155,7 @@
   .teaser__picture--big {
     float: right;
     height: 144px;
-    @include margin(12, "bottom");
+    @include blg-spacing("bottom", "extra-small", "margin");
     width: auto;
     @include margin(24, "left");
   }
@@ -178,7 +178,7 @@
 .teaser--grid-style {
 
   border-top: none;
-  @include margin($blg-space-small-in-px, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
   @include height(450);
 
   @supports (display: flex) {
@@ -192,7 +192,7 @@
   }
 
   .teaser__header_text {
-    @include padding($blg-space-extra-small-in-px, "bottom");
+    @include blg-spacing("bottom", "extra-small");
   }
 
   .teaser__footer {

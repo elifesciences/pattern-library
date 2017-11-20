@@ -3,11 +3,11 @@
 .reference-list {
   list-style: none;
   @include nospace();
-  @include padding(12, "bottom");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 .reference-list__item {
-  @include margin(12, "bottom");
+  @include blg-spacing("bottom", "extra-small", "margin");
   @include padding(0 0 0 48);
   @include font-size-and-vertical-height($font-size-base-in-px, $font-size-base-in-px);
   position: relative;

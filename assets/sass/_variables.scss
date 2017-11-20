@@ -68,6 +68,7 @@ $viewport-width-when-site-hits-max-width-in-rem: get-rem-from-px($viewport-width
 
 // Heights
 $audio-player-height: 90;
+// TODO: link name with blg spacing for 72px somehow?
 $audio-player-height--js: 72;
 $content-header-image-height--narrow-screen: 264;
 $content-header-image-height--medium-width-screen: 288;
@@ -89,6 +90,7 @@ $teaser-spacing-top: 23;
 // 23 not 24 to account for a 1px border (Because of the way the elements are nested, border-box doesn't help us here.)
 $teaser-spacing-bottom: 23;
 $teaser-spacing-left: 16;
+// TODO: link name with blg spacing for 72px somehow?
 $listing-list-spacing: 72;
 
 $content-header-padding: 24;

@@ -3,6 +3,6 @@
 .lead-paras {
   @include lead-para-typeg();
   border-bottom: 1px solid $color-text-dividers;
-  @include padding($blg-space-extra-small-in-px, "bottom");
+  @include blg-spacing("bottom", "extra-small");
   @include padding($blg-space-extra-small-in-px - 1, "top");
 }
