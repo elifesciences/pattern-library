@@ -27,7 +27,7 @@
   &--article-section {
     color: $color-text;
     display: block;
-    @include font-size(14);
+    @include font-size($font-size-small-in-px);
     @include blg-spacing("bottom", "small", "margin");
 
     a.doi__link {

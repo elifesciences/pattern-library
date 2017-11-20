@@ -4,7 +4,7 @@
   background-color: $color-text-ui-code;
   border: 1px solid $color-text-dividers;
   border-radius: #{$border-radius}px;
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   @include padding($blg-space-extra-small-in-px - 1, "top");
   @include padding(12, "right");
   @include padding($blg-space-extra-small-in-px - 1, "bottom");

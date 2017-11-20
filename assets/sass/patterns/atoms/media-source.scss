@@ -2,7 +2,7 @@
 
 .media-source__fallback_link {
   font-family: $font-secondary;
-  @include font-size(14);
+  @include font-size($font-size-small-in-px);
   text-decoration: none;
 
   &:hover {

@@ -27,7 +27,7 @@
   border: none;
   font-family: $font-secondary;
   font-weight: bold;
-  @include font-size(14);
+  @include font-size($font-size-small-in-px);
   color: $color-primary;
   padding: 0 0 0 8px;
 }

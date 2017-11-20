@@ -33,7 +33,7 @@ $menu-max-width-in-px: 200;
 
 .login-control__control {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 36);
+  @include font-size-and-vertical-height($font-size-small-in-px, 36);
   margin: 0;
   padding-bottom: 0;
   @include blg-spacing("top", "extra-small");
@@ -70,6 +70,6 @@ $menu-max-width-in-px: 200;
   @include font-size-and-vertical-height($font-size-base-in-px);
 
   & + .login-control__subsidiary_text {
-    @include font-size-and-vertical-height(14);
+    @include font-size-and-vertical-height($font-size-small-in-px);
   }
 }
