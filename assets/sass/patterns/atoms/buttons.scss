@@ -6,7 +6,7 @@
 
 @mixin button--extra-small() {
   border-radius: 3px;
-  @include font-size(11);
+  @include font-size($font-size-extra-small-in-px);
   line-height: 2.1818181818; /* 24px with 11px font size */
   @include padding(0 6);
   @include height(24);
@@ -50,7 +50,7 @@
 }
 
 .button--small {
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
   @include padding(3 12);
 }
 

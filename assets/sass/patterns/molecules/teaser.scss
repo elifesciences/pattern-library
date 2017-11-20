@@ -20,7 +20,7 @@
 .teaser__context_label_list_item {
 
   @include teaser-context-label-list-item-style();
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
   & .teaser__context_label:after {
     content: ", ";
   }
@@ -40,7 +40,7 @@
 
 // Extra specificity to override normalised style
 .teaser .teaser__context_label_link {
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
   text-decoration: none;
 
   .teaser__context_label {

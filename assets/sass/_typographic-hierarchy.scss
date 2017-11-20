@@ -58,7 +58,7 @@
 @mixin _label-typeg($uppercase: true) {
   font-family: $font-secondary;
   font-weight: normal;
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
   letter-spacing: 0.5px;
   @if $uppercase {
     text-transform: uppercase;
@@ -156,7 +156,7 @@
 @mixin small-typeg() {
   font-family: $font-primary;
   font-style: normal;
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
   @include blg-spacing("bottom", "small");
 }
 
@@ -259,7 +259,7 @@
 
 @mixin nav-small-typeg() {
   @include nav-typeg();
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
 }
 
 @mixin nav-page-typeg() {
