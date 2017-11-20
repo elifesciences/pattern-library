@@ -18,7 +18,7 @@
   color: $color-text--reverse;
   display: inline-block;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 14);
+  @include font-size-and-vertical-height($font-size-small-in-px, $font-size-small-in-px);
   font-weight: 500;
   @include padding(17 40 16);
   text-align: center;

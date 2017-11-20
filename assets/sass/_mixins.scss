@@ -414,7 +414,7 @@
 }
 
 @mixin popup_title_text {
-  @include font-size-and-vertical-height(14, 20);
+  @include font-size-and-vertical-height($font-size-small-in-px, 20);
 }
 
 @mixin popup-ancillary-text() {
@@ -426,7 +426,7 @@
 @mixin popup-large-ancillary-text() {
   color: $color-text--reverse;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 20);
+  @include font-size-and-vertical-height($font-size-small-in-px, 20);
 }
 
 @mixin inline-image {
@@ -444,7 +444,7 @@
 @mixin non_js_control_link {
   color: $color-text;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   font-weight: normal;
   text-decoration: underline;
   text-transform: none;

@@ -175,7 +175,7 @@
 
 @mixin institute-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   font-weight: 500;
 }
 
@@ -187,7 +187,7 @@
 
 @mixin quote-attrib-typeg() {
   font-family: $font-primary;
-  @include font-size-and-vertical-height(14, 18.2);
+  @include font-size-and-vertical-height($font-size-small-in-px, 18.2);
   font-style: italic;
   font-weight: 400;
 
@@ -207,7 +207,7 @@
 @mixin fig-heading-typeg() {
   // bold, not demibold
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   font-weight: bold;
 }
 
@@ -253,7 +253,7 @@
 
 @mixin nav-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   font-weight: 700;
 }
 
@@ -264,7 +264,7 @@
 
 @mixin nav-page-typeg() {
   @include nav-typeg();
-  @include font-size-and-vertical-height(14, 18.2);
+  @include font-size-and-vertical-height($font-size-small-in-px, 18.2);
   font-weight: normal;
 }
 
@@ -277,7 +277,7 @@
 
 @mixin section-title-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 14);
+  @include font-size-and-vertical-height($font-size-small-in-px, $font-size-small-in-px);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -286,9 +286,9 @@
   font-family: $font-secondary;
   font-weight: 700;
   @if $is-wide == false {
-    @include font-size-and-vertical-height(14, 25.9);
+    @include font-size-and-vertical-height($font-size-small-in-px, 25.9);
   } @else {
-    @include font-size-and-vertical-height(14, 32.9);
+    @include font-size-and-vertical-height($font-size-small-in-px, 32.9);
   }
 }
 
@@ -327,7 +327,7 @@
 @mixin typeg-form-label() {
   color: $color-text;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 20);
+  @include font-size-and-vertical-height($font-size-small-in-px, 20);
   font-weight: 700;
   text-align: left;
 }
@@ -335,7 +335,7 @@
 @mixin typeg-form-message() {
   color: $color-text;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 20);
+  @include font-size-and-vertical-height($font-size-small-in-px, 20);
   text-align: left;
 }
 
@@ -367,17 +367,17 @@
 
 @mixin listing-side-author-typeg() {
   @include listing-main-author-typeg();
-  @include font-size(14);
+  @include font-size($font-size-small-in-px);
 }
 
 @mixin listing-side-subtitle-typeg() {
   @include listing-main-author-typeg();
-  @include font-size(14);
+  @include font-size($font-size-small-in-px);
 }
 
 @mixin listing-institute-typeg() {
   font-family: $font-primary;
-  @include font-size-and-vertical-height(14, 18.2);
+  @include font-size-and-vertical-height($font-size-small-in-px, 18.2);
   font-style: italic;
 }
 
@@ -388,5 +388,5 @@
 
 @mixin mono-typeg() {
   font-family: $font-monospace;
-  @include font-size-and-vertical-height(14, 21);
+  @include font-size-and-vertical-height($font-size-small-in-px, 21);
 }

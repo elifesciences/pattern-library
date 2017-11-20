@@ -239,7 +239,7 @@
       .content-header__profile_data {
         color: $color-text--reverse;
         font-family: $font-secondary;
-        @include font-size-and-vertical-height(14);
+        @include font-size-and-vertical-height($font-size-small-in-px);
       }
     }
   }

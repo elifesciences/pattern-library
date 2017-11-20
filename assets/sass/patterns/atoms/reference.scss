@@ -25,7 +25,7 @@ a.reference__title:hover {
 
 .reference__author {
   @include listing-side-author-typeg();
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   display: inline;
   margin: 0;
   padding: 0;
@@ -66,7 +66,7 @@ a.reference__authors_link:hover {
 
 .reference__origin {
   @include small-typeg();
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   padding-bottom: 0;
 
   & a {
@@ -87,7 +87,7 @@ a.reference__authors_link:hover {
 .reference__abstract {
   display: inline;
   @include small-typeg();
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
 
   .popup__content & {
     @include popup-ancillary-text();

@@ -2,7 +2,7 @@
 
 @mixin local-item-style {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   margin: 0;
   @include blg-spacing("bottom", "extra-small", "margin");
 }
@@ -59,7 +59,7 @@
 .view-selector__jump_links_header {
   color: $color-text-secondary;
   display: block;
-  @include font-size(14);
+  @include font-size($font-size-small-in-px);
   @include blg-spacing("bottom", "extra-small", "margin");
 }
 
@@ -166,7 +166,7 @@
   }
 
   .view-selector__link {
-    @include font-size-and-vertical-height(14, 36);
+    @include font-size-and-vertical-height($font-size-small-in-px, 36);
     @include height(34);
     @include nospace();
     text-align: center;
