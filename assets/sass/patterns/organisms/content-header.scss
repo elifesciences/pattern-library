@@ -287,7 +287,7 @@
 .content-header__subject_list_item {
   @include label-subject-typeg();
   display: inline;
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
   list-style-type: none;
   padding: 0;
 
@@ -633,7 +633,7 @@ li.content-header__institution_list_item--last .content-header__institution:afte
 .content-header__image-credit {
   color: $color-text-secondary;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
   @include blg-spacing("top", "extra-small");
   @include blg-spacing("bottom", "extra-small");
   text-align: right;

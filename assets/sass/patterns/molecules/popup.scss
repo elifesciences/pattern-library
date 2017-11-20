@@ -21,7 +21,7 @@ a.popup__wrapper {
 a.popup__button {
   color: #fff;
   font-family: $font-secondary;
-  @include font-size(11);
+  @include font-size($font-size-extra-small-in-px);
   @include padding(12, "left");
   @include padding(12, "right");
   @include blg-spacing("top", "extra-small");
