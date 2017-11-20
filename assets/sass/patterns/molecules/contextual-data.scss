@@ -28,7 +28,7 @@
 
 .contextual-data__cite_wrapper {
   @include blg-spacing("top", "extra-small");
-  @include padding($blg-space-extra-small-in-px - 1, "bottom");
+  @include padding($blg-measure-extra-small-in-px - 1, "bottom");
   padding-left: 0;
   padding-right: 0;
   text-align: center;

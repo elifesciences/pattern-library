@@ -36,7 +36,7 @@
 
   .asset-viewer-inline__header_panel {
     border-bottom: 1px solid $color-text-dividers;
-    @include padding($blg-space-extra-small-in-px - 1, "bottom");
+    @include padding($blg-measure-extra-small-in-px - 1, "bottom");
     @include blg-spacing("bottom", "extra-small", "margin");
   }
 

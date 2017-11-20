@@ -22,7 +22,7 @@
   @include dismissible_navigation();
   border-top: 1px solid $color-text-dividers;
   display: block;
-  @include padding($blg-space-extra-small-in-px - 1, "top");
+  @include padding($blg-measure-extra-small-in-px - 1, "top");
   padding-right: 0;
   @include blg-spacing("bottom", "extra-small");
   padding-left: 0;
@@ -40,7 +40,7 @@
   color: $color-text;
   @include dismissible_navigation();
   display: block;
-  @include padding($blg-space-extra-small-in-px - 1, "top");
+  @include padding($blg-measure-extra-small-in-px - 1, "top");
   @include padding(24, "right");
   @include blg-spacing("bottom", "extra-small");
   padding-left: 0;
@@ -77,7 +77,7 @@
     z-index: 40;
 
     .main-menu__list_item {
-      @include padding($blg-space-extra-small-in-px - 1, "top");
+      @include padding($blg-measure-extra-small-in-px - 1, "top");
       @include blg-spacing("bottom", "extra-small");
     }
 

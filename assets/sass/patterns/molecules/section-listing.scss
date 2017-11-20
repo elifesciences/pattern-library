@@ -8,7 +8,7 @@
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     border-bottom: 1px solid $color-text-dividers;
-    @include padding($blg-space-extra-small-in-px - 1, "bottom");
+    @include padding($blg-measure-extra-small-in-px - 1, "bottom");
   }
 
 }

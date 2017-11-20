@@ -199,7 +199,7 @@ input[type="radio"] {
 }
 
 select {
-  height: #{$blg-space-small-in-px}px;
+  height: #{$blg-measure-small-in-px}px;
 }
 
 // See https://css-tricks.com/almanac/selectors/p/placeholder/ for discussion of non-std :placeholder pseudoelement

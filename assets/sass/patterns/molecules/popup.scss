@@ -70,5 +70,5 @@ a.popup__button {
 .popup__content__ancillary {
   @include popup-ancillary-text();
   @include blg-spacing("top", "extra-small");
-  @include padding($blg-space-extra-small-in-px / 2, "bottom");
+  @include padding($blg-measure-extra-small-in-px / 2, "bottom");
 }
