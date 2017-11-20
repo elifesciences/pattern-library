@@ -27,7 +27,7 @@
 }
 
 .button--default {
-  @include colors($color-primary);
+  @include colors();
   @include padding(15 36 14);
 
   &:hover {
