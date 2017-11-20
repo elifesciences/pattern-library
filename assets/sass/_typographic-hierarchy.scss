@@ -71,7 +71,7 @@
   @include _heading-base-typeg();
   @include font-size-and-vertical-height($font-size-h1-in-px, 48);
   // Arbitrary values for now:
-  @include _set-typeg-width-variant(36, 36, $is-wide);
+  @include _set-typeg-width-variant($font-size-h1-in-px, $font-size-h1-in-px, $is-wide);
 }
 
 @mixin h1-spacing() {
