@@ -2,7 +2,7 @@
 
 .carousel {
   @include constrain-width($max-site-width, "max");
-  @include margin($content-header-padding, "top");
+  @include margin($content-header-padding-vertical, "top");
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -11,7 +11,7 @@
   position: relative;
 
   .list-heading {
-    @include margin($content-header-padding, "bottom");
+    @include margin($content-header-padding-vertical, "bottom");
     text-align: center;
   }
 }

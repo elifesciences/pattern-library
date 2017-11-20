@@ -108,7 +108,8 @@ $teaser-spacing-left: 16;
 // TODO: link name with blg spacing for 72px somehow?
 $listing-list-spacing: 72;
 
-$content-header-padding: 24;
+$content-header-padding-horizontal: 24;
+$content-header-padding-vertical: $blg-measure-small-in-px;
 
 // TODO: rename these
 $content-header-side-padding: 6; //vw
