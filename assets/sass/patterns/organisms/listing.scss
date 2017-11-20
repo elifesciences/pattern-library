@@ -83,7 +83,7 @@ div.listing-list__content {
   box-sizing: content-box;
   @include constrain-width(140, "max");
   margin: 0 auto;
-  @include padding($blg-space-medium-in-px - 1, "top");
+  @include padding($blg-measure-medium-in-px - 1, "top");
   padding-right: 0;
   @include blg-spacing("bottom", "medium");
   padding-left: 0;

@@ -2,7 +2,7 @@
 
 .box {
   border-bottom: 1px solid $color-text-dividers;
-  @include padding($blg-space-small-in-px - 1, "bottom");
+  @include padding($blg-measure-small-in-px - 1, "bottom");
   @include blg-spacing("top", "medium", "margin");
   @include blg-spacing("bottom", "medium", "margin");
 }
@@ -10,10 +10,10 @@
 .box__label {
   border-bottom: 1px solid $color-text-dividers;
   @include fig-heading-typeg();
-  @include padding($blg-space-extra-small-in-px - 1, "bottom");
+  @include padding($blg-measure-extra-small-in-px - 1, "bottom");
   @include blg-spacing("bottom", "extra-small", "margin");
 }
 
 .box__label_separator {
-  @include height($blg-space-extra-small-in-px);
+  @include height($blg-measure-extra-small-in-px);
 }

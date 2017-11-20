@@ -20,7 +20,7 @@
   }
 
   .highlights__control {
-    @include height($blg-space-small-in-px);
+    @include height($blg-measure-small-in-px);
     background-color: transparent;
     border: none;
     box-sizing: content-box;

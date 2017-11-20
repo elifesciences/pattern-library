@@ -351,7 +351,7 @@
 
   .content-header--image & {
     left: 12px;
-    top: #{$blg-space-extra-small-in-px}px;
+    top: #{$blg-measure-extra-small-in-px}px;
   }
 
 }
@@ -403,7 +403,7 @@ $iconlist: cc oa;
 
   .content-header--image & {
     right: 12px;
-    top: #{$blg-space-extra-small-in-px}px;
+    top: #{$blg-measure-extra-small-in-px}px;
   }
 
 }

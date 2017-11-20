@@ -20,7 +20,7 @@
   display: block;
   font-family: $font-secondary;
   @include font-size-and-vertical-height($font-size-base-in-px);
-  @include padding($blg-space-extra-small-in-px - 1 55 $blg-space-extra-small-in-px - 1 12);
+  @include padding($blg-measure-extra-small-in-px - 1 55 $blg-measure-extra-small-in-px - 1 12);
   width: 100%;
 
   .compact-form--valid & {

@@ -8,7 +8,7 @@
   @include blg-spacing("top", "extra-small");
   @include padding(24, "right");
   @include padding(24, "left");
-  @include padding($blg-space-small-in-px - 2, "bottom");
+  @include padding($blg-measure-small-in-px - 2, "bottom");
   position: relative;
 }
 
