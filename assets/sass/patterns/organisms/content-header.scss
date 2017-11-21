@@ -84,7 +84,7 @@ $blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-small-
 }
 
 .content-header__title {
-  @include font-size-and-vertical-height($blg-measure-smallish-in-px, $blg-measure-medium-in-px);
+  @include font-size-and-vertical-height($font-size-h1-in-px, $blg-measure-medium-in-px);
   margin-top: 0;
   @include blg-spacing("bottom", "small", "margin");
 
@@ -101,7 +101,7 @@ $blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-small-
   .content-header--read-more & {
     @include font-size-and-vertical-height(29, $blg-measure-smallish-in-px);
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include font-size-and-vertical-height($blg-measure-smallish-in-px, $blg-measure-medium-in-px);
+      @include font-size-and-vertical-height($font-size-h1-in-px, $blg-measure-medium-in-px);
     }
   }
 }
