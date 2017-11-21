@@ -1,4 +1,11 @@
 // Baseline grid
+
+// Use when a measure needs shaving due to borders
+// $measure must be one of the variables defined in _variables-baseline-grid.scss
+@function blg-get-measure-minus-offset($measure, $offset: 0) {
+  @return $measure - $offset
+}
+
 @mixin blg-spacing($direction, $level, $type: "padding") {
   @if $type == "padding" {
     @if $level == "extra-small" {
