@@ -1,5 +1,6 @@
 @import "variables";
 @import "typographic-hierarchy";
+@import "mixins-baseline-grid";
 
 // Put all general mixins, and any helper functions, in this file.
 // Mixins for a single pattern may be put in that pattern's scss file instead if that makes sense, use judgement.
@@ -267,7 +268,6 @@
 }
 
 // $vertical-height-in-px: desired height of the element as a function of font-size and line-height
-// TODO: Devise a good name (& extend blg name system?), for the default vertical height
 @mixin font-size-and-vertical-height($font-size-in-px, $vertical-height-in-px: $blg-measure-small-in-px) {
   @include font-size($font-size-in-px);
   line-height: #{($vertical-height-in-px / $font-size-in-px)};
@@ -276,35 +276,6 @@
 @mixin body-para {
   @include body-typeg();
   @include body-spacing();
-}
-
-// Baseline grid
-@mixin blg-spacing($direction, $level, $type: "padding") {
-  @if $type == "padding" {
-    @if $level == "extra-small" {
-      @include padding($blg-measure-extra-small-in-px, $direction);
-    } @else if $level == "small" {
-      @include padding($blg-measure-small-in-px, $direction);
-    } @else if $level == "smallish" {
-      @include padding($blg-measure-smallish-in-px, $direction);
-    } @else if $level == "medium" {
-      @include padding($blg-measure-medium-in-px, $direction);
-    } @else if $level == "large" {
-      @include padding($blg-measure-large-in-px, $direction);
-    }
-  } @else if $type == "margin" {
-    @if $level == "extra-small" {
-      @include margin($blg-measure-extra-small-in-px, $direction);
-    } @else if $level == "small" {
-      @include margin($blg-measure-small-in-px, $direction);
-    } @else if $level == "smallish" {
-      @include margin($blg-measure-smallish-in-px, $direction);
-    } @else if $level == "medium" {
-      @include margin($blg-measure-medium-in-px, $direction);
-    } @else if $level == "large" {
-      @include margin($blg-measure-large-in-px, $direction);
-    }
-  }
 }
 
 // Cross-pattern common style expressions
