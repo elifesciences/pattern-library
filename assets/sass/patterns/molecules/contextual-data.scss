@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 $border-width: 1;
-$blg-measure-reduced-by-border: blg-get-measure-minus-offset($blg-measure-extra-small-in-px, $border-width * 1);
+$blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-extra-small-in-px, $border-width * 1);
 
 .contextual-data {
   border-bottom: #{$border-width}px solid $color-text-dividers;

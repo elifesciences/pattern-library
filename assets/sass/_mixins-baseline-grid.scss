@@ -2,7 +2,7 @@
 
 // Use when a measure needs shaving due to borders
 // $measure must be one of the variables defined in _variables-baseline-grid.scss
-@function blg-get-measure-minus-offset($measure, $offset: 0) {
+@function get-blg-measure-minus-offset($measure, $offset: 0) {
   @return $measure - $offset
 }
 
