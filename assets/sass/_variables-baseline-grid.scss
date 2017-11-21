@@ -1,0 +1,10 @@
+/*
+ * Baseline grid
+ */
+$blg-measure-extra-small-in-px: 12;
+$blg-measure-small-in-px: $blg-measure-extra-small-in-px * 2;
+$blg-measure-smallish-in-px: $blg-measure-small-in-px * 1.5;
+$blg-measure-medium-in-px: $blg-measure-small-in-px * 2;
+$blg-measure-large-in-px: $blg-measure-small-in-px * 3;
+$blg-measure-extra-large-in-px: $blg-measure-small-in-px * 5;
+

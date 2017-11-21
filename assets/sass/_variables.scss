@@ -1,6 +1,4 @@
-//------------------------------------
-//    $VARIABLES
-//------------------------------------
+@import "variables-baseline-grid";
 
 // Colors
 $color-primary: #0288d1;
@@ -57,16 +55,6 @@ $font-size-h5-in-px: 18;
 $font-size-h6-in-px: 16;
 $font-size-caption-in-px: 13;
 $box-font-scaling-factor: 0.85;
-
-/*
- * Baseline grid
- */
-$blg-measure-extra-small-in-px: 12;
-$blg-measure-small-in-px: $blg-measure-extra-small-in-px * 2;
-$blg-measure-smallish-in-px: $blg-measure-small-in-px * 1.5;
-$blg-measure-medium-in-px: $blg-measure-small-in-px * 2;
-$blg-measure-large-in-px: $blg-measure-small-in-px * 3;
-$blg-measure-extra-large-in-px: $blg-measure-small-in-px * 5;
 
 // Widths
 $max-width-grid-listing-item: 400;
