@@ -381,7 +381,7 @@
 
 @mixin dismissible_navigation {
   @include typeg-portal-quick-nav();
-  @include font-size-and-vertical-height($font-size-base-in-px, 48);
+  @include font-size-and-vertical-height($font-size-base-in-px, $blg-measure-medium-in-px);
   @include nospace();
   text-align: center;
 }

@@ -82,24 +82,24 @@
 }
 
 .content-header__title {
-  @include font-size-and-vertical-height(36, 48);
+  @include font-size-and-vertical-height($blg-measure-smallish-in-px, $blg-measure-medium-in-px);
   @include margin(0, "top");
   @include margin(24, "bottom");
 
   // TODO: work out how to use title-size mixin to set these
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include font-size-and-vertical-height(41, 48);
+    @include font-size-and-vertical-height(41, $blg-measure-medium-in-px);
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    @include font-size-and-vertical-height(46, 72);
+    @include font-size-and-vertical-height(46, $blg-measure-large-in-px);
   }
 
   .content-header--header &,
   .content-header--read-more & {
-    @include font-size-and-vertical-height(29, 36);
+    @include font-size-and-vertical-height(29, $blg-measure-smallish-in-px);
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include font-size-and-vertical-height(36, 48);
+      @include font-size-and-vertical-height($blg-measure-smallish-in-px, $blg-measure-medium-in-px);
     }
   }
 }
@@ -121,7 +121,7 @@
   }
 
   .content-header__title {
-    @include font-size-and-vertical-height(41, 48);
+    @include font-size-and-vertical-height(41, $blg-measure-medium-in-px);
     margin-bottom: 0;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -129,7 +129,7 @@
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      @include font-size-and-vertical-height(58, 72);
+      @include font-size-and-vertical-height(58, $blg-measure-large-in-px);
     }
   }
 

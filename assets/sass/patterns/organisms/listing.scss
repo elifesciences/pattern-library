@@ -57,8 +57,8 @@ $totalHighlightsSpacing: 6;
 }
 
 div.listing-list__content {
-  @include margin($listing-list-spacing, "top");
-  @include margin($listing-list-spacing, "bottom");
+  @include blg-spacing("bottom", "large", "margin");
+  @include blg-spacing("top", "large", "margin");
   @include padding($content-header-side-padding--extra-wide, "left");
   @include padding($content-header-side-padding--extra-wide, "right");
   display: none;

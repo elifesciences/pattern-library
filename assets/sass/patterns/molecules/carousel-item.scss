@@ -191,16 +191,16 @@
   }
 
   .carousel-item__title {
-    @include font-size-and-vertical-height(36, 48);
-    @include margin(0, "top");
-    @include margin(0, "bottom");
+    @include font-size-and-vertical-height($blg-measure-smallish-in-px, $blg-measure-medium-in-px);
+    margin-bottom: 0;
+    margin-top: 0;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-      @include font-size-and-vertical-height(41, 48);
+      @include font-size-and-vertical-height(41, $blg-measure-medium-in-px);
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
-      @include font-size-and-vertical-height(46, 72);
+      @include font-size-and-vertical-height(46, $blg-measure-large-in-px);
     }
   }
 

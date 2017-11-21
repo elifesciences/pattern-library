@@ -69,7 +69,7 @@
 
 @mixin h1-typeg($is-wide:false) {
   @include _heading-base-typeg();
-  @include font-size-and-vertical-height($font-size-h1-in-px, 48);
+  @include font-size-and-vertical-height($font-size-h1-in-px, $blg-measure-medium-in-px);
   // Arbitrary values for now:
   @include _set-typeg-width-variant($font-size-h1-in-px, $font-size-h1-in-px, $is-wide);
 }

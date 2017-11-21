@@ -12,7 +12,7 @@
 }
 
 .content-header-profile__display_name {
-  @include font-size-and-vertical-height(20, 48);
+  @include font-size-and-vertical-height(20, $blg-measure-medium-in-px);
   font-weight: 700;
   @include nospace();
 }

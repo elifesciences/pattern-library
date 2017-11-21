@@ -27,7 +27,7 @@
   @include padding(24, "left");
 
   .investor-logos__img {
-    height: 72px;
+    height: #{$blg-measure-large-in-px}px;
     width: auto;
   }
 

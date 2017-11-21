@@ -28,7 +28,7 @@
     position: absolute;
     text-align: center;
     // heading block height + (box height- icon height) / 2
-    top: 48px + ((106px - 24px) / 2);
+    top: #{$blg-measure-medium-in-px}px + ((106px - 24px) / 2);
     @include width(24);
   }
 
