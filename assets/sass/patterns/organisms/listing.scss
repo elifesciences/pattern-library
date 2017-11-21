@@ -3,6 +3,8 @@
 $showTwoAtWidth: #{get-rem-from-px($bkpt-site--wide)}rem;
 $showThreeAtWidth: #{get-rem-from-px($bkpt-site--x-wide)}rem;
 $totalHighlightsSpacing: 6;
+$border-width: 1;
+$blg-measure-reduced-by-border: blg-get-measure-minus-offset($blg-measure-extra-small-in-px, $border-width * 1);
 
 /* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
  *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
@@ -89,7 +91,7 @@ div.listing-list__content {
   padding-left: 0;
 
   &:after {
-    border-bottom: 1px solid $color-text-dividers;
+    border-bottom: #{$border-width}px solid $color-text-dividers;
     content: "";
     display: block;
     width: 100%;
@@ -123,7 +125,7 @@ div.listing-list__content {
   @include margin(unquote("0 -#{$totalHighlightsSpacing / 2}"));
 
   .listing-list__item {
-    border: 1px solid #ccc;
+    border: #{$border-width}px solid #ccc;
     @include margin(3, "left");
     @include margin(3, "right");
 
@@ -184,7 +186,7 @@ div.listing-list__content {
     }
 
     .teaser__secondary_info {
-      @include padding(11, "bottom");
+      @include padding($blg-measure-reduced-by-border, "bottom");
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
