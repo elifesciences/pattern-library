@@ -3,7 +3,7 @@
 .image-link__link {
   border: 1px solid $color-text-dividers;
   display: table;
-  height: (60px + (#{$blg-measure-medium-in-px}px * 2) + 2px); // image + padding + border
+  height: (60px + (#{$blg-measure-medium-in-px * 2}px) + 2px); // image + padding + border
   width: 100%;
 }
 
