@@ -56,12 +56,14 @@
     }
 
     .section-listing--single-line {
-      border-bottom: 1px solid $color-text-dividers;
+      $border-width: 1;
+      $blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-extra-small-in-px, $border-width * 1);
+      border-bottom: #{$border-width}px solid $color-text-dividers;
       column-count: auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      @include padding(11, "bottom");
+      @include padding($blg-measure-reduced-by-border, "bottom");
 
       .section-listing__list_item {
         @include margin(0 12);

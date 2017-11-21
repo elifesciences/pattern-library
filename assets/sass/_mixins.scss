@@ -281,11 +281,15 @@
 // Cross-pattern common style expressions
 
 @mixin teaser-root-style() {
-  border-top: 1px solid $color-text-dividers;
-  @include padding($teaser-spacing-top 0 0 0);
+  $border-width: 1;
+  border-top: #{$border-width}px solid $color-text-dividers;
+  $blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-small-in-px, $border-width * 1);
+
+  padding: 0;
+  @include padding($blg-measure-reduced-by-border, "top");
   // margin not padding here as we want the margin to collapse for the last item in the list within a listing container
   // where that listing container also has a margin on the bottom.
-  @include margin($teaser-spacing-bottom, "bottom");
+  @include margin($blg-measure-reduced-by-border, "bottom");
 
   // TODO: Move to listing-list
   .listing-list__item:first-child & {
