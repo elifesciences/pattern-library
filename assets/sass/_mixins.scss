@@ -420,7 +420,7 @@
 @mixin popup-ancillary-text() {
   color: $color-text--reverse;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(11, 18);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px, 18);
 }
 
 @mixin popup-large-ancillary-text() {
