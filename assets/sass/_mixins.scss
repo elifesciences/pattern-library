@@ -18,6 +18,13 @@
   font-size: get-rem-from-px($size_in_px) * 1rem;
 }
 
+// $vertical-height-in-px: desired height of the element as a function of font-size and line-height
+@mixin font-size-and-vertical-height($font-size-in-px, $vertical-height-in-px: $blg-measure-small-in-px) {
+  // TODO: what is the relationship between the font size and the baseline grid? How should one change (if at all) when the other's changed?
+  @include font-size($font-size-in-px);
+  line-height: #{($vertical-height-in-px / $font-size-in-px)};
+}
+
 @mixin padding($size_in_px, $dimension: "") {
   @if $dimension == top or $dimension == right or $dimension == bottom or $dimension == left {
     padding-#{$dimension}: #{$size_in_px}px;
@@ -265,12 +272,6 @@
       padding-right: 3%;
     }
   }
-}
-
-// $vertical-height-in-px: desired height of the element as a function of font-size and line-height
-@mixin font-size-and-vertical-height($font-size-in-px, $vertical-height-in-px: $blg-measure-small-in-px) {
-  @include font-size($font-size-in-px);
-  line-height: #{($vertical-height-in-px / $font-size-in-px)};
 }
 
 @mixin body-para {
