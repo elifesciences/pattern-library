@@ -3,7 +3,7 @@
 .carousel-item {
   list-style-type: none;
   color: $color-text;
-  @include margin($content-header-padding-vertical, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
   @include constrain-width($max-site-width, "max");
   @include padding(0 $content-header-padding-horizontal);
   position: relative;
@@ -30,13 +30,13 @@
   .carousel-item__meta {
     .carousel-item--image & {
       position: absolute;
-      bottom: #{$content-header-padding-vertical / 2}px;
+      bottom: #{$blg-measure-extra-small-in-px}px;
       left: 0;
       right: 0;
     }
   }
 
-  @include padding($content-header-padding-vertical/2 0);
+  @include padding($blg-measure-extra-small-in-px 0);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -91,7 +91,7 @@
 }
 
 .carousel-item__meta {
-  @include padding($content-header-padding-vertical/2, "bottom");
+  @include padding($blg-measure-extra-small-in-px, "bottom");
 }
 
 .js {
@@ -100,7 +100,7 @@
     border: 0;
     color: $color-text--reverse;
     overflow: hidden;
-    @include margin(0, "bottom");
+    margin-bottom: 0;
     height: #{$content-header-image-height--narrow-screen}px;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
@@ -172,8 +172,8 @@
   }
 
   .carousel-item__body {
-    @include margin($content-header-padding-vertical * 2, "top");
-    height: #{$content-header-padding-vertical * 5}px;
+    @include blg-margin-top--medium-to-large();
+    height: #{$blg-measure-extra-large-in-px}px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -181,12 +181,8 @@
     align-content: center;
     justify-content: center;
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-      @include margin($content-header-padding-vertical * 3, "top");
-    }
-
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
-      height: #{$content-header-padding-vertical * 7}px;
+      height: #{$blg-measure-extra-extra-large-in-px}px;
     }
   }
 

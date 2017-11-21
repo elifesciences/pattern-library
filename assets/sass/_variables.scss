@@ -72,9 +72,9 @@ $viewport-width-when-site-hits-max-width-in-rem: get-rem-from-px($viewport-width
 // Heights
 $audio-player-height: 90;
 $audio-player-height--js: $blg-measure-large-in-px;
-$content-header-image-height--narrow-screen: 264;
-$content-header-image-height--medium-width-screen: 288;
-$content-header-image-height--wide-screen: 336;
+$content-header-image-height--narrow-screen: $blg-measure-small-in-px * 11;
+$content-header-image-height--medium-width-screen: $blg-measure-small-in-px * 12;
+$content-header-image-height--wide-screen: $blg-measure-small-in-px * 14;
 $content-header-image-credit-height: $blg-measure-medium-in-px;
 $carousel-height: 400;
 
@@ -94,7 +94,6 @@ $teaser-spacing-bottom: 23;
 $teaser-spacing-left: 16;
 
 $content-header-padding-horizontal: 24;
-$content-header-padding-vertical: $blg-measure-small-in-px;
 
 // TODO: rename these
 $content-header-side-padding: 6; //vw

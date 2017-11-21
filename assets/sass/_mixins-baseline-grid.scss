@@ -16,6 +16,8 @@
       @include padding($blg-measure-smallish-in-px, $direction);
     } @else if $level == "medium" {
       @include padding($blg-measure-medium-in-px, $direction);
+    } @else if $level == "mediumish" {
+      @include padding($blg-measure-mediumish-in-px, $direction);
     } @else if $level == "large" {
       @include padding($blg-measure-large-in-px, $direction);
     }
@@ -28,6 +30,8 @@
       @include margin($blg-measure-smallish-in-px, $direction);
     } @else if $level == "medium" {
       @include margin($blg-measure-medium-in-px, $direction);
+    } @else if $level == "mediumish" {
+      @include margin($blg-measure-mediumish-in-px, $direction);
     } @else if $level == "large" {
       @include margin($blg-measure-large-in-px, $direction);
     }
@@ -90,6 +94,16 @@
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include blg-spacing("bottom", "large", "margin");
+  }
+
+}
+
+@mixin blg-margin-top--medium-to-large {
+
+  @include blg-spacing("top", "medium", "margin");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("top", "large", "margin");
   }
 
 }
