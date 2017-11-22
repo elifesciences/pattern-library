@@ -43,12 +43,13 @@ $sitelist: (
 
 @each $site, $encodedImage in $sitelist {
   .social-links__list_link--#{$site} {
-    background: url("../img/icons/post-#{$site}.png");
-    background: url("../img/icons/post-#{$site}.svg"), linear-gradient(transparent, transparent);
+    background-image: url("../img/icons/post-#{$site}.png");
+    background-image: url("../img/icons/post-#{$site}.svg"), linear-gradient(transparent, transparent);
+    background-repeat: no-repeat;
 
     &:hover {
-      background: url("../img/icons/post-#{$site}-hover.png");
-      background: url("data:image/svg+xml;base64,#{$encodedImage}"), linear-gradient(transparent, transparent);
+      background-image: url("../img/icons/post-#{$site}-hover.png");
+      background-image: url("data:image/svg+xml;base64,#{$encodedImage}"), linear-gradient(transparent, transparent);
     }
   }
 }
