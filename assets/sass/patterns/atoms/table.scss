@@ -39,19 +39,15 @@ table {
 }
 
 th {
+  @include table-head-typeg();
   background-color: $color-text-ui-code;
   border: 1px solid $color-text-dividers;
-  font-family: $font-secondary;
-  @include font-size-and-vertical-height(13, 18);
-  font-weight: 700;
   @include padding(6);
 }
 
 td {
+  @include table-cell-typeg();
   border: 1px solid $color-text-dividers;
-  font-family: $font-secondary;
-  @include font-size-and-vertical-height(13, 18);
-  font-weight: 500;
   @include padding(6);
 }
 
