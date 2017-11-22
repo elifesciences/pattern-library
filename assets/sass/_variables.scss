@@ -45,7 +45,7 @@ $font-primary: Georgia, serif;
 $font-secondary: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
 $font-monospace: "Courier 10 Pitch", Courier, monospace;
 
-$font-size-base-in-px: 16;
+$font-size-base-in-px: $blg-measure-extra-small-in-px * 4 / 3;
 $font-size-small-in-px: $font-size-base-in-px * (14 / 16);
 $font-size-extra-small-in-px: $font-size-base-in-px * (11 / 16);
 
