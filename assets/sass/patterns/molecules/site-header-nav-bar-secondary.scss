@@ -13,7 +13,8 @@
   @supports (display: flex) {
     display: flex;
   }
-  @include height(40);
+
+  @include height($secondary-nav-height);
   justify-content: flex-end;
   margin: 0;
   padding: 0;
@@ -23,7 +24,7 @@
 .nav-secondary__item {
   float: left;
   @include nav-small-typeg();
-  @include height(24);
+  @include height($blg-measure-small-in-px);
   list-style-type: none;
   @include padding(0 12 0 0);
   text-transform: uppercase;

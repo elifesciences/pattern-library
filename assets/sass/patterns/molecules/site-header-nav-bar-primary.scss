@@ -15,7 +15,7 @@
   @supports (display: flex) {
     display: flex;
   }
-  @include height(54);
+  @include height($nav-primary-height);
   margin: 0;
   padding: 0;
   vertical-align: middle;
@@ -74,6 +74,7 @@
 }
 
 @media only all and (max-width: 21.25rem) {
+
   .nav-primary__menu_text {
     padding-bottom: 0;
     @include visuallyhidden();
@@ -89,4 +90,16 @@
     @include margin(0 8 0 0);
     margin-top: -3px;
   }
+}
+
+@media only all and (min-width: 21.26rem) {
+  .nav-primary {
+    // padding top calculation by:
+    //   primary nav area height = header height - secondary nav height - primary nav height
+    //   primary nav top padding = primary nav area height - (primary nav height / 2)
+    $primary-nav-area-height: $site-header-title-height-in-px - $secondary-nav-height - $nav-primary-height;
+    $primary-nav-top-padding: $primary-nav-area-height - ($nav-primary-height / 2);
+    @include padding($primary-nav-top-padding, "top");
+  }
+
 }

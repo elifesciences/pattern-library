@@ -8,7 +8,7 @@
   border-radius: 3px;
   @include font-size-and-vertical-height($font-size-extra-small-in-px, $blg-measure-small-in-px);
   @include padding(0 6);
-  @include height(24);
+  @include height($blg-measure-small-in-px);
 }
 
 .button {
