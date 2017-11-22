@@ -13,7 +13,7 @@
 }
 
 .email-cta__header_text {
-  @include content-header-simple-typeg();
+  @include content-header-simple-title-typeg();
   @include content-header-simple-spacing();
 }
 

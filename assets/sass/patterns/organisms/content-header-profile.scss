@@ -12,13 +12,14 @@
 }
 
 .content-header-profile__display_name {
-  @include font-size-and-vertical-height(20, $blg-measure-medium-in-px);
-  font-weight: 700;
-  @include nospace();
+  @include content-header-simple-title-typeg();
+  @include font-size-and-vertical-height($font-size-content-header-simple-title-in-px, $blg-measure-medium-in-px);
+  @include content-header-simple-spacing();
 }
 
 .content-header-profile__details {
-  @include font-size-and-vertical-height($font-size-base-in-px);
+  @include body-typeg();
+  @include nospace();
 }
 
 .content-header-profile__affiliations {

@@ -9,12 +9,11 @@
 }
 
 .content-header-simple__title {
-  @include content-header-simple-typeg();
+  @include content-header-simple-title-typeg();
   @include content-header-simple-spacing();
 }
 
 .content-header-simple__strapline {
-  color: $color-text;
   @include body-typeg();
   @include nospace();
 }
