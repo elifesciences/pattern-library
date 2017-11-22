@@ -44,16 +44,26 @@ $color-arbitrary-background-b8: rgb(230, 230, 230); // Grey
 $font-primary: Georgia, serif;
 $font-secondary: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
 $font-monospace: "Courier 10 Pitch", Courier, monospace;
+
 $font-size-base-in-px: 16;
 $font-size-small-in-px: $font-size-base-in-px * (14 / 16);
 $font-size-extra-small-in-px: $font-size-base-in-px * (11 / 16);
+
 $font-size-h1-in-px: $font-size-base-in-px * 36 / 16;
 $font-size-h2-in-px: $font-size-base-in-px * 26 / 16;
 $font-size-h3-in-px: $font-size-base-in-px * 22 / 16;
 $font-size-h4-in-px: $font-size-base-in-px * 20 / 16;
 $font-size-h5-in-px: $font-size-base-in-px * 18 / 16;
 $font-size-h6-in-px: $font-size-base-in-px;
+
 $font-size-caption-in-px: $font-size-base-in-px * 13 / 16;
+$font-size-table-text-in-px: $font-size-base-in-px * 13 / 16;
+$font-size-pullquote-in-px: $font-size-base-in-px * 24 / 16;
+$font-size-msa-link: $font-size-base-in-px * 12 / 16;
+
+$font-size-main-listing-article-title: $font-size-base-in-px * 20 / 16;
+$font-size-side-listing-article-title: $font-size-base-in-px * 18 / 16;
+
 $box-font-scaling-factor: 0.85;
 
 // Widths

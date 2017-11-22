@@ -181,7 +181,7 @@
 
 @mixin pullquote-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(24, 31.2);
+  @include font-size-and-vertical-height($font-size-pullquote-in-px, 31.2);
   font-weight: 500;
 }
 
@@ -230,15 +230,14 @@
 
 @mixin table-head-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(13, 16.9);
+  @include font-size-and-vertical-height($font-size-caption-in-px, 18);
   font-weight: 700;
-  @include padding(3, "bottom");
 }
 
 @mixin table-cell-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(13, 16.9);
-  @include padding(19, "bottom");
+  @include font-size-and-vertical-height($font-size-table-text-in-px, 18);
+  font-weight: 500;
 }
 
 @mixin lead-para-typeg($is-wide: false) {
@@ -301,9 +300,9 @@
   font-family: $font-secondary;
   font-weight: 700;
   @if $is-wide == false {
-    @include font-size-and-vertical-height(12, 22.2);
+    @include font-size-and-vertical-height($font-size-msa-link, 22.2);
   } @else {
-    @include font-size-and-vertical-height(12, 28.2);
+    @include font-size-and-vertical-height($font-size-msa-link, 28.2);
   }
 }
 
@@ -342,14 +341,14 @@
 // FOR ITEMS IN LISTS
 
 @mixin listing-main-art-title-typeg() {
-  @include font-size-and-vertical-height(20);
+  @include font-size-and-vertical-height($font-size-main-listing-article-title);
   @include blg-spacing("top", "extra-small");
   @include nospace("bottom");
 }
 
 @mixin listing-side-art-title-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(18);
+  @include font-size-and-vertical-height($font-size-side-listing-article-title);
   font-weight: 700;
   @include blg-spacing("top", "extra-small");
 }
