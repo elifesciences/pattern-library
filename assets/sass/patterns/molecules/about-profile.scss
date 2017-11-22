@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .about-profile__name {
-  @include font-size-and-vertical-height(18);
+  @include profile-name-typeg();
   @include nospace();
   @include blg-spacing("top", "extra-small");
 

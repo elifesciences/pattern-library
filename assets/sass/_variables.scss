@@ -58,11 +58,15 @@ $font-size-h6-in-px: $font-size-base-in-px;
 
 $font-size-caption-in-px: $font-size-base-in-px * 13 / 16;
 $font-size-table-text-in-px: $font-size-base-in-px * 13 / 16;
+
+// TODO: Create typographical style mixins from these? Can they be consolidated?
 $font-size-pullquote-in-px: $font-size-base-in-px * 24 / 16;
 $font-size-msa-link: $font-size-base-in-px * 12 / 16;
-
+$font-size-profile-name: $font-size-base-in-px * 18 / 16;
 $font-size-main-listing-article-title: $font-size-base-in-px * 20 / 16;
 $font-size-side-listing-article-title: $font-size-base-in-px * 18 / 16;
+$font-size-carousel-item-title: $font-size-base-in-px * 24 / 16;
+$font-size-content-header-simple-title-in-px: 20;
 
 $box-font-scaling-factor: 0.85;
 

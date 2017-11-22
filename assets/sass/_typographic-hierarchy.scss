@@ -139,6 +139,15 @@
   @include font-size($title-font-size);
 }
 
+@mixin content-header-simple-typeg() {
+  @include h2-typeg();
+  @include font-size-and-vertical-height($font-size-content-header-simple-title-in-px);
+}
+
+@mixin content-header-simple-spacing() {
+  @include nospace();
+}
+
 // CONTENT
 
 @mixin body-typeg() {
@@ -179,9 +188,15 @@
   font-weight: 500;
 }
 
+@mixin profile-name-typeg() {
+  font-family: $font-secondary;
+  @include font-size-and-vertical-height($font-size-profile-name);
+  font-weight: 700;
+}
+
 @mixin pullquote-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height($font-size-pullquote-in-px, 31.2);
+  @include font-size-and-vertical-height($font-size-pullquote-in-px, 28.8);
   font-weight: 500;
 }
 

@@ -38,9 +38,7 @@
 }
 
 .profile-snippet__name {
-  font-family: $font-secondary;
-  @include font-size-and-vertical-height(18);
-  font-weight: bold;
+  @include profile-name-typeg();
 }
 
 .profile-snippet__title {

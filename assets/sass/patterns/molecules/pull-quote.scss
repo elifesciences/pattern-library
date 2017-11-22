@@ -10,9 +10,7 @@
 
   p {
     @include pullquote-typeg();
-    @include font-size-and-vertical-height(24, 28.8);
-    margin: 0;
-    padding: 0;
+    @include nospace();
   }
 
   p + p {

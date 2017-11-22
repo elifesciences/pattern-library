@@ -9,10 +9,8 @@
 }
 
 .content-header-simple__title {
-  @include h2-typeg();
-  color: $color-text;
-  @include font-size-and-vertical-height(20);
-  @include nospace();
+  @include content-header-simple-typeg();
+  @include content-header-simple-spacing();
 }
 
 .content-header-simple__strapline {
