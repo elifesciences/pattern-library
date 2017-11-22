@@ -81,11 +81,21 @@
   width: #{get-rem-from-px($size_in_px)}rem;
 }
 
-@mixin constrain-width($size_in_px, $extreme) {
+@mixin contstrain-dimension($size_in_px, $extreme, $dimension) {
   @if $extreme == min or $extreme == max {
-    #{$extreme}-width: #{$size_in_px}px;
-    #{$extreme}-width: #{get-rem-from-px($size_in_px)}rem;
+    @if $dimension == height or $dimension == width {
+      #{$extreme}-#{$dimension}: #{$size_in_px}px;
+      #{$extreme}-#{$dimension}: #{get-rem-from-px($size_in_px)}rem;
+    }
   }
+}
+
+@mixin constrain-width($size_in_px, $extreme) {
+  @include contstrain-dimension($size_in_px, $extreme, "width");
+}
+
+@mixin constrain-height($size_in_px, $extreme) {
+  @include contstrain-dimension($size_in_px, $extreme, "height");
 }
 
 @mixin flexbox-centre-x-and-y {
