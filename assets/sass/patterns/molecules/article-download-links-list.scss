@@ -49,6 +49,7 @@
     margin: 0;
     @include blg-spacing("top", "small");
     padding-bottom: 0;
+    @include padding(24, "left");
     @include padding(24, "right");
   }
 
