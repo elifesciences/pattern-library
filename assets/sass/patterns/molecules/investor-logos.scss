@@ -21,13 +21,10 @@
 }
 
 .investor-logos__img_container--wellcome {
-  @include padding($blg-measure-small-in-px - 1, "top");
-  @include padding(24, "right");
-  @include blg-spacing("bottom", "small");
-  @include padding(24, "left");
+  @include padding(24 24 0);
 
   .investor-logos__img {
-    height: #{$blg-measure-large-in-px}px;
+    height: 72px;
     width: auto;
   }
 
