@@ -45,7 +45,13 @@ $font-primary: Georgia, serif;
 $font-secondary: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
 $font-monospace: "Courier 10 Pitch", Courier, monospace;
 
+// TODO: Review with design whether explicitly tying together the baseline grid and the base font size is desireable.
+// It is a design requirement that most element heights are set using baseline grid variables. This requires the baseline
+// grid measure to scale when the base font size changes to avoid vertically overlapping lines of text.
+// The line below explicitly derives the base font size from the smallest baseline grid measure. This may be
+// too explicit, it may be enough to set them manually, keeping in mind their relationship.
 $font-size-base-in-px: $blg-measure-extra-small-in-px * 4 / 3;
+
 $font-size-small-in-px: $font-size-base-in-px * (14 / 16);
 $font-size-extra-small-in-px: $font-size-base-in-px * (11 / 16);
 
