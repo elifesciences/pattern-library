@@ -85,5 +85,55 @@
 .button--outline-inactive {
   @include colors($color-text--reverse, #909090, #909090);
   border-width: 2px;
+
   cursor: not-allowed;
+}
+
+.button--speech-bubble {
+  display: none;
+}
+
+// TODO: could build with js so no need for js-only show defined in css
+.js {
+
+  .button--speech-bubble {
+    @include colors($color-primary);
+    display: block;
+    font-family: $font-primary;
+    @include font-size-and-vertical-height(48, 36);
+    @include height(36);
+    @include padding(12 0 0);
+    position: relative;
+    @include width(42);
+
+    &:after {
+      @include arrow("right", 20, $color-primary);
+      left: 8px;
+      position: absolute;
+      top: 8px;
+      z-index: -1;
+
+      &:hover {
+        border-left-color: $color-primary-dark;
+      }
+
+    }
+
+    &:hover {
+      background-color: $color-primary-dark;
+      border-color: $color-primary-dark;
+
+      &:after {
+        border-left-color: $color-primary-dark;
+      }
+    }
+
+    &.button--speech-bubble-populated {
+      font-family: $font-secondary;
+      @include font-size-and-vertical-height(14, 36);
+      padding-top: 0;
+    }
+
+  }
+
 }
