@@ -4,15 +4,15 @@
     "data": [
       {
         "name": "views",
-        "value": 149
+        "value": "149"
       },
       {
         "name": "cited",
-        "value": 5
+        "value": "5"
       },
       {
         "name": "comments",
-        "value": 12,
+        "value": "12",
         "elementId": "someDocumentLevelUniqueId"
       }
     ]
