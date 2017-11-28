@@ -15,7 +15,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
 
   describe('the getCurrentDisplayMode() method', () => {
 
-    context('when the window is at least 730px wide', () => {
+    context('when the window is at least 900px wide', () => {
 
       let windowMock;
 
@@ -23,7 +23,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
         windowMock = {};
         windowMock.appendChild = () => {};
         windowMock.matchMedia = function (mediaStatement) {
-          if (mediaStatement === '(min-width: 730px)') {
+          if (mediaStatement === '(min-width: 900px)') {
             return {
               matches: true
             };
@@ -42,14 +42,14 @@ describe('A HypothesisOpenerAffordance Component', function () {
 
     });
 
-    context('when the window is narrower than 730px', () => {
+    context('when the window is narrower than 900px', () => {
 
       let windowMock;
 
       before(() => {
         windowMock = {};
         windowMock.matchMedia = function (mediaStatement) {
-          if (mediaStatement === '(min-width: 730px)') {
+          if (mediaStatement === '(min-width: 900px)') {
             return {
               matches: false
             };

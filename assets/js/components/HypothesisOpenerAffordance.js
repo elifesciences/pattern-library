@@ -1,4 +1,5 @@
 'use strict';
+const utils = require('../libs/elife-utils')();
 
 module.exports = class HypothesisOpenerAffordance {
 
@@ -12,9 +13,16 @@ module.exports = class HypothesisOpenerAffordance {
     this.doc = doc;
     this.isSingleton = true;
 
-    this.thresholdWidth = 730;
+    this.thresholdWidth = 900;
     HypothesisOpenerAffordance.position(document, this.$elm);
+
+    this.$sectionAncestor =  utils.closest(this.$elm, '.article-section--js');
+
+    this.$sectionAncestor.addEventListener('collapsesection', () => this.promote$elmByOneLevel(this.$elm));
+    this.$sectionAncestor.addEventListener('expandsection', this.handleSectionExpand.bind(this));
   }
+
+  //TODO: cater for open wide -> collapse -> shrink screen
 
   static position(document, $elm) {
     const $anchorPoint = HypothesisOpenerAffordance.findAnchorPoint(document);
@@ -30,6 +38,18 @@ module.exports = class HypothesisOpenerAffordance {
     }
 
     return $snippet.querySelector('.article-section:last-child p:last-child');
+  }
+
+  promote$elmByOneLevel($elm) {
+    if (this.getCurrentDisplayMode(this.window) === 'multiColumn') {
+      $elm.parentNode.parentNode.appendChild($elm);
+    }
+  }
+
+  handleSectionExpand() {
+    if (this.getCurrentDisplayMode(this.window) === 'multiColumn') {
+      this.$elm.parentNode.querySelector('.article-section__body').appendChild(this.$elm);
+    }
   }
 
   getCurrentDisplayMode(window) {

@@ -97,10 +97,10 @@
 
 }
 
+$speech-bubble-width-in-px: 42;
 .js {
 
   .button--speech-bubble {
-    $width-in-px: 42;
     @include colors($color-primary);
     display: block;
     font-family: $font-primary;
@@ -108,17 +108,23 @@
     @include height(36);
     @include padding(12 0 0);
     position: relative;
-    @include width($width-in-px);
+    @include width($speech-bubble-width-in-px);
 
     &[data-behaviour="HypothesisOpenerAffordance"] {
 
-      margin-left: calc(100% - #{$width-in-px}px);
-
-      @media only all and (min-width: #{$bkpt-site--wide}px) {
-        position: relative;
-        right: calc(-1 * (#{$width-in-px}px + 72px));
-      }
-
+      @include blg-spacing("top", "small");
+      @include blg-spacing("bottom", "small", "margin");
+      margin-left: calc(100% - #{$speech-bubble-width-in-px}px);
+      //@media only all and (min-width: #{$bkpt-site--wide}px) {
+      //  position: relative;
+      //  right: calc(-1 * (#{$speech-bubble-width-in-px}px + 72px));
+      //
+      //  .article-section--collapsed & {
+      //    position: absolute;
+      //    left: 25%;
+      //  }
+      //
+      //}
     }
 
     &:after {
@@ -149,6 +155,21 @@
       padding-top: 0;
     }
 
+  }
+
+}
+
+@media only all and (min-width: #{$bkpt-site--wide}px) {
+
+  .js .button--speech-bubble[data-behaviour="HypothesisOpenerAffordance"] {
+    position: relative;
+    right: calc(-1 * (#{$speech-bubble-width-in-px}px + 72px));
+  }
+
+  .js .article-section--collapsed .button--speech-bubble[data-behaviour="HypothesisOpenerAffordance"] {
+    position: absolute;
+    left: -25%;
+    margin-top: -50px;
   }
 
 }
