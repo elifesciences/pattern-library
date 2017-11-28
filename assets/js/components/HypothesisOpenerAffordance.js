@@ -10,6 +10,7 @@ module.exports = class HypothesisOpenerAffordance {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+    this.isSingleton = true;
 
     this.thresholdWidth = 730;
     HypothesisOpenerAffordance.position(document, this.$elm);
@@ -25,10 +26,10 @@ module.exports = class HypothesisOpenerAffordance {
   static findAnchorPoint($snippet) {
     const $abstract = $snippet.querySelector('#abstract');
     if ($abstract) {
-      return $abstract.nextElementSibling;
+      return $abstract.nextElementSibling.querySelector('.article-section__body');
     }
 
-    return $snippet.querySelector('.wrapper--content > .grid > .grid__item');
+    return $snippet.querySelector('.article-section:last-child p:last-child');
   }
 
   getCurrentDisplayMode(window) {

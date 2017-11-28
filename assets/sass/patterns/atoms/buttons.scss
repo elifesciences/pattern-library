@@ -90,13 +90,17 @@
 }
 
 .button--speech-bubble {
-  display: none;
+
+  &[data-behaviour="HypothesisOpenerAffordance"] {
+    display: none;
+  }
+
 }
 
-// TODO: could build with js so no need for js-only show defined in css
 .js {
 
   .button--speech-bubble {
+    $width-in-px: 42;
     @include colors($color-primary);
     display: block;
     font-family: $font-primary;
@@ -104,7 +108,11 @@
     @include height(36);
     @include padding(12 0 0);
     position: relative;
-    @include width(42);
+    @include width($width-in-px);
+
+    &[data-behaviour="HypothesisOpenerAffordance"] {
+      margin-left: calc(100% - #{$width-in-px}px);
+    }
 
     &:after {
       @include arrow("right", 20, $color-primary);

@@ -1,21 +1,19 @@
+const utils = require('../../assets/js/libs/elife-utils')();
+
+
 module.exports = () => {
   'use strict';
 
-  const $root = document.createElement('div');
-  $root.classList.add('wrapper--content');
+  const $root = utils.buildElement('div', ['wrapper-content']);
+  const $gridItem = utils.buildElement('div', ['grid__item'],'',
+                      utils.buildElement('div', ['grid'], '', $root));
 
-  const $grid = document.createElement('div');
-  $grid.classList.add('grid');
-  $root.appendChild($grid);
-
-  const $gridItem = document.createElement('div');
-  $grid.classList.add('grid__item');
-  $root.appendChild($gridItem);
-
-  const sectionCount = 3;
-  for(let i = 0; i < sectionCount; i += 1) {
-    const $el = document.createElement('div');
-    $gridItem.appendChild($el);
+  const articleSectionCount = 3;
+  for(let i = 0; i < articleSectionCount; i += 1) {
+    const $section = utils.buildElement('div', ['article-section'], '', $gridItem);
+    if (i === articleSectionCount - 1) {
+      utils.buildElement('p', [], '', $section)
+    }
   }
 
   return $root;

@@ -23,7 +23,6 @@ describe('A HypothesisOpenerAffordance Component', function () {
         windowMock = {};
         windowMock.appendChild = () => {};
         windowMock.matchMedia = function (mediaStatement) {
-          console.error('mediaStatement', mediaStatement);
           if (mediaStatement === '(min-width: 730px)') {
             return {
               matches: true
@@ -43,7 +42,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
 
     });
 
-    context('when the window is not at least 730px wide', () => {
+    context('when the window is narrower than 730px', () => {
 
       let windowMock;
 
@@ -62,7 +61,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
         }
       });
 
-      it('returns "multiColumn"', () => {
+      it('returns "singleColumn"', () => {
         affordance = new HypothesisOpenerAffordance($opener);
         expect(affordance.getCurrentDisplayMode(windowMock)).to.equal('singleColumn');
       });
@@ -81,9 +80,10 @@ describe('A HypothesisOpenerAffordance Component', function () {
         $containsAbstract = require('./fixtures/snippetWithAbstract.html')();
       });
 
-      it('returns the next element sibling to the abstract', () => {
+      it('returns the ".article-section__body" child of the next element sibling to the abstract', () => {
         const foundAnchorPoint = HypothesisOpenerAffordance.findAnchorPoint($containsAbstract);
-        expect(foundAnchorPoint.getAttribute('id')).to.equal('nextFollowingElementSiblingAfterAbstract');
+        expect(foundAnchorPoint.parentNode.getAttribute('id')).to.equal('nextFollowingElementSiblingAfterAbstract');
+        expect(foundAnchorPoint.classList.contains('article-section__body')).to.be.true;
       });
 
     });
@@ -96,9 +96,9 @@ describe('A HypothesisOpenerAffordance Component', function () {
         $doesNotContainAbstract = require('./fixtures/snippetWithoutAbstract.html')();
       });
 
-      it('returns the main grid__item', () => {
+      it('returns the last ".article-section" element\'s last p element child', () => {
         const foundAnchorPoint = HypothesisOpenerAffordance.findAnchorPoint($doesNotContainAbstract);
-        expect(foundAnchorPoint).to.equal($doesNotContainAbstract.querySelector('.wrapper--content > .grid > .grid__item'));
+        expect(foundAnchorPoint).to.equal($doesNotContainAbstract.querySelector('.article-section:last-child p:last-child'));
       });
 
     });

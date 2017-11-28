@@ -1282,6 +1282,13 @@
     }
   ],
 
+  "hypothesisButton": {
+    "behaviour": "HypothesisOpenerAffordance",
+    "text": "12",
+    "classes": "button--speech-bubble button--speech-bubble-populated",
+    "type": "button"
+  },
+
   "related": {
     "rootClasses": "teaser--secondary teaser--related",
 
