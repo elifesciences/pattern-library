@@ -111,7 +111,14 @@
     @include width($width-in-px);
 
     &[data-behaviour="HypothesisOpenerAffordance"] {
+
       margin-left: calc(100% - #{$width-in-px}px);
+
+      @media only all and (min-width: #{$bkpt-site--wide}px) {
+        position: relative;
+        right: calc(-1 * (#{$width-in-px}px + 72px));
+      }
+
     }
 
     &:after {
