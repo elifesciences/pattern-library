@@ -68,7 +68,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
 
   });
 
-  describe('the static findAnchorPoint() method', () => {
+  describe('the static findInitialAnchorPoint() method', () => {
 
     context('when an abstract is present in the document', () => {
 
@@ -79,7 +79,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
       });
 
       it('returns the ".article-section__body" child of the next element sibling to the abstract', () => {
-        const foundAnchorPoint = HypothesisOpenerAffordance.findAnchorPoint($containsAbstract);
+        const foundAnchorPoint = HypothesisOpenerAffordance.findInitialAnchorPoint($containsAbstract);
         expect(foundAnchorPoint.parentNode.getAttribute('id')).to.equal('nextFollowingElementSiblingAfterAbstract');
         expect(foundAnchorPoint.classList.contains('article-section__body')).to.be.true;
       });
@@ -95,7 +95,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
       });
 
       it('returns the last ".article-section" element\'s last p element child', () => {
-        const foundAnchorPoint = HypothesisOpenerAffordance.findAnchorPoint($doesNotContainAbstract);
+        const foundAnchorPoint = HypothesisOpenerAffordance.findInitialAnchorPoint($doesNotContainAbstract);
         expect(foundAnchorPoint).to.equal($doesNotContainAbstract.querySelector('.article-section:last-child p:last-child'));
       });
 
