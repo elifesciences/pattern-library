@@ -14,17 +14,16 @@ module.exports = class HypothesisOpenerAffordance {
     this.isSingleton = true;
 
     this.thresholdWidth = 900;
-    HypothesisOpenerAffordance.position(document, this.$elm);
+    HypothesisOpenerAffordance.moveToDesiredDomLocation(this.$elm, document);
 
-    this.$sectionAncestor =  utils.closest(this.$elm, '.article-section--js');
-
-    this.$sectionAncestor.addEventListener('collapsesection', () => this.promote$elmByOneLevel(this.$elm));
-    this.$sectionAncestor.addEventListener('expandsection', this.handleSectionExpand.bind(this));
+    this.$ancestorSection =  utils.closest(this.$elm, '.article-section');
+    this.$ancestorSection.addEventListener('collapsesection', () => this.promote$elmByOneLevel(this.$elm));
+    this.$ancestorSection.addEventListener('expandsection', () => this.handleSectionExpand(this.$elm));
   }
 
   //TODO: cater for open wide -> collapse -> shrink screen
 
-  static position(document, $elm) {
+  static moveToDesiredDomLocation($elm, document) {
     const $anchorPoint = HypothesisOpenerAffordance.findAnchorPoint(document);
     if ($anchorPoint) {
       $anchorPoint.appendChild($elm);
@@ -46,9 +45,9 @@ module.exports = class HypothesisOpenerAffordance {
     }
   }
 
-  handleSectionExpand() {
+  handleSectionExpand($elm) {
     if (this.getCurrentDisplayMode(this.window) === 'multiColumn') {
-      this.$elm.parentNode.querySelector('.article-section__body').appendChild(this.$elm);
+      $elm.parentNode.querySelector('.article-section__body').appendChild($elm);
     }
   }
 
