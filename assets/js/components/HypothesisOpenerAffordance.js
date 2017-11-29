@@ -13,24 +13,28 @@ module.exports = class HypothesisOpenerAffordance {
     this.doc = doc;
     this.isSingleton = true;
 
+    // If no collapsible sections on the page, bail here.  Or perhaps don't even include this behaviour at all.
+
     this.thresholdWidth = 900;
-    HypothesisOpenerAffordance.moveToDesiredDomLocation(this.$elm, document);
+    this.lastKnownDisplayMode = HypothesisOpenerAffordance.getCurrentDisplayMode(this.thresholdWidth, this.window);
+    this.displayModeAtLatestSectionVisChange = HypothesisOpenerAffordance.getCurrentDisplayMode(this.thresholdWidth, this.window);
+
+    HypothesisOpenerAffordance.establishInitialDomLocation(this.$elm, document);
 
     this.$ancestorSection =  utils.closest(this.$elm, '.article-section');
-    this.$ancestorSection.addEventListener('collapsesection', () => this.promote$elmByOneLevel(this.$elm));
-    this.$ancestorSection.addEventListener('expandsection', () => this.handleSectionExpand(this.$elm));
+    this.$ancestorSection.addEventListener('collapsesection', (e) => this.updateDomLocation(this.$elm, e));
+    this.$ancestorSection.addEventListener('expandsection', (e) => this.updateDomLocation(this.$elm, e));
+    this.window.addEventListener('resize', utils.debounce(() => this.handleResize(), 50));
   }
 
-  //TODO: cater for open wide -> collapse -> shrink screen
-
-  static moveToDesiredDomLocation($elm, document) {
-    const $anchorPoint = HypothesisOpenerAffordance.findAnchorPoint(document);
+  static establishInitialDomLocation($elm, document) {
+    const $anchorPoint = HypothesisOpenerAffordance.findInitialAnchorPoint(document);
     if ($anchorPoint) {
       $anchorPoint.appendChild($elm);
     }
   }
 
-  static findAnchorPoint($snippet) {
+  static findInitialAnchorPoint($snippet) {
     const $abstract = $snippet.querySelector('#abstract');
     if ($abstract) {
       return $abstract.nextElementSibling.querySelector('.article-section__body');
@@ -39,24 +43,41 @@ module.exports = class HypothesisOpenerAffordance {
     return $snippet.querySelector('.article-section:last-child p:last-child');
   }
 
-  promote$elmByOneLevel($elm) {
-    if (this.getCurrentDisplayMode(this.window) === 'multiColumn') {
-      $elm.parentNode.parentNode.appendChild($elm);
+  updateDomLocation($elm) {
+
+    if (HypothesisOpenerAffordance.getCurrentDisplayMode(this.thresholdWidth, this.window) === 'multiColumn') {
+
+      if (HypothesisOpenerAffordance.isCollapsedSection(this.$ancestorSection)) {
+        this.$ancestorSection.appendChild($elm);
+      } else {
+        this.$ancestorSection.querySelector('.article-section__body').appendChild($elm);
+      }
+
+    } else {
+      HypothesisOpenerAffordance.establishInitialDomLocation($elm, this.doc);
     }
+
   }
 
-  handleSectionExpand($elm) {
-    if (this.getCurrentDisplayMode(this.window) === 'multiColumn') {
-      $elm.parentNode.querySelector('.article-section__body').appendChild($elm);
-    }
-  }
-
-  getCurrentDisplayMode(window) {
-    if (window.matchMedia(`(min-width: ${this.thresholdWidth}px)`).matches) {
+  static getCurrentDisplayMode(thresholdWidth, window) {
+    if (window.matchMedia(`(min-width: ${thresholdWidth}px)`).matches) {
       return 'multiColumn';
     }
 
     return 'singleColumn';
+  }
+
+  handleResize() {
+    const currentDisplayMode = HypothesisOpenerAffordance.getCurrentDisplayMode(this.thresholdWidth, this.window);
+    if (currentDisplayMode !== this.lastKnownDisplayMode/* && currentDisplayMode === 'multiColumn'*/) {
+      this.updateDomLocation(this.$elm);
+      this.lastKnownDisplayMode = currentDisplayMode;
+    }
+
+  }
+
+  static isCollapsedSection($elm) {
+    return $elm.classList.contains('article-section--collapsed');
   }
 
 };
