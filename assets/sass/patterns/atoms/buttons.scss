@@ -164,3 +164,11 @@ $speech-bubble-width-in-px: 42;
   }
 
 }
+
+@media only all and (min-width: #{$bkpt-site--x-wide}px) {
+
+  .js .article-section--collapsed .button--speech-bubble[data-behaviour="HypothesisOpenerAffordance"] {
+    left: -13%;
+  }
+
+}
