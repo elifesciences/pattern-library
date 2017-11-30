@@ -14,6 +14,7 @@ module.exports = class HypothesisOpenerAffordance {
 
     this.isSingleton = true;
 
+    this.$elm.dataset.hypothesisTrigger = '';
     this.setInitialDomLocation(this.$elm);
 
     this.$ancestorSection = utils.closest(this.$elm, '.article-section');
