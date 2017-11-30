@@ -830,10 +830,7 @@ describe('The utils library', function () {
 
     let generateWindowMock;
 
-    beforeEach(() => {
-
-      spy(window, "matchMedia");
-
+    before(() => {
       // Expects matchMedia to be testing a min-width media query
       generateWindowMock = (hasWideViewport) => {
         return {
@@ -845,7 +842,10 @@ describe('The utils library', function () {
 
         };
       };
+    });
 
+    beforeEach(() => {
+      spy(window, "matchMedia");
     });
 
     afterEach(() => {
@@ -862,12 +862,107 @@ describe('The utils library', function () {
 
     });
 
-    context('when the viewport is at 900px wide', () => {
+    context('when the viewport is at least 900px wide', () => {
 
       it('returns true', () => {
         const observed = utils.isMultiColumnDisplay(generateWindowMock(true));
         expect(observed).to.be.true;
         expect(window.matchMedia.calledWithExactly('(min-width: 900px)'));
+      });
+
+    });
+
+  });
+
+  describe('the isCollapsibleArticleSection function', () => {
+
+    let generateArticleSectionMock;
+
+    before(() => {
+      generateArticleSectionMock = (isCollapsible) => {
+        const behaviour = isCollapsible ? 'ArticleSection' : 'DifferentBehaviour';
+        return {
+          dataset: {
+            behaviour
+          }
+        };
+      };
+
+    });
+
+    context('when supplied with a collapsible article section', () => {
+
+      it('returns true', () => {
+
+        expect(utils.isCollapsibleArticleSection(generateArticleSectionMock(true))).to.be.true;
+
+      });
+
+    });
+
+    context('when not supplied with a collapsible article section', () => {
+
+      it('returns false', () => {
+        expect(utils.isCollapsibleArticleSection(generateArticleSectionMock(false))).to.be.false;
+      });
+
+    });
+
+  });
+
+  describe('the isCollapsedArticleSection', () => {
+
+    context('when supplied with an article section that is collapsed', () => {
+
+      let collapsedSectionMock;
+
+      beforeEach(() => {
+        collapsedSectionMock = {
+          classList: {
+            contains: (className) => {
+              return className === 'article-section--collapsed'
+            }
+          }
+        };
+
+        spy(collapsedSectionMock.classList, "contains");
+      });
+
+      afterEach(() => {
+        collapsedSectionMock.classList.contains.restore();
+      });
+
+      it('returns true', () => {
+        const observed = utils.isCollapsedArticleSection(collapsedSectionMock);
+        expect(observed).to.be.true;
+        expect(collapsedSectionMock.classList.contains.calledWithExactly('article-section--collapsed')).to.be.true;
+      });
+
+    });
+
+    context('when not supplied with an article section that is collapsed', () => {
+
+      let uncollapsedSectionMock;
+
+      beforeEach(() => {
+        uncollapsedSectionMock = {
+          classList: {
+            contains: (className) => {
+              return className !== 'article-section--collapsed'
+            }
+          }
+        };
+
+        spy(uncollapsedSectionMock.classList, "contains");
+      });
+
+      afterEach(() => {
+        uncollapsedSectionMock.classList.contains.restore();
+      });
+      it('returns false', () => {
+        const observed = utils.isCollapsedArticleSection(uncollapsedSectionMock);
+        expect(observed).to.be.false;
+        expect(uncollapsedSectionMock.classList.contains.calledWithExactly('article-section--collapsed')).to.be.true;
       });
 
     });
