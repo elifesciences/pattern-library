@@ -36,7 +36,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
       });
 
       it('returns "multiColumn"', () => {
-        expect(HypothesisOpenerAffordance.getCurrentDisplayMode(900, windowMock)).to.equal('multiColumn');
+        expect(HypothesisOpenerAffordance.getCurrentDisplayMode(windowMock)).to.equal('multiColumn');
       });
 
     });
@@ -61,7 +61,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
       });
 
       it('returns "singleColumn"', () => {
-        expect(HypothesisOpenerAffordance.getCurrentDisplayMode(900, windowMock)).to.equal('singleColumn');
+        expect(HypothesisOpenerAffordance.getCurrentDisplayMode(windowMock)).to.equal('singleColumn');
       });
 
     });

@@ -115,16 +115,7 @@ $speech-bubble-width-in-px: 42;
       @include blg-spacing("top", "small");
       @include blg-spacing("bottom", "small", "margin");
       margin-left: calc(100% - #{$speech-bubble-width-in-px}px);
-      //@media only all and (min-width: #{$bkpt-site--wide}px) {
-      //  position: relative;
-      //  right: calc(-1 * (#{$speech-bubble-width-in-px}px + 72px));
-      //
-      //  .article-section--collapsed & {
-      //    position: absolute;
-      //    left: 25%;
-      //  }
-      //
-      //}
+
     }
 
     &:after {

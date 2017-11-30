@@ -11,27 +11,36 @@ module.exports = class HypothesisOpenerAffordance {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+
     this.isSingleton = true;
 
-    // If no collapsible sections on the page, bail here.  Or perhaps don't even include this behaviour at all.
+    this.setInitialDomLocation(this.$elm);
 
-    this.thresholdWidth = 900;
-    this.lastKnownDisplayMode = HypothesisOpenerAffordance.getCurrentDisplayMode(this.thresholdWidth, this.window);
-    this.displayModeAtLatestSectionVisChange = HypothesisOpenerAffordance.getCurrentDisplayMode(this.thresholdWidth, this.window);
+    this.$ancestorSection = utils.closest(this.$elm, '.article-section');
+    if (this.$ancestorSection && utils.isCollapsibleArticleSection(this.$ancestorSection)) {
+      this.setupSectionHandlers($elm, this.$ancestorSection, this.window);
+    }
 
-    HypothesisOpenerAffordance.establishInitialDomLocation(this.$elm, document);
-
-    this.$ancestorSection =  utils.closest(this.$elm, '.article-section');
-    this.$ancestorSection.addEventListener('collapsesection', (e) => this.updateDomLocation(this.$elm, e));
-    this.$ancestorSection.addEventListener('expandsection', (e) => this.updateDomLocation(this.$elm, e));
-    this.window.addEventListener('resize', utils.debounce(() => this.handleResize(), 50));
   }
 
-  static establishInitialDomLocation($elm, document) {
-    const $anchorPoint = HypothesisOpenerAffordance.findInitialAnchorPoint(document);
+  setInitialDomLocation($elm) {
+    const $anchorPoint = HypothesisOpenerAffordance.findInitialAnchorPoint(this.doc);
     if ($anchorPoint) {
       $anchorPoint.appendChild($elm);
     }
+  }
+
+  setupSectionHandlers($elm, $section, window) {
+    this.lastKnownDisplayMode = HypothesisOpenerAffordance.getCurrentDisplayMode(window);
+
+    $section.addEventListener('collapsesection', () => {
+      this.updateDomLocation($elm);
+    });
+    $section.addEventListener('expandsection', () => {
+      this.updateDomLocation($elm);
+    });
+
+    window.addEventListener('resize', utils.debounce(() => this.handleResize(), 50));
   }
 
   static findInitialAnchorPoint($snippet) {
@@ -45,22 +54,22 @@ module.exports = class HypothesisOpenerAffordance {
 
   updateDomLocation($elm) {
 
-    if (HypothesisOpenerAffordance.getCurrentDisplayMode(this.thresholdWidth, this.window) === 'multiColumn') {
+    if (HypothesisOpenerAffordance.getCurrentDisplayMode(this.window) === 'multiColumn') {
 
-      if (HypothesisOpenerAffordance.isCollapsedSection(this.$ancestorSection)) {
+      if (utils.isCollapsedArticleSection(this.$ancestorSection)) {
         this.$ancestorSection.appendChild($elm);
       } else {
         this.$ancestorSection.querySelector('.article-section__body').appendChild($elm);
       }
 
     } else {
-      HypothesisOpenerAffordance.establishInitialDomLocation($elm, this.doc);
+      this.setInitialDomLocation($elm, this.doc);
     }
 
   }
 
-  static getCurrentDisplayMode(thresholdWidth, window) {
-    if (window.matchMedia(`(min-width: ${thresholdWidth}px)`).matches) {
+  static getCurrentDisplayMode(window) {
+    if (utils.isMultiColumnDisplay(window)) {
       return 'multiColumn';
     }
 
@@ -68,16 +77,12 @@ module.exports = class HypothesisOpenerAffordance {
   }
 
   handleResize() {
-    const currentDisplayMode = HypothesisOpenerAffordance.getCurrentDisplayMode(this.thresholdWidth, this.window);
-    if (currentDisplayMode !== this.lastKnownDisplayMode/* && currentDisplayMode === 'multiColumn'*/) {
+    const currentDisplayMode = HypothesisOpenerAffordance.getCurrentDisplayMode(this.window);
+    if (currentDisplayMode !== this.lastKnownDisplayMode) {
       this.updateDomLocation(this.$elm);
       this.lastKnownDisplayMode = currentDisplayMode;
     }
 
-  }
-
-  static isCollapsedSection($elm) {
-    return $elm.classList.contains('article-section--collapsed');
   }
 
 };
