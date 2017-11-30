@@ -1,5 +1,8 @@
 const chai = require('chai');
+const sinon = require('sinon');
+
 const expect = chai.expect;
+const spy = sinon.spy;
 
 // Commented out as doesn't run in Phantomjs. Reinstate when using e.g. Headless Chrome
 // const chaiAsPromised = require('chai-as-promised');
@@ -817,6 +820,54 @@ describe('The utils library', function () {
 
       it('hides the new element', () => {
         expect($overlay.classList.contains('hidden')).to.be.true;
+      });
+
+    });
+
+  });
+
+  describe('the isMultiColumnDisplay function', () => {
+
+    let generateWindowMock;
+
+    beforeEach(() => {
+
+      spy(window, "matchMedia");
+
+      // Expects matchMedia to be testing a min-width media query
+      generateWindowMock = (hasWideViewport) => {
+        return {
+          matchMedia: () => {
+            return {
+              matches: hasWideViewport
+            };
+          }
+
+        };
+      };
+
+    });
+
+    afterEach(() => {
+      window.matchMedia.restore();
+    });
+
+    context('when the viewport is narrower than 900px', () => {
+
+      it('returns false', () => {
+        const observed = utils.isMultiColumnDisplay(generateWindowMock(false));
+        expect(observed).to.be.false;
+        expect(window.matchMedia.calledWithExactly('(min-width: 900px)'));
+      });
+
+    });
+
+    context('when the viewport is at 900px wide', () => {
+
+      it('returns true', () => {
+        const observed = utils.isMultiColumnDisplay(generateWindowMock(true));
+        expect(observed).to.be.true;
+        expect(window.matchMedia.calledWithExactly('(min-width: 900px)'));
       });
 
     });

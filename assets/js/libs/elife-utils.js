@@ -600,6 +600,15 @@ module.exports = () => {
     };
   }
 
+  /**
+   * Returns true if the viewport is wide enough to display multiple columns (>=900px)
+   * @param {Window} window
+   * @returns {boolean} true if the viewport is at least 900px wide
+   */
+  function isMultiColumnDisplay(window) {
+    return window.matchMedia('(min-width: 900px)').matches;
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -615,6 +624,7 @@ module.exports = () => {
     flatten: flatten,
     invertPxString: invertPxString,
     isTopInView: isTopInView,
+    isMultiColumnDisplay: isMultiColumnDisplay,
     jumpToAnchor: jumpToAnchor,
     loadData: loadData,
     getOrdinalAmongstSiblingElements: getOrdinalAmongstSiblingElements,
