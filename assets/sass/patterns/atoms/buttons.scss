@@ -90,85 +90,45 @@
 }
 
 .button--speech-bubble {
+  @include colors($color-primary);
+  display: block;
+  font-family: $font-primary;
+  // line-height deliberately set smaller than font size because the default content is expected to be a double-quote
+  // character, which sits high on the line. When the content is not the default, ensure to apply the
+  // class: button--speech-bubble-populated
+  @include font-size-and-vertical-height(48, 36);
+  @include height(36);
+  padding: 0;
+  @include blg-spacing("top", "extra-small");
+  position: relative;
+  @include width($button-speech-bubble-width-in-px);
 
-  &[data-behaviour="HypothesisOpenerAffordance"] {
-    display: none;
-  }
-
-}
-
-$speech-bubble-width-in-px: 42;
-.js {
-
-  .button--speech-bubble {
-    @include colors($color-primary);
-    display: block;
-    font-family: $font-primary;
-    @include font-size-and-vertical-height(48, 36);
-    @include height(36);
-    @include padding(12 0 0);
-    position: relative;
-    @include width($speech-bubble-width-in-px);
-
-    &[data-behaviour="HypothesisOpenerAffordance"] {
-
-      @include blg-spacing("top", "small");
-      @include blg-spacing("bottom", "small", "margin");
-      margin-left: calc(100% - #{$speech-bubble-width-in-px}px);
-
-    }
-
-    &:after {
-      @include arrow("right", 20, $color-primary);
-      left: 8px;
-      position: absolute;
-      top: 8px;
-      z-index: -1;
-
-      &:hover {
-        border-left-color: $color-primary-dark;
-      }
-
-    }
+  &:after {
+    @include arrow("right", 20, $color-primary);
+    left: 8px;
+    position: absolute;
+    top: 8px;
+    z-index: -1;
 
     &:hover {
-      background-color: $color-primary-dark;
-      border-color: $color-primary-dark;
-
-      &:after {
-        border-left-color: $color-primary-dark;
-      }
-    }
-
-    &.button--speech-bubble-populated {
-      font-family: $font-secondary;
-      @include font-size-and-vertical-height(14, 36);
-      padding-top: 0;
+      border-left-color: $color-primary-dark;
     }
 
   }
 
-}
+  &:hover {
+    background-color: $color-primary-dark;
+    border-color: $color-primary-dark;
 
-@media only all and (min-width: #{$bkpt-site--wide}px) {
-
-  .js .button--speech-bubble[data-behaviour="HypothesisOpenerAffordance"] {
-    position: relative;
-    right: calc(-1 * (#{$speech-bubble-width-in-px}px + 72px));
+    &:after {
+      border-left-color: $color-primary-dark;
+    }
   }
 
-  .js .article-section--collapsed .button--speech-bubble[data-behaviour="HypothesisOpenerAffordance"] {
-    position: absolute;
-    left: -25%;
-    margin-top: -50px;
-  }
-
-}
-
-@media only all and (min-width: #{$bkpt-site--x-wide}px) {
-
-  .js .article-section--collapsed .button--speech-bubble[data-behaviour="HypothesisOpenerAffordance"] {
-    left: -13%;
+  &.button--speech-bubble-populated {
+    font-family: $font-secondary;
+    @include font-size-and-vertical-height(14, 36);
+    padding-top: 0;
   }
 
 }

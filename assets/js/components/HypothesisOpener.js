@@ -1,7 +1,7 @@
 'use strict';
 const utils = require('../libs/elife-utils')();
 
-module.exports = class HypothesisOpenerAffordance {
+module.exports = class HypothesisOpener {
 
   constructor($elm, _window = window, doc = document) {
     if (!$elm) {
@@ -25,14 +25,14 @@ module.exports = class HypothesisOpenerAffordance {
   }
 
   setInitialDomLocation($elm) {
-    const $anchorPoint = HypothesisOpenerAffordance.findInitialAnchorPoint(this.doc);
+    const $anchorPoint = HypothesisOpener.findInitialAnchorPoint(this.doc);
     if ($anchorPoint) {
       $anchorPoint.appendChild($elm);
     }
   }
 
   setupSectionHandlers($elm, $section, window) {
-    this.lastKnownDisplayMode = HypothesisOpenerAffordance.getCurrentDisplayMode(window);
+    this.lastKnownDisplayMode = HypothesisOpener.getCurrentDisplayMode(window);
 
     $section.addEventListener('collapsesection', () => {
       this.updateDomLocation($elm);
@@ -55,7 +55,7 @@ module.exports = class HypothesisOpenerAffordance {
 
   updateDomLocation($elm) {
 
-    if (HypothesisOpenerAffordance.getCurrentDisplayMode(this.window) === 'multiColumn') {
+    if (HypothesisOpener.getCurrentDisplayMode(this.window) === 'multiColumn') {
 
       if (utils.isCollapsedArticleSection(this.$ancestorSection)) {
         this.$ancestorSection.appendChild($elm);
@@ -78,7 +78,7 @@ module.exports = class HypothesisOpenerAffordance {
   }
 
   handleResize() {
-    const currentDisplayMode = HypothesisOpenerAffordance.getCurrentDisplayMode(this.window);
+    const currentDisplayMode = HypothesisOpener.getCurrentDisplayMode(this.window);
     if (currentDisplayMode !== this.lastKnownDisplayMode) {
       this.updateDomLocation(this.$elm);
       this.lastKnownDisplayMode = currentDisplayMode;

@@ -1282,11 +1282,12 @@
     }
   ],
 
-  "hypothesisButton": {
-    "behaviour": "HypothesisOpenerAffordance",
-    "text": "12",
-    "classes": "button--speech-bubble button--speech-bubble-populated",
-    "type": "button"
+  "hypothesisOpener": {
+    "button": {
+      "text": "12",
+      "classes": "button--speech-bubble button--speech-bubble-populated",
+      "type": "button"
+    }
   },
 
   "related": {

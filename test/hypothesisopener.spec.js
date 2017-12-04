@@ -1,16 +1,16 @@
 const expect = chai.expect;
 const spy = sinon.spy;
 
-const HypothesisOpenerAffordance = require('../assets/js/components/HypothesisOpenerAffordance');
+const HypothesisOpener = require('../assets/js/components/HypothesisOpener');
 
-describe('A HypothesisOpenerAffordance Component', function () {
+describe('A HypothesisOpener Component', function () {
   'use strict';
 
   let $opener;
   let affordance;
 
   beforeEach(() => {
-    $opener = document.querySelector('[data-behaviour="HypothesisOpenerAffordance"]');
+    $opener = document.querySelector('[data-behaviour="HypothesisOpener"]');
   });
 
   describe('the getCurrentDisplayMode() method', () => {
@@ -36,7 +36,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
       });
 
       it('returns "multiColumn"', () => {
-        expect(HypothesisOpenerAffordance.getCurrentDisplayMode(windowMock)).to.equal('multiColumn');
+        expect(HypothesisOpener.getCurrentDisplayMode(windowMock)).to.equal('multiColumn');
       });
 
     });
@@ -61,7 +61,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
       });
 
       it('returns "singleColumn"', () => {
-        expect(HypothesisOpenerAffordance.getCurrentDisplayMode(windowMock)).to.equal('singleColumn');
+        expect(HypothesisOpener.getCurrentDisplayMode(windowMock)).to.equal('singleColumn');
       });
 
     });
@@ -79,7 +79,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
       });
 
       it('returns the ".article-section__body" child of the next element sibling to the abstract', () => {
-        const foundAnchorPoint = HypothesisOpenerAffordance.findInitialAnchorPoint($containsAbstract);
+        const foundAnchorPoint = HypothesisOpener.findInitialAnchorPoint($containsAbstract);
         expect(foundAnchorPoint.parentNode.getAttribute('id')).to.equal('nextFollowingElementSiblingAfterAbstract');
         expect(foundAnchorPoint.classList.contains('article-section__body')).to.be.true;
       });
@@ -95,7 +95,7 @@ describe('A HypothesisOpenerAffordance Component', function () {
       });
 
       it('returns the last ".article-section" element\'s last p element child', () => {
-        const foundAnchorPoint = HypothesisOpenerAffordance.findInitialAnchorPoint($doesNotContainAbstract);
+        const foundAnchorPoint = HypothesisOpener.findInitialAnchorPoint($doesNotContainAbstract);
         expect(foundAnchorPoint).to.equal($doesNotContainAbstract.querySelector('.article-section:last-child p:last-child'));
       });
 

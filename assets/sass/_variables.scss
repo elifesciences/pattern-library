@@ -85,6 +85,8 @@ $content-header-download-width: 20;
 $content-header-download-width-medium: 44;
 $content-header-profile-width: 48;
 
+$button-speech-bubble-width-in-px: 42;
+
 // Spacing
 $teaser-spacing-top: 23;
 // 23 not 24 to account for a 1px border (Because of the way the elements are nested, border-box doesn't help us here.)

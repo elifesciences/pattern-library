@@ -615,7 +615,9 @@ module.exports = () => {
    * @returns {boolean} true if the element under test is a collapisble article section
    */
   function isCollapsibleArticleSection($elm) {
-    return $elm.dataset.behaviour && $elm.dataset.behaviour.indexOf('ArticleSection') > -1;
+    return $elm.dataset &&
+           $elm.dataset.behaviour &&
+           $elm.dataset.behaviour.indexOf('ArticleSection') > -1;
   }
 
   /**

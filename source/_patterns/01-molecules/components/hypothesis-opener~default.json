@@ -1,0 +1,7 @@
+{
+  "button": {
+    "text": "<span aria-hidden=\"true\">&#8220;</span><span class=\"visuallyhidden\">Open annotations (there are currently 0 annotations on this page).</span>",
+    "classes": "button--speech-bubble",
+    "type": "button"
+  }
+}
