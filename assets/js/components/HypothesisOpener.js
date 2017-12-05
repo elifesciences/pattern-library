@@ -61,20 +61,29 @@ module.exports = class HypothesisOpener {
     let visibleCount;
     if (count) {
       visibleCount = count;
-      $elm.querySelector('button').classList.add('button--speech-bubble-populated');
+      $elm.querySelector('.button--speech-bubble').classList.add('button--speech-bubble-populated');
     } else {
       visibleCount = '&#8220;';
-      $elm.querySelector('button').classList.remove('button--speech-bubble-populated');
+      $elm.querySelector('.button--speech-bubble').classList.remove('button--speech-bubble-populated');
     }
 
-    $elm.querySelector('[data-visible-count]').innerHTML = visibleCount;
+    $elm.querySelector('[data-visible-annotation-count]').innerHTML = visibleCount;
 
   }
 
   setInitialDomLocation($elm) {
-    const $anchorPoint = HypothesisOpener.findInitialAnchorPoint(this.doc);
-    if ($anchorPoint) {
-      $anchorPoint.appendChild($elm);
+    try {
+      const $anchorPoint = HypothesisOpener.findInitialAnchorPoint(this.doc);
+      if ($anchorPoint) {
+        $anchorPoint.appendChild($elm);
+        return true;
+      }
+
+      return false;
+
+    } catch (e) {
+      console.error(e);
+      return false;
     }
   }
 
