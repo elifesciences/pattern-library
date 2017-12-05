@@ -15,12 +15,59 @@ module.exports = class HypothesisOpener {
     this.isSingleton = true;
 
     this.$elm.dataset.hypothesisTrigger = '';
+
     this.setInitialDomLocation(this.$elm);
 
     this.$ancestorSection = utils.closest(this.$elm, '.article-section');
     if (this.$ancestorSection && utils.isCollapsibleArticleSection(this.$ancestorSection)) {
       this.setupSectionHandlers($elm, this.$ancestorSection, this.window);
+      this.hookUpDataProvider(this.$elm);
     }
+
+  }
+
+  /**
+   * Establishes showing the number if annotation count > 0, otherwise the large double quote
+   * @param $elm
+   */
+  hookUpDataProvider($elm) {
+
+    // Updated by the hypothesis client
+    const $dataProvider = $elm.querySelector('[data-hypothesis-annotation-count]');
+    if (!$dataProvider) {
+      return;
+    }
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        try {
+          HypothesisOpener.updateVisibleCount(mutation.addedNodes[0].data, $elm);
+        } catch (e) {
+          console.error(e);
+        }
+      });
+    });
+
+    observer.observe($dataProvider, { childList:true });
+
+  }
+
+  static updateVisibleCount(value, $elm) {
+    const count = parseInt(value);
+    if (isNaN(count) || count < 0) {
+      return;
+    }
+
+    let visibleCount;
+    if (count) {
+      visibleCount = count;
+      $elm.querySelector('button').classList.add('button--speech-bubble-populated');
+    } else {
+      visibleCount = '&#8220;';
+      $elm.querySelector('button').classList.remove('button--speech-bubble-populated');
+    }
+
+    $elm.querySelector('[data-visible-count]').innerHTML = visibleCount;
 
   }
 
