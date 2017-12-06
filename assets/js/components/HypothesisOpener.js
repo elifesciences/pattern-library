@@ -19,8 +19,11 @@ module.exports = class HypothesisOpener {
     this.setInitialDomLocation(this.$elm);
 
     this.$ancestorSection = utils.closest(this.$elm, '.article-section');
-    if (this.$ancestorSection && utils.isCollapsibleArticleSection(this.$ancestorSection)) {
-      this.setupSectionHandlers($elm, this.$ancestorSection, this.window);
+    if (this.$ancestorSection) {
+      if (utils.isCollapsibleArticleSection(this.$ancestorSection)) {
+        this.setupSectionHandlers($elm, this.$ancestorSection, this.window);
+      }
+
       this.hookUpDataProvider(this.$elm);
     }
 
