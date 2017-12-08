@@ -23,6 +23,7 @@ $totalHighlightsSpacing: 6;
 
 .listing-list__item {
   @include font-size-and-vertical-height($font-size-base-in-px, $font-size-base-in-px);
+  list-style-type: none;
 }
 
 .listing-list--read-more {
