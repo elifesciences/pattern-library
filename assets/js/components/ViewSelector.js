@@ -20,7 +20,7 @@ module.exports = class ViewSelector {
     this.cssFixedClassName = 'view-selector--fixed';
 
     if (this.sideBySideViewAvailable()) {
-      const $header = this.doc.querySelector('#siteHeader');
+      const $header = this.doc.getElementById('siteHeader');
       this.$global = this.doc.querySelector('.global-inner');
       this.sideBySideView = new SideBySideView(
         this.$global,

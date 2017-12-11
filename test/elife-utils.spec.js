@@ -469,8 +469,8 @@ describe('The utils library', function () {
       it('returns false if a component-unique value already exists in the document', function () {
         let idInDoc = 'alreadyInTheDoc';
         let docMock = {
-          querySelector: function (selector) {
-            return selector === '#' + idInDoc;
+          getElementById: function (id) {
+            return id === idInDoc;
           }
         };
         uIds.used = [];
@@ -486,7 +486,7 @@ describe('The utils library', function () {
       it('returns true for a value that is unique in both the component and the supplied document',
          function () {
            let docMock = {
-             querySelector: function () {
+             getElementById: function () {
                return null;
              }
            };
