@@ -100,9 +100,9 @@ module.exports = () => {
 
         // Optional check to see if id is unique in the DOM.
         if (!!document) {
-          if (!!document.querySelector &&
-              typeof document.querySelector === 'function' &&
-              document.querySelector('#' + candidate)) {
+          if (!!document.getElementById &&
+              typeof document.getElementById === 'function' &&
+              document.getElementById(candidate)) {
             return false;
           }
         }
@@ -302,7 +302,7 @@ module.exports = () => {
       return true;
     }
 
-    const $fragWithId = doc.querySelector('#' + id);
+    const $fragWithId = doc.getElementById(id);
     return areElementsNested($section, $fragWithId);
   }
 
@@ -539,7 +539,7 @@ module.exports = () => {
 
   function create$pageOverlay($parent, $followingSibling, id) {
     // element already exists
-    if (document.querySelector(`#${id}`)) {
+    if (document.getElementById(id)) {
       return;
     }
 
