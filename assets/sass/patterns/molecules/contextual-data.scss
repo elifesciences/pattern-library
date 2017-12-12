@@ -30,6 +30,7 @@ $blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-extra-
 }
 
 .contextual-data__cite_wrapper {
+  border-bottom: 1px solid $color-text-dividers;
   @include blg-spacing("top", "extra-small");
   @include padding($blg-measure-extra-small-in-px - 1, "bottom");
   padding-left: 0;
@@ -43,6 +44,7 @@ $blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-extra-
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}rem) {
   .contextual-data {
+    border-bottom: 1px solid $color-text-dividers;
     display: flex;
   }
 
@@ -50,7 +52,6 @@ $blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-extra-
     align-self: center;
     border-bottom: none;
     display: inline-block;
-    padding: 0;
     text-align: left;
   }
 
@@ -59,6 +60,7 @@ $blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-extra-
   }
 
   .contextual-data__cite_wrapper {
+    border-bottom: none;
     float: right;
     margin-left: auto;
     @include padding($blg-measure-reduced-by-border 0);

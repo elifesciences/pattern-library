@@ -1,0 +1,10 @@
+{
+  "captionText": {
+    "heading": "[Do not use this base pattern directly: see the following variants of this pattern for usage]"
+  },
+  "table": {
+    "tables": [
+      "<table></table>"
+    ]
+  }
+}

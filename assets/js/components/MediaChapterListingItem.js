@@ -27,7 +27,7 @@ module.exports = class MediaChapterListingItem {
   }
 
   listenForChapterChange (e) {
-    let $player = this.document.querySelector('#' + e.detail);
+    let $player = this.document.getElementById(e.detail);
     if (!!$player) {
       $player.addEventListener('chapterChanged', this.indicateChapterChanged.bind(this));
     }

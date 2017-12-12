@@ -35,7 +35,7 @@ module.exports = class SiteHeader {
     this.pageOverlay.assignTop(96);
 
     // N.B. $mainMenu is not part of this component's HTML hierarchy.
-    var mainMenu = doc.querySelector('#mainMenu');
+    var mainMenu = doc.getElementById('mainMenu');
     if (!!mainMenu) {
       let MainMenu = require('./MainMenu');
       this.mainMenu = new MainMenu(mainMenu);

@@ -5,43 +5,39 @@ assets:
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
-  anyOf:
-    -
+  properties:
+    metricsData:
+      type: object
       properties:
-        metricsData:
-          type: object
-          properties:
-            data:
-              type: array
-              minItems: 1
-              items:
-                type: object
-                properties:
-                  name:
-                    type: string
-                    minLength: 1
-                  value:
-                    type: string
-                    minLength: 1
-                  elementId:
-                    type: string
-                    minLength: 1
-                required:
-                  - name
-                  - value
-      minProperties: 1
-    -
-      properties:
-        citation:
-          type: object
-          properties:
-            citeAs:
-              type: string
-              minLength: 1
-            doi:
-              $ref: ../../00-atoms/components/doi.yaml#/schema
-          required:
-            - citeAs
-            - doi
+        data:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                minLength: 1
+              value:
+                type: string
+                minLength: 1
+              elementId:
+                type: string
+                minLength: 1
+            required:
+              - name
+              - value
       required:
-        - citation
+        - data
+    citation:
+      type: object
+      properties:
+        citeAs:
+          type: string
+          minLength: 1
+        doi:
+          $ref: ../../00-atoms/components/doi.yaml#/schema
+      required:
+        - citeAs
+        - doi
+  minProperties: 1

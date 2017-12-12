@@ -1,5 +1,8 @@
 const chai = require('chai');
+const sinon = require('sinon');
+
 const expect = chai.expect;
+const spy = sinon.spy;
 
 // Commented out as doesn't run in Phantomjs. Reinstate when using e.g. Headless Chrome
 // const chaiAsPromised = require('chai-as-promised');
@@ -466,8 +469,8 @@ describe('The utils library', function () {
       it('returns false if a component-unique value already exists in the document', function () {
         let idInDoc = 'alreadyInTheDoc';
         let docMock = {
-          querySelector: function (selector) {
-            return selector === '#' + idInDoc;
+          getElementById: function (id) {
+            return id === idInDoc;
           }
         };
         uIds.used = [];
@@ -483,7 +486,7 @@ describe('The utils library', function () {
       it('returns true for a value that is unique in both the component and the supplied document',
          function () {
            let docMock = {
-             querySelector: function () {
+             getElementById: function () {
                return null;
              }
            };
@@ -817,6 +820,149 @@ describe('The utils library', function () {
 
       it('hides the new element', () => {
         expect($overlay.classList.contains('hidden')).to.be.true;
+      });
+
+    });
+
+  });
+
+  describe('the isMultiColumnDisplay function', () => {
+
+    let generateWindowMock;
+
+    before(() => {
+      // Expects matchMedia to be testing a min-width media query
+      generateWindowMock = (hasWideViewport) => {
+        return {
+          matchMedia: () => {
+            return {
+              matches: hasWideViewport
+            };
+          }
+
+        };
+      };
+    });
+
+    beforeEach(() => {
+      spy(window, "matchMedia");
+    });
+
+    afterEach(() => {
+      window.matchMedia.restore();
+    });
+
+    context('when the viewport is narrower than 900px', () => {
+
+      it('returns false', () => {
+        const observed = utils.isMultiColumnDisplay(generateWindowMock(false));
+        expect(observed).to.be.false;
+        expect(window.matchMedia.calledWithExactly('(min-width: 900px)'));
+      });
+
+    });
+
+    context('when the viewport is at least 900px wide', () => {
+
+      it('returns true', () => {
+        const observed = utils.isMultiColumnDisplay(generateWindowMock(true));
+        expect(observed).to.be.true;
+        expect(window.matchMedia.calledWithExactly('(min-width: 900px)'));
+      });
+
+    });
+
+  });
+
+  describe('the isCollapsibleArticleSection function', () => {
+
+    let generateArticleSectionMock;
+
+    before(() => {
+      generateArticleSectionMock = (isCollapsible) => {
+        const behaviour = isCollapsible ? 'ArticleSection' : 'DifferentBehaviour';
+        return {
+          dataset: {
+            behaviour
+          }
+        };
+      };
+
+    });
+
+    context('when supplied with a collapsible article section', () => {
+
+      it('returns true', () => {
+
+        expect(utils.isCollapsibleArticleSection(generateArticleSectionMock(true))).to.be.true;
+
+      });
+
+    });
+
+    context('when not supplied with a collapsible article section', () => {
+
+      it('returns false', () => {
+        expect(utils.isCollapsibleArticleSection(generateArticleSectionMock(false))).to.be.false;
+      });
+
+    });
+
+  });
+
+  describe('the isCollapsedArticleSection', () => {
+
+    context('when supplied with an article section that is collapsed', () => {
+
+      let collapsedSectionMock;
+
+      beforeEach(() => {
+        collapsedSectionMock = {
+          classList: {
+            contains: (className) => {
+              return className === 'article-section--collapsed'
+            }
+          }
+        };
+
+        spy(collapsedSectionMock.classList, "contains");
+      });
+
+      afterEach(() => {
+        collapsedSectionMock.classList.contains.restore();
+      });
+
+      it('returns true', () => {
+        const observed = utils.isCollapsedArticleSection(collapsedSectionMock);
+        expect(observed).to.be.true;
+        expect(collapsedSectionMock.classList.contains.calledWithExactly('article-section--collapsed')).to.be.true;
+      });
+
+    });
+
+    context('when not supplied with an article section that is collapsed', () => {
+
+      let uncollapsedSectionMock;
+
+      beforeEach(() => {
+        uncollapsedSectionMock = {
+          classList: {
+            contains: (className) => {
+              return className !== 'article-section--collapsed'
+            }
+          }
+        };
+
+        spy(uncollapsedSectionMock.classList, "contains");
+      });
+
+      afterEach(() => {
+        uncollapsedSectionMock.classList.contains.restore();
+      });
+      it('returns false', () => {
+        const observed = utils.isCollapsedArticleSection(uncollapsedSectionMock);
+        expect(observed).to.be.false;
+        expect(uncollapsedSectionMock.classList.contains.calledWithExactly('article-section--collapsed')).to.be.true;
       });
 
     });

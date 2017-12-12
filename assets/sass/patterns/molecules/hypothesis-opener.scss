@@ -1,0 +1,25 @@
+@import "../../definitions";
+
+.hypothesis-opener {
+
+  display: none;
+
+  .js & {
+
+    display: block;
+    @include blg-spacing("top", "small");
+    @include blg-spacing("bottom", "small", "margin");
+    margin-left: calc(100% - #{$button-speech-bubble-width-in-px}px);
+  }
+
+  .article-section--js & {
+
+    @media only all and (min-width: #{$bkpt-site--wide}px) {
+      left: -13%;
+      margin-top: -#{$blg-space-large-in-px}px;
+      position: absolute;
+    }
+
+  }
+
+}

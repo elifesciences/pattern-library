@@ -100,9 +100,9 @@ module.exports = () => {
 
         // Optional check to see if id is unique in the DOM.
         if (!!document) {
-          if (!!document.querySelector &&
-              typeof document.querySelector === 'function' &&
-              document.querySelector('#' + candidate)) {
+          if (!!document.getElementById &&
+              typeof document.getElementById === 'function' &&
+              document.getElementById(candidate)) {
             return false;
           }
         }
@@ -302,7 +302,7 @@ module.exports = () => {
       return true;
     }
 
-    const $fragWithId = doc.querySelector('#' + id);
+    const $fragWithId = doc.getElementById(id);
     return areElementsNested($section, $fragWithId);
   }
 
@@ -539,7 +539,7 @@ module.exports = () => {
 
   function create$pageOverlay($parent, $followingSibling, id) {
     // element already exists
-    if (document.querySelector(`#${id}`)) {
+    if (document.getElementById(id)) {
       return;
     }
 
@@ -600,6 +600,35 @@ module.exports = () => {
     };
   }
 
+  /**
+   * Returns true if the viewport is wide enough to display multiple columns (>=900px)
+   * @param {Window} window
+   * @returns {boolean} true if the viewport is at least 900px wide
+   */
+  function isMultiColumnDisplay(window) {
+    return window.matchMedia('(min-width: 900px)').matches;
+  }
+
+  /**
+   * Returns true if the supplied element is a collapsible article section
+   * @param {HTMLElement} $elm The element under test
+   * @returns {boolean} true if the element under test is a collapisble article section
+   */
+  function isCollapsibleArticleSection($elm) {
+    return $elm.dataset &&
+           $elm.dataset.behaviour &&
+           $elm.dataset.behaviour.indexOf('ArticleSection') > -1;
+  }
+
+  /**
+   * Returns true if the supplied element is a collapsed article section
+   * @param {HTMLElement} $elm THe element under test
+   * @returns {boolean} true if the supplied element is a collapsed article section
+   */
+  function isCollapsedArticleSection($elm) {
+    return $elm.classList.contains('article-section--collapsed');
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -614,7 +643,10 @@ module.exports = () => {
     defer: defer,
     flatten: flatten,
     invertPxString: invertPxString,
+    isCollapsedArticleSection: isCollapsedArticleSection,
+    isCollapsibleArticleSection: isCollapsibleArticleSection,
     isTopInView: isTopInView,
+    isMultiColumnDisplay: isMultiColumnDisplay,
     jumpToAnchor: jumpToAnchor,
     loadData: loadData,
     getOrdinalAmongstSiblingElements: getOrdinalAmongstSiblingElements,

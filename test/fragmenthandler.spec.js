@@ -44,11 +44,7 @@ describe('A FragmentHandler Component', function () {
               return [];
             }
           },
-          querySelector: function (selector) {
-            if (selector.indexOf('#') > -1) {
-              return true;
-            }
-          }
+          getElementById: function () {}
         };
 
         expect(fragmentHandler.getIdOfCollapsedSection('arbitraryElementId',
@@ -66,7 +62,7 @@ describe('A FragmentHandler Component', function () {
               return collapsedSectionIds
             }
           },
-          querySelector: function () {}
+          getElementById: function () {}
         };
 
         expect(fragmentHandler.getIdOfCollapsedSection(hash,
@@ -83,7 +79,7 @@ describe('A FragmentHandler Component', function () {
               return [ { id: matchingId } ];
             }
           },
-          querySelector: function () {}
+          getElementById: function () {}
         };
 
         let areElementsNestedMock = function () { return false; };
@@ -94,10 +90,31 @@ describe('A FragmentHandler Component', function () {
       it('returns the id of the collapsed section if the hash matches a descendant element',
       function () {
         let sectionId = 'iAmACollapsedSection';
+        let sectionMock = Object.create(Node.prototype);
+        sectionMock.id = sectionId;
         let descendantId = 'iAmADescendantOfACollapsedSection';
-        const doc = document.createElement('div');
-        doc.innerHTML = `<div id="${sectionId}" class="article-section--collapsed"><div id="${descendantId}"/></div>`;
-        let valueUnderTest = fragmentHandler.getIdOfCollapsedSection(descendantId, doc);
+        let descendantMock = Object.create(Node.prototype);
+        descendantMock.id = descendantId;
+        sectionMock.compareDocumentPosition = function(other) {
+          if (other.id === descendantId) {
+            return Node.DOCUMENT_POSITION_CONTAINED_BY;
+          }
+
+          return Node.DOCUMENT_POSITION_DISCONNECTED;
+        };
+        let docMock = {
+          querySelectorAll: function (selector) {
+            if (selector === '.article-section--collapsed') {
+              return [sectionMock]
+            }
+          },
+          getElementById: function (id) {
+            if(id === descendantId) {
+              return descendantMock;
+            }
+          }
+        };
+        let valueUnderTest = fragmentHandler.getIdOfCollapsedSection(descendantId, docMock);
         expect(valueUnderTest).to.equal(sectionId);
 
       });

@@ -14,7 +14,7 @@ module.exports = class AssetNavigation {
     const $seeAll = this.$elm.querySelector('.asset-viewer-inline__header_link');
     if ($seeAll) {
       promise = utils.remoteDoc($seeAll.href, this.window).then((doc) => {
-        const $newAsset = doc.querySelector(`#${this.$elm.id}`);
+        const $newAsset = doc.querySelector(`#${this.$elm.id}`); // No getElementById() as this might be a remote doc.
         if (!$newAsset) {
           return [this.$elm];
         }

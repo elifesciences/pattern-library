@@ -1282,6 +1282,14 @@
     }
   ],
 
+  "hypothesisOpener": {
+    "button": {
+      "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>3</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>3</span> annotations on this page). </span>",
+      "classes": "button--speech-bubble button--speech-bubble-populated",
+      "type": "button"
+    }
+  },
+
   "related": {
     "rootClasses": "teaser--secondary teaser--related",
 
