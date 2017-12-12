@@ -42,9 +42,15 @@ module.exports = class AudioPlayer {
     this.$elm.classList.add('audio-player--js');
 
     this.$playButton.classList.add('loading');
+
+    this.isPlayerReady = false;
     this.$audioElement.addEventListener('loadedmetadata', () => {
       this.playerReady(this);
     });
+
+    if (this.$audioElement.readyState >= 2) {
+      this.playerReady(this);
+    }
 
     this.usingMetadata = false;  // set to true in loadMetadata if no errors thrown
     this.loadMetadata(this.$elm.dataset.episodeNumber);
@@ -52,6 +58,11 @@ module.exports = class AudioPlayer {
   }
 
   playerReady(player) {
+    if (this.isPlayerReady) {
+      return;
+    }
+
+    this.isPlayerReady = true;
     player.duration = player.$audioElement.duration;
     player.$duration.innerHTML = AudioPlayer.secondsToMinutes(player.duration);
     player.$playButton.addEventListener('click', () => {
