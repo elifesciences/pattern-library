@@ -109,7 +109,11 @@ module.exports = class HypothesisOpener {
       return $abstract.nextElementSibling.querySelector('.article-section__body');
     }
 
-    return $snippet.querySelector('.article-section:last-child p:last-child');
+    // User-supplied content has unpredictable structure
+    return $snippet.querySelector('.article-section:last-child p:last-child') ||
+           $snippet.querySelector('.article-section:last-child ol:last-child') ||
+           $snippet.querySelector('.article-section ~ p:last-child') ||
+           $snippet.querySelector('.article-section ~ ol:last-child');
   }
 
   updateDomLocation($elm) {
