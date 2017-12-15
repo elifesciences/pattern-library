@@ -19,7 +19,8 @@ $image-height: $height - ($padding * 2);
 .investor-logos__container {
   display: table;
   @include height($image-height);
-  width: 100%;
+  margin: auto;
+  max-width: 185px;
 }
 
 .investor-logos__picture {
