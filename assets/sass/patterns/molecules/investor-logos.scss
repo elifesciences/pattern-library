@@ -1,8 +1,8 @@
 @import "../../definitions";
 
-$height: 120;
+$image-height: 72;
+$image-width: 185;
 $padding: $blg-space-small-in-px;
-$image-height: $height - ($padding * 2);
 
 .investor-logos {
   border-bottom: 1px solid $color-text-dividers;
@@ -20,7 +20,7 @@ $image-height: $height - ($padding * 2);
   display: table;
   @include height($image-height);
   margin: auto;
-  max-width: 185px;
+  @include constrain-width($image-width, "max")
 }
 
 .investor-logos__picture {
