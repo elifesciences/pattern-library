@@ -73,6 +73,13 @@
   width: #{get-rem-from-px($size_in_px)}rem;
 }
 
+@mixin constrain-height($size_in_px, $extreme) {
+  @if $extreme == min or $extreme == max {
+    #{$extreme}-height: #{$size_in_px}px;
+    #{$extreme}-height: #{get-rem-from-px($size_in_px)}rem;
+  }
+}
+
 @mixin constrain-width($size_in_px, $extreme) {
   @if $extreme == min or $extreme == max {
     #{$extreme}-width: #{$size_in_px}px;

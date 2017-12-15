@@ -1,63 +1,58 @@
 @import "../../definitions";
 
+$height: 120;
+$padding: $blg-space-small-in-px;
+$image-height: $height - ($padding * 2);
+
 .investor-logos {
+  border-bottom: 1px solid $color-text-dividers;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.investor-logos__item {
+  border-top: 1px solid $color-text-dividers;
+  @include padding($padding);
+}
+
+.investor-logos__container {
+  display: table;
+  @include height($image-height);
   width: 100%;
 }
 
-.investor-logos__img_container {
-  border-top: 1px solid $color-text-dividers;
-  @include height(120);
-}
-
 .investor-logos__picture {
-  display: block;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .investor-logos__img {
   display: block;
-  max-width: 100%;
-  max-height: 120px;
   margin: auto;
-}
-
-.investor-logos__img_container--wellcome {
-  @include padding($blg-space-small-in-px - 1, "top");
-  @include padding(24, "right");
-  @include blg-spacing("bottom", "small");
-  @include padding(24, "left");
-
-  .investor-logos__img {
-    height: 72px;
-    width: auto;
-  }
-
+  @include constrain-height($image-height, "max")
 }
 
 @media only screen and (min-width: #{get-rem-from-px(520)}em) {
 
-  .invester-logos__container {
-
+  .investor-logos {
+    border-top: 1px solid $color-text-dividers;
+    border-bottom: 0;
     display: table;
+    table-layout: fixed;
     width: 100%;
-
-    @supports(display: flex) {
-      display: flex;
-    }
-
   }
 
-  .investor-logos__img_container {
+  .investor-logos__item {
+    border: 0;
+    border-right: 1px solid $color-text-dividers;
     display: table-cell;
-    height: 120px;
-    text-align: center;
-    flex: 1 33.33%;
-  }
+    vertical-align: top;
 
-  .investor-logos__img_container {
-    border-left: 1px solid $color-text-dividers;
-
-    &:first-child {
-      border-left: none;
+    &:last-child {
+      border-right: 0;
     }
   }
+
 }
