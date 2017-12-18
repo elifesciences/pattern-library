@@ -15,7 +15,6 @@
 
 .teaser__context_label_list {
   @include teaser-context-label-list-style();
-  @include label-content-typeg();
 
   .listing-list--highlights & {
     display: none;
@@ -26,7 +25,6 @@
 .teaser__context_label_list_item {
 
   @include teaser-context-label-list-item-style();
-  @include font-size-and-vertical-height(11);
   & .teaser__context_label:after {
     content: ", ";
   }
@@ -41,6 +39,8 @@
 }
 
 .teaser__context_label {
+  @include label-content-typeg();
+  @include font-size-and-vertical-height(11);
   @include teaser-context-label-style();
 }
 
