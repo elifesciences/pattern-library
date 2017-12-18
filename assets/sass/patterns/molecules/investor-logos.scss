@@ -2,7 +2,6 @@
 
 $image-height: 72;
 $image-width: 185;
-$padding: $blg-space-small-in-px;
 
 .investor-logos {
   list-style: none;
@@ -12,7 +11,10 @@ $padding: $blg-space-small-in-px;
 
 .investor-logos__item {
   border-top: 1px solid $color-text-dividers;
-  @include padding($padding);
+  @include blg-spacing("top", "small");
+  @include blg-spacing("bottom", "small");
+  @include padding(24, "left");
+  @include padding(24, "right");
 }
 
 .investor-logos__container {
