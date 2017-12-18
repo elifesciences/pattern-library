@@ -25,9 +25,18 @@
 .teaser__context_label_item {
 
   @include teaser-context-label-list-item-style();
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   & .teaser__context_label:after {
     content: ", ";
   }
+
+  .teaser--annotation & {
+    display: block;
+  }
+
 }
 
 .teaser__context_label_item:last-child {
@@ -42,6 +51,7 @@
   @include label-content-typeg();
   @include font-size-and-vertical-height(11);
   @include teaser-context-label-style();
+
 }
 
 // Extra specificity to override normalised style
