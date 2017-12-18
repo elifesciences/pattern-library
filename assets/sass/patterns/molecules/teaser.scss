@@ -13,8 +13,11 @@
   border-top-width: 0;
 }
 
+// Present in main teaser, but not present in annotation teaser
 .teaser__context_label_list {
-  @include teaser-context-label-list-style();
+  @include nospace();
+  position: relative;
+  @include truncate-inline-descendant-with-ellipsis(teaser__context_label);
 
   .listing-list--highlights & {
     display: none;
@@ -23,18 +26,24 @@
 }
 
 .teaser__context_label_item {
-
-  @include teaser-context-label-list-item-style();
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: inline;
+  list-style-type: none;
+  @include nospace();
 
   & .teaser__context_label:after {
     content: ", ";
   }
 
+  // Because in an annotation teaser, .teaser__context_label_item is not in a list
   .teaser--annotation & {
-    display: block;
+    @include truncate-inline-descendant-with-ellipsis(teaser__context_label);
+    list-style-type: unset;
+
+    // .teaser__context_label_item is not the last child of an annotation teaser, so can't use selector here
+    & .teaser__context_label:after {
+      content: "";
+    }
+
   }
 
 }
