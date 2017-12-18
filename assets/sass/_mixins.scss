@@ -438,14 +438,9 @@
   }
 }
 
-@mixin truncate-inline-descendant-with-ellipsis($selector-of-descendant) {
+@mixin truncate-with-ellipsis() {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
-  & #{$selector-of-descendant} {
-    display: inline;
-  }
-
 }
