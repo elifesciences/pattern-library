@@ -15,6 +15,11 @@
 
 .teaser__context_label_list {
   @include teaser-context-label-list-style();
+
+  .listing-list--highlights & {
+    display: none;
+  }
+
 }
 
 .teaser__context_label_list_item {
