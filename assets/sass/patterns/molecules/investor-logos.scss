@@ -16,16 +16,19 @@ $padding: $blg-space-small-in-px;
 }
 
 .investor-logos__container {
-  display: table;
   @include height($image-height);
   margin: auto;
-  @include constrain-width($image-width, "max")
+  @include constrain-width($image-width, "max");
+  text-align: center;
+  @supports (display: flex) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .investor-logos__picture {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  max-width: 100%;
 }
 
 .investor-logos__img {
