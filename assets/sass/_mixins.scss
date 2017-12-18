@@ -335,7 +335,6 @@
 }
 
 @mixin teaser-context-label-list-style {
-  @include label-content-typeg();
   margin: 0;
   overflow: hidden;
   padding: 0;

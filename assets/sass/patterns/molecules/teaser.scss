@@ -15,6 +15,7 @@
 
 .teaser__context_label_list {
   @include teaser-context-label-list-style();
+  @include label-content-typeg();
 
   .listing-list--highlights & {
     display: none;
