@@ -1,100 +1,31 @@
 <div class="teaser teaser--annotation teaser--no-secondary-info">
 
   {{#document}}
-    <span class="teaser__context_label">{{{.}}}</span>
+    <div class="teaser__context_label">
+      {{{.}}}
+    </div>
   {{/document}}
 
-  <header class="teaser__header">
-    {{! For schema: url is dependent on image }}
-    {{! Image is either:
-          - teaser__picture--prominent: full width, above non-article teasers
-          - teaser__picture--big: full width when viewport narrow, maxing out at 250px wide and floating right as viewport widens
-          - teaser__picture--small: 70px square image, floating right.
-        }}
-    {{#image}}
-      <a href="{{{url}}}" tabindex="-1">
-        <picture class="teaser__picture teaser__picture--{{type}}">
-          {{#sources}}
-            <source srcset="{{srcset}}"
-                    {{#type}}type="{{type}}"{{/type}}
-              {{#media}}media="{{media}}"{{/media}}>
-          {{/sources}}
-          {{#fallback}}
-            <img src="{{defaultPath}}"
-                 {{#srcset}}srcset="{{srcset}}"{{/srcset}}
-                 alt="{{altText}}"
-            >
-          {{/fallback}}
-        </picture>
-      </a>
-    {{/image}}
+  {{#highlight}}
+    <blockquote class="teaser__annotation_highlight">
+        {{{.}}}
+    </blockquote>
+  {{/highlight}}
 
-    {{! Used for the date in an event teaser only. Treatment very like teaser__picture--small.
-        Different enough from the date in the meta section, that it gets its own block. }}
-    {{#eventDate}}
-      {{! For schema: url is dependent on date }}
-      {{#url}}
-        <a href="{{url}}">{{>atoms-date}}</a>
-      {{/url}}
-      {{^url}}
-        <div>{{>atoms-date}}</div>
-      {{/url}}
-    {{/eventDate}}
-
-    <h4 class="teaser__header_text">
-      {{! Occasionally the title isn't linked, for example in the chapter listing item teaser. }}
-      {{! For schema: url is dependent on title }}
-      {{#url}}
-        <a href="{{{url}}}" {{#num}}data-slide="{{num}}"{{/num}} {{#carouselItem}}tabindex="-1"{{/carouselItem}} class="teaser__header_text_link">{{{title}}}</a>
-      {{/url}}
-      {{^url}}
-        {{{title}}}
-      {{/url}}
-    </h4>
-
-    {{! secondaryInfo may be a source, an author, something else. Not anticipated to be a list,
-        because authors are represented as first author et al.}}
-    {{#secondaryInfo}}
-    <div class="teaser__secondary_info">
-      {{{secondaryInfo}}}
-    </div>
-    {{/secondaryInfo}}
-
-  </header>
-
-  {{! content could be the impact statement, for example. It could also contain a list.}}
   {{#content}}
-  <div class="teaser__body">
-    {{{content}}}
-  </div>
+    <div class="teaser__annotation_content">
+      {{{.}}}
+    </div>
   {{/content}}
 
-  {{! Several things may appear in the footer:
-      - meta: standard pattern for article type, or arbitrary text with or without a date
-      - formats: HTML and/or PDF. Used for research content
-      - download icon/link: used to download, found in grid style podcast
-   }}
   {{#footer}}
-  <footer class="teaser__footer">
+    <footer class="teaser__footer">
 
-    {{#meta}}
-      {{> molecules-meta}}
-    {{/meta}}
+      {{#meta}}
+        {{> molecules-meta}}
+      {{/meta}}
 
-    {{#formats}}
-    <div class="teaser__formats">
-      <span class="visuallyhidden">Available as:</span>
-      <ul class="teaser__formats-list">
-        {{#html}}
-          <li>HTML</li>
-        {{/html}}
-        {{#pdf}}
-          <li>PDF</li>
-        {{/pdf}}
-      </ul>
-    </div>
-    {{/formats}}
-
-  </footer>
+    </footer>
   {{/footer}}
+
 </div>
