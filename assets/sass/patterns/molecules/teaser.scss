@@ -39,20 +39,16 @@
     }
   }
 
-  .teaser--annotation & {
-    @include truncate-with-ellipsis();
-
-    & .teaser__context_label:after {
-      content: "";
-    }
-
-  }
-
 }
 
 .teaser__context_label {
-  // content-label not subject-label as not it's not always subjects in here
+  // content-label rather than subject-label as not it's not always subjects in here
   @include label-content-typeg();
+
+  .teaser--annotation & {
+    @include truncate-with-ellipsis();
+  }
+
 }
 
 // Extra specificity to override normalised style
