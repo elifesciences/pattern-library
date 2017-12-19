@@ -228,3 +228,25 @@
   }
 }
 
+.teaser__annotation_highlight {
+  @include nospace();
+  @include blg-spacing("top", "small", "margin");
+  @include blg-spacing("bottom", "extra-small");
+  @include body-typeg();
+  color: $color-text-secondary;
+
+  &:after {
+    border-bottom: 1px solid $color-text-secondary;
+    content: "";
+    display: block;
+    @include blg-spacing("bottom", "extra-small");
+    @include width($blg-space-small-in-px);
+
+  }
+
+}
+
+.teaser__annotation_content {
+  @include body-typeg();
+}
+
