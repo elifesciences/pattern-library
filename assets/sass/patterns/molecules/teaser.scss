@@ -51,15 +51,12 @@
 }
 
 .teaser__context_label {
+  // content-label not subject-label as not it's not always subjects in here
   @include label-content-typeg();
-  @include font-size-and-vertical-height(11);
-  @include teaser-context-label-style();
-
 }
 
 // Extra specificity to override normalised style
 .teaser .teaser__context_label_link {
-  @include font-size-and-vertical-height(11);
   text-decoration: none;
 
   .teaser__context_label {
