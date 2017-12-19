@@ -235,6 +235,10 @@
   @include body-typeg();
   color: $color-text-secondary;
 
+  & a {
+    color: inherit;
+  }
+
   &:after {
     border-bottom: 1px solid $color-text-secondary;
     content: "";
@@ -250,8 +254,13 @@
   @include body-typeg();
 
   & a {
-    @include discreet-link();
+    color: inherit;
+    text-decoration: none;
   }
 
+}
+
+.teaser__annotation_reply {
+  @include font-size-and-vertical-height(14);
 }
 

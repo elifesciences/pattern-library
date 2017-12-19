@@ -8,14 +8,19 @@
 
   {{#highlight}}
     <blockquote class="teaser__annotation_highlight">
-        {{{.}}}
+      <a href="{{url}}">{{{.}}}</a>
     </blockquote>
   {{/highlight}}
 
   {{#content}}
     <div class="teaser__annotation_content">
-      {{{.}}}
+      <a href="{{url}}">{{{.}}}</a>
     </div>
+    {{#isReply}}
+      <div class="teaser__annotation_reply">
+        This is a reply. <a href="{{url}}">View the full conversation &#187;</a>
+      </div>
+    {{/isReply}}
   {{/content}}
 
     <footer class="teaser__footer">
