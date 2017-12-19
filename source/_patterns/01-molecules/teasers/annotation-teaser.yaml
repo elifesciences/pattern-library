@@ -1,0 +1,48 @@
+assets:
+  css:
+    - teaser.css
+    - $ref: ../../01-molecules/components/meta.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  allOf:
+    - properties:
+        document:
+          type: string
+          minLength: 1
+        meta:
+          $ref: ../../01-molecules/components/meta.yaml#/schema
+        url:
+          minLength: 1
+          type: string
+        content:
+          type: string
+          minLength: 1
+      required:
+        - document
+        - meta
+        - url
+    - oneOf:
+      - properties:
+          highlight:
+            type: string
+            minLength: 1
+          isReply:
+            type: boolean
+            emum:
+              - false
+        required:
+          - highlight
+          - isReply
+      - properties:
+          highlight:
+            type: string
+            maxLength: 0
+          isReply:
+            type: boolean
+            emum:
+              - true
+        required:
+          - highlight
+          - isReply

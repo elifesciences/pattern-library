@@ -7,6 +7,8 @@
 
   "url": "#",
 
+  "isReply": false,
+
   "meta": {
     "date": {
       "forHuman": {
