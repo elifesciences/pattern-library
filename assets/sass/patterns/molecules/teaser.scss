@@ -47,6 +47,7 @@
 
   .teaser--annotation & {
     @include truncate-with-ellipsis();
+    @include blg-spacing("bottom", "small", "margin");
   }
 
 }
@@ -230,7 +231,6 @@
 
 .teaser__annotation_highlight {
   @include nospace();
-  @include blg-spacing("top", "small", "margin");
   @include blg-spacing("bottom", "extra-small");
   @include body-typeg();
   color: $color-text-secondary;
@@ -248,5 +248,10 @@
 
 .teaser__annotation_content {
   @include body-typeg();
+
+  & a {
+    @include discreet-link();
+  }
+
 }
 
