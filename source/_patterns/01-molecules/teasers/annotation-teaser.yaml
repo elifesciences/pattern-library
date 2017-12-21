@@ -1,6 +1,6 @@
 assets:
   css:
-    - teaser.css
+    - annotation-teaser.css
     - $ref: ../../01-molecules/components/meta.yaml#/assets/css
   js: []
 schema:
