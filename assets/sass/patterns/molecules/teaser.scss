@@ -107,6 +107,12 @@
 
 .teaser__footer {
   @include teaser-footer-style();
+
+  .teaser--annotation & {
+    // Provides correct spacing when working around variant pattern inheriting data from main pattern (PatternLab; bug?)
+    @include blg-spacing("top", "extra-small");
+  }
+
 }
 
 .teaser__formats {
@@ -231,7 +237,6 @@
 
 .teaser__annotation_highlight {
   @include nospace();
-  @include blg-spacing("bottom", "extra-small");
   @include body-typeg();
   color: $color-text-secondary;
 
@@ -240,11 +245,12 @@
   }
 
   &:after {
-    border-bottom: 1px solid $color-text-secondary;
+    border-bottom: 2px solid $color-text-dividers;
     content: "";
     display: block;
-    @include blg-spacing("bottom", "extra-small");
-    @include width($blg-space-small-in-px);
+    @include blg-spacing("bottom", "extra-small", "margin");
+    @include height(12);
+    @include width(24);
 
   }
 
@@ -261,6 +267,7 @@
 }
 
 .teaser__annotation_reply {
+  @include body-typeg();
   @include font-size-and-vertical-height(14);
 }
 
