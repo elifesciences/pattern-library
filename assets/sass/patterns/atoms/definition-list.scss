@@ -1,0 +1,24 @@
+@import "../../definitions";
+
+.definition-list--inline {
+  dt,
+  dd {
+    display: inline;
+  }
+
+  dt {
+    &:before {
+      content: "";
+      display: table;
+    }
+    &:after {
+      content: ": ";
+    }
+  }
+
+  dd + dd {
+    &:before {
+      content: ", ";
+    }
+  }
+}

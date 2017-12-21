@@ -27,7 +27,7 @@
   {{#profile}}
 
 
-    <div class="about-profile__profile " data-behaviour="ToggleableCaption" data-selector=".about-profile__profile-body" data-threshold-width="730{{! Matches $bkpt-site--medium }}">
+    <div class="about-profile__profile " {{^compact}}data-behaviour="ToggleableCaption" data-selector=".about-profile__profile-body" data-threshold-width="730{{! Matches $bkpt-site--medium }}"{{/compact}}>
 
       <div class="about-profile__profile-body">
       {{{.}}}
