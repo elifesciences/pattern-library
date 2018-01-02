@@ -2,19 +2,9 @@
 
   "metricsData": {
     "data": [
-      {
-        "name": "views",
-        "value": "149"
-      },
-      {
-        "name": "cited",
-        "value": "5"
-      },
-      {
-        "name": "comments",
-        "value": "12",
-        "elementId": "someDocumentLevelUniqueId"
-      }
+      {"text": "<a href=\"#\">Views 149</a>"},
+      {"text": "Cited 5"},
+      {"text": "<span data-hypothesis-trigger>Annotations <span data-hypothesis-annotation-count>0</span></span>"}
     ]
   },
 

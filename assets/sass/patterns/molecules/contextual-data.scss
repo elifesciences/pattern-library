@@ -11,18 +11,42 @@
   text-align: center;
 }
 
-.contextual-data__list_title {
+.contextual-data__item {
   display: inline-block;
   @include label-content-typeg($color-text-secondary);
   margin: 0;
-  padding: 0;
+  @include padding(0 5 0 0);
 }
 
-.contextual-data__list_desc {
-  display: inline-block;
-  @include label-content-typeg($color-text-secondary, false);
-  margin: 0;
-  @include padding(0 5 0 0);
+[data-hypothesis-trigger] {
+  display: none;
+
+  .js & {
+    color: $color-primary;
+    cursor: pointer;
+    display: inline-block;
+
+    [data-hypothesis-annotation-count] {
+      border: none;
+      border-radius: 3px;
+      @include colors($color-primary);
+      display: inline-block;
+      @include font-size-and-vertical-height(11, 14);
+      @include height(14);
+      min-width: 1em;
+      padding: 0 6px;
+      position: relative;
+      text-align: center;
+
+      &:after {
+        @include arrow("right", 3, $color-primary);
+        left: 5px;
+        position: absolute;
+        top: 10px;
+        z-index: -1;
+      }
+    }
+  }
 }
 
 .contextual-data__cite_wrapper {
@@ -49,10 +73,6 @@
     border-bottom: none;
     display: inline-block;
     text-align: left;
-  }
-
-  .contextual-data__list_desc {
-    @include padding(0 10 0 0);
   }
 
   .contextual-data__cite_wrapper {

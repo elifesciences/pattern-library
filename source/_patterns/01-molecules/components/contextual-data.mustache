@@ -1,12 +1,11 @@
 <div class="contextual-data">
 
   {{#metricsData}}
-  <dl class="contextual-data__list">
-    {{#data}}
-    <dt class="contextual-data__list_title">{{name}}</dt>
-    <dd class="contextual-data__list_desc" {{#elementId}} id="{{elementId}}"{{/elementId}}>{{value}}</dd>
-    {{/data}}
-  </dl>
+    <ul class="contextual-data__list">
+      {{#data}}
+        <li class="contextual-data__item">{{{text}}}</li>
+      {{/data}}
+    </ul>
   {{/metricsData}}
 
   {{#citation}}
