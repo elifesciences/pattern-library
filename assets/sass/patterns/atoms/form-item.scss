@@ -20,13 +20,13 @@
 .form-item__label {
   display: block;
   @include typeg-form-label();
-  @include margin(6, "bottom");
+  @include margin(4, "bottom");
 }
 
 .form-item__message {
   display: block;
   @include typeg-form-message();
-  @include margin(6, "bottom");
+  @include margin(4, "top");
 }
 
 .form-item__message--valid {

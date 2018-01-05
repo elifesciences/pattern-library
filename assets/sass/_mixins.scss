@@ -73,6 +73,13 @@
   width: #{get-rem-from-px($size_in_px)}rem;
 }
 
+@mixin constrain-height($size_in_px, $extreme) {
+  @if $extreme == min or $extreme == max {
+    #{$extreme}-height: #{$size_in_px}px;
+    #{$extreme}-height: #{get-rem-from-px($size_in_px)}rem;
+  }
+}
+
 @mixin constrain-width($size_in_px, $extreme) {
   @if $extreme == min or $extreme == max {
     #{$extreme}-width: #{$size_in_px}px;
@@ -251,19 +258,23 @@
   margin: auto;
 
   @if $padding {
-    padding: 0 7%;
+    padding-left: 7%;
+    padding-right: 7%;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      padding: 0 14%;
+      padding-left: 14%;
+      padding-right: 14%;
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      padding: 0 3%;
+      padding-left: 3%;
+      padding-right: 3%;
     }
   }
 }
 
 // $vertical-height-in-px: desired height of the element as a function of font-size and line-height
+// TODO: Devise a good name (& extend blg name system?), for the default vertical height
 @mixin font-size-and-vertical-height($font-size-in-px, $vertical-height-in-px: 24) {
   @include font-size($font-size-in-px);
   line-height: #{($vertical-height-in-px / $font-size-in-px)};
@@ -348,7 +359,7 @@
 
 @mixin teaser-header-text-style() {
   @include listing-main-art-title-typeg();
-  @include padding(12, "top");
+  @include blg-spacing("top", "extra-small");
 }
 
 @mixin teaser-header-text-link-style() {
@@ -362,7 +373,7 @@
 }
 
 @mixin teaser-footer-style() {
-  @include margin(12, "top");
+  @include blg-spacing("top", "extra-small", "margin");
   color: $color-text-secondary;
   display: flex;
   @include label-content-typeg();
@@ -380,6 +391,12 @@
   @include font-size-and-vertical-height($font-size-base-in-px, 48);
   @include nospace();
   text-align: center;
+}
+
+@mixin checkbox-label() {
+  @include typeg-form-label();
+  @include blg-spacing("bottom", "extra-small");
+  display: block;
 }
 
 @mixin overlay() {

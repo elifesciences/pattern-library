@@ -11,7 +11,7 @@ describe('A Podcast page', function() {
     expect(currentTime).to.equal('0:00');
     browser.waitUntil(function () {
       var duration = browser.getText('.audio-player__duration');
-      return duration === '28:05';
+      return duration === '30:23';
     }, 5000, 'expected duration to load after 5s');
   });
 

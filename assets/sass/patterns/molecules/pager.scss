@@ -17,7 +17,7 @@
   }
 
   .listing-column-container & {
-    @include padding(24, "top");
+    @include blg-spacing("top", "small");
   }
 }
 

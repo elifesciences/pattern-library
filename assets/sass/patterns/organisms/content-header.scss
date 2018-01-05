@@ -257,7 +257,7 @@
   text-align: center;
   @include padding(36, "left");
   @include padding(36, "right");
-  @include padding($blg-space-small-in-px, "top");
+  @include blg-spacing("top", "small");
   position: absolute;
   width: calc(100% - 2 * 7%);
 

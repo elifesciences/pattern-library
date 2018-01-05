@@ -35,7 +35,10 @@ $menu-max-width-in-px: 200;
   font-family: $font-secondary;
   @include font-size-and-vertical-height(14, 36);
   margin: 0;
-  @include padding(12 18 0);
+  padding-bottom: 0;
+  @include blg-spacing("top", "extra-small");
+  @include padding(18, "right");
+  @include padding(18, "left");
 
   &:first-child {
     border-bottom: 1px solid $color-text-dividers;
@@ -45,7 +48,7 @@ $menu-max-width-in-px: 200;
 
   &:last-child {
     margin-top: 0;
-    @include padding(12, "bottom");
+    @include blg-spacing("bottom", "extra-small");
   }
 
   &:last-child:not(&:first-child) {

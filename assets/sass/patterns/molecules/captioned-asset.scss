@@ -3,8 +3,8 @@
 .captioned-asset {
   clear: both;
   margin: 0;
-  @include margin($blg-space-medium-in-px, "top");
-  @include margin($blg-space-medium-in-px, "bottom");
+  @include blg-spacing("top", "medium", "margin");
+  @include blg-spacing("bottom", "medium", "margin");
 
   .asset-viewer-inline & {
     clear: none;
@@ -17,26 +17,30 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     float: left;
     margin-top: 0;
-    @include margin($blg-space-small-in-px, "right");
-    @include margin($blg-space-small-in-px, "bottom");
+    @include margin(24, "right");
+    @include blg-spacing("bottom", "small", "margin");
     max-width: 50%;
   }
 }
 
 .captioned-asset__picture {
   display: block;
+  width: 100%;
 }
 
 .captioned-asset__image {
   display: block;
   outline: 1px solid $color-text-dividers;
-  @include padding($blg-space-extra-small-in-px);
+  @include blg-spacing("top", "extra-small");
+  @include padding(12, "right");
+  @include blg-spacing("bottom", "extra-small");
+  @include padding(12, "left");
   width: 100%;
 }
 
 .captioned-asset__caption {
   padding: 0 6%;
-  @include margin($blg-space-extra-small-in-px, "top");
+  @include blg-spacing("top", "extra-small", "margin");
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-captioned-asset-caption)}em) {

@@ -5,8 +5,11 @@
 //  - Horizontal grid
 
 // Baseline grid
-// TODO: BLG: Move to using these classes rather than $blg-* variables directly in patterns.
 // TODO: BLG: Move all blg vars & mixins into this file
+.blg-pad-top-extra-small {
+  @include blg-spacing("top", "extra-small");
+}
+
 .blg-pad-top-small {
   @include blg-spacing("top", "small");
 }
@@ -21,6 +24,10 @@
 
 .blg-pad-top-large {
   @include blg-spacing("top", "large");
+}
+
+.blg-pad-bottom-extra-small {
+  @include blg-spacing("bottom", "extra-small");
 }
 
 .blg-pad-bottom-small {
@@ -39,6 +46,10 @@
   @include blg-spacing("bottom", "large");
 }
 
+.blg-margin-top-extra-small {
+  @include blg-spacing("top", "extra-small", "margin");
+}
+
 .blg-margin-top-small {
   @include blg-spacing("top", "small", "margin");
 }
@@ -49,6 +60,10 @@
 
 .blg-margin-top-large {
   @include blg-spacing("top", "large", "margin");
+}
+
+.blg-margin-bottom-extra-small {
+  @include blg-spacing("bottom", "extra-small", "margin");
 }
 
 .blg-margin-bottom-small {

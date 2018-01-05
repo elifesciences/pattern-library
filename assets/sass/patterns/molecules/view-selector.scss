@@ -3,7 +3,8 @@
 @mixin local-item-style {
   font-family: $font-secondary;
   @include font-size-and-vertical-height(14);
-  @include margin(0 0 12 0);
+  margin: 0;
+  @include blg-spacing("bottom", "extra-small", "margin");
 }
 
 .view-selector {
@@ -59,7 +60,7 @@
   color: $color-text-secondary;
   display: block;
   @include font-size(14);
-  @include margin($blg-space-extra-small-in-px, "bottom");
+  @include blg-spacing("bottom", "extra-small", "margin");
 }
 
 .js .view-selector__jump_links_header {

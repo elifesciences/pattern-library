@@ -125,13 +125,13 @@ p a:not(.additional-asset__link--download):not(.asset-viewer-inline__download_al
 
 ul,
 ol {
-  @include margin(24, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
   margin-top: 0;
   @include padding(48, "left");
 }
 
 dl {
-  @include margin(24, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
   margin-top: 0;
 }
 
@@ -143,7 +143,7 @@ dd {
 
 dt {
   font-weight: 700;
-  @include margin(24, "top");
+  @include blg-spacing("top", "small", "margin");
 }
 
 dd {
@@ -191,6 +191,15 @@ main {
 img {
   max-height: 100%;
   max-width: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  @include margin(6, "right");
+}
+
+select {
+  height: #{$blg-space-small-in-px}px;
 }
 
 // See https://css-tricks.com/almanac/selectors/p/placeholder/ for discussion of non-std :placeholder pseudoelement

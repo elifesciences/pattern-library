@@ -1,0 +1,30 @@
+{
+
+  "metricsData": {
+    "data": [
+      {
+        "name": "views",
+        "value": "149"
+      },
+      {
+        "name": "cited",
+        "value": "5"
+      },
+      {
+        "name": "comments",
+        "value": "12",
+        "elementId": "someDocumentLevelUniqueId"
+      }
+    ]
+  },
+
+  "citation": {
+    "citeAs": "eLife 2016;5:e16370",
+    "doi": {
+      "class": "contextual-data__doi",
+      "doi": "10.7554/eLife.16370",
+      "isTruncated": true
+    }
+  }
+
+}

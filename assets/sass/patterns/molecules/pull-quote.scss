@@ -4,8 +4,9 @@
   clear: both;
   // 24 is height of the image
   background: url("../img/icons/quote-start.svg") 0 #{$blg-space-large-in-px - 24 - 14}px no-repeat, linear-gradient(transparent, transparent);
-  margin: 0;
-  @include padding($blg-space-large-in-px 0 $blg-space-medium-in-px 0);
+  @include nospace();
+  @include blg-spacing("top", "large");
+  @include blg-spacing("bottom", "medium");
 
   p {
     @include pullquote-typeg();
@@ -41,5 +42,5 @@
   color: $color-text-secondary;
   display: block;
   @include quote-attrib-typeg();
-  @include padding($blg-space-small-in-px, "top");
+  @include blg-spacing("top", "small");
 }

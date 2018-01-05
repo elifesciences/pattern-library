@@ -28,7 +28,7 @@
 .media-chapter-listing-item__body {
   @include teaser-body-style();
   @include nospace();
-  @include padding($blg-space-extra-small-in-px, "top");
+  @include blg-spacing("top", "extra-small");
 }
 
 .media-chapter-listing-item__source_list {

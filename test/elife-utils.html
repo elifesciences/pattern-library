@@ -11,36 +11,85 @@
 </head>
 <body>
 
-    <!--
-      Test output
-    -->
-    <div id="mocha"></div>
+<!--
+  Test output
+-->
+<div id="mocha"></div>
 
-    <!--
-      No fixture for this component
-    -->
+<!--
+  Fixtures
+-->
 
-    <!--
-      Load test code
-    -->
-    <script src="../node_modules/mocha/mocha.js"></script>
-    <script src="../node_modules/chai/chai.js"></script>
-    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+<!--isIdOfOrWithinSection-->
+<div class="isIdOfOrWithinSection">
+  <div class="target" id="isIdOfOrWithinSection_targetHit">
+    <div class="target-child" id="isIdOfOrWithinSection_targetHit_child">
+      <div class="target-grand-child"  id="isIdOfOrWithinSection_targetHit_grandChild">
+      </div>
+    </div>
+  </div>
+  <div class="target-miss" id="isIdOfOrWithinSection_targetMiss"></div>
+</div>
 
-    <!-- Initialise test suite -->
-    <script>mocha.setup('bdd')</script>
+<!--areElementsNested-->
+<div class="areElementsNested">
+  <div class="target">
+    <div class="target-child">
+      <div class="target-grand-child">
+      </div>
+    </div>
+  </div>
+  <div class="target-miss"></div>
+</div>
 
-    <!--
-      Test spec
-    -->
-    <script src="build/elife-utils.spec.js"></script>
+<!--getOrdinalAmongstSiblingElements-->
+<div class="getOrdinalAmongstSiblingElements">
+  <div class="parent">
+    <div class="child-1a"></div>
+    <div class="child-2"></div>
+    <div class="child-3"><span class="child-1b"></span></div>
+  </div>
+</div>
 
-    <!--
-      Begin!
-    -->
-    <script>
-      mocha.run();
-    </script>
+<!--buildElement-->
+<div class="buildElement">
+  <div class="parent first-parent">
+    <div class="pre-existing-sibling-1"></div>
+    <div class="pre-existing-sibling-2"></div>
+  </div>
+  <div class="parent this-second-parent-should-not-match not-a-child-of-first-parent">
+  </div>
+
+  <!--createOverlay-->
+  <div class="createOverlay">
+    <div class="target">
+      <div class="parent">
+        <div class="following-sibling"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--
+    Load test code
+  -->
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script src="../node_modules/chai/chai.js"></script>
+  <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+  <!-- Initialise test suite -->
+  <script>mocha.setup('bdd')</script>
+
+  <!--
+    Test spec
+  -->
+  <script src="build/elife-utils.spec.js"></script>
+
+  <!--
+    Begin!
+  -->
+  <script>
+    mocha.run();
+  </script>
 
 </body>
 </html>

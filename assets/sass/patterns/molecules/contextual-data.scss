@@ -1,7 +1,6 @@
 @import "../../definitions";
 
 .contextual-data {
-  border-bottom: 1px solid $color-text-dividers;
   @include label-content-typeg($color-text-secondary, false);
 }
 
@@ -27,7 +26,11 @@
 }
 
 .contextual-data__cite_wrapper {
-  @include padding(12 0 11 0);
+  border-bottom: 1px solid $color-text-dividers;
+  @include blg-spacing("top", "extra-small");
+  @include padding($blg-space-extra-small-in-px - 1, "bottom");
+  padding-left: 0;
+  padding-right: 0;
   text-align: center;
 }
 
@@ -37,6 +40,7 @@
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}rem) {
   .contextual-data {
+    border-bottom: 1px solid $color-text-dividers;
     display: flex;
   }
 
@@ -44,7 +48,6 @@
     align-self: center;
     border-bottom: none;
     display: inline-block;
-    padding: 0;
     text-align: left;
   }
 
@@ -53,6 +56,7 @@
   }
 
   .contextual-data__cite_wrapper {
+    border-bottom: none;
     float: right;
     margin-left: auto;
     @include padding(11 0);

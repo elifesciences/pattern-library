@@ -2,8 +2,10 @@ assets:
   css:
     - site-footer.css
     - $ref: ../../01-molecules/navigation/main-menu.yaml#/assets/css
+    - $ref: ../../01-molecules/components/investor-logos.yaml#/assets/css
   js:
     - $ref: ../../01-molecules/navigation/main-menu.yaml#/assets/js
+    - $ref: ../../01-molecules/components/investor-logos.yaml#/assets/js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
@@ -30,3 +32,4 @@ schema:
         - year
         - footerMenuLinks
     - $ref: ../../01-molecules/navigation/main-menu.yaml#/schema
+    - $ref: ../../01-molecules/components/investor-logos.yaml#/schema

@@ -14,9 +14,9 @@
   color: $color-text;
   display: block;
   font-family: $font-secondary;
-  @include font-size($font-size-base-in-px);
-  @include padding(12);
-  @include margin(6, "bottom");
+  @include font-size-and-vertical-height($font-size-base-in-px);
+  @include padding($blg-space-extra-small-in-px - 1 12);
+  @include margin($blg-space-extra-small-in-px / 2, "bottom");
   width: 100%;
 
   &:focus {

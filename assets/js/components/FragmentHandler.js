@@ -84,7 +84,7 @@ module.exports = class FragmentHandler {
 
     let idOfCollapsedSection = this.getIdOfCollapsedSection(hash, this.doc);
     if (!!idOfCollapsedSection) {
-      this.doc.querySelector('#' + idOfCollapsedSection).dispatchEvent(utils.eventCreator('expandsection', hash));
+      this.doc.getElementById(idOfCollapsedSection).dispatchEvent(utils.eventCreator('expandsection', hash));
     }
   }
 };

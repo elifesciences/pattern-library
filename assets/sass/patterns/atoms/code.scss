@@ -2,8 +2,11 @@
 
 .code {
   @include mono-typeg;
-  @include margin(24, "bottom");
-  @include padding(12);
+  @include blg-spacing("bottom", "small", "margin");
+  @include blg-spacing("top", "extra-small");
+  @include blg-spacing("bottom", "extra-small");
+  @include padding(12, "left");
+  @include padding(12, "right");
   background-color: $color-text-ui-code;
   border: 1px solid $color-text-dividers;
   border-radius: #{$border-radius}px;
