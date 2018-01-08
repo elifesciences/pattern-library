@@ -12,7 +12,7 @@ schema:
       minLength: 1
     meta:
       $ref: ../../01-molecules/components/meta.yaml#/schema
-    url:
+    inContextUri:
       minLength: 1
       type: string
     highlight:

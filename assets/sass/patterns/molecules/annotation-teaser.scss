@@ -4,7 +4,11 @@
   @include teaser-root-style();
 }
 
-.annotation-teaser__context_label {
+.annotation-teaser__link {
+  color: inherit;
+}
+
+.annotation-teaser__document {
   @include label-content-typeg();
   @include truncate-with-ellipsis();
   @include blg-spacing("bottom", "small", "margin");
@@ -42,6 +46,10 @@
 .annotation-teaser__reply {
   @include body-typeg();
   @include font-size-and-vertical-height(14);
+}
+
+.annotation-teaser__reply_cta {
+  color: $color-primary;
 }
 
 .annotation-teaser__footer {
