@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+    <!--
+      Test output
+    -->
+    <div id="mocha"></div>
+
+    <!--
+      Fixture
+    -->
+    <article class="annotation-teaser" data-behaviour="AnnotationTeaser" data-in-context-uri="uriTestValue" data-is-reply="1">
+
+      <div class="annotation-teaser__document">
+        CRIg, a tissue-resident macrophage specific immune checkpoint molecule, promotes immunological tolerance in NOD mice, via a dual role in effector and regulatory T cells
+      </div>
+
+      <blockquote class="annotation-teaser__highlight">
+        Retrograde fibroblast growth factor 22 (FGF22) signaling regulates insulin-like growth factor 2 (IGF2) expression for activity-dependent synapse stabilization in the mammalian brain
+      </blockquote>
+
+      <div class="annotation-teaser__content">
+        What was the Mg<sup>2+</sup> concentration?
+      </div>
+      <div class="annotation-teaser__reply">
+        This is a reply.
+      </div>
+
+      <footer class="annotation-teaser__footer">
+
+        <div class="meta">
+
+
+
+
+          <span class="date"> <time datetime="2015-09-10">Sep 10, 2015</time></span>
+        </div>
+
+      </footer>
+
+    </article>
+
+    <!--
+      Load test code
+    -->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
+
+    <!--
+      Test spec
+    -->
+    <script src="build/annotationteaser.spec.js"></script>
+
+    <!--
+      Begin!
+    -->
+    <script>
+      mocha.run();
+    </script>
+
+</body>
+</html>

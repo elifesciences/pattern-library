@@ -1,6 +1,4 @@
-<article class="annotation-teaser">
-
-  <a href="{{inContextUri}}" class="annotation-teaser__link">
+<article class="annotation-teaser" data-behaviour="AnnotationTeaser" data-in-context-uri="{{inContextUri}}"{{#isReply}} data-is-reply="{{isReply}}"{{/isReply}}>
 
   {{#document}}
     <div class="annotation-teaser__document">
@@ -20,7 +18,7 @@
     </div>
     {{#isReply}}
       <div class="annotation-teaser__reply">
-        This is a reply. <span class="annotation-teaser__reply_cta">View the full conversation &#187;</span>
+        This is a reply.
       </div>
     {{/isReply}}
   {{/content}}
@@ -32,7 +30,5 @@
       {{/meta}}
 
     </footer>
-
-  </a>
 
 </article>
