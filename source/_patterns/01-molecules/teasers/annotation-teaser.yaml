@@ -28,7 +28,7 @@ schema:
   required:
     - document
     - meta
-    - url
+    - inContextUri
   allOf:
     - anyOf:
       - required:

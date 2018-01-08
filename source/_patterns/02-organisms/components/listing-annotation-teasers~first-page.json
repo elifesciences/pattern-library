@@ -1,0 +1,188 @@
+{
+  "heading": {
+    "heading": "Annotations"
+  },
+  "items": [
+    {
+      "document": "CRIg, a tissue-resident macrophage specific immune checkpoint molecule, promotes immunological tolerance in NOD mice, via a dual role in effector and regulatory T cells",
+
+      "highlight": "Retrograde fibroblast growth factor 22 (FGF22) signaling regulates insulin-like growth factor 2 (IGF2) expression for activity-dependent synapse stabilization in the mammalian brain",
+
+      "content": "What was the Mg<sup>2+</sup> concentration?",
+
+      "inContextUri": "#",
+
+      "meta": {
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 10,
+            "month": "Sep",
+            "year": 2015
+          },
+          "forMachine": "2015-09-10"
+        }
+      }
+
+    },
+
+    {
+      "document": "Clarinet (CLA-1), a novel active zone protein required for synaptic vesicle clustering and release",
+
+      "highlight": "Retrograde fibroblast growth factor 22 (FGF22) signaling regulates insulin-like growth factor 2 (IGF2) expression for activity-dependent synapse stabilization in the mammalian brain",
+
+      "inContextUri": "#",
+
+      "meta": {
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 10,
+            "month": "Sep",
+            "year": 2015
+          },
+          "forMachine": "2015-09-10"
+        }
+      }
+
+    },
+
+    {
+      "document": "Gene free methodology for cell fate dynamics during development",
+
+      "content": "What was the Mg<sup>2+</sup> concentration?",
+
+      "inContextUri": "#",
+
+      "meta": {
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 10,
+            "month": "Sep",
+            "year": 2015
+          },
+          "forMachine": "2015-09-10"
+        }
+      }
+
+    },
+
+    {
+      "document": "CRIg, a tissue-resident macrophage specific immune checkpoint molecule, promotes immunological tolerance in NOD mice, via a dual role in effector and regulatory T cells",
+
+      "content": "What was the Mg<sup>2+</sup> concentration?",
+
+      "isReply": true,
+
+      "inContextUri": "#",
+
+      "meta": {
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 10,
+            "month": "Sep",
+            "year": 2015
+          },
+          "forMachine": "2015-09-10"
+        }
+      }
+
+    },
+    {
+      "document": "Molecular basis of fatty acid taste in <i>Drosophila</i>",
+
+      "highlight": "Retrograde fibroblast growth factor 22 (FGF22) signaling regulates insulin-like growth factor 2 (IGF2) expression for activity-dependent synapse stabilization in the mammalian brain",
+
+      "content": "What was the Mg<sup>2+</sup> concentration?",
+
+      "inContextUri": "#",
+
+      "meta": {
+        "text": "Only me",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 10,
+            "month": "Sep",
+            "year": 2015
+          },
+          "forMachine": "2015-09-10"
+        }
+      }
+
+    },
+
+    {
+      "document": "CRIg, a tissue-resident macrophage specific immune checkpoint molecule, promotes immunological tolerance in NOD mice, via a dual role in effector and regulatory T cells",
+
+      "highlight": "Retrograde fibroblast growth factor 22 (FGF22) signaling regulates insulin-like growth factor 2 (IGF2) expression for activity-dependent synapse stabilization in the mammalian brain",
+
+      "content": "https://images.pexels.com/photos/707837/pexels-photo-707837.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
+
+      "inContextUri": "#",
+
+      "meta": {
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 10,
+            "month": "Sep",
+            "year": 2015
+          },
+          "forMachine": "2015-09-10"
+        }
+      }
+
+    },
+
+    {
+      "document": "CRIg, a tissue-resident macrophage specific immune checkpoint molecule, promotes immunological tolerance in NOD mice, via a dual role in effector and regulatory T cells",
+
+      "highlight": "&lt;math xmlns=\"http://www.w3.org/1998/Math/MathML\"&gt;&lt;mlongdiv&gt;&lt;mn&gt; 12 &lt;/mn&gt;&lt;mn&gt; 16.5 &lt;/mn&gt;  &lt;mn&gt; 198 &lt;/mn&gt;  &lt;msgroup position='1' shift='-1'&gt;  &lt;msgroup&gt;  &lt;mn&gt; 12&lt;/mn&gt;  &lt;msline length='2'/&gt;  &lt;/msgroup&gt;  &lt;msgroup&gt;  &lt;mn&gt; 78&lt;/mn&gt;  &lt;mn&gt; 72&lt;/mn&gt;  &lt;msline length='2'/&gt;  &lt;mn&gt; 6.0&lt;/mn&gt;  &lt;mn&gt; 6.0&lt;/mn&gt;  &lt;/msgroup&gt;  &lt;msgroup position='-1'&gt; &lt;!-- extra shift to move to the right of the \".\" --&gt;  &lt;msline length='3'/&gt;  &lt;mn&gt; 0&lt;/mn&gt;  &lt;/msgroup&gt;  &lt;/msgroup&gt;  &lt;/mlongdiv&gt;  &lt;/math&gt;",
+
+      "content": "Long division ftw.",
+
+      "inContextUri": "#",
+
+      "meta": {
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 10,
+            "month": "Sep",
+            "year": 2015
+          },
+          "forMachine": "2015-09-10"
+        }
+      }
+
+    },
+
+    {
+      "document": "CRIg, a tissue-resident macrophage specific immune checkpoint molecule, promotes immunological tolerance in NOD mice, via a dual role in effector and regulatory T cells",
+
+      "highlight": "Retrograde fibroblast growth factor 22 (FGF22) signaling regulates insulin-like growth factor 2 (IGF2) expression for activity-dependent synapse stabilization in the mammalian brain",
+
+      "content": "https://www.youtube.com/watch?v=oHg5SJYRHA0",
+
+      "inContextUri": "#",
+
+      "meta": {
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 10,
+            "month": "Sep",
+            "year": 2015
+          },
+          "forMachine": "2015-09-10"
+        }
+      }
+
+    }
+  ],
+
+  "pagination": {
+    "targetId": "idOfListElementToLoadContentInTo",
+    "nextPage": {
+      "text": "Load more",
+      "classes": "button--default button--full",
+      "path": "?page=2"
+    }
+  }
+
+}
