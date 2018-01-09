@@ -20,20 +20,25 @@ module.exports = class AnnotationTeaser {
   }
 
   createLink(uri) {
+    if (!uri || typeof uri !== 'string') {
+      return;
+    }
+
     const $a = utils.buildElement('a', ['annotation-teaser__link']);
-    const rootChildren = [...this.$elm.childNodes];
+    const rootChildren = [].slice.call(this.$elm.childNodes);
     [].forEach.call(rootChildren, (node) => {
       $a.appendChild(node);
     });
+
     $a.setAttribute('href', uri);
     this.$elm.appendChild($a);
   }
 
-  showAsReply(textIn) {
-    let text = null;
-    if (typeof textIn === 'string' && textIn.length) {
-      text = textIn;
+  showAsReply(text) {
+    if (!text || typeof text !== 'string') {
+      return;
     }
+
     const $parent = this.$elm.querySelector('.annotation-teaser__reply');
     utils.buildElement('span', ['annotation-teaser__reply_cta'], text, $parent);
   }
