@@ -1,11 +1,14 @@
+@import "variables-typography";
+
 /*
  * Baseline grid
  */
 
-// To change the baseline grid, change this value and everything else will change proportionately
-$blg-measure-extra-small-in-px: 12;
+// To change the baseline grid, change $blg-measure-base (only)
+$blg-measure-base: $font-size-base-in-px * 1.5;
 
-$blg-measure-small-in-px: $blg-measure-extra-small-in-px * 2;
+$blg-measure-extra-small-in-px: $blg-measure-base / 2;
+$blg-measure-small-in-px: $blg-measure-base;
 $blg-measure-smallish-in-px: $blg-measure-small-in-px * 1.5;
 $blg-measure-medium-in-px: $blg-measure-small-in-px * 2;
 $blg-measure-mediumish-in-px: $blg-measure-smallish-in-px + $blg-measure-small-in-px;

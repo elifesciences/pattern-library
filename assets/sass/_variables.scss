@@ -1,3 +1,4 @@
+@import "variables-typography";
 @import "variables-baseline-grid";
 
 // Colors
@@ -39,40 +40,6 @@ $color-arbitrary-background-b5: rgb(158, 134, 201); // Purple
 $color-arbitrary-background-b6: rgb(229, 115, 115); // Red
 $color-arbitrary-background-b7: rgb(244, 143, 177); // Pink
 $color-arbitrary-background-b8: rgb(230, 230, 230); // Grey
-
-// Typography
-$font-primary: Georgia, serif;
-$font-secondary: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
-$font-monospace: "Courier 10 Pitch", Courier, monospace;
-
-// TODO: Review with design whether explicitly tying together the baseline grid and the base font size is desireable.
-// It is a design requirement that most element heights are set using baseline grid variables. This requires the baseline
-// grid measure to scale when the base font size changes to avoid vertically overlapping lines of text.
-// The line below explicitly derives the base font size from the smallest baseline grid measure. This may be
-// too explicit, it may be enough to set them manually, keeping in mind their relationship.
-$font-size-base-in-px: $blg-measure-extra-small-in-px * 4 / 3;
-
-$font-size-small-in-px: $font-size-base-in-px * (14 / 16);
-$font-size-extra-small-in-px: $font-size-base-in-px * (11 / 16);
-
-$font-size-h1-in-px: $font-size-base-in-px * 36 / 16;
-$font-size-h2-in-px: $font-size-base-in-px * 26 / 16;
-$font-size-h3-in-px: $font-size-base-in-px * 22 / 16;
-$font-size-h4-in-px: $font-size-base-in-px * 20 / 16;
-$font-size-h5-in-px: $font-size-base-in-px * 18 / 16;
-$font-size-h6-in-px: $font-size-base-in-px;
-
-$font-size-caption-in-px: $font-size-base-in-px * 13 / 16;
-$font-size-table-text-in-px: $font-size-base-in-px * 13 / 16;
-
-// TODO: Create typographical style mixins from these? Can they be consolidated?
-$font-size-pullquote-in-px: $font-size-base-in-px * 24 / 16;
-$font-size-msa-link: $font-size-base-in-px * 12 / 16;
-$font-size-profile-name: $font-size-base-in-px * 18 / 16;
-$font-size-main-listing-article-title: $font-size-base-in-px * 20 / 16;
-$font-size-side-listing-article-title: $font-size-base-in-px * 18 / 16;
-$font-size-carousel-item-title: $font-size-base-in-px * 24 / 16;
-$font-size-content-header-simple-title-in-px: 20;
 
 $box-font-scaling-factor: 0.85;
 
