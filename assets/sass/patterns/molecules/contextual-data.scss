@@ -16,6 +16,13 @@
   @include label-content-typeg($color-text-secondary);
   margin: 0;
   @include padding(0 5 0 0);
+
+  a {
+    color: inherit;
+    &:hover {
+      color: $color-primary;
+    }
+  }
 }
 
 [data-hypothesis-trigger] {
