@@ -1,0 +1,123 @@
+// Baseline grid
+
+// Use when a measure needs shaving due to borders
+// $measure must be one of the variables defined in _variables-baseline-grid.scss
+@function get-blg-measure-minus-offset($measure, $offset: 0) {
+  @return $measure - $offset
+}
+
+@mixin blg-spacing($direction, $level, $type: "padding") {
+  @if $type == "padding" {
+    @if $level == "extra-small" {
+      @include padding($blg-measure-extra-small-in-px, $direction);
+    } @else if $level == "small" {
+      @include padding($blg-measure-small-in-px, $direction);
+    } @else if $level == "smallish" {
+      @include padding($blg-measure-smallish-in-px, $direction);
+    } @else if $level == "medium" {
+      @include padding($blg-measure-medium-in-px, $direction);
+    } @else if $level == "mediumish" {
+      @include padding($blg-measure-mediumish-in-px, $direction);
+    } @else if $level == "large" {
+      @include padding($blg-measure-large-in-px, $direction);
+    }
+  } @else if $type == "margin" {
+    @if $level == "extra-small" {
+      @include margin($blg-measure-extra-small-in-px, $direction);
+    } @else if $level == "small" {
+      @include margin($blg-measure-small-in-px, $direction);
+    } @else if $level == "smallish" {
+      @include margin($blg-measure-smallish-in-px, $direction);
+    } @else if $level == "medium" {
+      @include margin($blg-measure-medium-in-px, $direction);
+    } @else if $level == "mediumish" {
+      @include margin($blg-measure-mediumish-in-px, $direction);
+    } @else if $level == "large" {
+      @include margin($blg-measure-large-in-px, $direction);
+    }
+  }
+}
+
+@mixin blg-pad-top--small-to-medium {
+
+  @include blg-spacing("top", "small");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("top", "medium");
+  }
+
+}
+
+@mixin blg-pad-bottom--small-to-medium {
+
+  @include blg-spacing("bottom", "small");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "medium");
+  }
+
+}
+
+@mixin blg-pad-top--large-to-extra-large {
+
+  @include blg-spacing("top", "large");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("top", "extra-large");
+  }
+
+}
+
+@mixin blg-pad-bottom--large-to-extra-large {
+
+  @include blg-spacing("bottom", "large");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "extra-large");
+  }
+
+}
+
+@mixin blg-pad-vertical-small-to-medium {
+  @include blg-pad-top--small-to-medium();
+  @include blg-pad-bottom--small-to-medium();
+}
+
+@mixin blg-pad-vertical-large-to-extra-large {
+  @include blg-pad-top--large-to-extra-large();
+  @include blg-pad-bottom--large-to-extra-large();
+}
+
+@mixin blg-margin-bottom--medium-to-large {
+
+  @include blg-spacing("bottom", "medium", "margin");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "large", "margin");
+  }
+
+}
+
+@mixin blg-margin-top--medium-to-large {
+
+  @include blg-spacing("top", "medium", "margin");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("top", "large", "margin");
+  }
+
+}
+
+@mixin blg-margin-bottom--small-to-medium {
+
+  @include blg-spacing("bottom", "small", "margin");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "medium", "margin");
+  }
+
+}
+
+@mixin blg-column-container() {
+  @include blg-margin-bottom--medium-to-large();
+}

@@ -1,5 +1,5 @@
 @import "../../definitions";
-@import "../../layout/grid";
+@import "../../grid";
 
 .content-header-simple {
   @include blg-pad-vertical-small-to-medium();
@@ -9,14 +9,11 @@
 }
 
 .content-header-simple__title {
-  @include h2-typeg();
-  color: $color-text;
-  @include font-size-and-vertical-height(20);
-  @include nospace();
+  @include content-header-simple-title-typeg();
+  @include content-header-simple-spacing();
 }
 
 .content-header-simple__strapline {
-  color: $color-text;
   @include body-typeg();
   @include nospace();
 }

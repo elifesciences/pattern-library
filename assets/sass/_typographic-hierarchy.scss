@@ -58,7 +58,7 @@
 @mixin _label-typeg($uppercase: true) {
   font-family: $font-secondary;
   font-weight: normal;
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
   letter-spacing: 0.5px;
   @if $uppercase {
     text-transform: uppercase;
@@ -69,9 +69,9 @@
 
 @mixin h1-typeg($is-wide:false) {
   @include _heading-base-typeg();
-  @include font-size-and-vertical-height($font-size-h1-in-px, 48);
+  @include font-size-and-vertical-height($font-size-h1-in-px, $blg-measure-medium-in-px);
   // Arbitrary values for now:
-  @include _set-typeg-width-variant(36, 36, $is-wide);
+  @include _set-typeg-width-variant($font-size-h1-in-px, $font-size-h1-in-px, $is-wide);
 }
 
 @mixin h1-spacing() {
@@ -156,7 +156,7 @@
 @mixin small-typeg() {
   font-family: $font-primary;
   font-style: normal;
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
   @include blg-spacing("bottom", "small");
 }
 
@@ -175,19 +175,25 @@
 
 @mixin institute-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   font-weight: 500;
+}
+
+@mixin profile-name-typeg() {
+  font-family: $font-secondary;
+  @include font-size-and-vertical-height($font-size-profile-name);
+  font-weight: 700;
 }
 
 @mixin pullquote-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(24, 31.2);
+  @include font-size-and-vertical-height($font-size-pullquote-in-px, 28.8);
   font-weight: 500;
 }
 
 @mixin quote-attrib-typeg() {
   font-family: $font-primary;
-  @include font-size-and-vertical-height(14, 18.2);
+  @include font-size-and-vertical-height($font-size-small-in-px, 18.2);
   font-style: italic;
   font-weight: 400;
 
@@ -207,7 +213,7 @@
 @mixin fig-heading-typeg() {
   // bold, not demibold
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   font-weight: bold;
 }
 
@@ -230,15 +236,14 @@
 
 @mixin table-head-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(13, 16.9);
+  @include font-size-and-vertical-height($font-size-caption-in-px, 18);
   font-weight: 700;
-  @include padding(3, "bottom");
 }
 
 @mixin table-cell-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(13, 16.9);
-  @include padding(19, "bottom");
+  @include font-size-and-vertical-height($font-size-table-text-in-px, 18);
+  font-weight: 500;
 }
 
 @mixin lead-para-typeg($is-wide: false) {
@@ -253,18 +258,18 @@
 
 @mixin nav-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   font-weight: 700;
 }
 
 @mixin nav-small-typeg() {
   @include nav-typeg();
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
 }
 
 @mixin nav-page-typeg() {
   @include nav-typeg();
-  @include font-size-and-vertical-height(14, 18.2);
+  @include font-size-and-vertical-height($font-size-small-in-px, 18.2);
   font-weight: normal;
 }
 
@@ -277,7 +282,7 @@
 
 @mixin section-title-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 14);
+  @include font-size-and-vertical-height($font-size-small-in-px, $font-size-small-in-px);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -286,9 +291,9 @@
   font-family: $font-secondary;
   font-weight: 700;
   @if $is-wide == false {
-    @include font-size-and-vertical-height(14, 25.9);
+    @include font-size-and-vertical-height($font-size-small-in-px, 25.9);
   } @else {
-    @include font-size-and-vertical-height(14, 32.9);
+    @include font-size-and-vertical-height($font-size-small-in-px, 32.9);
   }
 }
 
@@ -301,9 +306,9 @@
   font-family: $font-secondary;
   font-weight: 700;
   @if $is-wide == false {
-    @include font-size-and-vertical-height(12, 22.2);
+    @include font-size-and-vertical-height($font-size-msa-link, 22.2);
   } @else {
-    @include font-size-and-vertical-height(12, 28.2);
+    @include font-size-and-vertical-height($font-size-msa-link, 28.2);
   }
 }
 
@@ -322,12 +327,23 @@
   color: $color-primary;
 }
 
+// Content headers
+// TODO: Review
+@mixin content-header-simple-title-typeg() {
+  @include h2-typeg();
+  @include font-size-and-vertical-height($font-size-content-header-simple-title-in-px);
+}
+
+@mixin content-header-simple-spacing() {
+  @include nospace();
+}
+
 // FORMS
 
 @mixin typeg-form-label() {
   color: $color-text;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 20);
+  @include font-size-and-vertical-height($font-size-small-in-px, 20);
   font-weight: 700;
   text-align: left;
 }
@@ -335,21 +351,21 @@
 @mixin typeg-form-message() {
   color: $color-text;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 20);
+  @include font-size-and-vertical-height($font-size-small-in-px, 20);
   text-align: left;
 }
 
 // FOR ITEMS IN LISTS
 
 @mixin listing-main-art-title-typeg() {
-  @include font-size-and-vertical-height(20);
+  @include font-size-and-vertical-height($font-size-main-listing-article-title);
   @include blg-spacing("top", "extra-small");
   @include nospace("bottom");
 }
 
 @mixin listing-side-art-title-typeg() {
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(18);
+  @include font-size-and-vertical-height($font-size-side-listing-article-title);
   font-weight: 700;
   @include blg-spacing("top", "extra-small");
 }
@@ -367,17 +383,17 @@
 
 @mixin listing-side-author-typeg() {
   @include listing-main-author-typeg();
-  @include font-size(14);
+  @include font-size($font-size-small-in-px);
 }
 
 @mixin listing-side-subtitle-typeg() {
   @include listing-main-author-typeg();
-  @include font-size(14);
+  @include font-size($font-size-small-in-px);
 }
 
 @mixin listing-institute-typeg() {
   font-family: $font-primary;
-  @include font-size-and-vertical-height(14, 18.2);
+  @include font-size-and-vertical-height($font-size-small-in-px, 18.2);
   font-style: italic;
 }
 
@@ -388,5 +404,5 @@
 
 @mixin mono-typeg() {
   font-family: $font-monospace;
-  @include font-size-and-vertical-height(14, 21);
+  @include font-size-and-vertical-height($font-size-small-in-px, 21);
 }

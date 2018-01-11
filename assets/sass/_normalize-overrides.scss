@@ -9,6 +9,7 @@
 html,
 body {
   height: 100%;
+  font-size: #{$font-size-base-in-px}px;
 }
 
 body {
@@ -80,47 +81,47 @@ p a:not(.additional-asset__link--download):not(.asset-viewer-inline__download_al
 }
 
 .author-callout-style-a1 {
-  color: rgb(54, 107, 251); // Blue
+  color: $color-arbitrary-a1;
 }
 
 .author-callout-style-a2 {
-  color: rgb(156, 39, 176); // Purple
+  color: $color-arbitrary-a2;
 }
 
 .author-callout-style-a3 {
-  color: rgb(213, 0, 0); // Red
+  color: $color-arbitrary-a3;
 }
 
 .author-callout-style-b1 {
-  background-color: rgb(144, 202, 249); // Blue
+  background-color: $color-arbitrary-background-b1;
 }
 
 .author-callout-style-b2 {
-  background-color: rgb(197, 225, 165); // Green
+  background-color: $color-arbitrary-background-b2;
 }
 
 .author-callout-style-b3 {
-  background-color: rgb(255, 183, 77); // Orange
+  background-color: $color-arbitrary-background-b3;
 }
 
 .author-callout-style-b4 {
-  background-color: rgb(255, 241, 118); // Yellow
+  background-color: $color-arbitrary-background-b4;
 }
 
 .author-callout-style-b5 {
-  background-color: rgb(158, 134, 201); // Purple
+  background-color: $color-arbitrary-background-b5;
 }
 
 .author-callout-style-b6 {
-  background-color: rgb(229, 115, 115); // Red
+  background-color: $color-arbitrary-background-b6;
 }
 
 .author-callout-style-b7 {
-  background-color: rgb(244, 143, 177); // Pink
+  background-color: $color-arbitrary-background-b7;
 }
 
 .author-callout-style-b8 {
-  background-color: rgb(230, 230, 230); // Grey
+  background-color: $color-arbitrary-background-b8;
 }
 
 ul,
@@ -199,7 +200,7 @@ input[type="radio"] {
 }
 
 select {
-  height: #{$blg-space-small-in-px}px;
+  height: #{$blg-measure-small-in-px}px;
 }
 
 // See https://css-tricks.com/almanac/selectors/p/placeholder/ for discussion of non-std :placeholder pseudoelement

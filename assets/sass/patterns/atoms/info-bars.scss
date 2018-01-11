@@ -4,7 +4,7 @@
   background-color: $color-information;
   color: $color-text--reverse;
   font-family: $font-secondary;
-  @include font-size(14);
+  @include font-size($font-size-small-in-px);
   font-weight: 600;
   @include padding(14 8);
   text-align: center;
@@ -19,7 +19,7 @@
   background-repeat: no-repeat;
   display: inline-block;
   @include padding(2 0 0 28);
-  @include font-size-and-vertical-height(14, 18.2);
+  @include font-size-and-vertical-height($font-size-small-in-px, 18.2);
 }
 
 .info-bar--info {

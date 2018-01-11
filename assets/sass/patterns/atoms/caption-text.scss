@@ -40,7 +40,7 @@
   background-color: transparent;
   border: 0;
   color: $color-primary;
-  @include font-size-and-vertical-height(13, 13);
+  @include font-size-and-vertical-height($font-size-caption-in-px, $font-size-caption-in-px);
   margin: 0;
   padding-left: 0;
 
@@ -52,8 +52,8 @@
 
 .caption-text__toggle--see-less {
   position: relative;
-  top: -24px;
-  top: get-rem-from-px(24) * -1rem;
+  top: -#{$blg-measure-small-in-px}px;
+  top: get-rem-from-px($blg-measure-small-in-px) * -1rem;
 
   &:before {
     content: "\00ab\00a0";

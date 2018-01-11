@@ -2,8 +2,8 @@
 
 .trigger {
   background-color: white;
-  @include font-size-and-vertical-height($font-size-base-in-px, 48);
-  height: 48px;
+  @include font-size-and-vertical-height($font-size-base-in-px, $blg-measure-medium-in-px);
+  height: #{$blg-measure-medium-in-px}px;
   margin: 10px;
   position: absolute;
   text-align: center;

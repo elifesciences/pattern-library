@@ -1,5 +1,6 @@
 @import "variables";
 @import "typographic-hierarchy";
+@import "mixins-baseline-grid";
 
 // Put all general mixins, and any helper functions, in this file.
 // Mixins for a single pattern may be put in that pattern's scss file instead if that makes sense, use judgement.
@@ -15,6 +16,13 @@
 @mixin font-size($size_in_px) {
   font-size: #{$size_in_px}px;
   font-size: get-rem-from-px($size_in_px) * 1rem;
+}
+
+// $vertical-height-in-px: desired height of the element as a function of font-size and line-height
+@mixin font-size-and-vertical-height($font-size-in-px, $vertical-height-in-px: $blg-measure-small-in-px) {
+  // TODO: what is the relationship between the font size and the baseline grid? How should one change (if at all) when the other's changed?
+  @include font-size($font-size-in-px);
+  line-height: #{($vertical-height-in-px / $font-size-in-px)};
 }
 
 @mixin padding($size_in_px, $dimension: "") {
@@ -73,18 +81,21 @@
   width: #{get-rem-from-px($size_in_px)}rem;
 }
 
-@mixin constrain-height($size_in_px, $extreme) {
+@mixin contstrain-dimension($size_in_px, $extreme, $dimension) {
   @if $extreme == min or $extreme == max {
-    #{$extreme}-height: #{$size_in_px}px;
-    #{$extreme}-height: #{get-rem-from-px($size_in_px)}rem;
+    @if $dimension == height or $dimension == width {
+      #{$extreme}-#{$dimension}: #{$size_in_px}px;
+      #{$extreme}-#{$dimension}: #{get-rem-from-px($size_in_px)}rem;
+    }
   }
 }
 
 @mixin constrain-width($size_in_px, $extreme) {
-  @if $extreme == min or $extreme == max {
-    #{$extreme}-width: #{$size_in_px}px;
-    #{$extreme}-width: #{get-rem-from-px($size_in_px)}rem;
-  }
+  @include contstrain-dimension($size_in_px, $extreme, "width");
+}
+
+@mixin constrain-height($size_in_px, $extreme) {
+  @include contstrain-dimension($size_in_px, $extreme, "height");
 }
 
 @mixin flexbox-centre-x-and-y {
@@ -273,55 +284,23 @@
   }
 }
 
-// $vertical-height-in-px: desired height of the element as a function of font-size and line-height
-// TODO: Devise a good name (& extend blg name system?), for the default vertical height
-@mixin font-size-and-vertical-height($font-size-in-px, $vertical-height-in-px: 24) {
-  @include font-size($font-size-in-px);
-  line-height: #{($vertical-height-in-px / $font-size-in-px)};
-}
-
 @mixin body-para {
   @include body-typeg();
   @include body-spacing();
 }
 
-// Baseline grid
-@mixin blg-spacing($direction, $level, $type: "padding") {
-  @if $type == "padding" {
-    @if $level == "extra-small" {
-      @include padding($blg-space-extra-small-in-px, $direction);
-    } @else if $level == "small" {
-      @include padding($blg-space-small-in-px, $direction);
-    } @else if $level == "smallish" {
-      @include padding($blg-space-smallish-in-px, $direction);
-    } @else if $level == "medium" {
-      @include padding($blg-space-medium-in-px, $direction);
-    } @else if $level == "large" {
-      @include padding($blg-space-large-in-px, $direction);
-    }
-  } @else if $type == "margin" {
-    @if $level == "extra-small" {
-      @include margin($blg-space-extra-small-in-px, $direction);
-    } @else if $level == "small" {
-      @include margin($blg-space-small-in-px, $direction);
-    } @else if $level == "smallish" {
-      @include margin($blg-space-smallish-in-px, $direction);
-    } @else if $level == "medium" {
-      @include margin($blg-space-medium-in-px, $direction);
-    } @else if $level == "large" {
-      @include margin($blg-space-large-in-px, $direction);
-    }
-  }
-}
-
 // Cross-pattern common style expressions
 
 @mixin teaser-root-style() {
-  border-top: 1px solid $color-text-dividers;
-  @include padding($teaser-spacing-top 0 0 0);
+  $border-width: 1;
+  border-top: #{$border-width}px solid $color-text-dividers;
+  $blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-small-in-px, $border-width * 1);
+
+  padding: 0;
+  @include padding($blg-measure-reduced-by-border, "top");
   // margin not padding here as we want the margin to collapse for the last item in the list within a listing container
   // where that listing container also has a margin on the bottom.
-  @include margin($teaser-spacing-bottom, "bottom");
+  @include margin($blg-measure-reduced-by-border, "bottom");
 
   // TODO: Move to listing-list
   .listing-list__item:first-child & {
@@ -388,7 +367,7 @@
 
 @mixin dismissible_navigation {
   @include typeg-portal-quick-nav();
-  @include font-size-and-vertical-height($font-size-base-in-px, 48);
+  @include font-size-and-vertical-height($font-size-base-in-px, $blg-measure-medium-in-px);
   @include nospace();
   text-align: center;
 }
@@ -421,19 +400,19 @@
 }
 
 @mixin popup_title_text {
-  @include font-size-and-vertical-height(14, 20);
+  @include font-size-and-vertical-height($font-size-small-in-px, 20);
 }
 
 @mixin popup-ancillary-text() {
   color: $color-text--reverse;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(11, 18);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px, 18);
 }
 
 @mixin popup-large-ancillary-text() {
   color: $color-text--reverse;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 20);
+  @include font-size-and-vertical-height($font-size-small-in-px, 20);
 }
 
 @mixin inline-image {
@@ -451,7 +430,7 @@
 @mixin non_js_control_link {
   color: $color-text;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   font-weight: normal;
   text-decoration: underline;
   text-transform: none;

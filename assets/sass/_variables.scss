@@ -1,6 +1,5 @@
-//------------------------------------
-//    $VARIABLES
-//------------------------------------
+@import "variables-typography";
+@import "variables-baseline-grid";
 
 // Colors
 $color-primary: #0288d1;
@@ -29,29 +28,20 @@ $color-attention: #cf0c4e;
 
 $color-overlay: rgba(0, 0, 0, 0.8);
 
-// Typography
-$font-primary: Georgia, serif;
-$font-secondary: "Avenir Next Webfont", Arial, Helvetica, sans-serif;
-$font-monospace: "Courier 10 Pitch", Courier, monospace;
-$font-size-base-in-px: 16;
-$font-size-h1-in-px: 36;
-$font-size-h2-in-px: 26;
-$font-size-h3-in-px: 22;
-$font-size-h4-in-px: 20;
-$font-size-h5-in-px: 18;
-$font-size-h6-in-px: 16;
-$font-size-caption-in-px: 13;
-$box-font-scaling-factor: 0.85;
+$color-arbitrary-a1: rgb(54, 107, 251); // Blue
+$color-arbitrary-a2: rgb(156, 39, 176); // Purple
+$color-arbitrary-a3: rgb(213, 0, 0);    // Red
 
-/*
- * Baseline grid
- */
-$blg-space-extra-small-in-px: 12;
-$blg-space-small-in-px: $blg-space-extra-small-in-px * 2;
-$blg-space-smallish-in-px: $blg-space-small-in-px * 1.5;
-$blg-space-medium-in-px: $blg-space-small-in-px * 2;
-$blg-space-large-in-px: $blg-space-small-in-px * 3;
-$blg-space-extra-large-in-px: $blg-space-small-in-px * 5;
+$color-arbitrary-background-b1: rgb(144, 202, 249); // Blue
+$color-arbitrary-background-b2: rgb(197, 225, 165); // Green
+$color-arbitrary-background-b3: rgb(255, 183, 77);  // Orange
+$color-arbitrary-background-b4: rgb(255, 241, 118); // Yellow
+$color-arbitrary-background-b5: rgb(158, 134, 201); // Purple
+$color-arbitrary-background-b6: rgb(229, 115, 115); // Red
+$color-arbitrary-background-b7: rgb(244, 143, 177); // Pink
+$color-arbitrary-background-b8: rgb(230, 230, 230); // Grey
+
+$box-font-scaling-factor: 0.85;
 
 // Widths
 $max-width-grid-listing-item: 400;
@@ -59,7 +49,7 @@ $max-width-block-link: 600;
 $max-width-image-link: $max-width-block-link;
 $med-width-grid-listing-item: 263;
 $min-width-grid-listing-item: 245;
-$grid-listing-spacing-measure: $blg-space-smallish-in-px;
+$grid-listing-spacing-measure: 36;
 
 $max-site-width: 1114;
 $max-site-width-in-rem: get-rem-from-px($max-site-width);
@@ -68,17 +58,26 @@ $viewport-width-when-site-hits-max-width-in-rem: get-rem-from-px($viewport-width
 
 // Heights
 $audio-player-height: 90;
-// TODO: link name with blg spacing for 72px somehow?
-$audio-player-height--js: 72;
-$content-header-image-height--narrow-screen: 264;
-$content-header-image-height--medium-width-screen: 288;
-$content-header-image-height--wide-screen: 336;
-$content-header-image-credit-height: 48;
+$audio-player-height--js: $blg-measure-large-in-px;
+$content-header-image-height--narrow-screen: $blg-measure-small-in-px * 11;
+$content-header-image-height--medium-width-screen: $blg-measure-small-in-px * 12;
+$content-header-image-height--wide-screen: $blg-measure-small-in-px * 14;
+$content-header-image-credit-height: $blg-measure-medium-in-px;
 $carousel-height: 400;
+
+$highlightHeightWithJs: ($blg-measure-extra-small-in-px / 12) * 106;
 
 $button-height-extra-small: 24;
 $button-height-small: 36;
-$button-height-regular: 48;
+$button-height-regular: $blg-measure-medium-in-px;
+
+$site-header-max-height: $blg-measure-count-4-in-px;
+$site-header-title-height-in-px: $site-header-max-height - 1;
+$site-header-logo-height-in-px: 70;
+// 40px when medium measure is 48px, scale proportionally to that when different
+$secondary-nav-height: $blg-measure-medium-in-px * 40 / 48;
+// 54px when medium measure is 48px, scale proportionally to that when different
+$nav-primary-height: $blg-measure-medium-in-px * 54 / 48;
 
 // Widths
 $content-header-download-width: 20;
@@ -88,14 +87,9 @@ $content-header-profile-width: 48;
 $button-speech-bubble-width-in-px: 42;
 
 // Spacing
-$teaser-spacing-top: 23;
-// 23 not 24 to account for a 1px border (Because of the way the elements are nested, border-box doesn't help us here.)
-$teaser-spacing-bottom: 23;
 $teaser-spacing-left: 16;
-// TODO: link name with blg spacing for 72px somehow?
-$listing-list-spacing: 72;
 
-$content-header-padding: 24;
+$content-header-padding-horizontal: 24;
 
 // TODO: rename these
 $content-header-side-padding: 6; //vw

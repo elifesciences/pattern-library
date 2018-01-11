@@ -1,11 +1,13 @@
 @import "../../definitions";
 
+$border-width: 1;
+$blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-small-in-px, $border-width * 1);
+
 .content-header {
   @include wrapper(false);
   color: $color-text;
   padding-top: 0;
-  // $content-header-padding - 1 to account for the 1px border
-  @include padding($content-header-padding - 1, "bottom");
+  @include padding($blg-measure-reduced-by-border, "bottom");
   position: relative;
   text-align: center;
 
@@ -14,10 +16,10 @@
     padding-bottom: 0;
 
     &:after {
-      border-bottom: 1px solid $color-text-dividers;
+      border-bottom: #{$border-width}px solid $color-text-dividers;
       content: "";
       display: block;
-      @include padding($content-header-padding - 1, "top");
+      @include padding($blg-measure-reduced-by-border, "top");
       width: 100%;
     }
 
@@ -50,7 +52,7 @@
   }
 
   .content-header__body {
-    height: #{$content-header-padding * 5}px;
+    height: #{$blg-measure-extra-large-in-px}px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -64,41 +66,42 @@
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      height: #{$content-header-padding * 7}px;
+      height: #{$blg-measure-extra-extra-large-in-px}px;
     }
   }
 }
 
 .content-header__body {
-  @include margin($content-header-padding * 2, "top");
-  @include margin($content-header-padding, "bottom");
+  @include blg-spacing("top", "medium", "margin");
+  @include blg-spacing("bottom", "small", "margin");
 
   .content-header--header & {
-    @include margin($content-header-padding * 1.5 + 11 * 2.1818181818, "top"); // 11 * 2.1818181818 is the height of the subject line
+    @include blg-spacing("top", "mediumish", "margin");
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include margin($content-header-padding * 2 + 11 * 2.1818181818, "top");
+      @include blg-spacing("top", "large", "margin");
     }
   }
 }
 
 .content-header__title {
-  @include font-size-and-vertical-height(36, 48);
-  @include margin(0, "top");
-  @include margin(24, "bottom");
+  @include font-size-and-vertical-height($font-size-h1-in-px, $blg-measure-medium-in-px);
+  margin-top: 0;
+  @include blg-spacing("bottom", "small", "margin");
 
+  // TODO: work out how to use title-size mixin to set these - throughout this pattern
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include font-size-and-vertical-height(41, 48);
+    @include font-size-and-vertical-height(41, $blg-measure-medium-in-px);
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    @include font-size-and-vertical-height(46, 72);
+    @include font-size-and-vertical-height(46, $blg-measure-large-in-px);
   }
 
   .content-header--header &,
   .content-header--read-more & {
-    @include font-size-and-vertical-height(29, 36);
+    @include font-size-and-vertical-height(29, $blg-measure-smallish-in-px);
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include font-size-and-vertical-height(36, 48);
+      @include font-size-and-vertical-height($font-size-h1-in-px, $blg-measure-medium-in-px);
     }
   }
 }
@@ -111,16 +114,11 @@
 .content-header--image {
 
   .content-header__body {
-    @include margin($content-header-padding * 2, "top");
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include margin($content-header-padding * 3, "top");
-    }
-
+    @include blg-margin-top--medium-to-large();
   }
 
   .content-header__title {
-    @include font-size-and-vertical-height(41, 48);
+    @include font-size-and-vertical-height(41, $blg-measure-medium-in-px);
     margin-bottom: 0;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -128,12 +126,12 @@
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      @include font-size-and-vertical-height(58, 72);
+      @include font-size-and-vertical-height(58, $blg-measure-large-in-px);
     }
   }
 
   .content-header__title--long {
-    @include font-size(36);
+    @include font-size($font-size-h1-in-px);
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include font-size(41);
@@ -186,7 +184,7 @@
 }
 
 .content-header__profile_wrapper {
-  @include padding($content-header-padding/2 0);
+  @include padding($blg-measure-extra-small-in-px 0);
   position: absolute;
   left: 0;
   right: 0;
@@ -239,13 +237,14 @@
       .content-header__profile_data {
         color: $color-text--reverse;
         font-family: $font-secondary;
-        @include font-size-and-vertical-height(14);
+        @include font-size-and-vertical-height($font-size-small-in-px);
       }
     }
   }
 
   .content-header__profile_wrapper {
-    @include padding($content-header-padding 0 0);
+    padding: 0;
+    @include blg-spacing("top", "small");
   }
 
 }
@@ -287,7 +286,7 @@
 .content-header__subject_list_item {
   @include label-subject-typeg();
   display: inline;
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
   list-style-type: none;
   padding: 0;
 
@@ -351,7 +350,7 @@
 
   .content-header--image & {
     left: 12px;
-    top: #{$blg-space-extra-small-in-px}px;
+    top: #{$blg-measure-extra-small-in-px}px;
   }
 
 }
@@ -382,7 +381,7 @@ $iconlist: cc oa;
   float: right;
   position: absolute;
   right: 7%;
-  top: 24px;
+  top: #{$blg-measure-small-in-px}px;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     right: 14%;
@@ -403,7 +402,7 @@ $iconlist: cc oa;
 
   .content-header--image & {
     right: 12px;
-    top: #{$blg-space-extra-small-in-px}px;
+    top: #{$blg-measure-extra-small-in-px}px;
   }
 
 }
@@ -419,7 +418,7 @@ $iconlist: cc oa;
 
 .content-header__impact-statement {
   @include subtitle-typeg();
-  @include margin($content-header-padding, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
   max-width: 100%;
 
   a {
@@ -436,7 +435,7 @@ $iconlist: cc oa;
   }
 
   .content-header--image & {
-    @include margin(0, "bottom");
+    margin-bottom: 0;
     display: none;
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       display: block;
@@ -460,7 +459,7 @@ $iconlist: cc oa;
 }
 
 .content-header__authors {
-  @include margin($content-header-padding, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     .content-header__institution_list {
       @include visuallyhidden();
@@ -525,8 +524,7 @@ li.content-header__author_list_item--last .content-header__author:after {
 }
 
 .content-header__institution_list {
-  margin: 0;
-  padding: 0;
+  @include nospace();
 }
 
 .content-header__institution_list_item {
@@ -610,7 +608,7 @@ li.content-header__institution_list_item--last .content-header__institution:afte
 .content-header__meta {
   .content-header--image & {
     position: absolute;
-    bottom: #{$content-header-padding / 2}px;
+    bottom: #{$blg-measure-extra-small-in-px}px;
     left: 0;
     right: 0;
   }
@@ -633,7 +631,7 @@ li.content-header__institution_list_item--last .content-header__institution:afte
 .content-header__image-credit {
   color: $color-text-secondary;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height($font-size-extra-small-in-px);
   @include blg-spacing("top", "extra-small");
   @include blg-spacing("bottom", "extra-small");
   text-align: right;
@@ -655,6 +653,6 @@ li.content-header__institution_list_item--last .content-header__institution:afte
   opacity: 0.4;
   position: absolute;
   bottom: 0;
-  @include blg-spacing("right", "extra-small");
+  @include padding(12, "right");
   width: 100%;
 }

@@ -1,5 +1,5 @@
 @import "../../definitions";
-@import "../../layout/grid";
+@import "../../grid";
 
 .error-wrapper {
   @include flexbox-centre-x-and-y();

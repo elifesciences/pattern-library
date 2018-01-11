@@ -3,6 +3,8 @@
 $showTwoAtWidth: #{get-rem-from-px($bkpt-site--wide)}rem;
 $showThreeAtWidth: #{get-rem-from-px($bkpt-site--x-wide)}rem;
 $totalHighlightsSpacing: 6;
+$border-width: 1;
+$blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-extra-small-in-px, $border-width * 1);
 
 /* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
  *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
@@ -57,8 +59,8 @@ $totalHighlightsSpacing: 6;
 }
 
 div.listing-list__content {
-  @include margin($listing-list-spacing, "top");
-  @include margin($listing-list-spacing, "bottom");
+  @include blg-spacing("bottom", "large", "margin");
+  @include blg-spacing("top", "large", "margin");
   @include padding($content-header-side-padding--extra-wide, "left");
   @include padding($content-header-side-padding--extra-wide, "right");
   display: none;
@@ -83,13 +85,13 @@ div.listing-list__content {
   box-sizing: content-box;
   @include constrain-width(140, "max");
   margin: 0 auto;
-  @include padding($blg-space-medium-in-px - 1, "top");
+  @include padding($blg-measure-medium-in-px - 1, "top");
   padding-right: 0;
   @include blg-spacing("bottom", "medium");
   padding-left: 0;
 
   &:after {
-    border-bottom: 1px solid $color-text-dividers;
+    border-bottom: #{$border-width}px solid $color-text-dividers;
     content: "";
     display: block;
     width: 100%;
@@ -123,7 +125,7 @@ div.listing-list__content {
   @include margin(unquote("0 -#{$totalHighlightsSpacing / 2}"));
 
   .listing-list__item {
-    border: 1px solid #ccc;
+    border: #{$border-width}px solid #ccc;
     @include margin(3, "left");
     @include margin(3, "right");
 
@@ -159,6 +161,7 @@ div.listing-list__content {
       @include blg-spacing("top", "extra-small");
       @include padding(12, "left");
       @include padding(12, "right");
+      @include height($highlightHeightWithJs);
 
       vertical-align: top;
 
@@ -184,7 +187,7 @@ div.listing-list__content {
     }
 
     .teaser__secondary_info {
-      @include padding(11, "bottom");
+      @include padding($blg-measure-reduced-by-border, "bottom");
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

@@ -15,7 +15,7 @@
   display: list-item;
   list-style-type: disc;
   @include margin(16, "left");
-  @include margin(0, "bottom");
+  margin-bottom: 0;
 }
 
 .archive-nav-link__sub_link {

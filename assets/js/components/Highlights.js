@@ -133,11 +133,6 @@ module.exports = class Highlights {
     // Render view.
     this.renderCurrent();
 
-    // Equalise heights.
-    [].forEach.call(this.originalSlideWrappers, (slideWrapper) => {
-      slideWrapper.style.height = '106px';
-    });
-
   }
 
   renderCurrent() {

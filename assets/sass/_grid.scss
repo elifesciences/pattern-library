@@ -1,11 +1,10 @@
-@import "../definitions";
+@import "definitions";
 
 // IN THIS FILE:
 //  - Baseline grid
 //  - Horizontal grid
 
 // Baseline grid
-// TODO: BLG: Move all blg vars & mixins into this file
 .blg-pad-top-extra-small {
   @include blg-spacing("top", "extra-small");
 }
@@ -76,80 +75,6 @@
 
 .blg-margin-bottom-large {
   @include blg-spacing("bottom", "large", "margin");
-}
-
-@mixin blg-pad-top--small-to-medium {
-
-  @include blg-spacing("top", "small");
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include blg-spacing("top", "medium");
-  }
-
-}
-
-@mixin blg-pad-bottom--small-to-medium {
-
-  @include blg-spacing("bottom", "small");
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include blg-spacing("bottom", "medium");
-  }
-
-}
-
-@mixin blg-pad-top--large-to-extra-large {
-
-  @include blg-spacing("top", "large");
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include blg-spacing("top", "extra-large");
-  }
-
-}
-
-@mixin blg-pad-bottom--large-to-extra-large {
-
-  @include blg-spacing("bottom", "large");
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include blg-spacing("bottom", "extra-large");
-  }
-
-}
-
-@mixin blg-pad-vertical-small-to-medium {
-  @include blg-pad-top--small-to-medium();
-  @include blg-pad-bottom--small-to-medium();
-}
-
-@mixin blg-pad-vertical-large-to-extra-large {
-  @include blg-pad-top--large-to-extra-large();
-  @include blg-pad-bottom--large-to-extra-large();
-}
-
-@mixin blg-margin-bottom--medium-to-large {
-
-  @include blg-spacing("bottom", "medium", "margin");
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include blg-spacing("bottom", "large", "margin");
-  }
-
-}
-
-@mixin blg-margin-bottom--small-to-medium {
-
-  @include blg-spacing("bottom", "small", "margin");
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include blg-spacing("bottom", "medium", "margin");
-  }
-
-}
-
-@mixin blg-column-container() {
-  @include blg-margin-bottom--medium-to-large();
 }
 
 .grid-column {

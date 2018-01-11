@@ -4,7 +4,7 @@
   @include section-title-typeg();
   @include nospace();
   letter-spacing: 0.5px;
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height($font-size-small-in-px);
   margin-bottom: 0;
   text-transform: uppercase;
 }

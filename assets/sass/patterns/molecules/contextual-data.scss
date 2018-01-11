@@ -1,13 +1,17 @@
 @import "../../definitions";
 
+$border-width: 1;
+$blg-measure-reduced-by-border: get-blg-measure-minus-offset($blg-measure-extra-small-in-px, $border-width * 1);
+
 .contextual-data {
+  border-bottom: #{$border-width}px solid $color-text-dividers;
   @include label-content-typeg($color-text-secondary, false);
 }
 
 .contextual-data__list {
-  border-bottom: 1px solid $color-text-dividers;
+  border-bottom: #{$border-width}px solid $color-text-dividers;
   margin: 0;
-  @include padding(11 0);
+  @include padding($blg-measure-reduced-by-border 0);
   text-align: center;
 }
 
@@ -28,7 +32,7 @@
 .contextual-data__cite_wrapper {
   border-bottom: 1px solid $color-text-dividers;
   @include blg-spacing("top", "extra-small");
-  @include padding($blg-space-extra-small-in-px - 1, "bottom");
+  @include padding($blg-measure-extra-small-in-px - 1, "bottom");
   padding-left: 0;
   padding-right: 0;
   text-align: center;
@@ -59,7 +63,7 @@
     border-bottom: none;
     float: right;
     margin-left: auto;
-    @include padding(11 0);
+    @include padding($blg-measure-reduced-by-border 0);
     text-align: start;
   }
 

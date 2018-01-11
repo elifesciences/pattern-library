@@ -13,10 +13,8 @@
 }
 
 .email-cta__header_text {
-  @include h2-typeg();
-  color: $color-text;
-  @include font-size-and-vertical-height(20);
-  @include nospace();
+  @include content-header-simple-title-typeg();
+  @include content-header-simple-spacing();
 }
 
 .email-cta__sub_header {

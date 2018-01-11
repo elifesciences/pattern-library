@@ -4,5 +4,5 @@
   @include lead-para-typeg();
   border-bottom: 1px solid $color-text-dividers;
   @include blg-spacing("bottom", "extra-small");
-  @include padding($blg-space-extra-small-in-px - 1, "top");
+  @include padding($blg-measure-extra-small-in-px - 1, "top");
 }

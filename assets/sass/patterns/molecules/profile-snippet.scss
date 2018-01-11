@@ -38,9 +38,7 @@
 }
 
 .profile-snippet__name {
-  font-family: $font-secondary;
-  @include font-size-and-vertical-height(18);
-  font-weight: bold;
+  @include profile-name-typeg();
 }
 
 .profile-snippet__title {
@@ -52,7 +50,7 @@
 
 .profile-snippet__contact_details {
   font-family: $font-primary;
-  @include font-size-and-vertical-height(14, 18.2);
+  @include font-size-and-vertical-height($font-size-small-in-px, 18.2);
   font-style: italic;
   font-weight: 400;
   @include padding(40, "bottom");

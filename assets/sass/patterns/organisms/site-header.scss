@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .site-header {
-  max-height: 96px;
+  @include constrain-height($site-header-max-height, "max");
   min-width: #{get-rem-from-px(275)}rem;
   position: relative;
   z-index: 20;
@@ -70,14 +70,14 @@
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-
   .site-header__title {
     border-right: 1px solid $color-text-dividers;
     float: left;
-    @include height(95);
+    @include height($site-header-title-height-in-px);
     margin-right: 10px;
     @include margin(10, "right");
-    @include padding(14, "top");
+    $title-top-padding: ($site-header-title-height-in-px - $site-header-logo-height-in-px) / 2;
+    @include padding($title-top-padding, "top");
     @include padding(20, "right");
     position: relative;
     width: 170px;
@@ -88,7 +88,7 @@
     background-color: #fff;
     content: "";
     display: block;
-    height: 95px;
+    @include height($site-header-title-height-in-px);
     left: 0;
     position: absolute;
     top: 0;
@@ -99,7 +99,7 @@
     background: none;
     display: block;
     float: right;
-    height: 70px;
+    height: #{$site-header-logo-height-in-px}px;
     margin: 0;
     position: relative;
     width: 136px;
@@ -109,6 +109,11 @@
   .site-header__logo_link_image {
     display: block;
   }
+
+  .site-header__navigation {
+    @include height($site-header-max-height - 1);
+  }
+
 }
 
 .overlay {

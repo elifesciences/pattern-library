@@ -1,5 +1,13 @@
 @import "../../definitions";
 
+@function calcTopForControl($heightOfControl) {
+  //                  line-height of above heading   + top padding of above heading   + bottom padding of above heading
+  $topOfHighlightBox: $blg-measure-small-in-px       + $blg-measure-extra-small-in-px + $blg-measure-extra-small-in-px;
+  $verticalCentreOfHighlightsBox: $highlightHeightWithJs / 2;
+  $offsetAboveVerticalCentreOfHighlightsBox: $heightOfControl / 2;
+  @return $topOfHighlightBox + $verticalCentreOfHighlightsBox - $offsetAboveVerticalCentreOfHighlightsBox;
+}
+
 .highlights__controls {
   display: none;
 }
@@ -20,15 +28,17 @@
   }
 
   .highlights__control {
-    @include height($blg-space-small-in-px);
+    $heightOfControl: $blg-measure-small-in-px;
+
     background-color: transparent;
     border: none;
     box-sizing: content-box;
-    @include font-size-and-vertical-height($font-size-base-in-px, 22.4);
+    @include font-size-and-vertical-height($font-size-base-in-px, $heightOfControl);
+    padding-bottom: 0;
+    padding-top: 0;
     position: absolute;
     text-align: center;
-    // heading block height + (box height- icon height) / 2
-    top: 48px + ((106px - 24px) / 2);
+    top: #{calcTopForControl($heightOfControl)}px;
     @include width(24);
   }
 
