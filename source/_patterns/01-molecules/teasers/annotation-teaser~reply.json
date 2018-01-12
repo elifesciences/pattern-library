@@ -1,0 +1,21 @@
+{
+  "document": "CRIg, a tissue-resident macrophage specific immune checkpoint molecule, promotes immunological tolerance in NOD mice, via a dual role in effector and regulatory T cells",
+
+  "content": "What was the Mg<sup>2+</sup> concentration?",
+
+  "isReply": true,
+
+  "inContextUri": "#",
+
+  "meta": {
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 10,
+        "month": "Sep",
+        "year": 2015
+      },
+      "forMachine": "2015-09-10"
+    }
+  }
+
+}

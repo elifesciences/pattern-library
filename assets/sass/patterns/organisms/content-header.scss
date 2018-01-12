@@ -275,9 +275,7 @@
     color: inherit;
   }
 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @include truncate-with-ellipsis();
 
   &:before {
     color: $color-text-secondary;

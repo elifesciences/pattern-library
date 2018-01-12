@@ -13,6 +13,7 @@ if (window.localStorage && document.querySelector &&
 
   // import modules into the list of Components.
   Components.AboutProfiles = require('./components/AboutProfiles');
+  Components.AnnotationTeaser = require('./components/AnnotationTeaser');
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.ArticleSection = require('./components/ArticleSection');
   Components.AssetNavigation = require('./components/AssetNavigation');
