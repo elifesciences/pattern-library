@@ -37,9 +37,7 @@
   }
 
   @include padding($content-header-padding/2 0);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @include truncate-with-ellipsis();
 
   &:before {
     color: $color-text-secondary;

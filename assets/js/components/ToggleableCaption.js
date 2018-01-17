@@ -46,8 +46,7 @@ module.exports = class ToggleableCaption {
     fullChildren.push(seeLessButton);
 
     let truncatedChildren = fullChildren;
-
-    if (truncatedChildren[0].indexOf('<p>') === 0) {
+    if (this.$caption.firstElementChild.nodeName.toUpperCase() === 'P') {
       let truncatedChild = truncatedChildren[0];
       try {
         truncatedChild = clipper(truncatedChildren[0], 200, {

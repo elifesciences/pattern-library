@@ -1,0 +1,21 @@
+{
+  "document": "CRIg, a tissue-resident macrophage specific immune checkpoint molecule, promotes immunological tolerance in NOD mice, via a dual role in effector and regulatory T cells",
+
+  "highlight": "&lt;math xmlns=\"http://www.w3.org/1998/Math/MathML\"&gt;&lt;mlongdiv&gt;&lt;mn&gt; 12 &lt;/mn&gt;&lt;mn&gt; 16.5 &lt;/mn&gt;  &lt;mn&gt; 198 &lt;/mn&gt;  &lt;msgroup position='1' shift='-1'&gt;  &lt;msgroup&gt;  &lt;mn&gt; 12&lt;/mn&gt;  &lt;msline length='2'/&gt;  &lt;/msgroup&gt;  &lt;msgroup&gt;  &lt;mn&gt; 78&lt;/mn&gt;  &lt;mn&gt; 72&lt;/mn&gt;  &lt;msline length='2'/&gt;  &lt;mn&gt; 6.0&lt;/mn&gt;  &lt;mn&gt; 6.0&lt;/mn&gt;  &lt;/msgroup&gt;  &lt;msgroup position='-1'&gt; &lt;!-- extra shift to move to the right of the \".\" --&gt;  &lt;msline length='3'/&gt;  &lt;mn&gt; 0&lt;/mn&gt;  &lt;/msgroup&gt;  &lt;/msgroup&gt;  &lt;/mlongdiv&gt;  &lt;/math&gt;",
+
+  "content": "Long division ftw.",
+
+  "inContextUri": "#",
+
+  "meta": {
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 10,
+        "month": "Sep",
+        "year": 2015
+      },
+      "forMachine": "2015-09-10"
+    }
+  }
+
+}

@@ -5,7 +5,7 @@
   padding-left: 0;
 
   .list-heading + & {
-    margin-top: 1em;
+    @include blg-spacing("top", "extra-small", "margin");
   }
 }
 

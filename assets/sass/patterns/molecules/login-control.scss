@@ -7,11 +7,8 @@ $menu-max-width-in-px: 200;
 }
 
 .login-control__non_js_control_link {
-  display: block;
   @include non_js_control_link();
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  @include truncate-with-ellipsis();
   max-width: 29vw;
 
   .js & {
@@ -63,9 +60,7 @@ $menu-max-width-in-px: 200;
 }
 
 .login-control__display_name {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  @include truncate-with-ellipsis();
   @include constrain-width($menu-max-width-in-px, "max");
   @include font-size-and-vertical-height($font-size-base-in-px);
 

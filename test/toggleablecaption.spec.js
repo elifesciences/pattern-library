@@ -15,12 +15,17 @@ describe('A ToggleableCaption Component', function () {
   });
 
   it('truncates the caption', function () {
+    expect(toggleableCaption.$caption.querySelectorAll('p')).to.have.lengthOf(1);
+    expect(toggleableCaption.$caption.querySelector('p:nth-child(1)').innerText).to.not.contains('END1');
     expect(toggleableCaption.$caption.querySelector('.caption-text__toggle--see-more')).to.exist;
     expect(toggleableCaption.$caption.querySelector('.caption-text__toggle--see-less')).to.not.exist;
   });
 
   it('collapses the caption', function () {
     toggleableCaption.toggleCaption();
+    expect(toggleableCaption.$caption.querySelectorAll('p')).to.have.lengthOf(2);
+    expect(toggleableCaption.$caption.querySelector('p:nth-child(1)').innerText).to.contains('END1');
+    expect(toggleableCaption.$caption.querySelector('p:nth-child(2)').innerText).to.contains('END2');
     expect(toggleableCaption.$caption.querySelector('.caption-text__toggle--see-more')).to.not.exist;
     expect(toggleableCaption.$caption.querySelector('.caption-text__toggle--see-less')).to.exist;
   });

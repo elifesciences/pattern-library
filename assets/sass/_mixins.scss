@@ -341,22 +341,6 @@
   color: $color-text-secondary;
 }
 
-@mixin teaser-context-label-list-style {
-  @include label-content-typeg();
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-@mixin teaser-context-label-list-item-style {
-  display: inline;
-  list-style-type: none;
-  padding: 0;
-}
-
 @mixin teaser-header-text-style() {
   @include listing-main-art-title-typeg();
   @include blg-spacing("top", "extra-small");
@@ -459,4 +443,11 @@
   &:hover {
     text-decoration: underline;
   }
+}
+
+@mixin truncate-with-ellipsis() {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
