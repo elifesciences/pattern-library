@@ -2,9 +2,15 @@
 
   {{#metricsData}}
     <ul class="contextual-data__list">
+
       {{#data}}
         <li class="contextual-data__item">{{{text}}}</li>
       {{/data}}
+
+      {{#hypothesisOpener}}
+        <li class="contextual-data__item"><span class="contextual-data__item__hypothesis_opener" data-hypothesis-trigger>Annotations</span> {{> molecules-hypothesis-opener}}</li>
+      {{/hypothesisOpener}}
+
     </ul>
   {{/metricsData}}
 

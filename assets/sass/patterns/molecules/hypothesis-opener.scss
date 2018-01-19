@@ -4,7 +4,11 @@
 
   display: none;
 
-  .js & {
+  .js .contextual-data__item > & {
+    display: inline-block;
+  }
+
+  .js :not(.contextual-data__item) > & {
 
     display: block;
     @include blg-spacing("top", "small");

@@ -12,18 +12,20 @@ module.exports = class HypothesisOpener {
     this.window = _window;
     this.doc = doc;
 
-    this.isSingleton = true;
-
     this.$elm.dataset.hypothesisTrigger = '';
+    this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
 
-    this.setInitialDomLocation(this.$elm);
+    if (!this.isContextualData) {
 
-    this.$ancestorSection = utils.closest(this.$elm, '.article-section');
-    if (this.$ancestorSection) {
-      if (utils.isCollapsibleArticleSection(this.$ancestorSection)) {
+      this.setInitialDomLocation(this.$elm);
+      this.$ancestorSection = utils.closest(this.$elm, '.article-section');
+
+      if (this.$ancestorSection && utils.isCollapsibleArticleSection(this.$ancestorSection)) {
         this.setupSectionHandlers($elm, this.$ancestorSection, this.window);
       }
+    }
 
+    if (this.$ancestorSection || this.isContextualData) {
       this.hookUpDataProvider(this.$elm);
     }
 
@@ -44,7 +46,7 @@ module.exports = class HypothesisOpener {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         try {
-          HypothesisOpener.updateVisibleCount(mutation.addedNodes[0].data, $elm);
+          this.updateVisibleCount(mutation.addedNodes[0].data, $elm);
         } catch (e) {
           console.error(e);
         }
@@ -55,23 +57,35 @@ module.exports = class HypothesisOpener {
 
   }
 
-  static updateVisibleCount(value, $elm) {
+  updateVisibleCount(value) {
     const count = parseInt(value);
     if (isNaN(count) || count < 0) {
       return;
     }
 
+    if (this.isContextualData) {
+      this.$elm.querySelector('[data-visible-annotation-count]').innerHTML = count;
+    } else {
+      this.updateVisibleCountArticleBody(count);
+    }
+
+  }
+
+  /**
+   * Updates the presentation of the annotation count within in the article body
+   * @param {Number} count The annotation count
+   */
+  updateVisibleCountArticleBody(count) {
     let visibleCount;
     if (count) {
       visibleCount = count;
-      $elm.querySelector('.button--speech-bubble').classList.add('button--speech-bubble-populated');
+      this.$elm.querySelector('.button--speech-bubble').classList.add('button--speech-bubble-populated');
     } else {
       visibleCount = '&#8220;';
-      $elm.querySelector('.button--speech-bubble').classList.remove('button--speech-bubble-populated');
+      this.$elm.querySelector('.button--speech-bubble').classList.remove('button--speech-bubble-populated');
     }
 
-    $elm.querySelector('[data-visible-annotation-count]').innerHTML = visibleCount;
-
+    this.$elm.querySelector('[data-visible-annotation-count]').innerHTML = visibleCount;
   }
 
   setInitialDomLocation($elm) {

@@ -1,6 +1,8 @@
 assets:
   css:
     - contextual-data.css
+    - $ref: hypothesis-opener.yaml#/assets/css
+
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -20,6 +22,10 @@ schema:
                 minLength: 1
             required:
               - text
+        hypothesisOpener:
+          $ref: hypothesis-opener.yaml#/schema
+          type: integer
+          minumum: 0
       required:
         - data
     citation:
