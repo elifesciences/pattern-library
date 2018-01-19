@@ -32,7 +32,7 @@ module.exports = class HypothesisOpener {
   }
 
   /**
-   * Establishes showing the number if annotation count > 0, otherwise the large double quote
+   * Establishes showing the number, or the large double quote in article body if the number is 0
    * @param $elm
    */
   hookUpDataProvider($elm) {
@@ -64,17 +64,13 @@ module.exports = class HypothesisOpener {
     }
 
     if (this.isContextualData) {
-      this.$elm.querySelector('[data-visible-annotation-count]').innerHTML = count;
+      this.$elm.querySelector('[data-visible-annotation-count]').innerHTML = '' + count;
     } else {
       this.updateVisibleCountArticleBody(count);
     }
 
   }
 
-  /**
-   * Updates the presentation of the annotation count within in the article body
-   * @param {Number} count The annotation count
-   */
   updateVisibleCountArticleBody(count) {
     let visibleCount;
     if (count) {
