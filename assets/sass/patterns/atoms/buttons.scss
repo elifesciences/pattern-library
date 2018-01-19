@@ -92,7 +92,7 @@
 .button--speech-bubble {
 
   &:not(.button--speech-bubble-small) {
-    @include speech-bubble("regular");
+    @include speech-bubble("default");
   }
 
   &.button--speech-bubble-small {

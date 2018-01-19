@@ -452,7 +452,7 @@
   white-space: nowrap;
 }
 
-@mixin speech-bubble--regular() {
+@mixin speech-bubble--default() {
   font-family: $font-primary;
   // line-height deliberately set smaller than font size because the default content is expected to be a double-quote
   // character, which sits high on the line. When the content is not the default, ensure to apply the
@@ -468,6 +468,13 @@
     left: 8px;
     top: 8px;
   }
+
+  &.button--speech-bubble-populated {
+    font-family: $font-secondary;
+    @include font-size-and-vertical-height(14, 36);
+    padding-top: 0;
+  }
+
 }
 
 @mixin speech-bubble--small() {
@@ -486,13 +493,13 @@
   }
 }
 
-@mixin speech-bubble($variant: "regular") {
+@mixin speech-bubble($variant: "default") {
 
   @include colors($color-primary);
   padding: 0;
 
-  @if $variant == "regular" {
-    @include speech-bubble--regular();
+  @if $variant == "default" {
+    @include speech-bubble--default();
   } @else if $variant == "small" {
     @include speech-bubble--small();
   }
@@ -516,12 +523,6 @@
     &:after {
       border-left-color: $color-primary-dark;
     }
-  }
-
-  &.button--speech-bubble-populated {
-    font-family: $font-secondary;
-    @include font-size-and-vertical-height(14, 36);
-    padding-top: 0;
   }
 
 }
