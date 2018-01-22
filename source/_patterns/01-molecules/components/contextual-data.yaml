@@ -24,8 +24,7 @@ schema:
               - text
         hypothesisOpener:
           $ref: hypothesis-opener.yaml#/schema
-      required:
-        - data
+      minProperties: 1
     citation:
       type: object
       properties:
