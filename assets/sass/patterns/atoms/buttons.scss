@@ -88,16 +88,3 @@
 
   cursor: not-allowed;
 }
-
-.button--speech-bubble {
-
-  &:not(.button--speech-bubble-small) {
-    @include speech-bubble("default");
-  }
-
-  &.button--speech-bubble-small {
-    @include speech-bubble("small");
-  }
-
-}
-
