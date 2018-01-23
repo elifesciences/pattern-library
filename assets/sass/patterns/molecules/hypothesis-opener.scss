@@ -14,3 +14,7 @@
   float: right;
   @include blg-spacing("bottom", "small", "margin");
 }
+
+[data-hypothesis-trigger] {
+  cursor: pointer;
+}
