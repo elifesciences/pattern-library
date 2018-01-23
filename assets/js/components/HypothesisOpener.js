@@ -15,11 +15,11 @@ module.exports = class HypothesisOpener {
     this.speechBubble = null;
 
     this.$elm.dataset.hypothesisTrigger = '';
+    this.speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
     this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
 
     if (!this.isContextualData) {
 
-      this.speechBubble = new SpeechBubble(this.$elm.querySelector('.speech-bubble'));
       this.setInitialDomLocation(this.$elm);
       this.$ancestorSection = utils.closest(this.$elm, '.article-section');
 
@@ -28,9 +28,22 @@ module.exports = class HypothesisOpener {
       }
     }
 
-    if (this.$ancestorSection || this.isContextualData) {
-      this.hookUpDataProvider(this.$elm);
+    if (this. $ancestorSection || this.isContextualData) {
+      this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
     }
+
+  }
+
+  findElementWithClass(className) {
+    if (this.$elm.querySelector(`.${className}`)) {
+      return this.$elm.querySelector(`.${className}`);
+    }
+
+    if (this.$elm.classList.contains(className)) {
+      return this.$elm;
+    }
+
+    return null;
 
   }
 
@@ -38,7 +51,7 @@ module.exports = class HypothesisOpener {
    * Establishes showing the number, or the large double quote in article body if the number is 0
    * @param $elm
    */
-  hookUpDataProvider($elm) {
+  hookUpDataProvider($elm, visibleCountSelector) {
 
     // Updated by the hypothesis client
     const $dataProvider = $elm.querySelector('[data-hypothesis-annotation-count]');
@@ -49,7 +62,7 @@ module.exports = class HypothesisOpener {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         try {
-          this.updateVisibleCount(mutation.addedNodes[0].data, $elm);
+          this.updateVisibleCount(mutation.addedNodes[0].data, visibleCountSelector, this.isContextualData);
         } catch (e) {
           console.error(e);
         }
@@ -60,30 +73,26 @@ module.exports = class HypothesisOpener {
 
   }
 
-  updateVisibleCount(value) {
+  updateVisibleCount(value, selector, isContextualData) {
     const count = parseInt(value);
     if (isNaN(count) || count < 0) {
       return;
     }
 
-    if (this.isContextualData) {
-      this.$elm.querySelector('[data-visible-annotation-count]').innerHTML = '' + count;
+    if (isContextualData) {
+      this.$elm.querySelector(selector).innerHTML = '' + count;
     } else {
-      this.updateVisibleCountArticleBody(count, this.speechBubble);
+      this.updateVisibleCountArticleBody(count, selector);
     }
 
   }
 
-  updateVisibleCountArticleBody(count, speechBubble) {
-    let visibleCount;
+  updateVisibleCountArticleBody(count, selector) {
     if (count) {
-      visibleCount = count;
-      speechBubble.removePlaceholder();
+      this.speechBubble.update(count, selector);
     } else {
-      speechBubble.showPlaceholder();
+      this.speechBubble.showPlaceholder(selector);
     }
-
-    this.$elm.querySelector('[data-visible-annotation-count]').innerHTML = visibleCount;
   }
 
   setInitialDomLocation($elm) {
