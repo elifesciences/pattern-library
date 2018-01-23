@@ -21,24 +21,9 @@ module.exports = class SpeechBubble {
   }
 
   showPlaceholder(replacementTargetSelector) {
-    // const $replacementTarget = this.$elm.querySelector(replacementTargetSelector) ||
-    //                            this.$elm.parentNode.querySelector(replacementTargetSelector) ||
-    //                            this.$elm;
     const $replacementTarget = this.$elm.querySelector(replacementTargetSelector) || this.$elm;
     $replacementTarget.innerHTML = this.placeholder;
     this.$elm.classList.add('speech-bubble--has-placeholder');
-  }
-
-  static findElement(selector, $root) {
-    const $child = $root.querySelector(selector);
-    if ($child) {
-      return $child;
-    }
-
-    if ($root === $root.parentNode.querySelector(selector)) {
-      return $root;
-    }
-
   }
 
 };
