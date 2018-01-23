@@ -20,10 +20,16 @@ module.exports = class SpeechBubble {
     this.$elm.innerHTML = this.$elm.innerHTML.replace(re, '');
   }
 
-  showPlaceholder(replacementTargetSelector) {
-    const $replacementTarget = this.$elm.querySelector(replacementTargetSelector) || this.$elm;
+  showPlaceholder(selector) {
+    const $replacementTarget = this.$elm.querySelector(selector) || this.$elm;
     $replacementTarget.innerHTML = this.placeholder;
     this.$elm.classList.add('speech-bubble--has-placeholder');
+  }
+
+  update(content, selector) {
+    this.removePlaceholder();
+    const $target = this.$elm.querySelector(selector) || this.$elm;
+    $target.innerHTML = content;
   }
 
 };
