@@ -43,6 +43,7 @@
 }
 
 .speech-bubble--small {
+  display: inline-block;
   @include font-size-and-vertical-height(11, 14);
   @include height(14);
   min-width: 1em;
