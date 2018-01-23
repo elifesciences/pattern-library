@@ -48,7 +48,7 @@ describe('A SpeechBubble Component', function () {
     });
 
     it('injects the speech bubble default contents into the correct location in the speech bubble contents', () => {
-      speechBubble.$elm.innerHTML = 'something something <span class="replace me">dark</span> side';
+      speechBubble.$elm.innerHTML = 'something something <span class="replace-me">dark</span> side';
       expect(speechBubble.$elm.innerHTML).not.to.include('“');
 
       speechBubble.showPlaceholder('.replace-me');

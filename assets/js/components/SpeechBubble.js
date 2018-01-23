@@ -21,9 +21,10 @@ module.exports = class SpeechBubble {
   }
 
   showPlaceholder(replacementTargetSelector) {
-    const $replacementTarget = this.$elm.querySelector(replacementTargetSelector) ||
-                               this.$elm.parentNode.querySelector(replacementTargetSelector) ||
-                               this.$elm;
+    // const $replacementTarget = this.$elm.querySelector(replacementTargetSelector) ||
+    //                            this.$elm.parentNode.querySelector(replacementTargetSelector) ||
+    //                            this.$elm;
+    const $replacementTarget = this.$elm.querySelector(replacementTargetSelector) || this.$elm;
     $replacementTarget.innerHTML = this.placeholder;
     this.$elm.classList.add('speech-bubble--has-placeholder');
   }
@@ -33,6 +34,11 @@ module.exports = class SpeechBubble {
     if ($child) {
       return $child;
     }
+
+    if ($root === $root.parentNode.querySelector(selector)) {
+      return $root;
+    }
+
   }
 
-}
+};
