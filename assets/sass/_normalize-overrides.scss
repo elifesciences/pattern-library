@@ -238,3 +238,7 @@ p {
     @include inline-image();
   }
 }
+
+[data-hypothesis-trigger] {
+  cursor: pointer;
+}
