@@ -5,12 +5,10 @@
       {"text": "<a href=\"#\">Views 149</a>"},
       {"text": "Cited 5"}
     ],
-    "hypothesisOpener": {
-      "button": {
-        "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>3</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>3</span> annotations on this page). </span>",
-        "classes": "button--speech-bubble button--speech-bubble-small",
-        "type": "button"
-      }
+    "annotationCount": {
+        "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>0</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
+        "isSmall": true,
+        "behaviour": "HypothesisOpener"
     }
   }
 

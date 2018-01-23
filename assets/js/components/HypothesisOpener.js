@@ -12,14 +12,15 @@ module.exports = class HypothesisOpener {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
-    this.speechBubble = null;
 
     this.$elm.dataset.hypothesisTrigger = '';
     this.speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
     this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
+    this.$elm.classList.add('hypothesis-opener');
 
     if (!this.isContextualData) {
 
+      this.$elm.classList.add('hypothesis-opener--article-body');
       this.setInitialDomLocation(this.$elm);
       this.$ancestorSection = utils.closest(this.$elm, '.article-section');
 

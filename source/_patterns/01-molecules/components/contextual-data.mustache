@@ -7,9 +7,9 @@
         <li class="contextual-data__item">{{{text}}}</li>
       {{/data}}
 
-      {{#hypothesisOpener}}
-        <li class="contextual-data__item"><span class="contextual-data__item__hypothesis_opener" data-hypothesis-trigger>Annotations</span> {{> molecules-hypothesis-opener}}</li>
-      {{/hypothesisOpener}}
+      {{#annotationCount}}
+        <li class="contextual-data__item" data-hypothesis-trigger><span class="contextual-data__item__hypothesis_opener">Annotations</span> {{> atoms-speech-bubble}}</li>
+      {{/annotationCount}}
 
     </ul>
   {{/metricsData}}

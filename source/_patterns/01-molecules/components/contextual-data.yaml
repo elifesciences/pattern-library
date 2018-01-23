@@ -1,7 +1,7 @@
 assets:
   css:
     - contextual-data.css
-    - $ref: hypothesis-opener.yaml#/assets/css
+    - $ref: ../../00-atoms/components/speech-bubble.yaml#/assets/css
 
   js: []
 schema:
@@ -22,8 +22,8 @@ schema:
                 minLength: 1
             required:
               - text
-        hypothesisOpener:
-          $ref: hypothesis-opener.yaml#/schema
+        annotationCount:
+          $ref: ../../00-atoms/components/speech-bubble.yaml#/schema
       minProperties: 1
     citation:
       type: object
