@@ -1,5 +1,6 @@
 'use strict';
 const utils = require('../libs/elife-utils')();
+const SpeechBubble = require('./SpeechBubble');
 
 module.exports = class HypothesisOpener {
 
@@ -11,12 +12,14 @@ module.exports = class HypothesisOpener {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+    this.speechBubble = null;
 
     this.$elm.dataset.hypothesisTrigger = '';
     this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
 
     if (!this.isContextualData) {
 
+      this.speechBubble = new SpeechBubble(this.$elm.querySelector('.speech-bubble'));
       this.setInitialDomLocation(this.$elm);
       this.$ancestorSection = utils.closest(this.$elm, '.article-section');
 
@@ -66,19 +69,18 @@ module.exports = class HypothesisOpener {
     if (this.isContextualData) {
       this.$elm.querySelector('[data-visible-annotation-count]').innerHTML = '' + count;
     } else {
-      this.updateVisibleCountArticleBody(count);
+      this.updateVisibleCountArticleBody(count, this.speechBubble);
     }
 
   }
 
-  updateVisibleCountArticleBody(count) {
+  updateVisibleCountArticleBody(count, speechBubble) {
     let visibleCount;
     if (count) {
       visibleCount = count;
-      this.$elm.querySelector('.button--speech-bubble').classList.add('button--speech-bubble-populated');
+      speechBubble.removePlaceholder();
     } else {
-      visibleCount = '&#8220;';
-      this.$elm.querySelector('.button--speech-bubble').classList.remove('button--speech-bubble-populated');
+      speechBubble.showPlaceholder();
     }
 
     this.$elm.querySelector('[data-visible-annotation-count]').innerHTML = visibleCount;
