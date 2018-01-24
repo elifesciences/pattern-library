@@ -13,6 +13,7 @@ module.exports = class HypothesisOpener {
     this.window = _window;
     this.doc = doc;
 
+    HypothesisOpener.applyStyleInitial(this.$elm);
     this.$elm.dataset.hypothesisTrigger = '';
     this.speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
     this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
@@ -20,7 +21,7 @@ module.exports = class HypothesisOpener {
 
     if (!this.isContextualData) {
 
-      this.$elm.classList.add('hypothesis-opener--article-body');
+      HypothesisOpener.applyStyleArticleBody(this.$elm);
       this.setInitialDomLocation(this.$elm);
       this.$ancestorSection = utils.closest(this.$elm, '.article-section');
 
@@ -33,6 +34,18 @@ module.exports = class HypothesisOpener {
       this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
     }
 
+  }
+
+  static applyStyleInitial($elm) {
+    $elm.style.display = 'inline-block';
+    $elm.style.cursor = 'pointer';
+
+  }
+
+  static applyStyleArticleBody($elm) {
+    $elm.style.display = 'block';
+    $elm.style.float = 'right';
+    $elm.style.marginBottom = '24px';
   }
 
   findElementWithClass(className) {
@@ -48,10 +61,6 @@ module.exports = class HypothesisOpener {
 
   }
 
-  /**
-   * Establishes showing the number, or the large double quote in article body if the number is 0
-   * @param $elm
-   */
   hookUpDataProvider($elm, visibleCountSelector) {
 
     // Updated by the hypothesis client
