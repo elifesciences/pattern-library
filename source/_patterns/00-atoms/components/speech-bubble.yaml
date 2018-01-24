@@ -1,7 +1,6 @@
 assets:
   css:
     - speech-bubble.css
-    - ../../../../assets/sass/patterns/molecules/hypothesis-opener.css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
