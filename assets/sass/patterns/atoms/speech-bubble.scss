@@ -1,6 +1,11 @@
 @import "../../definitions";
 
 .speech-bubble {
+
+  &[data-behaviour~="HypothesisOpener"] {
+    display: none;
+  }
+
   @include colors();
   border-radius: #{$border-radius}px;
   display: block;
