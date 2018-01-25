@@ -45,7 +45,7 @@ module.exports = class HypothesisOpener {
   static applyStyleArticleBody($elm) {
     $elm.style.display = 'block';
     $elm.style.float = 'right';
-    $elm.style.marginBottom = '24px';
+    $elm.style.marginBottom = '48px';
   }
 
   findElementWithClass(className) {
