@@ -17,6 +17,9 @@ schema:
       type: boolean
       enum:
         - true
+    behaviour:
+      type: string
+      minLength: 1
   required:
     - text
   anyOf:
