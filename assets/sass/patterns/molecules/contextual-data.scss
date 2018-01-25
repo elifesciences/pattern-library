@@ -11,18 +11,29 @@
   text-align: center;
 }
 
-.contextual-data__list_title {
+.contextual-data__item {
   display: inline-block;
   @include label-content-typeg($color-text-secondary);
   margin: 0;
-  padding: 0;
+  @include padding(0 5 0 0);
+
+  a {
+    color: inherit;
+    &:hover {
+      color: $color-primary;
+    }
+  }
 }
 
-.contextual-data__list_desc {
-  display: inline-block;
-  @include label-content-typeg($color-text-secondary, false);
-  margin: 0;
-  @include padding(0 5 0 0);
+.contextual-data__item__hypothesis_opener {
+  display: none;
+
+  .js & {
+    color: $color-primary;
+    display: inline-block;
+    cursor: pointer;
+  }
+
 }
 
 .contextual-data__cite_wrapper {
@@ -49,10 +60,6 @@
     border-bottom: none;
     display: inline-block;
     text-align: left;
-  }
-
-  .contextual-data__list_desc {
-    @include padding(0 10 0 0);
   }
 
   .contextual-data__cite_wrapper {

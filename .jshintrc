@@ -18,5 +18,16 @@
     "undef": true,
     "unused": true,
     "node": true,
-    "esnext": true
+    "esnext": true,
+    "globals": {
+        "after": false,
+        "afterEach": false,
+        "before": false,
+        "beforeEach": false,
+        "context": false,
+        "describe": false,
+        "it": false,
+        "xdescribe": false,
+        "xit": false
+    }
 }

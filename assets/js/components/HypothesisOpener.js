@@ -1,5 +1,6 @@
 'use strict';
 const utils = require('../libs/elife-utils')();
+const SpeechBubble = require('./SpeechBubble');
 
 module.exports = class HypothesisOpener {
 
@@ -12,28 +13,55 @@ module.exports = class HypothesisOpener {
     this.window = _window;
     this.doc = doc;
 
-    this.isSingleton = true;
-
+    HypothesisOpener.applyStyleInitial(this.$elm);
     this.$elm.dataset.hypothesisTrigger = '';
+    this.speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
+    this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
+    this.$elm.classList.add('hypothesis-opener');
 
-    this.setInitialDomLocation(this.$elm);
+    if (!this.isContextualData) {
 
-    this.$ancestorSection = utils.closest(this.$elm, '.article-section');
-    if (this.$ancestorSection) {
-      if (utils.isCollapsibleArticleSection(this.$ancestorSection)) {
+      HypothesisOpener.applyStyleArticleBody(this.$elm);
+      this.setInitialDomLocation(this.$elm);
+      this.$ancestorSection = utils.closest(this.$elm, '.article-section');
+
+      if (this.$ancestorSection && utils.isCollapsibleArticleSection(this.$ancestorSection)) {
         this.setupSectionHandlers($elm, this.$ancestorSection, this.window);
       }
+    }
 
-      this.hookUpDataProvider(this.$elm);
+    if (this. $ancestorSection || this.isContextualData) {
+      this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
     }
 
   }
 
-  /**
-   * Establishes showing the number if annotation count > 0, otherwise the large double quote
-   * @param $elm
-   */
-  hookUpDataProvider($elm) {
+  static applyStyleInitial($elm) {
+    $elm.style.display = 'inline-block';
+    $elm.style.cursor = 'pointer';
+
+  }
+
+  static applyStyleArticleBody($elm) {
+    $elm.style.display = 'block';
+    $elm.style.float = 'right';
+    $elm.style.marginBottom = '48px';
+  }
+
+  findElementWithClass(className) {
+    if (this.$elm.querySelector(`.${className}`)) {
+      return this.$elm.querySelector(`.${className}`);
+    }
+
+    if (this.$elm.classList.contains(className)) {
+      return this.$elm;
+    }
+
+    return null;
+
+  }
+
+  hookUpDataProvider($elm, visibleCountSelector) {
 
     // Updated by the hypothesis client
     const $dataProvider = $elm.querySelector('[data-hypothesis-annotation-count]');
@@ -44,7 +72,7 @@ module.exports = class HypothesisOpener {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         try {
-          HypothesisOpener.updateVisibleCount(mutation.addedNodes[0].data, $elm);
+          this.updateVisibleCount(mutation.addedNodes[0].data, visibleCountSelector, this.isContextualData);
         } catch (e) {
           console.error(e);
         }
@@ -55,23 +83,26 @@ module.exports = class HypothesisOpener {
 
   }
 
-  static updateVisibleCount(value, $elm) {
+  updateVisibleCount(value, selector, isContextualData) {
     const count = parseInt(value);
     if (isNaN(count) || count < 0) {
       return;
     }
 
-    let visibleCount;
-    if (count) {
-      visibleCount = count;
-      $elm.querySelector('.button--speech-bubble').classList.add('button--speech-bubble-populated');
+    if (isContextualData) {
+      this.$elm.querySelector(selector).innerHTML = '' + count;
     } else {
-      visibleCount = '&#8220;';
-      $elm.querySelector('.button--speech-bubble').classList.remove('button--speech-bubble-populated');
+      this.updateVisibleCountArticleBody(count, selector);
     }
 
-    $elm.querySelector('[data-visible-annotation-count]').innerHTML = visibleCount;
+  }
 
+  updateVisibleCountArticleBody(count, selector) {
+    if (count) {
+      this.speechBubble.update(count, selector);
+    } else {
+      this.speechBubble.showPlaceholder(selector);
+    }
   }
 
   setInitialDomLocation($elm) {
