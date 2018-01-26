@@ -15,20 +15,8 @@ module.exports = class FragmentHandler {
     this.window = _window;
     this.doc = doc;
     this.isSingleton = true;
-    this.window.addEventListener('readystatechange', this.onReadyStateChange.bind(this));
-    this.onReadyStateChange({});
-  }
 
-  onReadyStateChange(e) {
-    if (document.readyState !== 'loading') {
-      this.initialise(e);
-      this.window.removeEventListener('readystatechange', this.onReadyStateChange.bind(this));
-    }
-  }
-
-  initialise(e) {
-    this.handleSectionOpeningViaHash(e);
-    this.window.addEventListener('hashchange', this.handleSectionOpeningViaHash.bind(this));
+    this.window.addEventListener('load', this.handleSectionOpeningViaHash.bind(this));
   }
 
   /**
@@ -85,6 +73,13 @@ module.exports = class FragmentHandler {
     let idOfCollapsedSection = this.getIdOfCollapsedSection(hash, this.doc);
     if (!!idOfCollapsedSection) {
       this.doc.getElementById(idOfCollapsedSection).dispatchEvent(utils.eventCreator('expandsection', hash));
+    }
+
+    if (hash.indexOf('annotations:') === 0) {
+      const sections = [].slice.call(this.doc.querySelectorAll('.article-section--js'));
+      sections.forEach(($section) => {
+        $section.dispatchEvent(utils.eventCreator('expandsection'));
+      });
     }
   }
 };
