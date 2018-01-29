@@ -25,9 +25,6 @@ module.exports = class HypothesisOpener {
       this.setInitialDomLocation(this.$elm);
       this.$ancestorSection = utils.closest(this.$elm, '.article-section');
 
-      if (this.$ancestorSection && utils.isCollapsibleArticleSection(this.$ancestorSection)) {
-        this.setupSectionHandlers($elm, this.$ancestorSection, this.window);
-      }
     }
 
     if (this.$ancestorSection || this.isContextualData) {
@@ -140,19 +137,6 @@ module.exports = class HypothesisOpener {
     }
   }
 
-  setupSectionHandlers($elm, $section, window) {
-    this.lastKnownDisplayMode = HypothesisOpener.getCurrentDisplayMode(window);
-
-    $section.addEventListener('collapsesection', () => {
-      this.updateDomLocation($elm);
-    });
-    $section.addEventListener('expandsection', () => {
-      this.updateDomLocation($elm);
-    });
-
-    window.addEventListener('resize', utils.debounce(() => this.handleResize(), 50));
-  }
-
   static findInitialAnchorPoint($snippet) {
     const $abstract = $snippet.querySelector('#abstract');
     if ($abstract) {
@@ -164,39 +148,6 @@ module.exports = class HypothesisOpener {
            $snippet.querySelector('.article-section:last-child ol:last-child') ||
            $snippet.querySelector('.article-section ~ p:last-child') ||
            $snippet.querySelector('.article-section ~ ol:last-child');
-  }
-
-  updateDomLocation($elm) {
-
-    if (HypothesisOpener.getCurrentDisplayMode(this.window) === 'multiColumn') {
-
-      if (utils.isCollapsedArticleSection(this.$ancestorSection)) {
-        this.$ancestorSection.appendChild($elm);
-      } else {
-        this.$ancestorSection.querySelector('.article-section__body').appendChild($elm);
-      }
-
-    } else {
-      this.setInitialDomLocation($elm, this.doc);
-    }
-
-  }
-
-  static getCurrentDisplayMode(window) {
-    if (utils.isMultiColumnDisplay(window)) {
-      return 'multiColumn';
-    }
-
-    return 'singleColumn';
-  }
-
-  handleResize() {
-    const currentDisplayMode = HypothesisOpener.getCurrentDisplayMode(this.window);
-    if (currentDisplayMode !== this.lastKnownDisplayMode) {
-      this.updateDomLocation(this.$elm);
-      this.lastKnownDisplayMode = currentDisplayMode;
-    }
-
   }
 
 };
