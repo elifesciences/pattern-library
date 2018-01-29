@@ -27,10 +27,7 @@ module.exports = class HypothesisOpener {
 
     }
 
-    if (this.$ancestorSection || this.isContextualData) {
-      this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
-    }
-
+    this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
     this.setupSectionExpansion();
 
   }
