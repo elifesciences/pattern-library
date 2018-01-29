@@ -7,65 +7,9 @@ describe('A HypothesisOpener Component', function () {
   'use strict';
 
   let $opener;
-  let affordance;
 
   beforeEach(() => {
     $opener = document.querySelector('[data-behaviour="HypothesisOpener"]');
-  });
-
-  describe('the getCurrentDisplayMode() method', () => {
-
-    context('when the window is at least 900px wide', () => {
-
-      let windowMock;
-
-      before(() => {
-        windowMock = {};
-        windowMock.appendChild = () => {};
-        windowMock.matchMedia = function (mediaStatement) {
-          if (mediaStatement === '(min-width: 900px)') {
-            return {
-              matches: true
-            };
-          }
-
-          return {
-            matches: false
-          };
-        }
-      });
-
-      it('returns "multiColumn"', () => {
-        expect(HypothesisOpener.getCurrentDisplayMode(windowMock)).to.equal('multiColumn');
-      });
-
-    });
-
-    context('when the window is narrower than 900px', () => {
-
-      let windowMock;
-
-      before(() => {
-        windowMock = {};
-        windowMock.matchMedia = function (mediaStatement) {
-          if (mediaStatement === '(min-width: 900px)') {
-            return {
-              matches: false
-            };
-          }
-
-          return {
-            matches: true
-          };
-        }
-      });
-
-      it('returns "singleColumn"', () => {
-        expect(HypothesisOpener.getCurrentDisplayMode(windowMock)).to.equal('singleColumn');
-      });
-
-    });
-
   });
 
   describe('the static findInitialAnchorPoint() method', () => {

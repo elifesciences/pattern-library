@@ -14,42 +14,46 @@ module.exports = class HypothesisOpener {
     this.doc = doc;
 
     HypothesisOpener.applyStyleInitial(this.$elm);
+    this.$elm.classList.add('hypothesis-opener');
     this.$elm.dataset.hypothesisTrigger = '';
     this.speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
     this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
-    this.$elm.classList.add('hypothesis-opener');
 
     if (!this.isContextualData) {
-
       HypothesisOpener.applyStyleArticleBody(this.$elm);
       this.setInitialDomLocation(this.$elm);
       this.$ancestorSection = utils.closest(this.$elm, '.article-section');
+    }
 
-      if (this.$ancestorSection && utils.isCollapsibleArticleSection(this.$ancestorSection)) {
-        this.setupSectionHandlers($elm, this.$ancestorSection, this.window);
+    this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
+
+    this.containingArticleTogglableSections = this.doc.querySelectorAll('.article-section--js');
+    this.setupSectionExpansion(this.containingArticleTogglableSections);
+
+  }
+
+  setupSectionExpansion(sections) {
+    if (!(sections instanceof NodeList)) {
+      return;
+    }
+
+    this.$elm.addEventListener('click', () => {
+      this.expandAllArticleSections([].slice.call(sections));
+    });
+
+    if (this.isContextualData) {
+      const $prevEl = this.$elm.previousElementSibling;
+
+      // Ugh. Refactor this away when the right pattern construction for opening h client becomes apparent
+      if (!!$prevEl && $prevEl.classList.contains('contextual-data__item__hypothesis_opener')) {
+        $prevEl.addEventListener('click', () => {
+          this.expandAllArticleSections([].slice.call(sections));
+        });
       }
     }
-
-    if (this.$ancestorSection || this.isContextualData) {
-      this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
-    }
-
-    this.setupSectionExpansion();
-
   }
 
-  setupSectionExpansion() {
-    this.$elm.addEventListener('click', this.expandAllArticleSections.bind(this));
-    const $prevEl = this.$elm.previousElementSibling;
-
-    // Ugh. Refactor this away when the right pattern construction for opening h client becomes apparent
-    if ($prevEl.classList.contains('contextual-data__item__hypothesis_opener')) {
-      $prevEl.addEventListener('click', this.expandAllArticleSections.bind(this));
-    }
-  }
-
-  expandAllArticleSections() {
-    const sections = [].slice.call(this.doc.querySelectorAll('.article-section--js'));
+  expandAllArticleSections(sections) {
     sections.forEach(($section) => {
       $section.dispatchEvent(utils.eventCreator('expandsection'));
     });
@@ -140,19 +144,6 @@ module.exports = class HypothesisOpener {
     }
   }
 
-  setupSectionHandlers($elm, $section, window) {
-    this.lastKnownDisplayMode = HypothesisOpener.getCurrentDisplayMode(window);
-
-    $section.addEventListener('collapsesection', () => {
-      this.updateDomLocation($elm);
-    });
-    $section.addEventListener('expandsection', () => {
-      this.updateDomLocation($elm);
-    });
-
-    window.addEventListener('resize', utils.debounce(() => this.handleResize(), 50));
-  }
-
   static findInitialAnchorPoint($snippet) {
     const $abstract = $snippet.querySelector('#abstract');
     if ($abstract) {
@@ -164,39 +155,6 @@ module.exports = class HypothesisOpener {
            $snippet.querySelector('.article-section:last-child ol:last-child') ||
            $snippet.querySelector('.article-section ~ p:last-child') ||
            $snippet.querySelector('.article-section ~ ol:last-child');
-  }
-
-  updateDomLocation($elm) {
-
-    if (HypothesisOpener.getCurrentDisplayMode(this.window) === 'multiColumn') {
-
-      if (utils.isCollapsedArticleSection(this.$ancestorSection)) {
-        this.$ancestorSection.appendChild($elm);
-      } else {
-        this.$ancestorSection.querySelector('.article-section__body').appendChild($elm);
-      }
-
-    } else {
-      this.setInitialDomLocation($elm, this.doc);
-    }
-
-  }
-
-  static getCurrentDisplayMode(window) {
-    if (utils.isMultiColumnDisplay(window)) {
-      return 'multiColumn';
-    }
-
-    return 'singleColumn';
-  }
-
-  handleResize() {
-    const currentDisplayMode = HypothesisOpener.getCurrentDisplayMode(this.window);
-    if (currentDisplayMode !== this.lastKnownDisplayMode) {
-      this.updateDomLocation(this.$elm);
-      this.lastKnownDisplayMode = currentDisplayMode;
-    }
-
   }
 
 };
