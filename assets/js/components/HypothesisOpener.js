@@ -14,17 +14,15 @@ module.exports = class HypothesisOpener {
     this.doc = doc;
 
     HypothesisOpener.applyStyleInitial(this.$elm);
+    this.$elm.classList.add('hypothesis-opener');
     this.$elm.dataset.hypothesisTrigger = '';
     this.speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
     this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
-    this.$elm.classList.add('hypothesis-opener');
 
     if (!this.isContextualData) {
-
       HypothesisOpener.applyStyleArticleBody(this.$elm);
       this.setInitialDomLocation(this.$elm);
       this.$ancestorSection = utils.closest(this.$elm, '.article-section');
-
     }
 
     this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
