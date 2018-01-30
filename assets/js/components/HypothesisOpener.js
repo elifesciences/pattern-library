@@ -129,17 +129,9 @@ module.exports = class HypothesisOpener {
 
   setInitialDomLocation($elm) {
     try {
-      const $anchorPoint = HypothesisOpener.findInitialAnchorPoint(this.doc);
-      if ($anchorPoint) {
-        $anchorPoint.appendChild($elm);
-        return true;
-      }
-
-      return false;
-
+      (HypothesisOpener.findInitialAnchorPoint(this.doc)).appendChild($elm);
     } catch (e) {
       console.error(e);
-      return false;
     }
   }
 
@@ -150,10 +142,14 @@ module.exports = class HypothesisOpener {
     }
 
     // User-supplied content has unpredictable structure
-    return $snippet.querySelector('.article-section:last-child p:last-child') ||
-           $snippet.querySelector('.article-section:last-child ol:last-child') ||
-           $snippet.querySelector('.article-section ~ p:last-child') ||
-           $snippet.querySelector('.article-section ~ ol:last-child');
+    return $snippet.querySelector('.content-container .article-section:last-child p:last-child') ||
+           $snippet.querySelector('.content-container .article-section:last-child ol:last-child') ||
+           $snippet.querySelector('.content-container .article-section ~ p:last-child') ||
+           $snippet.querySelector('.content-container .article-section ~ ol:last-child') ||
+           $snippet.querySelector('.content-container .article-section ~ ul:last-child') ||
+           $snippet.querySelector('.content-container > p:last-child') ||
+           $snippet.querySelector('.content-container > ol:last-child') ||
+           $snippet.querySelector('.content-container > ul:last-child');
   }
 
 };
