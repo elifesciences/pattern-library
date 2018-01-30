@@ -3,7 +3,7 @@ const utils = require('../../assets/js/libs/elife-utils')();
 module.exports = () => {
   'use strict';
 
-  const $root = utils.buildElement('div', ['root']);
+  const $root = utils.buildElement('div', ['root', 'content-container']);
   const $abstract = utils.buildElement('div', [], '', $root);
   $abstract.id = 'abstract';
 
