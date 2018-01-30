@@ -4,7 +4,7 @@ const utils = require('../../assets/js/libs/elife-utils')();
 module.exports = () => {
   'use strict';
 
-  const $root = utils.buildElement('div', ['wrapper-content']);
+  const $root = utils.buildElement('div', ['wrapper-content', 'content-container']);
   const $gridItem = utils.buildElement('div', ['grid__item'],'',
                       utils.buildElement('div', ['grid'], '', $root));
 
