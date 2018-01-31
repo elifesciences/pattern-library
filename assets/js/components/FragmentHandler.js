@@ -17,6 +17,7 @@ module.exports = class FragmentHandler {
     this.isSingleton = true;
 
     this.window.addEventListener('load', this.handleSectionOpeningViaHash.bind(this));
+    this.window.addEventListener('hashchange', this.handleSectionOpeningViaHash.bind(this));
   }
 
   /**
