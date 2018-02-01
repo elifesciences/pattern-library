@@ -24,7 +24,12 @@ class Metrics {
     this.$next = this.trigger('prev', 'Left', p); // "->" arrow
     this.$prev = this.trigger('next', 'Right', p); // "<-" arrow
 
-    const $grouping = utils.buildElement('ol', ['button-collection', 'button-collection--centered', 'button-collection--compact'], '', this.$el);
+    const $grouping = utils.buildElement(
+      'ol',
+      ['button-collection', 'button-collection--centered', 'button-collection--compact'],
+      '',
+      this.$el
+    );
     this.$dailyButton = this.groupingButton($grouping, 'Daily');
     this.$monthlyButton = this.groupingButton($grouping, 'Monthly');
 
@@ -67,11 +72,11 @@ class Metrics {
 
     // Name each chart in format like "downloads-by-day"
     const availableMetrics = utils.flatten(
-        this.availableCharts.map(
-            chart => this.availablePeriods.map(
-                period => `${chart}-by-${period}`
-            )
+      this.availableCharts.map(
+        chart => this.availablePeriods.map(
+          period => `${chart}-by-${period}`
         )
+      )
     );
 
     this.loadMore = this.loadMore.bind(this);
@@ -164,8 +169,8 @@ class Metrics {
 
       // Change metric and reload.
       return this.changeMetric(
-          this.selected,
-          period
+        this.selected,
+        period
       ).then(() => {
         this.renderView(this.$el, this.getSelectedMetric());
       });
@@ -203,8 +208,8 @@ class Metrics {
 
     this.currentChart = this.currentChart + 1;
     this.changeMetric(
-        this.availableCharts[this.currentChart],
-        this.period
+      this.availableCharts[this.currentChart],
+      this.period
     ).then(() => {
       this.renderView(this.$el, this.getSelectedMetric());
     });
@@ -217,8 +222,8 @@ class Metrics {
 
     this.currentChart = this.currentChart - 1;
     this.changeMetric(
-        this.availableCharts[this.currentChart],
-        this.period
+      this.availableCharts[this.currentChart],
+      this.period
     ).then(() => {
       this.renderView(this.$el, this.getSelectedMetric());
     });
@@ -284,15 +289,15 @@ class Metrics {
 
   getJsonPage(page, perView) {
     return utils.loadData(
-        this.getEndpoint(
-            this.endpoint,
-            this.type,
-            this.id,
-            this.selected,
-            this.period,
-            perView,
-            page
-        )
+      this.getEndpoint(
+        this.endpoint,
+        this.type,
+        this.id,
+        this.selected,
+        this.period,
+        perView,
+        page
+      )
     );
   }
 
@@ -325,9 +330,9 @@ class Metrics {
 
   periodToTimestamp(entry) {
     return Date.UTC(
-        parseInt(entry.year, 10),
-        parseInt(entry.month - 1, 10),
-        parseInt(entry.day ? entry.day : 1, 10)
+      parseInt(entry.year, 10),
+      parseInt(entry.month - 1, 10),
+      parseInt(entry.day ? entry.day : 1, 10)
     );
   }
 
@@ -366,15 +371,15 @@ class Metrics {
   filterMonthPeriod(firstMonth, firstMonthYear, viewPage) {
     return (d) => {
       if (
-          parseInt(d.month, 10) >= firstMonth &&
-          parseInt(d.year, 10) === firstMonthYear + (viewPage - 1)
+        parseInt(d.month, 10) >= firstMonth &&
+        parseInt(d.year, 10) === firstMonthYear + (viewPage - 1)
       ) {
         return true;
       }
 
       return (
-          parseInt(d.month, 10) <= firstMonth &&
-          parseInt(d.year, 10) === firstMonthYear + viewPage
+        parseInt(d.month, 10) <= firstMonth &&
+        parseInt(d.year, 10) === firstMonthYear + viewPage
       );
     };
   }
@@ -390,16 +395,16 @@ class Metrics {
 
     // Current page of results.
     const currentFilter = (
-        this.period === 'day' ?
-            this.filterPeriod(current.month, current.year) :
-            this.filterYearPeriod(firstMonthYear + ((data.viewPage - 1) * data.reverse))
+      this.period === 'day' ?
+        this.filterPeriod(current.month, current.year) :
+        this.filterYearPeriod(firstMonthYear + ((data.viewPage - 1) * data.reverse))
     );
 
     // Next page of results.
     const nextFilter = (
-        this.period === 'day' ?
-            this.filterPeriod(next.month, next.year) :
-            this.filterYearPeriod(firstMonthYear + (data.viewPage * data.reverse))
+      this.period === 'day' ?
+        this.filterPeriod(next.month, next.year) :
+        this.filterYearPeriod(firstMonthYear + (data.viewPage * data.reverse))
     );
 
     // Filter by each.
@@ -469,18 +474,18 @@ class Metrics {
     this.currentRrequest = this.getJsonPage(page, perView);
 
     return this.currentRrequest
-        .then(j => JSON.parse(j))
-        .then(json => {
-          this.total = json.totalPeriods || 0;
-          this.log('parse page ', page);
-          const remaining = this.total - (perView * page);
-          const remainingPages = Math.ceil(remaining / perView);
-          this.saveResults(json, page, remainingPages);
-          this.isLocked = false;
-          deferred.resolve();
-          this.log('resolved,', 'total', this.total, 'remaining requests:', remainingPages);
-          return json;
-        });
+      .then(j => JSON.parse(j))
+      .then(json => {
+        this.total = json.totalPeriods || 0;
+        this.log('parse page ', page);
+        const remaining = this.total - (perView * page);
+        const remainingPages = Math.ceil(remaining / perView);
+        this.saveResults(json, page, remainingPages);
+        this.isLocked = false;
+        deferred.resolve();
+        this.log('resolved,', 'total', this.total, 'remaining requests:', remainingPages);
+        return json;
+      });
   }
 
 }
