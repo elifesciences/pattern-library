@@ -214,6 +214,9 @@
     bottom: 64px;
     left: 0;
     right: 0;
+    .button {
+      @include margin(0, "bottom");
+    }
   }
 
   .carousel-item__meta {

@@ -1,0 +1,6 @@
+{
+  "text": "Button reversed small",
+  "classes": "button--reversed button--small",
+  "type": "button",
+  "name": "button-name"
+}

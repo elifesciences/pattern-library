@@ -53,7 +53,7 @@
   "button": {
     "text": "Subscribe",
     "path": "#",
-    "classes": "button--outline button--small"
+    "classes": "button--reversed button--small"
   },
   "meta": {
     "url": "#",

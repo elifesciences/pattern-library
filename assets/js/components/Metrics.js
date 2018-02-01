@@ -24,7 +24,7 @@ class Metrics {
     this.$next = this.trigger('prev', 'Left', p); // "->" arrow
     this.$prev = this.trigger('next', 'Right', p); // "<-" arrow
 
-    const $grouping = utils.buildElement('div', ['button-collection', 'clearfix'], '', this.$el);
+    const $grouping = utils.buildElement('ol', ['button-collection', 'button-collection--centered', 'button-collection--compact'], '', this.$el);
     this.$dailyButton = this.groupingButton($grouping, 'Daily');
     this.$monthlyButton = this.groupingButton($grouping, 'Monthly');
 
@@ -54,11 +54,15 @@ class Metrics {
 
     // Set the correct button initially.
     if (this.period === 'month') {
-      this.$monthlyButton.classList.add('button-collection__button--active');
-      this.$dailyButton.classList.remove('button-collection__button--active');
+      this.$monthlyButton.classList.add('button--default');
+      this.$monthlyButton.classList.remove('button--outline');
+      this.$dailyButton.classList.add('button--outline');
+      this.$dailyButton.classList.remove('button--default');
     } else {
-      this.$monthlyButton.classList.remove('button-collection__button--active');
-      this.$dailyButton.classList.add('button-collection__button--active');
+      this.$monthlyButton.classList.add('button--outline');
+      this.$monthlyButton.classList.remove('button--default');
+      this.$dailyButton.classList.add('button--default');
+      this.$dailyButton.classList.remove('button--outline');
     }
 
     // Name each chart in format like "downloads-by-day"
@@ -123,17 +127,23 @@ class Metrics {
   }
 
   groupingButton($grouping, label) {
+    const item = utils.buildElement(
+      'li',
+      [
+        'button-collection__item',
+      ],
+      null,
+      $grouping
+    );
     const button = utils.buildElement(
       'a',
       [
         'button',
         'button--outline',
         'button--small',
-        'button-collection__button',
-        'button-collection__button--active'
       ],
       label,
-      $grouping
+      item
     );
     button.href = '#';
     return button;
@@ -144,10 +154,12 @@ class Metrics {
       e.preventDefault();
 
       // Change button style.
-      this.$el
-          .querySelector('.button-collection__button--active')
-          .classList.remove('button-collection__button--active');
-      e.currentTarget.classList.add('button-collection__button--active');
+      const current = this.$el.querySelector('.button--default');
+      current.classList.add('button--outline');
+      current.classList.remove('button--default');
+
+      e.currentTarget.classList.add('button--default');
+      e.currentTarget.classList.remove('button--outline');
       this.log(`changed period to ${period}`);
 
       // Change metric and reload.
