@@ -55,7 +55,7 @@ module.exports = class Carousel {
   updateButtonAppearance () {
     let buttons = this.$elm.querySelectorAll('.carousel-item__cta .button');
     [].forEach.call(buttons, (button) => {
-      button.classList.add('button--outline');
+      button.classList.add('button--reversed');
     });
 
   }

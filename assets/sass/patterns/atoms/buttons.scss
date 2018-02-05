@@ -36,6 +36,15 @@
 }
 
 .button--outline {
+  @include colors($color-text--reverse, $color-primary, $color-primary);
+  @include padding(15 36 14);
+
+  &:hover {
+    @include colors($color-text--reverse, $color-primary-dark, $color-primary-dark);
+  }
+}
+
+.button--reversed {
   @include colors(transparent, $color-text--reverse);
   @include padding(15 36 14);
 
@@ -82,7 +91,7 @@
   }
 }
 
-.button--outline-inactive {
+.button--reversed-inactive {
   @include colors($color-text--reverse, #909090, #909090);
   border-width: 2px;
 

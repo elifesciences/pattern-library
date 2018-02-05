@@ -1,0 +1,20 @@
+{
+  "compact": true,
+  "buttons": [
+    {
+      "text": "Button 1",
+      "classes": "button--default",
+      "path": "#"
+    },
+    {
+      "text": "Button 2",
+      "classes": "button--default",
+      "path": "#"
+    },
+    {
+      "text": "Button 3",
+      "classes": "button--outline",
+      "path": "#"
+    }
+  ]
+}

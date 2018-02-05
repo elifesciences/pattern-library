@@ -154,7 +154,7 @@
         "button": {
           "text": "Read article",
           "path": "#link-to-article",
-          "classes": "button--outline button--small"
+          "classes": "button--reversed button--small"
         },
         "meta": {
           "url": "#",
@@ -190,7 +190,7 @@
         "button": {
           "text": "Read article",
           "path": "#link-to-article",
-          "classes": "button--outline button--small"
+          "classes": "button--reversed button--small"
         },
         "meta": {
           "url": "#",
@@ -230,7 +230,7 @@
         "button": {
           "text": "Read article",
           "path": "#link-to-article",
-          "classes": "button--outline button--small"
+          "classes": "button--reversed button--small"
         },
         "meta": {
           "url": "#LinkToResearchArticles",
