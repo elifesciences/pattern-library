@@ -23,14 +23,13 @@ module.exports = class LoginControl {
       this.setPropertiesFromDataAttributes(dataAttributeRoots, this.$elm);
       if (this.extraLinksToBuild) {
         this.$control = this.buildControl(this.extraLinksToBuild, this.$elm, utils.buildElement);
+        this.$elm.appendChild(this.$control);
       }
     } catch (e) {
       // TODO: When removing, Log to NR instead?
       this.window.console.log(e);
-      return;
     }
 
-    this.$elm.appendChild(this.$control);
   }
 
   /**
