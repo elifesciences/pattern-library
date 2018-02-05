@@ -132,7 +132,7 @@ class Metrics {
   }
 
   groupingButton($grouping, label) {
-    const item = utils.buildElement(
+    const $item = utils.buildElement(
       'li',
       [
         'button-collection__item',
@@ -148,7 +148,7 @@ class Metrics {
         'button--small',
       ],
       label,
-      item
+      $item
     );
     button.href = '#';
     return button;
@@ -159,9 +159,9 @@ class Metrics {
       e.preventDefault();
 
       // Change button style.
-      const current = this.$el.querySelector('.button--default');
-      current.classList.add('button--outline');
-      current.classList.remove('button--default');
+      const $current = this.$el.querySelector('.button--default');
+      $current.classList.add('button--outline');
+      $current.classList.remove('button--default');
 
       e.currentTarget.classList.add('button--default');
       e.currentTarget.classList.remove('button--outline');
