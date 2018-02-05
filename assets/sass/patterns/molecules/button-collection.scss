@@ -1,27 +1,34 @@
 @import "../../definitions";
 
+$gutter: 10px;
+
 .button-collection {
   display: table;
+  @supports (display: flex) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
   @include nospace();
 }
 
 .button-collection--centered {
   margin-left: auto;
   margin-right: auto;
+  padding-left: $gutter;
+  @supports (display: flex) {
+    justify-content: center;
+  }
 }
 
 .button-collection__item {
   float: left;
   list-style: none;
   @include blg-spacing("bottom", "small", "margin");
-  margin-right: 10px;
-
-  .button-collection--compact &,
-  &:last-of-type {
-    margin-right: 0;
-  }
+  margin-right: $gutter;
 
   .button-collection--compact & {
+    margin-right: 0;
     &:not(:first-child) {
       .button {
         border-bottom-left-radius: 0;
