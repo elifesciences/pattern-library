@@ -21,7 +21,9 @@ module.exports = class LoginControl {
       }
 
       this.setPropertiesFromDataAttributes(dataAttributeRoots, this.$elm);
-      this.$control = this.buildControl(this.extraLinksToBuild, this.$elm, utils.buildElement);
+      if (this.extraLinksToBuild) {
+        this.$control = this.buildControl(this.extraLinksToBuild, this.$elm, utils.buildElement);
+      }
     } catch (e) {
       // TODO: When removing, Log to NR instead?
       this.window.console.log(e);
