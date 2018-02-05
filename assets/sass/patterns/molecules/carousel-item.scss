@@ -215,7 +215,7 @@
     left: 0;
     right: 0;
     .button {
-      @include margin(0, "bottom");
+      margin-bottom: 0;
     }
   }
 
