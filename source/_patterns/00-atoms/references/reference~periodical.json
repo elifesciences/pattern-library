@@ -7,7 +7,8 @@
     {
       "authors": [
         {
-          "name": "The Economist"
+          "name": "The Economist",
+          "url": false
         }
       ],
       "suffix": "(October 19, 2013)"

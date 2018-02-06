@@ -10,16 +10,20 @@
           "url": "https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22"
         },
         {
-          "name": "Bromage TG"
+          "name": "Bromage TG",
+          "url": false
         },
         {
-          "name": "Betzler CG"
+          "name": "Betzler CG",
+          "url": false
         },
         {
-          "name": "Ring U"
+          "name": "Ring U",
+          "url": false
         },
         {
-          "name": "Juwayeyi YM"
+          "name": "Juwayeyi YM",
+          "url": false
         }
       ],
       "suffix": "(1993)"
