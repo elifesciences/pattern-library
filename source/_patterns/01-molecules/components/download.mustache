@@ -1,0 +1,21 @@
+<div class="download-wrapper">
+
+  <div class="download">
+
+    <picture>
+      <source srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/download.svg{{/assetRewrite}}"
+              type="image/svg+xml">
+      <img srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/download_2x.png{{/assetRewrite}} 276w"
+           src="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/download_1x.png{{/assetRewrite}}" sizes="138px"
+           alt="" class="download__icon">
+    </picture>
+
+    {{{text}}}
+
+    {{#buttonCollection}}
+      {{> molecules-button-collection }}
+    {{/buttonCollection}}
+
+  </div>
+
+</div>

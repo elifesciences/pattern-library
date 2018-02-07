@@ -1,0 +1,17 @@
+assets:
+  css:
+    - download.css
+    - $ref: button-collection.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    text:
+      type: string
+      minLength: 1
+    buttonCollection:
+      $ref: button-collection.yaml#/schema
+  required:
+    - text
+    - buttonCollection

@@ -1,0 +1,18 @@
+{
+  "text": "<p>You can download a poster featuring your latest paper below. It's highlighted on an imitation of an eLife journal cover.</p><p>Thank you for publishing your work with us.</p>",
+  "buttonCollection": {
+    "centered": true,
+    "buttons": [
+      {
+        "text": "Download A4",
+        "classes": "button--default",
+        "path": "#"
+      },
+      {
+        "text": "Download Letter",
+        "classes": "button--default",
+        "path": "#"
+      }
+    ]
+  }
+}

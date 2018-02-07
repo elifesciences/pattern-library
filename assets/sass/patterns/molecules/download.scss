@@ -1,0 +1,21 @@
+@import "../../definitions";
+@import "../../layout/grid";
+
+.download-wrapper {
+  @include flexbox-centre-x-and-y();
+}
+
+.download {
+  @include wrapper();
+  text-align: center;
+  @include blg-pad-vertical-large-to-extra-large();
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.download__icon {
+  max-width: 100%;
+  @include blg-spacing("bottom", "small");
+}
