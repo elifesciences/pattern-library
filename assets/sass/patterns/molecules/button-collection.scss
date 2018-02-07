@@ -1,21 +1,23 @@
 @import "../../definitions";
 
-$gutter: 10px;
+$gutter: 10;
 
 .button-collection {
   display: table;
+  @include nospace();
+  @include blg-spacing("bottom", "small", "margin");
+  @include margin(-$blg-space-small-in-px, "top");
   @supports (display: flex) {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
   }
-  @include nospace();
 }
 
 .button-collection--centered {
   margin-left: auto;
   margin-right: auto;
-  padding-left: $gutter;
+  @include padding($gutter, "left");
   @supports (display: flex) {
     justify-content: center;
   }
@@ -24,8 +26,8 @@ $gutter: 10px;
 .button-collection__item {
   float: left;
   list-style: none;
-  @include blg-spacing("bottom", "small", "margin");
-  margin-right: $gutter;
+  @include blg-spacing("top", "small", "margin");
+  @include margin($gutter, "right");
 
   .button-collection--compact & {
     margin-right: 0;
