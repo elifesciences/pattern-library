@@ -10,7 +10,9 @@
            alt="" class="personalised-cover-download__icon">
     </picture>
 
-    {{{text}}}
+    {{#text}}
+      {{> atoms-paragraph }}
+    {{/text}}
 
     {{#buttonCollection}}
       {{> molecules-button-collection }}
