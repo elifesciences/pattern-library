@@ -1,6 +1,6 @@
 assets:
   css:
-    - download.css
+    - personalised-cover-download.css
     - $ref: button-collection.yaml#/assets/css
   js: []
 schema:

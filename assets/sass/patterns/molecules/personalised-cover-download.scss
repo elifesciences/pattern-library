@@ -1,11 +1,11 @@
 @import "../../definitions";
 @import "../../layout/grid";
 
-.download-wrapper {
+.personalised-cover-download-wrapper {
   @include flexbox-centre-x-and-y();
 }
 
-.download {
+.personalised-cover-download {
   @include wrapper();
   text-align: center;
   @include blg-pad-vertical-large-to-extra-large();
@@ -15,7 +15,7 @@
   }
 }
 
-.download__icon {
+.personalised-cover-download__icon {
   max-width: 100%;
   @include blg-spacing("bottom", "small");
 }
