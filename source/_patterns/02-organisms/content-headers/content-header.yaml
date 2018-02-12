@@ -100,12 +100,17 @@ schema:
                 type: string
                 minLength: 1
               url:
-                type: string
-                minLength: 1
+                oneOf:
+                  - type: string
+                    minLength: 1
+                  - type: boolean
+                    enum:
+                      - false
               isCorresponding:
                 type: boolean
             required:
               - name
+              - url
       required:
         - list
     institutions:

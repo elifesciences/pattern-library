@@ -23,8 +23,12 @@ schema:
                 type: string
                 minLength: 1
               url:
-                type: string
-                minLength: 1
+                oneOf:
+                  - type: string
+                    minLength: 1
+                  - type: boolean
+                    enum:
+                      - false
             required:
               - name
               - url
@@ -55,10 +59,15 @@ schema:
           type: string
           minLength: 1
         url:
-          type: string
-          minLength: 1
+          oneOf:
+            - type: string
+              minLength: 1
+            - type: boolean
+              enum:
+                - false
       required:
         - name
+        - url
     image:
       allOf:
         - $ref: ../../00-atoms/components/picture.yaml#/schema

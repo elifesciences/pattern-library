@@ -7,22 +7,28 @@
     {
       "authors": [
         {
-          "name": "Paris M"
+          "name": "Paris M",
+          "url": false
         },
         {
-          "name": "Kaplan M"
+          "name": "Kaplan M",
+          "url": false
         },
         {
-          "name": "Li XY"
+          "name": "Li XY",
+          "url": false
         },
         {
-          "name": "Villalta JE"
+          "name": "Villalta JE",
+          "url": false
         },
         {
-          "name": "Lott SE"
+          "name": "Lott SE",
+          "url": false
         },
         {
-          "name": "Eisen MB"
+          "name": "Eisen MB",
+          "url": false
         }
       ],
       "suffix": "(2013)"

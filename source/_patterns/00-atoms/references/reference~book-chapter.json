@@ -11,13 +11,16 @@
     {
       "authors": [
         {
-          "name": "JL Feldman"
+          "name": "JL Feldman",
+          "url": false
         },
         {
-          "name": "C Del Negro"
+          "name": "C Del Negro",
+          "url": false
         },
         {
-          "name": "PA Gray"
+          "name": "PA Gray",
+          "url": false
         }
       ],
       "suffix": "(2013)"

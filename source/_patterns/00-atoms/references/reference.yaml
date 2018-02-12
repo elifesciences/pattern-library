@@ -33,10 +33,15 @@ schema:
                   type: string
                   minLength: 1
                 url:
-                  type: string
-                  minLength: 1
+                  oneOf:
+                    - type: string
+                      minLength: 1
+                    - type: boolean
+                      enum:
+                        - false
               required:
                 - name
+                - url
           suffix:
             type: string
             minLength: 1
