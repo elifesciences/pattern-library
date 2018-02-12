@@ -23,11 +23,6 @@ schema:
       minLength: 1
     date:
       $ref: ../../00-atoms/components/date.yaml#/schema
-  dependencies:
-    url:
-      - text
-    carouselItem:
-      - url
   anyOf:
     -
       required:
