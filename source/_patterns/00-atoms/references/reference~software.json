@@ -6,7 +6,8 @@
     {
       "authors": [
         {
-          "name": "W. L. DeLano"
+          "name": "W. L. DeLano",
+          "url": false
         }
       ],
       "suffix": "(2002)"
