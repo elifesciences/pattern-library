@@ -6,7 +6,7 @@ $gutter: 10;
   display: table;
   @include nospace();
   @include blg-spacing("bottom", "small", "margin");
-  @include margin(-$blg-space-small-in-px, "top");
+  @include margin($blg-space-small-in-px * -1, "top");
   @supports (display: flex) {
     display: flex;
     flex-wrap: wrap;
