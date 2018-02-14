@@ -8,6 +8,7 @@ module.exports = class Popup {
     if ($elm.dataset.popupWrapper) {
       $link = utils.buildElement('a');
       $link.classList.add('popup__wrapper');
+      $link.href = '#';
       $elm.parentNode.insertBefore($link, $elm);
       $link.appendChild($elm);
     } else {
