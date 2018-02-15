@@ -261,6 +261,14 @@ module.exports = class Popup {
     this.popupHitBox.style.top = `${top}px`;
   }
 
+  static setLinksClasses($root) {
+    if ($root instanceof HTMLElement) {
+      [].slice.call($root.querySelectorAll('a')).forEach($link => {
+        $link.classList.add('popup__link');
+      });
+    }
+  }
+
   render(e) {
 
     // If there's nothing to render.. we don't.
@@ -287,6 +295,8 @@ module.exports = class Popup {
       this.popupHitBox = this.createPopupHitBox(
         this.createPopupBox(...children)
       );
+
+      Popup.setLinksClasses(this.popupHitBox);
 
       // Add to DOM.
       this.doc.body.appendChild(this.popupHitBox);
