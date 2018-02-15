@@ -212,14 +212,34 @@ module.exports = class Popup {
     return utils.wrapElements(children, 'div', 'popup');
   }
 
+  calcInitialPosition(e, width) {
+    // Triggered by a pointer
+    if (e.pageX || e.pageY) {
+      return {
+        left: e.pageX - (width / 2),
+        top: e.pageY + 20
+      };
+    }
+
+    // Triggered by keyboard
+    const rect = e.currentTarget.getBoundingClientRect();
+    return {
+      left: rect.left + this.window.scrollX,
+      top: (rect.bottom - /*two baseline grid measures*/48) +  this.window.scrollY
+    };
+  }
+
   positionPopupHitBox(e) {
     this.popupHitBox.style.display = '';
 
     const width = this.popupHitBox.offsetWidth;
     const height = this.popupHitBox.offsetHeight;
 
-    let left = e.pageX - (width / 2);
-    let top = e.pageY + 20;
+    const initialPosition = this.calcInitialPosition(e, width);
+    let left = initialPosition.left;
+    let top = initialPosition.top;
+
+    console.log('currentTarget is: ', e.currentTarget);
 
     // If off the left.
     if (left < 10) {
