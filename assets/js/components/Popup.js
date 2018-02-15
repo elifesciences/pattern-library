@@ -225,7 +225,7 @@ module.exports = class Popup {
     const rect = e.currentTarget.getBoundingClientRect();
     return {
       left: rect.left + this.window.scrollX,
-      top: (rect.bottom - /*two baseline grid measures*/48) +  this.window.scrollY
+      top: (rect.bottom - /*three baseline grid measures*/72) +  this.window.scrollY
     };
   }
 
