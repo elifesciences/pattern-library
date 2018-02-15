@@ -239,8 +239,6 @@ module.exports = class Popup {
     let left = initialPosition.left;
     let top = initialPosition.top;
 
-    console.log('currentTarget is: ', e.currentTarget);
-
     // If off the left.
     if (left < 10) {
       left = 10;
