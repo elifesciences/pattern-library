@@ -969,4 +969,36 @@ describe('The utils library', function () {
 
   });
 
+  describe('the getArticleType function', () => {
+
+    context('when the article type is not declared', () => {
+
+      let $noArticleType;
+
+      before(() => {
+        $noArticleType = require('./fixtures/snippetWithNoArticleType.html')();
+      });
+
+      it('returns null', () => {
+        expect(utils.getArticleType($noArticleType)).to.be.null;
+      });
+
+    });
+
+    context('when the article type is declared to be "Research Article', () => {
+
+      let $hasArticleType;
+
+      before(() => {
+        $hasArticleType = require('./fixtures/snippetWithArticleTypeResearchArticle.html')();
+      });
+
+      it('returns returns the article type "Research Article"', () => {
+        expect(utils.getArticleType($hasArticleType)).to.equal('Research Article');
+      });
+
+    });
+
+  });
+
 });

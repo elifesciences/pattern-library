@@ -629,6 +629,20 @@ module.exports = () => {
     return $elm.classList.contains('article-section--collapsed');
   }
 
+  /**
+   * Returns the content value of <meta name="dc.type" content="...">
+   * @param $head {HTMLElement} A <head> element
+   * @return {String|null}
+   */
+  function getArticleType($head) {
+    const $typeDescriptor = $head.querySelector('[name="dc.type"]');
+    if ($typeDescriptor) {
+      return $typeDescriptor.getAttribute('content');
+    }
+
+    return null;
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -638,6 +652,7 @@ module.exports = () => {
     create$pageOverlay: create$pageOverlay,
     debounce: debounce,
     eventCreator: eventCreator,
+    getArticleType: getArticleType,
     loadJavaScript: loadJavaScript,
     loadStyleSheet: loadStyleSheet,
     defer: defer,
