@@ -185,21 +185,4 @@ module.exports = class HypothesisOpener {
     }
   }
 
-  static findInitialAnchorPoint($snippet) {
-    const $abstract = $snippet.querySelector('#abstract');
-    if ($abstract) {
-      return $abstract.nextElementSibling.querySelector('.article-section__body');
-    }
-
-    // User-supplied content has unpredictable structure
-    return $snippet.querySelector('.content-container .article-section:last-child p:last-child') ||
-           $snippet.querySelector('.content-container .article-section:last-child ol:last-child') ||
-           $snippet.querySelector('.content-container .article-section ~ p:last-child') ||
-           $snippet.querySelector('.content-container .article-section ~ ol:last-child') ||
-           $snippet.querySelector('.content-container .article-section ~ ul:last-child') ||
-           $snippet.querySelector('.content-container > p:last-child') ||
-           $snippet.querySelector('.content-container > ol:last-child') ||
-           $snippet.querySelector('.content-container > ul:last-child');
-  }
-
 };
