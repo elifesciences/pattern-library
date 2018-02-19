@@ -21,7 +21,7 @@ module.exports = class HypothesisOpener {
 
     if (!this.isContextualData) {
       HypothesisOpener.applyStyleArticleBody(this.$elm);
-      this.setInitialDomLocation(this.$elm);
+      this.setInitialDomLocation(this.$elm, utils.getArticleType(this.doc.querySelector('head')));
     }
 
     this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
@@ -127,9 +127,52 @@ module.exports = class HypothesisOpener {
     }
   }
 
-  setInitialDomLocation($elm) {
+  static positionInline() {
+    console.log('Position hypothesis opener inline');
+  }
+
+  static positionPastAbstract($elm, doc) {
+    console.log('Position hypothesis opener past the abstract');
+    const $abstract = doc.querySelector('#abstract');
+    if ($abstract) {
+      $abstract.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
+      return;
+    }
+
+    throw new Error('Trying to position hypothesis opener in section following abstract, but no abstract found.');
+  }
+
+  static positionByAbstract($elm, doc) {
+    console.log('Position hypothesis opener by the abstract');
+    const $abstract = doc.querySelector('#abstract');
+    if ($abstract) {
+      $abstract.appendChild($elm);
+      return;
+    }
+
+    throw new Error('Trying to position hypothesis opener by abstract but no abstract found.');
+  }
+
+  static findPositioningMethod(articleType) {
+    const positioners = {
+      'Inside eLife': HypothesisOpener.positionInline,
+      Interview: HypothesisOpener.positionInline,
+      'Press Pack': HypothesisOpener.positionInline,
+      'Labs Post': HypothesisOpener.positionInline,
+
+      Insight: HypothesisOpener.positionPastAbstract,
+      'Feature Article': HypothesisOpener.positionPastAbstract,
+      Editorial: HypothesisOpener.positionPastAbstract,
+
+      default: HypothesisOpener.positionByAbstract
+    };
+
+    return positioners[articleType] || positioners.default;
+  }
+
+  setInitialDomLocation($elm, articleType) {
     try {
-      (HypothesisOpener.findInitialAnchorPoint(this.doc)).appendChild($elm);
+      HypothesisOpener.findPositioningMethod(articleType).call(null, $elm, this.doc);
     } catch (e) {
       console.error(e);
     }
