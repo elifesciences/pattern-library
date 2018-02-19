@@ -985,7 +985,7 @@ describe('The utils library', function () {
 
     });
 
-    context('when the article type is declared to be "Research Article', () => {
+    context('when the article type is declared to be "research-article"', () => {
 
       let $hasArticleType;
 
@@ -993,8 +993,8 @@ describe('The utils library', function () {
         $hasArticleType = require('./fixtures/snippetWithArticleTypeResearchArticle.html')();
       });
 
-      it('returns returns the article type "Research Article"', () => {
-        expect(utils.getArticleType($hasArticleType)).to.equal('Research Article');
+      it('returns returns the article type "research-article"', () => {
+        expect(utils.getArticleType($hasArticleType)).to.equal('research-article');
       });
 
     });

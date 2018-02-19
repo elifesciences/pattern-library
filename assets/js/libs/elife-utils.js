@@ -630,17 +630,12 @@ module.exports = () => {
   }
 
   /**
-   * Returns the content value of <meta name="dc.type" content="...">
-   * @param $head {HTMLElement} A <head> element
+   * Returns the value of a data-article-type attribute on $elm
+   * @param $elm {HTMLElement} An element expected to hold a data-article-type attribute
    * @return {String|null}
    */
-  function getArticleType($head) {
-    const $typeDescriptor = $head.querySelector('[name="dc.type"]');
-    if ($typeDescriptor) {
-      return $typeDescriptor.getAttribute('content');
-    }
-
-    return null;
+  function getArticleType($elm) {
+    return $elm.dataset.articleType || null;
   }
 
   return {
