@@ -127,23 +127,20 @@ module.exports = class HypothesisOpener {
     }
   }
 
-  static positionCentrally($elm, relevantRoot) {
-    console.log('Position hypothesis centrally');
+  static positionCentrallyInline($elm, relevantRoot) {
     const paragraphs = relevantRoot.querySelectorAll('p');
-    let $parent;
+
     if (!paragraphs.length) {
-      $parent = relevantRoot;
-    } else if (paragraphs.length % 2) {
-      $parent = paragraphs[Math.floor(paragraphs.length / 2)];
-    } else {
-      $parent = paragraphs[paragraphs.length / 2];
+      relevantRoot.appendChild($elm);
+      return;
     }
 
-    $parent.appendChild($elm);
+    $elm.classList.add('speech-bubble--inline');
+    const $parent = paragraphs[Math.floor(paragraphs.length / 2)];
+    $parent.insertBefore($elm, $parent.firstChild);
   }
 
   static positionPastAbstract($elm, relevantRoot) {
-    console.log('Position hypothesis opener past the abstract');
     const $abstract = relevantRoot.querySelector('#abstract');
     if ($abstract) {
       $abstract.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
@@ -154,7 +151,6 @@ module.exports = class HypothesisOpener {
   }
 
   static positionByAbstract($elm, relevantRoot) {
-    console.log('Position hypothesis opener by the abstract');
     const $abstract = relevantRoot.querySelector('#abstract');
     if ($abstract) {
       $abstract.appendChild($elm);
@@ -166,10 +162,10 @@ module.exports = class HypothesisOpener {
 
   static findPositioningMethod(articleType) {
     const positioners = {
-      'Inside eLife': HypothesisOpener.positionCentrally,
-      Interview: HypothesisOpener.positionCentrally,
-      'Press Pack': HypothesisOpener.positionCentrally,
-      'Labs Post': HypothesisOpener.positionCentrally,
+      'Inside eLife': HypothesisOpener.positionCentrallyInline,
+      Interview: HypothesisOpener.positionCentrallyInline,
+      'Press Pack': HypothesisOpener.positionCentrallyInline,
+      'Labs Post': HypothesisOpener.positionCentrallyInline,
 
       Insight: HypothesisOpener.positionPastAbstract,
       'Feature Article': HypothesisOpener.positionPastAbstract,

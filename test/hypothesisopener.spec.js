@@ -199,7 +199,7 @@ describe('A HypothesisOpener Component', function () {
 
   });
 
-  describe('the positionCentrally method', () => {
+  describe('the positionCentrallyInline method', () => {
 
     context('when there are no paragraphs in the article', () => {
 
@@ -243,7 +243,7 @@ describe('A HypothesisOpener Component', function () {
       });
 
       it('positions the opener by the middle paragraph', () => {
-        HypothesisOpener.positionCentrally(opener.$elm, $oddParagraphCount);
+        HypothesisOpener.positionCentrallyInline(opener.$elm, $oddParagraphCount);
         const paragraphs = $oddParagraphCount.querySelectorAll('p');
         const $expectedParent = paragraphs[Math.floor(paragraphs.length / 2)];
         expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
@@ -269,7 +269,7 @@ describe('A HypothesisOpener Component', function () {
       });
 
       it('positions the opener by the n/2 paragraph', () => {
-        HypothesisOpener.positionCentrally(opener.$elm, $evenParagraphCount);
+        HypothesisOpener.positionCentrallyInline(opener.$elm, $evenParagraphCount);
         const paragraphs = $evenParagraphCount.querySelectorAll('p');
         const $expectedParent = paragraphs[paragraphs.length / 2];
         expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
