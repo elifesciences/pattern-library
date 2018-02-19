@@ -127,13 +127,24 @@ module.exports = class HypothesisOpener {
     }
   }
 
-  static positionInline() {
-    console.log('Position hypothesis opener inline');
+  static positionCentrally($elm, relevantRoot) {
+    console.log('Position hypothesis centrally');
+    const paragraphs = relevantRoot.querySelectorAll('p');
+    let $parent;
+    if (!paragraphs.length) {
+      $parent = relevantRoot;
+    } else if (paragraphs.length % 2) {
+      $parent = paragraphs[Math.floor(paragraphs.length / 2)];
+    } else {
+      $parent = paragraphs[paragraphs.length / 2];
+    }
+
+    $parent.appendChild($elm);
   }
 
-  static positionPastAbstract($elm, doc) {
+  static positionPastAbstract($elm, relevantRoot) {
     console.log('Position hypothesis opener past the abstract');
-    const $abstract = doc.querySelector('#abstract');
+    const $abstract = relevantRoot.querySelector('#abstract');
     if ($abstract) {
       $abstract.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
       return;
@@ -142,9 +153,9 @@ module.exports = class HypothesisOpener {
     throw new Error('Trying to position hypothesis opener in section following abstract, but no abstract found.');
   }
 
-  static positionByAbstract($elm, doc) {
+  static positionByAbstract($elm, relevantRoot) {
     console.log('Position hypothesis opener by the abstract');
-    const $abstract = doc.querySelector('#abstract');
+    const $abstract = relevantRoot.querySelector('#abstract');
     if ($abstract) {
       $abstract.appendChild($elm);
       return;
@@ -155,10 +166,10 @@ module.exports = class HypothesisOpener {
 
   static findPositioningMethod(articleType) {
     const positioners = {
-      'Inside eLife': HypothesisOpener.positionInline,
-      Interview: HypothesisOpener.positionInline,
-      'Press Pack': HypothesisOpener.positionInline,
-      'Labs Post': HypothesisOpener.positionInline,
+      'Inside eLife': HypothesisOpener.positionCentrally,
+      Interview: HypothesisOpener.positionCentrally,
+      'Press Pack': HypothesisOpener.positionCentrally,
+      'Labs Post': HypothesisOpener.positionCentrally,
 
       Insight: HypothesisOpener.positionPastAbstract,
       'Feature Article': HypothesisOpener.positionPastAbstract,

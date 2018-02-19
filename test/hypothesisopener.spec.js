@@ -55,19 +55,19 @@ describe('A HypothesisOpener Component', function () {
     context('when supplied with an article type that should not have default positioning', () => {
 
       it('returns the expected positioning method for an "Inside eLife" article', () => {
-        expect(HypothesisOpener.findPositioningMethod('Inside eLife')).to.equal(HypothesisOpener.positionInline);
+        expect(HypothesisOpener.findPositioningMethod('Inside eLife')).to.equal(HypothesisOpener.positionCentrally);
       });
 
       it('returns the expected positioning method for an "Interview"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Interview')).to.equal(HypothesisOpener.positionInline);
+        expect(HypothesisOpener.findPositioningMethod('Interview')).to.equal(HypothesisOpener.positionCentrally);
       });
 
       it('returns the expected positioning method for a "Press Pack"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Press Pack')).to.equal(HypothesisOpener.positionInline);
+        expect(HypothesisOpener.findPositioningMethod('Press Pack')).to.equal(HypothesisOpener.positionCentrally);
       });
 
       it('returns the expected positioning method for a "Labs Post"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Labs Post')).to.equal(HypothesisOpener.positionInline);
+        expect(HypothesisOpener.findPositioningMethod('Labs Post')).to.equal(HypothesisOpener.positionCentrally);
       });
 
       it('returns the expected positioning method for an "Insight"', () => {
@@ -192,6 +192,86 @@ describe('A HypothesisOpener Component', function () {
       it('appends the opener to the section following the abstract', () => {
         HypothesisOpener.positionPastAbstract(opener.$elm, $containsAbstract);
         const $expectedParent = $containsAbstract.querySelector('#abstract').nextElementSibling.querySelector('.article-section__body');
+        expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
+      });
+
+    });
+
+  });
+
+  describe('the positionCentrally method', () => {
+
+    context('when there are no paragraphs in the article', () => {
+
+      let $zeroParagraphCount;
+      let opener;
+      let id;
+
+      beforeEach(() => {
+        $zeroParagraphCount = require('./fixtures/snippetWithZeroParagraphs.html')();
+        opener = new HypothesisOpener($opener);
+
+        id = 'IShouldBeAppendedToTheEndOfTheArticle';
+        opener.$elm.setAttribute('id', id);
+
+        expect($zeroParagraphCount.querySelector(`#${id}`)).to.be.null;
+
+      });
+
+      it('positions the opener at the end of the article', () => {
+        HypothesisOpener.positionCentrally(opener.$elm, $zeroParagraphCount);
+        expect($zeroParagraphCount.lastElementChild).to.deep.equal(opener.$elm);
+      });
+
+    });
+
+    context('when there are an odd number of paragraphs in the article', () => {
+
+      let $oddParagraphCount;
+      let opener;
+      let id;
+
+      beforeEach(() => {
+        $oddParagraphCount = require('./fixtures/snippetWithFiveParagraphs.html')();
+        opener = new HypothesisOpener($opener);
+
+        id = 'IShouldBeAppendedToTheMiddleParagraph';
+        opener.$elm.setAttribute('id', id);
+
+        expect($oddParagraphCount.querySelector(`#${id}`)).to.be.null;
+
+      });
+
+      it('positions the opener by the middle paragraph', () => {
+        HypothesisOpener.positionCentrally(opener.$elm, $oddParagraphCount);
+        const paragraphs = $oddParagraphCount.querySelectorAll('p');
+        const $expectedParent = paragraphs[Math.floor(paragraphs.length / 2)];
+        expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
+      });
+
+    });
+
+    context('when there are an even number of paragraphs (n) in the article', () => {
+
+      let $evenParagraphCount;
+      let opener;
+      let id;
+
+      beforeEach(() => {
+        $evenParagraphCount = require('./fixtures/snippetWithSixParagraphs.html')();
+        opener = new HypothesisOpener($opener);
+
+        id = 'IShouldBeAppendedToTheMiddleParagraphRoundingDown';
+        opener.$elm.setAttribute('id', id);
+
+        expect($evenParagraphCount.querySelector(`#${id}`)).to.be.null;
+
+      });
+
+      it('positions the opener by the n/2 paragraph', () => {
+        HypothesisOpener.positionCentrally(opener.$elm, $evenParagraphCount);
+        const paragraphs = $evenParagraphCount.querySelectorAll('p');
+        const $expectedParent = paragraphs[paragraphs.length / 2];
         expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
       });
 
