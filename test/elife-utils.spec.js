@@ -10,8 +10,11 @@ const spy = sinon.spy;
 
 // load in component(s) to be tested
 let utils = require('../assets/js/libs/elife-utils')();
+const generateSnippetWithNoArticleType = require('./fixtures/snippetWithNoArticleType.html');
+const generateSnippetWithArticleType = require('./fixtures/snippetWithArticleType.html');
 
 function removeFromDOM(selector) {
+  'use strict';
   const $elements = document.querySelectorAll(selector);
   expect(document.querySelector(selector)).not.to.be.null;
   [].forEach.call($elements, ($element) => {
@@ -976,7 +979,7 @@ describe('The utils library', function () {
       let $noArticleType;
 
       before(() => {
-        $noArticleType = require('./fixtures/snippetWithNoArticleType.html')();
+        $noArticleType = generateSnippetWithNoArticleType();
       });
 
       it('returns null', () => {
@@ -990,7 +993,7 @@ describe('The utils library', function () {
       let $hasArticleType;
 
       before(() => {
-        $hasArticleType = require('./fixtures/snippetWithArticleTypeResearchArticle.html')();
+        $hasArticleType = generateSnippetWithArticleType('research-article');
       });
 
       it('returns returns the article type "research-article"', () => {

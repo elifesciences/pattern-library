@@ -1,20 +1,19 @@
 const utils = require('../../assets/js/libs/elife-utils')();
 const buildElement = utils.buildElement;
 
-module.exports = () => {
+module.exports = (count) => {
   'use strict';
 
   const $root = buildElement('div');
-
-  buildElement('div', [], 'First', $root);
-
   const $articleSection = buildElement('div', ['article-section'], '', $root);
   const $articleSectionBody = buildElement('div', ['article-section__body'], '', $articleSection);
-  buildElement('div', [], 'Second', $articleSectionBody);
-  buildElement('div', [], 'Third', $articleSectionBody);
-  buildElement('div', [], 'Fourth', $articleSectionBody);
-  buildElement('div', [], 'Fifth', $articleSectionBody);
+  if (!count) {
+    return $root;
+  }
+
+  for (let i = 0; i < count; i += 1) {
+    buildElement('p', [], `Paragraph ${i}`, $articleSectionBody);
+  }
 
   return $root;
-
 };

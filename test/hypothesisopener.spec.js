@@ -3,6 +3,11 @@ const spy = sinon.spy;
 
 const HypothesisOpener = require('../assets/js/components/HypothesisOpener');
 
+const generateSnippetWithoutAbstract = require('./fixtures/snippetWithoutAbstract.html');
+const generateSnippetWithAbstract = require('./fixtures/snippetWithAbstract.html');
+const generateSnippetWithParagraphs = require('./fixtures/snippetWithParagraphs.html');
+const generateHypothesisOpenerInitialDom = require('./fixtures/hypothesisOpenerInitialDom.html');
+
 describe('A HypothesisOpener Component', function () {
   'use strict';
 
@@ -10,7 +15,7 @@ describe('A HypothesisOpener Component', function () {
   let hypothesisOpener;
 
   beforeEach(() => {
-    $opener = require('./fixtures/hypothesisOpenerInitialDom.html')();
+    $opener = generateHypothesisOpenerInitialDom();
     hypothesisOpener = new HypothesisOpener($opener);
   });
 
@@ -75,7 +80,7 @@ describe('A HypothesisOpener Component', function () {
       let $doesNotContainAbstract;
 
       before(() => {
-        $doesNotContainAbstract = require('./fixtures/snippetWithoutAbstract.html')();
+        $doesNotContainAbstract = generateSnippetWithoutAbstract();
       });
 
       it('throws an error', () => {
@@ -94,7 +99,7 @@ describe('A HypothesisOpener Component', function () {
       let opener;
 
       beforeEach(() => {
-        $containsAbstract = require('./fixtures/snippetWithAbstract.html')();
+        $containsAbstract = generateSnippetWithAbstract();
         opener = new HypothesisOpener($opener);
 
         id = 'IShouldBeAppendedToTheAbstract';
@@ -124,7 +129,7 @@ describe('A HypothesisOpener Component', function () {
       let $doesNotContainAbstract;
 
       before(() => {
-        $doesNotContainAbstract = require('./fixtures/snippetWithoutAbstract.html')();
+        $doesNotContainAbstract = generateSnippetWithoutAbstract();
       });
 
       it('throws an error', () => {
@@ -143,7 +148,7 @@ describe('A HypothesisOpener Component', function () {
       let opener;
 
       beforeEach(() => {
-        $containsAbstract = require('./fixtures/snippetWithAbstract.html')();
+        $containsAbstract = generateSnippetWithAbstract();
         opener = new HypothesisOpener($opener);
 
         id = 'IShouldBeAppendedToTheSectionFollowingTheAbstract';
@@ -172,7 +177,7 @@ describe('A HypothesisOpener Component', function () {
       let id;
 
       beforeEach(() => {
-        $zeroParagraphCount = require('./fixtures/snippetWithZeroParagraphs.html')();
+        $zeroParagraphCount = generateSnippetWithParagraphs(0);
         opener = new HypothesisOpener($opener);
 
         id = 'IShouldBeAppendedToTheEndOfTheArticle';
@@ -196,7 +201,7 @@ describe('A HypothesisOpener Component', function () {
       let id;
 
       beforeEach(() => {
-        $oddParagraphCount = require('./fixtures/snippetWithFiveParagraphs.html')();
+        $oddParagraphCount = generateSnippetWithParagraphs(5);
         opener = new HypothesisOpener($opener);
 
         id = 'IShouldBeAppendedToTheMiddleParagraph';
@@ -222,7 +227,7 @@ describe('A HypothesisOpener Component', function () {
       let id;
 
       beforeEach(() => {
-        $evenParagraphCount = require('./fixtures/snippetWithSixParagraphs.html')();
+        $evenParagraphCount = generateSnippetWithParagraphs(6);
         opener = new HypothesisOpener($opener);
 
         id = 'IShouldBeAppendedToTheMiddleParagraphRoundingDown';

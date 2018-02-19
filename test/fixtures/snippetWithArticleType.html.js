@@ -1,9 +1,9 @@
 const snippetWithNoArticleType = require('./snippetWithNoArticleType.html');
 
-module.exports = () => {
+module.exports = (type) => {
   'use strict';
 
   const $snippet = snippetWithNoArticleType();
-  $snippet.dataset.articleType = 'research-article';
+  $snippet.dataset.articleType = type;
   return $snippet;
 };
