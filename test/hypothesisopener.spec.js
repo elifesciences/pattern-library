@@ -19,19 +19,19 @@ describe('A HypothesisOpener Component', function () {
     context('when supplied with an article type that should not have default positioning', () => {
 
       it('returns the expected positioning method for an "Inside eLife" article', () => {
-        expect(HypothesisOpener.findPositioningMethod('Inside eLife')).to.equal(HypothesisOpener.positionCentrally);
+        expect(HypothesisOpener.findPositioningMethod('Inside eLife')).to.equal(HypothesisOpener.positionCentrallyInline);
       });
 
       it('returns the expected positioning method for an "Interview"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Interview')).to.equal(HypothesisOpener.positionCentrally);
+        expect(HypothesisOpener.findPositioningMethod('Interview')).to.equal(HypothesisOpener.positionCentrallyInline);
       });
 
       it('returns the expected positioning method for a "Press Pack"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Press Pack')).to.equal(HypothesisOpener.positionCentrally);
+        expect(HypothesisOpener.findPositioningMethod('Press Pack')).to.equal(HypothesisOpener.positionCentrallyInline);
       });
 
       it('returns the expected positioning method for a "Labs Post"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Labs Post')).to.equal(HypothesisOpener.positionCentrally);
+        expect(HypothesisOpener.findPositioningMethod('Labs Post')).to.equal(HypothesisOpener.positionCentrallyInline);
       });
 
       it('returns the expected positioning method for an "Insight"', () => {
@@ -183,7 +183,7 @@ describe('A HypothesisOpener Component', function () {
       });
 
       it('positions the opener at the end of the article', () => {
-        HypothesisOpener.positionCentrally(opener.$elm, $zeroParagraphCount);
+        HypothesisOpener.positionCentrallyInline(opener.$elm, $zeroParagraphCount);
         expect($zeroParagraphCount.lastElementChild).to.deep.equal(opener.$elm);
       });
 
