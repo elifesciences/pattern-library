@@ -630,12 +630,12 @@ module.exports = () => {
   }
 
   /**
-   * Returns the value of a data-article-type attribute on $elm
-   * @param $elm {HTMLElement} An element expected to hold a data-article-type attribute
+   * Returns the value of a data-item-type attribute on $elm
+   * @param $elm {HTMLElement} An element expected to hold a data-item-type attribute
    * @return {String|null}
    */
-  function getArticleType($elm) {
-    return $elm.dataset.articleType || null;
+  function getItemType($elm) {
+    return $elm.dataset.itemType || null;
   }
 
   return {
@@ -647,7 +647,7 @@ module.exports = () => {
     create$pageOverlay: create$pageOverlay,
     debounce: debounce,
     eventCreator: eventCreator,
-    getArticleType: getArticleType,
+    getItemType: getItemType,
     loadJavaScript: loadJavaScript,
     loadStyleSheet: loadStyleSheet,
     defer: defer,

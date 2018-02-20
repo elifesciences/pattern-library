@@ -21,7 +21,7 @@ module.exports = class HypothesisOpener {
 
     if (!this.isContextualData) {
       HypothesisOpener.applyStyleArticleBody(this.$elm);
-      this.setInitialDomLocation(this.$elm, utils.getArticleType(this.doc.querySelector('head')));
+      this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('head')));
     }
 
     this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
@@ -162,14 +162,14 @@ module.exports = class HypothesisOpener {
 
   static findPositioningMethod(articleType) {
     const positioners = {
-      'Inside eLife': HypothesisOpener.positionCentrallyInline,
-      Interview: HypothesisOpener.positionCentrallyInline,
-      'Press Pack': HypothesisOpener.positionCentrallyInline,
-      'Labs Post': HypothesisOpener.positionCentrallyInline,
+      'blog-article': HypothesisOpener.positionCentrallyInline,
+      interview: HypothesisOpener.positionCentrallyInline,
+      'press-package': HypothesisOpener.positionCentrallyInline,
+      'labs-post': HypothesisOpener.positionCentrallyInline,
 
-      Insight: HypothesisOpener.positionPastAbstract,
-      'Feature Article': HypothesisOpener.positionPastAbstract,
-      Editorial: HypothesisOpener.positionPastAbstract,
+      insight: HypothesisOpener.positionPastAbstract,
+      feature: HypothesisOpener.positionPastAbstract,
+      editorial: HypothesisOpener.positionPastAbstract,
 
       default: HypothesisOpener.positionByAbstract
     };

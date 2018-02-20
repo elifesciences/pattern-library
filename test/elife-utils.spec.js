@@ -10,8 +10,8 @@ const spy = sinon.spy;
 
 // load in component(s) to be tested
 let utils = require('../assets/js/libs/elife-utils')();
-const generateSnippetWithNoArticleType = require('./fixtures/snippetWithNoArticleType.html');
-const generateSnippetWithArticleType = require('./fixtures/snippetWithArticleType.html');
+const generateSnippetWithNoItemType = require('./fixtures/snippetWithNoItemType.html');
+const generateSnippetWithItemType = require('./fixtures/snippetWithItemType.html');
 
 function removeFromDOM(selector) {
   'use strict';
@@ -972,32 +972,32 @@ describe('The utils library', function () {
 
   });
 
-  describe('the getArticleType function', () => {
+  describe('the getItemType function', () => {
 
-    context('when the article type is not declared', () => {
+    context('when the item type is not declared', () => {
 
-      let $noArticleType;
+      let $noItemType;
 
       before(() => {
-        $noArticleType = generateSnippetWithNoArticleType();
+        $noItemType = generateSnippetWithNoItemType();
       });
 
       it('returns null', () => {
-        expect(utils.getArticleType($noArticleType)).to.be.null;
+        expect(utils.getItemType($noItemType)).to.be.null;
       });
 
     });
 
-    context('when the article type is declared to be "research-article"', () => {
+    context('when the item type is declared to be "research-article"', () => {
 
-      let $hasArticleType;
+      let $hasItemType;
 
       before(() => {
-        $hasArticleType = generateSnippetWithArticleType('research-article');
+        $hasItemType = generateSnippetWithItemType('research-article');
       });
 
-      it('returns returns the article type "research-article"', () => {
-        expect(utils.getArticleType($hasArticleType)).to.equal('research-article');
+      it('returns returns the item type "research-article"', () => {
+        expect(utils.getItemType($hasItemType)).to.equal('research-article');
       });
 
     });

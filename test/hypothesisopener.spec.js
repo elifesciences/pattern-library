@@ -23,32 +23,32 @@ describe('A HypothesisOpener Component', function () {
 
     context('when supplied with an article type that should not have default positioning', () => {
 
-      it('returns the expected positioning method for an "Inside eLife" article', () => {
-        expect(HypothesisOpener.findPositioningMethod('Inside eLife')).to.equal(HypothesisOpener.positionCentrallyInline);
+      it('returns the expected positioning method for type "blog-article" (aka Inside eLife)', () => {
+        expect(HypothesisOpener.findPositioningMethod('blog-article')).to.equal(HypothesisOpener.positionCentrallyInline);
       });
 
-      it('returns the expected positioning method for an "Interview"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Interview')).to.equal(HypothesisOpener.positionCentrallyInline);
+      it('returns the expected positioning method for type "interview"', () => {
+        expect(HypothesisOpener.findPositioningMethod('interview')).to.equal(HypothesisOpener.positionCentrallyInline);
       });
 
-      it('returns the expected positioning method for a "Press Pack"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Press Pack')).to.equal(HypothesisOpener.positionCentrallyInline);
+      it('returns the expected positioning method for type "press-package"', () => {
+        expect(HypothesisOpener.findPositioningMethod('press-package')).to.equal(HypothesisOpener.positionCentrallyInline);
       });
 
-      it('returns the expected positioning method for a "Labs Post"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Labs Post')).to.equal(HypothesisOpener.positionCentrallyInline);
+      it('returns the expected positioning method for a "labs-post"', () => {
+        expect(HypothesisOpener.findPositioningMethod('labs-post')).to.equal(HypothesisOpener.positionCentrallyInline);
       });
 
-      it('returns the expected positioning method for an "Insight"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Insight')).to.equal(HypothesisOpener.positionPastAbstract);
+      it('returns the expected positioning method for an "insight"', () => {
+        expect(HypothesisOpener.findPositioningMethod('insight')).to.equal(HypothesisOpener.positionPastAbstract);
       });
 
-      it('returns the expected positioning method for a "Feature Article"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Feature Article')).to.equal(HypothesisOpener.positionPastAbstract);
+      it('returns the expected positioning method for a "feature"', () => {
+        expect(HypothesisOpener.findPositioningMethod('feature')).to.equal(HypothesisOpener.positionPastAbstract);
       });
 
-      it('returns the expected positioning method for an "Editorial"', () => {
-        expect(HypothesisOpener.findPositioningMethod('Editorial')).to.equal(HypothesisOpener.positionPastAbstract);
+      it('returns the expected positioning method for an "editorial"', () => {
+        expect(HypothesisOpener.findPositioningMethod('editorial')).to.equal(HypothesisOpener.positionPastAbstract);
       });
 
     });
@@ -56,17 +56,15 @@ describe('A HypothesisOpener Component', function () {
     context('when not supplied with an article type that should not have default positioning', () => {
 
       it('returns the default positioning method', () => {
-        expect(HypothesisOpener.findPositioningMethod('Research Article')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('Research Advance')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('Short Report')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('Registered Report')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('Registered Report')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('Replication Study')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('Tools and Resources')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('Correction')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('Retraction')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('Scientific Correspondence')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('Research Exchange')).to.equal(HypothesisOpener.positionByAbstract);
+        expect(HypothesisOpener.findPositioningMethod('research-article')).to.equal(HypothesisOpener.positionByAbstract);
+        expect(HypothesisOpener.findPositioningMethod('research-advance')).to.equal(HypothesisOpener.positionByAbstract);
+        expect(HypothesisOpener.findPositioningMethod('short-report')).to.equal(HypothesisOpener.positionByAbstract);
+        expect(HypothesisOpener.findPositioningMethod('registered-report')).to.equal(HypothesisOpener.positionByAbstract);
+        expect(HypothesisOpener.findPositioningMethod('replication-study')).to.equal(HypothesisOpener.positionByAbstract);
+        expect(HypothesisOpener.findPositioningMethod('tools-resources')).to.equal(HypothesisOpener.positionByAbstract);
+        expect(HypothesisOpener.findPositioningMethod('correction')).to.equal(HypothesisOpener.positionByAbstract);
+        expect(HypothesisOpener.findPositioningMethod('retraction')).to.equal(HypothesisOpener.positionByAbstract);
+        expect(HypothesisOpener.findPositioningMethod('scientific-correspondence')).to.equal(HypothesisOpener.positionByAbstract);
       });
 
     });
