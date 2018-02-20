@@ -21,7 +21,7 @@ module.exports = class HypothesisOpener {
 
     if (!this.isContextualData) {
       HypothesisOpener.applyStyleArticleBody(this.$elm);
-      this.setInitialDomLocation(this.$elm);
+      this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('body')));
     }
 
     this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
@@ -127,29 +127,68 @@ module.exports = class HypothesisOpener {
     }
   }
 
-  setInitialDomLocation($elm) {
+  static positionCentrallyInline($elm, $contentContainer) {
+    const paragraphs = $contentContainer.querySelectorAll('p');
+
+    if (!paragraphs.length) {
+      $contentContainer.appendChild($elm);
+      return;
+    }
+
+    $elm.classList.add('speech-bubble--inline');
+    const $target = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
+    $target.insertBefore($elm, $target.firstChild);
+  }
+
+  static positionBySecondSection($elm, $contentContainer) {
+    const $firstSection = $contentContainer.querySelector('.article-section--first');
+    if ($firstSection) {
+      $firstSection.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
+      return;
+    }
+
+    throw new Error('Trying to position hypothesis opener in second section, but ' +
+                    'can\'t find element with the css class article-section--first.');
+  }
+
+  static positionByFirstSection($elm, $contentContainer) {
+    const $firstSection = $contentContainer.querySelector('.article-section--first');
+    if ($firstSection) {
+      $firstSection.appendChild($elm);
+      return;
+    }
+
+    throw new Error('Trying to position hypothesis opener by first section but can\'t find element' +
+                    ' with the css class article-section--first.');
+  }
+
+  static findPositioningMethod(articleType) {
+    const positioners = {
+      'blog-article': HypothesisOpener.positionCentrallyInline,
+      interview: HypothesisOpener.positionCentrallyInline,
+      'press-package': HypothesisOpener.positionCentrallyInline,
+      'labs-post': HypothesisOpener.positionCentrallyInline,
+
+      insight: HypothesisOpener.positionBySecondSection,
+      feature: HypothesisOpener.positionBySecondSection,
+      editorial: HypothesisOpener.positionBySecondSection,
+
+      default: HypothesisOpener.positionByFirstSection
+    };
+
+    return positioners[articleType] || positioners.default;
+  }
+
+  setInitialDomLocation($elm, articleType) {
+    if (!articleType) {
+      return;
+    }
+
     try {
-      (HypothesisOpener.findInitialAnchorPoint(this.doc)).appendChild($elm);
+      HypothesisOpener.findPositioningMethod(articleType).call(null, $elm, this.doc.querySelector('.content-container'));
     } catch (e) {
       console.error(e);
     }
-  }
-
-  static findInitialAnchorPoint($snippet) {
-    const $abstract = $snippet.querySelector('#abstract');
-    if ($abstract) {
-      return $abstract.nextElementSibling.querySelector('.article-section__body');
-    }
-
-    // User-supplied content has unpredictable structure
-    return $snippet.querySelector('.content-container .article-section:last-child p:last-child') ||
-           $snippet.querySelector('.content-container .article-section:last-child ol:last-child') ||
-           $snippet.querySelector('.content-container .article-section ~ p:last-child') ||
-           $snippet.querySelector('.content-container .article-section ~ ol:last-child') ||
-           $snippet.querySelector('.content-container .article-section ~ ul:last-child') ||
-           $snippet.querySelector('.content-container > p:last-child') ||
-           $snippet.querySelector('.content-container > ol:last-child') ||
-           $snippet.querySelector('.content-container > ul:last-child');
   }
 
 };
