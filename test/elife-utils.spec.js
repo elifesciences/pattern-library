@@ -1016,16 +1016,16 @@ describe('The utils library', function () {
 
     });
 
-    context('when the item type descriptor is on a descendant the supplied element', () => {
+    context('when the item type descriptor is on a descendant of the supplied element', () => {
 
-      let $hasItemType;
+      let $hasDeepItemType;
 
       before(() => {
-        $hasItemType = generateSnippetWithItemType('research-article', true);
+        $hasDeepItemType = generateSnippetWithItemType('research-article', true);
       });
 
       it('it supplies the item type correctly', () => {
-        expect(utils.getItemType($hasItemType)).to.equal('research-article');
+        expect(utils.getItemType($hasDeepItemType)).to.equal('research-article');
       });
 
     });

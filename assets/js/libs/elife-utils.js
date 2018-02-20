@@ -640,7 +640,7 @@ module.exports = () => {
     }
 
     const $target = $elm.querySelector('[data-item-type]');
-    if ($target instanceof HTMLElement) {
+    if ($target) {
       return $target.dataset.itemType;
     }
 

@@ -193,24 +193,24 @@ describe('A HypothesisOpener Component', function () {
 
     context('when there are an odd number of paragraphs in the article', () => {
 
-      let $oddParagraphCount;
+      let $snippetWithOddParagraphCount;
       let opener;
       let id;
 
       beforeEach(() => {
-        $oddParagraphCount = generateSnippetWithParagraphs(5);
+        $snippetWithOddParagraphCount = generateSnippetWithParagraphs(5);
         opener = new HypothesisOpener($opener);
 
         id = 'IShouldBeAppendedToTheMiddleParagraph';
         opener.$elm.setAttribute('id', id);
 
-        expect($oddParagraphCount.querySelector(`#${id}`)).to.be.null;
+        expect($snippetWithOddParagraphCount.querySelector(`#${id}`)).to.be.null;
 
       });
 
       it('positions the opener by the middle paragraph', () => {
-        HypothesisOpener.positionCentrallyInline(opener.$elm, $oddParagraphCount);
-        const paragraphs = $oddParagraphCount.querySelectorAll('p');
+        HypothesisOpener.positionCentrallyInline(opener.$elm, $snippetWithOddParagraphCount);
+        const paragraphs = $snippetWithOddParagraphCount.querySelectorAll('p');
         const $expectedParent = paragraphs[Math.floor(paragraphs.length / 2)];
         expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
       });
@@ -219,24 +219,24 @@ describe('A HypothesisOpener Component', function () {
 
     context('when there are an even number of paragraphs (n) in the article', () => {
 
-      let $evenParagraphCount;
+      let $snippetWithEvenParagraphCount;
       let opener;
       let id;
 
       beforeEach(() => {
-        $evenParagraphCount = generateSnippetWithParagraphs(6);
+        $snippetWithEvenParagraphCount = generateSnippetWithParagraphs(6);
         opener = new HypothesisOpener($opener);
 
         id = 'IShouldBeAppendedToTheMiddleParagraphRoundingDown';
         opener.$elm.setAttribute('id', id);
 
-        expect($evenParagraphCount.querySelector(`#${id}`)).to.be.null;
+        expect($snippetWithEvenParagraphCount.querySelector(`#${id}`)).to.be.null;
 
       });
 
       it('positions the opener by the n/2 paragraph', () => {
-        HypothesisOpener.positionCentrallyInline(opener.$elm, $evenParagraphCount);
-        const paragraphs = $evenParagraphCount.querySelectorAll('p');
+        HypothesisOpener.positionCentrallyInline(opener.$elm, $snippetWithEvenParagraphCount);
+        const paragraphs = $snippetWithEvenParagraphCount.querySelectorAll('p');
         const $expectedParent = paragraphs[paragraphs.length / 2];
         expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
       });

@@ -127,21 +127,20 @@ module.exports = class HypothesisOpener {
     }
   }
 
-  static positionCentrallyInline($elm, relevantRoot) {
-    const paragraphs = relevantRoot.querySelectorAll('p');
+  static positionCentrallyInline($elm, $parent) {
+    const paragraphs = $parent.querySelectorAll('p');
 
     if (!paragraphs.length) {
-      relevantRoot.appendChild($elm);
+      $parent.appendChild($elm);
       return;
     }
 
     $elm.classList.add('speech-bubble--inline');
-    const $parent = paragraphs[Math.floor(paragraphs.length / 2)];
-    $parent.insertBefore($elm, $parent.firstChild);
+    paragraphs[Math.floor(paragraphs.length / 2)].insertBefore($elm, $parent.firstChild);
   }
 
-  static positionBySecondSection($elm, relevantRoot) {
-    const $firstSection = relevantRoot.querySelector('.article-section--first');
+  static positionBySecondSection($elm, $parent) {
+    const $firstSection = $parent.querySelector('.article-section--first');
     if ($firstSection) {
       $firstSection.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
       return;
@@ -151,8 +150,8 @@ module.exports = class HypothesisOpener {
                     'can\'t find element with the css class article-section--first.');
   }
 
-  static positionByFirstSection($elm, relevantRoot) {
-    const $firstSection = relevantRoot.querySelector('.article-section--first');
+  static positionByFirstSection($elm, $parent) {
+    const $firstSection = $parent.querySelector('.article-section--first');
     if ($firstSection) {
       $firstSection.appendChild($elm);
       return;

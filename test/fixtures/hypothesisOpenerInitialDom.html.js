@@ -1,4 +1,4 @@
-// The tests mutate the DOM such that this is fixture is moved, hence building it in JavaScript to easily reset it for each test .
+// The tests mutate the DOM such that this is fixture is moved, hence building it in JavaScript to easily reset it for each test.
 
 /*
   <button data-behaviour="HypothesisOpener" class="button button--speech-bubble button--speech-bubble-populated" type="button">
@@ -17,8 +17,8 @@ module.exports = () => {
   $button.dataset.behaviour = 'HypothesisOpener';
   $button.setAttribute('type', 'button');
 
-  const visual = buildElement('span', [], '12', $button);
-  visual.setAttribute('aria-hidden', true);
+  const $visual = buildElement('span', [], '12', $button);
+  $visual.setAttribute('aria-hidden', true);
   buildElement('span', ['visuallyhidden'], 'Open annotations (there are currently 12 annotations on this page).', $button);
 
   return $button;
