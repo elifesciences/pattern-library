@@ -3,8 +3,8 @@ const spy = sinon.spy;
 
 const HypothesisOpener = require('../assets/js/components/HypothesisOpener');
 
-const generateSnippetWithoutAbstract = require('./fixtures/snippetWithoutAbstract.html');
-const generateSnippetWithAbstract = require('./fixtures/snippetWithAbstract.html');
+const generateSnippetWithoutIdentifiableFirstSection = require('./fixtures/snippetWithoutIdentifiableFirstSection.html');
+const generateSnippetWithIdentifiableFirstSection = require('./fixtures/snippetWithIdentifiableFirstSection.html');
 const generateSnippetWithParagraphs = require('./fixtures/snippetWithParagraphs.html');
 const generateHypothesisOpenerInitialDom = require('./fixtures/hypothesisOpenerInitialDom.html');
 
@@ -40,15 +40,15 @@ describe('A HypothesisOpener Component', function () {
       });
 
       it('returns the expected positioning method for an "insight"', () => {
-        expect(HypothesisOpener.findPositioningMethod('insight')).to.equal(HypothesisOpener.positionPastAbstract);
+        expect(HypothesisOpener.findPositioningMethod('insight')).to.equal(HypothesisOpener.positionBySecondSection);
       });
 
       it('returns the expected positioning method for a "feature"', () => {
-        expect(HypothesisOpener.findPositioningMethod('feature')).to.equal(HypothesisOpener.positionPastAbstract);
+        expect(HypothesisOpener.findPositioningMethod('feature')).to.equal(HypothesisOpener.positionBySecondSection);
       });
 
       it('returns the expected positioning method for an "editorial"', () => {
-        expect(HypothesisOpener.findPositioningMethod('editorial')).to.equal(HypothesisOpener.positionPastAbstract);
+        expect(HypothesisOpener.findPositioningMethod('editorial')).to.equal(HypothesisOpener.positionBySecondSection);
       });
 
     });
@@ -56,109 +56,108 @@ describe('A HypothesisOpener Component', function () {
     context('when not supplied with an article type that should not have default positioning', () => {
 
       it('returns the default positioning method', () => {
-        expect(HypothesisOpener.findPositioningMethod('research-article')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('research-advance')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('short-report')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('registered-report')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('replication-study')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('tools-resources')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('correction')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('retraction')).to.equal(HypothesisOpener.positionByAbstract);
-        expect(HypothesisOpener.findPositioningMethod('scientific-correspondence')).to.equal(HypothesisOpener.positionByAbstract);
+        expect(HypothesisOpener.findPositioningMethod('research-article')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('research-advance')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('short-report')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('registered-report')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('replication-study')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('tools-resources')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('correction')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('retraction')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('scientific-correspondence')).to.equal(HypothesisOpener.positionByFirstSection);
       });
 
     });
 
   });
 
-  describe('the positionByAbstract method', () => {
+  describe('the positionByFirstSection method', () => {
 
-    context('when an abstract is not present in the document', () => {
+    context('when there is no identifiable first section present in the document', () => {
 
-      let $doesNotContainAbstract;
+      let $noIdentifiableFirstSection;
 
       before(() => {
-        $doesNotContainAbstract = generateSnippetWithoutAbstract();
+        $noIdentifiableFirstSection = generateSnippetWithoutIdentifiableFirstSection();
       });
 
       it('throws an error', () => {
         expect(() => {
-          HypothesisOpener.positionByAbstract($opener, $doesNotContainAbstract);
-        }).to.throw('Trying to position hypothesis opener by abstract but no abstract found.');
+          HypothesisOpener.positionByFirstSection($opener, $noIdentifiableFirstSection);
+        }).to.throw('Trying to position hypothesis opener by first section but can\'t find element with the css class article-section--first.');
 
       });
 
     });
 
-    context('when an abstract is present in the document', () => {
+    context('when an identifiable first section is present in the document', () => {
 
-      let $containsAbstract;
+      let $containsFirstSection;
       let id;
       let opener;
 
       beforeEach(() => {
-        $containsAbstract = generateSnippetWithAbstract();
+        $containsFirstSection = generateSnippetWithIdentifiableFirstSection();
         opener = new HypothesisOpener($opener);
 
-        id = 'IShouldBeAppendedToTheAbstract';
+        id = 'IShouldBeAppendedToTheFirstSection';
         opener.$elm.setAttribute('id', id);
 
-        expect($containsAbstract.querySelector(`#${id}`)).to.be.null;
+        expect($containsFirstSection.querySelector(`#${id}`)).to.be.null;
 
       });
 
-      it('appends the opener to the abstract', () => {
+      it('appends the opener to the first section', () => {
 
-        HypothesisOpener.positionByAbstract(opener.$elm, $containsAbstract);
+        HypothesisOpener.positionByFirstSection(opener.$elm, $containsFirstSection);
 
-        const $lastElementInAbstract = $containsAbstract.querySelector('#abstract').lastElementChild;
-        expect($lastElementInAbstract.getAttribute('id')).to.equal(id);
-        expect($lastElementInAbstract).to.deep.equal(opener.$elm);
+        const $finalElementInFirstSection = $containsFirstSection.querySelector('.article-section--first').lastElementChild;
+        expect($finalElementInFirstSection.getAttribute('id')).to.equal(id);
+        expect($finalElementInFirstSection).to.deep.equal(opener.$elm);
       });
 
     });
 
   });
 
-  describe('the positionPastAbstract method', () => {
+  describe('the positionBySecondSection method', () => {
 
-    context('when an abstract is not present in the document', () => {
+    context('when there is no identifiable first section present in the document', () => {
 
-      let $doesNotContainAbstract;
+      let $noIdentifiableFirstSection;
 
       before(() => {
-        $doesNotContainAbstract = generateSnippetWithoutAbstract();
+        $noIdentifiableFirstSection = generateSnippetWithoutIdentifiableFirstSection();
       });
 
       it('throws an error', () => {
         expect(() => {
-          HypothesisOpener.positionPastAbstract($opener, $doesNotContainAbstract);
-        }).to.throw('Trying to position hypothesis opener in section following abstract, but no abstract found.');
-
+          HypothesisOpener.positionBySecondSection($opener, $noIdentifiableFirstSection);
+        }).to.throw('Trying to position hypothesis opener in second section, but can\'t find element with the css class article-section--first.');
       });
 
     });
 
-    context('when an abstract is present in the document', () => {
+    context('when an identifiable first section is present in the document', () => {
 
-      let $containsAbstract;
+      let $hasIdentifiableFistSection;
       let id;
       let opener;
 
       beforeEach(() => {
-        $containsAbstract = generateSnippetWithAbstract();
+        $hasIdentifiableFistSection = generateSnippetWithIdentifiableFirstSection();
         opener = new HypothesisOpener($opener);
 
-        id = 'IShouldBeAppendedToTheSectionFollowingTheAbstract';
+        id = 'IShouldBeAppendedToTheSecondSection';
         opener.$elm.setAttribute('id', id);
 
-        expect($containsAbstract.querySelector(`#${id}`)).to.be.null;
+        expect($hasIdentifiableFistSection.querySelector(`#${id}`)).to.be.null;
 
       });
 
-      it('appends the opener to the section following the abstract', () => {
-        HypothesisOpener.positionPastAbstract(opener.$elm, $containsAbstract);
-        const $expectedParent = $containsAbstract.querySelector('#abstract').nextElementSibling.querySelector('.article-section__body');
+      it('appends the opener to the second section', () => {
+        HypothesisOpener.positionBySecondSection(opener.$elm, $hasIdentifiableFistSection);
+        const $expectedParent = $hasIdentifiableFistSection.querySelector('.article-section--first').nextElementSibling.querySelector('.article-section__body');
         expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
       });
 

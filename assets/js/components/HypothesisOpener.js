@@ -140,24 +140,26 @@ module.exports = class HypothesisOpener {
     $parent.insertBefore($elm, $parent.firstChild);
   }
 
-  static positionPastAbstract($elm, relevantRoot) {
-    const $abstract = relevantRoot.querySelector('#abstract');
-    if ($abstract) {
-      $abstract.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
+  static positionBySecondSection($elm, relevantRoot) {
+    const $firstSection = relevantRoot.querySelector('.article-section--first');
+    if ($firstSection) {
+      $firstSection.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
       return;
     }
 
-    throw new Error('Trying to position hypothesis opener in section following abstract, but no abstract found.');
+    throw new Error('Trying to position hypothesis opener in second section, but ' +
+                    'can\'t find element with the css class article-section--first.');
   }
 
-  static positionByAbstract($elm, relevantRoot) {
-    const $abstract = relevantRoot.querySelector('#abstract');
-    if ($abstract) {
-      $abstract.appendChild($elm);
+  static positionByFirstSection($elm, relevantRoot) {
+    const $firstSection = relevantRoot.querySelector('.article-section--first');
+    if ($firstSection) {
+      $firstSection.appendChild($elm);
       return;
     }
 
-    throw new Error('Trying to position hypothesis opener by abstract but no abstract found.');
+    throw new Error('Trying to position hypothesis opener by first section but can\'t find element' +
+                    ' with the css class article-section--first.');
   }
 
   static findPositioningMethod(articleType) {
@@ -167,11 +169,11 @@ module.exports = class HypothesisOpener {
       'press-package': HypothesisOpener.positionCentrallyInline,
       'labs-post': HypothesisOpener.positionCentrallyInline,
 
-      insight: HypothesisOpener.positionPastAbstract,
-      feature: HypothesisOpener.positionPastAbstract,
-      editorial: HypothesisOpener.positionPastAbstract,
+      insight: HypothesisOpener.positionBySecondSection,
+      feature: HypothesisOpener.positionBySecondSection,
+      editorial: HypothesisOpener.positionBySecondSection,
 
-      default: HypothesisOpener.positionByAbstract
+      default: HypothesisOpener.positionByFirstSection
     };
 
     return positioners[articleType] || positioners.default;
