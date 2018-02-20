@@ -180,6 +180,10 @@ module.exports = class HypothesisOpener {
   }
 
   setInitialDomLocation($elm, articleType) {
+    if (!articleType) {
+      return;
+    }
+
     try {
       HypothesisOpener.findPositioningMethod(articleType).call(null, $elm, this.doc.querySelector('.content-container'));
     } catch (e) {

@@ -237,7 +237,7 @@ describe('A HypothesisOpener Component', function () {
       it('positions the opener by the n/2 paragraph', () => {
         HypothesisOpener.positionCentrallyInline(opener.$elm, $snippetWithEvenParagraphCount);
         const paragraphs = $snippetWithEvenParagraphCount.querySelectorAll('p');
-        const $expectedParent = paragraphs[paragraphs.length / 2];
+        const $expectedParent = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
         expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
       });
 

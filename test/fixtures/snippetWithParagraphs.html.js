@@ -4,7 +4,7 @@ const buildElement = utils.buildElement;
 module.exports = (requestedCount) => {
   'use strict';
 
-  const $root = buildElement('div');
+  const $root = buildElement('div', ['.content-container']);
   const $articleSection = buildElement('div', ['article-section'], '', $root);
   const $articleSectionBody = buildElement('div', ['article-section__body'], '', $articleSection);
 
