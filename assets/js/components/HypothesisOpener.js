@@ -21,7 +21,7 @@ module.exports = class HypothesisOpener {
 
     if (!this.isContextualData) {
       HypothesisOpener.applyStyleArticleBody(this.$elm);
-      this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('head')));
+      this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('body')));
     }
 
     this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');

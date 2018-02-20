@@ -630,12 +630,21 @@ module.exports = () => {
   }
 
   /**
-   * Returns the value of a data-item-type attribute on $elm
-   * @param $elm {HTMLElement} An element expected to hold a data-item-type attribute
+   * Returns the value of a data-item-type attribute on or within $elm
+   * @param $elm {HTMLElement} An element expected to hold or wrap a data-item-type attribute
    * @return {String|null}
    */
   function getItemType($elm) {
-    return $elm.dataset.itemType || null;
+    if ($elm.dataset.itemType) {
+      return $elm.dataset.itemType;
+    }
+
+    const $target = $elm.querySelector('[data-item-type]');
+    if ($target instanceof HTMLElement) {
+      return $target.dataset.itemType;
+    }
+
+    return null;
   }
 
   return {

@@ -1002,6 +1002,34 @@ describe('The utils library', function () {
 
     });
 
+    context('when the item type descriptor is on the supplied element', () => {
+
+      let $hasItemType;
+
+      before(() => {
+        $hasItemType = generateSnippetWithItemType('research-article', false);
+      });
+
+      it('it supplies the item type correctly', () => {
+        expect(utils.getItemType($hasItemType)).to.equal('research-article');
+      });
+
+    });
+
+    context('when the item type descriptor is on a descendant the supplied element', () => {
+
+      let $hasItemType;
+
+      before(() => {
+        $hasItemType = generateSnippetWithItemType('research-article', true);
+      });
+
+      it('it supplies the item type correctly', () => {
+        expect(utils.getItemType($hasItemType)).to.equal('research-article');
+      });
+
+    });
+
   });
 
 });
