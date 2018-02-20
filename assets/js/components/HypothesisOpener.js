@@ -127,20 +127,21 @@ module.exports = class HypothesisOpener {
     }
   }
 
-  static positionCentrallyInline($elm, $parent) {
-    const paragraphs = $parent.querySelectorAll('p');
+  static positionCentrallyInline($elm, $contentContainer) {
+    const paragraphs = $contentContainer.querySelectorAll('p');
 
     if (!paragraphs.length) {
-      $parent.appendChild($elm);
+      $contentContainer.appendChild($elm);
       return;
     }
 
     $elm.classList.add('speech-bubble--inline');
-    paragraphs[Math.floor(paragraphs.length / 2)].insertBefore($elm, $parent.firstChild);
+    const $target = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
+    $target.insertBefore($elm, $target.firstChild);
   }
 
-  static positionBySecondSection($elm, $parent) {
-    const $firstSection = $parent.querySelector('.article-section--first');
+  static positionBySecondSection($elm, $contentContainer) {
+    const $firstSection = $contentContainer.querySelector('.article-section--first');
     if ($firstSection) {
       $firstSection.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
       return;
@@ -150,8 +151,8 @@ module.exports = class HypothesisOpener {
                     'can\'t find element with the css class article-section--first.');
   }
 
-  static positionByFirstSection($elm, $parent) {
-    const $firstSection = $parent.querySelector('.article-section--first');
+  static positionByFirstSection($elm, $contentContainer) {
+    const $firstSection = $contentContainer.querySelector('.article-section--first');
     if ($firstSection) {
       $firstSection.appendChild($elm);
       return;
@@ -180,7 +181,7 @@ module.exports = class HypothesisOpener {
 
   setInitialDomLocation($elm, articleType) {
     try {
-      HypothesisOpener.findPositioningMethod(articleType).call(null, $elm, this.doc);
+      HypothesisOpener.findPositioningMethod(articleType).call(null, $elm, this.doc.querySelector('.content-container'));
     } catch (e) {
       console.error(e);
     }
