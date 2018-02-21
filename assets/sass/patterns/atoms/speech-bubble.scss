@@ -47,6 +47,10 @@
 
 }
 
+.speech-bubble--inline {
+  @include margin(12, "left");
+}
+
 .speech-bubble--small {
   display: inline-block;
   @include font-size-and-vertical-height(11, 14);
