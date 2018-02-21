@@ -55,7 +55,7 @@
   display: inline-block;
   @include font-size-and-vertical-height(11, 14);
   @include height(14);
-  min-width: 1em;
+  min-width: 2em;
   padding-left: 4px;
   padding-right: 4px;
   width: auto;
