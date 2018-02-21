@@ -1,0 +1,5 @@
+@import "../../definitions";
+
+.orcid__icon {
+  @include inline-image();
+}
