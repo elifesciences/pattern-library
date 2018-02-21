@@ -13,6 +13,10 @@ schema:
       type: boolean
       enum:
         - true
+    hasLoadingState:
+      type: boolean
+      enum:
+        - true
     hasPlaceholder:
       type: boolean
       enum:
@@ -20,8 +24,8 @@ schema:
     behaviour:
       type: string
       minLength: 1
-  required:
-    - text
+    dependencies:
+      isSmall: [hasLoadingState]
   anyOf:
     - required:
       - isSmall
@@ -33,7 +37,9 @@ schema:
       not:
         required:
           - isSmall
+          - hasLoadingState
     - not:
         required:
           - isSmall
           - hasPlaceholder
+          - hasLoadingState
