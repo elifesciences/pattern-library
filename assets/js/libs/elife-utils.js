@@ -629,6 +629,24 @@ module.exports = () => {
     return $elm.classList.contains('article-section--collapsed');
   }
 
+  /**
+   * Returns the value of a data-item-type attribute on or within $elm
+   * @param $elm {HTMLElement} An element expected to hold or wrap a data-item-type attribute
+   * @return {String|null}
+   */
+  function getItemType($elm) {
+    if ($elm.dataset.itemType) {
+      return $elm.dataset.itemType;
+    }
+
+    const $target = $elm.querySelector('[data-item-type]');
+    if ($target) {
+      return $target.dataset.itemType;
+    }
+
+    return null;
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -638,6 +656,7 @@ module.exports = () => {
     create$pageOverlay: create$pageOverlay,
     debounce: debounce,
     eventCreator: eventCreator,
+    getItemType: getItemType,
     loadJavaScript: loadJavaScript,
     loadStyleSheet: loadStyleSheet,
     defer: defer,

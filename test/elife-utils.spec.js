@@ -10,8 +10,11 @@ const spy = sinon.spy;
 
 // load in component(s) to be tested
 let utils = require('../assets/js/libs/elife-utils')();
+const generateSnippetWithNoItemType = require('./fixtures/snippetWithNoItemType.html');
+const generateSnippetWithItemType = require('./fixtures/snippetWithItemType.html');
 
 function removeFromDOM(selector) {
+  'use strict';
   const $elements = document.querySelectorAll(selector);
   expect(document.querySelector(selector)).not.to.be.null;
   [].forEach.call($elements, ($element) => {
@@ -963,6 +966,66 @@ describe('The utils library', function () {
         const observed = utils.isCollapsedArticleSection(uncollapsedSectionMock);
         expect(observed).to.be.false;
         expect(uncollapsedSectionMock.classList.contains.calledWithExactly('article-section--collapsed')).to.be.true;
+      });
+
+    });
+
+  });
+
+  describe('the getItemType function', () => {
+
+    context('when the item type is not declared', () => {
+
+      let $noItemType;
+
+      before(() => {
+        $noItemType = generateSnippetWithNoItemType();
+      });
+
+      it('returns null', () => {
+        expect(utils.getItemType($noItemType)).to.be.null;
+      });
+
+    });
+
+    context('when the item type is declared to be "research-article"', () => {
+
+      let $hasItemType;
+
+      before(() => {
+        $hasItemType = generateSnippetWithItemType('research-article');
+      });
+
+      it('returns returns the item type "research-article"', () => {
+        expect(utils.getItemType($hasItemType)).to.equal('research-article');
+      });
+
+    });
+
+    context('when the item type descriptor is on the supplied element', () => {
+
+      let $hasItemType;
+
+      before(() => {
+        $hasItemType = generateSnippetWithItemType('research-article', false);
+      });
+
+      it('it supplies the item type correctly', () => {
+        expect(utils.getItemType($hasItemType)).to.equal('research-article');
+      });
+
+    });
+
+    context('when the item type descriptor is on a descendant of the supplied element', () => {
+
+      let $hasDeepItemType;
+
+      before(() => {
+        $hasDeepItemType = generateSnippetWithItemType('research-article', true);
+      });
+
+      it('it supplies the item type correctly', () => {
+        expect(utils.getItemType($hasDeepItemType)).to.equal('research-article');
       });
 
     });
