@@ -1,0 +1,6 @@
+{
+  "text": "Button reversed inactive",
+  "classes": "button--reversed-inactive",
+  "type": "button",
+  "name": "button-name"
+}

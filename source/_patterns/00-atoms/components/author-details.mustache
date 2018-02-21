@@ -22,14 +22,8 @@
   {{/details}}
 
   {{#orcid}}
-  <section class="author-details__section author-details__section--orcid">
-    <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer" class="author-details__link author-details__link--orcid">
-      <picture>
-        <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/orcid.svg{{/assetRewrite}}" type="image/svg+xml">
-        <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/orcid.png{{/assetRewrite}}" alt="ORCID icon" class="author-details__linked-image--orcid"/>
-      </picture>
-    </a>
-    <a href="https://orcid.org/{{orcid}}" target="_blank" rel="noopener noreferrer" class="author-details__text author-details__link author-details__link--orcid">{{orcid}}</a>
+  <section class="author-details__section">
+    {{>atoms-orcid}}
   </section>
   {{/orcid}}
 

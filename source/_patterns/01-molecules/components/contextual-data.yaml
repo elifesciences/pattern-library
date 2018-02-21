@@ -1,6 +1,8 @@
 assets:
   css:
     - contextual-data.css
+    - $ref: ../../00-atoms/components/speech-bubble.yaml#/assets/css
+
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -15,20 +17,14 @@ schema:
           items:
             type: object
             properties:
-              name:
-                type: string
-                minLength: 1
-              value:
-                type: string
-                minLength: 1
-              elementId:
+              text:
                 type: string
                 minLength: 1
             required:
-              - name
-              - value
-      required:
-        - data
+              - text
+        annotationCount:
+          $ref: ../../00-atoms/components/speech-bubble.yaml#/schema
+      minProperties: 1
     citation:
       type: object
       properties:

@@ -14,7 +14,8 @@
           {
             "authors": [
               {
-                "name": "Geoffroy Saint-Hilaire E."
+                "name": "Geoffroy Saint-Hilaire E.",
+                "url": false
               }
             ],
             "suffix": "(1818)"
@@ -41,13 +42,16 @@
           {
             "authors": [
               {
-                "name": "JL Feldman"
+                "name": "JL Feldman",
+                "url": false
               },
               {
-                "name": "C Del Negro"
+                "name": "C Del Negro",
+                "url": false
               },
               {
-                "name": "PA Gray"
+                "name": "PA Gray",
+                "url": false
               }
             ],
             "suffix": "(2013)"
@@ -83,55 +87,72 @@
           {
             "authors": [
               {
-                "name": "BV Jain"
+                "name": "BV Jain",
+                "url": false
               },
               {
-                "name": "B Bollman"
+                "name": "B Bollman",
+                "url": false
               },
               {
-                "name": "M Richardson"
+                "name": "M Richardson",
+                "url": false
               },
               {
-                "name": "DR Berger"
+                "name": "DR Berger",
+                "url": false
               },
               {
-                "name": "MN Helmstaedter"
+                "name": "MN Helmstaedter",
+                "url": false
               },
               {
-                "name": "KL Briggman"
+                "name": "KL Briggman",
+                "url": false
               },
               {
-                "name": "W Denk"
+                "name": "W Denk",
+                "url": false
               },
               {
-                "name": "JB Bowden"
+                "name": "JB Bowden",
+                "url": false
               },
               {
-                "name": "JM Mendenhall"
+                "name": "JM Mendenhall",
+                "url": false
               },
               {
-                "name": "WC Abraham"
+                "name": "WC Abraham",
+                "url": false
               },
               {
-                "name": "KM Harris"
+                "name": "KM Harris",
+                "url": false
               },
               {
-                "name": "N Kasthuri"
+                "name": "N Kasthuri",
+                "url": false
               },
               {
-                "name": "KJ Hayworth"
+                "name": "KJ Hayworth",
+                "url": false
               },
               {
-                "name": "R Schalek"
+                "name": "R Schalek",
+                "url": false
               },
               {
-                "name": "JC Tapia"
+                "name": "JC Tapia",
+                "url": false
               },
               {
-                "name": "JW Lichtman"
+                "name": "JW Lichtman",
+                "url": false
               },
               {
-                "name": "HS Seung"
+                "name": "HS Seung",
+                "url": false
               }
             ],
             "suffix": "(2010)"
@@ -155,58 +176,76 @@
           {
             "authors": [
               {
-                "name": "R Bouveret"
+                "name": "R Bouveret",
+                "url": false
               },
               {
-                "name": "R Bouveret"
+                "name": "R Bouveret",
+                "url": false
               },
               {
-                "name": "N Schonrock"
+                "name": "N Schonrock",
+                "url": false
               },
               {
-                "name": "M Ramialison"
+                "name": "M Ramialison",
+                "url": false
               },
               {
-                "name": "T Doan"
+                "name": "T Doan",
+                "url": false
               },
               {
-                "name": "D de Jong"
+                "name": "D de Jong",
+                "url": false
               },
               {
-                "name": "A Bondue"
+                "name": "A Bondue",
+                "url": false
               },
               {
-                "name": "G Kaur"
+                "name": "G Kaur",
+                "url": false
               },
               {
-                "name": "S Mohamed"
+                "name": "S Mohamed",
+                "url": false
               },
               {
-                "name": "H Fonoudi"
+                "name": "H Fonoudi",
+                "url": false
               },
               {
-                "name": "C Chen"
+                "name": "C Chen",
+                "url": false
               },
               {
-                "name": "M Wouters"
+                "name": "M Wouters",
+                "url": false
               },
               {
-                "name": "S Bhattacharya"
+                "name": "S Bhattacharya",
+                "url": false
               },
               {
-                "name": "N Plachta"
+                "name": "N Plachta",
+                "url": false
               },
               {
-                "name": "SL Dunwoodie"
+                "name": "SL Dunwoodie",
+                "url": false
               },
               {
-                "name": "G Chapman"
+                "name": "G Chapman",
+                "url": false
               },
               {
-                "name": "C Blanpain"
+                "name": "C Blanpain",
+                "url": false
               },
               {
-                "name": "RP Harvey"
+                "name": "RP Harvey",
+                "url": false
               }
             ],
             "suffix": "(2015)"
@@ -230,19 +269,24 @@
           {
             "authors": [
               {
-                "name": "Schrenk F"
+                "name": "Schrenk F",
+                "url": false
               },
               {
-                "name": "Bromage TG"
+                "name": "Bromage TG",
+                "url": false
               },
               {
-                "name": "Betzler CG"
+                "name": "Betzler CG",
+                "url": false
               },
               {
-                "name": "Ring U"
+                "name": "Ring U",
+                "url": false
               },
               {
-                "name": "Juwayeyi YM"
+                "name": "Juwayeyi YM",
+                "url": false
               }
             ],
             "suffix": "(1993)"
@@ -269,19 +313,24 @@
           {
             "authors": [
               {
-                "name": "JB Patterson"
+                "name": "JB Patterson",
+                "url": false
               },
               {
-                "name": "DG Lonergan"
+                "name": "DG Lonergan",
+                "url": false
               },
               {
-                "name": "GA Flynn"
+                "name": "GA Flynn",
+                "url": false
               },
               {
-                "name": "Z Qingpeng"
+                "name": "Z Qingpeng",
+                "url": false
               },
               {
-                "name": "PV Pallai"
+                "name": "PV Pallai",
+                "url": false
               }
             ],
             "suffix": "(2011)"
@@ -306,7 +355,8 @@
           {
             "authors": [
               {
-                "name": "The Economist"
+                "name": "The Economist",
+                "url": false
               }
             ],
             "suffix": "(October 19, 2013)"
@@ -331,22 +381,28 @@
           {
             "authors": [
               {
-                "name": "Paris M"
+                "name": "Paris M",
+                "url": false
               },
               {
-                "name": "Kaplan M"
+                "name": "Kaplan M",
+                "url": false
               },
               {
-                "name": "Li XY"
+                "name": "Li XY",
+                "url": false
               },
               {
-                "name": "Villalta JE"
+                "name": "Villalta JE",
+                "url": false
               },
               {
-                "name": "Lott SE"
+                "name": "Lott SE",
+                "url": false
               },
               {
-                "name": "Eisen MB"
+                "name": "Eisen MB",
+                "url": false
               }
             ],
             "suffix": "(2013)"
@@ -371,7 +427,8 @@
           {
             "authors": [
               {
-                "name": "Department of Education, UK."
+                "name": "Department of Education, UK.",
+                "url": false
               }
             ],
             "suffix": "(2016)"
@@ -395,7 +452,8 @@
           {
             "authors": [
               {
-                "name": "W. L. DeLano"
+                "name": "W. L. DeLano",
+                "url": false
               }
             ],
             "suffix": "(2002)"
@@ -420,7 +478,8 @@
           {
             "authors": [
               {
-                "name": "Assaf M."
+                "name": "Assaf M.",
+                "url": false
               }
             ],
             "suffix": "(2010)"
@@ -445,7 +504,8 @@
           {
             "authors": [
               {
-                "name": "Crane T"
+                "name": "Crane T",
+                "url": false
               }
             ],
             "suffix": "(2005)"

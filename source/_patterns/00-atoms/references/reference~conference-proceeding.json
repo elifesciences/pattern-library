@@ -6,55 +6,72 @@
     {
       "authors": [
         {
-          "name": "BV Jain"
+          "name": "BV Jain",
+          "url": false
         },
         {
-          "name": "B Bollman"
+          "name": "B Bollman",
+          "url": false
         },
         {
-          "name": "M Richardson"
+          "name": "M Richardson",
+          "url": false
         },
         {
-          "name": "DR Berger"
+          "name": "DR Berger",
+          "url": false
         },
         {
-          "name": "MN Helmstaedter"
+          "name": "MN Helmstaedter",
+          "url": false
         },
         {
-          "name": "KL Briggman"
+          "name": "KL Briggman",
+          "url": false
         },
         {
-          "name": "W Denk"
+          "name": "W Denk",
+          "url": false
         },
         {
-          "name": "JB Bowden"
+          "name": "JB Bowden",
+          "url": false
         },
         {
-          "name": "JM Mendenhall"
+          "name": "JM Mendenhall",
+          "url": false
         },
         {
-          "name": "WC Abraham"
+          "name": "WC Abraham",
+          "url": false
         },
         {
-          "name": "KM Harris"
+          "name": "KM Harris",
+          "url": false
         },
         {
-          "name": "N Kasthuri"
+          "name": "N Kasthuri",
+          "url": false
         },
         {
-          "name": "KJ Hayworth"
+          "name": "KJ Hayworth",
+          "url": false
         },
         {
-          "name": "R Schalek"
+          "name": "R Schalek",
+          "url": false
         },
         {
-          "name": "JC Tapia"
+          "name": "JC Tapia",
+          "url": false
         },
         {
-          "name": "JW Lichtman"
+          "name": "JW Lichtman",
+          "url": false
         },
         {
-          "name": "HS Seung"
+          "name": "HS Seung",
+          "url": false
         }
       ],
       "suffix": "(2010)"

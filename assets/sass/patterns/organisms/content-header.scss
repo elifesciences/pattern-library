@@ -40,6 +40,7 @@
   color: $color-text--reverse;
   height: #{$content-header-image-height--narrow-screen}px;
   overflow: hidden;
+  padding-bottom: 0;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     height: #{$content-header-image-height--medium-width-screen}px;
@@ -146,43 +147,11 @@
 }
 
 .content-header__picture {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.498039), rgba(0, 0, 0, 0.498039));
-  }
+  @include picture-with-overlay;
 }
 
 .content-header__image {
-  z-index: -2;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 100%;
-  min-width: 100%;
-  max-width: none;
-  transform: translate(-50%, -50%);
-  &:after {
-    // Hide broken images
-    content: "";
-    background-color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+  @include img-with-overlay;
 }
 
 .content-header__profile_wrapper {
@@ -275,9 +244,7 @@
     color: inherit;
   }
 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @include truncate-with-ellipsis();
 
   &:before {
     color: $color-text-secondary;

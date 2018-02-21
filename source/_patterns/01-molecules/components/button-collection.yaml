@@ -1,0 +1,20 @@
+assets:
+  css:
+    - button-collection.css
+    - $ref: ../../00-atoms/components/button.yaml#/assets/css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    compact:
+      type: boolean
+    centered:
+      type: boolean
+    buttons:
+      type: array
+      minItems: 1
+      items:
+        $ref: ../../00-atoms/components/button.yaml#/schema
+  required:
+    - buttons

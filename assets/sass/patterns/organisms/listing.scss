@@ -139,10 +139,6 @@ div.listing-list__content {
     }
   }
 
-  .teaser__context_label_list {
-    display: none;
-  }
-
 }
 
 .js {
@@ -177,17 +173,13 @@ div.listing-list__content {
     }
 
     .teaser__header_text {
+      @include truncate-with-ellipsis();
       padding-top: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
     }
 
     .teaser__secondary_info {
       @include padding(11, "bottom");
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      @include truncate-with-ellipsis();
     }
 
     .teaser__picture {
