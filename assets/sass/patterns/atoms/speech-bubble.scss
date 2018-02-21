@@ -79,6 +79,37 @@
 
 }
 
+.speech-bubble--loading {
+  position: relative;
+
+  &::before {
+    animation: ellipsis steps(4,end) 1000ms infinite;
+    box-sizing: content-box;
+    content: "\2026";
+    display: block;
+    left: 0;
+    overflow: hidden;
+    @include padding(4, "left");
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 0;
+  }
+
+  @keyframes ellipsis {
+
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 75%;
+    }
+
+  }
+
+}
+
 .speech-bubble[disabled] {
   background-color: $color-text-dividers;
   border-color: $color-text-dividers;
