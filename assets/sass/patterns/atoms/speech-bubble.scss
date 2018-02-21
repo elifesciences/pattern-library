@@ -78,3 +78,17 @@
   @include blg-spacing("top", "extra-small");
 
 }
+
+.speech-bubble[disabled] {
+  background-color: $color-text-dividers;
+  border-color: $color-text-dividers;
+  cursor: not-allowed;
+
+  &:after {
+    border-left-color: $color-text-dividers;
+    cursor: not-allowed;
+    left: 5px;
+    top: 10px;
+  }
+
+}
