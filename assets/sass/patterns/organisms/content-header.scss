@@ -40,6 +40,7 @@
   color: $color-text--reverse;
   height: #{$content-header-image-height--narrow-screen}px;
   overflow: hidden;
+  padding-bottom: 0;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     height: #{$content-header-image-height--medium-width-screen}px;
