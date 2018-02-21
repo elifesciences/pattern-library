@@ -32,4 +32,12 @@ module.exports = class SpeechBubble {
     $target.innerHTML = content;
   }
 
+  showLoadingIndicator() {
+    this.$elm.classList.add('speech-bubble--loading');
+  }
+
+  removeLoadingIndicator() {
+    this.$elm.classList.remove('speech-bubble--loading');
+  }
+
 };

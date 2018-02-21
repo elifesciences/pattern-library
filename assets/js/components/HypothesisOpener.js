@@ -16,10 +16,12 @@ module.exports = class HypothesisOpener {
     HypothesisOpener.applyStyleInitial(this.$elm);
     this.$elm.classList.add('hypothesis-opener');
     this.$elm.dataset.hypothesisTrigger = '';
+
     this.speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
     this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
-
-    if (!this.isContextualData) {
+    if (this.isContextualData) {
+      this.speechBubble.showLoadingIndicator();
+    } else {
       HypothesisOpener.applyStyleArticleBody(this.$elm);
       this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('body')));
     }
