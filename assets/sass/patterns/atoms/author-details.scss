@@ -81,10 +81,6 @@ a.author-details__link {
   }
 }
 
-.author-details__linked-image--orcid {
-  @include inline-image();
-}
-
 .author-details__name {
 
   .popup__content & {
