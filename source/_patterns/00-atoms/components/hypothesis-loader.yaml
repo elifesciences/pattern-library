@@ -1,0 +1,54 @@
+assets:
+  css: []
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    usernameUrl:
+      type: string
+    hypothesisApiUrl:
+      type: string
+      pattern: ^((https)?[^ ]+)$
+    hypothesisAuthority:
+      type: string
+      minLength: 1
+    grantToken:
+      type: string
+      minLength: 1
+    iconPath:
+      type: string
+      minLength: 1
+    isLoggedIn:
+      type: boolean
+      enum:
+        - true
+    loginPath:
+      type: string
+      minLength: 1
+    profilePath:
+      type: string
+      minLength: 1
+    logoutPath:
+      type: string
+      minLength: 1
+  required:
+    - usernameUrl
+    - hypothesisApiUrl
+    - hypothesisAuthority
+    - iconPath
+  oneOf:
+    - required:
+      - isLoggedIn
+      - profilePath
+      - logoutPath
+      not:
+        required:
+          - loginPath
+    - required:
+      - loginPath
+      not:
+        required:
+        - profilePath
+        - logoutPath
+        - isLoggedIn

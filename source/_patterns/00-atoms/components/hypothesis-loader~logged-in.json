@@ -1,0 +1,9 @@
+{
+  "usernameUrl": "/the/username/url",
+  "hypothesisApiUrl": "https://the/hypothesis-api/url",
+  "hypothesisAuthority": "scientificMethodRocks",
+  "iconPath": "/the/icon/path",
+  "isLoggedIn": true,
+  "logoutPath": "/log-out",
+  "profilePath": "/profile"
+}
