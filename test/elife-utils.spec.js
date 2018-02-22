@@ -12,6 +12,7 @@ const spy = sinon.spy;
 let utils = require('../assets/js/libs/elife-utils')();
 const generateSnippetWithNoItemType = require('./fixtures/snippetWithNoItemType.html');
 const generateSnippetWithItemType = require('./fixtures/snippetWithItemType.html');
+const generateSnippetWithCollapsedSections = require('./fixtures/snippetWithCollapsedSections.html');
 
 function removeFromDOM(selector) {
   'use strict';
@@ -1028,6 +1029,37 @@ describe('The utils library', function () {
         expect(utils.getItemType($hasDeepItemType)).to.equal('research-article');
       });
 
+    });
+
+  });
+
+  describe('expandCollapsedSections function', () => {
+
+    let collapsedSectionCount;
+    let $withCollapsedSections;
+
+    beforeEach(() => {
+      collapsedSectionCount = 6;
+      $withCollapsedSections = generateSnippetWithCollapsedSections(collapsedSectionCount);
+      expect($withCollapsedSections.querySelectorAll('.article-section--collapsed')).to.have.lengthOf(collapsedSectionCount);
+
+      [].slice.call($withCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
+        spy($section, 'dispatchEvent');
+      });
+    });
+
+    afterEach(() => {
+      [].slice.call($withCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
+        $section.dispatchEvent.restore();
+      });
+    });
+
+    it('expands all article sections provided', () => {
+      utils.expandCollapsedSections($withCollapsedSections);
+      [].slice.call($withCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
+        expect($section.dispatchEvent.calledOnce).to.be.true;
+        expect($section.dispatchEvent.calledWithExactly(utils.eventCreator('expandsection'))).to.be.true;
+      });
     });
 
   });
