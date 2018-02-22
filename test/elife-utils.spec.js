@@ -1036,27 +1036,27 @@ describe('The utils library', function () {
   describe('expandCollapsedSections function', () => {
 
     let collapsedSectionCount;
-    let $withCollapsedSections;
+    let $hasCollapsedSections;
 
     beforeEach(() => {
       collapsedSectionCount = 6;
-      $withCollapsedSections = generateSnippetWithCollapsedSections(collapsedSectionCount);
-      expect($withCollapsedSections.querySelectorAll('.article-section--collapsed')).to.have.lengthOf(collapsedSectionCount);
+      $hasCollapsedSections = generateSnippetWithCollapsedSections(collapsedSectionCount);
+      expect($hasCollapsedSections.querySelectorAll('.article-section--collapsed')).to.have.lengthOf(collapsedSectionCount);
 
-      [].slice.call($withCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
+      [].slice.call($hasCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
         spy($section, 'dispatchEvent');
       });
     });
 
     afterEach(() => {
-      [].slice.call($withCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
+      [].slice.call($hasCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
         $section.dispatchEvent.restore();
       });
     });
 
     it('expands all article sections provided', () => {
-      utils.expandCollapsedSections($withCollapsedSections);
-      [].slice.call($withCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
+      utils.expandCollapsedSections($hasCollapsedSections);
+      [].slice.call($hasCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
         expect($section.dispatchEvent.calledOnce).to.be.true;
         expect($section.dispatchEvent.calledWithExactly(utils.eventCreator('expandsection'))).to.be.true;
       });
