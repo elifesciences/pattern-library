@@ -29,6 +29,25 @@ module.exports = class HypothesisOpener {
     this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
     this.setupSectionExpansion(this.doc);
 
+    const timer = this.window.setTimeout(this.indicateLoadFail.bind(this), 10000);
+
+    // Initialise the hypothesis client load
+    // setup a listener
+    // setup a timer
+    // before the timer has completed:
+    //   if the load fails:
+    //     show the failure state
+    //     cancel the timer
+    //   if the load suceeds:
+    //     show the sucess state
+    //     cancel the timer
+    // once the timer has completed
+    //   show the failure state
+  }
+
+  indicateLoadFail() {
+    this.speechBubble.showFailureState();
+    console.log('failed');
   }
 
   setupSectionExpansion(doc) {
