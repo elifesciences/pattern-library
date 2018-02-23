@@ -4,7 +4,7 @@ module.exports = class HypothesisLoader {
 
   constructor($elm, _window = window, doc = document) {
 
-    if ($elm.classList.contains('article-section--first')) {
+    if (!$elm) {
       return;
     }
 
@@ -17,9 +17,10 @@ module.exports = class HypothesisLoader {
     const $script = this.doc.createElement('script');
     $script.src = 'https://hypothes.is/embed.js';
     $script.id = 'hypothesisEmbedder';
-    $script.addEventListener('error', () => {
-      this.$elm.dataset.hypothesisEmbedLoadFailed = '';
+    $script.addEventListener('error', (e) => {
+      this.$elm.dataset.hypothesisEmbedLoadStatus = 'failed';
       this.$elm.dispatchEvent(new this.window.ErrorEvent('Hypothesis embed load failed'));
+      console.error('Hypothesis client load failed. The error is: ', e);
     });
 
     this.doc.querySelector('head').appendChild($script);
