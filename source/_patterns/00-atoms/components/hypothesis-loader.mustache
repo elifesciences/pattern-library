@@ -24,8 +24,8 @@
       services: [{
         apiUrl: {{hypothesisApiUrl}},
         authority: {{hypothesisAuthority}},
-      grantToken: {{#grantToken}}{{grantToken}}{{/grantToken}}{{^grantToken}}null{{/grantToken}},
-        icon: {{iconPath}}
+        icon: {{iconPath}},
+        grantToken: {{#loginPath}}{{grantToken}}{{/loginPath}}{{^loginPath}}null{{/loginPath}}
         {{#loginPath}},
           onLoginRequest: function () {
             window.location.assign({{ loginPath }});
