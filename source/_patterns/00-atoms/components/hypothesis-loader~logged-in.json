@@ -1,8 +1,8 @@
 {
-  "usernameUrl": "/the/username/url",
-  "hypothesisApiUrl": "https://the/hypothesis-api/url",
-  "hypothesisAuthority": "scientificMethodRocks",
-  "iconPath": "/the/icon/path",
+  "usernameUrl": "https://elifesciences.org/profiles/",
+  "hypothesisApiUrl": "https://hypothes.is/api/",
+  "hypothesisAuthority": "elifesciences.org",
+  "iconPath": "https://elifesciences.org/assets/favicons/favicon.ee498e7d.svg",
   "isLoggedIn": true,
   "logoutPath": "/log-out",
   "profilePath": "/profile"
