@@ -7,6 +7,7 @@ schema:
   properties:
     usernameUrl:
       type: string
+      minLength: 1
     hypothesisApiUrl:
       type: string
       pattern: ^((https)?[^ ]+)$
