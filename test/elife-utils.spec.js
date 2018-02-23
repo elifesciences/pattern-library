@@ -1057,8 +1057,9 @@ describe('The utils library', function () {
     it('expands all article sections provided', () => {
       utils.expandCollapsedSections($hasCollapsedSections);
       [].slice.call($hasCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
-        expect($section.dispatchEvent.calledOnce).to.be.true;
-        expect($section.dispatchEvent.calledWithExactly(utils.eventCreator('expandsection'))).to.be.true;
+        const event = utils.eventCreator('expandsection');
+        expect($section.dispatchEvent.calledOnceWithExactly(event)).to.be.true;
+
       });
     });
 
