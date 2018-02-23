@@ -26,22 +26,22 @@
         authority: {{hypothesisAuthority}},
       grantToken: {{#grantToken}}{{grantToken}}{{/grantToken}}{{^grantToken}}null{{/grantToken}},
         icon: {{iconPath}}
-        {{#isLoggedIn}},
-          onLogoutRequest: function () {
-            window.location.assign({{ logoutPath }});
-          },
-          onProfileRequest: function () {
-            window.location.assign({{ profilePath }});
-          }
-        {{/isLoggedIn}}
-        {{^isLoggedIn}},
+        {{#loginPath}},
           onLoginRequest: function () {
             window.location.assign({{ loginPath }});
           },
           onSignupRequest: function () {
             window.location.assign({{ loginPath }});
           }
-        {{/isLoggedIn}}
+        {{/loginPath}}
+        {{^loginPath}},
+          onLogoutRequest: function () {
+            window.location.assign({{ logoutPath }});
+          },
+          onProfileRequest: function () {
+            window.location.assign({{ profilePath }});
+          }
+        {{/loginPath}}
       }],
       showHighlights: 'whenSidebarOpen'
     };

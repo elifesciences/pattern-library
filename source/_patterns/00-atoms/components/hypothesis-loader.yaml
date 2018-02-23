@@ -7,7 +7,7 @@ schema:
   properties:
     usernameUrl:
       type: string
-      minLength: 1
+      pattern: ^((https)?[^ ]+)$
     hypothesisApiUrl:
       type: string
       pattern: ^((https)?[^ ]+)$
@@ -20,10 +20,6 @@ schema:
     iconPath:
       type: string
       minLength: 1
-    isLoggedIn:
-      type: boolean
-      enum:
-        - true
     loginPath:
       type: string
       minLength: 1
@@ -40,7 +36,6 @@ schema:
     - iconPath
   oneOf:
     - required:
-      - isLoggedIn
       - profilePath
       - logoutPath
       not:
@@ -52,4 +47,3 @@ schema:
         required:
         - profilePath
         - logoutPath
-        - isLoggedIn

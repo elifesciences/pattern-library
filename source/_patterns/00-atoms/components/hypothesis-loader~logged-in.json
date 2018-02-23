@@ -3,7 +3,6 @@
   "hypothesisApiUrl": "https://hypothes.is/api/",
   "hypothesisAuthority": "elifesciences.org",
   "iconPath": "https://elifesciences.org/assets/favicons/favicon.ee498e7d.svg",
-  "isLoggedIn": true,
   "logoutPath": "/log-out",
   "profilePath": "/profile"
 }
