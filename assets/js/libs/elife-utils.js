@@ -650,8 +650,7 @@ module.exports = () => {
   function expandCollapsedSections(parent) {
     const collapsed = parent.querySelectorAll('.article-section--collapsed');
     [].slice.call(collapsed).forEach(($section) => {
-      const event = eventCreator('expandsection');
-      $section.dispatchEvent(event);
+      $section.dispatchEvent(eventCreator('expandsection'));
     });
   }
 

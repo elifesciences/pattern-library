@@ -1054,7 +1054,7 @@ describe('The utils library', function () {
       });
     });
 
-    it('expands all article sections provided', () => {
+    it('expands all collapsed sections supplied', () => {
       utils.expandCollapsedSections($hasCollapsedSections);
       [].slice.call($hasCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
 

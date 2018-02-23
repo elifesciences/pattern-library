@@ -12,7 +12,7 @@ module.exports = (requestedCount) => {
   }
 
   for (let i = 0; i < count; i += 1) {
-    buildElement('div', ['article-section', 'article-section--js', 'article-section--collapsed'], `Paragraph ${i + 1}`, $root);
+    buildElement('div', ['article-section', 'article-section--js', 'article-section--collapsed'], `Section ${i + 1}`, $root);
   }
 
   return $root;
