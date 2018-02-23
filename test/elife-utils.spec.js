@@ -1057,9 +1057,12 @@ describe('The utils library', function () {
     it('expands all article sections provided', () => {
       utils.expandCollapsedSections($hasCollapsedSections);
       [].slice.call($hasCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
-        const event = utils.eventCreator('expandsection');
-        expect($section.dispatchEvent.calledOnceWithExactly(event)).to.be.true;
 
+        expect($section.dispatchEvent.calledOnce).to.be.true;
+
+        const calledWith = $section.dispatchEvent.getCall(0).args[0];
+        expect(calledWith).to.be.an.instanceOf(CustomEvent);
+        expect(calledWith.type).to.equal('expandsection');
       });
     });
 
