@@ -20,26 +20,26 @@
       enableExperimentalNewNoteButton: true,
       enableCleanOnboardingTheme: true,
       theme: 'clean',
-      usernameUrl: {{usernameUrl}},
+      usernameUrl: '{{usernameUrl}}',
       services: [{
-        apiUrl: {{hypothesisApiUrl}},
-        authority: {{hypothesisAuthority}},
-        icon: {{iconPath}},
-        grantToken: {{#loginPath}}{{grantToken}}{{/loginPath}}{{^loginPath}}null{{/loginPath}}
-        {{#loginPath}},
+        apiUrl: '{{hypothesisApiUrl}}',
+        authority: '{{hypothesisAuthority}}',
+        icon: '{{iconPath}}',
+      grantToken: {{#loginPath}}'{{grantToken}}'{{/loginPath}}{{^loginPath}}null{{/loginPath}},
+        {{#loginPath}}
           onLoginRequest: function () {
-            window.location.assign({{ loginPath }});
+            window.location.assign('{{ loginPath }}');
           },
           onSignupRequest: function () {
-            window.location.assign({{ loginPath }});
+            window.location.assign('{{ loginPath }}');
           }
         {{/loginPath}}
-        {{^loginPath}},
+        {{^loginPath}}
           onLogoutRequest: function () {
-            window.location.assign({{ logoutPath }});
+            window.location.assign('{{ logoutPath }}');
           },
           onProfileRequest: function () {
-            window.location.assign({{ profilePath }});
+            window.location.assign('{{ profilePath }}');
           }
         {{/loginPath}}
       }],
