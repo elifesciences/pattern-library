@@ -19,30 +19,63 @@ module.exports = class HypothesisOpener {
 
     this.speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
     this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
-    if (this.isContextualData) {
-      this.speechBubble.showLoadingIndicator();
-    } else {
+    if (!this.isContextualData) {
       HypothesisOpener.applyStyleArticleBody(this.$elm);
       this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('body')));
     }
 
-    this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
+    this.speechBubble.showLoadingIndicator();
+    let timer = null;
+    try {
+      // Get the Hypothesis-loading <script> and create a callback with it
+      const $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
+      this.loadFailHandler = () => {
+        this.handleLoadFail($loader);
+      };
+
+      // Setup a timer that fails the load if it completes
+      timer = this.handleHypothesisLoadingWithTimer($loader, 10000);
+    } catch (e) {
+      this.indicateLoadFail();
+      if (typeof timer === 'number') {
+        this.window.clearTimeout(timer);
+      }
+
+      console.error(e.message);
+      return;
+    }
+
+    this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]', timer);
+
+    this.containingArticleTogglableSections = this.doc.querySelectorAll('.article-section--js');
     this.setupSectionExpansion(this.doc);
+  }
 
-    const timer = this.window.setTimeout(this.indicateLoadFail.bind(this), 10000);
+  static get$hypothesisLoader(doc) {
+    const $loader =  doc.getElementById('hypothesisEmbedder');
+    if ($loader) {
+      return $loader;
+    }
 
-    // Initialise the hypothesis client load
-    // setup a listener
-    // setup a timer
-    // before the timer has completed:
-    //   if the load fails:
-    //     show the failure state
-    //     cancel the timer
-    //   if the load suceeds:
-    //     show the sucess state
-    //     cancel the timer
-    // once the timer has completed
-    //   show the failure state
+    throw new Error('No Hypothesis loading code found.');
+  }
+
+  handleHypothesisLoadingWithTimer($loader, timeoutInMs) {
+    $loader.addEventListener('error', this.loadFailHandler);
+
+    // Check if the script load has already failed
+    if ($loader.dataset.hypothesisEmbedLoadStatus === 'failed') {
+      this.loadFailHandler();
+    }
+
+    // Load will be defined as failed if this timer completes
+    return this.window.setTimeout(this.loadFailHandler, timeoutInMs);
+  }
+
+  handleLoadFail($loader) {
+    this.indicateLoadFail();
+    $loader.removeEventListener('error', this.loadFailHandler);
+    $loader.parentNode.removeChild($loader);
   }
 
   indicateLoadFail() {
@@ -92,7 +125,7 @@ module.exports = class HypothesisOpener {
 
   }
 
-  hookUpDataProvider($elm, visibleCountSelector) {
+  hookUpDataProvider($elm, visibleCountSelector, timer) {
 
     // Updated by the hypothesis client
     const $dataProvider = $elm.querySelector('[data-hypothesis-annotation-count]');
@@ -104,6 +137,7 @@ module.exports = class HypothesisOpener {
       mutations.forEach((mutation) => {
         try {
           this.updateVisibleCount(mutation.addedNodes[0].data, visibleCountSelector, this.isContextualData);
+          this.window.clearTimeout(timer);
         } catch (e) {
           console.error(e);
         }
