@@ -393,15 +393,24 @@
   z-index: 4;
 }
 
-@mixin discreet-link ($color: $color-text) {
+@mixin discreet-link ($color: $color-text, $has-hover-state: true) {
   border-bottom: 1px dotted $color;
   color: $color;
   text-decoration: none;
 
-  &:hover {
-    border-bottom-color: $color-primary;
-    color: $color-primary;
+  @if $has-hover-state == true {
+    &:hover {
+      border-bottom-color: $color-primary;
+      color: $color-primary;
+    }
+  } @else {
+    &:hover {
+      border-bottom-color: $color;
+      color: $color;
+    }
+
   }
+
 }
 
 @mixin popup_title_text {
