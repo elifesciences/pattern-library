@@ -390,14 +390,11 @@ $iconlist: cc oa;
   max-width: 100%;
 
   a {
-    @include discreet-link($color-text--reverse);
+    @include discreet-link($color-text, false);
 
-    &:link,
     &:hover,
-    &:active,
-    &:visited {
-      border-bottom-color: $color-text--reverse;
-      color: $color-text--reverse;
+    &:active {
+      color: inherit;
     }
 
   }
@@ -405,14 +402,17 @@ $iconlist: cc oa;
   .content-header--image & {
     @include margin(0, "bottom");
     display: none;
+
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       display: block;
     }
+
+    a {
+      @include discreet-link($color-text--reverse, false);
+    }
+
   }
 
-  a {
-    color: inherit;
-  }
 }
 
 .content-header__author_link_highlight {
