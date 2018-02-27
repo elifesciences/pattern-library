@@ -15,15 +15,25 @@ module.exports = class HypothesisLoader {
     this.isSingleton = true;
 
     const $script = this.doc.createElement('script');
-    $script.src = 'https://hypothes.is/embed.js';
+    $script.src = HypothesisLoader.setScriptSource(this.$elm);
     $script.id = 'hypothesisEmbedder';
-    $script.addEventListener('error', (e) => {
-      this.$elm.dataset.hypothesisEmbedLoadStatus = 'failed';
-      this.$elm.dispatchEvent(new this.window.ErrorEvent('Hypothesis embed load failed'));
-      console.error('Hypothesis client load failed. The error is: ', e);
-    });
+    $script.addEventListener('error', this.handleError);
 
     this.doc.querySelector('head').appendChild($script);
+  }
+
+  static setScriptSource($elm) {
+    return $elm.dataset.endpoint || 'https://hypothes.is/embed.js';
+  }
+
+  handleError() {
+    this.$elm.dataset.hypothesisEmbedLoadStatus = 'failed';
+    this.$elm.dispatchEvent(new this.window.ErrorEvent(
+      'loaderror',
+      {
+        message: 'Hypothesis embed load failed'
+      }
+    ));
   }
 
 };
