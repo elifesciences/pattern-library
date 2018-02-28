@@ -21,8 +21,8 @@ describe('A HypothesisLoader Component', function () {
     expect(loader.isSingleton).to.be.true;
   });
 
-  it('by default loads from the endpoint https://hypothes.is/embed.js', () => {
-    expect(HypothesisLoader.setScriptSource($elm)).to.equal('https://hypothes.is/embed.js');
+  it('loads from the endpoint https://hypothes.is/embed.js', () => {
+    expect(loader.$embedder.src).to.equal('https://hypothes.is/embed.js');
   });
 
   describe('handling load failure', () => {

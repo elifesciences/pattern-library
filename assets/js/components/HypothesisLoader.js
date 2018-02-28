@@ -14,16 +14,12 @@ module.exports = class HypothesisLoader {
 
     this.isSingleton = true;
 
-    const $script = this.doc.createElement('script');
-    $script.src = HypothesisLoader.setScriptSource(this.$elm);
-    $script.id = 'hypothesisEmbedder';
-    $script.addEventListener('error', this.handleError);
+    this.$embedder = this.doc.createElement('script');
+    this.$embedder.src = 'https://hypothes.is/embed.js';
+    this.$embedder.id = 'hypothesisEmbedder';
+    this.$embedder.addEventListener('error', this.handleError);
 
-    this.doc.querySelector('head').appendChild($script);
-  }
-
-  static setScriptSource($elm) {
-    return $elm.dataset.endpoint || 'https://hypothes.is/embed.js';
+    this.doc.querySelector('head').appendChild(this.$embedder);
   }
 
   handleError() {
