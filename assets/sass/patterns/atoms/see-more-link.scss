@@ -1,7 +1,6 @@
 @import "../../definitions";
 
 .see-more-link {
-  display: block;
   color: $color-text;
   @include see-more-link-typeg();
   text-decoration: none;
@@ -10,6 +9,10 @@
     content: "\00a\00bb";
   }
 
+}
+
+.see-more-link:not(.see-more-link--inline) {
+  display: block;
 }
 
 .see-more-link__highlight {
