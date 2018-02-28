@@ -25,7 +25,7 @@
         apiUrl: '{{hypothesisApiUrl}}',
         authority: '{{hypothesisAuthority}}',
         icon: '{{iconPath}}',
-      grantToken: {{#loginPath}}'{{grantToken}}'{{/loginPath}}{{^loginPath}}null{{/loginPath}},
+      grantToken: {{#logoutPath}}'{{grantToken}}'{{/logoutPath}}{{^loginPath}}null{{/loginPath}},
         {{#loginPath}}
           onLoginRequest: function () {
             window.location.assign('{{ loginPath }}');
