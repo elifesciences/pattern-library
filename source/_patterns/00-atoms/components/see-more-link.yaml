@@ -14,8 +14,6 @@ schema:
       minLength: 1
     isInline:
       type: boolean
-      enum:
-        - true
   required:
     - url
     - name
