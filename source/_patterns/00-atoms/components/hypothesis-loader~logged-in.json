@@ -1,9 +1,0 @@
-{
-  "usernameUrl": "https://elifesciences.org/profiles/",
-  "hypothesisApiUrl": "https://hypothes.is/api/",
-  "hypothesisAuthority": "elifesciences.org",
-  "iconPath": "https://elifesciences.org/assets/favicons/favicon.ee498e7d.svg",
-  "grantToken": "someGrantToken",
-  "logoutPath": "/log-out",
-  "profilePath": "/profile"
-}
