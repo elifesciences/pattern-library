@@ -74,8 +74,9 @@ module.exports = class AssetNavigation {
   addPreviousButton(i, navigation) {
     const previous = utils.buildElement('span', ['asset-viewer-inline__previous'], '', navigation);
     if (i > 0) {
-      previous.addEventListener('click', () => {
-        this.window.location.hash = this.assetItems[i - 1].id;
+      previous.addEventListener('click', (e) => {
+        this.window.history.replaceState({}, '', '#' + this.assetItems[i - 1].id);
+        this.show(i - 1);
       });
       previous.classList.add('asset-viewer-inline__previous--active');
     }
@@ -84,8 +85,9 @@ module.exports = class AssetNavigation {
   addNextButton(i, navigation) {
     const next = utils.buildElement('span', ['asset-viewer-inline__next'], '', navigation);
     if (i < (this.assetItems.length - 1)) {
-      next.addEventListener('click', () => {
-        this.window.location.hash = this.assetItems[i + 1].id;
+      next.addEventListener('click', (e) => {
+        this.window.history.replaceState({}, '', '#' + this.assetItems[i + 1].id);
+        this.show(i + 1);
       });
       next.classList.add('asset-viewer-inline__next--active');
     }
@@ -98,7 +100,6 @@ module.exports = class AssetNavigation {
   show(i) {
     this.hideAll();
     this.assetItems[i].classList.remove('visuallyhidden');
-    this.assetItems[i].scrollIntoView();
   }
 
   findSupplements() {
@@ -122,6 +123,7 @@ module.exports = class AssetNavigation {
     [].forEach.call(this.assetItems, (assetItem, i) => {
       if (assetItem.id === hash) {
         this.show(i);
+        assetItem.scrollIntoView();
       }
     });
   }
