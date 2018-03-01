@@ -62,7 +62,7 @@ module.exports = class AssetNavigation {
           this.addNextButton(i, navigation);
 
           [].forEach.call(assetItem.querySelectorAll('a'), (link) => {
-            link.addEventListener('click', (e) => {
+            link.addEventListener('click', () => {
               const current = window.location.href.split('#')[0];
               if (link.href.indexOf(`${current}#`)) {
                 return;
