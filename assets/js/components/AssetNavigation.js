@@ -74,7 +74,7 @@ module.exports = class AssetNavigation {
   addPreviousButton(i, navigation) {
     const previous = utils.buildElement('span', ['asset-viewer-inline__previous'], '', navigation);
     if (i > 0) {
-      previous.addEventListener('click', (e) => {
+      previous.addEventListener('click', () => {
         this.window.history.replaceState({}, '', '#' + this.assetItems[i - 1].id);
         this.show(i - 1);
       });
@@ -85,7 +85,7 @@ module.exports = class AssetNavigation {
   addNextButton(i, navigation) {
     const next = utils.buildElement('span', ['asset-viewer-inline__next'], '', navigation);
     if (i < (this.assetItems.length - 1)) {
-      next.addEventListener('click', (e) => {
+      next.addEventListener('click', () => {
         this.window.history.replaceState({}, '', '#' + this.assetItems[i + 1].id);
         this.show(i + 1);
       });
