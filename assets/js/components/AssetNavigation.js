@@ -61,6 +61,20 @@ module.exports = class AssetNavigation {
           this.addPreviousButton(i, navigation);
           this.addNextButton(i, navigation);
 
+          [].forEach.call(assetItem.querySelectorAll('a'), (link) => {
+            link.addEventListener('click', (e) => {
+              const current = window.location.href.split('#')[0];
+              if (link.href.indexOf(`${current}#`)) {
+                return;
+              }
+
+              const event = utils.eventCreator('hashchange');
+              event.newURL = link.href;
+
+              this.window.dispatchEvent(event);
+            });
+          });
+
           assetItem.addEventListener('assetViewerFocus', () => this.show(i));
         });
 
