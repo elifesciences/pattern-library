@@ -61,20 +61,6 @@ module.exports = class AssetNavigation {
           this.addPreviousButton(i, navigation);
           this.addNextButton(i, navigation);
 
-          [].forEach.call(assetItem.querySelectorAll('a'), (link) => {
-            link.addEventListener('click', () => {
-              const current = window.location.href.split('#')[0];
-              if (link.href.indexOf(`${current}#`)) {
-                return;
-              }
-
-              const event = utils.eventCreator('hashchange');
-              event.newURL = link.href;
-
-              this.window.dispatchEvent(event);
-            });
-          });
-
           assetItem.addEventListener('assetViewerFocus', () => this.show(i));
         });
 
@@ -89,7 +75,7 @@ module.exports = class AssetNavigation {
     const previous = utils.buildElement('span', ['asset-viewer-inline__previous'], '', navigation);
     if (i > 0) {
       previous.addEventListener('click', () => {
-        this.show(i - 1);
+        this.window.location.hash = this.assetItems[i - 1].id;
       });
       previous.classList.add('asset-viewer-inline__previous--active');
     }
@@ -99,7 +85,7 @@ module.exports = class AssetNavigation {
     const next = utils.buildElement('span', ['asset-viewer-inline__next'], '', navigation);
     if (i < (this.assetItems.length - 1)) {
       next.addEventListener('click', () => {
-        this.show(i + 1);
+        this.window.location.hash = this.assetItems[i + 1].id;
       });
       next.classList.add('asset-viewer-inline__next--active');
     }
@@ -112,6 +98,7 @@ module.exports = class AssetNavigation {
   show(i) {
     this.hideAll();
     this.assetItems[i].classList.remove('visuallyhidden');
+    this.assetItems[i].scrollIntoView();
   }
 
   findSupplements() {
