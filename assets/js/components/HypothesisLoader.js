@@ -68,7 +68,9 @@ module.exports = class HypothesisLoader {
       showHighlights: 'whenSidebarOpen'
     };
 
-    return Object.assign(uiConfig, configFromJournal);
+    return function () {
+      return Object.assign(uiConfig, externalConfig);
+    };
   }
 
   static validateConfig(config) {
