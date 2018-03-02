@@ -45,7 +45,9 @@ module.exports = class HypothesisLoader {
   }
 
   static assembleHypothesisConfig(window) {
-    const configFromJournal = window.elifeConfig.hypothesis;
+    const externalConfig = window.elifeConfig.hypothesis;
+    HypothesisLoader.validateConfig(externalConfig);
+
     const uiConfig = {
       branding: {
         accentColor: '#0288D1',
@@ -73,11 +75,11 @@ module.exports = class HypothesisLoader {
     };
   }
 
-  static validateConfig(config) {
+  static validateConfig(externalConfig) {
 
-    const services = config.services[0];
+    const services = externalConfig.services[0];
 
-    HypothesisLoader.validateAsUrl('usernameUrl', config.usernameUrl);
+    HypothesisLoader.validateAsUrl('usernameUrl', externalConfig.usernameUrl);
     HypothesisLoader.validateAsUrl('apiUrl', services.apiUrl);
     HypothesisLoader.validateAsUrl('icon', services.icon);
     HypothesisLoader.validateAsPopulatedString('authority', services.authority);
