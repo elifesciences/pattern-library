@@ -8,10 +8,56 @@ const spy = sinon.spy;
 const HypothesisLoader = require('../assets/js/components/HypothesisLoader');
 const getValidConfig = require('./fixtures/hypothesisLoaderValidConfig');
 
+/**
+ * Given two objects, removes the properties that are functions. Returns the objects without their
+ * function properties, and a Set of the property names of the removed functions.
+ *
+ * Used as a helper for determining deep equals comparisons of objects containing functions: deep
+ * equals function comparison uses identity comparison, which is too strict.
+ * see https://github.com/chaijs/chai/issues/697
+ *
+ * @param o1 first compared object
+ * @param o2 second compared object
+ * @return {{first: *, second: *, fns: Set<string>}}
+ */
+function separateFnsFromOtherProps(o1, o2) {
+  'use strict';
+
+  // Move the functions into a set to be dealt with separately
+  const fns = new Set();
+  const _o1 = Object.assign({}, o1);
+  const _o2 = Object.assign({}, o2);
+
+  for (let prop in _o1) {
+    if (_o1.hasOwnProperty(prop)) {
+      if (typeof _o1[prop] === 'function') {
+        fns.add(prop);
+        delete _o1[prop];
+      }
+    }
+  }
+
+  for (let prop in _o2) {
+    if (_o2.hasOwnProperty(prop)) {
+      if (typeof _o2[prop] === 'function') {
+        fns.add(prop);
+        delete _o2[prop];
+      }
+    }
+  }
+
+  return {
+    first: _o1,
+    second: _o2,
+    fns
+  };
+
+}
+
 describe('A HypothesisLoader Component', function () {
   'use strict';
 
-  describe('Instantiation', () => {
+  describe('on instantiation', () => {
     let $elm;
     let loader;
 
@@ -32,8 +78,15 @@ describe('A HypothesisLoader Component', function () {
       expect(loader.isSingleton).to.be.true;
     });
 
-    it('assigns the hypothesis config it builds to the "window.hypothesisConfig" property', () => {
-      expect(window.hypothesisConfig).to.deep.equal(getValidConfig().loggedIn);
+    it('assigns the hypothesis config it builds to the window.hypothesisConfig() property', () => {
+      expect(window.hypothesisConfig).to.be.a('function');
+      const servicesWithProcessedFns = separateFnsFromOtherProps(window.hypothesisConfig().services[0], getValidConfig().loggedIn.services[0]);
+      expect(servicesWithProcessedFns.first).to.deep.equal(servicesWithProcessedFns.second);
+      servicesWithProcessedFns.fns.forEach((propertyName) => {
+        expect(window.hypothesisConfig().services[0]).to.have.property(propertyName);
+        expect(getValidConfig().loggedIn.services[0]).to.have.property(propertyName);
+      });
+
     });
 
   });
@@ -94,7 +147,7 @@ describe('A HypothesisLoader Component', function () {
 
   });
 
-  describe('validating config', () => {
+  describe('validating properties returned by the config function', () => {
 
     let config;
 
@@ -112,7 +165,7 @@ describe('A HypothesisLoader Component', function () {
       }).not.to.throw;
     });
 
-    it('throws an error if the usernameUrl property is not an absolute url', () => {
+    it('throws the expected error if the usernameUrl property is not an absolute url', () => {
       config.loggedIn.usernameUrl = null;
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
@@ -124,7 +177,7 @@ describe('A HypothesisLoader Component', function () {
       }).to.throw(/Couldn't find a valid property with the name "usernameUrl"/);
     });
 
-    it('throws an error if the apiUrl property is not an absolute url', () => {
+    it('throws the expected error if the apiUrl property is not an absolute url', () => {
       config.loggedIn.services[0].apiUrl = null;
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
@@ -136,7 +189,7 @@ describe('A HypothesisLoader Component', function () {
       }).to.throw(/Couldn't find a valid property with the name "apiUrl"/);
     });
 
-    it('throws an error if the icon property is not an absolute url', () => {
+    it('throws the expected error if the icon property is not an absolute url', () => {
       config.loggedIn.services[0].icon = null;
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
@@ -149,7 +202,7 @@ describe('A HypothesisLoader Component', function () {
 
     });
 
-    it('throws an error if the authority property is not a populated string', () => {
+    it('throws the expected error if the authority property is not a populated string', () => {
       config.loggedIn.services[0].authority = null;
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
@@ -171,14 +224,14 @@ describe('A HypothesisLoader Component', function () {
         expect(!!loggedInConfig.services[0].onLogoutRequest).to.be.true;
       });
 
-      it('throws an error if there is not a truthy onProfileRequest property', () => {
+      it('throws the expected error if there is not a truthy onProfileRequest property', () => {
         loggedInConfig.services[0].onProfileRequest = null;
         expect(() => {
           HypothesisLoader.validateConfig(loggedInConfig);
         }).to.throw(/Couldn't find a valid property with the name "onProfileRequest"/);
       });
 
-      it('throws an error if the grantToken property is not a populated string', () => {
+      it('throws the expected error if the grantToken property is not a populated string', () => {
         loggedInConfig.services[0].grantToken = null;
         expect(() => {
           HypothesisLoader.validateConfig(loggedInConfig);
@@ -190,7 +243,7 @@ describe('A HypothesisLoader Component', function () {
         }).to.throw(/Couldn't find a valid property with the name "grantToken"/);
       });
 
-      it('throws an error if there is a truthy onLoginRequest property', () => {
+      it('throws the expected error if there is a truthy onLoginRequest property', () => {
         loggedInConfig.services[0].onLoginRequest = true;
         expect(() => {
           HypothesisLoader.validateConfig(loggedInConfig);
@@ -208,21 +261,21 @@ describe('A HypothesisLoader Component', function () {
         expect(!!loggedOutConfig.services[0].onLogoutRequest).to.be.false;
       });
 
-      it('throws an error if there is not a truthy onLoginRequest property', () => {
+      it('throws the expected error if there is not a truthy onLoginRequest property', () => {
         loggedOutConfig.services[0].onLoginRequest = null;
         expect(() => {
           HypothesisLoader.validateConfig(loggedOutConfig);
         }).to.throw(/Couldn't find exactly one of the properties "onLoginRequest" and "onLogoutRequest"/);
       });
 
-      it('throws an error if there is a truthy onProfileRequest property', () => {
+      it('throws the expected error if there is a truthy onProfileRequest property', () => {
         loggedOutConfig.services[0].onProfileRequest = true;
         expect(() => {
           HypothesisLoader.validateConfig(loggedOutConfig);
         }).to.throw(/Found both mutually exclusive properties "onLoginRequest" and "onProfileRequest"/);
       });
 
-      it('throws an error if the grantToken property is not null', () => {
+      it('throws the expected error if the grantToken property is not null', () => {
         loggedOutConfig.services[0].grantToken = true;
         expect(() => {
           HypothesisLoader.validateConfig(loggedOutConfig);
