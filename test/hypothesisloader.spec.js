@@ -122,14 +122,14 @@ describe('A HypothesisLoader Component', function () {
       });
 
       it('sets the data attribute hypothesis-embed-load-status to "failed" on its own element', () => {
-        loader.handleError();
+        loader.handleLoadError();
         expect($elm.dataset.hypothesisEmbedLoadStatus).to.equal('failed');
       });
 
       it('emits a loaderror event with the message "Hypothesis embed load failed"', () => {
         spy($elm, 'dispatchEvent');
 
-        loader.handleError();
+        loader.handleLoadError();
 
         expect($elm.dispatchEvent.calledOnce).is.true;
 

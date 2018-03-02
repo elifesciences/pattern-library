@@ -25,12 +25,12 @@ module.exports = class HypothesisLoader {
     this.$embedder = this.doc.createElement('script');
     this.$embedder.src = 'https://hypothes.is/embed.js';
     this.$embedder.id = 'hypothesisEmbedder';
-    this.$embedder.addEventListener('error', this.handleError);
+    this.$embedder.addEventListener('error', this.handleLoadError);
 
     this.doc.querySelector('head').appendChild(this.$embedder);
   }
 
-  handleError() {
+  handleLoadError() {
     this.$elm.dataset.hypothesisEmbedLoadStatus = 'failed';
     this.$elm.dispatchEvent(new this.window.ErrorEvent(
       'loaderror',
