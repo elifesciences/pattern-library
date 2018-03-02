@@ -14,6 +14,14 @@ module.exports = class HypothesisLoader {
 
     this.isSingleton = true;
 
+    try {
+      this.window.hypothesisConfig = HypothesisLoader.assembleHypothesisConfig(this.window);
+    } catch (e) {
+      console.error('Could\'t load Hypothesis config, aborting Hypothesis client loading.');
+      console.error('The error was: ', e);
+      return;
+    }
+
     this.$embedder = this.doc.createElement('script');
     this.$embedder.src = 'https://hypothes.is/embed.js';
     this.$embedder.id = 'hypothesisEmbedder';
@@ -30,6 +38,101 @@ module.exports = class HypothesisLoader {
         message: 'Hypothesis embed load failed'
       }
     ));
+  }
+
+  static setHypothesisConfig(config, window) {
+    window.hypothesisConfig = config;
+  }
+
+  static assembleHypothesisConfig(window) {
+    const configFromJournal = window.elifeConfig.hypothesis;
+    const uiConfig = {
+      branding: {
+        accentColor: '#0288D1',
+        appBackgroundColor: 'white',
+        ctaBackgroundColor: '#0288D1',
+        ctaTextColor: 'white',
+        selectionFontFamily: 'Georgia, Times, serif',
+        annotationFontFamily: 'Georgia, Times, serif'
+      },
+      openSidebar: window.location.hash === '#annotations',
+      disableToolbarCloseBtn: false,
+      disableToolbarMinimizeBtn: true,
+      disableToolbarHighlightsBtn: true,
+      disableToolbarNewNoteBtn: true,
+      disableBucketBar: true,
+      enableSidebarDropShadow: true,
+      enableExperimentalNewNoteButton: true,
+      enableCleanOnboardingTheme: true,
+      theme: 'clean',
+      showHighlights: 'whenSidebarOpen'
+    };
+
+    return Object.assign(uiConfig, configFromJournal);
+  }
+
+  static validateConfig(config) {
+
+    const services = config.services[0];
+
+    HypothesisLoader.validateAsUrl('usernameUrl', config.usernameUrl);
+    HypothesisLoader.validateAsUrl('apiUrl', services.apiUrl);
+    HypothesisLoader.validateAsUrl('icon', services.icon);
+    HypothesisLoader.validateAsPopulatedString('authority', services.authority);
+
+    if ((services.onLoginRequest && services.onLogoutRequest) ||
+        !(services.onLoginRequest || services.onLogoutRequest)) {
+      throw new Error('Couldn\'t find exactly one of the properties ' +
+                                      '"onLoginRequest" and "onLogoutRequest"');
+    }
+
+    if (services.onLoginRequest && services.onProfileRequest) {
+      throw new Error('Found both mutually exclusive properties "onLoginRequest" ' +
+                                      'and "onProfileRequest"');
+    }
+
+    if (services.onLoginRequest && services.grantToken !== null) {
+      throw new Error('Expected the property "grantToken" to be null, but it wasn\'t');
+    }
+
+    if (services.onLogoutRequest && !services.onProfileRequest) {
+      HypothesisLoader.failValidationMissingProperty('onProfileRequest');
+    }
+
+    if (services.onLogoutRequest) {
+      HypothesisLoader.validateAsPopulatedString('grantToken', services.grantToken);
+    }
+
+  }
+
+  static validateAsUrl(name, value) {
+    if (!HypothesisLoader.isProbablyAUrl(value)) {
+      HypothesisLoader.failValidationMissingProperty(name);
+    }
+  }
+
+  static isProbablyAUrl(candidate) {
+    return typeof candidate === 'string' && candidate.match(/^https?:\/\/.*$/);
+  }
+
+  static validateAsPopulatedString(name, value) {
+    if (typeof value !== 'string' || !value.length) {
+      HypothesisLoader.failValidationMissingProperty(name);
+    }
+  }
+
+  static validateAsTruthy(candidates) {
+    candidates.forEach((candidate) => {
+      const name = Object.keys(candidate)[0];
+      const value = candidate[name];
+      if (!value) {
+        HypothesisLoader.failValidationMissingProperty(name);
+      }
+    });
+  }
+
+  static failValidationMissingProperty(propertyName) {
+    throw new Error(`Couldn\'t find a valid property with the name "${propertyName}"`);
   }
 
 };
