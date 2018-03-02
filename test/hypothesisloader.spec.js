@@ -279,7 +279,7 @@ describe('A HypothesisLoader Component', function () {
         loggedOutConfig.services[0].grantToken = true;
         expect(() => {
           HypothesisLoader.validateConfig(loggedOutConfig);
-        }).to.throw(/Expected the property "grantToken" to be null, but it wasn't/);
+        }).to.throw(/Expected the property "grantToken" to be null, but it was not null/);
 
       });
 

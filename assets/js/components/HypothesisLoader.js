@@ -32,16 +32,8 @@ module.exports = class HypothesisLoader {
 
   handleLoadError() {
     this.$elm.dataset.hypothesisEmbedLoadStatus = 'failed';
-    this.$elm.dispatchEvent(new this.window.ErrorEvent(
-      'loaderror',
-      {
-        message: 'Hypothesis embed load failed'
-      }
-    ));
-  }
-
-  static setHypothesisConfig(config, window) {
-    window.hypothesisConfig = config;
+    this.$elm.dispatchEvent(new this.window.ErrorEvent('loaderror',
+                                                       { message: 'Hypothesis embed load failed' }));
   }
 
   static assembleHypothesisConfig(window) {
@@ -71,7 +63,7 @@ module.exports = class HypothesisLoader {
     };
 
     return function () {
-      return Object.assign(uiConfig, externalConfig);
+      return Object.assign({}, uiConfig, externalConfig);
     };
   }
 
@@ -96,7 +88,7 @@ module.exports = class HypothesisLoader {
     }
 
     if (services.onLoginRequest && services.grantToken !== null) {
-      throw new Error('Expected the property "grantToken" to be null, but it wasn\'t');
+      throw new Error('Expected the property "grantToken" to be null, but it was not null');
     }
 
     if (services.onLogoutRequest && !services.onProfileRequest) {
@@ -110,12 +102,12 @@ module.exports = class HypothesisLoader {
   }
 
   static validateAsUrl(name, value) {
-    if (!HypothesisLoader.isProbablyAUrl(value)) {
+    if (!HypothesisLoader.isProbablyUrl(value)) {
       HypothesisLoader.failValidationMissingProperty(name);
     }
   }
 
-  static isProbablyAUrl(candidate) {
+  static isProbablyUrl(candidate) {
     return typeof candidate === 'string' && candidate.match(/^https?:\/\/.*$/);
   }
 
@@ -123,16 +115,6 @@ module.exports = class HypothesisLoader {
     if (typeof value !== 'string' || !value.length) {
       HypothesisLoader.failValidationMissingProperty(name);
     }
-  }
-
-  static validateAsTruthy(candidates) {
-    candidates.forEach((candidate) => {
-      const name = Object.keys(candidate)[0];
-      const value = candidate[name];
-      if (!value) {
-        HypothesisLoader.failValidationMissingProperty(name);
-      }
-    });
   }
 
   static failValidationMissingProperty(propertyName) {
