@@ -25,19 +25,13 @@ module.exports = class HypothesisOpener {
     }
 
     this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
-
-    this.containingArticleTogglableSections = this.doc.querySelectorAll('.article-section--js');
-    this.setupSectionExpansion(this.containingArticleTogglableSections);
+    this.setupSectionExpansion(this.doc);
 
   }
 
-  setupSectionExpansion(sections) {
-    if (!(sections instanceof NodeList)) {
-      return;
-    }
-
+  setupSectionExpansion(doc) {
     this.$elm.addEventListener('click', () => {
-      this.expandAllArticleSections([].slice.call(sections));
+      utils.expandCollapsedSections(doc);
     });
 
     if (this.isContextualData) {
@@ -46,16 +40,10 @@ module.exports = class HypothesisOpener {
       // Ugh. Refactor this away when the right pattern construction for opening h client becomes apparent
       if (!!$prevEl && $prevEl.classList.contains('contextual-data__item__hypothesis_opener')) {
         $prevEl.addEventListener('click', () => {
-          this.expandAllArticleSections([].slice.call(sections));
+          utils.expandCollapsedSections(doc);
         });
       }
     }
-  }
-
-  expandAllArticleSections(sections) {
-    sections.forEach(($section) => {
-      $section.dispatchEvent(utils.eventCreator('expandsection'));
-    });
   }
 
   static applyStyleInitial($elm) {
