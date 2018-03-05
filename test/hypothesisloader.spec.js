@@ -78,8 +78,11 @@ xdescribe('A HypothesisLoader Component', function () {
       expect(loader.isSingleton).to.be.true;
     });
 
-    it('assigns the hypothesis config it builds to the window.hypothesisConfig() property', () => {
+    it('builds the hypothesis config as a function', () => {
       expect(window.hypothesisConfig).to.be.a('function');
+    });
+
+    it('assigns the hypothesis config built to the window.hypothesisConfig property', () => {
       const servicesWithProcessedFns = separateFnsFromOtherProps(window.hypothesisConfig().services[0], getValidConfig().loggedIn.services[0]);
       expect(servicesWithProcessedFns.first).to.deep.equal(servicesWithProcessedFns.second);
       servicesWithProcessedFns.fns.forEach((propertyName) => {
@@ -250,6 +253,13 @@ xdescribe('A HypothesisLoader Component', function () {
         }).to.throw(/Couldn't find exactly one of the properties "onLoginRequest" and "onLogoutRequest"/);
       });
 
+      it('throws the expected error if there is a truthy onSignupRequest property', () => {
+        loggedInConfig.services[0].onSignupRequest = true;
+        expect(() => {
+          HypothesisLoader.validateConfig(loggedInConfig);
+        }).to.throw(/Found both mutually exclusive properties "onLogoutRequest" and "onSignupRequest"/);
+      });
+
     });
 
     context('when there is not a truthy onLogoutRequest property', () => {
@@ -266,6 +276,13 @@ xdescribe('A HypothesisLoader Component', function () {
         expect(() => {
           HypothesisLoader.validateConfig(loggedOutConfig);
         }).to.throw(/Couldn't find exactly one of the properties "onLoginRequest" and "onLogoutRequest"/);
+      });
+
+      it('throws the expected error if there is not a truthy onSignupRequest property', () => {
+        loggedOutConfig.services[0].onSignupRequest = null;
+        expect(() => {
+          HypothesisLoader.validateConfig(loggedOutConfig);
+        }).to.throw(/Couldn't find a valid property with the name "onSignupRequest"/);
       });
 
       it('throws the expected error if there is a truthy onProfileRequest property', () => {

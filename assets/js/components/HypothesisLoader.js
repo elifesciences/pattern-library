@@ -87,12 +87,21 @@ module.exports = class HypothesisLoader {
                                       'and "onProfileRequest"');
     }
 
+    if (services.onLoginRequest && !services.onSignupRequest) {
+      HypothesisLoader.failValidationMissingProperty('onSignupRequest');
+    }
+
     if (services.onLoginRequest && services.grantToken !== null) {
       throw new Error('Expected the property "grantToken" to be null, but it was not null');
     }
 
     if (services.onLogoutRequest && !services.onProfileRequest) {
       HypothesisLoader.failValidationMissingProperty('onProfileRequest');
+    }
+
+    if (services.onLogoutRequest && services.onSignupRequest) {
+      throw new Error('Found both mutually exclusive properties "onLogoutRequest" ' +
+                      'and "onSignupRequest"');
     }
 
     if (services.onLogoutRequest) {
