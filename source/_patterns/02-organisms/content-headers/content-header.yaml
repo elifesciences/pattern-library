@@ -6,6 +6,8 @@ assets:
     - $ref: ../../01-molecules/components/audio-player.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/select-nav.yaml#/assets/css
   js:
+    - ContentHeader.js
+    - Popup.js
     - $ref: ../../01-molecules/components/audio-player.yaml#/assets/js
     - $ref: ../../01-molecules/navigation/select-nav.yaml#/assets/js
 schema:
