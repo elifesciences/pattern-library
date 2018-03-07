@@ -4,9 +4,9 @@ assets:
     - $ref: ../../01-molecules/components/captioned-asset.yaml#/assets/css
     - $ref: ../../02-organisms/components/additional-assets.yaml#/assets/css
   js:
-    - AssetNavigation
-    - AssetViewer
-    - ToggleableCaption
+    - AssetNavigation.js
+    - AssetViewer.js
+    - ToggleableCaption.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

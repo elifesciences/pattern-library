@@ -4,9 +4,9 @@ assets:
     - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
     - $ref: ../../01-molecules/components/about-profile.yaml#/assets/css
   js:
-    - AboutProfiles
-    - DelegateBehaviour
-    - Popup
+    - AboutProfiles.js
+    - DelegateBehaviour.js
+    - Popup.js
     - $ref: ../../01-molecules/components/about-profile.yaml#/assets/js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
