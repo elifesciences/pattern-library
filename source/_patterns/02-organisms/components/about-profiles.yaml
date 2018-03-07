@@ -3,7 +3,11 @@ assets:
     - about-profiles.css
     - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
     - $ref: ../../01-molecules/components/about-profile.yaml#/assets/css
-  js: []
+  js:
+    - AboutProfiles.js
+    - DelegateBehaviour.js
+    - Popup.js
+    - $ref: ../../01-molecules/components/about-profile.yaml#/assets/js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

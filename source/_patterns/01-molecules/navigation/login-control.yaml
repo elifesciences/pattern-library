@@ -2,7 +2,8 @@ assets:
   css:
     - login-control.css
     - $ref: ../../00-atoms/components/button.yaml#/assets/css
-  js: []
+  js:
+    - LoginControl.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

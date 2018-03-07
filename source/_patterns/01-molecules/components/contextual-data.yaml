@@ -3,7 +3,8 @@ assets:
     - contextual-data.css
     - $ref: ../../00-atoms/components/speech-bubble.yaml#/assets/css
 
-  js: []
+  js:
+    - $ref: ../../00-atoms/components/speech-bubble.yaml#/assets/js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

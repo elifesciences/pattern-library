@@ -1,7 +1,8 @@
 assets:
   css:
     - section-listing-link.css
-  js: []
+  js:
+    - SectionListingLink.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

@@ -5,7 +5,9 @@ assets:
     - tooltip.css
     - triggers.css
     - $ref: ../../00-atoms/components/button.yaml#/assets/css
-  js: []
+  js:
+    - BarChart.js
+    - Metrics.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

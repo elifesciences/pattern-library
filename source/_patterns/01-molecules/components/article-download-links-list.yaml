@@ -1,7 +1,8 @@
 assets:
   css:
     - article-download-links-list.css
-  js: []
+  js:
+    - ArticleDownloadLinksList.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

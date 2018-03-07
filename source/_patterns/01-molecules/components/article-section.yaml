@@ -2,7 +2,9 @@ assets:
   css:
     - article-section.css
     - $ref: ../../00-atoms/components/doi.yaml#/assets/css
-  js: []
+  js:
+    - ArticleSection.js
+    - $ref: bar-chart.yaml#/assets/js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

@@ -1,7 +1,8 @@
 assets:
   css:
     - media-chapter-listing-item.css
-  js: []
+  js:
+    - MediaChapterListingItem.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

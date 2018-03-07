@@ -1,7 +1,8 @@
 assets:
   css:
     - about-profile.css
-  js: []
+  js:
+    - ToggleableCaption.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

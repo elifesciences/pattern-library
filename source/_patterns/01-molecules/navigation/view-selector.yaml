@@ -1,7 +1,9 @@
 assets:
   css:
     - view-selector.css
-  js: []
+  js:
+    - SideBySideView.js
+    - ViewSelector.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
