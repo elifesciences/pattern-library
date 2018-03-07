@@ -2,7 +2,8 @@ assets:
   css:
     - annotation-teaser.css
     - $ref: ../../01-molecules/components/meta.yaml#/assets/css
-  js: []
+  js:
+    - AnnotationTeaser.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

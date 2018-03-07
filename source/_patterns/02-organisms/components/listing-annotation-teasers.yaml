@@ -6,6 +6,7 @@ assets:
     - $ref: ../../01-molecules/navigation/pager.yaml#/assets/css
   js:
     - $ref: ../../01-molecules/navigation/pager.yaml#/assets/js
+    - $ref: ../../01-molecules/teasers/annotation-teaser.yaml#/assets/jss
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
