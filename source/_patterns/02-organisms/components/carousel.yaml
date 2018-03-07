@@ -3,7 +3,8 @@ assets:
     - carousel.css
     - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
     - $ref: ../../01-molecules/components/carousel-item.yaml#/assets/css
-  js: []
+  js:
+    - Carousel.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
