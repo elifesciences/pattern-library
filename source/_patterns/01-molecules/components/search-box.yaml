@@ -3,6 +3,7 @@ assets:
     - search-box.css
     - $ref: compact-form.yaml#/assets/css
   js:
+    - SearchBox.js
     - $ref: compact-form.yaml#/assets/js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
