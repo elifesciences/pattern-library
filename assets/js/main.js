@@ -25,6 +25,7 @@ if (window.localStorage && document.querySelector &&
   Components.FilterPanel = require('./components/FilterPanel');
   Components.FragmentHandler = require('./components/FragmentHandler');
   Components.Highlights = require('./components/Highlights');
+  Components.HypothesisLoader = require('./components/HypothesisLoader');
   Components.HypothesisOpener = require('./components/HypothesisOpener');
   Components.LoginControl = require('./components/LoginControl');
   Components.MainMenu = require('./components/MainMenu');
