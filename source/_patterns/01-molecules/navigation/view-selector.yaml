@@ -2,6 +2,7 @@ assets:
   css:
     - view-selector.css
   js:
+    - SideBySideView.js
     - ViewSelector.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
