@@ -4,7 +4,8 @@ assets:
     - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
     - $ref: ../../01-molecules/teasers/annotation-teaser.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/pager.yaml#/assets/css
-  js: []
+  js:
+    - $ref: ../../01-molecules/navigation/pager.yaml#/assets/js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
