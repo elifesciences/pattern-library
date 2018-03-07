@@ -7,6 +7,7 @@ assets:
     - $ref: ../../01-molecules/navigation/select-nav.yaml#/assets/css
   js:
     - $ref: ../../01-molecules/components/audio-player.yaml#/assets/js
+    - $ref: ../../01-molecules/navigation/select-nav.yaml#/assets/js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
