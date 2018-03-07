@@ -2,7 +2,8 @@ assets:
   css:
     - filter-panel.css
     - $ref: ../../01-molecules/components/filter-group.yaml#/assets/css
-  js: []
+  js:
+    - FilterPanel.js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
