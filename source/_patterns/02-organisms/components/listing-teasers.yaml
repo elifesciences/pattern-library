@@ -6,6 +6,7 @@ assets:
     - $ref: ../../01-molecules/navigation/pager.yaml#/assets/css
     - $ref: ../../00-atoms/components/see-more-link.yaml#/assets/css
   js:
+    - Highlights.js
     - $ref: ../../01-molecules/navigation/pager.yaml#/assets/js
 schema:
   $schema: http://json-schema.org/draft-04/schema#
