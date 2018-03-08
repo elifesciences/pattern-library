@@ -97,3 +97,4 @@ is used inside the pattern-library VM and should not be used elsewhere.
 # Notes
 
 All assets paths in Mustache templates must be wrapped in `{{#assetRewrite}}`, which allows implementations to rewrite the path for cache-busting purposes. The path must also be prepended by `{{assetsPath}}`. 
+
