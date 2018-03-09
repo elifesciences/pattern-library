@@ -2,6 +2,53 @@
 @import "../../layout/grid";
 
 .grid-listing {
+
+  @include clearfix();
+  list-style: none;
+
+  display: grid;
+
+  padding-left: 0;
+
+  // Gives the effect of medium-to-large due to 24px already on the bottom of the list items
+  @include blg-margin-bottom--small-to-medium();
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2.25rem;
+    justify-content: center;
+
+    @supports (display: grid) {
+
+      &:before,
+      &:after {
+        display: none;
+      }
+
+    }
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+}
+
+.grid-listing-item {
+  margin: 0;
+  @include blg-spacing("bottom", "extra-small", "margin");
+  @include blg-spacing("top", "small");
+  @include constrain-width($max-width-block-link, "max");
+  width: 100%;
+}
+
+/*
+.grid-listing {
   list-style: none;
   margin: 0 auto;
   padding-left: 0;
@@ -110,3 +157,4 @@
   @include blg-margin-bottom--medium-to-large();
   width: 100%;
 }
+*/
