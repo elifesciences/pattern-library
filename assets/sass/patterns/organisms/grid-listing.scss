@@ -6,7 +6,7 @@
   @include clearfix();
   list-style: none;
 
-  //display: grid;
+  display: grid;
 
   margin: 0 auto;
 
@@ -17,27 +17,26 @@
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2.25rem;
     justify-content: center;
 
-    //@supports (display: grid) {
-    //
-    //  &:before,
-    //  &:after {
-    //    display: none;
-    //  }
-    //
-    //}
+    // Override the effects of the clearfix which is required for the grid fallback
+    @supports (display: grid) {
+      &:before,
+      &:after {
+        display: none;
+      }
+
+    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    grid-template-columns: 1fr 1fr 1fr;
-
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 
 }
@@ -53,12 +52,20 @@
   // 2 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
 
-    @include margin($grid-listing-spacing-measure, "right");
     @include blg-spacing("bottom", "extra-small", "margin");
-    width: calc((100% - #{$grid-listing-spacing-measure}px) / 2 - 0.1px); // -0.1px avoids rounding problems in IE
+
+    @include margin($grid-listing-spacing-measure, "right");
+    @supports (display: grid) {
+      margin-right: 0;
+    }
 
     &:nth-child(2n) {
       margin-right: 0;
+    }
+
+    width: calc((100% - #{$grid-listing-spacing-measure}px) / 2 - 0.1px); // -0.1px avoids rounding problems in IE
+    @supports (display: grid) {
+      width: auto;
     }
 
   }
@@ -66,14 +73,24 @@
   // 3 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin($grid-listing-spacing-measure, "right");
+    @supports (display: grid) {
+      margin-right: 0;
+    }
+
+    &:nth-child(2n) {
+      @include margin($grid-listing-spacing-measure, "right");
+      @supports (display: grid) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
     width: calc((100% - #{2 * $grid-listing-spacing-measure}px) / 3 - 0.1px); // -0.1px avoids rounding problems in IE
-
-    &:nth-child(2n) {
-      @include margin($grid-listing-spacing-measure, "right");
-    }
-
-    &:nth-child(3n) {
-      margin-right: 0;
+    @supports (display: grid) {
+      width: auto;
     }
 
   }
@@ -81,128 +98,31 @@
   // 4 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     @include margin($grid-listing-spacing-measure, "right");
+    @supports (display: grid) {
+      margin-right: 0;
+    }
+
+    &:nth-child(2n),
+    &:nth-child(3n) {
+      @include margin($grid-listing-spacing-measure, "right");
+      @supports (display: grid) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
     width: calc((100% - #{3 * $grid-listing-spacing-measure}px) / 4 - 0.1px); // -0.1px avoids rounding problems in IE
-
-    &:nth-child(2n),
-    &:nth-child(3n) {
-      @include margin($grid-listing-spacing-measure, "right");
-    }
-
-    &:nth-child(4n) {
-      margin-right: 0;
+    @supports (display: grid) {
+      width: auto;
     }
 
   }
-}
-
-/*
-.grid-listing {
-  list-style: none;
-  margin: 0 auto;
-  padding-left: 0;
-  // Gives the effect of medium-to-large due to 24px already on the bottom of the list items
-  @include blg-margin-bottom--small-to-medium();
-
-  @supports (display: flex) {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-.grid-listing-item {
-  margin: 0;
-  @include blg-spacing("bottom", "extra-small", "margin");
-  @include blg-spacing("top", "small");
-  @include constrain-width($max-width-block-link, "max");
-  width: 100%;
-
-  // 2 col
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-
-    float: left;
-    margin-top: 0;
-    @include margin($grid-listing-spacing-measure, "right");
-    @include blg-spacing("bottom", "extra-small", "margin");
-    margin-left: 0;
-    width: calc((100% - #{$grid-listing-spacing-measure}px) / 2 - 0.1px); // -0.1px avoids rounding problems in IE
-
-    &:nth-child(2n) {
-      margin-right: 0;
-      @supports (display: flex) {
-        width: auto;
-        flex: 1;
-      }
-    }
-
-    .archive-nav-link {
-      height: 437px;
-
-      @supports (display: flex) {
-        height: auto;
-      }
-    }
-
-  }
-
-  // 3 col
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    margin-top: 0;
-    @include margin($grid-listing-spacing-measure, "right");
-    @include blg-spacing("bottom", "extra-small", "margin");
-    margin-left: 0;
-    width: calc((100% - #{2 * $grid-listing-spacing-measure}px) / 3 - 0.1px);
-
-    &:nth-child(2n) {
-      @include margin($grid-listing-spacing-measure, "right");
-      @supports (display: flex) {
-        width: calc((100% - #{2 * $grid-listing-spacing-measure}px) / 3);
-        flex: none;
-      }
-    }
-
-    &:nth-child(3n) {
-      margin-right: 0;
-      @supports (display: flex) {
-        width: auto;
-        flex: 1;
-      }
-    }
-
-  }
-
-  // 4 col
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-
-    margin-top: 0;
-    @include margin($grid-listing-spacing-measure, "right");
-    @include blg-spacing("bottom", "extra-small", "margin");
-    margin-left: 0;
-
-    width: calc((100% - #{3 * $grid-listing-spacing-measure}px) / 4 - 0.1px);
-
-    &:nth-child(2n),
-    &:nth-child(3n) {
-      @include margin($grid-listing-spacing-measure, "right");
-      @supports (display: flex) {
-        width: calc((100% - #{3 * $grid-listing-spacing-measure}px) / 4);
-        flex: none;
-      }
-    }
-
-    &:nth-child(4n) {
-      margin-right: 0;
-      @supports (display: flex) {
-        width: auto;
-        flex: 1;
-      }
-    }
-
-  }
-
 }
 
 .grid-listing__pagination {
   @include blg-margin-bottom--medium-to-large();
   width: 100%;
 }
-*/
