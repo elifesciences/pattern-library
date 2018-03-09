@@ -6,7 +6,9 @@
   @include clearfix();
   list-style: none;
 
-  display: grid;
+  //display: grid;
+
+  margin: 0 auto;
 
   padding-left: 0;
 
@@ -19,18 +21,19 @@
     grid-column-gap: 2.25rem;
     justify-content: center;
 
-    @supports (display: grid) {
-
-      &:before,
-      &:after {
-        display: none;
-      }
-
-    }
+    //@supports (display: grid) {
+    //
+    //  &:before,
+    //  &:after {
+    //    display: none;
+    //  }
+    //
+    //}
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     grid-template-columns: 1fr 1fr 1fr;
+
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
@@ -40,11 +43,56 @@
 }
 
 .grid-listing-item {
+  float: left;
   margin: 0;
   @include blg-spacing("bottom", "extra-small", "margin");
   @include blg-spacing("top", "small");
-  @include constrain-width($max-width-block-link, "max");
   width: 100%;
+  @include constrain-width($max-width-block-link, "max");
+
+  // 2 col
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+
+    @include margin($grid-listing-spacing-measure, "right");
+    @include blg-spacing("bottom", "extra-small", "margin");
+    width: calc((100% - #{$grid-listing-spacing-measure}px) / 2 - 0.1px); // -0.1px avoids rounding problems in IE
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+
+  }
+
+  // 3 col
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin($grid-listing-spacing-measure, "right");
+    width: calc((100% - #{2 * $grid-listing-spacing-measure}px) / 3 - 0.1px); // -0.1px avoids rounding problems in IE
+
+    &:nth-child(2n) {
+      @include margin($grid-listing-spacing-measure, "right");
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+  }
+
+  // 4 col
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include margin($grid-listing-spacing-measure, "right");
+    width: calc((100% - #{3 * $grid-listing-spacing-measure}px) / 4 - 0.1px); // -0.1px avoids rounding problems in IE
+
+    &:nth-child(2n),
+    &:nth-child(3n) {
+      @include margin($grid-listing-spacing-measure, "right");
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+  }
 }
 
 /*
