@@ -27,7 +27,6 @@
       &:after {
         display: none;
       }
-
     }
   }
 
@@ -55,33 +54,20 @@
     @include blg-spacing("bottom", "extra-small", "margin");
 
     @include margin($grid-listing-spacing-measure, "right");
-    @supports (display: grid) {
-      margin-right: 0;
-    }
 
     &:nth-child(2n) {
       margin-right: 0;
     }
 
     width: calc((100% - #{$grid-listing-spacing-measure}px) / 2 - 0.1px); // -0.1px avoids rounding problems in IE
-    @supports (display: grid) {
-      width: auto;
-    }
-
   }
 
   // 3 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin($grid-listing-spacing-measure, "right");
-    @supports (display: grid) {
-      margin-right: 0;
-    }
 
     &:nth-child(2n) {
       @include margin($grid-listing-spacing-measure, "right");
-      @supports (display: grid) {
-        margin-right: 0;
-      }
     }
 
     &:nth-child(3n) {
@@ -89,10 +75,6 @@
     }
 
     width: calc((100% - #{2 * $grid-listing-spacing-measure}px) / 3 - 0.1px); // -0.1px avoids rounding problems in IE
-    @supports (display: grid) {
-      width: auto;
-    }
-
   }
 
   // 4 col
@@ -105,9 +87,6 @@
     &:nth-child(2n),
     &:nth-child(3n) {
       @include margin($grid-listing-spacing-measure, "right");
-      @supports (display: grid) {
-        margin-right: 0;
-      }
     }
 
     &:nth-child(4n) {
@@ -115,11 +94,15 @@
     }
 
     width: calc((100% - #{3 * $grid-listing-spacing-measure}px) / 4 - 0.1px); // -0.1px avoids rounding problems in IE
+  }
+
+  &:nth-child(n) {
     @supports (display: grid) {
+      margin-right: 0;
       width: auto;
     }
-
   }
+
 }
 
 .grid-listing__pagination {
