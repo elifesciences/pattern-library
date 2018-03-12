@@ -2,21 +2,18 @@
 @import "../../layout/grid";
 
 .grid-listing {
-
   @include clearfix();
-  list-style: none;
 
   display: grid;
 
+  list-style: none;
   margin: 0 auto;
-
   padding-left: 0;
 
   // Gives the effect of medium-to-large due to 24px already on the bottom of the list items
   @include blg-margin-bottom--small-to-medium();
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2.25rem;
     justify-content: center;
@@ -50,9 +47,7 @@
 
   // 2 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-
     @include blg-spacing("bottom", "extra-small", "margin");
-
     @include margin($grid-listing-spacing-measure, "right");
 
     &:nth-child(2n) {
@@ -80,9 +75,6 @@
   // 4 col
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     @include margin($grid-listing-spacing-measure, "right");
-    @supports (display: grid) {
-      margin-right: 0;
-    }
 
     &:nth-child(2n),
     &:nth-child(3n) {
@@ -96,8 +88,8 @@
     width: calc((100% - #{3 * $grid-listing-spacing-measure}px) / 4 - 0.1px); // -0.1px avoids rounding problems in IE
   }
 
-  &:nth-child(n) {
     @supports (display: grid) {
+      &:nth-child(n) {
       margin-right: 0;
       width: auto;
     }
