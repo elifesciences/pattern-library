@@ -18,7 +18,7 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2.25rem;
-    grid-row-gap: #{get-rem-from-px($blg-space-extra-small-in-px)};
+    grid-row-gap: #{get-rem-from-px($blg-space-extra-small-in-px)}rem;
     justify-content: center;
 
     // Override the effects of the clearfix which is required for the grid fallback
