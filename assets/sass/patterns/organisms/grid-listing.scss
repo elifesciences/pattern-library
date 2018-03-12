@@ -4,7 +4,9 @@
 .grid-listing {
   @include clearfix();
 
-  display: grid;
+  @supports (display: grid) {
+    display: grid;
+  }
 
   list-style: none;
   margin: 0 auto;
