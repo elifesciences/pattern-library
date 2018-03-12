@@ -88,8 +88,8 @@
     width: calc((100% - #{3 * $grid-listing-spacing-measure}px) / 4 - 0.1px); // -0.1px avoids rounding problems in IE
   }
 
-    @supports (display: grid) {
-      &:nth-child(n) {
+  @supports (display: grid) {
+    &:nth-child(n) {
       margin-right: 0;
       width: auto;
     }
