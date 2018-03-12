@@ -8,6 +8,7 @@
 
   @supports (display: grid) {
     display: grid;
+    @include blg-spacing("top", "small");
   }
 
   list-style: none;
@@ -20,7 +21,7 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2.25rem;
-    grid-row-gap: #{get-rem-from-px($blg-space-extra-small-in-px)}rem;
+    grid-row-gap: #{get-rem-from-px($blg-space-smallish-in-px)}rem;
     justify-content: center;
 
     // Supporting clients don't need clearfix
@@ -45,7 +46,10 @@
 .grid-listing-item {
   float: left;
   margin: 0;
+
+  // Removed later if grid supported
   @include blg-spacing("top", "small");
+
   width: 100%;
   @include constrain-width($max-width-block-link, "max");
 
@@ -93,7 +97,7 @@
 
   @supports (display: grid) {
     &:nth-child(n) {
-      margin-right: 0;
+      @include nospace();
       width: auto;
     }
   }
