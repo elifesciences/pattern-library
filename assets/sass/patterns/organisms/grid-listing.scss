@@ -2,6 +2,8 @@
 @import "../../layout/grid";
 
 .grid-listing {
+
+  // Fallback for clients that don't support css grid
   @include clearfix();
 
   @supports (display: grid) {
@@ -21,7 +23,7 @@
     grid-row-gap: #{get-rem-from-px($blg-space-extra-small-in-px)}rem;
     justify-content: center;
 
-    // Override the effects of the clearfix which is required for the grid fallback
+    // Supporting clients don't need clearfix
     @supports (display: grid) {
       &:before,
       &:after {
