@@ -5,7 +5,7 @@
   // Fallback for clients that don't support css grid
   @include clearfix();
 
-  @supports (display: grid) {
+  @supports (grid-gap: 0) {
     display: grid;
     @include blg-spacing("top", "small");
   }
@@ -24,7 +24,7 @@
     justify-content: center;
 
     // Supporting clients don't need clearfix
-    @supports (display: grid) {
+    @supports (grid-gap: 0) {
       &:before,
       &:after {
         display: none;
@@ -94,7 +94,7 @@
     width: calc((100% - #{3 * $grid-listing-spacing-measure}px) / 4 - 0.1px); // -0.1px avoids rounding problems in IE
   }
 
-  @supports (display: grid) {
+  @supports (grid-gap: 0) {
     &:nth-child(n) {
       @include nospace();
       width: auto;
