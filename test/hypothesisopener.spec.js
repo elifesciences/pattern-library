@@ -1,5 +1,5 @@
+const chai = require('chai');
 const expect = chai.expect;
-const spy = sinon.spy;
 
 const HypothesisOpener = require('../assets/js/components/HypothesisOpener');
 
