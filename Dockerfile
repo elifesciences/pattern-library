@@ -1,4 +1,6 @@
-FROM node:6.13.1-slim
+# Debian oldoldstable, support ends in May 2018
+# we need this for Ruby 1.9.x at the moment
+FROM node:6.13.1-wheezy
 
 # TODO: base image
 USER root
