@@ -13,42 +13,54 @@ module.exports = class HypothesisOpener {
     this.window = _window;
     this.doc = doc;
 
-    HypothesisOpener.applyStyleInitial(this.$elm);
-    this.$elm.classList.add('hypothesis-opener');
-    this.$elm.dataset.hypothesisTrigger = '';
+    this.speechBubble = this.setupSpeechBubble();
+    this.isWithinContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
+    this.setupPlacementAndStyles(this.isWithinContextualData);
 
-    this.speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
-    this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
-    if (!this.isContextualData) {
-      HypothesisOpener.applyStyleArticleBody(this.$elm);
-      this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('body')));
-    }
-
-    this.speechBubble.showLoadingIndicator();
-    let timer = null;
+    let maxWaitTimer = null;
     try {
-      // Get the Hypothesis-loading <script> and create a callback with it
-      const $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
-      this.loadFailHandler = () => {
-        this.handleLoadFail($loader);
-      };
-
-      // Setup a timer that fails the load if it completes
-      timer = this.handleHypothesisLoadingWithTimer($loader, 10000);
+      maxWaitTimer = this.setupPreReadyIndicatorsWithTimer();
     } catch (e) {
-      this.indicateLoadFail();
-      if (typeof timer === 'number') {
-        this.window.clearTimeout(timer);
-      }
-
-      console.error(e.message);
+      console.error(e);
       return;
     }
 
-    this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]', timer);
+    const visibleCountSelector = '[data-visible-annotation-count]';
+    this.hookUpDataProvider(this.$elm, this.isWithinContextualData, visibleCountSelector, maxWaitTimer);
 
-    this.containingArticleTogglableSections = this.doc.querySelectorAll('.article-section--js');
     this.setupSectionExpansion(this.doc);
+
+    // Declare this.$elm to be a trigger to open the Hypothesis client (click handled by Hypothesis)
+    this.$elm.dataset.hypothesisTrigger = '';
+  }
+
+  setupPreReadyIndicatorsWithTimer() {
+    const $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
+
+    const maxWaitTimer = this.window.setTimeout(() => {
+      this.loadFailHandler();
+    }, 10000);
+
+    this.loadFailHandler = () => {
+      this.handleLoadFail($loader, maxWaitTimer, this.window);
+    };
+
+    if (HypothesisOpener.hasLoadAlreadyFailed($loader)) {
+      this.loadFailHandler();
+    }
+
+    $loader.addEventListener('loaderror', this.loadFailHandler);
+    return maxWaitTimer;
+  }
+
+  setupSpeechBubble() {
+    const speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
+    speechBubble.showLoadingIndicator();
+    return speechBubble;
+  }
+
+  static hasLoadAlreadyFailed($loader) {
+    return $loader.dataset.hypothesisEmbedLoadStatus === 'failed';
   }
 
   static get$hypothesisLoader(doc) {
@@ -60,27 +72,22 @@ module.exports = class HypothesisOpener {
     throw new Error('No Hypothesis loading code found.');
   }
 
-  handleHypothesisLoadingWithTimer($loader, timeoutInMs) {
-    $loader.addEventListener('error', this.loadFailHandler);
+  handleLoadFail($loader, timer, window) {
+    this.handleInitFail(timer, window);
+    $loader.removeEventListener('loaderror', this.loadFailHandler);
+  }
 
-    // Check if the script load has already failed
-    if ($loader.dataset.hypothesisEmbedLoadStatus === 'failed') {
-      this.loadFailHandler();
+  handleInitFail(timer, window, error = '') {
+    this.indicateFail();
+    window.clearTimeout(timer);
+    if (error.length) {
+      console.error(error);
     }
-
-    // Load will be defined as failed if this timer completes
-    return this.window.setTimeout(this.loadFailHandler, timeoutInMs);
   }
 
-  handleLoadFail($loader) {
-    this.indicateLoadFail();
-    $loader.removeEventListener('error', this.loadFailHandler);
-    $loader.parentNode.removeChild($loader);
-  }
-
-  indicateLoadFail() {
+  indicateFail() {
     this.speechBubble.showFailureState();
-    console.log('failed');
+    throw new Error('Problem loading or interacting with Hypothesis client.');
   }
 
   setupSectionExpansion(doc) {
@@ -88,7 +95,7 @@ module.exports = class HypothesisOpener {
       utils.expandCollapsedSections(doc);
     });
 
-    if (this.isContextualData) {
+    if (this.isWithinContextualData) {
       const $prevEl = this.$elm.previousElementSibling;
 
       // Ugh. Refactor this away when the right pattern construction for opening h client becomes apparent
@@ -100,7 +107,16 @@ module.exports = class HypothesisOpener {
     }
   }
 
+  setupPlacementAndStyles(isContextualData) {
+    HypothesisOpener.applyStyleInitial(this.$elm);
+    if (isContextualData) {
+      HypothesisOpener.applyStyleArticleBody(this.$elm);
+      this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('body')));
+    }
+  }
+
   static applyStyleInitial($elm) {
+    $elm.classList.add('hypothesis-opener');
     $elm.style.display = 'inline-block';
     $elm.style.cursor = 'pointer';
 
@@ -125,21 +141,22 @@ module.exports = class HypothesisOpener {
 
   }
 
-  hookUpDataProvider($elm, visibleCountSelector, timer) {
+  hookUpDataProvider($elm, isWithinContextualData, visibleCountSelector, timer) {
 
     // Updated by the hypothesis client
     const $dataProvider = $elm.querySelector('[data-hypothesis-annotation-count]');
     if (!$dataProvider) {
+      this.handleInitFail(timer, this.window);
       return;
     }
 
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         try {
-          this.updateVisibleCount(mutation.addedNodes[0].data, visibleCountSelector, this.isContextualData);
+          this.updateVisibleCount(mutation.addedNodes[0].data, visibleCountSelector, isWithinContextualData);
           this.window.clearTimeout(timer);
         } catch (e) {
-          console.error(e);
+          this.handleInitFail(timer, this.window, error);
         }
       });
     });
