@@ -19,7 +19,10 @@ RUN apt-get update && apt-get install -y \
     bzip2 \
     g++ \
     make \
+    ruby \
     ruby-dev 
+
+RUN gem install compass
 
 USER elife
 ENV PROJECT_FOLDER=/srv/pattern-library
