@@ -37,7 +37,6 @@ COPY --chown=elife:elife \
 RUN npm install
 
 COPY --chown=elife:elife assets/ ${PROJECT_FOLDER}/assets
-COPY --chown=elife:elife config/ ${PROJECT_FOLDER}/config
 COPY --chown=elife:elife source/ ${PROJECT_FOLDER}/source
 COPY --chown=elife:elife \
     .babelrc \
