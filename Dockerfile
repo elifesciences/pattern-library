@@ -44,6 +44,7 @@ COPY --chown=elife:elife \
     .jscsrc \
     .jshintrc \
     .stylelintrc \
+    config.rb \
     gulpfile.js \
     ${PROJECT_FOLDER}/
 RUN gulp
