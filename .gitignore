@@ -6,8 +6,6 @@ npm-debug.log
 *-ck.js
 *.sass-cache/
 
-latest-change.txt
-
 /source/assets
 public/*
 public.tar.gz

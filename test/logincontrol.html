@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+    <!--
+      Test output
+    -->
+    <div id="mocha"></div>
+
+    <!--
+      Fixture
+    -->
+
+    <div class="login-control"
+
+
+         data-link-field-roots="profile-manager, logout"
+         data-profile-manager-text="Manage your profile" data-profile-manager-uri="#profileManageLink" data-logout-text="Log out" data-logout-uri="/log-out"
+         data-default-uri="#profileHome"
+         data-display-name="Kananinoheaokuuhomeopuukaimanaalohilo"
+
+         data-icon="
+
+         &lt;picture class='login-control__icon'&gt;
+             &lt;source srcset='../../assets/img/icons/profile.svg'
+                        sizes='35px'
+                        type='image/svg+xml'
+                        &gt;
+            &lt;img src='../../assets/img/icons/profile.png'
+                 srcset='../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w'
+                 alt='Profile icon'
+                 sizes='35px'
+            &gt;
+        &lt;/picture&gt;
+"
+
+
+         data-behaviour="LoginControl">
+
+      <a href="#profileHome" class="login-control__non_js_control_link">Kananinoheaokuuhomeopuukaimanaalohilo</a>
+
+
+    </div>
+
+    <!--
+      Load test code
+    -->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
+
+    <!--
+      Test spec
+    -->
+    <script src="build/logincontrol.spec.js"></script>
+
+    <!--
+      Begin!
+    -->
+    <script>
+      mocha.run();
+    </script>
+
+</body>
+</html>

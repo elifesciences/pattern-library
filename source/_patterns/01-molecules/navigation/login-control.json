@@ -1,0 +1,7 @@
+{
+  "button": {
+    "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
+    "path": "#",
+    "classes": "button--login"
+  }
+}

@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .decision-letter-header__main_text {
-  @include margin(24, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
 }
 
 .decision-letter-header__main_text * {
@@ -10,7 +10,7 @@
 }
 
 .decision-letter-header__main_text  p {
-  padding-bottom: 24px;
+  @include blg-spacing("bottom", "small");
 }
 
 .decision-letter-header__main_text a {

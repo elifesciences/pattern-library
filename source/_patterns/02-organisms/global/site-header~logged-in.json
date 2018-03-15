@@ -1,0 +1,146 @@
+{
+  "homePagePath": "#",
+  "primaryLinks":
+  {
+    "classesOuter": "nav-primary",
+    "classesInner": "nav-primary__list clearfix",
+    "linkedItems": [
+      {
+        "text": "Menu",
+        "classes": "nav-primary__item nav-primary__item--first",
+        "textClasses": "nav-primary__menu_text",
+        "path": "#mainMenu",
+        "picture": {
+          "pictureClasses": "nav-primary__menu_icon",
+          "fallback": {
+            "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
+            "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+            "classes": "",
+            "altText": "Menu icon"
+          },
+          "sources": [
+            {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+            }
+          ]
+        }
+      },
+
+      {
+        "text": "Home",
+        "path": "#",
+        "classes": "nav-primary__item"
+      },
+
+      {
+        "text": "Magazine",
+        "path": "#",
+        "classes": "nav-primary__item"
+      },
+
+      {
+        "text": "Search",
+        "rel": "search",
+        "classes": "nav-primary__item nav-primary__item--search",
+        "textClasses": "visuallyhidden",
+        "path": "#",
+        "picture": {
+          "pictureClasses": "nav-primary__search_icon",
+          "fallback": {
+            "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 1x",
+            "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+            "classes": "",
+            "altText": "Search icon"
+          },
+          "sources": [
+            {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+
+  "secondaryLinks":
+  {
+    "classesOuter": "nav-secondary",
+    "classesInner": "nav-secondary__list clearfix",
+    "linkedItems": [
+      {
+        "text": "Careers",
+        "path": "#",
+        "classes": "nav-secondary__item"
+      },
+
+      {
+        "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+        "path": "#",
+        "classes": "nav-secondary__item"
+      },
+
+      {
+        "text": "Labs",
+        "path": "#",
+        "classes": "nav-secondary__item"
+      },
+
+      {
+        "text": "Submit my research",
+        "path": "#",
+        "classes": "nav-secondary__item",
+        "button": {
+          "classes": "button--default button--extra-small"
+        }
+      },
+
+      {
+        "classes": "nav-secondary__item",
+        "loginControl": {
+          "isLoggedIn": true,
+          "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
+          "defaultUri": "#profileHome",
+          "subsidiaryText": "View my profile",
+          "icon": {
+            "sources": [
+              {
+                "srcset": "../../assets/img/icons/profile.svg",
+                "sizes": "35px",
+                "type": "image/svg+xml"
+              }
+            ],
+            "fallback": {
+              "srcset": "../../assets/img/icons/profile@2x.png 2x, ../../assets/img/icons/profile.png 1x",
+              "defaultPath": "../../assets/img/icons/profile.png",
+              "altText": "Profile icon"
+            }
+          },
+          "linkFieldRoots": "profile-manager, logout",
+          "linkFieldData": "data-profile-manager-text=\"Manage your profile\" data-profile-manager-uri=\"#profileManageLink\" data-logout-text=\"Log out\" data-logout-uri=\"/log-out\""
+        }
+      }
+    ]
+  },
+
+  "searchBox": {
+    "compactForm": {
+      "formAction": "/search",
+      "formId": "searchBox",
+      "formMethod": "GET",
+      "label": "Search by keyword or author",
+      "inputType": "search",
+      "inputName": "search",
+      "inputValue": "",
+      "inputPlaceholder": "Search by keyword or author",
+      "ctaText": "Search"
+    },
+
+    "subjectFilter": {
+      "name": "subject_filter",
+      "value": "cell_biology",
+      "text": "Cell biology"
+    }
+  }
+
+}

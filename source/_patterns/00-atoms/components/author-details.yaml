@@ -1,6 +1,7 @@
 assets:
   css:
     - author-details.css
+    - $ref: orcid.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -40,8 +41,7 @@ schema:
               required:
                 - value
     orcid:
-      type: string
-      pattern: ^([0-9]{4}-){3}[0-9]{3}[0-9X]$
+      $ref: orcid.yaml#/schema
     groups:
       type: array
       items:

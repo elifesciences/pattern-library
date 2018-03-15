@@ -2,12 +2,12 @@
 
 .table {
   clear: both;
-  @include margin($blg-space-medium-in-px, "top");
-  @include margin($blg-space-medium-in-px, "bottom");
+  @include blg-spacing("top", "medium", "margin");
+  @include blg-spacing("bottom", "medium", "margin");
 
   .captioned-asset & {
-    @include margin($blg-space-small-in-px, "top");
-    @include margin($blg-space-small-in-px, "bottom");
+    @include blg-spacing("top", "small", "margin");
+    @include blg-spacing("bottom", "small", "margin");
   }
 }
 
@@ -16,16 +16,16 @@
   overflow: auto;
 
   .table & {
-    @include margin($blg-space-small-in-px, "top");
-    @include margin($blg-space-small-in-px, "bottom");
+    @include blg-spacing("top", "small", "margin");
+    @include blg-spacing("bottom", "small", "margin");
   }
 }
 
 // Tables are usually delivered as a blob of HTML from an upstream application, not via the pattern system.
 table {
   border-collapse: collapse;
-  @include margin($blg-space-small-in-px, "top");
-  @include margin($blg-space-small-in-px, "bottom");
+  @include blg-spacing("top", "small", "margin");
+  @include blg-spacing("bottom", "small", "margin");
   width: 100%;
 
   .table__table & {
@@ -42,18 +42,16 @@ th {
   background-color: $color-text-ui-code;
   border: 1px solid $color-text-dividers;
   font-family: $font-secondary;
-  @include font-size(13);
+  @include font-size-and-vertical-height(13, 18);
   font-weight: 700;
-  line-height: 1.3846153846; /* 18px with 13px font size */
   @include padding(6);
 }
 
 td {
   border: 1px solid $color-text-dividers;
   font-family: $font-secondary;
-  @include font-size(13);
+  @include font-size-and-vertical-height(13, 18);
   font-weight: 500;
-  line-height: 1.3846153846; /* 18px with 13px font size */
   @include padding(6);
 }
 

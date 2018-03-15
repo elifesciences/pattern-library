@@ -14,7 +14,7 @@
           "picture": {
             "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
               "classes": "",
               "altText": "Menu icon"
@@ -90,11 +90,23 @@
         {
           "text": "Submit my research",
           "path": "#",
-          "classes": "nav-secondary__item nav-secondary__item--button",
+          "classes": "nav-secondary__item",
           "button": {
             "classes": "button--default button--extra-small"
           }
+        },
+
+        {
+          "classes": "nav-secondary__item",
+          "loginControl": {
+            "button": {
+              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
+              "path": "#",
+              "classes": "button--login"
+            }
+          }
         }
+
       ]
     },
 
@@ -128,7 +140,7 @@
        "url": "#",
        "text": "Podcast"
      },
-     "download": "https://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
+     "download": "https://nakeddiscovery.com/download/audio/eLife_Podcast_11.17.mp3",
      "image": {
        "fallback": {
          "defaultPath": "https://unsplash.it/1114/336"
@@ -138,7 +150,7 @@
        "title": "Episode 21",
        "episodeNumber": 21,
        "sources":[
-         { "src": "https://nakeddiscovery.com/scripts/mp3s/audio/ads/eLife_Podcast_06.15.mp3",
+         { "src": "https://nakeddiscovery.com/download/audio/eLife_Podcast_11.17.mp3",
            "mediaType": {
              "forMachine": "audio/mp3",
              "forHuman": "mp3"
@@ -264,10 +276,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://unsplash.it/70/70/",
-            "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://unsplash.it/70/70/",
+              "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -303,10 +317,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://unsplash.it/70/70/",
-            "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://unsplash.it/70/70/",
+              "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 

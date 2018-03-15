@@ -23,14 +23,22 @@ schema:
                 type: string
                 minLength: 1
               url:
-                type: string
-                minLength: 1
+                oneOf:
+                  - type: string
+                    minLength: 1
+                  - type: boolean
+                    enum:
+                      - false
             required:
               - name
               - url
     url:
-      minLength: 1
-      type: string
+      oneOf:
+        - type: string
+          minLength: 1
+        - type: boolean
+          enum:
+            - false
     title:
       type: string
       minLength: 1
@@ -55,35 +63,27 @@ schema:
           type: string
           minLength: 1
         url:
-          type: string
-          minLength: 1
+          oneOf:
+            - type: string
+              minLength: 1
+            - type: boolean
+              enum:
+                - false
       required:
         - name
+        - url
     image:
-      type: object
-      properties:
-        url:
-          type: string
-          minLength: 1
-        defaultPath:
-          type: string
-          minLength: 1
-        altText:
-          type: string
-          minLength: 1
-        srcset:
-          type: string
-          minLength: 1
-        classes:
-          type: string
-          minLength: 1
-          enum:
-            - teaser__img--prominent
-            - teaser__img--big
-            - teaser__img--small
-      required:
-        - defaultPath
-        - altText
+      allOf:
+        - $ref: ../../00-atoms/components/picture.yaml#/schema
+        - properties:
+            type:
+              type: string
+              enum:
+                - prominent
+                - big
+                - small
+          required:
+            - type
     footer:
       type: object
       properties:
@@ -108,5 +108,6 @@ schema:
 
   required:
     - title
+    - url
     # - footer # Not in teaser~50-secondary-event.json or teaser~45-main-event.json
     # - contextLabel # Not in teaser~60-grid-style--podcast.json or teaser~55-grid-style--labs.json or teaser~40-basic.json

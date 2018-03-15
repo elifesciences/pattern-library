@@ -47,7 +47,10 @@
     border-bottom: 1px solid $color-text-dividers;
     font-family: $font-secondary;
     margin: 0;
-    @include padding(12);
+    @include padding(12, "left");
+    @include padding(12, "right");
+    @include blg-spacing("top", "extra-small");
+    @include blg-spacing("bottom", "extra-small");
 
     &:first-child {
       border-top: 1px solid $color-text-dividers;
@@ -94,14 +97,11 @@
 
   }
 
-}
+  .search-box__search_option_label {
+    @include checkbox-label();
+    @include blg-spacing("top", "extra-small");
+  }
 
-.search-box__search_option {
-  font-family: $font-secondary;
-  @include font-size(14);
-  line-height: 1.7142857143; /* 24px on 14px font */
-  @include blg-spacing("top", "extra-small");
-  @include blg-spacing("bottom", "extra-small");
 }
 
 @media only all and (min-width: #{$max-site-width}px) {

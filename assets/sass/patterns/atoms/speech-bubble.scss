@@ -1,0 +1,80 @@
+@import "../../definitions";
+
+.speech-bubble {
+
+  &[data-behaviour~="HypothesisOpener"] {
+    display: none;
+  }
+
+  @include colors();
+  border-radius: #{$border-radius}px;
+  display: block;
+  font-family: $font-secondary;
+
+  @include font-size-and-vertical-height(14, 36);
+  @include height(36);
+  padding: 0;
+
+  position: relative;
+
+  text-align: center;
+  text-decoration: none;
+  // Variable needed?
+  @include width($button-speech-bubble-width-in-px);
+
+  &:after {
+    @include arrow("right", 20, $color-primary);
+    left: 8px;
+    position: absolute;
+    top: 8px;
+    z-index: -1;
+
+    &:hover {
+      border-left-color: $color-primary-dark;
+    }
+
+  }
+
+  &:hover {
+    background-color: $color-primary-dark;
+    border-color: $color-primary-dark;
+
+    &:after {
+      border-left-color: $color-primary-dark;
+    }
+
+  }
+
+}
+
+.speech-bubble--inline {
+  @include margin(12, "left");
+}
+
+.speech-bubble--small {
+  display: inline-block;
+  @include font-size-and-vertical-height(11, 14);
+  @include height(14);
+  min-width: 1em;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: auto;
+
+  &:after {
+    @include arrow("right", 3, $color-primary);
+    left: 5px;
+    top: 10px;
+  }
+
+}
+
+.speech-bubble--has-placeholder {
+  font-family: $font-primary;
+
+  // line-height deliberately set smaller than font size because the default content is expected to be a double-quote
+  // character, which sits high on the line. When the content is not the default, ensure to apply the
+  // class: button--speech-bubble-populated
+  @include font-size-and-vertical-height(48, 36);
+  @include blg-spacing("top", "extra-small");
+
+}

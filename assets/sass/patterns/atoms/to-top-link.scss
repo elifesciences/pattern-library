@@ -5,7 +5,10 @@
   color: $color-text;
   display: block;
   list-style: none;
-  @include padding($blg-space-small-in-px 0);
+  @include blg-spacing("top", "small");
+  padding-right: 0;
+  @include blg-spacing("bottom", "small");
+  padding-left: 0;
   width: 100%;
 }
 

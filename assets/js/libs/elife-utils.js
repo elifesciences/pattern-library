@@ -4,27 +4,36 @@ module.exports = () => {
   /**
    * Builds and returns specified HTML element, optionally adding it to the DOM.
    *
+   *
+   *
    * @param {string} elName Name of the HTML element to build
-   * @param {Array} [cssClasses] CSS class name(s) to set on the element
+   * @param {Array<string>} [cssClasses] CSS class name(s) to set on the element
    * @param {string} [textContent] Textual content of the element
    * @param {string|Element} [parent] Parent element to attach to
-   * @param {string|Element|boolean} [attachBefore] Following sibling (1st if true, last if falsey)
+   * @param {string|Element|boolean} [attachBefore] The sibling before which to attach the element:
+   *  true: following sibling is the parent's first element child
+   *  HTMLElement: explicitly supplied following sibling
+   *  string: CSS selector to use to find the following sibling
    *
    * @returns {Element}
    */
   function buildElement(elName, cssClasses, textContent, parent, attachBefore) {
 
-    var $el = document.createElement(elName);
-    var $parent = typeof parent === 'string' ? document.querySelector(parent)
+    const $el = document.createElement(elName);
+    const $parent = typeof parent === 'string' ? document.querySelector(parent)
         : parent;
 
     // Work out what the new element's following sibling will be, based on value of attachBefore.
-    var $followingSibling = (function () {
+    const $followingSibling = (function () {
 
       if (!!attachBefore) {
 
         if (typeof attachBefore === 'boolean') {
-          return $parent.firstElementChild;
+          if ($parent.firstElementChild instanceof HTMLElement) {
+            return $parent.firstElementChild;
+          } else {
+            return null;
+          }
 
         } else if (typeof attachBefore === 'string') {
           return $parent.querySelector(attachBefore);
@@ -46,9 +55,14 @@ module.exports = () => {
       $el.innerHTML = textContent;
     }
 
-    if (!!$parent) {
-      // TODO: Handle what happens if following sibling is not a child of parent
-      if (!!$followingSibling) {
+    if ($parent) {
+      if ($followingSibling) {
+        if ($followingSibling.parentNode !== $parent) {
+          throw new ReferenceError(
+            'Trying to attach an element with respect to an element sibling, but the two elements do not share a common parent.'
+          );
+        }
+
         $parent.insertBefore($el, $followingSibling);
       } else {
         $parent.appendChild($el);
@@ -58,14 +72,26 @@ module.exports = () => {
     return $el;
   }
 
-  var uniqueIds = (function uniqueIds() {
+  /**
+   * uniqueIds.get()
+   * uniqueIds.isValid()
+   */
+  const uniqueIds = (function uniqueIds() {
 
+    /** @class */
     class UniqueIdentifiers {
 
+      /** @constructor */
       constructor() {
         this.used = [];
       }
 
+      /**
+       * Returns true if candidate is unique to this object, and also to any optional document supplied.
+       * @param {string} candidate Candidate id string under evaluation
+       * @param {HTMLDocument} [document]
+       * @return {boolean}
+       */
       isValid(candidate, document) {
         // Compulsory check that id is unique to this object's knowledge.
         if (this.used.indexOf(candidate) > -1) {
@@ -74,9 +100,9 @@ module.exports = () => {
 
         // Optional check to see if id is unique in the DOM.
         if (!!document) {
-          if (!!document.querySelector &&
-              typeof document.querySelector === 'function' &&
-              document.querySelector('#' + candidate)) {
+          if (!!document.getElementById &&
+              typeof document.getElementById === 'function' &&
+              document.getElementById(candidate)) {
             return false;
           }
         }
@@ -92,9 +118,9 @@ module.exports = () => {
        * @returns {string}
        */
       get(prefix, document) {
-        var _prefix = '' + prefix || 'default_';
-        var random = ('' + Math.random()).replace(/\./, '');
-        var candidate = _prefix + random;
+        const _prefix = '' + prefix || 'default_';
+        const random = ('' + Math.random()).replace(/\./, '');
+        const candidate = _prefix + random;
         if (this.isValid(candidate, document)) {
           this.used.push(candidate);
           return candidate;
@@ -186,17 +212,21 @@ module.exports = () => {
   }
 
   /**
-   * Add a quantity to a px amount expressed as a string, and return new string with updated value.
+   * Return an '[n]px' string, adjusting a base value by the amount and operation supplied.
    *
-   * For example: adjustPxString('97px', 8) returns '105px'
+   * Examples:
+   *  - adjustPxString('97px', 8) returns '105px'
+   *  - adjustPxString('97px', 8, `subtract') returns '89px'
+   *  - adjustPxString('100px', 20, 'divide') returns '5px'
+   *  - adjustPxString('50px', 3, 'multiply') returns '150px'
    *
    * @param {String} pxString The string representing the original quantity, e.g. '97px'
-   * @param adjustment The numeric adjustment to make, e.g. 8
-   * @param requestedOperation
-   * @returns {string} The modified value, as a string, e.g.: '105px'
+   * @param {Number} adjustment The numeric adjustment to make, e.g. 8
+   * @param {('add'|'subtract'|'multiply'|'divide')} requestedOperation
+   * @returns {string} The modified value, e.g.: '105px'
    */
   function adjustPxString(pxString, adjustment, requestedOperation) {
-    let originalSize = _getValueFromPxString(pxString);
+    const originalSize = _getValueFromPxString(pxString);
     let adjustedSize = originalSize;
     let operation = 'add';
     if (['subtract', 'multiply', 'divide'].indexOf(requestedOperation) > -1) {
@@ -223,16 +253,17 @@ module.exports = () => {
   }
 
   /**
-   * Invert the px amount expressed as a string, and return new string with inverted value.
+   * Return the supplied value with the sign flipped, or '0' if supplied ` a zero px string
    *
    * For example: invertPxString('97px') returns '-97px'
+   * For example: invertPxString('-97px') returns '97px'
+   * For example: invertPxString('0px') returns '0'
    *
    * @param {String} pxString The string representing the original quantity, e.g. '97px'
    * @returns {string} The modified value, as a string, e.g.: '-97px'
    */
   function invertPxString(pxString) {
-    let originalSize = _getValueFromPxString(pxString);
-    let adjustedSize = originalSize * -1;
+    const adjustedSize = _getValueFromPxString(pxString) * -1;
     return _getZeroAwarePxStringFromValue(adjustedSize);
   }
 
@@ -271,7 +302,7 @@ module.exports = () => {
       return true;
     }
 
-    const $fragWithId = doc.querySelector('#' + id);
+    const $fragWithId = doc.getElementById(id);
     return areElementsNested($section, $fragWithId);
   }
 
@@ -314,21 +345,24 @@ module.exports = () => {
   }
 
   /**
-   * Given an element it will return the sibling number it is.
-   * @param $child
+   * Returns the ordinal of an element's location within any siblings.
+   * @param {HTMLElement} $el The element to assess the position of
+   * @throws TypeError if the argument is not an HTMLElement
    * @returns {number}
    */
-  function nthChild($child) {
-    let siblings = 0;
-    while ($child !== null) {
-      if ($child.nodeType !== 8) {
-        siblings += 1;
+  function getOrdinalAmongstSiblingElements($el) {
+    if ($el instanceof HTMLElement) {
+      let position = 1;
+      let previous = $el.previousElementSibling;
+      while (previous) {
+        position += 1;
+        previous = previous.previousElementSibling;
       }
 
-      $child = $child.previousSibling;
+      return position;
     }
 
-    return siblings;
+    throw new TypeError('Expected HTMLElement');
   }
 
   function loadJavaScript(uri, integrity = null) {
@@ -396,9 +430,13 @@ module.exports = () => {
   }
 
   /**
-   * Flattens nested array
-   * @param input
-   * @returns {Array.<*>}
+   * Flattens the upper most nested level of a nested array
+   *
+   * Examples:
+   *  - flatten( [1,2,3,[4]] ) -> [1, 2, 3, 4]
+   *  - flatten( [1,2,3,[4, [5]]] ) -> [1, 2, 3, 4, [5]]
+   * @param {Array<*>} input
+   * @returns {Array<*>} with one fewer level of nesting
    */
   function flatten(input) {
     return [].concat(...input);
@@ -434,7 +472,7 @@ module.exports = () => {
    * @param styles
    * @returns {*}
    */
-  function addStylesToElement($el, styles) {
+  function _addStylesToElement($el, styles) {
     for (let style in styles) {
       if (styles.hasOwnProperty(style)) {
         $el.style[style] = styles[style];
@@ -460,7 +498,7 @@ module.exports = () => {
     const classNames = Array.isArray(className) ? className : [className];
     const $container = buildElement(tag, classNames);
     if (styles) {
-      addStylesToElement($container, styles);
+      _addStylesToElement($container, styles);
     }
 
     $children.forEach(child => $container.appendChild(child));
@@ -501,7 +539,7 @@ module.exports = () => {
 
   function create$pageOverlay($parent, $followingSibling, id) {
     // element already exists
-    if (document.querySelector(`#${id}`)) {
+    if (document.getElementById(id)) {
       return;
     }
 
@@ -562,6 +600,60 @@ module.exports = () => {
     };
   }
 
+  /**
+   * Returns true if the viewport is wide enough to display multiple columns (>=900px)
+   * @param {Window} window
+   * @returns {boolean} true if the viewport is at least 900px wide
+   */
+  function isMultiColumnDisplay(window) {
+    return window.matchMedia('(min-width: 900px)').matches;
+  }
+
+  /**
+   * Returns true if the supplied element is a collapsible article section
+   * @param {HTMLElement} $elm The element under test
+   * @returns {boolean} true if the element under test is a collapisble article section
+   */
+  function isCollapsibleArticleSection($elm) {
+    return $elm.dataset &&
+           $elm.dataset.behaviour &&
+           $elm.dataset.behaviour.indexOf('ArticleSection') > -1;
+  }
+
+  /**
+   * Returns true if the supplied element is a collapsed article section
+   * @param {HTMLElement} $elm THe element under test
+   * @returns {boolean} true if the supplied element is a collapsed article section
+   */
+  function isCollapsedArticleSection($elm) {
+    return $elm.classList.contains('article-section--collapsed');
+  }
+
+  /**
+   * Returns the value of a data-item-type attribute on or within $elm
+   * @param $elm {HTMLElement} An element expected to hold or wrap a data-item-type attribute
+   * @return {String|null}
+   */
+  function getItemType($elm) {
+    if ($elm.dataset.itemType) {
+      return $elm.dataset.itemType;
+    }
+
+    const $target = $elm.querySelector('[data-item-type]');
+    if ($target) {
+      return $target.dataset.itemType;
+    }
+
+    return null;
+  }
+
+  function expandCollapsedSections(parent) {
+    const collapsed = parent.querySelectorAll('.article-section--collapsed');
+    [].slice.call(collapsed).forEach(($section) => {
+      $section.dispatchEvent(eventCreator('expandsection'));
+    });
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -571,15 +663,20 @@ module.exports = () => {
     create$pageOverlay: create$pageOverlay,
     debounce: debounce,
     eventCreator: eventCreator,
+    expandCollapsedSections: expandCollapsedSections,
+    getItemType: getItemType,
     loadJavaScript: loadJavaScript,
     loadStyleSheet: loadStyleSheet,
     defer: defer,
     flatten: flatten,
     invertPxString: invertPxString,
+    isCollapsedArticleSection: isCollapsedArticleSection,
+    isCollapsibleArticleSection: isCollapsibleArticleSection,
     isTopInView: isTopInView,
+    isMultiColumnDisplay: isMultiColumnDisplay,
     jumpToAnchor: jumpToAnchor,
     loadData: loadData,
-    nthChild: nthChild,
+    getOrdinalAmongstSiblingElements: getOrdinalAmongstSiblingElements,
     remoteDoc: remoteDoc,
     throttle: throttle,
     uniqueIds: uniqueIds,

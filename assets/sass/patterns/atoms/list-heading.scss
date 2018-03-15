@@ -4,13 +4,16 @@
   @include section-title-typeg();
   @include nospace();
   letter-spacing: 0.5px;
-  line-height: 1.7142857143; // 24px with a 14px font size
+  @include font-size-and-vertical-height(14);
   margin-bottom: 0;
   text-transform: uppercase;
 }
 
 .main-menu .list-heading {
-  @include padding(24 0);
+  padding-left: 0;
+  padding-right: 0;
+  @include blg-spacing("top", "small");
+  @include blg-spacing("bottom", "small");
   text-align: center;
 }
 
@@ -19,13 +22,15 @@
 }
 
 .section-listing-wrapper .list-heading {
-  @include padding(24 0 0);
+  @include blg-spacing("top", "small");
+  padding-right: 0;
+  padding-bottom: 0;
   text-align: center;
 }
 
 .highlights > .list-heading {
-  @include padding($blg-space-extra-small-in-px, "top");
-  @include padding($blg-space-extra-small-in-px, "bottom");
+  @include blg-spacing("top", "extra-small");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {

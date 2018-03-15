@@ -15,8 +15,7 @@
 .email-cta__header_text {
   @include h2-typeg();
   color: $color-text;
-  @include font-size(20);
-  line-height: 1.2; /* 24px with font-size 20px */
+  @include font-size-and-vertical-height(20);
   @include nospace();
 }
 

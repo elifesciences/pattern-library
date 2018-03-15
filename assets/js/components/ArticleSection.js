@@ -93,7 +93,7 @@ module.exports = class ArticleSection {
 
     try {
       if (e.detail.search(/https?:\/\//) !== 0) {
-        const $descendentEl = this.doc.querySelector('#' + e.detail);
+        const $descendentEl = this.doc.getElementById(e.detail);
         if (!!$descendentEl) {
           $descendentEl.scrollIntoView();
         }

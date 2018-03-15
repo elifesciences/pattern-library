@@ -1,96 +1,441 @@
-"use strict";
+const chai = require('chai');
+const sinon = require('sinon');
 
-let expect = chai.expect;
-let spy = sinon.spy;
-let elifeUtils = require('../assets/js/libs/elife-utils')();
+const expect = chai.expect;
+const spy = sinon.spy;
 
-describe('The eLife utils library', function () {
+// Commented out as doesn't run in Phantomjs. Reinstate when using e.g. Headless Chrome
+// const chaiAsPromised = require('chai-as-promised');
+// chai.use(chaiAsPromised);
 
-  it('exists', function () {
-    expect(elifeUtils).to.exist;
+// load in component(s) to be tested
+let utils = require('../assets/js/libs/elife-utils')();
+const generateSnippetWithNoItemType = require('./fixtures/snippetWithNoItemType.html');
+const generateSnippetWithItemType = require('./fixtures/snippetWithItemType.html');
+const generateSnippetWithCollapsedSections = require('./fixtures/snippetWithCollapsedSections.html');
+
+function removeFromDOM(selector) {
+  'use strict';
+  const $elements = document.querySelectorAll(selector);
+  expect(document.querySelector(selector)).not.to.be.null;
+  [].forEach.call($elements, ($element) => {
+    $element.parentNode.removeChild($element);
+  });
+  expect(document.querySelector(selector)).to.be.null;
+}
+
+describe('The utils library', function () {
+  "use strict";
+
+
+  describe('the adjustPxString function', function () {
+
+    context('applies a mathematical operation to a numerical value and a px string (e.g. \'2px\'), returning the adjusted value as a px string', () => {
+
+      it('returns the correct value of an addition operation', () => {
+        const data = [
+          {
+            operation: 'add',
+            baseValue: '20px',
+            operand: 10,
+            expectedResult: '30px'
+          },
+          {
+            operation: 'add',
+            baseValue: '-100px',
+            operand: 10,
+            expectedResult: '-90px'
+          }
+        ];
+
+        data.forEach((datum) => {
+          expect(utils.adjustPxString(datum.baseValue, datum.operand, datum.operation)).to.equal(datum.expectedResult);
+        });
+
+      });
+
+      it('returns the correct value of a subtraction operation', () => {
+        const data = [
+          {
+            operation: 'subtract',
+            baseValue: '20px',
+            operand: 10,
+            expectedResult: '10px'
+          },
+          {
+            operation: 'subtract',
+            baseValue: '100px',
+            operand: 2017,
+            expectedResult: '-1917px'
+          }
+        ];
+
+        data.forEach((datum) => {
+          expect(utils.adjustPxString(datum.baseValue, datum.operand, datum.operation)).to.equal(datum.expectedResult);
+        });
+
+      });
+
+      it('returns the correct value of a multiplication operation', () => {
+        const data = [
+          {
+            operation: 'multiply',
+            baseValue: '20px',
+            operand: 10,
+            expectedResult: '200px'
+          },
+          {
+            operation: 'multiply',
+            baseValue: '-5px',
+            operand: 6,
+            expectedResult: '-30px'
+          },
+
+        ];
+
+        data.forEach((datum) => {
+          expect(utils.adjustPxString(datum.baseValue, datum.operand, datum.operation)).to.equal(datum.expectedResult);
+        });
+
+      });
+
+      it('returns the correct value of a division operation', () => {
+        const data = [
+          {
+            operation: 'divide',
+            baseValue: '200px',
+            operand: 10,
+            expectedResult: '20px'
+          },
+          {
+            operation: 'divide',
+            baseValue: '-12px',
+            operand: 6,
+            expectedResult: '-2px'
+          },
+        ];
+
+        data.forEach((datum) => {
+          expect(utils.adjustPxString(datum.baseValue, datum.operand, datum.operation)).to.equal(datum.expectedResult);
+        });
+
+      });
+
+    });
+
   });
 
-  describe('adjustPxString method', function () {
+  describe('the invertPxString function', () => {
 
-    it('can add a numerical value to a px string, returning adjusted value as a px string',
-    function () {
-      let operation = 'add';
-      expect(elifeUtils.adjustPxString('200px', 3, operation)).to.equal('203px');
-      expect(elifeUtils.adjustPxString('200px', -3, operation)).to.equal('197px');
-      expect(elifeUtils.adjustPxString('-1px', 500, operation)).to.equal('499px');
-      expect(elifeUtils.adjustPxString('-1000px', 200, operation)).to.equal('-800px');
+    it('makes a positive px string negative, without changing the absolute quantity', () => {
+      expect(utils.invertPxString('-99px')).to.equal('99px');
     });
 
-    it('can subtract a numerical value from a px string, returning adjusted value as a px string',
-    function () {
-      let operation = 'subtract';
-      expect(elifeUtils.adjustPxString('203px', 3, operation)).to.equal('200px');
-      expect(elifeUtils.adjustPxString('500px', -1, operation)).to.equal('501px');
-      expect(elifeUtils.adjustPxString('-500px', -20, operation)).to.equal('-480px');
-      expect(elifeUtils.adjustPxString('-1000px', -200, operation)).to.equal('-800px');
-     });
-
-    it('can multiply a numerical value from a px string, returning adjusted value as a px string',
-    function () {
-      let operation = 'multiply';
-      expect(elifeUtils.adjustPxString('203px', -3, operation)).to.equal('-609px');
-      expect(elifeUtils.adjustPxString('-100px', 3, operation)).to.equal('-300px');
-      expect(elifeUtils.adjustPxString('-100px', -2, operation)).to.equal('200px');
-      expect(elifeUtils.adjustPxString('300px', 4, operation)).to.equal('1200px');
-     });
-
-    it('can divdie a numerical value from a px string, returning adjusted value as a px string',
-    function () {
-      let operation = 'divide';
-      expect(elifeUtils.adjustPxString('300px', -3, operation)).to.equal('-100px');
-      expect(elifeUtils.adjustPxString('-100px', 4, operation)).to.equal('-25px');
-      expect(elifeUtils.adjustPxString('-100px', -2, operation)).to.equal('50px');
-      expect(elifeUtils.adjustPxString('300px', 3, operation)).to.equal('100px');
-     });
-
-    it('can add a numerical value to a "0" string, returning adjusted value as a px string',
-    function () {
-      expect(elifeUtils.adjustPxString('0', 25, 'add')).to.equal('25px');
+    it('makes a negative px string positive, without changing the absolute quantity', () => {
+      expect(utils.invertPxString('99px')).to.equal('-99px');
     });
 
-    it('can subtract a numerical numerical value from a "0" string, returning adjusted value as a px string',
-    function () {
-      expect(elifeUtils.adjustPxString('0', 25, 'subtract')).to.equal('-25px');
-    });
-
-    it('can add a numerical value to a px string, returning a "0" string correctly',
-    function () {
-      expect(elifeUtils.adjustPxString('-100px', 100, 'add')).to.equal('0');
-    });
-
-    it('can subtract a numerical value from a px string, returning a "0" string correctly',
-    function () {
-      expect(elifeUtils.adjustPxString('100px', -100, 'add')).to.equal('0');
-    });
-
-  });
-
-  describe('invertPxString method', function () {
-
-    it('can mathematically invert a positive px value', function () {
-      expect(elifeUtils.invertPxString('100px')).to.equal('-100px');
-    });
-
-    it('can mathematically invert a negative px value', function () {
-      expect(elifeUtils.invertPxString('-100px')).to.equal('100px');
+    it('returns the number 0 as a string if supplied with a zero px string', () => {
+      expect(utils.invertPxString('0px')).to.equal('0');
     });
 
     it('doesn\'t change a "0" string', function () {
-      expect(elifeUtils.invertPxString('0')).to.equal('0');
+      expect(utils.invertPxString('0')).to.equal('0');
+    });
+
+  });
+
+  describe('the flatten function', () => {
+
+    it('flattens the upper most nested level of a nested array', () => {
+      expect(utils.flatten( [ 1, 2, [ 3, 4 ] ] )).to.have.members( [ 1, 2, 3, 4 ] );
+      expect(utils.flatten( [ 1, 2, [ 3, 4, [ 5 ] ] ] )).to.have.deep.members( [ 1, 2, 3, 4, [ 5 ] ] );
+    });
+
+  });
+
+  describe('the isIdOfOrWithinSection function', () => {
+
+    let $target;
+
+    before(() => {
+      $target = document.querySelector('.isIdOfOrWithinSection').querySelector('.target');
+    });
+
+    it('returns true if the supplied id matches that of target element', () => {
+      const idOfTargetElement = 'isIdOfOrWithinSection_targetHit';
+      expect(utils.isIdOfOrWithinSection(idOfTargetElement, $target, document)).to.be.true;
+    });
+
+    it('returns true if an element with the supplied id is a descendant of the target element', () => {
+      const idOfChildOfTargetElement = 'isIdOfOrWithinSection_targetHit_child';
+      expect(utils.isIdOfOrWithinSection(idOfChildOfTargetElement, $target, document)).to.be.true;
+
+      const idOfGrandChildOfTargetElement = 'isIdOfOrWithinSection_targetHit_grandChild';
+      expect(utils.isIdOfOrWithinSection(idOfGrandChildOfTargetElement, $target, document)).to.be.true;
+    });
+
+    it('returns false if an element with the supplied id is not a descendant of the target element', () => {
+      const idOfExistingElementNotInTreeOfTargetElement = 'isIdOfOrWithinSection_targetMiss';
+      expect(utils.isIdOfOrWithinSection(idOfExistingElementNotInTreeOfTargetElement, $target, document)).to.be.false;
+
+      const httpPrefixed = 'http://example.com';
+      expect(utils.isIdOfOrWithinSection(httpPrefixed, $target, document)).to.be.false;
+
+      const httpsPrefixed = 'https://example.com';
+      expect(utils.isIdOfOrWithinSection(httpsPrefixed, $target, document)).to.be.false;
+
+      const notOnThePage = 'madeUpId';
+      expect(utils.isIdOfOrWithinSection(notOnThePage, $target, document)).to.be.false;
+    });
+
+  });
+
+  describe('the areElementsNested function', () => {
+
+    let $scope;
+    let $referenceElement;
+
+    before(() => {
+      $scope = document.querySelector('.areElementsNested');
+      $referenceElement = $scope.querySelector('.target');
+    });
+
+    it('returns true if the candidate is the reference element', () => {
+      expect(utils.areElementsNested($referenceElement, $referenceElement)).to.be.true;
+    });
+
+    it('returns true if the candidate is a descendant of the reference element', () => {
+      const $childDescendant = $scope.querySelector('.target-child');
+      expect(utils.areElementsNested($referenceElement, $childDescendant)).to.be.true;
+
+      const $grandChildDescendant = $scope.querySelector('.target-grand-child');
+      expect(utils.areElementsNested($referenceElement, $grandChildDescendant)).to.be.true;
+    });
+
+    it('returns false if the candidate is neither the reference element or its descendant', () => {
+      const unrelated = [
+        $scope.querySelector('.target-miss'),
+        1,
+        0,
+        'a string',
+        ['an array'],
+        {an: 'object'},
+        null,
+        undefined,
+        true,
+        false,
+      ];
+      unrelated.forEach((item) => {
+        expect(utils.areElementsNested($referenceElement, item)).to.be.false;
+      });
+    });
+
+  });
+
+  describe('the getOrdinalAmongstSiblingElements function', () => {
+
+    let $context;
+
+    before(() => {
+      $context = document.querySelector('.getOrdinalAmongstSiblingElements');
+    });
+
+    it('correctly identifies an element\'s position within its siblings', () => {
+      expect(utils.getOrdinalAmongstSiblingElements($context.querySelector('.child-1a'))).to.equal(1);
+      expect(utils.getOrdinalAmongstSiblingElements($context.querySelector('.child-1b'))).to.equal(1);
+      expect(utils.getOrdinalAmongstSiblingElements($context.querySelector('.child-2'))).to.equal(2);
+      expect(utils.getOrdinalAmongstSiblingElements($context.querySelector('.child-3'))).to.equal(3);
+    });
+
+    it('throws a TypeError if not supplied with an HTMLElement', () => {
+      expect(() => {utils.getOrdinalAmongstSiblingElements(null)}).to.throw(TypeError, 'Expected HTMLElement');
+    });
+
+  });
+
+  describe('the buildElement function', () => {
+
+    let contextClassName = '.buildElement';
+    let $context;
+
+    beforeEach(() => {
+      $context = document.querySelector(contextClassName);
+    });
+
+    context('when supplied an element name', () => {
+
+      const $el = utils.buildElement('div');
+
+      it('creates and returns that element', () => {
+        expect($el.nodeName).to.equal('DIV');
+      });
+
+    });
+
+    context('when supplied a list of CSS class names', () => {
+
+      const $el = utils.buildElement('div', ['class-1', 'class-2']);
+
+      it('attaches those class names to the element created', () => {
+        const classes = $el.classList;
+        expect(classes.contains('class-1')).to.be.true;
+        expect(classes.contains('class-2')).to.be.true;
+        expect(classes).to.have.a.lengthOf(2);
+      });
+
+    });
+
+    context('when supplied text content', () => {
+
+      const $el = utils.buildElement('div', [], 'some text');
+
+      it('wraps that text content with the element created', () => {
+        expect($el.innerHTML).to.equal('some text');
+      });
+
+    });
+
+    context('when not supplied a parent element', () => {
+
+      before(() => {
+        expect(document.querySelector('.my-new-element')).to.be.null;
+      });
+
+      it('is not inserted into the DOM', () => {
+        utils.buildElement('div', ['my-new-element']);
+        expect(document.querySelector('.my-new-element')).to.be.null;
+      });
+
+    });
+
+    context('when supplied a parent element', () => {
+
+      let $parent;
+
+      beforeEach(() => {
+        $parent = $context.querySelector('.parent');
+        expect($parent.querySelector('.my-new-element')).to.be.null;
+      });
+
+      afterEach(() => {
+        [].forEach.call(
+          $parent.querySelectorAll('.my-new-element'),
+          ($el) => {
+            $el.parentNode.removeChild($el);
+          });
+      });
+
+      context('when the parent element itself is supplied', () => {
+
+        it('the element is appended as the last child of the parent element', () => {
+          utils.buildElement('div', ['my-new-element'], '', $parent);
+          expect($parent.querySelector('.my-new-element')).not.to.be.null;
+        });
+
+      });
+
+      context('when a CSS selector to a parent element is supplied', () => {
+
+        const parentSelector = `${contextClassName} > .parent`;
+
+        it('the element is appended as the last child of the first element matched by that CSS selector', () => {
+          // build and attach the element
+          utils.buildElement('div', ['my-new-element'], '', parentSelector);
+
+          // grab the parent by how it's defined in this test
+          const $parentFromSelector = document.querySelector(parentSelector);
+
+          // the new element should be the last child of it defined parent
+          expect($parentFromSelector.lastElementChild.classList.contains('my-new-element')).not.to.be.null;
+          expect($parentFromSelector.querySelectorAll('.my-new-element')).to.have.lengthOf(1);
+
+          // other elements matching the CSS selector but that occur later in the document do not have the new element as a child
+          const $shouldNotHaveNewElementAsChild = $context.querySelector('.parent.this-second-parent-should-not-match');
+          expect($shouldNotHaveNewElementAsChild.querySelector('.my-new-element')).to.be.null;
+
+        });
+
+      });
+
+      context('when supplied an attachBefore argument', () => {
+
+        context('as true', () => {
+
+          it('the new element is inserted as the first child of the parent element', () => {
+            utils.buildElement('div', ['my-new-element'], '', $parent, true);
+            expect($parent.firstElementChild.classList.contains('my-new-element')).to.be.true;
+            expect($parent.querySelectorAll('.my-new-element')).to.have.a.lengthOf(1);
+          });
+
+        });
+
+        context('as an element that is a child of the parent element', () => {
+
+          it('the new element is inserted before the supplied element', () => {
+            // build and attach the element
+            const $attachBeforeMe = $context.querySelector('.pre-existing-sibling-2');
+            utils.buildElement('div', ['my-new-element'], '', $parent, $attachBeforeMe);
+
+            // check it's been inserted in the right place
+            expect($attachBeforeMe.previousElementSibling.classList.contains('my-new-element')).to.be.true;
+
+            // check it's only been inserted once
+            expect($parent.querySelectorAll('.my-new-element')).to.have.a.lengthOf(1);
+
+            // check it's not removed any pre-existing elements
+            expect($parent.children).to.have.a.lengthOf(3);
+          });
+
+        });
+
+        context('as a CSS selector matching a child of the parent element', () => {
+
+          const followingSiblingSelector = `${contextClassName} .pre-existing-sibling-2`;
+
+          it('the element is appended before the matched element', () => {
+            // build and attach the element
+            utils.buildElement('div', ['my-new-element'], '', $parent, followingSiblingSelector);
+
+            // grab the following sibling by how it's defined in this test
+            const $followingSiblingFromSelector = document.querySelector(followingSiblingSelector);
+
+            //
+            expect($followingSiblingFromSelector.previousElementSibling.classList.contains('my-new-element')).to.be.true;
+
+            // check it's only been inserted once
+            expect($parent.querySelectorAll('.my-new-element')).to.have.a.lengthOf(1);
+
+            // check it's not removed any pre-existing elements
+            expect($parent.children).to.have.a.lengthOf(3);
+          });
+
+        });
+
+        context('when the attachBefore element is determined as not being a child of the parent element', () => {
+
+          it('throws a ReferenceError', () => {
+            const $notAChildOfStatedParent = $context.querySelector('.not-a-child-of-first-parent');
+            expect(() => {
+              utils.buildElement('div', ['my-new-element'], '', $parent, $notAChildOfStatedParent);
+            }).to.throw(ReferenceError, 'Trying to attach an element with respect to an element sibling, but the two elements do not share a common parent.');
+
+          });
+
+        });
+
+      });
+
     });
 
   });
 
   describe('uniqueIds object', function () {
+
     let uIds;
 
     beforeEach(function () {
-      uIds = elifeUtils.uniqueIds;
+      uIds = utils.uniqueIds;
     });
 
     it('keeps track of assigned unique ids', function () {
@@ -99,7 +444,15 @@ describe('The eLife utils library', function () {
       expect(uIds.used).to.have.length(1);
     });
 
-    describe('get method', function () {
+    it('has a get() method', () => {
+      expect(uIds.get).to.be.a('function');
+    });
+
+    it('has an isValid() method', () => {
+      expect(uIds.isValid).to.be.a('function');
+    });
+
+    describe('the get() method', function () {
 
       it('always returns a string with the specified prefix', function () {
         let expectedPrefix = 'prefix';
@@ -110,7 +463,7 @@ describe('The eLife utils library', function () {
 
     });
 
-    describe('isValid method', function () {
+    describe('the isValid() method', function () {
 
       it('returns false if a pre-existing value is attempted to be duplicated', function () {
         uIds.used = ['usedValue'];
@@ -120,8 +473,8 @@ describe('The eLife utils library', function () {
       it('returns false if a component-unique value already exists in the document', function () {
         let idInDoc = 'alreadyInTheDoc';
         let docMock = {
-          querySelector: function (selector) {
-            return selector === '#' + idInDoc;
+          getElementById: function (id) {
+            return id === idInDoc;
           }
         };
         uIds.used = [];
@@ -135,30 +488,44 @@ describe('The eLife utils library', function () {
       });
 
       it('returns true for a value that is unique in both the component and the supplied document',
-      function () {
-        let docMock = {
-          querySelector: function () {
-            return null;
-          }
-        };
-        uIds.used = [];
-        expect(uIds.isValid('uniqueId', docMock)).to.be.true;
-      });
+         function () {
+           let docMock = {
+             getElementById: function () {
+               return null;
+             }
+           };
+           uIds.used = [];
+           expect(uIds.isValid('uniqueId', docMock)).to.be.true;
+         });
 
     });
 
   });
 
-  describe('updateElementTranslate method', function () {
+  describe('the updateElementTranslate function', function () {
 
-    let updtElTrans = elifeUtils.updateElementTranslate;
+    let updtElTrans = utils.updateElementTranslate;
 
     it('returns false if not passed an HTMLElement', function () {
       expect(updtElTrans({}, [0, 0])).to.be.false;
     });
 
     it('returns false if not passed an array', function () {
-      expect(updtElTrans(document.createElement('div'), 'not-an-array')).to.be.false;
+      const noArraysInside = [
+        'not-an-array',
+        1,
+        0,
+        1.3,
+        true,
+        false,
+        {not: 'an array'},
+        undefined,
+        null,
+        () => {}
+      ];
+      noArraysInside.forEach((notArray) => {
+        expect(updtElTrans(document.createElement('div'), notArray)).to.be.false;
+      });
     });
 
     it('does not return false if passed an HTMLElement and an array', function () {
@@ -183,26 +550,26 @@ describe('The eLife utils library', function () {
       });
 
       it('the expected property values are set on the HTMLElement when supplied as numbers',
-      function() {
-        let deltas = [
-          [15, 15], [15, -15], [-15, 15], [15, 0], [0, 15], [-15, 0], [0, -15], [0], [15], [-15]
-        ];
+         function() {
+           let deltas = [
+             [15, 15], [15, -15], [-15, 15], [15, 0], [0, 15], [-15, 0], [0, -15], [0], [15], [-15]
+           ];
 
-        deltas.forEach(function (delta) {
-          let deltaX = delta[0] + 'px';
-          let deltaY = delta[1] ? delta[1] + 'px' : '0px';
+           deltas.forEach(function (delta) {
+             let deltaX = delta[0] + 'px';
+             let deltaY = delta[1] ? delta[1] + 'px' : '0px';
 
-          let $el = document.createElement('div');
-          updtElTrans($el, delta);
-          properties.forEach(function (property) {
-            if ($el.style[property] !== undefined) {
-              expect($el.style[property]).to.equal('translate(' + deltaX + ', ' + deltaY + ')');
-            }
-          });
+             let $el = document.createElement('div');
+             updtElTrans($el, delta);
+             properties.forEach(function (property) {
+               if ($el.style[property] !== undefined) {
+                 expect($el.style[property]).to.equal('translate(' + deltaX + ', ' + deltaY + ')');
+               }
+             });
 
-        });
+           });
 
-      });
+         });
 
       it('the expected property values are set on the HTMLElement when supplied as strings',
          function () {
@@ -244,99 +611,73 @@ describe('The eLife utils library', function () {
 
   });
 
-  describe('buildElement method', function () {
+  xdescribe('the loadJavaScript function', () => {
 
-    let buildEl = elifeUtils.buildElement;
+    let integrity;
+    let uri;
+    let scriptSelector;
 
-    it('creates & returns an instance of the named HTML element', function () {
-      let $el = buildEl('div');
-      expect($el instanceof HTMLElement).to.be.true;
-      expect($el.tagName).to.equal('DIV');
+    before(() => {
+      integrity = 'the-integrity-value';
+      uri = '/the/uri';
+      scriptSelector = 'script[integrity="' + integrity + '"]';
     });
 
-    it('applies the specified CSS classes to the returned HTML element', function () {
-      let classes = ['expected-css-class-1', 'expected-css-class-2'];
-      let $el = buildEl('div', classes);
-      expect($el.classList.contains('expected-css-class-1')).to.be.true;
-      expect($el.classList.contains('expected-css-class-2')).to.be.true;
-      expect($el.classList).to.have.length(2);
+    after(() => {
+      removeFromDOM(scriptSelector);
     });
 
-    it('puts specified text inside the element, if supplied', function () {
-      let $el = buildEl('div', [], 'Expected text');
-      expect($el.innerHTML).equals('Expected text');
+    it('should create a script element', () => {
+      utils.loadJavaScript(uri, integrity);
+      const $script = document.querySelector(scriptSelector);
+      expect($script).to.be.an.instanceof(HTMLScriptElement);
     });
 
-    describe('may specify a parent', function () {
+    describe('the script element', () => {
 
-      let $parent;
-      let parentId;
-
-      beforeEach(function () {
-        $parent = document.createElement('div');
-        parentId = 'theParent';
-        $parent.id = parentId;
-        document.querySelector('body').appendChild($parent);
+      afterEach(() => {
+        removeFromDOM(scriptSelector);
       });
 
-      afterEach(function () {
-        document.querySelector('#' + parentId).parentNode
-                .removeChild(document.querySelector('#' + parentId));
+      it('uses the supplied uri as the src attribute value', () => {
+        utils.loadJavaScript(uri, integrity);
+        const $script = document.querySelector(scriptSelector);
+        expect($script.getAttribute('src')).to.equal(uri);
       });
 
-      it('attaches the new element to a supplied parent element', function () {
-        let $el = buildEl('div', [], '', $parent);
-        expect($el.parentNode.id).equals(parentId);
+      it('uses the supplied integrity argument as the integrity attribute value', () => {
+        utils.loadJavaScript(uri, integrity);
+        const $script = document.querySelector(scriptSelector);
+        expect($script.getAttribute('integrity')).to.equal(integrity);
       });
 
-      it('attaches the new element to a parent element whose selector is supplied', function () {
-        let $el = buildEl('div', [], '', '#' + parentId);
-        expect($el.parentNode.id).equals(parentId);
+      it('when there is an integrity attribute, the crossOrigin attribute should be have the value \'anonymous\'', () => {
+        utils.loadJavaScript(uri, integrity);
+        const $script = document.querySelector(scriptSelector);
+        expect($script.getAttribute('crossOrigin')).to.equal('anonymous');
+
       });
 
-      describe('may specify a following sibling', function () {
+    });
 
-        let $followingSibling;
-        let followingSiblingId;
+    describe('loading the asset using a Promise', () => {
 
-        beforeEach(function () {
-          $followingSibling = document.createElement('div');
-          followingSiblingId = 'theFollowingSibling';
-          $followingSibling.id = followingSiblingId;
-          $parent.appendChild($followingSibling);
+      context('when a valid uri is supplied', () => {
+
+        after(() => {
+          removeFromDOM(scriptSelector);
         });
 
-        it('attaches the new element before a supplied following sibling element', function () {
-          let $el = buildEl('div', [], '', $parent, $followingSibling);
-          expect($el.nextElementSibling.id).equals(followingSiblingId);
-        });
-
-        it('attaches the new element before a following sibling element whose selector is supplied',
-        function () {
-          let $el = buildEl('div', [], '', $parent, '#' + followingSiblingId);
-          expect($el.nextElementSibling.id).equals(followingSiblingId);
+        it('the promise should be fulfilled', () => {
+          return expect(utils.loadJavaScript('/test/fixtures/known-end-point.js', integrity)).to.be.eventually.fulfilled;
         });
 
       });
 
-      describe('may specify the new element to be the first child of a parent', function () {
+      context('when an invalid uri is supplied', () => {
 
-        it('when the parent has no children', function () {
-          buildEl('div', ['new-el'], '', $parent, true);
-          expect($parent.firstElementChild.classList.contains('new-el')).to.be.true;
-        });
-
-        it('when the parent has one pre-existing child', function () {
-          $parent.appendChild(document.createElement('div'));
-          buildEl('div', ['new-el'], '', $parent, true);
-          expect($parent.firstElementChild.classList.contains('new-el')).to.be.true;
-        });
-
-        it('when the parent has multiple pre-existing children', function () {
-          $parent.appendChild(document.createElement('div'));
-          $parent.appendChild(document.createElement('div'));
-          buildEl('div', ['new-el'], '', $parent, true);
-          expect($parent.firstElementChild.classList.contains('new-el')).to.be.true;
+        it('the promise should be rejected', () => {
+          return expect(utils.loadJavaScript('/made-up/uri', integrity)).to.be.eventually.rejected;
         });
 
       });
@@ -345,95 +686,386 @@ describe('The eLife utils library', function () {
 
   });
 
-  describe('areElementsNested method', function () {
+  xdescribe('the loadStyleSheet function', () => {
 
-    let areNested = elifeUtils.areElementsNested;
-    let $siblingA;
-    let $siblingB;
-    let $parent;
-    let $grandParent;
+    let integrity;
+    let uri;
+    let linkSelector;
 
-    beforeEach(function () {
-      $siblingA = document.createElement('div');
-      $siblingB = document.createElement('div');
-
-      $parent = document.createElement('div');
-      $parent.appendChild($siblingA);
-      $parent.appendChild($siblingB);
-
-      $grandParent = document.createElement('div');
-      $grandParent.appendChild($parent);
-      document.querySelector('body').appendChild($grandParent);
+    before(() => {
+      integrity = 'the-integrity-value';
+      uri = '/the/uri';
+      linkSelector = 'link[integrity="' + integrity + '"]';
     });
 
-    afterEach(function () {
-      $parent.parentNode.removeChild($parent);
+    after(() => {
+      removeFromDOM(linkSelector);
     });
 
-    it('returns false if both arguments are not a Node', function () {
-      expect(areNested({}, {})).to.be.false;
-      expect(areNested(document.createElement('div'), {})).to.be.false;
-      expect(areNested({}, document.createElement('div'))).to.be.false;
+    it('should create a link element', () => {
+      utils.loadStyleSheet(uri, integrity).then( () => {
+        const $link = document.querySelector(linkSelector);
+        return expect($link).to.be.an.instanceof(HTMLLinkElement);
+      });
     });
 
-    it('returns false if the first argument is a sibling of the second', function () {
-      expect(areNested($siblingA, $siblingB)).to.be.false;
+    describe('the link element', () => {
+
+      afterEach(() => {
+        removeFromDOM(linkSelector);
+      });
+
+      it('uses the supplied uri as the href attribute value', () => {
+        utils.loadStyleSheet(uri, integrity);
+        const $link = document.querySelector(linkSelector);
+        expect($link.getAttribute('href')).to.equal(uri);
+      });
+
+      it('uses the supplied integrity argument as the integrity attribute value', () => {
+        utils.loadStyleSheet(uri, integrity);
+        const $link = document.querySelector(linkSelector);
+        expect($link.getAttribute('integrity')).to.equal(integrity);
+      });
+
+      it('when there is an integrity attribute, the crossOrigin attribute should be have the value \'anonymous\'', () => {
+        utils.loadStyleSheet(uri, integrity);
+        const $link = document.querySelector(linkSelector);
+        expect($link.getAttribute('crossOrigin')).to.equal('anonymous');
+      });
+
     });
 
-    it('returns false if the first argument is a child of the second', function () {
-      expect(areNested($siblingA, $parent)).to.be.false;
-    });
+    describe('loading the asset using a Promise', () => {
 
-    it('returns false if the first argument is a non-child descendent of the second', function () {
-      expect(areNested($siblingA, $grandParent)).to.be.false;
-    });
+      context('when a valid uri is supplied', () => {
 
-    it('returns true if the first argument is the parent of the second', function () {
-      expect(areNested($parent, $siblingA)).to.be.true;
-    });
+        after(() => {
+          removeFromDOM(linkSelector);
+        });
 
-    it('returns true if the first argument is a non-parent ancestor of the second', function () {
-      expect(areNested($grandParent, $siblingA)).to.be.true;
+        it('the promise should be fulfilled', () => {
+          return expect(utils.loadStyleSheet('/test/fixtures/known-end-point.css', integrity)).to.be.eventually.fulfilled;
+        });
+
+      });
+
+      context('when an invalid uri is supplied', () => {
+
+        it('the promise should be rejected', () => {
+          return expect(utils.loadStyleSheet('/made-up/uri', integrity)).to.be.eventually.rejected;
+        });
+
+      });
+
     });
 
   });
 
-  describe('isIdOfOrWithinSection method', function () {
-    const isIdOfOrWithinSection = elifeUtils.isIdOfOrWithinSection;
-    let $doc;
+  describe('the createOverlay function', () => {
+
+    let $scope;
+    let $target;
     let $parent;
-    let $childA;
-    let $childB;
+    let $followingSibling;
 
-    beforeEach(function () {
-      $doc = document.createElement('div');
-
-      $parent = document.createElement('div');
-      $parent.id = 'foo';
-      $doc.appendChild($parent);
-
-      $childA = document.createElement('div');
-      $childA.id = 'bar';
-      $parent.appendChild($childA);
-
-      $childB = document.createElement('div');
-      $childB.id = 'baz';
-      $parent.appendChild($childB);
+    beforeEach(() => {
+      $scope = document.querySelector('.createOverlay');
+      $target = $scope.querySelector('.target');
+      $parent = $scope.querySelector('.parent');
+      $followingSibling = $scope.querySelector('.following-sibling');
     });
 
-    it('returns true if the id tested matches the section id', function () {
-      expect(isIdOfOrWithinSection($parent.id, $parent, $doc)).to.be.true;
+    context('when supplied with an id that already exits in the document', () => {
+
+      after(() => {
+        $target.id = '';
+      });
+
+      it('returns without doing anything', () => {
+        $target.id = 'preExistingId';
+        utils.create$pageOverlay($parent, $followingSibling, 'preExistingId');
+        expect($scope.querySelector('.overlay')).to.be.null;
+      });
+
     });
 
-    it('returns true if the id tested is a descendant of the section', function () {
-      [$childA.id, $childB.id].forEach((childId) => {
-        expect(isIdOfOrWithinSection(childId, $parent, $doc)).to.be.true;
+    context('when supplied with a unique id, a parent element, and a following sibling element', () => {
+
+      let $overlay;
+      let overlayId;
+
+      beforeEach(() => {
+        overlayId = 'overlayId';
+        $overlay = utils.create$pageOverlay($parent, $followingSibling, overlayId);
+      });
+
+      afterEach(() => {
+        const $overlayToCleanUp = $scope.querySelector(`#${overlayId}`);
+        if ($overlayToCleanUp) {
+          $overlayToCleanUp.parentNode.removeChild($overlayToCleanUp);
+        }
+      });
+
+      it('creates a new div element with the supplied id', () => {
+        expect($scope.querySelector(`div#${overlayId}`)).not.to.be.null;
+      });
+
+      it('attaches the new div element to the supplied parent', () => {
+        expect($overlay.parentNode).to.equal($parent);
+      });
+
+      it('attaches the new div element before the supplied following sibling', () => {
+        expect($overlay.nextElementSibling).to.equal($followingSibling);
+      });
+
+      it('gives the new element "overlay" css class', () => {
+        expect($overlay.classList.contains('overlay')).to.be.true;
+      });
+
+      it('hides the new element', () => {
+        expect($overlay.classList.contains('hidden')).to.be.true;
+      });
+
+    });
+
+  });
+
+  describe('the isMultiColumnDisplay function', () => {
+
+    let generateWindowMock;
+
+    before(() => {
+      // Expects matchMedia to be testing a min-width media query
+      generateWindowMock = (hasWideViewport) => {
+        return {
+          matchMedia: () => {
+            return {
+              matches: hasWideViewport
+            };
+          }
+
+        };
+      };
+    });
+
+    beforeEach(() => {
+      spy(window, "matchMedia");
+    });
+
+    afterEach(() => {
+      window.matchMedia.restore();
+    });
+
+    context('when the viewport is narrower than 900px', () => {
+
+      it('returns false', () => {
+        const observed = utils.isMultiColumnDisplay(generateWindowMock(false));
+        expect(observed).to.be.false;
+        expect(window.matchMedia.calledWithExactly('(min-width: 900px)'));
+      });
+
+    });
+
+    context('when the viewport is at least 900px wide', () => {
+
+      it('returns true', () => {
+        const observed = utils.isMultiColumnDisplay(generateWindowMock(true));
+        expect(observed).to.be.true;
+        expect(window.matchMedia.calledWithExactly('(min-width: 900px)'));
+      });
+
+    });
+
+  });
+
+  describe('the isCollapsibleArticleSection function', () => {
+
+    let generateArticleSectionMock;
+
+    before(() => {
+      generateArticleSectionMock = (isCollapsible) => {
+        const behaviour = isCollapsible ? 'ArticleSection' : 'DifferentBehaviour';
+        return {
+          dataset: {
+            behaviour
+          }
+        };
+      };
+
+    });
+
+    context('when supplied with a collapsible article section', () => {
+
+      it('returns true', () => {
+
+        expect(utils.isCollapsibleArticleSection(generateArticleSectionMock(true))).to.be.true;
+
+      });
+
+    });
+
+    context('when not supplied with a collapsible article section', () => {
+
+      it('returns false', () => {
+        expect(utils.isCollapsibleArticleSection(generateArticleSectionMock(false))).to.be.false;
+      });
+
+    });
+
+  });
+
+  describe('the isCollapsedArticleSection', () => {
+
+    context('when supplied with an article section that is collapsed', () => {
+
+      let collapsedSectionMock;
+
+      beforeEach(() => {
+        collapsedSectionMock = {
+          classList: {
+            contains: (className) => {
+              return className === 'article-section--collapsed'
+            }
+          }
+        };
+
+        spy(collapsedSectionMock.classList, "contains");
+      });
+
+      afterEach(() => {
+        collapsedSectionMock.classList.contains.restore();
+      });
+
+      it('returns true', () => {
+        const observed = utils.isCollapsedArticleSection(collapsedSectionMock);
+        expect(observed).to.be.true;
+        expect(collapsedSectionMock.classList.contains.calledWithExactly('article-section--collapsed')).to.be.true;
+      });
+
+    });
+
+    context('when not supplied with an article section that is collapsed', () => {
+
+      let uncollapsedSectionMock;
+
+      beforeEach(() => {
+        uncollapsedSectionMock = {
+          classList: {
+            contains: (className) => {
+              return className !== 'article-section--collapsed'
+            }
+          }
+        };
+
+        spy(uncollapsedSectionMock.classList, "contains");
+      });
+
+      afterEach(() => {
+        uncollapsedSectionMock.classList.contains.restore();
+      });
+      it('returns false', () => {
+        const observed = utils.isCollapsedArticleSection(uncollapsedSectionMock);
+        expect(observed).to.be.false;
+        expect(uncollapsedSectionMock.classList.contains.calledWithExactly('article-section--collapsed')).to.be.true;
+      });
+
+    });
+
+  });
+
+  describe('the getItemType function', () => {
+
+    context('when the item type is not declared', () => {
+
+      let $noItemType;
+
+      before(() => {
+        $noItemType = generateSnippetWithNoItemType();
+      });
+
+      it('returns null', () => {
+        expect(utils.getItemType($noItemType)).to.be.null;
+      });
+
+    });
+
+    context('when the item type is declared to be "research-article"', () => {
+
+      let $hasItemType;
+
+      before(() => {
+        $hasItemType = generateSnippetWithItemType('research-article');
+      });
+
+      it('returns returns the item type "research-article"', () => {
+        expect(utils.getItemType($hasItemType)).to.equal('research-article');
+      });
+
+    });
+
+    context('when the item type descriptor is on the supplied element', () => {
+
+      let $hasItemType;
+
+      before(() => {
+        $hasItemType = generateSnippetWithItemType('research-article', false);
+      });
+
+      it('it supplies the item type correctly', () => {
+        expect(utils.getItemType($hasItemType)).to.equal('research-article');
+      });
+
+    });
+
+    context('when the item type descriptor is on a descendant of the supplied element', () => {
+
+      let $hasDeepItemType;
+
+      before(() => {
+        $hasDeepItemType = generateSnippetWithItemType('research-article', true);
+      });
+
+      it('it supplies the item type correctly', () => {
+        expect(utils.getItemType($hasDeepItemType)).to.equal('research-article');
+      });
+
+    });
+
+  });
+
+  describe('expandCollapsedSections function', () => {
+
+    let collapsedSectionCount;
+    let $hasCollapsedSections;
+
+    beforeEach(() => {
+      collapsedSectionCount = 6;
+      $hasCollapsedSections = generateSnippetWithCollapsedSections(collapsedSectionCount);
+      expect($hasCollapsedSections.querySelectorAll('.article-section--collapsed')).to.have.lengthOf(collapsedSectionCount);
+
+      [].slice.call($hasCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
+        spy($section, 'dispatchEvent');
       });
     });
 
-    it ('returns false if the id tested is not of or within the section', function () {
-      expect(isIdOfOrWithinSection('qux', $parent, $doc)).to.be.false;
+    afterEach(() => {
+      [].slice.call($hasCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
+        $section.dispatchEvent.restore();
+      });
     });
+
+    it('expands all collapsed sections supplied', () => {
+      utils.expandCollapsedSections($hasCollapsedSections);
+      [].slice.call($hasCollapsedSections.querySelectorAll('.article-section--collapsed')).forEach(($section) => {
+
+        expect($section.dispatchEvent.calledOnce).to.be.true;
+
+        const calledWith = $section.dispatchEvent.getCall(0).args[0];
+        expect(calledWith).to.be.an.instanceOf(CustomEvent);
+        expect(calledWith.type).to.equal('expandsection');
+      });
+    });
+
   });
 
 });

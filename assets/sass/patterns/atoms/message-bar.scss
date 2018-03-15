@@ -4,10 +4,10 @@
   background-color: $color-text-ui-code;
   border: 1px solid $color-text-dividers;
   border-radius: #{$border-radius}px;
-  @include font-size(14);
-  line-height: 1.7142857143; // 24px with 14px line height
-  @include padding($blg-space-extra-small-in-px);
+  @include font-size-and-vertical-height(14);
   @include padding($blg-space-extra-small-in-px - 1, "top");
+  @include padding(12, "right");
   @include padding($blg-space-extra-small-in-px - 1, "bottom");
-  @include margin($blg-space-small-in-px, "bottom");
+  @include padding(12, "left");
+  @include blg-spacing("bottom", "small", "margin");
 }

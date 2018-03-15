@@ -14,7 +14,7 @@
           "picture": {
             "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
               "classes": "",
               "altText": "Menu icon"
@@ -86,11 +86,23 @@
         {
           "text": "Submit my research",
           "path": "#",
-          "classes": "nav-secondary__item nav-secondary__item--button",
+          "classes": "nav-secondary__item",
           "button": {
             "classes": "button--default button--extra-small"
           }
+        },
+
+        {
+          "classes": "nav-secondary__item",
+          "loginControl": {
+            "button": {
+              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
+              "path": "#",
+              "classes": "button--login"
+            }
+          }
         }
+
       ]
     },
 
@@ -226,10 +238,12 @@
           },
 
           "image": {
-            "defaultPath": "https://unsplash.it/250/140/",
-            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--big"
+            "fallback": {
+              "defaultPath": "https://unsplash.it/250/140/",
+              "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "big"
           }
         },
 
@@ -341,10 +355,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://unsplash.it/70/70/",
-            "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://unsplash.it/70/70/",
+              "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -433,10 +449,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/250/140/",
-            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/250/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -540,10 +558,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://unsplash.it/250/140/",
-            "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
-            "altText": "Make it meaningful please",
-            "classes": "teaser__img--big"
+            "fallback": {
+              "defaultPath": "https://unsplash.it/250/140/",
+              "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
+              "altText": "Make it meaningful please"
+            },
+            "type": "big"
           }
 
         }
@@ -565,7 +585,7 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "The [1] parasite’s new clothes",
           "url": "#",
-          "secondaryInfo": "Mark S Pearson et al.",
+          "secondaryInfo": "The first author has a very long name et al.",
           "footer": {
             "meta": {
               "url": "#",
@@ -582,10 +602,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -611,10 +633,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -640,10 +664,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -669,10 +695,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
 
@@ -698,10 +726,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         },
         {
@@ -726,10 +756,12 @@
             }
           },
           "image": {
-            "defaultPath": "https://placehold.it/140/140/",
-            "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
-            "altText": "Meaningful alt text please.",
-            "classes": "teaser__img--small"
+            "fallback": {
+              "defaultPath": "https://placehold.it/140/140/",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "small"
           }
         }
 
@@ -744,18 +776,22 @@
         "name": "Prabhat Jha",
         "title": "University of Toronto",
         "image": {
-          "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
+            "defaultPath": "https://unsplash.it/90/90",
+            "altText": "Meaningful alt text here please."
+          }
         }
       },
       {
         "name": "Richard Losick",
         "title": "Harvard University",
         "image": {
-          "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
-          "defaultPath": "https://unsplash.it/90/90",
-          "altText": "Meaningful alt text here please."
+          "fallback": {
+            "srcset": "https://unsplash.it/180/180 180w, https://unsplash.it/90/90 90w",
+            "defaultPath": "https://unsplash.it/90/90",
+            "altText": "Meaningful alt text here please."
+          }
         }
       }
     ],

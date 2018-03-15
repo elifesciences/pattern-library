@@ -6,7 +6,7 @@
   border-radius: #{$border-radius}px;
   @include box-shadow();
   font-family: $font-secondary;
-  @include padding(12, "bottom");
+  @include blg-spacing("bottom", "extra-small");
   @include width(217);
   position: absolute;
   right: 16px;
@@ -36,7 +36,10 @@
 
   .article-download-links-list__link {
     display: block;
-    @include padding(12 24);
+    @include blg-spacing("top", "extra-small");
+    @include blg-spacing("bottom", "extra-small");
+    @include padding(24, "left");
+    @include padding(24, "right");
     @include menu-typeg();
     text-decoration: none;
   }
@@ -44,7 +47,10 @@
   .article-download-links-list__heading {
     @include label-content-typeg();
     margin: 0;
-    @include padding(24 24 0);
+    @include blg-spacing("top", "small");
+    padding-bottom: 0;
+    @include padding(24, "left");
+    @include padding(24, "right");
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {

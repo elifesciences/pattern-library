@@ -2,53 +2,53 @@
   "image": {
     "sources": [
       {
-        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/166,0,1468,861/450,264/0/default.webp 450w, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/166,0,1468,861/900,528/0/default.webp 900w",
+        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/166,0,1468,861/900,528/0/default.webp 2x, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/166,0,1468,861/450,264/0/default.webp 1x",
         "type": "image/webp",
         "media": "(max-width: 450px)"
       },
       {
-        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/166,0,1468,861/450,264/0/default.png 450w, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/166,0,1468,861/900,528/0/default.png 900w",
+        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/166,0,1468,861/900,528/0/default.png 2x, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/166,0,1468,861/450,264/0/default.png 1x",
         "type": "image/png",
         "media": "(max-width: 450px)"
       },
       {
-        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,120,1800,620/767,264/0/default.webp 767w, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,120,1800,620/1534,528/0/default.webp 1534w",
+        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,120,1800,620/1534,528/0/default.webp 2x, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,120,1800,620/767,264/0/default.webp 1x",
         "type": "image/webp",
         "media": "(max-width: 767px)"
       },
       {
-        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,120,1800,620/767,264/0/default.png 767w, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,120,1800,620/1534,528/0/default.png 1534w",
+        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,120,1800,620/1534,528/0/default.png 2x, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,120,1800,620/767,264/0/default.png 1x",
         "type": "image/png",
         "media": "(max-width: 767px)"
       },
       {
-        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,177,1800,507/1023,288/0/default.webp 1023w, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,177,1800,507/2046,576/0/default.webp 2046w",
+        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,177,1800,507/2046,576/0/default.webp 2x, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,177,1800,507/1023,288/0/default.webp 1x",
         "type": "image/webp",
         "media": "(max-width: 1023px)"
       },
       {
-        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,177,1800,507/1023,288/0/default.png 1023w, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,177,1800,507/2046,576/0/default.png 2046w",
+        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,177,1800,507/2046,576/0/default.png 2x, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,177,1800,507/1023,288/0/default.png 1x",
         "type": "image/png",
         "media": "(max-width: 1023px)"
       },
       {
-        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/1114,336/0/default.webp 1114w, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/2228,672/0/default.webp 2228w",
+        "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/2228,672/0/default.webp 2x, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/1114,336/0/default.webp 1x",
         "type": "image/webp"
       }
     ],
     "fallback": {
       "defaultPath": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/1114,336/0/default.png",
-      "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/1114,336/0/default.png 1114w, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/2228,672/0/default.png 2228w",
+      "srcset": "https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/2228,672/0/default.png 2x, https://iiif.elifesciences.org/journal-cms:collection/2015-09/2d2e35c4-tropical-disease-elife-collections.png/0,159,1800,543/1114,336/0/default.png 1x",
       "altText": ""
     }
   },
   "title": "Epidemiology and Global Health",
   "longTitle": true,
-  "impactStatement": "Flatworms have organs called protonephridia that could be used as a model system for the study of kidney disease.",
+  "impactStatement": "Flatworms have organs called protonephridia that could be used as a <a href=\"#\">model system</a> for the study of kidney disease.",
   "button": {
     "text": "Subscribe",
     "path": "#",
-    "classes": "button--outline button--small"
+    "classes": "button--reversed button--small"
   },
   "meta": {
     "url": "#",

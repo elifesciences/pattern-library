@@ -37,9 +37,7 @@
   }
 
   @include padding($content-header-padding/2 0);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @include truncate-with-ellipsis();
 
   &:before {
     color: $color-text-secondary;
@@ -49,7 +47,7 @@
 .carousel-item__subject_list_item {
   @include label-subject-typeg();
   display: inline;
-  line-height: 2.18181818181818;
+  @include font-size-and-vertical-height(11);
   list-style-type: none;
   padding: 0;
 
@@ -76,10 +74,9 @@
 }
 
 .carousel-item__title {
-  @include font-size(24);
-  line-height: 30/24;
+  @include font-size-and-vertical-height(24, 30);
   @include padding(0);
-  @include padding(12, "bottom");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 .carousel-item__title_link {
@@ -115,43 +112,11 @@
 
   .carousel-item__picture {
     display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    }
+    @include picture-with-overlay;
   }
 
   .carousel-item__image {
-    z-index: -2;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 100%;
-    min-width: 100%;
-    max-width: none;
-    transform: translate(-50%, -50%);
-    &:after {
-      // Hide broken images
-      content: "";
-      background-color: #fff;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+    @include img-with-overlay;
   }
 
   .carousel-item__subject_list {
@@ -192,19 +157,16 @@
   }
 
   .carousel-item__title {
-    @include font-size(36);
-    line-height: 48/36;
+    @include font-size-and-vertical-height(36, 48);
     @include margin(0, "top");
     @include margin(0, "bottom");
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-      @include font-size(41);
-      line-height: 48/41;
+      @include font-size-and-vertical-height(41, 48);
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
-      @include font-size(46);
-      line-height: 72/46;
+      @include font-size-and-vertical-height(46, 72);
     }
   }
 
@@ -220,6 +182,9 @@
     bottom: 64px;
     left: 0;
     right: 0;
+    .button {
+      margin-bottom: 0;
+    }
   }
 
   .carousel-item__meta {

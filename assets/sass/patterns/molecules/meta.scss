@@ -8,9 +8,7 @@
   @include label-content-typeg();
 
   .highlights & {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    @include truncate-with-ellipsis();
   }
 }
 

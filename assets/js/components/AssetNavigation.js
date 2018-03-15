@@ -14,7 +14,11 @@ module.exports = class AssetNavigation {
     const $seeAll = this.$elm.querySelector('.asset-viewer-inline__header_link');
     if ($seeAll) {
       promise = utils.remoteDoc($seeAll.href, this.window).then((doc) => {
-        const $newAsset = doc.querySelector(`#${this.$elm.id}`);
+        const $newAsset = doc.querySelector(`#${this.$elm.id}`); // No getElementById() as this might be a remote doc.
+        if (!$newAsset) {
+          return [this.$elm];
+        }
+
         const $newSupplements = doc.querySelectorAll(`[data-parent-asset-id="${this.$elm.id}"]`);
 
         // Avoid circular behaviour.
@@ -71,6 +75,7 @@ module.exports = class AssetNavigation {
     const previous = utils.buildElement('span', ['asset-viewer-inline__previous'], '', navigation);
     if (i > 0) {
       previous.addEventListener('click', () => {
+        this.window.history.pushState(null, '', '#' + this.assetItems[i - 1].id);
         this.show(i - 1);
       });
       previous.classList.add('asset-viewer-inline__previous--active');
@@ -81,6 +86,7 @@ module.exports = class AssetNavigation {
     const next = utils.buildElement('span', ['asset-viewer-inline__next'], '', navigation);
     if (i < (this.assetItems.length - 1)) {
       next.addEventListener('click', () => {
+        this.window.history.pushState(null, '', '#' + this.assetItems[i + 1].id);
         this.show(i + 1);
       });
       next.classList.add('asset-viewer-inline__next--active');
@@ -117,6 +123,7 @@ module.exports = class AssetNavigation {
     [].forEach.call(this.assetItems, (assetItem, i) => {
       if (assetItem.id === hash) {
         this.show(i);
+        assetItem.scrollIntoView();
       }
     });
   }

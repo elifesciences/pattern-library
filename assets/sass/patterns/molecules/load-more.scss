@@ -1,5 +1,5 @@
 @import "../../definitions";
 
 .load-more {
-  @include margin(12, "bottom");
+  @include blg-spacing("bottom", "extra-small", "margin");
 }

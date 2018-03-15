@@ -12,6 +12,12 @@
 
 }
 
+.see-more-link--inline {
+  display: inline;
+  color: $color-primary;
+  font: inherit;
+}
+
 .see-more-link__highlight {
   color: $color-primary;
 }

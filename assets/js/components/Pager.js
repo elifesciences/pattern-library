@@ -209,7 +209,7 @@ module.exports = class Pager {
   }
 
   find$targetEl() {
-    return this.doc.querySelector('#' + this.$elm.dataset.targetid);
+    return this.doc.getElementById(this.$elm.dataset.targetid);
   }
 
 };

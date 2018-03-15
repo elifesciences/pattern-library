@@ -19,9 +19,8 @@
   border-radius: #{$border-radius}px;
   display: block;
   font-family: $font-secondary;
-  font-size: 1rem;
-  line-height: 1.5; /* 24px with font size of 16px */
-  @include padding(11 55 11 12);
+  @include font-size-and-vertical-height($font-size-base-in-px);
+  @include padding($blg-space-extra-small-in-px - 1 55 $blg-space-extra-small-in-px - 1 12);
   width: 100%;
 
   .compact-form--valid & {

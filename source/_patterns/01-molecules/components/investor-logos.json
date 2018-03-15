@@ -1,3 +1,34 @@
 {
-
+  "logos": [
+    {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/290/72/",
+        "altText": "Meaningful alt text here please."
+      }
+    },
+    {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/96/96/",
+        "altText": "Meaningful alt text here please."
+      }
+    },
+    {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/290/65/",
+        "altText": "Meaningful alt text here please."
+      }
+    },
+    {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/240/60/",
+        "altText": "Meaningful alt text here please."
+      }
+    },
+    {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/210/70/",
+        "altText": "Meaningful alt text here please."
+      }
+    }
+  ]
 }

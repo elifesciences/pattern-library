@@ -14,35 +14,40 @@
 }
 
 .teaser__context_label_list {
-  @include teaser-context-label-list-style();
+  @include nospace();
+  position: relative;
+  @include truncate-with-ellipsis();
+
+  .listing-list--highlights & {
+    display: none;
+  }
+
 }
 
-.teaser__context_label_list_item {
+.teaser__context_label_item {
+  display: inline;
+  list-style-type: none;
+  @include nospace();
 
-  @include teaser-context-label-list-item-style();
-  @include font-size(11);
-  line-height: 2.1818181818;
   & .teaser__context_label:after {
     content: ", ";
   }
-}
 
-.teaser__context_label_list_item:last-child {
-
-  & .teaser__context_label:after {
-    content: "";
+  &:last-child {
+    & .teaser__context_label:after {
+      content: "";
+    }
   }
 
 }
 
 .teaser__context_label {
-  @include teaser-context-label-style();
+  // content-label rather than subject-label as not it's not always subjects in here
+  @include label-content-typeg();
 }
 
 // Extra specificity to override normalised style
 .teaser .teaser__context_label_link {
-  @include font-size(11);
-  line-height: 2.1818181818;  // 24px at 11px font size
   text-decoration: none;
 
   .teaser__context_label {
@@ -78,7 +83,7 @@
 }
 
 .teaser--no-secondary-info .teaser__header_text {
-  @include padding($blg-space-extra-small-in-px, "bottom");
+  @include blg-spacing("bottom", "extra-small");
 }
 
 .teaser__header_text_link {
@@ -87,7 +92,7 @@
 
 .teaser__secondary_info {
   @include listing-main-author-typeg();
-  @include margin(12, "bottom");
+  @include blg-spacing("bottom", "extra-small", "margin");
 }
 
 .teaser__body {
@@ -136,16 +141,16 @@
 
 }
 
-.teaser__img {
+.teaser__picture {
   display: block;
   height: auto;
   @include nospace();
-  @include margin(12, "top");
+  @include blg-spacing("top", "extra-small", "margin");
   max-width: 100%;
   width: 100%;
 }
 
-.teaser__img--small {
+.teaser__picture--small {
   @include margin(24, "left");
   float: right;
   height: 72px;
@@ -154,17 +159,17 @@
 
 @media only all and (min-width: 700px) {
 
-  .teaser__img--big {
+  .teaser__picture--big {
     float: right;
     height: 144px;
-    @include margin(12, "bottom");
+    @include blg-spacing("bottom", "extra-small", "margin");
     width: auto;
     @include margin(24, "left");
   }
 
   .teaser--secondary {
 
-    .teaser__img--big {
+    .teaser__picture--big {
       height: auto;
       float: none;
       margin-left: 0;
@@ -180,7 +185,7 @@
 .teaser--grid-style {
 
   border-top: none;
-  @include margin($blg-space-small-in-px, "bottom");
+  @include blg-spacing("bottom", "small", "margin");
   @include height(450);
 
   @supports (display: flex) {
@@ -189,12 +194,12 @@
 
   padding-top: 0;
 
-  .teaser__img--prominent {
+  .teaser__picture--prominent {
     @include nospace();
   }
 
   .teaser__header_text {
-    @include padding($blg-space-extra-small-in-px, "bottom");
+    @include blg-spacing("bottom", "extra-small");
   }
 
   .teaser__footer {
@@ -217,4 +222,3 @@
     }
   }
 }
-

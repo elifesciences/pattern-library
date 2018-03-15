@@ -3,7 +3,7 @@
 .section-listing {
 
   @include nospace();
-  @include padding($blg-space-extra-small-in-px, "top");
+  @include blg-spacing("top", "extra-small");
   list-style: none;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
@@ -51,7 +51,7 @@
     }
 
     .section-listing__list_item {
-      line-height: 1.5;
+      @include font-size-and-vertical-height($font-size-base-in-px);
       text-align: left;
     }
 

@@ -2,8 +2,8 @@
 
 .inline-profile {
   clear: both;
-  @include margin($blg-space-medium-in-px, "top");
-  @include margin($blg-space-medium-in-px, "bottom");
+  @include blg-spacing("top", "medium", "margin");
+  @include blg-spacing("bottom", "medium", "margin");
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include clearfix();
     margin: 0;
@@ -12,11 +12,14 @@
 
 .inline-profile__picture {
   border: 1px solid $color-text-dividers;
-  @include padding($blg-space-extra-small-in-px);
-  @include margin($blg-space-small-in-px, "bottom");
+  @include blg-spacing("top", "extra-small");
+  @include padding(12, "right");
+  @include blg-spacing("bottom", "extra-small");
+  @include padding(12, "left");
+  @include blg-spacing("bottom", "small", "margin");
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     float: left;
-    @include margin($blg-space-small-in-px, "right");
+    @include margin(24, "right");
   }
 }
 

@@ -3,15 +3,15 @@
 .box {
   border-bottom: 1px solid $color-text-dividers;
   @include padding($blg-space-small-in-px - 1, "bottom");
-  @include margin($blg-space-medium-in-px, "top");
-  @include margin($blg-space-medium-in-px, "bottom");
+  @include blg-spacing("top", "medium", "margin");
+  @include blg-spacing("bottom", "medium", "margin");
 }
 
 .box__label {
   border-bottom: 1px solid $color-text-dividers;
   @include fig-heading-typeg();
   @include padding($blg-space-extra-small-in-px - 1, "bottom");
-  @include margin($blg-space-extra-small-in-px, "bottom");
+  @include blg-spacing("bottom", "extra-small", "margin");
 }
 
 .box__label_separator {

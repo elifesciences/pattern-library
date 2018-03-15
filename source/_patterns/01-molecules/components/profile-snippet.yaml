@@ -16,20 +16,7 @@ schema:
       type: string
       minLength: 1
     image:
-      type: object
-      properties:
-        srcset:
-          type: string
-          pattern: ^((https)?[^ ]+ [1-9][0-9]*w)(, (https?)?[^ ]+ [1-9][0-9]*w)*$
-        defaultPath:
-          type: string
-          minLength: 1
-        altText:
-          type: string
-      required:
-        - srcset
-        - defaultPath
-        - altText
+      $ref: ../../00-atoms/components/picture.yaml#/schema
   required:
     - title
     - name

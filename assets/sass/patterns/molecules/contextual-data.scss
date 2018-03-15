@@ -1,7 +1,6 @@
 @import "../../definitions";
 
 .contextual-data {
-  border-bottom: 1px solid $color-text-dividers;
   @include label-content-typeg($color-text-secondary, false);
 }
 
@@ -12,22 +11,42 @@
   text-align: center;
 }
 
-.contextual-data__list_title {
+.contextual-data__item {
   display: inline-block;
   @include label-content-typeg($color-text-secondary);
   margin: 0;
-  padding: 0;
+  @include padding(0 5 0 0);
+
+  &[data-hypothesis-trigger] {
+    cursor: pointer;
+  }
+
+  a {
+    color: inherit;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
 }
 
-.contextual-data__list_desc {
-  display: inline-block;
-  @include label-content-typeg($color-text-secondary, false);
-  margin: 0;
-  @include padding(0 5 0 0);
+.contextual-data__item__hypothesis_opener {
+  display: none;
+
+  .js & {
+    color: $color-primary;
+    display: inline-block;
+    cursor: pointer;
+  }
+
 }
 
 .contextual-data__cite_wrapper {
-  @include padding(12 0 11 0);
+  border-bottom: 1px solid $color-text-dividers;
+  @include blg-spacing("top", "extra-small");
+  @include padding($blg-space-extra-small-in-px - 1, "bottom");
+  padding-left: 0;
+  padding-right: 0;
   text-align: center;
 }
 
@@ -37,6 +56,7 @@
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}rem) {
   .contextual-data {
+    border-bottom: 1px solid $color-text-dividers;
     display: flex;
   }
 
@@ -44,15 +64,11 @@
     align-self: center;
     border-bottom: none;
     display: inline-block;
-    padding: 0;
     text-align: left;
   }
 
-  .contextual-data__list_desc {
-    @include padding(0 10 0 0);
-  }
-
   .contextual-data__cite_wrapper {
+    border-bottom: none;
     float: right;
     margin-left: auto;
     @include padding(11 0);

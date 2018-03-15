@@ -28,7 +28,8 @@
 
 .article-meta__link_list {
   list-style: none;
-  @include margin(0 0 24 0);
+  margin: 0;
+  @include blg-spacing("bottom", "small", "margin");
   padding: 0;
 }
 

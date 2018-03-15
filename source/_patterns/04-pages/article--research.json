@@ -15,7 +15,7 @@
           "picture": {
             "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
               "classes": "",
               "altText": "Menu icon"
@@ -85,11 +85,23 @@
         {
           "text": "Submit my research",
           "path": "#",
-          "classes": "nav-secondary__item nav-secondary__item--button",
+          "classes": "nav-secondary__item",
           "button": {
             "classes": "button--default button--extra-small"
           }
+        },
+
+        {
+          "classes": "nav-secondary__item",
+          "loginControl": {
+            "button": {
+              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
+              "path": "#",
+              "classes": "button--login"
+            }
+          }
         }
+
       ]
     },
     "searchBox": {
@@ -413,20 +425,14 @@
   "contextualData": {
     "metricsData": {
       "data": [
-        {
-          "name": "views",
-          "value": 149
-        },
-        {
-          "name": "cited",
-          "value": 5
-        },
-        {
-          "name": "comments",
-          "value": 12,
-          "elementId": "someDocumentLevelUniqueId"
-        }
-      ]
+        {"text": "<a href=\"#\">Views 149</a>"},
+        {"text": "Cited 5"}
+      ],
+      "annotationCount": {
+        "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>0</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
+        "isSmall": true,
+        "behaviour": "HypothesisOpener"
+      }
     },
     "citation": {
       "citeAs": "eLife 2016;5:e16370",
@@ -1269,6 +1275,12 @@
 
     }
   ],
+
+  "annotationCount": {
+    "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>&#8220;</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
+    "hasPlaceholder": true,
+    "behaviour": "HypothesisOpener"
+  },
 
   "related": {
     "rootClasses": "teaser--secondary teaser--related",

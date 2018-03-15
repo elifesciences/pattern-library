@@ -6,19 +6,24 @@
     {
       "authors": [
         {
-          "name": "JB Patterson"
+          "name": "JB Patterson",
+          "url": false
         },
         {
-          "name": "DG Lonergan"
+          "name": "DG Lonergan",
+          "url": false
         },
         {
-          "name": "GA Flynn"
+          "name": "GA Flynn",
+          "url": false
         },
         {
-          "name": "Z Qingpeng"
+          "name": "Z Qingpeng",
+          "url": false
         },
         {
-          "name": "PV Pallai"
+          "name": "PV Pallai",
+          "url": false
         }
       ],
       "suffix": "(2011)"

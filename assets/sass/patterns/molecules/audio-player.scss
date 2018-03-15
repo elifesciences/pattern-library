@@ -5,7 +5,10 @@
   margin: 0 auto;
   @include constrain-width($max-site-width, "max");
   @include height($audio-player-height);
-  @include padding(12 24 22);
+  @include blg-spacing("top", "extra-small");
+  @include padding(24, "right");
+  @include padding(24, "left");
+  @include padding($blg-space-small-in-px - 2, "bottom");
   position: relative;
 }
 
@@ -36,8 +39,7 @@
 .audio-player__header {
   color: $color-text--reverse;
   @include listing-side-art-title-typeg();
-  @include font-size(16);
-  line-height: 1.5;
+  @include font-size-and-vertical-height($font-size-base-in-px);
   @include nospace();
 }
 
@@ -92,10 +94,7 @@
   }
 
   .audio-player__title {
-    display: block;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    @include truncate-with-ellipsis();
     max-width: calc(100% - 6.4em);
   }
 

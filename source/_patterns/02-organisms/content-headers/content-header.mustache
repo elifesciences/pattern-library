@@ -17,7 +17,6 @@
              {{#srcset}}srcset="{{srcset}}"{{/srcset}}
              alt="{{altText}}"
              class="content-header__image"
-             sizes="(min-width: 1114px) 1114px, 100vw"
         >
       {{/fallback}}
     </picture>
@@ -44,8 +43,7 @@
               <img src="{{defaultPath}}"
                    {{#srcset}}srcset="{{srcset}}"{{/srcset}}
                    alt="{{altText}}"
-                   class="content-header__profile_image"
-                   sizes="40px">
+                   class="content-header__profile_image">
             {{/fallback}}
           </picture>
         {{/profile.image}}
@@ -90,15 +88,15 @@
     <a href="{{download}}" class="content-header__download_link">
       <picture>
         {{#image}}
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/assetRewrite}} 88w" sizes="88px" type="image/svg+xml" media="(min-width: 45.625em)">
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-2x.png{{/assetRewrite}} 88w" sizes="88px" type="image/png" media="(min-width: 45.625em)">
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-reverse.svg{{/assetRewrite}} 20w" sizes="20px" type="image/svg+xml">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-reverse.svg{{/assetRewrite}}" type="image/svg+xml">
           <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
         {{/image}}
         {{^image}}
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full.svg{{/assetRewrite}} 88w" sizes="88px" type="image/svg+xml" media="(min-width: 45.625em)">
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-2x.png{{/assetRewrite}} 88w" sizes="88px" type="image/png" media="(min-width: 45.625em)">
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download.svg{{/assetRewrite}} 20w" sizes="20px" type="image/svg+xml">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download.svg{{/assetRewrite}}" type="image/svg+xml">
           <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
         {{/image}}
       </picture>
@@ -122,8 +120,8 @@
               <picture>
                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author.svg{{/assetRewrite}}" type="image/svg+xml">
                <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}}"
-                    srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@2x.png{{/assetRewrite}} 20w, {{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}} 10w"
-                    sizes="10px" alt="Is a corresponding author" class="content-header__author_icon">
+                    srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@2x.png{{/assetRewrite}} 2x, {{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}} 1x"
+                    alt="Is a corresponding author" class="content-header__author_icon">
               </picture>{{/isCorresponding}}</span>
           </li>
         {{/authors.list}}

@@ -73,10 +73,27 @@
   width: #{get-rem-from-px($size_in_px)}rem;
 }
 
+@mixin constrain-height($size_in_px, $extreme) {
+  @if $extreme == min or $extreme == max {
+    #{$extreme}-height: #{$size_in_px}px;
+    #{$extreme}-height: #{get-rem-from-px($size_in_px)}rem;
+  }
+}
+
 @mixin constrain-width($size_in_px, $extreme) {
   @if $extreme == min or $extreme == max {
     #{$extreme}-width: #{$size_in_px}px;
     #{$extreme}-width: #{get-rem-from-px($size_in_px)}rem;
+  }
+}
+
+@mixin flexbox-centre-x-and-y {
+  @supports (display: flex) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -241,16 +258,26 @@
   margin: auto;
 
   @if $padding {
-    padding: 0 7%;
+    padding-left: 7%;
+    padding-right: 7%;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      padding: 0 14%;
+      padding-left: 14%;
+      padding-right: 14%;
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      padding: 0 3%;
+      padding-left: 3%;
+      padding-right: 3%;
     }
   }
+}
+
+// $vertical-height-in-px: desired height of the element as a function of font-size and line-height
+// TODO: Devise a good name (& extend blg name system?), for the default vertical height
+@mixin font-size-and-vertical-height($font-size-in-px, $vertical-height-in-px: 24) {
+  @include font-size($font-size-in-px);
+  line-height: #{($vertical-height-in-px / $font-size-in-px)};
 }
 
 @mixin body-para {
@@ -314,25 +341,9 @@
   color: $color-text-secondary;
 }
 
-@mixin teaser-context-label-list-style {
-  @include label-content-typeg();
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-@mixin teaser-context-label-list-item-style {
-  display: inline;
-  list-style-type: none;
-  padding: 0;
-}
-
 @mixin teaser-header-text-style() {
   @include listing-main-art-title-typeg();
-  @include padding(12, "top");
+  @include blg-spacing("top", "extra-small");
 }
 
 @mixin teaser-header-text-link-style() {
@@ -346,7 +357,7 @@
 }
 
 @mixin teaser-footer-style() {
-  @include margin(12, "top");
+  @include blg-spacing("top", "extra-small", "margin");
   color: $color-text-secondary;
   display: flex;
   @include label-content-typeg();
@@ -361,14 +372,20 @@
 
 @mixin dismissible_navigation {
   @include typeg-portal-quick-nav();
-  line-height: 3;
+  @include font-size-and-vertical-height($font-size-base-in-px, 48);
   @include nospace();
   text-align: center;
 }
 
+@mixin checkbox-label() {
+  @include typeg-form-label();
+  @include blg-spacing("bottom", "extra-small");
+  display: block;
+}
+
 @mixin overlay() {
   background-color: $color-overlay;
-  position: absolute;
+  position: fixed;
   min-height: 100vh;
   top: 0;
   width: 100vw;
@@ -376,38 +393,184 @@
   z-index: 4;
 }
 
-@mixin discreet-link ($color: $color-text) {
+@mixin discreet-link ($color: $color-text, $has-hover-state: true) {
   border-bottom: 1px dotted $color;
   color: $color;
   text-decoration: none;
 
-  &:hover {
-    border-bottom-color: $color-primary;
-    color: $color-primary;
+  @if $has-hover-state == true {
+    &:hover {
+      border-bottom-color: $color-primary;
+      color: $color-primary;
+    }
+  } @else {
+    &:hover {
+      border-bottom-color: $color;
+      color: $color;
+    }
+
   }
+
 }
 
 @mixin popup_title_text {
-  @include font-size(14);
-  line-height: 1.4285714286; /* 20px on 24px font */
+  @include font-size-and-vertical-height(14, 20);
 }
 
 @mixin popup-ancillary-text() {
   color: $color-text--reverse;
   font-family: $font-secondary;
-  @include font-size(11);
-  line-height: 1.6363636364; /* 18px on 11px font */
+  @include font-size-and-vertical-height(11, 18);
 }
 
 @mixin popup-large-ancillary-text() {
   color: $color-text--reverse;
   font-family: $font-secondary;
-  @include font-size(14);
-  line-height: #{(20/14)};
+  @include font-size-and-vertical-height(14, 20);
 }
 
 @mixin inline-image {
   margin-bottom: 0.1em;
   max-height: 1em;
   vertical-align: middle;
+}
+
+@mixin colors($background-color: $color-primary, $border-color: $background-color, $color: $color-text--reverse) {
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  color: $color;
+}
+
+@mixin non_js_control_link {
+  color: $color-text;
+  font-family: $font-secondary;
+  @include font-size-and-vertical-height(14);
+  font-weight: normal;
+  text-decoration: underline;
+  text-transform: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin truncate-with-ellipsis() {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin picture-with-overlay() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+@mixin img-with-overlay() {
+  z-index: -2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  min-width: 100%;
+  max-width: none;
+  transform: translate(-50%, -50%);
+  &:after {
+    // Hide broken images
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin blg-pad-top--small-to-medium {
+
+  @include blg-spacing("top", "small");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("top", "medium");
+  }
+
+}
+
+@mixin blg-pad-bottom--small-to-medium {
+
+  @include blg-spacing("bottom", "small");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "medium");
+  }
+
+}
+
+@mixin blg-pad-top--large-to-extra-large {
+
+  @include blg-spacing("top", "large");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("top", "extra-large");
+  }
+
+}
+
+@mixin blg-pad-bottom--large-to-extra-large {
+
+  @include blg-spacing("bottom", "large");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "extra-large");
+  }
+
+}
+
+@mixin blg-pad-vertical-small-to-medium {
+  @include blg-pad-top--small-to-medium();
+  @include blg-pad-bottom--small-to-medium();
+}
+
+@mixin blg-pad-vertical-large-to-extra-large {
+  @include blg-pad-top--large-to-extra-large();
+  @include blg-pad-bottom--large-to-extra-large();
+}
+
+@mixin blg-margin-bottom--medium-to-large {
+
+  @include blg-spacing("bottom", "medium", "margin");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "large", "margin");
+  }
+
+}
+
+@mixin blg-margin-bottom--small-to-medium {
+
+  @include blg-spacing("bottom", "small", "margin");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "medium", "margin");
+  }
+
+}
+
+@mixin blg-column-container() {
+  @include blg-margin-bottom--medium-to-large();
 }

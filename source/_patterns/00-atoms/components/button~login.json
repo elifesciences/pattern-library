@@ -1,0 +1,6 @@
+{
+  "text": "Button extra small",
+  "classes": "button--login",
+  "type": "submit",
+  "id": "button-id"
+}

@@ -10,7 +10,12 @@ schema:
       type: string
       minLength: 1
     url:
-      type: string
+      oneOf:
+        - type: string
+          minLength: 1
+        - type: boolean
+          enum:
+            - false
     metadata:
       type: string
       minLength: 1
@@ -34,4 +39,5 @@ schema:
                 minLength: 1
   required:
     - title
+    - url
     - sources

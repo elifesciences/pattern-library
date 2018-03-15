@@ -20,7 +20,7 @@ module.exports = class ViewSelector {
     this.cssFixedClassName = 'view-selector--fixed';
 
     if (this.sideBySideViewAvailable()) {
-      const $header = this.doc.querySelector('#siteHeader');
+      const $header = this.doc.getElementById('siteHeader');
       this.$global = this.doc.querySelector('.global-inner');
       this.sideBySideView = new SideBySideView(
         this.$global,
@@ -34,6 +34,9 @@ module.exports = class ViewSelector {
     }
 
     this.mainTarget = this.doc.querySelector('.main');
+    if (!this.mainTarget) {
+      return;
+    }
 
     // matches top padding in scss
     let topSpaceWhenFixed = 30;

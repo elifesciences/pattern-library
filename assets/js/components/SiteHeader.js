@@ -26,12 +26,16 @@ module.exports = class SiteHeader {
     }
 
     const $overlayParent = this.doc.querySelector('.main');
+    if (!$overlayParent) {
+      return;
+    }
+
     const $overlayFollowingSibling = $overlayParent.firstElementChild;
     this.pageOverlay = new Overlay($overlayParent, $overlayFollowingSibling, 'mainMenuOverlay', this.window, this.doc);
     this.pageOverlay.assignTop(96);
 
     // N.B. $mainMenu is not part of this component's HTML hierarchy.
-    var mainMenu = doc.querySelector('#mainMenu');
+    var mainMenu = doc.getElementById('mainMenu');
     if (!!mainMenu) {
       let MainMenu = require('./MainMenu');
       this.mainMenu = new MainMenu(mainMenu);
