@@ -8,6 +8,7 @@ elifePipeline {
     elifeOnNode(
         {
             stage 'Build images', {
+                checkout scm
                 sh 'docker build -t elifesciences/pattern-library .'
             }
         },
