@@ -12,11 +12,9 @@ describe('A HypothesisOpener Component', function () {
   'use strict';
 
   let $opener;
-  let hypothesisOpener;
 
   beforeEach(() => {
     $opener = generateHypothesisOpenerInitialDom();
-    hypothesisOpener = new HypothesisOpener($opener);
   });
 
   describe('the findPositioningMethod() method', () => {
@@ -94,14 +92,11 @@ describe('A HypothesisOpener Component', function () {
 
       let $containsFirstSection;
       let id;
-      let opener;
 
       beforeEach(() => {
         $containsFirstSection = generateSnippetWithIdentifiableFirstSection();
-        opener = new HypothesisOpener($opener);
-
         id = 'IShouldBeAppendedToTheFirstSection';
-        opener.$elm.setAttribute('id', id);
+        $opener.setAttribute('id', id);
 
         expect($containsFirstSection.querySelector(`#${id}`)).to.be.null;
 
@@ -109,11 +104,11 @@ describe('A HypothesisOpener Component', function () {
 
       it('appends the opener to the first section', () => {
 
-        HypothesisOpener.positionByFirstSection(opener.$elm, $containsFirstSection);
+        HypothesisOpener.positionByFirstSection($opener, $containsFirstSection);
 
         const $finalElementInFirstSection = $containsFirstSection.querySelector('.article-section--first').lastElementChild;
         expect($finalElementInFirstSection.getAttribute('id')).to.equal(id);
-        expect($finalElementInFirstSection).to.deep.equal(opener.$elm);
+        expect($finalElementInFirstSection).to.deep.equal($opener);
       });
 
     });
@@ -142,23 +137,20 @@ describe('A HypothesisOpener Component', function () {
 
       let $hasIdentifiableFistSection;
       let id;
-      let opener;
 
       beforeEach(() => {
         $hasIdentifiableFistSection = generateSnippetWithIdentifiableFirstSection();
-        opener = new HypothesisOpener($opener);
-
         id = 'IShouldBeAppendedToTheSecondSection';
-        opener.$elm.setAttribute('id', id);
+        $opener.setAttribute('id', id);
 
         expect($hasIdentifiableFistSection.querySelector(`#${id}`)).to.be.null;
 
       });
 
       it('appends the opener to the second section', () => {
-        HypothesisOpener.positionBySecondSection(opener.$elm, $hasIdentifiableFistSection);
+        HypothesisOpener.positionBySecondSection($opener, $hasIdentifiableFistSection);
         const $expectedParent = $hasIdentifiableFistSection.querySelector('.article-section--first').nextElementSibling.querySelector('.article-section__body');
-        expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
+        expect($expectedParent.lastElementChild).to.deep.equal($opener);
       });
 
     });
@@ -170,23 +162,20 @@ describe('A HypothesisOpener Component', function () {
     context('when there are no paragraphs in the article', () => {
 
       let $zeroParagraphCount;
-      let opener;
       let id;
 
       beforeEach(() => {
         $zeroParagraphCount = generateSnippetWithParagraphs(0);
-        opener = new HypothesisOpener($opener);
-
         id = 'IShouldBeAppendedToTheEndOfTheArticle';
-        opener.$elm.setAttribute('id', id);
+        $opener.setAttribute('id', id);
 
         expect($zeroParagraphCount.querySelector(`#${id}`)).to.be.null;
 
       });
 
       it('positions the opener at the end of the article', () => {
-        HypothesisOpener.positionCentrallyInline(opener.$elm, $zeroParagraphCount);
-        expect($zeroParagraphCount.lastElementChild).to.deep.equal(opener.$elm);
+        HypothesisOpener.positionCentrallyInline($opener, $zeroParagraphCount);
+        expect($zeroParagraphCount.lastElementChild).to.deep.equal($opener);
       });
 
     });
@@ -194,25 +183,22 @@ describe('A HypothesisOpener Component', function () {
     context('when there are an odd number of paragraphs in the article', () => {
 
       let $snippetWithOddParagraphCount;
-      let opener;
       let id;
 
       beforeEach(() => {
         $snippetWithOddParagraphCount = generateSnippetWithParagraphs(5);
-        opener = new HypothesisOpener($opener);
-
         id = 'IShouldBeAppendedToTheMiddleParagraph';
-        opener.$elm.setAttribute('id', id);
+        $opener.setAttribute('id', id);
 
         expect($snippetWithOddParagraphCount.querySelector(`#${id}`)).to.be.null;
 
       });
 
       it('positions the opener by the middle paragraph', () => {
-        HypothesisOpener.positionCentrallyInline(opener.$elm, $snippetWithOddParagraphCount);
+        HypothesisOpener.positionCentrallyInline($opener, $snippetWithOddParagraphCount);
         const paragraphs = $snippetWithOddParagraphCount.querySelectorAll('p');
         const $expectedParent = paragraphs[Math.floor(paragraphs.length / 2)];
-        expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
+        expect($expectedParent.lastElementChild).to.deep.equal($opener);
       });
 
     });
@@ -220,25 +206,22 @@ describe('A HypothesisOpener Component', function () {
     context('when there are an even number of paragraphs (n) in the article', () => {
 
       let $snippetWithEvenParagraphCount;
-      let opener;
       let id;
 
       beforeEach(() => {
         $snippetWithEvenParagraphCount = generateSnippetWithParagraphs(6);
-        opener = new HypothesisOpener($opener);
-
         id = 'IShouldBeAppendedToTheMiddleParagraphRoundingDown';
-        opener.$elm.setAttribute('id', id);
+        $opener.setAttribute('id', id);
 
         expect($snippetWithEvenParagraphCount.querySelector(`#${id}`)).to.be.null;
 
       });
 
       it('positions the opener by the n/2 paragraph', () => {
-        HypothesisOpener.positionCentrallyInline(opener.$elm, $snippetWithEvenParagraphCount);
+        HypothesisOpener.positionCentrallyInline($opener, $snippetWithEvenParagraphCount);
         const paragraphs = $snippetWithEvenParagraphCount.querySelectorAll('p');
         const $expectedParent = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
-        expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
+        expect($expectedParent.lastElementChild).to.deep.equal($opener);
       });
 
     });
