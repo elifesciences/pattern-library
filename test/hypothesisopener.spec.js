@@ -7,6 +7,7 @@ const generateSnippetWithoutIdentifiableFirstSection = require('./fixtures/snipp
 const generateSnippetWithIdentifiableFirstSection = require('./fixtures/snippetWithIdentifiableFirstSection.html');
 const generateSnippetWithParagraphs = require('./fixtures/snippetWithParagraphs.html');
 const generateHypothesisOpenerInitialDom = require('./fixtures/hypothesisOpenerInitialDom.html');
+const generate$scriptIdentifiedAsHypothesisLoader = require('./fixtures/scriptElementIdentifiedAsHypothesisLoader.html');
 
 describe('A HypothesisOpener Component', function () {
   'use strict';
@@ -15,6 +16,33 @@ describe('A HypothesisOpener Component', function () {
 
   beforeEach(() => {
     $opener = generateHypothesisOpenerInitialDom();
+  });
+
+  describe('the get$hypothesisLoader method', () => {
+
+    context('when the hypothesis loading code is missing', () => {
+
+      it('throws an error with the message "No Hypothesis loading code found"', () => {
+        const $mockAncestorWithNoLoadingCode = document.createElement('script');
+        expect(() => {
+          HypothesisOpener.get$hypothesisLoader($mockAncestorWithNoLoadingCode);
+        }).to.throw('No Hypothesis loading code found');
+      });
+
+    });
+
+    context('when the hypothesis loading code is not missing', () => {
+
+      it('does not throw an error"', () => {
+        const $mockAncestorWithLoadingCode = generate$scriptIdentifiedAsHypothesisLoader();
+        $mockAncestorWithLoadingCode.id = 'hypothesisEmbedder';
+        expect(() => {
+          HypothesisOpener.get$hypothesisLoader($mockAncestorWithLoadingCode);
+        }).not.to.throw();
+      });
+
+    });
+
   });
 
   describe('the findPositioningMethod() method', () => {
