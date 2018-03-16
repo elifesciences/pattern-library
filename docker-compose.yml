@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+    assets:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: elifesciences/pattern-library 
+        command: /bin/bash
+    ui:
+        build:
+            context: .
+            dockerfile: Dockerfile.ui
+        image: elifesciences/pattern-library_ui
+        depends_on:
+            - assets
+    ci:
+        build:
+            context: .
+            dockerfile: Dockerfile.ci
+        image: elifesciences/pattern-library_ci 
+        command: /bin/bash
+        depends_on:
+            - assets
+            - ui
+            - selenium
+    selenium:
+        image: selenium/standalone-firefox:3.11.0-antimony
+        volumes:
+            - /dev/shm:/dev/shm
