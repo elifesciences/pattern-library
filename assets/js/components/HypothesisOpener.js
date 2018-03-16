@@ -17,6 +17,7 @@ module.exports = class HypothesisOpener {
     this.isWithinContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
     this.setupPlacementAndStyles(this.isWithinContextualData);
 
+    this.loadFailHandler = null;
     let maxWaitTimer = null;
     try {
       maxWaitTimer = this.setupPreReadyIndicatorsWithTimer();
@@ -34,23 +35,43 @@ module.exports = class HypothesisOpener {
     this.$elm.dataset.hypothesisTrigger = '';
   }
 
+  // Results in a thrown error for any of:
+  //  - the loader doesn't exist
+  //  - the load has already failed
+  //  - the loaderror event fires before Hypothesis is ready
+  //  - the maxWaitTimer expires
   setupPreReadyIndicatorsWithTimer() {
     const $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
-
     const maxWaitTimer = this.window.setTimeout(() => {
       this.loadFailHandler();
     }, 10000);
+
+    if (HypothesisOpener.hasLoadAlreadyFailed($loader)) {
+      this.handleLoadFail($loader, maxWaitTimer, this.window);
+    }
 
     this.loadFailHandler = () => {
       this.handleLoadFail($loader, maxWaitTimer, this.window);
     };
 
-    if (HypothesisOpener.hasLoadAlreadyFailed($loader)) {
-      this.loadFailHandler();
+    $loader.addEventListener('loaderror', this.loadFailHandler);
+
+    return maxWaitTimer;
+  }
+
+  handleLoadFail($loader, timer, window) {
+    $loader.removeEventListener('loaderror', this.loadFailHandler);
+    this.handleInitFail(timer, window);
+  }
+
+  handleInitFail(timer, window, errorMsg = '') {
+    this.speechBubble.showFailureState();
+    window.clearTimeout(timer);
+    if (!errorMsg.length) {
+      throw new Error('Problem loading or interacting with Hypothesis client.');
     }
 
-    $loader.addEventListener('loaderror', this.loadFailHandler);
-    return maxWaitTimer;
+    console.error(errorMsg);
   }
 
   setupSpeechBubble() {
@@ -70,24 +91,6 @@ module.exports = class HypothesisOpener {
     }
 
     throw new Error('No Hypothesis loading code found.');
-  }
-
-  handleLoadFail($loader, timer, window) {
-    this.handleInitFail(timer, window);
-    $loader.removeEventListener('loaderror', this.loadFailHandler);
-  }
-
-  handleInitFail(timer, window, error = '') {
-    this.indicateFail();
-    window.clearTimeout(timer);
-    if (error.length) {
-      console.error(error);
-    }
-  }
-
-  indicateFail() {
-    this.speechBubble.showFailureState();
-    throw new Error('Problem loading or interacting with Hypothesis client.');
   }
 
   setupSectionExpansion(doc) {
@@ -155,7 +158,7 @@ module.exports = class HypothesisOpener {
         try {
           this.updateVisibleCount(mutation.addedNodes[0].data, visibleCountSelector, isWithinContextualData);
           this.window.clearTimeout(timer);
-        } catch (e) {
+        } catch (error) {
           this.handleInitFail(timer, this.window, error);
         }
       });
