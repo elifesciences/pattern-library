@@ -22,6 +22,9 @@ module.exports = () => {
   $visual.setAttribute('aria-hidden', true);
   buildElement('span', ['visuallyhidden'], 'Open annotations (there are currently 12 annotations on this page).', $button);
 
+  const $count = buildElement('span', [], '', $button);
+  $count.dataset.hypothesisAnnotationCount = '0';
+
   return $button;
 
 };
