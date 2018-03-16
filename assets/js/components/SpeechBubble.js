@@ -45,12 +45,9 @@ module.exports = class SpeechBubble {
     this.$elm.setAttribute('disabled', 'disabled');
     this.$elm.style.cursor = 'not-allowed';
 
-    try {
-      // Breaks encapsulation :-(
+    if (this.$elm.previousElementSibling) {
       this.$elm.previousElementSibling.style.cursor = 'not-allowed';
       this.$elm.previousElementSibling.style.color = '#888'; // $color-text-secondary
-    } catch (e) {
-      this.window.console.error(e);
     }
   }
 
