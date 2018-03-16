@@ -11,6 +11,12 @@ elifePipeline {
                 checkout scm
                 sh "docker build -t elifesciences/pattern-library:${commit} ."
                 sh "docker build -f Dockerfile.ui -t elifesciences/pattern-library_ui:${commit} --build-arg commit=${commit} ."
+                sh "docker build -f Dockerfile.ci -t elifesciences/pattern-library_ci:${commit} --build-arg commit=${commit} ."
+            }
+
+            stage 'Project tests (containers)', {
+                // TODO: will become a single container/command?
+                sh "docker run elifesciences/pattern-library_ci:${commit} gulp test"
             }
         },
         'containers--medium'
