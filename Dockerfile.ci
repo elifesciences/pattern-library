@@ -3,3 +3,5 @@ FROM elifesciences/pattern-library:${commit}
 
 USER elife
 COPY --chown=elife:elife test/ ${PROJECT_FOLDER}/test
+COPY --chown=elife:elife test-selenium/ ${PROJECT_FOLDER}/test-selenium
+COPY --chown=elife:elife wdio.conf.js ${PROJECT_FOLDER}/
