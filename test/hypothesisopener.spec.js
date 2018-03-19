@@ -1,5 +1,5 @@
 const chai = require('chai');
-const expect = chai.expect;
+const sinon = require('sinon');
 
 const HypothesisOpener = require('../assets/js/components/HypothesisOpener');
 
@@ -7,7 +7,10 @@ const generateSnippetWithoutIdentifiableFirstSection = require('./fixtures/snipp
 const generateSnippetWithIdentifiableFirstSection = require('./fixtures/snippetWithIdentifiableFirstSection.html');
 const generateSnippetWithParagraphs = require('./fixtures/snippetWithParagraphs.html');
 const generateHypothesisOpenerInitialDom = require('./fixtures/hypothesisOpenerInitialDom.html');
-const generate$scriptIdentifiedAsHypothesisLoader = require('./fixtures/scriptElementIdentifiedAsHypothesisLoader.html');
+const generateParentOf$scriptIdentifiedAsHypothesisLoader = require('./fixtures/scriptElementIdentifiedAsHypothesisLoader.html');
+
+const expect = chai.expect;
+const spy = sinon.spy;
 
 describe('A HypothesisOpener Component', function () {
   'use strict';
@@ -16,6 +19,10 @@ describe('A HypothesisOpener Component', function () {
 
   beforeEach(() => {
     $opener = generateHypothesisOpenerInitialDom();
+  });
+
+  afterEach(() => {
+    $opener = null;
   });
 
   describe('the get$hypothesisLoader method', () => {
@@ -33,13 +40,89 @@ describe('A HypothesisOpener Component', function () {
 
     context('when the hypothesis loading code is not missing', () => {
 
-      it('does not throw an error"', () => {
-        const $mockAncestorWithLoadingCode = generate$scriptIdentifiedAsHypothesisLoader();
-        $mockAncestorWithLoadingCode.id = 'hypothesisEmbedder';
+      it('does not throw an error', () => {
+        const $mockLoaderAncestor = generateParentOf$scriptIdentifiedAsHypothesisLoader();
         expect(() => {
-          HypothesisOpener.get$hypothesisLoader($mockAncestorWithLoadingCode);
+          HypothesisOpener.get$hypothesisLoader($mockLoaderAncestor);
         }).not.to.throw();
       });
+
+    });
+
+  });
+
+  describe('the setupPreReadyIndicatorsWithTimer method', () => {
+
+    let hypothesisOpener;
+    let mockDoc;
+    let $mockLoader;
+
+    beforeEach(() => {
+      mockDoc = {};
+      const $mockAncestorLoader = generateParentOf$scriptIdentifiedAsHypothesisLoader();
+      mockDoc.querySelector = (...args) => {
+        if (args[0] === 'body') {
+          return $mockAncestorLoader;
+        }
+
+        if (args[0] === '#hypothesisEmbedder') {
+          return $mockAncestorLoader.querySelector('#hypothesisEmbedder');
+        }
+
+      };
+
+      $mockLoader = mockDoc.querySelector('#hypothesisEmbedder');
+      hypothesisOpener = new HypothesisOpener($opener, window, mockDoc);
+    });
+
+    afterEach(() => {
+      hypothesisOpener = null;
+    });
+
+    context('when the load has already failed', () => {
+
+      it('throws an error with the message "Problem loading or interacting with Hypothesis client."', () => {
+        $mockLoader.dataset.hypothesisEmbedLoadStatus = 'failed';
+        expect(() => {
+          hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
+        }).to.throw('Problem loading or interacting with Hypothesis client.');
+      });
+
+    });
+
+    it('adds a "loaderror" event listener to the $loader, which invokes this.loadFailHandler', () => {
+      const listenerSpy = spy($mockLoader, 'addEventListener');
+
+      hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
+      expect(listenerSpy).to.be.calledOnce;
+      expect(listenerSpy.getCall(0).args[0]).to.equal('loaderror');
+      expect(listenerSpy.getCall(0).args[1]).to.equal(hypothesisOpener.loadFailHandler);
+
+      $mockLoader.addEventListener.restore();
+    });
+
+    it('sets up a timer to expire in 10000 ms', () => {
+      const timeoutSpy = spy(window, 'setTimeout');
+      expect(timeoutSpy).to.not.be.called;
+
+      hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
+      expect(timeoutSpy).to.be.calledOnce;
+      expect(timeoutSpy.getCall(0).args[1]).to.equal(10000);
+
+      window.setTimeout.restore();
+    });
+
+    it('the callback run on timer expiry throws the error "Problem loading or interacting with Hypothesis client."', () => {
+      const timeoutSpy = spy(window, 'setTimeout');
+      expect(timeoutSpy).to.not.be.called;
+
+      hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
+      const handler = timeoutSpy.getCall(0).args[0];
+      expect(() => {
+        handler.call();
+      }).to.throw('Problem loading or interacting with Hypothesis client.');
+
+      window.setTimeout.restore();
 
     });
 
