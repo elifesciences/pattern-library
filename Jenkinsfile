@@ -9,8 +9,8 @@ elifePipeline {
         {
             stage 'Build images', {
                 checkout scm
-                sh "docker build -t elifesciences/pattern-library:${commit} ."
-                sh "docker build -f Dockerfile.ui -t elifesciences/pattern-library_ui:${commit} --build-arg commit=${commit} ."
+                sh "docker build -f Dockerfile.assets -t elifesciences/pattern-library_assets:${commit} ."
+                sh "docker build -f Dockerfile -t elifesciences/pattern-library:${commit} --build-arg commit=${commit} ."
             }
         },
         'containers--medium'
