@@ -46,4 +46,5 @@ COPY --chown=elife:elife \
     config.rb \
     gulpfile.js \
     ${PROJECT_FOLDER}/
-RUN gulp
+ARG environment=production
+RUN gulp --environment ${environment}
