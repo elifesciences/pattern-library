@@ -98,19 +98,19 @@ is used inside the pattern-library VM and should not be used elsewhere.
 # Docker setup
 
 ```
-docker build -t elifesciences/pattern-library .
+docker build -f Dockerfile.assets -t elifesciences/pattern-library_assets .
 ```
 
 (re)builds the Gulp-based Docker image, which builds all assets.
 
 ```
-docker build -f Dockerfile.ui -t elifesciences/pattern-library_ui .
+docker build -t elifesciences/pattern-library .
 ```
 
 (re)builds the PHP-based Docker image, which provides a UI. This image depends on the previous one.
 
 ```
-docker run -p 8889:80 elifesciences/pattern-library_ui
+docker run -p 8889:80 elifesciences/pattern-library
 ```
 
 runs that image so that the static website is accessible through a browser at http://localhost:8889
