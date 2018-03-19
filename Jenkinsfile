@@ -5,6 +5,17 @@ elifePipeline {
         commit = elifeGitRevision()
     }
 
+    elifeOnNode(
+        {
+            stage 'Build images', {
+                checkout scm
+                sh "docker build -f Dockerfile.assets -t elifesciences/pattern-library_assets:${commit} ."
+                sh "docker build -f Dockerfile -t elifesciences/pattern-library:${commit} --build-arg commit=${commit} ."
+            }
+        },
+        'containers--medium'
+    )
+
     stage 'Project tests', {
         lock('pattern-library--ci') {
             builderDeployRevision 'pattern-library--ci', commit
