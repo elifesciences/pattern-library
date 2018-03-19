@@ -21,7 +21,7 @@ module.exports = class HypothesisOpener {
     let maxWaitTimer = null;
     try {
       const $loader = HypothesisOpener.get$hypothesisLoader(this.doc.querySelector('body'));
-      maxWaitTimer = this.setupPreReadyIndicatorsWithTimer($loader);
+      maxWaitTimer = this.setupPreReadyIndicatorsWithTimer($loader, this.handleInitFail);
     } catch (e) {
       console.error(e);
       return;
@@ -37,36 +37,26 @@ module.exports = class HypothesisOpener {
   }
 
   // Results in a thrown error for any of:
-  //  - the loader doesn't exist
   //  - the load has already failed
   //  - the loaderror event fires before Hypothesis is ready
   //  - the maxWaitTimer expires
   setupPreReadyIndicatorsWithTimer($loader) {
+
+    if (HypothesisOpener.hasLoadAlreadyFailed($loader)) {
+      this.handleInitFail(null, this.window);
+    }
+
     const maxWaitTime = 10000;
 
     const maxWaitTimer = this.window.setTimeout(() => {
-      this.loadFailHandler();
+      this.handleInitFail(null, this.window);
     }, maxWaitTime);
 
-    if (HypothesisOpener.hasLoadAlreadyFailed($loader)) {
-      this.handleLoadFail($loader, maxWaitTimer, this.window);
-    }
-
-    this.loadFailHandler = (e) => {
-      this.handleLoadFail($loader, maxWaitTimer, this.window);
-      console.log(e);
-    };
-
-    // todo: add/remove this.loadFailHandler isn't going to work, but remember bind creates a new fn reference every time.
-
-    $loader.addEventListener('loaderror', this.loadFailHandler);
+    $loader.addEventListener('loaderror', () => {
+      this.handleInitFail(maxWaitTimer, this.window);
+    });
 
     return maxWaitTimer;
-  }
-
-  handleLoadFail($loader, timer, window) {
-    $loader.removeEventListener('loaderror', this.loadFailHandler);
-    this.handleInitFail(timer, window);
   }
 
   handleInitFail(timer, window, errorMsg = '') {

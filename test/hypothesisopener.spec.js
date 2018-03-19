@@ -90,15 +90,30 @@ describe('A HypothesisOpener Component', function () {
 
     });
 
-    it('adds a "loaderror" event listener to the $loader, which invokes this.loadFailHandler', () => {
+    it('adds a "loaderror" event listener to the $loader', () => {
       const listenerSpy = spy($mockLoader, 'addEventListener');
 
       hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
       expect(listenerSpy).to.be.calledOnce;
       expect(listenerSpy.getCall(0).args[0]).to.equal('loaderror');
-      expect(listenerSpy.getCall(0).args[1]).to.equal(hypothesisOpener.loadFailHandler);
 
       $mockLoader.addEventListener.restore();
+    });
+
+    describe('the callback that runs on a loaderror event', () => {
+
+      it('throws the error "Problem loading or interacting with Hypothesis client."', () => {
+        const listenerSpy = spy($mockLoader, 'addEventListener');
+
+        hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
+        const loadErrorHandler = listenerSpy.getCall(0).args[1];
+        expect(() => {
+          loadErrorHandler.call();
+        }).to.throw('Problem loading or interacting with Hypothesis client.');
+
+        $mockLoader.addEventListener.restore();
+      });
+
     });
 
     it('sets up a timer to expire in 10000 ms', () => {
@@ -112,17 +127,21 @@ describe('A HypothesisOpener Component', function () {
       window.setTimeout.restore();
     });
 
-    it('the callback run on timer expiry throws the error "Problem loading or interacting with Hypothesis client."', () => {
-      const timeoutSpy = spy(window, 'setTimeout');
-      expect(timeoutSpy).to.not.be.called;
+    describe('the callback that runs on timer expiry', () => {
 
-      hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
-      const handler = timeoutSpy.getCall(0).args[0];
-      expect(() => {
-        handler.call();
-      }).to.throw('Problem loading or interacting with Hypothesis client.');
+      it('throws the error "Problem loading or interacting with Hypothesis client."', () => {
+        const timeoutSpy = spy(window, 'setTimeout');
+        expect(timeoutSpy).to.not.be.called;
 
-      window.setTimeout.restore();
+        hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
+        const handler = timeoutSpy.getCall(0).args[0];
+        expect(() => {
+          handler.call();
+        }).to.throw('Problem loading or interacting with Hypothesis client.');
+
+        window.setTimeout.restore();
+
+      });
 
     });
 
