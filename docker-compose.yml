@@ -12,6 +12,8 @@ services:
             context: .
             dockerfile: Dockerfile.ui
         image: elifesciences/pattern-library_ui
+        ports:
+            - "8889:80"
         depends_on:
             - assets
     ci:
@@ -25,6 +27,8 @@ services:
             - ui
             - selenium
     selenium:
-        image: selenium/standalone-firefox:3.11.0-antimony
+        image: selenium/standalone-firefox-debug:3.11.0-antimony
+        ports:
+            - "5900:5900"
         volumes:
             - /dev/shm:/dev/shm
