@@ -1,6 +1,6 @@
 <button class="speech-bubble{{#hasPlaceholder}} speech-bubble--has-placeholder{{/hasPlaceholder}}{{#isSmall}} speech-bubble--small {{/isSmall}}
-{{#isLoading}} speech-bubble--loading{{/isLoading}}"
-        data-behaviour="SpeechBubble{{#behaviour}} {{behaviour}}{{/behaviour}}"{{#isDisabled}} disabled{{/isDisabled}}
+{{#_pl_only_isLoading}} speech-bubble--loading{{/_pl_only_isLoading}}"
+        data-behaviour="SpeechBubble{{#behaviour}} {{behaviour}}{{/behaviour}}"{{#_pl_only_isDisabled}} disabled{{/_pl_only_isDisabled}}
 aria-live="polite">
   {{{text}}}
 </button>
