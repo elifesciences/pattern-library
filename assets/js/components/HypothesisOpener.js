@@ -60,7 +60,7 @@ module.exports = class HypothesisOpener {
   }
 
   handleInitFail(timer, window, errorMsg = '') {
-    this.speechBubble.showFailureState();
+    this.speechBubble.showFailureState(this.isWithinContextualData);
     window.clearTimeout(timer);
     if (!errorMsg.length) {
       throw new Error('Problem loading or interacting with Hypothesis client.');
