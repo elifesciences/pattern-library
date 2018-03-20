@@ -118,10 +118,10 @@ describe('A HypothesisOpener Component', function () {
 
     it('sets up a timer to expire in 10000 ms', () => {
       const timeoutSpy = spy(window, 'setTimeout');
-      expect(timeoutSpy).to.not.be.called;
+      expect(timeoutSpy.callCount).to.equal(0);
 
       hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
-      expect(timeoutSpy).to.be.calledOnce;
+      expect(timeoutSpy.callCount).to.equal(1);
       expect(timeoutSpy.getCall(0).args[1]).to.equal(10000);
 
       window.setTimeout.restore();
