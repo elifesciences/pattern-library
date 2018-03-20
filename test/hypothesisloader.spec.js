@@ -54,7 +54,7 @@ function separateFnsFromOtherProps(o1, o2) {
 
 }
 
-describe('A HypothesisLoader Component', function () {
+xdescribe('A HypothesisLoader Component', function () {
   'use strict';
 
   describe('on instantiation', () => {
