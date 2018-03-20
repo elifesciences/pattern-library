@@ -20,7 +20,7 @@ module.exports = class HypothesisOpener {
     this.loadFailHandler = null;
     let maxWaitTimer = null;
     try {
-      const $loader = HypothesisOpener.get$hypothesisLoader(this.doc.querySelector('body'));
+      const $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
       maxWaitTimer = this.setupPreReadyIndicatorsWithTimer($loader, this.handleInitFail);
     } catch (e) {
       console.error(e);
