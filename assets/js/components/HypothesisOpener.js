@@ -23,7 +23,7 @@ module.exports = class HypothesisOpener {
       const $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
       maxWaitTimer = this.setupPreReadyIndicatorsWithTimer($loader, this.handleInitFail);
     } catch (e) {
-      console.error(e);
+      this.window.console.error(e);
       return;
     }
 
@@ -66,7 +66,7 @@ module.exports = class HypothesisOpener {
       throw new Error('Problem loading or interacting with Hypothesis client.');
     }
 
-    console.error(errorMsg);
+    this.window.console.error(errorMsg);
   }
 
   setupSpeechBubble() {
@@ -245,7 +245,7 @@ module.exports = class HypothesisOpener {
     try {
       HypothesisOpener.findPositioningMethod(articleType).call(null, $elm, this.doc.querySelector('.content-container'));
     } catch (e) {
-      console.error(e);
+      this.window.console.error(e);
     }
   }
 
