@@ -1,13 +1,8 @@
 #!/bin/bash
 set -e
 
-# moved to containers
-#echo "Running gulp unit test suite"
-#gulp test
-#
-#echo "Running Selenium test suite"
-#gulp test:selenium
+echo "Running gulp unit test suite"
+gulp test
 
-echo "Running validation against schema"
-bin/validate
-
+echo "Running Selenium test suite"
+gulp test:selenium

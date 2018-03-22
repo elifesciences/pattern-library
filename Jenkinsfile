@@ -15,8 +15,7 @@ elifePipeline {
             stage 'Project tests (containers)', {
                 // TODO: will become a single container/command?
                 try {
-                  sh "docker-compose run ci gulp test"
-                  sh "docker-compose run ci gulp test:selenium"
+                  sh "docker-compose run ci"
                 } finally {
                     sh "docker-compose down -v"
                 }
