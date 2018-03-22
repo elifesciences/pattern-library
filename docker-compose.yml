@@ -4,14 +4,14 @@ services:
     assets:
         build:
             context: .
-            dockerfile: Dockerfile
-        image: elifesciences/pattern-library 
+            dockerfile: Dockerfile.assets
+        image: elifesciences/pattern-library_assets 
         command: /bin/bash
     ui:
         build:
             context: .
-            dockerfile: Dockerfile.ui
-        image: elifesciences/pattern-library_ui
+            dockerfile: Dockerfile
+        image: elifesciences/pattern-library
         ports:
             - "8889:80"
         depends_on:
