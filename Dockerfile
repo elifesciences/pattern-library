@@ -1,49 +1,31 @@
-# Debian oldoldstable, support ends in May 2018
-# we need this for Ruby 1.9.x at the moment
-FROM node:6.13.1-wheezy
-
-# TODO: base image
-USER root
-RUN useradd -ms /bin/bash -G www-data elife && \
-    chown elife:elife /srv && \
-    mkdir /srv/bin && \
-    chown elife:elife /srv/bin && \
-    mkdir -p /var/www && \
-    chown www-data:www-data /var/www
-ENV PATH=/srv/bin:${PATH}
-# end base image
-
-# potentially base image
-RUN npm install -g gulp-cli
-# end potentially base image
-
-RUN apt-get update && apt-get install -y \
-    bzip2 \
-    g++ \
-    make \
-    ruby \
-    ruby-dev 
-
-RUN gem install compass
+ARG commit=latest
+# looking for a better name for the node image that replaces `assets`
+FROM elifesciences/pattern-library_assets:${commit} AS assets
+FROM elifesciences/php_cli:22434ef5bda09326d4c9347de7d8c2f1610a0b83 AS ui-builder
 
 USER elife
-ENV PROJECT_FOLDER=/srv/pattern-library
-RUN mkdir ${PROJECT_FOLDER}
+ENV PROJECT_FOLDER=/srv/pattern-library-ui
+RUN mkdir ${PROJECT_FOLDER} && \
+    mkdir ${PROJECT_FOLDER}/public
 WORKDIR ${PROJECT_FOLDER}
 COPY --chown=elife:elife \
-    package.json \
-    npm-shrinkwrap.json \
+    composer.json \
+    composer.lock \
     ${PROJECT_FOLDER}/
-RUN npm install
+# customized command for composer
+RUN composer --no-interaction install
 
-COPY --chown=elife:elife assets/ ${PROJECT_FOLDER}/assets
-COPY --chown=elife:elife source/ ${PROJECT_FOLDER}/source
+COPY --from=assets \
+    --chown=elife:elife \
+    /srv/pattern-library/source/ ${PROJECT_FOLDER}/source
 COPY --chown=elife:elife \
-    .babelrc \
-    .jscsrc \
-    .jshintrc \
-    .stylelintrc \
-    config.rb \
-    gulpfile.js \
-    ${PROJECT_FOLDER}/
-RUN gulp
+    core/ ${PROJECT_FOLDER}/core
+COPY --chown=elife:elife \
+    core/styleguide ${PROJECT_FOLDER}/public/styleguide
+COPY --chown=elife:elife config/ ${PROJECT_FOLDER}/config
+RUN php core/builder.php -g
+
+FROM nginx:1.13.7
+COPY --from=ui-builder \
+    --chown=root:root \
+    /srv/pattern-library-ui/public/ /usr/share/nginx/html
