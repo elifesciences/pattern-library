@@ -14,8 +14,12 @@ elifePipeline {
 
             stage 'Project tests (containers)', {
                 // TODO: will become a single container/command?
-                sh "docker run elifesciences/pattern-library_ci:${commit} gulp test"
-                sh "docker run elifesciences/pattern-library_ci:${commit} gulp test:selenium"
+                try {
+                  sh "docker-compose run ci gulp test"
+                  sh "docker-compose run ci gulp test:selenium"
+                } finally {
+                    sh "docker-compose down -v"
+                }
             }
         },
         'containers--medium'
