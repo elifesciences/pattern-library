@@ -1,0 +1,6 @@
+FROM selenium/standalone-firefox-debug:3.11.0-antimony
+USER root
+RUN apt-get update && apt-get -y install mplayer linux-sound-base
+# does it make sense to install a kernel module inside a container?
+RUN apt-get -y install linux-image-extra-4.13.0-37-generic
+USER seluser
