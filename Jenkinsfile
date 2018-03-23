@@ -12,7 +12,7 @@ elifePipeline {
                 sh "docker-compose build"
             }
 
-            stage 'Project tests (containers)', {
+            stage 'Project tests', {
                 try {
                   sh "docker-compose run ci ./project_tests.sh"
                 } finally {
@@ -23,7 +23,7 @@ elifePipeline {
         'containers--medium'
     )
 
-    stage 'Project tests', {
+    stage 'Smoke tests', {
         lock('pattern-library--ci') {
             builderDeployRevision 'pattern-library--ci', commit
             builderSmokeTests 'pattern-library--ci', '/srv/pattern-library'
