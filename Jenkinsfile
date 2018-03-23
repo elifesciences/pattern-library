@@ -13,11 +13,11 @@ elifePipeline {
             }
 
             stage 'Project tests', {
-                try {
-                  sh "docker-compose run ci ./project_tests.sh"
-                } finally {
-                    sh "docker-compose down -v"
-                }
+                # ensure a clean starting state
+                sh "docker-compose down -v"
+                sh "docker-compose run ci ./project_tests.sh"
+                # preserve environment to allow investigation if build fails, clean up otherwise
+                sh "docker-compose down -v"
             }
         },
         'containers--medium'
