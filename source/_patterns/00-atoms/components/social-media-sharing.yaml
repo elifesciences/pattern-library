@@ -1,0 +1,21 @@
+assets:
+  css:
+    - social-media-sharing.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    encodedEmailSubjectLine:
+      type: string
+      minLength: 1
+    encodedTweetText:
+      type: string
+      minLength: 1
+    encodedUri:
+      type: string
+      minLength: 1
+  required:
+    - encodedEmailSubjectLine
+    - encodedTweetText
+    - encodedUri
