@@ -1,0 +1,1257 @@
+{
+  "isPrimaryResearch": true,
+  "hasRelated": true,
+  "siteHeader": {
+    "homePagePath": "#",
+    "primaryLinks": {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "textClasses": "nav-primary__menu_text",
+          "path": "#mainMenu",
+          "picture": {
+            "pictureClasses": "nav-primary__menu_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
+              "classes": "",
+              "altText": "Menu icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
+              }
+            ]
+          }
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-primary__item nav-primary__item--search",
+          "textClasses": "visuallyhidden",
+          "path": "#",
+          "picture": {
+            "pictureClasses": "nav-primary__search_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+              "classes": "",
+              "altText": "Search icon"
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "secondaryLinks": {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Careers",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+        {
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+        {
+          "text": "Labs",
+          "path": "#",
+          "classes": "nav-secondary__item"
+        },
+        {
+          "text": "Submit my research",
+          "path": "#",
+          "classes": "nav-secondary__item",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        },
+
+        {
+          "classes": "nav-secondary__item",
+          "loginControl": {
+            "button": {
+              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
+              "path": "#",
+              "classes": "button--login"
+            }
+          }
+        }
+
+      ]
+    },
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
+    }
+  },
+  "contentHeader": {
+    "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
+    "titleLong": true,
+    "header": {
+      "possible": true,
+      "hasSubjects": true,
+      "subjects": [
+        {
+          "name": "Cell Biology",
+          "url": "#"
+        },
+        {
+          "name": "Epidemiology and global health",
+          "url": "#"
+        }
+      ]
+    },
+    "authors": {
+      "list": [
+        {
+          "url": "#author-3c233bb0",
+          "name": "Lee R Berger"
+        },
+        {
+          "name": "John Hawks"
+        },
+        {
+          "name": "Darryl J de Ruiter"
+        },
+        {
+          "name": "Steven E Churchill"
+        },
+        {
+          "name": "Peter Schmid"
+        },
+        {
+          "name": "Lucas K Delezene"
+        },
+        {
+          "name": "Tracy L Kivell"
+        },
+        {
+          "name": "Heather M Garvin"
+        },
+        {
+          "name": "Scott A Williams"
+        },
+        {
+          "name": "Jeremy M DeSilva"
+        },
+        {
+          "name": "Matthew M Skinner"
+        },
+        {
+          "name": "Charles M Musiba"
+        },
+        {
+          "name": "Noel Cameron"
+        },
+        {
+          "name": "Trenton W Holliday"
+        },
+        {
+          "name": "William Harcourt-Smith"
+        },
+        {
+          "name": "Rebecca R Ackermann"
+        },
+        {
+          "name": "Markus Bastir"
+        },
+        {
+          "name": "Barry Bogin"
+        },
+        {
+          "name": "Debra Bolter"
+        },
+        {
+          "name": "Juliet Brophy"
+        },
+        {
+          "name": "Zachary D Cofran"
+        },
+        {
+          "name": "Kimberly A Congdon"
+        },
+        {
+          "name": "Andrew S Deane"
+        },
+        {
+          "name": "Mana Dembo"
+        },
+        {
+          "name": "Michelle Drapeau"
+        },
+        {
+          "name": "Marina C Elliott"
+        },
+        {
+          "name": "Elen M Feuerriegel"
+        },
+        {
+          "name": "Daniel Garcia-Martinez"
+        },
+        {
+          "name": "David J Green"
+        },
+        {
+          "name": "Alia Gurtov"
+        },
+        {
+          "name": "Joel D Irish"
+        },
+        {
+          "name": "Ashley Kruger"
+        },
+        {
+          "name": "Myra F Laird"
+        },
+        {
+          "name": "Damiano Marchi"
+        },
+        {
+          "name": "Marc R Meyer"
+        },
+        {
+          "name": "Shahed Nalla"
+        },
+        {
+          "name": "Enquye W Negash"
+        },
+        {
+          "name": "Caley M Orr"
+        },
+        {
+          "name": "Davorka Radovcic"
+        },
+        {
+          "name": "Lauren Schroeder"
+        },
+        {
+          "name": "Jill E Scott"
+        },
+        {
+          "name": "Zachary Throckmorton"
+        },
+        {
+          "name": "Caroline VanSickle"
+        },
+        {
+          "name": "Christopher S Walker"
+        },
+        {
+          "name": "Pianpian Wei"
+        },
+        {
+          "name": "Bernhard Zipfel"
+        }
+      ]
+    },
+    "institutions": {
+      "list": [
+        {
+          "name": "University of the Witwatersrand, South Africa"
+        },
+        {
+          "name": "University of Wisconsin-Madison, United States"
+        },
+        {
+          "name": "Texas A&M University, United States"
+        },
+        {
+          "name": "Duke University, United States"
+        },
+        {
+          "name": "University of Zurich, Switzerland"
+        },
+        {
+          "name": "University of Arkansas, United States"
+        },
+        {
+          "name": "University of Kent, United Kingdom"
+        },
+        {
+          "name": "Max Planck Institute for Evolutionary Anthropology, Germany"
+        },
+        {
+          "name": "Mercyhurst University, United States"
+        },
+        {
+          "name": "New York University, United States"
+        },
+        {
+          "name": "New York Consortium in Evolutionary Primatology, United States"
+        },
+        {
+          "name": "Dartmouth College, United States"
+        },
+        {
+          "name": "University of Colorado Denver, United States"
+        },
+        {
+          "name": "Loughborough University, United Kingdom"
+        },
+        {
+          "name": "Tulane University, United States"
+        },
+        {
+          "name": "Lehman College, United States"
+        },
+        {
+          "name": "American Museum of Natural History, United States"
+        },
+        {
+          "name": "University of Cape Town, South Africa"
+        },
+        {
+          "name": "Museo Nacional de Ciencias Naturales, Spain"
+        },
+        {
+          "name": "Modesto Junior College, United States"
+        },
+        {
+          "name": "Louisiana State University, United States"
+        },
+        {
+          "name": "Nazarbayev University, Kazakhstan"
+        },
+        {
+          "name": "University of Missouri, United States"
+        },
+        {
+          "name": "University of Kentucky College of Medicine, United States"
+        },
+        {
+          "name": "Simon Fraser University, Canada"
+        },
+        {
+          "name": "Universit&eacute; de Montr&eacute;al, Canada"
+        },
+        {
+          "name": "Australian National University, Australia"
+        },
+        {
+          "name": "Biology Department, Universidad Autònoma de Madrid, Spain"
+        },
+        {
+          "name": "Midwestern University, United States"
+        },
+        {
+          "name": "Liverpool John Moores University, United Kingdom"
+        },
+        {
+          "name": "University of Pisa, Italy"
+        },
+        {
+          "name": "Chaffey College, United States"
+        },
+        {
+          "name": "University of Johannesburg, South Africa"
+        },
+        {
+          "name": "George Washington University, United States"
+        },
+        {
+          "name": "University of Colorado School of Medicine, United States"
+        },
+        {
+          "name": "Croatian Natural History Museum, Croatia"
+        },
+        {
+          "name": "University of Iowa, United States"
+        },
+        {
+          "name": "Lincoln Memorial University, United States"
+        },
+        {
+          "name": "Smithsonian Institution, United States"
+        },
+        {
+          "name": "Institute of Vertebrate Paleontology and Paleoanthropology, China"
+        }
+      ]
+    },
+    "download": "#articleDownloadLinksList",
+    "meta": {
+      "url": "#",
+      "text": "Research article",
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 10,
+          "month": "Sep",
+          "year": 2015
+        },
+        "forMachine": "2015-09-10"
+      }
+    }
+  },
+  "contextualData": {
+    "metricsData": {
+      "data": [
+        {"text": "<a href=\"#\">Views 149</a>"},
+        {"text": "Cited 5"}
+      ],
+      "annotationCount": {
+        "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>0</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
+        "isSmall": true,
+        "behaviour": "HypothesisOpener"
+      }
+    },
+    "citation": {
+      "citeAs": "eLife 2016;5:e16370",
+      "doi": {
+        "class": "contextual-data__doi",
+        "doi": "10.7554/eLife.16370",
+        "isTruncated": true
+      }
+    }
+  },
+  "viewSelector": {
+    "articleUrl": "#articleUrl",
+    "figureUrl": "#figureUrl",
+    "sideBySideUrl": "https://lens.elifesciences.org/09560",
+    "jumpLinks": {
+      "links": [
+        {
+          "name": "Abstract",
+          "url": "#abstract"
+        },
+        {
+          "name": "eLife digest",
+          "url": "#digest"
+        },
+        {
+          "name": "Introduction",
+          "url": "#introduction"
+        },
+        {
+          "name": "Materials & methods",
+          "url": "#materials-and-methods"
+        },
+        {
+          "name": "Article and author information",
+          "url": "#articleInfo"
+        },
+        {
+          "name": "References",
+          "url": "#references"
+        }
+      ]
+    }
+  },
+  "articleSections": [
+    {
+      "isFirst": true,
+      "id": "abstract",
+      "title": "Abstract",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "body": "<p>It is well established that learning can occur without external feedback, yet normative reinforcement learning theories have difficulties explaining such instances of learning. Here, we propose that human observers are capable of generating their own feedback signals by monitoring internal decision variables. We investigated this hypothesis in a visual perceptual learning task using fMRI and confidence reports as a measure for this monitoring process. Employing a novel computational model in which learning is guided by confidence-based reinforcement signals, we found that mesolimbic brain areas encoded both anticipation and prediction error of confidence—in remarkable similarity to previous findings for external reward-based feedback. We demonstrate that the model accounts for choice and confidence reports and show that the mesolimbic confidence prediction error modulation derived through the model predicts individual learning success. These results provide a mechanistic neurobiological explanation for learning without external feedback by augmenting reinforcement models with confidence-based feedback.</p><p><a href=\"#fig1\">Figure 1</a> shows this model in a one-dimensional cable, corresponding to a section of neurite. In each unit of time the cargo moves a unit distance forwards or backwards, or remains in the same place, each with different probabilities. In the simplest version of the model, the probabilities of forward and backward jumps are constant for each time step (<a href=\"#fig1\">Figure 1B</a>, top panel). Cargo can also undergo extended unidirectional runs (<a href=\"#bib44\">Klumpp and Lipowsky, 2005</a>; <a href=\"#bib50\">Müller et al., 2008</a>; <a href=\"#bib31\">Hancock, 2014</a>). The model can account for these runs with jump probabilities that depend on the previous movement of the particle (<a href=\"#fig1\">Figure 1B</a>, bottom panel, Materials and methods).</p><p>While the movement of individual cargoes is stochastic, the spatial distribution of a population (<a href=\"#fig1\">Figure 1C</a>) changes predictably. This is seen in <a href=\"#fig1\">Figure 1D</a>, which shows the distribution of 1000 molecules over time, without (top panel) and with (bottom panel) unidirectional runs. The bulk distribution of cargo can therefore be modelled as a deterministic process that describes how cargo concentration spreads out in time.</p>       <p>A convenient and flexible formulation of this process is a mass-action model (<a href=\"#bib68\">Voit et al., 2015</a>) that spatially discretizes the neuron into small compartments. In an unbranched neurite with <math id=\"inf8\"><mi>N</mi></math> compartments, the mass-action model is:</p>       <div class=\"math\" id=\"equ1\" data-behaviour=\"Math\">        <span class=\"math__label\">(1)</span>        <span class=\"math__math\"><math><mstyle displaystyle=\"true\" scriptlevel=\"0\"><mrow><msub><mi>u</mi><mrow><mn>1</mn></mrow></msub><munderover><mo>⇌</mo><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>b</mi><mrow><mn>1</mn></mrow></msub></mpadded><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>a</mi><mrow><mn>1</mn></mrow></msub></mpadded></munderover><msub><mi>u</mi><mrow><mn>2</mn></mrow></msub><munderover><mo>⇌</mo><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>b</mi><mrow><mn>2</mn></mrow></msub></mpadded><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>a</mi><mrow><mn>2</mn></mrow></msub></mpadded></munderover><msub><mi>u</mi><mrow><mn>3</mn></mrow></msub><munderover><mo>⇌</mo><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>b</mi><mrow><mn>3</mn></mrow></msub></mpadded><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>a</mi><mrow><mn>3</mn></mrow></msub></mpadded></munderover><mrow></mrow><mo>.</mo><mo>.</mo><mo>.</mo><mrow></mrow><munderover><mo>⇌</mo><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>b</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msub></mpadded><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>a</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msub></mpadded></munderover><msub><mi>u</mi><mrow><mi>N</mi></mrow></msub></mrow></mstyle></math></span>        </div>       <p>where <math id=\"inf9\"><msub><mi>u</mi><mi>i</mi></msub></math> is the amount of cargo in each compartment, and <math id=\"inf10\"><msub><mi>a</mi><mi>i</mi></msub></math> and <math id=\"inf11\"><msub><mi>b</mi><mi>i</mi></msub></math> denote trafficking rate constants of cargo exchange between adjacent compartments. This model maps onto the well-known drift-diffusion equation when the trafficking rates are spatially homogeneous (<a href=\"#fig1\">Figure 1E</a>; <a href=\"#bib60\">Smith and Simmons, 2001</a>). We used this to constrain trafficking rate constants based on single-particle tracking experiments (<a href=\"#bib20\">Dynes and Steward, 2007</a>) or estimates of the mean and variance of particle positions from imaging experiments (<a href=\"#bib59\">Roy et al., 2012</a>, see Materials and methods).</p>       <p>With a compartment length of 1 μm, the simulations in <a href=\"#fig1\">Figure 1D</a> gave mean particle velocities of 15 μm per minute, which is within the range of experimental observations for microtubule transport (<a href=\"#bib58\">Rogers and Gelfand, 1998</a>; <a href=\"#bib20\">Dynes and Steward, 2007</a>; <a href=\"#bib50\">Müller et al., 2008</a>). The variances of the particle distributions depended on whether unidirectional runs are assumed, and respectively grew at a rate of ~0.58 and ~1.33 μm<sup>2</sup> per second for the top and bottom panels of <a href=\"#fig1\">Figure 1D</a>. The mass action model provides a good fit to both cases (<a href=\"#fig1\">Figure 1F</a>). In general, the apparent diffusion coefficient of the model increases as run length increases (<a href=\"/articles/20556/figures#fig1s1\">Figure 1—figure supplement 1A</a>). The accuracy of the mass-action model decreases as the run length increases. However, the model remains a reasonable approximation for many physiological run lengths and particle numbers, even over a relatively short time window of 100 s (<a href=\"/articles/20556/figures#fig1s1\">Figure 1—figure supplement 1B</a>).</p>"
+    },
+    {
+      "id": "digest",
+      "title": "eLife Digest",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "body": "<p>Each year, up to 15% of the world's population experience symptoms of an influenza infection, also commonly known as flu. The most common culprit is a strain of the virus called influenza type A subtype H3N2. One reason that so many people become infected each year is that this virus evolves rapidly. Within a few years, proteins on the surface of the virus known as antigens become less recognizable to the <a href=\"#bib8\">immune system</a> of a person who has been previously infected. This means that the person can become ill with the virus again because their immune system cannot mount an effective response to the evolved virus strain.</p><pre class=\"code\"><code>&lt;dock_design&gt;\n&nbsp;&nbsp;&lt;SCOREFXNS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;fullatom weights=beta symmetric = 0&gt; &lt;/fullatom&gt; \n&nbsp;&nbsp;&lt;/SCOREFXNS&gt; \n&nbsp;&nbsp;&lt;FILTERS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Ddg name=ddg scorefxn=fullatom threshold = 0 jump = 1 repeats = 1 repack = 1 confidence = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Sasa name=sasa confidence = 0/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;ShapeComplementarity name=shape verbose = 1 confidence = 0 jump = 1/&gt; \n&nbsp;&nbsp;&lt;/FILTERS&gt;\n&nbsp;&nbsp;&lt;MOVERS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;AtomTree name=docking_tree docking_ft = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockSetupMover name=setup_dock/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockingProtocol name=dock docking_score_high=fullatom low_res_protocol_only = 0 docking_local_refine = 0 dock_min = 1 /&gt;\n&nbsp;&nbsp;&lt;/MOVERS&gt;\n&nbsp;&nbsp;&lt;APPLY_TO_POSE&gt;\n&nbsp;&nbsp;&lt;/APPLY_TO_POSE&gt; \n&nbsp;&nbsp;&lt;PROTOCOLS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=docking_tree/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=setup_dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=ddg/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=sasa/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=shape/&gt; \n&nbsp;&nbsp;&lt;/PROTOCOLS&gt; \n&lt;/dock_design&gt;</code></pre><p>Influenza virus strains evolve rapidly because their genetic material accumulates mutations quickly. Although some of these mutations are beneficial to the virus, other mutations are harmful and reduce the ability of the virus to spread. Sometimes beneficial mutations may occur alongside harmful ones, but it is not known how the harmful mutations affect the evolution of the virus.</p><p>Here, Koelle and Rasmussen used <a href=\"#bib9\">computer models</a> of H3N2 influenza to examine the effect of harmful mutations on the evolution of this virus population. The models show that harmful mutations limit how quickly the antigens can evolve. Also, the presence of these harmful mutations effectively acts as a sieve: they allow only large changes in the antigens to establish in the virus population.</p><p>The models suggest that there are three routes by which large changes in the antigens on H3N2 viruses may occur. The first is by a single mutation that has a big effect on the antigens in viruses that only carry a few harmful mutations, but these large mutations would not happen very often. Another route may be through more common mutations that have only a small or moderate benefit, which would allow the virus to become more common in the population before it acquires a beneficial mutation with a much greater effect. The third possibility is that a large beneficial mutation may arise in viruses that have many harmful mutations. These harmful mutations may initially limit the ability of the virus to spread, but over time, some of these harmful mutations may then be lost.</p><p>Koelle and Rasmussen found that the computer models could recreate the patterns of virus evolution that have been observed in real strains of H3N2. <a href=\"#bib1\">Researchers</a> use predictions of influenza evolution to help them decide which virus strains should be included in flu vaccines each year. Koelle and Rasmussen findings indicate that harmful mutations should be considered when making these predictions.</p>",
+      "doi": {
+        "doi": "10.7554/eLife.16370",
+        "variant": "article-section"
+      }
+    },
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "isInitiallyClosed": true,
+      "body": "TNF Receptor Associated Factor 2 (TRAF2) is an adaptor protein that transduces signals following ligation of certain cytokine receptors including those binding TNF. It was first identified together with TRAF1 as a component of TNF receptor-2 and then TNF receptor-1 (TNFR1) signalling complexes (<a class=\"xref-bibr\" href=\"#bib50\" rel=\"#bib50\" title=\"\">Rothe et al., 1994</a>; <a class=\"xref-bibr\" href=\"#bib54\" rel=\"#bib54\" title=\"\">Shu et al., 1996</a>). TRAF2, like most other TRAFs, contains a RING domain, several zinc fingers, a TRAF-N, and a conserved TRAF-C domain which is responsible for oligomerisation and receptor binding through its MATH region (<a class=\"xref-bibr\" href=\"#bib60\" rel=\"#bib60\">Takeuchi et al., 1996</a>; <a class=\"xref-bibr\" href=\"#bib63\" rel=\"#bib63\">Uren and Vaux, 1996</a>).</p><p>RING domains are nearly always associated with ubiquitin E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib52\" rel=\"#bib52\">Shi and Kehrl, 2003</a>) and TRAF2 can promote ubiquitylation of RIPK1 in TNFR1 signalling complexes (TNFR1-SC) (<a class=\"xref-bibr\" href=\"#bib71\" rel=\"#bib71\">Wertz et al., 2004</a>). However TRAF2 recruits E3 ligases such as cIAPs to TNFR1-SC and these have also been shown to be able to ubiquitylate RIPK1 and regulate TNF signalling (<a class=\"xref-bibr\" href=\"#bib13\" rel=\"#bib13\">Dynek et al., 2010</a>; <a class=\"xref-bibr\" href=\"#bib34\" rel=\"#bib34\">Mahoney et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib66\" rel=\"#bib66\">Varfolomeev et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). This makes it difficult to unambiguously determine the role of the E3 ligase activity of TRAF2.</p><p>Activation of JNK and NF-κB by TNF is reduced in cells from <em>Traf2<sup>-/-&nbsp;</sup></em>mice while only JNK signalling was affected in lymphocytes from transgenic mice that express a dominant negative (DN) form of TRAF2 that lacks the RING domain (<a class=\"xref-bibr\" href=\"#bib31\" rel=\"#bib31\">Lee et al., 1997</a>; <a class=\"xref-bibr\" href=\"#bib74\" rel=\"#bib74\">Yeh et al., 1997</a>). <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> mouse embryonic fibroblasts (MEFs) have a pronounced defect in activation of NF-κB by TNF, suggesting that absence of TRAF2 can be compensated by TRAF5 (<a class=\"xref-bibr\" href=\"#bib59\" rel=\"#bib59\" title=\"\">Tada et al., 2001</a>). Although activation of NF-κB was restored in <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> cells by re-expression of wild type TRAF2, it was not restored when the cells were reconstituted with TRAF2 point mutants that could not bind cIAPs (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). These data, together with a wealth of different lines of evidence showing that cIAPs are critical E3 ligases required for TNF-induced canonical NF-κB (<a class=\"xref-bibr\" href=\"#bib5\" rel=\"#bib5\">Blackwell et al., 2013</a>; <a class=\"xref-bibr\" href=\"#bib21\" rel=\"#bib21\">Haas et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib56\" rel=\"#bib56\">Silke, 2011</a>), support the idea that the main function of TRAF2 in TNF-induced NF-κB is to recruit cIAPs to the TNFR1-SC. However, it remains possible that the RING of TRAF2 plays another function, such as in activating JNK and protecting cells from TNF-induced cell death (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\" title=\"\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). Furthermore it has been shown that TRAF2 can K48-ubiquitylate caspase-8 to set the threshold for TRAIL or Fas induced cell death (<a class=\"xref-bibr\" href=\"#bib17\" rel=\"#bib17\">Gonzalvez et al., 2012</a>). Moreover, TRAF2 inhibits non-canonical NF-κB signalling (<a class=\"xref-bibr\" href=\"#bib18\" rel=\"#bib18\">Grech et al., 2004</a>; <a class=\"xref-bibr\" href=\"#bib78\" rel=\"#bib78\">Zarnegar et al., 2008</a>) and this function requires the RING domain of TRAF2 to induce proteosomal degradation of NIK (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). However, structural and in vitro analyses indicate that, unlike TRAF6, the RING domain of TRAF2 is unable to bind E2 conjugating enzymes (<a class=\"xref-bibr\" href=\"#bib76\" rel=\"#bib76\">Yin et al., 2009</a>), and is therefore unlikely to have intrinsic E3 ligase activity.</p><p>Sphingosine-1-phosphate (S1P) is a pleiotropic sphingolipid mediator that regulates proliferation, differentiation, cell trafficking and vascular development (<a class=\"xref-bibr\" href=\"#bib44\" rel=\"#bib44\">Pitson, 2011</a>). S1P is generated by sphingosine kinase 1 and 2 (SPHK1 and SPHK2) (<a class=\"xref-bibr\" href=\"#bib28\" rel=\"#bib28\">Kohama et al., 1998</a>; <a class=\"xref-bibr\" href=\"#bib33\" rel=\"#bib33\">Liu et al., 2000</a>). Extracellular S1P mainly acts by binding to its five G protein-coupled receptors S1P<sub>1-5</sub> (<a class=\"xref-bibr\" href=\"#bib25\" rel=\"#bib25\">Hla and Dannenberg, 2012</a>). However, some intracellular roles have been suggested for S1P, including the blocking of the histone deacetylases, HDAC1/2 (<a class=\"xref-bibr\" href=\"#bib22\" rel=\"#bib22\">Hait et al., 2009</a>) and the induction of apoptosis through interaction with BAK and BAX (<a class=\"xref-bibr\" href=\"#bib9\" rel=\"#bib9\">Chipuk et al., 2012</a>).</p><p>Recently, it was suggested that the RING domain of TRAF2 requires S1P as a co-factor for its E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib3\" rel=\"#bib3\">Alvarez et al., 2010</a>). Alvarez and colleagues proposed that SPHK1 but not SPHK2 is activated by TNF and phosphorylates sphingosine to S1P which in turn&nbsp;binds&nbsp;to the RING domain of TRAF2 and serves as an essential co-factor that was missing in the experiments of Yin <em>et al.</em> Alvarez and colleagues, observed that in the absence of SPHK1, TNF-induced NF-κB activation was completely abolished.</p><p>Although we know a lot about TRAF2, there are still important gaps particularly with regard to cell type specificity and in vivo function of TRAF2. Moreover, despite the claims that SPHK1 and its product, S1P, are required for TRAF2 to function as a ubiquitin ligase, the responses of <em>Traf2<sup>-/-&nbsp;</sup></em>and <em>Sphk1<sup>-/-</sup></em> cells to TNF were not compared. Therefore, we undertook an analysis of TRAF2 and SPHK1 function in TNF signalling in a number of different tissues.</p><p>Surprisingly, we found that neither TRAF2 nor SPHK1 are required for TNF mediated canonical NF-κB and MAPK signalling in macrophages. However, MEFs, murine dermal fibroblasts (MDFs) and keratinocytes required TRAF2 but not SPHK1 for full strength TNF signalling. In these cell types, absence of TRAF2 caused a delay in TNF-induced activation of NF-κB and MAPK, and sensitivity to killing by TNF was increased. Absence of TRAF2 in keratinocytes in vivo resulted in psoriasis-like epidermal hyperplasia and skin inflammation. Unlike TNF-dependent genetic inflammatory skin conditions, such as IKK2 epidermal knock-out (<a class=\"xref-bibr\" href=\"#bib40\" rel=\"#bib40\" title=\"\">Pasparakis et al., 2002</a>) and the <em>cpdm</em> mutant (<a class=\"xref-bibr\" href=\"#bib16\" rel=\"#bib16\">Gerlach et al., 2011</a>), the onset of inflammation was only delayed, and not prevented by deletion of TNF. This early TNF-dependent inflammation is caused by excessive apoptotic but not necroptotic cell death and could be prevented by deletion of <em>Casp8</em>. We observed constitutive activation of NIK and non-canonical NF-κB in <em>Traf2<sup>-/-&nbsp;</sup></em>keratinocytes which caused production of inflammatory cytokines and chemokines. We were able to reverse this inflammatory phenotype by simultaneously deleting both <em>Tnf</em> and <em>Nfkb2</em> genes. Our results highlight the important role TRAF2 plays to protect keratinocytes from cell death and to down-regulate inflammatory responses and support the idea that intrinsic defects in keratinocytes can initiate psoriasis-like skin inflammation.</p>TNF Receptor Associated Factor 2 (TRAF2) is an adaptor protein that transduces signals following ligation of certain cytokine receptors including those binding TNF. It was first identified together with TRAF1 as a component of TNF receptor-2 and then TNF receptor-1 (TNFR1) signalling complexes (<a class=\"xref-bibr\" href=\"#bib50\" rel=\"#bib50\" title=\"\">Rothe et al., 1994</a>; <a class=\"xref-bibr\" href=\"#bib54\" rel=\"#bib54\" title=\"\">Shu et al., 1996</a>). TRAF2, like most other TRAFs, contains a RING domain, several zinc fingers, a TRAF-N, and a conserved TRAF-C domain which is responsible for oligomerisation and receptor binding through its MATH region (<a class=\"xref-bibr\" href=\"#bib60\" rel=\"#bib60\">Takeuchi et al., 1996</a>; <a class=\"xref-bibr\" href=\"#bib63\" rel=\"#bib63\">Uren and Vaux, 1996</a>).</p><div id=\"nestedFrag\"><b style=\"font-family:monospace\">I am a nested fragment</b></div><p>RING domains are nearly always associated with ubiquitin E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib52\" rel=\"#bib52\">Shi and Kehrl, 2003</a>) and TRAF2 can promote ubiquitylation of RIPK1 in TNFR1 signalling complexes (TNFR1-SC) (<a class=\"xref-bibr\" href=\"#bib71\" rel=\"#bib71\">Wertz et al., 2004</a>). However TRAF2 recruits E3 ligases such as cIAPs to TNFR1-SC and these have also been shown to be able to ubiquitylate RIPK1 and regulate TNF signalling (<a class=\"xref-bibr\" href=\"#bib13\" rel=\"#bib13\">Dynek et al., 2010</a>; <a class=\"xref-bibr\" href=\"#bib34\" rel=\"#bib34\">Mahoney et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib66\" rel=\"#bib66\">Varfolomeev et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). This makes it difficult to unambiguously determine the role of the E3 ligase activity of TRAF2.</p><p>Activation of JNK and NF-κB by TNF is reduced in cells from <em>Traf2<sup>-/-&nbsp;</sup></em>mice while only JNK signalling was affected in lymphocytes from transgenic mice that express a dominant negative (DN) form of TRAF2 that lacks the RING domain (<a class=\"xref-bibr\" href=\"#bib31\" rel=\"#bib31\">Lee et al., 1997</a>; <a class=\"xref-bibr\" href=\"#bib74\" rel=\"#bib74\">Yeh et al., 1997</a>). <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> mouse embryonic fibroblasts (MEFs) have a pronounced defect in activation of NF-κB by TNF, suggesting that absence of TRAF2 can be compensated by TRAF5 (<a class=\"xref-bibr\" href=\"#bib59\" rel=\"#bib59\" title=\"\">Tada et al., 2001</a>). Although activation of NF-κB was restored in <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> cells by re-expression of wild type TRAF2, it was not restored when the cells were reconstituted with TRAF2 point mutants that could not bind cIAPs (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). These data, together with a wealth of different lines of evidence showing that cIAPs are critical E3 ligases required for TNF-induced canonical NF-κB (<a class=\"xref-bibr\" href=\"#bib5\" rel=\"#bib5\">Blackwell et al., 2013</a>; <a class=\"xref-bibr\" href=\"#bib21\" rel=\"#bib21\">Haas et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib56\" rel=\"#bib56\">Silke, 2011</a>), support the idea that the main function of TRAF2 in TNF-induced NF-κB is to recruit cIAPs to the TNFR1-SC. However, it remains possible that the RING of TRAF2 plays another function, such as in activating JNK and protecting cells from TNF-induced cell death (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\" title=\"\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). Furthermore it has been shown that TRAF2 can K48-ubiquitylate caspase-8 to set the threshold for TRAIL or Fas induced cell death (<a class=\"xref-bibr\" href=\"#bib17\" rel=\"#bib17\">Gonzalvez et al., 2012</a>). Moreover, TRAF2 inhibits non-canonical NF-κB signalling (<a class=\"xref-bibr\" href=\"#bib18\" rel=\"#bib18\">Grech et al., 2004</a>; <a class=\"xref-bibr\" href=\"#bib78\" rel=\"#bib78\">Zarnegar et al., 2008</a>) and this function requires the RING domain of TRAF2 to induce proteosomal degradation of NIK (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). However, structural and in vitro analyses indicate that, unlike TRAF6, the RING domain of TRAF2 is unable to bind E2 conjugating enzymes (<a class=\"xref-bibr\" href=\"#bib76\" rel=\"#bib76\">Yin et al., 2009</a>), and is therefore unlikely to have intrinsic E3 ligase activity.</p><p>Sphingosine-1-phosphate (S1P) is a pleiotropic sphingolipid mediator that regulates proliferation, differentiation, cell trafficking and vascular development (<a class=\"xref-bibr\" href=\"#bib44\" rel=\"#bib44\">Pitson, 2011</a>). S1P is generated by sphingosine kinase 1 and 2 (SPHK1 and SPHK2) (<a class=\"xref-bibr\" href=\"#bib28\" rel=\"#bib28\">Kohama et al., 1998</a>; <a class=\"xref-bibr\" href=\"#bib33\" rel=\"#bib33\">Liu et al., 2000</a>). Extracellular S1P mainly acts by binding to its five G protein-coupled receptors S1P<sub>1-5</sub> (<a class=\"xref-bibr\" href=\"#bib25\" rel=\"#bib25\">Hla and Dannenberg, 2012</a>). However, some intracellular roles have been suggested for S1P, including the blocking of the histone deacetylases, HDAC1/2 (<a class=\"xref-bibr\" href=\"#bib22\" rel=\"#bib22\">Hait et al., 2009</a>) and the induction of apoptosis through interaction with BAK and BAX (<a class=\"xref-bibr\" href=\"#bib9\" rel=\"#bib9\">Chipuk et al., 2012</a>).</p><p>Recently, it was suggested that the RING domain of TRAF2 requires S1P as a co-factor for its E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib3\" rel=\"#bib3\">Alvarez et al., 2010</a>). Alvarez and colleagues proposed that SPHK1 but not SPHK2 is activated by TNF and phosphorylates sphingosine to S1P which in turn&nbsp;binds&nbsp;to the RING domain of TRAF2 and serves as an essential co-factor that was missing in the experiments of Yin <em>et al.</em> Alvarez and colleagues, observed that in the absence of SPHK1, TNF-induced NF-κB activation was completely abolished.</p><div id=\"nestedFrag\"><b>I am a nested frag</b></div><p>Although we know a lot about TRAF2, there are still important gaps particularly with regard to cell type specificity and in vivo function of TRAF2. Moreover, despite the claims that SPHK1 and its product, S1P, are required for TRAF2 to function as a ubiquitin ligase, the responses of <em>Traf2<sup>-/-&nbsp;</sup></em>and <em>Sphk1<sup>-/-</sup></em> cells to TNF were not compared. Therefore, we undertook an analysis of TRAF2 and SPHK1 function in TNF signalling in a number of different tissues.</p><p>Surprisingly, we found that neither TRAF2 nor SPHK1 are required for TNF mediated canonical NF-κB and MAPK signalling in macrophages. However, MEFs, murine dermal fibroblasts (MDFs) and keratinocytes required TRAF2 but not SPHK1 for full strength TNF signalling. In these cell types, absence of TRAF2 caused a delay in TNF-induced activation of NF-κB and MAPK, and sensitivity to killing by TNF was increased. Absence of TRAF2 in keratinocytes in vivo resulted in psoriasis-like epidermal hyperplasia and skin inflammation. Unlike TNF-dependent genetic inflammatory skin conditions, such as IKK2 epidermal knock-out (<a class=\"xref-bibr\" href=\"#bib40\" rel=\"#bib40\" title=\"\">Pasparakis et al., 2002</a>) and the <em>cpdm</em> mutant (<a class=\"xref-bibr\" href=\"#bib16\" rel=\"#bib16\">Gerlach et al., 2011</a>), the onset of inflammation was only delayed, and not prevented by deletion of TNF. This early TNF-dependent inflammation is caused by excessive apoptotic but not necroptotic cell death and could be prevented by deletion of <em>Casp8</em>. We observed constitutive activation of NIK and non-canonical NF-κB in <em>Traf2<sup>-/-&nbsp;</sup></em>keratinocytes which caused production of inflammatory cytokines and chemokines. We were able to reverse this inflammatory phenotype by simultaneously deleting both <em>Tnf</em> and <em>Nfkb2</em> genes. Our results highlight the important role TRAF2 plays to protect keratinocytes from cell death and to down-regulate inflammatory responses and support the idea that intrinsic defects in keratinocytes can initiate psoriasis-like skin inflammation.</p>",
+      "doi": {
+        "doi": "10.7554/eLife.16370",
+        "variant": "article-section"
+      }
+    },
+    {
+      "id": "materials-and-methods",
+      "title": "Materials and methods",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "isInitiallyClosed": true,
+      "body": "<p>Embryos were isolated from a wild <i>B. schlosseri</i> colony from Monterey Bay. Metaphase chromosomes were isolated as previously described (<a href=\"#bib73\">Shoguchi et al., 2004</a>). <i>B. schlosseri</i> metaphase chromosome suspension was partitioned into wells in the microfluidic device as previously described (<a href=\"#bib24\">Fan et al., 2011</a>; <a href=\"#bib92\">Xu et al., 2011</a>). The contents of each microfluidic well were amplified individually and prepared for sequencing. Each well contained between 1–4 metaphase chromosomes (<a href=\"#fig3\">Figure 3</a>, <a href=\"#fig3s1\">Figure 3—figure supplement 1</a>, <a href=\"#fig3s2\">Figure 3—figure Supplement 2</a>). 21 wells were made into libraries and sequenced using Illumina Hiseq (2 x 100).</p><section class=\"article-section \" id=\"s3-3-1\">  <header class=\"article-section__header\">    <h4 class=\"article-section__header_text\">Chromosome assignment</h4>  </header>  <div class=\"article-section__body\">    <p>Since a particular chromosome has an equal chance of occupying any of the 21 wells, we can denote the presence of a particular chromosome for example chromosome A across the 21 wells in the form of a vector (1,0,1,0,1,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,1) where 1 denotes presence in a well and 0 as absent. To deduce this configuration and perform the assignment of contigs, we aligned the reads from each well onto the contigs of the assembly. Contigs that share the same configuration across 21 wells can be considered to be from the same chromosome. To determine which contigs belong together and share the same configuration, we cluster the contigs using the Pearson correlation with each other using the vector across 21 wells. The number of clusters that result from k-means clustering using the Pearson correlation as the distance is then inferred to be the number of chromosomes. To determine this optimal number of clusters K for K-means clustering, we perform the clustering procedure iteratively for each K and record the within sum of squares error for each iteration as shown in <a href=\"#fig3\">Figure 3</a>. Additionally, using the clustered data, we were able to deduce the configuration and deduce the number of chromosomes in each well.</p><p>Reads from each of the chromosome preparation were aligned to the 356a draft genome assembly using the BWA (<a href=\"#bib47\">Li and Durbin, 2009</a>) package. Subsequently, SAMtools (<a href=\"#bib48\">Li et al., 2009</a>) were used to filter for high quality mapping of reads with MAPQ score of greater than 30. The filtering was performing by using AWK to filter the fifth column of the SAM file for alignments &gt;25. In addition to filter for a reasonable insert size, AWK is used to filter the corresponding columns in SAM files. Filtered SAM files were then parsed using BEDtools (<a href=\"#bib62\">Quinlan and Hall, 2010</a>) to obtain the number of reads that are associated with each of the scaffolds. Specifically, the coverageBED command is used to calculate the number of reads and coverage associated with each of the scaffolds in the assembled genome. Utilizing the number of reads associated with each scaffold from a particular chromosome preparation were arranged in the following data format:</p><div id=\"tbl3\" class=\"asset-viewer-inline asset-viewer-inline--table \" data-variant=\"table\" data-behaviour=\"AssetNavigation\"><div class=\"asset-viewer-inline__header_panel\"><div class=\"asset-viewer-inline__header_text\"><span class=\"asset-viewer-inline__header_text__prominent\">Table 3.</span></div><div class=\"asset-viewer-inline__figure_access\"></div></div><figure class=\"captioned-asset\"><figcaption class=\"captioned-asset__caption\"><h6 class=\"caption-text__heading\">Predictive model parameters for key model outcomes</h6><span class=\"doi doi--asset\"><a href=\"https://doi.org/10.7554/eLife.00288.031\" class=\"doi__link\">https://doi.org/10.7554/eLife.00288.031</a></span></figcaption><div class=\"table-wrap\"><table><thead><tr><td rowspan=\"2\"></td><td colspan=\"2\">Single episode features</td><td colspan=\"2\">Long-term shedding features</td></tr><tr><td>Peak viral load</td><td>Duration</td><td>Shedding rate</td><td>Episode rate</td></tr></thead><tbody><tr><td>CD8+ T-cell density at reactivation site</td><td>−0.56</td><td>−0.47</td><td>NA</td><td>NA</td></tr><tr><td>Cell-associated HSV infectivity</td><td>—</td><td>0.12</td><td>—</td><td>0.13</td></tr><tr><td>Cell-free HSV infectivity</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Epidermal cell replicate rate</td><td>0.13</td><td>0.14</td><td>−0.25</td><td>−0.31</td></tr><tr><td>Neuronal release rate</td><td>—</td><td>—</td><td>0.43</td><td>0.55</td></tr><tr><td>Free-viral decay rate</td><td>—</td><td>—</td><td>−0.2</td><td>—</td></tr><tr><td>Maximal CD8+ T-cell expansion rate</td><td>−0.09</td><td>—</td><td>0.37</td><td>0.51</td></tr><tr><td>CD8+ T-cell decay rate</td><td>—</td><td>0.09</td><td>—</td><td>−0.16</td></tr><tr><td>CD8+ T-cell local recognition</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>CD8+ regional co-dependence</td><td>—</td><td>—</td><td>0.32</td><td>0.34</td></tr><tr><td>Viral production lag</td><td>—</td><td>—</td><td>0.24</td><td>0.23</td></tr></tbody></table></div><ol class=\"list\"><li class=\"table-footnote\"><div class=\"table-footnote__text\"><p>Partial correlation coefficients are listed only for parameters that are found to improve predictive effect on outcomes using Akaike information criteria models. Episode features are from 500 single episode simulations. Long-term shedding outcomes were measured over 10-years during 500 simulations.</p></div></li></ol></figure></div><p>In each cell the number of reads associated with the scaffold and preparation was normalized by the total number of reads across each chromosome preparation. This is done by dividing the number of reads associated with the particular scaffold and preparation by dividing each entry by the total number of reads from a chromosome preparation. This value is then scaled by the fractional coverage of reads for a particular scaffold. These normalization steps ensure that a valid comparison can be made across each preparation. These normalized reads are then used to perform the K-means clustering. The optimal number of clusters is determined by iteratively performing the clustering process with each value of K. Within sum of square errors for each cluster is calculated and plotted in <a href=\"#fig3\">Figure 3A</a>. A knee exists in the curve near K = 13, after which increasing the number of clusters only creates marginal improvement in the error (<a href=\"#fig3\">Figure 3A</a>). To estimate the configuration after the clustering step, 17 out of the 21 wells were deduced to contain information that is used in the clustering process. The average number of normalized reads counts from each well that align to each scaffold in a cluster group is calculated and plotted in <a href=\"#fig3\">Figure 3B</a>, <a href=\"#fig3s1\">Figure 3—figure supplements 1 and 2</a>. Each peak represented can be inferred to denote the presence of a specific chromosome in the well. This approach yielded 13 well resolved chromosomes (<a href=\"#fig3\">Figure 3</a>, <a href=\"#fig3s1\">Figure 3—figure supplement 1</a>), close to the ∼16 chromosomes that were predicted by a previous study using metaphase spreads (<a href=\"#bib14\">Colombera, 1963</a>).</p>  </section><section class=\"article-section \" id=\"s3-3-2\">  <header class=\"article-section__header\">    <h4 class=\"article-section__header_text\">356a-chromosomes hybrid assembly</h4>  </header>  <div class=\"article-section__body\">    <p>Reads from each of the individual chromosome sample preparation were subsequently assembled using Velvet (<a href=\"#bib96\">Zerbino, 2010</a>; <a href=\"#fig3s2\">Figure 3—figure supplement 2</a>). Velvet was compiled for our assembly to have a max hash length of 75. This is to allow for the use of larger hash length for the assembly of the reads from the individual well. Since the paired reads from each preparation is ∼86 after filtering for low quality bases, an optimal hash length is selected from the range of 51–75 to obtain the optimal assembly for each preparation. The assembled chromosome level contigs were then merged with 356a draft assembly using Minimus2 <a href=\"http://sourceforge.net/apps/mediawiki/amos/index.php?title=Minimus2\">http://sourceforge.net/apps/mediawiki/amos/index.php?title=Minimus2</a> (<a href=\"#fig3s3\">Figure 3—figure supplement 3</a>). During this stage, minimus2 used a nucmer based overlap detector to detect overlap between sequences and subsequently merging the two sequence sets to generate the final merge assembly of chromosome with the draft. An overall improvement in N50 was achieved, yielding a final 580 Mbp draft 356a-chromosomes hybrid assembly (<a href=\"#SD3-data\">Supplementary file 2D</a>).</p>  </div> <h4>I am an h4</h4><h5>I am an h5</h5><h6>I am an h6</h6><p>A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve </p> </section>"
+    },
+    {
+      "id": "articleInfo",
+      "title": "Article & author information",
+      "hasBehaviour": true,
+      "isInitiallyClosed": true,
+      "headingLevel": 2,
+      "body": "  <h3 class=\"authors-details__heading\">Authors details</h3>  <ol class=\"authors-details__authors\">    <li class=\"authors-details__author\" style=\"margin-top: 0px;\"><div class=\"author-details\" data-popup-contents=\"author-3c233bb0\" id=\"author-3c233bb0\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Stefan Schaffelhofer</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Laboratory of Neural Systems, The Rockefeller University, New York, United States</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Developed the experimental setup, Trained the animals, Recorded and analysed the data, Wrote the manuscript, Acquisition of data</span>      </section>      <section class=\"author-details__section author-details__section--competing-interest\" style=\"    height: 48px;\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>      <section class=\"author-details__section author-details__section--orcid\">        <a href=\"https://orcid.org/\" target=\"_blank\" class=\"author-details__link author-details__link--orcid\">          <img class=\"author-details__linked-image--orcid\" src=\"/assets/img/icons/orcid/orcid_16x16.png\" srcset=\"/assets/img/icons/orcid/orcid_16x16.png 16w, /assets/img/icons/orcid/orcid_32x32.png 32w, /assets/img/icons/orcid/orcid_64x64.png 64w, /assets/img/icons/orcid/orcid_128x128.png 128w\" alt=\"ORCID icon\" sizes=\"16px\"></a> <a href=\"https://orcid.org/0000-0002-1006-971X\" target=\"_blank\" class=\"author-details__text author-details__link author-details__link--orcid\">0000-0002-1006-971X</a>      </section>    </div>    </li>    <li class=\"authors-details__author\"><div class=\"author-details\" id=\"author-76fd97c3\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Hansjörg Scherberger</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Department of Biology, University of Göttingen, Göttingen, Germany</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Performed the surgeries, Edited the manuscript, Provided supervision at all stages of the project, Analysis and interpretation of data</span>      </section>      <section class=\"author-details__section author-details__section--means-of-correspondence\">        <h5 class=\"author-details__heading\">For correspondence: </h5>        <a href=\"mailto:hscherb@gwdg.de\" class=\"author-details__text author-details__link\">hscherb@gwdg.de</a>      </section>      <section class=\"author-details__section author-details__section--competing-interest\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>    </div>    </li>  </ol>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Funding</h3>    </header>    <div class=\"article-section__body\">      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Alexander von Humboldt-Stiftung (Postdoctoral Fellowship)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Stefan Schaffelhofer</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Deutsche Forschungsgemeinschaft (SCHE 1575/3-1)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Bundesministerium für Bildung und Forschung (BCCN-II, 01GQ1005C)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">European Commission (FP7-611687 (NEBIAS))</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <p>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Acknowledgements</h3>    </header>    <div class=\"article-section__body\">      <p>The authors thank M Sartori, M Dörge, K Menz, R Ahlert, N Nazarenus, and L Burchardt for assistance and MM Fabiszak, M Hepp-Reymond, and W Freiwald for helpful comments on an earlier version of the manuscript. This work was supported by the Federal Ministry of Education and Research (Bernstein Center for Computational Neuroscience II Grant DPZ-01GQ1005C, the German Research Foundation (SCHE 1575/3-1), the European Union Grant FP7– 611687 (NEBIAS), and the Humboldt Foundation.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Ethics</h3>    </header>    <div class=\"article-section__body\">      <p>Animal experimentation: All procedures and animal were conducted in accordance with the guidelines for the care and use of mammals in neuroscience and behavioral research (National Research Council, 2003), and were in agreement with German and European laws governing animal care. Authorization for conducting this study has been granted by the regional government office, the Animal Welfare Division of the Office for Consumer Protection and Food Safety of the State of Lower Saxony, Germany (permit no. 032/09). Monkey handling also followed the recommendations of the Weatherall Report of good animal practice. Animals were pairhoused in a spacious cage (well exceeding legal requirements) and were maintained on a 12-hour on/off lighting schedule. Housing procedures included an environmental enrichment program with access to toys, swings, and hidden treats (e.g., seeds in sawdust). Monkeys had visual and auditory contact to other monkeys. They were fed on a diet of enriched biscuits and fruits. Daily access to fluids was controlled during training and experimental periods to promote behavioral motivation. All surgical procedures were performed under anesthesia, and all efforts were made to minimize post-surgical pain or suffering. Institutional veterinarians continually monitored animal health and well-being.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Reviewers</h3>    </header>    <div class=\"article-section__body\">      <ol class=\"list\">        <li>Sabine Kastner, Reviewing editor, Princeton University, United States</li>      </ol>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Copyright</h3>    </header>    <div class=\"article-section__body\">      <p>© 2016, Schaffelhofer et al.</p><p>This article is distributed under the terms of the <a href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution License</a>, which permits unrestricted use and redistribution provided that the original author and source are credited.</p>    </div>  </section>"
+    }
+  ],
+  "iframe": {
+    "src": "https://www.youtube.com/embed/6j0jRXPvpCE",
+    "paddingBottom": 56.25
+  },
+  "articleMeta": {
+    "groups": [
+      {
+        "title": "Categories and tags",
+        "items": [
+          {
+            "url": "#",
+            "name": "Insight"
+          },
+          {
+            "url": "#",
+            "name": "Developmental Biology and Stem Cells"
+          },
+          {
+            "url": "#",
+            "name": "Planarian"
+          }
+        ]
+      },
+      {
+        "title": "Research organism",
+        "items": [
+          {
+            "name": "Caenorhabditis elegans"
+          }
+        ]
+      }
+    ]
+  },
+  "pl-only-article-section-for-download-links": {
+    "title": "Article download links",
+    "downloadLinks": {
+      "description": "A three part list of links to download the article, or parts of the article, in various formats.",
+      "groups": [
+        {
+          "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF)</span>",
+          "items": [
+            {
+              "name": "Article",
+              "url": "#"
+            },
+            {
+              "name": "Figures",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "title": "Download citations<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
+          "items": [
+            {
+              "name": "BibTex",
+              "url": "#"
+            },
+            {
+              "name": "RIS",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
+          "items": [
+            {
+              "name": "Mendeley",
+              "url": "#"
+            },
+            {
+              "name": "ReadCube",
+              "url": "#"
+            },
+            {
+              "name": "Papers App",
+              "url": "#"
+            },
+            {
+              "name": "CiteUlike",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "mainMenu": {
+    "listHeading": {
+      "heading": "Menu"
+    },
+    "links": {
+      "items": [
+        {
+          "name": "Research categories",
+          "url": "#res"
+        },
+        {
+          "name": "Author guide",
+          "url": "#aut"
+        },
+        {
+          "name": "Reviewer guide",
+          "url": "#rev"
+        },
+        {
+          "name": "About",
+          "url": "#abo"
+        },
+        {
+          "name": "Inside eLife",
+          "url": "#ins"
+        },
+        {
+          "name": "Careers",
+          "url": "#car"
+        },
+        {
+          "name": "Labs",
+          "url": "#lab"
+        }
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "subHeader": "Sign up for alerts",
+    "compactForm": {
+      "formAction": "#",
+      "formId": "myCompactForm",
+      "formMethod": "GET",
+      "label": "Email",
+      "inputType": "email",
+      "inputName": "email",
+      "inputValue": "",
+      "inputPlaceholder": "you@email.com",
+      "ctaText": "Go"
+    }
+  },
+  "footerMenuLinks": [
+    {
+      "name": "About",
+      "url": "#"
+    },
+    {
+      "name": "Who we work with",
+      "url": "#"
+    },
+    {
+      "name": "Alerts",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Terms and policy",
+      "url": "#"
+    },
+    {
+      "name": "Inside eLife",
+      "url": "#"
+    },
+    {
+      "name": "Monthly archive",
+      "url": "#"
+    },
+    {
+      "name": "Labs",
+      "url": "#"
+    },
+    {
+      "name": "For the press",
+      "url": "#"
+    },
+    {
+      "name": "Resources",
+      "url": "#"
+    }
+  ],
+  "furtherReading": {
+    "allRelated": true,
+    "id": "idOfListElementToLoadContentInTo",
+    "heading": "Further reading",
+    "items": [
+      {
+        "isRelated": true,
+        "item": {
+          "title": "Stem cells and fluid flow drive cyst formation in an invertebrate excretory organ",
+          "longTitle": true,
+          "hasSubjects": true,
+          "subjects": [
+            {
+              "name": "Developmental Biology and Stem Cells",
+              "url": "#"
+            }
+          ],
+          "authorLine": "H Thi-Kim Vu et al.",
+          "meta": {
+            "url": "#",
+            "text": "Research advance",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 16,
+                "month": "Dec",
+                "year": 2015
+              },
+              "forMachine": "2015-12-16"
+            }
+          }
+        }
+      }
+    ],
+    "pagination": {
+      "targetId": "idOfListElementToLoadContentInTo",
+      "nextPage": {
+        "text": "Load more",
+        "classes": "button--default button--full",
+        "path": "?page=2"
+      }
+    }
+  },
+  "year": 2016,
+
+  "references": [
+    {
+      "bibId": {
+        "full": "bib1",
+        "ordinal": 1
+      },
+      "reference": {
+        "title": "Philosophie Anatomique",
+        "origin": "Paris: Méquignon-Marvis",
+
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Geoffroy Saint-Hilaire E."
+              }
+            ],
+            "suffix": "(1818)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+    },
+    {
+      "bibId": {
+        "full": "bib2",
+        "ordinal": 2
+      },
+      "reference": {
+        "title": "Understanding the rhythm of breathing: so near, yet so far",
+        "origin": "In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452.",
+
+        "doi": {
+          "doi": "10.1146/annurev-physiol-040510-130049"
+        },
+
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "JL Feldman"
+              },
+              {
+                "name": "C Del Negro"
+              },
+              {
+                "name": "PA Gray"
+              }
+            ],
+            "suffix": "(2013)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+    },
+    {
+      "bibId": {
+        "full": "bib3",
+        "ordinal": 3
+      },
+      "reference": {
+        "title": "Scripps Wired for Health Study (Registration: 000000)",
+        "origin": "Scripps Translational Science Institute (sponsor) (2015)",
+        "hasAuthors": false,
+        "hasAbstracts": false
+      }
+
+    },
+    {
+      "bibId": {
+        "full": "bib4",
+        "ordinal": 4
+      },
+      "reference": {
+        "title": "Boundary learning by optimization with topological constraints",
+        "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "BV Jain"
+              },
+              {
+                "name": "B Bollman"
+              },
+              {
+                "name": "M Richardson"
+              },
+              {
+                "name": "DR Berger"
+              },
+              {
+                "name": "MN Helmstaedter"
+              },
+              {
+                "name": "KL Briggman"
+              },
+              {
+                "name": "W Denk"
+              },
+              {
+                "name": "JB Bowden"
+              },
+              {
+                "name": "JM Mendenhall"
+              },
+              {
+                "name": "WC Abraham"
+              },
+              {
+                "name": "KM Harris"
+              },
+              {
+                "name": "N Kasthuri"
+              },
+              {
+                "name": "KJ Hayworth"
+              },
+              {
+                "name": "R Schalek"
+              },
+              {
+                "name": "JC Tapia"
+              },
+              {
+                "name": "JW Lichtman"
+              },
+              {
+                "name": "HS Seung"
+              }
+            ],
+            "suffix": "(2010)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib5",
+        "ordinal": 5
+      },
+      "reference": {
+        "title": "NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets",
+        "origin": "NCBI Gene Expression Omnibus. Series accession number <a href=\"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44902\">GSE44902</a>",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "R Bouveret"
+              },
+              {
+                "name": "R Bouveret"
+              },
+              {
+                "name": "N Schonrock"
+              },
+              {
+                "name": "M Ramialison"
+              },
+              {
+                "name": "T Doan"
+              },
+              {
+                "name": "D de Jong"
+              },
+              {
+                "name": "A Bondue"
+              },
+              {
+                "name": "G Kaur"
+              },
+              {
+                "name": "S Mohamed"
+              },
+              {
+                "name": "H Fonoudi"
+              },
+              {
+                "name": "C Chen"
+              },
+              {
+                "name": "M Wouters"
+              },
+              {
+                "name": "S Bhattacharya"
+              },
+              {
+                "name": "N Plachta"
+              },
+              {
+                "name": "SL Dunwoodie"
+              },
+              {
+                "name": "G Chapman"
+              },
+              {
+                "name": "C Blanpain"
+              },
+              {
+                "name": "RP Harvey"
+              }
+            ],
+            "suffix": "(2015)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib6",
+        "ordinal": 6
+      },
+      "reference": {
+        "title": "Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift",
+        "origin": "Nature 365:833–836. PMID 8413666",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Schrenk F"
+              },
+              {
+                "name": "Bromage TG"
+              },
+              {
+                "name": "Betzler CG"
+              },
+              {
+                "name": "Ring U"
+              },
+              {
+                "name": "Juwayeyi YM"
+              }
+            ],
+            "suffix": "(1993)"
+          }
+        ],
+        "doi": {
+          "doi": "10.1038/365833a0"
+        },
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib7",
+        "ordinal": 7
+      },
+      "reference": {
+        "title": "IRE-1alpha inhibitors (US20100941530)",
+        "origin": "Mankind Corp, United States patent, United States",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "JB Patterson"
+              },
+              {
+                "name": "DG Lonergan"
+              },
+              {
+                "name": "GA Flynn"
+              },
+              {
+                "name": "Z Qingpeng"
+              },
+              {
+                "name": "PV Pallai"
+              }
+            ],
+            "suffix": "(2011)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib8",
+        "ordinal": 8
+      },
+      "reference": {
+        "title": "Unreliable research: Trouble at the lab",
+        "titleLink": "https://www.economist.com/news/briefing/21588057-scientists-think-science-self-correcting-alarming-degree-it-not-trouble",
+        "origin": "<i>The Economist</i>, p26–30.",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "The Economist"
+              }
+            ],
+            "suffix": "(October 19, 2013)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib9",
+        "ordinal": 9
+      },
+      "reference": {
+        "title": "Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression",
+        "titleLink": "https://arxiv.org/abs/1303.0216",
+        "origin": "arXiv",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Paris M"
+              },
+              {
+                "name": "Kaplan M"
+              },
+              {
+                "name": "Li XY"
+              },
+              {
+                "name": "Villalta JE"
+              },
+              {
+                "name": "Lott SE"
+              },
+              {
+                "name": "Eisen MB"
+              }
+            ],
+            "suffix": "(2013)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib10",
+        "ordinal": 10
+      },
+      "reference": {
+        "title": "Educational Excellence Everywhere",
+        "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
+        "origin": "London: HMSO",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Department of Education, UK."
+              }
+            ],
+            "suffix": "(2016)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib11",
+        "ordinal": 11
+      },
+      "reference": {
+        "title": "The Pymol Molecular Graphics System",
+        "origin": "DeLano Scientific, Palo Alto, CA",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "W. L. DeLano"
+              }
+            ],
+            "suffix": "(2002)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib12",
+        "ordinal": 12
+      },
+      "reference": {
+        "title": "Theory of large fluctuations in stochastic populations",
+        "titleLink": "https://doi.org/10.1371/journal.pgen.0030218",
+        "origin": "Hebrew University of Jerusalem",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Assaf M."
+              }
+            ],
+            "suffix": "(2010)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    },
+    {
+      "bibId": {
+        "full": "bib13",
+        "ordinal": 13
+      },
+      "reference": {
+        "title": "The Problem of Perception",
+        "titleLink": "http://plato.stanford.edu/entries/perception-problem/",
+        "origin": "The Stanford Encyclopedia of Philosophy",
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Crane T"
+              }
+            ],
+            "suffix": "(2005)"
+          }
+        ],
+        "hasAbstracts": false
+      }
+
+
+    }
+  ],
+
+  "annotationCount": {
+    "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>&#8220;</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
+    "hasPlaceholder": true,
+    "behaviour": "HypothesisOpener"
+  },
+
+  "related": {
+    "rootClasses": "teaser--secondary teaser--related",
+
+    "contextLabel": {
+      "list": [
+        {
+          "name": "Built upon by",
+          "url": null
+        }
+      ]
+    },
+    "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
+    "url": "#",
+
+    "secondaryInfo": "H Thi-Kim Vu et al",
+
+    "footer": {
+      "meta": {
+        "url": "#",
+        "text": "Research advance",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 16,
+            "month": "Dec",
+            "year": 2015
+          },
+          "forMachine": "2015-12-16"
+        }
+      }
+    }
+  }
+
+
+}
