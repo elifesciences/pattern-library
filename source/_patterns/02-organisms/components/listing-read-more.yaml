@@ -12,9 +12,7 @@ schema:
   properties:
     allRelated:
       type: boolean
-      emum:
-        - true
-    heading:
+     heading:
       $ref: ../../00-atoms/components/list-heading.yaml#/schema
     id:
       type: string
