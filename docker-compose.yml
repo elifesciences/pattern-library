@@ -31,7 +31,8 @@ services:
             context: .
             dockerfile: Dockerfile.selenium
         ports:
-            - "5900:5900"
+            - "4444:4444" # WebDriver protocol
+            - "5900:5900" # VNC
         volumes:
             # https://github.com/SeleniumHQ/docker-selenium#running-the-images
             - /dev/shm:/dev/shm
