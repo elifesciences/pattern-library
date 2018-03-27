@@ -17,26 +17,25 @@
 // Note 'resp-sharing-button' from the generated code has been changed to 'social-media-sharer' to match the name of the pattern in use here.
 
 /* stylelint-disable */
-
 .social-media-sharers {
   @include blg-spacing("top", "small", "margin");
   flex-grow: 0;
   flex-basis: 2em;
 }
 
-.social-media-sharer__link,
+.social-media-sharer,
 .social-media-sharer__icon {
   display: inline-block
 }
 
-.social-media-sharer__link {
+.social-media-sharer {
   text-decoration: none;
   color: #fff;
   margin: 0 0.5em;
   max-height: 2em;
 }
 
-.social-media-sharer__link {
+.social-media-sharer {
   border-radius: 5px;
   transition: 25ms ease-out;
   padding: 0.4em 0.75em;
@@ -50,7 +49,7 @@
   vertical-align: top
 }
 
-.social-media-sharer--small svg {
+.social-media-sharer__icon_wrapper--small svg {
   margin: 0;
   vertical-align: middle
 }
@@ -67,7 +66,7 @@
   stroke: none
 }
 
-.social-media-sharer__link {
+.social-media-sharer {
   background-color: $color-text;
   border-radius: #{$border-radius}px;
   color: #fff;
@@ -75,7 +74,7 @@
 
 .content-header--image {
 
-  .social-media-sharer__link {
+  .social-media-sharer {
     &:hover,
     &:active {
       background-color: $color-primary;
