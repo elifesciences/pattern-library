@@ -98,17 +98,9 @@
 
     </main>
 
-    <div class="wrapper">
-
-      <div class="grid">
-
-        <div class="grid__item large--eight-twelfths push--large--two-twelfths blg-pad-bottom-large">
-          {{#furtherReading}}
-            {{> organisms-listing-read-more }}
-          {{/furtherReading}}
-        </div>
-      </div>
-    </div>
+    {{#furtherReading}}
+      {{> organisms-listing-read-more }}
+    {{/furtherReading}}
 
     {{#emailCta}}
     {{> organisms-email-cta }}
