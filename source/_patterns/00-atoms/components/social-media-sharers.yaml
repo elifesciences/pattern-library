@@ -1,6 +1,6 @@
 assets:
   css:
-    - social-media-sharing.css
+    - social-media-sharers.css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
