@@ -9,8 +9,12 @@
 //  Icon size: small
 //  Round: off
 //  Fill: solid
+//
+// CSS customisations:
+//  - background-color: $color-text
+//  - color, stroke and fill: #fff;
 
-// Note 'resp-sharing-button' from the generated code has been changed to social-media-sharing to match the name of the pattern in use here.
+// Note 'resp-sharing-button' from the generated code has been changed to 'social-media-sharing' to match the name of the pattern in use here.
 
 /* stylelint-disable */
 .social-media-sharing__link,
@@ -45,14 +49,19 @@
 
 /* Non solid icons get a stroke */
 .social-media-sharing__icon {
-  stroke: $color-text;
+  stroke: #fff;
   fill: none
 }
 
 /* Solid icons get a fill */
 .social-media-sharing__icon--solid,
 .social-media-sharing__icon--solidcircle {
-  fill: $color-text;
+  fill: #fff;
   stroke: none
+}
+
+.social-media-sharing {
+  background-color: $color-text;
+  color: #fff;
 }
 /* stylelint-enable */
