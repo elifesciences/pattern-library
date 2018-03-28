@@ -1,4 +1,16 @@
 exports.config = {
+    // =====================
+    // Server Configurations
+    // =====================
+    // Host address of the running Selenium server. This information is usually obsolete as
+    // WebdriverIO automatically connects to localhost. Also if you are using one of the
+    // supported cloud services like Sauce Labs, Browserstack or Testing Bot you also don't
+    // need to define host and port information because WebdriverIO can figure that out
+    // according to your user and key information. However if you are using a private Selenium
+    // backend you should define the host address, port, and path here.
+    host: 'selenium',
+    port: 4444,
+    path: '/wd/hub',
     
     //
     // ==================
@@ -32,7 +44,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -72,7 +84,7 @@ exports.config = {
     //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
-    baseUrl: 'http://localhost',
+    baseUrl: 'http://ui',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -124,7 +136,8 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+        //timeout: 600000,
     },
     //
     // =====

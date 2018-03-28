@@ -98,22 +98,36 @@ is used inside the pattern-library VM and should not be used elsewhere.
 # Docker setup
 
 ```
-docker build -f Dockerfile.assets -t elifesciences/pattern-library_assets .
+docker-compose build
 ```
 
-(re)builds the Gulp-based Docker image, which builds all assets.
+(re)builds all images:
+
+- `elifesciences/pattern-library_assets` is a Node-based image for Gulp usage
+- `elifesciences/pattern-library` is the UI
+- `elifesciences/pattern-library_ci` is used to run tests
+- an anonymous `selenium` image extension.
 
 ```
-docker build -t elifesciences/pattern-library .
+docker-compose up
 ```
 
-(re)builds the PHP-based Docker image, which provides a UI. This image depends on the previous one.
+runs containers so that the static website is accessible through a browser at http://localhost:8889
 
 ```
-docker run -p 8889:80 elifesciences/pattern-library
+docker-compose run --rm ci ./project_tests.sh
 ```
 
-runs that image so that the static website is accessible through a browser at http://localhost:8889
+runs all tests.
+
+To create an exploratory session with the browser used by the Selenium test suite:
+
+```
+docker-compose up -d
+curl -v localhost:4/wd/hub/session -d '{"desiredCapabilities":{"browserName":"firefox"}}'
+```
+
+Connect to this browser by using a VNC client (such as `vinagre`) on `localhost:5900`, with password `secret`. You can visit the pattern-library static website at `http://ui`.
 
 # Notes
 
