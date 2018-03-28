@@ -51,7 +51,6 @@
   }
 
   .content-header__body {
-    height: #{$content-header-padding * 5}px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -64,9 +63,6 @@
       @include padding(0 48);
     }
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      height: #{$content-header-padding * 7}px;
-    }
   }
 }
 
