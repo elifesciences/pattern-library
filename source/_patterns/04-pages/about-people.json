@@ -209,7 +209,13 @@
 
   "pageAboutElife": {
     "title": "About eLife",
-    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris."
+    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris.",
+    "socialMediaSharers": {
+      "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https://example.com/some-article-url",
+      "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https://example.com/some-article-url",
+      "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=ttps://example.com/some-article-url",
+      "redditUrl": "https://reddit.com/submit/?url=ttps://example.com/some-article-url"
+    }
   },
 
   "sectionsListingLink": {
