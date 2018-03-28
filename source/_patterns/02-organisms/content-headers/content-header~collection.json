@@ -22,11 +22,6 @@
     }
   },
   "impactStatement": "From its earliest days, eLife has been publishing important advances in our understanding of Cancer Biology. Here, eLife Senior Editors present a collection of great papers spanning from oncogenes and tumor suppressors.",
-  "button": {
-    "text": "Subscribe",
-    "path": "#",
-    "classes": "button--reversed button--small"
-  },
   "meta": {
     "url": "#",
     "text": "Collection",

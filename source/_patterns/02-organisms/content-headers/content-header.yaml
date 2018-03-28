@@ -1,7 +1,6 @@
 assets:
   css:
     - content-header.css
-    - $ref: ../../00-atoms/components/button.yaml#/assets/css
     - $ref: ../../01-molecules/components/meta.yaml#/assets/css
     - $ref: ../../01-molecules/components/audio-player.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/select-nav.yaml#/assets/css
@@ -139,8 +138,6 @@ schema:
     download:
       type: string
       minLength: 1
-    button:
-      $ref: ../../00-atoms/components/button.yaml#/schema
     selectNav:
       $ref: ../../01-molecules/navigation/select-nav.yaml#/schema
     meta:

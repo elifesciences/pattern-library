@@ -135,12 +135,7 @@
 
   "contentHeader": {
     "title": "Podcasts",
-    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris.",
-    "button": {
-      "text": "Subscribe",
-      "path": "#",
-      "classes": "button--default button--small"
-    }
+    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris."
   },
 
   "leadParas": {

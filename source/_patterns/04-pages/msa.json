@@ -137,11 +137,6 @@
     "title": "Microbiology and infectious disease",
     "longTitle": true,
     "impactStatement": "eLife publishes research covering virology, bacteriology and mycology. Decisions are made by journal editors who are active researchers in the fields of microbiology and infectious disease.",
-    "button": {
-      "text": "Subscribe",
-      "url": "#",
-      "classes": "button--reversed button--small"
-    },
     "image": {
       "fallback": {
         "defaultPath": "https://unsplash.it/1114/336"

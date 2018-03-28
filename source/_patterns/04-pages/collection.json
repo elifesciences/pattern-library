@@ -151,11 +151,6 @@
         }
       }
     },
-    "button": {
-      "text": "Subscribe",
-      "path": "#",
-      "classes": "button--reversed button--small"
-    },
     "image": {
       "fallback": {
         "defaultPath": "https://unsplash.it/1114/336"

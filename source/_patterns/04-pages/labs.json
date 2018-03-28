@@ -136,11 +136,6 @@
   "contentHeader": {
     "title": "eLife Labs",
     "impactStatement": "eLife Labs showcases experiments in new functionality and technologies. Some experiments may be developed further to become features on the eLife platform. Feedback welcome!",
-    "button": {
-      "text": "Subscribe",
-      "path": "#",
-      "classes": "button--reversed button--small"
-    },
     "image": {
       "fallback": {
         "defaultPath": "https://unsplash.it/1114/336"
