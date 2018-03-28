@@ -10,6 +10,8 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
+    allRelated:
+      type: boolean
     heading:
       $ref: ../../00-atoms/components/list-heading.yaml#/schema
     id:
