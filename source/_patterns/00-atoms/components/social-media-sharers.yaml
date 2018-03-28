@@ -6,16 +6,21 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    encodedEmailSubjectLine:
+    facebookUrl:
       type: string
       minLength: 1
-    encodedTweetText:
+    twitterUrl:
       type: string
       minLength: 1
-    encodedUri:
+    emailUrl:
+      type: string
+      minLength: 1
+    redditUrl:
       type: string
       minLength: 1
   required:
-    - encodedEmailSubjectLine
-    - encodedTweetText
-    - encodedUri
+    - facebookUrl
+    - twitterUrl
+    - emailUrl
+    - redditUrl
+
