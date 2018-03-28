@@ -28,15 +28,15 @@
   color: $color-text--reverse;
   margin: 0 8px;
   height: 24px;
-  padding: 2px 6px;
+  padding: 2px 0;
   text-decoration: none;
   transition: 25ms ease-out;
+  width: 24px;
 
   .content-header--image & {
     background-color: transparent;
     border: 1px solid $color-text--reverse;
-    padding-bottom: 1px;
-    padding-top: 1px;
+    padding: 1px 0;
   }
 
   .content-header:not(.content-header--image) & {
