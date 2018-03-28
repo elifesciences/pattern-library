@@ -11,6 +11,7 @@
 //  Fill: solid
 
 .social-media-sharers {
+  @include blg-spacing("bottom", "small");
   @include blg-spacing("top", "small", "margin");
   flex-grow: 0;
   flex-basis: 1.5rem;
