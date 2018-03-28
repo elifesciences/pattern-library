@@ -15,6 +15,8 @@ COPY --chown=elife:elife \
 # customized command for composer
 RUN composer --no-interaction install
 
+COPY --chown=elife:elife bin/ ${PROJECT_FOLDER}/bin
+COPY --chown=elife:elife extras/ ${PROJECT_FOLDER}/extras
 COPY --from=assets \
     --chown=elife:elife \
     /srv/pattern-library/source/ ${PROJECT_FOLDER}/source
@@ -23,6 +25,7 @@ COPY --chown=elife:elife \
 COPY --chown=elife:elife \
     core/styleguide ${PROJECT_FOLDER}/public/styleguide
 COPY --chown=elife:elife config/ ${PROJECT_FOLDER}/config
+RUN php bin/validate
 RUN php core/builder.php -g
 
 FROM nginx:1.13.7
