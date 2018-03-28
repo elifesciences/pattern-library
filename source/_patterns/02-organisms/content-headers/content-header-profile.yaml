@@ -1,6 +1,7 @@
 assets:
   css:
-    - content-header.css
+    - content-header-profile.css
+    - $ref: ../../00-atoms/components/orcid.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -21,6 +22,8 @@ schema:
         emailAddress:
           type: string
           format: email
+        orcid:
+          $ref: ../../00-atoms/components/orcid.yaml#/schema
       minProperties: 1
     secondaryLinks:
       type: array

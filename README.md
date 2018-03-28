@@ -95,6 +95,40 @@ gulp test:selenium
 
 is used inside the pattern-library VM and should not be used elsewhere.
 
+# Docker setup
+
+```
+docker-compose build
+```
+
+(re)builds all images:
+
+- `elifesciences/pattern-library_assets` is a Node-based image for Gulp usage
+- `elifesciences/pattern-library` is the UI
+- `elifesciences/pattern-library_ci` is used to run tests
+- an anonymous `selenium` image extension.
+
+```
+docker-compose up
+```
+
+runs containers so that the static website is accessible through a browser at http://localhost:8889
+
+```
+docker-compose run --rm ci ./project_tests.sh
+```
+
+runs all tests.
+
+To create an exploratory session with the browser used by the Selenium test suite:
+
+```
+docker-compose up -d
+curl -v localhost:4/wd/hub/session -d '{"desiredCapabilities":{"browserName":"firefox"}}'
+```
+
+Connect to this browser by using a VNC client (such as `vinagre`) on `localhost:5900`, with password `secret`. You can visit the pattern-library static website at `http://ui`.
+
 # Notes
 
 All assets paths in Mustache templates must be wrapped in `{{#assetRewrite}}`, which allows implementations to rewrite the path for cache-busting purposes. The path must also be prepended by `{{assetsPath}}`. 

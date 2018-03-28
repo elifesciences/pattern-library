@@ -36,6 +36,15 @@
 }
 
 .button--outline {
+  @include colors($color-text--reverse, $color-primary, $color-primary);
+  @include padding(15 36 14);
+
+  &:hover {
+    @include colors($color-text--reverse, $color-primary-dark, $color-primary-dark);
+  }
+}
+
+.button--reversed {
   @include colors(transparent, $color-text--reverse);
   @include padding(15 36 14);
 
@@ -82,53 +91,9 @@
   }
 }
 
-.button--outline-inactive {
+.button--reversed-inactive {
   @include colors($color-text--reverse, #909090, #909090);
   border-width: 2px;
 
   cursor: not-allowed;
-}
-
-.button--speech-bubble {
-  @include colors($color-primary);
-  display: block;
-  font-family: $font-primary;
-  // line-height deliberately set smaller than font size because the default content is expected to be a double-quote
-  // character, which sits high on the line. When the content is not the default, ensure to apply the
-  // class: button--speech-bubble-populated
-  @include font-size-and-vertical-height(48, 36);
-  @include height(36);
-  padding: 0;
-  @include blg-spacing("top", "extra-small");
-  position: relative;
-  @include width($button-speech-bubble-width-in-px);
-
-  &:after {
-    @include arrow("right", 20, $color-primary);
-    left: 8px;
-    position: absolute;
-    top: 8px;
-    z-index: -1;
-
-    &:hover {
-      border-left-color: $color-primary-dark;
-    }
-
-  }
-
-  &:hover {
-    background-color: $color-primary-dark;
-    border-color: $color-primary-dark;
-
-    &:after {
-      border-left-color: $color-primary-dark;
-    }
-  }
-
-  &.button--speech-bubble-populated {
-    font-family: $font-secondary;
-    @include font-size-and-vertical-height(14, 36);
-    padding-top: 0;
-  }
-
 }

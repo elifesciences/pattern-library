@@ -6,7 +6,3 @@ gulp test
 
 echo "Running Selenium test suite"
 gulp test:selenium
-
-echo "Running validation against schema"
-bin/validate
-

@@ -1,0 +1,60 @@
+@import "../../definitions";
+
+.annotation-teaser {
+  @include teaser-root-style();
+}
+
+.annotation-teaser__link {
+  color: inherit;
+}
+
+.annotation-teaser__document {
+  @include label-content-typeg();
+  @include truncate-with-ellipsis();
+  @include blg-spacing("bottom", "small", "margin");
+}
+
+.annotation-teaser__highlight {
+  @include nospace();
+  @include body-typeg();
+  color: $color-text-secondary;
+
+  & a {
+    color: inherit;
+  }
+
+  &:after {
+    border-bottom: 2px solid $color-text-dividers;
+    content: "";
+    display: block;
+    @include blg-spacing("bottom", "extra-small", "margin");
+    @include height(12);
+    @include width(24);
+  }
+
+}
+
+.annotation-teaser__content {
+  @include body-typeg();
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.annotation-teaser__reply {
+  @include body-typeg();
+  @include font-size-and-vertical-height(14);
+}
+
+.annotation-teaser__reply_cta {
+  color: $color-primary;
+}
+
+.annotation-teaser__footer {
+  @include teaser-footer-style();
+
+  // Provides correct spacing when working around variant pattern inheriting data from main pattern (PatternLab; bug?)
+  @include blg-spacing("top", "extra-small");
+}

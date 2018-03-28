@@ -8,6 +8,10 @@
       {
         "name": "Epidemiology and global health",
         "url": "#"
+      },
+      {
+        "name": "Ridiculously long name that will get truncated and narrower screen widths",
+        "url": "#"
       }
     ]
   },

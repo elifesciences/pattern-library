@@ -14,33 +14,40 @@
 }
 
 .teaser__context_label_list {
-  @include teaser-context-label-list-style();
+  @include nospace();
+  position: relative;
+  @include truncate-with-ellipsis();
+
+  .listing-list--highlights & {
+    display: none;
+  }
+
 }
 
-.teaser__context_label_list_item {
+.teaser__context_label_item {
+  display: inline;
+  list-style-type: none;
+  @include nospace();
 
-  @include teaser-context-label-list-item-style();
-  @include font-size-and-vertical-height(11);
   & .teaser__context_label:after {
     content: ", ";
   }
-}
 
-.teaser__context_label_list_item:last-child {
-
-  & .teaser__context_label:after {
-    content: "";
+  &:last-child {
+    & .teaser__context_label:after {
+      content: "";
+    }
   }
 
 }
 
 .teaser__context_label {
-  @include teaser-context-label-style();
+  // content-label rather than subject-label as not it's not always subjects in here
+  @include label-content-typeg();
 }
 
 // Extra specificity to override normalised style
 .teaser .teaser__context_label_link {
-  @include font-size-and-vertical-height(11);
   text-decoration: none;
 
   .teaser__context_label {
@@ -215,4 +222,3 @@
     }
   }
 }
-

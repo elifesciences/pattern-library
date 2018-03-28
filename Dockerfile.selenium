@@ -1,0 +1,4 @@
+FROM selenium/standalone-firefox-debug:3.11.0-bismuth
+USER root
+RUN apt-get update && apt-get -y install mplayer linux-sound-base
+USER seluser

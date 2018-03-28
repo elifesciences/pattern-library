@@ -13,6 +13,7 @@ if (window.localStorage && document.querySelector &&
 
   // import modules into the list of Components.
   Components.AboutProfiles = require('./components/AboutProfiles');
+  Components.AnnotationTeaser = require('./components/AnnotationTeaser');
   Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
   Components.ArticleSection = require('./components/ArticleSection');
   Components.AssetNavigation = require('./components/AssetNavigation');
@@ -24,6 +25,7 @@ if (window.localStorage && document.querySelector &&
   Components.FilterPanel = require('./components/FilterPanel');
   Components.FragmentHandler = require('./components/FragmentHandler');
   Components.Highlights = require('./components/Highlights');
+  Components.HypothesisLoader = require('./components/HypothesisLoader');
   Components.HypothesisOpener = require('./components/HypothesisOpener');
   Components.LoginControl = require('./components/LoginControl');
   Components.MainMenu = require('./components/MainMenu');
@@ -37,6 +39,7 @@ if (window.localStorage && document.querySelector &&
   Components.SelectNav = require('./components/SelectNav');
   Components.SideBySideView = require('./components/SideBySideView');
   Components.SiteHeader = require('./components/SiteHeader');
+  Components.SpeechBubble = require('./components/SpeechBubble');
   Components.ToggleableCaption = require('./components/ToggleableCaption');
   Components.ViewerModal = require('./components/ViewerModal');
   Components.ViewSelector = require('./components/ViewSelector');

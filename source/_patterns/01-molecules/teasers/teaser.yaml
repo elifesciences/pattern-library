@@ -23,14 +23,22 @@ schema:
                 type: string
                 minLength: 1
               url:
-                type: string
-                minLength: 1
+                oneOf:
+                  - type: string
+                    minLength: 1
+                  - type: boolean
+                    enum:
+                      - false
             required:
               - name
               - url
     url:
-      minLength: 1
-      type: string
+      oneOf:
+        - type: string
+          minLength: 1
+        - type: boolean
+          enum:
+            - false
     title:
       type: string
       minLength: 1
@@ -55,10 +63,15 @@ schema:
           type: string
           minLength: 1
         url:
-          type: string
-          minLength: 1
+          oneOf:
+            - type: string
+              minLength: 1
+            - type: boolean
+              enum:
+                - false
       required:
         - name
+        - url
     image:
       allOf:
         - $ref: ../../00-atoms/components/picture.yaml#/schema
@@ -95,5 +108,6 @@ schema:
 
   required:
     - title
+    - url
     # - footer # Not in teaser~50-secondary-event.json or teaser~45-main-event.json
     # - contextLabel # Not in teaser~60-grid-style--podcast.json or teaser~55-grid-style--labs.json or teaser~40-basic.json

@@ -3,100 +3,242 @@ const spy = sinon.spy;
 
 const HypothesisOpener = require('../assets/js/components/HypothesisOpener');
 
+const generateSnippetWithoutIdentifiableFirstSection = require('./fixtures/snippetWithoutIdentifiableFirstSection.html');
+const generateSnippetWithIdentifiableFirstSection = require('./fixtures/snippetWithIdentifiableFirstSection.html');
+const generateSnippetWithParagraphs = require('./fixtures/snippetWithParagraphs.html');
+const generateHypothesisOpenerInitialDom = require('./fixtures/hypothesisOpenerInitialDom.html');
+
 describe('A HypothesisOpener Component', function () {
   'use strict';
 
   let $opener;
-  let affordance;
+  let hypothesisOpener;
 
   beforeEach(() => {
-    $opener = document.querySelector('[data-behaviour="HypothesisOpener"]');
+    $opener = generateHypothesisOpenerInitialDom();
+    hypothesisOpener = new HypothesisOpener($opener);
   });
 
-  describe('the getCurrentDisplayMode() method', () => {
+  describe('the findPositioningMethod() method', () => {
 
-    context('when the window is at least 900px wide', () => {
+    context('when supplied with an article type that should not have default positioning', () => {
 
-      let windowMock;
-
-      before(() => {
-        windowMock = {};
-        windowMock.appendChild = () => {};
-        windowMock.matchMedia = function (mediaStatement) {
-          if (mediaStatement === '(min-width: 900px)') {
-            return {
-              matches: true
-            };
-          }
-
-          return {
-            matches: false
-          };
-        }
+      it('returns the expected positioning method for type "blog-article" (aka Inside eLife)', () => {
+        expect(HypothesisOpener.findPositioningMethod('blog-article')).to.equal(HypothesisOpener.positionCentrallyInline);
       });
 
-      it('returns "multiColumn"', () => {
-        expect(HypothesisOpener.getCurrentDisplayMode(windowMock)).to.equal('multiColumn');
+      it('returns the expected positioning method for type "interview"', () => {
+        expect(HypothesisOpener.findPositioningMethod('interview')).to.equal(HypothesisOpener.positionCentrallyInline);
+      });
+
+      it('returns the expected positioning method for type "press-package"', () => {
+        expect(HypothesisOpener.findPositioningMethod('press-package')).to.equal(HypothesisOpener.positionCentrallyInline);
+      });
+
+      it('returns the expected positioning method for a "labs-post"', () => {
+        expect(HypothesisOpener.findPositioningMethod('labs-post')).to.equal(HypothesisOpener.positionCentrallyInline);
+      });
+
+      it('returns the expected positioning method for an "insight"', () => {
+        expect(HypothesisOpener.findPositioningMethod('insight')).to.equal(HypothesisOpener.positionBySecondSection);
+      });
+
+      it('returns the expected positioning method for a "feature"', () => {
+        expect(HypothesisOpener.findPositioningMethod('feature')).to.equal(HypothesisOpener.positionBySecondSection);
+      });
+
+      it('returns the expected positioning method for an "editorial"', () => {
+        expect(HypothesisOpener.findPositioningMethod('editorial')).to.equal(HypothesisOpener.positionBySecondSection);
       });
 
     });
 
-    context('when the window is narrower than 900px', () => {
+    context('when not supplied with an article type that should not have default positioning', () => {
 
-      let windowMock;
-
-      before(() => {
-        windowMock = {};
-        windowMock.matchMedia = function (mediaStatement) {
-          if (mediaStatement === '(min-width: 900px)') {
-            return {
-              matches: false
-            };
-          }
-
-          return {
-            matches: true
-          };
-        }
-      });
-
-      it('returns "singleColumn"', () => {
-        expect(HypothesisOpener.getCurrentDisplayMode(windowMock)).to.equal('singleColumn');
+      it('returns the default positioning method', () => {
+        expect(HypothesisOpener.findPositioningMethod('research-article')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('research-advance')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('short-report')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('registered-report')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('replication-study')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('tools-resources')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('correction')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('retraction')).to.equal(HypothesisOpener.positionByFirstSection);
+        expect(HypothesisOpener.findPositioningMethod('scientific-correspondence')).to.equal(HypothesisOpener.positionByFirstSection);
       });
 
     });
 
   });
 
-  describe('the static findInitialAnchorPoint() method', () => {
+  describe('the positionByFirstSection method', () => {
 
-    context('when an abstract is present in the document', () => {
+    context('when there is no identifiable first section present in the document', () => {
 
-      let $containsAbstract;
+      let $noIdentifiableFirstSection;
 
       before(() => {
-        $containsAbstract = require('./fixtures/snippetWithAbstract.html')();
+        $noIdentifiableFirstSection = generateSnippetWithoutIdentifiableFirstSection();
       });
 
-      it('returns the ".article-section__body" child of the next element sibling to the abstract', () => {
-        const foundAnchorPoint = HypothesisOpener.findInitialAnchorPoint($containsAbstract);
-        expect(foundAnchorPoint.parentNode.getAttribute('id')).to.equal('nextFollowingElementSiblingAfterAbstract');
-        expect(foundAnchorPoint.classList.contains('article-section__body')).to.be.true;
+      it('throws an error', () => {
+        expect(() => {
+          HypothesisOpener.positionByFirstSection($opener, $noIdentifiableFirstSection);
+        }).to.throw('Trying to position hypothesis opener by first section but can\'t find element with the css class article-section--first.');
+
       });
 
     });
 
-    context('when an abstract is not present in the document', () => {
+    context('when an identifiable first section is present in the document', () => {
 
-      let $doesNotContainAbstract;
+      let $containsFirstSection;
+      let id;
+      let opener;
 
-      before(() => {
-        $doesNotContainAbstract = require('./fixtures/snippetWithoutAbstract.html')();
+      beforeEach(() => {
+        $containsFirstSection = generateSnippetWithIdentifiableFirstSection();
+        opener = new HypothesisOpener($opener);
+
+        id = 'IShouldBeAppendedToTheFirstSection';
+        opener.$elm.setAttribute('id', id);
+
+        expect($containsFirstSection.querySelector(`#${id}`)).to.be.null;
+
       });
 
-      it('returns the last ".article-section" element\'s last p element child', () => {
-        const foundAnchorPoint = HypothesisOpener.findInitialAnchorPoint($doesNotContainAbstract);
-        expect(foundAnchorPoint).to.equal($doesNotContainAbstract.querySelector('.article-section:last-child p:last-child'));
+      it('appends the opener to the first section', () => {
+
+        HypothesisOpener.positionByFirstSection(opener.$elm, $containsFirstSection);
+
+        const $finalElementInFirstSection = $containsFirstSection.querySelector('.article-section--first').lastElementChild;
+        expect($finalElementInFirstSection.getAttribute('id')).to.equal(id);
+        expect($finalElementInFirstSection).to.deep.equal(opener.$elm);
+      });
+
+    });
+
+  });
+
+  describe('the positionBySecondSection method', () => {
+
+    context('when there is no identifiable first section present in the document', () => {
+
+      let $noIdentifiableFirstSection;
+
+      before(() => {
+        $noIdentifiableFirstSection = generateSnippetWithoutIdentifiableFirstSection();
+      });
+
+      it('throws an error', () => {
+        expect(() => {
+          HypothesisOpener.positionBySecondSection($opener, $noIdentifiableFirstSection);
+        }).to.throw('Trying to position hypothesis opener in second section, but can\'t find element with the css class article-section--first.');
+      });
+
+    });
+
+    context('when an identifiable first section is present in the document', () => {
+
+      let $hasIdentifiableFistSection;
+      let id;
+      let opener;
+
+      beforeEach(() => {
+        $hasIdentifiableFistSection = generateSnippetWithIdentifiableFirstSection();
+        opener = new HypothesisOpener($opener);
+
+        id = 'IShouldBeAppendedToTheSecondSection';
+        opener.$elm.setAttribute('id', id);
+
+        expect($hasIdentifiableFistSection.querySelector(`#${id}`)).to.be.null;
+
+      });
+
+      it('appends the opener to the second section', () => {
+        HypothesisOpener.positionBySecondSection(opener.$elm, $hasIdentifiableFistSection);
+        const $expectedParent = $hasIdentifiableFistSection.querySelector('.article-section--first').nextElementSibling.querySelector('.article-section__body');
+        expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
+      });
+
+    });
+
+  });
+
+  describe('the positionCentrallyInline method', () => {
+
+    context('when there are no paragraphs in the article', () => {
+
+      let $zeroParagraphCount;
+      let opener;
+      let id;
+
+      beforeEach(() => {
+        $zeroParagraphCount = generateSnippetWithParagraphs(0);
+        opener = new HypothesisOpener($opener);
+
+        id = 'IShouldBeAppendedToTheEndOfTheArticle';
+        opener.$elm.setAttribute('id', id);
+
+        expect($zeroParagraphCount.querySelector(`#${id}`)).to.be.null;
+
+      });
+
+      it('positions the opener at the end of the article', () => {
+        HypothesisOpener.positionCentrallyInline(opener.$elm, $zeroParagraphCount);
+        expect($zeroParagraphCount.lastElementChild).to.deep.equal(opener.$elm);
+      });
+
+    });
+
+    context('when there are an odd number of paragraphs in the article', () => {
+
+      let $snippetWithOddParagraphCount;
+      let opener;
+      let id;
+
+      beforeEach(() => {
+        $snippetWithOddParagraphCount = generateSnippetWithParagraphs(5);
+        opener = new HypothesisOpener($opener);
+
+        id = 'IShouldBeAppendedToTheMiddleParagraph';
+        opener.$elm.setAttribute('id', id);
+
+        expect($snippetWithOddParagraphCount.querySelector(`#${id}`)).to.be.null;
+
+      });
+
+      it('positions the opener by the middle paragraph', () => {
+        HypothesisOpener.positionCentrallyInline(opener.$elm, $snippetWithOddParagraphCount);
+        const paragraphs = $snippetWithOddParagraphCount.querySelectorAll('p');
+        const $expectedParent = paragraphs[Math.floor(paragraphs.length / 2)];
+        expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
+      });
+
+    });
+
+    context('when there are an even number of paragraphs (n) in the article', () => {
+
+      let $snippetWithEvenParagraphCount;
+      let opener;
+      let id;
+
+      beforeEach(() => {
+        $snippetWithEvenParagraphCount = generateSnippetWithParagraphs(6);
+        opener = new HypothesisOpener($opener);
+
+        id = 'IShouldBeAppendedToTheMiddleParagraphRoundingDown';
+        opener.$elm.setAttribute('id', id);
+
+        expect($snippetWithEvenParagraphCount.querySelector(`#${id}`)).to.be.null;
+
+      });
+
+      it('positions the opener by the n/2 paragraph', () => {
+        HypothesisOpener.positionCentrallyInline(opener.$elm, $snippetWithEvenParagraphCount);
+        const paragraphs = $snippetWithEvenParagraphCount.querySelectorAll('p');
+        const $expectedParent = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
+        expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
       });
 
     });

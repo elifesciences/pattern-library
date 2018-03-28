@@ -14,7 +14,7 @@
       "url": "#",
       "image": {
         "fallback": {
-          "srcset": "https://unsplash.it/80/80 80w",
+          "srcset": "https://unsplash.it/80/80 1x",
           "defaultPath": "https://unsplash.it/40/40",
           "altText": ""
         }
@@ -25,7 +25,7 @@
   "button": {
     "text": "Subscribe",
     "path": "#",
-    "classes": "button--outline button--small"
+    "classes": "button--reversed button--small"
   },
   "meta": {
     "url": "#",

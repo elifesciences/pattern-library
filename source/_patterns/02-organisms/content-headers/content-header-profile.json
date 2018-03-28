@@ -6,7 +6,10 @@
       "University of Middle of Nowhere",
       "University of East of Nowhere"
     ],
-    "emailAddress": "madeup@example.com"
+    "emailAddress": "madeup@example.com",
+    "orcid": {
+      "id": "0000-0002-3400-7927"
+    }
   },
   "secondaryLinks": [
     {

@@ -8,6 +8,7 @@ module.exports = class Popup {
     if ($elm.dataset.popupWrapper) {
       $link = utils.buildElement('a');
       $link.classList.add('popup__wrapper');
+      $link.href = '#';
       $elm.parentNode.insertBefore($link, $elm);
       $link.appendChild($elm);
     } else {
@@ -211,14 +212,32 @@ module.exports = class Popup {
     return utils.wrapElements(children, 'div', 'popup');
   }
 
+  calcInitialPosition(e, width) {
+    // Triggered by a pointer
+    if (e.pageX || e.pageY) {
+      return {
+        left: e.pageX - (width / 2),
+        top: e.pageY + 20
+      };
+    }
+
+    // Triggered by keyboard
+    const rect = e.currentTarget.getBoundingClientRect();
+    return {
+      left: rect.left + this.window.scrollX,
+      top: (rect.bottom - /*three baseline grid measures*/72) +  this.window.scrollY
+    };
+  }
+
   positionPopupHitBox(e) {
     this.popupHitBox.style.display = '';
 
     const width = this.popupHitBox.offsetWidth;
     const height = this.popupHitBox.offsetHeight;
 
-    let left = e.pageX - (width / 2);
-    let top = e.pageY + 20;
+    const initialPosition = this.calcInitialPosition(e, width);
+    let left = initialPosition.left;
+    let top = initialPosition.top;
 
     // If off the left.
     if (left < 10) {
@@ -238,6 +257,14 @@ module.exports = class Popup {
 
     this.popupHitBox.style.left = `${left}px`;
     this.popupHitBox.style.top = `${top}px`;
+  }
+
+  static setLinksClasses($root) {
+    if ($root instanceof HTMLElement) {
+      [].slice.call($root.querySelectorAll('a')).forEach($link => {
+        $link.classList.add('popup__link');
+      });
+    }
   }
 
   render(e) {
@@ -266,6 +293,8 @@ module.exports = class Popup {
       this.popupHitBox = this.createPopupHitBox(
         this.createPopupBox(...children)
       );
+
+      Popup.setLinksClasses(this.popupHitBox);
 
       // Add to DOM.
       this.doc.body.appendChild(this.popupHitBox);
