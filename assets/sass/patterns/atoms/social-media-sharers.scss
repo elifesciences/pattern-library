@@ -33,6 +33,7 @@
   transition: 25ms ease-out;
 
   .content-header--image & {
+    background-color: transparent;
     border: 1px solid $color-text--reverse;
     padding-bottom: 1px;
     padding-top: 1px;
