@@ -36,6 +36,7 @@
 }
 
 .social-media-sharer {
+  background-color: $color-text;
   border-radius: 5px;
   transition: 25ms ease-out;
   padding: 0.4em 0.75em;
@@ -67,20 +68,20 @@
 }
 
 .social-media-sharer {
-  background-color: $color-text;
-  border-radius: #{$border-radius}px;
-  color: #fff;
-}
 
-.content-header:not(.content-header--image) {
+  .content-header--image & {
+    border: 1px solid $color-text--reverse;
+  }
 
-  .social-media-sharer {
+  .content-header:not(.content-header--image) & {
+
     &:hover,
     &:active {
       background-color: $color-primary;
     }
 
   }
+
 }
 
 /* stylelint-enable */
