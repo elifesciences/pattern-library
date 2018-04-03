@@ -8,16 +8,18 @@ schema:
   properties:
     facebookUrl:
       type: string
-      minLength: 1
+      format: uri
     twitterUrl:
       type: string
       minLength: 1
+      format: uri
     emailUrl:
       type: string
       minLength: 1
     redditUrl:
       type: string
       minLength: 1
+      format: uri
   required:
     - facebookUrl
     - twitterUrl
