@@ -49,6 +49,7 @@ elifePipeline {
             elifeOnNode(
                 {
                     stage 'Deploying to a public URL (containers)', {
+                        checkout scm
 
                         def url = "https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
                         elifeGithubCommitStatus commit, 'pending', 'continuous-integration/jenkins/pr-demo', 'Static website is being built', url
