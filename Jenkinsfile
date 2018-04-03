@@ -44,6 +44,25 @@ elifePipeline {
                 }
             }
         }
+
+        elifeOnNode(
+            {
+                stage 'Deploying to a public URL (containers)', {
+
+                    def url = "https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
+                    elifeGithubCommitStatus commit, 'pending', 'continuous-integration/jenkins/pr-demo', 'Static website is being built', url
+
+                    def container = sh script: 'docker run -d elifesciences/pattern-library', returnStdout: true
+                    sh "docker stop ${container}"
+                    sh "docker cp ${container}:/usr/share/nginx/html public/"
+                    sh "docker rm ${container}"
+                    sh "aws s3 cp public/ s3://ci-pattern-library/${prNumber}/ --recursive"
+                    sh "/usr/local/jenkins-scripts/colorize.sh You can see this pattern-library version at ${url}"
+                    elifeGithubCommitStatus commit, 'success', 'continuous-integration/jenkins/pr-demo', 'Static website is ready', url
+                }
+            },
+            'containers--medium'
+        )
     }
 
     elifeMainlineOnly {
