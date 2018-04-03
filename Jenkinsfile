@@ -54,7 +54,7 @@ elifePipeline {
                         def url = "https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
                         elifeGithubCommitStatus commit, 'pending', 'continuous-integration/jenkins/pr-demo', 'Static website is being built', url
 
-                        def container = sh script: 'docker run -d elifesciences/pattern-library', returnStdout: true
+                        def container = sh(script: 'docker run -d elifesciences/pattern-library', returnStdout: true).trim()
                         sh "docker stop ${container}"
                         sh "docker cp ${container}:/usr/share/nginx/html public/"
                         sh "docker rm ${container}"
