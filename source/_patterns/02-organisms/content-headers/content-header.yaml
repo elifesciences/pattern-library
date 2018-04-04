@@ -1,7 +1,7 @@
 assets:
   css:
     - content-header.css
-    - $ref: ../../00-atoms/components/button.yaml#/assets/css
+    - $ref: ../../00-atoms/components/social-media-sharers.yaml#/assets/css
     - $ref: ../../01-molecules/components/meta.yaml#/assets/css
     - $ref: ../../01-molecules/components/audio-player.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/select-nav.yaml#/assets/css
@@ -92,6 +92,8 @@ schema:
         subjects: [hasSubjects]
         hasProfile: [profile]
         profile: [hasProfile]
+    socialMediaSharers:
+      $ref: ../../00-atoms/components/social-media-sharers.yaml#/schema
     authors:
       type: object
       properties:
@@ -137,8 +139,6 @@ schema:
     download:
       type: string
       minLength: 1
-    button:
-      $ref: ../../00-atoms/components/button.yaml#/schema
     selectNav:
       $ref: ../../01-molecules/navigation/select-nav.yaml#/schema
     meta:
