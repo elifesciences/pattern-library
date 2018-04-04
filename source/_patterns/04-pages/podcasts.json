@@ -136,10 +136,11 @@
   "contentHeader": {
     "title": "Podcasts",
     "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris.",
-    "button": {
-      "text": "Subscribe",
-      "path": "#",
-      "classes": "button--default button--small"
+    "socialMediaSharers": {
+      "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
     }
   },
 
