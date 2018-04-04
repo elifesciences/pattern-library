@@ -136,10 +136,11 @@
   "contentHeader": {
     "title": "eLife Labs",
     "impactStatement": "eLife Labs showcases experiments in new functionality and technologies. Some experiments may be developed further to become features on the eLife platform. Feedback welcome!",
-    "button": {
-      "text": "Subscribe",
-      "path": "#",
-      "classes": "button--reversed button--small"
+    "socialMediaSharers": {
+      "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
     },
     "image": {
       "fallback": {
