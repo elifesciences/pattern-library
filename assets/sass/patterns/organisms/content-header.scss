@@ -47,10 +47,16 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    height: #{$content-header-image-height--wide-screen}px;
+    min-height: #{$content-header-image-height--wide-screen}px;
   }
 
   .content-header__body {
+    height: #{($content-header-padding * 5.5)}px;
+
+    .content-header--has-social-media-sharers & {
+      min-height: #{$content-header-padding * 7}px;
+    }
+
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -61,6 +67,15 @@
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include padding(0 48);
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      height: #{$content-header-padding * 7}px;
+
+      .content-header--has-social-media-sharers & {
+        min-height: #{$content-header-padding * 9}px;
+      }
+
     }
 
   }

@@ -2,7 +2,7 @@
 <div class="content-header-image-wrapper{{^image.creditOverlay}}{{^image.credit}} content-header-image-wrapper--no-credit{{/image.credit}}{{/image.creditOverlay}}">
 {{/image}}
   <header
-    class="content-header {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} clearfix"
+    class="content-header {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} {{#hasSocialMediaSharers}}content-header--has-social-media-sharers{{/hasSocialMediaSharers}} clearfix"
     data-behaviour="ContentHeader">
 
   {{#image}}
@@ -109,6 +109,11 @@
     {{#impactStatement}}
       <div class="content-header__impact-statement">{{{impactStatement}}}</div>
     {{/impactStatement}}
+
+    {{#socialMediaSharers}}
+      {{> atoms-social-media-sharers}}
+    {{/socialMediaSharers}}
+
   </div>
 
   {{#authors}}
@@ -138,10 +143,6 @@
       {{/institutions}}
     </div>
   {{/authors}}
-
-    {{#socialMediaSharers}}
-      {{> atoms-social-media-sharers}}
-    {{/socialMediaSharers}}
 
   {{#selectNav}}
     <div class="content-header__cta">
