@@ -13,20 +13,24 @@ elifePipeline {
             }
 
             stage 'Project tests', {
-                // ensure a clean starting state
-                sh "docker-compose down -v"
+                withCommitStatus({
+                    // ensure a clean starting state
+                    sh "docker-compose down -v"
 
-                sh "docker-compose run ci ./project_tests.sh"
-                // it is not yet possible to retrieve a JUnit XML log to archive as a test artifact:
-                // - the `xunit` formatter mangles the XML outputting also debug statements between tags
-                // - the `xunit-file` formatter, which is an external plugin, doesn't seem to work with gulp-mocha-phantomjs
+                    sh "docker-compose run ci ./project_tests.sh"
+                    // it is not yet possible to retrieve a JUnit XML log to archive as a test artifact:
+                    // - the `xunit` formatter mangles the XML outputting also debug statements between tags
+                    // - the `xunit-file` formatter, which is an external plugin, doesn't seem to work with gulp-mocha-phantomjs
+                }, 'project-tests', commit)
             }
 
             stage 'Smoke tests', {
-                sh "docker-compose run ci ./smoke_tests.sh ui http"
+                withCommitStatus({
+                    sh "docker-compose run ci ./smoke_tests.sh ui http"
 
-                // preserve environment to allow investigation if build fails, clean up otherwise
-                sh "docker-compose down -v"
+                    // preserve environment to allow investigation if build fails, clean up otherwise
+                    sh "docker-compose down -v"
+                }, 'smoke-tests', commit)
             }
 
             elifePullRequestOnly { prNumber ->
