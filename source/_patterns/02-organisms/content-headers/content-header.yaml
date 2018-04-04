@@ -92,8 +92,6 @@ schema:
         subjects: [hasSubjects]
         hasProfile: [profile]
         profile: [hasProfile]
-    hasSocialMediaSharers:
-      type: boolean
     socialMediaSharers:
       $ref: ../../00-atoms/components/social-media-sharers.yaml#/schema
     authors:
