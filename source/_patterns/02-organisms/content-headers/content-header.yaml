@@ -1,6 +1,7 @@
 assets:
   css:
     - content-header.css
+    - $ref: ../../00-atoms/components/social-media-sharers.yaml#/assets/css
     - $ref: ../../01-molecules/components/meta.yaml#/assets/css
     - $ref: ../../01-molecules/components/audio-player.yaml#/assets/css
     - $ref: ../../01-molecules/navigation/select-nav.yaml#/assets/css

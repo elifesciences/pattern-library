@@ -11,18 +11,15 @@ schema:
       format: uri
     twitterUrl:
       type: string
-      minLength: 1
       format: uri
     emailUrl:
       type: string
-      minLength: 1
+      format: uri
     redditUrl:
       type: string
-      minLength: 1
       format: uri
   required:
     - facebookUrl
     - twitterUrl
     - emailUrl
     - redditUrl
-
