@@ -455,17 +455,32 @@ $iconlist: cc oa;
   display: block;
 }
 
-.content-header__author:after {
-  content: ", ";
+.content-header__author_separator {
+  .content-header__author--last-non-excess + & {
+    display: none;
+
+    .content-header__author_list--expanded & {
+      display: inline;
+    }
+  }
 }
 
-.content-header__author--last-non-excess:after {
-  content: "";
+li.content-header__author_list_item--last .content-header__author_separator {
+  display: none;
+}
 
-  .content-header__author_list--expanded & {
-    content: ", ";
+.content-header__institution_separator {
+  .content-header__institution--last-non-excess + & {
+    display: none;
+
+    .content-header__institution_list--expanded & {
+      display: inline;
+    }
   }
+}
 
+li.content-header__institution_list_item--last .content-header__institution_separator {
+  display: none;
 }
 
 .content-header__author_link {
@@ -481,10 +496,6 @@ $iconlist: cc oa;
 .content-header__author_icon {
   padding-top: 1px;
   vertical-align: text-top;
-}
-
-li.content-header__author_list_item--last .content-header__author:after {
-  content: "";
 }
 
 .content-header__author--single {
@@ -503,12 +514,8 @@ li.content-header__author_list_item--last .content-header__author:after {
   padding: 0;
 }
 
-.content-header__institution:after {
-  content: "; ";
-}
-
-li.content-header__institution_list_item--last .content-header__institution:after {
-  content: "";
+.content-header__item_toggle {
+  white-space: nowrap;
 }
 
 .content-header__item_toggle--author {
@@ -527,8 +534,12 @@ li.content-header__institution_list_item--last .content-header__institution:afte
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
 
-  .content-header__author--last-non-excess:after {
-    content: "";
+  .content-header__author--last-non-excess .content-header__author_separator {
+    display: none;
+  }
+
+  .content-header__institution--last-non-excess .content-header__institution_separator {
+    display: none;
   }
 
   .content-header__item_toggle {
@@ -553,10 +564,6 @@ li.content-header__institution_list_item--last .content-header__institution:afte
 
   .content-header__item_toggle:hover {
     cursor: pointer;
-  }
-
-  .content-header__institution--last-non-excess:after {
-    content: "";
   }
 
 }
