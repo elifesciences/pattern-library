@@ -21,6 +21,9 @@ elifePipeline {
                 // - the `xunit` formatter mangles the XML outputting also debug statements between tags
                 // - the `xunit-file` formatter, which is an external plugin, doesn't seem to work with gulp-mocha-phantomjs
 
+                sh "docker-compose up -d"
+                sh "docker-compose run ci ./smoke_tests.sh ui"
+
                 // preserve environment to allow investigation if build fails, clean up otherwise
                 sh "docker-compose down -v"
             }
@@ -29,11 +32,6 @@ elifePipeline {
     )
 
     stage 'Smoke tests', {
-        lock('pattern-library--ci') {
-            builderDeployRevision 'pattern-library--ci', commit
-            builderSmokeTests 'pattern-library--ci', '/srv/pattern-library'
-        }
-
         elifePullRequestOnly { prNumber ->
             elifeOnNode(
                 {
