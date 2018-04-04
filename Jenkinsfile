@@ -23,8 +23,7 @@ elifePipeline {
             }
 
             stage 'Smoke tests', {
-                sh "docker-compose up -d"
-                sh "docker-compose run ci ./smoke_tests.sh ui"
+                sh "docker-compose run ci ./smoke_tests.sh ui http"
 
                 // preserve environment to allow investigation if build fails, clean up otherwise
                 sh "docker-compose down -v"
