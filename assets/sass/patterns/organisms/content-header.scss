@@ -466,6 +466,10 @@ $iconlist: cc oa;
   display: block;
 }
 
+.content-header__author_suffix {
+  white-space: nowrap;
+}
+
 .content-header__author_separator {
   .content-header__author--last-non-excess + & {
     display: none;
