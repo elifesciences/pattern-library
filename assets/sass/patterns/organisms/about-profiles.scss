@@ -9,6 +9,18 @@
   }
 }
 
+.about-profiles__item {
+  .about-profiles--compact & {
+    &:after {
+      border-bottom: 1px solid $color-text-dividers;
+      content: "";
+      display: block;
+      @include width(48);
+      @include blg-spacing("bottom", "smallish", "margin")
+    }
+  }
+}
+
 @media only all and (min-width: #{get-rem-from-px($bkpt-grid-listing--medium-width)}em) {
   .about-profiles--compact {
     @supports (display: flex) {

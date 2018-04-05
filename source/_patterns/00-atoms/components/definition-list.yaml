@@ -1,0 +1,26 @@
+assets:
+  css:
+    - definition-list.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    items:
+      type: array
+      minItems: 1
+      items:
+        type: object
+        properties:
+          term:
+            type: string
+          descriptors:
+            type: array
+            minItems: 1
+            items:
+              type: string
+        required:
+          - term
+          - descriptors
+  required:
+    - items
