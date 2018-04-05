@@ -1,9 +1,10 @@
 elifePipeline {
     def commit
-    def image = DockerImage.elifesciences(this, "pattern-library", commit)
+    def image
     stage 'Checkout approved', {
         checkout scm
         commit = elifeGitRevision()
+        image = DockerImage.elifesciences(this, "pattern-library", commit)
     }
 
     stage 'Deploy', {
