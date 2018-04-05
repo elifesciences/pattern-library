@@ -12,7 +12,6 @@ elifePipeline {
                 checkout scm
                 sh "IMAGE_TAG=${commit} docker-compose build"
                 image = DockerImage.elifesciences(this, "pattern-library", commit)
-                image.push()
             }
 
             stage 'Project tests', {
