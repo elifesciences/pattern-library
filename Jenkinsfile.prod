@@ -1,5 +1,6 @@
 elifePipeline {
     def commit
+    def image = DockerImage.elifesciences(this, "pattern-library", commit)
     stage 'Checkout approved', {
         checkout scm
         commit = elifeGitRevision()
@@ -8,6 +9,12 @@ elifePipeline {
     stage 'Deploy', {
         elifeDeploySlackNotification "pattern-library", "prod"
         elifeGitMoveToBranch commit, 'master'
+        elifeOnNode(
+            {
+                image.tag('latest').push()
+            },
+            'containers--medium'
+        )
         builderDeployRevision 'pattern-library--prod', commit
     }
 
