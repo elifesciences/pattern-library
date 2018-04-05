@@ -9,7 +9,7 @@
   .asset-viewer-inline & {
     clear: none;
     margin-top: 0;
-    margin-bottom: 0;
+    @include blg-spacing("bottom", "small", "margin");
   }
 }
 
