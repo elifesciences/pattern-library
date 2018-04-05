@@ -1,5 +1,6 @@
 elifePipeline {
     def commit
+    def image
     stage 'Checkout', {
         checkout scm
         commit = elifeGitRevision()
@@ -10,6 +11,8 @@ elifePipeline {
             stage 'Build images', {
                 checkout scm
                 sh "docker-compose build"
+                image = DockerImage.elifesciences(this, "pattern-library", commit)
+                image.push()
             }
 
             stage 'Project tests', {
@@ -55,5 +58,11 @@ elifePipeline {
         stage 'Approval', {
             elifeGitMoveToBranch commit, 'approved'
         }
+        elifeOnNode(
+            {
+                image.tag('approved').push()
+            },
+            'containers--medium'
+        )
     }
 }
