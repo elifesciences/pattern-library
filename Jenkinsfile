@@ -34,6 +34,11 @@ elifePipeline {
                     // preserve environment to allow investigation if build fails, clean up otherwise
                     sh "docker-compose down -v"
                 }, 'smoke-tests', commit)
+
+            }
+
+            stage 'Push image', {
+                image.push()
             }
 
             elifePullRequestOnly { prNumber ->
