@@ -37,10 +37,6 @@ elifePipeline {
 
             }
 
-            stage 'Push image', {
-                image.push()
-            }
-
             elifePullRequestOnly { prNumber ->
                 stage 'Deploying to a public URL', {
                     def url = "https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
@@ -60,6 +56,15 @@ elifePipeline {
     )
 
     elifeMainlineOnly {
+        elifeOnNode(
+            {
+                stage 'Push image', {
+                    image.push()
+                }
+            },
+            'containers--medium'
+        )
+        // TODO: run also on containers--medium
         stage 'Approval', {
             elifeGitMoveToBranch commit, 'approved'
         }
