@@ -4,4 +4,4 @@ FROM elifesciences/pattern-library_assets:${commit}
 USER elife
 COPY --chown=elife:elife test/ ${PROJECT_FOLDER}/test
 COPY --chown=elife:elife test-selenium/ ${PROJECT_FOLDER}/test-selenium
-COPY --chown=elife:elife project_tests.sh wdio.conf.js ${PROJECT_FOLDER}/
+COPY --chown=elife:elife project_tests.sh smoke_tests.sh wdio.conf.js ${PROJECT_FOLDER}/
