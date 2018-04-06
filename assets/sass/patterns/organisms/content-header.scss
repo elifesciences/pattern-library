@@ -471,7 +471,7 @@ $iconlist: cc oa;
 }
 
 .content-header__author_separator {
-  .content-header__author--last-non-excess + & {
+  .content-header__author--last-non-excess & {
     display: none;
 
     .content-header__author_list--expanded & {
@@ -485,7 +485,7 @@ $iconlist: cc oa;
 }
 
 .content-header__institution_separator {
-  .content-header__institution--last-non-excess + & {
+  .content-header__institution--last-non-excess & {
     display: none;
 
     .content-header__institution_list--expanded & {
