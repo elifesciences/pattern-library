@@ -478,10 +478,10 @@ $iconlist: cc oa;
       display: inline;
     }
   }
-}
-
-li.content-header__author_list_item--last .content-header__author_separator {
-  display: none;
+  li.content-header__author_list_item:last-child &,
+  li.content-header__author_list_item--last & {
+    display: none;
+  }
 }
 
 .content-header__institution_separator {
@@ -492,10 +492,10 @@ li.content-header__author_list_item--last .content-header__author_separator {
       display: inline;
     }
   }
-}
-
-li.content-header__institution_list_item--last .content-header__institution_separator {
-  display: none;
+  li.content-header__institution_list_item:last-child &,
+  li.content-header__institution_list_item--last & {
+    display: none;
+  }
 }
 
 .content-header__author_link {
