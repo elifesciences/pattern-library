@@ -12,6 +12,10 @@ elifePipeline {
                 checkout scm
                 sh "IMAGE_TAG=${commit} docker-compose build"
                 image = DockerImage.elifesciences(this, "pattern-library", commit)
+                elifePullRequestOnly { prNumber ->
+                    def assetsImage = DockerImage.elifesciences(this, "pattern-library_assets", commit)
+                    assetsImage.tag("pr-${prNumber}").push()
+                }
             }
 
             stage 'Project tests', {
