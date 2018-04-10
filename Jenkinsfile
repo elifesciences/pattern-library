@@ -45,7 +45,7 @@ elifePipeline {
                     sh "docker cp ${container}:/usr/share/nginx/html public/"
                     sh "docker stop ${container}"
                     sh "docker rm ${container}"
-                    sh "aws s3 cp public/ s3://ci-pattern-library/${prNumber}/ --recursive"
+                    sh "aws s3 sync public/ s3://ci-pattern-library/${prNumber}/ --recursive --delete"
                     sh "/usr/local/jenkins-scripts/colorize.sh You can see this pattern-library version at ${url}"
                     elifeGithubCommitStatus commit, 'success', 'continuous-integration/jenkins/pr-demo', 'Static website is ready', url
                 }
