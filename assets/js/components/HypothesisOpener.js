@@ -152,6 +152,7 @@ module.exports = class HypothesisOpener {
       mutations.forEach((mutation) => {
         try {
           this.updateVisibleCount(mutation.addedNodes[0].data, visibleCountSelector, isWithinContextualData);
+          this.speechBubble.removeLoadingIndicator();
           this.window.clearTimeout(timer);
         } catch (error) {
           this.handleInitFail(timer, this.window, error);
