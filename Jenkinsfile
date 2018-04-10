@@ -1,15 +1,15 @@
 elifePipeline {
     def commit
     def image
-    stage 'Checkout', {
-        checkout scm
-        commit = elifeGitRevision()
-    }
 
     elifeOnNode(
         {
-            stage 'Build images', {
+            stage 'Checkout', {
                 checkout scm
+                commit = elifeGitRevision()
+            }
+
+            stage 'Build images', {
                 sh "IMAGE_TAG=${commit} docker-compose build"
                 image = DockerImage.elifesciences(this, "pattern-library", commit)
                 elifePullRequestOnly { prNumber ->
@@ -56,28 +56,18 @@ elifePipeline {
                     elifeGithubCommitStatus commit, 'success', 'continuous-integration/jenkins/pr-demo', 'Static website is ready', url
                 }
             }
-        },
-        'containers--medium'
-    )
 
-    elifeMainlineOnly {
-        elifeOnNode(
-            {
+            elifeMainlineOnly {
                 stage 'Push image', {
                     image.push()
                 }
-            },
-            'containers--medium'
-        )
-        // TODO: run also on containers--medium
-        stage 'Approval', {
-            elifeGitMoveToBranch commit, 'approved'
-        }
-        elifeOnNode(
-            {
-                image.tag('approved').push()
-            },
-            'containers--medium'
-        )
-    }
+
+                stage 'Approval', {
+                    elifeGitMoveToBranch commit, 'approved'
+                    image.tag('approved').push()
+                }
+            }
+        },
+        'containers--medium'
+    )
 }
