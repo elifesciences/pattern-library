@@ -42,7 +42,7 @@ elifePipeline {
                     elifeGithubCommitStatus commit, 'pending', 'continuous-integration/jenkins/pr-demo', 'Static website is being built', url
 
                     def container = sh(script: "docker run -d elifesciences/pattern-library:${commit}", returnStdout: true).trim()
-                    sh "docker cp ${container}:/usr/share/nginx/html public/"
+                    sh "docker cp ${container}:/usr/share/nginx/html/. public/"
                     sh "docker stop ${container}"
                     sh "docker rm ${container}"
                     sh "aws s3 sync public/ s3://ci-pattern-library/${prNumber}/ --delete"
