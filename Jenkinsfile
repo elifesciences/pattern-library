@@ -55,28 +55,18 @@ elifePipeline {
                     elifeGithubCommitStatus commit, 'success', 'continuous-integration/jenkins/pr-demo', 'Static website is ready', url
                 }
             }
-        },
-        'containers--medium'
-    )
 
-    elifeMainlineOnly {
-        elifeOnNode(
-            {
+            elifeMainlineOnly {
                 stage 'Push image', {
                     image.push()
                 }
-            },
-            'containers--medium'
-        )
-        // TODO: run also on containers--medium
-        stage 'Approval', {
-            elifeGitMoveToBranch commit, 'approved'
-        }
-        elifeOnNode(
-            {
-                image.tag('approved').push()
-            },
-            'containers--medium'
-        )
-    }
+
+                stage 'Approval', {
+                    elifeGitMoveToBranch commit, 'approved'
+                    image.tag('approved').push()
+                }
+            }
+        },
+        'containers--medium'
+    )
 }
