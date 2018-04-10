@@ -13,6 +13,8 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
+            args:
+                image_tag: ${IMAGE_TAG}
         image: elifesciences/pattern-library:${IMAGE_TAG}
         ports:
             - "8889:80"
@@ -22,6 +24,8 @@ services:
         build:
             context: .
             dockerfile: Dockerfile.ci
+            args:
+                image_tag: ${IMAGE_TAG}
         image: elifesciences/pattern-library_ci:${IMAGE_TAG}
         command: /bin/bash
         depends_on:
