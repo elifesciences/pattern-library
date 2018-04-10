@@ -129,6 +129,12 @@ curl -v localhost:4/wd/hub/session -d '{"desiredCapabilities":{"browserName":"fi
 
 Connect to this browser by using a VNC client (such as `vinagre`) on `localhost:5900`, with password `secret`. You can visit the pattern-library static website at `http://ui`.
 
+For a local build, run:
+
+```
+ENVIRONMENT=development docker-compose build assets
+```
+
 # Notes
 
 All assets paths in Mustache templates must be wrapped in `{{#assetRewrite}}`, which allows implementations to rewrite the path for cache-busting purposes. The path must also be prepended by `{{assetsPath}}`. 
