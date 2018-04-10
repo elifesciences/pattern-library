@@ -1,0 +1,19 @@
+{
+  "inline": true,
+  "items": [
+    {
+      "term": "Research focus",
+      "descriptors": [
+        "Pre-mRNA splicing",
+        "post-transcriptional gene regulation"
+      ]
+    },
+    {
+      "term": "Experimental organism",
+      "descriptors": [
+        "Human",
+        "Mouse"
+      ]
+    }
+  ]
+}

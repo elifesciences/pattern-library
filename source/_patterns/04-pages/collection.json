@@ -137,6 +137,12 @@
     "title": "Tropical disease: A selection of papers",
     "longTitle": true,
     "impactStatement": "eLife has published papers on many tropical diseases, including malaria, Ebola, leishmaniases, Dengue and African sleeping sickness. The articles below have been selected by eLife editors to give a flavour.",
+    "socialMediaSharers": {
+      "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+    },
     "header": {
       "possible": true,
       "hasProfile": true,
@@ -150,11 +156,6 @@
           }
         }
       }
-    },
-    "button": {
-      "text": "Subscribe",
-      "path": "#",
-      "classes": "button--reversed button--small"
     },
     "image": {
       "fallback": {

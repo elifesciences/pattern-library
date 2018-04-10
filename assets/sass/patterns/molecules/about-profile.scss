@@ -13,9 +13,11 @@
 
 .about-profile__role {
   margin: 0;
+  @include blg-spacing("bottom", "small", "margin");
 
   .popup & {
     @include popup-large-ancillary-text();
+    margin-bottom: 0;
   }
 }
 

@@ -1,13 +1,24 @@
 elifePipeline {
     def commit
+    def image
+    def assetsImage
     stage 'Checkout approved', {
         checkout scm
         commit = elifeGitRevision()
+        image = DockerImage.elifesciences(this, "pattern-library", commit)
+        assetsImage = DockerImage.elifesciences(this, "pattern-library_assets", commit)
     }
 
     stage 'Deploy', {
         elifeDeploySlackNotification "pattern-library", "prod"
         elifeGitMoveToBranch commit, 'master'
+        elifeOnNode(
+            {
+                image.tag('latest').push()
+                assetsImage.tag('latest').push()
+            },
+            'containers--medium'
+        )
         builderDeployRevision 'pattern-library--prod', commit
     }
 

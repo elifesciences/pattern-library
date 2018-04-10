@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+    assets:
+        build:
+            context: .
+            dockerfile: Dockerfile.assets
+            args:
+                environment: ${ENVIRONMENT}
+        image: elifesciences/pattern-library_assets:${IMAGE_TAG}
+        command: /bin/bash
+    ui:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: elifesciences/pattern-library:${IMAGE_TAG}
+        ports:
+            - "8889:80"
+        depends_on:
+            - assets
+    ci:
+        build:
+            context: .
+            dockerfile: Dockerfile.ci
+        image: elifesciences/pattern-library_ci:${IMAGE_TAG}
+        command: /bin/bash
+        depends_on:
+            - assets
+            - ui
+            - selenium
+    selenium:
+        build:
+            context: .
+            dockerfile: Dockerfile.selenium
+        image: elifescience/pattern-library_selenium:${IMAGE_TAG}
+        ports:
+            - "4444:4444" # WebDriver protocol
+            - "5900:5900" # VNC
+        volumes:
+            # https://github.com/SeleniumHQ/docker-selenium#running-the-images
+            - /dev/shm:/dev/shm

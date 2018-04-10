@@ -35,9 +35,8 @@ COPY --chown=elife:elife \
     npm-shrinkwrap.json \
     ${PROJECT_FOLDER}/
 RUN npm install
+ARG environment=production
 
-COPY --chown=elife:elife assets/ ${PROJECT_FOLDER}/assets
-COPY --chown=elife:elife source/ ${PROJECT_FOLDER}/source
 COPY --chown=elife:elife \
     .babelrc \
     .jscsrc \
@@ -46,5 +45,16 @@ COPY --chown=elife:elife \
     config.rb \
     gulpfile.js \
     ${PROJECT_FOLDER}/
-ARG environment=production
-RUN gulp --environment ${environment}
+
+COPY --chown=elife:elife assets/fonts/ ${PROJECT_FOLDER}/assets/fonts
+RUN gulp --environment ${environment} fonts
+COPY --chown=elife:elife assets/img/ ${PROJECT_FOLDER}/assets/img
+RUN gulp --environment ${environment} img
+
+COPY --chown=elife:elife assets/js/ ${PROJECT_FOLDER}/assets/js
+RUN gulp --environment ${environment} js
+
+COPY --chown=elife:elife source/ ${PROJECT_FOLDER}/source
+
+COPY --chown=elife:elife assets/sass ${PROJECT_FOLDER}/assets/sass
+RUN gulp --environment ${environment} generateStyles
