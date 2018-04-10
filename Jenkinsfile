@@ -1,15 +1,15 @@
 elifePipeline {
     def commit
     def image
-    stage 'Checkout', {
-        checkout scm
-        commit = elifeGitRevision()
-    }
 
     elifeOnNode(
         {
-            stage 'Build images', {
+            stage 'Checkout', {
                 checkout scm
+                commit = elifeGitRevision()
+            }
+
+            stage 'Build images', {
                 sh "IMAGE_TAG=${commit} docker-compose build"
                 image = DockerImage.elifesciences(this, "pattern-library", commit)
                 elifePullRequestOnly { prNumber ->
