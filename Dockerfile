@@ -1,6 +1,6 @@
-ARG commit=latest
+ARG image_tag=latest
 # looking for a better name for the node image that replaces `assets`
-FROM elifesciences/pattern-library_assets:${commit} AS assets
+FROM elifesciences/pattern-library_assets:${image_tag} AS assets
 FROM elifesciences/php_cli:22434ef5bda09326d4c9347de7d8c2f1610a0b83 AS ui-builder
 
 USER elife
