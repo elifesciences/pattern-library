@@ -1,5 +1,5 @@
-ARG commit=latest
-FROM elifesciences/pattern-library_assets:${commit}
+ARG image_tag=latest
+FROM elifesciences/pattern-library_assets:${image_tag}
 
 USER elife
 COPY --chown=elife:elife test/ ${PROJECT_FOLDER}/test
