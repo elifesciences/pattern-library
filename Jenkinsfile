@@ -43,6 +43,7 @@ elifePipeline {
 
                     def container = sh(script: "docker run -d elifesciences/pattern-library:${commit}", returnStdout: true).trim()
                     sh "docker cp ${container}:/usr/share/nginx/html/. public/"
+                    sh "rm public/50x.html"
                     sh "docker stop ${container}"
                     sh "docker rm ${container}"
                     sh "aws s3 sync public/ s3://ci-pattern-library/${prNumber}/ --delete"
