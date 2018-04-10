@@ -54,7 +54,12 @@ RUN gulp --environment ${environment} img
 COPY --chown=elife:elife assets/js/ ${PROJECT_FOLDER}/assets/js
 RUN gulp --environment ${environment} js
 
-COPY --chown=elife:elife source/ ${PROJECT_FOLDER}/source
+COPY --chown=elife:elife \
+    source/_data/ \
+    source/_patterns/ \
+    source/non-pattern-schema/ \
+    source/favicon.ico \
+    ${PROJECT_FOLDER}/source/
 
 COPY --chown=elife:elife assets/sass ${PROJECT_FOLDER}/assets/sass
 RUN gulp --environment ${environment} generateStyles
