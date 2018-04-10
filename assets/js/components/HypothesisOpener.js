@@ -13,8 +13,8 @@ module.exports = class HypothesisOpener {
     this.window = _window;
     this.doc = doc;
 
-    this.speechBubble = this.setupSpeechBubble();
     this.isWithinContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
+    this.speechBubble = this.setupSpeechBubble(this.isWithinContextualData);
     this.setupPlacementAndStyles(this.isWithinContextualData);
 
     this.loadFailHandler = null;
@@ -69,9 +69,13 @@ module.exports = class HypothesisOpener {
     this.window.console.error(errorMsg);
   }
 
-  setupSpeechBubble() {
+  setupSpeechBubble(isContextualData) {
     const speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
-    speechBubble.showLoadingIndicator();
+
+    if (isContextualData) {
+      speechBubble.showLoadingIndicator();
+    }
+
     return speechBubble;
   }
 
