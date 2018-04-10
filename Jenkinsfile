@@ -42,8 +42,8 @@ elifePipeline {
                     elifeGithubCommitStatus commit, 'pending', 'continuous-integration/jenkins/pr-demo', 'Static website is being built', url
 
                     def container = sh(script: "docker run -d elifesciences/pattern-library:${commit}", returnStdout: true).trim()
-                    sh "docker stop ${container}"
                     sh "docker cp ${container}:/usr/share/nginx/html public/"
+                    sh "docker stop ${container}"
                     sh "docker rm ${container}"
                     sh "aws s3 cp public/ s3://ci-pattern-library/${prNumber}/ --recursive"
                     sh "/usr/local/jenkins-scripts/colorize.sh You can see this pattern-library version at ${url}"
