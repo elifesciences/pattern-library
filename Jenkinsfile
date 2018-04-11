@@ -12,9 +12,9 @@ elifePipeline {
 
             stage 'Build images', {
                 sh "IMAGE_TAG=${commit} docker-compose build"
+                assetsImage = DockerImage.elifesciences(this, "pattern-library_assets", commit)
                 elifePullRequestOnly { prNumber ->
                     // push immediately to allow downstream exploration even with automated tests failing
-                    assetsImage = DockerImage.elifesciences(this, "pattern-library_assets", commit)
                     assetsImage.tag("pr-${prNumber}").push()
                 }
                 image = DockerImage.elifesciences(this, "pattern-library", commit)
