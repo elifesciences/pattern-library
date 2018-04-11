@@ -66,8 +66,6 @@ elifePipeline {
 
                 stage 'Approval', {
                     elifeGitMoveToBranch commit, 'approved'
-                    assetsImage.tag('approved').push()
-                    image.tag('approved').push()
                 }
             }
         },
