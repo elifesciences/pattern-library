@@ -1,13 +1,7 @@
 ARG image_tag=latest
-FROM elifesciences/pattern-library_assets:${image_tag} AS assets
-FROM elifesciences/pattern-library_node:${image_tag}
-
-ENV PROJECT_FOLDER=/srv/pattern-library
+FROM elifesciences/pattern-library_assets-builder:${image_tag}
 
 USER elife
 COPY --chown=elife:elife test/ ${PROJECT_FOLDER}/test
 COPY --chown=elife:elife test-selenium/ ${PROJECT_FOLDER}/test-selenium
 COPY --chown=elife:elife project_tests.sh smoke_tests.sh wdio.conf.js ${PROJECT_FOLDER}/
-COPY --from=assets \
-    --chown=elife:elife \
-    /srv/pattern-library/source/ ${PROJECT_FOLDER}/source

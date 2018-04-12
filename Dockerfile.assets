@@ -1,28 +1,5 @@
 ARG image_tag=latest
-FROM elifesciences/pattern-library_node:${image_tag} AS assets-builder
-ARG environment=production
-
-COPY --chown=elife:elife \
-    .babelrc \
-    .jscsrc \
-    .jshintrc \
-    .stylelintrc \
-    config.rb \
-    gulpfile.js \
-    ${PROJECT_FOLDER}/
-
-COPY --chown=elife:elife assets/fonts/ ${PROJECT_FOLDER}/assets/fonts
-RUN gulp --environment ${environment} fonts
-COPY --chown=elife:elife assets/img/ ${PROJECT_FOLDER}/assets/img
-RUN gulp --environment ${environment} img
-
-COPY --chown=elife:elife assets/js/ ${PROJECT_FOLDER}/assets/js
-RUN gulp --environment ${environment} js
-
-COPY --chown=elife:elife source/ ${PROJECT_FOLDER}/source
-
-COPY --chown=elife:elife assets/sass ${PROJECT_FOLDER}/assets/sass
-RUN gulp --environment ${environment} generateStyles
+FROM elifesciences/pattern-library_assets-builder:${image_tag} AS assets-builder
 
 FROM busybox:1.28.3
 ENV PROJECT_FOLDER=/srv/pattern-library
