@@ -1,60 +1,11 @@
-# Debian oldoldstable, support ends in May 2018
-# we need this for Ruby 1.9.x at the moment
-FROM node:6.13.1-wheezy
+ARG image_tag=latest
+FROM elifesciences/pattern-library_assets-builder:${image_tag} AS assets-builder
 
-# TODO: base image
-USER root
-RUN useradd -ms /bin/bash -G www-data elife && \
-    chown elife:elife /srv && \
-    mkdir /srv/bin && \
-    chown elife:elife /srv/bin && \
-    mkdir -p /var/www && \
-    chown www-data:www-data /var/www
-ENV PATH=/srv/bin:${PATH}
-# end base image
-
-# potentially base image
-RUN npm install -g gulp-cli
-# end potentially base image
-
-RUN apt-get update && apt-get install -y \
-    bzip2 \
-    g++ \
-    make \
-    ruby \
-    ruby-dev 
-
-RUN gem install compass
-
-USER elife
+FROM busybox:1.28.3
 ENV PROJECT_FOLDER=/srv/pattern-library
-RUN mkdir ${PROJECT_FOLDER}
+RUN mkdir -p ${PROJECT_FOLDER}
 WORKDIR ${PROJECT_FOLDER}
-COPY --chown=elife:elife \
-    package.json \
-    npm-shrinkwrap.json \
-    ${PROJECT_FOLDER}/
-RUN npm install
-ARG environment=production
 
-COPY --chown=elife:elife \
-    .babelrc \
-    .jscsrc \
-    .jshintrc \
-    .stylelintrc \
-    config.rb \
-    gulpfile.js \
-    ${PROJECT_FOLDER}/
-
-COPY --chown=elife:elife assets/fonts/ ${PROJECT_FOLDER}/assets/fonts
-RUN gulp --environment ${environment} fonts
-COPY --chown=elife:elife assets/img/ ${PROJECT_FOLDER}/assets/img
-RUN gulp --environment ${environment} img
-
-COPY --chown=elife:elife assets/js/ ${PROJECT_FOLDER}/assets/js
-RUN gulp --environment ${environment} js
-
-COPY --chown=elife:elife source/ ${PROJECT_FOLDER}/source
-
-COPY --chown=elife:elife assets/sass ${PROJECT_FOLDER}/assets/sass
-RUN gulp --environment ${environment} generateStyles
+COPY --from=assets-builder \
+    --chown=root:root \
+    /srv/pattern-library/source/ ${PROJECT_FOLDER}/source
