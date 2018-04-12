@@ -1,16 +1,22 @@
 elifePipeline {
     def commit
+    def assetsImage
     def image
-    stage 'Checkout', {
-        checkout scm
-        commit = elifeGitRevision()
-    }
 
     elifeOnNode(
         {
-            stage 'Build images', {
+            stage 'Checkout', {
                 checkout scm
+                commit = elifeGitRevision()
+            }
+
+            stage 'Build images', {
                 sh "IMAGE_TAG=${commit} docker-compose build"
+                assetsImage = DockerImage.elifesciences(this, "pattern-library_assets", commit)
+                elifePullRequestOnly { prNumber ->
+                    // push immediately to allow downstream exploration even with automated tests failing
+                    assetsImage.tag("pr-${prNumber}").push()
+                }
                 image = DockerImage.elifesciences(this, "pattern-library", commit)
             }
 
@@ -42,36 +48,27 @@ elifePipeline {
                     elifeGithubCommitStatus commit, 'pending', 'continuous-integration/jenkins/pr-demo', 'Static website is being built', url
 
                     def container = sh(script: "docker run -d elifesciences/pattern-library:${commit}", returnStdout: true).trim()
+                    sh "docker cp ${container}:/usr/share/nginx/html/. public/"
+                    sh "rm public/50x.html"
                     sh "docker stop ${container}"
-                    sh "docker cp ${container}:/usr/share/nginx/html public/"
                     sh "docker rm ${container}"
-                    sh "aws s3 cp public/ s3://ci-pattern-library/${prNumber}/ --recursive"
+                    sh "aws s3 sync public/ s3://ci-pattern-library/${prNumber}/ --delete"
                     sh "/usr/local/jenkins-scripts/colorize.sh You can see this pattern-library version at ${url}"
                     elifeGithubCommitStatus commit, 'success', 'continuous-integration/jenkins/pr-demo', 'Static website is ready', url
+                }
+            }
+
+            elifeMainlineOnly {
+                stage 'Push images', {
+                    assetsImage.push()
+                    image.push()
+                }
+
+                stage 'Approval', {
+                    elifeGitMoveToBranch commit, 'approved'
                 }
             }
         },
         'containers--medium'
     )
-
-    elifeMainlineOnly {
-        elifeOnNode(
-            {
-                stage 'Push image', {
-                    image.push()
-                }
-            },
-            'containers--medium'
-        )
-        // TODO: run also on containers--medium
-        stage 'Approval', {
-            elifeGitMoveToBranch commit, 'approved'
-        }
-        elifeOnNode(
-            {
-                image.tag('approved').push()
-            },
-            'containers--medium'
-        )
-    }
 }

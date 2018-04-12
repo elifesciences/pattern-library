@@ -1,9 +1,12 @@
 elifePipeline {
     def commit
+    def assetsImage
     def image
+
     stage 'Checkout approved', {
         checkout scm
         commit = elifeGitRevision()
+        assetsImage = DockerImage.elifesciences(this, "pattern-library_assets", commit)
         image = DockerImage.elifesciences(this, "pattern-library", commit)
     }
 
@@ -12,6 +15,7 @@ elifePipeline {
         elifeGitMoveToBranch commit, 'master'
         elifeOnNode(
             {
+                assetsImage.tag('latest').push()
                 image.tag('latest').push()
             },
             'containers--medium'

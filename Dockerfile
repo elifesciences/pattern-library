@@ -1,6 +1,6 @@
-ARG commit=latest
+ARG image_tag=latest
 # looking for a better name for the node image that replaces `assets`
-FROM elifesciences/pattern-library_assets:${commit} AS assets
+FROM elifesciences/pattern-library_assets:${image_tag} AS assets
 FROM elifesciences/php_cli:22434ef5bda09326d4c9347de7d8c2f1610a0b83 AS ui-builder
 
 USER elife
@@ -15,16 +15,16 @@ COPY --chown=elife:elife \
 # customized command for composer
 RUN composer --no-interaction install
 
-COPY --chown=elife:elife bin/ ${PROJECT_FOLDER}/bin
+COPY --chown=elife:elife \
+    core/styleguide ${PROJECT_FOLDER}/public/styleguide
+COPY --chown=elife:elife \
+    core/ ${PROJECT_FOLDER}/core
+COPY --chown=elife:elife config/ ${PROJECT_FOLDER}/config
 COPY --chown=elife:elife extras/ ${PROJECT_FOLDER}/extras
+COPY --chown=elife:elife bin/ ${PROJECT_FOLDER}/bin
 COPY --from=assets \
     --chown=elife:elife \
     /srv/pattern-library/source/ ${PROJECT_FOLDER}/source
-COPY --chown=elife:elife \
-    core/ ${PROJECT_FOLDER}/core
-COPY --chown=elife:elife \
-    core/styleguide ${PROJECT_FOLDER}/public/styleguide
-COPY --chown=elife:elife config/ ${PROJECT_FOLDER}/config
 RUN php bin/validate
 RUN php core/builder.php -g
 
