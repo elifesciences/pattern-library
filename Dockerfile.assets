@@ -1,6 +1,6 @@
 # Debian oldoldstable, support ends in May 2018
 # we need this for Ruby 1.9.x at the moment
-FROM node:6.13.1-wheezy
+FROM node:6.13.1-wheezy AS assets-builder
 
 # TODO: base image
 USER root
@@ -58,3 +58,12 @@ COPY --chown=elife:elife source/ ${PROJECT_FOLDER}/source
 
 COPY --chown=elife:elife assets/sass ${PROJECT_FOLDER}/assets/sass
 RUN gulp --environment ${environment} generateStyles
+
+FROM busybox:1.28.3
+ENV PROJECT_FOLDER=/srv/pattern-library
+RUN mkdir -p ${PROJECT_FOLDER}
+WORKDIR ${PROJECT_FOLDER}
+
+COPY --from=assets-builder \
+    --chown=root:root \
+    /srv/pattern-library/source/ ${PROJECT_FOLDER}/source

@@ -8,7 +8,7 @@ services:
             args:
                 environment: ${ENVIRONMENT}
         image: elifesciences/pattern-library_assets:${IMAGE_TAG}
-        command: /bin/bash
+        command: /bin/sh
     ui:
         build:
             context: .
