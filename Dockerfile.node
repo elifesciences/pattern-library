@@ -1,0 +1,37 @@
+# Debian oldoldstable, support ends in May 2018
+# we need this for Ruby 1.9.x at the moment
+FROM node:6.13.1-wheezy
+
+# TODO: base image
+USER root
+RUN useradd -ms /bin/bash -G www-data elife && \
+    chown elife:elife /srv && \
+    mkdir /srv/bin && \
+    chown elife:elife /srv/bin && \
+    mkdir -p /var/www && \
+    chown www-data:www-data /var/www
+ENV PATH=/srv/bin:${PATH}
+# end base image
+
+# potentially base image
+RUN npm install -g gulp-cli
+# end potentially base image
+
+RUN apt-get update && apt-get install -y \
+    bzip2 \
+    g++ \
+    make \
+    ruby \
+    ruby-dev 
+
+RUN gem install compass
+
+USER elife
+ENV PROJECT_FOLDER=/srv/pattern-library
+RUN mkdir ${PROJECT_FOLDER}
+WORKDIR ${PROJECT_FOLDER}
+COPY --chown=elife:elife \
+    package.json \
+    npm-shrinkwrap.json \
+    ${PROJECT_FOLDER}/
+RUN npm install
