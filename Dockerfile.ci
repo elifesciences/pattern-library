@@ -1,5 +1,5 @@
 ARG image_tag=latest
-FROM elifesciences/pattern-library_assets:${image_tag}
+FROM elifesciences/pattern-library_assets-builder:${image_tag}
 
 USER elife
 COPY --chown=elife:elife test/ ${PROJECT_FOLDER}/test
