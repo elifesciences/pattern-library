@@ -29,6 +29,7 @@ PID_LIST+=" $pid";
 trap "kill ${PID_LIST}" SIGINT
 
 echo "Running Pattern Library at http://localhost:${PORT}/";
+echo "Subprocesses: ${PID_LIST}"
 wait ${PID_LIST}
 echo
-echo "Stopping pattern library, gulp and server.";
+echo "Stopping gulp, PHP builder and PHP server: ${PID_LIST}).";
