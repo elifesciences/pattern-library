@@ -13,7 +13,7 @@ echo "Building patterns..."
 node_modules/.bin/gulp
 
 (while true; do
-  node_modules/.bin/gulp watch && sleep 5
+  node_modules/.bin/gulp watch
 done) & pid=$!
 PID_LIST+=" $pid";
 
