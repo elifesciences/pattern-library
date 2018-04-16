@@ -245,6 +245,18 @@ gulp.task('test', ['browserify-tests', 'js'], () => {
     .pipe(reload());
 });
 
+gulp.task('test:unit', ['browserify-tests'], () => {
+  return gulp.src('./test/*.html')
+    .pipe(mochaPhantomjs({
+      reporter: 'spec',
+      mocha: {
+        grep: mocha_grep
+      },
+      'ignore-resource-errors': true
+    }))
+    .pipe(reload());
+});
+
 gulp.task('test:selenium', function() {
     return gulp.src('wdio.conf.js').pipe(webdriver());
 });
