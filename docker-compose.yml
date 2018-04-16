@@ -7,6 +7,10 @@ services:
             dockerfile: Dockerfile.assets-builder
         image: elifesciences/pattern-library_assets-builder:${IMAGE_TAG}
         command: /bin/bash
+        user: "1001"
+        volumes:
+            - ./:/srv/pattern-library
+            - source_assets:/srv/pattern-library/source/assets
     assets:
         build:
             context: .
@@ -52,3 +56,6 @@ services:
         volumes:
             # https://github.com/SeleniumHQ/docker-selenium#running-the-images
             - /dev/shm:/dev/shm
+
+volumes:
+    source_assets:
