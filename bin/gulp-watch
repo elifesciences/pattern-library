@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+trap "echo ' ...Ctrl+C'; docker kill pattern-library-gulp-watch > /dev/null; docker rm pattern-library-gulp-watch > /dev/null" SIGINT 
+
+echo "Starting assets-builder Docker container..."
+docker-compose run -d --rm --name pattern-library-gulp-watch assets-builder node_modules/.bin/gulp watch
+docker logs -f pattern-library-gulp-watch

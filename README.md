@@ -138,7 +138,7 @@ ENVIRONMENT=development docker-compose build assets
 For `gulp watch`, run:
 
 ```
-docker-compose run assets-builder node_modules/.bin/gulp watch
+bin/gulp-watch
 ```
 
 (currently this cannot exit with Ctrl+C, `docker kill` is needed)
