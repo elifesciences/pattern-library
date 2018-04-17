@@ -1,11 +1,13 @@
 #!/bin/bash
 set -e
 
-trap "echo ' ...Ctrl+C'; docker kill pattern-library-gulp-watch > /dev/null; docker rm pattern-library-gulp-watch > /dev/null" SIGINT 
+trap "echo ' ...Ctrl+C'; docker kill pattern-library-gulp-watch > /dev/null; docker rm -v pattern-library-gulp-watch > /dev/null" SIGINT 
 
 docker kill pattern-library-gulp-watch > /dev/null 2>&1 || true
 docker rm pattern-library-gulp-watch > /dev/null 2>&1 || true
 
 echo "Starting assets-builder Docker container..."
+# --rm will remove anonymous volumes as well
+# https://github.com/docker/compose/pull/3756
 docker-compose run -d --rm --name pattern-library-gulp-watch assets-builder node_modules/.bin/gulp watch
 docker logs -f pattern-library-gulp-watch
