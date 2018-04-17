@@ -135,6 +135,14 @@ For a local build, run:
 ENVIRONMENT=development docker-compose build assets
 ```
 
+For `gulp watch`, run:
+
+```
+docker-compose run assets-builder node_modules/.bin/gulp watch
+```
+
+(currently this cannot exit with Ctrl+C, `docker kill` is needed)
+
 # Notes
 
 All assets paths in Mustache templates must be wrapped in `{{#assetRewrite}}`, which allows implementations to rewrite the path for cache-busting purposes. The path must also be prepended by `{{assetsPath}}`. 
