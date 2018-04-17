@@ -45,7 +45,7 @@ You should be good to go, open your browser and you will see the pattern lab.
 - install required npm packages with `npm install`
 - run `gulp` to build the css & js files.
 - then run `gulp watch` to watch for changes to files or do both in one fell swoop with `gulp && gulp watch` (the watch task on its own will not compile your assets until a file is changed).
-- run `gulp test --mocha-grep=something` to pass the `--grep` option to mocha and run a subset of tests.
+- run `gulp local:test:unit --mocha-grep=something` to pass the `--grep` option to mocha and run a subset of tests.
 - if generating files intended for website production, invoke with the production flag, like this: `gulp --environment production`. The minifies css & js files.
 
 ## 3. Generate PatternLab
