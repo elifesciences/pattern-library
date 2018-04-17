@@ -177,7 +177,7 @@ gulp.task('fonts', () => {
  * Creates a sourcemap.
  ******************************************************************************/
 
-gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests'], () => {
+gulp.task('js', ['js:hint', 'js:cs'], () => {
 
     return browserify('./assets/js/main.js', { debug: true })
           .transform(babel)
@@ -233,7 +233,19 @@ gulp.task('browserify-tests', (done) => {
 });
 
 
-gulp.task('test', ['browserify-tests', 'js'], () => {
+gulp.task('local:test:unit', ['browserify-tests', 'js'], () => {
+  return gulp.src('./test/*.html')
+    .pipe(mochaPhantomjs({
+      reporter: 'spec',
+      mocha: {
+        grep: mocha_grep
+      },
+      'ignore-resource-errors': true
+    }))
+    .pipe(reload());
+});
+
+gulp.task('test:unit', ['browserify-tests'], () => {
   return gulp.src('./test/*.html')
     .pipe(mochaPhantomjs({
       reporter: 'spec',
