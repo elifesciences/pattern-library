@@ -141,7 +141,7 @@ For `gulp watch`, run:
 bin/gulp-watch
 ```
 
-(currently this cannot exit with Ctrl+C, `docker kill` is needed)
+Exit from this script with `Ctrl+C`.
 
 # Notes
 
