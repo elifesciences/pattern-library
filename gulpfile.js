@@ -233,7 +233,7 @@ gulp.task('browserify-tests', (done) => {
 });
 
 
-gulp.task('test', ['browserify-tests', 'js'], () => {
+gulp.task('local:test:unit', ['browserify-tests', 'js'], () => {
   return gulp.src('./test/*.html')
     .pipe(mochaPhantomjs({
       reporter: 'spec',
