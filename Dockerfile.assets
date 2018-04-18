@@ -9,3 +9,6 @@ WORKDIR ${PROJECT_FOLDER}
 COPY --from=assets-builder \
     --chown=root:root \
     /srv/pattern-library/source/ ${PROJECT_FOLDER}/source
+
+ARG description=
+LABEL description=${description}
