@@ -11,7 +11,7 @@ elifePipeline {
             }
 
             stage 'Build images', {
-                sh "IMAGE_TAG=${commit} docker-compose build"
+                sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml build"
                 assetsImage = DockerImage.elifesciences(this, "pattern-library_assets", commit)
                 elifePullRequestOnly { prNumber ->
                     // push immediately to allow downstream exploration even with automated tests failing
@@ -23,9 +23,9 @@ elifePipeline {
             stage 'Project tests', {
                 withCommitStatus({
                     // ensure a clean starting state
-                    sh "IMAGE_TAG=${commit} docker-compose down -v"
+                    sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml down -v"
 
-                    sh "IMAGE_TAG=${commit} docker-compose run ci ./project_tests.sh"
+                    sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml run ci ./project_tests.sh"
                     // it is not yet possible to retrieve a JUnit XML log to archive as a test artifact:
                     // - the `xunit` formatter mangles the XML outputting also debug statements between tags
                     // - the `xunit-file` formatter, which is an external plugin, doesn't seem to work with gulp-mocha-phantomjs
@@ -34,10 +34,10 @@ elifePipeline {
 
             stage 'Smoke tests', {
                 withCommitStatus({
-                    sh "IMAGE_TAG=${commit} docker-compose run ci ./smoke_tests.sh ui http"
+                    sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml run ci ./smoke_tests.sh ui http"
 
                     // preserve environment to allow investigation if build fails, clean up otherwise
-                    sh "IMAGE_TAG=${commit} docker-compose down -v"
+                    sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml down -v"
                 }, 'smoke-tests', commit)
 
             }
