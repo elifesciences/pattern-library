@@ -11,7 +11,8 @@ elifePipeline {
             }
 
             stage 'Build images', {
-                sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml build"
+                def description = _escapeString(elifeGitSubrepositorySummary('.'))
+                sh "IMAGE_TAG=${commit} DESCRIPTION='${description}' docker-compose -f docker-compose.yml build"
                 assetsImage = DockerImage.elifesciences(this, "pattern-library_assets", commit)
                 elifePullRequestOnly { prNumber ->
                     // push immediately to allow downstream exploration even with automated tests failing
