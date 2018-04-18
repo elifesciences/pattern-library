@@ -17,13 +17,14 @@ module.exports = class HypothesisOpener {
     this.speechBubble = this.setupSpeechBubble(this.isWithinContextualData);
     this.setupPlacementAndStyles(this.isWithinContextualData);
 
-    this.loadFailHandler = null;
     let maxWaitTimer = null;
+    let $loader = null;
     try {
-      const $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
+      $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
       maxWaitTimer = this.setupPreReadyIndicatorsWithTimer($loader, this.handleInitFail);
     } catch (e) {
       this.window.console.error(e);
+      $loader.parentNode.removeChild($loader);
       return;
     }
 
@@ -48,9 +49,7 @@ module.exports = class HypothesisOpener {
 
     const maxWaitTime = 10000;
 
-    const maxWaitTimer = this.window.setTimeout(() => {
-      this.handleInitFail(null, this.window);
-    }, maxWaitTime);
+    const maxWaitTimer = this.window.setTimeout(this.handleTimerExpired.bind(this), maxWaitTime);
 
     $loader.addEventListener('loaderror', () => {
       this.handleInitFail(maxWaitTimer, this.window);
@@ -59,14 +58,28 @@ module.exports = class HypothesisOpener {
     return maxWaitTimer;
   }
 
-  handleInitFail(timer, window, errorMsg = '') {
+  handleInitFail(timer, window = this.window, errorMsg = '') {
+    this.removeHypothesisUI();
     this.speechBubble.showFailureState(this.isWithinContextualData);
     window.clearTimeout(timer);
-    if (!errorMsg.length) {
-      throw new Error('Problem loading or interacting with Hypothesis client.');
+    const errorText = errorMsg || 'Problem loading or interacting with Hypothesis client.';
+    this.window.console.error(errorText);
+  }
+
+  handleTimerExpired() {
+    this.handleInitFail();
+  }
+
+  removeHypothesisUI() {
+    const sidebar = this.doc.querySelector('.annotator-frame');
+    if (sidebar) {
+      sidebar.parentElement.removeChild(sidebar);
     }
 
-    this.window.console.error(errorMsg);
+    const popup = this.doc.querySelector('hypothesis-adder');
+    if (popup) {
+      popup.parentElement.removeChild(popup);
+    }
   }
 
   setupSpeechBubble(isContextualData) {

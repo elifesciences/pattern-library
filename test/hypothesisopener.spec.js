@@ -81,68 +81,92 @@ describe('A HypothesisOpener Component', function () {
 
     context('when the load has already failed', () => {
 
-      it('throws an error with the message "Problem loading or interacting with Hypothesis client."', () => {
+      let hypothesisOpener;
+
+      beforeEach(() => {
+        hypothesisOpener = new HypothesisOpener($opener, window, document);
+      });
+
+      it('calls handleInitFail', () => {
+
+        const failHandlerSpy = spy(hypothesisOpener, 'handleInitFail');
         $mockLoader.dataset.hypothesisEmbedLoadStatus = 'failed';
-        expect(() => {
-          hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
-        }).to.throw('Problem loading or interacting with Hypothesis client.');
+        hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
+        expect(failHandlerSpy.callCount).to.equal(1);
+        hypothesisOpener.handleInitFail.restore();
       });
 
     });
 
-    it('adds a "loaderror" event listener to the $loader', () => {
+    it('adds a "loaderror" event listener to the hypothesis loader script element', () => {
       const listenerSpy = spy($mockLoader, 'addEventListener');
 
       hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
-      expect(listenerSpy).to.be.calledOnce;
+      expect(listenerSpy.calledOnce).to.be.true;
       expect(listenerSpy.getCall(0).args[0]).to.equal('loaderror');
 
       $mockLoader.addEventListener.restore();
     });
 
-    describe('the callback that runs on a loaderror event', () => {
+    describe('the timer', () => {
 
-      it('throws the error "Problem loading or interacting with Hypothesis client."', () => {
-        const listenerSpy = spy($mockLoader, 'addEventListener');
-
-        hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
-        const loadErrorHandler = listenerSpy.getCall(0).args[1];
-        expect(() => {
-          loadErrorHandler.call();
-        }).to.throw('Problem loading or interacting with Hypothesis client.');
-
-        $mockLoader.addEventListener.restore();
-      });
-
-    });
-
-    it('sets up a timer to expire in 10000 ms', () => {
-      const timeoutSpy = spy(window, 'setTimeout');
-      expect(timeoutSpy.callCount).to.equal(0);
-
-      hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
-      expect(timeoutSpy.callCount).to.equal(1);
-      expect(timeoutSpy.getCall(0).args[1]).to.equal(10000);
-
-      window.setTimeout.restore();
-    });
-
-    describe('the callback that runs on timer expiry', () => {
-
-      it('throws the error "Problem loading or interacting with Hypothesis client."', () => {
+      it('expires after 10000 ms', () => {
         const timeoutSpy = spy(window, 'setTimeout');
-        expect(timeoutSpy).to.not.be.called;
+        expect(timeoutSpy.callCount).to.equal(0);
 
         hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
-        const handler = timeoutSpy.getCall(0).args[0];
-        expect(() => {
-          handler.call();
-        }).to.throw('Problem loading or interacting with Hypothesis client.');
+        expect(timeoutSpy.callCount).to.equal(1);
+        expect(timeoutSpy.getCall(0).args[1]).to.equal(10000);
 
         window.setTimeout.restore();
-
       });
 
+      it('has a callback which calls handleInitFail', () => {
+        const handleInitFailSpy = spy(hypothesisOpener, 'handleInitFail');
+        hypothesisOpener.handleTimerExpired();
+        expect(handleInitFailSpy.calledOnce).to.be.true;
+        hypothesisOpener.handleInitFail.restore();
+      });
+
+    });
+
+  });
+
+  describe('the handleInitFail method', () => {
+
+    let hypothesisOpener;
+
+    beforeEach(() => {
+      hypothesisOpener = new HypothesisOpener($opener, window, document);
+    });
+
+    it('logs the console error "Problem loading or interacting with Hypothesis client."', () => {
+      const errorSpy = spy(window.console, 'error');
+      hypothesisOpener.handleInitFail(null, window);
+      expect(errorSpy.calledOnceWithExactly('Problem loading or interacting with Hypothesis client.')).to.be.true;
+      window.console.error.restore();
+    });
+
+    it('clears the timer', () => {
+      const mockTimerRef = 12345;
+      const clearTimeoutSpy = spy(window, 'clearTimeout');
+      hypothesisOpener.handleInitFail(mockTimerRef, window);
+      expect(clearTimeoutSpy.calledOnceWithExactly(mockTimerRef)).to.be.true;
+      window.clearTimeout.restore();
+    });
+
+    it('triggers UI failure state', () => {
+      const showFailureSpy = spy(hypothesisOpener.speechBubble, 'showFailureState');
+      hypothesisOpener.handleInitFail(null, window);
+      expect(showFailureSpy.calledOnce).to.be.true;
+      hypothesisOpener.speechBubble.showFailureState.restore();
+    });
+
+    it('triggers removal of Hypothesis UI', () => {
+      const removeUISpy = spy(hypothesisOpener, 'removeHypothesisUI');
+      hypothesisOpener.handleInitFail(null, window);
+      expect(removeUISpy.calledOnce).to.be.true;
+      hypothesisOpener.removeHypothesisUI.restore();
     });
 
   });
