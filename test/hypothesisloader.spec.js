@@ -54,7 +54,7 @@ function separateFnsFromOtherProps(o1, o2) {
 
 }
 
-xdescribe('A HypothesisLoader Component', function () {
+describe('A HypothesisLoader Component', function () {
   'use strict';
 
   describe('on instantiation', () => {
@@ -124,26 +124,27 @@ xdescribe('A HypothesisLoader Component', function () {
         }
       });
 
-      it('sets the data attribute hypothesis-embed-load-status to "failed" on its own element', () => {
-        loader.handleLoadError();
-        expect($elm.dataset.hypothesisEmbedLoadStatus).to.equal('failed');
+      it('sets the data attribute hypothesis-embed-load-status to "failed" on the created script element', () => {
+        loader.handleLoadError(loader.$embedder);
+        expect(loader.$embedder.dataset.hypothesisEmbedLoadStatus).to.equal('failed');
       });
 
       it('emits a loaderror event with the message "Hypothesis embed load failed"', () => {
-        spy($elm, 'dispatchEvent');
+        const $spiedOn = loader.$embedder;
+        spy($spiedOn, 'dispatchEvent');
 
-        loader.handleLoadError();
+        loader.handleLoadError($spiedOn);
 
-        expect($elm.dispatchEvent.calledOnce).is.true;
+        expect($spiedOn.dispatchEvent.calledOnce).is.true;
 
-        const callArgs = $elm.dispatchEvent.getCall(0).args;
+        const callArgs = $spiedOn.dispatchEvent.getCall(0).args;
         expect(callArgs).to.have.lengthOf(1);
         const callArg = callArgs[0];
         expect(callArg).to.be.an.instanceOf(ErrorEvent);
         expect(callArg.type).to.equal('loaderror');
         expect(callArg.message).to.equal('Hypothesis embed load failed');
 
-        $elm.dispatchEvent.restore();
+        $spiedOn.dispatchEvent.restore();
       });
 
     });

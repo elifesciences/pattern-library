@@ -17,22 +17,23 @@ module.exports = class HypothesisLoader {
     try {
       this.window.hypothesisConfig = HypothesisLoader.assembleHypothesisConfig(this.window);
     } catch (e) {
-      console.error('Could\'t assemble valid Hypothesis config from external data, aborting Hypothesis client loading.');
+      console.error('Couldn\'t assemble valid Hypothesis config from external data, aborting Hypothesis client loading.');
       console.error('The error was: ', e);
       return;
     }
 
     this.$embedder = this.doc.createElement('script');
-    this.$embedder.src = 'https://hypothes.is/embed.js';
     this.$embedder.id = 'hypothesisEmbedder';
-    this.$embedder.addEventListener('error', this.handleLoadError.bind(this));
-
+    this.$embedder.addEventListener('error', () => {
+      this.handleLoadError(this.$embedder);
+    });
     this.doc.querySelector('head').appendChild(this.$embedder);
+    this.$embedder.src = 'https://hypothes.is/embed.js';
   }
 
-  handleLoadError() {
-    this.$elm.dataset.hypothesisEmbedLoadStatus = 'failed';
-    this.$elm.dispatchEvent(new this.window.ErrorEvent('loaderror',
+  handleLoadError($loader) {
+    $loader.dataset.hypothesisEmbedLoadStatus = 'failed';
+    $loader.dispatchEvent(new this.window.ErrorEvent('loaderror',
                                                        { message: 'Hypothesis embed load failed' }));
   }
 
