@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    assets-builder:
+        volumes:
+            - ./:/srv/pattern-library
+            - /srv/pattern-library/node_modules
+            - source_assets:/srv/pattern-library/source/assets
+
+volumes:
+    source_assets:
