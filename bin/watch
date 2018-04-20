@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-trap "echo ' ...Ctrl+C'; docker kill pattern-library-gulp-watch > /dev/null; docker rm -v pattern-library-gulp-watch > /dev/null; docker kill pattern-library-php-watch > /dev/null; docker rm -f pattern-library-php-watch > /dev/null;" SIGINT 
+trap "echo ' ...Ctrl+C'; docker kill pattern-library-gulp-watch > /dev/null; docker rm -v pattern-library-gulp-watch > /dev/null; docker kill pattern-library-php-watch > /dev/null; docker rm -f pattern-library-php-watch > /dev/null; docker-compose down;" SIGINT 
 
 function cleanup {
     docker kill "$1" > /dev/null 2>&1 || true
@@ -19,6 +19,7 @@ docker-compose run -d --rm --name pattern-library-gulp-watch assets-builder node
 echo "Starting ui Docker container..."
 docker-compose run --rm --name pattern-library-php-generate ui-builder php ./core/builder.php --generate
 docker-compose run -d --rm --name pattern-library-php-watch ui-builder php ./core/builder.php --watch
+docker-compose up -d ui
 
 docker logs -f pattern-library-gulp-watch &
 docker logs -f pattern-library-php-watch &
