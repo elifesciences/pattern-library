@@ -135,11 +135,15 @@ For a local build, run:
 ENVIRONMENT=development docker-compose build assets
 ```
 
-For `gulp watch`, run:
+To watch for changes, run:
 
 ```
-bin/gulp-watch
+bin/watch
 ```
+
+Changes to `assets/js` (and similar) will be propagated to the `gulp watch` process. Changes to `source/_patterns` (and similar) will be propagated to the `php core/builder.php --watch` process.
+
+This script does not allow to run tests on the result of the watch (yet).
 
 Exit from this script with `Ctrl+C`.
 
