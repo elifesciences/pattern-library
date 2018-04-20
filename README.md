@@ -103,8 +103,10 @@ docker-compose build
 
 (re)builds all images:
 
-- `elifesciences/pattern-library_assets` is a Node-based image for Gulp usage
-- `elifesciences/pattern-library` is the UI
+- `elifesciences/pattern-library_assets-builder` is a Node-based image for Gulp usage
+- `elifesciences/pattern-library_assets` is a lightweight image containing `assets/`
+- `elifesciences/pattern-library_ui-builder` is a PHP-based image for generation of the UI
+- `elifesciences/pattern-library` is a nginx-based image serving the UI
 - `elifesciences/pattern-library_ci` is used to run tests
 - an anonymous `selenium` image extension.
 
