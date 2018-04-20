@@ -8,6 +8,7 @@ services:
             - source_assets:/srv/pattern-library/source/assets
     ui-builder:
         volumes:
+            - ./source:/srv/pattern-library-ui/source
             - source_assets:/srv/pattern-library-ui/source/assets
             - public:/srv/pattern-library-ui/public
     ui:
