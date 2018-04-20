@@ -14,6 +14,7 @@ services:
             args:
                 environment: ${ENVIRONMENT}
                 image_tag: ${IMAGE_TAG}
+                description: ${DESCRIPTION}
         image: elifesciences/pattern-library_assets:${IMAGE_TAG}
         command: /bin/sh
         depends_on:
