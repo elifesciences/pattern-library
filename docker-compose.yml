@@ -20,6 +20,15 @@ services:
         command: /bin/sh
         depends_on:
             - assets-builder
+    ui-builder:
+        build:
+            context: .
+            dockerfile: Dockerfile.ui-builder
+            args:
+                image_tag: ${IMAGE_TAG}
+        image: elifesciences/pattern-library_ui-builder:${IMAGE_TAG}
+        depends_on:
+            - assets
     ui:
         build:
             context: .
@@ -30,7 +39,7 @@ services:
         ports:
             - "8889:80"
         depends_on:
-            - assets
+            - ui-builder
     ci:
         build:
             context: .
