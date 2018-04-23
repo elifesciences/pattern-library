@@ -45,10 +45,10 @@
 
   }
 
-  & [data-visible-annotation-count] {
-    display: inline-block;
-  }
+}
 
+.speech-bubble__inner {
+  display: inline-block;
 }
 
 .speech-bubble--inline {
