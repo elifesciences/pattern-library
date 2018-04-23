@@ -25,6 +25,10 @@ module.exports = class HypothesisOpener {
     } catch (e) {
       this.window.console.error(e);
       $loader.parentNode.removeChild($loader);
+      if (typeof this.window.newrelic === 'object') {
+        this.window.newrelic.noticeError(e);
+      }
+
       return;
     }
 
@@ -37,37 +41,61 @@ module.exports = class HypothesisOpener {
     this.$elm.dataset.hypothesisTrigger = '';
   }
 
-  // Results in a thrown error for any of:
+  // It is an error for any of:
   //  - the load has already failed
   //  - the loaderror event fires before Hypothesis is ready
   //  - the maxWaitTimer expires
   setupPreReadyIndicatorsWithTimer($loader) {
 
     if (HypothesisOpener.hasLoadAlreadyFailed($loader)) {
-      this.handleInitFail(null, this.window);
+      // Already-failed loading should already have thrown an error, so don't throw again.
+      this.handleInitFail(null, this.window, false);
+      return;
     }
 
     const maxWaitTime = 10000;
 
     const maxWaitTimer = this.window.setTimeout(this.handleTimerExpired.bind(this), maxWaitTime);
 
-    $loader.addEventListener('loaderror', () => {
-      this.handleInitFail(maxWaitTimer, this.window);
+    $loader.addEventListener('loaderror', (e) => {
+      this.handleInitFail(maxWaitTimer, this.window, e);
     });
 
     return maxWaitTimer;
   }
 
-  handleInitFail(timer, window = this.window, errorMsg = '') {
+  handleInitFail(timer, win, err) {
     this.removeHypothesisUI();
     this.speechBubble.showFailureState(this.isWithinContextualData);
+    const window = win || this.window;
     window.clearTimeout(timer);
-    const errorText = errorMsg || 'Problem loading or interacting with Hypothesis client.';
-    this.window.console.error(errorText);
+
+    // Do not log the error (use when error will already have been logged elsewhere).
+    if (err === false) {
+      return;
+    }
+
+    let errorMsg;
+    if (typeof err.message === 'string') {
+      errorMsg = err.message;
+    } else {
+      errorMsg = 'Problem loading or interacting with Hypothesis client.';
+    }
+
+    // Needs to be explicitly thrown to get a stack trace from Safari.
+    // https://docs.newrelic.com/docs/browser/new-relic-browser/browser-agent-spa-api/notice-error
+    try {
+      throw new Error(errorMsg);
+    } catch (e) {
+      this.window.console.error(e);
+      if (typeof this.window.newrelic === 'object') {
+        this.window.newrelic.noticeError(e);
+      }
+    }
   }
 
   handleTimerExpired() {
-    this.handleInitFail();
+    this.handleInitFail(null, this.window, new Error('Hypothesis loading timed out'));
   }
 
   removeHypothesisUI() {

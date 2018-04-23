@@ -17,8 +17,11 @@ module.exports = class HypothesisLoader {
     try {
       this.window.hypothesisConfig = HypothesisLoader.assembleHypothesisConfig(this.window);
     } catch (e) {
-      console.error('Couldn\'t assemble valid Hypothesis config from external data, aborting Hypothesis client loading.');
-      console.error('The error was: ', e);
+      this.window.console.error(e);
+      if (typeof this.window.newrelic === 'object') {
+        this.window.newrelic.noticeError(e);
+      }
+
       return;
     }
 
