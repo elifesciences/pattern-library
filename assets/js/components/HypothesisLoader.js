@@ -79,12 +79,12 @@ module.exports = class HypothesisLoader {
 
     if ((services.onLoginRequest && services.onLogoutRequest) ||
         !(services.onLoginRequest || services.onLogoutRequest)) {
-      throw new Error('Couldn\'t find exactly one of the properties ' +
+      throw new Error('Hypothesis config generation failed: couldn\'t find exactly one of the properties ' +
                                       '"onLoginRequest" and "onLogoutRequest"');
     }
 
     if (services.onLoginRequest && services.onProfileRequest) {
-      throw new Error('Found both mutually exclusive properties "onLoginRequest" ' +
+      throw new Error('Hypothesis config generation failed: found both mutually exclusive properties "onLoginRequest" ' +
                                       'and "onProfileRequest"');
     }
 
@@ -93,7 +93,7 @@ module.exports = class HypothesisLoader {
     }
 
     if (services.onLoginRequest && services.grantToken !== null) {
-      throw new Error('Expected the property "grantToken" to be null, but it was not null');
+      throw new Error('Hypothesis config generation failed: expected the property "grantToken" to be null, but it was not null');
     }
 
     if (services.onLogoutRequest && !services.onProfileRequest) {
@@ -101,7 +101,7 @@ module.exports = class HypothesisLoader {
     }
 
     if (services.onLogoutRequest && services.onSignupRequest) {
-      throw new Error('Found both mutually exclusive properties "onLogoutRequest" ' +
+      throw new Error('Hypothesis config generation failed: found both mutually exclusive properties "onLogoutRequest" ' +
                       'and "onSignupRequest"');
     }
 
@@ -128,7 +128,7 @@ module.exports = class HypothesisLoader {
   }
 
   static failValidationMissingProperty(propertyName) {
-    throw new Error(`Couldn\'t find a valid property with the name "${propertyName}"`);
+    throw new Error(`Hypothesis config generation failed: couldn\'t find a valid property with the name "${propertyName}"`);
   }
 
 };

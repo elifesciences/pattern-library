@@ -173,36 +173,36 @@ xdescribe('A HypothesisLoader Component', function () {
       config.loggedIn.usernameUrl = null;
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
-      }).to.throw(/Couldn't find a valid property with the name "usernameUrl"/);
+      }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "usernameUrl"/);
 
       config.loggedIn.usernameUrl = 'some non-url string';
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
-      }).to.throw(/Couldn't find a valid property with the name "usernameUrl"/);
+      }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "usernameUrl"/);
     });
 
     it('throws the expected error if the apiUrl property is not an absolute url', () => {
       config.loggedIn.services[0].apiUrl = null;
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
-      }).to.throw(/Couldn't find a valid property with the name "apiUrl"/);
+      }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "apiUrl"/);
 
       config.loggedIn.services[0].apiUrl = 'some non-url string';
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
-      }).to.throw(/Couldn't find a valid property with the name "apiUrl"/);
+      }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "apiUrl"/);
     });
 
     it('throws the expected error if the icon property is not an absolute url', () => {
       config.loggedIn.services[0].icon = null;
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
-      }).to.throw(/Couldn't find a valid property with the name "icon"/);
+      }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "icon"/);
 
       config.loggedIn.services[0].icon = 'some non-url string';
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
-      }).to.throw(/Couldn't find a valid property with the name "icon"/);
+      }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "icon"/);
 
     });
 
@@ -210,12 +210,12 @@ xdescribe('A HypothesisLoader Component', function () {
       config.loggedIn.services[0].authority = null;
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
-      }).to.throw(/Couldn't find a valid property with the name "authority"/);
+      }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "authority"/);
 
       config.loggedIn.services[0].authority = '';
       expect(() => {
         HypothesisLoader.validateConfig(config.loggedIn);
-      }).to.throw(/Couldn't find a valid property with the name "authority"/);
+      }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "authority"/);
 
     });
 
@@ -232,33 +232,33 @@ xdescribe('A HypothesisLoader Component', function () {
         loggedInConfig.services[0].onProfileRequest = null;
         expect(() => {
           HypothesisLoader.validateConfig(loggedInConfig);
-        }).to.throw(/Couldn't find a valid property with the name "onProfileRequest"/);
+        }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "onProfileRequest"/);
       });
 
       it('throws the expected error if the grantToken property is not a populated string', () => {
         loggedInConfig.services[0].grantToken = null;
         expect(() => {
           HypothesisLoader.validateConfig(loggedInConfig);
-        }).to.throw(/Couldn't find a valid property with the name "grantToken"/);
+        }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "grantToken"/);
 
         loggedInConfig.services[0].grantToken = '';
         expect(() => {
           HypothesisLoader.validateConfig(loggedInConfig);
-        }).to.throw(/Couldn't find a valid property with the name "grantToken"/);
+        }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "grantToken"/);
       });
 
       it('throws the expected error if there is a truthy onLoginRequest property', () => {
         loggedInConfig.services[0].onLoginRequest = true;
         expect(() => {
           HypothesisLoader.validateConfig(loggedInConfig);
-        }).to.throw(/Couldn't find exactly one of the properties "onLoginRequest" and "onLogoutRequest"/);
+        }).to.throw(/Hypothesis config generation failed: couldn't find exactly one of the properties "onLoginRequest" and "onLogoutRequest"/);
       });
 
       it('throws the expected error if there is a truthy onSignupRequest property', () => {
         loggedInConfig.services[0].onSignupRequest = true;
         expect(() => {
           HypothesisLoader.validateConfig(loggedInConfig);
-        }).to.throw(/Found both mutually exclusive properties "onLogoutRequest" and "onSignupRequest"/);
+        }).to.throw(/Hypothesis config generation failed: found both mutually exclusive properties "onLogoutRequest" and "onSignupRequest"/);
       });
 
     });
@@ -276,28 +276,28 @@ xdescribe('A HypothesisLoader Component', function () {
         loggedOutConfig.services[0].onLoginRequest = null;
         expect(() => {
           HypothesisLoader.validateConfig(loggedOutConfig);
-        }).to.throw(/Couldn't find exactly one of the properties "onLoginRequest" and "onLogoutRequest"/);
+        }).to.throw(/Hypothesis config generation failed: couldn't find exactly one of the properties "onLoginRequest" and "onLogoutRequest"/);
       });
 
       it('throws the expected error if there is not a truthy onSignupRequest property', () => {
         loggedOutConfig.services[0].onSignupRequest = null;
         expect(() => {
           HypothesisLoader.validateConfig(loggedOutConfig);
-        }).to.throw(/Couldn't find a valid property with the name "onSignupRequest"/);
+        }).to.throw(/Hypothesis config generation failed: couldn't find a valid property with the name "onSignupRequest"/);
       });
 
       it('throws the expected error if there is a truthy onProfileRequest property', () => {
         loggedOutConfig.services[0].onProfileRequest = true;
         expect(() => {
           HypothesisLoader.validateConfig(loggedOutConfig);
-        }).to.throw(/Found both mutually exclusive properties "onLoginRequest" and "onProfileRequest"/);
+        }).to.throw(/Hypothesis config generation failed: found both mutually exclusive properties "onLoginRequest" and "onProfileRequest"/);
       });
 
       it('throws the expected error if the grantToken property is not null', () => {
         loggedOutConfig.services[0].grantToken = true;
         expect(() => {
           HypothesisLoader.validateConfig(loggedOutConfig);
-        }).to.throw(/Expected the property "grantToken" to be null, but it was not null/);
+        }).to.throw(/Hypothesis config generation failed: expected the property "grantToken" to be null, but it was not null/);
 
       });
 
