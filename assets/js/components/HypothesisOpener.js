@@ -76,7 +76,7 @@ module.exports = class HypothesisOpener {
     }
 
     let errorMsg;
-    if (typeof err.message === 'string') {
+    if (err && typeof err.message === 'string') {
       errorMsg = err.message;
     } else {
       errorMsg = 'Problem loading or interacting with Hypothesis client.';

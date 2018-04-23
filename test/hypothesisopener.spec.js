@@ -58,7 +58,9 @@ describe('A HypothesisOpener Component', function () {
     let $mockLoader;
 
     beforeEach(() => {
-      mockDoc = {};
+      mockDoc = {
+        querySelectorAll: () => {}
+      };
       const $mockAncestorLoader = generateParentOf$scriptIdentifiedAsHypothesisLoader();
       mockDoc.querySelector = (...args) => {
         if (args[0] === 'body') {
@@ -143,7 +145,8 @@ describe('A HypothesisOpener Component', function () {
     it('logs the console error "Problem loading or interacting with Hypothesis client."', () => {
       const errorSpy = spy(window.console, 'error');
       hypothesisOpener.handleInitFail(null, window);
-      expect(errorSpy.calledOnceWithExactly('Problem loading or interacting with Hypothesis client.')).to.be.true;
+      const observedFirstCallArg = errorSpy.getCalls()[0].args[0];
+      expect(observedFirstCallArg.message).to.equal('Problem loading or interacting with Hypothesis client.');
       window.console.error.restore();
     });
 
