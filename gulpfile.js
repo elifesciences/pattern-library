@@ -41,9 +41,10 @@ const jsPolyfills = './assets/js/libs/polyfills.js';
 const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource, '!' + jsPolyfills];
 const jsDest = './source/assets/js';
 
-let options = minimist(process.argv);
-let environment = options.environment || 'development';
-let mocha_grep = options['mocha-grep'] || null;
+let options = minimist(process.argv, {'boolean': ['sass-lint'], 'default': {'sass-lint': true, 'environment': 'development', 'mocha-grep': null}});
+let environment = options.environment;
+let mochaGrep = options['mocha-grep'];
+let sassLint = options['sass-lint'];
 
 let server;
 
@@ -107,6 +108,11 @@ gulp.task('generateAllStyles', ['sass:lint'], () => {
 });
 
 gulp.task('sass:lint', ['sass:clean'], () => {
+
+  if (!sassLint) {
+    console.info("Skipping sass:lint");
+    return;
+  }
 
   let processors = [
     stylelint(),
@@ -238,7 +244,7 @@ gulp.task('local:test:unit', ['browserify-tests', 'js'], () => {
     .pipe(mochaPhantomjs({
       reporter: 'spec',
       mocha: {
-        grep: mocha_grep
+        grep: mochaGrep
       },
       'ignore-resource-errors': true
     }))
@@ -250,7 +256,7 @@ gulp.task('test:unit', ['browserify-tests'], () => {
     .pipe(mochaPhantomjs({
       reporter: 'spec',
       mocha: {
-        grep: mocha_grep
+        grep: mochaGrep
       },
       'ignore-resource-errors': true
     }))
