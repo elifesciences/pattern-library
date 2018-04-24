@@ -21,7 +21,7 @@ module.exports = class HypothesisOpener {
     let $loader = null;
     try {
       $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
-      maxWaitTimer = this.setupPreReadyIndicatorsWithTimer($loader, this.handleInitFail);
+      maxWaitTimer = this.setupPreReadyIndicatorsWithTimer($loader);
     } catch (e) {
       this.window.console.error(e);
       $loader.parentNode.removeChild($loader);
