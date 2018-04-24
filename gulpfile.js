@@ -51,6 +51,10 @@ let server;
 /*************************************
  *  Tasks
  *************************************/
+gulp.task('echo', [], () => {
+  console.log("Echo back options");
+  console.log(options);
+});
 
 gulp.task('generateStyles', ['generateAllStyles', 'generateIndividualStyles'], () => {
   del(['source/assets/css/tmp']);
