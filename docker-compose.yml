@@ -20,6 +20,12 @@ services:
         command: /bin/sh
         depends_on:
             - assets-builder
+    composer:
+        build:
+            context: .
+            dockerfile: Dockerfile.composer
+        image: elifesciences/pattern-library_composer:${IMAGE_TAG}
+        command: /bin/bash
     ui-builder:
         build:
             context: .
@@ -29,6 +35,7 @@ services:
         image: elifesciences/pattern-library_ui-builder:${IMAGE_TAG}
         depends_on:
             - assets
+            - composer
     ui:
         build:
             context: .

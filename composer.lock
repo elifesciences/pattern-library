@@ -1,11 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "f29895390d29fed3864ad055927199f0",
-    "content-hash": "66c6bc8681904423a1275ad721992a20",
+    "content-hash": "f43c2b0489d2c862d36eb938c96d9791",
     "packages": [],
     "packages-dev": [
         {
@@ -72,7 +71,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2016-06-02 10:59:52"
+            "time": "2016-06-02T10:59:52+00:00"
         },
         {
             "name": "php-jsonpointer/php-jsonpointer",
@@ -120,7 +119,7 @@
                 "json pointer",
                 "json traversal"
             ],
-            "time": "2015-05-20 23:07:34"
+            "time": "2015-05-20T23:07:34+00:00"
         },
         {
             "name": "symfony/finder",
@@ -169,7 +168,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-13 18:06:41"
+            "time": "2016-05-13T18:06:41+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -218,7 +217,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-26 21:46:24"
+            "time": "2016-05-26T21:46:24+00:00"
         }
     ],
     "aliases": [],
@@ -227,5 +226,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.0.29"
+    }
 }
