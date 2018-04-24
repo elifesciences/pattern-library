@@ -101,11 +101,11 @@ module.exports = class HypothesisOpener {
   removeHypothesisUI() {
     const counters = this.doc.querySelectorAll('[data-visible-annotation-count]');
     if (counters) {
-      for (let counter of counters) {
+      [].forEach.call(counters, (counter) => {
         const visuallyHiddenCounter = counter.parentNode.parentNode.querySelector('.visuallyhidden');
         visuallyHiddenCounter.innerHTML = '';
         delete counter.dataset.visibleAnnotationCount;
-      }
+      });
     }
 
     const sidebar = this.doc.querySelector('.annotator-frame');
