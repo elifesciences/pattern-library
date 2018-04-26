@@ -654,11 +654,38 @@ module.exports = () => {
     });
   }
 
+  function calcScrollbarWidth() {
+    const inner = document.createElement('p');
+    inner.style.width = '100%';
+
+    const outer = document.createElement('div');
+    outer.style.position = 'absolute';
+    outer.style.left = '0px';
+    outer.style.visibility = 'hidden';
+    outer.style.width = '100px';
+    outer.style.overflow = 'hidden';
+    outer.appendChild(inner);
+
+    document.body.appendChild(outer);
+
+    const widthWhenNoScrollBars = inner.offsetWidth;
+    outer.style.overflow = 'scroll';
+    let widthWhenScrollBars = inner.offsetWidth;
+    if (widthWhenNoScrollBars === widthWhenScrollBars) {
+      widthWhenScrollBars = outer.clientWidth;
+    }
+
+    document.body.removeChild(outer);
+
+    return widthWhenNoScrollBars - widthWhenScrollBars;
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     isIdOfOrWithinSection: isIdOfOrWithinSection,
     buildElement: buildElement,
+    calcScrollbarWidth: calcScrollbarWidth,
     closest: closest,
     create$pageOverlay: create$pageOverlay,
     debounce: debounce,
