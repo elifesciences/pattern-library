@@ -298,7 +298,7 @@ module.exports = class Carousel {
 
   /**
    * Translates moveableStage 1 slide's width in the appropriate direction
-   * @param {String} direction 'next' | 'previous' Direction to move
+   * @param {String} [direction] 'previous' means translate left to right
    */
   updateSlide(direction) {
     let currentOffset = this.getCurrentOffset();
