@@ -16,21 +16,17 @@
 
       <div class="wrapper wrapper--listing">
 
-        {{#listHeading}}
-          {{> atoms-list-heading}}
-        {{/listHeading}}
-
         <div class="grid">
 
-          <div class="listing-column-container">
+          <div class="grid__item one-whole grid-column">
 
-            <div class="grid__item large--one-whole listing-column-main">
+          {{#listHeading}}
+            {{> atoms-list-heading}}
+          {{/listHeading}}
 
-              {{#labsListing}}
-                {{> organisms-grid-listing}}
-              {{/labsListing}}
-
-            </div>
+          {{#labsListing}}
+            {{> organisms-grid-listing}}
+          {{/labsListing}}
 
           </div>
 

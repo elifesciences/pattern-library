@@ -184,15 +184,18 @@
 
 .teaser--grid-style {
 
-  border-top: none;
+  border: 1px solid $color-text-dividers;
   @include blg-spacing("bottom", "small", "margin");
   @include height(450);
+  padding-top: 0;
 
   @supports (display: flex) {
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 100%;
+    height: 100%;
+    margin-bottom: 0;
   }
-
-  padding-top: 0;
 
   .teaser__picture--prominent {
     @include nospace();
@@ -200,12 +203,26 @@
 
   .teaser__header_text {
     @include blg-spacing("bottom", "extra-small");
+    @include padding(12, "left");
+    @include padding(12, "right");
+  }
+
+  .teaser__body {
+    @include blg-spacing("bottom", "extra-small");
+    @include padding(0 12 12);
   }
 
   .teaser__footer {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
+
+    @include padding(0 12);
+
+    @supports (display:flex) {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+
   }
 
   .teaser__download {
