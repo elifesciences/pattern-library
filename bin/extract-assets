@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+docker cp pattern-library-gulp-watch:/srv/pattern-library/source/assets .container_source_assets

@@ -159,6 +159,13 @@ $ docker exec -it pattern-library-gulp-watch /bin/bash
 elife@...$ gulp test:unit
 ```
 
+To extract the latest assets _while the watch is running_:
+```
+$ bin/extract-assets
+$ ls .container_source_assets/
+css  fonts  img  js
+```
+
 Exit from this script with `Ctrl+C`.
 
 TODO: tests:watch should be bin/tests-watch, having / source folder as a volume
