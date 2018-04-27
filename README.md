@@ -103,8 +103,10 @@ docker-compose build
 
 (re)builds all images:
 
-- `elifesciences/pattern-library_assets` is a Node-based image for Gulp usage
-- `elifesciences/pattern-library` is the UI
+- `elifesciences/pattern-library_assets-builder` is a Node-based image for Gulp usage
+- `elifesciences/pattern-library_assets` is a lightweight image containing `assets/`
+- `elifesciences/pattern-library_ui-builder` is a PHP-based image for generation of the UI
+- `elifesciences/pattern-library` is a nginx-based image serving the UI
 - `elifesciences/pattern-library_ci` is used to run tests
 - an anonymous `selenium` image extension.
 
@@ -135,13 +137,30 @@ For a local build, run:
 ENVIRONMENT=development docker-compose build assets
 ```
 
-For `gulp watch`, run:
+To watch for changes, run:
 
 ```
-bin/gulp-watch
+bin/watch
 ```
+
+Changes to `assets/js` (and similar) will be propagated to the `gulp watch` process. Changes to `source/_patterns` (and similar) will be propagated to the `php core/builder.php --watch` process.
+
+You can pass options to the underlying gulp:
+
+```
+bin/watch --sass-lint=false
+```
+
+This script does not allow to run tests on the result of the watch (yet).
 
 Exit from this script with `Ctrl+C`.
+
+TODO: add docker exec example to run arbitrary gulp commands
+TODO: mount source/assets/ as a folder from the host rather than as a volume
+TODO: mount test/build/ as a volume
+TODO: remove docker-compose build from bin/watch for better restart performance
+TODO: tests:watch should be bin/tests-watch, having / source folder as a volume
+TODO: for tests:watch, forward 3000, 3001, 8080 to gulp container (or perhaps a different container)
 
 # Notes
 

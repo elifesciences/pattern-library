@@ -5,4 +5,5 @@ Jenkinsfile*
 node_modules/
 public/
 source/assets/
+*.md
 vendor/
