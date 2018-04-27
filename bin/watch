@@ -3,7 +3,8 @@ set -e
 
 yml='-f docker-compose.yml -f docker-compose.watch.yml'
 
-trap "echo ' ...Ctrl+C'; docker kill pattern-library-gulp-watch > /dev/null; docker rm -v pattern-library-gulp-watch > /dev/null; docker kill pattern-library-php-watch > /dev/null; docker rm -f pattern-library-php-watch > /dev/null; docker-compose $yml down;" SIGINT 
+termination="echo ' ...Interrupting...'; docker kill pattern-library-gulp-watch > /dev/null; docker rm -v pattern-library-gulp-watch > /dev/null; docker kill pattern-library-php-watch > /dev/null; docker rm -f pattern-library-php-watch > /dev/null; docker-compose $yml down;"
+trap "${termination}" SIGINT SIGTERM
 
 function cleanup {
     docker kill "$1" > /dev/null 2>&1 || true
@@ -24,5 +25,7 @@ docker-compose $yml run -d --rm --name pattern-library-php-watch ui-builder php 
 docker-compose $yml up -d ui
 
 docker logs -f pattern-library-gulp-watch &
+pid_gulp_watch=$!
 docker logs -f pattern-library-php-watch &
-sleep infinity
+pid_php_watch=$!
+wait "$pid_gulp_watch" "$pid_php_watch"
