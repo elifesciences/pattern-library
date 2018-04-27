@@ -145,6 +145,12 @@ bin/watch
 
 Changes to `assets/js` (and similar) will be propagated to the `gulp watch` process. Changes to `source/_patterns` (and similar) will be propagated to the `php core/builder.php --watch` process.
 
+You can pass options to the underlying gulp:
+
+```
+bin/watch --sass-lint=false
+```
+
 This script does not allow to run tests on the result of the watch (yet).
 
 Exit from this script with `Ctrl+C`.

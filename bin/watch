@@ -18,7 +18,7 @@ docker-compose build
 echo "Starting assets-builder Docker container..."
 # --rm will remove anonymous volumes as well
 # https://github.com/docker/compose/pull/3756
-docker-compose $yml run -d --rm --name pattern-library-gulp-watch assets-builder node_modules/.bin/gulp watch
+docker-compose $yml run -d --rm --name pattern-library-gulp-watch assets-builder node_modules/.bin/gulp "$*" watch
 echo "Starting ui Docker container..."
 docker-compose $yml run --rm --name pattern-library-php-generate ui-builder php ./core/builder.php --generate
 docker-compose $yml run -d --rm --name pattern-library-php-watch ui-builder php ./core/builder.php --watch
