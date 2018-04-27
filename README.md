@@ -149,6 +149,13 @@ This script does not allow to run tests on the result of the watch (yet).
 
 Exit from this script with `Ctrl+C`.
 
+TODO: add docker exec example to run arbitrary gulp commands
+TODO: mount source/assets/ as a folder from the host rather than as a volume
+TODO: mount test/build/ as a volume
+TODO: remove docker-compose build from bin/watch for better restart performance
+TODO: tests:watch should be bin/tests-watch, having / source folder as a volume
+TODO: for tests:watch, forward 3000, 3001, 8080 to gulp container (or perhaps a different container)
+
 # Notes
 
 All assets paths in Mustache templates must be wrapped in `{{#assetRewrite}}`, which allows implementations to rewrite the path for cache-busting purposes. The path must also be prepended by `{{assetsPath}}`. 
