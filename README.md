@@ -152,11 +152,15 @@ You can pass options to the underlying gulp:
 bin/watch --sass-lint=false
 ```
 
-This script does not allow to run tests on the result of the watch (yet).
+To run additional gulp command in the same container where `gulp:watch` is running:
+
+```
+$ docker exec -it pattern-library-gulp-watch /bin/bash
+elife@...$ gulp test:unit
+```
 
 Exit from this script with `Ctrl+C`.
 
-TODO: add docker exec example to run arbitrary gulp commands
 TODO: tests:watch should be bin/tests-watch, having / source folder as a volume
 TODO: for tests:watch, forward 3000, 3001, 8080 to gulp container (or perhaps a different container)
 
