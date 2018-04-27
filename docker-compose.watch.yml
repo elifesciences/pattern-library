@@ -6,6 +6,7 @@ services:
             - ./:/srv/pattern-library
             - /srv/pattern-library/node_modules
             - ./.source_assets_volume:/srv/pattern-library/source/assets
+            - test_build:/srv/pattern-library/test/build
     ui-builder:
         volumes:
             - ./source:/srv/pattern-library-ui/source
@@ -16,4 +17,5 @@ services:
             - public:/usr/share/nginx/html
 
 volumes:
+    test_build:
     public:
