@@ -196,6 +196,10 @@
 
   .teaser__picture--prominent {
     @include nospace();
+
+    img {
+      border: 1px solid $color-text-dividers;
+    }
   }
 
   .teaser__header_text {
