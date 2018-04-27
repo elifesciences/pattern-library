@@ -156,7 +156,6 @@ This script does not allow to run tests on the result of the watch (yet).
 Exit from this script with `Ctrl+C`.
 
 TODO: add docker exec example to run arbitrary gulp commands
-TODO: mount source/assets/ as a folder from the host rather than as a volume
 TODO: mount test/build/ as a volume
 TODO: remove docker-compose build from bin/watch for better restart performance
 TODO: tests:watch should be bin/tests-watch, having / source folder as a volume

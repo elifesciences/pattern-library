@@ -5,16 +5,15 @@ services:
         volumes:
             - ./:/srv/pattern-library
             - /srv/pattern-library/node_modules
-            - source_assets:/srv/pattern-library/source/assets
+            - ./.source_assets_volume:/srv/pattern-library/source/assets
     ui-builder:
         volumes:
             - ./source:/srv/pattern-library-ui/source
-            - source_assets:/srv/pattern-library-ui/source/assets
+            - ./.source_assets_volume:/srv/pattern-library-ui/source/assets
             - public:/srv/pattern-library-ui/public
     ui:
         volumes:
             - public:/usr/share/nginx/html
 
 volumes:
-    source_assets:
     public:
