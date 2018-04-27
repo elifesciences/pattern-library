@@ -54,11 +54,10 @@
     height: #{($content-header-padding * 5.5)}px;
 
     .content-header--has-social-media-sharers & {
-      min-height: #{$content-header-padding * 7}px;
+      min-height: #{$content-header-padding * 8}px;
     }
 
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     align-content: center;
@@ -414,12 +413,24 @@ $iconlist: cc oa;
     @include margin(0, "bottom");
     display: none;
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
       display: block;
     }
 
     a {
       @include discreet-link($color-text--reverse, false);
+    }
+
+  }
+
+  .content-header--image.content-header--has-social-media-sharers & {
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
+      display: none;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
+      display: block;
     }
 
   }

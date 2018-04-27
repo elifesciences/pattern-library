@@ -41,15 +41,20 @@ const jsPolyfills = './assets/js/libs/polyfills.js';
 const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource, '!' + jsPolyfills];
 const jsDest = './source/assets/js';
 
-let options = minimist(process.argv);
-let environment = options.environment || 'development';
-let mocha_grep = options['mocha-grep'] || null;
+let options = minimist(process.argv, {'boolean': ['sass-lint'], 'default': {'sass-lint': true, 'environment': 'development', 'mocha-grep': null}});
+let environment = options.environment;
+let mochaGrep = options['mocha-grep'];
+let sassLint = options['sass-lint'];
 
 let server;
 
 /*************************************
  *  Tasks
  *************************************/
+gulp.task('echo', [], () => {
+  console.log("Echo back options");
+  console.log(options);
+});
 
 gulp.task('generateStyles', ['generateAllStyles', 'generateIndividualStyles'], () => {
   del(['source/assets/css/tmp']);
@@ -107,6 +112,11 @@ gulp.task('generateAllStyles', ['sass:lint'], () => {
 });
 
 gulp.task('sass:lint', ['sass:clean'], () => {
+
+  if (!sassLint) {
+    console.info("Skipping sass:lint");
+    return;
+  }
 
   let processors = [
     stylelint(),
@@ -238,7 +248,7 @@ gulp.task('local:test:unit', ['browserify-tests', 'js'], () => {
     .pipe(mochaPhantomjs({
       reporter: 'spec',
       mocha: {
-        grep: mocha_grep
+        grep: mochaGrep
       },
       'ignore-resource-errors': true
     }))
@@ -250,7 +260,7 @@ gulp.task('test:unit', ['browserify-tests'], () => {
     .pipe(mochaPhantomjs({
       reporter: 'spec',
       mocha: {
-        grep: mocha_grep
+        grep: mochaGrep
       },
       'ignore-resource-errors': true
     }))
@@ -299,8 +309,8 @@ gulp.task('server', () => {
   if (!server) {
     server = express();
     server.use(express.static('./'));
-    server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/hypothesisloader.html', browser: 'google chrome'});
+    server.listen('8090');
+    browserSync({proxy: 'localhost:8090', startPath: 'test/hypothesisloader.html', browser: 'google chrome'});
   } else {
     return gutil.noop;
   }
