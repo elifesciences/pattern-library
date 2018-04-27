@@ -13,7 +13,6 @@ function cleanup {
 cleanup pattern-library-gulp-watch
 cleanup pattern-library-php-generate
 cleanup pattern-library-php-watch
-docker-compose build
 
 echo "Starting assets-builder Docker container..."
 # --rm will remove anonymous volumes as well
