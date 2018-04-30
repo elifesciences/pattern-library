@@ -68,7 +68,7 @@ gulp.task('echo', [], () => {
 });
 
 gulp.task('generateStyles', ['generateAllStyles', 'generateIndividualStyles'], () => {
-  del(['source/assets/css/tmp']);
+  return del(['source/assets/css/tmp']);
 });
 
 gulp.task('generateIndividualStyles', ['buildStyleFiles'], () => {
