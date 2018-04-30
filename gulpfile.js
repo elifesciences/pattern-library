@@ -304,8 +304,15 @@ gulp.task('js:watch', () => {
   gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['js']);
 });
 
+gulp.task('extract-assets', () => {
+  return gulp.src('./assets/**/*')
+      .pipe(gulp.dest('./.container_source_assets'));
+});
+
 // Task sets
-gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch']);
+gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'], () => {
+  gulp.watch('assets/**/*', ['extract-assets']);
+});
 gulp.task('default', ['generateStyles', 'img', 'fonts', 'js']);
 
 /******************************************************************************
