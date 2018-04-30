@@ -17,7 +17,7 @@ services:
             - public:/usr/share/nginx/html
     tests:
         image: elifesciences/pattern-library_assets-builder:${IMAGE_TAG}
-        command: node_modules/.bin/gulp tests:watch
+        command: node_modules/.bin/gulp --test-html=${TEST_HTML} tests:watch
         ports:
             - "3000:3000"
             - "3001:3001"
