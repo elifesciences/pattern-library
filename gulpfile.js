@@ -304,8 +304,8 @@ gulp.task('js:watch', () => {
   gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['js']);
 });
 
-gulp.task('extract-assets', () => {
-  return gulp.src('./assets/**/*')
+gulp.task('extractAssets', () => {
+  return gulp.src('./source/assets/**/*')
       .pipe(gulp.dest('./.container_source_assets'));
 });
 
