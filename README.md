@@ -168,8 +168,19 @@ css  fonts  img  js
 
 Exit from this script with `Ctrl+C`.
 
-TODO: tests:watch should be bin/tests-watch, having / source folder as a volume
-TODO: for tests:watch, forward 3000, 3001, 8080 to gulp container (or perhaps a different container)
+To watch a particular test in a browser:
+
+```
+$ bin/tests-watch test/hypothesisopener.html
+```
+
+Visit the URL that is printed out:
+
+```
+http://localhost:3000/test/hypothesisopener.html
+```
+
+The browser will refresh and rerun the test upon changes to it. Exit from this script with `Ctrl+C`.
 
 # Notes
 
