@@ -339,7 +339,6 @@ gulp.task('server', () => {
     browserSync({
       proxy: 'localhost:8090',
       startPath: testHtml,
-      browser: 'google chrome',
       open: false,
     });
   } else {
