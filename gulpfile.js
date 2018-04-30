@@ -311,7 +311,13 @@ gulp.task('extractAssets', () => {
 
 // Task sets
 gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'], () => {
-  gulp.watch('assets/**/*', ['extract-assets']);
+  // no better standalone solution without Gulp 4.x
+  // https://stackoverflow.com/questions/22824546/how-to-run-gulp-tasks-sequentially-one-after-the-other/38818657#38818657
+  gulp.on('task_stop', function (event) {
+    if (['generateStyles', 'img', 'fonts', 'js'].indexOf(event.task) != -1) {
+      gulp.start('extractAssets');
+    }
+  });
 });
 gulp.task('default', ['generateStyles', 'img', 'fonts', 'js']);
 
