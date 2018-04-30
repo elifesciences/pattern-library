@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: bin/tests-watch TEST_HTML"
+  echo "Example: bin/tests-watch test/hypothesisopener.html"
+  exit 1
+fi
+
+TEST_HTML="$1" docker-compose -f docker-compose.yml -f docker-compose.watch.yml up tests
