@@ -301,6 +301,21 @@ gulp.task('default', ['generateStyles', 'img', 'fonts', 'js']);
  * Used for local testing
  *  Update startPath in `server` task to the test file to be checked.
  ******************************************************************************/
+gulp.task('local:tests:watch', ['local:server', 'js:watch', 'browserify-tests'], () => {
+  gulp.watch('test/*.spec.js', ['browserify-tests']);
+});
+
+gulp.task('local:server', () => {
+  if (!server) {
+    server = express();
+    server.use(express.static('./'));
+    server.listen('8090');
+    browserSync({proxy: 'localhost:8090', startPath: 'test/hypothesisloader.html', browser: 'google chrome'});
+  } else {
+    return gutil.noop;
+  }
+});
+
 gulp.task('tests:watch', ['server', 'js:watch', 'browserify-tests'], () => {
   gulp.watch('test/*.spec.js', ['browserify-tests']);
 });
@@ -310,7 +325,7 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8090');
-    browserSync({proxy: 'localhost:8090', startPath: 'test/hypothesisloader.html', browser: 'google chrome'});
+    browserSync({proxy: 'localhost:8090', startPath: 'test/hypothesisopener.html', browser: 'google chrome', open: false});
   } else {
     return gutil.noop;
   }
