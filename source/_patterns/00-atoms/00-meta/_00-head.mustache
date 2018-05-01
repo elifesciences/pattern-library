@@ -28,21 +28,31 @@
     </script>
     <![endif]-->
 
-    <!-- webfonts -->
-    <script>
-      WebFontConfig = {
-        custom: {
-          families: ['Avenir Next Webfont'],
-          urls: ['../../assets/fonts/fonts.css']
-        }
-      };
+    <!-- Webfonts are now loaded via the font-loader atom pattern. Patterns aren't evaluated in this file though, so the
+         following code is a manual paste of the generated pattern code to ensure that all the patterns  -->
 
-      (function(d) {
-        var wf = d.createElement('script'), s = d.scripts[0];
-        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
-        s.parentNode.insertBefore(wf, s);
-      })(document);
-    </script>
+    <link rel="preload" href="../../assets/fonts/249228f0-61ac-40cc-a5a5-5609c9816e3f.woff2" as="font">
+    <link rel="preload" href="../../assets/fonts/627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2" as="font">
+
+
+    <style>
+      @font-face {
+        font-display: fallback;
+        font-family: Avenir Next Webfont;
+        src: url("../../assets/fonts/249228f0-61ac-40cc-a5a5-5609c9816e3f.woff2") format("woff2");
+        font-weight: 700;
+      }
+    </style>
+
+
+    <style>
+      @font-face {
+        font-display: fallback;
+        font-family: Avenir Next Webfont;
+        src: url("../../assets/fonts/627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2") format("woff2");
+
+      }
+    </style>
 
   </head>
   <body class="{{ bodyClass }}">

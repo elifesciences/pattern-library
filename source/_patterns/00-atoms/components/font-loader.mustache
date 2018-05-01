@@ -1,0 +1,16 @@
+{{#fonts}}
+  <link rel="preload" href="{{#assetRewrite}}{{assetsPath}}{{{path}}}{{/assetRewrite}}" as="font">
+{{/fonts}}
+
+{{#fonts}}
+
+  <style>
+    @font-face {
+      {{#display}}font-display: {{display}};{{/display}}
+      font-family: {{name}};
+      src: url("{{#assetRewrite}}{{assetsPath}}{{{path}}}{{/assetRewrite}}") format("woff2");
+      {{#discriminator}}{{discriminator}};{{/discriminator}}
+    }
+  </style>
+
+{{/fonts}}
