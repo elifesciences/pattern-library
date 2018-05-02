@@ -117,6 +117,13 @@ module.exports = class HypothesisOpener {
     if (popup) {
       popup.parentElement.removeChild(popup);
     }
+
+    const triggers = this.doc.querySelectorAll('[data-hypothesis-trigger]');
+    if (triggers) {
+      [].forEach.call(triggers, ($trigger) => {
+        delete $trigger.dataset.hypothesisTrigger;
+      });
+    }
   }
 
   setupSpeechBubble(isContextualData) {
