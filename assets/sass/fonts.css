@@ -1,0 +1,15 @@
+
+/* Demi */
+@font-face {
+  font-display: fallback;
+  font-family: "Avenir Next Webfont";
+  src: url("../fonts/249228f0-61ac-40cc-a5a5-5609c9816e3f.woff2") format("woff2");
+  font-weight: 700;
+}
+
+/* Medium */
+@font-face {
+  font-display: fallback;
+  font-family: "Avenir Next Webfont";
+  src: url("../fonts/627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2") format("woff2");
+}

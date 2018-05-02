@@ -95,7 +95,7 @@ gulp.task('buildStyleFiles', ['sass:lint'], () => {
   * Auto-prefixes properties as required.
   ******************************************************************************/
 
-gulp.task('generateAllStyles', ['sass:lint'], () => {
+gulp.task('generateAllStyles', ['sass:lint', 'copyFontCss'], () => {
 
   let options = environment === 'production' ? {outputStyle: 'compressed'} : null;
 
@@ -108,6 +108,11 @@ gulp.task('generateAllStyles', ['sass:lint'], () => {
       }))
       .pipe(rename('all.css'))
       .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest('source/assets/css'));
+});
+
+gulp.task('copyFontCss', () => {
+  return gulp.src('assets/sass/fonts.css')
       .pipe(gulp.dest('source/assets/css'));
 });
 

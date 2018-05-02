@@ -1,15 +1,2 @@
 {
-  "fonts": [
-    {
-      "name": "Avenir Next Webfont",
-      "path": "/fonts/249228f0-61ac-40cc-a5a5-5609c9816e3f.woff2",
-      "display": "fallback",
-      "discriminator": "font-weight: 700"
-    },
-    {
-      "name": "Avenir Next Webfont",
-      "path": "/fonts/627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2",
-      "display": "fallback"
-    }
-  ]
 }
