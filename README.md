@@ -159,9 +159,9 @@ $ docker exec -it pattern-library-gulp-watch /bin/bash
 elife@...$ gulp test:unit
 ```
 
-To extract the latest assets _while the watch is running_:
+The watch loop keeps a read-only host folder up-to-date with the latest assets:
+
 ```
-$ bin/extract-assets
 $ ls .container_source_assets/
 css  fonts  img  js
 ```
