@@ -113,10 +113,13 @@ module.exports = class HypothesisOpener {
       sidebar.parentElement.removeChild(sidebar);
     }
 
-    const popup = this.doc.querySelector('hypothesis-adder');
-    if (popup) {
-      popup.parentElement.removeChild(popup);
-    }
+    //TODO: consider replacing with a mutation observer
+    this.window.setTimeout(() => {
+      const popup = this.doc.querySelector('hypothesis-adder');
+      if (popup) {
+        popup.parentElement.removeChild(popup);
+      }
+    }, 2000);
 
     const triggers = this.doc.querySelectorAll('[data-hypothesis-trigger]');
     if (triggers) {
