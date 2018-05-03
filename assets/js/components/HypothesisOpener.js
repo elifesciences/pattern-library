@@ -113,20 +113,41 @@ module.exports = class HypothesisOpener {
       sidebar.parentElement.removeChild(sidebar);
     }
 
-    //TODO: consider replacing with a mutation observer
-    this.window.setTimeout(() => {
-      const popup = this.doc.querySelector('hypothesis-adder');
-      if (popup) {
-        popup.parentElement.removeChild(popup);
-      }
-    }, 2000);
-
     const triggers = this.doc.querySelectorAll('[data-hypothesis-trigger]');
     if (triggers) {
       [].forEach.call(triggers, ($trigger) => {
         delete $trigger.dataset.hypothesisTrigger;
       });
     }
+
+    let obs;
+    const remove$hypothesisAdder = (addedNode) => {
+      if (addedNode.nodeName === 'HYPOTHESIS-ADDER') {
+        const adder = this.doc.querySelector('hypothesis-adder');
+        if (adder && typeof adder.parentElement) {
+          adder.parentElement.removeChild(adder);
+          obs.disconnect();
+        }
+      }
+    };
+
+    const observerCallback = (mutationsList) => {
+      for (let mutation of mutationsList) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length) {
+          [].forEach.call(mutation.addedNodes, remove$hypothesisAdder);
+        }
+      }
+
+    };
+
+    const popup = this.doc.querySelector('hypothesis-adder');
+    if (popup) {
+      popup.parentElement.removeChild(popup);
+    } else {
+      obs = new MutationObserver(observerCallback);
+      obs.observe(this.doc.querySelector('body'), { childList: true });
+    }
+
   }
 
   setupSpeechBubble(isContextualData) {
