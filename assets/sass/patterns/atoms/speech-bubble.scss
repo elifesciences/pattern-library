@@ -47,6 +47,10 @@
 
 }
 
+.speech-bubble__inner {
+  display: inline-block;
+}
+
 .speech-bubble--inline {
   @include margin(12, "left");
 }
@@ -55,7 +59,7 @@
   display: inline-block;
   @include font-size-and-vertical-height(11, 14);
   @include height(14);
-  min-width: 1em;
+  min-width: 2em;
   padding-left: 4px;
   padding-right: 4px;
   width: auto;
@@ -76,5 +80,50 @@
   // class: button--speech-bubble-populated
   @include font-size-and-vertical-height(48, 36);
   @include blg-spacing("top", "extra-small");
+
+}
+
+.speech-bubble--loading {
+  position: relative;
+
+  &::before {
+    animation: ellipsis steps(4,end) 1000ms infinite;
+    box-sizing: content-box;
+    content: "\2026";
+    display: block;
+    left: 0;
+    overflow: hidden;
+    @include padding(4, "left");
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 0;
+  }
+
+  @keyframes ellipsis {
+
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 75%;
+    }
+
+  }
+
+}
+
+.speech-bubble[disabled] {
+  background-color: $color-text-dividers;
+  border-color: $color-text-dividers;
+  cursor: not-allowed;
+
+  &:after {
+    border-left-color: $color-text-dividers;
+    cursor: not-allowed;
+    left: 5px;
+    top: 10px;
+  }
 
 }

@@ -17,22 +17,26 @@ module.exports = class HypothesisLoader {
     try {
       this.window.hypothesisConfig = HypothesisLoader.assembleHypothesisConfig(this.window);
     } catch (e) {
-      console.error('Could\'t assemble valid Hypothesis config from external data, aborting Hypothesis client loading.');
-      console.error('The error was: ', e);
+      this.window.console.error(e);
+      if (typeof this.window.newrelic === 'object') {
+        this.window.newrelic.noticeError(e);
+      }
+
       return;
     }
 
     this.$embedder = this.doc.createElement('script');
-    this.$embedder.src = 'https://hypothes.is/embed.js';
     this.$embedder.id = 'hypothesisEmbedder';
-    this.$embedder.addEventListener('error', this.handleLoadError);
-
+    this.$embedder.addEventListener('error', () => {
+      this.handleLoadError(this.$embedder);
+    });
     this.doc.querySelector('head').appendChild(this.$embedder);
+    this.$embedder.src = 'https://hypothes.is/embed.js';
   }
 
-  handleLoadError() {
-    this.$elm.dataset.hypothesisEmbedLoadStatus = 'failed';
-    this.$elm.dispatchEvent(new this.window.ErrorEvent('loaderror',
+  handleLoadError($loader) {
+    $loader.dataset.hypothesisEmbedLoadStatus = 'failed';
+    $loader.dispatchEvent(new this.window.ErrorEvent('loaderror',
                                                        { message: 'Hypothesis embed load failed' }));
   }
 
@@ -78,12 +82,12 @@ module.exports = class HypothesisLoader {
 
     if ((services.onLoginRequest && services.onLogoutRequest) ||
         !(services.onLoginRequest || services.onLogoutRequest)) {
-      throw new Error('Couldn\'t find exactly one of the properties ' +
+      throw new Error('Hypothesis config generation failed: couldn\'t find exactly one of the properties ' +
                                       '"onLoginRequest" and "onLogoutRequest"');
     }
 
     if (services.onLoginRequest && services.onProfileRequest) {
-      throw new Error('Found both mutually exclusive properties "onLoginRequest" ' +
+      throw new Error('Hypothesis config generation failed: found both mutually exclusive properties "onLoginRequest" ' +
                                       'and "onProfileRequest"');
     }
 
@@ -92,7 +96,7 @@ module.exports = class HypothesisLoader {
     }
 
     if (services.onLoginRequest && services.grantToken !== null) {
-      throw new Error('Expected the property "grantToken" to be null, but it was not null');
+      throw new Error('Hypothesis config generation failed: expected the property "grantToken" to be null, but it was not null');
     }
 
     if (services.onLogoutRequest && !services.onProfileRequest) {
@@ -100,7 +104,7 @@ module.exports = class HypothesisLoader {
     }
 
     if (services.onLogoutRequest && services.onSignupRequest) {
-      throw new Error('Found both mutually exclusive properties "onLogoutRequest" ' +
+      throw new Error('Hypothesis config generation failed: found both mutually exclusive properties "onLogoutRequest" ' +
                       'and "onSignupRequest"');
     }
 
@@ -127,7 +131,7 @@ module.exports = class HypothesisLoader {
   }
 
   static failValidationMissingProperty(propertyName) {
-    throw new Error(`Couldn\'t find a valid property with the name "${propertyName}"`);
+    throw new Error(`Hypothesis config generation failed: couldn\'t find a valid property with the name "${propertyName}"`);
   }
 
 };
