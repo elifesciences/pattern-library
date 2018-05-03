@@ -1,5 +1,5 @@
-const expect = chai.expect;
-const spy = sinon.spy;
+const chai = require('chai');
+const sinon = require('sinon');
 
 const HypothesisOpener = require('../assets/js/components/HypothesisOpener');
 
@@ -7,16 +7,179 @@ const generateSnippetWithoutIdentifiableFirstSection = require('./fixtures/snipp
 const generateSnippetWithIdentifiableFirstSection = require('./fixtures/snippetWithIdentifiableFirstSection.html');
 const generateSnippetWithParagraphs = require('./fixtures/snippetWithParagraphs.html');
 const generateHypothesisOpenerInitialDom = require('./fixtures/hypothesisOpenerInitialDom.html');
+const generateParentOf$scriptIdentifiedAsHypothesisLoader = require('./fixtures/scriptElementIdentifiedAsHypothesisLoader.html');
+
+const expect = chai.expect;
+const spy = sinon.spy;
 
 describe('A HypothesisOpener Component', function () {
   'use strict';
 
   let $opener;
-  let hypothesisOpener;
 
   beforeEach(() => {
     $opener = generateHypothesisOpenerInitialDom();
-    hypothesisOpener = new HypothesisOpener($opener);
+  });
+
+  afterEach(() => {
+    $opener = null;
+  });
+
+  describe('the get$hypothesisLoader method', () => {
+
+    context('when the hypothesis loading code is missing', () => {
+
+      it('throws an error with the message "No Hypothesis loading code found"', () => {
+        const $mockAncestorWithNoLoadingCode = document.createElement('script');
+        expect(() => {
+          HypothesisOpener.get$hypothesisLoader($mockAncestorWithNoLoadingCode);
+        }).to.throw('No Hypothesis loading code found');
+      });
+
+    });
+
+    context('when the hypothesis loading code is not missing', () => {
+
+      it('does not throw an error', () => {
+        const $mockLoaderAncestor = generateParentOf$scriptIdentifiedAsHypothesisLoader();
+        expect(() => {
+          HypothesisOpener.get$hypothesisLoader($mockLoaderAncestor);
+        }).not.to.throw();
+      });
+
+    });
+
+  });
+
+  describe('the setupPreReadyIndicatorsWithTimer method', () => {
+
+    let hypothesisOpener;
+    let mockDoc;
+    let $mockLoader;
+
+    beforeEach(() => {
+      mockDoc = {
+        querySelectorAll: () => {}
+      };
+      const $mockAncestorLoader = generateParentOf$scriptIdentifiedAsHypothesisLoader();
+      mockDoc.querySelector = (...args) => {
+        if (args[0] === 'body') {
+          return $mockAncestorLoader;
+        }
+
+        if (args[0] === '#hypothesisEmbedder') {
+          return $mockAncestorLoader.querySelector('#hypothesisEmbedder');
+        }
+
+      };
+
+      $mockLoader = mockDoc.querySelector('#hypothesisEmbedder');
+      hypothesisOpener = new HypothesisOpener($opener, window, mockDoc);
+    });
+
+    afterEach(() => {
+      hypothesisOpener = null;
+    });
+
+    context('when the load has already failed', () => {
+
+      let hypothesisOpener;
+
+      beforeEach(() => {
+        hypothesisOpener = new HypothesisOpener($opener, window, document);
+      });
+
+      it('calls handleInitFail', () => {
+        const failHandlerSpy = spy(hypothesisOpener, 'handleInitFail');
+        $mockLoader.dataset.hypothesisEmbedLoadStatus = 'failed';
+
+        hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
+        expect(failHandlerSpy.callCount).to.equal(1);
+
+        hypothesisOpener.handleInitFail.restore();
+        delete $mockLoader.dataset.hypothesisEmbedLoadStatus;
+      });
+
+    });
+
+    it('adds a "loaderror" event listener to the hypothesis loader script element', () => {
+      const listenerSpy = spy($mockLoader, 'addEventListener');
+
+      hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
+      expect(listenerSpy.calledOnce).to.be.true;
+      expect(listenerSpy.getCall(0).args[0]).to.equal('loaderror');
+
+      $mockLoader.addEventListener.restore();
+    });
+
+    describe('the timer', () => {
+
+      beforeEach(() => {
+        if ($mockLoader.dataset.hypothesisEmbedLoadStatus) {
+          delete $mockLoader.dataset.hypothesisEmbedLoadStatus;
+        }
+      });
+
+      // Fails in Phantom, but passes in GUI browser (even IE11!)
+      xit('expires after 10000 ms', () => {
+        const timeoutSpy = spy(hypothesisOpener.window, 'setTimeout');
+        hypothesisOpener.setupPreReadyIndicatorsWithTimer($mockLoader);
+        expect(timeoutSpy.callCount).to.equal(1);
+        expect(timeoutSpy.getCall(0).args[1]).to.equal(10000);
+
+        hypothesisOpener.window.setTimeout.restore();
+      });
+
+      it('on expiry calls back to handleInitFail', () => {
+        const handleInitFailSpy = spy(hypothesisOpener, 'handleInitFail');
+        hypothesisOpener.handleTimerExpired();
+        expect(handleInitFailSpy.calledOnce).to.be.true;
+        hypothesisOpener.handleInitFail.restore();
+      });
+
+    });
+
+  });
+
+  describe('the handleInitFail method', () => {
+
+    let hypothesisOpener;
+
+    beforeEach(() => {
+      hypothesisOpener = new HypothesisOpener($opener, window, document);
+    });
+
+    it('logs the console error "Problem loading or interacting with Hypothesis client."', () => {
+      const errorSpy = spy(window.console, 'error');
+      hypothesisOpener.handleInitFail(null, window);
+      const observedFirstCallArg = errorSpy.getCalls()[0].args[0];
+      expect(observedFirstCallArg.message).to.equal('Problem loading or interacting with Hypothesis client.');
+      window.console.error.restore();
+    });
+
+    // Fails in Phantom, but passes in GUI browser (even IE11!)
+    xit('clears the timer', () => {
+      const mockTimerRef = 12345;
+      const clearTimeoutSpy = spy(window, 'clearTimeout');
+      hypothesisOpener.handleInitFail(mockTimerRef, window);
+      expect(clearTimeoutSpy.calledOnceWithExactly(mockTimerRef)).to.be.true;
+      window.clearTimeout.restore();
+    });
+
+    it('triggers UI failure state', () => {
+      const showFailureSpy = spy(hypothesisOpener.speechBubble, 'showFailureState');
+      hypothesisOpener.handleInitFail(null, window);
+      expect(showFailureSpy.calledOnce).to.be.true;
+      hypothesisOpener.speechBubble.showFailureState.restore();
+    });
+
+    it('triggers removal of Hypothesis UI', () => {
+      const removeUISpy = spy(hypothesisOpener, 'removeHypothesisUI');
+      hypothesisOpener.handleInitFail(null, window);
+      expect(removeUISpy.calledOnce).to.be.true;
+      hypothesisOpener.removeHypothesisUI.restore();
+    });
+
   });
 
   describe('the findPositioningMethod() method', () => {
@@ -94,14 +257,11 @@ describe('A HypothesisOpener Component', function () {
 
       let $containsFirstSection;
       let id;
-      let opener;
 
       beforeEach(() => {
         $containsFirstSection = generateSnippetWithIdentifiableFirstSection();
-        opener = new HypothesisOpener($opener);
-
         id = 'IShouldBeAppendedToTheFirstSection';
-        opener.$elm.setAttribute('id', id);
+        $opener.setAttribute('id', id);
 
         expect($containsFirstSection.querySelector(`#${id}`)).to.be.null;
 
@@ -109,11 +269,11 @@ describe('A HypothesisOpener Component', function () {
 
       it('appends the opener to the first section', () => {
 
-        HypothesisOpener.positionByFirstSection(opener.$elm, $containsFirstSection);
+        HypothesisOpener.positionByFirstSection($opener, $containsFirstSection);
 
         const $finalElementInFirstSection = $containsFirstSection.querySelector('.article-section--first').lastElementChild;
         expect($finalElementInFirstSection.getAttribute('id')).to.equal(id);
-        expect($finalElementInFirstSection).to.deep.equal(opener.$elm);
+        expect($finalElementInFirstSection).to.deep.equal($opener);
       });
 
     });
@@ -142,23 +302,20 @@ describe('A HypothesisOpener Component', function () {
 
       let $hasIdentifiableFistSection;
       let id;
-      let opener;
 
       beforeEach(() => {
         $hasIdentifiableFistSection = generateSnippetWithIdentifiableFirstSection();
-        opener = new HypothesisOpener($opener);
-
         id = 'IShouldBeAppendedToTheSecondSection';
-        opener.$elm.setAttribute('id', id);
+        $opener.setAttribute('id', id);
 
         expect($hasIdentifiableFistSection.querySelector(`#${id}`)).to.be.null;
 
       });
 
       it('appends the opener to the second section', () => {
-        HypothesisOpener.positionBySecondSection(opener.$elm, $hasIdentifiableFistSection);
+        HypothesisOpener.positionBySecondSection($opener, $hasIdentifiableFistSection);
         const $expectedParent = $hasIdentifiableFistSection.querySelector('.article-section--first').nextElementSibling.querySelector('.article-section__body');
-        expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
+        expect($expectedParent.lastElementChild).to.deep.equal($opener);
       });
 
     });
@@ -170,23 +327,20 @@ describe('A HypothesisOpener Component', function () {
     context('when there are no paragraphs in the article', () => {
 
       let $zeroParagraphCount;
-      let opener;
       let id;
 
       beforeEach(() => {
         $zeroParagraphCount = generateSnippetWithParagraphs(0);
-        opener = new HypothesisOpener($opener);
-
         id = 'IShouldBeAppendedToTheEndOfTheArticle';
-        opener.$elm.setAttribute('id', id);
+        $opener.setAttribute('id', id);
 
         expect($zeroParagraphCount.querySelector(`#${id}`)).to.be.null;
 
       });
 
       it('positions the opener at the end of the article', () => {
-        HypothesisOpener.positionCentrallyInline(opener.$elm, $zeroParagraphCount);
-        expect($zeroParagraphCount.lastElementChild).to.deep.equal(opener.$elm);
+        HypothesisOpener.positionCentrallyInline($opener, $zeroParagraphCount);
+        expect($zeroParagraphCount.lastElementChild).to.deep.equal($opener);
       });
 
     });
@@ -194,25 +348,22 @@ describe('A HypothesisOpener Component', function () {
     context('when there are an odd number of paragraphs in the article', () => {
 
       let $snippetWithOddParagraphCount;
-      let opener;
       let id;
 
       beforeEach(() => {
         $snippetWithOddParagraphCount = generateSnippetWithParagraphs(5);
-        opener = new HypothesisOpener($opener);
-
         id = 'IShouldBeAppendedToTheMiddleParagraph';
-        opener.$elm.setAttribute('id', id);
+        $opener.setAttribute('id', id);
 
         expect($snippetWithOddParagraphCount.querySelector(`#${id}`)).to.be.null;
 
       });
 
       it('positions the opener by the middle paragraph', () => {
-        HypothesisOpener.positionCentrallyInline(opener.$elm, $snippetWithOddParagraphCount);
+        HypothesisOpener.positionCentrallyInline($opener, $snippetWithOddParagraphCount);
         const paragraphs = $snippetWithOddParagraphCount.querySelectorAll('p');
         const $expectedParent = paragraphs[Math.floor(paragraphs.length / 2)];
-        expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
+        expect($expectedParent.lastElementChild).to.deep.equal($opener);
       });
 
     });
@@ -220,25 +371,22 @@ describe('A HypothesisOpener Component', function () {
     context('when there are an even number of paragraphs (n) in the article', () => {
 
       let $snippetWithEvenParagraphCount;
-      let opener;
       let id;
 
       beforeEach(() => {
         $snippetWithEvenParagraphCount = generateSnippetWithParagraphs(6);
-        opener = new HypothesisOpener($opener);
-
         id = 'IShouldBeAppendedToTheMiddleParagraphRoundingDown';
-        opener.$elm.setAttribute('id', id);
+        $opener.setAttribute('id', id);
 
         expect($snippetWithEvenParagraphCount.querySelector(`#${id}`)).to.be.null;
 
       });
 
       it('positions the opener by the n/2 paragraph', () => {
-        HypothesisOpener.positionCentrallyInline(opener.$elm, $snippetWithEvenParagraphCount);
+        HypothesisOpener.positionCentrallyInline($opener, $snippetWithEvenParagraphCount);
         const paragraphs = $snippetWithEvenParagraphCount.querySelectorAll('p');
         const $expectedParent = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
-        expect($expectedParent.lastElementChild).to.deep.equal(opener.$elm);
+        expect($expectedParent.lastElementChild).to.deep.equal($opener);
       });
 
     });

@@ -13,20 +13,177 @@ module.exports = class HypothesisOpener {
     this.window = _window;
     this.doc = doc;
 
-    HypothesisOpener.applyStyleInitial(this.$elm);
-    this.$elm.classList.add('hypothesis-opener');
-    this.$elm.dataset.hypothesisTrigger = '';
-    this.speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
-    this.isContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
+    this.isWithinContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
+    this.speechBubble = this.setupSpeechBubble(this.isWithinContextualData);
+    this.setupPlacementAndStyles(this.isWithinContextualData);
 
-    if (!this.isContextualData) {
-      HypothesisOpener.applyStyleArticleBody(this.$elm);
-      this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('body')));
+    let maxWaitTimer = null;
+    let $loader = null;
+    try {
+      $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
+      maxWaitTimer = this.setupPreReadyIndicatorsWithTimer($loader);
+    } catch (e) {
+      this.window.console.error(e);
+      $loader.parentNode.removeChild($loader);
+      if (typeof this.window.newrelic === 'object') {
+        this.window.newrelic.noticeError(e);
+      }
+
+      return;
     }
 
-    this.hookUpDataProvider(this.$elm, '[data-visible-annotation-count]');
+    const visibleCountSelector = '[data-visible-annotation-count]';
+    this.hookUpDataProvider(this.$elm, this.isWithinContextualData, visibleCountSelector, maxWaitTimer);
+
     this.setupSectionExpansion(this.doc);
 
+    // Declare this.$elm to be a trigger to open the Hypothesis client (click handled by Hypothesis)
+    this.$elm.dataset.hypothesisTrigger = '';
+  }
+
+  // It is an error for any of:
+  //  - the load has already failed
+  //  - the loaderror event fires before Hypothesis is ready
+  //  - the maxWaitTimer expires
+  setupPreReadyIndicatorsWithTimer($loader) {
+
+    if (HypothesisOpener.hasLoadAlreadyFailed($loader)) {
+      // Already-failed loading should already have thrown an error, so don't throw again.
+      this.handleInitFail(null, this.window, false);
+      return;
+    }
+
+    const maxWaitTime = 10000;
+
+    const maxWaitTimer = this.window.setTimeout(this.handleTimerExpired.bind(this), maxWaitTime);
+
+    $loader.addEventListener('loaderror', (e) => {
+      this.handleInitFail(maxWaitTimer, this.window, e);
+    });
+
+    return maxWaitTimer;
+  }
+
+  handleInitFail(timer, win, err) {
+    this.removeHypothesisUI();
+    this.speechBubble.showFailureState(this.isWithinContextualData);
+    const window = win || this.window;
+    window.clearTimeout(timer);
+
+    // Do not log the error (use when error will already have been logged elsewhere).
+    if (err === false) {
+      return;
+    }
+
+    let errorMsg;
+    if (err && typeof err.message === 'string') {
+      errorMsg = err.message;
+    } else {
+      errorMsg = 'Problem loading or interacting with Hypothesis client.';
+    }
+
+    // Needs to be explicitly thrown to get a stack trace from Safari.
+    // https://docs.newrelic.com/docs/browser/new-relic-browser/browser-agent-spa-api/notice-error
+    try {
+      throw new Error(errorMsg);
+    } catch (e) {
+      this.window.console.error(e);
+      if (typeof this.window.newrelic === 'object') {
+        this.window.newrelic.noticeError(e);
+      }
+    }
+  }
+
+  handleTimerExpired() {
+    this.handleInitFail(null, this.window, new Error('Hypothesis loading timed out'));
+  }
+
+  removeHypothesisUICounters() {
+    const counters = this.doc.querySelectorAll('[data-visible-annotation-count]');
+    if (counters) {
+      [].forEach.call(counters, (counter) => {
+        const visuallyHiddenCounter = counter.parentNode.parentNode.querySelector('.visuallyhidden');
+        visuallyHiddenCounter.innerHTML = '';
+        delete counter.dataset.visibleAnnotationCount;
+      });
+    }
+  }
+
+  removeHypothesisUISidebar() {
+    const sidebar = this.doc.querySelector('.annotator-frame');
+    if (sidebar) {
+      sidebar.parentElement.removeChild(sidebar);
+    }
+  }
+
+  removeHypothesisUITriggers() {
+    const triggers = this.doc.querySelectorAll('[data-hypothesis-trigger]');
+    if (triggers) {
+      [].forEach.call(triggers, ($trigger) => {
+        delete $trigger.dataset.hypothesisTrigger;
+      });
+    }
+  }
+
+  removeHypothesisUIPopupOnSelect() {
+    let obs;
+    const remove$hypothesisAdder = (addedNode) => {
+      if (addedNode.nodeName === 'HYPOTHESIS-ADDER') {
+        const adder = this.doc.querySelector('hypothesis-adder');
+        if (adder && typeof adder.parentElement) {
+          adder.parentElement.removeChild(adder);
+          obs.disconnect();
+        }
+      }
+    };
+
+    const observerCallback = (mutationsList) => {
+      for (let mutation of mutationsList) {
+        if (mutation.type === 'childList' && mutation.addedNodes.length) {
+          [].forEach.call(mutation.addedNodes, remove$hypothesisAdder);
+        }
+      }
+
+    };
+
+    const popup = this.doc.querySelector('hypothesis-adder');
+    if (popup) {
+      popup.parentElement.removeChild(popup);
+    } else {
+      obs = new MutationObserver(observerCallback);
+      obs.observe(this.doc.querySelector('body'), { childList: true });
+    }
+
+  }
+
+  removeHypothesisUI() {
+    this.removeHypothesisUICounters();
+    this.removeHypothesisUISidebar();
+    this.removeHypothesisUITriggers();
+    this.removeHypothesisUIPopupOnSelect();
+  }
+
+  setupSpeechBubble(isContextualData) {
+    const speechBubble = new SpeechBubble(this.findElementWithClass('speech-bubble'));
+
+    if (isContextualData) {
+      speechBubble.showLoadingIndicator();
+    }
+
+    return speechBubble;
+  }
+
+  static hasLoadAlreadyFailed($loader) {
+    return $loader.dataset.hypothesisEmbedLoadStatus === 'failed';
+  }
+
+  static get$hypothesisLoader($ancestor) {
+    const $loader =  $ancestor.querySelector('#hypothesisEmbedder');
+    if ($loader) {
+      return $loader;
+    }
+
+    throw new Error('No Hypothesis loading code found');
   }
 
   setupSectionExpansion(doc) {
@@ -34,7 +191,7 @@ module.exports = class HypothesisOpener {
       utils.expandCollapsedSections(doc);
     });
 
-    if (this.isContextualData) {
+    if (this.isWithinContextualData) {
       const $prevEl = this.$elm.previousElementSibling;
 
       // Ugh. Refactor this away when the right pattern construction for opening h client becomes apparent
@@ -46,7 +203,16 @@ module.exports = class HypothesisOpener {
     }
   }
 
+  setupPlacementAndStyles(isContextualData) {
+    HypothesisOpener.applyStyleInitial(this.$elm);
+    if (!isContextualData) {
+      HypothesisOpener.applyStyleArticleBody(this.$elm);
+      this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('body')));
+    }
+  }
+
   static applyStyleInitial($elm) {
+    $elm.classList.add('hypothesis-opener');
     $elm.style.display = 'inline-block';
     $elm.style.cursor = 'pointer';
 
@@ -71,20 +237,23 @@ module.exports = class HypothesisOpener {
 
   }
 
-  hookUpDataProvider($elm, visibleCountSelector) {
+  hookUpDataProvider($elm, isWithinContextualData, visibleCountSelector, timer) {
 
     // Updated by the hypothesis client
     const $dataProvider = $elm.querySelector('[data-hypothesis-annotation-count]');
     if (!$dataProvider) {
+      this.handleInitFail(timer, this.window);
       return;
     }
 
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         try {
-          this.updateVisibleCount(mutation.addedNodes[0].data, visibleCountSelector, this.isContextualData);
-        } catch (e) {
-          console.error(e);
+          this.updateVisibleCount(mutation.addedNodes[0].data, visibleCountSelector, isWithinContextualData);
+          this.speechBubble.removeLoadingIndicator();
+          this.window.clearTimeout(timer);
+        } catch (error) {
+          this.handleInitFail(timer, this.window, error);
         }
       });
     });
@@ -175,7 +344,7 @@ module.exports = class HypothesisOpener {
     try {
       HypothesisOpener.findPositioningMethod(articleType).call(null, $elm, this.doc.querySelector('.content-container'));
     } catch (e) {
-      console.error(e);
+      this.window.console.error(e);
     }
   }
 
