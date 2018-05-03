@@ -98,7 +98,7 @@ module.exports = class HypothesisOpener {
     this.handleInitFail(null, this.window, new Error('Hypothesis loading timed out'));
   }
 
-  removeHypothesisUI() {
+  removeHypothesisUICounters() {
     const counters = this.doc.querySelectorAll('[data-visible-annotation-count]');
     if (counters) {
       [].forEach.call(counters, (counter) => {
@@ -107,19 +107,25 @@ module.exports = class HypothesisOpener {
         delete counter.dataset.visibleAnnotationCount;
       });
     }
+  }
 
+  removeHypothesisUISidebar() {
     const sidebar = this.doc.querySelector('.annotator-frame');
     if (sidebar) {
       sidebar.parentElement.removeChild(sidebar);
     }
+  }
 
+  removeHypothesisUITriggers() {
     const triggers = this.doc.querySelectorAll('[data-hypothesis-trigger]');
     if (triggers) {
       [].forEach.call(triggers, ($trigger) => {
         delete $trigger.dataset.hypothesisTrigger;
       });
     }
+  }
 
+  removeHypothesisUIPopupOnSelect() {
     let obs;
     const remove$hypothesisAdder = (addedNode) => {
       if (addedNode.nodeName === 'HYPOTHESIS-ADDER') {
@@ -148,6 +154,13 @@ module.exports = class HypothesisOpener {
       obs.observe(this.doc.querySelector('body'), { childList: true });
     }
 
+  }
+
+  removeHypothesisUI() {
+    this.removeHypothesisUICounters();
+    this.removeHypothesisUISidebar();
+    this.removeHypothesisUITriggers();
+    this.removeHypothesisUIPopupOnSelect();
   }
 
   setupSpeechBubble(isContextualData) {
