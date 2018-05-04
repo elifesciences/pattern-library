@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+    assets-builder:
+        volumes:
+            - ./:/srv/pattern-library
+            - /srv/pattern-library/node_modules
+            - source_assets:/srv/pattern-library/source/assets
+            - ./.container_source_assets:/srv/pattern-library/.container_source_assets
+            - test_build:/srv/pattern-library/test/build
+    ui-builder:
+        volumes:
+            - ./source:/srv/pattern-library-ui/source
+            - source_assets:/srv/pattern-library-ui/source/assets
+            - public:/srv/pattern-library-ui/public
+    ui:
+        volumes:
+            - public:/usr/share/nginx/html
+    tests:
+        image: elifesciences/pattern-library_assets-builder:${IMAGE_TAG}
+        command: node_modules/.bin/gulp --test-html=${TEST_HTML} tests:watch
+        ports:
+            - "3000:3000"
+            - "3001:3001"
+            - "8090:8090"
+        volumes:
+            - ./:/srv/pattern-library
+            - /srv/pattern-library/node_modules
+            - source_assets:/srv/pattern-library/source/assets
+            - test_build:/srv/pattern-library/test/build
+        depends_on:
+            - assets-builder
+
+volumes:
+    source_assets:
+    test_build:
+    public:

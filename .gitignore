@@ -7,6 +7,7 @@ npm-debug.log
 *.sass-cache/
 
 /source/assets
+.container_source_assets
 public/*
 public.tar.gz
 
