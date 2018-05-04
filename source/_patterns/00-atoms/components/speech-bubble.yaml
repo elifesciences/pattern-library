@@ -8,7 +8,6 @@ schema:
   properties:
     text:
       type: string
-      minLength: 1
     isSmall:
       type: boolean
       enum:
