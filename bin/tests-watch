@@ -7,4 +7,4 @@ if [ "$#" -ne 1 ]; then
   exit 1
 fi
 
-TEST_HTML="$1" exec docker-compose -f docker-compose.yml -f docker-compose.watch.yml up tests
+TEST_HTML="$1" exec docker-compose up tests
