@@ -53,7 +53,7 @@ module.exports = class HypothesisOpener {
       return;
     }
 
-    const maxWaitTime = 10000;
+    const maxWaitTime = 20000;
 
     const maxWaitTimer = this.window.setTimeout(this.handleTimerExpired.bind(this), maxWaitTime);
 
