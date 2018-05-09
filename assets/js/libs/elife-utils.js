@@ -200,7 +200,12 @@ module.exports = () => {
       return 0;
     }
 
-    return Math.round(pxString.match(/([-0-9.]+)px/)[1]);
+    const numberFromString = parseFloat(pxString);
+    if (isNaN(numberFromString)) {
+      throw new Error(`Can\'t parse argument as a float: ${pxString}`);
+    }
+
+    return Math.round(numberFromString);
   }
 
   function _getZeroAwarePxStringFromValue(value) {
