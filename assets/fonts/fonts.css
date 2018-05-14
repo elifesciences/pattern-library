@@ -1,17 +1,61 @@
+/* SANS */
 
-/* Demi */
+/* Regular */
 @font-face {
   font-display: fallback;
-  font-family: "Avenir Next Webfont";
-  src: url("249228f0-61ac-40cc-a5a5-5609c9816e3f.woff2") format("woff2"),
-    url("efba18ed-80cc-49c4-997a-fbb140739d19.woff") format("woff");
+  font-family: "Noto Sans";
+  src: url("NotoSans-Regular-webfont-western-latin.woff2") format("woff2");
+}
+
+/* Bold */
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Sans";
+  src: url("NotoSans-Bold-webfont-western-latin.woff2") format("woff2");
   font-weight: 700;
 }
 
-/* Medium */
+
+/* Bold Italic */
 @font-face {
   font-display: fallback;
-  font-family: "Avenir Next Webfont";
-  src: url("627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2") format("woff2"),
-  url("f26faddb-86cc-4477-a253-1e1287684336.woff") format("woff");
+  font-family: "Noto Sans";
+  src: url("NotoSans-BoldItalic-webfont-western-latin.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* SERIF */
+
+/* Regular */
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("NotoSerif-Regular-webfont-western-latin.woff2") format("woff2");
+}
+
+/* Italic */
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("NotoSerif-Italic-webfont-western-latin.woff2") format("woff2");
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("NotoSerif-Bold-webfont-western-latin.woff2") format("woff2");
+  font-weight: bold;
+}
+
+/* Bold Italic */
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("NotoSerif-BoldItalic-webfont-western-latin.woff2") format("woff2");
+  font-style: italic;
+  font-weight: bold;
 }
