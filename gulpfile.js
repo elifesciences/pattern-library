@@ -41,10 +41,21 @@ const jsPolyfills = './assets/js/libs/polyfills.js';
 const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource, '!' + jsPolyfills];
 const jsDest = './source/assets/js';
 
-let options = minimist(process.argv, {'boolean': ['sass-lint'], 'default': {'sass-lint': true, 'environment': 'development', 'mocha-grep': null}});
+let options = minimist(
+  process.argv, {
+    'boolean': ['sass-lint'],
+    'default': {
+      'sass-lint': true, 
+      'environment': 'development',
+      'mocha-grep': null,
+      'test-html': null,
+    },
+  }
+);
 let environment = options.environment;
 let mochaGrep = options['mocha-grep'];
 let sassLint = options['sass-lint'];
+let testHtml = options['test-html'];
 
 let server;
 
@@ -57,7 +68,7 @@ gulp.task('echo', [], () => {
 });
 
 gulp.task('generateStyles', ['generateAllStyles', 'generateIndividualStyles'], () => {
-  del(['source/assets/css/tmp']);
+  return del(['source/assets/css/tmp']);
 });
 
 gulp.task('generateIndividualStyles', ['buildStyleFiles'], () => {
@@ -293,14 +304,42 @@ gulp.task('js:watch', () => {
   gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['js']);
 });
 
+gulp.task('extractAssets', () => {
+  return gulp.src('./source/assets/**/*')
+      .pipe(gulp.dest('./.container_source_assets'));
+});
+
 // Task sets
-gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'/*, 'tests:watch'*/]);
+gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'], () => {
+  // no better standalone solution without Gulp 4.x
+  // https://stackoverflow.com/questions/22824546/how-to-run-gulp-tasks-sequentially-one-after-the-other/38818657#38818657
+  gulp.on('task_stop', function (event) {
+    if (['generateStyles', 'img', 'fonts', 'js'].indexOf(event.task) != -1) {
+      gulp.start('extractAssets');
+    }
+  });
+});
 gulp.task('default', ['generateStyles', 'img', 'fonts', 'js']);
 
 /******************************************************************************
  * Used for local testing
  *  Update startPath in `server` task to the test file to be checked.
  ******************************************************************************/
+gulp.task('local:tests:watch', ['local:server', 'js:watch', 'browserify-tests'], () => {
+  gulp.watch('test/*.spec.js', ['browserify-tests']);
+});
+
+gulp.task('local:server', () => {
+  if (!server) {
+    server = express();
+    server.use(express.static('./'));
+    server.listen('8090');
+    browserSync({proxy: 'localhost:8090', startPath: 'test/hypothesisloader.html', browser: 'google chrome'});
+  } else {
+    return gutil.noop;
+  }
+});
+
 gulp.task('tests:watch', ['server', 'js:watch', 'browserify-tests'], () => {
   gulp.watch('test/*.spec.js', ['browserify-tests']);
 });
@@ -310,7 +349,11 @@ gulp.task('server', () => {
     server = express();
     server.use(express.static('./'));
     server.listen('8090');
-    browserSync({proxy: 'localhost:8090', startPath: 'test/hypothesisloader.html', browser: 'google chrome'});
+    browserSync({
+      proxy: 'localhost:8090',
+      startPath: testHtml,
+      open: false,
+    });
   } else {
     return gutil.noop;
   }

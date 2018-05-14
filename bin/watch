@@ -1,9 +1,8 @@
 #!/bin/bash
 set -e
 
-yml='-f docker-compose.yml -f docker-compose.watch.yml'
-
-trap "echo ' ...Ctrl+C'; docker kill pattern-library-gulp-watch > /dev/null; docker rm -v pattern-library-gulp-watch > /dev/null; docker kill pattern-library-php-watch > /dev/null; docker rm -f pattern-library-php-watch > /dev/null; docker-compose $yml down;" SIGINT 
+termination="echo ' ...Interrupting...'; docker kill pattern-library-gulp-watch > /dev/null; docker rm -v pattern-library-gulp-watch > /dev/null; docker kill pattern-library-php-watch > /dev/null; docker rm -f pattern-library-php-watch > /dev/null; docker-compose down;"
+trap "${termination}" SIGINT SIGTERM
 
 function cleanup {
     docker kill "$1" > /dev/null 2>&1 || true
@@ -13,17 +12,18 @@ function cleanup {
 cleanup pattern-library-gulp-watch
 cleanup pattern-library-php-generate
 cleanup pattern-library-php-watch
-docker-compose build
 
 echo "Starting assets-builder Docker container..."
 # --rm will remove anonymous volumes as well
 # https://github.com/docker/compose/pull/3756
-docker-compose $yml run -d --rm --name pattern-library-gulp-watch assets-builder node_modules/.bin/gulp "$*" watch
+docker-compose run -d --rm --name pattern-library-gulp-watch assets-builder node_modules/.bin/gulp $* watch
 echo "Starting ui Docker container..."
-docker-compose $yml run --rm --name pattern-library-php-generate ui-builder php ./core/builder.php --generate
-docker-compose $yml run -d --rm --name pattern-library-php-watch ui-builder php ./core/builder.php --watch
-docker-compose $yml up -d ui
+docker-compose run --rm --name pattern-library-php-generate ui-builder php ./core/builder.php --generate
+docker-compose run -d --rm --name pattern-library-php-watch ui-builder php ./core/builder.php --watch
+docker-compose up -d ui
 
 docker logs -f pattern-library-gulp-watch &
+pid_gulp_watch=$!
 docker logs -f pattern-library-php-watch &
-sleep infinity
+pid_php_watch=$!
+wait "$pid_gulp_watch" "$pid_php_watch"

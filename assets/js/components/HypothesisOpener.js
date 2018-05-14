@@ -53,7 +53,7 @@ module.exports = class HypothesisOpener {
       return;
     }
 
-    const maxWaitTime = 10000;
+    const maxWaitTime = 20000;
 
     const maxWaitTimer = this.window.setTimeout(this.handleTimerExpired.bind(this), maxWaitTime);
 
@@ -249,6 +249,10 @@ module.exports = class HypothesisOpener {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         try {
+          if (!mutation.addedNodes[0]) {
+            return;
+          }
+
           this.updateVisibleCount(mutation.addedNodes[0].data, visibleCountSelector, isWithinContextualData);
           this.speechBubble.removeLoadingIndicator();
           this.window.clearTimeout(timer);

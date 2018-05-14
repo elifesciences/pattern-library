@@ -140,6 +140,7 @@ ENVIRONMENT=development docker-compose build assets
 To watch for changes, run:
 
 ```
+docker-compose build  # only necessary after switching branch or installing new dependencies
 bin/watch
 ```
 
@@ -151,16 +152,35 @@ You can pass options to the underlying gulp:
 bin/watch --sass-lint=false
 ```
 
-This script does not allow to run tests on the result of the watch (yet).
+To run additional gulp command in the same container where `gulp:watch` is running:
+
+```
+$ docker exec -it pattern-library-gulp-watch /bin/bash
+elife@...$ gulp test:unit
+```
+
+The watch loop keeps a read-only host folder up-to-date with the latest assets:
+
+```
+$ ls .container_source_assets/
+css  fonts  img  js
+```
 
 Exit from this script with `Ctrl+C`.
 
-TODO: add docker exec example to run arbitrary gulp commands
-TODO: mount source/assets/ as a folder from the host rather than as a volume
-TODO: mount test/build/ as a volume
-TODO: remove docker-compose build from bin/watch for better restart performance
-TODO: tests:watch should be bin/tests-watch, having / source folder as a volume
-TODO: for tests:watch, forward 3000, 3001, 8080 to gulp container (or perhaps a different container)
+To watch a particular test in a browser:
+
+```
+$ bin/tests-watch test/hypothesisopener.html
+```
+
+Visit the URL that is printed out:
+
+```
+http://localhost:3000/test/hypothesisopener.html
+```
+
+The browser will refresh and rerun the test upon changes to it. Exit from this script with `Ctrl+C`.
 
 # Notes
 

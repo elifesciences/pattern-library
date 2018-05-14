@@ -28,7 +28,11 @@ RUN gem install compass
 
 USER elife
 ENV PROJECT_FOLDER=/srv/pattern-library
-RUN mkdir ${PROJECT_FOLDER}
+# for simplicity, also set right permissions to test folder 
+# (and any volume mounted on it) in case assets-builder
+# is used locally to run gulp tasks
+RUN mkdir ${PROJECT_FOLDER} && \
+    mkdir -p ${PROJECT_FOLDER}/test/build/
 WORKDIR ${PROJECT_FOLDER}
 COPY --chown=elife:elife \
     package.json \
