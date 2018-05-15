@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+echo "Checking for non-ASCII characters in error messages"
+echo "These messages end up in places with limitations like VCL"
+negated_ascii_range="[^\x00-\x7F]"
+matching=$(grep \
+    --color='auto' \
+    --perl-regexp "$negated_ascii_range" \
+    --line-number \
+    --recursive \
+    source/_patterns/00-atoms/errors/)
+if [ "$matching" != "" ]; then
+    echo "Non-ASCII characters found:"
+    echo "$matching"
+    exit 1
+fi

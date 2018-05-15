@@ -6,3 +6,6 @@ gulp test:unit
 
 echo "Running Selenium test suite"
 gulp test:selenium
+
+echo "Static checks"
+.ci/errors-ascii-chars
