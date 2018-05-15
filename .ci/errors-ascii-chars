@@ -15,3 +15,4 @@ if [ "$matching" != "" ]; then
     echo "$matching"
     exit 1
 fi
+exit 0
