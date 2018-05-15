@@ -5,7 +5,7 @@ echo "Checking for non-ASCII characters in error messages"
 echo "These messages end up in places with limitations like VCL"
 negated_ascii_range="[^\x00-\x7F]"
 matching=$(grep \
-    --color='auto' \
+    --color='yes' \
     --perl-regexp "$negated_ascii_range" \
     --line-number \
     --recursive \
