@@ -9,7 +9,7 @@ matching=$(grep \
     --perl-regexp "$negated_ascii_range" \
     --line-number \
     --recursive \
-    source/_patterns/00-atoms/errors/)
+    source/_patterns/00-atoms/errors/ || true)
 if [ "$matching" != "" ]; then
     echo "Non-ASCII characters found:"
     echo "$matching"
