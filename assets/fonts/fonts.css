@@ -12,7 +12,7 @@
   font-display: fallback;
   font-family: "Noto Sans";
   src: url("NotoSans-Bold-webfont-western-latin.woff2") format("woff2");
-  font-weight: 700;
+  font-weight: bold;
 }
 
 
@@ -21,7 +21,7 @@
   font-display: fallback;
   font-family: "Noto Sans";
   src: url("NotoSans-BoldItalic-webfont-western-latin.woff2") format("woff2");
-  font-weight: 700;
+  font-weight: bold;
   font-style: italic;
 }
 

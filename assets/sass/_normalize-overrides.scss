@@ -147,7 +147,7 @@ dd {
 }
 
 dt {
-  font-weight: 700;
+  font-weight: bold;
   dd + & {
     @include blg-spacing("top", "small", "margin");
   }
