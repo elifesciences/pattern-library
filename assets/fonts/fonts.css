@@ -1,13 +1,9 @@
-/* SANS */
-
-/* Regular */
 @font-face {
   font-display: fallback;
   font-family: "Noto Sans";
   src: url("NotoSans-Regular-webfont-western-latin.woff2") format("woff2");
 }
 
-/* Bold */
 @font-face {
   font-display: fallback;
   font-family: "Noto Sans";
@@ -15,9 +11,6 @@
   font-weight: bold;
 }
 
-/* SERIF */
-
-/* Regular */
 @font-face {
   font-display: fallback;
   font-family: "Noto Serif";
