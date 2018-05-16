@@ -15,17 +15,6 @@
   font-weight: bold;
 }
 
-
-/* Bold Italic */
-@font-face {
-  font-display: fallback;
-  font-family: "Noto Sans";
-  src: url("NotoSans-SemiBoldItalic-webfont-western-latin.woff2") format("woff2");
-  font-weight: bold;
-  font-style: italic;
-}
-
-
 /* SERIF */
 
 /* Regular */
@@ -33,29 +22,4 @@
   font-display: fallback;
   font-family: "Noto Serif";
   src: url("NotoSerif-Regular-webfont-western-latin.woff2") format("woff2");
-}
-
-/* Italic */
-@font-face {
-  font-display: fallback;
-  font-family: "Noto Serif";
-  src: url("NotoSerif-Italic-webfont-western-latin.woff2") format("woff2");
-  font-style: italic;
-}
-
-/* Bold */
-@font-face {
-  font-display: fallback;
-  font-family: "Noto Serif";
-  src: url("NotoSerif-Bold-webfont-western-latin.woff2") format("woff2");
-  font-weight: bold;
-}
-
-/* Bold Italic */
-@font-face {
-  font-display: fallback;
-  font-family: "Noto Serif";
-  src: url("NotoSerif-BoldItalic-webfont-western-latin.woff2") format("woff2");
-  font-style: italic;
-  font-weight: bold;
 }
