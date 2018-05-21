@@ -9,7 +9,10 @@
 }
 
 .email-cta__container {
+  box-sizing: content-box;
   padding: 0 6%;
+  margin: 0 auto;
+  max-width: 27.5rem;
 }
 
 .email-cta__header_text {
@@ -24,4 +27,13 @@
   @include body-typeg();
   @include nospace();
   @include blg-spacing("bottom", "small");
+}
+
+.email-cta__privacy_link {
+  color: $color-text-secondary;
+  display: block;
+  @include font-size-and-vertical-height(12, 18);
+  @include margin(4, "bottom");
+  text-decoration: underline;
+  text-align: left;
 }

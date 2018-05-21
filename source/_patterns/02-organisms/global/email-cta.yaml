@@ -14,9 +14,13 @@ schema:
       subHeader:
         type: string
         minLength: 1
+      privacyUri:
+        type: string
+        minLength: 1
       compactForm:
         $ref: ../../01-molecules/components/compact-form.yaml#/schema
       required:
         - headerText
         - subHeader
         - compactForm
+        - privacyUri
