@@ -318,7 +318,11 @@
   "emailCta": {
     "headerText": "Be the first to read new articles from eLife",
     "subHeader": "Sign up for alerts",
-    "privacyUri": "/link-to-privacy-notice",
+    "formFieldInfoLink": {
+      "text": "Privacy notice",
+      "url": "/privacy-notice",
+      "alignLeft": true
+    },
     "compactForm": {
       "formAction": "#",
       "formId": "myCompactForm",

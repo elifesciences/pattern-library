@@ -1,6 +1,7 @@
 assets:
   css:
     - email-cta.css
+    - $ref: ../../00-atoms/forms/form-field-info-link.yaml#/assets/css
     - $ref: ../../01-molecules/components/compact-form.yaml#/assets/css
   js: []
 schema:
@@ -14,13 +15,12 @@ schema:
       subHeader:
         type: string
         minLength: 1
-      privacyUri:
-        type: string
-        minLength: 1
+      formFieldInfoLink:
+        $ref: ../../00-atoms/forms/form-field-info-link.yaml#/schema
       compactForm:
         $ref: ../../01-molecules/components/compact-form.yaml#/schema
       required:
         - headerText
         - subHeader
         - compactForm
-        - privacyUri
+        - formFieldInfoLink
