@@ -1,0 +1,15 @@
+@import "../../definitions";
+
+.form-field-info-link {
+  color: $color-text-secondary;
+  display: block;
+  @include font-size-and-vertical-height(12, 18);
+  @include margin(4, "bottom");
+  text-decoration: underline;
+  text-align: right;
+
+  &.form-field-info-link--left {
+    text-align: left;
+  }
+
+}
