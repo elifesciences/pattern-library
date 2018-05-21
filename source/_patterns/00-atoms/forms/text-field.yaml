@@ -2,6 +2,7 @@ assets:
   css:
     - text-fields.css
     - form-item.css
+    - $ref: form-field-info-link.yaml#/assets/css
   js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
@@ -62,6 +63,8 @@ schema:
           type: boolean
       required:
         - labelText
+    formFieldInfoLink:
+      $ref: form-field-info-link.yaml#/schema
   required:
     - inputType
   dependencies:

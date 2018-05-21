@@ -1,0 +1,14 @@
+{
+  "id": "emailAddress1",
+  "inputType": "email",
+  "formFieldInfoLink": {
+    "text": "Privacy notice",
+    "url": "/privacy-notice"
+  },
+  "label": {
+    "isVisuallyHidden": false,
+    "labelText": "Email Address"
+  },
+  "name": "emailAddress",
+  "autofocus": true
+}
