@@ -5,8 +5,8 @@
   display: block;
   @include font-size-and-vertical-height(12, 18);
   @include margin(4, "bottom");
-  text-decoration: underline;
   text-align: right;
+  text-decoration: underline;
 
   &.form-field-info-link--left {
     text-align: left;
