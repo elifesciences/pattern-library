@@ -17,10 +17,8 @@ module.exports = class CookieOverlay {
       return;
     }
 
-    const message = 'This site uses cookies from Google to deliver its services, to personalise ads ' +
-                    'and to analyse traffic. Information about your use of this site is shared ' +
-                    'with Google. By using this site, you agree to its use of cookies. ' +
-                    '<a href="/privacy">Learn more</a>.';
+    const message = 'This site uses cookies to deliver its services and analyse traffic. By using ' +
+                    'this site, you agree to its use of cookies. <a href="/privacy">Learn more</a>.';
     this.$overlay = this.buildDOM(message);
     this.doc.querySelector('body').appendChild(this.$overlay);
   }
