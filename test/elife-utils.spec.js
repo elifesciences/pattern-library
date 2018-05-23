@@ -1073,7 +1073,7 @@ describe('The utils library', function () {
     let cookies;
 
     beforeEach(() => {
-      cookies = 'firstCookieName=firstCookieValue; secondCookieName=secondCookieValue; thirdCookieName=thirdCookieValue; ';
+      cookies = 'firstCookieName=firstCookieValue; secondCookieName=secondCookieValue; thirdCookieName=thirdCookieValue;';
     });
 
     it('returns the value of the specified cookie', () => {
