@@ -1068,4 +1068,27 @@ describe('The utils library', function () {
 
   });
 
+  describe('getCookieValue function', () => {
+
+    let cookies;
+
+    beforeEach(() => {
+      cookies = 'firstCookieName=firstCookieValue; secondCookieName=secondCookieValue; thirdCookieName=thirdCookieValue; ';
+    });
+
+    it('returns the value of the specified cookie', () => {
+      expect(utils.getCookieValue('firstCookieName', cookies)).to.equal('firstCookieValue');
+
+      expect(utils.getCookieValue('secondCookieName', cookies)).to.equal('secondCookieValue');
+
+      expect(utils.getCookieValue('thirdCookieName', cookies)).to.equal('thirdCookieValue');
+
+    });
+
+    it('returns an empty string when the specified cookie is not found', () => {
+      expect(utils.getCookieValue('missingCookieName', cookies)).to.be.empty;
+    });
+
+  });
+
 });
