@@ -13,6 +13,14 @@ module.exports = class CookieOverlay {
     this.window = _window;
     this.doc = doc;
 
+    try {
+      if (!window.elifeConfig.needsCookieConsent) {
+        return;
+      }
+    } catch (e) {
+      return;
+    }
+
     if (CookieOverlay.previouslyAccepted(this.doc)) {
       return;
     }
