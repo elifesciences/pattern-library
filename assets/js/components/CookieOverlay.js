@@ -36,7 +36,7 @@ module.exports = class CookieOverlay {
 
     $button.addEventListener('click', () => {
       this.$overlay.parentNode.removeChild(this.$overlay);
-      const expiryDate = 'Fri, 31 December 2038 23:59:59 GMT';
+      const expiryDate = 'Tue, 19 January 2038 03:14:07 UTC';
       this.doc.cookie = `cookieNotificationAccepted=true; expires=${expiryDate} path=/; domain=elifesciences.org;`;
     });
 
