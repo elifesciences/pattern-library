@@ -390,3 +390,9 @@
   font-family: $font-monospace;
   @include font-size-and-vertical-height(14, 21);
 }
+
+@mixin opt-in-message-typeg() {
+  font-family: $font-secondary;
+  @include font-size-and-vertical-height(14, 20);
+  font-weight: normal;
+}
