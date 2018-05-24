@@ -1,0 +1,44 @@
+@import "../../definitions";
+
+// Used by CookieOverlay.js
+.js {
+
+  .opt-in-message-bar {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: $color-text--reverse;
+    @include padding(12, "left");
+    @include padding(12, "right");
+    @include blg-spacing("top", "small");
+    @include blg-spacing("bottom", "small");
+    width: 100%;
+
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+
+    & a {
+      color: $color-text--reverse;
+      text-decoration: underline;
+    }
+
+  }
+
+  .opt-in-message-bar__message {
+    @include opt-in-message-typeg();
+    @include constrain-width(800, "max");
+    margin: 0 auto;
+    @include padding(4, "bottom");
+    @include padding(4, "top");
+    text-align: center;
+    @include blg-spacing("bottom", "extra-small", "margin");
+  }
+
+  .opt-in-message-bar__button_wrapper {
+
+    & button {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+}

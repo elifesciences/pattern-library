@@ -685,6 +685,19 @@ module.exports = () => {
     return widthWhenNoScrollBars - widthWhenScrollBars;
   }
 
+  function getCookieValue(cookieSought, cookies) {
+    let found = '';
+    cookies.split('; ').forEach((cookie) => {
+      if (cookie.indexOf(cookieSought) === 0) {
+        const re = new RegExp(`${cookieSought}=([^;]*)`);
+        const cookieMatch = cookie.match(re)[1];
+        found = decodeURIComponent(cookieMatch);
+      }
+    });
+
+    return found;
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -701,6 +714,7 @@ module.exports = () => {
     loadStyleSheet: loadStyleSheet,
     defer: defer,
     flatten: flatten,
+    getCookieValue: getCookieValue,
     invertPxString: invertPxString,
     isCollapsedArticleSection: isCollapsedArticleSection,
     isCollapsibleArticleSection: isCollapsibleArticleSection,
