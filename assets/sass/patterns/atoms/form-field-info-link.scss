@@ -1,15 +1,18 @@
 @import "../../definitions";
 
-.form-field-info-link {
-  color: $color-text-secondary;
+.form-field-info-link-wrapper {
   display: block;
   @include font-size-and-vertical-height(12, 18);
   @include margin(4, "bottom");
   text-align: right;
-  text-decoration: underline;
 
-  &.form-field-info-link--left {
+  &.form-field-info-link-wrapper--left {
     text-align: left;
   }
 
+}
+
+.form-field-info-link {
+  color: $color-text-secondary;
+  text-decoration: underline;
 }
