@@ -7,7 +7,7 @@ schema:
   type: object
   properties:
     text:
-      type: string
+      name: string
       minLength: 1
     url:
       type: string
@@ -17,5 +17,5 @@ schema:
       enum:
         - true
   required:
-    - text
+    - name
     - url

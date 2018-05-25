@@ -317,7 +317,7 @@
     "headerText": "Be the first to read new articles from eLife",
     "subHeader": "Sign up for alerts",
     "formFieldInfoLink": {
-      "text": "Privacy notice",
+      "name": "Privacy notice",
       "url": "/privacy-notice",
       "alignLeft": true
     },

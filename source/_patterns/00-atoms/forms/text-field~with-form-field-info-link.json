@@ -2,7 +2,7 @@
   "id": "emailAddress1",
   "inputType": "email",
   "formFieldInfoLink": {
-    "text": "Privacy notice",
+    "name": "Privacy notice",
     "url": "/privacy-notice"
   },
   "label": {
