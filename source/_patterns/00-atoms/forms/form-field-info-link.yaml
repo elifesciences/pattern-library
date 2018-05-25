@@ -6,8 +6,8 @@ schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
   properties:
-    text:
-      name: string
+    name:
+      type: string
       minLength: 1
     url:
       type: string
