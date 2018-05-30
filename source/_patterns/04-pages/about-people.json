@@ -278,6 +278,11 @@
   "emailCta": {
     "headerText": "Be the first to read new articles from eLife",
     "subHeader": "Sign up for alerts",
+    "formFieldInfoLink": {
+      "name": "Privacy notice",
+      "url": "/privacy-notice",
+      "alignLeft": true
+    },
     "compactForm": {
       "formAction": "#",
       "formId": "myCompactForm",
