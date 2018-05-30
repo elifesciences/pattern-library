@@ -17,6 +17,13 @@
 
 }
 
+.form-item__label_container {
+  @supports (display: flex) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .form-item__label {
   display: block;
   @include typeg-form-label();

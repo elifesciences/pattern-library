@@ -1,12 +1,19 @@
 <div class="form-item{{#state}} form-item--{{state}}{{/state}}">
 
-  {{#label}}
-    <label
-        for="{{id}}"
-        class="form-item__label{{#isVisuallyHidden}} visuallyhidden{{/isVisuallyHidden}}">
-      {{labelText}}
-    </label>
-  {{/label}}
+  <div class="form-item__label_container">
+    {{#label}}
+      <label
+          for="{{id}}"
+          class="form-item__label{{#isVisuallyHidden}} visuallyhidden{{/isVisuallyHidden}}">
+        {{labelText}}
+      </label>
+    {{/label}}
+
+    {{#formFieldInfoLink}}
+      {{> atoms-form-field-info-link}}
+    {{/formFieldInfoLink}}
+  </div>
+
   <input
       type="{{inputType}}"
       class="text-field text-field--{{inputType}}{{#state}} text-field--{{state}}{{/state}}"
