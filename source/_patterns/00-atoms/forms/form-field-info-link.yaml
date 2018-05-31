@@ -1,0 +1,21 @@
+assets:
+  css:
+    - form-field-info-link.css
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    name:
+      type: string
+      minLength: 1
+    url:
+      type: string
+      minLength: 1
+    alignLeft:
+      type: boolean
+      enum:
+        - true
+  required:
+    - name
+    - url

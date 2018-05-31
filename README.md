@@ -185,3 +185,6 @@ The browser will refresh and rerun the test upon changes to it. Exit from this s
 # Notes
 
 All assets paths in Mustache templates must be wrapped in `{{#assetRewrite}}`, which allows implementations to rewrite the path for cache-busting purposes. The path must also be prepended by `{{assetsPath}}`. 
+
+# License
+All code in this repo is MIT licensed, apart from the web fonts, which are are licensed separately. See the LICENSE.MD file in `/assets/fonts/` for details.
