@@ -1,0 +1,14 @@
+<script>
+  if (
+      window.localStorage &&
+      document.querySelector &&
+      window.addEventListener &&
+      !!(document.createElement('div')).dataset)
+  {
+    {{#scriptLoader}}
+      var $body = document.querySelector('body');
+      {{{scriptLoader}}}
+    {{/scriptLoader}}
+  }
+</script>
+
