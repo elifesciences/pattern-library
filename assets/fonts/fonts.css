@@ -16,3 +16,18 @@
   font-family: "Noto Serif";
   src: url("NotoSerif-Regular-webfont-custom-2-subsetting.woff2") format("woff2");
 }
+
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("NotoSerif-Bold-webfont-basic-latin-subsetting.woff2") format("woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("NotoSerif-BoldItalic-webfont-basic-latin-subsetting.woff2") format("woff2");
+  font-style: italic;
+  font-weight: bold;
+}
