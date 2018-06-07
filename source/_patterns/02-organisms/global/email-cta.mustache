@@ -7,6 +7,11 @@
       </header>
 
       <h3 class="email-cta__sub_header">{{{ subHeader }}}</h3>
+
+    {{#formFieldInfoLink}}
+      {{> atoms-form-field-info-link}}
+    {{/formFieldInfoLink}}
+
       {{#compactForm}}
         {{> molecules-compact-form }}
       {{/compactForm}}

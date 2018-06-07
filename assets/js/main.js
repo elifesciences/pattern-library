@@ -21,6 +21,7 @@ if (window.localStorage && document.querySelector &&
   Components.AudioPlayer = require('./components/AudioPlayer');
   Components.Carousel = require('./components/Carousel');
   Components.ContentHeader = require('./components/ContentHeader');
+  Components.CookieOverlay = require('./components/CookieOverlay');
   Components.DelegateBehaviour = require('./components/DelegateBehaviour');
   Components.FilterPanel = require('./components/FilterPanel');
   Components.FragmentHandler = require('./components/FragmentHandler');
