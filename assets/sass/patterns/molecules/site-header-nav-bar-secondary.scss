@@ -3,12 +3,14 @@
 .nav-secondary {
   background-color: #fff;
   float: right;
+  height: 40px;
+  padding-top: 8px;
   position: relative;
   z-index: 15;
 }
 
 .nav-secondary__list {
-  align-items: center;
+  align-items: baseline;
   display: table-cell;
   @supports (display: flex) {
     display: flex;
@@ -34,6 +36,8 @@
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include visuallyunhidden();
+    overflow: hidden;
+    @include height(24);
     @include margin(12, "right");
   }
 }
