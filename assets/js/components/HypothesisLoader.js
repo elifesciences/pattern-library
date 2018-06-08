@@ -1,5 +1,7 @@
 'use strict';
 
+const utils = require('../libs/elife-utils')();
+
 module.exports = class HypothesisLoader {
 
   constructor($elm, _window = window, doc = document) {
@@ -27,11 +29,38 @@ module.exports = class HypothesisLoader {
 
     this.$embedder = this.doc.createElement('script');
     this.$embedder.id = 'hypothesisEmbedder';
+    this.$embedder.addEventListener('load', () => {
+      this.setUpSectionOpening(this.doc);
+    });
     this.$embedder.addEventListener('error', () => {
       this.handleLoadError(this.$embedder);
     });
     this.doc.querySelector('head').appendChild(this.$embedder);
     this.$embedder.src = 'https://hypothes.is/embed.js';
+  }
+
+  setUpSectionOpening(document) {
+    document.addEventListener('scrolltorange', (event) => {
+      const collapsedSection = this.getCollapsedSection(event.detail.startContainer, document);
+      if (!!collapsedSection) {
+        collapsedSection.dispatchEvent(utils.eventCreator('expandsection'));
+      }
+    });
+  }
+
+  /**
+   * Returns the collapsed section containing the node, or null.
+   *
+   * @param {Node} node The node to search for
+   * @param {HTMLDocument} document The document to search within
+   * @returns {Node} The collapsed section, or undefined
+   */
+  getCollapsedSection(node, document) {
+    const collapsedSections = [...document.querySelectorAll('.article-section--collapsed')];
+
+    return collapsedSections.find(($collapsedSection) => {
+      return utils.areElementsNested($collapsedSection, node);
+    });
   }
 
   handleLoadError($loader) {
