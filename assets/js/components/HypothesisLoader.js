@@ -58,9 +58,7 @@ module.exports = class HypothesisLoader {
   getCollapsedSection(node, document) {
     const collapsedSections = [...document.querySelectorAll('.article-section--collapsed')];
 
-    return collapsedSections.find(($collapsedSection) => {
-      return utils.areElementsNested($collapsedSection, node);
-    });
+    return collapsedSections.find(($collapsedSection) => utils.areElementsNested($collapsedSection, node));
   }
 
   handleLoadError($loader) {
