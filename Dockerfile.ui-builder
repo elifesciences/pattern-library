@@ -12,5 +12,5 @@ COPY extras/ extras/
 COPY bin/validate bin/validate
 COPY --from=composer /app/vendor/ vendor/
 COPY --from=assets /srv/pattern-library/source/ source/
-RUN php bin/validate
-RUN php core/builder.php -g
+RUN php bin/validate && \
+    php core/builder.php -g
