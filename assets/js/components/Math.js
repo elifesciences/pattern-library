@@ -65,18 +65,30 @@ module.exports = class Math {
             const basicScaling = 90;
 
             // Work around for a bug causing inconsistent maths sizing between browsers:
-            // On Mac, Webkit/Blink browsers, and on PC, IE11 (other IE not tested) display the maths
-            // legibly; other browsers on Mac & PC require it scaled up.
-            // TODO: check Linux.
+            // Some browsers display the maths legibly with the basic scaling, other browsers
+            // require it to be scaled up.
             const upScaling = basicScaling * 2;
 
             function shouldBeScaledUp(Browser) {
+
+              // Don't scale up if any the following applies:
               return !(
+
+                // IE
                 Browser.isMSIE ||
-                (Browser.isLinux && Browser.isFirefox) ||
+
+                // Chrome or Safari on a Mac
                 Browser.isMac && (
-                Browser.isChrome || Browser.isSafari
-                )
+                  Browser.isChrome || Browser.isSafari
+                ) ||
+
+                // Firefox not on a Mac or PC (targeting Linux & mobile)
+                Browser.isFirefox && (!(Browser.isMac || Browser.isPC)) ||
+
+                // Some smaller browsers e.g. Brave are have the name "unknown" . (Note that
+                // although both Brave and Yandex browsers are based on Chromium and use Blink
+                // rendering, Yandex identifies as "Chrome".)
+                Browser.name === 'unknown'
               );
             }
 
