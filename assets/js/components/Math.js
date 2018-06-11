@@ -73,6 +73,7 @@ module.exports = class Math {
             function shouldBeScaledUp(Browser) {
               return !(
                 Browser.isMSIE ||
+                (Browser.isLinux && Browser.isFirefox) ||
                 Browser.isMac && (
                 Browser.isChrome || Browser.isSafari
                 )
