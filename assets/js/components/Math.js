@@ -85,10 +85,10 @@ module.exports = class Math {
                 // Firefox not on a Mac or PC (targeting Linux & mobile)
                 Browser.isFirefox && (!(Browser.isMac || Browser.isPC)) ||
 
-                // Some smaller browsers e.g. Brave are have the name "unknown" . (Note that
+                // Some smaller browsers e.g. Brave are identified as "Unknown" . (Note that
                 // although both Brave and Yandex browsers are based on Chromium and use Blink
                 // rendering, Yandex identifies as "Chrome".)
-                Browser.name === 'unknown'
+                Browser.toString() === 'Unknown'
               );
             }
 
