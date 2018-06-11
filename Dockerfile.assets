@@ -1,14 +1,11 @@
 ARG image_tag=latest
 FROM elifesciences/pattern-library_assets-builder:${image_tag} AS assets-builder
 
-FROM busybox:1.28.3
+FROM tianon/true:latest
 ENV PROJECT_FOLDER=/srv/pattern-library
-RUN mkdir -p ${PROJECT_FOLDER}
 WORKDIR ${PROJECT_FOLDER}
 
-COPY --from=assets-builder \
-    --chown=root:root \
-    /srv/pattern-library/source/ ${PROJECT_FOLDER}/source
+COPY --from=assets-builder /srv/pattern-library/source/ ${PROJECT_FOLDER}/source
 
 ARG description=
 LABEL description=${description}

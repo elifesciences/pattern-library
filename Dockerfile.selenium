@@ -1,4 +1,8 @@
-FROM selenium/standalone-firefox-debug:3.11.0-bismuth
+ARG selenium_image_suffix=
+FROM selenium/standalone-firefox${selenium_image_suffix}:3.11.0-bismuth
 USER root
-RUN apt-get update && apt-get -y install mplayer linux-sound-base
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    mplayer \
+    linux-sound-base \
+    && rm -rf /var/lib/apt/lists/*
 USER seluser
