@@ -652,6 +652,13 @@ module.exports = () => {
     return null;
   }
 
+  function expandCollapsedSections(parent) {
+    const collapsed = parent.querySelectorAll('.article-section--collapsed');
+    [].slice.call(collapsed).forEach(($section) => {
+      $section.dispatchEvent(eventCreator('expandsection'));
+    });
+  }
+
   function calcScrollbarWidth() {
     const inner = document.createElement('p');
     inner.style.width = '100%';
@@ -701,6 +708,7 @@ module.exports = () => {
     create$pageOverlay: create$pageOverlay,
     debounce: debounce,
     eventCreator: eventCreator,
+    expandCollapsedSections: expandCollapsedSections,
     getItemType: getItemType,
     loadJavaScript: loadJavaScript,
     loadStyleSheet: loadStyleSheet,
