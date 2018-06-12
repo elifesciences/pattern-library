@@ -82,6 +82,9 @@ module.exports = class Math {
                   Browser.isChrome || Browser.isSafari
                 ) ||
 
+                // Chrome or Safari on iOS
+                Browser.isMobile && Browser.isSafari ||
+
                 // Firefox not on a Mac or PC (targeting Linux & mobile)
                 Browser.isFirefox && (!(Browser.isMac || Browser.isPC)) ||
 
