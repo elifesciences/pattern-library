@@ -71,6 +71,9 @@ module.exports = class Math {
 
             function shouldBeScaledUp(Browser) {
 
+              // Required because maths scales differently between iOS & Android platforms in Chrome
+              // and Safari, and the MathJax API doesn't have a way of distinguishing the mobile OS.
+              // Deliberately not made available as a utility: we don't want to encourage this!
               const isProbablyIOS = function () {
                 return !!navigator.userAgent.match(/iPad|iPhone/);
               };
@@ -82,13 +85,13 @@ module.exports = class Math {
                 Browser.isMSIE ||
 
                 // Safari or Chrome on a Mac
-                Browser.isMac && (Browser.isSafari || Browser.isChrome) ||
+                (Browser.isMac && (Browser.isSafari || Browser.isChrome)) ||
 
                 // Safari or Chrome on iOS
                 (isProbablyIOS() && Browser.isSafari) ||
 
                 // Aiming to target Firefox on Linux & mobile
-                Browser.isFirefox && (!(Browser.isMac || Browser.isPC)) ||
+                (Browser.isFirefox && (!(Browser.isMac || Browser.isPC))) ||
 
                 // Some smaller browsers e.g. Brave are identified as "Unknown" . (Although both
                 // Brave and Yandex browsers are based on Chromium and use Blink rendering, Yandex
