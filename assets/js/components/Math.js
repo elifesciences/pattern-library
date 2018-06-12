@@ -71,6 +71,10 @@ module.exports = class Math {
 
             function shouldBeScaledUp(Browser) {
 
+              const isProbablyIOS = function () {
+                return !!navigator.userAgent.match(/iPad|iPhone/);
+              };
+
               // Don't scale up if any the following applies:
               return !(
 
@@ -80,8 +84,8 @@ module.exports = class Math {
                 // Safari or Chrome on a Mac
                 Browser.isMac && (Browser.isSafari || Browser.isChrome) ||
 
-                // Safari or Chrome on iOS (Chrome uses the Safari rendering engine on iOS)
-                Browser.isMobile && Browser.isSafari ||
+                // Safari or Chrome on iOS
+                (isProbablyIOS() && Browser.isSafari) ||
 
                 // Aiming to target Firefox on Linux & mobile
                 Browser.isFirefox && (!(Browser.isMac || Browser.isPC)) ||
