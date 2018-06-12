@@ -145,8 +145,8 @@
     border-radius: 50%;
     font-size: 1px; // iOS Safari width fix
     height: 12px;
-    @include padding(6, "left");
-    @include padding(6, "right");
+    padding-left: 6px;
+    padding-right: 6px;
     width: 12px;
     vertical-align: top;
 
