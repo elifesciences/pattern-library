@@ -79,7 +79,7 @@
   // character, which sits high on the line. When the content is not the default, ensure to apply the
   // class: button--speech-bubble-populated
   @include font-size-and-vertical-height(48, 36);
-  @include padding(8, "top");
+  @include blg-spacing("top", "extra-small");
 
 }
 
