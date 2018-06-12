@@ -29,11 +29,28 @@ module.exports = class HypothesisLoader {
 
     this.$embedder = this.doc.createElement('script');
     this.$embedder.id = 'hypothesisEmbedder';
+    this.$embedder.addEventListener('load', () => {
+      this.setUpAssetViewerFocus(this.doc);
+    });
     this.$embedder.addEventListener('error', () => {
       this.handleLoadError(this.$embedder);
     });
     this.doc.querySelector('head').appendChild(this.$embedder);
     this.$embedder.src = 'https://hypothes.is/embed.js';
+  }
+
+  setUpAssetViewerFocus(document) {
+    document.addEventListener('scrolltorange', (event) => {
+      if (!event.detail.startContainer) {
+        return;
+      }
+
+      const $assetViewer = event.detail.startContainer.closest('.asset-viewer-inline');
+
+      if ($assetViewer) {
+        $assetViewer.dispatchEvent(utils.eventCreator('assetViewerFocus'));
+      }
+    });
   }
 
   handleLoadError($loader) {
