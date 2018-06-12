@@ -49,6 +49,8 @@
   float: right;
   margin-left: auto;
   @include padding(8, "right");
+  position: relative;
+  top: 8px;
 }
 
 .nav-primary__menu_icon {
