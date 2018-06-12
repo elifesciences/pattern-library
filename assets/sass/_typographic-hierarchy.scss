@@ -85,8 +85,8 @@
 
 @mixin h2-spacing() {
   margin: 0;
-  @include padding(18, "top");
-  @include blg-spacing("bottom", "small");
+  @include padding(21, "bottom");
+  @include padding(21, "top");
 }
 
 @mixin h3-typeg() {
