@@ -77,20 +77,18 @@ module.exports = class Math {
                 // IE
                 Browser.isMSIE ||
 
-                // Chrome or Safari on a Mac
-                Browser.isMac && (
-                  Browser.isChrome || Browser.isSafari
-                ) ||
+                // Safari or Chrome on a Mac
+                Browser.isMac && (Browser.isSafari || Browser.isChrome) ||
 
-                // Chrome or Safari on iOS
+                // Safari or Chrome on iOS (Chrome uses the Safari rendering engine on iOS)
                 Browser.isMobile && Browser.isSafari ||
 
-                // Firefox not on a Mac or PC (targeting Linux & mobile)
+                // Aiming to target Firefox on Linux & mobile
                 Browser.isFirefox && (!(Browser.isMac || Browser.isPC)) ||
 
-                // Some smaller browsers e.g. Brave are identified as "Unknown" . (Note that
-                // although both Brave and Yandex browsers are based on Chromium and use Blink
-                // rendering, Yandex identifies as "Chrome".)
+                // Some smaller browsers e.g. Brave are identified as "Unknown" . (Although both
+                // Brave and Yandex browsers are based on Chromium and use Blink rendering, Yandex
+                // identifies as "Chrome".)
                 Browser.toString() === 'Unknown'
               );
             }
