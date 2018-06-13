@@ -38,14 +38,20 @@ const webdriver         = require('gulp-webdriver');
 
 const js3rdPartySource = './assets/js/libs/third-party/**/*.js';
 const jsPolyfills = './assets/js/libs/polyfills.js';
-const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource, '!' + jsPolyfills];
+const jsLoader = './assets/js/elife-loader.js';
+const jsSource = [
+  './assets/js/**/*.js',
+  `!${js3rdPartySource}`,
+  `!${jsPolyfills}`,
+  `!${jsLoader}`];
+
 const jsDest = './source/assets/js';
 
 let options = minimist(
   process.argv, {
     'boolean': ['sass-lint'],
     'default': {
-      'sass-lint': true, 
+      'sass-lint': true,
       'environment': 'development',
       'mocha-grep': null,
       'test-html': null,
