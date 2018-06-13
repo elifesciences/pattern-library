@@ -61,6 +61,11 @@ p a:not(.additional-asset__link--download):not(.asset-viewer-inline__download_al
   @include discreet-link();
 }
 
+b,
+strong {
+  font-weight: bold;
+}
+
 .underline {
   text-decoration: underline;
 }
@@ -142,7 +147,7 @@ dd {
 }
 
 dt {
-  font-weight: 700;
+  font-weight: bold;
   dd + & {
     @include blg-spacing("top", "small", "margin");
   }

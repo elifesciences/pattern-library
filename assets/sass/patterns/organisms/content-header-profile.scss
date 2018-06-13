@@ -12,7 +12,7 @@
 
 .content-header-profile__display_name {
   @include font-size-and-vertical-height(20, 48);
-  font-weight: 700;
+  font-weight: bold;
   @include nospace();
 }
 
