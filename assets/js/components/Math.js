@@ -56,7 +56,7 @@ module.exports = class Math {
         'HTML-CSS': {
           linebreaks: { automatic: true, width: '75% container' },
 
-          // Required when using Noto Serif as body font, for other fonts YMMMV.
+          // Required when using Noto Serif as body font, for other fonts YMMV.
           scale: (function () {
 
             // Noto Serif's ex height is marginally larger than the font it replaces. The slight
