@@ -17,7 +17,6 @@ services:
                 image_tag: ${IMAGE_TAG}
                 description: ${DESCRIPTION}
         image: elifesciences/pattern-library_assets:${IMAGE_TAG}
-        command: /bin/sh
         depends_on:
             - assets-builder
     composer:
@@ -47,6 +46,7 @@ services:
             - "8889:80"
         depends_on:
             - ui-builder
+    # TODO move to docker-compose.ci.yml
     ci:
         build:
             context: .
@@ -54,7 +54,7 @@ services:
             args:
                 image_tag: ${IMAGE_TAG}
         image: elifesciences/pattern-library_ci:${IMAGE_TAG}
-        command: /bin/bash
+        command: sleep infinity
         depends_on:
             - assets-builder
             - ui
@@ -63,6 +63,8 @@ services:
         build:
             context: .
             dockerfile: Dockerfile.selenium
+            args:
+                selenium_image_suffix: ${SELENIUM_IMAGE_SUFFIX}
         image: elifescience/pattern-library_selenium:${IMAGE_TAG}
         ports:
             - "4444:4444" # WebDriver protocol
