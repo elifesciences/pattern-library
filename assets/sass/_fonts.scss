@@ -1,16 +1,29 @@
-// Each font referenced here should be preloaded in for-head.mustache
-
-/* Demi */
+// Should be preloaded in for-head.mustache
 @font-face {
   font-display: fallback;
-  font-family: "Avenir Next Webfont";
-  src: url("../fonts/249228f0-61ac-40cc-a5a5-5609c9816e3f.woff2") format("woff2");
-  font-weight: 700;
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Regular-webfont-custom-2-subsetting.woff2") format("woff2");
 }
 
-/* Medium */
+// Should be preloaded in for-head.mustache
 @font-face {
   font-display: fallback;
-  font-family: "Avenir Next Webfont";
-  src: url("../fonts/627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2") format("woff2");
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-SemiBold-webfont-custom-2-subsetting.woff2") format("woff2");
+  font-weight: bold;
+}
+
+// Should be preloaded in for-head.mustache
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("../fonts/NotoSerif-Regular-webfont-custom-2-subsetting.woff2") format("woff2");
+}
+
+// Do not preload (limited use)
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("../fonts/NotoSerif-Bold-webfont-basic-latin-subsetting.woff2") format("woff2");
+  font-weight: bold;
 }
