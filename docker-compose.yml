@@ -46,6 +46,7 @@ services:
             - "8889:80"
         depends_on:
             - ui-builder
+    # TODO move to docker-compose.ci.yml
     ci:
         build:
             context: .
