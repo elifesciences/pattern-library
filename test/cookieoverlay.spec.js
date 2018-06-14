@@ -19,6 +19,6 @@ describe('A CookieOverlay Component', function () {
   it('may be accepted by the user', function () {
     let cookieOverlay = new CookieOverlay($elm);
     cookieOverlay.accept();
-    expect(cookieOverlay.previouslyAccepted()).to.be.true;
+    expect(cookieOverlay.cookieString).to.equal('cookieNotificationAccepted=true; expires=Tue, 19 January 2038 03:14:07 UTC; path=/; domain=localhost;');
   });
 });

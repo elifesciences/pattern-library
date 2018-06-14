@@ -12,6 +12,7 @@ module.exports = class CookieOverlay {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+    this.cookieString = null;
 
     if (this.previouslyAccepted()) {
       return;
@@ -31,7 +32,8 @@ module.exports = class CookieOverlay {
     this.$overlay.parentNode.removeChild(this.$overlay);
     const expiryDate = 'Tue, 19 January 2038 03:14:07 UTC';
     const domain = this.$elm.dataset.domain ? this.$elm.dataset.domain : 'elifesciences.org';
-    this.doc.cookie = `cookieNotificationAccepted=true; expires=${expiryDate}; path=/; domain=${domain};`;
+    this.cookieString = `cookieNotificationAccepted=true; expires=${expiryDate}; path=/; domain=${domain};`;
+    this.doc.cookie = this.cookieString;
   }
 
   buildDOM(message) {
