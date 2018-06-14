@@ -11,7 +11,6 @@
 
 .nav-secondary__list {
   align-items: baseline;
-  display: table-cell;
   @supports (display: flex) {
     display: flex;
   }
@@ -29,6 +28,10 @@
   list-style-type: none;
   @include padding(0 12 0 0);
   text-transform: uppercase;
+
+  &:last-child {
+    align-self: self-end;
+  }
 }
 
 .nav-secondary__item:nth-child(4).nav-secondary__item:nth-last-child(2) {

@@ -11,7 +11,6 @@
 
 .nav-primary__list {
   align-items: baseline;
-  display: table-cell;
   @supports (display: flex) {
     display: flex;
   }
@@ -25,8 +24,12 @@
   float: left;
   @include nav-typeg();
   list-style-type: none;
-  @include padding(0 24 0 0);
+  @include padding(9 24 0 0);
   text-transform: uppercase;
+
+  @supports (display: flex) {
+    padding-top: 0;
+  }
 
   &.nav-primary__item--inactive {
     color: $color-text-dividers;
@@ -49,6 +52,7 @@
   float: right;
   margin-left: auto;
   @include padding(8, "right");
+  padding-top: 0;
   position: relative;
   top: 8px;
 }
@@ -59,9 +63,12 @@
   display: block;
   float: left;
   height: 24px;
-  margin-top: -2px;
   padding: 0 3px;
   width: 24px;
+
+  @supports (display: flex) {
+    margin-top: -2px;
+  }
 }
 
 .nav-primary__search_icon {
