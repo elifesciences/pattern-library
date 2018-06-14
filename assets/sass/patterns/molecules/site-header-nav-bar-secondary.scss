@@ -11,7 +11,6 @@
 
 .nav-secondary__list {
   align-items: baseline;
-  display: table-cell;
   @supports (display: flex) {
     display: flex;
   }
