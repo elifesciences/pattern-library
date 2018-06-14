@@ -46,6 +46,7 @@ services:
             - "8889:80"
         depends_on:
             - ui-builder
+    # TODO move to docker-compose.ci.yml
     ci:
         build:
             context: .
@@ -53,7 +54,7 @@ services:
             args:
                 image_tag: ${IMAGE_TAG}
         image: elifesciences/pattern-library_ci:${IMAGE_TAG}
-        command: /bin/bash
+        command: sleep infinity
         depends_on:
             - assets-builder
             - ui
