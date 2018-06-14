@@ -38,14 +38,20 @@ const webdriver         = require('gulp-webdriver');
 
 const js3rdPartySource = './assets/js/libs/third-party/**/*.js';
 const jsPolyfills = './assets/js/libs/polyfills.js';
-const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource, '!' + jsPolyfills];
+const jsLoader = './assets/js/elife-loader.js';
+const jsSource = [
+  './assets/js/**/*.js',
+  `!${js3rdPartySource}`,
+  `!${jsPolyfills}`,
+  `!${jsLoader}`];
+
 const jsDest = './source/assets/js';
 
 let options = minimist(
   process.argv, {
     'boolean': ['sass-lint'],
     'default': {
-      'sass-lint': true, 
+      'sass-lint': true,
       'environment': 'development',
       'mocha-grep': null,
       'test-html': null,
@@ -198,7 +204,7 @@ gulp.task('fonts', () => {
  * Creates a sourcemap.
  ******************************************************************************/
 
-gulp.task('js', ['js:hint', 'js:cs'], () => {
+gulp.task('js', ['js:hint', 'js:cs', 'js:copyLoader'], () => {
 
     return browserify('./assets/js/main.js', { debug: true })
           .transform(babel)
@@ -213,6 +219,11 @@ gulp.task('js', ['js:hint', 'js:cs'], () => {
           .pipe(sourcemaps.write('./'))
           .pipe(gulp.dest(jsDest))
           .pipe(reload());
+});
+
+gulp.task('js:copyLoader', () => {
+  return gulp.src(jsLoader)
+             .pipe(gulp.dest(jsDest));
 });
 
 gulp.task('js:clean', () => {
