@@ -1,0 +1,14 @@
+assets:
+  css: []
+  js: []
+schema:
+  $schema: http://json-schema.org/draft-04/schema#
+  type: object
+  properties:
+    fontPaths:
+      type: array
+      items:
+        type: string
+      minItems: 1
+  required:
+    - fontPaths
