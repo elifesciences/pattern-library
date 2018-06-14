@@ -36,13 +36,11 @@ elifePipeline {
             }
 
             stage 'Smoke tests', {
-                withCommitStatus({
-                    sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml run ci ./smoke_tests.sh ui http"
-
-                    // preserve environment to allow investigation if build fails, clean up otherwise
-                    sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml down -v"
-                }, 'smoke-tests', commit)
-
+                dockerComposeSmokeTests(commit, [
+                    'services': [
+                        'ci': './smoke_tests.sh ui http',
+                    ],
+                ])
             }
 
             elifePullRequestOnly { prNumber ->
