@@ -12,8 +12,17 @@ module.exports = class CookieOverlay {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+    const defaultDomain = 'elifesciences.org';
+    try {
+      this.domain = this.window.elifeConfig.domain || defaultDomain;
+    } catch (e) {
+      this.domain = defaultDomain;
+      utils.logError(this.window, e, 'Domain configuration failed');
+    }
 
-    if (CookieOverlay.previouslyAccepted(this.doc)) {
+    this.cookieString = null;
+
+    if (this.previouslyAccepted()) {
       return;
     }
 
@@ -23,8 +32,15 @@ module.exports = class CookieOverlay {
     this.doc.querySelector('body').appendChild(this.$overlay);
   }
 
-  static previouslyAccepted(doc) {
-    return !!utils.getCookieValue('cookieNotificationAccepted', doc.cookie);
+  previouslyAccepted() {
+    return !!utils.getCookieValue('cookieNotificationAccepted', this.doc.cookie);
+  }
+
+  accept() {
+    this.$overlay.parentNode.removeChild(this.$overlay);
+    const expiryDate = 'Tue, 19 January 2038 03:14:07 UTC';
+    this.cookieString = `cookieNotificationAccepted=true; expires=${expiryDate}; path=/; domain=${this.domain};`;
+    this.doc.cookie = this.cookieString;
   }
 
   buildDOM(message) {
@@ -35,9 +51,7 @@ module.exports = class CookieOverlay {
     const $button = utils.buildElement('button', ['button', 'button--default', 'button--small'], 'Got it', $buttonWrapper);
 
     $button.addEventListener('click', () => {
-      this.$overlay.parentNode.removeChild(this.$overlay);
-      const expiryDate = 'Tue, 19 January 2038 03:14:07 UTC';
-      this.doc.cookie = `cookieNotificationAccepted=true; expires=${expiryDate}; path=/; domain=elifesciences.org;`;
+      this.accept();
     });
 
     return $root;
