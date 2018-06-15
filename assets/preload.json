@@ -1,0 +1,19 @@
+{
+  "resources": [
+    {
+      "type": "font/woff2",
+      "paths": "fonts/NotoSans-Regular-webfont-custom-2-subsetting.woff2"
+    },
+    {
+      "type": "font/woff2",
+      "paths": "fonts/NotoSans-SemiBold-webfont-custom-2-subsetting.woff2"
+    },
+    {
+      "type": "font/woff2",
+      "paths": "fonts/NotoSerif-Regular-webfont-custom-2-subsetting.woff2"
+    },
+    {
+      "type": "font/woff2",
+      "paths": "fonts/NotoSerif-Bold-webfont-basic-latin-subsetting.woff2"
+    }  ]
+}
