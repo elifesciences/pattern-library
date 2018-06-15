@@ -31,7 +31,7 @@ module.exports = class CookieOverlay {
   accept() {
     this.$overlay.parentNode.removeChild(this.$overlay);
     const expiryDate = 'Tue, 19 January 2038 03:14:07 UTC';
-    const domain = this.$elm.dataset.domain ? this.$elm.dataset.domain : 'elifesciences.org';
+    const domain = this.window.elifeConfig.domain ? this.window.elifeConfig.domain : 'elifesciences.org';
     this.cookieString = `cookieNotificationAccepted=true; expires=${expiryDate}; path=/; domain=${domain};`;
     this.doc.cookie = this.cookieString;
   }
