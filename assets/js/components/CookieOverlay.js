@@ -12,6 +12,13 @@ module.exports = class CookieOverlay {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+    try {
+      this.domain = this.window.elifeConfig.domain;
+    } catch (e) {
+      this.domain = 'elifesciences.org';
+      utils.logError(this.window, e, 'Domain configuration failed');
+    }
+
     this.cookieString = null;
 
     if (this.previouslyAccepted()) {
@@ -31,8 +38,7 @@ module.exports = class CookieOverlay {
   accept() {
     this.$overlay.parentNode.removeChild(this.$overlay);
     const expiryDate = 'Tue, 19 January 2038 03:14:07 UTC';
-    const domain = this.window.elifeConfig.domain ? this.window.elifeConfig.domain : 'elifesciences.org';
-    this.cookieString = `cookieNotificationAccepted=true; expires=${expiryDate}; path=/; domain=${domain};`;
+    this.cookieString = `cookieNotificationAccepted=true; expires=${expiryDate}; path=/; domain=${this.domain};`;
     this.doc.cookie = this.cookieString;
   }
 
