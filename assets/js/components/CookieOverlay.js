@@ -12,10 +12,11 @@ module.exports = class CookieOverlay {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+    const defaultDomain = 'elifesciences.org';
     try {
-      this.domain = this.window.elifeConfig.domain;
+      this.domain = this.window.elifeConfig.domain || defaultDomain;
     } catch (e) {
-      this.domain = 'elifesciences.org';
+      this.domain = defaultDomain;
       utils.logError(this.window, e, 'Domain configuration failed');
     }
 

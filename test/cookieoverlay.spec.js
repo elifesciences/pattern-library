@@ -28,4 +28,18 @@ describe('A CookieOverlay Component', function () {
     cookieOverlay.accept();
     expect(cookieOverlay.cookieString).to.equal('cookieNotificationAccepted=true; expires=Tue, 19 January 2038 03:14:07 UTC; path=/; domain=localhost;');
   });
+
+  it('assumes a default domain if empty', function () {
+    window.elifeConfig.domain = '';
+    let cookieOverlay = new CookieOverlay($elm, window);
+    cookieOverlay.accept();
+    expect(cookieOverlay.cookieString).to.contain('domain=elifesciences.org;');
+  });
+
+  it('assumes a default domain if not configured', function () {
+    delete window.elifeConfig;
+    let cookieOverlay = new CookieOverlay($elm, window);
+    cookieOverlay.accept();
+    expect(cookieOverlay.cookieString).to.contain('domain=elifesciences.org;');
+  });
 });
