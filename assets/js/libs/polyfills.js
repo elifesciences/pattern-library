@@ -5,6 +5,7 @@ require('core-js/es6/set');
 require('core-js/fn/object/assign');
 require('core-js/fn/symbol');
 require('core-js/fn/symbol/iterator');
+require('element-closest');
 
 module.exports = (function polyfills() {
 
