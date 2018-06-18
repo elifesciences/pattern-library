@@ -35,8 +35,6 @@ module.exports = class HypothesisOpener {
     const visibleCountSelector = '[data-visible-annotation-count]';
     this.hookUpDataProvider(this.$elm, this.isWithinContextualData, visibleCountSelector, maxWaitTimer);
 
-    this.setupSectionExpansion(this.doc);
-
     // Declare this.$elm to be a trigger to open the Hypothesis client (click handled by Hypothesis)
     this.$elm.dataset.hypothesisTrigger = '';
   }
@@ -184,23 +182,6 @@ module.exports = class HypothesisOpener {
     }
 
     throw new Error('No Hypothesis loading code found');
-  }
-
-  setupSectionExpansion(doc) {
-    this.$elm.addEventListener('click', () => {
-      utils.expandCollapsedSections(doc);
-    });
-
-    if (this.isWithinContextualData) {
-      const $prevEl = this.$elm.previousElementSibling;
-
-      // Ugh. Refactor this away when the right pattern construction for opening h client becomes apparent
-      if (!!$prevEl && $prevEl.classList.contains('contextual-data__item__hypothesis_opener')) {
-        $prevEl.addEventListener('click', () => {
-          utils.expandCollapsedSections(doc);
-        });
-      }
-    }
   }
 
   setupPlacementAndStyles(isContextualData) {
