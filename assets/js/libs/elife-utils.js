@@ -698,6 +698,13 @@ module.exports = () => {
     return found;
   }
 
+  function logError(window, e, message) {
+    window.console.error(message + ':' + e);
+    if (typeof window.newrelic === 'object') {
+      window.newrelic.noticeError(e);
+    }
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -728,5 +735,6 @@ module.exports = () => {
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
     wrapElements: wrapElements,
+    logError: logError,
   };
 };
