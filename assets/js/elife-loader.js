@@ -22,10 +22,10 @@
     }
 
   } catch (e) {
-    if (typeof this.window.newrelic === 'object') {
-      this.window.newrelic.noticeError(e);
+    if (typeof window.newrelic === 'object') {
+      window.newrelic.noticeError(e);
     } else {
-      this.window.console.error('JavaScript loading failed with the error: "' + e +
+      window.console.error('JavaScript loading failed with the error: "' + e +
       '". Additionally, RUM logging failed.');
     }
   }
