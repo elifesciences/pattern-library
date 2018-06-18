@@ -43,7 +43,7 @@ th {
   border: 1px solid $color-text-dividers;
   font-family: $font-secondary;
   @include font-size-and-vertical-height(13, 18);
-  font-weight: 700;
+  font-weight: bold;
   @include padding(6);
 }
 
