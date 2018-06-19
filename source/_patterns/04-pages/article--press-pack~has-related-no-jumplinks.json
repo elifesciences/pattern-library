@@ -41,6 +41,12 @@
         },
 
         {
+          "text": "Innovation",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
           "text": "Search",
           "rel": "search",
           "classes": "nav-primary__item nav-primary__item--search",
