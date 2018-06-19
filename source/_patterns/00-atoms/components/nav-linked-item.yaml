@@ -28,8 +28,13 @@ schema:
                 - search
             picture:
               $ref: picture.yaml#/schema
-          required:
-            - text
+          anyOf:
+            -
+              required:
+                - text
+            -
+              required:
+                - picture
         -
           properties:
             button:
