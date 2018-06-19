@@ -8,7 +8,6 @@
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
         {
-          "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
           "textClasses": "nav-primary__menu_text",
           "path": "#mainMenu",
