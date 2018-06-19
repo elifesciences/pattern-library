@@ -37,6 +37,11 @@ module.exports = class Popup {
   handleLinkClick(e) {
     // If the viewport is too narrow, we don't.
     if (!this.window.matchMedia(`(min-width: ${this.thresholdWidth}px)`).matches) {
+      if (e.currentTarget.href.match(/.*#$/)) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+
       return;
     }
 
