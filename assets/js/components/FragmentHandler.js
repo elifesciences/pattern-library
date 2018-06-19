@@ -75,12 +75,5 @@ module.exports = class FragmentHandler {
     if (!!idOfCollapsedSection) {
       this.doc.getElementById(idOfCollapsedSection).dispatchEvent(utils.eventCreator('expandsection', hash));
     }
-
-    if (hash === 'annotations' || hash.indexOf('annotations:') === 0) {
-      const sections = [].slice.call(this.doc.querySelectorAll('.article-section--js'));
-      sections.forEach(($section) => {
-        $section.dispatchEvent(utils.eventCreator('expandsection'));
-      });
-    }
   }
 };
