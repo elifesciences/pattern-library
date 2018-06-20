@@ -7,7 +7,7 @@
   text-decoration: none;
 
   &:after {
-    content: "\00a\00bb";
+    content: "\00a0\00bb";
   }
 
 }
@@ -16,6 +16,7 @@
   display: inline;
   color: $color-primary;
   font: inherit;
+  white-space: nowrap;
 }
 
 .see-more-link__highlight {
