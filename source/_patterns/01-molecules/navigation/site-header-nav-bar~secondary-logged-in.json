@@ -16,12 +16,6 @@
     },
 
     {
-      "text": "Labs",
-      "path": "#",
-      "classes": "nav-secondary__item"
-    },
-
-    {
       "classes": "nav-secondary__item",
       "button": {
         "text": "Submit my research",
