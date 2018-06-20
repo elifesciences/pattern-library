@@ -34,7 +34,7 @@
   }
 }
 
-.nav-secondary__item:nth-child(4).nav-secondary__item:nth-last-child(2) {
+.nav-secondary__item:nth-child(3).nav-secondary__item:nth-last-child(2) {
   @include visuallyhidden();
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {

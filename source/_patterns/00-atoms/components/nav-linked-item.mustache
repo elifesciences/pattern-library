@@ -17,8 +17,10 @@
       {{#picture}}
         {{> atoms-picture}}
       {{/picture}}
-      {{#textClasses}}<span class="{{textClasses}}"> {{{text}}} </span>{{/textClasses}}
-      {{^textClasses}} {{{text}}} {{/textClasses}}
+      {{#text}}
+        {{#textClasses}}<span class="{{textClasses}}"> {{{text}}} </span>{{/textClasses}}
+        {{^textClasses}} {{{text}}} {{/textClasses}}
+      {{/text}}
       {{#path}}</a>{{/path}}
     {{/button.classes}}
 

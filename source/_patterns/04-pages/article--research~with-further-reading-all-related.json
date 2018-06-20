@@ -8,7 +8,6 @@
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
         {
-          "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
           "textClasses": "nav-primary__menu_text",
           "path": "#mainMenu",
@@ -36,6 +35,12 @@
 
         {
           "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Innovation",
           "path": "#",
           "classes": "nav-primary__item"
         },
@@ -74,11 +79,6 @@
         },
         {
           "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-          "path": "#",
-          "classes": "nav-secondary__item"
-        },
-        {
-          "text": "Labs",
           "path": "#",
           "classes": "nav-secondary__item"
         },
