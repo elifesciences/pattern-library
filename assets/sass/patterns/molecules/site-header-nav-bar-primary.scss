@@ -77,6 +77,11 @@
   width: 24px;
 }
 
+.nav-primary__item--first a {
+  display: inline-block;
+  margin-bottom: -6px;
+}
+
 .nav-primary__menu_text {
   @include padding(10, "bottom");
   vertical-align: top;
