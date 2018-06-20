@@ -1,0 +1,25 @@
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Regular-webfont-custom-2-subsetting.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-SemiBold-webfont-custom-2-subsetting.woff2") format("woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("../fonts/NotoSerif-Regular-webfont-custom-2-subsetting.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("../fonts/NotoSerif-Bold-webfont-basic-latin-subsetting.woff2") format("woff2");
+  font-weight: bold;
+}

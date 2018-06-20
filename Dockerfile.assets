@@ -6,6 +6,7 @@ ENV PROJECT_FOLDER=/srv/pattern-library
 WORKDIR ${PROJECT_FOLDER}
 
 COPY --from=assets-builder /srv/pattern-library/source/ ${PROJECT_FOLDER}/source
+COPY assets/preload.json ${PROJECT_FOLDER}/source/assets
 
 ARG description=
 LABEL description=${description}
