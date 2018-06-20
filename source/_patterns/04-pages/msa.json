@@ -87,12 +87,6 @@
         },
 
         {
-          "text": "Labs",
-          "url": "#",
-          "classes": "nav-secondary__item"
-        },
-
-        {
           "text": "Submit my research",
           "url": "#",
           "classes": "nav-secondary__item",
