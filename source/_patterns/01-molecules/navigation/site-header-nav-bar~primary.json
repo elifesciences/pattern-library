@@ -37,7 +37,7 @@
     },
 
     {
-      "text": "Search",
+      "text": "Search the eLife site",
       "rel": "search",
       "classes": "nav-primary__item nav-primary__item--search",
       "textClasses": "visuallyhidden",
@@ -48,7 +48,7 @@
         "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 1x",
         "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
         "classes": "",
-        "altText": "Search icon"
+        "altText": ""
       },
         "sources": [
           {

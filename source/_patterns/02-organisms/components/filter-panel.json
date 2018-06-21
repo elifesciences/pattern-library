@@ -29,7 +29,7 @@
     }
   ],
   "button": {
-    "text": "Search",
+    "text": "Search the eLife site",
     "classes": "button--default",
     "type": "submit",
     "name": "button"
