@@ -24,7 +24,7 @@ module.exports = class HypothesisOpener {
       maxWaitTimer = this.setupPreReadyIndicatorsWithTimer($loader);
     } catch (e) {
       this.window.console.error(e);
-      if (!!$loader) {
+      if (!!$loader && $loader instanceof HTMLElement) {
         $loader.parentNode.removeChild($loader);
       }
       if (typeof this.window.newrelic === 'object') {
