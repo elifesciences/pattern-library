@@ -27,6 +27,7 @@ module.exports = class HypothesisOpener {
       if (!!$loader && $loader instanceof HTMLElement) {
         $loader.parentNode.removeChild($loader);
       }
+
       if (typeof this.window.newrelic === 'object') {
         this.window.newrelic.noticeError(e);
       }
