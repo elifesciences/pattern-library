@@ -10,18 +10,18 @@
 }
 
 .nav-primary__list {
+  @include height(54);
+  margin: 0;
+  padding: 7px 0 0;
+  vertical-align: middle;
+
   @supports (display: flex) {
     align-items: center;
     display: flex;
     padding-top: 0;
   }
 
-  @include height(54);
-  margin: 0;
-  padding: 7px 0 0;
-  vertical-align: middle;
-
-  }
+}
 
 .nav-primary__item {
   float: left;
