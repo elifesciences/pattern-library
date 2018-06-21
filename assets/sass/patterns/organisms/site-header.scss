@@ -10,8 +10,13 @@
     background-color: #fff;
     display: none;
 
+    &.search-box--js:not(.search-box--shown) {
+      visibility: hidden;
+    }
+
     &.search-box--js {
       display: block;
+      visibility: visible;
       position: absolute;
       top: -20px;
       transition: transform 150ms;
