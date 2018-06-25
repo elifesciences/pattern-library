@@ -61,6 +61,10 @@ p a:not(.additional-asset__link--download):not(.asset-viewer-inline__download_al
   @include discreet-link();
 }
 
+.article-section__body ul:not(.reference__abstracts) a {
+  @include discreet-link();
+}
+
 b,
 strong {
   font-weight: bold;
