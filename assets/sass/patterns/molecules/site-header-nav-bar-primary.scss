@@ -10,14 +10,17 @@
 }
 
 .nav-primary__list {
-  align-items: baseline;
-  @supports (display: flex) {
-    display: flex;
-  }
   @include height(54);
   margin: 0;
   padding: 7px 0 0;
   vertical-align: middle;
+
+  @supports (display: flex) {
+    align-items: center;
+    display: flex;
+    padding-top: 0;
+  }
+
 }
 
 .nav-primary__item {
@@ -52,9 +55,6 @@
   float: right;
   margin-left: auto;
   @include padding(8, "right");
-  padding-top: 0;
-  position: relative;
-  top: 8px;
 }
 
 .nav-primary__menu_icon {

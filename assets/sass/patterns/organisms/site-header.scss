@@ -12,11 +12,18 @@
 
     &.search-box--js {
       display: block;
+      visibility: visible;
       position: absolute;
       top: -20px;
       transition: transform 150ms;
       width: 100%;
       z-index: 5;
+
+      // Justified breach of the css selector 3-clause-rule, as this controls different states of the same element
+      &:not(.search-box--shown) {
+        visibility: hidden;
+      }
+
     }
   }
 
