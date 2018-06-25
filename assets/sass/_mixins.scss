@@ -12,6 +12,20 @@
   @return $size_in_px/$font-size-base-in-px;
 }
 
+@function get-breakpoint($string) {
+  @if $string == "x-small" {
+    @return #{get-rem-from-px($bkpt-site--x-small)}em
+  } @else if $string == "small" {
+    @return #{get-rem-from-px($bkpt-site--small)}em
+  } @else if $string == "medium" {
+    @return #{get-rem-from-px($bkpt-site--medium)}em
+  } @else if $string == "wide" {
+    @return #{get-rem-from-px($bkpt-site--wide)}em
+  } @else if $string == "x-wide" {
+    @return #{get-rem-from-px($bkpt-site--x-wide)}em
+  }
+}
+
 @mixin font-size($size_in_px) {
   font-size: #{$size_in_px}px;
   font-size: get-rem-from-px($size_in_px) * 1rem;
@@ -573,4 +587,21 @@
 
 @mixin blg-column-container() {
   @include blg-margin-bottom--medium-to-large();
+}
+
+@mixin visually-hide-below-breakpoint($breakpoint-name, $height, $margin-shorthand) {
+  @if $breakpoint-name == "x-small" or $breakpoint-name == "small" or $breakpoint-name == "medium" or $breakpoint-name == "wide" or $breakpoint-name == "x-wide" {
+
+    @include visuallyhidden();
+
+    @media only all and (min-width: get-breakpoint($breakpoint-name)) {
+      @include visuallyunhidden();
+      overflow: hidden;
+
+      // After visually unhiding, height and margin need to be explicitly set again
+      @include height($height);
+      @include margin($margin-shorthand);
+    }
+
+  }
 }
