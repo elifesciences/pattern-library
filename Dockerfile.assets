@@ -2,11 +2,12 @@ ARG image_tag=latest
 FROM elifesciences/pattern-library_assets-builder:${image_tag} AS assets-builder
 
 FROM tianon/true:latest
-ENV PROJECT_FOLDER=/srv/pattern-library
-WORKDIR ${PROJECT_FOLDER}
 
-COPY --from=assets-builder /srv/pattern-library/source/ ${PROJECT_FOLDER}/source
-COPY assets/preload.json ${PROJECT_FOLDER}/source/assets
+WORKDIR /srv/pattern-library
+
+COPY source/ source/
+COPY --from=assets-builder /source/assets/ source/assets/
+COPY assets/preload.json source/assets/
 
 ARG description=
 LABEL description=${description}

@@ -1,14 +1,24 @@
 version: '3'
 
 services:
+    npm:
+        build:
+            context: .
+            dockerfile: Dockerfile.npm
+            args:
+                node_version: ${NODE_VERSION}
+        image: elifesciences/pattern-library_npm:${IMAGE_TAG}
     assets-builder:
         build:
             context: .
             dockerfile: Dockerfile.assets-builder
             args:
                 environment: ${ENVIRONMENT}
+                image_tag: ${IMAGE_TAG}
+                node_version: ${NODE_VERSION}
         image: elifesciences/pattern-library_assets-builder:${IMAGE_TAG}
-        command: /bin/bash
+        depends_on:
+            - npm
     assets:
         build:
             context: .
