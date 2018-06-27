@@ -27,7 +27,8 @@ module.exports = class CookieOverlay {
     }
 
     const message = 'This site uses cookies to deliver its services and analyse traffic. By using ' +
-                    'this site, you agree to its use of cookies. <a href="https://elifesciences.org/privacy">Learn more</a>.';
+                    'this site, you agree to its use of cookies. ' +
+                    '<a href="https://elifesciences.org/privacy">Learn&nbsp;more</a>.';
     this.$overlay = this.buildDOM(message);
     this.doc.querySelector('body').appendChild(this.$overlay);
   }
