@@ -58,10 +58,13 @@ elifePipeline {
                 assetsImage.push()
                 image.push()
             }
+        }
+    }
 
-            stage 'Approval', {
-                elifeGitMoveToBranch commit, 'approved'
-            }
+    elifeMainlineOnly {
+        stage 'Approval', {
+            checkout scm
+            elifeGitMoveToBranch commit, 'approved'
         }
     }
 }
