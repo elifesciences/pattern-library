@@ -1,11 +1,3 @@
-assets:
-  css:
-    - listing.css
-    - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
-    - $ref: ../../02-organisms/components/read-more-item.yaml#/assets/css
-    - $ref: ../../01-molecules/navigation/pager.yaml#/assets/css
-    - $ref: ../../00-atoms/components/see-more-link.yaml#/assets/css
-  js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

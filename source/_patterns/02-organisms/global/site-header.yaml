@@ -1,9 +1,3 @@
-assets:
-  css:
-    - site-header.css
-    - $ref: ../../01-molecules/navigation/site-header-nav-bar.yaml#/assets/css
-    - $ref: ../../01-molecules/components/search-box.yaml#/assets/css
-  js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

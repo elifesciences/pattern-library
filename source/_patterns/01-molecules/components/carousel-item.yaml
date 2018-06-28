@@ -1,9 +1,3 @@
-assets:
-  css:
-    - carousel-item.css
-    - $ref: ../../00-atoms/components/button.yaml#/assets/css
-    - $ref: ../../01-molecules/components/meta.yaml#/assets/css
-  js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object

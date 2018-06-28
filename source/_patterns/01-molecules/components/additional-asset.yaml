@@ -1,9 +1,3 @@
-assets:
-  css:
-    - additional-asset.css
-    - $ref: ../../00-atoms/components/caption-text.yaml#/assets/css
-    - $ref: ../../00-atoms/components/doi.yaml#/assets/css
-  js: []
 schema:
   $schema: http://json-schema.org/draft-04/schema#
   type: object
