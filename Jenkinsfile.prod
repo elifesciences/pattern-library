@@ -13,13 +13,10 @@ elifePipeline {
     stage 'Deploy', {
         elifeDeploySlackNotification "pattern-library", "prod"
         elifeGitMoveToBranch commit, 'master'
-        elifeOnNode(
-            {
-                assetsImage.tag('latest').push()
-                image.tag('latest').push()
-            },
-            'containers--medium'
-        )
+        node('containers-jenkins-plugin') {
+            assetsImage.pull().tag('latest').push()
+            image.pull().tag('latest').push()
+        }
         builderDeployRevision 'pattern-library--prod', commit
     }
 
