@@ -1,17 +1,11 @@
-assets:
-  css:
-    - image-link.css
-    - $ref: picture.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    url:
-      type: string
-      minLength: 1
-    image:
-      $ref: picture.yaml#/schema
-  required:
-    - url
-    - image
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  url:
+    type: string
+    minLength: 1
+  image:
+    $ref: picture.yaml
+required:
+  - url
+  - image

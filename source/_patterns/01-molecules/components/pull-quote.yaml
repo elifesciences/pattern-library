@@ -1,16 +1,11 @@
-assets:
-  css:
-    - pull-quote.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    quote:
-      type: string
-      minLength: 1
-    cite:
-      type: string
-      minLength: 1
-  required:
-    - quote
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  quote:
+    type: string
+    minLength: 1
+  cite:
+    type: string
+    minLength: 1
+required:
+  - quote

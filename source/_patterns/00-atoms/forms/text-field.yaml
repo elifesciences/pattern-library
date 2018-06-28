@@ -1,71 +1,64 @@
-assets:
-  css:
-    - text-fields.css
-    - form-item.css
-    - $ref: form-field-info-link.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    id:
-      type: string
-      minLength: 1
-    name:
-      type: string
-      minLength: 1
-    state:
-      type: string
-      enum:
-        - valid
-        - invalid
-    messageGroup:
-      type: object
-      properties:
-        errorText:
-          type: string
-          minLength: 1
-        infoText:
-          type: string
-          minLength: 1
-        id:
-          type: string
-          minLength: 1
-      minProperties: 2
-      required:
-        - id
-    autofocus:
-      type: boolean
-    inputType:
-      type: string
-      enum:
-        - email
-        - password
-        - search
-        - tel
-        - text
-        - url
-      minLength: 1
-    placeholder:
-      type: string
-      minLength: 1
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  id:
+    type: string
+    minLength: 1
+  name:
+    type: string
+    minLength: 1
+  state:
+    type: string
+    enum:
+      - valid
+      - invalid
+  messageGroup:
+    type: object
+    properties:
+      errorText:
+        type: string
+        minLength: 1
+      infoText:
+        type: string
+        minLength: 1
+      id:
+        type: string
+        minLength: 1
+    minProperties: 2
     required:
-      type: boolean
-    disabled:
-      type: boolean
-    label:
-      type: object
-      properties:
-        labelText:
-          type: string
-          minLength: 1
-        isVisuallyHidden:
-          type: boolean
-      required:
-        - labelText
-    formFieldInfoLink:
-      $ref: form-field-info-link.yaml#/schema
+      - id
+  autofocus:
+    type: boolean
+  inputType:
+    type: string
+    enum:
+      - email
+      - password
+      - search
+      - tel
+      - text
+      - url
+    minLength: 1
+  placeholder:
+    type: string
+    minLength: 1
   required:
-    - inputType
-  dependencies:
-    label: [id]
+    type: boolean
+  disabled:
+    type: boolean
+  label:
+    type: object
+    properties:
+      labelText:
+        type: string
+        minLength: 1
+      isVisuallyHidden:
+        type: boolean
+    required:
+      - labelText
+  formFieldInfoLink:
+    $ref: form-field-info-link.yaml
+required:
+  - inputType
+dependencies:
+  label: [id]

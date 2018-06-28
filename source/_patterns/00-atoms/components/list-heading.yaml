@@ -1,15 +1,10 @@
-assets:
-  css:
-    - list-heading.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    heading:
-      type: string
-      minLength: 1
-    headingId:
-      type: string
-  required:
-    - heading
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  heading:
+    type: string
+    minLength: 1
+  headingId:
+    type: string
+required:
+  - heading

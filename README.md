@@ -14,9 +14,6 @@ You'll need:
 
  - PHP (for Patternlab)
  - nodejs (for gulp)
- - ruby (to handle the `compass` gem that underpins `gulp-compass` (see https://www.npmjs.com/package/gulp-compass).
-
-Then install compass: `gem install compass`
 
 ## 2. Automatic setup
 From the root directory run

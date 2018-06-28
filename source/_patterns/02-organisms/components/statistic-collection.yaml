@@ -1,16 +1,10 @@
-assets:
-  css:
-    - $ref: ../../01-molecules/components/statistic.yaml#/assets/css
-    - statistic-collection.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    stats:
-      type: array
-      minItems: 1
-      items:
-        $ref: ../../01-molecules/components/statistic.yaml#/schema
-  required:
-    - stats
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  stats:
+    type: array
+    minItems: 1
+    items:
+      $ref: ../../01-molecules/components/statistic.yaml
+required:
+  - stats

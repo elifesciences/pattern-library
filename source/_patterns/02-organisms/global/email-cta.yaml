@@ -1,25 +1,18 @@
-assets:
-  css:
-    - email-cta.css
-    - $ref: ../../00-atoms/forms/form-field-info-link.yaml#/assets/css
-    - $ref: ../../01-molecules/components/compact-form.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    emailCta:
-      headerText:
-        type: string
-        minLength: 1
-      subHeader:
-        type: string
-        minLength: 1
-      formFieldInfoLink:
-        $ref: ../../00-atoms/forms/form-field-info-link.yaml#/schema
-      compactForm:
-        $ref: ../../01-molecules/components/compact-form.yaml#/schema
-      required:
-        - headerText
-        - subHeader
-        - compactForm
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  emailCta:
+    headerText:
+      type: string
+      minLength: 1
+    subHeader:
+      type: string
+      minLength: 1
+    formFieldInfoLink:
+      $ref: ../../00-atoms/forms/form-field-info-link.yaml
+    compactForm:
+      $ref: ../../01-molecules/components/compact-form.yaml
+    required:
+      - headerText
+      - subHeader
+      - compactForm

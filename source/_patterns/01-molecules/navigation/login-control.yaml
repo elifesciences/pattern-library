@@ -1,50 +1,44 @@
-assets:
-  css:
-    - login-control.css
-    - $ref: ../../00-atoms/components/button.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  oneOf:
-    - properties:
-        button:
-          $ref: ../../00-atoms/components/button.yaml#/schema
-      required:
-        - button
-    - properties:
-        isLoggedIn:
-          type: boolean
-          enum:
-            - true
-        defaultUri:
-          type: string
-          minLength: 1
-        displayName:
-          type: string
-          minLength: 1
-        subsidiaryText:
-          type: string
-          minLength: 1
-        icon:
-          $ref: ../../00-atoms/components/picture.yaml#/schema
-        linkFieldRoots:
-          type: string
-    #      linkFieldRoots is a list of one or more words that are comma-separated. The regex:
-    #       - allows lower case js name characters, plus space, hyphen and commma
-    #       - allows leading/trailing space
-    #       - allows other space only when adjacent to a comma
-    #       - disallows leading/trailing commas and hyphens on the string
-    #       - disallows leading or trailing hyphens on a word
-          pattern: ^[ \t]*[a-z][a-z-$_]*[^-,][ \t]*(,[ \t]*[a-z][a-z-$_]*[^-,][ \t]*)*$
-        linkFieldData:
-          type: string
-          minLength: 1
-      required:
-        - isLoggedIn
-        - defaultUri
-        - displayName
-        - icon
-      dependencies:
-        linkFieldRoots: [linkFieldData]
-        linkFieldData: [linkFieldRoots]
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+oneOf:
+  - properties:
+      button:
+        $ref: ../../00-atoms/components/button.yaml
+    required:
+      - button
+  - properties:
+      isLoggedIn:
+        type: boolean
+        enum:
+          - true
+      defaultUri:
+        type: string
+        minLength: 1
+      displayName:
+        type: string
+        minLength: 1
+      subsidiaryText:
+        type: string
+        minLength: 1
+      icon:
+        $ref: ../../00-atoms/components/picture.yaml
+      linkFieldRoots:
+        type: string
+  #      linkFieldRoots is a list of one or more words that are comma-separated. The regex:
+  #       - allows lower case js name characters, plus space, hyphen and commma
+  #       - allows leading/trailing space
+  #       - allows other space only when adjacent to a comma
+  #       - disallows leading/trailing commas and hyphens on the string
+  #       - disallows leading or trailing hyphens on a word
+        pattern: ^[ \t]*[a-z][a-z-$_]*[^-,][ \t]*(,[ \t]*[a-z][a-z-$_]*[^-,][ \t]*)*$
+      linkFieldData:
+        type: string
+        minLength: 1
+    required:
+      - isLoggedIn
+      - defaultUri
+      - displayName
+      - icon
+    dependencies:
+      linkFieldRoots: [linkFieldData]
+      linkFieldData: [linkFieldRoots]

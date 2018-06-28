@@ -10,7 +10,6 @@ const babel             = require('babelify');
 const browserify        = require('browserify');
 const browserSync       = require('browser-sync');
 const buffer            = require('vinyl-buffer');
-const compass           = require('gulp-compass');
 const concat            = require('gulp-concat');
 const del               = require('del');
 const es                = require('event-stream');
@@ -73,35 +72,6 @@ gulp.task('echo', [], () => {
   console.log(options);
 });
 
-gulp.task('generateStyles', ['generateAllStyles', 'generateIndividualStyles'], () => {
-  return del(['source/assets/css/tmp']);
-});
-
-gulp.task('generateIndividualStyles', ['buildStyleFiles'], () => {
-  return gulp.src(['source/assets/css/tmp/**/*.css', 'source/assets/css/tmp/**/*.map'])
-      .pipe(rename({ dirname: '' }))
-      .pipe(gulp.dest('source/assets/css'));
-
-});
-
-gulp.task('buildStyleFiles', ['sass:lint'], () => {
-
-  return gulp.src(['assets/sass/base.scss', 'assets/sass/patterns/**/*.scss'])
-    .pipe(compass(
-      {
-        config_file: 'config.rb',
-        css: 'source/assets/css/tmp',
-        sass: 'assets/sass',
-        sourcemap: true,
-        style: environment === 'production' ? 'compressed' : 'expanded'
-      }
-    ))
-    .pipe(gulp.dest('source/assets/css/tmp'));
-
-  }
-);
-
-
  /******************************************************************************
   * CSS pre-processing task
   *
@@ -112,8 +82,7 @@ gulp.task('buildStyleFiles', ['sass:lint'], () => {
   * Auto-prefixes properties as required.
   ******************************************************************************/
 
-gulp.task('generateAllStyles', ['sass:lint'], () => {
-
+gulp.task('generateCss', ['sass:lint'], () => {
   let options = environment === 'production' ? {outputStyle: 'compressed'} : null;
 
   return gulp.src('assets/sass/build.scss')
@@ -300,7 +269,7 @@ gulp.task('test:selenium:local', function() {
 // Watchers
 
 gulp.task('sass:watch', () => {
-  gulp.watch('assets/sass/**/*', ['generateStyles']);
+  gulp.watch('assets/sass/**/*', ['generateCss']);
 });
 
 gulp.task('img:watch', () => {
@@ -325,12 +294,12 @@ gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'], () =>
   // no better standalone solution without Gulp 4.x
   // https://stackoverflow.com/questions/22824546/how-to-run-gulp-tasks-sequentially-one-after-the-other/38818657#38818657
   gulp.on('task_stop', function (event) {
-    if (['generateStyles', 'img', 'fonts', 'js'].indexOf(event.task) != -1) {
+    if (['generateCss', 'img', 'fonts', 'js'].indexOf(event.task) != -1) {
       gulp.start('extractAssets');
     }
   });
 });
-gulp.task('default', ['generateStyles', 'img', 'fonts', 'js']);
+gulp.task('default', ['generateCss', 'img', 'fonts', 'js']);
 
 /******************************************************************************
  * Used for local testing
