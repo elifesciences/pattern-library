@@ -1,27 +1,26 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    links:
-      type: object
-      properties:
-        items:
-          type: array
-          properties:
-            name:
-              type: string
-              minLength: 1
-            url:
-              type: string
-              minLength: 1
-          required:
-            - name
-            - url
-          minItems: 1
-      required:
-        - items
-    listHeading:
-      $ref: ../../00-atoms/components/list-heading.yaml#/schema
-  required:
-    - links
-    - listHeading
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  links:
+    type: object
+    properties:
+      items:
+        type: array
+        properties:
+          name:
+            type: string
+            minLength: 1
+          url:
+            type: string
+            minLength: 1
+        required:
+          - name
+          - url
+        minItems: 1
+    required:
+      - items
+  listHeading:
+    $ref: ../../00-atoms/components/list-heading.yaml#/schema
+required:
+  - links
+  - listHeading

@@ -1,65 +1,64 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    id:
-      type: string
-      minLength: 1
-    name:
-      type: string
-      minLength: 1
-    state:
-      type: string
-      enum:
-        - valid
-        - invalid
-    messageGroup:
-      type: object
-      properties:
-        errorText:
-          type: string
-          minLength: 1
-        infoText:
-          type: string
-          minLength: 1
-        id:
-          type: string
-          minLength: 1
-      minProperties: 2
-      required:
-        - id
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  id:
+    type: string
+    minLength: 1
+  name:
+    type: string
+    minLength: 1
+  state:
+    type: string
+    enum:
+      - valid
+      - invalid
+  messageGroup:
+    type: object
+    properties:
+      errorText:
+        type: string
+        minLength: 1
+      infoText:
+        type: string
+        minLength: 1
+      id:
+        type: string
+        minLength: 1
+    minProperties: 2
     required:
-      type: boolean
-    disabled:
-      type: boolean
-    label:
+      - id
+  required:
+    type: boolean
+  disabled:
+    type: boolean
+  label:
+    type: object
+    properties:
+      labelText:
+        type: string
+        minLength: 1
+      isVisuallyHidden:
+        type: boolean
+    required:
+      - labelText
+  options:
+    array: string
+    minItems: 1
+    items:
       type: object
       properties:
-        labelText:
+        value:
           type: string
           minLength: 1
-        isVisuallyHidden:
+        displayValue:
+          type: string
+          minLength: 1
+        selected:
           type: boolean
       required:
-        - labelText
-    options:
-      array: string
-      minItems: 1
-      items:
-        type: object
-        properties:
-          value:
-            type: string
-            minLength: 1
-          displayValue:
-            type: string
-            minLength: 1
-          selected:
-            type: boolean
-        required:
-          - value
-          - displayValue
-  required:
-    - options
-  dependencies:
-    label: [id]
+        - value
+        - displayValue
+required:
+  - options
+dependencies:
+  label: [id]

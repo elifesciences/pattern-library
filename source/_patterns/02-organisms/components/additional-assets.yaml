@@ -1,14 +1,13 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    heading:
-      type: string
-      minLength: 1
-    assets:
-      type: array
-      minItems: 1
-      items:
-        $ref: ../../01-molecules/components/additional-asset.yaml#/schema
-  required:
-    - assets
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  heading:
+    type: string
+    minLength: 1
+  assets:
+    type: array
+    minItems: 1
+    items:
+      $ref: ../../01-molecules/components/additional-asset.yaml#/schema
+required:
+  - assets

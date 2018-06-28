@@ -1,15 +1,14 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    id:
-      type: string
-      minLength: 1
-    label:
-      type: string
-      minLength: 1
-    math:
-      type: string
-      pattern: ^<math>.*<\/math>$
-  required:
-    - math
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  id:
+    type: string
+    minLength: 1
+  label:
+    type: string
+    minLength: 1
+  math:
+    type: string
+    pattern: ^<math>.*<\/math>$
+required:
+  - math

@@ -1,38 +1,37 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    title:
-      type: string
-      minLength: 1
-    longTitle:
-      type: boolean
-    url:
-      type: string
-      minLength: 1
-    hasSubjects:
-      type: boolean
-      enum:
-        - true
-    subjects:
-      type: array
-      minItems: 1
-      items:
-        type: object
-        properties:
-          name:
-            type: string
-            minLength: 1
-        required:
-          - name
-    authorLine:
-      type: string
-      minLength: 1
-    meta:
-      $ref: ../../01-molecules/components/meta.yaml#/schema
-  required:
-    - title
-    - url
-  dependencies:
-    hasSubjects: [subjects]
-    subjects: [hasSubjects]
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  title:
+    type: string
+    minLength: 1
+  longTitle:
+    type: boolean
+  url:
+    type: string
+    minLength: 1
+  hasSubjects:
+    type: boolean
+    enum:
+      - true
+  subjects:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+      required:
+        - name
+  authorLine:
+    type: string
+    minLength: 1
+  meta:
+    $ref: ../../01-molecules/components/meta.yaml#/schema
+required:
+  - title
+  - url
+dependencies:
+  hasSubjects: [subjects]
+  subjects: [hasSubjects]

@@ -1,14 +1,13 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    item:
-      $ref: ../../02-organisms/content-headers/content-header-read-more.yaml#/schema
-    content:
-      type: string
-    isRelated:
-      type: boolean
-      emum:
-        - true
-  required:
-    - item
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  item:
+    $ref: ../../02-organisms/content-headers/content-header-read-more.yaml#/schema
+  content:
+    type: string
+  isRelated:
+    type: boolean
+    emum:
+      - true
+required:
+  - item

@@ -1,12 +1,11 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    text:
-      type: string
-      minLength: 1
-    id:
-      type: string
-      minLength: 1
-  required:
-    - text
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  text:
+    type: string
+    minLength: 1
+  id:
+    type: string
+    minLength: 1
+required:
+  - text

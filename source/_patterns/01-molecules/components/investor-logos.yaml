@@ -1,11 +1,10 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    logos:
-      type: array
-      minItems: 1
-      items:
-        $ref: ../../00-atoms/components/picture.yaml#/schema
-  required:
-    - logos
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  logos:
+    type: array
+    minItems: 1
+    items:
+      $ref: ../../00-atoms/components/picture.yaml#/schema
+required:
+  - logos

@@ -1,15 +1,14 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    select:
-      $ref: ../../00-atoms/forms/select.yaml#/schema
-    route:
-      type: string
-      minLength: 1
-    button:
-      $ref: ../../00-atoms/components/button.yaml#/schema
-  required:
-    - select
-    - route
-    - button
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  select:
+    $ref: ../../00-atoms/forms/select.yaml#/schema
+  route:
+    type: string
+    minLength: 1
+  button:
+    $ref: ../../00-atoms/components/button.yaml#/schema
+required:
+  - select
+  - route
+  - button

@@ -1,17 +1,16 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    homePagePath:
-      type: string
-      minLength: 1
-    primaryLinks:
-      $ref: ../../01-molecules/navigation/site-header-nav-bar.yaml#/schema
-    secondaryLinks:
-      $ref: ../../01-molecules/navigation/site-header-nav-bar.yaml#/schema
-    searchBox:
-      $ref: ../../01-molecules/components/search-box.yaml#/schema
-  required:
-    - homePagePath
-    - primaryLinks
-    - secondaryLinks
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  homePagePath:
+    type: string
+    minLength: 1
+  primaryLinks:
+    $ref: ../../01-molecules/navigation/site-header-nav-bar.yaml#/schema
+  secondaryLinks:
+    $ref: ../../01-molecules/navigation/site-header-nav-bar.yaml#/schema
+  searchBox:
+    $ref: ../../01-molecules/components/search-box.yaml#/schema
+required:
+  - homePagePath
+  - primaryLinks
+  - secondaryLinks

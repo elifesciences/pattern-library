@@ -1,17 +1,16 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    name:
-      type: string
-      minLength: 1
-    role:
-      type: string
-      minLength: 1
-    image:
-      $ref: ../../00-atoms/components/picture.yaml#/schema
-    profile:
-      type: string
-      minLength: 1
-  required:
-    - name
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  name:
+    type: string
+    minLength: 1
+  role:
+    type: string
+    minLength: 1
+  image:
+    $ref: ../../00-atoms/components/picture.yaml#/schema
+  profile:
+    type: string
+    minLength: 1
+required:
+  - name

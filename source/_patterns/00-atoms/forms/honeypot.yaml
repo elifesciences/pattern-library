@@ -1,2 +1,1 @@
-schema:
-  $ref: text-field.yaml#/schema
+$ref: text-field.yaml#/schema

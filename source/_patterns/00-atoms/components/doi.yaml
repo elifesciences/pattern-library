@@ -1,18 +1,17 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    doi:
-      type: string
-      minLength: 1
-    variant:
-      type: string
-      enum:
-        - article-section
-        - asset
-    isTruncated:
-      type: boolean
-      default:
-        - false
-  required:
-    - doi
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  doi:
+    type: string
+    minLength: 1
+  variant:
+    type: string
+    enum:
+      - article-section
+      - asset
+  isTruncated:
+    type: boolean
+    default:
+      - false
+required:
+  - doi

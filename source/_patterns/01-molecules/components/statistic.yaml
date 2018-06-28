@@ -1,13 +1,12 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    label:
-      type: string
-      minLength: 1
-    value:
-      type: string
-      minLength: 1
-  required:
-    - label
-    - value
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  label:
+    type: string
+    minLength: 1
+  value:
+    type: string
+    minLength: 1
+required:
+  - label
+  - value

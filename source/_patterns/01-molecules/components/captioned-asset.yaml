@@ -1,54 +1,53 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  allOf:
-    -
-      properties:
-        captionText:
-          $ref: ../../00-atoms/components/caption-text.yaml#/schema
-        doi:
-          $ref: ../../00-atoms/components/doi.yaml#/schema
-        inline:
-          type: boolean
-          default: false
-    -
-      oneOf:
-        -
-          properties:
-            picture:
-              $ref: ../../00-atoms/components/picture.yaml#/schema
-          required:
-            - picture
-        -
-          properties:
-            video:
-              $ref: ../../00-atoms/components/video.yaml#/schema
-          required:
-            - video
-        -
-          properties:
-            table:
-              $ref: ../../00-atoms/components/table.yaml#/schema
-          required:
-            - table
-        -
-          properties:
-            image:
-              type: object
-              properties:
-                defaultPath:
-                  type: string
-                  minLength: 1
-                altText:
-                  type: string
-                classes:
-                  type: string
-                  minLength: 1
-                srcset:
-                  type: string
-                  pattern: ^((https)?[^ ]+ [1-9][0-9.]*x, )*((https?)?[^ ]+ 1x)$
-              required:
-                - defaultPath
-                - altText
-          required:
-            - image
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+allOf:
+  -
+    properties:
+      captionText:
+        $ref: ../../00-atoms/components/caption-text.yaml#/schema
+      doi:
+        $ref: ../../00-atoms/components/doi.yaml#/schema
+      inline:
+        type: boolean
+        default: false
+  -
+    oneOf:
+      -
+        properties:
+          picture:
+            $ref: ../../00-atoms/components/picture.yaml#/schema
+        required:
+          - picture
+      -
+        properties:
+          video:
+            $ref: ../../00-atoms/components/video.yaml#/schema
+        required:
+          - video
+      -
+        properties:
+          table:
+            $ref: ../../00-atoms/components/table.yaml#/schema
+        required:
+          - table
+      -
+        properties:
+          image:
+            type: object
+            properties:
+              defaultPath:
+                type: string
+                minLength: 1
+              altText:
+                type: string
+              classes:
+                type: string
+                minLength: 1
+              srcset:
+                type: string
+                pattern: ^((https)?[^ ]+ [1-9][0-9.]*x, )*((https?)?[^ ]+ 1x)$
+            required:
+              - defaultPath
+              - altText
+        required:
+          - image

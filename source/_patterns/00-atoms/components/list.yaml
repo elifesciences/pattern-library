@@ -1,27 +1,26 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    isOrdered:
-      type: boolean
-    prefix:
-      type: string
-      enum:
-        - alpha-lower
-        - alpha-upper
-        - bullet
-        - number
-        - roman-lower
-        - roman-upper
-    classes:
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  isOrdered:
+    type: boolean
+  prefix:
+    type: string
+    enum:
+      - alpha-lower
+      - alpha-upper
+      - bullet
+      - number
+      - roman-lower
+      - roman-upper
+  classes:
+    type: string
+    minLength: 1
+  items:
+    type: array
+    items:
       type: string
       minLength: 1
-    items:
-      type: array
-      items:
-        type: string
-        minLength: 1
-      minItems: 1
-  required:
-    - isOrdered
-    - items
+    minItems: 1
+required:
+  - isOrdered
+  - items

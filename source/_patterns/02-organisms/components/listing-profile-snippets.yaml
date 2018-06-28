@@ -1,15 +1,14 @@
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    heading:
-      $ref: ../../00-atoms/components/list-heading.yaml#/schema
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  heading:
+    $ref: ../../00-atoms/components/list-heading.yaml#/schema
+  items:
+    type: array
+    minItems: 1
     items:
-      type: array
-      minItems: 1
-      items:
-        $ref: ../../01-molecules/components/profile-snippet.yaml#/schema
-    seeMoreLink:
-      $ref: ../../00-atoms/components/see-more-link.yaml#/schema
-  required:
-    - items
+      $ref: ../../01-molecules/components/profile-snippet.yaml#/schema
+  seeMoreLink:
+    $ref: ../../00-atoms/components/see-more-link.yaml#/schema
+required:
+  - items
