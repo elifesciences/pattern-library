@@ -1,39 +1,34 @@
-assets:
-  css:
-    - media-source.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  properties:
-    src:
-      type: string
-      minLength: 1
-    fallback:
-      type: object
-      properties:
-        classes:
-          type: string
-          min-length: 1
-        isExternal:
-          type: boolean
-          default: false
-        # Content might not be just text, could be an html chunk: if so it must be pre-prepared as a string, it it will
-        # be included within an <a> element so must not include a link (is that regex possible?).
-        content:
-          type: string
-          minLength: 1
-    mediaType:
-      type: object
-      properties:
-        forMachine:
-          type: string
-          # Note that any codec subattribute of forMachine must be specified with double quotes, not single quotes. The
-          # mustache file has the type attribute set within single quotes to accommodate this, so the final HTML result
-          # should end up looking like this (but with differing values as appropriate):
-          #   type='video/webm; codecs="vp8.0, vorbis"'
-          pattern: ^(audio)|(video)\/.+$
-        forHuman:
-          type: string
-          minLength: 1
-  required:
-    - src
+$schema: http://json-schema.org/draft-04/schema#
+properties:
+  src:
+    type: string
+    minLength: 1
+  fallback:
+    type: object
+    properties:
+      classes:
+        type: string
+        min-length: 1
+      isExternal:
+        type: boolean
+        default: false
+      # Content might not be just text, could be an html chunk: if so it must be pre-prepared as a string, it it will
+      # be included within an <a> element so must not include a link (is that regex possible?).
+      content:
+        type: string
+        minLength: 1
+  mediaType:
+    type: object
+    properties:
+      forMachine:
+        type: string
+        # Note that any codec subattribute of forMachine must be specified with double quotes, not single quotes. The
+        # mustache file has the type attribute set within single quotes to accommodate this, so the final HTML result
+        # should end up looking like this (but with differing values as appropriate):
+        #   type='video/webm; codecs="vp8.0, vorbis"'
+        pattern: ^(audio)|(video)\/.+$
+      forHuman:
+        type: string
+        minLength: 1
+required:
+  - src

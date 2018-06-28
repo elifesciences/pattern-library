@@ -1,41 +1,35 @@
-assets:
-  css:
-    - article-section.css
-    - $ref: ../../00-atoms/components/doi.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    id:
-      type: string
-      minLength: 1
-    title:
-      type: string
-      minLength: 1
-    headingLevel:
-      type: integer
-      minimum: 2
-      maximum: 6
-    hasBehaviour:
-      type: boolean
-      default: false
-    isInitiallyClosed:
-      type: boolean
-    body:
-      type: string
-      minLength: 1
-    doi:
-      $ref: ../../00-atoms/components/doi.yaml#/schema
-    isFirst:
-      type: boolean
-      default: false
-  dependencies:
-    isInitiallyClosed:
-      - hasBehaviour
-    doi:
-      - id
-  required:
-    - title
-    - headingLevel
-    - body
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  id:
+    type: string
+    minLength: 1
+  title:
+    type: string
+    minLength: 1
+  headingLevel:
+    type: integer
+    minimum: 2
+    maximum: 6
+  hasBehaviour:
+    type: boolean
+    default: false
+  isInitiallyClosed:
+    type: boolean
+  body:
+    type: string
+    minLength: 1
+  doi:
+    $ref: ../../00-atoms/components/doi.yaml
+  isFirst:
+    type: boolean
+    default: false
+dependencies:
+  isInitiallyClosed:
+    - hasBehaviour
+  doi:
+    - id
+required:
+  - title
+  - headingLevel
+  - body

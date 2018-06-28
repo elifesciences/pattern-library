@@ -1,78 +1,73 @@
-assets:
-  css:
-    - compact-form.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    formAction:
-      type: string
-      minLength: 1
-    formId:
-      type: string
-      minLength: 1
-    formMethod:
-      type: string
-      enum:
-        - GET
-        - POST
-    state:
-      type: string
-      enum:
-        - valid
-        - invalid
-    messageGroup:
-      type: object
-      properties:
-        errorText:
-          type: string
-          minLength: 1
-        infoText:
-          type: string
-          minLength: 1
-        id:
-          type: string
-          minLength: 1
-      minProperties: 2
-      required:
-        - id
-    label:
-      type: string
-      minLength: 1
-    inputType:
-      type: string
-      enum:
-        - email
-        - password
-        - search
-        - tel
-        - text
-        - url
-    inputName:
-      type: string
-      minLength: 1
-    inputValue:
-      type: string
-    inputPlaceholder:
-      type: string
-      minLength: 1
-    inputAutofocus:
-      type: boolean
-    ctaText:
-      type: string
-      minLength: 1
-    hiddenFields:
-      type: array
-      items:
-        $ref: ../../00-atoms/forms/hidden-field.yaml#/schema
-    honeypot:
-      $ref: ../../00-atoms/forms/honeypot.yaml#/schema
-  required:
-    - formId
-    - formAction
-    - formMethod
-    - label
-    - inputName
-    - inputPlaceholder
-    - ctaText
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  formAction:
+    type: string
+    minLength: 1
+  formId:
+    type: string
+    minLength: 1
+  formMethod:
+    type: string
+    enum:
+      - GET
+      - POST
+  state:
+    type: string
+    enum:
+      - valid
+      - invalid
+  messageGroup:
+    type: object
+    properties:
+      errorText:
+        type: string
+        minLength: 1
+      infoText:
+        type: string
+        minLength: 1
+      id:
+        type: string
+        minLength: 1
+    minProperties: 2
+    required:
+      - id
+  label:
+    type: string
+    minLength: 1
+  inputType:
+    type: string
+    enum:
+      - email
+      - password
+      - search
+      - tel
+      - text
+      - url
+  inputName:
+    type: string
+    minLength: 1
+  inputValue:
+    type: string
+  inputPlaceholder:
+    type: string
+    minLength: 1
+  inputAutofocus:
+    type: boolean
+  ctaText:
+    type: string
+    minLength: 1
+  hiddenFields:
+    type: array
+    items:
+      $ref: ../../00-atoms/forms/hidden-field.yaml
+  honeypot:
+    $ref: ../../00-atoms/forms/honeypot.yaml
+required:
+  - formId
+  - formAction
+  - formMethod
+  - label
+  - inputName
+  - inputPlaceholder
+  - ctaText

@@ -1,21 +1,16 @@
-assets:
-  css:
-    - block-link.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    isGridListing:
-      type: boolean
-    image:
-      $ref: picture.yaml#/schema
-    text:
-      type: string
-      minLength: 1
-    url:
-      type: string
-      minLength: 1
-  required:
-    - text
-    - url
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  isGridListing:
+    type: boolean
+  image:
+    $ref: picture.yaml
+  text:
+    type: string
+    minLength: 1
+  url:
+    type: string
+    minLength: 1
+required:
+  - text
+  - url

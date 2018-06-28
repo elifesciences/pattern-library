@@ -1,35 +1,29 @@
-assets:
-  css:
-    - content-header-profile.css
-    - $ref: ../../00-atoms/components/orcid.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    displayName:
-      type: string
-      minLength: 1
-    details:
-      type: object
-      properties:
-        affiliations:
-          type: array
-          items:
-            type: string
-            minLength: 1
-          minItems: 1
-        emailAddress:
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  displayName:
+    type: string
+    minLength: 1
+  details:
+    type: object
+    properties:
+      affiliations:
+        type: array
+        items:
           type: string
-          format: email
-        orcid:
-          $ref: ../../00-atoms/components/orcid.yaml#/schema
-      minProperties: 1
-    secondaryLinks:
-      type: array
-      items:
-        $ref: ../../../non-pattern-schema/link.yaml#/schema
-    logoutLink:
-      $ref: ../../../non-pattern-schema/link.yaml#/schema
-  required:
-    - displayName
+          minLength: 1
+        minItems: 1
+      emailAddress:
+        type: string
+        format: email
+      orcid:
+        $ref: ../../00-atoms/components/orcid.yaml
+    minProperties: 1
+  secondaryLinks:
+    type: array
+    items:
+      $ref: ../../../non-pattern-schema/link.yaml
+  logoutLink:
+    $ref: ../../../non-pattern-schema/link.yaml
+required:
+  - displayName

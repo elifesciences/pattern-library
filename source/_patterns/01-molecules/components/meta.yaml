@@ -1,32 +1,26 @@
-assets:
-  css:
-    - meta.css
-    - $ref: ../../00-atoms/components/date.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    url:
-      oneOf:
-        - type: string
-          minLength: 1
-        - type: boolean
-          enum:
-            - false
-    carouselItem:
-      type: boolean
-      enum:
-        - true
-    text:
-      type: string
-      minLength: 1
-    date:
-      $ref: ../../00-atoms/components/date.yaml#/schema
-  anyOf:
-    -
-      required:
-        - date
-    -
-      required:
-        - text
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  url:
+    oneOf:
+      - type: string
+        minLength: 1
+      - type: boolean
+        enum:
+          - false
+  carouselItem:
+    type: boolean
+    enum:
+      - true
+  text:
+    type: string
+    minLength: 1
+  date:
+    $ref: ../../00-atoms/components/date.yaml
+anyOf:
+  -
+    required:
+      - date
+  -
+    required:
+      - text
