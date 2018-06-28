@@ -30,7 +30,7 @@ foreach ($finder as $file) {
     $yaml = Yaml::parse($yaml, true, false, true);
 
     $validator->reset();
-    $validator->check($yaml, $jsonSchema);
+    $validator->check($yaml->schema, $jsonSchema);
     if (!$validator->isValid()) {
         $exit = 1;
         $message = 'Error in schema: ' . $file->getFilename() . PHP_EOL;
@@ -51,7 +51,7 @@ foreach ($finder as $file) {
 
     foreach ($jsonFinder as $json) {
         $validator->reset();
-        $validator->check(json_decode(file_get_contents($json)), $yaml);
+        $validator->check(json_decode(file_get_contents($json)), $yaml->schema);
         if (!$validator->isValid()) {
             $exit = 1;
             $message = 'Error: ' . $json->getFilename() . PHP_EOL;
