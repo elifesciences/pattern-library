@@ -1,32 +1,25 @@
-assets:
-  css:
-    - search-box.css
-    - $ref: compact-form.yaml#/assets/css
-  js:
-    - $ref: compact-form.yaml#/assets/js
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    compactForm:
-      $ref: compact-form.yaml#/schema
-    subjectFilter:
-      type: object
-      properties:
-        name:
-          type: string
-          minLength: 1
-        value:
-          type: string
-          minLength: 1
-        text:
-          type: string
-          minLength: 1
-      required:
-        - name
-        - value
-        - text
-    inContentHeader:
-      type: boolean
-  required:
-    - compactForm
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  compactForm:
+    $ref: compact-form.yaml
+  subjectFilter:
+    type: object
+    properties:
+      name:
+        type: string
+        minLength: 1
+      value:
+        type: string
+        minLength: 1
+      text:
+        type: string
+        minLength: 1
+    required:
+      - name
+      - value
+      - text
+  inContentHeader:
+    type: boolean
+required:
+  - compactForm

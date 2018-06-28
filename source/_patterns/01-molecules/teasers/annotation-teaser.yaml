@@ -1,61 +1,55 @@
-assets:
-  css:
-    - annotation-teaser.css
-    - $ref: ../../01-molecules/components/meta.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    document:
-      type: string
-      minLength: 1
-    meta:
-      $ref: ../../01-molecules/components/meta.yaml#/schema
-    inContextUri:
-      minLength: 1
-      type: string
-    highlight:
-      type: string
-      minLength: 1
-    isReply:
-      type: boolean
-      emum:
-        - true
-    content:
-      type: string
-      minLength: 1
-  required:
-    - document
-    - meta
-    - inContextUri
-  allOf:
-    - anyOf:
-      - required:
-        - highlight
-        not:
-          required:
-            - isReply
-      - required:
-        - isReply
-        not:
-          required:
-            - highlight
-      - not:
-          required:
-            - isReply
-            - highlight
-    - anyOf:
-      - required:
-        - highlight
-        not:
-          required:
-            - content
-      - required:
-        - content
-        not:
-          required:
-            - highlight
-      - required:
-        - content
-        - highlight
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  document:
+    type: string
+    minLength: 1
+  meta:
+    $ref: ../../01-molecules/components/meta.yaml
+  inContextUri:
+    minLength: 1
+    type: string
+  highlight:
+    type: string
+    minLength: 1
+  isReply:
+    type: boolean
+    emum:
+      - true
+  content:
+    type: string
+    minLength: 1
+required:
+  - document
+  - meta
+  - inContextUri
+allOf:
+  - anyOf:
+    - required:
+      - highlight
+      not:
+        required:
+          - isReply
+    - required:
+      - isReply
+      not:
+        required:
+          - highlight
+    - not:
+        required:
+          - isReply
+          - highlight
+  - anyOf:
+    - required:
+      - highlight
+      not:
+        required:
+          - content
+    - required:
+      - content
+      not:
+        required:
+          - highlight
+    - required:
+      - content
+      - highlight

@@ -1,38 +1,33 @@
-assets:
-  css:
-    - article-meta.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    groups:
-      type: array
-      minItems: 1
-      items:
-        type: object
-        properties:
-          title:
-            type: string
-            minLength: 1
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  groups:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      properties:
+        title:
+          type: string
+          minLength: 1
+        items:
+          type: array
+          minItems: 1
           items:
-            type: array
-            minItems: 1
-            items:
-              type: object
-              properties:
-                url:
-                  oneOf:
-                    - type: string
-                      minLength: 1
-                    - type: boolean
-                      enum:
-                        - false
-                name:
-                  type: string
-                  minLength: 1
-              required:
-                - name
-                - url
-  required:
-    - groups
+            type: object
+            properties:
+              url:
+                oneOf:
+                  - type: string
+                    minLength: 1
+                  - type: boolean
+                    enum:
+                      - false
+              name:
+                type: string
+                minLength: 1
+            required:
+              - name
+              - url
+required:
+  - groups

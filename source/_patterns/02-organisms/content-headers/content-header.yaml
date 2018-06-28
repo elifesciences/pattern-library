@@ -1,73 +1,97 @@
-assets:
-  css:
-    - content-header.css
-    - $ref: ../../00-atoms/components/social-media-sharers.yaml#/assets/css
-    - $ref: ../../01-molecules/components/meta.yaml#/assets/css
-    - $ref: ../../01-molecules/components/audio-player.yaml#/assets/css
-    - $ref: ../../01-molecules/navigation/select-nav.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    title:
-      type: string
-      minLength: 1
-    longTitle:
-      type: boolean
-    image:
-      allOf:
-        - $ref: ../../00-atoms/components/picture.yaml#/schema
-        - properties:
-            credit:
-              type: object
-              properties:
-                text:
-                  type: string
-                  minLength: 1
-                elementId:
-                  type: string
-                  minLength: 1
-              required:
-                - text
-                - elementId
-            creditOverlay:
-              type: boolean
-              default: false
-    impactStatement:
-      type: string
-      minLength: 1
-    header:
-      type: object
-      properties:
-        possible:
-          type: boolean
-          enum:
-            - true
-        hasSubjects:
-          type: boolean
-          enum:
-            - true
-        subjects:
-          type: array
-          minItems: 1
-          items:
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  title:
+    type: string
+    minLength: 1
+  longTitle:
+    type: boolean
+  image:
+    allOf:
+      - $ref: ../../00-atoms/components/picture.yaml
+      - properties:
+          credit:
             type: object
             properties:
-              name:
+              text:
                 type: string
                 minLength: 1
-              url:
+              elementId:
                 type: string
                 minLength: 1
             required:
-              - name
-              - url
-        hasProfile:
-          type: boolean
-          enum:
-            - true
-        profile:
+              - text
+              - elementId
+          creditOverlay:
+            type: boolean
+            default: false
+  impactStatement:
+    type: string
+    minLength: 1
+  header:
+    type: object
+    properties:
+      possible:
+        type: boolean
+        enum:
+          - true
+      hasSubjects:
+        type: boolean
+        enum:
+          - true
+      subjects:
+        type: array
+        minItems: 1
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+            url:
+              type: string
+              minLength: 1
+          required:
+            - name
+            - url
+      hasProfile:
+        type: boolean
+        enum:
+          - true
+      profile:
+        type: object
+        properties:
+          name:
+            type: string
+            minLength: 1
+          url:
+            oneOf:
+              - type: string
+                minLength: 1
+              - type: boolean
+                enum:
+                  - false
+          image:
+            $ref: ../../00-atoms/components/picture.yaml
+        required:
+          - name
+          - url
+    required:
+      - possible
+    dependencies:
+      hasSubjects: [subjects]
+      subjects: [hasSubjects]
+      hasProfile: [profile]
+      profile: [hasProfile]
+  socialMediaSharers:
+    $ref: ../../00-atoms/components/social-media-sharers.yaml
+  authors:
+    type: object
+    properties:
+      list:
+        type: array
+        minItems: 1
+        items:
           type: object
           properties:
             name:
@@ -80,72 +104,39 @@ schema:
                 - type: boolean
                   enum:
                     - false
-            image:
-              $ref: ../../00-atoms/components/picture.yaml#/schema
+            isCorresponding:
+              type: boolean
           required:
             - name
             - url
-      required:
-        - possible
-      dependencies:
-        hasSubjects: [subjects]
-        subjects: [hasSubjects]
-        hasProfile: [profile]
-        profile: [hasProfile]
-    socialMediaSharers:
-      $ref: ../../00-atoms/components/social-media-sharers.yaml#/schema
-    authors:
-      type: object
-      properties:
-        list:
-          type: array
-          minItems: 1
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-                minLength: 1
-              url:
-                oneOf:
-                  - type: string
-                    minLength: 1
-                  - type: boolean
-                    enum:
-                      - false
-              isCorresponding:
-                type: boolean
-            required:
-              - name
-              - url
-      required:
-        - list
-    institutions:
-      type: object
-      properties:
-        list:
-          type: array
-          minItems: 1
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-                minLength: 1
-            required:
-              - name
-      required:
-        - list
-    download:
-      type: string
-      minLength: 1
-    selectNav:
-      $ref: ../../01-molecules/navigation/select-nav.yaml#/schema
-    meta:
-      $ref: ../../01-molecules/components/meta.yaml#/schema
-    audioPlayer:
-      $ref: ../../01-molecules/components/audio-player.yaml#/schema
-  required:
-    - title
-  dependencies:
-    institutions: [authors]
+    required:
+      - list
+  institutions:
+    type: object
+    properties:
+      list:
+        type: array
+        minItems: 1
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+          required:
+            - name
+    required:
+      - list
+  download:
+    type: string
+    minLength: 1
+  selectNav:
+    $ref: ../../01-molecules/navigation/select-nav.yaml
+  meta:
+    $ref: ../../01-molecules/components/meta.yaml
+  audioPlayer:
+    $ref: ../../01-molecules/components/audio-player.yaml
+required:
+  - title
+dependencies:
+  institutions: [authors]
