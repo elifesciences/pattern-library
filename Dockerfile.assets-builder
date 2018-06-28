@@ -20,15 +20,11 @@ RUN npm install -g gulp-cli
 RUN apt-get update && apt-get install -y \
     bzip2 \
     g++ \
-    make \
-    ruby \
-    ruby-dev 
-
-RUN gem install compass
+    make
 
 USER elife
 ENV PROJECT_FOLDER=/srv/pattern-library
-# for simplicity, also set right permissions to test folder 
+# for simplicity, also set right permissions to test folder
 # (and any volume mounted on it) in case assets-builder
 # is used locally to run gulp tasks
 RUN mkdir ${PROJECT_FOLDER} && \
@@ -46,7 +42,6 @@ COPY --chown=elife:elife \
     .jscsrc \
     .jshintrc \
     .stylelintrc \
-    config.rb \
     gulpfile.js \
     ${PROJECT_FOLDER}/
 
@@ -61,4 +56,4 @@ RUN gulp --environment ${environment} js
 COPY --chown=elife:elife source/ ${PROJECT_FOLDER}/source
 
 COPY --chown=elife:elife assets/sass ${PROJECT_FOLDER}/assets/sass
-RUN gulp --environment ${environment} generateStyles
+RUN gulp --environment ${environment} generateCss

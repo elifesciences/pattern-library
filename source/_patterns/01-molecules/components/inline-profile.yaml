@@ -1,16 +1,11 @@
-assets:
-  css:
-    - inline-profile.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    text:
-      type: string
-      minLength: 1
-    image:
-      $ref: ../../00-atoms/components/picture.yaml#/schema
-  required:
-    - text
-    - image
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  text:
+    type: string
+    minLength: 1
+  image:
+    $ref: ../../00-atoms/components/picture.yaml
+required:
+  - text
+  - image

@@ -1,57 +1,52 @@
-assets:
-  css:
-    - article-download-links-list.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    id:
-      type: string
-      minLength: 1
-    description:
-      type: string
-      minLength: 1
-    groups:
-      type: array
-      minItems: 1
-      items:
-        type: object
-        properties:
-          title:
-            type: string
-            minLength: 1
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  id:
+    type: string
+    minLength: 1
+  description:
+    type: string
+    minLength: 1
+  groups:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      properties:
+        title:
+          type: string
+          minLength: 1
+        items:
+          type: array
+          minItems: 1
           items:
-            type: array
-            minItems: 1
-            items:
-              type: object
-              properties:
-                name:
-                  type: string
-                  minLength: 1
-                url:
-                  type: string
-                  minLength: 1
-                attributes:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      key:
-                        type: string
-                        minLength: 1
-                      value:
-                        type: string
-                    required:
-                      - key
-              required:
-                - name
-                - url
-        required:
-          - title
-          - items
-  required:
-    - id
-    - description
-    - groups
+            type: object
+            properties:
+              name:
+                type: string
+                minLength: 1
+              url:
+                type: string
+                minLength: 1
+              attributes:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    key:
+                      type: string
+                      minLength: 1
+                    value:
+                      type: string
+                  required:
+                    - key
+            required:
+              - name
+              - url
+      required:
+        - title
+        - items
+required:
+  - id
+  - description
+  - groups

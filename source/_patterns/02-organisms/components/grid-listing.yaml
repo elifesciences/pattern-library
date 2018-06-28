@@ -1,64 +1,53 @@
-assets:
-  css:
-    - grid-listing.css
-    - $ref: ../../00-atoms/components/block-link.yaml#/assets/css
-    - $ref: ../../00-atoms/components/image-link.yaml#/assets/css
-    - $ref: ../../00-atoms/components/list-heading.yaml#/assets/css
-    - $ref: ../../01-molecules/components/archive-nav-link.yaml#/assets/css
-    - $ref: ../../01-molecules/navigation/pager.yaml#/assets/css
-    - $ref: ../../01-molecules/teasers/teaser.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  allOf:
-    -
-      properties:
-        classes:
-          type: string
-          minLength: 1
-        heading:
-          $ref: ../../00-atoms/components/list-heading.yaml#/schema
-        id:
-          type: string
-          minLength: 1
-    -
-      oneOf:
-        -
-          properties:
-            blockLinks:
-              type: array
-              minItems: 1
-              items:
-                $ref: ../../00-atoms/components/block-link.yaml#/schema
-          required:
-            - blockLinks
-        -
-          properties:
-            archiveNavLinks:
-              type: array
-              minItems: 1
-              items:
-                $ref: ../../01-molecules/components/archive-nav-link.yaml#/schema
-          required:
-            - archiveNavLinks
-        -
-          properties:
-            imageLinks:
-              type: array
-              minItems: 1
-              items:
-                $ref: ../../00-atoms/components/image-link.yaml#/schema
-          required:
-            - imageLinks
-        -
-          properties:
-            teasers:
-              type: array
-              minItems: 1
-              items:
-                $ref: ../../01-molecules/teasers/teaser.yaml#/schema
-            pagination:
-              $ref: ../../01-molecules/navigation/pager.yaml#/schema
-          required:
-            - teasers
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+allOf:
+  -
+    properties:
+      classes:
+        type: string
+        minLength: 1
+      heading:
+        $ref: ../../00-atoms/components/list-heading.yaml
+      id:
+        type: string
+        minLength: 1
+  -
+    oneOf:
+      -
+        properties:
+          blockLinks:
+            type: array
+            minItems: 1
+            items:
+              $ref: ../../00-atoms/components/block-link.yaml
+        required:
+          - blockLinks
+      -
+        properties:
+          archiveNavLinks:
+            type: array
+            minItems: 1
+            items:
+              $ref: ../../01-molecules/components/archive-nav-link.yaml
+        required:
+          - archiveNavLinks
+      -
+        properties:
+          imageLinks:
+            type: array
+            minItems: 1
+            items:
+              $ref: ../../00-atoms/components/image-link.yaml
+        required:
+          - imageLinks
+      -
+        properties:
+          teasers:
+            type: array
+            minItems: 1
+            items:
+              $ref: ../../01-molecules/teasers/teaser.yaml
+          pagination:
+            $ref: ../../01-molecules/navigation/pager.yaml
+        required:
+          - teasers

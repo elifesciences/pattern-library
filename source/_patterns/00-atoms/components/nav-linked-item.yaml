@@ -1,44 +1,39 @@
-assets:
-  css:
-    - $ref: ../../00-atoms/components/button.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  allOf:
-    -
-      properties:
-        classes:
-          type: string
-    -
-      oneOf:
-        -
-          properties:
-            text:
-              type: string
-              minLength: 1
-            textClasses:
-              type: string
-            path:
-              type: string
-              minLength: 1
-            rel:
-              type: string
-              enum:
-                - search
-            picture:
-              $ref: picture.yaml#/schema
-          required:
-            - text
-        -
-          properties:
-            button:
-              $ref: button.yaml#/schema
-          required:
-            - button
-        -
-          properties:
-            loginControl:
-              $ref: ../../01-molecules/navigation/login-control.yaml#/schema
-          required:
-            - loginControl
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+allOf:
+  -
+    properties:
+      classes:
+        type: string
+  -
+    oneOf:
+      -
+        properties:
+          text:
+            type: string
+            minLength: 1
+          textClasses:
+            type: string
+          path:
+            type: string
+            minLength: 1
+          rel:
+            type: string
+            enum:
+              - search
+          picture:
+            $ref: picture.yaml
+        required:
+          - text
+      -
+        properties:
+          button:
+            $ref: button.yaml
+        required:
+          - button
+      -
+        properties:
+          loginControl:
+            $ref: ../../01-molecules/navigation/login-control.yaml
+        required:
+          - loginControl

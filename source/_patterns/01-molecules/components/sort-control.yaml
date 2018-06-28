@@ -1,31 +1,26 @@
-assets:
-  css:
-    - sort-control.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    options:
-      type: array
-      minItems: 1
-      items:
-        type: object
-        properties:
-          option:
-            type: string
-            minLength: 1
-          sorting:
-            type: string
-            minLength: 1
-            enum:
-              - ascending
-              - descending
-          url:
-            type: string
-            minLength: 1
-        required:
-          - option
-          - url
-  required:
-    - options
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  options:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      properties:
+        option:
+          type: string
+          minLength: 1
+        sorting:
+          type: string
+          minLength: 1
+          enum:
+            - ascending
+            - descending
+        url:
+          type: string
+          minLength: 1
+      required:
+        - option
+        - url
+required:
+  - options

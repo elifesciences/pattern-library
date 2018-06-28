@@ -1,22 +1,17 @@
-assets:
-  css:
-    - info-bars.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    text:
-      type: string
-      minLength: 1
-    type:
-      type: string
-      enum:
-        - attention
-        - info
-        - multiple-versions
-        - correction
-        - success
-  required:
-    - text
-    - type
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  text:
+    type: string
+    minLength: 1
+  type:
+    type: string
+    enum:
+      - attention
+      - info
+      - multiple-versions
+      - correction
+      - success
+required:
+  - text
+  - type

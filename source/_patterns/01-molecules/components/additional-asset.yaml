@@ -1,48 +1,41 @@
-assets:
-  css:
-    - additional-asset.css
-    - $ref: ../../00-atoms/components/caption-text.yaml#/assets/css
-    - $ref: ../../00-atoms/components/doi.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    assetId:
-      type: string
-      minLength: 1
-    captionText:
-      $ref: ../../00-atoms/components/caption-text.yaml#/schema
-    doi:
-      $ref: ../../00-atoms/components/doi.yaml#/schema
-    nonDoiLink:
-      type: string
-      minLength: 1
-    downloadLink:
-      type: object
-      properties:
-        url:
-          type: string
-          minLength: 1
-        name:
-          type: string
-          minLength: 1
-        fileName:
-          type: string
-          minLength: 1
-      required:
-        - url
-        - name
-  allOf:
-    -
-      required:
-        - assetId
-        - captionText
-    -
-      oneOf:
-        -
-          required:
-            - doi
-        -
-          required:
-            - nonDoiLink
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  assetId:
+    type: string
+    minLength: 1
+  captionText:
+    $ref: ../../00-atoms/components/caption-text.yaml
+  doi:
+    $ref: ../../00-atoms/components/doi.yaml
+  nonDoiLink:
+    type: string
+    minLength: 1
+  downloadLink:
+    type: object
+    properties:
+      url:
+        type: string
+        minLength: 1
+      name:
+        type: string
+        minLength: 1
+      fileName:
+        type: string
+        minLength: 1
+    required:
+      - url
+      - name
+allOf:
+  -
+    required:
+      - assetId
+      - captionText
+  -
+    oneOf:
+      -
+        required:
+          - doi
+      -
+        required:
+          - nonDoiLink
