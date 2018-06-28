@@ -1,6 +1,5 @@
 ARG image_tag=latest
 FROM elifesciences/pattern-library_assets-builder:${image_tag} AS assets-builder
-
 FROM tianon/true:latest
 
 WORKDIR /srv/pattern-library
