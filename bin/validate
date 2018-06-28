@@ -23,17 +23,11 @@ $jsonSchema = $refResolver->resolve('file://' . __DIR__ . '/../extras/json-schem
 $exit = 0;
 
 foreach ($finder as $file) {
-    try {
-        $yaml = Yaml::parse($file->getContents());
-        $yaml = resolveJsonReferences($yaml, $file);
-        $yaml = Yaml::dump($yaml, 100);
-        $yaml = str_replace(' {  }', ' []', $yaml);
-        $yaml = Yaml::parse($yaml, true, false, true);
-    }
-    catch (\Exception $e) {
-        print $e->getMessage() . PHP_EOL;
-        exit;
-    }
+    $yaml = Yaml::parse($file->getContents());
+    $yaml = resolveJsonReferences($yaml, $file);
+    $yaml = Yaml::dump($yaml, 100);
+    $yaml = str_replace(' {  }', ' []', $yaml);
+    $yaml = Yaml::parse($yaml, true, false, true);
 
     $validator->reset();
     $validator->check($yaml, $jsonSchema);
@@ -101,11 +95,7 @@ function resolveJsonReferences(array $json, SplFileInfo $file)
                 $json = Yaml::parse(file_get_contents($referenced->getRealPath()));
             }
 
-            if (isset($parts[1])) {
-                $json = (new Pointer(json_encode($json)))->get($parts[1]);
-            }
-
-            return resolveJsonReferences($json, $referenced);
+            return resolveJsonReferences((new Pointer(json_encode($json)))->get($parts[1]), $referenced);
         }
     }
 
