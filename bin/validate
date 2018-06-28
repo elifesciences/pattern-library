@@ -95,7 +95,11 @@ function resolveJsonReferences(array $json, SplFileInfo $file)
                 $json = Yaml::parse(file_get_contents($referenced->getRealPath()));
             }
 
-            return resolveJsonReferences((new Pointer(json_encode($json)))->get($parts[1]), $referenced);
+            if (isset($parts[1])) {
+                $json = (new Pointer(json_encode($json)))->get($parts[1]);
+            }
+
+            return resolveJsonReferences($json, $referenced);
         }
     }
 
