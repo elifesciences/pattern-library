@@ -95,7 +95,7 @@ function resolveJsonReferences(array $json, SplFileInfo $file)
                 $json = Yaml::parse(file_get_contents($referenced->getRealPath()));
             }
 
-            if (isset($parts[1])) {
+            if (!empty($parts[1])) {
                 $json = (new Pointer(json_encode($json)))->get($parts[1]);
             }
 
