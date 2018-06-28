@@ -3,7 +3,7 @@ type: object
 oneOf:
   - properties:
       button:
-        $ref: ../../00-atoms/components/button.yaml#/schema
+        $ref: ../../00-atoms/components/button.yaml
     required:
       - button
   - properties:
@@ -21,7 +21,7 @@ oneOf:
         type: string
         minLength: 1
       icon:
-        $ref: ../../00-atoms/components/picture.yaml#/schema
+        $ref: ../../00-atoms/components/picture.yaml
       linkFieldRoots:
         type: string
   #      linkFieldRoots is a list of one or more words that are comma-separated. The regex:

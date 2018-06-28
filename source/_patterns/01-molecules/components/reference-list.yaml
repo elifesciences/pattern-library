@@ -20,7 +20,7 @@ properties:
             - full
             - ordinal
         reference:
-          $ref: ../../00-atoms/references/reference.yaml#/schema
+          $ref: ../../00-atoms/references/reference.yaml
       required:
         - bibId
         - reference

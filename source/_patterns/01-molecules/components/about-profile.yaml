@@ -8,7 +8,7 @@ properties:
     type: string
     minLength: 1
   image:
-    $ref: ../../00-atoms/components/picture.yaml#/schema
+    $ref: ../../00-atoms/components/picture.yaml
   profile:
     type: string
     minLength: 1

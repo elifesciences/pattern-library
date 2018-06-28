@@ -35,7 +35,7 @@ properties:
     minLength: 1
   captionedAsset:
     allOf:
-      - $ref: ../../01-molecules/components/captioned-asset.yaml#/schema
+      - $ref: ../../01-molecules/components/captioned-asset.yaml
       - properties:
           inline:
             enum:
@@ -44,7 +44,7 @@ properties:
     type: array
     minItems: 1
     items:
-      $ref: ../../02-organisms/components/additional-assets.yaml#/schema
+      $ref: ../../02-organisms/components/additional-assets.yaml
   download:
     type: object
     properties:

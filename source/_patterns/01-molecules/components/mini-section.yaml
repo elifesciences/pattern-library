@@ -3,7 +3,7 @@ type: object
 properties:
   listHeading:
     type: object
-    $ref: ../../00-atoms/components/list-heading.yaml#/schema
+    $ref: ../../00-atoms/components/list-heading.yaml
   body:
     type: string
     minLength: 1

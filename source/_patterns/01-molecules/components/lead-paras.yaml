@@ -5,6 +5,6 @@ properties:
     type: array
     minItems: 1
     items:
-      $ref: ../../00-atoms/components/lead-para.yaml#/schema
+      $ref: ../../00-atoms/components/lead-para.yaml
 required:
   - paras

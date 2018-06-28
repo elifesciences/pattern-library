@@ -8,7 +8,7 @@ properties:
     type: boolean
   image:
     allOf:
-      - $ref: ../../00-atoms/components/picture.yaml#/schema
+      - $ref: ../../00-atoms/components/picture.yaml
       - properties:
           credit:
             type: object
@@ -72,7 +72,7 @@ properties:
                 enum:
                   - false
           image:
-            $ref: ../../00-atoms/components/picture.yaml#/schema
+            $ref: ../../00-atoms/components/picture.yaml
         required:
           - name
           - url
@@ -84,7 +84,7 @@ properties:
       hasProfile: [profile]
       profile: [hasProfile]
   socialMediaSharers:
-    $ref: ../../00-atoms/components/social-media-sharers.yaml#/schema
+    $ref: ../../00-atoms/components/social-media-sharers.yaml
   authors:
     type: object
     properties:
@@ -131,11 +131,11 @@ properties:
     type: string
     minLength: 1
   selectNav:
-    $ref: ../../01-molecules/navigation/select-nav.yaml#/schema
+    $ref: ../../01-molecules/navigation/select-nav.yaml
   meta:
-    $ref: ../../01-molecules/components/meta.yaml#/schema
+    $ref: ../../01-molecules/components/meta.yaml
   audioPlayer:
-    $ref: ../../01-molecules/components/audio-player.yaml#/schema
+    $ref: ../../01-molecules/components/audio-player.yaml
 required:
   - title
 dependencies:

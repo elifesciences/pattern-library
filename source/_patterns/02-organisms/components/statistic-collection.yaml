@@ -5,6 +5,6 @@ properties:
     type: array
     minItems: 1
     items:
-      $ref: ../../01-molecules/components/statistic.yaml#/schema
+      $ref: ../../01-molecules/components/statistic.yaml
 required:
   - stats

@@ -30,11 +30,11 @@ properties:
     type: string
     minLength: 1
   button:
-    $ref: ../../00-atoms/components/button.yaml#/schema
+    $ref: ../../00-atoms/components/button.yaml
   meta:
-    $ref: ../../01-molecules/components/meta.yaml#/schema
+    $ref: ../../01-molecules/components/meta.yaml
   image:
-    $ref: ../../00-atoms/components/picture.yaml#/schema
+    $ref: ../../00-atoms/components/picture.yaml
 required:
   - title
   - url

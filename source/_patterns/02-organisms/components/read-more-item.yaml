@@ -2,7 +2,7 @@ $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
   item:
-    $ref: ../../02-organisms/content-headers/content-header-read-more.yaml#/schema
+    $ref: ../../02-organisms/content-headers/content-header-read-more.yaml
   content:
     type: string
   isRelated:

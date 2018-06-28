@@ -8,7 +8,7 @@ properties:
   linkedItems:
     type: array
     items:
-      $ref: ../../00-atoms/components/nav-linked-item.yaml#/schema
+      $ref: ../../00-atoms/components/nav-linked-item.yaml
     minItems: 1
 required:
   - linkedItems

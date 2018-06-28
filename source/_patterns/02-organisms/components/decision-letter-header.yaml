@@ -12,7 +12,7 @@ properties:
     type: array
     minItems: 1
     items:
-      $ref: ../../01-molecules/components/profile-snippet.yaml#/schema
+      $ref: ../../01-molecules/components/profile-snippet.yaml
 required:
   - mainText
 dependencies:

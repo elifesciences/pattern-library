@@ -57,7 +57,7 @@ properties:
     required:
       - labelText
   formFieldInfoLink:
-    $ref: form-field-info-link.yaml#/schema
+    $ref: form-field-info-link.yaml
 required:
   - inputType
 dependencies:

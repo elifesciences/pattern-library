@@ -20,7 +20,7 @@ properties:
     required:
       - items
   listHeading:
-    $ref: ../../00-atoms/components/list-heading.yaml#/schema
+    $ref: ../../00-atoms/components/list-heading.yaml
 required:
   - links
   - listHeading

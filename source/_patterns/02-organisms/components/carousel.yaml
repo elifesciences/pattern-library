@@ -2,11 +2,11 @@ $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
   heading:
-    $ref: ../../00-atoms/components/list-heading.yaml#/schema
+    $ref: ../../00-atoms/components/list-heading.yaml
   items:
     type: array
     items:
-      - $ref: ../../01-molecules/components/carousel-item.yaml#/schema
+      - $ref: ../../01-molecules/components/carousel-item.yaml
     minItems: 1
 required:
   - heading

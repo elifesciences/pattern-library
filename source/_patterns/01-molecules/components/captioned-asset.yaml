@@ -4,9 +4,9 @@ allOf:
   -
     properties:
       captionText:
-        $ref: ../../00-atoms/components/caption-text.yaml#/schema
+        $ref: ../../00-atoms/components/caption-text.yaml
       doi:
-        $ref: ../../00-atoms/components/doi.yaml#/schema
+        $ref: ../../00-atoms/components/doi.yaml
       inline:
         type: boolean
         default: false
@@ -15,19 +15,19 @@ allOf:
       -
         properties:
           picture:
-            $ref: ../../00-atoms/components/picture.yaml#/schema
+            $ref: ../../00-atoms/components/picture.yaml
         required:
           - picture
       -
         properties:
           video:
-            $ref: ../../00-atoms/components/video.yaml#/schema
+            $ref: ../../00-atoms/components/video.yaml
         required:
           - video
       -
         properties:
           table:
-            $ref: ../../00-atoms/components/table.yaml#/schema
+            $ref: ../../00-atoms/components/table.yaml
         required:
           - table
       -

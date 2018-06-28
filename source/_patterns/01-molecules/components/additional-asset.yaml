@@ -5,9 +5,9 @@ properties:
     type: string
     minLength: 1
   captionText:
-    $ref: ../../00-atoms/components/caption-text.yaml#/schema
+    $ref: ../../00-atoms/components/caption-text.yaml
   doi:
-    $ref: ../../00-atoms/components/doi.yaml#/schema
+    $ref: ../../00-atoms/components/doi.yaml
   nonDoiLink:
     type: string
     minLength: 1

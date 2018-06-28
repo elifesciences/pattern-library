@@ -35,7 +35,7 @@ properties:
             required:
               - value
   orcid:
-    $ref: orcid.yaml#/schema
+    $ref: orcid.yaml
   groups:
     type: array
     items:

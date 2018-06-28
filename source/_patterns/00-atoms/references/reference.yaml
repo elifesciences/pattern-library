@@ -5,7 +5,7 @@ properties:
     type: string
     minLength: 1
   doi:
-    $ref: ../components/doi.yaml#/schema
+    $ref: ../components/doi.yaml
   title:
     type: string
     minLength: 1

@@ -2,7 +2,7 @@ $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
   blockLink:
-    $ref: ../../00-atoms/components/block-link.yaml#/schema
+    $ref: ../../00-atoms/components/block-link.yaml
   label:
     type: string
     minLength: 1

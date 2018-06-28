@@ -17,13 +17,13 @@ properties:
         type: string
         format: email
       orcid:
-        $ref: ../../00-atoms/components/orcid.yaml#/schema
+        $ref: ../../00-atoms/components/orcid.yaml
     minProperties: 1
   secondaryLinks:
     type: array
     items:
-      $ref: ../../../non-pattern-schema/link.yaml#/schema
+      $ref: ../../../non-pattern-schema/link.yaml
   logoutLink:
-    $ref: ../../../non-pattern-schema/link.yaml#/schema
+    $ref: ../../../non-pattern-schema/link.yaml
 required:
   - displayName

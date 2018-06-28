@@ -2,4 +2,4 @@ $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
   button:
-    $ref: ../components/button.yaml#/schema
+    $ref: ../components/button.yaml

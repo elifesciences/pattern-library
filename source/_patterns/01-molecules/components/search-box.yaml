@@ -2,7 +2,7 @@ $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
   compactForm:
-    $ref: compact-form.yaml#/schema
+    $ref: compact-form.yaml
   subjectFilter:
     type: object
     properties:

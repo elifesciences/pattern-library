@@ -2,9 +2,9 @@ $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
   previousPage:
-    $ref: ../../00-atoms/components/button.yaml#/schema
+    $ref: ../../00-atoms/components/button.yaml
   nextPage:
-    $ref: ../../00-atoms/components/button.yaml#/schema
+    $ref: ../../00-atoms/components/button.yaml
   targetId:
     type: string
     minLength: 1

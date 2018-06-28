@@ -16,7 +16,7 @@ properties:
           required:
             - text
       annotationCount:
-        $ref: ../../00-atoms/components/speech-bubble.yaml#/schema
+        $ref: ../../00-atoms/components/speech-bubble.yaml
     minProperties: 1
   citation:
     type: object
@@ -25,7 +25,7 @@ properties:
         type: string
         minLength: 1
       doi:
-        $ref: ../../00-atoms/components/doi.yaml#/schema
+        $ref: ../../00-atoms/components/doi.yaml
     required:
       - citeAs
       - doi

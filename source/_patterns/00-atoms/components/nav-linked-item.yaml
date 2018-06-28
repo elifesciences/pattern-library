@@ -22,18 +22,18 @@ allOf:
             enum:
               - search
           picture:
-            $ref: picture.yaml#/schema
+            $ref: picture.yaml
         required:
           - text
       -
         properties:
           button:
-            $ref: button.yaml#/schema
+            $ref: button.yaml
         required:
           - button
       -
         properties:
           loginControl:
-            $ref: ../../01-molecules/navigation/login-control.yaml#/schema
+            $ref: ../../01-molecules/navigation/login-control.yaml
         required:
           - loginControl

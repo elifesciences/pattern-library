@@ -22,5 +22,5 @@ allOf:
     required:
       - year
       - footerMenuLinks
-  - $ref: ../../01-molecules/navigation/main-menu.yaml#/schema
-  - $ref: ../../01-molecules/components/investor-logos.yaml#/schema
+  - $ref: ../../01-molecules/navigation/main-menu.yaml
+  - $ref: ../../01-molecules/components/investor-logos.yaml

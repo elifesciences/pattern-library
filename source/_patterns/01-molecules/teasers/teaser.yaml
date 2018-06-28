@@ -46,7 +46,7 @@ properties:
     type: string
     minLength: 1
   eventDate:
-    $ref: ../../00-atoms/components/date.yaml#/schema
+    $ref: ../../00-atoms/components/date.yaml
   content:
     type: string
     minLength: 1
@@ -68,7 +68,7 @@ properties:
       - url
   image:
     allOf:
-      - $ref: ../../00-atoms/components/picture.yaml#/schema
+      - $ref: ../../00-atoms/components/picture.yaml
       - properties:
           type:
             type: string
@@ -82,7 +82,7 @@ properties:
     type: object
     properties:
       meta:
-        $ref: ../../01-molecules/components/meta.yaml#/schema
+        $ref: ../../01-molecules/components/meta.yaml
       formats:
         type: object
         minProperties: 1

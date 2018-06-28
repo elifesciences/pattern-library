@@ -15,7 +15,7 @@ properties:
     minimum: 1
     maximum: 6
   doi:
-    $ref: ../../00-atoms/components/doi.yaml#/schema
+    $ref: ../../00-atoms/components/doi.yaml
   content:
     type: string
     minLength: 1

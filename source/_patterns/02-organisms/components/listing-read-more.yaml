@@ -4,7 +4,7 @@ properties:
   allRelated:
     type: boolean
   heading:
-    $ref: ../../00-atoms/components/list-heading.yaml#/schema
+    $ref: ../../00-atoms/components/list-heading.yaml
   id:
     type: string
     pattern: ^[a-zA-Z0-9_$]+$
@@ -12,10 +12,10 @@ properties:
     type: array
     minItems: 1
     items:
-      $ref: ../../02-organisms/components/read-more-item.yaml#/schema
+      $ref: ../../02-organisms/components/read-more-item.yaml
   pagination:
-    $ref: ../../01-molecules/navigation/pager.yaml#/schema
+    $ref: ../../01-molecules/navigation/pager.yaml
   seeMoreLink:
-    $ref: ../../00-atoms/components/see-more-link.yaml#/schema
+    $ref: ../../00-atoms/components/see-more-link.yaml
 required:
   - items

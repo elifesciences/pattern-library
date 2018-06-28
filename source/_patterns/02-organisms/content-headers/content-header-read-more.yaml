@@ -28,7 +28,7 @@ properties:
     type: string
     minLength: 1
   meta:
-    $ref: ../../01-molecules/components/meta.yaml#/schema
+    $ref: ../../01-molecules/components/meta.yaml
 required:
   - title
   - url
