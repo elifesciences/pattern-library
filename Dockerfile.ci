@@ -5,3 +5,8 @@ COPY .ci/ .ci/
 COPY test/ test/
 COPY test-selenium/ test-selenium/
 COPY project_tests.sh smoke_tests.sh wdio.conf.js ./
+
+RUN mkdir -p test/build && \
+    chown --recursive node:node test/build
+
+USER node
