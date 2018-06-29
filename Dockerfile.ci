@@ -5,6 +5,7 @@ COPY .ci/ .ci/
 COPY test/ test/
 COPY test-selenium/ test-selenium/
 COPY project_tests.sh smoke_tests.sh wdio.conf.js ./
+COPY source/_patterns/00-atoms/errors/ source/_patterns/00-atoms/errors/
 
 RUN mkdir -p test/build && \
     chown --recursive node:node test/build
