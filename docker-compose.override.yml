@@ -9,11 +9,10 @@ services:
     assets-builder:
         volumes:
             - ./:/srv/pattern-library
-            - /srv/pattern-library/node_modules
+            - node_modules:/srv/pattern-library/node_modules
             - source_assets:/srv/pattern-library/source/assets
             - ./.container_source_assets:/srv/pattern-library/.container_source_assets
             - test_build:/srv/pattern-library/test/build
-            - node_modules:/node_modules
     ui-builder:
         volumes:
             - ./source:/srv/pattern-library-ui/source

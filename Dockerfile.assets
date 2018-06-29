@@ -5,7 +5,7 @@ FROM tianon/true:latest
 WORKDIR /srv/pattern-library
 
 COPY source/ source/
-COPY --from=assets-builder /source/assets/ source/assets/
+COPY --from=assets-builder /srv/pattern-library/source/assets/ source/assets/
 COPY assets/preload.json source/assets/
 
 ARG description=

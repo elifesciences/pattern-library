@@ -5,6 +5,8 @@ FROM node:${node_version}
 
 ARG environment=production
 
+WORKDIR /srv/pattern-library
+
 COPY .babelrc \
     .jscsrc \
     .jshintrc \
