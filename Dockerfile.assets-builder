@@ -3,8 +3,6 @@ ARG node_version
 FROM elifesciences/pattern-library_npm:${image_tag} as npm
 FROM node:${node_version}
 
-ARG environment=production
-
 WORKDIR /srv/pattern-library
 
 COPY .babelrc \
@@ -15,6 +13,8 @@ COPY .babelrc \
     ./
 
 COPY --from=npm /node_modules/ node_modules/
+
+ARG environment=production
 
 COPY assets/fonts/ assets/fonts/
 RUN node_modules/.bin/gulp --environment ${environment} fonts
