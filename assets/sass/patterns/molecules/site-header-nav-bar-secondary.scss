@@ -34,15 +34,8 @@
   }
 }
 
-.nav-secondary__item:nth-child(4).nav-secondary__item:nth-last-child(2) {
-  @include visuallyhidden();
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include visuallyunhidden();
-    overflow: hidden;
-    @include height(24);
-    @include margin(12, "right");
-  }
+.nav-secondary__item--hide-narrow {
+  @include visually-hide-below-breakpoint("medium", 24, 0 12 0 0);
 }
 
 .nav-secondary__item a:not(.login-control__non_js_control_link) {
