@@ -1,59 +1,29 @@
-# Debian oldoldstable, support ends in May 2018
-# we need this for Ruby 1.9.x at the moment
-FROM node:6.13.1-wheezy
+ARG image_tag=latest
+ARG node_version
+FROM elifesciences/pattern-library_npm:${image_tag} as npm
+FROM node:${node_version}
 
-# TODO: base image
-USER root
-RUN useradd -ms /bin/bash -G www-data elife && \
-    chown elife:elife /srv && \
-    mkdir /srv/bin && \
-    chown elife:elife /srv/bin && \
-    mkdir -p /var/www && \
-    chown www-data:www-data /var/www
-ENV PATH=/srv/bin:${PATH}
-# end base image
+WORKDIR /srv/pattern-library
 
-# potentially base image
-RUN npm install -g gulp-cli
-# end potentially base image
-
-RUN apt-get update && apt-get install -y \
-    bzip2 \
-    g++ \
-    make
-
-USER elife
-ENV PROJECT_FOLDER=/srv/pattern-library
-# for simplicity, also set right permissions to test folder
-# (and any volume mounted on it) in case assets-builder
-# is used locally to run gulp tasks
-RUN mkdir ${PROJECT_FOLDER} && \
-    mkdir -p ${PROJECT_FOLDER}/test/build/
-WORKDIR ${PROJECT_FOLDER}
-COPY --chown=elife:elife \
-    package.json \
-    npm-shrinkwrap.json \
-    ${PROJECT_FOLDER}/
-RUN npm install
-ARG environment=production
-
-COPY --chown=elife:elife \
-    .babelrc \
+COPY .babelrc \
     .jscsrc \
     .jshintrc \
     .stylelintrc \
     gulpfile.js \
-    ${PROJECT_FOLDER}/
+    ./
 
-COPY --chown=elife:elife assets/fonts/ ${PROJECT_FOLDER}/assets/fonts
-RUN gulp --environment ${environment} fonts
-COPY --chown=elife:elife assets/img/ ${PROJECT_FOLDER}/assets/img
-RUN gulp --environment ${environment} img
+COPY --from=npm /node_modules/ node_modules/
 
-COPY --chown=elife:elife assets/js/ ${PROJECT_FOLDER}/assets/js
-RUN gulp --environment ${environment} js
+ARG environment=production
 
-COPY --chown=elife:elife source/ ${PROJECT_FOLDER}/source
+COPY assets/fonts/ assets/fonts/
+RUN node_modules/.bin/gulp --environment ${environment} fonts
 
-COPY --chown=elife:elife assets/sass ${PROJECT_FOLDER}/assets/sass
-RUN gulp --environment ${environment} generateCss
+COPY assets/img/ assets/img/
+RUN node_modules/.bin/gulp --environment ${environment} img
+
+COPY assets/js/ assets/js/
+RUN node_modules/.bin/gulp --environment ${environment} js
+
+COPY assets/sass/ assets/sass/
+RUN node_modules/.bin/gulp --environment ${environment} generateCss

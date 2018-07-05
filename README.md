@@ -153,7 +153,7 @@ To run additional gulp command in the same container where `gulp:watch` is runni
 
 ```
 $ docker exec -it pattern-library-gulp-watch /bin/bash
-elife@...$ gulp test:unit
+elife@...$ node_modules/.bin/gulp test:unit
 ```
 
 The watch loop keeps a read-only host folder up-to-date with the latest assets:
