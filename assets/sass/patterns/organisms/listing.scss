@@ -123,7 +123,13 @@ div.listing-list__content {
   @include margin(unquote("0 -#{$totalHighlightsSpacing / 2}"));
 
   .listing-list__item {
-    border: 1px solid #ccc;
+    border: 0 solid #ccc;
+    border-bottom-width: 1px;
+
+    .js & {
+      border-width: 1px;
+    }
+
     @include margin(3, "left");
     @include margin(3, "right");
 
