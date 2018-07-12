@@ -125,9 +125,11 @@ div.listing-list__content {
   .listing-list__item {
     border: 0 solid #ccc;
     border-bottom-width: 1px;
+    padding-bottom: 1px;
 
     .js & {
       border-width: 1px;
+      padding-bottom: 0;
     }
 
     @include margin(3, "left");
