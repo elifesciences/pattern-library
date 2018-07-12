@@ -125,6 +125,8 @@ div.listing-list__content {
   .listing-list__item {
     border: 0 solid #ccc;
     border-bottom-width: 1px;
+
+    // Adding extra pixel to account for removal of the top border sustains correct vertical rhythm.
     padding-bottom: 1px;
 
     // Breaks rule of only adding white space underneath. Tightly scoped to Highlights: shouldn't leak, but be careful.
@@ -161,6 +163,7 @@ div.listing-list__content {
       @include margin(3, "right");
       @include padding(12, "left");
       @include padding(12, "right");
+      padding-bottom: 0;
 
       vertical-align: top;
 
