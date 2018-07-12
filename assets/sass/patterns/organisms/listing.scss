@@ -127,13 +127,8 @@ div.listing-list__content {
     border-bottom-width: 1px;
     padding-bottom: 1px;
 
-    // Breaks rule of only adding white space underneath. Tightly scoped to the highlights, so shouldn't leak.
-    padding-top: #{$blg-space-extra-small-in-px}px;
-
-    .js & {
-      border-width: 1px;
-      padding-bottom: 0;
-    }
+    // Breaks rule of only adding white space underneath. Tightly scoped to Highlights: shouldn't leak, but be careful.
+    @include blg-spacing("top", "extra-small");
 
     @include margin(3, "left");
     @include margin(3, "right");
@@ -159,11 +154,11 @@ div.listing-list__content {
     white-space: nowrap;
 
     .listing-list__item {
+      border-width: 1px;
       display: inline-block;
       list-style-type: none;
       @include margin(3, "left");
       @include margin(3, "right");
-      @include blg-spacing("top", "extra-small");
       @include padding(12, "left");
       @include padding(12, "right");
 
