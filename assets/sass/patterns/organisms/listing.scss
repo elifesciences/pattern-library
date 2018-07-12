@@ -127,6 +127,9 @@ div.listing-list__content {
     border-bottom-width: 1px;
     padding-bottom: 1px;
 
+    // Breaks rule of only adding white space underneath. Tightly scoped to the highlights, so shouldn't leak.
+    padding-top: #{$blg-space-extra-small-in-px}px;
+
     .js & {
       border-width: 1px;
       padding-bottom: 0;
