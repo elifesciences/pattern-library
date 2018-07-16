@@ -44,7 +44,13 @@ module.exports = class ArticleSection {
       hash = this.window.location.hash.substring(1);
     }
 
-    if (hash && utils.isIdOfOrWithinSection(hash, $elm, this.doc)) {
+    if (this.window.navigator.userAgent && this.window.navigator.userAgent.indexOf('Googlebot/') !== -1) {
+      // Google Scholar requires article sections to be open to improve indexing
+      $elm.dataset.initialState = 'opened';
+    } else if (this.doc.referrer && this.doc.referrer.indexOf('.google.') !== -1) {
+      // Google requires referrals to visually match the indexed version
+      $elm.dataset.initialState = 'opened';
+    } else if (hash && utils.isIdOfOrWithinSection(hash, $elm, this.doc)) {
       // Force open if the fragment is here.
       $elm.dataset.initialState = 'opened';
     } else if (this.viewportNoWiderThan(this.thresholdWidth)) {
