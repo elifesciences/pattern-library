@@ -29,6 +29,8 @@ describe('An Article Section (collapsible)', function () {
 
   function createDocumentMock(referrer = null) {
     return {
+      createElement: (tagName, options) => document.createElement(tagName, options),
+      getElementById: (id) => document.getElementById(id),
       referrer: referrer,
     };
   }
