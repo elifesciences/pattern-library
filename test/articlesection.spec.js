@@ -9,7 +9,7 @@ describe('An Article Section (collapsible)', function () {
   let $elm = document.querySelector('.article-section');
   let section;
 
-  function createWindowMock(matches, hash) {
+  function createWindowMock(matches, hash = '', userAgent = '') {
     return {
       matchMedia: () => {
         return {
@@ -17,10 +17,21 @@ describe('An Article Section (collapsible)', function () {
         };
       },
       location: {
-        hash: `#${hash}`,
+        hash: hash ? `#${hash}` : '',
       },
       addEventListener: function () {
       },
+      navigator: {
+        userAgent: userAgent,
+      }
+    };
+  }
+
+  function createDocumentMock(referrer = null) {
+    return {
+      createElement: (tagName, options) => document.createElement(tagName, options),
+      getElementById: (id) => document.getElementById(id),
+      referrer: referrer,
     };
   }
 
@@ -50,6 +61,44 @@ describe('An Article Section (collapsible)', function () {
   it('is initially closed if initial state is closed', function () {
     $elm.dataset.initialState = 'closed';
     let articleSection = new ArticleSection($elm);
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
+    expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
+  });
+
+  it('is initially opened if the user agent is Googlebot', function () {
+    $elm.dataset.initialState = 'closed';
+    const windowMock = createWindowMock(true, '', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
+    const articleSection = new ArticleSection($elm, windowMock);
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
+    expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.false;
+  });
+
+  it('is initially closed if the user agent is not Googlebot', function () {
+    $elm.dataset.initialState = 'closed';
+    const windowMock = createWindowMock(true, '', 'Mozilla/5.0 (compatible)');
+    const articleSection = new ArticleSection($elm, windowMock);
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
+    expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
+  });
+
+  it('is initially opened if the referrer is Google', function () {
+    $elm.dataset.initialState = 'closed';
+    const windowMock = createWindowMock(true);
+    const documentMock = createDocumentMock('https://www.google.com/');
+    const articleSection = new ArticleSection($elm, windowMock, documentMock);
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
+    expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.false;
+  });
+
+  it('is initially closed if the referrer is not Google', function () {
+    $elm.dataset.initialState = 'closed';
+    const windowMock = createWindowMock(true);
+    const documentMock = createDocumentMock('https://www.example.com/');
+    const articleSection = new ArticleSection($elm, windowMock, documentMock);
     expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
     expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
     expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
