@@ -307,12 +307,18 @@ module.exports = class HypothesisOpener {
                     ' with the css class article-section--first.');
   }
 
+  static positionEnd($elm, $contentContainer) {
+    $contentContainer.appendChild($elm);
+  }
+
   static findPositioningMethod(articleType) {
     const positioners = {
       'blog-article': HypothesisOpener.positionCentrallyInline,
       interview: HypothesisOpener.positionCentrallyInline,
       'press-package': HypothesisOpener.positionCentrallyInline,
       'labs-post': HypothesisOpener.positionCentrallyInline,
+
+      digest: HypothesisOpener.positionEnd,
 
       insight: HypothesisOpener.positionBySecondSection,
       feature: HypothesisOpener.positionBySecondSection,

@@ -202,6 +202,10 @@ describe('A HypothesisOpener Component', function () {
         expect(HypothesisOpener.findPositioningMethod('labs-post')).to.equal(HypothesisOpener.positionCentrallyInline);
       });
 
+      it('returns the expected positioning method for a "digest"', () => {
+        expect(HypothesisOpener.findPositioningMethod('digest')).to.equal(HypothesisOpener.positionEnd);
+      });
+
       it('returns the expected positioning method for an "insight"', () => {
         expect(HypothesisOpener.findPositioningMethod('insight')).to.equal(HypothesisOpener.positionBySecondSection);
       });
@@ -389,6 +393,26 @@ describe('A HypothesisOpener Component', function () {
         expect($expectedParent.lastElementChild).to.deep.equal($opener);
       });
 
+    });
+
+  });
+
+  describe('the positionEnd method', () => {
+
+    let $snippet;
+    let id;
+
+    beforeEach(() => {
+      $snippet = generateSnippetWithParagraphs(5);
+      id = 'IShouldBeAppendedToTheEnd';
+      $opener.setAttribute('id', id);
+
+      expect($snippet.querySelector(`#${id}`)).to.be.null;
+    });
+
+    it('positions the opener at the end', () => {
+      HypothesisOpener.positionEnd($opener, $snippet);
+      expect($snippet.lastElementChild).to.equal($opener);
     });
 
   });
