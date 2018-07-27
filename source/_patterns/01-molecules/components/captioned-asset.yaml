@@ -26,6 +26,12 @@ allOf:
           - video
       -
         properties:
+          iframe:
+            $ref: ../../00-atoms/components/iframe.yaml
+        required:
+          - iframe
+      -
+        properties:
           table:
             $ref: ../../00-atoms/components/table.yaml
         required:
