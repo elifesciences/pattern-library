@@ -20,7 +20,7 @@ module.exports = () => {
     enableExperimentalNewNoteButton: true,
     enableCleanOnboardingTheme: true,
     theme: 'clean',
-    showHighlights: 'whenSidebarOpen',
+    showHighlights: true,
     usernameUrl: 'http://localhost/profiles/'
   };
 
