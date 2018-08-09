@@ -82,7 +82,7 @@ module.exports = class HypothesisLoader {
       enableExperimentalNewNoteButton: true,
       enableCleanOnboardingTheme: true,
       theme: 'clean',
-      showHighlights: 'whenSidebarOpen',
+      showHighlights: true,
       onLayoutChange: (layout) => {
         if (!!layout.expanded) {
           utils.expandCollapsedSections(document);
