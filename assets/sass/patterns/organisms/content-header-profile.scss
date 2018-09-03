@@ -1,5 +1,4 @@
 @import "../../definitions";
-@import "../../layout/grid";
 
 .content-header-profile {
   @include blg-pad-vertical-small-to-medium();
@@ -13,7 +12,7 @@
 
 .content-header-profile__display_name {
   @include font-size-and-vertical-height(20, 48);
-  font-weight: 700;
+  font-weight: bold;
   @include nospace();
 }
 
@@ -39,6 +38,12 @@
 
   &:last-child:after {
     content: "";
+  }
+}
+
+.content-header-profile__orcid {
+  .orcid__id {
+    color: inherit;
   }
 }
 

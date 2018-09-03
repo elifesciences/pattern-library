@@ -6,58 +6,76 @@
     {
       "authors": [
         {
-          "name": "R Bouveret"
+          "name": "R Bouveret",
+          "url": false
         },
         {
-          "name": "R Bouveret"
+          "name": "R Bouveret",
+          "url": false
         },
         {
-          "name": "N Schonrock"
+          "name": "N Schonrock",
+          "url": false
         },
         {
-          "name": "M Ramialison"
+          "name": "M Ramialison",
+          "url": false
         },
         {
-          "name": "T Doan"
+          "name": "T Doan",
+          "url": false
         },
         {
-          "name": "D de Jong"
+          "name": "D de Jong",
+          "url": false
         },
         {
-          "name": "A Bondue"
+          "name": "A Bondue",
+          "url": false
         },
         {
-          "name": "G Kaur"
+          "name": "G Kaur",
+          "url": false
         },
         {
-          "name": "S Mohamed"
+          "name": "S Mohamed",
+          "url": false
         },
         {
-          "name": "H Fonoudi"
+          "name": "H Fonoudi",
+          "url": false
         },
         {
-          "name": "C Chen"
+          "name": "C Chen",
+          "url": false
         },
         {
-          "name": "M Wouters"
+          "name": "M Wouters",
+          "url": false
         },
         {
-          "name": "S Bhattacharya"
+          "name": "S Bhattacharya",
+          "url": false
         },
         {
-          "name": "N Plachta"
+          "name": "N Plachta",
+          "url": false
         },
         {
-          "name": "SL Dunwoodie"
+          "name": "SL Dunwoodie",
+          "url": false
         },
         {
-          "name": "G Chapman"
+          "name": "G Chapman",
+          "url": false
         },
         {
-          "name": "C Blanpain"
+          "name": "C Blanpain",
+          "url": false
         },
         {
-          "name": "RP Harvey"
+          "name": "RP Harvey",
+          "url": false
         }
       ],
       "suffix": "(2015)"

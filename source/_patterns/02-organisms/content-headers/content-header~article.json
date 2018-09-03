@@ -1,6 +1,12 @@
 {
   "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
   "longTitle": true,
+  "socialMediaSharers": {
+    "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+  },
   "header": {
     "possible": true,
     "hasSubjects": true,
@@ -37,133 +43,176 @@
         "url": "#"
       },
       {
-        "name": "Steven E Churchill"
+        "name": "Steven E Churchill",
+        "url": false
       },
       {
-        "name": "Peter Schmid"
+        "name": "Peter Schmid",
+        "url": false
       },
       {
-        "name": "Lucas K Delezene"
+        "name": "Lucas K Delezene",
+        "url": false
       },
       {
-        "name": "Tracy L Kivell"
+        "name": "Tracy L Kivell",
+        "url": false
       },
       {
-        "name": "Heather M Garvin"
+        "name": "Heather M Garvin",
+        "url": false
       },
       {
-        "name": "Scott A Williams"
+        "name": "Scott A Williams",
+        "url": false
       },
       {
-        "name": "Jeremy M DeSilva"
+        "name": "Jeremy M DeSilva",
+        "url": false
       },
       {
-        "name": "Matthew M Skinner"
+        "name": "Matthew M Skinner",
+        "url": false
       },
       {
-        "name": "Charles M Musiba"
+        "name": "Charles M Musiba",
+        "url": false
       },
       {
-        "name": "Noel Cameron"
+        "name": "Noel Cameron",
+        "url": false
       },
       {
-        "name": "Trenton W Holliday"
+        "name": "Trenton W Holliday",
+        "url": false
       },
       {
-        "name": "William Harcourt-Smith"
+        "name": "William Harcourt-Smith",
+        "url": false
       },
       {
-        "name": "Rebecca R Ackermann"
+        "name": "Rebecca R Ackermann",
+        "url": false
       },
       {
-        "name": "Markus Bastir"
+        "name": "Markus Bastir",
+        "url": false
       },
       {
-        "name": "Barry Bogin"
+        "name": "Barry Bogin",
+        "url": false
       },
       {
-        "name": "Debra Bolter"
+        "name": "Debra Bolter",
+        "url": false
       },
       {
-        "name": "Juliet Brophy"
+        "name": "Juliet Brophy",
+        "url": false
       },
       {
-        "name": "Zachary D Cofran"
+        "name": "Zachary D Cofran",
+        "url": false
       },
       {
-        "name": "Kimberly A Congdon"
+        "name": "Kimberly A Congdon",
+        "url": false
       },
       {
-        "name": "Andrew S Deane"
+        "name": "Andrew S Deane",
+        "url": false
       },
       {
-        "name": "Mana Dembo"
+        "name": "Mana Dembo",
+        "url": false
       },
       {
-        "name": "Michelle Drapeau"
+        "name": "Michelle Drapeau",
+        "url": false
       },
       {
-        "name": "Marina C Elliott"
+        "name": "Marina C Elliott",
+        "url": false
       },
       {
-        "name": "Elen M Feuerriegel"
+        "name": "Elen M Feuerriegel",
+        "url": false
       },
       {
-        "name": "Daniel Garcia-Martinez"
+        "name": "Daniel Garcia-Martinez",
+        "url": false
       },
       {
-        "name": "David J Green"
+        "name": "David J Green",
+        "url": false
       },
       {
-        "name": "Alia Gurtov"
+        "name": "Alia Gurtov",
+        "url": false
       },
       {
-        "name": "Joel D Irish"
+        "name": "Joel D Irish",
+        "url": false
       },
       {
-        "name": "Ashley Kruger"
+        "name": "Ashley Kruger",
+        "url": false
       },
       {
-        "name": "Myra F Laird"
+        "name": "Myra F Laird",
+        "url": false
       },
       {
-        "name": "Damiano Marchi"
+        "name": "Damiano Marchi",
+        "url": false
       },
       {
-        "name": "Marc R Meyer"
+        "name": "Marc R Meyer",
+        "url": false
       },
       {
-        "name": "Shahed Nalla"
+        "name": "Shahed Nalla",
+        "url": false
       },
       {
-        "name": "Enquye W Negash"
+        "name": "Enquye W Negash",
+        "url": false
       },
       {
-        "name": "Caley M Orr"
+        "name": "Caley M Orr",
+        "url": false
       },
       {
-        "name": "Davorka Radovcic"
+        "name": "Davorka Radovcic",
+        "url": false
       },
       {
-        "name": "Lauren Schroeder"
+        "name": "Lauren Schroeder",
+        "url": false
       },
       {
-        "name": "Jill E Scott"
+        "name": "Jill E Scott",
+        "url": false
       },
       {
-        "name": "Zachary Throckmorton"
+        "name": "Zachary Throckmorton",
+        "url": false
       },
       {
-        "name": "Caroline VanSickle"
+        "name": "Caroline VanSickle",
+        "url": false
       },
       {
-        "name": "Christopher S Walker"
+        "name": "Christopher S Walker",
+        "url": false
       },
       {
-        "name": "Pianpian Wei"
+        "name": "Pianpian Wei",
+        "url": false
       },
       {
         "name": "Bernhard Zipfel",
+        "url": false,
         "isCorresponding": true
       }
     ]

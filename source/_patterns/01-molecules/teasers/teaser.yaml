@@ -1,99 +1,107 @@
-assets:
-  css:
-    - teaser.css
-    - $ref: ../../01-molecules/components/meta.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    rootClasses:
-      type: string
-      minLength: 1
-    contextLabel:
-      type: object
-      properties:
-        list:
-          type: array
-          minItems: 1
-          item:
-            type: object
-            properties:
-              name:
-                type: string
-                minLength: 1
-              url:
-                type: string
-                minLength: 1
-            required:
-              - name
-              - url
-    url:
-      minLength: 1
-      type: string
-    title:
-      type: string
-      minLength: 1
-    num:
-      type: integer
-      minimum: 1
-    carouselItem:
-      type: boolean
-      default: false
-    secondaryInfo:
-      type: string
-      minLength: 1
-    eventDate:
-      $ref: ../../00-atoms/components/date.yaml#/schema
-    content:
-      type: string
-      minLength: 1
-    category:
-      type: object
-      properties:
-        name:
-          type: string
-          minLength: 1
-        url:
-          type: string
-          minLength: 1
-      required:
-        - name
-    image:
-      allOf:
-        - $ref: ../../00-atoms/components/picture.yaml#/schema
-        - properties:
-            type:
-              type: string
-              enum:
-                - prominent
-                - big
-                - small
-          required:
-            - type
-    footer:
-      type: object
-      properties:
-        meta:
-          $ref: ../../01-molecules/components/meta.yaml#/schema
-        formats:
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  rootClasses:
+    type: string
+    minLength: 1
+  contextLabel:
+    type: object
+    properties:
+      list:
+        type: array
+        minItems: 1
+        item:
           type: object
-          minProperties: 1
           properties:
-            html:
-              type: boolean
-            pdf:
-              type: boolean
-      required:
-        - meta
+            name:
+              type: string
+              minLength: 1
+            url:
+              oneOf:
+                - type: string
+                  minLength: 1
+                - type: boolean
+                  enum:
+                    - false
+          required:
+            - name
+            - url
+  url:
+    oneOf:
+      - type: string
+        minLength: 1
+      - type: boolean
+        enum:
+          - false
+  title:
+    type: string
+    minLength: 1
+  num:
+    type: integer
+    minimum: 1
+  carouselItem:
+    type: boolean
+    default: false
+  secondaryInfo:
+    type: string
+    minLength: 1
+  eventDate:
+    $ref: ../../00-atoms/components/date.yaml
+  content:
+    type: string
+    minLength: 1
+  category:
+    type: object
+    properties:
+      name:
+        type: string
+        minLength: 1
+      url:
+        oneOf:
+          - type: string
+            minLength: 1
+          - type: boolean
+            enum:
+              - false
+    required:
+      - name
+      - url
+  image:
+    allOf:
+      - $ref: ../../00-atoms/components/picture.yaml
+      - properties:
+          type:
+            type: string
+            enum:
+              - prominent
+              - big
+              - small
+        required:
+          - type
+  footer:
+    type: object
+    properties:
+      meta:
+        $ref: ../../01-molecules/components/meta.yaml
+      formats:
+        type: object
+        minProperties: 1
+        properties:
+          html:
+            type: boolean
+          pdf:
+            type: boolean
+    required:
+      - meta
 
-  dependencies:
-    num:
-      - carouselItem
-    carouselItem:
-      - num
+dependencies:
+  num:
+    - carouselItem
+  carouselItem:
+    - num
 
-  required:
-    - title
-    # - footer # Not in teaser~50-secondary-event.json or teaser~45-main-event.json
-    # - contextLabel # Not in teaser~60-grid-style--podcast.json or teaser~55-grid-style--labs.json or teaser~40-basic.json
+required:
+  - title
+  - url
+  # - footer # Not in teaser~50-secondary-event.json or teaser~45-main-event.json
+  # - contextLabel # Not in teaser~60-grid-style--podcast.json or teaser~55-grid-style--labs.json or teaser~40-basic.json

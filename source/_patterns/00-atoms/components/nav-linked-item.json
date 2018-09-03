@@ -1,14 +1,14 @@
 {
   "text": "Menu",
   "classes": "nav-primary__item nav-primary__item--first",
-  "textClasses": "nav-primary__menu_text",
+  "textClasses": "visuallyhidden",
   "path": "#mainMenu",
   "picture": {
     "fallback": {
-      "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+      "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
       "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
       "classes": "nav-primary__menu_icon",
-      "altText": "Menu icon"
+      "altText": ""
     },
     "sources": [
       {

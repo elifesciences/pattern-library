@@ -26,6 +26,7 @@
         "beforeEach": false,
         "context": false,
         "describe": false,
+        "ErrorEvent": false,
         "it": false,
         "xdescribe": false,
         "xit": false

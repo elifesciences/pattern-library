@@ -16,13 +16,7 @@
     },
 
     {
-      "text": "Labs",
-      "path": "#",
-      "classes": "nav-secondary__item"
-    },
-
-    {
-      "classes": "nav-secondary__item",
+      "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
       "button": {
         "text": "Submit my research",
         "path": "#",
@@ -47,7 +41,7 @@
             }
           ],
           "fallback": {
-            "srcset": "../../assets/img/icons/profile@2x.png 70w, ../../assets/img/icons/profile.png 35w",
+            "srcset": "../../assets/img/icons/profile@2x.png 2x, ../../assets/img/icons/profile.png 1x",
             "defaultPath": "../../assets/img/icons/profile.png",
             "altText": "Profile icon"
           }

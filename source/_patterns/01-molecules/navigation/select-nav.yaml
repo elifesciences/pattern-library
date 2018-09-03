@@ -1,21 +1,14 @@
-assets:
-  css:
-    - select-nav.css
-    - $ref: ../../00-atoms/components/button.yaml#/assets/css
-    - $ref: ../../00-atoms/forms/select.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    select:
-      $ref: ../../00-atoms/forms/select.yaml#/schema
-    route:
-      type: string
-      minLength: 1
-    button:
-      $ref: ../../00-atoms/components/button.yaml#/schema
-  required:
-    - select
-    - route
-    - button
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  select:
+    $ref: ../../00-atoms/forms/select.yaml
+  route:
+    type: string
+    minLength: 1
+  button:
+    $ref: ../../00-atoms/components/button.yaml
+required:
+  - select
+  - route
+  - button

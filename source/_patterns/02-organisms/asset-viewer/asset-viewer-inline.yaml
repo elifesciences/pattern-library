@@ -1,98 +1,91 @@
-assets:
-  css:
-    - asset-viewer-inline.css
-    - $ref: ../../01-molecules/components/captioned-asset.yaml#/assets/css
-    - $ref: ../../02-organisms/components/additional-assets.yaml#/assets/css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    id:
-      type: string
-      minLength: 1
-    variant:
-      type: string
-      enum:
-        - figure
-        - table
-        - video
-        - supplement
-    classes:
-      type: string
-      minLength: 1
-    isSupplement:
-      type: boolean
-    supplementOrdinal:
-      type: integer
-      minimum: 1
-    parentId:
-      type: string
-      minLength: 1
-    label:
-      type: string
-      minLength: 1
-    supplementCount:
-      type: integer
-      minimum: 1
-    hasMultipleSupplements:
-      type: boolean
-    seeAllLink:
-      type: string
-      minLength: 1
-    captionedAsset:
-      allOf:
-        - $ref: ../../01-molecules/components/captioned-asset.yaml#/schema
-        - properties:
-            inline:
-              enum:
-                - false
-    additionalAssets:
-      type: array
-      minItems: 1
-      items:
-        $ref: ../../02-organisms/components/additional-assets.yaml#/schema
-    download:
-      type: object
-      properties:
-        link:
-          type: string
-          minLength: 1
-        filename:
-          type: string
-          minLength: 1
-      required:
-        - link
-        - filename
-    open:
-      type: object
-      properties:
-        uri:
-          type: string
-          minLength: 1
-        width:
-          type: integer
-          minimum: 1
-        height:
-          type: integer
-          minimum: 1
-      required:
-        - uri
-        - width
-        - height
-  dependencies:
-    parentId:
-      - supplementOrdinal
-    supplementOrdinal:
-      - parentId
-    supplementCount:
-      - hasMultipleSupplements
-    hasMultipleSupplements:
-      - supplementCount
-    seeAllLink:
-      - supplementCount
-  required:
-    - id
-    - variant
-    - label
-    - captionedAsset
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  id:
+    type: string
+    minLength: 1
+  variant:
+    type: string
+    enum:
+      - figure
+      - table
+      - video
+      - supplement
+  classes:
+    type: string
+    minLength: 1
+  isSupplement:
+    type: boolean
+  supplementOrdinal:
+    type: integer
+    minimum: 1
+  parentId:
+    type: string
+    minLength: 1
+  label:
+    type: string
+    minLength: 1
+  supplementCount:
+    type: integer
+    minimum: 1
+  hasMultipleSupplements:
+    type: boolean
+  seeAllLink:
+    type: string
+    minLength: 1
+  captionedAsset:
+    allOf:
+      - $ref: ../../01-molecules/components/captioned-asset.yaml
+      - properties:
+          inline:
+            enum:
+              - false
+  additionalAssets:
+    type: array
+    minItems: 1
+    items:
+      $ref: ../../02-organisms/components/additional-assets.yaml
+  download:
+    type: object
+    properties:
+      link:
+        type: string
+        minLength: 1
+      filename:
+        type: string
+        minLength: 1
+    required:
+      - link
+      - filename
+  open:
+    type: object
+    properties:
+      uri:
+        type: string
+        minLength: 1
+      width:
+        type: integer
+        minimum: 1
+      height:
+        type: integer
+        minimum: 1
+    required:
+      - uri
+      - width
+      - height
+dependencies:
+  parentId:
+    - supplementOrdinal
+  supplementOrdinal:
+    - parentId
+  supplementCount:
+    - hasMultipleSupplements
+  hasMultipleSupplements:
+    - supplementCount
+  seeAllLink:
+    - supplementCount
+required:
+  - id
+  - variant
+  - label
+  - captionedAsset

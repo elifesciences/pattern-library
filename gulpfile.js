@@ -10,7 +10,6 @@ const babel             = require('babelify');
 const browserify        = require('browserify');
 const browserSync       = require('browser-sync');
 const buffer            = require('vinyl-buffer');
-const compass           = require('gulp-compass');
 const concat            = require('gulp-concat');
 const del               = require('del');
 const es                = require('event-stream');
@@ -38,47 +37,40 @@ const webdriver         = require('gulp-webdriver');
 
 const js3rdPartySource = './assets/js/libs/third-party/**/*.js';
 const jsPolyfills = './assets/js/libs/polyfills.js';
-const jsSource = ['./assets/js/**/*.js', '!' + js3rdPartySource, '!' + jsPolyfills];
+const jsLoader = './assets/js/elife-loader.js';
+const jsSource = [
+  './assets/js/**/*.js',
+  `!${js3rdPartySource}`,
+  `!${jsPolyfills}`,
+  `!${jsLoader}`];
+
 const jsDest = './source/assets/js';
 
-let options = minimist(process.argv);
-let environment = options.environment || 'development';
-let mocha_grep = options['mocha-grep'] || null;
+let options = minimist(
+  process.argv, {
+    'boolean': ['sass-lint'],
+    'default': {
+      'sass-lint': true,
+      'environment': 'development',
+      'mocha-grep': null,
+      'test-html': null,
+    },
+  }
+);
+let environment = options.environment;
+let mochaGrep = options['mocha-grep'];
+let sassLint = options['sass-lint'];
+let testHtml = options['test-html'];
 
 let server;
 
 /*************************************
  *  Tasks
  *************************************/
-
-gulp.task('generateStyles', ['generateAllStyles', 'generateIndividualStyles'], () => {
-  del(['source/assets/css/tmp']);
+gulp.task('echo', [], () => {
+  console.log("Echo back options");
+  console.log(options);
 });
-
-gulp.task('generateIndividualStyles', ['buildStyleFiles'], () => {
-  return gulp.src(['source/assets/css/tmp/**/*.css', 'source/assets/css/tmp/**/*.map'])
-      .pipe(rename({ dirname: '' }))
-      .pipe(gulp.dest('source/assets/css'));
-
-});
-
-gulp.task('buildStyleFiles', ['sass:lint'], () => {
-
-  return gulp.src(['assets/sass/base.scss', 'assets/sass/patterns/**/*.scss'])
-    .pipe(compass(
-      {
-        config_file: 'config.rb',
-        css: 'source/assets/css/tmp',
-        sass: 'assets/sass',
-        sourcemap: true,
-        style: environment === 'production' ? 'compressed' : 'expanded'
-      }
-    ))
-    .pipe(gulp.dest('source/assets/css/tmp'));
-
-  }
-);
-
 
  /******************************************************************************
   * CSS pre-processing task
@@ -90,8 +82,7 @@ gulp.task('buildStyleFiles', ['sass:lint'], () => {
   * Auto-prefixes properties as required.
   ******************************************************************************/
 
-gulp.task('generateAllStyles', ['sass:lint'], () => {
-
+gulp.task('generateCss', ['sass:lint'], () => {
   let options = environment === 'production' ? {outputStyle: 'compressed'} : null;
 
   return gulp.src('assets/sass/build.scss')
@@ -107,6 +98,11 @@ gulp.task('generateAllStyles', ['sass:lint'], () => {
 });
 
 gulp.task('sass:lint', ['sass:clean'], () => {
+
+  if (!sassLint) {
+    console.info("Skipping sass:lint");
+    return;
+  }
 
   let processors = [
     stylelint(),
@@ -177,7 +173,7 @@ gulp.task('fonts', () => {
  * Creates a sourcemap.
  ******************************************************************************/
 
-gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests'], () => {
+gulp.task('js', ['js:hint', 'js:cs', 'js:copyLoader'], () => {
 
     return browserify('./assets/js/main.js', { debug: true })
           .transform(babel)
@@ -192,6 +188,11 @@ gulp.task('js', ['js:hint', 'js:cs', 'browserify-tests'], () => {
           .pipe(sourcemaps.write('./'))
           .pipe(gulp.dest(jsDest))
           .pipe(reload());
+});
+
+gulp.task('js:copyLoader', () => {
+  return gulp.src(jsLoader)
+             .pipe(gulp.dest(jsDest));
 });
 
 gulp.task('js:clean', () => {
@@ -233,12 +234,24 @@ gulp.task('browserify-tests', (done) => {
 });
 
 
-gulp.task('test', ['browserify-tests', 'js'], () => {
+gulp.task('local:test:unit', ['browserify-tests', 'js'], () => {
   return gulp.src('./test/*.html')
     .pipe(mochaPhantomjs({
       reporter: 'spec',
       mocha: {
-        grep: mocha_grep
+        grep: mochaGrep
+      },
+      'ignore-resource-errors': true
+    }))
+    .pipe(reload());
+});
+
+gulp.task('test:unit', ['browserify-tests'], () => {
+  return gulp.src('./test/*.html')
+    .pipe(mochaPhantomjs({
+      reporter: 'spec',
+      mocha: {
+        grep: mochaGrep
       },
       'ignore-resource-errors': true
     }))
@@ -256,7 +269,7 @@ gulp.task('test:selenium:local', function() {
 // Watchers
 
 gulp.task('sass:watch', () => {
-  gulp.watch('assets/sass/**/*', ['generateStyles']);
+  gulp.watch('assets/sass/**/*', ['generateCss']);
 });
 
 gulp.task('img:watch', () => {
@@ -271,14 +284,42 @@ gulp.task('js:watch', () => {
   gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['js']);
 });
 
+gulp.task('extractAssets', () => {
+  return gulp.src('./source/assets/**/*')
+      .pipe(gulp.dest('./.container_source_assets'));
+});
+
 // Task sets
-gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'/*, 'tests:watch'*/]);
-gulp.task('default', ['generateStyles', 'img', 'fonts', 'js']);
+gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'], () => {
+  // no better standalone solution without Gulp 4.x
+  // https://stackoverflow.com/questions/22824546/how-to-run-gulp-tasks-sequentially-one-after-the-other/38818657#38818657
+  gulp.on('task_stop', function (event) {
+    if (['generateCss', 'img', 'fonts', 'js'].indexOf(event.task) != -1) {
+      gulp.start('extractAssets');
+    }
+  });
+});
+gulp.task('default', ['generateCss', 'img', 'fonts', 'js']);
 
 /******************************************************************************
  * Used for local testing
  *  Update startPath in `server` task to the test file to be checked.
  ******************************************************************************/
+gulp.task('local:tests:watch', ['local:server', 'js:watch', 'browserify-tests'], () => {
+  gulp.watch('test/*.spec.js', ['browserify-tests']);
+});
+
+gulp.task('local:server', () => {
+  if (!server) {
+    server = express();
+    server.use(express.static('./'));
+    server.listen('8090');
+    browserSync({proxy: 'localhost:8090', startPath: 'test/hypothesisloader.html', browser: 'google chrome'});
+  } else {
+    return gutil.noop;
+  }
+});
+
 gulp.task('tests:watch', ['server', 'js:watch', 'browserify-tests'], () => {
   gulp.watch('test/*.spec.js', ['browserify-tests']);
 });
@@ -287,8 +328,12 @@ gulp.task('server', () => {
   if (!server) {
     server = express();
     server.use(express.static('./'));
-    server.listen('8080');
-    browserSync({proxy: 'localhost:8080', startPath: 'test/speechbubble.html', browser: 'google chrome'});
+    server.listen('8090');
+    browserSync({
+      proxy: 'localhost:8090',
+      startPath: testHtml,
+      open: false,
+    });
   } else {
     return gutil.noop;
   }

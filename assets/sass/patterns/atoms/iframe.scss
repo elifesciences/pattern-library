@@ -9,6 +9,11 @@
   @include blg-spacing("top", "medium", "margin");
   @include blg-spacing("bottom", "medium", "margin");
 
+  .captioned-asset & {
+    @include blg-spacing("top", "small", "margin");
+    @include blg-spacing("bottom", "small", "margin");
+  }
+
   iframe {
     border: 0;
     position: absolute;

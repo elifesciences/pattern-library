@@ -200,7 +200,12 @@ module.exports = () => {
       return 0;
     }
 
-    return Math.round(pxString.match(/([-0-9.]+)px/)[1]);
+    const numberFromString = parseFloat(pxString);
+    if (isNaN(numberFromString)) {
+      throw new Error(`Can\'t parse argument as a float: ${pxString}`);
+    }
+
+    return Math.round(numberFromString);
   }
 
   function _getZeroAwarePxStringFromValue(value) {
@@ -629,19 +634,94 @@ module.exports = () => {
     return $elm.classList.contains('article-section--collapsed');
   }
 
+  /**
+   * Returns the value of a data-item-type attribute on or within $elm
+   * @param $elm {HTMLElement} An element expected to hold or wrap a data-item-type attribute
+   * @return {String|null}
+   */
+  function getItemType($elm) {
+    if ($elm.dataset.itemType) {
+      return $elm.dataset.itemType;
+    }
+
+    const $target = $elm.querySelector('[data-item-type]');
+    if ($target) {
+      return $target.dataset.itemType;
+    }
+
+    return null;
+  }
+
+  function expandCollapsedSections(parent) {
+    const collapsed = parent.querySelectorAll('.article-section--collapsed');
+    [].slice.call(collapsed).forEach(($section) => {
+      $section.dispatchEvent(eventCreator('expandsection'));
+    });
+  }
+
+  function calcScrollbarWidth() {
+    const inner = document.createElement('p');
+    inner.style.width = '100%';
+
+    const outer = document.createElement('div');
+    outer.style.position = 'absolute';
+    outer.style.left = '0px';
+    outer.style.visibility = 'hidden';
+    outer.style.width = '100px';
+    outer.style.overflow = 'hidden';
+    outer.appendChild(inner);
+
+    document.body.appendChild(outer);
+
+    const widthWhenNoScrollBars = inner.offsetWidth;
+    outer.style.overflow = 'scroll';
+    let widthWhenScrollBars = inner.offsetWidth;
+    if (widthWhenNoScrollBars === widthWhenScrollBars) {
+      widthWhenScrollBars = outer.clientWidth;
+    }
+
+    document.body.removeChild(outer);
+
+    return widthWhenNoScrollBars - widthWhenScrollBars;
+  }
+
+  function getCookieValue(cookieSought, cookies) {
+    let found = '';
+    cookies.split('; ').forEach((cookie) => {
+      if (cookie.indexOf(cookieSought) === 0) {
+        const re = new RegExp(`${cookieSought}=([^;]*)`);
+        const cookieMatch = cookie.match(re)[1];
+        found = decodeURIComponent(cookieMatch);
+      }
+    });
+
+    return found;
+  }
+
+  function logError(window, e, message) {
+    window.console.error(message + ':' + e);
+    if (typeof window.newrelic === 'object') {
+      window.newrelic.noticeError(e);
+    }
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
     isIdOfOrWithinSection: isIdOfOrWithinSection,
     buildElement: buildElement,
+    calcScrollbarWidth: calcScrollbarWidth,
     closest: closest,
     create$pageOverlay: create$pageOverlay,
     debounce: debounce,
     eventCreator: eventCreator,
+    expandCollapsedSections: expandCollapsedSections,
+    getItemType: getItemType,
     loadJavaScript: loadJavaScript,
     loadStyleSheet: loadStyleSheet,
     defer: defer,
     flatten: flatten,
+    getCookieValue: getCookieValue,
     invertPxString: invertPxString,
     isCollapsedArticleSection: isCollapsedArticleSection,
     isCollapsibleArticleSection: isCollapsibleArticleSection,
@@ -655,5 +735,6 @@ module.exports = () => {
     uniqueIds: uniqueIds,
     updateElementTranslate: updateElementTranslate,
     wrapElements: wrapElements,
+    logError: logError,
   };
 };

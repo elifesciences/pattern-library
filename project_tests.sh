@@ -2,11 +2,10 @@
 set -e
 
 echo "Running gulp unit test suite"
-gulp test
+node_modules/.bin/gulp test:unit
 
 echo "Running Selenium test suite"
-gulp test:selenium
+node_modules/.bin/gulp test:selenium
 
-echo "Running validation against schema"
-bin/validate
-
+echo "Static checks"
+.ci/errors-ascii-chars

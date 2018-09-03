@@ -9,15 +9,15 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "nav-primary__menu_text",
+          "textClasses": "visuallyhidden",
           "path": "#mainMenu",
           "picture": {
             "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
               "classes": "",
-              "altText": "Menu icon"
+              "altText": ""
             },
             "sources": [
               {
@@ -40,7 +40,13 @@
         },
 
         {
-          "text": "Search",
+          "text": "Innovation",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search the eLife site",
           "rel": "search",
           "classes": "nav-primary__item nav-primary__item--search",
           "textClasses": "visuallyhidden",
@@ -51,7 +57,7 @@
               "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
               "classes": "",
-              "altText": "Search icon"
+              "altText": ""
             },
             "sources": [
               {
@@ -82,15 +88,9 @@
         },
 
         {
-          "text": "Labs",
-          "path": "#",
-          "classes": "nav-secondary__item"
-        },
-
-        {
           "text": "Submit my research",
           "path": "#",
-          "classes": "nav-secondary__item",
+          "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
             "classes": "button--default button--extra-small"
           }
@@ -134,6 +134,12 @@
 
   "contentHeader": {
     "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
+    "socialMediaSharers": {
+      "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+    },
     "titleLong": true,
     "header": {
       "possible": true,
@@ -464,6 +470,11 @@
   "emailCta": {
     "headerText": "Be the first to read new articles from eLife",
     "subHeader": "Sign up for alerts",
+    "formFieldInfoLink": {
+      "name": "Privacy notice",
+      "url": "/privacy-notice",
+      "alignLeft": true
+    },
     "compactForm": {
       "formAction": "#",
       "formId": "myCompactForm",

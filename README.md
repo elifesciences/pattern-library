@@ -14,9 +14,6 @@ You'll need:
 
  - PHP (for Patternlab)
  - nodejs (for gulp)
- - ruby (to handle the `compass` gem that underpins `gulp-compass` (see https://www.npmjs.com/package/gulp-compass).
-
-Then install compass: `gem install compass`
 
 ## 2. Automatic setup
 From the root directory run
@@ -45,7 +42,7 @@ You should be good to go, open your browser and you will see the pattern lab.
 - install required npm packages with `npm install`
 - run `gulp` to build the css & js files.
 - then run `gulp watch` to watch for changes to files or do both in one fell swoop with `gulp && gulp watch` (the watch task on its own will not compile your assets until a file is changed).
-- run `gulp test --mocha-grep=something` to pass the `--grep` option to mocha and run a subset of tests.
+- run `gulp local:test:unit --mocha-grep=something` to pass the `--grep` option to mocha and run a subset of tests.
 - if generating files intended for website production, invoke with the production flag, like this: `gulp --environment production`. The minifies css & js files.
 
 ## 3. Generate PatternLab
@@ -95,6 +92,96 @@ gulp test:selenium
 
 is used inside the pattern-library VM and should not be used elsewhere.
 
+# Docker setup
+
+```
+docker-compose build
+```
+
+(re)builds all images:
+
+- `elifesciences/pattern-library_assets-builder` is a Node-based image for Gulp usage
+- `elifesciences/pattern-library_assets` is a lightweight image containing `assets/`
+- `elifesciences/pattern-library_ui-builder` is a PHP-based image for generation of the UI
+- `elifesciences/pattern-library` is a nginx-based image serving the UI
+- `elifesciences/pattern-library_ci` is used to run tests
+- an anonymous `selenium` image extension.
+
+```
+docker-compose up
+```
+
+runs containers so that the static website is accessible through a browser at http://localhost:8889
+
+```
+docker-compose run --rm ci ./project_tests.sh
+```
+
+runs all tests.
+
+To create an exploratory session with the browser used by the Selenium test suite:
+
+```
+docker-compose up -d
+curl -v localhost:4/wd/hub/session -d '{"desiredCapabilities":{"browserName":"firefox"}}'
+```
+
+Connect to this browser by using a VNC client (such as `vinagre`) on `localhost:5900`, with password `secret`. You can visit the pattern-library static website at `http://ui`.
+
+For a local build, run:
+
+```
+ENVIRONMENT=development docker-compose build assets
+```
+
+To watch for changes, run:
+
+```
+docker-compose build  # only necessary after switching branch or installing new dependencies
+bin/watch
+```
+
+Changes to `assets/js` (and similar) will be propagated to the `gulp watch` process. Changes to `source/_patterns` (and similar) will be propagated to the `php core/builder.php --watch` process.
+
+You can pass options to the underlying gulp:
+
+```
+bin/watch --sass-lint=false
+```
+
+To run additional gulp command in the same container where `gulp:watch` is running:
+
+```
+$ docker exec -it pattern-library-gulp-watch /bin/bash
+elife@...$ node_modules/.bin/gulp test:unit
+```
+
+The watch loop keeps a read-only host folder up-to-date with the latest assets:
+
+```
+$ ls .container_source_assets/
+css  fonts  img  js
+```
+
+Exit from this script with `Ctrl+C`.
+
+To watch a particular test in a browser:
+
+```
+$ bin/tests-watch test/hypothesisopener.html
+```
+
+Visit the URL that is printed out:
+
+```
+http://localhost:3000/test/hypothesisopener.html
+```
+
+The browser will refresh and rerun the test upon changes to it. Exit from this script with `Ctrl+C`.
+
 # Notes
 
 All assets paths in Mustache templates must be wrapped in `{{#assetRewrite}}`, which allows implementations to rewrite the path for cache-busting purposes. The path must also be prepended by `{{assetsPath}}`. 
+
+# License
+All code in this repo is MIT licensed, apart from the web fonts, which are are licensed separately under the SIL Open Font License. See the LICENSE.MD file in `/assets/fonts/` for details.

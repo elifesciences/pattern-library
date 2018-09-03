@@ -9,15 +9,15 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "nav-primary__menu_text",
+          "textClasses": "visuallyhidden",
           "path": "#mainMenu",
           "picture": {
             "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
               "classes": "",
-              "altText": "Menu icon"
+              "altText": ""
             },
             "sources": [
               {
@@ -40,7 +40,13 @@
         },
 
         {
-          "text": "Search",
+          "text": "Innovation",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search the eLife site",
           "rel": "search",
           "classes": "nav-primary__item nav-primary__item--search",
           "textClasses": "visuallyhidden",
@@ -51,7 +57,7 @@
               "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
               "classes": "",
-              "altText": "Search icon"
+              "altText": ""
             },
             "sources": [
               {
@@ -82,15 +88,9 @@
         },
 
         {
-          "text": "Labs",
-          "path": "#",
-          "classes": "nav-secondary__item"
-        },
-
-        {
           "text": "Submit my research",
           "path": "#",
-          "classes": "nav-secondary__item",
+          "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
             "classes": "button--default button--extra-small"
           }
@@ -146,7 +146,7 @@
             "altText": ""
           }
         },
-        "profile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor euismod mi. Morbi facilisis eros in mi consequat cursus. Nulla malesuada pretium mauris, vitae gravida diam laoreet ac. Curabitur ornare libero sed porta molestie. Ut ut sem in libero tincidunt lobortis. Nullam eros nisi, malesuada vitae leo sit amet, bibendum congue justo. Morbi iaculis lectus erat, vel dapibus metus posuere sit amet. Phasellus eget scelerisque massa. Mauris hendrerit ex in nisl ultricies elementum. Donec tellus risus, rhoncus molestie rutrum et, cursus eget mi. Praesent et elit tellus. Curabitur id sodales turpis. Fusce pulvinar aliquam commodo. Cras vitae dolor vitae metus dignissim auctor.Cras nulla purus, rhoncus et mollis in, imperdiet sed metus. In non porttitor nibh. In sit amet ipsum eget nisl laoreet tincidunt. Donec iaculis nibh quis lacus viverra sagittis. Phasellus imperdiet congue imperdiet.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc nisi tortor, rhoncus.</p><dl><dt>Expertise</dt><dd>Cell Biology</dd><dt>Competing interests statement</dt><dd>Donec tellus</dl>"
+        "profile": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor euismod mi. Morbi facilisis eros in mi consequat cursus. Nulla malesuada pretium mauris, vitae gravida diam laoreet ac. Curabitur ornare libero sed porta molestie. Ut ut sem in libero tincidunt lobortis. Nullam eros nisi, malesuada vitae leo sit amet, bibendum congue justo. Morbi iaculis lectus erat, vel dapibus metus posuere sit amet. Phasellus eget scelerisque massa. Mauris hendrerit ex in nisl ultricies elementum. Donec tellus risus, rhoncus molestie rutrum et, cursus eget mi. Praesent et elit tellus. Curabitur id sodales turpis. Fusce pulvinar aliquam commodo. Cras vitae dolor vitae metus dignissim auctor.Cras nulla purus, rhoncus et mollis in, imperdiet sed metus. In non porttitor nibh. In sit amet ipsum eget nisl laoreet tincidunt. Donec iaculis nibh quis lacus viverra sagittis. Phasellus imperdiet congue imperdiet.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc nisi tortor, rhoncus.</p><dl class=\"definition-list definition-list--inline\"><dt>Expertise</dt><dd>Cell Biology</dd><dt>Competing interests statement</dt><dd>Donec tellus</dl>"
       },
       {
         "name": "Ivan Dikic",
@@ -157,7 +157,7 @@
             "altText": ""
           }
         },
-        "profile": "<p>Ivan Dikic is a Professor and Chairman of Institute of Biochemistry II at the Medical School Goethe University and a member of the Buchmann Institute for Molecular Life Sciences in Frankfurt. He was trained as a medical doctor at Zagreb University and obtained his PhD in molecular biology with Joseph Schlessinger. His career is focused on studying intracellular signaling initially via protein tyrosine kinases where he revealed how multiple monoubiquitination controls EGFR endocytosis. His lab has pioneered a concept of Ubiquitin as a multivalent cellular signal that regulates multitude of physiological and pathophysiological processes including DNA repair, inflammation, cancer, infection and proteasomal degradation. Ivan’s group also provided structural and functional evidence for a new type of Ub chains that are Met1-linked (called linear ubiquitination) in promoting the NF-kB signaling. His current interests focus on selective autophagy, which is essential for the clearance of protein aggregates, pathogens, and damaged mitochondria from the cell. He has received many awards for his work including the AACR Award for Outstanding Achievement in Cancer Research, the Award of European Association for Cancer Research, the Hans Krebs Prize, the Leibniz Award and the Ernst Jung Award in Medicine. He is a Member of the German Academy for Sciences Leopoldina, Academia Europaea, Croatian Academy of Medical Sciences and the European Molecular Biology Organization.</p><dl><dt>Expertise</dt><dd>Biochemistry</dd><dd>Cell Biology</dd><dt>Research focus</dt><dd>ubiquitination</dd><dd>autophagy</dd><dd>endocytosis</dd><dd>inflammation</dd><dd>cancer biology</dd></dl>"
+        "profile": "<p>Ivan Dikic is a Professor and Chairman of Institute of Biochemistry II at the Medical School Goethe University and a member of the Buchmann Institute for Molecular Life Sciences in Frankfurt. He was trained as a medical doctor at Zagreb University and obtained his PhD in molecular biology with Joseph Schlessinger. His career is focused on studying intracellular signaling initially via protein tyrosine kinases where he revealed how multiple monoubiquitination controls EGFR endocytosis. His lab has pioneered a concept of Ubiquitin as a multivalent cellular signal that regulates multitude of physiological and pathophysiological processes including DNA repair, inflammation, cancer, infection and proteasomal degradation. Ivan’s group also provided structural and functional evidence for a new type of Ub chains that are Met1-linked (called linear ubiquitination) in promoting the NF-kB signaling. His current interests focus on selective autophagy, which is essential for the clearance of protein aggregates, pathogens, and damaged mitochondria from the cell. He has received many awards for his work including the AACR Award for Outstanding Achievement in Cancer Research, the Award of European Association for Cancer Research, the Hans Krebs Prize, the Leibniz Award and the Ernst Jung Award in Medicine. He is a Member of the German Academy for Sciences Leopoldina, Academia Europaea, Croatian Academy of Medical Sciences and the European Molecular Biology Organization.</p><dl class=\"definition-list definition-list--inline\"><dt>Expertise</dt><dd>Biochemistry</dd><dd>Cell Biology</dd><dt>Research focus</dt><dd>ubiquitination</dd><dd>autophagy</dd><dd>endocytosis</dd><dd>inflammation</dd><dd>cancer biology</dd></dl>"
       },
       {
         "name": "John Kuriyan",
@@ -191,13 +191,31 @@
           }
         },
         "profile": "<p>Vivek Malhotra was a professor in the biology division at UC San Diego from 2007 and is now the ICREA Professor and Chair of the Cell and Developmental Biology at Center for Genomic Regulation (CRG) in Barcelona. His research focuses on a central station of the secretory pathway, the Golgi complex. Specifically, his work has resulted in the identification of the machinery required for the sorting and packaging of secretory cargoes. His recent work has uncovered a novel secretory routing that bypasses the conventional pathway of protein secretion. He has identified new genes required for the export of bulky collagens and the regulated secretion of mucins. He received his BSc from Stirling University and was a Pirie–Reid scholar at Oxford; a Damon Runyon Walter Winchell and an American Cancer Society postdoctoral fellow at Stanford; and Basil O’Conner scholar, established Investigator of the American Heart Association, and Senior Investigator of Sandler’s Foundation for Asthma at UC San Diego. He received the MERCK award from the American Society of Biochemistry and Molecular Biology, is a fellow of the American association of the arts and science, and is an elected EMBO member.</p>"
+      },
+      {
+        "name": "Laurent Gatto",
+        "role": "University of Cambridge, United Kingdom",
+        "image": {
+          "fallback": {
+            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2017-12/laurent_gatto.jpg/0,644,1716,968/500,282/0/default.webp",
+            "altText": ""
+          }
+        },
+        "profile": "<p class=\"paragraph\">I am a Senior Research Associate in the Department of Biochemistry at the University of Cambridge, where I lead the <a href=\"http://www.sysbiol.cam.ac.uk/Investigators/laurent-gatto\">Computational Proteomics Unit</a>. I am an avid open research advocate and make very possible effort to make my research reproducible. I am a <a href=\"https://www.software.ac.uk/fellowship-programme\">Software Sustainability Institute fellow</a> and a Data/Software Carpentry instructor and a member of <a href=\"http://www.openconcam.org/\">OpenConCam</a>, our local OpenCon group. My current open researcher activities focus on the <a href=\"http://osc.cam.ac.uk/open-research/open-research-pilot-project\">Wellcome Trust Open Research Project</a>, where we explore the barriers to open research, and the <a href=\"http://bulliedintobadscience.org/\">Bullied Into Bad Science</a> campaign, an initiative by and for early career researchers who aim for a fairer, more open and ethical research and publication environment.</p><p class=\"paragraph\">For more information see Laurent's personal website <a href=\"https://lgatto.github.io/\">https://lgatto.github.io/</a></p><dl><dt>Expertise</dt><dd>Computational and Systems Biology</dd><dt>Research focus</dt><dd>computational biology</dd><dd>proteomics</dd></dl>"
       }
+
     ]
   },
 
   "pageAboutElife": {
     "title": "About eLife",
-    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris."
+    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris.",
+    "socialMediaSharers": {
+      "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+    }
   },
 
   "sectionsListingLink": {
@@ -260,6 +278,11 @@
   "emailCta": {
     "headerText": "Be the first to read new articles from eLife",
     "subHeader": "Sign up for alerts",
+    "formFieldInfoLink": {
+      "name": "Privacy notice",
+      "url": "/privacy-notice",
+      "alignLeft": true
+    },
     "compactForm": {
       "formAction": "#",
       "formId": "myCompactForm",

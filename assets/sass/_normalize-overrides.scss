@@ -57,8 +57,17 @@ a {
   text-decoration: none;
 }
 
-p a:not(.additional-asset__link--download):not(.asset-viewer-inline__download_all_link):not(.asset-viewer-inline__open_link):not(.reference__title):not(.doi):not(.reference__authors_link):not(.trigger) {
+p a:not(.additional-asset__link--download):not(.asset-viewer-inline__download_all_link):not(.asset-viewer-inline__open_link):not(.reference__title):not(.doi):not(.reference__authors_link):not(.trigger):not(.popup__link):not(.see-more-link) {
   @include discreet-link();
+}
+
+.article-section__body ul:not(.reference__abstracts) a {
+  @include discreet-link();
+}
+
+b,
+strong {
+  font-weight: bold;
 }
 
 .underline {
@@ -142,8 +151,10 @@ dd {
 }
 
 dt {
-  font-weight: 700;
-  @include blg-spacing("top", "small", "margin");
+  font-weight: bold;
+  dd + & {
+    @include blg-spacing("top", "small", "margin");
+  }
 }
 
 dd {

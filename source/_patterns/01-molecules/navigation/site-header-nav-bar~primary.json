@@ -6,15 +6,15 @@
     {
       "text": "Menu",
       "classes": "nav-primary__item nav-primary__item--first",
-      "textClasses": "nav-primary__menu_text",
+      "textClasses": "visuallyhidden",
       "path": "#mainMenu",
       "picture": {
         "pictureClasses": "nav-primary__menu_icon",
         "fallback": {
-          "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+          "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
           "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
           "classes": "",
-          "altText": "Menu icon"
+          "altText": ""
         },
         "sources": [
           {
@@ -37,7 +37,7 @@
     },
 
     {
-      "text": "Search",
+      "text": "Search the eLife site",
       "rel": "search",
       "classes": "nav-primary__item nav-primary__item--search",
       "textClasses": "visuallyhidden",
@@ -45,10 +45,10 @@
       "picture": {
         "pictureClasses": "nav-primary__search_icon",
         "fallback": {
-        "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+        "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 1x",
         "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
         "classes": "",
-        "altText": "Search icon"
+        "altText": ""
       },
         "sources": [
           {

@@ -1,0 +1,9 @@
+docker-compose*.yml
+.git/
+.gitignore
+Jenkinsfile*
+node_modules/
+public/
+source/assets/
+*.md
+vendor/

@@ -1,0 +1,13 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  text:
+    type: array
+    items:
+      $ref: ../../00-atoms/components/paragraph.yaml
+    minItems: 1
+  buttonCollection:
+    $ref: button-collection.yaml
+required:
+  - text
+  - buttonCollection

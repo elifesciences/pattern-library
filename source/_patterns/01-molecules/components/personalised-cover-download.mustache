@@ -1,0 +1,23 @@
+<div class="personalised-cover-download-wrapper">
+
+  <div class="personalised-cover-download">
+
+    <picture>
+      <source srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/personalised-cover-download.svg{{/assetRewrite}}"
+              type="image/svg+xml">
+      <img srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/personalised-cover-download_2x.png{{/assetRewrite}} 276w"
+           src="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/personalised-cover-download_1x.png{{/assetRewrite}}" sizes="138px"
+           alt="" class="personalised-cover-download__icon">
+    </picture>
+
+    {{#text}}
+      {{> atoms-paragraph }}
+    {{/text}}
+
+    {{#buttonCollection}}
+      {{> molecules-button-collection }}
+    {{/buttonCollection}}
+
+  </div>
+
+</div>

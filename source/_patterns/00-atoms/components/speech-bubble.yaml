@@ -1,39 +1,33 @@
-assets:
-  css:
-    - speech-bubble.css
-  js: []
-schema:
-  $schema: http://json-schema.org/draft-04/schema#
-  type: object
-  properties:
-    text:
-      type: string
-      minLength: 1
-    isSmall:
-      type: boolean
-      enum:
-        - true
-    hasPlaceholder:
-      type: boolean
-      enum:
-        - true
-    behaviour:
-      type: string
-      minLength: 1
-  required:
-    - text
-  anyOf:
-    - required:
-      - isSmall
-      not:
-        required:
-          - hasPlaceholder
-    - required:
-      - hasPlaceholder
-      not:
-        required:
-          - isSmall
-    - not:
-        required:
-          - isSmall
-          - hasPlaceholder
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  text:
+    type: string
+  isSmall:
+    type: boolean
+    enum:
+      - true
+  hasPlaceholder:
+    type: boolean
+    enum:
+      - true
+  behaviour:
+    type: string
+    minLength: 1
+required:
+  - text
+anyOf:
+  - required:
+    - isSmall
+    not:
+      required:
+        - hasPlaceholder
+  - required:
+    - hasPlaceholder
+    not:
+      required:
+        - isSmall
+  - not:
+      required:
+        - isSmall
+        - hasPlaceholder

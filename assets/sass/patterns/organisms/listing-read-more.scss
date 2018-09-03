@@ -1,0 +1,9 @@
+@import "../../definitions";
+
+.listing-read-more--all-related {
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    display: none;
+  }
+
+}

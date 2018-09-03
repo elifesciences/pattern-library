@@ -1,35 +1,69 @@
+import EscapeString
+
 elifePipeline {
     def commit
-    stage 'Checkout', {
-        checkout scm
-        commit = elifeGitRevision()
-    }
+    def assetsImage
+    def image
 
-    stage 'Project tests', {
-        lock('pattern-library--ci') {
-            builderDeployRevision 'pattern-library--ci', commit
-            builderProjectTests 'pattern-library--ci', '/srv/pattern-library'
+    node('containers-jenkins-plugin') {
+        stage 'Checkout', {
+            checkout scm
+            commit = elifeGitRevision()
+        }
+
+        stage 'Build images', {
+            def description = EscapeString.forBashSingleQuotes(elifeGitSubrepositorySummary('.'))
+            sh "IMAGE_TAG=${commit} DESCRIPTION='${description}' docker-compose -f docker-compose.yml build"
+            assetsImage = DockerImage.elifesciences(this, "pattern-library_assets", commit)
+            elifePullRequestOnly { prNumber ->
+                // push immediately to allow downstream exploration even with automated tests failing
+                assetsImage.tag("pr-${prNumber}").push()
+            }
+            image = DockerImage.elifesciences(this, "pattern-library", commit)
+        }
+
+        stage 'Project tests', {
+            sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml -f docker-compose.ci.yml up -d"
             // it is not yet possible to retrieve a JUnit XML log to archive as a test artifact:
             // - the `xunit` formatter mangles the XML outputting also debug statements between tags
             // - the `xunit-file` formatter, which is an external plugin, doesn't seem to work with gulp-mocha-phantomjs
+            dockerComposeProjectTestsParallel('pattern-library', commit)
+        }
 
-            elifePullRequestOnly { prNumber ->
-                stage 'Deploying to a public URL', { 
+        stage 'Smoke tests', {
+            dockerComposeSmokeTests(commit, [
+                'services': [
+                    'ci': './smoke_tests.sh ui http',
+                ],
+            ])
+        }
+
+        elifePullRequestOnly { prNumber ->
+            stage 'Deploying to a public URL', {
+                withCommitStatus({
                     def url = "https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
-                    elifeGithubCommitStatus commit, 'pending', 'continuous-integration/jenkins/pr-demo', 'Static website is being built', url
-                    builderCmd 'pattern-library--ci', './archive-public.sh', '/srv/pattern-library' 
-                    sh 'scp -o StrictHostKeyChecking=no elife@ci--ui-patterns.elifesciences.org:/srv/pattern-library/public.tar.gz .'
-                    sh 'tar -xvzf public.tar.gz'
-                    sh "aws s3 cp public/ s3://ci-pattern-library/${prNumber}/ --recursive"
+                    def container = sh(script: "docker run -d elifesciences/pattern-library:${commit}", returnStdout: true).trim()
+                    sh "docker cp ${container}:/usr/share/nginx/html/. public/"
+                    sh "rm public/50x.html"
+                    sh "docker stop ${container}"
+                    sh "docker rm ${container}"
+                    sh "aws s3 sync public/ s3://ci-pattern-library/${prNumber}/ --delete"
                     sh "/usr/local/jenkins-scripts/colorize.sh You can see this pattern-library version at ${url}"
-                    elifeGithubCommitStatus commit, 'success', 'continuous-integration/jenkins/pr-demo', 'Static website is ready', url
-                }
+                }, 'pr-demo', commit)
+            }
+        }
+
+        elifeMainlineOnly {
+            stage 'Push images', {
+                assetsImage.push()
+                image.push()
             }
         }
     }
 
     elifeMainlineOnly {
         stage 'Approval', {
+            checkout scm
             elifeGitMoveToBranch commit, 'approved'
         }
     }

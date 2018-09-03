@@ -52,7 +52,7 @@
 
 @mixin _heading-base-typeg() {
   font-family: $font-secondary;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 @mixin _label-typeg($uppercase: true) {
@@ -85,8 +85,8 @@
 
 @mixin h2-spacing() {
   margin: 0;
-  @include padding(18, "top");
-  @include blg-spacing("bottom", "small");
+  @include padding(21, "bottom");
+  @include padding(21, "top");
 }
 
 @mixin h3-typeg() {
@@ -214,7 +214,7 @@
 @mixin fig-caption-heading-typeg() {
   font-family: $font-secondary;
   @include font-size-and-vertical-height($font-size-caption-in-px);
-  font-weight: 700;
+  font-weight: bold;
 }
 
 @mixin fig-caption-text-typeg($space-underneath: 19, $set-line-height: true) {
@@ -231,7 +231,7 @@
 @mixin table-head-typeg() {
   font-family: $font-secondary;
   @include font-size-and-vertical-height(13, 16.9);
-  font-weight: 700;
+  font-weight: bold;
   @include padding(3, "bottom");
 }
 
@@ -244,7 +244,7 @@
 @mixin lead-para-typeg($is-wide: false) {
   font-family: $font-primary;
   @include _set-typeg-width-variant($font-size-base-in-px, 17, $is-wide);
-  font-weight: 700;
+  font-weight: bold;
   line-height: 1.5;
   text-align: center;
 }
@@ -254,7 +254,7 @@
 @mixin nav-typeg() {
   font-family: $font-secondary;
   @include font-size-and-vertical-height(14);
-  font-weight: 700;
+  font-weight: bold;
 }
 
 @mixin nav-small-typeg() {
@@ -278,13 +278,13 @@
 @mixin section-title-typeg() {
   font-family: $font-secondary;
   @include font-size-and-vertical-height(14, 14);
-  font-weight: 700;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
 @mixin footer-links-typeg($is-wide: false) {
   font-family: $font-secondary;
-  font-weight: 700;
+  font-weight: bold;
   @if $is-wide == false {
     @include font-size-and-vertical-height(14, 25.9);
   } @else {
@@ -299,7 +299,7 @@
 
 @mixin msa-link($is-wide: false) {
   font-family: $font-secondary;
-  font-weight: 700;
+  font-weight: bold;
   @if $is-wide == false {
     @include font-size-and-vertical-height(12, 22.2);
   } @else {
@@ -328,7 +328,7 @@
   color: $color-text;
   font-family: $font-secondary;
   @include font-size-and-vertical-height(14, 20);
-  font-weight: 700;
+  font-weight: bold;
   text-align: left;
 }
 
@@ -350,7 +350,7 @@
 @mixin listing-side-art-title-typeg() {
   font-family: $font-secondary;
   @include font-size-and-vertical-height(18);
-  font-weight: 700;
+  font-weight: bold;
   @include blg-spacing("top", "extra-small");
 }
 
@@ -362,7 +362,7 @@
 @mixin listing-main-subtitle-typeg() {
   font-family: $font-secondary;
   @include font-size-and-vertical-height($font-size-base-in-px);
-  font-weight: 700;
+  font-weight: bold;
 }
 
 @mixin listing-side-author-typeg() {
@@ -389,4 +389,10 @@
 @mixin mono-typeg() {
   font-family: $font-monospace;
   @include font-size-and-vertical-height(14, 21);
+}
+
+@mixin opt-in-message-typeg() {
+  font-family: $font-secondary;
+  @include font-size-and-vertical-height(14, 20);
+  font-weight: normal;
 }

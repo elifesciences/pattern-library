@@ -9,15 +9,15 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "nav-primary__menu_text",
+          "textClasses": "visuallyhidden",
           "path": "#mainMenu",
           "picture": {
             "pictureClasses": "nav-primary__menu_icon",
             "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 24w",
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
               "classes": "",
-              "altText": "Menu icon"
+              "altText": ""
             },
             "sources": [
               {
@@ -40,7 +40,13 @@
         },
 
         {
-          "text": "Search",
+          "text": "Innovation",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Search the eLife site",
           "rel": "search",
           "classes": "nav-primary__item nav-primary__item--search",
           "textClasses": "visuallyhidden",
@@ -51,7 +57,7 @@
               "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
               "classes": "",
-              "altText": "Search icon"
+              "altText": ""
             },
             "sources": [
               {
@@ -79,14 +85,9 @@
           "classes": "nav-secondary__item"
         },
         {
-          "text": "Labs",
-          "path": "#",
-          "classes": "nav-secondary__item"
-        },
-        {
           "text": "Submit my research",
           "path": "#",
-          "classes": "nav-secondary__item",
+          "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
             "classes": "button--default button--extra-small"
           }
@@ -131,6 +132,12 @@
 
   "contentHeader": {
     "title": "Magazine",
+    "socialMediaSharers": {
+      "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+    },
     "longTitle": true,
     "image": {
       "fallback": {
@@ -240,7 +247,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://unsplash.it/250/140/",
-              "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+              "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "big"
@@ -451,7 +458,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/250/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -560,7 +567,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://unsplash.it/250/140/",
-              "srcset": "https://unsplash.it/500/280/ 500w, https://unsplash.it/250/140/ 250w",
+              "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
               "altText": "Make it meaningful please"
             },
             "type": "big"
@@ -604,7 +611,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -635,7 +642,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -666,7 +673,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -697,7 +704,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -728,7 +735,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -758,7 +765,7 @@
           "image": {
             "fallback": {
               "defaultPath": "https://placehold.it/140/140/",
-              "srcset": "https://placehold.it/140/140/ 140w, https://placehold.it/70/70/ 70w",
+              "srcset": "https://placehold.it/140/140/ 2x, https://placehold.it/70/70/ 1x",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -821,6 +828,11 @@
   "emailCta": {
     "headerText": "Be the first to read new articles from eLife",
     "subHeader": "Sign up for alerts",
+    "formFieldInfoLink": {
+      "name": "Privacy notice",
+      "url": "/privacy-notice",
+      "alignLeft": true
+    },
     "compactForm": {
       "formAction": "#",
       "formId": "myCompactForm",

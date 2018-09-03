@@ -55,7 +55,7 @@ module.exports = class Carousel {
   updateButtonAppearance () {
     let buttons = this.$elm.querySelectorAll('.carousel-item__cta .button');
     [].forEach.call(buttons, (button) => {
-      button.classList.add('button--outline');
+      button.classList.add('button--reversed');
     });
 
   }
@@ -298,21 +298,35 @@ module.exports = class Carousel {
 
   /**
    * Translates moveableStage 1 slide's width in the appropriate direction
-   * @param {String} direction 'next' | 'previous' Direction to move
+   * @param {String} [direction] 'previous' means translate left to right
    */
   updateSlide(direction) {
     let currentOffset = this.getCurrentOffset();
-    let rect = this.$elm.getBoundingClientRect();
     let newOffset;
     if (direction === 'previous') {
       this.currentSlide -= 1;
-      newOffset = currentOffset + Math.round(rect.width);
+      newOffset = currentOffset + Math.round(this.calcOffset());
     } else {
       this.currentSlide += 1;
-      newOffset = currentOffset - Math.round(rect.width);
+      newOffset = currentOffset - Math.round(this.calcOffset());
     }
 
     utils.updateElementTranslate(this.moveableStage, [newOffset + 'px', 0]);
+  }
+
+  /**
+   * Calculates offset for translating a carousel item, taking vertical scrollbar width into account
+   *
+   * @return {number} Pixel offset with which to translate the carousel item
+   */
+  calcOffset() {
+    const maxCarouselWidth = 1114;
+    const windowCanFitFullWidthCarousel = window.innerWidth >= (maxCarouselWidth + utils.calcScrollbarWidth());
+    if (windowCanFitFullWidthCarousel) {
+      return this.$elm.getBoundingClientRect().width;
+    }
+
+    return window.innerWidth;
   }
 
   /**

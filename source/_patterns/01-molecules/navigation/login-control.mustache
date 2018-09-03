@@ -18,7 +18,6 @@
          &lt;picture class='login-control__icon'&gt;
            {{#sources}}
              &lt;source srcset='{{srcset}}'
-                        sizes='35px'
                         {{#type}}type='{{type}}'{{/type}}
                         {{#media}}media='{{media}}'{{/media}}&gt;
            {{/sources}}
@@ -26,7 +25,6 @@
             &lt;img src='{{defaultPath}}'
                  {{#srcset}}srcset='{{srcset}}'{{/srcset}}
                  alt='{{altText}}'
-                 sizes='35px'
             &gt;
           {{/fallback}}
         &lt;/picture&gt;

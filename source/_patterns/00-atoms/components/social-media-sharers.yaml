@@ -1,0 +1,20 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  facebookUrl:
+    type: string
+    format: uri
+  twitterUrl:
+    type: string
+    format: uri
+  emailUrl:
+    type: string
+    format: uri
+  redditUrl:
+    type: string
+    format: uri
+required:
+  - facebookUrl
+  - twitterUrl
+  - emailUrl
+  - redditUrl

@@ -7,22 +7,21 @@
     {
       "name": "Editor name",
       "role": "University of California, Los Angeles (United States)",
-      "profile": "<dl><dt>Research focus</dt><dd>Pre-mRNA splicingpost-transcriptional gene regulation</dd><dt>Experimental organism</dt><dd>Human; Mouse</dd></dl>"
+      "profile": "<dl class=\"definition-list definition-list--inline\"><dt>Research focus</dt><dd>Pre-mRNA splicing</dd><dd>post-transcriptional gene regulation</dd><dt>Experimental organism</dt><dd>Human</dd><dd>Mouse</dd></dl>"
+    },
+    {
+      "name": "Editor name",
+      "role": "University of California, Los Angeles (United States)"
     },
     {
       "name": "Editor name",
       "role": "University of California, Los Angeles (United States)",
-      "profile": "<dl><dt>Research focus</dt><dd>Pre-mRNA splicingpost-transcriptional gene regulation</dd><dt>Experimental organism</dt><dd>Human; Mouse</dd></dl>"
+      "profile": "<dl class=\"definition-list definition-list--inline\"><dt>Research focus</dt><dd>Pre-mRNA splicing</dd><dd>post-transcriptional gene regulation</dd><dt>Experimental organism</dt><dd>Human</dd><dd>Mouse</dd></dl>"
     },
     {
       "name": "Editor name",
       "role": "University of California, Los Angeles (United States)",
-      "profile": "<dl><dt>Research focus</dt><dd>Pre-mRNA splicingpost-transcriptional gene regulation</dd><dt>Experimental organism</dt><dd>Human; Mouse</dd></dl>"
-    },
-    {
-      "name": "Editor name",
-      "role": "University of California, Los Angeles (United States)",
-      "profile": "<dl><dt>Research focus</dt><dd>Pre-mRNA splicingpost-transcriptional gene regulation</dd><dt>Experimental organism</dt><dd>Human; Mouse</dd></dl>"
+      "profile": "<dl class=\"definition-list definition-list--inline\"><dt>Research focus</dt><dd>Pre-mRNA splicing</dd><dd>post-transcriptional gene regulation</dd><dt>Experimental organism</dt><dd>Human</dd><dd>Mouse</dd></dl>"
     }
   ]
 }

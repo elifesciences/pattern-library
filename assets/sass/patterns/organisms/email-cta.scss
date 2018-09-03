@@ -9,7 +9,10 @@
 }
 
 .email-cta__container {
+  box-sizing: content-box;
   padding: 0 6%;
+  margin: 0 auto;
+  max-width: 27.5rem;
 }
 
 .email-cta__header_text {

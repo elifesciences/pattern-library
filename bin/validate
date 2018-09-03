@@ -23,20 +23,14 @@ $jsonSchema = $refResolver->resolve('file://' . __DIR__ . '/../extras/json-schem
 $exit = 0;
 
 foreach ($finder as $file) {
-    try {
-        $yaml = Yaml::parse($file->getContents());
-        $yaml = resolveJsonReferences($yaml, $file);
-        $yaml = Yaml::dump($yaml, 100);
-        $yaml = str_replace(' {  }', ' []', $yaml);
-        $yaml = Yaml::parse($yaml, true, false, true);
-    }
-    catch (\Exception $e) {
-        print $e->getMessage() . PHP_EOL;
-        exit;
-    }
+    $yaml = Yaml::parse($file->getContents());
+    $yaml = resolveJsonReferences($yaml, $file);
+    $yaml = Yaml::dump($yaml, 100);
+    $yaml = str_replace(' {  }', ' []', $yaml);
+    $yaml = Yaml::parse($yaml, true, false, true);
 
     $validator->reset();
-    $validator->check($yaml->schema, $jsonSchema);
+    $validator->check($yaml, $jsonSchema);
     if (!$validator->isValid()) {
         $exit = 1;
         $message = 'Error in schema: ' . $file->getFilename() . PHP_EOL;
@@ -57,7 +51,7 @@ foreach ($finder as $file) {
 
     foreach ($jsonFinder as $json) {
         $validator->reset();
-        $validator->check(json_decode(file_get_contents($json)), $yaml->schema);
+        $validator->check(json_decode(file_get_contents($json)), $yaml);
         if (!$validator->isValid()) {
             $exit = 1;
             $message = 'Error: ' . $json->getFilename() . PHP_EOL;
@@ -101,9 +95,11 @@ function resolveJsonReferences(array $json, SplFileInfo $file)
                 $json = Yaml::parse(file_get_contents($referenced->getRealPath()));
             }
 
-            $pointer = new Pointer(json_encode($json));
+            if (!empty($parts[1])) {
+                $json = (new Pointer(json_encode($json)))->get($parts[1]);
+            }
 
-            return resolveJsonReferences($pointer->get($parts[1]), $referenced);
+            return resolveJsonReferences($json, $referenced);
         }
     }
 
