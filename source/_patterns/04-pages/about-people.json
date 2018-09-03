@@ -265,7 +265,7 @@
         {"name": "About", "url": "#abo"},
         {"name": "Inside eLife", "url": "#ins"},
         {"name": "Careers", "url": "#car"},
-        {"name": "Labs", "url": "#lab"}
+        {"name": "Innovation", "url": "#lab"}
       ]
     },
     "button": {
@@ -304,7 +304,7 @@
     { "name": "Terms and policy", "url": "#" },
     { "name": "Inside eLife", "url": "#" },
     { "name": "Monthly archive", "url": "#" },
-    { "name": "Labs", "url": "#" },
+    { "name": "Innovation", "url": "#" },
     { "name": "For the press", "url": "#" },
     { "name": "Resources", "url": "#" }
   ]
