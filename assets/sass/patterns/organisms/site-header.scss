@@ -76,7 +76,7 @@
   z-index: 20;
 }
 
-.skip-to-content {
+.site-header__skip-to-content {
   display: block;
   position: absolute;
   top: 20px;
@@ -84,19 +84,14 @@
   white-space: nowrap;
 }
 
-.skip-to-content__link {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  overflow: hidden;
+.site-header__skip-to-content__link {
+  @include visuallyhidden();
+  @include padding(15 36 14);
   z-index: 50;
 
   &:focus {
+    @include visuallyunhidden();
     position: absolute;
-    top: 0;
-    width: 400px;
-    height: 50px;
-    overflow: hidden;
   }
 }
 
