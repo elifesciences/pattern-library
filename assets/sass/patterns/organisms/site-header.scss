@@ -76,7 +76,7 @@
   z-index: 20;
 }
 
-.site-header__skip-to-content {
+.site-header__skip_to_content {
   display: block;
   position: absolute;
   top: 20px;
@@ -84,7 +84,7 @@
   white-space: nowrap;
 }
 
-.site-header__skip-to-content__link {
+.site-header__skip_to_content__link {
   @include visuallyhidden();
   @include padding(15 36 14);
   z-index: 50;
