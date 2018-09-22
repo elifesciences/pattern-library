@@ -15,10 +15,20 @@
 
   & sup {
     font-size: 75%;
+
+    @supports(font-variant-position: super) {
+      font-size: 100%;
+    }
+
   }
 
   & sub {
     font-size: 75%;
+
+    @supports(font-variant-position: sub) {
+      font-size: 100%;
+    }
+
   }
 
 }

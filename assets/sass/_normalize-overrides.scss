@@ -249,3 +249,25 @@ p {
     @include inline-image();
   }
 }
+
+@supports (font-variant-position: super) {
+
+  sup {
+    font-variant-position: super;
+    // undo fallback
+    position: static;
+    font-size: 100%;
+    line-height: 1.5;
+  }
+}
+
+@supports (font-variant-position: sub) {
+
+  sub {
+    font-variant-position: sub;
+    // undo fallback
+    position: static;
+    font-size: 100%;
+    line-height: 1.5;
+  }
+}
