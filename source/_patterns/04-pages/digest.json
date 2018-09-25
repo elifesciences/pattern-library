@@ -1,5 +1,5 @@
 {
-  "isPrimaryResearch": true,
+  "isPrimaryResearch": false,
   "hasRelated": true,
   "siteHeader": {
     "homePagePath": "#",
@@ -147,7 +147,6 @@
   "contextualData": {
     "metricsData": {
       "data": [
-        {"text": "<a href=\"#\">Views 0</a>"}
       ],
       "annotationCount": {
         "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count></span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
@@ -313,14 +312,14 @@
     "footer": {
       "meta": {
         "url": "#",
-        "text": "Research advance",
+        "text": "Research article",
         "date": {
           "forHuman": {
-            "dayOfMonth": 16,
-            "month": "Dec",
-            "year": 2015
+            "dayOfMonth": 5,
+            "month": "Sept",
+            "year": 2017
           },
-          "forMachine": "2015-12-16"
+          "forMachine": "2017-09-05"
         }
       }
     }
