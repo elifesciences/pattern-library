@@ -118,7 +118,7 @@
 
   {{#authors}}
     <div class="content-header__authors">
-      <ol class="content-header__author_list">
+      <ol class="content-header__author_list" aria-label="Authors of this article">
         {{#authors.list}}
           <li class="content-header__author_list_item">
             <span class="content-header__author">{{#url}}<a href="{{url}}" data-behaviour="Popup" class="content-header__author_link">{{/url}}{{name}}{{#url}}</a>{{/url}}<span class="content-header__author_suffix">{{#isCorresponding}}&nbsp;{{!
@@ -135,7 +135,7 @@
       </ol>
 
       {{#institutions}}
-        <ol class="content-header__institution_list">
+        <ol class="content-header__institution_list" aria-label="Author institutions">
           {{#institutions.list}}
             <li class="content-header__institution_list_item">
               <span class="content-header__institution">{{{name}}}{{!
