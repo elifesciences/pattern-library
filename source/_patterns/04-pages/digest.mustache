@@ -1,0 +1,84 @@
+<div class="global-wrapper" data-item-type="digest">
+  <div class="global-inner">
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+    <main role="main" class="main blg-margin-bottom-large" id="maincontent">
+
+      {{#contentHeader}}
+        {{> organisms-content-header}}
+      {{/contentHeader}}
+
+      {{#contextualData}}
+        <div class="wrapper">
+        {{> molecules-contextual-data }}
+        </div>
+      {{/contextualData}}
+
+      <div class="wrapper wrapper--content">
+
+        <div class="grid">
+
+          <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}}">
+
+            {{#captionedAsset}}
+              {{> molecules-captioned-asset}}
+            {{/captionedAsset}}
+
+            {{#text}}
+              {{{ text }}}
+            {{/text}}
+
+            {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
+            {{#articleMeta}}
+              <section class="article-section">
+
+                <div class="article-section__body">
+                  {{> molecules-article-meta }}
+                </div>
+
+              </section>
+            {{/articleMeta}}
+
+          </div>
+
+          <div class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}">
+
+            {{#related}}
+
+              <div class="grid-secondary-column__item grid-secondary-column__item--wide-only">
+                {{# annotationCount}}
+                  {{> atoms-speech-bubble}}
+                {{/annotationCount}}
+                <div>
+                  <ol class="listing-list">
+                    <li class="listing-list__item">
+                      {{> molecules-teaser }}
+                    </li>
+                  </ol>
+                </div>
+              </div>
+
+            {{/related}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    {{#furtherReading}}
+      {{> organisms-listing-read-more }}
+    {{/furtherReading}}
+
+    {{#emailCta}}
+    {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+  </div> {{! /.global-inner }}
+</div> {{! /.global-wrapper }}
