@@ -1,0 +1,141 @@
+<div class="global-wrapper">
+
+  <div class="global-inner">
+
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+
+    <main role="main" class="main blg-margin-bottom-large" id="maincontent">
+
+    {{#contentHeader}}
+      {{> organisms-content-header}}
+    {{/contentHeader}}
+
+
+    <div class="wrapper blg-pad-top--small-to-medium">
+
+      <div class="grid">
+
+        <div class="listing-column-container">
+
+          <div class="grid__item one-whole x-large--eight-twelfths listing-column-main">
+
+            {{#mainTeasers}}
+              {{> organisms-listing-teasers}}
+            {{/mainTeasers}}
+
+          </div>
+
+          <div class="grid__item one-whole x-large--four-twelfths listing-column-secondary">
+
+            {{#multimediaTeasers}}
+              {{> organisms-listing-teasers}}
+            {{/multimediaTeasers}}
+
+            {{#relatedTeasers}}
+              {{> organisms-listing-teasers}}
+            {{/relatedTeasers}}
+
+            {{#profileLinks}}
+              {{> organisms-listing-profile-snippets}}
+            {{/profileLinks}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+    {{#emailCta}}
+      {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+
+  </div>
+
+</div>
+
+<style>
+  .remover {
+    display: block;
+  }
+
+  .fade-out {
+    animation: fade-out 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  }
+
+  .listing-list__item.shift-up {
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .shift-up {
+    transform: translateY(-82%);
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+</style>
+
+<script>
+  (function(window) {
+
+    function removeFirstItem() {
+      const $firstItem = document.querySelector('.listing-column-main .listing-list .listing-list__item:first-child');
+      $firstItem.classList.add('fade-out');
+      window.setTimeout(() => {
+
+        const $items = document.querySelectorAll('.listing-column-main .listing-list .listing-list__item');
+
+        window.setTimeout(() => {
+
+          window.setTimeout(() => {
+            document.querySelector('.listing-column-main .listing-list .listing-list__item:first-child').parentNode.removeChild(document.querySelector('.listing-column-main .listing-list .listing-list__item:first-child'));
+
+          }, 1000);
+
+          [].forEach.call($items, ($item) => {
+            $item.classList.add('shift-up');
+
+            window.setTimeout(() => {
+
+              [].forEach.call($items, ($item) => {
+                $item.classList.remove('shift-up');
+              });
+            }, 1000);
+        });
+
+      }, 1000);
+    });
+    }
+
+    const $button = document.createElement('button');
+    $button.classList.add('remover');
+    $button.innerHTML = 'remove first item';
+
+    $button.addEventListener('click', removeFirstItem);
+    document.querySelectorAll('.list-heading')[0].parentNode.insertBefore($button, document.querySelectorAll('.list-heading')[0]);
+
+  }(window));
+
+</script>
+
