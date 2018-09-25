@@ -64,12 +64,18 @@
 </div>
 
 <style>
+
+  :root {
+    --timeout: 300ms;
+  }
+
   .remover {
     display: block;
+    margin-bottom: 24px;
   }
 
   .fade-out {
-    animation: fade-out 1s;
+    animation: fade-out var(--timeout);
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
@@ -77,7 +83,7 @@
 
   .listing-list__item.shift-up {
     transition-property: transform;
-    transition-duration: 1s;
+    transition-duration: var(--timeout);
     transition-timing-function: ease-in-out;
   }
 
@@ -99,6 +105,8 @@
 <script>
   (function(window) {
 
+    const timeout = 300;
+
     function removeFirstItem() {
       const $firstItem = document.querySelector('.listing-column-main .listing-list .listing-list__item:first-child');
       $firstItem.classList.add('fade-out');
@@ -111,7 +119,7 @@
           window.setTimeout(() => {
             document.querySelector('.listing-column-main .listing-list .listing-list__item:first-child').parentNode.removeChild(document.querySelector('.listing-column-main .listing-list .listing-list__item:first-child'));
 
-          }, 1000);
+          }, timeout);
 
           [].forEach.call($items, ($item) => {
             $item.classList.add('shift-up');
@@ -121,10 +129,10 @@
               [].forEach.call($items, ($item) => {
                 $item.classList.remove('shift-up');
               });
-            }, 1000);
+            }, timeout);
         });
 
-      }, 1000);
+      }, timeout);
     });
     }
 
