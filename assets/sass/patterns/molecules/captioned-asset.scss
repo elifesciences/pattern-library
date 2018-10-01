@@ -6,6 +6,12 @@
   @include blg-spacing("top", "medium", "margin");
   @include blg-spacing("bottom", "medium", "margin");
 
+  // Required for Digests when captioned-asset may be first piece of main content in the page. Prevents the top edge
+  // of the image frame sitting below any content appearing in the right hand column.
+  .content-container > &:first-child {
+    margin-top: 0;
+  }
+
   .asset-viewer-inline & {
     clear: none;
     margin-top: 0;
