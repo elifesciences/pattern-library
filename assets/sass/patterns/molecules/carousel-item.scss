@@ -141,8 +141,9 @@
   }
 
   .carousel-item__body {
-    height: #{$content-header-padding * 5}px;
-    display: block;
+    height: 132px;
+    display: flex;
+    align-items: center;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
       @include margin($content-header-padding * 3, "top");
@@ -154,13 +155,10 @@
   }
 
   .carousel-item__title {
-    display: flex;
-    align-items: center;
     @include font-size-and-vertical-height(36, 48);
     @include margin(0, "top");
     @include nospace("bottom");
-
-    @include height(132);
+    line-height: 1;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
       @include font-size-and-vertical-height(41, 48);
@@ -180,7 +178,7 @@
     display: block;
     @include margin(0, "bottom");
     position: absolute;
-    bottom: 61px;
+    bottom: 64px;
     left: 0;
     right: 0;
     .button {
@@ -190,10 +188,11 @@
 
   .carousel-item__meta {
     position: absolute;
-    bottom: 16px;
+    bottom: 18px;
     left: 0;
     right: 0;
     padding-bottom: 0;
+    line-height: 1;
     @include font-size(12);
 
     .meta {
