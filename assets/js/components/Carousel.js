@@ -33,8 +33,7 @@ module.exports = class Carousel {
   init() {
     this.currentSlide = 1;
 
-    // this.timerInterval = 10000;
-    this.timerInterval = 3600000;
+    this.timerInterval = 10000;
 
     this.updateButtonAppearance();
     this.$elm.appendChild(this.buildVisibleControls());
