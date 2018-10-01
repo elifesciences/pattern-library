@@ -144,13 +144,14 @@
     height: 132px;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-      @include margin($content-header-padding * 3, "top");
+      height: 156px;
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
-      height: #{$content-header-padding * 7}px;
+      height: 205px;
     }
   }
 
