@@ -165,20 +165,34 @@
 }
 
 .content-header__profile_wrapper {
-  @include padding($content-header-padding/2 0);
+  @include padding(18 0 6 0);
   position: absolute;
   left: 0;
   right: 0;
+  @include font-size-and-vertical-height(12, 12);
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    line-height: normal;
+  }
+
 }
 
 .content-header__profile {
   text-decoration: none;
   dl,
-  dt,
-  dd {
+  .content-header__profile_label,
+  .content-header__profile_data {
     display: inline-block;
     margin: 0;
+    @include font-size-and-vertical-height(12, 12);
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: block;
+      @include font-size-and-vertical-height(11);
+    }
+
   }
+
 }
 
 .content-header__profile_label {
@@ -221,10 +235,11 @@
         @include font-size-and-vertical-height(14);
       }
     }
-  }
 
-  .content-header__profile_wrapper {
-    @include padding($content-header-padding 0 0);
+    .content-header__profile_wrapper {
+      @include padding($content-header-padding 0 0);
+    }
+
   }
 
 }
