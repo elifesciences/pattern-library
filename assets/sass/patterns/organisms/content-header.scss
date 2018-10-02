@@ -623,18 +623,49 @@ $iconlist: cc oa;
 }
 
 .content-header__meta {
+
   .content-header--image & {
     position: absolute;
-    bottom: #{$content-header-padding / 2}px;
     left: 0;
     right: 0;
+    bottom: 18px;
+    @include font-size-and-vertical-height(12, 12);
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      bottom: #{$content-header-padding / 2}px;
+      @include font-size-and-vertical-height(11);
+    }
+
   }
+
 }
 
+// TODO: Consider if the meta-pattern-defined styles should be defined in the meta pattern
 .meta {
   .content-header--image & {
     color: inherit;
+    @include font-size-and-vertical-height(12, 12);
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include font-size-and-vertical-height(11);
+    }
+
   }
+
+}
+
+.date {
+
+  .content-header--image & {
+    color: inherit;
+    @include font-size-and-vertical-height(12, 12);
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include font-size-and-vertical-height(11);
+    }
+
+  }
+
 }
 
 .meta__type {
