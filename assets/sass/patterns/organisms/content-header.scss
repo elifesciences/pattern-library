@@ -35,6 +35,18 @@
   @include padding($content-header-image-credit-height, "bottom");
 }
 
+.content-header__body {
+  @include margin($content-header-padding * 2, "top");
+  @include margin($content-header-padding, "bottom");
+
+  .content-header--header & {
+    @include margin($content-header-padding * 1.5 + 11 * 2.1818181818, "top"); // 11 * 2.1818181818 is the height of the subject line
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include margin($content-header-padding * 2 + 11 * 2.1818181818, "top");
+    }
+  }
+}
+
 .content-header--image {
   border-bottom: none;
   color: $color-text--reverse;
@@ -57,15 +69,20 @@
       min-height: #{$content-header-padding * 8}px;
     }
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
     @include padding(0 12);
 
+    margin-top: 0;
+    margin-bottom: 0;
+
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
       @include padding(0 48);
+      @include margin($content-header-padding * 2, "top");
+      @include margin($content-header-padding, "bottom");
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
@@ -78,17 +95,12 @@
     }
 
   }
-}
 
-.content-header__body {
-  @include margin($content-header-padding * 2, "top");
-  @include margin($content-header-padding, "bottom");
-
-  .content-header--header & {
-    @include margin($content-header-padding * 1.5 + 11 * 2.1818181818, "top"); // 11 * 2.1818181818 is the height of the subject line
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include margin($content-header-padding * 2 + 11 * 2.1818181818, "top");
-    }
+  .social-media-sharers {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 52px;
   }
 }
 
@@ -122,7 +134,6 @@
 .content-header--image {
 
   .content-header__body {
-    @include margin($content-header-padding * 2, "top");
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include margin($content-header-padding * 3, "top");
@@ -133,27 +144,35 @@
   .content-header__title {
     @include font-size-and-vertical-height(41, 48);
     margin-bottom: 0;
+    height: 132px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include font-size(52);
+      height: auto;
+      display: block;
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       @include font-size-and-vertical-height(58, 72);
     }
+
+    &.content-header__title--long {
+      @include font-size(36);
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include font-size(36);
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+        @include font-size(41);
+      }
+    }
   }
 
-  .content-header__title--long {
-    @include font-size(36);
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include font-size(41);
-    }
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      @include font-size(46);
-    }
-  }
 }
 
 .content-header__picture {
@@ -166,12 +185,12 @@
 
 .content-header__profile_wrapper {
   @include padding(18 0 6 0);
-  position: absolute;
-  left: 0;
-  right: 0;
   @include font-size-and-vertical-height(12, 12);
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    position: absolute;
+    left: 0;
+    right: 0;
     line-height: normal;
   }
 
