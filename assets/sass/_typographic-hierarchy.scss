@@ -1,50 +1,5 @@
 // HELPERS
 
-@function get-title-font-size($title-size, $screen-width, $is-article:false) {
-  // TODO: large, medium, small and x-small
-  $title-sizes-article--narrow-screen: ("large": 37, "medium": 29, "small": 30, "x-small":24);
-  $title-sizes-article--medium-width-screen: ("large": 37, "medium": 37, "small": 30, "x-small":24);
-  $title-sizes-article--wide-screen: ("large": 37, "medium": 29, "small": 30, "x-small":24);
-  $title-sizes-article--extra-wide-screen: ("large": 37, "medium": 29, "small": 30, "x-small":24);
-
-  // TODO: small and x-small
-  $title-sizes-non-article--narrow-screen: ("large": 37, "medium": 29, "small": 30, "x-small":24);
-  $title-sizes-non-article--medium-width-screen: ("large": 37, "medium": 37, "small": 30, "x-small":24);
-  $title-sizes-non-article--wide-screen: ("large": 41, "medium": 41, "small": 30, "x-small":24);
-  $title-sizes-non-article--extra-wide-screen: ("large": 52, "medium": 52, "small": 30, "x-small":24);
-
-  @if $is-article != false {
-    @if $screen-width == "narrow" {
-      @return map-get($title-sizes-article--narrow-screen, $title-size);
-    }
-    @if $screen-width == "medium-width" {
-      @return map-get($title-sizes-article--medium-width-screen, $title-size);
-    }
-    @if $screen-width == "wide" {
-      @return map-get($title-sizes-article--wide-screen, $title-size);
-    }
-    @if $screen-width == "extra-wide" {
-      @return map-get($title-sizes-article--extra-wide-screen, $title-size);
-    }
-    @return $font-size-base-in-px;
-
-  } @else {
-    @if $screen-width == "narrow" {
-      @return map-get($title-sizes-non-article--narrow-screen, $title-size);
-    }
-    @if $screen-width == "medium-width" {
-      @return map-get($title-sizes-non-article--medium-width-screen, $title-size);
-    }
-    @if $screen-width == "wide" {
-      @return map-get($title-sizes-non-article--wide-screen, $title-size);
-    }
-    @if $screen-width == "extra-wide" {
-      @return map-get($title-sizes-non-article--extra-wide-screen, $title-size);
-    }
-    @return $font-size-base-in-px;
-  }
-}
-
 @mixin _set-typeg-width-variant($smallerSize, $largerSize, $is-wide: false) {
   $typeg-size: if($is-wide, $largerSize, $smallerSize);
   @include font-size($typeg-size);
@@ -133,10 +88,17 @@
   @include padding(10, "top");
   @include padding(14, "bottom");}
 
-// Call this directly from sass with appropriate args.
-@mixin title-size($title-size, $width, $is-article:false) {
-  $title-font-size: get-title-font-size($title-size, $width, $is-article);
-  @include font-size($title-font-size);
+@mixin title-font-size($title-font-size) {
+  $title-font-sizes: (
+      "xx-small": $content-header-title-font-size-xx--small,
+      "x-small": $content-header-title-font-size-x-small,
+      "small": $content-header-title-font-size-small,
+      "medium": $content-header-title-font-size-medium,
+      "large": $content-header-title-font-size-large,
+      "x-large": $content-header-title-font-size-x-large,
+      "xx-large": $content-header-title-font-size-xx-large
+  );
+  @include font-size(map_get($title-font-sizes, $title-font-size));
 }
 
 // CONTENT
