@@ -166,17 +166,16 @@
 
     Rules:
         At 320px (the narrowest supported width):
-          content-header__title--xx-short is for text likely to span 2 or fewer lines
-          content-header__title--x-short is for text likely to span between 2 - 3 lines
-          content-header__title--short is for text likely to span 3 or fewer lines
+          content-header__title--xx-short is for text likely to span 1 line
+          content-header__title--x-short is for text likely to span 2 lines
+          content-header__title--short is for text likely to span 3 lines
           content-header__title--medium is for text likely to span between 3 - 4 lines
-          content-header__title--large is for text likely to span 4 or fewer lines
+          content-header__title--large is for text likely to span 4 lines
           content-header__title--x-large is for text likely to span 5 - 6 lines
           content-header__title--xx-large is for text likely to span 7 lines
 
-          content-header__title--xx-large is safety net, title lengths for image content headers
+          content-header__title--xx-large is a safety net, title lengths for image content headers
             really should not get this long
-
     */
     &.content-header__title--xx-short {
       @include title-font-size("xx-large");
