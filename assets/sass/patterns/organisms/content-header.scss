@@ -160,17 +160,130 @@
       @include font-size-and-vertical-height(58, 72);
     }
 
-    &.content-header__title--long {
-      @include font-size(36);
+    // Content header title size adjustment according to length
+    /* The number of lines a title occupies can't be precisely determined as it depends on line breaks,
+      which in turn depends on word length and relative position. So by necessity this is approximate.
+
+    Rules:
+        At 320px (the narrowest supported width):
+          content-header__title--xx-short is for text likely to span 2 or fewer lines
+          content-header__title--x-short is for text likely to span between 2 - 3 lines
+          content-header__title--short is for text likely to span 3 or fewer lines
+          content-header__title--medium is for text likely to span between 3 - 4 lines
+          content-header__title--large is for text likely to span 4 or fewer lines
+          content-header__title--x-large is for text likely to span 5 - 6 lines
+          content-header__title--xx-large is for text likely to span 7 lines
+
+          content-header__title--xx-large is safety net, title lengths for image content headers
+            really should not get this long
+
+    */
+    &.content-header__title--xx-short {
+      @include title-font-size("xx-large");
+    }
+
+    &.content-header__title--x-short {
+      @include title-font-size("x-large");
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        @include font-size(36);
+        @include title-font-size("xx-large");
+      }
+    }
+
+    &.content-header__title--short {
+      @include title-font-size("large");
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include title-font-size("x-large");
+      }
+
+    }
+
+    &.content-header__title--medium {
+      @include title-font-size("medium");
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+        @include title-font-size("medium");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include title-font-size("large");
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-        @include font-size(41);
+        @include title-font-size("large");
       }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        @include title-font-size("x-large");
+      }
+
+
     }
+
+    &.content-header__title--long {
+      @include title-font-size("small");
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+        @include title-font-size("small");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include title-font-size("medium");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+        @include title-font-size("medium");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        @include title-font-size("large");
+      }
+
+    }
+
+    &.content-header__title--x-long {
+      @include title-font-size("x-small");
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+        @include title-font-size("x-small");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include title-font-size("small");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+        @include title-font-size("small");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        @include title-font-size("medium");
+      }
+
+    }
+
+    &.content-header__title--xx-long {
+      @include title-font-size("xx-small");
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+        @include title-font-size("x-small");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include title-font-size("small");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+        @include title-font-size("small");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        @include title-font-size("medium");
+      }
+
+    }
+
   }
 
 }

@@ -104,7 +104,7 @@
   {{/download}}
 
   <div class="content-header__body">
-    <h1 class="content-header__title {{#longTitle}}content-header__title--long{{/longTitle}}">{{{title}}}</h1>
+    <h1 class="content-header__title {{#titleLength}}content-header__title--{{titleLength}}{{/titleLength}}{{^titleLength}}content-header__title--medium{{/titleLength}}">{{{title}}}</h1>
 
     {{#impactStatement}}
       <div class="content-header__impact-statement">{{{impactStatement}}}</div>

@@ -1,0 +1,44 @@
+{
+  "image": {
+    "fallback": {
+      "defaultPath": "https://iiif.elifesciences.org/journal-cms:subjects/2017-04/elife-sciences-cancer-biology-illustration.jpg/1426,0,4164,2082/1800,900/0/default.jpg",
+      "altText": ""
+    }
+  },
+  "title": "Magazine  ",
+  "titleLength": "xx-short",
+  "header": {
+    "possible": true,
+    "hasProfile": true,
+    "profile": {
+      "name": "Prabhat Jha",
+      "url": "#",
+      "image": {
+        "fallback": {
+          "srcset": "https://unsplash.it/80/80 1x",
+          "defaultPath": "https://unsplash.it/40/40",
+          "altText": ""
+        }
+      }
+    }
+  },
+  "impactStatement": "From its earliest days, eLife has been publishing important advances in our understanding of Cancer Biology. Here, eLife Senior Editors present a collection of great papers spanning from oncogenes and tumor suppressors.",
+  "socialMediaSharers": {
+    "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+  },
+  "meta": {
+    "url": "#",
+    "text": "Collection",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 12,
+        "month": "Aug",
+        "year": 2016
+      },
+      "forMachine": "2016-08-12"
+    }
+  }
+}
