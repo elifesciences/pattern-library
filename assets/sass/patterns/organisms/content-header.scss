@@ -160,8 +160,8 @@
       @include font-size-and-vertical-height(58, 72);
     }
 
-    // Content header title size adjustment according to length
-    /* The number of lines a title occupies can't be precisely determined as it depends on line breaks,
+    /* Content header title size adjustment according to length.
+       The number of lines a title occupies can't be precisely determined as it depends on line breaks,
       which in turn depends on word length and relative position. So by necessity this is approximate.
 
     Rules:
