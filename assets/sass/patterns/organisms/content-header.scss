@@ -281,7 +281,7 @@
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        @include title-font-size("small");
+        @include title-font-size("x-small");
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
@@ -289,7 +289,7 @@
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-        @include title-font-size("medium");
+        @include title-font-size("small");
       }
 
     }
