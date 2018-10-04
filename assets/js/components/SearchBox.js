@@ -41,6 +41,7 @@ module.exports = class SearchBox {
    * Hides the reset button.
    */
   hideResetButton() {
+    this.$resetButton.classList.add('compact-form__reset');
     this.$elm.classList.remove('search-box--populated');
   }
 
@@ -49,6 +50,7 @@ module.exports = class SearchBox {
    */
   showResetButton() {
     this.$elm.classList.add('search-box--populated');
+    this.$resetButton.classList.remove('compact-form__reset');
   }
 
   /**
