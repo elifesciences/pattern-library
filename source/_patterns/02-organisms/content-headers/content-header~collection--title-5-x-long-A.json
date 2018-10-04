@@ -9,6 +9,7 @@
   "titleLength": "x-long",
   "header": {
     "possible": true,
+    "titleLength": "x-short",
     "hasProfile": true,
     "profile": {
       "name": "Prabhat Jha",

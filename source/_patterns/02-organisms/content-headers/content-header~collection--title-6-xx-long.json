@@ -6,9 +6,9 @@
     }
   },
   "title": "A title in an image-backed content header like this should never be this long Ridiculous! However if it is, at least we can scale appropriately and prevent things from breaking in a really horrible fashion",
-  "titleLength": "xx-long",
   "header": {
     "possible": true,
+    "titleLength": "xx-long",
     "hasProfile": true,
     "profile": {
       "name": "Prabhat Jha",

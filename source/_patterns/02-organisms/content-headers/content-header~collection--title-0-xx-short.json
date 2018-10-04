@@ -5,10 +5,10 @@
       "altText": ""
     }
   },
-  "title": "Magazine  ",
-  "titleLength": "xx-short",
+  "title": "Magazine",
   "header": {
     "possible": true,
+    "titleLength": "xx-short",
     "hasProfile": true,
     "profile": {
       "name": "Prabhat Jha",
