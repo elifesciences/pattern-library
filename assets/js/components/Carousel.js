@@ -32,7 +32,6 @@ module.exports = class Carousel {
 
   init() {
     this.currentSlide = 1;
-
     this.timerInterval = 10000;
 
     this.updateButtonAppearance();
