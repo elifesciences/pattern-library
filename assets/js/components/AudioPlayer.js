@@ -145,6 +145,7 @@ module.exports = class AudioPlayer {
     $audioElement.play();
     $togglePlayButton.classList.add('audio-player__toggle_play--pauseable');
     $togglePlayButton.classList.remove('audio-player__toggle_play--playable');
+    $togglePlayButton.innerHTML = 'Pause';
     this.isPlaying = true;
   }
 
@@ -152,6 +153,7 @@ module.exports = class AudioPlayer {
     $audioElement.pause();
     $togglePlayButton.classList.add('audio-player__toggle_play--playable');
     $togglePlayButton.classList.remove('audio-player__toggle_play--pauseable');
+    $togglePlayButton.innerHTML = 'Play';
     this.isPlaying = false;
   }
 
@@ -285,7 +287,7 @@ module.exports = class AudioPlayer {
   static buildPlayButton(player) {
     return utils.buildElement('button',
                               ['audio-player__toggle_play'],
-                              '',
+                              'Play',
                               '#' + player.uniqueId + ' [class*="audio-player"]',
                               true);
   }
