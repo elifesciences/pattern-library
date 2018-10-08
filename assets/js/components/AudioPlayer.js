@@ -185,6 +185,7 @@ module.exports = class AudioPlayer {
     if (this.$audioElement.ended) {
       this.$playButton.classList.add('audio-player__toggle_play--playable');
       this.$playButton.classList.remove('audio-player__toggle_play--pauseable');
+      this.$playButton.innerHTML = 'Play';
       this.isPlaying = false;
     }
   }
