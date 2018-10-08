@@ -32,7 +32,6 @@ module.exports = class SearchBox {
     this.hideResetButton();
     if (this.$output) {
       this.$output.innerHTML = '';
-      this.$elm.classList.remove('search-box--populated');
     }
 
     this.$input.focus();
@@ -42,7 +41,6 @@ module.exports = class SearchBox {
    * Hides the reset button.
    */
   hideResetButton() {
-    this.$resetButton.classList.remove('compact-form__reset');
     this.$elm.classList.remove('search-box--populated');
   }
 
@@ -50,7 +48,6 @@ module.exports = class SearchBox {
    * Shows the reset button.
    */
   showResetButton() {
-    this.$resetButton.classList.add('compact-form__reset');
     this.$elm.classList.add('search-box--populated');
   }
 
@@ -62,7 +59,7 @@ module.exports = class SearchBox {
       return;
     }
 
-    if (this.$input.value.length !== 0) {
+    if (this.$input.value.length > 0) {
       this.showResetButton();
     } else {
       this.hideResetButton();
