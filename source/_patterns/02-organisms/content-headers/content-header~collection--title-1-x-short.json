@@ -6,9 +6,9 @@
     }
   },
   "title": "Scientist and Parent",
+  "titleLength": "x-short",
   "header": {
     "possible": true,
-    "titleLength": "x-short",
     "hasProfile": true,
     "profile": {
       "name": "Prabhat Jha",

@@ -6,9 +6,9 @@
     }
   },
   "title": "Magazine",
+  "titleLength": "xx-short",
   "header": {
     "possible": true,
-    "titleLength": "xx-short",
     "hasProfile": true,
     "profile": {
       "name": "Prabhat Jha",
