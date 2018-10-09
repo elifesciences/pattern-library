@@ -67,30 +67,13 @@ describe('An AudioPlayer Component', function () {
         classList: {
           add: spy(),
           remove: spy()
-        }
+        },
+        innerHTML: ''
       };
     });
 
     afterEach(function (){
       $togglePlayButtonMock = null;
-    });
-
-    it('plays audio if invoked when paused', function () {
-      player.isPlaying = false;
-      expect(player.isPlaying).to.be.false;
-      player.togglePlay($mediaMock, $togglePlayButtonMock);
-      expect(player.isPlaying).to.be.true;
-      expect($mediaMock.play.calledOnce).to.be.true;
-      expect($mediaMock.pause.called).to.be.false;
-    });
-
-    it('pauses audio if invoked whilst playing', function () {
-      player.isPlaying = true;
-      expect(player.isPlaying).to.be.true;
-      player.togglePlay($mediaMock, $togglePlayButtonMock);
-      expect(player.isPlaying).to.be.false;
-      expect($mediaMock.pause.calledOnce).to.be.true;
-      expect($mediaMock.play.called).to.be.false;
     });
 
     it('removes button\'s play css class and adds pause css class when playback started', function () {
@@ -105,6 +88,46 @@ describe('An AudioPlayer Component', function () {
       player.togglePlay($mediaMock, $togglePlayButtonMock);
       expect($togglePlayButtonMock.classList.remove.calledWith('audio-player__toggle_play--pauseable')).to.be.true;
       expect($togglePlayButtonMock.classList.add.calledWith('audio-player__toggle_play--playable')).to.be.true;
+    });
+
+    context('if invoked when paused', function () {
+
+      beforeEach(function() {
+        player.isPlaying = false;
+        expect(player.isPlaying).to.be.false;
+        player.togglePlay($mediaMock, $togglePlayButtonMock);
+      });
+
+      it('plays audio', function () {
+        expect(player.isPlaying).to.be.true;
+        expect($mediaMock.play.calledOnce).to.be.true;
+        expect($mediaMock.pause.called).to.be.false;
+      });
+
+      it('show Pause text in button', function () {
+        expect($togglePlayButtonMock.innerHTML).to.equal('Pause');
+      });
+
+    });
+
+    context('if invoked when playing', function () {
+
+      beforeEach(function() {
+        player.isPlaying = true;
+        expect(player.isPlaying).to.be.true;
+        player.togglePlay($mediaMock, $togglePlayButtonMock);
+      });
+
+      it('pauses audio', function () {
+        expect(player.isPlaying).to.be.false;
+        expect($mediaMock.pause.calledOnce).to.be.true;
+        expect($mediaMock.play.called).to.be.false;
+      });
+
+      it('show Play text in button', function () {
+        expect($togglePlayButtonMock.innerHTML).to.equal('Play');
+      });
+
     });
 
   });
