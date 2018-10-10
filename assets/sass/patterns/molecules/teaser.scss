@@ -199,6 +199,8 @@
 
     img {
       border: 1px solid $color-text-dividers;
+      width: 100%;
+      max-width: 600px;
     }
   }
 
