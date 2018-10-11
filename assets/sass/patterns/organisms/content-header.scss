@@ -191,6 +191,10 @@
     */
     &.content-header__title--xx-short {
       @include title-font-size("xx-large");
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+        @include title-font-size("xxx-large");
+      }
     }
 
     &.content-header__title--x-short {
@@ -199,19 +203,31 @@
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         @include title-font-size("xx-large");
       }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+        @include title-font-size("xxx-large");
+      }
     }
 
     &.content-header__title--short {
-      @include title-font-size("large");
+      @include title-font-size("medium");
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+        @include title-font-size("large");
+      }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        @include title-font-size("x-large");
+        @include title-font-size("xx-large");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        @include title-font-size("xxx-large");
       }
 
     }
 
     &.content-header__title--medium {
-      @include title-font-size("medium");
+      @include title-font-size("small");
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
         @include title-font-size("medium");
@@ -221,43 +237,31 @@
         @include title-font-size("large");
       }
 
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-        @include title-font-size("large");
-      }
-
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-        @include title-font-size("x-large");
+        @include title-font-size("xxx-large");
       }
 
     }
 
     &.content-header__title--long {
-      @include title-font-size("small");
+      @include title-font-size("x-small");
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
         @include title-font-size("small");
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        @include title-font-size("medium");
-      }
-
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-        @include title-font-size("medium");
+        @include title-font-size("large");
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-        @include title-font-size("large");
+        @include title-font-size("x-large");
       }
 
     }
 
     &.content-header__title--x-long {
       @include title-font-size("x-small");
-
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-        @include title-font-size("x-small");
-      }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         @include title-font-size("small");
@@ -280,15 +284,7 @@
         @include title-font-size("x-small");
       }
 
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        @include title-font-size("x-small");
-      }
-
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-        @include title-font-size("small");
-      }
-
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
         @include title-font-size("small");
       }
 
