@@ -194,13 +194,16 @@
 
   padding-top: 0;
 
+  .teaser__picture img {
+    width: 100%;
+    max-width: 600px;
+  }
+
   .teaser__picture--prominent {
     @include nospace();
 
     img {
       border: 1px solid $color-text-dividers;
-      width: 100%;
-      max-width: 600px;
     }
   }
 
