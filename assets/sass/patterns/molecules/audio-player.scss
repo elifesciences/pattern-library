@@ -20,6 +20,8 @@
   left: 0;
   padding: 0;
   position: absolute;
+  // visuallyhidden mixin cannot be used here as will hide play and pause button
+  text-indent: -9999px;
   top: 0;
   @include width(72);
   &.loading {

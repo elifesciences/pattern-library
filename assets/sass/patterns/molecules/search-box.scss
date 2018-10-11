@@ -73,7 +73,7 @@
 
   @include border-radius-simple(0, 0, $border-radius, $border-radius);
 
-  .search-box--populated {
+  &.search-box--populated {
 
     .compact-form__input {
       @include padding(90, right);
@@ -90,8 +90,8 @@
       position: absolute;
       right: 63px;
       right: #{get-rem-from-px(63)}rem;
-      top: 12px;
-      top: #{get-rem-from-px(12)}rem;
+      top: 14px;
+      top: #{get-rem-from-px(14)}rem;
       width: 20px;
     }
 
