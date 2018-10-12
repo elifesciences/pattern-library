@@ -217,6 +217,10 @@
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include title-font-size("x-large");
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
         @include title-font-size("xx-large");
       }
 
