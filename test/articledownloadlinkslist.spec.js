@@ -17,33 +17,29 @@ describe('An ArticleDownloadLinksList Component', function () {
 
   beforeEach(function () {
     articleDownloadLinksList = new ArticleDownloadLinksList($el, window, window.document);
+    spy(articleDownloadLinksList.$elm, 'setAttribute');
   });
 
-  it('exists', function () {
-    expect(articleDownloadLinksList).to.exist;
+  afterEach(function() {
+    articleDownloadLinksList.$elm.setAttribute.restore();
   });
 
-});
+  describe('The open method', function () {
 
-describe('ArticleDownloadLinksList Aria Expanded Test', function () {
-
-  let generateAria
-
-  beforeEach(function () {
-    spy(window, "matchMedia");
-  });
-
-  afterEach(function () {
-    window.matchMedia.restore();
-  });
-
-  context('ArticleDownloadLinksList is closed', function () {
-
-    it('returns false', function () {
-      expect(window.matchMedia.calledWithExactly('aria-expanded="false"'));
+    it('Sets aria-expanded attribute to "true"', function () {
+      articleDownloadLinksList.open();
+      expect(articleDownloadLinksList.$elm.setAttribute.calledWithExactly('aria-expanded', true)).to.be.true;
     });
 
   });
 
+  describe('The close method', function () {
+
+    it('Sets aria-expanded attribute to "false"', function () {
+      articleDownloadLinksList.close();
+      expect(articleDownloadLinksList.$elm.setAttribute.calledWithExactly('aria-expanded', false)).to.be.true;
+    });
+
+  });
 
 });
