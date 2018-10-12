@@ -36,7 +36,6 @@ describe('An ArticleDownloadLinksList Component', function () {
       expect(articleDownloadLinksList.$elm.classList.contains('visuallyhidden')).to.be.false;
     });
 
-
   });
 
   describe('The close method', function () {
