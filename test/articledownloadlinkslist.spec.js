@@ -26,12 +26,12 @@ describe('An ArticleDownloadLinksList Component', function () {
 
   describe('The open method', function () {
 
-    it('Sets aria-expanded attribute to "true"', function () {
+    it('sets aria-expanded attribute to "true"', function () {
       articleDownloadLinksList.open();
-      expect(articleDownloadLinksList.$elm.setAttribute.calledWithExactly('aria-expanded', true)).to.be.true;
+      expect(articleDownloadLinksList.$elm.setAttribute.calledWithExactly('aria-expanded', "true")).to.be.true;
     })
 
-    it('Sets class "visuallyhidden" to be removed', function () {
+    it('removes the class "visuallyhidden"', function () {
       articleDownloadLinksList.open();
       expect(articleDownloadLinksList.$elm.classList.contains('visuallyhidden')).to.be.false;
     });
@@ -40,12 +40,12 @@ describe('An ArticleDownloadLinksList Component', function () {
 
   describe('The close method', function () {
 
-    it('Sets aria-expanded attribute to "false"', function () {
+    it('sets aria-expanded attribute to "false"', function () {
       articleDownloadLinksList.close();
-      expect(articleDownloadLinksList.$elm.setAttribute.calledWithExactly('aria-expanded', false)).to.be.true;
+      expect(articleDownloadLinksList.$elm.setAttribute.calledWithExactly('aria-expanded', "false")).to.be.true;
     });
 
-    it('Sets class "visuallyhidden" to be added', function () {
+    it('adds the class "visuallyhidden"', function () {
       articleDownloadLinksList.close();
       expect(articleDownloadLinksList.$elm.classList.contains('visuallyhidden')).to.be.true;
     });
