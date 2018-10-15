@@ -72,7 +72,7 @@ module.exports = class ArticleDownloadLinksList {
    */
   open() {
     this.$elm.classList.remove('visuallyhidden');
-    this.$elm.setAttribute('aria-expanded', "true");
+    this.$elm.setAttribute('aria-expanded', 'true');
     this.window.addEventListener('click', this.checkForClose.bind(this));
   }
 
@@ -92,7 +92,7 @@ module.exports = class ArticleDownloadLinksList {
    */
   close() {
     this.$elm.classList.add('visuallyhidden');
-    this.$elm.setAttribute('aria-expanded', "false");
+    this.$elm.setAttribute('aria-expanded', 'false');
     this.window.removeEventListener('click', this.checkForClose.bind(this));
   }
 
