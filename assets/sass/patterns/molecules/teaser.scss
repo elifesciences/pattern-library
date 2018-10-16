@@ -148,6 +148,11 @@
   @include blg-spacing("top", "extra-small", "margin");
   max-width: 100%;
   width: 100%;
+
+  img {
+    width: 100%;
+    max-width: 600px;
+  }
 }
 
 .teaser__picture--small {
@@ -157,16 +162,13 @@
   width: 72px;
 }
 
-.teaser__picture--big {
-
-  img {
-    width: 100%;
-    max-width: 600px;
-  }
-
-}
-
 @media only all and (min-width: 700px) {
+
+  .teaser__picture {
+    img {
+      width: auto;
+    }
+  }
 
   .teaser__picture--big {
     float: right;
@@ -174,11 +176,6 @@
     @include blg-spacing("bottom", "extra-small", "margin");
     width: auto;
     @include margin(24, "left");
-
-    img {
-      width: auto;
-    }
-
   }
 
   .teaser--secondary {
