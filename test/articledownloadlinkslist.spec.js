@@ -4,8 +4,6 @@ const sinon = require('sinon');
 const expect = chai.expect;
 const spy = sinon.spy;
 
-let utils = require('../assets/js/libs/elife-utils')();
-
 // load in component(s) to be tested
 let ArticleDownloadLinksList = require('../assets/js/components/ArticleDownloadLinksList');
 
@@ -29,7 +27,7 @@ describe('An ArticleDownloadLinksList Component', function () {
     it('sets aria-expanded attribute to "true"', function () {
       articleDownloadLinksList.open();
       expect(articleDownloadLinksList.$elm.setAttribute.calledWithExactly('aria-expanded', "true")).to.be.true;
-    })
+    });
 
     it('removes the class "visuallyhidden"', function () {
       articleDownloadLinksList.open();
