@@ -26,9 +26,9 @@ module.exports = class MainMenu {
    */
   moveWithinDom() {
     this.$elm.classList.add('main-menu--js');
-    let $globalWrapper = this.doc.querySelector('.global-wrapper');
+    let $globalWrapper = this.doc.querySelector('.wrapper--site-header');
     if (!!$globalWrapper) {
-      $globalWrapper.insertBefore(this.$elm, $globalWrapper.firstElementChild);
+      $globalWrapper.insertBefore(this.$elm, $globalWrapper.insertAfter);
     }
   }
 
@@ -57,6 +57,7 @@ module.exports = class MainMenu {
   open () {
     this.$elm.classList.add('main-menu--shown');
     this.$elm.setAttribute('aria-expanded', 'true');
+    this.$elm.focus();
     this.pageOverlay.get$elm().addEventListener('click', this.closeFn);
     this.pageOverlay.show();
   }
