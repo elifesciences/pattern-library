@@ -16,14 +16,12 @@ describe('A MainMenu Component', function () {
     $elm = document.querySelector('[data-behaviour="MainMenu"]');
     mainMenu = new MainMenu($elm);
     mainMenu.pageOverlay = {
-      show: function () {
-
-      },
+      show: function () {},
+      hide: function () {},
       get$elm: function () {
         return {
-          addEventListener: function () {
-
-          }
+          addEventListener: function () {},
+          removeEventListener: function () {}
         };
       }
     };
@@ -57,12 +55,12 @@ describe('A MainMenu Component', function () {
   describe('The close method', function () {
 
     it('sets aria-expanded attribute to "false"', function () {
-      //mainMenu.close();
-      expect(mainMenu.$elm.setAttribute.calledWithExactly('aria-expanded', 'false')).to.be.false;
+      mainMenu.close();
+      expect(mainMenu.$elm.setAttribute.calledWithExactly('aria-expanded', 'false')).to.be.true;
     });
 
     it('removes the class "main-menu--shown"', function () {
-      mainMenu.$elm.classList.remove('main-menu--shown');
+      mainMenu.close();
       expect(mainMenu.$elm.classList.contains('main-menu--shown')).to.be.false;
     });
 
