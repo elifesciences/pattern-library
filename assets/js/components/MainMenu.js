@@ -26,9 +26,9 @@ module.exports = class MainMenu {
    */
   moveWithinDom() {
     this.$elm.classList.add('main-menu--js');
-    let $globalWrapper = this.doc.querySelector('.wrapper--site-header');
-    if (!!$globalWrapper) {
-      $globalWrapper.insertBefore(this.$elm, $globalWrapper.insertAfter);
+    let $siteHeaderWrapper = this.doc.querySelector('.wrapper--site-header');
+    if (!!$siteHeaderWrapper) {
+      $siteHeaderWrapper.insertBefore(this.$elm, $siteHeaderWrapper.insertAfter);
     }
   }
 
