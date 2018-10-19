@@ -70,7 +70,9 @@ module.exports = class SiteHeader {
 
   checkForMenuClose(e) {
     if (e.keyCode === 27 || e.type === 'click') {
-      this.mainMenu.close();
+      if (!e.target.classList.contains('main-menu__list_item')) {
+        this.mainMenu.close();
+      }
     }
   }
 
