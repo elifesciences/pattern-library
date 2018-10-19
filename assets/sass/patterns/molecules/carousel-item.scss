@@ -156,18 +156,38 @@
   }
 
   .carousel-item__title {
-    @include font-size-and-vertical-height(36, 48);
     @include margin(0, "top");
     @include nospace("bottom");
     line-height: 1;
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-      @include font-size-and-vertical-height(41, 48);
+    &.carousel-item__title--xx-short {
+      @include header-title-size("xx-short");
     }
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
-      @include font-size-and-vertical-height(46, 72);
+    &.carousel-item__title--x-short {
+      @include header-title-size("x-short");
     }
+
+    &.carousel-item__title--short {
+      @include header-title-size("short");
+    }
+
+    &.carousel-item__title--medium {
+      @include header-title-size("medium");
+    }
+
+    &.carousel-item__title--long {
+      @include header-title-size("long");
+    }
+
+    &.carousel-item__title--x-long {
+      @include header-title-size("x-long");
+    }
+
+    &.carousel-item__title--xx-long {
+      @include header-title-size("xx-long");
+    }
+
   }
 
   .carousel-item__title_link {
