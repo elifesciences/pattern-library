@@ -1,6 +1,5 @@
 (function (window) {
   'use strict';
-
   try {
     var scriptPaths,
         $body;
@@ -8,7 +7,9 @@
       !!window.localStorage &&
       !!(window.document.createElement('div')).dataset &&
       typeof window.document.querySelector === 'function' &&
-      typeof window.addEventListener === 'function'
+      typeof window.addEventListener === 'function' &&
+      !!typeof navigator.connection &&
+      typeof navigator.connection.effectiveType === 'string'
     ) {
       scriptPaths = window.elifeConfig.scriptPaths;
       if (Array.isArray(scriptPaths) && scriptPaths.length) {
