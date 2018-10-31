@@ -39,13 +39,6 @@ Components.SpeechBubble = require('./components/SpeechBubble');
 Components.ToggleableCaption = require('./components/ToggleableCaption');
 Components.ViewerModal = require('./components/ViewerModal');
 Components.ViewSelector = require('./components/ViewSelector');
-console.log(navigator.connection);
-
-if (navigator.connection.effectiveType < '3g') {
-  console.log('poor connection ' + navigator.connection.effectiveType);
-} else {
-  console.log('yeah. super de duper ' + navigator.connection.effectiveType);
-}
 
 // App
 
@@ -107,4 +100,3 @@ let Elife = function Elife() {
 };
 
 new Elife();
-

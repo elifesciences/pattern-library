@@ -1,16 +1,20 @@
 (function (window) {
   'use strict';
-  try {
-    var scriptPaths,
-        $body;
-    if (
+
+  function browserHasMinimumFeatureSupport () {
+    return (
       !!window.localStorage &&
       !!(window.document.createElement('div')).dataset &&
       typeof window.document.querySelector === 'function' &&
-      typeof window.addEventListener === 'function' &&
-      !!typeof navigator.connection &&
-      typeof navigator.connection.effectiveType === 'string'
-    ) {
+      typeof window.addEventListener === 'function'
+    );
+    
+  }
+
+  try {
+    var scriptPaths,
+        $body;
+    if (browserHasMinimumFeatureSupport()) {
       scriptPaths = window.elifeConfig.scriptPaths;
       if (Array.isArray(scriptPaths) && scriptPaths.length) {
         $body = window.document.querySelector('body');
@@ -30,5 +34,7 @@
       '". Additionally, RUM logging failed.');
     }
   }
+
+
 
 }(window));
