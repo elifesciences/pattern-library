@@ -8,13 +8,31 @@
       typeof window.document.querySelector === 'function' &&
       typeof window.addEventListener === 'function'
     );
-    
+  }
+
+  function isNetworkInformationAvailable() {
+    return navigator.connection && typeof navigator.connection.effectiveType === 'string';
+  }
+
+  function networkIsDefinitelySlow () {
+    if (isNetworkInformationAvailable()) {
+      if (navigator.connection.effectiveType.indexOf('2g') > -1) {
+        console.log('no');
+        return true;
+      } else {
+        console.log('yes');
+        return false;
+      } 
+    } else {
+      console.log('who knows');
+      return false;
+    }
   }
 
   try {
     var scriptPaths,
         $body;
-    if (browserHasMinimumFeatureSupport()) {
+    if (browserHasMinimumFeatureSupport() && !networkIsDefinitelySlow()) {
       scriptPaths = window.elifeConfig.scriptPaths;
       if (Array.isArray(scriptPaths) && scriptPaths.length) {
         $body = window.document.querySelector('body');
@@ -34,7 +52,5 @@
       '". Additionally, RUM logging failed.');
     }
   }
-
-
 
 }(window));
