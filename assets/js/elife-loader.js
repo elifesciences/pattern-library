@@ -15,18 +15,13 @@
   }
 
   function networkIsDefinitelySlow () {
-    if (isNetworkInformationAvailable()) {
-      if (navigator.connection.effectiveType.indexOf('2g') > -1) {
-        console.log('no');
-        return true;
-      } else {
-        console.log('yes');
-        return false;
-      } 
-    } else {
-      console.log('who knows');
+    if (!isNetworkInformationAvailable()) {
       return false;
     }
+    if (navigator.connection.effectiveType.indexOf('2g') > -1) {
+      return true;
+    }
+    return false;
   }
 
   try {
