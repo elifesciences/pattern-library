@@ -26,7 +26,7 @@
     },
 
     {
-      "classes": "nav-secondary__item nav-secondary__item-logged-in",
+      "classes": "nav-secondary__item nav-secondary__item--logged-in",
       "loginControl": {
         "isLoggedIn": true,
         "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
