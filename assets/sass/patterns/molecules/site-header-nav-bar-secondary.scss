@@ -19,6 +19,11 @@
   margin: 0;
   padding: 0;
   vertical-align: middle;
+
+  li:last-child {
+    align-self: stretch;
+  }
+
 }
 
 .nav-secondary__item {
@@ -28,17 +33,6 @@
   list-style-type: none;
   @include padding(0 12 0 0);
   text-transform: uppercase;
-
-  .login-control {
-
-    &.login-control--logged-in {
-      @supports (display: flex) {
-        position: relative;
-        top: 7px;
-      }
-
-    }
-  }
 }
 
 .nav-secondary__item--hide-narrow {
