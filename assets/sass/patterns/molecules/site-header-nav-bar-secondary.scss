@@ -29,7 +29,7 @@
   @include padding(0 12 0 0);
   text-transform: uppercase;
 
-  &.nav-secondary__item--logged-in {
+  .js &.nav-secondary__item--logged-in {
     align-self: stretch;
   }
 }
