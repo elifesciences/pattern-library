@@ -10,12 +10,12 @@
     );
   }
 
-  function isNetworkInformationAvailable() {
-    return navigator.connection && typeof navigator.connection.effectiveType === 'string';
+  function isNetworkInformationAvailable(connection) {
+    return !!connection && typeof connection.effectiveType === 'string';
   }
 
   function networkIsDefinitelySlow () {
-    if (!isNetworkInformationAvailable()) {
+    if (!isNetworkInformationAvailable(navigator.connection)) {
       return false;
     }
     if (navigator.connection.effectiveType.indexOf('2g') > -1) {
