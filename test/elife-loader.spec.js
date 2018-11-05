@@ -12,15 +12,15 @@ describe('The eLife Loader', function () {
 
   let loader;
 
-  describe("is network information available", function() {
-    it("and the network information is available", function() {
+  describe("and the network information", function() {
+    it("is available", function() {
       const networkInfoMock = {
         effectiveType: 'some string'
       };
       expect(isNetworkInformationAvailable(networkInfoMock)).to.be.true;
     });
 
-    it("and the network information is not available", function() {
+    it("is not available", function() {
       const networkInfoMock = {
         effectiveType: []
       };
@@ -30,5 +30,23 @@ describe('The eLife Loader', function () {
 
   });
 
+  describe('and network speed', function(){
+
+    it('is above 2g', function() {
+      expect(networkIsDefinitelySlow()).to.be.false;
+    });
+    
+    it("is 2g or slower", function() {
+      const networkSpeed = {
+        effectiveType: '2g'
+      }
+      expect(networkSpeed.effectiveType.indexOf('2g') > -1).to.be.true;
+    });
+
+    it('is not available', function() {
+      expect(!isNetworkInformationAvailable(navigator.connection)).to.be.false;
+    });
+
+  });
 
 });
