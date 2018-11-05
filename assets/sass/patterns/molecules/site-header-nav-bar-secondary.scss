@@ -29,8 +29,8 @@
   @include padding(0 12 0 0);
   text-transform: uppercase;
 
-  &:last-child {
-    align-self: self-end;
+  .js &.nav-secondary__item--logged-in {
+    align-self: stretch;
   }
 }
 
