@@ -12,41 +12,81 @@ describe('The eLife Loader', function () {
 
   let loader;
 
-  describe("and the network information", function() {
+  describe("checks if the network information", function() {
+
     it("is available", function() {
       const networkInfoMock = {
         effectiveType: 'some string'
       };
+
       expect(isNetworkInformationAvailable(networkInfoMock)).to.be.true;
     });
 
     it("is not available", function() {
+
       const networkInfoMock = {
         effectiveType: []
       };
+
       expect(isNetworkInformationAvailable(networkInfoMock)).to.be.false;
       expect(isNetworkInformationAvailable(null)).to.be.false;
     });
 
   });
 
-  describe('and network speed', function(){
+  describe('networkIsDefinitelySlow', function(){
 
-    it('is above 2g', function() {
-      expect(networkIsDefinitelySlow()).to.be.false;
-    });
-    
-    it("is 2g or slower", function() {
-      const networkSpeed = {
-        effectiveType: '2g'
-      }
-      expect(networkSpeed.effectiveType.indexOf('2g') > -1).to.be.true;
-    });
+    context('when network information is not available', function() {
 
-    it('is not available', function() {
-      expect(!isNetworkInformationAvailable(navigator.connection)).to.be.false;
+      it('returns false', function() {
+        const isNetworkInfoAvailableMock = function() {
+          return false;
+        };
+        expect(networkIsDefinitelySlow(isNetworkInfoAvailableMock)).to.be.false;
+      });
+      
     });
 
+    context('when network information is available', function(){
+
+      context('network speed is 2g', function() {
+
+        it('returns true', function() {
+
+          const isNetworkInfoAvailableMock = function() {
+            return true
+          };
+
+          const navigatorConnectionMock = {
+            effectiveType: '2g'
+          }
+
+          expect(networkIsDefinitelySlow(isNetworkInfoAvailableMock,navigatorConnectionMock)).to.be.true;
+        });
+      });
+
+      context('network speed is greater than 2g', function() {
+
+        it('returns false', function() {
+
+          const isNetworkInfoAvailableMock = function() {
+            return true
+          };
+
+          const fasterThan2g = ['3g', '4g'];
+          fasterThan2g.forEach((speed) => {
+            const navigatorConnectionMock = {
+            effectiveType: speed
+          };
+
+          expect(networkIsDefinitelySlow(isNetworkInfoAvailableMock,navigatorConnectionMock)).to.be.false;
+          });
+
+        });
+      });
+      
+    });
+      
   });
 
 });
