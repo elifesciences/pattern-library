@@ -4,8 +4,6 @@ properties:
   title:
     type: string
     minLength: 1
-  longTitle:
-    type: boolean
   image:
     allOf:
       - $ref: ../../00-atoms/components/picture.yaml
@@ -76,6 +74,16 @@ properties:
         required:
           - name
           - url
+      titleLength:
+        enum:
+        - xx-short
+        - x-short
+        - short
+        - medium
+        - long
+        - x-long
+        - xx-long
+
     required:
       - possible
     dependencies:

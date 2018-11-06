@@ -73,8 +73,8 @@
 .carousel__control_panel {
 
   @include constrain-width($max-site-width, "max");
-  bottom: 39px;
-  height: 14px;
+  bottom: 42px;
+  height: 12px;
   position: absolute;
   width: 100vw;
 }

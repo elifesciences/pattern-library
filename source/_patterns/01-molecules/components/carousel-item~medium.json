@@ -1,0 +1,40 @@
+{
+  "subjects": {
+    "list": [
+      {
+        "name": "Neuroscience",
+        "url": "#"
+      },
+      {
+        "name": "Cell biology",
+        "url": "#"
+      }
+    ]
+  },
+  "title": "medium medium medium medium medium medium medium medium",
+  "titleLength": "medium",
+  "url": "#link-to-article",
+  "button": {
+    "text": "Read article",
+    "path": "#link-to-article",
+    "classes": "button--reversed button--small"
+  },
+  "meta": {
+    "url": "#",
+    "text": "Research article",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 10,
+        "month": "Sep",
+        "year": 2015
+      },
+      "forMachine": "2015-09-10"
+    }
+  },
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/1114/336",
+      "altText": ""
+    }
+  }
+}

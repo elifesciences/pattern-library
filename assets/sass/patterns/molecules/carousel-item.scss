@@ -121,53 +121,73 @@
 
   .carousel-item__subject_list {
     color: inherit;
-    position: absolute;
-    left: 0;
-    right: 0;
+    line-height: 1;
+    @include padding(18, "top");
+    @include padding(2, "bottom");
   }
 
   .carousel-item__subject_list_item {
     color: inherit;
+    line-height: 1;
+    @include font-size(12);
   }
 
   .carousel-item__subject_link {
     color: inherit;
+    line-height: 1;
     &:hover {
       color: inherit;
     }
   }
 
   .carousel-item__body {
-    @include margin($content-header-padding * 2, "top");
-    height: #{$content-header-padding * 5}px;
+    height: 132px;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
     align-items: center;
-    align-content: center;
     justify-content: center;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-      @include margin($content-header-padding * 3, "top");
+      height: 156px;
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
-      height: #{$content-header-padding * 7}px;
+      height: 205px;
     }
   }
 
   .carousel-item__title {
-    @include font-size-and-vertical-height(36, 48);
     @include margin(0, "top");
-    @include margin(0, "bottom");
+    @include nospace("bottom");
+    line-height: 1;
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-      @include font-size-and-vertical-height(41, 48);
+    &.carousel-item__title--xx-short {
+      @include header-title-size("xx-short");
     }
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--wide)}em) {
-      @include font-size-and-vertical-height(46, 72);
+    &.carousel-item__title--x-short {
+      @include header-title-size("x-short");
     }
+
+    &.carousel-item__title--short {
+      @include header-title-size("short");
+    }
+
+    &.carousel-item__title--medium {
+      @include header-title-size("medium");
+    }
+
+    &.carousel-item__title--long {
+      @include header-title-size("long");
+    }
+
+    &.carousel-item__title--x-long {
+      @include header-title-size("x-long");
+    }
+
+    &.carousel-item__title--xx-long {
+      @include header-title-size("xx-long");
+    }
+
   }
 
   .carousel-item__title_link {
@@ -189,20 +209,28 @@
 
   .carousel-item__meta {
     position: absolute;
-    bottom: 0;
+    bottom: 18px;
     left: 0;
     right: 0;
-  }
+    padding-bottom: 0;
+    line-height: 1;
+    @include font-size(12);
 
-  .carousel-item__meta {
     .meta {
       color: inherit;
+      line-height: 1;
+      @include font-size(12);
     }
 
     .meta__type {
       &:hover {
         color: inherit;
       }
+    }
+
+    .date {
+      line-height: 1;
+      @include font-size(12);
     }
   }
 

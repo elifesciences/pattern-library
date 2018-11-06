@@ -24,8 +24,15 @@ properties:
   title:
     type: string
     minLength: 1
-  longTitle:
-    type: boolean
+  titleLength:
+    enum:
+    - xx-short
+    - x-short
+    - short
+    - medium
+    - long
+    - x-long
+    - xx-long
   url:
     type: string
     minLength: 1
