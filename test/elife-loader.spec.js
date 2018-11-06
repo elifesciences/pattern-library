@@ -73,8 +73,8 @@ describe('The eLife Loader', function () {
             return true
           };
 
-          const fasterThan2g = ['3g', '4g'];
-          fasterThan2g.forEach((speed) => {
+          const connectionSpeeds = ['3g', '4g'];
+          connectionSpeeds.forEach((speed) => {
             const navigatorConnectionMock = {
             effectiveType: speed
           };
