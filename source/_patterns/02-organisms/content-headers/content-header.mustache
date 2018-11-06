@@ -2,7 +2,7 @@
 <div class="content-header-image-wrapper{{^image.creditOverlay}}{{^image.credit}} content-header-image-wrapper--no-credit{{/image.credit}}{{/image.creditOverlay}}">
 {{/image}}
   <header
-    class="content-header {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} {{#socialMediaSharers}}content-header--has-social-media-sharers{{/socialMediaSharers}} clearfix"
+    class="content-header {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} {{#socialMediaSharers}}content-header--has-social-media-sharers{{/socialMediaSharers}} {{#header.hasProfile}}content-header--has-profile{{/header.hasProfile}} clearfix"
     data-behaviour="ContentHeader">
 
   {{#image}}
@@ -104,7 +104,7 @@
   {{/download}}
 
   <div class="content-header__body">
-    <h1 class="content-header__title {{#longTitle}}content-header__title--long{{/longTitle}}">{{{title}}}</h1>
+    <h1 class="content-header__title {{#titleLength}}content-header__title--{{titleLength}}{{/titleLength}}{{^titleLength}}content-header__title--medium{{/titleLength}}">{{{title}}}</h1>
 
     {{#impactStatement}}
       <div class="content-header__impact-statement">{{{impactStatement}}}</div>

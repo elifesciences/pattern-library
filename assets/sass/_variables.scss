@@ -87,6 +87,15 @@ $content-header-profile-width: 48;
 
 $button-speech-bubble-width-in-px: 42;
 
+$content-header-title-font-size-xx--small: 18;
+$content-header-title-font-size-x-small: 20;
+$content-header-title-font-size-small: 26;
+$content-header-title-font-size-medium: 30;
+$content-header-title-font-size-large: 36;
+$content-header-title-font-size-x-large: 41;
+$content-header-title-font-size-xx-large: 46;
+$content-header-title-font-size-xxx-large: 52;
+
 // Spacing
 $teaser-spacing-top: 23;
 // 23 not 24 to account for a 1px border (Because of the way the elements are nested, border-box doesn't help us here.)
