@@ -4,17 +4,12 @@ const sinon = require('sinon');
 const expect = chai.expect;
 const spy = sinon.spy;
 
-// load in component(s) to be tested
-let loader = require('../assets/js/elife-loader');
-
 describe('The eLife Loader', function () {
   "use strict";
 
-  let loader;
+  describe("checks the isNetworkInformationAvailable() function", function() {
 
-  describe("checks if the network information", function() {
-
-    it("is available", function() {
+    it("returns true when the network information is available", function() {
       const networkInfoMock = {
         effectiveType: 'some string'
       };
@@ -22,7 +17,7 @@ describe('The eLife Loader', function () {
       expect(isNetworkInformationAvailable(networkInfoMock)).to.be.true;
     });
 
-    it("is not available", function() {
+    it("returns true when the network information is not available", function() {
 
       const networkInfoMock = {
         effectiveType: []
@@ -44,12 +39,12 @@ describe('The eLife Loader', function () {
         };
         expect(networkIsDefinitelySlow(isNetworkInfoAvailableMock)).to.be.false;
       });
-      
+
     });
 
     context('when network information is available', function(){
 
-      context('network speed is 2g', function() {
+      context('the network speed is 2g', function() {
 
         it('returns true', function() {
 
@@ -61,11 +56,11 @@ describe('The eLife Loader', function () {
             effectiveType: '2g'
           }
 
-          expect(networkIsDefinitelySlow(isNetworkInfoAvailableMock,navigatorConnectionMock)).to.be.true;
+          expect(networkIsDefinitelySlow(isNetworkInfoAvailableMock, navigatorConnectionMock)).to.be.true;
         });
       });
 
-      context('network speed is greater than 2g', function() {
+      context('the network speed is greater than 2g', function() {
 
         it('returns false', function() {
 
@@ -79,14 +74,14 @@ describe('The eLife Loader', function () {
             effectiveType: speed
           };
 
-          expect(networkIsDefinitelySlow(isNetworkInfoAvailableMock,navigatorConnectionMock)).to.be.false;
+          expect(networkIsDefinitelySlow(isNetworkInfoAvailableMock, navigatorConnectionMock)).to.be.false;
           });
 
         });
       });
-      
+
     });
-      
+
   });
 
 });

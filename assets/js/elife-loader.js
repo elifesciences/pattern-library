@@ -1,34 +1,35 @@
-(function (window) {
-  'use strict';
 
-  function browserHasMinimumFeatureSupport () {
-    return (
-      !!window.localStorage &&
-      !!(window.document.createElement('div')).dataset &&
-      typeof window.document.querySelector === 'function' &&
-      typeof window.addEventListener === 'function'
-    );
-  }
+'use strict';
 
-  function isNetworkInformationAvailable(connection) {
-    return !!connection && typeof connection.effectiveType === 'string';
-  }
+function browserHasMinimumFeatureSupport () {
+  return (
+    !!window.localStorage &&
+    !!(window.document.createElement('div')).dataset &&
+    typeof window.document.querySelector === 'function' &&
+    typeof window.addEventListener === 'function'
+  );
+}
 
-  function networkIsDefinitelySlow () {
-    if (!isNetworkInformationAvailable(navigator.connection)) {
-      return false;
-    }
-    if (navigator.connection.effectiveType.indexOf('2g') > -1) {
-      return true;
-    }
+function isNetworkInformationAvailable(connection) {
+  return !!connection && typeof connection.effectiveType === 'string';
+}
+
+function networkIsDefinitelySlow (isNetworkInfoAvailable, connection) {
+  if (!isNetworkInfoAvailable(connection)) {
     return false;
   }
+  if (connection.effectiveType.indexOf('2g') > -1) {
+    return true;
+  }
+  return false;
+}
+
+function init(config) {
 
   try {
-    var scriptPaths,
+    var scriptPaths = config.scriptPaths,
         $body;
-    if (browserHasMinimumFeatureSupport() && !networkIsDefinitelySlow()) {
-      scriptPaths = window.elifeConfig.scriptPaths;
+    if (browserHasMinimumFeatureSupport() && !!networkIsDefinitelySlow(isNetworkInformationAvailable, navigator.connection)) {
       if (Array.isArray(scriptPaths) && scriptPaths.length) {
         $body = window.document.querySelector('body');
         scriptPaths.forEach(function (scriptPath) {
@@ -47,5 +48,5 @@
       '". Additionally, RUM logging failed.');
     }
   }
-
-}(window));
+}
+init(window.elifeConfig || {});

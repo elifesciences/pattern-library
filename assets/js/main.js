@@ -41,7 +41,6 @@ Components.ViewerModal = require('./components/ViewerModal');
 Components.ViewSelector = require('./components/ViewSelector');
 
 // App
-
 let Elife = function Elife() {
 
   let singletons = (function () {
