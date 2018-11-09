@@ -44,12 +44,12 @@
       fill: $color-primary;
     }
 
+    &:hover {
+      color: $color-primary;
+    }
+
     .github-link--text {
       @include margin(2 0 0 7);
-
-      &:hover {
-        color: $color-primary;
-      }
     }
   }
 
