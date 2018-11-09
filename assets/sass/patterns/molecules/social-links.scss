@@ -26,29 +26,33 @@
   }
 }
 
-.github-link__item {
-  display: flex;
-  @include margin(0 0 37);
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  min-height: 24px;
-  color: $color-text;
+.github-link {
 
-  svg path {
-    fill: $color-text;
-  }
-  &:hover svg path {
-    fill: $color-primary;
-  }
+  .github-link__item {
+    display: flex;
+    @include margin(0 0 37);
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    color: $color-text;
 
-  .github-link--text {
-    @include margin(2 0 0 7);
+    svg path {
+      fill: $color-text;
+    }
+    &:hover svg path {
+      fill: $color-primary;
+    }
 
-    &:hover {
-      color: $color-primary;
+    .github-link--text {
+      @include margin(2 0 0 7);
+
+      &:hover {
+        color: $color-primary;
+      }
     }
   }
+
 }
 
 @media only screen and (min-width: #{get-rem-from-px(540)}rem) {
