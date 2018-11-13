@@ -27,15 +27,22 @@
 }
 
 .github-link {
+  text-align: center;
 
   .github-link__item {
-    display: flex;
     @include margin(0 0 37);
-    flex-flow: row wrap;
     align-items: center;
+    color: $color-text;
+    display: inline-flex;
+    flex-flow: row wrap;
     justify-content: center;
     min-height: 24px;
-    color: $color-text;
+    width: auto;
+
+    a {
+      margin: 0 auto;
+      width: auto;
+    }
 
     svg path {
       fill: $color-text;
@@ -61,6 +68,7 @@
   }
 
   .github-link {
+    text-align: initial;
 
     .github-link__item {
       justify-content: start;
