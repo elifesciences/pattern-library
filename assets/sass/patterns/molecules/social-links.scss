@@ -26,10 +26,10 @@
   }
 }
 
-.github-link {
+.github-link-wrapper {
   text-align: center;
 
-  .github-link__item {
+  .github-link {
     @include margin(0 0 37);
     align-items: center;
     color: $color-text;
@@ -62,10 +62,10 @@
     text-align: left;
   }
 
-  .github-link {
+  .github-link-wrapper {
     text-align: initial;
 
-    .github-link__item {
+    .github-link {
       justify-content: start;
     }
 
