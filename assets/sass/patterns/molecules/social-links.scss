@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .social-links {
-  @include padding(0 0 42 0);
+  @include padding(0 0 19 0);
   text-align: center;
 }
 
@@ -26,9 +26,49 @@
   }
 }
 
+.github-link-wrapper {
+  text-align: center;
+
+  .github-link {
+    @include margin(0 0 37);
+    align-items: center;
+    color: $color-text;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    min-height: 24px;
+    width: auto;
+
+    svg path {
+      fill: $color-text;
+    }
+    &:hover svg path {
+      fill: $color-primary;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    .github-link--text {
+      @include margin(2 0 0 7);
+    }
+  }
+
+}
+
 @media only screen and (min-width: #{get-rem-from-px(540)}rem) {
   .social-links {
     text-align: left;
+  }
+
+  .github-link-wrapper {
+    text-align: initial;
+
+    .github-link {
+      justify-content: start;
+    }
+
   }
 
   .social-links__list_item {
