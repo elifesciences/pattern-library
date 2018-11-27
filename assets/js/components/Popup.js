@@ -74,6 +74,7 @@ module.exports = class Popup {
 
     const closestPopup = utils.closest(e.target, '.popup');
     if (closestPopup && closestPopup === this.popupHitBox) {
+      this.popupHitBox.setAttribute('aria-hidden', true);
       return;
     }
 
@@ -262,6 +263,10 @@ module.exports = class Popup {
 
     this.popupHitBox.style.left = `${left}px`;
     this.popupHitBox.style.top = `${top}px`;
+    this.popupHitBox.setAttribute('aria-expanded', 'true');
+    this.popupHitBox.setAttribute('tabindex', -1);
+    this.popupHitBox.setAttribute('aria-hidden', 'false');
+    this.popupHitBox.focus();
   }
 
   static setLinksClasses($root) {
@@ -319,7 +324,11 @@ module.exports = class Popup {
     if (this.isOpen) {
       this.positionPopupHitBox(e);
     } else {
+      this.popupHitBox.setAttribute('aria-expanded', 'false');
+      this.popupHitBox.removeAttribute('tabindex', -1);
+      this.popupHitBox.setAttribute('aria-hidden', 'true');
       this.popupHitBox.style.display = 'none';
+      this.popupHitBox.blur();
     }
 
     return Promise.resolve(this.$link);
