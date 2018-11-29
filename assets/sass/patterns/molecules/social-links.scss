@@ -31,6 +31,7 @@
 
   .github-link {
     @include margin(0 0 37);
+    @include label-content-typeg($color-text);
     align-items: center;
     color: $color-text;
     display: inline-flex;
