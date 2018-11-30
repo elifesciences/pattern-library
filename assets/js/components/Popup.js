@@ -261,6 +261,7 @@ module.exports = class Popup {
       top = topIfAbove;
     }
 
+    this.$link.parentNode.insertBefore(this.popupHitBox, this.$link);
     this.popupHitBox.style.left = `${left}px`;
     this.popupHitBox.style.top = `${top}px`;
     this.popupHitBox.setAttribute('aria-expanded', 'true');
@@ -328,7 +329,7 @@ module.exports = class Popup {
       this.popupHitBox.removeAttribute('tabindex', -1);
       this.popupHitBox.setAttribute('aria-hidden', 'true');
       this.popupHitBox.style.display = 'none';
-      this.popupHitBox.blur();
+      this.$link.focus();
     }
 
     return Promise.resolve(this.$link);
