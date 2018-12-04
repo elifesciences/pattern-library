@@ -214,21 +214,23 @@ gulp.task('js:cs', () => {
 
 gulp.task('browserify-tests', () => {
 
-  return del(['./test/build/*']).then(() => {
-      return globby('./test/*.spec.js');
-  }).then((files) => {
-      let tasks = files.map(entry => {
-          return browserify({entries: [entry]})
-              .transform(babel)
-              .bundle()
-              .pipe(source(entry))
-              .pipe(rename({dirname: ''}))
-              .pipe(gulp.dest('./test/build'))
-              .pipe(reload());
+  return del(['./test/build/*'])
+      .then(() => globby('./test/*.spec.js'))
+      .then((files) => {
+          return Promise.all(files.map(entry => {
+              return new Promise((resolve, reject) => {
+                  browserify({entries: [entry]})
+                      .transform(babel)
+                      .bundle()
+                      .pipe(source(entry))
+                      .pipe(rename({dirname: ''}))
+                      .pipe(gulp.dest('./test/build'))
+                      .pipe(reload())
+                      .on('error', reject)
+                      .on('finish', resolve);
+              });
+          }));
       });
-
-      return Promise.all(tasks);
-  });
 });
 
 
