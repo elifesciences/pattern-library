@@ -74,7 +74,6 @@ module.exports = class Popup {
 
     const closestPopup = utils.closest(e.target, '.popup');
     if (closestPopup && closestPopup === this.popupHitBox) {
-      this.popupHitBox.setAttribute('aria-hidden', true);
       return;
     }
 
@@ -330,6 +329,17 @@ module.exports = class Popup {
       this.popupHitBox.setAttribute('aria-hidden', 'true');
       this.popupHitBox.style.display = 'none';
       this.$link.focus();
+    }
+
+    if (this.isOpen) {
+      this.popupHitBox.addEventListener('blur', () => {
+        this.popupHitBox.setAttribute('aria-expanded', 'false');
+        this.popupHitBox.removeAttribute('tabindex', -1);
+        this.popupHitBox.setAttribute('aria-hidden', 'true');
+        this.popupHitBox.style.display = 'none';
+        this.$link.focus();
+      });
+
     }
 
     return Promise.resolve(this.$link);
