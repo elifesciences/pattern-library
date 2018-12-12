@@ -323,7 +323,15 @@ module.exports = class Popup {
     // Changing the state depending on the other properties of the object.
     if (this.isOpen) {
       this.positionPopupHitBox(e);
+    } else {
+      this.popupHitBox.setAttribute('aria-expanded', 'false');
+      this.popupHitBox.removeAttribute('tabindex', -1);
+      this.popupHitBox.setAttribute('aria-hidden', 'true');
+      this.popupHitBox.style.display = 'none';
+      this.$link.focus();
+    }
 
+    if (this.isOpen) {
       this.popupHitBox.addEventListener('blur', () => {
         this.popupHitBox.setAttribute('aria-expanded', 'false');
         this.popupHitBox.removeAttribute('tabindex', -1);
@@ -332,13 +340,6 @@ module.exports = class Popup {
         this.isOpen = false;
         this.$link.focus();
       });
-
-    } else {
-      this.popupHitBox.setAttribute('aria-expanded', 'false');
-      this.popupHitBox.removeAttribute('tabindex', -1);
-      this.popupHitBox.setAttribute('aria-hidden', 'true');
-      this.popupHitBox.style.display = 'none';
-      this.$link.focus();
     }
 
     return Promise.resolve(this.$link);
