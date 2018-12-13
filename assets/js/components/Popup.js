@@ -269,6 +269,13 @@ module.exports = class Popup {
     this.popupHitBox.focus();
   }
 
+  accessibilityPopupHitBox() {
+    this.popupHitBox.setAttribute('aria-expanded', 'false');
+    this.popupHitBox.removeAttribute('tabindex', -1);
+    this.popupHitBox.setAttribute('aria-hidden', 'true');
+    this.popupHitBox.style.display = 'none';
+  }
+
   static setLinksClasses($root) {
     if ($root instanceof HTMLElement) {
       [].slice.call($root.querySelectorAll('a')).forEach($link => {
@@ -323,23 +330,15 @@ module.exports = class Popup {
     // Changing the state depending on the other properties of the object.
     if (this.isOpen) {
       this.positionPopupHitBox(e);
-    } else {
-      this.popupHitBox.setAttribute('aria-expanded', 'false');
-      this.popupHitBox.removeAttribute('tabindex', -1);
-      this.popupHitBox.setAttribute('aria-hidden', 'true');
-      this.popupHitBox.style.display = 'none';
-      this.$link.focus();
-    }
-
-    if (this.isOpen) {
       this.popupHitBox.addEventListener('blur', () => {
-        this.popupHitBox.setAttribute('aria-expanded', 'false');
-        this.popupHitBox.removeAttribute('tabindex', -1);
-        this.popupHitBox.setAttribute('aria-hidden', 'true');
-        this.popupHitBox.style.display = 'none';
+        this.accessibilityPopupHitBox();
         this.isOpen = false;
         this.$link.focus();
       });
+
+    } else {
+      this.accessibilityPopupHitBox();
+      this.$link.focus();
     }
 
     return Promise.resolve(this.$link);
