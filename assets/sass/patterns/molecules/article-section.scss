@@ -122,7 +122,7 @@ $arrow-size: 5;
     margin: 0;
   }
 
-  .reference a {
+  .reference:not(.popup__window) a {
     color: $color-text;
 
     &:hover {
