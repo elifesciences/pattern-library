@@ -27,3 +27,5 @@ RUN node_modules/.bin/gulp --environment ${environment} js
 
 COPY assets/sass/ assets/sass/
 RUN node_modules/.bin/gulp --environment ${environment} generateCss
+
+RUN apt-get update && apt-get install strace
