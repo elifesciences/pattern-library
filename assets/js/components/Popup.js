@@ -239,6 +239,8 @@ module.exports = class Popup {
       this.popupHitBox.setAttribute('aria-expanded', 'true');
       this.popupHitBox.setAttribute('tabindex', -1);
       this.popupHitBox.setAttribute('aria-hidden', 'false');
+      this.popupHitBox.focus();
+      this.preventDefault();
     } else {
       this.popupHitBox.setAttribute('aria-expanded', 'false');
       this.popupHitBox.removeAttribute('tabindex', -1);
