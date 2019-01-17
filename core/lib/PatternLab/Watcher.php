@@ -228,7 +228,7 @@ class Watcher extends Builder {
 			}
 			
 			// pause for .05 seconds to give the CPU a rest
-			usleep(50000);
+			usleep(500000);
 			
 		}
 		
