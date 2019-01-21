@@ -13,6 +13,8 @@ services:
             - source_assets:/srv/pattern-library/source/assets
             - ./.container_source_assets:/srv/pattern-library/.container_source_assets
             - test_build:/srv/pattern-library/test/build
+        cap_add:
+            - SYS_PTRACE
     ui-builder:
         volumes:
             - ./source:/source
