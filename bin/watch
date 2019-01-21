@@ -16,7 +16,7 @@ cleanup pattern-library-php-watch
 echo "Starting assets-builder Docker container..."
 # --rm will remove anonymous volumes as well
 # https://github.com/docker/compose/pull/3756
-docker-compose run -d --rm --name pattern-library-gulp-watch assets-builder node_modules/.bin/gulp $* watch
+docker-compose run -d --rm --name pattern-library-gulp-watch assets-builder strace node_modules/.bin/gulp $* watch
 echo "Starting ui Docker container..."
 docker-compose run --rm --name pattern-library-php-generate ui-builder php ./core/builder.php --generate
 docker-compose run -d --rm --name pattern-library-php-watch ui-builder php ./core/builder.php --watch
