@@ -34,7 +34,7 @@ table {
   }
 
   & a {
-    color: $color-primary;
+    @include discreet-link();
   }
 }
 
