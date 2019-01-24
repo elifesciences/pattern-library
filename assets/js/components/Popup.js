@@ -234,6 +234,29 @@ module.exports = class Popup {
     };
   }
 
+  setAccessibilityAttributesPopupHitBox(isToBeShown) {
+    if (isToBeShown) {
+      this.popupHitBox.setAttribute('aria-expanded', 'true');
+      this.popupHitBox.setAttribute('tabindex', -1);
+      this.popupHitBox.setAttribute('aria-hidden', 'false');
+      this.popupHitBox.focus();
+      this.preventDefault();
+    } else {
+      this.popupHitBox.setAttribute('aria-expanded', 'false');
+      this.popupHitBox.removeAttribute('tabindex', -1);
+      this.popupHitBox.setAttribute('aria-hidden', 'true');
+      this.popupHitBox.style.display = 'none';
+    }
+  }
+
+  setAttributesForOpenPopupHitBox() {
+    this.setAccessibilityAttributesPopupHitBox(true);
+  }
+
+  setAttributesForClosedPopupHitBox() {
+    this.setAccessibilityAttributesPopupHitBox(false);
+  }
+
   positionPopupHitBox(e) {
     this.popupHitBox.style.display = '';
 
@@ -260,8 +283,10 @@ module.exports = class Popup {
       top = topIfAbove;
     }
 
+    this.$link.parentNode.insertBefore(this.popupHitBox, this.$link);
     this.popupHitBox.style.left = `${left}px`;
     this.popupHitBox.style.top = `${top}px`;
+    this.setAttributesForOpenPopupHitBox();
   }
 
   static setLinksClasses($root) {
@@ -318,8 +343,16 @@ module.exports = class Popup {
     // Changing the state depending on the other properties of the object.
     if (this.isOpen) {
       this.positionPopupHitBox(e);
+
+      this.popupHitBox.addEventListener('blur', () => {
+        this.setAttributesForClosedPopupHitBox();
+        this.isOpen = false;
+        this.$link.focus();
+      });
+
     } else {
-      this.popupHitBox.style.display = 'none';
+      this.setAttributesForClosedPopupHitBox();
+      this.$link.focus();
     }
 
     return Promise.resolve(this.$link);
