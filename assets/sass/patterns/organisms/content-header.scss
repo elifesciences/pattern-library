@@ -534,6 +534,7 @@ $iconlist: cc oa;
   @include author-typeg();
   list-style-type: none;
   padding: 0;
+  text-align: left;
 }
 
 .content-header__item_toggle--expanded {
