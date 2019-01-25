@@ -269,19 +269,19 @@ gulp.task('test:selenium:local', function() {
 // Watchers
 
 gulp.task('sass:watch', () => {
-  gulp.watch('assets/sass/**/*', ['generateCss']);
+  gulp.watch('assets/sass/**/*', {'interval': 1000}, ['generateCss']);
 });
 
 gulp.task('img:watch', () => {
-  gulp.watch('assets/img/**/*', ['img']);
+  gulp.watch('assets/img/**/*', {'interval': 10000}, ['img']);
 });
 
 gulp.task('fonts:watch', () => {
-  gulp.watch('assets/fonts/**/*', ['fonts']);
+  gulp.watch('assets/fonts/**/*', {'interval': 10000}, ['fonts']);
 });
 
 gulp.task('js:watch', () => {
-  gulp.watch(['assets/js/**/*', './test/*.spec.js'], ['js']);
+  gulp.watch(['assets/js/**/*', './test/*.spec.js'], {'interval': 1000}, ['js']);
 });
 
 gulp.task('extractAssets', () => {
