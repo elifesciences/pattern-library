@@ -12,9 +12,8 @@ const browserSync       = require('browser-sync');
 const buffer            = require('vinyl-buffer');
 const concat            = require('gulp-concat');
 const del               = require('del');
-const es                = require('event-stream');
 const express           = require('express');
-const glob              = require('glob');
+const globby            = require('globby');
 const gulp              = require('gulp');
 const gutil             = require('gulp-util');
 const imagemin          = require('gulp-imagemin');
@@ -213,24 +212,25 @@ gulp.task('js:cs', () => {
     .pipe(jscs.reporter('fail'));
 });
 
-gulp.task('browserify-tests', (done) => {
+gulp.task('browserify-tests', () => {
 
-  del(['./test/build/*']);
-
-  glob('./test/*.spec.js', (err, files) => {
-
-    let tasks = files.map(entry => {
-      return browserify({ entries: [entry] })
-      .transform(babel)
-      .bundle()
-      .pipe(source(entry))
-      .pipe(rename({ dirname: '' }))
-      .pipe(gulp.dest('./test/build'))
-      .pipe(reload());
-    });
-
-    es.merge(tasks).on('end', done);
-  });
+  return del(['./test/build/*'])
+      .then(() => globby('./test/*.spec.js'))
+      .then((files) => {
+          return Promise.all(files.map(entry => {
+              return new Promise((resolve, reject) => {
+                  browserify({entries: [entry]})
+                      .transform(babel)
+                      .bundle()
+                      .pipe(source(entry))
+                      .pipe(rename({dirname: ''}))
+                      .pipe(gulp.dest('./test/build'))
+                      .pipe(reload())
+                      .on('error', reject)
+                      .on('finish', resolve);
+              });
+          }));
+      });
 });
 
 
