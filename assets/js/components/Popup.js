@@ -234,13 +234,13 @@ module.exports = class Popup {
     };
   }
 
-  setAccessibilityAttributesPopupHitBox(isToBeShown) {
+  setAccessibilityAttributesPopupHitBox(isToBeShown, e) {
     if (isToBeShown) {
       this.popupHitBox.setAttribute('aria-expanded', 'true');
       this.popupHitBox.setAttribute('tabindex', -1);
       this.popupHitBox.setAttribute('aria-hidden', 'false');
       this.popupHitBox.focus();
-      this.preventDefault();
+      e.preventDefault();
     } else {
       this.popupHitBox.setAttribute('aria-expanded', 'false');
       this.popupHitBox.removeAttribute('tabindex', -1);
@@ -249,8 +249,8 @@ module.exports = class Popup {
     }
   }
 
-  setAttributesForOpenPopupHitBox() {
-    this.setAccessibilityAttributesPopupHitBox(true);
+  setAttributesForOpenPopupHitBox(e) {
+    this.setAccessibilityAttributesPopupHitBox(true, e);
   }
 
   setAttributesForClosedPopupHitBox() {
@@ -286,7 +286,7 @@ module.exports = class Popup {
     this.$link.parentNode.insertBefore(this.popupHitBox, this.$link);
     this.popupHitBox.style.left = `${left}px`;
     this.popupHitBox.style.top = `${top}px`;
-    this.setAttributesForOpenPopupHitBox();
+    this.setAttributesForOpenPopupHitBox(e);
   }
 
   static setLinksClasses($root) {
