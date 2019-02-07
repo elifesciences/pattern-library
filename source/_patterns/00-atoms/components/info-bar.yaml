@@ -12,6 +12,7 @@ properties:
       - multiple-versions
       - correction
       - success
+      - warning
 required:
   - text
   - type
