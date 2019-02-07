@@ -1,4 +1,4 @@
 {
   "type": "warning",
-  "text": "Watch out for the thing"
+  "text": "Watch out for <a href=\"#\">the thing</a>"
 }
