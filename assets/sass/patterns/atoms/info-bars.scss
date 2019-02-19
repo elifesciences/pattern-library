@@ -21,6 +21,12 @@
   display: inline-block;
   @include padding(2 0 0 28);
   @include font-size-and-vertical-height(14, 18.2);
+
+  .info-bar--warning & {
+    // Reset padding to that for the base info bar as no left hand side icon in this variant
+    @include padding(14, "left");
+  }
+
 }
 
 .info-bar--info {
@@ -71,6 +77,4 @@
 
 .info-bar--warning {
   background-color: $color-warning;
-  // Reset padding to that for the base info bar as no left hand side icon in this variant
-  @include padding(14, "left");
 }
