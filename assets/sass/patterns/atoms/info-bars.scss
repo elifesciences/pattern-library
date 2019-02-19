@@ -71,4 +71,6 @@
 
 .info-bar--warning {
   background-color: $color-warning;
+  // Reset padding to that for the base info bar as no left hand side icon in this variant
+  @include padding(14 "left");
 }
