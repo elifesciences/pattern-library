@@ -1,0 +1,23 @@
+<div>some preceding stuff</div>
+
+<div class="call-to-action-wrapper">
+
+  <div class="call-to-action">
+    {{#image}}
+      <img class="call-to-action__image" src="{{image.src}}" alt="">
+
+    {{/image}}
+    <div class="call-to-action__text">{{text}}</div>
+    <div class="call-to-action__close">X</div>
+    <div class="call-to-action__button_wrapper">
+        {{#button}}
+          {{>atoms-button}}
+        {{/button}}
+    </div>
+
+
+  </div>
+
+</div>
+
+<div>some following stuff</div>

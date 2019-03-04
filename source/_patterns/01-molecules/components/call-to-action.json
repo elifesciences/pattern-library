@@ -1,0 +1,11 @@
+{
+  "text": "Hear more about our new Editor-in-Chief, and the latest developments at eLife",
+  "image": {
+    "src": "https://unsplash.it/40/40"
+  },
+  "button": {
+    "text": "Sign up for eLife news",
+    "classes": "button--default call-to-action__button",
+    "path": "#"
+  }
+}
