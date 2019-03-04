@@ -3,11 +3,29 @@
   <div class="call-to-action">
 
     {{#image}}
-      <img class="call-to-action__image" src="{{image.src}}" alt="">
+
+      {{#image}}
+        <picture class="call-to-action__image">
+          {{#sources}}
+            <source srcset="{{srcset}}"
+                    {{#type}}type="{{type}}"{{/type}}
+              {{#media}}media="{{media}}"{{/media}}>
+          {{/sources}}
+          {{#fallback}}
+            <img src="{{defaultPath}}"
+                 {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+                 alt="{{altText}}"
+            >
+          {{/fallback}}
+        </picture>
+      {{/image}}
+
+
     {{/image}}
 
     <div class="call-to-action__text">{{text}}</div>
 
+    <!--TODO: Inject this with js-->
     <div class="call-to-action__close">X</div>
 
     <div class="call-to-action__button_wrapper">
