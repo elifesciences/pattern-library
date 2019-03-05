@@ -1,6 +1,8 @@
 @import "../../definitions";
 
 .call-to-action-wrapper {
+  @include wrapper();
+  box-sizing: border-box;
   border-bottom: 1px solid $color-text-dividers;
   width: 100%;
 
