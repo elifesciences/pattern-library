@@ -11,3 +11,8 @@ properties:
     $ref: ../../00-atoms/components/button.yaml
   image:
     $ref: ../../00-atoms/components/picture.yaml
+required:
+  - id
+  - text
+  - button
+  - image
