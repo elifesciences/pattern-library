@@ -1,0 +1,16 @@
+{
+  "id": "some-id",
+  "text": "Hear more about our new Editor-in-Chief, and the latest developments at eLife",
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/80/80/",
+      "srcset": "https://unsplash.it/160/160/ 2x, https://unsplash.it/80/80/ 1x",
+      "altText": ""
+    }
+  },
+  "button": {
+    "text": "Sign up for eLife news",
+    "classes": "button--default call-to-action__button",
+    "path": "#"
+  }
+}

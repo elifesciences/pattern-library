@@ -1,0 +1,118 @@
+@import "../../definitions";
+
+.call-to-action-wrapper {
+  box-sizing: border-box;
+  border-bottom: 1px solid $color-text-dividers;
+  width: 100%;
+
+  @supports (display: flex) {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+.call-to-action {
+  @include padding(24, "top");
+  @include padding(24, "bottom");
+  margin: 0 auto;
+
+  @supports (display: grid) {
+    display: grid;
+  }
+
+  grid-template-columns: 80px 1fr 12px auto;
+  grid-template-rows: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: #{get-rem-from-px($blg-space-small-in-px)}rem;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: table;
+    @supports (display: grid) {
+      display: grid;
+    }
+    grid-template-columns: 80px 1fr auto 28px;
+  }
+
+}
+
+.call-to-action__image {
+  box-sizing: content-box;
+  float: left;
+  height: 80px;
+  min-height: 80px;
+  width: 80px;
+  min-width: 80px;
+  margin-right: 16px;
+  @include blg-spacing("bottom", "small");
+
+  @supports (display: grid) {
+    margin-right: 0;
+    padding-bottom: 0;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    margin-right: 16px;
+
+    @supports (display: grid) {
+      margin-right: 0;
+    }
+
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: table-cell;
+
+    @supports (display: grid) {
+      display: block;
+    }
+
+  }
+
+}
+
+.call-to-action__text {
+  grid-column: 2 / -2;
+  grid-row: 1;
+  align-self: center;
+  @include blg-spacing("bottom", "small");
+
+  @supports (display: grid) {
+    padding-bottom: 0;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    grid-column: 2;
+    display: table-cell;
+    vertical-align: middle;
+
+    @supports (display: grid) {
+      display: block;
+    }
+  }
+
+}
+
+.call-to-action__button_wrapper {
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include blg-spacing("bottom", "small");
+    @include padding(16, "left");
+    display: table-cell;
+    vertical-align: middle;
+
+    @supports (display: grid) {
+      display: block;
+      padding-bottom: 0;
+      padding-left: 0;
+    }
+
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+}
