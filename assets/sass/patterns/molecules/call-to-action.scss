@@ -117,35 +117,3 @@
   }
 
 }
-
-.call-to-action__close {
-  // TODO: Update when js injects .call-to-action__close into the DOM instead of it being created by the template
-  display: none;
-
-  .js & {
-    @supports (display: grid) {
-      background: $color-text--reverse url("../img/icons/close-1x.png") no-repeat;
-      background: url("../img/icons/close.svg") center right / 14px 14px no-repeat, linear-gradient(transparent, transparent);
-      cursor: pointer;
-      border-width: 0;
-      background-color: transparent;
-      padding: 0;
-      margin: 0;
-      display: block;
-      grid-column: 3 / -1;
-      grid-row: 1;
-      justify-self: end;
-      align-self: start;
-      width: 12px;
-      height: 12px;
-
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        grid-column: 4;
-        justify-self: unset;
-        box-sizing: content-box;
-        padding-left: 16px;
-      }
-    }
-  }
-
-}
