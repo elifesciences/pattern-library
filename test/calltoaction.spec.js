@@ -26,7 +26,7 @@ function getMockEvent(actionableClassName) {
 }
 
 describe('An CallToAction Component', function () {
-  const $elm = document.querySelector('.call-to-action');
+  const $elm = document.querySelector('.call-to-action-wrapper');
   let callToAction;
 
   beforeEach(() => {
@@ -87,7 +87,7 @@ describe('An CallToAction Component', function () {
     });
 
     it('it is hidden', () => {
-      const $elm = document.querySelector('.call-to-action');
+      const $elm = document.querySelector('.call-to-action-wrapper');
       $elm.classList.remove('hidden');
       callToAction = new CallToAction(cookieName, $elm);
       expect(callToAction.$elm.classList.contains('hidden')).to.be.true;
