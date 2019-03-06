@@ -39,6 +39,8 @@
 
 .call-to-action__image {
   box-sizing: content-box;
+  // Uses non-standard 4px where $border-radius is 3px because buttons also use 4px and this is near a button
+  border-radius: 4px;
   float: left;
   height: 80px;
   min-height: 80px;
@@ -61,7 +63,7 @@
 
   }
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     display: table-cell;
 
     @supports (display: grid) {
