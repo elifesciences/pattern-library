@@ -53,7 +53,7 @@ describe('A CallToAction Component', function () {
 
       it('is hidden', () => {
         callToAction.$elm.classList.remove('hidden');
-        callToAction.handleInteraction(getMockEvent('call-to-action__close'));
+        callToAction.handleInteraction(getMockEvent('call-to-action__dismiss'));
         expect($elm.classList.contains('hidden')).to.be.true;
       });
 

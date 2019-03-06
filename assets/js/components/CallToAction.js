@@ -52,8 +52,8 @@ module.exports = class CallToAction {
   handleInteraction(e) {
     if (e.target.classList.contains('call-to-action__button')) {
       this.setCookie(this.cookieName);
-    } else if (e.target.classList.contains('call-to-action__close') ||
-               e.target.parentElement.classList.contains('call-to-action__close')) {
+    } else if (e.target.classList.contains('call-to-action__dismiss') ||
+               e.target.parentElement.classList.contains('call-to-action__dismiss')) {
       this.dismiss();
     }
   }
@@ -61,7 +61,7 @@ module.exports = class CallToAction {
   static buildDismissButton() {
     const $buttonRoot = utils.buildElement(
       'button',
-      ['call-to-action__close'],
+      ['call-to-action__dismiss'],
       '',
       '.call-to-action',
       '.call-to-action__button_wrapper');

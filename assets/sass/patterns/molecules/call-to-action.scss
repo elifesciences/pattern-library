@@ -119,7 +119,7 @@
 
 }
 
-.call-to-action__close {
+.call-to-action__dismiss {
   @supports (display: grid) {
     background: url("../img/icons/close.svg") center right / 12px 12px no-repeat, linear-gradient(transparent, transparent) transparent;
     cursor: pointer;
