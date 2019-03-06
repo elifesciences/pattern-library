@@ -27,7 +27,7 @@
   grid-column-gap: 16px;
   grid-row-gap: #{get-rem-from-px($blg-space-small-in-px)}rem;
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     display: table;
     @supports (display: grid) {
       display: grid;
@@ -84,7 +84,7 @@
     padding-bottom: 0;
   }
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     grid-column: 2;
     display: table-cell;
     vertical-align: middle;
@@ -101,7 +101,7 @@
   justify-self: center;
   align-self: center;
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include blg-spacing("bottom", "small");
     @include padding(16, "left");
     display: table-cell;
@@ -134,7 +134,7 @@
     width: 12px;
     height: 12px;
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       grid-column: 4;
       justify-self: unset;
       box-sizing: content-box;
