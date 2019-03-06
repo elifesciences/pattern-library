@@ -44,12 +44,12 @@ describe('A CallToAction Component', function () {
 
   context('handles cookies such that', () => {
 
-    context('when dismissed', () => {
+    beforeEach(() => {
+      expireCookie(expectedCookieName);
+      expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('');
+    });
 
-      beforeEach(() => {
-        expireCookie(expectedCookieName);
-        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('');
-      });
+    context('when dismissed', () => {
 
       it('is hidden', () => {
         callToAction.$elm.classList.remove('hidden');
@@ -65,11 +65,6 @@ describe('A CallToAction Component', function () {
     });
 
     context('when actioned', () => {
-
-      beforeEach(() => {
-        expireCookie(expectedCookieName);
-        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('');
-      });
 
       it(`sets a cookie "${expectedCookieName}=true"`, () => {
         callToAction.handleInteraction(getMockEvent('call-to-action__button'));
@@ -99,6 +94,8 @@ describe('A CallToAction Component', function () {
     describe('the cookie name', () => {
 
       it('is the string "callToAction_" appended with the id of the component\'s HTML element', () => {
+        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('');
+        (new CallToAction($elm)).dismiss();
         expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
       });
 
