@@ -46,7 +46,7 @@ describe('A CallToAction Component', function () {
 
     beforeEach(() => {
       expireCookie(expectedCookieName);
-      expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('');
+      expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.be.empty;
     });
 
     context('when dismissed', () => {
@@ -94,7 +94,7 @@ describe('A CallToAction Component', function () {
     describe('the cookie name', () => {
 
       it('is the string "callToAction_" appended with the id attribute of the component\'s HTML element', () => {
-        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('');
+        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.be.empty;
         (new CallToAction($elm)).dismiss();
         expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
       });
