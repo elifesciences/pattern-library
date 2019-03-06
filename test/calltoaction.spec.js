@@ -93,10 +93,41 @@ describe('A CallToAction Component', function () {
 
     describe('the cookie name', () => {
 
-      it('is the string "callToAction_" appended with the id of the component\'s HTML element', () => {
+      it('is the string "callToAction_" appended with the id attribute of the component\'s HTML element', () => {
         expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('');
         (new CallToAction($elm)).dismiss();
         expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
+      });
+
+      context('when the component\'s HTML element is missing an id attribute', () => {
+
+        let $elmNoId;
+        let callToActionWithElmNoId;
+
+        beforeEach(() => {
+          $elmNoId = $elm.cloneNode(true);
+          $elmNoId.setAttribute('id', '');
+          $elm.parentElement.appendChild($elmNoId);
+
+          callToActionWithElmNoId = new CallToAction($elmNoId);
+        });
+
+        afterEach(() => {
+          $elmNoId.parentElement.removeChild($elmNoId);
+        });
+
+        it('does not create a dismiss button', () => {
+          expect(callToActionWithElmNoId.$button).to.be.undefined;
+        });
+
+        context('when actioned', () => {
+
+          it('does not set a cookie', () => {
+            expect(utils.getCookieValue('callToAction_', document.cookie)).to.be.empty;
+          });
+
+        });
+
       });
 
     });

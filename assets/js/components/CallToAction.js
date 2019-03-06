@@ -4,10 +4,14 @@ const utils = require('../libs/elife-utils')();
 
 module.exports = class CallToAction {
   constructor($elm, _window = window, doc = document) {
-    this.cookieName = `callToAction_${$elm.id}`;
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+
+    this.cookieName = CallToAction.deriveCookieName(this.$elm);
+    if (!this.cookieName.length) {
+      return;
+    }
 
     this.$button = CallToAction.buildDismissButton();
     this.$elm.addEventListener('click', this.handleInteraction.bind(this));
@@ -16,6 +20,14 @@ module.exports = class CallToAction {
       this.hide();
     }
 
+  }
+
+  static deriveCookieName($elm) {
+    if ($elm.id && $elm.id.length) {
+      return `callToAction_${$elm.id}`;
+    }
+
+    return '';
   }
 
   dismiss() {
