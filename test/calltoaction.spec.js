@@ -5,8 +5,6 @@ const expect = chai.expect;
 
 // load in component(s) to be tested
 const CallToAction = require('../assets/js/components/CallToAction');
-const cookieName = 'testCookie';
-
 
 function expireCookie(name) {
   const expiryDate = 'Tue, 1 January 1970 18:00:00 UTC';
@@ -25,12 +23,13 @@ function getMockEvent(actionableClassName) {
   };
 }
 
-describe('An CallToAction Component', function () {
+describe('A CallToAction Component', function () {
   const $elm = document.querySelector('.call-to-action-wrapper');
+  const expectedCookieName = `callToAction_${$elm.id}`;
   let callToAction;
 
   beforeEach(() => {
-    callToAction = new CallToAction(cookieName, $elm);
+    callToAction = new CallToAction($elm);
   });
 
   afterEach(() => {
@@ -43,54 +42,66 @@ describe('An CallToAction Component', function () {
     expect(callToAction.$button).to.be.an.instanceof(HTMLButtonElement);
   });
 
-  context('when dismissed', () => {
+  context('handles cookies such that', () => {
 
-    beforeEach(() => {
-      expireCookie(cookieName);
-      expect(utils.getCookieValue(cookieName, document.cookie)).to.equal('');
+    context('when dismissed', () => {
+
+      beforeEach(() => {
+        expireCookie(expectedCookieName);
+        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('');
+      });
+
+      it('is hidden', () => {
+        callToAction.$elm.classList.remove('hidden');
+        callToAction.handleInteraction(getMockEvent('call-to-action__close'));
+        expect($elm.classList.contains('hidden')).to.be.true;
+      });
+
+      it(`sets a cookie "${expectedCookieName}=true"`, () => {
+        callToAction.dismiss();
+        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
+      });
+
     });
 
-    it('it is hidden', () => {
-      callToAction.$elm.classList.remove('hidden');
-      callToAction.handleInteraction(getMockEvent('call-to-action__close'));
-      expect($elm.classList.contains('hidden')).to.be.true;
+    context('when actioned', () => {
+
+      beforeEach(() => {
+        expireCookie(expectedCookieName);
+        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('');
+      });
+
+      it(`sets a cookie "${expectedCookieName}=true"`, () => {
+        callToAction.handleInteraction(getMockEvent('call-to-action__button'));
+        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
+      });
+
     });
 
-    it(`it sets a cookie "${cookieName}=true"`, () => {
-      callToAction.dismiss();
-      expect(utils.getCookieValue(cookieName, document.cookie)).to.equal('true');
+    context(`when the cookie "${expectedCookieName}=true" has previously been set`, () => {
+
+      let callToAction;
+
+      beforeEach(() => {
+        const expiryDate = 'Tue, 19 January 2038 03:14:07 UTC';
+        document.cookie = `${expectedCookieName}=true; expires=${expiryDate}; path=/;`;
+      });
+
+      it('is hidden', () => {
+        const $elm = document.querySelector('.call-to-action-wrapper');
+        $elm.classList.remove('hidden');
+        callToAction = new CallToAction($elm);
+        expect(callToAction.$elm.classList.contains('hidden')).to.be.true;
+      });
+
     });
 
-  });
+    describe('the cookie name', () => {
 
-  context('when actioned', () => {
+      it('is the string "callToAction_" appended with the id of the component\'s HTML element', () => {
+        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
+      });
 
-    beforeEach(() => {
-      expireCookie(cookieName);
-      expect(utils.getCookieValue(cookieName, document.cookie)).to.equal('');
-    });
-
-    it(`it sets a cookie "${cookieName}=true"`, () => {
-      callToAction.handleInteraction(getMockEvent('call-to-action__button'));
-      expect(utils.getCookieValue(cookieName, document.cookie)).to.equal('true');
-    });
-
-  });
-
-  context(`when the cookie "${cookieName}=true" has previously been set`, () => {
-
-    let callToAction;
-
-    beforeEach(() => {
-      const expiryDate = 'Tue, 19 January 2038 03:14:07 UTC';
-      document.cookie = `${cookieName}=true; expires=${expiryDate}; path=/;`;
-    });
-
-    it('it is hidden', () => {
-      const $elm = document.querySelector('.call-to-action-wrapper');
-      $elm.classList.remove('hidden');
-      callToAction = new CallToAction(cookieName, $elm);
-      expect(callToAction.$elm.classList.contains('hidden')).to.be.true;
     });
 
   });

@@ -3,8 +3,8 @@
 const utils = require('../libs/elife-utils')();
 
 module.exports = class CallToAction {
-  constructor(cookieName, $elm, _window = window, doc = document) {
-    this.cookieName = cookieName;
+  constructor($elm, _window = window, doc = document) {
+    this.cookieName = `callToAction_${$elm.id}`;
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
