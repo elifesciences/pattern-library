@@ -9,19 +9,14 @@ module.exports = class CallToAction {
     this.doc = doc;
 
     this.cookieName = CallToAction.deriveCookieName(this.$elm);
-    if (!this.cookieName.length) {
-      return;
-    }
-
-    if (this.hasAlreadyBeenSeen(this.cookieName)) {
+    if (!this.cookieName.length || this.hasAlreadyBeenSeen(this.cookieName)) {
       this.hide();
-    } else {
-      this.show();
+      return;
     }
 
     this.$button = CallToAction.buildDismissButton();
     this.$elm.addEventListener('click', this.handleInteraction.bind(this));
-
+    this.show();
   }
 
   static deriveCookieName($elm) {
