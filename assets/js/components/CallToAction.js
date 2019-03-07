@@ -13,12 +13,14 @@ module.exports = class CallToAction {
       return;
     }
 
-    this.$button = CallToAction.buildDismissButton();
-    this.$elm.addEventListener('click', this.handleInteraction.bind(this));
-
     if (this.hasAlreadyBeenSeen(this.cookieName)) {
       this.hide();
+    } else {
+      this.show();
     }
+
+    this.$button = CallToAction.buildDismissButton();
+    this.$elm.addEventListener('click', this.handleInteraction.bind(this));
 
   }
 
@@ -46,7 +48,11 @@ module.exports = class CallToAction {
   }
 
   hide() {
-    this.$elm.classList.add('hidden');
+    this.$elm.classList.remove('call-to-action-wrapper--js-shown');
+  }
+
+  show() {
+    this.$elm.classList.add('call-to-action-wrapper--js-shown');
   }
 
   handleInteraction(e) {

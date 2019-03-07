@@ -51,10 +51,17 @@ describe('A CallToAction Component', function () {
 
     context('when dismissed', () => {
 
-      it('is hidden', () => {
-        callToAction.$elm.classList.remove('hidden');
+      beforeEach(() => {
+        callToAction.$elm.classList.add('call-to-action-wrapper--js-shown');
+      });
+
+      afterEach(() => {
+        callToAction.$elm.classList.remove('call-to-action-wrapper--js-shown');
+      });
+
+      it('does not have the CSS class "call-to-action-wrapper--js-shown"', () => {
         callToAction.handleInteraction(getMockEvent('call-to-action__dismiss'));
-        expect($elm.classList.contains('hidden')).to.be.true;
+        expect($elm.classList.contains('call-to-action-wrapper--js-shown')).to.be.false;
       });
 
       it(`sets a cookie "${expectedCookieName}=true"`, () => {
@@ -80,13 +87,28 @@ describe('A CallToAction Component', function () {
       beforeEach(() => {
         const expiryDate = 'Tue, 19 January 2038 03:14:07 UTC';
         document.cookie = `${expectedCookieName}=true; expires=${expiryDate}; path=/;`;
+        document.querySelector('.call-to-action-wrapper').classList.add('call-to-action-wrapper--js-shown');
       });
 
-      it('is hidden', () => {
-        const $elm = document.querySelector('.call-to-action-wrapper');
-        $elm.classList.remove('hidden');
+      it('does not have the CSS class "call-to-action-wrapper--js-shown"', () => {
         callToAction = new CallToAction($elm);
-        expect(callToAction.$elm.classList.contains('hidden')).to.be.true;
+        expect($elm.classList.contains('call-to-action-wrapper--js-shown')).to.be.false;
+      });
+
+    });
+
+    context(`when the cookie "${expectedCookieName}=true" is not currently set`, () => {
+
+      let callToAction;
+
+      beforeEach(() => {
+        expireCookie(expectedCookieName);
+        document.querySelector('.call-to-action-wrapper').classList.remove('call-to-action-wrapper--js-shown');
+      });
+
+      it('has the CSS class "call-to-action-wrapper--js-shown"', () => {
+        callToAction = new CallToAction($elm);
+        expect($elm.classList.contains('call-to-action-wrapper--js-shown')).to.be.true;
       });
 
     });

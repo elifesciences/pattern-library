@@ -5,8 +5,23 @@
   border-bottom: 1px solid $color-text-dividers;
   width: 100%;
 
+  display: block;
+
+  .js & {
+    display: none;
+  }
+
+  .js &.call-to-action-wrapper--js-shown {
+    display: block;
+  }
+
   @supports (display: flex) {
     display: flex;
+
+    .js &.call-to-action-wrapper--js-shown {
+      display: flex;
+    }
+
   }
 
   justify-content: center;
