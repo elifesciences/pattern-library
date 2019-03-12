@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+<!--
+  Test output
+-->
+<div id="mocha"></div>
+
+<!--
+  Fixture
+-->
+
+
+<div class="call-to-action-wrapper" data-behaviour="CallToAction" id="test">
+
+  <div class="call-to-action">
+
+
+    <picture class="call-to-action__image">
+      <img src="https://unsplash.it/80/80/" srcset="https://unsplash.it/160/160/ 2x, https://unsplash.it/80/80/ 1x" alt="">
+    </picture>
+
+
+
+    <div class="call-to-action__text">Hear more about our new Editor-in-Chief, and the latest developments at eLife</div>
+
+    <div class="call-to-action__button_wrapper">
+      <a href="#" class="button button--default call-to-action__button">Sign up for eLife news</a>
+    </div>
+
+  </div>
+
+</div>
+
+<!--
+  Load test code
+-->
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+<!-- Initialise test suite -->
+<script>mocha.setup('bdd')</script>
+
+<!--
+  Test spec
+-->
+<script src="build/calltoaction.spec.js"></script>
+
+<!--
+  Begin!
+-->
+<script>
+  mocha.run();
+</script>
+
+</body>
+</html>

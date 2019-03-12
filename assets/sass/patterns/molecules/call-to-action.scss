@@ -5,12 +5,31 @@
   border-bottom: 1px solid $color-text-dividers;
   width: 100%;
 
+  display: block;
+
+  .js & {
+    display: none;
+  }
+
+  .js &.call-to-action-wrapper--js-shown {
+    display: block;
+  }
+
   @supports (display: flex) {
     display: flex;
+
+    .js &.call-to-action-wrapper--js-shown {
+      display: flex;
+    }
+
   }
 
   justify-content: center;
   align-items: center;
+
+  &.hidden {
+    @include hidden();
+  }
 }
 
 .call-to-action {
@@ -27,7 +46,7 @@
   grid-column-gap: 16px;
   grid-row-gap: #{get-rem-from-px($blg-space-small-in-px)}rem;
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     display: table;
     @supports (display: grid) {
       display: grid;
@@ -39,6 +58,8 @@
 
 .call-to-action__image {
   box-sizing: content-box;
+  // Uses non-standard 4px where $border-radius is 3px because buttons also use 4px and this is near a button
+  border-radius: 4px;
   float: left;
   height: 80px;
   min-height: 80px;
@@ -61,7 +82,7 @@
 
   }
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     display: table-cell;
 
     @supports (display: grid) {
@@ -82,7 +103,7 @@
     padding-bottom: 0;
   }
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     grid-column: 2;
     display: table-cell;
     vertical-align: middle;
@@ -99,7 +120,7 @@
   justify-self: center;
   align-self: center;
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include blg-spacing("bottom", "small");
     @include padding(16, "left");
     display: table-cell;
@@ -115,4 +136,28 @@
     grid-row: 1;
   }
 
+}
+
+.call-to-action__dismiss {
+  @supports (display: grid) {
+    background: url("../img/icons/close.svg") center right / 12px 12px no-repeat, linear-gradient(transparent, transparent) transparent;
+    cursor: pointer;
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+    display: block;
+    grid-column: 3 / -1;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+    width: 12px;
+    height: 12px;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      grid-column: 4;
+      justify-self: unset;
+      box-sizing: content-box;
+      padding-left: 16px;
+    }
+  }
 }
