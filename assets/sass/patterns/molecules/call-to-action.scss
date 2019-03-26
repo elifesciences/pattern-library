@@ -7,10 +7,17 @@
 
   display: block;
 
+  // If js is required, always turn off element to start with, it may be enabled if js is present
+  &.call-to-action-wrapper--needs-js {
+    display: none;
+  }
+
+  // If js is available, always turn off element to start with, it will be enabled if should be shown with js
   .js & {
     display: none;
   }
 
+  // If js is available, and the element should be shown with js, turn it on
   .js &.call-to-action-wrapper--js-shown {
     display: block;
   }
