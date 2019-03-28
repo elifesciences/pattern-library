@@ -104,7 +104,7 @@
   grid-column: 2 / -2;
   grid-row: 1;
   align-self: center;
-  @include blg-spacing("bottom", "small");
+  font-family: $font-secondary;
 
   @supports (display: grid) {
     padding-bottom: 0;
