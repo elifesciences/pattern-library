@@ -24,6 +24,18 @@ properties:
   isFirst:
     type: boolean
     default: false
+  headerLink:
+    type: object
+    properties:
+      text:
+        type: string
+        minLength: 1
+      href:
+        type: string
+        minLength: 1
+    required:
+      - text
+      - href
 dependencies:
   isInitiallyClosed:
     - hasBehaviour
