@@ -27,15 +27,15 @@ properties:
   headerLink:
     type: object
     properties:
-      text:
+      name:
         type: string
         minLength: 1
-      href:
+      url:
         type: string
         minLength: 1
     required:
-      - text
-      - href
+      - name
+      - url
 dependencies:
   isInitiallyClosed:
     - hasBehaviour
