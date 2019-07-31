@@ -26,6 +26,13 @@ $arrow-size: 5;
   @include nospace("bottom");
 }
 
+.article-section__header_link {
+  display: block;
+  font-family: $font-secondary;
+  @include font-size-and-vertical-height(14, $blg-space-small-in-px);
+  @include padding($blg-space-extra-small-in-px, "bottom");
+}
+
 .article-section--first {
   border: none;
   padding-top: 0;
