@@ -61,8 +61,8 @@ describe('An Article Section (collapsible)', function () {
   it('is initially closed if initial state is closed', function () {
     $elm.dataset.initialState = 'closed';
     let articleSection = new ArticleSection($elm);
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle--closed')).to.be.true;
     expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
   });
 
@@ -70,8 +70,8 @@ describe('An Article Section (collapsible)', function () {
     $elm.dataset.initialState = 'closed';
     const windowMock = createWindowMock(true, '', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
     const articleSection = new ArticleSection($elm, windowMock);
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle--closed')).to.be.false;
     expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.false;
   });
 
@@ -79,8 +79,8 @@ describe('An Article Section (collapsible)', function () {
     $elm.dataset.initialState = 'closed';
     const windowMock = createWindowMock(true, '', 'Mozilla/5.0 (compatible)');
     const articleSection = new ArticleSection($elm, windowMock);
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle--closed')).to.be.true;
     expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
   });
 
@@ -89,8 +89,8 @@ describe('An Article Section (collapsible)', function () {
     const windowMock = createWindowMock(true);
     const documentMock = createDocumentMock('https://www.google.com/');
     const articleSection = new ArticleSection($elm, windowMock, documentMock);
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle--closed')).to.be.false;
     expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.false;
   });
 
@@ -99,8 +99,8 @@ describe('An Article Section (collapsible)', function () {
     const windowMock = createWindowMock(true);
     const documentMock = createDocumentMock('https://www.example.com/');
     const articleSection = new ArticleSection($elm, windowMock, documentMock);
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle--closed')).to.be.true;
     expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
   });
 
@@ -108,8 +108,8 @@ describe('An Article Section (collapsible)', function () {
     $elm.dataset.initialState = 'closed';
     let windowMock = createWindowMock(true, 'introduction');
     let articleSection = new ArticleSection($elm, windowMock);
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle--closed')).to.be.false;
     expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.false;
   });
 
@@ -117,8 +117,8 @@ describe('An Article Section (collapsible)', function () {
     $elm.dataset.initialState = 'closed';
     let windowMock = createWindowMock(true, 'foo');
     let articleSection = new ArticleSection($elm, windowMock);
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle--closed')).to.be.false;
     expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.false;
   });
 
@@ -126,8 +126,8 @@ describe('An Article Section (collapsible)', function () {
     $elm.dataset.initialState = 'closed';
     let windowMock = createWindowMock(true, 'bar');
     let articleSection = new ArticleSection($elm, windowMock);
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
-    expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle')).to.be.true;
+    expect(articleSection.$headerLink.classList.contains('article-section__toggle--closed')).to.be.true;
     expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
   });
 
@@ -137,8 +137,8 @@ describe('An Article Section (collapsible)', function () {
     initialStateCandidateValues.forEach((value) => {
       $elm.dataset.initialState = value;
       let articleSection = new ArticleSection($elm, windowMock);
-      expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
-      expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
+      expect(articleSection.$headerLink.classList.contains('article-section__toggle')).to.be.true;
+      expect(articleSection.$headerLink.classList.contains('article-section__toggle--closed')).to.be.false;
       expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.false;
     });
   });
@@ -149,8 +149,8 @@ describe('An Article Section (collapsible)', function () {
     initialStateCandidateValues.forEach((value) => {
       $elm.dataset.initialState = value;
       let articleSection = new ArticleSection($elm, windowMock);
-      expect(articleSection.$headerLink.classList.contains('article-section__header_link')).to.be.true;
-      expect(articleSection.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
+      expect(articleSection.$headerLink.classList.contains('article-section__toggle')).to.be.true;
+      expect(articleSection.$headerLink.classList.contains('article-section__toggle--closed')).to.be.true;
       expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.true;
     });
   });
@@ -159,10 +159,10 @@ describe('An Article Section (collapsible)', function () {
     let eventMock = {
       preventDefault: function () {}
     };
-    section.$headerLink.classList.remove('article-section__header_link--closed');
+    section.$headerLink.classList.remove('article-section__toggle--closed');
     section.$body.classList.remove('visuallyhidden');
     section.toggleState(eventMock);
-    expect(section.$headerLink.classList.contains('article-section__header_link--closed')).to.be.true;
+    expect(section.$headerLink.classList.contains('article-section__toggle--closed')).to.be.true;
     expect(section.$body.classList.contains('visuallyhidden')).to.be.true;
   });
 
@@ -170,10 +170,10 @@ describe('An Article Section (collapsible)', function () {
     let eventMock = {
       preventDefault: function () {}
     };
-    section.$headerLink.classList.add('article-section__header_link--closed');
+    section.$headerLink.classList.add('article-section__toggle--closed');
     section.$body.classList.add('visuallyhidden');
     section.toggleState(eventMock);
-    expect(section.$headerLink.classList.contains('article-section__header_link--closed')).to.be.false;
+    expect(section.$headerLink.classList.contains('article-section__toggle--closed')).to.be.false;
     expect(section.$body.classList.contains('visuallyhidden')).to.be.false;
   });
 

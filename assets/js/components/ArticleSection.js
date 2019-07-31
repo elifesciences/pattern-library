@@ -31,7 +31,7 @@ module.exports = class ArticleSection {
     let $header = $elm.querySelector('.article-section__header');
     let $link = doc.createElement('A');
     $link.setAttribute('href', '#');
-    $link.classList.add('article-section__header_link');
+    $link.classList.add('article-section__toggle');
     $link.appendChild($header.firstElementChild);
     $header.appendChild($link);
     $link.addEventListener('click', this.toggleState.bind(this));
@@ -60,11 +60,11 @@ module.exports = class ArticleSection {
 
     if ($elm.dataset.initialState === 'closed') {
       $elm.classList.add('article-section--collapsed');
-      $headerLink.classList.add('article-section__header_link--closed');
+      $headerLink.classList.add('article-section__toggle--closed');
       $body.classList.add('visuallyhidden');
     } else {
       // Defensive: remove classes if they turn up here when they shouldn't
-      $headerLink.classList.remove('article-section__header_link--closed');
+      $headerLink.classList.remove('article-section__toggle--closed');
       $body.classList.remove('visuallyhidden');
     }
 
@@ -76,7 +76,7 @@ module.exports = class ArticleSection {
 
   toggleState(e) {
     e.preventDefault();
-    if (this.$headerLink.classList.contains('article-section__header_link--closed')) {
+    if (this.$headerLink.classList.contains('article-section__toggle--closed')) {
       this.$elm.dispatchEvent(utils.eventCreator('expandsection'));
     } else {
       this.$elm.dispatchEvent(utils.eventCreator('collapsesection'));
@@ -84,13 +84,13 @@ module.exports = class ArticleSection {
   }
 
   collapse() {
-    this.$headerLink.classList.add('article-section__header_link--closed');
+    this.$headerLink.classList.add('article-section__toggle--closed');
     this.$elm.classList.add('article-section--collapsed');
     this.$body.classList.add('visuallyhidden');
   }
 
   expand(e) {
-    this.$headerLink.classList.remove('article-section__header_link--closed');
+    this.$headerLink.classList.remove('article-section__toggle--closed');
     this.$elm.classList.remove('article-section--collapsed');
     this.$body.classList.remove('visuallyhidden');
     if (!!this.window.MathJax && !!this.window.MathJax.Hub) {
