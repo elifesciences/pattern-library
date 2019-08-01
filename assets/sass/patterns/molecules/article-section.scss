@@ -27,7 +27,7 @@ $arrow-size: 5;
 }
 
 .article-section__header_link {
-  display: block;
+  display: inline-block;
   font-family: $font-secondary;
   @include font-size-and-vertical-height(14, $blg-space-small-in-px);
   @include padding($blg-space-extra-small-in-px, "bottom");
