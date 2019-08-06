@@ -26,6 +26,13 @@ $arrow-size: 5;
   @include nospace("bottom");
 }
 
+.article-section__header_link {
+  display: inline-block;
+  font-family: $font-secondary;
+  @include font-size-and-vertical-height(14, $blg-space-small-in-px);
+  @include padding($blg-space-extra-small-in-px, "bottom");
+}
+
 .article-section--first {
   border: none;
   padding-top: 0;
@@ -46,7 +53,7 @@ $arrow-size: 5;
 }
 
 // Introduced by ArticleSection.js
-.article-section__header_link {
+.article-section__toggle {
   text-decoration: none;
 
   @supports (display: flex) {
@@ -64,7 +71,7 @@ $arrow-size: 5;
   text-decoration: none;
 }
 
-.article-section__header_link:after {
+.article-section__toggle:after {
   display: block;
   @include arrow("down", $arrow-size);
   @include height($arrow-size);
@@ -79,7 +86,7 @@ $arrow-size: 5;
   }
 }
 
-.article-section__header_link--closed:after {
+.article-section__toggle--closed:after {
   transform: rotate(-90deg);
   @include margin(0 1 0 0);
   top: 0;
