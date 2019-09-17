@@ -23,6 +23,14 @@ describe('A ViewSelector Component', function () {
     expect(viewSelector.cssFixedClassName).to.equal('view-selector--fixed');
   });
 
+  describe('the contextual-data class', function () {
+    it('is showing in the browser window', function () {
+      let contextualData = contextualData.$elm.classList;
+      contextualData.handlePositioning();
+      expect(contextualData.contains('contextual-data')).to.be.false;
+    });
+  });
+
   describe('the "view-selector--fixed" class', function () {
 
     it('is added when sufficient scrolling has occurred', function () {
