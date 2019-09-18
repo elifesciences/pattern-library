@@ -23,17 +23,9 @@ describe('A ViewSelector Component', function () {
     expect(viewSelector.cssFixedClassName).to.equal('view-selector--fixed');
   });
 
-  describe('the contextual-data class', function () {
-    it('is showing in the browser window', function () {
-      let contextualData = contextualData.$elm.classList;
-      contextualData.handlePositioning();
-      expect(contextualData.contains('contextual-data')).to.be.false;
-    });
-  });
-
   describe('the "view-selector--fixed" class', function () {
 
-    it('is added when sufficient scrolling has occurred', function () {
+    it('is added and contextual-data class is showing in the browser', function () {
       // Fake sufficient scrolling
       let windowMock = {
         addEventListener: function () {
@@ -43,24 +35,23 @@ describe('A ViewSelector Component', function () {
             matches: true
           }
         },
-        pageYOffset: 20
+        IntersectionObserver: function () {
+          return {
+            observe: function () {
+
+            }
+          }
+        }
       };
       let _viewSelector1 = new ViewSelector($elm, windowMock);
-      _viewSelector1.elmYOffset = 20;
-      _viewSelector1.handleScrolling();
+      _viewSelector1.$elm.classList.add('contextual-data');
+      _viewSelector1.handleVerticalPositioning();
 
       let classes1 = _viewSelector1.$elm.classList;
-      expect(classes1.contains('view-selector--fixed')).to.be.true;
-
-      let _viewSelector2 = new ViewSelector($elm, windowMock);
-      _viewSelector2.elmYOffset = 20;
-      _viewSelector2.handleScrolling();
-
-      let classes2 = _viewSelector2.$elm.classList;
-      expect(classes2.contains('view-selector--fixed')).to.be.true;
+      expect(classes1.contains('contextual-data')).to.be.true;
     });
 
-    it('is removed when scrolling is insufficient', function () {
+    it('is added and contextual-data class not showing in the browser', function () {
       // Fake sufficient scrolling
       let windowMock = {
         addEventListener: function () {
@@ -70,49 +61,21 @@ describe('A ViewSelector Component', function () {
             matches: true
           }
         },
-        pageYOffset: 10
-      };
-      let _viewSelector = new ViewSelector($elm, windowMock);
-      _viewSelector.elmYOffset = 20;
-      _viewSelector.handleScrolling();
+        IntersectionObserver: function () {
+          return {
+            observe: function () {
 
-      let classes = _viewSelector.$elm.classList;
-      expect(classes.contains('view-selector--fixed')).to.be.false;
+            }
+          }
+        }
+      };
+      let _viewSelector1 = new ViewSelector($elm, windowMock);
+      _viewSelector1.handleVerticalPositioning();
+
+      let classes1 = _viewSelector1.$elm.classList;
+      expect(classes1.contains('contextual-data')).to.be.true;
 
     });
-
-    it('is removed when scrolling would cause view selector to overlay following layout elements',
-       function () {
-         // This must be smaller than $elm.offsetHeight of the object under test
-         let fakeBottomOfMainEl = 20;
-         let windowMock = {
-           addEventListener: function () {
-           },
-           matchMedia: function() {
-             return {
-               matches: true
-             }
-           },
-           pageYOffset: 30
-         };
-
-         let _viewSelector = new ViewSelector($elm, windowMock, document);
-         _viewSelector.mainTarget = {
-           getBoundingClientRect: function () {
-             return {
-               bottom: fakeBottomOfMainEl
-             };
-           }
-         };
-         _viewSelector.elmYOffset = 20;
-         // Prerequisite for the test to be valid
-         expect(fakeBottomOfMainEl).to.be.below(_viewSelector.$elm.offsetHeight);
-
-         _viewSelector.$elm.classList.add('view-selector--fixed');
-         _viewSelector.handleScrolling();
-         expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.true;
-         expect(_viewSelector.$elm.style.top.indexOf('px')).to.be.above(-1);
-       });
 
   });
 
