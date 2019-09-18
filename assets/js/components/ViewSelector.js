@@ -43,6 +43,7 @@ module.exports = class ViewSelector {
 
     this.collapsibleSectionHeadings = ViewSelector.getAllCollapsibleSectionHeadings(this.doc);
     this.isScrollingHandled = false;
+    this.handleVerticalPositioning();
 
     const scrollingHandler = utils.throttle(() => {
       this.handleScrolling();
@@ -97,8 +98,6 @@ module.exports = class ViewSelector {
     if (this.$jumpLinksList) {
       this.handleHighlighting(utils.closest);
     }
-
-    this.handlePositioning();
   }
 
   handleHighlighting(findClosest) {
@@ -174,38 +173,27 @@ module.exports = class ViewSelector {
     return $found;
   }
 
-  handlePositioning() {
-    // If it's position is fixed
-    if (this.$elm.classList.contains(this.cssFixedClassName)) {
+  handleVerticalPositioning() {
 
-      // Allow it to scroll again if it could keep its position & not scroll off top of screen
-      if (this.window.pageYOffset < this.elmYOffset) {
-        this.$elm.classList.remove(this.cssFixedClassName);
-        return;
+    const handler = (entries) => {
+      for (var entry of entries) {
+        var contextualData = document.querySelector('.contextual-data');
+        var bounding = contextualData.getBoundingClientRect();
+        if (bounding.top < 0) {
+          if (entry.isIntersecting) {
+            console.log('Intersecting');
+            this.doc.querySelector('.view-selector').classList.remove(this.cssFixedClassName);
+          } else {
+            console.log('Non-Intersecting');
+            this.doc.querySelector('.view-selector').classList.add(this.cssFixedClassName);
+          }
+        }
       }
+    };
 
-      // Allow it to scroll again if it would otherwise over-/under-lay following element
-      let bottomOfMain = this.mainTarget.getBoundingClientRect().bottom;
-      if (bottomOfMain < this.$elm.offsetHeight) {
-        let amountToNudgeUp = bottomOfMain - this.$elm.offsetHeight;
-        this.$elm.style.top = amountToNudgeUp + 'px';
-        return;
-      }
+    const observer =  new this.window.IntersectionObserver(handler);
+    observer.observe(document.querySelector('.contextual-data'));
 
-      // Ensure top of component is not off top of screen once bottom of main is off screen bottom
-      // Safety net: required because a fast scroll may prevent all code running as desired.
-      if (bottomOfMain >= this.window.innerHeight) {
-        this.$elm.style.top = '0px';
-      }
-
-      return;
-    }
-
-    // Otherwise fix its position if it would otherwise scroll off the top of the screen
-    if (this.window.pageYOffset >= this.elmYOffset) {
-      this.$elm.classList.add(this.cssFixedClassName);
-      this.$elm.style.top = '0px';
-    }
   }
 
   toggleJumpLinks() {
