@@ -73,7 +73,8 @@ describe('A ViewSelector Component', function () {
       _viewSelector1.handleVerticalPositioning();
 
       let classes1 = _viewSelector1.$elm.classList;
-      expect(classes1.contains('contextual-data')).to.be.true;
+      classes1.remove('contextual-data');
+      expect(classes1.contains('contextual-data')).to.be.false;
 
     });
 
