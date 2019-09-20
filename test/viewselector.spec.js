@@ -36,7 +36,23 @@ describe('A ViewSelector Component', function () {
   });
 
   it('uses the "view-selector--fixed" css class', function () {
-    let viewSelector = new ViewSelector($elm);
+    $windowMock = {
+      addEventListener: function () {
+      },
+      matchMedia: function() {
+        return {
+          matches: true
+        }
+      },
+      IntersectionObserver: function () {
+        return {
+          observe: function () {
+
+          }
+        }
+      }
+    };
+    let viewSelector = new ViewSelector($elm, $windowMock);
     expect(viewSelector.cssFixedClassName).to.equal('view-selector--fixed');
   });
 
