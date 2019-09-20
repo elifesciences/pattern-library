@@ -387,28 +387,29 @@ describe('A ViewSelector Component', function () {
   describe('its side-by-side link', function () {
 
     let viewSelector;
+    let windowMock;
 
     beforeEach(() => {
-      window.CSS = {
-        supports: () => true
-      };
-      viewSelector = new ViewSelector($elm);
-      let windowMock = {
-      addEventListener: function () {
-      },
-      matchMedia: function() {
-        return {
-          matches: true
-        }
-      },
-      IntersectionObserver: function () {
-        return {
-          observe: function () {
+      windowMock = {
+        CSS: {
+          supports: () => true
+        },
+        addEventListener: function () {
+        },
+        matchMedia: function() {
+          return {
+            matches: true
+          }
+        },
+        IntersectionObserver: function () {
+          return {
+            observe: function () {
 
+            }
           }
         }
-      }
-    };
+      };
+      viewSelector = new ViewSelector($elm, windowMock);
     });
 
     context('when the browser can display the side by side view', () => {
