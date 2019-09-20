@@ -7,7 +7,6 @@ let ViewSelector = require('../assets/js/components/ViewSelector');
 describe('A ViewSelector Component', function () {
   'use strict';
   let $elm;
-  let $windowMock;
 
   beforeEach(function () {
     $elm = document.querySelector('[data-behaviour="ViewSelector"]');
@@ -20,24 +19,14 @@ describe('A ViewSelector Component', function () {
   });
 
   it('uses the "view-selector--fixed" css class', function () {
-    let windowMock = {
-      addEventListener: function () {
-      },
-      matchMedia: function() {
-        return {
-          matches: true
-        }
-      },
-      IntersectionObserver: function () {
-        return {
-          observe: function () {
-
-          }
-        }
-      }
-    };
-    let viewSelector = new ViewSelector($elm, windowMock);
+    let viewSelector = new ViewSelector($elm);
     expect(viewSelector.cssFixedClassName).to.equal('view-selector--fixed');
+  });
+
+  it('has a toggleable list of jump links', function () {
+    let viewSelector = new ViewSelector($elm);
+    expect(viewSelector.$jumpLinksList instanceof HTMLElement).to.be.true;
+    expect(viewSelector.toggleJumpLinks).to.be.a('function');
   });
 
   describe('the "view-selector--fixed" class', function () {
@@ -50,14 +39,14 @@ describe('A ViewSelector Component', function () {
       matchMedia: function() {
         return {
           matches: true
-        }
+        };
       },
       IntersectionObserver: function () {
         return {
           observe: function () {
 
           }
-        }
+        };
       }
     };
       let _viewSelector1 = new ViewSelector($elm, windowMock);
@@ -76,14 +65,14 @@ describe('A ViewSelector Component', function () {
       matchMedia: function() {
         return {
           matches: true
-        }
+        };
       },
       IntersectionObserver: function () {
         return {
           observe: function () {
 
           }
-        }
+        };
       }
     };
       let _viewSelector1 = new ViewSelector($elm, windowMock);
@@ -95,28 +84,6 @@ describe('A ViewSelector Component', function () {
 
     });
 
-  });
-
-  it('has a toggleable list of jump links', function () {
-    let windowMock = {
-      addEventListener: function () {
-      },
-      matchMedia: function() {
-        return {
-          matches: true
-        }
-      },
-      IntersectionObserver: function () {
-        return {
-          observe: function () {
-
-          }
-        }
-      }
-    };
-    let viewSelector = new ViewSelector($elm, windowMock);
-    expect(viewSelector.$jumpLinksList instanceof HTMLElement).to.be.true;
-    expect(viewSelector.toggleJumpLinks).to.be.a('function');
   });
 
   describe("its toggleable list of jump links", function () {
