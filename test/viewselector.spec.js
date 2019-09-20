@@ -122,9 +122,24 @@ describe('A ViewSelector Component', function () {
   describe("its toggleable list of jump links", function () {
 
     let viewSelector;
+    let windowMock = {
+      addEventListener: function () {
+      },
+      matchMedia: function() {
+        return {
+          matches: true
+        }
+      },
+      IntersectionObserver: function () {
+        return {
+          observe: function () {
 
+          }
+        }
+      }
+    };
     beforeEach(function () {
-      viewSelector = new ViewSelector($elm);
+      viewSelector = new ViewSelector($elm, windowMock);
     });
 
     it('expands when toggled open', function () {
