@@ -393,6 +393,22 @@ describe('A ViewSelector Component', function () {
         supports: () => true
       };
       viewSelector = new ViewSelector($elm);
+      let windowMock = {
+      addEventListener: function () {
+      },
+      matchMedia: function() {
+        return {
+          matches: true
+        }
+      },
+      IntersectionObserver: function () {
+        return {
+          observe: function () {
+
+          }
+        }
+      }
+    };
     });
 
     context('when the browser can display the side by side view', () => {
