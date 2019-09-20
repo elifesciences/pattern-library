@@ -165,11 +165,27 @@ describe('A ViewSelector Component', function () {
       let docFake;
       let winFake;
       let viewSelector;
+      let windowMock = {
+      addEventListener: function () {
+      },
+      matchMedia: function() {
+        return {
+          matches: true
+        }
+      },
+      IntersectionObserver: function () {
+        return {
+          observe: function () {
+
+          }
+        }
+      }
+    };
 
       beforeEach(() => {
         docFake = buildFakeDocument(700, 700);
         winFake = buildFakeWindow(700, 700);
-        viewSelector = new ViewSelector($elm);
+        viewSelector = new ViewSelector($elm, windowMock);
       });
 
       const buildFakeElement = function (top, left, innerHTML) {
