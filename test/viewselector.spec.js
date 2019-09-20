@@ -7,9 +7,26 @@ let ViewSelector = require('../assets/js/components/ViewSelector');
 describe('A ViewSelector Component', function () {
   'use strict';
   let $elm;
+  let $windowMock;
 
   beforeEach(function () {
     $elm = document.querySelector('[data-behaviour="ViewSelector"]');
+    $windowMock = {
+      addEventListener: function () {
+      },
+      matchMedia: function() {
+        return {
+          matches: true
+        }
+      },
+      IntersectionObserver: function () {
+        return {
+          observe: function () {
+
+          }
+        }
+      }
+    };
   });
 
   afterEach(function () {
@@ -27,23 +44,7 @@ describe('A ViewSelector Component', function () {
 
     it('is added and contextual-data class is showing in the browser', function () {
       // Fake sufficient scrolling
-      let windowMock = {
-        addEventListener: function () {
-        },
-        matchMedia: function() {
-          return {
-            matches: true
-          }
-        },
-        IntersectionObserver: function () {
-          return {
-            observe: function () {
-
-            }
-          }
-        }
-      };
-      let _viewSelector1 = new ViewSelector($elm, windowMock);
+      let _viewSelector1 = new ViewSelector($elm, $windowMock);
       _viewSelector1.$elm.classList.add('contextual-data');
       _viewSelector1.handleVerticalPositioning();
 
@@ -53,23 +54,7 @@ describe('A ViewSelector Component', function () {
 
     it('is added and contextual-data class not showing in the browser', function () {
       // Fake sufficient scrolling
-      let windowMock = {
-        addEventListener: function () {
-        },
-        matchMedia: function() {
-          return {
-            matches: true
-          }
-        },
-        IntersectionObserver: function () {
-          return {
-            observe: function () {
-
-            }
-          }
-        }
-      };
-      let _viewSelector1 = new ViewSelector($elm, windowMock);
+      let _viewSelector1 = new ViewSelector($elm, $windowMock);
       _viewSelector1.handleVerticalPositioning();
 
       let classes1 = _viewSelector1.$elm.classList;
@@ -100,7 +85,7 @@ describe('A ViewSelector Component', function () {
       viewSelector.toggleJumpLinks();
       expect(viewSelector.$jumpLinksList.classList.contains('visuallyhidden')).to.be.false;
       expect(viewSelector.$jumpLinksToggle.classList
-                         .contains('view-selector__jump_links_header--closed')).to.be.false;
+      .contains('view-selector__jump_links_header--closed')).to.be.false;
     });
 
     it('collapses when toggled closed', function () {
