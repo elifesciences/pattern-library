@@ -30,51 +30,51 @@ describe('A ViewSelector Component', function () {
   });
 
   describe('the "view-selector--fixed" class', function () {
+    let windowMock;
 
-    it('is added and contextual-data class is showing in the browser', function () {
-      // Fake sufficient scrolling
-      let windowMock = {
-      addEventListener: function () {
-      },
-      matchMedia: function() {
-        return {
-          matches: true
-        };
-      },
-      IntersectionObserver: function () {
-        return {
-          observe: function () {
+    beforeEach(() => {
+      windowMock = {
+        addEventListener: function () {
+        },
+        matchMedia: function() {
+          return {
+            matches: true
+          };
+        },
+        IntersectionObserver: function () {
+          return {
+            observe: function () {
 
-          }
-        };
-      }
-    };
-      let _viewSelector1 = new ViewSelector($elm, windowMock);
-      _viewSelector1.$elm.classList.add('contextual-data');
-      _viewSelector1.handleVerticalPositioning();
+            }
+          };
+        }
+      };
+    });
 
-      let classes1 = _viewSelector1.$elm.classList;
+    it('is added when contextual data pattern is off the top of the viewport', function () {
+      // create the component with the window mock
+      const viewSelector = new ViewSelector($elm, windowMock);
+
+      // set initial state for contextual data: on screen
+      // TODO: fixture?
+
+      // test for absence of view-selector--fixed
+      expect(viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.false;
+
+      // scroll so contextual data is off the top of the screen
+      // EXERCISE THE OBJECT UNDER TEST
+
+      // test for presence of view-selector--fixed
+      expect(viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.true;
+
+      viewSelector.$elm.classList.add('contextual-data');
+      viewSelector.handleVerticalPositioning();
+
+      let classes1 = viewSelector.$elm.classList;
       expect(classes1.contains('contextual-data')).to.be.true;
     });
 
     it('is added and contextual-data class not showing in the browser', function () {
-      // Fake sufficient scrolling
-      let windowMock = {
-      addEventListener: function () {
-      },
-      matchMedia: function() {
-        return {
-          matches: true
-        };
-      },
-      IntersectionObserver: function () {
-        return {
-          observe: function () {
-
-          }
-        };
-      }
-    };
       let _viewSelector1 = new ViewSelector($elm, windowMock);
       _viewSelector1.handleVerticalPositioning();
 

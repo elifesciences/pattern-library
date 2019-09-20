@@ -176,9 +176,9 @@ module.exports = class ViewSelector {
   handleVerticalPositioning() {
 
     const handler = (entries) => {
-      for (var entry of entries) {
-        var contextualData = document.querySelector('.contextual-data');
-        var bounding = contextualData.getBoundingClientRect();
+      for (let entry of entries) {
+        const contextualData = document.querySelector('.contextual-data');
+        const bounding = contextualData.getBoundingClientRect();
         if (bounding.top < 0) {
           if (entry.isIntersecting) {
             console.log('Intersecting');
