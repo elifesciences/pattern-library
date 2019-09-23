@@ -19,6 +19,8 @@ module.exports = class ViewSelector {
     this.$jumpLinksToggle = this.$elm.querySelector('.view-selector__jump_links_header');
     this.cssFixedClassName = 'view-selector--fixed';
 
+    this.$contextualData = this.window.document.querySelector('.contextual-data');
+
     if (this.sideBySideViewAvailable()) {
       const $header = this.doc.getElementById('siteHeader');
       this.$global = this.doc.querySelector('.global-inner');
@@ -177,8 +179,7 @@ module.exports = class ViewSelector {
 
     const handler = (entries) => {
       for (let entry of entries) {
-        const contextualData = document.querySelector('.contextual-data');
-        const bounding = contextualData.getBoundingClientRect();
+        const bounding = this.$contextualData.getBoundingClientRect();
         if (bounding.top < 0) {
           if (entry.isIntersecting) {
             console.log('Intersecting');
@@ -192,7 +193,7 @@ module.exports = class ViewSelector {
     };
 
     const observer =  new this.window.IntersectionObserver(handler);
-    observer.observe(document.querySelector('.contextual-data'));
+    observer.observe(this.$contextualData);
 
   }
 

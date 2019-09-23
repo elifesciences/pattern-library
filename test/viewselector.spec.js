@@ -44,9 +44,16 @@ describe('A ViewSelector Component', function () {
         IntersectionObserver: function () {
           return {
             observe: function () {
-
+              //
             }
           };
+        },
+        document: {
+          querySelector: function (selector) {
+            return {
+              classList: [selector],
+            };
+          }
         }
       };
     });
@@ -65,13 +72,26 @@ describe('A ViewSelector Component', function () {
       // EXERCISE THE OBJECT UNDER TEST
 
       // test for presence of view-selector--fixed
-      expect(viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.true;
+      expect(viewSelector.$elm.classList.contains('view-selector--fixed')).tobe.true;
 
-      viewSelector.$elm.classList.add('contextual-data');
-      viewSelector.handleVerticalPositioning();
+    });
 
-      let classes1 = viewSelector.$elm.classList;
-      expect(classes1.contains('contextual-data')).to.be.true;
+    xit('is not added when contextual data pattern is off the bottom of the viewport', function () {
+      // create the component with the window mock
+      const viewSelector = new ViewSelector($elm, windowMock);
+
+      // set initial state for contextual data: on screen
+      // TODO: fixture?
+
+      // test for absence of view-selector--fixed
+      expect(viewSelector.$elm.classList.contains('view-selector--fixed'))to.be.false;
+
+      // scroll so contextual data is off the bottom of the screen
+      // EXERCISE THE OBJECT UNDER TEST
+
+      // test for presence of view-selector--fixed
+      expect(viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.false;
+
     });
 
     it('is added and contextual-data class not showing in the browser', function () {
