@@ -26,7 +26,7 @@ $gutter: 10;
 .button-collection__item {
   float: left;
   list-style: none;
-  @include blg-spacing("top", "small", "margin");
+  @include blg-spacing("top", "extra-small", "margin");
   @include margin($gutter, "right");
 
   .button-collection--compact & {
