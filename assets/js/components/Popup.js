@@ -287,6 +287,7 @@ module.exports = class Popup {
     this.popupHitBox.style.left = `${left}px`;
     this.popupHitBox.style.top = `${top}px`;
     this.setAttributesForOpenPopupHitBox(e);
+    this.stopPropagation();
   }
 
   static setLinksClasses($root) {
