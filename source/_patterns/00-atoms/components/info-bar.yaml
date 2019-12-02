@@ -13,6 +13,7 @@ properties:
       - correction
       - success
       - warning
+      - clear
 required:
   - text
   - type

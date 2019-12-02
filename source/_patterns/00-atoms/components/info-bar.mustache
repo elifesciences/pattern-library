@@ -1,3 +1,13 @@
 <div class="info-bar info-bar--{{type}}">
-  <span class="info-bar__text">{{{text}}}</span>
+
+  {{#clear}}
+    <div class="info-bar__container">
+  {{/clear}}
+      <span class="info-bar__text">{{{text}}}</span>
+
+  {{#clear}}
+      <a href="" class="info-bar__clear__btn">Close</a>
+    </div>
+  {{/clear}}
+
 </div>
