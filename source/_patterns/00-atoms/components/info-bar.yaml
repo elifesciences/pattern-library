@@ -14,7 +14,7 @@ properties:
       - success
       - warning
       - clear
-  isClear: false
+    isClear: false
 required:
   - text
   - type
