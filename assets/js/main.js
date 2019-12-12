@@ -19,6 +19,7 @@ Components.Carousel = require('./components/Carousel');
 Components.ContentHeader = require('./components/ContentHeader');
 Components.CookieOverlay = require('./components/CookieOverlay');
 Components.DelegateBehaviour = require('./components/DelegateBehaviour');
+Components.DismissButton = require('./components/DismissButton');
 Components.FilterPanel = require('./components/FilterPanel');
 Components.FragmentHandler = require('./components/FragmentHandler');
 Components.Highlights = require('./components/Highlights');
