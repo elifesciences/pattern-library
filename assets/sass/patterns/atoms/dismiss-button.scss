@@ -1,0 +1,41 @@
+@import "../../definitions";
+
+.dismiss-button {
+
+  .call-to-action & {
+    @supports (display: grid) {
+      background: url("../img/icons/close.svg") center right / 12px 12px no-repeat, linear-gradient(transparent, transparent) transparent;
+      cursor: pointer;
+      border-width: 0;
+      padding: 0;
+      margin: 0;
+      display: block;
+      grid-column: 3 / -1;
+      grid-row: 1;
+      justify-self: end;
+      align-self: start;
+      width: 12px;
+      height: 12px;
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+        grid-column: 4;
+        justify-self: unset;
+        box-sizing: content-box;
+        padding-left: 16px;
+      }
+    }
+  }
+
+  .info-bar & {
+    background: url("../img/icons/clear.svg") top right no-repeat;
+    cursor: pointer;
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-color: red;
+  }
+
+}
