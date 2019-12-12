@@ -9,10 +9,10 @@ module.exports = class DismissButton {
     this.doc = doc;
 
     this.cookieName = DismissButton.deriveCookieName(this.$elm);
-    // if (!this.cookieName.length || this.hasAlreadyBeenSeen(this.cookieName)) {
-    //   this.hide();
-    //   return;
-    // }
+    if (!this.cookieName.length || this.hasPreviouslyBeenDismissed(this.cookieName)) {
+      this.hide();
+      return;
+    }
   }
 
   static deriveCookieName($elm) {
@@ -22,6 +22,10 @@ module.exports = class DismissButton {
     }
 
     return '';
+  }
+
+  hasPreviouslyBeenDismissed(cookieName) {
+    return utils.getCookieValue(cookieName, this.doc.cookie) === 'true';
   }
 
   buildButton() {
