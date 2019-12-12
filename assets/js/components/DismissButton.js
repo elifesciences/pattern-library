@@ -15,7 +15,8 @@ module.exports = class DismissButton {
     }
 
     // Will need to change buildDismissButton as more than one button to call
-    this.$button = DismissButton.buildButton();
+    this.$button = this.buildButton();
+    this.$button.addEventListener('click', this.handleInteraction.bind(this));
   }
 
   static deriveCookieName($elm) {
@@ -31,19 +32,14 @@ module.exports = class DismissButton {
     return utils.getCookieValue(cookieName, this.doc.cookie) === 'true';
   }
 
-  static buildButton() {
-    const $buttonRoot = utils.buildElement(
+  buildButton() {
+    const $button = utils.buildElement(
       'button',
-      ['call-to-action__dismiss'],
+      ['dismiss-button'],
       '',
-      '.call-to-action',
-      '.call-to-action__button_wrapper');
-    utils.buildElement(
-      'span',
-      ['visuallyhidden'],
-      'Dismiss this call to action',
-      $buttonRoot);
-    return $buttonRoot;
+      this.$elm);
+    $button.setAttribute('aria-label', 'Dismiss this');
+    return $button;
   }
 
   setCookie() {
@@ -52,6 +48,11 @@ module.exports = class DismissButton {
 
   dismiss() {
 
+  }
+
+  handleInteraction() {
+    this.dismiss();
+    this.setCookie();
   }
 
 };
