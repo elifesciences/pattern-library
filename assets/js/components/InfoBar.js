@@ -7,8 +7,8 @@ module.exports = class InfoBar {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+    const cookieExpiry = 'Tue, 19 January 2038 03:14:07 UTC';
 
-    new DismissAndRemember('.info-bar__container', $elm, this.doc.cookie);
-
+    new DismissAndRemember('.info-bar__container', this.$elm, this.doc.cookie, cookieExpiry);
   }
 };
