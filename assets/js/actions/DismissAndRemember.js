@@ -2,10 +2,10 @@
 
 const utils = require('../libs/elife-utils')();
 
-module.exports = class DismissButton {
+module.exports = class DismissAndRemember {
   constructor($parent, $patternRoot, cookies) {
 
-    this.cookieName = DismissButton.deriveCookieName($patternRoot);
+    this.cookieName = DismissAndRemember.deriveCookieName($patternRoot);
     if (!this.cookieName.length || this.hasPreviouslyBeenDismissed(this.cookieName, cookies)) {
       //this.hide();
       return;
