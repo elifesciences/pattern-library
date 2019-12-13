@@ -3,19 +3,15 @@
 const utils = require('../libs/elife-utils')();
 
 module.exports = class DismissButton {
-  constructor($elm, _window = window, doc = document) {
-    this.$elm = $elm;
-    this.window = _window;
-    this.doc = doc;
+  constructor($parent, $patternRoot, cookies) {
 
-    this.cookieName = DismissButton.deriveCookieName(this.$elm);
-    if (!this.cookieName.length || this.hasPreviouslyBeenDismissed(this.cookieName)) {
-      this.hide();
+    this.cookieName = DismissButton.deriveCookieName($patternRoot);
+    if (!this.cookieName.length || this.hasPreviouslyBeenDismissed(this.cookieName, cookies)) {
+      //this.hide();
       return;
     }
 
-    // Will need to change buildDismissButton as more than one button to call
-    this.$button = this.buildButton();
+    this.$button = this.buildButton($parent);
     this.$button.addEventListener('click', this.handleInteraction.bind(this));
   }
 
@@ -28,16 +24,16 @@ module.exports = class DismissButton {
     return '';
   }
 
-  hasPreviouslyBeenDismissed(cookieName) {
-    return utils.getCookieValue(cookieName, this.doc.cookie) === 'true';
+  hasPreviouslyBeenDismissed(cookieName, cookies) {
+    return utils.getCookieValue(cookieName, cookies) === 'true';
   }
 
-  buildButton() {
+  buildButton($parent) {
     const $button = utils.buildElement(
       'button',
       ['dismiss-button'],
       '',
-      this.$elm);
+      $parent);
     $button.setAttribute('aria-label', 'Dismiss this');
     return $button;
   }
