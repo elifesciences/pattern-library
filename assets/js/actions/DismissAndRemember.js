@@ -13,7 +13,6 @@ module.exports = class DismissAndRemember {
 
     this.cookieExpiry = cookieExpiry;
     this.$button = this.buildButton($parent);
-    this.$button.addEventListener('click', this.handleInteraction.bind(this));
   }
 
   static deriveCookieName($elm) {
@@ -36,6 +35,7 @@ module.exports = class DismissAndRemember {
       '',
       $parent);
     $button.setAttribute('aria-label', 'Dismiss this');
+    $button.addEventListener('click', this.handleInteraction.bind(this));
     return $button;
   }
 
