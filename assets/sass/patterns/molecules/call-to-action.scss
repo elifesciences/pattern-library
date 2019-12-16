@@ -18,14 +18,14 @@
   }
 
   // If js is available, and the element should be shown with js, turn it on
-  .js &.call-to-action-wrapper--js-shown {
+  .js &.call-to-action-wrapper--js-shown:not(.hidden) {
     display: block;
   }
 
   @supports (display: flex) {
     display: flex;
 
-    .js &.call-to-action-wrapper--js-shown {
+    .js &.call-to-action-wrapper--js-shown:not(.hidden) {
       display: flex;
     }
 
