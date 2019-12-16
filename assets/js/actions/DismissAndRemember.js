@@ -40,7 +40,7 @@ module.exports = class DismissAndRemember {
   }
 
   setCookie(name) {
-    this.cookieString = `${name}=true; expires=${this.expiryDate}; path=/;`;
+    this.cookieString = `${name}=true; expires=${this.cookieExpiry}; path=/;`;
     this.doc.cookie = this.cookieString;
   }
 
