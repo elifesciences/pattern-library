@@ -16,7 +16,7 @@ module.exports = class CallToAction {
 
   dismiss() {
     this.hide();
-    this.dismiss.setCookie(this.cookieName);
+    this.dismiss.setCookie();
   }
 
   hide() {
