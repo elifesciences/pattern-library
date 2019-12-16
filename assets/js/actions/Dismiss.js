@@ -3,9 +3,10 @@
 const utils = require('../libs/elife-utils')();
 
 module.exports = class Dismiss {
-  constructor($parent, $patternRoot, document, cookieExpiry) {
+  constructor($parent, $toDismiss, document, cookieExpiry) {
+    this.$toDismiss = $toDismiss;
     this.doc = document;
-    this.cookieName = Dismiss.deriveCookieName($patternRoot);
+    this.cookieName = Dismiss.deriveCookieName(this.$toDismiss);
     if (this.hasPreviouslyBeenDismissed(this.cookieName, this.doc.cookie)) {
       // TODO: hide $patternRoot (incl hide from AT)
       return;
