@@ -6,8 +6,8 @@ module.exports = class DismissAndRemember {
   constructor($parent, $patternRoot, cookies, cookieExpiry) {
 
     this.cookieName = DismissAndRemember.deriveCookieName($patternRoot);
-    if (!this.cookieName.length || this.hasPreviouslyBeenDismissed(this.cookieName, cookies)) {
-      //this.hide();
+    if (this.hasPreviouslyBeenDismissed(this.cookieName, cookies)) {
+      // TODO: hide $patternRoot (incl hide from AT)
       return;
     }
 
@@ -25,7 +25,7 @@ module.exports = class DismissAndRemember {
   }
 
   hasPreviouslyBeenDismissed(cookieName, cookies) {
-    return utils.getCookieValue(cookieName, cookies) === 'true';
+    return cookieName && cookieName.length && utils.getCookieValue(cookieName, cookies) === 'true';
   }
 
   buildButton($parent) {
