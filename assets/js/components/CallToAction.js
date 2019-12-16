@@ -8,9 +8,9 @@ module.exports = class CallToAction {
     this.window = _window;
     this.doc = doc;
 
-    const cookieExpiry = 'Tue, 19 January 2038 03:14:07 UTC';
-    this.dismiss = new Dismiss('.call-to-action', this.$elm, this.doc, cookieExpiry);
-    this.$elm.addEventListener('click', () => this.dismiss.setCookie(this.cookieName));
+    const dismissUntil = 'Tue, 19 January 2038 03:14:07 UTC';
+    this.dismiss = new Dismiss(this.$elm, dismissUntil, '.call-to-action', this.doc);
+    this.$elm.addEventListener('click', () => this.dismiss.setCookie());
     this.show();
   }
 

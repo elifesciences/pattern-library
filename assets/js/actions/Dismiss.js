@@ -3,7 +3,7 @@
 const utils = require('../libs/elife-utils')();
 
 module.exports = class Dismiss {
-  constructor($parent, $toDismiss, document, cookieExpiry) {
+  constructor($toDismiss, dismissUntil, attachPoint, document) {
     this.$toDismiss = $toDismiss;
     this.doc = document;
     this.cookieName = Dismiss.deriveCookieName(this.$toDismiss);
@@ -12,8 +12,8 @@ module.exports = class Dismiss {
       return;
     }
 
-    this.cookieExpiry = cookieExpiry;
-    this.$button = this.buildButton($parent);
+    this.cookieExpiryDate = dismissUntil;
+    this.$button = this.buildButton(attachPoint);
   }
 
   static deriveCookieName($elm) {
@@ -42,7 +42,7 @@ module.exports = class Dismiss {
 
   setCookie() {
     if (this.cookieName && this.cookieName.length) {
-      this.doc.cookie = `${this.cookieName}=true; expires=${this.cookieExpiry}; path=/;`;
+      this.doc.cookie = `${this.cookieName}=true; expires=${this.cookieExpiryDate}; path=/;`;
     }
   }
 

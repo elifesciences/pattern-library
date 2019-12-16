@@ -9,6 +9,6 @@ module.exports = class InfoBar {
     this.doc = doc;
     const cookieExpiry = 'Tue, 19 January 2038 03:14:07 UTC';
 
-    new Dismiss('.info-bar__container', this.$elm, this.doc, cookieExpiry);
+    new Dismiss(this.$elm, cookieExpiry, '.info-bar__container', this.doc);
   }
 };
