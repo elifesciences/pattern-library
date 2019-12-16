@@ -1,6 +1,6 @@
 'use strict';
 
-const DismissAndRemember = require('../actions/DismissAndRemember');
+const Dismiss = require('../actions/Dismiss');
 
 module.exports = class InfoBar {
   constructor($elm, _window = window, doc = document) {
@@ -9,6 +9,6 @@ module.exports = class InfoBar {
     this.doc = doc;
     const cookieExpiry = 'Tue, 19 January 2038 03:14:07 UTC';
 
-    new DismissAndRemember('.info-bar__container', this.$elm, this.doc.cookie, cookieExpiry);
+    new Dismiss('.info-bar__container', this.$elm, this.doc, cookieExpiry);
   }
 };

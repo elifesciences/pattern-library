@@ -1,6 +1,6 @@
 'use strict';
 
-const DismissAndRemember = require('../actions/DismissAndRemember');
+const Dismiss = require('../actions/Dismiss');
 
 module.exports = class CallToAction {
   constructor($elm, _window = window, doc = document) {
@@ -9,14 +9,14 @@ module.exports = class CallToAction {
     this.doc = doc;
 
     const cookieExpiry = 'Tue, 19 January 2038 03:14:07 UTC';
-    this.dismissAndRemember = new DismissAndRemember('.call-to-action', this.$elm, this.doc.cookie, cookieExpiry);
-    this.$elm.addEventListener('click', () => this.dismissAndRemember.setCookie(this.cookieName));
+    this.dismiss = new Dismiss('.call-to-action', this.$elm, this.doc, cookieExpiry);
+    this.$elm.addEventListener('click', () => this.dismiss.setCookie(this.cookieName));
     this.show();
   }
 
   dismiss() {
     this.hide();
-    this.dismissAndRemember.setCookie(this.cookieName);
+    this.dismiss.setCookie(this.cookieName);
   }
 
   hide() {
