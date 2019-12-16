@@ -8,7 +8,7 @@ module.exports = class Dismiss {
     this.doc = document;
     this.cookieName = Dismiss.deriveCookieName(this.$toDismiss);
     if (this.hasPreviouslyBeenDismissed(this.cookieName, this.doc.cookie)) {
-      // TODO: hide $patternRoot (incl hide from AT)
+      this.hide();
       return;
     }
 
@@ -36,7 +36,7 @@ module.exports = class Dismiss {
       '',
       $parent);
     $button.setAttribute('aria-label', 'Dismiss this');
-    $button.addEventListener('click', this.handleInteraction.bind(this));
+    $button.addEventListener('click', this.dismiss.bind(this));
     return $button;
   }
 
@@ -46,12 +46,12 @@ module.exports = class Dismiss {
     }
   }
 
-  dismiss() {
-
+  hide() {
+    this.$toDismiss.classList.add('hidden');
   }
 
-  handleInteraction() {
-    this.dismiss();
+  dismiss() {
+    this.hide();
     this.setCookie(this.cookieName);
   }
 
