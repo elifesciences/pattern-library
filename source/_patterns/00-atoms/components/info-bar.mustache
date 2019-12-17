@@ -1,4 +1,6 @@
-<div class="info-bar info-bar--{{type}}" id="{{id}}" data-behaviour="InfoBar" data-cookie-name-root="infoBar_">
+<div class="info-bar info-bar--{{type}}" id="{{id}}" data-behaviour="InfoBar" data-cookie-name-root="infoBar_"
+  {{#cookieDuration}} data-cookie-duration="{{cookieDuration}}"{{/cookieDuration}}
+  {{#cookieExpires}} data-cookie-expires="{{cookieExpires}}"{{/cookieExpires}}>
 
   <div class="info-bar__container">
     <div class="info-bar__text">{{{text}}}</div>

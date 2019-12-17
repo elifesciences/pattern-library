@@ -3,17 +3,30 @@
 const utils = require('../libs/elife-utils')();
 
 module.exports = class Dismiss {
-  constructor($toDismiss, dismissUntil, attachPoint, document) {
+  constructor($toDismiss, attachPoint, document) {
     this.$toDismiss = $toDismiss;
     this.doc = document;
+
     this.cookieName = Dismiss.deriveCookieName(this.$toDismiss);
     if (this.hasPreviouslyBeenDismissed(this.cookieName, this.doc.cookie)) {
       this.hide();
       return;
     }
 
-    this.cookieExpiryDate = dismissUntil;
+    this.cookieExpiryDate = Dismiss.deriveCookieExpiryDate(this.$toDismiss);
     this.$button = this.buildButton(attachPoint);
+  }
+
+  static deriveCookieExpiryDate($elm) {
+    if ($elm.dataset.cookieExpires) {
+      return $elm.dataset.cookieExpires;
+    }
+
+    const defaultDurationDays = 365;
+    const durationDays = parseInt($elm.dataset.cookieDuration, 10) || defaultDurationDays;
+    const expiryDate = new Date(new Date());
+    expiryDate.setDate(expiryDate.getDate() + durationDays);
+    return expiryDate;
   }
 
   static deriveCookieName($elm) {
@@ -52,7 +65,7 @@ module.exports = class Dismiss {
 
   dismiss() {
     this.hide();
-    this.setCookie(this.cookieName);
+    this.setCookie();
   }
 
 };
