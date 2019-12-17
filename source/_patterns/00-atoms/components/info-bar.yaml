@@ -8,12 +8,12 @@ properties:
     type: string
     enum:
       - attention
+      - dismissible
       - info
       - multiple-versions
       - correction
       - success
       - warning
-      - clear
     isClear: false
 required:
   - text
