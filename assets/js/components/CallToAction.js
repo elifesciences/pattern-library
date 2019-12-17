@@ -13,15 +13,6 @@ module.exports = class CallToAction {
     this.show();
   }
 
-  dismiss() {
-    this.hide();
-    this.dismiss.setCookie();
-  }
-
-  hide() {
-    this.$elm.classList.remove('call-to-action-wrapper--js-shown');
-  }
-
   show() {
     this.$elm.classList.add('call-to-action-wrapper--js-shown');
   }
