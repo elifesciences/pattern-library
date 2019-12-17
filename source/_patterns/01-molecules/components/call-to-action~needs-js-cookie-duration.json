@@ -1,5 +1,6 @@
 {
   "needsJs": true,
+  "cookieDuration": 30,
   "id": "54321",
   "text": "Hear more about our new Editor-in-Chief, and the latest developments at eLife",
   "image": {
