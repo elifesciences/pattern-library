@@ -14,6 +14,9 @@ properties:
       - correction
       - success
       - warning
+  dismissibleOnOff:
+    type: boolean
+    default: false
 required:
   - text
   - type
