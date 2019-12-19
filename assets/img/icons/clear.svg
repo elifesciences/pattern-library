@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
 	<style>
 		tspan { white-space:pre }
-		.shp0 { fill: none } 
-		.shp1 { fill: #ffffff } 
+		.shp0 { fill: none }
+		.shp1 { fill: #ffffff }
 	</style>
 	<g id="icons/clear/white">
 		<path id="clear-button-bg" class="shp0" d="M0 0L24 0L24 24L0 24L0 0Z" />
