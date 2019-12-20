@@ -2,11 +2,14 @@
   {{#cookieDuration}} data-cookie-duration="{{cookieDuration}}"{{/cookieDuration}}
   {{#cookieExpires}} data-cookie-expires="{{cookieExpires}}"{{/cookieExpires}}>
 
-  {{#dismissibleTrue}}
+  {{#dismissibleOnOff}}
     <div class="info-bar__container">
-  {{/dismissibleTrue}}
-      <div class="info-bar__text">{{{text}}}</div>
-  {{#dismissibleTrue}}
+  {{/dismissibleOnOff}}
+
+    <div class="info-bar__text">{{{text}}}</div>
+
+  {{#dismissibleOnOff}}
     </div>
-  {{/dismissibleTrue}}
+  {{/dismissibleOnOff}}
+
 </div>
