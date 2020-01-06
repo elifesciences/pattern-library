@@ -8,7 +8,7 @@ module.exports = class Dismiss {
     this.doc = document;
 
     this.cookieName = Dismiss.deriveCookieName(this.$toDismiss);
-    if (this.hasPreviouslyBeenDismissed(this.cookieName, this.doc.cookie)) {
+    if (this.hasCookieName(this.cookieName) && this.hasPreviouslyBeenDismissed(this.cookieName, this.doc.cookie)) {
       this.hide();
       return;
     }
@@ -39,7 +39,11 @@ module.exports = class Dismiss {
   }
 
   hasPreviouslyBeenDismissed(cookieName, cookies) {
-    return cookieName && cookieName.length && utils.getCookieValue(cookieName, cookies) === 'true';
+    return utils.getCookieValue(cookieName, cookies) === 'true';
+  }
+
+  hasCookieName(cookieName) {
+    return cookieName && cookieName.length;
   }
 
   buildButton($parent) {
