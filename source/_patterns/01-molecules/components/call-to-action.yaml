@@ -1,54 +1,40 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
-allOf:
-  -
-    properties:
-      id:
-        type: string
-        minLength: 1
-      text:
-        type: string
-        minLength: 1
-      button:
-        $ref: ../../00-atoms/components/button.yaml
-      image:
-        $ref: ../../00-atoms/components/picture.yaml
-    required:
-      - id
-      - text
-      - button
-      - image
-
-  -
+properties:
+  id:
+    type: string
+    minLength: 1
+  text:
+    type: string
+    minLength: 1
+  needsJs:
+    type: boolean
+    enum:
+      - true
+  dismiss:
     oneOf:
-      -
-        properties:
-          needsJs:
-            type: boolean
-            enum:
-              - true
-          cookieExpires:
-            type: string
-        required:
-          - needsJs
-          - cookieExpires
-
-      -
-        properties:
-          needsJs:
-            type: boolean
-            enum:
-              - true
+      - properties:
           cookieDuration:
             type: integer
+            minimum: 1
         required:
-          - needsJs
           - cookieDuration
-      -
-        properties:
-          needsJs:
-            type: boolean
-            enum:
-              - false
+      - properties:
+          cookieExpires:
+            type: string
+            minLength: 1
         required:
-          - needsJs
+          - cookieExpires
+  button:
+    $ref: ../../00-atoms/components/button.yaml
+  image:
+    $ref: ../../00-atoms/components/picture.yaml
+required:
+  - id
+  - text
+  - button
+  - image
+dependencies:
+  dismiss:
+    - needsJs
+
