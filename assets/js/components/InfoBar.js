@@ -8,7 +8,7 @@ module.exports = class InfoBar {
     this.window = _window;
     this.doc = doc;
 
-    this.dismiss = new Dismiss(this.$elm, '.info-bar__container', this.doc);
+    this.dismiss = new Dismiss(this.$elm, this.$elm.querySelector('.info-bar__container'), this.doc);
   }
 
 };
