@@ -7,11 +7,15 @@ const expect = chai.expect;
 const CallToAction = require('../assets/js/components/CallToAction');
 
 function expireCookie(name) {
+  'use strict';
+
   const expiryDate = 'Tue, 1 January 1970 18:00:00 UTC';
   document.cookie = `${name}=true; expires=${expiryDate}; path=/;`;
 }
 
 function getMockEvent(actionableClassName) {
+  'use strict';
+
   return {
     target: {
       classList: {
@@ -24,6 +28,8 @@ function getMockEvent(actionableClassName) {
 }
 
 describe('A CallToAction Component', function () {
+  'use strict';
+
   const $elm = document.querySelector('.call-to-action-wrapper');
   const expectedCookieName = `callToAction_${$elm.id}`;
   let callToAction;
