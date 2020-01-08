@@ -11,7 +11,7 @@ function generateHTMLFixture() {
     ['info-bar',
      'info-bar--dismissible'],
     '',
-    '.fixture-container'
+    '.generated-fixture-container'
   );
 
   $fixture.dataset.generatedFixture = '';
@@ -36,6 +36,24 @@ function clearFixtureCookie(id, value) {
 
 describe('A dismissible InfoBar Component', function () {
   'use strict';
+
+  it('has a dismiss button', function () {
+    const $infoBar = generateHTMLFixture();
+    const infoBar = new InfoBar($infoBar);
+    const $button = infoBar.dismiss.$button;
+    expect($button.classList.contains('dismiss-button')).to.be.true;
+  });
+
+  describe('dismiss button', function () {
+
+    it('is a child of .info-bar__container', function () {
+      const $infoBar = generateHTMLFixture();
+      const infoBar = new InfoBar($infoBar);
+      const $button = infoBar.dismiss.$button;
+      expect($button.parentElement.classList.contains('info-bar__container')).to.be.true;
+    });
+
+  });
 
   describe('has a cookie', function () {
 
