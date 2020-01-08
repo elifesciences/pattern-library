@@ -4,27 +4,6 @@ const utils = require('../assets/js/libs/elife-utils')();
 
 const expect = chai.expect;
 
-function setFixtureCookie(value) {
-  'use strict';
-
-  const nameRoot = 'fixture-cookie_';
-  const id = 'fixtureId';
-  const name = `${nameRoot}${id}`;
-
-  document.cookie= `${name}=${value}; expires=Tue, 19 January 2038 03:14:07 UTC; path=/;`;
-
-  return {
-    nameRoot,
-    id,
-  };
-}
-
-function clearFixtureCookie() {
-  'use strict';
-
-  document.cookie = `fixture-cookie_fixtureId=false; expires=expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;`;
-}
-
 function generateHTMLFixture() {
   'use strict';
   const $fixture = utils.buildElement(
