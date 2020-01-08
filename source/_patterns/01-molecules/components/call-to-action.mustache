@@ -4,12 +4,13 @@
 
       {{#needsJs}}
         data-behaviour="CallToAction"
-        {{#dismiss}}
-          data-cookie-name-root="callToAction_"
-          {{#cookieDuration}} data-cookie-duration="{{cookieDuration}}"{{/cookieDuration}}
-          {{#cookieExpires}} data-cookie-expires="{{cookieExpires}}"{{/cookieExpires}}
-        {{/dismiss}}
-      {{/needsJs}}>
+      {{/needsJs}}
+
+      {{#dismiss}}
+        data-cookie-name-root="callToAction_"
+        {{#cookieDuration}} data-cookie-duration="{{cookieDuration}}"{{/cookieDuration}}
+        {{#cookieExpires}} data-cookie-expires="{{cookieExpires}}"{{/cookieExpires}}
+      {{/dismiss}}>
 
   <div class="call-to-action">
 
