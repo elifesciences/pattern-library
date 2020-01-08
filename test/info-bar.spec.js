@@ -42,15 +42,6 @@ function generateHTMLFixture() {
 describe('A dismissible InfoBar Component', function () {
   'use strict';
 
-  // afterEach(function () {
-  //   [].slice.call(document.querySelectorAll('[data-generated-fixture]')).forEach(function (node) {
-  //     node.parentNode.removeChild(node);
-  //   });
-  //   $infoBar = null;
-  //
-  //   clearFixtureCookie();
-  // });
-
   describe('has a cookie', function () {
 
     describe('with a name', function () {
@@ -96,35 +87,52 @@ describe('A dismissible InfoBar Component', function () {
 
     });
 
-    describe('a desired expiry date', function () {
+    describe('when the HTML attribute data-cookie-expires has a value', function () {
 
-      context('that when the HTML attribute data-cookie-expires has a value', function () {
+      it('the cookie is configured to expire on that date', function () {
+        const cookieUid = Math.floor(Math.random() * 10000);
+        document.cookie = `fixture-cookie_${cookieUid}=false; expires=expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;`;
 
-        it('is configured to set to that as the cookie expiry date', function () {
-          const cookieUid = Math.floor(Math.random() * 10000);
-          document.cookie = `fixture-cookie_${cookieUid}=false; expires=expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;`;
+        expect(utils.getCookieValue(`fixture-cookie_${cookieUid}`, document.cookie), 'cookie shouldn\'t be set yet').to.equal('');
 
-          expect(utils.getCookieValue(`fixture-cookie_${cookieUid}`, document.cookie), 'cookie shouldn\'t be set yet').to.equal('');
+        const expectedExpiry = 'Tue, 19 January 2038 03:14:07 UTC';
 
-          const expectedExpiry = 'Tue, 19 January 2038 03:14:07 UTC';
+        const $infoBar = generateHTMLFixture();
+        $infoBar.setAttribute('id', cookieUid.toString());
+        $infoBar.dataset.cookieNameRoot = 'fixture-cookie_';
+        $infoBar.dataset.cookieExpires = expectedExpiry;
+        const infoBar = new InfoBar($infoBar);
+        expect(infoBar.dismiss.cookieExpiryDate).to.equal(expectedExpiry);
 
-          const $infoBar = generateHTMLFixture();
-          $infoBar.setAttribute('id', cookieUid.toString());
-          $infoBar.dataset.cookieNameRoot = 'fixture-cookie_';
-          $infoBar.dataset.cookieExpires = expectedExpiry;
-          const infoBar = new InfoBar($infoBar);
-          expect(infoBar.dismiss.cookieExpiryDate).to.equal(expectedExpiry);
-
-          $infoBar.parentElement.removeChild($infoBar);
-          document.cookie = `fixture-cookie_${cookieUid}=false; expires=expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;`;
-
-        });
-
+        $infoBar.parentElement.removeChild($infoBar);
+        document.cookie = `fixture-cookie_${cookieUid}=false; expires=expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;`;
       });
 
-      context('that when the HTML attribute data-cookie-duration is set as an integer', function () {
+    });
 
-        xit('is set to that date that number of days in the future');
+    describe('when the HTML attribute data-cookie-duration has a value', function () {
+
+      it('the cookie is configured to expire that number of days in the future', function () {
+        const cookieUid = Math.floor(Math.random() * 10000);
+        document.cookie = `fixture-cookie_${cookieUid}=false; expires=expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;`;
+
+        expect(utils.getCookieValue(`fixture-cookie_${cookieUid}`, document.cookie), 'cookie shouldn\'t be set yet').to.equal('');
+
+        // 7 days in the future
+        let expectedExpiry = new Date(new Date());
+        expectedExpiry.setDate(expectedExpiry.getDate() + 7);
+        expectedExpiry = expectedExpiry.toUTCString();
+
+        const $infoBar = generateHTMLFixture();
+        $infoBar.setAttribute('id', cookieUid.toString());
+        $infoBar.dataset.cookieNameRoot = 'fixture-cookie_';
+        $infoBar.dataset.cookieExpires = expectedExpiry;
+        const infoBar = new InfoBar($infoBar);
+        const actualExpiry = (new Date(infoBar.dismiss.cookieExpiryDate)).toUTCString();
+        expect(actualExpiry).to.equal(expectedExpiry);
+
+        $infoBar.parentElement.removeChild($infoBar);
+        document.cookie = `fixture-cookie_${cookieUid}=false; expires=expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;`;
 
       });
 
