@@ -45,7 +45,7 @@ describe('A CallToAction Component', function () {
   });
 
   it('builds a button to enable itself to be dismissed', () => {
-    expect(callToAction.$button).to.be.an.instanceof(HTMLButtonElement);
+    expect(callToAction.dismiss.$button).to.be.an.instanceof(HTMLButtonElement);
   });
 
   context('handles cookies such that', () => {
@@ -62,12 +62,13 @@ describe('A CallToAction Component', function () {
       });
 
       afterEach(() => {
-        callToAction.$elm.classList.remove('call-to-action-wrapper--js-shown');
+        callToAction.$elm.classList.remove('hidden');
       });
 
-      it('does not have the CSS class "call-to-action-wrapper--js-shown"', () => {
-        callToAction.handleInteraction(getMockEvent('call-to-action__dismiss'));
-        expect($elm.classList.contains('call-to-action-wrapper--js-shown')).to.be.false;
+      it('has the CSS class "hidden"', () => {
+        // callToAction.handleInteraction(getMockEvent('call-to-action__dismiss'));
+        callToAction.$elm.click();
+        expect($elm.classList.contains('hidden')).to.be.true;
       });
 
       it(`sets a cookie "${expectedCookieName}=true"`, () => {
@@ -123,7 +124,7 @@ describe('A CallToAction Component', function () {
 
       it('is the string "callToAction_" appended with the id attribute of the component\'s HTML element', () => {
         expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.be.empty;
-        (new CallToAction($elm)).dismiss();
+        (new CallToAction($elm)).dismiss.dismiss();
         expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
       });
 
