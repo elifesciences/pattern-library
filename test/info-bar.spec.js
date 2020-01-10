@@ -6,6 +6,7 @@ const expect = chai.expect;
 
 function generateHTMLFixture() {
   'use strict';
+
   const $fixture = utils.buildElement(
     'div',
     ['info-bar',
@@ -18,24 +19,94 @@ function generateHTMLFixture() {
   return $fixture;
 }
 
+function generateHTMLFixtureWithCookieDetails(id, expires) {
+  'use strict';
+
+  const $fixture = generateHTMLFixture();
+  $fixture.dataset.cookieNameRoot = getFixtureCookieNameRoot();
+
+  if (id) {
+    $fixture.setAttribute('id', id);
+  }
+
+  if (expires) {
+    $fixture.dataset.cookieExpires = expires;
+  }
+
+  return $fixture;
+}
+
+
+function removeAllGeneratedHTMLFixtures() {
+  'use strict';
+
+  [].forEach.call(
+    document.querySelectorAll('[data-generated-fixture]'),
+    function ($element) {
+      $element.parentElement.removeChild($element);
+  });
+
+}
+
 function setFixtureCookie(id, value) {
   'use strict';
 
-  const val = value || 'true';
-  document.cookie = `fixture-cookie_${id}=${val}; expires=expires=Tue, 19 January 2038 03:14:07 UTC; path=/;`;
-  expect(utils.getCookieValue(`fixture-cookie_${id}`, document.cookie), 'cookie should be set').to.equal(val);
+  let val = 'true';
+  if (value) {
+    val = value;
+  }
+  const fixtureCookieNameRoot = getFixtureCookieNameRoot();
+  document.cookie = `${fixtureCookieNameRoot}${id}=${val}; expires=expires=Tue, 19 January 2038 03:14:07 UTC; path=/;`;
+  expect(utils.getCookieValue(`${fixtureCookieNameRoot}${id}`, document.cookie), 'cookie should be set').to.equal(val);
 }
 
 function clearFixtureCookie(id, value) {
   'use strict';
 
-  const val = value || 'true';
-  document.cookie = `fixture-cookie_${id}=${val}; expires=expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;`;
-  expect(utils.getCookieValue(`fixture-cookie_${id}`, document.cookie), 'cookie shouldn\'t be set').to.equal('');
+  let val = 'true';
+  if (value) {
+    val = value;
+  }
+  const fixtureCookieNameRoot = getFixtureCookieNameRoot();
+  document.cookie = `${fixtureCookieNameRoot}${id}=${val}; expires=expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;`;
+  expect(utils.getCookieValue(`${fixtureCookieNameRoot}${id}`, document.cookie), 'cookie shouldn\'t be set').to.equal('');
+}
+
+function getRandomId() {
+  'use strict';
+
+  return `id-${Math.floor(Math.random() * 10000)}`;
+}
+
+function getFixtureCookieNameRoot() {
+  'use strict';
+
+  return 'fixture-cookie_';
 }
 
 describe('A dismissible InfoBar Component', function () {
   'use strict';
+
+  afterEach(function() {
+    removeAllGeneratedHTMLFixtures();
+  });
+
+  it('is hidden immediately if a cookie indicates it was previously dismissed', function () {
+    const id = getRandomId();
+    setFixtureCookie(id);
+
+    const $infoBar = generateHTMLFixtureWithCookieDetails(id);
+    const infoBar = new InfoBar($infoBar);
+    expect(infoBar.$elm.classList.contains('hidden')).to.be.true;
+
+    clearFixtureCookie(id);
+  });
+
+  it('is not hidden immediately if no cookie indicates it was previously dismissed', function () {
+    const $infoBar = generateHTMLFixture();
+    const infoBar = new InfoBar($infoBar);
+    expect(infoBar.$elm.classList.contains('hidden')).to.be.false;
+  });
 
   it('has a dismiss button', function () {
     const $infoBar = generateHTMLFixture();
@@ -47,132 +118,97 @@ describe('A dismissible InfoBar Component', function () {
   describe('dismiss button', function () {
 
     it('is a child of .info-bar__container', function () {
-      const $infoBar = generateHTMLFixture();
-      const infoBar = new InfoBar($infoBar);
+      const infoBar = new InfoBar(generateHTMLFixture());
       const $button = infoBar.dismiss.$button;
       expect($button.parentElement.classList.contains('info-bar__container')).to.be.true;
     });
 
-  });
+    context('when clicked', function () {
 
-  describe('has a cookie', function () {
-
-    describe('name', function () {
-
-      it('that is derived from the HTML element\'s id and data-cookie-name-root attribute', function () {
+      it('adds CSS class "hidden" to the info bar', function () {
         const $infoBar = generateHTMLFixture();
-        $infoBar.dataset.cookieNameRoot = 'some-cookie-name-root_';
-        $infoBar.setAttribute('id', 'some-id');
-
         const infoBar = new InfoBar($infoBar);
-        expect(infoBar.dismiss.cookieName).to.equal('some-cookie-name-root_some-id');
-
-        $infoBar.parentElement.removeChild($infoBar);
+        const $button = infoBar.dismiss.$button;
+        expect($infoBar.classList.contains('hidden')).to.be.false;
+        $button.click();
+        expect($infoBar.classList.contains('hidden')).to.be.true;
       });
 
-      it('that is empty if the HTML element lacks an id', function () {
-        const $infoBar = generateHTMLFixture();
-        $infoBar.dataset.cookieNameRoot = 'some-cookie-name-root_';
+      it('sets a cookie', function () {
+        const id = getRandomId();
+        expect(utils.getCookieValue(`fixture-cookie_${id}`, document.cookie), 'cookie should not be set').to.equal('');
 
-        const infoBar = new InfoBar($infoBar);
-        expect(infoBar.dismiss.cookieName).to.equal('');
+        const infoBar = new InfoBar(generateHTMLFixtureWithCookieDetails(id));
+        infoBar.dismiss.$button.click();
 
-        $infoBar.parentElement.removeChild($infoBar);
+        expect(utils.getCookieValue(`fixture-cookie_${id}`, document.cookie)).to.equal('true');
       });
 
-      it('that is empty if the HTML element lacks a data-cookie-name-root attribute', function () {
-        const $infoBar = generateHTMLFixture();
-        $infoBar.setAttribute('id', 'some-id');
+      context('the cookie it sets', function () {
 
-        const infoBar = new InfoBar($infoBar);
-        expect(infoBar.dismiss.cookieName).to.equal('');
+        describe('name', function () {
 
-        $infoBar.parentElement.removeChild($infoBar);
-      });
+          it('is derived from the HTML element\'s id and data-cookie-name-root attribute', function () {
+            const id = getRandomId();
+            const infoBar = new InfoBar(generateHTMLFixtureWithCookieDetails(id));
+            infoBar.dismiss.$button.click();
+            expect(infoBar.dismiss.cookieName).to.equal(`fixture-cookie_${id}`);
+            expect(utils.getCookieValue(`fixture-cookie_${id}`, document.cookie)).to.equal('true');
+          });
 
-      it('that when empty does not cause the info bar to be hidden', function() {
-        const $infoBar = generateHTMLFixture();
-        const infoBar = new InfoBar($infoBar);
-        expect(infoBar.$elm.classList.contains('hidden')).to.be.false;
+          it('is empty if the HTML element lacks an id', function () {
+            const $infoBar = generateHTMLFixture();
+            $infoBar.dataset.cookieNameRoot = 'fixture-cookie_';
 
-        $infoBar.parentElement.removeChild($infoBar);
-      });
+            const infoBar = new InfoBar($infoBar);
+            expect(infoBar.dismiss.cookieName).to.equal('');
 
-    });
+            $infoBar.parentElement.removeChild($infoBar);
+          });
 
-    describe('expiry date', function () {
+          it('is empty if the HTML element lacks a data-cookie-name-root attribute', function () {
+            const id = getRandomId();
+            const $infoBar = generateHTMLFixtureWithCookieDetails(id);
+            delete $infoBar.dataset.cookieNameRoot;
 
-      it('that is configured with the value of data-cookie-expires HTML attribute, if set', function () {
-        const cookieId = Math.floor(Math.random() * 10000);
-        const expectedExpiry = 'Tue, 19 January 2038 03:14:07 UTC';
+            const infoBar = new InfoBar($infoBar);
+            expect(infoBar.dismiss.cookieName).to.equal('');
 
-        const $infoBar = generateHTMLFixture();
-        $infoBar.setAttribute('id', cookieId.toString());
-        $infoBar.dataset.cookieNameRoot = 'fixture-cookie_';
-        $infoBar.dataset.cookieExpires = expectedExpiry;
-        const infoBar = new InfoBar($infoBar);
-        expect(infoBar.dismiss.cookieExpiryDate).to.equal(expectedExpiry);
+            $infoBar.parentElement.removeChild($infoBar);
+          });
 
-        $infoBar.parentElement.removeChild($infoBar);
-        clearFixtureCookie(cookieId);
-      });
+        });
 
-      it('that is configured with a day offset of the value of data-cookie-duration HTML attribute, if set', function () {
-        const cookieId = Math.floor(Math.random() * 10000);
+        describe('expiry date', function () {
 
-        // 7 days in the future
-        let expectedExpiry = new Date(new Date());
-        expectedExpiry.setDate(expectedExpiry.getDate() + 7);
-        expectedExpiry = expectedExpiry.toUTCString();
+          it('is configured with the value of data-cookie-expires HTML attribute, if set', function () {
+            const id = getRandomId();
+            const expiry = 'Tue, 19 January 2038 03:14:07 UTC';
+            const infoBar = new InfoBar(generateHTMLFixtureWithCookieDetails(id, expiry));
+            expect(infoBar.dismiss.cookieExpiryDate).to.equal(expiry);
 
-        const $infoBar = generateHTMLFixture();
-        $infoBar.setAttribute('id', cookieId.toString());
-        $infoBar.dataset.cookieNameRoot = 'fixture-cookie_';
-        $infoBar.dataset.cookieExpires = expectedExpiry;
+            clearFixtureCookie(id);
+          });
 
-        const infoBar = new InfoBar($infoBar);
-        const actualExpiry = (new Date(infoBar.dismiss.cookieExpiryDate)).toUTCString();
-        expect(actualExpiry).to.equal(expectedExpiry);
+          it('is configured with a day offset of the value of data-cookie-duration HTML attribute, if set', function () {
+            const id = getRandomId();
 
-        $infoBar.parentElement.removeChild($infoBar);
-      });
+            // 7 days in the future
+            let expiry = new Date(new Date());
+            expiry.setDate(expiry.getDate() + 7);
+            expiry = expiry.toUTCString();
 
-    });
+            const $infoBar = generateHTMLFixtureWithCookieDetails(id, expiry);
 
-    describe('that if already exists with the value "true"', function () {
+            const infoBar = new InfoBar($infoBar);
+            const actualExpiry = (new Date(infoBar.dismiss.cookieExpiryDate)).toUTCString();
+            expect(actualExpiry).to.equal(expiry);
 
-      it('causes the info bar to be hidden', function () {
-        const cookieId = Math.floor(Math.random() * 10000);
-        setFixtureCookie(cookieId);
+            clearFixtureCookie(id);
+          });
 
-        const $infoBar = generateHTMLFixture();
-        $infoBar.setAttribute('id', cookieId.toString());
-        $infoBar.dataset.cookieNameRoot = 'fixture-cookie_';
-        const infoBar = new InfoBar($infoBar);
+        });
 
-        expect(infoBar.$elm.classList.contains('hidden')).to.be.true;
-
-        $infoBar.parentElement.removeChild($infoBar);
-        clearFixtureCookie(cookieId);
-      });
-
-    });
-
-    describe('that if already exists with a value that is not "true"', function () {
-
-      it('doesn\'t cause the info bar to be hidden', function () {
-        const cookieId = Math.floor(Math.random() * 10000);
-        setFixtureCookie(cookieId, 'false');
-
-        const $infoBar = generateHTMLFixture();
-        $infoBar.setAttribute('id', cookieId);
-        $infoBar.dataset.cookieNameRoot = 'fixture-cookie_';
-        const infoBar = new InfoBar($infoBar);
-
-        expect(infoBar.$elm.classList.contains('hidden')).to.be.false;
-
-        $infoBar.parentElement.removeChild($infoBar);
-        clearFixtureCookie(cookieId, 'false');
       });
 
     });
