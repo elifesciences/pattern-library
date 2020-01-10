@@ -1,41 +1,10 @@
 const chai = require('chai');
+const generateHTMLFixture = require('./fixtures/infoBarFixture')().generate;
+const generateHTMLFixtureWithCookieDetails = require('./fixtures/infoBarFixture')().generateWithCookieDetails;
 const InfoBar = require('../assets/js/components/InfoBar');
 const utils = require('../assets/js/libs/elife-utils')();
 
 const expect = chai.expect;
-
-function generateHTMLFixture() {
-  'use strict';
-
-  const $fixture = utils.buildElement(
-    'div',
-    ['info-bar',
-     'info-bar--dismissible'],
-    '',
-    '.generated-fixture-container'
-  );
-  utils.buildElement('div', ['info-bar__container'], '', $fixture);
-  $fixture.dataset.generatedFixture = '';
-  return $fixture;
-}
-
-function generateHTMLFixtureWithCookieDetails(id, expires) {
-  'use strict';
-
-  const $fixture = generateHTMLFixture();
-  $fixture.dataset.cookieNameRoot = getFixtureCookieNameRoot();
-
-  if (id) {
-    $fixture.setAttribute('id', id);
-  }
-
-  if (expires) {
-    $fixture.dataset.cookieExpires = expires;
-  }
-
-  return $fixture;
-}
-
 
 function removeAllGeneratedHTMLFixtures() {
   'use strict';
@@ -95,7 +64,7 @@ describe('A dismissible InfoBar Component', function () {
     const id = getRandomId();
     setFixtureCookie(id);
 
-    const $infoBar = generateHTMLFixtureWithCookieDetails(id);
+    const $infoBar = generateHTMLFixtureWithCookieDetails(getFixtureCookieNameRoot(), id);
     const infoBar = new InfoBar($infoBar);
     expect(infoBar.$elm.classList.contains('hidden')).to.be.true;
 
@@ -138,7 +107,7 @@ describe('A dismissible InfoBar Component', function () {
         const id = getRandomId();
         expect(utils.getCookieValue(`fixture-cookie_${id}`, document.cookie), 'cookie should not be set').to.equal('');
 
-        const infoBar = new InfoBar(generateHTMLFixtureWithCookieDetails(id));
+        const infoBar = new InfoBar(generateHTMLFixtureWithCookieDetails(getFixtureCookieNameRoot(), id));
         infoBar.dismiss.$button.click();
 
         expect(utils.getCookieValue(`fixture-cookie_${id}`, document.cookie)).to.equal('true');
@@ -150,7 +119,7 @@ describe('A dismissible InfoBar Component', function () {
 
           it('is derived from the HTML element\'s id and data-cookie-name-root attribute', function () {
             const id = getRandomId();
-            const infoBar = new InfoBar(generateHTMLFixtureWithCookieDetails(id));
+            const infoBar = new InfoBar(generateHTMLFixtureWithCookieDetails(getFixtureCookieNameRoot(), id));
             infoBar.dismiss.$button.click();
             expect(infoBar.dismiss.cookieName).to.equal(`fixture-cookie_${id}`);
             expect(utils.getCookieValue(`fixture-cookie_${id}`, document.cookie)).to.equal('true');
@@ -168,7 +137,7 @@ describe('A dismissible InfoBar Component', function () {
 
           it('is empty if the HTML element lacks a data-cookie-name-root attribute', function () {
             const id = getRandomId();
-            const $infoBar = generateHTMLFixtureWithCookieDetails(id);
+            const $infoBar = generateHTMLFixtureWithCookieDetails(getFixtureCookieNameRoot(), id);
             delete $infoBar.dataset.cookieNameRoot;
 
             const infoBar = new InfoBar($infoBar);
@@ -184,7 +153,7 @@ describe('A dismissible InfoBar Component', function () {
           it('is configured with the value of data-cookie-expires HTML attribute, if set', function () {
             const id = getRandomId();
             const expiry = 'Tue, 19 January 2038 03:14:07 UTC';
-            const infoBar = new InfoBar(generateHTMLFixtureWithCookieDetails(id, expiry));
+            const infoBar = new InfoBar(generateHTMLFixtureWithCookieDetails(getFixtureCookieNameRoot(), id, expiry));
             expect(infoBar.dismiss.cookieExpiryDate).to.equal(expiry);
 
             clearFixtureCookie(id);
@@ -198,7 +167,7 @@ describe('A dismissible InfoBar Component', function () {
             expiry.setDate(expiry.getDate() + 7);
             expiry = expiry.toUTCString();
 
-            const $infoBar = generateHTMLFixtureWithCookieDetails(id, expiry);
+            const $infoBar = generateHTMLFixtureWithCookieDetails(getFixtureCookieNameRoot(), id, expiry);
 
             const infoBar = new InfoBar($infoBar);
             const actualExpiry = (new Date(infoBar.dismiss.cookieExpiryDate)).toUTCString();
