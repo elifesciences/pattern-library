@@ -13,7 +13,7 @@ function generateHTMLFixture() {
     '',
     '.generated-fixture-container'
   );
-
+  utils.buildElement('div', ['info-bar__container'], '', $fixture);
   $fixture.dataset.generatedFixture = '';
   return $fixture;
 }
