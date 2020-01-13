@@ -59,9 +59,9 @@ module.exports = (function () {
     generateHTML,
     generateHTMLWithCookieDetails,
     removeAllGeneratedHTMLFixtures,
-    getFixtureCookieNameRoot,
+    getCookieNameRoot: getFixtureCookieNameRoot,
     setFixtureCookie,
-    clearFixtureCookie,
+    clearCookie: clearFixtureCookie,
   };
 
 }());
