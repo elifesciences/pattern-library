@@ -2,9 +2,9 @@
 
 const utils = require('../../assets/js/libs/elife-utils')();
 
-module.exports = () => {
+module.exports = (function () {
 
-  const generate = () => {
+  const generateHTML = () => {
     const $fixture = utils.buildElement(
       'div',
       ['info-bar',
@@ -18,8 +18,8 @@ module.exports = () => {
 
   };
 
-  const generateWithCookieDetails = (nameRoot, id, expires) => {
-    const $fixture = generate();
+  const generateHTMLWithCookieDetails = (nameRoot, id, expires) => {
+    const $fixture = generateHTML();
     $fixture.dataset.cookieNameRoot = nameRoot;
 
     if (id) {
@@ -33,9 +33,35 @@ module.exports = () => {
     return $fixture;
   };
 
-  return {
-    generate,
-    generateWithCookieDetails,
+  const removeAllGeneratedHTMLFixtures = () => {
+
+    [].forEach.call(
+      document.querySelectorAll('[data-generated-fixture]'),
+      function ($element) {
+        $element.parentElement.removeChild($element);
+      });
+
   };
 
-};
+  const getFixtureCookieNameRoot = () => {
+    return 'fixture-cookie_';
+  };
+
+  const setFixtureCookie = function (id, value) {
+    document.cookie = `${getFixtureCookieNameRoot()}${id}=${value}; expires=expires=Tue, 19 January 2038 03:14:07 UTC; path=/;`;
+  };
+
+  const clearFixtureCookie = (id) => {
+    document.cookie = `${getFixtureCookieNameRoot()}${id}=true; expires=expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;`;
+  };
+
+  return {
+    generateHTML,
+    generateHTMLWithCookieDetails,
+    removeAllGeneratedHTMLFixtures,
+    getFixtureCookieNameRoot,
+    setFixtureCookie,
+    clearFixtureCookie,
+  };
+
+}());
