@@ -41,7 +41,7 @@ describe('A dismissible InfoBar Component', function () {
   it('has a dismiss button', function () {
     const $fixture = fixtures.generateHTML();
     const infoBar = new InfoBar($fixture);
-    const $button = infoBar.dismiss.$button;
+    const $button = infoBar.dismissible.$button;
     expect($button.classList.contains('dismiss-button')).to.be.true;
   });
 
@@ -49,7 +49,7 @@ describe('A dismissible InfoBar Component', function () {
 
     it('is a child of .info-bar__container', function () {
       const infoBar = new InfoBar(fixtures.generateHTML());
-      const $button = infoBar.dismiss.$button;
+      const $button = infoBar.dismissible.$button;
       expect($button.parentElement.classList.contains('info-bar__container')).to.be.true;
     });
 
@@ -58,7 +58,7 @@ describe('A dismissible InfoBar Component', function () {
       it('adds CSS class "hidden" to the info bar', function () {
         const $fixture = fixtures.generateHTML();
         const infoBar = new InfoBar($fixture);
-        const $button = infoBar.dismiss.$button;
+        const $button = infoBar.dismissible.$button;
         expect($fixture.classList.contains('hidden')).to.be.false;
         $button.click();
         expect($fixture.classList.contains('hidden')).to.be.true;
@@ -70,7 +70,7 @@ describe('A dismissible InfoBar Component', function () {
 
         const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id);
         const infoBar = new InfoBar($fixture);
-        infoBar.dismiss.$button.click();
+        infoBar.dismissible.$button.click();
 
         expect(utils.getCookieValue(`fixture-cookie_${id}`, document.cookie)).to.equal('true');
       });
@@ -83,8 +83,8 @@ describe('A dismissible InfoBar Component', function () {
             const id = generateRandomId();
             const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id);
             const infoBar = new InfoBar($fixture);
-            infoBar.dismiss.$button.click();
-            expect(infoBar.dismiss.cookieName).to.equal(`${fixtures.getCookieNameRoot()}${id}`);
+            infoBar.dismissible.$button.click();
+            expect(infoBar.dismissible.cookieName).to.equal(`${fixtures.getCookieNameRoot()}${id}`);
             expect(utils.getCookieValue(`fixture-cookie_${id}`, document.cookie)).to.equal('true');
           });
 
@@ -93,7 +93,7 @@ describe('A dismissible InfoBar Component', function () {
             $fixture.dataset.cookieNameRoot = fixtures.getCookieNameRoot();
 
             const infoBar = new InfoBar($fixture);
-            expect(infoBar.dismiss.cookieName).to.equal('');
+            expect(infoBar.dismissible.cookieName).to.equal('');
 
             $fixture.parentElement.removeChild($fixture);
           });
@@ -104,7 +104,7 @@ describe('A dismissible InfoBar Component', function () {
             delete $fixture.dataset.cookieNameRoot;
 
             const infoBar = new InfoBar($fixture);
-            expect(infoBar.dismiss.cookieName).to.equal('');
+            expect(infoBar.dismissible.cookieName).to.equal('');
 
             $fixture.parentElement.removeChild($fixture);
           });
@@ -118,7 +118,7 @@ describe('A dismissible InfoBar Component', function () {
             const expiry = 'Tue, 19 January 2038 03:14:07 UTC';
             const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id, expiry);
             const infoBar = new InfoBar($fixture);
-            expect(infoBar.dismiss.cookieExpiryDate).to.equal(expiry);
+            expect(infoBar.dismissible.cookieExpiryDate).to.equal(expiry);
 
             fixtures.clearCookie(id);
             expect(utils.getCookieValue(`${fixtures.getCookieNameRoot()}${id}`, document.cookie), 'cookie shouldn\'t be set').to.equal('');
@@ -136,7 +136,7 @@ describe('A dismissible InfoBar Component', function () {
             const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id, expiry);
 
             const infoBar = new InfoBar($fixture);
-            const actualExpiry = (new Date(infoBar.dismiss.cookieExpiryDate)).toUTCString();
+            const actualExpiry = (new Date(infoBar.dismissible.cookieExpiryDate)).toUTCString();
             expect(actualExpiry).to.equal(expiry);
 
             fixtures.clearCookie(id);

@@ -2,18 +2,18 @@
 
 const utils = require('../libs/elife-utils')();
 
-module.exports = class Dismiss {
+module.exports = class Dismissible {
   constructor($toDismiss, attachPoint, document) {
     this.$toDismiss = $toDismiss;
     this.doc = document;
 
-    this.cookieName = Dismiss.deriveCookieName(this.$toDismiss);
+    this.cookieName = Dismissible.deriveCookieName(this.$toDismiss);
     if (this.hasCookieName(this.cookieName) && this.hasPreviouslyBeenDismissed(this.cookieName, this.doc.cookie)) {
       this.hide();
       return;
     }
 
-    this.cookieExpiryDate = Dismiss.deriveCookieExpiryDate(this.$toDismiss);
+    this.cookieExpiryDate = Dismissible.deriveCookieExpiryDate(this.$toDismiss);
     this.$button = this.buildButton(attachPoint);
   }
 
