@@ -5,12 +5,6 @@ const utils = require('../assets/js/libs/elife-utils')();
 
 const expect = chai.expect;
 
-function generateRandomId() {
-  'use strict';
-
-  return `id-${Math.floor(Math.random() * 10000)}`;
-}
-
 describe('A dismissible InfoBar Component', function () {
   'use strict';
 
@@ -19,7 +13,7 @@ describe('A dismissible InfoBar Component', function () {
   });
 
   it('is hidden immediately if a cookie indicates it was previously dismissed', function () {
-    const id = generateRandomId();
+    const id = fixtures.generateRandomId();
     const value = 'true';
     fixtures.setFixtureCookie(id, value);
     expect(utils.getCookieValue(`${fixtures.getCookieNameRoot()}${id}`, document.cookie), 'cookie should be set').to.equal(value);
@@ -64,23 +58,12 @@ describe('A dismissible InfoBar Component', function () {
         expect($fixture.classList.contains('hidden')).to.be.true;
       });
 
-      it('sets a cookie', function () {
-        const id = generateRandomId();
-        expect(utils.getCookieValue(`${fixtures.getCookieNameRoot()}${id}`, document.cookie), 'cookie should not be set').to.equal('');
-
-        const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id);
-        const infoBar = new InfoBar($fixture);
-        infoBar.dismissible.$button.click();
-
-        expect(utils.getCookieValue(`fixture-cookie_${id}`, document.cookie)).to.equal('true');
-      });
-
-      context('the cookie it sets', function () {
+      describe('sets a cookie with', function () {
 
         describe('name', function () {
 
           it('is derived from the HTML element\'s id and data-cookie-name-root attribute', function () {
-            const id = generateRandomId();
+            const id = fixtures.generateRandomId();
             const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id);
             const infoBar = new InfoBar($fixture);
             infoBar.dismissible.$button.click();
@@ -99,7 +82,7 @@ describe('A dismissible InfoBar Component', function () {
           });
 
           it('is empty if the HTML element lacks a data-cookie-name-root attribute', function () {
-            const id = generateRandomId();
+            const id = fixtures.generateRandomId();
             const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id);
             delete $fixture.dataset.cookieNameRoot;
 
@@ -114,7 +97,7 @@ describe('A dismissible InfoBar Component', function () {
         describe('expiry date', function () {
 
           it('is configured with the value of data-cookie-expires HTML attribute, if set', function () {
-            const id = generateRandomId();
+            const id = fixtures.generateRandomId();
             const expiry = 'Tue, 19 January 2038 03:14:07 UTC';
             const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id, expiry);
             const infoBar = new InfoBar($fixture);
@@ -126,7 +109,7 @@ describe('A dismissible InfoBar Component', function () {
           });
 
           it('is configured with a day offset of the value of data-cookie-duration HTML attribute, if set', function () {
-            const id = generateRandomId();
+            const id = fixtures.generateRandomId();
 
             // 7 days in the future
             let expiry = new Date(new Date());

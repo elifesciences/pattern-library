@@ -38,6 +38,7 @@ module.exports = (function () {
     generateHTML,
     generateHTMLWithCookieDetails,
     removeAllGeneratedHTMLFixtures: dismissible.removeAllGeneratedHTMLFixtures,
+    generateRandomId: dismissible.generateRandomId,
     getCookieNameRoot: dismissible.getCookieNameRoot,
     setFixtureCookie: dismissible.setFixtureCookie,
     clearCookie: dismissible.clearCookie,

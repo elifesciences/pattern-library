@@ -16,6 +16,10 @@ module.exports = (function () {
     return 'fixture-cookie_';
   };
 
+  const generateRandomId = () => {
+    return `id-${Math.floor(Math.random() * 10000)}`;
+  };
+
   const setFixtureCookie = function (id, value) {
     document.cookie = `${getCookieNameRoot()}${id}=${value}; expires=expires=Tue, 19 January 2038 03:14:07 UTC; path=/;`;
   };
@@ -26,6 +30,7 @@ module.exports = (function () {
 
   return {
     removeAllGeneratedHTMLFixtures,
+    generateRandomId,
     getCookieNameRoot,
     setFixtureCookie,
     clearCookie,
