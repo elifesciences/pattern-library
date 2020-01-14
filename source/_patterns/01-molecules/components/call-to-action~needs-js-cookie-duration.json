@@ -1,6 +1,6 @@
 {
   "needsJs": true,
-  "dismiss": {
+  "dismissible": {
     "cookieDuration": 30
   },
   "id": "54321",

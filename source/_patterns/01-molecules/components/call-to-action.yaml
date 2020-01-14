@@ -11,7 +11,7 @@ properties:
     type: boolean
     enum:
       - true
-  dismiss:
+  dismissible:
     oneOf:
       - properties:
           cookieDuration:

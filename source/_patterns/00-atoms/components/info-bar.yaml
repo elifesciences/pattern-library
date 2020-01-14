@@ -14,7 +14,7 @@ properties:
       - correction
       - success
       - warning
-  dismiss:
+  dismissible:
     oneOf:
       -
         properties:

@@ -1,6 +1,6 @@
 {
   "needsJs": true,
-  "dismiss": {
+  "dismissible": {
     "cookieExpires": "Tue, 19 January 2038 03:14:07 UTC"
   },
   "id": "54321",

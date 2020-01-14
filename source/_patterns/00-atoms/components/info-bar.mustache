@@ -1,9 +1,9 @@
 <div class="info-bar info-bar--{{type}}" id="{{id}}"
-     {{#dismiss}}
+     {{#dismissible}}
         data-behaviour="InfoBar"
         {{#cookieDuration}} data-cookie-name-root="infoBar_" data-cookie-duration="{{cookieDuration}}"{{/cookieDuration}}
         {{#cookieExpires}} data-behaviour="InfoBar" data-cookie-name-root="infoBar_" data-cookie-expires="{{cookieExpires}}"{{/cookieExpires}}>
-     {{/dismiss}}
+     {{/dismissible}}
 
     <div class="info-bar__container">
 
