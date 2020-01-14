@@ -1,158 +1,133 @@
-const utils = require('../assets/js/libs/elife-utils')();
 const chai = require('chai');
+const CallToAction = require('../assets/js/components/CallToAction');
+const fixtures = require('./fixtures/callToActionFixture');
+const utils = require('../assets/js/libs/elife-utils')();
 
 const expect = chai.expect;
 
-// load in component(s) to be tested
-const CallToAction = require('../assets/js/components/CallToAction');
-
-function expireCookie(name) {
+describe('A Call to action Component', function () {
   'use strict';
 
-  const expiryDate = 'Tue, 1 January 1970 18:00:00 UTC';
-  document.cookie = `${name}=true; expires=${expiryDate}; path=/;`;
-}
-
-function getMockEvent(actionableClassName) {
-  'use strict';
-
-  return {
-    target: {
-      classList: {
-        contains: (candidate) => {
-          return candidate === actionableClassName;
-        }
-      }
-    }
-  };
-}
-
-describe('A CallToAction Component', function () {
-  'use strict';
-
-  const $elm = document.querySelector('.call-to-action-wrapper');
-  const expectedCookieName = `callToAction_${$elm.id}`;
-  let callToAction;
-
-  beforeEach(() => {
-    callToAction = new CallToAction($elm);
+  afterEach(function() {
+    fixtures.removeAllGeneratedHTMLFixtures();
   });
 
-  afterEach(() => {
-    if (callToAction.$button instanceof HTMLButtonElement) {
-      callToAction.$button.parentNode.removeChild(callToAction.$button);
-    }
+  it('is hidden immediately if a cookie indicates it was previously dismissed', function () {
+    const id = fixtures.generateRandomId();
+    const cookieName = `${fixtures.getCookieNameRoot()}${id}`;
+    const value = 'true';
+    fixtures.setFixtureCookie(id, value);
+    expect(utils.getCookieValue(cookieName, document.cookie), 'cookie should be set').to.equal(value);
+
+    const $htmlFixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id);
+    const callToAction = new CallToAction($htmlFixture);
+    expect(callToAction.$elm.classList.contains('hidden')).to.be.true;
+
+    fixtures.clearCookie(id);
+    expect(utils.getCookieValue(cookieName, document.cookie), 'cookie shouldn\'t be set').to.equal('');
   });
 
-  it('builds a button to enable itself to be dismissed', () => {
-    expect(callToAction.dismiss.$button).to.be.an.instanceof(HTMLButtonElement);
+  it('is not hidden immediately if no cookie indicates it was previously dismissed', function () {
+    const $fixture = fixtures.generateHTML();
+    const callToAction = new CallToAction($fixture);
+    expect(callToAction.$elm.classList.contains('hidden')).to.be.false;
   });
 
-  context('handles cookies such that', () => {
+  it('has a dismiss button', function () {
+    const $fixture = fixtures.generateHTML();
+    const callToAction = new CallToAction($fixture);
+    const $button = callToAction.dismissible.$button;
+    expect($button.classList.contains('dismiss-button')).to.be.true;
+  });
 
-    beforeEach(() => {
-      expireCookie(expectedCookieName);
-      expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.be.empty;
+  describe('dismiss button', function () {
+
+    it('is a child of .call-to-action', function () {
+      const callToAction = new CallToAction(fixtures.generateHTML());
+      const $button = callToAction.dismissible.$button;
+      expect($button.parentElement.classList.contains('call-to-action')).to.be.true;
     });
 
-    context('when dismissed', () => {
+    context('when clicked', function () {
 
-      beforeEach(() => {
-        callToAction.$elm.classList.add('call-to-action-wrapper--js-shown');
+      it('adds CSS class "hidden" to the call to action component', function () {
+        const $fixture = fixtures.generateHTML();
+        const callToAction = new CallToAction($fixture);
+        const $button = callToAction.dismissible.$button;
+        expect($fixture.classList.contains('hidden')).to.be.false;
+        $button.click();
+        expect($fixture.classList.contains('hidden')).to.be.true;
       });
 
-      afterEach(() => {
-        callToAction.$elm.classList.remove('hidden');
-      });
+      describe('sets a cookie with', function () {
 
-      it('has the CSS class "hidden"', () => {
-        // callToAction.handleInteraction(getMockEvent('call-to-action__dismiss'));
-        callToAction.$elm.click();
-        expect($elm.classList.contains('hidden')).to.be.true;
-      });
+        describe('name', function () {
 
-      it(`sets a cookie "${expectedCookieName}=true"`, () => {
-        callToAction.dismiss();
-        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
-      });
+          it('is derived from the HTML element\'s id and data-cookie-name-root attribute', function () {
+            const id = fixtures.generateRandomId();
+            const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id);
+            const callToAction = new CallToAction($fixture);
+            callToAction.dismissible.$button.click();
+            const expectedCookieName = `${fixtures.getCookieNameRoot()}${id}`;
+            expect(callToAction.dismissible.cookieName).to.equal(expectedCookieName);
+            expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
+            fixtures.clearCookie(id);
+          });
 
-    });
+          it('is empty if the HTML element lacks an id', function () {
+            const $fixture = fixtures.generateHTML();
+            $fixture.dataset.cookieNameRoot = fixtures.getCookieNameRoot();
 
-    context('when actioned', () => {
+            const callToAction = new CallToAction($fixture);
+            expect(callToAction.dismissible.cookieName).to.equal('');
 
-      it(`sets a cookie "${expectedCookieName}=true"`, () => {
-        callToAction.handleInteraction(getMockEvent('call-to-action__button'));
-        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
-      });
+            $fixture.parentElement.removeChild($fixture);
+          });
 
-    });
+          it('is empty if the HTML element lacks a data-cookie-name-root attribute', function () {
+            const id = fixtures.generateRandomId();
+            const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id);
+            delete $fixture.dataset.cookieNameRoot;
 
-    context(`when the cookie "${expectedCookieName}=true" has previously been set`, () => {
+            const callToAction = new CallToAction($fixture);
+            expect(callToAction.dismissible.cookieName).to.equal('');
 
-      let callToAction;
+            $fixture.parentElement.removeChild($fixture);
+          });
 
-      beforeEach(() => {
-        const expiryDate = 'Tue, 19 January 2038 03:14:07 UTC';
-        document.cookie = `${expectedCookieName}=true; expires=${expiryDate}; path=/;`;
-        document.querySelector('.call-to-action-wrapper').classList.add('call-to-action-wrapper--js-shown');
-      });
-
-      it('does not have the CSS class "call-to-action-wrapper--js-shown"', () => {
-        callToAction = new CallToAction($elm);
-        expect($elm.classList.contains('call-to-action-wrapper--js-shown')).to.be.false;
-      });
-
-    });
-
-    context(`when the cookie "${expectedCookieName}=true" is not currently set`, () => {
-
-      let callToAction;
-
-      beforeEach(() => {
-        expireCookie(expectedCookieName);
-        document.querySelector('.call-to-action-wrapper').classList.remove('call-to-action-wrapper--js-shown');
-      });
-
-      it('has the CSS class "call-to-action-wrapper--js-shown"', () => {
-        callToAction = new CallToAction($elm);
-        expect($elm.classList.contains('call-to-action-wrapper--js-shown')).to.be.true;
-      });
-
-    });
-
-    describe('the cookie name', () => {
-
-      it('is the string "callToAction_" appended with the id attribute of the component\'s HTML element', () => {
-        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.be.empty;
-        (new CallToAction($elm)).dismiss.dismiss();
-        expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
-      });
-
-      context('when the component\'s HTML element is missing an id attribute', () => {
-
-        let $elmNoId;
-        let callToActionWithElmNoId;
-
-        beforeEach(() => {
-          $elmNoId = $elm.cloneNode(true);
-          $elmNoId.setAttribute('id', '');
-          $elm.parentElement.appendChild($elmNoId);
-
-          callToActionWithElmNoId = new CallToAction($elmNoId);
         });
 
-        afterEach(() => {
-          $elmNoId.parentElement.removeChild($elmNoId);
-        });
+        describe('expiry date', function () {
 
-        it('does not create a dismiss button', () => {
-          expect(callToActionWithElmNoId.$button).to.be.undefined;
-        });
+          it('is configured with the value of data-cookie-expires HTML attribute, if set', function () {
+            const id = fixtures.generateRandomId();
+            const expiry = 'Tue, 19 January 2038 03:14:07 UTC';
+            const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id, expiry);
+            const callToAction = new CallToAction($fixture);
+            expect(callToAction.dismissible.cookieExpiryDate).to.equal(expiry);
 
-        context('when actioned', () => {
+            fixtures.clearCookie(id);
+            expect(utils.getCookieValue(`${fixtures.getCookieNameRoot()}${id}`, document.cookie), 'cookie shouldn\'t be set').to.equal('');
 
-          it('does not set a cookie', () => {
-            expect(utils.getCookieValue('callToAction_', document.cookie)).to.be.empty;
+          });
+
+          it('is configured with a day offset of the value of data-cookie-duration HTML attribute, if set', function () {
+            const id = fixtures.generateRandomId();
+
+            // 7 days in the future
+            let expiry = new Date(new Date());
+            expiry.setDate(expiry.getDate() + 7);
+            expiry = expiry.toUTCString();
+
+            const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id, expiry);
+
+            const callToAction = new CallToAction($fixture);
+            const actualExpiry = (new Date(callToAction.dismissible.cookieExpiryDate)).toUTCString();
+            expect(actualExpiry).to.equal(expiry);
+
+            fixtures.clearCookie(id);
+            expect(utils.getCookieValue(`${fixtures.getCookieNameRoot()}${id}`, document.cookie), 'cookie shouldn\'t be set').to.equal('');
+
           });
 
         });

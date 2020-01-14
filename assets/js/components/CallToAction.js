@@ -1,6 +1,6 @@
 'use strict';
 
-const Dismiss = require('../actions/Dismiss');
+const Dismissible = require('./_Dismissible');
 
 module.exports = class CallToAction {
   constructor($elm, _window = window, doc = document) {
@@ -8,8 +8,8 @@ module.exports = class CallToAction {
     this.window = _window;
     this.doc = doc;
 
-    this.dismiss = new Dismiss(this.$elm, '.call-to-action', this.doc);
-    this.$elm.addEventListener('click', () => this.dismiss.setCookie());
+    this.dismissible = new Dismissible(this.$elm, '.call-to-action', this.doc);
+    this.$elm.addEventListener('click', () => this.dismissible.dismiss());
     this.show();
   }
 
