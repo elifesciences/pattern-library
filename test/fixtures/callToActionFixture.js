@@ -15,11 +15,19 @@ module.exports = (function () {
       '',
       document.querySelector('body')
     );
-    utils.buildElement(
+
+    const $callToAction = utils.buildElement(
       'div',
       ['call-to-action'],
       '',
       $fixture
+    );
+
+    utils.buildElement(
+      'div',
+      ['call-to-action__button_wrapper'],
+      '',
+      $callToAction
     );
 
     $fixture.dataset.generatedFixture = '';
