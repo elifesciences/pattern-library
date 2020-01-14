@@ -9,7 +9,9 @@ module.exports = class CallToAction {
     this.doc = doc;
 
     this.dismissible = new Dismissible(this.$elm, '.call-to-action', this.doc);
-    this.$elm.addEventListener('click', () => this.dismissible.dismiss());
+
+    const $buttonWrapper = this.$elm.querySelector('.call-to-action__button_wrapper');
+    $buttonWrapper.addEventListener('click', () => this.dismissible.dismiss());
     this.show();
   }
 
