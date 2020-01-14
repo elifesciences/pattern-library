@@ -90,6 +90,22 @@
       width: 85%;
     }
   }
+
+  .dismiss-button {
+    background: url("../img/icons/clear.svg") 0 0 no-repeat;
+    border: 0;
+    border-radius: 2px;
+    display: inline-block;
+    float: right;
+    height: 24px;
+    text-indent: -10000px;
+    width: 24px;
+
+    &:hover {
+      background-color: rgba(0,0,0,0.15);
+    }
+  }
+
 }
 
 .info-bar--warning {
