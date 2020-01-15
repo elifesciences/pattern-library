@@ -108,25 +108,6 @@ describe('A dismissible InfoBar Component', function () {
 
           });
 
-          it('is configured with a day offset of the value of data-cookie-duration HTML attribute, if set', function () {
-            const id = fixtures.generateRandomId();
-
-            // 7 days in the future
-            let expiry = new Date(new Date());
-            expiry.setDate(expiry.getDate() + 7);
-            expiry = expiry.toUTCString();
-
-            const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id, expiry);
-
-            const infoBar = new InfoBar($fixture);
-            const actualExpiry = (new Date(infoBar.dismissible.cookieExpiryDate)).toUTCString();
-            expect(actualExpiry).to.equal(expiry);
-
-            fixtures.clearCookie(id);
-            expect(utils.getCookieValue(`${fixtures.getCookieNameRoot()}${id}`, document.cookie), 'cookie shouldn\'t be set').to.equal('');
-
-          });
-
         });
 
       });

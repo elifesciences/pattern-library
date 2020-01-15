@@ -13,20 +13,14 @@ module.exports = class Dismissible {
       return;
     }
 
-    this.cookieExpiryDate = Dismissible.deriveCookieExpiryDate(this.$toDismiss);
+    this.cookieExpiryDate = Dismissible.setCookieExpiryDate(this.$toDismiss);
     this.$button = this.buildButton(attachPoint);
   }
 
-  static deriveCookieExpiryDate($elm) {
+  static setCookieExpiryDate($elm) {
     if ($elm.dataset.cookieExpires) {
       return $elm.dataset.cookieExpires;
     }
-
-    const defaultDurationDays = 365;
-    const durationDays = parseInt($elm.dataset.cookieDuration, 10) || defaultDurationDays;
-    const expiryDate = new Date(new Date());
-    expiryDate.setDate(expiryDate.getDate() + durationDays);
-    return expiryDate;
   }
 
   static deriveCookieName($elm) {
