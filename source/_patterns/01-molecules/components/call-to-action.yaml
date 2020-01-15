@@ -12,19 +12,12 @@ properties:
     enum:
       - true
   dismissible:
-    oneOf:
-      - properties:
-          cookieDuration:
-            type: integer
-            minimum: 1
-        required:
-          - cookieDuration
-      - properties:
-          cookieExpires:
-            type: string
-            minLength: 1
-        required:
-          - cookieExpires
+    properties:
+      cookieExpires:
+        type: string
+        minLength: 1
+    required:
+      - cookieExpires
   button:
     $ref: ../../00-atoms/components/button.yaml
   image:
