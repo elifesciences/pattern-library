@@ -14,6 +14,9 @@ properties:
       - correction
       - success
       - warning
+  id:
+    type: string
+    minLength: 1
   dismissible:
       properties:
         cookieExpires:
@@ -24,3 +27,5 @@ properties:
 required:
   - text
   - type
+dependencies:
+  dismissible: [id]
