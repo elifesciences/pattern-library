@@ -72,6 +72,7 @@ describe('A Call to action Component', function () {
             expect(callToAction.dismissible.cookieName).to.equal(expectedCookieName);
             expect(utils.getCookieValue(expectedCookieName, document.cookie)).to.equal('true');
             fixtures.clearCookie(id);
+            expect(utils.getCookieValue(expectedCookieName, document.cookie), 'cookie shouldn\'t be set').to.equal('');
           });
 
           it('is empty if the HTML element lacks an id', function () {
