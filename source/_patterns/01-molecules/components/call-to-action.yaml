@@ -28,6 +28,6 @@ required:
   - button
   - image
 dependencies:
-  dismiss:
+  dismissible:
     - needsJs
 
