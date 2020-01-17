@@ -98,7 +98,7 @@ describe('A dismissible InfoBar Component', function () {
 
           it('is configured with the value of data-cookie-expires HTML attribute, if set', function () {
             const id = fixtures.generateRandomId();
-            const expiry = 'Tue, 19 January 2038 03:14:07 UTC';
+            const expiry = 'Tue, 19 Jan 2038 03:14:07 UTC';
             const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id, expiry);
             const infoBar = new InfoBar($fixture);
             expect(infoBar.dismissible.cookieExpiryDate).to.equal(expiry);
