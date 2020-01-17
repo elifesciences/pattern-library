@@ -11,6 +11,13 @@ properties:
     type: boolean
     enum:
       - true
+  dismissible:
+    properties:
+      cookieExpires:
+        type: string
+        minLength: 1
+    required:
+      - cookieExpires
   button:
     $ref: ../../00-atoms/components/button.yaml
   image:
@@ -20,3 +27,7 @@ required:
   - text
   - button
   - image
+dependencies:
+  dismissible:
+    - needsJs
+

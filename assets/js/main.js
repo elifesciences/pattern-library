@@ -24,6 +24,7 @@ Components.FragmentHandler = require('./components/FragmentHandler');
 Components.Highlights = require('./components/Highlights');
 Components.HypothesisLoader = require('./components/HypothesisLoader');
 Components.HypothesisOpener = require('./components/HypothesisOpener');
+Components.InfoBar = require('./components/InfoBar');
 Components.LoginControl = require('./components/LoginControl');
 Components.MainMenu = require('./components/MainMenu');
 Components.Math = require('./components/Math');

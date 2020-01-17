@@ -1,4 +1,14 @@
-<div class="call-to-action-wrapper{{#needsJs}} call-to-action-wrapper--needs-js{{/needsJs}}" id="{{id}}" data-behaviour="CallToAction">
+<div class="call-to-action-wrapper{{#needsJs}} call-to-action-wrapper--needs-js{{/needsJs}}"
+      id="{{id}}"
+
+      {{#needsJs}}
+        data-behaviour="CallToAction"
+      {{/needsJs}}
+
+      {{#dismissible}}
+        data-cookie-name-root="callToAction_"
+        {{#cookieExpires}} data-cookie-expires="{{cookieExpires}}"{{/cookieExpires}}
+      {{/dismissible}}>
 
   <div class="call-to-action">
 
