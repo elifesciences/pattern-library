@@ -501,7 +501,7 @@ $iconlist: cc oa;
 }
 
 .content-header__author_link_highlight {
-  padding: 0;
+  padding: 12px 0 0;
 }
 
 .content-header__author_link_highlight,
@@ -534,7 +534,7 @@ $iconlist: cc oa;
   @include author-typeg();
   list-style-type: none;
   padding: 0;
-  text-align: left;
+  text-align: center;
 }
 
 .content-header__item_toggle--expanded {
