@@ -500,15 +500,16 @@ $iconlist: cc oa;
 
 }
 
-.content-header__author_link_highlight {
-  padding: 12px 0 0;
-}
-
 .content-header__author_link_highlight,
 .content-header__author_link_highlight:hover {
   background-color: transparent;
   border-style: none;
   color: $color-primary;
+  padding-top: 0;
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    padding-top: 12px;
+  }
 }
 
 .content-header__authors {
