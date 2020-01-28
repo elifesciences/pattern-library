@@ -500,15 +500,16 @@ $iconlist: cc oa;
 
 }
 
-.content-header__author_link_highlight {
-  padding: 0;
-}
-
 .content-header__author_link_highlight,
 .content-header__author_link_highlight:hover {
   background-color: transparent;
   border-style: none;
   color: $color-primary;
+  padding-top: 12px;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    padding-top: 0;
+  }
 }
 
 .content-header__authors {
@@ -534,7 +535,7 @@ $iconlist: cc oa;
   @include author-typeg();
   list-style-type: none;
   padding: 0;
-  text-align: left;
+  text-align: center;
 }
 
 .content-header__item_toggle--expanded {
