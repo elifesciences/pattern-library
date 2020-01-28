@@ -77,6 +77,11 @@
 
 .info-bar--dismissible {
 
+  // when js is available, don't show until js has had a chance to hide it
+  .js &:not([data-behaviour-initialised]) {
+    display: none;
+  }
+
   .info-bar__container {
     margin: 0 auto;
     width: 100%;
