@@ -505,10 +505,10 @@ $iconlist: cc oa;
   background-color: transparent;
   border-style: none;
   color: $color-primary;
-  padding-top: 0;
+  padding-top: 12px;
 
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    padding-top: 12px;
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    padding-top: 0;
   }
 }
 
