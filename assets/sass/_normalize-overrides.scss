@@ -61,7 +61,7 @@ p a:not(.additional-asset__link--download):not(.asset-viewer-inline__download_al
   @include discreet-link();
 }
 
-.article-section__body ul:not(.reference__abstracts) a {
+.article-section__body ul:not(.reference__abstracts) a:not(.article-download-links-list__secondary_link) {
   @include discreet-link();
 }
 
