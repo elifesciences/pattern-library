@@ -3,7 +3,7 @@
   "description": "A three part list of links to download the article, or parts of the article, in various formats.",
   "groups": [
     {
-      "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF)</span>",
+      "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
       "items": [
         {
           "name": "Article",
@@ -21,6 +21,14 @@
         {
           "name": "Figures",
           "url": "#"
+        },
+        {
+          "name": "Executable DAR",
+          "url": "#darLink",
+          "secondaryLink": {
+            "name": "Learn more about DAR",
+            "url": "#secondaryLink"
+          }
         }
       ]
     },
