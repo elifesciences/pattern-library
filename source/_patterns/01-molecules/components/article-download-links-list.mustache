@@ -6,19 +6,25 @@
     <ul class="article-download-list">
       {{#items}}
           <li class="article-download-links-list__item">
-            {{#secondaryLink}}
+
+            {{#secondary}}
               <dl>
                 <dt>
-            {{/secondaryLink}}
-                    <a href="{{url}}"
+            {{/secondary}}
+
+            {{#primary}}
+              <a href="{{url}}"
                        class="article-download-links-list__link"
                        {{#attributes}}data-{{key}}{{#value}}="{{value}}"{{/value}}{{/attributes}}
                     >{{{name}}}</a>
-              {{#secondaryLink}}
+            {{/primary}}
+
+            {{#secondary}}
                 </dt>
                 <dd><a href="{{url}}" class="article-download-links-list__secondary_link">{{{name}}}</a></dd>
               </dl>
-            {{/secondaryLink}}
+            {{/secondary}}
+
           </li>
       {{/items}}
     </ul>

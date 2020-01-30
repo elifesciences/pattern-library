@@ -574,17 +574,23 @@
           "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
           "items": [
             {
-              "name": "Article",
-              "url": "#"
+              "primary": {
+                "name": "Article",
+                "url": "#"
+              }
             },
             {
-              "name": "Figures",
-              "url": "#"
+              "primary": {
+                "name": "Figures",
+                "url": "#"
+              }
             },
             {
-              "name": "Executable DAR",
-              "url": "#darLink",
-              "secondaryLink": {
+              "primary": {
+                "name": "Executable DAR",
+                "url": "#darLink"
+              },
+              "secondary": {
                 "name": "Learn more about DAR",
                 "url": "#secondaryLink"
               }
@@ -595,12 +601,16 @@
           "title": "Download citations<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
           "items": [
             {
-              "name": "BibTex",
-              "url": "#"
+              "primary": {
+                "name": "BibTex",
+                "url": "#"
+              }
             },
             {
-              "name": "RIS",
-              "url": "#"
+              "primary": {
+                "name": "RIS",
+                "url": "#"
+              }
             }
           ]
         },
@@ -608,20 +618,28 @@
           "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
           "items": [
             {
-              "name": "Mendeley",
-              "url": "#"
+              "primary": {
+                "name": "Mendeley",
+                "url": "#"
+              }
             },
             {
-              "name": "ReadCube",
-              "url": "#"
+              "primary": {
+                "name": "ReadCube",
+                "url": "#"
+              }
             },
             {
-              "name": "Papers App",
-              "url": "#"
+              "primary": {
+                "name": "Papers App",
+                "url": "#"
+              }
             },
             {
-              "name": "CiteUlike",
-              "url": "#"
+              "primary": {
+                "name": "CiteUlike",
+                "url": "#"
+              }
             }
           ]
         }
