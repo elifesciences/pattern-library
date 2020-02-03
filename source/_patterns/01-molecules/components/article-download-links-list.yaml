@@ -43,6 +43,9 @@ properties:
                           type: string
                       required:
                         - key
+                required:
+                  - name
+                  - url
               secondary:
                 type: object
                 properties:
@@ -64,6 +67,9 @@ properties:
                           type: string
                       required:
                         - key
+                required:
+                  - name
+                  - url
             required:
               - primary
       required:
