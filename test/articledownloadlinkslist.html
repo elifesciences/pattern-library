@@ -27,33 +27,71 @@
 
 
 
-    <div data-behaviour="ArticleDownloadLinksList" id="articleDownloadLinksList">
+    <div data-behaviour="ArticleDownloadLinksList" id="download" aria-labelledby="download-label">
+      <div class="visuallyhidden"><span id="download-label">A three part list of links to download the article, or parts of the article, in various formats.</span></div>
 
       <h3 class="article-download-links-list__heading">Downloads<span class="visuallyhidden"> (links to download the article or parts of the article as PDF)</span></h3>
       <ul class="article-download-list">
-        <li><a href="#" class="article-download-links-list__link">Article</a></li>
-        <li><a href="#" class="article-download-links-list__link">Figures</a></li>
-      </ul>
+        <li><a href="#" class="article-download-links-list__link"
 
+               data-foo="bar"
+               data-baz
+
+        >Article</a></li>
+        <li><a href="#" class="article-download-links-list__link"
+
+
+        >Figures</a></li>
+      </ul>
       <h3 class="article-download-links-list__heading">Download citations<span class="visuallyhidden"> (links to download the citations from this article in formats compatible with various reference manager tools)</span></h3>
-      <ul class="article-download-citations-list">
-        <li><a href="#" class="article-download-links-list__link">BibTex</a></li>
-        <li><a href="#" class="article-download-links-list__link">EndNote</a></li>
-        <li><a href="#" class="article-download-links-list__link">EndNote 8</a></li>
-        <li><a href="#" class="article-download-links-list__link">Refworks Tagged</a></li>
-        <li><a href="#" class="article-download-links-list__link">RIS</a></li>
-        <li><a href="#" class="article-download-links-list__link">Medlars</a></li>
-      </ul>
+      <ul class="article-download-list">
+        <li><a href="#" class="article-download-links-list__link"
 
+
+        >BibTex</a></li>
+        <li><a href="#" class="article-download-links-list__link"
+
+
+        >EndNote</a></li>
+        <li><a href="#" class="article-download-links-list__link"
+
+
+        >EndNote 8</a></li>
+        <li><a href="#" class="article-download-links-list__link"
+
+
+        >Refworks Tagged</a></li>
+        <li><a href="#" class="article-download-links-list__link"
+
+
+        >RIS</a></li>
+        <li><a href="#" class="article-download-links-list__link"
+
+
+        >Medlars</a></li>
+      </ul>
       <h3 class="article-download-links-list__heading">Open citations<span class="visuallyhidden"> (links to open the citations from this article in various online reference manager services)</span></h3>
-      <ul>
-        <li><a href="#" class="article-download-links-list__link">Mendeley</a></li>
-        <li><a href="#" class="article-download-links-list__link">ReadCube</a></li>
-        <li><a href="#" class="article-download-links-list__link">Papers App</a></li>
-        <li><a href="#" class="article-download-links-list__link">CiteUlike</a></li>
+      <ul class="article-download-list">
+        <li><a href="#" class="article-download-links-list__link"
+
+
+        >Mendeley</a></li>
+        <li><a href="#" class="article-download-links-list__link"
+
+
+        >ReadCube</a></li>
+        <li><a href="#" class="article-download-links-list__link"
+
+
+        >Papers App</a></li>
+        <li><a href="#" class="article-download-links-list__link"
+
+
+        >CiteUlike</a></li>
       </ul>
 
     </div>
+
     <!--
       Load test code
     -->

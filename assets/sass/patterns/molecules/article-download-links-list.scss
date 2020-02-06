@@ -1,5 +1,22 @@
 @import "../../definitions";
 
+.article-download-links-list__link {
+  font-weight: normal;
+}
+
+.article-download-links-list__secondary_link {
+  @include font-size(14);
+  font-family: $font-secondary;
+  color: $color-primary;
+
+  .article-download-links-list--js & {
+    display: block;
+    @include font-size(12);
+    @include padding(24, left);
+    @include margin(6, top);
+  }
+}
+
 .article-download-links-list--js {
   background-color: #fff;
   border: 1px solid #e0e0e0;
@@ -23,7 +40,7 @@
       margin-bottom: 0;
     }
 
-    & li:first-child {
+    & .article-download-links-list__item:first-child {
       border-top-style: none;
     }
 
@@ -34,10 +51,17 @@
     }
   }
 
-  .article-download-links-list__link {
-    display: block;
+  .article-download-links-list__item {
     @include blg-spacing("top", "extra-small");
     @include blg-spacing("bottom", "extra-small");
+
+    dl {
+      margin-bottom: 0;
+    }
+  }
+
+  .article-download-links-list__link {
+    display: block;
     @include padding(24, "left");
     @include padding(24, "right");
     @include menu-typeg();

@@ -22,27 +22,44 @@ properties:
           items:
             type: object
             properties:
-              name:
-                type: string
-                minLength: 1
-              url:
-                type: string
-                minLength: 1
-              attributes:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    key:
-                      type: string
-                      minLength: 1
-                    value:
-                      type: string
-                  required:
-                    - key
+              primary:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    minLength: 1
+                  url:
+                    type: string
+                    minLength: 1
+                  attributes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                          minLength: 1
+                        value:
+                          type: string
+                      required:
+                        - key
+                required:
+                  - name
+                  - url
+              secondary:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    minLength: 1
+                  url:
+                    type: string
+                    minLength: 1
+                required:
+                  - name
+                  - url
             required:
-              - name
-              - url
+              - primary
       required:
         - title
         - items

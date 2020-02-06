@@ -5,13 +5,27 @@
     <h3 class="article-download-links-list__heading">{{{title}}}</h3>
     <ul class="article-download-list">
       {{#items}}
-       <li><a href="{{url}}" class="article-download-links-list__link"
+          <li class="article-download-links-list__item">
 
-       {{#attributes}}
-         data-{{key}}{{#value}}="{{value}}"{{/value}}
-       {{/attributes}}
+            {{#secondary}}
+              <dl>
+                <dt>
+            {{/secondary}}
 
-       >{{{name}}}</a></li>
+            {{#primary}}
+              <a href="{{url}}"
+                       class="article-download-links-list__link"
+                       {{#attributes}}data-{{key}}{{#value}}="{{value}}"{{/value}}{{/attributes}}
+                    >{{{name}}}</a>
+            {{/primary}}
+
+            {{#secondary}}
+                </dt>
+                <dd><a href="{{url}}" class="article-download-links-list__secondary_link">{{{name}}}</a></dd>
+              </dl>
+            {{/secondary}}
+
+          </li>
       {{/items}}
     </ul>
   {{/groups}}
