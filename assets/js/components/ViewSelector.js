@@ -235,7 +235,12 @@ module.exports = class ViewSelector {
 
   insertSideBySideListItem() {
     const $list = this.doc.querySelector('.view-selector__list');
-    const $jumpList = this.doc.querySelector('.view-selector__list-item--jump');
+    const $jumpList = this.doc.querySelector('.view-selector__list-item--figures + .view-selector__list-item');
+
+    if (!$jumpList) {
+      return;
+    }
+
     const $listItem = utils.buildElement(
       'li',
       [

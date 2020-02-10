@@ -9,6 +9,12 @@
       </li>
     {{/figureUrl}}
 
+    {{#otherLinks}}
+      <li class="view-selector__list-item">
+        <a href="{{url}}" class="view-selector__link"><span>{{{name}}}</span></a>
+      </li>
+    {{/otherLinks}}
+
     {{#jumpLinks}}
       <li class="view-selector__list-item view-selector__list-item--jump">
         <span class="view-selector__jump_links_header">Jump to</span>
