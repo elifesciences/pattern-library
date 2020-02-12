@@ -1,0 +1,17 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  id:
+    type: string
+    minLength: 1
+  text:
+    type: array
+    items:
+      $ref: ../../00-atoms/components/paragraph.yaml
+    minItems: 1
+  date:
+    $ref: ../../00-atoms/components/date.yaml
+required:
+  - id
+  - text
+  - date
