@@ -125,6 +125,7 @@
   }
 
   .view-selector__list-item {
+    display: none;
     border: 1px solid $color-text;
     float: left;
     margin: 0;
@@ -135,11 +136,13 @@
 
   /** Selector nesting here because otherwise this all gets horrible quickly **/
   .view-selector__list-item--article {
+    display: inline-block;
     border-right: none;
     @include border-radius-simple(4, 0, 0, 4);
   }
 
   .view-selector__list-item--figures {
+    display: inline-block;
     border-left: none;
     @include border-radius-simple(0, 4, 4, 0);
   }
@@ -155,14 +158,6 @@
       }
 
     }
-  }
-
-  .view-selector__list-item--side-by-side {
-    display: none;
-  }
-
-  .view-selector__list-item--jump {
-    display: none;
   }
 
   .view-selector__link {

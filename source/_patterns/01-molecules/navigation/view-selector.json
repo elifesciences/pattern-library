@@ -2,6 +2,9 @@
   "articleUrl": "#article",
   "figureUrl": "#figures",
   "sideBySideUrl": "#sideBySide",
+  "otherLinks": [
+    { "name": "Executable code", "url": "#rds" }
+  ],
   "jumpLinks": {
     "links": [
       { "name": "Abstract", "url": "#abstract" },
