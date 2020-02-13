@@ -44,8 +44,7 @@
     },
 
     "formats": {
-      "html": true,
-      "pdf": true
+      "list": ["HTML", "PDF"]
     }
   }
 

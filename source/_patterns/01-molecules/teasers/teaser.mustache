@@ -99,12 +99,9 @@
     <div class="teaser__formats">
       <span class="visuallyhidden">Available as:</span>
       <ul class="teaser__formats-list">
-        {{#html}}
-          <li>HTML</li>
-        {{/html}}
-        {{#pdf}}
-          <li>PDF</li>
-        {{/pdf}}
+        {{#list}}
+          <li>{{.}}</li>
+        {{/list}}
       </ul>
     </div>
     {{/formats}}
