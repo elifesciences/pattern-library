@@ -377,8 +377,7 @@
               }
             },
             "formats": {
-              "html": true,
-              "pdf": true
+              "list": ["Executable", "PDF"]
             }
           },
 
@@ -421,8 +420,7 @@
               }
             },
             "formats": {
-              "html": true,
-              "pdf": true
+              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -458,8 +456,7 @@
               }
             },
             "formats": {
-              "html": true,
-              "pdf": true
+              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -495,8 +492,7 @@
               }
             },
             "formats": {
-              "html": true,
-              "pdf": true
+              "list": ["HTML", "PDF"]
             }
           },
           "image": {
@@ -541,7 +537,7 @@
               }
             },
             "formats": {
-              "pdf": true
+              "list": ["PDF"]
             }
           }
         }

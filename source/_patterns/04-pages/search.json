@@ -174,7 +174,7 @@
               }
             },
             "formats": {
-              "pdf": true
+              "list": ["PDF"]
             }
           }
         },
@@ -210,8 +210,7 @@
               }
             },
             "formats": {
-              "html": true,
-              "pdf": true
+              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -281,8 +280,7 @@
               }
             }  ,
             "formats": {
-              "html": true,
-              "pdf": true
+              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -315,8 +313,7 @@
               }
             },
             "formats": {
-              "html": true,
-              "pdf": true
+              "list": ["HTML", "PDF"]
             }
           }
         }
