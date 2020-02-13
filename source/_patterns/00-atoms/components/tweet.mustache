@@ -1,5 +1,5 @@
 <div class="tweet">
-  <blockquote class="twitter-tweet">
+  <blockquote class="twitter-tweet"{{#hideConversation}} data-conversation="none"{{/hideConversation}}{{#hideCards}} data-cards="hidden"{{/hideCards}}>
     {{#text}}
       {{> atoms-paragraph }}
     {{/text}}

@@ -1,0 +1,19 @@
+{
+  "url": "https://twitter.com/eLife/status/1225868108168093696",
+  "accountId": "eLife",
+  "accountLabel": "eLife - the journal",
+  "text": [
+    {
+      "text": "Tune in to the latest <a href=\"https://twitter.com/hashtag/eLifePodcast?src=hash&amp;ref_src=twsrc%5Etfw\">#eLifePodcast</a> to hear authors discuss the stories behind their recent discoveries <a href=\"https://t.co/awwqu5L3lE\">https://t.co/awwqu5L3lE</a>"
+    }
+  ],
+  "date": {
+    "forHuman": {
+      "dayOfMonth": 7,
+      "month": "Feb",
+      "year": 2020
+    },
+    "forMachine": "2020-02-07"
+  },
+  "hideCards": true
+}

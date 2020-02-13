@@ -17,6 +17,12 @@ properties:
     minItems: 1
   date:
     $ref: ../../00-atoms/components/date.yaml
+  hideConversation:
+    type: boolean
+    default: false
+  hideCards:
+    type: boolean
+    default: false
 required:
   - url
   - accountId
