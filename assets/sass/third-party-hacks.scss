@@ -1,21 +1,21 @@
 /* These hacks are for the third party plugin Hypothesis. The background colours cannot be changed unless you override them with an !important tag. */
 
-.annotator-hl {
+.hypothesis-highlight {
   background-color: rgba(2,136,209,0.2) !important;
 }
 
-.annotator-hl .annotator-hl {
+.hypothesis-highlight .hypothesis-highlight {
   background-color: rgba(2,136,209,0.36) !important;
 }
 
-.annotator-hl .annotator-hl .annotator-hl {
+.hypothesis-highlight .hypothesis-highlight .hypothesis-highlight {
   background-color: rgba(2,136,209,0.5) !important;
 }
 
-.annotator-hl.annotator-hl-focused {
+.hypothesis-highlight.hypothesis-highlight-focused {
   background-color: rgba(2,136,209,0.7) !important;
 
-  .annotator-hl {
+  .hypothesis-highlight {
     background-color: transparent !important;
   }
 }
