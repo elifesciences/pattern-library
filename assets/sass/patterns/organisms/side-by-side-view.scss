@@ -5,21 +5,23 @@
   overflow: hidden;
   position: absolute;
   left: 0;
-  top: 8.6rem;
-  height: calc(100% - 8.6rem);
+  top: (40px + 1 + 54 + 40); // .site-header height + .side-by-side-view__bar height
+  top: #{get-rem-from-px(40 + 1 + 54 + 40)}rem;
+  height: calc(100% - #{(40 + 1 + 54)}px - 40px); // 100% - .site-header height - .side-by-side-view__bar height
+  height: calc(100% - #{get-rem-from-px(40 + 1 + 54)}rem - #{get-rem-from-px(40)}rem);
   width: 100%;
 }
 
 .side-by-side-view__bar {
   position: absolute;
   left: 0;
-  top: 6.2rem;
+  top: (40px + 1 + 54 + 40); // .site-header height
+  top: #{get-rem-from-px(40 + 1 + 54)}rem;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
   background-color: #f7f7f7;
   width: 100%;
-  height: 40px;
-  @include font-size-and-vertical-height($font-size-base-in-px, 38);
+  @include height(40);
 }
 
 .side-by-side-view__button-close {
@@ -28,6 +30,7 @@
   font-family: $font-secondary;
   font-weight: bold;
   @include font-size(14);
+  height: 100%;
   color: $color-primary;
   padding: 0 0 0 8px;
 }
