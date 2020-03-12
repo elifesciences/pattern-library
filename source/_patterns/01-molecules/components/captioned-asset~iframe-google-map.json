@@ -1,0 +1,16 @@
+{
+  "captionText": {
+    "heading": "Many features are conserved between the mammalian nephron and planarian protonephridia.",
+    "text": "<p>(A) Image of a young adult C. elegans and schematic depicting the twelve pairs of sensory neurons in the anterior amphid individuals carrying a virus with k deleterious mutations at its endemic equilibrium. class carrying the fewest number of deleterious mutations is defined as mutation class k = 0. Inset: variation in the basic reproductive rate of infected individuals (gray histogram) and variation in the net reproductive rate R of infected individuals (brown histogram) resulting from variation in the number of deleterious mutations carried by circulating viruses.</p>"
+  },
+
+  "iframe": {
+    "src": "https://www.google.com/maps/d/embed?mid=13cEQIsP3F9-iEVDDgradCs2Z9F-ODLyx",
+    "paddingBottom": 75
+  },
+
+  "doi": {
+    "doi": "10.7554/eLife.16370",
+    "variant": "article-section"
+  }
+}
