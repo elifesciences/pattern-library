@@ -40,17 +40,24 @@ elifePipeline {
 
         elifePullRequestOnly { prNumber ->
             stage 'Deploying to a public URL', {
-                withCommitStatus({
-                    def url = "https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
-                    def container = sh(script: "docker run -d elifesciences/pattern-library:${commit}", returnStdout: true).trim()
-                    sh "mkdir -p public/"
-                    sh "docker cp ${container}:/usr/share/nginx/html/. public/"
-                    sh "rm public/50x.html"
-                    sh "docker stop ${container}"
-                    sh "docker rm ${container}"
-                    sh "aws s3 sync public/ s3://ci-pattern-library/${prNumber}/ --delete"
-                    sh "/usr/local/jenkins-scripts/colorize.sh You can see this pattern-library version at ${url}"
-                }, 'pr-demo', commit)
+                def targetUrl = "https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
+                withCommitStatus(
+                    {
+                        def container = sh(script: "docker run -d elifesciences/pattern-library:${commit}", returnStdout: true).trim()
+                        sh "mkdir -p public/"
+                        sh "docker cp ${container}:/usr/share/nginx/html/. public/"
+                        sh "rm public/50x.html"
+                        sh "docker stop ${container}"
+                        sh "docker rm ${container}"
+                        sh "aws s3 sync public/ s3://ci-pattern-library/${prNumber}/ --delete"
+                        sh "/usr/local/jenkins-scripts/colorize.sh You can see this pattern-library version at ${targetUrl}"
+                    },
+                    [
+                        'name': 'pr-demo',
+                        'commit': commit,
+                        'targetUrl': targetUrl
+                    ]
+                )
             }
         }
 
