@@ -46,10 +46,10 @@
 }
 
 .site-header__logo_link {
-  background: url("../img/patterns/organisms/elife-logo-symbol-1x.png") 0 0 no-repeat;
+  background: url("../img/patterns/organisms/elife-logo-symbol@1x.png") 0 0 no-repeat;
   display: block;
   height: 28px;
-  margin: 6px 0 0 3px;
+  margin: 7px 0 0 3px;
   width: 28px;
 
   // Lock-out IE 11. Dirty :-(
@@ -125,8 +125,8 @@
     background: none;
     display: block;
     float: right;
-    height: 70px;
-    margin: 0;
+    height: 51px;
+    margin: 4px 0 0;
     position: relative;
     width: 136px;
     z-index: 10;
