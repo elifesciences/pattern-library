@@ -1,12 +1,9 @@
-<div class="tweet">
+<div class="tweet" data-behaviour="Twitter">
   <blockquote class="twitter-tweet"{{#hideConversation}} data-conversation="none"{{/hideConversation}}{{#hideCards}} data-cards="hidden"{{/hideCards}}>
     {{#text}}
       {{> atoms-paragraph }}
     {{/text}}
-    &mdash; {{accountLabel}} (@{{accountId}}) <a href="{{url}}">
-    {{#date}}
-      {{>atoms-date}}
-    {{/date}}
-    </a>
+    <span class="tweet__account">{{accountLabel}} (@{{accountId}})</span>
+    <span class="tweet__context">{{#date}}{{>atoms-date}}{{/date}} | <a class="tweet__context__link" href="{{url}}">See tweet</a></span>
   </blockquote>
 </div>
