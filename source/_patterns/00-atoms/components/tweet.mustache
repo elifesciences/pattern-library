@@ -1,9 +1,12 @@
-<div class="tweet" data-behaviour="Twitter">
-  <blockquote class="twitter-tweet"{{#hideConversation}} data-conversation="none"{{/hideConversation}}{{#hideCards}} data-cards="hidden"{{/hideCards}}>
+<article class="tweet" data-behaviour="Twitter">
+  <blockquote class="tweet__content twitter-tweet"{{#hideConversation}} data-conversation="none"{{/hideConversation}}{{#hideCards}} data-cards="hidden"{{/hideCards}}>
     {{#text}}
       {{> atoms-paragraph }}
     {{/text}}
-    <span class="tweet__account">{{accountLabel}} (@{{accountId}})</span>
-    <span class="tweet__context">{{#date}}{{>atoms-date}}{{/date}} | <a class="tweet__context__link" href="{{url}}">See tweet</a></span>
+    <div class="tweet__by" aria-label="Tweeted by">{{accountLabel}} (@{{accountId}})</div>
+    <div class="tweet__context">
+      {{#date}}{{> atoms-date }}{{/date}}
+      <a class="tweet__link" href="{{url}}">See tweet</a>
+    </div>
   </blockquote>
-</div>
+</article>
