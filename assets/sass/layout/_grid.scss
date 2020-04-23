@@ -115,7 +115,7 @@
   }
 
   .content-header-simple + &.wrapper--listing,
-  .content-header-image-wrapper + &.wrapper--listing {
+  .content-header-image-wrapper:not(.content-header-image-wrapper--with-credit-overlay) + &.wrapper--listing {
     padding-top: 0;
   }
 
