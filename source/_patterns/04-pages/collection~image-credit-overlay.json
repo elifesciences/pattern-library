@@ -160,7 +160,12 @@
     "image": {
       "fallback": {
         "defaultPath": "https://unsplash.it/1114/336"
-      }
+      },
+      "credit": {
+        "text": "I haz image credit <a href=\"#\">with a link</a>.",
+        "elementId": "iAmTheIdOfTheImageCreditElement"
+      },
+      "creditOverlay": true
     },
     "meta": {
       "url": "#",
