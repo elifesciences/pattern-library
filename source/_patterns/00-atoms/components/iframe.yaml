@@ -4,6 +4,9 @@ properties:
   src:
     type: string
     minLength: 1
+  title:
+    type: string
+    minLength: 1
   allowFullScreen:
     type: boolean
     default: false
