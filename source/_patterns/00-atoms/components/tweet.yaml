@@ -11,10 +11,8 @@ properties:
     type: string
     minLength: 1
   text:
-    type: array
-    items:
-      $ref: ../../00-atoms/components/paragraph.yaml
-    minItems: 1
+    type: string
+    minLength: 1
   date:
     $ref: ../../00-atoms/components/date.yaml
   hideConversation:
