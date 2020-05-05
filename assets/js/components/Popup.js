@@ -239,7 +239,6 @@ module.exports = class Popup {
       this.popupHitBox.setAttribute('aria-expanded', 'true');
       this.popupHitBox.setAttribute('tabindex', -1);
       this.popupHitBox.setAttribute('aria-hidden', 'false');
-      this.popupHitBox.focus();
       e.preventDefault();
     } else {
       this.popupHitBox.setAttribute('aria-expanded', 'false');
@@ -351,6 +350,7 @@ module.exports = class Popup {
       });
 
     } else {
+      this.popupHitBox.style.display = 'none';
       this.setAttributesForClosedPopupHitBox();
       this.$link.focus();
     }
