@@ -234,15 +234,14 @@ module.exports = class Popup {
     };
   }
 
-  setAccessibilityAttributesPopupHitBox(isToBeShown, e) {
+  setAccessibilityAttributesPopupHitBox(isToBeShown) {
     if (isToBeShown) {
+      this.popupHitBox.setAttribute('role', 'alert');
       this.popupHitBox.setAttribute('aria-expanded', 'true');
-      this.popupHitBox.setAttribute('tabindex', -1);
       this.popupHitBox.setAttribute('aria-hidden', 'false');
-      e.preventDefault();
+      this.popupHitBox.focus();
     } else {
       this.popupHitBox.setAttribute('aria-expanded', 'false');
-      this.popupHitBox.removeAttribute('tabindex', -1);
       this.popupHitBox.setAttribute('aria-hidden', 'true');
       this.popupHitBox.style.display = 'none';
     }
