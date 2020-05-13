@@ -1,5 +1,9 @@
 @import "../../definitions";
 
+.author-details {
+  text-align: left;
+}
+
 .author-details__section {
   @include blg-spacing("bottom", "small", "margin");
 
