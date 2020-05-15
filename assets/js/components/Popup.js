@@ -239,7 +239,7 @@ module.exports = class Popup {
       this.popupHitBox.setAttribute('role', 'alert');
       this.popupHitBox.setAttribute('aria-expanded', 'true');
       this.popupHitBox.setAttribute('aria-hidden', 'false');
-      this.popupHitBox.focus();
+      this.popupHitBox.blur();
     } else {
       this.popupHitBox.setAttribute('aria-expanded', 'false');
       this.popupHitBox.setAttribute('aria-hidden', 'true');
@@ -281,7 +281,7 @@ module.exports = class Popup {
       top = topIfAbove;
     }
 
-    this.$link.parentNode.insertBefore(this.popupHitBox, this.$link);
+    this.$link.parentNode.appendChild(this.popupHitBox, this.$link);
     this.popupHitBox.style.left = `${left}px`;
     this.popupHitBox.style.top = `${top}px`;
     this.setAttributesForOpenPopupHitBox(e);
@@ -325,7 +325,7 @@ module.exports = class Popup {
       Popup.setLinksClasses(this.popupHitBox);
 
       // Add to DOM.
-      this.doc.body.appendChild(this.popupHitBox);
+      this.$link.appendChild(this.popupHitBox);
 
       this.window.addEventListener('resize', utils.debounce(() => {
         // If the viewport is too narrow, we don't.
