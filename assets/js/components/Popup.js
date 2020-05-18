@@ -281,7 +281,7 @@ module.exports = class Popup {
       top = topIfAbove;
     }
 
-    this.$link.parentNode.appendChild(this.popupHitBox, this.$link);
+    this.$link.parentNode.insertBefore(this.popupHitBox, this.$link.nextElementSibling);
     this.popupHitBox.style.left = `${left}px`;
     this.popupHitBox.style.top = `${top}px`;
     this.setAttributesForOpenPopupHitBox(e);
@@ -325,7 +325,7 @@ module.exports = class Popup {
       Popup.setLinksClasses(this.popupHitBox);
 
       // Add to DOM.
-      this.$link.appendChild(this.popupHitBox);
+      this.doc.body.appendChild(this.popupHitBox);
 
       this.window.addEventListener('resize', utils.debounce(() => {
         // If the viewport is too narrow, we don't.
