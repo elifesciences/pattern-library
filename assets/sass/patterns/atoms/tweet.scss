@@ -2,6 +2,9 @@
 @import "../../variables";
 
 .tweet {
+  @include margin($blg-space-small-in-px);
+  @include padding($blg-space-small-in-px);
+  border: 1px solid #e0e0e0;
 
   > * {
     margin-left: auto;
@@ -10,9 +13,11 @@
 }
 
 .tweet__content {
+  font-family: $font-secondary;
 
   .paragraph {
     @include font-size-and-vertical-height(16);
+    font-family: $font-secondary;
   }
 
   .tweet__by {
