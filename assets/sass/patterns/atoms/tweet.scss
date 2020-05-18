@@ -1,8 +1,39 @@
 @import "../../definitions";
+@import "../../variables";
 
 .tweet {
+
   > * {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.tweet__content {
+
+  .paragraph {
+    @include font-size-and-vertical-height(16);
+  }
+
+  .tweet__by {
+    @include font-size-and-vertical-height(14);
+    font-weight: bold;
+  }
+
+  .tweet__context {
+
+    .date {
+      @include font-size-and-vertical-height(14);
+      color: $color-text-secondary;
+
+      &:after {
+        content: " | ";
+      }
+    }
+
+    .tweet__link {
+      @include font-size-and-vertical-height(14);
+    }
+
   }
 }
