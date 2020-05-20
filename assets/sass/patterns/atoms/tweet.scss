@@ -3,9 +3,8 @@
 
 .tweet {
   @include margin($blg-space-small-in-px);
-  @include padding($blg-space-small-in-px);
-  @include padding(45, "right");
-  background: url("../img/icons/twitter-blue.svg") no-repeat 98.5% 10%;
+  @include padding(8 48 8 24);
+  background: url("../img/icons/twitter-blue.svg") no-repeat 98.5% 24px;
   border: 1px solid #e0e0e0;
 
   > * {
