@@ -234,15 +234,14 @@ module.exports = class Popup {
     };
   }
 
-  setAccessibilityAttributesPopupHitBox(isToBeShown, e) {
+  setAccessibilityAttributesPopupHitBox(isToBeShown) {
     if (isToBeShown) {
+      this.popupHitBox.setAttribute('role', 'alert');
       this.popupHitBox.setAttribute('aria-expanded', 'true');
-      this.popupHitBox.setAttribute('tabindex', -1);
       this.popupHitBox.setAttribute('aria-hidden', 'false');
-      e.preventDefault();
+      this.popupHitBox.blur();
     } else {
       this.popupHitBox.setAttribute('aria-expanded', 'false');
-      this.popupHitBox.removeAttribute('tabindex', -1);
       this.popupHitBox.setAttribute('aria-hidden', 'true');
       this.popupHitBox.style.display = 'none';
     }
@@ -282,7 +281,7 @@ module.exports = class Popup {
       top = topIfAbove;
     }
 
-    this.$link.parentNode.insertBefore(this.popupHitBox, this.$link);
+    this.$link.parentNode.insertBefore(this.popupHitBox, this.$link.nextElementSibling);
     this.popupHitBox.style.left = `${left}px`;
     this.popupHitBox.style.top = `${top}px`;
     this.setAttributesForOpenPopupHitBox(e);
