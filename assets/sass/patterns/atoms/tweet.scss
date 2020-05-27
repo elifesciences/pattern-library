@@ -11,7 +11,7 @@
 
 .tweet__content {
   @include margin($blg-space-small-in-px);
-  @include padding(24 48 24 24);
+  @include padding(24 72 24 24);
   background: url("../img/icons/twitter-blue.svg") no-repeat;
   background-position: right 24px top 24px;
   border: 1px solid #e0e0e0;
