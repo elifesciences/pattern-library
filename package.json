@@ -53,8 +53,7 @@
   "optionalDependencies": {
     "fsevents": "*"
   },
-  "files": ["source/**/*"],
-  "style": "source/assets/css/all.css",
+  "files": ["source/assets/**/*"],
   "scripts": {
     "prepare": "gulp"
   }
