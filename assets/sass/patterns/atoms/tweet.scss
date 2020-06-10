@@ -1,0 +1,46 @@
+@import "../../definitions";
+@import "../../variables";
+
+.tweet {
+
+  > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.tweet__content {
+  @include margin($blg-space-small-in-px);
+  @include padding(24 72 24 24);
+  background: url("../img/icons/twitter-blue.svg") no-repeat;
+  background-position: right 24px top 24px;
+  border: 1px solid #e0e0e0;
+  font-family: $font-secondary;
+
+  .paragraph {
+    @include font-size-and-vertical-height(16);
+    font-family: $font-secondary;
+  }
+
+  .tweet__by {
+    @include font-size-and-vertical-height(14);
+    font-weight: bold;
+  }
+
+  .tweet__context {
+
+    .date {
+      @include font-size-and-vertical-height(14);
+      color: $color-text-secondary;
+
+      &:after {
+        content: " | ";
+      }
+    }
+
+    .tweet__link {
+      @include font-size-and-vertical-height(14);
+    }
+
+  }
+}

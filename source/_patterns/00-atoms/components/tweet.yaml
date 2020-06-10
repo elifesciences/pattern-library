@@ -1,0 +1,29 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  url:
+    type: string
+    minLength: 1
+  accountId:
+    type: string
+    minLength: 1
+  accountLabel:
+    type: string
+    minLength: 1
+  text:
+    type: string
+    minLength: 1
+  date:
+    $ref: ../../00-atoms/components/date.yaml
+  hideConversation:
+    type: boolean
+    default: true
+  hideCards:
+    type: boolean
+    default: true
+required:
+  - url
+  - accountId
+  - accountLabel
+  - text
+  - date

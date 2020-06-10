@@ -32,6 +32,12 @@ allOf:
           - iframe
       -
         properties:
+          tweet:
+            $ref: ../../00-atoms/components/tweet.yaml
+        required:
+          - tweet
+      -
+        properties:
           table:
             $ref: ../../00-atoms/components/table.yaml
         required:
