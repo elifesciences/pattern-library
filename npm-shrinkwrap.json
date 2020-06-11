@@ -7611,5 +7611,6 @@
       "from": "zip-stream@https://registry.npmjs.org/zip-stream/-/zip-stream-1.2.0.tgz",
       "resolved": "https://registry.npmjs.org/zip-stream/-/zip-stream-1.2.0.tgz"
     }
-  }
+  },
+  "version": "0.0.3"
 }
