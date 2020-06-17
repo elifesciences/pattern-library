@@ -28,11 +28,11 @@
         },
         {
           "primary": {
-            "name": "Executable DAR",
+            "name": "Executable version",
             "url": "#darLink"
           },
           "secondary": {
-            "name": "Learn more about DAR",
+            "name": "What are executable versions?",
             "url": "#secondaryLink"
           }
         }
