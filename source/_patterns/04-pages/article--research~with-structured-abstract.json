@@ -590,11 +590,11 @@
             },
             {
               "primary": {
-                "name": "Executable DAR",
-                "url": "#darLink"
+                "name": "Executable version",
+                "url": "#eraLink"
               },
               "secondary": {
-                "name": "Learn more about DAR",
+                "name": "What are executable versions?",
                 "url": "#secondaryLink"
               }
             }
