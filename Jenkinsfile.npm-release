@@ -1,0 +1,11 @@
+elifePipeline {
+
+    stage 'Checkout', {
+        checkout scm
+    }
+
+    stage 'Release', {
+        elifeNpmRelease()
+    }
+
+}
