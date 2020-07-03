@@ -22,5 +22,6 @@ elifePipeline {
 
     stage 'Downstream', {
         build job: 'dependencies-patterns-php-update-pattern-library', wait: false, parameters: [string(name: 'commit', value: commit)]
+        build job: '/release/release-npm-pattern-library', wait: false
     }
 }
