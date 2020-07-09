@@ -1,0 +1,15 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  id:
+    type: string
+    minLength: 1
+  name:
+    type: string
+    minLength: 1
+  uncheckedValue:
+    type: string
+    minLength: 1
+  checkedValue:
+    type: string
+    minLength: 1
