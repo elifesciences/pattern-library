@@ -1,0 +1,73 @@
+@import "../../definitions";
+
+.form-item__checkbox {
+  display: flex;
+  align-items: center;
+}
+
+/* Toggle Checkbox */
+.toggle-checkbox {
+  @include margin(0 12);
+  height: 28px;
+  position: relative;
+  width: 48px;
+}
+
+.toggle-checkbox input {
+  height: 0;
+  opacity: 0;
+  width: 0;
+}
+
+.toggle-checkbox__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-primary;
+  cursor: pointer;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
+
+.toggle-checkbox__slider:before {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  background-color: $color-text-ui-background;
+  content: "";
+  height: 20px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  width: 20px;
+}
+
+input:checked + .toggle-checkbox__slider {
+  background-color: $color-primary;
+}
+
+input:focus + .toggle-checkbox__slider {
+  box-shadow: 0 0 1px $color-primary;
+}
+
+input:checked + .toggle-checkbox__slider:before {
+  transform: translateX(20px);
+}
+
+.toggle-checkbox__slider.round {
+  border-radius: 34px;
+}
+
+.toggle-checkbox__slider.round:before {
+  border-radius: 50%;
+}
+
+.checkbox__label {
+  @include font-size-and-vertical-height(14, 24);
+  font-family: $font-secondary;
+
+  &.selected-model {
+    font-weight: normal;
+  }
+}

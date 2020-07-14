@@ -1,0 +1,5 @@
+{
+  "name": "checkbox-toggle",
+  "uncheckedValue": "item one",
+  "checkedValue": "item two"
+}
