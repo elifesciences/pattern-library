@@ -1,22 +1,27 @@
 {
+  "title": "Download your personalised magazine cover",
+  "headingLevel": 1,
   "text": [
     {
-      "text": "You can download a poster featuring your latest paper below. It's highlighted on an imitation of an eLife journal cover."
+      "text": "Thank you for publishing your research with us."
     },
     {
-      "text": "Thank you for publishing your work with us."
+      "text": "As a small keepsake for you and your co-authors we hope you’ll download this free poster highlighting your paper on an eLife magazine style cover."
+    },
+    {
+      "text": "Like your research it’s open access so you can print it, frame it, tweet it, use it as wallpaper in your lab...the possibilities are endless."
     }
   ],
   "buttonCollection": {
-    "centered": true,
+    "centered": false,
     "buttons": [
       {
-        "text": "Download A4",
+        "text": "Download PDF",
         "classes": "button--default",
         "path": "#"
       },
       {
-        "text": "Download Letter",
+        "text": "Download jpg",
         "classes": "button--default",
         "path": "#"
       }

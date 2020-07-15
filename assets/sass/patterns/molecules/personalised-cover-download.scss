@@ -1,13 +1,18 @@
 @import "../../definitions";
 
-.personalised-cover-download-wrapper {
-  @include flexbox-centre-x-and-y();
+wrapper {
+  @include wrapper  ();
+}
+
+.site-header__title-border {
+  float: left;
+  position: relative;
+  z-index: 21;
 }
 
 .personalised-cover-download {
-  @include wrapper();
-  text-align: center;
   @include blg-pad-vertical-large-to-extra-large();
+  max-width: 735px;
 
   > :last-child {
     margin-bottom: 0;
@@ -17,4 +22,33 @@
 .personalised-cover-download__icon {
   max-width: 100%;
   @include blg-spacing("bottom", "small");
+}
+
+.personalised-cover-outer {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  border: 1px solid black;
+}
+
+.personalised-cover__header-text {
+  text-align: center;
+}
+
+.personalised-cover-text {
+  @include padding(45, "right");
+  grid-column: 1;
+  grid-row: 1;
+  border: 1px solid black;
+}
+
+.personalised-cover-thumbnail {
+  grid-column: 2;
+  grid-row: 1/3;
+  border: 1px solid black;
+}
+
+.personalised-cover-buttons {
+  grid-column: 1;
+  grid-row: 2;
+  border: 1px solid black;
 }
