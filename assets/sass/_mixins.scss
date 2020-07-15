@@ -294,8 +294,8 @@
   margin: auto;
 
   @if $padding {
-    padding-left: 48px;
-    padding-right: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       padding-left: 48px;
