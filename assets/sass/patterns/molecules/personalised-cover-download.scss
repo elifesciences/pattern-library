@@ -26,12 +26,12 @@
 }
 
 .personalised-cover__header-text {
-  @include margin(94 0 72 0);
+  @include margin(70 0 72 0);
   text-align: center;
 }
 
 .personalised-cover-text {
-  @include padding(24, "bottom");
+  @include padding(48, "bottom");
 }
 
 .personalised-cover-thumbnail {
@@ -49,6 +49,10 @@
     grid-template-columns: 425px 355px;
     margin: 0 auto;
     max-width: 780px;
+  }
+
+  .personalised-cover__header-text {
+    @include margin(94, "top");
   }
 
   .personalised-cover-text {
