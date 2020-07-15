@@ -34,6 +34,10 @@
   @include padding(24, "bottom");
 }
 
+.personalised-cover-thumbnail {
+  @include margin(48, "bottom");
+}
+
 .form-item__checkbox {
   @include margin(72, "bottom");
 }
@@ -54,6 +58,7 @@
   }
 
   .personalised-cover-thumbnail {
+    @include margin(0);
     grid-column: 2;
     grid-row: 1/3;
   }
