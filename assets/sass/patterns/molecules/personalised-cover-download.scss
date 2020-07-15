@@ -31,7 +31,11 @@
 }
 
 .personalised-cover-text {
-  @include padding(48, "bottom");
+  @include padding(24, "bottom");
+}
+
+.form-item__checkbox {
+  @include margin(72, "bottom");
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -44,6 +48,7 @@
   }
 
   .personalised-cover-text {
+    @include padding(0 45 24 0);
     grid-column: 1;
     grid-row: 1;
   }

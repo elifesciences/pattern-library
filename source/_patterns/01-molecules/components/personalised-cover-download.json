@@ -12,6 +12,9 @@
       "text": "Like your research it’s open access so you can print it, frame it, tweet it, use it as wallpaper in your lab...the possibilities are endless."
     }
   ],
+  "name": "letter-style",
+  "uncheckedValue": "A4",
+  "checkedValue": "US Letter",
   "buttonCollection": {
     "centered": false,
     "buttons": [
