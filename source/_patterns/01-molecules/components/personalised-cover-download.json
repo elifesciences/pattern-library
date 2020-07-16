@@ -18,12 +18,12 @@
     "buttons": [
       {
         "text": "Download PDF",
-        "classes": "button--default",
+        "classes": "button--variation",
         "path": "#"
       },
       {
         "text": "Download jpg",
-        "classes": "button--default",
+        "classes": "button--variation",
         "path": "#"
       }
     ]
