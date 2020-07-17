@@ -11,6 +11,10 @@
   z-index: 21;
 }
 
+.personalised-cover-outer {
+  @include margin(72, "bottom");
+}
+
 .personalised-cover-download {
   @include blg-pad-vertical-large-to-extra-large();
   max-width: 735px;
@@ -87,7 +91,7 @@
   .personalised-cover-outer {
     display: grid;
     grid-template-columns: 50%;
-    margin: 0 auto;
+    margin: 0 auto 72px;
     max-width: 780px;
   }
 
