@@ -326,10 +326,11 @@
 
 .content-header__subject_list_item {
   @include label-subject-typeg();
+  @include font-size-and-vertical-height(13);
   display: inline;
-  @include font-size-and-vertical-height(11);
   list-style-type: none;
   padding: 0;
+  text-transform: capitalize;
 
   & .content-header__subject:after {
     content: ", ";
@@ -350,7 +351,9 @@
 
 .content-header__subject_link {
   @include label-subject-typeg();
+  @include font-size-and-vertical-height(13);
   text-decoration: none;
+  text-transform: capitalize;
 
   &:hover {
     color: $color-primary-dark;
