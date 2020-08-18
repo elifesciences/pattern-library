@@ -686,7 +686,7 @@ $iconlist: cc oa;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       bottom: #{$content-header-padding / 2}px;
-      @include font-size-and-vertical-height(11);
+      @include font-size-and-vertical-height(12);
     }
 
   }
@@ -714,7 +714,7 @@ $iconlist: cc oa;
     @include font-size-and-vertical-height(12, 12);
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include font-size-and-vertical-height(11);
+      @include font-size-and-vertical-height(12);
     }
 
   }

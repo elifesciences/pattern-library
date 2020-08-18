@@ -5,8 +5,8 @@
 // (Would require a view model change though, so non-trivial).
 
 .meta {
-  @include label-content-typeg();
-
+  @include label-content-typeg($uppercase: false);
+  @include font-size-and-vertical-height(12);
   .highlights & {
     @include truncate-with-ellipsis();
   }
@@ -15,7 +15,7 @@
 .meta__type {
   color: inherit;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 a.meta__type:hover {
