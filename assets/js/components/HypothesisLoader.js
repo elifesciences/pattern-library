@@ -65,9 +65,9 @@ module.exports = class HypothesisLoader {
 
     const uiConfig = {
       branding: {
-        accentColor: '#0288D1',
+        accentColor: '#087acc',
         appBackgroundColor: '#fff',
-        ctaBackgroundColor: '#0288D1',
+        ctaBackgroundColor: '#087acc',
         ctaTextColor: '#fff',
         selectionFontFamily: 'Georgia, Times, serif',
         annotationFontFamily: 'Georgia, Times, serif'
