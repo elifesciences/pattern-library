@@ -20,8 +20,6 @@ properties:
     minItems: 1
   buttonCollection:
     $ref: button-collection.yaml
-  buttonCollection:
-    $ref: button-collection.yaml
 required:
   - text
   - buttonCollection
