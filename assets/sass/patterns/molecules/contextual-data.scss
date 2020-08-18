@@ -13,7 +13,7 @@
 
 .contextual-data__item {
   display: inline-block;
-  @include label-content-typeg($color-text-secondary);
+  @include label-content-typeg($color-text-secondary, false);
   margin: 0;
   @include padding(0 5 0 0);
 
@@ -82,9 +82,4 @@
     text-align: right;
     @include padding(0 5 0 0);
   }
-
-  .contextual-data__cite_label {
-    text-transform: uppercase;
-  }
-
 }
