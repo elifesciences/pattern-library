@@ -1,23 +1,43 @@
-<div class="personalised-cover-download-wrapper">
 
-  <div class="personalised-cover-download">
 
-    <picture>
-      <source srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/personalised-cover-download.svg{{/assetRewrite}}"
-              type="image/svg+xml">
-      <img srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/personalised-cover-download_2x.png{{/assetRewrite}} 276w"
-           src="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/personalised-cover-download_1x.png{{/assetRewrite}}" sizes="138px"
-           alt="" class="personalised-cover-download__icon">
-    </picture>
-
-    {{#text}}
-      {{> atoms-paragraph }}
-    {{/text}}
-
-    {{#buttonCollection}}
-      {{> molecules-button-collection }}
-    {{/buttonCollection}}
-
+<div class="wrapper-alternative">
+  <header class="site-header clearfix" data-behaviour="SiteHeader" id="siteHeader">
+    <div class="site-header__title-border" role="banner">
+      <div class="site-header__skip_to_content">
+        <a href="#maincontent" class="site-header__skip_to_content__link button button--default">Skip to Content</a>
+      </div>
+      <a href="{{homePagePath}}">
+        <picture class="site-header__logo_link_image">
+          {{! 45.625em is 730px, which is $bkpt-site--medium }}
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/organisms/elife-logo-xs@1x.png{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
+          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/organisms/elife-logo-xs@1x.png{{/assetRewrite}}" type="image/svg+xml">
+          <img src="{{#assetRewrite}}{{assetsPath}}/img/patterns/organisms/elife-logo-xs@1x.png{{/assetRewrite}}" alt="eLife logo"/>
+        </picture>
+        <span class="visuallyhidden" >eLife home page</span>
+      </a>
+    </div>
+  </header>
+  <h1 class="personalised-cover__header-text">Download your personalised magazine cover</h1>
+  <div class="personalised-cover-outer">
+    <div class="personalised-cover-text">
+      {{#text}}
+        {{> atoms-paragraph }}
+      {{/text}}
+    </div>
+    <div class="personalised-cover-thumbnail">
+      <picture>
+        <source srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/cover-preview.jpg{{/assetRewrite}}" type="image/svg+xml">
+        <img srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/cover-preview.jpg{{/assetRewrite}} 276w"
+          src="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/cover-preview.jpg{{/assetRewrite}}" sizes="138px"
+          alt="" class="personalised-cover-download__icon">
+      </picture>
+    </div>
+    <div class="personalised-cover-buttons">
+      {{> atoms-checkbox }}
+      {{#buttonCollection}}
+        {{> molecules-button-collection }}
+      {{/buttonCollection}}
+    </div>
   </div>
 
 </div>

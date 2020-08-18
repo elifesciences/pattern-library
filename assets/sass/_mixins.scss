@@ -288,6 +288,27 @@
   }
 }
 
+@mixin wrapper-alternative($padding: true) {
+  box-sizing: content-box;
+  @include constrain-width(1104, "max");
+  margin: auto;
+
+  @if $padding {
+    padding-left: 24px;
+    padding-right: 24px;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+  }
+}
+
 // $vertical-height-in-px: desired height of the element as a function of font-size and line-height
 // TODO: Devise a good name (& extend blg name system?), for the default vertical height
 @mixin font-size-and-vertical-height($font-size-in-px, $vertical-height-in-px: 24) {
