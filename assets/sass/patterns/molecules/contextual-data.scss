@@ -2,6 +2,7 @@
 
 .contextual-data {
   @include label-content-typeg($color-text-secondary, false);
+  @include font-size-and-vertical-height(12);
 }
 
 .contextual-data__list {

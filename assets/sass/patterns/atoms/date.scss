@@ -2,6 +2,7 @@
 
 .date {
   @include label-content-typeg($uppercase: false);
+  @include font-size-and-vertical-height(12);
 }
 
 .date--expanded {
