@@ -317,8 +317,6 @@
     color: inherit;
   }
 
-  @include truncate-with-ellipsis();
-
   &:before {
     color: $color-text-secondary;
   }
