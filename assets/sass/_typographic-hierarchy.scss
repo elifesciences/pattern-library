@@ -14,7 +14,7 @@
   font-family: $font-secondary;
   font-weight: normal;
   @include font-size-and-vertical-height(11);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
   @if $uppercase {
     text-transform: uppercase;
   }
