@@ -93,6 +93,8 @@
 .teaser__secondary_info {
   @include listing-main-author-typeg();
   @include blg-spacing("bottom", "extra-small", "margin");
+  @include blg-spacing("top", "extra-extra-small", "margin");
+
 }
 
 .teaser__body {
