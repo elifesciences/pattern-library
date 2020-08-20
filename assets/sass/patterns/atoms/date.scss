@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .date {
-  @include label-content-typeg($uppercase: false);
+  @include label-content-typeg($color: inherit, $uppercase: false);
   @include font-size-and-vertical-height(12);
 }
 
