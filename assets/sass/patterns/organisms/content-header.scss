@@ -696,11 +696,6 @@ $iconlist: cc oa;
   .content-header--image & {
     color: inherit;
     @include font-size-and-vertical-height(12, 12);
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include font-size-and-vertical-height(11);
-    }
-
   }
 
 }
