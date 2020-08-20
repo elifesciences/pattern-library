@@ -38,7 +38,6 @@
 .article-meta__link_list_item {
   display: inline;
   @include label-subject-typeg();
-  @include font-size-and-vertical-height(12);
   margin: 0;
   padding: 0;
   text-transform: capitalize;
