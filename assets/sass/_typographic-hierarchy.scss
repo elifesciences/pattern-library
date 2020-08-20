@@ -10,12 +10,14 @@
   font-weight: bold;
 }
 
-@mixin _label-typeg($uppercase: true) {
+@mixin _label-typeg($uppercase: false) {
   font-family: $font-secondary;
   font-weight: normal;
-  @include font-size-and-vertical-height(11);
+  @include font-size-and-vertical-height(13);
   letter-spacing: 0.2px;
   @if $uppercase {
+    @include font-size-and-vertical-height(11);
+    letter-spacing: 0.5px;
     text-transform: uppercase;
   }
 }
@@ -275,7 +277,7 @@
   @include font-size-and-vertical-height($font-size-base-in-px);
 }
 
-@mixin label-content-typeg($color:$color-text-secondary, $uppercase: true) {
+@mixin label-content-typeg($color:$color-text-secondary, $uppercase: false) {
   @include _label-typeg($uppercase);
   color: $color;
 }
