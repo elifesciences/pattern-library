@@ -3,21 +3,19 @@
   <div class="error">
 
     <picture>
-        <source srcset="{{#assetRewrite}}{{assetsPath}}/img/errors/5xx.svg{{/assetRewrite}}" type="image/svg+xml">
-        <img srcset="{{#assetRewrite}}{{assetsPath}}/img/errors/5xx-2x.png{{/assetRewrite}} 314w" src="{{#assetRewrite}}{{assetsPath}}/img/errors/5xx.png{{/assetRewrite}}" sizes="157px"
+        <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/ORCID-padlock.svg{{/assetRewrite}}" type="image/svg+xml">
+        <img srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/ORCID-padlock-2x.png{{/assetRewrite}} 314w" src="{{#assetRewrite}}{{assetsPath}}/img/icons/ORICD-padlock.png{{/assetRewrite}}" sizes="157px"
              alt="" class="error__icon">
     </picture>
 
-    <h1 class="error__title">Your ORCID iD settings prevented log in</h1>
+    <h1 class="error__title">{{{ errorTitle }}}</h1>
 
-    <p>Please update the visibility settings of the name associated with your ORCID iD before trying again.</p>
+    <p>{{{ summary }}}</p>
     <div class="error__orcid-container">
       <div class="error__orcid">
-        <h3>Step 1: Open your name's visibility settings on your ORCID iD page</h3>
+        <h3>{{{ stepOneTitle }}}</h3>
         <div class="error__orcid-left">
-          <p>Go to <a href="https://orcid.org/my-orcid">orcid.org/my-orcid</a> to change the visbility settings of your name by using the pencil icon.</p>
-
-          <p>It should be in the top left corner of your ORCID iD page, next to your name.</p>
+          {{{ stepOne }}}
         </div>
         <div class="error__orcid-right">
           <img src="/assets/img/errors/step1.jpg" alt="Step 1" />
@@ -25,11 +23,9 @@
       </div>
 
       <div class="error__orcid">
-        <h3>Step 2: Change the visibility setting</h3>
+        <h3>{{{ stepTwoTitle }}}</h3>
         <div class="error__orcid-left">
-          <p>Change the visibility setting to “everyone” or “trusted parties” and save your changes. Locking your name will not allow you to log in to eLife.</p>
-
-          <p>You may be asked to authorise eLife as a trusted party when you try to log in again. <a href="https://support.orcid.org/hc/en-us/articles/360006894494-Visibility-preferences">Learn more about ORCID visibility settings</a>.</p>
+          {{{ stepTwo }}}
         </div>
         <div class="error__orcid-right">
           <img src="/assets/img/errors/step2.jpg" alt="Step 2" />
@@ -37,9 +33,9 @@
       </div>
 
       <div class="error__orcid">
-        <h3>Step 3: Return to eLife and log in again</h3>
+        <h3>{{{ stepThreeTitle }}}</h3>
         <div class="error__orcid-left">
-          <p>Return to elifesciences.org and attempt to log in again. If your are still unable to log in please <a href="https://elifesciences.org/contact">contact us</a>.</p>
+          {{{ stepThree }}}
         </div>
         <div class="error__orcid-right">
           <img src="/assets/img/errors/step3.jpg" alt="Step 3" />
