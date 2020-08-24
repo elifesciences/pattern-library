@@ -4,7 +4,7 @@
   "stepOneTitle": "Step 1: Open your name's visibility settings on your ORCID iD page",
   "stepOne": "<p>Go to <a href='https://orcid.org/my-orcid'>orcid.org/my-orcid</a> to change the visbility settings of your name by using the pencil icon.</p><p>It should be in the top left corner of your ORCID iD page, next to your name.</p>",
   "stepTwoTitle": "Step 2: Change the visibility setting",
-  "stepTwo": "<p>Change the visibility setting to “everyone” or “trusted parties” and save your changes. Locking your name will not allow you to log in to eLife.</p><p>You may be asked to authorise eLife as a trusted party when you try to log in again. <a href='https://support.orcid.org/hc/en-us/articles/360006894494-Visibility-preferences'>Learn more about ORCID visibility settings</a>.</p>",
+  "stepTwo": "<p>Change the visibility setting to \"everyone\" or \"trusted parties\" and save your changes. Locking your name will not allow you to log in to eLife.</p><p>You may be asked to authorise eLife as a trusted party when you try to log in again. <a href='https://support.orcid.org/hc/en-us/articles/360006894494-Visibility-preferences'>Learn more about ORCID visibility settings</a>.</p>",
   "stepThreeTitle": "Step 3: Return to eLife and log in again",
   "stepThree": "<p>Return to elifesciences.org and attempt to log in again. If your are still unable to log in please <a href='https://elifesciences.org/contact'>contact us</a>.</p>"
 
