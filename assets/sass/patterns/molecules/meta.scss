@@ -15,7 +15,7 @@
 .meta__type {
   color: inherit;
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: none;
 
   & + .date::before {
     content: "\00a0\2219\00a0";
