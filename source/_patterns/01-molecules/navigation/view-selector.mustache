@@ -16,16 +16,11 @@
     {{/otherLinks}}
 
     {{#jumpLinks}}
-      <li class="view-selector__list-item view-selector__list-item--jump">
-        <span class="view-selector__jump_links_header">Jump to</span>
-        <ul class="view-selector__jump_links">
-          {{#links}}
-            <li class="view-selector__jump_link_item">
-              <a href="{{url}}" class="view-selector__jump_link">{{{name}}}</a>
-            </li>
-          {{/links}}
-        </ul>
-      </li>
+      {{#links}}
+        <li class="view-selector__jump_link_item">
+          <a href="{{url}}" class="view-selector__jump_link">{{{name}}}</a>
+        </li>
+      {{/links}}
     {{/jumpLinks}}
 
   </ul>
