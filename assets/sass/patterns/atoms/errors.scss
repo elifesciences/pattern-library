@@ -26,19 +26,25 @@
 
 .error__orcid-container {
   @include margin(96, "top");
+  text-align: left;
 }
 
 .error__orcid {
   @include margin(72, "bottom");
 
   h3 {
-    @include padding(36, "bottom");
+    @include padding(12, "bottom");
+    line-height: 30px; // Added line-height as global h3 is not correct;
   }
   .error__orcid-image {
     border: 1px solid #e0e0e0;
     padding: 12px;
     max-width: 432px;
     width: 100%;
+  }
+
+  .error__orcid-right {
+    text-align: center;
   }
 }
 
