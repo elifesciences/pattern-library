@@ -21,6 +21,7 @@
 
 .error__title {
   @include h2-typeg();
+  @include margin(24, "bottom");
 }
 
 .error__orcid-container {
