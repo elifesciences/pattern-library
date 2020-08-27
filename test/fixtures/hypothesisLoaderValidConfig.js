@@ -3,9 +3,9 @@ module.exports = () => {
 
   const coreConfig = {
     branding: {
-      accentColor: '#0288D1',
+      accentColor: '#087acc',
       appBackgroundColor: 'white',
-      ctaBackgroundColor: '#0288D1',
+      ctaBackgroundColor: '#087acc',
       ctaTextColor: 'white',
       selectionFontFamily: 'Georgia, Times, serif',
       annotationFontFamily: 'Georgia, Times, serif'

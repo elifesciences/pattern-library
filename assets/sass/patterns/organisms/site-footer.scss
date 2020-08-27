@@ -19,12 +19,11 @@
 }
 
 .footer-navigation__list_item {
-  @include label-content-typeg($color-text);
+  @include label-content-typeg($color-text, $uppercase: true);
 }
 
 .footer-navigation__list_link {
   color: $color-text;
-  text-transform: uppercase;
   text-decoration: none;
 
   &:hover {
