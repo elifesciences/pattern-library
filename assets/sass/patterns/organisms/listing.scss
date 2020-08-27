@@ -187,7 +187,6 @@ div.listing-list__content {
     }
 
     .teaser__secondary_info {
-      @include padding(11, "bottom");
       @include truncate-with-ellipsis();
     }
 
