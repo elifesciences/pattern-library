@@ -86,12 +86,6 @@
 
 }
 
-.view-selector__jump_links {
-  list-style: none;
-  @include nospace();
-  @include padding(18, "left");
-}
-
 .view-selector__jump_link_item {
   @include local-item-style();
 }
