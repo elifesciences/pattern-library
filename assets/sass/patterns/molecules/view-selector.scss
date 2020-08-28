@@ -100,6 +100,7 @@
 
 .view-selector__divider {
   @include margin(24, "bottom");
+  @include margin(12,"right");
   @include padding(24, "bottom");
   border-bottom: 1px solid $color-text-dividers;
 }
