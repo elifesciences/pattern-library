@@ -4,7 +4,7 @@
   font-family: $font-secondary;
   @include font-size-and-vertical-height(14);
   margin: 0;
-  @include blg-spacing("bottom", "extra-small", "margin");
+  @include blg-spacing("bottom", "small", "margin");
 }
 
 .view-selector {
@@ -102,6 +102,12 @@
   &:hover {
     color: $color-text;
   }
+}
+
+.view-selector__divider {
+  @include margin(24, "bottom");
+  @include padding(24, "bottom");
+  border-bottom: 1px solid $color-text-dividers;
 }
 
 @media only screen and (max-width: #{get-rem-from-px($bkpt-view-selector - 1)}em) {
