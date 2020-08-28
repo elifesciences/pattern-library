@@ -336,7 +336,9 @@
       @include padding($blg-space-large-in-px, $direction);
     }
   } @else if $type == "margin" {
-    @if $level == "extra-small" {
+    @if $level == "extra-extra-small" {
+      @include margin($blg-space-extra-extra-small-in-px, $direction);
+    } @else if $level == "extra-small" {
       @include margin($blg-space-extra-small-in-px, $direction);
     } @else if $level == "small" {
       @include margin($blg-space-small-in-px, $direction);

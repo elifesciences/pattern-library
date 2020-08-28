@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .doi {
-  @include label-content-typeg($color-text-secondary);
+  @include label-content-typeg($color-text-secondary, $uppercase: true);
 
   .popup__content & {
     @include popup-ancillary-text();
