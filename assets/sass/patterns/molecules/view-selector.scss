@@ -100,7 +100,6 @@
 
 .view-selector__divider {
   @include margin(24, "bottom");
-  @include margin(12,"right");
   @include padding(24, "bottom");
   border-bottom: 1px solid $color-text-dividers;
 }
@@ -183,10 +182,8 @@
   // Applied with js to stop the selector scrolling off the top of the screen.
   .view-selector {
     // Supply what was being provided by the grid now this element has been taken out the flow.
-    margin-left: -1.6vw;
     @include constrain-width(210, "max");
-    padding-left: 1.6vw;
-    width: 16.666vw;
+    width: 9.625rem;
   }
 
   .view-selector--fixed {
