@@ -237,8 +237,8 @@
         }
       },
       {
-        "text": "Human Biology and Medicine",
-        "url": "#Human",
+        "text": "Immunology",
+        "url": "#Immunology",
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -248,8 +248,8 @@
         }
       },
       {
-        "text": "Immunology",
-        "url": "#Immunology",
+        "text": "Medicine",
+        "url": "#Medicine",
         "isGridListing": true,
         "image": {
           "fallback": {
