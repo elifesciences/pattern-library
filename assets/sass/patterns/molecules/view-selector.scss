@@ -56,36 +56,6 @@
   color: $color-text;
 }
 
-.view-selector__jump_links_header {
-  color: $color-text-secondary;
-  display: block;
-  @include font-size(14);
-  @include blg-spacing("bottom", "extra-small", "margin");
-}
-
-.js .view-selector__jump_links_header {
-
-  $arrow-size: 5;
-
-  &:before {
-    @include arrow("down", $arrow-size, $color-text-secondary);
-    @include margin(-15, "left");
-    @include margin(-12, "right");
-    @include margin(9, "top");
-    display: block;
-    float: left;
-  }
-
-  &--closed:before {
-    @include arrow("right", $arrow-size, $color-text-secondary);
-    @include margin($arrow-size, "top");
-    @include margin(-12, "left");
-    @include margin(-12, "right");
-    @include margin(6, "top");
-  }
-
-}
-
 .view-selector__jump_link_item {
   @include local-item-style();
 }
@@ -193,10 +163,6 @@
     @include padding(30, "top");
     position: fixed;
     top: 0;
-  }
-
-  .js .view-selector__jump_links_header:hover {
-    cursor: pointer;
   }
 
 }
