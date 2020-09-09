@@ -67,7 +67,7 @@
   filter: drop-shadow(0 0 0.75rem rgba(0,0,0,0.2));
 }
 
-.button--variation {
+.personalised__button {
   @include colors($color-primary);
   @include padding(18 18 14);
   font-weight: 500;
