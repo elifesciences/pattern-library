@@ -108,36 +108,12 @@ describe('A ViewSelector Component', function () {
 
   });
 
-  it('has a toggleable list of jump links', function () {
-    let viewSelector = new ViewSelector($elm);
-    expect(viewSelector.$jumpLinksList instanceof HTMLElement).to.be.true;
-    expect(viewSelector.toggleJumpLinks).to.be.a('function');
-  });
-
-  describe("its toggleable list of jump links", function () {
+  describe("its a list of links for the left navigation", function () {
 
     let viewSelector;
 
     beforeEach(function () {
       viewSelector = new ViewSelector($elm);
-    });
-
-    it('expands when toggled open', function () {
-      viewSelector.$jumpLinksList.classList.add('visuallyhidden');
-      viewSelector.$jumpLinksToggle.classList.add('view-selector__jump_links_header--closed');
-      viewSelector.toggleJumpLinks();
-      expect(viewSelector.$jumpLinksList.classList.contains('visuallyhidden')).to.be.false;
-      expect(viewSelector.$jumpLinksToggle.classList
-                         .contains('view-selector__jump_links_header--closed')).to.be.false;
-    });
-
-    it('collapses when toggled closed', function () {
-      viewSelector.$jumpLinksList.classList.remove('visuallyhidden');
-      viewSelector.$jumpLinksToggle.classList.remove('view-selector__jump_links_header--closed');
-      viewSelector.toggleJumpLinks();
-      expect(viewSelector.$jumpLinksList.classList.contains('visuallyhidden')).to.be.true;
-      expect(viewSelector.$jumpLinksToggle.classList
-                         .contains('view-selector__jump_links_header--closed')).to.be.true;
     });
 
     context('with knowledge of top level article section headings', () => {
@@ -326,23 +302,6 @@ describe('A ViewSelector Component', function () {
         });
 
       });
-
-    });
-
-    it('maintains a list of top level article section headings', () => {
-      const expectedHeadingList = ['headingOne', 'headingTwo'];
-      const doc = {
-        querySelectorAll: () => {
-          return expectedHeadingList;
-        }
-      };
-      spy(doc, 'querySelectorAll');
-      const headingList = ViewSelector.getAllCollapsibleSectionHeadings(doc);
-      expect(doc.querySelectorAll.calledWithExactly(
-        '[data-behaviour="ArticleSection"] > .article-section__header .article-section__header_text')).to.be.true;
-      expect(headingList).to.have.length(2);
-      expect(headingList).to.equal(expectedHeadingList);
-      doc.querySelectorAll.restore();
 
     });
 
