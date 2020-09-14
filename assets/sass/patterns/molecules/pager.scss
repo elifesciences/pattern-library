@@ -5,6 +5,7 @@
   @supports (display: flex) {
     display: flex;
     justify-content: space-between;
+    overflow-anchor: none;
   }
 
   .button {
