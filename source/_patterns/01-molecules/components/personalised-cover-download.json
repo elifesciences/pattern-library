@@ -10,6 +10,13 @@
       "text": "Like your research it’s open access so you can print it, frame it, tweet it, use it as wallpaper in your lab...the possibilities are endless."
     }
   ],
+  "image": {
+    "fallback": {
+      "srcset": "https://placehold.it/90x90 1x",
+      "defaultPath": "https://placehold.it/90x90",
+      "altText": "Meaningful alt text here please."
+    }
+  },
   "name": "letter-style",
   "uncheckedValue": "A4",
   "checkedValue": "US Letter",

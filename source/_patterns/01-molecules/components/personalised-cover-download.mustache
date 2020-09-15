@@ -25,12 +25,21 @@
       {{/text}}
     </div>
     <div class="personalised-cover-thumbnail">
-      <picture>
-        <source srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/cover-preview.jpg{{/assetRewrite}}" type="image/svg+xml">
-        <img srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/cover-preview.jpg{{/assetRewrite}} 276w"
-          src="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/cover-preview.jpg{{/assetRewrite}}" sizes="138px"
-          alt="" class="personalised-cover-download__icon">
-      </picture>
+      {{#image}}
+        <picture class="profile-snippet__picture">
+          {{#sources}}
+            <source srcset="{{srcset}}"
+                    {{#type}}type="{{type}}"{{/type}}
+              {{#media}}media="{{media}}"{{/media}}>
+          {{/sources}}
+          {{#fallback}}
+            <img src="{{defaultPath}}"
+                {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+                alt="{{altText}}"
+            >
+          {{/fallback}}
+        </picture>
+      {{/image}}
     </div>
     <div class="personalised-cover-buttons">
       {{> atoms-checkbox }}
