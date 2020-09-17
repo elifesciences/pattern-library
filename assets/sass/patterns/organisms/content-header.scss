@@ -328,7 +328,6 @@
   display: inline;
   list-style-type: none;
   padding: 0;
-  text-transform: capitalize;
 
   & .content-header__subject:after {
     content: ", ";
@@ -351,7 +350,6 @@
   @include label-subject-typeg();
   @include font-size-and-vertical-height(13);
   text-decoration: none;
-  text-transform: capitalize;
 
   &:hover {
     color: $color-primary-dark;
