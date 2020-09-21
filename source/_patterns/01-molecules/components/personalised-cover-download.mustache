@@ -25,21 +25,9 @@
       {{/text}}
     </div>
     <div class="personalised-cover-thumbnail">
-      {{#image}}
-        <picture class="profile-snippet__picture">
-          {{#sources}}
-            <source srcset="{{srcset}}"
-                    {{#type}}type="{{type}}"{{/type}}
-              {{#media}}media="{{media}}"{{/media}}>
-          {{/sources}}
-          {{#fallback}}
-            <img src="{{defaultPath}}"
-                {{#srcset}}srcset="{{srcset}}"{{/srcset}}
-                alt="{{altText}}" class="personalised-cover-download__icon"
-            >
-          {{/fallback}}
-        </picture>
-      {{/image}}
+      {{#picture}}
+        {{> atoms-picture}}
+      {{/picture}}
     </div>
     <div class="personalised-cover-buttons">
       {{> atoms-checkbox }}

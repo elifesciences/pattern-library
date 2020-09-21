@@ -18,7 +18,7 @@ properties:
     items:
       $ref: ../../00-atoms/components/paragraph.yaml
     minItems: 1
-  image:
+  picture:
     $ref: ../../00-atoms/components/picture.yaml
   buttonCollection:
     $ref: button-collection.yaml

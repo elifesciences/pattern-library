@@ -10,11 +10,19 @@
       "text": "Like your research it’s open access so you can print it, frame it, tweet it, use it as wallpaper in your lab...the possibilities are endless."
     }
   ],
-  "image": {
+  "picture": {
+    "sources": [
+      {
+        "srcset": "https://placehold.it/600x876",
+        "type": "image/svg+xml"
+      }
+    ],
     "fallback": {
       "srcset": "https://placehold.it/600x876 276w",
+      "sizes": "138px",
       "defaultPath": "https://placehold.it/600x876",
-      "altText": "Meaningful alt text here please."
+      "altText": "Meaningful alt text here please.",
+      "classes": "personalised-cover-download__icon"
     }
   },
   "name": "letter-style",
