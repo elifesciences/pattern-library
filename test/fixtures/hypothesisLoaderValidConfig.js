@@ -29,7 +29,6 @@ module.exports = () => {
       services: [{
         apiUrl: 'https://hypothes.is/api/',
         authority: 'elifesciences.org',
-        icon: 'https://elifesciences.org/assets/favicons/favicon.ee498e7d.svg',
 
         grantToken: null,
         onLoginRequest: function () {
@@ -46,7 +45,6 @@ module.exports = () => {
       services: [{
         apiUrl: 'https://hypothes.is/api/',
         authority: 'test.elifesciences.org',
-        icon: 'http://localhost:8000/assets/favicons/favicon.ee498e7d.svg',
 
         grantToken: 'cyIsImlzcyI6ImEyMmNmMzI0LTkxNDUtMTFlNi04Y2I2LTI3ZX4yNjk0Mzc0',
         onLogoutRequest: function () {
