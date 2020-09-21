@@ -101,7 +101,6 @@ module.exports = class HypothesisLoader {
 
     HypothesisLoader.validateAsUrl('usernameUrl', externalConfig.usernameUrl);
     HypothesisLoader.validateAsUrl('apiUrl', services.apiUrl);
-    HypothesisLoader.validateAsUrl('icon', services.icon);
     HypothesisLoader.validateAsPopulatedString('authority', services.authority);
 
     if ((services.onLoginRequest && services.onLogoutRequest) ||
