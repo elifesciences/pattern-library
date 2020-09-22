@@ -24,20 +24,27 @@
       "altText": "Meaningful alt text here please."
     }
   },
-  "name": "letter-style",
-  "uncheckedValue": "A4",
-  "checkedValue": "US Letter",
   "buttonCollection": {
     "centered": false,
     "buttons": [
       {
-        "text": "Download PDF",
-        "classes": "personalised__button button__gtm-download-pdf",
+        "text": "Download PDF <br />(A4)",
+        "classes": "personalised__button button__gtm-download-pdf-a4",
         "path": "#"
       },
       {
-        "text": "Download jpg",
-        "classes": "personalised__button button__gtm-download-jpg",
+        "text": "Download jpg <br />(A4)",
+        "classes": "personalised__button button__gtm-download-jpg-a4",
+        "path": "#"
+      },
+      {
+        "text": "Download PDF <br />(US Letter)",
+        "classes": "personalised__button button__gtm-download-pdf-letter",
+        "path": "#"
+      },
+      {
+        "text": "Download jpg <br />(US Letter)",
+        "classes": "personalised__button button__gtm-download-jpg-letter",
         "path": "#"
       }
     ]
