@@ -21,8 +21,7 @@
       "srcset": "https://placehold.it/600x876 276w",
       "sizes": "138px",
       "defaultPath": "https://placehold.it/600x876",
-      "altText": "Meaningful alt text here please.",
-      "classes": "personalised-cover-download__icon"
+      "altText": "Meaningful alt text here please."
     }
   },
   "name": "letter-style",

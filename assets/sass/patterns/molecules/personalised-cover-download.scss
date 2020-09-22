@@ -39,6 +39,7 @@
 
   img {
     max-width: 100%;
+    filter: drop-shadow(0 0 0.75rem rgba(0,0,0,0.2));
   }
 }
 
@@ -61,10 +62,6 @@
 .button-collection__item {
   @include margin(12, "left");
   @include margin(12, "right");
-}
-
-.personalised-cover-download__icon {
-  filter: drop-shadow(0 0 0.75rem rgba(0,0,0,0.2));
 }
 
 .personalised__button {
