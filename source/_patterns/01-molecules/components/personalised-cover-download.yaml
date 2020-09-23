@@ -30,7 +30,7 @@ properties:
     $ref: button-collection.yaml
 required:
   - text
-  - image
+  - picture
   - a4ListHeading
   - a4ButtonCollection
   - letterListHeading
