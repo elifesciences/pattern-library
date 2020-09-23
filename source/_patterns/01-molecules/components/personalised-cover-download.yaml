@@ -20,9 +20,18 @@ properties:
     minItems: 1
   picture:
     $ref: ../../00-atoms/components/picture.yaml
-  buttonCollection:
+  a4ListHeading:
+    $ref: ../../00-atoms/components/list-heading.yaml
+  a4ButtonCollection:
+    $ref: button-collection.yaml
+  letterListHeading:
+    $ref: ../../00-atoms/components/list-heading.yaml
+  letterButtonCollection:
     $ref: button-collection.yaml
 required:
   - text
   - image
-  - buttonCollection
+  - a4ListHeading
+  - a4ButtonCollection
+  - letterListHeading
+  - letterButtonCollection

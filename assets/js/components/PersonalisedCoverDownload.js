@@ -17,17 +17,18 @@ module.exports = class PersonalisedCoverDownload {
   }
 
   init() {
-    this.updateButtonAppearance();
+    this.prepareButtons();
     this.introduceCheckbox();
   }
 
-  updateButtonAppearance () {
-    let buttons = this.$elm.querySelectorAll('.button');
-    [].forEach.call(buttons, (button) => {
-      let group = button.text.match(/\(([^)]+)\)/)[1];
-      let buttonClass = 'personalised__button--' + group.toLowerCase().replace(/\s+/g, '');
-      button.classList.add(buttonClass);
-      this.groups[buttonClass] = group;
+  prepareButtons () {
+    let headings = this.$elm.querySelectorAll('.list-heading');
+    [].forEach.call(headings, (heading) => {
+      let group = heading.innerText;
+      let buttonCollectionClass = 'button-collection--' + group.toLowerCase().replace(/\s+/g, '');
+      heading.classList.add('visuallyhidden');
+      heading.nextElementSibling.classList.add(buttonCollectionClass);
+      this.groups[buttonCollectionClass] = group;
     });
   }
 
@@ -52,14 +53,8 @@ module.exports = class PersonalisedCoverDownload {
       showClass = Object.keys(this.groups)[0];
     }
 
-    let hideButtons = this.$elm.querySelectorAll('.' + hideClass);
-    [].forEach.call(hideButtons, (button) => {
-      button.parentNode.classList.add('visuallyhidden');
-    });
-    let showButtons = this.$elm.querySelectorAll('.' + showClass);
-    [].forEach.call(showButtons, (button) => {
-      button.parentNode.classList.remove('visuallyhidden');
-    });
+    this.$elm.querySelector('.' + hideClass).classList.add('visuallyhidden');
+    this.$elm.querySelector('.' + showClass).classList.remove('visuallyhidden');
   }
 
   createCheckbox() {

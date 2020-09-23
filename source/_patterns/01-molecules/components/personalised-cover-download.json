@@ -24,26 +24,39 @@
       "altText": "Meaningful alt text here please."
     }
   },
-  "buttonCollection": {
+  "a4ListHeading": {
+    "heading": "A4",
+    "headingId": "personalised__button_list--a4"
+  },
+  "a4ButtonCollection": {
     "centered": false,
     "buttons": [
       {
-        "text": "Download PDF <br />(A4)",
+        "text": "Download PDF",
         "classes": "personalised__button button__gtm-download-pdf-a4",
         "path": "#"
       },
       {
-        "text": "Download jpg <br />(A4)",
+        "text": "Download jpg",
         "classes": "personalised__button button__gtm-download-jpg-a4",
         "path": "#"
-      },
+      }
+    ]
+  },
+  "letterListHeading": {
+    "heading": "US Letter",
+    "headingId": "personalised__button_list--us-letter"
+  },
+  "letterButtonCollection": {
+    "centered": false,
+    "buttons": [
       {
-        "text": "Download PDF <br />(US Letter)",
+        "text": "Download PDF",
         "classes": "personalised__button button__gtm-download-pdf-letter",
         "path": "#"
       },
       {
-        "text": "Download jpg <br />(US Letter)",
+        "text": "Download jpg",
         "classes": "personalised__button button__gtm-download-jpg-letter",
         "path": "#"
       }

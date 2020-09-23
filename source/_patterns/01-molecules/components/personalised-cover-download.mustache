@@ -30,9 +30,18 @@
       {{/picture}}
     </div>
     <div data-behaviour="PersonalisedCoverDownload" class="personalised-cover-buttons">
-      {{#buttonCollection}}
+      {{#a4ListHeading}}
+        {{> atoms-list-heading }}
+      {{/a4ListHeading}}
+      {{#a4ButtonCollection}}
         {{> molecules-button-collection }}
-      {{/buttonCollection}}
+      {{/a4ButtonCollection}}
+      {{#letterListHeading}}
+        {{> atoms-list-heading }}
+      {{/letterListHeading}}
+      {{#letterButtonCollection}}
+        {{> molecules-button-collection }}
+      {{/letterButtonCollection}}
     </div>
   </div>
 
