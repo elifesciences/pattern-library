@@ -25,8 +25,7 @@
     }
   },
   "a4ListHeading": {
-    "heading": "A4",
-    "headingId": "personalised__button_list--a4"
+    "heading": "A4"
   },
   "a4ButtonCollection": {
     "centered": false,
@@ -44,8 +43,7 @@
     ]
   },
   "letterListHeading": {
-    "heading": "US Letter",
-    "headingId": "personalised__button_list--us-letter"
+    "heading": "US Letter"
   },
   "letterButtonCollection": {
     "centered": false,
