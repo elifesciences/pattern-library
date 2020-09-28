@@ -53,15 +53,26 @@
   grid-row: 1;
 }
 
-.button-collection {
-  display: grid;
-  grid-row: 2;
-  justify-items: center;
+ol.personalised-cover-buttons[data-behaviour-initialised="true"] {
+
+  .button-collection {
+    display: grid;
+    grid-row: 2;
+    justify-items: center;
+  }
+
+  .button-collection__item {
+    @include margin(12, "left");
+    @include margin(12, "right");
+  }
 }
 
-.button-collection__item {
-  @include margin(12, "left");
-  @include margin(12, "right");
+ol.personalised-cover-buttons[data-behaviour-initialised="false"] {
+
+  .button-collection {
+    grid-row: auto;
+    grid-column: 1;
+  }
 }
 
 .personalised__button {
