@@ -53,12 +53,15 @@
   grid-row: 1;
 }
 
+.button-collection {
+  display: grid;
+  justify-items: center;
+}
+
 ol.personalised-cover-buttons[data-behaviour-initialised="true"] {
 
   .button-collection {
-    display: grid;
     grid-row: 2;
-    justify-items: center;
   }
 
   .button-collection__item {
