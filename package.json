@@ -58,7 +58,7 @@
   ],
   "style": "source/assets/css/all.css",
   "scripts": {
-    "prepare": "gulp"
+    "prepublish": "gulp"
   },
   "publishConfig": {
     "access": "public"
