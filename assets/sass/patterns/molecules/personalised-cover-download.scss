@@ -52,7 +52,7 @@
     @include padding(18 18 14);
     font-weight: 500;
     letter-spacing: 0.4px;
-  
+
     &:hover {
       @include colors($color-primary-dark);
     }
