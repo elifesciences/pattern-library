@@ -46,6 +46,17 @@
 .personalised-cover-buttons {
   display: grid;
   justify-content: center;
+
+  .button {
+    @include colors($color-primary);
+    @include padding(18 18 14);
+    font-weight: 500;
+    letter-spacing: 0.4px;
+  
+    &:hover {
+      @include colors($color-primary-dark);
+    }
+  }
 }
 
 .form-item__checkbox {
@@ -75,17 +86,6 @@ ol.personalised-cover-buttons[data-behaviour-initialised="false"] {
   .button-collection {
     grid-row: auto;
     grid-column: 1;
-  }
-}
-
-.personalised__button {
-  @include colors($color-primary);
-  @include padding(18 18 14);
-  font-weight: 500;
-  letter-spacing: 0.4px;
-
-  &:hover {
-    @include colors($color-primary-dark);
   }
 }
 
