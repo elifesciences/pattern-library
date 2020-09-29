@@ -32,12 +32,10 @@
     "buttons": [
       {
         "text": "Download PDF",
-        "classes": "personalised__button button__gtm-download-pdf-a4",
         "path": "#"
       },
       {
         "text": "Download jpg",
-        "classes": "personalised__button button__gtm-download-jpg-a4",
         "path": "#"
       }
     ]
@@ -50,12 +48,10 @@
     "buttons": [
       {
         "text": "Download PDF",
-        "classes": "personalised__button button__gtm-download-pdf-letter",
         "path": "#"
       },
       {
         "text": "Download jpg",
-        "classes": "personalised__button button__gtm-download-jpg-letter",
         "path": "#"
       }
     ]
