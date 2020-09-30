@@ -72,7 +72,7 @@ module.exports = class PersonalisedCoverDownload {
 
     <div for="letter-style" class="checkbox__label" aria-label="${label2}">${label2}</div>
     `;
-    this.$elm.prepend($formItemCheckbox);
+    this.$elm.insertBefore($formItemCheckbox, this.$elm.firstChild);
     return $formItemCheckbox.querySelector('input');
   }
 
