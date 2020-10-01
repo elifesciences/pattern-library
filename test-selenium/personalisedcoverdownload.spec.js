@@ -16,21 +16,15 @@ describe('Personalised cover download page', () => {
   describe('the button collections/checkbox interaction', () => {
     let a4ButtonCollection;
     let letterButtonCollection;
-    let checkbox;
     let toggle;
 
     before(() => {
       a4ButtonCollection = personalisedCoverButtons.element('.button-collection--a4');
       letterButtonCollection = personalisedCoverButtons.element('.button-collection--usletter');
-      checkbox = personalisedCoverButtons.element('input');
       toggle = personalisedCoverButtons.element('.toggle-checkbox__slider');
     });
 
     context('before clicking the checkbox', () => {
-      it('the checkbox is unchecked by default', () => {
-        expect(checkbox.checked).not.to.equal(true);
-      });
-  
       it('the A4 download menu is not hidden by default', () => {
         expect(a4ButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
       });
@@ -43,10 +37,6 @@ describe('Personalised cover download page', () => {
     context('after clicking the checkbox', () => {
       beforeEach(() => {
         toggle.click();
-      });
-
-      it('the checkbox is checked', () => {
-        expect(checkbox.checked).to.equal(true);
       });
 
       it('the A4 download menu is hidden', () => {
