@@ -17,11 +17,13 @@ describe('Personalised cover download page', () => {
     let a4ButtonCollection;
     let letterButtonCollection;
     let checkbox;
+    let toggle;
 
     before(() => {
       a4ButtonCollection = personalisedCoverButtons.element('.button-collection--a4');
       letterButtonCollection = personalisedCoverButtons.element('.button-collection--usletter');
       checkbox = personalisedCoverButtons.element('input');
+      toggle = personalisedCoverButtons.element('.toggle-checkbox__slider');
     });
 
     context('before clicking the checkbox', () => {
@@ -40,7 +42,7 @@ describe('Personalised cover download page', () => {
 
     context('after clicking the checkbox', () => {
       beforeEach(() => {
-        checkbox.click();
+        toggle.click();
       });
 
       it('the checkbox is checked', () => {
