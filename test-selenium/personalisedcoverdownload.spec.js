@@ -14,9 +14,13 @@ describe('Personalised cover download page', () => {
   });
 
   describe('the button collections/checkbox interaction', () => {
+    let a4ButtonCollection;
+    let letterButtonCollection;
     let checkbox;
 
     before(() => {
+      a4ButtonCollection = personalisedCoverButtons.element('.button-collection--a4');
+      letterButtonCollection = personalisedCoverButtons.element('.button-collection--usletter');
       checkbox = personalisedCoverButtons.element('input');
     });
 
