@@ -17,16 +17,16 @@ describe('A PersonalisedCoverDownload Component', () => {
     expect(personalisedCoverDownload).to.exist;
   });
 
-  describe('the checkbox/button collections interaction', () => {
+  describe('toggleButtons()', () => {
     let a4ButtonCollection;
     let letterButtonCollection;
 
     before(() => {
-      a4ButtonCollection = document.querySelector('.button-collection--a4');
-      letterButtonCollection = document.querySelector('.button-collection--usletter');
+      a4ButtonCollection = $elm.querySelector('.button-collection--a4');
+      letterButtonCollection = $elm.querySelector('.button-collection--usletter');
     });
 
-    context('before clicking the checkbox', () => {
+    context('default buttons', () => {
       it('the A4 download menu is not hidden', () => {
         expect(a4ButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
       });
@@ -36,14 +36,30 @@ describe('A PersonalisedCoverDownload Component', () => {
       });
     });
 
-    context('after clicking the checkbox', () => {
-      it('the A4 download menu is hidden', () => {
+    context('buttons when toggleButtons(false)', () => {
+      beforeEach(() => {
+        personalisedCoverDownload.toggleButtons(false);
+      });
+
+      it('the A4 download menu is not hidden', () => {
+        expect(a4ButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
+      });
+
+      it('the US letter download menu is hidden', () => {
+        expect(letterButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
+      });
+    });
+
+    context('buttons when toggleButtons(true)', () => {
+      beforeEach(() => {
         personalisedCoverDownload.toggleButtons(true);
+      });
+
+      it('the A4 download menu is hidden', () => {
         expect(a4ButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
       });
 
       it('the US letter download menu is not hidden', () => {
-        personalisedCoverDownload.toggleButtons(true);
         expect(letterButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
       });
     });
