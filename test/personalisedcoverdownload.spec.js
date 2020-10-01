@@ -20,12 +20,10 @@ describe('A PersonalisedCoverDownload Component', () => {
   describe('the checkbox/button collections interaction', () => {
     let a4ButtonCollection;
     let letterButtonCollection;
-    let checkbox;
 
     before(function () {
       a4ButtonCollection = document.querySelector('.button-collection--a4');
       letterButtonCollection = document.querySelector('.button-collection--usletter');
-      checkbox = this.$elm.querySelector('input');
     });
 
     context('before clicking the checkbox', () => {
@@ -39,7 +37,10 @@ describe('A PersonalisedCoverDownload Component', () => {
     });
 
     context('after clicking the checkbox', () => {
-      // Simulate checkbox change.
+      before(function () {
+        // Simulate checkbox change.
+        personalisedCoverDownload.toggleButtons(true);
+      });
 
       it('the A4 download menu is hidden', function () {
         expect(a4ButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
