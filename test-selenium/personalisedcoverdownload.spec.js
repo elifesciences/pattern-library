@@ -37,6 +37,16 @@ describe('Personalised cover download page', () => {
         expect(letterButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
       });
     });
+
+    context('after clicking the checkbox', () => {
+      it('the A4 download menu is hidden', () => {
+        expect(a4ButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
+      });
+  
+      it('the US letter download menu is not hidden', () => {
+        expect(letterButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
+      });
+    });
   });
 
 });
