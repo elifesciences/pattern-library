@@ -37,16 +37,13 @@ describe('A PersonalisedCoverDownload Component', () => {
     });
 
     context('after clicking the checkbox', () => {
-      before(function () {
-        // Simulate checkbox change.
-        personalisedCoverDownload.toggleButtons(true);
-      });
-
       it('the A4 download menu is hidden', function () {
+        personalisedCoverDownload.toggleButtons(true);
         expect(a4ButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
       });
 
       it('the US letter download menu is not hidden', function () {
+        personalisedCoverDownload.toggleButtons(true);
         expect(letterButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
       });
     });
