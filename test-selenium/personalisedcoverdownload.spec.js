@@ -16,20 +16,22 @@ describe('Personalised cover download page', () => {
   describe('the button collections/checkbox interaction', () => {
     let checkbox;
 
-    before(function () {
+    before(() => {
       checkbox = personalisedCoverButtons.element('input');
     });
 
-    it('the checkbox is unchecked by default', () => {
-      expect(checkbox.checked).to.be(false);
-    });
-
-    it('the A4 download menu is not hidden by default', () => {
-      expect(a4ButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
-    });
-
-    it('the US letter download menu is hidden by default', () => {
-      expect(letterButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
+    context('before clicking the checkbox', () => {
+      it('the checkbox is unchecked by default', () => {
+        expect(checkbox.checked).to.equal(false);
+      });
+  
+      it('the A4 download menu is not hidden by default', () => {
+        expect(a4ButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
+      });
+  
+      it('the US letter download menu is hidden by default', () => {
+        expect(letterButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
+      });
     });
   });
 
