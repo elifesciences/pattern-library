@@ -26,7 +26,7 @@ describe('Personalised cover download page', () => {
 
     context('before clicking the checkbox', () => {
       it('the checkbox is unchecked by default', () => {
-        expect(checkbox.is(':checked')).to.equal(false);
+        expect(checkbox.checked).not.to.equal(true);
       });
   
       it('the A4 download menu is not hidden by default', () => {
