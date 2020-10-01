@@ -21,28 +21,28 @@ describe('A PersonalisedCoverDownload Component', () => {
     let a4ButtonCollection;
     let letterButtonCollection;
 
-    before(function () {
+    before(() => {
       a4ButtonCollection = document.querySelector('.button-collection--a4');
       letterButtonCollection = document.querySelector('.button-collection--usletter');
     });
 
     context('before clicking the checkbox', () => {
-      it('the A4 download menu is not hidden', function () {
+      it('the A4 download menu is not hidden', () => {
         expect(a4ButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
       });
 
-      it('the US letter download menu is hidden', function () {
+      it('the US letter download menu is hidden', () => {
         expect(letterButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
       });
     });
 
     context('after clicking the checkbox', () => {
-      it('the A4 download menu is hidden', function () {
+      it('the A4 download menu is hidden', () => {
         personalisedCoverDownload.toggleButtons(true);
         expect(a4ButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
       });
 
-      it('the US letter download menu is not hidden', function () {
+      it('the US letter download menu is not hidden', () => {
         personalisedCoverDownload.toggleButtons(true);
         expect(letterButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
       });
