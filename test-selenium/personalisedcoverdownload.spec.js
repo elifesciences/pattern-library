@@ -39,6 +39,14 @@ describe('Personalised cover download page', () => {
     });
 
     context('after clicking the checkbox', () => {
+      beforeEach(() => {
+        checkbox.click();
+      });
+
+      it('the checkbox is checked', () => {
+        expect(checkbox.checked).to.equal(true);
+      });
+
       it('the A4 download menu is hidden', () => {
         expect(a4ButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
       });
