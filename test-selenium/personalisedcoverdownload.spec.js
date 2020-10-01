@@ -16,12 +16,12 @@ describe('Personalised cover download page', () => {
   describe('the button collections/checkbox interaction', () => {
     let a4ButtonCollection;
     let letterButtonCollection;
-    let toggle;
+    let checkbox;
 
     before(() => {
       a4ButtonCollection = personalisedCoverButtons.element('.button-collection--a4');
       letterButtonCollection = personalisedCoverButtons.element('.button-collection--usletter');
-      toggle = personalisedCoverButtons.element('.toggle-checkbox__slider');
+      checkbox = personalisedCoverButtons.element('.toggle-checkbox');
     });
 
     context('before clicking the checkbox', () => {
@@ -36,7 +36,7 @@ describe('Personalised cover download page', () => {
 
     context('after clicking the checkbox', () => {
       beforeEach(() => {
-        toggle.click();
+        checkbox.click();
       });
 
       it('the A4 download menu is hidden', () => {
