@@ -17,7 +17,7 @@ describe('A PersonalisedCoverDownload Component', () => {
     expect(personalisedCoverDownload).to.exist;
   });
 
-  describe('toggleButtons()', () => {
+  describe('behaviour of toggleButtons()', () => {
     let a4ButtonCollection;
     let letterButtonCollection;
 
@@ -26,26 +26,26 @@ describe('A PersonalisedCoverDownload Component', () => {
       letterButtonCollection = $elm.querySelector('.button-collection--usletter');
     });
 
-    context('default buttons', () => {
-      it('the A4 download menu is not hidden', () => {
+    context('default behaviour', () => {
+      it('displays the A4 download menu', () => {
         expect(a4ButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
       });
 
-      it('the US letter download menu is hidden', () => {
+      it('does not display the US letter download menu', () => {
         expect(letterButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
       });
     });
 
-    context('buttons when toggleButtons(false)', () => {
+    context('behaviour when toggleButtons(false)', () => {
       beforeEach(() => {
         personalisedCoverDownload.toggleButtons(false);
       });
 
-      it('the A4 download menu is not hidden', () => {
+      it('displays the A4 download menu', () => {
         expect(a4ButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
       });
 
-      it('the US letter download menu is hidden', () => {
+      it('does not display the US letter download menu', () => {
         expect(letterButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
       });
     });
@@ -55,11 +55,11 @@ describe('A PersonalisedCoverDownload Component', () => {
         personalisedCoverDownload.toggleButtons(true);
       });
 
-      it('the A4 download menu is hidden', () => {
+      it('does not display the A4 download menu', () => {
         expect(a4ButtonCollection.getAttribute('class')).to.contain('visuallyhidden');
       });
 
-      it('the US letter download menu is not hidden', () => {
+      it('displays the US letter download menu', () => {
         expect(letterButtonCollection.getAttribute('class')).not.to.contain('visuallyhidden');
       });
     });
