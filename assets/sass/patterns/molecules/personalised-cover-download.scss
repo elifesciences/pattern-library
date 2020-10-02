@@ -39,12 +39,44 @@
 
   img {
     max-width: 100%;
+    filter: drop-shadow(0 0 0.75rem rgba(0,0,0,0.2));
   }
 }
 
 .personalised-cover-buttons {
   display: grid;
   justify-content: center;
+
+  .button {
+    @include colors($color-primary);
+    @include padding(18 18 14);
+    font-weight: 500;
+    letter-spacing: 0.4px;
+
+    &:hover {
+      @include colors($color-primary-dark);
+    }
+  }
+
+  [data-behaviour-initialised="true"] {
+
+    .button-collection {
+      grid-row: 2;
+    }
+
+    .button-collection__item {
+      @include margin(12, "left");
+      @include margin(12, "right");
+    }
+  }
+
+  [data-behaviour-initialised="false"] {
+
+    .button-collection {
+      grid-row: auto;
+      grid-column: 1;
+    }
+  }
 }
 
 .form-item__checkbox {
@@ -54,28 +86,7 @@
 
 .button-collection {
   display: grid;
-  grid-row: 2;
   justify-items: center;
-}
-
-.button-collection__item {
-  @include margin(12, "left");
-  @include margin(12, "right");
-}
-
-.personalised-cover-download__icon {
-  filter: drop-shadow(0 0 0.75rem rgba(0,0,0,0.2));
-}
-
-.personalised__button {
-  @include colors($color-primary);
-  @include padding(18 18 14);
-  font-weight: 500;
-  letter-spacing: 0.4px;
-
-  &:hover {
-    @include colors($color-primary-dark);
-  }
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
