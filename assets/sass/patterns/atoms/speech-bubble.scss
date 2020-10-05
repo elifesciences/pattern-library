@@ -10,17 +10,13 @@
   border-radius: #{$border-radius}px;
   display: block;
   font-family: $font-secondary;
-
   @include font-size-and-vertical-height(14, 36);
   @include height(36);
   padding: 0;
-
   position: relative;
-
   text-align: center;
   text-decoration: none;
   // Variable needed?
-  @include width($button-speech-bubble-width-in-px);
 
   &:after {
     @include arrow("right", 20, $color-primary);
