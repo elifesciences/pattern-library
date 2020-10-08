@@ -10,26 +10,14 @@
   border-radius: #{$border-radius}px;
   display: block;
   font-family: $font-secondary;
-  @include font-size-and-vertical-height(14, 36);
-  @include height(36);
+  @include font-size-and-vertical-height(14, 16);
   padding: 0;
+
   position: relative;
+
   text-align: center;
   text-decoration: none;
-  // Variable needed?
-
-  &:after {
-    @include arrow("right", 20, $color-primary);
-    left: 8px;
-    position: absolute;
-    top: 8px;
-    z-index: -1;
-
-    &:hover {
-      border-left-color: $color-primary-dark;
-    }
-
-  }
+  text-transform: uppercase;
 
   &:hover {
     background-color: $color-primary-dark;
@@ -45,6 +33,30 @@
 
 .speech-bubble__inner {
   display: inline-block;
+}
+
+.speech-bubble__inner-placeholder {
+  @include margin(12, "left");
+  @include padding(3 5 0 5);
+  background: #fff;
+  border-radius: #{$border-radius}px;
+  color: $color-primary-dark;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  min-width: 14px;
+  min-height: 18px;
+  position: relative;
+
+  &:after {
+    background: url(/assets/img/icons/annotation-triangle.svg) no-repeat 0 0;
+    content: "";
+    width: 10px;
+    height: 10px;
+    bottom: -10px;
+    left: 5px;
+    position: absolute;
+  }
 }
 
 .speech-bubble--inline {
@@ -69,13 +81,14 @@
 }
 
 .speech-bubble--has-placeholder {
-  font-family: $font-primary;
+  font-family: $font-secondary;
 
   // line-height deliberately set smaller than font size because the default content is expected to be a double-quote
   // character, which sits high on the line. When the content is not the default, ensure to apply the
   // class: button--speech-bubble-populated
-  @include font-size-and-vertical-height(48, 36);
-  @include blg-spacing("top", "extra-small");
+  @include font-size-and-vertical-height(14, 16);
+  @include padding(14 18);
+  font-weight: 300;
 
 }
 
@@ -113,6 +126,7 @@
 .speech-bubble[disabled] {
   background-color: $color-text-dividers;
   border-color: $color-text-dividers;
+  color: grey;
   cursor: not-allowed;
 
   &:after {
@@ -120,6 +134,10 @@
     cursor: not-allowed;
     left: 5px;
     top: 10px;
+  }
+
+  .speech-bubble__inner-placeholder {
+    color: $color-text-secondary;
   }
 
 }
