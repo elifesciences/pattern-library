@@ -1,6 +1,6 @@
 <button class="speech-bubble{{#hasPlaceholder}} speech-bubble--has-placeholder{{/hasPlaceholder}}{{#isSmall}} speech-bubble--small {{/isSmall}}{{#_pl_only_isLoading}} speech-bubble--loading{{/_pl_only_isLoading}}"
         data-behaviour="SpeechBubble{{#behaviour}} {{behaviour}}{{/behaviour}}"
   {{#_pl_only_isDisabled}} disabled{{/_pl_only_isDisabled}}
-aria-live="polite">{{#hasPlaceholder}}Share your feedback{{/hasPlaceholder}}
-  <div class="speech-bubble__inner {{#hasPlaceholder}}speech-bubble__inner-placeholder{{/hasPlaceholder}}">{{{text}}}</div><div class="bob"></div>
+aria-live="polite">{{#shareFeedback}}Share your feedback{{/shareFeedback}}
+  <div class="speech-bubble__inner {{#hasPlaceholder}}speech-bubble__inner-placeholder{{/hasPlaceholder}}">{{{text}}}</div>
 </button>

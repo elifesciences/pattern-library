@@ -11,7 +11,7 @@
   display: block;
   font-family: $font-secondary;
   @include font-size-and-vertical-height(14, 16);
-  padding: 0;
+  @include padding(11 18 12);
 
   position: relative;
 
@@ -37,15 +37,15 @@
 
 .speech-bubble__inner-placeholder {
   @include margin(12, "left");
-  @include padding(3 5 0 5);
+  @include padding(7 5 0 5);
   background: #fff;
   border-radius: #{$border-radius}px;
   color: $color-primary-dark;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2px;
-  min-width: 14px;
-  min-height: 18px;
+  min-width: 26px;
+  min-height: 23px;
   position: relative;
 
   &:after {
@@ -67,15 +67,15 @@
   display: inline-block;
   @include font-size-and-vertical-height(11, 14);
   @include height(14);
+  @include padding(0 4 0 4);
   min-width: 2em;
-  padding-left: 4px;
-  padding-right: 4px;
   width: auto;
 
   &:after {
     @include arrow("right", 3, $color-primary);
     left: 5px;
     top: 10px;
+    position: absolute;
   }
 
 }
@@ -87,8 +87,9 @@
   // character, which sits high on the line. When the content is not the default, ensure to apply the
   // class: button--speech-bubble-populated
   @include font-size-and-vertical-height(14, 16);
-  @include padding(14 18);
   font-weight: 300;
+  min-width: 26px;
+  min-height: 25px;
 
 }
 
