@@ -30,5 +30,4 @@ anyOf:
   - not:
       required:
         - isSmall
-        - hasPlaceholder
         - shareFeedback

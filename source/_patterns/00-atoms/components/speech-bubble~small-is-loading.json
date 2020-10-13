@@ -1,5 +1,7 @@
 {
   "text": "",
   "isSmall": true,
-  "_pl_only_isLoading": true
+  "_pl_only_isLoading": true,
+  "shareFeedback": false,
+  "hasPlaceholder": false
 }
