@@ -19,9 +19,6 @@ required:
 anyOf:
   - required:
     - isSmall
-    not:
-      required:
-        - hasPlaceholder
   - required:
     - hasPlaceholder
     not:
