@@ -55,6 +55,48 @@
   @include margin(12, "left");
 }
 
+.speech-bubble--share-your-feedback {
+  @include font-size-and-vertical-height(11, 14);
+  @include padding(11 18 12);
+  display: block;
+  font-weight: 300;
+  height: auto;
+  min-width: 2em;
+  width: auto;
+
+  &:after {
+    @include arrow("right", 3, $color-primary);
+    left: 5px;
+    top: 10px;
+    background: #fff;
+  }
+
+}
+
+.speech-bubble__inner-placeholder {
+  @include margin(12, "left");
+  @include padding(5 5 0 5);
+  background: #fff;
+  border-radius: #{$border-radius}px;
+  color: $color-primary-dark;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  min-width: 26px;
+  min-height: 23px;
+  position: relative;
+
+  &:after {
+    background: url(/assets/img/icons/annotation-triangle.svg) no-repeat 0 0;
+    content: "";
+    width: 10px;
+    height: 10px;
+    bottom: -10px;
+    left: 5px;
+    position: absolute;
+  }
+}
+
 .speech-bubble--small {
   display: inline-block;
   @include font-size-and-vertical-height(11, 14);
@@ -81,6 +123,14 @@
   @include font-size-and-vertical-height(48, 36);
   @include blg-spacing("top", "extra-small");
 
+}
+
+.speech-bubble__text {
+  @include font-size-and-vertical-height(14, 16);
+  display: inline-block;
+  font-family: $font-secondary;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .speech-bubble--loading {
