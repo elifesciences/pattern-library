@@ -63,14 +63,6 @@
   height: auto;
   min-width: 2em;
   width: auto;
-
-  &:after {
-    @include arrow("right", 3, $color-primary);
-    left: 5px;
-    top: 10px;
-    background: #fff;
-  }
-
 }
 
 .speech-bubble__inner-placeholder {
