@@ -23,7 +23,6 @@
   @include width($button-speech-bubble-width-in-px);
 
   &:after {
-    @include arrow("right", 20, $color-primary);
     left: 8px;
     position: absolute;
     top: 8px;
@@ -57,7 +56,7 @@
 
 .speech-bubble--share-your-feedback {
   @include font-size-and-vertical-height(11, 15);
-  @include padding(11 18 12);
+  @include padding(13 18 14);
   display: block;
   font-weight: 300;
   height: auto;
@@ -66,16 +65,15 @@
 }
 
 .speech-bubble__inner-placeholder {
-  @include margin(12, "left");
-  @include padding(5 5 0 5);
+  @include margin(9, "left");
+  @include padding(3 5 0 5);
+  @include font-size-and-vertical-height(14, 18);
   background: #fff;
   border-radius: #{$border-radius}px;
   color: $color-primary-dark;
-  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2px;
   min-width: 26px;
-  min-height: 23px;
   position: relative;
 
   &:after {
@@ -118,7 +116,7 @@
 }
 
 .speech-bubble__text {
-  @include font-size-and-vertical-height(14, 16);
+  @include font-size-and-vertical-height(14, 18);
   display: inline-block;
   font-family: $font-secondary;
   font-weight: 300;
