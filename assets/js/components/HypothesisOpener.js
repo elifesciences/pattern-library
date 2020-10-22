@@ -54,7 +54,7 @@ module.exports = class HypothesisOpener {
       return;
     }
 
-    const maxWaitTime = 120000;
+    const maxWaitTime = 2000;
 
     const maxWaitTimer = this.window.setTimeout(this.handleTimerExpired.bind(this), maxWaitTime);
 
@@ -97,6 +97,7 @@ module.exports = class HypothesisOpener {
 
   handleTimerExpired() {
     this.handleInitFail(null, this.window, new Error('Hypothesis loading timed out'));
+    this.setupPlacementAndStyles(false);
   }
 
   removeHypothesisUICounters() {
@@ -182,16 +183,21 @@ module.exports = class HypothesisOpener {
     const $loader =  $ancestor.querySelector('#hypothesisEmbedder');
     if ($loader) {
       return $loader;
+    } else {
+      return {
+        dataset: {
+          hypothesisEmbedLoadStatus: 'true',
+        },
+        addEventListener: () => {}
+      };
     }
-
-    throw new Error('No Hypothesis loading code found');
   }
 
   setupPlacementAndStyles(isContextualData) {
     HypothesisOpener.applyStyleInitial(this.$elm);
     if (!isContextualData) {
       HypothesisOpener.applyStyleArticleBody(this.$elm);
-      this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('body')));
+      this.setInitialDomLocation(this.$elm, 'blog-article');
     }
   }
 
