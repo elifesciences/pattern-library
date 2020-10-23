@@ -35,13 +35,9 @@
           <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}}">
 
             <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
-            {{#articleSections}}
-              {{> molecules-article-section }}
-              {{# annotationCount}}
-                {{> atoms-speech-bubble}}
-              {{/annotationCount}}
-            {{/articleSections}}
-
+              {{#articleSections}}
+                {{> molecules-article-section }}
+              {{/articleSections}}
             </div>
 
             {{#iframe}}
@@ -80,6 +76,9 @@
             {{#related}}
 
               <div class="grid-secondary-column__item grid-secondary-column__item--wide-only">
+                {{# annotationCount}}
+                  {{> atoms-speech-bubble}}
+                {{/annotationCount}}
                 <div>
                   <ol class="listing-list">
                     <li class="listing-list__item">
