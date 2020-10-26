@@ -42,7 +42,7 @@ module.exports = class SpeechBubble {
 
   showFailureState(applyToParent) {
     this.removeLoadingIndicator();
-    this.$elm.setAttribute('disabled', 'disabled');
+    this.$elm.style.display = 'none';
     this.$elm.style.cursor = 'not-allowed';
 
     if (applyToParent) {

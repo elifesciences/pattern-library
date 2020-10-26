@@ -5,6 +5,7 @@ const SpeechBubble = require('./SpeechBubble');
 module.exports = class HypothesisOpener {
 
   constructor($elm, _window = window, doc = document) {
+
     if (!$elm) {
       return;
     }
@@ -12,34 +13,9 @@ module.exports = class HypothesisOpener {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
-
     this.isWithinContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
     this.speechBubble = this.setupSpeechBubble(this.isWithinContextualData);
     this.setupPlacementAndStyles(this.isWithinContextualData);
-
-    let maxWaitTimer = null;
-    let $loader = null;
-    try {
-      $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
-      maxWaitTimer = this.setupPreReadyIndicatorsWithTimer($loader);
-    } catch (e) {
-      this.window.console.error(e);
-      if (!!$loader && $loader instanceof HTMLElement) {
-        $loader.parentNode.removeChild($loader);
-      }
-
-      if (typeof this.window.newrelic === 'object') {
-        this.window.newrelic.noticeError(e);
-      }
-
-      return;
-    }
-
-    const visibleCountSelector = '[data-visible-annotation-count]';
-    this.hookUpDataProvider(this.$elm, this.isWithinContextualData, visibleCountSelector, maxWaitTimer);
-
-    // Declare this.$elm to be a trigger to open the Hypothesis client (click handled by Hypothesis)
-    this.$elm.dataset.hypothesisTrigger = '';
   }
 
   // It is an error for any of:
@@ -96,7 +72,7 @@ module.exports = class HypothesisOpener {
   }
 
   handleTimerExpired() {
-    this.handleInitFail(null, this.window, new Error('Hypothesis loading timed out'));
+    //this.handleInitFail(null, this.window, new Error('Hypothesis loading timed out'));
     this.setupPlacementAndStyles(false);
   }
 
@@ -210,7 +186,7 @@ module.exports = class HypothesisOpener {
 
   static applyStyleArticleBody($elm) {
     annotationPosition();
-    $elm.style.display = 'block';
+    $elm.style.display = 'inline-block';
     $elm.style.marginBottom = '48px';
 
     function annotationPosition() {
@@ -339,6 +315,7 @@ module.exports = class HypothesisOpener {
       'labs-post': HypothesisOpener.positionCentrallyInline,
 
       digest: HypothesisOpener.positionEnd,
+      article: HypothesisOpener.positionEnd,
 
       insight: HypothesisOpener.positionBySecondSection,
       feature: HypothesisOpener.positionBySecondSection,
