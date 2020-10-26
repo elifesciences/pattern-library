@@ -29,6 +29,14 @@
   }
 }
 
+.carousel__image-credit {
+  @include image-credit();
+}
+
+.carousel__image-credit--overlay {
+  @include image-credit-overlay();
+}
+
 .js {
 
   .carousel {
