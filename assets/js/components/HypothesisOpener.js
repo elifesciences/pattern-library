@@ -173,7 +173,7 @@ module.exports = class HypothesisOpener {
     HypothesisOpener.applyStyleInitial(this.$elm);
     if (!isContextualData) {
       HypothesisOpener.applyStyleArticleBody(this.$elm);
-      this.setInitialDomLocation(this.$elm, 'blog-article');
+      this.setInitialDomLocation(this.$elm, utils.getItemType(this.doc.querySelector('body')));
     }
   }
 
