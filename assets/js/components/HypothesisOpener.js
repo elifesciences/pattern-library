@@ -321,6 +321,7 @@ module.exports = class HypothesisOpener {
       feature: HypothesisOpener.positionBySecondSection,
       editorial: HypothesisOpener.positionBySecondSection,
 
+      'article-research': HypothesisOpener.positionByFirstSection,
       default: HypothesisOpener.positionByFirstSection
     };
 
