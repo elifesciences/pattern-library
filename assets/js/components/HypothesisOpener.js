@@ -5,7 +5,6 @@ const SpeechBubble = require('./SpeechBubble');
 module.exports = class HypothesisOpener {
 
   constructor($elm, _window = window, doc = document) {
-
     if (!$elm) {
       return;
     }
@@ -13,9 +12,34 @@ module.exports = class HypothesisOpener {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+
     this.isWithinContextualData = utils.areElementsNested(this.doc.querySelector('.contextual-data'), this.$elm);
     this.speechBubble = this.setupSpeechBubble(this.isWithinContextualData);
     this.setupPlacementAndStyles(this.isWithinContextualData);
+
+    let maxWaitTimer = null;
+    let $loader = null;
+    try {
+      $loader = HypothesisOpener.get$hypothesisLoader(this.doc);
+      maxWaitTimer = this.setupPreReadyIndicatorsWithTimer($loader);
+    } catch (e) {
+      this.window.console.error(e);
+      if (!!$loader && $loader instanceof HTMLElement) {
+        $loader.parentNode.removeChild($loader);
+      }
+
+      if (typeof this.window.newrelic === 'object') {
+        this.window.newrelic.noticeError(e);
+      }
+
+      return;
+    }
+
+    const visibleCountSelector = '[data-visible-annotation-count]';
+    this.hookUpDataProvider(this.$elm, this.isWithinContextualData, visibleCountSelector, maxWaitTimer);
+
+    // Declare this.$elm to be a trigger to open the Hypothesis client (click handled by Hypothesis)
+    this.$elm.dataset.hypothesisTrigger = '';
   }
 
   // It is an error for any of:
@@ -30,7 +54,7 @@ module.exports = class HypothesisOpener {
       return;
     }
 
-    const maxWaitTime = 2000;
+    const maxWaitTime = 120000;
 
     const maxWaitTimer = this.window.setTimeout(this.handleTimerExpired.bind(this), maxWaitTime);
 
@@ -72,8 +96,7 @@ module.exports = class HypothesisOpener {
   }
 
   handleTimerExpired() {
-    //this.handleInitFail(null, this.window, new Error('Hypothesis loading timed out'));
-    this.setupPlacementAndStyles(false);
+    this.handleInitFail(null, this.window, new Error('Hypothesis loading timed out'));
   }
 
   removeHypothesisUICounters() {
@@ -159,14 +182,9 @@ module.exports = class HypothesisOpener {
     const $loader =  $ancestor.querySelector('#hypothesisEmbedder');
     if ($loader) {
       return $loader;
-    } else {
-      return {
-        dataset: {
-          hypothesisEmbedLoadStatus: 'true',
-        },
-        addEventListener: () => {}
-      };
     }
+
+    throw new Error('No Hypothesis loading code found');
   }
 
   setupPlacementAndStyles(isContextualData) {
