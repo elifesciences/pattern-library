@@ -24,6 +24,9 @@ properties:
   title:
     type: string
     minLength: 1
+  attributionText:
+    type: string
+    minLength: 1
   titleLength:
     enum:
     - xx-short
