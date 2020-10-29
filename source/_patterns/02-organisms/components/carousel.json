@@ -17,6 +17,7 @@
         ]
       },
       "title": "Sensitivity vs stability in neurones",
+      "attributionText": "Illustration by <a href=''>Joe Bloggs</a>",
       "longTitle": true,
       "url": "#link-to-article",
       "button": {
@@ -53,6 +54,7 @@
         ]
       },
       "title": "Cancer cells follow the leader",
+      "attributionText": "Illustration by <a href=''>Billy No-Mates</a>",
       "longTitle": true,
       "url": "#link-to-article",
       "button": {
@@ -93,6 +95,7 @@
         ]
       },
       "title": "Rethinking the origins of mitochondria",
+      "attributionText": "Here we go again again",
       "longTitle": true,
       "url": "#link-to-article",
       "button": {
