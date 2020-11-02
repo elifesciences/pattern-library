@@ -37,7 +37,8 @@
       "altText": ""
     },
     "credit": {
-      "text": "Illustration by <a href=''>Joe Bloggs</a>"
+      "text": "Illustration by <a href=''>Joe Bloggs</a>",
+      "elementId": "iAmTheIdOfTheImageCreditElement"
     },
     "creditOverlay": true
   }
