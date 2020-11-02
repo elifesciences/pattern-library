@@ -33,11 +33,13 @@
     "buttons": [
       {
         "text": "Download PDF",
-        "path": "#"
+        "path": "#",
+        "classes": "gtm__a4"
       },
       {
         "text": "Download jpg",
-        "path": "#"
+        "path": "#",
+        "classes": "gtm__a4"
       }
     ]
   },
@@ -49,11 +51,13 @@
     "buttons": [
       {
         "text": "Download PDF",
-        "path": "#"
+        "path": "#",
+        "classes": "gtm__us-letter"
       },
       {
         "text": "Download jpg",
-        "path": "#"
+        "path": "#",
+        "classes": "gtm__us-letter"
       }
     ]
   }
