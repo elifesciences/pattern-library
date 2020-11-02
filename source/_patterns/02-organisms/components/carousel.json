@@ -17,7 +17,6 @@
         ]
       },
       "title": "Sensitivity vs stability in neurones",
-      "attributionText": "Illustration by <a href=''>Joe Bloggs</a>",
       "longTitle": true,
       "url": "#link-to-article",
       "button": {
@@ -41,7 +40,11 @@
         "fallback": {
           "defaultPath": "https://unsplash.it/1114/336",
           "altText": ""
-        }
+        },
+        "credit": {
+          "text": "Illustration by <a href=''>Joe Bloggs</a>"
+        },
+        "creditOverlay": true
       }
     },
     {
@@ -54,7 +57,6 @@
         ]
       },
       "title": "Cancer cells follow the leader",
-      "attributionText": "Illustration by <a href=''>Billy No-Mates</a>",
       "longTitle": true,
       "url": "#link-to-article",
       "button": {
@@ -78,7 +80,11 @@
         "fallback": {
           "defaultPath": "https://unsplash.it/1114/337",
           "altText": ""
-        }
+        },
+        "credit": {
+          "text": "Illustration by <a href=''>Billy No-Mates</a>"
+        },
+        "creditOverlay": true
       }
     },
     {
@@ -95,7 +101,6 @@
         ]
       },
       "title": "Rethinking the origins of mitochondria",
-      "attributionText": "Here we go again again",
       "longTitle": true,
       "url": "#link-to-article",
       "button": {
@@ -119,7 +124,11 @@
         "fallback": {
           "defaultPath": "https://unsplash.it/1114/338",
           "altText": ""
-        }
+        },
+        "credit": {
+          "text": "Here we go again again"
+        },
+        "creditOverlay": true
       }
     }
   ]

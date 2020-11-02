@@ -48,7 +48,9 @@
     </div>
   {{/meta}}
 
-  <div class="carousel__image-credit carousel__image-credit--overlay">
-    {{{ attributionText }}}
-  </div>
+  {{#image.creditOverlay}}
+    {{#image.credit}}
+        <div class="carousel__image-credit carousel__image-credit--overlay" id="{{elementId}}">{{{text}}}</div>
+    {{/image.credit}}
+  {{/image.creditOverlay}}
 </li>

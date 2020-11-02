@@ -12,7 +12,6 @@
     ]
   },
   "title": "x-long x-long x-long x-long x-long x-long x-long x-long x-long x-long x-long x-long x-long x-long x-long x-long",
-  "attributionText": "Illustration by <a href=''>Joe Bloggs</a>",
   "titleLength": "x-long",
   "url": "#link-to-article",
   "button": {
@@ -36,6 +35,10 @@
     "fallback": {
       "defaultPath": "https://unsplash.it/1114/336",
       "altText": ""
-    }
+    },
+    "credit": {
+      "text": "Illustration by <a href=''>Joe Bloggs</a>"
+    },
+    "creditOverlay": true
   }
 }
