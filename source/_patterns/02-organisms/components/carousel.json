@@ -44,8 +44,7 @@
         "credit": {
           "text": "Illustration by <a href=''>Joe Bloggs</a>",
           "elementId": "iAmTheIdOfTheImageCreditElement1"
-        },
-        "creditOverlay": true
+        }
       }
     },
     {
@@ -85,8 +84,7 @@
         "credit": {
           "text": "Illustration by <a href=''>Billy No-Mates</a>",
           "elementId": "iAmTheIdOfTheImageCreditElement2"
-        },
-        "creditOverlay": true
+        }
       }
     },
     {
@@ -130,8 +128,7 @@
         "credit": {
           "text": "Here we go again again",
           "elementId": "iAmTheIdOfTheImageCreditElement3"
-        },
-        "creditOverlay": true
+        }
       }
     }
   ]

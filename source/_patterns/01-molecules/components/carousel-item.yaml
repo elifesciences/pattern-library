@@ -56,9 +56,6 @@ properties:
             required:
               - text
               - elementId
-          creditOverlay:
-            type: boolean
-            default: false
 required:
   - title
   - url
