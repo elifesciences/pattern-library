@@ -721,30 +721,9 @@ $iconlist: cc oa;
 }
 
 .content-header__image-credit {
-  color: $color-text-secondary;
-  font-family: $font-secondary;
-  @include font-size-and-vertical-height(11);
-  @include blg-spacing("top", "extra-small");
-  @include blg-spacing("bottom", "extra-small");
-  text-align: right;
-
-  & a,
-  & a:hover {
-    color: inherit;
-    text-decoration: underline;
-  }
-
-  visibility: hidden;
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    visibility: visible;
-  }
+  @include image-credit();
 }
 
 .content-header__image-credit--overlay {
-  color: inherit;
-  opacity: 0.4;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  @include blg-spacing("right", "extra-small");
+  @include image-credit-overlay();
 }

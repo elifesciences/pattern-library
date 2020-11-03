@@ -172,6 +172,10 @@
           "fallback": {
             "defaultPath": "https://unsplash.it/1114/336",
             "altText": ""
+          },
+          "credit": {
+            "text": "Illustration by <a href=''>Joe Bloggs</a>",
+            "elementId": "iAmTheIdOfTheImageCreditElement"
           }
         }
       },
