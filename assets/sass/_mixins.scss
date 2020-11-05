@@ -539,6 +539,33 @@
   }
 }
 
+@mixin image-credit() {
+  color: #fff;
+  font-family: $font-secondary;
+  @include font-size-and-vertical-height(11);
+  @include blg-spacing("top", "extra-small");
+  @include blg-spacing("bottom", "extra-small");
+  text-align: right;
+
+  & a,
+  & a:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  visibility: hidden;
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    visibility: visible;
+  }
+}
+
+@mixin image-credit-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  @include blg-spacing("right", "extra-small");
+}
+
 @mixin blg-pad-top--small-to-medium {
 
   @include blg-spacing("top", "small");
