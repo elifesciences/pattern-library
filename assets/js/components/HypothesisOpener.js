@@ -215,6 +215,8 @@ module.exports = class HypothesisOpener {
         $elm.style.marginRight = 'auto';
       } else {
         $elm.style.float = 'right';
+        $elm.style.marginLeft = 'unset';
+        $elm.style.marginRight = 'unset';
       }
 
     }
@@ -297,6 +299,12 @@ module.exports = class HypothesisOpener {
     $elm.classList.add('speech-bubble--inline');
     const $target = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
     $target.insertBefore($elm, $target.firstChild);
+
+    var el = document.querySelector('.speech-bubble--share-your-feedback');
+    var speechBubbleContainer = document.createElement('div');
+    speechBubbleContainer.classList.add('speech-bubble--container');
+    el.parentNode.insertBefore(speechBubbleContainer, el);
+    speechBubbleContainer.appendChild(el);
   }
 
   static positionBySecondSection($elm, $contentContainer) {

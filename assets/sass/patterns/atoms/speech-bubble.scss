@@ -54,14 +54,19 @@
   @include margin(12, "left");
 }
 
+.speech-bubble--container {
+  display: grid;
+}
+
 .speech-bubble--share-your-feedback {
   @include font-size-and-vertical-height(11, 15);
   @include padding(13 18 14);
   display: block;
   font-weight: 300;
   height: auto;
-  min-width: 2em;
+  max-width: 22em;
   width: auto;
+  justify-self: end;
 }
 
 .speech-bubble__inner-placeholder {
