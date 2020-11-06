@@ -206,6 +206,10 @@ describe('A HypothesisOpener Component', function () {
         expect(HypothesisOpener.findPositioningMethod('digest')).to.equal(HypothesisOpener.positionEnd);
       });
 
+      it('returns the expected positioning method for a "article"', () => {
+        expect(HypothesisOpener.findPositioningMethod('article')).to.equal(HypothesisOpener.positionEnd);
+      });
+
       it('returns the expected positioning method for an "insight"', () => {
         expect(HypothesisOpener.findPositioningMethod('insight')).to.equal(HypothesisOpener.positionBySecondSection);
       });
