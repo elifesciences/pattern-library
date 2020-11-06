@@ -60,48 +60,51 @@
       </div>
     {{/hasProfile}}
 
-    {{#hasSubjects}}
-      <ol class="content-header__subject_list">
-        {{#subjects}}
-          <li class="content-header__subject_list_item">
-            <a href="{{url}}" class="content-header__subject_link">
-              <span class="content-header__subject">{{{name}}}</span>
-            </a>
-          </li>
-        {{/subjects}}
-      </ol>
-    {{/hasSubjects}}
-  {{/header}}
+    <div class="content-header__component-assets">
 
-  {{#licence}}
-      <ul class="content-header__icons">
-        <li><a href="https://en.wikipedia.org/wiki/Open_access"
-               class="content-header__icon content-header__icon--oa"><span
-            class="visuallyhidden">Open access</span></a></li>
-        <li><a href="{{licence}}"
-               class="content-header__icon content-header__icon--cc"><span
-            class="visuallyhidden">Copyright information</span></a></li>
-      </ul>
-  {{/licence}}
+      {{#hasSubjects}}
+        <ol class="content-header__subject_list">
+          {{#subjects}}
+            <li class="content-header__subject_list_item">
+              <a href="{{url}}" class="content-header__subject_link">
+                <span class="content-header__subject">{{{name}}}</span>
+              </a>
+            </li>
+          {{/subjects}}
+        </ol>
+      {{/hasSubjects}}
+    {{/header}}
 
-  {{#download}}
-    <a href="{{download}}" class="content-header__download_link">
-      <picture>
-        {{#image}}
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-reverse.svg{{/assetRewrite}}" type="image/svg+xml">
-          <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
-        {{/image}}
-        {{^image}}
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
-          <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download.svg{{/assetRewrite}}" type="image/svg+xml">
-          <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
-        {{/image}}
-      </picture>
-    </a>
-  {{/download}}
+    {{#licence}}
+        <ul class="content-header__icons">
+          <li><a href="https://en.wikipedia.org/wiki/Open_access"
+                class="content-header__icon content-header__icon--oa"><span
+              class="visuallyhidden">Open access</span></a></li>
+          <li><a href="{{licence}}"
+                class="content-header__icon content-header__icon--cc"><span
+              class="visuallyhidden">Copyright information</span></a></li>
+        </ul>
+    {{/licence}}
+
+    {{#download}}
+      <a href="{{download}}" class="content-header__download_link">
+        <picture>
+          {{#image}}
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-reverse.svg{{/assetRewrite}}" type="image/svg+xml">
+            <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
+          {{/image}}
+          {{^image}}
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download.svg{{/assetRewrite}}" type="image/svg+xml">
+            <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
+          {{/image}}
+        </picture>
+      </a>
+    {{/download}}
+  </div>
 
   <div class="content-header__body">
     <h1 class="content-header__title {{#titleLength}}content-header__title--{{titleLength}}{{/titleLength}}{{^titleLength}}content-header__title--medium{{/titleLength}}">{{{title}}}</h1>
