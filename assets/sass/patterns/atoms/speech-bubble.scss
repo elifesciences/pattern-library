@@ -72,6 +72,47 @@
 
 }
 
+.speech-bubble--wrapped {
+  @include font-size-and-vertical-height(11, 15);
+  @include padding(13 18 14);
+  display: block;
+  font-weight: 300;
+  height: auto;
+  min-width: 2em;
+  width: auto;
+
+  .speech-bubble__prefix {
+    @include font-size-and-vertical-height(14, 18);
+    display: inline-block;
+    font-family: $font-secondary;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .speech-bubble__inner {
+    @include margin(9, "left");
+    @include padding(3 5 0 5);
+    @include font-size-and-vertical-height(14, 18);
+    background: #fff;
+    border-radius: #{$border-radius}px;
+    color: $color-primary-dark;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    min-width: 26px;
+    position: relative;
+
+    &:after {
+      background: url(../img/icons/wrapped-speech-triangle.svg) no-repeat 0 0;
+      content: "";
+      width: 10px;
+      height: 10px;
+      bottom: -10px;
+      left: 5px;
+      position: absolute;
+    }
+  }
+}
+
 .speech-bubble--has-placeholder {
   font-family: $font-primary;
 

@@ -1,5 +1,6 @@
-<button class="speech-bubble{{#hasPlaceholder}} speech-bubble--has-placeholder{{/hasPlaceholder}}{{#isSmall}} speech-bubble--small {{/isSmall}}{{#_pl_only_isLoading}} speech-bubble--loading{{/_pl_only_isLoading}}"
+<button class="speech-bubble{{#hasPlaceholder}} speech-bubble--has-placeholder{{/hasPlaceholder}}{{#isSmall}} speech-bubble--small {{/isSmall}}{{#isWrapped}} speech-bubble--wrapped {{/isWrapped}}{{#_pl_only_isLoading}} speech-bubble--loading{{/_pl_only_isLoading}}"
         data-behaviour="SpeechBubble{{#behaviour}} {{behaviour}}{{/behaviour}}"
 aria-live="polite">
-  <span class="speech-bubble__inner">{{{text}}}</span>
+  {{#isWrapped}}{{#prefix}}<span class="speech-bubble__prefix">{{{prefix}}}</span>{{/prefix}}{{/isWrapped}}
+  <span class="speech-bubble__inner">{{#isWrapped}}{{^prefix}}{{{prefix}}} {{/prefix}}{{/isWrapped}}{{{text}}}</span>
 </button>
