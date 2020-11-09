@@ -114,13 +114,15 @@
 }
 
 .speech-bubble--has-placeholder {
-  font-family: $font-primary;
+  &:not(.speech-bubble--wrapped) {
+    font-family: $font-primary;
 
-  // line-height deliberately set smaller than font size because the default content is expected to be a double-quote
-  // character, which sits high on the line. When the content is not the default, ensure to apply the
-  // class: button--speech-bubble-populated
-  @include font-size-and-vertical-height(48, 36);
-  @include blg-spacing("top", "extra-small");
+    // line-height deliberately set smaller than font size because the default content is expected to be a double-quote
+    // character, which sits high on the line. When the content is not the default, ensure to apply the
+    // class: button--speech-bubble-populated
+    @include font-size-and-vertical-height(48, 36);
+    @include blg-spacing("top", "extra-small");
+  }
 
 }
 
