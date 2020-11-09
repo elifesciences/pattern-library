@@ -11,7 +11,11 @@ module.exports = class SpeechBubble {
     this.window = _window;
     this.doc = doc;
 
-    this.placeholder = '“';
+    if ($elm.classList.contains('speech-bubble--wrapped')) {
+      this.placeholder = '+';
+    } else {
+      this.placeholder = '“';
+    }
   }
 
   removePlaceholder() {
