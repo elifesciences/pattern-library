@@ -114,6 +114,14 @@
 }
 
 .speech-bubble--has-placeholder {
+
+  .speech-bubble__inner {
+    background: #fff url(../img/icons/annotation-plus.svg) no-repeat 8px 6px;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-indent: -9999px;
+  }
+
   &:not(.speech-bubble--wrapped) {
     font-family: $font-primary;
 
@@ -126,7 +134,7 @@
 
   &.speech-bubble--wrapped {
     .speech-bubble__inner {
-      @include font-size-and-vertical-height(18, 18);
+      @include font-size-and-vertical-height(24, 20);
     }
   }
 
