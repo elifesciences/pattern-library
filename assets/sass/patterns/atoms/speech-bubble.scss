@@ -126,7 +126,7 @@
 
   &.speech-bubble--wrapped {
     .speech-bubble__inner {
-      // pair here
+      @include font-size-and-vertical-height(18, 18);
     }
   }
 
