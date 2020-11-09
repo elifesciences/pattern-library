@@ -27,7 +27,7 @@ describe('A SpeechBubble Wrapped Component', function () {
     });
 
     it('removes the default contents', () => {
-      speechBubble.$elm.innerHTML = 'something something &#8220; side';
+      speechBubble.$elm.innerHTML = 'something something + side';
       expect(speechBubble.$elm.innerHTML).to.include('+');
 
       speechBubble.removePlaceholder();
