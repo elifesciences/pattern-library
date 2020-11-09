@@ -55,6 +55,13 @@ describe('A SpeechBubble Component', function () {
       expect(speechBubble.$elm.innerHTML).to.equal('something something <span class="replace-me">“</span> side');
     });
 
+    it('uses a + symbol as placeholder if speech bubble is wrapped', () => {
+      speechBubble.$elm.classList.add('speech-bubble--wrapped');
+      speechBubble.$elm.innerHTML = 'something something <span class="replace-me">dark</span> side';
+      speechBubble.showPlaceholder('.replace-me');
+      expect(speechBubble.$elm.innerHTML).to.equal('something something <span class="replace-me">+</span> side');
+    });
+
   });
 
   describe('the update() method', () => {
