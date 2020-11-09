@@ -81,7 +81,7 @@
   min-width: 2em;
   width: auto;
 
-  .speech-bubble__prefix {
+  .speech-bubble--wrapped__prefix {
     @include font-size-and-vertical-height(14, 18);
     display: inline-block;
     font-family: $font-secondary;
@@ -102,7 +102,7 @@
     position: relative;
 
     &:after {
-      background: url(../img/icons/wrapped-speech-triangle.svg) no-repeat 0 0;
+      background: url(../img/icons/speech-bubble-wrapped-triangle.svg) no-repeat 0 0;
       content: "";
       width: 10px;
       height: 10px;
