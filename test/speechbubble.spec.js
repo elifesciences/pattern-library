@@ -60,6 +60,7 @@ describe('A SpeechBubble Component', function () {
     });
 
     it('injects the speech bubble default contents into the correct location in the speech bubble if wrapped', () => {
+      expect(1).to.equal(2);
       speechBubbleWrapped.$elmWrapped.innerHTML = 'something something <span class="replace-me">dark</span> side';
       expect(speechBubbleWrapped.$elmWrapped.innerHTML).not.to.include('+');
 
