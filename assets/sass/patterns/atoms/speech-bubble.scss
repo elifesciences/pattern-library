@@ -124,6 +124,12 @@
     @include blg-spacing("top", "extra-small");
   }
 
+  &.speech-bubble--wrapped {
+    .speech-bubble__inner {
+      // pair here
+    }
+  }
+
 }
 
 .speech-bubble--loading {
