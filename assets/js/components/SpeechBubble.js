@@ -20,7 +20,8 @@ module.exports = class SpeechBubble {
 
   removePlaceholder() {
     this.$elm.classList.remove('speech-bubble--has-placeholder');
-    const re = new RegExp(this.placeholder, 'g');
+    const pattern = '\\' + this.placeholder;
+    const re = new RegExp(pattern, 'g');
     this.$elm.innerHTML = this.$elm.innerHTML.replace(re, '');
   }
 
