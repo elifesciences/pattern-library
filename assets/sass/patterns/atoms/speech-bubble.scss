@@ -113,7 +113,7 @@
   }
 }
 
-.speech-bubble--has-placeholder {
+.speech-bubble--has-placeholder & {
   font-family: $font-primary;
 
   // line-height deliberately set smaller than font size because the default content is expected to be a double-quote
@@ -121,6 +121,17 @@
   // class: button--speech-bubble-populated
   @include font-size-and-vertical-height(48, 36);
   @include blg-spacing("top", "extra-small");
+
+  .speech-bubble__inner {
+    font-size: 0.875rem;
+  }
+
+  .speech-bubble--wrapped {
+
+    .speech-bubble__inner {
+      font-size: 3rem;
+    }
+  }
 
 }
 
