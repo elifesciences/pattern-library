@@ -10,14 +10,10 @@ describe('A SpeechBubble Component', function () {
   'use strict';
   let $elm;
   let speechBubble;
-  let $elmWrapped;
-  let speechBubbleWrapped;
 
   beforeEach(function () {
-    $elm = document.querySelector('[data-behaviour="SpeechBubble"]');
+    $elm = document.querySelector('.hasPlaceholder').querySelector('[data-behaviour="SpeechBubble"]');
     speechBubble = new SpeechBubble($elm);
-    $elmWrapped = document.querySelector('.speech-bubble--wrapped[data-behaviour="SpeechBubble"]');
-    speechBubble = new SpeechBubble($elmWrapped);
   });
 
   describe('the removePlaceholder() method', () => {
@@ -57,12 +53,6 @@ describe('A SpeechBubble Component', function () {
 
       speechBubble.showPlaceholder('.replace-me');
       expect(speechBubble.$elm.innerHTML).to.equal('something something <span class="replace-me">“</span> side');
-    });
-
-    it('uses a + symbol as placeholder if speech bubble is wrapped', () => {
-      speechBubbleWrapped.$elmWrapped.innerHTML = 'something something <span class="replace-me">dark</span> side';
-      speechBubbleWrapped.showPlaceholder('.replace-me');
-      expect(speechBubbleWrapped.$elmWrapped.innerHTML).to.equal('something something <span class="replace-me">+</span> side');
     });
 
   });
