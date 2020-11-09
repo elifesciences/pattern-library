@@ -295,19 +295,18 @@
 .content-header__component-assets {
   display: grid;
   grid-template-rows: auto auto auto;
-  border: 1px solid black;
 }
 
 .content-header__subject_list {
+  @include blg-spacing("top", "small");
   @include label-subject-typeg();
+  @include padding(36, "left");
+  @include padding(36, "right");
+  grid-column: 3/4;
+  grid-row: 1;
   margin: 0;
   padding-left: 0;
   text-align: center;
-  grid-column: 3/4;
-  grid-row: 1;
-  @include padding(36, "left");
-  @include padding(36, "right");
-  @include blg-spacing("top", "small");
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
     @include padding(72, "left");
@@ -365,11 +364,11 @@
 }
 
 .content-header__icons {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  @include margin(14 0 0 0);
+  @include padding(0);
   grid-column: 1/2;
   grid-row: 1;
+  list-style: none;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
     left: 14%;
@@ -400,8 +399,8 @@ $iconlist: cc oa;
   background-repeat: no-repeat;
   background-position: center bottom;
   display: block;
-  width: 17px;
   height: 22px;
+  width: 17px;
 }
 
 @each $icon in $iconlist {
@@ -420,7 +419,7 @@ $iconlist: cc oa;
   grid-column: 5/6;
   grid-row: 1;
   justify-self: end;
-  @include margin(top, 24);
+  margin-top: 24px;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     margin-top: 14px;
@@ -428,7 +427,7 @@ $iconlist: cc oa;
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include margin(14 -27 0 0);
+    @include margin(14 0 0 0);
   }
 
   .content-header--image & {
