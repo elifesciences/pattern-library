@@ -305,7 +305,6 @@
   grid-column: 3/4;
   grid-row: 1;
   margin: 0;
-  padding-left: 0;
   text-align: center;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
