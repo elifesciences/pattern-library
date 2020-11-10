@@ -300,10 +300,11 @@ module.exports = class HypothesisOpener {
     const $target = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
     $target.insertBefore($elm, $target.firstChild);
 
-    if (this.speechBubble.classList.contains('speech-bubble--wrapped')) {
-      const speechBubbleWrappedContainer = document.createElement('div').classList.add('speech-bubble--container');
-      this.speechBubble.parentNode.insertBefore(speechBubbleWrappedContainer, this.speechBubble);
-      speechBubbleWrappedContainer.appendChild(this.speechBubble);
+    if ($elm.classList.contains('speech-bubble--share-your-feedback')) {
+      const speechBubbleContainer = document.createElement('div');
+      speechBubbleContainer.classList.add('speech-bubble--container');
+      $elm.parentNode.insertBefore(speechBubbleContainer, $elm);
+      speechBubbleContainer.appendChild($elm);
     }
   }
 
