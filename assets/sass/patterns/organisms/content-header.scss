@@ -40,9 +40,9 @@
   @include margin($content-header-padding, "bottom");
 
   .content-header--header & {
-    @include margin($content-header-padding * 1.5 + 11 * 2.1818181818, "top"); // 11 * 2.1818181818 is the height of the subject line
+    @include margin($content-header-padding / 2, "top"); // 11 * 2.1818181818 is the height of the subject line
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include margin($content-header-padding * 2 + 11 * 2.1818181818, "top");
+      @include margin($content-header-padding, "top");
     }
   }
 }
