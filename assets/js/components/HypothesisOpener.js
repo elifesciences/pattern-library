@@ -203,9 +203,25 @@ module.exports = class HypothesisOpener {
   }
 
   static applyStyleArticleBody($elm) {
-    $elm.style.display = 'block';
-    $elm.style.marginLeft = 'auto';
+    annotationPosition();
+    $elm.style.display = 'inline-block';
     $elm.style.marginBottom = '24px';
+
+    function annotationPosition() {
+      var screenTest = window.innerWidth;
+      if (screenTest < 730) {
+        $elm.style.float = 'none';
+        $elm.style.marginLeft = 'auto';
+        $elm.style.marginRight = 'auto';
+      } else {
+        $elm.style.float = 'right';
+        $elm.style.marginLeft = 'unset';
+        $elm.style.marginRight = 'unset';
+      }
+
+    }
+
+    window.addEventListener('resize', annotationPosition);
   }
 
   findElementWithClass(className) {
@@ -283,6 +299,12 @@ module.exports = class HypothesisOpener {
     $elm.classList.add('speech-bubble--inline');
     const $target = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
     $target.insertBefore($elm, $target.firstChild);
+
+    if (this.speechBubble.classList.contains('speech-bubble--wrapped')) {
+      const speechBubbleWrappedContainer = document.createElement('div').classList.add('speech-bubble--container');
+      this.speechBubble.parentNode.insertBefore(speechBubbleWrappedContainer, this.speechBubble);
+      speechBubbleWrappedContainer.appendChild(this.speechBubble);
+    }
   }
 
   static positionBySecondSection($elm, $contentContainer) {

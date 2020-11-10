@@ -72,6 +72,10 @@
 
 }
 
+.speech-bubble--container {
+  display: grid;
+}
+
 .speech-bubble--wrapped {
   @include font-size-and-vertical-height(11, 15);
   @include padding(13 18 14);
