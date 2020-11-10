@@ -440,6 +440,7 @@ $iconlist: cc oa;
   .content-header--image & {
     right: 12px;
     top: #{$blg-space-extra-small-in-px}px;
+    position: absolute;
   }
 
 }
