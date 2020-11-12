@@ -304,7 +304,7 @@ module.exports = class HypothesisOpener {
 
     let $target = paragraphs[targetPos];
     $target = HypothesisOpener.targetWithinInLineProfile($target) || $target;
-    $target = HypothesisOpener.belowSectionHeading($target) || $target;
+    $target = HypothesisOpener.targetBelowSectionHeading($target) || $target;
 
     $target.insertBefore($elm, $target.firstChild);
 
@@ -371,7 +371,7 @@ module.exports = class HypothesisOpener {
     return $target.parentNode.nodeName === 'BLOCKQUOTE';
   }
 
-  static belowSectionHeading($target) {
+  static targetBelowSectionHeading($target) {
     if ($target.previousElementSibling === null && $target.parentNode.parentNode.classList.contains('article-section')) {
       return $target.parentNode.parentNode;
     }
