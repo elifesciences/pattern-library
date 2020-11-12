@@ -298,8 +298,8 @@ module.exports = class HypothesisOpener {
 
     $elm.classList.add('speech-bubble--inline');
     let $target = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
-    $target = HypothesisOpener.withinInLineProfile($elm) ?? $target;
-    $target = HypothesisOpener.belowSectionHeading($elm) ?? $target;
+    $target = HypothesisOpener.withinInLineProfile($elm) || $target;
+    $target = HypothesisOpener.belowSectionHeading($elm) || $target;
 
     $target.insertBefore($elm, $target.firstChild);
 
@@ -360,16 +360,12 @@ module.exports = class HypothesisOpener {
     if ($elm.parentNode.parentNode.classList.contains('inline-profile')) {
       return $elm.parentNode.parentNode;
     }
-
-    return null;
   }
 
   static belowSectionHeading($elm) {
     if ($elm.previousSibling === null && $elm.parentNode.parentNode.classList.contains('article-section')) {
       return $elm.parentNode.parentNode;
     }
-
-    return null;
   }
 
   setInitialDomLocation($elm, articleType) {
