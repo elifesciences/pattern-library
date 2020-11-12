@@ -298,8 +298,8 @@ module.exports = class HypothesisOpener {
 
     $elm.classList.add('speech-bubble--inline');
     let $target = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
-    $target = HypothesisOpener.withinInLineProfile($elm) || $target;
-    $target = HypothesisOpener.belowSectionHeading($elm) || $target;
+    $target = HypothesisOpener.withinInLineProfile($target) || $target;
+    $target = HypothesisOpener.belowSectionHeading($target) || $target;
 
     $target.insertBefore($elm, $target.firstChild);
 
