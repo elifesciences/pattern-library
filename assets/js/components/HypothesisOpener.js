@@ -297,8 +297,13 @@ module.exports = class HypothesisOpener {
     }
 
     $elm.classList.add('speech-bubble--inline');
-    let $target = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
-    $target = HypothesisOpener.withinInLineProfile($target) || $target;
+    let targetPos = Math.floor((paragraphs.length - 1) / 2);
+    while (HypothesisOpener.targetWithinBlockquote(paragraphs[targetPos]) === true) {
+      targetPos += 1;
+    }
+
+    let $target = paragraphs[targetPos];
+    $target = HypothesisOpener.targetWithinInLineProfile($target) || $target;
     $target = HypothesisOpener.belowSectionHeading($target) || $target;
 
     $target.insertBefore($elm, $target.firstChild);
@@ -356,10 +361,14 @@ module.exports = class HypothesisOpener {
     return positioners[articleType] || positioners.default;
   }
 
-  static withinInLineProfile($target) {
+  static targetWithinInLineProfile($target) {
     if ($target.parentNode.parentNode.classList.contains('inline-profile')) {
       return $target.parentNode.parentNode;
     }
+  }
+
+  static targetWithinBlockquote($target) {
+    return $target.parentNode.nodeName === 'BLOCKQUOTE';
   }
 
   static belowSectionHeading($target) {
