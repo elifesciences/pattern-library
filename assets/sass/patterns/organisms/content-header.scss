@@ -422,7 +422,6 @@ $iconlist: cc oa;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     margin-top: 14px;
-
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
@@ -440,6 +439,12 @@ $iconlist: cc oa;
   .content-header--image & {
     right: 12px;
     position: absolute;
+    top: -12px;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      top: 0;
+    }
+
   }
 
 }
