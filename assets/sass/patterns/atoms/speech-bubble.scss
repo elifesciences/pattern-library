@@ -84,6 +84,7 @@
   height: auto;
   min-width: 2em;
   width: auto;
+  justify-self: end;
 
   .speech-bubble--wrapped__prefix {
     @include font-size-and-vertical-height(14, 18);
