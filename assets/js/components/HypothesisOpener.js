@@ -356,15 +356,15 @@ module.exports = class HypothesisOpener {
     return positioners[articleType] || positioners.default;
   }
 
-  static withinInLineProfile($elm) {
-    if ($elm.parentNode.parentNode.classList.contains('inline-profile')) {
-      return $elm.parentNode.parentNode;
+  static withinInLineProfile($target) {
+    if ($target.parentNode.parentNode.classList.contains('inline-profile')) {
+      return $target.parentNode.parentNode;
     }
   }
 
-  static belowSectionHeading($elm) {
-    if ($elm.previousSibling === null && $elm.parentNode.parentNode.classList.contains('article-section')) {
-      return $elm.parentNode.parentNode;
+  static belowSectionHeading($target) {
+    if ($target.previousElementSibling === null && $target.parentNode.parentNode.classList.contains('article-section')) {
+      return $target.parentNode.parentNode;
     }
   }
 
