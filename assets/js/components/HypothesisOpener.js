@@ -203,25 +203,9 @@ module.exports = class HypothesisOpener {
   }
 
   static applyStyleArticleBody($elm) {
-    annotationPosition();
-    $elm.style.display = 'inline-block';
-    $elm.style.marginBottom = '24px';
-
-    function annotationPosition() {
-      var screenTest = window.innerWidth;
-      if (screenTest < 730) {
-        $elm.style.float = 'none';
-        $elm.style.marginLeft = 'auto';
-        $elm.style.marginRight = 'auto';
-      } else {
-        $elm.style.float = 'right';
-        $elm.style.marginLeft = 'unset';
-        $elm.style.marginRight = 'unset';
-      }
-
-    }
-
-    window.addEventListener('resize', annotationPosition);
+    $elm.style.display = 'block';
+    $elm.style.float = 'right';
+    $elm.style.marginBottom = '48px';
   }
 
   findElementWithClass(className) {
