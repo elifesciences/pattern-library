@@ -199,7 +199,6 @@ module.exports = class HypothesisOpener {
     $elm.classList.add('hypothesis-opener');
     $elm.style.display = 'inline-block';
     $elm.style.cursor = 'pointer';
-
   }
 
   static applyStyleArticleBody($elm) {
@@ -281,19 +280,14 @@ module.exports = class HypothesisOpener {
 
     $elm.classList.add('speech-bubble--inline');
     $target.insertBefore($elm, $target.firstChild);
-
-    if ($elm.classList.contains('speech-bubble--wrapped')) {
-      const speechBubbleContainer = document.createElement('div');
-      speechBubbleContainer.classList.add('speech-bubble--container');
-      $elm.parentNode.insertBefore(speechBubbleContainer, $elm);
-      speechBubbleContainer.appendChild($elm);
-    }
+    HypothesisOpener.wrappedInContainer($elm);
   }
 
   static positionBySecondSection($elm, $contentContainer) {
     const $firstSection = $contentContainer.querySelector('.article-section--first');
     if ($firstSection) {
       $firstSection.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
+      HypothesisOpener.wrappedInContainer($elm);
       return;
     }
 
@@ -305,6 +299,7 @@ module.exports = class HypothesisOpener {
     const $firstSection = $contentContainer.querySelector('.article-section--first');
     if ($firstSection) {
       $firstSection.appendChild($elm);
+      HypothesisOpener.wrappedInContainer($elm);
       return;
     }
 
@@ -312,8 +307,18 @@ module.exports = class HypothesisOpener {
                     ' with the css class article-section--first.');
   }
 
+  static wrappedInContainer($elm) {
+    if ($elm.classList.contains('speech-bubble--wrapped')) {
+      const speechBubbleContainer = document.createElement('div');
+      speechBubbleContainer.classList.add('speech-bubble--container');
+      $elm.parentNode.insertBefore(speechBubbleContainer, $elm);
+      speechBubbleContainer.appendChild($elm);
+    }
+  }
+
   static positionEnd($elm, $contentContainer) {
     $contentContainer.appendChild($elm);
+    HypothesisOpener.wrappedInContainer($elm);
   }
 
   static findPositioningMethod(articleType) {
