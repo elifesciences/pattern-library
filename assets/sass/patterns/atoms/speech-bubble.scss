@@ -74,6 +74,16 @@
 
 .speech-bubble--container {
   display: grid;
+
+  .speech-bubble--wrapped {
+    display: inline-block;
+
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium - 1)}em) {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 
 .speech-bubble--wrapped {
