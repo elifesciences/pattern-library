@@ -289,7 +289,7 @@ module.exports = class HypothesisOpener {
   }
 
   static positionCentrallyInline($elm, $contentContainer) {
-    const paragraphs = $contentContainer.querySelectorAll('p');
+    const paragraphs = HypothesisOpener.possibleTargets($contentContainer);
 
     if (!paragraphs.length) {
       $contentContainer.appendChild($elm);
@@ -361,6 +361,10 @@ module.exports = class HypothesisOpener {
     return positioners[articleType] || positioners.default;
   }
 
+  static possibleTargets($contentContainer) {
+    return $contentContainer.querySelectorAll('p');
+  }
+
   static targetWithinInLineProfile($target) {
     if ($target.parentNode.parentNode.classList.contains('inline-profile')) {
       return $target.parentNode.parentNode;
@@ -372,7 +376,10 @@ module.exports = class HypothesisOpener {
   }
 
   static targetBelowSectionHeading($target) {
-    if ($target.previousElementSibling === null && $target.parentNode.parentNode.classList.contains('article-section')) {
+    if (
+      utils.getOrdinalAmongstSiblingElements($target) === 1 &&
+      $target.parentNode.parentNode.classList.contains('article-section')
+    ) {
       return $target.parentNode.parentNode;
     }
   }
