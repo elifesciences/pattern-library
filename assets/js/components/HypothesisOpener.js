@@ -289,23 +289,13 @@ module.exports = class HypothesisOpener {
   }
 
   static positionCentrallyInline($elm, $contentContainer) {
-    const paragraphs = HypothesisOpener.possibleTargets($contentContainer);
-
-    if (!paragraphs.length) {
+    const $target = HypothesisOpener.findTarget($contentContainer);
+    if (!$target) {
       $contentContainer.appendChild($elm);
       return;
     }
 
     $elm.classList.add('speech-bubble--inline');
-    let targetPos = Math.floor((paragraphs.length - 1) / 2);
-    while (HypothesisOpener.targetWithinBlockquote(paragraphs[targetPos]) === true) {
-      targetPos += 1;
-    }
-
-    let $target = paragraphs[targetPos];
-    $target = HypothesisOpener.targetWithinInLineProfile($target) || $target;
-    $target = HypothesisOpener.targetBelowSectionHeading($target) || $target;
-
     $target.insertBefore($elm, $target.firstChild);
 
     if ($elm.classList.contains('speech-bubble--wrapped')) {
@@ -361,14 +351,26 @@ module.exports = class HypothesisOpener {
     return positioners[articleType] || positioners.default;
   }
 
-  static possibleTargets($contentContainer) {
-    return $contentContainer.querySelectorAll('p');
+  static findTarget($contentContainer) {
+    let target = null;
+    const centre = Math.floor(($contentContainer.querySelectorAll('p').length - 1) / 2);
+    [].forEach.call($contentContainer.querySelectorAll('p'), (possible, index) => {
+      if (
+        target === null &&
+        index >= centre &&
+        !HypothesisOpener.targetWithinInLineProfile(possible) &&
+        !HypothesisOpener.targetWithinBlockquote(possible) &&
+        !HypothesisOpener.targetBelowSectionHeading(possible)
+      ) {
+        target = possible;
+      }
+    });
+
+    return target;
   }
 
   static targetWithinInLineProfile($target) {
-    if ($target.parentNode.parentNode.classList.contains('inline-profile')) {
-      return $target.parentNode.parentNode;
-    }
+    return $target.parentNode.parentNode.classList.contains('inline-profile');
   }
 
   static targetWithinBlockquote($target) {
@@ -376,12 +378,10 @@ module.exports = class HypothesisOpener {
   }
 
   static targetBelowSectionHeading($target) {
-    if (
+    return (
       utils.getOrdinalAmongstSiblingElements($target) === 1 &&
       $target.parentNode.parentNode.classList.contains('article-section')
-    ) {
-      return $target.parentNode.parentNode;
-    }
+    );
   }
 
   setInitialDomLocation($elm, articleType) {
