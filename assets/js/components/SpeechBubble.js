@@ -42,10 +42,10 @@ module.exports = class SpeechBubble {
   }
 
   showFailureState(applyToParent) {
-    if (applyToParent) {
-      this.$elm.parentNode.parentNode.removeChild(this.$elm.parentNode);
+    if (applyToParent && this.$elm.parentNode !== null) {
+      this.$elm.parentNode.remove();
     } else {
-      this.$elm.parentNode.removeChild(this.$elm);
+      this.$elm.remove();
     }
   }
 
