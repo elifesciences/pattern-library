@@ -72,14 +72,79 @@
 
 }
 
-.speech-bubble--has-placeholder {
-  font-family: $font-primary;
+.speech-bubble--container {
+  display: grid;
 
-  // line-height deliberately set smaller than font size because the default content is expected to be a double-quote
-  // character, which sits high on the line. When the content is not the default, ensure to apply the
-  // class: button--speech-bubble-populated
-  @include font-size-and-vertical-height(48, 36);
-  @include blg-spacing("top", "extra-small");
+  .speech-bubble--wrapped {
+    display: inline-block;
+
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium - 1)}em) {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.speech-bubble--wrapped {
+  @include font-size-and-vertical-height(11, 15);
+  @include padding(13 18 14);
+  display: block;
+  font-weight: 300;
+  height: auto;
+  min-width: 2em;
+  width: auto;
+  justify-self: end;
+
+  .speech-bubble--wrapped__prefix {
+    @include font-size-and-vertical-height(14, 18);
+    display: inline-block;
+    font-family: $font-secondary;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .speech-bubble__inner {
+    @include margin(9, "left");
+    @include padding(3 5 0 5);
+    @include font-size-and-vertical-height(14, 18);
+    background: #fff;
+    border-radius: #{$border-radius}px;
+    color: $color-primary-dark;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    min-width: 26px;
+    position: relative;
+
+    &:after {
+      background: url(../img/icons/speech-bubble-wrapped-triangle.svg) no-repeat 0 0;
+      content: "";
+      width: 10px;
+      height: 10px;
+      bottom: -10px;
+      left: 5px;
+      position: absolute;
+    }
+  }
+}
+
+.speech-bubble--has-placeholder {
+  &:not(.speech-bubble--wrapped) {
+    font-family: $font-primary;
+
+    // line-height deliberately set smaller than font size because the default content is expected to be a double-quote
+    // character, which sits high on the line. When the content is not the default, ensure to apply the
+    // class: button--speech-bubble-populated
+    @include font-size-and-vertical-height(48, 36);
+    @include blg-spacing("top", "extra-small");
+  }
+
+  &.speech-bubble--wrapped {
+    .speech-bubble__inner {
+      background: #fff url(../img/icons/speech-bubble-wrapped-placeholder.svg) no-repeat 8px 5px;
+      text-indent: -9999px;
+    }
+  }
 
 }
 

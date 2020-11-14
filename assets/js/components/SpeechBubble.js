@@ -11,12 +11,13 @@ module.exports = class SpeechBubble {
     this.window = _window;
     this.doc = doc;
 
-    this.placeholder = '“';
+    this.placeholder = '+';
   }
 
   removePlaceholder() {
     this.$elm.classList.remove('speech-bubble--has-placeholder');
-    const re = new RegExp(this.placeholder, 'g');
+    const pattern = '\\' + this.placeholder;
+    const re = new RegExp(pattern, 'g');
     this.$elm.innerHTML = this.$elm.innerHTML.replace(re, '');
   }
 
