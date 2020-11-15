@@ -369,14 +369,6 @@
   grid-row: 1;
   list-style: none;
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    left: 14%;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-    left: 42px;
-  }
-
   .content-header--image & {
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
@@ -396,10 +388,9 @@ $iconlist: cc oa;
 
 .content-header__icon {
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: left bottom;
   display: block;
   height: 22px;
-  width: 17px;
 }
 
 @each $icon in $iconlist {
