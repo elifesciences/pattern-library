@@ -294,7 +294,7 @@
 
 .content-header__component-assets {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: 1fr auto 1fr;
 }
 
 .content-header__subject_list {
@@ -302,7 +302,7 @@
   @include label-subject-typeg();
   @include padding(36, "left");
   @include padding(36, "right");
-  grid-column: 3/4;
+  order: 2;
   grid-row: 1;
   margin: 0;
   text-align: center;
@@ -365,7 +365,7 @@
 .content-header__icons {
   @include margin(14 0 0 0);
   @include padding(0);
-  grid-column: 1/2;
+  order: 1;
   grid-row: 1;
   list-style: none;
 
@@ -415,7 +415,7 @@ $iconlist: cc oa;
 }
 
 .content-header__download_link {
-  grid-column: 5/6;
+  order: 3;
   grid-row: 1;
   justify-self: end;
   margin-top: 24px;
