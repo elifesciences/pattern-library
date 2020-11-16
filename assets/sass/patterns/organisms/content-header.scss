@@ -40,7 +40,7 @@
   @include margin($content-header-padding, "bottom");
 
   .content-header--header & {
-    @include margin($content-header-padding / 2, "top"); // 11 * 2.1818181818 is the height of the subject line
+    @include margin($content-header-padding / 2, "top");
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include margin($content-header-padding, "top");
     }
@@ -294,7 +294,7 @@
 
 .content-header__component-assets {
   display: grid;
-  grid-template-rows: 1fr auto 1fr;
+  grid-template-rows: auto;
 }
 
 .content-header__subject_list {
