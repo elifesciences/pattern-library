@@ -109,7 +109,6 @@
 
       ]
     },
-
     "searchBox": {
       "inContentHeader": true,
       "compactForm": {
@@ -143,7 +142,7 @@
       "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
     }
   },
-
+  "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
   "mainMenu":{
     "links": {
       "items": [
