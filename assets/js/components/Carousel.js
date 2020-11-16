@@ -61,12 +61,10 @@ module.exports = class Carousel {
   }
 
   atHide($node) {
-    $node.setAttribute('tabindex', -1);
     $node.setAttribute('aria-hidden', true);
   }
 
   atShow($node) {
-    $node.removeAttribute('tabindex', -1);
     $node.removeAttribute('aria-hidden', true);
   }
 
