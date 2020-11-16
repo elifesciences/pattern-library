@@ -294,7 +294,7 @@
 
 .content-header__component-assets {
   display: grid;
-  grid-template-rows: auto;
+  grid-template-columns: auto;
 }
 
 .content-header__subject_list {
@@ -302,9 +302,9 @@
   @include label-subject-typeg();
   @include padding(36, "left");
   @include padding(36, "right");
-  order: 2;
   grid-row: 1;
   margin: 0;
+  order: 2;
   text-align: center;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
@@ -365,9 +365,9 @@
 .content-header__icons {
   @include margin(14 0 0 0);
   @include padding(0);
-  order: 1;
   grid-row: 1;
   list-style: none;
+  order: 1;
 
   .content-header--image & {
 
@@ -407,10 +407,10 @@ $iconlist: cc oa;
 }
 
 .content-header__download_link {
-  order: 3;
   grid-row: 1;
   justify-self: end;
   margin-top: 24px;
+  order: 3;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     margin-top: 14px;
