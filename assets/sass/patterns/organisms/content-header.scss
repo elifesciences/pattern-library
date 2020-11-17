@@ -27,6 +27,8 @@
 
 .content-header--read-more {
   .content-header__subject_list {
+    @include padding(0, "left");
+    @include padding(0, "right");
     width: 100%;
   }
 }
