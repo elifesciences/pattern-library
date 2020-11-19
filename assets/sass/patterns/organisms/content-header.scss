@@ -27,6 +27,8 @@
 
 .content-header--read-more {
   .content-header__subject_list {
+    @include padding(0, "left");
+    @include padding(0, "right");
     width: 100%;
   }
 }
@@ -40,9 +42,9 @@
   @include margin($content-header-padding, "bottom");
 
   .content-header--header & {
-    @include margin($content-header-padding * 1.5 + 11 * 2.1818181818, "top"); // 11 * 2.1818181818 is the height of the subject line
+    @include margin($content-header-padding / 2, "top");
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include margin($content-header-padding * 2 + 11 * 2.1818181818, "top");
+      @include margin($content-header-padding, "top");
     }
   }
 }
@@ -292,25 +294,24 @@
 
 }
 
+.content-header__component-assets {
+  display: grid;
+  grid-template-columns: auto;
+}
+
 .content-header__subject_list {
+  @include blg-spacing("top", "small");
   @include label-subject-typeg();
-  margin: 0;
-  padding-left: 0;
-  text-align: center;
   @include padding(36, "left");
   @include padding(36, "right");
-  @include blg-spacing("top", "small");
-  position: absolute;
-  width: calc(100% - 2 * 7%);
+  grid-row: 1;
+  margin: 0;
+  order: 2;
+  text-align: center;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
     @include padding(72, "left");
     @include padding(72, "right");
-    width: calc(100% - 2 * 14%);
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}rem) {
-    width: calc(100% - 2 * 3%);
   }
 
   .content-header--image & {
@@ -364,21 +365,11 @@
 }
 
 .content-header__icons {
-  float: left;
-  position: absolute;
+  @include margin(14 0 0 0);
+  @include padding(0);
+  grid-row: 1;
   list-style: none;
-  margin: 0;
-  padding: 0;
-  left: 7%;
-  top: 14px;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--medium-width)}em) {
-    left: 14%;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
-    left: 42px;
-  }
+  order: 1;
 
   .content-header--image & {
 
@@ -399,10 +390,10 @@ $iconlist: cc oa;
 
 .content-header__icon {
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: left bottom;
   display: block;
-  width: 17px;
   height: 22px;
+  width: 17px;
 }
 
 @each $icon in $iconlist {
@@ -418,18 +409,17 @@ $iconlist: cc oa;
 }
 
 .content-header__download_link {
-  float: right;
-  position: absolute;
-  right: 7%;
-  top: 24px;
+  grid-row: 1;
+  justify-self: end;
+  margin-top: 24px;
+  order: 3;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    right: 14%;
-    top: 14px;
+    margin-top: 14px;
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    right: 42px;
+    @include margin(14 0 0 0);
   }
 
   .content-header--image & {
@@ -442,7 +432,13 @@ $iconlist: cc oa;
 
   .content-header--image & {
     right: 12px;
-    top: #{$blg-space-extra-small-in-px}px;
+    position: absolute;
+    top: -12px;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      top: 0;
+    }
+
   }
 
 }

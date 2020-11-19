@@ -251,6 +251,7 @@
     },
 
     "download": "#articleDownloadLinksList",
+    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
 
     "meta": {
       "url": "#",
