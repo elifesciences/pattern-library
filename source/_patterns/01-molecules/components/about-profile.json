@@ -3,7 +3,7 @@
   "role": "Editor-in-Chief",
   "image": {
     "sources": [{
-      "srcset": "https://iiif.elifesciences.org/journal-cms/person%2F2019-03%2Fmike.jpg/0,0,7360,4164/800,448/0/default.jpg 1x, https://iiif.elifesciences.org/journal-cms/person%2F2019-03%2Fmike.jpg/0,0,7360,4164/251,142/0/default.jpg 2x"
+      "srcset": "https://iiif.elifesciences.org/journal-cms/person%2F2019-03%2Fmike.jpg/0,0,7360,4164/800,448/0/default.jpg 1x, https://iiif.elifesciences.org/journal-cms/person%2F2019-03%2Fmike.jpg/0,0,7360,4164/800,448/0/default.jpg 2x"
     }],
     "fallback": {
       "defaultPath": "https://iiif.elifesciences.org/journal-cms/person%2F2019-03%2Fmike.jpg/0,0,7360,4164/800,448/0/default.jpg",
