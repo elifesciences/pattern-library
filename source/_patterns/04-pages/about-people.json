@@ -153,7 +153,7 @@
         "role": "Senior Editor",
         "image": {
           "fallback": {
-            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2014-04/id.jpg/0,66,1280,722/250,141/0/default.jpg",
+            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2014-04/id.jpg/0,66,1280,722/800,448/0/default.jpg",
             "altText": ""
           }
         },
@@ -164,7 +164,7 @@
         "role": "Senior Editor",
         "image": {
           "fallback": {
-            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2012-03/jk_3.jpg/0,189,3893,2196/250,141/0/default.jpg",
+            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2012-03/jk_3.jpg/0,189,3893,2196/800,448/0/default.jpg",
             "altText": ""
           }
         },
@@ -175,7 +175,7 @@
         "role": "Senior Editor",
         "image": {
           "fallback": {
-            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2014-08/wenhui20li.jpg/0,7,866,489/250,141/0/default.jpg",
+            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2014-08/wenhui20li.jpg/0,7,866,489/800,448/0/default.jpg",
             "altText": ""
           }
         },
@@ -186,7 +186,7 @@
         "role": "Senior Editor",
         "image": {
           "fallback": {
-            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2017-06/vivek_malhotra_0.jpg/0,258,500,282/250,141/0/default.jpg",
+            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2017-06/vivek_malhotra_0.jpg/0,258,500,282/800,448/0/default.jpg",
             "altText": ""
           }
         },
@@ -197,7 +197,7 @@
         "role": "University of Cambridge, United Kingdom",
         "image": {
           "fallback": {
-            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2017-12/laurent_gatto.jpg/0,644,1716,968/500,282/0/default.webp",
+            "defaultPath": "https://iiif.elifesciences.org/journal-cms:person/2017-12/laurent_gatto.jpg/0,644,1716,968/800,448/0/default.webp",
             "altText": ""
           }
         },
