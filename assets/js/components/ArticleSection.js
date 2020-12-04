@@ -40,6 +40,7 @@ module.exports = class ArticleSection {
 
   setInitialState($elm, $toggle, $body) {
     let hash = '';
+    this.currentClientWidth = document.body.clientWidth;
     if (this.window.location && this.window.location.hash) {
       hash = this.window.location.hash.substring(1);
     }
@@ -66,6 +67,17 @@ module.exports = class ArticleSection {
       // Defensive: remove classes if they turn up here when they shouldn't
       $toggle.classList.remove('article-section__toggle--closed');
       $body.classList.remove('visuallyhidden');
+    }
+
+    // Test browser when first loaded if width is at least 1200px
+    if (this.currentClientWidth >= 1200) {
+      console.log(this.currentClientWidth);
+      $toggle.classList.remove('article-section__toggle--closed');
+      $body.classList.remove('visuallyhidden');
+    } else {
+      $elm.classList.add('article-section--collapsed');
+      $toggle.classList.add('article-section__toggle--closed');
+      $body.classList.add('visuallyhidden');
     }
 
   }
