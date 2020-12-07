@@ -35,6 +35,10 @@
 
 .carousel__image-credit--overlay {
   @include image-credit-overlay();
+  max-width: 270px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .js {
