@@ -156,6 +156,18 @@ describe('An Article Section (collapsible)', function () {
     });
   });
 
+  it('is initially open if viewport is wide enough, regardless of initial state', function () {
+    let initialStateCandidateValues = ['open', 'shut', 'unavailable', 'null', '', 'false', 'closed'];
+    let windowMock = createWindowMock(1200);
+    initialStateCandidateValues.forEach((value) => {
+      $elm.dataset.initialState = value;
+      let articleSection = new ArticleSection($elm, windowMock);
+      expect(articleSection.$toggle.classList.contains('article-section__toggle')).to.be.true;
+      expect(articleSection.$toggle.classList.contains('article-section__toggle--closed')).to.be.false;
+      expect(articleSection.$body.classList.contains('visuallyhidden')).to.be.false;
+    });
+  });
+
   it('can toggle open state to closed state', function () {
     let eventMock = {
       preventDefault: function () {}
