@@ -45,10 +45,7 @@ module.exports = class ArticleSection {
       hash = this.window.location.hash.substring(1);
     }
 
-    if (!this.viewportNoWiderThan(this.viewportWidthLarge)) {
-      // Force open on large screens.
-      $elm.dataset.initialState = 'opened';
-    } else if (this.window.navigator.userAgent && this.window.navigator.userAgent.indexOf('Googlebot/') !== -1) {
+    if (this.window.navigator.userAgent && this.window.navigator.userAgent.indexOf('Googlebot/') !== -1) {
       // Google Scholar requires article sections to be open to improve indexing
       $elm.dataset.initialState = 'opened';
     } else if (this.doc.referrer && this.doc.referrer.indexOf('.google.') !== -1) {
@@ -56,6 +53,9 @@ module.exports = class ArticleSection {
       $elm.dataset.initialState = 'opened';
     } else if (hash && utils.isIdOfOrWithinSection(hash, $elm, this.doc)) {
       // Force open if the fragment is here.
+      $elm.dataset.initialState = 'opened';
+    } else if (!this.viewportNoWiderThan(this.viewportWidthLarge)) {
+      // Force open on large screens.
       $elm.dataset.initialState = 'opened';
     } else if (this.viewportNoWiderThan(this.viewportWidthSmall)) {
       // Force closed on small screens.
