@@ -15,7 +15,7 @@ module.exports = class ArticleSection {
     this.doc = doc;
 
     this.viewportWidthSmall = 600;
-    this.viewportWidthLarge = 1200;
+    this.viewportWidthLarge = 1199;
     this.initialise(this.$elm, doc);
   }
 
