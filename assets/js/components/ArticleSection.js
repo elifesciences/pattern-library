@@ -14,7 +14,8 @@ module.exports = class ArticleSection {
     this.window = _window;
     this.doc = doc;
 
-    this.thresholdWidth = 600;
+    this.viewportWidthSmall = 600;
+    this.viewportWidthLarge = 1200;
     this.initialise(this.$elm, doc);
   }
 
@@ -40,12 +41,14 @@ module.exports = class ArticleSection {
 
   setInitialState($elm, $toggle, $body) {
     let hash = '';
-    this.currentClientWidth = document.body.clientWidth;
     if (this.window.location && this.window.location.hash) {
       hash = this.window.location.hash.substring(1);
     }
 
-    if (this.window.navigator.userAgent && this.window.navigator.userAgent.indexOf('Googlebot/') !== -1) {
+    if (!this.viewportNoWiderThan(this.viewportWidthLarge)) {
+      // Force open on large screens.
+      $elm.dataset.initialState = 'opened';
+    } else if (this.window.navigator.userAgent && this.window.navigator.userAgent.indexOf('Googlebot/') !== -1) {
       // Google Scholar requires article sections to be open to improve indexing
       $elm.dataset.initialState = 'opened';
     } else if (this.doc.referrer && this.doc.referrer.indexOf('.google.') !== -1) {
@@ -54,7 +57,7 @@ module.exports = class ArticleSection {
     } else if (hash && utils.isIdOfOrWithinSection(hash, $elm, this.doc)) {
       // Force open if the fragment is here.
       $elm.dataset.initialState = 'opened';
-    } else if (this.viewportNoWiderThan(this.thresholdWidth)) {
+    } else if (this.viewportNoWiderThan(this.viewportWidthSmall)) {
       // Force closed on small screens.
       $elm.dataset.initialState = 'closed';
     }
@@ -67,17 +70,6 @@ module.exports = class ArticleSection {
       // Defensive: remove classes if they turn up here when they shouldn't
       $toggle.classList.remove('article-section__toggle--closed');
       $body.classList.remove('visuallyhidden');
-    }
-
-    // Test browser when first loaded if width is at least 1200px
-    if (this.currentClientWidth >= 1200) {
-      console.log(this.currentClientWidth);
-      $toggle.classList.remove('article-section__toggle--closed');
-      $body.classList.remove('visuallyhidden');
-    } else {
-      $elm.classList.add('article-section--collapsed');
-      $toggle.classList.add('article-section__toggle--closed');
-      $body.classList.add('visuallyhidden');
     }
 
   }
