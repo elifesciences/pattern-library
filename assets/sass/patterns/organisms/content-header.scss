@@ -410,6 +410,7 @@ $iconlist: cc oa;
 
 .content-header__download_link {
   grid-row: 1;
+  grid-column-end: 4;
   justify-self: end;
   margin-top: 24px;
   order: 3;
