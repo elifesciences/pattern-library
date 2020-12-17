@@ -9,6 +9,13 @@ $arrow-size: 5;
   }
 }
 
+.article-section {
+
+  p > a {
+    overflow-wrap: break-word;
+  }
+}
+
 .article-section--js {
   clear: both;
 
