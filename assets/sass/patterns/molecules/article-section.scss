@@ -19,7 +19,6 @@ $arrow-size: 5;
 
   > .article-section__body {
     @include blg-spacing("top", "small", "margin");
-    word-break: break-all;
   }
 }
 
