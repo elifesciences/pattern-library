@@ -22,6 +22,7 @@
 
 .article-meta__group_title {
   @include label-content-typeg($color-text-secondary);
+  @include font-size-and-vertical-height(12);
   padding-bottom: 0;
   padding-top: 0;
 }
@@ -38,6 +39,7 @@
   @include label-subject-typeg();
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
   &:after {
     content: ", ";
   }

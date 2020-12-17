@@ -172,6 +172,10 @@
           "fallback": {
             "defaultPath": "https://unsplash.it/1114/336",
             "altText": ""
+          },
+          "credit": {
+            "text": "Illustration by <a href=''>Joe Bloggs</a>",
+            "elementId": "iAmTheIdOfTheImageCreditElement"
           }
         }
       },
@@ -312,7 +316,7 @@
       },
       {
         "url": "#",
-        "name": "Epidemiology and global health"
+        "name": "Epidemiology and Global Health"
       },
       {
         "url": "#",
@@ -324,11 +328,11 @@
       },
       {
         "url": "#",
-        "name": "Human biology and medicine"
+        "name": "Immunology"
       },
       {
         "url": "#",
-        "name": "Immunology"
+        "name": "Medicine"
       },
       {
         "url": "#",

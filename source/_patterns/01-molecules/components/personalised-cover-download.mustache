@@ -1,5 +1,3 @@
-
-
 <div class="wrapper-alternative">
   <header class="site-header clearfix" data-behaviour="SiteHeader" id="siteHeader">
     <div class="site-header__title-border" role="banner">
@@ -17,7 +15,7 @@
       </a>
     </div>
   </header>
-  <h1 class="personalised-cover__header-text">Download your personalised magazine cover</h1>
+  <h1 class="personalised-cover__header-text">{{{title}}}</h1>
   <div class="personalised-cover-outer">
     <div class="personalised-cover-text">
       {{#text}}
@@ -25,19 +23,23 @@
       {{/text}}
     </div>
     <div class="personalised-cover-thumbnail">
-      <picture>
-        <source srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/cover-preview.jpg{{/assetRewrite}}" type="image/svg+xml">
-        <img srcset="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/cover-preview.jpg{{/assetRewrite}} 276w"
-          src="{{#assetRewrite}}{{assetsPath}}/img/patterns/molecules/cover-preview.jpg{{/assetRewrite}}" sizes="138px"
-          alt="" class="personalised-cover-download__icon">
-      </picture>
+      {{#picture}}
+        {{> atoms-picture}}
+      {{/picture}}
     </div>
-    <div class="personalised-cover-buttons">
-      {{> atoms-checkbox }}
-      {{#buttonCollection}}
+    <div data-behaviour="PersonalisedCoverDownload" class="personalised-cover-buttons">
+      {{#a4ListHeading}}
+        {{> atoms-list-heading }}
+      {{/a4ListHeading}}
+      {{#a4ButtonCollection}}
         {{> molecules-button-collection }}
-      {{/buttonCollection}}
+      {{/a4ButtonCollection}}
+      {{#letterListHeading}}
+        {{> atoms-list-heading }}
+      {{/letterListHeading}}
+      {{#letterButtonCollection}}
+        {{> molecules-button-collection }}
+      {{/letterButtonCollection}}
     </div>
   </div>
-
 </div>

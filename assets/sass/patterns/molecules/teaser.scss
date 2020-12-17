@@ -93,6 +93,8 @@
 .teaser__secondary_info {
   @include listing-main-author-typeg();
   @include blg-spacing("bottom", "extra-small", "margin");
+  @include blg-spacing("top", "extra-extra-small", "margin");
+
 }
 
 .teaser__body {
@@ -104,16 +106,14 @@
 }
 
 .teaser__formats {
-  color: $color-text-placeholder;
   text-align: right;
-  text-transform: uppercase;
 }
 
 .teaser__formats-list {
   @include nospace();
   & > li {
+    @include font-size-and-vertical-height(12);
     font-family: inherit;
-    font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
     display: inline;

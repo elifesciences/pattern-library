@@ -198,6 +198,7 @@
   .carousel-item__cta {
     display: block;
     @include margin(0, "bottom");
+    letter-spacing: 0.5px;
     position: absolute;
     bottom: 64px;
     left: 0;
@@ -213,13 +214,13 @@
     left: 0;
     right: 0;
     padding-bottom: 0;
+    height: 12px;
     line-height: 1;
     @include font-size(12);
 
     .meta {
       color: inherit;
       line-height: 1;
-      @include font-size(12);
     }
 
     .meta__type {

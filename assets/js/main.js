@@ -31,6 +31,7 @@ Components.Math = require('./components/Math');
 Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
 Components.Metrics = require('./components/Metrics');
 Components.Pager = require('./components/Pager');
+Components.PersonalisedCoverDownload = require('./components/PersonalisedCoverDownload');
 Components.Popup = require('./components/Popup');
 Components.SearchBox = require('./components/SearchBox');
 Components.SectionListingLink = require('./components/SectionListingLink');

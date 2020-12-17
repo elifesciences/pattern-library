@@ -41,7 +41,21 @@ properties:
   meta:
     $ref: ../../01-molecules/components/meta.yaml
   image:
-    $ref: ../../00-atoms/components/picture.yaml
+    allOf:
+      - $ref: ../../00-atoms/components/picture.yaml
+      - properties:
+          credit:
+            type: object
+            properties:
+              text:
+                type: string
+                minLength: 1
+              elementId:
+                type: string
+                minLength: 1
+            required:
+              - text
+              - elementId
 required:
   - title
   - url

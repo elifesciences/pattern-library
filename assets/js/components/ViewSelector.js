@@ -14,9 +14,8 @@ module.exports = class ViewSelector {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.$jumpLinksList = this.$elm.querySelector('.view-selector__jump_links');
+    this.$jumpLinksList = this.$elm.querySelector('.view-selector__list');
     this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
-    this.$jumpLinksToggle = this.$elm.querySelector('.view-selector__jump_links_header');
     this.cssFixedClassName = 'view-selector--fixed';
 
     if (this.sideBySideViewAvailable()) {
@@ -57,10 +56,6 @@ module.exports = class ViewSelector {
     }, 200));
 
     this.elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
-    if (this.$jumpLinksToggle) {
-      this.$jumpLinksToggle.addEventListener('click', this.toggleJumpLinks.bind(this));
-      this.toggleJumpLinks();
-    }
 
   }
 
@@ -206,11 +201,6 @@ module.exports = class ViewSelector {
       this.$elm.classList.add(this.cssFixedClassName);
       this.$elm.style.top = '0px';
     }
-  }
-
-  toggleJumpLinks() {
-    this.$jumpLinksList.classList.toggle('visuallyhidden');
-    this.$jumpLinksToggle.classList.toggle('view-selector__jump_links_header--closed');
   }
 
   sideBySideViewAvailable() {

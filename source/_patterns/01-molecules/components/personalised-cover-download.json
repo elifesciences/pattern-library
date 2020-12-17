@@ -1,4 +1,5 @@
 {
+  "title": "Download your personalised magazine cover",
   "text": [
     {
       "text": "Thank you for publishing your research with us."
@@ -10,20 +11,48 @@
       "text": "Like your research it’s open access so you can print it, frame it, tweet it, use it as wallpaper in your lab...the possibilities are endless."
     }
   ],
-  "name": "letter-style",
-  "uncheckedValue": "A4",
-  "checkedValue": "US Letter",
-  "buttonCollection": {
+  "picture": {
+    "sources": [
+      {
+        "srcset": "https://placehold.it/600x876",
+        "type": "image/svg+xml"
+      }
+    ],
+    "fallback": {
+      "srcset": "https://placehold.it/600x876 1x",
+      "sizes": "138px",
+      "defaultPath": "https://placehold.it/600x876",
+      "altText": "Meaningful alt text here please."
+    }
+  },
+  "a4ListHeading": {
+    "heading": "A4"
+  },
+  "a4ButtonCollection": {
     "centered": false,
     "buttons": [
       {
         "text": "Download PDF",
-        "classes": "button--variation",
         "path": "#"
       },
       {
         "text": "Download jpg",
-        "classes": "button--variation",
+        "path": "#"
+      }
+    ]
+  },
+  "letterListHeading": {
+    "heading": "US Letter"
+  },
+  "letterButtonCollection": {
+    "centered": false,
+    "buttons": [
+      {
+        "text": "Download PDF",
+        "path": "#"
+      },
+      {
+        "text": "Download jpg",
         "path": "#"
       }
     ]

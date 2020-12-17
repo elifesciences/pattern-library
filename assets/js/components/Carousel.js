@@ -312,6 +312,7 @@ module.exports = class Carousel {
     }
 
     utils.updateElementTranslate(this.moveableStage, [newOffset + 'px', 0]);
+    this.makeSingleSlideATVisible(this.currentSlide);
   }
 
   /**

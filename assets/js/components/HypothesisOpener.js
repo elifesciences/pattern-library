@@ -199,7 +199,6 @@ module.exports = class HypothesisOpener {
     $elm.classList.add('hypothesis-opener');
     $elm.style.display = 'inline-block';
     $elm.style.cursor = 'pointer';
-
   }
 
   static applyStyleArticleBody($elm) {
@@ -273,22 +272,22 @@ module.exports = class HypothesisOpener {
   }
 
   static positionCentrallyInline($elm, $contentContainer) {
-    const paragraphs = $contentContainer.querySelectorAll('p');
-
-    if (!paragraphs.length) {
+    const $target = HypothesisOpener.findTarget($contentContainer);
+    if (!$target) {
       $contentContainer.appendChild($elm);
       return;
     }
 
     $elm.classList.add('speech-bubble--inline');
-    const $target = paragraphs[Math.floor((paragraphs.length - 1) / 2)];
     $target.insertBefore($elm, $target.firstChild);
+    HypothesisOpener.wrappedInContainer($elm);
   }
 
   static positionBySecondSection($elm, $contentContainer) {
     const $firstSection = $contentContainer.querySelector('.article-section--first');
     if ($firstSection) {
       $firstSection.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
+      HypothesisOpener.wrappedInContainer($elm);
       return;
     }
 
@@ -300,6 +299,7 @@ module.exports = class HypothesisOpener {
     const $firstSection = $contentContainer.querySelector('.article-section--first');
     if ($firstSection) {
       $firstSection.appendChild($elm);
+      HypothesisOpener.wrappedInContainer($elm);
       return;
     }
 
@@ -307,8 +307,18 @@ module.exports = class HypothesisOpener {
                     ' with the css class article-section--first.');
   }
 
+  static wrappedInContainer($elm) {
+    if ($elm.classList.contains('speech-bubble--wrapped')) {
+      const speechBubbleContainer = document.createElement('div');
+      speechBubbleContainer.classList.add('speech-bubble--container');
+      $elm.parentNode.insertBefore(speechBubbleContainer, $elm);
+      speechBubbleContainer.appendChild($elm);
+    }
+  }
+
   static positionEnd($elm, $contentContainer) {
     $contentContainer.appendChild($elm);
+    HypothesisOpener.wrappedInContainer($elm);
   }
 
   static findPositioningMethod(articleType) {
@@ -328,6 +338,39 @@ module.exports = class HypothesisOpener {
     };
 
     return positioners[articleType] || positioners.default;
+  }
+
+  static findTarget($contentContainer) {
+    let target = null;
+    const centre = Math.floor(($contentContainer.querySelectorAll('p').length - 1) / 2);
+    [].forEach.call($contentContainer.querySelectorAll('p'), (possible, index) => {
+      if (
+        target === null &&
+        index >= centre &&
+        !HypothesisOpener.targetWithinInLineProfile(possible) &&
+        !HypothesisOpener.targetWithinBlockquote(possible) &&
+        !HypothesisOpener.targetBelowSectionHeading(possible)
+      ) {
+        target = possible;
+      }
+    });
+
+    return target;
+  }
+
+  static targetWithinInLineProfile($target) {
+    return $target.parentNode.parentNode.classList.contains('inline-profile');
+  }
+
+  static targetWithinBlockquote($target) {
+    return $target.parentNode.nodeName === 'BLOCKQUOTE';
+  }
+
+  static targetBelowSectionHeading($target) {
+    return (
+      utils.getOrdinalAmongstSiblingElements($target) === 1 &&
+      $target.parentNode.parentNode.classList.contains('article-section')
+    );
   }
 
   setInitialDomLocation($elm, articleType) {

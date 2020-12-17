@@ -14,7 +14,8 @@ module.exports = class ArticleSection {
     this.window = _window;
     this.doc = doc;
 
-    this.thresholdWidth = 600;
+    this.viewportWidthSmall = 600;
+    this.viewportWidthLarge = 1199;
     this.initialise(this.$elm, doc);
   }
 
@@ -53,7 +54,10 @@ module.exports = class ArticleSection {
     } else if (hash && utils.isIdOfOrWithinSection(hash, $elm, this.doc)) {
       // Force open if the fragment is here.
       $elm.dataset.initialState = 'opened';
-    } else if (this.viewportNoWiderThan(this.thresholdWidth)) {
+    } else if (!this.viewportNoWiderThan(this.viewportWidthLarge)) {
+      // Force open on large screens.
+      $elm.dataset.initialState = 'opened';
+    } else if (this.viewportNoWiderThan(this.viewportWidthSmall)) {
       // Force closed on small screens.
       $elm.dataset.initialState = 'closed';
     }

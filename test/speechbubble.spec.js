@@ -27,11 +27,11 @@ describe('A SpeechBubble Component', function () {
     });
 
     it('removes the default contents', () => {
-      speechBubble.$elm.innerHTML = 'something something &#8220; side';
-      expect(speechBubble.$elm.innerHTML).to.include('“');
+      speechBubble.$elm.innerHTML = 'something something + side';
+      expect(speechBubble.$elm.innerHTML).to.include('+');
 
       speechBubble.removePlaceholder();
-      expect(speechBubble.$elm.innerHTML).not.to.include('“');
+      expect(speechBubble.$elm.innerHTML).not.to.include('+');
     });
 
   });
@@ -42,17 +42,16 @@ describe('A SpeechBubble Component', function () {
       speechBubble.$elm.classList.remove('speech-bubble--has-placeholder');
       expect(speechBubble.$elm.classList.contains('speech-bubble--has-placeholder')).to.be.false;
 
-
       speechBubble.showPlaceholder();
       expect(speechBubble.$elm.classList.contains('speech-bubble--has-placeholder')).to.be.true;
     });
 
     it('injects the speech bubble default contents into the correct location in the speech bubble', () => {
       speechBubble.$elm.innerHTML = 'something something <span class="replace-me">dark</span> side';
-      expect(speechBubble.$elm.innerHTML).not.to.include('“');
+      expect(speechBubble.$elm.innerHTML).not.to.include('+');
 
       speechBubble.showPlaceholder('.replace-me');
-      expect(speechBubble.$elm.innerHTML).to.equal('something something <span class="replace-me">“</span> side');
+      expect(speechBubble.$elm.innerHTML).to.equal('something something <span class="replace-me">+</span> side');
     });
 
   });

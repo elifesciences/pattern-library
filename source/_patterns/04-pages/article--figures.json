@@ -141,7 +141,7 @@
           "url": "#"
         },
         {
-          "name": "Epidemiology and global health",
+          "name": "Epidemiology and Global Health",
           "url": "#"
         }
       ]
@@ -413,6 +413,7 @@
       ]
     },
     "download": "#articleDownloadLinksList",
+    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
     "meta": {
       "url": "#",
       "text": "Research article",
@@ -896,7 +897,7 @@
               "url": "#"
             },
             {
-              "name": "Epidemiology and global health",
+              "name": "Epidemiology and Global Health",
               "url": "#"
             }
           ],
@@ -931,7 +932,7 @@
               "url": "#"
             },
             {
-              "name": "Epidemiology and global health",
+              "name": "Epidemiology and Global Health",
               "url": "#"
             }
           ],

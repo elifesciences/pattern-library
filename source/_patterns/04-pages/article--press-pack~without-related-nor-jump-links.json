@@ -151,17 +151,12 @@
           "url": "#"
         },
         {
-          "name": "Epidemiology and global health",
+          "name": "Epidemiology and Global Health",
           "url": "#"
         }
       ]
     },
-    "authors": {
-      "list": [
-        {"name": "Melanie Issigonis"},
-        {"name": "Phillip A Newmark"}
-      ]
-    },
+    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
 
     "meta": {
       "url": "#",

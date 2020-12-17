@@ -11,12 +11,13 @@ module.exports = class SpeechBubble {
     this.window = _window;
     this.doc = doc;
 
-    this.placeholder = '“';
+    this.placeholder = '+';
   }
 
   removePlaceholder() {
     this.$elm.classList.remove('speech-bubble--has-placeholder');
-    const re = new RegExp(this.placeholder, 'g');
+    const pattern = '\\' + this.placeholder;
+    const re = new RegExp(pattern, 'g');
     this.$elm.innerHTML = this.$elm.innerHTML.replace(re, '');
   }
 
@@ -41,19 +42,10 @@ module.exports = class SpeechBubble {
   }
 
   showFailureState(applyToParent) {
-    this.removeLoadingIndicator();
-    this.$elm.setAttribute('disabled', 'disabled');
-    this.$elm.style.cursor = 'not-allowed';
-
-    if (applyToParent) {
-      this.$elm.parentElement.style.cursor = 'not-allowed';
-      this.$elm.parentElement.style.color = '#888'; // $color-text-secondary
-
-      if (this.$elm.previousElementSibling) {
-        this.$elm.previousElementSibling.style.cursor = 'not-allowed';
-        this.$elm.previousElementSibling.style.color = '#888'; // $color-text-secondary
-      }
-
+    if (applyToParent && this.$elm.parentNode !== null) {
+      this.$elm.parentNode.remove();
+    } else {
+      this.$elm.remove();
     }
   }
 

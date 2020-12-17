@@ -29,6 +29,18 @@
   }
 }
 
+.carousel__image-credit {
+  @include image-credit();
+}
+
+.carousel__image-credit--overlay {
+  @include image-credit-overlay();
+  max-width: 270px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .js {
 
   .carousel {
@@ -104,7 +116,7 @@
 
 .carousel__control {
 
-  top: -((28px - 14px) / 2);
+  top: -40px;
 
   &--traverse {
     background-color: transparent;
