@@ -187,15 +187,15 @@ describe('A HypothesisOpener Component', function () {
     context('when supplied with an article type that should not have default positioning', () => {
 
       it('returns the expected positioning method for type "blog-article" (aka Inside eLife)', () => {
-        expect(HypothesisOpener.findPositioningMethod('blog-article')).to.equal(HypothesisOpener.positionCentrallyInline);
+        expect(HypothesisOpener.findPositioningMethod('blog-article')).to.equal(HypothesisOpener.positionEnd);
       });
 
       it('returns the expected positioning method for type "interview"', () => {
-        expect(HypothesisOpener.findPositioningMethod('interview')).to.equal(HypothesisOpener.positionCentrallyInline);
+        expect(HypothesisOpener.findPositioningMethod('interview')).to.equal(HypothesisOpener.positionEnd);
       });
 
       it('returns the expected positioning method for type "press-package"', () => {
-        expect(HypothesisOpener.findPositioningMethod('press-package')).to.equal(HypothesisOpener.positionCentrallyInline);
+        expect(HypothesisOpener.findPositioningMethod('press-package')).to.equal(HypothesisOpener.positionEnd);
       });
 
       it('returns the expected positioning method for a "labs-post"', () => {
