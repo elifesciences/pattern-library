@@ -323,9 +323,9 @@ module.exports = class HypothesisOpener {
 
   static findPositioningMethod(articleType) {
     const positioners = {
-      'blog-article': HypothesisOpener.positionCentrallyInline,
-      interview: HypothesisOpener.positionCentrallyInline,
-      'press-package': HypothesisOpener.positionCentrallyInline,
+      'blog-article': HypothesisOpener.positionEnd,
+      interview: HypothesisOpener.positionEnd,
+      'press-package': HypothesisOpener.positionEnd,
       'labs-post': HypothesisOpener.positionCentrallyInline,
 
       digest: HypothesisOpener.positionEnd,

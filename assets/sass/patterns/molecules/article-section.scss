@@ -7,6 +7,10 @@ $arrow-size: 5;
   &--collapsed {
     padding-bottom: 0;
   }
+
+  p > a {
+    overflow-wrap: break-word;
+  }
 }
 
 .article-section--js {
@@ -19,7 +23,6 @@ $arrow-size: 5;
 
   > .article-section__body {
     @include blg-spacing("top", "small", "margin");
-    word-break: break-all;
   }
 }
 
