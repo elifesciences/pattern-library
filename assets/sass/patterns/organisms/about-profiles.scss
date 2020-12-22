@@ -2,31 +2,7 @@
 
 .about-profiles {
 
-  @include clearfix();
-
-  @supports (grid-gap: 0) {
-    display: grid;
-    @include blg-spacing("top", "small");
-  }
-
-  list-style: none;
-  margin: 0 auto;
-  padding-left: 0;
-
-  // Gives the effect of medium-to-large due to 24px already on the bottom of the list items
-  @include blg-margin-bottom--small-to-medium();
-
-  // Fallback for clients that don't support css grid
-  @include clearfix();
-
-  @supports (grid-gap: 0) {
-    display: grid;
-    @include blg-spacing("top", "small");
-  }
-
-  list-style: none;
-  margin: 0 auto;
-  padding-left: 0;
+  @include grid-listing-variables();
 
   .list-heading + & {
     @include blg-spacing("top", "extra-small", "margin");
@@ -35,27 +11,10 @@
 
 .grid-listing__about {
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2.25rem;
-    grid-row-gap: #{get-rem-from-px($blg-space-smallish-in-px)}rem;
-    justify-content: center;
-
-    // Supporting clients don't need clearfix
-    @supports (grid-gap: 0) {
-      &:before,
-      &:after {
-        display: none;
-      }
-    }
+    @include grid-listing();
   }
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  @include grid-listing-media-queries();
 }
 
 .about-profiles__item {
