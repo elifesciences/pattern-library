@@ -6,7 +6,60 @@
   <ul class="carousel__items">
 
     {{#items}}
-      {{> molecules-carousel-item}}
+      <li class="carousel-item" data-image="
+
+        {{#image}}
+          &lt;picture class='carousel-item__picture'&gt;
+            {{#sources}}
+              &lt;source srcset='{{srcset}}'
+                      {{#type}}type='{{type}}'{{/type}}
+                {{#media}}media='{{media}}'{{/media}}&gt;
+            {{/sources}}
+            {{#fallback}}
+              &lt;img src='{{defaultPath}}'
+                  {{#srcset}}srcset='{{srcset}}'{{/srcset}}
+                  alt='{{altText}}'
+                  class='carousel-item__image'
+              &gt;
+            {{/fallback}}
+          &lt;/picture&gt;
+        {{/image}}
+
+      ">
+
+        {{#subjects}}
+          <ol class="carousel-item__subject_list">
+            {{#subjects.list}}
+              <li class="carousel-item__subject_list_item">
+                <a href="{{url}}" class="carousel-item__subject_link"><span
+                    class="carousel-item__subject">{{{name}}}</span></a>
+              </li>
+            {{/subjects.list}}
+          </ol>
+        {{/subjects}}
+
+        <div class="carousel-item__body">
+          <h4 class="carousel-item__title {{#titleLength}}carousel-item__title--{{titleLength}}{{/titleLength}}{{^titleLength}}carousel-item__title--medium{{/titleLength}}">
+            <a href="{{url}}" class="carousel-item__title_link">{{{title}}}</a>
+          </h4>
+        </div>
+
+        {{#button}}
+          <div class="carousel-item__cta">
+            {{>atoms-button}}
+          </div>
+        {{/button}}
+
+        {{#meta}}
+          <div class="carousel-item__meta">
+            {{> molecules-meta}}
+          </div>
+        {{/meta}}
+
+        {{#image.credit}}
+            <div class="carousel__image-credit carousel__image-credit--overlay" id="{{elementId}}">{{{text}}}</div>
+        {{/image.credit}}
+      </li>
     {{/items}}
 
   </ul>
