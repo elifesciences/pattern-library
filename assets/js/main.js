@@ -15,6 +15,7 @@ Components.AssetNavigation = require('./components/AssetNavigation');
 Components.AssetViewer = require('./components/AssetViewer');
 Components.AudioPlayer = require('./components/AudioPlayer');
 Components.CallToAction = require('./components/CallToAction');
+Components.CarouselItem = require('./components/CarouselItem');
 Components.Carousel = require('./components/Carousel');
 Components.ContentHeader = require('./components/ContentHeader');
 Components.CookieOverlay = require('./components/CookieOverlay');
