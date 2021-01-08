@@ -10,7 +10,7 @@
 }
 
 .grid-listing__about {
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include grid-listing();
   }
 
