@@ -23,9 +23,9 @@ module.exports = class ArticleSection {
     this.$elm.classList.add('article-section--js');
     this.$toggle = this.createToggle($elm, doc);
     this.$body = $elm.querySelector('.article-section__body');
+    this.setInitialState($elm, this.$toggle, this.$body);
     this.$elm.addEventListener('expandsection', this.expand.bind(this));
     this.$elm.addEventListener('collapsesection', this.collapse.bind(this));
-    this.setInitialState($elm, this.$toggle, this.$body);
   }
 
   createToggle($elm, doc) {
