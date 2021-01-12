@@ -18,10 +18,6 @@ module.exports = class Carousel {
     this.originalSlideCount = this.originalSlideWrappers.length;
     this.currentSlideCount = this.originalSlideCount;
 
-    [].forEach.call(this.originalSlideWrappers, (slide) => {
-      slide.insertAdjacentHTML('afterbegin', slide.dataset.image);
-    });
-
     if (this.originalSlideCount < 2) {
       return;
     }
