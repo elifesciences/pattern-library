@@ -25,7 +25,7 @@ module.exports = class ArticleSection {
     this.$body = $elm.querySelector('.article-section__body');
     this.$elm.addEventListener('expandsection', this.expand.bind(this));
     this.$elm.addEventListener('collapsesection', this.collapse.bind(this));
-    this.setInitialState($elm, this.$toggle, this.$body);
+    this.setInitialState($elm);
   }
 
   createToggle($elm, doc) {
@@ -39,7 +39,7 @@ module.exports = class ArticleSection {
     return $link;
   }
 
-  setInitialState($elm, $toggle, $body) {
+  setInitialState($elm) {
     let hash = '';
     if (this.window.location && this.window.location.hash) {
       hash = this.window.location.hash.substring(1);
