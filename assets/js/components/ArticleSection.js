@@ -66,7 +66,11 @@ module.exports = class ArticleSection {
       $elm.dispatchEvent(utils.eventCreator('collapsesection'));
     } else {
       // Defensive: remove classes if they turn up here when they shouldn't
-      $elm.dispatchEvent(utils.eventCreator('expandsection'));
+      if (!!hash) {
+        $elm.dispatchEvent(utils.eventCreator('expandsection', hash));
+      } else {
+        $elm.dispatchEvent(utils.eventCreator('expandsection'));
+      }
     }
 
   }
