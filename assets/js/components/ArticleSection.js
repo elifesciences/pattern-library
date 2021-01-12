@@ -23,9 +23,9 @@ module.exports = class ArticleSection {
     this.$elm.classList.add('article-section--js');
     this.$toggle = this.createToggle($elm, doc);
     this.$body = $elm.querySelector('.article-section__body');
+    this.setInitialState($elm, this.$toggle, this.$body);
     this.$elm.addEventListener('expandsection', this.expand.bind(this));
     this.$elm.addEventListener('collapsesection', this.collapse.bind(this));
-    this.setInitialState($elm);
   }
 
   createToggle($elm, doc) {
@@ -39,7 +39,7 @@ module.exports = class ArticleSection {
     return $link;
   }
 
-  setInitialState($elm) {
+  setInitialState($elm, $toggle, $body) {
     let hash = '';
     if (this.window.location && this.window.location.hash) {
       hash = this.window.location.hash.substring(1);
@@ -63,14 +63,13 @@ module.exports = class ArticleSection {
     }
 
     if ($elm.dataset.initialState === 'closed') {
-      $elm.dispatchEvent(utils.eventCreator('collapsesection'));
+      $elm.classList.add('article-section--collapsed');
+      $toggle.classList.add('article-section__toggle--closed');
+      $body.classList.add('visuallyhidden');
     } else {
       // Defensive: remove classes if they turn up here when they shouldn't
-      if (!!hash) {
-        $elm.dispatchEvent(utils.eventCreator('expandsection', hash));
-      } else {
-        $elm.dispatchEvent(utils.eventCreator('expandsection'));
-      }
+      $toggle.classList.remove('article-section__toggle--closed');
+      $body.classList.remove('visuallyhidden');
     }
 
   }
