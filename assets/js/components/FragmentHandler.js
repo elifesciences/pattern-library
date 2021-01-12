@@ -28,7 +28,7 @@ module.exports = class FragmentHandler {
    * @returns {String} The id of the collapsed section containing idToFind, or null
    */
   getIdOfCollapsedSection(idToFind, doc) {
-    let collapsedSections = doc.querySelectorAll('.article-section__toggle');
+    let collapsedSections = doc.querySelectorAll('.article-section--js');
     if (!collapsedSections.length) {
       return null;
     }

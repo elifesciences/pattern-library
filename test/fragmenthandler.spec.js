@@ -40,7 +40,7 @@ describe('A FragmentHandler Component', function () {
 
         let docMock = {
           querySelectorAll: function (selector) {
-            if (selector === '.article-section__toggle') {
+            if (selector === '.article-section--js') {
               return [];
             }
           },
@@ -58,7 +58,7 @@ describe('A FragmentHandler Component', function () {
         let hash = 'outsideAnyCollapsedSection';
         let docMock = {
           querySelectorAll: function (selector) {
-            if (selector === '.article-section__toggle') {
+            if (selector === '.article-section--js') {
               return collapsedSectionIds
             }
           },
@@ -75,7 +75,7 @@ describe('A FragmentHandler Component', function () {
         let matchingId = 'iAmACollapsedSection';
         let docMock = {
           querySelectorAll: function (selector) {
-            if (selector === '.article-section__toggle')  {
+            if (selector === '.article-section--js')  {
               return [ { id: matchingId } ];
             }
           },
@@ -104,7 +104,7 @@ describe('A FragmentHandler Component', function () {
         };
         let docMock = {
           querySelectorAll: function (selector) {
-            if (selector === '.article-section__toggle') {
+            if (selector === '.article-section--js') {
               return [sectionMock]
             }
           },
