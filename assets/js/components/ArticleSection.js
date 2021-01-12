@@ -63,13 +63,10 @@ module.exports = class ArticleSection {
     }
 
     if ($elm.dataset.initialState === 'closed') {
-      $elm.classList.add('article-section--collapsed');
-      $toggle.classList.add('article-section__toggle--closed');
-      $body.classList.add('visuallyhidden');
+      $elm.dispatchEvent(utils.eventCreator('collapsesection'));
     } else {
       // Defensive: remove classes if they turn up here when they shouldn't
-      $toggle.classList.remove('article-section__toggle--closed');
-      $body.classList.remove('visuallyhidden');
+      $elm.dispatchEvent(utils.eventCreator('expandsection'));
     }
 
   }
