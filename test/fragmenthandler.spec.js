@@ -27,16 +27,16 @@ describe('A FragmentHandler Component', function () {
     expect(fragmentHandler).to.exist;
   });
 
-  describe('gets the id of a collapsed section containing a fragment with the id of the hash',
+  describe('gets the id of a collapsible section containing a fragment with the id of the hash',
   function () {
 
-    it('possesses the method getIdOfCollapsedSection', function () {
-      expect(fragmentHandler.getIdOfCollapsedSection).to.be.a('function');
+    it('possesses the method getIdOfCollapsibleSection', function () {
+      expect(fragmentHandler.getIdOfCollapsibleSection).to.be.a('function');
     });
 
-    describe('the getIdOfCollapsedSection method', function () {
+    describe('the getIdOfCollapsibleSection method', function () {
 
-      it('returns null if there are no collapsed article sections in the document', function () {
+      it('returns null if there are no collapsible article sections in the document', function () {
 
         let docMock = {
           querySelectorAll: function (selector) {
@@ -47,32 +47,32 @@ describe('A FragmentHandler Component', function () {
           getElementById: function () {}
         };
 
-        expect(fragmentHandler.getIdOfCollapsedSection('arbitraryElementId',
+        expect(fragmentHandler.getIdOfCollapsibleSection('arbitraryElementId',
                                                        docMock)).to.be.null;
       });
 
-      it('returns null if hash does not identify a fragment of or within any collapsed sections',
+      it('returns null if hash does not identify a fragment of or within any collapsible sections',
       function () {
 
-        let collapsedSectionIds = [ 'collapsedA', 'collapsedB', 'collapsedC' ];
-        let hash = 'outsideAnyCollapsedSection';
+        let collapsibleSectionIds = [ 'collapsibleA', 'collapsibleB', 'collapsibleC' ];
+        let hash = 'outsideAnyCollapsibleSection';
         let docMock = {
           querySelectorAll: function (selector) {
             if (selector === '.article-section--js') {
-              return collapsedSectionIds
+              return collapsibleSectionIds
             }
           },
           getElementById: function () {}
         };
 
-        expect(fragmentHandler.getIdOfCollapsedSection(hash,
+        expect(fragmentHandler.getIdOfCollapsibleSection(hash,
                                                        docMock)).to.be.null;
 
       });
 
       it('returns the id of the section if it matches the hash', function () {
 
-        let matchingId = 'iAmACollapsedSection';
+        let matchingId = 'iAmACollapsibleSection';
         let docMock = {
           querySelectorAll: function (selector) {
             if (selector === '.article-section--js')  {
@@ -83,16 +83,16 @@ describe('A FragmentHandler Component', function () {
         };
 
         let areElementsNestedMock = function () { return false; };
-        let valueUnderTest = fragmentHandler.getIdOfCollapsedSection(matchingId, docMock, areElementsNestedMock);
+        let valueUnderTest = fragmentHandler.getIdOfCollapsibleSection(matchingId, docMock, areElementsNestedMock);
         expect(valueUnderTest).to.equal(matchingId);
       });
 
-      it('returns the id of the collapsed section if the hash matches a descendant element',
+      it('returns the id of the collapsible section if the hash matches a descendant element',
       function () {
-        let sectionId = 'iAmACollapsedSection';
+        let sectionId = 'iAmACollapsibleSection';
         let sectionMock = Object.create(Node.prototype);
         sectionMock.id = sectionId;
-        let descendantId = 'iAmADescendantOfACollapsedSection';
+        let descendantId = 'iAmADescendantOfACollapsibleSection';
         let descendantMock = Object.create(Node.prototype);
         descendantMock.id = descendantId;
         sectionMock.compareDocumentPosition = function(other) {
@@ -114,7 +114,7 @@ describe('A FragmentHandler Component', function () {
             }
           }
         };
-        let valueUnderTest = fragmentHandler.getIdOfCollapsedSection(descendantId, docMock);
+        let valueUnderTest = fragmentHandler.getIdOfCollapsibleSection(descendantId, docMock);
         expect(valueUnderTest).to.equal(sectionId);
 
       });
