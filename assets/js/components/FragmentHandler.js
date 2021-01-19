@@ -34,7 +34,7 @@ module.exports = class FragmentHandler {
     }
 
     let $collapsibleSectionContainingFrag;
-    [].forEach.call(collapsedSections, ($collapsibleSection) => {
+    [].forEach.call(collapsibleSections, ($collapsibleSection) => {
       if (!$collapsibleSectionContainingFrag) {
         if (utils.isIdOfOrWithinSection(idToFind, $collapsibleSection, doc)) {
           $collapsibleSectionContainingFrag = $collapsibleSection;
