@@ -46,10 +46,9 @@ module.exports = class Math {
   static load(doc) {
     let script = doc.createElement('script');
     script.id = 'MathJax-script';
+    script.async = true;
     script.type = 'text/javascript';
-    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-chtml-full.js';
-    script.integrity = 'sha384-Ra6zh6uYMmH5ydwCqqMoykyf1T/+ZcnOQfFPhDrp2kI4OIxadnhsvvA2vv9A7xYv';
-    script.crossOrigin = 'anonymous';
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/mml-chtml.js';
     doc.querySelector('head').appendChild(script);
   }
 
