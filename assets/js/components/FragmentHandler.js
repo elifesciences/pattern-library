@@ -21,36 +21,36 @@ module.exports = class FragmentHandler {
   }
 
   /**
-   * Returns the id of the collapsed section containing the html element with idToFind, or null.
+   * Returns the id of the collapsible section containing the html element with idToFind, or null.
    *
    * @param {String} idToFind The id to search for
    * @param {HTMLDocument} doc
-   * @returns {String} The id of the collapsed section containing idToFind, or null
+   * @returns {String} The id of the collapsible section containing idToFind, or null
    */
-  getIdOfCollapsedSection(idToFind, doc) {
-    let collapsedSections = doc.querySelectorAll('.article-section--collapsed');
-    if (!collapsedSections.length) {
+  getIdOfCollapsibleSection(idToFind, doc) {
+    let collapsibleSections = doc.querySelectorAll('.article-section--js');
+    if (!collapsibleSections.length) {
       return null;
     }
 
-    let $collapsedSectionContainingFrag;
-    [].forEach.call(collapsedSections, ($collapsedSection) => {
-      if (!$collapsedSectionContainingFrag) {
-        if (utils.isIdOfOrWithinSection(idToFind, $collapsedSection, doc)) {
-          $collapsedSectionContainingFrag = $collapsedSection;
+    let $collapsibleSectionContainingFrag;
+    [].forEach.call(collapsibleSections, ($collapsibleSection) => {
+      if (!$collapsibleSectionContainingFrag) {
+        if (utils.isIdOfOrWithinSection(idToFind, $collapsibleSection, doc)) {
+          $collapsibleSectionContainingFrag = $collapsibleSection;
         }
       }
     });
 
-    if (!!$collapsedSectionContainingFrag) {
-      return $collapsedSectionContainingFrag.id;
+    if (!!$collapsibleSectionContainingFrag) {
+      return $collapsibleSectionContainingFrag.id;
     }
 
     return null;
   }
 
   /**
-   * Fires a custom expandsection event on the collapsed article section containing id from hash.
+   * Fires a custom expandsection event on the collapsible article section containing id from hash.
    *
    * @param e
    * @returns {boolean} False if no hash found
@@ -71,9 +71,9 @@ module.exports = class FragmentHandler {
       return false;
     }
 
-    let idOfCollapsedSection = this.getIdOfCollapsedSection(hash, this.doc);
-    if (!!idOfCollapsedSection) {
-      this.doc.getElementById(idOfCollapsedSection).dispatchEvent(utils.eventCreator('expandsection', hash));
+    let idOfCollapsibleSection = this.getIdOfCollapsibleSection(hash, this.doc);
+    if (!!idOfCollapsibleSection) {
+      this.doc.getElementById(idOfCollapsibleSection).dispatchEvent(utils.eventCreator('expandsection', hash));
     }
   }
 };
