@@ -41,6 +41,22 @@ module.exports = class Math {
         load: ['ui/menu']
       }
     };
+
+    window.MathJax = {
+      chtml: {
+        scale: 1.04,                  // global scaling factor for all expressions
+        minScale: 1,                  // smallest scaling factor to use
+        matchFontHeight: true,        // true to match ex-height of surrounding font
+        mtextInheritFont: false,       // true to make mtext elements use surrounding font
+        merrorInheritFont: false,      // true to make merror text use surrounding font
+        mtextFont: '',                 // font to use for mtext, if not inheriting (empty means use MathJax fonts)
+        merrorFont: 'serif',           // font to use for merror, if not inheriting (empty means use MathJax fonts)
+        mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+        skipAttributes: {},           // RFDa and other attributes NOT to copy to the outputß
+        displayIndent: '0',           // default for indentshift when set to 'auto'
+        cssStyles: null
+      }
+    };
   }
 
   static load(doc) {
