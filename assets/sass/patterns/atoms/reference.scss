@@ -114,8 +114,10 @@ a.reference__authors_link:hover {
   color: #959595;
 }
 
-.reference__abstract:last-child:after {
-  content: "";
+@media only all and (max-width: #{get-rem-from-px($bkpt-site--x-small)}em) {
+  .reference__abstract:first-child:before {
+    content: "";
+  }
 }
 
 .reference {
