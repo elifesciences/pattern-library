@@ -2,10 +2,11 @@
 
 .reference__title {
   @include listing-side-art-title-typeg();
-  display: block;
+  display: inline;
   @include font-size-and-vertical-height($font-size-base-in-px);
   @include nospace();
   text-decoration: none;
+  color: $color-text;
 
   .popup__content & {
     @include popup_title_text();
@@ -19,6 +20,7 @@ a.reference__title:hover {
 
 .reference__authors_list {
   display: inline;
+  line-height: 28px;
   list-style: none;
   @include nospace();
 }
@@ -67,6 +69,7 @@ a.reference__authors_link:hover {
 .reference__origin {
   @include small-typeg();
   @include font-size-and-vertical-height(14);
+  display: inline-block;
   padding-bottom: 0;
 
   & a {
@@ -112,4 +115,20 @@ a.reference__authors_link:hover {
 
 .reference__abstract:last-child:after {
   content: "";
+}
+
+.reference {
+  .doi::before {
+    content: "\a";
+    white-space: pre;
+  }
+
+  .reference__abstracts {
+    display: inline-block;
+
+    &:before {
+      content: "|";
+      color: $color-text-secondary;
+    }
+  }
 }
