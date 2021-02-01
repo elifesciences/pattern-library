@@ -109,8 +109,9 @@ a.reference__authors_link:hover {
   }
 }
 
-.reference__abstract:after {
-  content: "\00a0|";
+.reference__abstract:before {
+  content: "| ";
+  color: #959595;
 }
 
 .reference__abstract:last-child:after {
@@ -125,10 +126,5 @@ a.reference__authors_link:hover {
 
   .reference__abstracts {
     display: inline-block;
-
-    &:before {
-      content: "|";
-      color: $color-text-secondary;
-    }
   }
 }
