@@ -97,6 +97,17 @@ a.reference__authors_link:hover {
     padding-bottom: 0;
   }
 
+  &:before {
+    content: "| ";
+    color: $color-text-dividers;
+  }
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--x-small)}em) {
+    .reference__abstract:first-child:before {
+      content: "";
+    }
+  }
+
 }
 
 .reference__abstract_link {
@@ -106,17 +117,6 @@ a.reference__authors_link:hover {
 
   &:hover {
     color: $color-primary-dark;
-  }
-}
-
-.reference__abstract:before {
-  content: "| ";
-  color: #959595;
-}
-
-@media only all and (max-width: #{get-rem-from-px($bkpt-site--x-small)}em) {
-  .reference__abstract:first-child:before {
-    content: "";
   }
 }
 
