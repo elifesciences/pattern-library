@@ -138,7 +138,7 @@ module.exports = class Math {
     script.addEventListener('load', Math.setupResizeHandler);
     script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/mml-chtml.js';
     script.integrity = 'sha256-CnzfCXjFj1REmPHgWvm/OQv8gFaxwbLKUi41yCU7N2s=';
-    script.crossorigin = 'anonymous';
+    script.crossOrigin = 'anonymous';
     doc.querySelector('head').appendChild(script);
   }
 
