@@ -102,8 +102,8 @@ a.reference__authors_link:hover {
     color: $color-text-dividers;
   }
 
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--x-small)}em) {
-    .reference__abstract:first-child:before {
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    &:first-child:before {
       content: "";
     }
   }
