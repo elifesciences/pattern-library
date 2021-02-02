@@ -102,7 +102,7 @@ a.reference__authors_link:hover {
     color: $color-text-dividers;
   }
 
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
+  @media only all and (max-width: #{get-rem-from-px($bkpt-reference-abstract)}em) {
     &:first-child:before {
       content: "";
     }
@@ -128,5 +128,9 @@ a.reference__authors_link:hover {
 
   .reference__abstracts {
     display: inline-block;
+
+    @media only all and (max-width: #{get-rem-from-px($bkpt-reference-abstract)}em) {
+      display: block;
+    }
   }
 }
