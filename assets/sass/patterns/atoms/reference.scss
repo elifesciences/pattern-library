@@ -97,15 +97,13 @@ a.reference__authors_link:hover {
     padding-bottom: 0;
   }
 
-  &:before {
-    content: "| ";
+  &:after {
+    content: " | ";
     color: $color-text-dividers;
   }
 
-  @media only all and (max-width: #{get-rem-from-px($bkpt-reference-abstract)}em) {
-    &:first-child:before {
-      content: "";
-    }
+  &:last-child:after {
+    content: "";
   }
 
 }
@@ -121,9 +119,17 @@ a.reference__authors_link:hover {
 }
 
 .reference {
-  .doi::before {
-    content: "\a";
-    white-space: pre;
+
+  .doi {
+    &:before {
+      content: "\a";
+      white-space: pre;
+    }
+
+    &:after {
+      color: $color-text-dividers;
+      content: " | ";
+    }
   }
 
   .reference__abstracts {
