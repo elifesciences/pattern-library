@@ -136,8 +136,8 @@ module.exports = class Math {
     script.async = true;
     script.type = 'text/javascript';
     script.addEventListener('load', Math.setupResizeHandler);
-    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/mml-chtml.js';
-    script.integrity = 'sha256-CnzfCXjFj1REmPHgWvm/OQv8gFaxwbLKUi41yCU7N2s=';
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/mml-chtml.min.js';
+    script.integrity = 'sha512-b8NAh18dQ92jyOvBUzpEc+c+wcH+YkCSH4vcf2cKAKkBBWpFIFR/vpmsuFYnlr/cvcBhymHwnj6gb7RkAX0/Pg==';
     script.crossOrigin = 'anonymous';
     doc.querySelector('head').appendChild(script);
   }
