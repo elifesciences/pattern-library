@@ -134,9 +134,5 @@ a.reference__authors_link:hover {
 
   .reference__abstracts {
     display: inline-block;
-
-    @media only all and (max-width: #{get-rem-from-px($bkpt-reference-abstract)}em) {
-      display: block;
-    }
   }
 }
