@@ -27,7 +27,7 @@ a.reference__title:hover {
 
 .reference__author {
   @include listing-side-author-typeg();
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height(16);
   display: inline;
   margin: 0;
   padding: 0;
@@ -68,7 +68,7 @@ a.reference__authors_link:hover {
 
 .reference__origin {
   @include small-typeg();
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height(16);
   display: inline-block;
   padding-bottom: 0;
 
