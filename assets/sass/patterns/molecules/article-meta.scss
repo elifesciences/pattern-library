@@ -39,7 +39,6 @@
   @include label-subject-typeg();
   margin: 0;
   padding: 0;
-  text-transform: capitalize;
   &:after {
     content: ", ";
   }
