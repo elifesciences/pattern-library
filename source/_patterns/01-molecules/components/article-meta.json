@@ -12,7 +12,7 @@
           "name": "Developmental Biology and Stem Cells"
         },
         {
-          "url": false,
+          "url": "#",
           "name": "Planarian"
         }
       ]
@@ -21,7 +21,7 @@
       "title": "Research organism",
       "items": [
         {
-          "url": false,
+          "url": "#",
           "name": "Caenorhabditis elegans"
         }
       ]
