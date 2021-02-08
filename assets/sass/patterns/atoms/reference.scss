@@ -58,7 +58,7 @@ a.reference__authors_link:hover {
 }
 
 .reference__authors_list_suffix {
-  @include listing-side-author-typeg();
+  @include author-typeg();
 
   .popup__content & {
     @include popup_title_text();
@@ -67,7 +67,7 @@ a.reference__authors_link:hover {
 }
 
 .reference__origin {
-  @include small-typeg();
+  @include author-typeg();
   @include font-size-and-vertical-height(16);
   display: inline-block;
   padding-bottom: 0;
