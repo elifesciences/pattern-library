@@ -1,10 +1,10 @@
 @import "../../definitions";
 
 .reference__title {
+  @include font-size-and-vertical-height($font-size-base-in-px);
   @include listing-side-art-title-typeg();
   display: inline;
-  @include font-size-and-vertical-height($font-size-base-in-px);
-  @include nospace();
+  line-height: 28px;
   text-decoration: none;
   color: $color-text;
 
@@ -89,7 +89,7 @@ a.reference__authors_link:hover {
 
 .reference__abstract {
   display: inline;
-  @include small-typeg();
+  @include author-typeg();
   @include font-size-and-vertical-height(14);
 
   .popup__content & {
@@ -97,13 +97,9 @@ a.reference__authors_link:hover {
     padding-bottom: 0;
   }
 
-  &:after {
+  &:before {
     content: " | ";
     color: $color-text-dividers;
-  }
-
-  &:last-child:after {
-    content: "";
   }
 
 }
@@ -121,14 +117,14 @@ a.reference__authors_link:hover {
 .reference {
 
   .doi {
+
+    .doi__link {
+      color: $color-primary;
+    }
+
     &:before {
       content: "\a";
       white-space: pre;
-    }
-
-    &:after {
-      color: $color-text-dividers;
-      content: " | ";
     }
   }
 
