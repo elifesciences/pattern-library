@@ -115,18 +115,14 @@
 
   "hasAbstracts": true,
 
-  "abstractLists": [
+  "abstracts": [
     {
-      "abstracts": [
-        {
-          "name": "PubMed",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/"
-        },
-        {
-          "name": "Google Scholar",
-          "url": "https://google.co.uk"
-        }
-      ]
+      "name": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/"
+    },
+    {
+      "name": "Google Scholar",
+      "url": "https://google.co.uk"
     }
   ]
 }
