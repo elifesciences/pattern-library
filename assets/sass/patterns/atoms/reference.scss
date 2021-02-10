@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .reference__title {
-  @include font-size-and-vertical-height(16);
+  @include author-typeg();
   font-weight: bold;
   display: inline;
   line-height: 28px;
