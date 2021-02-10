@@ -1,8 +1,8 @@
 @import "../../definitions";
 
 .reference__title {
-  @include font-size-and-vertical-height($font-size-base-in-px);
-  @include listing-side-art-title-typeg();
+  @include font-size-and-vertical-height(16);
+  font-weight: bold;
   display: inline;
   line-height: 28px;
   text-decoration: none;
