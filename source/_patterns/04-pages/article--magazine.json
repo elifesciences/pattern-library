@@ -129,7 +129,6 @@
         "text": "Cell biology"
       }
     }
-
   },
 
   "contentHeader": {
@@ -140,6 +139,8 @@
       "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
       "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
     },
+    "download": "#articleDownloadLinksList",
+    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
     "longTitle": true,
     "header": {
       "possible": true,
