@@ -141,6 +141,13 @@ $arrow-size: 5;
     }
   }
 
+  .reference:not(.popup__content) {
+    .doi__link,
+    .reference__abstract_link {
+      color: $color-primary;
+    }
+  }
+
   .button-collection__button--active {
     color: white;
 

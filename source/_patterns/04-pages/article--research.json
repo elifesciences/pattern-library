@@ -914,7 +914,18 @@
             "suffix": "(2013)"
           }
         ],
-        "hasAbstracts": false
+        "hasAbstracts": true,
+
+        "abstracts": [
+          {
+            "name": "PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/"
+          },
+          {
+            "name": "Google Scholar",
+            "url": "https://google.co.uk"
+          }
+        ]
       }
 
     },
@@ -927,7 +938,18 @@
         "title": "Scripps Wired for Health Study (Registration: 000000)",
         "origin": "Scripps Translational Science Institute (sponsor) (2015)",
         "hasAuthors": false,
-        "hasAbstracts": false
+        "hasAbstracts": true,
+
+        "abstracts": [
+          {
+            "name": "PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/"
+          },
+          {
+            "name": "Google Scholar",
+            "url": "https://google.co.uk"
+          }
+        ]
       }
 
     },
