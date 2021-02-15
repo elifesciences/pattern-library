@@ -4,7 +4,6 @@
   @include author-typeg();
   font-weight: bold;
   display: inline;
-  line-height: 28px;
   text-decoration: none;
   color: $color-text;
 
@@ -20,7 +19,6 @@ a.reference__title:hover {
 
 .reference__authors_list {
   display: inline;
-  line-height: 28px;
   list-style: none;
   @include nospace();
 }
@@ -69,7 +67,7 @@ a.reference__authors_link:hover {
 .reference__origin {
   @include author-typeg();
   @include font-size-and-vertical-height(16);
-  display: inline-block;
+  display: inline;
   padding-bottom: 0;
 
   & a {
@@ -97,11 +95,6 @@ a.reference__authors_link:hover {
     padding-bottom: 0;
   }
 
-  &:before {
-    content: " | ";
-    color: $color-text-dividers;
-  }
-
 }
 
 .reference__abstract_link {
@@ -126,9 +119,32 @@ a.reference__authors_link:hover {
       content: "\a";
       white-space: pre;
     }
+
   }
 
-  .reference__abstracts {
-    display: inline-block;
+  .doi + .reference__abstracts {
+    display: inline;
   }
+
+  .doi + .reference__abstracts > .reference__abstract,
+  .reference__origin + .reference__abstracts > .reference__abstract {
+
+    &:before {
+      content: " | ";
+      color: $color-text-dividers;
+    }
+
+  }
+
+  .reference__origin + .reference__abstracts > .reference__abstract {
+
+    &:first-child {
+
+      &:before {
+        content: " ";
+      }
+    }
+
+  }
+
 }
