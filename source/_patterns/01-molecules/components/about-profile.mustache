@@ -4,14 +4,14 @@
     {{#image}}
       {{#sources}}
         <source srcset="{{srcset}}"
-                {{#type}}type="{{type}}"{{/type}}
+          {{#type}}type="{{type}}"{{/type}}
           {{#media}}media="{{media}}"{{/media}}>
       {{/sources}}
       {{#fallback}}
         <img src="{{defaultPath}}"
-              {{#srcset}}srcset="{{srcset}}"{{/srcset}}
-              alt="{{altText}}"
-              class="about-profile__image"
+          {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+          alt="{{altText}}"
+          class="about-profile__image"
         >
       {{/fallback}}
     {{/image}}
