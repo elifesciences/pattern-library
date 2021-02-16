@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600px" height="339px" viewBox="0 0 600 339" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>about-page-profile-placeholder</title>
+    <g id="about-page-profile-placeholder" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F7F7F7" x="0" y="0" width="600" height="339"></rect>
+        <path d="M240,123.333333 L240,216.666667 C240,224 245.933333,230 253.333333,230 L346.666667,230 C354,230 360,224 360,216.666667 L360,123.333333 C360,116 354,110 346.666667,110 L253.333333,110 C245.933333,110 240,116 240,123.333333 Z M320,150 C320,161.066667 311.066667,170 300,170 C288.933333,170 280,161.066667 280,150 C280,138.933333 288.933333,130 300,130 C311.066667,130 320,138.933333 320,150 Z M260,203.333333 C260,190 286.666667,182.666667 300,182.666667 C313.333333,182.666667 340,190 340,203.333333 L340,210 L260,210 L260,203.333333 Z" id="Shape" fill="#E0E0E0" fill-rule="nonzero"></path>
+    </g>
+</svg>
