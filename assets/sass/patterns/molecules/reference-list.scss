@@ -8,7 +8,7 @@
 
 .reference-list__item {
   @include blg-spacing("bottom", "extra-small", "margin");
-  @include padding(0 0 0 48);
+  @include padding(0);
   @include font-size-and-vertical-height(16);
   position: relative;
 }
