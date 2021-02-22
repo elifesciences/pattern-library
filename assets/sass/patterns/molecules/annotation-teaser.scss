@@ -52,9 +52,7 @@
   color: $color-primary;
 
   &:hover {
-    color: $color-primary-dark;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    @include color-link-hover();
   }
 }
 

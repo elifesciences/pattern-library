@@ -37,9 +37,7 @@ $arrow-size: 5;
   @include padding($blg-space-extra-small-in-px, "bottom");
 
   &:hover {
-    color: $color-primary-dark;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    @include color-link-hover();
   }
 }
 

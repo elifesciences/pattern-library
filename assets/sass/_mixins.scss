@@ -492,6 +492,12 @@
   }
 }
 
+@mixin color-link-hover() {
+  color: $color-primary-dark;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @mixin truncate-with-ellipsis() {
   display: block;
   overflow: hidden;
