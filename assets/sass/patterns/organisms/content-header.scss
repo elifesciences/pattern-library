@@ -354,6 +354,8 @@
 
   &:hover {
     color: $color-primary-dark;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   .content-header--image & {
@@ -502,6 +504,11 @@ $iconlist: cc oa;
   border-style: none;
   color: $color-primary;
   padding-top: 12px;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     padding-top: 0;

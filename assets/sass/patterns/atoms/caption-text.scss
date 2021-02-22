@@ -58,10 +58,22 @@
   &:before {
     content: "\00ab\00a0";
   }
+
+  &:hover {
+    color: $color-primary-dark;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
 .caption-text__toggle--see-more {
   &:after {
     content: "\00a0\00bb";
+  }
+
+  &:hover {
+    color: $color-primary-dark;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 }

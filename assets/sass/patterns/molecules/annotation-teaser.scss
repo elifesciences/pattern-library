@@ -50,6 +50,12 @@
 
 .annotation-teaser__reply_cta {
   color: $color-primary;
+
+  &:hover {
+    color: $color-primary-dark;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
 .annotation-teaser__footer {

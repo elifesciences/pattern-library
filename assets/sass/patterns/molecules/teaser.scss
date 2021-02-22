@@ -70,6 +70,8 @@
 
 .teaser__context_label_link:hover {
   color: $color-primary-dark;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .teaser__link {
@@ -132,6 +134,8 @@
 
 .teaser__category_link:hover {
   color: $color-primary-dark;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .teaser--secondary {

@@ -2,6 +2,12 @@
 
 .article-download-links-list__link {
   font-weight: normal;
+
+  &:hover {
+    color: $color-primary-dark;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
 .article-download-links-list__secondary_link {
@@ -14,6 +20,12 @@
     @include font-size(12);
     @include padding(24, left);
     @include margin(6, top);
+  }
+
+  &:hover {
+    color: $color-primary-dark;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 }
 
