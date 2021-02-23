@@ -1,6 +1,9 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
+  bibId:
+    type: string
+    minLength: 1
   titleLink:
     type: string
     minLength: 1

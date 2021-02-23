@@ -772,460 +772,373 @@
 
   "references": [
     {
-      "bibId": {
-        "full": "bib1",
-        "ordinal": 1
-      },
-      "reference": {
-        "title": "Philosophie Anatomique",
-        "origin": "Paris: Méquignon-Marvis",
+      "bibId": "bib1",
+      "title": "Philosophie Anatomique",
+      "origin": "Paris: Méquignon-Marvis",
 
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "Geoffroy Saint-Hilaire E."
-              }
-            ],
-            "suffix": "(1818)"
-          }
-        ],
-        "hasAbstracts": false
-      }
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "Geoffroy Saint-Hilaire E."
+            }
+          ],
+          "suffix": "(1818)"
+        }
+      ],
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib2",
-        "ordinal": 2
+      "bibId": "bib2",
+      "title": "Understanding the rhythm of breathing: so near, yet so far",
+      "origin": "In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452.",
+
+      "doi": {
+        "doi": "10.1146/annurev-physiol-040510-130049"
       },
-      "reference": {
-        "title": "Understanding the rhythm of breathing: so near, yet so far",
-        "origin": "In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452.",
 
-        "doi": {
-          "doi": "10.1146/annurev-physiol-040510-130049"
-        },
-
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "Feldman JL"
-              },
-              {
-                "name": "Del Negro C"
-              },
-              {
-                "name": "Gray PA"
-              }
-            ],
-            "suffix": "(2013)"
-          }
-        ],
-        "hasAbstracts": false
-      }
-
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "Feldman JL"
+            },
+            {
+              "name": "Del Negro C"
+            },
+            {
+              "name": "Gray PA"
+            }
+          ],
+          "suffix": "(2013)"
+        }
+      ],
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib3",
-        "ordinal": 3
-      },
-      "reference": {
-        "title": "Scripps Wired for Health Study (Registration: 000000)",
-        "origin": "Scripps Translational Science Institute (sponsor) (2015)",
-        "hasAuthors": false,
-        "hasAbstracts": false
-      }
-
+      "bibId": "bib3",
+      "title": "Scripps Wired for Health Study (Registration: 000000)",
+      "origin": "Scripps Translational Science Institute (sponsor) (2015)",
+      "hasAuthors": false,
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib4",
-        "ordinal": 4
-      },
-      "reference": {
-        "title": "Boundary learning by optimization with topological constraints",
-        "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "Jain BV"
-              },
-              {
-                "name": "Bollman B"
-              },
-              {
-                "name": "Richardson M"
-              },
-              {
-                "name": "Berger DR"
-              },
-              {
-                "name": "Helmstaedter MN"
-              },
-              {
-                "name": "Briggman KL"
-              },
-              {
-                "name": "Denk W"
-              },
-              {
-                "name": "Bowden JB"
-              },
-              {
-                "name": "Mendenhall JM"
-              },
-              {
-                "name": "Abraham WC"
-              },
-              {
-                "name": "Harris KM"
-              },
-              {
-                "name": "Kasthuri N"
-              },
-              {
-                "name": "Hayworth KJ"
-              },
-              {
-                "name": "Schalek R"
-              },
-              {
-                "name": "Tapia JC"
-              },
-              {
-                "name": "Lichtman JW"
-              },
-              {
-                "name": "Seung HS"
-              }
-            ],
-            "suffix": "(2010)"
-          }
-        ],
-        "hasAbstracts": false
-      }
-
-
+      "bibId": "bib4",
+      "title": "Boundary learning by optimization with topological constraints",
+      "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "Jain BV"
+            },
+            {
+              "name": "Bollman B"
+            },
+            {
+              "name": "Richardson M"
+            },
+            {
+              "name": "Berger DR"
+            },
+            {
+              "name": "Helmstaedter MN"
+            },
+            {
+              "name": "Briggman KL"
+            },
+            {
+              "name": "Denk W"
+            },
+            {
+              "name": "Bowden JB"
+            },
+            {
+              "name": "Mendenhall JM"
+            },
+            {
+              "name": "Abraham WC"
+            },
+            {
+              "name": "Harris KM"
+            },
+            {
+              "name": "Kasthuri N"
+            },
+            {
+              "name": "Hayworth KJ"
+            },
+            {
+              "name": "Schalek R"
+            },
+            {
+              "name": "Tapia JC"
+            },
+            {
+              "name": "Lichtman JW"
+            },
+            {
+              "name": "Seung HS"
+            }
+          ],
+          "suffix": "(2010)"
+        }
+      ],
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib5",
-        "ordinal": 5
-      },
-      "reference": {
-        "title": "NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets",
-        "origin": "NCBI Gene Expression Omnibus. Series accession number <a href=\"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44902\">GSE44902</a>",
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "Bouveret R"
-              },
-              {
-                "name": "Bouveret R"
-              },
-              {
-                "name": "Schonrock N"
-              },
-              {
-                "name": "Ramialison M"
-              },
-              {
-                "name": "Doan T"
-              },
-              {
-                "name": "de Jong D"
-              },
-              {
-                "name": "Bondue A"
-              },
-              {
-                "name": "Kaur G"
-              },
-              {
-                "name": "Mohamed S"
-              },
-              {
-                "name": "Fonoudi H"
-              },
-              {
-                "name": "Chen C"
-              },
-              {
-                "name": "Wouters M"
-              },
-              {
-                "name": "Bhattacharya S"
-              },
-              {
-                "name": "Plachta N"
-              },
-              {
-                "name": "Dunwoodie SL"
-              },
-              {
-                "name": "Chapman G"
-              },
-              {
-                "name": "Blanpain C"
-              },
-              {
-                "name": "Harvey RP"
-              }
-            ],
-            "suffix": "(2015)"
-          }
-        ],
-        "hasAbstracts": false
-      }
-
-
+      "bibId": "bib5",
+      "title": "NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets",
+      "origin": "NCBI Gene Expression Omnibus. Series accession number <a href=\"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44902\">GSE44902</a>",
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "Bouveret R"
+            },
+            {
+              "name": "Bouveret R"
+            },
+            {
+              "name": "Schonrock N"
+            },
+            {
+              "name": "Ramialison M"
+            },
+            {
+              "name": "Doan T"
+            },
+            {
+              "name": "de Jong D"
+            },
+            {
+              "name": "Bondue A"
+            },
+            {
+              "name": "Kaur G"
+            },
+            {
+              "name": "Mohamed S"
+            },
+            {
+              "name": "Fonoudi H"
+            },
+            {
+              "name": "Chen C"
+            },
+            {
+              "name": "Wouters M"
+            },
+            {
+              "name": "Bhattacharya S"
+            },
+            {
+              "name": "Plachta N"
+            },
+            {
+              "name": "Dunwoodie SL"
+            },
+            {
+              "name": "Chapman G"
+            },
+            {
+              "name": "Blanpain C"
+            },
+            {
+              "name": "Harvey RP"
+            }
+          ],
+          "suffix": "(2015)"
+        }
+      ],
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib6",
-        "ordinal": 6
+      "bibId": "bib6",
+      "title": "Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift",
+      "origin": "Nature 365:833–836. PMID 8413666",
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "Schrenk F"
+            },
+            {
+              "name": "Bromage TG"
+            },
+            {
+              "name": "Betzler CG"
+            },
+            {
+              "name": "Ring U"
+            },
+            {
+              "name": "Juwayeyi YM"
+            }
+          ],
+          "suffix": "(1993)"
+        }
+      ],
+      "doi": {
+        "doi": "10.1038/365833a0"
       },
-      "reference": {
-        "title": "Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift",
-        "origin": "Nature 365:833–836. PMID 8413666",
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "Schrenk F"
-              },
-              {
-                "name": "Bromage TG"
-              },
-              {
-                "name": "Betzler CG"
-              },
-              {
-                "name": "Ring U"
-              },
-              {
-                "name": "Juwayeyi YM"
-              }
-            ],
-            "suffix": "(1993)"
-          }
-        ],
-        "doi": {
-          "doi": "10.1038/365833a0"
-        },
-        "hasAbstracts": false
-      }
-
-
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib7",
-        "ordinal": 7
-      },
-      "reference": {
-        "title": "IRE-1alpha inhibitors (US20100941530)",
-        "origin": "Mankind Corp, United States patent, United States",
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "Patterson JB"
-              },
-              {
-                "name": "Lonergan DG"
-              },
-              {
-                "name": "Flynn GA"
-              },
-              {
-                "name": "Qingpeng Z"
-              },
-              {
-                "name": "Pallai PV"
-              }
-            ],
-            "suffix": "(2011)"
-          }
-        ],
-        "hasAbstracts": false
-      }
-
-
+      "bibId": "bib7",
+      "title": "IRE-1alpha inhibitors (US20100941530)",
+      "origin": "Mankind Corp, United States patent, United States",
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "Patterson JB"
+            },
+            {
+              "name": "Lonergan DG"
+            },
+            {
+              "name": "Flynn GA"
+            },
+            {
+              "name": "Qingpeng Z"
+            },
+            {
+              "name": "Pallai PV"
+            }
+          ],
+          "suffix": "(2011)"
+        }
+      ],
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib8",
-        "ordinal": 8
-      },
-      "reference": {
-        "title": "Unreliable research: Trouble at the lab",
-        "titleLink": "https://www.economist.com/news/briefing/21588057-scientists-think-science-self-correcting-alarming-degree-it-not-trouble",
-        "origin": "<i>The Economist</i>, p26–30.",
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "The Economist"
-              }
-            ],
-            "suffix": "(October 19, 2013)"
-          }
-        ],
-        "hasAbstracts": false
-      }
-
-
+      "bibId": "bib8",
+      "title": "Unreliable research: Trouble at the lab",
+      "titleLink": "https://www.economist.com/news/briefing/21588057-scientists-think-science-self-correcting-alarming-degree-it-not-trouble",
+      "origin": "<i>The Economist</i>, p26–30.",
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "The Economist"
+            }
+          ],
+          "suffix": "(October 19, 2013)"
+        }
+      ],
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib9",
-        "ordinal": 9
-      },
-      "reference": {
-        "title": "Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression",
-        "titleLink": "https://arxiv.org/abs/1303.0216",
-        "origin": "arXiv",
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "Paris M"
-              },
-              {
-                "name": "Kaplan M"
-              },
-              {
-                "name": "Li XY"
-              },
-              {
-                "name": "Villalta JE"
-              },
-              {
-                "name": "Lott SE"
-              },
-              {
-                "name": "Eisen MB"
-              }
-            ],
-            "suffix": "(2013)"
-          }
-        ],
-        "hasAbstracts": false
-      }
-
-
+      "bibId": "bib9",
+      "title": "Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression",
+      "titleLink": "https://arxiv.org/abs/1303.0216",
+      "origin": "arXiv",
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "Paris M"
+            },
+            {
+              "name": "Kaplan M"
+            },
+            {
+              "name": "Li XY"
+            },
+            {
+              "name": "Villalta JE"
+            },
+            {
+              "name": "Lott SE"
+            },
+            {
+              "name": "Eisen MB"
+            }
+          ],
+          "suffix": "(2013)"
+        }
+      ],
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib10",
-        "ordinal": 10
-      },
-      "reference": {
-        "title": "Educational Excellence Everywhere",
-        "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
-        "origin": "London: HMSO",
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "Department of Education, UK."
-              }
-            ],
-            "suffix": "(2016)"
-          }
-        ],
-        "hasAbstracts": false
-      }
-
-
+      "bibId": "bib10",
+      "title": "Educational Excellence Everywhere",
+      "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
+      "origin": "London: HMSO",
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "Department of Education, UK."
+            }
+          ],
+          "suffix": "(2016)"
+        }
+      ],
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib11",
-        "ordinal": 11
-      },
-      "reference": {
-        "title": "The Pymol Molecular Graphics System",
-        "origin": "DeLano Scientific, Palo Alto, CA",
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "DeLano W. L."
-              }
-            ],
-            "suffix": "(2002)"
-          }
-        ],
-        "hasAbstracts": false
-      }
-
-
+      "bibId": "bib11",
+      "title": "The Pymol Molecular Graphics System",
+      "origin": "DeLano Scientific, Palo Alto, CA",
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "DeLano W. L."
+            }
+          ],
+          "suffix": "(2002)"
+        }
+      ],
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib12",
-        "ordinal": 12
-      },
-      "reference": {
-        "title": "Theory of large fluctuations in stochastic populations",
-        "titleLink": "https://doi.org/10.1371/journal.pgen.0030218",
-        "origin": "Hebrew University of Jerusalem",
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "Assaf M."
-              }
-            ],
-            "suffix": "(2010)"
-          }
-        ],
-        "hasAbstracts": false
-      }
-
-
+      "bibId": "bib12",
+      "title": "Theory of large fluctuations in stochastic populations",
+      "titleLink": "https://doi.org/10.1371/journal.pgen.0030218",
+      "origin": "Hebrew University of Jerusalem",
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "Assaf M."
+            }
+          ],
+          "suffix": "(2010)"
+        }
+      ],
+      "hasAbstracts": false
     },
     {
-      "bibId": {
-        "full": "bib13",
-        "ordinal": 13
-      },
-      "reference": {
-        "title": "The Problem of Perception",
-        "titleLink": "http://plato.stanford.edu/entries/perception-problem/",
-        "origin": "The Stanford Encyclopedia of Philosophy",
-        "hasAuthors": true,
-        "authorLists": [
-          {
-            "authors": [
-              {
-                "name": "Crane T"
-              }
-            ],
-            "suffix": "(2005)"
-          }
-        ],
-        "hasAbstracts": false
-      }
-
-
+      "bibId": "bib13",
+      "title": "The Problem of Perception",
+      "titleLink": "http://plato.stanford.edu/entries/perception-problem/",
+      "origin": "The Stanford Encyclopedia of Philosophy",
+      "hasAuthors": true,
+      "authorLists": [
+        {
+          "authors": [
+            {
+              "name": "Crane T"
+            }
+          ],
+          "suffix": "(2005)"
+        }
+      ],
+      "hasAbstracts": false
     }
   ],
 
