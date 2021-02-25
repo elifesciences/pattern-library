@@ -6,7 +6,7 @@
   text-decoration: none;
 
   &:hover {
-    color: $color-primary;
+    @include color-link-hover();
   }
 }
 
