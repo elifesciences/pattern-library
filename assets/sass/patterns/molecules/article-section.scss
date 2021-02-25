@@ -148,6 +148,18 @@ $arrow-size: 5;
     }
   }
 
+  .reference:not(.popup__content) {
+    .reference__origin
+
+    a {
+      color: $color-primary;
+
+      &:hover {
+        color: $color-primary-dark;
+      }
+    }
+  }
+
   .button-collection__button--active {
     color: white;
 

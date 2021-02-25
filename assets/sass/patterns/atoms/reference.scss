@@ -122,6 +122,18 @@ a.reference__authors_link:hover {
 
   }
 
+  .reference__origin {
+
+    a {
+      color: $color-primary;
+
+      &:before {
+        content: "\a";
+        white-space: pre;
+      }
+    }
+  }
+
   .doi + .reference__abstracts {
     display: inline;
   }
