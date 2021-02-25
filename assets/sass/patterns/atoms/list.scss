@@ -6,6 +6,15 @@
   padding-left: 0;
 }
 
+.list--teaser {
+
+  a {
+    &:hover {
+      @include color-link-hover();
+    }
+  }
+}
+
 $prefixes: ("alpha-lower": "lower-latin", "alpha-upper": "upper-latin", "bullet": "disc", "number": "decimal", "roman-lower": "lower-roman", "roman-upper": "upper-roman");
 
 @each $prefix, $list-style-type in $prefixes {

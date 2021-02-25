@@ -50,6 +50,10 @@
 
 .annotation-teaser__reply_cta {
   color: $color-primary;
+
+  &:hover {
+    @include color-link-hover();
+  }
 }
 
 .annotation-teaser__footer {
