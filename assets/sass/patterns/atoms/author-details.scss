@@ -61,6 +61,10 @@
   @include body-para();
   @include nospace("bottom");
 
+  &:hover {
+    @include color-link-hover();
+  }
+
   p {
     @include body-typeg();
   }
@@ -82,7 +86,10 @@ a.author-details__link {
   &:active,
   &:hover {
     color: $color-primary-dark;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
+
 }
 
 .author-details__name {

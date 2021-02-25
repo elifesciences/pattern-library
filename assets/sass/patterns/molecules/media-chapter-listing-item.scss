@@ -39,3 +39,10 @@
 .media-chapter-listing-item__source_list_item {
   @include body-typeg();
 }
+
+.media-chapter-listing-item__source_list_item_link {
+
+  &:hover {
+    @include color-link-hover();
+  }
+}
