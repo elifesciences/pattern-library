@@ -125,6 +125,8 @@ a.reference__authors_link:hover {
   .reference__origin {
 
     a {
+      @include font-size-and-vertical-height(14);
+      border-bottom: none;
       color: $color-primary;
 
       &:before {
