@@ -160,6 +160,7 @@ $arrow-size: 5;
 
       &:hover {
         color: $color-primary-dark;
+        @include color-link-hover();
       }
     }
   }
