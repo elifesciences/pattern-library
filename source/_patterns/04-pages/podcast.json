@@ -146,7 +146,7 @@
        "url": "#",
        "text": "Podcast"
      },
-     "download": "https://nakeddiscovery.com/download/audio/eLife_Podcast_11.17.mp3",
+     "download": "https://www.thenakedscientists.com/sites/default/files/media/podcasts/episodes/eLife_Podcast_11.17.mp3",
      "image": {
        "fallback": {
          "defaultPath": "https://unsplash.it/1114/336"
@@ -156,7 +156,7 @@
        "title": "Episode 21",
        "episodeNumber": 21,
        "sources":[
-         { "src": "https://nakeddiscovery.com/download/audio/eLife_Podcast_11.17.mp3",
+         { "src": "https://www.thenakedscientists.com/sites/default/files/media/podcasts/episodes/eLife_Podcast_11.17.mp3",
            "mediaType": {
              "forMachine": "audio/mp3",
              "forHuman": "mp3"

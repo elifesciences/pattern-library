@@ -1,8 +1,7 @@
 let chai = require('chai');
 let expect = chai.expect;
 
-// FIXME Investigate and fix this test which suddenly stopped working (see elifesciences/issues#6362).
-describe.skip('A Podcast page', function() {
+describe('A Podcast page', function() {
   it('should have the right title', function () {
     browser.url('/patterns/04-pages-podcast/04-pages-podcast.html');
   });
