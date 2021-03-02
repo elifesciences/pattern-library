@@ -1,10 +1,90 @@
 {
   "title": "Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift",
-  "origin": "Nature 365:833–836. PMID 8413666",
+  "origin": "<i>Nature</i> <strong>365</strong>:833–836.",
   "hasAuthors": true,
   "authorLists": [
     {
       "authors": [
+        {
+          "name": "Schrenk F",
+          "url": "https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22"
+        },
+        {
+          "name": "Bromage TG",
+          "url": false
+        },
+        {
+          "name": "Betzler CG",
+          "url": false
+        },
+        {
+          "name": "Ring U",
+          "url": false
+        },
+        {
+          "name": "Juwayeyi YM",
+          "url": false
+        },
+        {
+          "name": "Schrenk F",
+          "url": "https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22"
+        },
+        {
+          "name": "Bromage TG",
+          "url": false
+        },
+        {
+          "name": "Betzler CG",
+          "url": false
+        },
+        {
+          "name": "Ring U",
+          "url": false
+        },
+        {
+          "name": "Juwayeyi YM",
+          "url": false
+        },
+        {
+          "name": "Schrenk F",
+          "url": "https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22"
+        },
+        {
+          "name": "Bromage TG",
+          "url": false
+        },
+        {
+          "name": "Betzler CG",
+          "url": false
+        },
+        {
+          "name": "Ring U",
+          "url": false
+        },
+        {
+          "name": "Juwayeyi YM",
+          "url": false
+        },
+        {
+          "name": "Schrenk F",
+          "url": "https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22"
+        },
+        {
+          "name": "Bromage TG",
+          "url": false
+        },
+        {
+          "name": "Betzler CG",
+          "url": false
+        },
+        {
+          "name": "Ring U",
+          "url": false
+        },
+        {
+          "name": "Juwayeyi YM",
+          "url": false
+        },
         {
           "name": "Schrenk F",
           "url": "https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22"
@@ -32,5 +112,15 @@
   "doi": {
     "doi": "10.1038/365833a0"
   },
-  "hasAbstracts": false
+  "hasAbstracts": true,
+  "abstracts": [
+    {
+      "name": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/"
+    },
+    {
+      "name": "Google Scholar",
+      "url": "https://google.co.uk"
+    }
+  ]
 }
