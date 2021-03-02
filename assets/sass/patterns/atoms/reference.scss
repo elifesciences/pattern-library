@@ -128,11 +128,6 @@ a.reference__authors_link:hover {
       @include font-size-and-vertical-height(14);
       border-bottom: none;
       color: $color-primary;
-
-      &:before {
-        content: "\a";
-        white-space: pre;
-      }
     }
   }
 
