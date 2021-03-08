@@ -77,7 +77,20 @@ a.reference__authors_link:hover {
   padding-bottom: 0;
 
   & a {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 360px;
+    white-space: nowrap;
     @include discreet-link();
+
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 272px;
+      white-space: nowrap;
+    }
   }
 
   .popup__content & {
@@ -155,6 +168,7 @@ a.reference__authors_link:hover {
       @include font-size-and-vertical-height(14);
       border-bottom: none;
       color: $color-primary;
+
     }
   }
 
