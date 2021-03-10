@@ -71,20 +71,7 @@ a.reference__authors_link:hover {
   padding-bottom: 0;
 
   & a {
-    display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 360px;
-    white-space: nowrap;
     @include discreet-link();
-
-    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      display: inline-block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 272px;
-      white-space: nowrap;
-    }
   }
 
   .popup__content & {
@@ -122,6 +109,10 @@ a.reference__authors_link:hover {
 
 .reference {
 
+  .reference_link {
+    color: $color-primary;
+  }
+
   .doi {
 
     .doi__link {
@@ -133,6 +124,20 @@ a.reference__authors_link:hover {
       white-space: pre;
     }
 
+  }
+
+  .reference__link {
+    display: block;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 360px;
+    white-space: nowrap;
+    text-transform: none;
+
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      max-width: 272px;
+    }
   }
 
   .reference__origin {

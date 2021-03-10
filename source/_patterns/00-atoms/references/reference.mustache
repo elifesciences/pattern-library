@@ -39,6 +39,16 @@
     {{> atoms-doi}}
   {{/doi}}
 
+  {{^doi}}
+
+    {{#titleLink}}
+      <span class="doi">
+        <a href="{{titleLink}}" class="reference__link">{{{titleLink}}}</a>
+      </span>
+    {{/titleLink}}
+
+  {{/doi}}
+
   {{#hasAbstracts}}
     <ul class="reference__abstracts">
   {{/hasAbstracts}}
