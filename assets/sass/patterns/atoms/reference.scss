@@ -131,7 +131,7 @@ a.reference__authors_link:hover {
     float: left;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 360px;
+    max-width: 360px;
     white-space: nowrap;
     text-transform: none;
 
