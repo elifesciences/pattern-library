@@ -129,11 +129,11 @@ a.reference__authors_link:hover {
   .reference__link {
     display: block;
     float: left;
+    max-width: 360px;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 360px;
-    white-space: nowrap;
     text-transform: none;
+    white-space: nowrap;
 
     @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
       max-width: 272px;
