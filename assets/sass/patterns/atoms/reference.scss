@@ -126,6 +126,11 @@ a.reference__authors_link:hover {
 
   }
 
+  .reference__link-outer {
+    @include label-content-typeg($color-text-secondary, $uppercase: true);
+    @include font-size-and-vertical-height(14);
+  }
+
   .reference__link {
     display: block;
     float: left;
