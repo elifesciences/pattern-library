@@ -116,6 +116,7 @@ a.reference__authors_link:hover {
   .doi {
 
     .doi__link {
+      @include font-size-and-vertical-height(14);
       color: $color-primary;
     }
 
