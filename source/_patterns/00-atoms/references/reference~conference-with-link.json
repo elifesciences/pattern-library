@@ -1,6 +1,9 @@
 {
   "title": "Boundary learning by optimization with topological constraints",
+  "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
   "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+  "hasLabel": true,
+  "label": "Conference",
   "hasAuthors": true,
   "authorLists": [
     {
