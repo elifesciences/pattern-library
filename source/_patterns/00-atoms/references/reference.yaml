@@ -4,7 +4,10 @@ properties:
   bibId:
     type: string
     minLength: 1
-  titleLink:
+  title:
+    type: string
+    minLength: 1
+  referenceLabel:
     type: string
     minLength: 1
   doi:

@@ -1,8 +1,8 @@
 {
   "title": "Philosophie Anatomique",
   "origin": "Paris: Méquignon-Marvis",
-  "hasLabel": true,
-  "label": "Book",
+  "hasReferenceLabel": true,
+  "referenceLabel": "Book",
 
   "hasAuthors": true,
   "authorLists": [
