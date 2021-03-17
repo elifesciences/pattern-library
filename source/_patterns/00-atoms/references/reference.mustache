@@ -1,7 +1,7 @@
 <div class="reference"{{#bibId}} data-popup-label="See in references" data-popup-contents="{{bibId}}" id="{{bibId}}"{{/bibId}}>
-  {{#hasReferenceLabel}}
+  {{#referenceLabel}}
     <div class="reference__label">{{referenceLabel}}</div>
-  {{/hasReferenceLabel}}
+  {{/referenceLabel}}
   {{#hasAuthors}}
     {{#authorLists}}
     <ol class="reference__authors_list">
@@ -16,9 +16,7 @@
   {{/hasAuthors}}
 
   {{#doi}}
-
     <a href="https://doi.org/{{{doi}}}" class="reference__title">{{{title}}}</a>
-
   {{/doi}}
 
   {{^doi}}
