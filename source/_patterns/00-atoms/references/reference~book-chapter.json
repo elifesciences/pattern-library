@@ -1,9 +1,7 @@
 {
   "title": "Understanding the rhythm of breathing: so near, yet so far",
   "origin": "In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452.",
-  "hasReferenceLabel": true,
-  "ReferenceLabel": "Book",
-
+  "referenceLabel": "Book",
   "doi": {
     "doi": "10.1146/annurev-physiol-040510-130049"
   },
