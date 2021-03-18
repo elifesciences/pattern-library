@@ -124,12 +124,12 @@ a.reference__authors_link:hover {
   }
 
   .reference__link-outer {
-    @include blg-spacing("bottom", "small");
     @include label-content-typeg($color-text-secondary, $uppercase: true);
     @include font-size-and-vertical-height(14);
   }
 
   .reference__link {
+    padding-bottom: 0;
     display: block;
     float: left;
     max-width: #{$bkpt-site--small - 120}px;
@@ -141,6 +141,11 @@ a.reference__authors_link:hover {
     @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
       max-width: #{$bkpt-site--small - 208}px;
     }
+
+    &:before {
+      white-space: pre;
+    }
+
   }
 
   .reference__origin {
@@ -156,7 +161,7 @@ a.reference__authors_link:hover {
     display: inline;
   }
 
-  .doi + .reference__abstracts > .reference__abstract,
+  .reference__abstracts > .reference__abstract,
   .reference__origin + .reference__abstracts > .reference__abstract {
 
     &:before {
