@@ -130,6 +130,7 @@ a.reference__authors_link:hover {
   }
 
   .reference__link-outer {
+    @include blg-spacing("bottom", "small");
     @include label-content-typeg($color-text-secondary, $uppercase: true);
     @include font-size-and-vertical-height(14);
   }
