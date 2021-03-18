@@ -11,4 +11,5 @@
   @include padding(0);
   @include font-size-and-vertical-height(16);
   position: relative;
+  display: flex;
 }
