@@ -4,7 +4,7 @@ NODE_VERSION ?= boron
 PHP_VERSION ?= 7.3-fpm
 
 # Source files that when changed should trigger a rebuild.
-SOURCES := $(wildcard source/**/*) $(wildcard assets/**/*)
+SOURCES := $(wildcard assets/**/*) $(wildcard source/**/*)
 
 # Targets that don't result in output of the same name.
 .PHONY: start \
@@ -21,7 +21,7 @@ distclean: clean
 
 # Cleans build output
 clean:
-	@rm -rf public
+	@rm -rf public source/assets
 
 # Install Node.js dependencies if either, the node_modules directory is not present or package.json has changed.
 node_modules: package.json
