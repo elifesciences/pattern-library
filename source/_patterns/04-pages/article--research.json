@@ -1102,36 +1102,6 @@
       "hasAbstracts": false
     },
     {
-      "bibId": "bib61",
-      "title": "Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift",
-      "titleLink": "http://www.gov.uk",
-      "origin": "Nature 365:833–836. PMID 8413666",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Schrenk F"
-            },
-            {
-              "name": "Bromage TG"
-            },
-            {
-              "name": "Betzler CG"
-            },
-            {
-              "name": "Ring U"
-            },
-            {
-              "name": "Juwayeyi YM"
-            }
-          ],
-          "suffix": "(1993)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
       "bibId": "bib7",
       "title": "IRE-1alpha inhibitors (US20100941530)",
       "origin": "Mankind Corp, United States patent, United States",
