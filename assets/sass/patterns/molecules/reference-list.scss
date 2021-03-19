@@ -10,5 +10,6 @@
   @include blg-spacing("bottom", "small", "margin");
   @include padding(0);
   @include font-size-and-vertical-height(16);
+  display: flex;
   position: relative;
 }
