@@ -11,9 +11,9 @@ SOURCES := $(wildcard assets/**/*) $(wildcard source/**/*)
 # Targets that don't result in output of the same name.
 .PHONY: start \
         clean \
-				distclean \
-				test \
-				validate
+        distclean \
+        test \
+        validate
 
 # When no target is specified, the default target to run.
 .DEFAULT_GOAL := start
