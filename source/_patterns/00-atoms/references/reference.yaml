@@ -7,7 +7,7 @@ properties:
   titleLink:
     type: string
     minLength: 1
-  referenceLabel:
+  label:
     type: string
     minLength: 1
   doi:

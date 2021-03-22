@@ -4,7 +4,7 @@
       "bibId": "bib1",
       "title": "Understanding the rhythm of breathing: so near, yet so far",
       "origin": "In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452.",
-      "referenceLabel": "Book",
+      "label": "Book",
       "doi": {
         "doi": "10.1146/annurev-physiol-040510-130049"
       },
@@ -35,7 +35,7 @@
       "bibId": "bib2",
       "title": "Philosophie Anatomique",
       "origin": "Paris: Méquignon-Marvis",
-      "referenceLabel": "Book",
+      "label": "Book",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -54,7 +54,7 @@
       "bibId": "bib3",
       "title": "Scripps Wired for Health Study (Registration: 000000)",
       "origin": "Scripps Translational Science Institute (sponsor) (2015)",
-      "referenceLabel": "Clinical Trial",
+      "label": "Clinical Trial",
       "hasAuthors": false,
       "hasAbstracts": false
     },
@@ -62,7 +62,7 @@
       "bibId": "bib5",
       "title": "Boundary learning by optimization with topological constraints",
       "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
-      "referenceLabel": "Conference",
+      "label": "Conference",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -149,7 +149,7 @@
       "title": "Boundary learning by optimization with topological constraints",
       "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
       "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
-      "referenceLabel": "Conference",
+      "label": "Conference",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -232,7 +232,7 @@
       "bibId": "bib7",
       "title": "Boundary learning by optimization with topological constraints",
       "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
-      "referenceLabel": "Conference",
+      "label": "Conference",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -315,7 +315,7 @@
       "bibId": "bib8",
       "title": "NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets",
       "origin": "NCBI Gene Expression Omnibus.",
-      "referenceLabel": "Data",
+      "label": "Data",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -416,7 +416,7 @@
       "title": "NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets",
       "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
       "origin": "NCBI Gene Expression Omnibus.",
-      "referenceLabel": "Data",
+      "label": "Data",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -513,7 +513,7 @@
       "bibId": "bib12",
       "title": "NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets",
       "origin": "NCBI Gene Expression Omnibus. Series accession number <a href=\"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44902\">GSE44902</a>",
-      "referenceLabel": "Data",
+      "label": "Data",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -727,7 +727,7 @@
       "bibId": "bib13",
       "title": "IRE-1alpha inhibitors (US20100941530)",
       "origin": "Mankind Corp, United States patent, United States",
-      "referenceLabel": "Patent",
+      "label": "Patent",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -763,7 +763,7 @@
       "title": "Unreliable research: Trouble at the lab",
       "titleLink": "https://www.economist.com/news/briefing/21588057-scientists-think-science-self-correcting-alarming-degree-it-not-trouble",
       "origin": "<i>The Economist</i>, p26–30.",
-      "referenceLabel": "Periodical",
+      "label": "Periodical",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -793,7 +793,7 @@
       "bibId": "bib15",
       "title": "Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression",
       "origin": "arXiv",
-      "referenceLabel": "Preprint",
+      "label": "Preprint",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -836,7 +836,7 @@
       "title": "Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression",
       "titleLink": "https://arxiv.org/abs/1303.0216",
       "origin": "arXiv",
-      "referenceLabel": "Preprint",
+      "label": "Preprint",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -876,7 +876,7 @@
       "title": "Educational Excellence Everywhere",
       "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
       "origin": "London: HMSO",
-      "referenceLabel": "Report",
+      "label": "Report",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -895,7 +895,7 @@
       "bibId": "bib18",
       "title": "The Pymol Molecular Graphics System",
       "origin": "DeLano Scientific, Palo Alto, CA",
-      "referenceLabel": "Software",
+      "label": "Software",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -915,7 +915,7 @@
       "title": "Theory of large fluctuations in stochastic populations",
       "titleLink": "https://doi.org/10.1371/journal.pgen.0030218",
       "origin": "Hebrew University of Jerusalem",
-      "referenceLabel": "Thesis",
+      "label": "Thesis",
       "hasAuthors": true,
       "authorLists": [
         {
@@ -935,7 +935,7 @@
       "title": "The Problem of Perception",
       "titleLink": "http://plato.stanford.edu/entries/perception-problem/",
       "origin": "The Stanford Encyclopedia of Philosophy",
-      "referenceLabel": "Website",
+      "label": "Website",
       "hasAuthors": true,
       "authorLists": [
         {
