@@ -17,6 +17,12 @@ a.reference__title:hover {
   color: $color-primary;
 }
 
+.reference__label {
+  @include author-typeg();
+  @include font-size-and-vertical-height(12);
+  color: $color-text-secondary;
+}
+
 .reference__authors_list {
   display: inline;
   list-style: none;
