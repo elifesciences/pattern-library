@@ -7,6 +7,9 @@ properties:
   titleLink:
     type: string
     minLength: 1
+  label:
+    type: string
+    minLength: 1
   doi:
     $ref: ../components/doi.yaml
   title:
