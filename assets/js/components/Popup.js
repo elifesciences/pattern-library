@@ -45,7 +45,7 @@ module.exports = class Popup {
       return;
     }
 
-    if (this.$link && this.$link.closest('table')) {
+    if (utils.closest(this.$link, 'table')) {
       return;
     }
 
