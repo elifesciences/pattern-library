@@ -49,6 +49,10 @@ module.exports = class Popup {
       return true;
     }
 
+    if (this.$link.closest('table')) {
+      return;
+    }
+
     e.preventDefault();
 
     this.isOpen = !this.isOpen;
