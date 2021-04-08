@@ -45,6 +45,7 @@ module.exports = class Popup {
       return;
     }
 
+    // Stops popup if link is in a table
     if (utils.closest(this.$link, 'table')) {
       return;
     }
