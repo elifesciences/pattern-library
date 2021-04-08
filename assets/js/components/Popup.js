@@ -45,12 +45,12 @@ module.exports = class Popup {
       return;
     }
 
-    if (!this.$link) {
-      return true;
+    if (this.$link && this.$link.closest('table')) {
+      return;
     }
 
-    if (this.$link.closest('table')) {
-      return;
+    if (!this.$link) {
+      return true;
     }
 
     e.preventDefault();
