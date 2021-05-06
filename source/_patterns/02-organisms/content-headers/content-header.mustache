@@ -169,17 +169,17 @@
   {{/image.credit}}
 {{/image.creditOverlay}}
 
+{{^image.creditOverlay}}
+  {{#image.credit}}
+      <div class="content-header__image-credit content-header__image-credit--overlay" id="{{elementId}}">{{{text}}}</div>
+  {{/image.credit}}
+{{/image.creditOverlay}}
+
 </header>
 
 {{#audioPlayer}}
   {{> molecules-audio-player}}
 {{/audioPlayer}}
-
-{{^image.creditOverlay}}
-  {{#image.credit}}
-      <div class="wrapper"><div class="content-header__image-credit" id="{{elementId}}">{{{text}}}</div></div>
-  {{/image.credit}}
-{{/image.creditOverlay}}
 
 {{#image}}
   </div>
