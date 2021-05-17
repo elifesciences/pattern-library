@@ -546,7 +546,7 @@
 }
 
 @mixin image-credit() {
-  color: #fff;
+  color: $color-text-secondary;
   font-family: $font-secondary;
   @include font-size-and-vertical-height(11);
   @include blg-spacing("top", "extra-small");
@@ -566,6 +566,7 @@
 }
 
 @mixin image-credit-overlay {
+  color: #fff;
   position: absolute;
   bottom: 0;
   right: 0;
