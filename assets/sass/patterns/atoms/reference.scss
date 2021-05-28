@@ -1,11 +1,11 @@
 @import "../../definitions";
 
 .reference__title {
-  @include listing-side-art-title-typeg();
-  display: block;
-  @include font-size-and-vertical-height($font-size-base-in-px);
-  @include nospace();
+  @include author-typeg();
+  font-weight: bold;
+  display: inline;
   text-decoration: none;
+  color: $color-text;
 
   .popup__content & {
     @include popup_title_text();
@@ -17,6 +17,12 @@ a.reference__title:hover {
   color: $color-primary;
 }
 
+.reference__label {
+  @include author-typeg();
+  @include font-size-and-vertical-height(12);
+  color: $color-text-secondary;
+}
+
 .reference__authors_list {
   display: inline;
   list-style: none;
@@ -25,7 +31,7 @@ a.reference__title:hover {
 
 .reference__author {
   @include listing-side-author-typeg();
-  @include font-size-and-vertical-height(14);
+  @include font-size-and-vertical-height(16);
   display: inline;
   margin: 0;
   padding: 0;
@@ -56,7 +62,7 @@ a.reference__authors_link:hover {
 }
 
 .reference__authors_list_suffix {
-  @include listing-side-author-typeg();
+  @include author-typeg();
 
   .popup__content & {
     @include popup_title_text();
@@ -65,8 +71,9 @@ a.reference__authors_link:hover {
 }
 
 .reference__origin {
-  @include small-typeg();
-  @include font-size-and-vertical-height(14);
+  @include author-typeg();
+  @include font-size-and-vertical-height(16);
+  display: inline;
   padding-bottom: 0;
 
   & a {
@@ -86,7 +93,7 @@ a.reference__authors_link:hover {
 
 .reference__abstract {
   display: inline;
-  @include small-typeg();
+  @include author-typeg();
   @include font-size-and-vertical-height(14);
 
   .popup__content & {
@@ -106,10 +113,79 @@ a.reference__authors_link:hover {
   }
 }
 
-.reference__abstract:after {
-  content: "\00a0|";
-}
+.reference {
 
-.reference__abstract:last-child:after {
-  content: "";
+  .doi {
+
+    .doi__link {
+      @include font-size-and-vertical-height(14);
+      color: $color-primary;
+    }
+
+    &:before {
+      content: "\a";
+      white-space: pre;
+    }
+
+  }
+
+  .reference__link-outer {
+    @include label-content-typeg($color-text-secondary, $uppercase: true);
+    @include font-size-and-vertical-height(14);
+  }
+
+  .reference__link {
+    padding-bottom: 0;
+    display: block;
+    float: left;
+    max-width: #{$bkpt-site--small - 120}px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: none;
+    white-space: nowrap;
+
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      max-width: #{$bkpt-site--small - 208}px;
+    }
+
+    &:before {
+      white-space: pre;
+    }
+
+  }
+
+  .reference__origin {
+
+    a {
+      @include font-size-and-vertical-height(14);
+      border-bottom: none;
+      color: $color-primary;
+    }
+  }
+
+  .doi + .reference__abstracts {
+    display: inline;
+  }
+
+  .reference__abstracts > .reference__abstract,
+  .reference__origin + .reference__abstracts > .reference__abstract {
+
+    &:before {
+      content: " | ";
+      color: $color-text-dividers;
+    }
+
+  }
+
+  .reference__origin + .reference__abstracts > .reference__abstract {
+
+    &:first-child {
+
+      &:before {
+        content: " ";
+      }
+    }
+
+  }
+
 }

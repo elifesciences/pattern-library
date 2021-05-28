@@ -1,9 +1,22 @@
-<div class="reference"{{#bibId}} data-popup-label="See in references" data-popup-contents="{{bibId.full}}" id="{{bibId.full}}"{{/bibId}}>
+<div class="reference"{{#bibId}} data-popup-label="See in references" data-popup-contents="{{bibId}}" id="{{bibId}}"{{/bibId}}>
+  {{#label}}
+    <div class="reference__label">{{label}}</div>
+  {{/label}}
+  {{#hasAuthors}}
+    {{#authorLists}}
+    <ol class="reference__authors_list">
+      {{#authors}}
+        <li class="reference__author">
+          {{#url}}<a href="{{url}}" class="reference__authors_link">{{/url}}{{{name}}}{{#url}}</a>{{/url}}{{!
+        }}</li>
+      {{/authors}}
+    </ol>
+    <span class="reference__authors_list_suffix">{{suffix}}</span>
+    {{/authorLists}}
+  {{/hasAuthors}}
 
   {{#doi}}
-
     <a href="https://doi.org/{{{doi}}}" class="reference__title">{{{title}}}</a>
-
   {{/doi}}
 
   {{^doi}}
@@ -18,20 +31,6 @@
 
   {{/doi}}
 
-
-  {{#hasAuthors}}
-    {{#authorLists}}
-    <ol class="reference__authors_list">
-      {{#authors}}
-        <li class="reference__author">
-          {{#url}}<a href="{{url}}" class="reference__authors_link">{{/url}}{{{name}}}{{#url}}</a>{{/url}}{{!
-        }}</li>
-      {{/authors}}
-    </ol>
-    <span class="reference__authors_list_suffix">{{suffix}}</span>
-    {{/authorLists}}
-  {{/hasAuthors}}
-
   {{#origin}}
     <div class="reference__origin">{{{origin}}}</div>
   {{/origin}}
@@ -40,11 +39,23 @@
     {{> atoms-doi}}
   {{/doi}}
 
+  {{^doi}}
+
+    {{#titleLink}}
+      <div class="reference__link-outer">
+        <a href="{{titleLink}}" class="reference__link">{{{titleLink}}}</a>
+      </div>
+    {{/titleLink}}
+
+  {{/doi}}
+
   {{#hasAbstracts}}
     <ul class="reference__abstracts">
   {{/hasAbstracts}}
   {{#abstracts}}
-    <li class="reference__abstract"><a href="{{url}}" class="reference__abstract_link">{{{name}}}</a></li>
+    <li class="reference__abstract">
+      <a href="{{url}}" class="reference__abstract_link">{{{name}}}</a>
+    </li>
   {{/abstracts}}
 
   {{#hasAbstracts}}

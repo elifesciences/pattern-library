@@ -8,12 +8,11 @@
 
   // Need the extra specificity here to override
   .article-meta__link {
-    border-bottom: none;
     color: $color-primary;
     text-decoration: none;
 
     &:hover {
-      color: $color-primary-dark;
+      @include color-link-hover();
     }
 
   }
@@ -39,7 +38,6 @@
   @include label-subject-typeg();
   margin: 0;
   padding: 0;
-  text-transform: capitalize;
   &:after {
     content: ", ";
   }

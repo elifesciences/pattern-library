@@ -12,8 +12,14 @@ it’s recommended to run watch tasks for both, which will take care of this.
 ## 1. Dependencies
 You'll need:
 
- - PHP (for Patternlab)
- - nodejs (for gulp)
+* You have installed version 7.3.x of [PHP](https://www.php.net/).
+* You have installed version 6.x of [Node.js](https://nodejs.org/en/).
+* You have installed version 2.7.x of [Python](https://www.python.org/).
+* You have installed a recent version of [OpenJDK](https://openjdk.java.net/).
+
+Optionally, you might also require...
+
+* You have installed a recent version of [Docker](https://www.docker.com/).
 
 ## 2. Automatic setup
 From the root directory run
@@ -38,12 +44,11 @@ You should be good to go, open your browser and you will see the pattern lab.
 
 ## 2. Set up and run Gulp
 
-- if you have not used gulp before, then install the gulp cli globally with `npm install --global gulp-cli`
-- install required npm packages with `npm install`
-- run `gulp` to build the css & js files.
-- then run `gulp watch` to watch for changes to files or do both in one fell swoop with `gulp && gulp watch` (the watch task on its own will not compile your assets until a file is changed).
-- run `gulp local:test:unit --mocha-grep=something` to pass the `--grep` option to mocha and run a subset of tests.
-- if generating files intended for website production, invoke with the production flag, like this: `gulp --environment production`. The minifies css & js files.
+- Install required npm packages with `npm install`
+- Run `npx gulp` to build the css & js files.
+- then run `npx gulp watch` to watch for changes to files or do both in one fell swoop with `npx gulp && npx gulp watch` (the watch task on its own will not compile your assets until a file is changed).
+- run `npx gulp local:test:unit --mocha-grep=something` to pass the `--grep` option to mocha and run a subset of tests.
+- if generating files intended for website production, invoke with the production flag, like this: `npx gulp --environment production`. The minifies css & js files.
 
 ## 3. Generate PatternLab
 
@@ -75,19 +80,19 @@ There is also a list of js file dependencies for each pattern, but individual js
 ## Selenium
 
 ```
-node_modules/webdriverio/bin/wdio wdio-local.conf.js --spec ./test-selenium/hello.spec.js
+npx wdio wdio-local.conf.js --spec ./test-selenium/hello.spec.js
 ```
 
 will run a single test file. This set up relies on your locally installed Firefox.
 
 ```
-gulp test:selenium:local
+npx gulp test:selenium:local
 ```
 
 will instead run all the Selenium tests.
 
 ```
-gulp test:selenium
+npx gulp test:selenium
 ```
 
 is used inside the pattern-library VM and should not be used elsewhere.

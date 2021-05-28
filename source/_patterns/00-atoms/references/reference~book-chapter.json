@@ -1,7 +1,7 @@
 {
   "title": "Understanding the rhythm of breathing: so near, yet so far",
   "origin": "In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452.",
-
+  "label": "Book",
   "doi": {
     "doi": "10.1146/annurev-physiol-040510-130049"
   },
@@ -11,15 +11,15 @@
     {
       "authors": [
         {
-          "name": "JL Feldman",
+          "name": "Feldman JL",
           "url": false
         },
         {
-          "name": "C Del Negro",
+          "name": "Del Negro C",
           "url": false
         },
         {
-          "name": "PA Gray",
+          "name": "Gray PA",
           "url": false
         }
       ],

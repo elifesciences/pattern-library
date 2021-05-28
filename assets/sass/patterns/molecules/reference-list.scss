@@ -7,19 +7,10 @@
 }
 
 .reference-list__item {
-  @include blg-spacing("bottom", "extra-small", "margin");
-  @include padding(0 0 0 48);
-  @include font-size-and-vertical-height($font-size-base-in-px, $font-size-base-in-px);
-  position: relative;
-}
-
-.reference-list__ordinal_number {
-  @include listing-side-art-title-typeg();
-  @include font-size-and-vertical-height($font-size-base-in-px);
+  @include blg-spacing("bottom", "small", "margin");
   @include padding(0);
-  left: 0;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  @include width(42);
+  @include font-size-and-vertical-height(16);
+  display: flex;
+  position: relative;
+  display: flex;
 }

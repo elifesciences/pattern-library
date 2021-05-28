@@ -9,6 +9,10 @@ properties:
     minLength: 1
   image:
     $ref: ../../00-atoms/components/picture.yaml
+  hasPlaceholderImage:
+    type: boolean
+    enum:
+      - true
   profile:
     type: string
     minLength: 1

@@ -2,6 +2,7 @@
 
 .doi {
   @include label-content-typeg($color-text-secondary, $uppercase: true);
+  @include font-size-and-vertical-height(12);
 
   .popup__content & {
     @include popup-ancillary-text();

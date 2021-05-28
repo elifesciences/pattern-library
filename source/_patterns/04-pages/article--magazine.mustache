@@ -1,24 +1,23 @@
-<div class="global-wrapper">
+<div class="global-wrapper" data-item-type="research-article">
   <div class="global-inner">
     <div class="wrapper wrapper--site-header">
       {{#siteHeader}}
         {{> organisms-site-header }}
       {{/siteHeader}}
     </div>
+    <main role="main" class="main blg-margin-bottom-large" id="maincontent">
 
-    <main role="main" class="main" id="maincontent">
+      {{#contentHeader}}
+        {{> organisms-content-header}}
+      {{/contentHeader}}
 
-      <article class="article">
-
-          {{#contentHeader}}
-            {{> organisms-content-header}}
-          {{/contentHeader}}
-
+      {{#contextualData}}
         <div class="wrapper">
-          {{> molecules-contextual-data }}
+        {{> molecules-contextual-data }}
         </div>
+      {{/contextualData}}
 
-        <div class="wrapper">
+      <div class="wrapper wrapper--content">
 
           <div class="grid">
 
@@ -43,11 +42,7 @@
 
               {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
               <section class="article-section">
-
-                <div class="article-section__body">
                   {{> molecules-article-meta }}
-                </div>
-
               </section>
             </div>
 

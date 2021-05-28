@@ -1,0 +1,39 @@
+{
+  "title": "Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression",
+  "titleLink": "https://arxiv.org/abs/1303.0216",
+  "origin": "arXiv",
+  "label": "Preprint",
+  "hasAuthors": true,
+  "authorLists": [
+    {
+      "authors": [
+        {
+          "name": "Paris M",
+          "url": false
+        },
+        {
+          "name": "Kaplan M",
+          "url": false
+        },
+        {
+          "name": "Li XY",
+          "url": false
+        },
+        {
+          "name": "Villalta JE",
+          "url": false
+        },
+        {
+          "name": "Lott SE",
+          "url": false
+        },
+        {
+          "name": "Eisen MB",
+          "url": false
+        }
+      ],
+      "suffix": "(2013)"
+    }
+  ],
+  "hasAbstracts": false
+}

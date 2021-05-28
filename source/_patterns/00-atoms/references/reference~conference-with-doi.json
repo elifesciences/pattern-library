@@ -1,0 +1,85 @@
+{
+  "title": "Boundary learning by optimization with topological constraints",
+  "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+  "label": "Conference",
+  "hasAuthors": true,
+  "authorLists": [
+    {
+      "authors": [
+        {
+          "name": "Jain BV",
+          "url": false
+        },
+        {
+          "name": "Bollman B",
+          "url": false
+        },
+        {
+          "name": "Richardson M",
+          "url": false
+        },
+        {
+          "name": "Berger DR",
+          "url": false
+        },
+        {
+          "name": "Helmstaedter MN",
+          "url": false
+        },
+        {
+          "name": "Briggman KL",
+          "url": false
+        },
+        {
+          "name": "Denk W",
+          "url": false
+        },
+        {
+          "name": "Bowden JB",
+          "url": false
+        },
+        {
+          "name": "Mendenhall JM",
+          "url": false
+        },
+        {
+          "name": "Abraham WC",
+          "url": false
+        },
+        {
+          "name": "Harris KM",
+          "url": false
+        },
+        {
+          "name": "Kasthuri N",
+          "url": false
+        },
+        {
+          "name": "Hayworth KJ",
+          "url": false
+        },
+        {
+          "name": "Schalek R",
+          "url": false
+        },
+        {
+          "name": "Tapia JC",
+          "url": false
+        },
+        {
+          "name": "Lichtman JW",
+          "url": false
+        },
+        {
+          "name": "Seung HS",
+          "url": false
+        }
+      ],
+      "suffix": "(2010)"
+    }
+  ],
+  "doi": {
+  "doi": "10.1038/365833a0"
+  },
+  "hasAbstracts": false
+}

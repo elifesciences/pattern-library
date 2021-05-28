@@ -3,3 +3,10 @@
 .orcid__icon {
   @include inline-image();
 }
+
+.orcid {
+
+  &:hover {
+    @include color-link-hover();
+  }
+}
