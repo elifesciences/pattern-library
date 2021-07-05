@@ -102,7 +102,6 @@
             }
           }
         }
-
       ]
     },
     "searchBox": {
@@ -433,8 +432,8 @@
   "contextualData": {
     "metricsData": {
       "data": [
-        {"text": "<a href=\"#\">Views 149</a>"},
-        {"text": "Cited 5"}
+        { "text": "<a href=\"#\">Views 149</a>" },
+        { "text": "Cited 5" }
       ],
       "annotationCount": {
         "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>0</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
@@ -1146,7 +1145,7 @@
     "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>+</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
     "hasPlaceholder": true,
     "isWrapped": true,
-    "prefix": "Share your feedback",
+    "prefix": "Add a comment",
     "behaviour": "HypothesisOpener"
   },
 
@@ -1181,6 +1180,4 @@
       }
     }
   }
-
-
 }
