@@ -1,8 +1,7 @@
 {
   "siteHeader": {
     "homePagePath": "#",
-    "primaryLinks":
-    {
+    "primaryLinks": {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
@@ -69,9 +68,7 @@
       ]
     },
 
-
-    "secondaryLinks":
-    {
+    "secondaryLinks": {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
@@ -106,7 +103,6 @@
             }
           }
         }
-
       ]
     },
     "searchBox": {
@@ -129,7 +125,6 @@
         "text": "Cell biology"
       }
     }
-
   },
 
   "contentHeader": {
@@ -143,16 +138,16 @@
     }
   },
   "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "mainMenu":{
+  "mainMenu": {
     "links": {
       "items": [
-        {"name": "Research categories", "url": "#res"},
-        {"name": "Author guide", "url": "#aut"},
-        {"name": "Reviewer guide", "url": "#rev"},
-        {"name": "About", "url": "#abo"},
-        {"name": "Inside eLife", "url": "#ins"},
-        {"name": "Careers", "url": "#car"},
-        {"name": "Innovation", "url": "#lab"}
+        { "name": "Research categories", "url": "#res" },
+        { "name": "Author guide", "url": "#aut" },
+        { "name": "Reviewer guide", "url": "#rev" },
+        { "name": "About", "url": "#abo" },
+        { "name": "Inside eLife", "url": "#ins" },
+        { "name": "Careers", "url": "#car" },
+        { "name": "Innovation", "url": "#lab" }
       ]
     },
     "button": {
@@ -167,9 +162,9 @@
   "annotationCount": {
     "isWrapped": true,
     "hasPlaceholder": true,
-    "prefix": "Share your feedback",
+    "prefix": "Add a comment",
     "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>12</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>12</span> annotations on this page). </span>",
-   "behaviour": "HypothesisOpener"
+    "behaviour": "HypothesisOpener"
   },
 
   "emailCta": {
@@ -205,5 +200,4 @@
     { "name": "For the press", "url": "#" },
     { "name": "Resources", "url": "#" }
   ]
-
 }
