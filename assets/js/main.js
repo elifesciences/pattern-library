@@ -18,7 +18,6 @@ Components.CallToAction = require('./components/CallToAction');
 Components.CarouselItem = require('./components/CarouselItem');
 Components.Carousel = require('./components/Carousel');
 Components.ContentHeader = require('./components/ContentHeader');
-Components.CookieOverlay = require('./components/CookieOverlay');
 Components.DelegateBehaviour = require('./components/DelegateBehaviour');
 Components.FilterPanel = require('./components/FilterPanel');
 Components.FragmentHandler = require('./components/FragmentHandler');
@@ -47,7 +46,6 @@ Components.ViewSelector = require('./components/ViewSelector');
 
 // App
 let Elife = function Elife() {
-
   let singletons = (function () {
     let registered = [];
 
@@ -63,17 +61,21 @@ let Elife = function Elife() {
       isRegistered: isRegistered,
       register: register,
     };
+  })();
 
-  }());
-
-  function initialiseComponent($component, inputBehaviour=null) {
-    let behaviour = inputBehaviour ? inputBehaviour : $component.getAttribute('data-behaviour');
+  function initialiseComponent($component, inputBehaviour = null) {
+    let behaviour = inputBehaviour
+      ? inputBehaviour
+      : $component.getAttribute('data-behaviour');
 
     // When present, data-behaviour contains a space-separated list of handlers for that component
     let handlers = behaviour.trim().split(' ');
     handlers.forEach(function (handler) {
       if (!singletons.isRegistered(handler)) {
-        if (!!Components[handler] && typeof Components[handler] === 'function') {
+        if (
+          !!Components[handler] &&
+          typeof Components[handler] === 'function'
+        ) {
           new Components[handler]($component, window, window.document);
           if (Components[handler].isSingleton) {
             singletons.register(handler);
@@ -94,7 +96,9 @@ let Elife = function Elife() {
 
   if ('MutationObserver' in window) {
     let observer = new MutationObserver(() => {
-      let components = document.querySelectorAll('[data-behaviour]:not([data-behaviour-initialised])');
+      let components = document.querySelectorAll(
+        '[data-behaviour]:not([data-behaviour-initialised])'
+      );
       if (components) {
         [].forEach.call(components, (el) => initialiseComponent(el));
       }
@@ -104,4 +108,3 @@ let Elife = function Elife() {
 };
 
 new Elife();
-
