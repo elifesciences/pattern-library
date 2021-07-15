@@ -64,9 +64,7 @@ let Elife = function Elife() {
   })();
 
   function initialiseComponent($component, inputBehaviour = null) {
-    let behaviour = inputBehaviour
-      ? inputBehaviour
-      : $component.getAttribute('data-behaviour');
+    let behaviour = inputBehaviour ? inputBehaviour : $component.getAttribute('data-behaviour');
 
     // When present, data-behaviour contains a space-separated list of handlers for that component
     let handlers = behaviour.trim().split(' ');
