@@ -18,7 +18,6 @@ Components.CallToAction = require('./components/CallToAction');
 Components.CarouselItem = require('./components/CarouselItem');
 Components.Carousel = require('./components/Carousel');
 Components.ContentHeader = require('./components/ContentHeader');
-Components.CookieOverlay = require('./components/CookieOverlay');
 Components.DelegateBehaviour = require('./components/DelegateBehaviour');
 Components.FilterPanel = require('./components/FilterPanel');
 Components.FragmentHandler = require('./components/FragmentHandler');
@@ -64,9 +63,9 @@ let Elife = function Elife() {
       register: register,
     };
 
-  }());
+  })();
 
-  function initialiseComponent($component, inputBehaviour=null) {
+  function initialiseComponent($component, inputBehaviour = null) {
     let behaviour = inputBehaviour ? inputBehaviour : $component.getAttribute('data-behaviour');
 
     // When present, data-behaviour contains a space-separated list of handlers for that component
@@ -104,4 +103,3 @@ let Elife = function Elife() {
 };
 
 new Elife();
-
