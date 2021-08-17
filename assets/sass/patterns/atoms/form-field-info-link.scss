@@ -2,12 +2,15 @@
 
 .form-field-info-link-wrapper {
   display: block;
-  @include font-size-and-vertical-height(12, 18);
+  @include font-size-and-vertical-height(12, 24);
   @include margin(4, "bottom");
   @include margin(12, "top");
 }
 
 .form-field-info-link {
   color: $color-text-secondary;
-  text-decoration: underline;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
