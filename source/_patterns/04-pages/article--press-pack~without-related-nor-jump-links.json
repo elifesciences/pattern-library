@@ -319,17 +319,7 @@
       "url": "/privacy-notice",
       "alignLeft": true
     },
-    "compactForm": {
-      "formAction": "#",
-      "formId": "myCompactForm",
-      "formMethod": "GET",
-      "label": "Email",
-      "inputType": "email",
-      "inputName": "email",
-      "inputValue": "",
-      "inputPlaceholder": "you@email.com",
-      "ctaText": "Go"
-    }
+    "etocSignUpLink": "https://crm.elifesciences.org/crm/content-alerts"
   },
 
   "footerMenuLinks": [
