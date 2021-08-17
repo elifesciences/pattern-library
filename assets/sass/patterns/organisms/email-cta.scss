@@ -19,7 +19,6 @@
   @include h2-typeg();
   color: $color-text;
   @include font-size-and-vertical-height(20);
-  @include nospace();
 }
 
 .email-cta__sub_header {
