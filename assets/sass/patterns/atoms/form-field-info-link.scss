@@ -9,8 +9,10 @@
 
 .form-field-info-link {
   color: $color-text-secondary;
+  font-family: $font-secondary;
 
   &:hover {
+    color: $color-primary;
     text-decoration: underline;
   }
 }
