@@ -63,9 +63,10 @@ let Elife = function Elife() {
       register: register,
     };
 
-  })();
+  }());
 
-  function initialiseComponent($component, inputBehaviour = null) {
+
+  function initialiseComponent($component, inputBehaviour=null) {
     let behaviour = inputBehaviour ? inputBehaviour : $component.getAttribute('data-behaviour');
 
     // When present, data-behaviour contains a space-separated list of handlers for that component
