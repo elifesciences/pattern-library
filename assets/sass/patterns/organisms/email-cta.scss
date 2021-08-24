@@ -17,8 +17,9 @@
 
 .email-cta__header_text {
   @include h2-typeg();
-  color: $color-text;
   @include font-size-and-vertical-height(20);
+  @include padding(24, "bottom");
+  color: $color-text;
 }
 
 .email-cta__privacy {
