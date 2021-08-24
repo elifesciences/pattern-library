@@ -225,13 +225,13 @@
   },
   "emailCta": {
     "headerText": "Be the first to read new articles from eLife",
-    "etocSignUpButtonText": "Sign up for email alerts",
-    "formFieldInfoLink": {
-      "name": "Privacy notice",
-      "url": "/privacy-notice",
-      "alignLeft": true
+    "button": {
+      "text": "Sign up for email alerts",
+      "classes": "button--default",
+      "path": "https://crm.elifesciences.org/crm/content-alerts"
     },
-    "etocSignUpLink": "https://crm.elifesciences.org/crm/content-alerts"
+    "privacyUrl": "#",
+    "privacyLabel": "Privacy notice"
   },
   "footerMenuLinks": [
     {
