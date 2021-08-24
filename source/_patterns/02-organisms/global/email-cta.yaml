@@ -5,14 +5,16 @@ properties:
     headerText:
       type: string
       minLength: 1
-    subHeader:
+    button:
+      $ref: ../../00-atoms/components/button.yaml
+    privacyUrl:
+      type: string
+      format: uri
+    privacyLabel:
       type: string
       minLength: 1
-    formFieldInfoLink:
-      $ref: ../../00-atoms/forms/form-field-info-link.yaml
-    compactForm:
-      $ref: ../../01-molecules/components/compact-form.yaml
     required:
       - headerText
-      - subHeader
-      - compactForm
+      - button
+      - privacyUrl
+      - privacyLabel

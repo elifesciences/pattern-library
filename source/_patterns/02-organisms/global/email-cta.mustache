@@ -6,11 +6,13 @@
         <h2 class="email-cta__header_text">{{{ headerText }}}</h2>
       </header>
 
-      <a href="{{{etocSignUpLink}}}" class="button button--default">{{{ etocSignUpButtonText }}}</a>
+      {{#button}}
+        {{> atoms-button }}
+      {{/button}}
 
-      {{#formFieldInfoLink}}
-      {{> atoms-form-field-info-link}}
-    {{/formFieldInfoLink}}
+      <div class="email-cta__privacy">
+        <a class="email-cta__privacy_link" href="{{privacyUrl}}">{{privacyLabel}}</a>
+      </div>
   </div>
 
 </section>
