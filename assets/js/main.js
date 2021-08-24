@@ -65,7 +65,6 @@ let Elife = function Elife() {
 
   }());
 
-
   function initialiseComponent($component, inputBehaviour=null) {
     let behaviour = inputBehaviour ? inputBehaviour : $component.getAttribute('data-behaviour');
 
