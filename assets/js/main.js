@@ -18,7 +18,6 @@ Components.CallToAction = require('./components/CallToAction');
 Components.CarouselItem = require('./components/CarouselItem');
 Components.Carousel = require('./components/Carousel');
 Components.ContentHeader = require('./components/ContentHeader');
-Components.CookieOverlay = require('./components/CookieOverlay');
 Components.DelegateBehaviour = require('./components/DelegateBehaviour');
 Components.FilterPanel = require('./components/FilterPanel');
 Components.FragmentHandler = require('./components/FragmentHandler');
@@ -104,4 +103,3 @@ let Elife = function Elife() {
 };
 
 new Elife();
-
