@@ -497,23 +497,13 @@
 
   "emailCta": {
     "headerText": "Be the first to read new articles from eLife",
-    "subHeader": "Sign up for alerts",
-    "formFieldInfoLink": {
-      "name": "Privacy notice",
-      "url": "/privacy-notice",
-      "alignLeft": true
+    "button": {
+      "text": "Sign up for email alerts",
+      "classes": "button--default",
+      "path": "https://crm.elifesciences.org/crm/content-alerts"
     },
-    "compactForm": {
-      "formAction": "#",
-      "formId": "myCompactForm",
-      "formMethod": "GET",
-      "label": "Email",
-      "inputType": "email",
-      "inputName": "email",
-      "inputValue": "",
-      "inputPlaceholder": "you@email.com",
-      "ctaText": "Go"
-    }
+    "privacyUrl": "#",
+    "privacyLabel": "Privacy notice"
   },
 
   "footerMenuLinks": [
