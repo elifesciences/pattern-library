@@ -17,14 +17,24 @@
 
 .email-cta__header_text {
   @include h2-typeg();
-  color: $color-text;
   @include font-size-and-vertical-height(20);
-  @include nospace();
+  @include padding(24, "bottom");
+  color: $color-text;
 }
 
-.email-cta__sub_header {
-  color: $color-text;
-  @include body-typeg();
-  @include nospace();
-  @include blg-spacing("bottom", "small");
+.email-cta__privacy {
+  display: block;
+  @include font-size-and-vertical-height(12, 24);
+  @include margin(4, "bottom");
+  @include margin(12, "top");
+}
+
+.email-cta__privacy_link {
+  color: $color-text-secondary;
+  font-family: $font-secondary;
+
+  &:hover {
+    color: $color-primary;
+    text-decoration: underline;
+  }
 }

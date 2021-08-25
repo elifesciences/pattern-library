@@ -6,15 +6,13 @@
         <h2 class="email-cta__header_text">{{{ headerText }}}</h2>
       </header>
 
-      <h3 class="email-cta__sub_header">{{{ subHeader }}}</h3>
+      {{#button}}
+        {{> atoms-button }}
+      {{/button}}
 
-    {{#formFieldInfoLink}}
-      {{> atoms-form-field-info-link}}
-    {{/formFieldInfoLink}}
-
-      {{#compactForm}}
-        {{> molecules-compact-form }}
-      {{/compactForm}}
+      <div class="email-cta__privacy">
+        <a class="email-cta__privacy_link" href="{{privacyUrl}}">{{privacyLabel}}</a>
+      </div>
   </div>
 
 </section>
