@@ -23,11 +23,10 @@
 // Cookiebot styling
 
 @media screen and (min-width: 601px) {
-    #CybotCookiebotDialog
-    .CybotCookiebotDialogBodyLevelButtonSliderWrapper
-    input:focus-visible
-    + span,
-    #CybotCookiebotDialog :focus-visible {
+  #CybotCookiebotDialog
+  .CybotCookiebotDialogBodyLevelButtonSliderWrapper
+  input:focus-visible + span,
+  #CybotCookiebotDialog :focus-visible {
     outline: 0 !important;
-    }
+  }
 }
