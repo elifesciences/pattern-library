@@ -269,21 +269,23 @@
 
 @mixin wrapper($padding: true) {
   box-sizing: content-box;
+  display: grid;
   @include constrain-width($max-site-width, "max");
   margin: auto;
+  border: 1px solid black;
 
   @if $padding {
-    padding-left: 7%;
-    padding-right: 7%;
+    padding-left: 94px;
+    padding-right: 94px;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      padding-left: 14%;
-      padding-right: 14%;
+      padding-left: 48px;
+      padding-right: 48px;
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      padding-left: 3%;
-      padding-right: 3%;
+      padding-left: 24px;
+      padding-right: 24px;
     }
   }
 }
