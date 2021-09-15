@@ -10,6 +10,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: auto;
+  padding: 0 12px;
   @include constrain-width(1104, "max");
 }
 

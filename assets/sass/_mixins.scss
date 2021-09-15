@@ -268,24 +268,22 @@
 }
 
 @mixin wrapper($padding: true) {
-  box-sizing: content-box;
   display: grid;
   @include constrain-width($max-site-width, "max");
   margin: auto;
-  border: 1px solid black;
 
   @if $padding {
-    padding-left: 94px;
-    padding-right: 94px;
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      padding-left: 48px;
-      padding-right: 48px;
+      padding-left: calc(#{$grid-gutter} * 2);
+      padding-right: calc(#{$grid-gutter} * 2);
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      padding-left: 24px;
-      padding-right: 24px;
+      padding-left: $grid-gutter;
+      padding-right: $grid-gutter;
     }
   }
 }
