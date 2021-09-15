@@ -268,8 +268,9 @@
 }
 
 @mixin wrapper($padding: true) {
-  display: grid;
   @include constrain-width($max-site-width, "max");
+  box-sizing: content-box;
+  display: grid;
   margin: auto;
 
   @if $padding {
