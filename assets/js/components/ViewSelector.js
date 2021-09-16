@@ -32,7 +32,7 @@ module.exports = class ViewSelector {
       this.insertSideBySideListItem();
     }
 
-    this.mainTarget = this.doc.querySelector('.main');
+    this.mainTarget = this.doc.querySelector('.email-cta__container');
     if (!this.mainTarget) {
       return;
     }
