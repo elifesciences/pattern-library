@@ -9,6 +9,7 @@
 .footer-cell__container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: auto;
   padding: 0 12px;
   @include constrain-width(1104, "max");
