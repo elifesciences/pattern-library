@@ -15,6 +15,10 @@
   max-width: 27.5rem;
 }
 
+.email-cta__header {
+  display: block;
+}
+
 .email-cta__header_text {
   @include h2-typeg();
   @include font-size-and-vertical-height(20);
