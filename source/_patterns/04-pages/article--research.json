@@ -74,12 +74,12 @@
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
-          "text": "Careers",
+          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
           "path": "#",
           "classes": "nav-secondary__item"
         },
         {
-          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "text": "Community",
           "path": "#",
           "classes": "nav-secondary__item"
         },
@@ -96,7 +96,7 @@
           "classes": "nav-secondary__item",
           "loginControl": {
             "button": {
-              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
+              "text": "Log in/Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
               "path": "#",
               "classes": "button--login"
             }
