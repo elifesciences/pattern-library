@@ -182,10 +182,24 @@ module.exports = class ViewSelector {
 
       // Allow it to scroll again if it would otherwise over-/under-lay following element
       this.navDetect = this.doc.querySelector('.contextual-data');
-      let bottomOfMain = this.navDetect.getBoundingClientRect().top;
-      if (bottomOfMain < this.$elm.offsetHeight) {
+      let bottomOfMain = this.navDetect.getBoundingClientRect().bottom;
+      console.log('test');
 
-        let amountToNudgeUp = 200;
+      if (bottomOfMain < this.window.innerHeight) {
+
+        let amountToNudgeUp = 0;
+        const burger = document.querySelector('.content-header__item_toggle--expanded');
+
+        if (burger) {
+          if (bottomOfMain < 0) {
+            amountToNudgeUp = 0;
+          } else {
+            amountToNudgeUp = 250;
+          }
+        } else {
+          amountToNudgeUp = 0;
+        }
+
         this.$elm.style.top = amountToNudgeUp + 'px';
 
         return;
@@ -194,7 +208,7 @@ module.exports = class ViewSelector {
       // Ensure top of component is not off top of screen once bottom of main is off screen bottom
       // Safety net: required because a fast scroll may prevent all code running as desired.
       if (bottomOfMain >= this.window.innerHeight) {
-        this.$elm.style.top = '200px';
+        this.$elm.style.top = '250px';
       }
 
       return;
@@ -203,7 +217,7 @@ module.exports = class ViewSelector {
     // Otherwise fix its position if it would otherwise scroll off the top of the screen
     if (this.window.pageYOffset >= this.elmYOffset) {
       this.$elm.classList.add(this.cssFixedClassName);
-      this.$elm.style.top = '200px';
+      this.$elm.style.top = '250px';
     }
   }
 
