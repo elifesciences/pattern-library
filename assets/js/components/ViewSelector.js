@@ -216,7 +216,7 @@ module.exports = class ViewSelector {
     // Otherwise fix its position if it would otherwise scroll off the top of the screen
     if (this.window.pageYOffset >= this.elmYOffset) {
       this.$elm.classList.add(this.cssFixedClassName);
-      this.$elm.style.top = '0px';
+      this.$elm.style.top = '250px';
     }
   }
 
