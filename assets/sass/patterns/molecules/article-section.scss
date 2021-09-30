@@ -215,19 +215,23 @@ $arrow-size: 5;
     box-sizing: content-box;
     display: block;
     list-style: none;
+    margin: 0;
     padding: 0;
     overflow: hidden;
 
     li {
       @include font-size-and-vertical-height(14, $blg-space-small-in-px);
       font-family: $font-secondary;
-      float: left;
 
-      + li::before {
-        color: $color-text-dividers;
-        content: "|";
-        margin-left: 0;
-        padding-left: 0;
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+        float: left;
+
+        + li::before {
+          color: $color-text-dividers;
+          content: "|";
+          margin-left: 0;
+          padding-left: 0;
+        }
       }
     }
   }
