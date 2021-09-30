@@ -215,6 +215,16 @@ $arrow-size: 5;
     }
   }
 
+  .doi--article-section {
+
+    a.doi__link {
+      border-bottom: none;
+      color: $color-text-secondary;
+    }
+  }
+}
+.article-section__body {
+
   .article-section__related {
     @include margin(12, "top");
     box-sizing: content-box;
@@ -226,7 +236,7 @@ $arrow-size: 5;
 
     .article-section__related_item {
       @include font-size-and-vertical-height(14, $blg-space-small-in-px);
-      font-family: $font-secondary;
+      font-family: $font-secondary !important;
 
       .article-section__related_link {
         border-bottom: none;
@@ -244,14 +254,6 @@ $arrow-size: 5;
           padding-left: 0;
         }
       }
-    }
-  }
-
-  .doi--article-section {
-
-    a.doi__link {
-      border-bottom: none;
-      color: $color-text-secondary;
     }
   }
 }
