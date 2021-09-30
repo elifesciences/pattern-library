@@ -209,22 +209,33 @@ $arrow-size: 5;
 
   .article-section__body {
     margin-top: 0;
+
+    p {
+      @include margin(12, "bottom");
+    }
   }
 
   .article-section__related {
+    @include margin(12, "top");
     box-sizing: content-box;
     display: block;
     list-style: none;
-    margin: 0;
+    margin-bottom: 0;
     padding: 0;
     overflow: hidden;
 
-    li {
+    .article-section__related_item {
       @include font-size-and-vertical-height(14, $blg-space-small-in-px);
       font-family: $font-secondary;
 
+      .article-section__related_link {
+        border-bottom: none;
+        color: $color-primary;
+      }
+
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
         float: left;
+        @include margin(5, "right");
 
         + li::before {
           color: $color-text-dividers;
