@@ -29,15 +29,15 @@
       {{> atoms-doi}}
     {{/doi}}
 
-    {{#relatedLinks}}
+    {{#relatedLinks.0}}
       <ul class="article-section__related">
-        {{#items}}
+        {{#relatedLinks}}
         <li class="article-section__related_item">
           <a href="{{url}}" class="article-section__related_link">{{name}}</a>
         </li>
-        {{/items}}
+        {{/relatedLinks}}
       </ul>
-    {{/relatedLinks}}
+    {{/relatedLinks.0}}
   </div>
 
 </section>

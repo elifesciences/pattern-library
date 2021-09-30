@@ -40,23 +40,17 @@ properties:
       - name
       - url
   relatedLinks:
-    type: object
+    type: array
     properties:
-      items:
-        type: array
-        properties:
-          name:
-            type: string
-            minLength: 1
-          url:
-            type: string
-            minLength: 1
-        required:
-          - name
-          - url
-        minItems: 1
+      name:
+        type: string
+        minLength: 1
+      url:
+        type: string
+        minLength: 1
     required:
-      - items
+      - name
+      - url
 dependencies:
   isInitiallyClosed:
     - hasBehaviour
