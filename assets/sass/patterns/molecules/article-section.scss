@@ -243,7 +243,7 @@ $arrow-size: 5;
         color: $color-primary;
       }
 
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
         float: left;
         @include margin(5, "right");
 
