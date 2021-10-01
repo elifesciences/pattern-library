@@ -298,7 +298,11 @@ module.exports = class HypothesisOpener {
   static positionByFirstSection($elm, $contentContainer) {
     const $firstSection = $contentContainer.querySelectorAll('.article-section--first');
     if ($firstSection.length) {
-      $firstSection[$firstSection.length - 1].appendChild($elm);
+      if ($firstSection[$firstSection.length - 1].classList.contains('article-section--highlighted')) {
+        $firstSection[$firstSection.length - 1].parentNode.insertAfter($elm, $firstSection[$firstSection.length - 1]);
+      } else {
+        $firstSection[$firstSection.length - 1].appendChild($elm);
+      }
       HypothesisOpener.wrappedInContainer($elm);
       return;
     }
