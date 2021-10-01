@@ -284,9 +284,9 @@ module.exports = class HypothesisOpener {
   }
 
   static positionBySecondSection($elm, $contentContainer) {
-    const $firstSection = $contentContainer.querySelector('.article-section--first:last-child');
-    if ($firstSection) {
-      $firstSection.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
+    const $firstSection = $contentContainer.querySelectorAll('.article-section--first');
+    if ($firstSection.length) {
+      $firstSection[$firstSection.length - 1].nextElementSibling.querySelector('.article-section__body').appendChild($elm);
       HypothesisOpener.wrappedInContainer($elm);
       return;
     }
@@ -296,9 +296,9 @@ module.exports = class HypothesisOpener {
   }
 
   static positionByFirstSection($elm, $contentContainer) {
-    const $firstSection = $contentContainer.querySelector('.article-section--first:last-child');
-    if ($firstSection) {
-      $firstSection.appendChild($elm);
+    const $firstSection = $contentContainer.querySelectorAll('.article-section--first');
+    if ($firstSection.length) {
+      $firstSection[$firstSection.length - 1].appendChild($elm);
       HypothesisOpener.wrappedInContainer($elm);
       return;
     }
