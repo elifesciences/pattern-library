@@ -284,7 +284,7 @@ module.exports = class HypothesisOpener {
   }
 
   static positionBySecondSection($elm, $contentContainer) {
-    const $firstSection = $contentContainer.querySelector('.article-section--first');
+    const $firstSection = $contentContainer.querySelector('.article-section--first:last-child');
     if ($firstSection) {
       $firstSection.nextElementSibling.querySelector('.article-section__body').appendChild($elm);
       HypothesisOpener.wrappedInContainer($elm);
@@ -296,7 +296,7 @@ module.exports = class HypothesisOpener {
   }
 
   static positionByFirstSection($elm, $contentContainer) {
-    const $firstSection = $contentContainer.querySelector('.article-section--first');
+    const $firstSection = $contentContainer.querySelector('.article-section--first:last-child');
     if ($firstSection) {
       $firstSection.appendChild($elm);
       HypothesisOpener.wrappedInContainer($elm);
