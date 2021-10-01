@@ -303,6 +303,7 @@ module.exports = class HypothesisOpener {
       } else {
         $firstSection[$firstSection.length - 1].appendChild($elm);
       }
+
       HypothesisOpener.wrappedInContainer($elm);
       return;
     }
