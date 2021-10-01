@@ -93,7 +93,8 @@ module.exports = class ViewSelector {
       this.handleHighlighting(utils.closest);
     }
 
-    this.handlePositioning();
+    //this.handlePositioning();
+    this.authorExpandDetect();
   }
 
   handleHighlighting(findClosest) {
@@ -169,56 +170,87 @@ module.exports = class ViewSelector {
     return $found;
   }
 
-  handlePositioning() {
-    // If it's position is fixed
+    authorExpandDetect () {
+    // Testing MutationObserver
 
-    if (this.$elm.classList.contains(this.cssFixedClassName)) {
+    // identify an element to observe
+    const elementToObserve = document.querySelector('.content-header__item_toggle');
 
-      // Allow it to scroll again if it could keep its position & not scroll off top of screen
-      if (this.window.pageYOffset < this.elmYOffset) {
-        this.$elm.classList.remove(this.cssFixedClassName);
-        return;
+    // create a new instance of `MutationObserver` named `observer`,
+    // passing it a callback function
+    const observer = new MutationObserver(function () {
+      console.log('callback that runs when observer is triggered');
+      const contentHeaderToggle = document.querySelector('.content-header__item_toggle')
+      .classList.contains('content-header__item_toggle--expanded');
+
+      let amountToNudgeUp = 0;
+      if (contentHeaderToggle) {
+        amountToNudgeUp = 250;
+        console.log('if 250');
+      } else {
+        amountToNudgeUp = 0;
+        console.log('if 0');
       }
 
-      // Allow it to scroll again if it would otherwise over-/under-lay following element
-      this.navDetect = this.doc.querySelector('.contextual-data');
-      let bottomOfMain = this.navDetect.getBoundingClientRect().bottom;
-
-      if (bottomOfMain < this.window.innerHeight) {
-
-        let amountToNudgeUp = 0;
-        const authDetect = document.querySelector('.content-header__item_toggle--expanded');
-
-        if (authDetect) {
-          if (bottomOfMain < 0) {
-            amountToNudgeUp = 0;
-            console.log('if 0');
-          } else {
-            amountToNudgeUp = 250;
-            console.log('if 250');
-          }
-        }
-
-        this.$elm.style.top = amountToNudgeUp + 'px';
-
-        return;
-      }
-
-      // Ensure top of component is not off top of screen once bottom of main is off screen bottom
-      // Safety net: required because a fast scroll may prevent all code running as desired.
-      if (bottomOfMain >= 0) {
-        this.$elm.style.top = '250px';
-      }
-
+      this.style.top = amountToNudgeUp + 'px';
       return;
-    }
+    });
 
-    // Otherwise fix its position if it would otherwise scroll off the top of the screen
-    if (this.window.pageYOffset >= this.elmYOffset) {
-      this.$elm.classList.add(this.cssFixedClassName);
-      this.$elm.style.top = '250px';
-    }
+    // call `observe()` on that MutationObserver instance,
+    // passing it the element to observe, and the options object
+    observer.observe(elementToObserve, { subtree: true, childList: true, attributes: true });
   }
+
+  // handlePositioning() {
+  //   // If it's position is fixed
+
+  //   if (this.$elm.classList.contains(this.cssFixedClassName)) {
+
+  //     // Allow it to scroll again if it could keep its position & not scroll off top of screen
+  //     if (this.window.pageYOffset < this.elmYOffset) {
+  //       this.$elm.classList.remove(this.cssFixedClassName);
+  //       return;
+  //     }
+
+  //     // Allow it to scroll again if it would otherwise over-/under-lay following element
+  //     this.navDetect = this.doc.querySelector('.contextual-data');
+  //     let bottomOfMain = this.navDetect.getBoundingClientRect().bottom;
+
+  //     if (bottomOfMain < this.window.innerHeight) {
+
+  //       let amountToNudgeUp = 0;
+  //       const authDetect = document.querySelector('.content-header__item_toggle--expanded');
+
+  //       if (authDetect) {
+  //         if (bottomOfMain < 0) {
+  //           amountToNudgeUp = 0;
+  //           console.log('if 0');
+  //         } else {
+  //           amountToNudgeUp = 250;
+  //           console.log('if 250');
+  //         }
+  //       }
+
+  //       this.$elm.style.top = amountToNudgeUp + 'px';
+
+  //       return;
+  //     }
+
+  //     // Ensure top of component is not off top of screen once bottom of main is off screen bottom
+  //     // Safety net: required because a fast scroll may prevent all code running as desired.
+  //     if (bottomOfMain >= 0) {
+  //       this.$elm.style.top = '250px';
+  //     }
+
+  //     return;
+  //   }
+
+  //   // Otherwise fix its position if it would otherwise scroll off the top of the screen
+  //   if (this.window.pageYOffset >= this.elmYOffset) {
+  //     this.$elm.classList.add(this.cssFixedClassName);
+  //     this.$elm.style.top = '250px';
+  //   }
+  // }
 
   sideBySideViewAvailable() {
     const link = this.$elm.dataset.sideBySideLink;
