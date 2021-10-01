@@ -299,7 +299,7 @@ module.exports = class HypothesisOpener {
     const $firstSection = $contentContainer.querySelectorAll('.article-section--first');
     if ($firstSection.length) {
       if ($firstSection[$firstSection.length - 1].classList.contains('article-section--highlighted')) {
-        $firstSection[$firstSection.length - 1].parentNode.insertAfter($elm, $firstSection[$firstSection.length - 1]);
+        $firstSection[$firstSection.length - 1].parentNode.insertBefore($elm, $firstSection[$firstSection.length - 1].nextElementSibling);
       } else {
         $firstSection[$firstSection.length - 1].appendChild($elm);
       }
