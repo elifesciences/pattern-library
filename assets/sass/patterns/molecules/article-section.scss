@@ -245,13 +245,16 @@ $arrow-size: 5;
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
         float: left;
-        @include margin(5, "right");
 
-        + li::before {
+        + li {
+          @include margin(5, "left");
+        }
+
+        &:not(:last-child)::after {
           color: $color-text-dividers;
           content: "|";
-          margin-left: 0;
-          padding-left: 0;
+          margin-right: 0;
+          padding-right: 0;
         }
       }
     }
