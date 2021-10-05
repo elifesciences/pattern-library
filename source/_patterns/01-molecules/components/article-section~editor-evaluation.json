@@ -1,0 +1,26 @@
+{
+  "classes": "article-section--highlighted",
+  "id": "editor-evaluation",
+  "title": "Editor's evaluation",
+  "headingLevel": 2,
+  "doi": {
+    "doi": "10.7554/eLife.62927.sa1",
+    "variant": "article-section"
+  },
+  "body": "<p>The manuscript by Rosello et al. represents a major advance in implementation of cutting-edge genome editing methodologies in the zebrafish. The study seeks to describe optimized tools for precise base editing in zebrafish and to demonstrate their effective application. Overall, this study demonstrates that cytosine base editing is an efficient and powerful method for introducing precise in vivo edits into the zebrafish genome, and will be of interest to scientists who use zebrafish and other genetic systems to model human development and disease.</p>",
+  "relatedLinks": [
+    {
+      "name": "Decision letter",
+      "url": "#"
+    },
+    {
+      "name": "Reviews on Sciety",
+      "url": "#"
+    },
+    {
+      "name": "eLife's review process",
+      "url": "#"
+    }
+  ],
+  "hasBehaviour": false
+}

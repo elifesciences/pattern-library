@@ -1,5 +1,5 @@
 <section
-    class="article-section {{#isFirst}}article-section--first{{/isFirst}}"
+    class="article-section{{#classes}} {{classes}}{{/classes}} {{#isFirst}}article-section--first{{/isFirst}}"
   {{#id}} id="{{id}}"{{/id}}
   {{#hasBehaviour}}data-behaviour="ArticleSection"{{/hasBehaviour}}
   {{#isInitiallyClosed}}data-initial-state="closed"{{/isInitiallyClosed}}
@@ -28,6 +28,16 @@
     {{#doi}}
       {{> atoms-doi}}
     {{/doi}}
+
+    {{#relatedLinks.0}}
+      <ul class="article-section__related">
+        {{#relatedLinks}}
+        <li class="article-section__related_item">
+          <a href="{{url}}" class="article-section__related_link">{{name}}</a>
+        </li>
+        {{/relatedLinks}}
+      </ul>
+    {{/relatedLinks.0}}
   </div>
 
 </section>
