@@ -11,4 +11,5 @@
 
 .checkboxes__item_label {
   @include checkbox-label();
+  font-weight: normal;
 }
