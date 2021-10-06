@@ -15,10 +15,16 @@
     {{#messageGroup}} aria-describedby="{{id}}"{{#errorText}} aria-invalid="true"{{/errorText}}{{/messageGroup}}
   >
 
-    {{#checkboxes}}
-      <input type="checkbox" id="{{id}}" name="{{name}}" value="{{value}}" {{#checked}}checked{{/checked}} />
-      <label for="{{id}}">{{displayValue}}</label>
-    {{/checkboxes}}
+    <ul class="checkboxes__list">
+      {{#checkboxes}}
+        <li class="checkboxes__list_item">
+          <label class="checkboxes__item_label">
+            <input type="checkbox" id="{{id}}" name="{{name}}" value="{{value}}" {{#checked}}checked{{/checked}} />
+            {{displayValue}}
+          </label>
+        </li>
+      {{/checkboxes}}
+    <ul>
   </div>
 
   {{#messageGroup}}

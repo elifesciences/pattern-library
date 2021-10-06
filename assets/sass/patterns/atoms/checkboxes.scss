@@ -1,0 +1,14 @@
+@import "../../definitions";
+
+.checkboxes__list {
+  list-style-type: none;
+  @include nospace("left");
+}
+
+.checkboxes__list_item {
+  @include font-size-and-vertical-height($font-size-base-in-px);
+}
+
+.checkboxes__item_label {
+  @include checkbox-label();
+}
