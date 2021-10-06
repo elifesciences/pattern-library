@@ -6,19 +6,22 @@
   },
   "checkboxes": [
     {
-      "name": "checkbox1",
-      "value": "checkbox1",
+      "id": "checkbox_id_1",
+      "name": "checkbox[]",
+      "value": "checkbox_1",
       "displayValue": "Checkbox 1",
       "checked": true
     },
     {
-      "name": "checkbox2",
-      "value": "checkbox2",
+      "id": "checkbox_id_2",
+      "name": "checkbox[]",
+      "value": "checkbox_2",
       "displayValue": "Checkbox 2"
     },
     {
-      "name": "checkbox3",
-      "value": "checkbox4",
+      "id": "checkbox_id_3",
+      "name": "checkbox[]",
+      "value": "checkbox_3",
       "displayValue": "Checkbox 3"
     }
   ]
