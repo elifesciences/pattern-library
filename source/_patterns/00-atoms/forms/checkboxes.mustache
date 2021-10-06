@@ -1,0 +1,37 @@
+<div class="form-item{{#state}} form-item--{{state}}{{/state}}">
+
+  {{#label}}
+    <label for="{{id}}"
+           class="form-item__label{{#isVisuallyHidden}} visuallyhidden{{/isVisuallyHidden}}">
+      {{labelText}}
+    </label>
+  {{/label}}
+  <div class="checkboxes{{#state}} checkboxes--{{state}}{{/state}}"
+    {{#id}} id="{{id}}"{{/id}}
+    {{#name}} name="{{name}}"{{/name}}
+    {{#autofocus}} autofocus{{/autofocus}}
+    {{#required}} required="required"{{/required}}
+    {{#disabled}} disabled="disabled"{{/disabled}}
+    {{#messageGroup}} aria-describedby="{{id}}"{{#errorText}} aria-invalid="true"{{/errorText}}{{/messageGroup}}
+  >
+
+    {{#checkboxes}}
+      <input type="checkbox" name="{{name}}" value="{{value}}" {{#checked}}checked{{/checked}} />
+      <label for="{{name}}">{{displayValue}}</label>
+    {{/checkboxes}}
+  </div>
+
+  {{#messageGroup}}
+    <div id="{{id}}">
+
+      {{#infoText}}
+        <div class="form-item__message form-item__message--info">{{{.}}}</div>
+      {{/infoText}}
+
+      {{#errorText}}
+        <div class="form-item__message form-item__message--invalid">{{{.}}}</div>
+      {{/errorText}}
+
+    </div>
+  {{/messageGroup}}
+</div>

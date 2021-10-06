@@ -1,0 +1,25 @@
+{
+  "id": "checkboxes1",
+  "name": "checkboxes1",
+  "label": {
+    "labelText": "Checkboxes"
+  },
+  "checkboxes": [
+    {
+      "name": "checkbox1",
+      "value": "checkbox1",
+      "displayValue": "Checkbox 1",
+      "checked": true
+    },
+    {
+      "name": "checkbox2",
+      "value": "checkbox2",
+      "displayValue": "Checkbox 2"
+    },
+    {
+      "name": "checkbox3",
+      "value": "checkbox4",
+      "displayValue": "Checkbox 3"
+    }
+  ]
+}
