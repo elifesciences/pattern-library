@@ -8,7 +8,6 @@
   {{/label}}
   <div class="checkboxes{{#state}} checkboxes--{{state}}{{/state}}"
     {{#id}} id="{{id}}"{{/id}}
-    {{#name}} name="{{name}}"{{/name}}
     {{#autofocus}} autofocus{{/autofocus}}
     {{#required}} required="required"{{/required}}
     {{#disabled}} disabled="disabled"{{/disabled}}
@@ -19,7 +18,7 @@
       {{#checkboxes}}
         <li class="checkboxes__list_item">
           <label class="checkboxes__item_label">
-            <input type="checkbox" id="{{id}}" name="{{name}}" value="{{value}}" {{#checked}}checked{{/checked}} />
+            <input type="checkbox" id="{{id}}"{{#name}} name="{{name}}"{{/name}} value="{{value}}"{{#checked}} checked{{/checked}} />
             {{displayValue}}
           </label>
         </li>

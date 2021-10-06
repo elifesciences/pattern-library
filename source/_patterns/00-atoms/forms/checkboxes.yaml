@@ -50,9 +50,6 @@ properties:
         id:
           type: string
           minLength: 1
-        name:
-          type: string
-          minLength: 1
         value:
           type: string
           minLength: 1
