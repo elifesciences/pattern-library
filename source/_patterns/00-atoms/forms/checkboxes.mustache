@@ -17,10 +17,23 @@
     <ul class="checkboxes__list">
       {{#checkboxes}}
         <li class="checkboxes__list_item">
-          <label class="checkboxes__item_label">
-            <input type="checkbox"{{#id}} id="{{id}}"{{/id}} name="{{name}}" value="{{value}}"{{#checked}} checked{{/checked}} />
-            {{label}}
-          </label>
+          {{^children}}
+            <label class="checkboxes__item_label">
+                <input type="checkbox"{{#id}} id="{{id}}"{{/id}} name="{{name}}" value="{{value}}"{{#checked}} checked{{/checked}} />
+                {{label}}
+            </label>
+          {{/children}}
+          {{#children.0}}
+            {{#groupLabel}}<label class="form-item__label">{{groupLabel}}</label>{{/groupLabel}}
+            <ul class="checkboxes__children_list">
+              {{#children}}
+                <label class="checkboxes__item_label">
+                    <input type="checkbox"{{#id}} id="{{id}}"{{/id}} name="{{name}}" value="{{value}}"{{#checked}} checked{{/checked}} />
+                    {{label}}
+                </label>
+              {{/children}}
+            </ul>
+          {{/children.0}}
         </li>
       {{/checkboxes}}
     <ul>

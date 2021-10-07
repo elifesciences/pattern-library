@@ -20,6 +20,21 @@
       "id": "checkbox_id_3",
       "value": "checkbox_3",
       "label": "Checkbox 3"
+    },
+    {
+      "groupLabel": "Children detected!",
+      "children": [
+        {
+          "id": "checkbox_id_4",
+          "value": "checkbox_4",
+          "label": "Checkbox 4"
+        },
+        {
+          "id": "checkbox_id_5",
+          "value": "checkbox_5",
+          "label": "Checkbox 5"
+        }
+      ]
     }
   ]
 }
