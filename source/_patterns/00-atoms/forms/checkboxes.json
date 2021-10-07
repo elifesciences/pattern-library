@@ -8,18 +8,18 @@
     {
       "id": "checkbox_id_1",
       "value": "checkbox_1",
-      "displayValue": "Checkbox 1",
+      "label": "Checkbox 1",
       "checked": true
     },
     {
       "id": "checkbox_id_2",
       "value": "checkbox_2",
-      "displayValue": "Checkbox 2"
+      "label": "Checkbox 2"
     },
     {
       "id": "checkbox_id_3",
       "value": "checkbox_3",
-      "displayValue": "Checkbox 3"
+      "label": "Checkbox 3"
     }
   ]
 }
