@@ -18,8 +18,8 @@
       {{#checkboxes}}
         <li class="checkboxes__list_item">
           <label class="checkboxes__item_label">
-            <input type="checkbox" id="{{id}}"{{#name}} name="{{name}}"{{/name}} value="{{value}}"{{#checked}} checked{{/checked}} />
-            {{displayValue}}
+            <input type="checkbox"{{#id}} id="{{id}}"{{/id}} name="{{name}}" value="{{value}}"{{#checked}} checked{{/checked}} />
+            {{label}}
           </label>
         </li>
       {{/checkboxes}}

@@ -53,14 +53,14 @@ properties:
         value:
           type: string
           minLength: 1
-        displayValue:
+        label:
           type: string
           minLength: 1
         checked:
           type: boolean
       required:
         - value
-        - displayValue
+        - label
 required:
   - name
   - checkboxes
