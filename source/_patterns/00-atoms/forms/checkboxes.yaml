@@ -62,6 +62,7 @@ properties:
         - value
         - displayValue
 required:
+  - name
   - checkboxes
 dependencies:
   label: [id]
