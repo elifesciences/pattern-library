@@ -34,6 +34,7 @@
   display: block;
   @include font-size-and-vertical-height($font-size-base-in-px);
   @include margin(36, "bottom");
+  font-family: $font-secondary;
   font-weight: bold;
 }
 
