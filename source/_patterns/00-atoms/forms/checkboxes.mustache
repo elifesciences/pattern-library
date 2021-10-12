@@ -2,7 +2,7 @@
 
   {{#label}}
     <label for="{{id}}"
-           class="form-item__label{{#isVisuallyHidden}} visuallyhidden{{/isVisuallyHidden}}">
+           class="form-item__title{{#isVisuallyHidden}} visuallyhidden{{/isVisuallyHidden}}">
       {{labelText}}
     </label>
   {{/label}}
@@ -10,7 +10,6 @@
     {{#id}} id="{{id}}"{{/id}}
     {{#autofocus}} autofocus{{/autofocus}}
     {{#required}} required="required"{{/required}}
-    {{#disabled}} disabled="disabled"{{/disabled}}
     {{#messageGroup}} aria-describedby="{{id}}"{{#errorText}} aria-invalid="true"{{/errorText}}{{/messageGroup}}
   >
 
@@ -20,17 +19,19 @@
           {{^children}}
             <label class="checkboxes__item_label">
                 <input type="checkbox"{{#id}} id="{{id}}"{{/id}} name="{{name}}" value="{{value}}"{{#checked}} checked{{/checked}} />
-                {{label}}
+                <span class="checkbox__item">{{label}}</span>
             </label>
           {{/children}}
           {{#children.0}}
-            {{#groupLabel}}<label class="form-item__label">{{groupLabel}}</label>{{/groupLabel}}
+            {{#groupLabel}}<label class="checkboxes__sub_label">{{groupLabel}}</label>{{/groupLabel}}
             <ul class="checkboxes__children_list">
               {{#children}}
-                <label class="checkboxes__item_label">
-                    <input type="checkbox"{{#id}} id="{{id}}"{{/id}} name="{{name}}" value="{{value}}"{{#checked}} checked{{/checked}} />
-                    {{label}}
-                </label>
+                <li class="checkboxes__children_list_item">
+                  <label class="checkboxes__item_label">
+                      <input type="checkbox"{{#id}} id="{{id}}"{{/id}} name="{{name}}" value="{{value}}"{{#checked}} checked{{/checked}} />
+                      {{label}}
+                  </label>
+                </li>
               {{/children}}
             </ul>
           {{/children.0}}
