@@ -15,6 +15,7 @@
 
 .checkboxes__item_label {
   @include checkbox-label();
+  @include padding(24, "bottom"); // Added due to mixin checkbox-label being used elsewhere
   font-weight: normal;
 
   input {
@@ -38,7 +39,7 @@
 .checkboxes__sub_label {
   @include font-size-and-vertical-height(12, 24);
   @include padding(12, "bottom");
-  @include padding(24, "top");
+  @include padding(12, "top");
   font-family: $font-secondary;
   display: inline-block;
   color: #757575;
