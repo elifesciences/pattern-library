@@ -67,3 +67,13 @@
   display: inline-block;
   color: #757575;
 }
+
+.checkboxes--invalid {
+  .checkboxes__item_label {
+    color: $color-attention;
+  }
+
+  input[type="checkbox"]:before {
+    border-color: $color-attention;
+  }
+}
