@@ -30,6 +30,13 @@
   @include margin(4, "bottom");
 }
 
+.form-item__title {
+  display: block;
+  @include font-size-and-vertical-height($font-size-base-in-px);
+  @include margin(36, "bottom");
+  font-weight: bold;
+}
+
 .form-item__message {
   display: block;
   @include typeg-form-message();
