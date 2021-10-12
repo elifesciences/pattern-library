@@ -5,6 +5,10 @@
   @include nospace("left");
 }
 
+.checkboxes__children_list {
+  padding: 0;
+}
+
 .checkboxes__list_item {
   @include font-size-and-vertical-height($font-size-base-in-px);
 }
@@ -12,4 +16,30 @@
 .checkboxes__item_label {
   @include checkbox-label();
   font-weight: normal;
+
+  input {
+    bottom: -4px;
+    height: 20px;
+    position: relative;
+    width: 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    -webkit-box-shadow: 0px 0px 0px 1px $color-text-dividers;
+    -moz-box-shadow: 0px 0px 0px 1px $color-text-dividers;
+    box-shadow: 0px 0px 0px 1px $color-text-dividers;
+  }
+
+  .checkboxes__item {
+    display: inline-block;
+  }
+}
+
+.checkboxes__sub_label {
+  @include font-size-and-vertical-height(12, 24);
+  @include padding(12, "bottom");
+  @include padding(24, "top");
+  font-family: $font-secondary;
+  display: inline-block;
+  color: #757575;
 }
