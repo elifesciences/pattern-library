@@ -14,8 +14,7 @@
     {
       "id": "checkbox_id_1",
       "value": "checkbox_1",
-      "label": "Checkbox 1",
-      "checked": true
+      "label": "Checkbox 1"
     },
     {
       "id": "checkbox_id_2",

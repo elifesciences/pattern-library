@@ -68,6 +68,16 @@
   color: #757575;
 }
 
+.checkboxes--valid {
+  .checkboxes__item_label {
+    color: $color-success;
+  }
+
+  input[type="checkbox"]:before {
+    border-color: $color-success;
+  }
+}
+
 .checkboxes--invalid {
   .checkboxes__item_label {
     color: $color-attention;
