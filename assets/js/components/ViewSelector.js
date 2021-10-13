@@ -94,8 +94,6 @@ module.exports = class ViewSelector {
     }
 
     this.handlePositioning();
-
-    //this.authorExpandDetect();
   }
 
   handleHighlighting(findClosest) {
