@@ -17,6 +17,7 @@ module.exports = class ViewSelector {
     this.$jumpLinksList = this.$elm.querySelector('.view-selector__list');
     this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
     this.cssFixedClassName = 'view-selector--fixed';
+    this.$navDetect = this.doc.querySelector('.contextual-data');
 
     if (this.sideBySideViewAvailable()) {
       const $header = this.doc.getElementById('siteHeader');
@@ -170,9 +171,7 @@ module.exports = class ViewSelector {
   }
 
   handlePositioning() {
-
-    this.navDetect = this.doc.querySelector('.contextual-data');
-    let bottomOfMain = this.navDetect.getBoundingClientRect().bottom;
+    let bottomOfMain = this.$navDetect.getBoundingClientRect().bottom;
     if (this.$elm.classList.contains(this.cssFixedClassName)) {
 
       // If Contextual Data shows on the screen then remove fixed navigation
