@@ -4,17 +4,13 @@
   "label": {
     "labelText": "Checkboxes"
   },
-  "required": true,
-  "state": "invalid",
-  "messageGroup": {
-    "errorText": "Please provide a valid value",
-    "id": "idOfTheMessageGroup"
-  },
+  "disabled": true,
   "checkboxes": [
     {
       "id": "checkbox_id_1",
       "value": "checkbox_1",
-      "label": "Checkbox 1"
+      "label": "Checkbox 1",
+      "checked": true
     },
     {
       "id": "checkbox_id_2",

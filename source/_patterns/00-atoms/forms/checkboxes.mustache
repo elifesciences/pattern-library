@@ -1,25 +1,25 @@
 <div class="form-item{{#state}} form-item--{{state}}{{/state}}">
 
   {{#label}}
-    <label for="{{id}}"
-           class="form-item__title{{#isVisuallyHidden}} visuallyhidden{{/isVisuallyHidden}}">
+    <label class="form-item__title{{#isVisuallyHidden}} visuallyhidden{{/isVisuallyHidden}}">
       {{labelText}}
     </label>
   {{/label}}
-  <div class="checkboxes{{#state}} checkboxes--{{state}}{{/state}}"
-    {{#id}} id="{{id}}"{{/id}}
-    {{#autofocus}} autofocus{{/autofocus}}
-    {{#required}} required="required"{{/required}}
-    {{#messageGroup}} aria-describedby="{{id}}"{{#errorText}} aria-invalid="true"{{/errorText}}{{/messageGroup}}
-  >
 
+  <div class="checkboxes{{#state}} checkboxes--{{state}}{{/state}}"{{#id}} id="{{id}}"{{/id}}>
     <ul class="checkboxes__list">
       {{#checkboxes}}
         <li class="checkboxes__list_item">
           {{^children}}
             <label class="checkboxes__item_label">
-                <input type="checkbox"{{#id}} id="{{id}}"{{/id}} name="{{name}}" value="{{value}}"{{#checked}} checked{{/checked}} />
-                <span class="checkbox__item">{{label}}</span>
+              <input type="checkbox" name="{{name}}" value="{{value}}"
+                {{#id}} id="{{id}}"{{/id}}
+                {{#checked}} checked{{/checked}}
+                {{#required}} required="required"{{/required}}
+                {{#disabled}} disabled="disabled"{{/disabled}}
+                {{#messageGroup}} aria-describedby="{{id}}"{{#errorText}} aria-invalid="true"{{/errorText}}{{/messageGroup}}
+              />
+              <span class="checkbox__item">{{label}}</span>
             </label>
           {{/children}}
           {{#children.0}}
@@ -28,8 +28,14 @@
               {{#children}}
                 <li class="checkboxes__children_list_item">
                   <label class="checkboxes__item_label">
-                      <input type="checkbox"{{#id}} id="{{id}}"{{/id}} name="{{name}}" value="{{value}}"{{#checked}} checked{{/checked}} />
-                      {{label}}
+                    <input type="checkbox" name="{{name}}" value="{{value}}"
+                      {{#id}} id="{{id}}"{{/id}}
+                      {{#checked}} checked{{/checked}}
+                      {{#required}} required="required"{{/required}}
+                      {{#disabled}} disabled="disabled"{{/disabled}}
+                      {{#messageGroup}} aria-describedby="{{id}}"{{#errorText}} aria-invalid="true"{{/errorText}}{{/messageGroup}}
+                    />
+                    <span class="checkbox__item">{{label}}</span>
                   </label>
                 </li>
               {{/children}}

@@ -92,5 +92,3 @@ properties:
 required:
   - name
   - checkboxes
-dependencies:
-  label: [id]
