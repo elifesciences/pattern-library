@@ -175,12 +175,12 @@ module.exports = class ViewSelector {
     let bottomOfMain = this.navDetect.getBoundingClientRect().bottom;
     if (this.$elm.classList.contains(this.cssFixedClassName)) {
 
-      // If Contextual Data shows on the screen then remove fixed
+      // If Contextual Data shows on the screen then remove fixed navigation
       if (bottomOfMain > 0) {
         this.$elm.classList.remove(this.cssFixedClassName);
       }
     } else {
-      // If Contextual Data shows on the screen then add fixed
+      // If Contextual Data is not on the screen then add fixed navigation
       if (bottomOfMain < 0) {
         this.$elm.classList.add(this.cssFixedClassName);
       }
