@@ -38,8 +38,6 @@ module.exports = class ViewSelector {
       return;
     }
 
-    // matches top padding in scss
-
     this.collapsibleSectionHeadings = ViewSelector.getAllCollapsibleSectionHeadings(this.doc);
     this.isScrollingHandled = false;
 
