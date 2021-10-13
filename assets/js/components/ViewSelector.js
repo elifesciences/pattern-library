@@ -171,47 +171,7 @@ module.exports = class ViewSelector {
     return $found;
   }
 
-  //   authorExpandDetect () {
-  //   // Testing MutationObserver
-
-  //   // identify an element to observe
-  //   const elementToObserve = document.querySelector('.content-header__item_toggle');
-
-  //   // create a new instance of `MutationObserver` named `observer`,
-  //   // passing it a callback function
-  //   const observer = new MutationObserver(function () {
-  //     console.log('callback that runs when observer is triggered');
-
-  //     this.navDetect = this.doc.querySelector('.contextual-data');
-  //     let bottomOfMain = this.navDetect.getBoundingClientRect().bottom;
-
-  //     if (bottomOfMain) {
-  //       this.$elm.classList.add(this.cssFixedClassName);
-  //     }
-
-  //     // const contentHeaderToggle = document.querySelector('.content-header__item_toggle')
-  //     // .classList.contains('content-header__item_toggle--expanded');
-
-  //     // let amountToNudgeUp = 0;
-  //     // if (contentHeaderToggle) {
-  //     //   amountToNudgeUp = 250;
-  //     //   console.log('if 250');
-  //     // } else {
-  //     //   amountToNudgeUp = 0;
-  //     //   console.log('if 0');
-  //     // }
-
-  //     // this.style.top = amountToNudgeUp + 'px';
-  //     // return;
-  //   });
-
-  //   // call `observe()` on that MutationObserver instance,
-  //   // passing it the element to observe, and the options object
-  //   observer.observe(elementToObserve, { subtree: true, childList: true, attributes: true });
-  // }
-
   handlePositioning() {
-    // If it's position is fixed
 
     this.navDetect = this.doc.querySelector('.contextual-data');
     let bottomOfMain = this.navDetect.getBoundingClientRect().bottom;
