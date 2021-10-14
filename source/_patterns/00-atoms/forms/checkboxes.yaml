@@ -1,0 +1,87 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  id:
+    type: string
+    minLength: 1
+  name:
+    type: string
+    minLength: 1
+  state:
+    type: string
+    enum:
+      - valid
+      - invalid
+  messageGroup:
+    type: object
+    properties:
+      errorText:
+        type: string
+        minLength: 1
+      infoText:
+        type: string
+        minLength: 1
+      id:
+        type: string
+        minLength: 1
+    minProperties: 2
+    required:
+      - id
+  required:
+    type: boolean
+  disabled:
+    type: boolean
+  title:
+    type: string
+    minLength: 1
+  checkboxes:
+    type: array
+    minItems: 1
+    items:
+      oneOf:
+        - type: object
+          properties:
+            id:
+              type: string
+              minLength: 1
+            value:
+              type: string
+              minLength: 1
+            label:
+              type: string
+              minLength: 1
+            checked:
+              type: boolean
+          required:
+            - value
+            - label
+        - type: object
+          properties:
+            groupTitle:
+              type: string
+              minLength: 1
+            children:
+              type: array
+              minItems: 1
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    minLength: 1
+                  value:
+                    type: string
+                    minLength: 1
+                  label:
+                    type: string
+                    minLength: 1
+                  checked:
+                    type: boolean
+                required:
+                  - value
+                  - label
+          required:
+            - children       
+required:
+  - name
+  - checkboxes
