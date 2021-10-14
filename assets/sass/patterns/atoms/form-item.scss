@@ -32,7 +32,8 @@
 
 .form-item__title {
   @include font-size-and-vertical-height($font-size-base-in-px);
-  @include margin(36, "bottom");
+  @include padding(12, "bottom");
+  @include padding(24, "top");
   display: block;
   font-family: $font-secondary;
   font-weight: bold;
