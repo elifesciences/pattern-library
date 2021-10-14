@@ -1,9 +1,7 @@
 {
   "id": "checkboxes1",
   "name": "checkboxes[]",
-  "label": {
-    "labelText": "Checkboxes"
-  },
+  "title": "Checkboxes",
   "state": "valid",
   "messageGroup": {
     "infoText": "Hunky dory, thanks very much",
@@ -27,7 +25,7 @@
       "label": "Checkbox 3"
     },
     {
-      "groupLabel": "Children detected!",
+      "groupTitle": "Children detected!",
       "children": [
         {
           "id": "checkbox_id_4",

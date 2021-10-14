@@ -31,16 +31,9 @@ properties:
     type: boolean
   disabled:
     type: boolean
-  label:
-    type: object
-    properties:
-      labelText:
-        type: string
-        minLength: 1
-      isVisuallyHidden:
-        type: boolean
-    required:
-      - labelText
+  title:
+    type: string
+    minLength: 1
   checkboxes:
     type: array
     minItems: 1
@@ -64,7 +57,7 @@ properties:
             - label
         - type: object
           properties:
-            groupLabel:
+            groupTitle:
               type: string
               minLength: 1
             children:

@@ -59,15 +59,6 @@
   }
 }
 
-.checkboxes__sub_label {
-  @include font-size-and-vertical-height(12, 24);
-  @include padding(12, "bottom");
-  @include padding(24, "top");
-  font-family: $font-secondary;
-  display: inline-block;
-  color: #757575;
-}
-
 .checkboxes--valid {
   .checkboxes__item_label {
     color: $color-success;

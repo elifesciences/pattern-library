@@ -1,9 +1,7 @@
 {
   "id": "checkboxes1",
   "name": "checkboxes[]",
-  "label": {
-    "labelText": "Checkboxes"
-  },
+  "title": "Checkboxes",
   "disabled": true,
   "checkboxes": [
     {
@@ -23,7 +21,7 @@
       "label": "Checkbox 3"
     },
     {
-      "groupLabel": "Children detected!",
+      "groupTitle": "Children detected!",
       "children": [
         {
           "id": "checkbox_id_4",

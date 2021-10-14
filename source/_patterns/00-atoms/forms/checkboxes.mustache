@@ -1,10 +1,8 @@
 <div class="form-item{{#state}} form-item--{{state}}{{/state}}">
 
-  {{#label}}
-    <label class="form-item__title{{#isVisuallyHidden}} visuallyhidden{{/isVisuallyHidden}}">
-      {{labelText}}
-    </label>
-  {{/label}}
+  {{#title}}
+    <div class="form-item__title">{{title}}</div>
+  {{/title}}
 
   <div class="checkboxes{{#state}} checkboxes--{{state}}{{/state}}"{{#id}} id="{{id}}"{{/id}}>
     <ul class="checkboxes__list">
@@ -23,7 +21,7 @@
             </label>
           {{/children}}
           {{#children.0}}
-            {{#groupLabel}}<label class="checkboxes__sub_label">{{groupLabel}}</label>{{/groupLabel}}
+            {{#groupTitle}}<div class="form-item__sub_title">{{groupTitle}}</div>{{/groupTitle}}
             <ul class="checkboxes__children_list">
               {{#children}}
                 <li class="checkboxes__children_list_item">

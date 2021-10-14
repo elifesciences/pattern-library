@@ -1,9 +1,7 @@
 {
   "id": "checkboxes1",
   "name": "checkboxes[]",
-  "label": {
-    "labelText": "Checkboxes"
-  },
+  "title": "Checkboxes",
   "messageGroup": {
     "infoText": "You may wish to consider this",
     "id": "idOfTheMessageGroup"
@@ -26,7 +24,7 @@
       "label": "Checkbox 3"
     },
     {
-      "groupLabel": "Children detected!",
+      "groupTitle": "Children detected!",
       "children": [
         {
           "id": "checkbox_id_4",

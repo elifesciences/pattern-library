@@ -38,6 +38,15 @@
   font-weight: bold;
 }
 
+.form-item__sub_title {
+  @include font-size-and-vertical-height(12, 24);
+  @include padding(12, "bottom");
+  @include padding(24, "top");
+  font-family: $font-secondary;
+  display: inline-block;
+  color: #757575;
+}
+
 .form-item__message {
   display: block;
   @include typeg-form-message();
