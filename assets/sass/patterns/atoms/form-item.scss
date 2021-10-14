@@ -31,9 +31,9 @@
 }
 
 .form-item__title {
-  display: block;
   @include font-size-and-vertical-height($font-size-base-in-px);
   @include margin(36, "bottom");
+  display: block;
   font-family: $font-secondary;
   font-weight: bold;
 }
