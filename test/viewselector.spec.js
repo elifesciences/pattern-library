@@ -25,7 +25,7 @@ describe('A ViewSelector Component', function () {
 
   describe('the "view-selector--fixed" class', function () {
 
-    it('is removed when navigation is not fixed',
+    it('is removed when navigation is not fixed to top of the browser',
        function () {
          let windowMock = {
            addEventListener: function () {
@@ -52,7 +52,7 @@ describe('A ViewSelector Component', function () {
 
        });
 
-       it('is removed when navigation is fixed',
+       it('is removed when navigation is fixed to top of the browser',
        function () {
          let windowMock = {
            addEventListener: function () {
@@ -75,6 +75,7 @@ describe('A ViewSelector Component', function () {
          };
 
         _viewSelector.handleScrolling();
+        _viewSelector.$elm.classList.add('view-selector--fixed');
          expect($elm.classList.contains('view-selector--fixed')).to.be.true;
 
        });
