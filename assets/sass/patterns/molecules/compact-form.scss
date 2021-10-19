@@ -23,10 +23,6 @@
   @include padding($blg-space-extra-small-in-px - 1 55 $blg-space-extra-small-in-px - 1 12);
   width: 100%;
 
-  .compact-form--valid & {
-    border: 1px solid $color-success;
-  }
-
   .compact-form--invalid & {
     border: 1px solid $color-attention;
   }
