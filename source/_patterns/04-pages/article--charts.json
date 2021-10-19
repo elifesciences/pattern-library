@@ -40,6 +40,12 @@
         },
 
         {
+          "text": "Community",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },s
+
+        {
           "text": "Innovation",
           "path": "#",
           "classes": "nav-primary__item"
