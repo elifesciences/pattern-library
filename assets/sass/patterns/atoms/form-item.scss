@@ -6,15 +6,6 @@
   & > :last-child {
     margin-bottom: 0 // Margins don't collapse on <select>s
   }
-
-  &.form-item--valid {
-
-    .form-item__message--info {
-      color: $color-success;
-    }
-
-  }
-
 }
 
 .form-item__label_container {
@@ -52,10 +43,6 @@
   display: block;
   @include typeg-form-message();
   @include margin(4, "top");
-}
-
-.form-item__message--valid {
-  color: $color-success;
 }
 
 .form-item__message--invalid {
