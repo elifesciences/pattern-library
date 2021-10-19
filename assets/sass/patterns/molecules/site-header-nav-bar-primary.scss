@@ -97,3 +97,15 @@
     margin-top: -3px;
   }
 }
+
+@media only all and (max-width: 30rem) {
+
+  .nav-primary__list {
+    .nav-primary__item {
+      &:nth-child(5) {
+        display: none;
+      }
+    }
+  }
+}
+

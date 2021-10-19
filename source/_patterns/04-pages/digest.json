@@ -41,6 +41,12 @@
         },
 
         {
+          "text": "Community",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
           "text": "Innovation",
           "path": "#",
           "classes": "nav-primary__item"
