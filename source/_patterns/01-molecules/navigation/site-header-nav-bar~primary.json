@@ -35,16 +35,6 @@
       "path": "#",
       "classes": "nav-primary__item"
     },
-    {
-      "text": "Community",
-      "path": "#",
-      "classes": "nav-primary__item"
-    },
-    {
-      "text": "Innovation",
-      "path": "#",
-      "classes": "nav-primary__item"
-    },
 
     {
       "text": "Search the eLife site",
