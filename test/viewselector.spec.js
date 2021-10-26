@@ -47,7 +47,6 @@ describe('A ViewSelector Component', function () {
            }
          };
 
-        _viewSelector.handleScrolling();
          expect($elm.classList.contains('view-selector--fixed')).to.be.false;
 
        });
@@ -69,16 +68,20 @@ describe('A ViewSelector Component', function () {
          _viewSelector.mainTarget = {
            getBoundingClientRect: function () {
              return {
-               bottom: 0
+               bottom: -1
              };
            }
          };
 
-        _viewSelector.handleScrolling();
-        _viewSelector.$elm.classList.add('view-selector--fixed');
-         expect($elm.classList.contains('view-selector--fixed')).to.be.true;
+         let _viewSelector1 = new ViewSelector($elm, windowMock);
+          _viewSelector1.elmYOffset = -1000;
+          _viewSelector1.handleScrolling();
 
-       });
+          let classes1 = _viewSelector1.$elm.classList;
+          expect(classes1.contains('view-selector--fixed')).to.be.true;
+
+      }
+    );
 
   });
 
