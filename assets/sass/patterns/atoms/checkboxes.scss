@@ -1,9 +1,5 @@
 @import "../../definitions";
 
-.checkboxes {
-  width: 300px;
-}
-
 .checkboxes__list {
   list-style-type: none;
   @include nospace("left");
@@ -41,6 +37,9 @@
   }
 
   input[type="checkbox"]:before {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background: #fff;
     border: 1px solid $color-text-dividers;
     border-radius: 2px;
@@ -53,9 +52,7 @@
     position: relative;
     text-align: center;
     width: 24px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    outline: none;
   }
 
   input[type="checkbox"]:checked:before {
