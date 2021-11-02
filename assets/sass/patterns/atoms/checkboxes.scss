@@ -1,5 +1,9 @@
 @import "../../definitions";
 
+.checkboxes {
+  width: 300px;
+}
+
 .checkboxes__list {
   list-style-type: none;
   @include nospace("left");
@@ -21,16 +25,18 @@
 .checkboxes__item_label {
   @include checkbox-label();
   @include padding(24, "bottom"); // Added due to mixin checkbox-label being used elsewhere
+  display: flex;
   font-weight: normal;
 
   input[type="checkbox"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
     appearance: none;
     content: none;
+    height: 24px;
     margin-right: 8px;
     outline: none;
-    height: 24px;
     position: relative;
-    top: 5px;
     width: 24px;
   }
 
@@ -47,6 +53,9 @@
     position: relative;
     text-align: center;
     width: 24px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 
   input[type="checkbox"]:checked:before {
