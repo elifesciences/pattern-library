@@ -38,7 +38,7 @@ describe('A ViewSelector Component', function () {
           pageYOffset: 0
          };
 
-         let _viewSelector = new ViewSelector($elm, windowMock, document);
+         let _viewSelector = new ViewSelector($elm, windowMock);
          _viewSelector.mainTarget = {
            getBoundingClientRect: function () {
              return {
@@ -51,7 +51,7 @@ describe('A ViewSelector Component', function () {
 
        });
 
-       it('is removed when navigation is fixed to top of the browser',
+       it('is added when navigation is fixed to top of the browser',
        function () {
          let windowMock = {
            addEventListener: function () {
@@ -64,17 +64,17 @@ describe('A ViewSelector Component', function () {
           pageYOffset: 0
          };
 
-         let _viewSelector = new ViewSelector($elm, windowMock, document);
+         let _viewSelector = new ViewSelector($elm, windowMock);
          _viewSelector.mainTarget = {
            getBoundingClientRect: function () {
              return {
-               bottom: -1
+               bottom: 0
              };
            }
          };
 
          let _viewSelector1 = new ViewSelector($elm, windowMock);
-          _viewSelector1.elmYOffset = -1000;
+          _viewSelector1.elmYOffset = 20000;
           _viewSelector1.handleScrolling();
 
           let classes1 = _viewSelector1.$elm.classList;
