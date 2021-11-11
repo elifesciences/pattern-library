@@ -7,7 +7,6 @@
   // $content-header-padding - 1 to account for the 1px border
   @include padding($content-header-padding - 1, "bottom");
   position: relative;
-  text-align: center;
 
   // Expect .wrapper to only be introduced when not an image header
   &.wrapper {
@@ -21,6 +20,49 @@
       width: 100%;
     }
 
+  }
+
+}
+
+// Content Header Grid Articles
+
+.content-header-grid {
+  padding: 0 24px;
+}
+
+.content-header-grid__main {
+  @include margin(24, "bottom");
+  @include padding(24, "bottom");
+  border-bottom: 1px solid $color-text-dividers;
+}
+
+.content-header-grid__side {
+  @include margin(24, "bottom");
+  @include padding(24, "bottom");
+  border-bottom: 1px solid $color-text-dividers;
+}
+
+@media only all and (min-width: 900px) {
+
+  .content-header-grid {
+    border-bottom: 1px solid $color-text-dividers;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 24px;
+    max-width: 1114px;
+    padding: 0;
+  }
+
+  .content-header-grid__main {
+    @include margin(0, "bottom");
+    border-bottom: none;
+    grid-column: 1/10;
+  }
+
+  .content-header-grid__side {
+    @include margin(0, "bottom");
+    border-bottom: none;
+    grid-column: 10/13;
   }
 
 }
@@ -294,25 +336,10 @@
 
 }
 
-.content-header__component-assets {
-  display: grid;
-  grid-template-columns: 50px auto 50px;
-}
-
 .content-header__subject_list {
   @include blg-spacing("top", "small");
   @include label-subject-typeg();
   @include padding(0, "left");
-  @include padding(0, "right");
-  grid-row: 1;
-  margin: 0;
-  order: 2;
-  text-align: center;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
-    @include padding(72, "left");
-    @include padding(72, "right");
-  }
 
   .content-header--image & {
     color: inherit;
