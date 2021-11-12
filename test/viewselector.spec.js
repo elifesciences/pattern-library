@@ -1,3 +1,5 @@
+'use strict';
+
 let expect = chai.expect;
 let spy = sinon.spy;
 
@@ -5,7 +7,6 @@ let spy = sinon.spy;
 let ViewSelector = require('../assets/js/components/ViewSelector');
 
 describe('A ViewSelector Component', function () {
-  'use strict';
   let $elm;
 
   beforeEach(function () {
@@ -23,36 +24,28 @@ describe('A ViewSelector Component', function () {
     expect(viewSelector.cssFixedClassName).to.equal('view-selector--fixed');
   });
 
-  describe('the "view-selector--fixed" class', function () {
-    it('is not present when the content header is on screen', function () {
-      let windowMock = {
-        addEventListener: function () {},
-        matchMedia: function() {
-          return {
-            matches: true
-          }
-        },
-      };
-
-      let _viewSelector = new ViewSelector($elm, windowMock);
-      expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.false;
-    });
-
-    it('is added when the content header has scrolled off the top of the screen', () => {
-      let windowMock = {
-        addEventListener: function () {},
-        matchMedia: function() {
-          return {
-            matches: true
-          }
+  it('adds and removes the "view-selector--fixed" class as the page is scrolled', function () {
+    let windowMock = {
+      addEventListener: function () {},
+      matchMedia: function() {
+        return {
+          matches: true
         }
-      };
+      },
+    };
 
-      let _viewSelector = new ViewSelector($elm, windowMock);
-      window.scrollTo(0,1080);
-      _viewSelector.handlePositioning();
-      expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.true;
-    });
+    let _viewSelector = new ViewSelector($elm, windowMock);
+    expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.false;
+
+    // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
+    window.scrollTo(0,1080);
+    _viewSelector.handleScrolling();
+    expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.true;
+
+    // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
+    window.scrollTo(0,0);
+    _viewSelector.handleScrolling();
+    expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.false;
   });
 
   describe("its a list of links for the left navigation", function () {
