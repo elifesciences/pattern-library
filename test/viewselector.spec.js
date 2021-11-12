@@ -24,65 +24,35 @@ describe('A ViewSelector Component', function () {
   });
 
   describe('the "view-selector--fixed" class', function () {
+    it('is not present when the content header is on screen', function () {
+      let windowMock = {
+        addEventListener: function () {},
+        matchMedia: function() {
+          return {
+            matches: true
+          }
+        },
+      };
 
-    it('is removed when navigation is not fixed to top of the browser',
-       function () {
-         let windowMock = {
-           addEventListener: function () {
-           },
-           matchMedia: function() {
-             return {
-               matches: true
-             }
-           },
-          pageYOffset: 0
-         };
+      let _viewSelector = new ViewSelector($elm, windowMock);
+      expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.false;
+    });
 
-         let _viewSelector = new ViewSelector($elm, windowMock);
-         _viewSelector.mainTarget = {
-           getBoundingClientRect: function () {
-             return {
-               bottom: 0
-             };
-           }
-         };
+    it('is added when the content header has scrolled off the top of the screen', () => {
+      let windowMock = {
+        addEventListener: function () {},
+        matchMedia: function() {
+          return {
+            matches: true
+          }
+        }
+      };
 
-         expect($elm.classList.contains('view-selector--fixed')).to.be.false;
-
-       });
-
-       it('is added when navigation is fixed to top of the browser',
-       function () {
-         let windowMock = {
-           addEventListener: function () {
-           },
-           matchMedia: function() {
-             return {
-               matches: true
-             }
-           },
-          pageYOffset: 0
-         };
-
-         let _viewSelector = new ViewSelector($elm, windowMock);
-         _viewSelector.mainTarget = {
-           getBoundingClientRect: function () {
-             return {
-               bottom: 0
-             };
-           }
-         };
-
-         let _viewSelector1 = new ViewSelector($elm, windowMock);
-          _viewSelector1.elmYOffset = 20000;
-          _viewSelector1.handleScrolling();
-
-          let classes1 = _viewSelector1.$elm.classList;
-          expect(classes1.contains('view-selector--fixed')).to.be.true;
-
-      }
-    );
-
+      let _viewSelector = new ViewSelector($elm, windowMock);
+      window.scrollTo(0,1080);
+      _viewSelector.handlePositioning();
+      expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.true;
+    });
   });
 
   describe("its a list of links for the left navigation", function () {
