@@ -39,6 +39,12 @@
         },
 
         {
+          "text": "Community",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
           "text": "Innovation",
           "path": "#",
           "classes": "nav-primary__item"
@@ -72,7 +78,7 @@
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
-          "text": "Careers",
+          "text": "Newsletters",
           "path": "#",
           "classes": "nav-secondary__item"
         },
