@@ -56,44 +56,40 @@
 // Content Header Grid Articles
 
 .content-header-grid {
-  padding: 0 24px;
-}
+  padding: 0 #{$site-spacing-bottom}px;
 
-.content-header-grid__main {
-  @include margin(24, "bottom");
-  @include padding(24, "bottom");
-  border-bottom: 1px solid $color-text-dividers;
-}
-
-.content-header-grid__side {
-  @include margin(24, "bottom");
-  @include padding(24, "bottom");
-  border-bottom: 1px solid $color-text-dividers;
-}
-
-@media only all and (min-width: 900px) {
-
-  .content-header-grid {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     border-bottom: 1px solid $color-text-dividers;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 24px;
-    max-width: 1114px;
+    grid-gap: #{$site-spacing-bottom}px;
+    max-width: #{$max-site-width}px;
     padding: 0;
   }
+}
 
-  .content-header-grid__main {
+.content-header-grid__main {
+  @include margin($site-spacing-bottom, "bottom");
+  @include padding($site-spacing-bottom, "bottom");
+  border-bottom: 1px solid $color-text-dividers;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin(0, "bottom");
     border-bottom: none;
     grid-column: 1/10;
   }
+}
 
-  .content-header-grid__side {
+.content-header-grid__side {
+  @include margin($site-spacing-bottom, "bottom");
+  @include padding($site-spacing-bottom, "bottom");
+  border-bottom: 1px solid $color-text-dividers;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin(0, "bottom");
     border-bottom: none;
     grid-column: 10/13;
   }
-
 }
 
 .content-header--read-more {
@@ -583,7 +579,7 @@ $iconlist: cc oa;
 
 .content-header__author_list {
   margin: 0;
-  padding: 0;
+  padding: 0 0 24px;
 }
 
 .content-header__author_list_item {

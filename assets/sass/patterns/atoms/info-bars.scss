@@ -85,7 +85,7 @@
   .info-bar__container {
     margin: 0 auto;
     width: 100%;
-    max-width: 1114px;
+    max-width: #{$max-site-width}px;
   }
 
   .info-bar__text {
