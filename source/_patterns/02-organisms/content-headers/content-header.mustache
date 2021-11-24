@@ -128,28 +128,41 @@
       </div>
       <div class="content-header-grid__side">
 
-        {{#download}}
-          <a href="{{download}}" class="content-header__download_link">
-            <picture>
-              {{#image}}
-                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
-                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
-                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-reverse.svg{{/assetRewrite}}" type="image/svg+xml">
-                <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
-              {{/image}}
-              {{^image}}
-                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
-                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
-                <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download.svg{{/assetRewrite}}" type="image/svg+xml">
-                <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
-              {{/image}}
-            </picture>
-          </a>
-        {{/download}}
 
-        {{#socialMediaSharers}}
-          {{> atoms-social-media-sharers}}
-        {{/socialMediaSharers}}
+        <div class="burger">
+          {{#download}}
+            <a href="{{download}}" class="content-header__download_link">
+              <picture>
+                {{#image}}
+                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
+                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
+                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-reverse.svg{{/assetRewrite}}" type="image/svg+xml">
+                  <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
+                {{/image}}
+                {{^image}}
+                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
+                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
+                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download.svg{{/assetRewrite}}" type="image/svg+xml">
+                  <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
+                {{/image}}
+              </picture>
+            </a>
+          {{/download}}
+
+          <div>Cite</div>
+          <div>Comments</div>
+
+          {{#doi}}
+            {{> atoms-doi}}
+          {{/doi}}
+
+          {{#socialMediaSharers}}
+            {{> atoms-social-media-sharers}}
+          {{/socialMediaSharers}}
+
+          <div>591 views</div>
+          <div>2 citations</div>
+        </div>
 
       </div>
     </div>

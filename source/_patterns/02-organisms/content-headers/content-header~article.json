@@ -26,6 +26,7 @@
     ]
   },
   "download": "#download",
+  "articleGrid": true,
   "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
   "authors": {
     "list": [
@@ -339,8 +340,6 @@
     ]
   },
   "meta": {
-    "url": "#",
-    "text": "Research Article",
     "date": {
       "forHuman": {
         "dayOfMonth": 29,
