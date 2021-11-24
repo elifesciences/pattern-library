@@ -73,10 +73,45 @@
   @include padding($site-spacing-bottom, "bottom");
   border-bottom: 1px solid $color-text-dividers;
 
+  .content-header__meta {
+    display: inline-block;
+  }
+
+  .content-header__subject_list {
+    text-align: left;
+  }
+
+  .meta {
+    display: inline-block;
+
+    &:after {
+      content: "\00a0\2219\00a0";
+      font-weight: bold;
+    }
+  }
+
+  .content-header__icons {
+    display: inline-block;
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  .date {
+    @include font-size-and-vertical-height(14,0);
+  }
+
+  .doi {
+    @include font-size-and-vertical-height(14,24);
+    height: 30px;
+    margin-right: 12px;
+  }
+
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin(0, "bottom");
     border-bottom: none;
-    grid-column: 1/10;
+    grid-column: 1/9;
   }
 }
 
@@ -84,11 +119,24 @@
   @include margin($site-spacing-bottom, "bottom");
   @include padding($site-spacing-bottom, "bottom");
   border-bottom: 1px solid $color-text-dividers;
+  border: 1px solid black;
+
+  .burger {
+    text-align: right;
+    border: 1px solid black;
+  }
+
+  .social-media-sharer {
+    margin: 0 12px 0 0;
+    width: 24px;
+    height: 24px;
+  }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin(0, "bottom");
     border-bottom: none;
-    grid-column: 10/13;
+    grid-column: 9/13;
+    padding-left: 70px;
   }
 }
 
@@ -108,10 +156,14 @@
   @include margin($content-header-padding * 2, "top");
   @include margin($content-header-padding, "bottom");
 
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include margin(0, "bottom");
+  }
+
   .content-header--header & {
     @include margin($content-header-padding / 2, "top");
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include margin($content-header-padding, "top");
+      @include margin(0, "top");
     }
   }
 }
@@ -188,7 +240,7 @@
 .content-header__title {
   @include font-size-and-vertical-height(36, 48);
   @include margin(0, "top");
-  @include margin(24, "bottom");
+  @include margin(12, "bottom");
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include font-size-and-vertical-height(41, 48);
@@ -364,6 +416,7 @@
 .content-header__subject_list {
   @include label-subject-typeg();
   @include padding(0, "left");
+  text-align: center;
 
   .content-header--image & {
     color: inherit;
@@ -399,8 +452,7 @@
 }
 
 .content-header__subject_link {
-  @include label-subject-typeg();
-  @include font-size-and-vertical-height(13);
+  @include font-size-and-vertical-height(14);
   text-decoration: none;
 
   &:hover {
@@ -416,7 +468,7 @@
 }
 
 .content-header__icons {
-  @include margin(14 0 0 0);
+  @include margin(0);
   @include padding(0);
   grid-row: 1;
   list-style: none;
@@ -565,7 +617,7 @@ $iconlist: cc oa;
 }
 
 .content-header__authors {
-  @include margin($content-header-padding, "bottom");
+  @include margin(24, "bottom");
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     .content-header__institution_list {
       @include visuallyhidden();
@@ -580,6 +632,10 @@ $iconlist: cc oa;
 .content-header__author_list {
   margin: 0;
   padding: 0 0 24px;
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    padding: 0;
+  }
 }
 
 .content-header__author_list_item {
