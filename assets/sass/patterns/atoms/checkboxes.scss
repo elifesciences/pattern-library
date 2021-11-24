@@ -48,11 +48,14 @@
     cursor: pointer;
     display: block;
     height: 24px;
+    left: -1px;
+    outline: none;
     padding-bottom: 10px;
     position: relative;
     text-align: center;
     width: 24px;
-    outline: none;
+    top: -1px;
+
   }
 
   input[type="checkbox"]:checked:before {
