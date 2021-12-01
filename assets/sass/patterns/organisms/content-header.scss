@@ -7,6 +7,7 @@
   // $content-header-padding - 1 to account for the 1px border
   @include padding($content-header-padding - 1, "bottom");
   position: relative;
+  text-align: center;
 
   // Expect .wrapper to only be introduced when not an image header
   &.wrapper {
@@ -21,6 +22,10 @@
 
   }
 
+}
+
+.content-header-journal {
+  text-align: left;
 }
 
 // Breadcrumbs
@@ -51,93 +56,6 @@
     }
   }
 
-}
-
-// Content Header Grid Articles
-
-.content-header-grid {
-  padding: 0 #{$site-spacing-bottom}px;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    border-bottom: 1px solid $color-text-dividers;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: #{$site-spacing-bottom}px;
-    max-width: #{$max-site-width}px;
-    padding: 0;
-  }
-}
-
-.content-header-grid__main {
-  @include margin($site-spacing-bottom, "bottom");
-  @include padding($site-spacing-bottom, "bottom");
-  border-bottom: 1px solid $color-text-dividers;
-
-  .content-header__meta {
-    display: inline-block;
-  }
-
-  .content-header__subject_list {
-    text-align: left;
-  }
-
-  .meta {
-    display: inline-block;
-
-    &:after {
-      content: "\00a0\2219\00a0";
-      font-weight: bold;
-    }
-  }
-
-  .content-header__icons {
-    display: inline-block;
-
-    li {
-      display: inline-block;
-    }
-  }
-
-  .date {
-    @include font-size-and-vertical-height(14,0);
-  }
-
-  .doi {
-    @include font-size-and-vertical-height(14,24);
-    height: 30px;
-    margin-right: 12px;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    @include margin(0, "bottom");
-    border-bottom: none;
-    grid-column: 1/9;
-  }
-}
-
-.content-header-grid__side {
-  @include margin($site-spacing-bottom, "bottom");
-  @include padding($site-spacing-bottom, "bottom");
-  border-bottom: 1px solid $color-text-dividers;
-  border: 1px solid black;
-
-  .burger {
-    text-align: right;
-    border: 1px solid black;
-  }
-
-  .social-media-sharer {
-    margin: 0 12px 0 0;
-    width: 24px;
-    height: 24px;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    @include margin(0, "bottom");
-    border-bottom: none;
-    grid-column: 9/13;
-    padding-left: 70px;
-  }
 }
 
 .content-header--read-more {
@@ -413,6 +331,11 @@
 
 }
 
+.content-header__component-assets {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+}
+
 .content-header__subject_list {
   @include label-subject-typeg();
   @include padding(0, "left");
@@ -553,7 +476,12 @@ $iconlist: cc oa;
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     width: #{$content-header-download-width-medium}px;
   }
+}
 
+.content-header-grid__side {
+  .content-header__download_icon {
+    width: #{$content-header-download-width}px;
+  }
 }
 
 .content-header__impact-statement {
