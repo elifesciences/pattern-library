@@ -149,19 +149,19 @@ required:
 dependencies:
   institutions: [authors]
 metricsData:
-    type: object
-    properties:
-      data:
-        type: array
-        minItems: 1
-        items:
-          type: object
-          properties:
-            text:
-              type: string
-              minLength: 1
-          required:
-            - text
+  type: object
+  properties:
+    data:
+      type: array
+      minItems: 1
+      items:
+        type: object
+        properties:
+          text:
+            type: string
+            minLength: 1
+        required:
+          - text
       annotationCount:
         $ref: ../../00-atoms/components/speech-bubble.yaml
     minProperties: 1
