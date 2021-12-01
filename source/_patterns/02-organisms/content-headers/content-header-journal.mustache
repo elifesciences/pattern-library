@@ -155,6 +155,7 @@
         {{#teaser}}
           {{> molecules-teaser }}
         </div>
+        {{/teaser}}
 
       </div>
     </div>
@@ -170,8 +171,7 @@
         <img src="{{defaultPath}}"
              {{#srcset}}srcset="{{srcset}}"{{/srcset}}
              alt="{{altText}}"
-             class="content-header__image"
-        >
+             class="content-header__image">
       {{/fallback}}
     </picture>
   {{/image}}
