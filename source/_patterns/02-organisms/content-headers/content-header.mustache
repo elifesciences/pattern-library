@@ -5,168 +5,6 @@
     class="content-header {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} {{#socialMediaSharers}}content-header--has-social-media-sharers{{/socialMediaSharers}} {{#header.hasProfile}}content-header--has-profile{{/header.hasProfile}} clearfix"
     data-behaviour="ContentHeader">
 
-    <div class="content-header-grid">
-      <div class="content-header-grid__main">
-
-      <ul class="breadcrumbs">
-        <li><a href="{{ url }}">Grandparent</a></li>
-        <li><a href="{{ url }}">Parent</a></li>
-        <li><a href="{{ url }}">Child</a></li>
-        <li><a href="{{ url }}">Grandchild</a></li>
-        <li><a href="{{ url }}">Great-Grandchild</a></li>
-      </ul>
-
-      {{#header}}
-        {{#hasProfile}}
-          <div class="content-header__profile_wrapper">
-            {{#profile.url}}
-            <a class="content-header__profile{{#profile.image}} content-header__profile--has-image{{/profile.image}}"
-              href="{{profile.url}}">
-            {{/profile.url}}
-            {{^profile.url}}
-            <span class="content-header__profile{{#profile.image}} content-header__profile--has-image{{/profile.image}}">
-            {{/profile.url}}
-            {{#profile.image}}
-              <picture>
-                {{#sources}}
-                  <source srcset="{{srcset}}"
-                          {{#type}}type="{{type}}"{{/type}}
-                    {{#media}}media="{{media}}"{{/media}}>
-                {{/sources}}
-                {{#fallback}}
-                  <img src="{{defaultPath}}"
-                      {{#srcset}}srcset="{{srcset}}"{{/srcset}}
-                      alt="{{altText}}"
-                      class="content-header__profile_image">
-                {{/fallback}}
-              </picture>
-            {{/profile.image}}
-            <dl>
-              <dt class="content-header__profile_label">Edited by</dt>
-              <dd class="content-header__profile_data">{{profile.name}}</dd>
-            </dl>
-            {{^profile.url}}
-              </span>
-            {{/profile.url}}
-            {{#profile.url}}
-            </a>
-            {{/profile.url}}
-          </div>
-        {{/hasProfile}}
-
-          {{#hasSubjects}}
-            <ol class="content-header__subject_list">
-              {{#subjects}}
-                <li class="content-header__subject_list_item">
-                  <a href="{{url}}" class="content-header__subject_link">
-                    <span class="content-header__subject">{{{name}}}</span>
-                  </a>
-                </li>
-              {{/subjects}}
-            </ol>
-          {{/hasSubjects}}
-        {{/header}}
-
-        <div class="content-header__body">
-          <h1 class="content-header__title {{#titleLength}}content-header__title--{{titleLength}}{{/titleLength}}{{^titleLength}}content-header__title--medium{{/titleLength}}">{{{title}}}</h1>
-
-          {{#impactStatement}}
-            <div class="content-header__impact-statement">{{{impactStatement}}}</div>
-          {{/impactStatement}}
-
-        </div>
-
-        {{#authors}}
-          <div class="content-header__authors">
-            <ol class="content-header__author_list" aria-label="Authors of this article">
-              {{#authors.list}}
-                <li class="content-header__author_list_item">
-                  <span class="content-header__author">{{#url}}<a href="{{url}}" data-behaviour="Popup" class="content-header__author_link">{{/url}}{{name}}{{#url}}</a>{{/url}}<span class="content-header__author_suffix">{{#isCorresponding}}&nbsp;{{!
-                  }}<picture>
-                    <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author.svg{{/assetRewrite}}" type="image/svg+xml">
-                    <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}}"
-                          srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@2x.png{{/assetRewrite}} 2x, {{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}} 1x"
-                          alt="Is a corresponding author" class="content-header__author_icon">
-                  </picture>{{/isCorresponding}}{{!
-                  }}<span class="content-header__author_separator" aria-hidden="true">,</span>
-                  </span></span>
-                </li>
-              {{/authors.list}}
-            </ol>
-
-            {{#institutions}}
-              <ol class="content-header__institution_list" aria-label="Author institutions">
-                {{#institutions.list}}
-                  <li class="content-header__institution_list_item">
-                    <span class="content-header__institution">{{{name}}}{{!
-                  }}<span class="content-header__institution_separator" aria-hidden="true">;</span>
-                    </span>
-                  </li>
-                {{/institutions.list}}
-              </ol>
-            {{/institutions}}
-          </div>
-        {{/authors}}
-
-        {{#meta}}
-          <div class="content-header__meta">
-            {{> molecules-meta}}
-          </div>
-        {{/meta}}
-
-        {{#licence}}
-          <ul class="content-header__icons">
-            <li><a href="https://en.wikipedia.org/wiki/Open_access"
-                  class="content-header__icon content-header__icon--oa"><span
-                class="visuallyhidden">Open access</span></a></li>
-            <li><a href="{{licence}}"
-                  class="content-header__icon content-header__icon--cc"><span
-                class="visuallyhidden">Copyright information</span></a></li>
-          </ul>
-        {{/licence}}
-
-      </div>
-      <div class="content-header-grid__side">
-
-
-        <div class="burger">
-          {{#download}}
-            <a href="{{download}}" class="content-header__download_link">
-              <picture>
-                {{#image}}
-                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
-                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
-                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-reverse.svg{{/assetRewrite}}" type="image/svg+xml">
-                  <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
-                {{/image}}
-                {{^image}}
-                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
-                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
-                  <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download.svg{{/assetRewrite}}" type="image/svg+xml">
-                  <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
-                {{/image}}
-              </picture>
-            </a>
-          {{/download}}
-
-          <div>Cite</div>
-          <div>Comments</div>
-
-          {{#doi}}
-            {{> atoms-doi}}
-          {{/doi}}
-
-          {{#socialMediaSharers}}
-            {{> atoms-social-media-sharers}}
-          {{/socialMediaSharers}}
-
-          <div>591 views</div>
-          <div>2 citations</div>
-        </div>
-
-      </div>
-    </div>
-
   {{#image}}
     <picture class="content-header__picture"{{#credit}} aria-labelledby="{{elementId}}"{{/credit}}>
       {{#sources}}
@@ -184,13 +22,146 @@
     </picture>
   {{/image}}
 
+  {{#header}}
+    {{#hasProfile}}
+      <div class="content-header__profile_wrapper">
+        {{#profile.url}}
+        <a class="content-header__profile{{#profile.image}} content-header__profile--has-image{{/profile.image}}"
+           href="{{profile.url}}">
+        {{/profile.url}}
+        {{^profile.url}}
+        <span class="content-header__profile{{#profile.image}} content-header__profile--has-image{{/profile.image}}">
+        {{/profile.url}}
+        {{#profile.image}}
+          <picture>
+            {{#sources}}
+              <source srcset="{{srcset}}"
+                      {{#type}}type="{{type}}"{{/type}}
+                {{#media}}media="{{media}}"{{/media}}>
+            {{/sources}}
+            {{#fallback}}
+              <img src="{{defaultPath}}"
+                   {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+                   alt="{{altText}}"
+                   class="content-header__profile_image">
+            {{/fallback}}
+          </picture>
+        {{/profile.image}}
+        <dl>
+          <dt class="content-header__profile_label">Edited by</dt>
+          <dd class="content-header__profile_data">{{profile.name}}</dd>
+        </dl>
+        {{^profile.url}}
+          </span>
+        {{/profile.url}}
+        {{#profile.url}}
+        </a>
+        {{/profile.url}}
+      </div>
+    {{/hasProfile}}
+
+    <span class="content-header__component-assets">
+
+      {{#hasSubjects}}
+        <ol class="content-header__subject_list">
+          {{#subjects}}
+            <li class="content-header__subject_list_item">
+              <a href="{{url}}" class="content-header__subject_link">
+                <span class="content-header__subject">{{{name}}}</span>
+              </a>
+            </li>
+          {{/subjects}}
+        </ol>
+      {{/hasSubjects}}
+    {{/header}}
+
+    {{#licence}}
+        <ul class="content-header__icons">
+          <li><a href="https://en.wikipedia.org/wiki/Open_access"
+                class="content-header__icon content-header__icon--oa"><span
+              class="visuallyhidden">Open access</span></a></li>
+          <li><a href="{{licence}}"
+                class="content-header__icon content-header__icon--cc"><span
+              class="visuallyhidden">Copyright information</span></a></li>
+        </ul>
+    {{/licence}}
+
+    {{#download}}
+      <a href="{{download}}" class="content-header__download_link">
+        <picture>
+          {{#image}}
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-reverse.svg{{/assetRewrite}}" type="image/svg+xml">
+            <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
+          {{/image}}
+          {{^image}}
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-2x.png{{/assetRewrite}}" type="image/png" media="(min-width: 45.625em)">
+            <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download.svg{{/assetRewrite}}" type="image/svg+xml">
+            <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-1x.png{{/assetRewrite}}" class="content-header__download_icon" alt="Download icon">
+          {{/image}}
+        </picture>
+      </a>
+    {{/download}}
   </span>
+
+  <div class="content-header__body">
+    <h1 class="content-header__title {{#titleLength}}content-header__title--{{titleLength}}{{/titleLength}}{{^titleLength}}content-header__title--medium{{/titleLength}}">{{{title}}}</h1>
+
+    {{#impactStatement}}
+      <div class="content-header__impact-statement">{{{impactStatement}}}</div>
+    {{/impactStatement}}
+
+    {{#socialMediaSharers}}
+      {{> atoms-social-media-sharers}}
+    {{/socialMediaSharers}}
+
+  </div>
+
+  {{#authors}}
+    <div class="content-header__authors">
+      <ol class="content-header__author_list" aria-label="Authors of this article">
+        {{#authors.list}}
+          <li class="content-header__author_list_item">
+            <span class="content-header__author">{{#url}}<a href="{{url}}" data-behaviour="Popup" class="content-header__author_link">{{/url}}{{name}}{{#url}}</a>{{/url}}<span class="content-header__author_suffix">{{#isCorresponding}}&nbsp;{{!
+             }}<picture>
+               <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author.svg{{/assetRewrite}}" type="image/svg+xml">
+               <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}}"
+                    srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@2x.png{{/assetRewrite}} 2x, {{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}} 1x"
+                    alt="Is a corresponding author" class="content-header__author_icon">
+            </picture>{{/isCorresponding}}{{!
+            }}<span class="content-header__author_separator" aria-hidden="true">,</span>
+            </span></span>
+          </li>
+        {{/authors.list}}
+      </ol>
+
+      {{#institutions}}
+        <ol class="content-header__institution_list" aria-label="Author institutions">
+          {{#institutions.list}}
+            <li class="content-header__institution_list_item">
+              <span class="content-header__institution">{{{name}}}{{!
+            }}<span class="content-header__institution_separator" aria-hidden="true">;</span>
+              </span>
+            </li>
+          {{/institutions.list}}
+        </ol>
+      {{/institutions}}
+    </div>
+  {{/authors}}
 
   {{#selectNav}}
     <div class="content-header__cta">
       {{> molecules-select-nav}}
     </div>
   {{/selectNav}}
+
+  {{#meta}}
+    <div class="content-header__meta">
+      {{> molecules-meta}}
+    </div>
+  {{/meta}}
 
 {{#image.creditOverlay}}
   {{#image.credit}}
