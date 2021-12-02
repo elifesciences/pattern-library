@@ -72,19 +72,28 @@
 
 .content-header-grid__side {
   @include margin($site-spacing-bottom, "bottom");
-  @include padding($site-spacing-bottom, "bottom");
   border-bottom: 1px solid $color-text-dividers;
+  display: grid;
 
   .content-header-grid__side-popup-block {
     display: grid;
-    max-width: 132px;
-    float: right;
-    width: 100%;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      justify-self: end;
+      max-width: 132px;
+      width: 100%;
+    }
 
   }
 
+  .social-media-sharers {
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      display: none;
+    }
+  }
+
   .social-media-sharer {
-    margin: 0 12px 0 0;
+    margin: 0 12px 24px 0;
     width: 20px;
     height: 20px;
 
@@ -97,15 +106,57 @@
     @include margin(0, "bottom");
     border-bottom: none;
     grid-column: 10/13;
-    padding-left: 70px;
+  }
+}
+
+.content-header-grid__side-popup-block__inner-block {
+  grid-row: 1;
+  justify-self: end;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    justify-self: unset;
+    grid-row: 2;
+  }
+}
+
+.content-header-grid__side-popup-block__list {
+  @include margin(0);
+  @include margin(24, "bottom");
+  @include padding(0);
+  grid-row: 1;
+  justify-self: start;
+
+  li {
+    @include margin(6, "bottom");
+    list-style: none;
+    font-family: $font-secondary;
+
+    &:last-child {
+      @include margin(24, "bottom");
+    }
+
+    a {
+      font-weight: bold;
+      color: $color-text;
+    }
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    justify-self: unset;
+    grid-row: 1;
+    border-bottom: 1px solid #e0e0e0;
   }
 }
 
 .content-header-grid__side-popup-block__link {
   @include font-size-and-vertical-height(14,24);
-  @include margin(12, "bottom");
   @include padding(30, "left");
-  display: inline;
+}
+
+.content-header__share-listing {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    display: none;
+  }
 }
 
 .download {
@@ -118,6 +169,10 @@
 
 .comments {
   background: url("../../assets/img/icons/commenting.svg") no-repeat 0 0;
+}
+
+.share {
+  background: url("../../assets/img/icons/share.svg") no-repeat 0 0;
 }
 
 .teaser {

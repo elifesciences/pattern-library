@@ -121,12 +121,17 @@
 
         {{#licence}}
           <ul class="content-header__icons">
-            <li><a href="https://en.wikipedia.org/wiki/Open_access"
-                  class="content-header__icon content-header__icon--oa"><span
-                class="visuallyhidden">Open access</span></a></li>
-            <li><a href="{{licence}}"
-                  class="content-header__icon content-header__icon--cc"><span
-                class="visuallyhidden">Copyright information</span></a></li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Open_access"
+                  class="content-header__icon content-header__icon--oa">
+                    <span class="visuallyhidden">Open access</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{licence}}" class="content-header__icon content-header__icon--cc">
+                <span class="visuallyhidden">Copyright information</span>
+              </a>
+            </li>
           </ul>
         {{/licence}}
 
@@ -134,22 +139,32 @@
       <div class="content-header-grid__side">
 
         <div class="content-header-grid__side-popup-block">
+          <ul class="content-header-grid__side-popup-block__list">
           {{#download}}
-            <a href="{{download}}" class="download content-header-grid__side-popup-block__link">
-              Download
-            </a>
+            <li>
+              <a href="{{download}}" class="download content-header-grid__side-popup-block__link">Download</a>
+            </li>
           {{/download}}
+            <li>
+              <a href="" class="cite content-header-grid__side-popup-block__link">Cite</a>
+            </li>
+            <li>
+              <a href="" class="comments content-header-grid__side-popup-block__link">Comments</a>
+            </li>
+            <li class="content-header__share-listing">
+              <a href="" class="share content-header-grid__side-popup-block__link">Share</a>
+            </li>
+          </ul>
 
-          <a href="" class="cite content-header-grid__side-popup-block__link">Cite</a>
-          <a href="" class="comments content-header-grid__side-popup-block__link">Comments</a>
+          <div class="content-header-grid__side-popup-block__inner-block">
+            {{#socialMediaSharers}}
+              {{> atoms-social-media-sharers}}
+            {{/socialMediaSharers}}
 
-          {{#socialMediaSharers}}
-            {{> atoms-social-media-sharers}}
-          {{/socialMediaSharers}}
-
-          {{#contextualData}}
-            {{> molecules-contextual-data }}
-          {{/contextualData}}
+            {{#contextualData}}
+              {{> molecules-contextual-data }}
+            {{/contextualData}}
+          </div>
         </div>
         <div>
         {{#teaser}}
