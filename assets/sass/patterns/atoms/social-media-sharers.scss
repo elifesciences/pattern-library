@@ -11,24 +11,32 @@
 //  Fill: solid
 
 .social-media-sharers {
-  flex-grow: 0;
-  flex-basis: 28px;
-}
+  @include margin(0);
+  @include padding(0);
+  display: flex;
 
-.social-media-sharer,
-.social-media-sharer__icon {
-  display: inline-block;
+  li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 12px 24px 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    display: none;
+  }
 }
 
 .social-media-sharer {
-
   border-radius: #{$border-radius}px;
-  margin: 0 8px;
-  height: 28px;
-  padding: 2px 0;
+  display: inline-block;
+  height: 24px;
   text-decoration: none;
   transition: 25ms ease-out;
-  width: 28px;
+  width: 24px;
 
   .content-header--image & {
     background-color: transparent;
