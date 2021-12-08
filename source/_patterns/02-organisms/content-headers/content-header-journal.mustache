@@ -2,7 +2,7 @@
 <div class="content-header-image-wrapper{{^image.creditOverlay}}{{^image.credit}} content-header-image-wrapper--no-credit{{/image.credit}}{{/image.creditOverlay}}">
 {{/image}}
   <header
-    class="{{#articleGrid}}content-header-journal{{/articleGrid}} content-header {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} {{#socialMediaSharers}}content-header--has-social-media-sharers{{/socialMediaSharers}} {{#header.hasProfile}}content-header--has-profile{{/header.hasProfile}} clearfix"
+    class="content-header {{#articleGrid}}content-header-journal{{/articleGrid}} {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} {{#socialMediaSharers}}content-header--has-social-media-sharers{{/socialMediaSharers}} {{#header.hasProfile}}content-header--has-profile{{/header.hasProfile}} clearfix"
     data-behaviour="ContentHeader">
 
     <div class="content-header-grid">
@@ -142,14 +142,18 @@
           <ul class="content-header-grid__side-popup-block__list">
           {{#download}}
             <li>
-              <a href="{{download}}" class="download content-header-grid__side-popup-block__link">Download</a>
+              <a href="{{download}}" class="content-header__download_link download content-header-grid__side-popup-block__link">Download</a>
+              {{! Decided this will be content, serverside }}
+              {{#pl-only-article-section-for-download-links}}
+                {{> molecules-pl-only-article-section}}
+              {{/pl-only-article-section-for-download-links}}
             </li>
           {{/download}}
             <li>
               <a href="" class="cite content-header-grid__side-popup-block__link">Cite</a>
             </li>
             <li>
-              <a href="" class="comments content-header-grid__side-popup-block__link">Comments</a>
+              <a href="" class="comment content-header-grid__side-popup-block__link">Comment</a>
             </li>
             <li class="content-header__share-listing">
               <a href="" class="share content-header-grid__side-popup-block__link">Share</a>
@@ -199,24 +203,4 @@
     </div>
   {{/selectNav}}
 
-{{#image.creditOverlay}}
-  {{#image.credit}}
-      <div class="content-header__image-credit content-header__image-credit--overlay" id="{{elementId}}">{{{text}}}</div>
-  {{/image.credit}}
-{{/image.creditOverlay}}
-
 </header>
-
-{{#audioPlayer}}
-  {{> molecules-audio-player}}
-{{/audioPlayer}}
-
-{{^image.creditOverlay}}
-  {{#image.credit}}
-      <div class="wrapper"><div class="content-header__image-credit" id="{{elementId}}">{{{text}}}</div></div>
-  {{/image.credit}}
-{{/image.creditOverlay}}
-
-{{#image}}
-  </div>
-{{/image}}
