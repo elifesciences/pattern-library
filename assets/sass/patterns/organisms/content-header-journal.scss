@@ -1,19 +1,20 @@
 // Content Header Grid Articles
 
 .content-header-grid {
-  padding: 0 #{$site-spacing-bottom}px;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     border-bottom: 1px solid $color-text-dividers;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: #{$site-spacing-bottom}px;
+    grid-column-gap: #{$site-spacing}px;
     max-width: #{$max-site-width}px;
     padding: 0;
   }
 }
 
 .content-header-grid-top {
+  @include margin(24, "top");
+  @include margin(24, "bottom");
 
   .content-header__subject_list {
     @include margin(0, "bottom");
@@ -21,15 +22,12 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    @include margin(0, "bottom");
     grid-column: 1/13;
   }
 }
 
 .content-header-grid__main {
-  @include margin($site-spacing-bottom, "bottom");
-  @include padding($site-spacing-bottom, "bottom");
-  border-bottom: 1px solid $color-text-dividers;
+  @include margin($site-spacing-medium, "bottom");
 
   .content-header__meta {
     display: inline-block;
@@ -38,9 +36,11 @@
   .meta {
     display: inline-block;
 
-    &:after {
-      content: "\00a0\2219\00a0";
-      font-weight: bold;
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      &:after {
+        content: "\00a0\2219\00a0";
+        font-weight: bold;
+      }
     }
   }
 
@@ -54,16 +54,27 @@
 
   .date {
     @include font-size-and-vertical-height(14,0);
+    display: block;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      display: initial;
+    }
+
   }
 
   .doi {
     @include font-size-and-vertical-height(14,24);
+    display: block;
     height: 30px;
-    margin-right: 12px;
+    margin-right: 6px;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      display: initial;
+    }
   }
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    @include margin(0, "bottom");
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include margin($site-spacing-large, "bottom");
     border-bottom: none;
     grid-column: 1/10;
     width: 100%;
@@ -71,7 +82,7 @@
 }
 
 .content-header-grid__side {
-  @include margin($site-spacing-bottom, "bottom");
+  @include margin($site-spacing, "bottom");
   border-bottom: 1px solid $color-text-dividers;
   display: grid;
 
@@ -79,27 +90,12 @@
     display: grid;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      display: initial;
       justify-self: end;
       max-width: 132px;
       width: 100%;
     }
 
-  }
-
-  .social-media-sharers {
-    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      display: none;
-    }
-  }
-
-  .social-media-sharer {
-    margin: 0 12px 24px 0;
-    width: 20px;
-    height: 20px;
-
-    &:last-child {
-      margin: 0;
-    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
@@ -120,9 +116,9 @@
 }
 
 .content-header-grid__side-popup-block__list {
-  @include margin(0);
-  @include margin(24, "bottom");
   @include padding(0);
+  @include margin(24, "bottom");
+  @include padding(24, "bottom");
   grid-row: 1;
   justify-self: start;
 
@@ -167,12 +163,32 @@
   background: url("../../assets/img/icons/cite.svg") no-repeat 0 0;
 }
 
-.comments {
+.comment {
   background: url("../../assets/img/icons/commenting.svg") no-repeat 0 0;
 }
 
 .share {
   background: url("../../assets/img/icons/share.svg") no-repeat 0 0;
+}
+
+.facebook {
+  background: url("../../assets/img/icons/facebook.svg") no-repeat 0 0;
+  text-indent: -5000px;
+}
+
+.twitter {
+  background: url("../../assets/img/icons/twitter.svg") no-repeat 0 0;
+  text-indent: -5000px;
+}
+
+.linkedin {
+  background: url("../../assets/img/icons/linkedin.svg") no-repeat 0 0;
+  text-indent: -5000px;
+}
+
+.reddit {
+  background: url("../../assets/img/icons/reddit.svg") no-repeat 0 0;
+  text-indent: -5000px;
 }
 
 .teaser {
