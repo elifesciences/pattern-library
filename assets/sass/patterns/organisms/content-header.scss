@@ -28,36 +28,6 @@
   text-align: left;
 }
 
-// Breadcrumbs
-
-.breadcrumbs {
-  margin: 0;
-  padding: 0;
-
-  li {
-    @include font-size-and-vertical-height(14, 24);
-    display: inline;
-    font-family: $font-secondary;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-transform: capitalize;
-
-    &:after {
-      content: " | ";
-    }
-
-    &:last-child:after {
-      content: "";
-    }
-
-    a {
-      color: $color-text;
-    }
-  }
-
-}
-
 .content-header--read-more {
   .content-header__subject_list {
     @include padding(0, "left");

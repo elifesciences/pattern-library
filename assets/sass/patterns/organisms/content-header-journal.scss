@@ -1,5 +1,4 @@
 // Content Header Grid Articles
-
 .content-header-grid {
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
@@ -120,6 +119,36 @@
     justify-self: unset;
     grid-row: 2;
   }
+}
+
+// Breadcrumbs
+
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+
+  li {
+    @include font-size-and-vertical-height(14, 24);
+    display: inline;
+    font-family: $font-secondary;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-transform: capitalize;
+
+    &:after {
+      content: " | ";
+    }
+
+    &:last-child:after {
+      content: "";
+    }
+
+    a {
+      color: $color-text;
+    }
+  }
+
 }
 
 .content-header-grid__side-popup-block__list {
