@@ -29,8 +29,15 @@
 .content-header-grid__main {
   @include margin($site-spacing-medium, "bottom");
 
+  .content-header__footer {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      display: flex;
+    }
+  }
+
   .content-header__meta {
     display: inline-block;
+
   }
 
   .meta {
