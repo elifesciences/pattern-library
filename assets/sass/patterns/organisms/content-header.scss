@@ -416,21 +416,15 @@ $iconlist: cc oa;
 
 .content-header__icon {
   background-repeat: no-repeat;
-  background-position: left bottom;
+  background-position: 0 0;
   display: block;
-  height: 22px;
-  width: 17px;
+  height: 24px;
+  width: 24px;
 }
 
 @each $icon in $iconlist {
   .content-header__icon--#{$icon} {
-    background-image: url("../img/icons/#{$icon}.png");
-    background-image: url("../img/icons/#{$icon}.svg"), linear-gradient(transparent, transparent);
-
-    &:hover {
-      background-image: url("../img/icons/#{$icon}-hover.png");
-      background-image: url("../img/icons/#{$icon}-hover.svg"), linear-gradient(transparent, transparent);
-    }
+    background-image: url("../img/icons/#{$icon}.svg");
   }
 }
 
