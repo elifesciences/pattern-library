@@ -2,7 +2,7 @@ $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
   logo:
-    $ref: ../../01-molecules/navigation/meta.yaml
+    $ref: ../../01-molecules/navigation/site-header-logo.yaml
   title:
     type: string
     minLength: 1
