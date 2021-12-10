@@ -13,8 +13,8 @@
 @mixin _label-typeg($uppercase: false) {
   font-family: $font-secondary;
   font-weight: normal;
-  @include font-size-and-vertical-height(13);
-  letter-spacing: 0.2px;
+  @include font-size-and-vertical-height(14);
+
   @if $uppercase {
     @include font-size-and-vertical-height(11);
     letter-spacing: 0.5px;

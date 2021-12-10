@@ -8,6 +8,11 @@
 .contextual-data__list {
   margin: 0;
   @include padding(0 0 11);
+  text-align: right;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    text-align: left;
+  }
 }
 
 .contextual-data__item {
