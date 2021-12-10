@@ -1,7 +1,7 @@
 // Content Header Grid Articles
 .content-header-grid {
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     border-bottom: 1px solid $color-text-dividers;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -11,6 +11,7 @@
   }
 }
 
+// Grid Top
 .content-header-grid-top {
   @include margin(24, "top");
   @include margin(24, "bottom");
@@ -20,13 +21,18 @@
     text-align: left;
   }
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    grid-column: 2/12;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 1/13;
   }
 }
 
+// Grid Main
 .content-header-grid__main {
-  @include margin($site-spacing-medium, "bottom");
+  @include margin($site-spacing, "bottom");
 
   .content-header__footer {
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
@@ -51,7 +57,7 @@
   }
 
   .content-header__icons {
-    display: inline-block;
+    display: flex;
 
     li {
       display: inline-block;
@@ -69,9 +75,7 @@
   }
 
   .doi {
-    @include font-size-and-vertical-height(14,24);
     display: block;
-    height: 30px;
     margin-right: 6px;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
@@ -80,13 +84,35 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    @include margin($site-spacing-large, "bottom");
+    @include margin($site-spacing-medium, "bottom");
     border-bottom: none;
     grid-column: 1/10;
     width: 100%;
   }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    border-bottom: none;
+    grid-column: 2/12;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin($site-spacing-large, "bottom");
+    border-bottom: none;
+    grid-column: 2/10;
+    grid-row: 2;
+    width: 100%;
+    padding-right: 48px;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    grid-column: 1/10;
+    padding-right: 0;
+  }
 }
 
+// Grid Side
 .content-header-grid__side {
   @include margin($site-spacing, "bottom");
   border-bottom: 1px solid $color-text-dividers;
@@ -104,9 +130,21 @@
 
   }
 
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include margin(0, "bottom");
+    border-bottom: none;
+    grid-column: 2/12;
+    grid-row: 3;
+  }
+
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin(0, "bottom");
     border-bottom: none;
+    grid-column: 9/12;
+    grid-row: 2;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 10/13;
   }
 }
@@ -121,50 +159,20 @@
   }
 }
 
-// Breadcrumbs
-
-.breadcrumbs {
-  margin: 0;
-  padding: 0;
-
-  li {
-    @include font-size-and-vertical-height(14, 24);
-    display: inline;
-    font-family: $font-secondary;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-transform: capitalize;
-
-    &:after {
-      content: " | ";
-    }
-
-    &:last-child:after {
-      content: "";
-    }
-
-    a {
-      color: $color-text;
-    }
-  }
-
-}
-
 .content-header-grid__side-popup-block__list {
   @include padding(0);
   @include margin(24, "bottom");
-  @include padding(24, "bottom");
+  @include padding(12, "bottom");
   grid-row: 1;
   justify-self: start;
 
   li {
-    @include margin(6, "bottom");
+    @include margin(12, "bottom");
     list-style: none;
     font-family: $font-secondary;
 
     &:last-child {
-      @include margin(24, "bottom");
+      @include margin(12, "bottom");
     }
 
     a {
