@@ -1,7 +1,7 @@
 {
   "viewSelector": true,
   "siteHeader": {
-    "logo": {
+    "title": {
       "homePagePath": "#"
     },
     "primaryLinks":
