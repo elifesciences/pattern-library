@@ -1,9 +1,8 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
-  homePagePath:
-    type: string
-    minLength: 1
+  logo:
+    $ref: ../../01-molecules/navigation/site-header-logo.yaml
   primaryLinks:
     $ref: ../../01-molecules/navigation/site-header-nav-bar.yaml
   secondaryLinks:
@@ -11,6 +10,6 @@ properties:
   searchBox:
     $ref: ../../01-molecules/components/search-box.yaml
 required:
-  - homePagePath
+  - logo
   - primaryLinks
   - secondaryLinks

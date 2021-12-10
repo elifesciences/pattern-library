@@ -2,7 +2,9 @@
   "hasRelated": true,
   "viewSelector": true,
   "siteHeader": {
-    "homePagePath": "#",
+    "logo": {
+      "homePagePath": "#"
+    },
     "primaryLinks":
     {
       "classesOuter": "nav-primary",

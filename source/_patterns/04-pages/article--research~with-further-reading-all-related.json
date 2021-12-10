@@ -2,7 +2,9 @@
   "isPrimaryResearch": true,
   "hasRelated": true,
   "siteHeader": {
-    "homePagePath": "#",
+    "logo": {
+      "homePagePath": "#"
+    },
     "primaryLinks": {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
