@@ -22,7 +22,6 @@ properties:
   letterButtonCollection:
     $ref: button-collection.yaml
 required:
-  - logo
   - title
   - text
   - picture
