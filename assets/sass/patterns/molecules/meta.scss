@@ -6,7 +6,9 @@
 
 .meta {
   @include label-content-typeg($uppercase: false);
-  @include font-size-and-vertical-height(12);
+  @include font-size-and-vertical-height(14, 24);
+  font-size: 14px;
+  line-height: 24px;
   .highlights & {
     @include truncate-with-ellipsis();
   }
