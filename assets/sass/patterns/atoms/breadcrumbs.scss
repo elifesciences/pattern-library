@@ -1,0 +1,29 @@
+@import "../../definitions";
+
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+
+  li {
+    @include font-size-and-vertical-height(14, 24);
+    display: inline;
+    font-family: $font-secondary;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+
+    &:after {
+      content: " | ";
+    }
+
+    &:last-child:after {
+      content: "";
+    }
+
+    a {
+      color: $color-text;
+    }
+  }
+
+}
