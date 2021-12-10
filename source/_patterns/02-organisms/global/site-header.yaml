@@ -1,8 +1,8 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
-  logo:
-    $ref: ../../01-molecules/navigation/site-header-logo.yaml
+  title:
+    $ref: ../../01-molecules/navigation/site-header-title.yaml
   primaryLinks:
     $ref: ../../01-molecules/navigation/site-header-nav-bar.yaml
   secondaryLinks:
@@ -10,6 +10,6 @@ properties:
   searchBox:
     $ref: ../../01-molecules/components/search-box.yaml
 required:
-  - logo
+  - title
   - primaryLinks
   - secondaryLinks

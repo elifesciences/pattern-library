@@ -2,7 +2,7 @@
   "isPrimaryResearch": true,
   "hasRelated": true,
   "siteHeader": {
-    "logo": {
+    "title": {
       "homePagePath": "#"
     },
     "primaryLinks": {
