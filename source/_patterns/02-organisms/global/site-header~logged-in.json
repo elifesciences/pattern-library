@@ -1,5 +1,7 @@
 {
-  "homePagePath": "#",
+  "logo": {
+    "homePagePath": "#"
+  },
   "primaryLinks":
   {
     "classesOuter": "nav-primary",

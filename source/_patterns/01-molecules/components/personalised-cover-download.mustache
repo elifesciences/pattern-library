@@ -4,7 +4,9 @@
       <div class="site-header__skip_to_content">
         <a href="#maincontent" class="site-header__skip_to_content__link button button--default">Skip to Content</a>
       </div>
-      {{> molecules-site-header-logo }}
+      {{#logo}}
+        {{> molecules-site-header-logo }}
+      {{/logo}}
     </div>
   </header>
   <h1 class="personalised-cover__header-text">{{{title}}}</h1>

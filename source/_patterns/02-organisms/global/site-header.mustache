@@ -3,7 +3,9 @@
     <div class="site-header__skip_to_content">
       <a href="#maincontent" class="site-header__skip_to_content__link button button--default">Skip to Content</a>
     </div>
-    {{> molecules-site-header-logo }}
+    {{#logo}}
+      {{> molecules-site-header-logo }}
+    {{/logo}}
   </div>
   <div class="site-header__navigation" role="navigation" aria-label="Main navigation">
 

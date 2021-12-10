@@ -1,6 +1,8 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
+  logo:
+    $ref: ../../01-molecules/navigation/meta.yaml
   title:
     type: string
     minLength: 1
@@ -20,6 +22,7 @@ properties:
   letterButtonCollection:
     $ref: button-collection.yaml
 required:
+  - logo
   - title
   - text
   - picture
