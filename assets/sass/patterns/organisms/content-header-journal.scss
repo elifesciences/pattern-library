@@ -41,7 +41,7 @@
   }
 
   .content-header__meta {
-    display: inline-block;
+    display: block;
 
   }
 
@@ -57,7 +57,7 @@
   }
 
   .content-header__icons {
-    display: flex;
+    display: inline-block;
 
     li {
       display: inline-block;
@@ -75,8 +75,9 @@
   }
 
   .doi {
-    display: block;
-    margin-right: 6px;
+    display: inline-block;
+    max-width: 234px;
+    width: 100%;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       display: initial;
@@ -109,6 +110,15 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 1/10;
     padding-right: 0;
+  }
+}
+
+.content-header__footer-inner {
+  @include font-size-and-vertical-height(14,24);
+  display: flex;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    display: initial;
   }
 }
 
@@ -213,26 +223,6 @@
 
 .share {
   background: url("../../assets/img/icons/share.svg") no-repeat 0 0;
-}
-
-.facebook {
-  background: url("../../assets/img/icons/facebook.svg") no-repeat 0 0;
-  text-indent: -5000px;
-}
-
-.twitter {
-  background: url("../../assets/img/icons/twitter.svg") no-repeat 0 0;
-  text-indent: -5000px;
-}
-
-.linkedin {
-  background: url("../../assets/img/icons/linkedin.svg") no-repeat 0 0;
-  text-indent: -5000px;
-}
-
-.reddit {
-  background: url("../../assets/img/icons/reddit.svg") no-repeat 0 0;
-  text-indent: -5000px;
 }
 
 .teaser {
