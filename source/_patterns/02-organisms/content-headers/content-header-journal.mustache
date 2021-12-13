@@ -15,6 +15,8 @@
           <li><a href="{{ url }}">Great-Grandchild</a></li>
         </ul>
 
+          {{> atoms-breadcrumb}}
+
         {{#header}}
           {{#hasProfile}}
             <div class="content-header__profile_wrapper">
@@ -116,25 +118,27 @@
             </div>
           {{/meta}}
 
-          {{#doi}}
-            {{> atoms-doi}}
-          {{/doi}}
+          <div class="content-header__footer-inner">
+            {{#doi}}
+              {{> atoms-doi}}
+            {{/doi}}
 
-          {{#licence}}
-            <ul class="content-header__icons">
-              <li>
-                <a href="https://en.wikipedia.org/wiki/Open_access"
-                    class="content-header__icon content-header__icon--oa">
-                      <span class="visuallyhidden">Open access</span>
-                </a>
-              </li>
-              <li>
-                <a href="{{licence}}" class="content-header__icon content-header__icon--cc">
-                  <span class="visuallyhidden">Copyright information</span>
-                </a>
-              </li>
-            </ul>
-          {{/licence}}
+            {{#licence}}
+              <ul class="content-header__icons">
+                <li>
+                  <a href="https://en.wikipedia.org/wiki/Open_access"
+                      class="content-header__icon content-header__icon--oa">
+                        <span class="visuallyhidden">Open access</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{licence}}" class="content-header__icon content-header__icon--cc">
+                    <span class="visuallyhidden">Copyright information</span>
+                  </a>
+                </li>
+              </ul>
+            {{/licence}}
+          </div>
         </div>
 
       </div>

@@ -127,7 +127,7 @@
 
 .content-header__title {
   @include font-size-and-vertical-height(36, 48);
-  @include margin(0, "top");
+  @include margin(3, "top");
   @include margin(12, "bottom");
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -388,14 +388,21 @@ $iconlist: cc oa;
   background-repeat: no-repeat;
   background-position: 0 0;
   display: block;
-  height: 24px;
-  width: 24px;
+  height: 20px;
 }
 
 @each $icon in $iconlist {
   .content-header__icon--#{$icon} {
     background-image: url("../img/icons/#{$icon}.svg");
   }
+}
+
+.content-header__icon--cc {
+  width: 18px;
+}
+
+.content-header__icon--oa {
+  width: 16px;
 }
 
 .content-header__download_link {
