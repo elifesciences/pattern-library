@@ -13,12 +13,12 @@
 .social-media-sharers {
   @include margin(0);
   @include padding(0);
+  margin-bottom: 24px;
   display: flex;
 
   li {
-    display: inline-block;
+    @include margin(12, "right");
     list-style: none;
-    margin: 0 12px 24px 0;
 
     &:last-child {
       margin-right: 0;
@@ -31,11 +31,9 @@
 }
 
 .social-media-sharer {
-  border-radius: #{$border-radius}px;
   display: inline-block;
   height: 24px;
   text-decoration: none;
-  transition: 25ms ease-out;
   width: 24px;
 
   .content-header--image & {
@@ -44,4 +42,24 @@
     padding: 1px 0;
   }
 
+}
+
+.facebook {
+  background: url("../../assets/img/icons/facebook.svg") no-repeat 0 0;
+  text-indent: -5000px;
+}
+
+.twitter {
+  background: url("../../assets/img/icons/twitter.svg") no-repeat 0 0;
+  text-indent: -5000px;
+}
+
+.linkedin {
+  background: url("../../assets/img/icons/linkedin.svg") no-repeat 0 0;
+  text-indent: -5000px;
+}
+
+.reddit {
+  background: url("../../assets/img/icons/reddit.svg") no-repeat 0 0;
+  text-indent: -5000px;
 }
