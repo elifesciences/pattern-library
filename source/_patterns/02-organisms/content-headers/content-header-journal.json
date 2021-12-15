@@ -299,6 +299,16 @@
       }
     ]
   },
+  "breadcrumb": {
+    "items": [
+      {
+        "term": "Research focus"
+      },
+      {
+        "term": "Experimental organism"
+      }
+    ]
+  },
   "institutions": {
     "list": [
       {
