@@ -20,5 +20,15 @@
   "logoutLink": {
     "name": "Log out",
     "url": "/log-out"
+  },
+  "breadcrumb": {
+    "items": [
+      {
+        "term": "Research focus"
+      },
+      {
+        "term": "Experimental organism"
+      }
+    ]
   }
 }

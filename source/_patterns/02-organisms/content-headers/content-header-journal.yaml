@@ -173,6 +173,9 @@ metricsData:
         minLength: 1
       doi:
         $ref: ../../00-atoms/components/doi.yaml
+      breadcrumb:
+        $ref: ../../00-atoms/components/breadcrumb.yaml
     required:
       - citeAs
       - doi
+      - term
