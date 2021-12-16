@@ -1,6 +1,8 @@
 {
   "siteHeader": {
-    "homePagePath": "#",
+    "title": {
+      "homePagePath": "#"
+    },
     "primaryLinks": {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",

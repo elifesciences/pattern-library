@@ -1,15 +1,15 @@
 <div class="global-wrapper" data-item-type="blog-article">
   <div class="global-inner">
     <div class="wrapper wrapper--site-header">
-      {{#siteHeader}}
-        {{> organisms-site-header }}
-      {{/siteHeader}}
+      {{#siteHeaderTitle}}
+        {{> molecules-site-header-title }}
+      {{/siteHeaderTitle}}
     </div>
 
     <main role="main" class="main" id="maincontent">
 
       {{#contentHeader}}
-        {{> organisms-content-header }}
+        {{> organisms-content-header-simple }}
       {{/contentHeader}}
       <div class="wrapper wrapper--content">
 
