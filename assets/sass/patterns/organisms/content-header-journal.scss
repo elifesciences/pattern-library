@@ -65,7 +65,7 @@
   }
 
   .date {
-    @include font-size-and-vertical-height(14,0);
+    @include font-size-and-vertical-height(14,24);
     display: block;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
@@ -76,6 +76,7 @@
 
   .doi {
     display: inline-block;
+    margin-right: 2px;
     max-width: 234px;
     width: 100%;
 
@@ -118,7 +119,8 @@
   display: flex;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    display: initial;
+    width: 100%;
+    max-width: 400px;
   }
 }
 
