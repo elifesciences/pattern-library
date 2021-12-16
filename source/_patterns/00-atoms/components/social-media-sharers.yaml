@@ -16,5 +16,5 @@ properties:
 required:
   - facebookUrl
   - twitterUrl
-  - emailUrl
+  - linkedInUrl
   - redditUrl
