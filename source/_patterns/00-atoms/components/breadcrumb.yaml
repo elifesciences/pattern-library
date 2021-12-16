@@ -12,6 +12,7 @@ properties:
         breadcrumb:
           type: string
       required:
-        - term
+        - url
+        - breadcrumb
 required:
   - items
