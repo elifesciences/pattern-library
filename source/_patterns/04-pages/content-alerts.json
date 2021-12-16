@@ -1,173 +1,44 @@
 {
-    "siteHeader": {
-      "homePagePath": "#",
-      "primaryLinks": {
-        "classesOuter": "nav-primary",
-        "classesInner": "nav-primary__list clearfix",
-        "linkedItems": [
-          {
-            "text": "Menu",
-            "classes": "nav-primary__item nav-primary__item--first",
-            "textClasses": "visuallyhidden",
-            "path": "#mainMenu",
-            "picture": {
-              "pictureClasses": "nav-primary__menu_icon",
-              "fallback": {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
-                "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-                "classes": "",
-                "altText": ""
-              },
-              "sources": [
-                {
-                  "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-                }
-              ]
-            }
-          },
-  
-          {
-            "text": "Home",
-            "path": "#",
-            "classes": "nav-primary__item"
-          },
-  
-          {
-            "text": "Magazine",
-            "path": "#",
-            "classes": "nav-primary__item"
-          },
+  "siteHeaderTitle": {
+    "isWrapped": true,
+    "borderVariant": true,
+    "homePagePath": "#"
+  },
+  "contentHeader": {
+    "title": "Subscribe to eLife's email alerts"
+  },
+  "mainMenu": {
+    "links": {
+      "items": [
+        { "name": "Research categories", "url": "#res" },
+        { "name": "Author guide", "url": "#aut" },
+        { "name": "Reviewer guide", "url": "#rev" },
+        { "name": "About", "url": "#abo" },
+        { "name": "Inside eLife", "url": "#ins" },
+        { "name": "Careers", "url": "#car" },
+        { "name": "Innovation", "url": "#lab" }
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
 
-          {
-            "text": "Community",
-            "path": "#",
-            "classes": "nav-primary__item"
-          },
-  
-          {
-            "text": "Innovation",
-            "path": "#",
-            "classes": "nav-primary__item"
-          },
-  
-          {
-            "text": "Search the eLife site",
-            "rel": "search",
-            "classes": "nav-primary__item nav-primary__item--search",
-            "textClasses": "visuallyhidden",
-            "path": "#",
-            "picture": {
-              "pictureClasses": "nav-primary__search_icon",
-              "fallback": {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-                "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-                "classes": "",
-                "altText": ""
-              },
-              "sources": [
-                {
-                  "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-                }
-              ]
-            }
-          }
-        ]
-      },
-  
-      "secondaryLinks": {
-        "classesOuter": "nav-secondary",
-        "classesInner": "nav-secondary__list clearfix",
-        "linkedItems": [
-          {
-            "text": "Newsletters",
-            "path": "#",
-            "classes": "nav-secondary__item"
-          },
-  
-          {
-            "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-            "path": "#",
-            "classes": "nav-secondary__item"
-          },
-  
-          {
-            "text": "Submit my research",
-            "path": "#",
-            "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
-            "button": {
-              "classes": "button--default button--extra-small"
-            }
-          },
-  
-          {
-            "classes": "nav-secondary__item",
-            "loginControl": {
-              "button": {
-                "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-                "path": "#",
-                "classes": "button--login"
-              }
-            }
-          }
-        ]
-      },
-      "searchBox": {
-        "inContentHeader": true,
-        "compactForm": {
-          "formAction": "/search",
-          "formId": "searchBox",
-          "formMethod": "GET",
-          "label": "Search by keyword or author",
-          "inputType": "search",
-          "inputName": "search",
-          "inputValue": "",
-          "inputPlaceholder": "Search by keyword or author",
-          "ctaText": "Search"
-        },
-  
-        "subjectFilter": {
-          "name": "subject_filter",
-          "value": "cell_biology",
-          "text": "Cell biology"
-        }
-      }
-    },
-  
-    "contentHeader": {
-      "title": "Subscribe to eLife's email alerts"
-    },
-    "mainMenu": {
-      "links": {
-        "items": [
-          { "name": "Research categories", "url": "#res" },
-          { "name": "Author guide", "url": "#aut" },
-          { "name": "Reviewer guide", "url": "#rev" },
-          { "name": "About", "url": "#abo" },
-          { "name": "Inside eLife", "url": "#ins" },
-          { "name": "Careers", "url": "#car" },
-          { "name": "Innovation", "url": "#lab" }
-        ]
-      },
-      "button": {
-        "text": "Back to top",
-        "path": "#siteHeader",
-        "classes": "button--default button--full button--small main_menu__quit"
-      }
-    },
-  
-    "body": "<form id=\"content_alerts\" action=\"/content-alerts\" method=\"POST\" novalidate=\"\">    <div class=\"form-item\">  <div class=\"form-item__label_container\">      <label for=\"content_alerts_email\" class=\"form-item__label\">        Email      </label>      <div class=\"form-field-info-link-wrapper\">        <a class=\"form-field-info-link\" href=\"/privacy\">Privacy notice</a>      </div>        </div>  <input type=\"email\" class=\"text-field text-field--email\" id=\"content_alerts_email\" name=\"content_alerts[email]\" required=\"required\"></div><div class=\"form-item\">    <div class=\"form-item__title\">I would like to receive the following regular emails from eLife:</div>  <div class=\"checkboxes\" id=\"content_alerts_preferences\">    <ul class=\"checkboxes__list\">        <li class=\"checkboxes__list_item\">            <label class=\"checkboxes__item_label\">              <input type=\"checkbox\" name=\"content_alerts[preferences][]\" value=\"latest_articles\" id=\"content_alerts_preferences\" checked=\"\" required=\"required\">              <span class=\"checkbox__item\">The latest scientific articles published by eLife (twice weekly)</span>            </label>        </li>        <li class=\"checkboxes__list_item\">            <div class=\"form-item__sub_title\">Our other newsletters</div>            <ul class=\"checkboxes__children_list\">                <li class=\"checkboxes__children_list_item\">                  <label class=\"checkboxes__item_label\">                    <input type=\"checkbox\" name=\"content_alerts[preferences][]\" value=\"early_career\" id=\"content_alerts_preferences\" required=\"required\">                    <span class=\"checkbox__item\">Early-career researchers newsletter (monthly)</span>                  </label>                </li>                <li class=\"checkboxes__children_list_item\">                  <label class=\"checkboxes__item_label\">                    <input type=\"checkbox\" name=\"content_alerts[preferences][]\" value=\"technology\" id=\"content_alerts_preferences\" required=\"required\">                    <span class=\"checkbox__item\">Technology and Innovation newsletter (every two months)</span>                  </label>                </li>                <li class=\"checkboxes__children_list_item\">                  <label class=\"checkboxes__item_label\">                    <input type=\"checkbox\" name=\"content_alerts[preferences][]\" value=\"elife_newsletter\" id=\"content_alerts_preferences\" required=\"required\">                    <span class=\"checkbox__item\">eLife newsletter (every two months)</span>                  </label>                </li>            </ul>        </li>    </ul>  </div></div>  <button class=\"button button--default\" type=\"submit\" id=\"content_alerts_subscribe\" name=\"content_alerts[subscribe]\">Subscribe</button><div class=\"form-item visuallyhidden\" aria-hidden=\"true\">    <label for=\"content_alerts_email_address\" class=\"form-item__label\">Please leave this field empty</label>  <input type=\"email\" class=\"text-field text-field--email\" id=\"content_alerts_email_address\" name=\"content_alerts[email_address]\" tabindex=\"-1\"></div></form>",
-  
-    "footerMenuLinks": [
-      { "name": "About", "url": "#" },
-      { "name": "Who we work with", "url": "#" },
-      { "name": "Alerts", "url": "#" },
-      { "name": "Contact", "url": "#" },
-      { "name": "Terms and policy", "url": "#" },
-      { "name": "Inside eLife", "url": "#" },
-      { "name": "Monthly archive", "url": "#" },
-      { "name": "Innovation", "url": "#" },
-      { "name": "For the press", "url": "#" },
-      { "name": "Resources", "url": "#" }
-    ]
-  }
+  "body": "<form id=\"content_alerts\" action=\"/content-alerts\" method=\"POST\" novalidate=\"\">    <div class=\"form-item\">  <div class=\"form-item__label_container\">      <label for=\"content_alerts_email\" class=\"form-item__label\">        Email      </label>      <div class=\"form-field-info-link-wrapper\">        <a class=\"form-field-info-link\" href=\"/privacy\">Privacy notice</a>      </div>        </div>  <input type=\"email\" class=\"text-field text-field--email\" id=\"content_alerts_email\" name=\"content_alerts[email]\" required=\"required\"></div><div class=\"form-item\">    <div class=\"form-item__title\">I would like to receive the following regular emails from eLife:</div>  <div class=\"checkboxes\" id=\"content_alerts_preferences\">    <ul class=\"checkboxes__list\">        <li class=\"checkboxes__list_item\">            <label class=\"checkboxes__item_label\">              <input type=\"checkbox\" name=\"content_alerts[preferences][]\" value=\"latest_articles\" id=\"content_alerts_preferences\" checked=\"\" required=\"required\">              <span class=\"checkbox__item\">The latest scientific articles published by eLife (twice weekly)</span>            </label>        </li>        <li class=\"checkboxes__list_item\">            <div class=\"form-item__sub_title\">Our other newsletters</div>            <ul class=\"checkboxes__children_list\">                <li class=\"checkboxes__children_list_item\">                  <label class=\"checkboxes__item_label\">                    <input type=\"checkbox\" name=\"content_alerts[preferences][]\" value=\"early_career\" id=\"content_alerts_preferences\" required=\"required\">                    <span class=\"checkbox__item\">Early-career researchers newsletter (monthly)</span>                  </label>                </li>                <li class=\"checkboxes__children_list_item\">                  <label class=\"checkboxes__item_label\">                    <input type=\"checkbox\" name=\"content_alerts[preferences][]\" value=\"technology\" id=\"content_alerts_preferences\" required=\"required\">                    <span class=\"checkbox__item\">Technology and Innovation newsletter (every two months)</span>                  </label>                </li>                <li class=\"checkboxes__children_list_item\">                  <label class=\"checkboxes__item_label\">                    <input type=\"checkbox\" name=\"content_alerts[preferences][]\" value=\"elife_newsletter\" id=\"content_alerts_preferences\" required=\"required\">                    <span class=\"checkbox__item\">eLife newsletter (every two months)</span>                  </label>                </li>            </ul>        </li>    </ul>  </div></div>  <button class=\"button button--default\" type=\"submit\" id=\"content_alerts_subscribe\" name=\"content_alerts[subscribe]\">Subscribe</button><div class=\"form-item visuallyhidden\" aria-hidden=\"true\">    <label for=\"content_alerts_email_address\" class=\"form-item__label\">Please leave this field empty</label>  <input type=\"email\" class=\"text-field text-field--email\" id=\"content_alerts_email_address\" name=\"content_alerts[email_address]\" tabindex=\"-1\"></div></form>",
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms and policy", "url": "#" },
+    { "name": "Inside eLife", "url": "#" },
+    { "name": "Monthly archive", "url": "#" },
+    { "name": "Innovation", "url": "#" },
+    { "name": "For the press", "url": "#" },
+    { "name": "Resources", "url": "#" }
+  ]
+}
   
