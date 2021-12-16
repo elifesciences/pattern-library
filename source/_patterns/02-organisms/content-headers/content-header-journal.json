@@ -302,10 +302,24 @@
   "breadcrumb": {
     "items": [
       {
-        "term": "Research focus"
+        "url": "",
+        "name": "Research Article"
       },
       {
-        "term": "Experimental organism"
+        "url": "",
+        "name": "Magazine"
+      },
+      {
+        "url": "",
+        "name": "Magazine"
+      },
+      {
+        "url": "",
+        "name": "Magazine"
+      },
+      {
+        "url": "",
+        "name": "Magazine"
       }
     ]
   },
