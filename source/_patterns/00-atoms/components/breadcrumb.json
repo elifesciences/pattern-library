@@ -2,23 +2,23 @@
   "items": [
     {
       "url": "",
-      "name": "Research Article"
+      "breadcrumb": "Research Article"
     },
     {
       "url": "",
-      "name": "Magazine"
+      "breadcrumb": "Magazine"
     },
     {
       "url": "",
-      "name": "Magazine"
+      "breadcrumb": "Magazine"
     },
     {
       "url": "",
-      "name": "Magazine"
+      "breadcrumb": "Magazine"
     },
     {
       "url": "",
-      "name": "Magazine"
+      "breadcrumb": "Magazine"
     }
   ]
 }
