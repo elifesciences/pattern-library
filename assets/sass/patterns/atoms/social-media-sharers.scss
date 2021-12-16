@@ -25,7 +25,7 @@
     }
   }
 
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--small)}em) {
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--small - 1)}em) {
     display: none;
   }
 }
