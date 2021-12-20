@@ -35,29 +35,34 @@
   @include margin($site-spacing, "bottom");
 
   .content-header__footer {
+
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       display: flex;
+      width: 100%;
     }
   }
 
-  .content-header__meta {
-    display: block;
-
-  }
-
   .meta {
-    display: inline-block;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       &:after {
         content: "\00a0\2219\00a0";
         font-weight: bold;
+        margin-right: 3px;
       }
     }
   }
 
+  .doi {
+    margin-right: 6px;
+  }
+
   .content-header__icons {
-    display: inline-block;
+    @include margin(6, "top");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include margin(0, "top");
+    }
 
     li {
       display: inline-block;
@@ -66,22 +71,6 @@
 
   .date {
     @include font-size-and-vertical-height(14,24);
-    display: block;
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      display: initial;
-    }
-
-  }
-
-  .doi {
-    display: inline-block;
-    max-width: 234px;
-    width: 100%;
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      display: initial;
-    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
@@ -95,15 +84,12 @@
     border-bottom: none;
     grid-column: 2/12;
     grid-row: 2;
-    width: 100%;
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin($site-spacing-large, "bottom");
     border-bottom: none;
     grid-column: 2/10;
-    grid-row: 2;
-    width: 100%;
     padding-right: 48px;
   }
 
@@ -116,11 +102,6 @@
 .content-header__footer-inner {
   @include font-size-and-vertical-height(14,24);
   display: flex;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    width: 100%;
-    max-width: 400px;
-  }
 }
 
 // Grid Side
