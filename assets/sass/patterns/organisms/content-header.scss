@@ -363,9 +363,7 @@
 .content-header__icons {
   @include margin(0);
   @include padding(0);
-  grid-row: 1;
   list-style: none;
-  order: 1;
 
   .content-header--image & {
 
