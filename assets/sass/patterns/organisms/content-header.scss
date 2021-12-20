@@ -42,7 +42,7 @@
 
 .content-header__body {
   @include margin($content-header-padding * 2, "top");
-  @include margin($content-header-padding, "bottom");
+  @include margin(30, "bottom");
 
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include margin(0, "bottom");
@@ -127,7 +127,7 @@
 
 .content-header__title {
   @include font-size-and-vertical-height(36, 48);
-  @include margin(3, "top");
+  @include margin(6, "top");
   @include margin(12, "bottom");
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
