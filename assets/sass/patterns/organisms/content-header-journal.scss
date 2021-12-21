@@ -81,14 +81,12 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    border-bottom: none;
     grid-column: 2/12;
     grid-row: 2;
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin($site-spacing-large, "bottom");
-    border-bottom: none;
     grid-column: 2/10;
     padding-right: 48px;
   }
@@ -131,7 +129,6 @@
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin(0, "bottom");
-    border-bottom: none;
     grid-column: 9/12;
     grid-row: 2;
   }
