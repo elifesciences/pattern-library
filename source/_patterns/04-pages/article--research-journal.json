@@ -426,8 +426,6 @@
     "articleGrid": true,
     "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
     "meta": {
-      "url": "#",
-      "text": "Research article",
       "date": {
         "forHuman": {
           "dayOfMonth": 10,
@@ -438,11 +436,12 @@
       }
     }
   },
+  "doi": "10.7554/eLife.16370",
   "contextualData": {
     "metricsData": {
       "data": [
-        { "text": "<a href=\"#\">Views 149</a>" },
-        { "text": "Cited 5" }
+        { "text": "<a href=\"#\"><strong>149</strong> views</a>" },
+        { "text": "<strong>5</strong> citations" }
       ]
     }
   },
@@ -451,22 +450,6 @@
       {
         "url": "",
         "breadcrumb": "Research Article"
-      },
-      {
-        "url": "",
-        "breadcrumb": "Magazine"
-      },
-      {
-        "url": "",
-        "breadcrumb": "Magazine"
-      },
-      {
-        "url": "",
-        "breadcrumb": "Magazine"
-      },
-      {
-        "url": "",
-        "breadcrumb": "Magazine"
       }
     ]
   },
