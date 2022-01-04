@@ -570,13 +570,7 @@
 }
 
 @mixin blg-pad-top--small-to-medium {
-
-  @include blg-spacing("top", "small");
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include blg-spacing("top", "medium");
-  }
-
+  @include blg-spacing("top", "medium");
 }
 
 @mixin blg-pad-bottom--small-to-medium {

@@ -2,7 +2,6 @@
 .content-header-grid {
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    border-bottom: 1px solid $color-text-dividers;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: #{$site-spacing}px;
@@ -75,7 +74,6 @@
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     @include margin($site-spacing-medium, "bottom");
-    border-bottom: none;
     grid-column: 1/10;
     width: 100%;
   }
@@ -104,8 +102,6 @@
 
 // Grid Side
 .content-header-grid__side {
-  @include margin($site-spacing, "bottom");
-  border-bottom: 1px solid $color-text-dividers;
   display: grid;
 
   .content-header-grid__side-popup-block {
@@ -121,7 +117,6 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include margin(0, "bottom");
     border-bottom: none;
     grid-column: 2/12;
     grid-row: 3;
@@ -149,8 +144,8 @@
 }
 
 .content-header-grid__side-popup-block__list {
+  @include margin(0, "bottom");
   @include padding(0);
-  @include margin(24, "bottom");
   @include padding(12, "bottom");
   grid-row: 1;
   justify-self: start;
@@ -168,6 +163,10 @@
       font-weight: bold;
       color: $color-text;
     }
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include margin(12, "bottom");
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
