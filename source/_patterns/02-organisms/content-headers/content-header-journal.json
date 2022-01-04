@@ -57,52 +57,6 @@
               }
             }
           ]
-        },
-        {
-          "title": "Download citations<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
-          "items": [
-            {
-              "primary": {
-                "name": "BibTex",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "RIS",
-                "url": "#"
-              }
-            }
-          ]
-        },
-        {
-          "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
-          "items": [
-            {
-              "primary": {
-                "name": "Mendeley",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "ReadCube",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "Papers App",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "CiteUlike",
-                "url": "#"
-              }
-            }
-          ]
         }
       ]
     }
