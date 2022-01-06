@@ -139,15 +139,13 @@
 
         <div class="content-header-grid__side-popup-block">
           <ul class="content-header-grid__side-popup-block__list">
-          {{#download}}
             <li>
-              <a href="{{download}}" class="content-header__download_link download content-header-grid__side-popup-block__link">Download</a>
-              {{! Decided this will be content, serverside }}
-              {{#pl-only-article-section-for-download-links}}
-                {{> molecules-pl-only-article-section}}
-              {{/pl-only-article-section-for-download-links}}
+              {{#download}}
+                <a href="{{download}}" class="content-header__download_link download content-header-grid__side-popup-block__link">
+                  Download
+                </a>
+              {{/download}}
             </li>
-          {{/download}}
             <li>
               <a href="" class="cite content-header-grid__side-popup-block__link">Cite</a>
             </li>

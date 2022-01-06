@@ -576,7 +576,7 @@
       "description": "A three part list of links to download the article, or parts of the article, in various formats.",
       "groups": [
         {
-          "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
+          "title": "Download formats<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
           "items": [
             {
               "primary": {
@@ -598,52 +598,6 @@
               "secondary": {
                 "name": "What are executable versions?",
                 "url": "#secondaryLink"
-              }
-            }
-          ]
-        },
-        {
-          "title": "Download citations<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
-          "items": [
-            {
-              "primary": {
-                "name": "BibTex",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "RIS",
-                "url": "#"
-              }
-            }
-          ]
-        },
-        {
-          "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
-          "items": [
-            {
-              "primary": {
-                "name": "Mendeley",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "ReadCube",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "Papers App",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "CiteUlike",
-                "url": "#"
               }
             }
           ]
