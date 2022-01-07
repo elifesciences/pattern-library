@@ -176,17 +176,6 @@
   }
 }
 
-.divider {
-  width: 100%;
-  height: 1px;
-  grid-column: 2/12;
-  border-bottom: 1px solid $color-text-dividers;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    grid-column: 1/13;
-  }
-}
-
 .content-header-grid__side-popup-block__link {
   @include font-size-and-vertical-height(14,24);
   @include padding(30, "left");
@@ -220,41 +209,4 @@
 
 .contextual-data {
   border-bottom: none;
-}
-
-.main-content-grid {
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    grid-column: 2/12;
-    grid-row: 2;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    grid-column: 2/9;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    grid-column: 3/10;
-    grid-row: 1;
-    margin-left: 70px;
-    width: 100%;
-  }
-}
-
-.secondary-column-grid {
-  display: grid;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    grid-column: 8/12;
-    grid-row: 2;
-    justify-self: end;
-    margin-left: 70px;
-    max-width: 200px;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    grid-column: 10/13;
-    grid-row: 1;
-    margin-left: 70px;
-  }
 }
