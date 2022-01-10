@@ -1,16 +1,16 @@
 @import "../../definitions";
 
 .breadcrumbs {
-  margin: 0;
-  padding: 0;
+  @include margin(0);
+  @include padding(0);
 
-  li {
+  .breadcrumb-item {
     @include font-size-and-vertical-height(14, 24);
+    @include margin(0);
+    @include padding(0);
     display: inline;
     font-family: $font-secondary;
     list-style: none;
-    margin: 0;
-    padding: 0;
 
     &:after {
       content: " | ";
@@ -20,7 +20,7 @@
       content: "";
     }
 
-    a {
+    .breadcrumb-item__link {
       color: $color-text;
 
       &:hover {

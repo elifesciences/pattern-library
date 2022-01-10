@@ -159,13 +159,13 @@
 }
 
 @mixin box-shadow() {
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4);
 }
 
 @mixin tooltip-box() {
   background-color: $color-text-ui-background--reverse;
   color: $color-text-ui-background;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   @include padding(16);
 }
 
