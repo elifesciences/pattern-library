@@ -25,6 +25,42 @@
       }
     ]
   },
+  "download": "#download",
+  "pl-only-article-section-for-download-links": {
+    "title": "Article download links",
+    "downloadLinks": {
+      "description": "A three part list of links to download the article, or parts of the article, in various formats.",
+      "groups": [
+        {
+          "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
+          "items": [
+            {
+              "primary": {
+                "name": "Article",
+                "url": "#"
+              }
+            },
+            {
+              "primary": {
+                "name": "Figures",
+                "url": "#"
+              }
+            },
+            {
+              "primary": {
+                "name": "Executable version",
+                "url": "#eraLink"
+              },
+              "secondary": {
+                "name": "What are executable versions?",
+                "url": "#secondaryLink"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
   "articleGrid": true,
   "download": "#articleDownloadLinksList",
   "licence": "https://creativecommons.org/publicdomain/zero/1.0/",

@@ -16,7 +16,6 @@
     &:after {
       content: "";
       display: block;
-      @include padding($content-header-padding - 1, "top");
       width: 100%;
     }
 

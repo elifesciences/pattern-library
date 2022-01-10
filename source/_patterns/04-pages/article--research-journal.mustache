@@ -13,19 +13,14 @@
 
       <div class="wrapper wrapper--content">
 
-        <div class="grid">
+        <div class="content-header-grid">
 
           {{#viewSelector}}
-            <div class="grid__item
-                        one-whole
-                        x-large--two-twelfths">
-
-                {{> molecules-view-selector }}
-            </div>
+            {{> molecules-view-selector }}
           {{/viewSelector}}
 
 
-          <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}}">
+          <div class="main-content-grid">
 
             <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
             {{#articleSections}}
@@ -60,7 +55,7 @@
 
           </div>
 
-          <div class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}">
+          <div class="secondary-column-grid">
 
             {{#related}}
 
