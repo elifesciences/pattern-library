@@ -303,6 +303,5 @@ $arrow-size: 5;
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 10/13;
     grid-row: 1;
-    margin-left: 70px;
   }
 }
