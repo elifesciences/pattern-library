@@ -1,0 +1,29 @@
+.modal-container {
+  background-color: rgba(255,255,255,0.5);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+}
+
+.modal-content {
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.22);
+  border-radius: 3px;
+  display: grid;
+  margin: 24px;
+  padding: 36px 24px;
+}
+
+.modal-content__show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content__button {
+  grid-row: 1;
+  justify-self: end;
+  text-decoration: none;
+}
