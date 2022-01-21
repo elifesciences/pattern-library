@@ -6,13 +6,6 @@
   padding-left: 0.75rem;
 }
 
-// Had to put this here as list.scss overrides table.scss
-.table {
-  .list {
-    padding-left: 0;
-  }
-}
-
 .list--teaser {
 
   a {
