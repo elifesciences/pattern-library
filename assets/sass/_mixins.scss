@@ -14,16 +14,11 @@
 
 @function get-breakpoint($string) {
   @if $string == "x-small" {
-    @return #{get-rem-from-px($bkpt-site--x-small)}em
-  } @else if $string == "small" {
-    @return #{get-rem-from-px($bkpt-site--small)}em
-  } @else if $string == "medium" {
-    @return #{get-rem-from-px($bkpt-site--medium)}em
-  } @else if $string == "wide" {
-    @return #{get-rem-from-px($bkpt-site--wide)}em
-  } @else if $string == "x-wide" {
-    @return #{get-rem-from-px($bkpt-site--x-wide)}em
-  }
+    @return #{get-rem-from-px($bkpt-site--x-small)}em; } @else if $string == "small" {
+    @return #{get-rem-from-px($bkpt-site--small)}em; } @else if $string == "medium" {
+    @return #{get-rem-from-px($bkpt-site--medium)}em; } @else if $string == "wide" {
+    @return #{get-rem-from-px($bkpt-site--wide)}em; } @else if $string == "x-wide" {
+    @return #{get-rem-from-px($bkpt-site--x-wide)}em; }
 }
 
 @mixin font-size($size_in_px) {
@@ -40,10 +35,10 @@
     $parts-px: ();
     $parts-rem: ();
     @each $size in $size_in_px {
-      $parts-px: append($parts-px, #{$size}px, "space")
+      $parts-px: append($parts-px, #{$size}px, "space");
     }
     @each $size in $size_in_px {
-      $parts-rem: append($parts-rem, #{get-rem-from-px($size)}rem, "space")
+      $parts-rem: append($parts-rem, #{get-rem-from-px($size)}rem, "space");
     }
     padding: $parts-px;
     padding: $parts-rem;
@@ -63,10 +58,10 @@
     $parts-px: ();
     $parts-rem: ();
     @each $size in $size_in_px {
-      $parts-px: append($parts-px, #{$size}px, "space")
+      $parts-px: append($parts-px, #{$size}px, "space");
     }
     @each $size in $size_in_px {
-      $parts-rem: append($parts-rem, #{get-rem-from-px($size)}rem, "space")
+      $parts-rem: append($parts-rem, #{get-rem-from-px($size)}rem, "space");
     }
     margin: $parts-px;
     margin: $parts-rem;
@@ -225,7 +220,7 @@
 }
 
 @mixin loading-spinner($torus-width: 5, $size: 22,
-                       $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
+$highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   animation: full-rotation 1.1s infinite linear;
   border: #{$torus-width}px solid $base-color;
   border-left: #{$torus-width}px solid $highlight-color;
