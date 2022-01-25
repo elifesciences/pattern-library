@@ -8,7 +8,10 @@
   "version": "0.0.7",
   "scripts": {
     "compile-sass": "npx node-sass assets/sass/build.scss ./source/assets/css/all.css --importer node_modules/node-sass-magic-importer/dist/cli.js --source-map true --source-map-root file://${PWD}/ --source-map-embed true --source-comments true",
-    "lint-sass": "npx stylelint assets/sass/**/*.scss"
+    "lint-sass": "npx stylelint assets/sass/**/*.scss",
+    "clean-sass": "rm -rf ./source/assets/css/*",
+    "compress-img": "npx imagemin-cli './assets/img/errors' -o ./source/assets/img/errors/ --plugin.mozjpeg.progressive=true && npx imagemin-cli './assets/img/icons' -o ./source/assets/img/icons --plugin.mozjpeg.progressive=true && npx imagemin-cli './assets/img/patterns/molecules' -o ./source/assets/img/patterns/molecules/ --plugin.mozjpeg.progressive=true && npx imagemin-cli './assets/img/patterns/organisms' -o ./source/assets/img/patterns/organisms/ --plugin.mozjpeg.progressive=true",
+    "clean-img": "rm -rf ./source/assets/img"
   },
   "dependencies": {
     "highcharts": "^9.1.0",
@@ -27,6 +30,9 @@
     "element-closest": "^2.0.2",
     "express": "^4.13.4",
     "globby": "^5.0.0",
+    "imagemin-cli": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-svgo": "^10.0.1",
     "jshint": "^2.9.2",
     "minimist": "^1.2.0",
     "mocha": "^2.4.5",
