@@ -1,28 +1,48 @@
 'use strict';
 
-window.addEventListener('resize', function () {
-  if (window.innerWidth < 480) {
-    console.log('test');
+module.exports = class Modal {
 
-    const modalWindow = document.querySelector('.modal-container');
-    const modalBtnClick = document.querySelector('.modal-click');
-    const modalButtonClose = document.querySelector('.modal-content__button');
-
-    function modalToggle() {
-      modalWindow.classList.toggle('modal-content__show');
+  constructor($elm, _window = window, doc = document) {
+    if (!$elm) {
+      return;
     }
 
-    function windowOnClick(event) {
-      if (event.target === modalWindow) {
-        modalToggle();
-      }
-    }
+    this.$elm = $elm;
+    this.window = _window;
+    this.doc = doc;
 
-    if (document.querySelector('.modal-container')) {
-      modalBtnClick.addEventListener('click', modalToggle);
-      modalButtonClose.addEventListener('click', modalToggle);
-      window.addEventListener('click', windowOnClick);
-    }
+    this.modalWindow = this.$elm.querySelector('.modal-container');
+    this.$elm.querySelector('.modal-click').addEventListener('click', (event) => this.modalToggle(event));
+    this.$elm.querySelector('.modal-content__button').addEventListener('click', (event) => this.modalToggle(event));
+    this.window.addEventListener('click', (event) => this.windowOnClick(event));
 
+    this.window.addEventListener('resize', () => {
+      this.modalSetup();
+    });
+
+    this.modalSetup();
   }
-});
+
+  modalToggle(event) {
+    this.modalWindow.classList.toggle('modal-content__show');
+    event.preventDefault();
+  }
+
+  windowOnClick(event) {
+    if (event.target === this.modalWindow) {
+      this.modalToggle(event);
+    }
+  }
+
+  modalSetup() {
+    if (this.window.innerWidth < 480) {
+      this.$elm.classList.remove('modal-nojs');
+      console.log('below');
+    } else {
+      this.modalWindow.classList.remove('modal-content__show');
+      this.$elm.classList.add('modal-nojs');
+      console.log('above');
+    }
+  }
+
+};
