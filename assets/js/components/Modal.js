@@ -37,11 +37,9 @@ module.exports = class Modal {
   modalSetup() {
     if (this.window.innerWidth < 480) {
       this.$elm.classList.remove('modal-nojs');
-      console.log('below');
     } else {
       this.modalWindow.classList.remove('modal-content__show');
       this.$elm.classList.add('modal-nojs');
-      console.log('above');
     }
   }
 
