@@ -11,7 +11,8 @@
     "lint-sass": "npx stylelint assets/sass/**/*.scss",
     "clean-sass": "rm ./source/assets/css/*",
     "compress-img": "npx imagemin-cli './assets/img/errors' -o ./source/assets/img/errors/ --plugin.mozjpeg.progressive=true && npx imagemin-cli './assets/img/icons' -o ./source/assets/img/icons --plugin.mozjpeg.progressive=true && npx imagemin-cli './assets/img/patterns/molecules' -o ./source/assets/img/patterns/molecules/ --plugin.mozjpeg.progressive=true && npx imagemin-cli './assets/img/patterns/organisms' -o ./source/assets/img/patterns/organisms/ --plugin.mozjpeg.progressive=true",
-    "clean-img": "rm -rf ./source/assets/img"
+    "clean-img": "rm -rf ./source/assets/img",
+    "fonts": "rm -rf /source/assets/fonts && cp -r ./assets/fonts ./source/assets/"
   },
   "dependencies": {
     "highcharts": "^9.1.0",
