@@ -12,6 +12,7 @@ module.exports = class Modal {
     this.doc = doc;
 
     this.modalWindow = this.$elm.querySelector('.modal-container');
+    this.smallDevice = this.$elm.querySelector('.small-device');
     this.$elm.querySelector('.modal-click').addEventListener('click', (event) => this.modalToggle(event));
     this.$elm.querySelector('.modal-content__button').addEventListener('click', (event) => this.modalToggle(event));
     this.window.addEventListener('click', (event) => this.windowOnClick(event));
@@ -35,11 +36,15 @@ module.exports = class Modal {
   }
 
   modalSetup() {
-    if (this.window.innerWidth < 480) {
-      this.$elm.classList.remove('modal-nojs');
+    if (this.$elm.classList.contains('small-device')) {
+      if (this.window.innerWidth < 480) {
+        this.$elm.classList.remove('modal-nojs');
+      } else {
+        this.modalWindow.classList.remove('modal-content__show');
+        this.$elm.classList.add('modal-nojs');
+      }
     } else {
-      this.modalWindow.classList.remove('modal-content__show');
-      this.$elm.classList.add('modal-nojs');
+      this.$elm.classList.remove('modal-nojs');
     }
   }
 
