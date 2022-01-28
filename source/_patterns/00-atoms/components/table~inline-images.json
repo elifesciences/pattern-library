@@ -1,0 +1,11 @@
+{
+  "tables": [
+    "<table><thead><tr><th/><th/><th>unwinding</th><th>turnover</th></tr></thead><tbody><tr><td>#</td><td>Chemical drawing</td><td>IC<sub>50</sub>[95%CI];µM</td><td>IC<sub>50</sub>[95%CI];µM</td></tr><tr><td>2</td><td><img src='https://cdn.elifesciences.org/articles/65339/elife-65339-inf1-v1.jpg'/></td><td>2.2<br/>[1.7–2.7]</td><td>3.2<br/>[2.3–4.0]</td></tr></tbody></table>"
+  ],
+  "hasFootnotes": true,
+  "footnotes": [
+    {
+      "text": "<p>Table with inline images</p> "
+    }
+  ]
+}
