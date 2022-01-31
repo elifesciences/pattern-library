@@ -1,0 +1,24 @@
+Main template
+
+{{> atoms-modal-window }}
+
+  {{#share}}
+    <div class="modal-content__copy-to-clipboard">
+      https://doi.org/10.7554/eLife.09560
+    </div>
+
+    <button class="button button--default modal-content__button">Copy to Clipboard</button>
+
+    {{#socialMediaSharers}}
+      {{> atoms-social-media-sharers}}
+    {{/socialMediaSharers}}
+  {{/share}}
+
+  {{#citations}}
+    <div>References</div>
+    <div>Another paragraph</div>
+    <div>DOI to go here</div>
+    <button>Copy to clipboard</button>
+    <button>Download BIBTEX</button>
+    <button>Download .RIS</button>
+  {{/citations}}
