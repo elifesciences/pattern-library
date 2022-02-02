@@ -32,6 +32,14 @@
       justify-self: center;
     }
   }
+
+  .reference {
+    .doi {
+      display: flex;
+      margin-top: 12px;
+      margin-bottom: 36px;
+    }
+  }
 }
 
 .modal-content__show {
@@ -44,6 +52,7 @@
   grid-row: 1;
   justify-self: end;
   line-height: 1.5;
+  margin-right: 6px;
   text-decoration: none;
 }
 
@@ -68,5 +77,10 @@
 .modal-content__clipboard-button {
   @include margin(36, "bottom");
   grid-column: 1/3;
+  grid-row: 3;
+}
+
+.button-container {
+  display: block;
   grid-row: 3;
 }
