@@ -16,9 +16,12 @@
   {{/hasAuthors}}
 
   {{#doi}}
-    {{#doiWithoutLink}}{{{title}}}{{/doiWithoutLink}}
     {{^doiWithoutLink}}
-      <a href="https://doi.org/{{{doi}}}" class="reference__title">{{{title}}}</a>
+      <a href="https://doi.org/{{{doi}}}" class="reference__title">
+    {{/doiWithoutLink}}
+    {{{title}}}
+    {{^doiWithoutLink}}
+      </a>
     {{/doiWithoutLink}}
   {{/doi}}
 
