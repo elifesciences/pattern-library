@@ -15,10 +15,8 @@ Main template
   {{/share}}
 
   {{#citations}}
-    <div>References</div>
-    <div>Another paragraph</div>
-    <div>DOI to go here</div>
-    <button>Copy to clipboard</button>
-    <button>Download BIBTEX</button>
-    <button>Download .RIS</button>
+    {{> atoms-journal-article-with-doi}}
+    <button class="button button--default modal-content__button">Copy to clipboard</button>
+    <button class="button button--default modal-content__button">Download BIBTEX</button>
+    <button class="button button--default modal-content__button">Download .RIS</button>
   {{/citations}}
