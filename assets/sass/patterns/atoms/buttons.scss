@@ -35,6 +35,15 @@
   }
 }
 
+.button--secondary {
+  @include colors($color-text-ui-background-secondary, $color-text-dividers, #212121);
+  @include padding(15 36 14);
+
+  &:hover {
+    @include colors(#e0e0e0, $color-text-dividers, #212121);
+  }
+}
+
 .button--outline {
   @include colors($color-text--reverse, $color-primary, $color-primary);
   @include padding(15 36 14);
