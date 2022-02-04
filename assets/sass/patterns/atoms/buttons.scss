@@ -26,6 +26,26 @@
   text-transform: uppercase;
 }
 
+.button-container {
+  display: block;
+  border: 1px solid black;
+
+  .button {
+    @include margin(12, "bottom");
+    width: 100%;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    grid-column: 1/3;
+    grid-row: 3;
+
+    .button {
+      @include margin(12, "bottom");
+      width: auto;
+    }
+  }
+}
+
 .button--default {
   @include colors($color-primary);
   @include padding(15 36 14);
@@ -108,7 +128,7 @@
 }
 
 .button--success {
-  background-color: green;
+  background-color: $color-success;
 
   &:hover {
     background-color: #2b7306;
