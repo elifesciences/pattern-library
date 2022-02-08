@@ -28,7 +28,6 @@
 
 .button-container {
   display: block;
-  border: 1px solid black;
 
   .button {
     @include margin(12, "bottom");
