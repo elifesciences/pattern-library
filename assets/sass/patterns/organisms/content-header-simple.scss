@@ -19,3 +19,37 @@
   @include body-typeg();
   @include nospace();
 }
+
+.clean {
+
+  .site-header {
+    max-height: unset;
+  }
+
+  main {
+    border-top: 0;
+  }
+
+  .content-header-simple {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  .form-item__title {
+    padding-bottom: 36px;
+  }
+
+  .form-item__sub_title {
+    padding-top: 36px;
+  }
+
+  .content_alerts_subscribe {
+    margin-top: 24px;
+  }
+
+  .site-header__logo_link {
+    width: 200px;
+    height: 75px;
+    padding-bottom: 60px;
+  }
+}
