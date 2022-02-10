@@ -10,10 +10,6 @@
     text-align: left;
   }
 
-  .clean & {
-    @include margin(48, "top");
-    text-align: left;
-  }
 }
 
 .form-field-info-link {
