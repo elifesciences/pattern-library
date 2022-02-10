@@ -11,8 +11,14 @@
 //  Fill: solid
 
 .social-media-sharers {
-  flex-grow: 0;
-  flex-basis: 24px;
+  @include margin(0);
+  @include padding(0);
+  display: flex;
+  margin-bottom: 24px;
+
+  li {
+    list-style: none;
+  }
 }
 
 .social-media-sharer,
@@ -64,4 +70,24 @@
 .social-media-sharer__icon--solid {
   fill: #fff;
   stroke: none;
+}
+
+.facebook {
+  background: url("../../assets/img/icons/facebook.svg") no-repeat 0 0;
+  text-indent: -5000px;
+}
+
+.twitter {
+  background: url("../../assets/img/icons/twitter.svg") no-repeat 0 0;
+  text-indent: -5000px;
+}
+
+.linkedin {
+  background: url("../../assets/img/icons/linkedin.svg") no-repeat 0 0;
+  text-indent: -5000px;
+}
+
+.reddit {
+  background: url("../../assets/img/icons/reddit.svg") no-repeat 0 0;
+  text-indent: -5000px;
 }
