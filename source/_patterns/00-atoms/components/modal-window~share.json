@@ -1,6 +1,6 @@
 {
   "smallDeviceOnly": "small-device",
   "title": "Share this article",
-  "closeBtnText": "Close",
+  "closeBtnText": "",
   "body": "<div class='modal-content__clipboard'>https://doi.org/10.7554/eLife.09560</div><button class='button button--default modal-content__clipboard-button'>Copy to Clipboard</button><ul class='social-media-sharers'><li><a class='social-media-sharer facebook' href='https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url' target='_blank' rel='noopener noreferrer' aria-label='Share on Facebook'><span class='visuallyhidden'>Facebook</span></a></li><li><a class='social-media-sharer twitter' href='https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url' target='_blank' rel='noopener noreferrer' aria-label='Tweet a link to this page'><span class='visuallyhidden'>Twitter</span></a></li><li><a class='social-media-sharer linkedin' href='https://www.linkedin.com/company/elife-sciences-publications-ltd' target='_self' aria-label='Share this page to LinkedIn (opens up email program, if configured on this system)'><span class='visuallyhidden'>LinkedIn</span></a></li><li><a class='social-media-sharer reddit' href='https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url' target='_blank' rel='noopener noreferrer' aria-label='Share this page on Reddit'><span class='visuallyhidden'>Reddit</span></a></li></ul>"
 }
