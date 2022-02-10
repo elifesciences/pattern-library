@@ -26,6 +26,10 @@
   text-transform: uppercase;
 }
 
+.button--fixed-width {
+  min-width: 212px;
+}
+
 .button-container {
   display: block;
 

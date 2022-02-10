@@ -50,12 +50,16 @@
 }
 
 .modal-content__button {
-  grid-column: 2/3;
-  grid-row: 1;
-  justify-self: end;
   line-height: 1.5;
   margin-right: 6px;
   text-decoration: none;
+}
+
+.modal-content__close-button {
+  grid-column: 2/3;
+  grid-row: 1;
+  justify-self: end;
+  color: $color-text;
 }
 
 .modal-nojs {
