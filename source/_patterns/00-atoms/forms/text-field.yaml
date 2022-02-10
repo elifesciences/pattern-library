@@ -46,6 +46,8 @@ properties:
     type: boolean
   disabled:
     type: boolean
+  isHiddenUntilChecked:
+    type: boolean
   label:
     type: object
     properties:

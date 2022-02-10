@@ -1,0 +1,11 @@
+{
+  "id": "other1",
+  "inputType": "text",
+  "label": {
+    "isVisuallyHidden": true,
+    "labelText": "Other"
+  },
+  "name": "other",
+  "autofocus": true,
+  "isHiddenUntilChecked": true
+}

@@ -21,6 +21,7 @@ Components.ContentHeader = require('./components/ContentHeader');
 Components.DelegateBehaviour = require('./components/DelegateBehaviour');
 Components.FilterPanel = require('./components/FilterPanel');
 Components.FragmentHandler = require('./components/FragmentHandler');
+Components.HiddenUntilChecked = require('./components/HiddenUntilChecked');
 Components.Highlights = require('./components/Highlights');
 Components.HypothesisLoader = require('./components/HypothesisLoader');
 Components.HypothesisOpener = require('./components/HypothesisOpener');
