@@ -1,7 +1,6 @@
 'use strict';
 
 const utils = require('../libs/elife-utils')();
-
 module.exports = class HiddenUntilChecked {
 
   constructor($elm) {
@@ -16,19 +15,27 @@ module.exports = class HiddenUntilChecked {
     this.$elm.parentNode.insertBefore($checkbox, this.$elm);
 
     const $checkboxInput = $checkbox.querySelector('input');
-    const $textInput = this.$elm.querySelector('input');
 
     $checkboxInput.addEventListener('change', e => {
-      if (e.target.checked) {
-        this.$elm.classList.remove('visuallyhidden');
-        $textInput.focus();
-      } else {
-        this.$elm.classList.add('visuallyhidden');
-        $textInput.value = '';
-      }
+      this.toggleTextField(this.$elm, $checkboxInput, e);
     });
 
-    this.$elm.classList.add('visuallyhidden');
+    this.toggleTextField(this.$elm, $checkboxInput);
+  }
+
+  toggleTextField(elm, checkbox, event) {
+    const text = elm.querySelector('input');
+    if ((event === undefined && text.value !== '')) {
+      checkbox.setAttribute('checked', 'checked');
+    } else if (event !== undefined && event.target.checked) {
+      elm.classList.remove('visuallyhidden');
+      if (text.value === '') {
+        text.focus();
+      }
+    } else {
+      elm.classList.add('visuallyhidden');
+      text.value = '';
+    }
   }
 
   buildCheckbox(labelText) {
