@@ -3,6 +3,8 @@ type: object
 properties:
   smallDeviceOnly:
     type: string
+  modalType:
+    type: string
   title:
     type: string
     minLength: 1
