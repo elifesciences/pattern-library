@@ -6,5 +6,7 @@
     "labelText": "Other"
   },
   "name": "other",
-  "isHiddenUntilChecked": true
+  "autofocus": false,
+  "isHiddenUntilChecked": true,
+  "value": "value"
 }
