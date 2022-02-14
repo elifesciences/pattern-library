@@ -10,8 +10,8 @@
 
 .modal-content {
   background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.22);
   border-radius: 3px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.22);
   display: grid;
   margin: 0;
   padding: 36px 24px;
@@ -61,8 +61,8 @@
 
 .modal-content__button {
   @include margin(6, "right");
-  padding: 15px 24px 14px;
   line-height: 1.5;
+  padding: 15px 24px 14px;
   text-decoration: none;
 
   .button-container & {
@@ -71,6 +71,8 @@
 }
 
 .modal-content__close-button {
+  @include padding(0 25 0 0);
+  background: url(../img/icons/close.svg) right 4px no-repeat;
   color: $color-text;
   font-family: $font-secondary;
   font-weight: bold;
@@ -94,8 +96,8 @@
   word-break: break-word;
 
   &.reference {
+    @include margin(0, "bottom");
     border: none;
-    margin-bottom: 0;
     padding: 0;
   }
 }
@@ -106,10 +108,13 @@
 
 .modal-content__clipboard-button {
   @include margin(36, "bottom");
+  display: block;
   grid-column: 1/3;
   grid-row: 3;
+  margin: 0 auto 36px;
 
   .button-container & {
-    @include margin(12, "bottom");
+    @include margin(0 24 12 0);
+    display: initial;
   }
 }
