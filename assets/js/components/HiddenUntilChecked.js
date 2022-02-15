@@ -41,7 +41,7 @@ module.exports = class HiddenUntilChecked {
   buildCheckbox(labelText) {
     const $label = utils.buildElement(
       'label',
-      ['checkbox__item_label']
+      ['checkbox__item_label', 'hidden_until_checked__checkbox']
     );
     const $labelText = utils.buildElement(
       'span',
