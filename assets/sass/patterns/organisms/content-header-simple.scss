@@ -56,3 +56,9 @@
     @include margin(24, "top");
   }
 }
+
+.content_alerts-container {
+  float: initial;
+  margin: 0 auto;
+  max-width: 540px;
+}
