@@ -2,9 +2,7 @@ $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
   smallDeviceOnly:
-    type: string
-  modalType:
-    type: string
+    type: boolean
   title:
     type: string
     minLength: 1
@@ -15,5 +13,5 @@ properties:
     type: string
     minLength: 1
 required:
-  - closeBtnText
+  - title
   - body
