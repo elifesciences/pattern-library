@@ -10,8 +10,10 @@ describe('A textfield hidden until checkbox checked', function () {
 
   let $elm;
   let $elmWithInitialValue;
+  let $elmWithExistingCheckbox;
   let $checkbox;
   let $checkboxWithInitialValue;
+  let $checkboxExisting;
 
   beforeEach(() =>  {
     $elm = document.getElementById('no-initial-value').querySelector('[data-behaviour="HiddenUntilChecked"]');
@@ -20,8 +22,12 @@ describe('A textfield hidden until checkbox checked', function () {
     $elmWithInitialValue = document.getElementById('with-initial-value').querySelector('[data-behaviour="HiddenUntilChecked"]');
     new HiddenUntilChecked($elmWithInitialValue);
 
+    $elmWithExistingCheckbox = document.getElementById('with-existing-checkbox').querySelector('[data-behaviour="HiddenUntilChecked"]');
+    new HiddenUntilChecked($elmWithExistingCheckbox);
+
     $checkbox = document.getElementById('no-initial-value').querySelector('input[type="checkbox"]');
     $checkboxWithInitialValue = document.getElementById('with-initial-value').querySelector('input[type="checkbox"]');
+    $checkboxExisting = document.getElementById('checkbox1');
   });
 
   afterEach(function () {
@@ -51,6 +57,14 @@ describe('A textfield hidden until checkbox checked', function () {
     expect(input.value).to.be.equal('value');
     $checkboxWithInitialValue.click();
     expect(input.value).to.be.equal('');
+  });
+
+  it('can use an existing checkbox as trigger', () => {
+    expect($elmWithExistingCheckbox.classList.contains('visuallyhidden')).to.be.true;
+    $checkboxExisting.click();
+    expect($elmWithExistingCheckbox.classList.contains('visuallyhidden')).to.be.false;
+    $checkboxExisting.click();
+    expect($elmWithExistingCheckbox.classList.contains('visuallyhidden')).to.be.true;
   });
 
 });

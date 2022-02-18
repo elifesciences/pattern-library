@@ -3,18 +3,25 @@
 const utils = require('../libs/elife-utils')();
 module.exports = class HiddenUntilChecked {
 
-  constructor($elm) {
+  constructor($elm, _window = window, doc = document) {
     if (!$elm) {
       return;
     }
 
     this.$elm = $elm;
+    this.window = _window;
+    this.doc = doc;
 
-    const $checkbox = this.buildCheckbox(this.$elm.querySelector('label').textContent);
+    const $checkboxId = $elm.getAttribute('data-checkbox-id');
+    let $checkboxInput;
 
-    this.$elm.parentNode.insertBefore($checkbox, this.$elm);
-
-    const $checkboxInput = $checkbox.querySelector('input');
+    if (!$checkboxId || !this.doc.getElementById($checkboxId)) {
+      const $checkbox = this.buildCheckbox(this.$elm.querySelector('label').textContent, $checkboxId);
+      this.$elm.parentNode.insertBefore($checkbox, this.$elm);
+      $checkboxInput = $checkbox.querySelector('input');
+    } else {
+      $checkboxInput = this.doc.getElementById($checkboxId);
+    }
 
     $checkboxInput.addEventListener('change', e => {
       this.toggleTextField(this.$elm, $checkboxInput, e);
@@ -38,7 +45,7 @@ module.exports = class HiddenUntilChecked {
     }
   }
 
-  buildCheckbox(labelText) {
+  buildCheckbox(labelText, id) {
     const $label = utils.buildElement(
       'label',
       ['checkbox__item_label', 'hidden_until_checked__checkbox']
@@ -58,6 +65,10 @@ module.exports = class HiddenUntilChecked {
     );
 
     $checkbox.setAttribute('type', 'checkbox');
+
+    if (id !== undefined) {
+      $checkbox.setAttribute('id', id);
+    }
 
     return $label;
   }

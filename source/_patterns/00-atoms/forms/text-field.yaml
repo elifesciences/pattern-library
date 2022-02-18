@@ -48,6 +48,9 @@ properties:
     type: boolean
   isHiddenUntilChecked:
     type: boolean
+  checkboxId:
+    type: string
+    minLength: 1
   label:
     type: object
     properties:
