@@ -1,0 +1,12 @@
+{
+  "siteHeaderTitle": {
+    "isWrapped": true,
+    "borderVariant": true,
+    "homePagePath": "#",
+    "disableMediaQuery": true
+  },
+  "contentHeader": {
+    "title": "You are already subscribed"
+  },
+  "body": "<p class=\"paragraph\">An email has <a href=\"/\">been</a> sent to <strong>green@example.com</strong>.</p><p class=\"paragraph\">Please follow the link in your email to update your preferences.</p><a href=\"/\" class=\"button button--default\">Back to Homepage</a>"
+}
