@@ -373,7 +373,9 @@
       "forMachine": "2016-02-29"
     }
   },
-  "doi": "10.7554/eLife.16370",
+  "doi": {
+    "doi": "10.7554/eLife.16370"
+  },
   "contextualData": {
     "metricsData": {
       "data": [
