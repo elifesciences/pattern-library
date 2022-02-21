@@ -222,23 +222,23 @@
     "items": [
       {
         "url": "",
-        "breadcrumb": "Research Article"
+        "name": "Research Article"
       },
       {
         "url": "",
-        "breadcrumb": "Magazine"
+        "name": "Magazine"
       },
       {
         "url": "",
-        "breadcrumb": "Magazine"
+        "name": "Magazine"
       },
       {
         "url": "",
-        "breadcrumb": "Magazine"
+        "name": "Magazine"
       },
       {
         "url": "",
-        "breadcrumb": "Magazine"
+        "name": "Magazine"
       }
     ]
   },

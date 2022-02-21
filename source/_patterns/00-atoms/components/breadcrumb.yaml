@@ -3,16 +3,16 @@ type: object
 properties:
   items:
     type: array
+    properties:
+      name:
+        type: string
+        minLength: 1
+      url:
+        type: string
+        minLength: 1
+    required:
+      - name
+      - url
     minItems: 1
-    items:
-      type: object
-      properties:
-        url:
-          type: string
-        breadcrumb:
-          type: string
-      required:
-        - url
-        - breadcrumb
 required:
   - items
