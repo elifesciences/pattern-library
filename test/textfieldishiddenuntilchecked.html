@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+<!--
+  Test output
+-->
+<div id="mocha"></div>
+
+<!--
+  Fixtures
+-->
+
+<div id="no-initial-value">
+    <div class="form-item" data-behaviour="HiddenUntilChecked">
+
+        <div class="form-item__label_container">
+            <label for="other1" class="form-item__label visuallyhidden">
+              Other
+            </label>
+        </div>
+
+        <input type="text" class="text-field text-field--text" id="other1" name="other" autofocus />
+
+      </div>
+</div>
+
+<div id="with-initial-value">
+    <div class="form-item" data-behaviour="HiddenUntilChecked">
+
+        <div class="form-item__label_container">
+            <label for="other1" class="form-item__label visuallyhidden">
+              Other
+            </label>
+        </div>
+
+        <input type="text" class="text-field text-field--text" id="other1" name="other" value="value" autofocus />
+
+      </div>
+</div>
+
+<div id="with-existing-checkbox">
+  <label class="checkbox__item_label">
+    <input type="checkbox" id="checkbox1" /><span class="checkbox__item">
+    Checkbox
+  </span></label>
+    <div class="form-item" data-behaviour="HiddenUntilChecked" data-checkbox-id="checkbox1">
+
+        <div class="form-item__label_container">
+            <label for="other1" class="form-item__label visuallyhidden">
+              Other
+            </label>
+        </div>
+
+        <input type="text" class="text-field text-field--text" id="other1" name="other" autofocus />
+
+      </div>
+</div>
+
+<!--
+  Load test code
+-->
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+<!-- Initialise test suite -->
+<script>mocha.setup('bdd')</script>
+
+<!--
+  Test spec
+-->
+<script src="build/textfieldishiddenuntilchecked.spec.js"></script>
+
+<!--
+  Begin!
+-->
+<script>
+  mocha.run();
+</script>
+
+</body>
+</html>
