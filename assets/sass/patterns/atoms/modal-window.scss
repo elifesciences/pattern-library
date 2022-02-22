@@ -87,16 +87,6 @@
   visibility: visible;
 }
 
-.modal-content__button {
-  line-height: 1.5;
-  padding: 15px 24px 14px;
-  text-decoration: none;
-
-  .button-container & {
-    @include margin(24, "right");
-  }
-}
-
 .modal-content__close-button {
   @include padding(0 25 0 0);
   background: url(../img/icons/close.svg) right 4px no-repeat;
@@ -131,17 +121,4 @@
 
 .social-media-sharers {
   display: flex;
-}
-
-.modal-content__clipboard-button {
-  @include margin(36, "bottom");
-  display: block;
-  grid-column: 1/3;
-  grid-row: 3;
-  margin: 0 auto 36px;
-
-  .button-container & {
-    @include margin(0 24 12 0);
-    display: initial;
-  }
 }
