@@ -4,10 +4,13 @@
       <div class="modal-content">
         <h6>{{{title}}}</h6>
         <a href="" class="modal-content__button modal-content__close-button">{{closeBtnText}}</a>
-        <div class='reference modal-content__clipboard'>
+        <div class="reference">
           {{#body}}
             {{{body}}}
           {{/body}}
+          {{#buttonCollection}}
+            {{> molecules-button-collection }}
+          {{/buttonCollection}}
         </div>
       </div>
   </div>
