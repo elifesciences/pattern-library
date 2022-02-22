@@ -44,7 +44,7 @@
   @include padding(15 36 14);
 
   &:hover {
-    @include colors(#e0e0e0, $color-text-dividers, $color-text);
+    @include colors($color-text-dividers, $color-text-dividers, $color-text);
   }
 }
 
