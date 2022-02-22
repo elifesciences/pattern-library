@@ -12,11 +12,14 @@ module.exports = class Modal {
     this.doc = doc;
 
     this.modalWindow = this.$elm.querySelector('.modal-container');
-    this.clipboardButton = this.$elm.querySelector('.modal-content__clipboard-button');
     this.$elm.querySelector('.modal-click').addEventListener('click', (event) => this.modalToggle(event));
     this.$elm.querySelector('.modal-content__button').addEventListener('click', (event) => this.modalToggle(event));
     this.window.addEventListener('click', (event) => this.windowOnClick(event));
-    this.clipboardButton.addEventListener('click', () => this.clipboard());
+
+    this.clipboardButton = this.$elm.querySelector('.modal-content__clipboard-button');
+    if (this.clipboardButton) {
+      this.clipboardButton.addEventListener('click', () => this.clipboard());
+    }
 
     this.window.addEventListener('resize', () => {
       this.modalSetup();
