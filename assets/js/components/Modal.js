@@ -11,13 +11,22 @@ module.exports = class Modal {
     this.window = _window;
     this.doc = doc;
 
+    const $triggerId = this.$elm.getAttribute('data-trigger-id');
+    let $trigger;
+
+    if (!$triggerId || !this.doc.getElementById($triggerId)) {
+      $trigger = this.$elm.querySelector('.modal-click');
+    } else {
+      $trigger = this.doc.getElementById($triggerId);
+    }
+
     this.modalWindow = this.$elm.querySelector('.modal-container');
-    this.$elm.querySelector('.modal-click').addEventListener('click', (event) => this.modalToggle(event));
+    $trigger.addEventListener('click', (event) => this.modalToggle(event));
     this.$elm.querySelector('.modal-content__button').addEventListener('click', (event) => this.modalToggle(event));
     this.window.addEventListener('click', (event) => this.windowOnClick(event));
 
     this.window.addEventListener('resize', () => {
-      this.modalSetup();
+      this.modalWindow.classList.remove('modal-content__show');
     });
 
     this.modalSetup();
@@ -35,16 +44,7 @@ module.exports = class Modal {
   }
 
   modalSetup() {
-    if (this.$elm.classList.contains('small-device')) {
-      if (this.window.innerWidth < 480) {
-        this.$elm.classList.remove('modal-nojs');
-      } else {
-        this.modalWindow.classList.remove('modal-content__show');
-        this.$elm.classList.add('modal-nojs');
-      }
-    } else {
-      this.$elm.classList.remove('modal-nojs');
-    }
+    this.$elm.classList.remove('modal-nojs');
   }
 
 };

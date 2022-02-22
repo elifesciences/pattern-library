@@ -1,8 +1,9 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
-  smallDeviceOnly:
-    type: boolean
+  triggerId:
+    type: string
+    minLength: 1
   title:
     type: string
     minLength: 1
@@ -12,8 +13,6 @@ properties:
   body:
     type: string
     minLength: 1
-  buttonCollection:
-    $ref: button-collection.yaml
 required:
   - title
   - body

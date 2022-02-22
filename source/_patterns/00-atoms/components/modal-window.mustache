@@ -1,5 +1,7 @@
-<div class="modal modal-nojs {{#smallDeviceOnly}}small-device{{/smallDeviceOnly}}" data-behaviour="Modal">
-  <a href="" class="modal-click">Open modal window</a>
+<div class="modal modal-nojs" data-behaviour="Modal"{{#triggerId}} data-trigger-id="{{triggerId}}"{{/triggerId}}>
+  {{^triggerId}}
+    <a href="" class="modal-click">Open modal window</a>
+  {{/triggerId}}
   <div class="modal-container">
       <div class="modal-content">
         <h6>{{{title}}}</h6>
@@ -8,9 +10,6 @@
           {{#body}}
             {{{body}}}
           {{/body}}
-          {{#buttonCollection}}
-            {{> molecules-button-collection }}
-          {{/buttonCollection}}
         </div>
       </div>
   </div>
