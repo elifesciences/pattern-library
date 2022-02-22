@@ -1,21 +1,30 @@
-<div class="global-wrapper" data-item-type="blog-article">
+<div class="global-wrapper clean">
   <div class="global-inner">
-    <div class="wrapper wrapper--site-header">
-      {{#siteHeaderTitle}}
-        {{> molecules-site-header-title }}
-      {{/siteHeaderTitle}}
+    <div class="wrapper">
+
+      <div class="grid">
+
+          <div class="{{> pages-pl-only-grid-content-page-main-col-clean-css-classes}}">
+
+            {{#siteHeaderTitle}}
+              {{> molecules-site-header-title }}
+            {{/siteHeaderTitle}}
+
+            {{#contentHeader}}
+              {{> organisms-content-header-simple }}
+            {{/contentHeader}}
+          </div>
+
+        </div>
     </div>
 
     <main role="main" class="main" id="maincontent">
 
-      {{#contentHeader}}
-        {{> organisms-content-header-simple }}
-      {{/contentHeader}}
-      <div class="wrapper wrapper--content">
+      <div class="wrapper">
 
         <div class="grid">
 
-          <div class="{{> pages-pl-only-grid-content-page-main-col-css-classes}} grid-column">
+          <div class="{{> pages-pl-only-grid-content-page-main-col-clean-css-classes}} grid-column">
 
             {{{body}}}
 
@@ -25,16 +34,6 @@
 
       </div>
 
-      {{# annotationCount}}
-        {{> atoms-speech-bubble}}
-      {{/annotationCount}}
-
     </main>
-
-    {{#emailCta}}
-      {{> organisms-email-cta }}
-    {{/emailCta}}
-
-    {{> organisms-footer }}
   </div> {{! /.global-inner }}
 </div> {{! /.global-wrapper }}
