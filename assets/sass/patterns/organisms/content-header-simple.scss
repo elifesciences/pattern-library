@@ -21,6 +21,8 @@
 }
 
 .clean {
+  @include margin(12, "bottom");
+
   p {
     color: $color-text;
     font-family: $font-secondary;
