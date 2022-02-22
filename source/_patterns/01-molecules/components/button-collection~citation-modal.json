@@ -1,0 +1,19 @@
+{
+  "buttons": [
+    {
+      "text": "Copy to clipboard",
+      "classes": "button--default",
+      "path": "#"
+    },
+    {
+      "text": "Download Bibtex",
+      "classes": "button button--secondary",
+      "path": "#"
+    },
+    {
+      "text": "Download .RIS",
+      "classes": "button button--secondary",
+      "path": "#"
+    }
+  ]
+}
