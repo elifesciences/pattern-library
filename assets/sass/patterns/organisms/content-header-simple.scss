@@ -21,7 +21,7 @@
 }
 
 .clean {
-  @include margin(12, "bottom");
+  @include padding(24, "bottom");
 
   p {
     color: $color-text;
