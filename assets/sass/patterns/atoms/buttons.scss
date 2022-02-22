@@ -40,11 +40,11 @@
 }
 
 .button--secondary {
-  @include colors($color-text-ui-background-secondary, $color-text-dividers, #212121);
+  @include colors($color-text-ui-background-secondary, $color-text-dividers, $color-text);
   @include padding(15 36 14);
 
   &:hover {
-    @include colors(#e0e0e0, $color-text-dividers, #212121);
+    @include colors(#e0e0e0, $color-text-dividers, $color-text);
   }
 }
 
