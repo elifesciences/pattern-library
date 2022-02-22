@@ -60,6 +60,10 @@
 
     .button-collection__item {
       float: none;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     .button {
@@ -76,6 +80,9 @@
 
       .button {
         @include margin(12, "bottom");
+        line-height: 1.5;
+        padding: 15px 24px 14px;
+        text-decoration: none;
         width: auto;
       }
     }
