@@ -30,28 +30,6 @@
   min-width: 189px;
 }
 
-.button-container {
-  display: flex;
-  flex-direction: column;
-  grid-column: 1/3;
-
-  .button {
-    @include margin(12, "bottom");
-    width: 100%;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    display: initial;
-    grid-column: 1/3;
-    grid-row: 3;
-
-    .button {
-      @include margin(12, "bottom");
-      width: auto;
-    }
-  }
-}
-
 .button--default {
   @include colors($color-primary);
   @include padding(15 36 14);
