@@ -7,12 +7,12 @@
     },
     {
       "text": "Download Bibtex",
-      "classes": "button button--secondary",
+      "classes": "button--default button--secondary",
       "path": "#"
     },
     {
       "text": "Download .RIS",
-      "classes": "button button--secondary",
+      "classes": "button--default button--secondary",
       "path": "#"
     }
   ]
