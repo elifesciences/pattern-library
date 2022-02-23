@@ -1,4 +1,5 @@
 const chai = require('chai');
+const sinon = require('sinon');
 
 const expect = chai.expect;
 
@@ -15,10 +16,9 @@ describe('A button can be used to store text in clipboard', () => {
     $elm = document.querySelector('[data-behaviour="ButtonClipboard"]');
     $clipboardText = '';
     const btnClipboard = new ButtonClipboard($elm);
-    btnClipboard.copyFunction((text, onSuccess) => {
-      console.log('text copied!');
-      $clipboardText = text;
-      onSuccess();
+    sinon.stub(btnClipboard, 'copyToClipboard').callsFake((text, onSuccess) => {
+        $clipboardText = text;
+        onSuccess();
     });
   });
 
