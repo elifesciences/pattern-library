@@ -3,20 +3,17 @@
     {
       "type": "button",
       "text": "Copy to clipboard",
-      "classes": "button--default",
-      "path": "#"
+      "classes": "button--default"
     },
     {
       "type": "button",
       "text": "Download Bibtex",
-      "classes": "button--default button--secondary",
-      "path": "#"
+      "classes": "button--default button--secondary"
     },
     {
       "type": "button",
       "text": "Download .RIS",
-      "classes": "button--default button--secondary",
-      "path": "#"
+      "classes": "button--default button--secondary"
     }
   ]
 }
