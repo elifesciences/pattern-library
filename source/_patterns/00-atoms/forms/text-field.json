@@ -1,10 +1,5 @@
 {
-  "id": "emailAddress1",
-  "inputType": "email",
-  "label": {
-    "isVisuallyHidden": false,
-    "labelText": "Email Address"
-  },
-  "name": "emailAddress",
-  "autofocus": true
+
+  "inputType": "url",
+  "value": "https://doi.org/10.7554/eLife.09560"
 }
