@@ -7,12 +7,21 @@ module.exports = class Modal {
     }
 
     this.$elm = $elm;
+    this.copyFunction(this.copyToClipboard);
 
     this.$elm.addEventListener('click', () => {
-      navigator.clipboard.writeText(this.$elm.getAttribute('data-clipboard')).then(() => {
+      this.$copy(this.$elm.getAttribute('data-clipboard'), () => {
         this.$elm.classList.add('button--success', 'button--fixed-width');
         this.$elm.textContent = 'Copied!';
       });
     });
+  }
+
+  copyFunction(func) {
+    this.$copy = func;
+  }
+
+  copyToClipboard(text, onSuccess) {
+    navigator.clipboard.writeText(text).then(onSuccess);
   }
 };
