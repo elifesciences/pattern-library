@@ -14,10 +14,16 @@
   @include margin(0);
   @include padding(0);
   display: flex;
+  justify-content: center;
   margin-bottom: 24px;
 
   li {
     list-style: none;
+    margin-right: 6px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
