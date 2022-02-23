@@ -15,7 +15,7 @@ describe('A button can be used to store text in clipboard', () => {
     new ButtonClipboard($elm);
   });
 
-  it('stores text into clipboard', () => {
+  it.skip('stores text into clipboard', () => {
     // write test to check button clipboard here.
     expect(true).to.equal(false);
   });
