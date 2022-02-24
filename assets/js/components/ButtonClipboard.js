@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = class Modal {
-  constructor($elm, _window = window, doc = document) {
+  constructor($elm, _window = window, doc = document, checkSupport = true) {
     if (!$elm) {
       return;
     }
@@ -10,12 +10,28 @@ module.exports = class Modal {
     this.window = _window;
     this.doc = doc;
 
-    this.$elm.addEventListener('click', () => {
-      this.copyToClipboard(this.$elm.getAttribute('data-clipboard'), () => {
-        this.$elm.classList.add('button--success', 'modal-content__clipboard-btn');
-        this.$elm.textContent = 'Copied!';
+    if (!checkSupport || this.supportsCopy()) {
+      this.$elm.addEventListener('click', () => {
+        this.copyToClipboard(this.$elm.getAttribute('data-clipboard'), () => {
+          this.$elm.classList.add('button--success', 'modal-content__clipboard-btn');
+          this.$elm.textContent = 'Copied!';
+        });
       });
-    });
+    } else {
+      this.$elm.remove();
+    }
+  }
+
+  supportsCopy() {
+    if (!navigator.clipboard) {
+      try {
+        this.doc.execCommand('copy');
+      } catch (err) {
+        return false;
+      }
+    }
+
+    return true;
   }
 
   supportsClipboard() {
@@ -23,14 +39,15 @@ module.exports = class Modal {
   }
 
   copyToClipboard(text, onSuccess) {
-    if (this.supportsClipboard()) {
+    if (navigator.clipboard) {
       navigator.clipboard.writeText(text).then(onSuccess);
     } else {
-      this.copyToClipboardFallback(text, onSuccess);
+      this.copyToClipboardFallback(text);
+      onSuccess();
     }
   }
 
-  copyToClipboardFallback(text, onSuccess) {
+  copyToClipboardFallback(text) {
     const textArea = this.doc.createElement('textarea');
     textArea.value = text;
 
@@ -43,12 +60,7 @@ module.exports = class Modal {
     textArea.focus();
     textArea.select();
 
-    try {
-      this.doc.execCommand('copy');
-      onSuccess();
-    } catch (err) {
-      this.$elm.remove();
-    }
+    this.doc.execCommand('copy');
 
     this.doc.body.removeChild(textArea);
   }

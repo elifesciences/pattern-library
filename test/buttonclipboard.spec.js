@@ -15,39 +15,22 @@ describe('A button can be used to store text in clipboard', () => {
   beforeEach(() =>  {
     $elm = document.querySelector('[data-behaviour="ButtonClipboard"]');
     $clipboardText = '';
-    const btnClipboard = new ButtonClipboard($elm);
-
-    // Reset clipboard
-    btnClipboard.copyToClipboard('reset', () => true);
+    const btnClipboard = new ButtonClipboard($elm, window, window.document, false);
+    sinon.stub(btnClipboard, 'supportsClipboard').callsFake(() => true);
+    sinon.stub(btnClipboard, 'copyToClipboard').callsFake((text, onSuccess) => {
+        $clipboardText = text;
+        onSuccess();
+    });
   });
 
-  it('store value in clipboard', () => {
+  it('changes button when clipboard triggered', () => {
     expect($elm.textContent).to.equal('Button clipboard');
     expect($elm.classList.contains('button--success')).to.be.false;
+    expect($clipboardText).to.be.empty;
     $elm.click();
     expect($elm.textContent).to.equal('Copied!');
     expect($elm.classList.contains('button--success')).to.be.true;
-
-    expect(() => {
-      const textArea = document.createElement('textarea');
-      textArea.value = '';
-
-      // Avoid scrolling to bottom
-      textArea.style.top = '0';
-      textArea.style.left = '0';
-      textArea.style.position = 'fixed';
-
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      document.execCommand('paste');
-
-      const pasteValue = textArea.value;
-
-      document.body.removeChild(textArea);
-
-      return pasteValue;
-    }).to.equal('Text to store in clipboard');
+    expect($clipboardText).to.equal('Text to store in clipboard');
   });
 
 });
