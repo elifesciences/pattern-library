@@ -8,12 +8,24 @@ module.exports = class Modal {
 
     this.$elm = $elm;
 
+    this.setUp();
+  }
+
+  setUp() {
+    if (!this.supportsClipboard()) {
+      this.$elm.remove();
+    }
+
     this.$elm.addEventListener('click', () => {
       this.copyToClipboard(this.$elm.getAttribute('data-clipboard'), () => {
         this.$elm.classList.add('button--success', 'modal-content__clipboard-btn');
         this.$elm.textContent = 'Copied!';
       });
     });
+  }
+
+  supportsClipboard() {
+    return (navigator.clipboard) ? true : false;
   }
 
   copyToClipboard(text, onSuccess) {

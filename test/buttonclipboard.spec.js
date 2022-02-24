@@ -16,6 +16,7 @@ describe('A button can be used to store text in clipboard', () => {
     $elm = document.querySelector('[data-behaviour="ButtonClipboard"]');
     $clipboardText = '';
     const btnClipboard = new ButtonClipboard($elm);
+    sinon.stub(btnClipboard, 'supportsClipboard').callsFake(() => true);
     sinon.stub(btnClipboard, 'copyToClipboard').callsFake((text, onSuccess) => {
         $clipboardText = text;
         onSuccess();
