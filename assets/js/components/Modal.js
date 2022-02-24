@@ -26,14 +26,20 @@ module.exports = class Modal {
     this.window.addEventListener('click', (event) => this.windowOnClick(event));
 
     this.window.addEventListener('resize', () => {
-      this.modalWindow.classList.remove('modal-content__show');
+      if (this.$elm.classList.contains('small-device') && this.window.innerWidth >= 480) {
+        this.modalWindow.classList.remove('modal-content__show');
+      }
     });
 
-    this.modalSetup();
+    this.modalWindow.classList.remove('modal-content__show');
+    this.$elm.classList.remove('modal-nojs');
   }
 
   modalToggle(event) {
-    this.modalWindow.classList.toggle('modal-content__show');
+    if (!this.$elm.classList.contains('small-device') || this.window.innerWidth < 480) {
+      this.modalWindow.classList.toggle('modal-content__show');
+    }
+
     event.preventDefault();
   }
 
@@ -41,10 +47,6 @@ module.exports = class Modal {
     if (event.target === this.modalWindow) {
       this.modalToggle(event);
     }
-  }
-
-  modalSetup() {
-    this.$elm.classList.remove('modal-nojs');
   }
 
 };

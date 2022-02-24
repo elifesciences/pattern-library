@@ -1,4 +1,5 @@
 {
+  "smallDeviceOnly": true,
   "title": "Share this article",
   "closeBtnText": " ",
   "body": "<div class='form-item'><input type='url' class='text-field text-field--url' value='https://doi.org/10.7554/eLife.09560'></div>"

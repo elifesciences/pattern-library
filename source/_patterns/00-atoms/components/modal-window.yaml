@@ -1,6 +1,8 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
+  smallDeviceOnly:
+    type: boolean
   triggerId:
     type: string
     minLength: 1
