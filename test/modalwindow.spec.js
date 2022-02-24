@@ -36,4 +36,14 @@ describe('modal window', () => {
     expect($elmWithTriggerId.classList.contains('modal-content__show')).to.be.false;
   });
 
+  it('opens when modal trigger is clicked', () => {
+    $elmTrigger.click();
+    expect($elm.classList.contains('modal-content__show')).to.be.true;
+  });
+
+  it('opens when custom trigger is clicked', () => {
+    $elmWithTriggerIdTrigger.click();
+    expect($elmWithTriggerId.classList.contains('modal-content__show')).to.be.true;
+  });
+
 });
