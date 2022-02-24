@@ -31,7 +31,6 @@ module.exports = class Modal {
       }
     });
 
-    this.modalWindow.classList.remove('modal-content__show');
     this.$elm.classList.remove('modal-nojs');
   }
 
