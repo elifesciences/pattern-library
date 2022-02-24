@@ -31,7 +31,7 @@ describe('modal window', () => {
     $elmWithTriggerId.classList.add('modal-nojs');
   });
 
-  it('modal is initially hidden', () => {
+  it('is initially hidden', () => {
     expect($elm.classList.contains('modal-content__show')).to.be.false;
     expect($elmWithTriggerId.classList.contains('modal-content__show')).to.be.false;
   });
