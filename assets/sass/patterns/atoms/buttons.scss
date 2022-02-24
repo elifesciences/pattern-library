@@ -26,10 +26,6 @@
   text-transform: uppercase;
 }
 
-.button--fixed-width {
-  min-width: 189px;
-}
-
 .button--default {
   @include colors($color-primary);
   @include padding(15 36 14);
