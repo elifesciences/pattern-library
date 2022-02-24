@@ -82,8 +82,9 @@
   .view-selector--has-figures {
     display: inline-block;
     width: 100%;
-    grid-column: 1/13;
-    grid-row: 1;
+    @supports (display: flex) {
+      display: flex;
+    }
   }
 
   .view-selector__list {
@@ -150,8 +151,8 @@
   // Applied with js to stop the selector scrolling off the top of the screen.
   .view-selector {
     // Supply what was being provided by the grid now this element has been taken out the flow.
-    grid-column: 1/3;
-    grid-row: 1;
+    @include constrain-width(210, "max");
+    width: 9.625rem;
   }
 
   .view-selector--fixed {
