@@ -77,8 +77,8 @@
 
       .button {
         @include margin(12, "bottom");
+        @include padding(15 24 14 24);
         line-height: 1.5;
-        padding: 15px 24px 14px;
         text-decoration: none;
         width: auto;
       }
@@ -91,8 +91,8 @@
   grid-column: 1/3;
 
   .button {
+    @include margin(24, "bottom");
     justify-self: center;
-    margin-bottom: 24px;
   }
 }
 
@@ -135,4 +135,8 @@
 
 .social-media-sharers {
   display: flex;
+}
+
+.modal-content__clipboard-btn {
+  min-width: 189px;
 }
