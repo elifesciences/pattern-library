@@ -14,7 +14,6 @@ Components.ArticleSection = require('./components/ArticleSection');
 Components.AssetNavigation = require('./components/AssetNavigation');
 Components.AssetViewer = require('./components/AssetViewer');
 Components.AudioPlayer = require('./components/AudioPlayer');
-Components.ButtonClipboard = require('./components/ButtonClipboard');
 Components.CallToAction = require('./components/CallToAction');
 Components.CarouselItem = require('./components/CarouselItem');
 Components.Carousel = require('./components/Carousel');
