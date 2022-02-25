@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = class Modal {
-  constructor($elm, _window = window, doc = document, checkSupport = true) {
+  constructor($elm, _window = window, doc = document) {
     if (!$elm) {
       return;
     }
@@ -10,40 +10,32 @@ module.exports = class Modal {
     this.window = _window;
     this.doc = doc;
 
-    if (!checkSupport || this.supportsCopy()) {
-      this.$elm.addEventListener('click', () => {
-        this.copyToClipboard(this.$elm.getAttribute('data-clipboard'), () => {
-          this.$elm.classList.add('button--success', 'modal-content__clipboard-btn');
-          this.$elm.textContent = 'Copied!';
-        });
+    this.$elm.addEventListener('click', () => {
+      this.copyToClipboard(this.$elm.getAttribute('data-clipboard'), () => {
+        this.$elm.classList.add('button--success', 'modal-content__clipboard-btn');
+        this.$elm.textContent = 'Copied!';
+      }, () => {
+        this.$elm.classList.add('button--fail');
+        this.$elm.disabled = true;
+        this.$elm.textContent = 'Copy not supported';
       });
-    } else {
-      this.$elm.remove();
-    }
+    });
   }
 
-  supportsCopy() {
-    if (!navigator.clipboard) {
-      try {
-        this.doc.execCommand('copy');
-      } catch (err) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-
-  supportsClipboard() {
+  supportsClipboardAPI() {
     return (navigator.clipboard) ? true : false;
   }
 
-  copyToClipboard(text, onSuccess) {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(text).then(onSuccess);
+  copyToClipboard(text, onSuccess, onFail) {
+    if (this.supportsClipboardAPI()) {
+      navigator.clipboard.writeText(text).then(onSuccess).catch(onFail);
     } else {
-      this.copyToClipboardFallback(text);
-      onSuccess();
+      try {
+        this.copyToClipboardFallback(text);
+        onSuccess();
+      } catch (err) {
+        onFail();
+      }
     }
   }
 
