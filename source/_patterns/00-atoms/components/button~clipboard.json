@@ -1,0 +1,7 @@
+{
+  "text": "Button clipboard",
+  "classes": "button--default",
+  "type": "submit",
+  "id": "button-id",
+  "clipboard": "Text to store in clipboard"
+}
