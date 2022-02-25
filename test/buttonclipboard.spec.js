@@ -33,6 +33,8 @@ describe('A button can be used to store text in clipboard', () => {
   });
 
   it('disables button if copy fails', () => {
+    expect($elm.classList.contains('button--fail')).to.be.false;
+    expect($elm.disabled).to.be.false;
     sinon.stub($btnClipboard, 'copyToClipboardFallback').callsFake((text) => {
       throw new Error('copy failed');
     });
