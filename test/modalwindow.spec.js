@@ -38,12 +38,12 @@ describe('modal window', () => {
 
   it('opens when modal trigger is clicked', () => {
     $elmTrigger.click();
-    expect($elm.classList.contains('modal-content__show')).to.be.true;
+    expect($elm.querySelector('.modal-container').classList.classList.contains('modal-content__show')).to.be.true;
   });
 
   it('opens when custom trigger is clicked', () => {
     $elmWithTriggerIdTrigger.click();
-    expect($elmWithTriggerId.classList.contains('modal-content__show')).to.be.true;
+    expect($elmWithTriggerId.querySelector('.modal-container').classList.classList.contains('modal-content__show')).to.be.true;
   });
 
 });
