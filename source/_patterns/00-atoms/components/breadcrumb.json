@@ -1,25 +1,24 @@
 {
-    "items": [
-      {
-        "url": "",
-        "name": "Research Article"
-      },
-      {
-        "url": "",
-        "name": "Magazine"
-      },
-      {
-        "url": "",
-        "name": "Magazine"
-      },
-      {
-        "url": "",
-        "name": "Magazine"
-      },
-      {
-        "url": "",
-        "name": "Magazine"
-      }
-    ]
-  }
-  
+  "items": [
+    {
+      "url": "",
+      "name": "Research Article"
+    },
+    {
+      "url": "",
+      "name": "Magazine"
+    },
+    {
+      "url": "",
+      "name": "Magazine"
+    },
+    {
+      "url": "",
+      "name": "Magazine"
+    },
+    {
+      "url": "",
+      "name": "Magazine"
+    }
+  ]
+}
