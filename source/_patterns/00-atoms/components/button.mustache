@@ -1,6 +1,6 @@
 {{#type}}
-  <button class="button {{classes}}" type="{{type}}"{{#id}} id="{{id}}"{{/id}}{{#name}} name="{{name}}"{{/name}}{{#clipboard}} data-behaviour="ButtonClipboard" data-clipboard="{{{clipboard}}}"{{/clipboard}}>{{{text}}}</button>
+  <button class="button {{classes}}" type="{{type}}"{{#id}} id="{{id}}"{{/id}}{{#name}} name="{{name}}"{{/name}}{{#clipboardText}} data-behaviour="ButtonClipboard" data-clipboard="{{clipboardText}}"{{/clipboardText}}>{{{text}}}</button>
 {{/type}}
 {{^type}}
-  <a href="{{path}}" class="button {{classes}}" {{#id}} id="{{id}}"{{/id}}{{#clipboard}} data-behaviour="ButtonClipboard" data-clipboard="{{{clipboard}}}"{{/clipboard}}>{{{text}}}</a>
+  <a href="{{path}}" class="button {{classes}}" {{#id}} id="{{id}}"{{/id}}{{#clipboardText}} data-behaviour="ButtonClipboard" data-clipboard="{{clipboardText}}"{{/clipboardText}}>{{{text}}}</a>
 {{/type}}
