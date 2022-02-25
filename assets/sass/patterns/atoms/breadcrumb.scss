@@ -1,0 +1,32 @@
+@import "../../definitions";
+
+.breadcrumbs {
+  @include margin(0);
+  @include padding(0);
+
+  .breadcrumb-item {
+    @include font-size-and-vertical-height(14, 24);
+    @include margin(0);
+    @include padding(0);
+    display: inline;
+    font-family: $font-secondary;
+    list-style: none;
+
+    &:after {
+      content: " | ";
+    }
+
+    &:last-child:after {
+      content: "";
+    }
+
+    .breadcrumb-item__link {
+      color: $color-text;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+}
