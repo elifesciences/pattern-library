@@ -116,27 +116,6 @@
   visibility: hidden;
 }
 
-.modal-content__clipboard {
-  @include margin(24, "bottom");
-  @include padding(12);
-  border: 1px solid $color-text-dividers;
-  font-family: $font-secondary;
-  grid-column: 1/3;
-  grid-row: 2;
-  justify-self: initial;
-  word-break: break-word;
-
-  &.reference {
-    @include margin(0, "bottom");
-    border: none;
-    padding: 0;
-  }
-}
-
-.social-media-sharers {
-  display: flex;
-}
-
 .modal-content__clipboard-btn {
   min-width: 189px;
 }
