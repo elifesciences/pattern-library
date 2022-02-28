@@ -1,15 +1,18 @@
 const chai = require('chai');
 const fixtures = require('./fixtures/infoBarFixture');
 const InfoBar = require('../assets/js/components/InfoBar');
+const { mockCookies, clearCookieMock } = require('./fixtures/cookieMock');
 const utils = require('../assets/js/libs/elife-utils')();
 
 const expect = chai.expect;
 
 describe('A dismissible InfoBar Component', function () {
   'use strict';
+  mockCookies();
 
   afterEach(function() {
     fixtures.removeAllGeneratedHTMLFixtures();
+    clearCookieMock();
   });
 
   it('is hidden immediately if a cookie indicates it was previously dismissed', function () {
@@ -103,17 +106,11 @@ describe('A dismissible InfoBar Component', function () {
             const infoBar = new InfoBar($fixture);
             expect(infoBar.dismissible.cookieExpiryDate).to.equal(expiry);
 
-            fixtures.clearCookie(id);
             expect(utils.getCookieValue(`${fixtures.getCookieNameRoot()}${id}`, document.cookie), 'cookie shouldn\'t be set').to.equal('');
 
           });
-
         });
-
       });
-
     });
-
   });
-
 });
