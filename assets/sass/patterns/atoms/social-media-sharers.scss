@@ -25,6 +25,10 @@
       margin-right: 0;
     }
   }
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--small - 1)}em) {
+    display: none;
+  }
 }
 
 .social-media-sharer,
@@ -81,6 +85,12 @@
 .email {
   background: url("../img/icons/email-default.svg") no-repeat 0 0;
   text-indent: -5000px;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    li & {
+      display: none;
+    }
+  }
 }
 
 .facebook {
