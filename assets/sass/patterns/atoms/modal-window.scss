@@ -93,6 +93,12 @@
   .button {
     @include margin(24, "bottom");
     justify-self: center;
+    grid-column: 1/3;
+    grid-row: 3;
+  }
+
+  .form-item {
+    grid-column: 1/3;
   }
 }
 
