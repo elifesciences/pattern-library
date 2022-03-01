@@ -12,17 +12,23 @@
 
 .social-media-sharers {
   @include margin(0);
+  @include margin(24, "bottom");
   @include padding(0);
   display: flex;
-  justify-content: center;
-  margin-bottom: 24px;
 
   li {
+    @include margin(6, "right");
     list-style: none;
-    margin-right: 6px;
 
     &:last-child {
       margin-right: 0;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+
+      &:first-child {
+        display: none;
+      }
     }
   }
 
@@ -41,7 +47,7 @@
   background-color: $color-text;
   border-radius: #{$border-radius}px;
   color: $color-text--reverse;
-  margin: 0 8px;
+  margin: 0 9px;
   height: 24px;
   padding: 2px 0;
   text-decoration: none;
@@ -54,13 +60,12 @@
     padding: 1px 0;
   }
 
-  .content-header:not(.content-header--image) & {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    margin: 0 6px;
 
-    &:hover,
-    &:active {
-      background-color: $color-primary;
+    &:first-child {
+      margin: 0 6px 0 0;
     }
-
   }
 
 }
@@ -86,11 +91,6 @@
   background: url("../img/icons/email-default.svg") no-repeat 0 0;
   text-indent: -5000px;
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    li & {
-      display: none;
-    }
-  }
 }
 
 .facebook {

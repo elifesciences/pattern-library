@@ -105,6 +105,7 @@
 .modal-content__show {
   opacity: 1;
   visibility: visible;
+  z-index: 1000;
 }
 
 .modal-content__close-button {
