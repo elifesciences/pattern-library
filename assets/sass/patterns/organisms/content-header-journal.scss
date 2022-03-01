@@ -12,7 +12,7 @@
 
 // Grid Top
 .content-header-grid-top {
-  @include margin(24, "top");
+  @include margin(48, "top");
   @include margin(24, "bottom");
 
   .content-header__subject_list {
