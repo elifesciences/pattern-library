@@ -17,11 +17,11 @@
   padding: 36px;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    margin: 24px;
+    margin: 180px 24px 24px;
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium + 48)}em) {
-    margin: 24px auto;
+    margin: 180px auto 24px;
     max-width: 730px;
   }
 
