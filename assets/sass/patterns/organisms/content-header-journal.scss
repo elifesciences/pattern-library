@@ -166,7 +166,7 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    @include margin(12, "bottom");
+    @include margin(24, "bottom");
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
