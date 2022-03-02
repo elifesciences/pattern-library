@@ -1,0 +1,163 @@
+{{#image}}
+<div class="content-header-image-wrapper{{^image.creditOverlay}}{{^image.credit}} content-header-image-wrapper--no-credit{{/image.credit}}{{/image.creditOverlay}}">
+{{/image}}
+  <header
+    class="content-header content-header-journal  {{#grid-column}}{{{grid-column}}} {{/grid-column}} {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} {{#socialMediaSharers}}content-header--has-social-media-sharers{{/socialMediaSharers}} {{#header.hasProfile}}content-header--has-profile{{/header.hasProfile}} clearfix"
+    data-behaviour="ContentHeader">
+
+    <div class="content-header-grid">
+      <div class="content-header-grid-top">
+
+        {{#breadcrumb}}
+          {{> atoms-breadcrumb}}
+        {{/breadcrumb}}
+
+        {{#header}}
+          {{#hasProfile}}
+            <div class="content-header__profile_wrapper">
+              {{#profile.url}}
+              <a class="content-header__profile{{#profile.image}} content-header__profile--has-image{{/profile.image}}"
+                href="{{profile.url}}">
+              {{/profile.url}}
+              {{^profile.url}}
+              <span class="content-header__profile{{#profile.image}} content-header__profile--has-image{{/profile.image}}">
+              {{/profile.url}}
+              {{#profile.image}}
+                <picture>
+                  {{#sources}}
+                    <source srcset="{{srcset}}"
+                            {{#type}}type="{{type}}"{{/type}}
+                      {{#media}}media="{{media}}"{{/media}}>
+                  {{/sources}}
+                  {{#fallback}}
+                    <img src="{{defaultPath}}"
+                        {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+                        alt="{{altText}}"
+                        class="content-header__profile_image">
+                  {{/fallback}}
+                </picture>
+              {{/profile.image}}
+              <dl>
+                <dt class="content-header__profile_label">Edited by</dt>
+                <dd class="content-header__profile_data">{{profile.name}}</dd>
+              </dl>
+              {{^profile.url}}
+                </span>
+              {{/profile.url}}
+              {{#profile.url}}
+              </a>
+              {{/profile.url}}
+            </div>
+          {{/hasProfile}}
+
+          {{#hasSubjects}}
+            <ol class="content-header__subject_list">
+              {{#subjects}}
+                <li class="content-header__subject_list_item">
+                  <a href="{{url}}" class="content-header__subject_link">
+                    <span class="content-header__subject">{{{name}}}</span>
+                  </a>
+                </li>
+              {{/subjects}}
+            </ol>
+          {{/hasSubjects}}
+        {{/header}}
+      </div>
+      <div class="content-header-grid__main">
+
+        <div class="content-header__body">
+          <h1 class="content-header__title {{#titleLength}}content-header__title--{{titleLength}}{{/titleLength}}{{^titleLength}}content-header__title--medium{{/titleLength}}">{{{title}}}</h1>
+
+          {{#impactStatement}}
+            <div class="content-header__impact-statement">{{{impactStatement}}}</div>
+          {{/impactStatement}}
+
+        </div>
+
+        {{#authors}}
+          <div class="content-header__authors">
+            <ol class="content-header__author_list" aria-label="Authors of this article">
+              {{#authors.list}}
+                <li class="content-header__author_list_item">
+                  <span class="content-header__author">{{#url}}<a href="{{url}}" data-behaviour="Popup" class="content-header__author_link">{{/url}}{{name}}{{#url}}</a>{{/url}}<span class="content-header__author_suffix">{{#isCorresponding}}&nbsp;{{!
+                  }}<picture>
+                    <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author.svg{{/assetRewrite}}" type="image/svg+xml">
+                    <img src="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}}"
+                          srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@2x.png{{/assetRewrite}} 2x, {{#assetRewrite}}{{assetsPath}}/img/icons/corresponding-author@1x.png{{/assetRewrite}} 1x"
+                          alt="Is a corresponding author" class="content-header__author_icon">
+                  </picture>{{/isCorresponding}}{{!
+                  }}<span class="content-header__author_separator" aria-hidden="true">,</span>
+                  </span></span>
+                </li>
+              {{/authors.list}}
+            </ol>
+
+            {{#institutions}}
+              <ol class="content-header__institution_list" aria-label="Author institutions">
+                {{#institutions.list}}
+                  <li class="content-header__institution_list_item">
+                    <span class="content-header__institution">{{{name}}}{{!
+                  }}<span class="content-header__institution_separator" aria-hidden="true">;</span>
+                    </span>
+                  </li>
+                {{/institutions.list}}
+              </ol>
+            {{/institutions}}
+          </div>
+        {{/authors}}
+
+        <div class="content-header__footer">
+          {{#meta}}
+            <div class="content-header__meta">
+              {{> molecules-meta}}
+            </div>
+          {{/meta}}
+
+          {{#doi}}
+            {{> atoms-doi}}
+          {{/doi}}
+
+          {{#licence}}
+            <ul class="content-header__icons">
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Open_access"
+                    class="content-header__icon content-header__icon--oa">
+                      <span class="visuallyhidden">Open access</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{licence}}" class="content-header__icon content-header__icon--cc">
+                  <span class="visuallyhidden">Copyright information</span>
+                </a>
+              </li>
+            </ul>
+          {{/licence}}
+        </div>
+
+      </div>
+    </div>
+    <div class="divider"></div>
+
+  {{#image}}
+    <picture class="content-header__picture"{{#credit}} aria-labelledby="{{elementId}}"{{/credit}}>
+      {{#sources}}
+        <source srcset="{{srcset}}"
+                {{#type}}type="{{type}}"{{/type}}
+          {{#media}}media="{{media}}"{{/media}}>
+      {{/sources}}
+      {{#fallback}}
+        <img src="{{defaultPath}}"
+             {{#srcset}}srcset="{{srcset}}"{{/srcset}}
+             alt="{{altText}}"
+             class="content-header__image">
+      {{/fallback}}
+    </picture>
+  {{/image}}
+
+  {{#selectNav}}
+    <div class="content-header__cta">
+      {{> molecules-select-nav}}
+    </div>
+  {{/selectNav}}
+
+</header>
