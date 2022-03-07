@@ -10,12 +10,14 @@ fi
 PORT=${1:-8889}
 
 echo "Building patterns..."
-node_modules/.bin/gulp
-
-(while true; do
-  node_modules/.bin/gulp watch && sleep 5
-done) & pid=$!
-PID_LIST+=" $pid";
+echo "Building sass..."
+npm run compile-sass
+echo "Compressing images..."
+npm run compress-img
+echo "Copying fonts..."
+npm run fonts
+echo "Building javascript..."
+npm run build-js
 
 # Need to generate before watch to ensure images are in the right place.
 php ./core/builder.php --generate
