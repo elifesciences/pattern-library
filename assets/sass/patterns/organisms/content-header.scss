@@ -35,7 +35,6 @@
   .content-header-grid__main {
     @include margin(24, "bottom");
     @include padding(24, "bottom");
-    grid-row: 1;
   }
 
   @media only all and (min-width: 900px) {
@@ -46,6 +45,11 @@
       grid-gap: 24px;
       max-width: 1114px;
       padding: 0;
+    }
+
+    .content-header-grid-top {
+      grid-column: 1/13;
+      grid-row: 1;
     }
 
     .content-header-grid__main {
