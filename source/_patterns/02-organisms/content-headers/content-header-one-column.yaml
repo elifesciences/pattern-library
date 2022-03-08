@@ -1,9 +1,6 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
-  gridColumn:
-    type: string
-    minLength: 1
   title:
     type: string
     minLength: 1
@@ -11,5 +8,4 @@ properties:
     type: string
     minLength: 1
 required:
-  - gridColumn
   - title
