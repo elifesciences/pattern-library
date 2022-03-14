@@ -3,5 +3,5 @@
   "classes": "button--default",
   "type": "submit",
   "id": "button-id",
-  "clipboardText": "Text to store in clipboard"
+  "clipboardText": "Text to store in clipboard. Some html is <b>allowed</b>."
 }
