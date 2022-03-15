@@ -14,27 +14,38 @@
   @include margin(0);
   @include margin(24, "bottom");
   @include padding(0);
-  display: flex;
+  justify-content: center;
 
   li {
-    @include margin(6, "right");
+    @include margin(8, "left");
+    @include margin(8, "right");
     list-style: none;
 
     &:last-child {
       margin-right: 0;
     }
+  }
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+  .content-header-grid__side-popup-block & {
+    display: flex;
 
-      &:first-child {
-        display: none;
+    li {
+      @include margin(0, "left");
+      @include margin(6, "right");
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+
+        &:first-child {
+          display: none;
+        }
       }
+    }
+
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small - 1)}em) {
+      display: none;
     }
   }
 
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--small - 1)}em) {
-    display: none;
-  }
 }
 
 .social-media-sharer,
@@ -60,11 +71,14 @@
     padding: 1px 0;
   }
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    margin: 0 6px;
+  .content-header-grid__side-popup-block & {
 
-    &:first-child {
-      margin: 0 6px 0 0;
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      margin: 0 6px;
+
+      &:first-child {
+        margin: 0 6px 0 0;
+      }
     }
   }
 
