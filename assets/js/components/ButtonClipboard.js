@@ -28,11 +28,7 @@ module.exports = class Modal {
 
   copyToClipboard(text, onSuccess, onFail) {
     if (this.supportsClipboardAPI()) {
-      navigator.clipboard.write([
-        new this.window.ClipboardItem({
-          'text/html': new Blob([text], { type: 'text/html' }),
-        }),
-      ]).then(onSuccess).catch(onFail);
+      navigator.clipboard.writeText(text).then(onSuccess).catch(onFail);
     } else {
       try {
         this.copyToClipboardFallback(text);
