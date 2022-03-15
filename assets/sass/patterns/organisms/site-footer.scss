@@ -49,7 +49,8 @@
   }
 }
 
-@media only screen and (min-width: #{get-rem-from-px(540)}em) {
+@media only screen and (min-width: #{get-rem-from-px(730)}em) {
+
   .footer-navigation__list {
     column-count: 2;
     column-gap: 0.5rem;
@@ -73,6 +74,36 @@
 
 @media only screen and (min-width: #{get-rem-from-px(540)}em) {
   .site-footer {
+
+.carbon-neutral-wrapper {
+  text-align: center;
+
+  .carbon-neutral-link {
+    @include margin(0 0 47);
+    @include label-content-typeg($color-text, $uppercase: true);
+    align-items: center;
+    color: $color-text;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 247px;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px(730)}rem) {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: #{get-rem-from-px(730)}em) {
+  .site-footer__container {
+    display: table;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: #{get-rem-from-px($max-site-width)}rem;
+    padding: 0 6%;
+
+
     .grid-cell:nth-child(1) {
       float: left;
       flex: 1 50%;
@@ -109,10 +140,18 @@
   .site-smallprint__copyright {
     text-align: center;
   }
+
+  address {
+    padding-bottom: 84px;
+  }
 }
 
 @media only screen and (min-width: #{get-rem-from-px($max-site-width)}em) {
   .site-footer__container {
     @include padding(0 15);
+  }
+
+  .footer-navigation {
+    @include blg-spacing("bottom", "large", "padding");
   }
 }

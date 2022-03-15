@@ -1,5 +1,7 @@
 {
-  "homePagePath": "#",
+  "title": {
+    "homePagePath": "#"
+  },
   "primaryLinks":
   {
     "classesOuter": "nav-primary",
@@ -28,6 +30,12 @@
 
       {
         "text": "Home",
+        "path": "#",
+        "classes": "nav-primary__item"
+      },
+
+      {
+        "text": "Community",
         "path": "#",
         "classes": "nav-primary__item"
       },
@@ -75,7 +83,7 @@
     "classesInner": "nav-secondary__list clearfix",
     "linkedItems": [
       {
-        "text": "Careers",
+        "text": "Newsletters",
         "path": "#",
         "classes": "nav-secondary__item"
       },

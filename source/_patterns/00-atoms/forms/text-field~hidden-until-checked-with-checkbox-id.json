@@ -1,0 +1,11 @@
+{
+  "id": "other1",
+  "inputType": "text",
+  "label": {
+    "isVisuallyHidden": true,
+    "labelText": "Other"
+  },
+  "name": "other",
+  "isHiddenUntilChecked": true,
+  "checkboxId": "other-checkbox-id"
+}

@@ -71,3 +71,8 @@ input:checked + .toggle-checkbox__slider:before {
     font-weight: normal;
   }
 }
+
+.checkbox__item {
+  @include font-size-and-vertical-height(14, 20);
+  @include margin(2, "top");
+}

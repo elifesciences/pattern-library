@@ -6,15 +6,6 @@
   & > :last-child {
     margin-bottom: 0 // Margins don't collapse on <select>s
   }
-
-  &.form-item--valid {
-
-    .form-item__message--info {
-      color: $color-success;
-    }
-
-  }
-
 }
 
 .form-item__label_container {
@@ -30,14 +21,28 @@
   @include margin(4, "bottom");
 }
 
+.form-item__title {
+  @include font-size-and-vertical-height($font-size-base-in-px);
+  @include padding(12, "bottom");
+  @include padding(24, "top");
+  display: block;
+  font-family: $font-secondary;
+  font-weight: bold;
+}
+
+.form-item__sub_title {
+  @include font-size-and-vertical-height(12, 24);
+  @include padding(12, "bottom");
+  @include padding(24, "top");
+  font-family: $font-secondary;
+  display: inline-block;
+  color: #757575;
+}
+
 .form-item__message {
   display: block;
   @include typeg-form-message();
   @include margin(4, "top");
-}
-
-.form-item__message--valid {
-  color: $color-success;
 }
 
 .form-item__message--invalid {

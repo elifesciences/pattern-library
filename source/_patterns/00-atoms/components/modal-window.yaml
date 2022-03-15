@@ -1,0 +1,20 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  smallDeviceOnly:
+    type: boolean
+  triggerId:
+    type: string
+    minLength: 1
+  title:
+    type: string
+    minLength: 1
+  closeBtnText:
+    type: string
+    minLength: 1
+  body:
+    type: string
+    minLength: 1
+required:
+  - title
+  - body

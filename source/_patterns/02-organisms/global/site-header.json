@@ -1,5 +1,7 @@
 {
-  "homePagePath": "#",
+  "title": {
+    "homePagePath": "#"
+  },
   "primaryLinks":
   {
     "classesOuter": "nav-primary",
@@ -34,6 +36,12 @@
 
       {
         "text": "Magazine",
+        "path": "#",
+        "classes": "nav-primary__item"
+      },
+
+      {
+        "text": "Community",
         "path": "#",
         "classes": "nav-primary__item"
       },

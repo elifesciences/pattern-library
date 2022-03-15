@@ -1,3 +1,5 @@
+'use strict';
+
 let expect = chai.expect;
 let spy = sinon.spy;
 
@@ -5,7 +7,6 @@ let spy = sinon.spy;
 let ViewSelector = require('../assets/js/components/ViewSelector');
 
 describe('A ViewSelector Component', function () {
-  'use strict';
   let $elm;
 
   beforeEach(function () {
@@ -23,89 +24,28 @@ describe('A ViewSelector Component', function () {
     expect(viewSelector.cssFixedClassName).to.equal('view-selector--fixed');
   });
 
-  describe('the "view-selector--fixed" class', function () {
+  it('adds and removes the "view-selector--fixed" class as the page is scrolled', function () {
+    let windowMock = {
+      addEventListener: function () {},
+      matchMedia: function() {
+        return {
+          matches: true
+        }
+      },
+    };
 
-    it('is added when sufficient scrolling has occurred', function () {
-      // Fake sufficient scrolling
-      let windowMock = {
-        addEventListener: function () {
-        },
-        matchMedia: function() {
-          return {
-            matches: true
-          }
-        },
-        pageYOffset: 20
-      };
-      let _viewSelector1 = new ViewSelector($elm, windowMock);
-      _viewSelector1.elmYOffset = 20;
-      _viewSelector1.handleScrolling();
+    let _viewSelector = new ViewSelector($elm, windowMock);
+    expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.false;
 
-      let classes1 = _viewSelector1.$elm.classList;
-      expect(classes1.contains('view-selector--fixed')).to.be.true;
+    // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
+    window.scrollTo(0,1080);
+    _viewSelector.handleScrolling();
+    expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.true;
 
-      let _viewSelector2 = new ViewSelector($elm, windowMock);
-      _viewSelector2.elmYOffset = 20;
-      _viewSelector2.handleScrolling();
-
-      let classes2 = _viewSelector2.$elm.classList;
-      expect(classes2.contains('view-selector--fixed')).to.be.true;
-    });
-
-    it('is removed when scrolling is insufficient', function () {
-      // Fake sufficient scrolling
-      let windowMock = {
-        addEventListener: function () {
-        },
-        matchMedia: function() {
-          return {
-            matches: true
-          }
-        },
-        pageYOffset: 10
-      };
-      let _viewSelector = new ViewSelector($elm, windowMock);
-      _viewSelector.elmYOffset = 20;
-      _viewSelector.handleScrolling();
-
-      let classes = _viewSelector.$elm.classList;
-      expect(classes.contains('view-selector--fixed')).to.be.false;
-
-    });
-
-    it('is removed when scrolling would cause view selector to overlay following layout elements',
-       function () {
-         // This must be smaller than $elm.offsetHeight of the object under test
-         let fakeBottomOfMainEl = 20;
-         let windowMock = {
-           addEventListener: function () {
-           },
-           matchMedia: function() {
-             return {
-               matches: true
-             }
-           },
-           pageYOffset: 30
-         };
-
-         let _viewSelector = new ViewSelector($elm, windowMock, document);
-         _viewSelector.mainTarget = {
-           getBoundingClientRect: function () {
-             return {
-               bottom: fakeBottomOfMainEl
-             };
-           }
-         };
-         _viewSelector.elmYOffset = 20;
-         // Prerequisite for the test to be valid
-         expect(fakeBottomOfMainEl).to.be.below(_viewSelector.$elm.offsetHeight);
-
-         _viewSelector.$elm.classList.add('view-selector--fixed');
-         _viewSelector.handleScrolling();
-         expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.true;
-         expect(_viewSelector.$elm.style.top.indexOf('px')).to.be.above(-1);
-       });
-
+    // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
+    window.scrollTo(0,0);
+    _viewSelector.handleScrolling();
+    expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.false;
   });
 
   describe("its a list of links for the left navigation", function () {
@@ -206,65 +146,6 @@ describe('A ViewSelector Component', function () {
               });
 
            });
-
-        });
-
-        context('when the first viewable section heading is not the first logical section heading', () => {
-
-          context(
-            'and it is less than 48px lower than the top of the top of the viewport',
-            () => {
-
-              const fakeSecondHeading = {
-                el: buildFakeElement(47, 0, 'Second heading text'),
-                findClosest: function () {
-                  return {
-                    previousElementSibling: 'I am the previousElementSibling'
-                  };
-                }
-              };
-              spy(fakeSecondHeading, 'findClosest');
-
-              it(
-                'identifies that section heading\'s section as the section to highlight the link to',
-                () => {
-                  ViewSelector.findSectionForLinkHighlight(fakeSecondHeading.el, firstHeadingText,
-                                                           fakeSecondHeading.findClosest);
-                  expect(fakeSecondHeading.findClosest.calledWithExactly(fakeSecondHeading.el,
-                                                                        '.article-section')).to.be.true;
-                  expect(fakeSecondHeading.findClosest.returned(
-                    {previousElementSibling: 'I am the previousElementSibling'})).to.be.true;
-                  fakeSecondHeading.findClosest.restore();
-                });
-
-            });
-
-          context(
-            'and it is 48px or more below the top of the viewport',
-            () => {
-
-              const fakeSecondHeading = {
-                el: buildFakeElement(48, 0, 'Second heading text'),
-                findClosest: function () {
-                  return {
-                    previousElementSibling: 'I am the previousElementSibling'
-                  };
-                }
-              };
-              spy(fakeSecondHeading, 'findClosest');
-
-              it(
-                'identifies the section following the section heading\'s section as the section to highlight the link to',
-                () => {
-                  const obs = ViewSelector.findSectionForLinkHighlight(fakeSecondHeading.el, firstHeadingText,
-                                                           fakeSecondHeading.findClosest);
-                  expect(fakeSecondHeading.findClosest.calledWithExactly(fakeSecondHeading.el,
-                                                                         '.article-section')).to.be.true;
-                  expect(obs).to.equal('I am the previousElementSibling');
-                  fakeSecondHeading.findClosest.restore();
-                });
-
-            });
 
         });
 

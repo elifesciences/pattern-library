@@ -1,0 +1,11 @@
+{
+  "tables": [
+    "<table><thead><tr><th align='left' valign='bottom'>Reagent type (species) or resource</th><th align='left' valign='bottom'>Designation</th><th align='left' valign='bottom'>Source or reference</th><th align='left' valign='bottom'>Identifiers</th><th align='left' valign='bottom'>Additional information</th></tr></thead><tbody><tr><td align='left' valign='bottom'>Software, algorithm</td><td align='left' valign='bottom'>Metamorph</td><td align='left' valign='bottom'>Metamorph v</td><td align='left' valign='bottom'><a href='https://www.moleculardevices.com/products/cellular-imaging-systems/acquisition-and-analysis-software/metamorph-microscopy#gref'>https://www.moleculardevices.com/products/cellular-imaging-systems/acquisition-and-analysis-software/metamorph-microscopy#gref</a></td><td></td></tr></tbody></table>"
+  ],
+  "hasFootnotes": true,
+  "footnotes": [
+    {
+      "text": "<p>Table with long url</p>"
+    }
+  ]
+}

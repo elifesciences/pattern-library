@@ -1,4 +1,9 @@
 {
+  "siteHeaderTitle": {
+    "isWrapped": true,
+    "borderVariant": true,
+    "homePagePath": "#"
+  },
   "title": "Download your personalised magazine cover",
   "text": [
     {
