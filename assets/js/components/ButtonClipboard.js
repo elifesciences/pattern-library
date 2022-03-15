@@ -44,20 +44,13 @@ module.exports = class Modal {
   }
 
   copyToClipboardFallback(text) {
-    const textArea = this.doc.createElement('textarea');
-    textArea.value = text;
+    const listener = (ev) => {
+      ev.preventDefault();
+      ev.clipboardData.setData('text/html', text);
+    };
 
-    // Avoid scrolling to bottom
-    textArea.style.top = '0';
-    textArea.style.left = '0';
-    textArea.style.position = 'fixed';
-
-    this.doc.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-
+    this.doc.addEventListener('copy', listener);
     this.doc.execCommand('copy');
-
-    this.doc.body.removeChild(textArea);
+    this.doc.removeEventListener('copy', listener);
   }
 };
