@@ -14,6 +14,8 @@
     padding-bottom: 0;
 
     &:after {
+      @include padding($content-header-padding - 1, "top");
+      border-bottom: 1px solid $color-text-dividers;
       content: "";
       display: block;
       width: 100%;
@@ -25,6 +27,12 @@
 
 .content-header-journal {
   text-align: left;
+
+  &.wrapper {
+    &:after {
+      border-bottom: none;
+    }
+  }
 }
 
 .content-header--read-more {
@@ -40,7 +48,7 @@
 }
 
 .content-header__body {
-  @include margin($content-header-padding * 2, "top");
+  @include margin($content-header-padding-small * 2, "top");
   @include margin(30, "bottom");
 
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -96,12 +104,11 @@
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      height: #{$content-header-padding * 7}px;
+      height: #{$content-header-padding-small * 7}px;
 
       .content-header--has-social-media-sharers & {
-        min-height: #{$content-header-padding * 9}px;
+        min-height: #{$content-header-padding-small * 9}px;
       }
-
     }
 
   }
@@ -110,7 +117,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 52px;
+    bottom: 20px;
   }
 
   &.content-header--has-profile .content-header__body {
@@ -152,14 +159,6 @@
 }
 
 .content-header--image {
-
-  .content-header__body {
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include margin($content-header-padding * 3, "top");
-    }
-
-  }
 
   .content-header__title {
     @include font-size-and-vertical-height(41, 48);
@@ -293,7 +292,7 @@
     }
 
     .content-header__profile_wrapper {
-      @include padding($content-header-padding 0 0);
+      @include padding($content-header-padding-small 0 0);
     }
 
   }
@@ -308,6 +307,8 @@
 .content-header__subject_list {
   @include label-subject-typeg();
   @include padding(0, "left");
+  @include padding(24, "top");
+  grid-column: 2/3;
   text-align: center;
 
   .content-header--image & {
@@ -316,6 +317,10 @@
 
   &:before {
     color: $color-text-secondary;
+  }
+
+  .content-header-journal & {
+    @include padding(0, "top");
   }
 }
 
@@ -362,6 +367,7 @@
 .content-header__icons {
   @include margin(0);
   @include padding(0);
+  grid-row: 1;
   list-style: none;
 
   .content-header--image & {
