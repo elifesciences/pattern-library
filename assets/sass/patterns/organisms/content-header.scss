@@ -14,7 +14,7 @@
     padding-bottom: 0;
 
     &:after {
-      @include padding($content-header-padding - 1, "top");
+      @include padding($content-header-padding-small - 1, "top");
       border-bottom: 1px solid $color-text-dividers;
       content: "";
       display: block;
@@ -30,6 +30,7 @@
 
   &.wrapper {
     &:after {
+      @include padding($content-header-padding - 1, "top");
       border-bottom: none;
     }
   }
@@ -49,7 +50,7 @@
 
 .content-header__body {
   @include margin($content-header-padding-small * 2, "top");
-  @include margin(30, "bottom");
+  @include margin(0, "bottom");
 
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include margin(0, "bottom");
@@ -60,6 +61,10 @@
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include margin(0, "top");
     }
+  }
+
+  .content-header-grid__main & {
+    @include margin(30, "bottom");
   }
 }
 
@@ -533,10 +538,13 @@ $iconlist: cc oa;
 
 .content-header__author_list {
   margin: 0;
-  padding: 0 0 24px;
 
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     padding: 0;
+  }
+
+  .content-header-grid__main & {
+    padding: 0 0 24px;
   }
 }
 
