@@ -1,0 +1,39 @@
+<div class="global-wrapper clean">
+  <div class="global-inner">
+    <div class="wrapper">
+
+      <div class="grid">
+
+          <div class="{{> pages-pl-only-grid-content-page-main-col-clean-css-classes}}">
+
+            {{#siteHeaderTitle}}
+              {{> molecules-site-header-title }}
+            {{/siteHeaderTitle}}
+
+            {{#contentHeader}}
+              {{> organisms-content-header-simple }}
+            {{/contentHeader}}
+          </div>
+
+        </div>
+    </div>
+
+    <main role="main" class="main" id="maincontent">
+
+      <div class="wrapper">
+
+        <div class="grid">
+
+          <div class="{{> pages-pl-only-grid-content-page-main-col-clean-css-classes}} grid-column">
+
+            {{{body}}}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+  </div> {{! /.global-inner }}
+</div> {{! /.global-wrapper }}

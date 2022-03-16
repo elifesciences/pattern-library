@@ -1,6 +1,8 @@
 {
   "siteHeader": {
-    "homePagePath": "#",
+    "title": {
+      "homePagePath": "#"
+    },
     "primaryLinks":
     {
       "classesOuter": "nav-primary",
@@ -35,6 +37,12 @@
 
         {
           "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Community",
           "path": "#",
           "classes": "nav-primary__item"
         },
@@ -76,7 +84,7 @@
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
-          "text": "Careers",
+          "text": "Newsletters",
           "url": "#",
           "classes": "nav-secondary__item"
         },

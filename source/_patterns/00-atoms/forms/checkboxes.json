@@ -1,0 +1,38 @@
+{
+  "id": "checkboxes1",
+  "name": "checkboxes[]",
+  "title": "Checkboxes",
+  "checkboxes": [
+    {
+      "id": "checkbox_id_1",
+      "value": "checkbox_1",
+      "label": "Checkbox 1",
+      "checked": true
+    },
+    {
+      "id": "checkbox_id_2",
+      "value": "checkbox_2",
+      "label": "Checkbox 2"
+    },
+    {
+      "id": "checkbox_id_3",
+      "value": "checkbox_3",
+      "label": "Checkbox 3"
+    },
+    {
+      "groupTitle": "Children detected!",
+      "children": [
+        {
+          "id": "checkbox_id_4",
+          "value": "checkbox_4",
+          "label": "Checkbox 4"
+        },
+        {
+          "id": "checkbox_id_5",
+          "value": "checkbox_5",
+          "label": "Checkbox 5"
+        }
+      ]
+    }
+  ]
+}

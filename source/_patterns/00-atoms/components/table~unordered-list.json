@@ -1,0 +1,11 @@
+{
+  "tables": [
+    "<table><thead><tr><th colspan='5' valign='top'>Factors classically associated with immune functions</th></tr><tr valign='bottom'><th colspan='2'>Protein</th><th>Immune system properties</th><th>Nervous system properties</th><th>References</th></tr></thead><tbody><tr valign='top'><td colspan='2'>Antimicrobial peptides(AMPs)</td><td><ul class='listlist--bullet'><li><p>Secreted by epithelial and phagocyticcells</p></li><li><p>Disrupt microbial membranes leading to destruction of pathogen</p></li></ul></td><td><ul class='listlist--bullet'><li><p>Antimicrobial in nervous system niches</p></li><li><p>Control chemotaxis of immune cells and astroglia</p></li><li><p>Mediate iron homeostasis</p></li><li><p>Modulate nerve impulses</p></li><li><p>Implicated in aging and neurodegeneration</p></li></ul></td><td><a href='#bib107'>Hanson et al., 2019</a>;<a href='#bib161'>Lezi et al., 2018</a>;<a href='#bib246'>Su et al., 2010</a>;<a href='#bib290'>Zasloff, 2002</a></td></tr></tbody></table>"
+  ],
+  "hasFootnotes": true,
+  "footnotes": [
+    {
+      "text": "<p>Table with unordered list</p>"
+    }
+  ]
+}
