@@ -1,0 +1,27 @@
+{
+  "id": "select2",
+  "name": "select2",
+  "label": {
+    "labelText": "Select valid with additional info"
+  },
+  "state": "valid",
+  "messageGroup": {
+    "infoText": "Hunky dory, thanks very much",
+    "id": "idOfTheMessageGroup"
+  },
+  "options": [
+    {
+      "value": "2016",
+      "displayValue": "2016"
+    },
+    {
+      "value": "2015",
+      "displayValue": "2015",
+      "selected": true
+    },
+    {
+      "value": "2014",
+      "displayValue": "2014"
+    }
+  ]
+}

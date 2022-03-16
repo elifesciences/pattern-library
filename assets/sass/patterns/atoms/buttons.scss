@@ -35,15 +35,6 @@
   }
 }
 
-.button--secondary {
-  @include colors($color-text-ui-background-secondary, $color-text-dividers, $color-text);
-  @include padding(15 36 14);
-
-  &:hover {
-    @include colors($color-text-dividers, $color-text-dividers, $color-text);
-  }
-}
-
 .button--outline {
   @include colors($color-text--reverse, $color-primary, $color-primary);
   @include padding(15 36 14);
@@ -105,14 +96,4 @@
   border-width: 2px;
 
   cursor: not-allowed;
-}
-
-.button--success {
-  background: $color-success;
-  border: 1px solid $color-success;
-
-  &:hover {
-    background-color: #2b7306;
-    border: 1px solid #2b7306;
-  }
 }

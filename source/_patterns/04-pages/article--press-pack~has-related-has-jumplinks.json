@@ -2,9 +2,7 @@
   "hasRelated": true,
   "viewSelector": true,
   "siteHeader": {
-    "title": {
-      "homePagePath": "#"
-    },
+    "homePagePath": "#",
     "primaryLinks":
     {
       "classesOuter": "nav-primary",
@@ -39,12 +37,6 @@
 
         {
           "text": "Magazine",
-          "path": "#",
-          "classes": "nav-primary__item"
-        },
-
-        {
-          "text": "Community",
           "path": "#",
           "classes": "nav-primary__item"
         },
@@ -86,7 +78,7 @@
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
-          "text": "Newsletters",
+          "text": "Careers",
           "path": "#",
           "classes": "nav-secondary__item"
         },

@@ -2,9 +2,7 @@
   "isPrimaryResearch": true,
   "hasRelated": true,
   "siteHeader": {
-    "title": {
-      "homePagePath": "#"
-    },
+    "homePagePath": "#",
     "primaryLinks": {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
@@ -38,12 +36,6 @@
 
         {
           "text": "Magazine",
-          "path": "#",
-          "classes": "nav-primary__item"
-        },
-
-        {
-          "text": "Community",
           "path": "#",
           "classes": "nav-primary__item"
         },

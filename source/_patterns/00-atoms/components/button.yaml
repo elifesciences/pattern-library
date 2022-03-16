@@ -7,9 +7,6 @@ allOf:
         minLength: 1
       classes:
         type: string
-      clipboardText:
-        type: string
-        minLength: 1
     required:
       - text
   - oneOf:
