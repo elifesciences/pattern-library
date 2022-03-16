@@ -9,13 +9,15 @@ PORT ?= 8080
 SOURCES = $(wildcard assets/js/**/* assets/sass/**/* source/**/*)
 
 SASS = $(wildcard assets/sass/**/*)
+TESTS = $(wildcard test/*.spec.js)
+TESTS_SOURCES = $(patsubst test/%,test/build/%,$(TESTS))
+TESTS_HTML = $(patsubst test/%.spec.js,test/%.html,$(TESTS))
 
 # Targets that don't result in output of the same name.
 .PHONY: start \
         clean \
         distclean \
-        test \
-        validate
+        test
 
 # When no target is specified, the default target to run.
 .DEFAULT_GOAL := start
@@ -26,7 +28,7 @@ distclean: clean
 
 # Cleans build output
 clean:
-	@rm -rf public source/assets
+	@rm -rf public source/assets test/build
 
 # Install Node.js dependencies if either, the node_modules directory is not present or package.json has changed.
 node_modules: package.json
@@ -34,7 +36,7 @@ node_modules: package.json
 	@touch $@
 
 # Create various directories
-source/assets source/assets/js source/assets/css:
+source/assets source/assets/js source/assets/css test/build:
 	@mkdir -p $@
 
 # Copy the fonts
@@ -54,6 +56,15 @@ public: source/assets/fonts source/assets/css/all.css source/assets/js/main.js
 	@mkdir -p $(CURDIR)/public
 	@cp -r ./core/styleguide $(CURDIR)/public/
 	@docker run -it --rm -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) php:$(PHP_VERSION) php ./core/builder.php --generate
+
+test/build/%.spec.js:
+	npx browserify -o ./$@ ./test/$*.spec.js
+
+test/%.html:
+	@echo $@
+#	npx mocha-chrome ./$@ --ignore-resource-errors
+
+test: test/build $(TESTS_SOURCES)
 
 # Builds and runs the application on localhost:8080.
 start: public
