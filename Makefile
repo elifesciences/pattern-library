@@ -33,15 +33,19 @@ node_modules: package.json
 	@npm install
 	@touch $@
 
+# Create various directories
 source/assets source/assets/js source/assets/css:
 	@mkdir -p $@
 
-source/assets/fonts:
+# Copy the fonts
+source/assets/fonts: source/assets
 	@cp -r ./assets/fonts ./$@
 
+# Convert the sass to css
 source/assets/css/all.css: node_modules source/assets/css $(SASS)
-	npx node-sass ./assets/sass/build.scss ./$@
+	npx node-sass assets/sass/build.scss ./$@ --importer node_modules/node-sass-magic-importer/dist/cli.js --source-map true --source-map-root file://${PWD} --source-map-embed true --source-comments true
 
+# Compile the Javascript
 source/assets/js/main.js: node_modules source/assets/js
 	@npx browserify --debug ./assets/js/main.js | npx exorcist ./$@.map > ./$@ && cp assets/js/elife-loader.js ./source/assets/js/elife-loader.js
 
