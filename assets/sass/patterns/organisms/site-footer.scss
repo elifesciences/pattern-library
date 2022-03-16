@@ -6,15 +6,6 @@
   @include padding(16, "bottom");
 }
 
-.footer-cell__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: auto;
-  padding: 0 12px;
-  @include constrain-width(1104, "max");
-}
-
 .footer-navigation {
   padding: 0;
   @include blg-spacing("bottom", "medium", "padding");
@@ -49,7 +40,8 @@
   }
 }
 
-@media only screen and (min-width: #{get-rem-from-px(540)}em) {
+@media only screen and (min-width: #{get-rem-from-px(730)}em) {
+
   .footer-navigation__list {
     column-count: 2;
     column-gap: 0.5rem;
@@ -71,27 +63,23 @@
 
 }
 
-@media only screen and (min-width: #{get-rem-from-px(540)}em) {
-  .site-footer {
+.carbon-neutral-wrapper {
+  text-align: center;
 
-    .carbon-neutral-wrapper {
-      text-align: center;
+  .carbon-neutral-link {
+    @include margin(0 0 47);
+    @include label-content-typeg($color-text, $uppercase: true);
+    align-items: center;
+    color: $color-text;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 247px;
+  }
 
-      .carbon-neutral-link {
-        @include margin(0 0 47);
-        @include label-content-typeg($color-text, $uppercase: true);
-        align-items: center;
-        color: $color-text;
-        display: inline-flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        max-width: 247px;
-      }
-
-      @media only screen and (min-width: #{get-rem-from-px(730)}rem) {
-        text-align: left;
-      }
-    }
+  @media only screen and (min-width: #{get-rem-from-px(730)}rem) {
+    text-align: left;
+  }
 }
 
 @media only screen and (min-width: #{get-rem-from-px(730)}em) {
@@ -124,13 +112,6 @@
     }
   }
 
-  .site-footer__container {
-    display: grid;
-    margin: auto;
-    @include constrain-width(1104, "max");
-    padding: 0 24px;
-  }
-
   .site-smallprint {
     padding: 0;
     text-align: left;
@@ -139,10 +120,18 @@
   .site-smallprint__copyright {
     text-align: center;
   }
+
+  address {
+    padding-bottom: 84px;
+  }
 }
 
 @media only screen and (min-width: #{get-rem-from-px($max-site-width)}em) {
   .site-footer__container {
     @include padding(0 15);
+  }
+
+  .footer-navigation {
+    @include blg-spacing("bottom", "large", "padding");
   }
 }
