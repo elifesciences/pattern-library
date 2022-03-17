@@ -11,7 +11,7 @@ SOURCES = $(wildcard assets/js/**/* assets/sass/**/* source/**/*)
 SASS = $(wildcard assets/sass/**/*)
 TESTS = $(wildcard test/*.spec.js)
 TESTS_SOURCES = $(patsubst test/%,test/build/%,$(TESTS))
-TESTS_HTML = $(patsubst test/%.spec.js,test/%.html,$(TESTS))
+TESTS_HTML=$(patsubst test/%.spec.js,test/%.html,$(TESTS))
 
 # Targets that don't result in output of the same name.
 .PHONY: start \
@@ -57,14 +57,14 @@ public: source/assets/fonts source/assets/css/all.css source/assets/js/main.js
 	@cp -r ./core/styleguide $(CURDIR)/public/
 	@docker run -it --rm -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) php:$(PHP_VERSION) php ./core/builder.php --generate
 
-test/build/%.spec.js:
+test/build/%.spec.js: test/%.spec.js
 	npx browserify -o ./$@ ./test/$*.spec.js
 
-test/%.html:
-	@echo $@
-#	npx mocha-chrome ./$@ --ignore-resource-errors
+test/%.html: test/build/%.spec.js
+	@echo "Running test $@"
+	@npx mocha-chrome ./$@ --ignore-resource-errors
 
-test: test/build $(TESTS_SOURCES)
+test: test/build $(TESTS_HTML)
 
 # Builds and runs the application on localhost:8080.
 start: public
