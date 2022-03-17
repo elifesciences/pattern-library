@@ -16,7 +16,7 @@ TESTS_OUTPUT = $(patsubst test/%,test/build/%,$(TESTS))
 TESTS_HTML = $(patsubst test/%.spec.js,test/%.html,$(TESTS))
 
 # Targets that don't result in output of the same name.
-.PHONY: start stop clean distclean test
+.PHONY: start stop clean distclean test fonts images
 
 # When no target is specified, the default target to run.
 .DEFAULT_GOAL := start
@@ -39,8 +39,17 @@ source/assets source/assets/js source/assets/css test/build:
 	@mkdir -p $@
 
 # Copy the fonts
-source/assets/fonts: source/assets $(FONTS)
-	@cp -r ./assets/fonts ./$@
+fonts: source/assets $(FONTS)
+	@mkdir -p $(CURDIR)/source/assets/fonts
+	@cp -r ./assets/fonts $(CURDIR)/source/assets/fonts
+
+# Optimise image assets
+images:
+	@mkdir -p source/assets/img/errors source/assets/img/icons source/assets/img/patterns/molecules source/assets/img/patterns/organisms
+	@npx imagemin-cli './assets/img/errors' -o ./source/assets/img/errors/ --plugin.mozjpeg.progressive=true
+	@npx imagemin-cli './assets/img/icons' -o ./source/assets/img/icons --plugin.mozjpeg.progressive=true
+	@npx imagemin-cli './assets/img/patterns/molecules' -o ./source/assets/img/patterns/molecules/ --plugin.mozjpeg.progressive=true
+	@npx imagemin-cli './assets/img/patterns/organisms' -o ./source/assets/img/patterns/organisms/ --plugin.mozjpeg.progressive=true
 
 # Convert the sass to css
 source/assets/css/all.css: node_modules source/assets/css $(SASS)
@@ -51,7 +60,7 @@ source/assets/js/main.js: node_modules source/assets/js $(JAVASCRIPT)
 	@npx browserify --debug ./assets/js/main.js | npx exorcist ./$@.map > ./$@ && cp assets/js/elife-loader.js ./source/assets/js/elife-loader.js
 
 # Builds the patterns, and pattern-lab static site.
-public: source/assets/fonts source/assets/css/all.css source/assets/js/main.js
+public: fonts images source/assets/css/all.css source/assets/js/main.js
 	@mkdir -p $(CURDIR)/public
 	@cp -r ./core/styleguide $(CURDIR)/public/
 	@docker run -it --rm -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) php:$(PHP_VERSION) php ./core/builder.php --generate
