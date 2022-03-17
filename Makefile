@@ -12,8 +12,8 @@ JAVASCRIPT = $(wildcard assets/js/**/*)
 SOURCES = $(wildcard assets/js/**/* assets/sass/**/* source/**/*)
 
 TESTS = $(wildcard test/*.spec.js)
-#TESTS_SOURCES = $(patsubst test/%,test/build/%,$(TESTS))
-TESTS_HTML=$(patsubst test/%.spec.js,test/%.html,$(TESTS))
+TESTS_OUTPUT = $(patsubst test/%,test/build/%,$(TESTS))
+TESTS_HTML = $(patsubst test/%.spec.js,test/%.html,$(TESTS))
 
 # Targets that don't result in output of the same name.
 .PHONY: start stop clean distclean test
@@ -65,7 +65,7 @@ test/%.html: test/build/%.spec.js
 	npx mocha-chrome ./$@ --ignore-resource-errors
 
 # Runs all tests
-test: $(TESTS) $(TESTS_HTML)
+test: $(TESTS_OUTPUT) $(TESTS_HTML)
 
 # Builds and runs the application on localhost:8080.
 start: public
