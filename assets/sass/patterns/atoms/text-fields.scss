@@ -29,6 +29,10 @@
   resize: vertical;
 }
 
+.text-field--valid {
+  border: 1px solid $color-success;
+}
+
 .text-field--invalid {
   border: 1px solid $color-attention;
 }

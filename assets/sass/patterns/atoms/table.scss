@@ -53,12 +53,6 @@ td {
   @include font-size-and-vertical-height(13, 18);
   font-weight: 500;
   @include padding(6);
-
-  li,
-  p {
-    @include font-size-and-vertical-height(13, 18);
-    font-family: $font-secondary;
-  }
 }
 
 .table-footnote {

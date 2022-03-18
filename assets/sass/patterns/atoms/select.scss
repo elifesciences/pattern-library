@@ -8,6 +8,10 @@
   }
 }
 
-.select--invalid {
+.select--valid {
+  border-color: $color-success;
+}
+
+.select--error {
   border-color: $color-attention;
 }

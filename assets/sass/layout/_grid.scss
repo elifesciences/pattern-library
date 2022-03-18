@@ -94,6 +94,12 @@
 
 }
 
+.global-inner {
+  box-sizing: content-box;
+  margin: 0 auto;
+  display: grid;
+}
+
 /*
  *  Wrapper class. A class for constraining the content to the max-site-width and also applies the side padding.
  */
@@ -102,7 +108,10 @@
   @include wrapper();
 
   &.wrapper--site-header {
+    box-sizing: content-box;
+    margin: 0 auto;
     padding: 0;
+    width: 100%;
   }
 
   // --content and --listing discrimination as likely to diverge & can then be handled here rather than in journal

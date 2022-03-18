@@ -159,7 +159,7 @@
     max-height: 100vh;
     min-height: 11rem;
     overflow: auto;
-    @include padding(48, "top");
+    @include padding(30, "top");
     position: fixed;
     top: 0;
   }
