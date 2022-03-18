@@ -26,6 +26,7 @@ Components.HiddenUntilChecked = require('./components/HiddenUntilChecked');
 Components.Highlights = require('./components/Highlights');
 Components.HypothesisLoader = require('./components/HypothesisLoader');
 Components.HypothesisOpener = require('./components/HypothesisOpener');
+Components.HypothesisTrigger = require('./components/HypothesisTrigger');
 Components.InfoBar = require('./components/InfoBar');
 Components.LoginControl = require('./components/LoginControl');
 Components.MainMenu = require('./components/MainMenu');
