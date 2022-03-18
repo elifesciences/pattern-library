@@ -84,7 +84,7 @@ module.exports = class AssetViewer {
     if (!this.loader) {
       this.loader = Promise.all([
         utils.loadJavaScript(
-          'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js',
+          'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js',
           'sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy'
         ),
         utils.loadJavaScript(
