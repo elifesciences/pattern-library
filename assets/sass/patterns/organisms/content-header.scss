@@ -122,7 +122,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 20px;
+    bottom: 28px;
   }
 
   &.content-header--has-profile .content-header__body {
@@ -696,7 +696,7 @@ $iconlist: cc oa;
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 18px;
+    bottom: 12px;
     @include font-size-and-vertical-height(12, 12);
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
