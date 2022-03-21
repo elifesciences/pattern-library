@@ -15,7 +15,6 @@
 
     &:after {
       @include padding($content-header-padding-small - 1, "top");
-      border-bottom: 1px solid $color-text-dividers;
       content: "";
       display: block;
       width: 100%;
@@ -30,7 +29,6 @@
 
   &.wrapper {
     &:after {
-      @include padding($content-header-padding - 1, "top");
       border-bottom: none;
     }
   }
@@ -64,7 +62,9 @@
   }
 
   .content-header-grid__main & {
-    @include margin(30, "bottom");
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include margin(30, "bottom");
+    };
   }
 }
 
@@ -526,7 +526,10 @@ $iconlist: cc oa;
 
 .content-header__authors {
   @include margin(24, "bottom");
+
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: contents;
+
     .content-header__institution_list {
       @include visuallyhidden();
     }
