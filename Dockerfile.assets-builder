@@ -9,7 +9,8 @@ COPY .babelrc \
     .jscsrc \
     .jshintrc \
     .stylelintrc \
-    gulpfile.js \
+    package.json \
+    Makefile \
     ./
 
 COPY --from=npm /node_modules/ node_modules/
@@ -17,13 +18,13 @@ COPY --from=npm /node_modules/ node_modules/
 ARG environment=production
 
 COPY assets/fonts/ assets/fonts/
-RUN node_modules/.bin/gulp --environment ${environment} fonts
+RUN make fonts
 
 COPY assets/img/ assets/img/
-RUN node_modules/.bin/gulp --environment ${environment} img
+RUN make images
 
 COPY assets/js/ assets/js/
-RUN node_modules/.bin/gulp --environment ${environment} js
+RUN make source/assets/js/main.js
 
 COPY assets/sass/ assets/sass/
-RUN node_modules/.bin/gulp --environment ${environment} generateCss
+RUN make source/assets/css/all.css

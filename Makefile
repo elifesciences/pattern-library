@@ -15,6 +15,18 @@ TESTS = $(wildcard test/*.spec.js)
 TESTS_OUTPUT = $(patsubst test/%,test/build/%,$(TESTS))
 TESTS_HTML = $(patsubst test/%.spec.js,test/%.html,$(TESTS))
 
+SASS_ARGS =
+
+ifeq ($(ENVIRONMENT),production)
+  SASS_ARGS=--output-style compressed
+endif
+
+JS_ARGS=--debug ./assets/js/main.js | npx exorcist ./source/assets/js/main.js.map > ./source/assets/js/main.js && cp assets/js/elife-loader.js ./source/assets/js/elife-loader.js
+
+ifeq ($(ENVIRONMENT),production)
+  JS_ARGS=./assets/js/main.js | npx uglifyjs > ./source/assets/js/main.js && cp assets/js/elife-loader.js ./source/assets/js/elife-loader.js
+endif
+
 # Targets that don't result in output of the same name.
 .PHONY: start stop clean distclean test fonts images
 
@@ -53,11 +65,11 @@ images:
 
 # Convert the sass to css
 source/assets/css/all.css: node_modules source/assets/css $(SASS)
-	npx node-sass assets/sass/build.scss ./$@ --importer node_modules/node-sass-magic-importer/dist/cli.js --source-map true --source-map-root file://${PWD} --source-map-embed true --source-comments true
+	npx node-sass assets/sass/build.scss ./$@ --importer node_modules/node-sass-magic-importer/dist/cli.js --source-map true --source-map-root file://${PWD} --source-map-embed true --source-comments true ${SASS_ARGS}
 
 # Compile the Javascript
 source/assets/js/main.js: node_modules source/assets/js $(JAVASCRIPT)
-	@npx browserify --debug ./assets/js/main.js | npx exorcist ./$@.map > ./$@ && cp assets/js/elife-loader.js ./source/assets/js/elife-loader.js
+	@npx browserify ${JS_ARGS}
 
 # Builds the patterns, and pattern-lab static site.
 public: fonts images source/assets/css/all.css source/assets/js/main.js
