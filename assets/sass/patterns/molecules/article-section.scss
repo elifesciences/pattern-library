@@ -284,8 +284,7 @@ $arrow-size: 5;
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 3/10;
     grid-row: 1;
-    margin-left: 70px;
-    width: 100%;
+    margin-left: 48px;
   }
 }
 
@@ -296,12 +295,15 @@ $arrow-size: 5;
     grid-column: 8/12;
     grid-row: 2;
     justify-self: end;
-    margin-left: 70px;
+    margin-left: 94px;
+    margin-right: -24px;
     max-width: 200px;
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 10/13;
     grid-row: 1;
+    margin-right: 0;
+    margin-left: 35px;
   }
 }
