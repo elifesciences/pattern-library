@@ -84,10 +84,10 @@
   }
 
   .content-header__body {
-    height: #{($content-header-padding * 5.5)}px;
+    height: #{($content-header-padding-small * 7)}px;
 
     .content-header--has-social-media-sharers & {
-      min-height: #{$content-header-padding * 8}px;
+      min-height: #{$content-header-padding * 9}px;
     }
 
     display: flex;
