@@ -290,17 +290,17 @@
   margin: auto;
 
   @if $padding {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: #{$site-spacing}px;
+    padding-right: #{$site-spacing}px;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      padding-left: 48px;
-      padding-right: 48px;
+      padding-left: #{$site-spacing-large}px;
+      padding-right: #{$site-spacing-large}px;
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      padding-left: 48px;
-      padding-right: 48px;
+      padding-left: #{$site-spacing-large}px;
+      padding-right: #{$site-spacing-large}px;
     }
   }
 }
