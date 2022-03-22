@@ -282,9 +282,9 @@ $arrow-size: 5;
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include margin(48, "left");
     grid-column: 3/10;
     grid-row: 1;
-    margin-left: 48px;
   }
 }
 
@@ -292,18 +292,18 @@ $arrow-size: 5;
   display: grid;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin(94, "left");
+    @include margin(-24, "right");
     grid-column: 8/12;
     grid-row: 2;
     justify-self: end;
-    margin-left: 94px;
-    margin-right: -24px;
     max-width: 200px;
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include margin(35, "left");
+    @include margin(0, "right");
     grid-column: 10/13;
     grid-row: 1;
-    margin-right: 0;
-    margin-left: 35px;
   }
 }
