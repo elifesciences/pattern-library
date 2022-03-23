@@ -1,5 +1,7 @@
 'use strict';
 
+const utils = require('../libs/elife-utils')();
+
 module.exports = class Modal {
   constructor($elm, _window = window, doc = document) {
     if (!$elm) {
@@ -10,9 +12,18 @@ module.exports = class Modal {
     this.window = _window;
     this.doc = doc;
 
+    this.$elm.dataset.resetText = $elm.innerHTML;
+
+    const modal = utils.closest(this.$elm, '.modal');
+    if (modal) {
+      modal.addEventListener('modalWindowClose', () => {
+        this.reset();
+      });
+    }
+
     this.$elm.addEventListener('click', () => {
       this.copyToClipboard(this.$elm.getAttribute('data-clipboard'), () => {
-        this.$elm.classList.add('button--success', 'modal-content__clipboard-btn');
+        this.$elm.classList.add('button--success');
         this.$elm.textContent = 'Copied!';
       }, () => {
         this.$elm.classList.add('button--fail');
@@ -55,5 +66,10 @@ module.exports = class Modal {
     this.doc.execCommand('copy');
 
     this.doc.body.removeChild(textArea);
+  }
+
+  reset() {
+    this.$elm.classList.remove('button--success', 'button--fail');
+    this.$elm.innerHTML = this.$elm.dataset.resetText;
   }
 };
