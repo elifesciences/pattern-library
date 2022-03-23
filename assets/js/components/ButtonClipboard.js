@@ -23,7 +23,7 @@ module.exports = class Modal {
 
     this.$elm.addEventListener('click', () => {
       this.copyToClipboard(this.$elm.getAttribute('data-clipboard'), () => {
-        this.$elm.classList.add('button--success', 'modal-content__clipboard-btn');
+        this.$elm.classList.add('button--success');
         this.$elm.textContent = 'Copied!';
       }, () => {
         this.$elm.classList.add('button--fail');
@@ -69,7 +69,7 @@ module.exports = class Modal {
   }
 
   reset() {
-    this.$elm.classList.remove('button--success', 'modal-content__clipboard-btn');
+    this.$elm.classList.remove('button--success', 'button--fail');
     this.$elm.innerHTML = this.$elm.dataset.resetText;
   }
 };
