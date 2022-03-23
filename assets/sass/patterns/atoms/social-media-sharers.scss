@@ -54,16 +54,16 @@
 }
 
 .social-media-sharer {
-
-  background-color: $color-text;
-  border-radius: #{$border-radius}px;
   color: $color-text--reverse;
   margin: 0 9px;
   height: 24px;
   padding: 2px 0;
   text-decoration: none;
-  transition: 25ms ease-out;
   width: 24px;
+
+  &:hover svg path {
+    fill: $color-primary;
+  }
 
   .content-header--image & {
     background-color: transparent;
@@ -105,11 +105,6 @@
   background: url("../img/icons/email-default.svg") no-repeat 0 0;
   text-indent: -5000px;
 
-}
-
-.facebook {
-  background: url("../img/icons/facebook.svg") no-repeat 0 0;
-  text-indent: -5000px;
 }
 
 .twitter {
