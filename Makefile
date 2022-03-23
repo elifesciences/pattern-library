@@ -83,7 +83,7 @@ test/build/%.spec.js: test/build test/%.spec.js
 
 # Runs the tests
 test/%.html: test/build/%.spec.js
-	npx mocha-chrome ./$@ --ignore-resource-errors
+	npx mocha-headless-chrome -f ./$@ -a no-sandbox
 
 # Runs all tests
 test: $(TESTS_OUTPUT) $(TESTS_HTML)

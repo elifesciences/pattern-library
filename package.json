@@ -18,10 +18,10 @@
     "clean-js": "rm ./source/assets/js/*",
     "compile-unit-tests": "find ./test/* -maxdepth 0 -type f -name '*.spec.js' -printf '%f\n' | xargs -I % npx browserify -o ./test/build/% ./test/%",
     "test-unit": "find ./test/* -maxdepth 0 -type f -name '*.html' | xargs -I % npx mocha-chrome % --ignore-resource-errors",
-    "watch:img":  "nodemon --watch ./assets/img -e png,tiff,svg -x 'npm run compress-img'",
-    "watch:js":  "nodemon --watch ./assets/js -x 'npm run build-js'",
-    "watch:fonts":  "nodemon --watch ./assets/fonts -e woff2 -x 'npm run fonts'",
-    "watch:sass":  "nodemon --watch ./assets/sass -e scss -x 'npm run compile-sass'",
+    "watch:img": "nodemon --watch ./assets/img -e png,tiff,svg -x 'npm run compress-img'",
+    "watch:js": "nodemon --watch ./assets/js -x 'npm run build-js'",
+    "watch:fonts": "nodemon --watch ./assets/fonts -e woff2 -x 'npm run fonts'",
+    "watch:sass": "nodemon --watch ./assets/sass -e scss -x 'npm run compile-sass'",
     "watch:all": "npm run watch:img & npm run watch:js & npm run watch:fonts & npm run watch:sass"
   },
   "dependencies": {
@@ -50,7 +50,7 @@
     "jshint": "^2.9.2",
     "minimist": "^1.2.0",
     "mocha": "^2.4.5",
-    "mocha-chrome": "^2.2.0",
+    "mocha-headless-chrome": "^4.0.0",
     "node-sass": "^6.0.0",
     "node-sass-magic-importer": "^5.3.2",
     "nodemon": "^2.0.15",
