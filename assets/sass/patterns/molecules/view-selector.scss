@@ -156,6 +156,7 @@
 
   .view-selector--fixed {
     max-height: 100vh;
+    max-width: 164px;
     min-height: 11rem;
     overflow: auto;
     @include padding(48, "top");
