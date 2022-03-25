@@ -152,8 +152,9 @@
 
   li {
     @include margin(12, "bottom");
-    list-style: none;
     font-family: $font-secondary;
+    font-weight: bold;
+    list-style: none;
 
     &:last-child {
       @include margin(12, "bottom");
@@ -178,7 +179,16 @@
 
 .content-header-grid__side-popup-block__link {
   @include font-size-and-vertical-height(14,24);
-  @include padding(30, "left");
+  display: flex;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:hover > .svg-background-image {
+    background-color: $color-primary;
+    color: $color-primary;
+  }
 }
 
 .content-header__share-listing {
@@ -187,20 +197,32 @@
   }
 }
 
-.download {
-  background: url("../img/icons/download.svg") no-repeat 0 0;
+.svg-background-image {
+  @include padding(30, "left");
+  background-color: $color-text;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
 }
 
 .cite {
-  background: url("../img/icons/cite.svg") no-repeat 0 0;
+  -webkit-mask: url("../img/icons/cite.svg") no-repeat 0 0;
+  mask: url("../img/icons/cite.svg") no-repeat 0 -1px;
 }
 
 .comment {
-  background: url("../img/icons/commenting.svg") no-repeat 0 0;
+  -webkit-mask: url("../img/icons/commenting.svg") no-repeat 0 0;
+  mask: url("../img/icons/commenting.svg") no-repeat 0 0;
+}
+
+.download {
+  -webkit-mask: url("../img/icons/download.svg") no-repeat 0 0;
+  mask: url("../img/icons/download.svg") no-repeat 0 -1px;
 }
 
 .share {
-  background: url("../img/icons/share.svg") no-repeat 0 0;
+  -webkit-mask: url("../img/icons/share.svg") no-repeat 0 0;
+  mask: url("../img/icons/share.svg") no-repeat 0 0;
 }
 
 .teaser {
