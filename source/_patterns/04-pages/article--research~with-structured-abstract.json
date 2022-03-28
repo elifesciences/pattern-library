@@ -638,18 +638,6 @@
                 "name": "ReadCube",
                 "url": "#"
               }
-            },
-            {
-              "primary": {
-                "name": "Papers App",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "CiteUlike",
-                "url": "#"
-              }
             }
           ]
         }
