@@ -258,6 +258,18 @@ $arrow-size: 5;
   }
 }
 
+// TODO: Adding here for the moment. Will need to be moved when new content header articles get introduced
+
+.content-header-grid {
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: #{$site-spacing}px;
+    max-width: #{$max-site-width}px;
+    padding: 0;
+  }
+}
 
 .divider {
   border-bottom: 1px solid $color-text-dividers;
