@@ -422,7 +422,7 @@
         }
       ]
     },
-    "download": "#articleDownloadLinksList",
+    "download": "#downloads",
     "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
     "meta": {
       "url": "#",
@@ -576,6 +576,7 @@
     ]
   },
   "pl-only-article-section-for-download-links": {
+    "id": "downloads",
     "title": "Article download links",
     "downloadLinks": {
       "description": "A three part list of links to download the article, or parts of the article, in various formats.",
