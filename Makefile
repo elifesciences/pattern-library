@@ -53,7 +53,7 @@ source/assets source/assets/js source/assets/css test/build:
 # Copy the fonts
 fonts: source/assets $(FONTS)
 	@mkdir -p $(CURDIR)/source/assets/fonts
-	@cp -r ./assets/fonts $(CURDIR)/source/assets/fonts
+	@cp -r ./assets/fonts $(CURDIR)/source/assets
 
 # Optimise image assets
 images:
