@@ -1,6 +1,8 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
+  disableMediaQuery:
+    type: boolean
   borderVariant:
     type: boolean
   isWrapped:

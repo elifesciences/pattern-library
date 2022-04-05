@@ -28,9 +28,19 @@ module.exports = class ArticleDownloadLinksList {
     this.$elm.classList.add('article-download-links-list--js');
     this.$elm.classList.add('visuallyhidden');
     this.$elm.setAttribute('aria-expanded', 'false');
+    this.hideIntros();
     this.moveList();
     this.$toggler = this.doc.querySelector('.content-header__download_link');
     this.$toggler.addEventListener('click', this.toggle.bind(this));
+  }
+
+  /**
+   * Hide intros in download links list display
+   */
+  hideIntros() {
+    [].forEach.call(this.$elm.querySelectorAll('.article-download-links-list__intro'), $intro => {
+      $intro.classList.add('visuallyhidden');
+    });
   }
 
   /**

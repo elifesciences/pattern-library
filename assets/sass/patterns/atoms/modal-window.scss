@@ -1,0 +1,76 @@
+.modal-container {
+  background-color: rgba(255,255,255,0.5);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.22);
+  display: grid;
+  margin: 0;
+  padding: 36px;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    margin: 24px;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium + 48)}em) {
+    margin: 24px auto;
+    max-width: 730px;
+  }
+
+  h6 {
+    @include font-size-and-vertical-height($font-size-h6-in-px);
+    grid-column: 1/3;
+    grid-row: 1;
+    justify-self: start;
+    padding-top: 0;
+  }
+
+  .reference {
+    font-family: $font-secondary;
+    grid-column: 1/3;
+
+    .doi {
+      @include margin(12, "top");
+      @include margin(36, "bottom");
+      display: flex;
+    }
+  }
+}
+
+.modal-content__body {
+  display: grid;
+  grid-column: 1/3;
+
+  .button {
+    justify-self: center;
+    margin-bottom: 24px;
+  }
+}
+
+.modal-content__show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content__close-button {
+  @include padding(0 25 0 0);
+  background: url(../img/icons/close.svg) right 4px no-repeat;
+  color: $color-text;
+  font-family: $font-secondary;
+  font-weight: bold;
+  grid-column: 2/3;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.modal-nojs {
+  visibility: hidden;
+}
