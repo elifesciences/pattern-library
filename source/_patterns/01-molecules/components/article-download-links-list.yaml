@@ -13,6 +13,11 @@ properties:
     items:
       type: object
       properties:
+        jsHideGroup:
+          type: boolean
+        id:
+          type: string
+          minLength: 1
         title:
           type: string
           minLength: 1
