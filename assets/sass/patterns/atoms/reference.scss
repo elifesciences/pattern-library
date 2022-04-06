@@ -5,7 +5,6 @@
   font-weight: bold;
   display: inline;
   text-decoration: none;
-  color: $color-text;
 
   .popup__content & {
     @include popup_title_text();
