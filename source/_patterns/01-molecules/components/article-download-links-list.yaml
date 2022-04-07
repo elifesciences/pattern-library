@@ -34,6 +34,9 @@ properties:
                   url:
                     type: string
                     minLength: 1
+                  checkPMC:
+                    type: string
+                    minLength: 1
                   attributes:
                     type: array
                     items:

@@ -18,6 +18,7 @@ Components.ButtonClipboard = require('./components/ButtonClipboard');
 Components.CallToAction = require('./components/CallToAction');
 Components.CarouselItem = require('./components/CarouselItem');
 Components.Carousel = require('./components/Carousel');
+Components.CheckPMC = require('./components/CheckPMC');
 Components.ContentHeader = require('./components/ContentHeader');
 Components.DelegateBehaviour = require('./components/DelegateBehaviour');
 Components.FilterPanel = require('./components/FilterPanel');
