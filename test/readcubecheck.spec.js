@@ -1,5 +1,7 @@
 const expect = chai.expect;
 
+require('core-js/es6/promise');
+
 // CheckPMC module
 const CheckPMC = require('../assets/js/components/CheckPMC');
 
