@@ -1,14 +1,13 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mocha Test Runner</title>
 
-  <title>Mocha Test Runner</title>
-
-  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
-  <style>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+    <style>
   header {
     border: 1px solid black;
   }
@@ -25,111 +24,127 @@
     width: 100%;
   }
   </style>
-</head>
-<body>
+  </head>
+  <body>
 
-<!--
+    <!--
   Test output
 -->
-<div id="mocha"></div>
+    <div id="mocha"></div>
 
-<div class="global-inner">
-<header id="siteHeader">
-  Header of the page
-</header>
+    <div class="global-inner">
 
-<!--
+      <!--
   Fixture
 -->
-<div class="view-selector" data-behaviour="ViewSelector" data-side-by-side-link="https://lens.elifesciences.org/19749/index.html">
-  <ul class="view-selector__list">
-    <li class="view-selector__list-item view-selector__list-item--article view-selector__list-item--active">
-      <a href="#article" class="view-selector__link view-selector__link--article"><span>Article</span></a>
-    </li>
-    <li class="view-selector__list-item view-selector__list-item--figures">
-      <a href="#figures" class="view-selector__link view-selector__link--figures"><span>Figures</span></a>
-    </li>
+      <main id="maincontent" class="main blg-margin-bottom-large">
+        <header id="siteHeader">
+          Header of the page
+        </header>
+        <div class="wrapper wrapper--content">
+          <div class="content-container-grid">
+            <div class="view-selector" data-behaviour="ViewSelector"
+              data-side-by-side-link="https://lens.elifesciences.org/19749/index.html">
+              <ul class="view-selector__list">
+                <li class="view-selector__list-item
+                  view-selector__list-item--article
+                  view-selector__list-item--active">
+                  <a href="#article" class="view-selector__link
+                    view-selector__link--article"><span>Article</span></a>
+                </li>
+                <li class="view-selector__list-item
+                  view-selector__list-item--figures">
+                  <a href="#figures" class="view-selector__link
+                    view-selector__link--figures"><span>Figures</span></a>
+                </li>
 
-    <li class="view-selector__list-item view-selector__list-item--jump">
-      <span class="view-selector__jump_links_header">Jump to</span>
-      <ul class="view-selector__jump_links" data-behaviour="DropDown">
-        <li class="view-selector__jump_link_item">
-          <a href="#abstract" class="view-selector__jump_link">Abstract</a>
-        </li>
-        <li class="view-selector__jump_link_item">
-          <a href="#digest" class="view-selector__jump_link">eLife digest</a>
-        </li>
-        <li class="view-selector__jump_link_item">
-          <a href="#introduction" class="view-selector__jump_link">Introduction</a>
-        </li>
-        <li class="view-selector__jump_link_item">
-          <a href="#results" class="view-selector__jump_link">Results</a>
-        </li>
-        <li class="view-selector__jump_link_item">
-          <a href="#discussion" class="view-selector__jump_link">Discussion</a>
-        </li>
-        <li class="view-selector__jump_link_item">
-          <a href="#materials-and-methods" class="view-selector__jump_link">Materials &amp; methods</a>
-        </li>
-        <li class="view-selector__jump_link_item">
-          <a href="#references" class="view-selector__jump_link">References</a>
-        </li>
-      </ul>
-    </li>
+                <li class="view-selector__list-item
+                  view-selector__list-item--jump">
+                  <span class="view-selector__jump_links_header">Jump to</span>
+                  <ul class="view-selector__jump_links"
+                    data-behaviour="DropDown">
+                    <li class="view-selector__jump_link_item">
+                      <a href="#abstract" class="view-selector__jump_link">Abstract</a>
+                    </li>
+                    <li class="view-selector__jump_link_item">
+                      <a href="#digest" class="view-selector__jump_link">eLife
+                        digest</a>
+                    </li>
+                    <li class="view-selector__jump_link_item">
+                      <a href="#introduction" class="view-selector__jump_link">Introduction</a>
+                    </li>
+                    <li class="view-selector__jump_link_item">
+                      <a href="#results" class="view-selector__jump_link">Results</a>
+                    </li>
+                    <li class="view-selector__jump_link_item">
+                      <a href="#discussion" class="view-selector__jump_link">Discussion</a>
+                    </li>
+                    <li class="view-selector__jump_link_item">
+                      <a href="#materials-and-methods"
+                        class="view-selector__jump_link">Materials &amp; methods</a>
+                    </li>
+                    <li class="view-selector__jump_link_item">
+                      <a href="#references" class="view-selector__jump_link">References</a>
+                    </li>
+                  </ul>
+                </li>
 
-  </ul>
-</div>
-<div class="contextual-data">
-  contextual data
-</div>
+              </ul>
+            </div>
 
-<div role="main" class="main">
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-  Main text<br />
-</div>
-</div>
+            <div role="main" class="main-content-grid">
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+            </div>
+            <div class="secondary-column-grid">
+              secondary column
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
 
-<!--
+    <!--
   Load test code
 -->
-<script src="../node_modules/mocha/mocha.js"></script>
-<script src="../node_modules/chai/chai.js"></script>
-<script src="../node_modules/sinon/pkg/sinon.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
 
-<!-- Initialise test suite -->
-<script>mocha.setup('bdd')</script>
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
 
-<!--
+    <!--
   Test spec
 -->
-<script src="build/viewselector.spec.js"></script>
+    <script src="build/viewselector.spec.js"></script>
 
-<!--
+    <!--
   Begin!
 -->
-<script>
+    <script>
   mocha.run();
 </script>
 
-</body>
+  </body>
 </html>
