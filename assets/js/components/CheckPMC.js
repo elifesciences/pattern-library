@@ -18,24 +18,8 @@ module.exports = class CheckPMC {
     this.currentRequest = this.checkPMC(checkUrl);
 
     this.checkPMC(checkUrl)
-      .then(foo => {
-        console.log('mock::first-promise');
-        return foo;
-      })
-      .then(data => JSON.parse(data))
-      .then(foo => {
-        console.log('mock::parse-json');
-        return foo;
-      })
-      .then(pmc => ('pmcid' in pmc.records[0]))
-      .then(foo => {
-        console.log('mock::check-for-pmcid', foo);
-        return foo;
-      })
       .then(pmc => {
-        console.log('mock::promise-callback', pmc);
         if (pmc) {
-          console.log('mock::expanding-element');
           utils.expandElement(
             (new DOMParser().parseFromString(display, 'text/html')).documentElement.querySelector('body').firstChild,
             '',
@@ -45,14 +29,15 @@ module.exports = class CheckPMC {
           );
           this.$elm.remove();
         } else {
-          console.log('mock::removing-element');
           this.$elm.parentNode.remove();
         }
       });
   }
 
   checkPMC(url) {
-    return utils.loadData(url);
+    return utils.loadData(url)
+      .then(data => JSON.parse(data))
+      .then(pmc => ('pmcid' in pmc.records[0]));
   }
 
 };

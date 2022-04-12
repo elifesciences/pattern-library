@@ -4,28 +4,31 @@ require('core-js/es6/promise');
 
 // CheckPMC module
 const CheckPMC = require('../assets/js/components/CheckPMC');
+const fixtureHTML = document.querySelector('.article-download-list').innerHTML;
+
+const resetFixture = fixtureHTML => {
+  document.querySelector('.article-download-list').innerHTML = fixtureHTML;
+}
 
 describe('Check PMC integration', () => {
   'use strict';
 
-  let $downloadList;
   let $elmWorking;
   let checkPMCWorking;
   let $elmBroken;
   let checkPMCBroken;
 
-  before(() => {
-    $downloadList = document.querySelector('.article-download-list');
-    $elmWorking = $downloadList.querySelector('#check-pmc-found[data-behaviour="CheckPMC"]');
+  beforeEach(() => {
+    resetFixture(fixtureHTML);
+    $elmWorking = document.querySelector('#check-pmc-found[data-behaviour="CheckPMC"]');
     checkPMCWorking = new CheckPMC($elmWorking, window, window.document);
-    $elmBroken = $downloadList.querySelector('#check-pmc-not-found[data-behaviour="CheckPMC"]');
+    $elmBroken = document.querySelector('#check-pmc-not-found[data-behaviour="CheckPMC"]');
     checkPMCBroken = new CheckPMC($elmBroken, window, window.document);
   });
 
   // Mocks
   CheckPMC.prototype.checkPMC = url => {
-    console.log('mock::before-promise', url);
-    return Promise.resolve(`{"records": [{${url === 'working' ? '"pmcid": "PMCID"' : ''}}]}`);
+    return Promise.resolve((url !== 'broken'));
   };
 
   it('exists', () => {
@@ -33,9 +36,10 @@ describe('Check PMC integration', () => {
     expect(checkPMCBroken).to.exist;
   });
 
-  it('foo', (done) => {
-    setTimeout(()=>{
-      expect($downloadList.querySelectorAll('li')).to.have.length(2);
+  it('cleans list items that fail PMC checks', done => {
+    expect(document.querySelectorAll('li')).to.have.length(3);
+    setTimeout(() => {
+      expect(document.querySelectorAll('li')).to.have.length(2);
       done();
     }, 0);
   });
