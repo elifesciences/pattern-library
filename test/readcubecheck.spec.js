@@ -24,12 +24,20 @@ describe('Check PMC integration', () => {
 
   // Mocks
   CheckPMC.prototype.checkPMC = url => {
-    return Promise.resolve('{"records": [{"pmcid": "PMCID"}]}');
+    console.log('mock::before-promise', url);
+    return Promise.resolve(`{"records": [{${url === 'working' ? '"pmcid": "PMCID"' : ''}}]}`);
   };
 
   it('exists', () => {
     expect(checkPMCWorking).to.exist;
     expect(checkPMCBroken).to.exist;
+  });
+
+  it('foo', (done) => {
+    setTimeout(()=>{
+      expect($downloadList.querySelectorAll('li')).to.have.length(2);
+      done();
+    }, 0);
   });
 
 });
