@@ -7,21 +7,29 @@ const CheckPMC = require('../assets/js/components/CheckPMC');
 
 describe('Check PMC integration', () => {
   'use strict';
-  const root = {
-    checkPMC: null,
-    $elm: null
-  };
+
+  let $downloadList;
+  let $elmWorking;
+  let checkPMCWorking;
+  let $elmBroken;
+  let checkPMCBroken;
+
+  before(() => {
+    $downloadList = document.querySelector('.article-download-list');
+    $elmWorking = $downloadList.querySelector('#check-pmc-found[data-behaviour="CheckPMC"]');
+    checkPMCWorking = new CheckPMC($elmWorking, window, window.document);
+    $elmBroken = $downloadList.querySelector('#check-pmc-not-found[data-behaviour="CheckPMC"]');
+    checkPMCBroken = new CheckPMC($elmBroken, window, window.document);
+  });
 
   // Mocks
   CheckPMC.prototype.checkPMC = url => {
-    return Promise.resolve((url !== 'broken'));
+    return Promise.resolve('{"records": [{"pmcid": "PMCID"}]}');
   };
 
-  root.$elm = document.querySelector('[data-behaviour="CheckPMC"]');
-  root.checkPMC = new CheckPMC(root.$elm, window, window.document);
-
   it('exists', () => {
-    expect(root.checkPMC).to.exist;
+    expect(checkPMCWorking).to.exist;
+    expect(checkPMCBroken).to.exist;
   });
 
 });
