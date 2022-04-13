@@ -1,5 +1,7 @@
 'use strict';
 
+const utils = require('../libs/elife-utils')();
+
 module.exports = class CheckPMC {
 
   // Passing window and document separately allows for independent mocking of window in order

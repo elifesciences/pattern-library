@@ -40,6 +40,8 @@ describe('Check PMC integration', () => {
     expect(document.querySelectorAll('.article-download-links-list__item')).to.have.length(3);
     setTimeout(() => {
       expect(document.querySelectorAll('.article-download-links-list__item')).to.have.length(2);
+      expect(document.querySelector('.article-download-links-list__item:nth-child(1) a').textContent).to.equal('Mendeley');
+      expect(document.querySelector('.article-download-links-list__item:nth-child(2) a').textContent).to.equal('ReadCube (working)');
       done();
     }, 0);
   });
