@@ -6,7 +6,7 @@ module.exports = () => {
    *
    *
    *
-   * @param {HTMLElement} $el The element to apply the transformation to.
+   * @param {string} elName Name of the HTML element to build
    * @param {Array<string>} [cssClasses] CSS class name(s) to set on the element
    * @param {string} [textContent] Textual content of the element
    * @param {string|Element} [parent] Parent element to attach to
@@ -17,8 +17,9 @@ module.exports = () => {
    *
    * @returns {Element}
    */
-  function expandElement($el, cssClasses, textContent, parent, attachBefore) {
+  function buildElement(elName, cssClasses, textContent, parent, attachBefore) {
 
+    const $el = document.createElement(elName);
     const $parent = typeof parent === 'string' ? document.querySelector(parent)
         : parent;
 
@@ -69,29 +70,6 @@ module.exports = () => {
     }
 
     return $el;
-  }
-
-  /**
-   * Builds and returns specified HTML element, optionally adding it to the DOM.
-   *
-   *
-   *
-   * @param {string} elName Name of the HTML element to build
-   * @param {Array<string>} [cssClasses] CSS class name(s) to set on the element
-   * @param {string} [textContent] Textual content of the element
-   * @param {string|Element} [parent] Parent element to attach to
-   * @param {string|Element|boolean} [attachBefore] The sibling before which to attach the element:
-   *  true: following sibling is the parent's first element child
-   *  HTMLElement: explicitly supplied following sibling
-   *  string: CSS selector to use to find the following sibling
-   *
-   * @returns {Element}
-   */
-  function buildElement(elName, cssClasses, textContent, parent, attachBefore) {
-
-    const $el = document.createElement(elName);
-
-    return expandElement($el, cssClasses, textContent, parent, attachBefore);
   }
 
   /**
@@ -738,7 +716,6 @@ module.exports = () => {
     debounce: debounce,
     eventCreator: eventCreator,
     expandCollapsedSections: expandCollapsedSections,
-    expandElement: expandElement,
     getItemType: getItemType,
     loadJavaScript: loadJavaScript,
     loadStyleSheet: loadStyleSheet,
