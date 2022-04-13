@@ -20,14 +20,7 @@ module.exports = class CheckPMC {
     this.checkPMC(checkUrl)
       .then(pmc => {
         if (pmc) {
-          utils.expandElement(
-            (new DOMParser().parseFromString(display, 'text/html')).documentElement.querySelector('body').firstChild,
-            '',
-            '',
-            this.$elm.parentNode,
-            this.$elm
-          );
-          this.$elm.remove();
+          this.$elm.parentNode.innerHTML = display;
         } else {
           this.$elm.parentNode.remove();
         }

@@ -37,9 +37,9 @@ describe('Check PMC integration', () => {
   });
 
   it('cleans list items that fail PMC checks', done => {
-    expect(document.querySelectorAll('li')).to.have.length(3);
+    expect(document.querySelectorAll('.article-download-links-list__item')).to.have.length(3);
     setTimeout(() => {
-      expect(document.querySelectorAll('li')).to.have.length(2);
+      expect(document.querySelectorAll('.article-download-links-list__item')).to.have.length(2);
       done();
     }, 0);
   });
