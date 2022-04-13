@@ -21,9 +21,9 @@ describe('Check PMC integration', () => {
   beforeEach(() => {
     resetFixture(fixtureHTML);
     $elmWorking = document.querySelector('#check-pmc-found[data-behaviour="CheckPMC"]');
-    checkPMCWorking = new CheckPMC($elmWorking, window, window.document);
+    checkPMCWorking = new CheckPMC($elmWorking);
     $elmBroken = document.querySelector('#check-pmc-not-found[data-behaviour="CheckPMC"]');
-    checkPMCBroken = new CheckPMC($elmBroken, window, window.document);
+    checkPMCBroken = new CheckPMC($elmBroken);
   });
 
   // Mocks
@@ -40,7 +40,13 @@ describe('Check PMC integration', () => {
     expect(document.querySelectorAll('.article-download-links-list__item')).to.have.length(3);
     setTimeout(() => {
       expect(document.querySelectorAll('.article-download-links-list__item')).to.have.length(2);
-      expect(document.querySelector('.article-download-links-list__item:nth-child(1) a').textContent).to.equal('Mendeley');
+      done();
+    }, 0);
+  });
+
+  it('introduces HTML when PMC check successful', done => {
+    expect(document.querySelector('.article-download-links-list__item:nth-child(2) a')).to.be.null;
+    setTimeout(() => {
       expect(document.querySelector('.article-download-links-list__item:nth-child(2) a').textContent).to.equal('ReadCube (working)');
       done();
     }, 0);
