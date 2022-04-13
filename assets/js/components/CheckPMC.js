@@ -14,9 +14,6 @@ module.exports = class CheckPMC {
     const checkUrl = this.$elm.dataset.checkAvailable;
     const display = this.$elm.dataset.displayOnAvailable;
 
-    // The next XHR
-    this.currentRequest = this.checkPMC(checkUrl);
-
     this.checkPMC(checkUrl)
       .then(pmc => {
         if (pmc) {
