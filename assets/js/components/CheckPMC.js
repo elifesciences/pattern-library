@@ -4,11 +4,7 @@ const utils = require('../libs/elife-utils')();
 
 module.exports = class CheckPMC {
 
-  // Passing window and document separately allows for independent mocking of window in order
-  // to test feature support fallbacks etc.
-  constructor($elm, _window = window, doc = document) {
-    this.window = _window;
-    this.doc = doc;
+  constructor($elm) {
     this.$elm = $elm;
 
     const checkUrl = this.$elm.dataset.checkAvailable;
@@ -17,7 +13,8 @@ module.exports = class CheckPMC {
     this.checkPMC(checkUrl)
       .then(pmc => {
         if (pmc) {
-          this.$elm.parentNode.innerHTML = display;
+          this.$elm.insertAdjacentHTML('beforebegin', display);
+          this.$elm.remove();
         } else {
           this.$elm.parentNode.remove();
         }
