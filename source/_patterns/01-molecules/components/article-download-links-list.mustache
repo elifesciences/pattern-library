@@ -3,6 +3,11 @@
 
   {{#groups}}
     <h3 class="article-download-links-list__heading">{{{title}}}</h3>
+
+    {{#intro}}
+      <div class="article-download-links-list__intro">{{{intro}}}</div>
+    {{/intro}}
+
     <ul class="article-download-list">
       {{#items}}
           <li class="article-download-links-list__item">
