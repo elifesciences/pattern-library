@@ -158,7 +158,7 @@
   .view-selector--fixed {
     @include padding(48, "top");
     max-height: 100vh;
-    max-width: 164px;
+    max-width: ($grid-column *2) + $grid-gutter;
     min-height: 11rem;
     overflow: auto;
     position: fixed;

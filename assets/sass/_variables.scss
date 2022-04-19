@@ -114,6 +114,12 @@ $site-spacing-extra-large: 72;
 
 $content-header-padding: 24;
 
+// Grid column
+$grid-column: 4.375rem; // 70px
+
+// Grid gutter
+$grid-gutter: 1.5rem;  // 24px
+
 // TODO: rename these
 $content-header-side-padding: 6; //vw
 $content-header-side-padding--extra-wide: 30; //px
