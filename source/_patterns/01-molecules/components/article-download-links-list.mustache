@@ -18,10 +18,15 @@
             {{/secondary}}
 
             {{#primary}}
-              <a href="{{url}}"
-                       class="article-download-links-list__link"
-                       {{#attributes}}data-{{key}}{{#value}}="{{value}}"{{/value}}{{/attributes}}
-                    >{{{name}}}</a>
+              {{#checkPMC}}
+                <span data-behaviour="CheckPMC" data-check-available="{{checkPMC}}" data-display-on-available="<a href='{{url}}' class='article-download-links-list__link'{{#attributes}} data-{{key}}{{#value}}='{{value}}'{{/value}}{{/attributes}}>{{{name}}}</a>"></span>
+              {{/checkPMC}}
+              {{^checkPMC}}
+                <a href="{{url}}"
+                        class="article-download-links-list__link"
+                        {{#attributes}}data-{{key}}{{#value}}="{{value}}"{{/value}}{{/attributes}}
+                      >{{{name}}}</a>
+              {{/checkPMC}}
             {{/primary}}
 
             {{#secondary}}

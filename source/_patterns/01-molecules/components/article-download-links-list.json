@@ -49,8 +49,16 @@
         },
         {
           "primary": {
-            "name": "ReadCube",
-            "url": "#"
+            "name": "ReadCube (broken)",
+            "url": "#",
+            "checkPMC": "https://ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids=10.7554/eLife.broken&format=json"
+          }
+        },
+        {
+          "primary": {
+            "name": "ReadCube (working)",
+            "url": "#",
+            "checkPMC": "https://ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids=10.7554/eLife.73360&format=json"
           }
         }
       ]

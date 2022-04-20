@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+    <!--
+      Test output
+    -->
+    <div id="mocha"></div>
+
+    <!--
+      Fixture
+    -->
+    <ul class="article-download-list">
+        <li class="article-download-links-list__item">
+
+
+              <a href="#"
+                      class="article-download-links-list__link"
+                      
+                    >Mendeley</a>
+
+
+        </li>
+        <li class="article-download-links-list__item">
+
+
+              <span id="check-pmc-not-found" data-behaviour="CheckPMC" data-check-available="broken" data-display-on-available="<a href='#' class='article-download-links-list__link'>ReadCube (broken)</a>"></span>
+
+
+        </li>
+        <li class="article-download-links-list__item">
+
+
+              <span id="check-pmc-found" data-behaviour="CheckPMC" data-check-available="working" data-display-on-available="<a href='#' class='article-download-links-list__link'>ReadCube (working)</a>"></span>
+
+
+        </li>
+  </ul>
+
+    <!--
+      Load test code
+    -->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
+
+    <!--
+      Test spec
+    -->
+    <script src="build/readcubecheck.spec.js"></script>
+
+    <!--
+      Begin!
+    -->
+    <script>
+      mocha.run();
+    </script>
+
+</body>
+</html>
