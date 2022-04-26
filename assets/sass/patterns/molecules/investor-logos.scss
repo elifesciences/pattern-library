@@ -36,7 +36,7 @@ $image-width: 185;
 .investor-logos__img {
   display: block;
   margin: auto;
-  @include constrain-height($image-height, "max")
+  @include constrain-height($image-height, "max");
 }
 
 @media only screen and (min-width: #{get-rem-from-px(520)}em) {
