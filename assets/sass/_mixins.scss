@@ -14,11 +14,16 @@
 
 @function get-breakpoint($string) {
   @if $string == "x-small" {
-    @return #{get-rem-from-px($bkpt-site--x-small)}em; } @else if $string == "small" {
-    @return #{get-rem-from-px($bkpt-site--small)}em; } @else if $string == "medium" {
-    @return #{get-rem-from-px($bkpt-site--medium)}em; } @else if $string == "wide" {
-    @return #{get-rem-from-px($bkpt-site--wide)}em; } @else if $string == "x-wide" {
-    @return #{get-rem-from-px($bkpt-site--x-wide)}em; }
+    @return #{get-rem-from-px($bkpt-site--x-small)}em;
+  } @else if $string == "small" {
+    @return #{get-rem-from-px($bkpt-site--small)}em;
+  } @else if $string == "medium" {
+    @return #{get-rem-from-px($bkpt-site--medium)}em;
+  } @else if $string == "wide" {
+    @return #{get-rem-from-px($bkpt-site--wide)}em;
+  } @else if $string == "x-wide" {
+    @return #{get-rem-from-px($bkpt-site--x-wide)}em;
+  }
 }
 
 @mixin font-size($size_in_px) {
