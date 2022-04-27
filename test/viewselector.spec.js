@@ -50,6 +50,7 @@ describe('A ViewSelector Component', function () {
 
   it('is removed when scrolling would cause view selector to overlay following layout elements', function () {
     // This must be smaller than $elm.offsetHeight of the object under test
+    let fakeBottomOfNavEl = -20;
     let fakeBottomOfMainEl = 20;
     let windowMock = {
       addEventListener: function () {
@@ -58,11 +59,17 @@ describe('A ViewSelector Component', function () {
         return {
           matches: true
         }
-      },
-      pageYOffset: 30
+      }
     };
 
     let _viewSelector = new ViewSelector($elm, windowMock, document);
+    _viewSelector.$navDetect = {
+      getBoundingClientRect: function () {
+        return {
+          bottom: fakeBottomOfNavEl
+        };
+      }
+    };
     _viewSelector.mainTarget = {
       getBoundingClientRect: function () {
         return {
