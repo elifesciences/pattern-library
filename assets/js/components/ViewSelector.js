@@ -176,7 +176,7 @@ module.exports = class ViewSelector {
     // If it's position is fixed
     if (this.$elm.classList.contains(this.cssFixedClassName)) {
 
-      // Allow it to scroll again if it could keep its position & not scroll off top of screen
+      // If Contextual Data shows on the screen then remove fixed navigation
       if (bottomOfNav > 0) {
         this.$elm.classList.remove(this.cssFixedClassName);
         return;
