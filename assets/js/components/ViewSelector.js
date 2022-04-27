@@ -38,9 +38,6 @@ module.exports = class ViewSelector {
       return;
     }
 
-    // matches top padding in scss
-    let topSpaceWhenFixed = 48;
-
     this.collapsibleSectionHeadings = ViewSelector.getAllCollapsibleSectionHeadings(this.doc);
     this.isScrollingHandled = false;
 
@@ -55,8 +52,6 @@ module.exports = class ViewSelector {
     this.window.addEventListener('resize', utils.throttle(() => {
       this.handleResize(scrollingHandler, this.handleScrolling);
     }, 200));
-
-    this.elmYOffset = this.$elm.offsetTop - topSpaceWhenFixed;
 
   }
 
