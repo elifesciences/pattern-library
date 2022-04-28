@@ -48,6 +48,45 @@ describe('A ViewSelector Component', function () {
     expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.false;
   });
 
+  it('is removed when scrolling would cause view selector to overlay following layout elements', function () {
+    // This must be smaller than $elm.offsetHeight of the object under test
+    let fakeBottomOfNavEl = -20;
+    let fakeBottomOfMainEl = 20;
+    let windowMock = {
+      addEventListener: function () {
+      },
+      matchMedia: function() {
+        return {
+          matches: true
+        }
+      }
+    };
+
+    let _viewSelector = new ViewSelector($elm, windowMock, document);
+    _viewSelector.$navDetect = {
+      getBoundingClientRect: function () {
+        return {
+          bottom: fakeBottomOfNavEl
+        };
+      }
+    };
+    _viewSelector.mainTarget = {
+      getBoundingClientRect: function () {
+        return {
+          bottom: fakeBottomOfMainEl
+        };
+      }
+    };
+    _viewSelector.elmYOffset = 20;
+    // Prerequisite for the test to be valid
+    expect(fakeBottomOfMainEl).to.be.below(_viewSelector.$elm.offsetHeight);
+
+    _viewSelector.$elm.classList.add('view-selector--fixed');
+    _viewSelector.handleScrolling();
+    expect(_viewSelector.$elm.classList.contains('view-selector--fixed')).to.be.true;
+    expect(_viewSelector.$elm.style.top.indexOf('px')).to.be.above(-1);
+  });
+
   describe("its a list of links for the left navigation", function () {
 
     let viewSelector;

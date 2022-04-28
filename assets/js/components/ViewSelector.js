@@ -166,18 +166,38 @@ module.exports = class ViewSelector {
   }
 
   handlePositioning() {
-    let bottomOfMain = this.$navDetect.getBoundingClientRect().bottom;
+    let bottomOfNav = this.$navDetect.getBoundingClientRect().bottom;
+
+    // If it's position is fixed
     if (this.$elm.classList.contains(this.cssFixedClassName)) {
 
       // If Contextual Data shows on the screen then remove fixed navigation
-      if (bottomOfMain > 0) {
+      if (bottomOfNav > 0) {
         this.$elm.classList.remove(this.cssFixedClassName);
+        return;
       }
-    } else {
-      // If Contextual Data is not on the screen then add fixed navigation
-      if (bottomOfMain < 0) {
-        this.$elm.classList.add(this.cssFixedClassName);
+
+      // Allow it to scroll again if it would otherwise over-/under-lay following element
+      let bottomOfMain = this.mainTarget.getBoundingClientRect().bottom;
+      if (bottomOfMain < this.$elm.offsetHeight) {
+        let amountToNudgeUp = bottomOfMain - this.$elm.offsetHeight;
+        this.$elm.style.top = amountToNudgeUp + 'px';
+        return;
       }
+
+      // Ensure top of component is not off top of screen once bottom of main is off screen bottom
+      // Safety net: required because a fast scroll may prevent all code running as desired.
+      if (bottomOfMain >= this.window.innerHeight) {
+        this.$elm.style.top = '0px';
+      }
+
+      return;
+    }
+
+    // Otherwise fix its position if it would otherwise scroll off the top of the screen
+    if (bottomOfNav < 0) {
+      this.$elm.classList.add(this.cssFixedClassName);
+      this.$elm.style.top = '0px';
     }
   }
 
