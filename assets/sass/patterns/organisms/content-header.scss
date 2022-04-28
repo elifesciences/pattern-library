@@ -14,15 +14,17 @@
     padding-bottom: 0;
 
     &:after {
-      border-bottom: 1px solid $color-text-dividers;
       content: "";
       display: block;
-      @include padding($content-header-padding - 1, "top");
       width: 100%;
     }
 
   }
 
+}
+
+.content-header-journal {
+  text-align: left;
 }
 
 .content-header--read-more {
@@ -39,12 +41,16 @@
 
 .content-header__body {
   @include margin($content-header-padding * 2, "top");
-  @include margin($content-header-padding, "bottom");
+  @include margin(30, "bottom");
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include margin(0, "bottom");
+  }
 
   .content-header--header & {
     @include margin($content-header-padding / 2, "top");
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include margin($content-header-padding, "top");
+      @include margin(0, "top");
     }
   }
 }
@@ -120,8 +126,8 @@
 
 .content-header__title {
   @include font-size-and-vertical-height(36, 48);
-  @include margin(0, "top");
-  @include margin(24, "bottom");
+  @include margin(6, "top");
+  @include margin(12, "bottom");
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include font-size-and-vertical-height(41, 48);
@@ -300,19 +306,9 @@
 }
 
 .content-header__subject_list {
-  @include blg-spacing("top", "small");
   @include label-subject-typeg();
   @include padding(0, "left");
-  @include padding(0, "right");
-  grid-row: 1;
-  margin: 0;
-  order: 2;
   text-align: center;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
-    @include padding(72, "left");
-    @include padding(72, "right");
-  }
 
   .content-header--image & {
     color: inherit;
@@ -348,8 +344,7 @@
 }
 
 .content-header__subject_link {
-  @include label-subject-typeg();
-  @include font-size-and-vertical-height(13);
+  @include font-size-and-vertical-height(14);
   text-decoration: none;
 
   &:hover {
@@ -365,11 +360,9 @@
 }
 
 .content-header__icons {
-  @include margin(14 0 0 0);
+  @include margin(0);
   @include padding(0);
-  grid-row: 1;
   list-style: none;
-  order: 1;
 
   .content-header--image & {
 
@@ -390,22 +383,23 @@ $iconlist: cc oa;
 
 .content-header__icon {
   background-repeat: no-repeat;
-  background-position: left bottom;
+  background-position: 0 0;
   display: block;
-  height: 22px;
-  width: 17px;
+  height: 20px;
 }
 
 @each $icon in $iconlist {
   .content-header__icon--#{$icon} {
-    background-image: url("../img/icons/#{$icon}.png");
-    background-image: url("../img/icons/#{$icon}.svg"), linear-gradient(transparent, transparent);
-
-    &:hover {
-      background-image: url("../img/icons/#{$icon}-hover.png");
-      background-image: url("../img/icons/#{$icon}-hover.svg"), linear-gradient(transparent, transparent);
-    }
+    background-image: url("../img/icons/#{$icon}.svg");
   }
+}
+
+.content-header__icon--cc {
+  width: 18px;
+}
+
+.content-header__icon--oa {
+  width: 16px;
 }
 
 .content-header__download_link {
@@ -450,7 +444,12 @@ $iconlist: cc oa;
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     width: #{$content-header-download-width-medium}px;
   }
+}
 
+.content-header-grid__side {
+  .content-header__download_icon {
+    width: #{$content-header-download-width}px;
+  }
 }
 
 .content-header__impact-statement {
@@ -514,7 +513,7 @@ $iconlist: cc oa;
 }
 
 .content-header__authors {
-  @include margin($content-header-padding, "bottom");
+  @include margin(24, "bottom");
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     .content-header__institution_list {
       @include visuallyhidden();
@@ -528,7 +527,11 @@ $iconlist: cc oa;
 
 .content-header__author_list {
   margin: 0;
-  padding: 0;
+  padding: 0 0 24px;
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    padding: 0;
+  }
 }
 
 .content-header__author_list_item {

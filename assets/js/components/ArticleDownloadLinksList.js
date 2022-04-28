@@ -14,7 +14,7 @@ module.exports = class ArticleDownloadLinksList {
     this.doc = doc;
     this.$elm = $elm;
 
-    this.$contentHeader = this.doc.querySelector('.content-header');
+    this.$contentHeader = this.doc.querySelector('.content-header-grid__side-popup-block__list');
     if (!this.$contentHeader) {
       return;
     }

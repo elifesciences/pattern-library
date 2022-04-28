@@ -4,13 +4,13 @@
     <a class="meta__type" href="{{url}}" {{#carouselItem}}tabindex="-1"{{/carouselItem}}>{{{text}}}</a>
   {{/url}}
 
+  {{#date}}
+    {{>atoms-date}}
+  {{/date}}
+
   {{^url}}
     {{#text}}
     <span class="meta__type">{{{text}}}</span>
     {{/text}}
   {{/url}}
-
-  {{#date}}
-    {{>atoms-date}}
-  {{/date}}
 </div>
