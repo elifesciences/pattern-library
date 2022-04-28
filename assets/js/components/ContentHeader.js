@@ -15,11 +15,11 @@ module.exports = class ContentHeader {
     this.$elm = $elm;
     this.$elm.classList.add('content-header--js');
 
-    this.authors = $elm.querySelectorAll('.content-header__author_list_item');
+    this.authors = $elm.querySelectorAll('.author_list_item');
     this.institutions = $elm.querySelectorAll('.content-header__institution_list_item');
 
     if (this.authors.length > 0) {
-      this.authors[this.authors.length - 1].classList.add('content-header__author_list_item--last');
+      this.authors[this.authors.length - 1].classList.add('author_list_item--last');
     }
 
     if (this.institutions.length > 0) {
@@ -51,7 +51,7 @@ module.exports = class ContentHeader {
     }
 
     const toggles = this.$elm.querySelectorAll(
-      '.content-header__item_toggle .content-header__author_link_highlight'
+      '.content-header__item_toggle .author_link_highlight'
     );
     const updateToggleText = this.getUpdatedToggleText.bind(this);
     [].forEach.call(toggles, ($toggle) => {
@@ -282,7 +282,7 @@ module.exports = class ContentHeader {
 
     const $toggle = utils.buildElement(
       'button',
-      ['content-header__author_link_highlight'],
+      ['author_link_highlight'],
       this.getUpdatedToggleText('collapsed'),
       $toggleWrapper
     );
@@ -301,7 +301,7 @@ module.exports = class ContentHeader {
 
       this.updateToggleState(newState,
                              this.$elm.querySelectorAll(
-                          '.content-header__item_toggle .content-header__author_link_highlight'
+                          '.content-header__item_toggle .author_link_highlight'
                         ),
                              itemType);
 

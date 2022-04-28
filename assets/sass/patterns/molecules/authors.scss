@@ -1,25 +1,31 @@
+@import "../../definitions";
+
+.author_link_highlight,
+.author_link_highlight:hover {
+  background-color: transparent;
+  border-style: none;
+  color: $color-primary;
+  padding-top: 12px;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    padding-top: 0;
+  }
+}
+
 .authors {
   @include margin(24, "bottom");
 
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     display: contents;
 
-    .content-header__institution_list {
+    .institution_list {
       @include visuallyhidden();
     }
-  }
-}
-
-.author_list {
-  margin: 0;
-  padding: 0;
-
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    padding: 0;
-  }
-
-  .content-header-grid__main & {
-    padding: 0 0 24px;
   }
 }
 
@@ -27,16 +33,8 @@
   @include author-typeg();
 }
 
-.content-header__author-list {
-  margin: 0;
-
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    padding: 0;
-  }
-
-  .content-header-grid__main & {
-    padding: 0 0 24px;
-  }
+.author_list {
+  padding: 0 0 24px;
 }
 
 .author_list_item {
@@ -51,11 +49,11 @@
   display: block;
 }
 
-.content-header__author_suffix {
+.author_suffix {
   white-space: nowrap;
 }
 
-.content-header__author_separator {
+.author_separator {
   .content-header__author--last-non-excess & {
     display: none;
 
@@ -67,4 +65,143 @@
   li.author_list_item--last & {
     display: none;
   }
+}
+
+.content-header__institution_separator {
+  .content-header__institution--last-non-excess & {
+    display: none;
+
+    .content-header__institution_list--expanded & {
+      display: inline;
+    }
+  }
+  li.content-header__institution_list_item:last-child &,
+  li.content-header__institution_list_item--last & {
+    display: none;
+  }
+}
+
+.author_link {
+  color: inherit;
+  text-decoration: inherit;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+}
+
+.author_icon {
+  padding-top: 1px;
+  vertical-align: text-top;
+}
+
+.author--single {
+  @include author-typeg();
+}
+
+.institution_list {
+  margin: 0;
+  padding: 0;
+}
+
+.content-header__institution_list_item {
+  display: inline;
+  @include institute-typeg();
+  list-style-type: none;
+  padding: 0;
+}
+
+.content-header__item_toggle {
+  white-space: nowrap;
+}
+
+.content-header__item_toggle--author {
+  @include author-typeg();
+  font-weight: normal;
+}
+
+.content-header__item_toggle--expanded {
+
+  & .content-header__item_toggle_cta {
+    display: block;
+    transform: rotate(90deg);
+  }
+
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+
+  .content-header__author--last-non-excess .author_separator {
+    display: none;
+  }
+
+  .content-header__institution--last-non-excess .content-header__institution_separator {
+    display: none;
+  }
+
+  .content-header__item_toggle {
+    color: $color-primary;
+    display: inline;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .content-header__item_toggle--institution {
+    @include institute-typeg();
+    font-weight: normal;
+  }
+
+  .content-header__item_toggle--collapsed:after {
+    content: "\00a0\00bb";
+  }
+
+  .content-header__item_toggle--expanded:before {
+    content: "\00ab\00a0";
+  }
+
+  .content-header__item_toggle:hover {
+    cursor: pointer;
+  }
+
+}
+
+.content-header__cta {
+  // $content-header-padding minus 6px because child button is 30px not 24px high
+  @include margin(18, "bottom");
+
+  .content-header--image & {
+    @include margin(0, "bottom");
+    position: absolute;
+    bottom: 44px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.content-header__meta {
+
+  .content-header--image & {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+    @include font-size-and-vertical-height(12, 12);
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      bottom: #{$content-header-padding-small / 2}px;
+      @include font-size-and-vertical-height(12);
+    }
+
+  }
+
+}
+
+// TODO: Consider if the meta-pattern-defined styles should be defined in the meta pattern
+.meta {
+  .content-header--image & {
+    color: inherit;
+    @include font-size-and-vertical-height(12, 12);
+  }
+
 }
