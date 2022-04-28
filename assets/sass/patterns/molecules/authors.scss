@@ -1,0 +1,70 @@
+.authors {
+  @include margin(24, "bottom");
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: contents;
+
+    .content-header__institution_list {
+      @include visuallyhidden();
+    }
+  }
+}
+
+.author_list {
+  margin: 0;
+  padding: 0;
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    padding: 0;
+  }
+
+  .content-header-grid__main & {
+    padding: 0 0 24px;
+  }
+}
+
+.authors--line {
+  @include author-typeg();
+}
+
+.content-header__author-list {
+  margin: 0;
+
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    padding: 0;
+  }
+
+  .content-header-grid__main & {
+    padding: 0 0 24px;
+  }
+}
+
+.author_list_item {
+  display: inline;
+  @include author-typeg();
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.content-header__item_toggle--expanded {
+  display: block;
+}
+
+.content-header__author_suffix {
+  white-space: nowrap;
+}
+
+.content-header__author_separator {
+  .content-header__author--last-non-excess & {
+    display: none;
+
+    .content-header__author_list--expanded & {
+      display: inline;
+    }
+  }
+  li.author_list_item:last-child &,
+  li.author_list_item--last & {
+    display: none;
+  }
+}
