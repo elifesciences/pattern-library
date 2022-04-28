@@ -92,14 +92,14 @@
 
 @mixin title-font-size($title-font-size) {
   $title-font-sizes: (
-      "xx-small": $content-header-title-font-size-xx--small,
-      "x-small": $content-header-title-font-size-x-small,
-      "small": $content-header-title-font-size-small,
-      "medium": $content-header-title-font-size-medium,
-      "large": $content-header-title-font-size-large,
-      "x-large": $content-header-title-font-size-x-large,
-      "xx-large": $content-header-title-font-size-xx-large,
-      "xxx-large": $content-header-title-font-size-xxx-large
+    "xx-small": $content-header-title-font-size-xx--small,
+    "x-small": $content-header-title-font-size-x-small,
+    "small": $content-header-title-font-size-small,
+    "medium": $content-header-title-font-size-medium,
+    "large": $content-header-title-font-size-large,
+    "x-large": $content-header-title-font-size-x-large,
+    "xx-large": $content-header-title-font-size-xx-large,
+    "xxx-large": $content-header-title-font-size-xxx-large
   );
   @include font-size(map_get($title-font-sizes, $title-font-size));
 }

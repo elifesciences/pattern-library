@@ -16,7 +16,7 @@
       content: "";
       display: block;
       @include width(48);
-      @include blg-spacing("bottom", "smallish", "margin")
+      @include blg-spacing("bottom", "smallish", "margin");
     }
   }
 }
