@@ -139,17 +139,19 @@
 
         <div class="content-header-grid__side-popup-block">
           <ul class="content-header-grid__side-popup-block__list">
-            <li>
-              {{#download}}
-                <a href="{{download}}" class="content-header__download_link content-header-grid__side-popup-block__link">
-                  <span class="svg-background-image download"></span>Download
-                </a>
-              {{/download}}
-            </li>
-            <li>
-              <a href="" id="modalContentCitations" class="content-header-grid__side-popup-block__link">
-                <span class="svg-background-image cite"></span>Cite</a>
-            </li>
+            {{#download}}
+              <li>
+                  <a href="{{download}}" class="content-header__download_link content-header-grid__side-popup-block__link">
+                    <span class="svg-background-image download"></span>Download
+                  </a>
+              </li>
+            {{/download}}
+            {{#cite}}
+              <li>
+                <a href="{{cite}}" id="modalContentCitations" class="content-header-grid__side-popup-block__link">
+                  <span class="svg-background-image cite"></span>Cite</a>
+              </li>
+            {{/cite}}
             <li data-hypothesis-trigger>
               <span class="content-header-grid__side-popup-block__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span>Comment<span aria-hidden="true"><span data-visible-annotation-count></span> </span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
             </li>

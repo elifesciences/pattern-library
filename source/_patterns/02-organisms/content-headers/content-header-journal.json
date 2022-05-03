@@ -27,6 +27,7 @@
     ]
   },
   "download": "#articleDownloadLinksList",
+  "cite": "#articleCite",
   "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
   "authors": {
     "list": [

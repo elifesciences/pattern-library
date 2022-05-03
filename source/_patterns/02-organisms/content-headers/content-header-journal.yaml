@@ -142,6 +142,9 @@ properties:
   download:
     type: string
     minLength: 1
+  cite:
+    type: string
+    minLength: 1
   selectNav:
     $ref: ../../01-molecules/navigation/select-nav.yaml
   meta:
