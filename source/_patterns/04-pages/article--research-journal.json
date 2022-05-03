@@ -586,17 +586,17 @@
       "description": "A list of links to download the article, or parts of the article, in various formats.",
       "groups": [
         {
-          "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
+          "title": "Download formats<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
           "items": [
             {
               "primary": {
-                "name": "Article",
+                "name": "Article PDF",
                 "url": "#"
               }
             },
             {
               "primary": {
-                "name": "Figures",
+                "name": "Figures PDF",
                 "url": "#"
               }
             },
