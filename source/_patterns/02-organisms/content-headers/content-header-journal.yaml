@@ -145,7 +145,7 @@ properties:
   selectNav:
     $ref: ../../01-molecules/navigation/select-nav.yaml
   meta:
-    $ref: ../../01-molecules/components/meta.yaml
+    $ref: ../../01-molecules/components/meta-journal.yaml
   contextualData:
     $ref: ../../01-molecules/components/contextual-data.yaml
   audioPlayer:
