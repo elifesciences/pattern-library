@@ -259,7 +259,7 @@ module.exports = class ContentHeader {
       this.$elm.querySelector('.content-header__institution_list').classList
         .add('content-header__institution_list--expanded');
     } else {
-      this.$elm.querySelector('.content-header__author_list').classList
+      this.$elm.querySelector('.author_list').classList
           .remove('content-header__author_list--expanded');
       this.$elm.querySelector('.content-header__institution_list').classList
         .remove('content-header__institution_list--expanded');
