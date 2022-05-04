@@ -94,7 +94,7 @@ properties:
   socialMediaSharers:
     $ref: ../../00-atoms/components/social-media-sharers.yaml
   authors:
-    $ref: ../../00-molecules/components/authors.yaml
+    $ref: ../../01-molecules/components/authors.yaml
   download:
     type: string
     minLength: 1
