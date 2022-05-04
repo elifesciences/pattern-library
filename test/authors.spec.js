@@ -1,12 +1,12 @@
 let expect = chai.expect;
 
 // load in component(s) to be tested
-let ContentHeader = require('../assets/js/components/ContentHeader');
+let Authors = require('../assets/js/components/Authors');
 
-describe('A ContentHeader Component', function () {
+describe('An Authors Component', function () {
   'use strict';
   let $elm;
-  let contentHeader;
+  let authors;
 
   // Helper functions
   function buildItemSet(itemType, count) {
@@ -33,54 +33,54 @@ describe('A ContentHeader Component', function () {
   }
 
   beforeEach(function () {
-    $elm = document.querySelector('[data-behaviour="ContentHeader"]');
-    contentHeader = new ContentHeader($elm);
+    $elm = document.querySelector('[data-behaviour="Authors"]');
+    authors = new Authors($elm);
   });
 
   afterEach(function () {
     $elm = null;
-    contentHeader = null;
+    authors = null;
   });
 
   it('exists', function () {
-    expect(contentHeader).to.exist;
+    expect(authors).to.exist;
   });
 
   it('possesses a getMaxItems() method', function () {
-    expect(contentHeader.getMaxItems).to.be.a('function');
+    expect(authors.getMaxItems).to.be.a('function');
   });
 
   it('possesses a getExcessItems() method', function () {
-    expect(contentHeader.getExcessItems).to.be.a('function');
+    expect(authors.getExcessItems).to.be.a('function');
   });
 
   it('possesses a getUpdatedToggleText() method', function () {
-    expect(contentHeader.getExcessItems).to.be.a('function');
+    expect(authors.getExcessItems).to.be.a('function');
   });
 
   it('possesses a markAsExcess() method', function () {
-    expect(contentHeader.markAsExcess).to.be.a('function');
+    expect(authors.markAsExcess).to.be.a('function');
   });
 
   it('possesses a clearExcessMark() method', function () {
-    expect(contentHeader.clearExcessMark).to.be.a('function');
+    expect(authors.clearExcessMark).to.be.a('function');
   });
 
   it('possesses a toggleExcessItems() method', function () {
-    expect(contentHeader.toggleExcessItems).to.be.a('function');
+    expect(authors.toggleExcessItems).to.be.a('function');
   });
 
-  describe('the "research" type of ContentHeader', function () {
+  describe('the "research" type of Authors', function () {
 
     describe('the getExcessItems() method', function () {
 
       it('returns null if not invoked with argument "authors" nor "institutions"', function () {
-        expect(contentHeader.getExcessItems('wrongvalue')).to.be.null;
-        expect(contentHeader.getExcessItems(['authors'])).to.be.null;
-        expect(contentHeader.getExcessItems(['institutions'])).to.be.null;
-        expect(contentHeader.getExcessItems(1000)).to.be.null;
-        expect(contentHeader.getExcessItems({wrong: 'value'})).to.be.null;
-        expect(contentHeader.getExcessItems(function () {
+        expect(authors.getExcessItems('wrongvalue')).to.be.null;
+        expect(authors.getExcessItems(['authors'])).to.be.null;
+        expect(authors.getExcessItems(['institutions'])).to.be.null;
+        expect(authors.getExcessItems(1000)).to.be.null;
+        expect(authors.getExcessItems({wrong: 'value'})).to.be.null;
+        expect(authors.getExcessItems(function () {
         })).to.be.null;
 
       });
@@ -91,7 +91,7 @@ describe('A ContentHeader Component', function () {
 
       it('adds the CSS class "excess-item" to all items passed to it', function () {
         let fakeEls = [buildFakeElement('li'), buildFakeElement('li'), buildFakeElement('li')];
-        contentHeader.markAsExcess(fakeEls);
+        authors.markAsExcess(fakeEls);
         fakeEls.forEach(function (elFake) {
           expect(elFake.classList.remove.called).to.be.false;
           expect(elFake.classList.toggle.called).to.be.false;
@@ -103,7 +103,7 @@ describe('A ContentHeader Component', function () {
 
       it('doesn\'t affect pre-existing classes on the elements passed to it', function () {
         let fakeEl = buildFakeElement('li', ['other-class']);
-        contentHeader.markAsExcess([fakeEl]);
+        authors.markAsExcess([fakeEl]);
         expect(fakeEl.classes.indexOf('other-class')).to.be.above(-1);
       });
 
@@ -115,7 +115,7 @@ describe('A ContentHeader Component', function () {
         let fakeEls = [buildFakeElement('li', ['excess-item']),
                        buildFakeElement('li', ['excess-item']),
                        buildFakeElement('li', ['excess-item'])];
-        contentHeader.clearExcessMark(fakeEls);
+        authors.clearExcessMark(fakeEls);
         fakeEls.forEach(function (elFake) {
           expect(elFake.classList.add.calledOnce).to.be.false;
           expect(elFake.classList.toggle.called).to.be.false;
@@ -126,7 +126,7 @@ describe('A ContentHeader Component', function () {
 
       it('doesn\'t affect pre-existing classes on the elements passed to it', function () {
         let fakeEl = buildFakeElement('li', ['other-class']);
-        contentHeader.clearExcessMark([fakeEl]);
+        authors.clearExcessMark([fakeEl]);
         expect(fakeEl.classes.indexOf('other-class')).to.be.above(-1);
       });
 
@@ -145,7 +145,7 @@ describe('A ContentHeader Component', function () {
           buildFakeElement('div', ['excess-item', 'other-class-1', 'other-class-2']),
           buildFakeElement('div', ['excess-item', 'visuallyhidden', 'other-class-1', 'other-class-2'])
         ];
-        contentHeader.toggleExcessItems(xsEls);
+        authors.toggleExcessItems(xsEls);
         xsEls.forEach(function (el) {
           expect(el.classList.add.calledOnce).to.be.true;
           expect(el.classList.add.calledWith('visuallyhidden')).to.be.true;
@@ -165,7 +165,7 @@ describe('A ContentHeader Component', function () {
           buildFakeElement('div', ['other-class-1', 'other-class-2']),
           buildFakeElement('div', ['visuallyhidden', 'other-class-1', 'other-class-2'])
         ];
-        contentHeader.toggleExcessItems(nonXsEls);
+        authors.toggleExcessItems(nonXsEls);
         nonXsEls.forEach(function (el) {
           expect(el.classList.add.called).is.false;
           expect(el.classList.toggle.called).is.false;
@@ -180,7 +180,7 @@ describe('A ContentHeader Component', function () {
     context('when the width is narrow', () => {
 
       let windowMock;
-      let contentHeaderNarrow;
+      let authorsNarrow;
 
       beforeEach(() => {
         windowMock = {
@@ -194,7 +194,7 @@ describe('A ContentHeader Component', function () {
           },
           addEventListener: () => {}
         };
-        contentHeaderNarrow = new ContentHeader($elm, windowMock);
+        authorsNarrow = new Authors($elm, windowMock);
       });
 
       describe('the getMaxItems() method', function () {
@@ -202,11 +202,11 @@ describe('A ContentHeader Component', function () {
         context('when there are exactly 2 authors', () => {
 
           it('returns 2', function () {
-            contentHeaderNarrow.authors = [
-              buildFakeElement('div', ['content-header__author_list_item']),
-              buildFakeElement('div', ['content-header__author_list_item'])
+            authorsNarrow.authors = [
+              buildFakeElement('div', ['author_list_item']),
+              buildFakeElement('div', ['author_list_item'])
             ];
-            expect(contentHeaderNarrow.getMaxItems()).to.equal(2);
+            expect(authorsNarrow.getMaxItems()).to.equal(2);
           });
 
         });
@@ -214,7 +214,7 @@ describe('A ContentHeader Component', function () {
         context('when there are not exactly 2 authors', () => {
 
           it('returns 1', function () {
-            expect(contentHeaderNarrow.getMaxItems()).to.equal(1);
+            expect(authorsNarrow.getMaxItems()).to.equal(1);
           });
 
         });
@@ -224,13 +224,13 @@ describe('A ContentHeader Component', function () {
       describe('the getUpdatedToggleText() method', () => {
 
         it('returns the correct toggle text when expanded', () => {
-          const expected = '<span class="visuallyhidden"> collapse author list</span><span aria-hidden="true" class="content-header__item_toggle_cta">&#171;</span>';
-          expect(contentHeaderNarrow.getUpdatedToggleText('expanded')).to.equal(expected);
+          const expected = '<span class="visuallyhidden"> collapse author list</span><span aria-hidden="true" class="item_toggle_cta">&#171;</span>';
+          expect(authorsNarrow.getUpdatedToggleText('expanded')).to.equal(expected);
         });
 
         it('returns the correct toggle text when collapsed', () => {
           const expected = 'et al.<span class="visuallyhidden"> expand author list</span>';
-          expect(contentHeaderNarrow.getUpdatedToggleText('collapsed')).to.equal(expected);
+          expect(authorsNarrow.getUpdatedToggleText('collapsed')).to.equal(expected);
         });
 
       });
@@ -239,24 +239,24 @@ describe('A ContentHeader Component', function () {
 
         it('returns empty array if passed an array of 1 author', function () {
           let authorSet = buildItemSet('author', 1);
-          contentHeaderNarrow.authors = authorSet;
-          let observed = contentHeaderNarrow.getExcessItems('author', authorSet);
+          authorsNarrow.authors = authorSet;
+          let observed = authorsNarrow.getExcessItems('author', authorSet);
           expect(Array.isArray(observed)).to.be.true;
           expect(observed.length).to.equal(0);
         });
 
         it('returns empty array if passed an array of 2 authors', function () {
           let authorSet = buildItemSet('author', 2);
-          contentHeaderNarrow.authors = authorSet;
-          let observed = contentHeaderNarrow.getExcessItems('author', authorSet);
+          authorsNarrow.authors = authorSet;
+          let observed = authorsNarrow.getExcessItems('author', authorSet);
           expect(Array.isArray(observed)).to.be.true;
           expect(observed.length).to.equal(0);
         });
 
         it('returns array of the 2nd element onwards if passed array of > 2 authors', function () {
           let authorSet = buildItemSet('author', 6);
-          contentHeaderNarrow.authors = authorSet;
-          let observed = contentHeaderNarrow.getExcessItems('author', authorSet);
+          authorsNarrow.authors = authorSet;
+          let observed = authorsNarrow.getExcessItems('author', authorSet);
           expect(Array.isArray(observed)).to.be.true;
           expect(observed.length).to.equal(5);
           observed.forEach(function (author, i) {
@@ -272,7 +272,7 @@ describe('A ContentHeader Component', function () {
     context('when the width is not narrow', () => {
 
       let windowMock;
-      let contentHeaderNotNarrow;
+      let authorsNotNarrow;
 
       beforeEach(() => {
         windowMock = {
@@ -286,13 +286,13 @@ describe('A ContentHeader Component', function () {
           },
           addEventListener: () => {}
         };
-        contentHeaderNotNarrow = new ContentHeader($elm, windowMock);
+        authorsNotNarrow = new Authors($elm, windowMock);
       });
 
       describe('the getMaxItems() method', function () {
 
         it('returns 9', function () {
-          expect(contentHeaderNotNarrow.getMaxItems()).to.equal(9);
+          expect(authorsNotNarrow.getMaxItems()).to.equal(9);
         });
 
       });
@@ -301,12 +301,12 @@ describe('A ContentHeader Component', function () {
 
         it('returns the correct toggle text when expanded', () => {
           const expected = '<span class="visuallyhidden"> collapse author list</span><span aria-hidden="true">see&nbsp;less</span>';
-          expect(contentHeaderNotNarrow.getUpdatedToggleText('expanded')).to.equal(expected);
+          expect(authorsNotNarrow.getUpdatedToggleText('expanded')).to.equal(expected);
         });
 
         it('returns the correct toggle text when collapsed', () => {
           const expected = '<span class="visuallyhidden"> expand author list</span><span aria-hidden="true">see&nbsp;all</span>';
-          expect(contentHeaderNotNarrow.getUpdatedToggleText('collapsed')).to.equal(expected);
+          expect(authorsNotNarrow.getUpdatedToggleText('collapsed')).to.equal(expected);
         });
 
       });
@@ -315,14 +315,14 @@ describe('A ContentHeader Component', function () {
 
         it('returns empty array if passed an array of < 10 authors', function () {
           let authorSet = buildItemSet('author', 9);
-          let observed = contentHeaderNotNarrow.getExcessItems('author', authorSet);
+          let observed = authorsNotNarrow.getExcessItems('author', authorSet);
           expect(Array.isArray(observed)).to.be.true;
           expect(observed.length).to.equal(0);
         });
 
         it('returns empty array if passed an array of < 10 institutions', function () {
           let institutionSet = buildItemSet('institution', 9);
-          let observed = contentHeaderNotNarrow.getExcessItems('institution', institutionSet);
+          let observed = authorsNotNarrow.getExcessItems('institution', institutionSet);
           expect(Array.isArray(observed)).to.be.true;
           expect(observed.length).to.equal(0);
 
@@ -330,7 +330,7 @@ describe('A ContentHeader Component', function () {
 
         it('returns array of the 10th element onwards if passed array of > 9 authors', function () {
           let authorSet = buildItemSet('author', 26);
-          let observed = contentHeaderNotNarrow.getExcessItems('author', authorSet);
+          let observed = authorsNotNarrow.getExcessItems('author', authorSet);
           expect(Array.isArray(observed)).to.be.true;
           expect(observed.length).to.equal(17);
           observed.forEach(function (author, i) {
@@ -340,7 +340,7 @@ describe('A ContentHeader Component', function () {
 
         it('returns array of the 10th element onwards if passed array of > 9 institutions', function () {
           let institutionSet = buildItemSet('institution', 20);
-          let observed = contentHeaderNotNarrow.getExcessItems('institution', institutionSet);
+          let observed = authorsNotNarrow.getExcessItems('institution', institutionSet);
           expect(Array.isArray(observed)).to.be.true;
           expect(observed.length).to.equal(11);
           observed.forEach(function (institution, i) {

@@ -1,0 +1,311 @@
+{
+  "list": [
+    {
+      "name": "Lee R Berger",
+      "url": "#",
+      "isCorresponding": true
+    },
+    {
+      "name": "John Hawks",
+      "url": "#"
+    },
+    {
+      "name": "Darryl J de Ruiter",
+      "url": "#"
+    },
+    {
+      "name": "Steven E Churchill",
+      "url": false
+    },
+    {
+      "name": "Peter Schmid",
+      "url": false
+    },
+    {
+      "name": "Lucas K Delezene",
+      "url": false
+    },
+    {
+      "name": "Tracy L Kivell",
+      "url": false
+    },
+    {
+      "name": "Heather M Garvin",
+      "url": false
+    },
+    {
+      "name": "Scott A Williams",
+      "url": false
+    },
+    {
+      "name": "Jeremy M DeSilva",
+      "url": false
+    },
+    {
+      "name": "Matthew M Skinner",
+      "url": false
+    },
+    {
+      "name": "Charles M Musiba",
+      "url": false
+    },
+    {
+      "name": "Noel Cameron",
+      "url": false
+    },
+    {
+      "name": "Trenton W Holliday",
+      "url": false
+    },
+    {
+      "name": "William Harcourt-Smith",
+      "url": false
+    },
+    {
+      "name": "Rebecca R Ackermann",
+      "url": false
+    },
+    {
+      "name": "Markus Bastir",
+      "url": false
+    },
+    {
+      "name": "Barry Bogin",
+      "url": false
+    },
+    {
+      "name": "Debra Bolter",
+      "url": false
+    },
+    {
+      "name": "Juliet Brophy",
+      "url": false
+    },
+    {
+      "name": "Zachary D Cofran",
+      "url": false
+    },
+    {
+      "name": "Kimberly A Congdon",
+      "url": false
+    },
+    {
+      "name": "Andrew S Deane",
+      "url": false
+    },
+    {
+      "name": "Mana Dembo",
+      "url": false
+    },
+    {
+      "name": "Michelle Drapeau",
+      "url": false
+    },
+    {
+      "name": "Marina C Elliott",
+      "url": false
+    },
+    {
+      "name": "Elen M Feuerriegel",
+      "url": false
+    },
+    {
+      "name": "Daniel Garcia-Martinez",
+      "url": false
+    },
+    {
+      "name": "David J Green",
+      "url": false
+    },
+    {
+      "name": "Alia Gurtov",
+      "url": false
+    },
+    {
+      "name": "Joel D Irish",
+      "url": false
+    },
+    {
+      "name": "Ashley Kruger",
+      "url": false
+    },
+    {
+      "name": "Myra F Laird",
+      "url": false
+    },
+    {
+      "name": "Damiano Marchi",
+      "url": false
+    },
+    {
+      "name": "Marc R Meyer",
+      "url": false
+    },
+    {
+      "name": "Shahed Nalla",
+      "url": false
+    },
+    {
+      "name": "Enquye W Negash",
+      "url": false
+    },
+    {
+      "name": "Caley M Orr",
+      "url": false
+    },
+    {
+      "name": "Davorka Radovcic",
+      "url": false
+    },
+    {
+      "name": "Lauren Schroeder",
+      "url": false
+    },
+    {
+      "name": "Jill E Scott",
+      "url": false
+    },
+    {
+      "name": "Zachary Throckmorton",
+      "url": false
+    },
+    {
+      "name": "Caroline VanSickle",
+      "url": false
+    },
+    {
+      "name": "Christopher S Walker",
+      "url": false
+    },
+    {
+      "name": "Pianpian Wei",
+      "url": false
+    },
+    {
+      "name": "Bernhard Zipfel",
+      "url": false,
+      "isCorresponding": true
+    }
+  ],
+  "institutions": {
+    "list": [
+      {
+        "name": "University of the Witwatersrand, South Africa"
+      },
+      {
+        "name": "University of Wisconsin-Madison, United States"
+      },
+      {
+        "name": "Texas A&M University, United States"
+      },
+      {
+        "name": "Duke University, United States"
+      },
+      {
+        "name": "University of Zurich, Switzerland"
+      },
+      {
+        "name": "University of Arkansas, United States"
+      },
+      {
+        "name": "University of Kent, United Kingdom"
+      },
+      {
+        "name": "Max Planck Institute for Evolutionary Anthropology, Germany"
+      },
+      {
+        "name": "Mercyhurst University, United States"
+      },
+      {
+        "name": "New York University, United States"
+      },
+      {
+        "name": "New York Consortium in Evolutionary Primatology, United States"
+      },
+      {
+        "name": "Dartmouth College, United States"
+      },
+      {
+        "name": "University of Colorado Denver, United States"
+      },
+      {
+        "name": "Loughborough University, United Kingdom"
+      },
+      {
+        "name": "Tulane University, United States"
+      },
+      {
+        "name": "Lehman College, United States"
+      },
+      {
+        "name": "American Museum of Natural History, United States"
+      },
+      {
+        "name": "University of Cape Town, South Africa"
+      },
+      {
+        "name": "Museo Nacional de Ciencias Naturales, Spain"
+      },
+      {
+        "name": "Modesto Junior College, United States"
+      },
+      {
+        "name": "Louisiana State University, United States"
+      },
+      {
+        "name": "Nazarbayev University, Kazakhstan"
+      },
+      {
+        "name": "University of Missouri, United States"
+      },
+      {
+        "name": "University of Kentucky College of Medicine, United States"
+      },
+      {
+        "name": "Simon Fraser University, Canada"
+      },
+      {
+        "name": "Universit&eacute; de Montr&eacute;al, Canada"
+      },
+      {
+        "name": "Australian National University, Australia"
+      },
+      {
+        "name": "Biology Department, Universidad Autònoma de Madrid, Spain"
+      },
+      {
+        "name": "Midwestern University, United States"
+      },
+      {
+        "name": "Liverpool John Moores University, United Kingdom"
+      },
+      {
+        "name": "University of Pisa, Italy"
+      },
+      {
+        "name": "Chaffey College, United States"
+      },
+      {
+        "name": "University of Johannesburg, South Africa"
+      },
+      {
+        "name": "George Washington University, United States"
+      },
+      {
+        "name": "University of Colorado School of Medicine, United States"
+      },
+      {
+        "name": "Croatian Natural History Museum, Croatia"
+      },
+      {
+        "name": "University of Iowa, United States"
+      },
+      {
+        "name": "Lincoln Memorial University, United States"
+      },
+      {
+        "name": "Smithsonian Institution, United States"
+      }
+    ]
+  }
+}
