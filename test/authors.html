@@ -1,0 +1,311 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+    <!--
+      Test output
+    -->
+    <div id="mocha"></div>
+
+    <!--
+      Fixture
+    -->
+
+
+    <div class="authors" data-author-line="Lee R Berger et al" data-behaviour="Authors">
+      <ol class="author_list">
+        <li class="author_list_item">
+          <span class="author">Lee R Berger</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">John Hawks</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Darryl J de Ruiter</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Steven E Churchill</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Peter Schmid</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Lucas K Delezene</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Tracy L Kivell</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Heather M Garvin</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Scott A Williams</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Jeremy M DeSilva</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Matthew M Skinner</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Charles M Musiba</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Noel Cameron</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Trenton W Holliday</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">William Harcourt-Smith</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Rebecca R Ackermann</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Markus Bastir</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Barry Bogin</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Debra Bolter</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Juliet Brophy</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Zachary D Cofran</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Kimberly A Congdon</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Andrew S Deane</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Mana Dembo</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Michelle Drapeau</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Marina C Elliott</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Elen M Feuerriegel</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Daniel Garcia-Martinez</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">David J Green</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Alia Gurtov</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Joel D Irish</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Ashley Kruger</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Myra F Laird</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Damiano Marchi</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Marc R Meyer</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Shahed Nalla</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Enquye W Negash</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Caley M Orr</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Davorka Radovcic</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Lauren Schroeder</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Jill E Scott</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Zachary Throckmorton</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Caroline VanSickle</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Christopher S Walker</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Pianpian Wei</span>
+        </li>
+        <li class="author_list_item">
+          <span class="author">Bernhard Zipfel</span>
+        </li>
+      </ol>
+
+      <ol class="institution_list">
+        <li class="institution_list_item">
+          <span class="institution">University of the Witwatersrand, South Africa</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Wisconsin-Madison, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Texas A&M University, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Duke University, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Zurich, Switzerland</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Arkansas, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Kent, United Kingdom</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Max Planck Institute for Evolutionary Anthropology, Germany</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Mercyhurst University, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">New York University, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">New York Consortium in Evolutionary Primatology, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Dartmouth College, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Colorado Denver, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Loughborough University, United Kingdom</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Tulane University, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Lehman College, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">American Museum of Natural History, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Cape Town, South Africa</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Museo Nacional de Ciencias Naturales, Spain</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Modesto Junior College, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Louisiana State University, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Nazarbayev University, Kazakhstan</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Missouri, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Kentucky College of Medicine, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Simon Fraser University, Canada</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Universit&eacute; de Montr&eacute;al, Canada</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Australian National University, Australia</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Biology Department, Universidad Autònoma de Madrid, Spain</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Midwestern University, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Liverpool John Moores University, United Kingdom</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Pisa, Italy</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Chaffey College, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Johannesburg, South Africa</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">George Washington University, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Colorado School of Medicine, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Croatian Natural History Museum, Croatia</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">University of Iowa, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Lincoln Memorial University, United States</span>
+        </li>
+        <li class="institution_list_item">
+          <span class="institution">Smithsonian Institution, United States</span>
+        </li>
+      </ol>
+    </div>
+
+
+    <!--
+      Load test code
+    -->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
+
+    <!--
+      Test spec
+    -->
+    <script src="build/authors.spec.js"></script>
+
+    <!--
+      Begin!
+    -->
+    <script>
+      mocha.run();
+    </script>
+
+</body>
+</html>
