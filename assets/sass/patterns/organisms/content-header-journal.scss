@@ -106,6 +106,7 @@
 
   .content-header-grid__side-popup-block {
     display: grid;
+    position: relative;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       display: initial;
