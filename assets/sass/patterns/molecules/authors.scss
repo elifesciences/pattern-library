@@ -1,0 +1,165 @@
+@import "../../definitions";
+
+.author_link_highlight,
+.author_link_highlight:hover {
+  background-color: transparent;
+  border-style: none;
+  color: $color-primary;
+  padding-top: 12px;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    padding-top: 0;
+  }
+}
+
+.authors {
+  @include margin($content-header-padding, "bottom");
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    .institution_list {
+      @include visuallyhidden();
+    }
+  }
+}
+
+.authors--line {
+  @include author-typeg();
+}
+
+.author_list {
+  margin: 0;
+  padding: 0;
+}
+
+.author_list_item {
+  display: inline;
+  @include author-typeg();
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.item_toggle--expanded {
+  display: block;
+}
+
+.author_suffix {
+  white-space: nowrap;
+}
+
+.author_separator {
+  .author--last-non-excess & {
+    display: none;
+
+    .author_list--expanded & {
+      display: inline;
+    }
+  }
+  li.author_list_item:last-child &,
+  li.author_list_item--last & {
+    display: none;
+  }
+}
+
+.institution_separator {
+  .institution--last-non-excess & {
+    display: none;
+
+    .institution_list--expanded & {
+      display: inline;
+    }
+  }
+  li.institution_list_item:last-child &,
+  li.institution_list_item--last & {
+    display: none;
+  }
+}
+
+.author_link {
+  color: inherit;
+  text-decoration: inherit;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+}
+
+.author_icon {
+  padding-top: 1px;
+  vertical-align: text-top;
+}
+
+.author--single {
+  @include author-typeg();
+}
+
+.institution_list {
+  margin: 0;
+  padding: 0;
+}
+
+.institution_list_item {
+  display: inline;
+  @include institute-typeg();
+  list-style-type: none;
+  padding: 0;
+}
+
+.item_toggle {
+  white-space: nowrap;
+}
+
+.item_toggle--author {
+  @include author-typeg();
+  font-weight: normal;
+}
+
+.item_toggle--expanded {
+
+  & .item_toggle_cta {
+    display: block;
+    transform: rotate(90deg);
+  }
+
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+
+  .author--last-non-excess .author_separator {
+    display: none;
+  }
+
+  .institution--last-non-excess .institution_separator {
+    display: none;
+  }
+
+  .item_toggle {
+    color: $color-primary;
+    display: inline;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .item_toggle--institution {
+    @include institute-typeg();
+    font-weight: normal;
+  }
+
+  .item_toggle--collapsed:after {
+    content: "\00a0\00bb";
+  }
+
+  .item_toggle--expanded:before {
+    content: "\00ab\00a0";
+  }
+
+  .item_toggle:hover {
+    cursor: pointer;
+  }
+
+}

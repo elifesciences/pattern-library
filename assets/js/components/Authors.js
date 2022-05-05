@@ -1,7 +1,7 @@
 'use strict';
 const utils = require('../libs/elife-utils')();
 
-module.exports = class ContentHeader {
+module.exports = class Authors {
 
   // Passing window and document separately allows for independent mocking of window in order
   // to test feature support fallbacks etc.
@@ -13,17 +13,16 @@ module.exports = class ContentHeader {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.$elm.classList.add('content-header--js');
 
-    this.authors = $elm.querySelectorAll('.content-header__author_list_item');
-    this.institutions = $elm.querySelectorAll('.content-header__institution_list_item');
+    this.authors = $elm.querySelectorAll('.author_list_item');
+    this.institutions = $elm.querySelectorAll('.institution_list_item');
 
     if (this.authors.length > 0) {
-      this.authors[this.authors.length - 1].classList.add('content-header__author_list_item--last');
+      this.authors[this.authors.length - 1].classList.add('author_list_item--last');
     }
 
     if (this.institutions.length > 0) {
-      this.institutions[this.institutions.length - 1].classList.add('content-header__institution_list_item--last');
+      this.institutions[this.institutions.length - 1].classList.add('institution_list_item--last');
     }
 
     this.hasToggleAuthor = false;
@@ -46,12 +45,12 @@ module.exports = class ContentHeader {
     }
 
     this.currentClientWidth = document.body.clientWidth;
-    if (!this.$elm.querySelector('.content-header__author_list--expanded')) {
+    if (!this.$elm.querySelector('.author_list--expanded')) {
       this.hideAllExcessItems();
     }
 
     const toggles = this.$elm.querySelectorAll(
-      '.content-header__item_toggle .content-header__author_link_highlight'
+      '.item_toggle .author_link_highlight'
     );
     const updateToggleText = this.getUpdatedToggleText.bind(this);
     [].forEach.call(toggles, ($toggle) => {
@@ -159,9 +158,9 @@ module.exports = class ContentHeader {
     [].forEach.call(items, function (item, i) {
 
       // Clear old any obsolete determination of what's the last non-excess item.
-      if (item.querySelector('.content-header__' + itemType)) {
-        item.querySelector('.content-header__' + itemType)
-            .classList.remove('content-header__' + itemType + '--last-non-excess');
+      if (item.querySelector('.' + itemType)) {
+        item.querySelector('.' + itemType)
+            .classList.remove(itemType + '--last-non-excess');
         if (item.classList.contains('excess-item') && !foundLastShown) {
           lastShownIndex = i - 1;
           foundLastShown = true;
@@ -170,9 +169,9 @@ module.exports = class ContentHeader {
     });
 
     if (lastShownIndex !== null && lastShownIndex > -1) {
-      let lastShown = items[lastShownIndex].querySelector('.content-header__' + itemType);
+      let lastShown = items[lastShownIndex].querySelector('.' + itemType);
       if (lastShown) {
-        lastShown.classList.add('content-header__' + itemType + '--last-non-excess');
+        lastShown.classList.add(itemType + '--last-non-excess');
       }
     }
 
@@ -219,7 +218,7 @@ module.exports = class ContentHeader {
       return `${baseText}<span aria-hidden="true">see&nbsp;less</span>`;
     }
 
-    return `${baseText}<span aria-hidden="true" class="content-header__item_toggle_cta">&#171;</span>`;
+    return `${baseText}<span aria-hidden="true" class="item_toggle_cta">&#171;</span>`;
   }
 
   getUpdatedToggleText(newState) {
@@ -232,11 +231,11 @@ module.exports = class ContentHeader {
     }
 
     // This has been invoked because of a resize, not a state change
-    if (this.$elm.querySelector('.content-header__item_toggle--expanded')) {
+    if (this.$elm.querySelector('.item_toggle--expanded')) {
       return this.getToggleExpandedText();
     }
 
-    if (this.$elm.querySelector('.content-header__item_toggle--collapsed')) {
+    if (this.$elm.querySelector('.item_toggle--collapsed')) {
       return this.getToggleCollapsedText();
     }
 
@@ -249,20 +248,20 @@ module.exports = class ContentHeader {
 
     [].forEach.call(toggles, ($toggle) => {
       $toggle.innerHTML = this.getUpdatedToggleText(newState);
-      $toggle.parentNode.classList.toggle('content-header__item_toggle--expanded');
-      $toggle.parentNode.classList.toggle('content-header__item_toggle--collapsed');
+      $toggle.parentNode.classList.toggle('item_toggle--expanded');
+      $toggle.parentNode.classList.toggle('item_toggle--collapsed');
     });
 
     if (newState === 'expanded') {
-      this.$elm.querySelector('.content-header__author_list').classList
-          .add('content-header__author_list--expanded');
-      this.$elm.querySelector('.content-header__institution_list').classList
-        .add('content-header__institution_list--expanded');
+      this.$elm.querySelector('.author_list').classList
+          .add('author_list--expanded');
+      this.$elm.querySelector('.institution_list').classList
+        .add('institution_list--expanded');
     } else {
-      this.$elm.querySelector('.content-header__author_list').classList
-          .remove('content-header__author_list--expanded');
-      this.$elm.querySelector('.content-header__institution_list').classList
-        .remove('content-header__institution_list--expanded');
+      this.$elm.querySelector('.author_list').classList
+          .remove('author_list--expanded');
+      this.$elm.querySelector('.institution_list').classList
+        .remove('institution_list--expanded');
     }
   }
 
@@ -272,17 +271,17 @@ module.exports = class ContentHeader {
   buildSeeMoreLessToggle(itemType) {
     const $toggleWrapper = utils.buildElement(
       'li',
-      ['content-header__item_toggle', 'content-header__author_list_item',
-       'content-header__item_toggle--collapsed', 'content-header__item_toggle--' + itemType
+      ['item_toggle', 'author_list_item',
+       'item_toggle--collapsed', 'item_toggle--' + itemType
       ],
       '',
-      this.$elm.querySelector('.content-header__' + itemType + '_list')
+      this.$elm.querySelector('.' + itemType + '_list')
     );
     $toggleWrapper.setAttribute('aria-hidden', 'true');
 
     const $toggle = utils.buildElement(
       'button',
-      ['content-header__author_link_highlight'],
+      ['author_link_highlight'],
       this.getUpdatedToggleText('collapsed'),
       $toggleWrapper
     );
@@ -291,7 +290,7 @@ module.exports = class ContentHeader {
       e.preventDefault();
       const $toggleWrapper = e.currentTarget.parentNode;
       let newState;
-      if ($toggleWrapper.classList.contains('content-header__item_toggle--collapsed')) {
+      if ($toggleWrapper.classList.contains('item_toggle--collapsed')) {
         this.showAllItems();
         newState = 'expanded';
       } else {
@@ -301,7 +300,7 @@ module.exports = class ContentHeader {
 
       this.updateToggleState(newState,
                              this.$elm.querySelectorAll(
-                          '.content-header__item_toggle .content-header__author_link_highlight'
+                          '.item_toggle .author_link_highlight'
                         ),
                              itemType);
 
