@@ -1,0 +1,42 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  list:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        url:
+          oneOf:
+            - type: string
+              minLength: 1
+            - type: boolean
+              enum:
+                - false
+        isCorresponding:
+          type: boolean
+      required:
+        - name
+        - url
+  institutions:
+    type: object
+    properties:
+      list:
+        type: array
+        minItems: 1
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+          required:
+            - name
+    required:
+      - list
+required:
+  - list
