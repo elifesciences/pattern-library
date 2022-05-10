@@ -1,4 +1,6 @@
 {
+  "isPrimaryResearch": true,
+  "hasRelated": true,
   "siteHeader": {
     "title": {
       "homePagePath": "#"
@@ -61,7 +63,7 @@
           "picture": {
             "pictureClasses": "nav-primary__search_icon",
             "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 1x",
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
               "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
               "classes": "",
               "altText": ""
@@ -108,7 +110,6 @@
             }
           }
         }
-
       ]
     },
     "searchBox": {
@@ -157,6 +158,7 @@
     "authors": {
       "list": [
         {
+          "url": "#author-3c233bb0",
           "name": "Lee R Berger"
         },
         {
@@ -294,137 +296,136 @@
         {
           "name": "Bernhard Zipfel"
         }
-      ],
-      "institutions": {
-        "list": [
-          {
-            "name": "University of the Witwatersrand, South Africa"
-          },
-          {
-            "name": "University of Wisconsin-Madison, United States"
-          },
-          {
-            "name": "Texas A&M University, United States"
-          },
-          {
-            "name": "Duke University, United States"
-          },
-          {
-            "name": "University of Zurich, Switzerland"
-          },
-          {
-            "name": "University of Arkansas, United States"
-          },
-          {
-            "name": "University of Kent, United Kingdom"
-          },
-          {
-            "name": "Max Planck Institute for Evolutionary Anthropology, Germany"
-          },
-          {
-            "name": "Mercyhurst University, United States"
-          },
-          {
-            "name": "New York University, United States"
-          },
-          {
-            "name": "New York Consortium in Evolutionary Primatology, United States"
-          },
-          {
-            "name": "Dartmouth College, United States"
-          },
-          {
-            "name": "University of Colorado Denver, United States"
-          },
-          {
-            "name": "Loughborough University, United Kingdom"
-          },
-          {
-            "name": "Tulane University, United States"
-          },
-          {
-            "name": "Lehman College, United States"
-          },
-          {
-            "name": "American Museum of Natural History, United States"
-          },
-          {
-            "name": "University of Cape Town, South Africa"
-          },
-          {
-            "name": "Museo Nacional de Ciencias Naturales, Spain"
-          },
-          {
-            "name": "Modesto Junior College, United States"
-          },
-          {
-            "name": "Louisiana State University, United States"
-          },
-          {
-            "name": "Nazarbayev University, Kazakhstan"
-          },
-          {
-            "name": "University of Missouri, United States"
-          },
-          {
-            "name": "University of Kentucky College of Medicine, United States"
-          },
-          {
-            "name": "Simon Fraser University, Canada"
-          },
-          {
-            "name": "Universit&eacute; de Montr&eacute;al, Canada"
-          },
-          {
-            "name": "Australian National University, Australia"
-          },
-          {
-            "name": "Biology Department, Universidad Autònoma de Madrid, Spain"
-          },
-          {
-            "name": "Midwestern University, United States"
-          },
-          {
-            "name": "Liverpool John Moores University, United Kingdom"
-          },
-          {
-            "name": "University of Pisa, Italy"
-          },
-          {
-            "name": "Chaffey College, United States"
-          },
-          {
-            "name": "University of Johannesburg, South Africa"
-          },
-          {
-            "name": "George Washington University, United States"
-          },
-          {
-            "name": "University of Colorado School of Medicine, United States"
-          },
-          {
-            "name": "Croatian Natural History Museum, Croatia"
-          },
-          {
-            "name": "University of Iowa, United States"
-          },
-          {
-            "name": "Lincoln Memorial University, United States"
-          },
-          {
-            "name": "Smithsonian Institution, United States"
-          },
-          {
-            "name": "Institute of Vertebrate Paleontology and Paleoanthropology, China"
-          }
-        ]
-      }
+      ]
     },
-    "download": "#articleDownloadLinksList",
+    "institutions": {
+      "list": [
+        {
+          "name": "University of the Witwatersrand, South Africa"
+        },
+        {
+          "name": "University of Wisconsin-Madison, United States"
+        },
+        {
+          "name": "Texas A&M University, United States"
+        },
+        {
+          "name": "Duke University, United States"
+        },
+        {
+          "name": "University of Zurich, Switzerland"
+        },
+        {
+          "name": "University of Arkansas, United States"
+        },
+        {
+          "name": "University of Kent, United Kingdom"
+        },
+        {
+          "name": "Max Planck Institute for Evolutionary Anthropology, Germany"
+        },
+        {
+          "name": "Mercyhurst University, United States"
+        },
+        {
+          "name": "New York University, United States"
+        },
+        {
+          "name": "New York Consortium in Evolutionary Primatology, United States"
+        },
+        {
+          "name": "Dartmouth College, United States"
+        },
+        {
+          "name": "University of Colorado Denver, United States"
+        },
+        {
+          "name": "Loughborough University, United Kingdom"
+        },
+        {
+          "name": "Tulane University, United States"
+        },
+        {
+          "name": "Lehman College, United States"
+        },
+        {
+          "name": "American Museum of Natural History, United States"
+        },
+        {
+          "name": "University of Cape Town, South Africa"
+        },
+        {
+          "name": "Museo Nacional de Ciencias Naturales, Spain"
+        },
+        {
+          "name": "Modesto Junior College, United States"
+        },
+        {
+          "name": "Louisiana State University, United States"
+        },
+        {
+          "name": "Nazarbayev University, Kazakhstan"
+        },
+        {
+          "name": "University of Missouri, United States"
+        },
+        {
+          "name": "University of Kentucky College of Medicine, United States"
+        },
+        {
+          "name": "Simon Fraser University, Canada"
+        },
+        {
+          "name": "Universit&eacute; de Montr&eacute;al, Canada"
+        },
+        {
+          "name": "Australian National University, Australia"
+        },
+        {
+          "name": "Biology Department, Universidad Autònoma de Madrid, Spain"
+        },
+        {
+          "name": "Midwestern University, United States"
+        },
+        {
+          "name": "Liverpool John Moores University, United Kingdom"
+        },
+        {
+          "name": "University of Pisa, Italy"
+        },
+        {
+          "name": "Chaffey College, United States"
+        },
+        {
+          "name": "University of Johannesburg, South Africa"
+        },
+        {
+          "name": "George Washington University, United States"
+        },
+        {
+          "name": "University of Colorado School of Medicine, United States"
+        },
+        {
+          "name": "Croatian Natural History Museum, Croatia"
+        },
+        {
+          "name": "University of Iowa, United States"
+        },
+        {
+          "name": "Lincoln Memorial University, United States"
+        },
+        {
+          "name": "Smithsonian Institution, United States"
+        },
+        {
+          "name": "Institute of Vertebrate Paleontology and Paleoanthropology, China"
+        }
+      ]
+    },
+    "download": "#downloads",
+    "cite": "#cite-this-article",
     "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
     "meta": {
-      "url": "#",
-      "text": "Research article",
       "date": {
         "forHuman": {
           "dayOfMonth": 10,
@@ -435,65 +436,49 @@
       }
     }
   },
+  "modalWindowCitation": {
+    "closeBtnText": "Close",
+    "body": "<div class='reference'><ol class='reference__authors_list'><li class='reference__author'><a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'> Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>Juwayeyi YM</li></ol> <span class='reference__authors_list_suffix'>(1993)</span> Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift<div class='reference__origin'> <i>Nature</i> <strong>365</strong>:833–836.</div><span class='doi'>https://doi.org/10.1038/365833a0</span></div><ol class='button-collection'><li class='button-collection__item'>  <button class='button button--default' type='button' data-behaviour='ButtonClipboard' data-clipboard='Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring UJuwayeyi YM(1993) Oldest Homo and Pliocene biogeography of the Malawi rift Nature 365:833–836.https://doi.org/10.1038/365833a0'>Copy to clipboard</button></li><li class='button-collection__item'>  <button class='button button--default button--secondary' type='button'>Download Bibtex</button></li><li class='button-collection__item'>  <button class='button button--default button--secondary' type='button'>Download .RIS</button></li></ol>",
+    "title": "Cite this article",
+    "triggerId": "modalContentCitations"
+  },
+  "modalWindowShare": {
+    "smallDeviceOnly": true,
+    "title": "Share this article",
+    "body": "<div class='form-item'><input type='url' class='text-field text-field--url' value='https://doi.org/10.7554/eLife.09560'></div><button class='button button--default' type='submit' id='button-id' data-behaviour='ButtonClipboard' data-clipboard='https://doi.org/10.7554/eLife.09560'>Copy to clipboard</button><ul class='social-media-sharers'><li><a class='social-media-sharer email' href=' target='_blank' rel='noopener noreferrer' aria-label='Share by Email'><span class='visuallyhidden'>Email</span></a></li><li><a class='social-media-sharer twitter' href='https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url' target='_blank' rel='noopener noreferrer' aria-label='Tweet a link to this page'><span class='visuallyhidden'>Twitter</span></a></li><li><a class='social-media-sharer facebook' href='https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url' target='_blank' rel='noopener noreferrer' aria-label='Share on Facebook'><span class='visuallyhidden'>Facebook</span></a></li><li><a class='social-media-sharer linkedin' href='https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fexample.com%2Fsome-article-url' target='_self' aria-label='Share this page to LinkedIn (opens up email program, if configured on this system)'><span class='visuallyhidden'>LinkedIn</span></a></li><li><a class='social-media-sharer reddit' href='https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url' target='_blank' rel='noopener noreferrer' aria-label='Share this page on Reddit'><span class='visuallyhidden'>Reddit</span></a></li></ul>",
+    "triggerId": "modalContentShare"
+  },
+  "doi": "10.7554/eLife.16370",
   "contextualData": {
     "metricsData": {
       "data": [
-        {
-          "name": "views",
-          "value": 149
-        },
-        {
-          "name": "cited",
-          "value": 5
-        },
-        {
-          "name": "comments",
-          "value": 12,
-          "elementId": "someDocumentLevelUniqueId"
-        }
+        { "text": "<a href=\"#\"><strong>149</strong> views</a>" },
+        { "text": "<strong>5</strong> citations" }
       ]
-    },
-    "citation": {
-      "citeAs": "eLife 2016;5:e16370",
-      "doi": {
-        "class": "contextual-data__doi",
-        "doi": "10.7554/eLife.16370",
-        "isTruncated": true
-      }
     }
+  },
+  "breadcrumb": {
+    "items": [
+      {
+        "url": "",
+        "name": "Research Article"
+      }
+    ]
   },
   "viewSelector": {
     "articleUrl": "#articleUrl",
     "figureUrl": "#figureUrl",
+    "sideBySideUrl": "https://lens.elifesciences.org/09560",
+    "otherLinks": [{ "name": "Executable code", "url": "#rds" }],
     "jumpLinks": {
       "links": [
         {
-          "name": "Abstract",
-          "url": "#abstract"
+          "name": "Figures",
+          "url": "#figures"
         },
         {
-          "name": "eLife digest",
-          "url": "#digest"
-        },
-        {
-          "name": "Introduction",
-          "url": "#introduction"
-        },
-        {
-          "name": "Results",
-          "url": "#results"
-        },
-        {
-          "name": "Discussion",
-          "url": "#discussion"
-        },
-        {
-          "name": "Materials & methods",
-          "url": "#materials-and-methods"
-        },
-        {
-          "name": "References",
-          "url": "#references"
+          "name": "Additional files",
+          "url": "#files"
         }
       ]
     }
@@ -742,55 +727,64 @@
       ]
     }
   },
-  "download-links": {
-    "title": "Article download links",
+  "articleMeta": {
+    "groups": [
+      {
+        "title": "Categories and tags",
+        "items": [
+          {
+            "url": "#",
+            "name": "Insight"
+          },
+          {
+            "url": "#",
+            "name": "Developmental Biology and Stem Cells"
+          },
+          {
+            "url": "#",
+            "name": "Planarian"
+          }
+        ]
+      },
+      {
+        "title": "Research organism",
+        "items": [
+          {
+            "url": "#",
+            "name": "Caenorhabditis elegans"
+          }
+        ]
+      }
+    ]
+  },
+  "pl-only-article-section-for-download-links": {
     "downloadLinks": {
-      "description": "A three part list of links to download the article, or parts of the article, in various formats.",
+      "description": "A list of links to download the article, or parts of the article, in various formats.",
       "groups": [
         {
-          "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF)</span>",
+          "title": "Download formats<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
           "items": [
             {
-              "name": "Article",
-              "url": "#"
+              "primary": {
+                "name": "Article PDF",
+                "url": "#"
+              }
             },
             {
-              "name": "Figures",
-              "url": "#"
-            }
-          ]
-        },
-        {
-          "title": "Download citations<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
-          "items": [
-            {
-              "name": "BibTex",
-              "url": "#"
+              "primary": {
+                "name": "Figures PDF",
+                "url": "#"
+              }
             },
             {
-              "name": "RIS",
-              "url": "#"
-            }
-          ]
-        },
-        {
-          "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
-          "items": [
-            {
-              "name": "Mendeley",
-              "url": "#"
-            },
-            {
-              "name": "ReadCube",
-              "url": "#"
-            },
-            {
-              "name": "Papers App",
-              "url": "#"
-            },
-            {
-              "name": "CiteUlike",
-              "url": "#"
+              "primary": {
+                "name": "Executable version",
+                "url": "#eraLink"
+              },
+              "secondary": {
+                "name": "What are executable versions?",
+                "url": "#secondaryLink"
+              }
             }
           ]
         }
@@ -798,6 +792,9 @@
     }
   },
   "mainMenu": {
+    "listHeading": {
+      "heading": "Menu"
+    },
     "links": {
       "items": [
         {
@@ -888,89 +885,5 @@
       "url": "#"
     }
   ],
-  "furtherReading": {
-    "id": "idOfListElementToLoadContentInTo",
-    "heading": "Further reading",
-    "items": [
-      {
-        "item": {
-          "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
-          "longTitle": true,
-          "hasSubjects": true,
-          "subjects": [
-            {
-              "name": "Cell Biology",
-              "url": "#"
-            },
-            {
-              "name": "Epidemiology and Global Health",
-              "url": "#"
-            }
-          ],
-          "authorLine": {
-            "text": "Lee R Berger",
-            "hasEtAl": true,
-            "url": "#"
-          },
-          "meta": {
-            "url": "#",
-            "text": "Research article",
-            "date": {
-              "forHuman": {
-                "dayOfMonth": 10,
-                "month": "Sep",
-                "year": 2015
-              },
-              "forMachine": "2015-09-10"
-            }
-          }
-        },
-        "content": "<p>Optimal decision-making requires balancing fast but error-prone and more accurate but slower decisions through adjustments of decision thresholds. Here, we demonstrate two distinct correlates of such speed-accuracy adjustments by recording subthalamic nucleus (STN) activity and electroencephalography in 11 Parkinson’s disease patients during a perceptual decision-making task; STN low-frequency oscillatory (LFO) activity (2–8 Hz), coupled to activity at prefrontal electrode Fz, and STN beta activity (13–30 Hz) coupled to electrodes C3/C4 close to motor cortex. These two correlates differed not only in their cortical topography and spectral characteristics but also in the relative timing of recruitment and in their precise relationship with decision thresholds. Increases of STN LFO power preceding the response predicted increased thresholds only after accuracy instructions, while cue-induced reductions of STN beta power decreased thresholds irrespective of instructions. These findings indicate that distinct neural mechanisms determine whether a decision will be made in haste or with caution.</p>"
-      },
-      {
-        "item": {
-          "title": "Physical determinants of vesicle mobility and supply at a central synapse",
-          "longTitle": true,
-          "hasSubjects": true,
-          "subjects": [
-            {
-              "name": "Cell Biology",
-              "url": "#"
-            },
-            {
-              "name": "Epidemiology and Global Health",
-              "url": "#"
-            }
-          ],
-          "authorLine": {
-            "text": "Lee R Berger",
-            "hasEtAl": true,
-            "url": "#"
-          },
-          "meta": {
-            "url": "#",
-            "text": "Research article",
-            "date": {
-              "forHuman": {
-                "dayOfMonth": 10,
-                "month": "Sep",
-                "year": 2015
-              },
-              "forMachine": "2015-09-10"
-            }
-          }
-        },
-        "content": "<p>Optimal decision-making requires balancing fast but error-prone and more accurate but slower decisions through adjustments of decision thresholds.</p>"
-      }
-    ],
-    "pagination": {
-      "targetId": "idOfListElementToLoadContentInTo",
-      "nextPage": {
-        "text": "Load more",
-        "classes": "button--default button--full",
-        "path": "?page=2"
-      }
-    }
-  },
   "year": 2016
 }
