@@ -1,40 +1,12 @@
-#!/usr/bin/env bash
-# First time...
-if [ ! -d ./public ]; then
-  echo -e "Setting up for the first time...";
-  npm install
-  mkdir ./public
-  cp -r ./core/styleguide ./public/
-fi
+PORT=8889
 
-PORT=${1:-8889}
-
-#echo "Building patterns..."
-#echo "Building sass..."
-#npm run compile-sass
-#echo "Compressing images..."
-#npm run compress-img
-#echo "Copying fonts..."
-#npm run fonts
-#echo "Building javascript..."
-#npm run build-js
-
-echo "Starting watchers..."
-npm run watch:all & pid=$!
-PID_LIST+=" $pid";
-sleep 10
 # Need to generate before watch to ensure images are in the right place.
 php ./core/builder.php --generate
 
-php ./core/builder.php --watch > /dev/null 2>&1 & pid=$!
-PID_LIST+=" $pid";
+php ./core/builder.php --watch > /dev/null 2>&1 &
 
 php -S 0.0.0.0:${PORT} -t ./public > /dev/null 2>&1 & pid=$!
-PID_LIST+=" $pid";
-
-trap "kill ${PID_LIST}" SIGINT
 
 echo "Running Pattern Library at http://localhost:${PORT}/";
-wait ${PID_LIST}
-echo
+wait $pid
 echo "Stopping pattern library, gulp and server.";

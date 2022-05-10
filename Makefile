@@ -6,9 +6,9 @@ COMPOSER_VERSION ?= 1.6.4
 PORT ?= 8080
 
 # Source files that when changed should trigger a rebuild.
-FONTS = $(wildcard assets/fonts/**/*)
-SASS = $(wildcard assets/sass/**/*)
-JAVASCRIPT = $(wildcard assets/js/**/*)
+FONTS = $(shell find assets/fonts -type f)
+SASS = $(shell find assets/sass -type f)
+JAVASCRIPT = $(shell find assets/js -type f)
 SOURCES = $(wildcard assets/js/**/* assets/sass/**/* source/**/*)
 
 TESTS = $(wildcard test/*.spec.js)
@@ -28,7 +28,7 @@ ifeq ($(ENVIRONMENT),production)
 endif
 
 # Targets that don't result in output of the same name.
-.PHONY: start stop clean distclean test fonts images
+.PHONY: start watch stop clean distclean test fonts images
 
 # When no target is specified, the default target to run.
 .DEFAULT_GOAL := start
@@ -75,18 +75,25 @@ source/assets/js/main.js: node_modules source/assets/js $(JAVASCRIPT)
 public: fonts images source/assets/css/all.css source/assets/js/main.js
 	@mkdir -p $(CURDIR)/public
 	@cp -r ./core/styleguide $(CURDIR)/public/
-	@docker run -it --rm -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) php:$(PHP_VERSION) php ./core/builder.php --generate
+	@docker run --rm -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) php:$(PHP_VERSION) php ./core/builder.php --generate
 
 # Builds the JavaScript for the tests
 test/build/%.spec.js: test/build test/%.spec.js
-	npx browserify -o ./$@ ./test/$*.spec.js
+	@npx browserify -o ./$@ ./test/$*.spec.js
 
 # Runs the tests
 test/%.html: test/build/%.spec.js
-	npx mocha-headless-chrome -f ./$@ -a no-sandbox
+	@npx mocha-headless-chrome -f ./$@ -a no-sandbox
 
 # Runs all tests
 test: $(TESTS_OUTPUT) $(TESTS_HTML)
+
+# Watch files for changes and rebuild when detected
+watch: public
+	@docker build . -f Dockerfile.watch -t pattern-library-watch
+	@docker run -d --rm --name $(PROJECT) -p $(PORT):8889 -v $(CURDIR):/opt/pattern-library:rw pattern-library-watch /opt/pattern-library/bin/dev
+	@-npx nodemon -C -w ./assets -e "png,tiff,svg,woff2,scss,js" -x "make public"
+	@-docker stop $(PROJECT)
 
 # Builds and runs the application on localhost:8080.
 start: public
