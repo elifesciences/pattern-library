@@ -6,17 +6,6 @@
     "url": "https://github.com/elifesciences/pattern-library"
   },
   "version": "0.0.7",
-  "scripts": {
-    "compile-sass": "npx node-sass assets/sass/build.scss ./source/assets/css/all.css --importer node_modules/node-sass-magic-importer/dist/cli.js --source-map true --source-map-root file://${PWD}/ --source-map-embed true --source-comments true",
-    "compress-img": "npx imagemin-cli './assets/img/errors' -o ./source/assets/img/errors/ --plugin.mozjpeg.progressive=true && npx imagemin-cli './assets/img/icons' -o ./source/assets/img/icons --plugin.mozjpeg.progressive=true && npx imagemin-cli './assets/img/patterns/molecules' -o ./source/assets/img/patterns/molecules/ --plugin.mozjpeg.progressive=true && npx imagemin-cli './assets/img/patterns/organisms' -o ./source/assets/img/patterns/organisms/ --plugin.mozjpeg.progressive=true",
-    "fonts": "rm -rf /source/assets/fonts && cp -r ./assets/fonts ./source/assets/",
-    "build-js": "npx browserify --debug ./assets/js/main.js | npx exorcist ./source/assets/js/main.js.map > ./source/assets/js/main.js && cp assets/js/elife-loader.js ./source/assets/js/elife-loader.js",
-    "watch:img": "nodemon --watch ./assets/img -e png,tiff,svg -x 'npm run compress-img'",
-    "watch:js": "nodemon --watch ./assets/js -x 'npm run build-js'",
-    "watch:fonts": "nodemon --watch ./assets/fonts -e woff2 -x 'npm run fonts'",
-    "watch:sass": "nodemon --watch ./assets/sass -e scss -x 'npm run compile-sass'",
-    "watch:all": "npm run watch:img & npm run watch:js & npm run watch:fonts & npm run watch:sass"
-  },
   "dependencies": {
     "highcharts": "^9.1.0",
     "postcss-cli": "^9.1.0"
