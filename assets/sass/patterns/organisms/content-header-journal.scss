@@ -106,7 +106,6 @@
 
   .content-header-grid__side-popup-block {
     display: grid;
-    position: relative;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       display: initial;
@@ -224,10 +223,6 @@
 .share {
   -webkit-mask: url("../img/icons/share.svg") no-repeat 0 0;
   mask: url("../img/icons/share.svg") no-repeat 0 0;
-}
-
-.teaser {
-  border: none;
 }
 
 .contextual-data {
