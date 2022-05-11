@@ -401,10 +401,18 @@ $iconlist: cc oa;
 
 @each $icon in $iconlist {
   .content-header__icon--#{$icon} {
-    background-image: url("../img/icons/#{$icon}.svg");
+    background-image: url("../img/icons/#{$icon}.svg"), linear-gradient(transparent, transparent);
 
     .content-header-journal & {
       background-image: url("../img/icons/#{$icon}-new.svg");
+    }
+
+    &:hover {
+      background-image: url("../img/icons/#{$icon}-hover.svg"), linear-gradient(transparent, transparent);
+
+      .content-header-journal & {
+        background-image: url("../img/icons/#{$icon}-new.svg");
+      }
     }
   }
 }
