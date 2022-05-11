@@ -25,6 +25,49 @@
 
 }
 
+// One column grid layout
+
+.content-header-grid {
+  padding: 0 24px;
+}
+
+.content-header-grid__main {
+  @include margin(24, "bottom");
+  @include padding(24, "bottom");
+}
+
+@media only all and (min-width: 730px) {
+
+  .content-header-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 24px;
+    max-width: 1114px;
+    padding: 0;
+  }
+
+  .content-header-grid__main {
+    @include margin(0, "bottom");
+    border-bottom: none;
+    grid-column: 1/13;
+  }
+}
+
+@media only all and (min-width: 900px) {
+
+  .content-header-grid-top {
+    grid-column: 1/13;
+    grid-row: 1;
+  }
+
+  .content-header-grid__main {
+    @include margin(0, "bottom");
+    border-bottom: none;
+    grid-column: 1/13;
+  }
+
+}
+
 .content-header--read-more {
   .content-header__subject_list {
     @include padding(0, "left");

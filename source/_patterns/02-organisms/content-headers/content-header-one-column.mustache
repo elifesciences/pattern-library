@@ -1,0 +1,19 @@
+<header
+  class="content-header content-header-journal {{#image}}content-header--image content-header--header{{/image}} {{^image}}wrapper {{#header.possible}}content-header--header{{/header.possible}}{{/image}} {{#socialMediaSharers}}content-header--has-social-media-sharers{{/socialMediaSharers}} {{#header.hasProfile}}content-header--has-profile{{/header.hasProfile}} clearfix"
+  data-behaviour="ContentHeader">
+
+  <div class="content-header-grid">
+    <div class="content-header-grid__main">
+
+      <div class="content-header__body">
+        <h1 class="content-header__title {{#titleLength}}content-header__title--{{titleLength}}{{/titleLength}}{{^titleLength}}content-header__title--medium{{/titleLength}}">{{{title}}}</h1>
+
+        {{#impactStatement}}
+          <div class="content-header__impact-statement">{{{impactStatement}}}</div>
+        {{/impactStatement}}
+
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+</header>
