@@ -12,6 +12,8 @@
     padding-bottom: 0;
 
     &:after {
+      @include padding($content-header-padding - 1, "top");
+      border-bottom: 1px solid $color-text-dividers;
       content: "";
       display: block;
       width: 100%;
@@ -463,7 +465,7 @@ $iconlist: cc oa;
 
 .content-header__impact-statement {
   @include subtitle-typeg();
-  @include margin($content-header-padding, "bottom");
+  @include margin($content-header-padding-small, "bottom");
   max-width: 100%;
 
   a {
