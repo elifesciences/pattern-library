@@ -402,6 +402,10 @@ $iconlist: cc oa;
 @each $icon in $iconlist {
   .content-header__icon--#{$icon} {
     background-image: url("../img/icons/#{$icon}.svg");
+
+    .content-header-journal & {
+      background-image: url("../img/icons/#{$icon}-new.svg");
+    }
   }
 }
 
