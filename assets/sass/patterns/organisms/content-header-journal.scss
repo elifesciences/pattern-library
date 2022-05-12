@@ -191,6 +191,10 @@
   }
 }
 
+[data-hypothesis-trigger] {
+  cursor: pointer;
+}
+
 .content-header__share-listing {
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     display: none;
