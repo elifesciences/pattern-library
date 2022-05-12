@@ -7,6 +7,11 @@
 .meta {
   @include label-content-typeg($uppercase: false);
   @include font-size-and-vertical-height(12);
+
+  .content-header-journal & {
+    @include font-size-and-vertical-height(14, 24);
+  }
+
   .highlights & {
     @include truncate-with-ellipsis();
   }
