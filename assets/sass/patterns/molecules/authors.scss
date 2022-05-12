@@ -18,15 +18,8 @@
 }
 
 .authors {
-  @include margin(24, "bottom");
-
-  .content-header-grid__main & {
-    margin: 0 0 36px;
-  }
-
+  @include margin($content-header-padding, "bottom");
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    display: contents;
-
     .institution_list {
       @include visuallyhidden();
     }
@@ -39,14 +32,7 @@
 
 .author_list {
   margin: 0;
-
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    padding: 0;
-  }
-
-  .content-header-grid__main & {
-    padding: 0 0 24px;
-  }
+  padding: 0;
 }
 
 .author_list_item {
