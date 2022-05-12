@@ -4,6 +4,8 @@
   @include wrapper(false);
   color: $color-text;
   padding-top: 0;
+  // $content-header-padding - 1 to account for the 1px border
+  @include padding($content-header-padding - 1, "bottom");
   position: relative;
   text-align: center;
 
@@ -12,10 +14,10 @@
     padding-bottom: 0;
 
     &:after {
-      @include padding($content-header-padding - 1, "top");
       border-bottom: 1px solid $color-text-dividers;
       content: "";
       display: block;
+      @include padding($content-header-padding - 1, "top");
       width: 100%;
     }
 
@@ -46,23 +48,20 @@
 }
 
 .content-header__body {
-  @include margin($content-header-padding-small * 2, "top");
-  @include margin(0, "bottom");
-
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include margin(0, "bottom");
-  }
+  @include margin($content-header-padding * 2, "top");
+  @include margin($content-header-padding, "bottom");
 
   .content-header--header & {
     @include margin($content-header-padding / 2, "top");
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include margin(0, "top");
+      @include margin($content-header-padding, "top");
     }
   }
 
   .content-header-grid__main & {
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include margin(30, "bottom");
+      @include margin(0, "top");
     };
   }
 }
@@ -83,10 +82,18 @@
   }
 
   .content-header__body {
-    height: #{($content-header-padding-small * 7)}px;
+    height: #{($content-header-padding * 5.5)}px;
+
+    .content-header-journal & {
+      height: #{($content-header-padding * 7)}px;
+    }
 
     .content-header--has-social-media-sharers & {
-      min-height: #{$content-header-padding * 9}px;
+      min-height: #{$content-header-padding * 8}px;
+
+      .content-header-journal & {
+        height: #{($content-header-padding * 9)}px;
+      }
     }
 
     display: flex;
@@ -101,19 +108,23 @@
       flex-direction: column;
       align-items: center;
       align-content: center;
-      height: #{$content-header-padding-small * 5}px;
       justify-content: center;
       @include padding(0 48);
       @include margin($content-header-padding * 2, "top");
       @include margin($content-header-padding, "bottom");
+
+      .content-header-journal & {
+        height: #{$content-header-padding * 5}px;
+      }
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      height: #{$content-header-padding-small * 7}px;
+      height: #{$content-header-padding * 7}px;
 
       .content-header--has-social-media-sharers & {
-        min-height: #{$content-header-padding-small * 9}px;
+        min-height: #{$content-header-padding * 9}px;
       }
+
     }
 
   }
@@ -122,7 +133,11 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 28px;
+    bottom: 52px;
+
+    .content-header-journal & {
+      bottom: 28px;
+    }
   }
 
   &.content-header--has-profile .content-header__body {
@@ -138,8 +153,13 @@
 
 .content-header__title {
   @include font-size-and-vertical-height(36, 48);
-  @include margin(6, "top");
-  @include margin(12, "bottom");
+  @include margin(0, "top");
+  @include margin(24, "bottom");
+
+  .content-header-journal & {
+    @include margin(6, "top");
+    @include margin(12, "bottom");
+  }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include font-size-and-vertical-height(41, 48);
@@ -164,6 +184,14 @@
 }
 
 .content-header--image {
+
+  .content-header__body {
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include margin($content-header-padding * 3, "top");
+    }
+
+  }
 
   .content-header__title {
     @include font-size-and-vertical-height(41, 48);
@@ -297,7 +325,7 @@
     }
 
     .content-header__profile_wrapper {
-      @include padding($content-header-padding-small 0 0);
+      @include padding($content-header-padding 0 0);
     }
 
   }
@@ -310,11 +338,24 @@
 }
 
 .content-header__subject_list {
+  @include blg-spacing("top", "small");
   @include label-subject-typeg();
   @include padding(0, "left");
-  @include padding(24, "top");
-  grid-column: 2/3;
+  @include padding(0, "right");
+  grid-row: 1;
+  margin: 0;
+  order: 2;
   text-align: center;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
+    @include padding(72, "left");
+    @include padding(72, "right");
+
+    .content-header-journal & {
+      @include padding(0, "left");
+      @include padding(0, "right");
+    }
+  }
 
   .content-header--image & {
     color: inherit;
@@ -354,8 +395,13 @@
 }
 
 .content-header__subject_link {
-  @include font-size-and-vertical-height(14);
+  @include label-subject-typeg();
+  @include font-size-and-vertical-height(13);
   text-decoration: none;
+
+  .content-header-journal & {
+    @include font-size-and-vertical-height(14);
+  }
 
   &:hover {
     @include color-link-hover();
@@ -370,10 +416,16 @@
 }
 
 .content-header__icons {
-  @include margin(0);
+  @include margin(14 0 0 0);
   @include padding(0);
   grid-row: 1;
   list-style: none;
+  order: 1;
+
+  .content-header-journal & {
+    @include margin(0);
+    order: 0;
+  }
 
   .content-header--image & {
 
@@ -394,18 +446,20 @@ $iconlist: cc oa;
 
 .content-header__icon {
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-position: left bottom;
   display: block;
-  height: 20px;
+  height: 22px;
+  width: 17px;
+
+  .content-header-journal & {
+    background-position: 0 0;
+    height: 20px;
+  }
 }
 
 @each $icon in $iconlist {
   .content-header__icon--#{$icon} {
     background-image: url("../img/icons/#{$icon}.svg"), linear-gradient(transparent, transparent);
-
-    .content-header-journal & {
-      background-image: url("../img/icons/#{$icon}-new.svg");
-    }
 
     &:hover {
       background-image: url("../img/icons/#{$icon}-hover.svg"), linear-gradient(transparent, transparent);
@@ -414,15 +468,21 @@ $iconlist: cc oa;
         background-image: url("../img/icons/#{$icon}-new.svg");
       }
     }
+
+    .content-header-journal & {
+      background-image: url("../img/icons/#{$icon}-new.svg");
+    }
   }
 }
 
-.content-header__icon--cc {
-  width: 18px;
-}
+.content-header-journal {
+  .content-header__icon--cc {
+    width: 18px;
+  }
 
-.content-header__icon--oa {
-  width: 16px;
+  .content-header__icon--oa {
+    width: 16px;
+  }
 }
 
 .content-header__download_link {
@@ -477,7 +537,7 @@ $iconlist: cc oa;
 
 .content-header__impact-statement {
   @include subtitle-typeg();
-  @include margin($content-header-padding-small, "bottom");
+  @include margin($content-header-padding, "bottom");
   max-width: 100%;
 
   a {
@@ -537,11 +597,15 @@ $iconlist: cc oa;
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 12px;
+    bottom: 18px;
     @include font-size-and-vertical-height(12, 12);
 
+    .content-header-journal & {
+      bottom: 12px;
+    }
+
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      bottom: #{$content-header-padding-small / 2}px;
+      bottom: #{$content-header-padding / 2}px;
       @include font-size-and-vertical-height(12);
     }
 
