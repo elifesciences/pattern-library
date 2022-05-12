@@ -11,41 +11,8 @@
 //  Fill: solid
 
 .social-media-sharers {
-  @include margin(0);
-  @include margin(24, "bottom");
-  @include padding(0);
-  justify-content: center;
-
-  li {
-    @include margin(8, "left");
-    @include margin(8, "right");
-    list-style: none;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  .content-header-grid__side-popup-block & {
-    display: flex;
-
-    li {
-      @include margin(0, "left");
-      @include margin(6, "right");
-
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-
-        &:first-child {
-          display: none;
-        }
-      }
-    }
-
-    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small - 1)}em) {
-      display: none;
-    }
-  }
-
+  flex-grow: 0;
+  flex-basis: 24px;
 }
 
 .social-media-sharer,
@@ -54,16 +21,16 @@
 }
 
 .social-media-sharer {
+
+  background-color: $color-text;
+  border-radius: #{$border-radius}px;
   color: $color-text--reverse;
-  margin: 0 9px;
+  margin: 0 8px;
   height: 24px;
   padding: 2px 0;
   text-decoration: none;
+  transition: 25ms ease-out;
   width: 24px;
-
-  &:hover svg path {
-    fill: $color-primary;
-  }
 
   .content-header--image & {
     background-color: transparent;
@@ -71,15 +38,13 @@
     padding: 1px 0;
   }
 
-  .content-header-grid__side-popup-block & {
+  .content-header:not(.content-header--image) & {
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      margin: 0 6px;
-
-      &:first-child {
-        margin: 0 6px 0 0;
-      }
+    &:hover,
+    &:active {
+      background-color: $color-primary;
     }
+
   }
 
 }
