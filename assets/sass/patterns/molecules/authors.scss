@@ -20,6 +20,10 @@
 .authors {
   @include margin(24, "bottom");
 
+  .content-header-grid__main & {
+    margin: 0 0 36px;
+  }
+
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     display: contents;
 
