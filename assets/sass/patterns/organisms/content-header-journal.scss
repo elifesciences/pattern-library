@@ -149,6 +149,7 @@
   @include padding(12, "bottom");
   grid-row: 1;
   justify-self: start;
+  position: relative;
 
   li {
     @include margin(12, "bottom");
