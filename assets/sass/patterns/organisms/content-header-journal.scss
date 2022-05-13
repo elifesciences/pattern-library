@@ -105,7 +105,12 @@
   display: grid;
 
   .content-header-grid__side-popup-block {
+    @include margin(12, "top");
     display: grid;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include margin(0, "top");
+    }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       display: initial;

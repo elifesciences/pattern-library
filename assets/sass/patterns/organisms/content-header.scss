@@ -489,15 +489,10 @@ $iconlist: cc oa;
   grid-row: 1;
   grid-column-end: 4;
   justify-self: end;
-  margin-top: 24px;
   order: 3;
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     margin-top: 14px;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include margin(14 0 0 0);
   }
 
   .content-header--image & {
