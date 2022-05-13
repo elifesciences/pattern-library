@@ -23,12 +23,17 @@
     justify-content: center;
 
     li {
-      @include margin(8, "left");
-      @include margin(8, "right");
+      @include margin(0, "left");
+      @include margin(0, "right");
       list-style: none;
 
       &:last-child {
         margin-right: 0;
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+        @include margin(8, "left");
+        @include margin(8, "right");
       }
     }
   }
