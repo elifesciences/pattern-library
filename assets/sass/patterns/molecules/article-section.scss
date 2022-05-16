@@ -267,6 +267,10 @@ $arrow-size: 5;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 1/13;
+
+    .content-header--magazine & {
+      grid-column: 2/12;
+    }
   }
 }
 

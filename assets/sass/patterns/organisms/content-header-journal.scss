@@ -112,6 +112,7 @@
 // Grid Side
 .content-header-grid__side {
   display: grid;
+  padding-bottom: 24px;
 
   .content-header-grid__side-popup-block {
     @include margin(12, "top");
