@@ -23,12 +23,11 @@
 
         <div class="content-container-grid">
 
-          {{#viewSelector}}
-            {{> molecules-view-selector }}
-          {{/viewSelector}}
-
-
           <div class="main-content-grid">
+
+            {{#authors}}
+              {{> molecules-authors}}
+            {{/authors}}
 
             <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
             {{#articleSections}}
