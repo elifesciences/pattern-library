@@ -26,6 +26,10 @@
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 1/13;
+
+    .content-header--magazine & {
+      grid-column: 2/12;
+    }
   }
 }
 
@@ -92,6 +96,11 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 1/10;
     padding-right: 0;
+
+    .content-header--magazine & {
+      grid-column: 2/10;
+      padding-right: 48px;
+    }
   }
 }
 
@@ -135,6 +144,10 @@
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 10/13;
+
+    .content-header--magazine & {
+      grid-column: 9/12;
+    }
   }
 }
 
