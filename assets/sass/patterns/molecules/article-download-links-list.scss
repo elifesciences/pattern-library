@@ -99,8 +99,6 @@
   }
 }
 
-.article-download-links-list__group--exclude {
-  .article-download-links-list__intro {
-    @include margin(24, "bottom");
-  }
+.article-download-links-list__intro {
+  @include margin(24, "bottom");
 }
