@@ -294,7 +294,6 @@ $arrow-size: 5;
       @include margin(0, "left");
       @include margin(70, "right");
       grid-column: 2/9;
-      grid-row: 2;
     }
   }
 }
@@ -309,6 +308,10 @@ $arrow-size: 5;
     grid-row: 2;
     justify-self: end;
     max-width: 200px;
+
+    .page--magazine & {
+      max-width: 210px;
+    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
@@ -316,5 +319,9 @@ $arrow-size: 5;
     @include margin(0, "right");
     grid-column: 10/13;
     grid-row: 1;
+
+    .page--magazine & {
+      grid-column: 9/12;
+    }
   }
 }
