@@ -12,7 +12,6 @@ services:
             - node_modules:/srv/pattern-library/node_modules
             - source_assets:/srv/pattern-library/source/assets
             - ./.container_source_assets:/srv/pattern-library/.container_source_assets
-            - test_build:/srv/pattern-library/test/build
     ui-builder:
         volumes:
             - ./source:/source
@@ -23,7 +22,7 @@ services:
             - public:/usr/share/nginx/html
     tests:
         image: elifesciences/pattern-library_assets-builder:${IMAGE_TAG}
-        command: node_modules/.bin/gulp --test-html=${TEST_HTML} tests:watch
+        command: make test
         ports:
             - "3000:3000"
             - "3001:3001"
@@ -32,12 +31,10 @@ services:
             - ./:/srv/pattern-library
             - /srv/pattern-library/node_modules
             - source_assets:/srv/pattern-library/source/assets
-            - test_build:/srv/pattern-library/test/build
         depends_on:
             - assets-builder
 
 volumes:
     node_modules:
     source_assets:
-    test_build:
     public:

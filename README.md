@@ -4,35 +4,25 @@ This pattern library uses as its starting point  `https://github.com/pattern-lab
 
 # Quickstart
 
-This sets up PatternLab to generate the html from mustache templates, and Gulp to handle transformation
-of scss to css, and other various build-related tasks. Note that artefacts generated from running Gulp are
-inputs for the generation of PatternLab files, so Gulp needs to run before PatternLab. When developing,
+This sets up PatternLab to generate the html from mustache templates, and make to handle transformation
+of scss to css, and other various build-related tasks. Note that artefacts generated from running make targets 
+are inputs for the generation of PatternLab files, so these need to run before PatternLab. When developing,
 it’s recommended to run watch tasks for both, which will take care of this.
 
 ## 1. Dependencies
 You'll need:
 
 * You have installed version 7.3.x of [PHP](https://www.php.net/).
-* You have installed version 6.x of [Node.js](https://nodejs.org/en/).
-* You have installed version 2.7.x of [Python](https://www.python.org/).
-* You have installed a recent version of [OpenJDK](https://openjdk.java.net/).
-
-Optionally, you might also require...
-
+* You have installed version 16.x of [Node.js](https://nodejs.org/en/).
 * You have installed a recent version of [Docker](https://www.docker.com/).
 
 ## 2. Automatic setup
 From the root directory run
 ```
-$ ./bin/dev
+$ make
 ```
-This will install and run the commands needed to get started, starting a web server on port 8889. If you need a custom port pass this as the first argument:
-```
-$ ./bin/dev 1234
-```
-This will run on localhost:1234 
-
-You should be good to go, open your browser and you will see the pattern lab.
+This will build the assets into the public folder and share it with a docker image containing a web server on port 8080.
+You should be good to go, open your browser and navigate to [localhost:8080](http://localhost:8080) and you will see the pattern lab.
 
 # Manual setup
 
@@ -42,13 +32,13 @@ You should be good to go, open your browser and you will see the pattern lab.
 - Create the public folder: `cd pattern-library && mkdir public`
 - Copy dependencies: `cp -r ./core/styleguide ./public/`
 
-## 2. Set up and run Gulp
+## 2. Build assets
 
-- Install required npm packages with `npm install`
-- Run `npx gulp` to build the css & js files.
-- then run `npx gulp watch` to watch for changes to files or do both in one fell swoop with `npx gulp && npx gulp watch` (the watch task on its own will not compile your assets until a file is changed).
-- run `npx gulp local:test:unit --mocha-grep=something` to pass the `--grep` option to mocha and run a subset of tests.
-- if generating files intended for website production, invoke with the production flag, like this: `npx gulp --environment production`. The minifies css & js files.
+- Install required npm packages with `make node_modules`
+- Run `make public` to build the css, js, font, and image files.
+- Run `make watch` to watch for changes to the assets and rebuild them when detected.
+- Run `make test` to run the tests.
+- When generating files intended for website production, invoke with the production environment variable, like this: `ENVIRONMENT=production make public`. The minifies css & js files.
 
 ## 3. Generate PatternLab
 
@@ -77,112 +67,11 @@ There is also a list of js file dependencies for each pattern, but individual js
 
 # Running tests
 
-## Selenium
-
 ```
-npx wdio wdio-local.conf.js --spec ./test-selenium/hello.spec.js
+make test
 ```
 
-will run a single test file. This set up relies on your locally installed Firefox.
-
-```
-npx gulp test:selenium:local
-```
-
-will instead run all the Selenium tests.
-
-```
-npx gulp test:selenium
-```
-
-is used inside the pattern-library VM and should not be used elsewhere.
-
-# Docker setup
-
-```
-docker-compose build
-```
-
-(re)builds all images:
-
-- `elifesciences/pattern-library_assets-builder` is a Node-based image for Gulp usage
-- `elifesciences/pattern-library_assets` is a lightweight image containing `assets/`
-- `elifesciences/pattern-library_ui-builder` is a PHP-based image for generation of the UI
-- `elifesciences/pattern-library` is a nginx-based image serving the UI
-- `elifesciences/pattern-library_ci` is used to run tests
-- an anonymous `selenium` image extension.
-
-```
-docker-compose up
-```
-
-runs containers so that the static website is accessible through a browser at http://localhost:8889
-
-```
-docker-compose run --rm ci ./project_tests.sh
-```
-
-runs all tests.
-
-To create an exploratory session with the browser used by the Selenium test suite:
-
-```
-docker-compose up -d
-curl -v localhost:4/wd/hub/session -d '{"desiredCapabilities":{"browserName":"firefox"}}'
-```
-
-Connect to this browser by using a VNC client (such as `vinagre`) on `localhost:5900`, with password `secret`. You can visit the pattern-library static website at `http://ui`.
-
-For a local build, run:
-
-```
-ENVIRONMENT=development docker-compose build assets
-```
-
-To watch for changes, run:
-
-```
-docker-compose build  # only necessary after switching branch or installing new dependencies
-bin/watch
-```
-
-Changes to `assets/js` (and similar) will be propagated to the `gulp watch` process. Changes to `source/_patterns` (and similar) will be propagated to the `php core/builder.php --watch` process.
-
-You can pass options to the underlying gulp:
-
-```
-bin/watch --sass-lint=false
-```
-
-To run additional gulp command in the same container where `gulp:watch` is running:
-
-```
-$ docker exec -it pattern-library-gulp-watch /bin/bash
-elife@...$ node_modules/.bin/gulp test:unit
-```
-
-The watch loop keeps a read-only host folder up-to-date with the latest assets:
-
-```
-$ ls .container_source_assets/
-css  fonts  img  js
-```
-
-Exit from this script with `Ctrl+C`.
-
-To watch a particular test in a browser:
-
-```
-$ bin/tests-watch test/hypothesisopener.html
-```
-
-Visit the URL that is printed out:
-
-```
-http://localhost:3000/test/hypothesisopener.html
-```
-
-The browser will refresh and rerun the test upon changes to it. Exit from this script with `Ctrl+C`.
+will run the unit tests.
 
 # Notes
 
