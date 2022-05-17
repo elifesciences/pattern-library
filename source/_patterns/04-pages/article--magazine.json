@@ -226,7 +226,7 @@
   "articleSections": [
     {
       "id": "main",
-      "hasBehaviour": false,
+      "hasBehaviour": true,
       "body": "<p>Look around: how many things do you see made of wood, cloth or plastic? These items may seem wildly different, but they all contain organic carbon and,&nbsp;therefore, they can&nbsp;only exist because plants, algae and certain bacteria are&nbsp;constantly&nbsp;using photosynthesis to turn sunlight, water and atmospheric carbon dioxide (CO<sub>2</sub>) into most of our food, furniture and fuel (<a href='#bib4' data-behaviour-initialised='true'>Fischer et al., 2016</a>). However, this process has gotten more difficult over time. Modern CO<sub>2</sub> levels are less than 1% of what they were when photosynthetic organisms first evolved, making the work of Rubisco, the enzyme that converts CO<sub>2</sub> into organic molecules, more difficult. In turn, the slow rate of CO<sub>2</sub> uptake limits the growth of many plants, including crops such as rice and wheat (<a href='#bib7' data-behaviour-initialised='true'>Long et al., 2006</a>).</p>",
       "doi": false
     },
