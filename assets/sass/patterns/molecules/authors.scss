@@ -19,7 +19,17 @@
 
 .authors {
   @include margin($content-header-padding, "bottom");
+
+  .content-header-grid__main & {
+    margin: 0 0 36px;
+  }
+
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+
+    .content-header-journal & {
+      display: contents;
+    }
+
     .institution_list {
       @include visuallyhidden();
     }
@@ -33,6 +43,16 @@
 .author_list {
   margin: 0;
   padding: 0;
+
+  .content-header-journal & {
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      padding: 0;
+    }
+  }
+
+  .content-header-grid__main & {
+    padding: 0 0 24px;
+  }
 }
 
 .author_list_item {

@@ -17,7 +17,7 @@ module.exports = class ViewSelector {
     this.$jumpLinksList = this.$elm.querySelector('.view-selector__list');
     this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
     this.cssFixedClassName = 'view-selector--fixed';
-    this.$navDetect = this.doc.querySelector('.contextual-data');
+    this.$navDetect = this.doc.querySelector('.content-container-grid');
 
     if (this.sideBySideViewAvailable()) {
       const $header = this.doc.getElementById('siteHeader');

@@ -25,6 +25,16 @@
 
 }
 
+.content-header-journal {
+  text-align: left;
+
+  &.wrapper {
+    &:after {
+      border-bottom: none;
+    }
+  }
+}
+
 .content-header--read-more {
   .content-header__subject_list {
     @include padding(0, "left");
@@ -47,6 +57,13 @@
       @include margin($content-header-padding, "top");
     }
   }
+
+  .content-header-grid__main & {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include margin(36, "bottom");
+      @include margin(0, "top");
+    };
+  }
 }
 
 .content-header--image {
@@ -67,8 +84,16 @@
   .content-header__body {
     height: #{($content-header-padding * 5.5)}px;
 
+    .content-header-journal & {
+      height: #{($content-header-padding * 7)}px;
+    }
+
     .content-header--has-social-media-sharers & {
       min-height: #{$content-header-padding * 8}px;
+
+      .content-header-journal & {
+        height: #{($content-header-padding * 9)}px;
+      }
     }
 
     display: flex;
@@ -87,6 +112,10 @@
       @include padding(0 48);
       @include margin($content-header-padding * 2, "top");
       @include margin($content-header-padding, "bottom");
+
+      .content-header-journal & {
+        height: #{$content-header-padding * 5}px;
+      }
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
@@ -105,6 +134,10 @@
     left: 0;
     right: 0;
     bottom: 52px;
+
+    .content-header-journal & {
+      bottom: 28px;
+    }
   }
 
   &.content-header--has-profile .content-header__body {
@@ -122,6 +155,11 @@
   @include font-size-and-vertical-height(36, 48);
   @include margin(0, "top");
   @include margin(24, "bottom");
+
+  .content-header-journal & {
+    @include margin(6, "top");
+    @include margin(12, "bottom");
+  }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include font-size-and-vertical-height(41, 48);
@@ -312,6 +350,11 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
     @include padding(72, "left");
     @include padding(72, "right");
+
+    .content-header-journal & {
+      @include padding(0, "left");
+      @include padding(0, "right");
+    }
   }
 
   .content-header--image & {
@@ -320,6 +363,10 @@
 
   &:before {
     color: $color-text-secondary;
+  }
+
+  .content-header-journal & {
+    @include padding(0, "top");
   }
 }
 
@@ -352,6 +399,10 @@
   @include font-size-and-vertical-height(13);
   text-decoration: none;
 
+  .content-header-journal & {
+    @include font-size-and-vertical-height(14);
+  }
+
   &:hover {
     @include color-link-hover();
   }
@@ -370,6 +421,11 @@
   grid-row: 1;
   list-style: none;
   order: 1;
+
+  .content-header-journal & {
+    @include margin(0);
+    order: 0;
+  }
 
   .content-header--image & {
 
@@ -394,17 +450,38 @@ $iconlist: cc oa;
   display: block;
   height: 22px;
   width: 17px;
+
+  .content-header-journal & {
+    background-position: 0 0;
+    height: 20px;
+  }
 }
 
 @each $icon in $iconlist {
   .content-header__icon--#{$icon} {
-    background-image: url("../img/icons/#{$icon}.png");
     background-image: url("../img/icons/#{$icon}.svg"), linear-gradient(transparent, transparent);
 
     &:hover {
-      background-image: url("../img/icons/#{$icon}-hover.png");
       background-image: url("../img/icons/#{$icon}-hover.svg"), linear-gradient(transparent, transparent);
+
+      .content-header-journal & {
+        background-image: url("../img/icons/#{$icon}-new.svg");
+      }
     }
+
+    .content-header-journal & {
+      background-image: url("../img/icons/#{$icon}-new.svg");
+    }
+  }
+}
+
+.content-header-journal {
+  .content-header__icon--cc {
+    width: 18px;
+  }
+
+  .content-header__icon--oa {
+    width: 16px;
   }
 }
 
@@ -412,15 +489,10 @@ $iconlist: cc oa;
   grid-row: 1;
   grid-column-end: 4;
   justify-self: end;
-  margin-top: 24px;
   order: 3;
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     margin-top: 14px;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include margin(14 0 0 0);
   }
 
   .content-header--image & {
@@ -450,7 +522,12 @@ $iconlist: cc oa;
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     width: #{$content-header-download-width-medium}px;
   }
+}
 
+.content-header-grid__side {
+  .content-header__download_icon {
+    width: #{$content-header-download-width}px;
+  }
 }
 
 .content-header__impact-statement {
@@ -517,6 +594,10 @@ $iconlist: cc oa;
     right: 0;
     bottom: 18px;
     @include font-size-and-vertical-height(12, 12);
+
+    .content-header-journal & {
+      bottom: 12px;
+    }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       bottom: #{$content-header-padding / 2}px;

@@ -1,5 +1,5 @@
 .modal-container {
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.9);
   height: 100%;
   left: 0;
   position: fixed;
@@ -21,7 +21,7 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium + 48)}em) {
-    margin: 24px auto;
+    margin: 180px auto 24px;
     max-width: 730px;
   }
 
@@ -31,6 +31,16 @@
     grid-row: 1;
     justify-self: start;
     padding-top: 0;
+  }
+
+  .social-media-sharers {
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small - 1)}em) {
+      @include padding(24, "top");
+      display: flex;
+      grid-column: 1/3;
+      grid-row: 4;
+      justify-content: center;
+    }
   }
 
   .reference {
@@ -43,6 +53,37 @@
       display: flex;
     }
   }
+
+  .button-collection {
+    display: unset;
+    flex-direction: column;
+    grid-column: 1/3;
+
+    .button-collection__item {
+      float: none;
+    }
+
+    .button {
+      @include margin(12, "bottom");
+      width: 100%;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      grid-column: 1/3;
+
+      .button-collection__item {
+        float: left;
+      }
+
+      .button {
+        @include margin(12, "bottom");
+        @include padding(15 24 14 24);
+        line-height: 1.5;
+        text-decoration: none;
+        width: auto;
+      }
+    }
+  }
 }
 
 .modal-content__body {
@@ -50,14 +91,22 @@
   grid-column: 1/3;
 
   .button {
+    @include margin(24, "bottom");
     justify-self: center;
-    margin-bottom: 24px;
+    grid-column: 1/3;
+    grid-row: 3;
+  }
+
+  .form-item {
+    grid-column: 1/3;
   }
 }
 
 .modal-content__show {
   opacity: 1;
+  overflow-y: scroll;
   visibility: visible;
+  z-index: 1000;
 }
 
 .modal-content__close-button {
@@ -73,4 +122,8 @@
 
 .modal-nojs {
   visibility: hidden;
+}
+
+.modal-content__clipboard-btn {
+  min-width: 189px;
 }

@@ -1,0 +1,112 @@
+<header
+  class="content-header content-header-journal wrapper{{#header.possible}} content-header--header{{/header.possible}}{{#socialMediaSharers}} content-header--has-social-media-sharers{{/socialMediaSharers}}"
+  data-behaviour="ContentHeader">
+
+  <div class="content-container-grid">
+    <div class="content-header-grid-top">
+
+      {{#breadcrumb}}
+        {{> atoms-breadcrumb}}
+      {{/breadcrumb}}
+
+      {{#header}}
+
+        {{#hasSubjects}}
+          <ol class="content-header__subject_list">
+            {{#subjects}}
+              <li class="content-header__subject_list_item">
+                <a href="{{url}}" class="content-header__subject_link">
+                  <span class="content-header__subject">{{{name}}}</span>
+                </a>
+              </li>
+            {{/subjects}}
+          </ol>
+        {{/hasSubjects}}
+      {{/header}}
+    </div>
+    <div class="content-header-grid__main">
+
+      <div class="content-header__body">
+        <h1 class="content-header__title {{#titleLength}}content-header__title--{{titleLength}}{{/titleLength}}{{^titleLength}}content-header__title--medium{{/titleLength}}">{{{title}}}</h1>
+
+        {{#impactStatement}}
+          <div class="content-header__impact-statement">{{{impactStatement}}}</div>
+        {{/impactStatement}}
+
+      </div>
+
+      {{#authors}}
+        {{> molecules-authors}}
+      {{/authors}}
+
+      <div class="content-header__footer">
+        {{#meta}}
+          <div class="content-header__meta">
+            {{> molecules-meta-journal}}
+          </div>
+        {{/meta}}
+
+        {{#doi}}
+          {{> atoms-doi}}
+        {{/doi}}
+
+        {{#licence}}
+          <ul class="content-header__icons">
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Open_access"
+                  class="content-header__icon content-header__icon--oa">
+                    <span class="visuallyhidden">Open access</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{licence}}" class="content-header__icon content-header__icon--cc">
+                <span class="visuallyhidden">Copyright information</span>
+              </a>
+            </li>
+          </ul>
+        {{/licence}}
+      </div>
+
+    </div>
+    <div class="content-header-grid__side">
+
+      <div class="content-header-grid__side-popup-block">
+        <ul class="content-header-grid__side-popup-block__list">
+          {{#download}}
+            <li>
+                <a href="{{download}}" class="content-header__download_link content-header-grid__side-popup-block__link">
+                  <span class="svg-background-image download"></span>Download
+                </a>
+            </li>
+          {{/download}}
+          {{#cite}}
+            <li>
+              <a href="{{cite}}" id="modalContentCitations" class="content-header-grid__side-popup-block__link">
+                <span class="svg-background-image cite"></span>Cite</a>
+            </li>
+          {{/cite}}
+          <li data-hypothesis-trigger>
+            <span class="content-header-grid__side-popup-block__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span>Comment<span aria-hidden="true"><span data-visible-annotation-count></span> </span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
+          </li>
+          <li class="content-header__share-listing">
+            <a href="" id="modalContentShare" class="content-header-grid__side-popup-block__link">
+            <span class="svg-background-image share"></span>Share</a>
+          </li>
+        </ul>
+
+        <div class="content-header-grid__side-popup-block__inner-block">
+          {{#socialMediaSharers}}
+            {{> atoms-social-media-sharers-journal}}
+          {{/socialMediaSharers}}
+
+          {{#contextualData}}
+            {{> molecules-contextual-data }}
+          {{/contextualData}}
+        </div>
+      </div>
+
+    </div>
+    <div class="divider"></div>
+  </div>
+
+</header>

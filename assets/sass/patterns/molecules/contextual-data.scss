@@ -3,6 +3,10 @@
 .contextual-data {
   @include label-content-typeg($color-text-secondary, false);
   @include font-size-and-vertical-height(12);
+
+  .content-header & {
+    border-bottom: none;
+  }
 }
 
 .contextual-data__list {
@@ -10,6 +14,12 @@
   margin: 0;
   @include padding(11 0);
   text-align: center;
+
+  .content-header & {
+    border-bottom: none;
+    @include padding(0 0 12);
+    text-align: right;
+  }
 }
 
 .contextual-data__item {
@@ -28,6 +38,13 @@
     &:hover {
       color: $color-primary;
     }
+  }
+
+  .content-header & {
+    @include font-size-and-vertical-height(14, 24);
+    display: list-item;
+    padding: 0;
+    list-style: none;
   }
 
 }
@@ -54,6 +71,14 @@
 
 .contextual-data__cite {
   display: none;
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+  .contextual-data__list {
+    .content-header & {
+      text-align: left;
+    }
+  }
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}rem) {

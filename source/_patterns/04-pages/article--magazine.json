@@ -147,7 +147,8 @@
       "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
       "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
     },
-    "download": "#articleDownloadLinksList",
+    "download": "#download",
+    "cite": "#cite-this-article",
     "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
     "longTitle": true,
     "header": {
@@ -172,8 +173,6 @@
     },
 
     "meta": {
-      "url": "#",
-      "text": "Insight",
       "date": {
         "forHuman": {
           "dayOfMonth": 10,
@@ -185,9 +184,58 @@
     }
 
   },
+  "modalWindowCitation": {
+    "closeBtnText": "Close",
+    "body": "<div class='reference'><ol class='reference__authors_list'><li class='reference__author'><a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'> Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>Juwayeyi YM</li></ol> <span class='reference__authors_list_suffix'>(1993)</span> Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift<div class='reference__origin'> <i>Nature</i> <strong>365</strong>:833–836.</div><span class='doi'>https://doi.org/10.1038/365833a0</span></div><ol class='button-collection'><li class='button-collection__item'>  <button class='button button--default' type='button' data-behaviour='ButtonClipboard' data-clipboard='Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring UJuwayeyi YM(1993) Oldest Homo and Pliocene biogeography of the Malawi rift Nature 365:833–836.https://doi.org/10.1038/365833a0'>Copy to clipboard</button></li><li class='button-collection__item'>  <button class='button button--default button--secondary' type='button'>Download Bibtex</button></li><li class='button-collection__item'>  <button class='button button--default button--secondary' type='button'>Download .RIS</button></li></ol>",
+    "title": "Cite this article",
+    "triggerId": "modalContentCitations"
+  },
+  "doi": "10.7554/eLife.16370",
+  "contextualData": {
+    "metricsData": {
+      "data": [
+        { "text": "<a href=\"#\"><strong>149</strong> views</a>" },
+        { "text": "<strong>5</strong> citations" }
+      ]
+    }
+  },
+  "breadcrumb": {
+    "items": [
+      {
+        "url": "",
+        "name": "Insight"
+      }
+    ]
+  },
 
   "class": "contextual-data__doi",
-
+  "viewSelector": {
+    "articleUrl": "#articleUrl",
+    "jumpLinks": {
+      "links": [
+        {
+          "name": "Abstract",
+          "url": "#abstract"
+        },
+        {
+          "name": "eLife digest",
+          "url": "#digest"
+        },
+        {
+          "name": "Introduction",
+          "url": "#introduction"
+        },
+        {
+          "name": "Article and author information",
+          "url": "#articleInfo"
+        },
+        {
+          "name": "References",
+          "url": "#references"
+        }
+      ]
+    }
+  },
   "articleSections": [
     {
       "isFirst": true,
@@ -228,7 +276,7 @@
 
 
   "pl-only-article-section-for-download-links": {
-    "id": "articleDownloadLinksList",
+    "id": "download",
 
     "title": "Article download links",
 
@@ -239,41 +287,10 @@
           "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF)</span>",
           "items": [
             {
-              "name": "Article",
-              "url": "#"
-            },
-            {
-              "name": "Figures",
-              "url": "#"
-            }
-          ]
-        },
-        {
-          "title": "Download citations<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
-          "items": [
-            {
-              "name": "BibTex",
-              "url": "#"
-            },
-            {
-              "name": "EndNote",
-              "url": "#"
-            },
-            {
-              "name": "EndNote 8",
-              "url": "#"
-            },
-            {
-              "name": "Refworks Tagged",
-              "url": "#"
-            },
-            {
-              "name": "RIS",
-              "url": "#"
-            },
-            {
-              "name": "Medlars",
-              "url": "#"
+              "primary": {
+                "name": "Article PDF",
+                "url": "#"
+              }
             }
           ]
         },
@@ -281,20 +298,36 @@
           "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
           "items": [
             {
-              "name": "Mendeley",
-              "url": "#"
+              "primary": {
+                "name": "Mendeley",
+                "url": "#"
+              }
             },
             {
-              "name": "ReadCube",
-              "url": "#"
+              "primary": {
+                "name": "ReadCube",
+                "url": "#"
+              }
+            }
+          ]
+        },
+        {
+          "jsHideGroup": true,
+          "title": "Cite this article<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
+          "id": "cite-this-article",
+          "intro": "<div class=\"reference\">    <ol class=\"reference__authors_list\">        <li class=\"reference__author\">          Lee R Berger</li>        <li class=\"reference__author\">          John Hawks</li>        <li class=\"reference__author\">          Darryl J de Ruiter</li>        <li class=\"reference__author\">          Steven E Churchill</li>        <li class=\"reference__author\">          Peter Schmid</li>        <li class=\"reference__author\">          Lucas K Delezene</li>        <li class=\"reference__author\">          Tracy L Kivell</li>        <li class=\"reference__author\">          Heather M Garvin</li>        <li class=\"reference__author\">          Scott A Williams</li>        <li class=\"reference__author\">          Jeremy M DeSilva</li>        <li class=\"reference__author\">          Matthew M Skinner</li>        <li class=\"reference__author\">          Charles M Musiba</li>        <li class=\"reference__author\">          Noel Cameron</li>        <li class=\"reference__author\">          Trenton W Holliday</li>        <li class=\"reference__author\">          William Harcourt-Smith</li>        <li class=\"reference__author\">          Rebecca R Ackermann</li>        <li class=\"reference__author\">          Markus Bastir</li>        <li class=\"reference__author\">          Barry Bogin</li>        <li class=\"reference__author\">          Debra Bolter</li>        <li class=\"reference__author\">          Juliet Brophy</li>        <li class=\"reference__author\">          Zachary D Cofran</li>        <li class=\"reference__author\">          Kimberly A Congdon</li>        <li class=\"reference__author\">          Andrew S Deane</li>        <li class=\"reference__author\">          Mana Dembo</li>        <li class=\"reference__author\">          Michelle Drapeau</li>        <li class=\"reference__author\">          Marina C Elliott</li>        <li class=\"reference__author\">          Elen M Feuerriegel</li>        <li class=\"reference__author\">          Daniel Garcia-Martinez</li>        <li class=\"reference__author\">          David J Green</li>        <li class=\"reference__author\">          Alia Gurtov</li>        <li class=\"reference__author\">          Joel D Irish</li>        <li class=\"reference__author\">          Ashley Kruger</li>        <li class=\"reference__author\">          Myra F Laird</li>        <li class=\"reference__author\">          Damiano Marchi</li>        <li class=\"reference__author\">          Marc R Meyer</li>        <li class=\"reference__author\">          Shahed Nalla</li>        <li class=\"reference__author\">          Enquye W Negash</li>        <li class=\"reference__author\">          Caley M Orr</li>        <li class=\"reference__author\">          Davorka Radovcic</li>        <li class=\"reference__author\">          Lauren Schroeder</li>        <li class=\"reference__author\">          Jill E Scott</li>        <li class=\"reference__author\">          Zachary Throckmorton</li>        <li class=\"reference__author\">          Matthew W Tocheri</li>        <li class=\"reference__author\">          Caroline VanSickle</li>        <li class=\"reference__author\">          Christopher S Walker</li>        <li class=\"reference__author\">          Pianpian Wei</li>        <li class=\"reference__author\">          Bernhard Zipfel</li>    </ol>    <span class=\"reference__authors_list_suffix\">(2015)</span>      <div class=\"reference__title\"><i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa</div>    <div class=\"reference__origin\"><i>eLife</i> <b>4</b>:e09560.</div>    <span class=\"doi\">      https://doi.org/10.7554/eLife.09560    </span></div>",
+          "items": [
+            {
+              "primary": {
+                "name": "Download BibTex",
+                "url": "#"
+              }
             },
             {
-              "name": "Papers App",
-              "url": "#"
-            },
-            {
-              "name": "CiteUlike",
-              "url": "#"
+              "primary": {
+                "name": "Download RIS",
+                "url": "#"
+              }
             }
           ]
         }
