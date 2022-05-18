@@ -1255,7 +1255,16 @@
         }
       ]
     },
-    "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
+
+    "image": {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/70/70/",
+        "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
+        "altText": "Meaningful alt text here please."
+      },
+      "type": "small"
+    },
+    "title": "Reproducibility Project: Cancer Biology",
     "url": "#",
 
     "secondaryInfo": "H Thi-Kim Vu et al",
