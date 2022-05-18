@@ -307,11 +307,6 @@ $arrow-size: 5;
     grid-column: 8/12;
     grid-row: 2;
     justify-self: end;
-    max-width: 200px;
-
-    .page--magazine & {
-      max-width: 210px;
-    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
