@@ -58,10 +58,8 @@ dependencies:
     - title
   headerLink:
     - title
-    - headingLevel
   hasBehaviour:
     - title
-    - headingLevel
   isInitiallyClosed:
     - hasBehaviour
   doi:
