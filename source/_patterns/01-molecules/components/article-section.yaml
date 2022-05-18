@@ -52,11 +52,15 @@ properties:
       - name
       - url
 dependencies:
+  headerLink:
+    - title
+  headingLevel:
+    - title
+  hasBehaviour:
+    - title
   isInitiallyClosed:
     - hasBehaviour
   doi:
     - id
 required:
-  - title
-  - headingLevel
   - body
