@@ -170,6 +170,12 @@
   width: 72px;
 }
 
+.teaser__picture--link {
+  @media only all and (min-width: 900px) and (max-width: 1199px) {
+    display: none;
+  }
+}
+
 @media only all and (min-width: 700px) {
 
   .teaser__picture--big {

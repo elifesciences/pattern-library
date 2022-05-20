@@ -26,7 +26,7 @@
           - teaser__picture--small: 70px square image, floating right.
         }}
     {{#image}}
-      <a href="{{{url}}}" tabindex="-1">
+      <a href="{{{url}}}" class="teaser__picture--link" tabindex="-1">
         <picture class="teaser__picture teaser__picture--{{type}}">
           {{#sources}}
             <source srcset="{{srcset}}"
