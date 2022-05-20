@@ -17,12 +17,8 @@
 
   .content-header & {
     border-bottom: none;
-    @include padding(0 0 12);
-    text-align: right;
-  }
-
-  .page--magazine & {
     @include padding(0);
+    text-align: right;
   }
 }
 
