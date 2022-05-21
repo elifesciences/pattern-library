@@ -195,7 +195,7 @@ module.exports = class HypothesisTrigger {
   updateVisibleCountArticleBody(count, selector) {
     const target = this.$elm.querySelector(selector);
     if (count) {
-      target.innerHTML = ' (' + count + ')';
+      target.innerHTML = '&nbsp;(' + count + ')';
     } else {
       target.innerHTML = '';
     }
