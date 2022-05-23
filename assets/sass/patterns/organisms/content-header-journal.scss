@@ -26,6 +26,10 @@
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 1/13;
+
+    .page--magazine & {
+      grid-column: 2/12;
+    }
   }
 }
 
@@ -92,6 +96,11 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 1/10;
     padding-right: 0;
+
+    .page--magazine & {
+      grid-column: 2/10;
+      padding-right: 48px;
+    }
   }
 }
 
@@ -103,6 +112,7 @@
 // Grid Side
 .content-header-grid__side {
   display: grid;
+  padding-bottom: 24px;
 
   .content-header-grid__side-popup-block {
     @include margin(12, "top");
@@ -135,6 +145,10 @@
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 10/13;
+
+    .page--magazine & {
+      grid-column: 9/12;
+    }
   }
 }
 

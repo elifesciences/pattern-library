@@ -267,6 +267,10 @@ $arrow-size: 5;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 1/13;
+
+    .page--magazine & {
+      grid-column: 2/12;
+    }
   }
 }
 
@@ -285,6 +289,12 @@ $arrow-size: 5;
     @include margin(48, "left");
     grid-column: 3/10;
     grid-row: 1;
+
+    .page--magazine & {
+      @include margin(0, "left");
+      @include margin(70, "right");
+      grid-column: 2/9;
+    }
   }
 }
 
@@ -304,5 +314,9 @@ $arrow-size: 5;
     @include margin(0, "right");
     grid-column: 10/13;
     grid-row: 1;
+
+    .page--magazine & {
+      grid-column: 9/12;
+    }
   }
 }
