@@ -33,7 +33,8 @@
     cursor: pointer;
   }
 
-  a {
+  a,
+  .contextual-data__counter {
     color: inherit;
     &:hover {
       color: $color-primary;
@@ -71,6 +72,11 @@
 
 .contextual-data__cite {
   display: none;
+}
+
+.contextual-data__counter {
+  color: $color-text;
+  font-weight: bold;
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
