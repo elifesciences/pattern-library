@@ -18,7 +18,7 @@
   .modal-content & {
     flex-basis: auto;
     @include margin(0);
-    @include margin(24, "bottom");
+    @include margin(12, "bottom");
     @include padding(0);
     justify-content: center;
 
