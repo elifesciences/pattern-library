@@ -112,7 +112,6 @@
 // Grid Side
 .content-header-grid__side {
   display: grid;
-  padding-bottom: 24px;
 
   .content-header-grid__side-popup-block {
     @include margin(12, "top");
@@ -187,10 +186,12 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    @include margin(24, "bottom");
+    @include padding(24, "bottom");
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin(24, "bottom");
+    @include padding(12, "bottom");
     justify-self: unset;
     grid-row: 1;
     border-bottom: 1px solid #e0e0e0;
