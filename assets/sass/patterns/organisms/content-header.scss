@@ -586,6 +586,7 @@ $iconlist: cc oa;
 }
 
 .content-header__meta {
+  @include padding(24, "bottom");
 
   .content-header--image & {
     position: absolute;
@@ -603,6 +604,10 @@ $iconlist: cc oa;
       @include font-size-and-vertical-height(12);
     }
 
+  }
+
+  .content-header-grid__main & {
+    @include padding(0, "bottom");
   }
 
 }
