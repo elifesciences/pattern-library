@@ -156,6 +156,7 @@
   justify-self: end;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include padding(24, "bottom");
     justify-self: unset;
     grid-row: 2;
   }

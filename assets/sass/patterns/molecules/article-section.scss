@@ -279,6 +279,7 @@ $arrow-size: 5;
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     grid-column: 2/12;
     grid-row: 2;
+    min-width: 0;
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
