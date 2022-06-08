@@ -3,7 +3,7 @@ PROJECT := $(notdir $(CURDIR))
 NODE_VERSION ?= gallium
 PHP_VERSION ?= 7.3-fpm
 COMPOSER_VERSION ?= 1.6.4
-PORT ?= 8080
+PORT ?= 8889
 
 # Source files that when changed should trigger a rebuild.
 FONTS = $(shell find assets/fonts -type f)
@@ -28,7 +28,7 @@ ifeq ($(ENVIRONMENT),production)
 endif
 
 # Targets that don't result in output of the same name.
-.PHONY: start watch stop clean distclean test fonts images
+.PHONY: start watch stop clean distclean test test_notify fonts images
 
 # When no target is specified, the default target to run.
 .DEFAULT_GOAL := start
@@ -56,7 +56,7 @@ fonts: source/assets $(FONTS)
 	@cp -r ./assets/fonts $(CURDIR)/source/assets
 
 # Optimise image assets
-images:
+images: node_modules
 	@mkdir -p source/assets/img/errors source/assets/img/icons source/assets/img/patterns/molecules source/assets/img/patterns/organisms
 	@npx imagemin-cli './assets/img/errors' -o ./source/assets/img/errors/ --plugin.mozjpeg.progressive=true
 	@npx imagemin-cli './assets/img/icons' -o ./source/assets/img/icons --plugin.mozjpeg.progressive=true
@@ -77,6 +77,9 @@ public: fonts images source/assets/css/all.css source/assets/js/main.js
 	@cp -r ./core/styleguide $(CURDIR)/public/
 	@docker run --rm -v $(CURDIR):/$(PROJECT):rw -w=/$(PROJECT) php:$(PHP_VERSION) php ./core/builder.php --generate
 
+test_notify:
+	@echo "Building tests. This might take a while. Grab a coffee!"
+
 # Builds the JavaScript for the tests
 test/build/%.spec.js: test/build test/%.spec.js
 	@npx browserify -o ./$@ ./test/$*.spec.js
@@ -86,7 +89,7 @@ test/%.html: test/build/%.spec.js
 	@npx mocha-headless-chrome -f ./$@ -a no-sandbox
 
 # Runs all tests
-test: $(TESTS_OUTPUT) $(TESTS_HTML)
+test: test_notify $(TESTS_OUTPUT) $(TESTS_HTML)
 
 # Watch files for changes and rebuild when detected
 watch: public
@@ -95,12 +98,12 @@ watch: public
 	@-npx nodemon -C -w ./assets -e "png,tiff,svg,woff2,scss,js" -x "make public"
 	@-docker stop $(PROJECT)
 
-# Builds and runs the application on localhost:8080.
+# Builds and runs the application on localhost:8889.
 start: public
 	@echo "$(PROJECT) listening on 'http://localhost:$(PORT)'"
 	@docker run --rm --name $(PROJECT) -p $(PORT):80 -e NGINX_ENTRYPOINT_QUIET_LOGS=1 -v $(CURDIR)/public:/usr/share/nginx/html/:ro nginx:alpine
 
 # If running, stops the container.
 stop:
-	echo $(SOURCES)
+	@echo $(SOURCES)
 	@-docker stop $(PROJECT)
