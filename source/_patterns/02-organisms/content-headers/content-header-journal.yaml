@@ -11,6 +11,10 @@ properties:
     type: boolean
     enum:
       - true
+  isOneColumn:
+    type: boolean
+    enum:
+      - true
   breadcrumb:
     $ref: ../../00-atoms/components/breadcrumb.yaml
   doi:
