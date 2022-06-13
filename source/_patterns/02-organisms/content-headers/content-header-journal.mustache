@@ -2,7 +2,7 @@
   class="content-header content-header-journal wrapper{{#isMagazine}} page--magazine{{/isMagazine}}{{#header.possible}} content-header--header{{/header.possible}}{{#socialMediaSharers}} content-header--has-social-media-sharers{{/socialMediaSharers}}"
   data-behaviour="ContentHeader">
 
-  <div class="content-container-grid">
+  <div class="content-container-grid{{#isOneColumn}} content-header__one-column{{/isOneColumn}}">
     <div class="content-header-grid-top">
 
       {{#breadcrumb}}
@@ -40,6 +40,12 @@
       {{/authors}}
 
       <div class="content-header__footer">
+        {{#isOneColumn}}
+          {{#contextualData}}
+            {{> molecules-contextual-data }}
+          {{/contextualData}}
+        {{/isOneColumn}}
+
         {{#meta}}
           <div class="content-header__meta">
             {{> molecules-meta-journal}}
@@ -67,45 +73,53 @@
         {{/licence}}
       </div>
 
+      {{#isOneColumn}}
+        {{#socialMediaSharers}}
+          {{> atoms-social-media-sharers-journal}}
+        {{/socialMediaSharers}}
+      {{/isOneColumn}}
+
     </div>
-    <div class="content-header-grid__side">
+    {{^isOneColumn}}
+      <div class="content-header-grid__side">
 
-      <div class="content-header-grid__side-popup-block">
-        <ul class="content-header-grid__side-popup-block__list">
-          {{#download}}
-            <li>
-                <a href="{{download}}" class="content-header__download_link content-header-grid__side-popup-block__link">
-                  <span class="svg-background-image download"></span>Download
-                </a>
+        <div class="content-header-grid__side-popup-block">
+          <ul class="content-header-grid__side-popup-block__list">
+            {{#download}}
+              <li>
+                  <a href="{{download}}" class="content-header__download_link content-header-grid__side-popup-block__link">
+                    <span class="svg-background-image download"></span>Download
+                  </a>
+              </li>
+            {{/download}}
+            {{#cite}}
+              <li>
+                <a href="{{cite}}" id="modalContentCitations" class="content-header-grid__side-popup-block__link">
+                  <span class="svg-background-image cite"></span>Cite</a>
+              </li>
+            {{/cite}}
+            <li data-hypothesis-trigger>
+              <span class="content-header-grid__side-popup-block__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span>Comment<span aria-hidden="true"><span data-visible-annotation-count></span> </span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
             </li>
-          {{/download}}
-          {{#cite}}
-            <li>
-              <a href="{{cite}}" id="modalContentCitations" class="content-header-grid__side-popup-block__link">
-                <span class="svg-background-image cite"></span>Cite</a>
+            <li class="content-header__share-listing">
+              <a href="" id="modalContentShare" class="content-header-grid__side-popup-block__link">
+              <span class="svg-background-image share"></span>Share</a>
             </li>
-          {{/cite}}
-          <li data-hypothesis-trigger>
-            <span class="content-header-grid__side-popup-block__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span>Comment<span aria-hidden="true"><span data-visible-annotation-count></span> </span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
-          </li>
-          <li class="content-header__share-listing">
-            <a href="" id="modalContentShare" class="content-header-grid__side-popup-block__link">
-            <span class="svg-background-image share"></span>Share</a>
-          </li>
-        </ul>
+          </ul>
 
-        <div class="content-header-grid__side-popup-block__inner-block">
-          {{#socialMediaSharers}}
-            {{> atoms-social-media-sharers-journal}}
-          {{/socialMediaSharers}}
+          <div class="content-header-grid__side-popup-block__inner-block">
+            {{#socialMediaSharers}}
+              {{> atoms-social-media-sharers-journal}}
+            {{/socialMediaSharers}}
 
-          {{#contextualData}}
-            {{> molecules-contextual-data }}
-          {{/contextualData}}
+            {{#contextualData}}
+              {{> molecules-contextual-data }}
+            {{/contextualData}}
+          </div>
         </div>
-      </div>
 
-    </div>
+      </div>
+    {{/isOneColumn}}
     <div class="divider"></div>
   </div>
 
