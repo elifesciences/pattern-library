@@ -71,14 +71,20 @@
             </li>
           </ul>
         {{/licence}}
-      </div>
 
       {{#isOneColumn}}
-        {{#socialMediaSharers}}
-          {{> atoms-social-media-sharers-journal}}
-        {{/socialMediaSharers}}
+        <div class="content-header__one-column-container">
+          <ul>
+            <li data-hypothesis-trigger>
+              <span class="content-header-grid__side-popup-block__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span>Comment<span aria-hidden="true"><span data-visible-annotation-count></span> </span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
+            </li>
+          </ul>
+          {{#socialMediaSharers}}
+            {{> atoms-social-media-sharers-journal}}
+          {{/socialMediaSharers}}
+        </div>
       {{/isOneColumn}}
-
+      </div>
     </div>
     {{^isOneColumn}}
       <div class="content-header-grid__side">
