@@ -7,6 +7,11 @@
   .content-header & {
     border-bottom: none;
   }
+
+  &:after {
+    content: "\00a0\2219\00a0";
+    white-space: pre;
+  }
 }
 
 .contextual-data__list {
