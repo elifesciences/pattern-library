@@ -43,6 +43,10 @@
       display: flex;
       width: 100%;
     }
+
+    .content-header__one-column & {
+      display: grid;
+    }
   }
 
   .meta {
@@ -257,7 +261,6 @@
 }
 
 .content-header__one-column {
-  border: 1px solid black;
 
   ul {
     display: inline-block;
@@ -265,14 +268,16 @@
 
   .social-media-sharers {
     display: inline-block;
-    border: 1px solid red;
 
     li {
       display: inline;
+      margin-left: 0;
+      margin-right: 0;
 
-      a {
-        margin: 0;
+      a:last-child {
+        margin-right: 0;
       }
+
     }
   }
 
@@ -284,5 +289,15 @@
   .content-header-grid__main & {
     padding-right: 0;
     grid-column: 1/13;;
+  }
+}
+
+.content-header__one-column-container {
+  display: flex;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 9/13;
   }
 }

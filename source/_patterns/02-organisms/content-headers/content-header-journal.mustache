@@ -40,11 +40,6 @@
       {{/authors}}
 
       <div class="content-header__footer">
-        {{#isOneColumn}}
-          {{#contextualData}}
-            {{> molecules-contextual-data }}
-          {{/contextualData}}
-        {{/isOneColumn}}
 
         {{#meta}}
           <div class="content-header__meta">
@@ -52,38 +47,43 @@
           </div>
         {{/meta}}
 
+        {{#isOneColumn}}
+          {{#contextualData}}
+            {{> molecules-contextual-data }}
+          {{/contextualData}}
+        {{/isOneColumn}}
+
         {{#doi}}
           {{> atoms-doi}}
         {{/doi}}
 
-        {{#licence}}
-          <ul class="content-header__icons">
-            <li>
-              <a href="https://en.wikipedia.org/wiki/Open_access"
-                  class="content-header__icon content-header__icon--oa">
-                    <span class="visuallyhidden">Open access</span>
-              </a>
-            </li>
-            <li>
-              <a href="{{licence}}" class="content-header__icon content-header__icon--cc">
-                <span class="visuallyhidden">Copyright information</span>
-              </a>
-            </li>
-          </ul>
-        {{/licence}}
+      {{#licence}}
+        <ul class="content-header__icons">
+          <li>
+            <a href="https://en.wikipedia.org/wiki/Open_access"
+                class="content-header__icon content-header__icon--oa">
+                  <span class="visuallyhidden">Open access</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{licence}}" class="content-header__icon content-header__icon--cc">
+              <span class="visuallyhidden">Copyright information</span>
+            </a>
+          </li>
+        </ul>
+      {{/licence}}
 
       {{#isOneColumn}}
         <div class="content-header__one-column-container">
-          <ul>
-            <li data-hypothesis-trigger>
-              <span class="content-header-grid__side-popup-block__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span>Comment<span aria-hidden="true"><span data-visible-annotation-count></span> </span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
-            </li>
-          </ul>
+          <div data-hypothesis-trigger>
+            <span class="content-header-grid__side-popup-block__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
+          </div>
           {{#socialMediaSharers}}
             {{> atoms-social-media-sharers-journal}}
           {{/socialMediaSharers}}
         </div>
       {{/isOneColumn}}
+
       </div>
     </div>
     {{^isOneColumn}}
