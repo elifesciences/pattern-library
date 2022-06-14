@@ -1,4 +1,4 @@
-<div class="global-wrapper" data-item-type="digest">
+<div class="global-wrapper page--magazine" data-item-type="digest">
   <div class="global-inner">
     <div class="wrapper wrapper--site-header">
       {{#siteHeader}}
@@ -8,28 +8,22 @@
     <main role="main" class="main blg-margin-bottom-large" id="maincontent">
 
       {{#contentHeader}}
-        {{> organisms-content-header}}
+        {{> organisms-content-header-journal }}
       {{/contentHeader}}
-
-      {{#contextualData}}
-        <div class="wrapper">
-        {{> molecules-contextual-data }}
-        </div>
-      {{/contextualData}}
 
       <div class="wrapper wrapper--content">
 
-        <div class="grid">
+        <div class="content-container-grid">
 
-          <div class="{{>pages-pl-only-grid-content-page-main-col-css-classes}}">
+          <div class="main-content-grid">
 
             {{#captionedAsset}}
               {{> molecules-captioned-asset}}
             {{/captionedAsset}}
-
-            {{#text}}
-              {{{ text }}}
-            {{/text}}
+          
+            {{#mainContent}}
+              {{{ mainContent }}}
+            {{/mainContent}}
 
             {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
             {{#articleMeta}}
@@ -40,14 +34,11 @@
 
           </div>
 
-          <div class="{{> pages-pl-only-grid-content-page-secondary-col-css-classes}}">
+          <div class="secondary-column-grid">
 
             {{#related}}
 
               <div class="grid-secondary-column__item grid-secondary-column__item--wide-only">
-                {{# annotationCount}}
-                  {{> atoms-speech-bubble}}
-                {{/annotationCount}}
                 <div>
                   <ol class="listing-list">
                     <li class="listing-list__item">
@@ -66,10 +57,6 @@
       </div>
 
     </main>
-
-    {{#furtherReading}}
-      {{> organisms-listing-read-more }}
-    {{/furtherReading}}
 
     {{#emailCta}}
     {{> organisms-email-cta }}
