@@ -30,5 +30,17 @@
         { "text": "<a href=\"#\"><span class=\"contextual-data__counter\">149</span> views</a>" }
       ]
     }
+  },
+  "breadcrumb": {
+    "items": [
+      {
+        "url": "",
+        "name": "Magazine"
+      },
+      {
+        "url": "",
+        "name": "Digest"
+      }
+    ]
   }
 }
