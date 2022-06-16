@@ -103,6 +103,10 @@
     border-bottom: none;
     display: inline-block;
     text-align: left;
+
+    .content-header__one-column & {
+      align-self: auto;
+    }
   }
 
   .contextual-data__cite_wrapper {

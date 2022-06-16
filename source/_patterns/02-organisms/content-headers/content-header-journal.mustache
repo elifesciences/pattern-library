@@ -41,17 +41,17 @@
 
       <div class="content-header__footer">
 
-        {{#meta}}
-          <div class="content-header__meta">
-            {{> molecules-meta-journal}}
-          </div>
-        {{/meta}}
-
         {{#isOneColumn}}
           {{#contextualData}}
             {{> molecules-contextual-data }}
           {{/contextualData}}
         {{/isOneColumn}}
+
+        {{#meta}}
+          <div class="content-header__meta">
+            {{> molecules-meta-journal}}
+          </div>
+        {{/meta}}
 
         {{#doi}}
           {{> atoms-doi}}

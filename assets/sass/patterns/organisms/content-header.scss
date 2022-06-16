@@ -439,6 +439,10 @@
     top: #{$blg-space-extra-small-in-px}px;
   }
 
+  .content-header__one-column & {
+    grid-row: auto;
+  }
+
 }
 
 $iconlist: cc oa;
