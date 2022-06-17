@@ -45,7 +45,7 @@
     }
 
     .content-header__one-column & {
-      display: grid;
+      display: flex;
     }
   }
 
@@ -290,10 +290,5 @@
 
 .content-header__one-column-container {
   display: flex;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    display: flex;
-    justify-content: flex-end;
-    grid-column: 9/13;
-  }
+  margin-left: auto;
 }
