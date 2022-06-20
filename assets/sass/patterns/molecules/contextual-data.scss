@@ -43,9 +43,10 @@
   a,
   .contextual-data__counter {
     color: inherit;
-    &:hover {
-      color: $color-primary;
-    }
+  }
+
+  a:hover {
+    color: $color-primary;
   }
 
   .content-header & {
