@@ -94,11 +94,6 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     grid-column: 2/12;
     grid-row: 2;
-
-    .content-header__one-column & {
-      grid-column: 3/11;
-      padding-right: 0;
-    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
