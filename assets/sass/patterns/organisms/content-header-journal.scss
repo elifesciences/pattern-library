@@ -54,19 +54,14 @@
     }
   }
 
-  .meta {
-
+  .doi {
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      &:after {
+      &:before {
         content: "\00a0\2219\00a0";
         font-weight: bold;
-        margin-right: 3px;
+        @include margin(3, "left");
       }
     }
-  }
-
-  .doi {
-    margin-right: 6px;
   }
 
   .content-header__icons {

@@ -422,7 +422,7 @@
   order: 1;
 
   .content-header-journal & {
-    @include margin(0);
+    @include margin(0 0 0 6);
     order: 0;
   }
 
