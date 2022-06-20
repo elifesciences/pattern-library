@@ -271,6 +271,12 @@ $arrow-size: 5;
     .page--magazine & {
       grid-column: 2/12;
     }
+
+    .content-header__one-column & {
+      @include margin(-24, "left");
+      @include padding(0, "right");
+      grid-column: 3/11;
+    }
   }
 }
 
