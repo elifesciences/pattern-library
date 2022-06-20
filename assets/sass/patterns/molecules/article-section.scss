@@ -327,7 +327,7 @@ $arrow-size: 5;
     @include margin(94, "left");
     @include margin(-24, "right");
     grid-column: 8/12;
-    grid-row: 2;
+    grid-row: 1;
     justify-self: end;
 
     .content--narrow-column & {
