@@ -30,6 +30,11 @@
     .page--magazine & {
       grid-column: 2/12;
     }
+
+    .content-header__one-column & {
+      grid-column: 3/11;
+      margin-left: -24px;
+    }
   }
 }
 
@@ -89,12 +94,21 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     grid-column: 2/12;
     grid-row: 2;
+
+    .content-header__one-column & {
+      grid-column: 3/11;
+      padding-right: 0;
+    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin($site-spacing-large, "bottom");
     grid-column: 2/10;
     padding-right: 48px;
+
+    .content-header__one-column & {
+      grid-column: 2/12;
+    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
@@ -105,11 +119,12 @@
       grid-column: 2/10;
       padding-right: 48px;
     }
-  }
 
-  .content-header__one-column & {
-    grid-column: 3/11;
-    padding-right: 0;
+    .content-header__one-column & {
+      grid-column: 3/12;
+      margin-left: -24px;
+      padding-right: 46px;
+    }
   }
 }
 
