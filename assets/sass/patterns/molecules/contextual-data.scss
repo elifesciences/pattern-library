@@ -9,6 +9,8 @@
   }
 
   .content-header__one-column & {
+    display: flex;
+
     &:after {
       content: "\00a0\2219\00a0";
       white-space: pre;
@@ -98,7 +100,6 @@
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}rem) {
   .contextual-data {
     border-bottom: 1px solid $color-text-dividers;
-    display: flex;
   }
 
   .contextual-data__list {
