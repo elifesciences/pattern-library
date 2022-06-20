@@ -42,6 +42,7 @@
       <div class="content-header__footer">
 
         {{#isOneColumn}}
+          <div class="content-header__footer-column-left">
           {{#contextualData}}
             {{> molecules-contextual-data }}
           {{/contextualData}}
@@ -72,6 +73,9 @@
           </li>
         </ul>
       {{/licence}}
+      {{#isOneColumn}}
+        </div>
+      {{/isOneColumn}}
 
       {{#isOneColumn}}
         <div class="content-header__one-column-container">

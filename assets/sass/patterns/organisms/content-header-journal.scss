@@ -50,7 +50,20 @@
     }
 
     .content-header__one-column & {
-      display: flex;
+      display: block;
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        display: flex;
+      }
+
+      .content-header__footer-column-left {
+        @include margin(24, "bottom");
+        display: flex;
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          @include margin(0, "bottom");
+        }
+      }
     }
   }
 
