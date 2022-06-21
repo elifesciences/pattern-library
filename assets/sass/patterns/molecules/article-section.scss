@@ -271,12 +271,6 @@ $arrow-size: 5;
     .page--magazine & {
       grid-column: 2/12;
     }
-
-    .content-header__one-column & {
-      @include margin(-24, "left");
-      @include padding(0, "right");
-      grid-column: 3/11;
-    }
   }
 }
 
@@ -323,7 +317,8 @@ $arrow-size: 5;
     grid-row: 2;
 
     .content--narrow-column & {
-      grid-column: 2;
+      grid-column: 2/12;
+      grid-row: 3;
     }
   }
 
@@ -338,6 +333,7 @@ $arrow-size: 5;
       @include margin(0, "left");
       @include margin(0, "right");
       grid-column: 9/12;
+      grid-row: 2;
     }
   }
 
@@ -354,6 +350,7 @@ $arrow-size: 5;
     .content--narrow-column & {
       @include margin(-24, "right");
       grid-column: 9/11;
+      grid-row: 1;
     }
   }
 }
