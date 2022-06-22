@@ -87,6 +87,11 @@
 .contextual-data__counter {
   color: $color-text;
   font-weight: bold;
+
+  .content-header__footer & {
+    font-weight: normal;
+  }
+
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
