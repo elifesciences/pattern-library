@@ -38,6 +38,10 @@
     }
   }
 
+  .content-header__one-column-container & {
+    @include margin(0, "bottom");
+  }
+
   .content-header-grid__side-popup-block & {
     display: flex;
 

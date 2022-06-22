@@ -12,7 +12,10 @@
     display: flex;
 
     &:after {
+      @include margin(3, "left");
+      @include margin(3, "right");
       content: "\00a0\2219\00a0";
+      font-weight: bold;
       white-space: pre;
     }
   }

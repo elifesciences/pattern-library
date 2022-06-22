@@ -324,6 +324,7 @@ $arrow-size: 5;
     .content--narrow-column & {
       grid-column: 2/12;
       grid-row: 3;
+      margin-top: 24px;
     }
   }
 
@@ -358,4 +359,8 @@ $arrow-size: 5;
       grid-row: 1;
     }
   }
+}
+
+.wrapper.wrapper--content.content--narrow-column {
+  padding-top: 0;
 }
