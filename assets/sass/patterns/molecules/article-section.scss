@@ -263,13 +263,18 @@ $arrow-size: 5;
   border-bottom: 1px solid $color-text-dividers;
   grid-column: 2/12;
   height: 1px;
-  width: 100%;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     grid-column: 1/13;
 
     .page--magazine & {
       grid-column: 2/12;
+    }
+
+    .content-header__one-column & {
+      grid-column: 3/11;
+      margin-left: -24px;
+      margin-right: -24px;
     }
   }
 }
@@ -284,6 +289,10 @@ $arrow-size: 5;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     grid-column: 2/9;
+
+    .content--narrow-column & {
+      grid-column: 2/9;
+    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
@@ -296,11 +305,28 @@ $arrow-size: 5;
       @include margin(70, "right");
       grid-column: 2/9;
     }
+
+    .content--narrow-column & {
+      @include margin(-24, "left");
+      @include margin(0, "right");
+      grid-column: 3/9;
+    }
   }
 }
 
 .secondary-column-grid {
   display: grid;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    grid-column: 2/12;
+    grid-row: 2;
+
+    .content--narrow-column & {
+      grid-column: 2/12;
+      grid-row: 3;
+      margin-top: 24px;
+    }
+  }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     @include margin(94, "left");
@@ -308,6 +334,13 @@ $arrow-size: 5;
     grid-column: 8/12;
     grid-row: 2;
     justify-self: end;
+
+    .content--narrow-column & {
+      @include margin(0, "left");
+      @include margin(0, "right");
+      grid-column: 9/12;
+      grid-row: 2;
+    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
@@ -319,5 +352,15 @@ $arrow-size: 5;
     .page--magazine & {
       grid-column: 9/12;
     }
+
+    .content--narrow-column & {
+      @include margin(-24, "right");
+      grid-column: 9/11;
+      grid-row: 1;
+    }
   }
+}
+
+.wrapper.wrapper--content.content--narrow-column {
+  padding-top: 0;
 }

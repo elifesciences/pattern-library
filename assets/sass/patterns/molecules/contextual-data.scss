@@ -7,6 +7,18 @@
   .content-header & {
     border-bottom: none;
   }
+
+  .content-header__one-column & {
+    display: flex;
+
+    &:after {
+      @include margin(3, "left");
+      @include margin(3, "right");
+      content: "\00a0\2219\00a0";
+      font-weight: bold;
+      white-space: pre;
+    }
+  }
 }
 
 .contextual-data__list {
@@ -36,9 +48,10 @@
   a,
   .contextual-data__counter {
     color: inherit;
-    &:hover {
-      color: $color-primary;
-    }
+  }
+
+  a:hover {
+    color: $color-primary;
   }
 
   .content-header & {
@@ -77,6 +90,11 @@
 .contextual-data__counter {
   color: $color-text;
   font-weight: bold;
+
+  .content-header__footer & {
+    font-weight: normal;
+  }
+
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
@@ -90,7 +108,6 @@
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}rem) {
   .contextual-data {
     border-bottom: 1px solid $color-text-dividers;
-    display: flex;
   }
 
   .contextual-data__list {
@@ -98,6 +115,10 @@
     border-bottom: none;
     display: inline-block;
     text-align: left;
+
+    .content-header__one-column & {
+      align-self: auto;
+    }
   }
 
   .contextual-data__cite_wrapper {
