@@ -11,6 +11,10 @@ properties:
     type: boolean
     enum:
       - true
+  isOneColumn:
+    type: boolean
+    enum:
+      - true
   breadcrumb:
     $ref: ../../00-atoms/components/breadcrumb.yaml
   doi:
@@ -57,7 +61,7 @@ properties:
       hasSubjects: [subjects]
       subjects: [hasSubjects]
   socialMediaSharers:
-    $ref: ../../00-atoms/components/social-media-sharers.yaml
+    $ref: ../../00-atoms/components/social-media-sharers-journal.yaml
   authors:
     $ref: ../../01-molecules/components/authors.yaml
   download:

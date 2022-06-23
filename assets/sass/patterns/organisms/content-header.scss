@@ -422,7 +422,7 @@
   order: 1;
 
   .content-header-journal & {
-    @include margin(0);
+    @include margin(0 0 0 6);
     order: 0;
   }
 
@@ -437,6 +437,10 @@
   .content-header--image & {
     left: 12px;
     top: #{$blg-space-extra-small-in-px}px;
+  }
+
+  .content-header__one-column & {
+    grid-row: auto;
   }
 
 }

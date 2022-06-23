@@ -30,6 +30,11 @@
     .page--magazine & {
       grid-column: 2/12;
     }
+
+    .content-header__one-column & {
+      grid-column: 3/11;
+      margin-left: -24px;
+    }
   }
 }
 
@@ -43,21 +48,33 @@
       display: flex;
       width: 100%;
     }
-  }
 
-  .meta {
+    .content-header__one-column & {
+      display: block;
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      &:after {
-        content: "\00a0\2219\00a0";
-        font-weight: bold;
-        margin-right: 3px;
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        display: flex;
+      }
+
+      .content-header__footer-column-left {
+        @include margin(24, "bottom");
+        display: flex;
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          @include margin(0, "bottom");
+        }
       }
     }
   }
 
   .doi {
-    margin-right: 6px;
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      &:before {
+        @include margin(3, "left");
+        content: "\00a0\2219\00a0";
+        font-weight: bold;
+      }
+    }
   }
 
   .content-header__icons {
@@ -91,6 +108,11 @@
     @include margin($site-spacing-large, "bottom");
     grid-column: 2/10;
     padding-right: 48px;
+
+    .content-header__one-column & {
+      grid-column: 2/12;
+      padding-right: 0;
+    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
@@ -100,6 +122,12 @@
     .page--magazine & {
       grid-column: 2/10;
       padding-right: 48px;
+    }
+
+    .content-header__one-column & {
+      grid-column: 3/12;
+      margin-left: -24px;
+      padding-right: 46px;
     }
   }
 }
@@ -249,4 +277,37 @@
 .share {
   -webkit-mask: url("../img/icons/share.svg") no-repeat 0 0;
   mask: url("../img/icons/share.svg") no-repeat 0 0;
+}
+
+.content-header__one-column {
+
+  .social-media-sharers {
+    display: inline-block;
+
+    li {
+      display: inline;
+      margin-left: 0;
+      margin-right: 0;
+
+      a:last-child {
+        margin-right: 0;
+      }
+
+    }
+  }
+
+  .content-header__footer & {
+    display: flex;
+    width: 100%;
+  }
+
+  .content-header-grid__main & {
+    padding-right: 0;
+    grid-column: 1/13;;
+  }
+}
+
+.content-header__one-column-container {
+  display: flex;
+  margin-left: auto;
 }
