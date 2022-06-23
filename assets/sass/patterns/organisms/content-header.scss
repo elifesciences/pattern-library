@@ -592,15 +592,15 @@ $iconlist: cc oa;
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 18px;
+    bottom: #{$content-header-padding / 4}px;
     @include font-size-and-vertical-height(12, 12);
 
     .content-header-journal & {
-      bottom: 12px;
+      bottom: #{$content-header-padding / 2}px;
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      bottom: #{$content-header-padding / 2}px;
+      bottom: 0;
       @include font-size-and-vertical-height(12);
     }
 
