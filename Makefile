@@ -92,11 +92,8 @@ test/%.html: test/build/%.spec.js
 test: test_notify $(TESTS_OUTPUT) $(TESTS_HTML)
 
 # Watch files for changes and rebuild when detected
-watch: public
-	@docker build . -f Dockerfile.watch -t pattern-library-watch
-	@docker run -d --rm --name $(PROJECT) -p $(PORT):8889 -v $(CURDIR):/opt/pattern-library:rw pattern-library-watch /opt/pattern-library/bin/dev
-	@-npx nodemon -C -w ./assets -e "png,tiff,svg,woff2,scss,js" -x "make public"
-	@-docker stop $(PROJECT)
+watch:
+	docker-compose -f docker-compose.watch.yml up
 
 # Builds and runs the application on localhost:8889.
 start: public
