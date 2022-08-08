@@ -172,7 +172,8 @@ gulp.task('fonts', () => {
  * Creates a sourcemap.
  ******************************************************************************/
 
-gulp.task('js', ['js:hint', 'js:cs', 'js:copyLoader'], () => {
+//TODO reintroduce js:cs
+gulp.task('js', ['js:hint', 'js:copyLoader'], () => {
 
     return browserify('./assets/js/main.js', { debug: true })
           .transform(babel)
