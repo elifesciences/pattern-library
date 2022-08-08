@@ -10,6 +10,9 @@ allOf:
       clipboardText:
         type: string
         minLength: 1
+      color:
+        type: string
+        minLength: 1
     required:
       - text
   - oneOf:

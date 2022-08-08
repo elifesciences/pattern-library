@@ -10,7 +10,7 @@ const babel             = require('babelify');
 const browserify        = require('browserify');
 const browserSync       = require('browser-sync');
 const buffer            = require('vinyl-buffer');
-const concat            = require('gulp-concat');
+// const concat            = require('gulp-concat');
 const del               = require('del');
 const express           = require('express');
 const globby            = require('globby');
@@ -172,7 +172,7 @@ gulp.task('fonts', () => {
  * Creates a sourcemap.
  ******************************************************************************/
 
-gulp.task('js', ['js:hint', 'js:cs', 'js:copyLoader'], () => {
+gulp.task('js', ['js:hint', 'js:copyLoader'], () => {
 
     return browserify('./assets/js/main.js', { debug: true })
           .transform(babel)
@@ -294,7 +294,7 @@ gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'], () =>
   // no better standalone solution without Gulp 4.x
   // https://stackoverflow.com/questions/22824546/how-to-run-gulp-tasks-sequentially-one-after-the-other/38818657#38818657
   gulp.on('task_stop', function (event) {
-    if (['generateCss', 'img', 'fonts', 'js'].indexOf(event.task) != -1) {
+    if (['generateCss', 'img', 'fonts', 'js'].indexOf(event.task) !== -1) {
       gulp.start('extractAssets');
     }
   });
