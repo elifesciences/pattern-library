@@ -153,7 +153,12 @@
           "name": "Epidemiology and Global Health",
           "url": "#"
         }
-      ]
+      ],
+      "curationLabels": {
+        "list": [
+          "Important", "Curation label"
+        ]
+      }
     },
     "authors": {
       "list": [

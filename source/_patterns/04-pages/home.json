@@ -371,6 +371,11 @@
               }
             ]
           },
+          "curationLabels": {
+            "list": [
+              "Important", "Curation label", "Ground-Breaking"
+            ]
+          },
           "title": "Quorum sensing control of Type VI secretion factors restricts the proliferation of quorum-sensing mutants",
           "url": "#",
           "secondaryInfo": "Charlotte Majerczyk et al.",

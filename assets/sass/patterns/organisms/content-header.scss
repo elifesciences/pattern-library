@@ -376,21 +376,9 @@
   list-style-type: none;
   padding: 0;
 
-  & .content-header__subject:after {
-    content: ", ";
-  }
-
   .content-header--image & {
     color: inherit;
   }
-}
-
-.content-header__subject_list_item:last-child {
-
-  & .content-header__subject:after {
-    content: "";
-  }
-
 }
 
 .content-header__subject_link {
