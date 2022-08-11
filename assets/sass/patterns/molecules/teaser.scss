@@ -16,7 +16,7 @@
 .teaser__context_label_list {
   @include nospace();
   position: relative;
-  @include truncate-with-ellipsis();
+  display: block;
 
   .listing-list--highlights & {
     display: none;
@@ -25,25 +25,15 @@
 }
 
 .teaser__context_label_item {
-  display: inline;
+  display: inline-block;
   list-style-type: none;
-  @include nospace();
-
-  & .teaser__context_label:after {
-    content: ", ";
-  }
-
-  &:last-child {
-    & .teaser__context_label:after {
-      content: "";
-    }
-  }
-
+  margin-bottom: 0.75rem;
 }
 
 .teaser__context_label {
   // content-label rather than subject-label as not it's not always subjects in here
   @include label-content-typeg();
+  @include font-size-and-vertical-height(12);
 }
 
 // Extra specificity to override normalised style
@@ -51,21 +41,33 @@
   text-decoration: none;
 
   .teaser__context_label {
+    background-color: #ebf2fa;
+    padding: 5px 10px;
+    margin-right: 12px;
+    border-radius: 3px;
     color: $color-primary;
+    font-weight: bold;
   }
 
 }
 
 .article-secondary-column .teaser .teaser__context_label {
+  @include font-size-and-vertical-height(12);
+  background-color: #edeff4;
+  color: #000;
+  display: inline;
+  padding: 5px 10px;
+  margin-right: 12px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.teaser .teaser__context_label_link:hover {
+  text-decoration: none;
+}
+
+.article-secondary-column .teaser .teaser__context_label {
   color: $color-text-secondary;
-}
-
-.teaser__context_label_link:after {
-  content: ", ";
-}
-
-.teaser__context_label_link:last-child:after {
-  content: "";
 }
 
 .teaser__context_label_link:hover {
