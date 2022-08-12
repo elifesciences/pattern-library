@@ -15,9 +15,14 @@
                     <ol class="content-header__subject_list">
                         {{#subjects}}
                             <li class="content-header__subject_list_item">
-                                <a href="{{url}}" class="content-header__subject_link">
+                                {{#url}}
+                                    <a href="{{url}}" class="content-header__subject_link">
+                                        <span class="content-header__subject">{{{name}}}</span>
+                                    </a>
+                                {{/url}}
+                                {{^url}}
                                     <span class="content-header__subject">{{{name}}}</span>
-                                </a>
+                                {{/url}}
                             </li>
                         {{/subjects}}
                     </ol>
@@ -28,7 +33,8 @@
                             <li class="teaser__curation_label_item">
                                 <div class="teaser__curation_label">{{{.}}}</div>
                             </li>
-                        {{/list}}</ol>
+                        {{/list}}
+                    </ol>
                 {{/curationLabels}}
             {{/header}}
         </div>
