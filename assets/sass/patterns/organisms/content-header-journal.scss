@@ -38,6 +38,30 @@
   }
 }
 
+.content-header__subject_link {
+  text-decoration: none;
+
+  .content-header__subject {
+    background-color: #ebf2fa;
+    padding: 5px 10px;
+    margin-right: 12px;
+    border-radius: 3px;
+    color: $color-primary;
+    font-weight: bold;
+  }
+}
+
+.content-header__subject_list_item > .content-header__subject {
+  @include font-size-and-vertical-height(12);
+  background-color: #edeff4;
+  color: #000;
+  display: inline;
+  padding: 5px 10px;
+  margin-right: 12px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
 // Grid Main
 .content-header-grid__main {
   @include margin($site-spacing, "bottom");

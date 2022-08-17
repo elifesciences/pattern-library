@@ -26,6 +26,15 @@ properties:
           required:
             - name
             - url
+  curationLabels:
+    type: object
+    properties:
+      list:
+        type: array
+        item:
+          type: string
+          minLength: 1
+        minItems: 1
   url:
     oneOf:
       - type: string

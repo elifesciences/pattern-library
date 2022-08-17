@@ -66,13 +66,27 @@
         <ol class="content-header__subject_list">
           {{#subjects}}
             <li class="content-header__subject_list_item">
-              <a href="{{url}}" class="content-header__subject_link">
-                <span class="content-header__subject">{{{name}}}</span>
-              </a>
+                {{#url}}
+                  <a href="{{url}}" class="content-header__subject_link">
+                    <span class="content-header__subject">{{{name}}}</span>
+                  </a>
+                {{/url}}
+                {{^url}}
+                    <span class="content-header__subject">{{{name}}}</span>
+                {{/url}}
             </li>
           {{/subjects}}
         </ol>
       {{/hasSubjects}}
+      {{#curationLabels}}
+          <ol class="teaser__curation_label_list" aria-label="Informational labels">
+              {{#list}}
+                  <li class="teaser__curation_label_item">
+                      <div class="teaser__curation_label">{{{.}}}</div>
+                  </li>
+              {{/list}}
+          </ol>
+      {{/curationLabels}}
     {{/header}}
 
     {{#licence}}
