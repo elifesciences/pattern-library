@@ -9,6 +9,11 @@
       }
     ]
   },
+  "curationLabels": {
+    "list": [
+      "Important", "Curation label", "Ground-Breaking"
+    ]
+  },
   "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
   "url": "#",
 

@@ -9,6 +9,11 @@
       }
     ]
   },
+  "curationLabels": {
+    "list": [
+      "Important", "Curation label", "Ground-Breaking"
+    ]
+  },
   "title": "Reproducibility Project: Cancer Biology",
   "url": "#",
 

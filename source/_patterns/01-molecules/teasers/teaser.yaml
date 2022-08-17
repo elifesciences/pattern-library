@@ -116,3 +116,4 @@ required:
   - url
   # - footer # Not in teaser~50-secondary-event.json or teaser~45-main-event.json
   # - contextLabel # Not in teaser~60-grid-style--podcast.json or teaser~55-grid-style--labs.json or teaser~40-basic.json
+  # - curationLabels # Not in teaser~60-grid-style--podcast.json or teaser~55-grid-style--labs.json or teaser~40-basic.json

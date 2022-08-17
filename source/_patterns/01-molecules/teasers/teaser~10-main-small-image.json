@@ -11,6 +11,11 @@
       }
     ]
   },
+  "curationLabels": {
+    "list": [
+      "Important", "Curation label", "Ground-Breaking"
+    ]
+  },
 
   "image": {
     "fallback": {

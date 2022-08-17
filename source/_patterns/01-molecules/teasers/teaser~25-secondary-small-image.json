@@ -13,6 +13,11 @@
       }
     ]
   },
+  "curationLabels": {
+    "list": [
+      "Important", "Curation label", "Ground-Breaking"
+    ]
+  },
   "title": "Mapping Ebola in wild animals for better disease control",
   "url": "#",
   "secondaryInfo": "Bloggs, J. et al",
