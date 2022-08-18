@@ -9,49 +9,49 @@
 
     <main role="main" class="main" id="maincontent">
 
-      {{#carousel}}
-        {{> organisms-carousel}}
-      {{/carousel}}
+        {{#hero-banner}}
+        {{> organisms-hero-banner}}
+        {{/hero-banner}}
 
-      {{#leadParas}}
+        {{#leadParas}}
         <div class="wrapper">
-          {{> molecules-lead-paras}}
+            {{> molecules-lead-paras}}
         </div>
-      {{/leadParas}}
+        {{/leadParas}}
 
-      {{#sectionsListingLink}}
-      <div class="wrapper">
-        {{> atoms-section-listing-link}}
-      </div>
-      {{/sectionsListingLink}}
-
-      <div class="wrapper wrapper--listing">
-        <div class="grid">
-          <div class="grid__item one-whole x-large--eight-twelfths listing-column-main">
-
-            {{#mainTeasers}}
-              {{> organisms-listing-teasers}}
-            {{/mainTeasers}}
-
-          </div>
-
-          <div class="grid__item one-whole x-large--four-twelfths listing-column-secondary">
-
-              {{#secondaryTeasers}}
-                {{> organisms-listing-teasers}}
-              {{/secondaryTeasers}}
-
-          </div>
-
-          <div>
-      </div>
-
-
-      {{#sectionsListing}}
-        <div class="wrapper u-pad-top-lg">
-          {{> molecules-section-listing}}
+        {{#sectionsListingLink}}
+        <div class="wrapper">
+            {{> atoms-section-listing-link}}
         </div>
-      {{/sectionsListing}}
+        {{/sectionsListingLink}}
+
+        <div class="wrapper wrapper--listing">
+            <div class="grid">
+                <div class="grid__item one-whole x-large--eight-twelfths listing-column-main">
+
+                    {{#mainTeasers}}
+                    {{> organisms-listing-teasers}}
+                    {{/mainTeasers}}
+
+                </div>
+
+                <div class="grid__item one-whole x-large--four-twelfths listing-column-secondary">
+
+                    {{#secondaryTeasers}}
+                    {{> organisms-listing-teasers}}
+                    {{/secondaryTeasers}}
+
+                </div>
+
+                <div>
+                </div>
+
+
+                {{#sectionsListing}}
+                <div class="wrapper u-pad-top-lg">
+                    {{> molecules-section-listing}}
+                </div>
+                {{/sectionsListing}}
 
     </main>
 

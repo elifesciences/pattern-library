@@ -3,8 +3,7 @@
     "title": {
       "homePagePath": "#"
     },
-    "primaryLinks":
-    {
+    "primaryLinks": {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
@@ -78,8 +77,7 @@
     },
 
 
-    "secondaryLinks":
-    {
+    "secondaryLinks": {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
@@ -140,134 +138,33 @@
 
   },
 
-  "carousel": {
-    "heading": "Highlights",
-    "items": [
-      {
-        "subjects": {
-          "list": [
-            {
-              "name": "Neuroscience",
-              "url": "#"
-            },
-            {
-              "name": "Cell biology",
-              "url": "#"
-            }
-          ]
-        },
-        "title": "Sensitivity vs stability in neurones",
-        "longTitle": true,
-        "url": "#link-to-article",
-        "button": {
-          "text": "Read article",
-          "path": "#link-to-article",
-          "classes": "button--reversed button--small"
-        },
-        "meta": {
-          "url": "#",
-          "text": "Research article",
-          "date": {
-            "forHuman": {
-              "dayOfMonth": 10,
-              "month": "Sep",
-              "year": 2015
-            },
-            "forMachine": "2015-09-10"
-          }
-        },
-        "image": {
-          "fallback": {
-            "defaultPath": "https://unsplash.it/1114/336",
-            "altText": ""
+  "hero-banner": {
+    "details": {
+      "label": "Structure Biology and Mulecular Biophysics",
+      "heading": "Filamentation and the regulation of PRPP synthase",
+      "summary": "Cryo-EM structures of two types of prokaryotic Phosphoribosyl pyrophosphate synthase filaments reveal tat filamentation into cytoophidia provides a new layer of metabolic regulation.",
+      "authors": "Filamentation and the regulation of PRPP synthase",
+      "meta": {
+        "url": "#",
+        "text": "Research article",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 23,
+            "month": "Jan",
+            "year": 2022
           },
-          "credit": {
-            "text": "Illustration by <a href=''>Joe Bloggs</a>",
-            "elementId": "iAmTheIdOfTheImageCreditElement"
-          }
-        }
-      },
-      {
-        "subjects": {
-          "list": [
-            {
-              "name": "Genomics and evolutionary biology",
-              "url": "#"
-            }
-          ]
-        },
-        "title": "Cancer cells follow the leader",
-        "longTitle": true,
-        "url": "#link-to-article",
-        "button": {
-          "text": "Read article",
-          "path": "#link-to-article",
-          "classes": "button--reversed button--small"
-        },
-        "meta": {
-          "url": "#",
-          "text": "Research article",
-          "date": {
-            "forHuman": {
-              "dayOfMonth": 10,
-              "month": "Sep",
-              "year": 2015
-            },
-            "forMachine": "2015-09-10"
-          }
-        },
-        "image": {
-          "fallback": {
-            "defaultPath": "https://unsplash.it/1114/337",
-            "altText": ""
-          }
-        }
-      },
-      {
-        "subjects": {
-          "list": [
-            {
-              "name": "Biochemistry",
-              "url": "#linkToBiochemistry"
-            },
-            {
-              "name": "Cell biology",
-              "url": "#LinkToCellBiology"
-            }
-          ]
-        },
-        "title": "Rethinking the origins of mitochondria",
-        "longTitle": true,
-        "url": "#link-to-article",
-        "button": {
-          "text": "Read article",
-          "path": "#link-to-article",
-          "classes": "button--reversed button--small"
-        },
-        "meta": {
-          "url": "#LinkToResearchArticles",
-          "text": "Research article",
-          "date": {
-            "forHuman": {
-              "dayOfMonth": 10,
-              "month": "Sep",
-              "year": 2015
-            },
-            "forMachine": "2015-09-10"
-          }
-        },
-        "image": {
-          "fallback": {
-            "defaultPath": "https://unsplash.it/1114/338",
-            "altText": ""
-          }
+          "forMachine": "2022-01-23"
         }
       }
-
-    ]
-  }
-,
-
+    },
+    "image": {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/1114/336",
+        "altText": ""
+      }
+    }
+  },
+  
   "leadPara": {
     "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
     "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
@@ -389,7 +286,7 @@
               }
             },
             "formats": {
-              "list": ["Executable", "PDF"]
+              "list": [ "Executable", "PDF" ]
             }
           },
 
@@ -432,7 +329,7 @@
               }
             },
             "formats": {
-              "list": ["HTML", "PDF"]
+              "list": [ "HTML", "PDF" ]
             }
           }
         },
@@ -468,7 +365,7 @@
               }
             },
             "formats": {
-              "list": ["HTML", "PDF"]
+              "list": [ "HTML", "PDF" ]
             }
           }
         },
@@ -504,7 +401,7 @@
               }
             },
             "formats": {
-              "list": ["HTML", "PDF"]
+              "list": [ "HTML", "PDF" ]
             }
           },
           "image": {
@@ -549,7 +446,7 @@
               }
             },
             "formats": {
-              "list": ["PDF"]
+              "list": [ "PDF" ]
             }
           }
         }
@@ -726,19 +623,40 @@
   ],
 
 
-  "mainMenu":{
+  "mainMenu": {
     "listHeading": {
       "heading": "Menu"
     },
     "links": {
       "items": [
-        {"name": "Research categories", "url": "#res"},
-        {"name": "Author guide", "url": "#aut"},
-        {"name": "Reviewer guide", "url": "#rev"},
-        {"name": "About", "url": "#abo"},
-        {"name": "Inside eLife", "url": "#ins"},
-        {"name": "Careers", "url": "#car"},
-        {"name": "Innovation", "url": "#lab"}
+        {
+          "name": "Research categories",
+          "url": "#res"
+        },
+        {
+          "name": "Author guide",
+          "url": "#aut"
+        },
+        {
+          "name": "Reviewer guide",
+          "url": "#rev"
+        },
+        {
+          "name": "About",
+          "url": "#abo"
+        },
+        {
+          "name": "Inside eLife",
+          "url": "#ins"
+        },
+        {
+          "name": "Careers",
+          "url": "#car"
+        },
+        {
+          "name": "Innovation",
+          "url": "#lab"
+        }
       ]
     },
     "button": {
@@ -760,16 +678,46 @@
   },
 
   "footerMenuLinks": [
-    { "name": "About", "url": "#" },
-    { "name": "Who we work with", "url": "#" },
-    { "name": "Alerts", "url": "#" },
-    { "name": "Contact", "url": "#" },
-    { "name": "Terms and policy", "url": "#" },
-    { "name": "Inside eLife", "url": "#" },
-    { "name": "Monthly archive", "url": "#" },
-    { "name": "Innovation", "url": "#" },
-    { "name": "For the press", "url": "#" },
-    { "name": "Resources", "url": "#" }
+    {
+      "name": "About",
+      "url": "#"
+    },
+    {
+      "name": "Who we work with",
+      "url": "#"
+    },
+    {
+      "name": "Alerts",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Terms and policy",
+      "url": "#"
+    },
+    {
+      "name": "Inside eLife",
+      "url": "#"
+    },
+    {
+      "name": "Monthly archive",
+      "url": "#"
+    },
+    {
+      "name": "Innovation",
+      "url": "#"
+    },
+    {
+      "name": "For the press",
+      "url": "#"
+    },
+    {
+      "name": "Resources",
+      "url": "#"
+    }
   ]
 
 }

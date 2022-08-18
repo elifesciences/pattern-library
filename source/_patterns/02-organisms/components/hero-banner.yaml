@@ -1,0 +1,10 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  item:
+    type: object
+    items:
+      - $ref: ../../01-molecules/components/hero-banner-item.yaml
+    minItems: 1
+required:
+  - item
