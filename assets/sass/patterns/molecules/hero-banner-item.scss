@@ -1,0 +1,126 @@
+@import "../../definitions";
+
+.hero-banner__picture {
+  display: none;
+}
+
+.js {
+  .hero-banner-item {
+    background-color: $color-text--reverse;
+    @include margin(24 0);
+    color: $color-text;
+    width: 100%;
+    height: 100%;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include margin(48 0);
+    }
+  }
+
+  .hero-banner__details {
+    background: $color-text-ui-background;
+    height: 100%;
+    font-family: $font-secondary;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 58.333333%;
+      flex: 0 0 58.333333%;
+      max-width: 58.333333%;
+    }
+
+    & .hero-banner__label {
+      display: block;
+      color: $color-primary;
+      @include font-size-and-vertical-height(14, 24);
+      @include padding(12, "bottom");
+    }
+
+    & .hero-banner__title {
+      color: #252525;
+      @include font-size-and-vertical-height(22, 30);
+      @include padding(24, "top");
+
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include font-size-and-vertical-height(28, 36);
+        @include padding(0);
+      }
+
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        @include font-size-and-vertical-height(40, 48);
+      }
+    }
+
+    & .hero-banner__summary {
+      font-family: $font-primary;
+      @include font-size-and-vertical-height(16, 24);
+      @include padding(12 0);
+    }
+
+    & .hero-banner__authors {
+      .authors {
+        @include margin(0);
+
+        .author_list_item {
+          font-weight: bold;
+          @include font-size-and-vertical-height(14, 24);
+        }
+      }
+    }
+
+    & .hero-banner__meta {
+      @include font-size-and-vertical-height(14, 24);
+      color: $color-text-secondary;
+
+      .meta {
+        @include font-size(14);
+        color: inherit;
+        line-height: 1;
+      }
+
+      .meta__type {
+        &:hover {
+          color: inherit;
+        }
+      }
+
+      .date {
+        @include font-size(14);
+      }
+    }
+  }
+
+  .hero-banner__picture {
+    display: inline-block;
+    height: 172px;
+    width: 100%;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      height: 216px;
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      height: 142px;
+      float: right;
+      @include margin(24, "left");
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 41.666667%;
+      flex: 0 0 41.666667%;
+      max-width: 41.666667%;
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      height: 181px;
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      height: 307px;
+    }
+
+    .hero-banner__image {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #{$color-text-dividers};
+    }
+  }
+}
