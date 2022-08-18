@@ -1,4 +1,14 @@
 <div class="hero-banner-item" data-behaviour="HeroBannerItem">
+    {{#subjects}}<ol class="hero-banner__subject_list">
+        {{#subjects.list}}
+        <li class="hero-banner__subject_list_item">
+            <a href="{{url}}" class="hero-banner__subject_link">
+                <span class="hero-banner__subject">{{{name}}}</span>
+            </a>
+        </li>
+        {{/subjects.list}}
+    </ol>
+    {{/subjects}}
     {{#image}}
     <picture class='hero-banner__picture'>
         {{#sources}}
@@ -14,10 +24,8 @@
         {{/fallback}}
     </picture>
     {{/image}}
-    {{#details}}
     <section class="hero-banner__details">
-        <label class="hero-banner__label">{{{label}}}</label>
-        <h1 class="hero-banner__title">{{{heading}}}</h1>
+        <h1 class="hero-banner__title">{{{title}}}</h1>
         <details>
             <summary class="hero-banner__summary">{{{summary}}}</summary>
         </details>
@@ -35,5 +43,4 @@
         {{/meta}}
 
     </section>
-    {{/details}}
 </div>

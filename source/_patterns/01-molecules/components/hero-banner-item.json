@@ -7,13 +7,10 @@
           "altText": ""
         }
       },
-      "details": {
-        "label": "",
-        "heading": "",
-        "summary": "",
-        "meta": {
-          "text": "#"
-        }
+      "title": "",
+      "summary": "",
+      "meta": {
+        "text": "#"
       }
     }
   }
