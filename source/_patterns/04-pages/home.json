@@ -150,7 +150,20 @@
         "label": "Structure Biology and Mulecular Biophysics",
         "heading": "Filamentation and the regulation of PRPP synthase",
         "summary": "Cryo-EM structures of two types of prokaryotic Phosphoribosyl pyrophosphate synthase filaments reveal tat filamentation into cytoophidia provides a new layer of metabolic regulation.",
-        "authors": "Filamentation and the regulation of PRPP synthase",
+        "authors": [
+          {
+            "list": [
+              {
+                "name": "Lee R Berger",
+                "url": "#"
+              },
+              {
+                "name": "John Hawks",
+                "url": "#"
+              }
+            ]
+          }
+        ],
         "meta": {
           "url": "#",
           "text": "Research article",

@@ -1,3 +1,8 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
-
+properties:
+  headingId:
+    type: string
+    minLength: 1
+  item:
+    $ref: ../../01-molecules/components/hero-banner-item.yaml
