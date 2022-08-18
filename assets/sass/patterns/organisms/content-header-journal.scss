@@ -42,9 +42,9 @@
   text-decoration: none;
 
   .content-header__subject {
+    @include margin(12, "right");
+    @include padding(5 10 3 10);
     background-color: #ebf2fa;
-    padding: 5px 10px;
-    margin-right: 12px;
     border-radius: 3px;
     color: $color-primary;
     font-weight: bold;
@@ -53,13 +53,13 @@
 
 .content-header__subject_list_item > .content-header__subject {
   @include font-size-and-vertical-height(12);
+  @include margin(12, "right");
   background-color: #edeff4;
+  border-radius: 3px;
   color: #000;
   display: inline;
-  padding: 5px 10px;
-  margin-right: 12px;
-  border-radius: 3px;
   font-weight: bold;
+  padding: 5px 10px;
 }
 
 // Grid Main

@@ -15,8 +15,8 @@
 
 .teaser__context_label_list {
   @include nospace();
-  position: relative;
   display: block;
+  position: relative;
 
   .listing-list--highlights & {
     display: none;
@@ -25,15 +25,20 @@
 }
 
 .teaser__context_label_item {
+  @include margin(12, "bottom");
   display: inline-block;
   list-style-type: none;
-  margin-bottom: 0.75rem;
 }
 
 .teaser__context_label {
   // content-label rather than subject-label as not it's not always subjects in here
-  @include label-content-typeg();
   @include font-size-and-vertical-height(12);
+  @include margin(12, "right");
+  @include padding(5 10 3 10);
+  background-color: #edeff4;
+  border-radius: 3px;
+  font-family: $font-secondary;
+  font-weight: bold;
 }
 
 // Extra specificity to override normalised style
@@ -42,24 +47,20 @@
 
   .teaser__context_label {
     background-color: #ebf2fa;
-    padding: 5px 10px;
-    margin-right: 12px;
-    border-radius: 3px;
     color: $color-primary;
-    font-weight: bold;
   }
 
 }
 
 .article-secondary-column .teaser .teaser__context_label {
   @include font-size-and-vertical-height(12);
+  @include margin(12, "right");
+  @include padding(5 10);
   background-color: #edeff4;
-  color: #000;
-  display: inline;
-  padding: 5px 10px;
-  margin-right: 12px;
   border-radius: 3px;
   font-weight: bold;
+  color: #000;
+  display: inline;
 }
 
 .teaser .teaser__context_label_link:hover {

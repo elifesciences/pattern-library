@@ -371,7 +371,8 @@
 
 .content-header__subject_list_item {
   @include label-subject-typeg();
-  display: inline;
+  @include margin(12, "bottom");
+  display: inline-block;
   list-style-type: none;
   padding: 0;
 
@@ -383,8 +384,8 @@
 .content-header__subject_link {
   @include label-subject-typeg();
   @include font-size-and-vertical-height(12);
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
 
   &:hover {
     @include color-link-hover();
