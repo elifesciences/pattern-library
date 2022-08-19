@@ -25,22 +25,26 @@
     </picture>
     {{/image}}
     <section class="hero-banner__details">
+        {{#title}}
         <h1 class="hero-banner__title">{{{title}}}</h1>
+        {{/title}}
+
+        {{#summary}}
         <details>
             <summary class="hero-banner__summary">{{{summary}}}</summary>
         </details>
+        {{/summary}}
 
         {{#authors}}
         <div class="hero-banner__authors">
-            {{> molecules-authors}}
+            {{{authors}}}
         </div>
-
         {{/authors}}
+
         {{#meta}}
         <div class="hero-banner__meta">
             {{> molecules-meta}}
         </div>
         {{/meta}}
-
     </section>
 </div>

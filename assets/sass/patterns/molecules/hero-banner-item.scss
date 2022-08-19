@@ -107,14 +107,9 @@
     }
 
     .hero-banner__authors {
-      .authors {
-        @include margin(0);
-
-        .author_list_item {
-          font-weight: bold;
-          @include font-size-and-vertical-height(14, 24);
-        }
-      }
+      font-weight: bold;
+      @include font-size-and-vertical-height(14, 24);
+      @include truncate-with-ellipsis();
     }
 
     .hero-banner__meta {

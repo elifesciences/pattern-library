@@ -47,10 +47,11 @@ item:
       type: string
       minLength: 1
     authors:
-      $ref: ../../01-molecules/components/authors.yaml
+      type: string
+      minLength: 1
     meta:
       $ref: ../../01-molecules/components/meta.yaml
     required:
       - title
       - summary
-
+      - authors
