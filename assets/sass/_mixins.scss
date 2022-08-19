@@ -101,6 +101,15 @@
   }
 }
 
+@mixin set-column-width($column-number) {
+  $one-column-size: 8.333333333333333%;
+  $calculated-number-of-columns-size: $column-number * $one-column-size;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 #{$calculated-number-of-columns-size};
+  flex: 0 0 #{$calculated-number-of-columns-size};
+  max-width: #{$calculated-number-of-columns-size};
+}
+
 @mixin flexbox-centre-x-and-y {
   @supports (display: flex) {
     display: flex;
