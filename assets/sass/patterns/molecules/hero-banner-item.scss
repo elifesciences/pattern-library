@@ -98,6 +98,11 @@
       @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
         @include font-size-and-vertical-height(40, 48);
       }
+
+      .hero-banner__title_link {
+        color: inherit;
+        text-decoration: inherit;
+      }
     }
 
     .hero-banner__summary {

@@ -26,7 +26,9 @@
     {{/image}}
     <section class="hero-banner__details">
         {{#title}}
-        <h1 class="hero-banner__title">{{{title}}}</h1>
+        <h1 class="hero-banner__title">
+          <a href="{{url}}" class="hero-banner__title_link">{{{title}}}</a>
+        </h1>
         {{/title}}
 
         {{#summary}}

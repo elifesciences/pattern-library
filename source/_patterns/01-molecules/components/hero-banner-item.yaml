@@ -43,6 +43,9 @@ item:
     title:
       type: string
       minLength: 1
+    url:
+      type: string
+      minLength: 1
     summary:
       type: string
       minLength: 1
@@ -53,5 +56,6 @@ item:
       $ref: ../../01-molecules/components/meta.yaml
     required:
       - title
+      - url
       - summary
       - authors
