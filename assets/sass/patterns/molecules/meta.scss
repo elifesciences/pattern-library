@@ -17,6 +17,16 @@
   }
 }
 
+.meta__status {
+  @include font-size-and-vertical-height(14, 24);
+  color: $color-primary;
+  font-weight: bold;
+}
+
+.meta__type_reviewed {
+  color: $color-attention;
+}
+
 .meta__type {
   color: inherit;
   text-decoration: none;

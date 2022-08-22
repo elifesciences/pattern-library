@@ -377,7 +377,7 @@
           "content": "Quorum-sensing control of <i>Burkholderia thailandensis</i> toxin and immunity pairs serves to police quorum-sensing mutants and may represent a general strategy whereby cooperators can police mutants.",
           "footer": {
             "meta": {
-              "text": "Research article",
+              "text": "Reviewed preprint",
               "url": "#",
               "date": {
                 "forHuman": {
@@ -386,7 +386,8 @@
                   "year": 2016
                 },
                 "forMachine": "20160516"
-              }
+              },
+              "isReviewed": true
             },
             "formats": {
               "list": ["Executable", "PDF"]
@@ -420,7 +421,7 @@
           "url": "#",
           "footer": {
             "meta": {
-              "text": "Research article",
+              "text": "Final version",
               "url": "#",
               "date": {
                 "forHuman": {

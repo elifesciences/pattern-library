@@ -17,6 +17,9 @@ properties:
     minLength: 1
   date:
     $ref: ../../00-atoms/components/date.yaml
+  isReviewed:
+    type: boolean
+    default: false
 anyOf:
   -
     required:
