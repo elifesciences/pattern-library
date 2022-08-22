@@ -54,8 +54,8 @@ item:
       minLength: 1
     meta:
       $ref: ../../01-molecules/components/meta.yaml
-    required:
-      - title
-      - url
-      - summary
-      - authors
+required:
+  - title
+  - url
+  - summary
+  - authors
