@@ -154,7 +154,7 @@
        "url": "#",
        "text": "Podcast"
      },
-     "download": "../../assets/audio/podcast-sample.mp3",
+     "download": "https://www.thenakedscientists.com/sites/default/files/media/podcasts/episodes/eLife_Podcast_11.17.mp3",
      "image": {
        "fallback": {
          "defaultPath": "../../assets/img/podcast-demo/884-1114x336.jpg"
@@ -164,7 +164,7 @@
        "title": "Episode 21",
        "episodeNumber": 21,
        "sources":[
-         { "src": "../../assets/audio/podcast-sample.mp3",
+         { "src": "https://www.thenakedscientists.com/sites/default/files/media/podcasts/episodes/eLife_Podcast_11.17.mp3",
            "mediaType": {
              "forMachine": "audio/mp3",
              "forHuman": "mp3"
