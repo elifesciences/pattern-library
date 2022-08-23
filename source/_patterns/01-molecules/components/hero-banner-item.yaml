@@ -43,6 +43,11 @@ item:
   title:
     type: string
     minLength: 1
+  titleLength:
+    enum:
+    - small
+    - medium
+    - large
   url:
     type: string
     minLength: 1

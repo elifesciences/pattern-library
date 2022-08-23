@@ -87,16 +87,34 @@
 
     .hero-banner__title {
       color: #252525;
-      @include font-size-and-vertical-height(22, 30);
+      @include font-size-and-vertical-height(18, 26);
       @include padding(24, "top");
 
       @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        @include font-size-and-vertical-height(28, 36);
+        @include font-size-and-vertical-height(22, 30);
         @include padding(0);
       }
 
       @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-        @include font-size-and-vertical-height(40, 48);
+        @include font-size-and-vertical-height(28, 38);
+      }
+
+      &.hero-banner__title--medium {
+        @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+          @include font-size-and-vertical-height(32, 40);
+        }
+      }
+
+      &.hero-banner__title--large {
+        @include font-size-and-vertical-height(22, 30);
+
+        @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          @include font-size-and-vertical-height(28, 38);
+        }
+
+        @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+          @include font-size-and-vertical-height(42, 52);
+        }
       }
 
       .hero-banner__title_link {
