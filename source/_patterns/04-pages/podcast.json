@@ -157,7 +157,7 @@
      "download": "https://www.thenakedscientists.com/sites/default/files/media/podcasts/episodes/eLife_Podcast_11.17.mp3",
      "image": {
        "fallback": {
-         "defaultPath": "../../assets/img/podcast-demo/884-1114x336.jpg"
+         "defaultPath": "https://unsplash.it/1114/336"
        }
      },
      "audioPlayer": {
@@ -291,8 +291,8 @@
           },
           "image": {
             "fallback": {
-              "defaultPath": "../../assets/img/podcast-demo/5-70x70.jpg",
-              "srcset": "../../assets/img/podcast-demo/1051-140x140.jpg 140w, ../../assets/img/podcast-demo/5-70x70.jpg 70w",
+              "defaultPath": "https://unsplash.it/70/70/",
+              "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
@@ -331,8 +331,9 @@
             }
           },
           "image": {
-            "fallback": {"defaultPath": "../../assets/img/podcast-demo/5-70x70.jpg",
-            "srcset": "../../assets/img/podcast-demo/1051-140x140.jpg 140w, ../../assets/img/podcast-demo/5-70x70.jpg 70w",
+            "fallback": {
+              "defaultPath": "https://unsplash.it/70/70/",
+              "srcset": "https://unsplash.it/140/140/ 140w, https://unsplash.it/70/70/ 70w",
               "altText": "Meaningful alt text please."
             },
             "type": "small"
