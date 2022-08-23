@@ -28,20 +28,9 @@
 }
 
 .teaser__context_label_item {
+  @include margin(12, "bottom");
   display: inline-block;
   list-style-type: none;
-  //@include nospace();
-  margin-bottom: 0.75rem;
-
-  //& .teaser__context_label:after {
-  //  content: ", ";
-  //}
-  //
-  //&:last-child {
-  //  & .teaser__context_label:after {
-  //    content: "";
-  //  }
-  //}
 }
 
 .teaser__curation_label_item {
@@ -58,10 +47,14 @@
 .teaser .teaser__context_label_link {
   text-decoration: none;
 
+  &:hover {
+    text-decoration: none;
+  }
+
   .teaser__context_label {
-    background-color: #ebf2fa;
-    padding: 5px 10px;
-    margin-right: 12px;
+    @include margin(12, "right");
+    @include padding(5 10 3 10);
+    background-color: $color-text-ui-background-label;
     border-radius: 3px;
     color: $color-primary;
     font-weight: bold;
@@ -70,30 +63,18 @@
 
 .teaser__curation_label {
   @extend .teaser__context_label;
-  background-color: #edeff4;
-  color: #000;
-  display: inline;
-  padding: 5px 10px;
-  margin-right: 12px;
+  @include margin(12, "right");
+  @include padding(5 10 3 10);
+  background-color: $color-text-ui-background-label-secondary;
   border-radius: 3px;
+  color: $color-text;
+  display: inline;
   font-weight: bold;
-}
-
-.teaser .teaser__context_label_link:hover {
-  text-decoration: none;
 }
 
 .article-secondary-column .teaser .teaser__context_label {
   color: $color-text-secondary;
 }
-
-//.teaser__context_label_link:after {
-//  content: ", ";
-//}
-
-//.teaser__context_label_link:last-child:after {
-//  content: "";
-//}
 
 .teaser__context_label_link:hover {
   @include color-link-hover();

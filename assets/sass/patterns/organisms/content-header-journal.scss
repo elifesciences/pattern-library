@@ -39,26 +39,22 @@
 }
 
 .content-header__subject_link {
-  text-decoration: none;
-
-  .content-header__subject {
-    background-color: #ebf2fa;
-    padding: 5px 10px;
-    margin-right: 12px;
-    border-radius: 3px;
-    color: $color-primary;
-    font-weight: bold;
-  }
+  @include font-size-and-vertical-height(12);
+  @include margin(12, "right");
+  @include padding(5 10 3 10);
+  background-color: $color-text-ui-background-label;
+  border-radius: 3px;
+  color: $color-primary;
+  font-weight: bold;
 }
 
-.content-header__subject_list_item > .content-header__subject {
+.content-header__subject {
   @include font-size-and-vertical-height(12);
-  background-color: #edeff4;
-  color: #000;
-  display: inline;
-  padding: 5px 10px;
-  margin-right: 12px;
+  @include margin(12, "right");
+  @include padding(5 10 3 10);
+  background-color: $color-text-ui-background-label-secondary;
   border-radius: 3px;
+  color: $color-text;
   font-weight: bold;
 }
 

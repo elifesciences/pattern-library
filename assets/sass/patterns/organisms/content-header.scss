@@ -372,7 +372,8 @@
 
 .content-header__subject_list_item {
   @include label-subject-typeg();
-  display: inline;
+  @include margin(12, "bottom");
+  display: inline-block;
   list-style-type: none;
   padding: 0;
 
