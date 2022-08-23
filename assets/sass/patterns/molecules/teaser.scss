@@ -67,10 +67,6 @@
   text-decoration: none;
 }
 
-.article-secondary-column .teaser .teaser__context_label {
-  color: $color-text-secondary;
-}
-
 .teaser__context_label_link:hover {
   @include color-link-hover();
 }

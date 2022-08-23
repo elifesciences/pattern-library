@@ -389,6 +389,7 @@
 
   &:hover {
     @include color-link-hover();
+    text-decoration: none;
   }
 
   .content-header--image & {
@@ -397,10 +398,6 @@
       color: inherit;
     }
   }
-}
-
-.content-header__subject_link:hover {
-  text-decoration: none;
 }
 
 .content-header__icons {

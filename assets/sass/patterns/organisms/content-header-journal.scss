@@ -38,28 +38,23 @@
   }
 }
 
+.content-header__subject {
+  @include font-size-and-vertical-height(12);
+  @include margin(12, "right");
+  @include padding(5 10 3 10);
+  background-color: $color-text-ui-background-label-secondary;
+  border-radius: 3px;
+  color: $color-text;
+  font-weight: bold;
+}
+
 .content-header__subject_link {
   text-decoration: none;
 
   .content-header__subject {
-    @include margin(12, "right");
-    @include padding(5 10 3 10);
-    background-color: #ebf2fa;
-    border-radius: 3px;
+    background-color: $color-text-ui-background-label;
     color: $color-primary;
-    font-weight: bold;
   }
-}
-
-.content-header__subject_list_item > .content-header__subject {
-  @include font-size-and-vertical-height(12);
-  @include margin(12, "right");
-  background-color: #edeff4;
-  border-radius: 3px;
-  color: #000;
-  display: inline;
-  font-weight: bold;
-  padding: 5px 10px;
 }
 
 // Grid Main
