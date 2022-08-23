@@ -161,6 +161,21 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest('./source/assets/fonts'));
 });
 
+/******************************************************************************
+ * Audio handling task
+ * Currently just copies over specified audio files (for demo purposes) into the public directory
+ * Source: https://file-examples.com/index.php/sample-audio-files/sample-mp3-download/
+ ******************************************************************************/
+
+gulp.task('audio', () => {
+  del(['./source/assets/audio/*']);
+
+  return gulp.src('./assets/audio/**/*')
+
+    // output to dest folder
+    .pipe(gulp.dest('./source/assets/audio'));
+});
+
 
 /******************************************************************************
  * JavaScript build task
@@ -280,6 +295,10 @@ gulp.task('fonts:watch', () => {
   gulp.watch('assets/fonts/**/*', {'interval': 10000}, ['fonts']);
 });
 
+gulp.task('audio:watch', () => {
+  gulp.watch('assets/audio/**/*', {'interval': 10000}, ['audio']);
+});
+
 gulp.task('js:watch', () => {
   gulp.watch(['assets/js/**/*', './test/*.spec.js'], {'interval': 1000}, ['js']);
 });
@@ -290,16 +309,16 @@ gulp.task('extractAssets', () => {
 });
 
 // Task sets
-gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch'], () => {
+gulp.task('watch', ['sass:watch', 'img:watch', 'js:watch', 'fonts:watch', 'audio:watch'], () => {
   // no better standalone solution without Gulp 4.x
   // https://stackoverflow.com/questions/22824546/how-to-run-gulp-tasks-sequentially-one-after-the-other/38818657#38818657
   gulp.on('task_stop', function (event) {
-    if (['generateCss', 'img', 'fonts', 'js'].indexOf(event.task) != -1) {
+    if (['generateCss', 'img', 'fonts', 'js', 'audio'].indexOf(event.task) != -1) {
       gulp.start('extractAssets');
     }
   });
 });
-gulp.task('default', ['generateCss', 'img', 'fonts', 'js']);
+gulp.task('default', ['generateCss', 'img', 'fonts', 'js', 'audio']);
 
 /******************************************************************************
  * Used for local testing
