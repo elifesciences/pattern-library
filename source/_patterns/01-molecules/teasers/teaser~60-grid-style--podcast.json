@@ -16,11 +16,20 @@
     "meta": {
       "date": {
         "forHuman": {
-          "dayOfMonth": 31,
-          "month": "Mar",
-          "year": 2015
+          "dayOfMonth": 16,
+          "month": "May",
+          "year": 2016
         },
-        "forMachine": "2015-03-31"
+        "forMachine": "2016-05-16"
+      },
+      "statusText": "Updated",
+      "statusDate": {
+        "forHuman": {
+          "dayOfMonth": 24,
+          "month": "Mar",
+          "year": 2022
+        },
+        "forMachine": "2022-03-24"
       }
     }
   }

@@ -377,8 +377,6 @@
           "content": "Quorum-sensing control of <i>Burkholderia thailandensis</i> toxin and immunity pairs serves to police quorum-sensing mutants and may represent a general strategy whereby cooperators can police mutants.",
           "footer": {
             "meta": {
-              "text": "Research article",
-              "url": "#",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 16,
@@ -386,6 +384,15 @@
                   "year": 2016
                 },
                 "forMachine": "20160516"
+              },
+              "statusText": "Updated",
+              "statusDate": {
+                "forHuman": {
+                  "dayOfMonth": 24,
+                  "month": "Mar",
+                  "year": 2022
+                },
+                "forMachine": "2022-03-24"
               }
             },
             "formats": {
@@ -420,8 +427,6 @@
           "url": "#",
           "footer": {
             "meta": {
-              "text": "Research article",
-              "url": "#",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 19,
@@ -429,6 +434,15 @@
                   "year": 2016
                 },
                 "forMachine": "20160419"
+              },
+              "statusText": "Updated",
+              "statusDate": {
+                "forHuman": {
+                  "dayOfMonth": 23,
+                  "month": "Mar",
+                  "year": 2022
+                },
+                "forMachine": "2022-03-24"
               }
             },
             "formats": {
@@ -456,8 +470,6 @@
           "secondaryInfo": "Harriet Lane-Serff et al.",
           "footer": {
             "meta": {
-              "text": "Research article",
-              "url": "#",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 16,
@@ -465,6 +477,15 @@
                   "year": 2016
                 },
                 "forMachine": "20160516"
+              },
+              "statusText": "Updated",
+              "statusDate": {
+                "forHuman": {
+                  "dayOfMonth": 25,
+                  "month": "Mar",
+                  "year": 2022
+                },
+                "forMachine": "2022-03-24"
               }
             },
             "formats": {
@@ -492,8 +513,6 @@
           "content": "Swine populations worldwide are sporadically infected by influenza viruses from humans and birds leading to geographically heterogeneous swine influenza virus populations that pose epizootic and pandemic threats.",
           "footer": {
             "meta": {
-              "text": "Research article",
-              "url": "#",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 15,
@@ -501,6 +520,15 @@
                   "year": 2016
                 },
                 "forMachine": "20160415"
+              },
+              "statusText": "Updated",
+              "statusDate": {
+                "forHuman": {
+                  "dayOfMonth": 24,
+                  "month": "Mar",
+                  "year": 2022
+                },
+                "forMachine": "2022-03-24"
               }
             },
             "formats": {
@@ -537,8 +565,6 @@
           "content": "Dynamic successive blooms of clades of planktonic marine bacteria that can be observed during blooms of marine algae follow discernible patterns, part of which might be explained by substrate-induced forcing.",
           "footer": {
             "meta": {
-              "text": "Research article",
-              "url": "#",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 17,
@@ -546,6 +572,15 @@
                   "year": 2016
                 },
                 "forMachine": "2016047"
+              },
+              "statusText": "Updated",
+              "statusDate": {
+                "forHuman": {
+                  "dayOfMonth": 24,
+                  "month": "Mar",
+                  "year": 2022
+                },
+                "forMachine": "2022-03-24"
               }
             },
             "formats": {
@@ -589,8 +624,6 @@
           "secondaryInfo": "Mark S Pearson et al.",
           "footer": {
             "meta": {
-              "url": "#",
-              "text": "Research article",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 15,
@@ -598,6 +631,15 @@
                   "year": 2016
                 },
                 "forMachine": "20160415"
+              },
+              "statusText": "Updated",
+              "statusDate": {
+                "forHuman": {
+                  "dayOfMonth": 24,
+                  "month": "Mar",
+                  "year": 2022
+                },
+                "forMachine": "2022-03-24"
               }
             }
           },
@@ -631,8 +673,6 @@
           "secondaryInfo": "Emilie Bourdonnay et al.",
           "footer": {
             "meta": {
-              "url": "#",
-              "text": "Research article",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 16,
@@ -665,8 +705,6 @@
           "secondaryInfo": "Paul de Figueiredo et al.",
           "footer": {
             "meta": {
-              "url": "#",
-              "text": "Research article",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 23,
@@ -674,6 +712,15 @@
                   "year": 2016
                 },
                 "forMachine": "20160223"
+              },
+              "statusText": "Updated",
+              "statusDate": {
+                "forHuman": {
+                  "dayOfMonth": 24,
+                  "month": "Mar",
+                  "year": 2022
+                },
+                "forMachine": "2022-03-24"
               }
             }
           }
@@ -698,8 +745,6 @@
           "secondaryInfo": "Petr Broz et al.",
           "footer": {
             "meta": {
-              "url": "#",
-              "text": "Research article",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 19,

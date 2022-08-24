@@ -18,15 +18,22 @@
   "secondaryInfo": "Bloggs, J. et al",
   "footer": {
     "meta": {
-      "text": "Insight",
-      "url": "#",
       "date": {
         "forHuman": {
           "dayOfMonth": 16,
-          "month": "Dec",
-          "year": 2015
+          "month": "May",
+          "year": 2016
         },
-        "forMachine": "2015-12-16"
+        "forMachine": "2016-05-16"
+      },
+      "statusText": "Updated",
+      "statusDate": {
+        "forHuman": {
+          "dayOfMonth": 24,
+          "month": "Mar",
+          "year": 2022
+        },
+        "forMachine": "2022-03-24"
       }
     }
   }

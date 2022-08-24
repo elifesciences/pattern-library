@@ -2,7 +2,7 @@
 
 .date {
   @include label-content-typeg($color: inherit, $uppercase: false);
-  @include font-size-and-vertical-height(12);
+  @include font-size-and-vertical-height(14);
 }
 
 .date--expanded {

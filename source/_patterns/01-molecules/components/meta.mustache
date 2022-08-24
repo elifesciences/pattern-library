@@ -1,16 +1,15 @@
 <div class="meta">
+    {{#statusText}}
+        <span class="meta__type">{{{statusText}}}</span>
+    {{/statusText}}
 
-  {{#url}}
-    <a class="meta__type" href="{{url}}" {{#carouselItem}}tabindex="-1"{{/carouselItem}}>{{{text}}}</a>
-  {{/url}}
+    {{#statusDate}}
+        {{>atoms-date}}
+    {{/statusDate}}
 
-  {{^url}}
-    {{#text}}
-    <span class="meta__type">{{{text}}}</span>
-    {{/text}}
-  {{/url}}
+    <span class="meta__type">Peer reviewed</span>
 
-  {{#date}}
-    {{>atoms-date}}
-  {{/date}}
+    {{#date}}
+        {{>atoms-date}}
+    {{/date}}
 </div>

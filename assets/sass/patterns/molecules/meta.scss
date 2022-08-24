@@ -18,10 +18,10 @@
 }
 
 .meta__type {
-  color: inherit;
-  text-decoration: none;
+  @include font-size-and-vertical-height(14, 24);
+  color: #767676;
 
-  & + .date::before {
+  & + .date:not(:last-child)::after {
     content: "\00a0\2219\00a0";
     font-weight: bold;
   }
