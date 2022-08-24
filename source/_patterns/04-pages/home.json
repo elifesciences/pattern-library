@@ -140,133 +140,85 @@
 
   },
 
-  "carousel": {
-    "heading": "Highlights",
+  accent": {
+    "heading": {
+      "heading": "Highlights"
+    },
     "items": [
       {
-        "subjects": {
-          "list": [
-            {
-              "name": "Neuroscience",
-              "url": "#"
-            },
-            {
-              "name": "Cell biology",
-              "url": "#"
-            }
-          ]
-        },
-        "title": "Sensitivity vs stability in neurones",
-        "longTitle": true,
+        "title": "Limb evolution in cephalopods",
         "url": "#link-to-article",
-        "button": {
-          "text": "Read article",
-          "path": "#link-to-article",
-          "classes": "button--reversed button--small"
-        },
+        "authors": "Oscar A Tarazona, Davys H Lopez, Martin J Cohn",
+        "summary": "The arms and tentacles of cephalopods are built by the same genetic mechanisms as vertebrate limbs and insect wings.",
         "meta": {
           "url": "#",
           "text": "Research article",
           "date": {
             "forHuman": {
-              "dayOfMonth": 10,
-              "month": "Sep",
-              "year": 2015
+              "dayOfMonth": 1,
+              "month": "May",
+              "year": 2022
             },
-            "forMachine": "2015-09-10"
+            "forMachine": "2022-05-01"
           }
         },
         "image": {
           "fallback": {
-            "defaultPath": "https://unsplash.it/1114/336",
+            "defaultPath": "https://unsplash.it/250/140/",
             "altText": ""
-          },
-          "credit": {
-            "text": "Illustration by <a href=''>Joe Bloggs</a>",
-            "elementId": "iAmTheIdOfTheImageCreditElement"
           }
         }
       },
       {
-        "subjects": {
-          "list": [
-            {
-              "name": "Genomics and evolutionary biology",
-              "url": "#"
-            }
-          ]
-        },
-        "title": "Cancer cells follow the leader",
-        "longTitle": true,
+        "title": "Preprints and peer review - share your views in our survey",
         "url": "#link-to-article",
-        "button": {
-          "text": "Read article",
-          "path": "#link-to-article",
-          "classes": "button--reversed button--small"
-        },
+        "authors": "",
+        "summary": "We would like to know what researchers think of the preprint and peer review landscape in 2022 and beyond.",
         "meta": {
           "url": "#",
           "text": "Research article",
           "date": {
             "forHuman": {
-              "dayOfMonth": 10,
-              "month": "Sep",
-              "year": 2015
+              "dayOfMonth": 6,
+              "month": "May",
+              "year": 2020
             },
-            "forMachine": "2015-09-10"
+            "forMachine": "2020-05-06"
           }
         },
         "image": {
           "fallback": {
-            "defaultPath": "https://unsplash.it/1114/337",
+            "defaultPath": "https://unsplash.it/250/140/",
             "altText": ""
           }
         }
       },
       {
-        "subjects": {
-          "list": [
-            {
-              "name": "Biochemistry",
-              "url": "#linkToBiochemistry"
-            },
-            {
-              "name": "Cell biology",
-              "url": "#LinkToCellBiology"
-            }
-          ]
-        },
-        "title": "Rethinking the origins of mitochondria",
-        "longTitle": true,
+        "title": "Sparks of Change",
         "url": "#link-to-article",
-        "button": {
-          "text": "Read article",
-          "path": "#link-to-article",
-          "classes": "button--reversed button--small"
-        },
+        "authors": "",
+        "summary": "Tell us how the culture of research is changing.",
         "meta": {
           "url": "#LinkToResearchArticles",
           "text": "Research article",
           "date": {
             "forHuman": {
-              "dayOfMonth": 10,
-              "month": "Sep",
-              "year": 2015
+              "dayOfMonth": 26,
+              "month": "April",
+              "year": 2022
             },
-            "forMachine": "2015-09-10"
+            "forMachine": "2022-04-26"
           }
         },
         "image": {
           "fallback": {
-            "defaultPath": "https://unsplash.it/1114/338",
+            "defaultPath": "https://unsplash.it/250/140/",
             "altText": ""
           }
         }
       }
-
     ]
-  }
-,
+  },
 
   "leadPara": {
     "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",

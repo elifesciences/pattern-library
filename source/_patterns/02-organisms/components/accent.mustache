@@ -1,0 +1,14 @@
+<div class="accent" role="region" data-behaviour="Accent"{{#headingId}} aria-labelledby="{{headingId}}"{{/headingId}}>
+  {{#heading}}
+    {{>atoms-list-heading}}
+  {{/heading}}
+
+  <ul class="accent__items">
+
+    {{#items}}
+      {{> molecules-accent-item}}
+    {{/items}}
+
+  </ul>
+
+</div>
