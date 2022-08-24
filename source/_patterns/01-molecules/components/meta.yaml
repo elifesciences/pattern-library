@@ -12,3 +12,6 @@ anyOf:
   -
     required:
       - date
+  -
+    required:
+      - text
