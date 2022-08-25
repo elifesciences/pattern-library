@@ -1,6 +1,6 @@
 @import "../../definitions";
 
-.accent {
+.highlight {
   @include constrain-width($max-site-width, "max");
   @include padding($content-header-padding-medium 0);
   border-bottom: 1px solid $color-text-dividers;
@@ -31,7 +31,7 @@
   }
 }
 
-.accent__items {
+.highlight__items {
   list-style: none;
   @include nospace();
 

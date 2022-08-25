@@ -1,6 +1,6 @@
-<li class="accent-item" data-behaviour="AccentItem">
+<li class="highlight-item" data-behaviour="HighlightItem">
    {{#image}}
-   <picture class='accent-item__picture'>
+   <picture class='highlight-item__picture'>
        {{#sources}}
        <source srcset='{{srcset}}'
                {{#type}} type='{{type}}' {{/type}}
@@ -10,28 +10,28 @@
        <img src='{{defaultPath}}'
             {{#srcset}} srcset='{{srcset}}' {{/srcset}}
             alt='{{altText}}'
-            class='accent-item__image' />
+            class='highlight-item__image' />
        {{/fallback}}
    </picture>
    {{/image}}
 
-  <div class="accent-item__body">
-    <h2 class="accent-item__title">
-        <a href="{{url}}" class="accent-item__title_link">{{{title}}}</a>
+  <div class="highlight-item__body">
+    <h2 class="highlight-item__title">
+        <a href="{{url}}" class="highlight-item__title_link">{{{title}}}</a>
     </h2>
 
     {{#authors}}
-    <div class="accent-item__authors" id="{{elementId}}">{{{authors}}}</div>
+    <div class="highlight-item__authors" id="{{elementId}}">{{{authors}}}</div>
     {{/authors}}
 
     {{#summary}}
     <details>
-        <summary class="accent-item__summary">{{{summary}}}</summary>
+        <summary class="highlight-item__summary">{{{summary}}}</summary>
     </details>
     {{/summary}}
 
     {{#meta}}
-    <div class="accent-item__meta">
+    <div class="highlight-item__meta">
         {{> molecules-meta}}
     </div>
     {{/meta}}

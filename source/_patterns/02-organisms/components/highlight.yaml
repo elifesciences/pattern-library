@@ -6,7 +6,7 @@ properties:
   items:
     type: array
     items:
-      - $ref: ../../01-molecules/components/accent-item.yaml
+      - $ref: ../../01-molecules/components/highlight-item.yaml
     minItems: 1
 required:
   - heading

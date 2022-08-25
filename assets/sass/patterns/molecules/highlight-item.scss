@@ -1,6 +1,6 @@
 @import "../../definitions";
 
-.accent-item {
+.highlight-item {
   list-style-type: none;
   color: $color-text;
   @include margin($content-header-padding, "bottom");
@@ -8,13 +8,13 @@
   position: relative;
 }
 
-.accent-item__picture {
+.highlight-item__picture {
   display: none;
 }
 
 .js {
 
-  .accent-item {
+  .highlight-item {
     overflow: hidden;
     @include margin(24, "bottom");
 
@@ -27,11 +27,11 @@
     }
   }
 
-  .accent-item:last-child {
+  .highlight-item:last-child {
     @include margin(0, "bottom");
   }
 
-  .accent-item__picture {
+  .highlight-item__picture {
     display: inline-block;
     float: right;
     width: auto;
@@ -60,24 +60,24 @@
     }
   }
 
-  .accent-item__image {
+  .highlight-item__image {
     width: 100%;
   }
 
-  .accent-item__subject_list {
+  .highlight-item__subject_list {
     color: inherit;
     line-height: 1;
     @include padding(18, "top");
     @include padding(2, "bottom");
   }
 
-  .accent-item__subject_list_item {
+  .highlight-item__subject_list_item {
     color: inherit;
     line-height: 1;
     @include font-size(12);
   }
 
-  .accent-item__subject_link {
+  .highlight-item__subject_link {
     color: inherit;
     line-height: 1;
     &:hover {
@@ -85,7 +85,7 @@
     }
   }
 
-  .accent-item__body {
+  .highlight-item__body {
     width: calc(50% + 12px);
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
@@ -103,7 +103,7 @@
     }
   }
 
-  .accent-item__title {
+  .highlight-item__title {
     @include font-size-and-vertical-height(16, 20);
     @include padding(0);
 
@@ -125,12 +125,12 @@
     }
   }
 
-  .accent-item__title_link {
+  .highlight-item__title_link {
     color: inherit;
     text-decoration: inherit;
   }
 
-  .accent-item__authors {
+  .highlight-item__authors {
     display: none;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -139,7 +139,7 @@
     }
   }
 
-  .accent-item__summary {
+  .highlight-item__summary {
     font-family: $font-primary;
     display: none;
 
@@ -148,7 +148,7 @@
     }
   }
 
-  .accent-item__meta {
+  .highlight-item__meta {
     @include padding(12, "top");
     color: $color-text-secondary;
 
