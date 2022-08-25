@@ -35,7 +35,7 @@
   @include font-size-and-vertical-height(12);
   @include margin(12, "right");
   @include padding(5 10 3 10);
-  background-color: #edeff4;
+  background-color: $color-text-ui-background-label-secondary;
   border-radius: 3px;
   font-family: $font-secondary;
   font-weight: bold;
@@ -46,7 +46,7 @@
   text-decoration: none;
 
   .teaser__context_label {
-    background-color: #ebf2fa;
+    background-color: $color-text-ui-background-label;
     color: $color-primary;
   }
 
