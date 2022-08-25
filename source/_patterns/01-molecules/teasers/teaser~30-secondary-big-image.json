@@ -26,6 +26,8 @@
   },
   "footer": {
     "meta": {
+      "text": "Insight",
+      "url": "#",
       "date": {
         "forHuman": {
           "dayOfMonth": 16,

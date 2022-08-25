@@ -14,6 +14,7 @@
   "footer": {
     "meta": {
       "date": {
+        "text": "Experiment: 001",
         "forHuman": {
           "dayOfMonth": 16,
           "month": "May",

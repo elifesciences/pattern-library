@@ -26,6 +26,8 @@
 
   "footer": {
     "meta": {
+      "url": "#",
+      "text": "Research article",
       "date": {
         "forHuman": {
           "dayOfMonth": 16,

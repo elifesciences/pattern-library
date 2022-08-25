@@ -25,6 +25,8 @@
 
   "footer": {
     "meta": {
+      "url": "#",
+      "text": "Collection",
       "date": {
         "forHuman": {
           "dayOfMonth": 16,
