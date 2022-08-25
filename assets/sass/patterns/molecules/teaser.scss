@@ -56,11 +56,11 @@
   @include font-size-and-vertical-height(12);
   @include margin(12, "right");
   @include padding(5 10);
-  background-color: #edeff4;
+  background-color: $color-text-ui-background-label-secondary;
   border-radius: 3px;
-  font-weight: bold;
-  color: #000;
+  color: $color-text;
   display: inline;
+  font-weight: bold;
 }
 
 .teaser .teaser__context_label_link:hover {
