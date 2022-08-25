@@ -127,7 +127,7 @@ module.exports = class Highlights {
     this.margin = this.calculateMargin() * 2;
 
     // Update some things.
-    this.carouselWidth = window.getComputedStyle(this.$elm).width.match(/([0-9\.]+)px/)[1];
+    this.contentWidth = window.getComputedStyle(this.$elm).width.match(/([0-9\.]+)px/)[1];
     this.setCurrentSlide(this.currentSlide);
 
     // Render view.
@@ -146,12 +146,12 @@ module.exports = class Highlights {
         this.$nextBtn,
         this.$prevBtn,
         this.currentSlide,
-        this.carouselWidth,
+        this.contentWidth,
         this.inView
     );
   }
 
-  render($el, $nextButton, $prevButton, thisSlide, carouselWidth, inView) {
+  render($el, $nextButton, $prevButton, thisSlide, contentWidth, inView) {
     if (this.isFirstSlide()) {
       $prevButton.classList.add('hidden');
     } else {
@@ -167,8 +167,8 @@ module.exports = class Highlights {
     const numOfMargins = inView - 1;
     const totalMargins = numOfMargins * this.margin;
 
-    // Slide width = Carousel width - margins / number in view
-    const slideWidth = (carouselWidth - totalMargins) / inView;
+    // Slide width = Content width - margins / number in view
+      const slideWidth = (contentWidth - totalMargins) / inView;
 
     // Slide offset = Slide width plus margin
     const slideOffset = slideWidth + this.margin;

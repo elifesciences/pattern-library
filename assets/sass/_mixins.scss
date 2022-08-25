@@ -654,7 +654,7 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   }
 }
 
-// Content header title / carousel item title size adjustment according to length.
+// Content header title size adjustment according to length.
 //   The number of lines a title occupies can't be precisely determined as it depends on line breaks,
 //  which in turn depends on word length and relative position. So by necessity this is approximate.
 //
@@ -668,7 +668,7 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
 //      x-long is for text likely to span 5 - 6 lines
 //      xx-long is for text likely to span 7 lines
 //
-//      N.B. xx-long is a safety net, title lengths for image content headers and carousel items
+//      N.B. xx-long is a safety net, title lengths for image content headers
 //        really should not get this long
 @mixin header-title-size($title-length: "medium") {
 
