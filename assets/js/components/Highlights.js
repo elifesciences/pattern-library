@@ -168,7 +168,7 @@ module.exports = class Highlights {
     const totalMargins = numOfMargins * this.margin;
 
     // Slide width = Content width - margins / number in view
-      const slideWidth = (contentWidth - totalMargins) / inView;
+    const slideWidth = (contentWidth - totalMargins) / inView;
 
     // Slide offset = Slide width plus margin
     const slideOffset = slideWidth + this.margin;
