@@ -1,0 +1,30 @@
+{
+  "image": {
+    "sources": [
+      {
+        "srcset": "https://iiif.elifesciences.org/lax/09560%2Felife-09560-fig1-v1.tif/full/full/0/default.jpg",
+        "type": "image/jpeg"
+      }
+    ],
+    "fallback": {
+      "defaultPath": "https://unsplash.it/1114/336",
+      "altText": ""
+    }
+  },
+  "title": "Experimental eLife Lens search page",
+  "titleLength": "large",
+  "url": "#",
+  "summary": "Today on eLife Labs we are launching a small demo of a search interface that brings together some elements of eLife Lens and some of the native power of a technology called elasticsearch. Head over to the demo to try it out now.",
+  "meta": {
+    "url": "#",
+    "text": "Research article",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 1,
+        "month": "Apr",
+        "year": 2015
+      },
+      "forMachine": "2015-04-01"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "image": {
+    "sources": [
+      {
+        "srcset": "https://iiif.elifesciences.org/lax/09560%2Felife-09560-fig1-v1.tif/full/full/0/default.jpg",
+        "type": "image/jpeg"
+      }
+    ],
+    "fallback": {
+      "defaultPath": "https://unsplash.it/1114/336",
+      "altText": ""
+    }
+  },
+  "subjects": {
+    "list": [
+      {
+        "name": "Epidemiology and Global Health",
+        "url": "#"
+      },
+      {
+        "name": "Microbiology and Infectious Disease",
+        "url": "#"
+      }
+    ]
+  },
+  "title": "Tropical disease",
+  "titleLength": "large",
+  "url": "#",
+  "summary": "eLife has published papers on many tropical diseases, including malaria, Ebola, leishmaniases, Dengue and African sleeping sickness. The articles below have been selected by eLife editors to give a flavour of the breadth of research on tropical diseases published by the journal.",
+  "authors": "Lee R Berger et al.",
+  "meta": {
+    "url": "#",
+    "text": "Research article",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 16,
+        "month": "Sep",
+        "year": 2015
+      },
+      "forMachine": "2015-09-16"
+    }
+  }
+}
