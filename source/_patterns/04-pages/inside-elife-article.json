@@ -3,14 +3,15 @@
     "title": {
       "homePagePath": "#"
     },
-    "primaryLinks": {
+    "primaryLinks":
+    {
       "classesOuter": "nav-primary",
-      "classesInner": "nav-primary__list clearfix",
+      "classesInner": "",
       "linkedItems": [
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "visuallyhidden",
+          "textClasses": "",
           "path": "#mainMenu",
           "picture": {
             "pictureClasses": "nav-primary__menu_icon",
@@ -35,28 +36,42 @@
         },
 
         {
+          "text": "Research",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item "
         },
 
         {
-          "text": "Community",
+          "text": "Inside eLife",
+          "path": "#",
+          "classes": "nav-primary__item "
+        },
+
+        {
+          "text": "About",
           "path": "#",
           "classes": "nav-primary__item"
-        },
+        }
 
-        {
-          "text": "Innovation",
-          "path": "#",
-          "classes": "nav-primary__item"
-        },
 
+      ]
+    },
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
         {
-          "text": "Search the eLife site",
+          "text": "Search",
           "rel": "search",
           "classes": "nav-primary__item nav-primary__item--search",
-          "textClasses": "visuallyhidden",
           "path": "#",
           "picture": {
             "pictureClasses": "nav-primary__search_icon",
@@ -72,24 +87,27 @@
               }
             ]
           }
-        }
-      ]
-    },
-
-    "secondaryLinks": {
-      "classesOuter": "nav-secondary",
-      "classesInner": "nav-secondary__list clearfix",
-      "linkedItems": [
-        {
-          "text": "Newsletters",
-          "path": "#",
-          "classes": "nav-secondary__item"
         },
 
         {
-          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "text": "Alerts",
+          "rel": "alerts",
+          "classes": "nav-primary__item nav-primary__item--alert",
           "path": "#",
-          "classes": "nav-secondary__item"
+          "picture": {
+            "pictureClasses": "nav-primary__alert_icon",
+            "fallback": {
+              "srcset": "../../assets/img/patterns/molecules/nav-primary-notifications-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 24w",
+              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+              "classes": "",
+              "altText": ""
+            },
+            "sources": [
+              {
+                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
+              }
+            ]
+          }
         },
 
         {
@@ -113,6 +131,7 @@
         }
       ]
     },
+
     "searchBox": {
       "inContentHeader": true,
       "compactForm": {
@@ -158,16 +177,21 @@
     }
   },
   "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
-  "mainMenu": {
+
+  "mainMenu":{
+    "listHeading": {
+      "heading": "Menu"
+    },
     "links": {
       "items": [
-        { "name": "Research categories", "url": "#res" },
-        { "name": "Author guide", "url": "#aut" },
-        { "name": "Reviewer guide", "url": "#rev" },
-        { "name": "About", "url": "#abo" },
-        { "name": "Inside eLife", "url": "#ins" },
-        { "name": "Careers", "url": "#car" },
-        { "name": "Innovation", "url": "#lab" }
+        {"name": "Home", "url": "#"},
+        {"name": "Research", "url": "#res"},
+        {"name": "Magazine", "url": "#"},
+        {"name": "Inside eLife", "url": "#ins"},
+        {"name": "About", "url": "#abo"},
+        {"name": "Search", "url": "#"},
+        {"name": "Subscribe to alerts", "url": "#"},
+        {"name": "Submit your research", "url": "#"}
       ]
     },
     "button": {
@@ -176,6 +200,7 @@
       "classes": "button--default button--full button--small main_menu__quit"
     }
   },
+
   "contextualData": {
     "metricsData": {
       "data": [

@@ -4,13 +4,14 @@
   },
   "links": {
     "items": [
-      {"name": "Research categories", "url": "#res"},
-      {"name": "Author guide", "url": "#aut"},
-      {"name": "Reviewer guide", "url": "#rev"},
-      {"name": "About", "url": "#abo"},
+      {"name": "Home", "url": "#"},
+      {"name": "Research", "url": "#res"},
+      {"name": "Magazine", "url": "#"},
       {"name": "Inside eLife", "url": "#ins"},
-      {"name": "Careers", "url": "#car"},
-      {"name": "Labs", "url": "#lab"}
+      {"name": "About", "url": "#abo"},
+      {"name": "Search", "url": "#"},
+      {"name": "Subscribe to alerts", "url": "#"},
+      {"name": "Submit your research", "url": "#"}
     ]
   }
 }

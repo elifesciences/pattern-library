@@ -1,10 +1,10 @@
 @import "../../definitions";
 
 .nav-primary {
-  background-color: #fff;
-  border-top: 1px solid $color-text-dividers;
-  clear: right;
+  @include margin(-15, "left");
   @include padding(0 5);
+  background-color: #fff;
+  clear: right;
   position: relative;
   z-index: 10;
 }
@@ -24,11 +24,11 @@
 }
 
 .nav-primary__item {
-  float: left;
   @include nav-typeg();
-  list-style-type: none;
   @include padding(9 12 0 0);
-  text-transform: uppercase;
+  color: #292929;
+  float: left;
+  list-style-type: none;
 
   @supports (display: flex) {
     padding-top: 0;
@@ -72,24 +72,46 @@
 }
 
 .nav-primary__search_icon {
-  display: block;
+  display: flex;
   height: 24px;
   width: 24px;
 }
 
+.nav-primary__alert_icon {
+  display: flex;
+  height: 20px;
+  width: 17px;
+}
+
+.nav-primary__item {
+  display: flex;
+  a {
+    @include margin(5, "right");
+    color: $color-text;
+    display: flex;
+  }
+  a:hover {
+    color: $color-primary;
+  }
+}
+.nav-primary__item--first {
+  display: none;
+}
 .nav-primary__item--first a {
   display: inline-block;
   margin-bottom: -6px;
+
 }
 
 @media only all and (max-width: 21.25rem) {
   .nav-primary__menu_text {
-    padding-bottom: 0;
     @include visuallyhidden();
+    padding-bottom: 0;
   }
 
   .nav-primary__item--first {
     padding: 0;
+
   }
 
   .nav-primary__menu_icon {
@@ -98,6 +120,16 @@
   }
 }
 
+@media only all and (max-width: 730px) {
+  .nav-primary__item--first {
+    display: flex !important;
+    padding-top: 2px;
+  }
+  .nav-primary__item {
+    display: none;
+  }
+
+}
 @media only all and (max-width: 30rem) {
 
   .nav-primary__list {

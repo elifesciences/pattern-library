@@ -2,10 +2,9 @@
   "title": {
     "homePagePath": "#"
   },
-  "primaryLinks":
-  {
+  "primaryLinks": {
     "classesOuter": "nav-primary",
-    "classesInner": "nav-primary__list clearfix",
+    "classesInner": "",
     "linkedItems": [
       {
         "text": "Menu",
@@ -27,41 +26,46 @@
           ]
         }
       },
-
       {
         "text": "Home",
         "path": "#",
         "classes": "nav-primary__item"
       },
-
       {
-        "text": "Community",
+        "text": "Research",
         "path": "#",
         "classes": "nav-primary__item"
       },
-
       {
         "text": "Magazine",
         "path": "#",
-        "classes": "nav-primary__item"
+        "classes": "nav-primary__item "
       },
-
       {
-        "text": "Innovation",
-        "path": "#",
-        "classes": "nav-primary__item"
+        "text": "Inside eLife",
+        "path": "/inside-elife",
+        "classes": "nav-primary__item "
       },
-
       {
-        "text": "Search the eLife site",
+        "text": "About",
+        "path": "/about",
+        "classes": "nav-primary__item"
+      }
+    ]
+  },
+  "secondaryLinks": {
+    "classesOuter": "nav-secondary",
+    "classesInner": "nav-secondary__list clearfix",
+    "linkedItems": [
+      {
+        "text": "Search",
         "rel": "search",
         "classes": "nav-primary__item nav-primary__item--search",
-        "textClasses": "visuallyhidden",
         "path": "#",
         "picture": {
           "pictureClasses": "nav-primary__search_icon",
           "fallback": {
-            "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 1x",
+            "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
             "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
             "classes": "",
             "altText": ""
@@ -72,28 +76,27 @@
             }
           ]
         }
-      }
-    ]
-  },
-
-
-  "secondaryLinks":
-  {
-    "classesOuter": "nav-secondary",
-    "classesInner": "nav-secondary__list clearfix",
-    "linkedItems": [
-      {
-        "text": "Newsletters",
-        "path": "#",
-        "classes": "nav-secondary__item"
       },
-
       {
-        "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+        "text": "Alerts",
+        "rel": "search",
+        "classes": "nav-primary__item nav-primary__item--search",
         "path": "#",
-        "classes": "nav-secondary__item"
+        "picture": {
+          "pictureClasses": "nav-primary__search_icon",
+          "fallback": {
+            "srcset": "../../assets/img/patterns/molecules/nav-primary-notifications-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 24w",
+            "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+            "classes": "",
+            "altText": ""
+          },
+          "sources": [
+            {
+              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
+            }
+          ]
+        }
       },
-
       {
         "text": "Submit my research",
         "path": "#",
@@ -102,30 +105,14 @@
           "classes": "button--default button--extra-small"
         }
       },
-
       {
-        "classes": "nav-secondary__item nav-secondary__item--logged-in",
+        "classes": "nav-secondary__item",
         "loginControl": {
-          "isLoggedIn": true,
-          "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
-          "defaultUri": "#profileHome",
-          "subsidiaryText": "View my profile",
-          "icon": {
-            "sources": [
-              {
-                "srcset": "../../assets/img/icons/profile.svg",
-                "sizes": "35px",
-                "type": "image/svg+xml"
-              }
-            ],
-            "fallback": {
-              "srcset": "../../assets/img/icons/profile@2x.png 2x, ../../assets/img/icons/profile.png 1x",
-              "defaultPath": "../../assets/img/icons/profile.png",
-              "altText": "Profile icon"
-            }
-          },
-          "linkFieldRoots": "profile-manager, logout",
-          "linkFieldData": "data-profile-manager-text=\"Manage your profile\" data-profile-manager-uri=\"#profileManageLink\" data-logout-text=\"Log out\" data-logout-uri=\"/log-out\""
+          "button": {
+            "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
+            "path": "#",
+            "classes": "button--login"
+          }
         }
       }
     ]
