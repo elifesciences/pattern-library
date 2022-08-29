@@ -194,7 +194,7 @@
           },
           "title": "Mapping global environmental suitability for Zika virus",
           "url": "#",
-          "secondaryInfo": "Jane P Messina et al.",
+          "secondaryInfo": "Jane P Messina, Moritz UG Kraemer ... Simon I Hay",
           "footer": {
             "meta": {
               "text": "Research article",
@@ -261,7 +261,7 @@
           },
           "title": "Coverage and system efficiencies of insecticide-treated nets in Africa from 2000 to 2017",
           "url": "#",
-          "secondaryInfo": "Samir Bhatt et al.",
+          "secondaryInfo": "Samir Bhatt, Daniel J Weiss ... Peter W Gething",
           "multipleAuthors": true,
           "content": "Insecticide-treated net requirements for Africa have been underestimated, but mitigating for inefficiencies in net distributions can produce a cost effective path to universal coverage.",
           "footer": {
@@ -297,7 +297,7 @@
           },
           "title": "Mapping residual transmission for malaria elimination",
           "url": "#",
-          "secondaryInfo": "Robert C Reiner et al.",
+          "secondaryInfo": "Robert C Reiner Jr, Arnaud Le Menach ... David L Smith",
           "content": "A fine-grain map of residual transmission and importation in Swaziland shows where to target malaria elimination efforts.",
           "footer": {
             "meta": {
@@ -331,7 +331,7 @@
           },
           "title": "Longitudinal analysis of <i>Plasmodium sporozoite</i> motility in the dermis reveals component of blood vessel recognition",
           "url": "#",
-          "secondaryInfo": "Christine S Hopp et al.",
+          "secondaryInfo": "Christine S Hopp, Kevin Chiou ... Photini Sinnis",
           "content": "Malaria parasites enter the host via the skin, where they are inoculated by an infected mosquito as it probes for blood: the inoculation site is a bottleneck for the parasite and the only time when the parasite is extracellular for more than a few minutes, thus possibly presenting the best opportunity for antibody-mediated inhibition of infection.",
           "footer": {
             "meta": {
@@ -368,7 +368,7 @@
           },
           "title": "Insights into the basic metabolic architecture and adaptations of malaria parasites for growth within human erythrocytes exemplify how incisive knowledge of biochemical pathways and mechanisms may be leveraged to develop new therapies.",
           "url": "#",
-          "secondaryInfo": "Paul A Sigala et al.",
+          "secondaryInfo": "Paul A Sigala, Jan R Crowley ... Daniel E Goldberg",
           "content": "Insights into the basic metabolic architecture and adaptations of malaria parasites for growth within human erythrocytes exemplify how incisive knowledge of biochemical pathways and mechanisms may be leveraged to develop new therapies.",
           "footer": {
             "meta": {
@@ -405,7 +405,7 @@
           },
           "title": "Malaria-associated atypical memory B cells exhibit markedly reduced B cell receptor signaling and effector function",
           "url": "#",
-          "secondaryInfo": "Silvia Portugal et al.",
+          "secondaryInfo": "Paul A Sigala, Jan R Crowley ... Daniel E Goldberg",
           "content": "Atypical memory B cells (MBCs) appear to differentiate from classical MBCs during chronic exposure to the malaria parasite <i>Plasmodium falciparum</i>, and may interfere with the acquisition of immunity to the disease.",
           "footer": {
             "meta": {
@@ -438,7 +438,7 @@
           },
           "title": "Large-scale whole genome sequencing of <i>M. tuberculosis</i> provides insights into transmission in a high prevalence area",
           "url": "#",
-          "secondaryInfo": "JA Guerra-Assunção et al",
+          "secondaryInfo": "JA Guerra-Assunção, AC Crampin ... JR Glynn",
           "content": "A study of tuberculosis cases in the Karonga district of Malawi reveals that the main lineages of <i>M. tuberculosis</i> differ in their transmission patterns and virulence.",
           "footer": {
             "meta": {
@@ -475,7 +475,7 @@
           },
           "title": "Blood-stage immunity to <i>Plasmodium chabaudi</i> malaria following chemoprophylaxis and sporozoite immunization",
           "url": "#",
-          "secondaryInfo": "Wiebke Nahrendorf et al.",
+          "secondaryInfo": "Wiebke Nahrendorf, Philip J Spence ... Jean Langhorne",
           "content": "A novel mouse model of immunization against Plasmodium chabaudi involving infectious mosquito bites and drug-treatment elicits protection against blood-stage malaria parasites, and shows that protection is not necessarily life cycle stage-specific.",
           "footer": {
             "meta": {
@@ -512,7 +512,7 @@
           },
           "title": "Effectiveness of traveller screening for emerging pathogens is shaped by epidemiology and natural history of infection",
           "url": "#",
-          "secondaryInfo": "Katelyn M Gostic et al.",
+          "secondaryInfo": "Katelyn M Gostic, Adam J Kucharski, James O Lloyd-Smith",
           "content": "Pathogen natural history, epidemiological knowledge, human behavior and epidemic progression determine whether symptom screening and questionnaires are effective barriers to geographic spread of infection by travelers.",
           "footer": {
             "meta": {
@@ -545,7 +545,7 @@
           },
           "title": "Vitamin A supplements, routine immunization, and the subsequent risk of <i>Plasmodium</i> infection among children under 5 years in sub-Saharan Africa",
           "url": "#",
-          "secondaryInfo": "Maria-Graciela Hollm-Delgado et al.",
+          "secondaryInfo": "Maria-Graciela Hollm-Delgado, Frédéric B Piel ... Robert E Black",
           "content": "An analysis of national survey data shows that vitamin A might protect against malaria infection, an effect potentially modified by seasonality, and that no routine vaccinations were linked to parasitemia, though BCG vaccination was associated with <i>Pf</i>HRP-2 antigenemia.",
           "footer": {
             "meta": {
@@ -578,7 +578,7 @@
           },
           "title": "Modelling the contribution of the hypnozoite reservoir to <i>Plasmodium vivax</i> transmission",
           "url": "#",
-          "secondaryInfo": "Michael T White et al.",
+          "secondaryInfo": "Michael T White, Stephan Karl ... Azra C Ghani",
           "content": "Mathematical models of the build-up and depletion of the hypnozoite reservoir in the liver can inform the design of treatment strategies for preventing <i>Plasmodium vivax</i> relapse infections.",
           "footer": {
             "meta": {
@@ -615,7 +615,7 @@
           },
           "title": "Crystal structure of PfRh5, an essential <i>P. falciparum</i> ligand for invasion of human erythrocytes",
           "url": "#",
-          "secondaryInfo": "Lin Chen et al.",
+          "secondaryInfo": "Lin Chen, Yibin Xu ... Alan F Cowman",
           "content": "The crystal structure of a PfRh family protein from a malaria parasite has been solved and shows that PfRh5-which the parasite uses to invade human red blood cells-has a novel protein fold.",
           "footer": {
             "meta": {
@@ -652,7 +652,7 @@
           },
           "title": "Mapping the zoonotic niche of Ebola virus disease in Africa",
           "url": "#",
-          "secondaryInfo": "David M Pigott et al.",
+          "secondaryInfo": "David M Pigott, Nick Golding ... Simon I Hay",
           "content": "Understanding where future Ebola virus outbreaks may start and the changing nature of the populations living in these places is of critical importance in helping to prepare for future outbreaks.",
           "footer": {
             "meta": {
@@ -689,7 +689,7 @@
           },
           "title": "Global distribution maps of the leishmaniases",
           "url": "#",
-          "secondaryInfo": "David M Pigott et al.",
+          "secondaryInfo": "David M Pigott, Samir Bhatt ... Simon I Hay",
           "content": "Maps defining environmental risk of the leishmaniases provide insights into the ecology of these diseases and identify regions to target public health measures and inform future burden estimates.",
           "footer": {
             "meta": {
@@ -726,7 +726,7 @@
           },
           "title": "<i>Salmonella</i> Typhi and <i>Salmonella</i> Paratyphi A elaborate distinct systemic metabolite signatures during enteric fever",
           "url": "#",
-          "secondaryInfo": "Elin Näsström et al",
+          "secondaryInfo": "Elin Näsström, Nga Tran Vu Thieu ... Henrik Antti",
           "content": "Metabolite analysis of plasma from enteric fever patients define signals of organism specific host–pathogen interactions and provides opportunities for new diagnostics.",
           "footer": {
             "meta": {
@@ -763,7 +763,7 @@
           },
           "title": "A micro-epidemiological analysis of febrile malaria in Coastal Kenya showing hotspots within hotspots",
           "url": "#",
-          "secondaryInfo": "Philip Bejon et al.",
+          "secondaryInfo": "Philip Bejon, Thomas N Williams ... Steffen Borrmann",
           "content": "Malaria 'hotspots' can be identified that range in size from a few homesteads to a village, and it will be necessary to eliminate hotspots at varying scales as we progress towards eliminating malaria.",
           "footer": {
             "meta": {
@@ -800,7 +800,7 @@
           },
           "title": "Integrating influenza antigenic dynamics with molecular evolution",
           "url": "#",
-          "secondaryInfo": "Trevor Bedford et al.",
+          "secondaryInfo": "Trevor Bedford, Marc A Suchard ... Andrew Rambaut",
           "content": "Combined antigenic and genetic analysis shows that different strains of the human influenza virus display dramatically different rates of antigenic drift, and that these differences have a significant impact on the number of new infections in each flu season.",
           "footer": {
             "meta": {
@@ -837,7 +837,7 @@
           },
           "title": "The antigenic switching network of <i>Plasmodium falciparum</i> and its implications for the immuno-epidemiology of malaria",
           "url": "#",
-          "secondaryInfo": "Robert Noble et al.",
+          "secondaryInfo": "Robert Noble, Zóe Christodoulou ... Mario Recker",
           "content": "The first comprehensive analysis of antigenic switching in the malaria-causing parasite <i>Plasmodium falciparum</i> provides new insights into the process that prevents individuals from acquiring immunity to the disease.",
           "footer": {
             "meta": {
@@ -872,7 +872,7 @@
           "rootClasses": "teaser--secondary",
           "title": "Taking a close look at TB",
           "url": "#",
-          "secondaryInfo": "Judith Glynn et al.",
+          "secondaryInfo": "Judith R Glynn, Ndoliwe Kayuni ... Amelia C Crampin",
           "footer": {
             "meta": {
               "url": "#",
@@ -917,7 +917,7 @@
           },
           "title": "What makes an eLife paper in Epidemiology and Global Health?",
           "url": "#",
-          "secondaryInfo": "M Jit et al.",
+          "secondaryInfo": "Mark Jit, Eduardo Franco, Prabhat Jha",
           "footer": {
             "meta": {
               "url": "#",
@@ -950,7 +950,7 @@
         },
           "title": "Mapping Ebola in wild animals for better disease control",
           "url": "#",
-          "secondaryInfo": "S Funk et al.",
+          "secondaryInfo": "Sebastian Funk, Peter Piot",
           "footer": {
             "meta": {
               "url": "#",
@@ -983,7 +983,7 @@
           },
           "title": "Honing in on enteric fever",
           "url": "#",
-          "secondaryInfo": "LR McKinnon et al.",
+          "secondaryInfo": "Lyle R McKinnon, Quarraisha Abdool Karim",
           "footer": {
             "meta": {
               "url": "#",
