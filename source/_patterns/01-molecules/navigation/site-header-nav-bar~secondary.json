@@ -46,10 +46,10 @@
     },
 
     {
-      "text": "Submit my research",
-      "path": "#",
       "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
       "button": {
+        "text": "Submit my research",
+        "path": "#",
         "classes": "button--default button--extra-small"
       }
     }

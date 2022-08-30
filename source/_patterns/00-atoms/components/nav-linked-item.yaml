@@ -29,8 +29,6 @@ allOf:
         properties:
           button:
             $ref: button.yaml
-        required:
-          - button
       -
         properties:
           loginControl:
