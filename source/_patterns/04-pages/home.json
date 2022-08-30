@@ -3,7 +3,7 @@
     "title": {
       "homePagePath": "#"
     },
-    "primaryLinks": 
+    "primaryLinks":
     {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
@@ -78,7 +78,7 @@
     },
 
 
-    "secondaryLinks": 
+    "secondaryLinks":
     {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
