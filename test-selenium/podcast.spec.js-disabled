@@ -1,6 +1,7 @@
 let chai = require('chai');
 let expect = chai.expect;
 
+// Disable test until we have time to make it reliable pass/fail.
 describe('A Podcast page', function() {
   it('should have the right title', function () {
     browser.url('/patterns/04-pages-podcast/04-pages-podcast.html');
