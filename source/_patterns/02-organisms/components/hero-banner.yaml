@@ -46,6 +46,8 @@ properties:
   meta:
     $ref: ../../01-molecules/components/meta.yaml
 required:
+  - image
   - title
   - url
   - summary
+  - meta

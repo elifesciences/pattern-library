@@ -3,7 +3,8 @@
     "title": {
       "homePagePath": "#"
     },
-    "primaryLinks": {
+    "primaryLinks": 
+    {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
@@ -77,7 +78,8 @@
     },
 
 
-    "secondaryLinks": {
+    "secondaryLinks": 
+    {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
@@ -293,7 +295,7 @@
               }
             },
             "formats": {
-              "list": [ "Executable", "PDF" ]
+              "list": ["Executable", "PDF"]
             }
           },
 
@@ -336,7 +338,7 @@
               }
             },
             "formats": {
-              "list": [ "HTML", "PDF" ]
+              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -372,7 +374,7 @@
               }
             },
             "formats": {
-              "list": [ "HTML", "PDF" ]
+              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -408,7 +410,7 @@
               }
             },
             "formats": {
-              "list": [ "HTML", "PDF" ]
+              "list": ["HTML", "PDF"]
             }
           },
           "image": {
@@ -453,7 +455,7 @@
               }
             },
             "formats": {
-              "list": [ "PDF" ]
+              "list": ["PDF"]
             }
           }
         }
@@ -630,40 +632,19 @@
   ],
 
 
-  "mainMenu": {
+  "mainMenu":{
     "listHeading": {
       "heading": "Menu"
     },
     "links": {
       "items": [
-        {
-          "name": "Research categories",
-          "url": "#res"
-        },
-        {
-          "name": "Author guide",
-          "url": "#aut"
-        },
-        {
-          "name": "Reviewer guide",
-          "url": "#rev"
-        },
-        {
-          "name": "About",
-          "url": "#abo"
-        },
-        {
-          "name": "Inside eLife",
-          "url": "#ins"
-        },
-        {
-          "name": "Careers",
-          "url": "#car"
-        },
-        {
-          "name": "Innovation",
-          "url": "#lab"
-        }
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Author guide", "url": "#aut"},
+        {"name": "Reviewer guide", "url": "#rev"},
+        {"name": "About", "url": "#abo"},
+        {"name": "Inside eLife", "url": "#ins"},
+        {"name": "Careers", "url": "#car"},
+        {"name": "Innovation", "url": "#lab"}
       ]
     },
     "button": {
@@ -685,46 +666,16 @@
   },
 
   "footerMenuLinks": [
-    {
-      "name": "About",
-      "url": "#"
-    },
-    {
-      "name": "Who we work with",
-      "url": "#"
-    },
-    {
-      "name": "Alerts",
-      "url": "#"
-    },
-    {
-      "name": "Contact",
-      "url": "#"
-    },
-    {
-      "name": "Terms and policy",
-      "url": "#"
-    },
-    {
-      "name": "Inside eLife",
-      "url": "#"
-    },
-    {
-      "name": "Monthly archive",
-      "url": "#"
-    },
-    {
-      "name": "Innovation",
-      "url": "#"
-    },
-    {
-      "name": "For the press",
-      "url": "#"
-    },
-    {
-      "name": "Resources",
-      "url": "#"
-    }
+    { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms and policy", "url": "#" },
+    { "name": "Inside eLife", "url": "#" },
+    { "name": "Monthly archive", "url": "#" },
+    { "name": "Innovation", "url": "#" },
+    { "name": "For the press", "url": "#" },
+    { "name": "Resources", "url": "#" }
   ]
 
 }
