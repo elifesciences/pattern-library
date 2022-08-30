@@ -1,35 +1,22 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
-allOf:
-  -
-    properties:
-      classes:
-        type: string
-  -
-    oneOf:
-      -
-        properties:
-          text:
-            type: string
-            minLength: 1
-          textClasses:
-            type: string
-          path:
-            type: string
-            minLength: 1
-          rel:
-            type: string
-            enum:
-              - search
-          picture:
-            $ref: picture.yaml
-        required:
-          - text
-      -
-        properties:
-          button:
-            $ref: button.yaml
-      -
-        properties:
-          loginControl:
-            $ref: ../../01-molecules/navigation/login-control.yaml
+properties:
+  classes:
+    type: string
+  text:
+    type: string
+    minLength: 1
+  textClasses:
+    type: string
+  path:
+    type: string
+    minLength: 1
+  rel:
+    type: string
+    enum:
+      - search
+      - alert
+  picture:
+    $ref: picture.yaml
+required:
+  - text

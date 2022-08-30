@@ -11,7 +11,7 @@
       "picture": {
         "pictureClasses": "nav-primary__search_icon",
         "fallback": {
-          "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+          "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 1x",
           "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
           "classes": "",
           "altText": ""
@@ -26,13 +26,13 @@
 
     {
       "text": "Alerts",
-      "rel": "alerts",
+      "rel": "search",
       "classes": "nav-primary__item nav-primary__item--alert",
       "path": "#",
       "picture": {
         "pictureClasses": "nav-primary__alert_icon",
         "fallback": {
-          "srcset": "../../assets/img/patterns/molecules/nav-primary-notifications-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 24w",
+          "srcset": "../../assets/img/patterns/molecules/nav-primary-notifications-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 1x",
           "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
           "classes": "",
           "altText": ""
@@ -46,10 +46,11 @@
     },
 
     {
-      "text": "Submit my research",
-      "path": "#",
+      "text": "Site header nav bar secondary logged in",
       "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
       "button": {
+        "text": "Submit my research",
+        "path": "#",
         "classes": "button--default button--extra-small"
       }
     }
