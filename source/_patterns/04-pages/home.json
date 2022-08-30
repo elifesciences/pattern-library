@@ -385,7 +385,8 @@
                   "month": "May",
                   "year": 2016
                 },
-                "forMachine": "20160516"
+                "forMachine": "20160516",
+                "isUpdated": true
               },
               "statusText": "Updated",
               "statusDate": {
