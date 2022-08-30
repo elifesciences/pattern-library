@@ -116,17 +116,6 @@
         "button": {
           "classes": "button--default button--extra-small"
         }
-      },
-
-      {
-        "classes": "nav-secondary__item",
-        "loginControl": {
-          "button": {
-            "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-            "path": "#",
-            "classes": "button--login"
-          }
-        }
       }
     ]
   },

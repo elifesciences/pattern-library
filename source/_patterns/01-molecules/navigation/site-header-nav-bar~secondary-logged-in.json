@@ -4,50 +4,53 @@
 
   "linkedItems": [
     {
-      "text": "Newsletters",
+      "text": "Search",
+      "rel": "search",
+      "classes": "nav-primary__item nav-primary__item--search",
       "path": "#",
-      "classes": "nav-secondary__item"
-    },
-
-    {
-      "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-      "path": "#",
-      "classes": "nav-secondary__item"
-    },
-
-    {
-      "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
-      "button": {
-        "text": "Submit my research",
-        "path": "#",
-        "classes": "button--default button--extra-small"
-
+      "picture": {
+        "pictureClasses": "nav-primary__search_icon",
+        "fallback": {
+          "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
+          "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
+          "classes": "",
+          "altText": ""
+        },
+        "sources": [
+          {
+            "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
+          }
+        ]
       }
     },
 
     {
-      "classes": "nav-secondary__item nav-secondary__item--logged-in",
-      "loginControl": {
-        "isLoggedIn": true,
-        "displayName": "Kananinoheaokuuhomeopuukaimanaalohilo",
-        "defaultUri": "#profileHome",
-        "subsidiaryText": "View my profile",
-        "icon": {
-          "sources": [
-            {
-              "srcset": "../../assets/img/icons/profile.svg",
-              "sizes": "35px",
-              "type": "image/svg+xml"
-            }
-          ],
-          "fallback": {
-            "srcset": "../../assets/img/icons/profile@2x.png 2x, ../../assets/img/icons/profile.png 1x",
-            "defaultPath": "../../assets/img/icons/profile.png",
-            "altText": "Profile icon"
-          }
+      "text": "Alerts",
+      "rel": "alerts",
+      "classes": "nav-primary__item nav-primary__item--alert",
+      "path": "#",
+      "picture": {
+        "pictureClasses": "nav-primary__alert_icon",
+        "fallback": {
+          "srcset": "../../assets/img/patterns/molecules/nav-primary-notifications-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 24w",
+          "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
+          "classes": "",
+          "altText": ""
         },
-        "linkFieldRoots": "profile-manager, logout",
-        "linkFieldData": "data-profile-manager-text=\"Manage your profile\" data-profile-manager-uri=\"#profileManageLink\" data-logout-text=\"Log out\" data-logout-uri=\"/log-out\""
+        "sources": [
+          {
+            "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
+          }
+        ]
+      }
+    },
+
+    {
+      "text": "Submit my research",
+      "path": "#",
+      "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
+      "button": {
+        "classes": "button--default button--extra-small"
       }
     }
   ]
