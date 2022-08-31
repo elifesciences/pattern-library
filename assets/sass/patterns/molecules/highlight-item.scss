@@ -1,159 +1,170 @@
 @import "../../definitions";
 
 .highlight-item {
-  @include constrain-width($max-site-width, "max");
-  @include margin($content-header-padding, "bottom");
-  color: $color-text;
   list-style-type: none;
-  overflow: hidden;
+  color: $color-text;
+  @include margin($content-header-padding, "bottom");
+  @include constrain-width($max-site-width, "max");
   position: relative;
+}
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    @include margin(36, "bottom");
+.highlight-item__picture {
+  display: none;
+}
+
+.js {
+
+  .highlight-item {
+    overflow: hidden;
+    @include margin(24, "bottom");
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include margin(36, "bottom");
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include margin(0, "bottom");
+    }
   }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+  .highlight-item:last-child {
     @include margin(0, "bottom");
   }
-}
 
-.highlight-item:last-child {
-  @include margin(0, "bottom");
-}
+  .highlight-item__picture {
+    display: inline-block;
+    float: right;
+    width: auto;
+    height: 56px;
+    @include margin(24, "left");
 
-.highlight-item__authors {
-  display: none;
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      height: 101px;
+    }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include padding(12, "bottom");
-    display: block;
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      height: 110px;
+      @include set-column-width(4);
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      height: 141px;
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      float: none;
+      width: 100%;
+      height: 191px;
+      @include set-column-width(12);
+      @include margin(0, "left");
+    }
   }
-}
 
-.highlight-item__body {
-  width: calc(50% + 12px);
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    width: calc(50% - 12px);
-  }
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include set-column-width(8);
+  .highlight-item__image {
     width: 100%;
   }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include set-column-width(12);
-  }
-}
-
-.highlight-item__image {
-  width: 100%;
-}
-
-.highlight-item__meta {
-  @include padding(12, "top");
-  color: $color-text-secondary;
-
-  .meta {
-    @include font-size-and-vertical-height(14, 24);
+  .highlight-item__subject_list {
     color: inherit;
+    line-height: 1;
+    @include padding(18, "top");
+    @include padding(2, "bottom");
   }
 
-  .meta__type {
+  .highlight-item__subject_list_item {
+    color: inherit;
+    line-height: 1;
+    @include font-size(12);
+  }
+
+  .highlight-item__subject_link {
+    color: inherit;
+    line-height: 1;
     &:hover {
       color: inherit;
     }
   }
 
-  .date {
-    @include font-size-and-vertical-height(14, 24);
-  }
-}
+  .highlight-item__body {
+    width: calc(50% + 12px);
 
-.highlight-item__picture {
-  @include margin(24, "left");
-  display: inline-block;
-  float: right;
-  width: auto;
-  height: 56px;
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      width: calc(50% - 12px);
+    }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    height: 101px;
-  }
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include set-column-width(8);
+      width: 100%;
+    }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include set-column-width(4);
-    height: 110px;
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include set-column-width(12);
+
+    }
   }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    height: 141px;
+  .highlight-item__title {
+    @include font-size-and-vertical-height(16, 20);
+    @include padding(0);
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include font-size-and-vertical-height(18, 24);
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include font-size-and-vertical-height(22, 32);
+      @include padding(12, "bottom");
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include padding(24, "bottom");
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include padding(22, "top");
+    }
   }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include margin(0, "left");
-    @include set-column-width(12);
-    float: none;
-    height: 191px;
-    width: 100%;
-  }
-}
-
-.highlight-item__subject_link {
-  color: inherit;
-  line-height: 1;
-
-  &:hover {
+  .highlight-item__title_link {
     color: inherit;
-  }
-}
-
-.highlight-item__subject_list {
-  @include padding(18, "top");
-  @include padding(2, "bottom");
-  color: inherit;
-  line-height: 1;
-}
-
-.highlight-item__subject_list_item {
-  @include font-size(12);
-  color: inherit;
-  line-height: 1;
-}
-
-.highlight-item__summary {
-  display: none;
-  font-family: $font-primary;
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    display: block;
-  }
-}
-
-.highlight-item__title {
-  @include font-size-and-vertical-height(16, 20);
-  @include padding(0);
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    @include font-size-and-vertical-height(18, 24);
+    text-decoration: inherit;
   }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include font-size-and-vertical-height(22, 32);
-    @include padding(12, "bottom");
+  .highlight-item__authors {
+    display: none;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: block;
+      @include padding(12, "bottom");
+    }
   }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include padding(24, "bottom");
+  .highlight-item__summary {
+    font-family: $font-primary;
+    display: none;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: block;
+    }
   }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include padding(22, "top");
-  }
-}
+  .highlight-item__meta {
+    @include padding(12, "top");
+    color: $color-text-secondary;
 
-.highlight-item__title_link {
-  color: inherit;
-  text-decoration: inherit;
+    .meta {
+      color: inherit;
+      @include font-size-and-vertical-height(14, 24);
+    }
+
+    .meta__type {
+      &:hover {
+        color: inherit;
+      }
+    }
+
+    .date {
+      @include font-size-and-vertical-height(14, 24);
+    }
+  }
 }
