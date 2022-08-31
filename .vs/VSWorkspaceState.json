@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\assets",
+    "\\assets\\sass",
+    "\\assets\\sass\\patterns",
+    "\\assets\\sass\\patterns\\organisms",
+    "\\source",
+    "\\source\\_patterns",
+    "\\source\\_patterns\\00-atoms",
+    "\\source\\_patterns\\00-atoms\\components",
+    "\\source\\_patterns\\02-organisms",
+    "\\source\\_patterns\\02-organisms\\content-headers"
+  ],
+  "SelectedNode": "\\assets\\sass\\patterns\\organisms\\listing.scss",
+  "PreviewInSolutionExplorer": false
+}
