@@ -371,25 +371,39 @@
 
 .content-header__subject_list_item {
   @include label-subject-typeg();
-  @include margin(12, "bottom");
-  display: inline-block;
+  @include font-size-and-vertical-height(13);
+  display: inline;
   list-style-type: none;
   padding: 0;
+
+  & .content-header__subject:after {
+    content: ", ";
+  }
 
   .content-header--image & {
     color: inherit;
   }
 }
 
+.content-header__subject_list_item:last-child {
+
+  & .content-header__subject:after {
+    content: "";
+  }
+
+}
+
 .content-header__subject_link {
   @include label-subject-typeg();
-  @include font-size-and-vertical-height(12);
-  font-weight: bold;
+  @include font-size-and-vertical-height(13);
   text-decoration: none;
+
+  .content-header-journal & {
+    @include font-size-and-vertical-height(14);
+  }
 
   &:hover {
     @include color-link-hover();
-    text-decoration: none;
   }
 
   .content-header--image & {

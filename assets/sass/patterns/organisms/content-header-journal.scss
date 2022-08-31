@@ -38,25 +38,6 @@
   }
 }
 
-.content-header__subject {
-  @include font-size-and-vertical-height(12);
-  @include margin(12, "right");
-  @include padding(5 10 3 10);
-  background-color: $color-text-ui-background-label-secondary;
-  border-radius: 3px;
-  color: $color-text;
-  font-weight: bold;
-}
-
-.content-header__subject_link {
-  text-decoration: none;
-
-  .content-header__subject {
-    background-color: $color-text-ui-background-label;
-    color: $color-primary;
-  }
-}
-
 // Grid Main
 .content-header-grid__main {
   @include margin($site-spacing, "bottom");
