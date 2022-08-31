@@ -40,7 +40,6 @@ properties:
     minLength: 1
   summary:
     type: string
-    minLength: 1
   authors:
     type: string
   meta:
@@ -49,5 +48,4 @@ required:
   - image
   - title
   - url
-  - summary
   - meta
