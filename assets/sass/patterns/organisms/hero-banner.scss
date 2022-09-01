@@ -1,27 +1,22 @@
 @import "../../definitions";
+
 .hero-banner-item {
+  @include margin(24 0);
   background-color: $color-text--reverse;
   color: $color-text;
   height: 100%;
-  @include margin(24 0);
-  min-height: 172px;
+  max-width: #{$max-site-width}px;
   width: 100%;
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    min-height: 216px;
-  }
-
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    min-height: 142px;
-  }
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    min-height: 181px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: #{$site-spacing}px;
+    grid-template-columns: 7fr 5fr;
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     @include margin(48 0);
-    min-height: 307px;
   }
 }
 
@@ -31,9 +26,9 @@
   width: 100%;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    float: left;
     @include padding(24, "right");
-    @include set-column-width(7);
+    padding: 0;
+    float: left;
   }
 
   .hero-banner__subject_link {
@@ -58,8 +53,8 @@
 }
 
 .hero-banner__subject_list_item {
-  display: inline;
   @include label-subject-typeg();
+  display: inline;
   list-style-type: none;
   padding: 0;
 
@@ -84,23 +79,21 @@
 }
 
 .hero-banner__details {
+  @include padding(24, "top");
   background: $color-text-ui-background;
   font-family: $font-secondary;
   height: 100%;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include padding(24, "right");
-    @include set-column-width(7);
+    @include padding(0);
   }
 
   .hero-banner__title {
-    color: #252525;
     @include font-size-and-vertical-height(18, 26);
-    @include padding(24, "top");
+    color: #252525;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include font-size-and-vertical-height(22, 30);
-      @include padding(0);
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
@@ -132,9 +125,9 @@
   }
 
   .hero-banner__summary {
-    font-family: $font-primary;
     @include font-size-and-vertical-height(16, 24);
     @include padding(12 0);
+    font-family: $font-primary;
   }
 
   .hero-banner__authors {
@@ -171,8 +164,7 @@
   width: 100%;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    float: right;
-    @include set-column-width(5);
+    grid-column: 2;
   }
 
   .hero-banner__image {

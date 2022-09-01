@@ -1,15 +1,5 @@
-<div class="hero-banner" role="region" data-behaviour="Hero-banner" {{#headingId}} aria-labelledby="{{headingId}}" {{/headingId}}>
+<div class="hero-banner" role="banner" data-behaviour="Hero-banner">
     <div class="hero-banner-item" data-behaviour="HeroBannerItem">
-        {{#subjects}}<ol class="hero-banner__subject_list">
-            {{#subjects.list}}
-            <li class="hero-banner__subject_list_item">
-                <a href="{{url}}" class="hero-banner__subject_link">
-                    <span class="hero-banner__subject">{{{name}}}</span>
-                </a>
-            </li>
-            {{/subjects.list}}
-        </ol>
-        {{/subjects}}
         {{#image}}
         <picture class='hero-banner__picture'>
             {{#sources}}
@@ -26,6 +16,17 @@
         </picture>
         {{/image}}
         <section class="hero-banner__details">
+            {{#subjects}}
+            <ol class="hero-banner__subject_list">
+                {{#subjects.list}}
+                <li class="hero-banner__subject_list_item">
+                    <a href="{{url}}" class="hero-banner__subject_link">
+                        <span class="hero-banner__subject">{{{name}}}</span>
+                    </a>
+                </li>
+                {{/subjects.list}}
+            </ol>
+            {{/subjects}}
             {{#title}}
             <h1 class="hero-banner__title {{#titleLength}}hero-banner__title--{{titleLength}}{{/titleLength}}{{^titleLength}}hero-banner__title--medium{{/titleLength}}">
                 <a href="{{url}}" class="hero-banner__title_link">{{{title}}}</a>
