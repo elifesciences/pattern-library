@@ -6,27 +6,13 @@
     "primaryLinks":
     {
       "classesOuter": "nav-primary",
-      "classesInner": "",
+      "classesInner": "nav-primary__item--list",
       "linkedItems": [
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
           "textClasses": "",
-          "path": "#mainMenu",
-          "picture": {
-            "pictureClasses": "nav-primary__menu_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-              }
-            ]
-          }
+          "path": "#mainMenu"
         },
 
         {
@@ -72,42 +58,14 @@
           "text": "Search",
           "rel": "search",
           "classes": "nav-primary__item nav-primary__item--search",
-          "path": "#",
-          "picture": {
-            "pictureClasses": "nav-primary__search_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-              }
-            ]
-          }
+          "path": "#"
         },
 
         {
           "text": "Alerts",
           "rel": "search",
           "classes": "nav-primary__item nav-primary__item--alert",
-          "path": "#",
-          "picture": {
-            "pictureClasses": "nav-primary__alert_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-notifications-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 24w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
-              }
-            ]
-          }
+          "path": "#"
         },
 
         {
@@ -116,17 +74,6 @@
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
             "classes": "button--default button--extra-small"
-          }
-        },
-
-        {
-          "classes": "nav-secondary__item",
-          "loginControl": {
-            "button": {
-              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-              "path": "#",
-              "classes": "button--login"
-            }
           }
         }
       ]

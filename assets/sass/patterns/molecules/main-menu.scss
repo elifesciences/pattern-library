@@ -37,13 +37,9 @@
 }
 
 .main-menu__list_link {
+  @include font-size-and-vertical-height(14, 24);
   color: $color-text;
-  font-family: $font-secondary;
-  font-size: 14px;
-  font-weight: 600;
-  height: 24px;
-  letter-spacing: 0;
-  line-height: 24px;
+  font-weight: bold;
   text-decoration: none;
   width: 41px;
 }
@@ -52,10 +48,7 @@
   @include font-size-and-vertical-height(14, 24);
   @include margin(28, "top");
   @include margin(28, "bottom");
-  @include padding(8, "top");
-  @include padding(8, "bottom");
-  @include padding(24, "right");
-  @include padding(0, "left");
+  @include padding(8 24 8 0);
   background: $color-text--reverse url("../img/icons/close-1x.png") no-repeat;
   background: url("../img/icons/close.svg") center right / 14px 14px no-repeat, linear-gradient(transparent, transparent);
   border: none;

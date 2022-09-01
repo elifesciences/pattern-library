@@ -1,9 +1,7 @@
 @import "../../definitions";
 
 .nav-primary {
-  @include margin(-15, "left");
-  @include padding(0 5);
-  background-color: #fff;
+  background-color: $color-text-ui-background;
   clear: right;
   position: relative;
   z-index: 10;
@@ -25,8 +23,7 @@
 
 .nav-primary__item {
   @include nav-typeg();
-  @include padding(9 12 0 0);
-  color: #292929;
+  color: $color-text-ui-background--reverse;
   float: left;
   list-style-type: none;
 
@@ -51,10 +48,34 @@
   text-decoration: none;
 }
 
+.nav-primary__item--list {
+  @include margin(-35, "left");
+}
+
 .nav-primary__item--search {
   float: right;
   margin-left: auto;
-  @include padding(8, "right");
+  a {
+    background-image: url("../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png");
+    background-size: 21px;
+    background-repeat: no-repeat;
+    background-position-x: 50px;
+    width: 70px;
+  }
+}
+
+.nav-primary__item--alert {
+  float: right;
+  margin-left: auto;
+  @include padding(15, "right");
+  a {
+    background-image: url("../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png");
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position-x: 50px;
+    background-position-y: 1px;
+    width: 70px;
+  }
 }
 
 .nav-primary__menu_icon {
@@ -84,23 +105,29 @@
 }
 
 .nav-primary__item {
+  @include margin(24, "left");
   display: flex;
   a {
     @include margin(5, "right");
     color: $color-text;
-    display: flex;
   }
   a:hover {
     color: $color-primary;
   }
 }
 .nav-primary__item--first {
+  @include margin(20, "right");
   display: none;
-}
-.nav-primary__item--first a {
-  display: inline-block;
-  margin-bottom: -6px;
-
+  a {
+    display: inline-block;
+    margin-bottom: -6px;
+    background-image: url("../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png");
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position-x: 50px;
+    background-position-y: -1px;
+    width: 70px;
+  }
 }
 
 @media only all and (max-width: 21.25rem) {
