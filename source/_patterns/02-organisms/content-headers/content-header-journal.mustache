@@ -15,12 +15,9 @@
                     <ol class="content-header__subject_list">
                         {{#subjects}}
                             <li class="content-header__subject_list_item">
-                                {{#url}}
-                                    <a href="{{url}}" class="content-header__subject_link">{{{name}}}</a>
-                                {{/url}}
-                                {{^url}}
+                                <a href="{{url}}" class="content-header__subject_link">
                                     <span class="content-header__subject">{{{name}}}</span>
-                                {{/url}}
+                                </a>
                             </li>
                         {{/subjects}}
                     </ol>
