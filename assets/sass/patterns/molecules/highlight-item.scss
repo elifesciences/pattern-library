@@ -31,15 +31,6 @@
   @include margin(0, "bottom");
 }
 
-.highlight-item__authors {
-  display: none;
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include padding(12, "bottom");
-    display: block;
-  }
-}
-
 .highlight-item__body {
   width: calc(50% + 12px);
 
@@ -49,6 +40,15 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     width: 100%;
+  }
+
+  .author-line {
+    display: none;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include padding(12, "top");
+      display: block;
+    }
   }
 }
 
