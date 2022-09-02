@@ -1,5 +1,11 @@
 @import "../../definitions";
 
+.author-line {
+  @include font-size-and-vertical-height(14, 24);
+  @include truncate-with-ellipsis();
+  font-weight: bold;
+}
+
 .author_link_highlight,
 .author_link_highlight:hover {
   background-color: transparent;

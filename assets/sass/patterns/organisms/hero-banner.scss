@@ -20,64 +20,6 @@
   }
 }
 
-.hero-banner__subject_list {
-  color: $color-primary;
-  display: block;
-  width: 100%;
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include padding(24, "right");
-    padding: 0;
-    float: left;
-  }
-
-  .hero-banner__subject_link {
-    @include label-subject-typeg();
-    text-decoration: none;
-
-    &:hover {
-      color: $color-primary-dark;
-    }
-  }
-}
-
-.hero-banner__subject_list {
-  @include label-subject-typeg();
-  @include padding(0 0 12 0);
-  @include truncate-with-ellipsis();
-  margin: 0;
-
-  &:before {
-    color: $color-text-secondary;
-  }
-}
-
-.hero-banner__subject_list_item {
-  @include label-subject-typeg();
-  display: inline;
-  list-style-type: none;
-  padding: 0;
-
-  .hero-banner__subject:after {
-    content: ", ";
-  }
-}
-
-.hero-banner__subject_list_item:last-child {
-  .hero-banner__subject:after {
-    content: "";
-  }
-}
-
-.hero-banner__subject_link {
-  @include label-subject-typeg();
-  text-decoration: none;
-
-  &:hover {
-    color: $color-primary-dark;
-  }
-}
-
 .hero-banner__details {
   @include padding(24, "top");
   background: $color-text-ui-background;
@@ -86,6 +28,33 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include padding(0);
+  }
+
+  .hero-banner__meta {
+    color: $color-text-secondary;
+    @include font-size-and-vertical-height(14, 24);
+
+    .meta {
+      color: inherit;
+      @include font-size(14);
+      line-height: 1;
+    }
+
+    .meta__type {
+      &:hover {
+        color: inherit;
+      }
+    }
+
+    .date {
+      @include font-size(14);
+    }
+  }
+
+  .hero-banner__summary {
+    @include font-size-and-vertical-height(16, 24);
+    @include padding(12 0);
+    font-family: $font-primary;
   }
 
   .hero-banner__title {
@@ -123,39 +92,6 @@
       text-decoration: inherit;
     }
   }
-
-  .hero-banner__summary {
-    @include font-size-and-vertical-height(16, 24);
-    @include padding(12 0);
-    font-family: $font-primary;
-  }
-
-  .hero-banner__authors {
-    font-weight: bold;
-    @include font-size-and-vertical-height(14, 24);
-    @include truncate-with-ellipsis();
-  }
-
-  .hero-banner__meta {
-    color: $color-text-secondary;
-    @include font-size-and-vertical-height(14, 24);
-
-    .meta {
-      color: inherit;
-      @include font-size(14);
-      line-height: 1;
-    }
-
-    .meta__type {
-      &:hover {
-        color: inherit;
-      }
-    }
-
-    .date {
-      @include font-size(14);
-    }
-  }
 }
 
 .hero-banner__picture {
@@ -186,6 +122,46 @@
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
       height: 307px;
+    }
+  }
+}
+
+.hero-banner__subject_list {
+  @include label-subject-typeg();
+  @include padding(0 0 12 0);
+  @include truncate-with-ellipsis();
+  color: $color-primary;
+  display: block;
+  margin: 0;
+  width: 100%;
+
+  &:before {
+    color: $color-text-secondary;
+  }
+
+  .hero-banner__subject_link {
+    @include label-subject-typeg();
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+
+  .hero-banner__subject_list_item {
+    @include label-subject-typeg();
+    display: inline;
+    list-style-type: none;
+    padding: 0;
+
+    .hero-banner__subject:after {
+      content: ", ";
+    }
+  }
+
+  .hero-banner__subject_list_item:last-child {
+    .hero-banner__subject:after {
+      content: "";
     }
   }
 }
