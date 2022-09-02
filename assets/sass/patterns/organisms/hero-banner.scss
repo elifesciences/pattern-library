@@ -1,6 +1,6 @@
 @import "../../definitions";
 
-.hero-banner-item {
+.hero-banner {
   @include margin(24 0);
   background-color: $color-text--reverse;
   color: $color-text;
