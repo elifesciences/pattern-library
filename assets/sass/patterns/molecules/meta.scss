@@ -19,7 +19,7 @@
 
 .meta__type {
   @include font-size-and-vertical-height(14, 24);
-  color: #767676;
+  color: $color-text-secondary;
 
   & + .date:not(:last-child)::after {
     content: "\00a0\2219\00a0";
