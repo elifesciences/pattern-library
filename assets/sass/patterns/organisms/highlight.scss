@@ -21,8 +21,8 @@
     display: none;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      display: block;
       @include margin(24, "bottom");
+      display: block;
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
