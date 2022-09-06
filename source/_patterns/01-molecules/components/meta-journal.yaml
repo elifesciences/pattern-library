@@ -17,6 +17,11 @@ properties:
     minLength: 1
   date:
     $ref: ../../00-atoms/components/date.yaml
+  statusText:
+    type: string
+    minLength: 1
+  statusDate:
+    $ref: ../../00-atoms/components/date.yaml
 anyOf:
   -
     required:

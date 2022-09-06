@@ -3,10 +3,19 @@
   "text": "Research article",
   "date": {
     "forHuman": {
-      "dayOfMonth": 29,
-      "month": "Feb",
+      "dayOfMonth": 16,
+      "month": "May",
       "year": 2016
     },
-    "forMachine": "2016-02-29"
+    "forMachine": "2016-05-16"
+  },
+  "statusText": "Updated",
+  "statusDate": {
+    "forHuman": {
+      "dayOfMonth": 24,
+      "month": "Mar",
+      "year": 2022
+    },
+    "forMachine": "2022-03-24"
   }
 }
