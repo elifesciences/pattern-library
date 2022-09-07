@@ -11,7 +11,6 @@
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     display: grid;
     grid-auto-flow: column;
-    grid-column-gap: #{$site-spacing}px;
     grid-template-columns: 7fr 5fr;
   }
 
@@ -29,6 +28,7 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include padding(0);
+    margin-right: #{$site-spacing}px;
   }
 
   .hero-banner__meta {
@@ -98,6 +98,8 @@
 .hero-banner__picture {
   display: inline-block;
   height: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
   width: 100%;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -107,6 +109,8 @@
   .hero-banner__image {
     border: 1px solid #{$color-text-dividers};
     height: 172px;
+    position: absolute;
+    object-fit: cover;
     width: 100%;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
