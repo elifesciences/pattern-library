@@ -8,9 +8,9 @@
       {"name": "Research", "url": "#res"},
       {"name": "Magazine", "url": "#"},
       {"name": "Inside eLife", "url": "#ins"},
-      {"name": "About", "url": "#abo"},
+      {"name": "About", "url": "#abo", "hasLine": true},
       {"name": "Search", "url": "#"},
-      {"name": "Subscribe to alerts", "url": "#"},
+      {"name": "Subscribe to alerts", "url": "#", "hasLine": true},
       {"name": "Submit your research", "url": "#"}
     ]
   }

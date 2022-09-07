@@ -71,6 +71,8 @@
 .site-header__navigation {
   @include margin(28, "top");
   @include margin(28, "bottom");
+  @include padding(35, "left");
+  @include padding(35, "right");
   align-items: center;
   background-color: #fff;
   display: flex;
@@ -82,6 +84,8 @@
 .site-header__navigation__item {
   align-items: center;
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .site-header__skip_to_content {
@@ -103,30 +107,10 @@
   }
 }
 
-@media only all and (max-width: 730px) {
-  .site-header__navigation {
-    @include padding(35, "left");
-  }
-
-  .site-header__navigation__item {
-    justify-content: space-between;
-    width: 100%;
-  }
-}
-
-@media only all and (min-width: 731px) {
-  .site-header__border {
-    border-right: 1px solid $color-text-dividers;
-    height: 24px;
-    margin-left: 25px;
-    z-index: 50;
-  }
-}
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
 
   .site-header__title {
     @include height(31);
-    @include margin(10, "right");
     float: left;
     position: relative;
     width: 89px;
@@ -147,6 +131,23 @@
 
   .site-header__logo_link_image {
     display: block;
+  }
+}
+
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+  .site-header__navigation__item {
+    justify-content: flex-start;
+  }
+
+  .site-header__border {
+    @include margin(15, "left");
+    border-right: 1px solid $color-text-dividers;
+    height: 24px;
+    z-index: 50;
+  }
+
+  .site-header__navigation {
+    @include padding(0);
   }
 }
 

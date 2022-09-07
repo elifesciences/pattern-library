@@ -17,14 +17,6 @@
   @include margin(auto, "right");
   @include nospace();
   @include padding(24, "left");
-
-  & :nth-child(5) {
-    border-bottom: 1px solid $color-text-dividers;
-  }
-
-  & :nth-child(8) {
-    border-top: 1px solid $color-text-dividers;
-  }
 }
 
 .main-menu__list_item {
@@ -34,6 +26,9 @@
   @include padding(0, "right");
   @include padding(0, "left");
   display: block;
+  &.lineSeparator {
+    border-bottom: 1px solid $color-text-dividers;
+  }
 }
 
 .main-menu__list_link {
@@ -41,7 +36,6 @@
   color: $color-text;
   font-weight: bold;
   text-decoration: none;
-  width: 41px;
 }
 
 .main-menu__close_control {

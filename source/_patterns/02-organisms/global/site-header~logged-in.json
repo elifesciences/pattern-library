@@ -2,57 +2,52 @@
   "title": {
     "homePagePath": "#"
   },
-  "primaryLinks": {
+  "primaryLinks":
+  {
     "classesOuter": "nav-primary",
-    "classesInner": "",
+    "classesInner": "nav-primary__item--list",
     "linkedItems": [
       {
         "text": "Menu",
         "classes": "nav-primary__item nav-primary__item--first",
-        "textClasses": "visuallyhidden",
-        "path": "#mainMenu",
-        "picture": {
-          "pictureClasses": "nav-primary__menu_icon",
-          "fallback": {
-            "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
-            "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-            "classes": "",
-            "altText": ""
-          },
-          "sources": [
-            {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-            }
-          ]
-        }
+        "textClasses": "",
+        "path": "#mainMenu"
       },
+
       {
         "text": "Home",
         "path": "#",
         "classes": "nav-primary__item"
       },
+
       {
         "text": "Research",
         "path": "#",
         "classes": "nav-primary__item"
       },
+
       {
         "text": "Magazine",
         "path": "#",
         "classes": "nav-primary__item "
       },
+
       {
         "text": "Inside eLife",
-        "path": "/inside-elife",
+        "path": "#",
         "classes": "nav-primary__item "
       },
+
       {
         "text": "About",
-        "path": "/about",
+        "path": "#",
         "classes": "nav-primary__item"
       }
+
+
     ]
   },
+
   "secondaryLinks": {
     "classesOuter": "nav-secondary",
     "classesInner": "nav-secondary__list clearfix",
@@ -60,42 +55,15 @@
       {
         "text": "Search",
         "rel": "search",
-        "classes": "nav-primary__item nav-primary__item--search",
-        "path": "#",
-        "picture": {
-          "pictureClasses": "nav-primary__search_icon",
-          "fallback": {
-            "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 1x",
-            "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-            "classes": "",
-            "altText": ""
-          },
-          "sources": [
-            {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-            }
-          ]
-        }
+        "classes": "nav-secondary__item nav-secondary__item--search",
+        "path": "#"
       },
+
       {
         "text": "Alerts",
         "rel": "search",
-        "classes": "nav-primary__item nav-primary__item--search",
-        "path": "#",
-        "picture": {
-          "pictureClasses": "nav-primary__search_icon",
-          "fallback": {
-            "srcset": "../../assets/img/patterns/molecules/nav-primary-notifications-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png 1x",
-            "defaultPath": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png",
-            "classes": "",
-            "altText": ""
-          },
-          "sources": [
-            {
-              "srcset": "../../assets/img/patterns/molecules/nav-secondary-notifications-ic.svg"
-            }
-          ]
-        }
+        "classes": "nav-secondary__item nav-secondary__item--alert",
+        "path": "#"
       },
       {
         "text": "Site header logged in",

@@ -13,6 +13,10 @@ properties:
           url:
             type: string
             minLength: 1
+          hasLine:
+            type: boolean
+            enum:
+              - true
         required:
           - name
           - url

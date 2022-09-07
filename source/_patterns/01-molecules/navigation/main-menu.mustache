@@ -6,7 +6,7 @@
     {{#links}}
       <ul class="main-menu__list">
         {{#items}}
-        <li class="main-menu__list_item">
+        <li class="main-menu__list_item {{#hasLine}}lineSeparator{{/hasLine}}">
           <a href="{{url}}" class="main-menu__list_link">{{name}}</a>
         </li>
         {{/items}}

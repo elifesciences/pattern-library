@@ -469,6 +469,27 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   vertical-align: middle;
 }
 
+@mixin background-icon($url, $size, $position-x: 50px, $position-y: 0, $width: 70px) {
+  display: none;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin(24, "right");
+    background-image: url($url);
+    background-size: $size;
+    background-repeat: no-repeat;
+    display: block;
+    text-indent: -9999px;
+    width: 24px;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    background-position-x: $position-x;
+    background-position-y: $position-y;
+    text-indent: 0;
+    width: $width;
+  }
+}
+
 @mixin colors($background-color: $color-primary, $border-color: $background-color, $color: $color-text--reverse) {
   background-color: $background-color;
   border: 1px solid $border-color;
