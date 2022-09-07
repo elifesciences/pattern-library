@@ -3,16 +3,6 @@
     <div class="meta__status{{#isReviewed}} meta__type_reviewed{{/isReviewed}}">{{{text}}}</div>
   {{/text}}
 
-  {{#url}}
-    <a class="meta__type" href="{{url}}" {{#carouselItem}}tabindex="-1"{{/carouselItem}}>{{{text}}}</a>
-  {{/url}}
-
-  {{^url}}
-    {{#text}}
-    <span class="meta__type">{{{text}}}</span>
-    {{/text}}
-  {{/url}}
-
   {{#date}}
     {{>atoms-date}}
   {{/date}}
