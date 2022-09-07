@@ -11,23 +11,10 @@
       "altText": ""
     }
   },
-  "subjects": {
-    "list": [
-      {
-        "name": "Biochemistry",
-        "url": "#"
-      },
-      {
-        "name": "Plant Biology",
-        "url": "#"
-      }
-    ]
-  },
   "title": "A new synthetic biology approach allows transfer of an entire metabolic pathway from a medicinal plant to a biomass crop",
   "titleLength": "small",
   "url": "#",
   "summary": "A combination of chloroplast transformation with nuclear transformation and large-scale metabolic screening of supertransformed plant lines has enabled an entire biochemical pathway to be transferred from a medicinal plant to a high-biomass crop.",
-  "authors": "Paulina Fuentes et al.",
   "meta": {
     "url": "#",
     "text": "Podcast",
