@@ -1,18 +1,20 @@
 <li class="highlight-item" data-behaviour="HighlightItem">
    {{#image}}
-   <picture class='highlight-item__picture'>
-       {{#sources}}
-       <source srcset='{{srcset}}'
-               {{#type}} type='{{type}}' {{/type}}
-               {{#media}} media='{{media}}' {{/media}}>
-       {{/sources}}
-       {{#fallback}}
-       <img src='{{defaultPath}}'
-            {{#srcset}} srcset='{{srcset}}' {{/srcset}}
-            alt='{{altText}}'
-            class='highlight-item__image' />
-       {{/fallback}}
-   </picture>
+   <a href="{{url}}">
+     <picture class='highlight-item__picture'>
+         {{#sources}}
+         <source srcset='{{srcset}}'
+                 {{#type}} type='{{type}}' {{/type}}
+                 {{#media}} media='{{media}}' {{/media}}>
+         {{/sources}}
+         {{#fallback}}
+         <img src='{{defaultPath}}'
+              {{#srcset}} srcset='{{srcset}}' {{/srcset}}
+              alt='{{altText}}'
+              class='highlight-item__image' />
+         {{/fallback}}
+     </picture>
+   </a>
    {{/image}}
 
 <div class="highlight-item__body">
@@ -21,11 +23,11 @@
     </h2>
 
     {{#summary}}
-    <div class="highlight-item__summary">{{{summary}}}</div>
+    <p class="paragraph">{{{summary}}}</p>
     {{/summary}}
 
     {{#authors}}
-    <div class="author-line" id="{{elementId}}">{{{authors}}}</div>
+    <div class="author-line">{{{authors}}}</div>
     {{/authors}}
 
     {{#meta}}
