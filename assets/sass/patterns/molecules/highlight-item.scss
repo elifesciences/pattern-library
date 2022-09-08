@@ -1,5 +1,11 @@
 @import "../../definitions";
 
+.highlight__items__count--one .highlight-item__image {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    width: 50%;
+  }
+}
+
 .highlight-item {
   @include constrain-width($max-site-width, "max");
   @include margin($content-header-padding, "bottom");
@@ -33,6 +39,9 @@
 }
 
 .highlight-item__body {
+  // Add min-width to fix issue with authors. Without that width the ellipsis are not working
+  min-width: 0;
+
   .author-line {
     display: none;
 
