@@ -10,7 +10,7 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     display: grid;
-    grid-auto-flow: column;
+    grid-auto-flow: dense;
     grid-template-columns: 7fr 5fr;
   }
 
@@ -96,38 +96,12 @@
 }
 
 .hero-banner__picture {
-  display: inline-block;
-  height: 100%;
-  padding-bottom: 56.25%;
-  position: relative;
-  width: 100%;
-
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     grid-column: 2;
   }
 
   .hero-banner__image {
     border: 1px solid #{$color-text-dividers};
-    height: 172px;
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      height: 216px;
-    }
-
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      height: 142px;
-    }
-
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      height: 181px;
-    }
-
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      height: 307px;
-    }
   }
 }
 
