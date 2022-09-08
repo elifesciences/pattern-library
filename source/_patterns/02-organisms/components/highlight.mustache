@@ -1,9 +1,9 @@
-<div class="highlight" role="region" data-behaviour="Highlight"{{#headingId}} aria-labelledby="{{headingId}}"{{/headingId}}>
+<div class="highlight" role="region">
   {{#heading}}
     {{>atoms-list-heading}}
   {{/heading}}
 
-  <ul class="highlight__items">
+  <ul class="highlight__items {{#itemsCount}}highlight__items__count--{{itemsCount}}{{/itemsCount}}{{^itemsCount}}highlight__items__count--three{{/itemsCount}}">
 
     {{#items}}
       {{> molecules-highlight-item}}

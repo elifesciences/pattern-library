@@ -35,8 +35,19 @@
   list-style: none;
   @include nospace();
 
+  &.highlight__items__count--two {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      column-count: 2;
+    }
+  }
+
+  &.highlight__items__count--three {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      column-count: 3;
+    }
+  }
+
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    column-count: 3;
     column-gap: 3rem;
   }
 }

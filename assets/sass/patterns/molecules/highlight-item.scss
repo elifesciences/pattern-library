@@ -5,7 +5,7 @@
   @include margin($content-header-padding, "bottom");
   color: $color-text;
   display: grid;
-  grid-auto-flow: column;
+  grid-auto-flow: dense;
   grid-template-columns: 6fr 6fr;
   list-style-type: none;
   overflow: hidden;
@@ -77,30 +77,19 @@
   }
 }
 
-.highlight-item__picture {
+.highlight-item__picture-wrapper {
   @include margin(24, "left");
   display: inline-block;
   grid-column: 2;
-  height: 56px;
-  width: auto;
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    height: 101px;
-  }
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    height: 110px;
-  }
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    height: 141px;
-  }
+  width: 100%;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     @include margin(0, "left");
     @include padding(24, "bottom");
     grid-column: auto;
-    height: 191px;
+  }
+
+  .highlight-item__picture {
     width: 100%;
   }
 }

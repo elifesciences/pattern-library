@@ -140,7 +140,7 @@
 
   },
 
-   "highlight": {
+  "highlight": {
     "heading": {
       "heading": "Highlights"
     },
@@ -217,7 +217,8 @@
           }
         }
       }
-    ]
+    ],
+    "itemsCount": "three"
   },
 
   "leadPara": {

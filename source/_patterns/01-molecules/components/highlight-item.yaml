@@ -9,6 +9,7 @@ properties:
     minLength: 1
   authors:
     type: string
+    minLength: 1
   summary:
     type: string
     minLength: 1

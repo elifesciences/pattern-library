@@ -13,9 +13,10 @@
       "image": {
         "fallback": {
           "defaultPath": "https://unsplash.it/250/140/",
-          "altText": ""
+          "altText": "Meaningful alt text please."
         }
       }
     }
-  ]
+  ],
+  "itemsCount": "one"
 }
