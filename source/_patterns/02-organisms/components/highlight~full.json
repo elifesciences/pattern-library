@@ -4,11 +4,20 @@
   },
   "items": [
     {
-      "title": "[Do not use this base pattern directly: see the following variants of this pattern for usage]",
+      "title": "Infection, statistics and public health",
       "url": "#link-to-article",
       "summary": "Summary",
       "meta": {
-        "text": "#"
+        "url": "#",
+        "text": "Interview",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 3,
+            "month": "Nov",
+            "year": 2015
+          },
+          "forMachine": "2015-11-03"
+        }
       },
       "image": {
         "fallback": {
@@ -18,11 +27,20 @@
       }
     },
     {
-      "title": "[Do not use this base pattern directly: see the following variants of this pattern for usage]",
+      "title": "Controlling traffic",
       "url": "#link-to-article",
-      "summary": "Summary",
+      "summary": "Ramanath Hegde is a Postdoctoral Fellow at the Institute of Protein Biochemistry in Naples, Italy, where he investigates ways of preventing cells from destroying mutant proteins.",
       "meta": {
-        "text": "#"
+        "url": "#",
+        "text": "Interview",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 29,
+            "month": "Jan",
+            "year": 2016
+          },
+          "forMachine": "2016-01-29"
+        }
       },
       "image": {
         "fallback": {
@@ -32,11 +50,20 @@
       }
     },
     {
-      "title": "[Do not use this base pattern directly: see the following variants of this pattern for usage]",
+      "title": "Controlling traffic",
       "url": "#link-to-article",
-      "summary": "Summary",
+      "summary": "Ramanath Hegde is a Postdoctoral Fellow at the Institute of Protein Biochemistry in Naples, Italy, where he investigates ways of preventing cells from destroying mutant proteins.",
       "meta": {
-        "text": "#"
+        "url": "#",
+        "text": "Interview",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 29,
+            "month": "Jan",
+            "year": 2016
+          },
+          "forMachine": "2016-01-29"
+        }
       },
       "image": {
         "fallback": {
@@ -45,6 +72,5 @@
         }
       }
     }
-  ],
-  "itemsCount": "three"
+  ]
 }

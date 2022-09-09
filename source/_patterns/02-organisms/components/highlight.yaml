@@ -8,9 +8,6 @@ properties:
     items:
       - $ref: ../../01-molecules/components/highlight-item.yaml
     minItems: 1
-  itemsCount:
-   type: string
-   minLength: 1
 required:
   - heading
   - items

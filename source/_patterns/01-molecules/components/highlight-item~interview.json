@@ -1,0 +1,23 @@
+{
+  "title": "Infection, statistics and public health",
+  "url": "#link-to-article",
+  "summary": "Summary",
+  "meta": {
+    "url": "#",
+    "text": "Interview",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 3,
+        "month": "Nov",
+        "year": 2015
+      },
+      "forMachine": "2015-11-03"
+    }
+  },
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/250/140/",
+      "altText": "Meaningful alt text please."
+    }
+  }
+}

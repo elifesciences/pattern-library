@@ -172,7 +172,6 @@
       {
         "title": "Preprints and peer review - share your views in our survey",
         "url": "#link-to-article",
-        "authors": "",
         "summary": "We would like to know what researchers think of the preprint and peer review landscape in 2022 and beyond.",
         "meta": {
           "url": "#",
@@ -196,7 +195,6 @@
       {
         "title": "Sparks of Change",
         "url": "#link-to-article",
-        "authors": "",
         "summary": "Tell us how the culture of research is changing.",
         "meta": {
           "url": "#LinkToResearchArticles",
@@ -217,8 +215,7 @@
           }
         }
       }
-    ],
-    "itemsCount": "three"
+    ]
   },
 
   "leadPara": {

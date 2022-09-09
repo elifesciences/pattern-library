@@ -1,11 +1,5 @@
 @import "../../definitions";
 
-.highlight__items__count--one .highlight-item__image {
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    width: 50%;
-  }
-}
-
 .highlight-item {
   @include constrain-width($max-site-width, "max");
   @include margin($content-header-padding, "bottom");

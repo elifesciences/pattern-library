@@ -4,11 +4,20 @@
   },
   "items": [
     {
-      "title": "[Do not use this base pattern directly: see the following variants of this pattern for usage]",
+      "title": "Experimental eLife Lens search page",
       "url": "#link-to-article",
       "summary": "Summary",
       "meta": {
-        "text": "#"
+        "url": "#",
+        "text": "Labs post",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 1,
+            "month": "Apr",
+            "year": 2015
+          },
+          "forMachine": "2015-04-01"
+        }
       },
       "image": {
         "fallback": {
@@ -17,6 +26,5 @@
         }
       }
     }
-  ],
-  "itemsCount": "one"
+  ]
 }
