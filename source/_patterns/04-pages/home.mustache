@@ -9,9 +9,11 @@
 
     <main role="main" class="main" id="maincontent">
 
-      {{#carousel}}
-        {{> organisms-carousel}}
-      {{/carousel}}
+      {{#hero-banner}}
+        <div class="wrapper">
+            {{> organisms-hero-banner}}
+        </div>
+      {{/hero-banner}}
 
       {{#leadParas}}
         <div class="wrapper">
