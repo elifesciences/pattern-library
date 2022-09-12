@@ -1,0 +1,147 @@
+@import "../../definitions";
+
+.hero-banner {
+  @include margin(24 0);
+  background-color: $color-text--reverse;
+  color: $color-text;
+  height: 100%;
+  max-width: #{$max-site-width}px;
+  width: 100%;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: 7fr 5fr;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include margin(48 0);
+  }
+}
+
+.hero-banner__details {
+  @include padding(24, "top");
+  background: $color-text-ui-background;
+  font-family: $font-secondary;
+  height: 100%;
+  overflow: hidden;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include padding(0);
+    margin-right: #{$site-spacing}px;
+  }
+
+  .hero-banner__meta {
+    color: $color-text-secondary;
+    @include font-size-and-vertical-height(14, 24);
+
+    .meta {
+      color: inherit;
+      @include font-size(14);
+      line-height: 1;
+    }
+
+    .meta__type {
+      &:hover {
+        color: inherit;
+      }
+    }
+
+    .date {
+      @include font-size(14);
+    }
+  }
+
+  .hero-banner__summary {
+    @include font-size-and-vertical-height(16, 24);
+    @include padding(12, "bottom");
+    font-family: $font-primary;
+  }
+
+  .hero-banner__title {
+    @include font-size-and-vertical-height(18, 26);
+    @include padding(12, "bottom");
+    color: #252525;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include font-size-and-vertical-height(22, 30);
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include font-size-and-vertical-height(28, 38);
+    }
+
+    &.hero-banner__title--medium {
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        @include font-size-and-vertical-height(32, 40);
+      }
+    }
+
+    &.hero-banner__title--large {
+      @include font-size-and-vertical-height(22, 30);
+
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include font-size-and-vertical-height(28, 38);
+      }
+
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        @include font-size-and-vertical-height(42, 52);
+      }
+    }
+
+    .hero-banner__title_link {
+      color: inherit;
+      text-decoration: inherit;
+    }
+  }
+}
+
+.hero-banner__picture {
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    grid-column: 2;
+  }
+
+  .hero-banner__image {
+    border: 1px solid #{$color-text-dividers};
+  }
+}
+
+.hero-banner__subject_list {
+  @include label-subject-typeg();
+  @include padding(0 0 12 0);
+  @include truncate-with-ellipsis();
+  color: $color-primary;
+  display: block;
+  margin: 0;
+  width: 100%;
+
+  &:before {
+    color: $color-text-secondary;
+  }
+
+  .hero-banner__subject_link {
+    @include label-subject-typeg();
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+
+  .hero-banner__subject_list_item {
+    @include label-subject-typeg();
+    display: inline;
+    list-style-type: none;
+    padding: 0;
+
+    .hero-banner__subject:after {
+      content: ", ";
+    }
+  }
+
+  .hero-banner__subject_list_item:last-child {
+    .hero-banner__subject:after {
+      content: "";
+    }
+  }
+}
