@@ -1,0 +1,14 @@
+{
+  "title": "[Do not use this base pattern directly: see the following variants of this pattern for usage]",
+  "summary": "Summary",
+  "url": "#link-to-article",
+  "meta": {
+    "text": "#"
+  },
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/1114/336",
+      "altText": ""
+    }
+  }
+}
