@@ -1,11 +1,11 @@
 @import "../../definitions";
 
 .nav-secondary {
-  background-color: #fff;
-  float: right;
-  height: 40px;
+  @include margin(5, "top");
+  background-color: $color-text-ui-background;
+  clear: right;
   position: relative;
-  z-index: 15;
+  z-index: 10;
 }
 
 .nav-secondary__list {
@@ -32,19 +32,26 @@
   }
 }
 
-.nav-secondary__item--search {
+.nav-secondary__list .nav-secondary__item.nav-secondary__item--search {
   a {
-    @include background-icon("../../assets/img/patterns/molecules/nav-secondary-search-ic_1x.png", 21px, 50px);
+    @include background-icon("../../assets/img/patterns/molecules/nav-secondary-search-black-ic.svg", 21px, 50px);
+    &:hover {
+      @include background-icon("../../assets/img/patterns/molecules/nav-secondary-search-blue-ic.svg", 21px, 50px);
+    }
   }
 }
 
-.nav-secondary__item--alert {
+.nav-secondary__list .nav-secondary__item.nav-secondary__item--alert {
   a {
-    @include background-icon("../../assets/img/patterns/molecules/nav-secondary-notifications-ic_1x.png", 15px, 50px, 1px);
+    @include background-icon("../../assets/img/patterns/molecules/nav-secondary-alert-black-ic.svg", 21px, 50px);
+    &:hover {
+      @include background-icon("../../assets/img/patterns/molecules/nav-secondary-alert-blue-ic.svg", 21px, 50px);
+    }
   }
 }
 
 .nav-secondary__item--hide-narrow {
+  @include margin(6, "bottom");
   display: none;
 }
 

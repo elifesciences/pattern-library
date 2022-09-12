@@ -1,6 +1,7 @@
 @import "../../definitions";
 
 .nav-primary {
+  @include margin(5, "top");
   background-color: $color-text-ui-background;
   clear: right;
   position: relative;
@@ -80,12 +81,16 @@
   display: flex;
   padding-top: 2px;
   a {
-    background-image: url("../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png");
+    background-image: url("../../assets/img/patterns/molecules/nav-primary-menu-ic.svg");
     background-size: 22px;
     background-repeat: no-repeat;
     background-position-x: 50px;
     background-position-y: -1px;
     width: 70px;
+    &:hover {
+      background-image: url("../../assets/img/patterns/molecules/nav-primary-menu-blue-ic.svg");
+      color: $color-primary;
+    }
   }
 }
 

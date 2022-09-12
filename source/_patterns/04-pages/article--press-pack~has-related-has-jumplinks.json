@@ -24,7 +24,7 @@
         },
 
         {
-          "text": "Research",
+          "text": "Journal",
           "path": "#",
           "classes": "nav-primary__item"
         },
@@ -36,7 +36,7 @@
         },
 
         {
-          "text": "Inside eLife",
+          "text": "Community",
           "path": "#",
           "classes": "nav-primary__item "
         },
@@ -71,7 +71,7 @@
         },
 
         {
-          "text": "Submit my research",
+          "text": "Submit your research",
           "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
@@ -267,9 +267,9 @@
     "links": {
       "items": [
         {"name": "Home", "url": "#"},
-        {"name": "Research", "url": "#res"},
+        {"name": "Journal", "url": "#res"},
         {"name": "Magazine", "url": "#"},
-        {"name": "Inside eLife", "url": "#ins"},
+        {"name": "Community", "url": "#ins"},
         {"name": "About", "url": "#abo", "hasLine": true},
         {"name": "Search", "url": "#"},
         {"name": "Subscribe to alerts", "url": "#", "hasLine": true},

@@ -5,9 +5,9 @@
   "links": {
     "items": [
       {"name": "Home", "url": "#"},
-      {"name": "Research", "url": "#res"},
+      {"name": "Journal", "url": "#res"},
       {"name": "Magazine", "url": "#"},
-      {"name": "Inside eLife", "url": "#ins"},
+      {"name": "Community", "url": "#ins"},
       {"name": "About", "url": "#abo", "hasLine": true},
       {"name": "Search", "url": "#"},
       {"name": "Subscribe to alerts", "url": "#", "hasLine": true},
