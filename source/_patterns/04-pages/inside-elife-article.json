@@ -126,6 +126,9 @@
   "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
 
   "mainMenu":{
+    "title": {
+      "homePagePath": "#"
+    },
     "listHeading": {
       "heading": "Menu"
     },

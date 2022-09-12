@@ -1,6 +1,8 @@
 <div class="main-menu" id="mainMenu" data-behaviour="MainMenu" tabindex="0">
   <nav class="main-menu__container" role="navigation">
-    {{> molecules-site-header-title }}
+    {{#title}}
+      {{> molecules-site-header-title }}
+    {{/title}}
     {{#listHeading}}
       {{> atoms-list-heading}}
     {{/listHeading}}

@@ -173,6 +173,9 @@
   "mainContent": "<p class=\"paragraph\">High resolution microscopy makes it possible to image events happening in single cells, or even specific parts of a cell. However, small movements like those due to the heartbeat or breathing can blur the images, making it difficult to study living animals. This is particularly problematic for images that take several minutes to capture.</p><p class=\"paragraph\">Warren et al. have now developed a new open source software tool called Galene. The tool can correct for small movements in images collected by a technique called fluorescence lifetime imaging microscopy (FLIM). As a result, clear images can be captured in situations that were not previously possible. For example, Warren et al. watched cancer cells migrating to the liver of a mouse from the spleen over 24 hours, and, using a fluorescent biosensor, showed that a repurposed drug interferes with how well the cells can attach to the liver. In addition, Warren et al. used the software to take steady 3D images of human skin in a volunteer’s arm, which could be used to study drug penetration.</p><p class=\"paragraph\">Galene could help researchers to study a wide range of biological processes in living animals. The software can also be applied to existing data to clean up blurred images. In the future Galene could be further developed to work with the imaging techniques used during surgery. For example, surgeons could use it to help them find the edges of tumours.</p>",
 
   "mainMenu":{
+    "title": {
+      "homePagePath": "#"
+    },
     "listHeading": {
       "heading": "Menu"
     },

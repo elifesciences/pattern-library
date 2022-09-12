@@ -323,6 +323,9 @@
 
 
   "mainMenu":{
+    "title": {
+      "homePagePath": "#"
+    },
     "links": {
       "items": [
         {"name": "Home", "url": "#"},

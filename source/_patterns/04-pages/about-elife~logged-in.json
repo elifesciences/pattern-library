@@ -166,6 +166,9 @@
 
 
   "mainMenu":{
+    "title": {
+    "homePagePath": "#"
+  },
     "listHeading": {
       "heading": "Menu"
     },
