@@ -15,15 +15,29 @@
   .highlights & {
     @include truncate-with-ellipsis();
   }
+
+  .listing-column-main .teasers & {
+    width: 100%;
+  }
+
 }
 
 .meta__type {
   color: inherit;
   text-decoration: none;
 
+  .listing-column-main .teasers & {
+    @include font-size(14);
+    font-weight: bold;
+  }
+
   & + .date::before {
     content: "\00a0\2219\00a0";
     font-weight: bold;
+  }
+
+  .listing-column-main .teasers & + .date::before {
+    content: "";
   }
 }
 
