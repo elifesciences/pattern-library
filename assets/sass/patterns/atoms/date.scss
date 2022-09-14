@@ -5,7 +5,6 @@
   @include font-size-and-vertical-height(12);
   .listing-column-main .teasers & {
     @include font-size(14);
-    float: right;
   }
 }
 
