@@ -180,9 +180,6 @@
                 },
                 "forMachine": "20160416"
               }
-            },
-            "formats": {
-              "list": ["PDF"]
             }
           }
         },
@@ -216,9 +213,6 @@
                 },
                 "forMachine": "20160308"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -249,9 +243,6 @@
                 },
                 "forMachine": "20160208"
               }
-            },
-            "formats": {
-              "html": true
             }
           }
         },
@@ -286,9 +277,6 @@
 
                 "forMachine": "20160127"
               }
-            }  ,
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -319,9 +307,6 @@
                 },
                 "forMachine": "2015-10-06"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         }

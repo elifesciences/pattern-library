@@ -207,9 +207,6 @@
                 },
                 "forMachine": "20160416"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -243,9 +240,6 @@
                 },
                 "forMachine": "20160308"
               }
-            },
-            "formats": {
-              "list": ["PDF"]
             }
           }
         },
@@ -276,9 +270,6 @@
                 },
                 "forMachine": "20160208"
               }
-            },
-            "formats": {
-              "list": ["HTML"]
             }
           }
         },
@@ -312,9 +303,6 @@
 
                 "forMachine": "20160127"
               }
-            }  ,
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -345,9 +333,6 @@
                 },
                 "forMachine": "2015-10-06"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -382,9 +367,6 @@
                 },
                 "forMachine": "2015-07-14"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -419,9 +401,6 @@
                 },
                 "forMachine": "2015-05-08"
               }
-            },
-            "formats": {
-              "list": ["PDF"]
             }
           }
         },
@@ -452,9 +431,6 @@
                 },
                 "forMachine": "2015-03-03"
               }
-            },
-            "formats": {
-              "list": ["HTML"]
             }
           }
         },
@@ -489,9 +465,6 @@
                 },
                 "forMachine": "2015-02-25"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -526,9 +499,6 @@
                 },
                 "forMachine": "2015-02-19"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -559,9 +529,6 @@
                 },
                 "forMachine": "2015-02-03"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -592,9 +559,6 @@
                 },
                 "forMachine": "2014-11-18"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -629,9 +593,6 @@
                 },
                 "forMachine": "2014-10-08"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -666,9 +627,6 @@
                 },
                 "forMachine": "2014-10-08"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -703,9 +661,6 @@
                 },
                 "forMachine": "2014-06-27"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -740,9 +695,6 @@
                 },
                 "forMachine": "2014-06-05"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -777,9 +729,6 @@
                 },
                 "forMachine": "2014-04-24"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -814,9 +763,6 @@
                 },
                 "forMachine": "2014-02-04"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -851,9 +797,6 @@
                 },
                 "forMachine": "2013-09-17"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         }

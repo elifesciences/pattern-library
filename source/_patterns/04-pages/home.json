@@ -371,9 +371,6 @@
                 "forMachine": "20160516",
                 "isUpdated": true
               }
-            },
-            "formats": {
-              "list": ["Executable", "PDF"]
             }
           },
 
@@ -414,9 +411,6 @@
                 },
                 "forMachine": "20160419"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -450,9 +444,6 @@
                 },
                 "forMachine": "20160516"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -486,9 +477,6 @@
                 },
                 "forMachine": "20160415"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           },
           "image": {
@@ -531,9 +519,6 @@
                 },
                 "forMachine": "2016047"
               }
-            },
-            "formats": {
-              "list": ["PDF"]
             }
           }
         }
