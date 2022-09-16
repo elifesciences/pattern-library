@@ -98,8 +98,8 @@
 
 @media only all and (max-width: 21.25rem) {
   .nav-primary__menu_text {
-    @include visuallyhidden();
     padding-bottom: 0;
+    @include visuallyhidden();
   }
 
   .nav-primary__item--first {

@@ -90,15 +90,15 @@
 
 .site-header__skip_to_content {
   display: block;
-  left: 20px;
   position: absolute;
   top: 20px;
+  left: 20px;
   white-space: nowrap;
 }
 
 .site-header__skip_to_content__link {
-  @include padding(15 36 14);
   @include visuallyhidden();
+  @include padding(15 36 14);
   z-index: 50;
 
   &:focus {
