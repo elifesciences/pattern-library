@@ -80,13 +80,15 @@
 .nav-primary__item--first {
   display: flex;
   padding-top: 2px;
+
   a {
     background-image: url("../../assets/img/patterns/molecules/nav-primary-menu-ic.svg");
-    background-size: 22px;
-    background-repeat: no-repeat;
     background-position-x: 50px;
     background-position-y: -1px;
+    background-repeat: no-repeat;
+    background-size: 22px;
     width: 70px;
+
     &:hover {
       background-image: url("../../assets/img/patterns/molecules/nav-primary-menu-blue-ic.svg");
       color: $color-primary;
@@ -111,17 +113,6 @@
   }
 }
 
-@media only all and (max-width: 30rem) {
-
-  .nav-primary__list {
-    .nav-primary__item {
-      &:nth-child(5) {
-        display: none;
-      }
-    }
-  }
-}
-
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
   .nav-primary__alert_icon {
     display: flex;
@@ -132,14 +123,22 @@
   .nav-primary__item {
     @include margin(24, "left");
     display: flex;
+
     a {
       color: $color-text;
     }
+
     a:hover {
       color: $color-primary;
     }
   }
+
   .nav-primary__item--first {
-    display: none;
+    a {
+      background-position-x: 0;
+      background-position-y: -2px;
+      text-indent: -9999px;
+      width: 24px;
+    }
   }
 }

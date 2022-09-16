@@ -32,13 +32,13 @@
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item "
+          "classes": "nav-primary__item"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item "
+          "classes": "nav-primary__item"
         },
 
         {
@@ -770,14 +770,17 @@
     },
     "links": {
       "items": [
-        {"name": "Home", "url": "#"},
-        {"name": "Journal", "url": "#res"},
-        {"name": "Magazine", "url": "#"},
+        {"name": "Home", "url": "#", "listChange":  true},
+        {"name": "Journal", "url": "#res", "listChange":  true},
+        {"name": "Magazine", "url": "#", "listChange": true},
+        {"name": "Inside eLife", "url": "#"},
         {"name": "Community", "url": "#ins"},
         {"name": "About", "url": "#abo", "hasLine": true},
-        {"name": "Search", "url": "#"},
-        {"name": "Subscribe to alerts", "url": "#", "hasLine": true},
-        {"name": "Submit your research", "url": "#"}
+        {"name": "Search", "url": "#", "listChange":  true},
+        {"name": "Subscribe to alerts", "url": "#", "hasLine": true, "listChange": true},
+        {"name": "Submit your research", "url": "#", "listChange": true},
+        {"name": "Author guide", "url": "#"},
+        {"name": "Reviewer guide", "url": "#"}
       ]
     },
     "button": {

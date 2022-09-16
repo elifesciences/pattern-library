@@ -10,7 +10,6 @@
   line-height: 2.1818181818; /* 24px with 11px font size */
   @include padding(0 6);
   @include height(24);
-  @include width(152);
 }
 
 .button {
@@ -20,6 +19,7 @@
   display: inline-block;
   font-family: $font-secondary;
   @include font-size-and-vertical-height(14, 14);
+  font-weight: 500;
   @include padding(17 40 16);
   text-align: center;
   text-decoration: none;

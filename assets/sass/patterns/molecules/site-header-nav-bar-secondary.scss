@@ -53,6 +53,12 @@
 .nav-secondary__item--hide-narrow {
   @include margin(6, "bottom");
   display: none;
+
+  .button--default.button--extra-small {
+    @include padding(8, "left");
+    @include padding(8, "right");
+    font-weight: normal;
+  }
 }
 
 .nav-secondary__item a:not(.login-control__non_js_control_link) {

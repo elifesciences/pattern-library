@@ -473,13 +473,14 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   display: none;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    @include margin(24, "right");
+    @include margin(15, "right");
     background-image: url($url);
-    background-size: $size;
     background-repeat: no-repeat;
+    background-size: $size;
     display: block;
     text-indent: -9999px;
     width: 24px;
+
     &:hover {
       color: $color-primary;
     }

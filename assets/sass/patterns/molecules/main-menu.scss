@@ -5,9 +5,9 @@
 }
 
 .main-menu__title {
+  @include section-title-typeg();
   @include nospace();
   @include padding(5, "bottom");
-  @include section-title-typeg();
   text-transform: uppercase;
 }
 
@@ -17,10 +17,16 @@
 
 .main-menu__list_item {
   @include dismissible_navigation();
-  @include padding(12 0 12 0);
-  line-height: 0;
+  @include padding(12 0);
   display: block;
+  line-height: 0;
   text-align: left;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    &.main-menu__list_change {
+      display: none;
+    }
+  }
 
   &.lineSeparator {
     border-bottom: 1px solid $color-text-dividers;
@@ -78,21 +84,22 @@
     }
 
     .site-header__logo_link {
-      float: none;
+      @include margin(37 0 0 15);
       display: block;
+      float: none;
       height: 35px;
-      margin: 37px 0 0 15px;
       width: 88px;
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       .site-header__logo_link {
-        margin: 37px 0 0 23.5px;
+        @include margin(37 0 0 24);
       }
     }
+
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       .site-header__logo_link {
-        margin: 33px 0 0 20.5px;
+        @include margin(33 0 0 20.5);
       }
     }
   }
@@ -121,5 +128,11 @@
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
   .main-menu__list {
     @include padding(48, "left");
+  }
+}
+
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+  .main-menu--js.main-menu--shown {
+    width: 320px;
   }
 }

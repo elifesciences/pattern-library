@@ -9,7 +9,7 @@
     {{#links}}
       <ul class="main-menu__list">
         {{#items}}
-        <li class="main-menu__list_item {{#hasLine}}lineSeparator{{/hasLine}}">
+        <li class="main-menu__list_item {{#hasLine}}lineSeparator{{/hasLine}} {{#listChange}}main-menu__list_change{{/listChange}}">
           <a href="{{url}}" class="main-menu__list_link">{{name}}</a>
         </li>
         {{/items}}
