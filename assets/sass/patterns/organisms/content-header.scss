@@ -422,8 +422,11 @@
   order: 1;
 
   .content-header-journal & {
-    @include margin(0 0 0 6);
     order: 0;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--small-width)}em) {
+      @include margin(0 0 0 6);
+    }
   }
 
   .content-header--image & {

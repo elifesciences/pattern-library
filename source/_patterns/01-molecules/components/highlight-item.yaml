@@ -1,0 +1,26 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  title:
+    type: string
+    minLength: 1
+  url:
+    type: string
+    minLength: 1
+  authors:
+    type: string
+    minLength: 1
+  summary:
+    type: string
+    minLength: 1
+  meta:
+    $ref: ../../01-molecules/components/meta.yaml
+  image:
+    allOf:
+      - $ref: ../../00-atoms/components/picture.yaml
+required:
+  - title
+  - url
+  - summary
+  - meta
+  - image
