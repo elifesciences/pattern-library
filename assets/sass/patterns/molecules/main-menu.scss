@@ -57,7 +57,7 @@
   font-family: $font-secondary;
   font-weight: bold;
   justify-content: flex-end;
-  left: -25px;
+  left: -20px;
   position: relative;
   width: auto;
   z-index: 22;
@@ -72,30 +72,7 @@
   display: none;
 
   .main-menu__container {
-    @include padding(24, "left");
-    @include padding(24, "right");
-    @include margin(33, "top");
     display: block;
-
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      @include padding(41, "left");
-      @include padding(41, "right");
-    }
-
-    &:hover {
-      color: $color-primary;
-    }
-
-    .site-header__title {
-      float: none;
-    }
-
-    .site-header__logo_link {
-      display: block;
-      float: none;
-      height: 35px;
-      width: 88px;
-    }
   }
 
   &.main-menu--shown {
@@ -112,6 +89,10 @@
     transform: translate3d(3000px, 0, 0);
     width: 100vw;
     z-index: 40;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      width: 320px;
+    }
   }
 
   .main_menu__quit {
@@ -119,8 +100,28 @@
   }
 }
 
-@media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-  .main-menu--js.main-menu--shown {
-    width: 320px;
+.main-menu__container {
+  @include padding(24, "left");
+  @include padding(24, "right");
+  @include margin(33, "top");
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include padding(41, "left");
+    @include padding(41, "right");
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  .site-header__title {
+    float: none;
+  }
+
+  .site-header__logo_link {
+    display: block;
+    float: none;
+    height: 35px;
+    width: 88px;
   }
 }
