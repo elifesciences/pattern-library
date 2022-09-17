@@ -77,7 +77,7 @@
       }
     }
 
-    &.hero-banner__title--large {
+    &.hero-banner__title--short {
       @include font-size-and-vertical-height(22, 30);
 
       @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
