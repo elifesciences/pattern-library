@@ -1,0 +1,30 @@
+{
+  "image": {
+    "sources": [
+      {
+        "srcset": "https://iiif.elifesciences.org/lax/09560%2Felife-09560-fig1-v1.tif/full/full/0/default.jpg",
+        "type": "image/jpeg"
+      }
+    ],
+    "fallback": {
+      "defaultPath": "https://unsplash.it/800/464",
+      "altText": ""
+    }
+  },
+  "title": "Media coverage: Slime can see",
+  "titleLength": "large",
+  "url": "#",
+  "summary": "In their research paper – Cyanobacteria use micro-optics to sense light direction – Schuergers et al. reveal how bacterial cells act as the equivalent of a microscopic eyeball or the world/'s oldest and smallest camera eye, allowing them to /'see/'.",
+  "meta": {
+    "url": "#",
+    "text": "Inside eLife",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 8,
+        "month": "Jul",
+        "year": 2016
+      },
+      "forMachine": "2016-07-08"
+    }
+  }
+}
