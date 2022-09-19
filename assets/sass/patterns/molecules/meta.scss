@@ -7,6 +7,9 @@
 .meta {
   @include label-content-typeg($uppercase: false);
   @include font-size-and-vertical-height(12);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 
   .content-header-journal & {
     @include font-size-and-vertical-height(14, 24);
@@ -16,29 +19,65 @@
     @include truncate-with-ellipsis();
   }
 
-  .listing-column-main .teasers & {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  .teaser--secondary & {
+    display: block;
+  }
+
+  .teaser--grid-style & {
+    display: block;
+  }
+
+  .hero-banner & {
+    display: block;
+  }
+
+  .highlight & {
+    display: block;
   }
 }
 
 .meta__type {
+  @include font-size(14);
   color: inherit;
+  font-weight: bold;
   text-decoration: none;
 
-  .listing-column-main .teasers & {
-    @include font-size(14);
-    font-weight: bold;
+  .teaser--secondary & {
+    @include font-size(12);
+    font-weight: normal;
   }
 
-  & + .date::before {
+  .teaser--grid-style & {
+    @include font-size(12);
+    font-weight: normal;
+  }
+
+  .hero-banner & {
+    font-weight: normal;
+  }
+
+  .highlight & {
+    font-weight: normal;
+  }
+
+  .teaser--secondary & + .date::before {
     content: "\00a0\2219\00a0";
     font-weight: bold;
   }
 
-  .listing-column-main .teasers & + .date::before {
-    content: "";
+  .hero-banner & + .date::before {
+    content: "\00a0\2219\00a0";
+    font-weight: bold;
+  }
+
+  .highlight & + .date::before {
+    content: "\00a0\2219\00a0";
+    font-weight: bold;
+  }
+
+  .teaser--grid-style & + .date::before {
+    content: "\00a0\2219\00a0";
+    font-weight: bold;
   }
 }
 

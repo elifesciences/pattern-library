@@ -2,10 +2,13 @@
 
 .date {
   @include label-content-typeg($color: inherit, $uppercase: false);
-  @include font-size-and-vertical-height(12);
+  @include font-size-and-vertical-height(14);
 
-  .listing-column-main .teasers & {
-    @include font-size(14);
+  .teaser--secondary & {
+    @include font-size-and-vertical-height(12);
+  }
+  .teaser--grid-style & {
+    @include font-size-and-vertical-height(12);
   }
 }
 
