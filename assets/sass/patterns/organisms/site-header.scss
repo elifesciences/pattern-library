@@ -40,6 +40,7 @@
 }
 
 .site-header__title {
+  display: inline-block;
   float: left;
   position: relative;
   z-index: 21;
@@ -68,16 +69,24 @@
 }
 
 .site-header__navigation {
-  @include margin(28, "top");
-  @include margin(28, "bottom");
+  @include margin(30 0);
   @include padding(24, "left");
   @include padding(24, "right");
   align-items: center;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
+  height: 35px;
   position: relative;
   z-index: 20;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin(42 0);
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include margin(54 0);
+  }
 }
 
 .site-header__navigation__item {
@@ -140,6 +149,10 @@
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+  .site-header {
+    max-height: 119px;
+  }
+
   .site-header__border {
     @include margin(15, "left");
     border-right: 1px solid $color-text-dividers;
@@ -149,6 +162,12 @@
 
   .site-header__navigation__item {
     justify-content: flex-start;
+  }
+}
+
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+  .site-header {
+    max-height: 143px;
   }
 }
 
