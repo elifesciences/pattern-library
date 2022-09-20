@@ -11,7 +11,6 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "",
           "path": "#mainMenu"
         },
 
@@ -61,7 +60,7 @@
 
         {
           "text": "Alerts",
-          "rel": "search",
+          "rel": "alert",
           "classes": "nav-secondary__item nav-secondary__item--alert",
           "path": "#"
         },

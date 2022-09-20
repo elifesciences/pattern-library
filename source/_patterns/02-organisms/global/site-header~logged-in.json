@@ -10,7 +10,6 @@
       {
         "text": "Menu",
         "classes": "nav-primary__item nav-primary__item--first",
-        "textClasses": "",
         "path": "#mainMenu"
       },
 

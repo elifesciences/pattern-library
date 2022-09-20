@@ -12,7 +12,7 @@
 
     {
       "text": "Alerts",
-      "rel": "search",
+      "rel": "alert",
       "classes": "nav-secondary__item nav-secondary__item--alert",
       "path": "#"
     },
