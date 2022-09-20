@@ -221,6 +221,7 @@
       "heading": "Latest",
       "items": [
         {
+          "rootClasses": "teaser--main",
           "contextLabel": {
             "list": [
               {
@@ -259,6 +260,7 @@
         },
 
         {
+          "rootClasses": "teaser--main",
           "contextLabel": {
             "list": [
               {
@@ -292,6 +294,7 @@
 
         {
 
+          "rootClasses": "teaser--main",
           "contextLabel": {
             "list": [
               {
@@ -324,6 +327,7 @@
         },
 
         {
+          "rootClasses": "teaser--main",
           "contextLabel": {
             "list": [
               {
@@ -366,6 +370,7 @@
 
         {
 
+          "rootClasses": "teaser--main",
           "contextLabel": {
             "list": [
               {
@@ -457,7 +462,6 @@
 
         {
           "rootClasses": "teaser--secondary",
-
           "contextLabel": {
             "list": [
               {
@@ -491,7 +495,6 @@
 
         {
           "rootClasses": "teaser--secondary",
-
           "contextLabel": {
             "list": [
               {

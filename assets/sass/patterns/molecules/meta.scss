@@ -7,9 +7,6 @@
 .meta {
   @include label-content-typeg($uppercase: false);
   @include font-size-and-vertical-height(12);
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
 
   .content-header-journal & {
     @include font-size-and-vertical-height(14, 24);
@@ -19,65 +16,30 @@
     @include truncate-with-ellipsis();
   }
 
-  .teaser--secondary & {
-    display: block;
+  .teaser--main & {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
-  .teaser--grid-style & {
-    display: block;
-  }
-
-  .hero-banner & {
-    display: block;
-  }
-
-  .highlight & {
-    display: block;
-  }
 }
 
 .meta__type {
-  @include font-size(14);
   color: inherit;
-  font-weight: bold;
   text-decoration: none;
 
-  .teaser--secondary & {
-    @include font-size(12);
-    font-weight: normal;
+  .teaser--main & {
+    @include font-size(14);
+    font-weight: bold;
   }
 
-  .teaser--grid-style & {
-    @include font-size(12);
-    font-weight: normal;
-  }
-
-  .hero-banner & {
-    font-weight: normal;
-  }
-
-  .highlight & {
-    font-weight: normal;
-  }
-
-  .teaser--secondary & + .date::before {
+  & + .date::before {
     content: "\00a0\2219\00a0";
     font-weight: bold;
   }
 
-  .hero-banner & + .date::before {
-    content: "\00a0\2219\00a0";
-    font-weight: bold;
-  }
-
-  .highlight & + .date::before {
-    content: "\00a0\2219\00a0";
-    font-weight: bold;
-  }
-
-  .teaser--grid-style & + .date::before {
-    content: "\00a0\2219\00a0";
-    font-weight: bold;
+  .teaser--main & + .date::before {
+    content: "";
   }
 }
 
