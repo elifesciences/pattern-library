@@ -12,6 +12,7 @@
 }
 
 .main-menu__list {
+  @include margin(48, "bottom");
   @include padding(0, "left");
 }
 
