@@ -16,12 +16,6 @@
     },
 
     {
-      "text": "Journal",
-      "path": "#",
-      "classes": "nav-primary__item"
-    },
-
-    {
       "text": "Magazine",
       "path": "#",
       "classes": "nav-primary__item"

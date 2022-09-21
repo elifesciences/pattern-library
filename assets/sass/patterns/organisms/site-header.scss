@@ -2,7 +2,6 @@
 
 .site-header {
   max-height: 96px;
-  min-width: #{get-rem-from-px(275)}rem;
   position: relative;
   z-index: 20;
 
@@ -70,8 +69,6 @@
 
 .site-header__navigation {
   @include margin(30 0);
-  @include padding(24, "left");
-  @include padding(24, "right");
   align-items: center;
   background-color: #fff;
   display: flex;
@@ -112,13 +109,6 @@
   &:focus {
     @include visuallyunhidden();
     position: absolute;
-  }
-}
-
-@media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-  .site-header__navigation {
-    @include padding(41, "left");
-    @include padding(41, "right");
   }
 }
 

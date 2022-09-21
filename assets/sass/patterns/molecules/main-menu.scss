@@ -53,7 +53,7 @@
   @include font-size-and-vertical-height(14, 24);
   @include padding(0);
   @include margin(8, "top");
-  background: url("../img/icons/close.svg") no-repeat 55px 3px;
+  background: url("../img/icons/close.svg") no-repeat 49px 3px;
   background-size: 14px;
   border: none;
   color: $color-text;
@@ -61,7 +61,7 @@
   font-weight: bold;
   float: right;
   text-align: left;
-  width: 74px;
+  width: 68px;
 
   &:hover {
     background-image: url("../img/icons/close-blue.svg");
@@ -102,14 +102,7 @@
 }
 
 .main-menu__container {
-  @include padding(24, "left");
-  @include padding(24, "right");
   @include margin(30, "top");
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    @include padding(41, "left");
-    @include padding(41, "right");
-  }
 
   &:hover {
     color: $color-primary;

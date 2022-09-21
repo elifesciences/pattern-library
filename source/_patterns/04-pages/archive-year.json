@@ -21,12 +21,6 @@
         },
 
         {
-          "text": "Journal",
-          "path": "#",
-          "classes": "nav-primary__item"
-        },
-
-        {
           "text": "Magazine",
           "path": "#",
           "classes": "nav-primary__item"
@@ -511,11 +505,11 @@
     "links": {
       "items": [
         {"name": "Home", "url": "#", "listChange":  true},
-        {"name": "Journal", "url": "#res", "listChange":  true},
         {"name": "Magazine", "url": "#", "listChange": true},
-        {"name": "Inside eLife", "url": "#"},
-        {"name": "Community", "url": "#ins"},
-        {"name": "About", "url": "#abo", "hasLine": true},
+        {"name": "Community", "url": "#ins", "listChange":  true},
+        {"name": "About", "url": "#abo", "listChange":  true},
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Inside eLife", "url": "#", "hasLine": true},
         {"name": "Search", "url": "#", "listChange":  true},
         {"name": "Subscribe to alerts", "url": "#", "hasLine": true, "listChange": true},
         {"name": "Submit your research", "url": "#", "listChange": true},

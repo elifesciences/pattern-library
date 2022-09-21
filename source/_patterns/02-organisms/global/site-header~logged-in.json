@@ -20,19 +20,13 @@
       },
 
       {
-        "text": "Research",
-        "path": "#",
-        "classes": "nav-primary__item"
-      },
-
-      {
         "text": "Magazine",
         "path": "#",
         "classes": "nav-primary__item"
       },
 
       {
-        "text": "Inside eLife",
+        "text": "Community",
         "path": "#",
         "classes": "nav-primary__item"
       },
@@ -47,7 +41,8 @@
     ]
   },
 
-  "secondaryLinks": {
+  "secondaryLinks":
+  {
     "classesOuter": "nav-secondary",
     "classesInner": "nav-secondary__list clearfix",
     "linkedItems": [
@@ -60,28 +55,17 @@
 
       {
         "text": "Alerts",
-        "rel": "search",
+        "rel": "alert",
         "classes": "nav-secondary__item nav-secondary__item--alert",
         "path": "#"
       },
+
       {
-        "text": "Site header logged in",
+        "text": "Submit your research",
+        "path": "#",
         "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
         "button": {
-          "text": "Submit my research",
-          "path": "#",
           "classes": "button--default button--extra-small"
-        }
-      },
-      {
-        "text": "Site header logged in",
-        "classes": "nav-secondary__item",
-        "loginControl": {
-          "button": {
-            "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-            "path": "#",
-            "classes": "button--login"
-          }
         }
       }
     ]

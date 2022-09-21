@@ -473,9 +473,8 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   display: none;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    @include margin(15, "right");
-    background-image: url($url);
-    background-repeat: no-repeat;
+    @include margin(24, "right");
+    background: url($url) no-repeat;
     background-size: $size;
     display: block;
     text-indent: -9999px;
