@@ -29,9 +29,9 @@ properties:
     minLength: 1
   titleLength:
     enum:
-    - small
+    - short
     - medium
-    - large
+    - long
   url:
     type: string
     minLength: 1
