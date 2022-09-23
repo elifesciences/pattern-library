@@ -15,13 +15,6 @@
   .highlights & {
     @include truncate-with-ellipsis();
   }
-
-  .teaser--main & {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-
 }
 
 .meta__type {
@@ -30,16 +23,11 @@
 
   .teaser--main & {
     @include font-size(14);
-    font-weight: bold;
   }
 
   & + .date::before {
     content: "\00a0\2219\00a0";
     font-weight: bold;
-  }
-
-  .teaser--main & + .date::before {
-    content: "";
   }
 }
 

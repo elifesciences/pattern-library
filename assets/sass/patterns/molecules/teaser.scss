@@ -105,6 +105,16 @@
   @include teaser-footer-style();
 }
 
+.teaser--main {
+  .teaser__footer {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    @media only all and (min-width: 700px) {
+      @include teaser-footer-style();
+    }
+  }
+}
+
 .teaser__formats {
   text-align: right;
 }
