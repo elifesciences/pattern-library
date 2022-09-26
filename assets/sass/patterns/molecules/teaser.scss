@@ -44,6 +44,11 @@
 .teaser__context_label {
   // content-label rather than subject-label as not it's not always subjects in here
   @include label-content-typeg();
+  font-weight: bold;
+
+  .teaser--related & {
+    font-weight: normal;
+  }
 }
 
 // Extra specificity to override normalised style

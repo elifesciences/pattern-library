@@ -376,6 +376,10 @@
   list-style-type: none;
   padding: 0;
 
+  & .content-header__subject {
+    font-weight: bold;
+  }
+
   & .content-header__subject:after {
     content: ", ";
   }
