@@ -104,6 +104,14 @@
 .main-menu__container {
   @include margin(30, "top");
 
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin(42, "top");
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include margin(52, "top");
+  }
+
   &:hover {
     color: $color-primary;
   }
