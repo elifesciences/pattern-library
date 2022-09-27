@@ -5,9 +5,11 @@
   @include font-size-and-vertical-height(12);
 
   .teaser--main & {
-    @include font-size(14);
-    @media only all and (max-width: 480px) {
-      display: block;
+    @include font-size-and-vertical-height(14, 18);
+    display: block;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      display: inline-block;
     }
   }
 }
