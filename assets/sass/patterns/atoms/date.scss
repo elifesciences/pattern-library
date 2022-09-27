@@ -6,6 +6,9 @@
 
   .teaser--main & {
     @include font-size(14);
+    @media only all and (max-width: 480px) {
+      display: block;
+    }
   }
 }
 

@@ -29,6 +29,12 @@
     content: "\00a0\2219\00a0";
     font-weight: bold;
   }
+
+  @media only all and (max-width: 480px) {
+    .teaser--main & + .date::before {
+      content: "";
+    }
+  }
 }
 
 a.meta__type:hover {
