@@ -124,7 +124,7 @@
     text-decoration: none;
 
     &:hover {
-      color: $color-primary-dark;
+      @include color-link-hover();
     }
   }
 
@@ -133,6 +133,10 @@
     display: inline;
     list-style-type: none;
     padding: 0;
+
+    .hero-banner__subject {
+      font-weight: bold;
+    }
 
     .hero-banner__subject:after {
       content: ", ";
