@@ -6,12 +6,17 @@
   clear: right;
   position: relative;
   z-index: 10;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin(15, "left");
+    border-left: 1px solid $color-text-dividers;
+  }
 }
 
 .nav-primary__list {
   @include height(54);
+  @include padding(7px 0 0);
   margin: 0;
-  padding: 7px 0 0;
   vertical-align: middle;
 
   @supports (display: flex) {
@@ -83,7 +88,8 @@
   display: list-item;
 
   a {
-    background: url("../../assets/img/patterns/molecules/nav-primary-menu-ic.svg") no-repeat 50px -2px;
+    @include margin(2, "top");
+    background: url("../../assets/img/patterns/molecules/nav-primary-menu-ic.svg") no-repeat 50px 0;
     background-size: 24px;
     display: flex;
     width: 74px;

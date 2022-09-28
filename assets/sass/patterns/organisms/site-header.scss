@@ -141,13 +141,6 @@
     max-height: 119px;
   }
 
-  .site-header__border {
-    @include margin(15, "left");
-    border-right: 1px solid $color-text-dividers;
-    height: 24px;
-    z-index: 50;
-  }
-
   .site-header__navigation__item {
     justify-content: flex-start;
   }
