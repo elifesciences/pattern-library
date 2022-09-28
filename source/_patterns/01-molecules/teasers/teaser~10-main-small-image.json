@@ -41,6 +41,10 @@
         },
         "forMachine": "2015-09-10"
       }
+    },
+
+    "formats": {
+      "list": ["HTML", "PDF"]
     }
   }
 

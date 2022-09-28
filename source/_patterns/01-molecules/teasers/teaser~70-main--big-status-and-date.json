@@ -35,7 +35,8 @@
           "month": "Sep",
           "year": 2015
         },
-        "forMachine": "2015-09-10"
+        "forMachine": "2015-09-10",
+        "isUpdated": true
       }
     },
     "formats": {
