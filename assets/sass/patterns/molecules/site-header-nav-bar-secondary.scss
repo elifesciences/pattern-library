@@ -82,7 +82,7 @@
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
   .nav-secondary__item--hide-narrow {
-    display: flex;
+    display: list-item;
     width: 152px;
   }
 }

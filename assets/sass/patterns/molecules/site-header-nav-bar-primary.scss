@@ -51,6 +51,8 @@
 
 .nav-primary__item--list {
   @include padding(0, "left");
+  @include margin(0, "bottom");
+  display: flex;
 }
 
 .nav-primary__menu_icon {
@@ -78,11 +80,12 @@
 }
 
 .nav-primary__item--first {
-  display: flex;
+  display: list-item;
 
   a {
     background: url("../../assets/img/patterns/molecules/nav-primary-menu-ic.svg") no-repeat 50px -2px;
     background-size: 24px;
+    display: flex;
     width: 74px;
 
     &:hover {
@@ -117,7 +120,7 @@
 
   .nav-primary__item {
     @include margin(24, "left");
-    display: flex;
+    display: list-item;
 
     a {
       color: $color-text;

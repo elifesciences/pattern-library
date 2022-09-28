@@ -120,8 +120,6 @@
     width: 88px;
   }
 
-  // Stops the top border of .nav-primary from bleeding into site-header__title.
-
   .site-header__logo_link {
     @include margin(0);
     background: none;
