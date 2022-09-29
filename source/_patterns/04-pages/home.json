@@ -346,7 +346,6 @@
       "heading": "Latest research",
       "items": [
         {
-          "rootClasses": "teaser--main",
           "contextLabel": {
             "list": [
               {
@@ -389,7 +388,6 @@
         },
 
         {
-          "rootClasses": "teaser--main",
           "contextLabel": {
             "list": [
               {
@@ -425,7 +423,6 @@
 
         {
 
-          "rootClasses": "teaser--main",
           "contextLabel": {
             "list": [
               {
@@ -461,7 +458,6 @@
         },
 
         {
-          "rootClasses": "teaser--main",
           "contextLabel": {
             "list": [
               {
@@ -507,7 +503,6 @@
 
         {
 
-          "rootClasses": "teaser--main",
           "contextLabel": {
             "list": [
               {
