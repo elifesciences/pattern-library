@@ -2,7 +2,7 @@
   {{#listHeading}}
     {{> atoms-list-heading}}
   {{/listHeading}}
-  <ol class="section-listing {{#singleLine}}section-listing--single-line{{/singleLine}}" {{#labelledBy}}aria-labelledby="{{labelledBy}}"{{/labelledBy}}>
+  <ol class="section-listing {{#singleLine}}section-listing--single-line{{/singleLine}}">
     {{#sections}}
       <li class="section-listing__list_item {{#isCurrent}}section-listing__list_item--current{{/isCurrent}}">
         <a href="{{{url}}}" class="section-listing__list_link">{{{name}}}</a>

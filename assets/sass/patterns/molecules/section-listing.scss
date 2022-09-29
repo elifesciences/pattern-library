@@ -9,7 +9,6 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     border-bottom: 1px solid $color-text-dividers;
     border-top: 1px solid $color-text-dividers;
-    @include margin($blg-space-medium-in-px, "top");
     @include padding($blg-space-small-in-px, "bottom");
     @include padding($blg-space-small-in-px, "top");
   }

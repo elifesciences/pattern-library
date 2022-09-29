@@ -6,9 +6,6 @@ properties:
     minLength: 1
   singleLine:
     type: boolean
-  labelledBy:
-    type: string
-    minLength: 1
   listHeading:
     $ref: ../../00-atoms/components/list-heading.yaml
   sections:
