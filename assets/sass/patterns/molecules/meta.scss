@@ -25,6 +25,21 @@
     content: "\00a0\2219\00a0";
     font-weight: bold;
   }
+
+  .teaser--main & {
+    @include font-size-and-vertical-height(14, 18);
+
+    & + .date::before {
+      content: "";
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      & + .date::before {
+        content: "\00a0\2219\00a0";
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 a.meta__type:hover {
