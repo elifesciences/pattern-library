@@ -1,4 +1,4 @@
-<div class="teaser{{#rootClasses}} {{rootClasses}}{{/rootClasses}} {{^secondaryInfo}}teaser--no-secondary-info{{/secondaryInfo}}">
+<div class="teaser{{#rootClasses}} {{rootClasses}}{{/rootClasses}}{{^rootClasses}} teaser--main{{/rootClasses}} {{^secondaryInfo}}teaser--no-secondary-info{{/secondaryInfo}}">
 
   {{! These are usually links to major subject areas, see teaser-main-article, but could be unlinked
       text expressing a relationship, e.g. 'Built upon by' in teaser-secondary-related-item}}
@@ -97,7 +97,7 @@
 
     {{#formats}}
     <div class="teaser__formats">
-      <span class="visuallyhidden">Available as:</span>
+      <span class="visuallyhidden">Formats available:</span>
       <ul class="teaser__formats-list">
         {{#list}}
           <li>{{.}}</li>
