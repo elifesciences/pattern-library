@@ -165,3 +165,9 @@
   }
 
 }
+
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+  .button--switch-selector {
+    display: none;
+  }
+}

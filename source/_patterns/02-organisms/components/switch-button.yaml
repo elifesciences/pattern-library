@@ -1,0 +1,12 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  primaryTextButton:
+    type: string
+    minItems: 1
+  secondaryTextButton:
+    type: string
+    minItems: 1
+required:
+  - primaryTextButton
+  - secondaryTextButton

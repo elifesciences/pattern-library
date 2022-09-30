@@ -1,6 +1,10 @@
 {
-  "articleUrl": "#article",
-  "figureUrl": "#figures",
+  "articleUrl": [
+    { "name": "", "url": "#" }
+  ],
+  "figureUrl": [
+    { "name": "", "url": "#" }
+  ],
   "sideBySideUrl": "#sideBySide",
   "otherLinks": [
     { "name": "Executable code", "url": "#rds" }
