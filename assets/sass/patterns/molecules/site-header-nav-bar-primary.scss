@@ -88,11 +88,12 @@
 }
 
 .nav-primary__item--first {
+  @include margin(1, "bottom");
   display: list-item;
 
   a {
-    @include margin(2, "top");
-    background: url("../../assets/img/patterns/molecules/nav-primary-menu-ic.svg") no-repeat 50px 0;
+    @include margin(-2, "top");
+    background: url("../../assets/img/patterns/molecules/nav-primary-menu-ic.svg") no-repeat 50px -2px;
     background-size: 24px;
     display: flex;
     width: 74px;
@@ -115,8 +116,7 @@
   }
 
   .nav-primary__menu_icon {
-    @include margin(0 8 0 0);
-    margin-top: -3px;
+    @include margin(-3 8 0 0);
   }
 }
 
