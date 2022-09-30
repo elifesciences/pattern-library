@@ -13,6 +13,12 @@ properties:
   figureIsActive:
     type: boolean
     default: false
+  firstViewSelector:
+    type: string
+    minLength: 1
+  secondViewSelector:
+    type: string
+    minLength: 1
   otherLinks:
     type: array
     items:

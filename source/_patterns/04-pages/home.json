@@ -341,13 +341,11 @@
   },
 
   "viewSelector": {
-    "articleUrl": [
-      { "name": "Latest research", "url": "#" }
-    ],
-    "figureUrl": [
-      { "name": "Magazine", "url": "#" }
-    ],
+    "articleUrl": "#",
+    "figureUrl": "#",
     "sideBySideUrl": "https://lens.elifesciences.org/09560",
+    "firstViewSelector": "Latest Research",
+    "secondViewSelector": "Magazine",
     "otherLinks": [{ "name": "Executable code", "url": "#rds" }],
     "jumpLinks": {
       "links": [

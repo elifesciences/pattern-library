@@ -53,6 +53,22 @@ module.exports = class ViewSelector {
       this.handleResize(scrollingHandler, this.handleScrolling);
     }, 200));
 
+    const $firstSelector = this.$elm.querySelector('.first-selector');
+    const $secondSelector = this.$elm.querySelector('.second-selector');
+
+    $firstSelector.addEventListener('click', (e) => {
+      e.preventDefault();
+      const activeElement = this.$elm.getElementsByClassName('view-selector__list-item view-selector__list-item--active')[0];
+      activeElement.classList.remove('view-selector__list-item--active');
+      $firstSelector.parentNode.classList.add('view-selector__list-item--active');
+    });
+
+    $secondSelector.addEventListener('click', (e) => {
+      e.preventDefault();
+      const activeElement = this.$elm.getElementsByClassName('view-selector__list-item view-selector__list-item--active')[0];
+      activeElement.classList.remove('view-selector__list-item--active');
+      $secondSelector.parentNode.classList.add('view-selector__list-item--active');
+    });
   }
 
   static getAllCollapsibleSectionHeadings (doc) {

@@ -469,6 +469,8 @@
     "articleUrl": "#figures",
     "figureUrl": "#files",
     "sideBySideUrl": "https://lens.elifesciences.org/09560",
+    "firstViewSelector": "Article",
+    "secondViewSelector": "Figures and data",
     "otherLinks": [{ "name": "Executable code", "url": "#rds" }],
     "jumpLinks": {
       "links": [

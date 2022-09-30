@@ -1,11 +1,9 @@
 {
-  "articleUrl": [
-    { "name": "", "url": "#" }
-  ],
-  "figureUrl": [
-    { "name": "", "url": "#" }
-  ],
+  "articleUrl": "#article",
+  "figureUrl": "#figures",
   "sideBySideUrl": "#sideBySide",
+  "firstViewSelector": "Article",
+  "secondViewSelector": "Figures and data",
   "otherLinks": [
     { "name": "Executable code", "url": "#rds" }
   ],
