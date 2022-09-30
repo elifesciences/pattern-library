@@ -8,8 +8,9 @@
   z-index: 10;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    @include margin(15, "left");
+    @include margin(19, "left");
     border-left: 1px solid $color-text-dividers;
+    height: 24px;
   }
 }
 
@@ -138,6 +139,8 @@
   }
 
   .nav-primary__item--first {
+    @include margin(21, "left");
+
     a {
       background-position-x: 0;
       background-position-y: -2px;
