@@ -1,6 +1,7 @@
 @import "../../definitions";
 
 .nav-secondary {
+  @include margin(8, "top");
   background-color: $color-text-ui-background;
   position: relative;
   z-index: 15;

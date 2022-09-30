@@ -57,7 +57,9 @@
 
 .nav-primary__item--list {
   @include padding(0, "left");
+  @include padding(2, "top");
   @include margin(0, "bottom");
+  align-items: center;
   display: flex;
 }
 
@@ -140,6 +142,7 @@
 
   .nav-primary__item--first {
     @include margin(21, "left");
+    @include margin(-2, "top");
 
     a {
       background-position-x: 0;
