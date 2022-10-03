@@ -1,9 +1,22 @@
 @import "../../definitions";
 
 .site-header {
+  @include margin(30 0);
   max-height: 96px;
   position: relative;
   z-index: 20;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin(42 0);
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include margin(54 0);
+  }
+
+  @supports (display: flex) {
+    display: flex;
+  }
 
   .search-box {
     background-color: #fff;
@@ -68,29 +81,14 @@
 }
 
 .site-header__navigation {
-  @include margin(30 0);
-  align-items: center;
   background-color: #fff;
-  display: flex;
-  justify-content: space-between;
   height: 35px;
-  position: relative;
-  z-index: 20;
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    @include margin(42 0);
-  }
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include margin(54 0);
-  }
-}
-
-.site-header__navigation__item {
-  align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
+  margin-left: auto;
+  position: relative;
   width: 100%;
+  z-index: 20;
 }
 
 .site-header__skip_to_content {
@@ -139,6 +137,10 @@
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
   .site-header {
     max-height: 119px;
+  }
+
+  .site-header__navigation {
+    @include margin(20, "left");
   }
 
   .site-header__navigation__item {

@@ -3,21 +3,20 @@
 .nav-secondary {
   @include margin(8, "top");
   background-color: $color-text-ui-background;
+  display: none;
+  margin-left: auto;
   position: relative;
   z-index: 15;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    display: inline-block;
+  }
 }
 
 .nav-secondary__list {
   @include height(40);
   @include margin(0);
   @include padding(0);
-  align-items: baseline;
-  justify-content: flex-end;
-  vertical-align: middle;
-  @supports (display: flex) {
-    align-items: center;
-    display: flex;
-  }
 }
 
 .nav-secondary__item {
@@ -52,7 +51,6 @@
 }
 
 .nav-secondary__item--hide-narrow {
-  @include margin(6, "bottom");
   display: none;
 
   .button--default.button--extra-small {
@@ -83,6 +81,5 @@
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
   .nav-secondary__item--hide-narrow {
     display: list-item;
-    width: 152px;
   }
 }

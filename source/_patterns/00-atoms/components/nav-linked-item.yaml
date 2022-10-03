@@ -1,22 +1,32 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
-properties:
-  classes:
-    type: string
-  text:
-    type: string
-    minLength: 1
-  textClasses:
-    type: string
-  path:
-    type: string
-    minLength: 1
-  rel:
-    type: string
-    enum:
-      - search
-      - alert
-  picture:
-    $ref: picture.yaml
-required:
-  - text
+allOf:
+  -
+    properties:
+      classes:
+        type: string
+  -
+    oneOf:
+      -
+        properties:
+          text:
+            type: string
+            minLength: 1
+          textClasses:
+            type: string
+          path:
+            type: string
+            minLength: 1
+          rel:
+            type: string
+            enum:
+              - search
+              - alert
+        required:
+          - text
+      -
+        properties:
+          button:
+            $ref: button.yaml
+        required:
+          - button

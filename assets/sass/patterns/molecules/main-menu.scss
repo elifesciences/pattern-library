@@ -28,7 +28,7 @@
     }
   }
 
-  &.lineSeparator {
+  &.border-line__bottom {
     @include margin(24, "bottom");
     border-bottom: 1px solid $color-text-dividers;
   }

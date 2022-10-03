@@ -1,21 +1,17 @@
 <header class="site-header clearfix" data-behaviour="SiteHeader" id="siteHeader">
-
+    {{#title}}
+        {{> molecules-site-header-title }}
+    {{/title}}
     <div class="site-header__navigation" role="navigation" aria-label="Main navigation">
         <div class="site-header__navigation__item">
-            {{#title}}
-                {{> molecules-site-header-title }}
-            {{/title}}
-
             {{#primaryLinks}}
                  {{> molecules-site-header-nav-bar }}
             {{/primaryLinks}}
         </div>
 
-        <div>
-            {{#secondaryLinks}}
-                 {{> molecules-site-header-nav-bar }}
-            {{/secondaryLinks}}
-        </div>
+        {{#secondaryLinks}}
+            {{> molecules-site-header-nav-bar }}
+        {{/secondaryLinks}}
 
     </div>
 

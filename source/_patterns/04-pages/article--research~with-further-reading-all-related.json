@@ -586,15 +586,15 @@
     },
     "links": {
       "items": [
-        {"name": "Home", "url": "#", "listChange":  true},
-        {"name": "Magazine", "url": "#", "listChange": true},
-        {"name": "Community", "url": "#ins", "listChange":  true},
-        {"name": "About", "url": "#abo", "listChange":  true},
+        {"name": "Home", "url": "#", "isHiddenMainMenuItemForWideScreen":  true},
+        {"name": "Magazine", "url": "#", "isHiddenMainMenuItemForWideScreen": true},
+        {"name": "Community", "url": "#ins", "isHiddenMainMenuItemForWideScreen":  true},
+        {"name": "About", "url": "#abo", "isHiddenMainMenuItemForWideScreen":  true},
         {"name": "Research categories", "url": "#res"},
-        {"name": "Inside eLife", "url": "#", "hasLine": true},
-        {"name": "Search", "url": "#", "listChange":  true},
-        {"name": "Subscribe to alerts", "url": "#", "hasLine": true, "listChange": true},
-        {"name": "Submit your research", "url": "#", "listChange": true},
+        {"name": "Inside eLife", "url": "#", "hasBorderBottom": true},
+        {"name": "Search", "url": "#", "isHiddenMainMenuItemForWideScreen":  true},
+        {"name": "Subscribe to alerts", "url": "#", "hasBorderBottom": true, "isHiddenMainMenuItemForWideScreen": true},
+        {"name": "Submit your research", "url": "#", "isHiddenMainMenuItemForWideScreen": true},
         {"name": "Author guide", "url": "#"},
         {"name": "Reviewer guide", "url": "#"}
       ]

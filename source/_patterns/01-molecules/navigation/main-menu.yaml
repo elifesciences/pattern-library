@@ -15,7 +15,11 @@ properties:
           url:
             type: string
             minLength: 1
-          hasLine:
+          hasBorderBottom:
+            type: boolean
+            enum:
+              - true
+          isHiddenMainMenuItemForWideScreen:
             type: boolean
             enum:
               - true
