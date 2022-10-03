@@ -55,7 +55,6 @@
 
         {
           "text": "Alerts",
-          "rel": "alert",
           "classes": "nav-secondary__item nav-secondary__item--alert",
           "path": "#"
         },

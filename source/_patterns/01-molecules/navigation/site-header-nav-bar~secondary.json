@@ -12,13 +12,11 @@
 
     {
       "text": "Alerts",
-      "rel": "alert",
       "classes": "nav-secondary__item nav-secondary__item--alert",
       "path": "#"
     },
 
     {
-      "text": "Site header nav bar secondary",
       "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
       "button": {
         "text": "Submit your research",

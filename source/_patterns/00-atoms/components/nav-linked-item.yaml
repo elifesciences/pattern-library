@@ -21,7 +21,6 @@ allOf:
             type: string
             enum:
               - search
-              - alert
         required:
           - text
       -
