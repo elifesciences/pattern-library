@@ -23,12 +23,12 @@
   text-align: left;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    &.main-menu__list_change {
+    &.hidden-wide {
       display: none;
     }
   }
 
-  &.border-line__bottom {
+  &.end-of-group {
     @include margin(24, "bottom");
     border-bottom: 1px solid $color-text-dividers;
   }
