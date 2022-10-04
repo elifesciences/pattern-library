@@ -115,7 +115,7 @@
   },
   "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
 
-  "mainMenu":{
+  "mainMenu": {
     "title": {
       "homePagePath": "#"
     },

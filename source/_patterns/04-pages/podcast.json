@@ -326,7 +326,7 @@
       ]
     }],
 
-  "mainMenu":{
+  "mainMenu": {
     "title": {
       "homePagePath": "#"
     },

@@ -765,7 +765,7 @@
     }
   },
 
-  "mainMenu":{
+  "mainMenu": {
     "title": {
       "homePagePath": "#"
     },
