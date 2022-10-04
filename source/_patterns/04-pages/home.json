@@ -353,7 +353,8 @@
                   "month": "May",
                   "year": 2016
                 },
-                "forMachine": "20160516"
+                "forMachine": "20160516",
+                "isUpdated": true
               }
             },
             "formats": {
@@ -581,7 +582,6 @@
 
         {
           "rootClasses": "teaser--secondary",
-
           "contextLabel": {
             "list": [
               {
@@ -615,7 +615,6 @@
 
         {
           "rootClasses": "teaser--secondary",
-
           "contextLabel": {
             "list": [
               {
