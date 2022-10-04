@@ -100,10 +100,6 @@
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     grid-column: 2;
   }
-
-  .hero-banner__image {
-    border: 1px solid #{$color-text-dividers};
-  }
 }
 
 .hero-banner__subject_list {
