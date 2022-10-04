@@ -8,7 +8,7 @@
     "primaryLinks":
     {
       "classesOuter": "nav-primary",
-      "classesInner": "nav-primary__item--list",
+      "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
         {
           "text": "Menu",

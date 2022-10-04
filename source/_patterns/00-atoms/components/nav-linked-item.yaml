@@ -12,8 +12,6 @@ allOf:
           text:
             type: string
             minLength: 1
-          textClasses:
-            type: string
           path:
             type: string
             minLength: 1

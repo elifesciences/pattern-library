@@ -14,10 +14,8 @@
 }
 
 .nav-primary__list {
-  @include height(54);
-  @include padding(7px 0 0);
-  margin: 0;
-  vertical-align: middle;
+  @include padding(0, "left");
+  @include margin(0, "bottom");
 
   @supports (display: flex) {
     align-items: center;
@@ -52,11 +50,6 @@
 .nav-primary a:visited {
   color: #212121;
   text-decoration: none;
-}
-
-.nav-primary__item--list {
-  @include padding(0, "left");
-  @include margin(0, "bottom");
 }
 
 .nav-primary__menu_icon {
