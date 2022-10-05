@@ -65,7 +65,7 @@ module.exports = class MainMenu {
   buildCloseControl() {
     let $close;
     if (!this.$elm.querySelector('#mainMenuCloseControl')) {
-      const $parent = this.$elm.querySelector('.main-menu__container');
+      const $parent = this.$elm.querySelector('.main-menu__title-container');
       $close = utils.buildElement('button', ['main-menu__close_control'], 'Close', $parent,
                                   $parent.firstElementChild);
       $close.id = 'mainMenuCloseControl';
