@@ -9,7 +9,7 @@
     {{#links}}
       <ul class="main-menu__list">
         {{#items}}
-        <li class="main-menu__list_item{{#hasBorderBottom}} border-line__bottom{{/hasBorderBottom}}{{#isHiddenMainMenuItemForWideScreen}} main-menu__list_change{{/isHiddenMainMenuItemForWideScreen}}">
+        <li class="main-menu__list_item{{#classes}} {{classes}}{{/classes}}">
           <a href="{{url}}" class="main-menu__list_link">{{name}}</a>
         </li>
         {{/items}}
