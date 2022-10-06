@@ -11,7 +11,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include margin(54 0);
+    @include margin(54 0 42 0);
   }
 
   @supports (display: flex) {
