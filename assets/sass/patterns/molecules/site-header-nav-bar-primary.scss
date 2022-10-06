@@ -80,13 +80,13 @@
   display: list-item;
 
   a {
-    background: url("../../assets/img/patterns/molecules/nav-primary-menu-ic.svg") no-repeat 50px -2px;
+    background: url("../img/patterns/molecules/nav-primary-menu-ic.svg") no-repeat 50px -2px;
     background-size: 24px;
     display: flex;
     width: 74px;
 
     &:hover {
-      background-image: url("../../assets/img/patterns/molecules/nav-primary-menu-blue-ic.svg");
+      background-image: url("../img/patterns/molecules/nav-primary-menu-blue-ic.svg");
       color: $color-primary;
     }
   }
