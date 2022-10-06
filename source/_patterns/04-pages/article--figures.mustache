@@ -9,48 +9,48 @@
 
       {{#dismissibleExtendedInfo}}
         <div class="wrapper">
-           <div class="content-container-grid">
-              {{> atoms-info-bar }}
-            </div>
+          <div class="content-container-grid">
+            {{> atoms-info-bar }}
+          </div>
         </div>
       {{/dismissibleExtendedInfo}}
 
-        {{#contentHeader}}
+      {{#contentHeader}}
         {{> organisms-content-header-journal }}
-        {{/contentHeader}}
+      {{/contentHeader}}
 
-        {{#modalWindowCitation}}
+      {{#modalWindowCitation}}
         {{> atoms-modal-window}}
-        {{/modalWindowCitation}}
+      {{/modalWindowCitation}}
 
-        {{#modalWindowShare}}
+      {{#modalWindowShare}}
         {{> atoms-modal-window}}
-        {{/modalWindowShare}}
+      {{/modalWindowShare}}
 
-        <div class="wrapper wrapper--content">
+      <div class="wrapper wrapper--content">
 
-            <div class="content-container-grid">
+        <div class="content-container-grid">
 
-                {{#viewSelector}}
-                {{> molecules-view-selector }}
-                {{/viewSelector}}
+          {{#viewSelector}}
+            {{> molecules-view-selector }}
+          {{/viewSelector}}
 
 
-                <div class="main-content-grid">
+          <div class="main-content-grid">
 
-                    {{#figures}}
-                    {{>molecules-pl-only-article-section}}
-                    {{/figures}}
+            {{#figures}}
+              {{>molecules-pl-only-article-section}}
+            {{/figures}}
 
-                    {{#additional-files}}
-                    {{>molecules-pl-only-article-section}}
-                    {{/additional-files}}
+            {{#additional-files}}
+              {{>molecules-pl-only-article-section}}
+            {{/additional-files}}
 
-                </div>
-
-            </div>
+          </div>
 
         </div>
+
+      </div>
 
     </main>
 
