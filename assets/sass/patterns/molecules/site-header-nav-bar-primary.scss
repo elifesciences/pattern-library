@@ -1,19 +1,21 @@
 @import "../../definitions";
 
 .nav-primary {
-  background-color: #fff;
-  border-top: 1px solid $color-text-dividers;
+  @include margin(8, "top");
+  background-color: $color-text-ui-background;
   clear: right;
-  @include padding(0 5);
   position: relative;
   z-index: 10;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    border-left: 1px solid $color-text-dividers;
+    height: 24px;
+  }
 }
 
 .nav-primary__list {
-  @include height(54);
-  margin: 0;
-  padding: 7px 0 0;
-  vertical-align: middle;
+  @include padding(0, "left");
+  @include margin(0, "bottom");
 
   @supports (display: flex) {
     align-items: center;
@@ -24,11 +26,10 @@
 }
 
 .nav-primary__item {
-  float: left;
   @include nav-typeg();
+  color: $color-text-ui-background--reverse;
+  float: left;
   list-style-type: none;
-  @include padding(9 12 0 0);
-  text-transform: uppercase;
 
   @supports (display: flex) {
     padding-top: 0;
@@ -51,12 +52,6 @@
   text-decoration: none;
 }
 
-.nav-primary__item--search {
-  float: right;
-  margin-left: auto;
-  @include padding(8, "right");
-}
-
 .nav-primary__menu_icon {
   border: none;
   box-sizing: content-box;
@@ -72,14 +67,29 @@
 }
 
 .nav-primary__search_icon {
-  display: block;
+  display: flex;
   height: 24px;
   width: 24px;
 }
 
-.nav-primary__item--first a {
-  display: inline-block;
-  margin-bottom: -6px;
+.nav-primary__item {
+  display: none;
+}
+
+.nav-primary__item--first {
+  display: list-item;
+
+  a {
+    background: url("../../assets/img/patterns/molecules/nav-primary-menu-ic.svg") no-repeat 50px -2px;
+    background-size: 24px;
+    display: flex;
+    width: 74px;
+
+    &:hover {
+      background-image: url("../../assets/img/patterns/molecules/nav-primary-menu-blue-ic.svg");
+      color: $color-primary;
+    }
+  }
 }
 
 @media only all and (max-width: 21.25rem) {
@@ -93,18 +103,39 @@
   }
 
   .nav-primary__menu_icon {
-    @include margin(0 8 0 0);
-    margin-top: -3px;
+    @include margin(-3 8 0 0);
   }
 }
 
-@media only all and (max-width: 30rem) {
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+  .nav-primary__alert_icon {
+    display: flex;
+    height: 20px;
+    width: 17px;
+  }
 
-  .nav-primary__list {
-    .nav-primary__item {
-      &:nth-child(5) {
-        display: none;
-      }
+  .nav-primary__item {
+    @include margin(24, "left");
+    display: list-item;
+
+    a {
+      color: $color-text;
+    }
+
+    a:hover {
+      color: $color-primary;
+    }
+  }
+
+  .nav-primary__item--first {
+    @include margin(21, "left");
+    @include margin(-2, "top");
+
+    a {
+      background-position-x: 0;
+      background-position-y: 0;
+      text-indent: -9999px;
+      width: 24px;
     }
   }
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/alerts-blue</title>
+    <g id="icons/alerts-blue" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M11.5,22 C12.6,22 13.5,21.1 13.5,20 L9.5,20 C9.5,21.1 10.4,22 11.5,22 L11.5,22 Z M18,16 L18,10.5 C18,7.4 15.9,4.9 13,4.2 L13,3.5 C13,2.7 12.3,2 11.5,2 C10.7,2 10,2.7 10,3.5 L10,4.2 C7.1,4.9 5,7.4 5,10.5 L5,16 L3,18 L3,19 L20,19 L20,18 L18,16 L18,16 Z" id="Shape" fill="#087ACC"></path>
+    </g>
+</svg>

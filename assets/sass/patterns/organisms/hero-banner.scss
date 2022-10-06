@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .hero-banner {
-  @include margin(24 0);
+  @include margin(24, "bottom");
   background-color: $color-text--reverse;
   color: $color-text;
   height: 100%;
@@ -15,7 +15,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include margin(48 0);
+    @include margin(48, "bottom");
   }
 }
 
