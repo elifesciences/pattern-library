@@ -119,7 +119,7 @@
   background-color: $color-text-ui-background-secondary-light;
   grid-column: 2/12;
 
-  .content-container-grid.reset-grid-column & {
+  .content-container-grid & {
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
       grid-column: 1/13;
     }
@@ -138,13 +138,17 @@
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include padding(12 15 16);
     }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include padding(12, "bottom");
+    }
   }
 
   .info-bar__text {
     @include font-size-and-vertical-height(14, 24);
     @include padding(0 8 0 30);
     background: url("../img/icons/info-blue.svg") 0 0 no-repeat, linear-gradient(transparent, transparent);
-    background-size: 22px;
+    background-size: 24px;
     font-weight: 400;
     text-align: left;
     width: 100%;
