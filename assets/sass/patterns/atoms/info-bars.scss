@@ -155,7 +155,6 @@
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
       @include padding(0, "right");
-      background-position-y: center;
     }
 
     a {
