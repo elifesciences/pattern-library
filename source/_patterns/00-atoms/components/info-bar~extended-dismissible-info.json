@@ -1,5 +1,5 @@
 {
-  "type": "dismissible-extended-info",
+  "type": "extended-dismissible-info",
   "text": "In 2023, eLife will stop rejecting or accepting research after peer review. Instead, every preprint sent for review will be published. <a href=\"#\">About the new process</a>.",
   "id": "12345",
   "dismissible": {
