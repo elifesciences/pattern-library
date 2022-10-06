@@ -7,42 +7,50 @@
     </div>
     <main role="main" class="main blg-margin-bottom-large" id="maincontent">
 
-      {{#contentHeader}}
-        {{> organisms-content-header-journal }}
-      {{/contentHeader}}
-
-      {{#modalWindowCitation}}
-        {{> atoms-modal-window}}
-      {{/modalWindowCitation}}
-
-      {{#modalWindowShare}}
-        {{> atoms-modal-window}}
-      {{/modalWindowShare}}
-
-      <div class="wrapper wrapper--content">
-
-        <div class="content-container-grid">
-
-          {{#viewSelector}}
-            {{> molecules-view-selector }}
-          {{/viewSelector}}
-
-
-          <div class="main-content-grid">
-
-            {{#figures}}
-              {{>molecules-pl-only-article-section}}
-            {{/figures}}
-
-            {{#additional-files}}
-              {{>molecules-pl-only-article-section}}
-            {{/additional-files}}
-
+        {{#dismissibleExtendedInfo}}
+          <div class="wrapper">
+            <div class="content-container-grid reset-grid-column">
+                {{> atoms-info-bar }}
+            </div>
           </div>
+        {{/dismissibleExtendedInfo}}
+
+        {{#contentHeader}}
+        {{> organisms-content-header-journal }}
+        {{/contentHeader}}
+
+        {{#modalWindowCitation}}
+        {{> atoms-modal-window}}
+        {{/modalWindowCitation}}
+
+        {{#modalWindowShare}}
+        {{> atoms-modal-window}}
+        {{/modalWindowShare}}
+
+        <div class="wrapper wrapper--content">
+
+            <div class="content-container-grid">
+
+                {{#viewSelector}}
+                {{> molecules-view-selector }}
+                {{/viewSelector}}
+
+
+                <div class="main-content-grid">
+
+                    {{#figures}}
+                    {{>molecules-pl-only-article-section}}
+                    {{/figures}}
+
+                    {{#additional-files}}
+                    {{>molecules-pl-only-article-section}}
+                    {{/additional-files}}
+
+                </div>
+
+            </div>
 
         </div>
-
-      </div>
 
     </main>
 

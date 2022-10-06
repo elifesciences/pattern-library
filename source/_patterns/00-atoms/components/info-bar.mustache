@@ -2,7 +2,7 @@
 
     {{#dismissible}}
         data-behaviour="InfoBar"
-        data-cookie-name-root="infoBar_"
+        data-cookie-name-root="{{#isExtendedInfo}}extendedInfoBar_{{/isExtendedInfo}}{{^isExtendedInfo}}infoBar_{{/isExtendedInfo}}"
         {{#cookieExpires}} data-cookie-expires="{{cookieExpires}}"{{/cookieExpires}}
      {{/dismissible}}>
 

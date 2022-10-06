@@ -75,8 +75,8 @@
   }
 }
 
-.info-bar--dismissible {
-
+.info-bar--dismissible,
+.info-bar--extended-dismissible-info {
   // when js is available, don't show until js has had a chance to hide it
   .js &:not([data-behaviour-initialised]) {
     display: none;
@@ -112,7 +112,46 @@
       background-color: rgba(0,0,0,0.15);
     }
   }
+}
 
+.info-bar--extended-dismissible-info {
+  @include padding(0);
+  background-color: $color-text-ui-background-secondary-light;
+  grid-column: 2/12;
+
+  a {
+    color: $color-primary;
+  }
+
+  .content-container-grid.reset-grid-column & {
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      grid-column: 1/13;
+    }
+  }
+
+  .dismiss-button {
+    @include padding(5);
+    background: url("../img/icons/close.svg") center no-repeat;
+  }
+
+  .info-bar__container {
+    @include padding(12 18 12 15);
+    color: $color-text;
+    display: flex;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include padding(12 15 16);
+    }
+  }
+
+  .info-bar__text {
+    @include font-size-and-vertical-height(14, 24);
+    @include padding(0 8 0 30);
+    background: url("../img/icons/info-blue.svg") 0 0 no-repeat, linear-gradient(transparent, transparent);
+    background-size: 18px;
+    text-align: left;
+    width: 100%;
+  }
 }
 
 .info-bar--warning {

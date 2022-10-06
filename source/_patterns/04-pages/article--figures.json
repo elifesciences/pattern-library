@@ -91,6 +91,17 @@
       }
     }
   },
+
+  "dismissibleExtendedInfo": {
+    "type": "extended-dismissible-info",
+    "text": "In 2023, eLife will stop rejecting or accepting research after peer review. Instead, every preprint sent for review will be published. <a href=\"#\">About the new process</a>.",
+    "id": "12345",
+    "dismissible": {
+      "cookieExpires": "Tue, 19 January 2038 03:14:07 UTC",
+      "isExtendedInfo": true
+    }
+  },
+
   "contentHeader": {
     "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
     "socialMediaSharers": {
