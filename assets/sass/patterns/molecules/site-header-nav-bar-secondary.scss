@@ -32,20 +32,20 @@
 
 .nav-secondary__list .nav-secondary__item.nav-secondary__item--search {
   a {
-    @include background-icon("../../assets/img/patterns/molecules/nav-secondary-search-black-ic.svg");
+    @include background-icon("../img/patterns/molecules/nav-secondary-search-black-ic.svg");
 
     &:hover {
-      background-image: url("../../assets/img/patterns/molecules/nav-secondary-search-blue-ic.svg");
+      background-image: url("../img/patterns/molecules/nav-secondary-search-blue-ic.svg");
     }
   }
 }
 
 .nav-secondary__list .nav-secondary__item.nav-secondary__item--alert {
   a {
-    @include background-icon("../../assets/img/patterns/molecules/nav-secondary-alert-black-ic.svg");
+    @include background-icon("../img/patterns/molecules/nav-secondary-alert-black-ic.svg");
 
     &:hover {
-      background-image: url("../../assets/img/patterns/molecules/nav-secondary-alert-blue-ic.svg");
+      background-image: url("../img/patterns/molecules/nav-secondary-alert-blue-ic.svg");
     }
   }
 }
