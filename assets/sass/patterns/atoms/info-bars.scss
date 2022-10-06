@@ -75,46 +75,7 @@
   }
 }
 
-.info-bar--dismissible,
-.info-bar--extended-dismissible-info {
-  // when js is available, don't show until js has had a chance to hide it
-  .js &:not([data-behaviour-initialised]) {
-    display: none;
-  }
-
-  .info-bar__container {
-    margin: 0 auto;
-    width: 100%;
-    max-width: #{$max-site-width}px;
-  }
-
-  .info-bar__text {
-
-    @include font-size-and-vertical-height(14, 22.4);
-
-    @media only all and (max-width: 700px) {
-      @include padding(2 0 0);
-      width: 85%;
-    }
-  }
-
-  .dismiss-button {
-    background: url("../img/icons/clear.svg") 0 0 no-repeat;
-    border: 0;
-    border-radius: 2px;
-    display: inline-block;
-    float: right;
-    height: 24px;
-    text-indent: -10000px;
-    width: 24px;
-
-    &:hover {
-      background-color: rgba(0,0,0,0.15);
-    }
-  }
-}
-
-.info-bar--extended-dismissible-info {
+.info-bar--dismissible {
   @include padding(0);
   background-color: $color-text-ui-background-secondary-light;
   grid-column: 2/12;
@@ -125,15 +86,18 @@
     }
   }
 
-  .dismiss-button {
-    @include padding(5);
-    background: url("../img/icons/close.svg") center no-repeat;
+  // when js is available, don't show until js has had a chance to hide it
+  .js &:not([data-behaviour-initialised]) {
+    display: none;
   }
 
   .info-bar__container {
     @include padding(12 18 12 15);
     color: $color-text;
     display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: #{$max-site-width}px;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include padding(12 15 16);
@@ -159,6 +123,23 @@
 
     a {
       color: $color-primary;
+      text-decoration: none;
+    }
+  }
+
+  .dismiss-button {
+    @include padding(5);
+    background: url("../img/icons/close.svg") center no-repeat;
+    border: 0;
+    border-radius: 2px;
+    display: inline-block;
+    float: right;
+    height: 24px;
+    text-indent: -10000px;
+    width: 24px;
+
+    &:hover {
+      background-color: rgba(0,0,0,0.15);
     }
   }
 }
