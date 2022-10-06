@@ -10,22 +10,7 @@
       {
         "text": "Menu",
         "classes": "nav-primary__item nav-primary__item--first",
-        "textClasses": "visuallyhidden",
-        "path": "#mainMenu",
-        "picture": {
-          "pictureClasses": "nav-primary__menu_icon",
-          "fallback": {
-            "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
-            "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-            "classes": "",
-            "altText": ""
-          },
-          "sources": [
-            {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-            }
-          ]
-        }
+        "path": "#mainMenu"
       },
 
       {
@@ -47,35 +32,12 @@
       },
 
       {
-        "text": "Innovation",
+        "text": "About",
         "path": "#",
         "classes": "nav-primary__item"
-      },
-
-      {
-        "text": "Search the eLife site",
-        "rel": "search",
-        "classes": "nav-primary__item nav-primary__item--search",
-        "textClasses": "visuallyhidden",
-        "path": "#",
-        "picture": {
-          "pictureClasses": "nav-primary__search_icon",
-          "fallback": {
-            "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 1x",
-            "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-            "classes": "",
-            "altText": ""
-          },
-          "sources": [
-            {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-            }
-          ]
-        }
       }
     ]
   },
-
 
   "secondaryLinks":
   {
@@ -83,34 +45,24 @@
     "classesInner": "nav-secondary__list clearfix",
     "linkedItems": [
       {
-        "text": "Newsletters",
-        "path": "#",
-        "classes": "nav-secondary__item"
+        "text": "Search",
+        "rel": "search",
+        "classes": "nav-secondary__item nav-secondary__item--search",
+        "path": "#"
       },
 
       {
-        "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-        "path": "#",
-        "classes": "nav-secondary__item"
+        "text": "Alerts",
+        "classes": "nav-secondary__item nav-secondary__item--alert",
+        "path": "#"
       },
 
       {
-        "text": "Submit my research",
+        "text": "Submit your research",
         "path": "#",
         "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
         "button": {
           "classes": "button--default button--extra-small"
-        }
-      },
-
-      {
-        "classes": "nav-secondary__item",
-        "loginControl": {
-          "button": {
-            "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-            "path": "#",
-            "classes": "button--login"
-          }
         }
       }
     ]

@@ -3,14 +3,15 @@
     {{> molecules-site-header-title }}
   {{/title}}
   <div class="site-header__navigation" role="navigation" aria-label="Main navigation">
+    <div class="site-header__navigation__item">
+      {{#primaryLinks}}
+        {{> molecules-site-header-nav-bar }}
+      {{/primaryLinks}}
+    </div>
 
     {{#secondaryLinks}}
       {{> molecules-site-header-nav-bar }}
     {{/secondaryLinks}}
-
-    {{#primaryLinks}}
-      {{> molecules-site-header-nav-bar }}
-    {{/primaryLinks}}
 
   </div>
 

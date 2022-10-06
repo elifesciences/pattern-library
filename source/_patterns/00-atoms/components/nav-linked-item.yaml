@@ -12,8 +12,6 @@ allOf:
           text:
             type: string
             minLength: 1
-          textClasses:
-            type: string
           path:
             type: string
             minLength: 1
@@ -21,8 +19,6 @@ allOf:
             type: string
             enum:
               - search
-          picture:
-            $ref: picture.yaml
         required:
           - text
       -
@@ -31,9 +27,3 @@ allOf:
             $ref: button.yaml
         required:
           - button
-      -
-        properties:
-          loginControl:
-            $ref: ../../01-molecules/navigation/login-control.yaml
-        required:
-          - loginControl
