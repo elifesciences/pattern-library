@@ -7,6 +7,30 @@ $totalHighlightsSpacing: 6;
 /* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
  *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
  */
+.js {
+  .main-column.display-hide,
+  .secondary-column.display-hide {
+    display: none;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      display: unset;
+    }
+  }
+
+  .main-column.display-unset,
+  .secondary-column.display-unset {
+    display: unset;
+  }
+
+  .secondary-column {
+    display: none;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      display: unset;
+    }
+  }
+}
+
 .listing-list {
   @include nospace("left");
   list-style-type: none;

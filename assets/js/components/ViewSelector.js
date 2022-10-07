@@ -55,19 +55,26 @@ module.exports = class ViewSelector {
 
     const $firstSelector = this.$elm.querySelector('.first-selector');
     const $secondSelector = this.$elm.querySelector('.second-selector');
+    const $mainListingArea = this.doc.getElementById('mainListing');
+    const $secondaryListingArea = this.doc.getElementById('secondaryListing');
+
+    function showSelectedArea(e, that, clickedElement, visibleArea, hiddenArea) {
+      e.preventDefault();
+      const activeElement = that.$elm.getElementsByClassName('view-selector__list-item view-selector__list-item--active')[0];
+      activeElement.classList.remove('view-selector__list-item--active');
+      clickedElement.parentNode.classList.add('view-selector__list-item--active');
+      visibleArea.classList.add('display-unset');
+      visibleArea.classList.remove('display-hide');
+      hiddenArea.classList.add('display-hide');
+      hiddenArea.classList.remove('display-unset');
+    }
 
     $firstSelector.addEventListener('click', (e) => {
-      e.preventDefault();
-      const activeElement = this.$elm.getElementsByClassName('view-selector__list-item view-selector__list-item--active')[0];
-      activeElement.classList.remove('view-selector__list-item--active');
-      $firstSelector.parentNode.classList.add('view-selector__list-item--active');
+      showSelectedArea(e, this, $firstSelector, $mainListingArea, $secondaryListingArea);
     });
 
     $secondSelector.addEventListener('click', (e) => {
-      e.preventDefault();
-      const activeElement = this.$elm.getElementsByClassName('view-selector__list-item view-selector__list-item--active')[0];
-      activeElement.classList.remove('view-selector__list-item--active');
-      $secondSelector.parentNode.classList.add('view-selector__list-item--active');
+      showSelectedArea(e, this, $secondSelector, $secondaryListingArea, $mainListingArea);
     });
   }
 
