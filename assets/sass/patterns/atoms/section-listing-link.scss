@@ -2,7 +2,6 @@
 
 .section-listing-link {
   border-bottom: 1px solid $color-text-dividers;
-  border-top: 1px solid $color-text-dividers;
   color: $color-text;
   display: block;
   font-family: $font-secondary;
@@ -14,6 +13,10 @@
   text-align: center;
   text-decoration: none;
   width: 100%;
+
+  &:not(.section-listing--single-line) {
+    border-top: 1px solid $color-text-dividers;
+  }
 
   &:after {
     content: "\00a\00bb";
