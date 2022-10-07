@@ -203,30 +203,15 @@
     }
   },
 
-  "leadPara": {
-    "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
-    "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
-  },
-
-  "leadParas": {
-    "paras": [
-      {
-        "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
-        "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
-      }
-    ]
-  },
-
   "sectionsListingLink": {
     "targetFragmentId": "sectionsListing",
-    "text": "See all major subject areas"
+    "text": "All research categories"
   },
 
   "sectionsListing": {
     "id": "sectionsListing",
-    "labelledBy": "theIdOfTheLeadParaAssumingThisIsTheHomePage",
     "listHeading": {
-      "heading": "Major subject areas"
+      "heading": "Research categories"
     },
     "sections": [
       {
