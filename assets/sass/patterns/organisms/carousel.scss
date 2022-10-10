@@ -3,6 +3,7 @@
 .carousel {
   @include constrain-width($max-site-width, "max");
   @include margin($content-header-padding, "top");
+  @include margin($content-header-padding-medium, "bottom");
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;

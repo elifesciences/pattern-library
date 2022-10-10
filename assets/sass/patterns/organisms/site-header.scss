@@ -11,7 +11,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include margin(54 0);
+    @include margin(54 0 42 0);
   }
 
   @supports (display: flex) {
@@ -59,7 +59,7 @@
 }
 
 .site-header__logo_link {
-  background: url("../img/patterns/organisms/elife-logo-cropped-xs.svg") 0 0 no-repeat;
+  background: url("../img/patterns/molecules/elife-logo-cropped-xs.svg") 0 0 no-repeat;
   display: block;
   height: 35px;
   width: 88px;

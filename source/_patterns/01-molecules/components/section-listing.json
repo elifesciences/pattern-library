@@ -1,8 +1,7 @@
 {
   "id": "sectionsListing",
-  "labelledBy": "theIdOfTheLeadParaAssumingThisIsTheHomePage",
   "listHeading": {
-    "heading": "Major subject areas"
+    "heading": "Research categories"
   },
   "sections": [
     {

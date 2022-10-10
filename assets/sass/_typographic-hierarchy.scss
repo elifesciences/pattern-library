@@ -206,14 +206,6 @@
   @include padding(19, "bottom");
 }
 
-@mixin lead-para-typeg($is-wide: false) {
-  font-family: $font-primary;
-  @include _set-typeg-width-variant($font-size-base-in-px, 17, $is-wide);
-  font-weight: bold;
-  line-height: 1.5;
-  text-align: center;
-}
-
 // NAVIGATION AND LABELS
 
 @mixin nav-typeg() {
