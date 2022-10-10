@@ -18,6 +18,10 @@ module.exports = class ViewSelector {
     this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
     this.cssFixedClassName = 'view-selector--fixed';
     this.$navDetect = this.doc.querySelector('.content-container-grid');
+    this.$firstSelector = this.$elm.querySelector('.first-selector');
+    this.$secondSelector = this.$elm.querySelector('.second-selector');
+    this.$mainListingArea = this.doc.getElementById('mainListing');
+    this.$secondaryListingArea = this.doc.getElementById('secondaryListing');
 
     if (this.sideBySideViewAvailable()) {
       const $header = this.doc.getElementById('siteHeader');
@@ -53,28 +57,12 @@ module.exports = class ViewSelector {
       this.handleResize(scrollingHandler, this.handleScrolling);
     }, 200));
 
-    const $firstSelector = this.$elm.querySelector('.first-selector');
-    const $secondSelector = this.$elm.querySelector('.second-selector');
-    const $mainListingArea = this.doc.getElementById('mainListing');
-    const $secondaryListingArea = this.doc.getElementById('secondaryListing');
-
-    function showSelectedArea(e, that, clickedElement, visibleArea, hiddenArea) {
-      e.preventDefault();
-      const activeElement = that.$elm.getElementsByClassName('view-selector__list-item view-selector__list-item--active')[0];
-      activeElement.classList.remove('view-selector__list-item--active');
-      clickedElement.parentNode.classList.add('view-selector__list-item--active');
-      visibleArea.classList.add('display-unset');
-      visibleArea.classList.remove('display-hide');
-      hiddenArea.classList.add('display-hide');
-      hiddenArea.classList.remove('display-unset');
-    }
-
-    $firstSelector.addEventListener('click', (e) => {
-      showSelectedArea(e, this, $firstSelector, $mainListingArea, $secondaryListingArea);
+    this.$firstSelector.addEventListener('click', (e) => {
+      this.showSelectedArea(e, this, this.$firstSelector, this.$mainListingArea, this.$secondaryListingArea);
     });
 
-    $secondSelector.addEventListener('click', (e) => {
-      showSelectedArea(e, this, $secondSelector, $secondaryListingArea, $mainListingArea);
+    this.$secondSelector.addEventListener('click', (e) => {
+      this.showSelectedArea(e, this, this.$secondSelector, this.$secondaryListingArea, this.$mainListingArea);
     });
   }
 
@@ -277,5 +265,16 @@ module.exports = class ViewSelector {
       this.sideBySideView.open();
     });
     return $listItem;
+  }
+
+  showSelectedArea(e, that, clickedElement, visibleArea, hiddenArea) {
+    e.preventDefault();
+    const activeElement = that.$elm.getElementsByClassName('view-selector__list-item view-selector__list-item--active')[0];
+    activeElement.classList.remove('view-selector__list-item--active');
+    clickedElement.parentNode.classList.add('view-selector__list-item--active');
+    visibleArea.classList.add('display-unset');
+    visibleArea.classList.remove('display-hide');
+    hiddenArea.classList.add('display-hide');
+    hiddenArea.classList.remove('display-unset');
   }
 };
