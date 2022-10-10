@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .hero-banner {
-  @include margin(24 0);
+  @include margin(24, "bottom");
   background-color: $color-text--reverse;
   color: $color-text;
   height: 100%;
@@ -15,7 +15,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include margin(48 0);
+    @include margin(48, "bottom");
   }
 }
 
@@ -100,10 +100,6 @@
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     grid-column: 2;
   }
-
-  .hero-banner__image {
-    border: 1px solid #{$color-text-dividers};
-  }
 }
 
 .hero-banner__subject_list {
@@ -124,7 +120,7 @@
     text-decoration: none;
 
     &:hover {
-      color: $color-primary-dark;
+      @include color-link-hover();
     }
   }
 
@@ -133,6 +129,10 @@
     display: inline;
     list-style-type: none;
     padding: 0;
+
+    .hero-banner__subject {
+      font-weight: bold;
+    }
 
     .hero-banner__subject:after {
       content: ", ";

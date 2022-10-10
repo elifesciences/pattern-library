@@ -4,35 +4,24 @@
 
   "linkedItems": [
     {
-      "text": "Newsletters",
-      "path": "#",
-      "classes": "nav-secondary__item"
+      "text": "Search",
+      "rel": "search",
+      "classes": "nav-secondary__item nav-secondary__item--search",
+      "path": "#"
     },
 
     {
-      "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-      "path": "#",
-      "classes": "nav-secondary__item"
+      "text": "Alerts",
+      "classes": "nav-secondary__item nav-secondary__item--alert",
+      "path": "#"
     },
 
     {
       "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
       "button": {
-        "text": "Submit my research",
+        "text": "Submit your research",
         "path": "#",
         "classes": "button--default button--extra-small"
-
-      }
-    },
-
-    {
-      "classes": "nav-secondary__item",
-      "loginControl": {
-        "button": {
-          "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-          "path": "#",
-          "classes": "button--login"
-        }
       }
     }
   ]

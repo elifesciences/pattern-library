@@ -2,8 +2,7 @@
   "siteHeaderTitle": {
     "isWrapped": true,
     "borderVariant": true,
-    "homePagePath": "#",
-    "disableMediaQuery": true
+    "homePagePath": "#"
   },
   "contentHeader": {
     "title": "You are already subscribed"
