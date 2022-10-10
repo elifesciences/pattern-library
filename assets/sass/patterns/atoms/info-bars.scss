@@ -117,12 +117,10 @@
     text-align: left;
     width: 100%;
 
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      @include padding(0, "right");
-    }
-
     a {
+      @include padding(2, "left");
       color: $color-primary;
+      font-weight: 600;
       text-decoration: none;
     }
   }
