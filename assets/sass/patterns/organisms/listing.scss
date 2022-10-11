@@ -21,14 +21,6 @@ $totalHighlightsSpacing: 6;
   .secondary-column.display-unset {
     display: unset;
   }
-
-  .secondary-column {
-    display: none;
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      display: unset;
-    }
-  }
 }
 
 .listing-list {

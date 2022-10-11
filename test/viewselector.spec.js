@@ -291,5 +291,55 @@ describe('A ViewSelector Component', function () {
     });
   });
 
+  describe('its clicked button', function () {
+    let viewSelector;
+    let viewSelectorActiveSelector;
+    let displayUnset;
+    let displayHide;
+
+
+
+    beforeEach(() => {
+      viewSelector = new ViewSelector($elm);
+      viewSelectorActiveSelector = 'view-selector__list-item--active';
+      displayUnset = 'display-unset';
+      displayHide = 'display-hide';
+    });
+
+
+
+    context('when user select button to display section', () => {
+      it('only first selector to contains active class', function () {
+        viewSelector.addActiveClass(viewSelector.$firstSelector);
+        expect(viewSelector.$firstSelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.true;
+        expect(viewSelector.$secondSelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.false;
+      });
+
+
+
+      it('only first section to be visible', function () {
+        viewSelector.showSelectedArea(viewSelector.$mainListingArea, viewSelector.$secondaryListingArea);
+        expect(viewSelector.$mainListingArea.classList.contains(displayUnset)).to.be.true;
+        expect(viewSelector.$secondaryListingArea.classList.contains(displayHide)).to.be.true;
+      });
+
+
+
+      it('only second selector to contains active class', function () {
+        viewSelector.addActiveClass(viewSelector.$secondSelector);
+        expect(viewSelector.$secondSelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.true;
+        expect(viewSelector.$firstSelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.false;
+      });
+
+
+
+      it('only second section to be visible', function () {
+        viewSelector.showSelectedArea(viewSelector.$secondaryListingArea, viewSelector.$mainListingArea);
+        expect(viewSelector.$secondaryListingArea.classList.contains(displayUnset)).to.be.true;
+        expect(viewSelector.$mainListingArea.classList.contains(displayHide)).to.be.true;
+      });
+    });
+  });
+
 
 });

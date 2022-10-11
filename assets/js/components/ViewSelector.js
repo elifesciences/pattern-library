@@ -58,12 +58,16 @@ module.exports = class ViewSelector {
     }, 200));
 
     this.$firstSelector.addEventListener('click', (e) => {
-      this.showSelectedArea(e, this, this.$firstSelector, this.$mainListingArea, this.$secondaryListingArea);
+      e.preventDefault();
+      this.selectedSection(this.$firstSelector, this.$mainListingArea, this.$secondaryListingArea);
     });
 
     this.$secondSelector.addEventListener('click', (e) => {
-      this.showSelectedArea(e, this, this.$secondSelector, this.$secondaryListingArea, this.$mainListingArea);
+      e.preventDefault();
+      this.selectedSection(this.$secondSelector, this.$secondaryListingArea, this.$mainListingArea);
     });
+
+    this.displayActiveSectionInitially();
   }
 
   static getAllCollapsibleSectionHeadings (doc) {
@@ -267,14 +271,29 @@ module.exports = class ViewSelector {
     return $listItem;
   }
 
-  showSelectedArea(e, that, clickedElement, visibleArea, hiddenArea) {
-    e.preventDefault();
-    const activeElement = that.$elm.getElementsByClassName('view-selector__list-item view-selector__list-item--active')[0];
+  selectedSection(clickedElement, visibleArea, hiddenArea) {
+    this.addActiveClass(clickedElement);
+    this.showSelectedArea(visibleArea, hiddenArea);
+  }
+
+  addActiveClass(clickedElement) {
+    const activeElement = this.$elm.getElementsByClassName('view-selector__list-item view-selector__list-item--active')[0];
     activeElement.classList.remove('view-selector__list-item--active');
     clickedElement.parentNode.classList.add('view-selector__list-item--active');
+  }
+
+  showSelectedArea(visibleArea, hiddenArea) {
     visibleArea.classList.add('display-unset');
     visibleArea.classList.remove('display-hide');
     hiddenArea.classList.add('display-hide');
     hiddenArea.classList.remove('display-unset');
+  }
+
+  displayActiveSectionInitially() {
+    if (this.$firstSelector.parentNode.classList.contains('view-selector__list-item--active')) {
+      this.$secondaryListingArea.classList.add('display-hide');
+    } else {
+      this.$mainListingArea.classList.add('display-hide');
+    }
   }
 };
