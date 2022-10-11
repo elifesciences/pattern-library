@@ -12,6 +12,7 @@
 
 // Grid Top
 .content-header-grid-top {
+  @include margin(24, "top");
   @include margin(24, "bottom");
 
   .content-header__subject_list {
@@ -20,7 +21,6 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include margin(24, "top");
     grid-column: 2/12;
   }
 
