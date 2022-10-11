@@ -20,6 +20,7 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include margin(24, "top");
     grid-column: 2/12;
   }
 
