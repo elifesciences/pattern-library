@@ -1,0 +1,368 @@
+{
+  "siteHeader": {
+    "title": {
+      "homePagePath": "#"
+    },
+    "primaryLinks": {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "path": "#mainMenu"
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "Community",
+          "path": "#",
+          "classes": "nav-primary__item"
+        },
+
+        {
+          "text": "About",
+          "path": "#",
+          "classes": "nav-primary__item"
+        }
+      ]
+    },
+
+    "secondaryLinks": {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-secondary__item nav-secondary__item--search",
+          "path": "#"
+        },
+
+        {
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--alert",
+          "path": "#"
+        },
+
+        {
+          "text": "Submit your research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
+          "button": {
+            "classes": "button--default button--extra-small"
+          }
+        }
+      ]
+    },
+
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
+
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
+    }
+
+  },
+
+  "header": {
+    "title": "Journal",
+    "strapline": "The latest articles and peer reviewed preprints in Life Sciences and Medicine. Browse our research categories or <a href=\"https://crm.elifesciences.org/crm/content-alerts\" target=\"_blank\">subscribe to email alerts.</a>"
+  },
+
+  "blockLinkListing": {
+    "classes": "grid-listing--block-link",
+    "blockLinks": [
+      {
+        "text": "Biochemistry",
+        "url": "#Biochemistry",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Biophysics and structural biology",
+        "url": "#Biophysics",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Cell Biology",
+        "url": "#Cell",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Computational and systems biology",
+        "url": "#Computational",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Developmental Biology and Stem Cells",
+        "url": "#Developmental",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Ecology",
+        "url": "#Ecology",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Epidemiology and Global Health",
+        "url": "#Epidemiology",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Genes and Chromosomes",
+        "url": "#Genes",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Genomics and Evolutionary Biology",
+        "url": "#Genomics",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Immunology",
+        "url": "#Immunology",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Medicine",
+        "url": "#Medicine",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Microbiology and Infectious Disease",
+        "url": "#Microbiology",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Neuroscience",
+        "url": "#Neuroscience",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "text": "Plant Biology",
+        "url": "#Plant",
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      }
+    ]
+  },
+
+  "mainMenu": {
+    "title": {
+      "homePagePath": "#"
+    },
+    "listHeading": {
+      "heading": "Menu"
+    },
+    "links": {
+      "items": [
+        {
+          "name": "Home",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Magazine",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Community",
+          "url": "#ins",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "About",
+          "url": "#abo",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Research categories",
+          "url": "#res"
+        },
+        {
+          "name": "Inside eLife",
+          "url": "#",
+          "classes": "end-of-group"
+        },
+        {
+          "name": "Search",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Subscribe to alerts",
+          "url": "#",
+          "classes": "end-of-group hidden-wide"
+        },
+        {
+          "name": "Submit your research",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Author guide",
+          "url": "#"
+        },
+        {
+          "name": "Reviewer guide",
+          "url": "#"
+        }
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "button": {
+      "text": "Sign up for email alerts",
+      "classes": "button--default",
+      "path": "https://crm.elifesciences.org/crm/content-alerts"
+    },
+    "privacyUrl": "#",
+    "privacyLabel": "Privacy notice"
+  },
+
+  "footerMenuLinks": [
+    {
+      "name": "About",
+      "url": "#"
+    },
+    {
+      "name": "Alerts",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Who we work with",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Terms & Policy",
+      "url": "#"
+    }
+  ],
+
+  "year": 2016
+
+}
