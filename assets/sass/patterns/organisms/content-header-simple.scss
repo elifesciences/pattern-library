@@ -103,6 +103,7 @@
   }
 
   .content-header-simple__strapline {
-    @include margin(22, "top");
+    @include margin(24, "top");
+    font-weight: bold;
   }
 }
