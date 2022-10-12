@@ -103,6 +103,7 @@
 .highlight-item__title {
   @include font-size-and-vertical-height(16, 22);
   @include padding(12, "bottom");
+  @include padding(0, "top");
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     @include font-size-and-vertical-height(18, 26);
