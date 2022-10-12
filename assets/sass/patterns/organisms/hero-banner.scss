@@ -32,6 +32,7 @@
   }
 
   .author-line {
+    @include font-size(14);
     text-overflow: unset;
     white-space: unset;
   }
