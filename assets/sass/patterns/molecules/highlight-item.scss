@@ -40,8 +40,10 @@
     display: none;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include padding(12, "bottom");
       display: block;
+      font-family: $font-secondary;
+      text-overflow: unset;
+      white-space: unset;
     }
   }
 

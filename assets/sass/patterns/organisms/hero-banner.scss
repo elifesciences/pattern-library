@@ -31,6 +31,11 @@
     margin-right: #{$site-spacing}px;
   }
 
+  .author-line {
+    text-overflow: unset;
+    white-space: unset;
+  }
+
   .hero-banner__meta {
     color: $color-text-secondary;
     @include font-size-and-vertical-height(14, 24);
