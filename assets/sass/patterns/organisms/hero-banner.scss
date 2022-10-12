@@ -66,7 +66,7 @@
 
   .hero-banner__title {
     @include font-size-and-vertical-height(18, 26);
-    @include padding(12, "bottom");
+    @include padding(24, "bottom");
     color: #252525;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
