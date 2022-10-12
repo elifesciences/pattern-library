@@ -104,6 +104,7 @@
 
   .content-header-simple__strapline {
     @include margin(24, "top");
+    font-family: $font-secondary;
     font-weight: bold;
   }
 }
