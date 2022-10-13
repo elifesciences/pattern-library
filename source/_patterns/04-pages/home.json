@@ -278,10 +278,10 @@
   },
 
   "viewSelector": {
-    "articleUrl": "#mainListing",
-    "figureUrl": "#secondaryListing",
-    "firstViewSelector": "Latest Research",
-    "secondViewSelector": "Magazine",
+    "mainTabUrl": "#mainListing",
+    "secondaryTabUrl": "#secondaryListing",
+    "mainViewSelector": "Latest Research",
+    "secondaryViewSelector": "Magazine",
     "isTabSelector": true
   },
 

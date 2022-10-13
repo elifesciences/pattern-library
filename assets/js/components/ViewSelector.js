@@ -18,8 +18,8 @@ module.exports = class ViewSelector {
     this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
     this.cssFixedClassName = 'view-selector--fixed';
     this.$navDetect = this.doc.querySelector('.content-container-grid');
-    this.$firstSelector = this.$elm.querySelector('.first-selector');
-    this.$secondSelector = this.$elm.querySelector('.second-selector');
+    this.$mainViewSelector = this.$elm.querySelector('.main-selector');
+    this.$secondarySelector = this.$elm.querySelector('.secondary-selector');
     this.$mainListingArea = this.doc.getElementById('mainListing');
     this.$secondaryListingArea = this.doc.getElementById('secondaryListing');
     this.$activeViewSelector = 'view-selector__list-item--active';
@@ -60,14 +60,14 @@ module.exports = class ViewSelector {
       this.handleResize(scrollingHandler, this.handleScrolling);
     }, 200));
 
-    this.$firstSelector.addEventListener('click', (e) => {
+    this.$mainViewSelector.addEventListener('click', (e) => {
       e.preventDefault();
-      this.selectedSection(this.$firstSelector, this.$mainListingArea, this.$secondaryListingArea);
+      this.selectedSection(this.$mainViewSelector, this.$mainListingArea, this.$secondaryListingArea);
     });
 
-    this.$secondSelector.addEventListener('click', (e) => {
+    this.$secondarySelector.addEventListener('click', (e) => {
       e.preventDefault();
-      this.selectedSection(this.$secondSelector, this.$secondaryListingArea, this.$mainListingArea);
+      this.selectedSection(this.$secondarySelector, this.$secondaryListingArea, this.$mainListingArea);
     });
 
     this.displayActiveSectionInitially();
@@ -241,7 +241,7 @@ module.exports = class ViewSelector {
 
   insertSideBySideListItem() {
     const $list = this.doc.querySelector('.view-selector__list');
-    const $attachBefore = this.doc.querySelector('.view-selector__list-item--figures + .view-selector__list-item');
+    const $attachBefore = this.doc.querySelector('.view-selector__list-item--secondary + .view-selector__list-item');
 
     if (!$attachBefore) {
       return;
@@ -293,9 +293,9 @@ module.exports = class ViewSelector {
   }
 
   displayActiveSectionInitially() {
-    if (this.$firstSelector.parentNode.classList.contains(this.$activeViewSelector)) {
+    if (this.$mainViewSelector.parentNode.classList.contains(this.$activeViewSelector)) {
       this.$secondaryListingArea.classList.add(this.$displayHide);
-    } else if (this.$secondSelector.parentNode.classList.contains(this.$activeViewSelector)) {
+    } else if (this.$secondarySelector.parentNode.classList.contains(this.$activeViewSelector)) {
       this.$mainListingArea.classList.add(this.$displayHide);
     }
   }

@@ -93,7 +93,7 @@
     display: none;
   }
 
-  .view-selector--has-figures {
+  .view-selector--has-secondary-tab {
     display: inline-block;
     width: 100%;
     grid-column: 1/13;
@@ -117,13 +117,13 @@
   }
 
   /** Selector nesting here because otherwise this all gets horrible quickly **/
-  .view-selector__list-item--article {
+  .view-selector__list-item--main {
     display: inline-block;
     border-right: none;
     @include border-radius-simple(4, 0, 0, 4);
   }
 
-  .view-selector__list-item--figures {
+  .view-selector__list-item--secondary {
     display: inline-block;
     border-left: none;
     @include border-radius-simple(0, 4, 4, 0);
@@ -153,7 +153,7 @@
     }
   }
 
-  .view-selector__link--figures {
+  .view-selector__link--secondary-tabs {
     color: $color-text;
   }
 

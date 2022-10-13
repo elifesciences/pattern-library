@@ -1,9 +1,9 @@
 {
-  "articleUrl": "#article",
-  "figureUrl": "#figures",
+  "mainTabUrl": "#article",
+  "secondaryTabUrl": "#figures",
   "sideBySideUrl": "#sideBySide",
-  "firstViewSelector": "Article",
-  "secondViewSelector": "Figures and data",
+  "mainViewSelector": "Article",
+  "secondaryViewSelector": "Figures and data",
   "otherLinks": [
     { "name": "Executable code", "url": "#rds" }
   ],

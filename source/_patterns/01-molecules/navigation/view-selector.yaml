@@ -4,19 +4,19 @@ properties:
   sideBySideUrl:
     type: string
     minLength: 1
-  articleUrl:
+  mainTabUrl:
     type: string
     minLength: 1
-  figureUrl:
+  secondaryTabUrl:
     type: string
     minLength: 1
-  figureIsActive:
+  secondaryTabIsActive:
     type: boolean
     default: false
-  firstViewSelector:
+  mainViewSelector:
     type: string
     minLength: 1
-  secondViewSelector:
+  secondaryViewSelector:
     type: string
     minLength: 1
   isTabSelector:
@@ -58,4 +58,4 @@ properties:
     required:
       - links
 required:
-  - articleUrl
+  - mainTabUrl

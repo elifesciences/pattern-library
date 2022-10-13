@@ -310,12 +310,10 @@ describe('A ViewSelector Component', function () {
 
     context('when user select button to display section', () => {
       it('only first selector to contains active class', function () {
-        viewSelector.addActiveClass(viewSelector.$firstSelector);
-        expect(viewSelector.$firstSelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.true;
-        expect(viewSelector.$secondSelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.false;
+        viewSelector.addActiveClass(viewSelector.$mainViewSelector);
+        expect(viewSelector.$mainViewSelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.true;
+        expect(viewSelector.$secondarySelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.false;
       });
-
-
 
       it('only first section to be visible', function () {
         viewSelector.showSelectedArea(viewSelector.$mainListingArea, viewSelector.$secondaryListingArea);
@@ -323,15 +321,11 @@ describe('A ViewSelector Component', function () {
         expect(viewSelector.$secondaryListingArea.classList.contains(displayHide)).to.be.true;
       });
 
-
-
       it('only second selector to contains active class', function () {
-        viewSelector.addActiveClass(viewSelector.$secondSelector);
-        expect(viewSelector.$secondSelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.true;
-        expect(viewSelector.$firstSelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.false;
+        viewSelector.addActiveClass(viewSelector.$secondarySelector);
+        expect(viewSelector.$secondarySelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.true;
+        expect(viewSelector.$mainViewSelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.false;
       });
-
-
 
       it('only second section to be visible', function () {
         viewSelector.showSelectedArea(viewSelector.$secondaryListingArea, viewSelector.$mainListingArea);

@@ -1,13 +1,13 @@
-<div class="view-selector{{#figureUrl}} view-selector--has-figures{{/figureUrl}}{{#isTabSelector}} button--switch-selector{{/isTabSelector}}" data-behaviour="ViewSelector"{{#sideBySideUrl}} data-side-by-side-link="{{sideBySideUrl}}"{{/sideBySideUrl}}>
+<div class="view-selector{{#secondaryTabUrl}} view-selector--has-secondary-tab{{/secondaryTabUrl}}{{#isTabSelector}} button--switch-selector{{/isTabSelector}}" data-behaviour="ViewSelector"{{#sideBySideUrl}} data-side-by-side-link="{{sideBySideUrl}}"{{/sideBySideUrl}}>
   <ul class="view-selector__list">
-    <li class="view-selector__list-item view-selector__list-item--article{{^figureIsActive}} view-selector__list-item--active{{/figureIsActive}}">
-      <a href="{{articleUrl}}" class="view-selector__link view-selector__link--article{{#isTabSelector}} first-selector{{/isTabSelector}}"><span>{{firstViewSelector}}</span></a>
+    <li class="view-selector__list-item view-selector__list-item--main{{^secondaryTabIsActive}} view-selector__list-item--active{{/secondaryTabIsActive}}">
+      <a href="{{mainTabUrl }}" class="view-selector__link view-selector__link--main-tabs{{#isTabSelector}} main-selector{{/isTabSelector}}"><span>{{mainViewSelector}}</span></a>
     </li>
-    {{#figureUrl}}
-      <li class="view-selector__list-item view-selector__list-item--figures{{#figureIsActive}} view-selector__list-item--active{{/figureIsActive}}">
-        <a href="{{figureUrl}}" class="view-selector__link view-selector__link--figures{{#isTabSelector}} second-selector{{/isTabSelector}}"><span>{{secondViewSelector}}</span></a>
+    {{#secondaryTabUrl}}
+      <li class="view-selector__list-item view-selector__list-item--secondary{{#secondaryTabIsActive}} view-selector__list-item--active{{/secondaryTabIsActive}}">
+        <a href="{{secondaryTabUrl}}" class="view-selector__link view-selector__link--secondary-tabs{{#isTabSelector}} secondary-selector{{/isTabSelector}}"><span>{{secondaryViewSelector}}</span></a>
       </li>
-    {{/figureUrl}}
+    {{/secondaryTabUrl}}
 
     {{#otherLinks}}
       <li class="view-selector__list-item">
