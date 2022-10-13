@@ -22,6 +22,9 @@ module.exports = class ViewSelector {
     this.$secondSelector = this.$elm.querySelector('.second-selector');
     this.$mainListingArea = this.doc.getElementById('mainListing');
     this.$secondaryListingArea = this.doc.getElementById('secondaryListing');
+    this.$activeViewSelector = 'view-selector__list-item--active';
+    this.$displayUnset = 'display-unset';
+    this.$displayHide = 'display-hide';
 
     if (this.sideBySideViewAvailable()) {
       const $header = this.doc.getElementById('siteHeader');
@@ -277,23 +280,23 @@ module.exports = class ViewSelector {
   }
 
   addActiveClass(clickedElement) {
-    const activeElement = this.$elm.getElementsByClassName('view-selector__list-item view-selector__list-item--active')[0];
-    activeElement.classList.remove('view-selector__list-item--active');
-    clickedElement.parentNode.classList.add('view-selector__list-item--active');
+    const activeElement = this.$elm.querySelector('.view-selector__list-item--active');
+    activeElement.classList.remove(this.$activeViewSelector);
+    clickedElement.parentNode.classList.add(this.$activeViewSelector);
   }
 
   showSelectedArea(visibleArea, hiddenArea) {
-    visibleArea.classList.add('display-unset');
-    visibleArea.classList.remove('display-hide');
-    hiddenArea.classList.add('display-hide');
-    hiddenArea.classList.remove('display-unset');
+    visibleArea.classList.add(this.$displayUnset);
+    visibleArea.classList.remove(this.$displayHide);
+    hiddenArea.classList.add(this.$displayHide);
+    hiddenArea.classList.remove(this.$displayUnset);
   }
 
   displayActiveSectionInitially() {
-    if (this.$firstSelector.parentNode.classList.contains('view-selector__list-item--active')) {
-      this.$secondaryListingArea.classList.add('display-hide');
-    } else {
-      this.$mainListingArea.classList.add('display-hide');
+    if (this.$firstSelector.parentNode.classList.contains(this.$activeViewSelector)) {
+      this.$secondaryListingArea.classList.add(this.$displayHide);
+    } else if (this.$secondSelector.parentNode.classList.contains(this.$activeViewSelector)) {
+      this.$mainListingArea.classList.add(this.$displayHide);
     }
   }
 };

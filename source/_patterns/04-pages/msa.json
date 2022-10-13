@@ -113,6 +113,28 @@
     }
   },
 
+  "viewSelector": {
+    "articleUrl": "#mainListing",
+    "figureUrl": "#secondaryListing",
+    "sideBySideUrl": "https://lens.elifesciences.org/09560",
+    "firstViewSelector": "Latest Research",
+    "secondViewSelector": "Magazine",
+    "isTabSelector": true,
+    "otherLinks": [{ "name": "Executable code", "url": "#rds" }],
+    "jumpLinks": {
+      "links": [
+        {
+          "name": "Figures",
+          "url": "#figures"
+        },
+        {
+          "name": "Additional files",
+          "url": "#files"
+        }
+      ]
+    }
+  },
+
   "mainTeasers": [
     {
 

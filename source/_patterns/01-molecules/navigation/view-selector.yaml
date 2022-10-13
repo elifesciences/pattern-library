@@ -19,6 +19,10 @@ properties:
   secondViewSelector:
     type: string
     minLength: 1
+  isTabSelector:
+    type: boolean
+    enum:
+      - true
   otherLinks:
     type: array
     items:

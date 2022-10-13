@@ -23,12 +23,15 @@
 }
 
 .view-selector__link {
-  color: $color-text;
   display: block;
   text-decoration: none;
 
   span {
     display: inline-block;
+  }
+
+  &:hover {
+    color: $color-text;
   }
 }
 
@@ -39,6 +42,10 @@
     color: $color-text;
   }
 
+}
+
+.view-selector__link {
+  color: $color-text-secondary;
 }
 
 .view-selector__jump_link {
@@ -159,8 +166,10 @@
 
 }
 
-@media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-  .button--switch-selector {
+.button--switch-selector {
+  @include margin(10, "top");
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     display: none;
   }
 }

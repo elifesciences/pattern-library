@@ -425,8 +425,8 @@
     ]
   },
   "viewSelector": {
-    "articleUrl": "#figures",
-    "figureUrl": "#files",
+    "articleUrl": "#articleUrl",
+    "figureUrl": "#figureUrl",
     "sideBySideUrl": "https://lens.elifesciences.org/09560",
     "firstViewSelector": "Article",
     "secondViewSelector": "Figures and data",

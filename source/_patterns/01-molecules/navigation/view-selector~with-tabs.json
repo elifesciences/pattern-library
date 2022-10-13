@@ -1,0 +1,7 @@
+{
+  "articleUrl": "#mainListing",
+  "figureUrl": "#secondaryListing",
+  "firstViewSelector": "Latest research",
+  "secondViewSelector": "Magazine",
+  "isTabSelector": true
+}

@@ -24,13 +24,17 @@
       </div>
 
 
-    <div class="wrapper">
+    <div class="wrapper wrapper--listing-selector">
 
       <div class="grid">
 
-        <div class="listing-column-container">
+          <div class="listing-column-container">
 
-          <div class="grid__item large--eight-twelfths listing-column-main">
+            {{#viewSelector}}
+              {{> molecules-view-selector }}
+            {{/viewSelector}}
+
+          <div class="grid__item large--eight-twelfths listing-column-main main-column" id="mainListing">
 
             {{#mainTeasers}}
               {{> organisms-listing-teasers}}
@@ -38,7 +42,7 @@
 
           </div>
 
-          <div class="grid__item large--four-twelfths listing-column-secondary">
+          <div class="grid__item large--four-twelfths listing-column-secondary secondary-column" id="secondaryListing">
 
             {{#secondaryTeasers}}
               {{> organisms-listing-teasers}}
