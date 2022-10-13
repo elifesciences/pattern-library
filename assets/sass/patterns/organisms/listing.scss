@@ -4,9 +4,6 @@ $showTwoAtWidth: #{get-rem-from-px($bkpt-site--wide)}rem;
 $showThreeAtWidth: #{get-rem-from-px($bkpt-site--x-wide)}rem;
 $totalHighlightsSpacing: 6;
 
-/* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
- *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
- */
 .js {
   .main-column.display-hide,
   .secondary-column.display-hide {
@@ -22,6 +19,10 @@ $totalHighlightsSpacing: 6;
     display: unset;
   }
 }
+
+/* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
+ *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
+ */
 
 .listing-list {
   @include nospace("left");
