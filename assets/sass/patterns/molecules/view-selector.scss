@@ -1,5 +1,19 @@
 @import "../../definitions";
 
+.button--switch-selector {
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    display: none;
+  }
+
+  .list-heading {
+    display: none;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      display: block;
+    }
+  }
+}
+
 @mixin local-item-style {
   font-family: $font-secondary;
   @include font-size-and-vertical-height(14);
@@ -164,20 +178,4 @@
     top: 0;
   }
 
-}
-
-.button--switch-selector {
-  @include margin(10, "top");
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    display: none;
-  }
-
-  .list-heading {
-    display: none;
-
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      display: block;
-    }
-  }
 }
