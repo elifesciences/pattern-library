@@ -76,6 +76,7 @@
 }
 
 .info-bar--dismissible {
+  @include padding(24, "top");
   @include wrapper();
   background-color: inherit;
   max-width: #{$max-site-width}px;
@@ -91,18 +92,13 @@
   }
 
   .info-bar__container {
-    @include padding(12 18 12 15);
+    @include padding(14 15 9);
     background-color: $color-text-ui-background-secondary-light;
     color: $color-text;
     display: flex;
     grid-column: 2/12;
 
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include padding(12 15 16);
-    }
-
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      @include padding(12, "bottom");
       grid-column: 1/13;
     }
   }
