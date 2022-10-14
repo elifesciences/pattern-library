@@ -2,8 +2,7 @@
   "siteHeaderTitle": {
     "isWrapped": true,
     "borderVariant": true,
-    "homePagePath": "#",
-    "disableMediaQuery": true
+    "homePagePath": "#"
   },
   "contentHeader": {
     "title": "Subscribe to eLife's email alerts"

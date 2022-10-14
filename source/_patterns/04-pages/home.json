@@ -11,22 +11,7 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "visuallyhidden",
-          "path": "#mainMenu",
-          "picture": {
-            "pictureClasses": "nav-primary__menu_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-              }
-            ]
-          }
+          "path": "#mainMenu"
         },
 
         {
@@ -48,35 +33,12 @@
         },
 
         {
-          "text": "Innovation",
+          "text": "About",
           "path": "#",
           "classes": "nav-primary__item"
-        },
-
-        {
-          "text": "Search the eLife site",
-          "rel": "search",
-          "classes": "nav-primary__item nav-primary__item--search",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "pictureClasses": "nav-primary__search_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-              }
-            ]
-          }
         }
       ]
     },
-
 
     "secondaryLinks":
     {
@@ -84,34 +46,24 @@
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
-          "text": "Newsletters",
-          "path": "#",
-          "classes": "nav-secondary__item"
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-secondary__item nav-secondary__item--search",
+          "path": "#"
         },
 
         {
-          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-          "path": "#",
-          "classes": "nav-secondary__item"
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--alert",
+          "path": "#"
         },
 
         {
-          "text": "Submit my research",
+          "text": "Submit your research",
           "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
             "classes": "button--default button--extra-small"
-          }
-        },
-
-        {
-          "classes": "nav-secondary__item",
-          "loginControl": {
-            "button": {
-              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-              "path": "#",
-              "classes": "button--login"
-            }
           }
         }
       ]
@@ -140,30 +92,126 @@
 
   },
 
-  "leadPara": {
-    "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
-    "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
-  },
-
-  "leadParas": {
-    "paras": [
+  "highlight": {
+    "heading": {
+      "heading": "Highlights"
+    },
+    "items": [
       {
-        "text": "eLife is an open-access journal that publishes research in the life and biomedical sciences",
-        "id": "theIdOfTheLeadParaAssumingThisIsTheHomePage"
+        "title": "Limb evolution in cephalopods",
+        "url": "#link-to-article",
+        "authors": "Oscar A Tarazona, Davys H Lopez, Martin J Cohn",
+        "summary": "The arms and tentacles of cephalopods are built by the same genetic mechanisms as vertebrate limbs and insect wings.",
+        "meta": {
+          "url": "#",
+          "text": "Research article",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 1,
+              "month": "May",
+              "year": 2022
+            },
+            "forMachine": "2022-05-01"
+          }
+        },
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "title": "Preprints and peer review - share your views in our survey",
+        "url": "#link-to-article",
+        "summary": "We would like to know what researchers think of the preprint and peer review landscape in 2022 and beyond.",
+        "meta": {
+          "url": "#",
+          "text": "Research article",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 6,
+              "month": "May",
+              "year": 2020
+            },
+            "forMachine": "2020-05-06"
+          }
+        },
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "title": "Sparks of Change",
+        "url": "#link-to-article",
+        "summary": "Tell us how the culture of research is changing.",
+        "meta": {
+          "url": "#LinkToResearchArticles",
+          "text": "Research article",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 26,
+              "month": "April",
+              "year": 2022
+            },
+            "forMachine": "2022-04-26"
+          }
+        },
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/250/140/",
+            "altText": ""
+          }
+        }
       }
     ]
+  },
+  "hero-banner": {
+    "image": {
+      "fallback": {
+        "defaultPath": "https://unsplash.it/800/464",
+        "altText": ""
+      }
+    },
+    "subjects": {
+      "list": [
+        {
+          "name": "Structure Biology and Mulecular Biophysics",
+          "url": "#"
+        }
+      ]
+    },
+    "title": "Filamentation and the regulation of PRPP synthase",
+    "titleLength": "large",
+    "url": "#",
+    "summary": "Cryo-EM structures of two types of prokaryotic Phosphoribosyl pyrophosphate synthase filaments reveal tat filamentation into cytoophidia provides a new layer of metabolic regulation.",
+    "authors": "Lee R Berger, John Hawks",
+    "meta": {
+      "url": "#",
+      "text": "Research article",
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 23,
+          "month": "Jan",
+          "year": 2022
+        },
+        "forMachine": "2022-01-23"
+      }
+    }
   },
 
   "sectionsListingLink": {
     "targetFragmentId": "sectionsListing",
-    "text": "See all major subject areas"
+    "text": "All research categories"
   },
 
   "sectionsListing": {
     "id": "sectionsListing",
-    "labelledBy": "theIdOfTheLeadParaAssumingThisIsTheHomePage",
     "listHeading": {
-      "heading": "Major subject areas"
+      "heading": "Research categories"
     },
     "sections": [
       {
@@ -245,7 +293,7 @@
           },
           "title": "Quorum sensing control of Type VI secretion factors restricts the proliferation of quorum-sensing mutants",
           "url": "#",
-          "secondaryInfo": "Charlotte Majerczyk et al.",
+          "secondaryInfo": "Charlotte Majerczyk, Emily Schneider, E Peter Greenberg",
           "content": "Quorum-sensing control of <i>Burkholderia thailandensis</i> toxin and immunity pairs serves to police quorum-sensing mutants and may represent a general strategy whereby cooperators can police mutants.",
           "footer": {
             "meta": {
@@ -257,7 +305,8 @@
                   "month": "May",
                   "year": 2016
                 },
-                "forMachine": "20160516"
+                "forMachine": "20160516",
+                "isUpdated": true
               }
             },
             "formats": {
@@ -325,7 +374,7 @@
           },
           "title": "Evolutionary diversification of the trypanosome haptoglobin-haemoglobin receptor from an ancestral haemoglobin receptor",
           "url": "#",
-          "secondaryInfo": "Harriet Lane-Serff et al.",
+          "secondaryInfo": "Harriet Lane-Serff, Paula MacGregor ... Mark Carrington",
           "footer": {
             "meta": {
               "text": "Research article",
@@ -360,7 +409,7 @@
           },
           "title": "The global antigenic diversity of swine influenza A viruses",
           "url": "#",
-          "secondaryInfo": "Nicola S Lewis et al.",
+          "secondaryInfo": "Nicola S Lewis, Colin A Russell ... Amy L Vincent",
           "content": "Swine populations worldwide are sporadically infected by influenza viruses from humans and birds leading to geographically heterogeneous swine influenza virus populations that pose epizootic and pandemic threats.",
           "footer": {
             "meta": {
@@ -405,7 +454,7 @@
           },
           "title": "Recurring patterns in bacterioplankton dynamics during coastal spring algae blooms",
           "url": "#",
-          "secondaryInfo": "Hanno Teeling et al.",
+          "secondaryInfo": "Hanno Teeling, Bernhard M Fuchs ... Rudolf I Amann",
           "content": "Dynamic successive blooms of clades of planktonic marine bacteria that can be observed during blooms of marine algae follow discernible patterns, part of which might be explained by substrate-induced forcing.",
           "footer": {
             "meta": {
@@ -458,7 +507,7 @@
           },
           "title": "The parasite’s new clothes",
           "url": "#",
-          "secondaryInfo": "Mark S Pearson et al.",
+          "secondaryInfo": "Mark S Pearson, Alex Loukas",
           "footer": {
             "meta": {
               "url": "#",
@@ -485,7 +534,6 @@
 
         {
           "rootClasses": "teaser--secondary",
-
           "contextLabel": {
             "list": [
               {
@@ -500,7 +548,7 @@
           },
           "title": "Catch me if you can",
           "url": "#",
-          "secondaryInfo": "Emilie Bourdonnay et al.",
+          "secondaryInfo": "Emilie Bourdonnay, Thomas Henry",
           "footer": {
             "meta": {
               "url": "#",
@@ -519,7 +567,6 @@
 
         {
           "rootClasses": "teaser--secondary",
-
           "contextLabel": {
             "list": [
               {
@@ -534,7 +581,7 @@
           },
           "title": "Autophagy under attack",
           "url": "#",
-          "secondaryInfo": "Paul de Figueiredo et al.",
+          "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {
               "url": "#",
@@ -567,7 +614,7 @@
           },
           "title": "Intracellular pathogens under attack",
           "url": "#",
-          "secondaryInfo": "Petr Broz et al.",
+          "secondaryInfo": "Petr Broz",
           "footer": {
             "meta": {
               "url": "#",
@@ -598,19 +645,26 @@
   ],
 
 
-  "mainMenu":{
+  "mainMenu": {
+    "title": {
+      "homePagePath": "#"
+    },
     "listHeading": {
       "heading": "Menu"
     },
     "links": {
       "items": [
+        {"name": "Home", "url": "#", "classes": "hidden-wide"},
+        {"name": "Magazine", "url": "#", "classes": "hidden-wide"},
+        {"name": "Community", "url": "#ins", "classes": "hidden-wide"},
+        {"name": "About", "url": "#abo", "classes": "hidden-wide"},
         {"name": "Research categories", "url": "#res"},
-        {"name": "Author guide", "url": "#aut"},
-        {"name": "Reviewer guide", "url": "#rev"},
-        {"name": "About", "url": "#abo"},
-        {"name": "Inside eLife", "url": "#ins"},
-        {"name": "Careers", "url": "#car"},
-        {"name": "Innovation", "url": "#lab"}
+        {"name": "Inside eLife", "url": "#", "classes": "end-of-group"},
+        {"name": "Search", "url": "#", "classes": "hidden-wide"},
+        {"name": "Subscribe to alerts", "url": "#", "classes": "end-of-group hidden-wide"},
+        {"name": "Submit your research", "url": "#", "classes": "hidden-wide"},
+        {"name": "Author guide", "url": "#"},
+        {"name": "Reviewer guide", "url": "#"}
       ]
     },
     "button": {

@@ -9,7 +9,7 @@ of scss to css, and other various build-related tasks. Note that artefacts gener
 inputs for the generation of PatternLab files, so Gulp needs to run before PatternLab. When developing,
 it’s recommended to run watch tasks for both, which will take care of this.
 
-## 1. Dependencies
+## Dependencies - Linux / macOS
 You'll need:
 
 * You have installed version 7.3.x of [PHP](https://www.php.net/).
@@ -21,81 +21,21 @@ Optionally, you might also require...
 
 * You have installed a recent version of [Docker](https://www.docker.com/).
 
-## 2. Automatic setup
-From the root directory run
-```
-$ ./bin/dev
-```
-This will install and run the commands needed to get started, starting a web server on port 8889. If you need a custom port pass this as the first argument:
-```
-$ ./bin/dev 1234
-```
-This will run on localhost:1234 
+## Dependencies - Windows
+You'll need:
 
-You should be good to go, open your browser and you will see the pattern lab.
+* You have installed any linux terminal (Ex: WSL2) that runs Ubuntu 20.04.
+* You have installed version 7.3.x of [PHP](https://www.php.net/).
+* You have installed version 6.x of [Node.js](https://nodejs.org/en/).
+* You have installed version 2.7.x of [Python](https://www.python.org/).
+* You have installed a recent version of [OpenJDK](https://openjdk.java.net/).
 
-# Manual setup
+Optionally, you might also require...
 
-## 1. Set up PatternLab
+* You have installed a recent version of [Docker](https://www.docker.com/).
+* You have installed a receon version of [Docker-compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04).
 
-- Clone pattern library: `git clone git@github.com:elifesciences/pattern-library.git`
-- Create the public folder: `cd pattern-library && mkdir public`
-- Copy dependencies: `cp -r ./core/styleguide ./public/`
-
-## 2. Set up and run Gulp
-
-- Install required npm packages with `npm install`
-- Run `npx gulp` to build the css & js files.
-- then run `npx gulp watch` to watch for changes to files or do both in one fell swoop with `npx gulp && npx gulp watch` (the watch task on its own will not compile your assets until a file is changed).
-- run `npx gulp local:test:unit --mocha-grep=something` to pass the `--grep` option to mocha and run a subset of tests.
-- if generating files intended for website production, invoke with the production flag, like this: `npx gulp --environment production`. The minifies css & js files.
-
-## 3. Generate PatternLab
-
-To run a **one-off** generation of the patterns, it's `php ./core/builder.php -g`
-
-Alternatively to set up a **watch task** for pattern generation, run `php ./core/builder.php -w` 
-
-## 4. Verify the setup
-
-The static files defining the patterns should now be available in the `public` directory.
-
-Verify the generated static site by serving the `public` folder locally. One quick and dirty way to do this is to run the built in PHP server in the public folder:
-
-  1. Open a new terminal
-  2. `cd` into the `public` directory
-  3. run the webserver `php -S localhost:8889`
-  4. in a browser go to `http://localhost:8889` and verify you can see the generated patterns.
-
-# Using patterns
-
-For patterns that are being exposed as resources (ie the Mustache template can be used in an application), there is a YAML file located alongside the template. This contains details of any CSS files that it requires, and a JSON Schema that documents what input is expected.
-
-You can run `bin/validate`, which checks all data files for a pattern against the schema.
-
-There is also a list of js file dependencies for each pattern, but individual js files have not yet been implemented and so these lists are currently all empty.
-
-# Running tests
-
-## Selenium
-
-```
-npx wdio wdio-local.conf.js --spec ./test-selenium/hello.spec.js
-```
-
-will run a single test file. This set up relies on your locally installed Firefox.
-
-```
-npx gulp test:selenium:local
-```
-
-will instead run all the Selenium tests.
-
-```
-npx gulp test:selenium
-```
-
-is used inside the pattern-library VM and should not be used elsewhere.
+##### Note : You may encounter some errors and need to install [gulp](https://gulpjs.com/docs/en/getting-started/quick-start) manually.
 
 # Docker setup
 
@@ -183,6 +123,82 @@ http://localhost:3000/test/hypothesisopener.html
 ```
 
 The browser will refresh and rerun the test upon changes to it. Exit from this script with `Ctrl+C`.
+
+# Automatic setup
+From the root directory run
+```
+$ ./bin/dev
+```
+This will install and run the commands needed to get started, starting a web server on port 8889. If you need a custom port pass this as the first argument:
+```
+$ ./bin/dev 1234
+```
+This will run on localhost:1234 
+
+You should be good to go, open your browser and you will see the pattern lab.
+
+# Manual setup (This may or may not work)
+
+## 1. Set up PatternLab
+
+- Clone pattern library: `git clone git@github.com:elifesciences/pattern-library.git`
+- Create the public folder: `cd pattern-library && mkdir public`
+- Copy dependencies: `cp -r ./core/styleguide ./public/`
+
+## 2. Set up and run Gulp
+
+- Install required npm packages with `npm install`
+- Run `npx gulp` to build the css & js files.
+- then run `npx gulp watch` to watch for changes to files or do both in one fell swoop with `npx gulp && npx gulp watch` (the watch task on its own will not compile your assets until a file is changed).
+- run `npx gulp local:test:unit --mocha-grep=something` to pass the `--grep` option to mocha and run a subset of tests.
+- if generating files intended for website production, invoke with the production flag, like this: `npx gulp --environment production`. The minifies css & js files.
+
+## 3. Generate PatternLab
+
+To run a **one-off** generation of the patterns, it's `php ./core/builder.php -g`
+
+Alternatively to set up a **watch task** for pattern generation, run `php ./core/builder.php -w` 
+
+## 4. Verify the setup
+
+The static files defining the patterns should now be available in the `public` directory.
+
+Verify the generated static site by serving the `public` folder locally. One quick and dirty way to do this is to run the built in PHP server in the public folder:
+
+  1. Open a new terminal
+  2. `cd` into the `public` directory
+  3. run the webserver `php -S localhost:8889`
+  4. in a browser go to `http://localhost:8889` and verify you can see the generated patterns.
+
+# Using patterns
+
+For patterns that are being exposed as resources (ie the Mustache template can be used in an application), there is a YAML file located alongside the template. This contains details of any CSS files that it requires, and a JSON Schema that documents what input is expected.
+
+You can run `bin/validate`, which checks all data files for a pattern against the schema.
+
+There is also a list of js file dependencies for each pattern, but individual js files have not yet been implemented and so these lists are currently all empty.
+
+# Running tests
+
+## Selenium
+
+```
+npx wdio wdio-local.conf.js --spec ./test-selenium/hello.spec.js
+```
+
+will run a single test file. This set up relies on your locally installed Firefox.
+
+```
+npx gulp test:selenium:local
+```
+
+will instead run all the Selenium tests.
+
+```
+npx gulp test:selenium
+```
+
+is used inside the pattern-library VM and should not be used elsewhere.
 
 # Notes
 

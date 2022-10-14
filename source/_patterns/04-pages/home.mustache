@@ -9,17 +9,23 @@
 
     <main role="main" class="main" id="maincontent">
 
-      {{#leadParas}}
+      {{#hero-banner}}
         <div class="wrapper">
-          {{> molecules-lead-paras}}
+            {{> organisms-hero-banner}}
         </div>
-      {{/leadParas}}
+      {{/hero-banner}}
 
       {{#sectionsListingLink}}
       <div class="wrapper">
         {{> atoms-section-listing-link}}
       </div>
       {{/sectionsListingLink}}
+
+       {{#highlight}}
+       <div class="wrapper">
+           {{> organisms-highlight}}
+       </div>
+       {{/highlight}}
 
       <div class="wrapper wrapper--listing">
         <div class="grid">

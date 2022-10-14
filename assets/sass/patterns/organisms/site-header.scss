@@ -1,10 +1,22 @@
 @import "../../definitions";
 
 .site-header {
+  @include margin(30 0);
   max-height: 96px;
-  min-width: #{get-rem-from-px(275)}rem;
   position: relative;
   z-index: 20;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin(42 0);
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include margin(54 0 42 0);
+  }
+
+  @supports (display: flex) {
+    display: flex;
+  }
 
   .search-box {
     background-color: #fff;
@@ -40,24 +52,22 @@
 }
 
 .site-header__title {
+  display: inline-block;
   float: left;
   position: relative;
   z-index: 21;
 }
 
 .site-header__logo_link {
-  background: url("../img/patterns/organisms/elife-logo-symbol@1x.png") 0 0 no-repeat;
+  background: url("../img/patterns/molecules/elife-logo-cropped-xs.svg") 0 0 no-repeat;
   display: block;
-  height: 28px;
-  margin: 7px 0 0 3px;
-  width: 28px;
+  height: 35px;
+  width: 88px;
 
   // Lock-out IE 11. Dirty :-(
   @supports (display: flex) {
     background: none;
-    height: 27px;
   }
-
 }
 
 .site-header__logo_link_image {
@@ -72,7 +82,12 @@
 
 .site-header__navigation {
   background-color: #fff;
+  height: 35px;
+  display: flex;
+  justify-content: right;
+  margin-left: auto;
   position: relative;
+  width: 100%;
   z-index: 20;
 }
 
@@ -98,42 +113,44 @@
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
 
   .site-header__title {
-    border-right: 1px solid $color-text-dividers;
     float: left;
-    @include height(95);
-    margin-right: 10px;
-    @include margin(10, "right");
-    @include padding(14, "top");
-    @include padding(20, "right");
     position: relative;
-    width: 170px;
-  }
-
-  // Stops the top border of .nav-primary from bleeding into .site-header__title.
-  .site-header__title:after {
-    background-color: #fff;
-    content: "";
-    display: block;
-    height: 95px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 169px;
+    width: 88px;
   }
 
   .site-header__logo_link {
+    @include margin(0);
     background: none;
     display: block;
     float: right;
-    height: 51px;
-    margin: 4px 0 0;
+    height: 35px;
     position: relative;
-    width: 136px;
+    width: 88px;
     z-index: 10;
   }
 
   .site-header__logo_link_image {
     display: block;
+  }
+}
+
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+  .site-header {
+    max-height: 119px;
+  }
+
+  .site-header__navigation {
+    @include margin(20, "left");
+  }
+
+  .site-header__navigation__item {
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+  .site-header {
+    max-height: 143px;
   }
 }
 
