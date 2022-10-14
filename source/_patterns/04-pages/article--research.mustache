@@ -7,6 +7,10 @@
     </div>
     <main role="main" class="main blg-margin-bottom-large" id="maincontent">
 
+      {{#infoBars}}
+        {{> atoms-info-bar }}
+      {{/infoBars}}
+
       {{#contentHeader}}
         {{> organisms-content-header-journal }}
       {{/contentHeader}}
