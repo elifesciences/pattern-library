@@ -6,12 +6,17 @@
   }
 
   & + .main-column .list-heading,
-  & + .secondary-column .list-heading {
+  & ~ .secondary-column .list-heading {
     display: none;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
       display: block;
     }
+  }
+
+  .main-selector,
+  .secondary-selector {
+    color: $color-text;
   }
 }
 
@@ -61,11 +66,6 @@
 
 .view-selector__link {
   color: $color-text-secondary;
-
-  &.main-selector,
-  &.secondary-selector {
-    color: $color-text;
-  }
 }
 
 .view-selector__jump_link {

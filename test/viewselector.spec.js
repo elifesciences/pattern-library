@@ -297,16 +297,12 @@ describe('A ViewSelector Component', function () {
     let displayUnset;
     let displayHide;
 
-
-
     beforeEach(() => {
       viewSelector = new ViewSelector($elm);
       viewSelectorActiveSelector = 'view-selector__list-item--active';
       displayUnset = 'display-unset';
       displayHide = 'display-hide';
     });
-
-
 
     context('when user select button to display section', () => {
       it('only first selector to contains active class', function () {
@@ -334,6 +330,4 @@ describe('A ViewSelector Component', function () {
       });
     });
   });
-
-
 });
