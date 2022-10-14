@@ -60,6 +60,11 @@
 
 .view-selector__link {
   color: $color-text-secondary;
+
+  &.main-selector,
+  &.secondary-selector {
+    color: $color-text;
+  }
 }
 
 .view-selector__jump_link {
