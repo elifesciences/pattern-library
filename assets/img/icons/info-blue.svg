@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/info/default</title>
+    <g id="icons/info/default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M9,3 C4.05,3 0,7.05 0,12 C0,16.95 4.05,21 9,21 C13.95,21 18,16.95 18,12 C18,7.05 13.95,3 9,3 L9,3 Z M10,17 L8,17 L8,11 L10,11 L10,17 L10,17 Z M10,9 L8,9 L8,7 L10,7 L10,9 L10,9 Z" id="Shape" fill="#087ACC"></path>
+    </g>
+</svg>
