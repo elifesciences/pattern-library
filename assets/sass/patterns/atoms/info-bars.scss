@@ -87,7 +87,8 @@
   }
 
   // when js is available, don't show until js has had a chance to hide it
-  .js &:not([data-behaviour-initialised]) {
+  .js &:not([data-behaviour-initialised]),
+  &.hidden {
     display: none;
   }
 
