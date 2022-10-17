@@ -81,14 +81,15 @@
   background-color: inherit;
   max-width: #{$max-site-width}px;
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+  &:not(.hidden) {
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
   }
 
   // when js is available, don't show until js has had a chance to hide it
-  .js &:not([data-behaviour-initialised]),
-  &.hidden {
+  .js &:not([data-behaviour-initialised]) {
     display: none;
   }
 
