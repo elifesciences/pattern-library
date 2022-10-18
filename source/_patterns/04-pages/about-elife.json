@@ -108,6 +108,11 @@
     "text": "See all about sections"
   },
 
+  "infoBar": {
+    "type": "announcement",
+    "text": "eLife's peer-review process is changing. From January 2023, eLife will no longer make accept/reject decisions after peer review. Instead, every preprint sent for peer review will be published on the eLife website as a \"Reviewed Preprint\" that includes an eLife assessment, public reviews, and a response from the authors (if available). When writing the eLife assessment, the editors and reviewers will use a common vocabulary to summarize the significance of the findings and the strength of the evidence reported in the preprint.<a href=\"#\">Read about the new process</a>."
+  },
+
   "sectionsListing": {
     "id": "sectionsListing",
     "singleLine": true,
@@ -143,8 +148,8 @@
 
   "mainMenu": {
     "title": {
-    "homePagePath": "#"
-  },
+      "homePagePath": "#"
+    },
     "listHeading": {
       "heading": "Menu"
     },
