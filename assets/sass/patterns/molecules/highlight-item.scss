@@ -95,6 +95,10 @@
     grid-column: auto;
   }
 
+  &:hover + .highlight-item__body .highlight-item__title_link {
+    color: $color-primary-dark;
+  }
+
   .highlight-item__picture {
     width: 100%;
   }
@@ -118,4 +122,8 @@
 .highlight-item__title_link {
   color: inherit;
   text-decoration: inherit;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
 }

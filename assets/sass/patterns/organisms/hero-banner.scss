@@ -98,11 +98,21 @@
     .hero-banner__title_link {
       color: inherit;
       text-decoration: inherit;
+
+      &:hover {
+        color: $color-primary-dark;
+      }
     }
   }
 }
 
-.hero-banner__picture {
+.hero-banner__picture-wrapper {
+  height: fit-content;
+
+  &:hover + .hero-banner__details .hero-banner__title .hero-banner__title_link {
+    color: $color-primary-dark;
+  }
+
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     grid-column: 2;
   }
