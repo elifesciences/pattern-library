@@ -34,6 +34,12 @@
   background-color: $color-text-ui-background-secondary-light;
   color: $color-text;
 
+  a {
+    color: $color-primary;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
   .info-bar__container {
     @include padding(28 56 28 28);
     @include margin(24, "bottom");
