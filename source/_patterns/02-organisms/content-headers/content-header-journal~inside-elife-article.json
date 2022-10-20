@@ -1,0 +1,41 @@
+{
+  "isOneColumn": true,
+  "title": "2022 eLife Community Ambassadors: Ready for action",
+  "impactStatement": "After completing their learning, awareness and community-building phase, our global group of early-career researchers are now eager to make change across research culture.",
+  "socialMediaSharers": {
+    "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "linkedInUrl": "https://www.linkedin.com/company/elife-sciences-publications-ltd",
+    "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+  },
+  "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "longTitle": false,
+  "header": {
+    "possible": true
+  },
+  "meta": {
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 12,
+        "month": "Oct",
+        "year": 2022
+      },
+      "forMachine": "2022-10-12"
+    }
+  },
+  "contextualData": {
+    "metricsData": {
+      "data": [
+        { "text": "<a href=\"#\"><span>149</span> views</a>" }
+      ]
+    }
+  },
+  "breadcrumb": {
+    "items": [
+      {
+        "url": "#",
+        "name": "Inside eLife"
+      }
+    ]
+  }
+}
