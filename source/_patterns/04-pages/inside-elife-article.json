@@ -101,8 +101,6 @@
       "linkedInUrl": "https://www.linkedin.com/company/elife-sciences-publications-ltd",
       "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
     },
-    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "longTitle": false,
     "header": {
       "possible": true
     },
@@ -132,6 +130,7 @@
       ]
     }
   },
+  "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
 
   "mainMenu": {
     "title": {
