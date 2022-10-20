@@ -8,10 +8,6 @@ properties:
       - type: boolean
         enum:
           - false
-  carouselItem:
-    type: boolean
-    enum:
-      - true
   text:
     type: string
     minLength: 1
