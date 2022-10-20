@@ -18,12 +18,7 @@
   }
 
   .list-heading {
-    display: none;
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include margin(24, "bottom");
-      display: block;
-    }
+    @include margin(24, "bottom");
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
       @include margin(36, "bottom");
