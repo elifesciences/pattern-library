@@ -40,8 +40,11 @@
     display: none;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      @include padding(12, "bottom");
+      @include font-size(14);
       display: block;
+      font-family: $font-secondary;
+      text-overflow: unset;
+      white-space: unset;
     }
   }
 
@@ -92,6 +95,10 @@
     grid-column: auto;
   }
 
+  &:hover + .highlight-item__body .highlight-item__title_link {
+    color: $color-primary-dark;
+  }
+
   .highlight-item__picture {
     width: 100%;
   }
@@ -99,7 +106,8 @@
 
 .highlight-item__title {
   @include font-size-and-vertical-height(16, 22);
-  @include padding(0);
+  @include padding(12, "bottom");
+  @include padding(0, "top");
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     @include font-size-and-vertical-height(18, 26);
@@ -107,15 +115,15 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include font-size-and-vertical-height(22, 30);
-    @include padding(12, "bottom");
   }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include padding(24, "bottom");
-  }
 }
 
 .highlight-item__title_link {
   color: inherit;
   text-decoration: inherit;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
 }
