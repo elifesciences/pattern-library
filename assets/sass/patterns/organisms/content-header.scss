@@ -598,6 +598,11 @@ $iconlist: cc oa;
 
 .content-header__meta {
   @include padding(24, "bottom");
+  @include margin(6, "right");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include margin(0, "right");
+  }
 
   .content-header--image & {
     position: absolute;

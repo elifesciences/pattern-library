@@ -203,6 +203,10 @@
   @include padding(32, "bottom");
 }
 
+.u-pad-bottom-x-lg {
+  @include padding(48, "bottom");
+}
+
 /*------------------------------------*\
     $VARIABLES
 \*------------------------------------*/
