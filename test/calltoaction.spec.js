@@ -21,7 +21,7 @@ describe('A Call to action Component', function () {
 
     const $htmlFixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id);
     const callToAction = new CallToAction($htmlFixture);
-    expect(callToAction.$elm.classList.contains('hidden')).to.be.true;
+    expect(callToAction.$elm.style.display).to.equal('none');
 
     fixtures.clearCookie(id);
     expect(utils.getCookieValue(cookieName, document.cookie), 'cookie shouldn\'t be set').to.equal('');
@@ -30,7 +30,7 @@ describe('A Call to action Component', function () {
   it('is not hidden immediately if no cookie indicates it was previously dismissed', function () {
     const $fixture = fixtures.generateHTML();
     const callToAction = new CallToAction($fixture);
-    expect(callToAction.$elm.classList.contains('hidden')).to.be.false;
+    expect(callToAction.$elm.style.display).to.not.equal('none');
   });
 
   it('has a dismiss button', function () {
@@ -50,13 +50,14 @@ describe('A Call to action Component', function () {
 
     context('when clicked', function () {
 
-      it('adds CSS class "hidden" to the call to action component', function () {
+      it('hides the call to action component', function () {
         const $fixture = fixtures.generateHTML();
         const callToAction = new CallToAction($fixture);
         const $button = callToAction.dismissible.$button;
-        expect($fixture.classList.contains('hidden')).to.be.false;
+        expect($fixture.style.display).to.not.equal('none');
+
         $button.click();
-        expect($fixture.classList.contains('hidden')).to.be.true;
+        expect($fixture.style.display).to.equal('none');
       });
 
       describe('sets a cookie with', function () {

@@ -20,7 +20,7 @@ describe('A dismissible InfoBar Component', function () {
 
     const $htmlFixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id);
     const infoBar = new InfoBar($htmlFixture);
-    expect(infoBar.$elm.classList.contains('hidden')).to.be.true;
+    expect(infoBar.$elm.style.display).to.equal('none');
 
     fixtures.clearCookie(id);
     expect(utils.getCookieValue(`${fixtures.getCookieNameRoot()}${id}`, document.cookie), 'cookie shouldn\'t be set').to.equal('');
@@ -29,7 +29,7 @@ describe('A dismissible InfoBar Component', function () {
   it('is not hidden immediately if no cookie indicates it was previously dismissed', function () {
     const $fixture = fixtures.generateHTML();
     const infoBar = new InfoBar($fixture);
-    expect(infoBar.$elm.classList.contains('hidden')).to.be.false;
+    expect(infoBar.$elm.style.display).to.not.equal('none');
   });
 
   it('has a dismiss button', function () {
@@ -49,13 +49,13 @@ describe('A dismissible InfoBar Component', function () {
 
     context('when clicked', function () {
 
-      it('adds CSS class "hidden" to the info bar', function () {
+      it('hides the info bar copmponent', function () {
         const $fixture = fixtures.generateHTML();
         const infoBar = new InfoBar($fixture);
         const $button = infoBar.dismissible.$button;
-        expect($fixture.classList.contains('hidden')).to.be.false;
+        expect($fixture.style.display).to.not.equal('none');
         $button.click();
-        expect($fixture.classList.contains('hidden')).to.be.true;
+        expect($fixture.style.display).to.equal('none');
       });
 
       describe('sets a cookie with', function () {

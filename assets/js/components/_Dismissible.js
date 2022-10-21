@@ -58,7 +58,7 @@ module.exports = class Dismissible {
   }
 
   hide() {
-    this.$toDismiss.classList.add('hidden');
+    this.$toDismiss.style.display = 'none';
   }
 
   dismiss() {
