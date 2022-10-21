@@ -8,6 +8,23 @@
     max-width: #{$max-site-width}px;
     padding: 0;
   }
+
+  .grid-article {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      grid-column: 2/12;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      grid-column: 1/13;
+    }
+  }
+
+  &.content-header__one-column .grid-article {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      grid-column: 3/11;
+      margin-left: -24px;
+    }
+  }
 }
 
 // Grid Top
@@ -78,8 +95,6 @@
   }
 
   .content-header__icons {
-    @include margin(0, "top");
-
     li {
       display: inline-block;
     }
