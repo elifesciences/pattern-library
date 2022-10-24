@@ -29,6 +29,31 @@
 
 }
 
+.info-bar--announcement {
+  @include padding(0);
+  background-color: $color-text-ui-background-secondary-light;
+  color: $color-text;
+
+  a {
+    color: $color-primary;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .info-bar__container {
+    @include padding(28);
+    @include margin(24, "bottom");
+  }
+
+  .info-bar__text {
+    @include padding(0, "top");
+    background: url("../img/icons/info-blue.svg") 0 0 no-repeat, linear-gradient(transparent, transparent);
+    font-weight: 400;
+    line-height: 1.7;
+    text-align: left;
+  }
+}
+
 .info-bar--info {
 
   .info-bar__text {
