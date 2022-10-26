@@ -1,4 +1,4 @@
-<div class="global-wrapper" data-item-type="blog-article">
+<div class="global-wrapper page--magazine" data-item-type="blog-article">
   <div class="global-inner">
     <div class="wrapper wrapper--site-header">
       {{#siteHeader}}
@@ -12,29 +12,21 @@
         {{> organisms-content-header-journal }}
       {{/contentHeader}}
 
-      {{#contextualData}}
-        <div class="wrapper">
-        {{> molecules-contextual-data }}
-        </div>
-      {{/contextualData}}
+      <div class="wrapper wrapper--content content--narrow-column">
 
-      <div class="wrapper wrapper--content">
+        <div class="content-container-grid">
 
-        <div class="content-container-grid content-header__one-column">
+          <div class="main-content-grid">
 
-          <div class="grid-article u-pad-bottom-x-lg">
-
-            {{{body}}}
+            {{#mainContent}}
+              {{{ mainContent }}}
+            {{/mainContent}}
 
           </div>
 
         </div>
 
       </div>
-
-      {{# annotationCount}}
-        {{> atoms-speech-bubble}}
-      {{/annotationCount}}
 
     </main>
 
