@@ -11,15 +11,15 @@
         {{> organisms-content-header-journal }}
       {{/contentHeader}}
 
-      <div class="wrapper wrapper--content content--narrow-column{{#captionedAssetx}} content--has-captioned-asset{{/captionedAssetx}}{{#relatedx}} content--has-related{{/relatedx}}">
+      <div class="wrapper wrapper--content content--narrow-column{{#captionedAsset}} content--has-captioned-asset{{/captionedAsset}}{{#related}} content--has-related{{/related}}">
 
         <div class="content-container-grid">
 
           <div class="main-content-grid">
 
-            {{#captionedAssetx}}
+            {{#captionedAsset}}
               {{> molecules-captioned-asset}}
-            {{/captionedAssetx}}
+            {{/captionedAsset}}
 
             {{#mainContent}}
               {{{ mainContent }}}
@@ -27,7 +27,7 @@
 
           </div>
 
-          {{#relatedx}}
+          {{#related}}
             <div class="secondary-column-grid">
                 <div class="grid-secondary-column__item">
                   <div>
@@ -39,7 +39,7 @@
                   </div>
                 </div>
             </div>
-          {{/relatedx}}
+          {{/related}}
 
         </div>
 
