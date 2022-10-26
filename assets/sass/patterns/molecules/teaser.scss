@@ -2,11 +2,6 @@
 
 .teaser {
   @include teaser-root-style();
-
-  .article-secondary-column & {
-    padding-top: 0;
-  }
-
 }
 
 .teaser--related {
@@ -55,10 +50,6 @@
 .teaser .teaser__context_label_link {
   color: $color-primary;
   text-decoration: none;
-}
-
-.article-secondary-column .teaser .teaser__context_label_link {
-  color: $color-text-secondary;
 }
 
 .teaser__context_label_link:after {
