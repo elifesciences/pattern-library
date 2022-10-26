@@ -11,7 +11,7 @@
         {{> organisms-content-header-journal }}
       {{/contentHeader}}
 
-      <div class="wrapper wrapper--content content--narrow-column{{#captionedAsset}} content--has-captioned-asset{{/captionedAsset}}{{#related}} content--has-related{{/related}}">
+      <div class="wrapper wrapper--content content--narrow-column content--has-captioned-asset content--has-related">
 
         <div class="content-container-grid">
 
@@ -27,19 +27,23 @@
 
           </div>
 
-          {{#related}}
-            <div class="secondary-column-grid">
-                <div class="grid-secondary-column__item">
-                  <div>
-                    <ol class="listing-list">
-                      <li class="listing-list__item">
-                        {{> molecules-teaser }}
-                      </li>
-                    </ol>
-                  </div>
+          <div class="secondary-column-grid">
+
+            {{#related}}
+
+              <div class="grid-secondary-column__item">
+                <div>
+                  <ol class="listing-list">
+                    <li class="listing-list__item">
+                      {{> molecules-teaser }}
+                    </li>
+                  </ol>
                 </div>
-            </div>
-          {{/related}}
+              </div>
+
+            {{/related}}
+
+          </div>
 
         </div>
 
