@@ -11,46 +11,35 @@
         {{> organisms-content-header-journal }}
       {{/contentHeader}}
 
-      <div class="wrapper wrapper--content content--narrow-column">
+      <div class="wrapper wrapper--content content--narrow-column{{#captionedAssetx}} content--has-captioned-asset{{/captionedAssetx}}{{#relatedx}} content--has-related{{/relatedx}}">
 
         <div class="content-container-grid">
 
           <div class="main-content-grid">
 
-            {{#captionedAsset}}
+            {{#captionedAssetx}}
               {{> molecules-captioned-asset}}
-            {{/captionedAsset}}
+            {{/captionedAssetx}}
 
             {{#mainContent}}
               {{{ mainContent }}}
             {{/mainContent}}
 
-            {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
-            {{#articleMeta}}
-              <section class="article-section">
-                  {{> molecules-article-meta }}
-              </section>
-            {{/articleMeta}}
-
           </div>
 
-          <div class="secondary-column-grid">
-
-            {{#related}}
-
-              <div class="grid-secondary-column__item">
-                <div>
-                  <ol class="listing-list">
-                    <li class="listing-list__item">
-                      {{> molecules-teaser }}
-                    </li>
-                  </ol>
+          {{#relatedx}}
+            <div class="secondary-column-grid">
+                <div class="grid-secondary-column__item">
+                  <div>
+                    <ol class="listing-list">
+                      <li class="listing-list__item">
+                        {{> molecules-teaser }}
+                      </li>
+                    </ol>
+                  </div>
                 </div>
-              </div>
-
-            {{/related}}
-
-          </div>
+            </div>
+          {{/relatedx}}
 
         </div>
 

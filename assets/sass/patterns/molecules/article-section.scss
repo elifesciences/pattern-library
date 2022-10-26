@@ -279,6 +279,11 @@ $arrow-size: 5;
 }
 
 .main-content-grid {
+  @include margin(48, "top");
+
+  .content--has-captioned-asset & {
+    @include margin(0, "top");
+  }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     grid-column: 2/12;
@@ -289,7 +294,7 @@ $arrow-size: 5;
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     grid-column: 2/9;
 
-    .content--narrow-column & {
+    .content--has-related & {
       grid-column: 2/9;
     }
   }
@@ -307,6 +312,11 @@ $arrow-size: 5;
 
     .content--narrow-column & {
       @include margin(-24, "left");
+      @include margin(-24, "right");
+      grid-column: 3/11;
+    }
+
+    .content--has-related & {
       @include margin(0, "right");
       grid-column: 3/9;
     }
@@ -321,9 +331,9 @@ $arrow-size: 5;
     grid-row: 2;
 
     .content--narrow-column & {
+      @include margin(24, "top");
       grid-column: 2/12;
       grid-row: 3;
-      margin-top: 24px;
     }
   }
 
