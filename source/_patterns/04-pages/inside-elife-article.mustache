@@ -24,17 +24,15 @@
 
           <div class="main-content-grid">
 
-            {{{body}}}
+            {{#mainContent}}
+              {{{mainContent}}}
+            {{/mainContent}}
 
           </div>
 
         </div>
 
       </div>
-
-      {{# annotationCount}}
-        {{> atoms-speech-bubble}}
-      {{/annotationCount}}
 
     </main>
 

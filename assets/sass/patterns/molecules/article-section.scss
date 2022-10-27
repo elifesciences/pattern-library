@@ -291,9 +291,11 @@ $arrow-size: 5;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     grid-column: 2/9;
+
     .content--narrow-column & {
       grid-column: 2/9;
     }
+
     .content--one-column & {
       grid-column: 2/12;
     }
