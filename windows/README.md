@@ -11,10 +11,9 @@ When using Windows to bypass the main errors we recommend to follow the next :
 
 2. Make sure you use Windows Linux Subsystem (WSL) or at least git bash.
 
-  Guide to use WSL : https://adamtheautomator.com/windows-subsystem-for-linux/
-  
-  Guide to use Git Bash : https://www.geeksforgeeks.org/working-on-git-bash/
+    * [Guide to use WSL](https://adamtheautomator.com/windows-subsystem-for-linux/)
+    * [Guide to use Git Bash](https://www.geeksforgeeks.org/working-on-git-bash/)
 
 3. Recomanded version for Node :
 
-   * `v6.0.0`
+    * `v6.0.0`
