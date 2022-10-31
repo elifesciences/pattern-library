@@ -20,6 +20,7 @@ You'll need:
 Optionally, you might also require...
 
 * You have installed a recent version of [Docker](https://www.docker.com/).
+* You have installed a receon version of [Docker-compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04).
 
 ## Dependencies - Windows
 You'll need:
@@ -34,6 +35,8 @@ Optionally, you might also require...
 
 * You have installed a recent version of [Docker](https://www.docker.com/).
 * You have installed a receon version of [Docker-compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04).
+
+Windows - [tips and tricks](/windows/README.md) - read and apply this to make sure Docker/Automatic setup work.
 
 ##### Note : You may encounter some errors and need to install [gulp](https://gulpjs.com/docs/en/getting-started/quick-start) manually.
 
