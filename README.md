@@ -38,7 +38,7 @@ Optionally, you might also require...
 
 <details>
 <summary>Windows - tips and tricks</summary>
-When using Windows to bypass the main errors we recommend to follow the next :
+When using Windows to bypass the main errors, we recommend following the next:
 
 1. Before you clone the repo, until you start running the commands from the [readme](/README.md), make sure that you configure git to use the correct line endings.
 
