@@ -228,9 +228,9 @@ select {
 
 @media only all and (max-width: #{get-rem-from-px($bkpt-site--wide - 1)}em) {
 
-    .article-secondary-column {
-        display: none;
-    }
+  .article-secondary-column {
+    display: none;
+  }
 
 }
 
