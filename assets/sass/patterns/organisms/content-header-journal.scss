@@ -78,12 +78,6 @@
   }
 
   .content-header__icons {
-    @include margin(6, "top");
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      @include margin(0, "top");
-    }
-
     li {
       display: inline-block;
     }
