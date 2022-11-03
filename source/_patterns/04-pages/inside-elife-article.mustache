@@ -9,7 +9,7 @@
     <main role="main" class="main" id="maincontent">
 
       {{#contentHeader}}
-        {{> organisms-content-header }}
+        {{> organisms-content-header-journal }}
       {{/contentHeader}}
 
       {{#contextualData}}
@@ -18,23 +18,21 @@
         </div>
       {{/contextualData}}
 
-      <div class="wrapper wrapper--content">
+      <div class="wrapper wrapper--content content--one-column">
 
-        <div class="grid">
+        <div class="content-container-grid">
 
-          <div class="{{> pages-pl-only-grid-content-page-main-col-css-classes}} u-pad-top">
+          <div class="main-content-grid">
 
-            {{{body}}}
+            {{#mainContent}}
+              {{{mainContent}}}
+            {{/mainContent}}
 
           </div>
 
         </div>
 
       </div>
-
-      {{# annotationCount}}
-        {{> atoms-speech-bubble}}
-      {{/annotationCount}}
 
     </main>
 
