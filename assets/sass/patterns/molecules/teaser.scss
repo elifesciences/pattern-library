@@ -29,19 +29,19 @@
   list-style-type: none;
   @include nospace();
 
-  & .teaser__context_label:after {
+  &:after {
     content: ", ";
   }
 
   &:last-child {
-    & .teaser__context_label:after {
+    &:after {
       content: "";
     }
   }
 
 }
 
-.teaser__context_label {
+.teaser__context_label_item {
   // content-label rather than subject-label as not it's not always subjects in here
   @include label-content-typeg();
   font-weight: bold;
@@ -53,16 +53,12 @@
 
 // Extra specificity to override normalised style
 .teaser .teaser__context_label_link {
+  color: $color-primary;
   text-decoration: none;
 
-  .teaser__context_label {
-    color: $color-primary;
+  .article-secondary-column & {
+    color: $color-text-secondary;
   }
-
-}
-
-.article-secondary-column .teaser .teaser__context_label {
-  color: $color-text-secondary;
 }
 
 .teaser__context_label_link:after {
