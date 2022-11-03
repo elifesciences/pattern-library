@@ -55,10 +55,10 @@
 .teaser .teaser__context_label_link {
   color: $color-primary;
   text-decoration: none;
-}
 
-.article-secondary-column .teaser .teaser__context_label_link {
-  color: $color-text-secondary;
+  .article-secondary-column & {
+    color: $color-text-secondary;
+  }
 }
 
 .teaser__context_label_link:after {
