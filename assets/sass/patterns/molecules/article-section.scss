@@ -412,6 +412,10 @@ $arrow-size: 5;
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       grid-column: 1/10;
     }
+
+    .content-header-grid-top {
+      @include margin(0, "top");
+    }
   }
 
   .main {
