@@ -108,8 +108,7 @@
 
   &:not(.hidden) {
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
+      @include grid();
     }
   }
 

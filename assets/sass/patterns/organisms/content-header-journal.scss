@@ -2,9 +2,7 @@
 .content-container-grid {
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-column-gap: #{$site-spacing}px;
+    @include grid();
     max-width: #{$max-site-width}px;
     padding: 0;
   }

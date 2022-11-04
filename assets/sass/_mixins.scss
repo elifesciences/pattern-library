@@ -111,6 +111,12 @@
   }
 }
 
+@mixin grid() {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: #{$site-spacing}px;
+}
+
 /*
  * Backwards compatible clearfix.
  * See http://nicolasgallagher.com/micro-clearfix-hack/
