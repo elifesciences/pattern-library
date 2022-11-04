@@ -7,10 +7,11 @@
     </div>
 
     {{#hasAside}}
+      {{#infoBars}}
+        {{> atoms-info-bar }}
+      {{/infoBars}}
+        
       <div class="section-wrapper">
-        {{#infoBars}}
-          {{> atoms-info-bar }}
-        {{/infoBars}}
         
         {{#contentHeader}}
           {{> organisms-content-header-journal }}
