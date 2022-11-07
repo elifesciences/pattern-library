@@ -20,6 +20,7 @@ You'll need:
 Optionally, you might also require...
 
 * You have installed a recent version of [Docker](https://www.docker.com/).
+* You have installed a recent version of [Docker-compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04).
 
 ## Dependencies - Windows
 You'll need:
@@ -33,7 +34,27 @@ You'll need:
 Optionally, you might also require...
 
 * You have installed a recent version of [Docker](https://www.docker.com/).
-* You have installed a receon version of [Docker-compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04).
+* You have installed a recent version of [Docker-compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04).
+
+<details>
+<summary>Windows - tips and tricks</summary>
+When using Windows to bypass the main errors, we recommend following the next:
+
+1. Before you clone the repo, until you start running the commands from the [readme](/README.md), make sure that you configure git to use the correct line endings.
+
+    * [Explanation](https://stackoverflow.com/a/71209401) / [More detailed](https://stackoverflow.com/q/10418975)
+    * Easy fix : `git config --global core.autocrlf input`
+
+2. Make sure you use Windows Linux Subsystem (WSL) or at least git bash.
+
+    * [Guide to use WSL](https://adamtheautomator.com/windows-subsystem-for-linux/)
+    * [Guide to use Git Bash](https://www.geeksforgeeks.org/working-on-git-bash/)
+
+3. Recommended version for Node:
+
+    * `v6.0.0`
+
+</details>
 
 ##### Note : You may encounter some errors and need to install [gulp](https://gulpjs.com/docs/en/getting-started/quick-start) manually.
 
