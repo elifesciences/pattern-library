@@ -376,11 +376,11 @@
   list-style-type: none;
   padding: 0;
 
-  & .content-header__subject {
+  & .content-header__subject_link {
     font-weight: bold;
   }
 
-  & .content-header__subject:after {
+  & .content-header__subject_link:after {
     content: ", ";
   }
 
@@ -391,7 +391,7 @@
 
 .content-header__subject_list_item:last-child {
 
-  & .content-header__subject:after {
+  & .content-header__subject_link:after {
     content: "";
   }
 
