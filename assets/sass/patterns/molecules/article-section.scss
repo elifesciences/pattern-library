@@ -379,6 +379,8 @@ $arrow-size: 5;
   }
 
   .aside {
+    @include padding(24 0 24);
+
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       grid-column: 1/13;
       grid-row: 3;
@@ -389,7 +391,8 @@ $arrow-size: 5;
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      @include margin(24, "top");
+      @include margin(90, "top");
+      @include padding(0);
       align-items: end;
       align-self: flex-start;
       display: flex;
@@ -399,6 +402,7 @@ $arrow-size: 5;
       justify-content: space-between;
       position: -webkit-sticky;
       position: sticky;
+      top: 125px;
     }
   }
 
