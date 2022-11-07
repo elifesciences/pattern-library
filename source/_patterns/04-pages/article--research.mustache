@@ -11,16 +11,14 @@
         {{> atoms-info-bar }}
       {{/infoBars}}
         
-      <div class="section-wrapper">
+      <div class="section-wrapper wrapper">
         
         {{#contentHeader}}
           {{> organisms-content-header-journal }}
         {{/contentHeader}}
 
         <aside role="complementary" class="aside" id="asidecontent">
-          <div class="wrapper wrapper--content">
-            <h2>Aside element</h2>
-          </div>
+          <h2>Aside element</h2>
         </aside>
     {{/hasAside}}
 
@@ -44,7 +42,7 @@
         {{> atoms-modal-window}}
       {{/modalWindowShare}}
 
-      <div class="wrapper wrapper--content">
+      <div {{^hasAside}}class="wrapper wrapper--content"{{/hasAside}}>
 
         <div class="content-container-grid">
 

@@ -376,7 +376,6 @@ $arrow-size: 5;
 .section-wrapper {
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     @include grid();
-    max-width: #{$max-site-width}px;
   }
 
   .aside {
@@ -404,6 +403,8 @@ $arrow-size: 5;
   }
 
   .content-header-journal {
+    @include padding(0);
+
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       grid-column: 1/13;
     }
