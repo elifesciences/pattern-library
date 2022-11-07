@@ -1,6 +1,6 @@
 {
-  "mainTabUrl": "#article",
-  "secondaryTabUrl": "#figures",
+  "articleUrl": "#article",
+  "figureUrl": "#figures",
   "sideBySideUrl": "#sideBySide",
   "mainViewSelector": "Article",
   "secondaryViewSelector": "Figures and data",
