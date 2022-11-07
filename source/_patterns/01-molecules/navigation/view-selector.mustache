@@ -1,7 +1,7 @@
 <div class="view-selector{{#figureUrl}} view-selector--has-figures{{/figureUrl}}{{#isTabSelector}} button--switch-selector{{/isTabSelector}}" data-behaviour="ViewSelector"{{#sideBySideUrl}} data-side-by-side-link="{{sideBySideUrl}}"{{/sideBySideUrl}}>
   <ul class="view-selector__list">
     <li class="view-selector__list-item view-selector__list-item--article{{^figureIsActive}} view-selector__list-item--active{{/figureIsActive}}">
-      <a href="{{articleUrl }}" class="view-selector__link view-selector__link--article{{#isTabSelector}} main-selector{{/isTabSelector}}"><span>{{mainViewSelector}}</span></a>
+      <a href="{{articleUrl}}" class="view-selector__link view-selector__link--article{{#isTabSelector}} main-selector{{/isTabSelector}}"><span>{{mainViewSelector}}</span></a>
     </li>
     {{#figureUrl}}
       <li class="view-selector__list-item view-selector__list-item--figures{{#figureIsActive}} view-selector__list-item--active{{/figureIsActive}}">
