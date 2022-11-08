@@ -4,13 +4,13 @@ properties:
   sideBySideUrl:
     type: string
     minLength: 1
-  articleUrl:
+  mainUrl:
     type: string
     minLength: 1
-  figureUrl:
+  secondaryUrl:
     type: string
     minLength: 1
-  figureIsActive:
+  secondaryIsActive:
     type: boolean
     default: false
   otherLinks:
@@ -48,4 +48,4 @@ properties:
     required:
       - links
 required:
-  - articleUrl
+  - mainUrl
