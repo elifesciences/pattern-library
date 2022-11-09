@@ -1,0 +1,87 @@
+@import "../../definitions";
+
+.section-wrapper {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include grid();
+  }
+
+  .aside {
+    @include padding(24 0 24);
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      grid-column: 1/13;
+      grid-row: 3;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      grid-column: 2/12;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      @include margin(90, "top");
+      @include padding(0);
+      align-items: end;
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      grid-column: 10/13;
+      grid-row: 1;
+      justify-content: space-between;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 125px;
+    }
+  }
+
+  .content-header-journal {
+    @include padding(0);
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      grid-column: 1/13;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      grid-column: 1/10;
+    }
+
+    .content-header__one-column {
+      .content-header-grid-top {
+        @include margin(0, "top");
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          grid-column: 2/12;
+        }
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+          @include margin(0, "left");
+          grid-column: 1/13;
+        }
+      }
+
+      .content-header-grid__main {
+        @include margin(0, "left");
+        @include padding(0, "right");
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          grid-column: 2/12;
+        }
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+          grid-column: 1/13;
+        }
+      }
+    }
+  }
+
+  .main {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      grid-column: 1/13;
+      grid-row: 4;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      grid-column: 1/10;
+      grid-row: 3;
+    }
+  }
+}
