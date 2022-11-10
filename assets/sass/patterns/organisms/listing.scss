@@ -5,7 +5,7 @@ $showThreeAtWidth: #{get-rem-from-px($bkpt-site--x-wide)}rem;
 $totalHighlightsSpacing: 6;
 
 .js {
-  .main-column.display-hide,
+  .primary-column.display-hide,
   .secondary-column.display-hide {
     display: none;
 
@@ -14,7 +14,7 @@ $totalHighlightsSpacing: 6;
     }
   }
 
-  .main-column.display-unset,
+  .primary-column.display-unset,
   .secondary-column.display-unset {
     display: unset;
   }

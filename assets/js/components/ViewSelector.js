@@ -18,7 +18,7 @@ module.exports = class ViewSelector {
     this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
     this.cssFixedClassName = 'view-selector--fixed';
     this.$navDetect = this.doc.querySelector('.content-container-grid');
-    this.$mainViewSelector = this.$elm.querySelector('.main-selector');
+    this.$primaryViewSelector = this.$elm.querySelector('.primary-selector');
     this.$secondarySelector = this.$elm.querySelector('.secondary-selector');
     this.$mainListingArea = this.doc.getElementById('mainListing');
     this.$secondaryListingArea = this.doc.getElementById('secondaryListing');
@@ -60,9 +60,9 @@ module.exports = class ViewSelector {
       this.handleResize(scrollingHandler, this.handleScrolling);
     }, 200));
 
-    this.$mainViewSelector.addEventListener('click', (e) => {
+    this.$primaryViewSelector.addEventListener('click', (e) => {
       e.preventDefault();
-      this.selectedSection(this.$mainViewSelector, this.$mainListingArea, this.$secondaryListingArea);
+      this.selectedSection(this.$primaryViewSelector, this.$mainListingArea, this.$secondaryListingArea);
     });
 
     this.$secondarySelector.addEventListener('click', (e) => {
@@ -293,7 +293,7 @@ module.exports = class ViewSelector {
   }
 
   displayActiveSectionInitially() {
-    if (this.$mainViewSelector.parentNode.classList.contains(this.$activeViewSelector)) {
+    if (this.$primaryViewSelector.parentNode.classList.contains(this.$activeViewSelector)) {
       this.$secondaryListingArea.classList.add(this.$displayHide);
     } else if (this.$secondarySelector.parentNode.classList.contains(this.$activeViewSelector)) {
       this.$mainListingArea.classList.add(this.$displayHide);
