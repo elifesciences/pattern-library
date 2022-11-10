@@ -56,3 +56,8 @@ properties:
 required:
   - primaryUrl
   - primaryLabel
+dependencies:
+  secondaryUrl:
+    - secondaryLabel
+  secondaryLabel:
+    - secondaryUrl
