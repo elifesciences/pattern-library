@@ -1,6 +1,8 @@
 {
   "primaryUrl": "#article",
   "secondaryUrl": "#figures",
+  "primaryLabel": "Article",
+  "secondaryLabel": "Figures and data",
   "sideBySideUrl": "#sideBySide",
   "otherLinks": [
     { "name": "Executable code", "url": "#rds" }
