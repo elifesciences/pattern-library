@@ -4,7 +4,7 @@ properties:
   sideBySideUrl:
     type: string
     minLength: 1
-  mainUrl:
+  primaryUrl:
     type: string
     minLength: 1
   secondaryUrl:
@@ -13,6 +13,12 @@ properties:
   secondaryIsActive:
     type: boolean
     default: false
+  primaryViewSelector:
+    type: string
+    minLength: 1
+  secondaryViewSelector:
+    type: string
+    minLength: 1
   otherLinks:
     type: array
     items:
@@ -48,4 +54,4 @@ properties:
     required:
       - links
 required:
-  - mainUrl
+  - primaryUrl

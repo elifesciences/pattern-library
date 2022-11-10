@@ -103,7 +103,7 @@
   }
 
   /** Selector nesting here because otherwise this all gets horrible quickly **/
-  .view-selector__list-item--main {
+  .view-selector__list-item--primary {
     display: inline-block;
     border-right: none;
     @include border-radius-simple(4, 0, 0, 4);
