@@ -13,10 +13,10 @@ properties:
   secondaryIsActive:
     type: boolean
     default: false
-  primaryViewSelector:
+  primaryLabel:
     type: string
     minLength: 1
-  secondaryViewSelector:
+  secondaryLabel:
     type: string
     minLength: 1
   otherLinks:
@@ -55,3 +55,4 @@ properties:
       - links
 required:
   - primaryUrl
+  - primaryLabel
