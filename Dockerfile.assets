@@ -1,12 +1,29 @@
-ARG image_tag=latest
-FROM elifesciences/pattern-library_assets-builder:${image_tag} AS assets-builder
+ARG node_version
+
+# NPM - Manages the node part of the app
+
+FROM node:${node_version} as node_builder
+
+ENTRYPOINT bin/npm install
+
+# Assets-Builder - Builds the assets (css, js, etc)
+
+ARG environment=production
+
+FROM node_builder
+
+WORKDIR /srv/pattern-library
+
+ENTRYPOINT node_modules/.bin/gulp --environment ${environment} fonts
+ENTRYPOINT node_modules/.bin/gulp --environment ${environment} img
+ENTRYPOINT node_modules/.bin/gulp --environment ${environment} js
+ENTRYPOINT node_modules/.bin/gulp --environment ${environment} generateCss
+
+# Assets
+
 FROM tianon/true@sha256:009cce421096698832595ce039aa13fa44327d96beedb84282a69d3dbcf5a81b
 
 WORKDIR /srv/pattern-library
 
-COPY source/ source/
-COPY --from=assets-builder /srv/pattern-library/source/assets/ source/assets/
-COPY assets/preload.json source/assets/
-
-ARG description=
+ARG description=unknown
 LABEL description=${description}

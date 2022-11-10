@@ -1,84 +1,40 @@
 version: '3'
 
 services:
-    npm:
-        build:
-            context: .
-            dockerfile: Dockerfile.npm
-            args:
-                node_version: ${NODE_VERSION}
-        image: elifesciences/pattern-library_npm:${IMAGE_TAG}
-    assets-builder:
-        build:
-            context: .
-            dockerfile: Dockerfile.assets-builder
-            args:
-                environment: ${ENVIRONMENT}
-                image_tag: ${IMAGE_TAG}
-                node_version: ${NODE_VERSION}
-        image: elifesciences/pattern-library_assets-builder:${IMAGE_TAG}
-        depends_on:
-            - npm
     assets:
         build:
             context: .
             dockerfile: Dockerfile.assets
             args:
-                image_tag: ${IMAGE_TAG}
-                description: ${DESCRIPTION}
-        image: elifesciences/pattern-library_assets:${IMAGE_TAG}
-        depends_on:
-            - assets-builder
-    composer:
+                environment: ${ENVIRONMENT}
+                node_version: ${NODE_VERSION}
+        volumes:
+            - shared_volume:/srv/pattern-library/
+    pattern-library:
         build:
             context: .
-            dockerfile: Dockerfile.composer
-        image: elifesciences/pattern-library_composer:${IMAGE_TAG}
-        command: /bin/bash
-    ui-builder:
-        build:
-            context: .
-            dockerfile: Dockerfile.ui-builder
-            args:
-                image_tag: ${IMAGE_TAG}
-        image: elifesciences/pattern-library_ui-builder:${IMAGE_TAG}
-        depends_on:
-            - assets
-            - composer
-    ui:
-        build:
-            context: .
-            dockerfile: Dockerfile
-            args:
-                image_tag: ${IMAGE_TAG}
-        image: elifesciences/pattern-library:${IMAGE_TAG}
+            dockerfile: Dockerfile.pattern-library
         ports:
             - "8889:80"
+        volumes:
+            - shared_volume:/srv/pattern-library/
+            - ./public/:/usr/share/nginx/html/
         depends_on:
-            - ui-builder
-    # TODO move to docker-compose.ci.yml
-    ci:
+            - assets
+    test:
         build:
             context: .
-            dockerfile: Dockerfile.ci
-            args:
-                image_tag: ${IMAGE_TAG}
-        image: elifesciences/pattern-library_ci:${IMAGE_TAG}
-        command: sleep infinity
-        depends_on:
-            - assets-builder
-            - ui
-            - selenium
-    selenium:
-        build:
-            context: .
-            dockerfile: Dockerfile.selenium
+            dockerfile: Dockerfile.test
             args:
                 selenium_image_suffix: ${SELENIUM_IMAGE_SUFFIX}
-        image: elifescience/pattern-library_selenium:${IMAGE_TAG}
         ports:
             - "4444:4444" # WebDriver protocol
             - "5900:5900" # VNC
         volumes:
-            # https://github.com/SeleniumHQ/docker-selenium#running-the-images
+            - shared_volume:/srv/pattern-library/
             - /dev/shm:/dev/shm
+        depends_on:
+            - assets
+            - pattern-library
+volumes:
+  shared_volume:

@@ -1,0 +1,22 @@
+ARG selenium_image_suffix=
+FROM scratch
+
+# CI - copy tests
+
+ENTRYPOINT bin/mkdir -p test/build && \
+           bin/chown --recursive node:node test/build
+
+USER node
+
+CMD sleep infinity
+
+# Selenium - run tests
+
+FROM selenium/standalone-firefox${selenium_image_suffix}:3.11.0-bismuth
+USER root
+CMD apt-get update \
+    apt-get install --no-install-recommends -y \
+    mplayer \
+    linux-sound-base
+ENTRYPOINT bin/rm -rf /var/lib/apt/lists/*
+USER seluser

@@ -1,7 +1,0 @@
-FROM composer:1.6.4
-
-COPY composer.json \
-    composer.lock \
-    ./
-
-RUN composer --no-interaction install --ignore-platform-reqs --classmap-authoritative --no-suggest --prefer-dist

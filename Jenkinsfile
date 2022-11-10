@@ -23,7 +23,7 @@ elifePipeline {
         }
 
         stage 'Project tests', {
-            sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml -f docker-compose.ci.yml up -d"
+            sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml up -d"
             // it is not yet possible to retrieve a JUnit XML log to archive as a test artifact:
             // - the `xunit` formatter mangles the XML outputting also debug statements between tags
             // - the `xunit-file` formatter, which is an external plugin, doesn't seem to work with gulp-mocha-phantomjs
@@ -33,7 +33,7 @@ elifePipeline {
         stage 'Smoke tests', {
             dockerComposeSmokeTests(commit, [
                 'services': [
-                    'ci': './smoke_tests.sh ui http',
+                    'test': './smoke_tests.sh ui http',
                 ],
             ])
         }

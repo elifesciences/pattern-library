@@ -1,0 +1,17 @@
+# Composer - builds vendor files based on composer.lock
+
+FROM composer:1.6.4
+
+ENTRYPOINT bin/composer --no-interaction install --ignore-platform-reqs --classmap-authoritative --no-suggest --prefer-dist
+
+# UI-Builder - puts together all files needed for UI
+
+FROM php:7.0.29-cli-alpine
+
+
+ENTRYPOINT bin/php bin/validate && \
+           bin/php core/builder.php -g
+
+# UI - Output through nginx
+
+FROM nginx:1.15.0-alpine

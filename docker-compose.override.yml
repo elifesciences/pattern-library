@@ -1,40 +1,32 @@
 version: '3'
 
 services:
-    npm:
+    assets:
         volumes:
             - ./npm-shrinkwrap.json:/npm-shrinkwrap.json
             - ./package.json:/package.json
             - node_modules:/node_modules
-    assets-builder:
-        volumes:
-            - ./:/srv/pattern-library
             - node_modules:/srv/pattern-library/node_modules
             - source_assets:/srv/pattern-library/source/assets
             - ./.container_source_assets:/srv/pattern-library/.container_source_assets
             - test_build:/srv/pattern-library/test/build
-    ui-builder:
+    pattern-library:
         volumes:
             - ./source:/source
             - source_assets:/source/assets
             - public:/public
-    ui:
-        volumes:
-            - public:/usr/share/nginx/html
-    tests:
-        image: elifesciences/pattern-library_assets-builder:${IMAGE_TAG}
+    test:
         command: node_modules/.bin/gulp --test-html=${TEST_HTML} tests:watch
         ports:
             - "3000:3000"
             - "3001:3001"
             - "8090:8090"
         volumes:
-            - ./:/srv/pattern-library
             - /srv/pattern-library/node_modules
             - source_assets:/srv/pattern-library/source/assets
             - test_build:/srv/pattern-library/test/build
         depends_on:
-            - assets-builder
+            - assets
 
 volumes:
     node_modules:
