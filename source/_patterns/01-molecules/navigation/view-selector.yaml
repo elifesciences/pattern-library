@@ -4,15 +4,21 @@ properties:
   sideBySideUrl:
     type: string
     minLength: 1
-  articleUrl:
+  primaryUrl:
     type: string
     minLength: 1
-  figureUrl:
+  secondaryUrl:
     type: string
     minLength: 1
-  figureIsActive:
+  secondaryIsActive:
     type: boolean
     default: false
+  primaryLabel:
+    type: string
+    minLength: 1
+  secondaryLabel:
+    type: string
+    minLength: 1
   otherLinks:
     type: array
     items:
@@ -48,4 +54,10 @@ properties:
     required:
       - links
 required:
-  - articleUrl
+  - primaryUrl
+  - primaryLabel
+dependencies:
+  secondaryUrl:
+    - secondaryLabel
+  secondaryLabel:
+    - secondaryUrl
