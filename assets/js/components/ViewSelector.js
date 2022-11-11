@@ -241,7 +241,7 @@ module.exports = class ViewSelector {
 
   insertSideBySideListItem() {
     const $list = this.doc.querySelector('.view-selector__list');
-    const $attachBefore = this.doc.querySelector('.view-selector__list-item--figures + .view-selector__list-item');
+    const $attachBefore = this.doc.querySelector('.view-selector__list-item--secondary + .view-selector__list-item');
 
     if (!$attachBefore) {
       return;

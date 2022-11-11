@@ -1,3 +1,4 @@
 {
-  "articleUrl": "#article"
+  "primaryUrl": "#article",
+  "primaryLabel": "Article"
 }
