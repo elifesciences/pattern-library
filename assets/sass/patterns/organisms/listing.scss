@@ -7,16 +7,9 @@ $totalHighlightsSpacing: 6;
 .js {
   .primary-column.display-hide,
   .secondary-column.display-hide {
-    display: none;
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      display: unset;
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--x-wide - 1)}em) {
+      display: none;
     }
-  }
-
-  .primary-column.display-unset,
-  .secondary-column.display-unset {
-    display: unset;
   }
 }
 
