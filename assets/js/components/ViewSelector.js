@@ -59,17 +59,19 @@ module.exports = class ViewSelector {
       this.handleResize(scrollingHandler, this.handleScrolling);
     }, 200));
 
-    this.$primarySelector.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.selectedSection(this.$primarySelector, this.$mainListingArea, this.$secondaryListingArea);
-    });
+    if (this.$primarySelector && this.$secondarySelector) {
+      this.$primarySelector.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.selectedSection(this.$primarySelector, this.$mainListingArea, this.$secondaryListingArea);
+      });
 
-    this.$secondarySelector.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.selectedSection(this.$secondarySelector, this.$secondaryListingArea, this.$mainListingArea);
-    });
+      this.$secondarySelector.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.selectedSection(this.$secondarySelector, this.$secondaryListingArea, this.$mainListingArea);
+      });
 
-    this.displayActiveSectionInitially();
+      this.displayActiveSectionInitially();
+    }
   }
 
   static getAllCollapsibleSectionHeadings (doc) {
