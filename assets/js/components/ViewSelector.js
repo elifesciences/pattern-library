@@ -70,7 +70,7 @@ module.exports = class ViewSelector {
         this.selectedSection(this.$secondarySelector, this.$secondaryColumn, this.$primaryColumn);
       });
 
-      this.displayActiveSectionInitially();
+      this.hideInactiveSectionInitially();
     }
   }
 
@@ -295,10 +295,10 @@ module.exports = class ViewSelector {
     hiddenArea.classList.add(this.$displayHide);
   }
 
-  displayActiveSectionInitially() {
+  hideInactiveSectionInitially() {
     if (this.$primarySelector.parentNode.classList.contains(this.$activeViewSelector)) {
       this.$secondaryColumn.classList.add(this.$displayHide);
-    } else if (this.$secondarySelector.parentNode.classList.contains(this.$activeViewSelector)) {
+    } else {
       this.$primaryColumn.classList.add(this.$displayHide);
     }
   }
