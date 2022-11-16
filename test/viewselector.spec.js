@@ -310,9 +310,9 @@ describe('A ViewSelector Component', function () {
       });
 
       it('only first section to be visible', function () {
-        viewSelector.showSelectedArea(viewSelector.$mainListingArea, viewSelector.$secondaryListingArea);
-        expect(viewSelector.$mainListingArea.classList.contains(displayHide)).to.be.false;
-        expect(viewSelector.$secondaryListingArea.classList.contains(displayHide)).to.be.true;
+        viewSelector.showSelectedArea(viewSelector.$primaryColumn, viewSelector.$secondaryColumn);
+        expect(viewSelector.$primaryColumn.classList.contains(displayHide)).to.be.false;
+        expect(viewSelector.$secondaryColumn.classList.contains(displayHide)).to.be.true;
       });
 
       it('only second selector to contains active class', function () {
@@ -322,9 +322,9 @@ describe('A ViewSelector Component', function () {
       });
 
       it('only second section to be visible', function () {
-        viewSelector.showSelectedArea(viewSelector.$secondaryListingArea, viewSelector.$mainListingArea);
-        expect(viewSelector.$secondaryListingArea.classList.contains(displayHide)).to.be.false;
-        expect(viewSelector.$mainListingArea.classList.contains(displayHide)).to.be.true;
+        viewSelector.showSelectedArea(viewSelector.$secondaryColumn, viewSelector.$primaryColumn);
+        expect(viewSelector.$secondaryColumn.classList.contains(displayHide)).to.be.false;
+        expect(viewSelector.$primaryColumn.classList.contains(displayHide)).to.be.true;
       });
     });
   });

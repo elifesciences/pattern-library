@@ -18,10 +18,10 @@ module.exports = class ViewSelector {
     this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
     this.cssFixedClassName = 'view-selector--fixed';
     this.$navDetect = this.doc.querySelector('.content-container-grid');
-    this.$primarySelector = this.$elm.querySelector('.primary-selector');
-    this.$secondarySelector = this.$elm.querySelector('.secondary-selector');
-    this.$mainListingArea = this.doc.getElementById('mainListing');
-    this.$secondaryListingArea = this.doc.getElementById('secondaryListing');
+    this.$primarySelector = this.$elm.querySelector('.button--switch-selector .view-selector__link--primary');
+    this.$secondarySelector = this.$elm.querySelector('.button--switch-selector .view-selector__link--secondary');
+    this.$primaryColumn = this.doc.querySelector('.primary-column');
+    this.$secondaryColumn = this.doc.querySelector('.secondary-column');
     this.$activeViewSelector = 'view-selector__list-item--active';
     this.$displayHide = 'display-hide';
 
@@ -62,12 +62,12 @@ module.exports = class ViewSelector {
     if (this.$primarySelector && this.$secondarySelector) {
       this.$primarySelector.addEventListener('click', (e) => {
         e.preventDefault();
-        this.selectedSection(this.$primarySelector, this.$mainListingArea, this.$secondaryListingArea);
+        this.selectedSection(this.$primarySelector, this.$primaryColumn, this.$secondaryColumn);
       });
 
       this.$secondarySelector.addEventListener('click', (e) => {
         e.preventDefault();
-        this.selectedSection(this.$secondarySelector, this.$secondaryListingArea, this.$mainListingArea);
+        this.selectedSection(this.$secondarySelector, this.$secondaryColumn, this.$primaryColumn);
       });
 
       this.displayActiveSectionInitially();
@@ -185,6 +185,10 @@ module.exports = class ViewSelector {
   }
 
   handlePositioning() {
+    if (!this.$navDetect) {
+      return;
+    }
+
     let bottomOfNav = this.$navDetect.getBoundingClientRect().bottom;
 
     // If it's position is fixed
@@ -293,9 +297,9 @@ module.exports = class ViewSelector {
 
   displayActiveSectionInitially() {
     if (this.$primarySelector.parentNode.classList.contains(this.$activeViewSelector)) {
-      this.$secondaryListingArea.classList.add(this.$displayHide);
+      this.$secondaryColumn.classList.add(this.$displayHide);
     } else if (this.$secondarySelector.parentNode.classList.contains(this.$activeViewSelector)) {
-      this.$mainListingArea.classList.add(this.$displayHide);
+      this.$primaryColumn.classList.add(this.$displayHide);
     }
   }
 };

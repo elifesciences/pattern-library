@@ -1,11 +1,11 @@
 <div class="view-selector{{#secondaryUrl}} view-selector--has-secondary{{/secondaryUrl}}{{#isTabSelector}} button--switch-selector{{/isTabSelector}}" data-behaviour="ViewSelector"{{#sideBySideUrl}} data-side-by-side-link="{{sideBySideUrl}}"{{/sideBySideUrl}}>
   <ul class="view-selector__list">
     <li class="view-selector__list-item view-selector__list-item--primary{{^secondaryIsActive}} view-selector__list-item--active{{/secondaryIsActive}}">
-      <a href="{{primaryUrl}}" class="view-selector__link view-selector__link--primary{{#isTabSelector}} primary-selector{{/isTabSelector}}">{{primaryLabel}}</a>
+      <a href="{{primaryUrl}}" class="view-selector__link view-selector__link--primary">{{primaryLabel}}</a>
     </li>
     {{#secondaryUrl}}
       <li class="view-selector__list-item view-selector__list-item--secondary{{#secondaryIsActive}} view-selector__list-item--active{{/secondaryIsActive}}">
-          <a href="{{secondaryUrl}}" class="view-selector__link view-selector__link--secondary{{#isTabSelector}} secondary-selector{{/isTabSelector}}">{{secondaryLabel}}</a>
+          <a href="{{secondaryUrl}}" class="view-selector__link view-selector__link--secondary">{{secondaryLabel}}</a>
       </li>
     {{/secondaryUrl}}
 

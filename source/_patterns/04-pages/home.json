@@ -278,7 +278,7 @@
   },
 
   "viewSelector": {
-    "primaryUrl": "#mainListing",
+    "primaryUrl": "#primaryListing",
     "secondaryUrl": "#secondaryListing",
     "primaryLabel": "Latest research",
     "secondaryLabel": "Magazine",
