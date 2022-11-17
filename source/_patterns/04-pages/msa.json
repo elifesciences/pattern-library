@@ -116,8 +116,8 @@
   "viewSelector": {
     "primaryUrl": "#primaryListing",
     "secondaryUrl": "#secondaryListing",
-    "primaryLabel": "Latest research",
-    "secondaryLabel": "Magazine",
+    "primaryLabel": "Latest articles",
+    "secondaryLabel": "Highlights",
     "isTabSelector": true
   },
 
