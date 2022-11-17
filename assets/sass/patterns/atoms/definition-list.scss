@@ -1,5 +1,57 @@
 @import "../../definitions";
 
+.definition-list {
+  @include margin(0);
+  @include margin(24, "top");
+  @include padding(24, "bottom");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    border-bottom: 1px solid $color-text-dividers;
+  }
+
+  dt,
+  dd {
+    font-family: $font-secondary;
+    @include margin(8, "bottom");
+    font-weight: bold;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      @include margin(0, "bottom");
+    }
+  }
+
+  dt {
+    @include font-size-and-vertical-height(14, 24);
+    @include margin(0, "top");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      @include margin(0, "bottom");
+    }
+  }
+
+  dd {
+    @include font-size-and-vertical-height(12, 24);
+    color: $color-text-secondary;
+
+    a {
+      color: $color-text-secondary;
+    }
+
+    a::before {
+      content: "\00a0\2219\00a0";
+      font-weight: bold;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      @include margin(16, "bottom");
+
+      &:last-child {
+        @include margin(0, "bottom");
+      }
+    }
+  }
+}
+
 .definition-list--inline {
   dt,
   dd {
