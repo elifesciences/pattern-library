@@ -132,10 +132,10 @@
 }
 
 // Grid Side
-.content-header-grid__side {
+.grid-side {
   display: grid;
 
-  .content-header-grid__side-popup-block {
+  .buttons-block-wrapper {
     @include margin(12, "top");
     display: grid;
 
@@ -173,7 +173,7 @@
   }
 }
 
-.content-header-grid__side-popup-block__inner-block {
+.buttons-block-wrapper__inner-block {
   grid-row: 1;
   justify-self: end;
 
@@ -184,7 +184,7 @@
   }
 }
 
-.content-header-grid__side-popup-block__list {
+.buttons-block-wrapper__list {
   @include margin(0, "bottom");
   @include padding(0);
   @include padding(12, "bottom");
@@ -221,7 +221,7 @@
   }
 }
 
-.content-header-grid__side-popup-block__link {
+.buttons-block-wrapper__link {
   @include font-size-and-vertical-height(14,24);
   display: flex;
 
@@ -239,7 +239,7 @@
   cursor: pointer;
 }
 
-.content-header__share-listing {
+.buttons-block-wrapper__share-listing {
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     display: none;
   }

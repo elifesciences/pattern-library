@@ -42,7 +42,7 @@
     @include margin(0, "bottom");
   }
 
-  .content-header-grid__side-popup-block & {
+  .buttons-block-wrapper & {
     display: flex;
 
     li {
@@ -98,7 +98,7 @@
     padding: 1px 0;
   }
 
-  .content-header-grid__side-popup-block & {
+  .buttons-block-wrapper & {
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       margin: 0 6px;
 

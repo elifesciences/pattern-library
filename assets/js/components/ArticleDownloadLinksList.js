@@ -14,13 +14,13 @@ module.exports = class ArticleDownloadLinksList {
     this.doc = doc;
     this.$elm = $elm;
 
-    this.$contentHeader = this.doc.querySelector('.content-header-grid__side-popup-block__list');
-    if (!this.$contentHeader) {
+    this.$buttonsWrapper = this.doc.querySelector('.buttons-block-wrapper__list');
+    if (!this.$buttonsWrapper) {
       return;
     }
 
-    this.$contentHeaderDownloadLink = this.$contentHeader.querySelector('.content-header__download_link');
-    if (!this.$contentHeaderDownloadLink) {
+    this.$downloadLink = this.$buttonsWrapper.querySelector('.buttons-block-wrapper__download_link');
+    if (!this.$downloadLink) {
       return;
     }
 
@@ -30,7 +30,7 @@ module.exports = class ArticleDownloadLinksList {
     this.$elm.setAttribute('aria-expanded', 'false');
     this.hideJsExcludes();
     this.moveList();
-    this.$toggler = this.doc.querySelector('.content-header__download_link');
+    this.$toggler = this.doc.querySelector('.buttons-block-wrapper__download_link');
     this.$toggler.addEventListener('click', this.toggle.bind(this));
   }
 
@@ -47,9 +47,9 @@ module.exports = class ArticleDownloadLinksList {
    * Moves the download links list to be by the icon this.$toggler
    */
   moveList() {
-    let $followingSibling = this.$contentHeaderDownloadLink.nextElementSibling;
+    let $followingSibling = this.$downloadLink.nextElementSibling;
     this.$elm.parentNode.parentNode.classList.add('visuallyhidden');
-    this.$contentHeader.insertBefore(this.$elm, $followingSibling);
+    this.$buttonsWrapper.insertBefore(this.$elm, $followingSibling);
   }
 
   /**
