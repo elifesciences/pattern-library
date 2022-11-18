@@ -1,8 +1,7 @@
 @import "../../definitions";
 
-.definition-list {
-  @include margin(0);
-  @include margin(24, "top");
+.definition-list--timeline {
+  @include margin(24 0 0);
   @include padding(24, "bottom");
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
