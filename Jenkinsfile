@@ -33,7 +33,7 @@ elifePipeline {
         stage 'Smoke tests', {
             dockerComposeSmokeTests(commit, [
                 'services': [
-                    'test': './smoke_tests.sh ui http',
+                    'ci': './smoke_tests.sh ui http',
                 ],
             ])
         }

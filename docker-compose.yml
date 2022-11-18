@@ -21,7 +21,7 @@ services:
             - ./public/:/usr/share/nginx/html/
         depends_on:
             - assets
-    test:
+    ci:
         build:
             context: .
             dockerfile: Dockerfile.test
