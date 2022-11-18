@@ -131,11 +131,11 @@
   display: flex;
 }
 
-// Grid Side
-.grid-side {
+// Side section
+.side-section {
   display: grid;
 
-  .buttons-block-wrapper {
+  .side-section-wrapper {
     @include margin(12, "top");
     display: grid;
 
@@ -173,7 +173,7 @@
   }
 }
 
-.buttons-block-wrapper__inner-block {
+.side-section-wrapper__inner-block {
   grid-row: 1;
   justify-self: end;
 
@@ -184,7 +184,7 @@
   }
 }
 
-.buttons-block-wrapper__list {
+.side-section-wrapper__list {
   @include margin(0, "bottom");
   @include padding(0);
   @include padding(12, "bottom");
@@ -221,7 +221,7 @@
   }
 }
 
-.buttons-block-wrapper__link {
+.side-section-wrapper__link {
   @include font-size-and-vertical-height(14,24);
   display: flex;
 
@@ -239,7 +239,7 @@
   cursor: pointer;
 }
 
-.buttons-block-wrapper__share-listing {
+.side-section-wrapper__share-listing {
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     display: none;
   }

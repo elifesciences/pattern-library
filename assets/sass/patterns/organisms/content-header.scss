@@ -492,7 +492,7 @@ $iconlist: cc oa;
   }
 }
 
-.buttons-block-wrapper__download_link {
+.side-section-wrapper__download_link {
   grid-row: 1;
   grid-column-end: 4;
   justify-self: end;
@@ -531,7 +531,7 @@ $iconlist: cc oa;
   }
 }
 
-.grid-side {
+.side-section {
   .content-header__download_icon {
     width: #{$content-header-download-width}px;
   }

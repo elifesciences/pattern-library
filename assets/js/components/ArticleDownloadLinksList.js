@@ -14,12 +14,12 @@ module.exports = class ArticleDownloadLinksList {
     this.doc = doc;
     this.$elm = $elm;
 
-    this.$buttonsWrapper = this.doc.querySelector('.buttons-block-wrapper__list');
-    if (!this.$buttonsWrapper) {
+    this.$sideSectionWrapper = this.doc.querySelector('.side-section-wrapper__list');
+    if (!this.$sideSectionWrapper) {
       return;
     }
 
-    this.$downloadLink = this.$buttonsWrapper.querySelector('.buttons-block-wrapper__download_link');
+    this.$downloadLink = this.$sideSectionWrapper.querySelector('.side-section-wrapper__download_link');
     if (!this.$downloadLink) {
       return;
     }
@@ -30,7 +30,7 @@ module.exports = class ArticleDownloadLinksList {
     this.$elm.setAttribute('aria-expanded', 'false');
     this.hideJsExcludes();
     this.moveList();
-    this.$toggler = this.doc.querySelector('.buttons-block-wrapper__download_link');
+    this.$toggler = this.doc.querySelector('.side-section-wrapper__download_link');
     this.$toggler.addEventListener('click', this.toggle.bind(this));
   }
 
@@ -49,7 +49,7 @@ module.exports = class ArticleDownloadLinksList {
   moveList() {
     let $followingSibling = this.$downloadLink.nextElementSibling;
     this.$elm.parentNode.parentNode.classList.add('visuallyhidden');
-    this.$buttonsWrapper.insertBefore(this.$elm, $followingSibling);
+    this.$sideSectionWrapper.insertBefore(this.$elm, $followingSibling);
   }
 
   /**
