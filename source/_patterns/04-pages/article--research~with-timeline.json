@@ -100,6 +100,34 @@
       "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
       "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
     },
+    "definitionList": {
+      "items": [
+        {
+          "term": "Preprint posted",
+          "descriptors": [
+            "January 1, 2013"
+          ]
+        },
+        {
+          "term": "Received",
+          "descriptors": [
+            "January 22, 2013"
+          ]
+        },
+        {
+          "term": "Accepted",
+          "descriptors": [
+            "May 28, 2013"
+          ]
+        },
+        {
+          "term": "Version of Record published",
+          "descriptors": [
+            "July 2, 2013 <a href=\"#\">Go to version</a>"
+          ]
+        }
+      ]
+    },
     "titleLong": true,
     "header": {
       "possible": true,

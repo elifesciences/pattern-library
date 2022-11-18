@@ -92,7 +92,11 @@
       <div class="content-header-grid__side">
 
         <div class="content-header-grid__side-popup-block">
-          <ul class="content-header-grid__side-popup-block__list">
+            {{#definitionList}}
+                {{> atoms-definition-list }}
+            {{/definitionList}}
+
+            <ul class="content-header-grid__side-popup-block__list">
             {{#download}}
               <li>
                   <a href="{{download}}" class="content-header__download_link content-header-grid__side-popup-block__link">
@@ -119,10 +123,6 @@
             {{#socialMediaSharers}}
               {{> atoms-social-media-sharers-journal}}
             {{/socialMediaSharers}}
-
-            {{#definitionList}}
-              {{> atoms-definition-list }}
-            {{/definitionList}}
 
             {{#contextualData}}
               {{> molecules-contextual-data }}

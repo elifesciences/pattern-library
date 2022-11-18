@@ -11,8 +11,8 @@
 
   dt,
   dd {
-    font-family: $font-secondary;
     @include margin(8, "bottom");
+    font-family: $font-secondary;
     font-weight: bold;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
