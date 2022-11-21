@@ -1,67 +1,85 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
-properties:
-  sideBySideUrl:
-    type: string
-    minLength: 1
-  primaryUrl:
-    type: string
-    minLength: 1
-  secondaryUrl:
-    type: string
-    minLength: 1
-  secondaryIsActive:
-    type: boolean
-    default: false
-  primaryLabel:
-    type: string
-    minLength: 1
-  secondaryLabel:
-    type: string
-    minLength: 1
-  isTabSelector:
-    type: boolean
-    enum:
-      - true
-  otherLinks:
-    type: array
-    items:
-      type: object
-      properties:
-        name:
-          type: string
-          minLength: 1
-        url:
-          type: string
-          minLength: 1
-      required:
-        - name
-        - url
-  jumpLinks:
-    type: object
+allOf:
+  -
     properties:
-      links:
-        type: array
-        minItems: 2
-        items:
-          type: object
-          properties:
-            name:
-              type: string
-              minLength: 1
-            url:
-              type: string
-              minLength: 1
-          required:
-            - name
-            - url
-    required:
-      - links
-required:
-  - primaryUrl
-  - primaryLabel
-dependencies:
-  secondaryUrl:
-    - secondaryLabel
-  secondaryLabel:
-    - secondaryUrl
+      secondaryIsActive:
+        type: boolean
+        default: false
+  -
+    oneOf:
+      -
+        properties:
+          sideBySideUrl:
+            type: string
+            minLength: 1
+          primaryUrl:
+            type: string
+            minLength: 1
+          secondaryUrl:
+            type: string
+            minLength: 1
+          primaryLabel:
+            type: string
+            minLength: 1
+          secondaryLabel:
+            type: string
+            minLength: 1
+          otherLinks:
+            type: array
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                url:
+                  type: string
+                  minLength: 1
+              required:
+                - name
+                - url
+          jumpLinks:
+            type: object
+            properties:
+              links:
+                type: array
+                minItems: 2
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      minLength: 1
+                    url:
+                      type: string
+                      minLength: 1
+                  required:
+                    - name
+                    - url
+            required:
+              - links
+        required:
+          - primaryUrl
+          - primaryLabel
+        dependencies:
+          secondaryUrl:
+            - secondaryLabel
+          secondaryLabel:
+            - secondaryUrl
+      -
+        properties:
+          isTabSelector:
+            type: boolean
+            enum:
+              - true
+          primaryLabel:
+            type: string
+            minLength: 1
+          secondaryLabel:
+            type: string
+            minLength: 1
+        required:
+          - isTabSelector
+          - primaryLabel
+          - secondaryLabel

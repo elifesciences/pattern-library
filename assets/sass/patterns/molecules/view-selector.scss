@@ -4,10 +4,17 @@
   .js & {
     &.view-selector {
       display: inline-block;
+      grid-column: 1/13;
+      grid-row: 1;
+      width: 100%;
 
       @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
         display: none;
       }
+    }
+
+    .view-selector__list-item:hover {
+      cursor: pointer;
     }
 
     & + .primary-column .list-heading,
@@ -20,8 +27,7 @@
     }
   }
 
-  .view-selector__link--primary,
-  .view-selector__link--secondary {
+  .view-selector__link {
     color: $color-text;
   }
 }
@@ -168,11 +174,6 @@
       padding: 0;
     }
   }
-
-  .view-selector__link--secondary {
-    color: $color-text;
-  }
-
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-view-selector)}em) {
