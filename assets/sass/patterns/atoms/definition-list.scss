@@ -10,26 +10,19 @@
 
   dt,
   dd {
-    @include margin(8, "bottom");
     font-family: $font-secondary;
     font-weight: bold;
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      @include margin(0, "bottom");
-    }
   }
 
   dt {
     @include font-size-and-vertical-height(14, 24);
     @include margin(0, "top");
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      @include margin(0, "bottom");
-    }
   }
 
   dd {
     @include font-size-and-vertical-height(12, 24);
+    @include margin(18, "bottom");
+
     color: $color-text-secondary;
 
     a {
@@ -41,12 +34,8 @@
       font-weight: bold;
     }
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      @include margin(16, "bottom");
-
-      &:last-child {
-        @include margin(0, "bottom");
-      }
+    &:last-child {
+      @include margin(0, "bottom");
     }
   }
 }
