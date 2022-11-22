@@ -1,9 +1,9 @@
 {
   "items": [
     {
-      "listClasses": "buttons-block-wrapper__list",
+      "listClasses": "side-section-wrapper__list",
       "url": "#download",
-      "linkClasses": "buttons-block-wrapper__download_link",
+      "linkClasses": "side-section-wrapper__download_link",
       "iconClasses": "download",
       "content": "Download"
     },
