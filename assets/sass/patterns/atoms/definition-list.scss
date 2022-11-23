@@ -34,7 +34,7 @@
     }
 
     a::before {
-      content: "  •  ";
+      content: "\00a0\2219\00a0";
       font-weight: bold;
     }
 
