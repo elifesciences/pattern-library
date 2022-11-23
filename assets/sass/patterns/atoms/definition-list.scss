@@ -27,10 +27,14 @@
 
     a {
       color: $color-text-secondary;
+
+      &:hover {
+        color: $color-primary;
+      }
     }
 
     a::before {
-      content: "\00a0\2219\00a0";
+      content: "  •  ";
       font-weight: bold;
     }
 
