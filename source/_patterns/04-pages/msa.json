@@ -114,6 +114,8 @@
   },
 
   "viewSelector": {
+    "primaryUrl": "#primaryListing",
+    "secondaryUrl": "#secondaryListing",
     "primaryLabel": "Latest articles",
     "secondaryLabel": "Highlights",
     "isTabSelector": true

@@ -305,8 +305,8 @@ describe('A ViewSelector Component', function () {
     context('when user select button to display section', () => {
       it('only first selector to contains active class', function () {
         viewSelector.addActiveClass(viewSelector.$primarySelector);
-        expect(viewSelector.$primarySelector.classList.contains(viewSelectorActiveSelector)).to.be.true;
-        expect(viewSelector.$secondarySelector.classList.contains(viewSelectorActiveSelector)).to.be.false;
+        expect(viewSelector.$primarySelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.true;
+        expect(viewSelector.$secondarySelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.false;
       });
 
       it('only first section to be visible', function () {
@@ -317,8 +317,8 @@ describe('A ViewSelector Component', function () {
 
       it('only second selector to contains active class', function () {
         viewSelector.addActiveClass(viewSelector.$secondarySelector);
-        expect(viewSelector.$secondarySelector.classList.contains(viewSelectorActiveSelector)).to.be.true;
-        expect(viewSelector.$primarySelector.classList.contains(viewSelectorActiveSelector)).to.be.false;
+        expect(viewSelector.$secondarySelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.true;
+        expect(viewSelector.$primarySelector.parentNode.classList.contains(viewSelectorActiveSelector)).to.be.false;
       });
 
       it('only second section to be visible', function () {

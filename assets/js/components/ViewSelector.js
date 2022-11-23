@@ -18,8 +18,8 @@ module.exports = class ViewSelector {
     this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
     this.cssFixedClassName = 'view-selector--fixed';
     this.$navDetect = this.doc.querySelector('.content-container-grid');
-    this.$primarySelector = this.$elm.querySelector('.button--switch-selector .view-selector__list-item--primary');
-    this.$secondarySelector = this.$elm.querySelector('.button--switch-selector .view-selector__list-item--secondary');
+    this.$primarySelector = this.$elm.querySelector('.button--switch-selector .view-selector__link--primary');
+    this.$secondarySelector = this.$elm.querySelector('.button--switch-selector .view-selector__link--secondary');
     this.$primaryColumn = this.doc.querySelector('.primary-column');
     this.$secondaryColumn = this.doc.querySelector('.secondary-column');
     this.$activeViewSelector = 'view-selector__list-item--active';
@@ -287,7 +287,7 @@ module.exports = class ViewSelector {
   addActiveClass(clickedElement) {
     const activeElement = this.$elm.querySelector('.view-selector__list-item--active');
     activeElement.classList.remove(this.$activeViewSelector);
-    clickedElement.classList.add(this.$activeViewSelector);
+    clickedElement.parentNode.classList.add(this.$activeViewSelector);
   }
 
   showSelectedArea(visibleArea, hiddenArea) {
