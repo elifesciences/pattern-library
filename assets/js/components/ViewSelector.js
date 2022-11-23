@@ -20,8 +20,8 @@ module.exports = class ViewSelector {
     this.$navDetect = this.doc.querySelector('.content-container-grid');
     this.$primarySelector = this.$elm.querySelector('.button--switch-selector .view-selector__link--primary');
     this.$secondarySelector = this.$elm.querySelector('.button--switch-selector .view-selector__link--secondary');
-    this.$primaryColumn = this.doc.querySelector('.primary-column');
-    this.$secondaryColumn = this.doc.querySelector('.secondary-column');
+    this.$primaryColumn = this.doc.getElementById('primaryListing');
+    this.$secondaryColumn = this.doc.getElementById('secondaryListing');
     this.$activeViewSelector = 'view-selector__list-item--active';
     this.$displayHide = 'display-hide';
 
