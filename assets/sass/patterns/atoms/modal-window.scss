@@ -27,6 +27,7 @@
 
   h6 {
     @include font-size-and-vertical-height($font-size-h6-in-px);
+    @include padding(6, "bottom");
     grid-column: 1/3;
     grid-row: 1;
     justify-self: start;
@@ -35,14 +36,13 @@
 
   .modal-content__body {
     .social-media-sharers {
-      @include padding(24, "top");
+      @include margin(0, "bottom");
       display: flex;
       grid-column: 1/3;
       grid-row: 4;
       justify-content: center;
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        @include padding(0, "top");
         grid-row: unset;
         justify-content: left;
 
@@ -106,16 +106,19 @@
 }
 
 .modal-content__body {
+  @include margin(30, "top");
   display: grid;
   grid-column: 1/3;
 
   .button {
-    @include margin(24, "bottom");
+    @include margin(36, "bottom");
     justify-self: center;
     grid-column: 1/3;
     grid-row: 3;
 
     &.button--default {
+      @include padding(15 18);
+
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         justify-self: right;
         grid-column: 2/3;
@@ -125,6 +128,7 @@
   }
 
   .form-item {
+    @include margin(36, "bottom");
     grid-column: 1/3;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
