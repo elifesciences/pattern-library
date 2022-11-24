@@ -5,7 +5,7 @@ $showThreeAtWidth: #{get-rem-from-px($bkpt-site--x-wide)}rem;
 $totalHighlightsSpacing: 6;
 
 .js {
-  .grid__item.display-hide {
+  .grid__item.display-narrow {
     @media only all and (max-width: #{get-rem-from-px($bkpt-site--x-wide - 1)}em) {
       display: none;
     }

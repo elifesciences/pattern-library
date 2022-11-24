@@ -18,12 +18,39 @@ module.exports = class ViewSelector {
     this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
     this.cssFixedClassName = 'view-selector--fixed';
     this.$navDetect = this.doc.querySelector('.content-container-grid');
-    this.$primarySelector = this.$elm.querySelector('.button--switch-selector .view-selector__link--primary');
-    this.$secondarySelector = this.$elm.querySelector('.button--switch-selector .view-selector__link--secondary');
-    this.$primaryColumn = this.doc.getElementById('primaryListing');
-    this.$secondaryColumn = this.doc.getElementById('secondaryListing');
-    this.$activeViewSelector = 'view-selector__list-item--active';
-    this.$displayHide = 'display-hide';
+    this.isTabSelector = this.$elm.classList.contains('button--switch-selector');
+    this.primaryColumn = this.doc.getElementById('primaryListing');
+    this.secondaryColumn = this.doc.getElementById('secondaryListing');
+    this.primarySelector = this.$elm.querySelector('.view-selector__link--primary');
+    this.secondarySelector = this.$elm.querySelector('.view-selector__link--secondary');
+
+    if (this.isTabSelector) {
+      const classActiveViewSelector = 'view-selector__list-item--active';
+      const classDisplayOnNarrow = 'display-narrow';
+
+      this.primarySelector.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.selectedSection(
+            classActiveViewSelector,
+            this.primarySelector,
+            this.primaryColumn,
+            this.secondaryColumn,
+            classDisplayOnNarrow);
+      });
+
+      this.secondarySelector.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.selectedSection(
+            classActiveViewSelector,
+            this.secondarySelector,
+            this.secondaryColumn,
+            this.primaryColumn,
+            classDisplayOnNarrow);
+      });
+
+      this.hideInactiveSectionInitially
+          (this.primaryColumn, this.secondaryColumn, classActiveViewSelector, classDisplayOnNarrow);
+    }
 
     if (this.sideBySideViewAvailable()) {
       const $header = this.doc.getElementById('siteHeader');
@@ -58,20 +85,6 @@ module.exports = class ViewSelector {
     this.window.addEventListener('resize', utils.throttle(() => {
       this.handleResize(scrollingHandler, this.handleScrolling);
     }, 200));
-
-    if (this.$primarySelector && this.$secondarySelector) {
-      this.$primarySelector.addEventListener('click', (e) => {
-        e.preventDefault();
-        this.selectedSection(this.$primarySelector, this.$primaryColumn, this.$secondaryColumn);
-      });
-
-      this.$secondarySelector.addEventListener('click', (e) => {
-        e.preventDefault();
-        this.selectedSection(this.$secondarySelector, this.$secondaryColumn, this.$primaryColumn);
-      });
-
-      this.hideInactiveSectionInitially();
-    }
   }
 
   static getAllCollapsibleSectionHeadings (doc) {
@@ -279,27 +292,27 @@ module.exports = class ViewSelector {
     return $listItem;
   }
 
-  selectedSection(clickedElement, visibleArea, hiddenArea) {
-    this.addActiveClass(clickedElement);
-    this.showSelectedArea(visibleArea, hiddenArea);
+  selectedSection(classSelector, clickedElement, visibleArea, hiddenArea, classDisplayOnNarrow) {
+    this.addActiveClass(classSelector, clickedElement);
+    this.showSelectedArea(visibleArea, hiddenArea, classDisplayOnNarrow);
   }
 
-  addActiveClass(clickedElement) {
-    const activeElement = this.$elm.querySelector('.view-selector__list-item--active');
-    activeElement.classList.remove(this.$activeViewSelector);
-    clickedElement.parentNode.classList.add(this.$activeViewSelector);
+  addActiveClass(classSelector, clickedElement) {
+    const activeElement = this.$elm.querySelector('.' + classSelector);
+    activeElement.classList.remove(classSelector);
+    clickedElement.parentNode.classList.add(classSelector);
   }
 
-  showSelectedArea(visibleArea, hiddenArea) {
-    visibleArea.classList.remove(this.$displayHide);
-    hiddenArea.classList.add(this.$displayHide);
+  showSelectedArea(visibleArea, hiddenArea, classDisplayOnNarrow) {
+    visibleArea.classList.remove(classDisplayOnNarrow);
+    hiddenArea.classList.add(classDisplayOnNarrow);
   }
 
-  hideInactiveSectionInitially() {
-    if (this.$primarySelector.parentNode.classList.contains(this.$activeViewSelector)) {
-      this.$secondaryColumn.classList.add(this.$displayHide);
+  hideInactiveSectionInitially(primaryColumn, secondaryColumn, classActiveViewSelector, classDisplayOnNarrow) {
+    if (this.primarySelector.parentNode.classList.contains(classActiveViewSelector)) {
+      secondaryColumn.classList.add(classDisplayOnNarrow);
     } else {
-      this.$primaryColumn.classList.add(this.$displayHide);
+      primaryColumn.classList.add(classDisplayOnNarrow);
     }
   }
 };
