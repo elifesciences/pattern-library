@@ -57,8 +57,6 @@ module.exports = class ViewSelector {
 
       this.hideInactiveSectionInitially
           (this.primaryColumn, this.secondaryColumn, classActiveViewSelector, classDisplayOnNarrow);
-
-      return;
     }
 
     if (this.sideBySideViewAvailable()) {
@@ -75,25 +73,27 @@ module.exports = class ViewSelector {
       this.insertSideBySideListItem();
     }
 
-    this.mainTarget = this.doc.querySelector('.main');
-    if (!this.mainTarget) {
-      return;
+    if (this.jumpLinks.length > 0) {
+      this.mainTarget = this.doc.querySelector('.main');
+      if (!this.mainTarget) {
+        return;
+      }
+
+      this.collapsibleSectionHeadings = ViewSelector.getAllCollapsibleSectionHeadings(this.doc);
+      this.isScrollingHandled = false;
+
+      const scrollingHandler = utils.throttle(() => {
+        this.handleScrolling();
+      }, 50);
+
+      if (this.isViewportWideEnoughForJumpMenu()) {
+        this.startHandlingScrolling(scrollingHandler, this.handleScrolling);
+      }
+
+      this.window.addEventListener('resize', utils.throttle(() => {
+        this.handleResize(scrollingHandler, this.handleScrolling);
+      }, 200));
     }
-
-    this.collapsibleSectionHeadings = ViewSelector.getAllCollapsibleSectionHeadings(this.doc);
-    this.isScrollingHandled = false;
-
-    const scrollingHandler = utils.throttle(() => {
-      this.handleScrolling();
-    }, 50);
-
-    if (this.isViewportWideEnoughForJumpMenu()) {
-      this.startHandlingScrolling(scrollingHandler, this.handleScrolling);
-    }
-
-    this.window.addEventListener('resize', utils.throttle(() => {
-      this.handleResize(scrollingHandler, this.handleScrolling);
-    }, 200));
   }
 
   static getAllCollapsibleSectionHeadings (doc) {

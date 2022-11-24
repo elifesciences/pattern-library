@@ -43,56 +43,24 @@
         </header>
         <div class="wrapper wrapper--content">
           <div class="content-container-grid">
-            <div class="view-selector" data-behaviour="ViewSelector"
-              data-side-by-side-link="https://lens.elifesciences.org/19749/index.html">
+            <div class="view-selector button--switch-selector" data-behaviour="ViewSelector">
               <ul class="view-selector__list">
                 <li class="view-selector__list-item
                   view-selector__list-item--primary
                   view-selector__list-item--active">
                   <a href="#article" class="view-selector__link
-                    view-selector__link--primary"><span>Article</span></a>
+                    view-selector__link--primary"><span>Primary</span></a>
                 </li>
                 <li class="view-selector__list-item
                   view-selector__list-item--secondary">
                   <a href="#figures" class="view-selector__link
-                    view-selector__link--secondary"><span>Figures</span></a>
-                </li>
-
-                <li class="view-selector__list-item
-                  view-selector__list-item--jump">
-                  <span class="view-selector__jump_links_header">Jump to</span>
-                  <ul class="view-selector__jump_links"
-                    data-behaviour="DropDown">
-                    <li class="view-selector__jump_link_item">
-                      <a href="#abstract" class="view-selector__jump_link">Abstract</a>
-                    </li>
-                    <li class="view-selector__jump_link_item">
-                      <a href="#digest" class="view-selector__jump_link">eLife
-                        digest</a>
-                    </li>
-                    <li class="view-selector__jump_link_item">
-                      <a href="#introduction" class="view-selector__jump_link">Introduction</a>
-                    </li>
-                    <li class="view-selector__jump_link_item">
-                      <a href="#results" class="view-selector__jump_link">Results</a>
-                    </li>
-                    <li class="view-selector__jump_link_item">
-                      <a href="#discussion" class="view-selector__jump_link">Discussion</a>
-                    </li>
-                    <li class="view-selector__jump_link_item">
-                      <a href="#materials-and-methods"
-                        class="view-selector__jump_link">Materials &amp; methods</a>
-                    </li>
-                    <li class="view-selector__jump_link_item">
-                      <a href="#references" class="view-selector__jump_link">References</a>
-                    </li>
-                  </ul>
+                    view-selector__link--secondary"><span>Secondary</span></a>
                 </li>
 
               </ul>
             </div>
 
-            <div role="main" class="main-content-grid">
+            <div role="main" class="main-content-grid" id="primaryListing">
               Main text<br />
               Main text<br />
               Main text<br />
@@ -116,7 +84,7 @@
               Main text<br />
               Main text<br />
             </div>
-            <div class="secondary-column-grid">
+            <div class="secondary-column-grid" id="secondaryListing">
               secondary column
             </div>
           </div>
@@ -137,7 +105,7 @@
     <!--
   Test spec
 -->
-    <script src="build/viewselector.spec.js"></script>
+    <script src="build/viewselectortabselector.spec.js"></script>
 
     <!--
   Begin!
