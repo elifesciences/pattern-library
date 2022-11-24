@@ -19,12 +19,19 @@ module.exports = class ViewSelector {
     this.cssFixedClassName = 'view-selector--fixed';
     this.$navDetect = this.doc.querySelector('.content-container-grid');
     this.isTabSelector = this.$elm.classList.contains('button--switch-selector');
-    this.primaryColumn = this.doc.getElementById('primaryListing');
-    this.secondaryColumn = this.doc.getElementById('secondaryListing');
-    this.primarySelector = this.$elm.querySelector('.view-selector__link--primary');
-    this.secondarySelector = this.$elm.querySelector('.view-selector__link--secondary');
+    this.primarySelector = null;
+    this.secondarySelector = null;
+    this.primaryColumn = null;
+    this.secondaryColumn = null;
 
     if (this.isTabSelector) {
+      this.primarySelector = this.$elm.querySelector('.view-selector__link--primary');
+      this.secondarySelector = this.$elm.querySelector('.view-selector__link--secondary');
+
+      // When isTabSelector is true we can assume primary and secondary links commence with #.
+      this.primaryColumn = this.doc.getElementById(this.primarySelector.getAttribute('href').replace(/^\#/, ''));
+      this.secondaryColumn = this.doc.getElementById(this.secondarySelector.getAttribute('href').replace(/^\#/, ''));
+
       const classActiveViewSelector = 'view-selector__list-item--active';
       const classDisplayOnNarrow = 'display-narrow';
 
@@ -50,6 +57,8 @@ module.exports = class ViewSelector {
 
       this.hideInactiveSectionInitially
           (this.primaryColumn, this.secondaryColumn, classActiveViewSelector, classDisplayOnNarrow);
+
+      return;
     }
 
     if (this.sideBySideViewAvailable()) {
@@ -198,10 +207,6 @@ module.exports = class ViewSelector {
   }
 
   handlePositioning() {
-    if (!this.$navDetect) {
-      return;
-    }
-
     let bottomOfNav = this.$navDetect.getBoundingClientRect().bottom;
 
     // If it's position is fixed
