@@ -2,6 +2,5 @@
   "text": "<span class='svg-background-image share'></span><span class='button-text'>Share</span>",
   "classes": "button-aside-section side-section-wrapper__link",
   "path": "#share",
-  "id": "modalContentShare",
-  "type": null
+  "id": "modalContentShare"
 }
