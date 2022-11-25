@@ -116,3 +116,14 @@
     border: 1px solid #2b7306;
   }
 }
+
+.button-aside-section {
+  &.side-section-wrapper__link {
+    @include padding(8 20 8 11);
+    background-color: $color-text-ui-background-light-gray;
+    color: $color-text;
+    display: inline-flex;
+    font-weight: 700;
+    text-transform: initial;
+  }
+}
