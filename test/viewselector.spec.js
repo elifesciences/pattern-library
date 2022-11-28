@@ -290,6 +290,4 @@ describe('A ViewSelector Component', function () {
 
     });
   });
-
-
 });

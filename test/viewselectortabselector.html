@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mocha Test Runner</title>
+
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+    <style>
+  header {
+    border: 1px solid black;
+  }
+  .hidden {
+    display: none;
+  }
+  .side-by-side-view {
+    border-width: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 14rem;
+    height: calc(100% - 14rem);
+    width: 100%;
+  }
+  </style>
+  </head>
+  <body>
+
+    <!--
+  Test output
+-->
+    <div id="mocha"></div>
+
+    <div class="global-inner">
+
+      <!--
+  Fixture
+-->
+      <main id="maincontent" class="main blg-margin-bottom-large">
+        <header id="siteHeader">
+          <div class="content-container-grid">Header of the page</div>
+        </header>
+        <div class="wrapper wrapper--content">
+          <div class="content-container-grid">
+            <div class="view-selector button--switch-selector" data-behaviour="ViewSelector">
+              <ul class="view-selector__list">
+                <li class="view-selector__list-item
+                  view-selector__list-item--primary
+                  view-selector__list-item--active">
+                  <a href="#primaryListing" class="view-selector__link
+                    view-selector__link--primary"><span>Primary</span></a>
+                </li>
+                <li class="view-selector__list-item
+                  view-selector__list-item--secondary">
+                  <a href="#secondaryListing" class="view-selector__link
+                    view-selector__link--secondary"><span>Secondary</span></a>
+                </li>
+
+              </ul>
+            </div>
+
+            <div role="main" class="main-content-grid" id="primaryListing">
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+              Main text<br />
+            </div>
+            <div class="secondary-column-grid" id="secondaryListing">
+              secondary column
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!--
+  Load test code
+-->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
+
+    <!--
+  Test spec
+-->
+    <script src="build/viewselectortabselector.spec.js"></script>
+
+    <!--
+  Begin!
+-->
+    <script>
+  mocha.run();
+</script>
+
+  </body>
+</html>
