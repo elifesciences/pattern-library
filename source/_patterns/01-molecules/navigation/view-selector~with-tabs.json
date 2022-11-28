@@ -1,0 +1,7 @@
+{
+  "primaryUrl": "#primaryListing",
+  "secondaryUrl": "#secondaryListing",
+  "primaryLabel": "Latest research",
+  "secondaryLabel": "Magazine",
+  "isTabSelector": true
+}

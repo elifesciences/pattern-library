@@ -1,5 +1,49 @@
 @import "../../definitions";
 
+.definition-list--timeline {
+  @include margin(24 0 0);
+  @include padding(24, "bottom");
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    border-bottom: 1px solid $color-text-dividers;
+  }
+
+  dt,
+  dd {
+    font-family: $font-secondary;
+    font-weight: bold;
+  }
+
+  dt {
+    @include font-size-and-vertical-height(14, 24);
+    @include margin(0, "top");
+  }
+
+  dd {
+    @include font-size-and-vertical-height(12, 24);
+    @include margin(18, "bottom");
+
+    color: $color-text-secondary;
+
+    a {
+      color: $color-text-secondary;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    a::before {
+      content: "\00a0\2219\00a0";
+      font-weight: bold;
+    }
+
+    &:last-child {
+      @include margin(0, "bottom");
+    }
+  }
+}
+
 .definition-list--inline {
   dt,
   dd {
