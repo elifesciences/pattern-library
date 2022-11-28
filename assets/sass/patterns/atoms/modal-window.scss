@@ -47,8 +47,7 @@
         justify-content: left;
 
         li {
-          @include margin(4, "left");
-          @include margin(4, "right");
+          @include margin(0 4);
 
           &:first-child {
             @include margin(0, "left");
