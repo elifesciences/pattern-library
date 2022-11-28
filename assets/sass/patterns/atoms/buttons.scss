@@ -126,6 +126,14 @@
     font-weight: 700;
     text-transform: initial;
 
+    &:hover {
+      @include colors($color-text-ui-background-secondary-grey, none, $color-text);
+
+      .svg-background-image {
+        @include colors($color-text, none, $color-text);
+      }
+    }
+
     .button-text {
       padding-top: 2px;
     }
