@@ -37,7 +37,7 @@ module.exports = class Modal {
   }
 
   modalToggle(event) {
-    if (!this.$elm.classList.contains('small-device')) {
+    if (!this.$elm.classList.contains('small-device') || this.window.innerWidth < 480) {
       this.modalWindow.classList.toggle('modal-content__show');
 
       if (!this.modalWindow.classList.contains('modal-content__show')) {
