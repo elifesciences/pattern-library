@@ -117,25 +117,23 @@
   }
 }
 
-.button-action {
-  &.side-section-wrapper__link {
-    @include padding(7 20 7 11);
-    background-color: $color-text-ui-background-light-gray;
+.button--action {
+  @include padding(9 20 9 40);
+  border: none;
+  background-color: $color-text-ui-background-light-gray;
+  background-image: url("../img/icons/share.svg");
+  background-repeat: no-repeat;
+  background-position: 11px;
+  color: $color-text;
+  display: inline-flex;
+  font-weight: 700;
+  height: 40px;
+  line-height: 24px;
+  text-transform: initial;
+
+  &:hover {
+    background-color: $color-text-ui-background-secondary-grey;
+    border: none;
     color: $color-text;
-    display: inline-flex;
-    font-weight: 700;
-    text-transform: initial;
-
-    &:hover {
-      @include colors($color-text-ui-background-secondary-grey, none, $color-text);
-
-      .svg-background-image {
-        @include colors($color-text, none, $color-text);
-      }
-    }
-
-    .button-text {
-      padding-top: 2px;
-    }
   }
 }
