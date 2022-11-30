@@ -118,11 +118,9 @@
 }
 
 .button--action {
-  @include padding(9 20 9 40);
-  border: none;
+  @include padding(9 20);
   background-color: $color-text-ui-background-light-gray;
-  background-repeat: no-repeat;
-  background-position: 11px;
+  border: none;
   color: $color-text;
   display: inline-flex;
   font-weight: 700;
@@ -137,6 +135,9 @@
   }
 
   &.icon-share {
+    @include padding(40, "left");
     background-image: url("../img/icons/share.svg");
+    background-position: 11px;
+    background-repeat: no-repeat;
   }
 }
