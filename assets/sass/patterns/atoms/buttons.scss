@@ -121,7 +121,6 @@
   @include padding(9 20 9 40);
   border: none;
   background-color: $color-text-ui-background-light-gray;
-  background-image: url("../img/icons/share.svg");
   background-repeat: no-repeat;
   background-position: 11px;
   color: $color-text;
@@ -135,5 +134,9 @@
     background-color: $color-text-ui-background-secondary-grey;
     border: none;
     color: $color-text;
+  }
+
+  &.icon-share {
+    background-image: url("../img/icons/share.svg");
   }
 }
