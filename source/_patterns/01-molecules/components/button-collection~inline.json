@@ -1,5 +1,5 @@
 {
-  "classes": "button-collection--action",
+  "variant": "inline",
   "buttons": [
     {
       "text": "Download",

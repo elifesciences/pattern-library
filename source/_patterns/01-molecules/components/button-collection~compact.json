@@ -1,5 +1,5 @@
 {
-  "compact": true,
+  "variant": "compact",
   "buttons": [
     {
       "text": "Button 1",
