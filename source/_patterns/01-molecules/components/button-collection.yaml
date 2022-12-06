@@ -1,12 +1,12 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
-  variant:
-    type: string
-    enum:
-      - centered
-      - compact
-      - inline
+  compact:
+    type: boolean
+  centered:
+    type: boolean
+  inline:
+    type: boolean
   classes:
     type: string
   buttons:

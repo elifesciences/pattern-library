@@ -1,5 +1,5 @@
 {
-  "variant": "centered",
+  "centered": true,
   "buttons": [
     {
       "text": "Button 1",

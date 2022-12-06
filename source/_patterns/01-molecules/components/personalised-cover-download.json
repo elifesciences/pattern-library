@@ -34,6 +34,7 @@
     "heading": "A4"
   },
   "a4ButtonCollection": {
+    "centered": false,
     "buttons": [
       {
         "text": "Download PDF",
@@ -49,6 +50,7 @@
     "heading": "US Letter"
   },
   "letterButtonCollection": {
+    "centered": false,
     "buttons": [
       {
         "text": "Download PDF",
