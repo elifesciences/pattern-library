@@ -134,10 +134,25 @@
     color: $color-text;
   }
 
-  &.icon-share {
+  &.icon {
     @include padding(40, "left");
-    background-image: url("../img/icons/share.svg");
     background-position: 11px;
     background-repeat: no-repeat;
+  }
+
+  &.icon-comment {
+    background-image: url("../img/icons/commenting.svg");
+  }
+
+  &.icon-citation {
+    background-image: url("../img/icons/cite.svg");
+  }
+
+  &.icon-download {
+    background-image: url("../img/icons/download.svg");
+  }
+
+  &.icon-share {
+    background-image: url("../img/icons/share.svg");
   }
 }
