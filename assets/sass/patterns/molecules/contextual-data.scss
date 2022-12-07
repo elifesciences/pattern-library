@@ -32,6 +32,25 @@
     @include padding(0);
     text-align: right;
   }
+
+  &.comma-separator {
+    display: flex;
+    justify-content: center;
+
+    .contextual-data__item {
+      @include padding(0);
+
+      &:before {
+        content: ", ";
+      }
+
+      &:first-child {
+        &:before {
+          content: "";
+        }
+      }
+    }
+  }
 }
 
 .contextual-data__item {

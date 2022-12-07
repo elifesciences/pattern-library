@@ -17,6 +17,10 @@ properties:
             - text
       annotationCount:
         $ref: ../../00-atoms/components/speech-bubble.yaml
+      commaSeparator:
+        type: boolean
+        enum:
+          - true
     minProperties: 1
   citation:
     type: object
