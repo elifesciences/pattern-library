@@ -1,12 +1,69 @@
 @import "../../definitions";
 
-.definition-list--timeline {
+.definition-list__wrapper {
   @include margin(24 0 0);
   @include padding(24, "bottom");
+  display: grid;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     border-bottom: 1px solid $color-text-dividers;
   }
+
+  .definition-list__toggle {
+    @include font-size-and-vertical-height(12, 18);
+    @include padding(0 17 0 10);
+    align-self: end;
+    color: $color-text;
+    font-family: $font-secondary;
+    font-weight: bold;
+    grid-row: 1;
+    height: 48px;
+    justify-self: end;
+    position: relative;
+
+    &:after {
+      @include arrow("up", 5);
+      @include height(5);
+      @include width(5);
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 6px;
+      transform-origin: 50% 50%;
+    }
+
+    &.toggle--closed {
+      align-self: start;
+    }
+
+    &.toggle--closed:after {
+      @include arrow("down", 5);
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include padding(24 17 0 0);
+      grid-row: 2;
+      justify-self: start;
+
+      &.toggle--closed {
+        @include padding(0 17 0 0);
+      }
+
+      &:after {
+        top: 30px;
+      }
+
+      &.toggle--closed:after {
+        top: 6px;
+      }
+    }
+  }
+}
+
+.definition-list--timeline {
+  @include margin(0);
+  grid-row: 1;
+  overflow: hidden;
 
   dt,
   dd {
@@ -17,6 +74,10 @@
   dt {
     @include font-size-and-vertical-height(14, 24);
     @include margin(0, "top");
+
+    &:first-of-type {
+      @include truncate-with-ellipsis();
+    }
   }
 
   dd {

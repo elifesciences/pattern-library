@@ -1,8 +1,13 @@
-<dl class="definition-list{{#variant}} definition-list--{{variant}}{{/variant}}">
-  {{#items}}
-    <dt>{{{term}}}</dt>{{!
-    }}{{#descriptors}}{{!
-      }}<dd>{{{.}}}</dd>{{!
-    }}{{/descriptors}}
-  {{/items}}
-</dl>
+{{#isCollapsible}}
+  <div class="definition-list__wrapper">
+{{/isCollapsible}}
+
+    <dl class="definition-list{{#variant}} definition-list--{{variant}}{{/variant}}"{{#isCollapsible}} data-behaviour="Collapsible"{{/isCollapsible}}>
+      {{#items}}
+        <dt>{{{term}}}</dt>{{!
+        }}{{#descriptors}}{{!
+          }}<dd>{{{.}}}</dd>{{!
+        }}{{/descriptors}}
+      {{/items}}
+    </dl>
+</div>

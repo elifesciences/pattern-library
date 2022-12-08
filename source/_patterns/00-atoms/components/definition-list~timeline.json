@@ -1,5 +1,6 @@
 {
   "variant": "timeline",
+  "isCollapsible": true,
   "items": [
     {
       "term": "Preprint posted",

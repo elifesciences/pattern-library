@@ -6,6 +6,9 @@ properties:
     enum:
       - inline
       - timeline
+  isCollapsible:
+    type: boolean
+    default: false
   items:
     type: array
     minItems: 1

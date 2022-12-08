@@ -18,6 +18,7 @@ Components.Authors = require('./components/Authors');
 Components.ButtonClipboard = require('./components/ButtonClipboard');
 Components.CallToAction = require('./components/CallToAction');
 Components.CheckPMC = require('./components/CheckPMC');
+Components.Collapsible = require('./components/Collapsible');
 Components.DelegateBehaviour = require('./components/DelegateBehaviour');
 Components.FilterPanel = require('./components/FilterPanel');
 Components.FragmentHandler = require('./components/FragmentHandler');
