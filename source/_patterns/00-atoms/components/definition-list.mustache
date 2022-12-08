@@ -1,7 +1,6 @@
 {{#isCollapsible}}
   <div class="definition-list__wrapper">
 {{/isCollapsible}}
-
     <dl class="definition-list{{#variant}} definition-list--{{variant}}{{/variant}}"{{#isCollapsible}} data-behaviour="Collapsible"{{/isCollapsible}}>
       {{#items}}
         <dt>{{{term}}}</dt>{{!
@@ -10,4 +9,6 @@
         }}{{/descriptors}}
       {{/items}}
     </dl>
+{{#isCollapsible}}
 </div>
+{{/isCollapsible}}

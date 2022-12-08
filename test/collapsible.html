@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+<!--
+  Test output
+-->
+<div id="mocha"></div>
+
+<!--
+  Fixture
+-->
+<div class="definition-list__wrapper">
+  <dl class="definition-list" data-behaviour="Collapsible" data-initial-state="closed">
+    <dt>Preprint posted</dt><dd>January 1, 2013</dd>
+    <dt>Received</dt><dd>January 22, 2013</dd>
+    <dt>Accepted</dt><dd>May 28, 2013</dd>
+    <dt>Version of Record published</dt><dd>July 2, 2013 <a href="#"> Go to version</a></dd>
+  </dl>
+</div>
+
+<!--
+  Load test code
+-->
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+<!-- Initialise test suite -->
+<script>mocha.setup('bdd')</script>
+
+<!--
+  Test spec
+-->
+<script src="build/collapsible.spec.js"></script>
+
+<!--
+  Begin!
+-->
+<script>
+  mocha.run();
+</script>
+
+</body>
+</html>

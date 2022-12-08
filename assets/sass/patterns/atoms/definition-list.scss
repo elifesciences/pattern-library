@@ -9,7 +9,7 @@
     border-bottom: 1px solid $color-text-dividers;
   }
 
-  .definition-list__toggle {
+  .toggle {
     @include font-size-and-vertical-height(12, 18);
     @include padding(0 17 0 10);
     align-self: end;
