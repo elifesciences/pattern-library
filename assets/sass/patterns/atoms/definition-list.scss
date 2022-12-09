@@ -17,9 +17,12 @@
     font-family: $font-secondary;
     font-weight: bold;
     grid-row: 1;
-    height: 48px;
     justify-self: end;
     position: relative;
+
+    &:not(.visuallyhidden) {
+      height: 48px;
+    }
 
     &:after {
       @include arrow("up", 5);
