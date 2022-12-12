@@ -30,7 +30,6 @@ module.exports = class Collapsible {
   }
 
   initialise() {
-    this.$elm.classList.add('collapsible--js');
     this.$toggle = this.createToggle();
     this.$collapsibleElements = this.listElements.slice(this.$maxVisibleCollapsedElements, this.listElements.length);
     this.setInitialState();
@@ -87,11 +86,23 @@ module.exports = class Collapsible {
 
   initialiseOnResize() {
     if (!this.viewportNoWiderThan(this.viewportWidthLarge)) {
-      this.$toggle.classList.add('visuallyhidden');
+      if (this.$toggle) {
+        this.$toggle.classList.add('visuallyhidden');
+        this.listElements.forEach(function (elem) {
+          elem.classList.remove('visuallyhidden');
+        });
+      } else {
+        this.$elm.dataset.initialState = 'closed';
+      }
+
       return;
     }
 
-    this.$toggle.classList.remove('visuallyhidden');
+    if (this.$toggle) {
+      this.$toggle.classList.remove('visuallyhidden');
+    } else {
+      this.$toggle = this.createToggle();
+    }
 
     if (this.viewportNoWiderThan(this.viewportWidthMedium) &&
       this.listElements.length > this.maxVisibleCollapsedElementsOnSmallViewport) {
