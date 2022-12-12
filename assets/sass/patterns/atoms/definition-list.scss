@@ -20,10 +20,6 @@
     justify-self: end;
     position: relative;
 
-    &:not(.visuallyhidden) {
-      height: 48px;
-    }
-
     &:after {
       @include arrow("up", 5);
       @include height(5);

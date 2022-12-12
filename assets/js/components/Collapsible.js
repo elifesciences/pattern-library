@@ -138,6 +138,17 @@ module.exports = class Collapsible {
     }
   }
 
+  alignToggle() {
+    let lastElementsHeight = this.listElements.slice(this.listElements.length - 2);
+
+    let toggleHeight = 0;
+    lastElementsHeight.forEach(function (elem) {
+      toggleHeight += elem.offsetHeight;
+    });
+
+    this.$toggle.style.height = toggleHeight + 'px';
+  }
+
   collapse() {
     this.$toggle.classList.add('toggle--closed');
     this.$elm.classList.add('toggle--collapsed');
@@ -147,6 +158,8 @@ module.exports = class Collapsible {
     this.$collapsibleElements.forEach(function (elem) {
       elem.classList.add('visuallyhidden');
     });
+
+    this.alignToggle();
   }
 
   expand() {
@@ -158,6 +171,8 @@ module.exports = class Collapsible {
     this.$collapsibleElements.forEach(function (elem) {
       elem.classList.remove('visuallyhidden');
     });
+
+    this.alignToggle();
   }
 
 };
