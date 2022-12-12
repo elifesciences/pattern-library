@@ -11,7 +11,7 @@ module.exports = class Collapsible {
     this.doc = doc;
 
     this.viewportWidthMedium = 729;
-    this.viewportWidthLarge = 999;
+    this.viewportWidthLarge = 899;
     this.maxVisibleCollapsedElementsOnSmallViewport = 2;
     this.maxVisibleCollapsedElementsOnMediumViewport = 6;
     this.listElements = Array.prototype.slice.call($elm.children);

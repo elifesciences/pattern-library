@@ -53,7 +53,7 @@ describe('A Collapsible', function () {
 
   it('is initially opened if the user agent is Googlebot and the viewport is small', function () {
     $elm.dataset.initialState = 'closed';
-    const windowMock = createWindowMock(600, 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
+    const windowMock = createWindowMock(320, 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
     const collapsibleElement = new Collapsible($elm, windowMock);
     expect(collapsibleElement.$toggle.classList.contains('toggle')).to.be.true;
     expect(collapsibleElement.$toggle.classList.contains('toggle--closed')).to.be.false;
@@ -64,7 +64,7 @@ describe('A Collapsible', function () {
 
   it('is initially opened if the user agent is Googlebot and the viewport is medium', function () {
     $elm.dataset.initialState = 'closed';
-    const windowMock = createWindowMock(999, 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
+    const windowMock = createWindowMock(899, 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
     const collapsibleElement = new Collapsible($elm, windowMock);
     expect(collapsibleElement.$toggle.classList.contains('toggle')).to.be.true;
     expect(collapsibleElement.$toggle.classList.contains('toggle--closed')).to.be.false;
@@ -75,7 +75,7 @@ describe('A Collapsible', function () {
 
   it('is initially closed if the user agent is not Googlebot and the viewport is small', function () {
     $elm.dataset.initialState = 'closed';
-    const windowMock = createWindowMock(600, 'Mozilla/5.0 (compatible)');
+    const windowMock = createWindowMock(320, 'Mozilla/5.0 (compatible)');
     const collapsibleElement = new Collapsible($elm, windowMock);
     expect(collapsibleElement.$toggle.classList.contains('toggle')).to.be.true;
     expect(collapsibleElement.$toggle.classList.contains('toggle--closed')).to.be.true;
@@ -86,7 +86,7 @@ describe('A Collapsible', function () {
 
   it('is initially closed if the user agent is not Googlebot and the viewport is medium', function () {
     $elm.dataset.initialState = 'closed';
-    const windowMock = createWindowMock(999, 'Mozilla/5.0 (compatible)');
+    const windowMock = createWindowMock(899, 'Mozilla/5.0 (compatible)');
     const collapsibleElement = new Collapsible($elm, windowMock);
     expect(collapsibleElement.$toggle.classList.contains('toggle')).to.be.true;
     expect(collapsibleElement.$toggle.classList.contains('toggle--closed')).to.be.true;
@@ -97,7 +97,7 @@ describe('A Collapsible', function () {
 
   it('is initially opened if the referrer is Google and the viewport is small', function () {
     $elm.dataset.initialState = 'closed';
-    const windowMock = createWindowMock(600);
+    const windowMock = createWindowMock(320);
     const documentMock = createDocumentMock('https://www.google.com/');
     const collapsibleElement = new Collapsible($elm, windowMock, documentMock);
     expect(collapsibleElement.$toggle.classList.contains('toggle')).to.be.true;
@@ -109,7 +109,7 @@ describe('A Collapsible', function () {
 
   it('is initially opened if the referrer is Google and the viewport is medium', function () {
     $elm.dataset.initialState = 'closed';
-    const windowMock = createWindowMock(999);
+    const windowMock = createWindowMock(899);
     const documentMock = createDocumentMock('https://www.google.com/');
     const collapsibleElement = new Collapsible($elm, windowMock, documentMock);
     expect(collapsibleElement.$toggle.classList.contains('toggle')).to.be.true;
@@ -121,7 +121,7 @@ describe('A Collapsible', function () {
 
   it('is initially closed if the referrer is not Google and the viewport is small', function () {
     $elm.dataset.initialState = 'closed';
-    const windowMock = createWindowMock(600);
+    const windowMock = createWindowMock(320);
     const documentMock = createDocumentMock('https://www.example.com/');
     const collapsibleElement = new Collapsible($elm, windowMock, documentMock);
     expect(collapsibleElement.$toggle.classList.contains('toggle')).to.be.true;
@@ -133,7 +133,7 @@ describe('A Collapsible', function () {
 
   it('is initially closed if the referrer is not Google and the viewport is medium', function () {
     $elm.dataset.initialState = 'closed';
-    const windowMock = createWindowMock(999);
+    const windowMock = createWindowMock(899);
     const documentMock = createDocumentMock('https://www.example.com/');
     const collapsibleElement = new Collapsible($elm, windowMock, documentMock);
     expect(collapsibleElement.$toggle.classList.contains('toggle')).to.be.true;
@@ -155,7 +155,7 @@ describe('A Collapsible', function () {
 
   it('is initially closed if viewport is small, regardless of initial state', function () {
     let initialStateCandidateValues = ['open', 'shut', 'unavailable', 'null', '', 'false', 'closed'];
-    let windowMock = createWindowMock(600);
+    let windowMock = createWindowMock(320);
     initialStateCandidateValues.forEach((value) => {
       $elm.dataset.initialState = value;
       let collapsibleElement = new Collapsible($elm, windowMock);
@@ -169,7 +169,7 @@ describe('A Collapsible', function () {
 
   it('is initially closed if viewport is medium, regardless of initial state', function () {
     let initialStateCandidateValues = ['open', 'shut', 'unavailable', 'null', '', 'false', 'closed'];
-    let windowMock = createWindowMock(999);
+    let windowMock = createWindowMock(899);
     initialStateCandidateValues.forEach((value) => {
       $elm.dataset.initialState = value;
       let collapsibleElement = new Collapsible($elm, windowMock);
@@ -185,7 +185,7 @@ describe('A Collapsible', function () {
     let eventMock = {
       preventDefault: function () {}
     };
-    let windowMock = createWindowMock(600);
+    let windowMock = createWindowMock(320);
     let collapsibleElement = new Collapsible($elm, windowMock);
     collapsibleElement.$toggle.classList.remove('toggle--closed');
     collapsibleElement.$collapsibleElements.forEach(function (elem) {
@@ -202,7 +202,7 @@ describe('A Collapsible', function () {
     let eventMock = {
       preventDefault: function () {}
     };
-    let windowMock = createWindowMock(999);
+    let windowMock = createWindowMock(899);
     let collapsibleElement = new Collapsible($elm, windowMock);
     collapsibleElement.$toggle.classList.remove('toggle--closed');
     collapsibleElement.$collapsibleElements.forEach(function (elem) {
@@ -219,7 +219,7 @@ describe('A Collapsible', function () {
     let eventMock = {
       preventDefault: function () {}
     };
-    let windowMock = createWindowMock(600);
+    let windowMock = createWindowMock(320);
     let collapsibleElement = new Collapsible($elm, windowMock);
     collapsibleElement.$toggle.classList.add('toggle--closed');
     collapsibleElement.$collapsibleElements.forEach(function (elem) {
@@ -236,7 +236,7 @@ describe('A Collapsible', function () {
     let eventMock = {
       preventDefault: function () {}
     };
-    let windowMock = createWindowMock(999);
+    let windowMock = createWindowMock(899);
     let collapsibleElement = new Collapsible($elm, windowMock);
     collapsibleElement.$toggle.classList.add('toggle--closed');
     collapsibleElement.$collapsibleElements.forEach(function (elem) {
