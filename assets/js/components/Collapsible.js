@@ -100,22 +100,29 @@ module.exports = class Collapsible {
 
     if (this.$toggle) {
       this.$toggle.classList.remove('visuallyhidden');
+      if (this.viewportNoWiderThan(this.viewportWidthMedium) &&
+        this.listElements.length > this.maxVisibleCollapsedElementsOnSmallViewport) {
+        this.$maxVisibleCollapsedElements = this.maxVisibleCollapsedElementsOnSmallViewport;
+        if (!this.$toggle.classList.contains('toggle--closed')) {
+          this.$toggle.innerHTML = 'Hide';
+        } else {
+          this.$toggle.innerHTML = 'History';
+        }
+      } else if (this.viewportNoWiderThan(this.viewportWidthLarge) &&
+        this.listElements.length > this.maxVisibleCollapsedElementsOnMediumViewport) {
+        this.$maxVisibleCollapsedElements = this.maxVisibleCollapsedElementsOnMediumViewport;
+        if (!this.$toggle.classList.contains('toggle--closed')) {
+          this.$toggle.innerHTML = 'Hide history';
+        } else {
+          this.$toggle.innerHTML = 'Show history';
+        }
+      }
+
+      this.$collapsibleElements = this.listElements.slice(this.$maxVisibleCollapsedElements, this.listElements.length);
+      this.toggleContent();
     } else {
-      this.$toggle = this.createToggle();
+      this.initialise();
     }
-
-    if (this.viewportNoWiderThan(this.viewportWidthMedium) &&
-      this.listElements.length > this.maxVisibleCollapsedElementsOnSmallViewport) {
-      this.$maxVisibleCollapsedElements = this.maxVisibleCollapsedElementsOnSmallViewport;
-      this.$toggle.innerHTML = 'History';
-    } else if (this.viewportNoWiderThan(this.viewportWidthLarge) &&
-      this.listElements.length > this.maxVisibleCollapsedElementsOnMediumViewport) {
-      this.$maxVisibleCollapsedElements = this.maxVisibleCollapsedElementsOnMediumViewport;
-      this.$toggle.innerHTML =  'Show history';
-    }
-
-    this.$collapsibleElements = this.listElements.slice(this.$maxVisibleCollapsedElements, this.listElements.length);
-    this.toggleContent();
   }
 
   viewportNoWiderThan(thresholdInPx) {
