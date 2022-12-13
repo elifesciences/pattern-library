@@ -1,0 +1,52 @@
+@import "../../definitions";
+
+.aside {
+  .button-collection {
+    &.button-collection--inline {
+      .button-collection__item {
+        @include margin(12, "top");
+      }
+    }
+  }
+
+  .contextual-data__list {
+    display: flex;
+
+    .contextual-data__item {
+      @include padding(0);
+
+      &:before {
+        content: ", ";
+      }
+
+      &:first-child {
+        &:before {
+          content: "";
+        }
+      }
+    }
+  }
+
+  .status-wrapper {
+    @include padding(24, "top");
+
+    .status-title {
+      @include padding(0, "top");
+      color: $color-primary;
+      line-height: 22px;
+    }
+
+    .status-description {
+      @include font-size-and-vertical-height(14, 20);
+      @include margin(12, "bottom");
+      font-family: $font-secondary;
+    }
+
+    .status-link {
+      @include font-size-and-vertical-height(14, 22);
+      color: $color-primary;
+      font-family: $font-secondary;
+      font-weight: 700;
+    }
+  }
+}

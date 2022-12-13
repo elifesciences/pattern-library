@@ -1,0 +1,24 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  status:
+    type: object
+    properties:
+      title:
+        type: string
+        minLength: 1
+      description:
+        type: string
+        minLength: 1
+      link:
+        type: string
+        minLength: 1
+      url:
+        type: string
+        minLength: 1
+  actionButtons:
+    $ref: ../../01-molecules/components/button-collection.yaml
+  metrics:
+    $ref: ../../01-molecules/components/contextual-data.yaml
+  timeline:
+    $ref: ../../00-atoms/components/definition-list.yaml
