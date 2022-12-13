@@ -45,7 +45,7 @@
       justify-self: start;
 
       &.toggle--closed {
-        @include padding(0 17 0 0);
+        @include padding(0, "top");
       }
 
       &:after {

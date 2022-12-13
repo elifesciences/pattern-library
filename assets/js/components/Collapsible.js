@@ -67,30 +67,20 @@ module.exports = class Collapsible {
     if (this.$elm.dataset.initialState === 'closed') {
       this.$elm.classList.add('toggle--collapsed');
       this.$toggle.classList.add('toggle--closed');
-      this.listElements.forEach(function (elem) {
-        elem.classList.remove('visuallyhidden');
-      });
-
-      this.$collapsibleElements.forEach(function (elem) {
-        elem.classList.add('visuallyhidden');
-      });
+      this.showContent(this.listElements);
+      this.hideContent(this.$collapsibleElements);
     } else {
       // Defensive: remove classes if they turn up here when they shouldn't
       this.$toggle.classList.remove('toggle--closed');
-
-      this.listElements.forEach(function (elem) {
-        elem.classList.remove('visuallyhidden');
-      });
+      this.showContent(this.listElements);
     }
   }
 
   initialiseOnResize() {
     if (!this.viewportNoWiderThan(this.viewportWidthLarge)) {
       if (this.$toggle) {
-        this.$toggle.classList.add('visuallyhidden');
-        this.listElements.forEach(function (elem) {
-          elem.classList.remove('visuallyhidden');
-        });
+        this.$toggle.classList.add('hidden');
+        this.showContent(this.listElements);
       } else {
         this.$elm.dataset.initialState = 'closed';
       }
@@ -99,10 +89,11 @@ module.exports = class Collapsible {
     }
 
     if (this.$toggle) {
-      this.$toggle.classList.remove('visuallyhidden');
+      this.$toggle.classList.remove('hidden');
       if (this.viewportNoWiderThan(this.viewportWidthMedium) &&
         this.listElements.length > this.maxVisibleCollapsedElementsOnSmallViewport) {
         this.$maxVisibleCollapsedElements = this.maxVisibleCollapsedElementsOnSmallViewport;
+        this.alignToggle();
         if (!this.$toggle.classList.contains('toggle--closed')) {
           this.$toggle.innerHTML = 'Hide';
         } else {
@@ -111,6 +102,7 @@ module.exports = class Collapsible {
       } else if (this.viewportNoWiderThan(this.viewportWidthLarge) &&
         this.listElements.length > this.maxVisibleCollapsedElementsOnMediumViewport) {
         this.$maxVisibleCollapsedElements = this.maxVisibleCollapsedElementsOnMediumViewport;
+        this.$toggle.removeAttribute('style');
         if (!this.$toggle.classList.contains('toggle--closed')) {
           this.$toggle.innerHTML = 'Hide history';
         } else {
@@ -149,17 +141,29 @@ module.exports = class Collapsible {
     this.$toggle.style.height = toggleHeight + 'px';
   }
 
+  hideContent(list) {
+    list.forEach(function (elem) {
+      elem.classList.add('visuallyhidden');
+    });
+  }
+
+  showContent(list) {
+    list.forEach(function (elem) {
+      elem.classList.remove('visuallyhidden');
+    });
+  }
+
   collapse() {
     this.$toggle.classList.add('toggle--closed');
     this.$elm.classList.add('toggle--collapsed');
     this.$elm.dataset.initialState = 'closed';
     this.$toggle.innerHTML =
       ((this.$maxVisibleCollapsedElements === this.maxVisibleCollapsedElementsOnMediumViewport) ? 'Show history' : 'History');
-    this.$collapsibleElements.forEach(function (elem) {
-      elem.classList.add('visuallyhidden');
-    });
+    this.hideContent(this.$collapsibleElements);
 
-    this.alignToggle();
+    if (this.viewportNoWiderThan(this.viewportWidthMedium)) {
+      this.alignToggle();
+    }
   }
 
   expand() {
@@ -168,11 +172,11 @@ module.exports = class Collapsible {
     this.$elm.dataset.initialState = 'opened';
     this.$toggle.innerHTML =
       ((this.$maxVisibleCollapsedElements === this.maxVisibleCollapsedElementsOnMediumViewport) ? 'Hide history' : 'Hide');
-    this.$collapsibleElements.forEach(function (elem) {
-      elem.classList.remove('visuallyhidden');
-    });
+    this.showContent(this.$collapsibleElements);
 
-    this.alignToggle();
+    if (this.viewportNoWiderThan(this.viewportWidthMedium)) {
+      this.alignToggle();
+    }
   }
 
 };
