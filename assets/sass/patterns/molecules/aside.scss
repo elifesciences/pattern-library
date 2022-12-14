@@ -1,6 +1,23 @@
 @import "../../definitions";
 
 .aside {
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    .first-column {
+      grid-column: 2/7;
+    }
+
+    .second-column {
+      grid-column: 9/12;
+    }
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    display: block;
+  }
+
   .button-collection {
     &.button-collection--inline {
       .button-collection__item {
