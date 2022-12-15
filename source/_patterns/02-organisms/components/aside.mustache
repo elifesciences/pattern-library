@@ -1,10 +1,8 @@
 <aside class="aside">
-  <div class="first-column">
+  <div class="aside__first-column">
     {{#status}}
       <div class="status-wrapper">
-        {{#status.title}}
-          <h5 class="status-title">{{status.title}}</h5>
-        {{/status.title}}
+        <h5 class="status-title">{{status.title}}</h5>
       
         {{#status.description}}
           <div class="status-description">{{status.description}}</div>
@@ -25,7 +23,7 @@
     {{/metrics}}
   </div>   
   
-  <div class="second-column">
+  <div class="aside__second-column">
     {{#timeline}}
       {{>atoms-definition-list}}
     {{/timeline}}

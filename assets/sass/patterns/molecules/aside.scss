@@ -5,11 +5,11 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 
-    .first-column {
+    .aside__first-column {
       grid-column: 2/7;
     }
 
-    .second-column {
+    .aside__second-column {
       grid-column: 9/12;
     }
   }
@@ -20,6 +20,8 @@
 
   .button-collection {
     &.button-collection--inline {
+      @include margin(12, "top");
+
       .button-collection__item {
         @include margin(12, "top");
       }
