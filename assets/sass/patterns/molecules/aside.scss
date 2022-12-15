@@ -29,7 +29,12 @@
   }
 
   .contextual-data__list {
-    display: flex;
+    border: none;
+    display: none;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: flex;
+    }
 
     .contextual-data__item {
       @include padding(0);
@@ -43,6 +48,14 @@
           content: "";
         }
       }
+    }
+  }
+
+  .definition-list {
+    @include margin(0, "top");
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include margin(24, "top");
     }
   }
 
