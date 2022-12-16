@@ -1,5 +1,5 @@
 <header
-  class="content-header content-header-journal wrapper{{#isMagazine}} page--magazine{{/isMagazine}}{{#header.possible}} content-header--header{{/header.possible}}{{#socialMediaSharers}} content-header--has-social-media-sharers{{/socialMediaSharers}}"
+  class="content-header content-header-journal wrapper{{#isMagazine}} page--magazine{{/isMagazine}}{{#header.possible}} content-header--header{{/header.possible}}{{#socialMediaSharers}} content-header--has-social-media-sharers{{/socialMediaSharers}}{{#hasAside}} content-header__has-aside{{/hasAside}}"
   data-behaviour="ContentHeader">
 
   <div class="content-container-grid{{#isOneColumn}} content-header__one-column{{/isOneColumn}}">
@@ -36,56 +36,61 @@
       {{#authors}}
         {{> molecules-authors}}
       {{/authors}}
-
+      
       <div class="content-header__footer">
 
-        {{#isOneColumn}}
-          <div class="content-header__footer-column-left">
-          {{#contextualData}}
-            {{> molecules-contextual-data }}
-          {{/contextualData}}
-        {{/isOneColumn}}
+        {{{^hasAside}}}
+          {{#isOneColumn}}
+            <div class="content-header__footer-column-left">
+            {{#contextualData}}
+              {{> molecules-contextual-data }}
+            {{/contextualData}}
+          {{/isOneColumn}}
+        {{{/hasAside}}}
 
         {{#meta}}
           <div class="content-header__meta">
             {{> molecules-meta-journal}}
           </div>
         {{/meta}}
-
+        
         {{#doi}}
           {{> atoms-doi}}
         {{/doi}}
+        
+        {{#licence}}
+          <ul class="content-header__icons">
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Open_access"
+                  class="content-header__icon content-header__icon--oa">
+                    <span class="visuallyhidden">Open access</span>
+              </a>
+            </li>
+            <li>
+              <a href="{{licence}}" class="content-header__icon content-header__icon--cc">
+                <span class="visuallyhidden">Copyright information</span>
+              </a>
+            </li>
+          </ul>
+        {{/licence}}
 
-      {{#licence}}
-        <ul class="content-header__icons">
-          <li>
-            <a href="https://en.wikipedia.org/wiki/Open_access"
-                class="content-header__icon content-header__icon--oa">
-                  <span class="visuallyhidden">Open access</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{licence}}" class="content-header__icon content-header__icon--cc">
-              <span class="visuallyhidden">Copyright information</span>
-            </a>
-          </li>
-        </ul>
-      {{/licence}}
-      {{#isOneColumn}}
-        </div>
-      {{/isOneColumn}}
+        {{^hasAside}}
+          {{#isOneColumn}}
+            </div>
+          {{/isOneColumn}}
 
-      {{#isOneColumn}}
-        <div class="content-header__one-column-container">
-          <div data-hypothesis-trigger>
-            <span class="side-section-wrapper__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
-          </div>
-          {{#socialMediaSharers}}
-            {{> atoms-social-media-sharers-journal}}
-          {{/socialMediaSharers}}
-        </div>
-      {{/isOneColumn}}
-
+          {{#isOneColumn}}
+            <div class="content-header__one-column-container">
+              <div data-hypothesis-trigger>
+                <span class="side-section-wrapper__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
+              </div>
+              {{#socialMediaSharers}}
+                {{> atoms-social-media-sharers-journal}}
+              {{/socialMediaSharers}}
+            </div>
+          {{/isOneColumn}}
+        {{/hasAside}}
+        
       </div>
     </div>
     {{^isOneColumn}}
