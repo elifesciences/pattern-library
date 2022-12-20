@@ -1,15 +1,15 @@
 @import "../../definitions";
 
-.aside {
+.content-aside {
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 
-    .aside__first-column {
+    .content-aside__first-column {
       grid-column: 2/7;
     }
 
-    .aside__second-column {
+    .content-aside__second-column {
       grid-column: 9/12;
     }
   }
