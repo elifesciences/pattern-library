@@ -62,6 +62,10 @@
   .content-aside--js {
     display: grid;
 
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: block;
+    }
+
     &.toggle--collapsed dt:first-of-type {
       @include truncate-with-ellipsis();
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -144,6 +148,7 @@
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         @include padding(24 17 0 0);
+        display: inline-block;
         grid-row: 2;
         justify-self: start;
 
