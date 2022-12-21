@@ -51,8 +51,125 @@
     }
   }
 
+  .content-aside__second-column {
+    @include padding(24, "bottom");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      border-bottom: 1px solid $color-text-dividers;
+    }
+  }
+
+  .content-aside--js {
+    display: grid;
+
+    &.toggle--collapsed dt:first-of-type {
+      @include truncate-with-ellipsis();
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        white-space: unset;
+      }
+    }
+
+    & .definition-list dt,
+    & .definition-list dt {
+      &:nth-of-type(n+2) {
+        display: block;
+      }
+    }
+
+    &.toggle--collapsed .definition-list dt,
+    &.toggle--collapsed .definition-list dd {
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-small)}em) {
+        &:nth-of-type(n+2) {
+          display: none;
+        }
+      }
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        &:nth-of-type(-n+3) {
+          display: block;
+        }
+        &:nth-of-type(n+5) {
+          display: none;
+        }
+      }
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+        &:nth-of-type(n+2) {
+          display: block;
+        }
+      }
+    }
+
+    .toggle {
+      @include font-size-and-vertical-height(12, 18);
+      @include padding(0 17 0 10);
+      align-self: end;
+      color: $color-text;
+      font-family: $font-secondary;
+      font-weight: bold;
+      grid-row: 1;
+      justify-self: end;
+      position: relative;
+
+      &:before {
+        content: "Hide";
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          content: "Hide history";
+        }
+      }
+
+      &:after {
+        @include arrow("up", 5);
+        @include height(5);
+        @include width(5);
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 6px;
+        transform-origin: 50% 50%;
+      }
+
+      &.toggle--closed {
+        align-self: start;
+
+        &:before {
+          content: "History";
+          @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+            content: "Show history";
+          }
+        }
+      }
+
+      &.toggle--closed:after {
+        @include arrow("down", 5);
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include padding(24 17 0 0);
+        grid-row: 2;
+        justify-self: start;
+
+        &.toggle--closed {
+          @include padding(0, "top");
+        }
+
+        &:after {
+          top: 30px;
+        }
+
+        &.toggle--closed:after {
+          top: 6px;
+        }
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+        display: none;
+      }
+    }
+  }
+
   .definition-list {
-    @include margin(0, "top");
+    @include margin(0);
+    grid-row: 1;
+    overflow: hidden;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include margin(24, "top");
