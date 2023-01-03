@@ -73,7 +73,8 @@ module.exports = class ContentAside {
 
     if (this.$toggle) {
       if (this.viewportNoWiderThan(this.viewportWidthMedium) &&
-        this.listElements.length > this.maxVisibleCollapsedElementsOnSmallViewport) {
+        this.listElements.length > this.maxVisibleCollapsedElementsOnSmallViewport &&
+        !this.$toggle.classList.contains('toggle--closed')) {
         this.alignToggle();
       } else if (this.viewportNoWiderThan(this.viewportWidthLarge) &&
         this.listElements.length > this.maxVisibleCollapsedElementsOnMediumViewport) {
@@ -110,10 +111,6 @@ module.exports = class ContentAside {
     this.$toggle.classList.add('toggle--closed');
     this.$elm.classList.add('toggle--collapsed');
     this.$elm.dataset.initialState = 'closed';
-
-    if (this.viewportNoWiderThan(this.viewportWidthMedium)) {
-      this.alignToggle();
-    }
   }
 
   expand() {
