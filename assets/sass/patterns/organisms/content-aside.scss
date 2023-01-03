@@ -29,15 +29,14 @@
   }
 
   .contextual-data__list {
+    @include margin(24, "bottom");
+    @include padding(0);
     border: none;
-    display: none;
-
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      display: flex;
-    }
+    display: flex;
 
     .contextual-data__item {
       @include padding(0);
+      @include font-size-and-vertical-height(14);
 
       &:before {
         content: ", ";
