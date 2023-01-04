@@ -1,5 +1,30 @@
 @import "../../definitions";
 
+.button--switch-selector {
+  .js & {
+    &.view-selector {
+      display: inline-block;
+
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        display: none;
+      }
+    }
+
+    & ~ .grid__item .list-heading {
+      display: none;
+
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        display: block;
+      }
+    }
+  }
+
+  .view-selector__link--primary,
+  .view-selector__link--secondary {
+    color: $color-text;
+  }
+}
+
 @mixin local-item-style {
   font-family: $font-secondary;
   @include font-size-and-vertical-height(14);
@@ -9,6 +34,10 @@
 
 .view-selector {
   @include blg-spacing("bottom", "smallish", "margin");
+
+  &.button--switch-selector {
+    display: none;
+  }
 }
 
 .view-selector__list {
