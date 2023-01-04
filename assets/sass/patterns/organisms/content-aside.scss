@@ -28,28 +28,6 @@
     }
   }
 
-  .contextual-data__list {
-    @include margin(24, "bottom");
-    @include padding(0);
-    border: none;
-    display: flex;
-
-    .contextual-data__item {
-      @include padding(0);
-      @include font-size-and-vertical-height(14);
-
-      &:before {
-        content: ", ";
-      }
-
-      &:first-child {
-        &:before {
-          content: "";
-        }
-      }
-    }
-  }
-
   .content-aside__second-column {
     @include padding(24, "bottom");
 
