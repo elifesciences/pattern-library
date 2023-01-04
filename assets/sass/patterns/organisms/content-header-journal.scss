@@ -318,7 +318,9 @@
   }
 
   .content-header__icons {
-    display: inline-block;
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-small)}em) {
+      display: inline-block;
+    }
   }
 
   .content-header-grid-top {
@@ -345,10 +347,6 @@
         @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
           @include margin(24, "bottom");
         }
-
-        .date {
-          @include font-size-and-vertical-height(12, 24);
-        }
       }
     }
 
@@ -362,10 +360,6 @@
 
     .author_list {
       @include padding(12, "bottom");
-    }
-
-    .doi {
-      @include font-size-and-vertical-height(12, 24);
     }
   }
 }
