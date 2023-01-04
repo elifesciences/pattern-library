@@ -9,7 +9,7 @@
         {{/status.description}}
       
         {{#status.link}}
-          <a href="{{status.url}}" class="status-link">{{status.link}}</a>
+          <a href="{{status.link.url}}" class="status-link">{{status.link.name}}</a>
         {{/status.link}}
       </div>
     {{/status}}
@@ -21,12 +21,12 @@
     {{#metrics}}
       {{>molecules-contextual-data}}
     {{/metrics}}
-  </div>   
-  
-  <div class="content-aside__second-column">
-    {{#timeline}}
+  </div>
+
+  {{#timeline}}
+    <div class="content-aside__second-column">
       {{>atoms-definition-list}}
-    {{/timeline}}
-  </div>   
+    </div>
+  {{/timeline}}
 
 </aside>
