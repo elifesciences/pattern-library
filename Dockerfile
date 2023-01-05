@@ -14,7 +14,7 @@ COPY npm-shrinkwrap.json \
     package.json \
     ./
 
-RUN bin/npm install
+RUN npm install
 
 # Assets-Builder - Builds the assets (css, js, etc)
 
