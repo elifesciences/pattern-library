@@ -1,8 +1,13 @@
+ARG node_version
+ARG environment=production
+ARG description=unknown
+ARG selenium_image_suffix
+
 FROM scratch as stage-1
 
 # NPM - Manages the node part of the app
 
-ARG node_version
+
 FROM node:${node_version} as node_builder
 
 COPY npm-shrinkwrap.json \
@@ -26,7 +31,7 @@ COPY .babelrc \
 
 COPY --from=node_builder /node_modules/ node_modules/
 
-ARG environment=production
+ARG environment
 
 COPY assets/fonts/ assets/fonts/
 RUN node_modules/.bin/gulp --environment ${environment} fonts
@@ -51,7 +56,7 @@ COPY source/ source/
 COPY --from=assets-builder-a /srv/pattern-library/source/assets/ source/assets/
 COPY assets/preload.json source/assets/
 
-ARG description=unknown
+ARG description
 LABEL description=${description}
 
 ## Pattern-Library UI and dependencies - Main app output
@@ -113,7 +118,6 @@ USER node
 
 # Selenium - Run tests
 
-ARG selenium_image_suffix=
 FROM selenium/standalone-firefox${selenium_image_suffix}:3.11.0-bismuth
 USER root
 CMD apt-get update \
