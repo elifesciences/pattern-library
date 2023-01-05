@@ -5,7 +5,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-            target: assets_builder_a
+            target: assets_builder
             args:
                 environment: ${ENVIRONMENT}
                 node_version: ${NODE_VERSION}
