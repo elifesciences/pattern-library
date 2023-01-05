@@ -24,7 +24,7 @@ services:
     ci:
         build:
             context: .
-            dockerfile: Dockerfile.test
+            dockerfile: Dockerfile.ci
             args:
                 selenium_image_suffix: ${SELENIUM_IMAGE_SUFFIX}
         ports:
