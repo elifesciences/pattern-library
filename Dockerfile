@@ -75,7 +75,7 @@ RUN composer --no-interaction install --ignore-platform-reqs --classmap-authorit
 
 # UI-Builder - puts together all files needed for UI
 
-FROM assets as assets-ui
+FROM assets_builder_a as assets-ui
 FROM composer as composer-ui
 FROM php:7.0.29-cli-alpine as ui-builder
 
@@ -103,7 +103,7 @@ FROM scratch as stage-3
 
 # CI - Copy tests
 
-FROM assets-builder as ci
+FROM assets_builder_a as ci
 
 COPY .ci/ .ci/
 COPY project_tests.sh smoke_tests.sh wdio.conf.js ./
