@@ -24,7 +24,7 @@ COPY .babelrc \
     gulpfile.js \
     ./
 
-COPY --from=assets_builder /node_modules/ node_modules/
+COPY --from=node_builder /node_modules/ node_modules/
 
 ARG environment=production
 
