@@ -4,37 +4,36 @@ services:
     assets:
         build:
             context: .
-            dockerfile: Dockerfile.assets
+            dockerfile: Dockerfile
+            target: stage-1
             args:
                 environment: ${ENVIRONMENT}
                 node_version: ${NODE_VERSION}
-        volumes:
-            - shared_volume:/srv/pattern-library/
-    pattern-library:
+    ui:
         build:
             context: .
-            dockerfile: Dockerfile.pattern-library
+            dockerfile: Dockerfile
+            target: stage-2
+            args:
+                node_version: ${NODE_VERSION}
         ports:
             - "8889:80"
-        volumes:
-            - shared_volume:/srv/pattern-library/
-            - ./public/:/usr/share/nginx/html/
         depends_on:
             - assets
     ci:
         build:
             context: .
-            dockerfile: Dockerfile.ci
+            dockerfile: Dockerfile
+            target: stage-3
             args:
                 selenium_image_suffix: ${SELENIUM_IMAGE_SUFFIX}
+                node_version: ${NODE_VERSION}
+        command: sleep infinity
         ports:
             - "4444:4444" # WebDriver protocol
             - "5900:5900" # VNC
         volumes:
-            - shared_volume:/srv/pattern-library/
             - /dev/shm:/dev/shm
         depends_on:
             - assets
-            - pattern-library
-volumes:
-  shared_volume:
+            - ui
