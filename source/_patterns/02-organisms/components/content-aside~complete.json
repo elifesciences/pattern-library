@@ -47,15 +47,9 @@
     "variant": "timeline",
     "items": [
       {
-        "term": "Preprint posted",
+        "term": "Version of Record published",
         "descriptors": [
-          "January 1, 2013"
-        ]
-      },
-      {
-        "term": "Received",
-        "descriptors": [
-          "January 22, 2013"
+          "July 2, 2013 <a href=\"#\"> Go to version</a>"
         ]
       },
       {
@@ -65,9 +59,15 @@
         ]
       },
       {
-        "term": "Version of Record published",
+        "term": "Received",
         "descriptors": [
-          "July 2, 2013 <a href=\"#\"> Go to version</a>"
+          "January 22, 2013"
+        ]
+      },
+      {
+        "term": "Preprint posted",
+        "descriptors": [
+          "January 1, 2013"
         ]
       }
     ]
