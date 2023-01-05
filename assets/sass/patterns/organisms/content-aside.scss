@@ -28,6 +28,29 @@
     }
   }
 
+  .contextual-data__list {
+    border: none;
+    display: none;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: flex;
+    }
+
+    .contextual-data__item {
+      @include padding(0);
+
+      &:before {
+        content: ", ";
+      }
+
+      &:first-child {
+        &:before {
+          content: "";
+        }
+      }
+    }
+  }
+
   .content-aside__second-column {
     @include padding(24, "bottom");
 
@@ -36,7 +59,7 @@
     }
   }
 
-  .content-aside--js {
+  .js & .content-aside__second-column {
     display: grid;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -51,7 +74,7 @@
     }
 
     & .definition-list dt,
-    & .definition-list dt {
+    & .definition-list dd {
       &:nth-of-type(n+2) {
         display: block;
       }
@@ -59,11 +82,10 @@
 
     &.toggle--collapsed .definition-list dt,
     &.toggle--collapsed .definition-list dd {
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-small)}em) {
-        &:nth-of-type(n+2) {
-          display: none;
-        }
+      &:nth-of-type(n+2) {
+        display: none;
       }
+
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         &:nth-of-type(-n+3) {
           display: block;
@@ -80,7 +102,7 @@
     }
 
     .toggle {
-      @include font-size-and-vertical-height(12, 18);
+      @include font-size-and-vertical-height(12, 24);
       @include padding(0 17 0 10);
       align-self: end;
       color: $color-text;
@@ -104,23 +126,8 @@
         display: block;
         position: absolute;
         right: 0;
-        top: 6px;
+        top: 9px;
         transform-origin: 50% 50%;
-      }
-
-      &.toggle--closed {
-        align-self: start;
-
-        &:before {
-          content: "History";
-          @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-            content: "Show history";
-          }
-        }
-      }
-
-      &.toggle--closed:after {
-        @include arrow("down", 5);
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
@@ -129,21 +136,38 @@
         grid-row: 2;
         justify-self: start;
 
-        &.toggle--closed {
-          @include padding(0, "top");
-        }
-
         &:after {
-          top: 30px;
-        }
-
-        &.toggle--closed:after {
-          top: 6px;
+          top: 33px;
         }
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
         display: none;
+      }
+    }
+
+    &.toggle--collapsed {
+      .toggle {
+        align-self: start;
+
+        &:before {
+          content: "History";
+          @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+            content: "Show history";
+          }
+        }
+
+        &:after {
+          @include arrow("down", 5);
+        }
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          @include padding(0, "top");
+
+          &:after {
+            top: 9px;
+          }
+        }
       }
     }
   }
