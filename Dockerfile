@@ -93,7 +93,7 @@ RUN php bin/validate && \
 # UI - Output through nginx
 
 FROM ui-builder
-FROM nginx:1.15.0-alpine
+FROM nginx:1.15.0-alpine as ui
 
 COPY --from=ui-builder /public/ /usr/share/nginx/html/
 

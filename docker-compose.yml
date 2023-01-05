@@ -13,7 +13,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-            target: ui-builder
+            target: ui
             args:
                 node_version: ${NODE_VERSION}
         ports:
