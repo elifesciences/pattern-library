@@ -5,6 +5,8 @@ properties:
     type: boolean
   centered:
     type: boolean
+  inline:
+    type: boolean
   classes:
     type: string
   buttons:

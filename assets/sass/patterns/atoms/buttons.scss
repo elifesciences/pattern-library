@@ -116,3 +116,43 @@
     border: 1px solid #2b7306;
   }
 }
+
+.button--action {
+  @include padding(9 20);
+  background-color: $color-text-ui-background-light-gray;
+  border: none;
+  color: $color-text;
+  display: inline-flex;
+  font-weight: 700;
+  height: 40px;
+  line-height: 24px;
+  text-transform: initial;
+
+  &:hover {
+    background-color: $color-text-ui-background-secondary-grey;
+    border: none;
+    color: $color-text;
+  }
+
+  &.icon {
+    @include padding(40, "left");
+    background-position: 11px;
+    background-repeat: no-repeat;
+  }
+
+  &.icon-comment {
+    background-image: url("../img/icons/commenting.svg");
+  }
+
+  &.icon-citation {
+    background-image: url("../img/icons/cite.svg");
+  }
+
+  &.icon-download {
+    background-image: url("../img/icons/download.svg");
+  }
+
+  &.icon-share {
+    background-image: url("../img/icons/share.svg");
+  }
+}

@@ -1,0 +1,32 @@
+<aside class="content-aside">
+  <div class="content-aside__first-column">
+    {{#status}}
+      <div class="status-wrapper">
+        <h5 class="status-title">{{status.title}}</h5>
+      
+        {{#status.description}}
+          <div class="status-description">{{status.description}}</div>
+        {{/status.description}}
+      
+        {{#status.link}}
+          <a href="{{status.link.url}}" class="status-link">{{status.link.name}}</a>
+        {{/status.link}}
+      </div>
+    {{/status}}
+  
+    {{#actionButtons}}
+      {{>molecules-button-collection}}
+    {{/actionButtons}}
+    
+    {{#metrics}}
+      {{>molecules-contextual-data}}
+    {{/metrics}}
+  </div>
+
+  {{#timeline}}
+    <div class="content-aside__second-column">
+      {{>atoms-definition-list}}
+    </div>
+  {{/timeline}}
+
+</aside>
