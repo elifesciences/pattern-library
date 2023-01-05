@@ -103,7 +103,7 @@ FROM scratch as stage-3
 
 # CI - Copy tests
 
-FROM assets-builder
+FROM assets-builder as ci
 
 COPY .ci/ .ci/
 COPY project_tests.sh smoke_tests.sh wdio.conf.js ./
