@@ -8,8 +8,6 @@ ENTRYPOINT bin/mkdir -p test/build && \
 
 USER node
 
-CMD sleep infinity
-
 # Selenium - run tests
 
 FROM selenium/standalone-firefox${selenium_image_suffix}:3.11.0-bismuth

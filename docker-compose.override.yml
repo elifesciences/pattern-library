@@ -15,7 +15,7 @@ services:
             - ./source:/source
             - source_assets:/source/assets
             - public:/public
-    test:
+    ci:
         command: node_modules/.bin/gulp --test-html=${TEST_HTML} tests:watch
         ports:
             - "3000:3000"
