@@ -16,11 +16,7 @@ module.exports = class ContentAside {
     const timelineCount = timeline.querySelectorAll('dt').length;
 
     const toggleContent = () => {
-      if (timeline.parentNode.classList.contains('toggle--collapsed')) {
-        timeline.parentNode.classList.remove('toggle--collapsed');
-      } else {
-        timeline.parentNode.classList.add('toggle--collapsed');
-      }
+      timeline.parentNode.classList.toggle('toggle--collapsed');
     };
 
     const createToggle = () => {
