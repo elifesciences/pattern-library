@@ -1,4 +1,5 @@
 'use strict';
+var utils = require('../libs/elife-utils')();
 
 module.exports = class ContentAside {
 
@@ -27,11 +28,10 @@ module.exports = class ContentAside {
     };
 
     const createToggle = () => {
-      let $link = this.doc.createElement('A');
-      $link.setAttribute('href', '#');
-      $link.classList.add('toggle');
-      timelineParent.appendChild($link);
-      $link.addEventListener('click', toggleContent.bind(this));
+      const link = utils.buildElement('a', ['toggle']);
+      link.setAttribute('href', '#');
+      timelineParent.appendChild(link);
+      link.addEventListener('click', toggleContent.bind(this));
     };
 
     if (timelineCount > maxVisibleCollapsedElementsOnSmallViewport) {
