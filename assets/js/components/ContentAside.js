@@ -7,23 +7,28 @@ module.exports = class ContentAside {
     this.window = _window;
     this.doc = doc;
 
-    this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
+    const timeline = this.$elm.querySelector('.definition-list--timeline');
+
+    if (timeline !== null) {
+      this.prepareTimeline(timeline);
+    }
   }
 
   prepareTimeline(timeline) {
+    const timelineParent = timeline.parentNode;
     const maxVisibleCollapsedElementsOnSmallViewport = 1;
     const maxVisibleCollapsedElementsOnMediumViewport = 3;
     const timelineCount = timeline.querySelectorAll('dt').length;
 
     const toggleContent = () => {
-      timeline.parentNode.classList.toggle('toggle--collapsed');
+      timelineParent.classList.toggle('toggle--collapsed');
     };
 
     const createToggle = () => {
       let $link = this.doc.createElement('A');
       $link.setAttribute('href', '#');
       $link.classList.add('toggle');
-      timeline.parentNode.appendChild($link);
+      timelineParent.appendChild($link);
       $link.addEventListener('click', toggleContent.bind(this));
     };
 
@@ -33,7 +38,7 @@ module.exports = class ContentAside {
     }
 
     if (timelineCount > maxVisibleCollapsedElementsOnMediumViewport) {
-      timeline.parentNode.classList.add('toggle--count-gt-3');
+      timelineParent.classList.add('toggle--count-gt-3');
     }
   }
 };
