@@ -11,26 +11,13 @@ module.exports = class ContentAside {
   }
 
   prepareTimeline(timeline) {
-    const viewportWidthMedium = 729;
-    const viewportWidthLarge = 899;
-    const maxVisibleCollapsedElementsOnSmallViewport = 2;
-    const maxVisibleCollapsedElementsOnMediumViewport = 6;
-    const listElements = Array.prototype.slice.call(timeline.children);
+    const maxVisibleCollapsedElementsOnSmallViewport = 1;
+    const maxVisibleCollapsedElementsOnMediumViewport = 3;
+    const timelineCount = timeline.querySelectorAll('dt').length;
 
-    const viewportNoWiderThan = (thresholdInPx) => this.window.matchMedia('(max-width: ' + thresholdInPx + 'px)').matches;
-
-    const alignToggle = (toggle) => {
-      const elements = timeline.querySelectorAll('dt');
-      const lastElement = elements[elements.length - 1];
-      toggle.style.marginBottom = lastElement.offsetHeight + 'px';
-    };
-
-    const toggleContent = (toggle) => {
+    const toggleContent = () => {
       if (timeline.parentNode.classList.contains('toggle--collapsed')) {
         timeline.parentNode.classList.remove('toggle--collapsed');
-        if (viewportNoWiderThan(viewportWidthMedium)) {
-          alignToggle(toggle);
-        }
       } else {
         timeline.parentNode.classList.add('toggle--collapsed');
       }
@@ -42,15 +29,15 @@ module.exports = class ContentAside {
       $link.classList.add('toggle');
       timeline.parentNode.appendChild($link);
       $link.addEventListener('click', toggleContent.bind(this));
-      return $link;
     };
 
-    if (
-      viewportNoWiderThan(viewportWidthMedium) && listElements.length > maxVisibleCollapsedElementsOnSmallViewport ||
-      viewportNoWiderThan(viewportWidthLarge) && listElements.length > maxVisibleCollapsedElementsOnMediumViewport
-    ) {
-      const toggle = createToggle();
-      toggleContent(toggle);
+    if (timelineCount > maxVisibleCollapsedElementsOnSmallViewport) {
+      createToggle();
+      toggleContent();
+    }
+
+    if (timelineCount > maxVisibleCollapsedElementsOnMediumViewport) {
+      timeline.parentNode.classList.add('toggle--count-gt-3');
     }
   }
 };
