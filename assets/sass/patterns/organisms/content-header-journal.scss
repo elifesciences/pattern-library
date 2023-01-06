@@ -318,6 +318,8 @@
   }
 
   .content-header__icons {
+    vertical-align: middle;
+
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-small)}em) {
       display: inline-block;
     }
