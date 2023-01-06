@@ -1,15 +1,17 @@
-FROM scratch as stage-1
+ARG node_version
+ARG environment=production
+ARG description=unknown
+ARG selenium_image_suffix
 
 # NPM - Manages the node part of the app
 
-ARG node_version
 FROM node:${node_version} as node_builder
 
 COPY npm-shrinkwrap.json \
     package.json \
     ./
 
-RUN bin/npm install
+RUN npm install
 
 # Assets-Builder - Builds the assets (css, js, etc)
 
@@ -24,9 +26,9 @@ COPY .babelrc \
     gulpfile.js \
     ./
 
-COPY --from=assets_builder /node_modules/ node_modules/
+COPY --from=node_builder /node_modules/ node_modules/
 
-ARG environment=production
+ARG environment
 
 COPY assets/fonts/ assets/fonts/
 RUN node_modules/.bin/gulp --environment ${environment} fonts
@@ -42,21 +44,19 @@ RUN node_modules/.bin/gulp --environment ${environment} generateCss
 
 # Assets
 
-FROM assets_builder as assets_builder_a
-FROM tianon/true@sha256:009cce421096698832595ce039aa13fa44327d96beedb84282a69d3dbcf5a81b
+FROM assets_builder
+FROM tianon/true@sha256:009cce421096698832595ce039aa13fa44327d96beedb84282a69d3dbcf5a81b as assets
 
 WORKDIR /srv/pattern-library
 
 COPY source/ source/
-COPY --from=assets-builder-a /srv/pattern-library/source/assets/ source/assets/
+COPY --from=assets_builder /srv/pattern-library/source/assets/ source/assets/
 COPY assets/preload.json source/assets/
 
-ARG description=unknown
+ARG description
 LABEL description=${description}
 
 ## Pattern-Library UI and dependencies - Main app output
-
-FROM scratch as stage-2
 
 # Composer - builds vendor files based on composer.lock
 
@@ -70,25 +70,24 @@ RUN composer --no-interaction install --ignore-platform-reqs --classmap-authorit
 
 # UI-Builder - puts together all files needed for UI
 
-FROM assets as assets-ui
-FROM composer as composer-ui
+FROM composer
+FROM assets
 FROM php:7.0.29-cli-alpine as ui-builder
-
 
 COPY core/styleguide/ public/styleguide/
 COPY core/ core/
 COPY config/ config/
 COPY extras/ extras/
 COPY bin/validate bin/validate
-COPY --from=composer-ui /app/vendor/ vendor/
-COPY --from=assets-ui /srv/pattern-library/source/ source/
+COPY --from=composer /app/vendor/ vendor/
+COPY --from=assets /srv/pattern-library/source/ source/
 RUN php bin/validate && \
     php core/builder.php -g
 
 # UI - Output through nginx
 
 FROM ui-builder
-FROM nginx:1.15.0-alpine
+FROM nginx:1.15.0-alpine as ui
 
 COPY --from=ui-builder /public/ /usr/share/nginx/html/
 
@@ -98,7 +97,7 @@ FROM scratch as stage-3
 
 # CI - Copy tests
 
-FROM assets-builder
+FROM assets_builder as ci
 
 COPY .ci/ .ci/
 COPY project_tests.sh smoke_tests.sh wdio.conf.js ./
@@ -113,7 +112,6 @@ USER node
 
 # Selenium - Run tests
 
-ARG selenium_image_suffix=
 FROM selenium/standalone-firefox${selenium_image_suffix}:3.11.0-bismuth
 USER root
 CMD apt-get update \

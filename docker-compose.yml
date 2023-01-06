@@ -5,7 +5,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-            target: stage-1
+            target: assets_builder
             args:
                 environment: ${ENVIRONMENT}
                 node_version: ${NODE_VERSION}
@@ -13,7 +13,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-            target: stage-2
+            target: ui
             args:
                 node_version: ${NODE_VERSION}
         ports:
@@ -24,7 +24,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-            target: stage-3
+            target: ci
             args:
                 selenium_image_suffix: ${SELENIUM_IMAGE_SUFFIX}
                 node_version: ${NODE_VERSION}
