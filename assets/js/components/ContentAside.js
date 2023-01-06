@@ -7,14 +7,14 @@ module.exports = class ContentAside {
     this.window = _window;
     this.doc = doc;
 
-    const timeline = this.$elm.querySelector('.definition-list--timeline');
-
-    if (timeline !== null) {
-      this.prepareTimeline(timeline);
-    }
+    this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
   }
 
   prepareTimeline(timeline) {
+    if (timeline === null) {
+      return;
+    }
+
     const timelineParent = timeline.parentNode;
     const maxVisibleCollapsedElementsOnSmallViewport = 1;
     const maxVisibleCollapsedElementsOnMediumViewport = 3;
