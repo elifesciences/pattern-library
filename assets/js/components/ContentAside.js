@@ -18,6 +18,8 @@ module.exports = class ContentAside {
     const timelineParent = timeline.parentNode;
     const maxVisibleCollapsedElementsOnSmallViewport = 1;
     const maxVisibleCollapsedElementsOnMediumViewport = 3;
+
+    // As each timeline entry has a dt and dd just count the dt element.
     const timelineCount = timeline.querySelectorAll('dt').length;
 
     const toggleContent = () => {
