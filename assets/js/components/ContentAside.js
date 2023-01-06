@@ -3,55 +3,54 @@
 module.exports = class ContentAside {
 
   constructor($elm, _window = window, doc = document) {
-
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
 
-    this.viewportWidthMedium = 729;
-    this.viewportWidthLarge = 899;
-    this.maxVisibleCollapsedElementsOnSmallViewport = 2;
-    this.maxVisibleCollapsedElementsOnMediumViewport = 6;
-    this.listElements = Array.prototype.slice.call($elm.querySelector('.definition-list--timeline').children);
-
-    if (this.viewportNoWiderThan(this.viewportWidthMedium) &&
-      this.listElements.length > this.maxVisibleCollapsedElementsOnSmallViewport) {
-      this.$toggle = this.createToggle();
-      this.toggleContent();
-    } else if (this.viewportNoWiderThan(this.viewportWidthLarge) &&
-      this.listElements.length > this.maxVisibleCollapsedElementsOnMediumViewport) {
-      this.$toggle = this.createToggle();
-      this.toggleContent();
-    }
+    this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
   }
 
-  createToggle() {
-    let $link = this.doc.createElement('A');
-    $link.setAttribute('href', '#');
-    $link.classList.add('toggle');
-    this.$elm.appendChild($link);
-    $link.addEventListener('click', this.toggleContent.bind(this));
-    return $link;
-  }
+  prepareTimeline(timeline) {
+    const viewportWidthMedium = 729;
+    const viewportWidthLarge = 899;
+    const maxVisibleCollapsedElementsOnSmallViewport = 2;
+    const maxVisibleCollapsedElementsOnMediumViewport = 6;
+    const listElements = Array.prototype.slice.call(timeline.children);
 
-  toggleContent() {
-    if (this.$elm.classList.contains('toggle--collapsed')) {
-      this.$elm.classList.remove('toggle--collapsed');
-      if (this.viewportNoWiderThan(this.viewportWidthMedium)) {
-        this.alignToggle();
+    const viewportNoWiderThan = (thresholdInPx) => this.window.matchMedia('(max-width: ' + thresholdInPx + 'px)').matches;
+
+    const alignToggle = (toggle) => {
+      const elements = timeline.querySelectorAll('dt');
+      const lastElement = elements[elements.length - 1];
+      toggle.style.marginBottom = lastElement.offsetHeight + 'px';
+    };
+
+    const toggleContent = (toggle) => {
+      if (timeline.parentNode.classList.contains('toggle--collapsed')) {
+        timeline.parentNode.classList.remove('toggle--collapsed');
+        if (viewportNoWiderThan(viewportWidthMedium)) {
+          alignToggle(toggle);
+        }
+      } else {
+        timeline.parentNode.classList.add('toggle--collapsed');
       }
-    } else {
-      this.$elm.classList.add('toggle--collapsed');
+    };
+
+    const createToggle = () => {
+      let $link = this.doc.createElement('A');
+      $link.setAttribute('href', '#');
+      $link.classList.add('toggle');
+      timeline.parentNode.appendChild($link);
+      $link.addEventListener('click', toggleContent.bind(this));
+      return $link;
+    };
+
+    if (
+      viewportNoWiderThan(viewportWidthMedium) && listElements.length > maxVisibleCollapsedElementsOnSmallViewport ||
+      viewportNoWiderThan(viewportWidthLarge) && listElements.length > maxVisibleCollapsedElementsOnMediumViewport
+    ) {
+      const toggle = createToggle();
+      toggleContent(toggle);
     }
-  }
-
-  viewportNoWiderThan(thresholdInPx) {
-    return this.window.matchMedia('(max-width: ' + thresholdInPx + 'px)').matches;
-  }
-
-  alignToggle() {
-    let elements = this.$elm.querySelectorAll('.definition-list--timeline dt');
-    let lastElement = elements[elements.length - 1];
-    this.$toggle.style.marginBottom = lastElement.offsetHeight + 'px';
   }
 };

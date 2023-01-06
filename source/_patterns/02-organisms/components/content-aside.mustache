@@ -1,4 +1,4 @@
-<aside class="content-aside">
+<aside class="content-aside"{{#timeline}} data-behaviour="ContentAside"{{/timeline}}>
   <div class="content-aside__first-column">
     {{#status}}
       <div class="status-wrapper">
@@ -25,7 +25,7 @@
   </div>   
 
   {{#timeline}}
-    <div class="content-aside__second-column" data-behaviour="ContentAside">
+    <div class="content-aside__second-column">
       {{>atoms-definition-list}}
     </div>
   {{/timeline}}
