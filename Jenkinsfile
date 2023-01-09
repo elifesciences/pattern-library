@@ -14,12 +14,12 @@ elifePipeline {
         stage 'Build images', {
             def description = EscapeString.forBashSingleQuotes(elifeGitSubrepositorySummary('.'))
             sh "DESCRIPTION='${description}' docker-compose -f docker-compose.yml build"
-            assetsImage = DockerImage(this, "pattern-library_assets", "latest")
+            assetsImage = new DockerImage(this, "pattern-library_assets", "latest")
             elifePullRequestOnly { prNumber ->
                 // push immediately to allow downstream exploration even with automated tests failing
                 assetsImage.renameAndTag("elifesciences/pattern-library_assets","pr-${prNumber}").push()
             }
-            image = DockerImage(this, "pattern-library", "latest")
+            image = new DockerImage(this, "pattern-library", "latest")
         }
 
         stage 'Project tests', {
