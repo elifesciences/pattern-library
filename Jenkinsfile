@@ -13,25 +13,25 @@ elifePipeline {
 
         stage 'Build images', {
             def description = EscapeString.forBashSingleQuotes(elifeGitSubrepositorySummary('.'))
-            sh "IMAGE_TAG=${commit} DESCRIPTION='${description}' docker-compose -f docker-compose.yml build"
-            assetsImage = DockerImage.elifesciences(this, "pattern-library_assets", commit)
+            sh "DESCRIPTION='${description}' docker-compose -f docker-compose.yml build"
+            assetsImage = DockerImage.elifesciences(this, "pattern-library_assets", "latest")
             elifePullRequestOnly { prNumber ->
                 // push immediately to allow downstream exploration even with automated tests failing
                 assetsImage.tag("pr-${prNumber}").push()
             }
-            image = DockerImage.elifesciences(this, "pattern-library", commit)
+            image = DockerImage.elifesciences(this, "pattern-library", "latest")
         }
 
         stage 'Project tests', {
-            sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml up -d"
+            sh "docker-compose -f docker-compose.yml up -d"
             // it is not yet possible to retrieve a JUnit XML log to archive as a test artifact:
             // - the `xunit` formatter mangles the XML outputting also debug statements between tags
             // - the `xunit-file` formatter, which is an external plugin, doesn't seem to work with gulp-mocha-phantomjs
-            dockerComposeProjectTestsParallel('pattern-library', commit)
+            dockerComposeProjectTestsParallel('pattern-library', "latest")
         }
 
         stage 'Smoke tests', {
-            dockerComposeSmokeTests(commit, [
+            dockerComposeSmokeTests("latest", [
                 'services': [
                     'ci': './smoke_tests.sh ui http',
                 ],
@@ -63,7 +63,7 @@ elifePipeline {
 
         elifeMainlineOnly {
             stage 'Push images', {
-                assetsImage.push()
+                assetsImage.tag(commit).push()
                 image.push()
             }
         }
