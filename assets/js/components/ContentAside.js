@@ -24,7 +24,7 @@ module.exports = class ContentAside {
     const timelineCount = timeline.querySelectorAll('dt').length;
 
     const toggleContent = () => {
-      timelineParent.classList.toggle('toggle--collapsed');
+      timelineParent.classList.toggle('toggle--expanded');
     };
 
     const createToggle = () => {
@@ -36,11 +36,10 @@ module.exports = class ContentAside {
 
     if (timelineCount > maxVisibleCollapsedElementsOnSmallViewport) {
       createToggle();
-      toggleContent();
-    }
 
-    if (timelineCount > maxVisibleCollapsedElementsOnMediumViewport) {
-      timelineParent.classList.add('toggle--count-gt-3');
+      if (timelineCount > maxVisibleCollapsedElementsOnMediumViewport) {
+        timelineParent.classList.add('toggle--count-gt-3');
+      }
     }
   }
 };

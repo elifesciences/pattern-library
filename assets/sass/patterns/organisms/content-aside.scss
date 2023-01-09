@@ -66,7 +66,7 @@
       display: block;
     }
 
-    &.toggle--collapsed dt:first-of-type {
+    & dt:first-of-type {
       @include truncate-with-ellipsis();
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         white-space: unset;
@@ -75,13 +75,6 @@
 
     & .definition-list dt,
     & .definition-list dd {
-      &:nth-of-type(n+2) {
-        display: block;
-      }
-    }
-
-    &.toggle--collapsed .definition-list dt,
-    &.toggle--collapsed .definition-list dd {
       &:nth-of-type(n+2) {
         display: none;
       }
@@ -104,7 +97,7 @@
     .toggle {
       @include font-size-and-vertical-height(12, 24);
       @include padding(0 17 0 10);
-      align-self: end;
+      align-self: start;
       color: $color-text;
       font-family: $font-secondary;
       font-weight: bold;
@@ -113,14 +106,14 @@
       position: relative;
 
       &:before {
-        content: "Hide";
+        content: "History";
         @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-          content: "Hide history";
+          content: "Show history";
         }
       }
 
       &:after {
-        @include arrow("up", 5);
+        @include arrow("down", 5);
         @include height(5);
         @include width(5);
         display: block;
@@ -131,13 +124,13 @@
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        @include padding(24 17 0 0);
+        @include padding(0 17 0 0);
         display: inline-block;
         grid-row: 2;
         justify-self: start;
 
         &:after {
-          top: 33px;
+          top: 9px;
         }
       }
 
@@ -146,26 +139,33 @@
       }
     }
 
-    &.toggle--collapsed {
+    &.toggle--expanded .definition-list dt,
+    &.toggle--expanded .definition-list dd {
+      &:nth-of-type(n+2) {
+        display: block;
+      }
+    }
+
+    &.toggle--expanded {
       .toggle {
-        align-self: start;
+        align-self: end;
 
         &:before {
-          content: "History";
+          content: "Hide";
           @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-            content: "Show history";
+            content: "Hide history";
           }
         }
 
         &:after {
-          @include arrow("down", 5);
+          @include arrow("up", 5);
         }
 
         @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-          @include padding(0, "top");
+          @include padding(24, "top");
 
           &:after {
-            top: 9px;
+            top: 33px;
           }
         }
       }
