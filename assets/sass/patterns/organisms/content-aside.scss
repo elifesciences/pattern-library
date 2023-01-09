@@ -104,6 +104,7 @@
       grid-row: 1;
       justify-self: end;
       position: relative;
+      display: none;
 
       &:before {
         content: "History";
@@ -125,7 +126,6 @@
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         @include padding(0 17 0 0);
-        display: inline-block;
         grid-row: 2;
         justify-self: start;
 
@@ -134,8 +134,15 @@
         }
       }
 
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-        display: none;
+      @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium - 1)}em) {
+        display: block;
+      }
+
+      // todo: should display on medium viewports in parent has class of toggle--count-gt-3.
+      .toggle--count-gt-3 & {
+        @media only all and (max-width: #{get-rem-from-px($bkpt-site--wide - 1)}em) {
+          display: block;
+        }
       }
     }
 
@@ -148,6 +155,7 @@
 
     &.toggle--expanded {
       .toggle {
+        @include margin(24, "bottom");
         align-self: end;
 
         &:before {
@@ -162,6 +170,7 @@
         }
 
         @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          @include margin(0, "bottom");
           @include padding(24, "top");
 
           &:after {
