@@ -112,7 +112,7 @@ USER node
 
 # Selenium - Run tests
 
-FROM selenium/standalone-firefox${selenium_image_suffix}:3.11.0-bismuth
+FROM selenium/standalone-firefox${selenium_image_suffix}:3.11.0-bismuth as selenium
 USER root
 CMD apt-get update \
     apt-get install --no-install-recommends -y \

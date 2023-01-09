@@ -26,14 +26,23 @@ services:
             dockerfile: Dockerfile
             target: ci
             args:
+                node_version: ${NODE_VERSION}
+        depends_on:
+            - assets
+            - ui
+            - selenium
+    selenium:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: selenium
+            args:
                 selenium_image_suffix: ${SELENIUM_IMAGE_SUFFIX}
                 node_version: ${NODE_VERSION}
-        command: sleep infinity
         ports:
             - "4444:4444" # WebDriver protocol
             - "5900:5900" # VNC
         volumes:
+            # https://github.com/SeleniumHQ/docker-selenium#running-the-images
             - /dev/shm:/dev/shm
-        depends_on:
-            - assets
-            - ui
+
