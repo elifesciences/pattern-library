@@ -1,13 +1,6 @@
 @import "../../definitions";
 
 .definition-list--timeline {
-  @include margin(24 0 0);
-  @include padding(24, "bottom");
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    border-bottom: 1px solid $color-text-dividers;
-  }
-
   dt,
   dd {
     font-family: $font-secondary;
