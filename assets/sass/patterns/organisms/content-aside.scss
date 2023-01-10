@@ -135,14 +135,13 @@
       }
 
       @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium - 1)}em) {
-        display: block;
+        display: inline-block;
       }
+    }
 
-      // todo: should display on medium viewports in parent has class of toggle--count-gt-3.
-      .toggle--count-gt-3 & {
-        @media only all and (max-width: #{get-rem-from-px($bkpt-site--wide - 1)}em) {
-          display: block;
-        }
+    &.toggle--count-gt-3 .toggle {
+      @media only all and (max-width: #{get-rem-from-px($bkpt-site--wide - 1)}em) {
+        display: inline-block;
       }
     }
 
