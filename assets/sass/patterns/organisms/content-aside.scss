@@ -66,13 +66,6 @@
       display: block;
     }
 
-    & dt:first-of-type {
-      @include truncate-with-ellipsis();
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        white-space: unset;
-      }
-    }
-
     & .definition-list dt,
     & .definition-list dd {
       &:nth-of-type(n+2) {
