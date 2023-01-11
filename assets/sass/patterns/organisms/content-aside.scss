@@ -51,8 +51,132 @@
     }
   }
 
+  .content-aside__second-column {
+    @include padding(24, "bottom");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      border-bottom: 1px solid $color-text-dividers;
+    }
+  }
+
+  .js & .content-aside__second-column {
+    display: grid;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: block;
+    }
+
+    & .definition-list dt,
+    & .definition-list dd {
+      &:nth-of-type(n+2) {
+        display: none;
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        &:nth-of-type(-n+3) {
+          display: block;
+        }
+        &:nth-of-type(n+5) {
+          display: none;
+        }
+      }
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+        &:nth-of-type(n+2) {
+          display: block;
+        }
+      }
+    }
+
+    .toggle {
+      @include font-size-and-vertical-height(12, 24);
+      @include padding(0 17 0 10);
+      align-self: start;
+      color: $color-text;
+      font-family: $font-secondary;
+      font-weight: bold;
+      grid-row: 1;
+      justify-self: end;
+      position: relative;
+      display: none;
+
+      &:before {
+        content: "History";
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          content: "Show history";
+        }
+      }
+
+      &:after {
+        @include arrow("down", 5);
+        @include height(5);
+        @include width(5);
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 9px;
+        transform-origin: 50% 50%;
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include padding(0 17 0 0);
+        grid-row: 2;
+        justify-self: start;
+
+        &:after {
+          top: 9px;
+        }
+      }
+
+      @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium - 1)}em) {
+        display: inline-block;
+      }
+    }
+
+    &.toggle--count-gt-3 .toggle {
+      @media only all and (max-width: #{get-rem-from-px($bkpt-site--wide - 1)}em) {
+        display: inline-block;
+      }
+    }
+
+    &.toggle--expanded .definition-list dt,
+    &.toggle--expanded .definition-list dd {
+      &:nth-of-type(n+2) {
+        display: block;
+      }
+    }
+
+    &.toggle--expanded {
+      .toggle {
+        @include margin(24, "bottom");
+        align-self: end;
+
+        &:before {
+          content: "Hide";
+          @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+            content: "Hide history";
+          }
+        }
+
+        &:after {
+          @include arrow("up", 5);
+        }
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          @include margin(0, "bottom");
+          @include padding(24, "top");
+
+          &:after {
+            top: 33px;
+          }
+        }
+      }
+    }
+  }
+
   .definition-list {
-    @include margin(0, "top");
+    @include margin(0);
+    grid-row: 1;
+    overflow: hidden;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include margin(24, "top");
