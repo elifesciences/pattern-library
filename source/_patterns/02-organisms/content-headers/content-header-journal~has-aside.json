@@ -1,7 +1,7 @@
 {
   "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
   "longTitle": true,
-  "isOneColumn": true,
+  "isOneColumn": false,
   "hasAside": true,
   "header": {
     "possible": true,
