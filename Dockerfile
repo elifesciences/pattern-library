@@ -1,11 +1,11 @@
 ARG node_version
 ARG environment=production
 ARG description=unknown
-ARG selenium_image_suffix
+ARG selenium_image_suffix=
 
 # NPM - Manages the node part of the app
 
-FROM node:${node_version} as node_builder
+FROM node:${node_version} as npm
 
 COPY npm-shrinkwrap.json \
     package.json \
@@ -15,7 +15,7 @@ RUN npm install
 
 # Assets-Builder - Builds the assets (css, js, etc)
 
-FROM node_builder as assets_builder
+FROM npm as assets_builder
 
 WORKDIR /srv/pattern-library
 
@@ -26,7 +26,7 @@ COPY .babelrc \
     gulpfile.js \
     ./
 
-COPY --from=node_builder /node_modules/ node_modules/
+COPY --from=npm /node_modules/ node_modules/
 
 ARG environment
 
@@ -93,8 +93,6 @@ COPY --from=ui-builder /public/ /usr/share/nginx/html/
 
 ## CI/Selenium - Testing part
 
-FROM scratch as stage-3
-
 # CI - Copy tests
 
 FROM assets_builder as ci
@@ -108,15 +106,14 @@ COPY test/ test/
 RUN mkdir -p test/build && \
     chown --recursive node:node test/build
 
-USER node
+USER root
 
 # Selenium - Run tests
 
 FROM selenium/standalone-firefox${selenium_image_suffix}:3.11.0-bismuth as selenium
 USER root
-CMD apt-get update \
-    apt-get install --no-install-recommends -y \
+RUN apt-get update && apt-get install --no-install-recommends -y \
     mplayer \
-    linux-sound-base
-RUN bin/rm -rf /var/lib/apt/lists/*
+    linux-sound-base \
+    && rm -rf /var/lib/apt/lists/*
 USER seluser
