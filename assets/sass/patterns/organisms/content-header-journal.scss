@@ -305,3 +305,63 @@
   display: flex;
   margin-left: auto;
 }
+
+.content-header__has-aside {
+  .content-container-grid {
+    display: block;
+
+    .content-header-grid-top,
+    .content-header-grid__main,
+    .divider {
+      @include margin(0, "left");
+    }
+  }
+
+  .content-header__icons {
+    vertical-align: middle;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-small)}em) {
+      display: inline-block;
+    }
+  }
+
+  .content-header-grid-top {
+    @include margin(12, "bottom");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include margin(24, "bottom");
+    }
+  }
+
+  .content-header-grid__main {
+    .content-header__body {
+      @include margin(24, "bottom");
+    }
+
+    .content-header__footer {
+      .content-header__footer-column-left {
+        display: inline-block;
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+          display: flex;
+        }
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          @include margin(24, "bottom");
+        }
+      }
+    }
+
+    .authors {
+      @include margin(24, "bottom");
+    }
+
+    .author_link_highlight {
+      @include padding(0, "top");
+    }
+
+    .author_list {
+      @include padding(12, "bottom");
+    }
+  }
+}
