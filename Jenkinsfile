@@ -42,7 +42,7 @@ elifePipeline {
             stage 'Deploying to a public URL', {
                 def targetUrl = "https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
                 withCommitStatus(
-                    {
+                    {   sh "docker images ls"
                         def container = sh(script: "docker run -d elifesciences/pattern-library:${commit}", returnStdout: true).trim()
                         sh "mkdir -p public/"
                         sh "docker cp ${container}:/usr/share/nginx/html/. public/"
