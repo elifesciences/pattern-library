@@ -15,12 +15,17 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    display: block;
+    @include margin(0, "right");
+    display: flex;
+    flex-direction: column;
+    max-width: 244px;
+    position: sticky;
+    top: 0;
   }
 
   .button-collection {
     &.button-collection--inline {
-      @include margin(12, "top");
+      @include margin(24 0 36 0);
 
       .button-collection__item {
         @include margin(12, "top");
@@ -119,6 +124,7 @@
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         @include padding(0 17 0 0);
+        @include margin(24, "top");
         grid-row: 2;
         justify-self: start;
 
@@ -163,11 +169,6 @@
 
         @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
           @include margin(0, "bottom");
-          @include padding(24, "top");
-
-          &:after {
-            top: 33px;
-          }
         }
       }
     }
@@ -203,6 +204,71 @@
       color: $color-primary;
       font-family: $font-secondary;
       font-weight: 700;
+    }
+  }
+}
+
+.header-aside-wrapper {
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    display: grid;
+    grid-column-gap: 24px;
+    grid-template-columns: repeat(12, 1fr);
+
+    .content-header.content-header__has-aside {
+      @include padding(36, "right");
+      grid-column: 1/10;
+      grid-row: 2;
+
+      .divider {
+        display: none;
+      }
+    }
+
+    .content-aside {
+      @include margin(0, "top");
+      @include padding(0);
+      grid-column: 10/13;
+      grid-row: 2/4;
+    }
+
+    .content-header .content-container-grid {
+      display: block;
+    }
+  }
+
+  & > .wrapper {
+    @include padding(0);
+  }
+
+  .wrapper--content {
+    @include padding(0, "top");
+    grid-column: 1/10;
+    grid-row: 3;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      .view-selector,
+      .main-content-grid {
+        grid-column: 2/12;
+      }
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      @include padding(36, "right");
+
+      .view-selector,
+      .main-content-grid {
+        grid-column: 1/13;
+      }
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      .view-selector {
+        grid-column: 1/3;
+      }
+
+      .main-content-grid {
+        grid-column: 3/13;
+      }
     }
   }
 }

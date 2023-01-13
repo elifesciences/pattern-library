@@ -1,0 +1,274 @@
+{
+  "contentHeader": {
+    "title": "Aging-related iron deposit prevents the benefits of HRT from late postmenopausal atherosclerosis",
+    "titleLong": true,
+    "hasAside": true,
+    "header": {
+      "possible": true,
+      "hasSubjects": true,
+      "subjects": [
+        {
+          "name": "Cell Biology",
+          "url": "#"
+        },
+        {
+          "name": "Epidemiology and Global Health",
+          "url": "#"
+        }
+      ]
+    },
+    "authors": {
+      "list": [
+        {
+          "url": "#author-3c233bb0",
+          "name": "Lee R Berger"
+        },
+        {
+          "name": "John Hawks"
+        },
+        {
+          "name": "Darryl J de Ruiter"
+        },
+        {
+          "name": "Steven E Churchill"
+        },
+        {
+          "name": "Peter Schmid"
+        },
+        {
+          "name": "Lucas K Delezene"
+        },
+        {
+          "name": "Tracy L Kivell"
+        },
+        {
+          "name": "Heather M Garvin"
+        },
+        {
+          "name": "Scott A Williams"
+        },
+        {
+          "name": "Jeremy M DeSilva"
+        },
+        {
+          "name": "Matthew M Skinner"
+        },
+        {
+          "name": "Charles M Musiba"
+        },
+        {
+          "name": "Noel Cameron"
+        },
+        {
+          "name": "Trenton W Holliday"
+        },
+        {
+          "name": "William Harcourt-Smith"
+        },
+        {
+          "name": "Rebecca R Ackermann"
+        },
+        {
+          "name": "Markus Bastir"
+        },
+        {
+          "name": "Barry Bogin"
+        },
+        {
+          "name": "Debra Bolter"
+        },
+        {
+          "name": "Juliet Brophy"
+        },
+        {
+          "name": "Zachary D Cofran"
+        },
+        {
+          "name": "Kimberly A Congdon"
+        },
+        {
+          "name": "Andrew S Deane"
+        },
+        {
+          "name": "Mana Dembo"
+        },
+        {
+          "name": "Michelle Drapeau"
+        },
+        {
+          "name": "Marina C Elliott"
+        },
+        {
+          "name": "Elen M Feuerriegel"
+        },
+        {
+          "name": "Daniel Garcia-Martinez"
+        },
+        {
+          "name": "David J Green"
+        },
+        {
+          "name": "Alia Gurtov"
+        },
+        {
+          "name": "Joel D Irish"
+        },
+        {
+          "name": "Ashley Kruger"
+        },
+        {
+          "name": "Myra F Laird"
+        },
+        {
+          "name": "Damiano Marchi"
+        },
+        {
+          "name": "Marc R Meyer"
+        },
+        {
+          "name": "Shahed Nalla"
+        },
+        {
+          "name": "Enquye W Negash"
+        },
+        {
+          "name": "Caley M Orr"
+        },
+        {
+          "name": "Davorka Radovcic"
+        },
+        {
+          "name": "Lauren Schroeder"
+        },
+        {
+          "name": "Jill E Scott"
+        },
+        {
+          "name": "Zachary Throckmorton"
+        },
+        {
+          "name": "Caroline VanSickle"
+        },
+        {
+          "name": "Christopher S Walker"
+        },
+        {
+          "name": "Pianpian Wei"
+        },
+        {
+          "name": "Bernhard Zipfel"
+        }
+      ]
+    },
+    "institutions": {
+      "list": [
+        {
+          "name": "University of the Witwatersrand, South Africa"
+        },
+        {
+          "name": "University of Wisconsin-Madison, United States"
+        },
+        {
+          "name": "Texas A&M University, United States"
+        }
+      ]
+    },
+    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "meta": {
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 10,
+          "month": "Sep",
+          "year": 2015
+        },
+        "forMachine": "2015-09-10"
+      }
+    }
+  },
+  "contentAside": {
+    "status": {
+      "title": "Research article",
+      "description": "The author(s) have declared this to be the current/final version.",
+      "link": {
+        "name": "About eLife's process",
+        "url": "#"
+      }
+    },
+    "actionButtons": {
+      "inline": true,
+      "buttons": [
+        {
+          "text": "Download",
+          "classes": "button--default button--action icon icon-download",
+          "path": "#download",
+          "id": "button-action-download"
+        },
+        {
+          "text": "Cite",
+          "classes": "button--default button--action icon icon-citation",
+          "path": "#citation",
+          "id": "button-action-citation"
+        },
+        {
+          "text": "Share",
+          "classes": "button--default button--action icon icon-share",
+          "path": "#share",
+          "id": "button-action-share"
+        },
+        {
+          "text": "Comment",
+          "classes": "button--default button--action icon icon-comment",
+          "path": "#comment"
+        }
+      ]
+    },
+    "metrics": {
+      "metricsData": {
+        "data": [
+          { "text": "<a href=\"#\"><strong>149</strong> views</a>" },
+          { "text": "<strong>5</strong> citations" }
+        ]
+      }
+    },
+    "timeline": {
+      "variant": "timeline",
+      "items": [
+        {
+          "term": "Version of Record published",
+          "descriptors": [
+            "July 2, 2013 <a href=\"#\"> Go to version</a>"
+          ]
+        },
+        {
+          "term": "Accepted",
+          "descriptors": [
+            "May 28, 2013"
+          ]
+        },
+        {
+          "term": "Received",
+          "descriptors": [
+            "January 22, 2013"
+          ]
+        },
+        {
+          "term": "Preprint posted",
+          "descriptors": [
+            "January 1, 2013"
+          ]
+        }
+      ]
+    }
+  },
+  "viewSelector": {
+    "primaryUrl": "#articleUrl",
+    "secondaryUrl": "#figureUrl",
+    "primaryLabel": "Article",
+    "secondaryLabel": "Figures and data"
+  },
+  "modalWindowCitation": null,
+  "modalWindowShare": null,
+  "pl-only-article-section-for-download-links": null,
+  "related": null,
+  "contextualData": null
+}

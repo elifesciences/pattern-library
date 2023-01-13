@@ -297,7 +297,7 @@
 
   .content-header-grid__main & {
     padding-right: 0;
-    grid-column: 1/13;;
+    grid-column: 1/13;
   }
 }
 
@@ -309,6 +309,10 @@
 .content-header__has-aside {
   .content-container-grid {
     display: block;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: grid;
+    }
 
     .content-header-grid-top,
     .content-header-grid__main,
@@ -331,9 +335,23 @@
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       @include margin(24, "bottom");
     }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include margin(12, "bottom");
+    }
   }
 
   .content-header-grid__main {
+    @include margin(24, "bottom");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include margin(36, "bottom");
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      @include padding(0, "right");
+    }
+
     .content-header__body {
       @include margin(24, "bottom");
     }
