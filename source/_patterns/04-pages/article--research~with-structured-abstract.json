@@ -5,8 +5,7 @@
     "title": {
       "homePagePath": "#"
     },
-    "primaryLinks":
-    {
+    "primaryLinks": {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
@@ -42,8 +41,7 @@
       ]
     },
 
-    "secondaryLinks":
-    {
+    "secondaryLinks": {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
@@ -430,7 +428,12 @@
     "sideBySideUrl": "https://lens.elifesciences.org/09560",
     "primaryLabel": "Article",
     "secondaryLabel": "Figures and data",
-    "otherLinks": [{ "name": "Executable code", "url": "#rds" }],
+    "otherLinks": [
+      {
+        "name": "Executable code",
+        "url": "#rds"
+      }
+    ],
     "jumpLinks": {
       "links": [
         {
@@ -587,17 +590,58 @@
     },
     "links": {
       "items": [
-        {"name": "Home", "url": "#", "classes": "hidden-wide"},
-        {"name": "Magazine", "url": "#", "classes": "hidden-wide"},
-        {"name": "Community", "url": "#ins", "classes": "hidden-wide"},
-        {"name": "About", "url": "#abo", "classes": "hidden-wide"},
-        {"name": "Research categories", "url": "#res"},
-        {"name": "Inside eLife", "url": "#", "classes": "end-of-group"},
-        {"name": "Search", "url": "#", "classes": "hidden-wide"},
-        {"name": "Subscribe to alerts", "url": "#", "classes": "end-of-group hidden-wide"},
-        {"name": "Submit your research", "url": "#", "classes": "hidden-wide"},
-        {"name": "Author guide", "url": "#"},
-        {"name": "Reviewer guide", "url": "#"}
+        {
+          "name": "Home",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Magazine",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Community",
+          "url": "#ins",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "About",
+          "url": "#abo",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Research categories",
+          "url": "#res"
+        },
+        {
+          "name": "Inside eLife",
+          "url": "#",
+          "classes": "end-of-group"
+        },
+        {
+          "name": "Search",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Subscribe to alerts",
+          "url": "#",
+          "classes": "end-of-group hidden-wide"
+        },
+        {
+          "name": "Submit your research",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Author guide",
+          "url": "#"
+        },
+        {
+          "name": "Reviewer guide",
+          "url": "#"
+        }
       ]
     },
     "button": {
@@ -1159,32 +1203,34 @@
   ],
 
   "related": {
-    "rootClasses": "teaser--secondary teaser--related",
+    "teaser": {
+      "rootClasses": "teaser--secondary teaser--related",
 
-    "contextLabel": {
-      "list": [
-        {
-          "name": "Built upon by",
-          "url": null
-        }
-      ]
-    },
-    "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
-    "url": "#",
+      "contextLabel": {
+        "list": [
+          {
+            "name": "Built upon by",
+            "url": null
+          }
+        ]
+      },
+      "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
+      "url": "#",
 
-    "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
+      "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
 
-    "footer": {
-      "meta": {
-        "url": "#",
-        "text": "Research advance",
-        "date": {
-          "forHuman": {
-            "dayOfMonth": 16,
-            "month": "Dec",
-            "year": 2015
-          },
-          "forMachine": "2015-12-16"
+      "footer": {
+        "meta": {
+          "url": "#",
+          "text": "Research advance",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 16,
+              "month": "Dec",
+              "year": 2015
+            },
+            "forMachine": "2015-12-16"
+          }
         }
       }
     }

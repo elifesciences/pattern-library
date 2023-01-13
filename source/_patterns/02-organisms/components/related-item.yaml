@@ -1,0 +1,10 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  classes:
+    type: string
+    minLength: 1
+  annotationCount:
+    $ref: ../../00-atoms/components/speech-bubble.yaml
+  teaser:
+    $ref: ../../01-molecules/teasers/teaser.yaml

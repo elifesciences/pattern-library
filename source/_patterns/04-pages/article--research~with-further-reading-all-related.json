@@ -1097,41 +1097,43 @@
   ],
 
   "related": {
-    "rootClasses": "teaser--secondary teaser--related",
+    "teaser": {
+      "rootClasses": "teaser--secondary teaser--related",
 
-    "contextLabel": {
-      "list": [
-        {
-          "name": "Built upon by",
-          "url": null
-        }
-      ]
-    },
-    "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
-    "url": "#",
-
-    "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
-
-    "image": {
-      "fallback": {
-        "defaultPath": "https://unsplash.it/70/70/",
-        "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
-        "altText": "Meaningful alt text here please."
+      "contextLabel": {
+        "list": [
+          {
+            "name": "Built upon by",
+            "url": null
+          }
+        ]
       },
-      "type": "small"
-    },
+      "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
+      "url": "#",
 
-    "footer": {
-      "meta": {
-        "url": "#",
-        "text": "Research advance",
-        "date": {
-          "forHuman": {
-            "dayOfMonth": 16,
-            "month": "Dec",
-            "year": 2015
-          },
-          "forMachine": "2015-12-16"
+      "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
+
+      "image": {
+        "fallback": {
+          "defaultPath": "https://unsplash.it/70/70/",
+          "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
+          "altText": "Meaningful alt text here please."
+        },
+        "type": "small"
+      },
+
+      "footer": {
+        "meta": {
+          "url": "#",
+          "text": "Research advance",
+          "date": {
+            "forHuman": {
+              "dayOfMonth": 16,
+              "month": "Dec",
+              "year": 2015
+            },
+            "forMachine": "2015-12-16"
+          }
         }
       }
     }
