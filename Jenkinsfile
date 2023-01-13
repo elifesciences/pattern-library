@@ -13,21 +13,21 @@ elifePipeline {
 
         stage 'Build images', {
             def description = EscapeString.forBashSingleQuotes(elifeGitSubrepositorySummary('.'))
-            sh "DESCRIPTION='${description}' docker-compose -f docker-compose.yml build"
-            assetsImage = new DockerImage(this, "pattern-library_assets", "latest")
+            sh "IMAGE_TAG=${commit} DESCRIPTION='${description}' docker-compose -f docker-compose.yml build"
+            assetsImage = new DockerImage(this, "pattern-library_assets", commit)
             elifePullRequestOnly { prNumber ->
                 // push immediately to allow downstream exploration even with automated tests failing
                 assetsImage.renameAndTag("elifesciences/pattern-library_assets","pr-${prNumber}").push()
             }
-            image = new DockerImage(this, "pattern-library", "latest")
+            image = new DockerImage(this, "pattern-library", commit)
         }
 
         stage 'Project tests', {
-            sh "docker-compose -f docker-compose.yml up -d"
+            sh "IMAGE_TAG=${commit} docker-compose -f docker-compose.yml up -d"
             // it is not yet possible to retrieve a JUnit XML log to archive as a test artifact:
             // - the `xunit` formatter mangles the XML outputting also debug statements between tags
             // - the `xunit-file` formatter, which is an external plugin, doesn't seem to work with gulp-mocha-phantomjs
-            dockerComposeProjectTestsParallel('pattern-library', "latest")
+            dockerComposeProjectTestsParallel('pattern-library', commit)
         }
 
         stage 'Smoke tests', {

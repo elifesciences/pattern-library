@@ -9,6 +9,7 @@ services:
             args:
                 environment: ${ENVIRONMENT}
                 node_version: ${NODE_VERSION}
+        image: elifesciences/pattern-library_assets:${IMAGE_TAG}
     ui:
         build:
             context: .
@@ -20,6 +21,7 @@ services:
             - "8889:80"
         depends_on:
             - assets
+        image: elifesciences/pattern-library:${IMAGE_TAG}
     ci:
         build:
             context: .
@@ -27,6 +29,7 @@ services:
             target: ci
             args:
                 node_version: ${NODE_VERSION}
+        image: elifesciences/pattern-library_ci:${IMAGE_TAG}
         command: sleep infinity
         depends_on:
             - assets
@@ -42,6 +45,7 @@ services:
             args:
                 selenium_image_suffix: ${SELENIUM_IMAGE_SUFFIX}
                 node_version: ${NODE_VERSION}
+        image: elifescience/pattern-library_selenium:${IMAGE_TAG}
         ports:
             - "4444:4444" # WebDriver protocol
             - "5900:5900" # VNC
