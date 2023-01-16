@@ -270,5 +270,6 @@
   "modalWindowShare": null,
   "pl-only-article-section-for-download-links": null,
   "related": null,
-  "contextualData": null
+  "contextualData": null,
+  "breadcrumb": null
 }
