@@ -2,13 +2,11 @@
   {{#annotationCount}}
     {{> atoms-speech-bubble}}
   {{/annotationCount}}
-  <div>
+  {{#teaser}}
     <ol class="listing-list">
       <li class="listing-list__item">
-        {{#teaser}}
           {{> molecules-teaser }}
-        {{/teaser}}
       </li>
     </ol>
-  </div>
+  {{/teaser}}
 </div>
