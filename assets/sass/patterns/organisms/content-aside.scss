@@ -208,7 +208,7 @@
   }
 }
 
-.header-aside-wrapper {
+.wrapper--content-with-header-and-aside {
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     display: grid;
     grid-column-gap: 24px;
