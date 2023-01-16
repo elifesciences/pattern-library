@@ -218,10 +218,6 @@
       @include padding(36, "right");
       grid-column: 1/10;
       grid-row: 2;
-
-      .divider {
-        display: none;
-      }
     }
 
     .content-aside {
@@ -254,6 +250,7 @@
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       @include padding(36, "right");
+      @include padding(24, "top");
 
       .view-selector,
       .main-content-grid {
@@ -262,6 +259,8 @@
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include padding(36, "top");
+
       .view-selector {
         grid-column: 1/3;
       }
