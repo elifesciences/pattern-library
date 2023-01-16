@@ -444,6 +444,7 @@
   "year": 2016,
 
   "related": {
+    "classes": "grid-secondary-column__item--wide-only",
     "teaser": {
       "rootClasses": "teaser--secondary teaser--related",
 
