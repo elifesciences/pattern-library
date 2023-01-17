@@ -55,7 +55,6 @@
       @include margin(2 0 0 7);
     }
   }
-
 }
 
 @media only screen and (min-width: #{get-rem-from-px(730)}rem) {
@@ -74,8 +73,13 @@
   }
 
   .social-links__list_item {
+    @include padding(0 18 0 0);
+  }
+}
+
+@media only screen and (min-width: #{get-rem-from-px(900)}rem) {
+  .social-links__list_item {
     padding: 0;
     @include blg-spacing("right", "small", "padding");
-
   }
 }
