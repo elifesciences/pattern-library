@@ -1,0 +1,28 @@
+{
+  "inline": true,
+  "buttons": [
+    {
+      "text": "Download",
+      "classes": "button--default button--action icon icon-download",
+      "path": "#download",
+      "id": "button-action-download"
+    },
+    {
+      "text": "Cite",
+      "classes": "button--default button--action icon icon-citation",
+      "path": "#citation",
+      "id": "button-action-citation"
+    },
+    {
+      "text": "Share",
+      "classes": "button--default button--action icon icon-share",
+      "path": "#share",
+      "id": "button-action-share"
+    },
+    {
+      "text": "Comment",
+      "classes": "button--default button--action icon icon-comment",
+      "path": "#comment"
+    }
+  ]
+}

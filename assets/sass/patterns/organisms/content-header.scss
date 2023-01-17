@@ -430,6 +430,12 @@
     order: 0;
   }
 
+  .content-header-journal.content-header__has-aside & {
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small - 1)}em) {
+      @include margin(0);
+    }
+  }
+
   .content-header--image & {
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {

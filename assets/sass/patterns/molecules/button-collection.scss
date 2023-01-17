@@ -12,6 +12,20 @@ $gutter: 10;
     flex-wrap: wrap;
     align-items: center;
   }
+
+  &.button-collection--inline {
+    @include margin(0, "top");
+    display: inline-block;
+
+    .button-collection__item {
+      @include margin(0, "top");
+      @include margin(12, "right");
+
+      &:last-child {
+        @include margin(0, "right");
+      }
+    }
+  }
 }
 
 .button-collection--centered {
