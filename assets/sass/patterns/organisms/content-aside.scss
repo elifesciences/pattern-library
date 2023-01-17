@@ -1,6 +1,12 @@
 @import "../../definitions";
 
 .content-aside {
+  @include padding(24, "top");
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include padding(36, "top");
+  }
+
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -15,6 +21,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include padding(72, "top");
     align-items: flex-end;
     align-self: flex-start;
     display: flex;
@@ -190,18 +197,12 @@
     grid-row: 1;
     overflow: hidden;
 
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       @include margin(24, "top");
     }
   }
 
   .status-wrapper {
-    @include padding(24, "top");
-
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      @include padding(72, "top");
-    }
-
     .status-title {
       @include padding(0, "top");
       color: $color-primary;
@@ -243,7 +244,6 @@
 
     .content-aside {
       @include margin(0, "top");
-      @include padding(0);
       grid-column: 9/13;
       grid-row: 2/4;
     }
