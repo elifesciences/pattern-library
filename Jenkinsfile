@@ -15,11 +15,12 @@ elifePipeline {
             def description = EscapeString.forBashSingleQuotes(elifeGitSubrepositorySummary('.'))
             sh "DESCRIPTION='${description}' docker-compose -f docker-compose.yml build"
             assetsImage = new DockerImage(this, "pattern-library_assets", "latest")
+            image = new DockerImage(this, "pattern-library_ui", "latest")
             elifePullRequestOnly { prNumber ->
                 // push immediately to allow downstream exploration even with automated tests failing
                 assetsImage.renameAndTag("elifesciences/pattern-library_assets","pr-${prNumber}").push()
             }
-            image = new DockerImage(this, "pattern-library", "latest")
+            image.renameAndTag("elifesciences/pattern-library",commit)
         }
 
         stage 'Project tests', {
@@ -43,7 +44,7 @@ elifePipeline {
                 def targetUrl = "https://s3.amazonaws.com/ci-pattern-library/${prNumber}/index.html"
                 withCommitStatus(
                     {
-                        def container = sh(script: "docker run -d pattern-library:latest", returnStdout: true).trim()
+                        def container = sh(script: "docker run -d pattern-library:${commit}", returnStdout: true).trim()
                         sh "mkdir -p public/"
                         sh "docker cp ${container}:/usr/share/nginx/html/. public/"
                         sh "rm public/50x.html"
