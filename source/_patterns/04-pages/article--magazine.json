@@ -444,35 +444,38 @@
   "year": 2016,
 
   "related": {
-    "rootClasses": "teaser--secondary teaser--related",
+    "items": [
+      {
+        "rootClasses": "teaser--secondary teaser--related",
 
-    "contextLabel": {
-      "list": [
-        {
-          "name": "Related research",
-          "url": null
-        }
-      ]
-    },
-    "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
-    "url": "#",
-
-    "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
-
-    "footer": {
-      "meta": {
+        "contextLabel": {
+          "list": [
+            {
+              "name": "Related research",
+              "url": null
+            }
+          ]
+        },
+        "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
         "url": "#",
-        "text": "Research advance",
-        "date": {
-          "forHuman": {
-            "dayOfMonth": 16,
-            "month": "Dec",
-            "year": 2015
-          },
-          "forMachine": "2015-12-16"
+
+        "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
+
+        "footer": {
+          "meta": {
+            "url": "#",
+            "text": "Research advance",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 16,
+                "month": "Dec",
+                "year": 2015
+              },
+              "forMachine": "2015-12-16"
+            }
+          }
         }
       }
-    }
+    ]
   }
-
 }
