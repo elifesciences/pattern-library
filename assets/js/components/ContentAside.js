@@ -23,7 +23,8 @@ module.exports = class ContentAside {
     // As each timeline entry has a dt and dd just count the dt element.
     const timelineCount = timeline.querySelectorAll('dt').length;
 
-    const toggleContent = () => {
+    const toggleContent = (e) => {
+      e.preventDefault();
       timelineParent.classList.toggle('toggle--expanded');
     };
 
