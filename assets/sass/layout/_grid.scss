@@ -87,10 +87,8 @@
 }
 
 .grid-secondary-column__item--wide-only {
-  display: none;
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    display: block;
+  @media only all and (max-width: #{get-rem-from-px($bkpt-site--wide - 1)}em) {
+    display: none;
   }
 }
 
