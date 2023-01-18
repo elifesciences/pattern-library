@@ -35,7 +35,7 @@ module.exports = class ArticleDownloadLinksList {
     this.hideJsExcludes();
     this.$toggler = this.doc.querySelector('.side-section-wrapper__download_link') ||
         this.doc.querySelector('.button-download');
-    
+
     this.moveList();
     this.$toggler.addEventListener('click', this.toggle.bind(this));
   }
