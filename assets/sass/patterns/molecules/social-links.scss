@@ -14,7 +14,20 @@
 .social-links__list_item {
   display: inline-block;
   margin: 0;
-  @include padding(0 5);
+  @include padding(0 10);
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}rem) {
+    @include padding(0 12);
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
+    @include padding(0 18 0 0);
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}rem) {
+    padding: 0;
+    @include blg-spacing("right", "small", "padding");
+  }
 }
 
 .social-links__list_link {
@@ -70,16 +83,5 @@
       justify-content: start;
     }
 
-  }
-
-  .social-links__list_item {
-    @include padding(0 18 0 0);
-  }
-}
-
-@media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}rem) {
-  .social-links__list_item {
-    padding: 0;
-    @include blg-spacing("right", "small", "padding");
   }
 }
