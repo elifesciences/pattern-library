@@ -20,6 +20,7 @@ $gutter: 10;
     .button-collection__item {
       @include margin(0, "top");
       @include margin(12, "right");
+      position: relative;
 
       &:last-child {
         @include margin(0, "right");
