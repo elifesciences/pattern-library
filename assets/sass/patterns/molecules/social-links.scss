@@ -57,7 +57,7 @@
   }
 }
 
-@media only screen and (min-width: #{get-rem-from-px(730)}rem) {
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
   .social-links {
     text-align: left;
   }
@@ -77,7 +77,7 @@
   }
 }
 
-@media only screen and (min-width: #{get-rem-from-px(900)}rem) {
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}rem) {
   .social-links__list_item {
     padding: 0;
     @include blg-spacing("right", "small", "padding");
