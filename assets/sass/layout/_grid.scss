@@ -87,9 +87,11 @@
 }
 
 .grid-secondary-column__item--wide-only {
+
   @media only all and (max-width: #{get-rem-from-px($bkpt-site--wide - 1)}em) {
     display: none;
   }
+
 }
 
 /*
