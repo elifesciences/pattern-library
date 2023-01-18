@@ -70,20 +70,9 @@
           <div class="secondary-column-grid">
 
             {{#related}}
-
               <div class="grid-secondary-column__item grid-secondary-column__item--wide-only">
-                {{# annotationCount}}
-                  {{> atoms-speech-bubble}}
-                {{/annotationCount}}
-                <div>
-                  <ol class="listing-list">
-                    <li class="listing-list__item">
-                      {{> molecules-teaser }}
-                    </li>
-                  </ol>
-                </div>
+                {{> organisms-listing-teasers }}
               </div>
-
             {{/related}}
 
           </div>
