@@ -1,6 +1,6 @@
 {
   "text": "Button action (Download)",
-  "classes": "button--default button--action button-download icon icon-download",
+  "classes": "button--default button--action icon icon-download",
   "path": "#download",
   "id": "button-action-download"
 }
