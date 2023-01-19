@@ -94,10 +94,11 @@
           "type": "big"
         },
         "title": "Which side are you on?",
-        "url": null,
+        "url": "#",
         "secondaryInfo": "The left and right hemispheres of the brain play different roles when encoding information from the same side of the body.",
         "footer": {
           "meta": {
+            "text": "Research article",
             "date": {
               "forHuman": {
                 "dayOfMonth": 1,
