@@ -24,11 +24,23 @@
 
   </div>   
 
-  {{#timeline}}
-    <div class="content-aside__second-column">
-      {{>atoms-definition-list}}
-    </div>
-  {{/timeline}}
+  <div class="content-aside__second-column">
+
+    {{#timeline}}
+      <div class="content-aside__definition-list">
+        {{>atoms-definition-list}}
+      </div>
+    {{/timeline}}
+    
+    {{#relatedItem}}
+      <div class="divider"></div>
+
+      <div class="content-aside__related-item grid-secondary-column__item--wide-only">
+        {{> organisms-listing-teasers }}
+      </div>
+    {{/relatedItem}}
+
+  </div>
 
   <div class="divider"></div>
 

@@ -29,7 +29,7 @@
     position: sticky;
     top: 0;
 
-    .divider {
+    & > .divider {
       display: none;
     }
   }
@@ -77,12 +77,17 @@
   .content-aside__second-column {
     @include padding(24, "bottom");
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      border-bottom: 1px solid $color-text-dividers;
+    .divider {
+      display: none;
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+        display: block;
+        @include padding(24, "top");
+      }
     }
   }
 
-  .js & .content-aside__second-column {
+  .js & .content-aside__definition-list {
     display: grid;
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
