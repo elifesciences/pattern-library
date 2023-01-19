@@ -52,7 +52,7 @@ module.exports = class ArticleDownloadLinksList {
   /**
    * Moves the download links list to be under this.$toggler
    */
-    moveList() {
+  moveList() {
     this.$elm.parentNode.parentNode.classList.add('visuallyhidden');
     this.$toggler.after(this.$elm);
   }
