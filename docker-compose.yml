@@ -9,6 +9,15 @@ services:
             args:
                 environment: ${ENVIRONMENT}
                 node_version: ${NODE_VERSION}
+    ui-builder:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: ui-builder
+            args:
+                node_version: ${NODE_VERSION}
+        depends_on:
+            - assets
     ui:
         build:
             context: .
@@ -20,6 +29,7 @@ services:
             - "8889:80"
         depends_on:
             - assets
+            - ui-builder
     ci:
         build:
             context: .

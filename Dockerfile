@@ -44,7 +44,6 @@ RUN node_modules/.bin/gulp --environment ${environment} generateCss
 
 # Assets
 
-FROM assets_builder
 FROM tianon/true@sha256:009cce421096698832595ce039aa13fa44327d96beedb84282a69d3dbcf5a81b as assets
 
 WORKDIR /srv/pattern-library
@@ -70,8 +69,6 @@ RUN composer --no-interaction install --ignore-platform-reqs --classmap-authorit
 
 # UI-Builder - puts together all files needed for UI
 
-FROM composer
-FROM assets
 FROM php:7.0.29-cli-alpine as ui-builder
 
 COPY core/styleguide/ public/styleguide/
@@ -86,7 +83,6 @@ RUN php bin/validate && \
 
 # UI - Output through nginx
 
-FROM ui-builder
 FROM nginx:1.15.0-alpine as ui
 
 COPY --from=ui-builder /public/ /usr/share/nginx/html/
