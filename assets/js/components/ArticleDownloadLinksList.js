@@ -14,12 +14,17 @@ module.exports = class ArticleDownloadLinksList {
     this.doc = doc;
     this.$elm = $elm;
 
-    this.$sideSectionWrapper = this.doc.querySelector('.side-section-wrapper__list');
-    if (!this.$sideSectionWrapper) {
+    // TODO: Remove all conditions for class selector when we use aside component in all pages
+    this.$buttonWrapper = this.doc.querySelector('.side-section-wrapper__list') ||
+        this.doc.querySelector('.button-collection--inline');
+
+    if (!this.$buttonWrapper) {
       return;
     }
 
-    this.$downloadLink = this.$sideSectionWrapper.querySelector('.side-section-wrapper__download_link');
+    this.$downloadLink = this.$buttonWrapper.querySelector('.side-section-wrapper__download_link') ||
+        this.doc.getElementById('button-action-download');
+
     if (!this.$downloadLink) {
       return;
     }
@@ -29,8 +34,10 @@ module.exports = class ArticleDownloadLinksList {
     this.$elm.classList.add('visuallyhidden');
     this.$elm.setAttribute('aria-expanded', 'false');
     this.hideJsExcludes();
+    this.$toggler = this.doc.querySelector('.side-section-wrapper__download_link') ||
+        this.doc.getElementById('button-action-download');
+
     this.moveList();
-    this.$toggler = this.doc.querySelector('.side-section-wrapper__download_link');
     this.$toggler.addEventListener('click', this.toggle.bind(this));
   }
 
@@ -44,12 +51,11 @@ module.exports = class ArticleDownloadLinksList {
   }
 
   /**
-   * Moves the download links list to be by the icon this.$toggler
+   * Moves the download links list to be under this.$toggler
    */
   moveList() {
-    let $followingSibling = this.$downloadLink.nextElementSibling;
     this.$elm.parentNode.parentNode.classList.add('visuallyhidden');
-    this.$sideSectionWrapper.insertBefore(this.$elm, $followingSibling);
+    this.$toggler.after(this.$elm);
   }
 
   /**

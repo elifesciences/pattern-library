@@ -39,6 +39,9 @@
     }
   }
 
+  .content-aside__related-item & {
+    @include font-size-and-vertical-height(14, 32);
+  }
 }
 
 .teaser__context_label_item {
@@ -96,6 +99,9 @@
   @include blg-spacing("bottom", "extra-small", "margin");
   @include blg-spacing("top", "extra-extra-small", "margin");
 
+  .content-aside__related-item & {
+    @include font-size-and-vertical-height(14, 22);
+  }
 }
 
 .teaser__body {
@@ -168,6 +174,11 @@
     }
   }
 
+  .content-aside__related-item & {
+    .teaser__header_text {
+      @include font-size-and-vertical-height(16, 22);
+    }
+  }
 }
 
 .teaser__picture {
@@ -193,6 +204,16 @@
 .teaser__picture--link {
   @media only all and (min-width: 900px) and (max-width: 1199px) {
     display: none;
+  }
+
+  .content-aside__related-item & {
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      display: inline;
+    }
+
+    .teaser__picture img {
+      height: 140px;
+    }
   }
 }
 
