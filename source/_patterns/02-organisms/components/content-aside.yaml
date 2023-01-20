@@ -20,3 +20,5 @@ properties:
     $ref: ../../01-molecules/components/contextual-data.yaml
   timeline:
     $ref: ../../00-atoms/components/definition-list.yaml
+  related:
+    $ref: ../../02-organisms/components/listing-teasers.yaml
