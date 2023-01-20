@@ -14,6 +14,7 @@ module.exports = class ArticleDownloadLinksList {
     this.doc = doc;
     this.$elm = $elm;
 
+    // TODO: Remove all conditions for class selector when we use aside component in all pages
     this.$buttonWrapper = this.doc.querySelector('.side-section-wrapper__list') ||
         this.doc.querySelector('.button-collection--inline');
 
