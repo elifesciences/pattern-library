@@ -259,7 +259,7 @@
         }
       ]
     },
-    "relatedItem": {
+    "related": {
       "items": [
         {
           "rootClasses": "teaser--secondary teaser--related",
