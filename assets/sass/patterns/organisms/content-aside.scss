@@ -84,6 +84,15 @@
     }
   }
 
+  &.content-aside__sticky {
+    @include margin(-20, "right");
+
+    .content-aside__first-column,
+    .content-aside__second-column {
+      @include margin(5, "right");
+    }
+  }
+
   .content-aside__second-column {
     @include padding(24, "bottom");
 
