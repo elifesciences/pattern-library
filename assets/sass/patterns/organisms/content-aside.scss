@@ -30,6 +30,18 @@
     & > .divider {
       display: none;
     }
+
+    &.content-aside__sticky {
+      @include padding(24, "top");
+      max-height: 100vh;
+      overflow-y: scroll;
+      position: sticky;
+      top: 0;
+    }
+
+    .teaser {
+      @include margin(0, "bottom");
+    }
   }
 
   .button-collection {
@@ -68,12 +80,16 @@
   .content-aside__first-column,
   .content-aside__second-column {
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      width: 244px;
+      max-width: 244px;
     }
   }
 
   .content-aside__second-column {
     @include padding(24, "bottom");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      @include padding(0, "bottom");
+    }
 
     .divider {
       display: none;
@@ -246,7 +262,6 @@
     }
 
     .content-aside {
-      @include margin(0, "top");
       grid-column: 9/13;
       grid-row: 2/4;
     }
