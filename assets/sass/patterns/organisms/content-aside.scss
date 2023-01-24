@@ -34,7 +34,7 @@
     &.content-aside__sticky {
       @include padding(24, "top");
       max-height: 100vh;
-      overflow-y: scroll;
+      overflow-y: auto;
       position: sticky;
       top: 0;
     }
