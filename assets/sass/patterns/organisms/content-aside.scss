@@ -32,7 +32,6 @@
     }
 
     &.content-aside__sticky {
-      @include padding(72, "top");
       max-height: 100vh;
       overflow-y: auto;
       position: sticky;
