@@ -107,6 +107,10 @@
       grid-column: 2/12;
       padding-right: 0;
     }
+
+    .wrapper--content-with-header-and-aside & {
+      grid-column: 2/12;
+    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
