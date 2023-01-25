@@ -79,7 +79,7 @@
   .content-aside__first-column,
   .content-aside__second-column {
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-      max-width: 244px;
+      width: 244px;
     }
   }
 
