@@ -80,12 +80,22 @@ module.exports = class ContentAside {
   }
 
   handleScrolling() {
-    this.handlePositioning();
-  }
-
-  handlePositioning() {
     if (!this.$navDetect) {
       return;
+    }
+
+    this.asidePaddingRight = 0;
+
+    if (this.isViewportWideWithContentAside()) {
+      this.asidePaddingRight = 4;
+
+      // Detect aside scollbar width
+      this.$elm.classList.add(this.cssStickyClassName);
+      this.scrollbarWidth = this.$elm.offsetWidth - this.$elm.clientWidth;
+      this.$elm.classList.remove(this.cssStickyClassName);
+
+      this.$elm.style.marginRight = (this.scrollbarWidth * -1) + 'px';
+      this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
     }
 
     let bottomOfNav = this.$navDetect.getBoundingClientRect().bottom;
@@ -96,6 +106,7 @@ module.exports = class ContentAside {
       // If Contextual Data shows on the screen then remove sticky aside
       if (bottomOfNav > 0) {
         this.$elm.classList.remove(this.cssStickyClassName);
+        this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
         return;
       }
 
@@ -120,6 +131,7 @@ module.exports = class ContentAside {
     if (bottomOfNav < 0) {
       this.$elm.classList.add(this.cssStickyClassName);
       this.$elm.style.top = '0px';
+      this.$elm.style.paddingRight = this.asidePaddingRight + 'px';
     }
   }
 
