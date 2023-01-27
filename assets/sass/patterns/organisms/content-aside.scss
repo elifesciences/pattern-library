@@ -30,6 +30,17 @@
     & > .divider {
       display: none;
     }
+
+    &.content-aside__sticky {
+      max-height: 100vh;
+      overflow-y: auto;
+      position: sticky;
+      top: 0;
+    }
+
+    .teaser {
+      @include margin(0, "bottom");
+    }
   }
 
   .button-collection {
@@ -82,6 +93,10 @@
 
   .content-aside__second-column {
     @include padding(24, "bottom");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      @include padding(0, "bottom");
+    }
 
     .divider {
       display: none;
@@ -253,7 +268,6 @@
     }
 
     .content-aside {
-      @include margin(0, "top");
       grid-column: 9/13;
       grid-row: 2/4;
     }

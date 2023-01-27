@@ -191,6 +191,10 @@
     overflow: auto;
     position: fixed;
     top: 0;
+
+    .wrapper--content-with-header-and-aside & {
+      @include padding(72, "top");
+    }
   }
 
 }
