@@ -94,6 +94,14 @@
 
 }
 
+.grid-secondary-column__item--extended-wide-only {
+  display: none;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+    display: block;
+  }
+}
+
 /*
  *  Wrapper class. A class for constraining the content to the max-site-width and also applies the side padding.
  */
