@@ -317,7 +317,6 @@
       @include padding(36, "top");
 
       .view-selector {
-        @include margin(20, "left");
         grid-column: 1/3;
       }
 
