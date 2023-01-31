@@ -26,6 +26,7 @@
     align-self: flex-start;
     display: flex;
     flex-direction: column;
+    z-index: 5;
 
     & > .divider {
       display: none;
