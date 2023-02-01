@@ -47,8 +47,13 @@
 }
 
 .content-header__top {
-  @include margin($content-header-padding * 2, "top");
+  @include margin($content-header-padding / 2, "top");
   text-align: left;
+
+  & ~ .content-header__body {
+    @include margin($content-header-padding, "top");
+    @include margin($content-header-padding * 2, "bottom");
+  }
 }
 
 .content-header__body {
