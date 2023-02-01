@@ -163,6 +163,18 @@
       "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
       "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
       "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+    },
+    "breadcrumb": {
+      "items": [
+        {
+          "url": "",
+          "name": "About"
+        },
+        {
+          "url": "",
+          "name": "Publishing and peer review"
+        }
+      ]
     }
   },
 

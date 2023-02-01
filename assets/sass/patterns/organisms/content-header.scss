@@ -46,6 +46,11 @@
   @include padding($content-header-image-credit-height, "bottom");
 }
 
+.content-header__top {
+  @include margin($content-header-padding * 2, "top");
+  text-align: left;
+}
+
 .content-header__body {
   @include margin($content-header-padding * 2, "top");
   @include margin($content-header-padding, "bottom");

@@ -26,6 +26,8 @@ properties:
   impactStatement:
     type: string
     minLength: 1
+  breadcrumb:
+    $ref: ../../00-atoms/components/breadcrumb.yaml
   header:
     type: object
     properties:
