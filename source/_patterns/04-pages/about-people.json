@@ -156,8 +156,8 @@
   },
 
   "pageAboutElife": {
-    "title": "About eLife",
-    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris.",
+    "title": "Our mission",
+    "impactStatement": "eLife is committed to bringing about real change in the way the results of research are reviewed and communicated.",
     "socialMediaSharers": {
       "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
       "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
@@ -173,7 +173,7 @@
         },
         {
           "url": "",
-          "name": "Publishing and peer review"
+          "name": "People"
         }
       ]
     }
