@@ -16,6 +16,7 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     @include margin(48, "bottom");
+    @include padding(24, "top");
   }
 }
 
