@@ -11,11 +11,10 @@
   "breadcrumb": {
     "items": [
       {
-        "url": "",
+        "url": "#",
         "name": "About"
       },
       {
-        "url": "",
         "name": "People"
       }
     ]

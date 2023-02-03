@@ -126,11 +126,11 @@
   "breadcrumb": {
     "items": [
       {
-        "url": "",
+        "url": "#",
         "name": "Magazine"
       },
       {
-        "url": "",
+        "url": "#",
         "name": "Digest"
       }
     ]
