@@ -21,7 +21,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-    @include padding(72, "top");
+    @include padding(62, "top");
     align-items: flex-end;
     align-self: flex-start;
     display: flex;
@@ -53,6 +53,7 @@
       }
 
       @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+        @include margin(0, "top");
         max-width: none;
       }
 
@@ -60,6 +61,10 @@
         @include margin(12, "top");
       }
     }
+  }
+
+  .contextual-data {
+    border: none;
   }
 
   .contextual-data__list {
@@ -104,7 +109,6 @@
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
         display: block;
-        @include padding(24, "top");
       }
     }
   }
@@ -226,12 +230,16 @@
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
       @include margin(24, "top");
+      @include padding(24, "bottom");
     }
   }
 
   .status-wrapper {
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+      @include margin(24, "bottom");
+    }
+
     .status-title {
-      @include padding(0, "top");
       color: $color-primary;
       line-height: 22px;
     }

@@ -10,6 +10,7 @@ module.exports = class ContentAside {
     this.mainTarget = this.doc.querySelector('.main');
 
     this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
+    this.setAsideTopPadding();
     this.createScrollabeAside();
   }
 
@@ -44,6 +45,20 @@ module.exports = class ContentAside {
         timelineParent.classList.add('toggle--count-gt-3');
       }
     }
+  }
+
+  setAsideTopPadding() {
+    this.contentHeaderGridTopElement = this.doc.querySelector('.content-header-grid-top');
+    if (!this.contentHeaderGridTopElement) {
+      return;
+    }
+
+    this.contentHeaderGridTopHeight = this.contentHeaderGridTopElement.offsetHeight;
+    this.contentHeaderGridStyle = this.window.getComputedStyle(this.contentHeaderGridTopElement);
+    this.contentHeaderGridMarginTop = parseInt(this.contentHeaderGridStyle.marginTop);
+    this.contentHeaderGridMarginBottom = parseInt(this.contentHeaderGridStyle.marginBottom);
+    this.$elm.style.paddingTop = this.contentHeaderGridTopHeight +
+      this.contentHeaderGridMarginTop + this.contentHeaderGridMarginBottom + 'px';
   }
 
   createScrollabeAside() {
@@ -96,6 +111,7 @@ module.exports = class ContentAside {
 
       this.$elm.style.marginRight = (this.scrollbarWidth * -1) + 'px';
       this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
+      this.setAsideTopPadding();
     }
 
     let bottomOfNav = this.$navDetect.getBoundingClientRect().bottom;
@@ -131,6 +147,7 @@ module.exports = class ContentAside {
     if (bottomOfNav < 0) {
       this.$elm.classList.add(this.cssStickyClassName);
       this.$elm.style.top = '0px';
+      this.$elm.style.paddingTop = '60px';
       this.$elm.style.paddingRight = this.asidePaddingRight + 'px';
     }
   }
