@@ -151,11 +151,11 @@
   "breadcrumb": {
     "items": [
       {
-        "url": "",
+        "url": "#",
         "name": "Magazine"
       },
       {
-        "url": "",
+        "url": "#",
         "name": "Insight"
       }
     ]
@@ -178,7 +178,7 @@
   "breadcrumb": {
     "items": [
       {
-        "url": "",
+        "url": "#",
         "name": "Insight"
       }
     ]

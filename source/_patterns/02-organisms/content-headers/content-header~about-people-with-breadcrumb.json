@@ -1,0 +1,22 @@
+{
+  "title": "Our mission",
+  "impactStatement": "eLife is committed to bringing about real change in the way the results of research are reviewed and communicated.",
+  "socialMediaSharers": {
+    "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "linkedInUrl": "https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+  },
+  "breadcrumb": {
+    "items": [
+      {
+        "url": "#",
+        "name": "About"
+      },
+      {
+        "name": "People"
+      }
+    ]
+  }
+}
