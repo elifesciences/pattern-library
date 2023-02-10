@@ -68,7 +68,7 @@ module.exports = class ContentAside {
 
     this.isScrollingHandled = false;
     this.cssStickyClassName = 'content-aside__sticky';
-    this.$navDetect = this.doc.querySelector('.site-header');
+    this.$contentHeaderDetect = this.doc.querySelector('.content-header-grid-top');
 
     const scrollingHandler = utils.throttle(() => {
       this.handleScrolling();
@@ -95,7 +95,7 @@ module.exports = class ContentAside {
   }
 
   handleScrolling() {
-    if (!this.$navDetect) {
+    if (!this.$contentHeaderDetect) {
       return;
     }
 
@@ -114,7 +114,7 @@ module.exports = class ContentAside {
       this.setAsideTopPadding();
     }
 
-    let bottomOfNav = this.$navDetect.getBoundingClientRect().bottom;
+    let bottomOfNav = this.$contentHeaderDetect.getBoundingClientRect().top;
 
     // If it's position is sticky
     if (this.$elm.classList.contains(this.cssStickyClassName)) {
