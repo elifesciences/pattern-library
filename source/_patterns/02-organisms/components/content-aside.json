@@ -1,5 +1,10 @@
 {
-  "status": {
-    "title": "[Do not use this base pattern directly: see the following variants of this pattern for usage]"
+  "actionButtons": {
+    "buttons": [
+      {
+        "text": "[Do not use this base pattern directly: see the following variants of this pattern for usage]",
+        "path": "#download"
+      }
+    ]
   }
 }
