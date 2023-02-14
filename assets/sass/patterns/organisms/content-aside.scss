@@ -21,7 +21,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-    @include padding(62, "top");
+    @include padding(76, "top");
     align-items: flex-end;
     align-self: flex-start;
     display: flex;
