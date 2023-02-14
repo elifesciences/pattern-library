@@ -26,6 +26,12 @@ describe('A ContentAside Component', function () {
           matches: true
         }
       },
+      getComputedStyle: function() {
+        return {
+          marginTop: '24px',
+          marginBottom: '12px'
+        }
+      }
     };
 
     let _contentAside = new ContentAside($elm, windowMock);
@@ -44,8 +50,8 @@ describe('A ContentAside Component', function () {
 
   it('is removed when scrolling would cause content aside to overlay following layout elements', function () {
     // This must be smaller than $elm.offsetHeight of the object under test
-    let fakeBottomOfNavEl = -20;
-    let fakeBottomOfMainEl = 20;
+    let fakeBottomOfContentHeaderTopEl = -100;
+    let fakeBottomOfMainEl = 100;
     let windowMock = {
       addEventListener: function () {
       },
@@ -53,14 +59,20 @@ describe('A ContentAside Component', function () {
         return {
           matches: true
         }
+      },
+      getComputedStyle: function() {
+        return {
+          marginTop: '24px',
+          marginBottom: '12px'
+        }
       }
     };
 
     let _contentAside = new ContentAside($elm, windowMock, document);
-    _contentAside.$navDetect = {
+    _contentAside.$contentHeaderTop = {
       getBoundingClientRect: function () {
         return {
-          bottom: fakeBottomOfNavEl
+          bottom: fakeBottomOfContentHeaderTopEl
         };
       }
     };
@@ -71,7 +83,7 @@ describe('A ContentAside Component', function () {
         };
       }
     };
-    _contentAside.elmYOffset = 20;
+    _contentAside.elmYOffset = 100;
     // Prerequisite for the test to be valid
     expect(fakeBottomOfMainEl).to.be.below(_contentAside.$elm.offsetHeight);
 

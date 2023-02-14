@@ -46,14 +46,13 @@
 
   .button-collection {
     &.button-collection--inline {
-      @include margin(24 0 36 0);
+      @include margin(36, "bottom");
 
       @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         max-width: 270px;
       }
 
       @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-        @include margin(0, "top");
         max-width: none;
       }
 
@@ -235,9 +234,7 @@
   }
 
   .status-wrapper {
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-      @include margin(24, "bottom");
-    }
+     @include margin(24, "bottom");
 
     .status-title {
       color: $color-primary;

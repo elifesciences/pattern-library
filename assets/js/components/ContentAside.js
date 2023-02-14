@@ -48,17 +48,19 @@ module.exports = class ContentAside {
   }
 
   setAsideTopPadding() {
-    this.contentHeaderGridTopElement = this.doc.querySelector('.content-header-grid-top');
-    if (!this.contentHeaderGridTopElement) {
-      return;
-    }
+    if (this.isViewportWideWithContentAside()) {
+      this.contentHeaderGridTopElement = this.doc.querySelector('.content-header-grid-top');
+      if (!this.contentHeaderGridTopElement) {
+        return;
+      }
 
-    this.contentHeaderGridTopHeight = this.contentHeaderGridTopElement.offsetHeight;
-    this.contentHeaderGridStyle = this.window.getComputedStyle(this.contentHeaderGridTopElement);
-    this.contentHeaderGridMarginTop = parseInt(this.contentHeaderGridStyle.marginTop);
-    this.contentHeaderGridMarginBottom = parseInt(this.contentHeaderGridStyle.marginBottom);
-    this.$elm.style.paddingTop = this.contentHeaderGridTopHeight +
-      this.contentHeaderGridMarginTop + this.contentHeaderGridMarginBottom + 'px';
+      this.contentHeaderGridTopHeight = this.contentHeaderGridTopElement.offsetHeight;
+      this.contentHeaderGridStyle = this.window.getComputedStyle(this.contentHeaderGridTopElement);
+      this.contentHeaderGridMarginTop = parseInt(this.contentHeaderGridStyle.marginTop);
+      this.contentHeaderGridMarginBottom = parseInt(this.contentHeaderGridStyle.marginBottom);
+      this.$elm.style.paddingTop = this.contentHeaderGridTopHeight +
+        this.contentHeaderGridMarginTop + this.contentHeaderGridMarginBottom + 'px';
+    }
   }
 
   createScrollabeAside() {
@@ -68,7 +70,7 @@ module.exports = class ContentAside {
 
     this.isScrollingHandled = false;
     this.cssStickyClassName = 'content-aside__sticky';
-    this.$navDetect = this.doc.querySelector('.site-header');
+    this.$contentHeaderTop = this.doc.querySelector('.content-header-grid-top');
 
     const scrollingHandler = utils.throttle(() => {
       this.handleScrolling();
@@ -95,7 +97,7 @@ module.exports = class ContentAside {
   }
 
   handleScrolling() {
-    if (!this.$navDetect) {
+    if (!this.$contentHeaderTop) {
       return;
     }
 
@@ -114,13 +116,13 @@ module.exports = class ContentAside {
       this.setAsideTopPadding();
     }
 
-    let bottomOfNav = this.$navDetect.getBoundingClientRect().bottom;
+    let bottomOfContentHeaderTop = this.$contentHeaderTop.getBoundingClientRect().bottom;
 
     // If it's position is sticky
     if (this.$elm.classList.contains(this.cssStickyClassName)) {
 
       // If Contextual Data shows on the screen then remove sticky aside
-      if (bottomOfNav > 0) {
+      if (bottomOfContentHeaderTop > 0) {
         this.$elm.classList.remove(this.cssStickyClassName);
         this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
         return;
@@ -144,7 +146,7 @@ module.exports = class ContentAside {
     }
 
     // Otherwise stick its position if it would otherwise scroll off the top of the screen
-    if (bottomOfNav < 0) {
+    if (bottomOfContentHeaderTop < 0) {
       this.$elm.classList.add(this.cssStickyClassName);
       this.$elm.style.top = '0px';
       this.$elm.style.paddingTop = '60px';
