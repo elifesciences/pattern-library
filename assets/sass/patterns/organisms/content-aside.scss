@@ -234,7 +234,7 @@
   }
 
   .status-wrapper {
-     @include margin(24, "bottom");
+    @include margin(24, "bottom");
 
     .status-title {
       color: $color-primary;
