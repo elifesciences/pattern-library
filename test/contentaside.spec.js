@@ -26,12 +26,6 @@ describe('A ContentAside Component', function () {
           matches: true
         }
       },
-      getComputedStyle: function() {
-        return {
-          marginTop: '24px',
-          marginBottom: '12px'
-        }
-      }
     };
 
     let _contentAside = new ContentAside($elm, windowMock);
@@ -58,12 +52,6 @@ describe('A ContentAside Component', function () {
       matchMedia: function() {
         return {
           matches: true
-        }
-      },
-      getComputedStyle: function() {
-        return {
-          marginTop: '24px',
-          marginBottom: '12px'
         }
       }
     };
