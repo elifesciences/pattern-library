@@ -323,6 +323,14 @@
     .divider {
       @include margin(0, "left");
     }
+
+    .divider {
+      display: none;
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+        display: block;
+      }
+    }
   }
 
   .content-header__icons {

@@ -1,27 +1,19 @@
 @import "../../definitions";
 
 .content-aside {
-  @include padding(24, "top");
+  @include padding(12, "top");
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    @include padding(36, "top");
+    @include padding(24, "top");
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-
-    .content-aside__first-column {
-      grid-column: 2/7;
-    }
-
-    .content-aside__second-column {
-      grid-column: 8/12;
-    }
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-    @include padding(76, "top");
+    @include padding(86, "top");
     align-items: flex-end;
     align-self: flex-start;
     display: flex;
@@ -33,6 +25,7 @@
     }
 
     &.content-aside__sticky {
+      @include padding(72, "top");
       max-height: 100vh;
       overflow-y: auto;
       position: sticky;
@@ -46,18 +39,10 @@
 
   .button-collection {
     &.button-collection--inline {
-      @include margin(36, "bottom");
-
-      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        max-width: 270px;
-      }
-
-      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-        max-width: none;
-      }
+      @include margin(24, "bottom");
 
       .button-collection__item {
-        @include margin(12, "top");
+        @include margin(12, "bottom");
       }
     }
   }
@@ -89,18 +74,17 @@
     }
   }
 
-  .content-aside__first-column,
-  .content-aside__second-column {
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-      width: 244px;
-    }
-  }
-
   .content-aside__second-column {
     @include padding(24, "bottom");
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      max-width: 200px;
+      width: 100%;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
       @include padding(0, "bottom");
+      max-width: auto;
     }
 
     .divider {
@@ -108,6 +92,28 @@
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
         display: block;
+      }
+    }
+  }
+
+  .content-aside__column-wrapper {
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: flex;
+      grid-column: 2/12;
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+      width: 244px;
+      display: block;
+    }
+
+    .content-aside__first-column {
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include padding(48, "right");
+      }
+
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+        @include padding(0, "right");
       }
     }
   }
@@ -237,6 +243,7 @@
     @include margin(24, "bottom");
 
     .status-title {
+      @include padding(0, "top");
       color: $color-primary;
       line-height: 22px;
     }
