@@ -1,4 +1,18 @@
 {
+  "infoBars": [
+    {
+      "type": "correction",
+      "text": "This article has been corrected. Read the <a href=\"#\">correction notice</a>."
+    },
+    {
+      "type": "dismissible",
+      "text": "In 2023, eLife will stop rejecting or accepting research after peer review. Instead, every preprint sent for review will be published. <a href=\"#\">About the new process</a>.",
+      "id": "12345",
+      "dismissible": {
+        "cookieExpires": "Tue, 19 January 2038 03:14:07 UTC"
+      }
+    }
+  ],
   "contentHeader": {
     "title": "Aging-related iron deposit prevents the benefits of HRT from late postmenopausal atherosclerosis",
     "titleLong": true,
@@ -385,6 +399,5 @@
     }
   },
   "related": null,
-  "contextualData": null,
-  "breadcrumb": null
+  "contextualData": null
 }

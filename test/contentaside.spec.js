@@ -44,7 +44,7 @@ describe('A ContentAside Component', function () {
 
   it('is removed when scrolling would cause content aside to overlay following layout elements', function () {
     // This must be smaller than $elm.offsetHeight of the object under test
-    let fakeBottomOfNavEl = -20;
+    let fakeTopOfContentHeaderEl = -20;
     let fakeBottomOfMainEl = 20;
     let windowMock = {
       addEventListener: function () {
@@ -57,10 +57,10 @@ describe('A ContentAside Component', function () {
     };
 
     let _contentAside = new ContentAside($elm, windowMock, document);
-    _contentAside.$navDetect = {
+    _contentAside.$contentHeader = {
       getBoundingClientRect: function () {
         return {
-          bottom: fakeBottomOfNavEl
+          top: fakeTopOfContentHeaderEl
         };
       }
     };
