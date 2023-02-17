@@ -53,7 +53,7 @@ module.exports = class ContentAside {
 
     this.isScrollingHandled = false;
     this.cssStickyClassName = 'content-aside__sticky';
-    this.$navDetect = this.doc.querySelector('.site-header');
+    this.$contentHeader = this.doc.querySelector('.content-header');
 
     const scrollingHandler = utils.throttle(() => {
       this.handleScrolling();
@@ -80,7 +80,7 @@ module.exports = class ContentAside {
   }
 
   handleScrolling() {
-    if (!this.$navDetect) {
+    if (!this.$contentHeader) {
       return;
     }
 
@@ -98,13 +98,13 @@ module.exports = class ContentAside {
       this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
     }
 
-    let bottomOfNav = this.$navDetect.getBoundingClientRect().bottom;
+    let topOfContentHeader = this.$contentHeader.getBoundingClientRect().top;
 
     // If it's position is sticky
     if (this.$elm.classList.contains(this.cssStickyClassName)) {
 
       // If Contextual Data shows on the screen then remove sticky aside
-      if (bottomOfNav > 0) {
+      if (topOfContentHeader > 0) {
         this.$elm.classList.remove(this.cssStickyClassName);
         this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
         return;
@@ -128,7 +128,7 @@ module.exports = class ContentAside {
     }
 
     // Otherwise stick its position if it would otherwise scroll off the top of the screen
-    if (bottomOfNav < 0) {
+    if (topOfContentHeader < 0) {
       this.$elm.classList.add(this.cssStickyClassName);
       this.$elm.style.top = '0px';
       this.$elm.style.paddingRight = this.asidePaddingRight + 'px';
