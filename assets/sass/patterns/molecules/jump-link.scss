@@ -7,21 +7,14 @@
   padding: 0;
 }
 
-.jump-link__list-item {
-  @include local-item-style();
-  @include padding(0 6);
-  border: 1px solid $color-text;
-  float: left;
-  margin: 0;
-  text-align: center;
-}
-
 .jump-link__item {
   @include local-item-style();
 }
 
 .jump-link {
+  @include padding(18, "left");
   color: $color-text-secondary;
+  display: block;
   text-decoration: none;
 
   &:hover {
@@ -31,6 +24,7 @@
 
 .jump-link__active {
   color: $color-text;
+  border-left: 2px solid $color-primary;
 }
 
 .jump-link__fixed {
