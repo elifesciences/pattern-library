@@ -1,0 +1,55 @@
+@import "../../definitions";
+
+.jump-link__list {
+  background-color: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.jump-link__list-item {
+  @include local-item-style();
+  @include padding(0 6);
+  border: 1px solid $color-text;
+  float: left;
+  margin: 0;
+  text-align: center;
+}
+
+.jump-link__item {
+  @include local-item-style();
+}
+
+.jump-link {
+  color: $color-text-secondary;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.jump-link__active {
+  color: $color-text;
+}
+
+.jump-link__fixed {
+  @include padding(48, "top");
+  max-height: 100vh;
+  max-width: ($grid-column *2) + $grid-gutter;
+  min-height: 11rem;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+}
+
+.wrapper--content {
+  .jump-link__list {
+    display: none;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      display: block;
+      grid-column: 1/3;
+    }
+  }
+}
