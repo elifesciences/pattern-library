@@ -1,7 +1,9 @@
-<ul class="jump-link__list" data-behaviour="JumpLink">
-  {{#items}}
-    <li class="jump-link__item">
-      <a href="{{url}}" class="jump-link">{{{name}}}</a>
-    </li>
-  {{/items}}
-</ul>
+<div class="jump-link__wrapper" data-behaviour="JumpLink">
+  <ul class="jump-link__list">
+    {{#items}}
+      <li class="jump-link__item">
+        <a href="{{url}}" class="jump-link">{{{name}}}</a>
+      </li>
+    {{/items}}
+  </ul>
+</div>

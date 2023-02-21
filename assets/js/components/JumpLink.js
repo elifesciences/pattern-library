@@ -13,6 +13,7 @@ module.exports = class JumpLink {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
+    this.linksList = this.$elm.querySelector('.jump-link__list');
     this.links = this.$elm.querySelectorAll('.jump-link');
     this.cssFixedClassName = 'jump-link__fixed';
     this.$navDetect = this.doc.querySelector('.content-container-grid');
@@ -84,7 +85,7 @@ module.exports = class JumpLink {
                                                               findClosest);
 
     if ($section && typeof $section.id === 'string') {
-      const $target = JumpLink.findLinkToHighlight(this.$elm, `[href="#${$section.id}"]`);
+      const $target = JumpLink.findLinkToHighlight(this.linksList, `[href="#${$section.id}"]`);
       if ($target) {
         JumpLink.updateHighlighting($target, this.links);
       }
