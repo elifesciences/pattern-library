@@ -51,16 +51,14 @@ module.exports = class ContentAside {
 
   handleSpaceWithScrollBar() {
     let scrollbarWidth = this.$elm.offsetWidth - this.$elm.clientWidth;
-    this.addAdditionalSpaceIfScrollBarIsVisible(scrollbarWidth);
+    this.addAdditionalMarginIfScrollBarIsVisible(scrollbarWidth);
   }
 
-  addAdditionalSpaceIfScrollBarIsVisible(scrollbarWidth) {
+  addAdditionalMarginIfScrollBarIsVisible(scrollbarWidth) {
     if (scrollbarWidth > 0) {
       this.$elm.style.marginRight = (scrollbarWidth * -1) + 'px';
-      this.$elm.style.paddingRight = '4px';
     } else {
       this.$elm.style.marginRight = '0px';
-      this.$elm.style.paddingRight = '0px';
     }
   }
 };

@@ -13,25 +13,20 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+    @include padding(86, "top");
+    @include padding(4, "right");
     align-items: flex-end;
     align-self: flex-start;
     display: flex;
     flex-direction: column;
-    width: 270px;
+    max-height: 100vh;
+    overflow-y: auto;
+    position: sticky;
+    top: -14px;
     z-index: 5;
 
     & > .divider {
       display: none;
-    }
-
-    &.content-aside__sticky {
-      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-        @include padding(86, "top");
-        max-height: 100vh;
-        overflow-y: auto;
-        position: sticky;
-        top: -14px;
-      }
     }
 
     .teaser {
@@ -110,7 +105,6 @@
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-      width: 244px;
       display: block;
     }
 
