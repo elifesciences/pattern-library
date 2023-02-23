@@ -32,6 +32,12 @@
       top: 0;
     }
 
+    .content-aside__related-item {
+      .listing-list {
+        @include margin(72, "bottom");
+      }
+    }
+
     .teaser {
       @include margin(0, "bottom");
     }
