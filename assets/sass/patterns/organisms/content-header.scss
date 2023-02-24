@@ -6,7 +6,6 @@
   padding-top: 0;
   // $content-header-padding - 1 to account for the 1px border
   @include padding($content-header-padding - 1, "bottom");
-  position: relative;
   text-align: center;
 
   // Expect .wrapper to only be introduced when not an image header
