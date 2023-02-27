@@ -7,10 +7,10 @@ properties:
       title:
         type: string
         minLength: 1
-      longTitleLength:
-        type: boolean
+      titleLength:
         enum:
-          - true
+        - short
+        - long
       description:
         type: string
         minLength: 1
