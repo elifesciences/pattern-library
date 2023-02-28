@@ -77,14 +77,13 @@
   .content-aside__second-column {
     @include padding(24, "bottom");
 
-    .definition-list--timeline,
-    .content-aside__related-item {
+    .definition-list--timeline {
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-        width: 200px;
+        min-width: 220px;
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-        width: 100%;
+        min-width: auto;
       }
     }
 
