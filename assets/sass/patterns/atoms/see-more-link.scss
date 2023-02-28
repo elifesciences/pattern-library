@@ -9,10 +9,6 @@
   &:after {
     content: "\00a0\00bb";
   }
-
-  .content-aside__related-item & {
-    @include margin(24, "top");
-  }
 }
 
 .see-more-link--inline {
