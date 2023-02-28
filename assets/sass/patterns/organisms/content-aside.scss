@@ -256,6 +256,14 @@
       }
     }
 
+    .status-title__short {
+      @include font-size(18);
+    }
+
+    .status-title__long {
+      @include font-size(16);
+    }
+
     .status-description {
       @include font-size-and-vertical-height(14, 20);
       @include margin(12, "bottom");

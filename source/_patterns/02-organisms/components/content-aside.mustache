@@ -3,7 +3,7 @@
     <div class="content-aside__first-column">
       {{#status}}
         <div class="status-wrapper">
-          <h5 class="status-title">{{status.title}}</h5>
+          <h5 class="status-title{{#titleLength}} status-title__{{titleLength}}{{/titleLength}}">{{status.title}}</h5>
         
           {{#status.description}}
             <div class="status-description">{{status.description}}</div>

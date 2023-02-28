@@ -1,8 +1,8 @@
 {
   "status": {
-    "title": "Research article",
-    "titleLength": "short",
-    "description": "The author(s) have declared this to be the current/final version.",
+    "title": "Author Accepted Manuscript",
+    "titleLength": "long",
+    "description": "PDF only version. The full online version will follow soon.",
     "link": {
       "name": "About eLife's process",
       "url": "#"
@@ -44,28 +44,5 @@
         { "text": "<strong>5</strong> citations" }
       ]
     }
-  },
-  "timeline": {
-    "variant": "timeline",
-    "items": [
-      {
-        "term": "Version of Record published",
-        "descriptors": [
-          "July 2, 2013 <a href=\"#\"> Go to version</a>"
-        ]
-      },
-      {
-        "term": "Accepted",
-        "descriptors": [
-          "May 28, 2013"
-        ]
-      },
-      {
-        "term": "Received",
-        "descriptors": [
-          "January 22, 2013"
-        ]
-      }
-    ]
   }
 }
