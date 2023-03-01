@@ -222,13 +222,33 @@ module.exports = class Popup {
     return utils.wrapElements(children, 'div', 'popup');
   }
 
+  burger() {
+    const authorLink = document.querySelector('.author_link');
+    if (!authorLink) {
+      return false;
+    }
+
+    const authorLinkParent = authorLink.parentElement.parentElement;
+    const authorParentParent = authorLinkParent.classList.contains('author_list_item');
+    return authorParentParent;
+  }
+
   calcInitialPosition(e, width) {
     // Triggered by a pointer
     if (e.pageX || e.pageY) {
-      return {
-        left: e.pageX - (width / 2),
-        top: e.pageY + 20
-      };
+      if (!this.burger()) {
+        console.log('one');
+        return {
+          left: e.pageX - (width / 2),
+          top: e.pageY + 20
+        };
+      } else {
+        console.log('two');
+        return {
+          left: e.pageX - (width / 2),
+          top: e.pageY + 20
+        };
+      }
     }
 
     // Triggered by keyboard
