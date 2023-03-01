@@ -111,6 +111,10 @@
           }
         }
       }
-    ]
+    ],
+    "seeMoreLink": {
+      "name": "Further reading",
+      "url": "#"
+    }
   }
 }

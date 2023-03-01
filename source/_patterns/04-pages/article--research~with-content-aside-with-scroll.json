@@ -312,7 +312,11 @@
             }
           }
         }
-      ]
+      ],
+      "seeMoreLink": {
+        "name": "Further reading",
+        "url": "#"
+      }
     }
   },
   "viewSelector": {
