@@ -222,28 +222,26 @@ module.exports = class Popup {
     return utils.wrapElements(children, 'div', 'popup');
   }
 
-  burger() {
+  hasAuthorClassName() {
     const authorLink = document.querySelector('.author_link');
     if (!authorLink) {
       return false;
     }
 
     const authorLinkParent = authorLink.parentElement.parentElement;
-    const authorParentParent = authorLinkParent.classList.contains('author_list_item');
-    return authorParentParent;
+    const hasAuthorItem = authorLinkParent.classList.contains('author_list_item');
+    return hasAuthorItem;
   }
 
   calcInitialPosition(e, width) {
     // Triggered by a pointer
     if (e.pageX || e.pageY) {
-      if (!this.burger()) {
-        console.log('one');
+      if (this.hasAuthorClassName()) {
         return {
           left: e.pageX - (width / 2),
-          top: e.pageY + 20
+          top: e.target.offsetTop + 20
         };
       } else {
-        console.log('two');
         return {
           left: e.pageX - (width / 2),
           top: e.pageY + 20
@@ -295,13 +293,20 @@ module.exports = class Popup {
       left = 10;
     }
 
+    let additionalPadding = 10;
+    let topIfAbove = e.pageY - height - 20;
+
+    if (this.hasAuthorClassName()) {
+      additionalPadding = 96;
+      topIfAbove = e.target.offsetTop - height;
+    }
+
     // If off the right.
-    if ((left + width + 10) > this.window.innerWidth) {
-      left = this.window.innerWidth - width - 10;
+    if ((left + width + additionalPadding) > this.window.innerWidth) {
+      left = this.window.innerWidth - width - additionalPadding;
     }
 
     // See if can be placed completely above.
-    const topIfAbove = e.pageY - height - 20;
     if (top + height + 10 > (this.window.pageYOffset + this.window.innerHeight) && topIfAbove >= (this.window.pageYOffset + 10)) {
       top = topIfAbove;
     }
