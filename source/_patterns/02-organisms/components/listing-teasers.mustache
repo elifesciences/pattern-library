@@ -1,4 +1,7 @@
-<div{{#highlights}} class="highlights"{{/highlights}}>
+{{#highlights}}
+<div class="highlights">
+{{/highlights}}
+
   {{#heading}}
     {{>atoms-list-heading}}
   {{/heading}}
@@ -37,4 +40,7 @@
   {{#pagination}}
     {{> molecules-pager}}
   {{/pagination}}
+
+{{#highlights}}
 </div>
+{{/highlights}}

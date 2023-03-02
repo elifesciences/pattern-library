@@ -29,8 +29,18 @@
       display: none;
     }
 
-    .teaser {
-      @include margin(0, "bottom");
+    &.content-aside__sticky {
+      @include padding(72, "top");
+      max-height: 100vh;
+      overflow-y: auto;
+      position: sticky;
+      top: 0;
+    }
+
+    .content-aside__related-item {
+      .listing-list {
+        @include margin(72, "bottom");
+      }
     }
   }
 
