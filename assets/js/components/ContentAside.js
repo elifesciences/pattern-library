@@ -9,7 +9,8 @@ module.exports = class ContentAside {
     this.doc = doc;
 
     this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
-    this.createScrollabeAside();
+
+    this.prepareScrollableContentAside(this.$elm);
   }
 
   prepareTimeline(timeline) {
@@ -45,89 +46,26 @@ module.exports = class ContentAside {
     }
   }
 
-  createScrollabeAside() {
-    this.isScrollingHandled = false;
-    this.cssStickyClassName = 'content-aside__sticky';
-    this.$contentHeader = this.doc.querySelector('.content-header');
-    if (!this.$contentHeader) {
-      return;
-    }
+  prepareScrollableContentAside(contentAside) {
+    const stickyClass = 'content-aside__sticky';
+    const scrollbarWidth = contentAside.offsetWidth - contentAside.clientWidth;
+    const marginRight = contentAside.style.marginRight;
+    const paddingRight = contentAside.style.paddingRight;
 
-    const scrollingHandler = utils.throttle(() => {
-      this.handleScrolling();
-    }, 50);
+    contentAside.classList.remove(stickyClass);
 
-    if (this.isViewportWideWithContentAside()) {
-      this.startHandlingScrolling(scrollingHandler, this.handleScrolling);
-    }
+    const contentAsideYOffset = contentAside.getBoundingClientRect().top + this.window.pageYOffset;
 
-    this.window.addEventListener('resize', utils.throttle(() => {
-      this.handleResize(scrollingHandler, this.handleScrolling);
-    }, 200));
-  }
-
-  startHandlingScrolling(scrollingHandler, scrollingHandlerImmediate) {
-    this.window.addEventListener('scroll', scrollingHandler);
-    this.isScrollingHandled = true;
-    scrollingHandlerImmediate.call(this);
-  }
-
-  stopHandlingScrolling(scrollingHandler) {
-    this.window.removeEventListener('scroll', scrollingHandler);
-    this.isScrollingHandled = false;
-  }
-
-  handleScrolling() {
-    if (!this.$contentHeader) {
-      return;
-    }
-
-    this.asidePaddingRight = 0;
-
-    if (this.isViewportWideWithContentAside()) {
-      this.asidePaddingRight = 4;
-
-      // Detect aside scollbar width
-      this.$elm.classList.add(this.cssStickyClassName);
-      this.scrollbarWidth = this.$elm.offsetWidth - this.$elm.clientWidth;
-      this.$elm.classList.remove(this.cssStickyClassName);
-
-      this.$elm.style.marginRight = (this.scrollbarWidth * -1) + 'px';
-      this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
-    }
-
-    let topOfContentHeader = this.$contentHeader.getBoundingClientRect().top;
-
-    // If it's position is sticky
-    if (this.$elm.classList.contains(this.cssStickyClassName)) {
-
-      // If Contextual Data shows on the screen then remove sticky aside
-      if (topOfContentHeader > 0) {
-        this.$elm.classList.remove(this.cssStickyClassName);
-        this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
-        return;
+    this.window.addEventListener('scroll', () => {
+      if (this.window.pageYOffset >= contentAsideYOffset) {
+        contentAside.classList.add(stickyClass);
+        contentAside.style.marginRight = (scrollbarWidth * -1) + 'px';
+        contentAside.style.paddingRight = '4px';
+      } else {
+        contentAside.classList.remove(stickyClass);
+        contentAside.style.marginRight = marginRight;
+        contentAside.style.paddingRight = paddingRight;
       }
-
-      return;
-    }
-
-    // Otherwise stick its position if it would otherwise scroll off the top of the screen
-    if (topOfContentHeader < 0) {
-      this.$elm.classList.add(this.cssStickyClassName);
-      this.$elm.style.paddingRight = this.asidePaddingRight + 'px';
-    }
-  }
-
-  isViewportWideWithContentAside() {
-    return this.window.matchMedia('(min-width: 1000px)').matches;
-  }
-
-  handleResize(scrollingHandler, scrollingHandlerImmediate) {
-    const isViewportWideWithContentAside = this.isViewportWideWithContentAside();
-    if (!this.isScrollingHandled && isViewportWideWithContentAside) {
-      this.startHandlingScrolling(scrollingHandler, scrollingHandlerImmediate);
-    } else if (this.isScrollingHandled && !isViewportWideWithContentAside) {
-      this.stopHandlingScrolling(scrollingHandler);
-    }
+    });
   }
 };
