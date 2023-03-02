@@ -9,11 +9,7 @@ module.exports = class ContentAside {
     this.doc = doc;
 
     this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
-    this.handleSpaceWithScrollBar();
-
-    this.window.addEventListener('resize', utils.throttle(() => {
-      this.handleSpaceWithScrollBar();
-    }, 200));
+    this.createScrollabeAside();
   }
 
   prepareTimeline(timeline) {
@@ -49,16 +45,89 @@ module.exports = class ContentAside {
     }
   }
 
-  handleSpaceWithScrollBar() {
-    let scrollbarWidth = this.$elm.offsetWidth - this.$elm.clientWidth;
-    this.addAdditionalMarginIfScrollBarIsVisible(scrollbarWidth);
+  createScrollabeAside() {
+    this.isScrollingHandled = false;
+    this.cssStickyClassName = 'content-aside__sticky';
+    this.$contentHeader = this.doc.querySelector('.content-header');
+    if (!this.$contentHeader) {
+      return;
+    }
+
+    const scrollingHandler = utils.throttle(() => {
+      this.handleScrolling();
+    }, 50);
+
+    if (this.isViewportWideWithContentAside()) {
+      this.startHandlingScrolling(scrollingHandler, this.handleScrolling);
+    }
+
+    this.window.addEventListener('resize', utils.throttle(() => {
+      this.handleResize(scrollingHandler, this.handleScrolling);
+    }, 200));
   }
 
-  addAdditionalMarginIfScrollBarIsVisible(scrollbarWidth) {
-    if (scrollbarWidth > 0) {
-      this.$elm.style.marginRight = (scrollbarWidth * -1) + 'px';
-    } else {
-      this.$elm.style.marginRight = '0px';
+  startHandlingScrolling(scrollingHandler, scrollingHandlerImmediate) {
+    this.window.addEventListener('scroll', scrollingHandler);
+    this.isScrollingHandled = true;
+    scrollingHandlerImmediate.call(this);
+  }
+
+  stopHandlingScrolling(scrollingHandler) {
+    this.window.removeEventListener('scroll', scrollingHandler);
+    this.isScrollingHandled = false;
+  }
+
+  handleScrolling() {
+    if (!this.$contentHeader) {
+      return;
+    }
+
+    this.asidePaddingRight = 0;
+
+    if (this.isViewportWideWithContentAside()) {
+      this.asidePaddingRight = 4;
+
+      // Detect aside scollbar width
+      this.$elm.classList.add(this.cssStickyClassName);
+      this.scrollbarWidth = this.$elm.offsetWidth - this.$elm.clientWidth;
+      this.$elm.classList.remove(this.cssStickyClassName);
+
+      this.$elm.style.marginRight = (this.scrollbarWidth * -1) + 'px';
+      this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
+    }
+
+    let topOfContentHeader = this.$contentHeader.getBoundingClientRect().top;
+
+    // If it's position is sticky
+    if (this.$elm.classList.contains(this.cssStickyClassName)) {
+
+      // If Contextual Data shows on the screen then remove sticky aside
+      if (topOfContentHeader > 0) {
+        this.$elm.classList.remove(this.cssStickyClassName);
+        this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
+        return;
+      }
+
+      return;
+    }
+
+    // Otherwise stick its position if it would otherwise scroll off the top of the screen
+    if (topOfContentHeader < 0) {
+      this.$elm.classList.add(this.cssStickyClassName);
+      this.$elm.style.paddingRight = this.asidePaddingRight + 'px';
+    }
+  }
+
+  isViewportWideWithContentAside() {
+    return this.window.matchMedia('(min-width: 1000px)').matches;
+  }
+
+  handleResize(scrollingHandler, scrollingHandlerImmediate) {
+    const isViewportWideWithContentAside = this.isViewportWideWithContentAside();
+    if (!this.isScrollingHandled && isViewportWideWithContentAside) {
+      this.startHandlingScrolling(scrollingHandler, scrollingHandlerImmediate);
+    } else if (this.isScrollingHandled && !isViewportWideWithContentAside) {
+      this.stopHandlingScrolling(scrollingHandler);
     }
   }
 };

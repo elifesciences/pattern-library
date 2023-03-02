@@ -13,17 +13,32 @@ describe('A ContentAside Component', function () {
     $elm = document.querySelector('[data-behaviour="ContentAside"]');
   });
 
-  it('has additional margin when scroll bar is visible', function () {
-    let _contentAside = new ContentAside($elm);
-    let scrollbarWidth = 17;
-    _contentAside.addAdditionalMarginIfScrollBarIsVisible(scrollbarWidth);
-    expect(_contentAside.$elm.style.marginRight).to.be.equal('-17px');
+  it('uses the "content-aside__sticky" css class', function () {
+    let contentAside = new ContentAside($elm);
+    expect(contentAside.cssStickyClassName).to.equal('content-aside__sticky');
   });
 
-    it('has zero margin when scroll bar is not visible', function () {
-    let _contentAside = new ContentAside($elm);
-    let scrollbarWidth = 0;
-    _contentAside.addAdditionalMarginIfScrollBarIsVisible(scrollbarWidth);
-    expect(_contentAside.$elm.style.marginRight).to.be.equal('0px');
+  it('adds and removes the "content-aside__sticky" class as the page is scrolled', function () {
+    let windowMock = {
+      addEventListener: function () {},
+      matchMedia: function() {
+        return {
+          matches: true
+        }
+      },
+    };
+
+    let _contentAside = new ContentAside($elm, windowMock);
+    expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.false;
+
+    // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
+    window.scrollTo(0,1080);
+    _contentAside.handleScrolling();
+    expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.true;
+
+    // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
+    window.scrollTo(0,0);
+    _contentAside.handleScrolling();
+    expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.false;
   });
 });
