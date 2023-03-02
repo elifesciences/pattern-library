@@ -49,9 +49,10 @@ module.exports = class ContentAside {
   prepareScrollableContentAside(contentAside) {
     const stickyClass = 'content-aside__sticky';
     const scrollbarWidth = contentAside.offsetWidth - contentAside.clientWidth;
+
+    contentAside.classList.add(stickyClass);
     const marginRight = contentAside.style.marginRight;
     const paddingRight = contentAside.style.paddingRight;
-
     contentAside.classList.remove(stickyClass);
 
     const contentAsideYOffset = contentAside.getBoundingClientRect().top + this.window.pageYOffset;
