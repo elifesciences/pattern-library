@@ -47,13 +47,13 @@ module.exports = class ContentAside {
   }
 
   prepareScrollable() {
-    this.stickyClass = 'content-aside__sticky';
+    this.cssStickyClassName = 'content-aside__sticky';
 
-    this.$elm.classList.add(this.stickyClass);
+    this.$elm.classList.add(this.cssStickyClassName);
     this.scrollbarWidth = this.$elm.offsetWidth - this.$elm.clientWidth;
     this.marginRight = this.$elm.style.marginRight;
     this.paddingRight = this.$elm.style.paddingRight;
-    this.$elm.classList.remove(this.stickyClass);
+    this.$elm.classList.remove(this.cssStickyClassName);
 
     this.yOffset = this.$elm.getBoundingClientRect().top + this.window.pageYOffset;
 
@@ -64,11 +64,11 @@ module.exports = class ContentAside {
 
   handleScrolling() {
     if (this.window.pageYOffset >= this.yOffset) {
-      this.$elm.classList.add(this.stickyClass);
+      this.$elm.classList.add(this.cssStickyClassName);
       this.$elm.style.marginRight = (this.scrollbarWidth * -1) + 'px';
       this.$elm.style.paddingRight = '4px';
     } else {
-      this.$elm.classList.remove(this.stickyClass);
+      this.$elm.classList.remove(this.cssStickyClassName);
       this.$elm.style.marginRight = this.marginRight;
       this.$elm.style.paddingRight = this.paddingRight;
     }

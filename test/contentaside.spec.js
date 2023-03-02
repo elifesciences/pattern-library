@@ -20,24 +20,19 @@ describe('A ContentAside Component', function () {
 
   it('adds and removes the "content-aside__sticky" class as the page is scrolled', function () {
     let windowMock = {
-      addEventListener: function () {},
-      matchMedia: function() {
-        return {
-          matches: true
-        }
-      },
+      addEventListener: function () {}
     };
 
     let _contentAside = new ContentAside($elm, windowMock);
     expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.false;
 
     // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
-    window.scrollTo(0,1080);
+    window.scrollTo(0, 1080);
     _contentAside.handleScrolling();
     expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.true;
 
     // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     _contentAside.handleScrolling();
     expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.false;
   });
