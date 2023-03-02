@@ -10,7 +10,7 @@ module.exports = class ContentAside {
 
     this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
 
-    this.prepareScrollableContentAside(this.$elm);
+    this.prepareScrollable(this.$elm);
   }
 
   prepareTimeline(timeline) {
@@ -46,27 +46,31 @@ module.exports = class ContentAside {
     }
   }
 
-  prepareScrollableContentAside(contentAside) {
-    const stickyClass = 'content-aside__sticky';
-    const scrollbarWidth = contentAside.offsetWidth - contentAside.clientWidth;
+  prepareScrollable() {
+    this.stickyClass = 'content-aside__sticky';
 
-    contentAside.classList.add(stickyClass);
-    const marginRight = contentAside.style.marginRight;
-    const paddingRight = contentAside.style.paddingRight;
-    contentAside.classList.remove(stickyClass);
+    this.$elm.classList.add(this.stickyClass);
+    this.scrollbarWidth = this.$elm.offsetWidth - this.$elm.clientWidth;
+    this.marginRight = this.$elm.style.marginRight;
+    this.paddingRight = this.$elm.style.paddingRight;
+    this.$elm.classList.remove(this.stickyClass);
 
-    const contentAsideYOffset = contentAside.getBoundingClientRect().top + this.window.pageYOffset;
+    this.yOffset = this.$elm.getBoundingClientRect().top + this.window.pageYOffset;
 
     this.window.addEventListener('scroll', () => {
-      if (this.window.pageYOffset >= contentAsideYOffset) {
-        contentAside.classList.add(stickyClass);
-        contentAside.style.marginRight = (scrollbarWidth * -1) + 'px';
-        contentAside.style.paddingRight = '4px';
-      } else {
-        contentAside.classList.remove(stickyClass);
-        contentAside.style.marginRight = marginRight;
-        contentAside.style.paddingRight = paddingRight;
-      }
+      this.handleScrolling();
     });
+  }
+
+  handleScrolling() {
+    if (this.window.pageYOffset >= this.yOffset) {
+      this.$elm.classList.add(this.stickyClass);
+      this.$elm.style.marginRight = (this.scrollbarWidth * -1) + 'px';
+      this.$elm.style.paddingRight = '4px';
+    } else {
+      this.$elm.classList.remove(this.stickyClass);
+      this.$elm.style.marginRight = this.marginRight;
+      this.$elm.style.paddingRight = this.paddingRight;
+    }
   }
 };
