@@ -1,0 +1,72 @@
+{
+  "id": "references",
+  "title": "References",
+  "headingLevel": 2,
+  "hasBehaviour": true,
+  "body": "Optional body text",
+  "referenceList": {
+    "references": [
+      {
+        "bibId": "bib1",
+        "title": "Philosophie Anatomique",
+        "origin": "Paris: Méquignon-Marvis",
+
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "Geoffroy Saint-Hilaire E.",
+                "url": false
+              }
+            ],
+            "suffix": "(1818)"
+          }
+        ],
+        "hasAbstracts": false
+      },
+      {
+        "bibId": "bib2",
+        "title": "Understanding the rhythm of breathing: so near, yet so far",
+        "origin": "In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452.",
+
+        "doi": {
+          "doi": "10.1146/annurev-physiol-040510-130049"
+        },
+
+        "hasAuthors": true,
+        "authorLists": [
+          {
+            "authors": [
+              {
+                "name": "JL Feldman",
+                "url": false
+              },
+              {
+                "name": "C Del Negro",
+                "url": false
+
+              },
+              {
+                "name": "PA Gray",
+                "url": false
+              }
+            ],
+            "suffix": "(2013)"
+          }
+        ],
+        "hasAbstracts": true,
+        "abstracts": [
+          {
+            "name": "PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/"
+          },
+          {
+            "name": "Google Scholar",
+            "url": "https://google.co.uk"
+          }
+        ]
+      }
+    ]
+  }
+}

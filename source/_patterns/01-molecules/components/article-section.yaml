@@ -51,6 +51,8 @@ properties:
     required:
       - name
       - url
+  referenceList:
+    $ref: ../../01-molecules/components/reference-list.yaml
 dependencies:
   title:
     - headingLevel
@@ -62,5 +64,3 @@ dependencies:
     - hasBehaviour
   doi:
     - id
-required:
-  - body
