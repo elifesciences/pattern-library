@@ -7,6 +7,7 @@ module.exports = class ContentAside {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
+    this.cssStickyClassName = 'content-aside__sticky';
 
     this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
 
@@ -47,15 +48,9 @@ module.exports = class ContentAside {
   }
 
   prepareScrollable() {
-    this.cssStickyClassName = 'content-aside__sticky';
-
-    this.$elm.classList.add(this.cssStickyClassName);
-    this.scrollbarWidth = this.$elm.offsetWidth - this.$elm.clientWidth;
-    this.marginRight = this.$elm.style.marginRight;
-    this.paddingRight = this.$elm.style.paddingRight;
-    this.$elm.classList.remove(this.cssStickyClassName);
-
-    this.yOffset = this.$elm.getBoundingClientRect().top + this.window.pageYOffset;
+    this.window.addEventListener('resize', () => {
+      this.handleScrolling();
+    });
 
     this.window.addEventListener('scroll', () => {
       this.handleScrolling();
@@ -63,14 +58,25 @@ module.exports = class ContentAside {
   }
 
   handleScrolling() {
-    if (this.window.pageYOffset >= this.yOffset) {
+    if (this.isViewportWide()) {
       this.$elm.classList.add(this.cssStickyClassName);
-      this.$elm.style.marginRight = (this.scrollbarWidth * -1) + 'px';
-      this.$elm.style.paddingRight = '4px';
-    } else {
+      this.scrollbarWidth = this.$elm.offsetWidth - this.$elm.clientWidth;
       this.$elm.classList.remove(this.cssStickyClassName);
-      this.$elm.style.marginRight = this.marginRight;
-      this.$elm.style.paddingRight = this.paddingRight;
+      this.yOffset = this.$elm.getBoundingClientRect().top + this.window.pageYOffset;
+
+      if (this.window.pageYOffset >= this.yOffset) {
+        this.$elm.classList.add(this.cssStickyClassName);
+        this.$elm.style.marginRight = (this.scrollbarWidth * -1) + 'px';
+        this.$elm.style.paddingRight = '4px';
+      } else {
+        this.$elm.classList.remove(this.cssStickyClassName);
+        this.$elm.style.marginRight = 0;
+        this.$elm.style.paddingRight = 0;
+      }
     }
+  }
+
+  isViewportWide() {
+    return this.window.matchMedia('(min-width: 1000px)').matches;
   }
 };

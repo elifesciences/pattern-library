@@ -20,7 +20,12 @@ describe('A ContentAside Component', function () {
 
   it('adds and removes the "content-aside__sticky" class as the page is scrolled', function () {
     let windowMock = {
-      addEventListener: function () {}
+      addEventListener: function () {},
+      matchMedia: function () {
+        return {
+          matches: true
+        };
+      }
     };
 
     let _contentAside = new ContentAside($elm, windowMock);
