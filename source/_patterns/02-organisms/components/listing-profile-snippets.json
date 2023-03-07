@@ -28,7 +28,8 @@
   ],
   "seeMoreLink": {
     "name": "See more things!",
-    "url": "#"
+    "url": "#",
+    "ariaLabel": "Descriptive name for the link"
   }
 
 }

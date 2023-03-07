@@ -9,6 +9,9 @@ properties:
     minLength: 1
   isInline:
     type: boolean
+  ariaLabel:
+    type: string
+    minLength: 1
 required:
   - url
   - name
