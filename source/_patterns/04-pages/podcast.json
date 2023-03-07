@@ -215,16 +215,19 @@
             "list": [
               {
                 "name": "Epidemiology and Global Health",
-                "url": "#"
+                "url": "#",
+                "contextAriaLabel": "Descriptive label"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#"
+                "url": "#",
+                "contextAriaLabel": "Descriptive label"
               }
             ]
           },
           "title": "Epidemiology: Mapping Ebola in wild animals for better disease control",
           "url": "#",
+          "headerAriaLabel": "Descriptive label",
           "secondaryInfo": "Sebastian Funk, Peter Piot",
           "footer": {
             "meta": {
@@ -256,16 +259,19 @@
             "list": [
               {
                 "name": "Cell Biology",
-                "url": "#"
+                "url": "#",
+                "contextAriaLabel": "Descriptive label"
               },
               {
                 "name": "Genes and Chromosomes",
-                "url": "#"
+                "url": "#",
+                "contextAriaLabel": "Descriptive label"
               }
             ]
           },
           "title": "Parasites: Do trypanosome turncoats wait before they commit?",
           "url": "#",
+          "headerAriaLabel": "Descriptive label",
           "secondaryInfo": "Cher-Pheng Ooi, Gloria Rudenko",
           "footer": {
             "meta": {
@@ -297,16 +303,19 @@
             "list": [
               {
                 "name": "Genomics and Evolutionary Biology",
-                "url": "#"
+                "url": "#",
+                "contextAriaLabel": "Descriptive label"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#"
+                "url": "#",
+                "contextAriaLabel": "Descriptive label"
               }
             ]
           },
           "title": "Science Forum: Improving pandemic influenza risk assessment",
           "url": "#",
+          "headerAriaLabel": "Descriptive label",
           "secondaryInfo": "Colin A Russell, Peter M Kasson ... Jesse D Bloom",
           "footer": {
             "meta": {
