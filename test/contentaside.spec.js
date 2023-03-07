@@ -25,7 +25,8 @@ describe('A ContentAside Component', function () {
         return {
           matches: true
         };
-      }
+      },
+      pageYOffset: 100
     };
 
     let _contentAside = new ContentAside($elm, windowMock);
