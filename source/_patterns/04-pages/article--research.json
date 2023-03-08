@@ -524,7 +524,7 @@
     },
     {
       "id": "metrics",
-      "title": "Metics",
+      "title": "Metrics",
       "headingLevel": 2,
       "hasBehaviour": true,
       "isInitiallyClosed": true,
