@@ -132,13 +132,13 @@
               {
                 "name": "Microbiology and Infectious Disease",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               }
             ]
           },
           "title": "Quorum sensing control of Type VI secretion factors restricts the proliferation of quorum-sensing mutants",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Charlotte Majerczyk, Emily Schneider, E Peter Greenberg",
           "content": "Quorum-sensing control of <i>Burkholderia thailandensis</i> toxin and immunity pairs serves to police quorum-sensing mutants and may represent a general strategy whereby cooperators can police mutants.",
           "footer": {
@@ -175,12 +175,12 @@
               {
                 "name": "Epidemiology and Global Health",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               },
               {
                 "name": "Microbiology and Infectious Disease",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               }
             ]
           },
@@ -212,18 +212,18 @@
               {
                 "name": "Genomics and evolutionary biology",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               },
               {
                 "name": "Microbiology and Infectious Disease",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               }
             ]
           },
           "title": "Evolutionary diversification of the trypanosome haptoglobin-haemoglobin receptor from an ancestral haemoglobin receptor",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Harriet Lane-Serff, Paula MacGregor ... Mark Carrington",
           "footer": {
             "meta": {
@@ -250,18 +250,18 @@
               {
                 "name": "Epidemiology and Global Health",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               },
               {
                 "name": "Microbiology and Infectious Disease",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               }
             ]
           },
           "title": "The global antigenic diversity of swine influenza A viruses",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Nicola S Lewis, Colin A Russell ... Amy L Vincent",
           "content": "Swine populations worldwide are sporadically infected by influenza viruses from humans and birds leading to geographically heterogeneous swine influenza virus populations that pose epizootic and pandemic threats.",
           "footer": {
@@ -298,18 +298,18 @@
               {
                 "name": "Ecology",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               },
               {
                 "name": "Microbiology and Infectious Disease",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               }
             ]
           },
           "title": "Recurring patterns in bacterioplankton dynamics during coastal spring algae blooms",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Hanno Teeling, Bernhard M Fuchs ... Rudolf I Amann",
           "content": "Dynamic successive blooms of clades of planktonic marine bacteria that can be observed during blooms of marine algae follow discernible patterns, part of which might be explained by substrate-induced forcing.",
           "footer": {
@@ -354,18 +354,18 @@
               {
                 "name": "Developmental Biology and Stem Cells",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               },
               {
                 "name": "Microbiology and Infectious Disease",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               }
             ]
           },
           "title": "The parasite’s new clothes",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Mark S Pearson, Alex Loukas",
           "footer": {
             "meta": {
@@ -398,18 +398,18 @@
               {
                 "name": "Immunology",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               },
               {
                 "name": "Microbiology and Infectious Disease",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               }
             ]
           },
           "title": "Catch me if you can",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Emilie Bourdonnay, Thomas Henry",
           "footer": {
             "meta": {
@@ -434,18 +434,18 @@
               {
                 "name": "Microbiology and Infectious Disease",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               },
               {
                 "name": "Plant Biology",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               }
             ]
           },
           "title": "Autophagy under attack",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {
@@ -470,18 +470,18 @@
               {
                 "name": "Biophysics and Structural Biology",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               },
               {
                 "name": "Microbiology and Infectious Disease",
                 "url": "#",
-                "contextAriaLabel": "Descriptive label"
+                "contextAriaLabel": "Descriptive and accessible label"
               }
             ]
           },
           "title": "Intracellular pathogens under attack",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Petr Broz",
           "footer": {
             "meta": {
@@ -525,7 +525,7 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "The [1] parasite’s new clothes",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Mark S Pearson, Alex Loukas",
           "footer": {
             "meta": {
@@ -557,7 +557,7 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Catch [2] me",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Emilie Bourdonnay, Thomas Henry",
           "footer": {
             "meta": {
@@ -589,7 +589,7 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Autophagy [3] under attack",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {
@@ -621,7 +621,7 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Autophagy [4] under attack",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {
@@ -653,7 +653,7 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Autophagy [5] under attack",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {
@@ -684,7 +684,7 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Autophagy [6] under attack",
           "url": "#",
-          "headerAriaLabel": "Descriptive label",
+          "headerAriaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {

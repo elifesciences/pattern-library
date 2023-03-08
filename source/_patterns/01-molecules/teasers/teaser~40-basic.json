@@ -2,7 +2,7 @@
   "rootClasses": "teaser--secondary",
   "title": "One hundred eLife digests on Medium&hellip; (&hellip; and counting)",
   "url": "https://medium.com/@elife/one-hundred-elife-digests-on-medium-5a99aa5e80a1#.mne4282yx",
-  "headerAriaLabel": "Descriptive label",
+  "headerAriaLabel": "Descriptive and accessible label",
   "image": {
     "fallback": {
       "defaultPath": "../../assets/img/patterns/molecules/teaser-medium-icon-1x.png",

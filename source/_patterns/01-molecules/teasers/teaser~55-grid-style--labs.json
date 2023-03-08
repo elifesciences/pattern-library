@@ -1,7 +1,7 @@
 {
   "rootClasses": "teaser--grid-style",
   "url": "#",
-  "headerAriaLabel": "Descriptive label",
+  "headerAriaLabel": "Descriptive and accessible label",
   "title": "eLife Lens search",
   "content": "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Pellentesque sem enim, pretium non risus non, molestie.",
   "image": {
