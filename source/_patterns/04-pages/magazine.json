@@ -769,7 +769,8 @@
     ],
     "seeMoreLink": {
       "url": "#",
-      "name": "See more editors for Microbiology and Infectious Disease"
+      "name": "See more editors for Microbiology and Infectious Disease",
+      "ariaLabel": "Descriptive and accessible name for the link"
     }
   },
 
