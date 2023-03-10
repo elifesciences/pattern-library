@@ -2,5 +2,6 @@
   "text": "Button inactive",
   "classes": "button--default button--inactive",
   "type": "button",
-  "name": "button-name"
+  "name": "button-name",
+  "ariaLabel": "Descriptive and accessible name"
 }
