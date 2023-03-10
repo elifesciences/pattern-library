@@ -114,7 +114,8 @@
     ],
     "seeMoreLink": {
       "name": "Further reading",
-      "url": "#"
+      "url": "#",
+      "ariaLabel": "Descriptive and accessible name for the link"
     }
   }
 }
