@@ -11,7 +11,7 @@
   },
   "title": "Reproducibility Project: Cancer Biology",
   "url": "#",
-
+  "headerAriaLabel": "Descriptive and accessible label",
   "secondaryInfo": "Edited by Roger J Davis",
 
   "image": {

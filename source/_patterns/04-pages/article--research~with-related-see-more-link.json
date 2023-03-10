@@ -23,7 +23,7 @@
         },
         "title": "Reproducibility Project: Cancer Biology",
         "url": "#",
-
+        "headerAriaLabel": "Descriptive and accessible label",
         "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
 
         "footer": {
@@ -44,7 +44,8 @@
     ],
     "seeMoreLink": {
       "name": "Further reading",
-      "url": "#"
+      "url": "#",
+      "ariaLabel": "Descriptive and accessible name for the link"
     }
   }
 }

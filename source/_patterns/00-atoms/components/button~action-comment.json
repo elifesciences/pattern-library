@@ -1,5 +1,6 @@
 {
   "text": "Button action (Comment)",
   "classes": "button--default button--action icon icon-comment",
-  "path": "#comment"
+  "path": "#comment",
+  "ariaLabel": "Descriptive and accessible name"
 }
