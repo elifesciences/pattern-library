@@ -206,7 +206,8 @@
       "description": "The author(s) have declared this to be the current/final version.",
       "link": {
         "name": "About eLife's process",
-        "url": "#"
+        "url": "#",
+        "ariaLabel": "Descriptive and accessible name"
       }
     },
     "actionButtons": {
