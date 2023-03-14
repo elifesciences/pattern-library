@@ -223,13 +223,11 @@
             "list": [
               {
                 "name": "Epidemiology and Global Health",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
@@ -267,13 +265,11 @@
             "list": [
               {
                 "name": "Cell Biology",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Genes and Chromosomes",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
@@ -311,13 +307,11 @@
             "list": [
               {
                 "name": "Genomics and Evolutionary Biology",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },

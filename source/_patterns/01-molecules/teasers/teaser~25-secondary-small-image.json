@@ -5,13 +5,11 @@
     "list": [
       {
         "name": "Biochemistry",
-        "url": "#",
-        "contextAriaLabel": "Descriptive and accessible label"
+        "url": "#"
       },
       {
         "name": "Neuroscience",
-        "url": "#",
-        "contextAriaLabel": "Descriptive and accessible label"
+        "url": "#"
       }
     ]
   },

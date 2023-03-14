@@ -23,9 +23,6 @@ properties:
                 - type: boolean
                   enum:
                     - false
-            contextAriaLabel:
-              type: string
-              minItems: 1
           required:
             - name
             - url

@@ -187,8 +187,7 @@
             "list": [
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
@@ -230,13 +229,11 @@
             "list": [
               {
                 "name": "Epidemiology and Global Health",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
@@ -269,13 +266,11 @@
             "list": [
               {
                 "name": "Genomics and evolutionary biology",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
@@ -307,13 +302,11 @@
             "list": [
               {
                 "name": "Epidemiology and Global Health",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
@@ -355,13 +348,11 @@
             "list": [
               {
                 "name": "Ecology",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
@@ -411,13 +402,11 @@
             "list": [
               {
                 "name": "Developmental Biology and Stem Cells",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
@@ -455,13 +444,11 @@
             "list": [
               {
                 "name": "Immunology",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
@@ -491,13 +478,11 @@
             "list": [
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Plant Biology",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
@@ -527,13 +512,11 @@
             "list": [
               {
                 "name": "Biophysics and Structural Biology",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },

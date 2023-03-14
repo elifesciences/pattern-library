@@ -3,13 +3,11 @@
     "list": [
       {
         "name": "Cell biology",
-        "url": "#",
-        "contextAriaLabel": "Descriptive and accessible label"
+        "url": "#"
       },
       {
         "name": "Epidemiology and Global Health",
-        "url": "#",
-        "contextAriaLabel": "Descriptive and accessible label"
+        "url": "#"
       }
     ]
   },
