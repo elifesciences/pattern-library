@@ -23,7 +23,7 @@ properties:
                 - type: boolean
                   enum:
                     - false
-            ariaLabel:
+            contextAriaLabel:
               type: string
               minItems: 1
           required:

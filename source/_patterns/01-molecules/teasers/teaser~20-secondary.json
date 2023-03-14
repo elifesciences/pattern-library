@@ -6,12 +6,12 @@
       {
         "name": "Biochemistry",
         "url": "#",
-        "ariaLabel": "Descriptive and accessible label"
+        "contextAriaLabel": "Descriptive and accessible label"
       },
       {
         "name": "Neuroscience",
         "url": "#",
-        "ariaLabel": "Descriptive and accessible label"
+        "contextAriaLabel": "Descriptive and accessible label"
       }
     ]
   },
