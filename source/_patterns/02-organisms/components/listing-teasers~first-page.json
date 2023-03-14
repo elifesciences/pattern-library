@@ -10,7 +10,7 @@
           {
             "name": "Microbiology and Infectious Disease",
             "url": "#",
-            "contextAriaLabel": "Descriptive and accessible label"
+            "ariaLabel": "Descriptive and accessible label"
           }
         ]
       },
