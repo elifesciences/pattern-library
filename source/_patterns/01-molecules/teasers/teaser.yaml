@@ -33,7 +33,7 @@ properties:
       - type: boolean
         enum:
           - false
-  headerAriaLabel:
+  ariaLabel:
     type: string
     minItems: 1
   title:

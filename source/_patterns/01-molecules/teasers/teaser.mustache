@@ -51,7 +51,7 @@
       {{! Occasionally the title isn't linked, for example in the chapter listing item teaser. }}
       {{! For schema: url is dependent on title }}
       {{#url}}
-        <a href="{{{url}}}" {{#num}}data-slide="{{num}}" {{/num}}{{#headerAriaLabel}}aria-label="{{headerAriaLabel}}" {{/headerAriaLabel}}{{#carouselItem}}tabindex="-1" {{/carouselItem}}class="teaser__header_text_link">{{{title}}}</a>
+        <a href="{{{url}}}" {{#num}}data-slide="{{num}}" {{/num}}{{#ariaLabel}}aria-label="{{ariaLabel}}" {{/ariaLabel}}{{#carouselItem}}tabindex="-1" {{/carouselItem}}class="teaser__header_text_link">{{{title}}}</a>
       {{/url}}
       {{^url}}
         {{{title}}}
