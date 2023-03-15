@@ -5,7 +5,7 @@
   {{#contextLabel}}
     <ol class="teaser__context_label_list" aria-label="These research categories are for the following article">
       {{#list}}
-        <li class="teaser__context_label_item">{{#url}}<a href="{{url}}" {{#contextAriaLabel}}aria-label="{{contextAriaLabel}}" {{/contextAriaLabel}}{{#carouselItem}}tabindex="-1" {{/carouselItem}}class="teaser__context_label_link">{{/url}}{{{name}}}{{#url}}</a>{{/url}}</li>
+        <li class="teaser__context_label_item">{{#url}}<a href="{{url}}" {{#carouselItem}}tabindex="-1" {{/carouselItem}}class="teaser__context_label_link">{{/url}}{{{name}}}{{#url}}</a>{{/url}}</li>
       {{/list}}
     </ol>
   {{/contextLabel}}
@@ -51,7 +51,7 @@
       {{! Occasionally the title isn't linked, for example in the chapter listing item teaser. }}
       {{! For schema: url is dependent on title }}
       {{#url}}
-        <a href="{{{url}}}" {{#num}}data-slide="{{num}}" {{/num}}{{#headerAriaLabel}}aria-label="{{headerAriaLabel}}" {{/headerAriaLabel}}{{#carouselItem}}tabindex="-1" {{/carouselItem}}class="teaser__header_text_link">{{{title}}}</a>
+        <a href="{{{url}}}" {{#num}}data-slide="{{num}}" {{/num}}{{#ariaLabel}}aria-label="{{ariaLabel}}" {{/ariaLabel}}{{#carouselItem}}tabindex="-1" {{/carouselItem}}class="teaser__header_text_link">{{{title}}}</a>
       {{/url}}
       {{^url}}
         {{{title}}}
