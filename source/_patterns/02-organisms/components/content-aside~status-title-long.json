@@ -1,4 +1,13 @@
 {
+  "status": {
+    "title": "Author Accepted Manuscript",
+    "titleLength": "long",
+    "description": "PDF only version. The full online version will follow soon.",
+    "link": {
+      "name": "About eLife's process",
+      "url": "#"
+    }
+  },
   "actionButtons": {
     "inline": true,
     "buttons": [

@@ -38,11 +38,13 @@
     "buttons": [
       {
         "text": "Download PDF",
-        "path": "#"
+        "path": "#",
+        "ariaLabel": "Descriptive and accessible name"
       },
       {
         "text": "Download jpg",
-        "path": "#"
+        "path": "#",
+        "ariaLabel": "Descriptive and accessible name"
       }
     ]
   },
@@ -54,11 +56,13 @@
     "buttons": [
       {
         "text": "Download PDF",
-        "path": "#"
+        "path": "#",
+        "ariaLabel": "Descriptive and accessible name"
       },
       {
         "text": "Download jpg",
-        "path": "#"
+        "path": "#",
+        "ariaLabel": "Descriptive and accessible name"
       }
     ]
   }

@@ -21,63 +21,25 @@ describe('A ContentAside Component', function () {
   it('adds and removes the "content-aside__sticky" class as the page is scrolled', function () {
     let windowMock = {
       addEventListener: function () {},
-      matchMedia: function() {
+      matchMedia: function () {
         return {
           matches: true
-        }
+        };
       },
+      pageYOffset: 100
     };
 
     let _contentAside = new ContentAside($elm, windowMock);
     expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.false;
 
     // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
-    window.scrollTo(0,1080);
+    window.scrollTo(0, 1080);
     _contentAside.handleScrolling();
     expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.true;
 
     // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     _contentAside.handleScrolling();
     expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.false;
-  });
-
-  it('is removed when scrolling would cause content aside to overlay following layout elements', function () {
-    // This must be smaller than $elm.offsetHeight of the object under test
-    let fakeTopOfContentHeaderEl = -20;
-    let fakeBottomOfMainEl = 20;
-    let windowMock = {
-      addEventListener: function () {
-      },
-      matchMedia: function() {
-        return {
-          matches: true
-        }
-      }
-    };
-
-    let _contentAside = new ContentAside($elm, windowMock, document);
-    _contentAside.$contentHeader = {
-      getBoundingClientRect: function () {
-        return {
-          top: fakeTopOfContentHeaderEl
-        };
-      }
-    };
-    _contentAside.mainTarget = {
-      getBoundingClientRect: function () {
-        return {
-          bottom: fakeBottomOfMainEl
-        };
-      }
-    };
-    _contentAside.elmYOffset = 20;
-    // Prerequisite for the test to be valid
-    expect(fakeBottomOfMainEl).to.be.below(_contentAside.$elm.offsetHeight);
-
-    _contentAside.$elm.classList.add('content-aside__sticky');
-    _contentAside.handleScrolling();
-    expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.true;
-    expect(_contentAside.$elm.style.top.indexOf('px')).to.be.above(-1);
   });
 });

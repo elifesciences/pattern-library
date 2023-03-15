@@ -1,6 +1,7 @@
 {
   "status": {
     "title": "Research article",
+    "titleLength": "short",
     "description": "The author(s) have declared this to be the current/final version.",
     "link": {
       "name": "About eLife's process",
@@ -14,25 +15,29 @@
         "text": "Download",
         "classes": "button--default button--action icon icon-download",
         "path": "#download",
-        "id": "button-action-download"
+        "id": "button-action-download",
+        "ariaLabel": "Descriptive and accessible name"
       },
       {
         "text": "Cite",
         "classes": "button--default button--action icon icon-citation",
         "path": "#citation",
-        "id": "button-action-citation"
+        "id": "button-action-citation",
+        "ariaLabel": "Descriptive and accessible name"
       },
       {
         "text": "Share",
         "classes": "button--default button--action icon icon-share",
         "path": "#share",
-        "id": "button-action-share"
+        "id": "button-action-share",
+        "ariaLabel": "Descriptive and accessible name"
       },
       {
         "text": "Comment<span aria-hidden='true'><span data-visible-annotation-count></span> </span><span class='visuallyhidden'>Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
         "classes": "button--default button--action icon icon-comment",
         "path": "#comment",
-        "isHypothesisTrigger": true
+        "isHypothesisTrigger": true,
+        "ariaLabel": "Descriptive and accessible name"
       }
     ]
   },
@@ -50,7 +55,7 @@
       {
         "term": "Version of Record published",
         "descriptors": [
-          "July 2, 2013 <a href=\"#\"> Go to version</a>"
+          "July 2, 2013 <a href=\"#\" aria-label=\"Descriptive and accessible name\"> Go to version</a>"
         ]
       },
       {

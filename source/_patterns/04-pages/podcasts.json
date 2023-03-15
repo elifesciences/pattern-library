@@ -11,31 +11,36 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "path": "#mainMenu"
+          "path": "#mainMenu",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
@@ -49,13 +54,15 @@
           "text": "Search",
           "rel": "search",
           "classes": "nav-secondary__item nav-secondary__item--search",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Alerts",
           "classes": "nav-secondary__item nav-secondary__item--alert",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
@@ -63,7 +70,8 @@
           "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
-            "classes": "button--default button--extra-small"
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
       ]
@@ -106,6 +114,7 @@
       {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -133,6 +142,7 @@
       {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -159,6 +169,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -185,6 +196,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -211,6 +223,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -237,6 +250,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -263,6 +277,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -289,6 +304,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -315,6 +331,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -341,6 +358,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -367,6 +385,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -393,6 +412,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
