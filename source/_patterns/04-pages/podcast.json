@@ -223,19 +223,17 @@
             "list": [
               {
                 "name": "Epidemiology and Global Health",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
           "title": "Epidemiology: Mapping Ebola in wild animals for better disease control",
           "url": "#",
-          "headerAriaLabel": "Descriptive and accessible label",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Sebastian Funk, Peter Piot",
           "footer": {
             "meta": {
@@ -267,19 +265,17 @@
             "list": [
               {
                 "name": "Cell Biology",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Genes and Chromosomes",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
           "title": "Parasites: Do trypanosome turncoats wait before they commit?",
           "url": "#",
-          "headerAriaLabel": "Descriptive and accessible label",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Cher-Pheng Ooi, Gloria Rudenko",
           "footer": {
             "meta": {
@@ -311,19 +307,17 @@
             "list": [
               {
                 "name": "Genomics and Evolutionary Biology",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               },
               {
                 "name": "Microbiology and Infectious Disease",
-                "url": "#",
-                "contextAriaLabel": "Descriptive and accessible label"
+                "url": "#"
               }
             ]
           },
           "title": "Science Forum: Improving pandemic influenza risk assessment",
           "url": "#",
-          "headerAriaLabel": "Descriptive and accessible label",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Colin A Russell, Peter M Kasson ... Jesse D Bloom",
           "footer": {
             "meta": {

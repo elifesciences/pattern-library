@@ -5,19 +5,17 @@
     "list": [
       {
         "name": "Biochemistry",
-        "url": "#",
-        "contextAriaLabel": "Descriptive and accessible label"
+        "url": "#"
       },
       {
         "name": "Neuroscience",
-        "url": "#",
-        "contextAriaLabel": "Descriptive and accessible label"
+        "url": "#"
       }
     ]
   },
   "title": "Mapping Ebola in wild animals for better disease control",
   "url": "#",
-  "headerAriaLabel": "Descriptive and accessible label",
+  "ariaLabel": "Descriptive and accessible label",
   "secondaryInfo": "Sebastian Funk, Peter Piot",
   "footer": {
     "meta": {
