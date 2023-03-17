@@ -10,7 +10,7 @@
           {{/status.description}}
 
           {{#status.link}}
-            <a href="{{status.link.url}}" class="status-link">{{status.link.name}}</a>
+            <a href="{{status.link.url}}"{{#status.link.ariaLabel}} aria-label="{{status.link.ariaLabel}}"{{/status.link.ariaLabel}} class="status-link">{{status.link.name}}</a>
           {{/status.link}}
         </div>
       {{/status}}

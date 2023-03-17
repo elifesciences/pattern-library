@@ -5,7 +5,8 @@
     "description": "PDF only version. The full online version will follow soon.",
     "link": {
       "name": "About eLife's process",
-      "url": "#"
+      "url": "#",
+      "ariaLabel": "Descriptive and accessible name"
     }
   },
   "actionButtons": {
