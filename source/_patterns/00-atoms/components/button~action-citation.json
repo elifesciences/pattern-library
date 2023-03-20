@@ -2,5 +2,6 @@
   "text": "Button action (Citation)",
   "classes": "button--default button--action icon icon-citation",
   "path": "#citation",
-  "id": "button-action-citation"
+  "id": "button-action-citation",
+  "ariaLabel": "Descriptive and accessible name"
 }

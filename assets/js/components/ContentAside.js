@@ -7,10 +7,11 @@ module.exports = class ContentAside {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
-    this.mainTarget = this.doc.querySelector('.main');
+    this.cssStickyClassName = 'content-aside__sticky';
 
     this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
-    this.createScrollabeAside();
+
+    this.prepareScrollable(this.$elm);
   }
 
   prepareTimeline(timeline) {
@@ -46,105 +47,36 @@ module.exports = class ContentAside {
     }
   }
 
-  createScrollabeAside() {
-    if (!this.mainTarget) {
-      return;
-    }
-
-    this.isScrollingHandled = false;
-    this.cssStickyClassName = 'content-aside__sticky';
-    this.$contentHeader = this.doc.querySelector('.content-header');
-
-    const scrollingHandler = utils.throttle(() => {
+  prepareScrollable() {
+    this.window.addEventListener('resize', () => {
       this.handleScrolling();
-    }, 50);
+    });
 
-    if (this.isViewportWideWithContentAside()) {
-      this.startHandlingScrolling(scrollingHandler, this.handleScrolling);
-    }
-
-    this.window.addEventListener('resize', utils.throttle(() => {
-      this.handleResize(scrollingHandler, this.handleScrolling);
-    }, 200));
-  }
-
-  startHandlingScrolling(scrollingHandler, scrollingHandlerImmediate) {
-    this.window.addEventListener('scroll', scrollingHandler);
-    this.isScrollingHandled = true;
-    scrollingHandlerImmediate.call(this);
-  }
-
-  stopHandlingScrolling(scrollingHandler) {
-    this.window.removeEventListener('scroll', scrollingHandler);
-    this.isScrollingHandled = false;
+    this.window.addEventListener('scroll', () => {
+      this.handleScrolling();
+    });
   }
 
   handleScrolling() {
-    if (!this.$contentHeader) {
-      return;
-    }
-
-    this.asidePaddingRight = 0;
-
-    if (this.isViewportWideWithContentAside()) {
-      this.asidePaddingRight = 4;
-
-      // Detect aside scollbar width
+    if (this.isViewportWide()) {
       this.$elm.classList.add(this.cssStickyClassName);
       this.scrollbarWidth = this.$elm.offsetWidth - this.$elm.clientWidth;
       this.$elm.classList.remove(this.cssStickyClassName);
+      this.yOffset = this.$elm.getBoundingClientRect().top + this.window.pageYOffset;
 
-      this.$elm.style.marginRight = (this.scrollbarWidth * -1) + 'px';
-      this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
-    }
-
-    let topOfContentHeader = this.$contentHeader.getBoundingClientRect().top;
-
-    // If it's position is sticky
-    if (this.$elm.classList.contains(this.cssStickyClassName)) {
-
-      // If Contextual Data shows on the screen then remove sticky aside
-      if (topOfContentHeader > 0) {
+      if (this.window.pageYOffset >= this.yOffset) {
+        this.$elm.classList.add(this.cssStickyClassName);
+        this.$elm.style.marginRight = (this.scrollbarWidth * -1) + 'px';
+        this.$elm.style.paddingRight = '4px';
+      } else {
         this.$elm.classList.remove(this.cssStickyClassName);
-        this.$elm.style.paddingRight = this.scrollbarWidth + this.asidePaddingRight + 'px';
-        return;
+        this.$elm.style.marginRight = 0;
+        this.$elm.style.paddingRight = 0;
       }
-
-      // Allow it to scroll again if it would otherwise over-/under-lay following element
-      let bottomOfMain = this.mainTarget.getBoundingClientRect().bottom;
-      if (bottomOfMain < this.$elm.offsetHeight) {
-        let amountToNudgeUp = bottomOfMain - this.$elm.offsetHeight;
-        this.$elm.style.top = amountToNudgeUp + 'px';
-        return;
-      }
-
-      // Ensure top of component is not off top of screen once bottom of main is off screen bottom
-      // Safety net: required because a fast scroll may prevent all code running as desired.
-      if (bottomOfMain >= this.window.innerHeight) {
-        this.$elm.style.top = '0px';
-      }
-
-      return;
-    }
-
-    // Otherwise stick its position if it would otherwise scroll off the top of the screen
-    if (topOfContentHeader < 0) {
-      this.$elm.classList.add(this.cssStickyClassName);
-      this.$elm.style.top = '0px';
-      this.$elm.style.paddingRight = this.asidePaddingRight + 'px';
     }
   }
 
-  isViewportWideWithContentAside() {
-    return this.window.matchMedia('(min-width: 900px)').matches;
-  }
-
-  handleResize(scrollingHandler, scrollingHandlerImmediate) {
-    const isViewportWideWithContentAside = this.isViewportWideWithContentAside();
-    if (!this.isScrollingHandled && isViewportWideWithContentAside) {
-      this.startHandlingScrolling(scrollingHandler, scrollingHandlerImmediate);
-    } else if (this.isScrollingHandled && !isViewportWideWithContentAside) {
-      this.stopHandlingScrolling(scrollingHandler);
-    }
+  isViewportWide() {
+    return this.window.matchMedia('(min-width: 1000px)').matches;
   }
 };

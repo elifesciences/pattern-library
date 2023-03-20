@@ -4,17 +4,20 @@
     {
       "text": "Button 1",
       "classes": "button--default",
-      "path": "#"
+      "path": "#",
+      "ariaLabel": "Descriptive and accessible name"
     },
     {
       "text": "Button 2",
       "classes": "button--default",
-      "path": "#"
+      "path": "#",
+      "ariaLabel": "Descriptive and accessible name"
     },
     {
       "text": "Button 3",
       "classes": "button--outline",
-      "path": "#"
+      "path": "#",
+      "ariaLabel": "Descriptive and accessible name"
     }
   ]
 }

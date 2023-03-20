@@ -11,31 +11,36 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "path": "#mainMenu"
+          "path": "#mainMenu",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
@@ -49,13 +54,15 @@
           "text": "Search",
           "rel": "search",
           "classes": "nav-secondary__item nav-secondary__item--search",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Alerts",
           "classes": "nav-secondary__item nav-secondary__item--alert",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
@@ -63,7 +70,8 @@
           "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
-            "classes": "button--default button--extra-small"
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
       ]
@@ -225,6 +233,7 @@
           },
           "title": "Epidemiology: Mapping Ebola in wild animals for better disease control",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Sebastian Funk, Peter Piot",
           "footer": {
             "meta": {
@@ -266,6 +275,7 @@
           },
           "title": "Parasites: Do trypanosome turncoats wait before they commit?",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Cher-Pheng Ooi, Gloria Rudenko",
           "footer": {
             "meta": {
@@ -307,6 +317,7 @@
           },
           "title": "Science Forum: Improving pandemic influenza risk assessment",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Colin A Russell, Peter M Kasson ... Jesse D Bloom",
           "footer": {
             "meta": {

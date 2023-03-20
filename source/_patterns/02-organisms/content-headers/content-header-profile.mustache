@@ -23,9 +23,9 @@
   <nav class="content-header-profile__nav">
     <ul class="content-header-profile__links">
       {{#secondaryLinks}}
-        <li><a href="{{url}}" class="content-header-profile__link" >{{name}}</a></li>
+        <li><a href="{{url}}"{{#ariaLabel}} aria-label="{{ariaLabel}}"{{/ariaLabel}} class="content-header-profile__link" >{{name}}</a></li>
       {{/secondaryLinks}}
-      <li><a href="{{logoutLink.url}}" class="content-header-profile__link content-header-profile__link--logout" >{{logoutLink.name}}</a></li>
+      <li><a href="{{logoutLink.url}}"{{#logoutLink.ariaLabel}} aria-label="{{logoutLink.ariaLabel}}"{{/logoutLink.ariaLabel}} class="content-header-profile__link content-header-profile__link--logout" >{{logoutLink.name}}</a></li>
     </ul>
   </nav>
 

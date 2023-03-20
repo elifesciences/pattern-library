@@ -7,13 +7,15 @@
       "text": "Search",
       "rel": "search",
       "classes": "nav-secondary__item nav-secondary__item--search",
-      "path": "#"
+      "path": "#",
+      "ariaLabel": "Descriptive and accessible name"
     },
 
     {
       "text": "Alerts",
       "classes": "nav-secondary__item nav-secondary__item--alert",
-      "path": "#"
+      "path": "#",
+      "ariaLabel": "Descriptive and accessible name"
     },
 
     {
@@ -21,7 +23,8 @@
       "button": {
         "text": "Submit your research",
         "path": "#",
-        "classes": "button--default button--extra-small"
+        "classes": "button--default button--extra-small",
+        "ariaLabel": "Descriptive and accessible name"
       }
     }
   ]
