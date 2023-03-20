@@ -228,15 +228,15 @@
       }
     }
   },
-  "tabLink": {
+  "tabMenu": {
     "items": [
       {
-        "selectedClass": " tab-link__active",
+        "selectedClass": " tab-menu__active",
         "name": "Full text",
         "url": "#"
       },
       {
-        "name": "Figures<span class=\"tab-link__long-name\"> and data</span>",
+        "name": "Figures<span class=\"tab-menu__long-name\"> and data</span>",
         "url": "#"
       },
       {

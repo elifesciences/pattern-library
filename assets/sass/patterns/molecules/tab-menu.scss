@@ -1,6 +1,6 @@
 @import "../../definitions";
 
-.tab-link {
+.tab-menu {
   @include padding(24 14);
   color: $color-text-secondary;
   display: block;
@@ -11,14 +11,14 @@
     color: $color-text;
   }
 
-  &.tab-link__active {
+  &.tab-menu__active {
     @include padding(24 18 20);
     font-weight: bold;
     border-bottom: 4px solid $color-primary;
   }
 }
 
-.tab-link__list {
+.tab-menu__list {
   border-bottom: 1px solid $color-text-ui-background-light-gray;
   display: inline-flex;
   list-style: none;
@@ -28,7 +28,7 @@
   justify-content: center;
 }
 
-.tab-link__long-name {
+.tab-menu__long-name {
   display: none;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
@@ -36,7 +36,7 @@
   }
 }
 
-.tab-link__nav {
+.tab-menu__nav {
   @include margin(24, "bottom");
   border-bottom: 1px solid $color-text-dividers;
   border-top: 1px solid $color-text-dividers;

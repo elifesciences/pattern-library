@@ -1,0 +1,9 @@
+<nav class="tab-menu__nav" data-behaviour="TabMenu">
+  <ul class="tab-menu__list">
+    {{#items}}
+      <li class="tab-menu__item">
+        <a href="{{url}}" class="tab-menu{{selectedClass}}">{{{name}}}</a>
+      </li>
+    {{/items}}
+  </ul>
+</nav>
