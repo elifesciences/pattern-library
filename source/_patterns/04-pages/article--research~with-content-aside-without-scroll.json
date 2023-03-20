@@ -228,6 +228,23 @@
       }
     }
   },
+  "tabLink": {
+    "items": [
+      {
+        "selectedClass": " tab-link__active",
+        "name": "Full text",
+        "url": "#"
+      },
+      {
+        "name": "Figures<span class=\"tab-link__long-name\"> and data</span>",
+        "url": "#"
+      },
+      {
+        "name": "Peer review",
+        "url": "#"
+      }
+    ]
+  },
   "viewSelector": {
     "primaryUrl": "#articleUrl",
     "secondaryUrl": "#figureUrl",

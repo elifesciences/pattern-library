@@ -1,0 +1,68 @@
+@import "../../definitions";
+
+.tab-link {
+  @include padding(24 14);
+  color: $color-text-secondary;
+  display: block;
+  font-family: $font-secondary;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-text;
+  }
+
+  &.tab-link__active {
+    @include padding(24 18 20);
+    font-weight: bold;
+    border-bottom: 4px solid $color-primary;
+  }
+}
+
+.tab-link__list {
+  border-bottom: 1px solid $color-text-ui-background-light-gray;
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.tab-link__long-name {
+  display: none;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    display: inline;
+  }
+}
+
+.tab-link__nav {
+  @include margin(24, "bottom");
+  border-bottom: 1px solid $color-text-dividers;
+  border-top: 1px solid $color-text-dividers;
+  grid-column: 2/12;
+  grid-row: 1;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+    grid-column: 1/9;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    grid-column: 1/10;
+  }
+
+  & ~ .view-selector,
+  & ~ .main-content-grid {
+    grid-row: 2;
+  }
+
+  .wrapper & {
+    @include margin(-24, "left");
+    @include margin(-24, "right");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include margin(0, "left");
+      @include margin(0, "right");
+    }
+  }
+}

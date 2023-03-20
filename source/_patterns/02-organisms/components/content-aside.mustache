@@ -3,15 +3,15 @@
     <div class="content-aside__first-column">
       {{#status}}
         <div class="status-wrapper">
-          <h5 class="status-title{{#titleLength}} status-title__{{titleLength}}{{/titleLength}}">{{status.title}}</h5>
+          <h5 class="status-title{{#titleLength}} status-title__{{titleLength}}{{/titleLength}}">{{title}}</h5>
 
-          {{#status.description}}
-            <div class="status-description">{{status.description}}</div>
-          {{/status.description}}
+          {{#description}}
+            <div class="status-description">{{description}}</div>
+          {{/description}}
 
-          {{#status.link}}
-            <a href="{{status.link.url}}"{{#status.link.ariaLabel}} aria-label="{{status.link.ariaLabel}}"{{/status.link.ariaLabel}} class="status-link">{{status.link.name}}</a>
-          {{/status.link}}
+          {{#link}}
+            <a href="{{url}}"{{#ariaLabel}} aria-label="{{ariaLabel}}"{{/ariaLabel}} class="status-link">{{name}}</a>
+          {{/link}}
         </div>
       {{/status}}
 
@@ -45,7 +45,4 @@
 
     </div>
   </div>
-
-  <div class="divider"></div>
-
 </aside>

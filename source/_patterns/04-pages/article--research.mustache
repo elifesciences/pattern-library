@@ -25,12 +25,14 @@
          <div class="wrapper wrapper--content">
 
            <div class="content-container-grid">
-           
+             {{#tabLink}}
+               {{> molecules-tab-link }}
+             {{/tabLink}}
+
              {{#viewSelector}}
                {{> molecules-view-selector }}
              {{/viewSelector}}
            
-
              <div class="main-content-grid">
            
                <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
