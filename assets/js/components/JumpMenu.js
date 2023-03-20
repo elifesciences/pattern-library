@@ -2,7 +2,7 @@
 
 const utils = require('../libs/elife-utils')();
 
-module.exports = class JumpLink {
+module.exports = class JumpMenu {
 
   constructor($elm, _window = window, doc = document) {
 
@@ -13,9 +13,9 @@ module.exports = class JumpLink {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.linksList = this.$elm.querySelector('.jump-link__list');
-    this.links = this.$elm.querySelectorAll('.jump-link');
-    this.cssFixedClassName = 'jump-link__fixed';
+    this.linksList = this.$elm.querySelector('.jump-menu__list');
+    this.links = this.$elm.querySelectorAll('.jump-menu');
+    this.cssFixedClassName = 'jump-menu__fixed';
     this.$navDetect = this.doc.querySelector('.content-container-grid');
 
     if (this.links.length > 0) {
@@ -24,7 +24,7 @@ module.exports = class JumpLink {
         return;
       }
 
-      this.collapsibleSectionHeadings = JumpLink.getAllCollapsibleSectionHeadings(this.doc);
+      this.collapsibleSectionHeadings = JumpMenu.getAllCollapsibleSectionHeadings(this.doc);
       this.isScrollingHandled = false;
 
       const scrollingHandler = utils.throttle(() => {
@@ -80,21 +80,21 @@ module.exports = class JumpLink {
                                                        this.doc, this.window);
     const firstLogicalHeadingText = this.collapsibleSectionHeadings[0] ?
                                                   this.collapsibleSectionHeadings[0].innerHTML : '';
-    const $section = JumpLink.findSectionForLinkHighlight($firstViewableHeading,
+    const $section = JumpMenu.findSectionForLinkHighlight($firstViewableHeading,
                                                               firstLogicalHeadingText,
                                                               findClosest);
 
     if ($section && typeof $section.id === 'string') {
-      const $target = JumpLink.findLinkToHighlight(this.linksList, `[href="#${$section.id}"]`);
+      const $target = JumpMenu.findLinkToHighlight(this.linksList, `[href="#${$section.id}"]`);
       if ($target) {
-        JumpLink.updateHighlighting($target, this.links);
+        JumpMenu.updateHighlighting($target, this.links);
       }
     }
   }
 
   static updateHighlighting($target, linksList) {
-    JumpLink.clearJumpLinkHighlight(linksList);
-    JumpLink.highlightJumpLink($target);
+    JumpMenu.clearJumpMenuHighlight(linksList);
+    JumpMenu.highlightJumpMenu($target);
   }
 
   static findSectionForLinkHighlight($heading, firstHeadingText, findClosest) {
@@ -111,10 +111,10 @@ module.exports = class JumpLink {
     return findClosest.call(null, $heading, '.article-section').previousElementSibling;
   }
 
-  static clearJumpLinkHighlight(linksList) {
+  static clearJumpMenuHighlight(linksList) {
     const links = [].slice.call(linksList);
     links.forEach(($link) => {
-      $link.classList.remove('jump-link__active');
+      $link.classList.remove('jump-menu__active');
     });
   }
 
@@ -122,8 +122,8 @@ module.exports = class JumpLink {
     return $linksList.querySelector(selector);
   }
 
-  static highlightJumpLink($jumpLink) {
-    $jumpLink.classList.add('jump-link__active');
+  static highlightJumpMenu($jumpMenu) {
+    $jumpMenu.classList.add('jump-menu__active');
   }
 
   /**

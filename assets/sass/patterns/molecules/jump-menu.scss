@@ -1,21 +1,21 @@
 @import "../../definitions";
 
-.jump-link__wrapper {
+.jump-menu__wrapper {
   background-color: $color-text-ui-background;
 }
 
-.jump-link__list {
+.jump-menu__list {
   border-left: 2px solid $color-text-ui-background-light-gray;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.jump-link__item {
+.jump-menu__item {
   @include local-item-style();
 }
 
-.jump-link {
+.jump-menu {
   @include padding(18, "left");
   color: $color-text-secondary;
   display: block;
@@ -26,13 +26,13 @@
   }
 }
 
-.jump-link__active {
+.jump-menu__active {
   @include margin(-2, "left");
   color: $color-text;
   border-left: 2px solid $color-primary;
 }
 
-.jump-link__fixed {
+.jump-menu__fixed {
   @include padding(48, "top");
   max-height: 100vh;
   max-width: ($grid-column *2) + $grid-gutter;
@@ -43,7 +43,7 @@
 }
 
 .wrapper--content {
-  .jump-link__wrapper {
+  .jump-menu__wrapper {
     display: none;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
