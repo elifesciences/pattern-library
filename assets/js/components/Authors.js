@@ -215,11 +215,7 @@ module.exports = class Authors {
 
   getToggleExpandedText() {
     const baseText = '<span class="visuallyhidden"> collapse author list</span>';
-    if (this.window.matchMedia('(min-width: 730px)').matches) {
-      return `${baseText}<span aria-hidden="true">see&nbsp;less</span>`;
-    }
-
-    return `${baseText}<span aria-hidden="true" class="item_toggle_cta">&#171;</span>`;
+    return `${baseText}<span aria-hidden="true">see&nbsp;less</span>`;
   }
 
   getUpdatedToggleText(newState) {
