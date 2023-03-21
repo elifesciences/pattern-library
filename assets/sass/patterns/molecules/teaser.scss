@@ -212,7 +212,8 @@
     }
 
     .teaser__picture img {
-      height: 140px;
+      object-fit: cover;
+      max-height: 140px;
     }
   }
 }
