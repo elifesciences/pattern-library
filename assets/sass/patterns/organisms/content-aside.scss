@@ -110,6 +110,7 @@
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
       display: block;
+      width: 244px;
     }
 
     .content-aside__first-column {
