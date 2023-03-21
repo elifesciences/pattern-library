@@ -39,7 +39,7 @@
     }
   }
 
-  .content-aside__related-item & {
+  .article__related-item & {
     @include font-size-and-vertical-height(14, 32);
   }
 }
@@ -99,7 +99,7 @@
   @include blg-spacing("bottom", "extra-small", "margin");
   @include blg-spacing("top", "extra-extra-small", "margin");
 
-  .content-aside__related-item & {
+  .article__related-item & {
     @include font-size-and-vertical-height(14, 22);
   }
 }
@@ -174,7 +174,7 @@
     }
   }
 
-  .content-aside__related-item & {
+  .article__related-item & {
     .teaser__header_text {
       @include font-size-and-vertical-height(16, 22);
     }
@@ -206,7 +206,7 @@
     display: none;
   }
 
-  .content-aside__related-item & {
+  .article__related-item & {
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       display: inline;
     }
