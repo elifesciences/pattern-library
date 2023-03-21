@@ -255,6 +255,19 @@ $arrow-size: 5;
         }
       }
     }
+
+    &.article-section__separator-circle {
+      .article-section__related_item {
+        font-weight: bold;
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+          &:not(:last-child)::after {
+            color: $color-text;
+            content: "\00a0\2219\00a0";
+          }
+        }
+      }
+    }
   }
 }
 
