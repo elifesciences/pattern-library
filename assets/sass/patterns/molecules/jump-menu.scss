@@ -28,8 +28,8 @@
 
 .jump-menu__active {
   @include margin(-2, "left");
-  color: $color-text;
   border-left: 2px solid $color-primary;
+  color: $color-text;
 }
 
 .jump-menu__fixed {
