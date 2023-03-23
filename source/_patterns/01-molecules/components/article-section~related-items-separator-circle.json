@@ -12,11 +12,15 @@
   "relatedLinksSeparator": "circle",
   "relatedLinks": [
     {
-      "name": "Read the peer reviews",
+      "name": "Decision letter",
       "url": "#"
     },
     {
-      "name": "About eLife's assessments",
+      "name": "Reviews on Sciety",
+      "url": "#"
+    },
+    {
+      "name": "eLife's review process",
       "url": "#"
     }
   ]

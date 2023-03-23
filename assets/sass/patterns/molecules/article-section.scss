@@ -199,7 +199,8 @@ $arrow-size: 5;
 }
 
 .article-section--highlighted {
-  @include padding($blg-space-smallish-in-px);
+  @include margin($blg-space-smallish-in-px, "bottom");
+  @include padding($blg-space-small-in-px $blg-space-smallish-in-px $blg-space-smallish-in-px $blg-space-smallish-in-px);
   background: $color-text-ui-code;
   box-sizing: content-box;
 
