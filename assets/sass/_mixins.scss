@@ -802,3 +802,11 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   }
 
 }
+
+// margin should be on the top
+@mixin local-item-style {
+  @include margin(0);
+  @include blg-spacing("bottom", "small", "margin");
+  @include font-size-and-vertical-height(14);
+  font-family: $font-secondary;
+}
