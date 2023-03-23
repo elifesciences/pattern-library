@@ -68,10 +68,6 @@
   text-align: center;
 }
 
-.item_toggle--expanded {
-  display: block;
-}
-
 .author_suffix {
   white-space: nowrap;
 }
@@ -149,6 +145,10 @@
   display: inline;
   list-style-type: none;
   padding: 0;
+
+  &.item_toggle--expanded {
+    display: block;
+  }
 }
 
 .item_toggle--collapsed:after {
