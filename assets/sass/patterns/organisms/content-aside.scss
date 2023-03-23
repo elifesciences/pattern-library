@@ -32,7 +32,7 @@
       top: 0;
     }
 
-    .content-aside__related-item {
+    .article__related-item {
       .listing-list {
         @include margin(72, "bottom");
       }
@@ -110,6 +110,7 @@
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
       display: block;
+      max-width: 244px;
     }
 
     .content-aside__first-column {
