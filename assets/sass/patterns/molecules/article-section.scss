@@ -241,7 +241,11 @@ $arrow-size: 5;
 
       .article-section__related_link {
         border-bottom: none;
-        color: $color-primary;
+        color: $color-primary-darker-grey;
+
+        &:hover {
+          color: $color-primary-blue;
+        }
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
