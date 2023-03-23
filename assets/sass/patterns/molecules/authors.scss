@@ -10,7 +10,8 @@
   background-color: transparent;
   border-style: none;
   color: $color-primary;
-  padding-top: 12px;
+  position: relative;
+  z-index: 1;
 
   &:hover {
     text-decoration: underline;
@@ -148,6 +149,10 @@
 
   &.item_toggle--expanded {
     display: block;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: inline;
+    }
   }
 }
 
@@ -157,6 +162,13 @@
 
 .item_toggle--expanded:before {
   content: "\00ab\00a0";
+  display: block;
+  transform: rotate(90deg);
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: inline;
+    transform: rotate(0deg);
+  }
 }
 
 .item_toggle:hover {
