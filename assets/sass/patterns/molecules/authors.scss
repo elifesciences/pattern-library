@@ -7,7 +7,6 @@
 
 .author_link_highlight,
 .author_link_highlight:hover {
-  @include padding(1 3);
   background-color: transparent;
   border-style: none;
   color: $color-primary;
@@ -20,6 +19,7 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include padding(1 3);
     padding-top: 0;
   }
 }
@@ -164,13 +164,20 @@
 }
 
 .item_toggle--expanded:before {
-  content: "\00ab\00a0";
-  display: block;
-  transform: rotate(90deg);
+  content: "";
+  border: solid $color-primary;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    display: inline;
+    border: none;
+    content: "\00ab\00a0";
+    padding: 0;
     transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
   }
 }
 
