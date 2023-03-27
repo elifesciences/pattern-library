@@ -220,7 +220,7 @@ $arrow-size: 5;
 
     a.doi__link {
       border-bottom: none;
-      color: $color-text-secondary;
+      color: $color-link-darker-grey;
     }
   }
 }
@@ -241,11 +241,7 @@ $arrow-size: 5;
 
       .article-section__related_link {
         border-bottom: none;
-        color: $color-primary-darker-grey;
-
-        &:hover {
-          color: $color-primary-blue;
-        }
+        color: $color-link-blue;
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
