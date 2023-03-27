@@ -343,43 +343,38 @@
       }
     ]
   },
-  "viewSelector": {
-    "primaryUrl": "#articleUrl",
-    "secondaryUrl": "#figureUrl",
-    "primaryLabel": "Article",
-    "secondaryLabel": "Figures and data",
-    "jumpLinks": {
-      "links": [
-        {
-          "name": "Abstract",
-          "url": "#abstract"
-        },
-        {
-          "name": "eLife digest",
-          "url": "#digest"
-        },
-        {
-          "name": "Introduction",
-          "url": "#introduction"
-        },
-        {
-          "name": "Materials & methods",
-          "url": "#materials-and-methods"
-        },
-        {
-          "name": "Article and author information",
-          "url": "#articleInfo"
-        },
-        {
-          "name": "References",
-          "url": "#references"
-        },
-        {
-          "name": "Metrics",
-          "url": "#metrics"
-        }
-      ]
-    }
+  "viewSelector": null,
+  "jumpMenu": {
+    "items": [
+      {
+        "name": "Abstract",
+        "url": "#abstract"
+      },
+      {
+        "name": "eLife digest",
+        "url": "#digest"
+      },
+      {
+        "name": "Introduction",
+        "url": "#introduction"
+      },
+      {
+        "name": "Materials & methods",
+        "url": "#materials-and-methods"
+      },
+      {
+        "name": "Article and author information",
+        "url": "#articleInfo"
+      },
+      {
+        "name": "References",
+        "url": "#references"
+      },
+      {
+        "name": "Metrics",
+        "url": "#metrics"
+      }
+    ]
   },
   "modalWindowCitation": {
     "closeBtnText": "Close",

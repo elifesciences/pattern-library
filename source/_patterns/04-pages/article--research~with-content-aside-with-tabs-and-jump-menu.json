@@ -272,6 +272,23 @@
   },
   "related": null,
   "contextualData": null,
+  "tabMenu": {
+    "items": [
+      {
+        "selectedClass": " tab-menu__active",
+        "name": "Full text",
+        "url": "#"
+      },
+      {
+        "name": "Figures<span class=\"tab-menu__long-name\"> and data</span>",
+        "url": "#"
+      },
+      {
+        "name": "Peer review",
+        "url": "#"
+      }
+    ]
+  },
   "jumpMenu": {
     "items": [
       {
