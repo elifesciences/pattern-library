@@ -242,6 +242,10 @@ $arrow-size: 5;
       .article-section__related_link {
         border-bottom: none;
         color: $color-link-primary;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
