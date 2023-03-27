@@ -25,6 +25,7 @@
          <div class="wrapper wrapper--content">
 
            <div class="content-container-grid">
+
              {{#tabMenu}}
                {{> molecules-tab-menu }}
              {{/tabMenu}}
@@ -32,50 +33,54 @@
              {{#viewSelector}}
                {{> molecules-view-selector }}
              {{/viewSelector}}
-           
+
+             {{#jumpMenu}}
+               {{> molecules-jump-menu }}
+             {{/jumpMenu}}
+
              <div class="main-content-grid">
-           
+
                <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
                {{#articleSections}}
                  {{> molecules-article-section }}
                {{/articleSections}}
                </div>
-           
+
                {{#iframe}}
                  {{!> atoms-iframe }}
                {{/iframe}}
-           
+
                {{! Decided this will be content, serverside }}
                {{#pl-only-article-section-for-download-links}}
                  {{> molecules-pl-only-article-section}}
                {{/pl-only-article-section-for-download-links}}
-           
+
                {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
                {{#articleMeta}}
                  <section class="article-section">
                      {{> molecules-article-meta }}
                  </section>
                {{/articleMeta}}
-           
+
              </div>
-           
+
              <div class="secondary-column-grid">
-           
+
                {{#related}}
-                 <div class="grid-secondary-column__item grid-secondary-column__item--wide-only">
+                 <div class="grid-secondary-column__item grid-secondary-column__item--wide-only article__related-item">
                    {{> organisms-listing-teasers }}
                  </div>
                {{/related}}
-           
+
              </div>
-           
+
            </div>
 
          </div>
       {{#contentAside}}
         </div>
       {{/contentAside}}
-      
+
       {{#modalWindowCitation}}
         {{> atoms-modal-window}}
       {{/modalWindowCitation}}

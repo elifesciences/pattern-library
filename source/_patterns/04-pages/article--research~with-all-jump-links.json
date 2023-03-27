@@ -1,4 +1,5 @@
 {
+  "infoBars": [],
   "isPrimaryResearch": true,
   "hasRelated": true,
   "siteHeader": {
@@ -446,6 +447,10 @@
           "url": "#abstract"
         },
         {
+          "name": "eLife assessment",
+          "url": "#assessment"
+        },
+        {
           "name": "eLife digest",
           "url": "#digest"
         },
@@ -464,6 +469,14 @@
         {
           "name": "References",
           "url": "#references"
+        },
+        {
+          "name": "Peer review",
+          "url": "#peerReview"
+        },
+        {
+          "name": "Metrics",
+          "url": "#metrics"
         }
       ]
     }
@@ -476,6 +489,29 @@
       "headingLevel": 2,
       "hasBehaviour": true,
       "body": "<p>It is <i>well established</i> that <b>learning can occur</b> without external feedback, yet normative reinforcement learning theories have difficulties explaining such instances of learning. Here, we propose that <b><i>human observers are capable of generating their own feedback signals</b></i> by monitoring internal decision variables. We investigated this hypothesis in a visual perceptual learning task using fMRI and confidence reports as a measure for this monitoring process. Employing a novel computational model in which learning is guided by confidence-based reinforcement signals, we found that mesolimbic brain areas encoded both anticipation and prediction error of confidence—in remarkable similarity to previous findings for external reward-based feedback. We demonstrate that the model accounts for choice and confidence reports and show that the mesolimbic confidence prediction error modulation derived through the model predicts individual learning success. These results provide a mechanistic neurobiological explanation for learning without external feedback by augmenting reinforcement models with confidence-based feedback.</p><p><a href=\"#fig1\">Figure 1</a> shows this model in a one-dimensional cable, corresponding to a section of neurite. In each unit of time the cargo moves a unit distance forwards or backwards, or remains in the same place, each with different probabilities. In the simplest version of the model, the probabilities of forward and backward jumps are constant for each time step (<a href=\"#fig1\">Figure 1B</a>, top panel). Cargo can also undergo extended unidirectional runs (<a href=\"#bib7\">Klumpp and Lipowsky, 2005</a>; <a href=\"#bib50\">Müller et al., 2008</a>; <a href=\"#bib31\">Hancock, 2014</a>). The model can account for these runs with jump probabilities that depend on the previous movement of the particle (<a href=\"#fig1\">Figure 1B</a>, bottom panel, Materials and methods).</p><p>While the movement of individual cargoes is stochastic, the spatial distribution of a population (<a href=\"#fig1\">Figure 1C</a>) changes predictably. This is seen in <a href=\"#fig1\">Figure 1D</a>, which shows the distribution of 1000 molecules over time, without (top panel) and with (bottom panel) unidirectional runs. The bulk distribution of cargo can therefore be modelled as a deterministic process that describes how cargo concentration spreads out in time.</p>       <p>A convenient and flexible formulation of this process is a mass-action model (<a href=\"#bib68\">Voit et al., 2015</a>) that spatially discretizes the neuron into small compartments. In an unbranched neurite with <math id=\"inf8\"><mi>N</mi></math> compartments, the mass-action model is:</p>       <div class=\"math\" id=\"equ1\" data-behaviour=\"Math\">        <span class=\"math__label\">(1)</span>        <span class=\"math__math\"><math><mstyle displaystyle=\"true\" scriptlevel=\"0\"><mrow><msub><mi>u</mi><mrow><mn>1</mn></mrow></msub><munderover><mo>⇌</mo><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>b</mi><mrow><mn>1</mn></mrow></msub></mpadded><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>a</mi><mrow><mn>1</mn></mrow></msub></mpadded></munderover><msub><mi>u</mi><mrow><mn>2</mn></mrow></msub><munderover><mo>⇌</mo><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>b</mi><mrow><mn>2</mn></mrow></msub></mpadded><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>a</mi><mrow><mn>2</mn></mrow></msub></mpadded></munderover><msub><mi>u</mi><mrow><mn>3</mn></mrow></msub><munderover><mo>⇌</mo><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>b</mi><mrow><mn>3</mn></mrow></msub></mpadded><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>a</mi><mrow><mn>3</mn></mrow></msub></mpadded></munderover><mrow></mrow><mo>.</mo><mo>.</mo><mo>.</mo><mrow></mrow><munderover><mo>⇌</mo><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>b</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msub></mpadded><mpadded lspace=\"0.278em\" width=\"+0.667em\"><msub><mi>a</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msub></mpadded></munderover><msub><mi>u</mi><mrow><mi>N</mi></mrow></msub></mrow></mstyle></math></span>        </div>       <p>where <math id=\"inf9\"><msub><mi>u</mi><mi>i</mi></msub></math> is the amount of cargo in each compartment, and <math id=\"inf10\"><msub><mi>a</mi><mi>i</mi></msub></math> and <math id=\"inf11\"><msub><mi>b</mi><mi>i</mi></msub></math> denote trafficking rate constants of cargo exchange between adjacent compartments. This model maps onto the well-known drift-diffusion equation when the trafficking rates are spatially homogeneous (<a href=\"#fig1\">Figure 1E</a>; <a href=\"#bib60\">Smith and Simmons, 2001</a>). We used this to constrain trafficking rate constants based on single-particle tracking experiments (<a href=\"#bib20\">Dynes and Steward, 2007</a>) or estimates of the mean and variance of particle positions from imaging experiments (<a href=\"#bib59\">Roy et al., 2012</a>, see Materials and methods).</p>       <p>With a compartment length of 1 μm, the simulations in <a href=\"#fig1\">Figure 1D</a> gave mean particle velocities of 15 μm per minute, which is within the range of experimental observations for microtubule transport (<a href=\"#bib58\">Rogers and Gelfand, 1998</a>; <a href=\"#bib20\">Dynes and Steward, 2007</a>; <a href=\"#bib50\">Müller et al., 2008</a>). The variances of the particle distributions depended on whether unidirectional runs are assumed, and respectively grew at a rate of ~0.58 and ~1.33 μm<sup>2</sup> per second for the top and bottom panels of <a href=\"#fig1\">Figure 1D</a>. The mass action model provides a good fit to both cases (<a href=\"#fig1\">Figure 1F</a>). In general, the apparent diffusion coefficient of the model increases as run length increases (<a href=\"/articles/20556/figures#fig1s1\">Figure 1—figure supplement 1A</a>). The accuracy of the mass-action model decreases as the run length increases. However, the model remains a reasonable approximation for many physiological run lengths and particle numbers, even over a relatively short time window of 100 s (<a href=\"/articles/20556/figures#fig1s1\">Figure 1—figure supplement 1B</a>).</p>"
+    },
+    {
+      "classes": "article-section--highlighted",
+      "id": "assessment",
+      "title": "eLife assessment",
+      "headingLevel": 2,
+      "hasBehaviour": false,
+      "body": "<p class=\"paragraph\">Collagen is a major component of extracellular matrix. The authors have identified a high-affinity inhibitory collagen receptor LAIR-1 and a soluble decoy receptor LAIR-2 (with even higher binding affinity to collagen), which can be therapeutically targeted to block tumor progression. Dr Meyaard and colleagues have also generated a dimeric LAIR-2 human IgG1 Fc fusion protein NC410 for therapeutic use. With humanized mouse models engrafted with functional human immune systems (PBMC), they have explored the anti-cancer efficacy of NC410 and revealed its impact on modulating immune responses. Furthermore, they extended this study to identify biomarkers of predictive value for NC410-based anti-cancer therapy.</p>",
+      "doi": {
+        "doi": "10.7554/eLife.16370",
+        "variant": "article-section"
+      },
+      "relatedLinksSeparator": "circle",
+      "relatedLinks": [
+        {
+          "name": "Reviews on Sciety",
+          "url": "#"
+        },
+        {
+          "name": "eLife's review process",
+          "url": "#"
+        }
+      ]
     },
     {
       "id": "digest",
@@ -515,6 +551,64 @@
       "isInitiallyClosed": true,
       "headingLevel": 2,
       "body": "  <h3 class=\"authors-details__heading\">Authors details</h3>  <ol class=\"authors-details__authors\">    <li class=\"authors-details__author\" style=\"margin-top: 0px;\"><div class=\"author-details\" data-popup-contents=\"author-3c233bb0\" id=\"author-3c233bb0\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Stefan Schaffelhofer</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Laboratory of Neural Systems, The Rockefeller University, New York, United States</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Developed the experimental setup, Trained the animals, Recorded and analysed the data, Wrote the manuscript, Acquisition of data</span>      </section>      <section class=\"author-details__section author-details__section--competing-interest\" style=\"    height: 48px;\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>      <section class=\"author-details__section author-details__section--orcid\">        <span class=\"orcid\"><a href=\"https://orcid.org/0000-0002-3400-7927\"><picture><source srcset=\"../../assets/img/icons/orcid.svg\" type=\"image/svg+xml\"><img src=\"../../assets/img/icons/orcid.png\" class=\"orcid__icon\" alt=\"ORCID icon\"> </picture> <span class=\"visuallyhidden\">The following ORCID iD identifies the author of this article:</span> 0000-0002-3400-7927</a></span>     </section>    </div>    </li>    <li class=\"authors-details__author\"><div class=\"author-details\" id=\"author-76fd97c3\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Hansjörg Scherberger</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Department of Biology, University of Göttingen, Göttingen, Germany</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Performed the surgeries, Edited the manuscript, Provided supervision at all stages of the project, Analysis and interpretation of data</span>      </section>      <section class=\"author-details__section author-details__section--means-of-correspondence\">        <h5 class=\"author-details__heading\">For correspondence: </h5>        <a href=\"mailto:hscherb@gwdg.de\" class=\"author-details__text author-details__link\">hscherb@gwdg.de</a>      </section>      <section class=\"author-details__section author-details__section--competing-interest\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>    </div>    </li>  </ol>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Funding</h3>    </header>    <div class=\"article-section__body\">      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Alexander von Humboldt-Stiftung (Postdoctoral Fellowship)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Stefan Schaffelhofer</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Deutsche Forschungsgemeinschaft (SCHE 1575/3-1)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Bundesministerium für Bildung und Forschung (BCCN-II, 01GQ1005C)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">European Commission (FP7-611687 (NEBIAS))</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <p>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Acknowledgements</h3>    </header>    <div class=\"article-section__body\">      <p>The authors thank M Sartori, M Dörge, K Menz, R Ahlert, N Nazarenus, and L Burchardt for assistance and MM Fabiszak, M Hepp-Reymond, and W Freiwald for helpful comments on an earlier version of the manuscript. This work was supported by the Federal Ministry of Education and Research (Bernstein Center for Computational Neuroscience II Grant DPZ-01GQ1005C, the German Research Foundation (SCHE 1575/3-1), the European Union Grant FP7– 611687 (NEBIAS), and the Humboldt Foundation.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Ethics</h3>    </header>    <div class=\"article-section__body\">      <p>Animal experimentation: All procedures and animal were conducted in accordance with the guidelines for the care and use of mammals in neuroscience and behavioral research (National Research Council, 2003), and were in agreement with German and European laws governing animal care. Authorization for conducting this study has been granted by the regional government office, the Animal Welfare Division of the Office for Consumer Protection and Food Safety of the State of Lower Saxony, Germany (permit no. 032/09). Monkey handling also followed the recommendations of the Weatherall Report of good animal practice. Animals were pairhoused in a spacious cage (well exceeding legal requirements) and were maintained on a 12-hour on/off lighting schedule. Housing procedures included an environmental enrichment program with access to toys, swings, and hidden treats (e.g., seeds in sawdust). Monkeys had visual and auditory contact to other monkeys. They were fed on a diet of enriched biscuits and fruits. Daily access to fluids was controlled during training and experimental periods to promote behavioral motivation. All surgical procedures were performed under anesthesia, and all efforts were made to minimize post-surgical pain or suffering. Institutional veterinarians continually monitored animal health and well-being.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Reviewers</h3>    </header>    <div class=\"article-section__body\">      <ol class=\"list\">        <li>Sabine Kastner, Reviewing editor, Princeton University, United States</li>      </ol>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Publication history</h3>    </header>    <div class=\"article-section__body\">      <ol class=\"list list--bullet\">        <li>Preprint posted: <a href=\"#\">January 1, 2013</a></li><li>Received: January 22, 2013</li><li>Accepted: May 28, 2013</li><li>Version of Record published: <a href=\"#\">July 2, 2013 (version 1)</a></li>      </ol>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Copyright</h3>    </header>    <div class=\"article-section__body\">      <p>© 2016, Schaffelhofer et al.</p><p>This article is distributed under the terms of the <a href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution License</a>, which permits unrestricted use and redistribution provided that the original author and source are credited.</p>    </div>  </section>"
+    },
+    {
+      "id": "references",
+      "title": "References",
+      "hasBehaviour": true,
+      "isInitiallyClosed": true,
+      "headingLevel": 2,
+      "body": "<ol class=\"reference-list\"> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib1\" id=\"bib1\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Geoffroy Saint-Hilaire E. </li> </ol> <span class=\"reference__authors_list_suffix\">(1818)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Philosophie Anatomique</a> <div class=\"reference__origin\"> Paris: Méquignon-Marvis </div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib2\" id=\"bib2\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> JL Feldman</li> <li class=\"reference__author\"> C Del Negro</li> <li class=\"reference__author\"> PA Gray</li> </ol> <span class=\"reference__authors_list_suffix\">(2013)</span> <a href=\"https://doi.org/10.1146/annurev-physiol-040510-130049\" class=\"reference__title\">Understanding the rhythm of breathing: so near, yet so far</a> <div class=\"reference__origin\"> In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452. </div> <span class=\"doi\"> <a href=\"https://doi.org/10.1146/annurev-physiol-040510-130049\" class=\"doi__link\"> https://doi.org/10.1146/annurev-physiol-040510-130049 </a> </span> <ul class=\"reference__abstracts\"> <li class=\"reference__abstract\"> <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" class=\"reference__abstract_link\">PubMed</a> </li> <li class=\"reference__abstract\"> <a href=\"https://google.co.uk\" class=\"reference__abstract_link\">Google Scholar</a> </li> </ul> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib3\" id=\"bib3\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Scripps Wired for Health Study (Registration: 000000)</a> <div class=\"reference__origin\"> Scripps Translational Science Institute (sponsor) (2015)</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> <ul class=\"reference__abstracts\"> <li class=\"reference__abstract\"> <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" class=\"reference__abstract_link\">PubMed</a> </li> <li class=\"reference__abstract\"> <a href=\"https://google.co.uk\" class=\"reference__abstract_link\">Google Scholar</a> </li> </ul> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib4\" id=\"bib4\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> BV Jain</li> <li class=\"reference__author\"> B Bollman</li> <li class=\"reference__author\"> M Richardson</li> <li class=\"reference__author\"> DR Berger</li> <li class=\"reference__author\"> MN Helmstaedter</li> <li class=\"reference__author\"> KL Briggman</li> <li class=\"reference__author\"> W Denk</li> <li class=\"reference__author\"> JB Bowden</li> <li class=\"reference__author\"> JM Mendenhall</li> <li class=\"reference__author\"> WC Abraham</li> <li class=\"reference__author\"> KM Harris</li> <li class=\"reference__author\"> N Kasthuri</li> <li class=\"reference__author\"> KJ Hayworth</li> <li class=\"reference__author\"> R Schalek</li> <li class=\"reference__author\"> JC Tapia</li> <li class=\"reference__author\"> JW Lichtman</li> <li class=\"reference__author\"> HS Seung</li> </ol> <span class=\"reference__authors_list_suffix\">(2010)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Boundary learning by optimization with topological constraints</a> <div class=\"reference__origin\"> Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib5\" id=\"bib5\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> R Bouveret</li> <li class=\"reference__author\"> R Bouveret</li> <li class=\"reference__author\"> N Schonrock</li> <li class=\"reference__author\"> M Ramialison</li> <li class=\"reference__author\"> T Doan</li> <li class=\"reference__author\"> D de Jong</li> <li class=\"reference__author\"> A Bondue</li> <li class=\"reference__author\"> G Kaur</li> <li class=\"reference__author\"> S Mohamed</li> <li class=\"reference__author\"> H Fonoudi</li> <li class=\"reference__author\"> C Chen</li> <li class=\"reference__author\"> M Wouters</li> <li class=\"reference__author\"> S Bhattacharya</li> <li class=\"reference__author\"> N Plachta</li> <li class=\"reference__author\"> SL Dunwoodie</li> <li class=\"reference__author\"> G Chapman</li> <li class=\"reference__author\"> C Blanpain</li> <li class=\"reference__author\"> RP Harvey</li> </ol> <span class=\"reference__authors_list_suffix\">(2015)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets</a> <div class=\"reference__origin\"> NCBI Gene Expression Omnibus. Series accession number <a href=\"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44902\">GSE44902</a> </div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib6\" id=\"bib6\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Schrenk F</li> <li class=\"reference__author\"> Bromage TG</li> <li class=\"reference__author\"> Betzler CG</li> <li class=\"reference__author\"> Ring U</li> <li class=\"reference__author\"> Juwayeyi YM</li> </ol> <span class=\"reference__authors_list_suffix\">(1993)</span> <a href=\"https://doi.org/10.1038/365833a0\" class=\"reference__title\">Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift</a> <div class=\"reference__origin\"> Nature 365:833–836. PMID 8413666</div> <span class=\"doi\"> <a href=\"https://doi.org/10.1038/365833a0\" class=\"doi__link\"> https://doi.org/10.1038/365833a0 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib7\" id=\"bib7\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> JB Patterson</li> <li class=\"reference__author\"> DG Lonergan</li> <li class=\"reference__author\"> GA Flynn</li> <li class=\"reference__author\"> Z Qingpeng</li> <li class=\"reference__author\"> PV Pallai</li> </ol> <span class=\"reference__authors_list_suffix\">(2011)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">IRE-1alpha inhibitors (US20100941530)</a> <div class=\"reference__origin\"> Mankind Corp, United States patent, United States</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib8\" id=\"bib8\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> The Economist</li> </ol> <span class=\"reference__authors_list_suffix\">(October 19, 2013)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Unreliable research: Trouble at the lab</a> <div class=\"reference__origin\"> <i>The Economist</i>, p26–30. </div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib9\" id=\"bib9\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Paris M</li> <li class=\"reference__author\"> Kaplan M</li> <li class=\"reference__author\"> Li XY</li> <li class=\"reference__author\"> Villalta JE</li> <li class=\"reference__author\"> Lott SE</li> <li class=\"reference__author\"> Eisen MB</li> </ol> <span class=\"reference__authors_list_suffix\">(2013)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression</a> <div class=\"reference__origin\"> arXiv</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib10\" id=\"bib10\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Department of Education, UK.</li> </ol> <span class=\"reference__authors_list_suffix\">(2016)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Educational Excellence Everywhere</a> <div class=\"reference__origin\"> London: HMSO</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib11\" id=\"bib11\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> W. L. DeLano</li> </ol> <span class=\"reference__authors_list_suffix\">(2002)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">The Pymol Molecular Graphics System</a> <div class=\"reference__origin\"> DeLano Scientific, Palo Alto, CA</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib12\" id=\"bib12\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Assaf M.</li> </ol> <span class=\"reference__authors_list_suffix\">(2010)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Theory of large fluctuations in stochastic populations</a> <div class=\"reference__origin\"> Hebrew University of Jerusalem</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib13\" id=\"bib13\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Crane T</li> </ol> <span class=\"reference__authors_list_suffix\">(2005)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">The Problem of Perception</a> <div class=\"reference__origin\"> The Stanford Encyclopedia of Philosophy</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> </ol>",
+      "doi": false
+    },
+    {
+      "id": "peerReview",
+      "title": "Peer review",
+      "hasBehaviour": true,
+      "isInitiallyClosed": true,
+      "headingLevel": 2,
+      "body": "<section class=\"article-section \"> <header class=\"article-section__header\"> <h3 class=\"article-section__header_text\">Reviewer #1 (public review)</h3> </header> <div class=\"article-section__body\"> <p class=\"paragraph\">Thank you for submitting your work entitled “A new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa” for peer review at <i>eLife</i>.</p> <section class=\"box\"> <h3>Box 2</h3> <p class=\"paragraph\">Your submission has been favorably evaluated by Ian Baldwin (Senior editor), two guest Reviewing editors (Johannes Krause and Nicholas Conard), and two peer reviewers. One of the two peer reviewers, Chris Stringer, has agreed to share his identity, and Johannes Krause has drafted this decision to help you prepare a revised submission.</p> </section> <p class=\"paragraph\">The authors describe a large collection of recently discovered hominin fossils from the Dinaledi Chamber in the Rising Star cave system in South Africa. Based on their initial assessment they argue that the fossil remains derive from a single homogenous hominin group and present a new taxon that they call <i>Homo naledi</i>.</p> </div> </section> <section class=\"article-section \"> <header class=\"article-section__header\"> <h3 class=\"article-section__header_text\">Reviewer #2 (public review)</h3> </header> <div class=\"article-section__body\"> <p class=\"paragraph\">Thank you for submitting your work entitled “A new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa” for peer review at <i>eLife</i>.</p> <section class=\"box\"> <h3>Box 2</h3> <p class=\"paragraph\">Your submission has been favorably evaluated by Ian Baldwin (Senior editor), two guest Reviewing editors (Johannes Krause and Nicholas Conard), and two peer reviewers. One of the two peer reviewers, Chris Stringer, has agreed to share his identity, and Johannes Krause has drafted this decision to help you prepare a revised submission.</p> </section> <p class=\"paragraph\">The authors describe a large collection of recently discovered hominin fossils from the Dinaledi Chamber in the Rising Star cave system in South Africa. Based on their initial assessment they argue that the fossil remains derive from a single homogenous hominin group and present a new taxon that they call <i>Homo naledi</i>.</p> </div> </section> <section class=\"article-section \"> <header class=\"article-section__header\"> <h3 class=\"article-section__header_text\">Recommendations for authors</h3> </header> <div class=\"article-section__body\"> <p class=\"paragraph\">Thank you for submitting your work entitled “A new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa” for peer review at <i>eLife</i>.</p> <section class=\"box\"> <h3>Box 2</h3> <p class=\"paragraph\">Your submission has been favorably evaluated by Ian Baldwin (Senior editor), two guest Reviewing editors (Johannes Krause and Nicholas Conard), and two peer reviewers. One of the two peer reviewers, Chris Stringer, has agreed to share his identity, and Johannes Krause has drafted this decision to help you prepare a revised submission.</p> </section> <p class=\"paragraph\">The authors describe a large collection of recently discovered hominin fossils from the Dinaledi Chamber in the Rising Star cave system in South Africa. Based on their initial assessment they argue that the fossil remains derive from a single homogenous hominin group and present a new taxon that they call <i>Homo naledi</i>.</p> </div> </section>",
+      "doi": false
+    },
+    {
+      "id": "peerReview",
+      "title": "Peer review",
+      "hasBehaviour": true,
+      "isInitiallyClosed": true,
+      "headingLevel": 2,
+      "body": "<section class=\"article-section \"> <header class=\"article-section__header\"> <h3 class=\"article-section__header_text\">Reviewer #1 (public review)</h3> </header> <div class=\"article-section__body\"> <p class=\"paragraph\">Thank you for submitting your work entitled “A new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa” for peer review at <i>eLife</i>.</p> <section class=\"box\"> <h3>Box 2</h3> <p class=\"paragraph\">Your submission has been favorably evaluated by Ian Baldwin (Senior editor), two guest Reviewing editors (Johannes Krause and Nicholas Conard), and two peer reviewers. One of the two peer reviewers, Chris Stringer, has agreed to share his identity, and Johannes Krause has drafted this decision to help you prepare a revised submission.</p> </section> <p class=\"paragraph\">The authors describe a large collection of recently discovered hominin fossils from the Dinaledi Chamber in the Rising Star cave system in South Africa. Based on their initial assessment they argue that the fossil remains derive from a single homogenous hominin group and present a new taxon that they call <i>Homo naledi</i>.</p> </div> </section> <section class=\"article-section \"> <header class=\"article-section__header\"> <h3 class=\"article-section__header_text\">Reviewer #2 (public review)</h3> </header> <div class=\"article-section__body\"> <p class=\"paragraph\">Thank you for submitting your work entitled “A new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa” for peer review at <i>eLife</i>.</p> <section class=\"box\"> <h3>Box 2</h3> <p class=\"paragraph\">Your submission has been favorably evaluated by Ian Baldwin (Senior editor), two guest Reviewing editors (Johannes Krause and Nicholas Conard), and two peer reviewers. One of the two peer reviewers, Chris Stringer, has agreed to share his identity, and Johannes Krause has drafted this decision to help you prepare a revised submission.</p> </section> <p class=\"paragraph\">The authors describe a large collection of recently discovered hominin fossils from the Dinaledi Chamber in the Rising Star cave system in South Africa. Based on their initial assessment they argue that the fossil remains derive from a single homogenous hominin group and present a new taxon that they call <i>Homo naledi</i>.</p> </div> </section> <section class=\"article-section \"> <header class=\"article-section__header\"> <h3 class=\"article-section__header_text\">Recommendations for authors</h3> </header> <div class=\"article-section__body\"> <p class=\"paragraph\">Thank you for submitting your work entitled “A new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa” for peer review at <i>eLife</i>.</p> <section class=\"box\"> <h3>Box 2</h3> <p class=\"paragraph\">Your submission has been favorably evaluated by Ian Baldwin (Senior editor), two guest Reviewing editors (Johannes Krause and Nicholas Conard), and two peer reviewers. One of the two peer reviewers, Chris Stringer, has agreed to share his identity, and Johannes Krause has drafted this decision to help you prepare a revised submission.</p> </section> <p class=\"paragraph\">The authors describe a large collection of recently discovered hominin fossils from the Dinaledi Chamber in the Rising Star cave system in South Africa. Based on their initial assessment they argue that the fossil remains derive from a single homogenous hominin group and present a new taxon that they call <i>Homo naledi</i>.</p> </div> </section>",
+      "doi": false
+    },
+    {
+      "id": "metrics",
+      "title": "Metrics",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "isInitiallyClosed": true,
+      "showCharts": true,
+      "chart": {
+        "id": "09560",
+        "type": "article",
+        "containerId": "chart-1",
+        "apiEndpoint": "https://prod--gateway.elifesciences.org",
+        "metric": "downloads",
+        "period": "month"
+      },
+      "body": null,
+      "stats": [
+        {
+          "label" : "Views",
+          "value": 547
+        },
+        {
+          "label" : "Downloads",
+          "value": 320
+        },
+        {
+          "label" : "Citations",
+          "value": 89
+        }
+      ]
     }
   ],
   "iframe": {
@@ -585,7 +679,6 @@
       ]
     }
   },
-
   "mainMenu": {
     "title": {
       "homePagePath": "#"
@@ -697,6 +790,68 @@
             }
           }
         }
+      },
+      {
+        "item": {
+          "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
+          "longTitle": true,
+          "hasSubjects": true,
+          "subjects": [
+            {
+              "name": "Cell Biology",
+              "url": "#"
+            },
+            {
+              "name": "Epidemiology and Global Health",
+              "url": "#"
+            }
+          ],
+          "authorLine": "Lee R Berger et al.",
+          "meta": {
+            "url": "#",
+            "text": "Research article",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 10,
+                "month": "Sep",
+                "year": 2015
+              },
+              "forMachine": "2015-09-10"
+            }
+          }
+        },
+        "content": "<p>Optimal decision-making requires balancing fast but error-prone and more accurate but slower decisions through adjustments of decision thresholds. Here, we demonstrate two distinct correlates of such speed-accuracy adjustments by recording subthalamic nucleus (STN) activity and electroencephalography in 11 Parkinson’s disease patients during a perceptual decision-making task; STN low-frequency oscillatory (LFO) activity (2–8 Hz), coupled to activity at prefrontal electrode Fz, and STN beta activity (13–30 Hz) coupled to electrodes C3/C4 close to motor cortex. These two correlates differed not only in their cortical topography and spectral characteristics but also in the relative timing of recruitment and in their precise relationship with decision thresholds. Increases of STN LFO power preceding the response predicted increased thresholds only after accuracy instructions, while cue-induced reductions of STN beta power decreased thresholds irrespective of instructions. These findings indicate that distinct neural mechanisms determine whether a decision will be made in haste or with caution.</p>"
+      },
+      {
+        "item": {
+          "title": "Physical determinants of vesicle mobility and supply at a central synapse",
+          "longTitle": true,
+          "hasSubjects": true,
+          "subjects": [
+            {
+              "name": "Cell Biology",
+              "url": "#"
+            },
+            {
+              "name": "Epidemiology and Global Health",
+              "url": "#"
+            }
+          ],
+          "authorLine": "Lee R Berger et al.",
+          "meta": {
+            "url": "#",
+            "text": "Research article",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 10,
+                "month": "Sep",
+                "year": 2015
+              },
+              "forMachine": "2015-09-10"
+            }
+          }
+        },
+        "content": "<p>Optimal decision-making requires balancing fast but error-prone and more accurate but slower decisions through adjustments of decision thresholds.</p>"
       }
     ],
     "pagination": {
@@ -709,401 +864,6 @@
     }
   },
   "year": 2016,
-
-  "references": [
-    {
-      "bibId": "bib1",
-      "title": "Philosophie Anatomique",
-      "origin": "Paris: Méquignon-Marvis",
-
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Geoffroy Saint-Hilaire E."
-            }
-          ],
-          "suffix": "(1818)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib2",
-      "title": "Understanding the rhythm of breathing: so near, yet so far",
-      "origin": "In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452.",
-
-      "doi": {
-        "doi": "10.1146/annurev-physiol-040510-130049"
-      },
-
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "JL Feldman"
-            },
-            {
-              "name": "C Del Negro"
-            },
-            {
-              "name": "PA Gray"
-            }
-          ],
-          "suffix": "(2013)"
-        }
-      ],
-      "hasAbstracts": true,
-
-      "abstracts": [
-        {
-          "name": "PubMed",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/"
-        },
-        {
-          "name": "Google Scholar",
-          "url": "https://google.co.uk"
-        }
-      ]
-    },
-    {
-      "bibId": "bib3",
-      "title": "Scripps Wired for Health Study (Registration: 000000)",
-      "origin": "Scripps Translational Science Institute (sponsor) (2015)",
-      "hasAuthors": false,
-      "hasAbstracts": true,
-
-      "abstracts": [
-        {
-          "name": "PubMed",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/"
-        },
-        {
-          "name": "Google Scholar",
-          "url": "https://google.co.uk"
-        }
-      ]
-    },
-    {
-      "bibId": "bib4",
-      "title": "Boundary learning by optimization with topological constraints",
-      "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "BV Jain"
-            },
-            {
-              "name": "B Bollman"
-            },
-            {
-              "name": "M Richardson"
-            },
-            {
-              "name": "DR Berger"
-            },
-            {
-              "name": "MN Helmstaedter"
-            },
-            {
-              "name": "KL Briggman"
-            },
-            {
-              "name": "W Denk"
-            },
-            {
-              "name": "JB Bowden"
-            },
-            {
-              "name": "JM Mendenhall"
-            },
-            {
-              "name": "WC Abraham"
-            },
-            {
-              "name": "KM Harris"
-            },
-            {
-              "name": "N Kasthuri"
-            },
-            {
-              "name": "KJ Hayworth"
-            },
-            {
-              "name": "R Schalek"
-            },
-            {
-              "name": "JC Tapia"
-            },
-            {
-              "name": "JW Lichtman"
-            },
-            {
-              "name": "HS Seung"
-            }
-          ],
-          "suffix": "(2010)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib5",
-      "title": "NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets",
-      "origin": "NCBI Gene Expression Omnibus. Series accession number <a href=\"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44902\">GSE44902</a>",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "R Bouveret"
-            },
-            {
-              "name": "R Bouveret"
-            },
-            {
-              "name": "N Schonrock"
-            },
-            {
-              "name": "M Ramialison"
-            },
-            {
-              "name": "T Doan"
-            },
-            {
-              "name": "D de Jong"
-            },
-            {
-              "name": "A Bondue"
-            },
-            {
-              "name": "G Kaur"
-            },
-            {
-              "name": "S Mohamed"
-            },
-            {
-              "name": "H Fonoudi"
-            },
-            {
-              "name": "C Chen"
-            },
-            {
-              "name": "M Wouters"
-            },
-            {
-              "name": "S Bhattacharya"
-            },
-            {
-              "name": "N Plachta"
-            },
-            {
-              "name": "SL Dunwoodie"
-            },
-            {
-              "name": "G Chapman"
-            },
-            {
-              "name": "C Blanpain"
-            },
-            {
-              "name": "RP Harvey"
-            }
-          ],
-          "suffix": "(2015)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib6",
-      "title": "Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift",
-      "origin": "Nature 365:833–836. PMID 8413666",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Schrenk F"
-            },
-            {
-              "name": "Bromage TG"
-            },
-            {
-              "name": "Betzler CG"
-            },
-            {
-              "name": "Ring U"
-            },
-            {
-              "name": "Juwayeyi YM"
-            }
-          ],
-          "suffix": "(1993)"
-        }
-      ],
-      "doi": {
-        "doi": "10.1038/365833a0"
-      },
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib7",
-      "title": "IRE-1alpha inhibitors (US20100941530)",
-      "origin": "Mankind Corp, United States patent, United States",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "JB Patterson"
-            },
-            {
-              "name": "DG Lonergan"
-            },
-            {
-              "name": "GA Flynn"
-            },
-            {
-              "name": "Z Qingpeng"
-            },
-            {
-              "name": "PV Pallai"
-            }
-          ],
-          "suffix": "(2011)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib8",
-      "title": "Unreliable research: Trouble at the lab",
-      "titleLink": "https://www.economist.com/news/briefing/21588057-scientists-think-science-self-correcting-alarming-degree-it-not-trouble",
-      "origin": "<i>The Economist</i>, p26–30.",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "The Economist"
-            }
-          ],
-          "suffix": "(October 19, 2013)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib9",
-      "title": "Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression",
-      "titleLink": "https://arxiv.org/abs/1303.0216",
-      "origin": "arXiv",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Paris M"
-            },
-            {
-              "name": "Kaplan M"
-            },
-            {
-              "name": "Li XY"
-            },
-            {
-              "name": "Villalta JE"
-            },
-            {
-              "name": "Lott SE"
-            },
-            {
-              "name": "Eisen MB"
-            }
-          ],
-          "suffix": "(2013)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib10",
-      "title": "Educational Excellence Everywhere",
-      "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
-      "origin": "London: HMSO",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Department of Education, UK."
-            }
-          ],
-          "suffix": "(2016)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib11",
-      "title": "The Pymol Molecular Graphics System",
-      "origin": "DeLano Scientific, Palo Alto, CA",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "W. L. DeLano"
-            }
-          ],
-          "suffix": "(2002)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib12",
-      "title": "Theory of large fluctuations in stochastic populations",
-      "titleLink": "https://doi.org/10.1371/journal.pgen.0030218",
-      "origin": "Hebrew University of Jerusalem",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Assaf M."
-            }
-          ],
-          "suffix": "(2010)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib13",
-      "title": "The Problem of Perception",
-      "titleLink": "http://plato.stanford.edu/entries/perception-problem/",
-      "origin": "The Stanford Encyclopedia of Philosophy",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Crane T"
-            }
-          ],
-          "suffix": "(2005)"
-        }
-      ],
-      "hasAbstracts": false
-    }
-  ],
-
   "related": {
     "items": [
       {
@@ -1117,10 +877,6 @@
             }
           ]
         },
-        "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
-        "url": "#",
-        "ariaLabel": "Descriptive and accessible label",
-        "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
 
         "image": {
           "fallback": {
@@ -1130,6 +886,10 @@
           },
           "type": "big"
         },
+        "title": "Reproducibility Project: Cancer Biology",
+        "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
+        "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
 
         "footer": {
           "meta": {
