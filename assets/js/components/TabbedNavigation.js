@@ -18,11 +18,13 @@ module.exports = class ContentAside {
       return;
     }
 
-    if (e.target.classList.contains('tabbed-navigation__tab-label--long')) {
-      lastActiveElement.classList.remove(this.activeClassName);
+    lastActiveElement.classList.remove(this.activeClassName);
+
+    if (e.target.classList.contains('tabbed-navigation__tab-label')) {
+      e.target.classList.add(this.activeClassName);
+    } else if (e.target.classList.contains('tabbed-navigation__tab-label--long')) {
       e.target.parentNode.parentNode.classList.add(this.activeClassName);
     } else {
-      lastActiveElement.classList.remove(this.activeClassName);
       e.target.parentNode.classList.add(this.activeClassName);
     }
 

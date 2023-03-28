@@ -24,16 +24,25 @@ describe('A TabbedNavigation Component', function () {
 
   it('adds and removes the "tabbed-navigation__tab-label--active" class when inactive tab is clicked', function () {
     let _tabbedNavigation = new TabbedNavigation($elm);
-    let activeTabbedNavigation = _tabbedNavigation.$elm.querySelector('.tabbed-navigation__tab-label--active');
-    let notActiveTabbedNavigation = _tabbedNavigation.$elm.querySelector('.tabbed-navigation__tab-label:not(.tabbed-navigation__tab-label--active)');
-    notActiveTabbedNavigation.click();
-    expect(activeTabbedNavigation.classList.contains('tabbed-navigation__tab-label--active')).to.be.false;
-    expect(notActiveTabbedNavigation.parentNode.classList.contains('tabbed-navigation__tab-label--active')).to.be.true;
+    let activeTabbedNavigationTab = _tabbedNavigation.$elm.querySelector('.tabbed-navigation__tab-label--active');
+    let notActiveTabbedNavigationTab = _tabbedNavigation.$elm.querySelector('.tabbed-navigation__tab-label:not(.tabbed-navigation__tab-label--active)');
+    notActiveTabbedNavigationTab.click();
+    expect(activeTabbedNavigationTab.classList.contains('tabbed-navigation__tab-label--active')).to.be.false;
+    expect(notActiveTabbedNavigationTab.classList.contains('tabbed-navigation__tab-label--active')).to.be.true;
+  });
+
+  it('adds and removes the "tabbed-navigation__tab-label--active" class when inactive link is clicked', function () {
+    let _tabbedNavigation = new TabbedNavigation($elm);
+    let activeTabbedNavigationTab = _tabbedNavigation.$elm.querySelector('.tabbed-navigation__tab-label--active');
+    let notActiveTabbedNavigationLink = _tabbedNavigation.$elm.querySelector('.tabbed-navigation__tab-label:not(.tabbed-navigation__tab-label--active) a');
+    notActiveTabbedNavigationLink.click();
+    expect(activeTabbedNavigationTab.classList.contains('tabbed-navigation__tab-label--active')).to.be.false;
+    expect(notActiveTabbedNavigationLink.parentNode.classList.contains('tabbed-navigation__tab-label--active')).to.be.true;
   });
 
   it('adds and removes the "tabbed-navigation__tab-label--active" class when tab with long text is clicked', function () {
     let _tabbedNavigation = new TabbedNavigation($elm);
-    let activeTabbedNavigation = _tabbedNavigation.$elm.querySelector('.tabbed-navigation__tab-label--active');
+    let activeTabbedNavigation = _tabbedNavigation.$elm.querySelector('.tabbed-navigation__tab-label--active .tabbed-navigation__tab-label--long');
     let longTabbedNavigationText = _tabbedNavigation.$elm.querySelector('.tabbed-navigation__tab-label--long');
     longTabbedNavigationText.click();
     expect(activeTabbedNavigation.classList.contains('tabbed-navigation__tab-label--active')).to.be.false;
