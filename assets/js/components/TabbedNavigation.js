@@ -6,17 +6,22 @@ module.exports = class ContentAside {
     this.$elm = $elm;
     this.window = _window;
     this.doc = doc;
-    this.activeClassName = 'tab-menu__active';
-    this.$tabMenuList = this.$elm.querySelector('.tab-menu__list');
-    this.$tabMenuList.addEventListener('click', this.showActiveTab.bind(this));
+    this.activeClassName = 'tabbed-navigation__tab-label--active';
+    this.$tabbedNavigation = this.$elm.querySelector('.tabbed-navigation__tabs');
+    this.$tabbedNavigation.addEventListener('click', this.showActiveTab.bind(this));
   }
 
   showActiveTab(e) {
     const lastActiveElement = this.$elm.querySelector('.' + this.activeClassName);
-    if (e.target.classList.contains('tab-menu')) {
+
+    if (!lastActiveElement) {
+      return;
+    }
+
+    if (e.target.classList.contains('tabbed-navigation__tab-label--long')) {
       lastActiveElement.classList.remove(this.activeClassName);
-      e.target.classList.add(this.activeClassName);
-    } else if (e.target.classList.contains('tab-menu__long-name')) {
+      e.target.parentNode.parentNode.classList.add(this.activeClassName);
+    } else {
       lastActiveElement.classList.remove(this.activeClassName);
       e.target.parentNode.classList.add(this.activeClassName);
     }
