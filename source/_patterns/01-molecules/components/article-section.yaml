@@ -39,6 +39,10 @@ properties:
     required:
       - name
       - url
+  relatedLinksSeparator:
+    type: string
+    enum:
+      - circle
   relatedLinks:
     type: array
     properties:
@@ -62,5 +66,7 @@ dependencies:
     - hasBehaviour
   doi:
     - id
+  relatedLinksSeparator:
+    - relatedLinks
 required:
   - body
