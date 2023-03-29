@@ -22,6 +22,11 @@
     @include margin(-24, "right");
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include margin(-48, "left");
+      @include margin(-48, "right");
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include margin(0, "left");
       @include margin(0, "right");
     }
