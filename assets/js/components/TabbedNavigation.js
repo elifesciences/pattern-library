@@ -14,7 +14,7 @@ module.exports = class ContentAside {
   showActiveTab(e) {
     const lastActiveElement = this.$elm.querySelector('.' + this.activeClassName);
 
-    if (!lastActiveElement) {
+    if (!lastActiveElement || e.target.classList.contains('tabbed-navigation__tabs')) {
       return;
     }
 
