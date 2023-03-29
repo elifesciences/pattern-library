@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = class ContentAside {
+module.exports = class TabbedNavigation {
 
   constructor($elm, _window = window, doc = document) {
     this.$elm = $elm;
