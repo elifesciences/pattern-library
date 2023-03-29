@@ -7,28 +7,22 @@ module.exports = class ContentAside {
     this.window = _window;
     this.doc = doc;
     this.activeClassName = 'tabbed-navigation__tab-label--active';
-    this.$tabbedNavigation = this.$elm.querySelector('.tabbed-navigation__tabs');
-    this.$tabbedNavigation.addEventListener('click', this.showActiveTab.bind(this));
+    this.$tabbedNavigationLinks = Array.prototype.slice.call(this.$elm.querySelectorAll('.tabbed-navigation__tab-label a'));
+    this.$tabbedNavigationLinks.forEach((tabbedNavigationLink) => {
+      tabbedNavigationLink.addEventListener('click', this.showActiveTab.bind(this));
+    });
   }
 
   showActiveTab(e) {
-    const lastActiveElement = this.$elm.querySelector('.' + this.activeClassName);
+    e.preventDefault();
 
-    if (!lastActiveElement || e.target.classList.contains('tabbed-navigation__tabs')) {
+    const lastActiveElement = this.$elm.querySelector('.tabbed-navigation__tab-label--active a');
+
+    if (!lastActiveElement || e.target === lastActiveElement) {
       return;
     }
 
-    lastActiveElement.classList.remove(this.activeClassName);
-
-    if (e.target.classList.contains('tabbed-navigation__tab-label')) {
-      e.target.classList.add(this.activeClassName);
-    } else if (e.target.classList.contains('tabbed-navigation__tab-label--long')) {
-      e.target.parentNode.parentNode.classList.add(this.activeClassName);
-    } else {
-      e.target.parentNode.classList.add(this.activeClassName);
-    }
-
-    e.preventDefault();
-    e.stopPropagation();
+    lastActiveElement.parentNode.classList.remove(this.activeClassName);
+    e.target.parentNode.classList.add(this.activeClassName);
   }
 };

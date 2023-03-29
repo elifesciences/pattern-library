@@ -30,11 +30,10 @@
 
 .tabbed-navigation__tab-label {
   @include font-size-and-vertical-height(16, 24);
-  cursor: pointer;
   display: inline;
 
   &.tabbed-navigation__tab-label--active {
-    font-weight: bold;
+    font-weight: 600;
     border-bottom: 4px solid $color-primary;
   }
 
@@ -57,6 +56,7 @@
 
 .tabbed-navigation__tab-label--long {
   display: none;
+  pointer-events: none;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     display: inline;
