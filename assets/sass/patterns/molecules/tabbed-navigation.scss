@@ -29,14 +29,9 @@
 }
 
 .tabbed-navigation__tab-label {
-  @include padding(24 14);
   @include font-size-and-vertical-height(16, 24);
   cursor: pointer;
   display: inline;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    @include padding(24 18 20);
-  }
 
   &.tabbed-navigation__tab-label--active {
     font-weight: bold;
@@ -44,10 +39,15 @@
   }
 
   a {
+    @include padding(24 14);
     color: $color-text-secondary;
     display: block;
     font-family: $font-secondary;
     text-decoration: none;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include padding(24 18 20);
+    }
 
     &:hover {
       color: $color-text;
