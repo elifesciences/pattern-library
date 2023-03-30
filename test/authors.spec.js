@@ -224,7 +224,7 @@ describe('An Authors Component', function () {
       describe('the getUpdatedToggleText() method', () => {
 
         it('returns the correct toggle text when expanded', () => {
-          const expected = '<span class="visuallyhidden"> collapse author list</span><span aria-hidden="true" class="item_toggle_cta">&#171;</span>';
+          const expected = '<span class="visuallyhidden"> collapse author list</span><span aria-hidden="true">see&nbsp;less</span>';
           expect(authorsNarrow.getUpdatedToggleText('expanded')).to.equal(expected);
         });
 
