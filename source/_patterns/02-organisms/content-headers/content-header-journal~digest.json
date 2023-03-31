@@ -6,8 +6,7 @@
     "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
     "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
     "linkedInUrl": "https://www.linkedin.com/company/elife-sciences-publications-ltd",
-    "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url",
-    "mastodonUrl": "https://toot.kytta.dev/?text=Some%20article%20title%20https%3A%2F%2Fexample.com%2Fsome-article-url"
+    "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
   },
   "impactStatement": "A new open source software tool makes it possible for researchers to view cells in living animals in high detail.",
   "licence": "https://creativecommons.org/publicdomain/zero/1.0/",

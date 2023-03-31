@@ -49,16 +49,10 @@
       @include margin(0, "left");
       @include margin(6, "right");
 
-      // Temporary hardcoded
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
 
-        &:first-child,
-        &:last-child {
+        &:first-child {
           display: none;
-        }
-
-        &:nth-child(5) {
-          @include margin(0, "right");
         }
       }
     }
