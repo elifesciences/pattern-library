@@ -38,9 +38,12 @@
   display: inline;
 
   &.tabbed-navigation__tab-label--active {
-    color: $color-text;
     border-bottom: 4px solid $color-primary;
     font-weight: 600;
+
+    a {
+      color: $color-text;
+    }
   }
 
   a {
