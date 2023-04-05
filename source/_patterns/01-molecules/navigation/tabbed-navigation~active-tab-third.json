@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "name": "Full text",
+      "url": "#"
+    },
+    {
+      "name": "Figures<span class=\"tabbed-navigation__tab-label--long\"> and data</span>",
+      "url": "#"
+    },
+    {
+      "selectedClass": " tabbed-navigation__tab-label--active",
+      "name": "Peer review",
+      "url": "#"
+    }
+  ]
+}

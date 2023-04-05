@@ -1,16 +1,7 @@
 {
   "items": [
     {
-      "selectedClass": " tabbed-navigation__tab-label--active",
-      "name": "Full text",
-      "url": "#"
-    },
-    {
-      "name": "Figures<span class=\"tabbed-navigation__tab-label--long\"> and data</span>",
-      "url": "#"
-    },
-    {
-      "name": "Peer review",
+      "name": "[Do not use this base pattern directly: see the following variants of this pattern for usage]",
       "url": "#"
     }
   ]
