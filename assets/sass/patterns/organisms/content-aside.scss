@@ -75,6 +75,10 @@
   .content-aside__second-column {
     @include padding(24, "bottom");
 
+    &:empty {
+      display: none;
+    }
+
     .definition-list--timeline {
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         min-width: 220px;

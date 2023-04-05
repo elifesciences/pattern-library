@@ -25,24 +25,21 @@
 
     </div>   
 
-    <div class="content-aside__second-column">
-
-      {{#timeline}}
+    <div class="content-aside__second-column">{{!
+      }}{{#timeline}}
         <div class="divider"></div>
 
         <div class="content-aside__definition-list">
           {{>atoms-definition-list}}
         </div>
       {{/timeline}}
-
       {{#related}}
         <div class="divider"></div>
 
         <div class="article__related-item grid-secondary-column__item--extended-wide-only">
           {{> organisms-listing-teasers }}
         </div>
-      {{/related}}
-
-    </div>
+      {{/related}}{{!
+    }}</div>
   </div>
 </aside>

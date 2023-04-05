@@ -234,14 +234,6 @@
         "selectedClass": " tabbed-navigation__tab-label--active",
         "name": "Full text",
         "url": "#"
-      },
-      {
-        "name": "Figures<span class=\"tabbed-navigation__tab-label--long\"> and data</span>",
-        "url": "#"
-      },
-      {
-        "name": "Peer review",
-        "url": "#"
       }
     ]
   },
