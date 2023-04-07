@@ -5,12 +5,5 @@ properties:
     type: boolean
   image:
     $ref: picture.yaml
-  text:
-    type: string
-    minLength: 1
-  url:
-    type: string
-    minLength: 1
-required:
-  - text
-  - url
+  items:
+    $ref: ../../../non-pattern-schema/link.yaml
