@@ -28,17 +28,7 @@ properties:
     type: boolean
     default: false
   headerLink:
-    type: object
-    properties:
-      name:
-        type: string
-        minLength: 1
-      url:
-        type: string
-        minLength: 1
-    required:
-      - name
-      - url
+    $ref: ../../../non-pattern-schema/link.yaml
   relatedLinksSeparator:
     type: string
     enum:
@@ -46,15 +36,8 @@ properties:
   relatedLinks:
     type: array
     properties:
-      name:
-        type: string
-        minLength: 1
-      url:
-        type: string
-        minLength: 1
-    required:
-      - name
-      - url
+      items:
+        $ref: ../../../non-pattern-schema/link.yaml
 dependencies:
   title:
     - headingLevel
