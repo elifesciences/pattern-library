@@ -654,20 +654,26 @@
           "items": [
             {
               "primary": {
-                "name": "Article PDF",
-                "url": "#"
+                "link": {
+                  "name": "Article PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Figures PDF",
-                "url": "#"
+                "link": {
+                  "name": "Figures PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Executable version",
-                "url": "#eraLink"
+                "link": {
+                  "name": "Executable version",
+                  "url": "#eraLink"
+                }
               },
               "secondary": {
                 "name": "What are executable versions?",
