@@ -670,8 +670,10 @@
           "nonDoiLink": "https://example.com/a-non-doi-link",
 
           "downloadLink": {
-            "url": "#downloadLink",
-            "name": "Download me",
+            "link": {
+              "url": "#downloadLink",
+              "name": "Download me"
+            },
             "fileName": "#download-me.png"
           }
         },
@@ -688,8 +690,10 @@
           },
 
           "downloadLink": {
-            "url": "#downloadLink",
-            "name": "Download me",
+            "link": {
+              "url": "#downloadLink",
+              "name": "Download me"
+            },
             "fileName": "#download-me.png"
           }
         }
