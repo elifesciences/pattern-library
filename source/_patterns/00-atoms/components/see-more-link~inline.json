@@ -1,5 +1,8 @@
 {
-  "url": "#",
-  "name": "wonderous things inline!",
+  "link": {
+    "url": "#",
+    "name": "wonderous things inline!",
+    "ariaLabel": "wonderous things inline!"
+  },
   "isInline": true
 }
