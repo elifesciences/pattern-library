@@ -5,5 +5,7 @@ properties:
     type: boolean
   image:
     $ref: picture.yaml
-  items:
+  link:
     $ref: ../../../non-pattern-schema/link.yaml
+required:
+  - link
