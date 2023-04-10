@@ -5,3 +5,5 @@ properties:
     $ref: ../../../non-pattern-schema/link.yaml
   isInline:
     type: boolean
+required:
+  - link
