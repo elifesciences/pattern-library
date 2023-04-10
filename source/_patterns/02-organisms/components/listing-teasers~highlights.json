@@ -8,8 +8,8 @@
   "items":[
     {
       "rootClasses":"teaser--secondary teaser--highlights",
-      "title":"The [1] parasite’s new clothes",
       "url":"#",
+      "name":"The [1] parasite’s new clothes",
       "ariaLabel": "Descriptive and accessible label",
       "secondaryInfo":"Mark S Pearson, Alex Loukas",
       "carouselItem": true,
