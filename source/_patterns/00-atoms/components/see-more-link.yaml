@@ -1,17 +1,7 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
-  url:
-    type: string
-    minLength: 1
-  name:
-    type: string
-    minLength: 1
+  items:
+    $ref: ../../../non-pattern-schema/link.yaml
   isInline:
     type: boolean
-  ariaLabel:
-    type: string
-    minLength: 1
-required:
-  - url
-  - name
