@@ -504,12 +504,16 @@
       "relatedLinksSeparator": "circle",
       "relatedLinks": [
         {
-          "name": "Reviews on Sciety",
-          "url": "#"
+          "link": {
+            "name": "Reviews on Sciety",
+            "url": "#"
+          }
         },
         {
-          "name": "eLife's review process",
-          "url": "#"
+          "link": {
+            "name": "eLife's review process",
+            "url": "#"
+          }
         }
       ]
     },
