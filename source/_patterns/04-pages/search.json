@@ -87,9 +87,9 @@
 
   "sortControl": {
     "options": [
-      { "option": "Relevance", "sorting": "descending", "url": "?sortby=relevance&amp;sort=desc" },
-      { "option": "Date", "url": "?sortby=date&amp;sort=desc" }
-    ]
+      { "link": { "name": "Relevance", "url": "?sortby=relevance&amp;sort=desc" }, "sorting": "descending" },
+      { "link": { "name": "Date", "url": "?sortby=date&amp;sort=desc" } }
+    ]  
   },
 
   "messageBar": {
