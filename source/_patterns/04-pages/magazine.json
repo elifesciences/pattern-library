@@ -151,28 +151,40 @@
     },
     "sections": [
       {
-        "url": "#",
-        "name": "Editorials"
+        "link": {
+          "url": "#",
+          "name": "Editorials"
+        }
       },
       {
-        "url": "#",
-        "name": "Insights"
+        "link": {
+          "url": "#",
+          "name": "Insights"
+        }
       },
       {
-        "url": "#",
-        "name": "Feature Articles"
+        "link": {
+          "url": "#",
+          "name": "Feature Articles"
+        }
       },
       {
-        "url": "#",
-        "name": "Podcasts"
+        "link": {
+          "url": "#",
+          "name": "Podcasts"
+        }
       },
       {
-        "url": "#",
-        "name": "Collections"
+        "link": {
+          "url": "#",
+          "name": "Collections"
+        }
       },
       {
-        "url": "#",
-        "name": "Community"
+        "link": {
+          "url": "#",
+          "name": "Community"
+        }
       }
     ]
   },
