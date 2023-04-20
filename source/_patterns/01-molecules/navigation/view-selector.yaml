@@ -26,17 +26,7 @@ properties:
   otherLinks:
     type: array
     items:
-      type: object
-      properties:
-        name:
-          type: string
-          minLength: 1
-        url:
-          type: string
-          minLength: 1
-      required:
-        - name
-        - url
+      $ref: ../../../non-pattern-schema/link.yaml
   jumpLinks:
     type: object
     properties:
@@ -44,17 +34,7 @@ properties:
         type: array
         minItems: 2
         items:
-          type: object
-          properties:
-            name:
-              type: string
-              minLength: 1
-            url:
-              type: string
-              minLength: 1
-          required:
-            - name
-            - url
+          $ref: ../../../non-pattern-schema/link.yaml
     required:
       - links
 required:
