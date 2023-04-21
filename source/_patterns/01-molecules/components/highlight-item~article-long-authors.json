@@ -1,6 +1,8 @@
 {
-  "url": "#link-to-article",
-  "name": "Molecular basis for multimerization in the activation of the epidermal growth factor",
+  "link": {
+    "url": "#link-to-article",
+    "name": "Molecular basis for multimerization in the activation of the epidermal growth factor"
+  },
   "authors": "Thisisanexample Ofareallylongauthorline, Todemonstrate Whatitlookslike ... Ifthis Valuewraps",
   "summary": "Summary",
   "meta": {

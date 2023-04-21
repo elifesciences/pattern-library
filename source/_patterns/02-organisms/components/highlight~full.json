@@ -4,8 +4,10 @@
   },
   "items": [
     {
-      "url": "#link-to-article",
-      "name": "Infection, statistics and public health",
+      "link": {
+        "url": "#link-to-article",
+        "name": "Infection, statistics and public health"
+      },
       "summary": "Summary",
       "meta": {
         "url": "#",
@@ -27,8 +29,10 @@
       }
     },
     {
-      "title": "Controlling traffic",
-      "url": "#link-to-article",
+      "link": {
+        "url": "#link-to-article",
+        "name": "Controlling traffic"
+      },
       "summary": "Ramanath Hegde is a Postdoctoral Fellow at the Institute of Protein Biochemistry in Naples, Italy, where he investigates ways of preventing cells from destroying mutant proteins.",
       "meta": {
         "url": "#",
@@ -50,8 +54,10 @@
       }
     },
     {
-      "title": "Controlling traffic",
-      "url": "#link-to-article",
+      "link": {
+        "url": "#link-to-article",
+        "name": "Controlling traffic"
+      },
       "summary": "Ramanath Hegde is a Postdoctoral Fellow at the Institute of Protein Biochemistry in Naples, Italy, where he investigates ways of preventing cells from destroying mutant proteins.",
       "meta": {
         "url": "#",

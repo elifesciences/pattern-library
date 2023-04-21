@@ -1,6 +1,8 @@
 {
-  "url": "#link-to-article",
-  "name": "April/May 2016",
+  "link": {
+    "url": "#link-to-article",
+    "name": "April/May 2016"
+  },
   "summary": "Summary",
   "meta": {
     "url": "#",

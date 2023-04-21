@@ -7,7 +7,7 @@
   "highlights":true,
   "items":[
     {
-      "rootClasses": "teaser--secondary teaser--highlights",
+      "rootClasses":"teaser--secondary teaser--highlights",
       "title":"The [1] parasite’s new clothes",
       "url":"#",
       "ariaLabel": "Descriptive and accessible label",

@@ -1,6 +1,8 @@
 {
-  "url": "#link-to-article",
-  "name": "Infection, statistics and public health",
+  "link": {
+    "url": "#link-to-article",
+    "name": "Infection, statistics and public health"
+  },
   "summary": "Summary",
   "meta": {
     "url": "#",
