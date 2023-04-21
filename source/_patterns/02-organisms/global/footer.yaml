@@ -7,17 +7,7 @@ allOf:
       footerMenuLinks:
         type: array
         items:
-          type: object
-          properties:
-            name:
-              type: string
-              minLength: 1
-            url:
-              type: string
-              minLength: 1
-          required:
-            - name
-            - url
+          $ref: ../../../non-pattern-schema/link.yaml
         minItems: 1
     required:
       - year
