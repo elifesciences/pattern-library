@@ -12,14 +12,7 @@ properties:
     type: array
     minItems: 1
     items:
-      type: object
-      properties:
-        link:
-          $ref: ../../../non-pattern-schema/link.yaml
-        isCurrent:
-          type: boolean
-      required:
-        - link
+      $ref: ../../../non-pattern-schema/link.yaml
 required:
   - id
   - sections

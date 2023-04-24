@@ -223,94 +223,64 @@
     },
     "sections": [
       {
-        "link": {
-          "url": "#",
-          "name": "Biochemistry"
-        }
+        "url": "#",
+        "name": "Biochemistry"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Biophysics and structural biology"
-        }
+        "url": "#",
+        "name": "Biophysics and structural biology"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Cancer biology"
-        }
+        "url": "#",
+        "name": "Cancer biology"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Cell biology"
-        }
+        "url": "#",
+        "name": "Cell biology"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Computational and systems biology"
-        }
+        "url": "#",
+        "name": "Computational and systems biology"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Developmental biology and stem cells"
-        }
+        "url": "#",
+        "name": "Developmental biology and stem cells"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Ecology"
-        }
+        "url": "#",
+        "name": "Ecology"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Epidemiology and Global Health"
-        }
+        "url": "#",
+        "name": "Epidemiology and Global Health"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Genes and chromosomes"
-        }
+        "url": "#",
+        "name": "Genes and chromosomes"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Genomics and evolutionary biology"
-        }
+        "url": "#",
+        "name": "Genomics and evolutionary biology"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Immunology"
-        }
+        "url": "#",
+        "name": "Immunology"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Medicine"
-        }
+        "url": "#",
+        "name": "Medicine"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Microbiology and infectious disease"
-        }
+        "url": "#",
+        "name": "Microbiology and infectious disease"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Neuroscience"
-        }
+        "url": "#",
+        "name": "Neuroscience"
       },
       {
-        "link": {
-          "url": "#",
-          "name": "Plant biology"
-        }
+        "url": "#",
+        "name": "Plant biology"
       }
     ]
   },
