@@ -7,20 +7,15 @@ properties:
     items:
       type: object
       properties:
-        option:
-          type: string
-          minLength: 1
+        link:
+          $ref: ../../../non-pattern-schema/link.yaml
         sorting:
           type: string
           minLength: 1
           enum:
             - ascending
             - descending
-        url:
-          type: string
-          minLength: 1
       required:
-        - option
-        - url
+        - link
 required:
   - options

@@ -1,7 +1,7 @@
 {
   "options": [
-    { "option": "Date", "sorting": "ascending", "url": "?sortby=date&amp;sort=desc" },
-    { "option": "Relevance", "sorting": "descending", "url": "?sortby=relevance&amp;sort=asc" },
-    { "option": "Cite", "url": "?sortby=cite&amp;sort=desc" }
+    { "link": { "name": "Date", "url": "?sortby=date&amp;sort=desc" }, "sorting": "descending" },
+    { "link": { "name": "Relevance", "url": "?sortby=relevance&amp;sort=asc" }, "sorting": "ascending" },
+    { "link": { "name": "Cite", "url": "?sortby=cite&amp;sort=desc" } }
   ]
 }

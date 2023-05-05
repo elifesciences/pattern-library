@@ -1,6 +1,8 @@
 {
-  "title": "Molecular basis for multimerization in the activation of the epidermal growth factor",
-  "url": "#link-to-article",
+  "link": {
+    "url": "#link-to-article",
+    "name": "Molecular basis for multimerization in the activation of the epidermal growth factor"
+  },
   "authors": "Yongjian Huang, Shashank Bharill ... John Kuriyan",
   "summary": "Summary",
   "meta": {

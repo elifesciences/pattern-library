@@ -1,6 +1,8 @@
 {
-  "url": "#",
-  "text": "Developmental Biology and Stem Cells",
+  "link": {
+    "url": "#",
+    "name": "Developmental Biology and Stem Cells"
+  },
   "isGridListing": true,
   "image": {
     "fallback": {
