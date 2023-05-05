@@ -1,7 +1,9 @@
 {
-  "title": "Highlights from Japan",
+  "link": {
+    "url": "#link-to-article",
+    "name": "Highlights from Japan"
+  },
   "summary": "Summary",
-  "url": "#link-to-article",
   "meta": {
     "url": "#",
     "text": "Promotional collections",

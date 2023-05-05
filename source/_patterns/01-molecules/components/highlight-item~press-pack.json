@@ -1,6 +1,8 @@
 {
-  "title": "Scientists prove key aspect of evolutionary theory",
-  "url": "#",
+  "link": {
+    "url": "#",
+    "name": "Scientists prove key aspect of evolutionary theory"
+  },
   "summary": "While this event was first predicted almost twenty years ago, evidence for it has proved elusive.",
   "meta": {
     "url": "#",
