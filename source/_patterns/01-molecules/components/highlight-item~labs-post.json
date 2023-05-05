@@ -1,6 +1,8 @@
 {
-  "title": "Experimental eLife Lens search page",
-  "url": "#link-to-article",
+  "link": {
+    "url": "#link-to-article",
+    "name": "Experimental eLife Lens search page"
+  },
   "summary": "Summary",
   "meta": {
     "url": "#",
