@@ -14,18 +14,13 @@ properties:
   downloadLink:
     type: object
     properties:
-      url:
-        type: string
-        minLength: 1
-      name:
-        type: string
-        minLength: 1
+      link:
+        $ref: ../../../non-pattern-schema/link.yaml
       fileName:
         type: string
         minLength: 1
     required:
-      - url
-      - name
+      - link
 allOf:
   -
     required:
