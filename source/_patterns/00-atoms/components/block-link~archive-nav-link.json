@@ -1,6 +1,8 @@
 {
-  "url": "#",
-  "text": "Developmental Biology and Stem Cells",
+  "link": {
+    "url": "#",
+    "name": "Developmental Biology and Stem Cells"
+  },
   "image": {
     "fallback": {
       "defaultPath": "https://unsplash.it/263/190",

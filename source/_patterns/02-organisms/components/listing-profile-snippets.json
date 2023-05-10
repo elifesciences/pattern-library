@@ -27,9 +27,11 @@
     }
   ],
   "seeMoreLink": {
-    "name": "See more things!",
-    "url": "#",
-    "ariaLabel": "Descriptive and accessible name for the link"
+    "link": {
+      "name": "See more things!",
+      "url": "#",
+      "ariaLabel": "Descriptive and accessible name for the link"
+    }
   }
 
 }
