@@ -7,8 +7,10 @@
       "items": [
         {
           "primary": {
-            "name": "Article",
-            "url": "#",
+            "link": {
+              "name": "Article",
+              "url": "#"
+            },
             "attributes": [
               {
                 "key": "foo",
@@ -22,14 +24,18 @@
         },
         {
           "primary": {
-            "name": "Figures",
-            "url": "#"
+            "link": {
+              "name": "Figures",
+              "url": "#"
+            }
           }
         },
         {
           "primary": {
-            "name": "Executable version",
-            "url": "#eraLink"
+            "link": {
+              "name": "Executable version",
+              "url": "#eraLink"
+            }
           },
           "secondary": {
             "name": "What are executable versions?",
@@ -43,21 +49,27 @@
       "items": [
         {
           "primary": {
-            "name": "Mendeley",
-            "url": "#"
+            "link": {
+              "name": "Mendeley",
+              "url": "#"
+            }
           }
         },
         {
           "primary": {
-            "name": "ReadCube (broken)",
-            "url": "#",
+            "link": {
+              "name": "ReadCube (broken)",
+              "url": "#"
+            },
             "checkPMC": "https://ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids=10.7554/eLife.broken&format=json"
           }
         },
         {
           "primary": {
-            "name": "ReadCube (working)",
-            "url": "#",
+            "link": {
+              "name": "ReadCube (working)",
+              "url": "#"
+            },
             "checkPMC": "https://ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids=10.7554/eLife.73360&format=json"
           }
         }
@@ -71,14 +83,18 @@
       "items": [
         {
           "primary": {
-            "name": "Download BibTex",
-            "url": "#"
+            "link": {
+              "name": "Download BibTex",
+              "url": "#"
+            }
           }
         },
         {
           "primary": {
-            "name": "Download RIS",
-            "url": "#"
+            "link": {
+              "name": "Download RIS",
+              "url": "#"
+            }
           }
         }
       ]
