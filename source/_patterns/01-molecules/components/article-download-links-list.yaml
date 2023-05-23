@@ -33,12 +33,8 @@ properties:
               primary:
                 type: object
                 properties:
-                  name:
-                    type: string
-                    minLength: 1
-                  url:
-                    type: string
-                    minLength: 1
+                  link:
+                    $ref: ../../../non-pattern-schema/link.yaml
                   checkPMC:
                     type: string
                     minLength: 1
@@ -55,20 +51,9 @@ properties:
                       required:
                         - key
                 required:
-                  - name
-                  - url
+                  - link
               secondary:
-                type: object
-                properties:
-                  name:
-                    type: string
-                    minLength: 1
-                  url:
-                    type: string
-                    minLength: 1
-                required:
-                  - name
-                  - url
+                $ref: ../../../non-pattern-schema/link.yaml
             required:
               - primary
       required:
