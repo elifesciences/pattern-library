@@ -13,7 +13,7 @@
     grid-column: 1/10;
   }
 
-  & ~ .main-content-grid {
+  &:not(.hidden) ~ .main-content-grid {
     grid-row: 2;
   }
 
