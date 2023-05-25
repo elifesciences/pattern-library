@@ -1,0 +1,94 @@
+{
+  "title": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa",
+  "longTitle": true,
+  "socialMediaSharers": {
+    "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "linkedInUrl": "https://www.linkedin.com/company/elife-sciences-publications-ltd",
+    "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "mastodonUrl": "https://toot.kytta.dev/?text=Some%20article%20title%20https%3A%2F%2Fexample.com%2Fsome-article-url"
+  },
+  "header": {
+    "possible": true,
+    "hasSubjects": true,
+    "subjects": [
+      {
+        "name": "Cell Biology",
+        "url": "#"
+      },
+      {
+        "name": "Epidemiology and Global Health",
+        "url": "#"
+      },
+      {
+        "name": "Epidemiology and Global Health",
+        "url": "#"
+      }
+    ]
+  },
+  "download": "#articleDownloadLinksList",
+  "cite": "#articleCite",
+  "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "authors": {
+    "list": [
+      {
+        "name": "Lee R Berger",
+        "url": "#",
+        "isCorresponding": true
+      }
+    ],
+    "institutions": {
+      "list": [
+        {
+          "name": "University of the Witwatersrand, South Africa"
+        }
+      ]
+    }
+  },
+  "breadcrumb": {
+    "items": [
+      {
+        "url": "#",
+        "name": "Research Article"
+      },
+      {
+        "url": "#",
+        "name": "Magazine"
+      },
+      {
+        "url": "#",
+        "name": "Magazine"
+      },
+      {
+        "url": "#",
+        "name": "Magazine"
+      },
+      {
+        "url": "#",
+        "name": "Magazine"
+      }
+    ]
+  },
+  "meta": {
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 29,
+        "month": "Feb",
+        "year": 2016
+      },
+      "forMachine": "2016-02-29"
+    }
+  },
+  "doi": {
+    "doi": "10.7554/eLife.16370"
+  },
+  "contextualData": {
+    "metricsData": {
+      "data": [
+        { "text": "<a href=\"#\"><strong>149</strong> views</a>" },
+        { "text": "<strong>5</strong> citations" }
+      ]
+    }
+  }
+}

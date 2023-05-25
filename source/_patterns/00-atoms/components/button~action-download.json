@@ -1,0 +1,7 @@
+{
+  "text": "Button action (Download)",
+  "classes": "button--default button--action icon icon-download",
+  "path": "#download",
+  "id": "button-action-download",
+  "ariaLabel": "Descriptive and accessible name"
+}

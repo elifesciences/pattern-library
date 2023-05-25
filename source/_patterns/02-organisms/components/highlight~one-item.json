@@ -1,0 +1,32 @@
+{
+  "heading": {
+    "heading": "Highlights"
+  },
+  "items": [
+    {
+      "link": {
+        "url": "#link-to-article",
+        "name": "Experimental eLife Lens search page"
+      },
+      "summary": "Summary",
+      "meta": {
+        "url": "#",
+        "text": "Labs post",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 1,
+            "month": "Apr",
+            "year": 2015
+          },
+          "forMachine": "2015-04-01"
+        }
+      },
+      "image": {
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "Meaningful alt text please."
+        }
+      }
+    }
+  ]
+}

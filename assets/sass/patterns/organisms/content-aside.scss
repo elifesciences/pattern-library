@@ -1,0 +1,361 @@
+@import "../../definitions";
+
+.content-aside {
+  @include padding(12, "top");
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include padding(24, "top");
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+    @include padding(86, "top");
+    align-items: flex-end;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+
+    & > .divider {
+      display: none;
+    }
+
+    &.content-aside__sticky {
+      @include padding(72, "top");
+      max-height: 100vh;
+      overflow-y: auto;
+      position: sticky;
+      top: 0;
+    }
+
+    .article__related-item {
+      .listing-list {
+        @include margin(72, "bottom");
+      }
+    }
+  }
+
+  .button-collection {
+    &.button-collection--inline {
+      @include margin(24, "bottom");
+
+      .button-collection__item {
+        @include margin(12, "bottom");
+      }
+    }
+  }
+
+  .contextual-data {
+    border: none;
+  }
+
+  .contextual-data__list {
+    border: none;
+    display: none;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: flex;
+    }
+
+    .contextual-data__item {
+      @include padding(0);
+
+      &:before {
+        content: ", ";
+      }
+
+      &:first-child {
+        &:before {
+          content: "";
+        }
+      }
+    }
+  }
+
+  .content-aside__second-column {
+    @include padding(24, "bottom");
+
+    .definition-list--timeline {
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        min-width: 220px;
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+        min-width: auto;
+      }
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+      @include padding(0, "bottom");
+    }
+
+    .divider {
+      display: none;
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+        display: block;
+      }
+    }
+  }
+
+  .content-aside__column-wrapper {
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: flex;
+      grid-column: 2/12;
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+      display: block;
+      max-width: 244px;
+    }
+
+    .content-aside__first-column {
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include padding(48, "right");
+      }
+
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+        @include padding(0, "right");
+      }
+    }
+  }
+
+  .js & .content-aside__definition-list {
+    display: grid;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: block;
+    }
+
+    & .definition-list dt,
+    & .definition-list dd {
+      &:nth-of-type(n+2) {
+        display: none;
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        &:nth-of-type(-n+3) {
+          display: block;
+        }
+        &:nth-of-type(n+5) {
+          display: none;
+        }
+      }
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+        &:nth-of-type(n+2) {
+          display: block;
+        }
+      }
+    }
+
+    .toggle {
+      @include font-size-and-vertical-height(12, 24);
+      @include padding(0 17 0 10);
+      align-self: start;
+      color: $color-text;
+      font-family: $font-secondary;
+      font-weight: bold;
+      grid-row: 1;
+      justify-self: end;
+      position: relative;
+      display: inline-block;
+
+      &:before {
+        content: "History";
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          content: "Show history";
+        }
+      }
+
+      &:after {
+        @include arrow("down", 5);
+        @include height(5);
+        @include width(5);
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 9px;
+        transform-origin: 50% 50%;
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        @include padding(0 17 0 0);
+        @include margin(24, "top");
+        grid-row: 2;
+        justify-self: start;
+
+        &:after {
+          top: 9px;
+        }
+      }
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+        display: none;
+      }
+    }
+
+    &.toggle--count-gt-3 .toggle {
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        display: none;
+      }
+    }
+
+    &.toggle--expanded .definition-list dt,
+    &.toggle--expanded .definition-list dd {
+      &:nth-of-type(n+2) {
+        display: block;
+      }
+    }
+
+    &.toggle--expanded {
+      .toggle {
+        @include margin(24, "bottom");
+        align-self: end;
+
+        &:before {
+          content: "Hide";
+          @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+            content: "Hide history";
+          }
+        }
+
+        &:after {
+          @include arrow("up", 5);
+        }
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          @include margin(0, "bottom");
+        }
+      }
+    }
+  }
+
+  .definition-list {
+    @include margin(0);
+    grid-row: 1;
+    overflow: hidden;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+      @include margin(24, "top");
+      @include padding(24, "bottom");
+    }
+  }
+
+  .status-wrapper {
+    @include margin(24, "bottom");
+
+    .status-title {
+      @include padding(0, "top");
+      color: $color-primary;
+      line-height: 22px;
+
+      @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+        @include padding(12, "top");
+      }
+    }
+
+    .status-title__short {
+      @include font-size(18);
+    }
+
+    .status-title__long {
+      @include font-size(16);
+    }
+
+    .status-description {
+      @include font-size-and-vertical-height(14, 20);
+      @include margin(12, "bottom");
+      font-family: $font-secondary;
+    }
+
+    .status-link {
+      @include font-size-and-vertical-height(14, 22);
+      color: $color-primary;
+      font-family: $font-secondary;
+      font-weight: 700;
+    }
+  }
+}
+
+.wrapper--content-with-header-and-aside {
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+    display: grid;
+    grid-column-gap: 24px;
+    grid-template-columns: repeat(12, 1fr);
+
+    .content-header {
+      &.content-header__has-aside {
+        grid-column: 1/9;
+        grid-row: 2;
+      }
+
+      .content-container-grid {
+        display: block;
+      }
+    }
+
+    .content-aside {
+      grid-column: 9/13;
+      grid-row: 2/4;
+    }
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    .content-header {
+      &.content-header__has-aside {
+        @include padding(36, "right");
+        grid-column: 1/10;
+      }
+    }
+
+    .content-aside {
+      grid-column: 10/13;
+    }
+  }
+
+  & > .wrapper {
+    @include padding(0);
+  }
+
+  .wrapper--content {
+    @include padding(24, "top");
+    grid-column: 1/13;
+    grid-row: 3;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include padding(36, "top");
+
+      .view-selector,
+      .main-content-grid {
+        grid-column: 2/12;
+      }
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+      @include padding(24, "top");
+
+      .view-selector,
+      .main-content-grid {
+        grid-column: 1/9;
+      }
+    }
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include padding(36, "top");
+
+      .view-selector {
+        grid-column: 1/3;
+      }
+
+      .main-content-grid {
+        @include margin(36, "left");
+        @include margin(36, "right");
+        grid-column: 3/10;
+      }
+    }
+  }
+}

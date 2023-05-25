@@ -1,117 +1,85 @@
 {
+  "infoBars": [],
   "isPrimaryResearch": true,
   "hasRelated": true,
   "siteHeader": {
     "title": {
       "homePagePath": "#"
     },
-    "primaryLinks": {
+    "primaryLinks":
+    {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "visuallyhidden",
           "path": "#mainMenu",
-          "picture": {
-            "pictureClasses": "nav-primary__menu_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-              }
-            ]
-          }
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "Innovation",
+          "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
-        },
-
-        {
-          "text": "Search the eLife site",
-          "rel": "search",
-          "classes": "nav-primary__item nav-primary__item--search",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "pictureClasses": "nav-primary__search_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-              }
-            ]
-          }
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
-    "secondaryLinks": {
+
+    "secondaryLinks":
+    {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
-          "text": "Newsletters",
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-secondary__item nav-secondary__item--search",
           "path": "#",
-          "classes": "nav-secondary__item"
-        },
-        {
-          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-          "path": "#",
-          "classes": "nav-secondary__item"
-        },
-        {
-          "text": "Submit my research",
-          "path": "#",
-          "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
-          "button": {
-            "classes": "button--default button--extra-small"
-          }
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "classes": "nav-secondary__item",
-          "loginControl": {
-            "button": {
-              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-              "path": "#",
-              "classes": "button--login"
-            }
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--alert",
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Submit your research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
+          "button": {
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
       ]
     },
+
     "searchBox": {
       "inContentHeader": true,
       "compactForm": {
@@ -423,10 +391,9 @@
       ]
     },
     "download": "#downloads",
+    "cite": "#cite-this-article",
     "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
     "meta": {
-      "url": "#",
-      "text": "Research article",
       "date": {
         "forHuman": {
           "dayOfMonth": 10,
@@ -437,31 +404,41 @@
       }
     }
   },
+  "modalWindowCitation": {
+    "closeBtnText": "Close",
+    "body": "<div class='reference'><ol class='reference__authors_list'><li class='reference__author'><a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'> Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>Juwayeyi YM</li></ol> <span class='reference__authors_list_suffix'>(1993)</span> Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift<div class='reference__origin'> <i>Nature</i> <strong>365</strong>:833–836.</div><span class='doi'>https://doi.org/10.1038/365833a0</span></div><ol class='button-collection'><li class='button-collection__item'>  <button class='button button--default' type='button' data-behaviour='ButtonClipboard' data-clipboard='Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring UJuwayeyi YM(1993) Oldest Homo and Pliocene biogeography of the Malawi rift Nature 365:833–836.https://doi.org/10.1038/365833a0'>Copy to clipboard</button></li><li class='button-collection__item'>  <button class='button button--default button--secondary' type='button'>Download Bibtex</button></li><li class='button-collection__item'>  <button class='button button--default button--secondary' type='button'>Download .RIS</button></li></ol>",
+    "title": "Cite this article",
+    "triggerId": "modalContentCitations"
+  },
+  "modalWindowShare": {
+    "smallDeviceOnly": true,
+    "title": "Share this article",
+    "body": "<div class='form-item'><input type='url' class='text-field text-field--url' value='https://doi.org/10.7554/eLife.09560'></div><button class='button button--default' type='submit' id='button-id' data-behaviour='ButtonClipboard' data-clipboard='https://doi.org/10.7554/eLife.09560'>Copy to clipboard</button><ul class='social-media-sharers'><li><a class='social-media-sharer email' href='mailto:?subject=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;body=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share by Email'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='email' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 Z' id='Shape' fill='#000000' fill-rule='nonzero'></path></g></svg></a></li><li><a class='social-media-sharer' href='https://twitter.com/intent/tweet/?text=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Tweet a link to this page'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='twitter' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M21,6.73175 C20.33775,7.02575 19.626,7.22375 18.879,7.313 C19.64175,6.85625 20.2275,6.1325 20.50275,5.27 C19.7895,5.693 18.999,6.0005 18.1575,6.16625 C17.48475,5.4485 16.524,5 15.462,5 C13.07775,5 11.32575,7.2245 11.86425,9.53375 C8.796,9.38 6.075,7.91 4.25325,5.67575 C3.28575,7.3355 3.7515,9.50675 5.3955,10.60625 C4.791,10.58675 4.221,10.421 3.72375,10.14425 C3.68325,11.855 4.9095,13.4555 6.6855,13.81175 C6.16575,13.95275 5.5965,13.98575 5.0175,13.87475 C5.487,15.34175 6.8505,16.409 8.4675,16.439 C6.915,17.65625 4.959,18.2 3,17.969 C4.63425,19.01675 6.576,19.628 8.661,19.628 C15.5175,19.628 19.39125,13.83725 19.15725,8.6435 C19.87875,8.12225 20.505,7.472 21,6.73175 Z' id='Path' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share on Facebook'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='facebook' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M11.8969072,2 C6.43099227,2 2,6.41067993 2,11.8515383 C2,16.7687258 5.61915593,20.844338 10.3505155,21.5833958 L10.3505155,14.6992486 L7.83762887,14.6992486 L7.83762887,11.8515383 L10.3505155,11.8515383 L10.3505155,9.68112126 C10.3505155,7.21207948 11.8280541,5.84825714 14.0887242,5.84825714 C15.1715271,5.84825714 16.3041237,6.04067 16.3041237,6.04067 L16.3041237,8.465072 L15.0561469,8.465072 C13.8267075,8.465072 13.443299,9.22446783 13.443299,10.0035475 L13.443299,11.8515383 L16.1881443,11.8515383 L15.7493557,14.6992486 L13.443299,14.6992486 L13.443299,21.5833958 C18.1746585,20.844338 21.7938144,16.7687258 21.7938144,11.8515383 C21.7938144,6.41067993 17.3628222,2 11.8969072,2 Z' id='Fill-1' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://www.linkedin.com/shareArticle?title=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_self' aria-label='Share this page to LinkedIn (opens up email program, if configured on this system)'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='linkedin' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='Rectangle' x='0' y='0' width='24' height='24'></rect><path d='M18.9751954,18.9751435 L16.0232549,18.9751435 L16.0232549,14.3522816 C16.0232549,13.2499163 16.0035753,11.8308324 14.4879383,11.8308324 C12.9504693,11.8308324 12.7152366,13.0319032 12.7152366,14.2720257 L12.7152366,18.974836 L9.76329605,18.974836 L9.76329605,9.46835755 L12.5971589,9.46835755 L12.5971589,10.7675189 L12.6368256,10.7675189 C13.2146663,9.77952684 14.2890899,9.18943873 15.4328668,9.23189481 C18.4247815,9.23189481 18.9764254,11.1998552 18.9764254,13.7600486 L18.9751954,18.9751435 Z M6.43252317,8.16888879 C5.48643292,8.16905854 4.71933758,7.40223852 4.7191677,6.45614827 C4.71899794,5.51005802 5.48581795,4.74296266 6.4319082,4.74279278 C7.37799845,4.74262301 8.14509382,5.50944301 8.14526371,6.45553326 C8.14534522,6.90986184 7.96494211,7.34561469 7.64374096,7.66693118 C7.32253981,7.98824766 6.88685175,8.16880719 6.43252317,8.16888879 M7.90849343,18.9751435 L4.95347798,18.9751435 L4.95347798,9.46835755 L7.90849343,9.46835755 L7.90849343,18.9751435 Z M20.4468607,2.00148552 L3.47012787,2.00148552 C2.66777241,1.99243094 2.00979231,2.63513479 2,3.43748159 L2,20.4846305 C2.00945705,21.2873639 2.6673842,21.9307041 3.47012787,21.9223954 L20.4468607,21.9223954 C21.2511925,21.9322515 21.9116962,21.2889485 21.922831,20.4846305 L21.922831,3.43625161 C21.9113617,2.63231978 21.2508045,1.98965267 20.4468607,2' id='Path_2520' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://reddit.com/submit/?title=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share this page on Reddit'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='reddit' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='Rectangle' x='0' y='0' width='24' height='24'></rect><path d='M11.9872095,1.051163 C18.0270212,1.051163 22.923256,5.94739779 22.923256,11.9872095 C22.923256,18.0270212 18.0270212,22.923256 11.9872095,22.923256 C5.94739779,22.923256 1.051163,18.0270212 1.051163,11.9872095 C1.051163,5.94739779 5.94739779,1.051163 11.9872095,1.051163 Z M16.5534886,5.37441881 C16.1058142,5.37441881 15.7220932,5.63023277 15.5430235,6.0139537 L12.895349,5.451163 C12.8186049,5.4383723 12.7418607,5.451163 12.6779072,5.48953509 C12.6139537,5.52790719 12.5755816,5.59186067 12.5500002,5.66860486 L11.7441863,9.48023277 C10.0430235,9.53139556 8.52093044,10.0302328 7.42093044,10.8360467 C7.13953509,10.5674421 6.74302347,10.3883723 6.32093044,10.3883723 C5.4383723,10.3883723 4.72209323,11.1046514 4.72209323,11.9872095 C4.72209323,12.6395351 5.10581416,13.1895351 5.66860486,13.445349 C5.64302347,13.5988374 5.63023277,13.7651165 5.63023277,13.9313956 C5.63023277,16.3872095 8.48255835,18.3697677 12.0127909,18.3697677 C15.5430235,18.3697677 18.395349,16.3872095 18.395349,13.9313956 C18.395349,13.7651165 18.3825583,13.6116281 18.356977,13.4581397 C18.8813956,13.2023258 19.2779072,12.6395351 19.2779072,11.9872095 C19.2779072,11.1046514 18.5616281,10.3883723 17.67907,10.3883723 C17.2441863,10.3883723 16.8604653,10.5546514 16.57907,10.8360467 C15.4918607,10.0558142 13.9825583,9.54418626 12.3197677,9.48023277 L13.0488374,6.06511649 L15.4151165,6.5639537 C15.4406979,7.16511649 15.9395351,7.651163 16.5534886,7.651163 C17.1802328,7.651163 17.6918607,7.13953509 17.6918607,6.51279091 C17.6918607,5.88604672 17.1802328,5.37441881 16.5534886,5.37441881 Z M9.72325602,15.7093025 C10.2093025,16.195349 11.2581397,16.3744188 12.0127909,16.3744188 C12.7674421,16.3744188 13.8034886,16.195349 14.3023258,15.7093025 C14.4174421,15.5941863 14.6093025,15.5941863 14.7244188,15.7093025 C14.8139537,15.8372095 14.8139537,16.0162793 14.6988374,16.1313956 C13.9186049,16.9116281 12.4348839,16.9627909 12.0000002,16.9627909 C11.5651165,16.9627909 10.0686049,16.8988374 9.301163,16.1313956 C9.18604672,16.0162793 9.18604672,15.8244188 9.301163,15.7093025 C9.41627928,15.5941863 9.60813974,15.5941863 9.72325602,15.7093025 Z M9.48023277,11.9872095 C10.1069769,11.9872095 10.6186049,12.4988374 10.6186049,13.1255816 C10.6186049,13.7523258 10.1069769,14.2639537 9.48023277,14.2639537 C8.85348858,14.2639537 8.34186067,13.7523258 8.34186067,13.1255816 C8.34186067,12.4988374 8.85348858,11.9872095 9.48023277,11.9872095 Z M14.4941863,11.9872095 C15.1209304,11.9872095 15.6325583,12.4988374 15.6325583,13.1255816 C15.6325583,13.7523258 15.1209304,14.2639537 14.4941863,14.2639537 C13.8674421,14.2639537 13.3558142,13.7523258 13.3558142,13.1255816 C13.3558142,12.4988374 13.8674421,11.9872095 14.4941863,11.9872095 Z' id='Combined-Shape' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li></ul>",
+    "triggerId": "modalContentShare"
+  },
+  "doi": "10.7554/eLife.16370",
   "contextualData": {
     "metricsData": {
       "data": [
-        { "text": "<a href=\"#\">Views 149</a>" },
-        { "text": "Cited 5" }
-      ],
-      "annotationCount": {
-        "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count></span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
-        "isSmall": true,
-        "behaviour": "HypothesisOpener"
-      }
-    },
-    "citation": {
-      "citeAs": "eLife 2016;5:e16370",
-      "doi": {
-        "class": "contextual-data__doi",
-        "doi": "10.7554/eLife.16370",
-        "isTruncated": true
-      }
+        { "text": "<a href=\"#\"><strong>149</strong> views</a>" },
+        { "text": "<strong>5</strong> citations" }
+      ]
     }
   },
+  "breadcrumb": {
+    "items": [
+      {
+        "url": "#",
+        "name": "Research Article"
+      }
+    ]
+  },
   "viewSelector": {
-    "articleUrl": "#articleUrl",
-    "figureUrl": "#figureUrl",
+    "primaryUrl": "#articleUrl",
+    "secondaryUrl": "#figureUrl",
     "sideBySideUrl": "https://lens.elifesciences.org/09560",
+    "primaryLabel": "Article",
+    "secondaryLabel": "Figures and data",
     "otherLinks": [{ "name": "Executable code", "url": "#rds" }],
     "jumpLinks": {
       "links": [
@@ -488,6 +465,10 @@
         {
           "name": "References",
           "url": "#references"
+        },
+        {
+          "name": "Metrics",
+          "url": "#metrics"
         }
       ]
     }
@@ -506,7 +487,7 @@
       "title": "eLife Digest",
       "headingLevel": 2,
       "hasBehaviour": true,
-      "body": "<p>Each year, up to 15% of the world's population experience symptoms of an influenza infection, also commonly known as flu. The most common culprit is a strain of the virus called influenza type A subtype H3N2. One reason that so many people become infected each year is that this virus evolves rapidly. Within a few years, proteins on the surface of the virus known as antigens become less recognizable to the <a href=\"#bib8\">immune system</a> of a person who has been previously infected. This means that the person can become ill with the virus again because their immune system cannot mount an effective response to the evolved virus strain.</p><pre class=\"code\"><code>&lt;dock_design&gt;\n&nbsp;&nbsp;&lt;SCOREFXNS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;fullatom weights=beta symmetric = 0&gt; &lt;/fullatom&gt; \n&nbsp;&nbsp;&lt;/SCOREFXNS&gt; \n&nbsp;&nbsp;&lt;FILTERS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Ddg name=ddg scorefxn=fullatom threshold = 0 jump = 1 repeats = 1 repack = 1 confidence = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Sasa name=sasa confidence = 0/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;ShapeComplementarity name=shape verbose = 1 confidence = 0 jump = 1/&gt; \n&nbsp;&nbsp;&lt;/FILTERS&gt;\n&nbsp;&nbsp;&lt;MOVERS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;AtomTree name=docking_tree docking_ft = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockSetupMover name=setup_dock/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockingProtocol name=dock docking_score_high=fullatom low_res_protocol_only = 0 docking_local_refine = 0 dock_min = 1 /&gt;\n&nbsp;&nbsp;&lt;/MOVERS&gt;\n&nbsp;&nbsp;&lt;APPLY_TO_POSE&gt;\n&nbsp;&nbsp;&lt;/APPLY_TO_POSE&gt; \n&nbsp;&nbsp;&lt;PROTOCOLS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=docking_tree/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=setup_dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=ddg/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=sasa/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=shape/&gt; \n&nbsp;&nbsp;&lt;/PROTOCOLS&gt; \n&lt;/dock_design&gt;</code></pre><p>Influenza virus strains evolve rapidly because their genetic material accumulates mutations quickly. Although some of these mutations are beneficial to the virus, other mutations are harmful and reduce the ability of the virus to spread. Sometimes beneficial mutations may occur alongside harmful ones, but it is not known how the harmful mutations affect the evolution of the virus.</p><p>Here, Koelle and Rasmussen used <a href=\"#bib9\">computer models</a> of H3N2 influenza to examine the effect of harmful mutations on the evolution of this virus population. The models show that harmful mutations limit how quickly the antigens can evolve. Also, the presence of these harmful mutations effectively acts as a sieve: they allow only large changes in the antigens to establish in the virus population.</p><p>The models suggest that there are three routes by which large changes in the antigens on H3N2 viruses may occur. The first is by a single mutation that has a big effect on the antigens in viruses that only carry a few harmful mutations, but these large mutations would not happen very often. Another route may be through more common mutations that have only a small or moderate benefit, which would allow the virus to become more common in the population before it acquires a beneficial mutation with a much greater effect. The third possibility is that a large beneficial mutation may arise in viruses that have many harmful mutations. These harmful mutations may initially limit the ability of the virus to spread, but over time, some of these harmful mutations may then be lost.</p><p>Koelle and Rasmussen found that the computer models could recreate the patterns of virus evolution that have been observed in real strains of H3N2. <a href=\"#bib1\">Researchers</a> use predictions of influenza evolution to help them decide which virus strains should be included in flu vaccines each year. Koelle and Rasmussen findings indicate that harmful mutations should be considered when making these predictions.</p><p>This is a long URL that breaks <a href=''>http://baltimorepkdcenter.org/mouse/PCR%20Protocol%20for%20Genotyping%20PKD2KO%20and%20PKD2%5Eneo.pdf</a></p>",
+      "body": "<p>Each year, up to 15% of the world's population experience symptoms of an influenza infection, also commonly known as flu. The most common culprit is a strain of the virus called influenza type A subtype H3N2. One reason that so many people become infected each year is that this virus evolves rapidly. Within a few years, proteins on the surface of the virus known as antigens become less recognizable to the <a href=\"#bib8\">immune system</a> of a person who has been previously infected. This means that the person can become ill with the virus again because their immune system cannot mount an effective response to the evolved virus strain.</p><pre class=\"code\"><code>&lt;dock_design&gt;\n&nbsp;&nbsp;&lt;SCOREFXNS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;fullatom weights=beta symmetric = 0&gt; &lt;/fullatom&gt; \n&nbsp;&nbsp;&lt;/SCOREFXNS&gt; \n&nbsp;&nbsp;&lt;FILTERS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Ddg name=ddg scorefxn=fullatom threshold = 0 jump = 1 repeats = 1 repack = 1 confidence = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Sasa name=sasa confidence = 0/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;ShapeComplementarity name=shape verbose = 1 confidence = 0 jump = 1/&gt; \n&nbsp;&nbsp;&lt;/FILTERS&gt;\n&nbsp;&nbsp;&lt;MOVERS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;AtomTree name=docking_tree docking_ft = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockSetupMover name=setup_dock/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockingProtocol name=dock docking_score_high=fullatom low_res_protocol_only = 0 docking_local_refine = 0 dock_min = 1 /&gt;\n&nbsp;&nbsp;&lt;/MOVERS&gt;\n&nbsp;&nbsp;&lt;APPLY_TO_POSE&gt;\n&nbsp;&nbsp;&lt;/APPLY_TO_POSE&gt; \n&nbsp;&nbsp;&lt;PROTOCOLS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=docking_tree/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=setup_dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=ddg/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=sasa/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=shape/&gt; \n&nbsp;&nbsp;&lt;/PROTOCOLS&gt; \n&lt;/dock_design&gt;</code></pre><p>Influenza virus strains evolve rapidly because their genetic material accumulates mutations quickly. Although some of these mutations are beneficial to the virus, other mutations are harmful and reduce the ability of the virus to spread. Sometimes beneficial mutations may occur alongside harmful ones, but it is not known how the harmful mutations affect the evolution of the virus.</p><p>Here, Koelle and Rasmussen used <a href=\"#bib9\">computer models</a> of H3N2 influenza to examine the effect of harmful mutations on the evolution of this virus population. The models show that harmful mutations limit how quickly the antigens can evolve. Also, the presence of these harmful mutations effectively acts as a sieve: they allow only large changes in the antigens to establish in the virus population.</p><p>The models suggest that there are three routes by which large changes in the antigens on H3N2 viruses may occur. The first is by a single mutation that has a big effect on the antigens in viruses that only carry a few harmful mutations, but these large mutations would not happen very often. Another route may be through more common mutations that have only a small or moderate benefit, which would allow the virus to become more common in the population before it acquires a beneficial mutation with a much greater effect. The third possibility is that a large beneficial mutation may arise in viruses that have many harmful mutations. These harmful mutations may initially limit the ability of the virus to spread, but over time, some of these harmful mutations may then be lost.</p><p>Koelle and Rasmussen found that the computer models could recreate the patterns of virus evolution that have been observed in real strains of H3N2. <a href=\"#bib1\">Researchers</a> use predictions of influenza evolution to help them decide which virus strains should be included in flu vaccines each year. Koelle and Rasmussen findings indicate that harmful mutations should be considered when making these predictions.</p><p>This is a long URL that breaks <a href=''>http://baltimorepkdcenter.org/mouse/PCR%20Protocol%20for%20Genotyping%20PKD2KO%20and%20PKD2%5Eneo.pdf</a></p><span class=\"sequence\">CAAGTCGCTCACGGCGCTCAAGGAGCACCAGGACCGCATCCACGGCAACGGGGAGACCAACGGTCATCACGGTTTGTCTGGTCAACCACCGCGGTCTCAGTGGTGTACGGTACAAACCTGATCGCTGAGATACTCGGATCGCCGCAATTCCTCTTCGGAGGGGTTGCGGCGATCTTTTTATGTGCGCTTTC</span>",
       "doi": {
         "doi": "10.7554/eLife.16370",
         "variant": "article-section"
@@ -539,6 +520,46 @@
       "isInitiallyClosed": true,
       "headingLevel": 2,
       "body": "  <h3 class=\"authors-details__heading\">Authors details</h3>  <ol class=\"authors-details__authors\">    <li class=\"authors-details__author\" style=\"margin-top: 0px;\"><div class=\"author-details\" data-popup-contents=\"author-3c233bb0\" id=\"author-3c233bb0\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Stefan Schaffelhofer</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Laboratory of Neural Systems, The Rockefeller University, New York, United States</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Developed the experimental setup, Trained the animals, Recorded and analysed the data, Wrote the manuscript, Acquisition of data</span>      </section>      <section class=\"author-details__section author-details__section--competing-interest\" style=\"    height: 48px;\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>      <section class=\"author-details__section author-details__section--orcid\">        <span class=\"orcid\"><a href=\"https://orcid.org/0000-0002-3400-7927\"><picture><source srcset=\"../../assets/img/icons/orcid.svg\" type=\"image/svg+xml\"><img src=\"../../assets/img/icons/orcid.png\" class=\"orcid__icon\" alt=\"ORCID icon\"> </picture> <span class=\"visuallyhidden\">The following ORCID iD identifies the author of this article:</span> 0000-0002-3400-7927</a></span>     </section>    </div>    </li>    <li class=\"authors-details__author\"><div class=\"author-details\" id=\"author-76fd97c3\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Hansjörg Scherberger</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Department of Biology, University of Göttingen, Göttingen, Germany</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Performed the surgeries, Edited the manuscript, Provided supervision at all stages of the project, Analysis and interpretation of data</span>      </section>      <section class=\"author-details__section author-details__section--means-of-correspondence\">        <h5 class=\"author-details__heading\">For correspondence: </h5>        <a href=\"mailto:hscherb@gwdg.de\" class=\"author-details__text author-details__link\">hscherb@gwdg.de</a>      </section>      <section class=\"author-details__section author-details__section--competing-interest\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>    </div>    </li>  </ol>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Funding</h3>    </header>    <div class=\"article-section__body\">      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Alexander von Humboldt-Stiftung (Postdoctoral Fellowship)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Stefan Schaffelhofer</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Deutsche Forschungsgemeinschaft (SCHE 1575/3-1)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Bundesministerium für Bildung und Forschung (BCCN-II, 01GQ1005C)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">European Commission (FP7-611687 (NEBIAS))</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <p>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Acknowledgements</h3>    </header>    <div class=\"article-section__body\">      <p>The authors thank M Sartori, M Dörge, K Menz, R Ahlert, N Nazarenus, and L Burchardt for assistance and MM Fabiszak, M Hepp-Reymond, and W Freiwald for helpful comments on an earlier version of the manuscript. This work was supported by the Federal Ministry of Education and Research (Bernstein Center for Computational Neuroscience II Grant DPZ-01GQ1005C, the German Research Foundation (SCHE 1575/3-1), the European Union Grant FP7– 611687 (NEBIAS), and the Humboldt Foundation.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Ethics</h3>    </header>    <div class=\"article-section__body\">      <p>Animal experimentation: All procedures and animal were conducted in accordance with the guidelines for the care and use of mammals in neuroscience and behavioral research (National Research Council, 2003), and were in agreement with German and European laws governing animal care. Authorization for conducting this study has been granted by the regional government office, the Animal Welfare Division of the Office for Consumer Protection and Food Safety of the State of Lower Saxony, Germany (permit no. 032/09). Monkey handling also followed the recommendations of the Weatherall Report of good animal practice. Animals were pairhoused in a spacious cage (well exceeding legal requirements) and were maintained on a 12-hour on/off lighting schedule. Housing procedures included an environmental enrichment program with access to toys, swings, and hidden treats (e.g., seeds in sawdust). Monkeys had visual and auditory contact to other monkeys. They were fed on a diet of enriched biscuits and fruits. Daily access to fluids was controlled during training and experimental periods to promote behavioral motivation. All surgical procedures were performed under anesthesia, and all efforts were made to minimize post-surgical pain or suffering. Institutional veterinarians continually monitored animal health and well-being.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Reviewers</h3>    </header>    <div class=\"article-section__body\">      <ol class=\"list\">        <li>Sabine Kastner, Reviewing editor, Princeton University, United States</li>      </ol>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Publication history</h3>    </header>    <div class=\"article-section__body\">      <ol class=\"list list--bullet\">        <li>Preprint posted: <a href=\"#\">January 1, 2013</a></li><li>Received: January 22, 2013</li><li>Accepted: May 28, 2013</li><li>Version of Record published: <a href=\"#\">July 2, 2013 (version 1)</a></li>      </ol>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Copyright</h3>    </header>    <div class=\"article-section__body\">      <p>© 2016, Schaffelhofer et al.</p><p>This article is distributed under the terms of the <a href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution License</a>, which permits unrestricted use and redistribution provided that the original author and source are credited.</p>    </div>  </section>"
+    },
+    {
+      "id": "references",
+      "title": "References",
+      "hasBehaviour": true,
+      "isInitiallyClosed": true,
+      "headingLevel": 2,
+      "body": "<ol class=\"reference-list\"> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib1\" id=\"bib1\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Geoffroy Saint-Hilaire E. </li> </ol> <span class=\"reference__authors_list_suffix\">(1818)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Philosophie Anatomique</a> <div class=\"reference__origin\"> Paris: Méquignon-Marvis </div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib2\" id=\"bib2\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> JL Feldman</li> <li class=\"reference__author\"> C Del Negro</li> <li class=\"reference__author\"> PA Gray</li> </ol> <span class=\"reference__authors_list_suffix\">(2013)</span> <a href=\"https://doi.org/10.1146/annurev-physiol-040510-130049\" class=\"reference__title\">Understanding the rhythm of breathing: so near, yet so far</a> <div class=\"reference__origin\"> In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452. </div> <span class=\"doi\"> <a href=\"https://doi.org/10.1146/annurev-physiol-040510-130049\" class=\"doi__link\"> https://doi.org/10.1146/annurev-physiol-040510-130049 </a> </span> <ul class=\"reference__abstracts\"> <li class=\"reference__abstract\"> <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" class=\"reference__abstract_link\">PubMed</a> </li> <li class=\"reference__abstract\"> <a href=\"https://google.co.uk\" class=\"reference__abstract_link\">Google Scholar</a> </li> </ul> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib3\" id=\"bib3\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Scripps Wired for Health Study (Registration: 000000)</a> <div class=\"reference__origin\"> Scripps Translational Science Institute (sponsor) (2015)</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> <ul class=\"reference__abstracts\"> <li class=\"reference__abstract\"> <a href=\"https://pubmed.ncbi.nlm.nih.gov/\" class=\"reference__abstract_link\">PubMed</a> </li> <li class=\"reference__abstract\"> <a href=\"https://google.co.uk\" class=\"reference__abstract_link\">Google Scholar</a> </li> </ul> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib4\" id=\"bib4\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> BV Jain</li> <li class=\"reference__author\"> B Bollman</li> <li class=\"reference__author\"> M Richardson</li> <li class=\"reference__author\"> DR Berger</li> <li class=\"reference__author\"> MN Helmstaedter</li> <li class=\"reference__author\"> KL Briggman</li> <li class=\"reference__author\"> W Denk</li> <li class=\"reference__author\"> JB Bowden</li> <li class=\"reference__author\"> JM Mendenhall</li> <li class=\"reference__author\"> WC Abraham</li> <li class=\"reference__author\"> KM Harris</li> <li class=\"reference__author\"> N Kasthuri</li> <li class=\"reference__author\"> KJ Hayworth</li> <li class=\"reference__author\"> R Schalek</li> <li class=\"reference__author\"> JC Tapia</li> <li class=\"reference__author\"> JW Lichtman</li> <li class=\"reference__author\"> HS Seung</li> </ol> <span class=\"reference__authors_list_suffix\">(2010)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Boundary learning by optimization with topological constraints</a> <div class=\"reference__origin\"> Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib5\" id=\"bib5\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> R Bouveret</li> <li class=\"reference__author\"> R Bouveret</li> <li class=\"reference__author\"> N Schonrock</li> <li class=\"reference__author\"> M Ramialison</li> <li class=\"reference__author\"> T Doan</li> <li class=\"reference__author\"> D de Jong</li> <li class=\"reference__author\"> A Bondue</li> <li class=\"reference__author\"> G Kaur</li> <li class=\"reference__author\"> S Mohamed</li> <li class=\"reference__author\"> H Fonoudi</li> <li class=\"reference__author\"> C Chen</li> <li class=\"reference__author\"> M Wouters</li> <li class=\"reference__author\"> S Bhattacharya</li> <li class=\"reference__author\"> N Plachta</li> <li class=\"reference__author\"> SL Dunwoodie</li> <li class=\"reference__author\"> G Chapman</li> <li class=\"reference__author\"> C Blanpain</li> <li class=\"reference__author\"> RP Harvey</li> </ol> <span class=\"reference__authors_list_suffix\">(2015)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets</a> <div class=\"reference__origin\"> NCBI Gene Expression Omnibus. Series accession number <a href=\"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44902\">GSE44902</a> </div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib6\" id=\"bib6\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Schrenk F</li> <li class=\"reference__author\"> Bromage TG</li> <li class=\"reference__author\"> Betzler CG</li> <li class=\"reference__author\"> Ring U</li> <li class=\"reference__author\"> Juwayeyi YM</li> </ol> <span class=\"reference__authors_list_suffix\">(1993)</span> <a href=\"https://doi.org/10.1038/365833a0\" class=\"reference__title\">Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift</a> <div class=\"reference__origin\"> Nature 365:833–836. PMID 8413666</div> <span class=\"doi\"> <a href=\"https://doi.org/10.1038/365833a0\" class=\"doi__link\"> https://doi.org/10.1038/365833a0 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib7\" id=\"bib7\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> JB Patterson</li> <li class=\"reference__author\"> DG Lonergan</li> <li class=\"reference__author\"> GA Flynn</li> <li class=\"reference__author\"> Z Qingpeng</li> <li class=\"reference__author\"> PV Pallai</li> </ol> <span class=\"reference__authors_list_suffix\">(2011)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">IRE-1alpha inhibitors (US20100941530)</a> <div class=\"reference__origin\"> Mankind Corp, United States patent, United States</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib8\" id=\"bib8\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> The Economist</li> </ol> <span class=\"reference__authors_list_suffix\">(October 19, 2013)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Unreliable research: Trouble at the lab</a> <div class=\"reference__origin\"> <i>The Economist</i>, p26–30. </div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib9\" id=\"bib9\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Paris M</li> <li class=\"reference__author\"> Kaplan M</li> <li class=\"reference__author\"> Li XY</li> <li class=\"reference__author\"> Villalta JE</li> <li class=\"reference__author\"> Lott SE</li> <li class=\"reference__author\"> Eisen MB</li> </ol> <span class=\"reference__authors_list_suffix\">(2013)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression</a> <div class=\"reference__origin\"> arXiv</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib10\" id=\"bib10\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Department of Education, UK.</li> </ol> <span class=\"reference__authors_list_suffix\">(2016)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Educational Excellence Everywhere</a> <div class=\"reference__origin\"> London: HMSO</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib11\" id=\"bib11\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> W. L. DeLano</li> </ol> <span class=\"reference__authors_list_suffix\">(2002)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">The Pymol Molecular Graphics System</a> <div class=\"reference__origin\"> DeLano Scientific, Palo Alto, CA</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib12\" id=\"bib12\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Assaf M.</li> </ol> <span class=\"reference__authors_list_suffix\">(2010)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">Theory of large fluctuations in stochastic populations</a> <div class=\"reference__origin\"> Hebrew University of Jerusalem</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> <li class=\"reference-list__item\"> <div class=\"reference\" data-popup-label=\"See in references\" data-popup-contents=\"bib13\" id=\"bib13\"> <ol class=\"reference__authors_list\"> <li class=\"reference__author\"> Crane T</li> </ol> <span class=\"reference__authors_list_suffix\">(2005)</span> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"reference__title\">The Problem of Perception</a> <div class=\"reference__origin\"> The Stanford Encyclopedia of Philosophy</div> <span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.16370\" class=\"doi__link\"> https://doi.org/10.7554/eLife.16370 </a> </span> </div> </li> </ol>",
+      "doi": false
+    },
+    {
+      "id": "metrics",
+      "title": "Metrics",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "isInitiallyClosed": true,
+      "showCharts": true,
+      "chart": {
+        "id": "09560",
+        "type": "article",
+        "containerId": "chart-1",
+        "apiEndpoint": "https://prod--gateway.elifesciences.org",
+        "metric": "downloads",
+        "period": "month"
+      },
+      "body": null,
+      "stats": [
+        {
+          "label" : "Views",
+          "value": 547
+        },
+        {
+          "label" : "Downloads",
+          "value": 320
+        },
+        {
+          "label" : "Citations",
+          "value": 89
+        }
+      ]
     }
   ],
   "iframe": {
@@ -576,69 +597,38 @@
     ]
   },
   "pl-only-article-section-for-download-links": {
-    "id": "downloads",
-    "title": "Article download links",
     "downloadLinks": {
-      "description": "A three part list of links to download the article, or parts of the article, in various formats.",
+      "description": "A list of links to download the article, or parts of the article, in various formats.",
       "groups": [
         {
-          "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
+          "title": "Download formats<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
           "items": [
             {
               "primary": {
-                "name": "Article",
-                "url": "#"
+                "link": {
+                  "name": "Article PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Figures",
-                "url": "#"
+                "link": {
+                  "name": "Figures PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Executable version",
-                "url": "#eraLink"
+                "link": {
+                  "name": "Executable version",
+                  "url": "#eraLink"
+                }
               },
               "secondary": {
                 "name": "What are executable versions?",
                 "url": "#secondaryLink"
-              }
-            }
-          ]
-        },
-        {
-          "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
-          "items": [
-            {
-              "primary": {
-                "name": "Mendeley",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "ReadCube",
-                "url": "#"
-              }
-            }
-          ]
-        },
-        {
-          "title": "Cite this article<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
-          "intro": "<div class=\"reference\">    <ol class=\"reference__authors_list\">        <li class=\"reference__author\">          Lee R Berger</li>        <li class=\"reference__author\">          John Hawks</li>        <li class=\"reference__author\">          Darryl J de Ruiter</li>        <li class=\"reference__author\">          Steven E Churchill</li>        <li class=\"reference__author\">          Peter Schmid</li>        <li class=\"reference__author\">          Lucas K Delezene</li>        <li class=\"reference__author\">          Tracy L Kivell</li>        <li class=\"reference__author\">          Heather M Garvin</li>        <li class=\"reference__author\">          Scott A Williams</li>        <li class=\"reference__author\">          Jeremy M DeSilva</li>        <li class=\"reference__author\">          Matthew M Skinner</li>        <li class=\"reference__author\">          Charles M Musiba</li>        <li class=\"reference__author\">          Noel Cameron</li>        <li class=\"reference__author\">          Trenton W Holliday</li>        <li class=\"reference__author\">          William Harcourt-Smith</li>        <li class=\"reference__author\">          Rebecca R Ackermann</li>        <li class=\"reference__author\">          Markus Bastir</li>        <li class=\"reference__author\">          Barry Bogin</li>        <li class=\"reference__author\">          Debra Bolter</li>        <li class=\"reference__author\">          Juliet Brophy</li>        <li class=\"reference__author\">          Zachary D Cofran</li>        <li class=\"reference__author\">          Kimberly A Congdon</li>        <li class=\"reference__author\">          Andrew S Deane</li>        <li class=\"reference__author\">          Mana Dembo</li>        <li class=\"reference__author\">          Michelle Drapeau</li>        <li class=\"reference__author\">          Marina C Elliott</li>        <li class=\"reference__author\">          Elen M Feuerriegel</li>        <li class=\"reference__author\">          Daniel Garcia-Martinez</li>        <li class=\"reference__author\">          David J Green</li>        <li class=\"reference__author\">          Alia Gurtov</li>        <li class=\"reference__author\">          Joel D Irish</li>        <li class=\"reference__author\">          Ashley Kruger</li>        <li class=\"reference__author\">          Myra F Laird</li>        <li class=\"reference__author\">          Damiano Marchi</li>        <li class=\"reference__author\">          Marc R Meyer</li>        <li class=\"reference__author\">          Shahed Nalla</li>        <li class=\"reference__author\">          Enquye W Negash</li>        <li class=\"reference__author\">          Caley M Orr</li>        <li class=\"reference__author\">          Davorka Radovcic</li>        <li class=\"reference__author\">          Lauren Schroeder</li>        <li class=\"reference__author\">          Jill E Scott</li>        <li class=\"reference__author\">          Zachary Throckmorton</li>        <li class=\"reference__author\">          Matthew W Tocheri</li>        <li class=\"reference__author\">          Caroline VanSickle</li>        <li class=\"reference__author\">          Christopher S Walker</li>        <li class=\"reference__author\">          Pianpian Wei</li>        <li class=\"reference__author\">          Bernhard Zipfel</li>    </ol>    <span class=\"reference__authors_list_suffix\">(2015)</span>      <div class=\"reference__title\"><i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa</div>    <div class=\"reference__origin\"><i>eLife</i> <b>4</b>:e09560.</div>    <span class=\"doi\">      https://doi.org/10.7554/eLife.09560    </span></div>",
-          "items": [
-            {
-              "primary": {
-                "name": "Download BibTex",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "Download RIS",
-                "url": "#"
               }
             }
           ]
@@ -647,39 +637,25 @@
     }
   },
   "mainMenu": {
+    "title": {
+      "homePagePath": "#"
+    },
     "listHeading": {
       "heading": "Menu"
     },
     "links": {
       "items": [
-        {
-          "name": "Research categories",
-          "url": "#res"
-        },
-        {
-          "name": "Author guide",
-          "url": "#aut"
-        },
-        {
-          "name": "Reviewer guide",
-          "url": "#rev"
-        },
-        {
-          "name": "About",
-          "url": "#abo"
-        },
-        {
-          "name": "Inside eLife",
-          "url": "#ins"
-        },
-        {
-          "name": "Careers",
-          "url": "#car"
-        },
-        {
-          "name": "Innovation",
-          "url": "#lab"
-        }
+        {"name": "Home", "url": "#", "classes": "hidden-wide"},
+        {"name": "Magazine", "url": "#", "classes": "hidden-wide"},
+        {"name": "Community", "url": "#ins", "classes": "hidden-wide"},
+        {"name": "About", "url": "#abo", "classes": "hidden-wide"},
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Inside eLife", "url": "#", "classes": "end-of-group"},
+        {"name": "Search", "url": "#", "classes": "hidden-wide"},
+        {"name": "Subscribe to alerts", "url": "#", "classes": "end-of-group hidden-wide"},
+        {"name": "Submit your research", "url": "#", "classes": "hidden-wide"},
+        {"name": "Author guide", "url": "#"},
+        {"name": "Reviewer guide", "url": "#"}
       ]
     },
     "button": {
@@ -688,6 +664,7 @@
       "classes": "button--default button--full button--small main_menu__quit"
     }
   },
+
   "emailCta": {
     "headerText": "Be the first to read new articles from eLife",
     "button": {
@@ -756,7 +733,7 @@
               "url": "#"
             }
           ],
-          "authorLine": "H Thi-Kim Vu et al.",
+          "authorLine": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
           "meta": {
             "url": "#",
             "text": "Research advance",
@@ -844,438 +821,48 @@
     }
   },
   "year": 2016,
-
-  "references": [
-    {
-      "bibId": "bib1",
-      "title": "Philosophie Anatomique",
-      "origin": "Paris: Méquignon-Marvis",
-
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Geoffroy Saint-Hilaire E."
-            }
-          ],
-          "suffix": "(1818)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib2",
-      "title": "Understanding the rhythm of breathing: so near, yet so far",
-      "origin": "In: Julius D, Clapham DE, editors. <i>Annual Review of Physiology</i> <b>75</b>:423–452.",
-
-      "doi": {
-        "doi": "10.1146/annurev-physiol-040510-130049"
-      },
-
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "JL Feldman"
-            },
-            {
-              "name": "C Del Negro"
-            },
-            {
-              "name": "PA Gray"
-            }
-          ],
-          "suffix": "(2013)"
-        }
-      ],
-      "hasAbstracts": true,
-
-      "abstracts": [
-        {
-          "name": "PubMed",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/"
-        },
-        {
-          "name": "Google Scholar",
-          "url": "https://google.co.uk"
-        }
-      ]
-    },
-    {
-      "bibId": "bib3",
-      "title": "Scripps Wired for Health Study (Registration: 000000)",
-      "origin": "Scripps Translational Science Institute (sponsor) (2015)",
-      "hasAuthors": false,
-      "hasAbstracts": true,
-
-      "abstracts": [
-        {
-          "name": "PubMed",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/"
-        },
-        {
-          "name": "Google Scholar",
-          "url": "https://google.co.uk"
-        }
-      ]
-    },
-    {
-      "bibId": "bib4",
-      "title": "Boundary learning by optimization with topological constraints",
-      "origin": "Boundary learning by optimization with topological constraints, IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "BV Jain"
-            },
-            {
-              "name": "B Bollman"
-            },
-            {
-              "name": "M Richardson"
-            },
-            {
-              "name": "DR Berger"
-            },
-            {
-              "name": "MN Helmstaedter"
-            },
-            {
-              "name": "KL Briggman"
-            },
-            {
-              "name": "W Denk"
-            },
-            {
-              "name": "JB Bowden"
-            },
-            {
-              "name": "JM Mendenhall"
-            },
-            {
-              "name": "WC Abraham"
-            },
-            {
-              "name": "KM Harris"
-            },
-            {
-              "name": "N Kasthuri"
-            },
-            {
-              "name": "KJ Hayworth"
-            },
-            {
-              "name": "R Schalek"
-            },
-            {
-              "name": "JC Tapia"
-            },
-            {
-              "name": "JW Lichtman"
-            },
-            {
-              "name": "HS Seung"
-            }
-          ],
-          "suffix": "(2010)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib5",
-      "title": "NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets",
-      "origin": "NCBI Gene Expression Omnibus. Series accession number <a href=\"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44902\">GSE44902</a>",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "R Bouveret"
-            },
-            {
-              "name": "R Bouveret"
-            },
-            {
-              "name": "N Schonrock"
-            },
-            {
-              "name": "M Ramialison"
-            },
-            {
-              "name": "T Doan"
-            },
-            {
-              "name": "D de Jong"
-            },
-            {
-              "name": "A Bondue"
-            },
-            {
-              "name": "G Kaur"
-            },
-            {
-              "name": "S Mohamed"
-            },
-            {
-              "name": "H Fonoudi"
-            },
-            {
-              "name": "C Chen"
-            },
-            {
-              "name": "M Wouters"
-            },
-            {
-              "name": "S Bhattacharya"
-            },
-            {
-              "name": "N Plachta"
-            },
-            {
-              "name": "SL Dunwoodie"
-            },
-            {
-              "name": "G Chapman"
-            },
-            {
-              "name": "C Blanpain"
-            },
-            {
-              "name": "RP Harvey"
-            }
-          ],
-          "suffix": "(2015)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib6",
-      "title": "Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift",
-      "origin": "Nature 365:833–836. PMID 8413666",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Schrenk F"
-            },
-            {
-              "name": "Bromage TG"
-            },
-            {
-              "name": "Betzler CG"
-            },
-            {
-              "name": "Ring U"
-            },
-            {
-              "name": "Juwayeyi YM"
-            }
-          ],
-          "suffix": "(1993)"
-        }
-      ],
-      "doi": {
-        "doi": "10.1038/365833a0"
-      },
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib7",
-      "title": "IRE-1alpha inhibitors (US20100941530)",
-      "origin": "Mankind Corp, United States patent, United States",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "JB Patterson"
-            },
-            {
-              "name": "DG Lonergan"
-            },
-            {
-              "name": "GA Flynn"
-            },
-            {
-              "name": "Z Qingpeng"
-            },
-            {
-              "name": "PV Pallai"
-            }
-          ],
-          "suffix": "(2011)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib8",
-      "title": "Unreliable research: Trouble at the lab",
-      "titleLink": "https://www.economist.com/news/briefing/21588057-scientists-think-science-self-correcting-alarming-degree-it-not-trouble",
-      "origin": "<i>The Economist</i>, p26–30.",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "The Economist"
-            }
-          ],
-          "suffix": "(October 19, 2013)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib9",
-      "title": "Extensive divergence of transcription factor binding in Drosophila embryos with highly conserved gene expression",
-      "titleLink": "https://arxiv.org/abs/1303.0216",
-      "origin": "arXiv",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Paris M"
-            },
-            {
-              "name": "Kaplan M"
-            },
-            {
-              "name": "Li XY"
-            },
-            {
-              "name": "Villalta JE"
-            },
-            {
-              "name": "Lott SE"
-            },
-            {
-              "name": "Eisen MB"
-            }
-          ],
-          "suffix": "(2013)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib10",
-      "title": "Educational Excellence Everywhere",
-      "titleLink": "https://www.gov.uk/government/publications/educational-excellence-everywhere",
-      "origin": "London: HMSO",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Department of Education, UK."
-            }
-          ],
-          "suffix": "(2016)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib11",
-      "title": "The Pymol Molecular Graphics System",
-      "origin": "DeLano Scientific, Palo Alto, CA",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "W. L. DeLano"
-            }
-          ],
-          "suffix": "(2002)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib12",
-      "title": "Theory of large fluctuations in stochastic populations",
-      "titleLink": "https://doi.org/10.1371/journal.pgen.0030218",
-      "origin": "Hebrew University of Jerusalem",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Assaf M."
-            }
-          ],
-          "suffix": "(2010)"
-        }
-      ],
-      "hasAbstracts": false
-    },
-    {
-      "bibId": "bib13",
-      "title": "The Problem of Perception",
-      "titleLink": "http://plato.stanford.edu/entries/perception-problem/",
-      "origin": "The Stanford Encyclopedia of Philosophy",
-      "hasAuthors": true,
-      "authorLists": [
-        {
-          "authors": [
-            {
-              "name": "Crane T"
-            }
-          ],
-          "suffix": "(2005)"
-        }
-      ],
-      "hasAbstracts": false
-    }
-  ],
-
-  "annotationCount": {
-    "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>+</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
-    "hasPlaceholder": true,
-    "isWrapped": true,
-    "prefix": "Add a comment",
-    "behaviour": "HypothesisOpener"
-  },
-
   "related": {
-    "rootClasses": "teaser--secondary teaser--related",
+    "items": [
+      {
+        "rootClasses": "teaser--secondary teaser--related",
 
-    "contextLabel": {
-      "list": [
-        {
-          "name": "Built upon by",
-          "url": null
-        }
-      ]
-    },
-    "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
-    "url": "#",
+        "contextLabel": {
+          "list": [
+            {
+              "name": "Built upon by",
+              "url": null
+            }
+          ]
+        },
 
-    "secondaryInfo": "H Thi-Kim Vu et al",
-
-    "footer": {
-      "meta": {
-        "url": "#",
-        "text": "Research advance",
-        "date": {
-          "forHuman": {
-            "dayOfMonth": 16,
-            "month": "Dec",
-            "year": 2015
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/160/90/",
+            "srcset": "https://unsplash.it/160/90/ 2x, https://unsplash.it/160/90/ 1x",
+            "altText": "Meaningful alt text here please."
           },
-          "forMachine": "2015-12-16"
+          "type": "big"
+        },
+        "title": "Reproducibility Project: Cancer Biology",
+        "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
+        "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
+
+        "footer": {
+          "meta": {
+            "url": "#",
+            "text": "Research advance",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 16,
+                "month": "Dec",
+                "year": 2015
+              },
+              "forMachine": "2015-12-16"
+            }
+          }
         }
       }
-    }
+    ]
   }
 }

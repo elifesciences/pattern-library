@@ -1,0 +1,6 @@
+{
+  "text": "Button action",
+  "classes": "button--default button--action",
+  "path": "#",
+  "ariaLabel": "Descriptive and accessible name"
+}

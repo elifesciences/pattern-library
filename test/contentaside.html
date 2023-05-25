@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mocha Test Runner</title>
+
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+  </head>
+  <body>
+
+  <!--
+    Test output
+  -->
+    <div id="mocha"></div>
+
+    <div class="global-inner">
+
+    <!--
+      Fixture
+    -->
+      <main id="maincontent" class="main blg-margin-bottom-large">
+        <header class="content-header"></header>
+        <aside class="content-aside" data-behaviour="ContentAside">
+          <div class="content-aside__first-column">
+            <div class="content-aside__first-column">
+              <div class="status-wrapper">
+                <h5 class="status-title">Research article</h5>
+                <div class="status-description">The author(s) have declared this to be the current/final version.</div>
+                <a href="#" class="status-link">About eLife's process</a>
+              </div>
+              <ol class="button-collection button-collection--inline">
+                <li class="button-collection__item">
+                  <a href="#download" class="button button--default button--action icon icon-download" id="button-action-download">Download</a><div data-behaviour="ArticleDownloadLinksList" id="" aria-labelledby="-label" class="article-download-links-list--js visuallyhidden" aria-expanded="false" data-behaviour-initialised="true">
+                </li>
+                <li class="button-collection__item">
+                  <a href="#citation" class="button button--default button--action icon icon-citation" id="button-action-citation">Cite</a>
+                </li>
+                <li class="button-collection__item">
+                  <a href="#share" class="button button--default button--action icon icon-share" id="button-action-share">Share</a>
+                </li>
+                <li class="button-collection__item">
+                  <div data-hypothesis-trigger="">
+                    <a href="#comment" class="button button--default button--action icon icon-comment" data-behaviour="HypothesisTrigger" data-hypothesis-trigger="" data-behaviour-initialised="true">Comment<span aria-hidden="true"><span data-visible-annotation-count=""></span> </span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count="">0</span> annotations on this page). </span></a>
+                  </div>
+                </li>
+              </ol>
+
+              <div class="contextual-data">
+                <ul class="contextual-data__list" aria-label="The following contains the number of views, citations and annotations in this article">
+                  <li class="contextual-data__item"><a href="#"><strong>149</strong> views</a></li>
+                  <li class="contextual-data__item"><strong>5</strong> citations</li>
+                </ul>
+              </div>
+            </div>
+          </div>   
+          <div class="content-aside__second-column">
+            <div class="content-aside__definition-list">
+              <dl class="definition-list definition-list--timeline">
+                <dt>Version of Record published</dt>
+                <dd>July 2, 2013 <a href="#"> Go to version</a></dd>
+                <dt>Accepted</dt>
+                <dd>May 28, 2013</dd>
+                <dt>Received</dt>
+                <dd>January 22, 2013</dd>
+                <dt>Preprint posted</dt>
+                <dd>January 1, 2013</dd>
+              </dl>
+              <a class="toggle" href="#"></a>
+            </div>
+            <div class="divider"></div>
+            <div class="article__related-item grid-secondary-column__item--wide-only">
+              <ol class="listing-list ">
+                <li class="listing-list__item">
+                  <div class="teaser teaser--secondary teaser--related ">
+                    <ol class="teaser__context_label_list" aria-label="These research categories are for the following article">
+                      <li class="teaser__context_label_item"><a href="#" class="teaser__context_label_link">Related digest</a></li>
+                    </ol>
+                    <header class="teaser__header">
+                      <a href="#" class="teaser__picture--link" tabindex="-1">
+                        <picture class="teaser__picture teaser__picture--big">
+                          <img src="https://unsplash.it/70/70/" srcset="https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x" alt="Meaningful alt text here please.">
+                        </picture>
+                      </a>
+                      <h4 class="teaser__header_text">
+                        <a href="#" class="teaser__header_text_link">Which side are you on?</a>
+                      </h4>
+                      <div class="teaser__secondary_info">
+                        The left and right hemispheres of the brain play different roles when encoding information from the same side of the body.
+                      </div>
+                    </header>
+                    <footer class="teaser__footer">
+                      <div class="meta">
+                        <a class="meta__type" href="#">Research article</a>
+                        <span class="date"> <time datetime="2022-11-01">Nov 1, 2022</time></span>
+                      </div>
+                    </footer>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <!--
+  Load test code
+-->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
+
+    <!--
+  Test spec
+-->
+    <script src="build/contentaside.spec.js"></script>
+
+    <!--
+  Begin!
+-->
+    <script>
+  mocha.run();
+</script>
+
+  </body>
+</html>

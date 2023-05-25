@@ -1,0 +1,25 @@
+{
+  "link": {
+    "url": "#link-to-article",
+    "name": "April/May 2016"
+  },
+  "summary": "Summary",
+  "meta": {
+    "url": "#",
+    "text": "Podcast episode",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 27,
+        "month": "May",
+        "year": 2016
+      },
+      "forMachine": "2016-05-27"
+    }
+  },
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/250/140/",
+      "altText": "Meaningful alt text please."
+    }
+  }
+}

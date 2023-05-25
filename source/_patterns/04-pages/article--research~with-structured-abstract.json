@@ -12,106 +12,71 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "visuallyhidden",
           "path": "#mainMenu",
-          "picture": {
-            "pictureClasses": "nav-primary__menu_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-              }
-            ]
-          }
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "Innovation",
+          "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
-        },
-
-        {
-          "text": "Search the eLife site",
-          "rel": "search",
-          "classes": "nav-primary__item nav-primary__item--search",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "pictureClasses": "nav-primary__search_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-              }
-            ]
-          }
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
+
     "secondaryLinks": {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
-          "text": "Newsletters",
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-secondary__item nav-secondary__item--search",
           "path": "#",
-          "classes": "nav-secondary__item"
-        },
-        {
-          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-          "path": "#",
-          "classes": "nav-secondary__item"
-        },
-        {
-          "text": "Submit my research",
-          "path": "#",
-          "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
-          "button": {
-            "classes": "button--default button--extra-small"
-          }
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "classes": "nav-secondary__item",
-          "loginControl": {
-            "button": {
-              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-              "path": "#",
-              "classes": "button--login"
-            }
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--alert",
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Submit your research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
+          "button": {
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
       ]
     },
+
     "searchBox": {
       "inContentHeader": true,
       "compactForm": {
@@ -422,11 +387,10 @@
         }
       ]
     },
-    "download": "#articleDownloadLinksList",
+    "download": "#downloads",
+    "cite": "#cite-this-article",
     "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
     "meta": {
-      "url": "#",
-      "text": "Research article",
       "date": {
         "forHuman": {
           "dayOfMonth": 10,
@@ -437,32 +401,47 @@
       }
     }
   },
+  "modalWindowCitation": {
+    "closeBtnText": "Close",
+    "body": "<div class='reference'><ol class='reference__authors_list'><li class='reference__author'><a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'> Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>Juwayeyi YM</li></ol> <span class='reference__authors_list_suffix'>(1993)</span> Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift<div class='reference__origin'> <i>Nature</i> <strong>365</strong>:833–836.</div><span class='doi'>https://doi.org/10.1038/365833a0</span></div><ol class='button-collection'><li class='button-collection__item'>  <button class='button button--default' type='button' data-behaviour='ButtonClipboard' data-clipboard='Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring UJuwayeyi YM(1993) Oldest Homo and Pliocene biogeography of the Malawi rift Nature 365:833–836.https://doi.org/10.1038/365833a0'>Copy to clipboard</button></li><li class='button-collection__item'>  <button class='button button--default button--secondary' type='button'>Download Bibtex</button></li><li class='button-collection__item'>  <button class='button button--default button--secondary' type='button'>Download .RIS</button></li></ol>",
+    "title": "Cite this article",
+    "triggerId": "modalContentCitations"
+  },
+  "modalWindowShare": {
+    "smallDeviceOnly": true,
+    "title": "Share this article",
+    "body": "<div class='form-item'><input type='url' class='text-field text-field--url' value='https://doi.org/10.7554/eLife.09560'></div><button class='button button--default' type='submit' id='button-id' data-behaviour='ButtonClipboard' data-clipboard='https://doi.org/10.7554/eLife.09560'>Copy to clipboard</button><ul class='social-media-sharers'><li><a class='social-media-sharer email' href='mailto:?subject=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;body=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share by Email'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='email' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 Z' id='Shape' fill='#000000' fill-rule='nonzero'></path></g></svg></a></li><li><a class='social-media-sharer' href='https://twitter.com/intent/tweet/?text=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Tweet a link to this page'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='twitter' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M21,6.73175 C20.33775,7.02575 19.626,7.22375 18.879,7.313 C19.64175,6.85625 20.2275,6.1325 20.50275,5.27 C19.7895,5.693 18.999,6.0005 18.1575,6.16625 C17.48475,5.4485 16.524,5 15.462,5 C13.07775,5 11.32575,7.2245 11.86425,9.53375 C8.796,9.38 6.075,7.91 4.25325,5.67575 C3.28575,7.3355 3.7515,9.50675 5.3955,10.60625 C4.791,10.58675 4.221,10.421 3.72375,10.14425 C3.68325,11.855 4.9095,13.4555 6.6855,13.81175 C6.16575,13.95275 5.5965,13.98575 5.0175,13.87475 C5.487,15.34175 6.8505,16.409 8.4675,16.439 C6.915,17.65625 4.959,18.2 3,17.969 C4.63425,19.01675 6.576,19.628 8.661,19.628 C15.5175,19.628 19.39125,13.83725 19.15725,8.6435 C19.87875,8.12225 20.505,7.472 21,6.73175 Z' id='Path' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share on Facebook'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='facebook' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M11.8969072,2 C6.43099227,2 2,6.41067993 2,11.8515383 C2,16.7687258 5.61915593,20.844338 10.3505155,21.5833958 L10.3505155,14.6992486 L7.83762887,14.6992486 L7.83762887,11.8515383 L10.3505155,11.8515383 L10.3505155,9.68112126 C10.3505155,7.21207948 11.8280541,5.84825714 14.0887242,5.84825714 C15.1715271,5.84825714 16.3041237,6.04067 16.3041237,6.04067 L16.3041237,8.465072 L15.0561469,8.465072 C13.8267075,8.465072 13.443299,9.22446783 13.443299,10.0035475 L13.443299,11.8515383 L16.1881443,11.8515383 L15.7493557,14.6992486 L13.443299,14.6992486 L13.443299,21.5833958 C18.1746585,20.844338 21.7938144,16.7687258 21.7938144,11.8515383 C21.7938144,6.41067993 17.3628222,2 11.8969072,2 Z' id='Fill-1' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://www.linkedin.com/shareArticle?title=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_self' aria-label='Share this page to LinkedIn (opens up email program, if configured on this system)'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='linkedin' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='Rectangle' x='0' y='0' width='24' height='24'></rect><path d='M18.9751954,18.9751435 L16.0232549,18.9751435 L16.0232549,14.3522816 C16.0232549,13.2499163 16.0035753,11.8308324 14.4879383,11.8308324 C12.9504693,11.8308324 12.7152366,13.0319032 12.7152366,14.2720257 L12.7152366,18.974836 L9.76329605,18.974836 L9.76329605,9.46835755 L12.5971589,9.46835755 L12.5971589,10.7675189 L12.6368256,10.7675189 C13.2146663,9.77952684 14.2890899,9.18943873 15.4328668,9.23189481 C18.4247815,9.23189481 18.9764254,11.1998552 18.9764254,13.7600486 L18.9751954,18.9751435 Z M6.43252317,8.16888879 C5.48643292,8.16905854 4.71933758,7.40223852 4.7191677,6.45614827 C4.71899794,5.51005802 5.48581795,4.74296266 6.4319082,4.74279278 C7.37799845,4.74262301 8.14509382,5.50944301 8.14526371,6.45553326 C8.14534522,6.90986184 7.96494211,7.34561469 7.64374096,7.66693118 C7.32253981,7.98824766 6.88685175,8.16880719 6.43252317,8.16888879 M7.90849343,18.9751435 L4.95347798,18.9751435 L4.95347798,9.46835755 L7.90849343,9.46835755 L7.90849343,18.9751435 Z M20.4468607,2.00148552 L3.47012787,2.00148552 C2.66777241,1.99243094 2.00979231,2.63513479 2,3.43748159 L2,20.4846305 C2.00945705,21.2873639 2.6673842,21.9307041 3.47012787,21.9223954 L20.4468607,21.9223954 C21.2511925,21.9322515 21.9116962,21.2889485 21.922831,20.4846305 L21.922831,3.43625161 C21.9113617,2.63231978 21.2508045,1.98965267 20.4468607,2' id='Path_2520' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://reddit.com/submit/?title=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share this page on Reddit'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='reddit' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='Rectangle' x='0' y='0' width='24' height='24'></rect><path d='M11.9872095,1.051163 C18.0270212,1.051163 22.923256,5.94739779 22.923256,11.9872095 C22.923256,18.0270212 18.0270212,22.923256 11.9872095,22.923256 C5.94739779,22.923256 1.051163,18.0270212 1.051163,11.9872095 C1.051163,5.94739779 5.94739779,1.051163 11.9872095,1.051163 Z M16.5534886,5.37441881 C16.1058142,5.37441881 15.7220932,5.63023277 15.5430235,6.0139537 L12.895349,5.451163 C12.8186049,5.4383723 12.7418607,5.451163 12.6779072,5.48953509 C12.6139537,5.52790719 12.5755816,5.59186067 12.5500002,5.66860486 L11.7441863,9.48023277 C10.0430235,9.53139556 8.52093044,10.0302328 7.42093044,10.8360467 C7.13953509,10.5674421 6.74302347,10.3883723 6.32093044,10.3883723 C5.4383723,10.3883723 4.72209323,11.1046514 4.72209323,11.9872095 C4.72209323,12.6395351 5.10581416,13.1895351 5.66860486,13.445349 C5.64302347,13.5988374 5.63023277,13.7651165 5.63023277,13.9313956 C5.63023277,16.3872095 8.48255835,18.3697677 12.0127909,18.3697677 C15.5430235,18.3697677 18.395349,16.3872095 18.395349,13.9313956 C18.395349,13.7651165 18.3825583,13.6116281 18.356977,13.4581397 C18.8813956,13.2023258 19.2779072,12.6395351 19.2779072,11.9872095 C19.2779072,11.1046514 18.5616281,10.3883723 17.67907,10.3883723 C17.2441863,10.3883723 16.8604653,10.5546514 16.57907,10.8360467 C15.4918607,10.0558142 13.9825583,9.54418626 12.3197677,9.48023277 L13.0488374,6.06511649 L15.4151165,6.5639537 C15.4406979,7.16511649 15.9395351,7.651163 16.5534886,7.651163 C17.1802328,7.651163 17.6918607,7.13953509 17.6918607,6.51279091 C17.6918607,5.88604672 17.1802328,5.37441881 16.5534886,5.37441881 Z M9.72325602,15.7093025 C10.2093025,16.195349 11.2581397,16.3744188 12.0127909,16.3744188 C12.7674421,16.3744188 13.8034886,16.195349 14.3023258,15.7093025 C14.4174421,15.5941863 14.6093025,15.5941863 14.7244188,15.7093025 C14.8139537,15.8372095 14.8139537,16.0162793 14.6988374,16.1313956 C13.9186049,16.9116281 12.4348839,16.9627909 12.0000002,16.9627909 C11.5651165,16.9627909 10.0686049,16.8988374 9.301163,16.1313956 C9.18604672,16.0162793 9.18604672,15.8244188 9.301163,15.7093025 C9.41627928,15.5941863 9.60813974,15.5941863 9.72325602,15.7093025 Z M9.48023277,11.9872095 C10.1069769,11.9872095 10.6186049,12.4988374 10.6186049,13.1255816 C10.6186049,13.7523258 10.1069769,14.2639537 9.48023277,14.2639537 C8.85348858,14.2639537 8.34186067,13.7523258 8.34186067,13.1255816 C8.34186067,12.4988374 8.85348858,11.9872095 9.48023277,11.9872095 Z M14.4941863,11.9872095 C15.1209304,11.9872095 15.6325583,12.4988374 15.6325583,13.1255816 C15.6325583,13.7523258 15.1209304,14.2639537 14.4941863,14.2639537 C13.8674421,14.2639537 13.3558142,13.7523258 13.3558142,13.1255816 C13.3558142,12.4988374 13.8674421,11.9872095 14.4941863,11.9872095 Z' id='Combined-Shape' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li></ul>",
+    "triggerId": "modalContentShare"
+  },
+  "doi": "10.7554/eLife.16370",
   "contextualData": {
     "metricsData": {
       "data": [
-        { "text": "<a href=\"#\">Views 149</a>" },
-        { "text": "Cited 5" }
-      ],
-      "annotationCount": {
-        "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count></span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
-        "isSmall": true,
-        "behaviour": "HypothesisOpener"
-      }
-    },
-    "citation": {
-      "citeAs": "eLife 2016;5:e16370",
-      "doi": {
-        "class": "contextual-data__doi",
-        "doi": "10.7554/eLife.16370",
-        "isTruncated": true
-      }
+        { "text": "<a href=\"#\"><strong>149</strong> views</a>" },
+        { "text": "<strong>5</strong> citations" }
+      ]
     }
   },
+  "breadcrumb": {
+    "items": [
+      {
+        "url": "#",
+        "name": "Research Article"
+      }
+    ]
+  },
   "viewSelector": {
-    "articleUrl": "#articleUrl",
-    "figureUrl": "#figureUrl",
+    "primaryUrl": "#articleUrl",
+    "secondaryUrl": "#figureUrl",
     "sideBySideUrl": "https://lens.elifesciences.org/09560",
-    "otherLinks": [{ "name": "Executable code", "url": "#rds" }],
+    "primaryLabel": "Article",
+    "secondaryLabel": "Figures and data",
+    "otherLinks": [
+      {
+        "name": "Executable code",
+        "url": "#rds"
+      }
+    ],
     "jumpLinks": {
       "links": [
         {
@@ -506,7 +485,7 @@
       "title": "eLife Digest",
       "headingLevel": 2,
       "hasBehaviour": true,
-      "body": "<p>Each year, up to 15% of the world's population experience symptoms of an influenza infection, also commonly known as flu. The most common culprit is a strain of the virus called influenza type A subtype H3N2. One reason that so many people become infected each year is that this virus evolves rapidly. Within a few years, proteins on the surface of the virus known as antigens become less recognizable to the <a href=\"#bib8\">immune system</a> of a person who has been previously infected. This means that the person can become ill with the virus again because their immune system cannot mount an effective response to the evolved virus strain.</p><pre class=\"code\"><code>&lt;dock_design&gt;\n&nbsp;&nbsp;&lt;SCOREFXNS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;fullatom weights=beta symmetric = 0&gt; &lt;/fullatom&gt; \n&nbsp;&nbsp;&lt;/SCOREFXNS&gt; \n&nbsp;&nbsp;&lt;FILTERS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Ddg name=ddg scorefxn=fullatom threshold = 0 jump = 1 repeats = 1 repack = 1 confidence = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Sasa name=sasa confidence = 0/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;ShapeComplementarity name=shape verbose = 1 confidence = 0 jump = 1/&gt; \n&nbsp;&nbsp;&lt;/FILTERS&gt;\n&nbsp;&nbsp;&lt;MOVERS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;AtomTree name=docking_tree docking_ft = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockSetupMover name=setup_dock/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockingProtocol name=dock docking_score_high=fullatom low_res_protocol_only = 0 docking_local_refine = 0 dock_min = 1 /&gt;\n&nbsp;&nbsp;&lt;/MOVERS&gt;\n&nbsp;&nbsp;&lt;APPLY_TO_POSE&gt;\n&nbsp;&nbsp;&lt;/APPLY_TO_POSE&gt; \n&nbsp;&nbsp;&lt;PROTOCOLS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=docking_tree/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=setup_dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=ddg/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=sasa/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=shape/&gt; \n&nbsp;&nbsp;&lt;/PROTOCOLS&gt; \n&lt;/dock_design&gt;</code></pre><p>Influenza virus strains evolve rapidly because their genetic material accumulates mutations quickly. Although some of these mutations are beneficial to the virus, other mutations are harmful and reduce the ability of the virus to spread. Sometimes beneficial mutations may occur alongside harmful ones, but it is not known how the harmful mutations affect the evolution of the virus.</p><p>Here, Koelle and Rasmussen used <a href=\"#bib9\">computer models</a> of H3N2 influenza to examine the effect of harmful mutations on the evolution of this virus population. The models show that harmful mutations limit how quickly the antigens can evolve. Also, the presence of these harmful mutations effectively acts as a sieve: they allow only large changes in the antigens to establish in the virus population.</p><p>The models suggest that there are three routes by which large changes in the antigens on H3N2 viruses may occur. The first is by a single mutation that has a big effect on the antigens in viruses that only carry a few harmful mutations, but these large mutations would not happen very often. Another route may be through more common mutations that have only a small or moderate benefit, which would allow the virus to become more common in the population before it acquires a beneficial mutation with a much greater effect. The third possibility is that a large beneficial mutation may arise in viruses that have many harmful mutations. These harmful mutations may initially limit the ability of the virus to spread, but over time, some of these harmful mutations may then be lost.</p><p>Koelle and Rasmussen found that the computer models could recreate the patterns of virus evolution that have been observed in real strains of H3N2. <a href=\"#bib1\">Researchers</a> use predictions of influenza evolution to help them decide which virus strains should be included in flu vaccines each year. Koelle and Rasmussen findings indicate that harmful mutations should be considered when making these predictions.</p>",
+      "body": "<p>Each year, up to 15% of the world's population experience symptoms of an influenza infection, also commonly known as flu. The most common culprit is a strain of the virus called influenza type A subtype H3N2. One reason that so many people become infected each year is that this virus evolves rapidly. Within a few years, proteins on the surface of the virus known as antigens become less recognizable to the <a href=\"#bib8\">immune system</a> of a person who has been previously infected. This means that the person can become ill with the virus again because their immune system cannot mount an effective response to the evolved virus strain.</p><pre class=\"code\"><code>&lt;dock_design&gt;\n&nbsp;&nbsp;&lt;SCOREFXNS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;fullatom weights=beta symmetric = 0&gt; &lt;/fullatom&gt; \n&nbsp;&nbsp;&lt;/SCOREFXNS&gt; \n&nbsp;&nbsp;&lt;FILTERS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Ddg name=ddg scorefxn=fullatom threshold = 0 jump = 1 repeats = 1 repack = 1 confidence = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Sasa name=sasa confidence = 0/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;ShapeComplementarity name=shape verbose = 1 confidence = 0 jump = 1/&gt; \n&nbsp;&nbsp;&lt;/FILTERS&gt;\n&nbsp;&nbsp;&lt;MOVERS&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;AtomTree name=docking_tree docking_ft = 1/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockSetupMover name=setup_dock/&gt;\n&nbsp;&nbsp;&nbsp;&nbsp;&lt;DockingProtocol name=dock docking_score_high=fullatom low_res_protocol_only = 0 docking_local_refine = 0 dock_min = 1 /&gt;\n&nbsp;&nbsp;&lt;/MOVERS&gt;\n&nbsp;&nbsp;&lt;APPLY_TO_POSE&gt;\n&nbsp;&nbsp;&lt;/APPLY_TO_POSE&gt; \n&nbsp;&nbsp;&lt;PROTOCOLS&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=docking_tree/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=setup_dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add mover_name=dock/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=ddg/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=sasa/&gt; \n&nbsp;&nbsp;&nbsp;&nbsp;&lt;Add filter_name=shape/&gt; \n&nbsp;&nbsp;&lt;/PROTOCOLS&gt; \n&lt;/dock_design&gt;</code></pre><p>Influenza virus strains evolve rapidly because their genetic material accumulates mutations quickly. Although some of these mutations are beneficial to the virus, other mutations are harmful and reduce the ability of the virus to spread. Sometimes beneficial mutations may occur alongside harmful ones, but it is not known how the harmful mutations affect the evolution of the virus.</p><p>Here, Koelle and Rasmussen used <a href=\"#bib9\">computer models</a> of H3N2 influenza to examine the effect of harmful mutations on the evolution of this virus population. The models show that harmful mutations limit how quickly the antigens can evolve. Also, the presence of these harmful mutations effectively acts as a sieve: they allow only large changes in the antigens to establish in the virus population.</p><p>The models suggest that there are three routes by which large changes in the antigens on H3N2 viruses may occur. The first is by a single mutation that has a big effect on the antigens in viruses that only carry a few harmful mutations, but these large mutations would not happen very often. Another route may be through more common mutations that have only a small or moderate benefit, which would allow the virus to become more common in the population before it acquires a beneficial mutation with a much greater effect. The third possibility is that a large beneficial mutation may arise in viruses that have many harmful mutations. These harmful mutations may initially limit the ability of the virus to spread, but over time, some of these harmful mutations may then be lost.</p><p>Koelle and Rasmussen found that the computer models could recreate the patterns of virus evolution that have been observed in real strains of H3N2. <a href=\"#bib1\">Researchers</a> use predictions of influenza evolution to help them decide which virus strains should be included in flu vaccines each year. Koelle and Rasmussen findings indicate that harmful mutations should be considered when making these predictions.</p><p>This is a long URL that breaks <a href=''>http://baltimorepkdcenter.org/mouse/PCR%20Protocol%20for%20Genotyping%20PKD2KO%20and%20PKD2%5Eneo.pdf</a></p><span class=\"sequence\">CAAGTCGCTCACGGCGCTCAAGGAGCACCAGGACCGCATCCACGGCAACGGGGAGACCAACGGTCATCACGGTTTGTCTGGTCAACCACCGCGGTCTCAGTGGTGTACGGTACAAACCTGATCGCTGAGATACTCGGATCGCCGCAATTCCTCTTCGGAGGGGTTGCGGCGATCTTTTTATGTGCGCTTTC</span>",
       "doi": {
         "doi": "10.7554/eLife.16370",
         "variant": "article-section"
@@ -518,7 +497,7 @@
       "headingLevel": 2,
       "hasBehaviour": true,
       "isInitiallyClosed": true,
-      "body": "<p>TNF Receptor Associated Factor 2 (TRAF2) is an adaptor protein that transduces signals following ligation of certain cytokine receptors including those binding TNF. It was first identified together with TRAF1 as a component of TNF receptor-2 and then TNF receptor-1 (TNFR1) signalling complexes (<a class=\"xref-bibr\" href=\"#bib50\" rel=\"#bib50\" title=\"\">Rothe et al., 1994</a>; <a class=\"xref-bibr\" href=\"#bib54\" rel=\"#bib54\" title=\"\">Shu et al., 1996</a>). TRAF2, like most other TRAFs, contains a RING domain, several zinc fingers, a TRAF-N, and a conserved TRAF-C domain which is responsible for oligomerisation and receptor binding through its MATH region (<a class=\"xref-bibr\" href=\"#bib60\" rel=\"#bib60\">Takeuchi et al., 1996</a>; <a class=\"xref-bibr\" href=\"#bib63\" rel=\"#bib63\">Uren and Vaux, 1996</a>).</p><p>RING domains are nearly always associated with ubiquitin E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib52\" rel=\"#bib52\">Shi and Kehrl, 2003</a>) and TRAF2 can promote ubiquitylation of RIPK1 in TNFR1 signalling complexes (TNFR1-SC) (<a class=\"xref-bibr\" href=\"#bib71\" rel=\"#bib71\">Wertz et al., 2004</a>). However TRAF2 recruits E3 ligases such as cIAPs to TNFR1-SC and these have also been shown to be able to ubiquitylate RIPK1 and regulate TNF signalling (<a class=\"xref-bibr\" href=\"#bib13\" rel=\"#bib13\">Dynek et al., 2010</a>; <a class=\"xref-bibr\" href=\"#bib34\" rel=\"#bib34\">Mahoney et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib66\" rel=\"#bib66\">Varfolomeev et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). This makes it difficult to unambiguously determine the role of the E3 ligase activity of TRAF2.</p><p>Activation of JNK and NF-κB by TNF is reduced in cells from <em>Traf2<sup>-/-&nbsp;</sup></em>mice while only JNK signalling was affected in lymphocytes from transgenic mice that express a dominant negative (DN) form of TRAF2 that lacks the RING domain (<a class=\"xref-bibr\" href=\"#bib31\" rel=\"#bib31\">Lee et al., 1997</a>; <a class=\"xref-bibr\" href=\"#bib74\" rel=\"#bib74\">Yeh et al., 1997</a>). <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> mouse embryonic fibroblasts (MEFs) have a pronounced defect in activation of NF-κB by TNF, suggesting that absence of TRAF2 can be compensated by TRAF5 (<a class=\"xref-bibr\" href=\"#bib59\" rel=\"#bib59\" title=\"\">Tada et al., 2001</a>). Although activation of NF-κB was restored in <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> cells by re-expression of wild type TRAF2, it was not restored when the cells were reconstituted with TRAF2 point mutants that could not bind cIAPs (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). These data, together with a wealth of different lines of evidence showing that cIAPs are critical E3 ligases required for TNF-induced canonical NF-κB (<a class=\"xref-bibr\" href=\"#bib5\" rel=\"#bib5\">Blackwell et al., 2013</a>; <a class=\"xref-bibr\" href=\"#bib21\" rel=\"#bib21\">Haas et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib56\" rel=\"#bib56\">Silke, 2011</a>), support the idea that the main function of TRAF2 in TNF-induced NF-κB is to recruit cIAPs to the TNFR1-SC. However, it remains possible that the RING of TRAF2 plays another function, such as in activating JNK and protecting cells from TNF-induced cell death (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\" title=\"\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). Furthermore it has been shown that TRAF2 can K48-ubiquitylate caspase-8 to set the threshold for TRAIL or Fas induced cell death (<a class=\"xref-bibr\" href=\"#bib17\" rel=\"#bib17\">Gonzalvez et al., 2012</a>). Moreover, TRAF2 inhibits non-canonical NF-κB signalling (<a class=\"xref-bibr\" href=\"#bib18\" rel=\"#bib18\">Grech et al., 2004</a>; <a class=\"xref-bibr\" href=\"#bib78\" rel=\"#bib78\">Zarnegar et al., 2008</a>) and this function requires the RING domain of TRAF2 to induce proteosomal degradation of NIK (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). However, structural and in vitro analyses indicate that, unlike TRAF6, the RING domain of TRAF2 is unable to bind E2 conjugating enzymes (<a class=\"xref-bibr\" href=\"#bib76\" rel=\"#bib76\">Yin et al., 2009</a>), and is therefore unlikely to have intrinsic E3 ligase activity.</p><p>Sphingosine-1-phosphate (S1P) is a pleiotropic sphingolipid mediator that regulates proliferation, differentiation, cell trafficking and vascular development (<a class=\"xref-bibr\" href=\"#bib44\" rel=\"#bib44\">Pitson, 2011</a>). S1P is generated by sphingosine kinase 1 and 2 (SPHK1 and SPHK2) (<a class=\"xref-bibr\" href=\"#bib28\" rel=\"#bib28\">Kohama et al., 1998</a>; <a class=\"xref-bibr\" href=\"#bib33\" rel=\"#bib33\">Liu et al., 2000</a>). Extracellular S1P mainly acts by binding to its five G protein-coupled receptors S1P<sub>1-5</sub> (<a class=\"xref-bibr\" href=\"#bib25\" rel=\"#bib25\">Hla and Dannenberg, 2012</a>). However, some intracellular roles have been suggested for S1P, including the blocking of the histone deacetylases, HDAC1/2 (<a class=\"xref-bibr\" href=\"#bib22\" rel=\"#bib22\">Hait et al., 2009</a>) and the induction of apoptosis through interaction with BAK and BAX (<a class=\"xref-bibr\" href=\"#bib9\" rel=\"#bib9\">Chipuk et al., 2012</a>).</p><p>Recently, it was suggested that the RING domain of TRAF2 requires S1P as a co-factor for its E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib3\" rel=\"#bib3\">Alvarez et al., 2010</a>). Alvarez and colleagues proposed that SPHK1 but not SPHK2 is activated by TNF and phosphorylates sphingosine to S1P which in turn&nbsp;binds&nbsp;to the RING domain of TRAF2 and serves as an essential co-factor that was missing in the experiments of Yin <em>et al.</em> Alvarez and colleagues, observed that in the absence of SPHK1, TNF-induced NF-κB activation was completely abolished.</p><p>Although we know a lot about TRAF2, there are still important gaps particularly with regard to cell type specificity and in vivo function of TRAF2. Moreover, despite the claims that SPHK1 and its product, S1P, are required for TRAF2 to function as a ubiquitin ligase, the responses of <em>Traf2<sup>-/-&nbsp;</sup></em>and <em>Sphk1<sup>-/-</sup></em> cells to TNF were not compared. Therefore, we undertook an analysis of TRAF2 and SPHK1 function in TNF signalling in a number of different tissues.</p><p>Surprisingly, we found that neither TRAF2 nor SPHK1 are required for TNF mediated canonical NF-κB and MAPK signalling in macrophages. However, MEFs, murine dermal fibroblasts (MDFs) and keratinocytes required TRAF2 but not SPHK1 for full strength TNF signalling. In these cell types, absence of TRAF2 caused a delay in TNF-induced activation of NF-κB and MAPK, and sensitivity to killing by TNF was increased. Absence of TRAF2 in keratinocytes in vivo resulted in psoriasis-like epidermal hyperplasia and skin inflammation. Unlike TNF-dependent genetic inflammatory skin conditions, such as IKK2 epidermal knock-out (<a class=\"xref-bibr\" href=\"#bib40\" rel=\"#bib40\" title=\"\">Pasparakis et al., 2002</a>) and the <em>cpdm</em> mutant (<a class=\"xref-bibr\" href=\"#bib16\" rel=\"#bib16\">Gerlach et al., 2011</a>), the onset of inflammation was only delayed, and not prevented by deletion of TNF. This early TNF-dependent inflammation is caused by excessive apoptotic but not necroptotic cell death and could be prevented by deletion of <em>Casp8</em>. We observed constitutive activation of NIK and non-canonical NF-κB in <em>Traf2<sup>-/-&nbsp;</sup></em>keratinocytes which caused production of inflammatory cytokines and chemokines. We were able to reverse this inflammatory phenotype by simultaneously deleting both <em>Tnf</em> and <em>Nfkb2</em> genes. Our results highlight the important role TRAF2 plays to protect keratinocytes from cell death and to down-regulate inflammatory responses and support the idea that intrinsic defects in keratinocytes can initiate psoriasis-like skin inflammation.</p>TNF Receptor Associated Factor 2 (TRAF2) is an adaptor protein that transduces signals following ligation of certain cytokine receptors including those binding TNF. It was first identified together with TRAF1 as a component of TNF receptor-2 and then TNF receptor-1 (TNFR1) signalling complexes (<a class=\"xref-bibr\" href=\"#bib50\" rel=\"#bib50\" title=\"\">Rothe et al., 1994</a>; <a class=\"xref-bibr\" href=\"#bib54\" rel=\"#bib54\" title=\"\">Shu et al., 1996</a>). TRAF2, like most other TRAFs, contains a RING domain, several zinc fingers, a TRAF-N, and a conserved TRAF-C domain which is responsible for oligomerisation and receptor binding through its MATH region (<a class=\"xref-bibr\" href=\"#bib60\" rel=\"#bib60\">Takeuchi et al., 1996</a>; <a class=\"xref-bibr\" href=\"#bib63\" rel=\"#bib63\">Uren and Vaux, 1996</a>).</p><div id=\"nestedFrag\"><b style=\"font-family:monospace\">I am a nested fragment</b></div><p>RING domains are nearly always associated with ubiquitin E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib52\" rel=\"#bib52\">Shi and Kehrl, 2003</a>) and TRAF2 can promote ubiquitylation of RIPK1 in TNFR1 signalling complexes (TNFR1-SC) (<a class=\"xref-bibr\" href=\"#bib71\" rel=\"#bib71\">Wertz et al., 2004</a>). However TRAF2 recruits E3 ligases such as cIAPs to TNFR1-SC and these have also been shown to be able to ubiquitylate RIPK1 and regulate TNF signalling (<a class=\"xref-bibr\" href=\"#bib13\" rel=\"#bib13\">Dynek et al., 2010</a>; <a class=\"xref-bibr\" href=\"#bib34\" rel=\"#bib34\">Mahoney et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib66\" rel=\"#bib66\">Varfolomeev et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). This makes it difficult to unambiguously determine the role of the E3 ligase activity of TRAF2.</p><p>Activation of JNK and NF-κB by TNF is reduced in cells from <em>Traf2<sup>-/-&nbsp;</sup></em>mice while only JNK signalling was affected in lymphocytes from transgenic mice that express a dominant negative (DN) form of TRAF2 that lacks the RING domain (<a class=\"xref-bibr\" href=\"#bib31\" rel=\"#bib31\">Lee et al., 1997</a>; <a class=\"xref-bibr\" href=\"#bib74\" rel=\"#bib74\">Yeh et al., 1997</a>). <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> mouse embryonic fibroblasts (MEFs) have a pronounced defect in activation of NF-κB by TNF, suggesting that absence of TRAF2 can be compensated by TRAF5 (<a class=\"xref-bibr\" href=\"#bib59\" rel=\"#bib59\" title=\"\">Tada et al., 2001</a>). Although activation of NF-κB was restored in <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> cells by re-expression of wild type TRAF2, it was not restored when the cells were reconstituted with TRAF2 point mutants that could not bind cIAPs (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). These data, together with a wealth of different lines of evidence showing that cIAPs are critical E3 ligases required for TNF-induced canonical NF-κB (<a class=\"xref-bibr\" href=\"#bib5\" rel=\"#bib5\">Blackwell et al., 2013</a>; <a class=\"xref-bibr\" href=\"#bib21\" rel=\"#bib21\">Haas et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib56\" rel=\"#bib56\">Silke, 2011</a>), support the idea that the main function of TRAF2 in TNF-induced NF-κB is to recruit cIAPs to the TNFR1-SC. However, it remains possible that the RING of TRAF2 plays another function, such as in activating JNK and protecting cells from TNF-induced cell death (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\" title=\"\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). Furthermore it has been shown that TRAF2 can K48-ubiquitylate caspase-8 to set the threshold for TRAIL or Fas induced cell death (<a class=\"xref-bibr\" href=\"#bib17\" rel=\"#bib17\">Gonzalvez et al., 2012</a>). Moreover, TRAF2 inhibits non-canonical NF-κB signalling (<a class=\"xref-bibr\" href=\"#bib18\" rel=\"#bib18\">Grech et al., 2004</a>; <a class=\"xref-bibr\" href=\"#bib78\" rel=\"#bib78\">Zarnegar et al., 2008</a>) and this function requires the RING domain of TRAF2 to induce proteosomal degradation of NIK (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). However, structural and in vitro analyses indicate that, unlike TRAF6, the RING domain of TRAF2 is unable to bind E2 conjugating enzymes (<a class=\"xref-bibr\" href=\"#bib76\" rel=\"#bib76\">Yin et al., 2009</a>), and is therefore unlikely to have intrinsic E3 ligase activity.</p><p>Sphingosine-1-phosphate (S1P) is a pleiotropic sphingolipid mediator that regulates proliferation, differentiation, cell trafficking and vascular development (<a class=\"xref-bibr\" href=\"#bib44\" rel=\"#bib44\">Pitson, 2011</a>). S1P is generated by sphingosine kinase 1 and 2 (SPHK1 and SPHK2) (<a class=\"xref-bibr\" href=\"#bib28\" rel=\"#bib28\">Kohama et al., 1998</a>; <a class=\"xref-bibr\" href=\"#bib33\" rel=\"#bib33\">Liu et al., 2000</a>). Extracellular S1P mainly acts by binding to its five G protein-coupled receptors S1P<sub>1-5</sub> (<a class=\"xref-bibr\" href=\"#bib25\" rel=\"#bib25\">Hla and Dannenberg, 2012</a>). However, some intracellular roles have been suggested for S1P, including the blocking of the histone deacetylases, HDAC1/2 (<a class=\"xref-bibr\" href=\"#bib22\" rel=\"#bib22\">Hait et al., 2009</a>) and the induction of apoptosis through interaction with BAK and BAX (<a class=\"xref-bibr\" href=\"#bib9\" rel=\"#bib9\">Chipuk et al., 2012</a>).</p><p>Recently, it was suggested that the RING domain of TRAF2 requires S1P as a co-factor for its E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib3\" rel=\"#bib3\">Alvarez et al., 2010</a>). Alvarez and colleagues proposed that SPHK1 but not SPHK2 is activated by TNF and phosphorylates sphingosine to S1P which in turn&nbsp;binds&nbsp;to the RING domain of TRAF2 and serves as an essential co-factor that was missing in the experiments of Yin <em>et al.</em> Alvarez and colleagues, observed that in the absence of SPHK1, TNF-induced NF-κB activation was completely abolished.</p><div id=\"nestedFrag\"><b>I am a nested frag</b></div><p>Although we know a lot about TRAF2, there are still important gaps particularly with regard to cell type specificity and in vivo function of TRAF2. Moreover, despite the claims that SPHK1 and its product, S1P, are required for TRAF2 to function as a ubiquitin ligase, the responses of <em>Traf2<sup>-/-&nbsp;</sup></em>and <em>Sphk1<sup>-/-</sup></em> cells to TNF were not compared. Therefore, we undertook an analysis of TRAF2 and SPHK1 function in TNF signalling in a number of different tissues.</p><p>Surprisingly, we found that neither TRAF2 nor SPHK1 are required for TNF mediated canonical NF-κB and MAPK signalling in macrophages. However, MEFs, murine dermal fibroblasts (MDFs) and keratinocytes required TRAF2 but not SPHK1 for full strength TNF signalling. In these cell types, absence of TRAF2 caused a delay in TNF-induced activation of NF-κB and MAPK, and sensitivity to killing by TNF was increased. Absence of TRAF2 in keratinocytes in vivo resulted in psoriasis-like epidermal hyperplasia and skin inflammation. Unlike TNF-dependent genetic inflammatory skin conditions, such as IKK2 epidermal knock-out (<a class=\"xref-bibr\" href=\"#bib40\" rel=\"#bib40\" title=\"\">Pasparakis et al., 2002</a>) and the <em>cpdm</em> mutant (<a class=\"xref-bibr\" href=\"#bib16\" rel=\"#bib16\">Gerlach et al., 2011</a>), the onset of inflammation was only delayed, and not prevented by deletion of TNF. This early TNF-dependent inflammation is caused by excessive apoptotic but not necroptotic cell death and could be prevented by deletion of <em>Casp8</em>. We observed constitutive activation of NIK and non-canonical NF-κB in <em>Traf2<sup>-/-&nbsp;</sup></em>keratinocytes which caused production of inflammatory cytokines and chemokines. We were able to reverse this inflammatory phenotype by simultaneously deleting both <em>Tnf</em> and <em>Nfkb2</em> genes. Our results highlight the important role TRAF2 plays to protect keratinocytes from cell death and to down-regulate inflammatory responses and support the idea that intrinsic defects in keratinocytes can initiate psoriasis-like skin inflammation.</p>",
+      "body": "<p>TNF Receptor Associated Factor 2 (TRAF2) is an adaptor protein that transduces signals following ligation of certain cytokine receptors including those binding TNF. It was first identified together with TRAF1 as a component of TNF receptor-2 and then TNF receptor-1 (TNFR1) signalling complexes (<a class=\"xref-bibr\" href=\"#bib50\" rel=\"#bib50\" title=\"\">Rothe et al., 1994</a>; <a class=\"xref-bibr\" href=\"#bib54\" rel=\"#bib54\" title=\"\">Shu et al., 1996</a>). TRAF2, like most other TRAFs, contains a RING domain, several zinc fingers, a TRAF-N, and a conserved TRAF-C domain which is responsible for oligomerisation and receptor binding through its MATH region (<a class=\"xref-bibr\" href=\"#bib60\" rel=\"#bib60\">Takeuchi et al., 1996</a>; <a class=\"xref-bibr\" href=\"#bib63\" rel=\"#bib63\">Uren and Vaux, 1996</a>).</p><p>RING domains are nearly always associated with ubiquitin E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib52\" rel=\"#bib52\">Shi and Kehrl, 2003</a>) and TRAF2 can promote ubiquitylation of RIPK1 in TNFR1 signalling complexes (TNFR1-SC) (<a class=\"xref-bibr\" href=\"#bib71\" rel=\"#bib71\">Wertz et al., 2004</a>). However TRAF2 recruits E3 ligases such as cIAPs to TNFR1-SC and these have also been shown to be able to ubiquitylate RIPK1 and regulate TNF signalling (<a class=\"xref-bibr\" href=\"#bib13\" rel=\"#bib13\">Dynek et al., 2010</a>; <a class=\"xref-bibr\" href=\"#bib34\" rel=\"#bib34\">Mahoney et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib66\" rel=\"#bib66\">Varfolomeev et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). This makes it difficult to unambiguously determine the role of the E3 ligase activity of TRAF2.</p><p>Activation of JNK and NF-κB by TNF is reduced in cells from <em>Traf2<sup>-/-&nbsp;</sup></em>mice while only JNK signalling was affected in lymphocytes from transgenic mice that express a dominant negative (DN) form of TRAF2 that lacks the RING domain (<a class=\"xref-bibr\" href=\"#bib31\" rel=\"#bib31\">Lee et al., 1997</a>; <a class=\"xref-bibr\" href=\"#bib74\" rel=\"#bib74\">Yeh et al., 1997</a>). <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> mouse embryonic fibroblasts (MEFs) have a pronounced defect in activation of NF-κB by TNF, suggesting that absence of TRAF2 can be compensated by TRAF5 (<a class=\"xref-bibr\" href=\"#bib59\" rel=\"#bib59\" title=\"\">Tada et al., 2001</a>). Although activation of NF-κB was restored in <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> cells by re-expression of wild type TRAF2, it was not restored when the cells were reconstituted with TRAF2 point mutants that could not bind cIAPs (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). These data, together with a wealth of different lines of evidence showing that cIAPs are critical E3 ligases required for TNF-induced canonical NF-κB (<a class=\"xref-bibr\" href=\"#bib5\" rel=\"#bib5\">Blackwell et al., 2013</a>; <a class=\"xref-bibr\" href=\"#bib21\" rel=\"#bib21\">Haas et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib56\" rel=\"#bib56\">Silke, 2011</a>), support the idea that the main function of TRAF2 in TNF-induced NF-κB is to recruit cIAPs to the TNFR1-SC. However, it remains possible that the RING of TRAF2 plays another function, such as in activating JNK and protecting cells from TNF-induced cell death (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\" title=\"\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). Furthermore it has been shown that TRAF2 can K48-ubiquitylate caspase-8 to set the threshold for TRAIL or Fas induced cell death (<a class=\"xref-bibr\" href=\"#bib17\" rel=\"#bib17\">Gonzalvez et al., 2012</a>). Moreover, TRAF2 inhibits non-canonical NF-κB signalling (<a class=\"xref-bibr\" href=\"#bib18\" rel=\"#bib18\">Grech et al., 2004</a>; <a class=\"xref-bibr\" href=\"#bib78\" rel=\"#bib78\">Zarnegar et al., 2008</a>) and this function requires the RING domain of TRAF2 to induce proteosomal degradation of NIK (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). However, structural and in vitro analyses indicate that, unlike TRAF6, the RING domain of TRAF2 is unable to bind E2 conjugating enzymes (<a class=\"xref-bibr\" href=\"#bib76\" rel=\"#bib76\">Yin et al., 2009</a>), and is therefore unlikely to have intrinsic E3 ligase activity.</p><p>Sphingosine-1-phosphate (S1P) is a pleiotropic sphingolipid mediator that regulates proliferation, differentiation, cell trafficking and vascular development (<a class=\"xref-bibr\" href=\"#bib44\" rel=\"#bib44\">Pitson, 2011</a>). S1P is generated by sphingosine kinase 1 and 2 (SPHK1 and SPHK2) (<a class=\"xref-bibr\" href=\"#bib28\" rel=\"#bib28\">Kohama et al., 1998</a>; <a class=\"xref-bibr\" href=\"#bib33\" rel=\"#bib33\">Liu et al., 2000</a>). Extracellular S1P mainly acts by binding to its five G protein-coupled receptors S1P<sub>1-5</sub> (<a class=\"xref-bibr\" href=\"#bib25\" rel=\"#bib25\">Hla and Dannenberg, 2012</a>). However, some intracellular roles have been suggested for S1P, including the blocking of the histone deacetylases, HDAC1/2 (<a class=\"xref-bibr\" href=\"#bib22\" rel=\"#bib22\">Hait et al., 2009</a>) and the induction of apoptosis through interaction with BAK and BAX (<a class=\"xref-bibr\" href=\"#bib9\" rel=\"#bib9\">Chipuk et al., 2012</a>).</p><p>Recently, it was suggested that the RING domain of TRAF2 requires S1P as a co-factor for its E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib3\" rel=\"#bib3\">Alvarez et al., 2010</a>). Alvarez and colleagues proposed that SPHK1 but not SPHK2 is activated by TNF and phosphorylates sphingosine to S1P which in turn&nbsp;binds&nbsp;to the RING domain of TRAF2 and serves as an essential co-factor that was missing in the experiments of Yin <em>et al.</em> Alvarez and colleagues, observed that in the absence of SPHK1, TNF-induced NF-κB activation was completely abolished.</p><p>Although we know a lot about TRAF2, there are still important gaps particularly with regard to cell type specificity and in vivo function of TRAF2. Moreover, despite the claims that SPHK1 and its product, S1P, are required for TRAF2 to function as a ubiquitin ligase, the responses of <em>Traf2<sup>-/-&nbsp;</sup></em>and <em>Sphk1<sup>-/-</sup></em> cells to TNF were not compared. Therefore, we undertook an analysis of TRAF2 and SPHK1 function in TNF signalling in a number of different tissues.</p><p>Surprisingly, we found that neither TRAF2 nor SPHK1 are required for TNF mediated canonical NF-κB and MAPK signalling in macrophages. However, MEFs, murine dermal fibroblasts (MDFs) and keratinocytes required TRAF2 but not SPHK1 for full strength TNF signalling. In these cell types, absence of TRAF2 caused a delay in TNF-induced activation of NF-κB and MAPK, and sensitivity to killing by TNF was increased. Absence of TRAF2 in keratinocytes in vivo resulted in psoriasis-like epidermal hyperplasia and skin inflammation. Unlike TNF-dependent genetic inflammatory skin conditions, such as IKK2 epidermal knock-out (<a class=\"xref-bibr\" href=\"#bib40\" rel=\"#bib40\" title=\"\">Pasparakis et al., 2002</a>) and the <em>cpdm</em> mutant (<a class=\"xref-bibr\" href=\"#bib16\" rel=\"#bib16\">Gerlach et al., 2011</a>), the onset of inflammation was only delayed, and not prevented by deletion of TNF. This early TNF-dependent inflammation is caused by excessive apoptotic but not necroptotic cell death and could be prevented by deletion of <em>Casp8</em>. We observed constitutive activation of NIK and non-canonical NF-κB in <em>Traf2<sup>-/-&nbsp;</sup></em>keratinocytes which caused production of inflammatory cytokines and chemokines. We were able to reverse this inflammatory phenotype by simultaneously deleting both <em>Tnf</em> and <em>Nfkb2</em> genes. Our results highlight the important role TRAF2 plays to protect keratinocytes from cell death and to down-regulate inflammatory responses and support the idea that intrinsic defects in keratinocytes can initiate psoriasis-like skin inflammation.</p><p>TNF Receptor Associated Factor 2 (TRAF2) is an adaptor protein that transduces signals following ligation of certain cytokine receptors including those binding TNF. It was first identified together with TRAF1 as a component of TNF receptor-2 and then TNF receptor-1 (TNFR1) signalling complexes (<a class=\"xref-bibr\" href=\"#bib50\" rel=\"#bib50\" title=\"\">Rothe et al., 1994</a>; <a class=\"xref-bibr\" href=\"#bib54\" rel=\"#bib54\" title=\"\">Shu et al., 1996</a>). TRAF2, like most other TRAFs, contains a RING domain, several zinc fingers, a TRAF-N, and a conserved TRAF-C domain which is responsible for oligomerisation and receptor binding through its MATH region (<a class=\"xref-bibr\" href=\"#bib60\" rel=\"#bib60\">Takeuchi et al., 1996</a>; <a class=\"xref-bibr\" href=\"#bib63\" rel=\"#bib63\">Uren and Vaux, 1996</a>).</p><div id=\"nestedFrag\"><b style=\"font-family:monospace\">I am a nested fragment</b></div><p>RING domains are nearly always associated with ubiquitin E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib52\" rel=\"#bib52\">Shi and Kehrl, 2003</a>) and TRAF2 can promote ubiquitylation of RIPK1 in TNFR1 signalling complexes (TNFR1-SC) (<a class=\"xref-bibr\" href=\"#bib71\" rel=\"#bib71\">Wertz et al., 2004</a>). However TRAF2 recruits E3 ligases such as cIAPs to TNFR1-SC and these have also been shown to be able to ubiquitylate RIPK1 and regulate TNF signalling (<a class=\"xref-bibr\" href=\"#bib13\" rel=\"#bib13\">Dynek et al., 2010</a>; <a class=\"xref-bibr\" href=\"#bib34\" rel=\"#bib34\">Mahoney et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib66\" rel=\"#bib66\">Varfolomeev et al., 2008</a>; <a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). This makes it difficult to unambiguously determine the role of the E3 ligase activity of TRAF2.</p><p>Activation of JNK and NF-κB by TNF is reduced in cells from <em>Traf2<sup>-/-&nbsp;</sup></em>mice while only JNK signalling was affected in lymphocytes from transgenic mice that express a dominant negative (DN) form of TRAF2 that lacks the RING domain (<a class=\"xref-bibr\" href=\"#bib31\" rel=\"#bib31\">Lee et al., 1997</a>; <a class=\"xref-bibr\" href=\"#bib74\" rel=\"#bib74\">Yeh et al., 1997</a>). <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> mouse embryonic fibroblasts (MEFs) have a pronounced defect in activation of NF-κB by TNF, suggesting that absence of TRAF2 can be compensated by TRAF5 (<a class=\"xref-bibr\" href=\"#bib59\" rel=\"#bib59\" title=\"\">Tada et al., 2001</a>). Although activation of NF-κB was restored in <em>Traf2</em><sup>-/-</sup><em>Traf5</em><sup>-/-</sup> cells by re-expression of wild type TRAF2, it was not restored when the cells were reconstituted with TRAF2 point mutants that could not bind cIAPs (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). These data, together with a wealth of different lines of evidence showing that cIAPs are critical E3 ligases required for TNF-induced canonical NF-κB (<a class=\"xref-bibr\" href=\"#bib5\" rel=\"#bib5\">Blackwell et al., 2013</a>; <a class=\"xref-bibr\" href=\"#bib21\" rel=\"#bib21\">Haas et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib56\" rel=\"#bib56\">Silke, 2011</a>), support the idea that the main function of TRAF2 in TNF-induced NF-κB is to recruit cIAPs to the TNFR1-SC. However, it remains possible that the RING of TRAF2 plays another function, such as in activating JNK and protecting cells from TNF-induced cell death (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\" title=\"\">Vince et al., 2009</a>; <a class=\"xref-bibr\" href=\"#bib79\" rel=\"#bib79\">Zhang et al., 2010</a>). Furthermore it has been shown that TRAF2 can K48-ubiquitylate caspase-8 to set the threshold for TRAIL or Fas induced cell death (<a class=\"xref-bibr\" href=\"#bib17\" rel=\"#bib17\">Gonzalvez et al., 2012</a>). Moreover, TRAF2 inhibits non-canonical NF-κB signalling (<a class=\"xref-bibr\" href=\"#bib18\" rel=\"#bib18\">Grech et al., 2004</a>; <a class=\"xref-bibr\" href=\"#bib78\" rel=\"#bib78\">Zarnegar et al., 2008</a>) and this function requires the RING domain of TRAF2 to induce proteosomal degradation of NIK (<a class=\"xref-bibr\" href=\"#bib68\" rel=\"#bib68\">Vince et al., 2009</a>). However, structural and in vitro analyses indicate that, unlike TRAF6, the RING domain of TRAF2 is unable to bind E2 conjugating enzymes (<a class=\"xref-bibr\" href=\"#bib76\" rel=\"#bib76\">Yin et al., 2009</a>), and is therefore unlikely to have intrinsic E3 ligase activity.</p><p>Sphingosine-1-phosphate (S1P) is a pleiotropic sphingolipid mediator that regulates proliferation, differentiation, cell trafficking and vascular development (<a class=\"xref-bibr\" href=\"#bib44\" rel=\"#bib44\">Pitson, 2011</a>). S1P is generated by sphingosine kinase 1 and 2 (SPHK1 and SPHK2) (<a class=\"xref-bibr\" href=\"#bib28\" rel=\"#bib28\">Kohama et al., 1998</a>; <a class=\"xref-bibr\" href=\"#bib33\" rel=\"#bib33\">Liu et al., 2000</a>). Extracellular S1P mainly acts by binding to its five G protein-coupled receptors S1P<sub>1-5</sub> (<a class=\"xref-bibr\" href=\"#bib25\" rel=\"#bib25\">Hla and Dannenberg, 2012</a>). However, some intracellular roles have been suggested for S1P, including the blocking of the histone deacetylases, HDAC1/2 (<a class=\"xref-bibr\" href=\"#bib22\" rel=\"#bib22\">Hait et al., 2009</a>) and the induction of apoptosis through interaction with BAK and BAX (<a class=\"xref-bibr\" href=\"#bib9\" rel=\"#bib9\">Chipuk et al., 2012</a>).</p><p>Recently, it was suggested that the RING domain of TRAF2 requires S1P as a co-factor for its E3 ligase activity (<a class=\"xref-bibr\" href=\"#bib3\" rel=\"#bib3\">Alvarez et al., 2010</a>). Alvarez and colleagues proposed that SPHK1 but not SPHK2 is activated by TNF and phosphorylates sphingosine to S1P which in turn&nbsp;binds&nbsp;to the RING domain of TRAF2 and serves as an essential co-factor that was missing in the experiments of Yin <em>et al.</em> Alvarez and colleagues, observed that in the absence of SPHK1, TNF-induced NF-κB activation was completely abolished.</p><div id=\"nestedFrag\"><b>I am a nested frag</b></div><p>Although we know a lot about TRAF2, there are still important gaps particularly with regard to cell type specificity and in vivo function of TRAF2. Moreover, despite the claims that SPHK1 and its product, S1P, are required for TRAF2 to function as a ubiquitin ligase, the responses of <em>Traf2<sup>-/-&nbsp;</sup></em>and <em>Sphk1<sup>-/-</sup></em> cells to TNF were not compared. Therefore, we undertook an analysis of TRAF2 and SPHK1 function in TNF signalling in a number of different tissues.</p><p>Surprisingly, we found that neither TRAF2 nor SPHK1 are required for TNF mediated canonical NF-κB and MAPK signalling in macrophages. However, MEFs, murine dermal fibroblasts (MDFs) and keratinocytes required TRAF2 but not SPHK1 for full strength TNF signalling. In these cell types, absence of TRAF2 caused a delay in TNF-induced activation of NF-κB and MAPK, and sensitivity to killing by TNF was increased. Absence of TRAF2 in keratinocytes in vivo resulted in psoriasis-like epidermal hyperplasia and skin inflammation. Unlike TNF-dependent genetic inflammatory skin conditions, such as IKK2 epidermal knock-out (<a class=\"xref-bibr\" href=\"#bib40\" rel=\"#bib40\" title=\"\">Pasparakis et al., 2002</a>) and the <em>cpdm</em> mutant (<a class=\"xref-bibr\" href=\"#bib16\" rel=\"#bib16\">Gerlach et al., 2011</a>), the onset of inflammation was only delayed, and not prevented by deletion of TNF. This early TNF-dependent inflammation is caused by excessive apoptotic but not necroptotic cell death and could be prevented by deletion of <em>Casp8</em>. We observed constitutive activation of NIK and non-canonical NF-κB in <em>Traf2<sup>-/-&nbsp;</sup></em>keratinocytes which caused production of inflammatory cytokines and chemokines. We were able to reverse this inflammatory phenotype by simultaneously deleting both <em>Tnf</em> and <em>Nfkb2</em> genes. Our results highlight the important role TRAF2 plays to protect keratinocytes from cell death and to down-regulate inflammatory responses and support the idea that intrinsic defects in keratinocytes can initiate psoriasis-like skin inflammation.</p>",
       "doi": {
         "doi": "10.7554/eLife.16370",
         "variant": "article-section"
@@ -530,7 +509,7 @@
       "headingLevel": 2,
       "hasBehaviour": true,
       "isInitiallyClosed": true,
-      "body": "<p>Embryos were isolated from a wild <i>B. schlosseri</i> colony from Monterey Bay. Metaphase chromosomes were isolated as previously described (<a href=\"#bib73\">Shoguchi et al., 2004</a>). <i>B. schlosseri</i> metaphase chromosome suspension was partitioned into wells in the microfluidic device as previously described (<a href=\"#bib24\">Fan et al., 2011</a>; <a href=\"#bib92\">Xu et al., 2011</a>). The contents of each microfluidic well were amplified individually and prepared for sequencing. Each well contained between 1–4 metaphase chromosomes (<a href=\"#fig3\">Figure 3</a>, <a href=\"#fig3s1\">Figure 3—figure supplement 1</a>, <a href=\"#fig3s2\">Figure 3—figure Supplement 2</a>). 21 wells were made into libraries and sequenced using Illumina Hiseq (2 x 100).</p><section class=\"article-section article-section--has-header-link\" id=\"s3-3-1\">  <header class=\"article-section__header\">    <h4 class=\"article-section__header_text\">Chromosome assignment</h4> <a href=\"#\" class=\"article-section__header_link\">Request a detailed protocol</a>  </header>  <div class=\"article-section__body\">    <p>Since a particular chromosome has an equal chance of occupying any of the 21 wells, we can denote the presence of a particular chromosome for example chromosome A across the 21 wells in the form of a vector (1,0,1,0,1,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,1) where 1 denotes presence in a well and 0 as absent. To deduce this configuration and perform the assignment of contigs, we aligned the reads from each well onto the contigs of the assembly. Contigs that share the same configuration across 21 wells can be considered to be from the same chromosome. To determine which contigs belong together and share the same configuration, we cluster the contigs using the Pearson correlation with each other using the vector across 21 wells. The number of clusters that result from k-means clustering using the Pearson correlation as the distance is then inferred to be the number of chromosomes. To determine this optimal number of clusters K for K-means clustering, we perform the clustering procedure iteratively for each K and record the within sum of squares error for each iteration as shown in <a href=\"#fig3\">Figure 3</a>. Additionally, using the clustered data, we were able to deduce the configuration and deduce the number of chromosomes in each well.</p><p>Reads from each of the chromosome preparation were aligned to the 356a draft genome assembly using the BWA (<a href=\"#bib47\">Li and Durbin, 2009</a>) package. Subsequently, SAMtools (<a href=\"#bib48\">Li et al., 2009</a>) were used to filter for high quality mapping of reads with MAPQ score of greater than 30. The filtering was performing by using AWK to filter the fifth column of the SAM file for alignments &gt;25. In addition to filter for a reasonable insert size, AWK is used to filter the corresponding columns in SAM files. Filtered SAM files were then parsed using BEDtools (<a href=\"#bib62\">Quinlan and Hall, 2010</a>) to obtain the number of reads that are associated with each of the scaffolds. Specifically, the coverageBED command is used to calculate the number of reads and coverage associated with each of the scaffolds in the assembled genome. Utilizing the number of reads associated with each scaffold from a particular chromosome preparation were arranged in the following data format:</p><div id=\"tbl3\" class=\"asset-viewer-inline asset-viewer-inline--table \" data-variant=\"table\" data-behaviour=\"AssetNavigation\"><div class=\"asset-viewer-inline__header_panel\"><div class=\"asset-viewer-inline__header_text\"><span class=\"asset-viewer-inline__header_text__prominent\">Table 3.</span></div><div class=\"asset-viewer-inline__figure_access\"></div></div><figure class=\"captioned-asset\"><figcaption class=\"captioned-asset__caption\"><h6 class=\"caption-text__heading\">Predictive model parameters for key model outcomes</h6><span class=\"doi doi--asset\"><a href=\"https://doi.org/10.7554/eLife.00288.031\" class=\"doi__link\">https://doi.org/10.7554/eLife.00288.031</a></span></figcaption><div class=\"table-wrap\"><table><thead><tr><td rowspan=\"2\"></td><td colspan=\"2\">Single episode features</td><td colspan=\"2\">Long-term shedding features</td></tr><tr><td>Peak viral load</td><td>Duration</td><td>Shedding rate</td><td>Episode rate</td></tr></thead><tbody><tr><td>CD8+ T-cell density at reactivation site</td><td>−0.56</td><td>−0.47</td><td>NA</td><td>NA</td></tr><tr><td>Cell-associated HSV infectivity</td><td>—</td><td>0.12</td><td>—</td><td>0.13</td></tr><tr><td>Cell-free HSV infectivity</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Epidermal cell replicate rate</td><td>0.13</td><td>0.14</td><td>−0.25</td><td>−0.31</td></tr><tr><td>Neuronal release rate</td><td>—</td><td>—</td><td>0.43</td><td>0.55</td></tr><tr><td>Free-viral decay rate</td><td>—</td><td>—</td><td>−0.2</td><td>—</td></tr><tr><td>Maximal CD8+ T-cell expansion rate</td><td>−0.09</td><td>—</td><td>0.37</td><td>0.51</td></tr><tr><td>CD8+ T-cell decay rate</td><td>—</td><td>0.09</td><td>—</td><td>−0.16</td></tr><tr><td>CD8+ T-cell local recognition</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>CD8+ regional co-dependence</td><td>—</td><td>—</td><td>0.32</td><td>0.34</td></tr><tr><td>Viral production lag</td><td>—</td><td>—</td><td>0.24</td><td>0.23</td></tr></tbody></table></div><ol class=\"list\"><li class=\"table-footnote\"><div class=\"table-footnote__text\"><p>Partial correlation coefficients are listed only for parameters that are found to improve predictive effect on outcomes using Akaike information criteria models. Episode features are from 500 single episode simulations. Long-term shedding outcomes were measured over 10-years during 500 simulations.</p></div></li></ol></figure></div><p>In each cell the number of reads associated with the scaffold and preparation was normalized by the total number of reads across each chromosome preparation. This is done by dividing the number of reads associated with the particular scaffold and preparation by dividing each entry by the total number of reads from a chromosome preparation. This value is then scaled by the fractional coverage of reads for a particular scaffold. These normalization steps ensure that a valid comparison can be made across each preparation. These normalized reads are then used to perform the K-means clustering. The optimal number of clusters is determined by iteratively performing the clustering process with each value of K. Within sum of square errors for each cluster is calculated and plotted in <a href=\"#fig3\">Figure 3A</a>. A knee exists in the curve near K = 13, after which increasing the number of clusters only creates marginal improvement in the error (<a href=\"#fig3\">Figure 3A</a>). To estimate the configuration after the clustering step, 17 out of the 21 wells were deduced to contain information that is used in the clustering process. The average number of normalized reads counts from each well that align to each scaffold in a cluster group is calculated and plotted in <a href=\"#fig3\">Figure 3B</a>, <a href=\"#fig3s1\">Figure 3—figure supplements 1 and 2</a>. Each peak represented can be inferred to denote the presence of a specific chromosome in the well. This approach yielded 13 well resolved chromosomes (<a href=\"#fig3\">Figure 3</a>, <a href=\"#fig3s1\">Figure 3—figure supplement 1</a>), close to the ∼16 chromosomes that were predicted by a previous study using metaphase spreads (<a href=\"#bib14\">Colombera, 1963</a>).</p>  </section><section class=\"article-section \" id=\"s3-3-2\">  <header class=\"article-section__header\">    <h4 class=\"article-section__header_text\">356a-chromosomes hybrid assembly</h4>  </header>  <div class=\"article-section__body\">    <p>Reads from each of the individual chromosome sample preparation were subsequently assembled using Velvet (<a href=\"#bib96\">Zerbino, 2010</a>; <a href=\"#fig3s2\">Figure 3—figure supplement 2</a>). Velvet was compiled for our assembly to have a max hash length of 75. This is to allow for the use of larger hash length for the assembly of the reads from the individual well. Since the paired reads from each preparation is ∼86 after filtering for low quality bases, an optimal hash length is selected from the range of 51–75 to obtain the optimal assembly for each preparation. The assembled chromosome level contigs were then merged with 356a draft assembly using Minimus2 <a href=\"http://sourceforge.net/apps/mediawiki/amos/index.php?title=Minimus2\">http://sourceforge.net/apps/mediawiki/amos/index.php?title=Minimus2</a> (<a href=\"#fig3s3\">Figure 3—figure supplement 3</a>). During this stage, minimus2 used a nucmer based overlap detector to detect overlap between sequences and subsequently merging the two sequence sets to generate the final merge assembly of chromosome with the draft. An overall improvement in N50 was achieved, yielding a final 580 Mbp draft 356a-chromosomes hybrid assembly (<a href=\"#SD3-data\">Supplementary file 2D</a>).</p>  </div> <h4>I am an h4</h4><h5>I am an h5</h5><h6>I am an h6</h6><p>A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve </p> </section>"
+      "body": "<p>Embryos were isolated from a wild <i>B. schlosseri</i> colony from Monterey Bay. Metaphase chromosomes were isolated as previously described (<a href=\"#bib73\">Shoguchi et al., 2004</a>). <i>B. schlosseri</i> metaphase chromosome suspension was partitioned into wells in the microfluidic device as previously described (<a href=\"#bib24\">Fan et al., 2011</a>; <a href=\"#bib92\">Xu et al., 2011</a>). The contents of each microfluidic well were amplified individually and prepared for sequencing. Each well contained between 1–4 metaphase chromosomes (<a href=\"#fig3\">Figure 3</a>, <a href=\"#fig3s1\">Figure 3—figure supplement 1</a>, <a href=\"#fig3s2\">Figure 3—figure Supplement 2</a>). 21 wells were made into libraries and sequenced using Illumina Hiseq (2 x 100).</p><section class=\"article-section article-section--has-header-link\" id=\"s3-3-1\">  <header class=\"article-section__header\">    <h4 class=\"article-section__header_text\">Chromosome assignment</h4> <a href=\"#\" class=\"article-section__header_link\">Request a detailed protocol</a>  </header>  <div class=\"article-section__body\">    <p>Since a particular chromosome has an equal chance of occupying any of the 21 wells, we can denote the presence of a particular chromosome for example chromosome A across the 21 wells in the form of a vector (1,0,1,0,1,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,1) where 1 denotes presence in a well and 0 as absent. To deduce this configuration and perform the assignment of contigs, we aligned the reads from each well onto the contigs of the assembly. Contigs that share the same configuration across 21 wells can be considered to be from the same chromosome. To determine which contigs belong together and share the same configuration, we cluster the contigs using the Pearson correlation with each other using the vector across 21 wells. The number of clusters that result from k-means clustering using the Pearson correlation as the distance is then inferred to be the number of chromosomes. To determine this optimal number of clusters K for K-means clustering, we perform the clustering procedure iteratively for each K and record the within sum of squares error for each iteration as shown in <a href=\"#fig3\">Figure 3</a>. Additionally, using the clustered data, we were able to deduce the configuration and deduce the number of chromosomes in each well.</p><p>Reads from each of the chromosome preparation were aligned to the 356a draft genome assembly using the BWA (<a href=\"#bib47\">Li and Durbin, 2009</a>) package. Subsequently, SAMtools (<a href=\"#bib48\">Li et al., 2009</a>) were used to filter for high quality mapping of reads with MAPQ score of greater than 30. The filtering was performing by using AWK to filter the fifth column of the SAM file for alignments &gt;25. In addition to filter for a reasonable insert size, AWK is used to filter the corresponding columns in SAM files. Filtered SAM files were then parsed using BEDtools (<a href=\"#bib62\">Quinlan and Hall, 2010</a>) to obtain the number of reads that are associated with each of the scaffolds. Specifically, the coverageBED command is used to calculate the number of reads and coverage associated with each of the scaffolds in the assembled genome. Utilizing the number of reads associated with each scaffold from a particular chromosome preparation were arranged in the following data format:</p><div id=\"tbl3\" class=\"asset-viewer-inline asset-viewer-inline--table \" data-variant=\"table\" data-behaviour=\"AssetNavigation\"><div class=\"asset-viewer-inline__header_panel\"><div class=\"asset-viewer-inline__header_text\"><span class=\"asset-viewer-inline__header_text__prominent\">Table 3.</span></div><div class=\"asset-viewer-inline__figure_access\"></div></div><figure class=\"captioned-asset\"><figcaption class=\"captioned-asset__caption\"><h6 class=\"caption-text__heading\">Predictive model parameters for key model outcomes</h6><span class=\"doi doi--asset\"><a href=\"https://doi.org/10.7554/eLife.00288.031\" class=\"doi__link\">https://doi.org/10.7554/eLife.00288.031</a></span></figcaption><div class=\"table-wrap\"><table><thead><tr><td rowspan=\"2\"></td><td colspan=\"2\">Single episode features</td><td colspan=\"2\">Long-term shedding features</td></tr><tr><td>Peak viral load</td><td>Duration</td><td>Shedding rate</td><td>Episode rate</td></tr></thead><tbody><tr><td>CD8+ T-cell density at reactivation site</td><td>−0.56</td><td>−0.47</td><td>NA</td><td>NA</td></tr><tr><td>Cell-associated HSV infectivity</td><td>—</td><td>0.12</td><td>—</td><td>0.13</td></tr><tr><td>Cell-free HSV infectivity</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Epidermal cell replicate rate</td><td>0.13</td><td>0.14</td><td>−0.25</td><td>−0.31</td></tr><tr><td>Neuronal release rate</td><td>—</td><td>—</td><td>0.43</td><td>0.55</td></tr><tr><td>Free-viral decay rate</td><td>—</td><td>—</td><td>−0.2</td><td>—</td></tr><tr><td>Maximal CD8+ T-cell expansion rate</td><td>−0.09</td><td>—</td><td>0.37</td><td>0.51</td></tr><tr><td>CD8+ T-cell decay rate</td><td>—</td><td>0.09</td><td>—</td><td>−0.16</td></tr><tr><td>CD8+ T-cell local recognition</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td>CD8+ regional co-dependence</td><td>—</td><td>—</td><td>0.32</td><td>0.34</td></tr><tr><td>Viral production lag</td><td>—</td><td>—</td><td>0.24</td><td>0.23</td></tr></tbody></table></div><ol class=\"list\"><li class=\"table-footnote\"><div class=\"table-footnote__text\"><p>Partial correlation coefficients are listed only for parameters that are found to improve predictive effect on outcomes using Akaike information criteria models. Episode features are from 500 single episode simulations. Long-term shedding outcomes were measured over 10-years during 500 simulations.</p></div></li></ol></figure></div><p>In each cell the number of reads associated with the scaffold and preparation was normalized by the total number of reads across each chromosome preparation. This is done by dividing the number of reads associated with the particular scaffold and preparation by dividing each entry by the total number of reads from a chromosome preparation. This value is then scaled by the fractional coverage of reads for a particular scaffold. These normalization steps ensure that a valid comparison can be made across each preparation. These normalized reads are then used to perform the K-means clustering. The optimal number of clusters is determined by iteratively performing the clustering process with each value of K. Within sum of square errors for each cluster is calculated and plotted in <a href=\"#fig3\">Figure 3A</a>. A knee exists in the curve near K = 13, after which increasing the number of clusters only creates marginal improvement in the error (<a href=\"#fig3\">Figure 3A</a>). To estimate the configuration after the clustering step, 17 out of the 21 wells were deduced to contain information that is used in the clustering process. The average number of normalized reads counts from each well that align to each scaffold in a cluster group is calculated and plotted in <a href=\"#fig3\">Figure 3B</a>, <a href=\"#fig3s1\">Figure 3—figure supplements 1 and 2</a>. Each peak represented can be inferred to denote the presence of a specific chromosome in the well. This approach yielded 13 well resolved chromosomes (<a href=\"#fig3\">Figure 3</a>, <a href=\"#fig3s1\">Figure 3—figure supplement 1</a>), close to the ∼16 chromosomes that were predicted by a previous study using metaphase spreads (<a href=\"#bib14\">Colombera, 1963</a>).</p>  </section><section class=\"article-section \" id=\"s3-3-2\">  <header class=\"article-section__header\">    <h4 class=\"article-section__header_text\">356a-chromosomes hybrid assembly</h4>  </header>  <div class=\"article-section__body\">    <p>Reads from each of the individual chromosome sample preparation were subsequently assembled using Velvet (<a href=\"#bib96\">Zerbino, 2010</a>; <a href=\"#fig3s2\">Figure 3—figure supplement 2</a>). Velvet was compiled for our assembly to have a max hash length of 75. This is to allow for the use of larger hash length for the assembly of the reads from the individual well. Since the paired reads from each preparation is ∼86 after filtering for low quality bases, an optimal hash length is selected from the range of 51–75 to obtain the optimal assembly for each preparation. The assembled chromosome level contigs were then merged with 356a draft assembly using Minimus2 <a href=\"http://sourceforge.net/apps/mediawiki/amos/index.php?title=Minimus2\">http://sourceforge.net/apps/mediawiki/amos/index.php?title=Minimus2</a> (<a href=\"#fig3s3\">Figure 3—figure supplement 3</a>). During this stage, minimus2 used a nucmer based overlap detector to detect overlap between sequences and subsequently merging the two sequence sets to generate the final merge assembly of chromosome with the draft. An overall improvement in N50 was achieved, yielding a final 580 Mbp draft 356a-chromosomes hybrid assembly (<a href=\"#SD3-data\">Supplementary file 2D</a>).</p>  </div> <h4>I am an h4</h4><h5>I am an h5</h5><h6>I am an h6</h6><p>A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve A knee exists in the curve </p> <div class=\"table\"><div class=\"table__table\"><table><thead><tr><th valign=\"top\">Reagent type <br/>(species) or resource</th><th valign=\"top\">Designation</th><th valign=\"top\">Source or reference</th><th valign=\"top\">Identifiers</th><th valign=\"top\">Additional information</th></tr></thead><tbody><tr><td valign=\"top\">Gene (<i>Homo sapiens</i>)</td><td valign=\"top\">ORC1</td><td valign=\"top\">GenBank</td><td valign=\"top\">NM_004153.4</td><td valign=\"top\"/></tr><tr><td valign=\"top\">Gene (<i>Homo sapiens</i>)</td><td valign=\"top\">ORC2</td><td valign=\"top\">GenBank</td><td valign=\"top\">NM_006190.5</td><td valign=\"top\"/></tr><tr><td valign=\"top\">Gene (<i>Homo sapiens</i>)</td><td valign=\"top\">ORC3</td><td valign=\"top\">GenBank</td><td valign=\"top\">NM_181837.3</td><td valign=\"top\"/></tr><tr><td valign=\"top\">Gene (<i>Homo sapiens</i>)</td><td valign=\"top\">ORC4</td><td valign=\"top\">GenBank</td><td valign=\"top\">NM_001190879.3</td><td valign=\"top\"/></tr><tr><td valign=\"top\">Gene (<i>Homo sapiens</i>)</td><td valign=\"top\">ORC5</td><td valign=\"top\">GenBank</td><td valign=\"top\">NM_002553.4</td><td valign=\"top\"/></tr><tr><td valign=\"top\">Gene (<i>Homo sapiens</i>)</td><td valign=\"top\">ORC6</td><td valign=\"top\">GenBank</td><td valign=\"top\">NM_014321.4</td><td valign=\"top\"/></tr><tr><td valign=\"top\">Gene (<i>Homo sapiens</i>)</td><td valign=\"top\">CDC6</td><td valign=\"top\">GenBank</td><td valign=\"top\">NM_001254.4</td><td valign=\"top\"/></tr><tr><td valign=\"top\">Strain, strain background (<i>Escherichia coli</i>)</td><td valign=\"top\">Stbl3</td><td valign=\"top\">NEB</td><td valign=\"top\">C3040</td><td valign=\"top\">High efficiency chemically competent cells</td></tr><tr><td valign=\"top\">Cell line (<i>H. sapiens</i>)</td><td valign=\"top\">HCT116 <i>p53+/+</i></td><td valign=\"top\">ATCC</td><td valign=\"top\">Cat# CCL-247, RRID:<a href=\"https://identifiers.org/RRID/RRID:CVCL_0291\">CVCL_0291</a></td><td valign=\"top\">Cell line maintained in B. Stillman Lab</td></tr><tr><td valign=\"top\">Cell line (<i>H. sapiens</i>)</td><td valign=\"top\">RPE-1</td><td valign=\"top\">ATCC</td><td valign=\"top\">Cat# CRL-4000, RRID:<a href=\"https://identifiers.org/RRID/RRID:CVCL_4388\">CVCL_4388</a></td><td valign=\"top\">Cell line maintained in B. Stillman Lab</td></tr><tr><td valign=\"top\">Cell line (<i>H. sapiens</i>)</td><td valign=\"top\">HEK293T</td><td valign=\"top\">ATCC</td><td valign=\"top\">Cat# CRL-3216, RRID:<a href=\"https://identifiers.org/RRID/RRID:CVCL_0063\">CVCL_0063</a></td><td valign=\"top\">Cell line maintained in B. Stillman Lab</td></tr><tr><td valign=\"top\">Cell line (<i>H. sapiens</i>)</td><td valign=\"top\">HCT116 <i>p53-/-</i></td><td valign=\"top\"><a href=\"#bib7\">Bunz et al., 1998</a></td><td valign=\"top\">RRID:<a href=\"https://identifiers.org/RRID/RRID:CVCL_S744\">CVCL_S744</a></td><td valign=\"top\">Generous gift from Anindya Dutta (University of Virginia)</td></tr><tr></tbody></table></div></div></section>"
     },
     {
       "id": "articleInfo",
@@ -538,7 +517,7 @@
       "hasBehaviour": true,
       "isInitiallyClosed": true,
       "headingLevel": 2,
-      "body": "  <h3 class=\"authors-details__heading\">Authors details</h3>  <ol class=\"authors-details__authors\">    <li class=\"authors-details__author\" style=\"margin-top: 0px;\"><div class=\"author-details\" data-popup-contents=\"author-3c233bb0\" id=\"author-3c233bb0\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Stefan Schaffelhofer</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Laboratory of Neural Systems, The Rockefeller University, New York, United States</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Developed the experimental setup, Trained the animals, Recorded and analysed the data, Wrote the manuscript, Acquisition of data</span>      </section>      <section class=\"author-details__section author-details__section--competing-interest\" style=\"    height: 48px;\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>      <section class=\"author-details__section author-details__section--orcid\">        <span class=\"orcid\"><a href=\"https://orcid.org/0000-0002-3400-7927\"><picture><source srcset=\"../../assets/img/icons/orcid.svg\" type=\"image/svg+xml\"><img src=\"../../assets/img/icons/orcid.png\" class=\"orcid__icon\" alt=\"ORCID icon\"> </picture> <span class=\"visuallyhidden\">The following ORCID iD identifies the author of this article:</span> 0000-0002-3400-7927</a></span>     </section>    </div>    </li>    <li class=\"authors-details__author\"><div class=\"author-details\" id=\"author-76fd97c3\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Hansjörg Scherberger</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Department of Biology, University of Göttingen, Göttingen, Germany</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Performed the surgeries, Edited the manuscript, Provided supervision at all stages of the project, Analysis and interpretation of data</span>      </section>      <section class=\"author-details__section author-details__section--means-of-correspondence\">        <h5 class=\"author-details__heading\">For correspondence: </h5>        <a href=\"mailto:hscherb@gwdg.de\" class=\"author-details__text author-details__link\">hscherb@gwdg.de</a>      </section>      <section class=\"author-details__section author-details__section--competing-interest\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>    </div>    </li>  </ol>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Funding</h3>    </header>    <div class=\"article-section__body\">      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Alexander von Humboldt-Stiftung (Postdoctoral Fellowship)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Stefan Schaffelhofer</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Deutsche Forschungsgemeinschaft (SCHE 1575/3-1)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Bundesministerium für Bildung und Forschung (BCCN-II, 01GQ1005C)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">European Commission (FP7-611687 (NEBIAS))</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <p>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Acknowledgements</h3>    </header>    <div class=\"article-section__body\">      <p>The authors thank M Sartori, M Dörge, K Menz, R Ahlert, N Nazarenus, and L Burchardt for assistance and MM Fabiszak, M Hepp-Reymond, and W Freiwald for helpful comments on an earlier version of the manuscript. This work was supported by the Federal Ministry of Education and Research (Bernstein Center for Computational Neuroscience II Grant DPZ-01GQ1005C, the German Research Foundation (SCHE 1575/3-1), the European Union Grant FP7– 611687 (NEBIAS), and the Humboldt Foundation.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Ethics</h3>    </header>    <div class=\"article-section__body\">      <p>Animal experimentation: All procedures and animal were conducted in accordance with the guidelines for the care and use of mammals in neuroscience and behavioral research (National Research Council, 2003), and were in agreement with German and European laws governing animal care. Authorization for conducting this study has been granted by the regional government office, the Animal Welfare Division of the Office for Consumer Protection and Food Safety of the State of Lower Saxony, Germany (permit no. 032/09). Monkey handling also followed the recommendations of the Weatherall Report of good animal practice. Animals were pairhoused in a spacious cage (well exceeding legal requirements) and were maintained on a 12-hour on/off lighting schedule. Housing procedures included an environmental enrichment program with access to toys, swings, and hidden treats (e.g., seeds in sawdust). Monkeys had visual and auditory contact to other monkeys. They were fed on a diet of enriched biscuits and fruits. Daily access to fluids was controlled during training and experimental periods to promote behavioral motivation. All surgical procedures were performed under anesthesia, and all efforts were made to minimize post-surgical pain or suffering. Institutional veterinarians continually monitored animal health and well-being.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Reviewers</h3>    </header>    <div class=\"article-section__body\">      <ol class=\"list\">        <li>Sabine Kastner, Reviewing editor, Princeton University, United States</li>      </ol>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Copyright</h3>    </header>    <div class=\"article-section__body\">      <p>© 2016, Schaffelhofer et al.</p><p>This article is distributed under the terms of the <a href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution License</a>, which permits unrestricted use and redistribution provided that the original author and source are credited.</p>    </div>  </section>"
+      "body": "  <h3 class=\"authors-details__heading\">Authors details</h3>  <ol class=\"authors-details__authors\">    <li class=\"authors-details__author\" style=\"margin-top: 0px;\"><div class=\"author-details\" data-popup-contents=\"author-3c233bb0\" id=\"author-3c233bb0\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Stefan Schaffelhofer</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Laboratory of Neural Systems, The Rockefeller University, New York, United States</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Developed the experimental setup, Trained the animals, Recorded and analysed the data, Wrote the manuscript, Acquisition of data</span>      </section>      <section class=\"author-details__section author-details__section--competing-interest\" style=\"    height: 48px;\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>      <section class=\"author-details__section author-details__section--orcid\">        <span class=\"orcid\"><a href=\"https://orcid.org/0000-0002-3400-7927\"><picture><source srcset=\"../../assets/img/icons/orcid.svg\" type=\"image/svg+xml\"><img src=\"../../assets/img/icons/orcid.png\" class=\"orcid__icon\" alt=\"ORCID icon\"> </picture> <span class=\"visuallyhidden\">The following ORCID iD identifies the author of this article:</span> 0000-0002-3400-7927</a></span>     </section>    </div>    </li>    <li class=\"authors-details__author\"><div class=\"author-details\" id=\"author-76fd97c3\">      <h4 class=\"author-details__name\" style=\"    padding-bottom: 12px;\">Hansjörg Scherberger</h4>      <ol class=\"author-details__affiliations author-details__section author-details__section--affiliations\">        <li class=\"author-details__affiliation\">Neurobiology Laboratory, German Primate Center GmbH, Göttingen, Germany</li>        <li class=\"author-details__affiliation\">Department of Biology, University of Göttingen, Göttingen, Germany</li>      </ol>      <section class=\"author-details__section author-details__section--contribution-statement\">        <h5 class=\"author-details__heading\">Contribution: </h5>        <span class=\"author-details__text\">Designed experiments, Performed the surgeries, Edited the manuscript, Provided supervision at all stages of the project, Analysis and interpretation of data</span>      </section>      <section class=\"author-details__section author-details__section--means-of-correspondence\">        <h5 class=\"author-details__heading\">For correspondence: </h5>        <a href=\"mailto:hscherb@gwdg.de\" class=\"author-details__text author-details__link\">hscherb@gwdg.de</a>      </section>      <section class=\"author-details__section author-details__section--competing-interest\">        <h5 class=\"author-details__heading\">Competing interests: </h5>        <span class=\"author-details__text\">No competing interests declared.</span>      </section>    </div>    </li>  </ol>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Funding</h3>    </header>    <div class=\"article-section__body\">      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Alexander von Humboldt-Stiftung (Postdoctoral Fellowship)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Stefan Schaffelhofer</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Deutsche Forschungsgemeinschaft (SCHE 1575/3-1)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">Bundesministerium für Bildung und Forschung (BCCN-II, 01GQ1005C)</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <section class=\"article-section \">        <header class=\"article-section__header\">          <h4 class=\"article-section__header_text\">European Commission (FP7-611687 (NEBIAS))</h4>        </header>        <div class=\"article-section__body\">          <ul class=\"list  list--bullet\">            <li>Hansjörg Scherberger</li>          </ul>        </div>      </section>      <p>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Acknowledgements</h3>    </header>    <div class=\"article-section__body\">      <p>The authors thank M Sartori, M Dörge, K Menz, R Ahlert, N Nazarenus, and L Burchardt for assistance and MM Fabiszak, M Hepp-Reymond, and W Freiwald for helpful comments on an earlier version of the manuscript. This work was supported by the Federal Ministry of Education and Research (Bernstein Center for Computational Neuroscience II Grant DPZ-01GQ1005C, the German Research Foundation (SCHE 1575/3-1), the European Union Grant FP7– 611687 (NEBIAS), and the Humboldt Foundation.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Ethics</h3>    </header>    <div class=\"article-section__body\">      <p>Animal experimentation: All procedures and animal were conducted in accordance with the guidelines for the care and use of mammals in neuroscience and behavioral research (National Research Council, 2003), and were in agreement with German and European laws governing animal care. Authorization for conducting this study has been granted by the regional government office, the Animal Welfare Division of the Office for Consumer Protection and Food Safety of the State of Lower Saxony, Germany (permit no. 032/09). Monkey handling also followed the recommendations of the Weatherall Report of good animal practice. Animals were pairhoused in a spacious cage (well exceeding legal requirements) and were maintained on a 12-hour on/off lighting schedule. Housing procedures included an environmental enrichment program with access to toys, swings, and hidden treats (e.g., seeds in sawdust). Monkeys had visual and auditory contact to other monkeys. They were fed on a diet of enriched biscuits and fruits. Daily access to fluids was controlled during training and experimental periods to promote behavioral motivation. All surgical procedures were performed under anesthesia, and all efforts were made to minimize post-surgical pain or suffering. Institutional veterinarians continually monitored animal health and well-being.</p>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Reviewers</h3>    </header>    <div class=\"article-section__body\">      <ol class=\"list\">        <li>Sabine Kastner, Reviewing editor, Princeton University, United States</li>      </ol>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Publication history</h3>    </header>    <div class=\"article-section__body\">      <ol class=\"list list--bullet\">        <li>Preprint posted: <a href=\"#\">January 1, 2013</a></li><li>Received: January 22, 2013</li><li>Accepted: May 28, 2013</li><li>Version of Record published: <a href=\"#\">July 2, 2013 (version 1)</a></li>      </ol>    </div>  </section>  <section class=\"article-section \">    <header class=\"article-section__header\">      <h3 class=\"article-section__header_text\">Copyright</h3>    </header>    <div class=\"article-section__body\">      <p>© 2016, Schaffelhofer et al.</p><p>This article is distributed under the terms of the <a href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution License</a>, which permits unrestricted use and redistribution provided that the original author and source are credited.</p>    </div>  </section>"
     }
   ],
   "iframe": {
@@ -576,29 +555,34 @@
     ]
   },
   "pl-only-article-section-for-download-links": {
-    "title": "Article download links",
     "downloadLinks": {
-      "description": "A three part list of links to download the article, or parts of the article, in various formats.",
+      "description": "A list of links to download the article, or parts of the article, in various formats.",
       "groups": [
         {
-          "title": "Downloads<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
+          "title": "Download formats<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
           "items": [
             {
               "primary": {
-                "name": "Article",
-                "url": "#"
+                "link": {
+                  "name": "Article PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Figures",
-                "url": "#"
+                "link": {
+                  "name": "Figures PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Executable version",
-                "url": "#eraLink"
+                "link": {
+                  "name": "Executable version",
+                  "url": "#eraLink"
+                }
               },
               "secondary": {
                 "name": "What are executable versions?",
@@ -606,89 +590,71 @@
               }
             }
           ]
-        },
-        {
-          "title": "Download citations<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
-          "items": [
-            {
-              "primary": {
-                "name": "BibTex",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "RIS",
-                "url": "#"
-              }
-            }
-          ]
-        },
-        {
-          "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
-          "items": [
-            {
-              "primary": {
-                "name": "Mendeley",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "ReadCube",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "Papers App",
-                "url": "#"
-              }
-            },
-            {
-              "primary": {
-                "name": "CiteUlike",
-                "url": "#"
-              }
-            }
-          ]
         }
       ]
     }
   },
+
   "mainMenu": {
+    "title": {
+      "homePagePath": "#"
+    },
     "listHeading": {
       "heading": "Menu"
     },
     "links": {
       "items": [
         {
+          "name": "Home",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Magazine",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Community",
+          "url": "#ins",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "About",
+          "url": "#abo",
+          "classes": "hidden-wide"
+        },
+        {
           "name": "Research categories",
           "url": "#res"
         },
         {
+          "name": "Inside eLife",
+          "url": "#",
+          "classes": "end-of-group"
+        },
+        {
+          "name": "Search",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Subscribe to alerts",
+          "url": "#",
+          "classes": "end-of-group hidden-wide"
+        },
+        {
+          "name": "Submit your research",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
           "name": "Author guide",
-          "url": "#aut"
+          "url": "#"
         },
         {
           "name": "Reviewer guide",
-          "url": "#rev"
-        },
-        {
-          "name": "About",
-          "url": "#abo"
-        },
-        {
-          "name": "Inside eLife",
-          "url": "#ins"
-        },
-        {
-          "name": "Careers",
-          "url": "#car"
-        },
-        {
-          "name": "Innovation",
-          "url": "#lab"
+          "url": "#"
         }
       ]
     },
@@ -698,6 +664,7 @@
       "classes": "button--default button--full button--small main_menu__quit"
     }
   },
+
   "emailCta": {
     "headerText": "Be the first to read new articles from eLife",
     "button": {
@@ -766,7 +733,7 @@
               "url": "#"
             }
           ],
-          "authorLine": "H Thi-Kim Vu et al.",
+          "authorLine": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
           "meta": {
             "url": "#",
             "text": "Research advance",
@@ -888,26 +855,48 @@
         {
           "authors": [
             {
-              "name": "Feldman JL"
+              "name": "JL Feldman"
             },
             {
-              "name": "Del Negro C"
+              "name": "C Del Negro"
             },
             {
-              "name": "Gray PA"
+              "name": "PA Gray"
             }
           ],
           "suffix": "(2013)"
         }
       ],
-      "hasAbstracts": false
+      "hasAbstracts": true,
+
+      "abstracts": [
+        {
+          "name": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/"
+        },
+        {
+          "name": "Google Scholar",
+          "url": "https://google.co.uk"
+        }
+      ]
     },
     {
       "bibId": "bib3",
       "title": "Scripps Wired for Health Study (Registration: 000000)",
       "origin": "Scripps Translational Science Institute (sponsor) (2015)",
       "hasAuthors": false,
-      "hasAbstracts": false
+      "hasAbstracts": true,
+
+      "abstracts": [
+        {
+          "name": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/"
+        },
+        {
+          "name": "Google Scholar",
+          "url": "https://google.co.uk"
+        }
+      ]
     },
     {
       "bibId": "bib4",
@@ -918,55 +907,55 @@
         {
           "authors": [
             {
-              "name": "Jain BV"
+              "name": "BV Jain"
             },
             {
-              "name": "Bollman  B"
+              "name": "B Bollman"
             },
             {
-              "name": "Richardson M"
+              "name": "M Richardson"
             },
             {
-              "name": "Berger DR"
+              "name": "DR Berger"
             },
             {
-              "name": "Helmstaedter MN"
+              "name": "MN Helmstaedter"
             },
             {
-              "name": "Briggman KL"
+              "name": "KL Briggman"
             },
             {
-              "name": "Denk W"
+              "name": "W Denk"
             },
             {
-              "name": "Bowden JB"
+              "name": "JB Bowden"
             },
             {
-              "name": "Mendenhall JM"
+              "name": "JM Mendenhall"
             },
             {
-              "name": "Abraham WC"
+              "name": "WC Abraham"
             },
             {
-              "name": "Harris KM"
+              "name": "KM Harris"
             },
             {
-              "name": "Kasthuri N"
+              "name": "N Kasthuri"
             },
             {
-              "name": "Hayworth KJ"
+              "name": "KJ Hayworth"
             },
             {
-              "name": "Schalek R"
+              "name": "R Schalek"
             },
             {
-              "name": "Tapia JC"
+              "name": "JC Tapia"
             },
             {
-              "name": "Lichtman JW"
+              "name": "JW Lichtman"
             },
             {
-              "name": "Seung HS"
+              "name": "HS Seung"
             }
           ],
           "suffix": "(2010)"
@@ -983,58 +972,58 @@
         {
           "authors": [
             {
-              "name": "Bouveret R"
+              "name": "R Bouveret"
             },
             {
-              "name": "Bouveret R"
+              "name": "R Bouveret"
             },
             {
-              "name": "Schonrock N"
+              "name": "N Schonrock"
             },
             {
-              "name": "Ramialison M"
+              "name": "M Ramialison"
             },
             {
-              "name": "Doan T"
+              "name": "T Doan"
             },
             {
-              "name": "de Jong D"
+              "name": "D de Jong"
             },
             {
-              "name": "Bondue A"
+              "name": "A Bondue"
             },
             {
-              "name": "Kaur G"
+              "name": "G Kaur"
             },
             {
-              "name": "Mohamed S"
+              "name": "S Mohamed"
             },
             {
-              "name": "Fonoudi H"
+              "name": "H Fonoudi"
             },
             {
-              "name": "Chen C"
+              "name": "C Chen"
             },
             {
-              "name": "Wouters M"
+              "name": "M Wouters"
             },
             {
-              "name": "Bhattacharya S"
+              "name": "S Bhattacharya"
             },
             {
-              "name": "Plachta N"
+              "name": "N Plachta"
             },
             {
-              "name": "Dunwoodie SL"
+              "name": "SL Dunwoodie"
             },
             {
-              "name": "Chapman G"
+              "name": "G Chapman"
             },
             {
-              "name": "Blanpain C"
+              "name": "C Blanpain"
             },
             {
-              "name": "Harvey RP"
+              "name": "RP Harvey"
             }
           ],
           "suffix": "(2015)"
@@ -1083,19 +1072,19 @@
         {
           "authors": [
             {
-              "name": "Patterson JB"
+              "name": "JB Patterson"
             },
             {
-              "name": "Lonergan DG"
+              "name": "DG Lonergan"
             },
             {
-              "name": "Flynn GA"
+              "name": "GA Flynn"
             },
             {
-              "name": "Qingpeng Z"
+              "name": "Z Qingpeng"
             },
             {
-              "name": "Pallai PV"
+              "name": "PV Pallai"
             }
           ],
           "suffix": "(2011)"
@@ -1181,7 +1170,7 @@
         {
           "authors": [
             {
-              "name": "DeLano W. L."
+              "name": "W. L. DeLano"
             }
           ],
           "suffix": "(2002)"
@@ -1227,43 +1216,39 @@
     }
   ],
 
-  "annotationCount": {
-    "text": "<span aria-hidden=\"true\"><span data-visible-annotation-count>+</span> </span><span class=\"visuallyhidden\">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
-    "hasPlaceholder": true,
-    "isWrapped": true,
-    "prefix": "Add a comment",
-    "behaviour": "HypothesisOpener"
-  },
-
   "related": {
-    "rootClasses": "teaser--secondary teaser--related",
+    "items": [
+      {
+        "rootClasses": "teaser--secondary teaser--related",
 
-    "contextLabel": {
-      "list": [
-        {
-          "name": "Built upon by",
-          "url": null
-        }
-      ]
-    },
-    "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
-    "url": "#",
-
-    "secondaryInfo": "H Thi-Kim Vu et al",
-
-    "footer": {
-      "meta": {
+        "contextLabel": {
+          "list": [
+            {
+              "name": "Built upon by",
+              "url": null
+            }
+          ]
+        },
+        "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
         "url": "#",
-        "text": "Research advance",
-        "date": {
-          "forHuman": {
-            "dayOfMonth": 16,
-            "month": "Dec",
-            "year": 2015
-          },
-          "forMachine": "2015-12-16"
+        "ariaLabel": "Descriptive and accessible label",
+        "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
+
+        "footer": {
+          "meta": {
+            "url": "#",
+            "text": "Research advance",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 16,
+                "month": "Dec",
+                "year": 2015
+              },
+              "forMachine": "2015-12-16"
+            }
+          }
         }
       }
-    }
+    ]
   }
 }

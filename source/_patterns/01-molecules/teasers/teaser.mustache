@@ -1,19 +1,11 @@
-<div class="teaser{{#rootClasses}} {{rootClasses}}{{/rootClasses}} {{^secondaryInfo}}teaser--no-secondary-info{{/secondaryInfo}}">
+<div class="teaser{{#rootClasses}} {{rootClasses}}{{/rootClasses}}{{^rootClasses}} teaser--main{{/rootClasses}} {{^secondaryInfo}}teaser--no-secondary-info{{/secondaryInfo}}">
 
   {{! These are usually links to major subject areas, see teaser-main-article, but could be unlinked
       text expressing a relationship, e.g. 'Built upon by' in teaser-secondary-related-item}}
   {{#contextLabel}}
     <ol class="teaser__context_label_list" aria-label="These research categories are for the following article">
       {{#list}}
-        <li class="teaser__context_label_item">
-          {{#url}}
-            <a href="{{url}}"  {{#carouselItem}}tabindex="-1"{{/carouselItem}} class="teaser__context_label_link"><span class="teaser__context_label">{{{name}}}</span></a>
-          {{/url}}
-
-          {{^url}}
-            <span class="teaser__context_label">{{{name}}}</span>
-          {{/url}}
-        </li>
+        <li class="teaser__context_label_item">{{#url}}<a href="{{url}}" {{#carouselItem}}tabindex="-1" {{/carouselItem}}class="teaser__context_label_link">{{/url}}{{{name}}}{{#url}}</a>{{/url}}</li>
       {{/list}}
     </ol>
   {{/contextLabel}}
@@ -26,7 +18,7 @@
           - teaser__picture--small: 70px square image, floating right.
         }}
     {{#image}}
-      <a href="{{{url}}}" tabindex="-1">
+      <a href="{{{url}}}" class="teaser__picture--link" tabindex="-1">
         <picture class="teaser__picture teaser__picture--{{type}}">
           {{#sources}}
             <source srcset="{{srcset}}"
@@ -59,7 +51,7 @@
       {{! Occasionally the title isn't linked, for example in the chapter listing item teaser. }}
       {{! For schema: url is dependent on title }}
       {{#url}}
-        <a href="{{{url}}}" {{#num}}data-slide="{{num}}"{{/num}} {{#carouselItem}}tabindex="-1"{{/carouselItem}} class="teaser__header_text_link">{{{title}}}</a>
+        <a href="{{{url}}}" {{#num}}data-slide="{{num}}" {{/num}}{{#ariaLabel}}aria-label="{{ariaLabel}}" {{/ariaLabel}}{{#carouselItem}}tabindex="-1" {{/carouselItem}}class="teaser__header_text_link">{{{title}}}</a>
       {{/url}}
       {{^url}}
         {{{title}}}
@@ -97,7 +89,7 @@
 
     {{#formats}}
     <div class="teaser__formats">
-      <span class="visuallyhidden">Available as:</span>
+      <span class="visuallyhidden">Formats available:</span>
       <ul class="teaser__formats-list">
         {{#list}}
           <li>{{.}}</li>

@@ -1,0 +1,17 @@
+{
+  "link": {
+    "url": "#link-to-article",
+    "name": "Molecular basis for multimerization in the activation of the epidermal growth factor"
+  },
+  "authors": "Thisisanexample Ofareallylongauthorline, Todemonstrate Whatitlookslike ... Ifthis Valuewraps",
+  "summary": "Summary",
+  "meta": {
+    "text": "#"
+  },
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/250/140/",
+      "altText": "Meaningful alt text please."
+    }
+  }
+}

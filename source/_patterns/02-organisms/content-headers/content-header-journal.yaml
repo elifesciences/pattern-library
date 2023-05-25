@@ -1,0 +1,72 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  title:
+    type: string
+    minLength: 1
+  impactStatement:
+    type: string
+    minLength: 1
+  isMagazine:
+    type: boolean
+    enum:
+      - true
+  isOneColumn:
+    type: boolean
+    enum:
+      - true
+  hasAside:
+    type: boolean
+    enum:
+      - true
+  breadcrumb:
+    $ref: ../../00-atoms/components/breadcrumb.yaml
+  doi:
+    $ref: ../../00-atoms/components/doi.yaml
+  header:
+    type: object
+    properties:
+      possible:
+        type: boolean
+        enum:
+          - true
+      hasSubjects:
+        type: boolean
+        enum:
+          - true
+      subjects:
+        type: array
+        minItems: 1
+        items:
+          $ref: ../../../non-pattern-schema/link.yaml
+      titleLength:
+        enum:
+        - xx-short
+        - x-short
+        - short
+        - medium
+        - long
+        - x-long
+        - xx-long
+
+    required:
+      - possible
+    dependencies:
+      hasSubjects: [subjects]
+      subjects: [hasSubjects]
+  socialMediaSharers:
+    $ref: ../../00-atoms/components/social-media-sharers-journal.yaml
+  authors:
+    $ref: ../../01-molecules/components/authors.yaml
+  download:
+    type: string
+    minLength: 1
+  cite:
+    type: string
+    minLength: 1
+  meta:
+    $ref: ../../01-molecules/components/meta-journal.yaml
+  contextualData:
+    $ref: ../../01-molecules/components/contextual-data.yaml
+required:
+  - title

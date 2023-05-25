@@ -2,6 +2,7 @@
   "button": {
     "text": "Back to home",
     "classes": "button--default",
-    "path": "#"
+    "path": "#",
+    "ariaLabel": "Descriptive and accessible name"
   }
 }

@@ -1,6 +1,8 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
+  title:
+    $ref: ../../01-molecules/navigation/site-header-title.yaml
   links:
     type: object
     properties:
@@ -11,6 +13,9 @@ properties:
             type: string
             minLength: 1
           url:
+            type: string
+            minLength: 1
+          classes:
             type: string
             minLength: 1
         required:

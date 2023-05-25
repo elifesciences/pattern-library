@@ -1,0 +1,25 @@
+{
+  "link": {
+    "url": "#link-to-article",
+    "name": "More eLife authors are linking submissions to their ORCID iDs"
+  },
+  "summary": "eLife sees positive results of requiring corresponding authors to register and link their profiles to their ORCID iDs",
+  "meta": {
+    "url": "#",
+    "text": "Blog article",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 9,
+        "month": "Jun",
+        "year": 2016
+      },
+      "forMachine": "2016-06-09"
+    }
+  },
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/250/140/",
+      "altText": "Meaningful alt text please."
+    }
+  }
+}

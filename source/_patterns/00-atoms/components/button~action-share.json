@@ -1,0 +1,7 @@
+{
+  "text": "Button action (Share)",
+  "classes": "button--default button--action icon icon-share",
+  "path": "#share",
+  "id": "button-action-share",
+  "ariaLabel": "Descriptive and accessible name"
+}

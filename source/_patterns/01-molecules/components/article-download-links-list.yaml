@@ -13,6 +13,11 @@ properties:
     items:
       type: object
       properties:
+        jsHideGroup:
+          type: boolean
+        id:
+          type: string
+          minLength: 1
         title:
           type: string
           minLength: 1
@@ -28,10 +33,9 @@ properties:
               primary:
                 type: object
                 properties:
-                  name:
-                    type: string
-                    minLength: 1
-                  url:
+                  link:
+                    $ref: ../../../non-pattern-schema/link.yaml
+                  checkPMC:
                     type: string
                     minLength: 1
                   attributes:
@@ -47,20 +51,9 @@ properties:
                       required:
                         - key
                 required:
-                  - name
-                  - url
+                  - link
               secondary:
-                type: object
-                properties:
-                  name:
-                    type: string
-                    minLength: 1
-                  url:
-                    type: string
-                    minLength: 1
-                required:
-                  - name
-                  - url
+                $ref: ../../../non-pattern-schema/link.yaml
             required:
               - primary
       required:

@@ -11,72 +11,39 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "visuallyhidden",
           "path": "#mainMenu",
-          "picture": {
-            "pictureClasses": "nav-primary__menu_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-              }
-            ]
-          }
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "Innovation",
+          "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
-        },
-
-        {
-          "text": "Search the eLife site",
-          "rel": "search",
-          "classes": "nav-primary__item nav-primary__item--search",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "pictureClasses": "nav-primary__search_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-              }
-            ]
-          }
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
-
 
     "secondaryLinks":
     {
@@ -84,37 +51,29 @@
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
-          "text": "Newsletters",
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-secondary__item nav-secondary__item--search",
           "path": "#",
-          "classes": "nav-secondary__item"
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--alert",
           "path": "#",
-          "classes": "nav-secondary__item"
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "Submit my research",
+          "text": "Submit your research",
           "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
-            "classes": "button--default button--extra-small"
-          }
-        },
-
-        {
-          "classes": "nav-secondary__item",
-          "loginControl": {
-            "button": {
-              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-              "path": "#",
-              "classes": "button--login"
-            }
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
-
       ]
     },
 
@@ -149,8 +108,10 @@
     "classes": "grid-listing--block-link",
     "blockLinks": [
       {
-        "text": "Biochemistry",
-        "url": "#Biochemistry",
+        "link": {
+          "name": "Biochemistry",
+          "url": "#Biochemistry"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -160,38 +121,10 @@
         }
       },
       {
-        "text": "Biophysics and structural biology",
-        "url": "#Biophysics",
-        "isGridListing": true,
-        "image": {
-          "fallback": {
-            "defaultPath": "https://unsplash.it/263/152",
-            "altText": ""
-          }
-        }
-      },    {
-        "text": "Cell Biology",
-        "url": "#Cell",
-        "isGridListing": true,
-        "image": {
-          "fallback": {
-            "defaultPath": "https://unsplash.it/263/152",
-            "altText": ""
-          }
-        }
-      },    {
-        "text": "Computational and systems biology",
-        "url": "#Computational",
-        "isGridListing": true,
-        "image": {
-          "fallback": {
-            "defaultPath": "https://unsplash.it/263/152",
-            "altText": ""
-          }
-        }
-      },    {
-        "text": "Developmental Biology and Stem Cells",
-        "url": "#Developmental",
+        "link": {
+          "name": "Biophysics and structural biology",
+          "url": "#Biophysics"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -201,8 +134,10 @@
         }
       },
       {
-        "text": "Ecology",
-        "url": "#Ecology",
+        "link": {
+          "name": "Cell Biology",
+          "url": "#Cell"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -212,8 +147,10 @@
         }
       },
       {
-        "text": "Epidemiology and Global Health",
-        "url": "#Epidemiology",
+        "link": {
+          "name": "Computational and systems biology",
+          "url": "#Computational"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -223,8 +160,10 @@
         }
       },
       {
-        "text": "Genes and Chromosomes",
-        "url": "#Genes",
+        "link": {
+          "name": "Developmental Biology and Stem Cells",
+          "url": "#Developmental"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -234,8 +173,10 @@
         }
       },
       {
-        "text": "Genomics and Evolutionary Biology",
-        "url": "#Genomics",
+        "link": {
+          "name": "Ecology",
+          "url": "#Ecology"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -245,8 +186,10 @@
         }
       },
       {
-        "text": "Immunology",
-        "url": "#Immunology",
+        "link": {
+          "name": "Epidemiology and Global Health",
+          "url": "#Epidemiology"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -256,8 +199,10 @@
         }
       },
       {
-        "text": "Medicine",
-        "url": "#Medicine",
+        "link": {
+          "name": "Genes and Chromosomes",
+          "url": "#Genes"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -267,8 +212,10 @@
         }
       },
       {
-        "text": "Microbiology and Infectious Disease",
-        "url": "#Microbiology",
+        "link": {
+          "name": "Genomics and Evolutionary Biology",
+          "url": "#Genomics"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -278,8 +225,10 @@
         }
       },
       {
-        "text": "Neuroscience",
-        "url": "#Neuroscience",
+        "link": {
+          "name": "Immunology",
+          "url": "#Immunology"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -289,8 +238,49 @@
         }
       },
       {
-        "text": "Plant Biology",
-        "url": "#Plant",
+        "link": {
+          "name": "Medicine",
+          "url": "#Medicine"
+        },
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "link": {
+          "name": "Microbiology and Infectious Disease",
+          "url": "#Microbiology"
+        },
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "link": {
+          "name": "Neuroscience",
+          "url": "#Neuroscience"
+        },
+        "isGridListing": true,
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/263/152",
+            "altText": ""
+          }
+        }
+      },
+      {
+        "link": {
+          "name": "Plant Biology",
+          "url": "#Plant"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -302,16 +292,26 @@
     ]
   },
 
-  "mainMenu":{
+  "mainMenu": {
+    "title": {
+      "homePagePath": "#"
+    },
+    "listHeading": {
+      "heading": "Menu"
+    },
     "links": {
       "items": [
+        {"name": "Home", "url": "#", "classes": "hidden-wide"},
+        {"name": "Magazine", "url": "#", "classes": "hidden-wide"},
+        {"name": "Community", "url": "#ins", "classes": "hidden-wide"},
+        {"name": "About", "url": "#abo", "classes": "hidden-wide"},
         {"name": "Research categories", "url": "#res"},
-        {"name": "Author guide", "url": "#aut"},
-        {"name": "Reviewer guide", "url": "#rev"},
-        {"name": "About", "url": "#abo"},
-        {"name": "Inside eLife", "url": "#ins"},
-        {"name": "Careers", "url": "#car"},
-        {"name": "Innovation", "url": "#lab"}
+        {"name": "Inside eLife", "url": "#", "classes": "end-of-group"},
+        {"name": "Search", "url": "#", "classes": "hidden-wide"},
+        {"name": "Subscribe to alerts", "url": "#", "classes": "end-of-group hidden-wide"},
+        {"name": "Submit your research", "url": "#", "classes": "hidden-wide"},
+        {"name": "Author guide", "url": "#"},
+        {"name": "Reviewer guide", "url": "#"}
       ]
     },
     "button": {

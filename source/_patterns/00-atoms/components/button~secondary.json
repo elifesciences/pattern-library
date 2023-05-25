@@ -2,5 +2,6 @@
   "text": "Button secondary",
   "classes": "button--default button--secondary",
   "type": "button",
-  "name": "button-name"
+  "name": "button-name",
+  "ariaLabel": "Descriptive and accessible name"
 }

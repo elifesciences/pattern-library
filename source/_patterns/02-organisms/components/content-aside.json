@@ -1,0 +1,12 @@
+{
+  "actionButtons": {
+    "buttons": [
+      {
+        "text": "[Do not use this base pattern directly: see the following variants of this pattern for usage]",
+        "classes": "button--default button--action",
+        "path": "#download",
+        "ariaLabel": "Descriptive and accessible name"
+      }
+    ]
+  }
+}

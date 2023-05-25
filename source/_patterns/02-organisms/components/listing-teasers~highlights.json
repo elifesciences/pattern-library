@@ -10,7 +10,8 @@
       "rootClasses":"teaser--secondary teaser--highlights",
       "title":"The [1] parasite’s new clothes",
       "url":"#",
-      "secondaryInfo":"Mark S Pearson et al.",
+      "ariaLabel": "Descriptive and accessible label",
+      "secondaryInfo":"Mark S Pearson, Alex Loukas",
       "carouselItem": true,
       "num": 1,
       "footer":{
@@ -39,8 +40,9 @@
     {
       "rootClasses":"teaser--secondary teaser--highlights",
       "title":"Catch [2] me",
-      "url":"#",
-      "secondaryInfo":"Emilie Bourdonnay et al.",
+      "url": "#",
+      "ariaLabel": "Descriptive and accessible label",
+      "secondaryInfo":"Emilie Bourdonnay, Thomas Henry",
       "carouselItem": true,
       "num": 2,
       "footer":{
@@ -70,7 +72,8 @@
       "rootClasses":"teaser--secondary teaser--highlights",
       "title":"Autophagy [3] under attack",
       "url":"#",
-      "secondaryInfo":"Paul de Figueiredo et al.",
+      "ariaLabel": "Descriptive and accessible label",
+      "secondaryInfo":"Paul de Figueiredo, Marty Dickman",
       "carouselItem": true,
       "num": 3,
       "footer":{
@@ -100,7 +103,8 @@
       "rootClasses":"teaser--secondary teaser--highlights",
       "title":"Autophagy [4] under attack",
       "url":"#",
-      "secondaryInfo":"Paul de Figueiredo et al.",
+      "ariaLabel": "Descriptive and accessible label",
+      "secondaryInfo":"Paul de Figueiredo, Marty Dickman",
       "carouselItem": true,
       "num": 4,
       "footer":{
@@ -130,7 +134,8 @@
       "rootClasses":"teaser--secondary teaser--highlights",
       "title":"Autophagy [5] under attack",
       "url":"#",
-      "secondaryInfo":"Paul de Figueiredo et al.",
+      "ariaLabel": "Descriptive and accessible label",
+      "secondaryInfo":"Paul de Figueiredo, Marty Dickman",
       "carouselItem": true,
       "num": 5,
       "footer":{

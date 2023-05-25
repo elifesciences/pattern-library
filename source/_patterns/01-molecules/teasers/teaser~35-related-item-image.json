@@ -1,0 +1,32 @@
+{
+  "rootClasses": "teaser--secondary teaser--related",
+
+  "contextLabel": {
+    "list": [
+      {
+        "name": "Part of",
+        "url": false
+      }
+    ]
+  },
+  "title": "Reproducibility Project: Cancer Biology",
+  "url": "#",
+  "ariaLabel": "Descriptive and accessible label",
+  "secondaryInfo": "Edited by Roger J Davis",
+
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/70/70/",
+      "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
+      "altText": "Meaningful alt text here please."
+    },
+    "type": "small"
+  },
+
+  "footer": {
+    "meta": {
+      "url": "#",
+      "text": "Collection"
+    }
+  }
+}

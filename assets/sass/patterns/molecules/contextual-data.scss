@@ -3,6 +3,22 @@
 .contextual-data {
   @include label-content-typeg($color-text-secondary, false);
   @include font-size-and-vertical-height(12);
+
+  .content-header & {
+    border-bottom: none;
+  }
+
+  .content-header__one-column & {
+    display: flex;
+
+    &:after {
+      @include margin(3, "left");
+      @include margin(3, "right");
+      content: "\00a0\2219\00a0";
+      font-weight: bold;
+      white-space: pre;
+    }
+  }
 }
 
 .contextual-data__list {
@@ -10,6 +26,34 @@
   margin: 0;
   @include padding(11 0);
   text-align: center;
+
+  .content-header & {
+    border-bottom: none;
+    @include padding(0);
+    text-align: right;
+  }
+
+  .content-aside & {
+    @include margin(24, "bottom");
+    @include padding(0);
+    border: none;
+    display: flex;
+
+    .contextual-data__item {
+      @include padding(0);
+      @include font-size-and-vertical-height(14);
+
+      &:before {
+        content: ", ";
+      }
+
+      &:first-child {
+        &:before {
+          content: "";
+        }
+      }
+    }
+  }
 }
 
 .contextual-data__item {
@@ -23,11 +67,20 @@
     cursor: pointer;
   }
 
-  a {
+  a,
+  .contextual-data__counter {
     color: inherit;
-    &:hover {
-      color: $color-primary;
-    }
+  }
+
+  a:hover {
+    color: $color-primary;
+  }
+
+  .content-header & {
+    @include font-size-and-vertical-height(14, 24);
+    display: list-item;
+    padding: 0;
+    list-style: none;
   }
 
 }
@@ -56,10 +109,27 @@
   display: none;
 }
 
+.contextual-data__counter {
+  color: $color-text;
+  font-weight: bold;
+
+  .content-header__footer & {
+    font-weight: normal;
+  }
+
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+  .contextual-data__list {
+    .content-header & {
+      text-align: left;
+    }
+  }
+}
+
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}rem) {
   .contextual-data {
     border-bottom: 1px solid $color-text-dividers;
-    display: flex;
   }
 
   .contextual-data__list {
@@ -67,6 +137,10 @@
     border-bottom: none;
     display: inline-block;
     text-align: left;
+
+    .content-header__one-column & {
+      align-self: auto;
+    }
   }
 
   .contextual-data__cite_wrapper {

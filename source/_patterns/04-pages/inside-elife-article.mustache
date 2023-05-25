@@ -9,25 +9,30 @@
     <main role="main" class="main" id="maincontent">
 
       {{#contentHeader}}
-        {{> organisms-content-header }}
+        {{> organisms-content-header-journal }}
       {{/contentHeader}}
-      <div class="wrapper wrapper--content">
 
-        <div class="grid">
+      {{#contextualData}}
+        <div class="wrapper">
+        {{> molecules-contextual-data }}
+        </div>
+      {{/contextualData}}
 
-          <div class="{{> pages-pl-only-grid-content-page-main-col-css-classes}} u-pad-top">
+      <div class="wrapper wrapper--content content--one-column">
 
-            {{{body}}}
+        <div class="content-container-grid">
+
+          <div class="main-content-grid">
+
+            {{#mainContent}}
+              {{{mainContent}}}
+            {{/mainContent}}
 
           </div>
 
         </div>
 
       </div>
-
-      {{# annotationCount}}
-        {{> atoms-speech-bubble}}
-      {{/annotationCount}}
 
     </main>
 

@@ -2,5 +2,6 @@
   "text": "Button reversed inactive",
   "classes": "button--reversed-inactive",
   "type": "button",
-  "name": "button-name"
+  "name": "button-name",
+  "ariaLabel": "Descriptive and accessible name"
 }
