@@ -1,4 +1,4 @@
-<div class="global-wrapper" data-item-type="research-article">
+<div class="global-wrapper page--magazine" data-item-type="research-article">
   <div class="global-inner">
     <div class="wrapper wrapper--site-header">
       {{#siteHeader}}
@@ -8,51 +8,71 @@
     <main role="main" class="main blg-margin-bottom-large" id="maincontent">
 
       {{#contentHeader}}
-        {{> organisms-content-header}}
+        {{> organisms-content-header-journal }}
       {{/contentHeader}}
 
-      {{#contextualData}}
-        <div class="wrapper">
-        {{> molecules-contextual-data }}
-        </div>
-      {{/contextualData}}
+      {{#modalWindowCitation}}
+        {{> atoms-modal-window}}
+      {{/modalWindowCitation}}
+
+      {{#modalWindowShare}}
+        {{> atoms-modal-window}}
+      {{/modalWindowShare}}
 
       <div class="wrapper wrapper--content">
 
-          <div class="grid">
+        <div class="content-container-grid">
 
-            <div class="grid__item large--two-twelfths blg-pad-top-medium">
-              {{> molecules-view-selector }}
+          <div class="main-content-grid">
+
+            {{#authors}}
+              {{> molecules-authors}}
+            {{/authors}}
+
+            <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
+            {{#articleSections}}
+              {{> molecules-article-section }}
+            {{/articleSections}}
             </div>
 
-            <div class="{{> pages-pl-only-grid-content-page-main-col-css-classes}} blg-pad-top-medium">
+            {{#iframe}}
+              {{!> atoms-iframe }}
+            {{/iframe}}
 
-              {{#articleSections}}
-                {{> molecules-article-section }}
-              {{/articleSections}}
+            {{! Decided this will be content, serverside }}
+            {{#pl-only-article-section-for-download-links}}
+              {{> molecules-pl-only-article-section}}
+            {{/pl-only-article-section-for-download-links}}
 
-              {{#iframe}}
-                {{> atoms-iframe }}
-              {{/iframe}}
-
-              {{! Decided this will be content, serverside }}
-              {{#pl-only-article-section-for-download-links}}
-                {{> molecules-pl-only-article-section}}
-              {{/pl-only-article-section-for-download-links}}
-
-              {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
+            {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
+            {{#articleMeta}}
               <section class="article-section">
                   {{> molecules-article-meta }}
               </section>
-            </div>
+            {{/articleMeta}}
 
           </div>
 
+          <div class="secondary-column-grid">
+
+            {{#related}}
+
+              <div class="grid-secondary-column__item grid-secondary-column__item--wide-only">
+                {{> organisms-listing-teasers }}
+              </div>
+
+            {{/related}}
+
+          </div>
         </div>
 
-      </article>
+      </div>
 
     </main>
+
+    {{#furtherReading}}
+      {{> organisms-listing-read-more }}
+    {{/furtherReading}}
 
     {{#emailCta}}
     {{> organisms-email-cta }}

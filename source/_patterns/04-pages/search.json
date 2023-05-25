@@ -3,121 +3,71 @@
     "title": {
       "homePagePath": "#"
     },
-    "primaryLinks":
-    {
+    "primaryLinks": {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "visuallyhidden",
           "path": "#mainMenu",
-          "picture": {
-            "pictureClasses": "nav-primary__menu_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-              }
-            ]
-          }
+          "ariaLabel": "Descriptive and accessible name"
         },
-
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
-
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
-
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
-
         {
-          "text": "Innovation",
+          "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
-        },
-
-        {
-          "text": "Search the eLife site",
-          "rel": "search",
-          "classes": "nav-primary__item nav-primary__item--search",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "pictureClasses": "nav-primary__search_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-              }
-            ]
-          }
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
-
-
-    "secondaryLinks":
-    {
+    "secondaryLinks": {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
-          "text": "Newsletters",
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-secondary__item nav-secondary__item--search",
           "path": "#",
-          "classes": "nav-secondary__item"
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--alert",
           "path": "#",
-          "classes": "nav-secondary__item"
+          "ariaLabel": "Descriptive and accessible name"
         },
-
         {
-          "text": "Submit my research",
+          "text": "Submit your research",
           "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
-            "classes": "button--default button--extra-small"
-          }
-        },
-
-        {
-          "classes": "nav-secondary__item",
-          "loginControl": {
-            "button": {
-              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-              "path": "#",
-              "classes": "button--login"
-            }
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
-
       ]
     }
-
   },
 
   "pageSearchBox": {
@@ -137,9 +87,9 @@
 
   "sortControl": {
     "options": [
-      { "option": "Relevance", "sorting": "descending", "url": "?sortby=relevance&amp;sort=desc" },
-      { "option": "Date", "url": "?sortby=date&amp;sort=desc" }
-    ]
+      { "link": { "name": "Relevance", "url": "?sortby=relevance&amp;sort=desc" }, "sorting": "descending" },
+      { "link": { "name": "Date", "url": "?sortby=date&amp;sort=desc" } }
+    ]  
   },
 
   "messageBar": {
@@ -167,7 +117,8 @@
           },
           "title": "Mapping global environmental suitability for Zika virus",
           "url": "#",
-          "secondaryInfo": "Jane P Messina et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Jane P Messina, Moritz UG Kraemer ... Simon I Hay",
           "footer": {
             "meta": {
               "text": "Research article",
@@ -202,6 +153,7 @@
           },
           "title": "Genomic epidemiology of artemisinin resistant malaria",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "MalariaGEN Plasmodium falciparum Community Project",
           "content": "<i>Plasmodium falciparum kelch13</i> mutations that cause artemisinin resistant malaria in Southeast Asia show markedly different patterns of evolutionary selection in Africa.",
           "footer": {
@@ -234,7 +186,8 @@
           },
           "title": "Coverage and system efficiencies of insecticide-treated nets in Africa from 2000 to 2017",
           "url": "#",
-          "secondaryInfo": "Samir Bhatt et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Samir Bhatt, Daniel J Weiss ... Peter W Gething",
           "multipleAuthors": true,
           "content": "Insecticide-treated net requirements for Africa have been underestimated, but mitigating for inefficiencies in net distributions can produce a cost effective path to universal coverage.",
           "footer": {
@@ -271,7 +224,8 @@
           },
           "title": "Mapping residual transmission for malaria elimination",
           "url": "#",
-          "secondaryInfo": "Robert C Reiner et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Robert C Reiner Jr, Arnaud Le Menach ... David L Smith",
           "content": "A fine-grain map of residual transmission and importation in Swaziland shows where to target malaria elimination efforts.",
           "footer": {
             "meta": {
@@ -305,7 +259,8 @@
           },
           "title": "Longitudinal analysis of <i>Plasmodium sporozoite</i> motility in the dermis reveals component of blood vessel recognition",
           "url": "#",
-          "secondaryInfo": "Christine S Hopp et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Christine S Hopp, Kevin Chiou ... Photini Sinnis",
           "content": "Malaria parasites enter the host via the skin, where they are inoculated by an infected mosquito as it probes for blood: the inoculation site is a bottleneck for the parasite and the only time when the parasite is extracellular for more than a few minutes, thus possibly presenting the best opportunity for antibody-mediated inhibition of infection.",
           "footer": {
             "meta": {
@@ -373,16 +328,23 @@
   },
 
 
-  "mainMenu":{
+  "mainMenu": {
+    "title": {
+      "homePagePath": "#"
+    },
     "links": {
       "items": [
+        {"name": "Home", "url": "#", "classes": "hidden-wide"},
+        {"name": "Magazine", "url": "#", "classes": "hidden-wide"},
+        {"name": "Community", "url": "#ins", "classes": "hidden-wide"},
+        {"name": "About", "url": "#abo", "classes": "hidden-wide"},
         {"name": "Research categories", "url": "#res"},
-        {"name": "Author guide", "url": "#aut"},
-        {"name": "Reviewer guide", "url": "#rev"},
-        {"name": "About", "url": "#abo"},
-        {"name": "Inside eLife", "url": "#ins"},
-        {"name": "Careers", "url": "#car"},
-        {"name": "Innovation", "url": "#lab"}
+        {"name": "Inside eLife", "url": "#", "classes": "end-of-group"},
+        {"name": "Search", "url": "#", "classes": "hidden-wide"},
+        {"name": "Subscribe to alerts", "url": "#", "classes": "end-of-group hidden-wide"},
+        {"name": "Submit your research", "url": "#", "classes": "hidden-wide"},
+        {"name": "Author guide", "url": "#"},
+        {"name": "Reviewer guide", "url": "#"}
       ]
     },
     "button": {

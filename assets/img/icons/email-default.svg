@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/share/default</title>
+    <g id="icons/share/default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="clear-button-bg" x="0" y="0" width="24" height="24"></rect>
+        <g id="icons/download/small-copy-2">
+            <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+            <g id="email-24px-(1)">
+                <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

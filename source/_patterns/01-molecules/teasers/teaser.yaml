@@ -33,6 +33,9 @@ properties:
       - type: boolean
         enum:
           - false
+  ariaLabel:
+    type: string
+    minItems: 1
   title:
     type: string
     minLength: 1

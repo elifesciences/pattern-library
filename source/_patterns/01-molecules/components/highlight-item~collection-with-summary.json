@@ -1,0 +1,25 @@
+{
+  "link": {
+    "url": "#link-to-article",
+    "name": "Highlights from Japan"
+  },
+  "summary": "Summary",
+  "meta": {
+    "url": "#",
+    "text": "Promotional collections",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 16,
+        "month": "Sep",
+        "year": 2015
+      },
+      "forMachine": "2015-09-16"
+    }
+  },
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/250/140/",
+      "altText": "Meaningful alt text please."
+    }
+  }
+}

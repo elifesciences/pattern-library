@@ -11,72 +11,39 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "visuallyhidden",
           "path": "#mainMenu",
-          "picture": {
-            "pictureClasses": "nav-primary__menu_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-              }
-            ]
-          }
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "Innovation",
+          "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
-        },
-
-        {
-          "text": "Search the eLife site",
-          "rel": "search",
-          "classes": "nav-primary__item nav-primary__item--search",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "pictureClasses": "nav-primary__search_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-              }
-            ]
-          }
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
-
 
     "secondaryLinks":
     {
@@ -84,37 +51,29 @@
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
-          "text": "Newsletters",
-          "url": "#",
-          "classes": "nav-secondary__item"
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-secondary__item nav-secondary__item--search",
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
-          "url": "#",
-          "classes": "nav-secondary__item"
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--alert",
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "Submit my research",
-          "url": "#",
+          "text": "Submit your research",
+          "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
-            "classes": "button--default button--extra-small"
-          }
-        },
-
-        {
-          "classes": "nav-secondary__item",
-          "loginControl": {
-            "button": {
-              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-              "path": "#",
-              "classes": "button--login"
-            }
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
-
       ]
     },
 
@@ -162,6 +121,14 @@
     }
   },
 
+  "viewSelector": {
+    "primaryUrl": "#primaryListing",
+    "secondaryUrl": "#secondaryListing",
+    "primaryLabel": "Latest articles",
+    "secondaryLabel": "Highlights",
+    "isTabSelector": true
+  },
+
   "mainTeasers": [
     {
 
@@ -178,7 +145,8 @@
           },
           "title": "Quorum sensing control of Type VI secretion factors restricts the proliferation of quorum-sensing mutants",
           "url": "#",
-          "secondaryInfo": "Charlotte Majerczyk et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Charlotte Majerczyk, Emily Schneider, E Peter Greenberg",
           "content": "Quorum-sensing control of <i>Burkholderia thailandensis</i> toxin and immunity pairs serves to police quorum-sensing mutants and may represent a general strategy whereby cooperators can police mutants.",
           "footer": {
             "meta": {
@@ -258,7 +226,8 @@
           },
           "title": "Evolutionary diversification of the trypanosome haptoglobin-haemoglobin receptor from an ancestral haemoglobin receptor",
           "url": "#",
-          "secondaryInfo": "Harriet Lane-Serff et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Harriet Lane-Serff, Paula MacGregor ... Mark Carrington",
           "footer": {
             "meta": {
               "text": "Research article",
@@ -293,7 +262,8 @@
           },
           "title": "The global antigenic diversity of swine influenza A viruses",
           "url": "#",
-          "secondaryInfo": "Nicola S Lewis et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Nicola S Lewis, Colin A Russell ... Amy L Vincent",
           "content": "Swine populations worldwide are sporadically infected by influenza viruses from humans and birds leading to geographically heterogeneous swine influenza virus populations that pose epizootic and pandemic threats.",
           "footer": {
             "meta": {
@@ -338,7 +308,8 @@
           },
           "title": "Recurring patterns in bacterioplankton dynamics during coastal spring algae blooms",
           "url": "#",
-          "secondaryInfo": "Hanno Teeling et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Hanno Teeling, Bernhard M Fuchs ... Rudolf I Amann",
           "content": "Dynamic successive blooms of clades of planktonic marine bacteria that can be observed during blooms of marine algae follow discernible patterns, part of which might be explained by substrate-induced forcing.",
           "footer": {
             "meta": {
@@ -391,7 +362,8 @@
           },
           "title": "The parasite’s new clothes",
           "url": "#",
-          "secondaryInfo": "Mark S Pearson et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Mark S Pearson, Alex Loukas",
           "footer": {
             "meta": {
               "url": "#",
@@ -418,7 +390,6 @@
 
         {
           "rootClasses": "teaser--secondary",
-
           "contextLabel": {
             "list": [
               {
@@ -433,7 +404,8 @@
           },
           "title": "Catch me if you can",
           "url": "#",
-          "secondaryInfo": "Emilie Bourdonnay et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Emilie Bourdonnay, Thomas Henry",
           "footer": {
             "meta": {
               "url": "#",
@@ -452,7 +424,6 @@
 
         {
           "rootClasses": "teaser--secondary",
-
           "contextLabel": {
             "list": [
               {
@@ -467,7 +438,8 @@
           },
           "title": "Autophagy under attack",
           "url": "#",
-          "secondaryInfo": "Paul de Figueiredo et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {
               "url": "#",
@@ -500,7 +472,8 @@
           },
           "title": "Intracellular pathogens under attack",
           "url": "#",
-          "secondaryInfo": "Petr Broz et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Petr Broz",
           "footer": {
             "meta": {
               "url": "#",
@@ -543,7 +516,8 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "The [1] parasite’s new clothes",
           "url": "#",
-          "secondaryInfo": "Mark S Pearson et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Mark S Pearson, Alex Loukas",
           "footer": {
             "meta": {
               "url": "#",
@@ -574,7 +548,8 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Catch [2] me",
           "url": "#",
-          "secondaryInfo": "Emilie Bourdonnay et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Emilie Bourdonnay, Thomas Henry",
           "footer": {
             "meta": {
               "url": "#",
@@ -605,7 +580,8 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Autophagy [3] under attack",
           "url": "#",
-          "secondaryInfo": "Paul de Figueiredo et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {
               "url": "#",
@@ -636,7 +612,8 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Autophagy [4] under attack",
           "url": "#",
-          "secondaryInfo": "Paul de Figueiredo et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {
               "url": "#",
@@ -667,7 +644,8 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Autophagy [5] under attack",
           "url": "#",
-          "secondaryInfo": "Paul de Figueiredo et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {
               "url": "#",
@@ -697,7 +675,8 @@
           "rootClasses": "teaser--secondary teaser--highlights",
           "title": "Autophagy [6] under attack",
           "url": "#",
-          "secondaryInfo": "Paul de Figueiredo et al.",
+          "ariaLabel": "Descriptive and accessible label",
+          "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {
               "url": "#",
@@ -754,21 +733,34 @@
       }
     ],
     "seeMoreLink": {
-      "url": "#",
-      "name": "See more editors for Microbiology and Infectious Disease"
+      "link": {
+        "url": "#",
+        "name": "See more editors for Microbiology and Infectious Disease",
+        "ariaLabel": "Descriptive and accessible name for the link"
+      }
     }
   },
 
-  "mainMenu":{
+  "mainMenu": {
+    "title": {
+      "homePagePath": "#"
+    },
+    "listHeading": {
+      "heading": "Menu"
+    },
     "links": {
       "items": [
+        {"name": "Home", "url": "#", "classes": "hidden-wide"},
+        {"name": "Magazine", "url": "#", "classes": "hidden-wide"},
+        {"name": "Community", "url": "#ins", "classes": "hidden-wide"},
+        {"name": "About", "url": "#abo", "classes": "hidden-wide"},
         {"name": "Research categories", "url": "#res"},
-        {"name": "Author guide", "url": "#aut"},
-        {"name": "Reviewer guide", "url": "#rev"},
-        {"name": "About", "url": "#abo"},
-        {"name": "Inside eLife", "url": "#ins"},
-        {"name": "Careers", "url": "#car"},
-        {"name": "Innovation", "url": "#lab"}
+        {"name": "Inside eLife", "url": "#", "classes": "end-of-group"},
+        {"name": "Search", "url": "#", "classes": "hidden-wide"},
+        {"name": "Subscribe to alerts", "url": "#", "classes": "end-of-group hidden-wide"},
+        {"name": "Submit your research", "url": "#", "classes": "hidden-wide"},
+        {"name": "Author guide", "url": "#"},
+        {"name": "Reviewer guide", "url": "#"}
       ]
     },
     "button": {

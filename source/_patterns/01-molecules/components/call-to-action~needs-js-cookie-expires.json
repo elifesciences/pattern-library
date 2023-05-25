@@ -15,6 +15,7 @@
   "button": {
     "text": "Sign up for eLife news",
     "classes": "button--default call-to-action__button",
-    "path": "#"
+    "path": "#",
+    "ariaLabel": "Descriptive and accessible name"
   }
 }

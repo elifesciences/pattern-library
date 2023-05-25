@@ -9,7 +9,7 @@ $arrow-size: 5;
   }
 
   p > a {
-    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
 
@@ -199,7 +199,8 @@ $arrow-size: 5;
 }
 
 .article-section--highlighted {
-  @include padding($blg-space-smallish-in-px);
+  @include margin($blg-space-smallish-in-px, "bottom");
+  @include padding($blg-space-small-in-px $blg-space-smallish-in-px $blg-space-smallish-in-px $blg-space-smallish-in-px);
   background: $color-text-ui-code;
   box-sizing: content-box;
 
@@ -219,7 +220,7 @@ $arrow-size: 5;
 
     a.doi__link {
       border-bottom: none;
-      color: $color-text-secondary;
+      color: $color-link-secondary;
     }
   }
 }
@@ -240,7 +241,11 @@ $arrow-size: 5;
 
       .article-section__related_link {
         border-bottom: none;
-        color: $color-primary;
+        color: $color-link-primary;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
@@ -255,5 +260,137 @@ $arrow-size: 5;
         }
       }
     }
+
+    &.article-section__separator-circle {
+      .article-section__related_item {
+        font-weight: bold;
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+          &:not(:last-child)::after {
+            color: $color-text;
+            content: "\00a0\2219\00a0";
+          }
+        }
+      }
+    }
   }
+}
+
+.divider {
+  border-bottom: 1px solid $color-text-dividers;
+  grid-column: 2/12;
+  height: 1px;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    grid-column: 1/13;
+
+    .page--magazine & {
+      grid-column: 2/12;
+    }
+
+    .content-header__one-column & {
+      grid-column: 3/11;
+      margin-left: -24px;
+      margin-right: -24px;
+    }
+  }
+}
+
+.content--one-column {
+  @include padding(48, "bottom");
+}
+
+.main-content-grid {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    grid-column: 2/12;
+    grid-row: 2;
+    min-width: 0; /* Fix for bug in Firefox */
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    grid-column: 2/9;
+
+    .content--narrow-column & {
+      grid-column: 2/9;
+    }
+
+    .content--one-column & {
+      grid-column: 2/12;
+    }
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include margin(48, "left");
+    grid-column: 3/10;
+    grid-row: 1;
+
+    .page--magazine & {
+      @include margin(0, "left");
+      @include margin(70, "right");
+      grid-column: 2/9;
+    }
+
+    .content--narrow-column & {
+      @include margin(-24, "left");
+      @include margin(0, "right");
+      grid-column: 3/9;
+    }
+
+    .content--one-column & {
+      grid-column: 3/12;
+      @include margin(-24, "left");
+      @include padding(46, "right");
+    }
+  }
+}
+
+.secondary-column-grid {
+  display: grid;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    grid-column: 2/12;
+    grid-row: 2;
+
+    .content--narrow-column & {
+      grid-column: 2/12;
+      grid-row: 3;
+      margin-top: 24px;
+    }
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin(94, "left");
+    @include margin(-24, "right");
+    grid-column: 8/12;
+    grid-row: 2;
+    justify-self: end;
+
+    .content--narrow-column & {
+      @include margin(0, "left");
+      @include margin(0, "right");
+      grid-column: 9/12;
+      grid-row: 2;
+    }
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include margin(35, "left");
+    @include margin(0, "right");
+    grid-column: 10/13;
+    grid-row: 1;
+
+    .page--magazine & {
+      grid-column: 9/12;
+    }
+
+    .content--narrow-column & {
+      @include margin(-24, "right");
+      grid-column: 9/11;
+      grid-row: 1;
+    }
+  }
+}
+
+.wrapper.wrapper--content.content--narrow-column {
+  padding-top: 0;
 }

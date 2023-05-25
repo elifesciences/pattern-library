@@ -1,0 +1,25 @@
+{
+  "link": {
+    "url": "#",
+    "name": "eLife Continuum webinar"
+  },
+  "summary": "We're inviting all interested parties to participate in a webinar to learn about leveraging our new open-source publishing platform.",
+  "meta": {
+    "url": "#",
+    "text": "Event",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 1,
+        "month": "Jul",
+        "year": 2016
+      },
+      "forMachine": "2016-07-01"
+    }
+  },
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/250/140/",
+      "altText": "Meaningful alt text please."
+    }
+  }
+}

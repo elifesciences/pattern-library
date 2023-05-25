@@ -1,41 +1,63 @@
 @import "../../definitions";
 
 .nav-secondary {
-  background-color: #fff;
-  float: right;
-  height: 40px;
-  padding-top: 8px;
+  @include margin(8, "top");
+  background-color: $color-text-ui-background;
+  display: none;
+  margin-left: auto;
   position: relative;
   z-index: 15;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    display: inline-block;
+  }
 }
 
 .nav-secondary__list {
-  align-items: baseline;
-  @supports (display: flex) {
-    display: flex;
-  }
   @include height(40);
-  justify-content: flex-end;
-  margin: 0;
-  padding: 0;
-  vertical-align: middle;
+  @include margin(0);
+  @include padding(0);
 }
 
 .nav-secondary__item {
+  @include nav-typeg();
+  color: $color-text-ui-background--reverse;
   float: left;
-  @include nav-small-typeg();
-  @include height(24);
   list-style-type: none;
-  @include padding(0 12 0 0);
-  text-transform: uppercase;
 
-  .js &.nav-secondary__item--logged-in {
-    align-self: stretch;
+  @supports (display: flex) {
+    padding-top: 0;
+  }
+}
+
+.nav-secondary__list .nav-secondary__item.nav-secondary__item--search {
+  a {
+    @include background-icon("../img/patterns/molecules/nav-secondary-search-black-ic.svg");
+
+    &:hover {
+      background-image: url("../img/patterns/molecules/nav-secondary-search-blue-ic.svg");
+    }
+  }
+}
+
+.nav-secondary__list .nav-secondary__item.nav-secondary__item--alert {
+  a {
+    @include background-icon("../img/patterns/molecules/nav-secondary-alert-black-ic.svg");
+
+    &:hover {
+      background-image: url("../img/patterns/molecules/nav-secondary-alert-blue-ic.svg");
+    }
   }
 }
 
 .nav-secondary__item--hide-narrow {
-  @include visually-hide-below-breakpoint("medium", 24, 0 12 0 0);
+  display: none;
+
+  .button--default.button--extra-small {
+    @include padding(8, "left");
+    @include padding(8, "right");
+    font-weight: normal;
+  }
 }
 
 .nav-secondary__item a:not(.login-control__non_js_control_link) {
@@ -54,4 +76,10 @@
     color: #fff;
   }
 
+}
+
+@media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+  .nav-secondary__item--hide-narrow {
+    display: list-item;
+  }
 }

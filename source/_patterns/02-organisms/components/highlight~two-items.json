@@ -1,0 +1,59 @@
+{
+  "heading": {
+    "heading": "Highlights"
+  },
+  "items": [
+    {
+      "link": {
+        "url": "#link-to-article",
+        "name": "Molecular basis for multimerization in the activation of the epidermal growth factor"
+      },
+      "authors": "Yongjian Huang, Shashank Bharill ... John Kuriyan",
+      "summary": "Summary",
+      "meta": {
+        "url": "#",
+        "text": "Research article",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 28,
+            "month": "Mar",
+            "year": 2016
+          },
+          "forMachine": "2016-03-28"
+        }
+      },
+      "image": {
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "Meaningful alt text please."
+        }
+      }
+    },
+    {
+      "link": {
+        "url": "#link-to-article",
+        "name": "Molecular basis for multimerization in the activation of the epidermal growth factor"
+      },
+      "authors": "Lee R Berger, John Hawks ... Bernhard Zipfel",
+      "summary": "Summary",
+      "meta": {
+        "url": "#",
+        "text": "Research article",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 28,
+            "month": "Mar",
+            "year": 2016
+          },
+          "forMachine": "2016-03-28"
+        }
+      },
+      "image": {
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "Meaningful alt text please."
+        }
+      }
+    }
+  ]
+}

@@ -14,13 +14,18 @@ module.exports = class ArticleDownloadLinksList {
     this.doc = doc;
     this.$elm = $elm;
 
-    this.$contentHeader = this.doc.querySelector('.content-header');
-    if (!this.$contentHeader) {
+    // TODO: Remove all conditions for class selector when we use aside component in all pages
+    this.$buttonWrapper = this.doc.querySelector('.side-section-wrapper__list') ||
+        this.doc.querySelector('.button-collection--inline');
+
+    if (!this.$buttonWrapper) {
       return;
     }
 
-    this.$contentHeaderDownloadLink = this.$contentHeader.querySelector('.content-header__download_link');
-    if (!this.$contentHeaderDownloadLink) {
+    this.$downloadLink = this.$buttonWrapper.querySelector('.side-section-wrapper__download_link') ||
+        this.doc.getElementById('button-action-download');
+
+    if (!this.$downloadLink) {
       return;
     }
 
@@ -28,28 +33,29 @@ module.exports = class ArticleDownloadLinksList {
     this.$elm.classList.add('article-download-links-list--js');
     this.$elm.classList.add('visuallyhidden');
     this.$elm.setAttribute('aria-expanded', 'false');
-    this.hideIntros();
+    this.hideJsExcludes();
+    this.$toggler = this.doc.querySelector('.side-section-wrapper__download_link') ||
+        this.doc.getElementById('button-action-download');
+
     this.moveList();
-    this.$toggler = this.doc.querySelector('.content-header__download_link');
     this.$toggler.addEventListener('click', this.toggle.bind(this));
   }
 
   /**
-   * Hide intros in download links list display
+   * Hide groups marked to exclude in download links list display
    */
-  hideIntros() {
-    [].forEach.call(this.$elm.querySelectorAll('.article-download-links-list__intro'), $intro => {
-      $intro.classList.add('visuallyhidden');
+  hideJsExcludes() {
+    [].forEach.call(this.$elm.querySelectorAll('.article-download-links-list__group--js-exclude'), $group => {
+      $group.classList.add('visuallyhidden');
     });
   }
 
   /**
-   * Moves the download links list to be by the icon this.$toggler
+   * Moves the download links list to be under this.$toggler
    */
   moveList() {
-    let $followingSibling = this.$contentHeaderDownloadLink.nextElementSibling;
     this.$elm.parentNode.parentNode.classList.add('visuallyhidden');
-    this.$contentHeader.insertBefore(this.$elm, $followingSibling);
+    this.$toggler.after(this.$elm);
   }
 
   /**

@@ -1,0 +1,40 @@
+{
+  "isMagazine": true,
+  "title": "Genetic Engineering: Increasing the uptake of carbon dioxide",
+  "socialMediaSharers": {
+    "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "linkedInUrl": "https://www.linkedin.com/company/elife-sciences-publications-ltd",
+    "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+  },
+  "impactStatement": "A mechanism for concentrating carbon dioxide has for the first time been successfully transferred into a species that lacks such a process.",
+  "download": "#download",
+  "cite": "#cite-this-article",
+  "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "longTitle": true,
+  "header": {
+    "possible": true,
+    "hasSubjects": true,
+    "subjects": [
+      {
+        "name": "Biochemistry and Chemical Biology",
+        "url": "#"
+      },
+      {
+        "name": "Microbiology and Infectious Disease",
+        "url": "#"
+      }
+    ]
+  },
+  "meta": {
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 3,
+        "month": "Dec",
+        "year": 2020
+      },
+      "forMachine": "2020-12-03"
+    }
+  }
+}

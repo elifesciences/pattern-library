@@ -29,35 +29,39 @@
   list-style-type: none;
   @include nospace();
 
-  & .teaser__context_label:after {
+  &:after {
     content: ", ";
   }
 
   &:last-child {
-    & .teaser__context_label:after {
+    &:after {
       content: "";
     }
   }
 
+  .article__related-item & {
+    @include font-size-and-vertical-height(14, 32);
+  }
 }
 
-.teaser__context_label {
+.teaser__context_label_item {
   // content-label rather than subject-label as not it's not always subjects in here
   @include label-content-typeg();
+  font-weight: bold;
+
+  .teaser--related & {
+    font-weight: normal;
+  }
 }
 
 // Extra specificity to override normalised style
 .teaser .teaser__context_label_link {
+  color: $color-primary;
   text-decoration: none;
 
-  .teaser__context_label {
-    color: $color-primary;
+  .article-secondary-column & {
+    color: $color-text-secondary;
   }
-
-}
-
-.article-secondary-column .teaser .teaser__context_label {
-  color: $color-text-secondary;
 }
 
 .teaser__context_label_link:after {
@@ -95,6 +99,9 @@
   @include blg-spacing("bottom", "extra-small", "margin");
   @include blg-spacing("top", "extra-extra-small", "margin");
 
+  .article__related-item & {
+    @include font-size-and-vertical-height(14, 22);
+  }
 }
 
 .teaser__body {
@@ -103,6 +110,25 @@
 
 .teaser__footer {
   @include teaser-footer-style();
+}
+
+.teaser--main {
+  .teaser__footer {
+    align-items: baseline;
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      grid-template-columns: 9fr 3fr;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include teaser-footer-style();
+    }
+  }
+  .teaser__formats-list > li {
+    @include font-size-and-vertical-height(14, 18);
+  }
 }
 
 .teaser__formats {
@@ -142,6 +168,17 @@
     @include listing-side-art-title-typeg();
   }
 
+  .secondary-column-grid & {
+    .teaser__header_text {
+      @include font-size-and-vertical-height(16);
+    }
+  }
+
+  .article__related-item & {
+    .teaser__header_text {
+      @include font-size-and-vertical-height(16, 22);
+    }
+  }
 }
 
 .teaser__picture {
@@ -162,6 +199,22 @@
   float: right;
   height: 72px;
   width: 72px;
+}
+
+.teaser__picture--link {
+  @media only all and (min-width: 900px) and (max-width: 1199px) {
+    display: none;
+  }
+
+  .article__related-item & {
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      display: inline;
+    }
+
+    .teaser__picture img {
+      object-fit: cover;
+    }
+  }
 }
 
 @media only all and (min-width: 700px) {

@@ -1,5 +1,6 @@
 {
   "text": "Link button",
   "classes": "button--default",
-  "path": "#"
+  "path": "#",
+  "ariaLabel": "Descriptive and accessible name"
 }

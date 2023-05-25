@@ -17,12 +17,22 @@
       border-bottom: 1px solid $color-text-dividers;
       content: "";
       display: block;
-      @include padding($content-header-padding - 1, "top");
       width: 100%;
     }
 
   }
 
+}
+
+.content-header-journal {
+  text-align: left;
+  position: static;
+
+  &.wrapper {
+    &:after {
+      border-bottom: none;
+    }
+  }
 }
 
 .content-header--read-more {
@@ -37,6 +47,16 @@
   @include padding($content-header-image-credit-height, "bottom");
 }
 
+.content-header__top {
+  @include margin($content-header-padding / 2, "top");
+  text-align: left;
+
+  & ~ .content-header__body {
+    @include margin($content-header-padding, "top");
+    @include margin($content-header-padding * 2, "bottom");
+  }
+}
+
 .content-header__body {
   @include margin($content-header-padding * 2, "top");
   @include margin($content-header-padding, "bottom");
@@ -46,6 +66,13 @@
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       @include margin($content-header-padding, "top");
     }
+  }
+
+  .content-header-grid__main & {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include margin(36, "bottom");
+      @include margin(0, "top");
+    };
   }
 }
 
@@ -67,8 +94,16 @@
   .content-header__body {
     height: #{($content-header-padding * 5.5)}px;
 
+    .content-header-journal & {
+      height: #{($content-header-padding * 7)}px;
+    }
+
     .content-header--has-social-media-sharers & {
       min-height: #{$content-header-padding * 8}px;
+
+      .content-header-journal & {
+        height: #{($content-header-padding * 9)}px;
+      }
     }
 
     display: flex;
@@ -87,6 +122,10 @@
       @include padding(0 48);
       @include margin($content-header-padding * 2, "top");
       @include margin($content-header-padding, "bottom");
+
+      .content-header-journal & {
+        height: #{$content-header-padding * 5}px;
+      }
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
@@ -105,6 +144,10 @@
     left: 0;
     right: 0;
     bottom: 52px;
+
+    .content-header-journal & {
+      bottom: 28px;
+    }
   }
 
   &.content-header--has-profile .content-header__body {
@@ -122,6 +165,11 @@
   @include font-size-and-vertical-height(36, 48);
   @include margin(0, "top");
   @include margin(24, "bottom");
+
+  .content-header-journal & {
+    @include margin(6, "top");
+    @include margin(12, "bottom");
+  }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include font-size-and-vertical-height(41, 48);
@@ -312,6 +360,11 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}rem) {
     @include padding(72, "left");
     @include padding(72, "right");
+
+    .content-header-journal & {
+      @include padding(0, "left");
+      @include padding(0, "right");
+    }
   }
 
   .content-header--image & {
@@ -320,6 +373,10 @@
 
   &:before {
     color: $color-text-secondary;
+  }
+
+  .content-header-journal & {
+    @include padding(0, "top");
   }
 }
 
@@ -330,7 +387,11 @@
   list-style-type: none;
   padding: 0;
 
-  & .content-header__subject:after {
+  & .content-header__subject_link {
+    font-weight: bold;
+  }
+
+  & .content-header__subject_link:after {
     content: ", ";
   }
 
@@ -341,7 +402,7 @@
 
 .content-header__subject_list_item:last-child {
 
-  & .content-header__subject:after {
+  & .content-header__subject_link:after {
     content: "";
   }
 
@@ -351,6 +412,10 @@
   @include label-subject-typeg();
   @include font-size-and-vertical-height(13);
   text-decoration: none;
+
+  .content-header-journal & {
+    @include font-size-and-vertical-height(14);
+  }
 
   &:hover {
     @include color-link-hover();
@@ -371,6 +436,17 @@
   list-style: none;
   order: 1;
 
+  .content-header-journal & {
+    @include margin(0 0 0 6);
+    order: 0;
+  }
+
+  .content-header-journal.content-header__has-aside & {
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small - 1)}em) {
+      @include margin(0);
+    }
+  }
+
   .content-header--image & {
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--extra-wide)}em) {
@@ -384,6 +460,10 @@
     top: #{$blg-space-extra-small-in-px}px;
   }
 
+  .content-header__one-column & {
+    grid-row: auto;
+  }
+
 }
 
 $iconlist: cc oa;
@@ -394,33 +474,49 @@ $iconlist: cc oa;
   display: block;
   height: 22px;
   width: 17px;
+
+  .content-header-journal & {
+    background-position: 0 0;
+    height: 20px;
+  }
 }
 
 @each $icon in $iconlist {
   .content-header__icon--#{$icon} {
-    background-image: url("../img/icons/#{$icon}.png");
     background-image: url("../img/icons/#{$icon}.svg"), linear-gradient(transparent, transparent);
 
     &:hover {
-      background-image: url("../img/icons/#{$icon}-hover.png");
       background-image: url("../img/icons/#{$icon}-hover.svg"), linear-gradient(transparent, transparent);
+
+      .content-header-journal & {
+        background-image: url("../img/icons/#{$icon}-new.svg");
+      }
+    }
+
+    .content-header-journal & {
+      background-image: url("../img/icons/#{$icon}-new.svg");
     }
   }
 }
 
-.content-header__download_link {
+.content-header-journal {
+  .content-header__icon--cc {
+    width: 18px;
+  }
+
+  .content-header__icon--oa {
+    width: 16px;
+  }
+}
+
+.side-section-wrapper__download_link {
   grid-row: 1;
   grid-column-end: 4;
   justify-self: end;
-  margin-top: 24px;
   order: 3;
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     margin-top: 14px;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include margin(14 0 0 0);
   }
 
   .content-header--image & {
@@ -450,7 +546,12 @@ $iconlist: cc oa;
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     width: #{$content-header-download-width-medium}px;
   }
+}
 
+.side-section {
+  .content-header__download_icon {
+    width: #{$content-header-download-width}px;
+  }
 }
 
 .content-header__impact-statement {
@@ -496,170 +597,6 @@ $iconlist: cc oa;
 
 }
 
-.content-header__author_link_highlight,
-.content-header__author_link_highlight:hover {
-  background-color: transparent;
-  border-style: none;
-  color: $color-primary;
-  padding-top: 12px;
-
-  &:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    padding-top: 0;
-  }
-}
-
-.content-header__authors {
-  @include margin($content-header-padding, "bottom");
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    .content-header__institution_list {
-      @include visuallyhidden();
-    }
-  }
-}
-
-.content-header__authors--line {
-  @include author-typeg();
-}
-
-.content-header__author_list {
-  margin: 0;
-  padding: 0;
-}
-
-.content-header__author_list_item {
-  display: inline;
-  @include author-typeg();
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-}
-
-.content-header__item_toggle--expanded {
-  display: block;
-}
-
-.content-header__author_suffix {
-  white-space: nowrap;
-}
-
-.content-header__author_separator {
-  .content-header__author--last-non-excess & {
-    display: none;
-
-    .content-header__author_list--expanded & {
-      display: inline;
-    }
-  }
-  li.content-header__author_list_item:last-child &,
-  li.content-header__author_list_item--last & {
-    display: none;
-  }
-}
-
-.content-header__institution_separator {
-  .content-header__institution--last-non-excess & {
-    display: none;
-
-    .content-header__institution_list--expanded & {
-      display: inline;
-    }
-  }
-  li.content-header__institution_list_item:last-child &,
-  li.content-header__institution_list_item--last & {
-    display: none;
-  }
-}
-
-.content-header__author_link {
-  color: inherit;
-  text-decoration: inherit;
-
-  &:hover {
-    color: $color-primary;
-  }
-
-}
-
-.content-header__author_icon {
-  padding-top: 1px;
-  vertical-align: text-top;
-}
-
-.content-header__author--single {
-  @include author-typeg();
-}
-
-.content-header__institution_list {
-  margin: 0;
-  padding: 0;
-}
-
-.content-header__institution_list_item {
-  display: inline;
-  @include institute-typeg();
-  list-style-type: none;
-  padding: 0;
-}
-
-.content-header__item_toggle {
-  white-space: nowrap;
-}
-
-.content-header__item_toggle--author {
-  @include author-typeg();
-  font-weight: normal;
-}
-
-.content-header__item_toggle--expanded {
-
-  & .content-header__item_toggle_cta {
-    display: block;
-    transform: rotate(90deg);
-  }
-
-}
-
-@media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-
-  .content-header__author--last-non-excess .content-header__author_separator {
-    display: none;
-  }
-
-  .content-header__institution--last-non-excess .content-header__institution_separator {
-    display: none;
-  }
-
-  .content-header__item_toggle {
-    color: $color-primary;
-    display: inline;
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .content-header__item_toggle--institution {
-    @include institute-typeg();
-    font-weight: normal;
-  }
-
-  .content-header__item_toggle--collapsed:after {
-    content: "\00a0\00bb";
-  }
-
-  .content-header__item_toggle--expanded:before {
-    content: "\00ab\00a0";
-  }
-
-  .content-header__item_toggle:hover {
-    cursor: pointer;
-  }
-
-}
-
 .content-header__cta {
   // $content-header-padding minus 6px because child button is 30px not 24px high
   @include margin(18, "bottom");
@@ -674,19 +611,28 @@ $iconlist: cc oa;
 }
 
 .content-header__meta {
+  @include padding(24, "bottom");
 
   .content-header--image & {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 18px;
+    bottom: #{$content-header-padding / 4}px;
     @include font-size-and-vertical-height(12, 12);
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    .content-header-journal & {
       bottom: #{$content-header-padding / 2}px;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      bottom: 0;
       @include font-size-and-vertical-height(12);
     }
 
+  }
+
+  .content-header-grid__main & {
+    @include padding(0, "bottom");
   }
 
 }

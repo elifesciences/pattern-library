@@ -1,0 +1,82 @@
+{
+  "heading": {
+    "heading": "Highlights"
+  },
+  "items": [
+    {
+      "link": {
+        "url": "#link-to-article",
+        "name": "Infection, statistics and public health"
+      },
+      "summary": "Summary",
+      "meta": {
+        "url": "#",
+        "text": "Interview",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 3,
+            "month": "Nov",
+            "year": 2015
+          },
+          "forMachine": "2015-11-03"
+        }
+      },
+      "image": {
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "Meaningful alt text please."
+        }
+      }
+    },
+    {
+      "link": {
+        "url": "#link-to-article",
+        "name": "Controlling traffic"
+      },
+      "summary": "Ramanath Hegde is a Postdoctoral Fellow at the Institute of Protein Biochemistry in Naples, Italy, where he investigates ways of preventing cells from destroying mutant proteins.",
+      "meta": {
+        "url": "#",
+        "text": "Interview",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 29,
+            "month": "Jan",
+            "year": 2016
+          },
+          "forMachine": "2016-01-29"
+        }
+      },
+      "image": {
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "Meaningful alt text please."
+        }
+      }
+    },
+    {
+      "link": {
+        "url": "#link-to-article",
+        "name": "Controlling traffic"
+      },
+      "summary": "Ramanath Hegde is a Postdoctoral Fellow at the Institute of Protein Biochemistry in Naples, Italy, where he investigates ways of preventing cells from destroying mutant proteins.",
+      "meta": {
+        "url": "#",
+        "text": "Interview",
+        "date": {
+          "forHuman": {
+            "dayOfMonth": 29,
+            "month": "Jan",
+            "year": 2016
+          },
+          "forMachine": "2016-01-29"
+        }
+      },
+      "image": {
+        "fallback": {
+          "defaultPath": "https://unsplash.it/250/140/",
+          "altText": "Meaningful alt text please."
+        }
+      }
+    }
+  ]
+}

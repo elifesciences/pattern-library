@@ -1,0 +1,39 @@
+@import "../../definitions";
+
+.highlight {
+  @include constrain-width($max-site-width, "max");
+  @include padding($content-header-padding-medium 0);
+  border-bottom: 1px solid $color-text-dividers;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  position: relative;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include padding(48, "bottom");
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include padding(48, "top");
+  }
+
+  .list-heading {
+    @include margin(24, "bottom");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include margin(36, "bottom");
+    }
+  }
+}
+
+.highlight__items {
+  list-style: none;
+  @include nospace();
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    align-items: start;
+    column-gap: 3rem;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+  }
+}

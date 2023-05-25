@@ -1,0 +1,210 @@
+{
+  "siteHeader": {
+    "title": {
+      "homePagePath": "#"
+    },
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "path": "#mainMenu",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Community",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "About",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        }
+      ]
+    },
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-secondary__item nav-secondary__item--search",
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--alert",
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Submit your research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
+          "button": {
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
+          }
+        }
+      ]
+    },
+
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
+
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
+    }
+
+  },
+
+  "pageAboutElife": {
+    "title": "About eLife",
+    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris.",
+    "socialMediaSharers": {
+      "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
+      "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+    }
+  },
+
+  "sectionsListingLink": {
+    "targetFragmentId": "sectionsListing",
+    "text": "See all about sections"
+  },
+
+  "infoBarAnnouncement": {
+    "type": "announcement",
+    "text": "eLife's peer-review process is changing. From January 2023, eLife will no longer make accept/reject decisions after peer review. Instead, every preprint sent for peer review will be published on the eLife website as a \"Reviewed Preprint\" that includes an eLife assessment, public reviews, and a response from the authors (if available). When writing the eLife assessment, the editors and reviewers will use a common vocabulary to summarize the significance of the findings and the strength of the evidence reported in the preprint. <a href=\"#\">Read about the new process</a>."
+  },
+
+  "sectionsListing": {
+    "id": "sectionsListing",
+    "singleLine": true,
+    "sections": [
+      {
+        "url": "#",
+        "name": "What we publish",
+        "isCurrent": true
+      },
+      {
+        "url": "#",
+        "name": "Editors & people"
+      },
+      {
+        "url": "#",
+        "name": "Peer review"
+      },
+      {
+        "url": "#",
+        "name": "Openness"
+      },
+      {
+        "url": "#",
+        "name": "Reproducibility"
+      },
+      {
+        "url": "#",
+        "name": "Incentives"
+      }
+    ]
+  },
+
+
+  "mainMenu": {
+    "title": {
+    "homePagePath": "#"
+  },
+    "listHeading": {
+      "heading": "Menu"
+    },
+    "links": {
+      "items": [
+        {"name": "Home", "url": "#", "classes": "hidden-wide"},
+        {"name": "Magazine", "url": "#", "classes": "hidden-wide"},
+        {"name": "Community", "url": "#ins", "classes": "hidden-wide"},
+        {"name": "About", "url": "#abo", "classes": "hidden-wide"},
+        {"name": "Research categories", "url": "#res"},
+        {"name": "Inside eLife", "url": "#", "classes": "end-of-group"},
+        {"name": "Search", "url": "#", "classes": "hidden-wide"},
+        {"name": "Subscribe to alerts", "url": "#", "classes": "end-of-group hidden-wide"},
+        {"name": "Submit your research", "url": "#", "classes": "hidden-wide"},
+        {"name": "Author guide", "url": "#"},
+        {"name": "Reviewer guide", "url": "#"}
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "button": {
+      "text": "Sign up for email alerts",
+      "classes": "button--default",
+      "path": "https://crm.elifesciences.org/crm/content-alerts"
+    },
+    "privacyUrl": "#",
+    "privacyLabel": "Privacy notice"
+  },
+
+  "footerMenuLinks": [
+    { "name": "About", "url": "#" },
+    { "name": "Who we work with", "url": "#" },
+    { "name": "Alerts", "url": "#" },
+    { "name": "Contact", "url": "#" },
+    { "name": "Terms and policy", "url": "#" },
+    { "name": "Inside eLife", "url": "#" },
+    { "name": "Monthly archive", "url": "#" },
+    { "name": "Innovation", "url": "#" },
+    { "name": "For the press", "url": "#" },
+    { "name": "Resources", "url": "#" }
+  ]
+
+}

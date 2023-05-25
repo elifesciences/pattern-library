@@ -1,0 +1,20 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  link:
+    $ref: ../../../non-pattern-schema/link.yaml
+  authors:
+    type: string
+    minLength: 1
+  summary:
+    type: string
+    minLength: 1
+  meta:
+    $ref: ../../01-molecules/components/meta.yaml
+  image:
+    allOf:
+      - $ref: ../../00-atoms/components/picture.yaml
+required:
+  - link
+  - meta
+  - image

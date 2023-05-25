@@ -1,5 +1,40 @@
 @import "../../definitions";
 
+.definition-list--timeline {
+  dt,
+  dd {
+    font-family: $font-secondary;
+    font-weight: bold;
+  }
+
+  dt {
+    @include font-size-and-vertical-height(14, 24);
+    @include margin(18, "top");
+
+    &:first-child {
+      @include margin(0, "top");
+    }
+  }
+
+  dd {
+    @include font-size-and-vertical-height(12, 24);
+    color: $color-text-secondary;
+
+    a {
+      color: $color-text-secondary;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    a::before {
+      content: "\00a0\2219\00a0";
+      font-weight: bold;
+    }
+  }
+}
+
 .definition-list--inline {
   dt,
   dd {

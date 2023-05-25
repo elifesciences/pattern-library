@@ -4,6 +4,14 @@ $showTwoAtWidth: #{get-rem-from-px($bkpt-site--wide)}rem;
 $showThreeAtWidth: #{get-rem-from-px($bkpt-site--x-wide)}rem;
 $totalHighlightsSpacing: 6;
 
+.js {
+  .grid__item.display-narrow {
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--x-wide - 1)}em) {
+      display: none;
+    }
+  }
+}
+
 /* .listing-list is a list of items. It is the major content within a listing column. A listing column may contain one
  *    or more listing lists. Every listing-list in each listing column has a bottom margin expect the last one.
  */

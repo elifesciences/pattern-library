@@ -14,11 +14,16 @@
 
 @function get-breakpoint($string) {
   @if $string == "x-small" {
-    @return #{get-rem-from-px($bkpt-site--x-small)}em; } @else if $string == "small" {
-    @return #{get-rem-from-px($bkpt-site--small)}em; } @else if $string == "medium" {
-    @return #{get-rem-from-px($bkpt-site--medium)}em; } @else if $string == "wide" {
-    @return #{get-rem-from-px($bkpt-site--wide)}em; } @else if $string == "x-wide" {
-    @return #{get-rem-from-px($bkpt-site--x-wide)}em; }
+    @return #{get-rem-from-px($bkpt-site--x-small)}em;
+  } @else if $string == "small" {
+    @return #{get-rem-from-px($bkpt-site--small)}em;
+  } @else if $string == "medium" {
+    @return #{get-rem-from-px($bkpt-site--medium)}em;
+  } @else if $string == "wide" {
+    @return #{get-rem-from-px($bkpt-site--wide)}em;
+  } @else if $string == "x-wide" {
+    @return #{get-rem-from-px($bkpt-site--x-wide)}em;
+  }
 }
 
 @mixin font-size($size_in_px) {
@@ -154,13 +159,13 @@
 }
 
 @mixin box-shadow() {
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4);
 }
 
 @mixin tooltip-box() {
   background-color: $color-text-ui-background--reverse;
   color: $color-text-ui-background;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   @include padding(16);
 }
 
@@ -268,18 +273,14 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   margin: auto;
 
   @if $padding {
-    padding-left: 7%;
-    padding-right: 7%;
+    padding-left: #{$site-spacing}px;
+    padding-right: #{$site-spacing}px;
 
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      padding-left: 14%;
-      padding-right: 14%;
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      padding-left: #{$site-spacing-large}px;
+      padding-right: #{$site-spacing-large}px;
     }
 
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      padding-left: 3%;
-      padding-right: 3%;
-    }
   }
 }
 
@@ -289,17 +290,17 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   margin: auto;
 
   @if $padding {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: #{$site-spacing}px;
+    padding-right: #{$site-spacing}px;
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      padding-left: 48px;
-      padding-right: 48px;
+      padding-left: #{$site-spacing-large}px;
+      padding-right: #{$site-spacing-large}px;
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      padding-left: 48px;
-      padding-right: 48px;
+      padding-left: #{$site-spacing-large}px;
+      padding-right: #{$site-spacing-large}px;
     }
   }
 }
@@ -423,7 +424,7 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   top: 0;
   width: 100vw;
   // z-index should be overridden as necessary
-  z-index: 4;
+  z-index: 10;
 }
 
 @mixin discreet-link ($color: $color-text, $has-hover-state: true) {
@@ -466,6 +467,30 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   margin-bottom: 0.1em;
   max-height: 1em;
   vertical-align: middle;
+}
+
+@mixin background-icon($url, $size: 21px, $position-x: 50px, $position-y: 0, $width: 70px) {
+  display: none;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    @include margin(24, "right");
+    background: url($url) no-repeat;
+    background-size: $size;
+    display: block;
+    text-indent: -9999px;
+    width: 24px;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    background-position-x: $position-x;
+    background-position-y: $position-y;
+    text-indent: 0;
+    width: $width;
+  }
 }
 
 @mixin colors($background-color: $color-primary, $border-color: $background-color, $color: $color-text--reverse) {
@@ -569,13 +594,7 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
 }
 
 @mixin blg-pad-top--small-to-medium {
-
-  @include blg-spacing("top", "small");
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    @include blg-spacing("top", "medium");
-  }
-
+  @include blg-spacing("top", "medium");
 }
 
 @mixin blg-pad-bottom--small-to-medium {
@@ -659,7 +678,7 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   }
 }
 
-// Content header title / carousel item title size adjustment according to length.
+// Content header title size adjustment according to length.
 //   The number of lines a title occupies can't be precisely determined as it depends on line breaks,
 //  which in turn depends on word length and relative position. So by necessity this is approximate.
 //
@@ -673,7 +692,7 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
 //      x-long is for text likely to span 5 - 6 lines
 //      xx-long is for text likely to span 7 lines
 //
-//      N.B. xx-long is a safety net, title lengths for image content headers and carousel items
+//      N.B. xx-long is a safety net, title lengths for image content headers
 //        really should not get this long
 @mixin header-title-size($title-length: "medium") {
 
@@ -782,4 +801,12 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
 
   }
 
+}
+
+// margin should be on the top
+@mixin local-item-style {
+  @include margin(0);
+  @include blg-spacing("bottom", "small", "margin");
+  @include font-size-and-vertical-height(14);
+  font-family: $font-secondary;
 }

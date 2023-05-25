@@ -1,0 +1,199 @@
+@import "../../definitions";
+
+.author-line {
+  @include font-size-and-vertical-height(16, 24);
+  @include truncate-with-ellipsis();
+}
+
+.author_link_highlight,
+.author_link_highlight:hover {
+  background-color: transparent;
+  border-style: none;
+  color: $color-primary;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include padding(1 3);
+    padding-top: 0;
+  }
+}
+
+.authors {
+  @include margin($content-header-padding, "bottom");
+
+  .content-header-grid__main & {
+    margin: 0 0 36px;
+  }
+
+  @media only all and (max-width: 45.563rem) {
+
+    .content-header-journal & {
+      display: contents;
+    }
+
+    .institution_list {
+      @include visuallyhidden();
+    }
+  }
+}
+
+.authors--line {
+  @include author-typeg();
+}
+
+.author_list {
+  margin: 0;
+  padding: 0;
+
+  .content-header-journal & {
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      padding: 0;
+    }
+  }
+
+  .content-header-grid__main & {
+    padding: 0 0 24px;
+  }
+}
+
+.author_list_item {
+  display: inline;
+  @include author-typeg();
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.author_suffix {
+  white-space: nowrap;
+}
+
+.author_separator {
+  .author--last-non-excess & {
+    display: none;
+
+    .author_list--expanded & {
+      display: inline;
+    }
+  }
+  li.author_list_item:last-child &,
+  li.author_list_item--last & {
+    display: none;
+  }
+}
+
+.institution_separator {
+  .institution--last-non-excess & {
+    display: none;
+
+    .institution_list--expanded & {
+      display: inline;
+    }
+  }
+  li.institution_list_item:last-child &,
+  li.institution_list_item--last & {
+    display: none;
+  }
+}
+
+.author_link {
+  color: inherit;
+  text-decoration: inherit;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+}
+
+.author_icon {
+  padding-top: 1px;
+  vertical-align: text-top;
+}
+
+.author--single {
+  @include author-typeg();
+}
+
+.institution_list {
+  margin: 0;
+  padding: 0;
+}
+
+.institution_list_item {
+  display: inline;
+  @include institute-typeg();
+  list-style-type: none;
+  padding: 0;
+}
+
+.item_toggle {
+  white-space: nowrap;
+}
+
+.item_toggle--author {
+  @include author-typeg();
+  font-weight: normal;
+}
+
+.item_toggle {
+  color: $color-primary;
+  display: inline;
+  list-style-type: none;
+  padding: 0;
+
+  &.item_toggle--expanded {
+    display: block;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: inline;
+    }
+  }
+}
+
+.item_toggle--collapsed:after {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    content: "\00a0\00bb";
+  }
+}
+
+.item_toggle--expanded:before {
+  content: "";
+  border: solid $color-primary;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    border: none;
+    content: "\00ab\00a0";
+    padding: 0;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+.item_toggle:hover {
+  cursor: pointer;
+}
+
+@media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  .author--last-non-excess .author_separator {
+    display: none;
+  }
+
+  .item_toggle--institution {
+    @include institute-typeg();
+    font-weight: normal;
+  }
+
+  .institution--last-non-excess .institution_separator {
+    display: none;
+  }
+}

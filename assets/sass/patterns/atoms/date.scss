@@ -3,6 +3,15 @@
 .date {
   @include label-content-typeg($color: inherit, $uppercase: false);
   @include font-size-and-vertical-height(12);
+
+  .teaser--main & {
+    @include font-size-and-vertical-height(14, 18);
+    display: block;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      display: inline-block;
+    }
+  }
 }
 
 .date--expanded {

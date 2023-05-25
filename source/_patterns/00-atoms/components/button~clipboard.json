@@ -3,5 +3,6 @@
   "classes": "button--default",
   "type": "submit",
   "id": "button-id",
-  "clipboardText": "Text to store in clipboard"
+  "clipboardText": "Text to store in clipboard",
+  "ariaLabel": "Descriptive and accessible name"
 }

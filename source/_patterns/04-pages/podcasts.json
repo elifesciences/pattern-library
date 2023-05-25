@@ -11,72 +11,39 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "textClasses": "visuallyhidden",
           "path": "#mainMenu",
-          "picture": {
-            "pictureClasses": "nav-primary__menu_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic_2x.png 2x, ../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png 1x",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-menu-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-menu-ic.svg"
-              }
-            ]
-          }
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "Innovation",
+          "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
-        },
-
-        {
-          "text": "Search the eLife site",
-          "rel": "search",
-          "classes": "nav-primary__item nav-primary__item--search",
-          "textClasses": "visuallyhidden",
-          "path": "#",
-          "picture": {
-            "pictureClasses": "nav-primary__search_icon",
-            "fallback": {
-              "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic_2x.png 48w, ../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png 24w",
-              "defaultPath": "../../assets/img/patterns/molecules/nav-primary-search-ic_1x.png",
-              "classes": "",
-              "altText": ""
-            },
-            "sources": [
-              {
-                "srcset": "../../assets/img/patterns/molecules/nav-primary-search-ic.svg"
-              }
-            ]
-          }
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
-
 
     "secondaryLinks":
     {
@@ -84,37 +51,29 @@
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
         {
-          "text": "Newsletters",
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-secondary__item nav-secondary__item--search",
           "path": "#",
-          "classes": "nav-secondary__item"
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "About<span class=\"visuallyhidden\"> eLife</span>",
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--alert",
           "path": "#",
-          "classes": "nav-secondary__item"
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
-          "text": "Submit my research",
+          "text": "Submit your research",
           "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
-            "classes": "button--default button--extra-small"
-          }
-        },
-
-        {
-          "classes": "nav-secondary__item",
-          "loginControl": {
-            "button": {
-              "text": "Log in / Register<span class=\"visuallyhidden\"> (via Orcid)</span>",
-              "path": "#",
-              "classes": "button--login"
-            }
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
-
       ]
     },
 
@@ -142,22 +101,7 @@
   },
 
   "contentHeader": {
-    "title": "Podcasts",
-    "impactStatement": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et sodales neque, vel consectetur orci. Vestibulum est lorem, tristique nec felis id, efficitur viverra mauris.",
-    "socialMediaSharers": {
-      "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
-      "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
-      "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
-      "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
-    }
-  },
-
-  "leadParas": {
-    "paras": [
-      {
-        "text": ""
-      }
-    ]
+    "title": "Podcasts"
   },
 
   "listHeading": {
@@ -170,6 +114,7 @@
       {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -197,6 +142,7 @@
       {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -223,6 +169,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -249,6 +196,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -275,6 +223,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -301,6 +250,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -327,6 +277,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -353,6 +304,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -379,6 +331,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -405,6 +358,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -431,6 +385,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -457,6 +412,7 @@
       },    {
         "rootClasses": "teaser--grid-style",
         "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
         "title": "Multicellular life, potato blight and Hepatitis&nbsp;B",
         "secondaryInfo": "Episode 24",
         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris commodo consequat.",
@@ -484,16 +440,26 @@
     ]
   },
 
-  "mainMenu":{
+  "mainMenu": {
+    "title": {
+      "homePagePath": "#"
+    },
+    "listHeading": {
+      "heading": "Menu"
+    },
     "links": {
       "items": [
+        {"name": "Home", "url": "#", "classes": "hidden-wide"},
+        {"name": "Magazine", "url": "#", "classes": "hidden-wide"},
+        {"name": "Community", "url": "#ins", "classes": "hidden-wide"},
+        {"name": "About", "url": "#abo", "classes": "hidden-wide"},
         {"name": "Research categories", "url": "#res"},
-        {"name": "Author guide", "url": "#aut"},
-        {"name": "Reviewer guide", "url": "#rev"},
-        {"name": "About", "url": "#abo"},
-        {"name": "Inside eLife", "url": "#ins"},
-        {"name": "Careers", "url": "#car"},
-        {"name": "Innovation", "url": "#lab"}
+        {"name": "Inside eLife", "url": "#", "classes": "end-of-group"},
+        {"name": "Search", "url": "#", "classes": "hidden-wide"},
+        {"name": "Subscribe to alerts", "url": "#", "classes": "end-of-group hidden-wide"},
+        {"name": "Submit your research", "url": "#", "classes": "hidden-wide"},
+        {"name": "Author guide", "url": "#"},
+        {"name": "Reviewer guide", "url": "#"}
       ]
     },
     "button": {
