@@ -42,6 +42,7 @@ Components.SelectNav = require('./components/SelectNav');
 Components.SideBySideView = require('./components/SideBySideView');
 Components.SiteHeader = require('./components/SiteHeader');
 Components.SpeechBubble = require('./components/SpeechBubble');
+Components.TestComponent = require('./components/TestComponent');
 Components.ToggleableCaption = require('./components/ToggleableCaption');
 Components.Twitter = require('./components/Twitter');
 Components.ViewerModal = require('./components/ViewerModal');
