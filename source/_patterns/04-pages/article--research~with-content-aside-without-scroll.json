@@ -231,7 +231,7 @@
   "tabbedNavigation": {
     "items": [
       {
-        "selectedClass": " tabbed-navigation__tab-label--active",
+        "classes": " tabbed-navigation__tab-label--active",
         "name": "Full text",
         "url": "#"
       }

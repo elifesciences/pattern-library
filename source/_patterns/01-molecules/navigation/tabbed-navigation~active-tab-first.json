@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "selectedClass": " tabbed-navigation__tab-label--active",
+      "classes": " tabbed-navigation__tab-label--active",
       "name": "Full text",
       "url": "#"
     },
@@ -10,6 +10,7 @@
       "url": "#"
     },
     {
+      "classes": " tabbed-navigation__tab-label--side-by-side",
       "name": "Peer review",
       "url": "#"
     }

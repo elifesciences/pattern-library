@@ -9,8 +9,13 @@
       "url": "#"
     },
     {
-      "selectedClass": " tabbed-navigation__tab-label--active",
+      "classes": " tabbed-navigation__tab-label--active",
       "name": "Peer review",
+      "url": "#"
+    },
+    {
+      "classes": " tabbed-navigation__tab-label--side-by-side",
+      "name": "Side by side",
       "url": "#"
     }
   ]

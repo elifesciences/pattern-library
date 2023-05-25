@@ -5,13 +5,16 @@
       "url": "#"
     },
     {
-      "classes": " tabbed-navigation__tab-label--active",
       "name": "Figures<span class=\"tabbed-navigation__tab-label--long\"> and data</span>",
       "url": "#"
     },
     {
-      "classes": " tabbed-navigation__tab-label--side-by-side",
       "name": "Peer review",
+      "url": "#"
+    },
+    {
+      "classes": " tabbed-navigation__tab-label--side-by-side tabbed-navigation__tab-label--active",
+      "name": "Side by side",
       "url": "#"
     }
   ]

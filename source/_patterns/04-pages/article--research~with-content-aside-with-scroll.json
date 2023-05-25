@@ -331,7 +331,7 @@
   "tabbedNavigation": {
     "items": [
       {
-        "selectedClass": " tabbed-navigation__tab-label--active",
+        "classes": " tabbed-navigation__tab-label--active",
         "name": "Full text",
         "url": "#"
       },
@@ -342,6 +342,11 @@
       {
         "name": "Peer review",
         "url": "#"
+      },
+      {
+        "classes": " tabbed-navigation__tab-label--side-by-side",
+        "name": "Side by side",
+        "url": "https://lens.elifesciences.org/09560"
       }
     ]
   },

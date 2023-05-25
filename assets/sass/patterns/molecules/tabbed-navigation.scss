@@ -72,6 +72,14 @@
   }
 }
 
+.tabbed-navigation__tab-label--side-by-side {
+  display: none;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    display: inline;
+  }
+}
+
 .tabbed-navigation__tabs {
   border-bottom: 1px solid $color-text-dividers;
   border-top: 1px solid $color-text-dividers;
