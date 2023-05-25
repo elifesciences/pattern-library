@@ -1,6 +1,6 @@
 (function (window) {
   'use strict';
-
+console.log('foo');
   try {
     var scriptPaths,
         $body;

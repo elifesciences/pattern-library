@@ -1,15 +1,20 @@
 const chai = require('chai');
 const CallToAction = require('../assets/js/components/CallToAction');
 const fixtures = require('./fixtures/callToActionFixture');
+const { mockCookies, clearCookieMock } = require('./fixtures/cookieMock');
 const utils = require('../assets/js/libs/elife-utils')();
 
 const expect = chai.expect;
 
+
 describe('A Call to action Component', function () {
   'use strict';
+  mockCookies();
+
 
   afterEach(function() {
     fixtures.removeAllGeneratedHTMLFixtures();
+    clearCookieMock()
   });
 
   it('is hidden immediately if a cookie indicates it was previously dismissed', function () {
@@ -106,18 +111,11 @@ describe('A Call to action Component', function () {
             const $fixture = fixtures.generateHTMLWithCookieDetails(fixtures.getCookieNameRoot(), id, expiry);
             const callToAction = new CallToAction($fixture);
             expect(callToAction.dismissible.cookieExpiryDate).to.equal(expiry);
-
-            fixtures.clearCookie(id);
-            expect(utils.getCookieValue(`${fixtures.getCookieNameRoot()}${id}`, document.cookie), 'cookie shouldn\'t be set').to.equal('');
-
+            let cookieValue = utils.getCookieValue(`${fixtures.getCookieNameRoot()}${id}`, document.cookie);
+            expect(cookieValue, 'cookie shouldn\'t be set').to.equal('');
           });
-
         });
-
       });
-
     });
-
   });
-
 });

@@ -38,7 +38,7 @@ describe('A Popup Component', function () {
     }
   };
   let linkClick = function(popup) {
-    popup.handleLinkClick({ preventDefault: () => {}});
+    popup.handleLinkClick({ currentTarget: popup.$elm, preventDefault: () => {}});
     // event propagates to the document level
     documentClick(popup.$link);
   };
@@ -48,7 +48,7 @@ describe('A Popup Component', function () {
     expect(popup).to.exist;
   });
 
-  it.only('popups a separate element', function () {
+  it('popups a separate element', function () {
     let popup = instantiatePopup('#example[data-behaviour="Popup"]');
     linkClick(popup);
     expect(popup.isOpen).to.be.true;

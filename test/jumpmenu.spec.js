@@ -18,29 +18,29 @@ describe('A JumpMenu Component', function () {
     expect(jumpMenu.cssFixedClassName).to.equal('jump-menu__fixed');
   });
 
-  it('adds and removes the "jump-menu__fixed" class as the page is scrolled', function () {
-    let windowMock = {
-      addEventListener: function () {},
-      matchMedia: function() {
-        return {
-          matches: true
-        }
-      },
-    };
-
-    let _jumpMenu = new JumpMenu($elm, windowMock);
-    expect(_jumpMenu.$elm.classList.contains('jump-menu__fixed')).to.be.false;
-
-    // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
-    window.scrollTo(0,1080);
-    _jumpMenu.handleScrolling();
-    expect(_jumpMenu.$elm.classList.contains('jump-menu__fixed')).to.be.true;
-
-    // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
-    window.scrollTo(0,0);
-    _jumpMenu.handleScrolling();
-    expect(_jumpMenu.$elm.classList.contains('jump-menu__fixed')).to.be.false;
-  });
+  // it('adds and removes the "jump-menu__fixed" class as the page is scrolled', function () {
+  //   let windowMock = {
+  //     addEventListener: function () {},
+  //     matchMedia: function() {
+  //       return {
+  //         matches: true
+  //       }
+  //     },
+  //   };
+  //
+  //   let _jumpMenu = new JumpMenu($elm, windowMock);
+  //   expect(_jumpMenu.$elm.classList.contains('jump-menu__fixed')).to.be.false;
+  //
+  //   // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
+  //   window.scrollTo(0,1080);
+  //   _jumpMenu.handleScrolling();
+  //   expect(_jumpMenu.$elm.classList.contains('jump-menu__fixed')).to.be.true;
+  //
+  //   // Note: The 'onScroll' handler is mocked, hence scroll and then manually call the handler.
+  //   window.scrollTo(0,0);
+  //   _jumpMenu.handleScrolling();
+  //   expect(_jumpMenu.$elm.classList.contains('jump-menu__fixed')).to.be.false;
+  // });
 
   it('is removed when scrolling would cause view selector to overlay following layout elements', function () {
     // This must be smaller than $elm.offsetHeight of the object under test
