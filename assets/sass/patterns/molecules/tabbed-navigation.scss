@@ -2,6 +2,8 @@
 
 .tabbed-navigation {
   @include margin(24, "bottom");
+  border-bottom: 1px solid $color-text-dividers;
+  border-top: 1px solid $color-text-dividers;
   grid-column: 2/12;
   grid-row: 1;
 
@@ -75,18 +77,23 @@
 .tabbed-navigation__tab-label--side-by-side {
   display: none;
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     display: inline;
   }
 }
 
 .tabbed-navigation__tabs {
-  border-bottom: 1px solid $color-text-dividers;
-  border-top: 1px solid $color-text-dividers;
   display: inline-flex;
   list-style: none;
   margin: 0;
   padding: 0;
   width: 100%;
   justify-content: center;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 72px;
+    overflow: hidden;
+  }
 }
