@@ -1,0 +1,25 @@
+{
+  "link": {
+    "url": "#",
+    "name": "Scientists prove key aspect of evolutionary theory"
+  },
+  "summary": "While this event was first predicted almost twenty years ago, evidence for it has proved elusive.",
+  "meta": {
+    "url": "#",
+    "text": "Press pack",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 26,
+        "month": "Jan",
+        "year": 2016
+      },
+      "forMachine": "2016-01-26"
+    }
+  },
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/250/140/",
+      "altText": "Meaningful alt text please."
+    }
+  }
+}

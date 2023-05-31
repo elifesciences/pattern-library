@@ -32,7 +32,7 @@ module.exports = class Authors {
   }
 
   setupResizeHandler() {
-    this.currentClientWidth = document.body.clientWidth;
+    this.currentClientWidth = document.body.getBoundingClientRect().width;
     this.window.addEventListener('resize', utils.debounce(() => this.handleResize(), 30));
   }
 
@@ -40,11 +40,12 @@ module.exports = class Authors {
     // Android (at least), may fire resize on initial scroll as url bar moves off the top of the
     // screen, and the height of the browser window increases until the top edge is at the top of
     // the screen.
-    if (this.currentClientWidth === document.body.clientWidth) {
+    this.resizedClientWidth = document.body.getBoundingClientRect().width;
+    if (this.currentClientWidth === this.resizedClientWidth) {
       return;
     }
 
-    this.currentClientWidth = document.body.clientWidth;
+    this.currentClientWidth = this.resizedClientWidth;
     if (!this.$elm.querySelector('.author_list--expanded')) {
       this.hideAllExcessItems();
     }
@@ -214,11 +215,7 @@ module.exports = class Authors {
 
   getToggleExpandedText() {
     const baseText = '<span class="visuallyhidden"> collapse author list</span>';
-    if (this.window.matchMedia('(min-width: 730px)').matches) {
-      return `${baseText}<span aria-hidden="true">see&nbsp;less</span>`;
-    }
-
-    return `${baseText}<span aria-hidden="true" class="item_toggle_cta">&#171;</span>`;
+    return `${baseText}<span aria-hidden="true">see&nbsp;less</span>`;
   }
 
   getUpdatedToggleText(newState) {

@@ -13,31 +13,36 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "path": "#mainMenu"
+          "path": "#mainMenu",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
@@ -51,13 +56,15 @@
           "text": "Search",
           "rel": "search",
           "classes": "nav-secondary__item nav-secondary__item--search",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Alerts",
           "classes": "nav-secondary__item nav-secondary__item--alert",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
@@ -65,7 +72,8 @@
           "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
-            "classes": "button--default button--extra-small"
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
       ]
@@ -419,15 +427,17 @@
   "breadcrumb": {
     "items": [
       {
-        "url": "",
+        "url": "#",
         "name": "Research Article"
       }
     ]
   },
   "viewSelector": {
-    "articleUrl": "#articleUrl",
-    "figureUrl": "#figureUrl",
+    "primaryUrl": "#articleUrl",
+    "secondaryUrl": "#figureUrl",
     "sideBySideUrl": "https://lens.elifesciences.org/09560",
+    "primaryLabel": "Article",
+    "secondaryLabel": "Figures and data",
     "otherLinks": [{ "name": "Executable code", "url": "#rds" }],
     "jumpLinks": {
       "links": [
@@ -660,8 +670,10 @@
           "nonDoiLink": "https://example.com/a-non-doi-link",
 
           "downloadLink": {
-            "url": "#downloadLink",
-            "name": "Download me",
+            "link": {
+              "url": "#downloadLink",
+              "name": "Download me"
+            },
             "fileName": "#download-me.png"
           }
         },
@@ -678,8 +690,10 @@
           },
 
           "downloadLink": {
-            "url": "#downloadLink",
-            "name": "Download me",
+            "link": {
+              "url": "#downloadLink",
+              "name": "Download me"
+            },
             "fileName": "#download-me.png"
           }
         }
@@ -725,20 +739,26 @@
           "items": [
             {
               "primary": {
-                "name": "Article PDF",
-                "url": "#"
+                "link": {
+                  "name": "Article PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Figures PDF",
-                "url": "#"
+                "link": {
+                  "name": "Figures PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Executable version",
-                "url": "#eraLink"
+                "link": {
+                  "name": "Executable version",
+                  "url": "#eraLink"
+                }
               },
               "secondary": {
                 "name": "What are executable versions?",

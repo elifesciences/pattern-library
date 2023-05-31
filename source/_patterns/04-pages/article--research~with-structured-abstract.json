@@ -5,45 +5,48 @@
     "title": {
       "homePagePath": "#"
     },
-    "primaryLinks":
-    {
+    "primaryLinks": {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "path": "#mainMenu"
+          "path": "#mainMenu",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
 
-    "secondaryLinks":
-    {
+    "secondaryLinks": {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
@@ -51,13 +54,15 @@
           "text": "Search",
           "rel": "search",
           "classes": "nav-secondary__item nav-secondary__item--search",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Alerts",
           "classes": "nav-secondary__item nav-secondary__item--alert",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
@@ -65,7 +70,8 @@
           "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
-            "classes": "button--default button--extra-small"
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
       ]
@@ -419,16 +425,23 @@
   "breadcrumb": {
     "items": [
       {
-        "url": "",
+        "url": "#",
         "name": "Research Article"
       }
     ]
   },
   "viewSelector": {
-    "articleUrl": "#articleUrl",
-    "figureUrl": "#figureUrl",
+    "primaryUrl": "#articleUrl",
+    "secondaryUrl": "#figureUrl",
     "sideBySideUrl": "https://lens.elifesciences.org/09560",
-    "otherLinks": [{ "name": "Executable code", "url": "#rds" }],
+    "primaryLabel": "Article",
+    "secondaryLabel": "Figures and data",
+    "otherLinks": [
+      {
+        "name": "Executable code",
+        "url": "#rds"
+      }
+    ],
     "jumpLinks": {
       "links": [
         {
@@ -550,20 +563,26 @@
           "items": [
             {
               "primary": {
-                "name": "Article PDF",
-                "url": "#"
+                "link": {
+                  "name": "Article PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Figures PDF",
-                "url": "#"
+                "link": {
+                  "name": "Figures PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Executable version",
-                "url": "#eraLink"
+                "link": {
+                  "name": "Executable version",
+                  "url": "#eraLink"
+                }
               },
               "secondary": {
                 "name": "What are executable versions?",
@@ -585,17 +604,58 @@
     },
     "links": {
       "items": [
-        {"name": "Home", "url": "#", "classes": "hidden-wide"},
-        {"name": "Magazine", "url": "#", "classes": "hidden-wide"},
-        {"name": "Community", "url": "#ins", "classes": "hidden-wide"},
-        {"name": "About", "url": "#abo", "classes": "hidden-wide"},
-        {"name": "Research categories", "url": "#res"},
-        {"name": "Inside eLife", "url": "#", "classes": "end-of-group"},
-        {"name": "Search", "url": "#", "classes": "hidden-wide"},
-        {"name": "Subscribe to alerts", "url": "#", "classes": "end-of-group hidden-wide"},
-        {"name": "Submit your research", "url": "#", "classes": "hidden-wide"},
-        {"name": "Author guide", "url": "#"},
-        {"name": "Reviewer guide", "url": "#"}
+        {
+          "name": "Home",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Magazine",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Community",
+          "url": "#ins",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "About",
+          "url": "#abo",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Research categories",
+          "url": "#res"
+        },
+        {
+          "name": "Inside eLife",
+          "url": "#",
+          "classes": "end-of-group"
+        },
+        {
+          "name": "Search",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Subscribe to alerts",
+          "url": "#",
+          "classes": "end-of-group hidden-wide"
+        },
+        {
+          "name": "Submit your research",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Author guide",
+          "url": "#"
+        },
+        {
+          "name": "Reviewer guide",
+          "url": "#"
+        }
       ]
     },
     "button": {
@@ -1157,34 +1217,38 @@
   ],
 
   "related": {
-    "rootClasses": "teaser--secondary teaser--related",
+    "items": [
+      {
+        "rootClasses": "teaser--secondary teaser--related",
 
-    "contextLabel": {
-      "list": [
-        {
-          "name": "Built upon by",
-          "url": null
-        }
-      ]
-    },
-    "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
-    "url": "#",
-
-    "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
-
-    "footer": {
-      "meta": {
+        "contextLabel": {
+          "list": [
+            {
+              "name": "Built upon by",
+              "url": null
+            }
+          ]
+        },
+        "title": "Stem cells and  fluid flow drive cyst formation in an invertebrate excretory organ",
         "url": "#",
-        "text": "Research advance",
-        "date": {
-          "forHuman": {
-            "dayOfMonth": 16,
-            "month": "Dec",
-            "year": 2015
-          },
-          "forMachine": "2015-12-16"
+        "ariaLabel": "Descriptive and accessible label",
+        "secondaryInfo": "Hanh Thi-Kim Vu, Jochen C Rink ... Alejandro Sánchez Alvarado",
+
+        "footer": {
+          "meta": {
+            "url": "#",
+            "text": "Research advance",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 16,
+                "month": "Dec",
+                "year": 2015
+              },
+              "forMachine": "2015-12-16"
+            }
+          }
         }
       }
-    }
+    ]
   }
 }

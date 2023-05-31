@@ -4,45 +4,48 @@
     "title": {
       "homePagePath": "#"
     },
-    "primaryLinks":
-    {
+    "primaryLinks": {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "path": "#mainMenu"
+          "path": "#mainMenu",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
 
-    "secondaryLinks":
-    {
+    "secondaryLinks": {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
@@ -50,13 +53,15 @@
           "text": "Search",
           "rel": "search",
           "classes": "nav-secondary__item nav-secondary__item--search",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Alerts",
           "classes": "nav-secondary__item nav-secondary__item--alert",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
@@ -64,7 +69,8 @@
           "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
-            "classes": "button--default button--extra-small"
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
       ]
@@ -128,11 +134,11 @@
   "breadcrumb": {
     "items": [
       {
-        "url": "",
+        "url": "#",
         "name": "Magazine"
       },
       {
-        "url": "",
+        "url": "#",
         "name": "Digest"
       }
     ]
@@ -171,17 +177,58 @@
     },
     "links": {
       "items": [
-        {"name": "Home", "url": "#", "classes": "hidden-wide"},
-        {"name": "Magazine", "url": "#", "classes": "hidden-wide"},
-        {"name": "Community", "url": "#ins", "classes": "hidden-wide"},
-        {"name": "About", "url": "#abo", "classes": "hidden-wide"},
-        {"name": "Research categories", "url": "#res"},
-        {"name": "Inside eLife", "url": "#", "classes": "end-of-group"},
-        {"name": "Search", "url": "#", "classes": "hidden-wide"},
-        {"name": "Subscribe to alerts", "url": "#", "classes": "end-of-group hidden-wide"},
-        {"name": "Submit your research", "url": "#", "classes": "hidden-wide"},
-        {"name": "Author guide", "url": "#"},
-        {"name": "Reviewer guide", "url": "#"}
+        {
+          "name": "Home",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Magazine",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Community",
+          "url": "#ins",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "About",
+          "url": "#abo",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Research categories",
+          "url": "#res"
+        },
+        {
+          "name": "Inside eLife",
+          "url": "#",
+          "classes": "end-of-group"
+        },
+        {
+          "name": "Search",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Subscribe to alerts",
+          "url": "#",
+          "classes": "end-of-group hidden-wide"
+        },
+        {
+          "name": "Submit your research",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Author guide",
+          "url": "#"
+        },
+        {
+          "name": "Reviewer guide",
+          "url": "#"
+        }
       ]
     },
     "button": {
@@ -202,43 +249,65 @@
     "privacyLabel": "Privacy notice"
   },
   "footerMenuLinks": [
-    { "name": "About", "url": "#" },
-    { "name": "Alerts", "url": "#" },
-    { "name": "Contact", "url": "#" },
-    { "name": "Who we work with", "url": "#" },
-    { "name": "Contact", "url": "#" },
-    { "name": "Terms & Policy", "url": "#" }
+    {
+      "name": "About",
+      "url": "#"
+    },
+    {
+      "name": "Alerts",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Who we work with",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Terms & Policy",
+      "url": "#"
+    }
   ],
 
   "related": {
-    "rootClasses": "teaser--secondary teaser--related",
+    "items": [
+      {
+        "rootClasses": "teaser--secondary teaser--related",
 
-    "contextLabel": {
-      "list": [
-        {
-          "name": "Related to",
-          "url": null
-        }
-      ]
-    },
-    "title": "Striatal fast-spiking interneurons selectively modulate circuit output and are required for habitual behavior",
-    "url": "#",
-
-    "secondaryInfo": "Justin K O'Hare, Haofang Li ... Nicole Calakos",
-
-    "footer": {
-      "meta": {
+        "contextLabel": {
+          "list": [
+            {
+              "name": "Related to",
+              "url": null
+            }
+          ]
+        },
+        "title": "Striatal fast-spiking interneurons selectively modulate circuit output and are required for habitual behavior",
         "url": "#",
-        "text": "Research article",
-        "date": {
-          "forHuman": {
-            "dayOfMonth": 5,
-            "month": "Sept",
-            "year": 2017
-          },
-          "forMachine": "2017-09-05"
+        "ariaLabel": "Descriptive and accessible label",
+        "secondaryInfo": "Justin K O'Hare, Haofang Li ... Nicole Calakos",
+
+        "footer": {
+          "meta": {
+            "url": "#",
+            "text": "Research article",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 5,
+                "month": "Sept",
+                "year": 2017
+              },
+              "forMachine": "2017-09-05"
+            }
+          }
         }
       }
-    }
+    ]
   }
 }

@@ -26,6 +26,7 @@
 
 .content-header-journal {
   text-align: left;
+  position: static;
 
   &.wrapper {
     &:after {
@@ -44,6 +45,16 @@
 
 .content-header-image-wrapper--no-credit {
   @include padding($content-header-image-credit-height, "bottom");
+}
+
+.content-header__top {
+  @include margin($content-header-padding / 2, "top");
+  text-align: left;
+
+  & ~ .content-header__body {
+    @include margin($content-header-padding, "top");
+    @include margin($content-header-padding * 2, "bottom");
+  }
 }
 
 .content-header__body {
@@ -376,11 +387,11 @@
   list-style-type: none;
   padding: 0;
 
-  & .content-header__subject {
+  & .content-header__subject_link {
     font-weight: bold;
   }
 
-  & .content-header__subject:after {
+  & .content-header__subject_link:after {
     content: ", ";
   }
 
@@ -391,7 +402,7 @@
 
 .content-header__subject_list_item:last-child {
 
-  & .content-header__subject:after {
+  & .content-header__subject_link:after {
     content: "";
   }
 
@@ -426,10 +437,13 @@
   order: 1;
 
   .content-header-journal & {
+    @include margin(0 0 0 6);
     order: 0;
+  }
 
-    @media only all and (min-width: #{get-rem-from-px($bkpt-content-header--small-width)}em) {
-      @include margin(0 0 0 6);
+  .content-header-journal.content-header__has-aside & {
+    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small - 1)}em) {
+      @include margin(0);
     }
   }
 
@@ -495,7 +509,7 @@ $iconlist: cc oa;
   }
 }
 
-.content-header__download_link {
+.side-section-wrapper__download_link {
   grid-row: 1;
   grid-column-end: 4;
   justify-self: end;
@@ -534,7 +548,7 @@ $iconlist: cc oa;
   }
 }
 
-.content-header-grid__side {
+.side-section {
   .content-header__download_icon {
     width: #{$content-header-download-width}px;
   }

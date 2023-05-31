@@ -11,31 +11,36 @@
         {
           "text": "Menu",
           "classes": "nav-primary__item nav-primary__item--first",
-          "path": "#mainMenu"
+          "path": "#mainMenu",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Home",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Magazine",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Community",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "About",
           "path": "#",
-          "classes": "nav-primary__item"
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
         }
       ]
     },
@@ -49,13 +54,15 @@
           "text": "Search",
           "rel": "search",
           "classes": "nav-secondary__item nav-secondary__item--search",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
           "text": "Alerts",
           "classes": "nav-secondary__item nav-secondary__item--alert",
-          "path": "#"
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
         },
 
         {
@@ -63,7 +70,8 @@
           "path": "#",
           "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
           "button": {
-            "classes": "button--default button--extra-small"
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
           }
         }
       ]
@@ -98,8 +106,10 @@
     },
     "items": [
       {
-        "title": "Limb evolution in cephalopods",
-        "url": "#link-to-article",
+        "link": {
+          "url": "#link-to-article",
+          "name": "Limb evolution in cephalopods"
+        },
         "authors": "Oscar A Tarazona, Davys H Lopez, Martin J Cohn",
         "summary": "The arms and tentacles of cephalopods are built by the same genetic mechanisms as vertebrate limbs and insect wings.",
         "meta": {
@@ -122,8 +132,10 @@
         }
       },
       {
-        "title": "Preprints and peer review - share your views in our survey",
-        "url": "#link-to-article",
+        "link": {
+          "url": "#link-to-article",
+          "name": "Preprints and peer review - share your views in our survey"
+        },
         "summary": "We would like to know what researchers think of the preprint and peer review landscape in 2022 and beyond.",
         "meta": {
           "url": "#",
@@ -145,8 +157,10 @@
         }
       },
       {
-        "title": "Sparks of Change",
-        "url": "#link-to-article",
+        "link": {
+          "url": "#link-to-article",
+          "name": "Sparks of Change"
+        },
         "summary": "Tell us how the culture of research is changing.",
         "meta": {
           "url": "#LinkToResearchArticles",
@@ -277,6 +291,14 @@
     ]
   },
 
+  "viewSelector": {
+    "primaryUrl": "#primaryListing",
+    "secondaryUrl": "#secondaryListing",
+    "primaryLabel": "Latest research",
+    "secondaryLabel": "Magazine",
+    "isTabSelector": true
+  },
+
   "mainTeasers": [
     {
 
@@ -293,6 +315,7 @@
           },
           "title": "Quorum sensing control of Type VI secretion factors restricts the proliferation of quorum-sensing mutants",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Charlotte Majerczyk, Emily Schneider, E Peter Greenberg",
           "content": "Quorum-sensing control of <i>Burkholderia thailandensis</i> toxin and immunity pairs serves to police quorum-sensing mutants and may represent a general strategy whereby cooperators can police mutants.",
           "footer": {
@@ -339,6 +362,7 @@
           },
           "title": "Mapping global environmental suitability for Zika virus",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "footer": {
             "meta": {
               "text": "Research article",
@@ -374,6 +398,7 @@
           },
           "title": "Evolutionary diversification of the trypanosome haptoglobin-haemoglobin receptor from an ancestral haemoglobin receptor",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Harriet Lane-Serff, Paula MacGregor ... Mark Carrington",
           "footer": {
             "meta": {
@@ -409,6 +434,7 @@
           },
           "title": "The global antigenic diversity of swine influenza A viruses",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Nicola S Lewis, Colin A Russell ... Amy L Vincent",
           "content": "Swine populations worldwide are sporadically infected by influenza viruses from humans and birds leading to geographically heterogeneous swine influenza virus populations that pose epizootic and pandemic threats.",
           "footer": {
@@ -454,6 +480,7 @@
           },
           "title": "Recurring patterns in bacterioplankton dynamics during coastal spring algae blooms",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Hanno Teeling, Bernhard M Fuchs ... Rudolf I Amann",
           "content": "Dynamic successive blooms of clades of planktonic marine bacteria that can be observed during blooms of marine algae follow discernible patterns, part of which might be explained by substrate-induced forcing.",
           "footer": {
@@ -507,6 +534,7 @@
           },
           "title": "The parasite’s new clothes",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Mark S Pearson, Alex Loukas",
           "footer": {
             "meta": {
@@ -548,6 +576,7 @@
           },
           "title": "Catch me if you can",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Emilie Bourdonnay, Thomas Henry",
           "footer": {
             "meta": {
@@ -581,6 +610,7 @@
           },
           "title": "Autophagy under attack",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Paul de Figueiredo, Marty Dickman",
           "footer": {
             "meta": {
@@ -614,6 +644,7 @@
           },
           "title": "Intracellular pathogens under attack",
           "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
           "secondaryInfo": "Petr Broz",
           "footer": {
             "meta": {

@@ -42,7 +42,7 @@
     @include margin(0, "bottom");
   }
 
-  .content-header-grid__side-popup-block & {
+  .side-section-wrapper & {
     display: flex;
 
     li {
@@ -51,8 +51,13 @@
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
 
-        &:first-child {
+        &:first-child,
+        &:last-child {
           display: none;
+        }
+
+        &:nth-child(5) {
+          @include margin(0, "right");
         }
       }
     }
@@ -98,7 +103,7 @@
     padding: 1px 0;
   }
 
-  .content-header-grid__side-popup-block & {
+  .side-section-wrapper & {
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       margin: 0 6px;
 

@@ -78,12 +78,6 @@
   }
 
   .content-header__icons {
-    @include margin(6, "top");
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      @include margin(0, "top");
-    }
-
     li {
       display: inline-block;
     }
@@ -113,6 +107,10 @@
       grid-column: 2/12;
       padding-right: 0;
     }
+
+    .wrapper--content-with-header-and-aside & {
+      grid-column: 2/12;
+    }
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
@@ -137,11 +135,11 @@
   display: flex;
 }
 
-// Grid Side
-.content-header-grid__side {
+// Side section
+.side-section {
   display: grid;
 
-  .content-header-grid__side-popup-block {
+  .side-section-wrapper {
     @include margin(12, "top");
     display: grid;
 
@@ -179,7 +177,7 @@
   }
 }
 
-.content-header-grid__side-popup-block__inner-block {
+.side-section-wrapper__inner-block {
   grid-row: 1;
   justify-self: end;
 
@@ -190,7 +188,7 @@
   }
 }
 
-.content-header-grid__side-popup-block__list {
+.side-section-wrapper__list {
   @include margin(0, "bottom");
   @include padding(0);
   @include padding(12, "bottom");
@@ -227,7 +225,7 @@
   }
 }
 
-.content-header-grid__side-popup-block__link {
+.side-section-wrapper__link {
   @include font-size-and-vertical-height(14,24);
   display: flex;
 
@@ -245,7 +243,7 @@
   cursor: pointer;
 }
 
-.content-header__share-listing {
+.side-section-wrapper__share-listing {
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     display: none;
   }
@@ -303,11 +301,97 @@
 
   .content-header-grid__main & {
     padding-right: 0;
-    grid-column: 1/13;;
+    grid-column: 1/13;
   }
 }
 
 .content-header__one-column-container {
   display: flex;
   margin-left: auto;
+}
+
+.content-header__has-aside {
+  .content-container-grid {
+    display: block;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: grid;
+    }
+
+    .content-header-grid-top,
+    .content-header-grid__main,
+    .divider {
+      @include margin(0, "left");
+    }
+
+    .divider {
+      display: none;
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+        display: block;
+      }
+    }
+  }
+
+  .content-header__icons {
+    vertical-align: middle;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-small)}em) {
+      display: inline-block;
+    }
+  }
+
+  .content-header-grid-top {
+    @include margin(12, "bottom");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include margin(24, "bottom");
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include margin(12, "bottom");
+    }
+  }
+
+  .content-header-grid__main {
+    @include margin(24, "bottom");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include margin(36, "bottom");
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      @include padding(0, "right");
+    }
+
+    .content-header__body {
+      @include margin(24, "bottom");
+    }
+
+    .content-header__footer {
+      .content-header__footer-column-left {
+        display: inline-block;
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+          display: flex;
+        }
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          @include margin(24, "bottom");
+        }
+      }
+    }
+
+    .authors {
+      @include margin(24, "bottom");
+    }
+
+    .author_link_highlight {
+      @include padding(0, "top");
+    }
+
+    .author_list {
+      @include padding(12, "bottom");
+    }
+  }
 }

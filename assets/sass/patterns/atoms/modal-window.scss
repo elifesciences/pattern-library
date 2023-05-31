@@ -13,6 +13,7 @@
   border-radius: 3px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.22);
   display: grid;
+  font-family: $font-secondary;
   margin: 0;
   padding: 36px;
 
@@ -27,6 +28,7 @@
 
   h6 {
     @include font-size-and-vertical-height($font-size-h6-in-px);
+    @include padding(6, "bottom");
     grid-column: 1/3;
     grid-row: 1;
     justify-self: start;
@@ -34,12 +36,27 @@
   }
 
   .social-media-sharers {
-    @media only all and (max-width: #{get-rem-from-px($bkpt-site--small - 1)}em) {
-      @include padding(24, "top");
-      display: flex;
-      grid-column: 1/3;
-      grid-row: 4;
-      justify-content: center;
+    @include margin(0, "bottom");
+    display: flex;
+    grid-column: 1/3;
+    grid-row: 4;
+    justify-content: center;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      grid-row: unset;
+      justify-content: left;
+
+      li {
+        @include margin(0 4);
+
+        &:first-child {
+          @include margin(0, "left");
+
+          a {
+            @include margin(0, "left");
+          }
+        }
+      }
     }
   }
 
@@ -87,18 +104,35 @@
 }
 
 .modal-content__body {
+  @include margin(30, "top");
   display: grid;
   grid-column: 1/3;
+  grid-template-columns: 1fr 224px;
 
   .button {
-    @include margin(24, "bottom");
+    @include margin(36, "bottom");
     justify-self: center;
     grid-column: 1/3;
     grid-row: 3;
+
+    &.button--default {
+      @include padding(15 18);
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+        justify-self: right;
+        grid-column: 2/3;
+        grid-row: unset;
+      }
+    }
   }
 
   .form-item {
+    @include margin(36, "bottom");
     grid-column: 1/3;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      grid-column: 1/2;
+    }
   }
 }
 

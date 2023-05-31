@@ -199,7 +199,8 @@ $arrow-size: 5;
 }
 
 .article-section--highlighted {
-  @include padding($blg-space-smallish-in-px);
+  @include margin($blg-space-smallish-in-px, "bottom");
+  @include padding($blg-space-small-in-px $blg-space-smallish-in-px $blg-space-smallish-in-px $blg-space-smallish-in-px);
   background: $color-text-ui-code;
   box-sizing: content-box;
 
@@ -219,7 +220,7 @@ $arrow-size: 5;
 
     a.doi__link {
       border-bottom: none;
-      color: $color-text-secondary;
+      color: $color-link-secondary;
     }
   }
 }
@@ -240,7 +241,11 @@ $arrow-size: 5;
 
       .article-section__related_link {
         border-bottom: none;
-        color: $color-primary;
+        color: $color-link-primary;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
@@ -252,6 +257,19 @@ $arrow-size: 5;
           content: "|";
           margin-left: 0;
           padding-left: 0;
+        }
+      }
+    }
+
+    &.article-section__separator-circle {
+      .article-section__related_item {
+        font-weight: bold;
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+          &:not(:last-child)::after {
+            color: $color-text;
+            content: "\00a0\2219\00a0";
+          }
         }
       }
     }
@@ -278,8 +296,11 @@ $arrow-size: 5;
   }
 }
 
-.main-content-grid {
+.content--one-column {
+  @include padding(48, "bottom");
+}
 
+.main-content-grid {
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     grid-column: 2/12;
     grid-row: 2;
@@ -291,6 +312,10 @@ $arrow-size: 5;
 
     .content--narrow-column & {
       grid-column: 2/9;
+    }
+
+    .content--one-column & {
+      grid-column: 2/12;
     }
   }
 
@@ -309,6 +334,12 @@ $arrow-size: 5;
       @include margin(-24, "left");
       @include margin(0, "right");
       grid-column: 3/9;
+    }
+
+    .content--one-column & {
+      grid-column: 3/12;
+      @include margin(-24, "left");
+      @include padding(46, "right");
     }
   }
 }

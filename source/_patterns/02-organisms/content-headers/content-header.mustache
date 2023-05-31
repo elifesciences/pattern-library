@@ -22,6 +22,12 @@
     </picture>
   {{/image}}
 
+  {{#breadcrumb}}
+    <div class="content-header__top">
+      {{> atoms-breadcrumb}}
+    </div>
+  {{/breadcrumb}}
+
   {{#header}}
     {{#hasProfile}}
       <div class="content-header__profile_wrapper">
@@ -66,9 +72,7 @@
         <ol class="content-header__subject_list">
           {{#subjects}}
             <li class="content-header__subject_list_item">
-              <a href="{{url}}" class="content-header__subject_link">
-                <span class="content-header__subject">{{{name}}}</span>
-              </a>
+              <a href="{{url}}" class="content-header__subject_link">{{{name}}}</a>
             </li>
           {{/subjects}}
         </ol>
@@ -87,7 +91,7 @@
     {{/licence}}
 
     {{#download}}
-      <a href="{{download}}" class="content-header__download_link">
+      <a href="{{download}}" class="side-section-wrapper__download_link">
         <picture>
           {{#image}}
             <source srcset="{{#assetRewrite}}{{assetsPath}}/img/icons/download-full-reverse.svg{{/assetRewrite}}" type="image/svg+xml" media="(min-width: 45.625em)">

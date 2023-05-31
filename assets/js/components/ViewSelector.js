@@ -18,6 +18,46 @@ module.exports = class ViewSelector {
     this.jumpLinks = this.$elm.querySelectorAll('.view-selector__jump_link');
     this.cssFixedClassName = 'view-selector--fixed';
     this.$navDetect = this.doc.querySelector('.content-container-grid');
+    this.isTabSelector = this.$elm.classList.contains('button--switch-selector');
+    this.primarySelector = null;
+    this.secondarySelector = null;
+    this.primaryColumn = null;
+    this.secondaryColumn = null;
+
+    if (this.isTabSelector) {
+      this.primarySelector = this.$elm.querySelector('.view-selector__link--primary');
+      this.secondarySelector = this.$elm.querySelector('.view-selector__link--secondary');
+
+      // When isTabSelector is true we can assume primary and secondary links commence with #.
+      this.primaryColumn = this.doc.getElementById(this.primarySelector.getAttribute('href').replace(/^\#/, ''));
+      this.secondaryColumn = this.doc.getElementById(this.secondarySelector.getAttribute('href').replace(/^\#/, ''));
+
+      const classActiveViewSelector = 'view-selector__list-item--active';
+      const classDisplayOnNarrow = 'display-narrow';
+
+      this.primarySelector.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.selectedSection(
+            classActiveViewSelector,
+            this.primarySelector,
+            this.primaryColumn,
+            this.secondaryColumn,
+            classDisplayOnNarrow);
+      });
+
+      this.secondarySelector.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.selectedSection(
+            classActiveViewSelector,
+            this.secondarySelector,
+            this.secondaryColumn,
+            this.primaryColumn,
+            classDisplayOnNarrow);
+      });
+
+      this.hideInactiveSectionInitially
+          (this.primaryColumn, this.secondaryColumn, classActiveViewSelector, classDisplayOnNarrow);
+    }
 
     if (this.sideBySideViewAvailable()) {
       const $header = this.doc.getElementById('siteHeader');
@@ -33,26 +73,27 @@ module.exports = class ViewSelector {
       this.insertSideBySideListItem();
     }
 
-    this.mainTarget = this.doc.querySelector('.main');
-    if (!this.mainTarget) {
-      return;
+    if (this.jumpLinks.length > 0) {
+      this.mainTarget = this.doc.querySelector('.main');
+      if (!this.mainTarget) {
+        return;
+      }
+
+      this.collapsibleSectionHeadings = ViewSelector.getAllCollapsibleSectionHeadings(this.doc);
+      this.isScrollingHandled = false;
+
+      const scrollingHandler = utils.throttle(() => {
+        this.handleScrolling();
+      }, 50);
+
+      if (this.isViewportWideEnoughForJumpMenu()) {
+        this.startHandlingScrolling(scrollingHandler, this.handleScrolling);
+      }
+
+      this.window.addEventListener('resize', utils.throttle(() => {
+        this.handleResize(scrollingHandler, this.handleScrolling);
+      }, 200));
     }
-
-    this.collapsibleSectionHeadings = ViewSelector.getAllCollapsibleSectionHeadings(this.doc);
-    this.isScrollingHandled = false;
-
-    const scrollingHandler = utils.throttle(() => {
-      this.handleScrolling();
-    }, 50);
-
-    if (this.isViewportWideEnoughForJumpMenu()) {
-      this.startHandlingScrolling(scrollingHandler, this.handleScrolling);
-    }
-
-    this.window.addEventListener('resize', utils.throttle(() => {
-      this.handleResize(scrollingHandler, this.handleScrolling);
-    }, 200));
-
   }
 
   static getAllCollapsibleSectionHeadings (doc) {
@@ -223,7 +264,7 @@ module.exports = class ViewSelector {
 
   insertSideBySideListItem() {
     const $list = this.doc.querySelector('.view-selector__list');
-    const $attachBefore = this.doc.querySelector('.view-selector__list-item--figures + .view-selector__list-item');
+    const $attachBefore = this.doc.querySelector('.view-selector__list-item--secondary + .view-selector__list-item');
 
     if (!$attachBefore) {
       return;
@@ -254,5 +295,29 @@ module.exports = class ViewSelector {
       this.sideBySideView.open();
     });
     return $listItem;
+  }
+
+  selectedSection(classSelector, clickedElement, visibleArea, hiddenArea, classDisplayOnNarrow) {
+    this.addActiveClass(classSelector, clickedElement);
+    this.showSelectedArea(visibleArea, hiddenArea, classDisplayOnNarrow);
+  }
+
+  addActiveClass(classSelector, clickedElement) {
+    const activeElement = this.$elm.querySelector('.' + classSelector);
+    activeElement.classList.remove(classSelector);
+    clickedElement.parentNode.classList.add(classSelector);
+  }
+
+  showSelectedArea(visibleArea, hiddenArea, classDisplayOnNarrow) {
+    visibleArea.classList.remove(classDisplayOnNarrow);
+    hiddenArea.classList.add(classDisplayOnNarrow);
+  }
+
+  hideInactiveSectionInitially(primaryColumn, secondaryColumn, classActiveViewSelector, classDisplayOnNarrow) {
+    if (this.primarySelector.parentNode.classList.contains(classActiveViewSelector)) {
+      secondaryColumn.classList.add(classDisplayOnNarrow);
+    } else {
+      primaryColumn.classList.add(classDisplayOnNarrow);
+    }
   }
 };

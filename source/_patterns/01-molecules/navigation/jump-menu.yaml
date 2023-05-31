@@ -1,0 +1,8 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  items:
+    type: array
+    minItems: 2
+    items:
+      $ref: ../../../non-pattern-schema/link.yaml

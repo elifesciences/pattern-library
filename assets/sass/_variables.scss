@@ -7,13 +7,18 @@ $color-primary: #087acc;
 $color-primary-dark: #0769b0;
 $color-primary-light: #b3e5fc;
 
+$color-link-primary: #0b70b9;
+$color-link-secondary: #6d6d6d;
+
 $color-text: #212121;
 $color-text-secondary: #757575;
 $color-text-secondary-dark: #6e6e6e;
 $color-text-placeholder: #bdbdbd;
 $color-text-dividers: #e0e0e0;
 $color-text-ui-background: #fff;
+$color-text-ui-background-light-gray: #edeff4;
 $color-text-ui-background-secondary: #f7f7f7;
+$color-text-ui-background-secondary-grey: #d7d9de;
 $color-text-ui-background-secondary-light: #f5f7fa;
 $color-text-ui-background-hue: #f5f5f5;
 $color-text-ui-code: #f7f7f7;
@@ -79,7 +84,6 @@ $content-header-image-height--narrow-screen: 264;
 $content-header-image-height--medium-width-screen: 288;
 $content-header-image-height--wide-screen: 336;
 $content-header-image-credit-height: 48;
-$carousel-height: 400;
 
 $button-height-extra-small: 24;
 $button-height-small: 36;
@@ -133,6 +137,8 @@ $bkpt-site--small: 480;
 $bkpt-site--medium: 730;
 $bkpt-site--wide: 900;
 $bkpt-site--x-wide: 1200;
+
+$bkpt-site--extended-wide: 1000;
 
 // TODO: Replace the use of these with site breakpoints above
 $bkpt-content-header--small-width: $bkpt-site--small;

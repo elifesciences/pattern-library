@@ -27,6 +27,10 @@
         color: $color-primary;
       }
     }
+
+    .breadcrumb-item__text {
+      color: $color-text-secondary;
+    }
   }
 
 }

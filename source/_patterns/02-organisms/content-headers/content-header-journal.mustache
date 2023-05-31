@@ -1,5 +1,5 @@
 <header
-  class="content-header content-header-journal wrapper{{#isMagazine}} page--magazine{{/isMagazine}}{{#header.possible}} content-header--header{{/header.possible}}{{#socialMediaSharers}} content-header--has-social-media-sharers{{/socialMediaSharers}}"
+  class="content-header content-header-journal wrapper{{#isMagazine}} page--magazine{{/isMagazine}}{{#header.possible}} content-header--header{{/header.possible}}{{#socialMediaSharers}} content-header--has-social-media-sharers{{/socialMediaSharers}}{{#hasAside}} content-header__has-aside{{/hasAside}}"
   data-behaviour="ContentHeader">
 
   <div class="content-container-grid{{#isOneColumn}} content-header__one-column{{/isOneColumn}}">
@@ -15,9 +15,7 @@
           <ol class="content-header__subject_list">
             {{#subjects}}
               <li class="content-header__subject_list_item">
-                <a href="{{url}}" class="content-header__subject_link">
-                  <span class="content-header__subject">{{{name}}}</span>
-                </a>
+                <a href="{{url}}" class="content-header__subject_link">{{{name}}}</a>
               </li>
             {{/subjects}}
           </ol>
@@ -80,7 +78,7 @@
       {{#isOneColumn}}
         <div class="content-header__one-column-container">
           <div data-hypothesis-trigger>
-            <span class="content-header-grid__side-popup-block__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
+            <span class="side-section-wrapper__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
           </div>
           {{#socialMediaSharers}}
             {{> atoms-social-media-sharers-journal}}
@@ -90,46 +88,48 @@
 
       </div>
     </div>
-    {{^isOneColumn}}
-      <div class="content-header-grid__side">
+    {{^hasAside}}
+      {{^isOneColumn}}
+        <div class="side-section">
 
-        <div class="content-header-grid__side-popup-block">
-          <ul class="content-header-grid__side-popup-block__list">
-            {{#download}}
-              <li>
-                  <a href="{{download}}" class="content-header__download_link content-header-grid__side-popup-block__link">
-                    <span class="svg-background-image download"></span>Download
-                  </a>
+          <div class="side-section-wrapper">
+            <ul class="side-section-wrapper__list">
+              {{#download}}
+                <li>
+                    <a href="{{download}}" class="side-section-wrapper__download_link side-section-wrapper__link">
+                      <span class="svg-background-image download"></span>Download
+                    </a>
+                </li>
+              {{/download}}
+              {{#cite}}
+                <li>
+                  <a href="{{cite}}" id="modalContentCitations" class="side-section-wrapper__link">
+                    <span class="svg-background-image cite"></span>Cite</a>
+                </li>
+              {{/cite}}
+              <li data-hypothesis-trigger>
+                <span class="side-section-wrapper__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span>Comment<span aria-hidden="true"><span data-visible-annotation-count></span> </span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
               </li>
-            {{/download}}
-            {{#cite}}
-              <li>
-                <a href="{{cite}}" id="modalContentCitations" class="content-header-grid__side-popup-block__link">
-                  <span class="svg-background-image cite"></span>Cite</a>
+              <li class="side-section-wrapper__share-listing">
+                <a href="" id="modalContentShare" class="side-section-wrapper__link">
+                <span class="svg-background-image share"></span>Share</a>
               </li>
-            {{/cite}}
-            <li data-hypothesis-trigger>
-              <span class="content-header-grid__side-popup-block__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span>Comment<span aria-hidden="true"><span data-visible-annotation-count></span> </span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
-            </li>
-            <li class="content-header__share-listing">
-              <a href="" id="modalContentShare" class="content-header-grid__side-popup-block__link">
-              <span class="svg-background-image share"></span>Share</a>
-            </li>
-          </ul>
+            </ul>
 
-          <div class="content-header-grid__side-popup-block__inner-block">
-            {{#socialMediaSharers}}
-              {{> atoms-social-media-sharers-journal}}
-            {{/socialMediaSharers}}
+            <div class="side-section-wrapper__inner-block">
+              {{#socialMediaSharers}}
+                {{> atoms-social-media-sharers-journal}}
+              {{/socialMediaSharers}}
 
-            {{#contextualData}}
-              {{> molecules-contextual-data }}
-            {{/contextualData}}
+              {{#contextualData}}
+                {{> molecules-contextual-data }}
+              {{/contextualData}}
+            </div>
           </div>
-        </div>
 
-      </div>
-    {{/isOneColumn}}
+        </div>
+      {{/isOneColumn}}
+    {{/hasAside}}
     <div class="divider"></div>
   </div>
 

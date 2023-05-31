@@ -2,8 +2,10 @@
   "classes": "grid-listing--block-link",
   "blockLinks": [
     {
-      "text": "Biochemistry",
-      "url": "#Biochemistry",
+      "link": {
+        "url": "#Biochemistry",
+        "name": "Biochemistry"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -13,8 +15,10 @@
       }
     },
     {
-      "text": "Biophysics and structural biology",
-      "url": "#Biophysics",
+      "link": {
+        "url": "#Biophysics",
+        "name": "Biophysics and structural biology"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -24,8 +28,10 @@
       }
     },
     {
-      "text": "Cell Biology",
-      "url": "#Cell",
+      "link": {
+        "url": "#Cell",
+        "name": "Cell Biology"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -35,8 +41,10 @@
       }
     },
     {
-      "text": "Computational and systems biology",
-      "url": "#Computational",
+      "link": {
+        "url": "#Computational",
+        "name": "Computational and systems biology"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -46,8 +54,10 @@
       }
     },
     {
-      "text": "Developmental Biology and Stem Cells",
-      "url": "#Developmental",
+      "link": {
+        "url": "#Developmental",
+        "name": "Developmental Biology and Stem Cells"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -57,8 +67,10 @@
       }
     },
     {
-      "text": "Ecology",
-      "url": "#Ecology",
+      "link": {
+        "url": "#Ecology",
+        "name": "Ecology"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -68,8 +80,10 @@
       }
     },
     {
-      "text": "Epidemiology and Global Health",
-      "url": "#Epidemiology",
+      "link": {
+        "url": "#Epidemiology",
+        "name": "Epidemiology and Global Health"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -79,8 +93,10 @@
       }
     },
     {
-      "text": "Genes and Chromosomes",
-      "url": "#Genes",
+      "link": {
+        "url": "#Genes",
+        "name": "Genes and Chromosomes"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -90,8 +106,10 @@
       }
     },
     {
-      "text": "Genomics and Evolutionary Biology",
-      "url": "#Genomics",
+      "link": {
+        "url": "#Genomics",
+        "name": "Genomics and Evolutionary Biology"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -101,8 +119,10 @@
       }
     },
     {
-      "text": "Immunology",
-      "url": "#Immunology",
+      "link": {
+        "url": "#Immunology",
+        "name": "Immunology"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -112,8 +132,10 @@
       }
     },
     {
-      "text": "Medicine",
-      "url": "#Medicine",
+      "link": {
+        "url": "#Medicine",
+        "name": "Medicine"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -123,8 +145,10 @@
       }
     },
     {
-      "text": "Microbiology and Infectious Disease",
-      "url": "#Microbiology",
+      "link": {
+        "url": "#Microbiology",
+        "name": "Microbiology and Infectious Disease"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -134,8 +158,10 @@
       }
     },
     {
-      "text": "Neuroscience",
-      "url": "#Neuroscience",
+      "link": {
+        "url": "#Neuroscience",
+        "name": "Neuroscience"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {
@@ -145,8 +171,10 @@
       }
     },
     {
-      "text": "Plant Biology",
-      "url": "#Plant",
+      "link": {
+        "url": "#Plant",
+        "name": "Plant Biology"
+      },
       "isGridListing": true,
       "image": {
         "fallback": {

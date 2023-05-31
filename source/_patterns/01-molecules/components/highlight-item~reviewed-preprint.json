@@ -1,0 +1,26 @@
+{
+  "link": {
+    "url": "#",
+    "name": "<i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa"
+  },
+  "authors": "Lee R Berger",
+  "summary": "Summary",
+  "meta": {
+    "url": "#",
+    "text": "Reviewed preprint",
+    "date": {
+      "forHuman": {
+        "dayOfMonth": 3,
+        "month": "Nov",
+        "year": 2015
+      },
+      "forMachine": "2015-11-03"
+    }
+  },
+  "image": {
+    "fallback": {
+      "defaultPath": "https://unsplash.it/250/140/",
+      "altText": "Meaningful alt text please."
+    }
+  }
+}

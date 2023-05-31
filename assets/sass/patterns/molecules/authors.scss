@@ -10,7 +10,6 @@
   background-color: transparent;
   border-style: none;
   color: $color-primary;
-  padding-top: 12px;
 
   &:hover {
     text-decoration: underline;
@@ -18,6 +17,7 @@
   }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include padding(1 3);
     padding-top: 0;
   }
 }
@@ -29,7 +29,7 @@
     margin: 0 0 36px;
   }
 
-  @media only all and (max-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only all and (max-width: 45.563rem) {
 
     .content-header-journal & {
       display: contents;
@@ -66,10 +66,6 @@
   list-style-type: none;
   padding: 0;
   text-align: center;
-}
-
-.item_toggle--expanded {
-  display: block;
 }
 
 .author_suffix {
@@ -144,30 +140,52 @@
   font-weight: normal;
 }
 
-.item_toggle--expanded {
+.item_toggle {
+  color: $color-primary;
+  display: inline;
+  list-style-type: none;
+  padding: 0;
 
-  & .item_toggle_cta {
+  &.item_toggle--expanded {
     display: block;
-    transform: rotate(90deg);
-  }
 
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: inline;
+    }
+  }
+}
+
+.item_toggle--collapsed:after {
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    content: "\00a0\00bb";
+  }
+}
+
+.item_toggle--expanded:before {
+  content: "";
+  border: solid $color-primary;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    border: none;
+    content: "\00ab\00a0";
+    padding: 0;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+.item_toggle:hover {
+  cursor: pointer;
 }
 
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-
   .author--last-non-excess .author_separator {
     display: none;
-  }
-
-  .institution--last-non-excess .institution_separator {
-    display: none;
-  }
-
-  .item_toggle {
-    color: $color-primary;
-    display: inline;
-    list-style-type: none;
-    padding: 0;
   }
 
   .item_toggle--institution {
@@ -175,16 +193,7 @@
     font-weight: normal;
   }
 
-  .item_toggle--collapsed:after {
-    content: "\00a0\00bb";
+  .institution--last-non-excess .institution_separator {
+    display: none;
   }
-
-  .item_toggle--expanded:before {
-    content: "\00ab\00a0";
-  }
-
-  .item_toggle:hover {
-    cursor: pointer;
-  }
-
 }
