@@ -99,8 +99,10 @@
     "classes": "grid-listing--block-link",
     "blockLinks": [
       {
-        "text": "Biochemistry",
-        "url": "#Biochemistry",
+        "link": {
+          "name": "Biochemistry",
+          "url": "#Biochemistry"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -110,8 +112,10 @@
         }
       },
       {
-        "text": "Biophysics and structural biology",
-        "url": "#Biophysics",
+        "link": {
+          "name": "Biophysics and structural biology",
+          "url": "#Biophysics"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -121,8 +125,10 @@
         }
       },
       {
-        "text": "Cell Biology",
-        "url": "#Cell",
+        "link": {
+          "name": "Cell Biology",
+          "url": "#Cell"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -132,8 +138,10 @@
         }
       },
       {
-        "text": "Computational and systems biology",
-        "url": "#Computational",
+        "link": {
+          "name": "Computational and systems biology",
+          "url": "#Computational"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -143,8 +151,10 @@
         }
       },
       {
-        "text": "Developmental Biology and Stem Cells",
-        "url": "#Developmental",
+        "link": {
+          "name": "Developmental Biology and Stem Cells",
+          "url": "#Developmental"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -154,8 +164,10 @@
         }
       },
       {
-        "text": "Ecology",
-        "url": "#Ecology",
+        "link": {
+          "name": "Ecology",
+          "url": "#Ecology"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -165,8 +177,10 @@
         }
       },
       {
-        "text": "Epidemiology and Global Health",
-        "url": "#Epidemiology",
+        "link": {
+          "name": "Epidemiology and Global Health",
+          "url": "#Epidemiology"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -176,8 +190,10 @@
         }
       },
       {
-        "text": "Genes and Chromosomes",
-        "url": "#Genes",
+        "link": {
+          "name": "Genes and Chromosomes",
+          "url": "#Genes"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -187,8 +203,10 @@
         }
       },
       {
-        "text": "Genomics and Evolutionary Biology",
-        "url": "#Genomics",
+        "link": {
+          "name": "Genomics and Evolutionary Biology",
+          "url": "#Genomics"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -198,8 +216,10 @@
         }
       },
       {
-        "text": "Immunology",
-        "url": "#Immunology",
+        "link": {
+          "name": "Immunology",
+          "url": "#Immunology"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -209,8 +229,10 @@
         }
       },
       {
-        "text": "Medicine",
-        "url": "#Medicine",
+        "link": {
+          "name": "Medicine",
+          "url": "#Medicine"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -220,8 +242,10 @@
         }
       },
       {
-        "text": "Microbiology and Infectious Disease",
-        "url": "#Microbiology",
+        "link": {
+          "name": "Microbiology and Infectious Disease",
+          "url": "#Microbiology"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -231,8 +255,10 @@
         }
       },
       {
-        "text": "Neuroscience",
-        "url": "#Neuroscience",
+        "link": {
+          "name": "Neuroscience",
+          "url": "#Neuroscience"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
@@ -242,8 +268,10 @@
         }
       },
       {
-        "text": "Plant Biology",
-        "url": "#Plant",
+        "link": {
+          "name": "Plant Biology",
+          "url": "#Plant"
+        },
         "isGridListing": true,
         "image": {
           "fallback": {
