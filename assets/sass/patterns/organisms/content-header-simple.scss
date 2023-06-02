@@ -86,6 +86,8 @@
 }
 
 .header-wrapper {
+  @include padding(36, "top");
+
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     max-width: 640px;
   }
