@@ -11,6 +11,7 @@
     },
     {
       "classes": " tabbed-navigation__tab-label--side-by-side",
+      "isSideBySide": true,
       "name": "Peer review",
       "url": "#"
     }
