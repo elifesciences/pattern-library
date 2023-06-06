@@ -7,6 +7,10 @@
   grid-column: 2/12;
   grid-row: 1;
 
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include margin(36, "bottom");
+  }
+
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
     grid-column: 1/9;
   }
@@ -95,5 +99,9 @@
     flex-wrap: wrap;
     max-height: 72px;
     overflow: hidden;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include padding(36, "right");
   }
 }
