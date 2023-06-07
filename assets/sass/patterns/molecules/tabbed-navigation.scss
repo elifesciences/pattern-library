@@ -36,6 +36,10 @@
       @include margin(0, "left");
       @include margin(0, "right");
     }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include margin(36, "right");
+    }
   }
 }
 
@@ -99,9 +103,5 @@
     flex-wrap: wrap;
     max-height: 72px;
     overflow: hidden;
-  }
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include padding(36, "right");
   }
 }
