@@ -1,0 +1,312 @@
+{
+  "isMagazine": true,
+  "siteHeader": {
+    "title": {
+      "homePagePath": "#"
+    },
+    "primaryLinks": {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "path": "#mainMenu",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Community",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "About",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        }
+      ]
+    },
+
+    "secondaryLinks": {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-secondary__item nav-secondary__item--search",
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--alert",
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Submit your research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
+          "button": {
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
+          }
+        }
+      ]
+    },
+
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
+    }
+  },
+  "contentHeader": {
+    "isOneColumn": true,
+    "title": "Holding the focus",
+    "impactStatement": "A new open source software tool makes it possible for researchers to view cells in living animals in high detail.",
+    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "longTitle": false,
+    "header": {
+      "possible": true,
+      "hasSubjects": false
+    },
+    "authors": false,
+    "meta": {
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 3,
+          "month": "Dec",
+          "year": 2020
+        },
+        "forMachine": "2020-12-03"
+      }
+    }
+  },
+  "contextualData": {
+    "metricsData": {
+      "data": [
+        { "text": "<a href=\"#\"><strong>149</strong> views</a>" }
+      ]
+    }
+  },
+  "breadcrumb": {
+    "items": [
+      {
+        "url": "#",
+        "name": "Magazine"
+      },
+      {
+        "url": "#",
+        "name": "Digest"
+      }
+    ]
+  },
+  "captionedAsset": {
+    "captionText": {
+      "heading": "Images corrected using Galene (right) show much more detail than uncorrected images (left).",
+      "text": "<p class=\"paragraph\">Clip taken from Video 2 of <a href=\"https://doi.org/10.7554/eLife.35800\">Warren et al.</a> (<a href=\"https://creativecommons.org/licenses/by/4.0/\">CC-BY 4.0</a>)</p>"
+    },
+
+    "picture": {
+      "sources": [
+        {
+          "srcset": "https://iiif.elifesciences.org/lax:35800/elife-35800-fig4-v1.tif/full/1234,/0/default.webp 2x, https://iiif.elifesciences.org/lax:35800/elife-35800-fig4-v1.tif/full/617,/0/default.webp 1x",
+          "type": "image/webp"
+        },
+        {
+          "srcset": "https://iiif.elifesciences.org/lax:35800/elife-35800-fig4-v1.tif/full/1234,/0/default.jpg 2x, https://iiif.elifesciences.org/lax:35800/elife-35800-fig4-v1.tif/full/617,/0/default.jpg 1x",
+          "type": "image/jpeg"
+        }
+      ],
+      "fallback": {
+        "defaultPath": "src=\"https://iiif.elifesciences.org/lax:35800/elife-35800-fig4-v1.tif/full/617,/0/default.jpg\"",
+        "altText": "Meaningful alt text here please."
+      }
+    }
+  },
+  "mainContent": "<p class=\"paragraph\">High resolution microscopy makes it possible to image events happening in single cells, or even specific parts of a cell. However, small movements like those due to the heartbeat or breathing can blur the images, making it difficult to study living animals. This is particularly problematic for images that take several minutes to capture.</p><p class=\"paragraph\">Warren et al. have now developed a new open source software tool called Galene. The tool can correct for small movements in images collected by a technique called fluorescence lifetime imaging microscopy (FLIM). As a result, clear images can be captured in situations that were not previously possible. For example, Warren et al. watched cancer cells migrating to the liver of a mouse from the spleen over 24 hours, and, using a fluorescent biosensor, showed that a repurposed drug interferes with how well the cells can attach to the liver. In addition, Warren et al. used the software to take steady 3D images of human skin in a volunteer’s arm, which could be used to study drug penetration.</p><p class=\"paragraph\">Galene could help researchers to study a wide range of biological processes in living animals. The software can also be applied to existing data to clean up blurred images. In the future Galene could be further developed to work with the imaging techniques used during surgery. For example, surgeons could use it to help them find the edges of tumours.</p>",
+  "socialMediaSharersLinks": {
+    "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "linkedInUrl": "https://www.linkedin.com/company/elife-sciences-publications-ltd",
+    "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+  },
+  "mainMenu": {
+    "title": {
+      "homePagePath": "#"
+    },
+    "listHeading": {
+      "heading": "Menu"
+    },
+    "links": {
+      "items": [
+        {
+          "name": "Home",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Magazine",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Community",
+          "url": "#ins",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "About",
+          "url": "#abo",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Research categories",
+          "url": "#res"
+        },
+        {
+          "name": "Inside eLife",
+          "url": "#",
+          "classes": "end-of-group"
+        },
+        {
+          "name": "Search",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Subscribe to alerts",
+          "url": "#",
+          "classes": "end-of-group hidden-wide"
+        },
+        {
+          "name": "Submit your research",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Author guide",
+          "url": "#"
+        },
+        {
+          "name": "Reviewer guide",
+          "url": "#"
+        }
+      ]
+    },
+    "button": {
+      "text": "Back to top",
+      "path": "#siteHeader",
+      "classes": "button--default button--full button--small main_menu__quit"
+    }
+  },
+
+  "emailCta": {
+    "headerText": "Be the first to read new articles from eLife",
+    "button": {
+      "text": "Sign up for email alerts",
+      "classes": "button--default",
+      "path": "https://crm.elifesciences.org/crm/content-alerts"
+    },
+    "privacyUrl": "#",
+    "privacyLabel": "Privacy notice"
+  },
+  "footerMenuLinks": [
+    {
+      "name": "About",
+      "url": "#"
+    },
+    {
+      "name": "Alerts",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Who we work with",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Terms & Policy",
+      "url": "#"
+    }
+  ],
+
+  "related": {
+    "items": [
+      {
+        "rootClasses": "teaser--secondary teaser--related",
+
+        "contextLabel": {
+          "list": [
+            {
+              "name": "Related to",
+              "url": null
+            }
+          ]
+        },
+        "title": "Striatal fast-spiking interneurons selectively modulate circuit output and are required for habitual behavior",
+        "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
+        "secondaryInfo": "Justin K O'Hare, Haofang Li ... Nicole Calakos",
+
+        "footer": {
+          "meta": {
+            "url": "#",
+            "text": "Research article",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 5,
+                "month": "Sept",
+                "year": 2017
+              },
+              "forMachine": "2017-09-05"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

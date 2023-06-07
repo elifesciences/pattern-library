@@ -76,14 +76,14 @@
       {{/isOneColumn}}
 
       {{#isOneColumn}}
-        <div class="content-header__one-column-container">
-          <div data-hypothesis-trigger>
-            <span class="side-section-wrapper__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image comment"></span><span class="visuallyhidden">Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
-          </div>
-          {{#socialMediaSharers}}
+        {{#socialMediaSharers}}
+          <div class="content-header__one-column-container">
+            <div data-hypothesis-trigger>
+              <span class="side-section-wrapper__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image   comment"></span><span class="visuallyhidden">Open annotations (there are currently <span   data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
+            </div>
             {{> atoms-social-media-sharers-journal}}
-          {{/socialMediaSharers}}
-        </div>
+          </div>
+        {{/socialMediaSharers}}
       {{/isOneColumn}}
 
       </div>
@@ -130,7 +130,14 @@
         </div>
       {{/isOneColumn}}
     {{/hasAside}}
-    <div class="divider"></div>
+    
+    {{#hasAside}}
+      <div class="divider"></div>
+    {{/hasAside}}
+      
+    {{#socialMediaSharers}}
+      <div class="divider"></div>
+    {{/socialMediaSharers}}
   </div>
 
 </header>
