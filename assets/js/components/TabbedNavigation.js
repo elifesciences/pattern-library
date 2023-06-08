@@ -31,6 +31,10 @@ module.exports = class TabbedNavigation {
   }
 
   sideBySideViewAvailable() {
+    if (!this.$sideBySide) {
+      return false;
+    }
+    
     const link = this.$sideBySide.dataset.sideBySideLink;
     if (!link) {
       return false;
