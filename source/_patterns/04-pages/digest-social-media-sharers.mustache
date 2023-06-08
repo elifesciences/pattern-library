@@ -1,0 +1,67 @@
+<div class="global-wrapper page--magazine page--wrapper" data-item-type="digest">
+  <div class="global-inner">
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+    <main role="main" class="main blg-margin-bottom-large" id="maincontent">
+
+      {{#contentHeader}}
+        {{> organisms-content-header-journal }}
+      {{/contentHeader}}
+
+      <div class="wrapper wrapper--content content--columns-wrapper">
+
+        <div class="content-container-grid">
+
+          {{#captionedAsset}}
+            <div class="captioned-asset--wrapper">
+              {{> molecules-captioned-asset}}
+            </div>
+          {{/captionedAsset}}
+
+          {{#socialMediaSharersLinks}}
+            <div class="social-media-sharers--wrapper">
+              <div data-hypothesis-trigger>
+                <span class="side-section-wrapper__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image     comment"></span><span class="visuallyhidden">Open annotations (there are currently <span     data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
+              </div>
+              {{> atoms-social-media-sharers-journal}}
+            </div>
+          {{/socialMediaSharersLinks}}
+
+          <div class="main-content--wrapper">
+
+            {{#mainContent}}
+              {{{ mainContent }}}
+            {{/mainContent}}
+
+            {{#articleMeta}}
+              <section class="article-section">
+                  {{> molecules-article-meta }}
+              </section>
+            {{/articleMeta}}
+
+          </div>
+
+          {{#related}}
+            <div class="secondary-column--wrapper">
+              <div class="grid-secondary-column__item">
+                {{> organisms-listing-teasers }}
+              </div>
+            </div>
+          {{/related}}
+
+        </div>
+
+      </div>
+
+    </main>
+
+    {{#emailCta}}
+    {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+  </div> {{! /.global-inner }}
+</div> {{! /.global-wrapper }}

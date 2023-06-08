@@ -85,6 +85,7 @@
   transition: 25ms ease-out;
   width: 24px;
 
+  .content--columns-wrapper &,
   .content-header-journal &,
   .modal-content & {
     background-color: transparent;
