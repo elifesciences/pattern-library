@@ -1,6 +1,7 @@
 @import "../../definitions";
 
 .jump-menu__wrapper {
+  @include margin(24, "top");
   background-color: $color-text-ui-background;
 }
 
