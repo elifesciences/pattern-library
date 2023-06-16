@@ -60,21 +60,18 @@ When using Windows to bypass the main errors, we recommend following the next:
 
 # Docker setup
 
+<Details>
+<summary>In case of "the port is already in use" run :</summary>
 ```
-docker-compose build
+docker-compose down --volumes --remove-orphans
 ```
+</details>
+<br>
 
-(re)builds all images:
-
-- `elifesciences/pattern-library_assets-builder` is a Node-based image for Gulp usage
-- `elifesciences/pattern-library_assets` is a lightweight image containing `assets/`
-- `elifesciences/pattern-library_ui-builder` is a PHP-based image for generation of the UI
-- `elifesciences/pattern-library` is a nginx-based image serving the UI
-- `elifesciences/pattern-library_ci` is used to run tests
-- an anonymous `selenium` image extension.
+Build images:
 
 ```
-docker-compose up
+docker-compose up --build
 ```
 
 runs containers so that the static website is accessible through a browser at http://localhost:8889

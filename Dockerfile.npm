@@ -1,8 +1,0 @@
-ARG node_version
-FROM node:${node_version}
-
-COPY npm-shrinkwrap.json \
-    package.json \
-    ./
-
-RUN npm install
