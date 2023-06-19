@@ -3,12 +3,6 @@
 .jump-menu__wrapper {
   @include margin(24, "top");
   background-color: $color-text-ui-background;
-
-  .tabbed-navigation & {
-    .jump-menu__list {
-      top: 110px;
-    }
-  }
 }
 
 .jump-menu__list {
@@ -17,7 +11,7 @@
   margin: 0;
   padding: 0;
   position: sticky;
-  top: 60px;
+  top: 110px;
 }
 
 .jump-menu__item {
