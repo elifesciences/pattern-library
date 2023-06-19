@@ -109,7 +109,6 @@
     }
 
     .wrapper--content-with-header-and-aside & {
-      @include margin(0, "left");
       grid-column: 2/12;
     }
   }
