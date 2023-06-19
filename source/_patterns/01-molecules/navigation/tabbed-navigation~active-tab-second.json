@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "name": "Full text",
+      "url": "#"
+    },
+    {
+      "classes": " tabbed-navigation__tab-label--active",
+      "name": "Figures<span class=\"tabbed-navigation__tab-label--long\"> and data</span>",
+      "url": "#"
+    },
+    {
+      "classes": " tabbed-navigation__tab-label--side-by-side",
+      "isSideBySide": true,
+      "name": "Peer review",
+      "url": "#"
+    }
+  ]
+}
