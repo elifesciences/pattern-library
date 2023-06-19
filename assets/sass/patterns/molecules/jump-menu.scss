@@ -3,6 +3,12 @@
 .jump-menu__wrapper {
   @include margin(24, "top");
   background-color: $color-text-ui-background;
+
+  .tabbed-navigation & {
+    .jump-menu__list {
+      top: 110px;
+    }
+  }
 }
 
 .jump-menu__list {
@@ -10,6 +16,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  position: sticky;
+  top: 60px;
 }
 
 .jump-menu__item {
@@ -31,16 +39,6 @@
   @include margin(-2, "left");
   border-left: 2px solid $color-primary;
   color: $color-text;
-}
-
-.jump-menu__fixed {
-  @include padding(48, "top");
-  max-height: 100vh;
-  max-width: ($grid-column *2) + $grid-gutter;
-  min-height: 11rem;
-  overflow: auto;
-  position: fixed;
-  top: 0;
 }
 
 .wrapper--content {
