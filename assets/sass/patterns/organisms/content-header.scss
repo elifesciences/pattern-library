@@ -33,6 +33,12 @@
       border-bottom: none;
     }
   }
+
+  .wrapper--content-with-header-and-aside & {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include margin(0, "left");
+    }
+  }
 }
 
 .content-header--read-more {

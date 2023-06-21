@@ -2,10 +2,15 @@
 
 .tabbed-navigation {
   @include margin(24, "bottom");
+  background-color: $color-text-ui-background;
   border-bottom: 1px solid $color-text-dividers;
   border-top: 1px solid $color-text-dividers;
   grid-column: 2/12;
   grid-row: 1;
+  justify-content: center;
+  position: sticky;
+  top: -1px;
+  z-index: 10;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     @include margin(36, "bottom");
