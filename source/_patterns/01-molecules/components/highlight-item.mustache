@@ -1,6 +1,6 @@
 <li class="highlight-item">
    {{#image}}
-   <a href="{{url}}" class="highlight-item__picture-wrapper">
+   <a href="{{link.url}}" class="highlight-item__picture-wrapper">
      <picture class='highlight-item__picture'>
          {{#sources}}
          <source srcset='{{srcset}}'
@@ -19,7 +19,7 @@
 
 <div class="highlight-item__body">
     <h2 class="highlight-item__title">
-        <a href="{{url}}" class="highlight-item__title_link">{{{title}}}</a>
+        <a href="{{link.url}}" class="highlight-item__title_link">{{{link.name}}}</a>
     </h2>
 
     {{#summary}}

@@ -106,8 +106,10 @@
     },
     "items": [
       {
-        "title": "Limb evolution in cephalopods",
-        "url": "#link-to-article",
+        "link": {
+          "url": "#link-to-article",
+          "name": "Limb evolution in cephalopods"
+        },
         "authors": "Oscar A Tarazona, Davys H Lopez, Martin J Cohn",
         "summary": "The arms and tentacles of cephalopods are built by the same genetic mechanisms as vertebrate limbs and insect wings.",
         "meta": {
@@ -130,8 +132,10 @@
         }
       },
       {
-        "title": "Preprints and peer review - share your views in our survey",
-        "url": "#link-to-article",
+        "link": {
+          "url": "#link-to-article",
+          "name": "Preprints and peer review - share your views in our survey"
+        },
         "summary": "We would like to know what researchers think of the preprint and peer review landscape in 2022 and beyond.",
         "meta": {
           "url": "#",
@@ -153,8 +157,10 @@
         }
       },
       {
-        "title": "Sparks of Change",
-        "url": "#link-to-article",
+        "link": {
+          "url": "#link-to-article",
+          "name": "Sparks of Change"
+        },
         "summary": "Tell us how the culture of research is changing.",
         "meta": {
           "url": "#LinkToResearchArticles",

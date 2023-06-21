@@ -1,6 +1,8 @@
 {
-  "title": "eLife Continuum webinar",
-  "url": "#",
+  "link": {
+    "url": "#",
+    "name": "eLife Continuum webinar"
+  },
   "summary": "We're inviting all interested parties to participate in a webinar to learn about leveraging our new open-source publishing platform.",
   "meta": {
     "url": "#",

@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "name": "Full text",
+      "url": "#"
+    },
+    {
+      "name": "Figures<span class=\"tabbed-navigation__tab-label--long\"> and data</span>",
+      "url": "#"
+    },
+    {
+      "name": "Peer review",
+      "url": "#"
+    },
+    {
+      "classes": " tabbed-navigation__tab-label--side-by-side tabbed-navigation__tab-label--active",
+      "isSideBySide": true,
+      "name": "Side by side",
+      "url": "#"
+    }
+  ]
+}

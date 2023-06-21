@@ -245,20 +245,26 @@
           "items": [
             {
               "primary": {
-                "name": "Article PDF",
-                "url": "#"
+                "link": {
+                  "name": "Article PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Figures PDF",
-                "url": "#"
+                "link": {
+                  "name": "Figures PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Executable version",
-                "url": "#eraLink"
+                "link": {
+                  "name": "Executable version",
+                  "url": "#eraLink"
+                }
               },
               "secondary": {
                 "name": "What are executable versions?",
@@ -272,6 +278,29 @@
   },
   "related": null,
   "contextualData": null,
+  "tabbedNavigation": {
+    "items": [
+      {
+        "classes": " tabbed-navigation__tab-label--active",
+        "name": "Full text",
+        "url": "#"
+      },
+      {
+        "name": "Figures<span class=\"tabbed-navigation__tab-label--long\"> and data</span>",
+        "url": "#"
+      },
+      {
+        "name": "Peer review",
+        "url": "#"
+      },
+      {
+        "classes": " tabbed-navigation__tab-label--side-by-side",
+        "isSideBySide": true,
+        "name": "Side by side",
+        "url": "https://lens.elifesciences.org/09560"
+      }
+    ]
+  },
   "jumpMenu": {
     "items": [
       {

@@ -670,8 +670,10 @@
           "nonDoiLink": "https://example.com/a-non-doi-link",
 
           "downloadLink": {
-            "url": "#downloadLink",
-            "name": "Download me",
+            "link": {
+              "url": "#downloadLink",
+              "name": "Download me"
+            },
             "fileName": "#download-me.png"
           }
         },
@@ -688,8 +690,10 @@
           },
 
           "downloadLink": {
-            "url": "#downloadLink",
-            "name": "Download me",
+            "link": {
+              "url": "#downloadLink",
+              "name": "Download me"
+            },
             "fileName": "#download-me.png"
           }
         }
@@ -735,20 +739,26 @@
           "items": [
             {
               "primary": {
-                "name": "Article PDF",
-                "url": "#"
+                "link": {
+                  "name": "Article PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Figures PDF",
-                "url": "#"
+                "link": {
+                  "name": "Figures PDF",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Executable version",
-                "url": "#eraLink"
+                "link": {
+                  "name": "Executable version",
+                  "url": "#eraLink"
+                }
               },
               "secondary": {
                 "name": "What are executable versions?",

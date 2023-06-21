@@ -3,6 +3,12 @@ type: object
 properties:
   items:
     type: array
-    minItems: 2
+    classes:
+      type: string
+      minLength: 1
+    isSideBySide:
+      type: boolean
+      enum:
+        - true
     items:
       $ref: ../../../non-pattern-schema/link.yaml

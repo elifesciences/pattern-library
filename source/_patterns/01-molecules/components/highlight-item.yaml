@@ -1,12 +1,8 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
-  title:
-    type: string
-    minLength: 1
-  url:
-    type: string
-    minLength: 1
+  link:
+    $ref: ../../../non-pattern-schema/link.yaml
   authors:
     type: string
     minLength: 1
@@ -19,7 +15,6 @@ properties:
     allOf:
       - $ref: ../../00-atoms/components/picture.yaml
 required:
-  - title
-  - url
+  - link
   - meta
   - image

@@ -260,8 +260,10 @@
           "items": [
             {
               "primary": {
-                "name": "Article PDF",
-                "url": "#"
+                "link": {
+                  "name": "Article PDF",
+                  "url": "#"
+                }
               }
             }
           ]
@@ -271,14 +273,18 @@
           "items": [
             {
               "primary": {
-                "name": "Mendeley",
-                "url": "#"
+                "link": {
+                  "name": "Mendeley",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "ReadCube",
-                "url": "#"
+                "link": {
+                  "name": "ReadCube",
+                  "url": "#"
+                }
               }
             }
           ]
@@ -291,14 +297,18 @@
           "items": [
             {
               "primary": {
-                "name": "Download BibTex",
-                "url": "#"
+                "link": {
+                  "name": "Download BibTex",
+                  "url": "#"
+                }
               }
             },
             {
               "primary": {
-                "name": "Download RIS",
-                "url": "#"
+                "link": {
+                  "name": "Download RIS",
+                  "url": "#"
+                }
               }
             }
           ]
