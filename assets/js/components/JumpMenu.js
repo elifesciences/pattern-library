@@ -15,7 +15,6 @@ module.exports = class JumpMenu {
     this.$elm = $elm;
     this.linksList = this.$elm.querySelector('.jump-menu__list');
     this.links = this.$elm.querySelectorAll('.jump-menu');
-    this.cssFixedClassName = 'jump-menu__fixed';
     this.$navDetect = this.doc.querySelector('.content-container-grid');
 
     if (this.links.length > 0) {
@@ -72,7 +71,6 @@ module.exports = class JumpMenu {
 
   handleScrolling() {
     this.handleHighlighting(utils.closest);
-    this.handlePositioning();
   }
 
   handleHighlighting(findClosest) {
@@ -148,39 +146,4 @@ module.exports = class JumpMenu {
     return $found;
   }
 
-  handlePositioning() {
-    let bottomOfNav = this.$navDetect.getBoundingClientRect().bottom;
-
-    // If it's position is fixed
-    if (this.$elm.classList.contains(this.cssFixedClassName)) {
-
-      // If Contextual Data shows on the screen then remove fixed navigation
-      if (bottomOfNav > 0) {
-        this.$elm.classList.remove(this.cssFixedClassName);
-        return;
-      }
-
-      // Allow it to scroll again if it would otherwise over-/under-lay following element
-      let bottomOfMain = this.mainTarget.getBoundingClientRect().bottom;
-      if (bottomOfMain < this.$elm.offsetHeight) {
-        let amountToNudgeUp = bottomOfMain - this.$elm.offsetHeight;
-        this.$elm.style.top = amountToNudgeUp + 'px';
-        return;
-      }
-
-      // Ensure top of component is not off top of screen once bottom of main is off screen bottom
-      // Safety net: required because a fast scroll may prevent all code running as desired.
-      if (bottomOfMain >= this.window.innerHeight) {
-        this.$elm.style.top = '0px';
-      }
-
-      return;
-    }
-
-    // Otherwise fix its position if it would otherwise scroll off the top of the screen
-    if (bottomOfNav < 0) {
-      this.$elm.classList.add(this.cssFixedClassName);
-      this.$elm.style.top = '0px';
-    }
-  }
 };
