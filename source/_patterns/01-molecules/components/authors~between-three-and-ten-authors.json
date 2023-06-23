@@ -1,0 +1,25 @@
+{
+  "list": [
+    {
+      "name": "Lee R Berger",
+      "url": "#",
+      "isCorresponding": true
+    },
+    {
+      "name": "John Hawks",
+      "url": "#"
+    },
+    {
+      "name": "Darryl J de Ruiter",
+      "url": "#"
+    },
+    {
+      "name": "Steven E Churchill",
+      "url": false
+    },
+    {
+      "name": "Peter Schmid",
+      "url": false
+    }
+  ]
+}
