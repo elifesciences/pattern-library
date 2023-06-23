@@ -1,0 +1,112 @@
+@import "../../definitions";
+
+.tabbed-navigation {
+  @include margin(24, "bottom");
+  background-color: $color-text-ui-background;
+  border-bottom: 1px solid $color-text-dividers;
+  border-top: 1px solid $color-text-dividers;
+  grid-column: 2/12;
+  grid-row: 1;
+  justify-content: center;
+  position: sticky;
+  top: -1px;
+  z-index: 10;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include margin(36, "bottom");
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+    grid-column: 1/9;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    grid-column: 1/10;
+  }
+
+  &:not(.hidden) ~ .main-content-grid {
+    grid-row: 2;
+  }
+
+  .wrapper & {
+    @include margin(-24, "left");
+    @include margin(-24, "right");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include margin(-48, "left");
+      @include margin(-48, "right");
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include margin(0, "left");
+      @include margin(0, "right");
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include margin(36, "right");
+    }
+  }
+}
+
+.tabbed-navigation__tab-label {
+  @include font-size-and-vertical-height(16, 24);
+  display: inline;
+
+  &.tabbed-navigation__tab-label--active {
+    border-bottom: 4px solid $color-primary;
+    font-weight: 600;
+
+    a {
+      color: $color-text;
+    }
+  }
+
+  a {
+    @include padding(24 14);
+    color: $color-text-secondary;
+    display: block;
+    font-family: $font-secondary;
+    text-decoration: none;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include padding(24 18 20);
+    }
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+}
+
+.tabbed-navigation__tab-label--long {
+  display: none;
+  pointer-events: none;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    display: inline;
+  }
+}
+
+.tabbed-navigation__tab-label--side-by-side {
+  display: none;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    display: inline;
+  }
+}
+
+.tabbed-navigation__tabs {
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 72px;
+    overflow: hidden;
+  }
+}

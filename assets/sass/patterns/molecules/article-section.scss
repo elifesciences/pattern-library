@@ -48,6 +48,10 @@ $arrow-size: 5;
   // Edge case: prevent space above the h2s of the first header  in the first article section
   & .article-section__header:first-child h2 {
     @include nospace("top");
+
+    .wrapper--content-with-header-and-aside & {
+      @include padding(21, "top");
+    }
   }
 
 }

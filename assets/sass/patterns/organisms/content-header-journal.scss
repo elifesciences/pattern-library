@@ -330,10 +330,6 @@
 
     .divider {
       display: none;
-
-      @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-        display: block;
-      }
     }
   }
 
@@ -361,7 +357,7 @@
     @include margin(24, "bottom");
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      @include margin(36, "bottom");
+      @include margin(0, "bottom");
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
