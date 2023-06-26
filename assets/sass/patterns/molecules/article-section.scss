@@ -461,7 +461,7 @@ $arrow-size: 5;
       .social-media-sharers--wrapper {
         grid-column: 10/11;
         grid-row: 2/3;
-        text-align: center;
+        justify-self: end;
 
         .svg-background-image {
           @include margin(8, "left");
@@ -484,7 +484,10 @@ $arrow-size: 5;
   }
 }
 
-.wrapper.wrapper--content.content--narrow-column,
 .wrapper.wrapper--content.content--columns-wrapper {
+  @include padding(12, "top");
+}
+
+.wrapper.wrapper--content.content--narrow-column {
   @include padding(0, "top");
 }
