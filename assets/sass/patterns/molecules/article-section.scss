@@ -445,6 +445,14 @@ $arrow-size: 5;
         grid-row: 2/5;
       }
 
+      .social-media-sharers--wrapper ~ .main-content--wrapper {
+        grid-column: 3/9;
+      }
+
+      .main-content--no-secondary-column {
+        grid-column: 3/11;
+      }
+
       .social-media-sharers--wrapper,
       .social-media-sharers {
         display: block;
@@ -466,6 +474,10 @@ $arrow-size: 5;
 
       .secondary-column--wrapper {
         grid-column: 10/13;
+        grid-row: 2/3;
+      }
+
+      .social-media-sharers--wrapper ~ .secondary-column--wrapper {
         grid-row: 4/5;
       }
     }
