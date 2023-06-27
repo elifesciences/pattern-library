@@ -400,6 +400,10 @@ $arrow-size: 5;
     .captioned-asset {
       @include margin(0, "top");
       @include margin(24, "bottom");
+
+      @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+        @include margin(48, "bottom");
+      }
     }
 
     .captioned-asset__caption {
