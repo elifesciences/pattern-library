@@ -197,7 +197,7 @@ describe('An Authors Component', function () {
         authorsNarrow = new Authors($elm, windowMock);
       });
 
-      describe('the getMaxItems() method', function () {
+      describe('the getAuthorsCount() method', function () {
 
         context('when there are exactly 2 authors', () => {
 
@@ -206,15 +206,15 @@ describe('An Authors Component', function () {
               buildFakeElement('div', ['author_list_item']),
               buildFakeElement('div', ['author_list_item'])
             ];
-            expect(authorsNarrow.getMaxItems()).to.equal(2);
+            expect(authorsNarrow.getAuthorsCount()).to.equal(2);
           });
 
         });
 
-        context('when there are not exactly 2 authors', () => {
+        context('when there are more authors', () => {
 
-          it('returns 1', function () {
-            expect(authorsNarrow.getMaxItems()).to.equal(1);
+          it('returns authors lenght', function () {
+            expect(authorsNarrow.getAuthorsCount()).to.equal(authorsNarrow.authors.length);
           });
 
         });
@@ -231,37 +231,6 @@ describe('An Authors Component', function () {
         it('returns the correct toggle text when collapsed', () => {
           const expected = 'et al.<span class="visuallyhidden"> expand author list</span>';
           expect(authorsNarrow.getUpdatedToggleText('collapsed')).to.equal(expected);
-        });
-
-      });
-
-      describe('the getExcessItems() method', function () {
-
-        it('returns empty array if passed an array of 1 author', function () {
-          let authorSet = buildItemSet('author', 1);
-          authorsNarrow.authors = authorSet;
-          let observed = authorsNarrow.getExcessItems('author', authorSet);
-          expect(Array.isArray(observed)).to.be.true;
-          expect(observed.length).to.equal(0);
-        });
-
-        it('returns empty array if passed an array of 2 authors', function () {
-          let authorSet = buildItemSet('author', 2);
-          authorsNarrow.authors = authorSet;
-          let observed = authorsNarrow.getExcessItems('author', authorSet);
-          expect(Array.isArray(observed)).to.be.true;
-          expect(observed.length).to.equal(0);
-        });
-
-        it('returns array of the 2nd element onwards if passed array of > 2 authors', function () {
-          let authorSet = buildItemSet('author', 6);
-          authorsNarrow.authors = authorSet;
-          let observed = authorsNarrow.getExcessItems('author', authorSet);
-          expect(Array.isArray(observed)).to.be.true;
-          expect(observed.length).to.equal(5);
-          observed.forEach(function (author, i) {
-            expect(observed[i]).to.equal(authorSet[i + 1]);
-          });
         });
 
       });
@@ -313,29 +282,12 @@ describe('An Authors Component', function () {
 
       describe('the getExcessItems() method', function () {
 
-        it('returns empty array if passed an array of < 10 authors', function () {
-          let authorSet = buildItemSet('author', 9);
-          let observed = authorsNotNarrow.getExcessItems('author', authorSet);
-          expect(Array.isArray(observed)).to.be.true;
-          expect(observed.length).to.equal(0);
-        });
-
         it('returns empty array if passed an array of < 10 institutions', function () {
           let institutionSet = buildItemSet('institution', 9);
           let observed = authorsNotNarrow.getExcessItems('institution', institutionSet);
           expect(Array.isArray(observed)).to.be.true;
           expect(observed.length).to.equal(0);
 
-        });
-
-        it('returns array of the 10th element onwards if passed array of > 9 authors', function () {
-          let authorSet = buildItemSet('author', 26);
-          let observed = authorsNotNarrow.getExcessItems('author', authorSet);
-          expect(Array.isArray(observed)).to.be.true;
-          expect(observed.length).to.equal(17);
-          observed.forEach(function (author, i) {
-            expect(observed[i]).to.equal(authorSet[i + 9]);
-          });
         });
 
         it('returns array of the 10th element onwards if passed array of > 9 institutions', function () {

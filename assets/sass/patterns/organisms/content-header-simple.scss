@@ -84,3 +84,29 @@
   margin: 0 auto;
   max-width: 540px;
 }
+
+.header-wrapper {
+  @include padding(36, "top");
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    max-width: 640px;
+  }
+
+  .content-header-simple {
+    @include padding(0);
+  }
+
+  .content-header-simple__title {
+    @include font-size-and-vertical-height(32, 40);
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+      @include font-size-and-vertical-height(42, 52);
+    }
+  }
+
+  .content-header-simple__strapline {
+    @include margin(24, "top");
+    font-family: $font-secondary;
+    font-weight: bold;
+  }
+}
