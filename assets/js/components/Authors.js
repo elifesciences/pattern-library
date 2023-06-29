@@ -13,19 +13,26 @@ module.exports = class Authors {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
+    this.authorLimits = [3, 10];
 
     this.authors = $elm.querySelectorAll('.author_list_item');
     this.institutions = $elm.querySelectorAll('.institution_list_item');
 
-    if (this.authors.length > 0) {
+    if (this.authors.length > this.authorLimits[0]) {
       this.authors[this.authors.length - 1].classList.add('author_list_item--last');
+      this.$elm.classList.add('authors--collapsible');
+      this.addTrailingText('author', this.authors);
+      this.authorLimits.map(limit => {
+        if (limit < this.authors.length) {
+          this.$elm.classList.add(`authors--limit-${limit}`);
+        }
+      });
     }
 
     if (this.institutions.length > 0) {
       this.institutions[this.institutions.length - 1].classList.add('institution_list_item--last');
     }
 
-    this.hasToggleAuthor = false;
     this.hasToggleInstitution = false;
     this.hideAllExcessItems();
     this.setupResizeHandler();
@@ -50,6 +57,8 @@ module.exports = class Authors {
       this.hideAllExcessItems();
     }
 
+    this.addTrailingText('author', this.authors);
+
     const toggles = this.$elm.querySelectorAll(
       '.item_toggle .author_link_highlight'
     );
@@ -62,7 +71,7 @@ module.exports = class Authors {
   /**
    * Determine excess by itemType from items supplied and hides those.
    *
-   * @param {string} itemType 'author' or 'institution'
+   * @param {string} itemType 'institution'
    * @param {DOMTokenList} items List of items to identify the excess within, and hide those
    */
   hideExcessItems(itemType, items) {
@@ -81,11 +90,23 @@ module.exports = class Authors {
       return 9;
     }
 
-    if (this.authors.length === 2) {
-      return 2;
+    return 1;
+  }
+
+  /**
+   *
+   * @returns {number} Number of item to display by default
+   */
+  getAuthorsCount() {
+    if (this.window.matchMedia('(max-width: 729px)').matches && this.authors.length > this.authorLimits[0]) {
+      return this.authorLimits[0];
     }
 
-    return 1;
+    if (this.window.matchMedia('(min-width: 730px)').matches && this.authors.length > this.authorLimits[1]) {
+      return this.authorLimits[1];
+    }
+
+    return this.authors.length;
   }
 
   /**
@@ -93,12 +114,12 @@ module.exports = class Authors {
    *
    * The returned array is a subset of the list supplied, or empty if there are no excess items.
    *
-   * @param {string} itemType 'author' or 'institution'
+   * @param {string} itemType 'institution'
    * @param {DOMTokenList} items List of items from which to identify the excess
    * @returns {Array|null} Items in excess of the default maximum for the current screen width
    */
   getExcessItems(itemType, items) {
-    if (itemType !== 'author' && itemType !== 'institution') {
+    if (itemType !== 'institution') {
       return null;
     }
 
@@ -150,7 +171,7 @@ module.exports = class Authors {
   /**
    * Marks the last shown non-excess item with particlular class (so not if showing last in list).
    *
-   * @param {string} itemType 'author' or 'institution'
+   * @param {string} itemType 'institution'
    * @param {DOMTokenList} items List of items to act upon
    */
   markLastNonExcessItem(itemType, items) {
@@ -185,12 +206,19 @@ module.exports = class Authors {
    * @param {DOMTokenList} items The items to which to add the trailing text
    */
   addTrailingText(itemType, items) {
-    if (itemType === 'author' && items.length > this.getMaxItems()) {
-      if (!this.hasToggleAuthor) {
-        this.buildSeeMoreLessToggle('author');
-        this.hasToggleAuthor = true;
-      }
+    if (itemType === 'author') {
+      this.authorToggle = this.$elm.querySelector('.item_toggle--author');
+      this.expandedSeeMore = this.$elm.querySelector('.author_list--expanded');
 
+      if (items.length > this.getAuthorsCount() && this.authorToggle === null) {
+        if (this.expandedSeeMore !== null) {
+          this.buildSeeMoreLessToggle('author', 'expanded');
+        } else {
+          this.buildSeeMoreLessToggle('author');
+        }
+      } else if (items.length <= this.getAuthorsCount() && this.authorToggle !== null) {
+        this.authorToggle.parentNode.removeChild(this.authorToggle);
+      }
     }
 
     if (itemType === 'institution' && items.length > this.getMaxItems()) {
@@ -199,9 +227,8 @@ module.exports = class Authors {
         this.hasToggleInstitution = true;
       }
 
+      this.markLastNonExcessItem(itemType, items);
     }
-
-    this.markLastNonExcessItem(itemType, items);
   }
 
   getToggleCollapsedText() {
@@ -238,38 +265,31 @@ module.exports = class Authors {
 
   }
 
-  updateToggleState(newState, toggles) {
+  updateToggleState(newState, toggle, itemType) {
     if (newState !== 'expanded' && newState !== 'collapsed') {
       return;
     }
 
-    [].forEach.call(toggles, ($toggle) => {
-      $toggle.innerHTML = this.getUpdatedToggleText(newState);
-      $toggle.parentNode.classList.toggle('item_toggle--expanded');
-      $toggle.parentNode.classList.toggle('item_toggle--collapsed');
-    });
+    toggle.innerHTML = this.getUpdatedToggleText(newState);
+    toggle.parentNode.classList.toggle('item_toggle--expanded');
+    toggle.parentNode.classList.toggle('item_toggle--collapsed');
 
     if (newState === 'expanded') {
-      this.$elm.querySelector('.author_list').classList
-          .add('author_list--expanded');
-      this.$elm.querySelector('.institution_list').classList
-        .add('institution_list--expanded');
+      this.$elm.querySelector(`.${itemType}_list`).classList
+          .add(`${itemType}_list--expanded`);
     } else {
-      this.$elm.querySelector('.author_list').classList
-          .remove('author_list--expanded');
-      this.$elm.querySelector('.institution_list').classList
-        .remove('institution_list--expanded');
+      this.$elm.querySelector(`.${itemType}_list`).classList
+          .remove(`${itemType}_list--expanded`);
     }
   }
 
   /**
    * Builds the show/hide toggle for excess authors & institutions.
    */
-  buildSeeMoreLessToggle(itemType) {
+  buildSeeMoreLessToggle(itemType, state = 'collapsed') {
     const $toggleWrapper = utils.buildElement(
       'li',
-      ['item_toggle', 'author_list_item',
-       'item_toggle--collapsed', 'item_toggle--' + itemType
+      ['item_toggle', 'item_toggle--' + state, 'item_toggle--' + itemType
       ],
       '',
       this.$elm.querySelector('.' + itemType + '_list')
@@ -279,7 +299,7 @@ module.exports = class Authors {
     const $toggle = utils.buildElement(
       'button',
       ['author_link_highlight'],
-      this.getUpdatedToggleText('collapsed'),
+      this.getUpdatedToggleText(state),
       $toggleWrapper
     );
 
@@ -288,35 +308,32 @@ module.exports = class Authors {
       const $toggleWrapper = e.currentTarget.parentNode;
       let newState;
       if ($toggleWrapper.classList.contains('item_toggle--collapsed')) {
-        this.showAllItems();
+        if (itemType === 'institution') {
+          this.showAllItems();
+        }
+
         newState = 'expanded';
       } else {
-        this.hideAllExcessItems();
+        if (itemType === 'institution') {
+          this.hideAllExcessItems();
+        }
+
         newState = 'collapsed';
       }
 
-      this.updateToggleState(newState,
-                             this.$elm.querySelectorAll(
-                          '.item_toggle .author_link_highlight'
-                        ),
-                             itemType);
-
+      this.updateToggleState(newState, e.currentTarget, itemType);
     };
 
     $toggle.addEventListener('click', handleSeeMoreLessPress);
   }
 
   showAllItems() {
-    this.clearExcessMark(this.authors);
     this.clearExcessMark(this.institutions);
-    this.toggleExcessItems(this.authors);
     this.toggleExcessItems(this.institutions);
   }
 
   hideAllExcessItems() {
-    this.markLastNonExcessItem('author', this.authors);
     this.markLastNonExcessItem('institution', this.institutions);
-    this.hideExcessItems('author', this.authors);
     this.hideExcessItems('institution', this.institutions);
   }
 
