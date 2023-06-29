@@ -423,6 +423,10 @@ $arrow-size: 5;
 
   .social-media-sharers--wrapper {
     display: flex;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      @include padding(12, "top");
+    }
   }
 }
 
