@@ -42,7 +42,7 @@
 .content-header-grid__main {
   @include margin($site-spacing, "bottom");
 
-  .page--wrapper & {
+  .social-media-page--wrapper & {
     @include margin(24, "bottom");
   }
 

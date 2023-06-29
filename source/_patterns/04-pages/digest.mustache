@@ -1,4 +1,4 @@
-<div class="global-wrapper page--magazine" data-item-type="digest">
+<div class="global-wrapper page--magazine{{#hasTwoColumns}} social-media-page--wrapper{{/hasTwoColumns}}" data-item-type="digest">
   <div class="global-inner">
     <div class="wrapper wrapper--site-header">
       {{#siteHeader}}
@@ -15,11 +15,29 @@
 
         <div class="content-container-grid">
 
-          <div class="main-content-grid">
-
-            {{#captionedAsset}}
+        {{#hasTwoColumns}}
+          {{#captionedAsset}}
+            <div class="captioned-asset--wrapper">
               {{> molecules-captioned-asset}}
-            {{/captionedAsset}}
+            </div>
+          {{/captionedAsset}}
+
+          {{#socialMediaSharersLinks}}
+            <div class="social-media-sharers--wrapper">
+              <div data-hypothesis-trigger>
+                <span class="side-section-wrapper__link" data-behaviour="HypothesisTrigger"><span class="svg-background-image     comment"></span><span class="visuallyhidden">Open annotations (there are currently <span     data-hypothesis-annotation-count>0</span> annotations on this page). </span></span>
+              </div>
+              {{> atoms-social-media-sharers-journal}}
+            </div>
+          {{/socialMediaSharersLinks}}
+        {{/hasTwoColumns}}
+
+          <div class="main-content-grid{{^related}} no-secondary-column{{/related}}">
+            {{^hasTwoColumns}}
+              {{#captionedAsset}}
+                {{> molecules-captioned-asset}}
+              {{/captionedAsset}}
+            {{/hasTwoColumns}}
 
             {{#mainContent}}
               {{{ mainContent }}}
@@ -34,15 +52,13 @@
 
           </div>
 
-          <div class="secondary-column-grid">
-
-            {{#related}}
+          {{#related}}
+            <div class="secondary-column-grid">
               <div class="grid-secondary-column__item">
                 {{> organisms-listing-teasers }}
               </div>
-            {{/related}}
-
-          </div>
+            </div>
+          {{/related}}
 
         </div>
 

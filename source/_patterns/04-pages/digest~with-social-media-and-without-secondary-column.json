@@ -1,0 +1,32 @@
+{
+  "hasTwoColumns": true,
+  "contentHeader": {
+    "isOneColumn": true,
+    "title": "Holding the focus",
+    "impactStatement": "A new open source software tool makes it possible for researchers to view cells in living animals in high detail.",
+    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "longTitle": false,
+    "header": {
+      "possible": true,
+      "hasSubjects": false
+    },
+    "authors": false,
+    "meta": {
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 3,
+          "month": "Dec",
+          "year": 2020
+        },
+        "forMachine": "2020-12-03"
+      }
+    }
+  },
+  "socialMediaSharersLinks": {
+    "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
+    "linkedInUrl": "https://www.linkedin.com/company/elife-sciences-publications-ltd",
+    "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
+  },
+  "related": null
+}
