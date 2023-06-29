@@ -3,8 +3,7 @@
     "title": {
       "homePagePath": "#"
     },
-    "primaryLinks":
-    {
+    "primaryLinks": {
       "classesOuter": "nav-primary",
       "classesInner": "nav-primary__list clearfix",
       "linkedItems": [
@@ -45,8 +44,7 @@
       ]
     },
 
-    "secondaryLinks":
-    {
+    "secondaryLinks": {
       "classesOuter": "nav-secondary",
       "classesInner": "nav-secondary__list clearfix",
       "linkedItems": [
@@ -101,7 +99,8 @@
   },
 
   "header": {
-    "title": "Browse our research categories"
+    "title": "Research categories",
+    "strapline": "The latest articles and peer reviewed preprints in Life Sciences and Medicine. Browse our research categories or <a href=\"https://crm.elifesciences.org/crm/content-alerts\" target=\"_blank\">subscribe to email alerts.</a>"
   },
 
   "blockLinkListing": {
@@ -301,17 +300,58 @@
     },
     "links": {
       "items": [
-        {"name": "Home", "url": "#", "classes": "hidden-wide"},
-        {"name": "Magazine", "url": "#", "classes": "hidden-wide"},
-        {"name": "Community", "url": "#ins", "classes": "hidden-wide"},
-        {"name": "About", "url": "#abo", "classes": "hidden-wide"},
-        {"name": "Research categories", "url": "#res"},
-        {"name": "Inside eLife", "url": "#", "classes": "end-of-group"},
-        {"name": "Search", "url": "#", "classes": "hidden-wide"},
-        {"name": "Subscribe to alerts", "url": "#", "classes": "end-of-group hidden-wide"},
-        {"name": "Submit your research", "url": "#", "classes": "hidden-wide"},
-        {"name": "Author guide", "url": "#"},
-        {"name": "Reviewer guide", "url": "#"}
+        {
+          "name": "Home",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Magazine",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Community",
+          "url": "#ins",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "About",
+          "url": "#abo",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Research categories",
+          "url": "#res"
+        },
+        {
+          "name": "Inside eLife",
+          "url": "#",
+          "classes": "end-of-group"
+        },
+        {
+          "name": "Search",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Subscribe to alerts",
+          "url": "#",
+          "classes": "end-of-group hidden-wide"
+        },
+        {
+          "name": "Submit your research",
+          "url": "#",
+          "classes": "hidden-wide"
+        },
+        {
+          "name": "Author guide",
+          "url": "#"
+        },
+        {
+          "name": "Reviewer guide",
+          "url": "#"
+        }
       ]
     },
     "button": {
@@ -333,12 +373,30 @@
   },
 
   "footerMenuLinks": [
-    { "name": "About", "url": "#" },
-    { "name": "Alerts", "url": "#" },
-    { "name": "Contact", "url": "#" },
-    { "name": "Who we work with", "url": "#" },
-    { "name": "Contact", "url": "#" },
-    { "name": "Terms & Policy", "url": "#" }
+    {
+      "name": "About",
+      "url": "#"
+    },
+    {
+      "name": "Alerts",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Who we work with",
+      "url": "#"
+    },
+    {
+      "name": "Contact",
+      "url": "#"
+    },
+    {
+      "name": "Terms & Policy",
+      "url": "#"
+    }
   ],
 
   "year": 2016
