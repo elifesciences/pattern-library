@@ -1,0 +1,25 @@
+{
+  "hasTwoColumns": true,
+  "contentHeader": {
+    "title": "Planarian 'kidneys' go with the flow",
+    "impactStatement": "A new open source software tool makes it possible for researchers to view cells in living animals in high detail.",
+    "longTitle": true,
+    "header": {
+      "possible": true
+    },
+    "meta": {
+      "url": "#",
+      "text": "Insight",
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 10,
+          "month": "Sep",
+          "year": 2015
+        },
+        "forMachine": "2015-09-10"
+      }
+    }
+  },
+  "socialMediaSharersLinks": null,
+  "related": null
+}

@@ -18,6 +18,16 @@
       content: "";
       display: block;
       width: 100%;
+
+      .social-media-page--wrapper & {
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+          grid-column: 2/12;
+        }
+
+        @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+          grid-column: 3/11;
+        }
+      }
     }
 
   }
