@@ -1,0 +1,61 @@
+{
+  "hasTwoColumns": true,
+  "contentHeader": {
+    "isOneColumn": true,
+    "title": "Holding the focus",
+    "impactStatement": "A new open source software tool makes it possible for researchers to view cells in living animals in high detail.",
+    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "longTitle": false,
+    "header": {
+      "possible": true,
+      "hasSubjects": false
+    },
+    "authors": false,
+    "meta": {
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 3,
+          "month": "Dec",
+          "year": 2020
+        },
+        "forMachine": "2020-12-03"
+      }
+    }
+  },
+  "socialMediaSharersLinks": null,
+  "related": {
+    "items": [
+      {
+        "rootClasses": "teaser--secondary teaser--related",
+
+        "contextLabel": {
+          "list": [
+            {
+              "name": "Related to",
+              "url": null
+            }
+          ]
+        },
+        "title": "Striatal fast-spiking interneurons selectively modulate circuit output and are required for habitual behavior",
+        "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
+        "secondaryInfo": "Justin K O'Hare, Haofang Li ... Nicole Calakos",
+
+        "footer": {
+          "meta": {
+            "url": "#",
+            "text": "Research article",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 5,
+                "month": "Sept",
+                "year": 2017
+              },
+              "forMachine": "2017-09-05"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
