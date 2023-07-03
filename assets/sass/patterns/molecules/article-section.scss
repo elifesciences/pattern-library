@@ -431,10 +431,12 @@ $arrow-size: 5;
 }
 
 .global-wrapper.social-media-page--wrapper {
-  .article .content-header,
   .article .grid {
     @include margin(0, "left");
+  }
 
+  .article .content-header,
+  .article .grid {
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
