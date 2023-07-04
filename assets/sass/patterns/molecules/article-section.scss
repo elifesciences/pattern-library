@@ -436,12 +436,12 @@ $arrow-size: 5;
 }
 
 .global-wrapper.social-media-page--wrapper {
-  .article .grid {
+  .main .grid {
     @include margin(0, "left");
   }
 
-  .article .content-header,
-  .article .grid {
+  .main .content-header:not(.content-header-journal),
+  .main .grid {
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -450,8 +450,8 @@ $arrow-size: 5;
   }
 
   .content-container-grid,
-  .article .content-header,
-  .article .grid {
+  .main .content-header:not(.content-header-journal),
+  .main .grid {
     & > * {
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         grid-column: 2/12;
