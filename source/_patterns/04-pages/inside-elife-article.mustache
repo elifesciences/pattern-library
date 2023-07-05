@@ -1,4 +1,4 @@
-<div class="global-wrapper" data-item-type="blog-article">
+<div class="global-wrapper{{#hasTwoColumns}} social-media-page--wrapper{{/hasTwoColumns}}" data-item-type="blog-article">
   <div class="global-inner">
     <div class="wrapper wrapper--site-header">
       {{#siteHeader}}
@@ -21,6 +21,17 @@
       <div class="wrapper wrapper--content content--one-column">
 
         <div class="content-container-grid">
+        
+          {{#hasTwoColumns}}
+            {{#socialMediaSharersLinks}}
+              <div class="social-media-sharers--wrapper">
+                <div data-hypothesis-trigger>
+                  <span class="side-section-wrapper__link"   data-behaviour="HypothesisTrigger"><span   class="svg-background-image     comment"></  span><span class="visuallyhidden">Open   annotations (there are currently <span       data-hypothesis-annotation-count>0</span>   annotations on this page). </span></span>
+                </div>
+                {{> atoms-social-media-sharers-journal}}
+              </div>
+            {{/socialMediaSharersLinks}}
+          {{/hasTwoColumns}}
 
           <div class="main-content-grid">
 
