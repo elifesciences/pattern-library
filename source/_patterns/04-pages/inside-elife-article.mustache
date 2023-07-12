@@ -22,16 +22,9 @@
 
         <div class="content-container-grid">
         
-          {{#hasTwoColumns}}
-            {{#socialMediaSharersLinks}}
-              <div class="social-media-sharers--wrapper">
-                <div data-hypothesis-trigger>
-                  <span class="side-section-wrapper__link"   data-behaviour="HypothesisTrigger"><span   class="svg-background-image     comment"></  span><span class="visuallyhidden">Open   annotations (there are currently <span       data-hypothesis-annotation-count>0</span>   annotations on this page). </span></span>
-                </div>
-                {{> atoms-social-media-sharers-journal}}
-              </div>
-            {{/socialMediaSharersLinks}}
-          {{/hasTwoColumns}}
+          {{#socialMediaSharersLinks}}
+            {{> atoms-social-media-sharers-journal}}
+          {{/socialMediaSharersLinks}}
 
           <div class="main-content-grid">
 
