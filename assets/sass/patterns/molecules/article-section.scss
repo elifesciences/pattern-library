@@ -479,6 +479,7 @@ $arrow-size: 5;
       .main-content-grid {
         grid-column: 3/9;
         grid-row: 2/5;
+        margin-right: -24px;
       }
 
       .social-media-sharers--wrapper ~ .main-content-grid {
@@ -510,7 +511,7 @@ $arrow-size: 5;
       }
 
       .social-media-sharers--wrapper ~ .secondary-column-grid {
-        grid-row: 4/5;
+        grid-row: 3/5;
       }
     }
   }
