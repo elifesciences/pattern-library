@@ -43,6 +43,14 @@
   @include margin($site-spacing, "bottom");
 
   .social-media-page--wrapper & {
+    @include margin(36, "bottom");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include margin(48, "bottom");
+    }
+  }
+
+  .social-media-page--wrapper[data-item-type="digest"] & {
     @include margin(24, "bottom");
   }
 

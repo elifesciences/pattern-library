@@ -298,6 +298,10 @@ $arrow-size: 5;
       margin-right: -24px;
     }
   }
+
+  .social-media-page--wrapper[data-item-type="digest"] & {
+    display: none;
+  }
 }
 
 .content--one-column {
@@ -438,6 +442,7 @@ $arrow-size: 5;
 .global-wrapper.social-media-page--wrapper {
   .main .grid {
     @include margin(0, "left");
+    @include margin(0, "right");
   }
 
   .main .content-header:not(.content-header-journal),
@@ -529,6 +534,14 @@ $arrow-size: 5;
   }
 
   .social-media-page--wrapper & {
+    @include padding(36, "top");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      @include padding(48, "top");
+    }
+  }
+
+  .social-media-page--wrapper[data-item-type="digest"] & {
     @include padding(12, "top");
   }
 }
