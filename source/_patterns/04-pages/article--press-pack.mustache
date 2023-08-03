@@ -11,7 +11,7 @@
       <article class="article">
 
         {{#contentHeader}}
-          {{> organisms-content-header}}
+          {{> organisms-content-header-journal}}
         {{/contentHeader}}
 
         {{^hasTwoColumns}}
@@ -32,7 +32,7 @@
 
         {{/hasTwoColumns}}
 
-        <div class="wrapper u-pad-top-lg clearfix">
+        <div class="wrapper u-pad-top-lg clearfix{{#hasTwoColumns}} wrapper--content{{/hasTwoColumns}}">
 
           <div class="grid">
 

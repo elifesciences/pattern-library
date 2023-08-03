@@ -101,43 +101,40 @@
   },
 
   "contentHeader": {
-    "title": "Planarian 'kidneys' go with the flow",
-    "socialMediaSharers": {
-      "facebookUrl": "https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com%2Fsome-article-url",
-      "twitterUrl": "https://twitter.com/intent/tweet/?text=Some%20article%20title&amp;url=https%3A%2F%2Fexample.com%2Fsome-article-url",
-      "emailUrl": "mailto:?subject=Some%20article%20title&amp;body=https%3A%2F%2Fexample.com%2Fsome-article-url",
-      "redditUrl": "https://reddit.com/submit/?url=https%3A%2F%2Fexample.com%2Fsome-article-url"
-    },
+    "isOneColumn": true,
+    "title": "Antibodies help identify women protected from placental malaria",
+    "impactStatement": "Six antibody features help protect pregnant women against placental malaria infections, and could be used to identify women at risk of the disease and related complications.",
+    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
     "longTitle": true,
     "header": {
       "possible": true,
       "hasSubjects": true,
       "subjects": [
         {
-          "name": "Cell Biology",
-          "url": "#"
-        },
-        {
-          "name": "Epidemiology and Global Health",
+          "name": "Immunology and Inflammation",
           "url": "#"
         }
       ]
     },
-    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
-
+    "authors": false,
     "meta": {
-      "url": "#",
-      "text": "Insight",
       "date": {
         "forHuman": {
-          "dayOfMonth": 10,
-          "month": "Sep",
-          "year": 2015
+          "dayOfMonth": 25,
+          "month": "Jun",
+          "year": 2021
         },
-        "forMachine": "2015-09-10"
+        "forMachine": "2021-07-25"
       }
+    },
+    "breadcrumb": {
+      "items": [
+        {
+          "url": "#",
+          "name": "Press Pack"
+        }
+      ]
     }
-
   },
 
   "class": "contextual-data__doi",
