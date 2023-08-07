@@ -383,6 +383,7 @@ $arrow-size: 5;
     .social-media-page--wrapper & {
       @include margin(0, "left");
       @include margin(0, "right");
+      justify-self: auto;
     }
   }
 
