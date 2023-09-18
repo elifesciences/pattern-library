@@ -79,7 +79,7 @@ module.exports = class HypothesisOpener {
       errorMsg = 'Problem loading or interacting with Hypothesis client.';
     }
 
-    this.window.console.error(errorMsg);
+    this.window.console.error(new Error(errorMsg));
   }
 
   handleTimerExpired() {
