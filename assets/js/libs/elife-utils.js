@@ -700,9 +700,6 @@ module.exports = () => {
 
   function logError(window, e, message) {
     window.console.error(message + ':' + e);
-    if (typeof window.newrelic === 'object') {
-      window.newrelic.noticeError(e);
-    }
   }
 
   return {
