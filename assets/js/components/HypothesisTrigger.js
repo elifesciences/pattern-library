@@ -60,16 +60,7 @@ module.exports = class HypothesisTrigger {
       errorMsg = 'Problem loading or interacting with Hypothesis client.';
     }
 
-    // Needs to be explicitly thrown to get a stack trace from Safari.
-    // https://docs.newrelic.com/docs/browser/new-relic-browser/browser-agent-spa-api/notice-error
-    try {
-      throw new Error(errorMsg);
-    } catch (e) {
-      this.window.console.error(e);
-      if (typeof this.window.newrelic === 'object') {
-        this.window.newrelic.noticeError(e);
-      }
-    }
+    this.window.console.error(new Error(errorMsg));
   }
 
   handleTimerExpired() {

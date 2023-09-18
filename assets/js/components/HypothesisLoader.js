@@ -20,10 +20,6 @@ module.exports = class HypothesisLoader {
       this.window.hypothesisConfig = HypothesisLoader.assembleHypothesisConfig(this.window);
     } catch (e) {
       this.window.console.error(e);
-      if (typeof this.window.newrelic === 'object') {
-        this.window.newrelic.noticeError(e);
-      }
-
       return;
     }
 
