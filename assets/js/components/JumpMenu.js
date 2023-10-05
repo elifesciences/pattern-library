@@ -75,7 +75,7 @@ module.exports = class JumpMenu {
 
   handleHighlighting(findClosest) {
     const $firstViewableHeading = this.findFirstInView(this.collapsibleSectionHeadings,
-                                                       this.doc, this.window);
+                                                  this.doc, this.window);
     const firstLogicalHeadingText = this.collapsibleSectionHeadings[0] ?
                                                   this.collapsibleSectionHeadings[0].innerHTML : '';
     const $section = JumpMenu.findSectionForLinkHighlight($firstViewableHeading,
@@ -100,9 +100,11 @@ module.exports = class JumpMenu {
       return;
     }
 
+    const navigationHeight = 74;
+
     // If the heading is near or off the top of the window, use the section for that heading,
     // otherwise, use the section before the section for that heading
-    if ($heading.innerHTML === firstHeadingText || $heading.getBoundingClientRect().top < 48) {
+    if ($heading.innerHTML === firstHeadingText || $heading.getBoundingClientRect().top < navigationHeight) {
       return findClosest.call(null, $heading, '.article-section');
     }
 

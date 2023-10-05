@@ -11,6 +11,10 @@ $arrow-size: 5;
   p > a {
     word-break: break-word;
   }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    scroll-margin-top: 72px;
+  }
 }
 
 .article-section--js {
