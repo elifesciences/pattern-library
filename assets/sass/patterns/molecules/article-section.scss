@@ -12,8 +12,10 @@ $arrow-size: 5;
     word-break: break-word;
   }
 
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    scroll-margin-top: 72px;
+  .tabbed-navigation:not(.hidden) ~ .main-content-grid & {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      scroll-margin-top: 72px;
+    }
   }
 }
 
