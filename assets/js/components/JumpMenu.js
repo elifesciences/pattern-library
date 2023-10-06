@@ -69,17 +69,14 @@ module.exports = class JumpMenu {
   }
 
   handleScrolling() {
-    this.handleHighlighting(utils.closest, this.doc);
+    this.handleHighlighting(utils.closest);
   }
 
-  handleHighlighting(findClosest, doc) {
-    const $firstViewableHeading = this.findFirstInView(this.collapsibleSectionHeadings,
-                                                  this.doc, this.window);
+  handleHighlighting(findClosest) {
+    const $firstViewableHeading = this.findFirstInView(this.collapsibleSectionHeadings, this.doc, this.window);
     const firstLogicalHeadingText = this.collapsibleSectionHeadings[0] ?
                                                   this.collapsibleSectionHeadings[0].innerHTML : '';
-    const $section = JumpMenu.findSectionForLinkHighlight($firstViewableHeading,
-                                                              firstLogicalHeadingText,
-                                                              findClosest, doc);
+    const $section = JumpMenu.findSectionForLinkHighlight($firstViewableHeading, firstLogicalHeadingText, findClosest, this.doc);
 
     if ($section && typeof $section.id === 'string') {
       const $target = JumpMenu.findLinkToHighlight(this.linksList, `[href="#${$section.id}"]`);
