@@ -13,9 +13,7 @@ $arrow-size: 5;
   }
 
   .tabbed-navigation:not(.hidden) ~ .main-content-grid & {
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      scroll-margin-top: 72px;
-    }
+    scroll-margin-top: 72px;
   }
 }
 
