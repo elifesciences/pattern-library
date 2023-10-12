@@ -15,7 +15,6 @@ module.exports = class JumpMenu {
     this.$elm = $elm;
     this.linksList = this.$elm.querySelector('.jump-menu__list');
     this.links = this.$elm.querySelectorAll('.jump-menu');
-    this.$navDetect = this.doc.querySelector('.content-container-grid');
 
     if (this.links.length > 0) {
       this.mainTarget = this.doc.querySelector('.main');
@@ -74,13 +73,10 @@ module.exports = class JumpMenu {
   }
 
   handleHighlighting(findClosest) {
-    const $firstViewableHeading = this.findFirstInView(this.collapsibleSectionHeadings,
-                                                       this.doc, this.window);
+    const $firstViewableHeading = this.findFirstInView(this.collapsibleSectionHeadings, this.doc, this.window);
     const firstLogicalHeadingText = this.collapsibleSectionHeadings[0] ?
                                                   this.collapsibleSectionHeadings[0].innerHTML : '';
-    const $section = JumpMenu.findSectionForLinkHighlight($firstViewableHeading,
-                                                              firstLogicalHeadingText,
-                                                              findClosest);
+    const $section = JumpMenu.findSectionForLinkHighlight($firstViewableHeading, firstLogicalHeadingText, findClosest, this.doc);
 
     if ($section && typeof $section.id === 'string') {
       const $target = JumpMenu.findLinkToHighlight(this.linksList, `[href="#${$section.id}"]`);
@@ -95,14 +91,21 @@ module.exports = class JumpMenu {
     JumpMenu.highlightJumpMenu($target);
   }
 
-  static findSectionForLinkHighlight($heading, firstHeadingText, findClosest) {
+  static findSectionForLinkHighlight($heading, firstHeadingText, findClosest, doc) {
     if (!$heading) {
       return;
     }
 
+    let navigationHeight = 74;
+    let tabbedNavigation = doc.querySelector('.tabbed-navigation');
+
+    if (!tabbedNavigation || tabbedNavigation && tabbedNavigation.classList.contains('hidden')) {
+      navigationHeight = 1;
+    }
+
     // If the heading is near or off the top of the window, use the section for that heading,
     // otherwise, use the section before the section for that heading
-    if ($heading.innerHTML === firstHeadingText || $heading.getBoundingClientRect().top < 48) {
+    if ($heading.innerHTML === firstHeadingText || $heading.getBoundingClientRect().top < navigationHeight) {
       return findClosest.call(null, $heading, '.article-section');
     }
 

@@ -11,6 +11,10 @@ $arrow-size: 5;
   p > a {
     word-break: break-word;
   }
+
+  .tabbed-navigation:not(.hidden) ~ .main-content-grid & {
+    scroll-margin-top: 72px;
+  }
 }
 
 .article-section--js {

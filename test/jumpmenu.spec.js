@@ -80,6 +80,7 @@ describe('A JumpMenu Component', function () {
       describe('identifying a section to highlight the link to', () => {
 
         let firstHeadingText;
+        let windowMock = { document };
 
         beforeEach(() => {
           firstHeadingText = 'Text of the first heading';
@@ -102,7 +103,7 @@ describe('A JumpMenu Component', function () {
                 spy(fakeFirstHeading, 'findClosest');
 
                 JumpMenu.findSectionForLinkHighlight(fakeFirstHeading.el, firstHeadingText,
-                                                         fakeFirstHeading.findClosest);
+                                                         fakeFirstHeading.findClosest, windowMock.document);
                 expect(fakeFirstHeading.findClosest.calledWithExactly(fakeFirstHeading.el,
                                                                       '.article-section')).to.be.true;
                 expect(fakeFirstHeading.findClosest.returned(
