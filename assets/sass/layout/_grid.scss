@@ -123,6 +123,23 @@
     padding-top: 0;
   }
 
+  .contact-info {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      padding-right: 56px;
+
+      p {
+        margin-bottom: 48px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          display: inline-block;
+        }
+      }
+    }
+  }
 }
 
 /**
