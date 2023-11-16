@@ -129,14 +129,16 @@
 
       p {
         margin-bottom: 48px;
+      }
+    }
 
-        &:last-child {
-          margin-bottom: 0;
-        }
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
 
-        a {
-          display: inline-block;
-        }
+      a {
+        display: inline-block;
       }
     }
   }
