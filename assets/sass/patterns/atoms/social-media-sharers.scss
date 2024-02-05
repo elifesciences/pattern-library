@@ -66,6 +66,22 @@
       display: none;
     }
   }
+
+  .article-download-links-list__group .article-download-links-list__intro & {
+    display: flex;
+    margin-top: 16px;
+    list-style: none;
+    padding: 0;
+
+    li:first-child .social-media-sharer {
+      margin-left: 0;
+    }
+
+    .social-media-sharer {
+      background-color: $color-text-ui-background;
+      border: none;
+    }
+  }
 }
 
 .social-media-sharer,

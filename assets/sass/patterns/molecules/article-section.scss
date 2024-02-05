@@ -14,6 +14,10 @@ $arrow-size: 5;
 
   .tabbed-navigation:not(.hidden) ~ .main-content-grid & {
     scroll-margin-top: 72px;
+
+    .article-download-links-list__heading {
+      scroll-margin-top: 72px;
+    }
   }
 }
 
