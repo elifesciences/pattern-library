@@ -21,6 +21,10 @@ $arrow-size: 5;
   }
 }
 
+.js .article-section.article-section__sharers {
+  @include visuallyhidden();
+}
+
 .article-section--js {
   clear: both;
 
