@@ -212,6 +212,13 @@ $arrow-size: 5;
     @include margin(0 0 15 0);
   }
 
+  .funding-link {
+    @include font-size-and-vertical-height(14, $blg-space-small-in-px);
+    @include margin(12, "bottom");
+
+    display: block;
+    font-family: $font-secondary;
+  }
 }
 
 .article-section--highlighted {
