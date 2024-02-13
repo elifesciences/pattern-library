@@ -53,45 +53,49 @@
                     {{>molecules-pl-only-article-section}}
                   {{/figures}}
 
-            {{#additional-files}}
-              {{>molecules-pl-only-article-section}}
-            {{/additional-files}}
-               </div>
+                  {{#additional-files}}
+                    {{>molecules-pl-only-article-section}}
+                  {{/additional-files}}
 
-               {{! Decided this will be content, serverside }}
-               {{#pl-only-article-section-for-download-links}}
-                 {{> molecules-pl-only-article-section}}
-               {{/pl-only-article-section-for-download-links}}
+                  {{#articleSections}}
+                    {{> molecules-article-section }}
+                  {{/articleSections}}
+                </div>
 
-               {{#articleSectionSocialMediaSharers}}
-                 {{> molecules-article-section }}
-               {{/articleSectionSocialMediaSharers}}
+                {{! Decided this will be content, serverside }}
+                {{#pl-only-article-section-for-download-links}}
+                  {{> molecules-pl-only-article-section}}
+                {{/pl-only-article-section-for-download-links}}
 
-               {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
-               {{#articleMeta}}
-                 <section class="article-section">
-                     {{> molecules-article-meta }}
-                 </section>
-               {{/articleMeta}}
+                {{#articleSectionSocialMediaSharers}}
+                  {{> molecules-article-section }}
+                {{/articleSectionSocialMediaSharers}}
 
-             </div>
+                {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
+                {{#articleMeta}}
+                  <section class="article-section">
+                    {{> molecules-article-meta }}
+                  </section>
+                {{/articleMeta}}
 
-             <div class="secondary-column-grid">
+              </div>
 
-               {{#related}}
-                 <div class="grid-secondary-column__item grid-secondary-column__item--wide-only article__related-item">
-                   {{> organisms-listing-teasers }}
-                 </div>
-               {{/related}}
+              <div class="secondary-column-grid">
 
-             </div>
+                {{#related}}
+                  <div class="grid-secondary-column__item grid-secondary-column__item--wide-only article__related-item">
+                    {{> organisms-listing-teasers }}
+                  </div>
+                {{/related}}
 
-           </div>
+              </div>
 
-         </div>
-      {{#contentAside}}
+            </div>
+
+          </div>
+        {{#contentAside}}
         </div>
-      {{/contentAside}}
+        {{/contentAside}}
 
     </main>
 
