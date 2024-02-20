@@ -56,3 +56,14 @@ a.meta__type:hover {
     font-weight: bold;
   }
 }
+
+.meta__status-circle {
+  @include margin(1, "bottom");
+  @include margin(8, "right");
+
+  background-color: $color-status-variable-c;
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+}
