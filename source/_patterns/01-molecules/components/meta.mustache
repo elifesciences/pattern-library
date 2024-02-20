@@ -1,12 +1,14 @@
 <div class="meta">
 
-  <div class="meta__status">
-    <span class="meta__status-circle"></span> Not yet revised
-  </div>
+  {{#status}}
+    <div class="meta__status">
+      <span class="meta__status-circle"></span>data
+    </div>
+  {{/status}}
 
-  <div class="meta__version">
-  Reviewed Preprint v1
-  </div>
+  {{#version}}
+    <div class="meta__version">{{version}}</div>
+  {{/version}}
 
   {{#url}}
     <a class="meta__type" href="{{url}}" {{#carouselItem}}tabindex="-1"{{/carouselItem}}>{{{text}}}</a>
