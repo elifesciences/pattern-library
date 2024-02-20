@@ -15,7 +15,7 @@ properties:
   text:
     type: string
     minLength: 1
-  status:
+  articleStatus:
     type: string
     minLength: 1
   version:
