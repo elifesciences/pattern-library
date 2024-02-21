@@ -10,7 +10,7 @@
   justify-content: center;
   position: sticky;
   top: -1px;
-  z-index: 10;
+  z-index: 9;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     @include margin(36, "bottom");
