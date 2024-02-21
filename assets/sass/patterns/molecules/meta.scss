@@ -48,12 +48,15 @@ a.meta__type:hover {
 
 .meta__status,
 .meta__version {
-  @include font-size-and-vertical-height(14, 18);
   display: inline;
 
   &:after {
     content: "\00a0\2219\00a0";
     font-weight: bold;
+  }
+
+  .teaser--main & {
+    @include font-size-and-vertical-height(14, 18);
   }
 }
 
