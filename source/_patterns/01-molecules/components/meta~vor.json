@@ -2,6 +2,7 @@
   "url": "#",
   "text": "Research article",
   "articleStatus": "Version of Record",
+  "articleStatusColorClass": "vor",
   "date": {
     "forHuman": {
       "dayOfMonth": 29,

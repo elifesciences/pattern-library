@@ -18,6 +18,9 @@ properties:
   articleStatus:
     type: string
     minLength: 1
+  articleStatusColorClass:
+    type: string
+    minLength: 1
   version:
     type: string
     minLength: 1

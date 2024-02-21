@@ -323,6 +323,7 @@
               "text": "Research article",
               "url": "#",
               "articleStatus": "Not yet revised",
+              "articleStatusColorClass": "not-revised",
               "version": "Reviewed Preprint v1",
               "date": {
                 "forHuman": {
@@ -365,6 +366,9 @@
             "meta": {
               "text": "Research article",
               "url": "#",
+              "articleStatus": "Revised",
+              "articleStatusColorClass": "revised",
+              "version": "Reviewed Preprint v3",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 19,
@@ -399,6 +403,8 @@
             "meta": {
               "text": "Research article",
               "url": "#",
+              "articleStatus": "Version of Record",
+              "articleStatusColorClass": "vor",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 16,

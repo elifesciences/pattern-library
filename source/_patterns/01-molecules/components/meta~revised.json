@@ -2,6 +2,7 @@
   "url": "#",
   "text": "Research article",
   "articleStatus": "Revised",
+  "articleStatusColorClass": "revised",
   "version": "Reviewed Preprint v3",
   "date": {
     "forHuman": {

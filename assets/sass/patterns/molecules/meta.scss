@@ -70,3 +70,15 @@ a.meta__type:hover {
   height: 8px;
   width: 8px;
 }
+
+.meta__status-circle-not-revised {
+  background-color: $color-status-variable-k;
+}
+
+.meta__status-circle-revised {
+  background-color: $color-status-variable-i;
+}
+
+.meta__status-circle-vor {
+  background-color: $color-status-variable-j;
+}
