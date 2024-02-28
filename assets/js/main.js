@@ -123,6 +123,5 @@ function Elife() {
   // foo.bar.Elife.initialiseUnsafeComponentList()
 };
 
-//new Elife();
-Elife = new Elife();
+let Elife = new Elife();
 

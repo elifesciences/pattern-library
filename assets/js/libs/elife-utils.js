@@ -370,7 +370,6 @@ module.exports = () => {
     throw new TypeError('Expected HTMLElement');
   }
 
-  // troublesome. detect consent somehow?
   function loadJavaScript(uri, integrity = null) {
     return new Promise((resolve, reject) => {
       let script = document.createElement('script');
@@ -393,7 +392,6 @@ module.exports = () => {
     });
   }
 
-  // troublesome. detect consent somehow?
   function loadStyleSheet(uri, integrity = null) {
     return new Promise(function (resolve, reject) {
       let link = document.createElement('link');
