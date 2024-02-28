@@ -43,8 +43,16 @@ properties:
 dependencies:
   title:
     oneOf:
-      - headingLevel
-      - hasEditorTitle
+      - required:
+          - headingLevel
+        not:
+          required:
+            - hasEditorTitle
+      - required:
+          - hasEditorTitle
+        not:
+          required:
+            - headingLevel
   hasEditorTitle:
     - title
   headingLevel:
@@ -57,8 +65,5 @@ dependencies:
     - id
   relatedLinksSeparator:
     - relatedLinks
-exclusives:
-  - headingLevel
-  - hasEditorTitle
 required:
   - body
