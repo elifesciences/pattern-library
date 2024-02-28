@@ -87,7 +87,7 @@
   @include margin(24, "left");
   display: inline-block;
   grid-column: 2;
-  width: 100%;
+  width: auto;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     @include margin(0, "left");
