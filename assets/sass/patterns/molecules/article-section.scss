@@ -240,6 +240,41 @@ $arrow-size: 5;
     }
   }
 }
+
+.article-section--editor {
+  @include margin(24, "bottom");
+  @include margin(16 0 36);
+
+  &:last-child {
+    @include margin(0, "bottom");
+  }
+
+  .article-section__header_text {
+    @include font-size-and-vertical-height(14, $blg-space-small-in-px);
+    @include margin(12, "bottom");
+    font-family: $font-secondary;
+  }
+
+  .list {
+    @include padding(0);
+
+    li {
+      @include margin(6, "bottom");
+    }
+
+    li:nth-child(odd) {
+      @include font-size-and-vertical-height(20, 28);
+      font-family: $font-secondary;
+      font-weight: 600;
+    }
+
+    li:nth-child(even) {
+      @include font-size-and-vertical-height(16, $blg-space-small-in-px);
+      font-family: $font-primary;
+    }
+  }
+}
+
 .article-section__body {
 
   .article-section__related {

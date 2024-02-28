@@ -37,9 +37,15 @@ properties:
     type: array
     items:
       $ref: ../../../non-pattern-schema/link.yaml
+  hasEditorTitle:
+    type: boolean
+    default: false
 dependencies:
   title:
     - headingLevel
+    - hasEditorTitle
+  hasEditorTitle:
+    - title
   headingLevel:
     - title
   headerLink:
@@ -50,5 +56,8 @@ dependencies:
     - id
   relatedLinksSeparator:
     - relatedLinks
+exclusives:
+  - headingLevel
+  - hasEditorTitle
 required:
   - body

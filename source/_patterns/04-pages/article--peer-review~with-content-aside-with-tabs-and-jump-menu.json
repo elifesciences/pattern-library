@@ -498,7 +498,7 @@
       "title": "Editors",
       "headingLevel": 2,
       "hasBehaviour": true,
-      "body": "<section class=\"article-section\"> <header class=\"article-section__header\"> <h3 class=\"article-section__header_text\">Senior Editor</h3> </header> <div class=\"article-section__body\"> <ol class=\"list\"> <li>Kenton J Swartz, National Institute of Neurological Disorders and Stroke, National Institutes of Health, United States</li> </ol> </div> </section> <section class=\"article-section\"> <header class=\"article-section__header\"> <h3 class=\"article-section__header_text\">Reviewing Editor</h3> </header> <div class=\"article-section__body\"> <ol class=\"list\"> <li>Randy B Stockbridge, University of Michigan, United States</li> </ol> </div> </section>"
+      "body": "<section class=\"article-section article-section--editor\"> <header class=\"article-section__header\"> <div class=\"article-section__header_text\">Senior Editor</div> </header> <div class=\"article-section__body\"> <ol class=\"list\"> <li>Kenton J Swartz</li><li>National Institute of Neurological Disorders and Stroke, National Institutes of Health, United States</li> </ol> </div> </section> <section class=\"article-section article-section--editor\"> <header class=\"article-section__header\"> <div class=\"article-section__header_text\">Reviewing Editor</div> </header> <div class=\"article-section__body\"> <ol class=\"list\"> <li>Randy B Stockbridge</li><li>University of Michigan, United States</li> </ol> </div> </section>"
     },
     {
       "id": "reviewer1",
