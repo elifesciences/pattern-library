@@ -41,9 +41,7 @@ properties:
     type: boolean
     default: false
 dependencies:
-  title:
-    - headingLevel
-    - hasEditorTitle
+  title: [headingLevel, hasEditorTitle]
   hasEditorTitle:
     - title
   headingLevel:
