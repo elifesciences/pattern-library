@@ -115,7 +115,7 @@ function Elife() {
     }
 
     findAndInitialiseComponentList();
-  }
+  };
 
   // init the safe components
   findAndInitialiseComponentList();
