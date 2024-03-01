@@ -126,5 +126,5 @@ function ElifeInit() {
   // foo.bar.Elife.initialiseUnsafeComponentList()
 }
 
-let Elife = new ElifeInit(); // jshint unused:true
+let Elife = new ElifeInit(); // jshint ignore:line
 
