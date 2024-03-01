@@ -93,31 +93,32 @@ function Elife() {
 
   Components.DelegateBehaviour.setInitialiseComponent(initialiseComponent);
 
-  function initialiseComponentList($component_list) {
-      if (component_list) {
-        [].forEach.call(component_list, (el) => initialiseComponent(el));
-      }
+  function initialiseComponentList($componentList) {
+    if (componentList) {
+      [].forEach.call(componentList, (el) => initialiseComponent(el));
+    }
   }
 
   function findAndInitialiseComponentList() {
     initialiseComponentList(document.querySelectorAll('[data-behaviour]'));
     if ('MutationObserver' in window) {
-        let observer = new MutationObserver(() => {
-            initialiseComponentList(document.querySelectorAll('[data-behaviour]:not([data-behaviour-initialised])'));
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
+      let observer = new MutationObserver(() => {
+        initialiseComponentList(document.querySelectorAll('[data-behaviour]:not([data-behaviour-initialised])'));
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
     }
   }
 
-  this.initialiseUnsafeComponentList = function() {
+  this.initialiseUnsafeComponentList = function () {
     for (let key in UnsafeComponents) {
-        Components[key] = UnsafeComponents[key]
+      Components[key] = UnsafeComponents[key];
     }
-    findAndInitialiseComponentList()
+
+    findAndInitialiseComponentList();
   }
 
   // init the safe components
-  findAndInitialiseComponentList()
+  findAndInitialiseComponentList();
 
   // later, once visitor has consented, we can do this:
   // foo.bar.Elife.initialiseUnsafeComponentList()
