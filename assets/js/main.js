@@ -52,7 +52,7 @@ Components.ViewerModal = require('./components/ViewerModal');
 Components.ViewSelector = require('./components/ViewSelector');
 
 // App
-function Elife() {
+function ElifeInit() {
 
   let singletons = (function () {
     let registered = [];
@@ -94,8 +94,8 @@ function Elife() {
   Components.DelegateBehaviour.setInitialiseComponent(initialiseComponent);
 
   function initialiseComponentList($componentList) {
-    if (componentList) {
-      [].forEach.call(componentList, (el) => initialiseComponent(el));
+    if ($componentList) {
+      [].forEach.call($componentList, (el) => initialiseComponent(el));
     }
   }
 
@@ -111,7 +111,9 @@ function Elife() {
 
   this.initialiseUnsafeComponentList = function () {
     for (let key in UnsafeComponents) {
-      Components[key] = UnsafeComponents[key];
+      if (UnsafeComponents.hasOwnProperty(key)) {
+        Components[key] = UnsafeComponents[key];
+      }
     }
 
     findAndInitialiseComponentList();
@@ -122,7 +124,7 @@ function Elife() {
 
   // later, once visitor has consented, we can do this:
   // foo.bar.Elife.initialiseUnsafeComponentList()
-};
+}
 
-let Elife = new Elife();
+let Elife = new ElifeInit();
 
