@@ -126,5 +126,5 @@ function ElifeInit() {
   // foo.bar.Elife.initialiseUnsafeComponentList()
 }
 
-let Elife = new ElifeInit();
+let Elife = new ElifeInit(); // eslint-disable-line no-unused-vars
 
