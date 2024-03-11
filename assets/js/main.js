@@ -123,7 +123,7 @@ function ElifeInit() {
   findAndInitialiseComponentList();
 
   // later, once visitor has consented, we can do this:
-  // foo.bar.Elife.initialiseUnsafeComponentList()
+  // window.Elife.initialiseUnsafeComponentList()
 }
 
 let Elife = new ElifeInit(); // jshint ignore:line
