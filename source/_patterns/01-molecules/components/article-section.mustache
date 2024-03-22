@@ -7,7 +7,8 @@
 
   {{#title}}
     <header class="article-section__header">
-      <h{{headingLevel}} class="article-section__header_text">{{{title}}}</h{{headingLevel}}>
+      {{^hasEditorTitle}}<h{{headingLevel}} class="article-section__header_text">{{{title}}}</h{{headingLevel}}>{{/hasEditorTitle}}
+      {{#hasEditorTitle}}<div class="article-section__header_text">{{{title}}}</div>{{/hasEditorTitle}}
       {{#headerLink}}
         <a href="{{url}}" class="article-section__header_link">{{name}}</a>
       {{/headerLink}}
