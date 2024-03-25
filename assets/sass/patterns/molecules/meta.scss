@@ -45,3 +45,40 @@
 a.meta__type:hover {
   color: $color-primary-dark;
 }
+
+.meta__status,
+.meta__version {
+  display: inline;
+
+  &:after {
+    content: "\00a0\2219\00a0";
+    font-weight: bold;
+  }
+
+  .teaser--main & {
+    @include font-size-and-vertical-height(14, 18);
+  }
+}
+
+.meta__status-circle {
+  @include margin(1, "bottom");
+  @include margin(8, "right");
+
+  background-color: $color-status-variable-c;
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+}
+
+.meta__status-circle-not-revised {
+  background-color: $color-status-variable-k;
+}
+
+.meta__status-circle-revised {
+  background-color: $color-status-variable-i;
+}
+
+.meta__status-circle-vor {
+  background-color: $color-status-variable-j;
+}

@@ -322,18 +322,17 @@
             "meta": {
               "text": "Research article",
               "url": "#",
+              "articleStatus": "Not yet revised",
+              "articleStatusColorClass": "not-revised",
+              "version": "Reviewed Preprint v1",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 16,
                   "month": "May",
                   "year": 2016
                 },
-                "forMachine": "20160516",
-                "isUpdated": true
+                "forMachine": "20160516"
               }
-            },
-            "formats": {
-              "list": ["Executable", "PDF"]
             }
           },
 
@@ -367,6 +366,9 @@
             "meta": {
               "text": "Research article",
               "url": "#",
+              "articleStatus": "Revised",
+              "articleStatusColorClass": "revised",
+              "version": "Reviewed Preprint v3",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 19,
@@ -375,9 +377,6 @@
                 },
                 "forMachine": "20160419"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -404,6 +403,8 @@
             "meta": {
               "text": "Research article",
               "url": "#",
+              "articleStatus": "Version of Record",
+              "articleStatusColorClass": "vor",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 16,
@@ -412,9 +413,6 @@
                 },
                 "forMachine": "20160516"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           }
         },
@@ -449,9 +447,6 @@
                 },
                 "forMachine": "20160415"
               }
-            },
-            "formats": {
-              "list": ["HTML", "PDF"]
             }
           },
           "image": {
@@ -495,9 +490,6 @@
                 },
                 "forMachine": "2016047"
               }
-            },
-            "formats": {
-              "list": ["PDF"]
             }
           }
         }
