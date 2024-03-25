@@ -61,10 +61,6 @@
   @include body-para();
   @include nospace("bottom");
 
-  &:hover {
-    @include color-link-hover();
-  }
-
   p {
     @include body-typeg();
   }
