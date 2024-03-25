@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,6 @@
   <title>Mocha Test Runner</title>
 
   <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
-  <link rel="stylesheet" href="../public/assets/css/popup.css">
 </head>
 <body>
 
@@ -35,11 +34,11 @@
     <div data-popup-contents="another" id="another"><p>I'm body contents of #another</p></div>
 
     <a id="self-example" href="#self-example" data-behaviour="Popup" data-popup-self="true">
-      I'm self-example contents 
+      I'm self-example contents
     </a>
 
     <div id="self-example-wrapped" data-behaviour="Popup" data-popup-self="true" data-popup-wrapper="true">
-      I'm self-example-wrapped contents 
+      I'm self-example-wrapped contents
     </div>
 
     <!--
@@ -48,7 +47,6 @@
     <script src="../node_modules/mocha/mocha.js"></script>
     <script src="../node_modules/chai/chai.js"></script>
     <script src="../node_modules/sinon/pkg/sinon.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.0/es6-promise.auto.js"></script>
 
     <!-- Initialise test suite -->
     <script>mocha.setup('bdd')</script>
