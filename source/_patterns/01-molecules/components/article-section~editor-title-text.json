@@ -1,0 +1,8 @@
+{
+  "classes": "article-section--editor",
+  "id": "editor",
+  "title": "Senior editor",
+  "body": "<ol class=\"list\"> <li>Dominique Soldati-Favre</li> <li>University of Geneva, Switzerland</li> </ol>",
+  "hasBehaviour": false,
+  "hasEditorTitle": true
+}
