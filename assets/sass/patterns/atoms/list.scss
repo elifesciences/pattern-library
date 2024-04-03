@@ -4,6 +4,10 @@
   clear: both;
   list-style-type: none;
   padding-left: 0.75rem;
+
+  .article-section__body &:not([class*=" "]) {
+    @include padding (0, "left");
+  }
 }
 
 .list--teaser {
