@@ -42,4 +42,35 @@ describe('A ContentAside Component', function () {
     _contentAside.handleScrolling();
     expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.false;
   });
+
+  describe('with Contextual data', function () {
+    const buildFakeWindow = function (height, width) {
+      return {
+        innerHeight: height,
+        innerWidth: width,
+        addEventListener: function () {},
+      };
+    };
+
+    it('should add no-separator class to the second item when contextual data is on two lines', () => {
+      let winFake = buildFakeWindow(250, 250);
+      let _contentAside = new ContentAside($elm, winFake);
+
+      setTimeout(() => {
+        const secondItem = _contentAside.$elm.querySelectorAll('.contextual-data__item')[1];
+        expect(secondItem.classList.contains('no-separator')).to.be.true;
+        const itemsWithNoSeparator = _contentAside.$elm.querySelectorAll('.no-separator');
+        expect(itemsWithNoSeparator.length).to.equal(1);
+      }, 0);
+    });
+
+    it('should not add no-separator class when screen size narrow', () => {
+      let winFake = buildFakeWindow(320, 320);
+      let _contentAside = new ContentAside($elm, winFake);
+      setTimeout(() => {
+        const itemsWithNoSeparator = _contentAside.$elm.querySelectorAll('.no-separator');
+        expect(itemsWithNoSeparator.length).to.equal(0);
+      }, 0);
+    });
+  });
 });

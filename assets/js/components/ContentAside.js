@@ -84,7 +84,7 @@ module.exports = class ContentAside {
   }
 
   removeSeparatorFromLastOnLine() {
-    const items = document.querySelectorAll('.content-aside .contextual-data__item');
+    const items = this.$elm.querySelectorAll('.contextual-data__item');
 
     if (items.length <= 2) {
       return;
