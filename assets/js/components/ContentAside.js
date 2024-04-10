@@ -12,6 +12,9 @@ module.exports = class ContentAside {
     this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
 
     this.prepareScrollable(this.$elm);
+
+    this.window.onload = this.removeSeparatorFromLastOnLine;
+    this.window.addEventListener('resize', this.removeSeparatorFromLastOnLine);
   }
 
   prepareTimeline(timeline) {
@@ -78,5 +81,21 @@ module.exports = class ContentAside {
 
   isViewportWide() {
     return this.window.matchMedia('(min-width: 1000px)').matches;
+  }
+
+  removeSeparatorFromLastOnLine() {
+    const items = document.querySelectorAll('.content-aside .contextual-data__item');
+
+    if (items.length <= 2) {
+      return;
+    }
+
+    items.forEach(function (item, index) {
+      if (index < items.length - 1 && item.offsetTop !== items[index + 1].offsetTop) {
+        item.classList.add('no-separator');
+      } else {
+        item.classList.remove('no-separator');
+      }
+    });
   }
 };

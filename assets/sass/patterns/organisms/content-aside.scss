@@ -51,11 +51,8 @@
 
   .contextual-data__list {
     border: none;
-    display: none;
-
-    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      display: inline-block;
-    }
+    display: inline-block;
+    text-align: left;
 
     .contextual-data__item {
       @include padding(0);
@@ -70,6 +67,13 @@
 
       &:last-child {
         &:after {
+          content: "";
+        }
+      }
+
+      &.no-separator {
+        &:after {
+          @include margin(12, "right");
           content: "";
         }
       }
