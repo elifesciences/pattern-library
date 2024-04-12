@@ -13,8 +13,8 @@ module.exports = class ContentAside {
 
     this.prepareScrollable(this.$elm);
 
-    this.window.onload = this.removeSeparatorFromLastOnLine;
-    this.window.addEventListener('resize', this.removeSeparatorFromLastOnLine);
+    this.window.onload = this.removeSeparatorFromLastOnLine.bind(this);
+    this.window.addEventListener('resize', this.removeSeparatorFromLastOnLine.bind(this));
   }
 
   prepareTimeline(timeline) {
