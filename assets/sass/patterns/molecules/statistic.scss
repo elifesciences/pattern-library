@@ -1,0 +1,24 @@
+@import "../../definitions";
+
+.statistic-collection__item {
+  .statistic__additonal-text {
+    text-wrap: wrap;
+  }
+
+  .statistic__counter {
+    font-weight: bold;
+  }
+
+  &:not(:has(.statistic__additonal-text)):after {
+    content: "\00a0\2219\00a0";
+  }
+
+  &:last-child:after {
+    content: "";
+  }
+
+  &.no-separator:not(:has(.statistic__additonal-text)):after {
+    @include margin(12, "right");
+    content: "";
+  }
+}

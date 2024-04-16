@@ -11,29 +11,4 @@
   display: inline;
   list-style-type: none;
   text-wrap: nowrap;
-
-  .statistic-collection__item__additonal-text {
-    text-wrap: wrap;
-  }
-
-  .statistic-collection__item__counter {
-    font-weight: bold;
-  }
-
-  // &:not(:has(.statistic-collection__item__additonal-text)) + &:before {
-  //   content: "\00a0\2219\00a0";
-  // }
-
-  &:not(:has(.statistic-collection__item__additonal-text)):after {
-    content: "\00a0\2219\00a0";
-  }
-
-  &:last-child:after {
-    content: "";
-  }
-
-  &.no-separator:not(:has(.statistic-collection__item__additonal-text)):after {
-    @include margin(12, "right");
-    content: "";
-  }
 }

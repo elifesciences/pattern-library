@@ -1,8 +1,7 @@
 <ul class="statistic-collection clearfix" data-behaviour="StatisticCollection">
   {{#stats}}
     <li class="statistic-collection__item">
-      <span class="statistic-collection__item__counter">{{value}}</span> {{label}}
-      {{#additionalText}}<p class="statistic-collection__item__additonal-text">{{{additionalText}}}</p>{{/additionalText}}
+      {{>molecules-statistic}}
     </li>
   {{/stats}}
 </ul>
