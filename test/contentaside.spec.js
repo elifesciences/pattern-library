@@ -1,7 +1,7 @@
 'use strict';
 
-let expect = chai.expect;
-let spy = sinon.spy;
+const expect = chai.expect;
+const spy = sinon.spy;
 
 // load in component(s) to be tested
 let ContentAside = require('../assets/js/components/ContentAside');
@@ -53,8 +53,8 @@ describe('A ContentAside Component', function () {
     };
 
     it('should add no-separator class to the second item when contextual data is on two lines', () => {
-      let winFake = buildFakeWindow(250, 250);
-      let _contentAside = new ContentAside($elm, winFake);
+      const winFake = buildFakeWindow(250, 250);
+      const _contentAside = new ContentAside($elm, winFake);
 
       setTimeout(() => {
         const secondItem = _contentAside.$elm.querySelectorAll('.contextual-data__item')[1];
@@ -65,8 +65,8 @@ describe('A ContentAside Component', function () {
     });
 
     it('should not add no-separator class when screen size narrow', () => {
-      let winFake = buildFakeWindow(320, 320);
-      let _contentAside = new ContentAside($elm, winFake);
+      const winFake = buildFakeWindow(320, 320);
+      const _contentAside = new ContentAside($elm, winFake);
       setTimeout(() => {
         const itemsWithNoSeparator = _contentAside.$elm.querySelectorAll('.no-separator');
         expect(itemsWithNoSeparator.length).to.equal(0);

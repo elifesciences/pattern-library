@@ -152,26 +152,18 @@
       "hasBehaviour": true,
       "isInitiallyClosed": true,
       "showCharts": true,
-      "chart": {
-        "id": "09560",
-        "type": "article",
-        "containerId": "chart-1",
-        "apiEndpoint": "https://prod--gateway.elifesciences.org",
-        "metric": "downloads",
-        "period": "month"
-      },
       "body": null,
       "stats": [
         {
-          "label" : "Views",
+          "label": "views",
           "value": 547
         },
         {
-          "label" : "Downloads",
+          "label": "downloads",
           "value": 320
         },
         {
-          "label" : "Citations",
+          "label": "citations",
           "value": 89
         }
       ]

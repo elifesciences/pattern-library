@@ -1,5 +1,5 @@
 'use strict';
-var utils = require('../libs/elife-utils')();
+const utils = require('../libs/elife-utils')();
 
 module.exports = class ContentAside {
 
@@ -12,9 +12,13 @@ module.exports = class ContentAside {
     this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
 
     this.prepareScrollable(this.$elm);
+    this.window.onload = () => {
+      utils.removeSeparatorFromLastOnLine(this.$elm, '.contextual-data__item', 'no-separator');
+    };
 
-    this.window.onload = this.removeSeparatorFromLastOnLine.bind(this);
-    this.window.addEventListener('resize', this.removeSeparatorFromLastOnLine.bind(this));
+    this.window.addEventListener('resize', () => {
+      utils.removeSeparatorFromLastOnLine(this.$elm, '.contextual-data__item', 'no-separator');
+    });
   }
 
   prepareTimeline(timeline) {
@@ -81,21 +85,5 @@ module.exports = class ContentAside {
 
   isViewportWide() {
     return this.window.matchMedia('(min-width: 1000px)').matches;
-  }
-
-  removeSeparatorFromLastOnLine() {
-    const items = this.$elm.querySelectorAll('.contextual-data__item');
-
-    if (items.length <= 2) {
-      return;
-    }
-
-    items.forEach(function (item, index) {
-      if (index < items.length - 1 && item.offsetTop !== items[index + 1].offsetTop) {
-        item.classList.add('no-separator');
-      } else {
-        item.classList.remove('no-separator');
-      }
-    });
   }
 };
