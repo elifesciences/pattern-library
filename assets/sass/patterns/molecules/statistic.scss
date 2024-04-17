@@ -1,6 +1,7 @@
 @import "../../definitions";
 
 .statistic {
+  @include margin(6, "bottom");
   display: inline-block;
 
   + .statistic {
