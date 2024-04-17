@@ -10,10 +10,11 @@
 
 .statistic__value {
   display: inline-block;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .statistic__label {
   @include margin(0, "top");
   display: inline-block;
+  font-weight: normal;
 }
