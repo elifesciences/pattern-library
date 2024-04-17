@@ -1,3 +1,9 @@
 {{!-- This pattern must only be used by the Statistic Collection pattern and must not be used in a stand alone context --}}
-<span class="statistic__counter">{{value}}</span> {{label}}
-{{#additionalText}}<p class="statistic__additional-text">{{{additionalText}}}</p>{{/additionalText}}
+<dl class="statistic">
+  <dd class="statistic__value">
+    {{value}}
+  </dd>
+  <dt class="statistic__label">
+    {{label}}
+  </dt>
+</dl>

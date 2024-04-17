@@ -1,24 +1,19 @@
 @import "../../definitions";
 
-.statistic-collection__item {
-  .statistic__additional-text {
-    text-wrap: wrap;
-  }
+.statistic {
+  display: inline-block;
 
-  .statistic__counter {
-    font-weight: bold;
+  + .statistic {
+    @include margin(0 0 0 15);
   }
+}
 
-  &:not(:has(.statistic__additional-text)):after {
-    content: "\00a0\2219\00a0";
-  }
+.statistic__value {
+  display: inline-block;
+  font-weight: bold;
+}
 
-  &:last-child:after {
-    content: "";
-  }
-
-  &.no-separator:not(:has(.statistic__additional-text)):after {
-    @include margin(12, "right");
-    content: "";
-  }
+.statistic__label {
+  @include margin(0, "top");
+  display: inline-block;
 }

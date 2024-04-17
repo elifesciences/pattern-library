@@ -7,9 +7,6 @@ properties:
   value:
     type: string
     minLength: 1
-  additionalText:
-    type: string
-    minItems: 1
 required:
   - label
   - value
