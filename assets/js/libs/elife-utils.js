@@ -749,6 +749,6 @@ module.exports = () => {
     updateElementTranslate: updateElementTranslate,
     wrapElements: wrapElements,
     logError: logError,
-    removeSeparatorFromLastOnLine,
+    removeSeparatorFromLastOnLine: removeSeparatorFromLastOnLine,
   };
 };
