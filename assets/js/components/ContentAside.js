@@ -13,7 +13,9 @@ module.exports = class ContentAside {
 
     this.prepareScrollable(this.$elm);
 
-    utils.removeSeparatorFromLastOnLine(this.$elm, '.contextual-data__item', 'no-separator');
+    this.window.addEventListener('load', () => {
+      utils.removeSeparatorFromLastOnLine(this.$elm, '.contextual-data__item', 'no-separator');
+    });
 
     this.window.addEventListener('resize', () => {
       utils.removeSeparatorFromLastOnLine(this.$elm, '.contextual-data__item', 'no-separator');

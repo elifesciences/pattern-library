@@ -703,8 +703,6 @@ module.exports = () => {
   }
 
   function removeSeparatorFromLastOnLine($elm, itemClassName, separatorClassName) {
-    console.log('utils');
-
     const items = $elm.querySelectorAll(itemClassName);
 
     if (items.length <= 2) {
@@ -713,10 +711,8 @@ module.exports = () => {
 
     items.forEach(function (item, index) {
       if (index < items.length - 1 && item.getBoundingClientRect().top !== items[index + 1].getBoundingClientRect().top) {
-        console.log('if');
         item.classList.add(separatorClassName);
       } else {
-        console.log('else');
         item.classList.remove(separatorClassName);
       }
     });
