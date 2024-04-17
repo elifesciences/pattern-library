@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .statistic-collection__item {
-  .statistic__additonal-text {
+  .statistic__additional-text {
     text-wrap: wrap;
   }
 
@@ -9,7 +9,7 @@
     font-weight: bold;
   }
 
-  &:not(:has(.statistic__additonal-text)):after {
+  &:not(:has(.statistic__additional-text)):after {
     content: "\00a0\2219\00a0";
   }
 
@@ -17,7 +17,7 @@
     content: "";
   }
 
-  &.no-separator:not(:has(.statistic__additonal-text)):after {
+  &.no-separator:not(:has(.statistic__additional-text)):after {
     @include margin(12, "right");
     content: "";
   }

@@ -12,9 +12,8 @@ module.exports = class ContentAside {
     this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
 
     this.prepareScrollable(this.$elm);
-    this.window.onload = () => {
-      utils.removeSeparatorFromLastOnLine(this.$elm, '.contextual-data__item', 'no-separator');
-    };
+
+    utils.removeSeparatorFromLastOnLine(this.$elm, '.contextual-data__item', 'no-separator');
 
     this.window.addEventListener('resize', () => {
       utils.removeSeparatorFromLastOnLine(this.$elm, '.contextual-data__item', 'no-separator');

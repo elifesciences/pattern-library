@@ -13,9 +13,7 @@ module.exports = class StatisticCollection {
     this.doc = doc;
     console.log('eho');
 
-    this.window.onload = () => {
-      utils.removeSeparatorFromLastOnLine(this.$elm, '.statistic-collection__item', 'no-separator');
-    };
+    utils.removeSeparatorFromLastOnLine(this.$elm, '.statistic-collection__item', 'no-separator');
 
     this.window.addEventListener('resize', () => {
       utils.removeSeparatorFromLastOnLine(this.$elm, '.statistic-collection__item', 'no-separator');

@@ -712,7 +712,7 @@ module.exports = () => {
     }
 
     items.forEach(function (item, index) {
-      if (index < items.length - 1 && item.offsetTop !== items[index + 1].offsetTop) {
+      if (index < items.length - 1 && item.getBoundingClientRect().top !== items[index + 1].getBoundingClientRect().top) {
         console.log('if');
         item.classList.add(separatorClassName);
       } else {
