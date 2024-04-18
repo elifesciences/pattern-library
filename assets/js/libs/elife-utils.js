@@ -702,6 +702,22 @@ module.exports = () => {
     window.console.error(message + ':' + e);
   }
 
+  function removeSeparatorFromLastOnLine($elm, itemClassName, separatorClassName) {
+    const items = $elm.querySelectorAll(itemClassName);
+
+    if (items.length <= 2) {
+      return;
+    }
+
+    items.forEach(function (item, index) {
+      if (index < items.length - 1 && item.getBoundingClientRect().top !== items[index + 1].getBoundingClientRect().top) {
+        item.classList.add(separatorClassName);
+      } else {
+        item.classList.remove(separatorClassName);
+      }
+    });
+  }
+
   return {
     adjustPxString: adjustPxString,
     areElementsNested: areElementsNested,
@@ -733,5 +749,6 @@ module.exports = () => {
     updateElementTranslate: updateElementTranslate,
     wrapElements: wrapElements,
     logError: logError,
+    removeSeparatorFromLastOnLine: removeSeparatorFromLastOnLine,
   };
 };
