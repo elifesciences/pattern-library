@@ -202,10 +202,6 @@
 }
 
 .teaser__picture--link {
-  @media only all and (min-width: 900px) and (max-width: 1199px) {
-    display: none;
-  }
-
   .article__related-item & {
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
       display: inline;
