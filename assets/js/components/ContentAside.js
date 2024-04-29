@@ -1,5 +1,5 @@
 'use strict';
-var utils = require('../libs/elife-utils')();
+const utils = require('../libs/elife-utils')();
 
 module.exports = class ContentAside {
 
@@ -12,6 +12,14 @@ module.exports = class ContentAside {
     this.prepareTimeline(this.$elm.querySelector('.definition-list--timeline'));
 
     this.prepareScrollable(this.$elm);
+
+    this.window.addEventListener('load', () => {
+      utils.removeSeparatorFromLastOnLine(this.$elm, '.contextual-data__item', 'no-separator');
+    });
+
+    this.window.addEventListener('resize', () => {
+      utils.removeSeparatorFromLastOnLine(this.$elm, '.contextual-data__item', 'no-separator');
+    });
   }
 
   prepareTimeline(timeline) {
