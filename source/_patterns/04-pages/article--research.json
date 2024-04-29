@@ -420,8 +420,8 @@
   "contextualData": {
     "metricsData": {
       "data": [
-        { "text": "<a href=\"#\"><strong>149</strong> views</a>" },
-        { "text": "<strong>5</strong> citations" }
+        { "text": "<a href=\"#\"><span class=\"contextual-data__counter\">149</span> views</a>" },
+        { "text": "<span class=\"contextual-data__counter\">5</span> citations" }
       ]
     }
   },
@@ -537,27 +537,19 @@
       "hasBehaviour": true,
       "isInitiallyClosed": true,
       "showCharts": true,
-      "chart": {
-        "id": "09560",
-        "type": "article",
-        "containerId": "chart-1",
-        "apiEndpoint": "https://prod--gateway.elifesciences.org",
-        "metric": "downloads",
-        "period": "month"
-      },
       "body": null,
       "stats": [
         {
-          "label" : "Views",
-          "value": 547
+          "label": "views",
+          "value": 149
         },
         {
-          "label" : "Downloads",
-          "value": 320
+          "label": "downloads",
+          "value": 20
         },
         {
-          "label" : "Citations",
-          "value": 89
+          "label": "citations",
+          "value": 5
         }
       ]
     }

@@ -24,7 +24,7 @@
   "contextualData": {
     "metricsData": {
       "data": [
-        { "text": "<a href=\"#\"><span>149</span> views</a>" }
+        { "text": "<a href=\"#\"><span class=\"contextual-data__counter\">149</span> views</a>" }
       ]
     }
   },

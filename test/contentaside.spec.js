@@ -1,7 +1,7 @@
 'use strict';
 
-let expect = chai.expect;
-let spy = sinon.spy;
+const expect = chai.expect;
+const spy = sinon.spy;
 
 // load in component(s) to be tested
 let ContentAside = require('../assets/js/components/ContentAside');
@@ -41,5 +41,36 @@ describe('A ContentAside Component', function () {
     window.scrollTo(0, 0);
     _contentAside.handleScrolling();
     expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.false;
+  });
+
+  describe('with Contextual data', function () {
+    const buildFakeWindow = function (height, width) {
+      return {
+        innerHeight: height,
+        innerWidth: width,
+        addEventListener: function () {},
+      };
+    };
+
+    it('should add no-separator class to the second item when contextual data is on two lines', () => {
+      const winFake = buildFakeWindow(250, 250);
+      const _contentAside = new ContentAside($elm, winFake);
+
+      setTimeout(() => {
+        const secondItem = _contentAside.$elm.querySelectorAll('.contextual-data__item')[1];
+        expect(secondItem.classList.contains('no-separator')).to.be.true;
+        const itemsWithNoSeparator = _contentAside.$elm.querySelectorAll('.no-separator');
+        expect(itemsWithNoSeparator.length).to.equal(1);
+      }, 0);
+    });
+
+    it('should not add no-separator class when screen size narrow', () => {
+      const winFake = buildFakeWindow(320, 320);
+      const _contentAside = new ContentAside($elm, winFake);
+      setTimeout(() => {
+        const itemsWithNoSeparator = _contentAside.$elm.querySelectorAll('.no-separator');
+        expect(itemsWithNoSeparator.length).to.equal(0);
+      }, 0);
+    });
   });
 });

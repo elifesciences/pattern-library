@@ -7,6 +7,11 @@
     <title>Mocha Test Runner</title>
 
     <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+    <style>
+      .contextual-data__item {
+        display: inline-block;
+      }
+    </style>
   </head>
   <body>
 
@@ -49,12 +54,13 @@
 
               <div class="contextual-data">
                 <ul class="contextual-data__list" aria-label="The following contains the number of views, citations and annotations in this article">
-                  <li class="contextual-data__item"><a href="#"><strong>149</strong> views</a></li>
-                  <li class="contextual-data__item"><strong>5</strong> citations</li>
+                  <li class="contextual-data__item"><a href="#"><span class="contextual-data__counter">149</span> views</a></li>
+                  <li class="contextual-data__item"><a href="#"><span class="contextual-data__counter">20</span> downloads</a></li>
+                  <li class="contextual-data__item"><a href="#"><span class="contextual-data__counter">5</span> citations</a></li>
                 </ul>
               </div>
             </div>
-          </div>   
+          </div>
           <div class="content-aside__second-column">
             <div class="content-aside__definition-list">
               <dl class="definition-list definition-list--timeline">

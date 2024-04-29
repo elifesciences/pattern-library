@@ -1,16 +1,28 @@
 @import "../../definitions";
 
 .statistic-collection {
-  align-items: flex-start;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  @include margin(0);
+  @include padding(0);
 }
 
 .statistic-collection__item {
+  @include margin(0);
+  @include padding(0);
+  display: inline-block;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+
+  &:after {
+    content: "\00a0\2219\00a0";
+  }
+
+  &:last-child:after {
+    content: "";
+  }
+
+  &.no-separator {
+    &:after {
+      @include margin(12, "right");
+      content: "";
+    }
+  }
 }
