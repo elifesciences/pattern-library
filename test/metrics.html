@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mocha Test Runner</title>
+
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+
+<!--
+  Test output
+-->
+<div id="mocha"></div>
+
+
+<div>
+
+</div>
+
+
+<!--
+   Load test code
+ -->
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+<!-- Initialise test suite -->
+<script>mocha.setup('bdd')</script>
+
+<div
+    data-behaviour="Metrics"
+    data-id="09560"
+    data-type="article"
+    data-container-id="chart-1"
+    data-daily-id="trigger-daily"
+    data-monthly-id="trigger-monthly"
+    data-api-endpoint="http://prod--gateway.elifesciences.org"
+>
+  <div class="charts">
+    <div id="chart-1">Loading...</div>
+    <p>
+      <span class="visuallyhidden">Toggle charts</span>
+      <a class="trigger trigger--prev" href="#">
+        <picture>
+          <source srcset="../../assets/img/patterns/molecules/chevron-left-ic.svg" type="image/svg+xml">
+          <img srcset="../../assets/img/patterns/molecules/chevron-left-ic_2x.svg 48w, ../../assets/img/patterns/molecules/chevron-left-ic_1x.svg 24w" src="../../assets/img/patterns/molecules/chevron-left-ic_1x.svg" alt="Navigate left icon">
+        </picture>
+      </a>
+      <a class="trigger trigger--next" href="#">
+        <picture>
+          <source srcset="../../assets/img/patterns/molecules/chevron-right-ic.svg" type="image/svg+xml">
+          <img srcset="../../assets/img/patterns/molecules/chevron-right-ic_2x.svg 48w, ../../assets/img/patterns/molecules/chevron-right-ic_1x.svg 24w" src="../../assets/img/patterns/molecules/chevron-right-ic_1x.svg" alt="Navigate right icon">
+        </picture>
+      </a>
+    </p>
+  </div>
+  <div class="button-collection clearfix">
+    <a href="#" class="button button--outline button--small button-collection__button button-collection__button--active" data-target="daily">
+      Daily
+    </a>
+    <a href="#" class="button button--outline button--small button-collection__button" data-target="monthly">
+      Monthly
+    </a>
+  </div>
+</div>
+
+<!--
+  Test spec
+-->
+<script src="build/metrics.spec.js"></script>
+
+<!--
+  Begin!
+-->
+<script>
+  mocha.run();
+</script>
+
+</body>
+</html>
