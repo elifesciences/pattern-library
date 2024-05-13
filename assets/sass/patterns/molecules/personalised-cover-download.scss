@@ -58,6 +58,17 @@
     }
   }
 
+  .button-collection {
+    display: grid;
+    justify-items: center;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    .button-collection {
+      display: flex;
+    }
+  }
+
   [data-behaviour-initialised="true"] {
 
     .button-collection {
@@ -82,19 +93,6 @@
 .form-item__checkbox {
   margin: 0 auto 48px;
   grid-row: 1;
-}
-
-.button-collection {
-  display: grid;
-  justify-items: center;
-}
-
-@media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-
-  .button-collection {
-    display: flex;
-  }
-
 }
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
