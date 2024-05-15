@@ -1,7 +1,7 @@
 <div class="meta">
   {{#articleStatus}}
     <div class="meta__status">
-      <span class="meta__status-circle{{#articleStatusColorClass}} meta__status-circle-{{articleStatusColorClass}}{{/articleStatusColorClass}}"></span>{{articleStatus}}
+      {{#articleStatusColorClass}}<span class="meta__status-circle meta__status-circle-{{articleStatusColorClass}}"></span>{{/articleStatusColorClass}}{{articleStatus}}
     </div>
   {{/articleStatus}}
 

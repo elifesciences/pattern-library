@@ -439,6 +439,7 @@
             "meta": {
               "text": "Research article",
               "url": "#",
+              "articleStatus": "Version of Record",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 15,
@@ -482,6 +483,7 @@
             "meta": {
               "text": "Research article",
               "url": "#",
+              "articleStatus": "Accepted Manuscript",
               "date": {
                 "forHuman": {
                   "dayOfMonth": 17,
