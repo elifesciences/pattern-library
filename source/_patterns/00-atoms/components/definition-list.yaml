@@ -19,6 +19,9 @@ properties:
           minItems: 1
           items:
             type: string
+        color:
+          type: string
+          minLength: 1
       required:
         - term
         - descriptors

@@ -28,8 +28,7 @@ module.exports = class ContentAside {
     }
 
     const timelineParent = timeline.parentNode;
-    const maxVisibleCollapsedElementsOnSmallViewport = 1;
-    const maxVisibleCollapsedElementsOnMediumViewport = 3;
+    const maxVisibleCollapsedElements = 1;
 
     // As each timeline entry has a dt and dd just count the dt element.
     const timelineCount = timeline.querySelectorAll('dt').length;
@@ -46,12 +45,8 @@ module.exports = class ContentAside {
       link.addEventListener('click', toggleContent.bind(this));
     };
 
-    if (timelineCount > maxVisibleCollapsedElementsOnSmallViewport) {
+    if (timelineCount > maxVisibleCollapsedElements) {
       createToggle();
-
-      if (timelineCount > maxVisibleCollapsedElementsOnMediumViewport) {
-        timelineParent.classList.add('toggle--count-gt-3');
-      }
     }
   }
 

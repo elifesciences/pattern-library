@@ -1,0 +1,30 @@
+{
+  "variant": "timeline",
+  "items": [
+    {
+      "term": "Version of Record",
+      "descriptors": [
+        "<span class=\"version\">v1</span><time>September 7, 2023</time><a href=\"#\" aria-label=\"Descriptive and accessible name\">Read the peer reviews</a>"
+      ],
+      "color": "vor"
+    },
+    {
+      "term": "Reviewed Preprint",
+      "descriptors": [
+        "<span class=\"version\">v3</span><time>August 19, 2023</time>"
+      ]
+    },
+    {
+      "term": "Reviewed Preprint",
+      "descriptors": [
+        "<span class=\"version\">v2</span><time>May 11, 2023</time>"
+      ]
+    },
+    {
+      "term": "Reviewed Preprint",
+      "descriptors": [
+        "<span class=\"version\">v1</span><time>March 19, 2023</time>"
+      ]
+    }
+  ]
+}

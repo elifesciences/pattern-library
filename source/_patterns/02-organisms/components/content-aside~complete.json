@@ -54,27 +54,30 @@
     "variant": "timeline",
     "items": [
       {
-        "term": "Version of Record published",
+        "term": "Version of Record",
         "descriptors": [
-          "July 2, 2013 <a href=\"#\" aria-label=\"Descriptive and accessible name\"> Go to version</a>"
-        ]
+          "<span class=\"version\">v1</span><time>September 7, 2023</time><a href=\"#\" aria-label=\"Descriptive and accessible name\">Read the peer reviews</a>"
+        ],
+        "color": "vor"
       },
       {
-        "term": "Accepted",
+        "term": "Reviewed Preprint",
         "descriptors": [
-          "May 28, 2013"
-        ]
+          "<span class=\"version\">v3</span><time>August 19, 2023</time>"
+        ],
+        "version": "v3"
       },
       {
-        "term": "Received",
+        "term": "Reviewed Preprint",
         "descriptors": [
-          "January 22, 2013"
-        ]
+          "<span class=\"version\">v2</span><time>May 11, 2023</time>"
+        ],
+        "version": "v2"
       },
       {
-        "term": "Preprint posted",
+        "term": "Reviewed Preprint",
         "descriptors": [
-          "January 1, 2013"
+          "<span class=\"version\">v1</span><time>March 19, 2023</time>"
         ]
       }
     ]
