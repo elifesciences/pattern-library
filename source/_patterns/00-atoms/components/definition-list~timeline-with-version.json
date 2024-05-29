@@ -4,7 +4,7 @@
     {
       "term": "Version of Record",
       "descriptors": [
-        "<span class=\"version\">v1</span><time>September 7, 2023</time><a href=\"#\" aria-label=\"Descriptive and accessible name\">Read the peer reviews</a>"
+        "<time>September 7, 2023</time><a href=\"#\" aria-label=\"Descriptive and accessible name\">Read the peer reviews</a>"
       ],
       "color": "vor"
     },
