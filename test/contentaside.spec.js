@@ -43,6 +43,23 @@ describe('A ContentAside Component', function () {
     expect(_contentAside.$elm.classList.contains('content-aside__sticky')).to.be.false;
   });
 
+  describe('with Timeline', function () {
+    it('should ensure only one element with class "toggle" exists', function () {
+      let _contentAside = new ContentAside($elm);
+      const toggles = _contentAside.$elm.querySelectorAll('.toggle');
+      expect(toggles.length).to.equal(1);
+    });
+
+    it('should add "toggle--expanded" class on clicking the toggle button', function () {
+      let _contentAside = new ContentAside($elm);
+      const toggleButton = _contentAside.$elm.querySelector('.toggle');
+      expect(toggleButton.parentElement.classList.contains('toggle--expanded')).to.be.false;
+
+      toggleButton.click();
+      expect(toggleButton.parentElement.classList.contains('toggle--expanded')).to.be.true;
+    });
+  });
+
   describe('with Contextual data', function () {
     const buildFakeWindow = function (height, width) {
       return {

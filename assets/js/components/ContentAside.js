@@ -39,10 +39,14 @@ module.exports = class ContentAside {
     };
 
     const createToggle = () => {
-      const link = utils.buildElement('a', ['toggle']);
-      link.setAttribute('href', '#');
-      timelineParent.appendChild(link);
-      link.addEventListener('click', toggleContent.bind(this));
+      const existingLink = timelineParent.querySelector('a.toggle');
+
+      if (!existingLink) {
+        const link = utils.buildElement('a', ['toggle']);
+        link.setAttribute('href', '#');
+        timelineParent.appendChild(link);
+        link.addEventListener('click', toggleContent.bind(this));
+      }
     };
 
     if (timelineCount > maxVisibleCollapsedElements) {
