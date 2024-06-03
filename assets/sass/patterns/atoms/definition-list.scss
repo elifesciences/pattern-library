@@ -7,12 +7,15 @@
     font-family: $font-secondary;
     font-weight: bold;
     position: relative;
+
+    time {
+      font-weight: normal;
+    }
   }
 
   dt {
     @include font-size-and-vertical-height(16, 24);
     @include margin(18, "top");
-    @include padding(3, "bottom");
 
     &:first-child {
       @include margin(0, "top");
@@ -35,7 +38,6 @@
     }
 
     a {
-      @include padding(3, "top");
       color: $color-text-secondary;
       display: block;
     }
