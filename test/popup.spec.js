@@ -51,12 +51,12 @@ describe('A Popup Component', function () {
   });
 
   it.only('popups a separate element', function () {
-      let popup = instantiatePopup('#example[data-behaviour="Popup"]');
-      linkClick(popup);
-      expect(popup.isOpen).to.be.true;
-      documentClick();
-      expect(popup.isOpen).to.be.false;
-    });
+    let popup = instantiatePopup('#example[data-behaviour="Popup"]');
+    linkClick(popup);
+    expect(popup.isOpen).to.be.true;
+    documentClick();
+    expect(popup.isOpen).to.be.false;
+  });
 
   it('replaces another opened popup', function () {
     let popup = instantiatePopup('#example[data-behaviour="Popup"]');
