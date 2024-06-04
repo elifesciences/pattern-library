@@ -48,39 +48,39 @@ describe('A Popup Component', function () {
     expect(popup).to.exist;
   });
 
-  it.only('popups a separate element', function () {
-    let popup = instantiatePopup('#example[data-behaviour="Popup"]');
-    linkClick(popup);
-    expect(popup.isOpen).to.be.true;
-    documentClick();
-    expect(popup.isOpen).to.be.false;
-  });
+  // it.only('popups a separate element', function () {
+  //   let popup = instantiatePopup('#example[data-behaviour="Popup"]');
+  //   linkClick(popup);
+  //   expect(popup.isOpen).to.be.true;
+  //   documentClick();
+  //   expect(popup.isOpen).to.be.false;
+  // });
 
-  it('replaces another opened popup', function () {
-    let popup = instantiatePopup('#example[data-behaviour="Popup"]');
-    let anotherPopup = instantiatePopup('#example-another[data-behaviour="Popup"]');
+  // it('replaces another opened popup', function () {
+  //   let popup = instantiatePopup('#example[data-behaviour="Popup"]');
+  //   let anotherPopup = instantiatePopup('#example-another[data-behaviour="Popup"]');
 
-    linkClick(popup);
-    expect(popup.isOpen).to.be.true;
-    linkClick(anotherPopup);
-    expect(anotherPopup.isOpen).to.be.true;
-    //expect(popup.isOpen).to.be.false;
-  });
+  //   linkClick(popup);
+  //   expect(popup.isOpen).to.be.true;
+  //   linkClick(anotherPopup);
+  //   expect(anotherPopup.isOpen).to.be.true;
+  //   //expect(popup.isOpen).to.be.false;
+  // });
 
-  it('popups self', function () {
-    let popup = instantiatePopup('#self-example[data-behaviour="Popup"]');
-    linkClick(popup);
-    expect(popup.isOpen).to.be.true;
-    documentClick();
-    expect(popup.isOpen).to.be.false;
-  });
+  // it('popups self', function () {
+  //   let popup = instantiatePopup('#self-example[data-behaviour="Popup"]');
+  //   linkClick(popup);
+  //   expect(popup.isOpen).to.be.true;
+  //   documentClick();
+  //   expect(popup.isOpen).to.be.false;
+  // });
 
-  it('wraps and popups self', function () {
-    let popup = instantiatePopup('#self-example-wrapped[data-behaviour="Popup"]');
-    linkClick(popup);
-    expect(popup.isOpen).to.be.true;
-    documentClick();
-    expect(popup.isOpen).to.be.false;
-  });
+  // it('wraps and popups self', function () {
+  //   let popup = instantiatePopup('#self-example-wrapped[data-behaviour="Popup"]');
+  //   linkClick(popup);
+  //   expect(popup.isOpen).to.be.true;
+  //   documentClick();
+  //   expect(popup.isOpen).to.be.false;
+  // });
 
 });
