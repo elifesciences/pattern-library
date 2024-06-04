@@ -1,5 +1,7 @@
 let expect = chai.expect;
 
+require('../assets/js/libs/polyfills');
+
 // load in component(s) to be tested
 let Popup = require('../assets/js/components/Popup');
 
