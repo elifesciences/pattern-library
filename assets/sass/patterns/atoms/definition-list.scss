@@ -23,6 +23,11 @@
 
     a {
       color: $color-text;
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
     }
   }
 
@@ -44,6 +49,11 @@
     a {
       color: $color-text-secondary;
       display: block;
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
     }
   }
 
@@ -62,7 +72,7 @@
     border-radius: 6px 6px 0 0;
   }
 
-  dd::before {
+  dd:before {
     border-radius: 0 0 6px 6px;
   }
 
