@@ -20,6 +20,10 @@
     &:first-child {
       @include margin(0, "top");
     }
+
+    a {
+      color: $color-text;
+    }
   }
 
   dd {
