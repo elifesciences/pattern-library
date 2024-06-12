@@ -183,6 +183,10 @@
         content: "Show all versions";
       }
 
+      &:hover {
+        @include link-hover();
+      }
+
       @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         @include padding(0 17 0 0);
         @include margin(24, "top");
