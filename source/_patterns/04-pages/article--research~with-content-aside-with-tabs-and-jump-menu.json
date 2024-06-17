@@ -188,6 +188,7 @@
   "contentAside": {
     "timeline": {
       "variant": "timeline",
+      "label": "Version history",
       "items": [
         {
           "term": "Version of Record",
