@@ -1,0 +1,31 @@
+@import "../../definitions";
+
+.peer-review-process {
+  display: flex;
+  font-family: $font-secondary;
+  width: 100%;
+  max-width: 735px;
+
+  .peer-review-process__bar {
+    border: 6px solid black;
+    border-radius: 6px;
+    margin-right: 24px;
+  }
+
+  .acolour {
+    border: 6px solid #2e750a;
+  }
+
+  .peer-review-process__content {
+    p:last-of-type {
+      margin-bottom: 12px;
+    }
+  }
+
+  .peer-review-process__link {
+    @include font-size-and-vertical-height(14, 20);
+
+    color: #2e750a;
+    font-weight: 600;
+  }
+}
