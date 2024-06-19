@@ -319,7 +319,7 @@ $arrow-size: 5;
         @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
           &:not(:last-child)::after {
             color: $color-text;
-            content: "\00a0\2219\00a0";
+            content: "\00a0\2022\00a0";
           }
         }
       }
