@@ -1,6 +1,6 @@
 {{#isOrdered}}
 
-    <ol class="list{{#prefix}} list--{{prefix}}{{/prefix}}{{#classes}} {{classes}}{{/classes}}">
+    <ol class="list{{#prefix}} list--{{prefix}}{{/prefix}}{{#classes}} {{classes}}{{/classes}}" data-behaviour="List">
         {{#items}}
             <li>{{{.}}}</li>
         {{/items}}
@@ -10,7 +10,7 @@
 
 {{^isOrdered}}
 
-    <ul class="list{{#prefix}} list--{{prefix}}{{/prefix}}{{#classes}} {{classes}}{{/classes}}">
+    <ul class="list{{#prefix}} list--{{prefix}}{{/prefix}}{{#classes}} {{classes}}{{/classes}}" data-behaviour="List">
         {{#items}}
             <li>{{{.}}}</li>
         {{/items}}

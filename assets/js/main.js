@@ -30,6 +30,7 @@ Components.HypothesisTrigger = require('./components/HypothesisTrigger');
 Components.InfoBar = require('./components/InfoBar');
 Components.JumpMenu = require('./components/JumpMenu');
 Components.LoginControl = require('./components/LoginControl');
+Components.List = require('./components/List');
 Components.MainMenu = require('./components/MainMenu');
 Components.Math = require('./components/Math');
 Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');

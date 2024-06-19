@@ -475,6 +475,10 @@
   "jumpMenu": {
     "items": [
       {
+        "name": "Peer review process",
+        "url": "#peer-review-process"
+      },
+      {
         "name": "Editors",
         "url": "#editors"
       },
@@ -495,6 +499,31 @@
   "articleSections": [
     {
       "isFirst": true,
+      "id": "peer-review-process",
+      "title": "Peer review process",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "body": "<p>This article was published via eLife's original peer review and publishing model, which was phased out in 2023. eLife’s editors accepted this article for publication after peer review and was subject to mandatory revision requests before it was published.</p>"
+    },
+    {
+      "id": "history",
+      "title": "History",
+      "headingLevel": 4,
+      "hasBehaviour": false,
+      "body": "<ul class=\"list list--line\" data-behaviour=\"List\"><li><strong><a href=\"#\">Version of Record published</a></strong><time datetime=\"2024-05-29\">May 29, 2024</time></li><li><strong><a href=\"#\">Preprint posted</a></strong><time datetime=\"2024-04-11\">April 11, 2024</time></li><li><strong><a href=\"#\">Preprint posted</a></strong><time datetime=\"2023-11-03\">November 3, 2023</time></li><li><strong><a href=\"#\">Preprint posted</a></strong><time datetime=\"2023-09-03\">September 3, 2023</time></li><li><strong><a href=\"#\">Sent for peer review</a></strong><time datetime=\"2023-08-24\">August 24, 2023</time></li></ul>",
+      "relatedLinksSeparator": "circle",
+      "relatedLinks": [
+        {
+          "name": "Read more about eLife’s original review process",
+          "url": "#"
+        },
+        {
+          "name": "Go to the preprint",
+          "url": "#"
+        }
+      ]
+    },
+    {
       "id": "editors",
       "title": "Editors",
       "headingLevel": 2,

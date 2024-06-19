@@ -19,6 +19,36 @@
   }
 }
 
+.list--line {
+  @include padding (24, "left");
+  position: relative;
+
+  &:before {
+    background-color: $color-text-ui-background-light-gray;
+    border-radius: 6px;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 8px;
+  }
+
+  li {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  strong {
+    @include padding (24, "right");
+    text-align: left;
+  }
+
+  time {
+    flex: 1;
+  }
+}
+
 $prefixes: ("alpha-lower": "lower-latin", "alpha-upper": "upper-latin", "bullet": "disc", "number": "decimal", "roman-lower": "lower-roman", "roman-upper": "upper-roman");
 
 @each $prefix, $list-style-type in $prefixes {
