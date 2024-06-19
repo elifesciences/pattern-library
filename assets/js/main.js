@@ -33,6 +33,7 @@ Components.LoginControl = require('./components/LoginControl');
 Components.MainMenu = require('./components/MainMenu');
 Components.Math = require('./components/Math');
 Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
+Components.Metrics = require('./components/Metrics');
 Components.Modal = require('./components/Modal');
 Components.Pager = require('./components/Pager');
 Components.PersonalisedCoverDownload = require('./components/PersonalisedCoverDownload');

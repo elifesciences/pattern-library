@@ -1,19 +1,29 @@
 <aside class="content-aside" data-behaviour="ContentAside">
+  {{#status}}
+    <div class="status-wrapper">
+      <h5 class="status-title{{#titleLength}} status-title__{{titleLength}}{{/titleLength}}">{{title}}</h5>
+
+      {{#description}}
+        <div class="status-description">{{description}}</div>
+      {{/description}}
+
+      {{#link}}
+        <a href="{{url}}"{{#ariaLabel}} aria-label="{{ariaLabel}}"{{/ariaLabel}} class="status-link">{{name}}</a>
+      {{/link}}
+    </div>
+  {{/status}}
+
   <div class="content-aside__column-wrapper">
+
     <div class="content-aside__first-column">
-      {{#status}}
-        <div class="status-wrapper">
-          <h5 class="status-title{{#titleLength}} status-title__{{titleLength}}{{/titleLength}}">{{title}}</h5>
-
-          {{#description}}
-            <div class="status-description">{{description}}</div>
-          {{/description}}
-
-          {{#link}}
-            <a href="{{url}}"{{#ariaLabel}} aria-label="{{ariaLabel}}"{{/ariaLabel}} class="status-link">{{name}}</a>
-          {{/link}}
+      {{#timeline}}
+        <div class="content-aside__definition-list">
+          {{>atoms-definition-list}}
         </div>
-      {{/status}}
+      {{/timeline}}
+    </div>
+
+    <div class="content-aside__second-column">
 
       {{#actionButtons}}
         {{>molecules-button-collection}}
@@ -23,16 +33,6 @@
         {{>molecules-contextual-data}}
       {{/metrics}}
 
-    </div>   
-
-    <div class="content-aside__second-column">{{!
-      }}{{#timeline}}
-        <div class="divider"></div>
-
-        <div class="content-aside__definition-list">
-          {{>atoms-definition-list}}
-        </div>
-      {{/timeline}}
       {{#related}}
         <div class="divider"></div>
 

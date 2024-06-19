@@ -1,14 +1,4 @@
 {
-  "status": {
-    "title": "Research article",
-    "titleLength": "short",
-    "description": "The author(s) have declared this to be the current/final version.",
-    "link": {
-      "name": "About eLife's process",
-      "url": "#",
-      "ariaLabel": "Descriptive and accessible name"
-    }
-  },
   "actionButtons": {
     "inline": true,
     "buttons": [
@@ -52,29 +42,31 @@
   },
   "timeline": {
     "variant": "timeline",
+    "label": "Version history",
     "items": [
       {
-        "term": "Version of Record published",
+        "term": "Version of Record",
         "descriptors": [
-          "July 2, 2013 <a href=\"#\" aria-label=\"Descriptive and accessible name\"> Go to version</a>"
+          "<time datetime=\"2023-09-07\">September 7, 2023</time><a href=\"#\" aria-label=\"Descriptive and accessible name\">Read the peer reviews</a>"
+        ],
+        "color": "vor"
+      },
+      {
+        "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+        "descriptors": [
+          "<span class=\"version\">v3</span><time datetime=\"2023-08-19\">August 19, 2023</time>"
         ]
       },
       {
-        "term": "Accepted",
+        "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
         "descriptors": [
-          "May 28, 2013"
+          "<span class=\"version\">v2</span><time datetime=\"2023-05-11\">May 11, 2023</time>"
         ]
       },
       {
-        "term": "Received",
+        "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
         "descriptors": [
-          "January 22, 2013"
-        ]
-      },
-      {
-        "term": "Preprint posted",
-        "descriptors": [
-          "January 1, 2013"
+          "<span class=\"version\">v1</span><time datetime=\"2023-03-19\">March 19, 2023</time>"
         ]
       }
     ]
