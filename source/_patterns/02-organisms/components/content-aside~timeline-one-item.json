@@ -1,14 +1,4 @@
 {
-  "status": {
-    "title": "Research article",
-    "titleLength": "short",
-    "description": "The author(s) have declared this to be the current/final version.",
-    "link": {
-      "name": "About eLife's process",
-      "url": "#",
-      "ariaLabel": "Descriptive and accessible name"
-    }
-  },
   "actionButtons": {
     "inline": true,
     "buttons": [
@@ -52,11 +42,12 @@
   },
   "timeline": {
     "variant": "timeline",
+    "label": "Version history",
     "items": [
       {
-        "term": "Version of Record published",
+        "term": "Accepted Manuscript",
         "descriptors": [
-          "July 2, 2013 <a href=\"#\" aria-label=\"Descriptive and accessible name\"> Go to version</a>"
+          "<time datetime=\"2023-03-19\">March 19, 2023</time>"
         ]
       }
     ]
