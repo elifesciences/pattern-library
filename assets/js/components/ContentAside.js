@@ -33,27 +33,25 @@ module.exports = class ContentAside {
     // As each timeline entry has a dt and dd just count the dt element.
     const timelineCount = timeline.querySelectorAll('dt').length;
 
+    const toggleTimelineVisibility = () => {
+      const hasVorClass = timeline.querySelector('.definition-list--vor') !== null;
+      const dtElements = timeline.querySelectorAll('dt');
+      const ddElements = timeline.querySelectorAll('dd');
+
+      for (let i = 0; i < dtElements.length; i += 1) {
+        if ((hasVorClass && !dtElements[i].classList.contains('definition-list--vor')) ||
+          (!hasVorClass && i !== 0)) {
+          dtElements[i].classList.toggle('hidden');
+          ddElements[i].classList.toggle('hidden');
+        }
+      }
+    };
+
     const toggleContent = (e) => {
       e.preventDefault();
       timelineParent.classList.toggle('toggle--expanded');
       toggleTimelineVisibility();
     };
-
-    function toggleTimelineVisibility() {
-      const hasVorClass = timelineParent.querySelector('.definition-list--vor') !== null;
-      const dtElements = timelineParent.querySelectorAll('dt');
-      const ddElements = timelineParent.querySelectorAll('dd');
-
-      dtElements.forEach((dt, index) => {
-        if (hasVorClass && !dt.classList.contains('definition-list--vor')) {
-          dt.classList.toggle('hidden');
-          ddElements[index].classList.toggle('hidden');
-        } else if (!hasVorClass && index !== 0) {
-          dt.classList.toggle('hidden');
-          ddElements[index].classList.toggle('hidden');
-        }
-      });
-    }
 
     const createToggle = () => {
       const existingLink = timelineParent.querySelector('a.toggle');
