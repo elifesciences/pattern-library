@@ -1,0 +1,5 @@
+FROM php:7.4-cli
+RUN mkdir /opt/pattern-library
+# this expects a volume to be mounted to /opt/pattern-library
+WORKDIR /opt/pattern-library
+

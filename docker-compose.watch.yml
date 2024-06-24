@@ -1,0 +1,52 @@
+services:
+  image-watch:
+    build:
+      dockerfile: Dockerfile.npm-watch
+    command: npm run watch:img
+    volumes:
+      - ./assets:/opt/pattern-library/assets
+      - ./source:/opt/pattern-library/source
+
+  font-watch:
+    build:
+      dockerfile: Dockerfile.npm-watch
+    command: npm run watch:fonts
+    volumes:
+      - ./assets:/opt/pattern-library/assets
+      - ./source:/opt/pattern-library/source
+
+  js-watch:
+    build:
+      dockerfile: Dockerfile.npm-watch
+    command: npm run watch:js
+    volumes:
+      - ./assets:/opt/pattern-library/assets
+      - ./source:/opt/pattern-library/source
+
+  sass-watch:
+    build:
+      dockerfile: Dockerfile.npm-watch
+    command: npm run watch:sass
+    volumes:
+      - ./assets:/opt/pattern-library/assets
+      - ./source:/opt/pattern-library/source
+
+  php-generate:
+    build:
+      dockerfile: Dockerfile.watch
+    command: php ./core/builder.php --generate
+    volumes:
+      - ./:/opt/pattern-library
+
+  php-watch:
+    build:
+      dockerfile: Dockerfile.watch
+    command: /opt/pattern-library/bin/dev
+    volumes:
+      - ./:/opt/pattern-library
+    ports:
+      - 8889:8889
+    depends_on:
+      php-generate:
+        condition: service_completed_successfully
+
