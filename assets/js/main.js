@@ -5,14 +5,15 @@ require('./libs/polyfills');
 document.querySelector('html').classList.add('js');
 
 let Components = {};
+let UnsafeComponents = {};
 
 // import modules into the list of Components.
 Components.AboutProfiles = require('./components/AboutProfiles');
 Components.AnnotationTeaser = require('./components/AnnotationTeaser');
 Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
-Components.ArticleSection = require('./components/ArticleSection');
+UnsafeComponents.ArticleSection = require('./components/ArticleSection'); // unsafe, references to MathJAX, loaded from cloudflare
 Components.AssetNavigation = require('./components/AssetNavigation');
-Components.AssetViewer = require('./components/AssetViewer');
+UnsafeComponents.AssetViewer = require('./components/AssetViewer'); // unsafe, loads PhotoSwipeUI from cloudflare
 Components.AudioPlayer = require('./components/AudioPlayer');
 Components.Authors = require('./components/Authors');
 Components.ButtonClipboard = require('./components/ButtonClipboard');
@@ -24,14 +25,14 @@ Components.FilterPanel = require('./components/FilterPanel');
 Components.FragmentHandler = require('./components/FragmentHandler');
 Components.HiddenUntilChecked = require('./components/HiddenUntilChecked');
 Components.Highlights = require('./components/Highlights');
-Components.HypothesisLoader = require('./components/HypothesisLoader');
-Components.HypothesisOpener = require('./components/HypothesisOpener');
-Components.HypothesisTrigger = require('./components/HypothesisTrigger');
+UnsafeComponents.HypothesisLoader = require('./components/HypothesisLoader'); // unsafe, calls https://hypothes.is/embed.js
+UnsafeComponents.HypothesisOpener = require('./components/HypothesisOpener'); // unsafe, depends on hypothesis
+UnsafeComponents.HypothesisTrigger = require('./components/HypothesisTrigger'); // unsafe, depends on hypothesis
 Components.InfoBar = require('./components/InfoBar');
 Components.JumpMenu = require('./components/JumpMenu');
 Components.LoginControl = require('./components/LoginControl');
 Components.MainMenu = require('./components/MainMenu');
-Components.Math = require('./components/Math');
+UnsafeComponents.Math = require('./components/Math'); // unsafe, loads mathjax from cloudflare
 Components.MediaChapterListingItem = require('./components/MediaChapterListingItem');
 Components.Metrics = require('./components/Metrics');
 Components.Modal = require('./components/Modal');
@@ -46,13 +47,13 @@ Components.SiteHeader = require('./components/SiteHeader');
 Components.SpeechBubble = require('./components/SpeechBubble');
 Components.StatisticCollection = require('./components/StatisticCollection');
 Components.TabbedNavigation = require('./components/TabbedNavigation');
-Components.ToggleableCaption = require('./components/ToggleableCaption');
-Components.Twitter = require('./components/Twitter');
+UnsafeComponents.ToggleableCaption = require('./components/ToggleableCaption'); // unsafe, depends on Mathjax
+UnsafeComponents.Twitter = require('./components/Twitter'); // unsafe, calls https://platform.twitter.com/widgets.js
 Components.ViewerModal = require('./components/ViewerModal');
 Components.ViewSelector = require('./components/ViewSelector');
 
 // App
-let Elife = function Elife() {
+function ElifeInit() {
 
   let singletons = (function () {
     let registered = [];
@@ -93,20 +94,38 @@ let Elife = function Elife() {
 
   Components.DelegateBehaviour.setInitialiseComponent(initialiseComponent);
 
-  let components = document.querySelectorAll('[data-behaviour]');
-  if (components) {
-    [].forEach.call(components, (el) => initialiseComponent(el));
+  function initialiseComponentList($componentList) {
+    if ($componentList) {
+      [].forEach.call($componentList, (el) => initialiseComponent(el));
+    }
   }
 
-  if ('MutationObserver' in window) {
-    let observer = new MutationObserver(() => {
-      let components = document.querySelectorAll('[data-behaviour]:not([data-behaviour-initialised])');
-      if (components) {
-        [].forEach.call(components, (el) => initialiseComponent(el));
+  function findAndInitialiseComponentList() {
+    initialiseComponentList(document.querySelectorAll('[data-behaviour]'));
+    if ('MutationObserver' in window) {
+      let observer = new MutationObserver(() => {
+        initialiseComponentList(document.querySelectorAll('[data-behaviour]:not([data-behaviour-initialised])'));
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+  }
+
+  this.initialiseUnsafeComponentList = function () {
+    for (let key in UnsafeComponents) {
+      if (UnsafeComponents.hasOwnProperty(key)) {
+        Components[key] = UnsafeComponents[key];
       }
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-  }
-};
+    }
 
-new Elife();
+    findAndInitialiseComponentList();
+  };
+
+  // init the safe components
+  findAndInitialiseComponentList();
+
+  // later, once visitor has consented, we can do this:
+  // window.Elife.initialiseUnsafeComponentList()
+}
+
+let Elife = new ElifeInit(); // jshint ignore:line
+
