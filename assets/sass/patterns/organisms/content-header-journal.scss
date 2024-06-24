@@ -83,7 +83,7 @@
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       &:before {
         @include margin(3, "left");
-        content: "\00a0\2219\00a0";
+        content: "\00a0\2022\00a0";
         font-weight: bold;
       }
     }
