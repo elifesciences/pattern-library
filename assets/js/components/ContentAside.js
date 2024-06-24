@@ -36,7 +36,24 @@ module.exports = class ContentAside {
     const toggleContent = (e) => {
       e.preventDefault();
       timelineParent.classList.toggle('toggle--expanded');
+      toggleTimelineVisibility();
     };
+
+    function toggleTimelineVisibility() {
+      const hasVorClass = timelineParent.querySelector('.definition-list--vor') !== null;
+      const dtElements = timelineParent.querySelectorAll('dt');
+      const ddElements = timelineParent.querySelectorAll('dd');
+
+      dtElements.forEach((dt, index) => {
+        if (hasVorClass && !dt.classList.contains('definition-list--vor')) {
+          dt.classList.toggle('hidden');
+          ddElements[index].classList.toggle('hidden');
+        } else if (!hasVorClass && index !== 0) {
+          dt.classList.toggle('hidden');
+          ddElements[index].classList.toggle('hidden');
+        }
+      });
+    }
 
     const createToggle = () => {
       const existingLink = timelineParent.querySelector('a.toggle');
@@ -51,6 +68,7 @@ module.exports = class ContentAside {
 
     if (timelineCount > maxVisibleCollapsedElements) {
       createToggle();
+      toggleTimelineVisibility();
     }
   }
 
