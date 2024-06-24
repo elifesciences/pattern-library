@@ -1,0 +1,127 @@
+{
+  "actionButtons": {
+    "inline": true,
+    "buttons": [
+      {
+        "text": "Download",
+        "classes": "button--default button--action icon icon-download",
+        "path": "#download",
+        "id": "button-action-download",
+        "ariaLabel": "Descriptive and accessible name"
+      },
+      {
+        "text": "Cite",
+        "classes": "button--default button--action icon icon-citation",
+        "path": "#citation",
+        "id": "button-action-citation",
+        "ariaLabel": "Descriptive and accessible name"
+      },
+      {
+        "text": "Share",
+        "classes": "button--default button--action icon icon-share",
+        "path": "#share",
+        "id": "button-action-share",
+        "ariaLabel": "Descriptive and accessible name"
+      },
+      {
+        "text": "Comment<span aria-hidden='true'><span data-visible-annotation-count></span> </span><span class='visuallyhidden'>Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
+        "classes": "button--default button--action icon icon-comment",
+        "path": "#comment",
+        "isHypothesisTrigger": true,
+        "ariaLabel": "Descriptive and accessible name"
+      }
+    ]
+  },
+  "metrics": {
+    "metricsData": {
+      "data": [
+        { "text": "<a href=\"#\"><span class=\"contextual-data__counter\">149</span> views</a>" },
+        { "text": "<span class=\"contextual-data__counter\">5</span> citations" }
+      ]
+    }
+  },
+  "timeline": {
+    "variant": "timeline",
+    "label": "Version history",
+    "items": [
+      {
+        "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Version of Record</a>",
+        "descriptors": [
+          "<time datetime=\"2023-09-15\">September 15, 2023</time>"
+        ]
+      },
+      {
+        "term": "Version of Record",
+        "descriptors": [
+          "<time datetime=\"2023-09-07\">September 7, 2023</time><a href=\"#\" aria-label=\"Descriptive and accessible name\">Read the peer reviews</a>"
+        ],
+        "color": "vor"
+      },
+      {
+        "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+        "descriptors": [
+          "<span class=\"version\">v3</span><time datetime=\"2023-08-19\">August 19, 2023</time>"
+        ]
+      },
+      {
+        "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+        "descriptors": [
+          "<span class=\"version\">v2</span><time datetime=\"2023-05-11\">May 11, 2023</time>"
+        ]
+      },
+      {
+        "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+        "descriptors": [
+          "<span class=\"version\">v1</span><time datetime=\"2023-03-19\">March 19, 2023</time>"
+        ]
+      }
+    ]
+  },
+  "related": {
+    "items": [
+      {
+        "rootClasses": "teaser--secondary teaser--related",
+        "contextLabel": {
+          "list": [
+            {
+              "name": "Related digest",
+              "url": null
+            }
+          ]
+        },
+        "image": {
+          "fallback": {
+            "defaultPath": "https://unsplash.it/70/70/",
+            "srcset": "https://unsplash.it/140/140/ 2x, https://unsplash.it/70/70/ 1x",
+            "altText": "Meaningful alt text here please."
+          },
+          "type": "big"
+        },
+        "title": "Which side are you on?",
+        "url": "#",
+        "ariaLabel": "Descriptive and accessible label",
+        "secondaryInfo": "The left and right hemispheres of the brain play different roles when encoding information from the same side of the body.",
+        "footer": {
+          "meta": {
+            "text": "Research article",
+            "date": {
+              "forHuman": {
+                "dayOfMonth": 1,
+                "month": "Nov",
+                "year": 2022
+              },
+              "forMachine": "2022-11-01"
+            }
+          }
+        }
+      }
+    ],
+    "seeMoreLink": {
+      "link": {
+        "name": "Further reading",
+        "url": "#",
+        "ariaLabel": "Descriptive and accessible name for the link"
+      }
+    }
+  }
+}
