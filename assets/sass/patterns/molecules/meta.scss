@@ -42,6 +42,55 @@
   }
 }
 
-a.meta__type:hover {
-  color: $color-primary-dark;
+a.meta__type {
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+.meta__status,
+.meta__type,
+.meta__version {
+  color: $color-text-secondary;
+  display: inline;
+
+  .teaser--main & {
+    @include font-size-and-vertical-height(14, 18);
+  }
+}
+
+.meta__status,
+.meta__version {
+  &:after {
+    content: "\00a0\2022\00a0";
+    color: $color-text-secondary;
+    font-weight: bold;
+  }
+}
+
+.meta__status {
+  color: $color-text;
+}
+
+.meta__status-circle {
+  @include margin(1, "bottom");
+  @include margin(8, "right");
+
+  background-color: $color-status-variable-c;
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+}
+
+.meta__status-circle-not-revised {
+  background-color: $color-status-variable-k;
+}
+
+.meta__status-circle-revised {
+  background-color: $color-status-variable-i;
+}
+
+.meta__status-circle-vor {
+  background-color: $color-status-variable-j;
 }
