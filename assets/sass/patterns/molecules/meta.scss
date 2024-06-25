@@ -22,7 +22,7 @@
   text-decoration: none;
 
   & + .date::before {
-    content: "\00a0\2219\00a0";
+    content: "\00a0\2022\00a0";
     font-weight: bold;
   }
 
@@ -35,7 +35,7 @@
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       & + .date::before {
-        content: "\00a0\2219\00a0";
+        content: "\00a0\2022\00a0";
         font-weight: bold;
       }
     }
