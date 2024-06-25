@@ -1,10 +1,9 @@
 {
   "url": "#",
-  "text": "Reviewed Preprint v3",
+  "text": "Research article",
   "articleStatus": "Revised",
   "articleStatusColorClass": "revised",
-  "versionUrl": "#",
-  "versionText": "Research article",
+  "version": "Reviewed Preprint v3",
   "date": {
     "forHuman": {
       "dayOfMonth": 29,

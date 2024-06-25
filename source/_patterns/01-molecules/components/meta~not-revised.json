@@ -1,10 +1,8 @@
 {
-  "url": "#",
-  "text": "Reviewed Preprint v1",
+  "url": false,
   "articleStatus": "Not yet revised",
   "articleStatusColorClass": "not-revised",
-  "versionUrl": "#",
-  "versionText": "Research article",
+  "version": "Reviewed Preprint v1",
   "date": {
     "forHuman": {
       "dayOfMonth": 29,

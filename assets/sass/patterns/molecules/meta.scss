@@ -42,8 +42,7 @@
   }
 }
 
-a.meta__type,
-a.meta__version {
+a.meta__type {
   &:hover {
     color: $color-primary-dark;
   }
@@ -63,14 +62,6 @@ a.meta__version {
 .meta__status,
 .meta__version {
   &:after {
-    content: "\00a0\2022\00a0";
-    color: $color-text-secondary;
-    font-weight: bold;
-  }
-}
-
-.meta__type + .meta__version {
-  &:before {
     content: "\00a0\2022\00a0";
     color: $color-text-secondary;
     font-weight: bold;
