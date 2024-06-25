@@ -21,7 +21,10 @@ properties:
   articleStatusColorClass:
     type: string
     minLength: 1
-  version:
+  versionUrl:
+    type: string
+    minLength: 1
+  versionText:
     type: string
     minLength: 1
   date:

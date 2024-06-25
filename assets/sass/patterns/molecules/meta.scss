@@ -42,22 +42,43 @@
   }
 }
 
-a.meta__type:hover {
-  color: $color-primary-dark;
+a.meta__type,
+a.meta__version {
+  &:hover {
+    color: $color-primary-dark;
+  }
 }
 
 .meta__status,
+.meta__type,
 .meta__version {
+  color: $color-text-secondary;
   display: inline;
-
-  &:after {
-    content: "\00a0\2022\00a0";
-    font-weight: bold;
-  }
 
   .teaser--main & {
     @include font-size-and-vertical-height(14, 18);
   }
+}
+
+.meta__status,
+.meta__version {
+  &:after {
+    content: "\00a0\2022\00a0";
+    color: $color-text-secondary;
+    font-weight: bold;
+  }
+}
+
+.meta__type + .meta__version {
+  &:before {
+    content: "\00a0\2022\00a0";
+    color: $color-text-secondary;
+    font-weight: bold;
+  }
+}
+
+.meta__status {
+  color: $color-text;
 }
 
 .meta__status-circle {
