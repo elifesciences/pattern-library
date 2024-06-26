@@ -518,6 +518,11 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   text-underline-offset: 3px;
 }
 
+@mixin link-hover() {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @mixin truncate-with-ellipsis() {
   display: block;
   overflow: hidden;

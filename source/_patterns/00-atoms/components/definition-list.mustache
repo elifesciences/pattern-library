@@ -1,6 +1,6 @@
-<dl class="definition-list{{#variant}} definition-list--{{variant}}{{/variant}}">
+<dl class="definition-list{{#variant}} definition-list--{{variant}}{{/variant}}"{{#label}} aria-label="{{label}}"{{/label}}>
   {{#items}}
-    <dt>{{{term}}}</dt>{{!
+    <dt{{#color}} class="definition-list--{{color}}"{{/color}}>{{{term}}}</dt>{{!
     }}{{#descriptors}}{{!
       }}<dd>{{{.}}}</dd>{{!
     }}{{/descriptors}}
