@@ -1,28 +1,28 @@
 @import "../../definitions";
 
-.peer-review-process {
+.process-block {
   display: flex;
   font-family: $font-secondary;
   width: 100%;
   max-width: 735px;
 
-  .peer-review-process__bar {
+  .process-block__bar {
     border: 6px solid black;
     border-radius: 6px;
     margin-right: 24px;
   }
 
-  .peer-review-process__bar-vor {
+  .process-block__bar-vor {
     border: 6px solid $color-status-variable-b;
   }
 
-  .peer-review-process__content {
+  .process-block__content {
     p:last-of-type {
       margin-bottom: 12px;
     }
   }
 
-  .peer-review-process__link {
+  .process-block__link {
     @include font-size-and-vertical-height(14, 20);
 
     color: $color-primary;

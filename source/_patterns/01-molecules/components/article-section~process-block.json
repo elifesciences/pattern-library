@@ -1,6 +1,6 @@
 {
-  "classes": "article-section--peer-review-process",
-  "id": "peer-review-process",
+  "classes": "article-section--process-block",
+  "id": "process-block",
   "title": "Peer review process",
   "headingLevel": 2,
   "hasBehaviour": false,
