@@ -20,7 +20,7 @@
 }
 
 .list--line {
-  @include padding (24, "left");
+  @include padding(28, "left");
   position: relative;
 
   &:before {
@@ -35,8 +35,13 @@
   }
 
   li {
+    @include padding(8, "bottom");
     display: flex;
     justify-content: flex-start;
+
+    &:last-child {
+      @include padding(0);
+    }
   }
 
   strong {

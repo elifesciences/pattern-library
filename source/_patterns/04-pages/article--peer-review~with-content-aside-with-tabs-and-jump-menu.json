@@ -297,6 +297,37 @@
     }
   },
   "contentAside": {
+    "timeline": {
+      "variant": "timeline",
+      "label": "Version history",
+      "items": [
+        {
+          "term": "Version of Record",
+          "descriptors": [
+            "<time datetime=\"2023-09-07\">September 7, 2023</time><a href=\"#\" aria-label=\"Descriptive and accessible name\">Read the peer reviews</a>"
+          ],
+          "color": "vor"
+        },
+        {
+          "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+          "descriptors": [
+            "<span class=\"version\">v3</span><time datetime=\"2023-08-19\">August 19, 2023</time>"
+          ]
+        },
+        {
+          "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+          "descriptors": [
+            "<span class=\"version\">v2</span><time datetime=\"2023-05-11\">May 11, 2023</time>"
+          ]
+        },
+        {
+          "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+          "descriptors": [
+            "<span class=\"version\">v1</span><time datetime=\"2023-03-19\">March 19, 2023</time>"
+          ]
+        }
+      ]
+    },
     "actionButtons": {
       "inline": true,
       "buttons": [
@@ -503,18 +534,7 @@
       "title": "Peer review process",
       "headingLevel": 2,
       "hasBehaviour": true,
-      "body": "<section class=\"article-section\"><p>This article was published via eLife's original peer review and publishing model, which was phased out in 2023. eLife's editors accepted this article for publication after peer review and was subject to mandatory revision requests before it was published.</p><header class=\"article-section__header\"><h4 class=\"article-section__header_text\">History</h4></header><div class=\"article-section__body\"><section class=\"article-section\"><div class=\"article-section__body\"><ul class=\"list list--line\" data-behaviour=\"List\"><li><strong>Version of Record published</strong><time datetime=\"2024-05-29\">May 29, 2024</time></li><li><strong>Preprint posted</strong><time datetime=\"2024-04-11\">April 11, 2024</time></li><li><strong>Preprint posted</strong><time datetime=\"2023-11-03\">November 3, 2023</time></li><li><strong>Preprint posted</strong><time datetime=\"2023-09-03\">September 3, 2023</time></li><li><strong>Sent for peer review</strong><time datetime=\"2023-08-24\">August 24, 2023</time></li></ul></div></section></div></section>",
-      "relatedLinksSeparator": "circle",
-      "relatedLinks": [
-        {
-          "name": "Read more about eLife's original review process",
-          "url": "#"
-        },
-        {
-          "name": "Go to the preprint",
-          "url": "#"
-        }
-      ]
+      "body": "<div class=\"peer-review-process\"><div class=\"peer-review-process__bar peer-review-process__bar-vor\"></div><div class=\"peer-review-process__content\"><p><strong>Version of Record:</strong> The authors have chosen to have their Reviewed Preprint published as a Version of Record, which declares their journal article complete for indexing and possible funding requirements.</p><p>The Version of Record is identical to the most recent Reviewed Preprint, outside of minor changes that do not affect the scientific content. The peer reviews and eLife assessment also remain unchanged.</p><a href=\"#\" class=\"peer-review-process__link\">Read more about eLife's peer review process.</a></div></div>"
     },
     {
       "id": "editors",
