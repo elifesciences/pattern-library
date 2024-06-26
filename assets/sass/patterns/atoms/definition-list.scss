@@ -57,7 +57,7 @@
 
   dt:before,
   dd:before {
-    background-color: $color-status-variable-h;
+    background-color: $color-status-variable-c;
     content: "";
     height: 100%;
     left: 0;
@@ -81,7 +81,7 @@
 
     &:before,
     & + dd:before {
-      background-color: $color-status-variable-e;
+      background-color: $color-status-variable-b;
     }
   }
 }

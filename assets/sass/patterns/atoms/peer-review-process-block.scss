@@ -13,7 +13,7 @@
   }
 
   .peer-review-process__bar-vor {
-    border: 6px solid $color-status-variable-g;
+    border: 6px solid $color-status-variable-b;
   }
 
   .peer-review-process__content {
@@ -25,7 +25,7 @@
   .peer-review-process__link {
     @include font-size-and-vertical-height(14, 20);
 
-    color: $color-status-variable-l;
+    color: $color-primary;
     font-weight: 600;
   }
 }
