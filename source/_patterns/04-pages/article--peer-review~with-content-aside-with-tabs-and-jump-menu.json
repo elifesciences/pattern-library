@@ -297,6 +297,37 @@
     }
   },
   "contentAside": {
+    "timeline": {
+      "variant": "timeline",
+      "label": "Version history",
+      "items": [
+        {
+          "term": "Version of Record",
+          "descriptors": [
+            "<time datetime=\"2023-09-07\">September 7, 2023</time><a href=\"#\" aria-label=\"Descriptive and accessible name\">Read the peer reviews</a>"
+          ],
+          "color": "vor"
+        },
+        {
+          "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+          "descriptors": [
+            "<span class=\"version\">v3</span><time datetime=\"2023-08-19\">August 19, 2023</time>"
+          ]
+        },
+        {
+          "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+          "descriptors": [
+            "<span class=\"version\">v2</span><time datetime=\"2023-05-11\">May 11, 2023</time>"
+          ]
+        },
+        {
+          "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+          "descriptors": [
+            "<span class=\"version\">v1</span><time datetime=\"2023-03-19\">March 19, 2023</time>"
+          ]
+        }
+      ]
+    },
     "actionButtons": {
       "inline": true,
       "buttons": [
@@ -475,6 +506,10 @@
   "jumpMenu": {
     "items": [
       {
+        "name": "Peer review process",
+        "url": "#process-block"
+      },
+      {
         "name": "Editors",
         "url": "#editors"
       },
@@ -495,6 +530,13 @@
   "articleSections": [
     {
       "isFirst": true,
+      "id": "process-block",
+      "title": "Peer review process",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "body": "<div class=\"process-block\"><div class=\"process-block__bar process-block__bar-vor\"></div><div class=\"process-block__content\"><p><strong>Version of Record: </strong>This is the final version of the article.</p><a href=\"#\" class=\"process-block__link\">Read more about eLife's peer review process.</a></div></div>"
+    },
+    {
       "id": "editors",
       "title": "Editors",
       "headingLevel": 2,

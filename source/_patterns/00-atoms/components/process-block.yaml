@@ -1,0 +1,13 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  body:
+    type: string
+    minLength: 1
+  variant:
+    type: string
+    minLength: 1
+  link:
+    $ref: ../../../non-pattern-schema/link.yaml
+required:
+  - body
