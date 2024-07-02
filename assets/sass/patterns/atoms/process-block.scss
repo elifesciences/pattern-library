@@ -17,8 +17,12 @@
   }
 
   .process-block__content {
-    p:last-of-type {
-      margin-bottom: 12px;
+    p {
+      font-family: $font-secondary;
+
+      &:last-of-type {
+        margin-bottom: 12px;
+      }
     }
   }
 

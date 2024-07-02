@@ -534,7 +534,7 @@
       "title": "Peer review process",
       "headingLevel": 2,
       "hasBehaviour": true,
-      "body": "<div class=\"process-block\"><div class=\"process-block__bar process-block__bar-vor\"></div><div class=\"process-block__content\"><p><strong>Version of Record:</strong> The authors have chosen to have their Reviewed Preprint published as a Version of Record, which declares their journal article complete for indexing and possible funding requirements.</p><p>The Version of Record is identical to the most recent Reviewed Preprint, outside of minor changes that do not affect the scientific content. The peer reviews and eLife assessment also remain unchanged.</p><a href=\"#\" class=\"process-block__link\">Read more about eLife's peer review process.</a></div></div>"
+      "body": "<div class=\"process-block\"><div class=\"process-block__bar process-block__bar-vor\"></div><div class=\"process-block__content\"><p><strong>Version of Record: </strong>This is the final version of the article.</p><a href=\"#\" class=\"process-block__link\">Read more about eLife's peer review process.</a></div></div>"
     },
     {
       "id": "editors",
