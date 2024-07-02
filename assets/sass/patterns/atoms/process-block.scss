@@ -7,13 +7,13 @@
   max-width: 735px;
 
   .process-block__bar {
-    border: 6px solid black;
+    border: 4px solid black;
     border-radius: 6px;
-    margin-right: 24px;
+    margin-right: 18px;
   }
 
   .process-block__bar-vor {
-    border: 6px solid $color-status-variable-b;
+    border: 4px solid $color-status-variable-b;
   }
 
   .process-block__content {
