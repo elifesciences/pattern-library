@@ -58,7 +58,7 @@ describe('A ContentAside Component', function () {
         const dt = dtElements[i];
         const dd = ddElements[i];
 
-        if (dt.classList.contains('definition-list--vor')) {
+        if (dt.classList.contains('definition-list--active')) {
           expect(dt.classList.contains('hidden')).to.be.false;
           expect(dd.classList.contains('hidden')).to.be.false;
         } else {
@@ -78,7 +78,7 @@ describe('A ContentAside Component', function () {
         const dt = dtElements[i];
         const dd = ddElements[i];
 
-        if (dt.classList.contains('definition-list--vor')) {
+        if (dt.classList.contains('definition-list--active')) {
           expect(dt.classList.contains('hidden')).to.be.false;
           expect(dd.classList.contains('hidden')).to.be.false;
         } else {
