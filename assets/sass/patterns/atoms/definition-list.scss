@@ -57,7 +57,7 @@
 
   dt:before,
   dd:before {
-    background-color: $color-status-variable-h;
+    background-color: $color-status-variable-c;
     content: "";
     height: 100%;
     left: 0;
@@ -76,12 +76,12 @@
 
   .definition-list--vor {
     & + dd a {
-      color: $color-status-variable-f;
+      color: $color-primary;
     }
 
     &:before,
     & + dd:before {
-      background-color: $color-status-variable-e;
+      background-color: $color-status-variable-b;
     }
   }
 }
