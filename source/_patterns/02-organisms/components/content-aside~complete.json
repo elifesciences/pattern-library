@@ -49,7 +49,8 @@
         "descriptors": [
           "<time datetime=\"2023-09-07\">September 7, 2023</time><a href=\"#\" aria-label=\"Descriptive and accessible name\">Read the peer reviews</a>"
         ],
-        "color": "vor"
+        "color": "vor",
+        "isActive": true
       },
       {
         "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",

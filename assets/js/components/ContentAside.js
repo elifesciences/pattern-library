@@ -34,13 +34,13 @@ module.exports = class ContentAside {
     const timelineCount = timeline.querySelectorAll('dt').length;
 
     const toggleTimelineVisibility = () => {
-      const hasVorClass = timeline.querySelector('.definition-list--vor') !== null;
+      const hasActiveClass = timeline.querySelector('.definition-list--active') !== null;
       const dtElements = timeline.querySelectorAll('dt');
       const ddElements = timeline.querySelectorAll('dd');
 
       for (let i = 0; i < dtElements.length; i += 1) {
-        if ((hasVorClass && !dtElements[i].classList.contains('definition-list--vor')) ||
-          (!hasVorClass && i !== 0)) {
+        if ((hasActiveClass && !dtElements[i].classList.contains('definition-list--active')) ||
+          (!hasActiveClass && i !== 0)) {
           dtElements[i].classList.toggle('hidden');
           ddElements[i].classList.toggle('hidden');
         }
