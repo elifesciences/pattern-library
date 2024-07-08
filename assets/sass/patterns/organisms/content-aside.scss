@@ -155,6 +155,12 @@
   .js & .content-aside__definition-list {
     display: grid;
 
+    &:not(.toggle--expanded) {
+      .definition-list--active {
+        @include margin(0, "top");
+      }
+    }
+
     .toggle {
       @include font-size-and-vertical-height(14, 24);
       @include margin(18, "top");
