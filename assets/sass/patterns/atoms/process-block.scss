@@ -1,0 +1,35 @@
+@import "../../definitions";
+
+.process-block {
+  display: flex;
+  font-family: $font-secondary;
+  width: 100%;
+  max-width: 735px;
+
+  .process-block__bar {
+    border: 4px solid black;
+    border-radius: 6px;
+    margin-right: 18px;
+  }
+
+  .process-block__bar-vor {
+    border: 4px solid $color-status-variable-b;
+  }
+
+  .process-block__content {
+    p {
+      font-family: $font-secondary;
+
+      &:last-of-type {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  .process-block__link {
+    @include font-size-and-vertical-height(14, 20);
+
+    color: $color-primary;
+    font-weight: 600;
+  }
+}
