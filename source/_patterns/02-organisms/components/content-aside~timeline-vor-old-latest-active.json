@@ -1,0 +1,62 @@
+{
+  "actionButtons": {
+    "inline": true,
+    "buttons": [
+      {
+        "text": "Download",
+        "classes": "button--default button--action icon icon-download",
+        "path": "#download",
+        "id": "button-action-download",
+        "ariaLabel": "Descriptive and accessible name"
+      },
+      {
+        "text": "Cite",
+        "classes": "button--default button--action icon icon-citation",
+        "path": "#citation",
+        "id": "button-action-citation",
+        "ariaLabel": "Descriptive and accessible name"
+      },
+      {
+        "text": "Share",
+        "classes": "button--default button--action icon icon-share",
+        "path": "#share",
+        "id": "button-action-share",
+        "ariaLabel": "Descriptive and accessible name"
+      },
+      {
+        "text": "Comment<span aria-hidden='true'><span data-visible-annotation-count></span> </span><span class='visuallyhidden'>Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
+        "classes": "button--default button--action icon icon-comment",
+        "path": "#comment",
+        "isHypothesisTrigger": true,
+        "ariaLabel": "Descriptive and accessible name"
+      }
+    ]
+  },
+  "metrics": {
+    "metricsData": {
+      "data": [
+        { "text": "<a href=\"#\"><span class=\"contextual-data__counter\">149</span> views</a>" },
+        { "text": "<span class=\"contextual-data__counter\">5</span> citations" }
+      ]
+    }
+  },
+  "timeline": {
+    "variant": "timeline",
+    "label": "Version history",
+    "items": [
+      {
+        "term": "Version of Record",
+        "descriptors": [
+          "<time datetime=\"2023-09-27\">September 27, 2023</time>"
+        ],
+        "isActive": true
+      },
+      {
+        "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Accepted Manuscript</a>",
+        "descriptors": [
+          "<time datetime=\"2023-03-19\">March 19, 2023</time>"
+        ]
+      }
+    ]
+  }
+}
