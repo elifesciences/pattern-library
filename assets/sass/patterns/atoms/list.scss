@@ -43,7 +43,11 @@
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       @include padding(8, "bottom");
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
+      grid-template-columns: 1fr auto;
+    }
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      grid-template-columns: 1fr 1fr;
     }
 
     &:last-child {
@@ -53,7 +57,7 @@
 
   strong {
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-      grid-column: 1/6;
+      grid-column: 1;
     }
   }
 
@@ -62,7 +66,7 @@
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
       @include margin(24, "left");
-      grid-column: 6/13;
+      grid-column: 2;
     }
   }
 
