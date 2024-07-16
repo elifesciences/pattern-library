@@ -35,9 +35,16 @@
   }
 
   li {
-    @include padding(8, "bottom");
-    display: flex;
-    justify-content: flex-start;
+    @include font-size(14);
+    @include padding(16, "bottom");
+    font-family: $font-secondary;
+    font-weight: normal;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include padding(8, "bottom");
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
 
     &:last-child {
       @include padding(0);
@@ -45,12 +52,27 @@
   }
 
   strong {
-    @include padding (24, "right");
-    text-align: left;
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      grid-column: 1/6;
+    }
   }
 
   time {
-    flex: 1;
+    color: $color-status-variable-a;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      @include margin(24, "left");
+      grid-column: 6/13;
+    }
+  }
+
+  strong,
+  time {
+    display: block;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      display: inline;
+    }
   }
 }
 
