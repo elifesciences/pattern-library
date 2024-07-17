@@ -502,7 +502,7 @@
   "articleSections": [
     {
       "isFirst": true,
-      "classes": "article-section__peer-review",
+      "classes": "article-section--peer-review",
       "id": "process-block",
       "title": "Peer review process",
       "headingLevel": 2,
