@@ -20,6 +20,7 @@
 }
 
 .list--line {
+  @include margin(12, "top");
   @include padding(28, "left");
   position: relative;
 
