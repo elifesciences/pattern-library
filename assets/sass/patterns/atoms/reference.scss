@@ -121,11 +121,10 @@ a.reference__authors_link:hover {
       color: $color-primary;
     }
 
-    &:before {
-      content: "\a";
-      white-space: pre;
-    }
+  }
 
+  .distance {
+    @include margin(12, "bottom");
   }
 
   .reference__link-outer {
