@@ -123,8 +123,8 @@ a.reference__authors_link:hover {
 
   }
 
-  .distance {
-    @include margin(12, "bottom");
+  .doi__spacing {
+    @include margin(6, "bottom");
   }
 
   .reference__link-outer {
