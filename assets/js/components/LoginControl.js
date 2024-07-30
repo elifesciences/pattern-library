@@ -26,7 +26,6 @@ module.exports = class LoginControl {
         this.$elm.appendChild(this.$control);
       }
     } catch (e) {
-      // TODO: When removing, Log to NR instead?
       this.window.console.log(e);
     }
 
