@@ -1,0 +1,14 @@
+{
+  "url": "#",
+  "text": "Research article",
+  "articleStatus": "Version of Record",
+  "articleStatusColorClass": "vor",
+  "date": {
+    "forHuman": {
+      "dayOfMonth": 29,
+      "month": "Feb",
+      "year": 2016
+    },
+    "forMachine": "2016-02-29"
+  }
+}
