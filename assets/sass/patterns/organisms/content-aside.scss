@@ -155,10 +155,9 @@
   .js & .content-aside__definition-list {
     display: grid;
 
-    & .definition-list dt,
-    & .definition-list dd {
-      &:nth-of-type(n+2) {
-        display: none;
+    &:not(.toggle--expanded) {
+      .definition-list--active {
+        @include margin(0, "top");
       }
     }
 
@@ -192,13 +191,6 @@
         @include margin(24, "top");
         grid-row: 2;
         justify-self: start;
-      }
-    }
-
-    &.toggle--expanded .definition-list dt,
-    &.toggle--expanded .definition-list dd {
-      &:nth-of-type(n+2) {
-        display: block;
       }
     }
 

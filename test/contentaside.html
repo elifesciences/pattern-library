@@ -18,6 +18,10 @@
         height: 5px;
         width: 5px;
       }
+
+      .hidden {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -34,18 +38,12 @@
     -->
       <main id="maincontent" class="main blg-margin-bottom-large">
         <header class="content-header"></header>
-        <aside class="content-aside" data-behaviour="ContentAside">
-          <div class="status-wrapper">
-            <h5 class="status-title">Research article</h5>
-            <div class="status-description">The author(s) have declared this to be the current/final version.</div>
-            <a href="#" class="status-link">About eLife's process</a>
-          </div>
-
+        <aside id="one-article-version" class="content-aside" data-behaviour="ContentAside">
           <div class="content-aside__first-column">
             <div class="content-aside__definition-list">
               <dl class="definition-list definition-list--timeline">
-                <dt class="definition-list--vor">Version of Record</dt>
-                <dd><time>September 7, 2023</time><a href="#" aria-label="Descriptive and accessible name">Read the peer reviews</a></dd>
+                <dt class="definition-list--vor definition-list--active">Version of Record</dt>
+                <dd><time>September 7, 2023</time><a href="#">Read the peer reviews</a></dd>
                 <dt>Reviewed Preprint</dt>
                 <dd><span class="version">v3</span><time>August 19, 2023</time></dd>
                 <dt>Reviewed Preprint</dt>
@@ -115,6 +113,37 @@
             </div>
           </div>
         </aside>
+
+        <aside id="more-article-versions" class="content-aside" data-behaviour="ContentAside">
+          <div class="content-aside__first-column">
+            <div class="content-aside__definition-list">
+              <dl class="definition-list definition-list--timeline">
+                <dt>Version of Record</dt>
+                <dd><time>September 15, 2023</time></dd>
+                <dt class="definition-list--vor definition-list--active">Version of Record</dt>
+                <dd><time>September 7, 2023</time><a href="#">Read the peer reviews</a></dd>
+                <dt>Reviewed Preprint</dt>
+                <dd><span class="version">v3</span><time>August 19, 2023</time></dd>
+                <dt>Reviewed Preprint</dt>
+                <dd><span class="version">v2</span><time>May 11, 2023</time></dd>
+                <dt>Reviewed Preprint</dt>
+                <dd><span class="version">v1</span><time>March 19, 2023</time></dd>
+              </dl>
+            </div>
+          </div>
+        </aside>
+
+        <aside id="old-vor" class="content-aside" data-behaviour="ContentAside">
+          <div class="content-aside__first-column">
+            <div class="content-aside__definition-list">
+              <dl class="definition-list definition-list--timeline">
+                <dt class="definition-list--active">Version of Record</dt><dd><time>September 27, 2023</time></dd>
+                <dt>Accepted Manuscript</dt><dd><time>March 19, 2023</time></dd>
+              </dl>
+            </div>
+          </div>
+        </aside>
+
       </main>
     </div>
 

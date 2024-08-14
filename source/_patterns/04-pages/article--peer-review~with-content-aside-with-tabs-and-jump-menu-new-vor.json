@@ -1,0 +1,574 @@
+{
+  "contentHeader": {
+    "title": "Homo naledi, a new species of the genus Homo from the Dinaledi Chamber, South Africa",
+    "titleLong": true,
+    "hasAside": true,
+    "header": {
+      "possible": true,
+      "hasSubjects": true,
+      "subjects": [
+        {
+          "name": "Cell Biology",
+          "url": "#"
+        },
+        {
+          "name": "Epidemiology and Global Health",
+          "url": "#"
+        }
+      ]
+    },
+    "authors": {
+      "list": [
+        {
+          "url": "#author-3c233bb0",
+          "name": "Lee R Berger"
+        },
+        {
+          "name": "John Hawks"
+        },
+        {
+          "name": "Darryl J de Ruiter"
+        },
+        {
+          "name": "Steven E Churchill"
+        },
+        {
+          "name": "Peter Schmid"
+        },
+        {
+          "name": "Lucas K Delezene"
+        },
+        {
+          "name": "Tracy L Kivell"
+        },
+        {
+          "name": "Heather M Garvin"
+        },
+        {
+          "name": "Scott A Williams"
+        },
+        {
+          "name": "Jeremy M DeSilva"
+        },
+        {
+          "name": "Matthew M Skinner"
+        },
+        {
+          "name": "Charles M Musiba"
+        },
+        {
+          "name": "Noel Cameron"
+        },
+        {
+          "name": "Trenton W Holliday"
+        },
+        {
+          "name": "William Harcourt-Smith"
+        },
+        {
+          "name": "Rebecca R Ackermann"
+        },
+        {
+          "name": "Markus Bastir"
+        },
+        {
+          "name": "Barry Bogin"
+        },
+        {
+          "name": "Debra Bolter"
+        },
+        {
+          "name": "Juliet Brophy"
+        },
+        {
+          "name": "Zachary D Cofran"
+        },
+        {
+          "name": "Kimberly A Congdon"
+        },
+        {
+          "name": "Andrew S Deane"
+        },
+        {
+          "name": "Mana Dembo"
+        },
+        {
+          "name": "Michelle Drapeau"
+        },
+        {
+          "name": "Marina C Elliott"
+        },
+        {
+          "name": "Elen M Feuerriegel"
+        },
+        {
+          "name": "Daniel Garcia-Martinez"
+        },
+        {
+          "name": "David J Green"
+        },
+        {
+          "name": "Alia Gurtov"
+        },
+        {
+          "name": "Joel D Irish"
+        },
+        {
+          "name": "Ashley Kruger"
+        },
+        {
+          "name": "Myra F Laird"
+        },
+        {
+          "name": "Damiano Marchi"
+        },
+        {
+          "name": "Marc R Meyer"
+        },
+        {
+          "name": "Shahed Nalla"
+        },
+        {
+          "name": "Enquye W Negash"
+        },
+        {
+          "name": "Caley M Orr"
+        },
+        {
+          "name": "Davorka Radovcic"
+        },
+        {
+          "name": "Lauren Schroeder"
+        },
+        {
+          "name": "Jill E Scott"
+        },
+        {
+          "name": "Zachary Throckmorton"
+        },
+        {
+          "name": "Caroline VanSickle"
+        },
+        {
+          "name": "Christopher S Walker"
+        },
+        {
+          "name": "Pianpian Wei"
+        },
+        {
+          "name": "Bernhard Zipfel"
+        }
+      ]
+    },
+    "institutions": {
+      "list": [
+        {
+          "name": "University of the Witwatersrand, South Africa"
+        },
+        {
+          "name": "University of Wisconsin-Madison, United States"
+        },
+        {
+          "name": "Texas A&M University, United States"
+        },
+        {
+          "name": "Duke University, United States"
+        },
+        {
+          "name": "University of Zurich, Switzerland"
+        },
+        {
+          "name": "University of Arkansas, United States"
+        },
+        {
+          "name": "University of Kent, United Kingdom"
+        },
+        {
+          "name": "Max Planck Institute for Evolutionary Anthropology, Germany"
+        },
+        {
+          "name": "Mercyhurst University, United States"
+        },
+        {
+          "name": "New York University, United States"
+        },
+        {
+          "name": "New York Consortium in Evolutionary Primatology, United States"
+        },
+        {
+          "name": "Dartmouth College, United States"
+        },
+        {
+          "name": "University of Colorado Denver, United States"
+        },
+        {
+          "name": "Loughborough University, United Kingdom"
+        },
+        {
+          "name": "Tulane University, United States"
+        },
+        {
+          "name": "Lehman College, United States"
+        },
+        {
+          "name": "American Museum of Natural History, United States"
+        },
+        {
+          "name": "University of Cape Town, South Africa"
+        },
+        {
+          "name": "Museo Nacional de Ciencias Naturales, Spain"
+        },
+        {
+          "name": "Modesto Junior College, United States"
+        },
+        {
+          "name": "Louisiana State University, United States"
+        },
+        {
+          "name": "Nazarbayev University, Kazakhstan"
+        },
+        {
+          "name": "University of Missouri, United States"
+        },
+        {
+          "name": "University of Kentucky College of Medicine, United States"
+        },
+        {
+          "name": "Simon Fraser University, Canada"
+        },
+        {
+          "name": "Universit&eacute; de Montr&eacute;al, Canada"
+        },
+        {
+          "name": "Australian National University, Australia"
+        },
+        {
+          "name": "Biology Department, Universidad Autònoma de Madrid, Spain"
+        },
+        {
+          "name": "Midwestern University, United States"
+        },
+        {
+          "name": "Liverpool John Moores University, United Kingdom"
+        },
+        {
+          "name": "University of Pisa, Italy"
+        },
+        {
+          "name": "Chaffey College, United States"
+        },
+        {
+          "name": "University of Johannesburg, South Africa"
+        },
+        {
+          "name": "George Washington University, United States"
+        },
+        {
+          "name": "University of Colorado School of Medicine, United States"
+        },
+        {
+          "name": "Croatian Natural History Museum, Croatia"
+        },
+        {
+          "name": "University of Iowa, United States"
+        },
+        {
+          "name": "Lincoln Memorial University, United States"
+        },
+        {
+          "name": "Smithsonian Institution, United States"
+        },
+        {
+          "name": "Institute of Vertebrate Paleontology and Paleoanthropology, China"
+        }
+      ]
+    },
+    "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "meta": {
+      "date": {
+        "forHuman": {
+          "dayOfMonth": 10,
+          "month": "Sep",
+          "year": 2015
+        },
+        "forMachine": "2015-09-10"
+      }
+    }
+  },
+  "contentAside": {
+    "timeline": {
+      "variant": "timeline",
+      "label": "Version history",
+      "items": [
+        {
+          "term": "Version of Record",
+          "descriptors": [
+            "<time datetime=\"2023-09-07\">September 7, 2023</time><a href=\"#\" aria-label=\"Descriptive and accessible name\">Read the peer reviews</a>"
+          ],
+          "color": "vor",
+          "isActive": true
+        },
+        {
+          "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+          "descriptors": [
+            "<span class=\"version\">v3</span><time datetime=\"2023-08-19\">August 19, 2023</time>"
+          ]
+        },
+        {
+          "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+          "descriptors": [
+            "<span class=\"version\">v2</span><time datetime=\"2023-05-11\">May 11, 2023</time>"
+          ]
+        },
+        {
+          "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",
+          "descriptors": [
+            "<span class=\"version\">v1</span><time datetime=\"2023-03-19\">March 19, 2023</time>"
+          ]
+        }
+      ]
+    },
+    "actionButtons": {
+      "inline": true,
+      "buttons": [
+        {
+          "text": "Download",
+          "classes": "button--default button--action icon icon-download",
+          "path": "#download",
+          "id": "button-action-download"
+        },
+        {
+          "text": "Cite",
+          "classes": "button--default button--action icon icon-citation",
+          "path": "#citation",
+          "id": "button-action-citation"
+        },
+        {
+          "text": "Share",
+          "classes": "button--default button--action icon icon-share",
+          "path": "#share",
+          "id": "button-action-share"
+        },
+        {
+          "text": "Comment<span aria-hidden='true'><span data-visible-annotation-count></span> </span><span class='visuallyhidden'>Open annotations (there are currently <span data-hypothesis-annotation-count>0</span> annotations on this page). </span>",
+          "classes": "button--default button--action icon icon-comment",
+          "path": "#comment",
+          "isHypothesisTrigger": true
+        }
+      ]
+    },
+    "metrics": {
+      "metricsData": {
+        "data": [
+          { "text": "<a href=\"#\"><span class=\"contextual-data__counter\">149</span> views</a>" },
+          { "text": "<span class=\"contextual-data__counter\">20</span> downloads" },
+          { "text": "<span class=\"contextual-data__counter\">5</span> citations" }
+        ]
+      }
+    }
+  },
+  "modalWindowCitation": {
+    "closeBtnText": "Close",
+    "body": "<div class='reference'><ol class='reference__authors_list'><li class='reference__author'><a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'> Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>  Juwayeyi YM</li><li class='reference__author'>  <a href='https://scholar.google.com/scholar?q=%22author:Schrenk%20F%22' class='reference__authors_link'>Schrenk F</a></li><li class='reference__author'>  Bromage TG</li><li class='reference__author'>  Betzler CG</li><li class='reference__author'>  Ring U</li><li class='reference__author'>Juwayeyi YM</li></ol> <span class='reference__authors_list_suffix'>(1993)</span> Oldest <i>Homo</i> and Pliocene biogeography of the Malawi rift<div class='reference__origin'> <i>Nature</i> <strong>365</strong>:833-836.</div><span class='doi'>https://doi.org/10.1038/365833a0.1</span></div><ol class='button-collection'><li class='button-collection__item'>  <button class='button button--default' type='button' data-behaviour='ButtonClipboard' data-clipboard='Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring U Juwayeyi YM Schrenk F Bromage TG Betzler CG Ring UJuwayeyi YM(1993) Oldest Homo and Pliocene biogeography of the Malawi rift Nature 365:833-836.https://doi.org/10.1038/365833a0.1'>Copy to clipboard</button></li><li class='button-collection__item'>  <button class='button button--default button--secondary' type='button'>Download Bibtex</button></li><li class='button-collection__item'>  <button class='button button--default button--secondary' type='button'>Download .RIS</button></li></ol>",
+    "title": "Cite this article",
+    "triggerId": "button-action-citation"
+  },
+  "modalWindowShare": {
+    "closeBtnText": "Close",
+    "title": "Share this article",
+    "body": "<div class='form-item'><input type='url' class='text-field text-field--url' value='https://doi.org/10.7554/eLife.09560.1'></div><button class='button button--default' type='submit' id='button-id' data-behaviour='ButtonClipboard' data-clipboard='https://doi.org/10.7554/eLife.09560.1'>Copy to clipboard</button><ul class='social-media-sharers'><li><a class='social-media-sharer email' href='mailto:?subject=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;body=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share by Email'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='email' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 Z' id='Shape' fill='#000000' fill-rule='nonzero'></path></g></svg></a></li><li><a class='social-media-sharer' href='https://twitter.com/intent/tweet/?text=In%20%40eLife%3A%20Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Tweet a link to this page'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='twitter' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M21,6.73175 C20.33775,7.02575 19.626,7.22375 18.879,7.313 C19.64175,6.85625 20.2275,6.1325 20.50275,5.27 C19.7895,5.693 18.999,6.0005 18.1575,6.16625 C17.48475,5.4485 16.524,5 15.462,5 C13.07775,5 11.32575,7.2245 11.86425,9.53375 C8.796,9.38 6.075,7.91 4.25325,5.67575 C3.28575,7.3355 3.7515,9.50675 5.3955,10.60625 C4.791,10.58675 4.221,10.421 3.72375,10.14425 C3.68325,11.855 4.9095,13.4555 6.6855,13.81175 C6.16575,13.95275 5.5965,13.98575 5.0175,13.87475 C5.487,15.34175 6.8505,16.409 8.4675,16.439 C6.915,17.65625 4.959,18.2 3,17.969 C4.63425,19.01675 6.576,19.628 8.661,19.628 C15.5175,19.628 19.39125,13.83725 19.15725,8.6435 C19.87875,8.12225 20.505,7.472 21,6.73175 Z' id='Path' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share on Facebook'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='facebook' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M11.8969072,2 C6.43099227,2 2,6.41067993 2,11.8515383 C2,16.7687258 5.61915593,20.844338 10.3505155,21.5833958 L10.3505155,14.6992486 L7.83762887,14.6992486 L7.83762887,11.8515383 L10.3505155,11.8515383 L10.3505155,9.68112126 C10.3505155,7.21207948 11.8280541,5.84825714 14.0887242,5.84825714 C15.1715271,5.84825714 16.3041237,6.04067 16.3041237,6.04067 L16.3041237,8.465072 L15.0561469,8.465072 C13.8267075,8.465072 13.443299,9.22446783 13.443299,10.0035475 L13.443299,11.8515383 L16.1881443,11.8515383 L15.7493557,14.6992486 L13.443299,14.6992486 L13.443299,21.5833958 C18.1746585,20.844338 21.7938144,16.7687258 21.7938144,11.8515383 C21.7938144,6.41067993 17.3628222,2 11.8969072,2 Z' id='Fill-1' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://www.linkedin.com/shareArticle?title=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_self' aria-label='Share this page to LinkedIn (opens up email program, if configured on this system)'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='linkedin' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='Rectangle' x='0' y='0' width='24' height='24'></rect><path d='M18.9751954,18.9751435 L16.0232549,18.9751435 L16.0232549,14.3522816 C16.0232549,13.2499163 16.0035753,11.8308324 14.4879383,11.8308324 C12.9504693,11.8308324 12.7152366,13.0319032 12.7152366,14.2720257 L12.7152366,18.974836 L9.76329605,18.974836 L9.76329605,9.46835755 L12.5971589,9.46835755 L12.5971589,10.7675189 L12.6368256,10.7675189 C13.2146663,9.77952684 14.2890899,9.18943873 15.4328668,9.23189481 C18.4247815,9.23189481 18.9764254,11.1998552 18.9764254,13.7600486 L18.9751954,18.9751435 Z M6.43252317,8.16888879 C5.48643292,8.16905854 4.71933758,7.40223852 4.7191677,6.45614827 C4.71899794,5.51005802 5.48581795,4.74296266 6.4319082,4.74279278 C7.37799845,4.74262301 8.14509382,5.50944301 8.14526371,6.45553326 C8.14534522,6.90986184 7.96494211,7.34561469 7.64374096,7.66693118 C7.32253981,7.98824766 6.88685175,8.16880719 6.43252317,8.16888879 M7.90849343,18.9751435 L4.95347798,18.9751435 L4.95347798,9.46835755 L7.90849343,9.46835755 L7.90849343,18.9751435 Z M20.4468607,2.00148552 L3.47012787,2.00148552 C2.66777241,1.99243094 2.00979231,2.63513479 2,3.43748159 L2,20.4846305 C2.00945705,21.2873639 2.6673842,21.9307041 3.47012787,21.9223954 L20.4468607,21.9223954 C21.2511925,21.9322515 21.9116962,21.2889485 21.922831,20.4846305 L21.922831,3.43625161 C21.9113617,2.63231978 21.2508045,1.98965267 20.4468607,2' id='Path_2520' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://reddit.com/submit/?title=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share this page on Reddit'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='reddit' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='Rectangle' x='0' y='0' width='24' height='24'></rect><path d='M11.9872095,1.051163 C18.0270212,1.051163 22.923256,5.94739779 22.923256,11.9872095 C22.923256,18.0270212 18.0270212,22.923256 11.9872095,22.923256 C5.94739779,22.923256 1.051163,18.0270212 1.051163,11.9872095 C1.051163,5.94739779 5.94739779,1.051163 11.9872095,1.051163 Z M16.5534886,5.37441881 C16.1058142,5.37441881 15.7220932,5.63023277 15.5430235,6.0139537 L12.895349,5.451163 C12.8186049,5.4383723 12.7418607,5.451163 12.6779072,5.48953509 C12.6139537,5.52790719 12.5755816,5.59186067 12.5500002,5.66860486 L11.7441863,9.48023277 C10.0430235,9.53139556 8.52093044,10.0302328 7.42093044,10.8360467 C7.13953509,10.5674421 6.74302347,10.3883723 6.32093044,10.3883723 C5.4383723,10.3883723 4.72209323,11.1046514 4.72209323,11.9872095 C4.72209323,12.6395351 5.10581416,13.1895351 5.66860486,13.445349 C5.64302347,13.5988374 5.63023277,13.7651165 5.63023277,13.9313956 C5.63023277,16.3872095 8.48255835,18.3697677 12.0127909,18.3697677 C15.5430235,18.3697677 18.395349,16.3872095 18.395349,13.9313956 C18.395349,13.7651165 18.3825583,13.6116281 18.356977,13.4581397 C18.8813956,13.2023258 19.2779072,12.6395351 19.2779072,11.9872095 C19.2779072,11.1046514 18.5616281,10.3883723 17.67907,10.3883723 C17.2441863,10.3883723 16.8604653,10.5546514 16.57907,10.8360467 C15.4918607,10.0558142 13.9825583,9.54418626 12.3197677,9.48023277 L13.0488374,6.06511649 L15.4151165,6.5639537 C15.4406979,7.16511649 15.9395351,7.651163 16.5534886,7.651163 C17.1802328,7.651163 17.6918607,7.13953509 17.6918607,6.51279091 C17.6918607,5.88604672 17.1802328,5.37441881 16.5534886,5.37441881 Z M9.72325602,15.7093025 C10.2093025,16.195349 11.2581397,16.3744188 12.0127909,16.3744188 C12.7674421,16.3744188 13.8034886,16.195349 14.3023258,15.7093025 C14.4174421,15.5941863 14.6093025,15.5941863 14.7244188,15.7093025 C14.8139537,15.8372095 14.8139537,16.0162793 14.6988374,16.1313956 C13.9186049,16.9116281 12.4348839,16.9627909 12.0000002,16.9627909 C11.5651165,16.9627909 10.0686049,16.8988374 9.301163,16.1313956 C9.18604672,16.0162793 9.18604672,15.8244188 9.301163,15.7093025 C9.41627928,15.5941863 9.60813974,15.5941863 9.72325602,15.7093025 Z M9.48023277,11.9872095 C10.1069769,11.9872095 10.6186049,12.4988374 10.6186049,13.1255816 C10.6186049,13.7523258 10.1069769,14.2639537 9.48023277,14.2639537 C8.85348858,14.2639537 8.34186067,13.7523258 8.34186067,13.1255816 C8.34186067,12.4988374 8.85348858,11.9872095 9.48023277,11.9872095 Z M14.4941863,11.9872095 C15.1209304,11.9872095 15.6325583,12.4988374 15.6325583,13.1255816 C15.6325583,13.7523258 15.1209304,14.2639537 14.4941863,14.2639537 C13.8674421,14.2639537 13.3558142,13.7523258 13.3558142,13.1255816 C13.3558142,12.4988374 13.8674421,11.9872095 14.4941863,11.9872095 Z' id='Combined-Shape' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://toot.kytta.dev/?text=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study%20https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share this page on Mastodon'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='mastodon' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='Rectangle' x='0' y='0' width='24' height='24'></rect><path d='M11.5412949,0 C14.6936837,0.0250851513 17.7279692,0.357269448 19.4950021,1.1471931 C19.4950021,1.1471931 22.9995752,2.67324958 22.9995752,7.87958222 L23,8.27840764 C22.9948717,9.32900538 22.9399626,12.2394095 22.5108214,14.3877566 C22.1727192,16.0807457 19.4826471,17.9335557 16.3930961,18.2926354 C14.7820287,18.4797396 13.1958041,18.6517151 11.5043627,18.5762011 C8.73816776,18.4528442 6.55544838,17.9335557 6.55544838,17.9335557 C6.55544838,18.1956567 6.57205459,18.4452152 6.605267,18.6786105 C6.96489093,21.335697 9.312211,21.4948713 11.5357152,21.5690923 C13.7799439,21.6438306 15.7782681,21.0305374 15.7782681,21.0305374 L15.8704657,23.0052819 C15.8704657,23.0052819 14.3007146,23.8257215 11.5043627,23.9766203 C9.96237703,24.0591169 8.04774824,23.9388633 5.8177344,23.3643616 C0.981210876,22.1183796 0.149439349,17.1004442 0.022169409,12.0089343 C-0.0166226796,10.4972307 0.00729025582,9.07177343 0.00729025582,7.87958222 C0.00729025582,2.67324958 3.51199627,1.1471931 3.51199627,1.1471931 C5.27916201,0.357269448 8.31145476,0.0250851513 11.4638436,0 L11.5412949,0 Z M15.8599153,5 C14.461897,5 13.4033065,5.46697151 12.7035195,6.40103745 L12.0229667,7.39238391 L11.3425554,6.40103745 C10.642627,5.46697151 9.58403654,5 8.18615964,5 C6.97793807,5 6.00462882,5.36912752 5.26142334,6.08919046 C4.54070495,6.8092534 4.18190148,7.78253068 4.18190148,9.00730143 L4.18190148,15 L6.91358821,15 L6.91358821,9.1834452 C6.91358821,7.95732233 7.50716259,7.33498047 8.69445278,7.33498047 C10.0071899,7.33498047 10.6652556,8.0732355 10.6652556,9.5330285 L10.6652556,12.7167687 L13.3808194,12.7167687 L13.3808194,9.5330285 C13.3808194,8.0732355 14.0387436,7.33498047 15.3514807,7.33498047 C16.5387709,7.33498047 17.1323453,7.95732233 17.1323453,9.1834452 L17.1323453,15 L19.864032,15 L19.864032,9.00730143 C19.864032,7.78253068 19.5052285,6.8092534 18.7846516,6.08919046 C18.0413047,5.36912752 17.0679954,5 15.8599153,5 Z' id='Combined-Shape' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li></ul>",
+    "triggerId": "button-action-share"
+  },
+  "pl-only-article-section-for-download-links": {
+    "id": "download",
+
+    "title": "Article download links",
+
+    "downloadLinks": {
+      "description": "A list of links to download the article, or parts of the article, in various formats.",
+      "groups": [
+        {
+          "title": "Download formats<span class=\"visuallyhidden\"> (links to download the article or parts of the article as PDF, and in DAR format)</span>",
+          "items": [
+            {
+              "primary": {
+                "link": {
+                  "name": "Article PDF",
+                  "url": "#"
+                }
+              }
+            },
+            {
+              "primary": {
+                "link": {
+                  "name": "Figures PDF",
+                  "url": "#"
+                }
+              }
+            },
+            {
+              "primary": {
+                "link": {
+                  "name": "Executable version",
+                  "url": "#eraLink"
+                }
+              },
+              "secondary": {
+                "name": "What are executable versions?",
+                "url": "#secondaryLink"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Open citations<span class=\"visuallyhidden\"> (links to open the citations from this article in various online reference manager services)</span>",
+          "items": [
+            {
+              "primary": {
+                "link": {
+                  "name": "Mendeley",
+                  "url": "#"
+                }
+              }
+            },
+            {
+              "primary": {
+                "link": {
+                  "name": "ReadCube",
+                  "url": "#"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "jsHideGroup": true,
+          "title": "Cite this article<span class=\"visuallyhidden\"> (links to download the citations from this article in formats compatible with various reference manager tools)</span>",
+          "id": "citation",
+          "intro": "<div class=\"reference\"><ol class=\"reference__authors_list\"><li class=\"reference__author\">Lee R Berger</li><li class=\"reference__author\">John Hawks</li><li class=\"reference__author\">Darryl J de Ruiter</li><li class=\"reference__author\">Steven E Churchill</li><li class=\"reference__author\">Peter Schmid</li><li class=\"reference__author\">Lucas K Delezene</li><li class=\"reference__author\">Tracy L Kivell</li><li class=\"reference__author\">Heather M Garvin</li><li class=\"reference__author\">Scott A Williams</li><li class=\"reference__author\">Jeremy M DeSilva</li><li class=\"reference__author\">Matthew M Skinner</li><li class=\"reference__author\">Charles M Musiba</li><li class=\"reference__author\">Noel Cameron</li><li class=\"reference__author\">Trenton W Holliday</li><li class=\"reference__author\">William Harcourt-Smith</li><li class=\"reference__author\">Rebecca R Ackermann</li><li class=\"reference__author\">Markus Bastir</li><li class=\"reference__author\">Barry Bogin</li><li class=\"reference__author\">Debra Bolter</li><li class=\"reference__author\">Juliet Brophy</li><li class=\"reference__author\">Zachary D Cofran</li><li class=\"reference__author\">Kimberly A Congdon</li><li class=\"reference__author\">Andrew S Deane</li><li class=\"reference__author\">Mana Dembo</li><li class=\"reference__author\">Michelle Drapeau</li><li class=\"reference__author\">Marina C Elliott</li><li class=\"reference__author\">Elen M Feuerriegel</li><li class=\"reference__author\">Daniel Garcia-Martinez</li><li class=\"reference__author\">David J Green</li><li class=\"reference__author\">Alia Gurtov</li><li class=\"reference__author\">Joel D Irish</li><li class=\"reference__author\">Ashley Kruger</li><li class=\"reference__author\">Myra F Laird</li><li class=\"reference__author\">Damiano Marchi</li><li class=\"reference__author\">Marc R Meyer</li><li class=\"reference__author\">Shahed Nalla</li><li class=\"reference__author\">Enquye W Negash</li><li class=\"reference__author\">Caley M Orr</li><li class=\"reference__author\">Davorka Radovcic</li><li class=\"reference__author\">Lauren Schroeder</li><li class=\"reference__author\">Jill E Scott</li><li class=\"reference__author\">Zachary Throckmorton</li><li class=\"reference__author\">Matthew W Tocheri</li><li class=\"reference__author\">Caroline VanSickle</li><li class=\"reference__author\">Christopher S Walker</li><li class=\"reference__author\">Pianpian Wei</li><li class=\"reference__author\">Bernhard Zipfel</li></ol><span class=\"reference__authors_list_suffix\">(2015)</span><div class=\"reference__title\"><i>Homo naledi</i>, a new species of the genus <i>Homo</i> from the Dinaledi Chamber, South Africa</div><div class=\"reference__origin\"><i>eLife</i> <b>4</b>:e09560.</div><span class=\"doi\">https://doi.org/10.7554/eLife.09560</span></div>",
+          "items": [
+            {
+              "primary": {
+                "link": {
+                  "name": "Download BibTex",
+                  "url": "#"
+                }
+              }
+            },
+            {
+              "primary": {
+                "link": {
+                  "name": "Download RIS",
+                  "url": "#"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "articleSectionSocialMediaSharers": [
+    {
+      "id": "share",
+      "title": "Share this article",
+      "headingLevel": 2,
+      "classes": "article-section__sharers",
+      "body": "<span class=\"doi\"> <a href=\"https://doi.org/10.7554/eLife.09560\" class=\"doi__link\">https://doi.org/10.7554/eLife.09560</a></span><ul class='social-media-sharers'><li><a class='social-media-sharer email' href='mailto:?subject=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;body=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share by Email'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='email' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 Z M20,8 L12,13 L4,8 L4,6 L12,11 L20,6 L20,8 Z' id='Shape' fill='#000000' fill-rule='nonzero'></path></g></svg></a></li><li><a class='social-media-sharer' href='https://twitter.com/intent/tweet/?text=In%20%40eLife%3A%20Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Tweet a link to this page'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='twitter' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M21,6.73175 C20.33775,7.02575 19.626,7.22375 18.879,7.313 C19.64175,6.85625 20.2275,6.1325 20.50275,5.27 C19.7895,5.693 18.999,6.0005 18.1575,6.16625 C17.48475,5.4485 16.524,5 15.462,5 C13.07775,5 11.32575,7.2245 11.86425,9.53375 C8.796,9.38 6.075,7.91 4.25325,5.67575 C3.28575,7.3355 3.7515,9.50675 5.3955,10.60625 C4.791,10.58675 4.221,10.421 3.72375,10.14425 C3.68325,11.855 4.9095,13.4555 6.6855,13.81175 C6.16575,13.95275 5.5965,13.98575 5.0175,13.87475 C5.487,15.34175 6.8505,16.409 8.4675,16.439 C6.915,17.65625 4.959,18.2 3,17.969 C4.63425,19.01675 6.576,19.628 8.661,19.628 C15.5175,19.628 19.39125,13.83725 19.15725,8.6435 C19.87875,8.12225 20.505,7.472 21,6.73175 Z' id='Path' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share on Facebook'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='facebook' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='clear-button-bg' x='0' y='0' width='24' height='24'></rect><path d='M11.8969072,2 C6.43099227,2 2,6.41067993 2,11.8515383 C2,16.7687258 5.61915593,20.844338 10.3505155,21.5833958 L10.3505155,14.6992486 L7.83762887,14.6992486 L7.83762887,11.8515383 L10.3505155,11.8515383 L10.3505155,9.68112126 C10.3505155,7.21207948 11.8280541,5.84825714 14.0887242,5.84825714 C15.1715271,5.84825714 16.3041237,6.04067 16.3041237,6.04067 L16.3041237,8.465072 L15.0561469,8.465072 C13.8267075,8.465072 13.443299,9.22446783 13.443299,10.0035475 L13.443299,11.8515383 L16.1881443,11.8515383 L15.7493557,14.6992486 L13.443299,14.6992486 L13.443299,21.5833958 C18.1746585,20.844338 21.7938144,16.7687258 21.7938144,11.8515383 C21.7938144,6.41067993 17.3628222,2 11.8969072,2 Z' id='Fill-1' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://www.linkedin.com/shareArticle?title=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_self' aria-label='Share this page to LinkedIn (opens up email program, if configured on this system)'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='linkedin' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='Rectangle' x='0' y='0' width='24' height='24'></rect><path d='M18.9751954,18.9751435 L16.0232549,18.9751435 L16.0232549,14.3522816 C16.0232549,13.2499163 16.0035753,11.8308324 14.4879383,11.8308324 C12.9504693,11.8308324 12.7152366,13.0319032 12.7152366,14.2720257 L12.7152366,18.974836 L9.76329605,18.974836 L9.76329605,9.46835755 L12.5971589,9.46835755 L12.5971589,10.7675189 L12.6368256,10.7675189 C13.2146663,9.77952684 14.2890899,9.18943873 15.4328668,9.23189481 C18.4247815,9.23189481 18.9764254,11.1998552 18.9764254,13.7600486 L18.9751954,18.9751435 Z M6.43252317,8.16888879 C5.48643292,8.16905854 4.71933758,7.40223852 4.7191677,6.45614827 C4.71899794,5.51005802 5.48581795,4.74296266 6.4319082,4.74279278 C7.37799845,4.74262301 8.14509382,5.50944301 8.14526371,6.45553326 C8.14534522,6.90986184 7.96494211,7.34561469 7.64374096,7.66693118 C7.32253981,7.98824766 6.88685175,8.16880719 6.43252317,8.16888879 M7.90849343,18.9751435 L4.95347798,18.9751435 L4.95347798,9.46835755 L7.90849343,9.46835755 L7.90849343,18.9751435 Z M20.4468607,2.00148552 L3.47012787,2.00148552 C2.66777241,1.99243094 2.00979231,2.63513479 2,3.43748159 L2,20.4846305 C2.00945705,21.2873639 2.6673842,21.9307041 3.47012787,21.9223954 L20.4468607,21.9223954 C21.2511925,21.9322515 21.9116962,21.2889485 21.922831,20.4846305 L21.922831,3.43625161 C21.9113617,2.63231978 21.2508045,1.98965267 20.4468607,2' id='Path_2520' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://reddit.com/submit/?title=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study&amp;url=https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share this page on Reddit'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='reddit' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='Rectangle' x='0' y='0' width='24' height='24'></rect><path d='M11.9872095,1.051163 C18.0270212,1.051163 22.923256,5.94739779 22.923256,11.9872095 C22.923256,18.0270212 18.0270212,22.923256 11.9872095,22.923256 C5.94739779,22.923256 1.051163,18.0270212 1.051163,11.9872095 C1.051163,5.94739779 5.94739779,1.051163 11.9872095,1.051163 Z M16.5534886,5.37441881 C16.1058142,5.37441881 15.7220932,5.63023277 15.5430235,6.0139537 L12.895349,5.451163 C12.8186049,5.4383723 12.7418607,5.451163 12.6779072,5.48953509 C12.6139537,5.52790719 12.5755816,5.59186067 12.5500002,5.66860486 L11.7441863,9.48023277 C10.0430235,9.53139556 8.52093044,10.0302328 7.42093044,10.8360467 C7.13953509,10.5674421 6.74302347,10.3883723 6.32093044,10.3883723 C5.4383723,10.3883723 4.72209323,11.1046514 4.72209323,11.9872095 C4.72209323,12.6395351 5.10581416,13.1895351 5.66860486,13.445349 C5.64302347,13.5988374 5.63023277,13.7651165 5.63023277,13.9313956 C5.63023277,16.3872095 8.48255835,18.3697677 12.0127909,18.3697677 C15.5430235,18.3697677 18.395349,16.3872095 18.395349,13.9313956 C18.395349,13.7651165 18.3825583,13.6116281 18.356977,13.4581397 C18.8813956,13.2023258 19.2779072,12.6395351 19.2779072,11.9872095 C19.2779072,11.1046514 18.5616281,10.3883723 17.67907,10.3883723 C17.2441863,10.3883723 16.8604653,10.5546514 16.57907,10.8360467 C15.4918607,10.0558142 13.9825583,9.54418626 12.3197677,9.48023277 L13.0488374,6.06511649 L15.4151165,6.5639537 C15.4406979,7.16511649 15.9395351,7.651163 16.5534886,7.651163 C17.1802328,7.651163 17.6918607,7.13953509 17.6918607,6.51279091 C17.6918607,5.88604672 17.1802328,5.37441881 16.5534886,5.37441881 Z M9.72325602,15.7093025 C10.2093025,16.195349 11.2581397,16.3744188 12.0127909,16.3744188 C12.7674421,16.3744188 13.8034886,16.195349 14.3023258,15.7093025 C14.4174421,15.5941863 14.6093025,15.5941863 14.7244188,15.7093025 C14.8139537,15.8372095 14.8139537,16.0162793 14.6988374,16.1313956 C13.9186049,16.9116281 12.4348839,16.9627909 12.0000002,16.9627909 C11.5651165,16.9627909 10.0686049,16.8988374 9.301163,16.1313956 C9.18604672,16.0162793 9.18604672,15.8244188 9.301163,15.7093025 C9.41627928,15.5941863 9.60813974,15.5941863 9.72325602,15.7093025 Z M9.48023277,11.9872095 C10.1069769,11.9872095 10.6186049,12.4988374 10.6186049,13.1255816 C10.6186049,13.7523258 10.1069769,14.2639537 9.48023277,14.2639537 C8.85348858,14.2639537 8.34186067,13.7523258 8.34186067,13.1255816 C8.34186067,12.4988374 8.85348858,11.9872095 9.48023277,11.9872095 Z M14.4941863,11.9872095 C15.1209304,11.9872095 15.6325583,12.4988374 15.6325583,13.1255816 C15.6325583,13.7523258 15.1209304,14.2639537 14.4941863,14.2639537 C13.8674421,14.2639537 13.3558142,13.7523258 13.3558142,13.1255816 C13.3558142,12.4988374 13.8674421,11.9872095 14.4941863,11.9872095 Z' id='Combined-Shape' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li><li><a class='social-media-sharer' href='https://toot.kytta.dev/?text=Assessing%20the%20causal%20role%20of%20epigenetic%20clocks%20in%20the%20development%20of%20multiple%20cancers%3A%20a%20Mendelian%20randomization%20study%20https%3A%2F%2Fdoi.org%2F10.7554%2FeLife.75374' target='_blank' rel='noopener noreferrer' aria-label='Share this page on Mastodon'><svg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='mastodon' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g><rect id='Rectangle' x='0' y='0' width='24' height='24'></rect><path d='M11.5412949,0 C14.6936837,0.0250851513 17.7279692,0.357269448 19.4950021,1.1471931 C19.4950021,1.1471931 22.9995752,2.67324958 22.9995752,7.87958222 L23,8.27840764 C22.9948717,9.32900538 22.9399626,12.2394095 22.5108214,14.3877566 C22.1727192,16.0807457 19.4826471,17.9335557 16.3930961,18.2926354 C14.7820287,18.4797396 13.1958041,18.6517151 11.5043627,18.5762011 C8.73816776,18.4528442 6.55544838,17.9335557 6.55544838,17.9335557 C6.55544838,18.1956567 6.57205459,18.4452152 6.605267,18.6786105 C6.96489093,21.335697 9.312211,21.4948713 11.5357152,21.5690923 C13.7799439,21.6438306 15.7782681,21.0305374 15.7782681,21.0305374 L15.8704657,23.0052819 C15.8704657,23.0052819 14.3007146,23.8257215 11.5043627,23.9766203 C9.96237703,24.0591169 8.04774824,23.9388633 5.8177344,23.3643616 C0.981210876,22.1183796 0.149439349,17.1004442 0.022169409,12.0089343 C-0.0166226796,10.4972307 0.00729025582,9.07177343 0.00729025582,7.87958222 C0.00729025582,2.67324958 3.51199627,1.1471931 3.51199627,1.1471931 C5.27916201,0.357269448 8.31145476,0.0250851513 11.4638436,0 L11.5412949,0 Z M15.8599153,5 C14.461897,5 13.4033065,5.46697151 12.7035195,6.40103745 L12.0229667,7.39238391 L11.3425554,6.40103745 C10.642627,5.46697151 9.58403654,5 8.18615964,5 C6.97793807,5 6.00462882,5.36912752 5.26142334,6.08919046 C4.54070495,6.8092534 4.18190148,7.78253068 4.18190148,9.00730143 L4.18190148,15 L6.91358821,15 L6.91358821,9.1834452 C6.91358821,7.95732233 7.50716259,7.33498047 8.69445278,7.33498047 C10.0071899,7.33498047 10.6652556,8.0732355 10.6652556,9.5330285 L10.6652556,12.7167687 L13.3808194,12.7167687 L13.3808194,9.5330285 C13.3808194,8.0732355 14.0387436,7.33498047 15.3514807,7.33498047 C16.5387709,7.33498047 17.1323453,7.95732233 17.1323453,9.1834452 L17.1323453,15 L19.864032,15 L19.864032,9.00730143 C19.864032,7.78253068 19.5052285,6.8092534 18.7846516,6.08919046 C18.0413047,5.36912752 17.0679954,5 15.8599153,5 Z' id='Combined-Shape' fill='#212121' fill-rule='nonzero'></path></g></g></svg></a></li></ul>",
+      "doi": false
+    }
+  ],
+  "related": null,
+  "contextualData": null,
+  "tabbedNavigation": {
+    "items": [
+      {
+        "name": "Full text",
+        "url": "#"
+      },
+      {
+        "name": "Figures<span class=\"tabbed-navigation__tab-label--long\"> and data</span>",
+        "url": "#"
+      },
+      {
+        "classes": " tabbed-navigation__tab-label--active",
+        "name": "Peer review",
+        "url": "#"
+      },
+      {
+        "classes": " tabbed-navigation__tab-label--side-by-side",
+        "isSideBySide": true,
+        "name": "Side by side",
+        "url": "https://lens.elifesciences.org/09560"
+      }
+    ]
+  },
+  "jumpMenu": {
+    "items": [
+      {
+        "name": "Peer review process",
+        "url": "#process-block"
+      },
+      {
+        "name": "Editors",
+        "url": "#editors"
+      },
+      {
+        "name": "Reviewer 1",
+        "url": "#reviewer1"
+      },
+      {
+        "name": "Reviewer 2",
+        "url": "#reviewer2"
+      },
+      {
+        "name": "Reviewer 3",
+        "url": "#reviewer3"
+      }
+    ]
+  },
+  "articleSections": [
+    {
+      "isFirst": true,
+      "id": "process-block",
+      "title": "Peer review process",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "body": "<div class=\"process-block\"><div class=\"process-block__bar process-block__bar-vor\"></div><div class=\"process-block__content\"><p><strong>Version of Record: </strong>This is the final version of the article.</p><a href=\"#\" class=\"process-block__link\">Read more about eLife's peer review process.</a></div></div>"
+    },
+    {
+      "id": "editors",
+      "title": "Editors",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "body": "<section class=\"article-section article-section--editor\"> <header class=\"article-section__header\"> <div class=\"article-section__header_text\">Senior Editor</div> </header> <div class=\"article-section__body\"> <ol class=\"list\"> <li>Kenton J Swartz</li><li>National Institute of Neurological Disorders and Stroke, National Institutes of Health, United States</li> </ol> </div> </section> <section class=\"article-section article-section--editor\"> <header class=\"article-section__header\"> <div class=\"article-section__header_text\">Reviewing Editor</div> </header> <div class=\"article-section__body\"> <ol class=\"list\"> <li>Randy B Stockbridge</li><li>University of Michigan, United States</li> </ol> </div> </section>"
+    },
+    {
+      "id": "reviewer1",
+      "title": "Reviewer #1 (Public Review):",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "body": "<p>In this study, the authors seek to determine the potential role of aging-induced iron accumulation on the effects of hormone replacement therapy (HRT) on atherosclerosis in late postmenopausal women. The authors are commended for the novel and relevant line of investigation and the many complex experiments that they performed. Central to the manuscript, the authors find that high iron levels, in late postmenopausal women as well as in ApoE-/- mice, are associated with reduced expression of the estrogen receptor (ERα). Also, estradiol (E2) treatment in ApoE-/- mice further downregulated ERα expression, but the authors have not sufficiently demonstrated that this occurs in an iron-dependent manner, as the authors have concluded in section 3.3. The data showed that high iron and E2 treatment trigger the ubiquitin proteasome degradation pathway to degrade ERα via Mdm2-mediated degradation. Interestingly, iron chelation therapy restored ERα expression and attenuated E2-triggered atherosclerosis in late postmenopausal mice. Overall, the authors have concluded that in late postmenopause, iron accumulation prevents the HRT benefit through negative regulation of ERα expression via Mdm2-mediated proteolysis. However, important control groups in the in vivo experiments need to be included to support the conclusions made by the authors and variability in the in vitro experiments diminishes enthusiasm for the findings. Furthermore, in the in vitro experiments, the predominant reduction in ERalpha expression appears to be driven by iron even in the absence of E2, thus making it uncertain how specific these findings are to menopause.</p>"
+    },
+    {
+      "id": "reviewer2",
+      "title": "Reviewer #2 (Public Review):",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "body": "<p>It is believed that the reason why women generally have lower rates of atherosclerotic events than men until menopause is due to the beneficial effects of estrogen on the cardiovascular system. The paper attempts to explain why hormone replacement therapy with estrogen is not effective in preventing atherosclerosis in post-menopausal women. The authors posit that accumulation of iron after menopause inhibits estrogen receptor expression and makes estrogen ineffective. Using mouse model of atherosclerosis and iron overload, they demonstrate that 1)atherosclerosis is increased in overectomized mice 2) estrogen supplement seems to further exacerbate atherosclerosis and this is accompanied by increased total body iron; 3) iron itself causes a decrease in ERa via increased proteasome degradation of Era via E3 ligase MDM2 and 4) iron chelation rescues the protective effects of estrogen in overectomized mice on atherosclerosis progression.</p><p>While interesting in terms of hypothesis, I found the manuscript (not the overall themes) but the individual experimental logic difficult to follow with unclear rationale for many of the experiments and timepoints chosen. Moreover the human data supporting these claims are weak in terms of what is shown. The authors only partially achieve their aims as many of the experiments in mice appear incomplete in terms of data shown and transparency. Some important controls are also missing.</p><p>This work has important potential to understand the causes of accelerated atherosclerosis in women after menopause and how to better prevent atherosclerosis in women of this age group</p>"
+    },
+    {
+      "id": "reviewer3",
+      "title": "Reviewer #3 (Public Review):",
+      "headingLevel": 2,
+      "hasBehaviour": true,
+      "body": "<p>This manuscript aims to address whether age-related iron status influences differential effects of estrogen replacement on atherogenesis in postmenopausal females. Specifically, whether age-related iron accumulation reduces estrogen signaling through ERa receptor in relevant cell types (endothelial cells and macrophages). They test this fairly rigorously using in vitro, preclinical and clinical data, and the data is presented logically.</p><p>First, the authors demonstrate that in postmenopausal women, there is an inverse correlation between age-related increase in iron levels and age-related decrease in ERa levels in atherosclerotic plaques. This is consistent with the fact that, in ovariectomized (OVX) pro-atherogenic (ApoE KO) mice, there is differential effect of estrogen (E2) on ERa, atherosclerosis, lipid profiles and key biomarkers (ABCA1, eNOS, etc) based on age (early: 16 weeks, versus late: 40 weeks), with young mice responding favorably while older mice responding negatively. Consistent with this, in the older OVX ApoE KO mice, E2 treatment worsened atherosclerosis. Importantly, they point this differential effect of E2 to iron overload in macrophages using ApoE KO; LysM-macrophage-specific Fpn1 KO as E2 now has deleterious effects regardless of age. Next, using ferric ammonium citrate (FAC) to supplement iron and deferiprone (DFP) to chelate iron, they show that iron manipulation impacts the E2 response appropriately in the relevant cell types (endothelial cells and macrophage cells). Then they provide evidence for the MdM2-mediated post-translational regulation of ERa as a mechanism by which iron status impacts differential E2 has differential effects on ERa. Finally, they test the impact of systemic iron chelation on the OVX ApoE KO mice model of atherosclerosis and show that iron chelation attenuates the deleterious effects of E2 in late postmenopausal mice.</p><p>Overall the evidence is solid and logically laid out. Given that serum iron levels do not correlate with the rest of the story, inclusion of LysM-macrophage-specific Fpn1 KO provides the key evidence that iron loading in macrophages drives differential effects to E2 in postmenopausal mice. The paper provides evidence that iron levels influence how the relevant cells respond to E2 with clinical implications to hormonal replacement therapy in younger and older postmenopausal women. While this study is limited by a small clinical sample size, it provides an important framework for future studies on the impact of age-related iron status on the response to hormonal replacement therapy.</p>"
+    }
+  ],
+  "viewSelector": null,
+  "doi": null,
+  "articleMeta": null,
+  "figures": null,
+  "additional-files": null
+}

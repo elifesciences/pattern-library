@@ -6,10 +6,11 @@
       "term": "Version of Record",
       "descriptors": [
         "<time datetime=\"2023-09-27\">September 27, 2023</time>"
-      ]
+      ],
+      "isActive": true
     },
     {
-      "term": "Accepted Manuscript",
+      "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Accepted Manuscript</a>",
       "descriptors": [
         "<time datetime=\"2023-03-19\">March 19, 2023</time>"
       ]

@@ -191,11 +191,18 @@
       "label": "Version history",
       "items": [
         {
+          "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Version of Record</a>",
+          "descriptors": [
+            "<time datetime=\"2023-09-15\">September 15, 2023</time>"
+          ]
+        },
+        {
           "term": "Version of Record",
           "descriptors": [
             "<time datetime=\"2023-09-07\">September 7, 2023</time><a href=\"#\" aria-label=\"Descriptive and accessible name\">Read the peer reviews</a>"
           ],
-          "color": "vor"
+          "color": "vor",
+          "isActive": true
         },
         {
           "term": "<a href=\"#\" aria-label=\"Descriptive and accessible name\">Reviewed Preprint</a>",

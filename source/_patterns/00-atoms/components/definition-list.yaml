@@ -25,6 +25,10 @@ properties:
         color:
           type: string
           minLength: 1
+        isActive:
+          type: boolean
+          default:
+            - false
       required:
         - term
         - descriptors

@@ -33,9 +33,24 @@ module.exports = class ContentAside {
     // As each timeline entry has a dt and dd just count the dt element.
     const timelineCount = timeline.querySelectorAll('dt').length;
 
+    const toggleTimelineVisibility = () => {
+      const hasActiveClass = timeline.querySelector('.definition-list--active') !== null;
+      const dtElements = timeline.querySelectorAll('dt');
+      const ddElements = timeline.querySelectorAll('dd');
+
+      for (let i = 0; i < dtElements.length; i += 1) {
+        if ((hasActiveClass && !dtElements[i].classList.contains('definition-list--active')) ||
+          (!hasActiveClass && i !== 0)) {
+          dtElements[i].classList.toggle('hidden');
+          ddElements[i].classList.toggle('hidden');
+        }
+      }
+    };
+
     const toggleContent = (e) => {
       e.preventDefault();
       timelineParent.classList.toggle('toggle--expanded');
+      toggleTimelineVisibility();
     };
 
     const createToggle = () => {
@@ -51,6 +66,7 @@ module.exports = class ContentAside {
 
     if (timelineCount > maxVisibleCollapsedElements) {
       createToggle();
+      toggleTimelineVisibility();
     }
   }
 
