@@ -5,6 +5,8 @@ properties:
     type: string
     minLength: 1
   link:
-    $ref: ../../../non-pattern-schema/link.yaml
+    oneOf:
+      - $ref: ../../../non-pattern-schema/link.yaml
+      - type: 'null'
 required:
   - text
