@@ -13,15 +13,19 @@
     </div>
   {{/status}}
 
+  {{#previousVersion}}
+    {{>atoms-previous-version-warning}}
+  {{/previousVersion}}
+
   <div class="content-aside__column-wrapper">
 
-    <div class="content-aside__first-column">
-      {{#timeline}}
+    {{#timeline}}
+      <div class="content-aside__first-column">
         <div class="content-aside__definition-list">
           {{>atoms-definition-list}}
         </div>
-      {{/timeline}}
-    </div>
+      </div>
+    {{/timeline}}
 
     <div class="content-aside__second-column">
 
