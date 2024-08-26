@@ -247,7 +247,8 @@ gulp.task('local:test:unit', ['browserify-tests', 'js'], () => {
 });
 
 gulp.task('test:unit', ['browserify-tests'], () => {
-  return gulp.src('./test/*.html')
+  const testFile = options.filter || '*';
+  return gulp.src(`./test/${testFile}.html`)
     .pipe(mochaPhantomjs({
       reporter: 'spec',
       mocha: {

@@ -122,6 +122,12 @@ $ docker exec -it pattern-library-gulp-watch /bin/bash
 elife@...$ node_modules/.bin/gulp test:unit
 ```
 
+To run a particular gulp test:
+
+```
+elife@...$ node_modules/.bin/gulp test:unit --filter=hypothesisopener
+```
+
 The watch loop keeps a read-only host folder up-to-date with the latest assets:
 
 ```
