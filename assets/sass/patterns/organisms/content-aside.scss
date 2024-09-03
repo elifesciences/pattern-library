@@ -88,10 +88,6 @@
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-      width: 50%;
-    }
-
-    @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
       width: 100%;
     }
 
@@ -133,11 +129,19 @@
       @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
         @include padding(48, "right");
         width: 50%;
+
+        & + .content-aside__second-column {
+          width: 50%;
+        }
       }
 
       @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
         @include padding(0, "right");
         width: 100%;
+
+        & + .content-aside__second-column {
+          width: 100%;
+        }
       }
     }
   }
