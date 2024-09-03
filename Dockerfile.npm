@@ -1,7 +1,7 @@
 ARG node_version
 FROM node:${node_version}
 
-COPY npm-shrinkwrap.json \
+COPY package-lock.json \
     package.json \
     ./
 

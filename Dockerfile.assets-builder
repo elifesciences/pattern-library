@@ -9,21 +9,31 @@ COPY .babelrc \
     .jscsrc \
     .jshintrc \
     .stylelintrc \
-    gulpfile.js \
+    package.json \
+    Makefile \
     ./
 
 COPY --from=npm /node_modules/ node_modules/
 
-ARG environment=production
+RUN apt-get update \
+    && apt-get install -y wget gnupg \
+    && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
+    && apt-get update \
+    && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 \
+      --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+
+ARG ENVIRONMENT=production
 
 COPY assets/fonts/ assets/fonts/
-RUN node_modules/.bin/gulp --environment ${environment} fonts
+RUN make fonts
 
 COPY assets/img/ assets/img/
-RUN node_modules/.bin/gulp --environment ${environment} img
+RUN make images
 
 COPY assets/js/ assets/js/
-RUN node_modules/.bin/gulp --environment ${environment} js
+RUN make source/assets/js/main.js
 
 COPY assets/sass/ assets/sass/
-RUN node_modules/.bin/gulp --environment ${environment} generateCss
+RUN make source/assets/css/all.css
