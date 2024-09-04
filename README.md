@@ -201,6 +201,20 @@ There is also a list of js file dependencies for each pattern, but individual js
 
 # Running tests
 
+## Unit
+
+To run all gulp tests:
+
+```
+node_modules/.bin/gulp test:unit
+```
+
+To run a particular gulp test:
+
+```
+node_modules/.bin/gulp test:unit --filter=hypothesisopener
+```
+
 ## Selenium
 
 ```
