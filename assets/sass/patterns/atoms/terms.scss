@@ -1,0 +1,43 @@
+@import "../../definitions";
+@import "../../variables";
+
+.assessment {
+  font-family: $font-secondary;
+}
+
+.assessment__terms {
+  @include margin(0 0 36);
+  @include padding(0);
+
+  display: flex;
+  list-style: none;
+}
+
+.assessment__term {
+  @include font-size-and-vertical-height(12, 24);
+  @include padding(5 10 0);
+  @include margin(6, "right");
+
+  background-color: $color-text-ui-background-secondary-grey;
+  font-family: $font-secondary;
+  font-weight: 600;
+}
+
+.assessment__term-highlighted {
+  background-color: $color-primary;
+  color: #fff;
+}
+
+.assessment__terms-title {
+  @include font-size(14);
+
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.assessment__terms-summary {
+  @include font-size(16);
+
+  color: #666;
+  margin-bottom: 6px;
+}
