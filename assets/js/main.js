@@ -46,6 +46,7 @@ Components.SiteHeader = require('./components/SiteHeader');
 Components.SpeechBubble = require('./components/SpeechBubble');
 Components.StatisticCollection = require('./components/StatisticCollection');
 Components.TabbedNavigation = require('./components/TabbedNavigation');
+Components.Terms = require('./components/Terms');
 Components.ToggleableCaption = require('./components/ToggleableCaption');
 Components.Twitter = require('./components/Twitter');
 Components.ViewerModal = require('./components/ViewerModal');
