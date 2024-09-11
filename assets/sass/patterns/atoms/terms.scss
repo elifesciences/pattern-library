@@ -10,7 +10,7 @@
   display: block;
 }
 
-.assessment__terms {
+.terms {
   @include margin(0 0 36);
   @include padding(0);
 
@@ -18,7 +18,7 @@
   list-style: none;
 }
 
-.assessment__term {
+.term {
   @include font-size-and-vertical-height(12, 24);
   @include padding(5 10 0);
   @include margin(6, "right");
@@ -28,19 +28,19 @@
   font-weight: 600;
 }
 
-.assessment__term-highlighted {
+.term-highlighted {
   background-color: $color-primary;
   color: #fff;
 }
 
-.assessment__terms-title {
+.terms-title {
   @include font-size(14);
 
   color: #666;
   margin-bottom: 12px;
 }
 
-.assessment__terms-summary {
+.terms-summary {
   @include font-size(16);
 
   color: #666;

@@ -16,16 +16,15 @@ module.exports = class Terms {
   }
 
   termsShowHide() {
-    const assessment = document.querySelector('.assessment');
-    const button = document.querySelector('.terms-toggle-button');
+    const assessment = this.$elm.querySelector('#assessment');
+    const button = this.$elm.querySelector('.terms-toggle-button');
 
     button.addEventListener('click', () => {
-      console.log(this.$elm.getAttribute('aria-expanded'));
 
-      if (this.$elm.getAttribute('aria-expanded') === 'false') {
-        this.$elm.setAttribute('aria-expanded', 'true');
+      if (assessment.getAttribute('aria-expanded') === 'false') {
+        assessment.setAttribute('aria-expanded', 'true');
       } else {
-        this.$elm.setAttribute('aria-expanded', 'false');
+        assessment.setAttribute('aria-expanded', 'false');
       }
 
       assessment.classList.toggle('assessment-expanded');
