@@ -6,13 +6,14 @@
   @include padding(0);
 
   display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   list-style: none;
 }
 
 .term {
   @include font-size-and-vertical-height(12, 24);
   @include padding(5 10 0);
-  @include margin(6, "right");
 
   background-color: $color-text-ui-background-secondary-grey;
   font-family: $font-secondary;
