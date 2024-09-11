@@ -1,0 +1,10 @@
+{
+  "title": "Title:",
+  "summary": "<strong>Valuable</strong>: Summary",
+  "terms": [
+    {
+      "term": "Valuable",
+      "isHighlighted": true
+    }
+  ]
+}

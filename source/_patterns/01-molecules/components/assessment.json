@@ -1,0 +1,49 @@
+{
+  "significance": {
+    "title": "Significance of the findings:",
+    "summary": "<strong>Valuable</strong>: Contains findings that have theoretical or practical implications for a subfield.",
+    "terms": [
+      {
+        "term": "Landmark"
+      },
+      {
+        "term": "Fundamental"
+      },
+      {
+        "term": "Important"
+      },
+      {
+        "term": "Valuable",
+        "isHighlighted": true
+      },
+      {
+        "term": "Useful"
+      }
+    ]
+  },
+  "strength": {
+    "title": "Strength of evidence:",
+    "summary": "<strong>Solid</strong>: Methods, data and analyses broadly support the claims with only minor weaknesses.",
+    "terms": [
+      {
+        "term": "Exceptional"
+      },
+      {
+        "term": "Compelling"
+      },
+      {
+        "term": "Convincing"
+      },
+      {
+        "term": "Solid",
+        "isHighlighted": true
+      },
+      {
+        "term": "Incomplete"
+      },
+      {
+        "term": "Inadequate"
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+$schema: http://json-schema.org/draft-04/schema#
+type: object
+properties:
+  significance:
+    $ref: ../../00-atoms/components/term.yaml
+  strength:
+    $ref: ../../00-atoms/components/term.yaml

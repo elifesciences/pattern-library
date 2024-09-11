@@ -1,0 +1,25 @@
+{
+  "title": "Strength of evidence:",
+  "summary": "<strong>Solid</strong>: Methods, data and analyses broadly support the claims with only minor weaknesses.",
+  "terms": [
+    {
+      "term": "Exceptional"
+    },
+    {
+      "term": "Compelling"
+    },
+    {
+      "term": "Convincing"
+    },
+    {
+      "term": "Solid",
+      "isHighlighted": true
+    },
+    {
+      "term": "Incomplete"
+    },
+    {
+      "term": "Inadequate"
+    }
+  ]
+}

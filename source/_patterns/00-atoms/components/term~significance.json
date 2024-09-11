@@ -1,0 +1,22 @@
+{
+  "title": "Significance of the findings:",
+  "summary": "<strong>Valuable</strong>: Contains findings that have theoretical or practical implications for a subfield.",
+  "terms": [
+    {
+      "term": "Landmark"
+    },
+    {
+      "term": "Fundamental"
+    },
+    {
+      "term": "Important"
+    },
+    {
+      "term": "Valuable",
+      "isHighlighted": true
+    },
+    {
+      "term": "Useful"
+    }
+  ]
+}
