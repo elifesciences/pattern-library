@@ -1,15 +1,6 @@
 @import "../../definitions";
 @import "../../variables";
 
-.assessment {
-  display: none;
-  font-family: $font-secondary;
-}
-
-.assessment-expanded {
-  display: block;
-}
-
 .terms {
   @include margin(0 0 36);
   @include padding(0);

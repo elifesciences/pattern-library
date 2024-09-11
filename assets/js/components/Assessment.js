@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = class Terms {
+module.exports = class Assessment {
 
   // Passing window and document separately allows for independent mocking of window in order
   // to test feature support fallbacks etc.
@@ -12,10 +12,10 @@ module.exports = class Terms {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.termsShowHide();
+    this.assessmentToggle();
   }
 
-  termsShowHide() {
+  assessmentToggle() {
     const assessment = this.$elm.querySelector('#assessment');
     const button = this.$elm.querySelector('.terms-toggle-button');
 

@@ -1,0 +1,11 @@
+@import "../../definitions";
+@import "../../variables";
+
+.assessment {
+  display: none;
+  font-family: $font-secondary;
+}
+
+.assessment-expanded {
+  display: block;
+}
