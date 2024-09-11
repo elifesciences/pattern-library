@@ -709,13 +709,30 @@ module.exports = () => {
       return;
     }
 
+    toggleSeparatorClass(items, separatorClassName, true);
+  }
+
+  function toggleSeparatorClass(items, separatorClassName, isFirstRun) {
+    let hasChanges = false;
+
     items.forEach(function (item, index) {
-      if (index < items.length - 1 && item.getBoundingClientRect().top !== items[index + 1].getBoundingClientRect().top) {
+      if (index < items.length - 1 && item.getBoundingClientRect().x >=
+      items[index + 1].getBoundingClientRect().x) {
         item.classList.add(separatorClassName);
+        if (isFirstRun) {
+          hasChanges = true;
+        }
       } else {
         item.classList.remove(separatorClassName);
       }
     });
+
+    if (hasChanges && items.length > 3) {
+      hasChanges = false;
+      setTimeout(() => {
+        toggleSeparatorClass(items, separatorClassName, false);
+      }, 1000);
+    }
   }
 
   return {
