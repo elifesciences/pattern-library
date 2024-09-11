@@ -12,20 +12,22 @@ module.exports = class Terms {
     this.window = _window;
     this.doc = doc;
     this.$elm = $elm;
-    this.termsOn();
+    this.termsShowHide();
   }
 
-  termsOn() {
+  termsShowHide() {
     const assessment = document.querySelector('.assessment');
     const button = document.querySelector('.terms-toggle-button');
 
     button.addEventListener('click', () => {
-      this.$elm.getAttribute('aria-expanded')
-      if (setAttribute('aria-expanded', 'false') ='true') {
-        this.$elm.setAttribute('aria-expanded', 'false')
+      console.log(this.$elm.getAttribute('aria-expanded'));
+
+      if (this.$elm.getAttribute('aria-expanded') === 'false') {
+        this.$elm.setAttribute('aria-expanded', 'true');
       } else {
-        this.$elm.setAttribute('aria-expanded', 'true')
+        this.$elm.setAttribute('aria-expanded', 'false');
       }
+
       assessment.classList.toggle('assessment-expanded');
     });
   }

@@ -2,7 +2,12 @@
 @import "../../variables";
 
 .assessment {
+  display: none;
   font-family: $font-secondary;
+}
+
+.assessment-expanded {
+  display: block;
 }
 
 .assessment__terms {
@@ -40,12 +45,4 @@
 
   color: #666;
   margin-bottom: 6px;
-}
-
-.assessment {
-  display: none;
-}
-
-.assessment-expanded {
-  display: block;
 }
