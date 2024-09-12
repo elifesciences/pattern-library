@@ -23,8 +23,12 @@ module.exports = class Assessment {
 
       if (assessment.getAttribute('aria-expanded') === 'false') {
         assessment.setAttribute('aria-expanded', 'true');
+        button.innerHTML = 'See less';
+        button.classList.add('assessment__toggle-btn-reverse');
       } else {
         assessment.setAttribute('aria-expanded', 'false');
+        button.innerHTML = 'Read more about this assessment';
+        button.classList.remove('assessment__toggle-btn-reverse');
       }
 
       assessment.classList.toggle('assessment-expanded');
