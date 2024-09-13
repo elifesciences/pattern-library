@@ -15,7 +15,8 @@
   @include font-size-and-vertical-height(12, 24);
   @include padding(5 10 0);
 
-  background-color: $color-text-ui-background-secondary-grey;
+  background-color: $color-text-ui-background-light-gray;
+  border-radius: 3px;
   font-family: $font-secondary;
   font-weight: 600;
 }
@@ -35,6 +36,8 @@
 .terms-summary {
   @include font-size(16);
 
-  color: #666;
-  margin-bottom: 6px;
+  color: $color-text;
+  line-height: 24px;
+  margin-bottom: 12px;
+
 }
