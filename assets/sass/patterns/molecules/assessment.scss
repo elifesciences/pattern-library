@@ -23,6 +23,8 @@
 }
 
 .assessment__toggle-btn {
+  @include padding(0 26 0 0);
+
   border: none;
   background: #fff url(../img/icons/down-arrow-blue.svg) no-repeat;
   background-position: top -2px right;
@@ -30,7 +32,6 @@
   display: block;
   font-weight: 600;
   line-height: 24px;
-  padding: 0 26px 0 0;
   text-align: left;
 }
 

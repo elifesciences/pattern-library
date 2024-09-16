@@ -28,16 +28,16 @@
 
 .terms-title {
   @include font-size(14);
+  @include margin(12, "bottom");
 
   color: #666;
-  margin-bottom: 12px;
 }
 
 .terms-summary {
   @include font-size(16);
+  @include margin(12, "bottom");
 
   color: $color-text;
   line-height: 24px;
-  margin-bottom: 12px;
 
 }
