@@ -40,6 +40,8 @@ properties:
   hasEditorTitle:
     type: boolean
     default: false
+  assessment:
+    $ref: ../../01-molecules/components/assessment.yaml
 dependencies:
   title:
     oneOf:
