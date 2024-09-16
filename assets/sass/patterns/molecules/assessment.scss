@@ -26,7 +26,7 @@
   @include padding(0 26 0 0);
 
   border: none;
-  background: #fff url(../img/icons/down-arrow-blue.svg) no-repeat;
+  background: url(../img/icons/down-arrow-blue.svg) no-repeat;
   background-position: top -2px right;
   color: $color-primary-dark;
   display: block;
@@ -36,7 +36,7 @@
 }
 
 .assessment__toggle-btn-reverse {
-  background: #fff url(../img/icons/up-arrow-blue.svg) no-repeat;
+  background: url(../img/icons/up-arrow-blue.svg) no-repeat;
   background-position: top -2px right;
 }
 

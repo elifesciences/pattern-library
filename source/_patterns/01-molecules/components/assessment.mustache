@@ -1,12 +1,5 @@
-<section data-behaviour="Assessment" class="assessment">
-  <h2>{{title}}</h2>
-  <p class="assessment__description">{{{description}}}</p>
-
-  {{#doi}}
-    {{> atoms-doi}}
-  {{/doi}}
-
-  <div id="assessment" class="assessment__container" aria-expanded="false">
+<div data-behaviour="Assessment" class="assessment__wrapper">
+  <div class="assessment__container" aria-expanded="false">
 
     {{#significance}}
       {{> atoms-term}}
@@ -20,9 +13,7 @@
       <p class="assessment__summary">{{{summary}}}</p>
     {{/summary}}
 
-
   </div>
 
   <button class="assessment__toggle-btn">Read more about this assessment</button>
-
-</section>
+</div>

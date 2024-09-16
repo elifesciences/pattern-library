@@ -16,7 +16,7 @@ module.exports = class Assessment {
   }
 
   assessmentToggle() {
-    const assessment = this.$elm.querySelector('#assessment');
+    const assessment = this.$elm.querySelector('.assessment__container');
     const button = this.$elm.querySelector('.assessment__toggle-btn');
 
     button.addEventListener('click', () => {
