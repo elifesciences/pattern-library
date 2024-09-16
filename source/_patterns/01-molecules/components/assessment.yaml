@@ -6,4 +6,4 @@ properties:
   strength:
     $ref: ../../00-atoms/components/term.yaml
   doi:
-    $ref: ../components/doi.yaml
+    $ref: ../../00-atoms/components/doi.yaml
