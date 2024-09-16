@@ -3,7 +3,7 @@
   <div class="term-description">{{{termDescription}}}</div>
   <ul class="terms" aria-label="A list showing important assesment terms">
     {{#terms}}
-      <li class="term{{#isHighlighted}} term-highlighted{{/isHighlighted}}">{{term}}</li>
+      <li class="term{{#isHighlighted}} term-highlighted{{/isHighlighted}}" aria-label="Highlighted">{{term}}</li>
     {{/terms}}
   </ul>
 </section>
