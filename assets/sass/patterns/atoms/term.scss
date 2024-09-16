@@ -26,14 +26,14 @@
   color: #fff;
 }
 
-.terms-title {
+.term-title {
   @include font-size(14);
   @include margin(12, "bottom");
 
   color: #666;
 }
 
-.terms-summary {
+.term-description {
   @include font-size(16);
   @include margin(12, "bottom");
 

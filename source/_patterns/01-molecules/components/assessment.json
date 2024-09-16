@@ -3,7 +3,7 @@
   "description": "This valuable paper informs on the role of type I PRMTs in programming muscle stem cell identification. The evidence presented is mostly solid, with some weaknesses in the evidence regarding the proposed mechanism. The paper will be of particular interest to those who study skeletal muscle satellite cell biology.",
   "significance": {
     "title": "Significance of the findings:",
-    "summary": "<strong>Valuable</strong>: Contains findings that have theoretical or practical implications for a subfield.",
+    "termDescription": "<strong>Valuable</strong>: Contains findings that have theoretical or practical implications for a subfield.",
     "terms": [
       {
         "term": "Landmark"
@@ -25,7 +25,7 @@
   },
   "strength": {
     "title": "Strength of evidence:",
-    "summary": "<strong>Solid</strong>: Methods, data and analyses broadly support the claims with only minor weaknesses.",
+    "termDescription": "<strong>Solid</strong>: Methods, data and analyses broadly support the claims with only minor weaknesses.",
     "terms": [
       {
         "term": "Exceptional"
