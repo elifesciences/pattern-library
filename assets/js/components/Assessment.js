@@ -13,7 +13,6 @@ module.exports = class Assessment {
     this.doc = doc;
     this.$elm = $elm;
     this.assessmentToggle();
-    this.highlightTerms();
   }
 
   assessmentToggle() {
@@ -34,19 +33,5 @@ module.exports = class Assessment {
 
       assessment.classList.toggle('assessment-expanded');
     });
-  }
-
-  highlightTerms() {
-    const highlightedTerms = this.$elm.querySelectorAll('.term-highlighted');
-    const assessmentDescription = this.$elm.querySelector('.assessment__description');
-    this.content = assessmentDescription.textContent;
-    this.highlightedTermValues = Array.from(highlightedTerms).map(term => term.textContent);
-
-    this.highlightedTermValues.forEach(toHighlight => {
-      const regex = new RegExp(`\\b${toHighlight}\\b`, 'gi');
-      this.content = this.content.replace(regex, `<strong>${toHighlight.toLowerCase()}</strong>`);
-    });
-
-    assessmentDescription.innerHTML = this.content;
   }
 };
