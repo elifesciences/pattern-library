@@ -1,6 +1,6 @@
 <section data-behaviour="Assessment" class="assessment">
-  <h2>eLife Assessment</h2>
-  <p>This <strong>valuable</strong> paper informs on the role of type I PRMTs in programming muscle stem cell identification. The evidence presented is mostly <strong>solid</strong>, with some weaknesses in the evidence regarding the proposed mechanism. The paper will be of particular interest to those who study skeletal muscle satellite cell biology.</p>
+  <h2>{{title}}</h2>
+  <p class="assessment__description">{{description}}</p>
 
   {{#doi}}
     {{> atoms-doi}}
@@ -16,7 +16,10 @@
       {{> atoms-term}}
     {{/strength}}
 
-    <p class="assessment__description">During the peer-review process the editor and reviewers write an eLife Assessment that summarises the significance of the findings reported in the article (on a scale ranging from landmark to useful) and the strength of the evidence (on a scale ranging from exceptional to inadequate). <a href="https://elifesciences.org/inside-elife/db24dd46/elife-s-new-model-what-is-an-elife-assessment">Learn more about eLife Assessments</a></p>
+    {{#summary}}
+      <p class="assessment__summary">{{{summary}}}</p>
+    {{/summary}}
+
 
   </div>
 
