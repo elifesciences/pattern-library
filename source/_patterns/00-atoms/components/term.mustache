@@ -1,9 +1,9 @@
 <section class="term_wrapper">
   <div class="term-title">{{title}}</div>
-  <div class="term-description">{{{termDescription}}}</div>
-  <ul class="terms" aria-label="A list showing important assesment terms">
+  <div class="term-description" aria-label="eLife assessments use a common vocabulary to describe significance. The term chosen for this paper is:">{{{termDescription}}}</div>
+  <ul class="terms" aria-label="The following is a list terms editors can choose from">
     {{#terms}}
-      <li class="term{{#isHighlighted}} term-highlighted{{/isHighlighted}}" aria-label="Highlighted">{{term}}</li>
+      <li class="term{{#isHighlighted}} term-highlighted{{/isHighlighted}}">{{term}}</li>
     {{/terms}}
   </ul>
 </section>
