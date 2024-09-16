@@ -5,3 +5,5 @@ properties:
     $ref: ../../00-atoms/components/term.yaml
   strength:
     $ref: ../../00-atoms/components/term.yaml
+  doi:
+    $ref: ../components/doi.yaml

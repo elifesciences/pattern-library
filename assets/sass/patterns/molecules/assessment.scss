@@ -4,6 +4,11 @@
 .assessment {
   font-family: $font-secondary;
 
+  .doi {
+    @include margin(24, "bottom");
+    display: block;
+  }
+
   p {
     font-family: $font-secondary;
   }
@@ -19,9 +24,10 @@
 
 .assessment__toggle-btn {
   border: none;
-  color: #0769b0;
   background: #fff url(../img/icons/down-arrow-blue.svg) no-repeat;
   background-position: top -2px right;
+  color: $color-primary-dark;
+  display: block;
   font-weight: 600;
   line-height: 24px;
   padding: 0 26px 0 0;
