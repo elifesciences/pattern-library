@@ -501,6 +501,7 @@
         "significance": {
           "title": "Significance of the findings:",
           "termDescription": "<b>Valuable</b>: Contains findings that have theoretical or practical implications for a subfield.",
+          "termDescriptionAriaLabel": "eLife assessments use a common vocabulary to describe significance. The term chosen for this paper is:",
           "terms": [
             {
               "term": "Landmark"
@@ -523,6 +524,7 @@
         "strength": {
           "title": "Strength of evidence:",
           "termDescription": "<b>Solid</b>: Methods, data and analyses broadly support the claims with only minor weaknesses.",
+          "termDescriptionAriaLabel": "eLife assessments use a common vocabulary to describe strength of evidence. The term or terms chosen for this paper is:",
           "terms": [
             {
               "term": "Exceptional"
