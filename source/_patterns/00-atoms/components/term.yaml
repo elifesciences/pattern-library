@@ -21,6 +21,9 @@ properties:
           type: boolean
       required:
         - term
+  termDescriptionAriaLabel:
+    type: string
+    minLength: 1
 required:
   - title
   - termDescription
