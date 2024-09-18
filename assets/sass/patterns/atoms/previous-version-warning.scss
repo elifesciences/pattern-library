@@ -1,0 +1,61 @@
+@import "../../definitions";
+
+.previous-version-warning-container {
+  @include padding(12);
+
+  background-color: $color-text-ui-background-secondary-light-2;
+  container-name: warning;
+  container-type: inline-size;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 36px;
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    grid-column: 2 / 12;
+    width: 100%;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+    @include margin(12 0 26);
+  }
+}
+
+.previous-version-warning {
+  @include font-size-and-vertical-height(14, 24);
+  @include padding(24, "left");
+
+  background: url("../img/icons/previous-warning.svg") no-repeat 0 0;
+  color: $color-text;
+  font-family: $font-secondary;
+  font-weight: 600;
+  justify-content: center;
+
+  @container warning (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+    width: 100%;
+  }
+}
+
+.previous-version-warning__text {
+  @include margin(8, "left");
+
+  display: inline-block;
+}
+
+.previous-version-warning__link {
+  @include font-size-and-vertical-height(14, 24);
+
+  border-radius: 3px;
+  color: $color-primary-dark;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    @include link-hover();
+  }
+}
