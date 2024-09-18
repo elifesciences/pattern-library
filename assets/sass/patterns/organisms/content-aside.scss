@@ -122,9 +122,8 @@
     }
 
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+      @include content-aside-layout();
       @include padding(10, "left");
-      display: block;
-      max-width: 260px;
     }
 
     .content-aside__first-column {
@@ -222,6 +221,12 @@
     overflow: hidden;
   }
 
+  .previous-version-warning-container {
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+      @include content-aside-layout();
+    }
+  }
+
   .status-wrapper {
     @include margin(24, "bottom");
 
@@ -230,8 +235,7 @@
     }
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
-      display: block;
-      max-width: 260px;
+      @include content-aside-layout();
     }
 
     .status-title {

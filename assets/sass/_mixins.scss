@@ -815,3 +815,8 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   @include font-size-and-vertical-height(14);
   font-family: $font-secondary;
 }
+
+@mixin content-aside-layout {
+  display: block;
+  max-width: 260px;
+}
