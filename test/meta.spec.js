@@ -22,11 +22,11 @@ describe('A Meta Component', function () {
       };
     };
 
-    it('should add one no-separator class when screen size narrow', () => {
+    it('should not add no-separator class when screen size narrow', () => {
       const winFake = buildFakeWindow(320, 320);
       const _meta = new Meta($elm, winFake);
       const itemsWithNoSeparator = _meta.$elm.querySelectorAll('.no-separator');
-      expect(itemsWithNoSeparator.length).to.equal(55);
+      expect(itemsWithNoSeparator.length).to.equal(0);
     });
   });
 });
