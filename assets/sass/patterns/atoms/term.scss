@@ -1,6 +1,10 @@
 @import "../../definitions";
 @import "../../variables";
 
+.term_wrapper {
+  font-family: $font-secondary;
+}
+
 .terms {
   @include margin(0 0 36);
   @include padding(0);
@@ -27,8 +31,8 @@
 }
 
 .term-title {
-  @include font-size(14);
-  @include margin(12, "bottom");
+  @include font-size-and-vertical-height(14,24);
+  @include margin(6, "bottom");
 
   color: #666;
 }

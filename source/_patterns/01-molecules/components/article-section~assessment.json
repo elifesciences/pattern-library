@@ -1,5 +1,5 @@
 {
-  "classes": "article-section--highlighted",
+  "classes": "article-section--highlighted assessment",
   "id": "assessment",
   "title": "Assessment",
   "headingLevel": 2,
@@ -59,6 +59,6 @@
         }
       ]
     },
-    "summary": "During the peer-review process the editor and reviewers write an eLife Assessment that summarises the significance of the findings reported in the article (on a scale ranging from landmark to useful) and the strength of the evidence (on a scale ranging from exceptional to inadequate). <a href=\"https://elifesciences.org/inside-elife/db24dd46/elife-s-new-model-what-is-an-elife-assessment\">Learn more about eLife Assessments</a>"
+    "summary": "During the peer-review process the editor and reviewers write an eLife Assessment that summarises the significance of the findings reported in the article (on a scale ranging from landmark to useful) and the strength of the evidence (on a scale ranging from exceptional to inadequate). <a href=\"https://elifesciences.org/about/elife-assessments\">Learn more about eLife Assessments</a>"
   }
 }

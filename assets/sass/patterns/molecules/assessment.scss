@@ -1,6 +1,12 @@
 @import "../../definitions";
 @import "../../variables";
 
+.assessment {
+  p {
+    font-family: $font-secondary;
+  }
+}
+
 .assessment__container {
   display: none;
 }
@@ -29,6 +35,7 @@
 }
 
 .assessment__summary {
+  font-family: $font-secondary;
   font-size: 14px;
   line-height: 20px;
 }
