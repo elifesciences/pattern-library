@@ -1,10 +1,8 @@
 @import "../../definitions";
 @import "../../variables";
 
-.assessment {
-  p {
-    font-family: $font-secondary;
-  }
+.article-section__body:has(.assessment__wrapper) p {
+  font-family: $font-secondary;
 }
 
 .assessment__container {
