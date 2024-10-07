@@ -17,7 +17,7 @@
 
 .term {
   @include font-size-and-vertical-height(12, 24);
-  @include padding(5 10 0);
+  @include padding(4 10 0);
 
   background-color: $color-text-ui-background-light-gray;
   border-radius: 3px;
