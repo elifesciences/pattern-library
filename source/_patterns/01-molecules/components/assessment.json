@@ -1,0 +1,52 @@
+{
+  "significance": {
+    "title": "Significance of the findings:",
+    "termDescriptionAriaLabel": "eLife assessments use a common vocabulary to describe significance. The term chosen for this paper is:",
+    "termDescription": "<b>Valuable</b>: Contains findings that have theoretical or practical implications for a subfield.",
+    "terms": [
+      {
+        "term": "Landmark"
+      },
+      {
+        "term": "Fundamental"
+      },
+      {
+        "term": "Important"
+      },
+      {
+        "term": "Valuable",
+        "isHighlighted": true
+      },
+      {
+        "term": "Useful"
+      }
+    ]
+  },
+  "strength": {
+    "title": "Strength of evidence:",
+    "termDescriptionAriaLabel": "eLife assessments use a common vocabulary to describe strength of evidence. The term or terms chosen for this paper is:",
+    "termDescription": "<b>Solid</b>: Methods, data and analyses broadly support the claims with only minor weaknesses.",
+    "terms": [
+      {
+        "term": "Exceptional"
+      },
+      {
+        "term": "Compelling"
+      },
+      {
+        "term": "Convincing"
+      },
+      {
+        "term": "Solid",
+        "isHighlighted": true
+      },
+      {
+        "term": "Incomplete"
+      },
+      {
+        "term": "Inadequate"
+      }
+    ]
+  },
+  "summary": "During the peer-review process the editor and reviewers write an eLife Assessment that summarises the significance of the findings reported in the article (on a scale ranging from landmark to useful) and the strength of the evidence (on a scale ranging from exceptional to inadequate). <a href=\"https://elifesciences.org/about/elife-assessments\">Learn more about eLife Assessments</a>"
+}

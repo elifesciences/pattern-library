@@ -11,6 +11,7 @@ Components.AboutProfiles = require('./components/AboutProfiles');
 Components.AnnotationTeaser = require('./components/AnnotationTeaser');
 Components.ArticleDownloadLinksList = require('./components/ArticleDownloadLinksList');
 Components.ArticleSection = require('./components/ArticleSection');
+Components.Assessment = require('./components/Assessment');
 Components.AssetNavigation = require('./components/AssetNavigation');
 Components.AssetViewer = require('./components/AssetViewer');
 Components.AudioPlayer = require('./components/AudioPlayer');

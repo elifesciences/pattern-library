@@ -1,0 +1,47 @@
+@import "../../definitions";
+@import "../../variables";
+
+.term_wrapper {
+  font-family: $font-secondary;
+}
+
+.terms {
+  @include margin(0 0 36);
+  @include padding(0);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+}
+
+.term {
+  @include font-size-and-vertical-height(12, 24);
+  @include padding(4 10 0);
+
+  background-color: $color-text-ui-background-light-gray;
+  border-radius: 3px;
+  font-family: $font-secondary;
+  font-weight: 600;
+}
+
+.term-highlighted {
+  background-color: $color-primary;
+  color: #fff;
+}
+
+.term-title {
+  @include font-size-and-vertical-height(14,24);
+  @include margin(6, "bottom");
+
+  color: #666;
+}
+
+.term-description {
+  @include font-size(16);
+  @include margin(12, "bottom");
+
+  color: $color-text;
+  line-height: 24px;
+
+}
