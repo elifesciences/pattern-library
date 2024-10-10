@@ -15,6 +15,15 @@ properties:
   text:
     type: string
     minLength: 1
+  articleStatus:
+    type: string
+    minLength: 1
+  articleStatusColorClass:
+    type: string
+    minLength: 1
+  version:
+    type: string
+    minLength: 1
   date:
     $ref: ../../00-atoms/components/date.yaml
 anyOf:

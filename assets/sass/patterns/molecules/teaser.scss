@@ -131,6 +131,21 @@
   }
 }
 
+.teaser--main {
+  &.teaser--no-formats {
+    .no-separator {
+      &:after {
+        content: "";
+        width: 0;
+      }
+    }
+
+    .teaser__footer {
+      display: inline-block;
+    }
+  }
+}
+
 .teaser__formats {
   text-align: right;
 }

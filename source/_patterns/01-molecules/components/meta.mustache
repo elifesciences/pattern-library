@@ -1,4 +1,13 @@
-<div class="meta">
+<div data-behaviour="Meta" class="meta">
+  {{#articleStatus}}
+    <div class="meta__status">
+      {{#articleStatusColorClass}}<span class="meta__status-circle meta__status-circle-{{articleStatusColorClass}}"></span>{{/articleStatusColorClass}}{{articleStatus}}
+    </div>
+  {{/articleStatus}}
+
+  {{#version}}
+    <div class="meta__version">{{{version}}}</div>
+  {{/version}}
 
   {{#url}}
     <a class="meta__type" href="{{url}}" {{#carouselItem}}tabindex="-1"{{/carouselItem}}>{{{text}}}</a>
