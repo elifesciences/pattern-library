@@ -1,7 +1,6 @@
 @import "../../definitions";
 
 .tabbed-navigation {
-  @include margin(24, "bottom");
   background-color: $color-text-ui-background;
   border-bottom: 1px solid $color-text-dividers;
   border-top: 1px solid $color-text-dividers;
@@ -11,10 +10,6 @@
   position: sticky;
   top: -1px;
   z-index: 9;
-
-  @media only all and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    @include margin(36, "bottom");
-  }
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
     grid-column: 1/9;
