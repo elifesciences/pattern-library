@@ -26,63 +26,63 @@
 
            <div class="content-container-grid">
 
-             {{#tabbedNavigation}}
-               {{> molecules-tabbed-navigation }}
-             {{/tabbedNavigation}}
+            {{#tabbedNavigation}}
+              {{> molecules-tabbed-navigation }}
+            {{/tabbedNavigation}}
 
-             {{#viewSelector}}
-               {{> molecules-view-selector }}
-             {{/viewSelector}}
+            {{#viewSelector}}
+              {{> molecules-view-selector }}
+            {{/viewSelector}}
 
             {{#elifeAssessment}}
               <div class="content-container-block">
                {{> molecules-article-section }}
-               </div>
+              </div>
              {{/elifeAssessment}}
 
-             {{#jumpMenu}}
-               {{> molecules-jump-menu }}
-             {{/jumpMenu}}
+            {{#jumpMenu}}
+              {{> molecules-jump-menu }}
+            {{/jumpMenu}}
 
-             <div class="main-content-grid">
+            <div class="main-content-grid">
 
-               <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
-               {{#articleSections}}
-                 {{> molecules-article-section }}
-               {{/articleSections}}
-               </div>
+              <div data-behaviour="DelegateBehaviour" data-delegate-behaviour="Popup" data-selector="a">
+              {{#articleSections}}
+                {{> molecules-article-section }}
+              {{/articleSections}}
+              </div>
 
-               {{#iframe}}
-                 {{!> atoms-iframe }}
-               {{/iframe}}
+              {{#iframe}}
+                {{!> atoms-iframe }}
+              {{/iframe}}
 
-               {{! Decided this will be content, serverside }}
-               {{#pl-only-article-section-for-download-links}}
-                 {{> molecules-pl-only-article-section}}
-               {{/pl-only-article-section-for-download-links}}
+              {{! Decided this will be content, serverside }}
+              {{#pl-only-article-section-for-download-links}}
+                {{> molecules-pl-only-article-section}}
+              {{/pl-only-article-section-for-download-links}}
 
-               {{#articleSectionSocialMediaSharers}}
-                 {{> molecules-article-section }}
-               {{/articleSectionSocialMediaSharers}}
+              {{#articleSectionSocialMediaSharers}}
+                {{> molecules-article-section }}
+              {{/articleSectionSocialMediaSharers}}
 
-               {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
-               {{#articleMeta}}
-                 <section class="article-section">
-                     {{> molecules-article-meta }}
-                 </section>
-               {{/articleMeta}}
+              {{! May need to make the article section pattern more content flexible (include other patterns/not have header). New variants? }}
+              {{#articleMeta}}
+                <section class="article-section">
+                  {{> molecules-article-meta }}
+                </section>
+              {{/articleMeta}}
 
-             </div>
+            </div>
 
-             <div class="secondary-column-grid">
+            <div class="secondary-column-grid">
 
-               {{#related}}
-                 <div class="grid-secondary-column__item grid-secondary-column__item--wide-only article__related-item">
-                   {{> organisms-listing-teasers }}
-                 </div>
-               {{/related}}
+              {{#related}}
+                <div class="grid-secondary-column__item grid-secondary-column__item--wide-only article__related-item">
+                  {{> organisms-listing-teasers }}
+                </div>
+              {{/related}}
 
-             </div>
+            </div>
 
            </div>
 
