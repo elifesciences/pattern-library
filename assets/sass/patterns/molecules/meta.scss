@@ -58,20 +58,20 @@ a.meta__type {
   .meta__status,
   .meta__type,
   .meta__version {
+    @include font-size-and-vertical-height(14, 20);
+
     color: $color-text-secondary;
     display: inline-block;
-
-    @include font-size-and-vertical-height(14, 20);
   }
 
   .meta__status,
   .meta__type,
   .meta__version {
     &:after {
-      content: "\00a0\2022\00a0";
       color: $color-text-secondary;
-      font-weight: bold;
+      content: "\00a0\2022\00a0";
       display: inline-block;
+      font-weight: bold;
       width: 13px;
     }
   }
