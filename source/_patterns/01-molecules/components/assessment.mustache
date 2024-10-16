@@ -1,0 +1,19 @@
+<div data-behaviour="Assessment" class="assessment__wrapper">
+  <div class="assessment__container" aria-expanded="false">
+
+    {{#significance}}
+      {{> atoms-term}}
+    {{/significance}}
+
+    {{#strength}}
+      {{> atoms-term}}
+    {{/strength}}
+
+    {{#summary}}
+      <p class="assessment__summary">{{{summary}}}</p>
+    {{/summary}}
+
+  </div>
+
+  <button class="assessment__toggle-btn">Read more about this assessment</button>
+</div>

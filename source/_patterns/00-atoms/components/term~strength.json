@@ -1,0 +1,26 @@
+{
+  "title": "Strength of evidence:",
+  "termDescription": "<b>Solid</b>: Methods, data and analyses broadly support the claims with only minor weaknesses.",
+  "termDescriptionAriaLabel": "eLife assessments use a common vocabulary to describe strength of evidence. The term or terms chosen for this paper is:",
+  "terms": [
+    {
+      "term": "Exceptional"
+    },
+    {
+      "term": "Compelling"
+    },
+    {
+      "term": "Convincing"
+    },
+    {
+      "term": "Solid",
+      "isHighlighted": true
+    },
+    {
+      "term": "Incomplete"
+    },
+    {
+      "term": "Inadequate"
+    }
+  ]
+}
