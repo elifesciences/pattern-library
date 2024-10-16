@@ -13,6 +13,8 @@
 
   &:after {
     content: "\00a0\2022\00a0";
+    display: inline-block;
+    width: 13px;
   }
 
   &:last-child:after {
@@ -21,7 +23,6 @@
 
   &.no-separator {
     &:after {
-      @include margin(12, "right");
       content: "";
     }
   }
