@@ -40,8 +40,66 @@
       }
     }
   }
+
+  .teaser--no-formats & {
+    & + .date::before {
+      content: "";
+    }
+  }
 }
 
-a.meta__type:hover {
-  color: $color-primary-dark;
+a.meta__type {
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+.teaser--no-formats {
+  .meta__status,
+  .meta__type,
+  .meta__version {
+    @include font-size-and-vertical-height(14, 20);
+
+    color: $color-text-secondary;
+    display: inline-block;
+  }
+
+  .meta__status,
+  .meta__type,
+  .meta__version {
+    &:after {
+      color: $color-text-secondary;
+      content: "\00a0\2022\00a0";
+      display: inline-block;
+      font-weight: bold;
+      width: 13px;
+    }
+  }
+
+  .meta__status {
+    color: $color-text;
+  }
+
+  .meta__status-circle {
+    @include margin(1, "bottom");
+    @include margin(6, "right");
+
+    background-color: $color-status-variable-c;
+    border-radius: 50%;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+  }
+
+  .meta__status-circle-not-revised {
+    background-color: $color-status-variable-e;
+  }
+
+  .meta__status-circle-revised {
+    background-color: $color-status-variable-d;
+  }
+
+  .meta__status-circle-vor {
+    background-color: $color-primary;
+  }
 }

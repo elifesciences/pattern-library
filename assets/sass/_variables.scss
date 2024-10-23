@@ -44,6 +44,8 @@ $color-overlay: rgba(0, 0, 0, 0.8);
 $color-status-variable-a: #666;
 $color-status-variable-b: #2994d2;
 $color-status-variable-c: #edeff4;
+$color-status-variable-d: #42aea4;
+$color-status-variable-e: #f29524;
 
 // Typography
 $font-primary: "Noto Serif", serif;
@@ -145,6 +147,7 @@ $bkpt-site--medium: 730;
 $bkpt-site--wide: 900;
 $bkpt-site--x-wide: 1200;
 
+// For article pages
 $bkpt-site--extended-wide: 1000;
 
 // TODO: Replace the use of these with site breakpoints above
