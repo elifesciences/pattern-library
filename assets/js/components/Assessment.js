@@ -20,21 +20,21 @@ module.exports = class Assessment {
     const assessment = this.$elm.querySelector('.assessment__container');
     const assessmentWrapper = document.querySelector('.assessment__wrapper');
     const button = document.createElement('button');
-    button.classList = 'assessment__toggle-btn';
+    button.classList.add('assessment__toggle-btn');
     button.innerHTML = 'Read more about this assessment';
-    assessment.style.display = 'none';
+    assessment.classList.add('hidden');
     assessmentWrapper.appendChild(button);
 
     button.addEventListener('click', () => {
 
       if (assessment.getAttribute('aria-expanded') === 'false') {
         assessment.setAttribute('aria-expanded', 'true');
-        assessment.style.display = 'block';
+        assessment.classList.remove('hidden');
         button.innerHTML = 'See less';
         button.classList.add('assessment__toggle-btn-reverse');
       } else {
         assessment.setAttribute('aria-expanded', 'false');
-        assessment.style.display = 'none';
+        assessment.classList.add('hidden');
         button.innerHTML = 'Read more about this assessment';
         button.classList.remove('assessment__toggle-btn-reverse');
       }
