@@ -1,5 +1,5 @@
 ARG image_tag=latest
-FROM elifesciences/pattern-library_assets-builder:${image_tag}
+FROM --platform=linux/amd64 elifesciences/pattern-library_assets-builder:${image_tag}
 
 COPY .ci/ .ci/
 COPY project_tests.sh smoke_tests.sh wdio.conf.js ./
