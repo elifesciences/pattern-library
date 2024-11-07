@@ -1,4 +1,4 @@
-FROM composer:1.6.4
+FROM composer:2.2.24
 
 COPY composer.json \
     composer.lock \
