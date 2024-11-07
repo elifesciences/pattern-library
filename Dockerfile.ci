@@ -7,7 +7,4 @@ COPY source/_patterns/00-atoms/errors/ source/_patterns/00-atoms/errors/
 COPY test-selenium/ test-selenium/
 COPY test/ test/
 
-RUN mkdir -p test/build && \
-    chown --recursive node:node test/build
-
-USER node
+RUN mkdir -p test/build
