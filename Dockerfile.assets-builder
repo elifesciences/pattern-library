@@ -1,7 +1,7 @@
 ARG image_tag=latest
 ARG node_version
-FROM elifesciences/pattern-library_npm:${image_tag} as npm
-FROM node:${node_version}
+FROM --platform=linux/amd64 elifesciences/pattern-library_npm:${image_tag} as npm
+FROM --platform=linux/amd64 bitnami/node:${node_version}
 
 WORKDIR /srv/pattern-library
 
@@ -12,7 +12,7 @@ COPY .babelrc \
     gulpfile.js \
     ./
 
-COPY --from=npm /node_modules/ node_modules/
+COPY --from=npm /app/node_modules/ node_modules/
 
 ARG environment=production
 
