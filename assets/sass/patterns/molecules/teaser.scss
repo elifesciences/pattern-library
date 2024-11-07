@@ -126,9 +126,6 @@
       @include teaser-footer-style();
     }
   }
-  .teaser__formats-list > li {
-    @include font-size-and-vertical-height(14, 18);
-  }
 }
 
 .teaser--main {
@@ -142,25 +139,6 @@
 
     .teaser__footer {
       display: inline-block;
-    }
-  }
-}
-
-.teaser__formats {
-  text-align: right;
-}
-
-.teaser__formats-list {
-  @include nospace();
-  & > li {
-    @include font-size-and-vertical-height(12);
-    font-family: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-    display: inline;
-    list-style-type: none;
-    &:not(:last-of-type):after {
-      content: " + ";
     }
   }
 }
