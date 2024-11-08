@@ -1,6 +1,6 @@
 DOCKER_COMPOSE = docker-compose
 
-.PHONY: build clean dev test
+.PHONY: build clean dev stop test
 
 build:
 	$(DOCKER_COMPOSE) build
@@ -8,8 +8,10 @@ build:
 dev: build
 	bin/watch
 
-clean:
+stop:
 	$(DOCKER_COMPOSE) down --remove-orphans
+
+clean: stop
 	$(DOCKER_COMPOSE) down --volumes
 
 test:
