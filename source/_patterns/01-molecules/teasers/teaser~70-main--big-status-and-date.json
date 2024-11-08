@@ -39,12 +39,6 @@
         "forMachine": "2015-09-10",
         "isUpdated": true
       }
-    },
-    "formats": {
-      "list": [
-        "HTML",
-        "PDF"
-      ]
     }
   }
 }
