@@ -1,10 +1,16 @@
-.PHONY: build dev test
+DOCKER_COMPOSE = docker-compose
 
-test:
-	docker-compose -f docker-compose.yml -f docker-compose.ci.yml run --rm --name pattern-library_ci_project_tests.sh ci ./project_tests.sh
+.PHONY: build clean dev test
 
 build:
-	docker-compose build 
+	$(DOCKER_COMPOSE) build
 
 dev: build
 	bin/watch
+
+clean:
+	$(DOCKER_COMPOSE) down --remove-orphans
+	$(DOCKER_COMPOSE) down --volumes
+
+test:
+	$(DOCKER_COMPOSE) -f docker-compose.yml -f docker-compose.ci.yml run --rm --name pattern-library_ci_project_tests.sh ci ./project_tests.sh
