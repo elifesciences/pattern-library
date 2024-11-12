@@ -106,6 +106,7 @@
 
 .teaser__body {
   @include teaser-body-style();
+  margin-bottom: 12px;
 }
 
 .teaser__footer {
