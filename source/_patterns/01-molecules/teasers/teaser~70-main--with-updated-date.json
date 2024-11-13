@@ -10,7 +10,7 @@
         "url": "#"
       },
       {
-        "name": "Ridiculously long name that will get truncated and narrower screen widths",
+        "name": "Ridiculously long name that is likely to get truncated",
         "url": "#"
       }
     ]
@@ -29,7 +29,9 @@
   "footer": {
     "meta": {
       "url": "#",
-      "text": "Research article",
+      "text": "Reviewed Preprint v2",
+      "articleStatus": "Revised",
+      "articleStatusColorClass": "revised",
       "date": {
         "forHuman": {
           "dayOfMonth": 10,
