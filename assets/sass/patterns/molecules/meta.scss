@@ -41,7 +41,7 @@
     }
   }
 
-  .teaser--no-formats & {
+  .teaser & {
     & + .date::before {
       content: "";
     }
