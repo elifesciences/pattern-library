@@ -130,7 +130,7 @@
 }
 
 .teaser--main {
-  &.teaser--no-formats {
+  &.teaser {
     .no-separator {
       &:after {
         content: "";
