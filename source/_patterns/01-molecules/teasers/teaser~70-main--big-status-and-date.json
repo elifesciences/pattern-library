@@ -29,7 +29,9 @@
   "footer": {
     "meta": {
       "url": "#",
-      "text": "Research article",
+      "text": "Reviewed Preprint v2",
+      "articleStatus": "Revised",
+      "articleStatusColorClass": "revised",
       "date": {
         "forHuman": {
           "dayOfMonth": 10,
