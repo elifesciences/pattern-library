@@ -29,7 +29,9 @@
   "footer": {
     "meta": {
       "url": "#",
-      "text": "Research article",
+      "text": "Research Article",
+      "articleStatus": "Version of Record",
+      "articleStatusColorClass": "vor",
       "date": {
         "forHuman": {
           "dayOfMonth": 10,
