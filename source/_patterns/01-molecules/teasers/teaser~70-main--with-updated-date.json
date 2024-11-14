@@ -28,8 +28,8 @@
 
   "footer": {
     "meta": {
-      "url": "#",
-      "text": "Reviewed Preprint v2",
+      "url": false,
+      "version": "Reviewed Preprint v2",
       "articleStatus": "Revised",
       "articleStatusColorClass": "revised",
       "date": {
