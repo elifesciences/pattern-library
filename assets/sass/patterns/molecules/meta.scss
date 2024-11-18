@@ -87,6 +87,7 @@ a.meta__type {
   .meta__status-circle {
     @include margin(1, "bottom");
     @include margin(6, "right");
+    @include margin(7, "left");
 
     background-color: $color-status-variable-c;
     border-radius: 50%;
