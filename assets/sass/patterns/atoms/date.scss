@@ -13,6 +13,10 @@
     }
   }
 
+  .teaser--secondary & {
+    @include font-size-and-vertical-height(14, 18);
+  }
+
   .teaser--main.teaser & {
     display: inline-block;
 
