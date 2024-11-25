@@ -70,6 +70,10 @@
   .meta {
     @include font-size-and-vertical-height(14, 24);
     color: inherit;
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+      display: flex;
+    }
   }
 
   .meta__type {
