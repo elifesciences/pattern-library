@@ -2,9 +2,9 @@ $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
   significance:
-    $ref: ../../00-atoms/components/term.yaml
+    $ref: ../assessment-terms/article-assessment-terms.yaml
   strength:
-    $ref: ../../00-atoms/components/term.yaml
+    $ref: ../assessment-terms/article-assessment-terms.yaml
   summary:
     type: string
     minLength: 1

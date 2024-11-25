@@ -10,11 +10,11 @@
       "term": "Fundamental"
     },
     {
-      "term": "Important"
+      "term": "Important",
+      "isHighlighted": true
     },
     {
-      "term": "Valuable",
-      "isHighlighted": true
+      "term": "Valuable"
     },
     {
       "term": "Useful"

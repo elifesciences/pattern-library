@@ -322,7 +322,7 @@
             "meta": {
               "version": "Reviewed Preprint v1",
               "url": false,
-              "articleStatus": "Not yet revised",
+              "articleStatus": "Not revised",
               "articleStatusColorClass": "not-revised",
               "date": {
                 "forHuman": {
