@@ -11,16 +11,7 @@ properties:
     type: array
     minItems: 1
     items:
-      type: object
-      properties:
-        term:
-          type: string
-          minLength: 1
-        isHighlighted:
-          default: false
-          type: boolean
-      required:
-        - term
+      $ref: ../../00-atoms/components/term.yaml
   termDescriptionAriaLabel:
     type: string
     minLength: 1
