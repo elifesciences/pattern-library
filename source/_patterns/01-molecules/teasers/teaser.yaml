@@ -87,9 +87,12 @@ properties:
       meta:
         $ref: ../../01-molecules/components/meta.yaml
       terms:
-        type: array
-        items:
-          $ref: ../../00-atoms/components/term.yaml
+        type: object
+        properties:
+          items:
+            type: array
+            items:
+              $ref: ../../00-atoms/components/term.yaml
     required:
       - meta
 

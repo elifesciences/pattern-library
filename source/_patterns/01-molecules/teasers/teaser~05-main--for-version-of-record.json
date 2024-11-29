@@ -41,14 +41,16 @@
         "forMachine": "2015-09-10"
       }
     },
-    "terms": [
-      {
-        "value": "Valuable"
-      },
-      {
-        "value": "Incomplete"
-      }
-    ]
+    "terms": {
+      "items": [
+        {
+          "value": "Valuable"
+        },
+        {
+          "value": "Incomplete"
+        }
+      ]
+    }
   }
 
 }
