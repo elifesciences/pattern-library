@@ -28,29 +28,21 @@
 
   "footer": {
     "meta": {
-      "url": false,
-      "version": "Reviewed Preprint v2",
-      "articleStatus": "Revised",
-      "articleStatusColorClass": "revised",
+      "url": "#",
+      "text": "Research Article",
+      "articleStatus": "Version of Record",
       "date": {
         "forHuman": {
           "dayOfMonth": 10,
           "month": "Sep",
           "year": 2015
         },
-        "forMachine": "2015-09-10",
-        "isUpdated": true
+        "forMachine": "2015-09-10"
       }
     },
     "terms": {
-      "items": [
-        {
-          "value": "Important"
-        },
-        {
-          "value": "Compelling"
-        }
-      ]
+      "items": []
     }
   }
+
 }
