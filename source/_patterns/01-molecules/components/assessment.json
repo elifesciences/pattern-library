@@ -5,20 +5,20 @@
     "termDescription": "<b>Valuable</b>: Contains findings that have theoretical or practical implications for a subfield.",
     "terms": [
       {
-        "term": "Landmark"
+        "value": "Landmark"
       },
       {
-        "term": "Fundamental"
+        "value": "Fundamental"
       },
       {
-        "term": "Important"
+        "value": "Important"
       },
       {
-        "term": "Valuable",
+        "value": "Valuable",
         "isHighlighted": true
       },
       {
-        "term": "Useful"
+        "value": "Useful"
       }
     ]
   },
@@ -28,23 +28,23 @@
     "termDescription": "<b>Solid</b>: Methods, data and analyses broadly support the claims with only minor weaknesses.",
     "terms": [
       {
-        "term": "Exceptional"
+        "value": "Exceptional"
       },
       {
-        "term": "Compelling"
+        "value": "Compelling"
       },
       {
-        "term": "Convincing"
+        "value": "Convincing"
       },
       {
-        "term": "Solid",
+        "value": "Solid",
         "isHighlighted": true
       },
       {
-        "term": "Incomplete"
+        "value": "Incomplete"
       },
       {
-        "term": "Inadequate"
+        "value": "Inadequate"
       }
     ]
   },

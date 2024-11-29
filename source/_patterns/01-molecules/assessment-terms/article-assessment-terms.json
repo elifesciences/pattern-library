@@ -4,20 +4,20 @@
   "termDescriptionAriaLabel": "eLife assessments use a common vocabulary to describe significance. The term chosen for this paper is:",
   "terms": [
     {
-      "term": "Landmark"
+      "value": "Landmark"
     },
     {
-      "term": "Fundamental"
+      "value": "Fundamental"
     },
     {
-      "term": "Important",
+      "value": "Important",
       "isHighlighted": true
     },
     {
-      "term": "Valuable"
+      "value": "Valuable"
     },
     {
-      "term": "Useful"
+      "value": "Useful"
     }
   ]
 }
