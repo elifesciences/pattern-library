@@ -1,11 +1,27 @@
 @import "../../definitions";
 @import "../../variables";
 
-.term_wrapper {
+.article-assessment-terms {
   font-family: $font-secondary;
 }
 
-.terms {
+.article-assessment-terms__title {
+  @include font-size-and-vertical-height(14,24);
+  @include margin(6, "bottom");
+
+  color: #666;
+}
+
+.article-assessment-terms__description {
+  @include font-size(16);
+  @include margin(12, "bottom");
+
+  color: $color-text;
+  line-height: 24px;
+
+}
+
+.article-assessment-terms__list {
   @include margin(0 0 36);
   @include padding(0);
 
@@ -13,20 +29,4 @@
   flex-wrap: wrap;
   gap: 6px;
   list-style: none;
-}
-
-.term-title {
-  @include font-size-and-vertical-height(14,24);
-  @include margin(6, "bottom");
-
-  color: #666;
-}
-
-.term-description {
-  @include font-size(16);
-  @include margin(12, "bottom");
-
-  color: $color-text;
-  line-height: 24px;
-
 }
