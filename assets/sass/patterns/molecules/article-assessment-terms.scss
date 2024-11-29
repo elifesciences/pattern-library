@@ -15,22 +15,6 @@
   list-style: none;
 }
 
-.term {
-  @include font-size-and-vertical-height(12, 24);
-  @include padding(4 10 0);
-
-  background-color: $color-text-ui-background-light-gray;
-  border-radius: 3px;
-  display: inline-block;
-  font-family: $font-secondary;
-  font-weight: 600;
-}
-
-.term-highlighted {
-  background-color: $color-primary;
-  color: #fff;
-}
-
 .term-title {
   @include font-size-and-vertical-height(14,24);
   @include margin(6, "bottom");
