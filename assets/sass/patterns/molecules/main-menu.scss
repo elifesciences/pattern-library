@@ -20,7 +20,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include padding(52, "top");
+    @include padding(54, "top");
   }
 
   .site-header__title {
