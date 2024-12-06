@@ -332,6 +332,16 @@
                 },
                 "forMachine": "20160516"
               }
+            },
+            "terms": {
+              "items": [
+                {
+                  "value": "Important"
+                },
+                {
+                  "value": "Compelling"
+                }
+              ]
             }
           },
 
@@ -375,6 +385,16 @@
                 },
                 "forMachine": "20160419"
               }
+            },
+            "terms": {
+              "items": [
+                {
+                  "value": "Important"
+                },
+                {
+                  "value": "Compelling"
+                }
+              ]
             }
           }
         },
@@ -411,6 +431,16 @@
                 },
                 "forMachine": "20160516"
               }
+            },
+            "terms": {
+              "items": [
+                {
+                  "value": "Important"
+                },
+                {
+                  "value": "Compelling"
+                }
+              ]
             }
           }
         },
