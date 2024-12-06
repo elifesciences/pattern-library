@@ -114,7 +114,7 @@
 }
 
 .teaser__terms {
-  @include margin(12 0 36);
+  @include margin(12 0 0);
   @include padding(0);
 
   display: flex;
