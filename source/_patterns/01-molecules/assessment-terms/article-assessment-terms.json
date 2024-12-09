@@ -1,0 +1,23 @@
+{
+  "title": "Significance of the findings:",
+  "termDescription": "<b>Valuable</b>: Contains findings that have theoretical or practical implications for a subfield.",
+  "termDescriptionAriaLabel": "eLife assessments use a common vocabulary to describe significance. The term chosen for this paper is:",
+  "terms": [
+    {
+      "value": "Landmark"
+    },
+    {
+      "value": "Fundamental"
+    },
+    {
+      "value": "Important",
+      "isHighlighted": true
+    },
+    {
+      "value": "Valuable"
+    },
+    {
+      "value": "Useful"
+    }
+  ]
+}

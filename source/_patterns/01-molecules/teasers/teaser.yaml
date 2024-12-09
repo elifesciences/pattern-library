@@ -86,16 +86,13 @@ properties:
     properties:
       meta:
         $ref: ../../01-molecules/components/meta.yaml
-      formats:
+      terms:
         type: object
         properties:
-          list:
+          items:
             type: array
-            minItems: 1
-            item:
-              type: string
-        required:
-          - list
+            items:
+              $ref: ../../00-atoms/components/term.yaml
     required:
       - meta
 

@@ -1,0 +1,18 @@
+<div data-behaviour="Assessment" class="assessment__wrapper">
+  <div class="assessment__container" aria-expanded="false">
+
+    {{#significance}}
+      {{> molecules-article-assessment-terms}}
+    {{/significance}}
+
+    {{#strength}}
+      {{> molecules-article-assessment-terms}}
+    {{/strength}}
+
+    {{#summary}}
+      <p class="assessment__summary">{{{summary}}}</p>
+    {{/summary}}
+
+  </div>
+
+</div>

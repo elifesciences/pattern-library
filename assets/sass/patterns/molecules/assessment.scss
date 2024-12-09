@@ -1,0 +1,35 @@
+@import "../../definitions";
+@import "../../variables";
+
+.article-section__body:has(.assessment__wrapper) p {
+  font-family: $font-secondary;
+}
+
+.assessment-expanded {
+  display: block;
+}
+
+.assessment__toggle-btn {
+  @include padding(0 26 0 0);
+
+  border: none;
+  background: url(../img/icons/down-arrow-blue.svg) no-repeat;
+  background-position: top -2px right;
+  color: $color-primary-dark;
+  display: block;
+  font-family: $font-secondary;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+}
+
+.assessment__toggle-btn-reverse {
+  background: url(../img/icons/up-arrow-blue.svg) no-repeat;
+  background-position: top -2px right;
+}
+
+.assessment__summary {
+  font-family: $font-secondary;
+  font-size: 14px;
+  line-height: 20px;
+}

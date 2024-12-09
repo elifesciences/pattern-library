@@ -1,0 +1,19 @@
+@import "../../definitions";
+@import "../../variables";
+
+.term {
+  @include font-size-and-vertical-height(12, 24);
+  @include padding(4 10 0);
+
+  background-color: $color-text-ui-background-light-gray;
+  color: $color-text;
+  border-radius: 3px;
+  display: inline-block;
+  font-family: $font-secondary;
+  font-weight: 600;
+}
+
+.term-highlighted {
+  background-color: $color-primary;
+  color: #fff;
+}

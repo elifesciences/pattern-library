@@ -1,4 +1,4 @@
-<div class="teaser{{#rootClasses}} {{rootClasses}}{{/rootClasses}}{{^rootClasses}} teaser--main{{/rootClasses}} {{^secondaryInfo}}teaser--no-secondary-info{{/secondaryInfo}}">
+<div class="teaser{{#rootClasses}} {{rootClasses}}{{/rootClasses}}{{^rootClasses}} teaser--main{{/rootClasses}}{{^secondaryInfo}} teaser--no-secondary-info{{/secondaryInfo}}">
 
   {{! These are usually links to major subject areas, see teaser-main-article, but could be unlinked
       text expressing a relationship, e.g. 'Built upon by' in teaser-secondary-related-item}}
@@ -87,16 +87,13 @@
       {{> molecules-meta}}
     {{/meta}}
 
-    {{#formats}}
-    <div class="teaser__formats">
-      <span class="visuallyhidden">Formats available:</span>
-      <ul class="teaser__formats-list">
-        {{#list}}
-          <li>{{.}}</li>
-        {{/list}}
+    {{#terms}}
+      <ul class="teaser__terms" aria-label="This article has been assessed by eLife as: ">
+        {{#items}}
+        <li>{{>atoms-term}}</li>
+        {{/items}}
       </ul>
-    </div>
-    {{/formats}}
+    {{/terms}}
 
   </footer>
   {{/footer}}

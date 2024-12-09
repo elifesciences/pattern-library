@@ -1,0 +1,64 @@
+{
+  "classes": "article-section--highlighted",
+  "id": "assessment",
+  "title": "Assessment",
+  "headingLevel": 2,
+  "doi": {
+    "doi": "10.7554/eLife.62927.sa1",
+    "variant": "article-section"
+  },
+  "body": "<p>This <b>valuable</b> paper informs on the role of type I PRMTs in programming muscle stem cell identification. The evidence presented is mostly <b>solid</b>, with some weaknesses in the evidence regarding the proposed mechanism. The paper will be of particular interest to those who study skeletal muscle satellite cell biology.</p>",
+  "hasBehaviour": false,
+  "assessment": {
+    "significance": {
+      "title": "Significance of the findings:",
+      "termDescription": "<b>Valuable</b>: Contains findings that have theoretical or practical implications for a subfield.",
+      "termDescriptionAriaLabel": "eLife assessments use a common vocabulary to describe significance. The term chosen for this paper is:",
+      "terms": [
+        {
+          "value": "Landmark"
+        },
+        {
+          "value": "Fundamental"
+        },
+        {
+          "value": "Important"
+        },
+        {
+          "value": "Valuable",
+          "isHighlighted": true
+        },
+        {
+          "value": "Useful"
+        }
+      ]
+    },
+    "strength": {
+      "title": "Strength of evidence:",
+      "termDescription": "<b>Solid</b>: Methods, data and analyses broadly support the claims with only minor weaknesses.",
+      "termDescriptionAriaLabel": "eLife assessments use a common vocabulary to describe strength of evidence. The term or terms chosen for this paper is:",
+      "terms": [
+        {
+          "value": "Exceptional"
+        },
+        {
+          "value": "Compelling"
+        },
+        {
+          "value": "Convincing"
+        },
+        {
+          "value": "Solid",
+          "isHighlighted": true
+        },
+        {
+          "value": "Incomplete"
+        },
+        {
+          "value": "Inadequate"
+        }
+      ]
+    },
+    "summary": "During the peer-review process the editor and reviewers write an eLife Assessment that summarises the significance of the findings reported in the article (on a scale ranging from landmark to useful) and the strength of the evidence (on a scale ranging from exceptional to inadequate). <a href=\"https://elifesciences.org/about/elife-assessments\">Learn more about eLife Assessments</a>"
+  }
+}

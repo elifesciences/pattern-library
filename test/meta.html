@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mocha Test Runner</title>
+
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+    <style>
+      .statistic-collection__item, dd, dt {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+
+  <!--
+    Test output
+  -->
+    <div id="mocha"></div>
+
+    <div class="global-inner">
+
+    <!--
+      Fixture
+    -->
+
+      <main id="maincontent" class="main blg-margin-bottom-large">
+        <header class="content-header"></header>
+        <div class="meta" data-behaviour="Meta">
+          <div class="meta__status">
+            <span class="meta__status-circle meta__status-circle-not-revised"></span>Not revised
+          </div>
+          <div class="meta__version">Reviewed Preprint v1</div>
+          <a class="meta__type" href="#">Research article</a>
+          <span class="date"> <time datetime="20160516">May 16, 2016</time></span>
+        </div>
+      </main>
+    </div>
+
+    <!--
+  Load test code
+-->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+
+    <!-- Initialise test suite -->
+    <script>mocha.setup('bdd')</script>
+
+    <!--
+  Test spec
+-->
+    <script src="build/meta.spec.js"></script>
+
+    <!--
+  Begin!
+-->
+    <script>
+  mocha.run();
+</script>
+
+  </body>
+</html>

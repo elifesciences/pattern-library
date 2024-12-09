@@ -63,6 +63,8 @@
 
       &:after {
         content: "\00a0\2022\00a0";
+        display: inline-block;
+        width: 13px;
       }
 
       &:last-child {
@@ -73,7 +75,6 @@
 
       &.no-separator {
         &:after {
-          @include margin(12, "right");
           content: "";
         }
       }
@@ -310,6 +311,11 @@
     @include padding(0);
   }
 
+  .content-container-block {
+    grid-column: 1/10;
+    grid-row: 2;
+  }
+
   .wrapper--content {
     grid-column: 1/13;
     grid-row: 3;
@@ -317,6 +323,11 @@
     @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
       .view-selector,
       .main-content-grid {
+        grid-column: 2/12;
+        grid-row: 3;
+      }
+
+      .content-container-block {
         grid-column: 2/12;
       }
     }
@@ -326,6 +337,10 @@
 
       .view-selector,
       .main-content-grid {
+        grid-column: 1/9;
+      }
+
+      .content-container-block {
         grid-column: 1/9;
       }
     }
@@ -341,6 +356,12 @@
         @include margin(36, "left");
         @include margin(36, "right");
         grid-column: 3/10;
+        grid-row: 3;
+      }
+
+      .content-container-block {
+        grid-column: 1/10;
+        margin-right: 36px;
       }
     }
   }

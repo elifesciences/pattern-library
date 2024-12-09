@@ -17,6 +17,7 @@ services:
                 image_tag: ${IMAGE_TAG}
                 node_version: ${NODE_VERSION}
         image: elifesciences/pattern-library_assets-builder:${IMAGE_TAG}
+        stop_grace_period: 1s
         depends_on:
             - npm
     assets:
@@ -42,6 +43,7 @@ services:
             args:
                 image_tag: ${IMAGE_TAG}
         image: elifesciences/pattern-library_ui-builder:${IMAGE_TAG}
+        stop_grace_period: 1s
         depends_on:
             - assets
             - composer

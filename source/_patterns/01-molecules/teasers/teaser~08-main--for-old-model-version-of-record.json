@@ -10,7 +10,7 @@
         "url": "#"
       },
       {
-        "name": "Ridiculously long name that will get truncated and narrower screen widths",
+        "name": "Ridiculously long name that is likely to get truncated",
         "url": "#"
       }
     ]
@@ -29,22 +29,20 @@
   "footer": {
     "meta": {
       "url": "#",
-      "text": "Research article",
+      "text": "Research Article",
+      "articleStatus": "Version of Record",
       "date": {
         "forHuman": {
           "dayOfMonth": 10,
           "month": "Sep",
           "year": 2015
         },
-        "forMachine": "2015-09-10",
-        "isUpdated": true
+        "forMachine": "2015-09-10"
       }
     },
-    "formats": {
-      "list": [
-        "HTML",
-        "PDF"
-      ]
+    "terms": {
+      "items": []
     }
   }
+
 }
