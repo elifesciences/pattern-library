@@ -390,20 +390,20 @@
         "termDescriptionAriaLabel": "eLife assessments use a common vocabulary to describe significance. The term chosen for this paper is:",
         "terms": [
           {
-            "term": "Landmark"
+            "value": "Landmark"
           },
           {
-            "term": "Fundamental"
+            "value": "Fundamental"
           },
           {
-            "term": "Important"
+            "value": "Important"
           },
           {
-            "term": "Valuable",
+            "value": "Valuable",
             "isHighlighted": true
           },
           {
-            "term": "Useful"
+            "value": "Useful"
           }
         ]
       },
@@ -413,23 +413,23 @@
         "termDescriptionAriaLabel": "eLife assessments use a common vocabulary to describe strength of evidence. The term or terms chosen for this paper is:",
         "terms": [
           {
-            "term": "Exceptional"
+            "value": "Exceptional"
           },
           {
-            "term": "Compelling"
+            "value": "Compelling"
           },
           {
-            "term": "Convincing"
+            "value": "Convincing"
           },
           {
-            "term": "Solid",
+            "value": "Solid",
             "isHighlighted": true
           },
           {
-            "term": "Incomplete"
+            "value": "Incomplete"
           },
           {
-            "term": "Inadequate"
+            "value": "Inadequate"
           }
         ]
       },
