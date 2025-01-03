@@ -29,9 +29,9 @@ a.reference__title:hover {
 }
 
 .reference__author {
-  @include listing-side-author-typeg();
   @include font-size-and-vertical-height(16);
   display: inline;
+  font-family: $font-secondary;
   margin: 0;
   padding: 0;
 
