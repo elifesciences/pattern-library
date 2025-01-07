@@ -390,7 +390,6 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
 }
 
 @mixin teaser-footer-style() {
-  @include blg-spacing("top", "extra-small", "margin");
   color: $color-text-secondary;
   display: flex;
   @include label-content-typeg();
