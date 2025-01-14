@@ -54,6 +54,12 @@ a.meta__type {
   }
 }
 
+.meta > a.meta__type:last-child {
+  &:after {
+    content: "";
+  }
+}
+
 .teaser {
   .meta__status,
   .meta__type,
