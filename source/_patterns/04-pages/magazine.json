@@ -225,6 +225,28 @@
         },
 
         {
+          "title": "Episode 96: December 2024",
+          "url": "#",
+          "ariaLabel": "Descriptive and accessible label",
+          "content": "In this episode, we hear about predicting the evolution of influenza viruses, how deserts decompose matter, what worms are revealing about a gene linked to autism, and how mice detect the smell of cats.",
+          "footer": {
+            "meta": {
+              "text": "Podcast",
+              "url": "/podcast"
+            }
+          },
+
+          "image": {
+            "fallback": {
+              "defaultPath": "https://unsplash.it/250/140/",
+              "srcset": "https://unsplash.it/500/280/ 2x, https://unsplash.it/250/140/ 1x",
+              "altText": "Meaningful alt text please."
+            },
+            "type": "big"
+          }
+        },
+
+        {
           "contextLabel": {
             "list": [
               {
