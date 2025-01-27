@@ -9,7 +9,7 @@
     </label>
   {{/isSelectFilter}}
   {{^isSelectFilter}}
-    <legend id="filter-group__title" class="filter-group__title">{{title}}</legend>
+    {{#title}}<legend id="filter-group__title" class="filter-group__title">{{title}}</legend>{{/title}}
     <ul class="filter-group__filters" aria-labelledby="filter-group__title">
       {{#filters}}
       <li class="filter-group__filter_item">

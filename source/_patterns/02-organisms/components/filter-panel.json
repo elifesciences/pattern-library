@@ -4,17 +4,35 @@
     {
         "title": "Significance (minimum)",
         "filters": [
-          { "isChecked": false, "name": "select", "label": "Show all" },
-          { "isChecked": true, "name": "select", "value": "useful", "label": "Useful" },
-          { "isChecked": false, "name": "select", "value": "valuable", "label": "Valuable" },
-          { "isChecked": false, "name": "select", "value": "important", "label": "Important" },
-          { "isChecked": false, "name": "select", "value": "fundamental ", "label": "Fundamental" },
-          { "isChecked": false, "name": "select", "value": "landmark", "label": "Landmark" }
+          { "isChecked": false, "label": "Show all" },
+          { "isChecked": false, "value": "landmark", "label": "Landmark" },
+          { "isChecked": false, "value": "fundamental ", "label": "Fundamental" },
+          { "isChecked": false, "value": "important", "label": "Important" },
+          { "isChecked": false, "value": "valuable", "label": "Valuable" },
+          { "isChecked": true, "value": "useful", "label": "Useful" }
         ],
         "isSelectFilter": "significance"
     },
     {
-        "title": "Subject",
+        "title": "Strength of evidence (minimum)",
+        "filters": [
+          { "isChecked": false, "label": "Show all" },
+          { "isChecked": true, "value": "exceptional", "label": "Exceptional" },
+          { "isChecked": false, "value": "compelling", "label": "Compelling" },
+          { "isChecked": false, "value": "convincing", "label": "Convincing" },
+          { "isChecked": false, "value": "solid", "label": "Solid" },
+          { "isChecked": false, "value": "incomplete", "label": "Incomplete" },
+          { "isChecked": false, "value": "inadequate", "label": "Inadequate" }
+        ],
+        "isSelectFilter": "strength"
+    },
+    {
+      "filters": [
+        { "isChecked": true, "name": "original", "label": "Include papers accepted via eLife's original publishing model" }
+      ]
+    },
+    {
+        "title": "Research categories",
         "filters": [
           { "isChecked": true, "name": "Cell", "label": "Cell Biology"},
           { "isChecked": false, "name": "Neuroscience", "label": "Neuroscience", "results": "2" },
@@ -24,19 +42,6 @@
           { "isChecked": false, "name": "Immunology", "label": "Immunology", "results": "144" },
           { "isChecked": false, "name": "Ecology", "label": "Ecology", "results": "71" },
           { "isChecked": false, "name": "Epidemiology ", "label": "Epidemiology and Global Health", "results": "57" }
-        ]
-    },
-
-    {
-        "title": "Content type",
-        "filters": [
-          { "isChecked": true, "name": "Editorial", "label": "Editorial", "results": "14" },
-          { "isChecked": false, "name": "Feature", "label": "Feature article", "results": "2" },
-          { "isChecked": false, "name": "Insight", "label": "Insight", "results": "24" },
-          { "isChecked": false, "name": "Research ", "label": "Research article", "results": "1,498" },
-          { "isChecked": true, "name": "Short", "label": "Short Report", "results": "71" },
-          { "isChecked": false, "name": "Tools ", "label": "Tools and resources", "results": "26" },
-          { "isChecked": false, "name": "Research ", "label": "Research advance", "results": "144" }
         ]
     }
   ],
