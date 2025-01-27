@@ -2,6 +2,18 @@
   "title": "Refine your results by:",
   "filterGroups": [
     {
+        "title": "Significance (minimum)",
+        "filters": [
+          { "isChecked": false, "name": "select", "label": "Show all" },
+          { "isChecked": true, "name": "select", "value": "useful", "label": "Useful", "results": "0" },
+          { "isChecked": false, "name": "select", "value": "valuable", "label": "Valuable", "results": "0" },
+          { "isChecked": false, "name": "select", "value": "important", "label": "Important", "results": "0" },
+          { "isChecked": false, "name": "select", "value": "fundamental ", "label": "Fundamental", "results": "0" },
+          { "isChecked": false, "name": "select", "value": "landmark", "label": "Landmark", "results": "0" }
+        ],
+        "filterType": "select"
+    },
+    {
         "title": "Subject",
         "filters": [
           { "isChecked": true, "name": "Cell", "label": "Cell Biology", "results": "71" },
@@ -12,7 +24,8 @@
           { "isChecked": false, "name": "Immunology", "label": "Immunology", "results": "144" },
           { "isChecked": false, "name": "Ecology", "label": "Ecology", "results": "71" },
           { "isChecked": false, "name": "Epidemiology ", "label": "Epidemiology and Global Health", "results": "57" }
-        ]
+        ],
+        "filterType": "checkbox"
     },
 
     {
