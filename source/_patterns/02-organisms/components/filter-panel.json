@@ -5,11 +5,11 @@
         "title": "Significance (minimum)",
         "filters": [
           { "isChecked": false, "name": "select", "label": "Show all" },
-          { "isChecked": true, "name": "select", "value": "useful", "label": "Useful", "results": "0" },
-          { "isChecked": false, "name": "select", "value": "valuable", "label": "Valuable", "results": "0" },
-          { "isChecked": false, "name": "select", "value": "important", "label": "Important", "results": "0" },
-          { "isChecked": false, "name": "select", "value": "fundamental ", "label": "Fundamental", "results": "0" },
-          { "isChecked": false, "name": "select", "value": "landmark", "label": "Landmark", "results": "0" }
+          { "isChecked": true, "name": "select", "value": "useful", "label": "Useful" },
+          { "isChecked": false, "name": "select", "value": "valuable", "label": "Valuable" },
+          { "isChecked": false, "name": "select", "value": "important", "label": "Important" },
+          { "isChecked": false, "name": "select", "value": "fundamental ", "label": "Fundamental" },
+          { "isChecked": false, "name": "select", "value": "landmark", "label": "Landmark" }
         ],
         "isSelectFilter": true
     },
