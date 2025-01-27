@@ -2,7 +2,7 @@
   "title": "Subject",
   "filters": [
     { "isChecked": true, "name": "Cell", "label": "Cell Biology", "results": "71" },
-    { "isChecked": false, "name": "Neuroscience", "label": "Neuroscience", "results": "2" },
+    { "isChecked": false, "name": "Neuroscience", "label": "Neuroscience"},
     { "isChecked": false, "name": "Biophysics ", "label": "Biophysics and Structural Biology", "results": "24" },
     { "isChecked": true, "name": "Biochemistry", "label": "Biochemistry", "results": "71" },
     { "isChecked": false, "name": "Developmental", "label": "Developmental Biology and Stem Cells", "results": "13" },
