@@ -1,13 +1,15 @@
 
 <fieldset class="filter-group">
-  <legend id="filter-group__title" class="filter-group__title">{{title}}</legend>
-
   {{#isSelectFilter}}
-    <select name="{{isSelectFilter}}">
-      {{#filters}}<option{{#value}} value="{{value}}"{{/value}}{{#isChecked}} selected{{/isChecked}}>{{label}}</option>{{/filters}}
-    </select>
+    <label class="filter-group__item_label">
+      {{title}}
+      <select name="{{isSelectFilter}}">
+        {{#filters}}<option{{#value}} value="{{value}}"{{/value}}{{#isChecked}} selected{{/isChecked}}>{{label}}</option>{{/filters}}
+      </select>
+    </label>
   {{/isSelectFilter}}
   {{^isSelectFilter}}
+    <legend id="filter-group__title" class="filter-group__title">{{title}}</legend>
     <ul class="filter-group__filters" aria-labelledby="filter-group__title">
       {{#filters}}
       <li class="filter-group__filter_item">
