@@ -1,0 +1,66 @@
+<div class="global-wrapper">
+
+  <div class="global-inner">
+
+    <div class="wrapper wrapper--site-header">
+      {{#siteHeader}}
+        {{> organisms-site-header }}
+      {{/siteHeader}}
+    </div>
+
+    <main role="main" class="main" id="maincontent">
+
+      <div class="wrapper u-pad-top-lg">
+
+        <div class="grid">
+
+          <div class="listing-column-container">
+
+            <div class="grid__item large--eight-twelfths">
+
+              {{#sortControl}}
+                {{> molecules-sort-control}}
+              {{/sortControl}}
+              {{#messageBar}}
+                {{> atoms-message-bar}}
+              {{/messageBar}}
+
+              {{#mainTeasers}}
+                {{> organisms-listing-teasers}}
+              {{/mainTeasers}}
+
+              {{#pager}}
+                {{> molecules-pager}}
+              {{/pager}}
+
+            </div>
+
+            <div class="grid__item large--four-twelfths listing-column-secondary">
+
+              <form action="" method="GET">
+
+                {{#filterPanel}}
+                  {{> organisms-filter-panel}}
+                {{/filterPanel}}
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    {{#emailCta}}
+      {{> organisms-email-cta }}
+    {{/emailCta}}
+
+    {{> organisms-footer }}
+
+  </div>
+
+</div>
