@@ -11,7 +11,7 @@
           { "isChecked": false, "name": "select", "value": "fundamental ", "label": "Fundamental", "results": "0" },
           { "isChecked": false, "name": "select", "value": "landmark", "label": "Landmark", "results": "0" }
         ],
-        "filterType": "select"
+        "isSelectFilter": true
     },
     {
         "title": "Subject",
@@ -24,8 +24,7 @@
           { "isChecked": false, "name": "Immunology", "label": "Immunology", "results": "144" },
           { "isChecked": false, "name": "Ecology", "label": "Ecology", "results": "71" },
           { "isChecked": false, "name": "Epidemiology ", "label": "Epidemiology and Global Health", "results": "57" }
-        ],
-        "filterType": "checkbox"
+        ]
     },
 
     {
