@@ -11,7 +11,7 @@
           { "isChecked": false, "name": "select", "value": "fundamental ", "label": "Fundamental" },
           { "isChecked": false, "name": "select", "value": "landmark", "label": "Landmark" }
         ],
-        "isSelectFilter": true
+        "isSelectFilter": "significance"
     },
     {
         "title": "Subject",

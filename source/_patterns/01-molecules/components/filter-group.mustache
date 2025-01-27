@@ -3,7 +3,7 @@
   <legend id="filter-group__title" class="filter-group__title">{{title}}</legend>
 
   {{#isSelectFilter}}
-    <select>
+    <select name="{{isSelectFilter}}">
       {{#filters}}<option{{#value}} value="{{value}}"{{/value}}{{#isChecked}} selected{{/isChecked}}>{{label}}</option>{{/filters}}
     </select>
   {{/isSelectFilter}}
