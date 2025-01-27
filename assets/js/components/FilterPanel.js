@@ -32,7 +32,7 @@ module.exports = class FilterPanel {
   }
 
   static findFilters($elm) {
-    return $elm.querySelectorAll('input[type="checkbox"]');
+    return $elm.querySelectorAll('input[type="checkbox"], select');
   }
 
 };
