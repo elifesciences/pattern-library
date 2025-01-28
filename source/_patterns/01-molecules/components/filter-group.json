@@ -1,5 +1,5 @@
 {
-  "title": "Subject",
+  "filterTitle": "Subject",
   "filters": [
     { "isChecked": true, "name": "Cell", "label": "Cell Biology", "results": "71" },
     { "isChecked": false, "name": "Neuroscience", "label": "Neuroscience"},

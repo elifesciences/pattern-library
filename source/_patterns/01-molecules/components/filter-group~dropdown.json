@@ -1,5 +1,5 @@
 {
-  "title": "Significance (minimum)",
+  "filterTitle": "Significance (minimum)",
   "filters": [
     { "isChecked": false, "label": "Show all" },
     { "isChecked": false, "value": "landmark", "label": "Landmark" },

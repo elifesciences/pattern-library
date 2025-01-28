@@ -2,7 +2,7 @@
   "title": "Refine your results by:",
   "filterGroups": [
     {
-        "title": "Significance (minimum)",
+        "filterTitle": "Significance (minimum)",
         "filters": [
           { "isChecked": false, "label": "Show all" },
           { "isChecked": false, "value": "landmark", "label": "Landmark" },
@@ -14,7 +14,7 @@
         "isSelectFilter": "significance"
     },
     {
-        "title": "Strength of evidence (minimum)",
+        "filterTitle": "Strength of evidence (minimum)",
         "filters": [
           { "isChecked": false, "label": "Show all" },
           { "isChecked": true, "value": "exceptional", "label": "Exceptional" },
@@ -27,13 +27,12 @@
         "isSelectFilter": "strength"
     },
     {
-      "title": false,
       "filters": [
         { "isChecked": true, "name": "original", "label": "Include papers accepted via eLife's original publishing model" }
       ]
     },
     {
-        "title": "Research categories",
+        "filterTitle": "Research categories",
         "filters": [
           { "isChecked": true, "name": "Cell", "label": "Cell Biology"},
           { "isChecked": false, "name": "Neuroscience", "label": "Neuroscience", "results": "2" },
