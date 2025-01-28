@@ -309,7 +309,7 @@
         "isSelectFilter": "strength"
       },
       {
-        "title": null,
+        "title": false,
         "filters": [
           { "isChecked": true, "name": "original", "label": "Include papers accepted via eLife's original publishing model" }
         ]
