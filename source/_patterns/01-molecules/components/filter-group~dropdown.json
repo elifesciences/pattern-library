@@ -1,0 +1,12 @@
+{
+  "filterTitle": "Significance (minimum)",
+  "filters": [
+    { "isChecked": false, "label": "Show all" },
+    { "isChecked": false, "value": "landmark", "label": "Landmark" },
+    { "isChecked": false, "value": "fundamental ", "label": "Fundamental" },
+    { "isChecked": false, "value": "important", "label": "Important" },
+    { "isChecked": false, "value": "valuable", "label": "Valuable" },
+    { "isChecked": true, "value": "useful", "label": "Useful" }
+  ],
+  "isSelectFilter": "significance"
+}

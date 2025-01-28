@@ -22,3 +22,24 @@
 .filter-group__item_label {
   @include checkbox-label();
 }
+
+.filter-group__select {
+  @include margin(24, "bottom");
+  @include padding(10 18 10 12);
+
+  background: none;
+  border: 1px solid $color-text-dividers;
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+  height: 44px;
+  min-width: 300px;
+
+  .filter-group__item_label & {
+    margin-top: 6px;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    min-width: 320px;
+  }
+}

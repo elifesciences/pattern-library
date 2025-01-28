@@ -1,7 +1,10 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
 properties:
-  title:
+  filterTitle:
+    type: string
+    minLength: 1
+  isSelectFilter:
     type: string
     minLength: 1
   filters:
@@ -26,8 +29,6 @@ properties:
           pattern: ^(0|([1-9][0-9]{0,2}(,[0-9]{3})*))$
       required:
         - label
-        - name
         - isChecked
 required:
-  - title
   - filters

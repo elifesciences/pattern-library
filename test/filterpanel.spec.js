@@ -30,7 +30,7 @@ describe('A FilterPanel', function () {
   });
 
   it('finds the correct number of filters', () => {
-    expect(FilterPanel.findFilters($elm)).to.have.length(10);
+    expect(FilterPanel.findFilters($elm)).to.have.length(11);
   });
 
   describe('a filter', () => {
