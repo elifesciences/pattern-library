@@ -22,3 +22,18 @@
 .filter-group__item_label {
   @include checkbox-label();
 }
+
+.filter-group__select {
+  background: none;
+  border: 1px solid $color-text-dividers;
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+  height: 44px;
+  min-width: 320px;
+  padding: 10px 18px 10px 12px;
+
+  .filter-group__item_label & {
+    margin-top: 6px;
+  }
+}
