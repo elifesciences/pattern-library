@@ -528,7 +528,6 @@ $iconlist: cc oa;
 .side-section-wrapper__download_link {
   grid-row: 1;
   grid-column-end: 4;
-  justify-self: end;
   order: 3;
 
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
