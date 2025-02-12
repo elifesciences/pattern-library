@@ -38,6 +38,10 @@
     }
   }
 
+  .teaser.teaser--main & {
+    @include font-size-and-vertical-height(14, 20);
+  }
+
   .article__related-item & {
     @include font-size-and-vertical-height(14, 32);
   }
