@@ -38,7 +38,8 @@
     }
   }
 
-  .teaser.teaser--main & {
+  .teaser.teaser--main &,
+  .teaser.teaser--secondary & {
     @include font-size-and-vertical-height(14, 20);
   }
 
