@@ -16,7 +16,6 @@
 .teaser__context_label_list {
   @include nospace();
   position: relative;
-  @include truncate-with-ellipsis();
 
   .listing-list--highlights & {
     display: none;
@@ -37,6 +36,11 @@
     &:after {
       content: "";
     }
+  }
+
+  .teaser.teaser--main &,
+  .teaser.teaser--secondary & {
+    @include font-size-and-vertical-height(14, 20);
   }
 
   .article__related-item & {
