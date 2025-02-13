@@ -5,7 +5,7 @@
       {{{filterTitle}}}
       <select name="{{isSelectFilter}}" class="filter-group__select">
         {{#filters}}
-          <option{{#value}} value="{{value}}"{{/value}}{{#isChecked}} selected{{/isChecked}}>{{label}}</option>
+          <option value="{{#value}}{{value}}{{/value}}"{{#isChecked}} selected{{/isChecked}}>{{label}}</option>
         {{/filters}}
       </select>
     </label>
