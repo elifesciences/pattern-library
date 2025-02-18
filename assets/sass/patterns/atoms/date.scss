@@ -19,7 +19,10 @@
 
   .teaser--main.teaser & {
     display: inline-block;
+  }
 
+  .teaser--grid-style & {
+    @include font-size-and-vertical-height(14, 24);
   }
 }
 
