@@ -17,6 +17,5 @@ elifePipeline {
             assetsImage.pull().tag('latest').push()
             image.pull().tag('latest').push()
         }
-        builderDeployRevision 'pattern-library--prod', commit
     }
 }
