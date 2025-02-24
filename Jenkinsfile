@@ -24,7 +24,6 @@ elifePipeline {
             elifePullRequestOnly { prNumber ->
                 // push immediately to allow downstream exploration even with automated tests failing
                 assetsImage.tag("pr-${prNumber}").push()
-                assetsImage.tag("pr-${prNumber}-${commitShort}-${timestamp}").push()
             }
             image = DockerImage.elifesciences(this, "pattern-library", commit)
         }
