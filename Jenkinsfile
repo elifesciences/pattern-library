@@ -2,6 +2,9 @@ import EscapeString
 
 elifePipeline {
     def commit
+    def commitShort
+    def branch
+    def timestamp
     def assetsImage
     def image
 
@@ -9,6 +12,9 @@ elifePipeline {
         stage 'Checkout', {
             checkout scm
             commit = elifeGitRevision()
+            commitShort = elifeGitRevision().substring(0, 8)
+            branch = sh(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
+            timestamp = sh(script: 'date --utc +%Y%m%d.%H%M', returnStdout: true).trim()
         }
 
         stage 'Build images', {
@@ -18,6 +24,7 @@ elifePipeline {
             elifePullRequestOnly { prNumber ->
                 // push immediately to allow downstream exploration even with automated tests failing
                 assetsImage.tag("pr-${prNumber}").push()
+                assetsImage.tag("pr-${prNumber}-${commitShort}-${timestamp}").push()
             }
             image = DockerImage.elifesciences(this, "pattern-library", commit)
         }
@@ -65,6 +72,7 @@ elifePipeline {
             stage 'Push images', {
                 assetsImage.push()
                 image.push()
+                image.tag("${branch}-${commitShort}-${timestamp}").push()
             }
         }
     }
