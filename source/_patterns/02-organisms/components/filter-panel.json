@@ -11,7 +11,7 @@
           { "isChecked": false, "value": "valuable", "label": "Valuable" },
           { "isChecked": true, "value": "useful", "label": "Useful" }
         ],
-        "isSelectFilter": "significance"
+        "selectFilterName": "significance"
     },
     {
         "filterTitle": "Strength of evidence (minimum)",
@@ -24,7 +24,7 @@
           { "isChecked": false, "value": "incomplete", "label": "Incomplete" },
           { "isChecked": false, "value": "inadequate", "label": "Inadequate" }
         ],
-        "isSelectFilter": "strength"
+        "selectFilterName": "strength"
     },
     {
       "filters": [
