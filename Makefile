@@ -1,6 +1,6 @@
 DOCKER_COMPOSE = docker-compose
 
-.PHONY: build clean dev stop test
+.PHONY: build clean dev stop test validate
 
 build:
 	$(DOCKER_COMPOSE) build
@@ -16,3 +16,6 @@ clean: stop
 
 test:
 	$(DOCKER_COMPOSE) -f docker-compose.yml -f docker-compose.ci.yml run --rm --name pattern-library_ci_project_tests.sh ci ./project_tests.sh
+
+validate:
+	bin/validate
