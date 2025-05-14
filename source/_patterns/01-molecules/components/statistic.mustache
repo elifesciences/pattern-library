@@ -4,6 +4,11 @@
     {{value}}
   </dd>
   <dt class="statistic__label">
-    {{label}}
+      {{#shouldNotEscapeTerm}}
+          {{{label}}}
+      {{/shouldNotEscapeTerm}}
+      {{^shouldNotEscapeTerm}}
+          {{label}}
+      {{/shouldNotEscapeTerm}}
   </dt>
 </dl>
