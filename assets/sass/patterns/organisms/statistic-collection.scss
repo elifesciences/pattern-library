@@ -19,6 +19,7 @@
 
   &:last-child:after {
     content: "";
+    display: unset;
   }
 
   &.no-separator {
