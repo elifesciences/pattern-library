@@ -10,9 +10,9 @@ div.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-em
 }
 
 .altmetric-embed {
-  padding-top: 60px;
+  @include padding(60, "top");
 }
 
 .altmetric-see-more-details {
-  margin-top: 16px;
+  @include margin(16, "top");
 }
