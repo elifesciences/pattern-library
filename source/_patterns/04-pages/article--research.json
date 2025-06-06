@@ -563,7 +563,10 @@
           "label": "citations",
           "value": 5
         }
-      ]
+      ],
+      "altmetric": {
+        "doi": "10.7554/eLife.85111"
+      }
     }
   ],
   "iframe": {
