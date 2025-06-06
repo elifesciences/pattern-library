@@ -9,6 +9,10 @@ div.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-em
   @include font-size-and-vertical-height(14, 24);
 }
 
+.altmetric-embed {
+  padding-top: 60px;
+}
+
 .altmetric-see-more-details {
   margin-top: 16px;
 }
