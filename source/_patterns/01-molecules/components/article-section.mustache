@@ -24,6 +24,10 @@
       {{>organisms-statistic-collection}}
     {{/showCharts}}
 
+    {{#altmetric}}
+      {{> atoms-altmetric}}
+    {{/altmetric}}
+
     {{#chart}}
       {{>molecules-bar-chart}}
     {{/chart}}
@@ -32,10 +36,6 @@
       {{> atoms-doi}}
     {{/doi}}
 
-    {{#altmetric}}
-      {{> atoms-altmetric}}
-    {{/altmetric}}
-    
     {{#assessment}}
       {{> molecules-assessment}}
     {{/assessment}}
