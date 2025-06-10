@@ -5,6 +5,9 @@ properties:
     type: string
   showBadgeDetails: 
     type: boolean
+  donutSize:
+    type: string
 required:
   - doi
   - showBadgeDetails
+  - donutSize

@@ -566,7 +566,8 @@
       ],
       "altmetric": {
         "doi": "10.7554/eLife.85111",
-        "showBadgeDetails": true
+        "showBadgeDetails": true,
+        "donutSize": "medium"
       }
     }
   ],
