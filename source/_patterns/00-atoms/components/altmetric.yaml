@@ -3,5 +3,8 @@ type: object
 properties:
   doi:
     type: string
+  showBadgeDetails: 
+    type: boolean
 required:
   - doi
+  - showBadgeDetails

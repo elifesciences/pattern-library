@@ -1,4 +1,8 @@
 <div>
     <script src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
-    <div class='altmetric-embed' data-badge-type='medium-donut' data-badge-details='right' data-doi={{doi}}></div>
+    <div class='altmetric-embed' 
+    data-badge-type='medium-donut' 
+    {{#showBadgeDetails}} data-badge-details='right' {{/showBadgeDetails}}
+    data-doi={{doi}}>
+    </div>
 </div>
