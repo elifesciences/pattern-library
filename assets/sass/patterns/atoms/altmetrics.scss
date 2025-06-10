@@ -10,7 +10,8 @@ div.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-em
 }
 
 .altmetric-embed {
-  @include padding(60, "top");
+  @include padding(30, "top");
+  @include margin(30, "bottom");
 }
 
 .altmetric-see-more-details {
