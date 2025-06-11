@@ -8,5 +8,10 @@
         "ariaLabel": "Descriptive and accessible name"
       }
     ]
+  },
+  "altmetric": {
+    "doi" : "10.7554/eLife.85111",
+    "showBadgeDetails": false,
+    "donutSize": "donut"
   }
 }
