@@ -1,6 +1,7 @@
 @import "../../definitions";
 
 .altmetric-container {
+  @include padding(30, "top");
   display: flex;
   gap: 10px;
   justify-content: space-between;
