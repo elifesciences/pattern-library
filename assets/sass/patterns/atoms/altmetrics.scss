@@ -23,3 +23,11 @@ div.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-em
 .altmetric-see-more-details {
   @include margin(16, "top");
 }
+
+div.altmetric-container.altmetric-container.altmetric-container.altmetric-container.altmetric-container.altmetric-container.altmetric-container p.altmetric-text--small a.altmetric-link--small {
+  border-bottom: none;
+  color: $color-primary;
+  font-family: $font-secondary;
+
+  @include font-size-and-vertical-height(14, 24);
+}
