@@ -1,6 +1,10 @@
 @import "../../definitions";
 
-.altmetric-container {
+.altmetric-container-with-details {
+  @include padding(30, "top");
+}
+
+.altmetric-container-without-details {
   @include padding(30, "top");
   display: flex;
   gap: 10px;
@@ -16,7 +20,6 @@ div.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-em
 }
 
 .altmetric-embed {
-  @include padding(30, "top");
   @include margin(30, "bottom");
 }
 
@@ -24,11 +27,14 @@ div.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-em
   @include margin(16, "top");
 }
 
-div.altmetric-container.altmetric-container.altmetric-container.altmetric-container.altmetric-container.altmetric-container.altmetric-container p.altmetric-text--small a.altmetric-link--small {
-  border-bottom: none;
-  color: $color-text;
+div.altmetric-container-without-details.altmetric-container-without-details.altmetric-container-without-details.altmetric-container-without-details.altmetric-container-without-details.altmetric-container-without-details.altmetric-container-without-details p.altmetric-text--small {
   font-family: $font-secondary;
-  font-weight: bold;
 
-  @include font-size-and-vertical-height(14, 24);
+  @include font-size-and-vertical-height(14, 20);
+
+  a.altmetric-link--small {
+    border-bottom: none;
+    color: $color-text;
+    font-weight: bold;
+  }
 }
