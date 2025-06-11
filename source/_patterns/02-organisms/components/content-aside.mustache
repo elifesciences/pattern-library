@@ -37,17 +37,18 @@
         {{>molecules-contextual-data}}
       {{/metrics}}
 
-      {{#related}}
-        <div class="divider"></div>
+      <div class="divider"></div>
 
+      {{#altmetric}}
+        {{>atoms-altmetric}}
+      {{/altmetric}}
+
+      {{#related}}
         <div class="article__related-item grid-secondary-column__item--extended-wide-only">
           {{> organisms-listing-teasers }}
         </div>
       {{/related}}{{!
     }}
-    {{#altmetric}}
-      {{>atoms-altmetric}}
-    {{/altmetric}}
     </div>
   </div>
 </aside>
