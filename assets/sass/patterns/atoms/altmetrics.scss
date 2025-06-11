@@ -26,8 +26,9 @@ div.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-em
 
 div.altmetric-container.altmetric-container.altmetric-container.altmetric-container.altmetric-container.altmetric-container.altmetric-container p.altmetric-text--small a.altmetric-link--small {
   border-bottom: none;
-  color: $color-primary;
+  color: $color-text;
   font-family: $font-secondary;
+  font-weight: bold;
 
   @include font-size-and-vertical-height(14, 24);
 }
