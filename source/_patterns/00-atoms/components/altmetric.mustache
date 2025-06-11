@@ -5,5 +5,9 @@
     {{#showBadgeDetails}} data-badge-details='right' {{/showBadgeDetails}}
     data-doi={{doi}}>
     </div>
-    {{^showBadgeDetails}}<p className='altmetric-small-section__text'>Altmetric provides a collated score for online attention across various platforms and media.<br/></p>{{/showBadgeDetails}}
+    {{^showBadgeDetails}}
+    <p>Altmetric provides a collated score for online attention across various platforms and media.<br/>
+    <a href="#metrics">See more details</a>
+    </p>
+    {{/showBadgeDetails}}
 </div>
