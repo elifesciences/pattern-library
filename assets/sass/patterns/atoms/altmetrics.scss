@@ -1,5 +1,10 @@
 @import "../../definitions";
 
+.altmetric-container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
 // required specificity to override a selector from normalize overrides
 div.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed div.altmetric-normal-legend p.altmetric-see-more-details a {
   border-bottom: none;
