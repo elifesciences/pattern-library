@@ -22,6 +22,8 @@ properties:
     $ref: ../../01-molecules/components/button-collection.yaml
   metrics:
     $ref: ../../01-molecules/components/contextual-data.yaml
+  altmetric:
+    $ref: ../../00-atoms/components/altmetric.yaml
   previousVersion:
     $ref: ../../00-atoms/components/previous-version-warning.yaml
   timeline:
