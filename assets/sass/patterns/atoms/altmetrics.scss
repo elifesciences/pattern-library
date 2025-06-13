@@ -6,10 +6,15 @@
 
 .altmetric-container-without-details {
   @include padding(30, "top");
-  display: flex;
+  display: none;
   gap: 10px;
   justify-content: space-between;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--extended-wide)}em) {
+    display: flex;
+  }
 }
+
 // required specificity to override a selector from normalize overrides
 div.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed div.altmetric-normal-legend p.altmetric-see-more-details a {
   border-bottom: none;
