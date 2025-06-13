@@ -1,13 +1,20 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
-properties:
-  doi:
-    type: string
-  showBadgeDetails: 
-    type: boolean
-  donutSize:
-    type: string
-required:
-  - doi
-  - showBadgeDetails
-  - donutSize
+allOf:
+  - properties:
+      doi:
+        type: string
+      showBadgeDetails:
+        type: boolean
+    required:
+        - doi
+        - showBadgeDetails
+  - oneOf:
+    - properties:
+        donutSize:
+          type: string
+          enum:
+            - donut
+            - medium-donut
+      required:
+        - donutSize
