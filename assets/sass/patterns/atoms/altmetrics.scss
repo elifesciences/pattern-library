@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .altmetric-container-with-details {
-  @include padding(30, "top");
+  @include padding(15, "top");
 }
 
 .altmetric-container-without-details {
@@ -21,6 +21,7 @@ div.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-embed.altmetric-em
 
 .altmetric-embed {
   @include margin(30, "bottom");
+  @include padding(15, "top");
 }
 
 .altmetric-see-more-details {
