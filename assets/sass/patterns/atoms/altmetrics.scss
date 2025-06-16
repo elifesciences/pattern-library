@@ -45,6 +45,7 @@ div.altmetric-container-without-details.altmetric-container-without-details.altm
   }
 }
 
+.altmetric-embed:empty + .altmetric-text--small,
 .altmetric-hidden + .altmetric-text--small {
   display: none;
 }
