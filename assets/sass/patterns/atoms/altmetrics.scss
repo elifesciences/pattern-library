@@ -44,3 +44,7 @@ div.altmetric-container-without-details.altmetric-container-without-details.altm
     font-weight: bold;
   }
 }
+
+.altmetric-hidden + .altmetric-text--small {
+  display: none;
+}
