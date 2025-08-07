@@ -28,6 +28,12 @@
   }
 }
 
+.highlight-item:nth-child(n+4) {
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    @include margin(36, "top");
+  }
+}
+
 .highlight-item:last-child {
   @include margin(0, "bottom");
 }
