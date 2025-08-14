@@ -9,6 +9,10 @@
   overflow: hidden;
   position: relative;
 
+  .global-wrapper--home-page & {
+    @include constrain-width($max-home-page-width, "max");
+  }
+
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include padding(48, "bottom");
   }

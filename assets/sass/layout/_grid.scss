@@ -109,9 +109,10 @@
 .wrapper {
   @include wrapper();
 
-  .home-page & {
+  .global-wrapper--home-page & {
     @include constrain-width($max-home-page-width, "max");
   }
+
   // --content and --listing discrimination as likely to diverge & can then be handled here rather than in journal
   &.wrapper--content {
     @include blg-pad-top--small-to-medium();
