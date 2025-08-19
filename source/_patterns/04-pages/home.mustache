@@ -10,6 +10,12 @@
     <main role="main" class="main" id="maincontent">
       <div{{#newHomePage}} class="banner-and-subjects-wrapper"{{/newHomePage}}>
 
+          {{#newHomePage}}
+              <div class="wrapper">
+                  {{> molecules-home-banner}}
+              </div>
+          {{/newHomePage}}
+
         {{#hero-banner}}
           <div class="wrapper">
               {{> organisms-hero-banner}}
