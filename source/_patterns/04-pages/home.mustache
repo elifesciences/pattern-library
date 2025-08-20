@@ -16,11 +16,13 @@
               </div>
           {{/newHomePage}}
 
-        {{#hero-banner}}
-          <div class="wrapper">
-              {{> organisms-hero-banner}}
-          </div>
-        {{/hero-banner}}
+        {{^newHomePage}}
+          {{#hero-banner}}
+            <div class="wrapper">
+                {{> organisms-hero-banner}}
+            </div>
+          {{/hero-banner}}
+        {{/newHomePage}}
   
         {{#sectionsListingLink}}
         <div class="wrapper">
