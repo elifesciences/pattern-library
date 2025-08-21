@@ -1,5 +1,5 @@
 ARG node_version
-FROM --platform=linux/amd64 bitnami/node:${node_version}
+FROM --platform=linux/amd64 bitnamilegacy/node:${node_version}
 
 COPY npm-shrinkwrap.json \
     package.json \

@@ -1,7 +1,7 @@
 ARG image_tag=latest
 ARG node_version
 FROM --platform=linux/amd64 elifesciences/pattern-library_npm:${image_tag} as npm
-FROM --platform=linux/amd64 bitnami/node:${node_version}
+FROM --platform=linux/amd64 bitnamilegacy/node:${node_version}
 
 WORKDIR /srv/pattern-library
 
