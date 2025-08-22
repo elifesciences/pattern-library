@@ -14,4 +14,5 @@
 .home-banner__title_line {
   display: block;
   text-align: center;
+  @include font-size-and-vertical-height($font-size-in-px: 28, $vertical-height-in-px: 38);
 }
