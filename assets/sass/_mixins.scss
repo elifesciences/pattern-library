@@ -266,10 +266,15 @@ $highlight-color: $color-primary, $base-color: rgba(255, 255, 255, 0.2)) {
   }
 }
 
-@mixin wrapper($padding: true) {
+@mixin wrapper($padding: true, $isHomePage: false) {
   box-sizing: content-box;
-  @include constrain-width($max-site-width, "max");
   margin: auto;
+
+  @if $isHomePage {
+    @include constrain-width($max-home-page-width, "max");
+  } @else {
+    @include constrain-width($max-site-width, "max");
+  }
 
   @if $padding {
     padding-left: #{$site-spacing}px;
