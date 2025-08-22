@@ -1,4 +1,5 @@
 @import "../../mixins";
+@import "../../variables";
 
 :root {
   --home-banner-background-color: rgba(237, 245, 250, 1);
@@ -11,8 +12,10 @@
 .home-banner_content {
   @include wrapper($isHomePage: true);
 }
+
 .home-banner__title_line {
   display: block;
   text-align: center;
   @include font-size-and-vertical-height($font-size-in-px: 28, $vertical-height-in-px: 38);
+  color: $color-primary-dark--home-page;
 }
