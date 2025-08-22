@@ -9,6 +9,10 @@
   overflow: hidden;
   position: relative;
 
+  .main--with-new-designs-borders & {
+    border-bottom: none;
+  }
+
   .global-wrapper--home-page & {
     @include constrain-width($max-home-page-width, "max");
   }

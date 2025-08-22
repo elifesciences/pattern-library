@@ -14,6 +14,11 @@
       @include padding($blg-space-small-in-px, "bottom");
       @include padding($blg-space-small-in-px, "top");
     }
+
+    .main--with-new-designs-borders & {
+      border-bottom: none;
+      border-top: none;
+    }
   }
 
 }
