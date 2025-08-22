@@ -11,3 +11,6 @@
 .home-banner_content {
   @include wrapper($isHomePage: true);
 }
+.home-banner__title_line {
+  display: block;
+}
