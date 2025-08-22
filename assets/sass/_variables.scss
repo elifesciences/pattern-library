@@ -11,6 +11,8 @@ $color-primary-light: #b3e5fc;
 $color-link-primary: #0b70b9;
 $color-link-secondary: #6d6d6d;
 
+$color-elife-blue: #2994d2;
+
 $color-text: #212121;
 $color-text-secondary: #757575;
 $color-text-secondary-dark: #6e6e6e;
@@ -43,7 +45,7 @@ $color-overlay: rgba(0, 0, 0, 0.8);
 // Article Status and Timeline Styling
 
 $color-status-variable-a: #666;
-$color-status-variable-b: #2994d2;
+$color-status-variable-b: $color-elife-blue;
 $color-status-variable-c: #edeff4;
 $color-status-variable-d: #42aea4;
 $color-status-variable-e: #f29524;
