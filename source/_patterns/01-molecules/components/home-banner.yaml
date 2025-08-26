@@ -1,2 +1,10 @@
 $schema: http://json-schema.org/draft-04/schema#
 type: object
+properties:
+  primaryButton:
+    $ref: ../../00-atoms/components/button.yaml
+  secondaryButton:
+    $ref: ../../00-atoms/components/button.yaml
+required:
+  - primaryButton
+  - secondaryButton
