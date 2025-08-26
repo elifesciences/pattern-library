@@ -11,6 +11,8 @@
 
 .home-banner_content {
   @include wrapper($isHomePage: true);
+  @include padding(24, "top");
+  @include padding(36, "bottom");
 }
 
 .home-banner__title {
