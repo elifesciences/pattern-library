@@ -1,5 +1,5 @@
 {
-  "button": {
+  "primaryButton": {
     "text": "Browse the latest research",
     "classes": "button--default",
     "path": "#"
