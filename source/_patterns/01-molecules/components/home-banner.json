@@ -3,5 +3,10 @@
     "text": "Browse the latest research",
     "classes": "button--default",
     "path": "#"
+  },
+  "secondaryButton": {
+    "text": "Learn more about eLife",
+    "classes": "button--secondary",
+    "path": "#"
   }
 }
