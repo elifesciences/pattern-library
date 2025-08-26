@@ -3,14 +3,26 @@
 
 :root {
   --home-banner-background-color: rgba(237, 245, 250, 1);
+  --banner-content-default-min-height: 300px;
+  --subjects-height-collapsed: 100px;
+  --site-header-height: 95px;
+  --max-height-of-banner-and-subjects: calc(600px - var(--site-header-height));
 }
 
 .banner-and-subjects-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
+  max-height: var(--max-height-of-banner-and-subjects);
+  //min-height: calc(var(--banner-content-default-min-height) + var(--subjects-height-collapsed));
 }
 
 .home-banner {
   background-color: var(--home-banner-background-color);
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: var(--banner-content-default-min-height);
 }
 
 .home-banner_content {

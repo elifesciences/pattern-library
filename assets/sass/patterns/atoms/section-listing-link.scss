@@ -38,5 +38,6 @@
 }
 
 .banner-and-subjects-wrapper .section-listing-link {
-  @include height(100);
+  @include height(var(--subjects-height-collapsed));
+  @include constrain-height(var(--subjects-height-collapsed));
 }
