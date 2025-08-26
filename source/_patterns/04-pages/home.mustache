@@ -8,7 +8,9 @@
       <div{{#newHomePage}} class="banner-and-subjects-wrapper"{{/newHomePage}}>
 
           {{#newHomePage}}
-              {{> molecules-home-banner}}
+              {{#homeBanner}}
+                {{> molecules-home-banner}}
+              {{/homeBanner}}
           {{/newHomePage}}
 
         {{^newHomePage}}

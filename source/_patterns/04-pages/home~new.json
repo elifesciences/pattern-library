@@ -1,5 +1,17 @@
 {
   "newHomePage": true,
+  "homeBanner": {
+    "primaryButton": {
+      "text": "Browse the latest research",
+      "classes": "button--default home-banner__button",
+      "path": "#"
+    },
+    "secondaryButton": {
+      "text": "Learn more about eLife",
+      "classes": "button--secondary home-banner__button",
+      "path": "#"
+    }
+  },
   "highlight": {
     "heading": {
       "heading": "Highlights"

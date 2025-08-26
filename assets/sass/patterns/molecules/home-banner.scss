@@ -32,5 +32,6 @@
 }
 
 .home-banner__button {
+  @include margin(18, "bottom");
   display: block;
 }
