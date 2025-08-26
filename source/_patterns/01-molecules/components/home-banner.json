@@ -1,1 +1,7 @@
-{}
+{
+  "button": {
+    "text": "Browse the latest research",
+    "classes": "button--default",
+    "path": "#"
+  }
+}
