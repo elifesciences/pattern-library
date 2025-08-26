@@ -1,12 +1,12 @@
 {
   "primaryButton": {
     "text": "Browse the latest research",
-    "classes": "button--default",
+    "classes": "button--default home-banner__button",
     "path": "#"
   },
   "secondaryButton": {
     "text": "Learn more about eLife",
-    "classes": "button--secondary",
+    "classes": "button--secondary home-banner__button",
     "path": "#"
   }
 }
