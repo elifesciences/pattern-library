@@ -36,3 +36,7 @@
 .section-listing-link:active {
   color: $color-primary;
 }
+
+.banner-and-subjects-wrapper .section-listing-link {
+  @include height(100);
+}
