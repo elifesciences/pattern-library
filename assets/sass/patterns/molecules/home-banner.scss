@@ -23,6 +23,7 @@
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: var(--banner-content-default-min-height);
+  display: flex;
 }
 
 .home-banner_content {
