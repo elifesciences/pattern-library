@@ -55,4 +55,14 @@
   @include margin(18, "bottom");
   display: block;
   text-transform: unset;
+
+  &.button--default {
+    background-color: $color-primary-dark--home-page;
+    color: $color-text--reverse;
+  }
+
+  &.button--secondary {
+    background-color: $color-text-ui-background-secondary-grey-homepage;
+    color: $color-primary-dark--home-page;
+  }
 }
