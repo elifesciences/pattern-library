@@ -270,5 +270,78 @@
         }
       }
     ]
+  },
+  "sectionsListingLink": {
+    "targetFragmentId": "sectionsListing",
+    "text": "All research categories"
+  },
+
+  "sectionsListing": {
+    "id": "sectionsListing",
+    "listHeading": {
+      "heading": "Research categories"
+    },
+    "sections": [
+      {
+        "url": "#",
+        "name": "Biochemistry"
+      },
+      {
+        "url": "#",
+        "name": "Biophysics and structural biology"
+      },
+      {
+        "url": "#",
+        "name": "Cancer biology"
+      },
+      {
+        "url": "#",
+        "name": "Cell biology"
+      },
+      {
+        "url": "#",
+        "name": "Computational and systems biology"
+      },
+      {
+        "url": "#",
+        "name": "Developmental biology and stem cells"
+      },
+      {
+        "url": "#",
+        "name": "Ecology"
+      },
+      {
+        "url": "#",
+        "name": "Epidemiology and Global Health"
+      },
+      {
+        "url": "#",
+        "name": "Genes and chromosomes"
+      },
+      {
+        "url": "#",
+        "name": "Genomics and evolutionary biology"
+      },
+      {
+        "url": "#",
+        "name": "Immunology"
+      },
+      {
+        "url": "#",
+        "name": "Medicine"
+      },
+      {
+        "url": "#",
+        "name": "Microbiology and infectious disease"
+      },
+      {
+        "url": "#",
+        "name": "Neuroscience"
+      },
+      {
+        "url": "#",
+        "name": "Plant biology"
+      }
+    ]
   }
 }
