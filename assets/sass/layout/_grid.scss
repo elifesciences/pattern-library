@@ -127,6 +127,13 @@
     padding-top: 0;
   }
 
+  &.wrapper--subjects {
+    padding-left: 0;
+    padding-right: 0;
+    @include margin($size_in_px: 24, $dimension: "left");
+    @include margin($size_in_px: 24, $dimension: "right");
+  }
+
   .contact-info {
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
       padding-right: 56px;
