@@ -1,5 +1,105 @@
 {
   "newHomePage": true,
+  "siteHeader": {
+    "title": {
+      "homePagePath": "#"
+    },
+    "primaryLinks":
+    {
+      "classesOuter": "nav-primary",
+      "classesInner": "nav-primary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Menu",
+          "classes": "nav-primary__item nav-primary__item--first",
+          "path": "#mainMenu",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Home",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Magazine",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Community",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "About",
+          "path": "#",
+          "classes": "nav-primary__item",
+          "ariaLabel": "Descriptive and accessible name"
+        }
+      ]
+    },
+
+    "secondaryLinks":
+    {
+      "classesOuter": "nav-secondary",
+      "classesInner": "nav-secondary__list clearfix",
+      "linkedItems": [
+        {
+          "text": "Search",
+          "rel": "search",
+          "classes": "nav-secondary__item nav-secondary__item--search",
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Alerts",
+          "classes": "nav-secondary__item nav-secondary__item--alert",
+          "path": "#",
+          "ariaLabel": "Descriptive and accessible name"
+        },
+
+        {
+          "text": "Submit your research",
+          "path": "#",
+          "classes": "nav-secondary__item nav-secondary__item--hide-narrow",
+          "button": {
+            "classes": "button--default button--extra-small",
+            "ariaLabel": "Descriptive and accessible name"
+          }
+        }
+      ]
+    },
+
+    "searchBox": {
+      "inContentHeader": true,
+      "compactForm": {
+        "formAction": "/search",
+        "formId": "searchBox",
+        "formMethod": "GET",
+        "label": "Search by keyword or author",
+        "inputType": "search",
+        "inputName": "search",
+        "inputValue": "",
+        "inputPlaceholder": "Search by keyword or author",
+        "ctaText": "Search"
+      },
+
+      "subjectFilter": {
+        "name": "subject_filter",
+        "value": "cell_biology",
+        "text": "Cell biology"
+      }
+    }
+
+  },
   "homeBanner": {
     "primaryButton": {
       "text": "Browse the latest research",

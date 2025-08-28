@@ -4,21 +4,19 @@
       {{> organisms-site-header }}
     {{/siteHeader}}
 
-    <main role="main" class="main" id="maincontent">
-      <div>
+    <main role="main" class="main main--with-new-designs-borders" id="maincontent">
+      <div class="banner-and-subjects-wrapper">
 
-        {{#hero-banner}}
-        <div class="wrapper">
-            {{> organisms-hero-banner}}
-        </div>
-        {{/hero-banner}}
+        {{#homeBanner}}
+            {{> molecules-home-banner}}
+        {{/homeBanner}}
 
         {{#sectionsListingLink}}
-            <div class="wrapper">
-                {{> atoms-section-listing-link}}
-            </div>
+        <div class="wrapper">
+          {{> atoms-section-listing-link}}
+        </div>
         {{/sectionsListingLink}}
-
+        
       </div>
 
        {{#highlight}}
