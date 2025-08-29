@@ -38,6 +38,10 @@
 }
 
 .banner-and-subjects-wrapper .section-listing-link {
+  --subjects-listing-link-line-height: 24px;
+
   @include height(var(--subjects-height-collapsed));
-  min-height: var(--subjects-height-collapsed);
+  line-height: var(--subjects-listing-link-line-height);
+  padding-top: calc((var(--subjects-height-collapsed) - var(--subjects-listing-link-line-height)) / 2);
+  padding-bottom: calc((var(--subjects-height-collapsed) - var(--subjects-listing-link-line-height)) / 2);
 }
