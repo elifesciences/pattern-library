@@ -8,5 +8,8 @@ properties:
   homePagePath:
     type: string
     minLength: 1
+  elifeLogo:
+    type: string
+    minLength: 1
 required:
   - homePagePath

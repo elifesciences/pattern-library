@@ -2,7 +2,8 @@
   "newHomePage": true,
   "siteHeader": {
     "title": {
-      "homePagePath": "#"
+      "homePagePath": "#",
+      "elifeLogo": "elife-logo-home-page-xs.svg"
     },
     "primaryLinks":
     {
