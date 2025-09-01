@@ -8,8 +8,9 @@ properties:
   homePagePath:
     type: string
     minLength: 1
-  elifeLogo:
-    type: string
-    minLength: 1
+  isHomePage:
+    type: boolean
+    enum:
+      - true
 required:
   - homePagePath
