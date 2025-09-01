@@ -155,6 +155,11 @@
   }
 }
 
+.site-header-home-wrapper {
+  display: flow-root;
+  background-color: var(--home-banner-background-color);
+}
+
 /**
  * Grid
  *
