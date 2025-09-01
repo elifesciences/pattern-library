@@ -13,6 +13,12 @@
   }
 }
 
+.site-header--home-page {
+  .nav-primary {
+    background-color: var(--home-banner-background-color);
+  }
+}
+
 .nav-primary__list {
   @include padding(0, "left");
   @include margin(0, "bottom");

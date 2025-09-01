@@ -13,6 +13,12 @@
   }
 }
 
+.site-header--home-page {
+  .nav-secondary {
+    background-color: var(--home-banner-background-color);
+  }
+}
+
 .nav-secondary__list {
   @include height(40);
   @include margin(0);
