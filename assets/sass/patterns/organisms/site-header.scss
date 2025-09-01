@@ -110,6 +110,14 @@
   }
 }
 
+.site-header--home-page {
+  .search-box,
+  .search-box__output,
+  .site-header__navigation {
+    background-color: var(--home-banner-background-color);
+  }
+}
+
 @media only all and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
 
   .site-header__title {
