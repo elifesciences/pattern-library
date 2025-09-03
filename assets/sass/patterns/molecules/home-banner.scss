@@ -60,6 +60,7 @@
 
 .home-banner__button {
   @include margin(18, "bottom");
+  padding-inline: #{get-rem-from-px(10)}rem;
   display: block;
   text-transform: unset;
   font-weight: 600;
