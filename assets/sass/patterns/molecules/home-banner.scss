@@ -16,7 +16,7 @@
   justify-content: space-between;
   height: 100vh;
   max-height: var(--max-height-of-banner-and-subjects);
-  //min-height: calc(var(--banner-content-default-min-height) + var(--subjects-height-collapsed));
+  min-height: calc(var(--banner-content-default-min-height) + var(--subjects-height-collapsed));
 }
 
 .home-banner {
@@ -25,12 +25,16 @@
   flex-shrink: 0;
   flex-basis: var(--banner-content-default-min-height);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .home-banner_content {
   @include wrapper($isHomePage: true);
-  @include padding(24, "top");
-  @include padding(36, "bottom");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .home-banner__title {
