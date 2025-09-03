@@ -3,20 +3,22 @@
 
 :root {
   --home-banner-background-color: rgba(237, 245, 250, 1);
-  --banner-content-default-min-height: 300px;
+  --banner-content-default-min-height: 205px;
   --subjects-height-collapsed: 76px;
   --site-header-height: 95px;
   --max-height-of-banner-and-subjects-and-site-header: 540px;
+  --min-height-of-banner-and-subjects-and-site-header: 436px;
   --max-height-of-banner-and-subjects: calc(var(--max-height-of-banner-and-subjects-and-site-header) - var(--site-header-height));
+  --min-height-of-banner-and-subjects: calc(var(--min-height-of-banner-and-subjects-and-site-header) - var(--site-header-height));
 }
 
 .banner-and-subjects-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: calc(100vh - var(--site-header-height));
   max-height: var(--max-height-of-banner-and-subjects);
-  min-height: calc(var(--banner-content-default-min-height) + var(--subjects-height-collapsed));
+  min-height: var(--min-height-of-banner-and-subjects);
 }
 
 .home-banner {
