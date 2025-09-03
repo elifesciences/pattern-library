@@ -30,40 +30,6 @@
 
 }
 
-.search-box__output {
-  position: relative;
-  width: 100%;
-  z-index: 7;
-
-  ul {
-    border-left: 1px solid $color-text-dividers;
-    border-right: 1px solid $color-text-dividers;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    border-bottom: 1px solid $color-text-dividers;
-    font-family: $font-secondary;
-    margin: 0;
-    @include padding(12, "left");
-    @include padding(12, "right");
-    @include blg-spacing("top", "extra-small");
-    @include blg-spacing("bottom", "extra-small");
-
-    &:first-child {
-      border-top: 1px solid $color-text-dividers;
-    }
-
-    &:focus {
-      background-color: $color-primary;
-      color: $color-text-ui-background;
-
-    }
-  }
-}
-
 .search-box__suggestion {
   background-color: $color-text-ui-background;
   color: $color-text;

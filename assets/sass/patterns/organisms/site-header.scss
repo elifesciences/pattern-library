@@ -41,11 +41,6 @@
 
 }
 
-.search-box__output {
-  background-color: #fff;
-  z-index: 10;
-}
-
 .search-box__search_option {
   position: relative;
   z-index: 5;
@@ -111,7 +106,6 @@
 
 .site-header--home-page {
   .search-box,
-  .search-box__output,
   .site-header__navigation {
     background-color: var(--home-banner-background-color);
   }
