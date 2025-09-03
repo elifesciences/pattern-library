@@ -56,11 +56,15 @@
 
 .home-banner__links {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-banner__button {
   @include margin(18, "bottom");
   padding-inline: #{get-rem-from-px(10)}rem;
+  width: #{get-rem-from-px(225)}rem;
   display: block;
   text-transform: unset;
   font-weight: 600;
