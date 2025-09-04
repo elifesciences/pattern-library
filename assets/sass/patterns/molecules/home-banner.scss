@@ -48,7 +48,7 @@
   @include margin(36, "bottom");
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    font-size: #{get-rem-from-px(38)}rem;
+    font-size: #{get-rem-from-px(40)}rem;
   }
 }
 
