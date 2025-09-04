@@ -37,6 +37,10 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    padding-inline: #{$site-spacing}px;
+  }
 }
 
 .home-banner__title {
@@ -63,6 +67,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    flex-direction: row;
+  }
 }
 
 .home-banner__button {
@@ -73,19 +81,23 @@
   text-transform: unset;
   font-weight: 600;
 
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    width: #{get-rem-from-px(204)}rem;
+  }
+
   &.button--default {
     border-color: $color-primary-dark--home-page;
     background-color: $color-primary-dark--home-page;
     color: $color-text--reverse;
+
+    @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+      margin-right: 12px;
+    }
   }
 
   &.button--secondary {
     border-color: $color-text-ui-background-secondary-grey-homepage;
     background-color: $color-text-ui-background-secondary-grey-homepage;
     color: $color-primary-dark--home-page;
-  }
-
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    width: #{get-rem-from-px(204)}rem;
   }
 }
