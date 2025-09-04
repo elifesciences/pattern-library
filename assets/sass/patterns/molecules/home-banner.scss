@@ -84,4 +84,8 @@
     background-color: $color-text-ui-background-secondary-grey-homepage;
     color: $color-primary-dark--home-page;
   }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    width: #{get-rem-from-px(204)}rem;
+  }
 }
