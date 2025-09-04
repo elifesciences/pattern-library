@@ -31,7 +31,7 @@
   justify-content: center;
 }
 
-.home-banner_content {
+.home-banner__content {
   @include wrapper($isHomePage: true);
   display: flex;
   justify-content: center;
@@ -62,7 +62,7 @@
   color: $color-elife-blue;
 }
 
-.home-banner__links {
+.home-banner__buttons {
   width: 100%;
   display: flex;
   flex-direction: column;
