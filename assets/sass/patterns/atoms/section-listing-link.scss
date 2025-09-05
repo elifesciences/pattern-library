@@ -40,7 +40,7 @@
 .banner-and-subjects-wrapper .section-listing-link {
   --subjects-listing-link-line-height: #{$default-vertical-height-in-px / $font-size-base-in-px}rem;
 
-  height: var(--subjects-height-collapsed);
-  padding-top: calc((var(--subjects-height-collapsed) - var(--subjects-listing-link-line-height)) / 2);
-  padding-bottom: calc((var(--subjects-height-collapsed) - var(--subjects-listing-link-line-height)) / 2);
+  height: var(--subjects-height);
+  padding-top: calc((var(--subjects-height) - var(--subjects-listing-link-line-height)) / 2);
+  padding-bottom: calc((var(--subjects-height) - var(--subjects-listing-link-line-height)) / 2);
 }
