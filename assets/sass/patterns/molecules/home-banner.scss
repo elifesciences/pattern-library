@@ -5,7 +5,13 @@
   --home-banner-background-color: rgba(237, 245, 250, 1);
   --banner-content-default-min-height: 276px;
   --subjects-height--narrow: 76px;
+  --subjects-height--medium: 102px;
   --subjects-height: var(--subjects-height--narrow);
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    --subjects-height: var(--subjects-height--medium);
+  }
+
   --site-header-height: 95px;
   --max-height-of-banner-and-subjects-and-site-header: 540px;  // Designer intent
   --min-height-of-banner-and-subjects-and-site-header: calc(var(--banner-content-default-min-height) + var(--subjects-height) + var(--site-header-height));
