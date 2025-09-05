@@ -77,8 +77,12 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    font-size: clamp(1rem, calc(4vw + 1rem), 3rem);
+    font-size: #{get-rem-from-px(42)}rem;
     text-align: left;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-inline-buttons)}em) {
+    font-size: #{get-rem-from-px(48)}rem;
   }
 }
 
@@ -105,6 +109,10 @@
     flex-direction: column;
     align-items: unset;
   }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-inline-buttons)}em) {
+    display: block;
+  }
 }
 
 .home-banner__button {
@@ -121,6 +129,10 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include margin(12, "bottom");
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-inline-buttons)}em) {
+    display: inline-block;
   }
 
   &.button--default {
