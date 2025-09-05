@@ -36,10 +36,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    align-items: start;
+  }
 }
 
 .home-banner__content {
   @include wrapper($isHomePage: true);
+  margin: unset;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,6 +52,10 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     padding-inline: #{$site-spacing}px;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    padding-inline: #{$site-spacing-large}px;
   }
 }
 
