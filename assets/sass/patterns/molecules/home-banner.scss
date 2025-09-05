@@ -38,6 +38,13 @@
   justify-content: center;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    --image-min-width: 354px;
+    --image-preferred-width: 40%;
+    --image-max-width: 500px;
+    background-image: url("/assets/img/patterns/molecules/home-banner-dots-dashes.svg");
+    background-repeat: no-repeat;
+    background-position: bottom right 48px;
+    background-size: clamp( var(--image-min-width), var(--image-preferred-width), var(--image-max-width));
     align-items: start;
   }
 }
