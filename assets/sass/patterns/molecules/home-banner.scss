@@ -93,6 +93,11 @@
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     flex-direction: row;
   }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    flex-direction: column;
+    align-items: unset;
+  }
 }
 
 .home-banner__button {
@@ -105,6 +110,10 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     width: #{get-rem-from-px(204)}rem;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include margin(12, "bottom");
   }
 
   &.button--default {
