@@ -7,8 +7,8 @@
   --subjects-height--narrow: 76px;
   --subjects-height: var(--subjects-height--narrow);
   --site-header-height: 95px;
-  --max-height-of-banner-and-subjects-and-site-header: 540px;
-  --min-height-of-banner-and-subjects-and-site-header: calc(var(--banner-content-default-min-height) + var(--subjects-height));
+  --max-height-of-banner-and-subjects-and-site-header: 540px;  // Designer intent
+  --min-height-of-banner-and-subjects-and-site-header: calc(var(--banner-content-default-min-height) + var(--subjects-height) + var(--site-header-height));
   --max-height-of-banner-and-subjects: calc(var(--max-height-of-banner-and-subjects-and-site-header) - var(--site-header-height));
   --min-height-of-banner-and-subjects: calc(var(--min-height-of-banner-and-subjects-and-site-header) - var(--site-header-height));
 }
