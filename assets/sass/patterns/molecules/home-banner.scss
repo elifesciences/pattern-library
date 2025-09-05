@@ -63,14 +63,20 @@
   @include font-size-and-vertical-height($font-size-in-px: 28, $vertical-height-in-px: 38);
   @include margin(36, "bottom");
 
+  text-align: center;
+
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     font-size: #{get-rem-from-px(40)}rem;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    font-size: #{get-rem-from-px(36)}rem;
+    text-align: left;
   }
 }
 
 .home-banner__title_line {
   display: block;
-  text-align: center;
   color: $color-primary-dark--home-page;
 }
 
