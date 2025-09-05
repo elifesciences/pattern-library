@@ -77,7 +77,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    font-size: #{get-rem-from-px(36)}rem;
+    font-size: clamp(1rem, calc(4vw + 1rem), 3rem);
     text-align: left;
   }
 }
