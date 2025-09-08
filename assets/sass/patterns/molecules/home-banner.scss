@@ -87,9 +87,10 @@
 }
 
 .home-banner__title {
-  @include font-size-and-vertical-height($font-size-in-px: 28, $vertical-height-in-px: 38);
   @include margin(36, "bottom");
 
+  font-size: clamp(26px, 8vw, 36px);
+  line-height: 1.3;
   text-align: center;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
