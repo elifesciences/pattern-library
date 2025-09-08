@@ -94,8 +94,8 @@
   text-align: center;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
-    font-size: #{get-rem-from-px(40)}rem;
-    line-height: calc(50 / 40);
+    font-size: clamp(40px, 7vw, 50px);
+    line-height: 1.25;
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
