@@ -122,6 +122,7 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     flex-direction: row;
+    justify-content: center;
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
