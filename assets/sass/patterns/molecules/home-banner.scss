@@ -13,6 +13,11 @@
   }
 
   --site-header-height: 95px;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    --site-header-height: 119px;
+  }
+
   --max-height-of-banner-and-subjects-and-site-header: 540px;  // Designer intent
   --min-height-of-banner-and-subjects-and-site-header: calc(var(--banner-content-default-min-height) + var(--subjects-height) + var(--site-header-height));
   --max-height-of-banner-and-subjects: calc(var(--max-height-of-banner-and-subjects-and-site-header) - var(--site-header-height));
