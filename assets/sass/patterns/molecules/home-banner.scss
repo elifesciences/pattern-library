@@ -17,7 +17,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-wider)}em) {
-    --banner-default-min-height: calc(553px - var(--subjects-height));
+    --banner-default-min-height: calc(572px - var(--subjects-height));
   }
 
   --site-header-height: 95px;
