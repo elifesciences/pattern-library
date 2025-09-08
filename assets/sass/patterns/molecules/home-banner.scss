@@ -74,15 +74,21 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     font-size: #{get-rem-from-px(40)}rem;
+    line-height: calc(50 / 40);
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    font-size: #{get-rem-from-px(42)}rem;
+    font-size: #{get-rem-from-px(36)}rem;
+    line-height: calc(48 / 36);
     text-align: left;
   }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-inline-buttons)}em) {
+  @media only screen and (min-width: #{get-rem-from-px(800)}em) {
+    font-size: #{get-rem-from-px(42)}rem;
+  }
+  @media only screen and (min-width: #{get-rem-from-px(900)}em) {
     font-size: #{get-rem-from-px(48)}rem;
+    line-height: calc(58 / 48);
   }
 }
 
