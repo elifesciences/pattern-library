@@ -67,6 +67,13 @@
     --image-max-width: 500px;
     background-size: clamp( var(--image-min-width), var(--image-preferred-width), var(--image-max-width));
   }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-widest)}em) {
+    --home-banner-max-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-widest)}rem;
+
+    padding-inline: calc((100vw - var(--home-banner-max-width)) / 2);
+    background-position: bottom right calc(((100vw - var(--home-banner-max-width)) / 2) + 48px);
+  }
 }
 
 .home-banner__content {
