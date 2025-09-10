@@ -70,9 +70,10 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-widest)}em) {
     --home-banner-max-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-widest)}rem;
+    --home-banner-gutter: calc((100vw - var(--home-banner-max-width)) / 2);
 
-    padding-inline: calc((100vw - var(--home-banner-max-width)) / 2);
-    background-position: bottom right calc(((100vw - var(--home-banner-max-width)) / 2) + 48px);
+    padding-inline: var(--home-banner-gutter);
+    background-position: bottom right calc(var(--home-banner-gutter) + 48px);
   }
 }
 
