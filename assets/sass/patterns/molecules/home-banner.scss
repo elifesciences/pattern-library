@@ -42,6 +42,8 @@
 }
 
 .home-banner {
+  --home-banner-image-offset: 48px;
+
   background-color: var(--home-banner-background-color);
   flex-grow: 1;
   flex-shrink: 0;
@@ -56,7 +58,7 @@
     --image-max-width: 500px;
     background-image: url("/assets/img/patterns/molecules/home-banner-dots-dashes.svg");
     background-repeat: no-repeat;
-    background-position: bottom right 48px;
+    background-position: bottom right var(--home-banner-image-offset);
     background-size: clamp( var(--image-min-width), var(--image-preferred-width), var(--image-max-width));
     align-items: start;
   }
@@ -73,7 +75,7 @@
     --home-banner-gutter: calc((100vw - var(--home-banner-max-width)) / 2);
 
     padding-inline: var(--home-banner-gutter);
-    background-position: bottom right calc(var(--home-banner-gutter) + 48px);
+    background-position: bottom right calc(var(--home-banner-gutter) + var(--home-banner-image-offset));
   }
 }
 
