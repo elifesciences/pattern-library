@@ -285,27 +285,27 @@
     "sections": [
       {
         "url": "#",
-        "name": "Biochemistry"
+        "name": "Biochemistry and Chemical Biology"
       },
       {
         "url": "#",
-        "name": "Biophysics and structural biology"
+        "name": "Cancer Biology"
       },
       {
         "url": "#",
-        "name": "Cancer biology"
+        "name": "Cell Biology"
       },
       {
         "url": "#",
-        "name": "Cell biology"
+        "name": "Chromosomes and Gene Expression"
       },
       {
         "url": "#",
-        "name": "Computational and systems biology"
+        "name": "Computational and Systems Biology"
       },
       {
         "url": "#",
-        "name": "Developmental biology and stem cells"
+        "name": "Developmental Biology"
       },
       {
         "url": "#",
@@ -317,15 +317,15 @@
       },
       {
         "url": "#",
-        "name": "Genes and chromosomes"
+        "name": "Evolutionary Biology"
       },
       {
         "url": "#",
-        "name": "Genomics and evolutionary biology"
+        "name": "Genetics and Genomics"
       },
       {
         "url": "#",
-        "name": "Immunology"
+        "name": "Immunology and Inflammation"
       },
       {
         "url": "#",
@@ -333,7 +333,7 @@
       },
       {
         "url": "#",
-        "name": "Microbiology and infectious disease"
+        "name": "Microbiology and Infectious Disease"
       },
       {
         "url": "#",
@@ -341,7 +341,19 @@
       },
       {
         "url": "#",
-        "name": "Plant biology"
+        "name": "Physics of Living Systems"
+      },
+      {
+        "url": "#",
+        "name": "Plant Biology"
+      },
+      {
+        "url": "#",
+        "name": "Stem Cells and Regenerative Medicine"
+      },
+      {
+        "url": "#",
+        "name": "Structural Biology and Molecular Biophysics"
       }
     ]
   }
