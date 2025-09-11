@@ -10,6 +10,7 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     --subjects-height: var(--subjects-height--medium);
+    --banner-default-min-height: calc(440px - var(--subjects-height));
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
