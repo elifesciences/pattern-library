@@ -109,7 +109,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    font-size: clamp(36px, 4.9vw, 48px);
+    font-size: clamp(36px, 4.9vw, 60px);
     line-height: 1.2;
     text-align: left;
   }
