@@ -14,7 +14,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    --banner-default-min-height: calc(478px - var(--subjects-height));
+    --banner-default-min-height: calc(449px - var(--subjects-height));
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-wider)}em) {
@@ -62,6 +62,13 @@
     background-position: bottom right var(--home-banner-image-offset);
     background-size: clamp( var(--image-min-width), var(--image-preferred-width), var(--image-max-width));
     align-items: start;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    --image-min-width: 354px;
+    --image-preferred-width: 40%;
+    --image-max-width: 369px;
+    background-size: clamp( var(--image-min-width), var(--image-preferred-width), var(--image-max-width));
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-wider)}em) {
