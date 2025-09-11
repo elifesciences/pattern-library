@@ -3,22 +3,22 @@
 
 :root {
   --home-banner-background-color: rgba(237, 245, 250, 1);
-  --banner-default-min-height: 276px;
+  --banner-min-height: 276px;
   --subjects-height--narrow: 76px;
   --subjects-height--medium: 102px;
   --subjects-height: var(--subjects-height--narrow);
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     --subjects-height: var(--subjects-height--medium);
-    --banner-default-min-height: calc(440px - var(--subjects-height));
+    --banner-min-height: calc(440px - var(--subjects-height));
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    --banner-default-min-height: calc(449px - var(--subjects-height));
+    --banner-min-height: calc(449px - var(--subjects-height));
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-wider)}em) {
-    --banner-default-min-height: calc(570px - var(--subjects-height));
+    --banner-min-height: calc(570px - var(--subjects-height));
   }
 
   --site-header-height: 95px;
@@ -28,7 +28,7 @@
   }
 
   --max-height-of-banner-and-subjects-and-site-header: 540px;  // Designer intent
-  --min-height-of-banner-and-subjects-and-site-header: calc(var(--banner-default-min-height) + var(--subjects-height) + var(--site-header-height));
+  --min-height-of-banner-and-subjects-and-site-header: calc(var(--banner-min-height) + var(--subjects-height) + var(--site-header-height));
   --max-height-of-banner-and-subjects: calc(var(--max-height-of-banner-and-subjects-and-site-header) - var(--site-header-height));
   --min-height-of-banner-and-subjects: calc(var(--min-height-of-banner-and-subjects-and-site-header) - var(--site-header-height));
 }
@@ -48,7 +48,7 @@
   background-color: var(--home-banner-background-color);
   flex-grow: 1;
   flex-shrink: 0;
-  flex-basis: var(--banner-default-min-height);
+  flex-basis: var(--banner-min-height);
   display: flex;
   flex-direction: column;
   justify-content: center;
