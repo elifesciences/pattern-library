@@ -35,7 +35,7 @@
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
 
-  .js .section-listing-wrapper .list-heading {
+  .js .section-listing-wrapper:not(.section-listing-wrapper--show-heading) .list-heading {
     @include visuallyhidden();
   }
 
