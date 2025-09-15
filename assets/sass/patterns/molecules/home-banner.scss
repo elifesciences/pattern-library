@@ -6,6 +6,7 @@
   --banner-min-height: 276px;
   --subjects-height--narrow: 76px;
   --subjects-height--medium: 102px;
+  --subjects-height--x-wide: 364px;
   --subjects-height: var(--subjects-height--narrow);
   --max-height-of-banner-and-subjects-and-site-header--narrow: 540px;  // Designer intent
   --max-height-of-banner-and-subjects-and-site-header: var(--max-height-of-banner-and-subjects-and-site-header--narrow);
@@ -21,6 +22,10 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-wider)}em) {
     --banner-min-height: calc(570px - var(--subjects-height));
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    --subjects-height: var(--subjects-height--x-wide);
   }
 
   --site-header-height: 95px;
