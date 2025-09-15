@@ -135,6 +135,7 @@
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
       margin-inline: auto;
+      min-width: #{get-rem-from-px(1114)}rem;
     }
   }
 
