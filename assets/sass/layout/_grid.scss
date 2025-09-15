@@ -132,6 +132,10 @@
     padding-right: 0;
     @include margin($size_in_px: 24, $dimension: "left");
     @include margin($size_in_px: 24, $dimension: "right");
+
+    @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      margin-inline: auto;
+    }
   }
 
   .contact-info {
