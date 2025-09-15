@@ -60,6 +60,10 @@
       column-gap: 2.25rem;
     }
 
+    .wrapper--subjects .section-listing {
+      column-gap: #{get-rem-from-px(24)}rem;
+    }
+
     .section-listing__list_item {
       @include font-size-and-vertical-height($font-size-base-in-px);
       text-align: left;
