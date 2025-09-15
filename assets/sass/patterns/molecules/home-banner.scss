@@ -6,9 +6,12 @@
   --banner-min-height: 276px;
   --subjects-height--narrow: 76px;
   --subjects-height--medium: 102px;
+  --subjects-height--x-wide: 364px;
   --subjects-height: var(--subjects-height--narrow);
   --max-height-of-banner-and-subjects-and-site-header--narrow: 540px;  // Designer intent
   --max-height-of-banner-and-subjects-and-site-header: var(--max-height-of-banner-and-subjects-and-site-header--narrow);
+  --max-height-of-banner-and-subjects-and-site-header-js: var(--max-height-of-banner-and-subjects-and-site-header);
+  --max-height-of-banner-and-subjects-and-site-header-js-offset: 0rem;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     --subjects-height: var(--subjects-height--medium);
@@ -23,6 +26,10 @@
     --banner-min-height: calc(570px - var(--subjects-height));
   }
 
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    --subjects-height-js-offset: calc(var(--subjects-height--x-wide) - var(--subjects-height));
+  }
+
   --site-header-height: 95px;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
@@ -32,6 +39,8 @@
   --min-height-of-banner-and-subjects-and-site-header: calc(var(--banner-min-height) + var(--subjects-height) + var(--site-header-height));
   --max-height-of-banner-and-subjects: calc(var(--max-height-of-banner-and-subjects-and-site-header) - var(--site-header-height));
   --min-height-of-banner-and-subjects: calc(var(--min-height-of-banner-and-subjects-and-site-header) - var(--site-header-height));
+  --max-height-of-banner-and-subjects-js: calc(var(--max-height-of-banner-and-subjects) + var(--subjects-height-js-offset));
+  --min-height-of-banner-and-subjects-js: calc(var(--min-height-of-banner-and-subjects) + var(--subjects-height-js-offset));
 }
 
 .banner-and-subjects-wrapper {
@@ -41,6 +50,11 @@
   height: calc(100vh - var(--site-header-height));
   max-height: var(--max-height-of-banner-and-subjects);
   min-height: var(--min-height-of-banner-and-subjects);
+
+  .js & {
+    max-height: var(--max-height-of-banner-and-subjects-js);
+    min-height: var(--min-height-of-banner-and-subjects-js);
+  }
 }
 
 .home-banner {
