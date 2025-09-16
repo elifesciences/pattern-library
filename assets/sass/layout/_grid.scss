@@ -134,8 +134,13 @@
     @include margin($size_in_px: 24, $dimension: "right");
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+      --max-width-subjects: #{get-rem-from-px(1200)}rem;
+      --subjects-gutter: #{get-rem-from-px(48)}rem;
+
       margin-inline: auto;
-      min-width: #{get-rem-from-px(1114)}rem;
+      padding-inline: var(--subjects-gutter);
+      width: calc(100% - (var(--subjects-gutter) * 2));
+      max-width: var(--max-width-subjects);
     }
   }
 
