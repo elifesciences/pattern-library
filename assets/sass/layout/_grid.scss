@@ -135,7 +135,7 @@
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
       --max-width-subjects: #{get-rem-from-px(1200)}rem;
-      --subjects-gutter: #{get-rem-from-px(48)}rem;
+      --subjects-gutter: #{$site-spacing-large}px;
 
       margin-inline: auto;
       padding-inline: var(--subjects-gutter);
