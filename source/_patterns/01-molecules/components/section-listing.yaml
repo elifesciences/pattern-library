@@ -6,7 +6,7 @@ properties:
     minLength: 1
   singleLine:
     type: boolean
-  displayHeading:
+  homePage:
     type: boolean
   listHeading:
     $ref: ../../00-atoms/components/list-heading.yaml

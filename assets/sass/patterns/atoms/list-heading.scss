@@ -28,7 +28,7 @@
   text-align: center;
 }
 
-.wrapper--subjects .section-listing-wrapper.section-listing-wrapper--show-heading .list-heading {
+.wrapper--subjects .section-listing-wrapper.section-listing-wrapper--home-page .list-heading {
   @include padding($size_in_px: 60, $dimension: "top");
 }
 
@@ -39,7 +39,7 @@
 
 @media only screen and (min-width: #{get-rem-from-px($bkpt-section-listing)}rem) {
 
-  .js .section-listing-wrapper:not(.section-listing-wrapper--show-heading) .list-heading {
+  .js .section-listing-wrapper:not(.section-listing-wrapper--home-page) .list-heading {
     @include visuallyhidden();
   }
 

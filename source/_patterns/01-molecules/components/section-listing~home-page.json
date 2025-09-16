@@ -3,7 +3,7 @@
   "listHeading": {
     "heading": "Research categories"
   },
-  "displayHeading": true,
+  "homePage": true,
   "sections": [
     {
       "url": "#",

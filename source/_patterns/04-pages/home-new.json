@@ -279,7 +279,7 @@
 
   "sectionsListing": {
     "id": "sectionsListing",
-    "displayHeading": true,
+    "homePage": true,
     "listHeading": {
       "heading": "Research categories"
     },
