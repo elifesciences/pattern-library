@@ -28,6 +28,10 @@
   text-align: center;
 }
 
+.wrapper--subjects .section-listing-wrapper.section-listing-wrapper--show-heading .list-heading {
+  @include padding($size_in_px: 60, $dimension: "top");
+}
+
 .highlights > .list-heading {
   @include blg-spacing("top", "extra-small");
   @include blg-spacing("bottom", "extra-small");
