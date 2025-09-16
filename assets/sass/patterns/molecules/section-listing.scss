@@ -26,6 +26,7 @@
 .section-listing-wrapper--home-page .list-heading {
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     @include padding($size_in_px: 60, $dimension: "top");
+    text-align: left;
   }
 }
 
