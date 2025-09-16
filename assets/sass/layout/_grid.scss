@@ -134,8 +134,9 @@
     @include margin($size_in_px: 24, $dimension: "right");
 
     @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-      --max-width-subjects: #{get-rem-from-px(1200)}rem;
       --subjects-gutter: #{$site-spacing-large}px;
+      --max-width-subjects-including-gutter: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-widest)}rem;
+      --max-width-subjects: calc(var(--max-width-subjects-including-gutter) - (var(--subjects-gutter) * 2));
 
       margin-inline: auto;
       padding-inline: var(--subjects-gutter);
