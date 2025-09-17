@@ -40,6 +40,12 @@
 .banner-and-subjects-wrapper .section-listing-link {
   --subjects-listing-link-line-height: #{$default-vertical-height-in-px / $font-size-base-in-px}rem;
 
+  color: $color-primary-dark--home-page;
+
+  &:hover {
+    color: $color-text;
+  }
+
   height: var(--subjects-height);
   padding-top: calc((var(--subjects-height) - var(--subjects-listing-link-line-height)) / 2);
   padding-bottom: calc((var(--subjects-height) - var(--subjects-listing-link-line-height)) / 2);
