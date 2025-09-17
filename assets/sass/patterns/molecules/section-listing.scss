@@ -31,7 +31,10 @@
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     @include padding($size_in_px: 68, $dimension: "top");
     @include padding($size_in_px: 8, $dimension: "bottom");
-    text-align: left;
+
+    .js & {
+      text-align: left;
+    }
   }
 }
 
