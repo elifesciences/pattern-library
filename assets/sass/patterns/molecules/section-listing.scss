@@ -46,6 +46,14 @@
   color: $color-text;
   text-decoration: none;
 
+  .js .section-listing-wrapper--home-page & {
+    color: $color-primary-dark--home-page;
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+
   &:hover {
     color: $color-primary;
   }
@@ -86,6 +94,7 @@
 
     .section-listing-wrapper--home-page .section-listing__list_item {
       @include font-size-and-vertical-height($font-size-in-px: $font-size-base-in-px, $vertical-height-in-px: 30);
+      font-weight: 600;
     }
 
     .section-listing--single-line {
