@@ -43,6 +43,10 @@
   font-weight: 600;
   color: $color-primary-dark--home-page;
 
+  &:after {
+    content: "\00a\279C";
+  }
+
   &:hover {
     color: $color-text;
   }
