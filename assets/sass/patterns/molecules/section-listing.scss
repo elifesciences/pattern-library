@@ -15,7 +15,7 @@
       @include padding($blg-space-small-in-px, "top");
 
       .js .section-listing-wrapper--home-page & {
-        @include padding($size_in_px: 68, $dimension: "bottom");
+        @include padding($size_in_px: 60, $dimension: "bottom");
       }
     }
 
@@ -82,6 +82,10 @@
     .section-listing__list_item {
       @include font-size-and-vertical-height($font-size-base-in-px);
       text-align: left;
+    }
+
+    .section-listing-wrapper--home-page .section-listing__list_item {
+      @include font-size-and-vertical-height($font-size-in-px: $font-size-base-in-px, $vertical-height-in-px: 30);
     }
 
     .section-listing--single-line {
