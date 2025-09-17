@@ -40,6 +40,7 @@
 .banner-and-subjects-wrapper .section-listing-link {
   --subjects-listing-link-line-height: #{$default-vertical-height-in-px / $font-size-base-in-px}rem;
 
+  font-weight: 600;
   color: $color-primary-dark--home-page;
 
   &:hover {
