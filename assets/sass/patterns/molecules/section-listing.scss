@@ -13,6 +13,10 @@
       border-top: 1px solid $color-text-dividers;
       @include padding($blg-space-small-in-px, "bottom");
       @include padding($blg-space-small-in-px, "top");
+
+      .section-listing-wrapper--home-page & {
+        @include padding($size_in_px: 68, $dimension: "bottom");
+      }
     }
 
     .main--with-new-designs-borders & {
@@ -25,7 +29,8 @@
 
 .section-listing-wrapper--home-page .list-heading {
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include padding($size_in_px: 60, $dimension: "top");
+    @include padding($size_in_px: 68, $dimension: "top");
+    @include padding($size_in_px: 8, $dimension: "bottom");
     text-align: left;
   }
 }
