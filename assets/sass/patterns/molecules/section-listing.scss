@@ -14,7 +14,7 @@
       @include padding($blg-space-small-in-px, "bottom");
       @include padding($blg-space-small-in-px, "top");
 
-      .section-listing-wrapper--home-page & {
+      .js .section-listing-wrapper--home-page & {
         @include padding($size_in_px: 68, $dimension: "bottom");
       }
     }
@@ -29,10 +29,10 @@
 
 .section-listing-wrapper--home-page .list-heading {
   @media only all and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    @include padding($size_in_px: 68, $dimension: "top");
-    @include padding($size_in_px: 8, $dimension: "bottom");
-
     .js & {
+      @include padding($size_in_px: 68, $dimension: "top");
+      @include padding($size_in_px: 8, $dimension: "bottom");
+
       text-align: left;
     }
   }
