@@ -28,7 +28,7 @@ module.exports = class SectionListingLink {
   init() {
     this.$defaultListParent = this.$listing.parentNode;
     this.$wideViewListParent = this.$elm.parentNode;
-    this.breakpoint = 1200;
+    this.breakpoint = 75;
 
     this.handleWidth();
     this.window.addEventListener('resize', utils.debounce(() => this.handleWidth(), 10)
@@ -40,8 +40,8 @@ module.exports = class SectionListingLink {
     this.updateView(this.$listing, this.$defaultListParent, this.$wideViewListParent, this.breakpoint);
   }
 
-  updateView($list, $defaultListParent, $wideViewListParent, thresholdWidthInPx) {
-    if (this.window.matchMedia(`(min-width: ${thresholdWidthInPx}px)`).matches) {
+  updateView($list, $defaultListParent, $wideViewListParent, thresholdWidthInEm) {
+    if (this.window.matchMedia(`(min-width: ${thresholdWidthInEm}em)`).matches) {
       this.showWideView($list, $wideViewListParent);
     } else {
       this.restoreDefaultView($list, $defaultListParent);
