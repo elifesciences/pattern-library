@@ -107,7 +107,7 @@
 .site-header--home-page {
   .search-box,
   .site-header__navigation {
-    background-color: var(--home-page-tinted-background-color);
+    background-color: $color-homepage-tinted-background;
   }
 }
 

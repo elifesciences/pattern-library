@@ -2,7 +2,6 @@
 @import "../../variables";
 
 :root {
-  --home-page-tinted-background-color: rgba(237, 245, 250, 1);
   --banner-min-height: 276px;
   --subjects-height--narrow: 76px;
   --subjects-height--medium: 102px;
@@ -61,7 +60,7 @@
 .home-banner {
   --home-banner-image-offset: 48px;
 
-  background-color: var(--home-page-tinted-background-color);
+  background-color: $color-homepage-tinted-background;
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: var(--banner-min-height);
