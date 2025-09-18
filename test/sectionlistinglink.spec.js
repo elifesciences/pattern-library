@@ -51,8 +51,8 @@ describe('A SectionListingLink Component', function () {
 
   });
 
-  it('has a breakpoint of 1200px', () => {
-    expect(sectionListingLink.breakpoint).to.equal(1200);
+  it('has a breakpoint of 75em', () => {
+    expect(sectionListingLink.breakpoint).to.equal(75);
   });
 
   describe('the id of the listing',() => {
