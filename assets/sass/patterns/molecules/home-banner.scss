@@ -66,7 +66,7 @@
 }
 
 .home-banner {
-  --home-banner-image-offset: 48px;
+  --home-banner-image-offset: #{$site-spacing-large}px;
 
   background-color: $color-homepage-tinted-background;
   flex-grow: 1;
