@@ -5,13 +5,13 @@
   --site-header-height: #{get-rem-from-px(95)}rem;
 
   --subjects-height--narrow: #{get-rem-from-px(76)}rem;
-  --subjects-height--medium: 102px;
+  --subjects-height--medium: #{get-rem-from-px(102)}rem;
   --subjects-height--x-wide: 364px;
   --subjects-height: var(--subjects-height--narrow);
   --subjects-height-js: var(--subjects-height);
 
   --banner-min-height--narrow: #{get-rem-from-px(276)}rem; // Defined by the banner contents
-  --banner-min-height--medium: 338px;
+  --banner-min-height--medium: #{get-rem-from-px(338)}rem;
   --banner-min-height--wide: 347px;
   --banner-min-height--wider: 468px;
   --banner-min-height: var(--banner-min-height--narrow);
@@ -123,7 +123,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    padding-inline: #{$site-spacing-large}px;
+    @include padding($site-spacing-large, "inline");
   }
 }
 
