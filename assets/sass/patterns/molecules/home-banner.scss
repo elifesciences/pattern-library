@@ -2,21 +2,21 @@
 @import "../../variables";
 
 :root {
-  --site-header-height: 95px;
+  --site-header-height: #{get-rem-from-px(95)}rem;
 
-  --subjects-height--narrow: 76px;
+  --subjects-height--narrow: #{get-rem-from-px(76)}rem;
   --subjects-height--medium: 102px;
   --subjects-height--x-wide: 364px;
   --subjects-height: var(--subjects-height--narrow);
   --subjects-height-js: var(--subjects-height);
 
-  --banner-min-height--narrow: 276px; // Defined by the banner contents
+  --banner-min-height--narrow: #{get-rem-from-px(276)}rem; // Defined by the banner contents
   --banner-min-height--medium: 338px;
   --banner-min-height--wide: 347px;
   --banner-min-height--wider: 468px;
   --banner-min-height: var(--banner-min-height--narrow);
 
-  --max-height-of-banner-and-subjects-and-site-header--narrow: 540px;  // Designer intent
+  --max-height-of-banner-and-subjects-and-site-header--narrow: #{get-rem-from-px(540)}rem;  // Designer intent
   --max-height-of-banner-and-subjects-and-site-header: var(--max-height-of-banner-and-subjects-and-site-header--narrow);
   --max-height-of-banner-and-subjects-and-site-header-js: var(--max-height-of-banner-and-subjects-and-site-header);
 
