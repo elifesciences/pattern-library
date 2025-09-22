@@ -10,7 +10,9 @@
   --subjects-height: var(--subjects-height--narrow);
   --subjects-height-js: var(--subjects-height);
 
-  --banner-min-height: 276px; // Defined by the banner contents
+  --banner-min-height--narrow: 276px; // Defined by the banner contents
+  --banner-min-height--medium: 338px;
+  --banner-min-height: var(--banner-min-height--narrow);
   --max-height-of-banner-and-subjects-and-site-header--narrow: 540px;  // Designer intent
   --max-height-of-banner-and-subjects-and-site-header: var(--max-height-of-banner-and-subjects-and-site-header--narrow);
   --max-height-of-banner-and-subjects-and-site-header-js: var(--max-height-of-banner-and-subjects-and-site-header);
@@ -26,7 +28,7 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     --subjects-height: var(--subjects-height--medium);
-    --banner-min-height: calc(440px - var(--subjects-height));
+    --banner-min-height: var(--banner-min-height--medium);
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
