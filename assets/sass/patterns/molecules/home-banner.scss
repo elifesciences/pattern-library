@@ -12,7 +12,7 @@
 
   --banner-min-height--narrow: #{get-rem-from-px(276)}rem; // Defined by the banner contents
   --banner-min-height--medium: #{get-rem-from-px(338)}rem;
-  --banner-min-height--wide: 347px;
+  --banner-min-height--wide: #{get-rem-from-px(347)}rem;
   --banner-min-height--wider: 468px;
   --banner-min-height: var(--banner-min-height--narrow);
 
