@@ -6,14 +6,14 @@
 
   --subjects-height--narrow: #{get-rem-from-px(76)}rem;
   --subjects-height--medium: #{get-rem-from-px(102)}rem;
-  --subjects-height--x-wide: 364px;
+  --subjects-height--x-wide: #{get-rem-from-px(364)}rem;
   --subjects-height: var(--subjects-height--narrow);
   --subjects-height-js: var(--subjects-height);
 
   --banner-min-height--narrow: #{get-rem-from-px(276)}rem; // Defined by the banner contents
   --banner-min-height--medium: #{get-rem-from-px(338)}rem;
   --banner-min-height--wide: #{get-rem-from-px(347)}rem;
-  --banner-min-height--wider: 468px;
+  --banner-min-height--wider: #{get-rem-from-px(468)}rem;
   --banner-min-height: var(--banner-min-height--narrow);
 
   --max-height-of-banner-and-subjects-and-site-header--narrow: #{get-rem-from-px(540)}rem;  // Designer intent
@@ -47,7 +47,7 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
-    --site-header-height: 119px;
+    --site-header-height: #{get-rem-from-px(119)}rem;
   }
 }
 
