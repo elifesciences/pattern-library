@@ -1,10 +1,12 @@
 @import "../../definitions";
 
 .testimonial-with-link {
+  @include padding($site-spacing, "inline");
   background-color: $color-homepage-tinted-background;
 }
 
 .testimonial-with-link__quotation {
+  margin-inline: 0;
   color: $color-primary-dark--home-page;
   font-family: $font-secondary;
   font-size: #{get-rem-from-px(16)}rem;
