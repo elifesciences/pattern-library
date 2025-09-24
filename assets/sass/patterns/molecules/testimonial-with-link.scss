@@ -4,6 +4,11 @@
   @include padding($site-spacing-medium, "inline");
   @include padding($default-vertical-height-in-px, "block");
   background-color: $color-homepage-tinted-background;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include padding(60, "inline");
+    @include padding(36, "block");
+  }
 }
 
 .testimonial-with-link__quotation {
@@ -15,6 +20,10 @@
   font-size: #{get-rem-from-px(16)}rem;
   line-height: 1.5;
   font-weight: 600;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include margin(10, "top");
+  }
 }
 
 .testimonial-with-link__attribution {
@@ -30,6 +39,10 @@
   font-size: #{get-rem-from-px(14)}rem;
   line-height: calc(24 / 14);
   font-weight: 700;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include margin(5, "bottom");
+  }
 
   &::after {
     content: "\00a0\279C";
