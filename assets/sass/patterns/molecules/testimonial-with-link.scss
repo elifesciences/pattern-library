@@ -13,3 +13,15 @@
   font-size: #{get-rem-from-px(14)}rem;
   line-height: calc(20 / 14);
 }
+
+.testimonial-with-link__link {
+  color: $color-primary-dark--home-page;
+  font-family: $font-secondary;
+  font-size: #{get-rem-from-px(14)}rem;
+  line-height: calc(24 / 14);
+  font-weight: 700;
+
+  &::after {
+    content: "\00a\279C";
+  }
+}
