@@ -1,5 +1,9 @@
 @import "../../definitions";
 
+.testimonial-with-link {
+  background-color: $color-homepage-tinted-background;
+}
+
 .testimonial-with-link__quotation {
   color: $color-primary-dark--home-page;
   font-family: $font-secondary;
