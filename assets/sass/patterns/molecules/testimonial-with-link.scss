@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .testimonial-with-link {
-  @include padding($site-spacing, "inline");
+  @include padding($site-spacing-medium, "inline");
   background-color: $color-homepage-tinted-background;
 }
 
