@@ -23,6 +23,16 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     @include margin(10, "top");
+
+    &::before {
+      color: #2994d2;
+      content: open-quote;
+      display: inline-block;
+      vertical-align: bottom;
+      font-size: #{get-rem-from-px(52)}rem;
+      line-height: calc(34 / 52);
+      text-indent: -26px;
+    }
   }
 }
 
