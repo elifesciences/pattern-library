@@ -1,7 +1,15 @@
+@import "../../definitions";
+
 .testimonial-with-link__quotation {
   color: $color-primary-dark--home-page;
   font-family: $font-secondary;
   font-size: #{get-rem-from-px(16)}rem;
   line-height: 1.5;
   font-weight: 600;
+}
+
+.testimonial-with-link__attribution {
+  font-family: $font-secondary;
+  font-size: #{get-rem-from-px(14)}rem;
+  line-height: calc(20 / 14);
 }
