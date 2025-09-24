@@ -32,6 +32,20 @@
       font-size: #{get-rem-from-px(52)}rem;
       line-height: calc(34 / 52);
       text-indent: -26px;
+      position: relative;
+      top: 12px;
+    }
+
+    &::after {
+      color: #2994d2;
+      content: close-quote;
+      display: inline-block;
+      vertical-align: bottom;
+      font-size: #{get-rem-from-px(52)}rem;
+      line-height: calc(24 / 52);
+      position: relative;
+      top: 10px;
+      left: 5px;
     }
   }
 }
