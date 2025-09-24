@@ -2,11 +2,14 @@
 
 .testimonial-with-link {
   @include padding($site-spacing-medium, "inline");
+  @include padding($default-vertical-height-in-px, "block");
   background-color: $color-homepage-tinted-background;
 }
 
 .testimonial-with-link__quotation {
   @include margin(0, "inline");
+  @include margin(0, "top");
+  @include margin(13, "bottom");
   color: $color-primary-dark--home-page;
   font-family: $font-secondary;
   font-size: #{get-rem-from-px(16)}rem;
@@ -15,6 +18,7 @@
 }
 
 .testimonial-with-link__attribution {
+  @include margin(19, "bottom");
   font-family: $font-secondary;
   font-size: #{get-rem-from-px(14)}rem;
   line-height: calc(20 / 14);
