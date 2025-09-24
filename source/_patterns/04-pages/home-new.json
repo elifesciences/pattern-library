@@ -357,5 +357,13 @@
         "name": "Structural Biology and Molecular Biophysics"
       }
     ]
+  },
+  "testimonialWithLink": {
+    "quotation": "We liked the idea of having an open 'conversation' with the reviewers during the process, and having the chance to polish the manuscript by following the editors and reviewers’ recommendations without the threat of rejection.",
+    "attribution": "Patrick Allard, Professor at University of California, Los Angeles",
+    "link": {
+      "url": "https://elifesciences.org/about/why-publish-with-elife",
+      "name": "Why expert researchers support the eLife model"
+    }
   }
 }
