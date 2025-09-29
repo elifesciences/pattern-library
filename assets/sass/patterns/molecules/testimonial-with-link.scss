@@ -15,6 +15,14 @@
   }
 }
 
+.testimonial-with-link__image {
+  display: none;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    display: unset;
+  }
+}
+
 .testimonial-with-link__quotation {
   @include margin(0, "inline");
   @include margin(0, "top");
