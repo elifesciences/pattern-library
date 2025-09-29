@@ -13,6 +13,12 @@
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
     @include margin($site-spacing-large, "inline");
   }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: #{get-rem-from-px(72)}rem;
+  }
 }
 
 .testimonial-with-link__image {
