@@ -81,6 +81,10 @@
     @include margin(5, "bottom");
   }
 
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include font-size-and-vertical-height($font-size-in-px: 16, $vertical-height-in-px: 24);
+  }
+
   &::after {
     content: "\00a0\279C";
   }
