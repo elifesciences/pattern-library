@@ -63,6 +63,11 @@
   font-family: $font-secondary;
   font-size: #{get-rem-from-px(14)}rem;
   line-height: calc(20 / 14);
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    font-size: #{get-rem-from-px(16)}rem;
+    line-height: calc(20 / 16);
+  }
 }
 
 .testimonial-with-link__link {
