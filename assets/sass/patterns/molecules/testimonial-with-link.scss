@@ -19,34 +19,31 @@
   @include margin(0, "inline");
   @include margin(0, "top");
   @include margin(13, "bottom");
+  @include font-size-and-vertical-height($font-size-in-px: 16, $vertical-height-in-px: 24);
   color: $color-primary-dark--home-page;
   font-family: $font-secondary;
-  font-size: #{get-rem-from-px(16)}rem;
-  line-height: 1.5;
   font-weight: 600;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     @include margin(10, "top");
 
     &::before {
+      @include font-size-and-vertical-height($font-size-in-px: 52, $vertical-height-in-px: 34);
       color: #2994d2;
       content: open-quote;
       display: inline-block;
       vertical-align: bottom;
-      font-size: #{get-rem-from-px(52)}rem;
-      line-height: calc(34 / 52);
       text-indent: -26px;
       position: relative;
       top: 12px;
     }
 
     &::after {
+      @include font-size-and-vertical-height($font-size-in-px: 52, $vertical-height-in-px: 24);
       color: #2994d2;
       content: close-quote;
       display: inline-block;
       vertical-align: bottom;
-      font-size: #{get-rem-from-px(52)}rem;
-      line-height: calc(24 / 52);
       position: relative;
       top: 10px;
       left: 5px;
@@ -59,22 +56,19 @@
 }
 
 .testimonial-with-link__attribution {
+  @include font-size-and-vertical-height($font-size-in-px: 14, $vertical-height-in-px: 20);
   @include margin(19, "bottom");
   font-family: $font-secondary;
-  font-size: #{get-rem-from-px(14)}rem;
-  line-height: calc(20 / 14);
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
-    font-size: #{get-rem-from-px(16)}rem;
-    line-height: calc(20 / 16);
+    @include font-size-and-vertical-height($font-size-in-px: 16, $vertical-height-in-px: 20);
   }
 }
 
 .testimonial-with-link__link {
+  @include font-size-and-vertical-height($font-size-in-px: 14, $vertical-height-in-px: 24);
   color: $color-primary-dark--home-page;
   font-family: $font-secondary;
-  font-size: #{get-rem-from-px(14)}rem;
-  line-height: calc(24 / 14);
   font-weight: 700;
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
