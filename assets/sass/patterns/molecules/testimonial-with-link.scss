@@ -18,7 +18,7 @@
 .testimonial-with-link__image {
   display: none;
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     display: block;
     max-width: 184px;
     max-height: 184px;
