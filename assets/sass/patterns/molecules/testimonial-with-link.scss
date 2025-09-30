@@ -19,6 +19,11 @@
     grid-template-columns: auto 1fr;
     grid-column-gap: #{get-rem-from-px(72)}rem;
   }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-widest)}em) {
+    max-width: #{get-rem-from-px($max-home-page-width)}rem;
+    margin-inline: auto;
+  }
 }
 
 .testimonial-with-link__image {
