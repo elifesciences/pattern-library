@@ -4,6 +4,9 @@ properties:
   quotation:
     type: string
     minLength: 1
+  quotationLastWord:
+    type: string
+    minLength: 1
   attribution:
     type: string
     minLength: 1

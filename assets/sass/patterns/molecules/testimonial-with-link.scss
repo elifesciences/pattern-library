@@ -82,15 +82,19 @@
       top: 12px;
     }
 
-    &::after {
-      @include font-size-and-vertical-height($font-size-in-px: 52, $vertical-height-in-px: 24);
-      color: #2994d2;
-      content: close-quote;
+    & .last-word {
       display: inline-block;
-      vertical-align: bottom;
-      position: relative;
-      top: 10px;
-      left: 5px;
+
+      &::after {
+        @include font-size-and-vertical-height($font-size-in-px: 52, $vertical-height-in-px: 24);
+        color: #2994d2;
+        content: close-quote;
+        display: inline-block;
+        vertical-align: bottom;
+        position: relative;
+        top: 10px;
+        left: 5px;
+      }
     }
   }
 
