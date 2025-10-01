@@ -32,9 +32,13 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
     display: block;
-    max-width: 184px;
-    max-height: 184px;
     position: relative;
+
+    &,
+    &::before {
+      max-width: 184px;
+      max-height: 184px;
+    }
 
     &::before {
       content: "";
@@ -46,8 +50,6 @@
       z-index: 10;
       border-radius: 50%;
       background-color: rgba(132, 138, 162, 0.38);
-      max-width: 184px;
-      max-height: 184px;
     }
 
     & img {
