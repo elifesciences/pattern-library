@@ -103,9 +103,11 @@
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
-    --image-min-width: 480px;
-    --image-preferred-width: 50vh;
-    --image-max-width: 600px;
+    .js & {
+      --image-min-width: 480px;
+      --image-preferred-width: 50vh;
+      --image-max-width: 600px;
+    }
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-widest)}em) {
