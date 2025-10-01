@@ -44,6 +44,7 @@
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
     --subjects-height-js: var(--subjects-height--x-wide);
+    --max-height-of-banner-and-subjects-js: #{get-rem-from-px(1000)}rem; // TODO: Consider deriving this value?
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
@@ -99,6 +100,12 @@
     --image-preferred-width: 40%;
     --image-max-width: 500px;
     background-size: clamp( var(--image-min-width), var(--image-preferred-width), var(--image-max-width));
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    --image-min-width: 480px;
+    --image-preferred-width: 50vh;
+    --image-max-width: 600px;
   }
 
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-widest)}em) {
