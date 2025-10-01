@@ -73,14 +73,19 @@
   @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
     @include margin(10, "top");
 
-    &::before {
-      @include font-size-and-vertical-height($font-size-in-px: 52, $vertical-height-in-px: 34);
+    &::before,
+    & .last-word::after {
+      @include font-size(52);
       color: #2994d2;
-      content: open-quote;
       display: inline-block;
       vertical-align: bottom;
-      text-indent: -26px;
       position: relative;
+    }
+
+    &::before {
+      line-height: calc(34 / 52);
+      content: open-quote;
+      text-indent: -26px;
       top: 12px;
     }
 
@@ -88,12 +93,8 @@
       display: inline-block;
 
       &::after {
-        @include font-size-and-vertical-height($font-size-in-px: 52, $vertical-height-in-px: 24);
-        color: #2994d2;
+        line-height: calc(24 / 52);
         content: close-quote;
-        display: inline-block;
-        vertical-align: bottom;
-        position: relative;
         top: 10px;
         left: 5px;
       }
