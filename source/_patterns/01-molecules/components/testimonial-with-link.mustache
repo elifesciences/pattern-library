@@ -1,6 +1,11 @@
 <section data-testimonial-with-link class="testimonial-with-link">
     <div class="testimonial-with-link__image">
-        <img src="https://iiif.elifesciences.org/journal-cms/person%2F2025-09%2Fpatrick-allard-from-source.jpg/0,0,512,512/320,/0/default.webp" alt="Headshot of Patrick Allard">
+        {{#image}}
+            <img src="{{path}}" alt="{{altText}}">
+        {{/image}}
+        {{^image}}
+            <img src="https://iiif.elifesciences.org/journal-cms/person%2F2025-09%2Fpatrick-allard-from-source.jpg/0,0,512,512/320,/0/default.webp" alt="Headshot of Patrick Allard">
+        {{/image}}
     </div>
     <div>
         <blockquote class="testimonial-with-link__quotation">{{#quotation}}{{quotation}}{{/quotation}}<span class="last-word">{{quotationLastWord}}</span></blockquote>
