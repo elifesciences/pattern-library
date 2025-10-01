@@ -21,7 +21,7 @@
     grid-column-gap: #{get-rem-from-px(72)}rem;
   }
 
-  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-hero-banner-additional-widest)}em) {
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--home-additional-widest)}em) {
     max-width: #{get-rem-from-px($max-home-page-width)}rem;
     margin-inline: auto;
   }
