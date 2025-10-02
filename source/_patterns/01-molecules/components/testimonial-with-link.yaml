@@ -24,6 +24,7 @@ properties:
   link:
     $ref: ../../../non-pattern-schema/link.yaml
 required:
+  - image
   - quotationLastWord
   - attribution
   - link

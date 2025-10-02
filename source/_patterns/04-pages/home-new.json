@@ -359,6 +359,10 @@
     ]
   },
   "testimonialWithLink": {
+    "image": {
+      "path": "https://iiif.elifesciences.org/journal-cms/person%2F2025-09%2Fpatrick-allard-from-source.jpg/0,0,512,512/320,/0/default.webp",
+      "altText": "Headshot of Patrick Allard."
+    },
     "quotation": "We liked the idea of having an open 'conversation' with the reviewers during the process, and having the chance to polish the manuscript by following the editors and reviewers’ recommendations without the threat of ",
     "quotationLastWord": "rejection.",
     "attribution": "Patrick Allard, Professor at University of California, Los Angeles",
