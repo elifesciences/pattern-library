@@ -1,0 +1,64 @@
+@import "../../definitions";
+
+.floating-action-button {
+  position: fixed;
+  top: 79px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    top: 51px;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--wide)}em) {
+    top: 94px;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--x-wide)}em) {
+    top: 120px;
+  }
+}
+
+.floating-action-button__link {
+  display: inline-block;
+  background-color: $color-primary;
+  color: $color-text--reverse;
+  font-family: $font-secondary;
+  @include font-size(14);
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 24px;
+  @include padding(8 20);
+  min-height: 40px;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--small)}em) {
+    @include padding(10 24);
+    min-height: 44px;
+  }
+
+  @media only screen and (min-width: #{get-rem-from-px($bkpt-site--medium)}em) {
+    @include padding(12 28);
+    min-height: 48px;
+  }
+
+  &:hover {
+    background-color: $color-primary-dark;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary-dark;
+    outline-offset: 2px;
+  }
+}

@@ -1,4 +1,9 @@
 {
+  "floatingActionButton": {
+    "text": "Discover research",
+    "path": "/articles",
+    "ariaLabel": "Explore eLife research articles"
+  },
   "newHomePage": true,
   "siteHeader": {
     "title": {
