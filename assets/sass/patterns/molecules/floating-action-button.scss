@@ -1,7 +1,7 @@
 @import "../../definitions";
 
 .floating-action-button {
-  position: fixed;
+  position: absolute;
   top: 79px;
   left: 50%;
   transform: translateX(-50%);
