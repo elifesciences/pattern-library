@@ -1,8 +1,8 @@
 {
   "floatingActionButton": {
-    "text": "Discover research",
+    "text": "#OwnYourImpact",
     "path": "/articles",
-    "ariaLabel": "Explore eLife research articles"
+    "ariaLabel": "Own Your Impact"
   },
   "newHomePage": true,
   "siteHeader": {
