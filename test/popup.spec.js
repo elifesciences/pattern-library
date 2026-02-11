@@ -11,7 +11,7 @@ describe('A Popup Component', function () {
   let $childElm = document.querySelector('[data-behaviour="Popup"]');
   let windowMock = {
     "location": {
-      "host": "",
+      "host": window.location.host,
       "href": "",
     },
     "matchMedia": function() { return { "matches": true }; },
