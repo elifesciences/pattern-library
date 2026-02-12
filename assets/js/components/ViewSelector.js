@@ -55,8 +55,7 @@ module.exports = class ViewSelector {
             classDisplayOnNarrow);
       });
 
-      this.hideInactiveSectionInitially
-          (this.primaryColumn, this.secondaryColumn, classActiveViewSelector, classDisplayOnNarrow);
+      this.hideInactiveSectionInitially(this.primaryColumn, this.secondaryColumn, classActiveViewSelector, classDisplayOnNarrow);
     }
 
     if (this.sideBySideViewAvailable()) {

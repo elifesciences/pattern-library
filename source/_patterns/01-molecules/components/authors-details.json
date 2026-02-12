@@ -3,7 +3,6 @@
     {
       "authorId": "author1",
       "name": "Jenny Bloggs",
-      "authorId": "author1",
 
       "details": [
         {
@@ -59,8 +58,6 @@
       ],
 
       "contributionStatement": "Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article, Contributed unpublished essential data or reagents",
-      "authorId": "author2",
-      "name": "ICGC Chronic Myeloid Disorders Group",
 
       "details": [
         {
