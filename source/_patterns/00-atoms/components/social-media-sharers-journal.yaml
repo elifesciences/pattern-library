@@ -19,6 +19,12 @@ properties:
   mastodonUrl:
     type: string
     format: uri
+  blueskyUrl:
+    type: string
+    format: uri
+  threadsUrl:
+    type: string
+    format: uri
   hasComment:
     type: boolean
     enum:
