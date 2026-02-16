@@ -1,3 +1,12 @@
+# DEPRECATED
+
+Please do not use this repository. A new process has been implemented for developing patterns in patterns-php repository.
+
+Please make SASS, Mustache etc. changes in the patterns-php repository.
+
+We are planning to archive this repository once we are completely sure that the new process is working as expected.
+
+
 [![Build Status](https://alfred.elifesciences.org/buildStatus/icon?job=prod-pattern-library)](https://alfred.elifesciences.org/job/prod-pattern-library/)
 # Note
 This pattern library uses as its starting point  `https://github.com/pattern-lab/patternlab-php` with HEAD at sha e52ced8551000b7c6b97a01f419e2af8a07e2fd1
