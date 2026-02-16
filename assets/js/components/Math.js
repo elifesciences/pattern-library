@@ -37,16 +37,23 @@ module.exports = class Math {
 
   static setupProperties() {
     window.MathJax = {
-      CommonHTML: {
-        linebreaks: { automatic: true, width: '75% container' }
+      loader: {
+        load: ['ui/menu']
       },
-      'fast-preview': { disabled: true },
-      'HTML-CSS': {
-        linebreaks: { automatic: true, width: '75% container' }
-      },
-      SVG: {
-        linebreaks: { automatic: true, width: '75% container' }
-      },
+
+      chtml: {
+        scale: 1.04,                  // global scaling factor for all expressions
+        minScale: 1,                  // smallest scaling factor to use
+        matchFontHeight: true,        // true to match ex-height of surrounding font
+        mtextInheritFont: false,       // true to make mtext elements use surrounding font
+        merrorInheritFont: false,      // true to make merror text use surrounding font
+        mtextFont: '',                 // font to use for mtext, if not inheriting (empty means use MathJax fonts)
+        merrorFont: 'serif',           // font to use for merror, if not inheriting (empty means use MathJax fonts)
+        mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+        skipAttributes: {},           // RFDa and other attributes NOT to copy to the outputß
+        displayIndent: '0',           // default for indentshift when set to 'auto'
+        cssStyles: null
+      }
     };
   }
 
@@ -125,12 +132,14 @@ module.exports = class Math {
 
   static load(doc) {
     let script = doc.createElement('script');
+    script.id = 'MathJax-script';
+    script.async = true;
     script.type = 'text/javascript';
     script.addEventListener('load', Math.setupResizeHandler);
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML';
-    script.integrity = 'sha384-Ra6zh6uYMmH5ydwCqqMoykyf1T/+ZcnOQfFPhDrp2kI4OIxadnhsvvA2vv9A7xYv';
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/mml-chtml.min.js';
+    script.integrity = 'sha512-b8NAh18dQ92jyOvBUzpEc+c+wcH+YkCSH4vcf2cKAKkBBWpFIFR/vpmsuFYnlr/cvcBhymHwnj6gb7RkAX0/Pg==';
     script.crossOrigin = 'anonymous';
-    doc.querySelector('body').appendChild(script);
+    doc.querySelector('head').appendChild(script);
   }
 
 };
